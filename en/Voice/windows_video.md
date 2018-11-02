@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 19:59:22 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 19:59:55 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
@@ -15,7 +15,7 @@ updatedAt: Fri Nov 02 2018 19:59:22 GMT+0000 (UTC)
 -   Development environment: Microsoft Visual Studio 2013 (Recommended)
 
 
-> If you decide to use Microsoft Visual Studio of version higher than 2013, you may encounter compatibility issues.
+> If you decide to use Microsoft Visual Studio 2013+, you may encounter compatibility issues.
 
 ## Creating an Agora Account and Getting an App ID
 
@@ -42,7 +42,7 @@ updatedAt: Fri Nov 02 2018 19:59:22 GMT+0000 (UTC)
 2.  Copy the directory **AgoraRtcEngineSDK/lib** to the **LIB** directory of your project.
 
 
-You have set up the development environment for Windows. Try Agora SDK now!
+You have set up the development environment for Windows. Try the Agora SDK now!
 
 
 
