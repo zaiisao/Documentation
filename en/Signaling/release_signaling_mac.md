@@ -3,11 +3,9 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 08:57:54 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:14:20 GMT+0000 (UTC)
 ---
 # Release Notes
-# Release Notes
-
 ## Overview
 
 The Agora Signaling SDK facilitates real-time communications through functions such as call invitations, messaging, and state synchronization.
