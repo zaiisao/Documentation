@@ -3,11 +3,10 @@
 title: FAQ
 description: 
 platform: Integration and Deployment
-updatedAt: Thu Nov 01 2018 09:21:00 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:16:25 GMT+0000 (UTC)
 ---
 # FAQ
 
-# Integration and Deployment
 This category contains questions and answers for integrating and using Agora SDK.
 
 [Video-related Questions](../../en/Agora%20Platform/video_how_to.md)
