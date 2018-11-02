@@ -3,11 +3,9 @@
 title: FAQ
 description: 
 platform: 故障排除
-updatedAt: Thu Nov 01 2018 08:04:37 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:36 GMT+0000 (UTC)
 ---
 # FAQ
-# 故障排除
-
 该部分包含在使用 Agora SDK 过程中可能遇到的故障及解决方法。
 
  [音频相关](../../cn/Agora%20Platform/audio_related_faq.md)
