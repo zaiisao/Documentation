@@ -3,11 +3,9 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Thu Nov 01 2018 07:59:46 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:17 GMT+0000 (UTC)
 ---
 # 录制 API 
-# 录制 API 
-
 > 版本：v2.2.3
 > Java 的 API 是对 C++ 的 sample code 通过 jni 做的二次封装，因此和 C++ 提供的录制 API 在结构上稍有差异：Agora SDK \(C++ 和 java 共有的 sample code\)实现 C++ 录制 API 的接口和对回调的处理； jni 层封装 Agora SDK，最后通过 jni proxy 层提供 Native 的 Java 接口和类。
 
@@ -857,7 +855,7 @@ public class VideoMixingLayout
 
 下面的例子用来描述主播图像的位置和尺寸: x, y, width, height 分别为 0.5， 0.4， 0.2， 0.3
 
-<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/cn/sei_overview.png" style="width: 561.4px; height: 484.4px;"/>
+<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/cn/sei_overview.png" style="width: 500px;"/>
 
 <a name = "leaveChannel"></a>
 
