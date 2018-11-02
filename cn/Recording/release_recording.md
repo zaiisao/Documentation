@@ -3,11 +3,9 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Thu Nov 01 2018 07:34:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:11:27 GMT+0000 (UTC)
 ---
 # 录制 SDK 发版说明
-# 录制 SDK 发版说明
-
 ## 简介
 
 Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。
