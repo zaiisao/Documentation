@@ -3,11 +3,9 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 08:56:35 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:14:02 GMT+0000 (UTC)
 ---
 # Release Notes
-# Release Notes
-
 ## Overview
 
 The Agora Signaling SDK facilitates real-time communications through functions such as call invitations, messaging, and state synchronization.
