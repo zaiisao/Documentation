@@ -3,11 +3,9 @@
 title: 其他常见问题
 description: 
 platform: 其他常见问题
-updatedAt: Thu Nov 01 2018 08:23:00 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:49 GMT+0000 (UTC)
 ---
 # 其他常见问题
-# 其他常见问题
-
 ### 无法加入频道
 
 查看是否有错误码，以及查看是哪种错误码引起的加入频道失败。
