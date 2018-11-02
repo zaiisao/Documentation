@@ -3,11 +3,9 @@
 title: 发版说明
 description: 
 platform: Cocos
-updatedAt: Thu Nov 01 2018 08:26:13 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:51 GMT+0000 (UTC)
 ---
 # 发版说明
-# 发版说明
-
 ## 简介
 
 该游戏软件包提供游戏语音功能。
