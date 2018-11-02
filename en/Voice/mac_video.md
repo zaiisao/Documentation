@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Fri Nov 02 2018 20:19:54 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 20:32:42 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
@@ -55,7 +55,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    pod init
    ```
 
-2. Add the Agora SDK reference in the Podfile. Open the Podfile, and fill it with the following content. Fill **“Your App”** with the name of your Target.
+2. Add the Agora SDK reference in the Podfile. Open the Podfile, and put in the following content. Fill **“Your App”** with the name of your Target.
 
    ```
    platform :macOS, '10.11'
@@ -78,7 +78,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    pod install
    ```
 
-   If Terminal says `Pod installation complete!`, you have successfully added the libraries. Click open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
+   If Terminal says `Pod installation complete!`, you have successfully added the libraries. Click to open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
 
    ```
    open YourApp.xcworkspace
@@ -96,7 +96,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    <img alt="../_images/mac_video_2.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_2.jpg" />
 
-4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding new libraries, click the **+** button.
+4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding the new libraries, click the **+** button.
 
    - `libresolv.tbd`
    - `libc++.1.dylib`
@@ -120,7 +120,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    <img alt="../_images/mac_video_4.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_4.jpg" />
 
-   `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK and add `AgoraRtcEngineKit.framework`.
+   `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
 
    <img alt="../_images/mac_video_5.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_5.jpg" />
 
@@ -128,8 +128,8 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 Before enabling a video call, you need to enable camera and microphone access to the SDK on your device. Open `info.plist` and click **+** to add:
 
-- **Privacy - Microphone Usage Description**, and add a note in the **Value** colume.
-- **Privacy - Camera Usage Description**, and add a note in the **Value** colume.
+- **Privacy - Microphone Usage Description**, and add a note in the **Value** column.
+- **Privacy - Camera Usage Description**, and add a note in the **Value** column.
 
 **Before:**
 
@@ -145,13 +145,13 @@ You can access the added library using [Objective-C](#oc) or [Swift](#swift).
 
 ### <a name = "oc"></a>Objective-C
 
-In the main file that uses Agora APIs, add `#import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>`.
+In the main file that uses the Agora APIs, add `#import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>`.
 
 > The SDK provides FAT image libraries with multi-architecture support for both 32/64-bit audio emulators and 32/64-bit audio/video real devices.
 
 ### <a name = "swift"></a>Swift
 
-In the main file that uses Agora APIs, add `import AgoraRtcEngineKit`.
+In the main file that uses the Agora APIs, add `import AgoraRtcEngineKit`.
 
 <img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_8.jpg" />
 
