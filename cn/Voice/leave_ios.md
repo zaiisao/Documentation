@@ -3,7 +3,7 @@
 title: 离开频道
 description: ios平台离开频道
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:02:53 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:55 GMT+0000 (UTC)
 ---
 # 离开频道
 通话或直播结束时，调用 `leaveChannel` 方法离开频道。
