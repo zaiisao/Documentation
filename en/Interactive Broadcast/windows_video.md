@@ -1,11 +1,11 @@
 
 ---
-title: Integrate SDK
+title: Integrate the SDK
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:06:22 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 15:51:37 GMT+0000 (UTC)
 ---
-# Integrate SDK
+# Integrate the SDK
 ## Prerequisites
 
 -   OS: Microsoft Windows 7+
