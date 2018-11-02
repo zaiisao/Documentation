@@ -1,11 +1,11 @@
 
 ---
-title: Integrate SDK
+title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:05:52 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 15:53:05 GMT+0000 (UTC)
 ---
-# Integrate SDK
+# Integrate the SDK
 ## Prerequisites
 
 -   A device with audio and video running Android 4.1 or higher
