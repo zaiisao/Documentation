@@ -3,11 +3,9 @@
 title: Technical Specification
 description: 
 platform: Technical Specification
-updatedAt: Thu Nov 01 2018 09:20:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:16:58 GMT+0000 (UTC)
 ---
 # Technical Specification
-# Technical Specification
-
 ## Platform and Scale
 
 #### What platforms does Agora support?
