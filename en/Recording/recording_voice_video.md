@@ -3,11 +3,9 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Thu Nov 01 2018 08:10:55 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:01:35 GMT+0000 (UTC)
 ---
 # Recording Voice and Video
-# Recording Voice and Video
-
 This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
 
 -   During voice recording, if a user leaves the channel and rejoins it after 15 seconds, a new recording session will be created, and two separate recorded files will be generated.
@@ -400,7 +398,7 @@ Options:
 
 See the following figure for the different transcoding script options:
 
-<img alt="../_images/recording_demo.png" src="https://web-cdn.agora.io/docs-files/en/recording_demo.png" style="width: 999.0px; height: 702.0px;"/>
+<img alt="../_images/recording_demo.png" src="https://web-cdn.agora.io/docs-files/en/recording_demo.png" />
 
 
 The transcoded MPEG-4 file supports the following players:
