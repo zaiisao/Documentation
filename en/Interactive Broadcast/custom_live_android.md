@@ -3,11 +3,9 @@
 title: Customizing the Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 10:09:23 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:22:29 GMT+0000 (UTC)
 ---
 # Customizing the Video Source and Renderer
-# Customizing the Video Source and Renderer
-
 ## Scenario Description
 
 The Agora SDK provides access to the default camera configuration. To extend the functionality, Agora provides access to customize the video source.
