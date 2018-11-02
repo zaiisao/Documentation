@@ -3,11 +3,9 @@
 title: 发版说明
 description: 
 platform: Java
-updatedAt: Thu Nov 01 2018 08:24:31 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:17:18 GMT+0000 (UTC)
 ---
 # 发版说明
-# 发版说明
-
 ## 概览
 
 Agora Server SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。
