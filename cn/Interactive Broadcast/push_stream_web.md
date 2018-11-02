@@ -3,14 +3,12 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 09:09:13 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:20:47 GMT+0000 (UTC)
 ---
 # 推流到 CDN
-# 推流到 CDN
-
 网页端直播场景下，你可以通过以下步骤实现推流：
 
-<img alt="../_images/push_stream_web.png" src="https://web-cdn.agora.io/docs-files/cn/push_stream_web.png" style="width: 389.0px; height: 551.0px;"/>
+<img alt="../_images/push_stream_web.png" src="https://web-cdn.agora.io/docs-files/cn/push_stream_web.png" style="width: 500px;"/>
 
 > 请联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
 
