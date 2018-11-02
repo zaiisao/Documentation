@@ -3,9 +3,8 @@
 title: 视频相关
 description: 
 platform: 视频相关
-updatedAt: Thu Nov 01 2018 08:07:33 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:04:54 GMT+0000 (UTC)
 ---
-# 视频相关
 # 视频相关
 ## 卡顿
 视频卡顿问题一般由网络、设备性能等原因造成，请按以下步骤进行排查：
