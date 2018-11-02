@@ -3,11 +3,9 @@
 title: Other Issues
 description: 
 platform: Other Issues
-updatedAt: Thu Nov 01 2018 09:23:52 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:18:14 GMT+0000 (UTC)
 ---
 # Other Issues
-# Other Issues
-
 ### Unable to Join a Channel
 
 1. Check whether there is any error code.
