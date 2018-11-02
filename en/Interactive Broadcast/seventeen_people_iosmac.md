@@ -3,11 +3,9 @@
 title: Video Conference of 7+ Participants
 description: 
 platform: iOS,macOS
-updatedAt: Thu Nov 01 2018 10:19:49 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:23:52 GMT+0000 (UTC)
 ---
 # Video Conference of 7+ Participants
-# Video Conference of 7+ Participants
-
 If a video conference has too many host broadcasters, latency or packet loss may occur.
 
 Now, if we set the subscribing stream to the **1-N** Mode, that is, set 1 stream as high and the rest low, then a maximum of 17 participants can join host an interactive broadcast without experiencing latency.
