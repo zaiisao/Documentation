@@ -3,11 +3,9 @@
 title: Native SDK 相关
 description: 
 platform: Native SDK 相关
-updatedAt: Thu Nov 01 2018 08:24:05 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:43 GMT+0000 (UTC)
 ---
 # Native SDK 相关
-# Native SDK 相关
-
 ## Crash问题处理
 SDK crash问题属于稳定性问题，具体处理方案请参见《音视频核心问题专项》中“稳定性”章节：稳定性（LinShuo）
 
