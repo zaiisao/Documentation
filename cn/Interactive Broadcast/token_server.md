@@ -3,11 +3,9 @@
 title: 在服务端生成密钥
 description: Guide on how to generate tokens on the server side
 platform: 服务端
-updatedAt: Thu Nov 01 2018 08:26:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:33 GMT+0000 (UTC)
 ---
 # 在服务端生成密钥
-# 在服务端生成密钥
-
 本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
 
 Agora 的鉴权 API 涵盖 Java、Python、CPP、Ruby、Node.js、PHP、Go 语言，你可以根据实际需要，选择相应的语言。
