@@ -3,18 +3,16 @@
 title: Modify Raw Data
 description: 
 platform: iOS
-updatedAt: Thu Nov 01 2018 09:26:54 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:09:43 GMT+0000 (UTC)
 ---
 # Modify Raw Data
-# Modifying Raw Data
-
 The Agora raw data interface is an advanced feature provided in the SDK library for users to obtain the voice or video raw data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
 
 You can implement a preprocessing stage before sending the data to the encoder and modifying the captured video frames or voice signals. You can also implement a postprocessing stage after sending the data to the decoder and modifying the received video frames or voice signals.
 
 The Agora raw data interface is a C++ interface.
 
-## Modifying Voice Raw Data
+## Modify Voice Raw Data
 
 1. Define `AgoraAudioFrameObserver` by inheriting `IAudioFrameObserver` (the `IAudioFrameObserver` Class is defined in `IAgoraMediaEngine.h`). You need the following virtual interfaces:
 
