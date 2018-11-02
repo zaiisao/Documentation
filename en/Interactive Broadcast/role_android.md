@@ -1,11 +1,11 @@
 
 ---
-title: Switch Client Role
+title: Switch the Client Role
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:16:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 16:32:01 GMT+0000 (UTC)
 ---
-# Switch Client Role
+# Switch the Client Role
 The channel includes two user roles once you set the channel profile as live broadcast. Call `setClientRole` method to set the user roles according to the needs. The differences of the two roles are:
 
 -   Host (Broadcaster): A host can receive and publish the voice streams. The host can also interact with other hosts using voice.
