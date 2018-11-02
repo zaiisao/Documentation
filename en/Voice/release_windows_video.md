@@ -3,11 +3,9 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Nov 01 2018 08:34:02 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:17 GMT+0000 (UTC)
 ---
 # Release Notes
-# Release Notes
-
 This page provides the release notes for the Agora Full SDK.
 
 ## Overview
