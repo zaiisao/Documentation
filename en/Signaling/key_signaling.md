@@ -3,17 +3,14 @@
 title: Security Keys
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 09:42:03 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:36 GMT+0000 (UTC)
 ---
 # Security Keys
-# Security Keys
-
 ## Introduction
 
 The Agora SDK provides two different keys for authentication: [App ID](#APPID) and [SignalingToken](#SignalingToken). The following figure shows the environments in which the keys are used:
 
-<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_signaling.jpg" style="width: 543.2px; height: 403.2px;"/>
-
+<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_signaling.jpg" style="width: 630px;"/>
 
 Where:
 
@@ -51,7 +48,7 @@ Each Agora account can create multiple projects, and each project has a unique A
 
 3.  Fill in the **Project Name** and click **Submit**.
 
-    <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 255.0px; height: 105.5px;"/>
+    <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
 
 4.  Find the App ID under the created project.
 
@@ -83,18 +80,18 @@ Each Agora account can create multiple projects, and each project has a unique A
 
 3.  Fill in the **Project Name** and click **Submit**. Find the App ID under the created project.
 
-     <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 255.0px; height: 105.5px;"/>
+     <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
 
 4.  Enable the App Certificate for the project.
 
 	-   Click **Edit** on the top-right of the project.
 	-   Click **Enable** to the right of the App Certificate. Read **About App Certificate** before confirming the operation.
 
-        <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/en/enable_app_cert.png" style="width: 366.0px; height: 47.0px;"/>
+         <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/en/enable_app_cert.png" style="width: 420.0px;"/>
 
 	-  Click the ‘eye’ icon to view the App Certificate. You can re-click this icon to hide the App Certificate.
 
-        <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/en/view_app_certificate.png" style="width: 476.0px; height: 58.0px;"/>
+        <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/en/view_app_certificate.png" style="width: 420.0px;"/>
 
 > -   An App Certificate is enabled for the sole purpose of generating a Token and cannot be used alone.
 > 
