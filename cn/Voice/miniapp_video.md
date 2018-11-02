@@ -3,11 +3,9 @@
 title: 集成客户端
 description: 
 platform: 微信小程序
-updatedAt: Thu Nov 01 2018 07:46:21 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 03:59:23 GMT+0000 (UTC)
 ---
 # 集成客户端
-# 集成客户端
-
 ## 前提条件
 
 请确保满足以下开发环境要求：
@@ -39,17 +37,13 @@ updatedAt: Thu Nov 01 2018 07:46:21 GMT+0000 (UTC)
 
 2.  登陆 Dashboard 页面，点击 **添加新项目**。
 
-
-<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" style="width: 906.4px; height: 260.6px;"/>
-
+	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
 3.  填写 **项目名**，然后点击 **提交**。
 
 4.  在你创建的项目下，查看并获取该项目对应的 **App ID**。
 
-
-<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" style="width: 912.8px; height: 230.2px;"/>
-
+	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" />
 
 5.  联系 [sales@agora.io](mailto:sales@agora.io) 为该 App ID 开通小程序权限。
 
