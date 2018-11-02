@@ -3,11 +3,9 @@
 title: 设置开发环境
 description: 
 platform: Linux
-updatedAt: Thu Nov 01 2018 07:38:27 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:28 GMT+0000 (UTC)
 ---
 # 设置开发环境
-# 设置开发环境
-
 本页介绍如何设置环境以集成 Agora Recording SDK for Linux 。
 
 ## 硬件和网络要求
@@ -130,7 +128,7 @@ updatedAt: Thu Nov 01 2018 07:38:27 GMT+0000 (UTC)
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads)
 
-    <img alt="../_images/linux_structure.png" src="https://web-cdn.agora.io/docs-files/cn/linux_structure.png" style="width: 412.0px; height: 712.0px;"/>
+    <img alt="../_images/linux_structure.png" src="https://web-cdn.agora.io/docs-files/cn/linux_structure.png" style="width: 500.0px;"/>
 
 
 
