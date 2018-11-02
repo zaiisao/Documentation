@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 15:59:56 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 16:00:42 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Create an AgoraRtcEngine instance by invoking <code>create</code>, and initialize the instance by invoking <code>initialize</code>.
