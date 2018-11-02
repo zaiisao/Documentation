@@ -3,11 +3,9 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Thu Nov 01 2018 09:29:27 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:20:10 GMT+0000 (UTC)
 ---
 # Release Notes
-# Release Notes
-
 ## Introduction
 
 The Agora Interactive Gaming Voice SDK provides the voice function for gaming. For the video function for gaming, please contact [sales-us@agora.io](mailto:sales-us@agora.io).
