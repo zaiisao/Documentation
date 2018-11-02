@@ -1,0 +1,22 @@
+
+---
+title: FAQ
+description: 
+platform: Integration and Deployment
+updatedAt: Thu Nov 01 2018 09:21:00 GMT+0000 (UTC)
+---
+# FAQ
+
+# Integration and Deployment
+This category contains questions and answers for integrating and using Agora SDK.
+
+[Video-related Questions](../../en/Agora%20Platform/video_how_to.md)
+
+[Channel](../../en/Agora%20Platform/channel_faq.md)
+
+[Android Specific Questions](../../en/Agora%20Platform/android_related.md)
+
+[SDK Behavior when a User Drops Offline or a Process Gets Kill](../../en/Agora%20Platform/sdk_behaviors.md)
+
+[Other Questions](../../en/Agora%20Platform/other_questions_how_to.md)
+

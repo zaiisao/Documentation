@@ -1,0 +1,131 @@
+
+---
+title: Publish and Subscribe to Streams
+description: 
+platform: macOS
+updatedAt: Thu Nov 01 2018 09:06:21 GMT+0000 (UTC)
+---
+# Publish and Subscribe to Streams
+# Publish and Subscribe to Streams
+## Enable the video mode
+Call `enableVideo` to enable the video mode. The voice function is enabled by default in the Agora SDK, so you can call this method before or after joining in the channel.
+
+- If you enable the video mode before joining the channel, you enter directly into a video broadcast.
+- If you enable the video mode after joining the channel, the voice broadcast switches to a video broadcast.
+
+```objective-c
+//Objective-C
+- (void)enableVideo {
+  [self.agoraKit enableVideo];
+  // Default mode is disableVideo
+}
+```
+
+```swift
+//Swift
+func enableVideo() {
+  agoraKit.enableVideo()  //Default mode is disableVideo
+}
+```
+
+## Set the video profile
+After the video mode is enabled, call `setVideoEncoderConfiguration` to set the video encoding profile.
+
+In this method, secify the video encoding resolution, frame rate bitrate and orientation mode. 
+
+> - The parameters specified in this method are the maximum values under ideal network conditions. If the video engine cannot render the video using the specified parameters due to poor network conditions, the parameters further down the list are considered until success.
+> - If the device camera does not support the resolution specified by the video profile, the SDK automatically chooses a suitable camera resolution. This does not change the encoder resolution, and encoding will still use the resolution specified by `setVideoProfile` .
+
+```objective-c
+//Objective-C
+AgoraVideoEncoderConfiguration *configuration =
+[[AgoraVideoEncoderConfiguration alloc]
+initWithSize:AgoraVideoDimension640x360
+frameRate:AgoraVideoFrameRateFps15 bitrate:400
+orientationMode:AgoraVideoOutputOrientationModeFixedPortrait];
+
+[self.agoraKit setVideoEncoderConfiguration:configuration];
+```
+
+```swift
+//Swift
+let configuration = AgoraVideoEncoderConfiguration(size:
+AgoraVideoDimension640x360, frameRate: .fps15, bitrate: 400,
+orientationMode: .fixedPortrait)
+agoraKit.setVideoEncoderConfiguration(configuration)
+```
+
+## Set the local video view
+The local video view is the display of the local video streams on the user’s local device.
+
+Call the `setupLocalVideo` method before entering into a channel to bind the application with the video window of the local stream and configure the local video display.
+
+In this method:
+
+- Choose the display window of the local video streams.
+- Specify the video display mode.
+  - Hidden mode: The SDK scales the video until it fills the visible view boundaries. One dimension of the video may be clipped.
+  - Fit mode: The SDK scales the video until one of its dimensions fits the boundaries. Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
+- Pass the UID of the local user. The default value is 0.
+
+```objective-c
+//Objective-C
+- (void)setupLocalVideo {
+  AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
+  videoCanvas.uid = 0;
+
+  videoCanvas.view = self.localVideo;
+  videoCanvas.renderMode = AgoraVideoRenderModeHidden;
+  [self.agoraKit setupLocalVideo:videoCanvas];
+  // Bind local video stream to view
+}
+```
+
+```swift
+//Swift
+func setupLocalVideo() {
+  let videoCanvas = AgoraRtcVideoCanvas()
+  videoCanvas.uid = 0
+  videoCanvas.view = localVideo
+  videoCanvas.renderMode = .hidden
+  agoraKit.setupLocalVideo(videoCanvas)
+}
+```
+
+## Set the remote video view
+The remote video view is the display of the remote video streams on the user’s local device.
+
+Call the `setupRemoteVideo` method to configure the remote video display.
+
+In this method:
+
+- Choose the display window of the remote video streams.
+- Specify the video display mode.
+  - Hidden mode: The SDK scales the video until it fills the visible view boundaries. One dimension of the video may be clipped.
+  - Fit mode: The SDK scales the video until one of its dimensions fits the boundaries. Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
+- Pass the UID of the remote user. If the remote UID is unknown to the application, set it later when the application receives the `didJoinedOfUid` event.
+
+```objective-c
+//Objective-C
+- (void)setupRemoteVideo {
+  AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
+  videoCanvas.uid = uid;
+
+  videoCanvas.view = self.remoteVideo;
+  videoCanvas.renderMode = AgoraVideoRenderModeFit;
+  [self.agoraKit setupRemoteVideo:videoCanvas];
+  // Bind remote video stream to view
+}
+```
+
+```swift
+//Swift
+func setupRemoteVideo() {
+    let videoCanvas = AgoraRtcVideoCanvas()
+    videoCanvas.uid = 1
+    videoCanvas.view = remoteVideo
+    videoCanvas.renderMode = .fit
+    agoraKit.setupRemoteVideo(videoCanvas)
+}
+```
+

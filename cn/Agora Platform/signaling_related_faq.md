@@ -1,0 +1,132 @@
+
+---
+title: 信令相关
+description: 
+platform: 信令相关
+updatedAt: Thu Nov 01 2018 08:09:28 GMT+0000 (UTC)
+---
+# 信令相关
+# 信令相关
+
+### 怎么获取用户在线列表？
+
+SDK 内有 `onUserJoined` 和 `onUserOffline` 的回调接口，可以知道用户上线和离线时刻的通知。也可以通过使用服务端 Dashboard RESTful API 来获取用户在线列表，详见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
+
+### 怎么设置 PSTN 的主叫号码？
+
+* 如果你使用 channelInvitePhone2，最后的参数为主叫号码。
+* 如果你使用 channelInvitePhone，用户账号为主叫号码。
+
+### Agora.io 提供 PSTN 方案吗？
+
+我们只提供 PSTN 对接能力，但不提供线路/解决方案。
+
+### App 的用户之间要建立和发起一个呼叫，整个流程是怎样的？
+
+以 A 呼叫 B 为例，一般呼叫流程如下:
+
+1. A 向信令服务器发起呼叫请求。
+
+2. 信令服务器检查 B 是否在线：
+    * 如不在线，向 A 返回 B 不在线错误。
+    * 如在线，信令服务器生成频道名，返回给 A；并向 B 投递呼叫信令。
+
+3. A 收到信令服务器返回的频道名，准备加入语音频道。此时为加快进频道速度，可以提前进入频道待命：
+    * A 调用 `muteLocalAudioStream(true)` 和 `muteLocalVideoStream(true)`（如有视频功能）禁止发送音视频数据。
+    * 调用` joinChannel` 进入频道。
+
+4. B 收到信令服务器投递过来的A的呼叫请求。
+   * B 响铃。为加快进频道速度，可以提交进入频道待命。
+   * B 调用 `muteLocalAudioStream(true)` 和 `muteLocalVideoStream(true)`（如有视频功能）禁止发送音视频数据。
+
+5. A 调用 `joinChannel` 进入频道：
+     - 如 B 拒绝请求：
+    * B 调用 `leaveChannel` 退出频道
+    * B 向信令服务器返回拒绝应答
+    * 信令服务器向 A 返回 B 拒绝应答信令
+    * A 调用 `leaveChannel` 退出频道
+     - 如 B 接受请求：
+    * B 调用 `muteLocalAudioStream(false)` 和 `muteLocalVideoStream(false)` 开始发送音视频数据
+    * B 向信令服务器返回接受应答信令
+    * 调用 `muteLocalAudioStream(false)` 和 `muteLocalVideoStream(false)` 开始发送音视频数据
+
+### 消息通常可以储存多久?
+
+<table>
+  <tr>
+    <th>消息</th>
+    <th>储存时长</th>
+  </tr>
+  <tr>
+    <td>频道消息</td>
+    <td>频道消息会确保发送</td>
+  </tr>
+  <tr>
+    <td>一对一消息</td>
+    <td>该消息会保存一天</td>
+  </tr>
+  <tr>
+    <td>呼叫消息</td>
+    <td><li>如果用户 A 呼叫 B 超过 30 秒, B 还没有收到呼叫邀请消息，该呼叫会自动挂断。</li><li>如果用户 A 呼叫 B 超过 20 秒(该值可配)， B 收到呼叫邀请后没有返回任何确认信息，A 将收到呼叫失败的通知。之后不再会收到超时通知</li></td>
+  </tr>
+</table>
+
+### 信令登录失败
+
+1. 检查网络是否正常。
+2. 检查 App ID, App Certificate, 和 Signaling Key 是否正确。
+
+### 返回 LOGIN_E_TOKENWRONG(206) 错误
+
+该错误是由于使用的 Signaling Key 无效引起的，主要原因如下：
+
+* 请检查 App ID 是否正确。
+* 请检查 App Certificate 是否正确，是否在 Dashboard 已启用。App Certificate 在 Dashboard 上启用 1 小时后，方能生效。
+* 请检查生成 token (Signaling Key) 的算法是否正确。
+
+关于如何获取正确的 App ID 和 App Certificate, 以及如何使用正确的算法生成 Signaling Key, 详见 [信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
+
+### 无法拨通一个已经通过验证的 PSTN 电话号码
+
+确认您在号码前添加了国家代码。如果是固定电话或者800电话号码，必须在号码前加上区号。
+
+### 打不通电话，如何判断是 APP 逻辑问题，还是 [Agora.io](https://www.agora.io/cn/)  提供的 SDK 有问题？
+
+建议您在 [Agora.io](https://www.agora.io/cn/)  提供的 demo 程序里测试一下，如果在 demo 程序里可以打通电话，那就是 APP 的逻辑问题。
+
+登陆不成功，没有 loginsuccess 回调？
+
+通过 Error Code 进行初步判断：
+
+Error206：token 错误
+
+先获取客户 app id，检查一下他登录传的 token 参数是什么。如果是 no need token 这种，确认 dashboard 里 token 调试开关已经打开。
+
+![](https://web-cdn.agora.io/docs-files/1540453296247)
+
+如果 token 传的是自己算的
+
+* 确认客户的 app certificate 是开启的
+* 确认客户时间戳是 10 位，并且没有过期
+* 要来客户登录的 account 名字
+* 自己拿客户的 app id，certificate，account，时间戳，算 token 去登录，若成功，客户自己算的 token 有问题，双方都发出来比对一下
+* 若登录失败，询问后台（前提你要确认自己算的 token 是正确的，并且登录也是可以正常进行的，建议自己先拿测试 appid cert 等测一遍，确认你的测试 demo 是工作的）
+
+token 过期当时不会被踢出频道，过期时间尝试登录会失败。
+
+Error201
+
+* app id 没填或 token 直接传 null 或者空，或者配置文件内的格式不对（没回车换行，有空格等等）导致没识别到 app id。
+* 网络有问题，看下是否上网正常
+* 获取 SDK 日志
+
+### 掉线问题
+
+* 断网/弱网：可以试一下打开百度的网页看速度怎么样
+* 被踢掉：多个设备/实例登陆同一个 app id下的同一个 account id，会踢掉上一个登陆的人
+* Web 和 Java SDK 被踢错误码和网络掉线错误码用的都是102，目前没办法，之后再改
+* 连不上服务器（有可能是我们的问题，拿日志给研发检查一下）
+* Native SDK 网络不好的情况下内部会尝试重连，一旦 `logout` 回调出来就不再重连了
+* Web SDK 1.4 版本的刚刚加入 SDK 的内部重连，之前版本，网络一断立即 `logout`
+* Java SDK 目前没有做 SDK 内部重连
+
