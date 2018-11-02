@@ -3,13 +3,12 @@
 title: 加入频道
 description: 小程序加入频道
 platform: 微信小程序
-updatedAt: Thu Nov 01 2018 08:07:26 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:01:31 GMT+0000 (UTC)
 ---
-# 加入频道
 # 加入频道
 初始化客户端对象后，在成功的回调中调用  加入频道 `join` 方法，并在该方法中填入以下参数值：
 
--   `channelKey`：在用户服务器端生成的动态密钥（Channel Key 或 Token）。详细生成办法见 [密钥说明](../../cn/Voice/token.md) 。如果没有开启动态密钥，设置为 null。
+-   `tokenOrKey`：在用户服务器端生成的动态密钥（Channel Key 或 Token）。详细生成办法见 [密钥说明](../../cn/Voice/token.md) 。如果没有开启动态密钥，设置为 null。
 
 -   `channel`：能标识频道的频道名。
 
@@ -17,7 +16,7 @@ updatedAt: Thu Nov 01 2018 08:07:26 GMT+0000 (UTC)
 
 
 ```
-client.join(channelKey, channel, uid, onSuccess, onFailure);
+client.join(tokenOrKey, channel, uid, onSuccess, onFailure);
 ```
 
 如果你的小程序中有切后台的场景需求，还需要调用 `rejoin` 方法做好重连机制。
