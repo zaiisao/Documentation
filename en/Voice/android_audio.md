@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 20:44:33 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 20:44:37 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
@@ -115,7 +115,7 @@ If you see the following “NDK not configured” error message, download and in
 	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px;"/>
 
 
-## Adding Device Permissions
+## Adding the Device Permissions
 
 1. Open the `AndroidManifest.xml` file located under **app \> src \> main** and add the required device permissions to the file.
 
