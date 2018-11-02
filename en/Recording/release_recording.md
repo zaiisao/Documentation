@@ -3,11 +3,9 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Thu Nov 01 2018 08:03:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:00:44 GMT+0000 (UTC)
 ---
 # Release Notes for the Recording SDK
-# Release Notes for the Recording SDK
-
 ## Overview
 
 The Agora Recording SDK records communication and live broadcast contents based on the Agora Native SDK or/and Agora Web SDK.
