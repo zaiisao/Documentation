@@ -3,9 +3,8 @@
 title: Switch Client Role
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 09:56:06 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:16:30 GMT+0000 (UTC)
 ---
-# Switch Client Role
 # Switch Client Role
 On the Web Client, the client role is switched with the following three interfaces:
 
