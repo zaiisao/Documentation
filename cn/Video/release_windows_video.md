@@ -3,9 +3,8 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Thu Nov 01 2018 07:30:22 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 03:58:33 GMT+0000 (UTC)
 ---
-# 发版说明
 # 发版说明
 
 本文提供 Agora 完整包的发版说明。
@@ -21,17 +20,17 @@ Windows 完整包支持两种主要场景:
 
 将下载的 Windows 软件包解压后, 你会看见两个包，根据实际情况选择使用 x64 或 x86 包:
 
-<img alt="../_images/windows_package.png" src="https://web-cdn.agora.io/docs-files/cn/windows_package.png" style="width: 297.0px; height: 51.0px;"/>
+<img alt="../_images/windows_package.png" src="https://web-cdn.agora.io/docs-files/cn/windows_package.png" style="width: 300px; "/>
 
 
 解压 x64 或 x86 后，包内的 examples 文件夹下有两个示例代码供你演示功能使用: AgoraOpenLive 和 OpenVideoCall 。 在编译示例代码时须确保编译环境选对。例如，x64 编译环境选择 x64:
 
-<img alt="../_images/x64.png" src="https://web-cdn.agora.io/docs-files/cn/x64.png" style="width: 282.0px; height: 53.5px;"/>
+<img alt="../_images/x64.png" src="https://web-cdn.agora.io/docs-files/cn/x64.png" style="width: 300px; "/>
 
 
 x86 的编译环境选择 Win32:
 
-<img alt="../_images/x86.png" src="https://web-cdn.agora.io/docs-files/cn/x86.png" style="width: 278.0px; height: 42.0px;"/>
+<img alt="../_images/x86.png" src="https://web-cdn.agora.io/docs-files/cn/x86.png" style="width: 300px; "/>
 
 
 ## **2.2.0 版**
