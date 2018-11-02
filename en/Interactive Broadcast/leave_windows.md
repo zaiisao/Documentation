@@ -3,9 +3,8 @@
 title: Leave the Channel
 description: 
 platform: Windows
-updatedAt: Thu Nov 01 2018 09:09:48 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:09:13 GMT+0000 (UTC)
 ---
-# Leave the Channel
 # Leave the Channel
 When a call or live broadcast ends, call the <code>leaveChannel</code> method to leave the channel.
 
