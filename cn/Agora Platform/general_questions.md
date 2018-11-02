@@ -3,11 +3,9 @@
 title: FAQ
 description: 
 platform: 常见问题
-updatedAt: Thu Nov 01 2018 08:00:38 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:18 GMT+0000 (UTC)
 ---
 # FAQ
-# 常见问题
-
 该部分包含声网 Agora 产品、服务、参数等相关的问题及回答。
 
  [产品](../../cn/Agora%20Platform/product_faq.md)
