@@ -3,11 +3,9 @@
 title: Agora Interactive Broadcast Overview
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 09:28:30 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:57 GMT+0000 (UTC)
 ---
 # Agora Interactive Broadcast Overview
-# Agora Interactive Broadcast Overview
-
 With the Agora globally-deployed SD-RTN™ \(Software Defined Real-time Network\) and end-to-end network technology, the Agora Native SDK for Live Broadcast provides superior live broadcast quality with minimum latency and low packet loss.
 
 ## Functions
