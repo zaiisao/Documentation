@@ -3,11 +3,9 @@
 title: Host In
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 02:35:28 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:18:41 GMT+0000 (UTC)
 ---
 # Host In
-# Hosting In
-
 This page describes how to implement the host-in function at the client side.
 
 In the current market, a live broadcast pushes the host’s voice and video data to the CDN cloud through the RTMP protocol. This results in high latency with the host and audience unable to interact with each other. With Agora’s host-in function and the push-stream function provided by live broadcast vendors or Agora servers, you can implement the following functions:
