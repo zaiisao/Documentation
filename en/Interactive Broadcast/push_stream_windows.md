@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 17:07:26 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 17:07:54 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 In a live broadcast, there are two options to push streams:
