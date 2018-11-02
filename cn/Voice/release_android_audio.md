@@ -3,11 +3,9 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 07:56:57 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 03:57:32 GMT+0000 (UTC)
 ---
 # 发版说明
-# 发版说明
-
 本文提供 Agora 语音包的发版说明。
 
 ## **简介**
