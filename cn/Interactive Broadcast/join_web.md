@@ -3,9 +3,8 @@
 title: 加入频道
 description: web平台加入频道
 platform: Web
-updatedAt: Thu Nov 01 2018 08:07:52 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:01:38 GMT+0000 (UTC)
 ---
-# 加入频道
 # 加入频道
 初始化 Client 对象完成后， 在成功的回调中调用 `client.join` 方法。
 
