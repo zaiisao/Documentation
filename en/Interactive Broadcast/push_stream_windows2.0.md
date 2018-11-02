@@ -1,11 +1,11 @@
 
 ---
-title: Pushing Streams to the CDN
+title: Push Streams to the CDN
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:23:32 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 17:08:26 GMT+0000 (UTC)
 ---
-# Pushing Streams to the CDN
+# Push Streams to the CDN
 Agora's CDN publishing solution is based on the following APIs to publish streams to the CDN, inject external video streams, transcode, and set the output layout.
 
 -   `addPublishStreamUrl`
