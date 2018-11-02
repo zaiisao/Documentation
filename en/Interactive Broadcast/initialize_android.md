@@ -3,9 +3,8 @@
 title: Create an Agora Instance
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 08:59:51 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:17 GMT+0000 (UTC)
 ---
-# Create an Agora Instance
 # Create an Agora Instance
 The following imports define the interface of the Agora API that provides communication functionality:
 
