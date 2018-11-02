@@ -3,7 +3,7 @@
 title: Security Keys
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 07:36:13 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 07:36:31 GMT+0000 (UTC)
 ---
 # Security Keys
 This page describes the Token, Agora’s authentication mechanism. Before you start, check if your SDK version supports the Token:
@@ -316,16 +316,16 @@ The following table lists the APIs that require a Token as a parameter:
 </thead>
 <tbody>
 <tr><td>Android</td>
-<td><a href="https://docs.agora.io/en/Voice/API%20Reference/java/group___core___service.html#ga8b308c9102c08cb8dafb4672af1a3b4c"><span>Join a Channel (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/en/Voice/API%20Reference/java/group___core___service.html#gaf1428905e5778a9ca209f64592b5bf80"><span>Renew Token (renewToken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c"><span>Join a Channel (joinChannel)</span></a></td>
+<td><a href="https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af1428905e5778a9ca209f64592b5bf80"><span>Renew Token (renewToken)</span></a></td>
 </tr>
 <tr><td>iOS/macOS</td>
 <td><a href="https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:"><span>Join a Channel (joinChannelByToken)</span></a></td>
 <td><a href="https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/renewToken:"><span>Renew a Token (renewToken)</span></a></td>
 </tr>
 <tr><td>Windows</td>
-<td><a href="https://docs.agora.io/en/Voice/API%20Reference/cpp/group___core___methods.html#gadc937172e59bd2695ea171553a88188c"><span>Join Channel (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/en/Voice/API%20Reference/cpp/group___core___methods.html#ga8f25b5ff97e2a070a69102e379295739"><span>Renew a Token (renewtoken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c"><span>Join Channel (joinChannel)</span></a></td>
+<td><a href="https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8f25b5ff97e2a070a69102e379295739"><span>Renew a Token (renewtoken)</span></a></td>
 </tr>
 <tr><td>Web</td>
 <td><a href="https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#join"><span>Join an AgoraRTC Channel (join)</span></a></td>
