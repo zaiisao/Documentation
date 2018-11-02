@@ -3,9 +3,8 @@
 title: 技术参数
 description: 
 platform: 技术参数
-updatedAt: Thu Nov 01 2018 08:06:39 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:04:10 GMT+0000 (UTC)
 ---
-# 技术参数
 # 技术参数
 ## 平台与规模
 
