@@ -3,11 +3,9 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: iOS
-updatedAt: Thu Nov 01 2018 08:29:18 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:48 GMT+0000 (UTC)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
-# 客户端：发送点对点文本消息和频道文本消息
-
 ## 第一节：快速集成
 
 ### 第一步：准备开发环境。
