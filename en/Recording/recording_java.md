@@ -3,9 +3,8 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Thu Nov 01 2018 08:18:10 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:01 GMT+0000 (UTC)
 ---
-# Recording API 
 # Recording API 
 > Version: v2.2.3
 > This Java API is a data encapsulation of the C++ sample code with JNI, and is therefore slightly different from that of the C++ API in structure. The Agora SDK (sample code shared by C++ and Java) implements the C++ recording APIs and callbacks, goes through data encapsulation in the JNI layer, and then works as the Java interface and class of the Native SDK through the JNI proxy.
@@ -812,7 +811,7 @@ public class VideoMixingLayout
 
 Here is an example to show the position and size of the host’s head portrait. x, y, width and height are 0.5, 0.4, 0.2 and 0.3 respectively.
 
-<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/en/sei_overview.png" style="width: 561.4px; height: 484.4px;"/>
+<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/en/sei_overview.png" style="width: 500.0px;"/>
 
 
 ### <a name="leaveChannel"></a>Allows the App to Leave the Channel (leaveChannel)
