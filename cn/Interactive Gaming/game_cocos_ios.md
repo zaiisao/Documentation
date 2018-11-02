@@ -3,11 +3,9 @@
 title: 实现游戏语音功能
 description: 
 platform: Cocos_(iOS)
-updatedAt: Thu Nov 01 2018 08:43:35 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:10:30 GMT+0000 (UTC)
 ---
 # 实现游戏语音功能
-# 实现游戏语音功能
-
 使用 Agora 的 `Hello-Cocos2d-Agora` 代码示例可以实现以下功能:
 
 -   创建/加入频道
@@ -21,7 +19,7 @@ updatedAt: Thu Nov 01 2018 08:43:35 GMT+0000 (UTC)
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新的 Cocos2d 软件包。软件包结构如下:
 
-    <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Cocos2d.png" style="width: 587.0px; height: 537.0px;"/>
+    <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Cocos2d.png" style="width: 370.0px;"/>
 
 > `Hello-Cocos2d-Agora` 即为本文需要使用的代码示例。你也可以直接从 [Github](https://github.com/AgoraIO/Hello-Cocos2d-Agora/)下载。
 
@@ -46,7 +44,6 @@ updatedAt: Thu Nov 01 2018 08:43:35 GMT+0000 (UTC)
 
 3.  连接好真机，点击 **Run** 进行编译。
 
-如在编译过程中遇到任何问题，请参考 [游戏语音 FAQs](https://docs.agora.io/cn/2.2/faq/faq/game)。
 
 ## 步骤 3: 演示游戏语音
 
@@ -54,7 +51,7 @@ updatedAt: Thu Nov 01 2018 08:43:35 GMT+0000 (UTC)
 
 1.  在两部手机上输入相同频道名称。
 
-    <img alt="../_images/AMG-Voice-Cocos2d-Hello-World-Running.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Voice-Cocos2d-Hello-World-Running.png" style="width: 667.0px; height: 375.0px;"/>
+    <img alt="../_images/AMG-Voice-Cocos2d-Hello-World-Running.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Voice-Cocos2d-Hello-World-Running.png" style="width: 500.0px;"/>
 
 2.  点击 **Join Channel** 即可加入同一频道。
 
