@@ -3,7 +3,7 @@
 title: Use Signaling Security Keys
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 15:41:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 15:45:04 GMT+0000 (UTC)
 ---
 # Use Signaling Security Keys
 ## Introduction
