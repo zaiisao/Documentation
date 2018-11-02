@@ -3,11 +3,9 @@
 title: Screen Sharing on the Web
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 09:26:25 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:10:33 GMT+0000 (UTC)
 ---
 # Screen Sharing on the Web
-# Screen Sharing on the Web
-
 To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screen\(s\) to share.
 
 This page includes:
@@ -88,7 +86,7 @@ videoClient.join(channelKey, channel, null, function(uid) {
 
 If two clients of a host subscribe to each other, extra charges will occur:
 
-<img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/en/screensharing_streams.png" style="width: 559.2px; height: 400.0px;"/>
+<img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/en/screensharing_streams.png" style="width: 500px; "/>
 
 Agora recommends that you to save the returned `uid` when each client joins the channel. When the `‘stream-added’` event occurs, first check if the joined client is a local stream, if `yes`, do not subscribe to the client.
 
