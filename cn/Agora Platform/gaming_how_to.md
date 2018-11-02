@@ -3,11 +3,9 @@
 title: 游戏相关
 description: 
 platform: 游戏相关
-updatedAt: Thu Nov 01 2018 08:14:52 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:21 GMT+0000 (UTC)
 ---
 # 游戏相关
-# 游戏相关
-
 ### 我在使用 Unity3D 5.4 编译代码示例时，为什么报错?
 
 由于 Agora 提供的代码示例使用的是 Unity3D 5.5，所以当你使用 Unity3D 5.4 时，可能会出现以下问题：
