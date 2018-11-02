@@ -3,11 +3,9 @@
 title: Implement Encryption
 description: 
 platform: iOS
-updatedAt: Thu Nov 01 2018 09:22:26 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:09:36 GMT+0000 (UTC)
 ---
 # Implement Encryption
-# Implementing Encryption
-
 This page describes how to implement encryption.
 
 The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) includes:
@@ -25,7 +23,7 @@ Delete `AgoraRtcCryptoLoader.framework` and `libcrypto.a` in the [Agora SDK](htt
 
 The following figure shows how Agora’s communications use built-in encryption:
 
-<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" style="width: 760.0px; height: 586.0px;"/>
+<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" />
 
 > To reduce the SDK size, if your app uses `libcrypto.so`, you can use it instead of `libagora-crypto.so` included in the Agora SDK since both files are the same. The Agora SDK `libagora-crypto.so` version is 1.0.2g.
 
@@ -47,21 +45,21 @@ The following figure shows how Agora’s communications use built-in encryption:
 
 1. Set the search path of the framework in Xcode. For example:
 
-   <img alt="../_images/encryption_search_path.jpg" src="https://web-cdn.agora.io/docs-files/en/encryption_search_path.jpg" style="width: 880.0px; height: 272.25px;"/>
+   <img alt="../_images/encryption_search_path.jpg" src="https://web-cdn.agora.io/docs-files/en/encryption_search_path.jpg" />
 
 2. Add a bridging file, for example `XXX-bridge.h`, to your project folder. Under **Swift Compiler - General**, set **Objective-C Bridging Header** to the bridging file.
 
-   <img alt="../_images/encryption_select_bridgefile.jpg" src="https://web-cdn.agora.io/docs-files/en/encryption_select_bridgefile.jpg" style="width: 914.4px; height: 476.0px;"/>
+   <img alt="../_images/encryption_select_bridgefile.jpg" src="https://web-cdn.agora.io/docs-files/en/encryption_select_bridgefile.jpg" />
 
 3. Click **build phase** and move `AgoraRtcCryptoLoader.framework` and `libcrypto.a` from the **libs** folder of the SDK to the **Frameworks** folder of your project folder.
 
-   <img alt="../_images/encryption_add_encryptionlib.jpg" src="https://web-cdn.agora.io/docs-files/en/encryption_add_encryptionlib.jpg" style="width: 912.0px; height: 559.2px;"/>
+   <img alt="../_images/encryption_add_encryptionlib.jpg" src="https://web-cdn.agora.io/docs-files/en/encryption_add_encryptionlib.jpg" />
 
 4. Add `#import <AgoraRtcCryptoLoader/AgoraRtcCryptoLoader.h>` in the bridging header file.
 
 5. Declare an **AgoraRtcCryptoLoader** object in the file where **AgoraRtcEngine** is initialized to load the encryption module when compiling the link.
 
-   <img alt="../_images/encryption_declare_loader.png" src="https://web-cdn.agora.io/docs-files/en/encryption_declare_loader.png" style="width: 1088.64px; height: 451.2px;"/>
+   <img alt="../_images/encryption_declare_loader.png" src="https://web-cdn.agora.io/docs-files/en/encryption_declare_loader.png" />
 
 6. Enable encryption.
 
@@ -75,7 +73,7 @@ The following figure shows how Agora’s communications use built-in encryption:
 
 The following figure shows the customized encryption/decryption process:
 
-<img alt="../_images/developer-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/developer-encryption_en.png" style="width: 760.0px; height: 606.0px;"/>
+<img alt="../_images/developer-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/developer-encryption_en.png" />
 
 ## Step 1: Register a Packet Observer
 
