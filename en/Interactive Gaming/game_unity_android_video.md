@@ -3,16 +3,14 @@
 title: Implementing Video for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Thu Nov 01 2018 09:44:32 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:21:53 GMT+0000 (UTC)
 ---
 # Implementing Video for Gaming
-# Implementing Video for Gaming
-
 ## Step 1: Prepare the Environment
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Unity video kit. See the following structure:
 
-    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 318.6px; height: 328.2px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 420.0px;"/>
 
 
 2.  Hardware and software requirements:
@@ -32,7 +30,7 @@ updatedAt: Thu Nov 01 2018 09:44:32 GMT+0000 (UTC)
 
 1.  Open Unity to create a new project. Select **3D**.
 
-    <img alt="../_images/AMG-Video-Unity3D_23.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_23.png" style="width: 511.7px; height: 295.4px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_23.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_23.png" />
 
 
 2.  Add **Game Object: Sphere** and one **Button**in the default scene.
@@ -58,7 +56,7 @@ cp -r <SDKDIR>/libs/Plugins/Android/libs/armeabi-v7a  Assets/Plugins/Android/lib
 
 Follow [Interactive Gaming API](../../en/API%20Reference/game_unity.md) to call the APIs to implement the required functions. The following figure shows how to create a C\# script `example.cs`:
 
-<img alt="../_images/AMG-Video-Unity3D_25.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_25.png" style="width: 450.0px; height: 345.0px;"/>
+<img alt="../_images/AMG-Video-Unity3D_25.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_25.png" />
 
 
 ```
@@ -210,7 +208,7 @@ public class example : MonoBehaviour
 
 3.  Select the platform as **Android**:
 
-    <img alt="../_images/AMG-Video-Unity3D_8.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_8.png" style="width: 375.6px; height: 358.8px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_8.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_8.png" />
 
     -   Build System: Gradle
 
@@ -228,7 +226,7 @@ public class example : MonoBehaviour
 
 6.  Export the projects to the **Android** folder.
 
-    <img alt="../_images/AMG-Video-Unity3D_9.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_9.png" style="width: 538.3px; height: 310.1px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_9.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_9.png" />
 
 
 7.  Open the command terminal, go to the *Android/RollingVideo* directory, and run the following commands to compile the sample code:
@@ -245,7 +243,7 @@ To demonstrate the video for gaming functions, you will need two or more Android
 
 Run **RollingVideo** on both devices and click **Join**.
 
-<img alt="../_images/AMG-Video-Unity3D_20.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_20.png" style="width: 187.5px; height: 333.5px;"/>
+<img alt="../_images/AMG-Video-Unity3D_20.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_20.png" style="width: 420.0px;"/>
 
 
 You can now use video for gaming. If there is no video or voice, check the following:
