@@ -3,11 +3,9 @@
 title: Pushing Streams to the CDN
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 10:12:58 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:22:57 GMT+0000 (UTC)
 ---
 # Pushing Streams to the CDN
-# Pushing Streams to the CDN
-
 Agora's CDN publishing solution is based on the following APIs to publish streams to the CDN, inject external video streams, transcode, and set the output layout.
 
 -   `addPublishStreamUrl`
@@ -84,7 +82,7 @@ Use transcodingUser to adjust the picture-in-picture layout when a channel has m
 
 To display the following layout:
 
-<img alt="../_images/sei_2host.png" src="https://web-cdn.agora.io/docs-files/en/sei_2host.png" style="width: 416.0px; height: 240.0px;"/>
+<img alt="../_images/sei_2host.png" src="https://web-cdn.agora.io/docs-files/en/sei_2host.png" style="width: 420px;"/>
 
 Set the parameters as follows:
 
@@ -117,7 +115,7 @@ User1:
 
 To display the following layout:
 
-<img alt="../_images/sei_3host.png" src="https://web-cdn.agora.io/docs-files/en/sei_3host.png" style="width: 236.0px; height: 416.0px;"/>
+<img alt="../_images/sei_3host.png" src="https://web-cdn.agora.io/docs-files/en/sei_3host.png" style="width: 420px;"/>
 
 Set the parameters as follows:
 
@@ -159,7 +157,7 @@ Canvas:
 
 To display the following layout:
 
-<img alt="../_images/sei_random.png" src="https://web-cdn.agora.io/docs-files/en/sei_random.png" style="width: 828.0px; height: 416.0px;"/>
+<img alt="../_images/sei_random.png" src="https://web-cdn.agora.io/docs-files/en/sei_random.png" style="width: 840px;"/>
 
 Set the parameters as follows:
 
