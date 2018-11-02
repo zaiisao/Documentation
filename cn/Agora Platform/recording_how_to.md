@@ -3,11 +3,9 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Thu Nov 01 2018 08:14:20 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:32 GMT+0000 (UTC)
 ---
 # 录制相关
-# 录制相关
-
 ### 录制完成动作如何捕获
 
 自动模式录制：如果频道内没有人，当idle时间到，则停止录制，然后leaveChannel()离开频道。应用侧监控leaveChannel()则表示录制完成，可以转入下一步处理逻辑：例如录制完成后把录制文件上传到其他服务器上等。
