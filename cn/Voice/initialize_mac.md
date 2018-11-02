@@ -3,9 +3,8 @@
 title: 初始化 AgoraRtcEngineKit
 description: macOS平台初始化
 platform: macOS
-updatedAt: Thu Nov 01 2018 08:02:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:00:46 GMT+0000 (UTC)
 ---
-# 初始化 AgoraRtcEngineKit
 # 初始化 AgoraRtcEngineKit
 进入频道之前，调用 `sharedEngineWithAppId` 方法创建一个 AgoraRtcEngine 实例。
 
