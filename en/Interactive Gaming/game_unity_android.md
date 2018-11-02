@@ -1,11 +1,11 @@
 
 ---
-title: Implementing Voice for Gaming
+title: Implement Voice for Gaming
 description: 
-platform: Unity_(Android)
-updatedAt: Fri Nov 02 2018 04:20:31 GMT+0000 (UTC)
+platform: Unity
+updatedAt: Fri Nov 02 2018 08:53:11 GMT+0000 (UTC)
 ---
-# Implementing Voice for Gaming
+# Implement Voice for Gaming
 With the `Hello-Unity-Agora` Sample App provided by Agora, you can:
 
 - Create and join a channel
