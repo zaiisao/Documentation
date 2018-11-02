@@ -3,9 +3,8 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 09:06:21 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:08:37 GMT+0000 (UTC)
 ---
-# Publish and Subscribe to Streams
 # Publish and Subscribe to Streams
 ## Enable the video mode
 Call `enableVideo` to enable the video mode. The voice function is enabled by default in the Agora SDK, so you can call this method before or after joining in the channel.
