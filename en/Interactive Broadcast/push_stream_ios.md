@@ -1,11 +1,11 @@
 
 ---
-title: Pushing Streams to the CDN
+title: Push Streams to the CDN
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 02 2018 04:27:23 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 17:07:42 GMT+0000 (UTC)
 ---
-# Pushing Streams to the CDN
+# Push Streams to the CDN
 In a live broadcast, there are two options to push streams:
 
 -   Pushing streams at the server
