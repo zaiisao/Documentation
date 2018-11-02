@@ -3,11 +3,9 @@
 title: 信令相关
 description: 
 platform: 信令相关
-updatedAt: Thu Nov 01 2018 08:09:28 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:23 GMT+0000 (UTC)
 ---
 # 信令相关
-# 信令相关
-
 ### 怎么获取用户在线列表？
 
 SDK 内有 `onUserJoined` 和 `onUserOffline` 的回调接口，可以知道用户上线和离线时刻的通知。也可以通过使用服务端 Dashboard RESTful API 来获取用户在线列表，详见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
