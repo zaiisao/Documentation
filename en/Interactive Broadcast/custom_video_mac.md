@@ -3,11 +3,9 @@
 title: Customize the Video Source and Renderer
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 09:23:20 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:10:20 GMT+0000 (UTC)
 ---
 # Customize the Video Source and Renderer
-# Customizing the Video Source and Renderer
-
 ## Scenario Description
 
 The Agora SDK provides access to the default camera configuration. To extend the functionality, Agora provides access to customize the video source.
