@@ -3,11 +3,9 @@
 title: 其它常见问题
 description: 
 platform: 其它常见问题
-updatedAt: Thu Nov 01 2018 08:05:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:23 GMT+0000 (UTC)
 ---
 # 其它常见问题
-# 其它常见问题
-
 ### 为什么 Open Live 编译无法通过？
 
 Open Live 的编译需要用户提供自己申请的 App ID 才能通过。请在提示出错的地方，补上自己申请的 App ID。
