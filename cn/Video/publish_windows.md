@@ -3,9 +3,8 @@
 title: 发布和订阅音视频流
 description: windows平台上发布音视频流
 platform: Windows
-updatedAt: Thu Nov 01 2018 08:18:00 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:36 GMT+0000 (UTC)
 ---
-# 发布和订阅音视频流
 # 发布和订阅音视频流
 ## 打开视频模式
 调用 <code>enableVideo</code> 方法打开视频模式。在加入频道前，或通话过程中，你都可以调用该方法开启视频。音频功能是默认打开的。
