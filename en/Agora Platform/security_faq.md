@@ -3,11 +3,9 @@
 title: Security
 description: 
 platform: Security
-updatedAt: Thu Nov 01 2018 09:19:52 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:16:46 GMT+0000 (UTC)
 ---
 # Security
-# Security
-
 ### Are services provided by Agora safe?
 
 Agora provides a safe platform, and all transmitted signals are encrypted.
