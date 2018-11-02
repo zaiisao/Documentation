@@ -1,11 +1,11 @@
 
 ---
-title: Implementing Video for Gaming
+title: Implement Video for Gaming
 description: 
 platform: Unity_(iOS)
-updatedAt: Fri Nov 02 2018 04:21:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 08:54:18 GMT+0000 (UTC)
 ---
-# Implementing Video for Gaming
+# Implement Video for Gaming
 ## Step 1: Prepare the Environment
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Unity video kit. See the following structure:
