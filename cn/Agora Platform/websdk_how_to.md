@@ -3,9 +3,8 @@
 title: Web SDK 相关
 description: 
 platform: Web SDK 相关
-updatedAt: Thu Nov 01 2018 08:13:28 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:51 GMT+0000 (UTC)
 ---
-# Web SDK 相关
 # Web SDK 相关
 ### 视频过程中，如何更换音视频输入设备？
 枚举系统设备 接口 `getDevices`，通过这个接口可以获取用户的音视频输入输出设备。很多用户想要不选择设备，直接用默认识别到的第一个，可以直接在 `createstream` 接口中把 cameraId、microphoneId 填为""。用户也可以自己创建对象数组来管理本地设备（通过 kind 中的类型分类）。请注意 cameraId 和 microphoneId 不是唯一确定的而是随机生成的，部分情况下这个 ID 可能改变。所以目前音视频中途更换 device，需要 close 流之后，重新 `getDevice`，来建立新流。
