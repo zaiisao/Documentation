@@ -3,11 +3,9 @@
 title: Deploy the Enterprise Proxy
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 09:29:47 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:10:45 GMT+0000 (UTC)
 ---
 # Deploy the Enterprise Proxy
-# Deploy the Enterprise Proxy
-
 This page shows how enterprises can use the APIs provided by the Agora Web SDK to access Agora’s services through a company firewall.
 
 > This page applies to the Agora Web SDK only. Proxy services by different service providers may result in slow performance if you are using the Firefox browser. Therefore, Agora recommends using the same service provider for the proxy services. If you use different service providers, Agora recommends not using the Firefox browser.
@@ -236,7 +234,7 @@ var client = AgoraRTC.createClient(config);
 
 The following figure shows how the proxy works:
 
-<img alt="../_images/proxy_web_theory.jpg" src="https://web-cdn.agora.io/docs-files/en/proxy_web_theory.jpg" style="width: 924.0px; height: 380.8px;"/>
+<img alt="../_images/proxy_web_theory.jpg" src="https://web-cdn.agora.io/docs-files/en/proxy_web_theory.jpg" />
 
 - The enterprise deploys the two proxy servers: Nginx and TURN Server.
 - The enterprise users call the two methods in the Web SDK. Signaling messages are passed to Agora through the Nginx Server, while voice and video data streams are sent to Agora through TURN Server, thus enabling access to Agora’s services.
