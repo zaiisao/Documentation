@@ -3,11 +3,9 @@
 title: Integrate SDK
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 08:44:12 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:12 GMT+0000 (UTC)
 ---
 # Integrate SDK
-# Integrate SDK
-
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
 
 ## Prerequisites
@@ -25,13 +23,13 @@ This page contains information on how to prepare the development environment bef
 
 2. Click **Add New Project** on the **Projects** page of the dashboard.
 
-   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" style="width: 1142.0px; height: 360.0px;"/>
+   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
 
 3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
 
 4. Find the **App ID** under the created project.
 
-   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" style="width: 1138.0px; height: 344.0px;"/>
+   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
 
 ## Adding the Agora SDK to Your Project
 
@@ -92,11 +90,11 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 2. Open your project with Xcode and select the current Target.
 
-   <img alt="../_images/mac_video_1.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_1.jpg" style="width: 991.0px; height: 342.0px;"/>
+   <img alt="../_images/mac_video_1.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_1.jpg" />
 
 3. Navigate to the **Build Phases** tab.
 
-   <img alt="../_images/mac_video_2.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_2.jpg" style="width: 994.0px; height: 291.0px;"/>
+   <img alt="../_images/mac_video_2.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_2.jpg" />
 
 4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding new libraries, click the **+** button.
 
@@ -116,15 +114,15 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    **Before:**
 
-   <img alt="../_images/mac_video_3.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_3.jpg" style="width: 992.0px; height: 379.0px;"/>
+   <img alt="../_images/mac_video_3.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_3.jpg" />
 
    **After:**
 
-   <img alt="../_images/mac_video_4.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_4.jpg" style="width: 993.0px; height: 567.0px;"/>
+   <img alt="../_images/mac_video_4.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_4.jpg" />
 
    `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK and add `AgoraRtcEngineKit.framework`.
 
-   <img alt="../_images/mac_video_5.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_5.jpg" style="width: 994.0px; height: 547.0px;"/>
+   <img alt="../_images/mac_video_5.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_5.jpg" />
 
 ## Authorizing the Use of the Agora SDK
 
@@ -135,11 +133,11 @@ Before enabling a video call, you need to enable camera and microphone access to
 
 **Before:**
 
-<img alt="../_images/mac_video_6.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_6.jpg" style="width: 992.0px; height: 352.0px;"/>
+<img alt="../_images/mac_video_6.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_6.jpg" />
 
 **After:**
 
-<img alt="../_images/mac_video_7.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_7.jpg" style="width: 992.0px; height: 368.0px;"/>
+<img alt="../_images/mac_video_7.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_7.jpg" />
 
 ## Accessing the Library
 
@@ -155,6 +153,6 @@ In the main file that uses Agora APIs, add `#import <AgoraRtcEngineKit/AgoraRtcE
 
 In the main file that uses Agora APIs, add `import AgoraRtcEngineKit`.
 
-<img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_8.jpg" style="width: 990.0px; height: 367.0px;"/>
+<img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_8.jpg" />
 
 The macOS environment is now set to use the Agora SDK.
