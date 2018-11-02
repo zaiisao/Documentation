@@ -3,11 +3,9 @@
 title: Implement Encryption
 description: 
 platform: Windows
-updatedAt: Thu Nov 01 2018 09:23:28 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:09:47 GMT+0000 (UTC)
 ---
 # Implement Encryption
-# Using Agora Built-in Encryption
-
 This page describes how to use Agora built-in encryption.
 
 > Both communications and live broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
@@ -20,7 +18,7 @@ The [Agora SDK for Windows](https://docs.agora.io/en/Agora%20Platform/downloads)
 
 The following figure shows how Agora’s communications use built-in encryption:
 
-<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" style="width: 760.0px; height: 586.0px;"/>
+<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" />
 
 
 ### Step 1: Enable encryption.
@@ -35,7 +33,7 @@ Call `setEncryptionMode` to set the built-in encryption mode.
 
 The following figure shows the data encryption/decryption process:
 
-<img alt="../_images/developer-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/developer-encryption_en.png" style="width: 760.0px; height: 606.0px;"/>
+<img alt="../_images/developer-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/developer-encryption_en.png" />
 
 
 ## Step 1: Register a Packet Observer
