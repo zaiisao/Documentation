@@ -3,10 +3,10 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 15:43:55 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 15:44:01 GMT+0000 (UTC)
 ---
 # Use Security Keys
-This page describes the Token, Agora’s authentication mechanism. Before you start, check if your SDK version supports the Token:
+This page describes the Token (Agora’s authentication mechanism). Before you start, check if your SDK version supports the Token:
 
 <table>
 <colgroup>
@@ -31,7 +31,7 @@ This page describes the Token, Agora’s authentication mechanism. Before you st
 </tbody>
 </table>
 
-To get the SDK version information, call the following APIs:
+To get the SDK version information, call the following API methods:
 - Native SDK: `getSdkVersion`
 - Web SDK: `AgoraRTC.VERSION`
 - Gaming SDK: `getSdkVersion`
