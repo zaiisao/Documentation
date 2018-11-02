@@ -3,11 +3,9 @@
 title: 游戏纯语音版 API
 description: 
 platform: Android_CPP
-updatedAt: Thu Nov 01 2018 08:59:29 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:12:12 GMT+0000 (UTC)
 ---
 # 游戏纯语音版 API
-# 游戏纯语音版 API
-
 纯语音版游戏 API 由 **Java 接口** 和 **C++ 接口** 部分组成，其中：
 
 - Java 接口：提供游戏纯语音版 SDK 在 Android 平台上的相关方法和回调，包括：
