@@ -3,9 +3,8 @@
 title: Join a Channel
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 09:03:18 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:08:05 GMT+0000 (UTC)
 ---
-# Join a Channel
 # Join a Channel
 Set the channel profile before the App joins a channel.
 
