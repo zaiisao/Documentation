@@ -3,9 +3,8 @@
 title: 初始化客户端对象
 description: 微信小程序初始化客户端
 platform: 微信小程序
-updatedAt: Thu Nov 01 2018 08:03:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:01:01 GMT+0000 (UTC)
 ---
-# 初始化客户端对象
 # 初始化客户端对象
 将项目的 App ID 填入 初始化客户端对象 `init` 方法，即可初始化客户端对象。
 
