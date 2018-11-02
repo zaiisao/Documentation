@@ -1,11 +1,11 @@
 
 ---
-title: Pushing Streams to the CDN
+title: Push Streams to the CDN
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:23:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 17:08:43 GMT+0000 (UTC)
 ---
-# Pushing Streams to the CDN
+# Push Streams to the CDN
 On the website, you can push streams by following the steps in the following figure:
 
 <img alt="../_images/push_stream_web.png" src="https://web-cdn.agora.io/docs-files/en/push_stream_web.png" style="width: 420px;"/>
