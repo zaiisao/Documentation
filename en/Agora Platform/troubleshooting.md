@@ -3,10 +3,9 @@
 title: FAQ
 description: 
 platform: Troubleshooting
-updatedAt: Thu Nov 01 2018 09:17:49 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:16:32 GMT+0000 (UTC)
 ---
 # FAQ
-# Troubleshooting
 This category contains practical issues and troubleshooting for using Agora SDK.
 
  [Audio](../../en/Agora%20Platform/audio_related_faq.md)
