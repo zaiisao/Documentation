@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: macOS
-updatedAt: Fri Nov 02 2018 16:31:30 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 16:31:36 GMT+0000 (UTC)
 ---
 # Switch the Client Role
 An interactive broadcast channel consists of two user roles: the host and the audience. Call the `setClientRole` method to set the user role as broadcaster or audience according to your needs. The differences of the two roles are:
