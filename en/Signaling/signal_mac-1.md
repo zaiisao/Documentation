@@ -3,11 +3,9 @@
 title: Sending Point-to-point Text and Channel Messages from the Client
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 09:05:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:52 GMT+0000 (UTC)
 ---
 # Sending Point-to-point Text and Channel Messages from the Client
-# Sending Point-to-point Text and Channel Messages from the Client
-
 ## Section 1: Integration
 
 ### Step 1: Download the Agora Signaling SDK.
@@ -31,7 +29,7 @@ To add the required library:
 3.  Click **Building Phases** to add the required library.
 
 
-<img alt="../_images/xcode_4.png" src="https://web-cdn.agora.io/docs-files/en/xcode_4.png" style="width: 992.0px; height: 299.0px;"/>
+<img alt="../_images/xcode_4.png" src="https://web-cdn.agora.io/docs-files/en/xcode_4.png" />
 
 
 1.  Click **Link Binary with Libraries** \> **+** to add the following libraries.
@@ -44,7 +42,7 @@ To add the required library:
 
 <br/>
 
-<img alt="../_images/xcode_5.png" src="https://web-cdn.agora.io/docs-files/en/xcode_5.png" style="width: 993.0px; height: 512.0px;"/>
+<img alt="../_images/xcode_5.png" src="https://web-cdn.agora.io/docs-files/en/xcode_5.png" />
 
 
 
@@ -54,7 +52,7 @@ To add the required library:
 
 2.  Disable **bitcode**:
 
-    <img alt="../_images/bitcode.png" src="https://web-cdn.agora.io/docs-files/en/bitcode.png" style="width: 1172.4px; height: 400.8px;"/>
+    <img alt="../_images/bitcode.png" src="https://web-cdn.agora.io/docs-files/en/bitcode.png" />
 
 
 
