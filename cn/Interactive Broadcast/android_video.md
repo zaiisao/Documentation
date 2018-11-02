@@ -3,11 +3,9 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 07:59:36 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 03:59:02 GMT+0000 (UTC)
 ---
 # 集成客户端 
-# 集成客户端
-
 ## 前提条件
 
 请确保满足以下开发环境要求:
@@ -35,14 +33,14 @@ updatedAt: Thu Nov 01 2018 07:59:36 GMT+0000 (UTC)
 
 5.  在你的 Android Studio 项目里，定位到 `app/src/main/res/values/strings.xml` 文件，并添加 App ID，如下图所示:
 
-	<img alt="../_images/video_appid.png" src="https://web-cdn.agora.io/docs-files/cn/video_appid.png" style="width: 530.0px; height: 85.0px;"/>
+	<img alt="../_images/video_appid.png" src="https://web-cdn.agora.io/docs-files/cn/video_appid.png" style="width: 500.0px;"/>
 
 
 ## 添加 SDK
 
 1.  在你的 Android Studio 项目里，从 **Project Files** 视图的 `app `文件夹下打开 `build.gradle` 文件。请把 `libs` 文件夹路径记在右边的 `fileTree` 里，因为这是你稍后放置 Android SDK 文件的路径。
 
-	<img alt="../_images/video_buildgradle.png" src="https://web-cdn.agora.io/docs-files/cn/video_buildgradle.png" style="width: 884.8px; height: 368.0px;"/>
+	<img alt="../_images/video_buildgradle.png" src="https://web-cdn.agora.io/docs-files/cn/video_buildgradle.png" />
 
 > -  `libs` 路径与应用程序的 `app` 目录相关。
 > -   确保路径名称不包含中文字符。如果路径包含中文字符，则代码无法编译成功且会显示包含随机 ASCII 字符的错误信息。
@@ -103,26 +101,26 @@ sourceSets{
 
 点击 **Sync Project With Gradle Files** ，直到同步完成。
 
-<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 508.8px; height: 212.4px;"/>
+<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 500px;"/>
 
 
 ## 配置 NDK
 
 如果出现以下问题，请下载并安装 [Android NDK](https://developer.android.com/ndk/)：
 
-<img alt="../_images/android6.png" src="https://web-cdn.agora.io/docs-files/cn/android6.png" style="width: 559.2px; height: 157.2px;"/>
+<img alt="../_images/android6.png" src="https://web-cdn.agora.io/docs-files/cn/android6.png" style="width: 500px; "/>
 
 1.  点击 Configure 按钮，并选择 **Project Defaults** \> **Project Structure**。 如下图所示:
 
-	<img alt="../_images/project_structure.png" src="https://web-cdn.agora.io/docs-files/cn/project_structure.png" style="width: 886.0px; height: 687.0px;"/>
+	<img alt="../_images/project_structure.png" src="https://web-cdn.agora.io/docs-files/cn/project_structure.png" />
 
 2.  将 [Android NDK](https://developer.android.com/ndk/) 复制到 Android Studio 项目的 Android NDK 位置。如下图所示：
 
-	<img alt="../_images/android7.png" src="https://web-cdn.agora.io/docs-files/cn/android7.png" style="width: 680.8px; height: 605.6px;"/>
+	<img alt="../_images/android7.png" src="https://web-cdn.agora.io/docs-files/cn/android7.png"/>
 
 3.  点击 **Sync Project With Gradle Files** , 重新将 Android 项目与 NDK 文件进行同步。
 
-	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 508.8px; height: 212.4px;"/>
+	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 500px; "/>
 
 
 ## 添加权限
@@ -146,7 +144,7 @@ sourceSets{
 
 2.  点击 **Sync Project With Gradle Files** , 重新将 Android 项目与 `AndroidManifest.xml` 文件进行同步。
 
-	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 508.8px; height: 212.4px;"/>
+	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 500px; "/>
 
 
 ## 防止混淆代码
