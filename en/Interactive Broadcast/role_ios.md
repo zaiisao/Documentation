@@ -1,11 +1,11 @@
 
 ---
-title: Switch Client Role
+title: Switch the Client Role
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:16:12 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 16:31:46 GMT+0000 (UTC)
 ---
-# Switch Client Role
+# Switch the Client Role
 An interactive broadcast channel consists of two user roles: the host and the audience. Call the `setClientRole` method to set the user role as broadcaster or audience according to your needs. The differences of the two roles are:
 
 - Host (Broadcaster): A host receives and publishes the voice/video streams. The host can also interact with other hosts using voice and video.
