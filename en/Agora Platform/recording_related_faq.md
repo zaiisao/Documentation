@@ -3,11 +3,9 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Thu Nov 01 2018 09:22:30 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:17:43 GMT+0000 (UTC)
 ---
 # Recording-related Issues
-# Recording-related Issues
-
 ## Recording Solutions
 
 ### Should I use the Agora Recording Server, Agora Recording SDK, or CDN Recording?
