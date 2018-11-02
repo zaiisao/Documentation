@@ -3,11 +3,9 @@
 title: 游戏 API
 description: 
 platform: Cocos
-updatedAt: Thu Nov 01 2018 08:59:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:12:32 GMT+0000 (UTC)
 ---
 # 游戏 API
-# 游戏 API
-
 本文提供基于 C++ 语言的游戏语音 API 描述，包括以下类:
 
 <table>
