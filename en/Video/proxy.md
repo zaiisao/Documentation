@@ -3,11 +3,9 @@
 title: Deploy the Enterprise Proxy
 description: 
 platform: Android,iOS,macOS,Windows,Linux
-updatedAt: Fri Nov 02 2018 04:10:51 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:11:01 GMT+0000 (UTC)
 ---
 # Deploy the Enterprise Proxy
-# Deploy the Enterprise Proxy
-
 This page shows how enterprises can deploy the proxy package provided by Agora to access Agora’s services through a company firewall.
 
 > This page does not apply to the Agora Web SDK.
@@ -69,7 +67,7 @@ Enterprises can deploy multiple proxies to enable uninterrupted access in case t
 
 The following figure shows how the proxy works:
 
-<img alt="../_images/proxy_theory.jpg" src="https://web-cdn.agora.io/docs-files/en/proxy_theory.jpg" style="width: 735.2px; height: 439.2px;"/>
+<img alt="../_images/proxy_theory.jpg" src="https://web-cdn.agora.io/docs-files/en/proxy_theory.jpg" />
 
 - The enterprise sets up a firewall that separates the enterprise network from the public internet to limit employees’ access to unauthorized websites.
 - The enterprise deploys a proxy on the public internet. When an enterprise device accesses the internet, it sends a visit request to the enterprise firewall, which then sends the request to the proxy. The proxy then sends it to the public internet server, like a relay.
@@ -77,4 +75,4 @@ The following figure shows how the proxy works:
 
 The following figure shows how the enterprise app accesses the Agora Cloud through the proxy:
 
-<img alt="../_images/proxy_agora.jpg" src="https://web-cdn.agora.io/docs-files/en/proxy_agora.jpg" style="width: 675.2px; height: 185.6px;"/>
+<img alt="../_images/proxy_agora.jpg" src="https://web-cdn.agora.io/docs-files/en/proxy_agora.jpg" />
