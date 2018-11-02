@@ -3,7 +3,7 @@
 title: Video-related Questions
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 09:25:20 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:18:22 GMT+0000 (UTC)
 ---
 # Video-related Questions
 # Video-related Questions
@@ -14,7 +14,7 @@ From v2.3.0, Agora provides a `setVideoEncoderConfiguration` API for users to se
 
 The following figure shows how the Agora SDK captures, processes, and outputs videos.
 
-<img alt="../_images/rotation_encoding_decoding.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_encoding_decoding.jpg" style="width: 648.5px; height: 268.0px;"/>
+<img alt="../_images/rotation_encoding_decoding.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_encoding_decoding.jpg" />
 
 Video rotation involves the video capturer and the video player.
 
@@ -25,7 +25,7 @@ The `orientationMode` parameter provides three modes, ADAPTIVE, FIXED_LANDSCAPE 
 
 Agora recommends using the flowchart to select your video orientation mode (applicable to both communication and live broadcast scenarios).
 
-<img alt="../_images/rotation_mode.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_mode.jpg" style="width: 744.66px; height: 407.7px;"/>
+<img alt="../_images/rotation_mode.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_mode.jpg" />
 
 #### ADAPTIVE
 
@@ -39,11 +39,11 @@ The following figures show the video orientations at the video capturer and play
 		
     For a Landscape capturer:
 
-    <img alt="../_images/rotation_adaptive_uilock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uilock_landscape.jpg" style="width: 786.0px; height: 280.2px;"/>
+    <img alt="../_images/rotation_adaptive_uilock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uilock_landscape.jpg" />
 
     For a Portrait capturer:
    
-    <img alt="../_images/rotation_adaptive_uilock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uilock_portrait.jpg" style="width: 738.6px; height: 273.6px;"/>
+    <img alt="../_images/rotation_adaptive_uilock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uilock_portrait.jpg" />
 
 
 -   UI Unlock with the app enabling the screen auto-rotation:
@@ -52,11 +52,11 @@ The following figures show the video orientations at the video capturer and play
 
     For a Landscape capturer:
 
-    <img alt="../_images/rotation_adaptive_uiunlock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uiunlock_landscape.jpg" style="width: 797.4px; height: 283.8px;"/>
+    <img alt="../_images/rotation_adaptive_uiunlock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uiunlock_landscape.jpg" />
 
     For a Portrait capturer:
 
-    <img alt="../_images/rotation_adaptive_uiunlock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uiunlock_portrait.jpg" style="width: 741.0px; height: 281.4px;"/>
+    <img alt="../_images/rotation_adaptive_uiunlock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uiunlock_portrait.jpg" />
 
 
 #### FIXED_LANDSCAPE
@@ -69,12 +69,12 @@ The following figures show the video orientations at the video capturer and the 
 
 -   If the captured video is in the landscape mode \(where video cropping is not needed\):
 
-    <img alt="../_images/rotation_fixed_landscape.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_fixed_landscape.jpg" style="width: 918.0px; height: 262.8px;"/>
+    <img alt="../_images/rotation_fixed_landscape.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_fixed_landscape.jpg" />
 
 
 -   If the captured video is in the portrait mode \(where video cropping **is** needed\):
 
-    <img alt="../_images/rotation_fixed_landscape_cut.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_fixed_landscape_cut.jpg" style="width: 864.6px; height: 281.4px;"/>
+    <img alt="../_images/rotation_fixed_landscape_cut.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_fixed_landscape_cut.jpg" />
 
 #### FIXED_PORTRAIT
 
@@ -86,7 +86,7 @@ The following figures show the video orientations at the video capturer and the 
 
 -   If the captured video is in the portrait mode \(where video cropping is not needed\):
 
-    <img alt="../_images/rotation_fixed_portrait.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_fixed_portrait.jpg" style="width: 855.0px; height: 274.8px;"/>
+    <img alt="../_images/rotation_fixed_portrait.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_fixed_portrait.jpg" />
 
 
 -   If the captured video is in the landscape mode \(where video cropping **is** needed\):
