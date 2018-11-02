@@ -1,11 +1,11 @@
 
 ---
-title: Setting up Your Environment
+title: Set Up Your Environment
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 04:00:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 16:23:55 GMT+0000 (UTC)
 ---
-# Setting up Your Environment
+# Set Up Your Environment
 In this topic, you will learn how to set up environment to integrate Agora Recording SDK.
 
 ## Hardware Requirements
