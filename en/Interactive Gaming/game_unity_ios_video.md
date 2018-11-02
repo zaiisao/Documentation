@@ -3,16 +3,14 @@
 title: Implementing Video for Gaming
 description: 
 platform: Unity_(iOS)
-updatedAt: Thu Nov 01 2018 09:46:30 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:21:59 GMT+0000 (UTC)
 ---
 # Implementing Video for Gaming
-# Implementing Video for Gaming
-
 ## Step 1: Prepare the Environment
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Unity video kit. See the following structure:
 
-    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 318.6px; height: 328.2px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 420.0px;"/>
 
 2.  Hardware and software requirements:
 
@@ -31,11 +29,11 @@ updatedAt: Thu Nov 01 2018 09:46:30 GMT+0000 (UTC)
 
 1.  Open Unity to create a new project. Select **3D**.
 
-    <img alt="../_images/AMG-Video-Unity3D_23.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_23.png" style="width: 511.7px; height: 295.4px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_23.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_23.png" />
 
 2.  Add **Game Object**: **Sphere** and one **Button** in the default scene.
 
-    <img alt="../_images/AMG-Video-Unity3D_24.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_24.png"/>
+    <img alt="../_images/AMG-Video-Unity3D_24.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_24.png" />
 
 3.  Save the scene to `Assets/playscene.unity`.
 
@@ -213,13 +211,13 @@ public class example : MonoBehaviour
 
     -   Privacy: Camera and Microphone
 
-    <img alt="../_images/AMG-Video-Unity3D_21.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_21.png" style="width: 301.0px; height: 493.5px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_21.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_21.png" style="width: 420.0px;"/>
 
    1.  Click **save** to save the settings.
 
    2.  Click **Build And Run**, and a dialog box pops up to name the targeted folder of the exported projects, for example:
 
-       <img alt="../_images/AMG-Video-Unity3D_14.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_14.png" style="width: 499.1px; height: 301.7px;"/>
+       <img alt="../_images/AMG-Video-Unity3D_14.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_14.png" />
 
    3.  Set the bit code as **NO**.
 
@@ -233,7 +231,7 @@ To demonstrate video for gaming, you need two or more iOS devices.
 
 Run **RollingVideo** on both devices and click **Join**.
 
-<img alt="../_images/AMG-Video-Unity3D_20.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_20.png" style="width: 187.5px; height: 333.5px;"/>
+<img alt="../_images/AMG-Video-Unity3D_20.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_20.png" style="width: 420.0px;"/>
 
 You can now use video for gaming. If there is no video or voice, check the following:
 
