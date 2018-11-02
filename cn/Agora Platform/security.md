@@ -3,7 +3,7 @@
 title: 信息安全说明
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:02:20 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 09:34:28 GMT+0000 (UTC)
 ---
 # 信息安全说明
 ## 简介
