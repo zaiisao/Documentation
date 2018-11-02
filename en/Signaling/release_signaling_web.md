@@ -3,16 +3,14 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 09:00:34 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:14:34 GMT+0000 (UTC)
 ---
 # Release Notes
-# Release Notes
-
 ## Overview
 
 The Agora Signaling SDK facilitates real-time communications through functions such as call invitations, messaging, and state synchronization.
 
-###Known Issues and Limitations
+### Known Issues and Limitations
 
 -   Each channel can hold up to 10,000 users at the same time.
 -   Channel Messages:
