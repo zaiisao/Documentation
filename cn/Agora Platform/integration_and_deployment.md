@@ -3,12 +3,10 @@
 title: FAQ
 description: 
 platform: 集成和使用
-updatedAt: Thu Nov 01 2018 08:06:55 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:26 GMT+0000 (UTC)
 ---
 # FAQ
-# 集成和使用
- 
- 该部分包含集成和使用 Agora SDK 过程中常见的问题。
+该部分包含集成和使用 Agora SDK 过程中常见的问题。
 
  [视频相关](../../cn/Agora%20Platform/video_how_to.md)
 
