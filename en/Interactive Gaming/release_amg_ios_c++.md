@@ -3,9 +3,8 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Thu Nov 01 2018 09:28:57 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:19:58 GMT+0000 (UTC)
 ---
-# Release Notes
 # Release Notes
 ## Introduction
 The Agora Interactive Gaming Voice iOS SDK,  also known as the Interactive Gaming Voice C++ SDK, provides the voice function for gaming on the iOS and C++ platforms.
