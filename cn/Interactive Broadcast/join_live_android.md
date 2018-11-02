@@ -3,9 +3,8 @@
 title: 加入频道
 description: android平台直播模式加入频道
 platform: Android
-updatedAt: Thu Nov 01 2018 08:03:38 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:17:56 GMT+0000 (UTC)
 ---
-# 加入频道
 # 加入频道
 App 在加入频道前，需要先设置频道模式，再加入频道。
 
