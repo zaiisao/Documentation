@@ -3,11 +3,9 @@
 title: Inject Online Media Stream
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 09:48:16 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:26:17 GMT+0000 (UTC)
 ---
 # Inject Online Media Stream
-# Inject Online Media Stream
-
 ## Introduction
 
 **Injecting online media stream** refers to injecting an external audio or video stream to an ongoing live broadcast channel, so that the host(s) and audience in the channel can hear and see the stream while interacting with each other. 
