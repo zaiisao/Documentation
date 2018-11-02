@@ -3,11 +3,9 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Thu Nov 01 2018 08:47:20 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:21 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
-# Dashboard RESTful API
-
 ## 1. 认证
 
 RESTful API 仅支持 HTTPS。用户必须通过 basic HTTP 认证:
