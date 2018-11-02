@@ -3,7 +3,7 @@
 title: 信息安全说明
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 09:34:28 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 09:34:38 GMT+0000 (UTC)
 ---
 # 信息安全说明
 ## 简介
@@ -125,7 +125,7 @@ SDK 在接入传输服务时，第一步先要经过系统调度，选择合适�
 
 ### 访问授权
 
-每次终端用户访问 Agora 全球实时虚拟通信网\( SD-RTN \)时，必须通过 Dynamic Key 进行认证。 详见 [密钥说明](../../cn/Agora%20Platform/token.md) 。 在整个授权和认证过程中，App Server Infrastructure 和 Agora 虚拟网 没有任何交互，因此无需担心被拦截或攻击。
+每次终端用户访问 Agora 全球实时虚拟通信网\( SD-RTN \)时，必须通过 Dynamic Key 进行认证。 详见 [密钥说明](../../cn/Voice/token.md) 。 在整个授权和认证过程中，App Server Infrastructure 和 Agora 虚拟网 没有任何交互，因此无需担心被拦截或攻击。
 
 <a name = "AccessDashboard"></a>
 
