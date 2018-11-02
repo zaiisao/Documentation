@@ -3,11 +3,9 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 07:28:14 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 03:57:09 GMT+0000 (UTC)
 ---
 # 产品概述
-# 产品概述
-
 ## 产品简介
 
 Agora 实时音频（Agora Voice Call）基于 UDP 协议以及声网自研的音频编解码技术，提供可靠的实时音频服务，让实时音频像水和电一样，无处不在。
