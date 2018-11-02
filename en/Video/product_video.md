@@ -3,11 +3,9 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 08:50:32 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:33 GMT+0000 (UTC)
 ---
 # Agora Video Overview
-# Agora Video Overview
-
 ## Brief Introduction
 
 Agora Video Call is based on the UDP protocol and the sound and video codec technology of Agora. It provides reliable real-time audio and video services, making real-time audio and video available everywhere.
