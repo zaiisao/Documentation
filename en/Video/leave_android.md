@@ -3,9 +3,8 @@
 title: Leave the Channel
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 09:07:44 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:08:49 GMT+0000 (UTC)
 ---
-# Leave the Channel
 # Leave the Channel
 The `leaveChannel` method allows a user to leave a channel.
 
