@@ -3,7 +3,7 @@
 title: 密钥说明
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 07:33:47 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 07:34:21 GMT+0000 (UTC)
 ---
 # 密钥说明
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
@@ -301,15 +301,15 @@ Token 的设计基于用户角色模型。一个用户的角色，关联着多�
 <tbody>
 <tr><td>Android</td>
 <td><a href="https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c"><span>加入频道 (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#gaf1428905e5778a9ca209f64592b5bf80"><span>更新 Token (renewToken)</span></a></td>
+<td><a href="https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af1428905e5778a9ca209f64592b5bf80"><span>更新 Token (renewToken)</span></a></td>
 </tr>
 <tr><td>iOS/macOS</td>
 <td><a href="https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:"><span>加入频道 (joinChannelByToken)</span></a></td>
 <td><a href="https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/renewToken:"><span>更新 Token (renewToken)</span></a></td>
 </tr>
 <tr><td>Windows</td>
-<td><a href="https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#gadc937172e59bd2695ea171553a88188c"><span>加入频道 (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ga8f25b5ff97e2a070a69102e379295739"><span>更新 Token (renewtoken)</span></a></td>
+<td><a href="https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c"><span>加入频道 (joinChannel)</span></a></td>
+<td><a href="https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8f25b5ff97e2a070a69102e379295739"><span>更新 Token (renewtoken)</span></a></td>
 </tr>
 <tr><td>Web</td>
 <td><a href="https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#join"><span>加入频道 (join)</span></a></td>
