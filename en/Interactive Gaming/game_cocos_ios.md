@@ -3,16 +3,14 @@
 title: Implementing Voice for Gaming
 description: 
 platform: Cocos_(iOS)
-updatedAt: Thu Nov 01 2018 09:35:52 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:20:54 GMT+0000 (UTC)
 ---
 # Implementing Voice for Gaming
-# Implementing Voice for Gaming
-
 ## Step 1: Prepare the Environment
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Game SDK for **Cocos**. See the following structure:
 
-    <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Cocos2d.png" style="width: 352.2px; height: 322.2px;"/>
+    <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Cocos2d.png" style="width: 370.0px;"/>
 
 
     -   **include**: header files. Used in Cocos2d projects when modifying raw data.
@@ -57,7 +55,7 @@ Create a new Cocos2d project. Refer to [here](http://www.cocos2d-x.org/docs/coco
 
     5.  Add the following required system libraries:
 
-        <img alt="../_images/Intergration-Libraries-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Libraries-iOS.png" style="width: 750.0px; height: 418.0px;"/>
+        <img alt="../_images/Intergration-Libraries-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Libraries-iOS.png" />
 
 
 
@@ -70,7 +68,7 @@ Create a new Cocos2d project. Refer to [here](http://www.cocos2d-x.org/docs/coco
 3.  Select **Enable Bitcode**, and set it to **No**.
 
 
-<img alt="../_images/Intergration-Bitcode-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bitcode-iOS.png" style="width: 792.0px; height: 322.0px;"/>
+<img alt="../_images/Intergration-Bitcode-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bitcode-iOS.png" />
 
 
 ## Step 5: Include Header Files
@@ -99,7 +97,7 @@ The default programming language in Cocos2d projects is Objective-C, so include 
 
     2.  Select **Building Settings** > **Swift Compiler-General**; set **Objective-C Bridging Header** to `<Target_Name>/MyAgora-Bridging-Header.h`.
 
-        <img alt="../_images/Intergration-Bridging-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bridging-iOS.png" style="width: 736.0px; height: 416.0px;"/>
+        <img alt="../_images/Intergration-Bridging-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bridging-iOS.png" />
 
 
 
@@ -107,7 +105,7 @@ The default programming language in Cocos2d projects is Objective-C, so include 
 
 Add any necessary permission, such as access permission to the microphone:
 
-<img alt="../_images/Intergration-Privileges-Microphone-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Privileges-Microphone-iOS.png" style="width: 690.0px; height: 334.0px;"/>
+<img alt="../_images/Intergration-Privileges-Microphone-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Privileges-Microphone-iOS.png" />
 
 
 ## Step 7: Call the APIs
