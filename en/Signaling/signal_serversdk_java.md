@@ -3,11 +3,9 @@
 title: Server SDK API
 description: 
 platform: Java
-updatedAt: Thu Nov 01 2018 09:33:05 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:03 GMT+0000 (UTC)
 ---
 # Server SDK API
-# Server SDK API
-
 > Version: v1.4.0 BETA
 
 The Server SDK API includes the following classes:
