@@ -3,11 +3,9 @@
 title: Release Notes
 description: 
 platform: Java
-updatedAt: Thu Nov 01 2018 08:59:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:15:00 GMT+0000 (UTC)
 ---
 # Release Notes
-# Release Notes
-
 ## Overview
 
 The Agora Server SDK facilitates real-time communications through functions such as call invitations, messaging, and state synchronization.
