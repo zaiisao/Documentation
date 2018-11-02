@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 20:16:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 20:34:20 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -15,7 +15,7 @@ This page contains information on how to prepare the development environment bef
 - Ensure that your project has a validated provisioning profile certificate.
 - Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
-> Use a physical device to run the sample. Simulators may lack the functionality or the performance needed to run the sample.
+> Use a physical device to run the sample. Simulators may lack the functionality or performance needed to run the sample.
 
 ## Creating an Agora Account and Getting an App ID
 
@@ -55,7 +55,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    pod init
    ```
 
-2. Add the Agora SDK reference in the Podfile. Open the Podfile, and fill it with the following content. Fill **“Your App”** with the name of your Target.
+2. Add the Agora SDK reference in the Podfile. Open the Podfile, and put in the following content. Fill **“Your App”** with the name of your Target.
 
    ```
    platform :ios, '9.0'
@@ -78,7 +78,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    pod install
    ```
 
-   If Terminal says `Pod installation complete!`, you have successfully added the libraries. Click open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
+   If Terminal says `Pod installation complete!`, you have successfully added the libraries. Click to open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
 
    ```
    open YourApp.xcworkspace
@@ -96,7 +96,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    <img alt="../_images/ios_voice_2.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_2.jpg" />
 
-4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding new libraries, click the **+** button.
+4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding the new libraries, click the **+** button.
 
    - `AgoraAudioKit.framework`
    - `Accelerate.framework`
@@ -116,7 +116,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    <img alt="../_images/ios_voice_4.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_4.jpg" style="width: 1204.0px; height: 487.0px;"/>
 
-   `AgoraAudioKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK and add `AgoraRtcEngineKit.framework`.
+   `AgoraAudioKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
 
    <img alt="../_images/ios_voice_5.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_5.jpg" />
 
@@ -124,7 +124,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 Before enabling a voice call, you need to enable microphone access to the SDK on your device. Open `info.plist` and click **+** to add:
 
-**Privacy - Microphone Usage Description**, and add a note in the **Value** colume.
+**Privacy - Microphone Usage Description**, and add a note in the **Value** column.
 
 **Before:**
 
@@ -140,13 +140,13 @@ You can access the added library using [Objective-C](#oc) or [Swift](#swift).
 
 ### <a name = "oc"></a>Objective-C
 
-In the main file that uses Agora APIs, add **\#import <AgoraAudioKit/AgoraRtcEngineKit.h\>**.
+In the main file that uses the Agora APIs, add **\#import <AgoraAudioKit/AgoraRtcEngineKit.h\>**.
 
 > The SDK provides FAT image libraries with multi-architecture support for both 32/64-bit audio emulators and 32/64-bit audio/video real devices.
 
 ### <a name = "swift"></a>Swift
 
-In the main file that uses Agora APIs, add `import AgoraAudioKit`.
+In the main file that uses the Agora APIs, add `import AgoraAudioKit`.
 
 <img alt="../_images/ios_voice_8.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_8.jpg" />
 
@@ -158,7 +158,7 @@ The Agora SDK provides the following additional settings and permissions for you
 
   <img alt="../_images/ios_voice_9.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_9.jpg" />
 
-- Enable or disable Bitcode. Applications developed with Bitcode can be optimized once it is uploaded to the App Store. Select the current Target, click the **Build Settings** tab, and enable or disable Bitcode according to your actual needs.
+- Enable or disable Bitcode. Applications developed with Bitcode can be optimized once it is uploaded to the App Store. Select the current Target, click the **Build Settings** tab, and enable or disable Bitcode according to your needs.
 
   <img alt="../_images/ios_voice_10.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_10.jpg" />
 	
