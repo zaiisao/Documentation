@@ -3,9 +3,8 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 08:25:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:40 GMT+0000 (UTC)
 ---
-# 发版说明
 # 发版说明
 ## 简介
 Android 游戏语音 SDK，即游戏语音 C++ SDK，能实现在 Android 平台和 C++ 平台上的游戏语音功能。
