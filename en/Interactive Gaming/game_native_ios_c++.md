@@ -3,11 +3,9 @@
 title: Implementing Voice for Gaming
 description: 
 platform: iOS_CPP
-updatedAt: Thu Nov 01 2018 09:31:39 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:20:25 GMT+0000 (UTC)
 ---
 # Implementing Voice for Gaming
-# Implementing Voice for Gaming
-
 In this quickstart, you will learn how to use the Interactive Gaming Voice C++ SDK to make a voice call on Android platform.
 
 ## Prerequisites
