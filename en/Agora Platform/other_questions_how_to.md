@@ -3,11 +3,9 @@
 title: Other Questions
 description: 
 platform: Other Questions
-updatedAt: Thu Nov 01 2018 09:27:57 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:18:56 GMT+0000 (UTC)
 ---
 # Other Questions
-# Other Questions
-
 ### Which callback functions are important to apps?
 
 Apps need information about user status-related callbacks, such as userJoined and userOffline. All user-related information and remote user callbacks are transmitted over the UDP，which is not reliable.
