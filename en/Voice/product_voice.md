@@ -3,11 +3,9 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 08:30:51 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:24 GMT+0000 (UTC)
 ---
 # Agora Voice Overview
-# Agora Voice Overview
-
 ## Brief Introduction
 
 Agora Voice Call is based on the UDP protocol and the sound codec technology of Agora. It provides reliable real-time audio services, making real-time audio available everywhere.
