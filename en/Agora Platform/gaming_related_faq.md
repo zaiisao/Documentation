@@ -3,10 +3,8 @@
 title: Gaming-related Issues
 description: 
 platform: Gaming-related Issues
-updatedAt: Thu Nov 01 2018 09:22:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:17:36 GMT+0000 (UTC)
 ---
-# Gaming-related Issues
-
 # Gaming-related Issues
 
 ### Why are there errors when I compile the sample code with Unity3D 5.4?
