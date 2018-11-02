@@ -3,9 +3,8 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 09:02:38 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:53 GMT+0000 (UTC)
 ---
-# Join a Channel
 # Join a Channel
 Set the channel profile before the App joins a channel.
 
