@@ -3,11 +3,9 @@
 title: Integrate SDK
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 08:46:19 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:25 GMT+0000 (UTC)
 ---
 # Integrate SDK
-# Integrate SDK
-
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
 
 ## <a name = "pre"></a>Prerequisites
@@ -73,18 +71,17 @@ This page contains information on how to prepare the development environment bef
 
 ## Creating an Agora Account and Getting an App ID
 
-1. Create a developer account at [www.agora.io](https://dashboard.agora.io/signin/) to login to **Dashboard**.
+1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
-2. Click **Add New Project** on the **Projects** page of the Dashboard.
+2. Click **Add New Project** on the **Projects** page of the dashboard.
 
-   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" style="width: 1142.0px; height: 360.0px;"/>
+   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
 
-1. Fill in the **Project Name** and click **Submit**.
+3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
 
-2. Find the **App ID** under the created project. You will need it to enable a video call.
+4. Find the **App ID** under the created project.
 
-   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" style="width: 1138.0px; height: 344.0px;"/>
-
+   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
 
 
 ## Importing the Agora Web SDK to Your Project
@@ -95,19 +92,19 @@ Choose one of the following two methods to obtain the Agora Web SDK:
 
 Add `<script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.4-latest.js”></script>` to the line above `</body>` in your project.
 
-<img alt="../_images/web_sdk_cdn.png" src="https://web-cdn.agora.io/docs-files/en/web_sdk_cdn.png" style="width: 859.2px; height: 78.0px;"/>
+<img alt="../_images/web_sdk_cdn.png" src="https://web-cdn.agora.io/docs-files/en/web_sdk_cdn.png" />
 
 ### Method 2: Getting the SDK from the official Agora website
 
 1. [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Agora Web SDK.
 
-   <img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/en/web_sdk_download.png" style="width: 393.3px; height: 92.15px;"/>
+   <img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/en/web_sdk_download.png" style="width: 500px;"/>
 
 2. Copy the `AgoraRTCSDK-2.4.js` file to your project.
 
 3. Reference the `AgoraRTCSDK-2.4.js` file in your project.
 
-   <img alt="../_images/web_sdk_reference.jpeg" src="https://web-cdn.agora.io/docs-files/en/web_sdk_reference.jpeg" style="width: 851.2px; height: 120.0px;"/>
+   <img alt="../_images/web_sdk_reference.jpeg" src="https://web-cdn.agora.io/docs-files/en/web_sdk_reference.jpeg" />
 
 > The screenshots are for reference only, please use the latest version of the SDK.
 
