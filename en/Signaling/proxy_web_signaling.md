@@ -3,11 +3,9 @@
 title: Deploy the Enterprise Proxy
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 09:24:55 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:44 GMT+0000 (UTC)
 ---
 # Deploy the Enterprise Proxy
-# Deploy the Enterprise Proxy
-
 This page shows how enterprises can use the API provided by the Agora Signaling SDK for Web to access Agora’s services through a company firewall.
 
 > This page applies to the Agora Signaling SDK for Web only. Proxy services by different service providers may result in slow performance if you are using the Firefox browser. Therefore, Agora recommends using the same service provider for the proxy services. If you use different service providers, Agora recommends not using the Firefox browser.
@@ -102,7 +100,7 @@ Set the `proxyServer` and `turnServer` parameters:
 
 The following figure shows how the proxy works:
 
-<img alt="../_images/proxy_web_signaling.jpg" src="https://web-cdn.agora.io/docs-files/en/proxy_web_signaling.jpg" style="width: 797.28px; height: 320.32px;"/>
+<img alt="../_images/proxy_web_signaling.jpg" src="https://web-cdn.agora.io/docs-files/en/proxy_web_signaling.jpg" />
 
 
 -   The enterprise deploys an Nginx proxy server.
