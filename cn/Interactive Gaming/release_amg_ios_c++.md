@@ -3,9 +3,8 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Thu Nov 01 2018 08:26:00 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:46 GMT+0000 (UTC)
 ---
-# 发版说明
 # 发版说明
 ## 简介
 iOS 语音版 SDK，即游戏语音 C++ SDK，能实现在 iOS 平台和 C++ 平台上的游戏语音功能。
