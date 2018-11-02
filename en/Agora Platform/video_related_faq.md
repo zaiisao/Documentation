@@ -3,11 +3,9 @@
 title: Video-related Issues
 description: 
 platform: Video-related Issues
-updatedAt: Thu Nov 01 2018 09:21:42 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:17:24 GMT+0000 (UTC)
 ---
 # Video-related Issues
-# Video-related Issues
-
 ## Unable to Turn On the Camera
 
 1. Check whether the camera access permission is enabled. Both Android and iOS systems have a runtime access permission function under System Settings. Additionally, some security software on Android manages camera access permissions.
