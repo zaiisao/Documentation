@@ -3,11 +3,9 @@
 title: 推流到 CDN
 description: 
 platform: iOS,macOS
-updatedAt: Thu Nov 01 2018 09:07:48 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:20:38 GMT+0000 (UTC)
 ---
 # 推流到 CDN
-# 推流到 CDN
-
 声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
 
 - `addPublishStreamUrl`
@@ -75,7 +73,7 @@ transcoding.transcodingUsers = @[user];
 
 如果你想显示以下布局:
 
-<img alt="../_images/sei_2host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_2host.png" style="width: 416.0px; height: 240.0px;"/>
+<img alt="../_images/sei_2host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_2host.png" style="width: 500px;"/>
 
 设置参数如下:
 
@@ -108,7 +106,7 @@ User1:
 
 如果你想显示以下布局:
 
-<img alt="../_images/sei_3host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_3host.png" style="width: 236.0px; height: 416.0px;"/>
+<img alt="../_images/sei_3host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_3host.png" style="width: 370px;"/>
 
 设置参数如下:
 
@@ -150,7 +148,7 @@ Canvas:
 
 如果你想显示以下布局:
 
-<img alt="../_images/sei_random.png" src="https://web-cdn.agora.io/docs-files/cn/sei_random.png" style="width: 236.0px; height: 416.0px;"/>
+<img alt="../_images/sei_random.png" src="https://web-cdn.agora.io/docs-files/cn/sei_random.png" style="width: 370px;"/>
 
 设置参数如下:
 
