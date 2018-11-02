@@ -3,7 +3,7 @@
 title: Security Keys
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:09:04 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 07:36:13 GMT+0000 (UTC)
 ---
 # Security Keys
 This page describes the Token, Agora’s authentication mechanism. Before you start, check if your SDK version supports the Token:
