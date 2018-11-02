@@ -3,9 +3,8 @@
 title: Join a Channel
 description: 
 platform: Windows
-updatedAt: Thu Nov 01 2018 09:03:54 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:15:31 GMT+0000 (UTC)
 ---
-# Join a Channel
 # Join a Channel
 Set the channel profile before the App joins a channel.
 
