@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 09:51:17 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 09:51:26 GMT+0000 (UTC)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -22,9 +22,21 @@ Online media stream injection can be applied to the following scenarios:
 
 - During game events, by injecting the video stream of an ongoing game, the host(s) and audience can enjoy watching the game while making comment on it.
 - The same applies to music shows, movies and entertainment shows. Both the host(s) and audience can have on-time discussions and exchange ideas  while watching the show.
-
 - Video streams captured by drones or network cameras can be injected into a live broadcast and broadcasted to all the audience in the channel.
 
+## Considerations
+
+- Only one online media stream can be injected into the same channel at the same time.
+- Only the host(broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
+- To inject a media stream, the host need to be in the channel. To receive the injected media stream, the audience need to subscribe to the host.
+- Supported media stream formats include: RTMP, HLS and FLV. Audio-only streams can also be injected.
+- If the media stream is injected successfully, the media stream will appear in the channel, and the `didJoinChannel` and `firstRemoteVideoDecodedOfUid` callbacks will be triggered, in which the `uid` is 666.
+- If the media stream is not injected successfully, the SDK may return the following error codes:
+
+  - `AgoraErrorCodeInvalidArgument(2)`: The injected URL does not exist. Call this method again to inject the stream and make sure that the URL is valid.
+  - `AgoraErrorCodeNotInitialized(7)`: The SDK is not initialized. Make sure that the `RtcEngine` object is initialized before using this method.
+  - `AgoraErrorCodeNotSupported(4)`: The channel profile is not live broadcast. Call `setChannelProfile` and set the channel to the live broadcast profile before calling this method.
+  - `AgoraErrorCodeNotReady(3)`: The App is not in the channel. Make sure that the App has joined the channel.
 ## Implementations
 
 To inject an online media stream, the user need first join a live broadcast channel in the "broadcaster" role. For how to intialize the engine and join a live broadcast channel, see [Quickstart Guide](https://docs.agora.io/en/Interactive%20Broadcast/ios_video?platform=iOS).
@@ -53,14 +65,6 @@ To inject an online media stream, the user need first join a live broadcast chan
 	```
 
 > If the host has left the channel, it is unnecessary to call `removeInjectStreamUrl`.
-
-## Considerations
-
-- Only one online media stream can be injected into the same channel at the same time.
-- Only the host(broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
-- To inject a media stream, the host need to be in the channel. To receive the injected media stream, the audience need to subscribe to the host.
-- Supported media stream formats include: RTMP, HLS and FLV. Audio-only streams can also be injected.
-- If the media stream is injected successfully, the media stream will appear in the channel, and the `didJoinChannel` and `firstRemoteVideoDecodedOfUid` callbacks will be triggered, in which the `uid` is 666.
 
 ## Working Principles
 
