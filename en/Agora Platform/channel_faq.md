@@ -3,11 +3,9 @@
 title: Channel
 description: 
 platform: Channel
-updatedAt: Thu Nov 01 2018 09:27:19 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:18:43 GMT+0000 (UTC)
 ---
 # Channel
-# Channel
-
 ### Why am I automatically logged out of a device?
 
 You will be automatically logged out of your current device if you login another device.
