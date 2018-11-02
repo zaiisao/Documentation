@@ -3,16 +3,14 @@
 title: 信令密钥说明
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 08:38:22 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:02 GMT+0000 (UTC)
 ---
 # 信令密钥说明
-# 密钥说明
-
 ## 简介
 
 针对用户的项目开发需求，Agora SDK 提供了两种鉴权机制：[App ID](#APPID) 和 [SignalingToken](#SignalingToken) 。下图描述这两种鉴权机制的关系以及适用场景：
 
-<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_signaling.jpg" style="width: 526.4px; height: 389.6px;"/>
+<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_signaling.jpg" style="width: 500px;"/>
 
 
 其中：
@@ -65,15 +63,15 @@ updatedAt: Thu Nov 01 2018 08:38:22 GMT+0000 (UTC)
 
 	1. 点击激活项目右上方的 **编辑** 按钮。
 
-     <img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" style="width: 1171.0px; height: 308.0px;"/>
+     <img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" />
 
  2. 点击 App Certificate 右方的 **启用** 按钮。仔细阅读关于 App Certificate 介绍后，根据屏幕提示，确认启用 App Certificate。
 
-     <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" style="width: 1169.0px; height: 409.0px;"/>
+     <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" />
 
  3. 点击 App Certificate 后面的“眼睛”图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击“眼睛”图标。
 
-     <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" style="width: 582.75px; height: 155.75px;"/>
+     <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 		 
 	>  -   如果出于某种原因你需要更新 App Certificate，请联系 [support@agora.io](mailto:support@agora.io) 。
 	>  -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
@@ -81,7 +79,7 @@ updatedAt: Thu Nov 01 2018 08:38:22 GMT+0000 (UTC)
 	>  -   当项目的 App Certificate 被启用后，你必须使用 Token。例如: 在启用 App Certificate 前，你可以使用 App ID 加入频道。但启用了 App Certificate 后，你就必须使用 Token 加入频道。
 
    4. 如果你的项目同时集成了声网的信令 SDK，你可以调试 App Certificate 下方的信令Token调试开关
-    <img alt="../_images/SignalingToken_debug.png" src="https://web-cdn.agora.io/docs-files/cn/SignalingToken_debug.png" style="width: 1173.0px; height: 314.0px;"/>
+    <img alt="../_images/SignalingToken_debug.png" src="https://web-cdn.agora.io/docs-files/cn/SignalingToken_debug.png" />
 		
 	 -   如果 App Certificate 未启用，信令Token调试开关默认不生效，SignalingToken 支持任意值
 
