@@ -3,11 +3,9 @@
 title: Integrate SDK
 description: 
 platform: iOS
-updatedAt: Thu Nov 01 2018 08:42:30 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:14 GMT+0000 (UTC)
 ---
 # Integrate SDK
-# Integrate SDK
-
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
 
 ## Prerequisites
@@ -25,13 +23,13 @@ This page contains information on how to prepare the development environment bef
 
 2. Click **Add New Project** on the **Projects** page of the dashboard.
 
-   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" style="width: 1142.0px; height: 360.0px;"/>
+   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
 
 3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
 
 4. Find the **App ID** under the created project.
 
-   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" style="width: 1138.0px; height: 344.0px;"/>
+   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
 
 ## Adding the Agora SDK to Your Project
 
@@ -92,11 +90,11 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 2. Open your project with Xcode and select the current Target.
 
-   <img alt="../_images/ios_voice_1.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_1.jpg" style="width: 1210.0px; height: 309.0px;"/>
+   <img alt="../_images/ios_voice_1.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_1.jpg" />
 
 3. Navigate to the **Build Phases** tab.
 
-   <img alt="../_images/ios_voice_2.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_2.jpg" style="width: 1216.0px; height: 294.0px;"/>
+   <img alt="../_images/ios_voice_2.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_2.jpg" />
 
 4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding new libraries, click the **+** button.
 
@@ -112,7 +110,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    **Before:**
 
-   <img alt="../_images/ios_voice_3.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_3.jpg" style="width: 1206.0px; height: 384.0px;"/>
+   <img alt="../_images/ios_voice_3.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_3.jpg" />
 
    **After:**
 
@@ -120,7 +118,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    `AgoraAudioKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK and add `AgoraRtcEngineKit.framework`.
 
-   <img alt="../_images/ios_voice_5.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_5.jpg" style="width: 1206.0px; height: 471.0px;"/>
+   <img alt="../_images/ios_voice_5.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_5.jpg" />
 
 ## Authorizing the Use of the Agora SDK
 
@@ -130,11 +128,11 @@ Before enabling a voice call, you need to enable microphone access to the SDK on
 
 **Before:**
 
-<img alt="../_images/ios_voice_6.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_6.jpg" style="width: 1209.0px; height: 351.0px;"/>
+<img alt="../_images/ios_voice_6.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_6.jpg" />
 
 **After:**
 
-<img alt="../_images/ios_voice_7.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_7.jpg" style="width: 1207.0px; height: 354.0px;"/>
+<img alt="../_images/ios_voice_7.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_7.jpg" />
 
 ## Accessing the Library
 
@@ -150,7 +148,7 @@ In the main file that uses Agora APIs, add **\#import <AgoraAudioKit/AgoraRtcEng
 
 In the main file that uses Agora APIs, add `import AgoraAudioKit`.
 
-<img alt="../_images/ios_voice_8.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_8.jpg" style="width: 1201.0px; height: 405.0px;"/>
+<img alt="../_images/ios_voice_8.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_8.jpg" />
 
 ## Additional Settings and Permissions
 
@@ -158,10 +156,10 @@ The Agora SDK provides the following additional settings and permissions for you
 
 - Set the Background Modes. When the background mode is enabled, your application can still run the voice call when it is switched to the background. Select the current Target, click the **Capabilities** tab, enable **Background Modes**, and check **Audio, AirPlay, and Picture in Picture**.
 
-  <img alt="../_images/ios_voice_9.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_9.jpg" style="width: 1211.0px; height: 462.0px;"/>
+  <img alt="../_images/ios_voice_9.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_9.jpg" />
 
 - Enable or disable Bitcode. Applications developed with Bitcode can be optimized once it is uploaded to the App Store. Select the current Target, click the **Build Settings** tab, and enable or disable Bitcode according to your actual needs.
 
-  <img alt="../_images/ios_voice_10.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_10.jpg" style="width: 1209.0px; height: 404.0px;"/>
+  <img alt="../_images/ios_voice_10.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_10.jpg" />
 	
 The iOS environment is now set to use the Agora SDK.
