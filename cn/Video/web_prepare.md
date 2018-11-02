@@ -3,11 +3,9 @@
 title: 集成客户端
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 07:48:16 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 03:59:31 GMT+0000 (UTC)
 ---
 # 集成客户端
-# 集成客户端
-
 本文介绍在正式使用 Agora Web SDK 进行音视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
 
 ## 前提条件
@@ -73,15 +71,17 @@ updatedAt: Thu Nov 01 2018 07:48:16 GMT+0000 (UTC)
 
 ## 创建 Agora 账号并获取 App ID
 
-1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照页面提示创建一个开发者账号。
+1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
 2. 登陆 Dashboard 页面，点击 **添加新项目**。
 
-	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" style="width: 1133.0px; height: 372.0px;"/>
+	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
-3. 填写 **项目名**，然后点击 **提交**。
-4. 在你创建的项目下，查看并获取该项目对应的 **App ID**。开启视频通话时将会用到你的 **App ID**。
+1. 填写 **项目名**，然后点击 **提交**。
+2. 在你创建的项目下，查看并获取该项目对应的 **App ID**。
 
-	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" style="width: 1141.0px; height: 334.0px;"/>
+	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" />
+
+
 
 ## 获取 Agora Web SDK 安装包并保存到项目下
 
@@ -91,18 +91,18 @@ updatedAt: Thu Nov 01 2018 07:48:16 GMT+0000 (UTC)
 
 该方法无需在官网下载安装包。在项目相应的前端页面文件中，将 `<script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.4-latest.js"></script>` 添加到 `</body>` 上一行：
 
-<img alt="../_images/web_sdk_cdn.png" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_cdn.png" style="width: 1002.4px; height: 91.0px;"/>
+<img alt="../_images/web_sdk_cdn.png" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_cdn.png" />
 
 ### 方法 2. 从官网获取安装包
 
 1. 从 Agora 官方网站 [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新版 Agora Web SDK 软件包。
 
-	<img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_download.png" style="width: 414.0px; height: 97.0px;"/>
+	<img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_download.png" style="width: 500px"/>
 
 2. 将下载下来的软件包中的 `AgoraRTCSDK-2.3.1.js` 文件保存到你所操作的项目下。
 3. 在项目相应的前端页面文件中，对 `AgoraRTCSDK-2.3.1.js` 进行引用。
 
-	<img alt="../_images/web_sdk_reference.jpg" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_reference.jpg" style="width: 1064.0px; height: 150.0px;"/>
+	<img alt="../_images/web_sdk_reference.jpg" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_reference.jpg" />
 
 > 此处的截图仅供参考，安装时请使用最新版的 SDK 和链接地址。
 
