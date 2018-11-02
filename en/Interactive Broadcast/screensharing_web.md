@@ -1,11 +1,11 @@
 
 ---
-title: Share the Screen on the Web
+title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 16:28:16 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 16:29:32 GMT+0000 (UTC)
 ---
-# Share the Screen on the Web
+# Share the Screen
 To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screen\(s\) to share.
 
 This page includes:
