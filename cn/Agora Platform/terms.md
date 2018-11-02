@@ -3,11 +3,9 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 07:48:56 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:26 GMT+0000 (UTC)
 ---
 # Agora 关键术语
-# Agora 关键术语
-
 阅读本文了解 Agora 平台的关键术语。
 
 ## 基本概念
