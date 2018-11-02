@@ -3,9 +3,8 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 09:06:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:08:43 GMT+0000 (UTC)
 ---
-# Publish and Subscribe to Streams
 # Publish and Subscribe to Streams
 ## Create a stream
 Use the `client.createStream`  method to create a stream.
