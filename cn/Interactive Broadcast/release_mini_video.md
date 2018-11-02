@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Fri Nov 02 2018 07:27:49 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 07:28:02 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -30,7 +30,7 @@ updatedAt: Fri Nov 02 2018 07:27:49 GMT+0000 (UTC)
 
 **问题修复**
 
-修复了偶现的反复加入频道失败的问题。
+修复了偶现的反复加入频道失败的问题，提升了服务的稳定性。
 
 ## **1.1.2 Beta 版**
 
@@ -49,12 +49,11 @@ updatedAt: Fri Nov 02 2018 07:27:49 GMT+0000 (UTC)
 
 通过添加如下安全域名，实现高可用策略，提升小程序服务的稳定性：
 
-```
 https://miniapp-1.agoraio.cn
 https://miniapp-2.agoraio.cn
 https://miniapp-3.agoraio.cn
 https://miniapp-4.agoraio.cn
-```
+
 
 ## **1.1.1 Beta 版**
 
