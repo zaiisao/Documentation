@@ -3,7 +3,7 @@
 title: 密钥说明
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:03:28 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 07:32:30 GMT+0000 (UTC)
 ---
 # 密钥说明
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
