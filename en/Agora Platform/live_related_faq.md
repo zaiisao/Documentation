@@ -3,11 +3,9 @@
 title: Live-related Issues
 description: 
 platform: Live-related Issues
-updatedAt: Thu Nov 01 2018 09:22:09 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:17:30 GMT+0000 (UTC)
 ---
 # Live-related Issues
-# Live-related Issues
-
 ### What is the difference between the CDN (Content Delivery Network) and the Agora Interactive Broadcast?
 
 The CDN is traditional broadcast with high latency and no interaction.
