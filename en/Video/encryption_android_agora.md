@@ -3,11 +3,9 @@
 title: Implement Encryption
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 09:24:25 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:09:31 GMT+0000 (UTC)
 ---
 # Implement Encryption
-# Implementing Encryption
-
 This page introduces various encryption modes. Choose one that best suits your needs.
 
 > Both communications and live broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
@@ -20,7 +18,7 @@ Delete the independent dynamic library `libagora-crypto.so` in the [Agora SDK](h
 
 The following figure shows how Agora’s communications use built-in encryption:
 
-<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" style="width: 760.0px; height: 586.0px;"/>
+<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" />
 
 The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) for Android includes an independent dynamic library `libagora-crypto.so` in both the `arm64-v8a` and `armeabi-v7a` folders under `libs` for the app to load dynamically.
 
@@ -42,7 +40,7 @@ Call `setEncryptionMode` to set the built-in encryption mode.
 
 The following figure shows the customized data encryption/decryption process:
 
-<img alt="../_images/developer-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/developer-encryption_en.png" style="width: 760.0px; height: 606.0px;"/>
+<img alt="../_images/developer-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/developer-encryption_en.png" />
 
 
 ### Step 1: Register a Packet Observer
