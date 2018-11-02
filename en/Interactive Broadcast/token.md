@@ -3,11 +3,9 @@
 title: Security Keys
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 09:12:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:09:04 GMT+0000 (UTC)
 ---
 # Security Keys
-# Security Keys
-
 This page describes the Token, Agora’s authentication mechanism. Before you start, check if your SDK version supports the Token:
 
 <table>
@@ -52,7 +50,7 @@ The `joinChannel` method requires a security key as an essential parameter. The 
 1. For low-security requirements, such as for testing: [App ID](#APPID) 
 2. For high-security requirements, such as for production: App ID + App Certificate + [Token](#Token) . Note that an App Certificate is enabled solely for the purposes of generating a Channel Key and cannot be used alone.
 
-<img alt="../_images/key_relation_web.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_web.jpg" style="width: 546.4px; height: 390.4px;"/>
+<img alt="../_images/key_relation_web.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_web.jpg" style="width: 500px;" />
 
 
 <a name = "APPID"></a>
