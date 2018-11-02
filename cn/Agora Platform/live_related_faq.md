@@ -3,11 +3,9 @@
 title: 直播相关
 description: 
 platform: 直播相关
-updatedAt: Thu Nov 01 2018 08:07:53 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:00 GMT+0000 (UTC)
 ---
 # 直播相关
-# 直播相关
-
 ### 为什么旁路直播和旁路直播的录制内容里只听得到声音，却看不到视频?
 
 检查一下 API `setLiveTranscoding` 是否已正确调用。
