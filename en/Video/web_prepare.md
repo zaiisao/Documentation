@@ -3,14 +3,14 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 20:47:44 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 20:49:03 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
 
 ## <a name = "pre"></a>Prerequisites
 
-1. Install a browser supported by Agora Web SDK as shown in the following table:
+1. Install a browser supported by the Agora Web SDK as shown in the following table:
   <table>
   <tr>
     <th>Platform</th>
@@ -66,7 +66,7 @@ This page contains information on how to prepare the development environment bef
 
 > Agora Web SDK 2.5 also supports Chrome 49 on Windows XP.
 
-2. Connect to the specified ports and whitelist domains as described in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
+2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 3. Understand the limitations in [Known Issues](../../en/Video/release_web_video.md) and [FAQ](https://docs.agora.io/en/2.4.1/faq/faq/web).
 
 ## Creating an Agora Account and Getting an App ID
@@ -86,7 +86,7 @@ This page contains information on how to prepare the development environment bef
 
 ## Importing the Agora Web SDK to Your Project
 
-Choose one of the following two methods to obtain the Agora Web SDK:
+Choose one of the following methods to obtain the Agora Web SDK:
 
 ### Method 1: Getting the SDK through the CDN
 
@@ -112,6 +112,6 @@ Add `<script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.4-latest.js”></scr
 
 1. Install a web server, such as Apache, Nginx, or Node.js.
 2. Import the downloaded Agora Web SDK to your web server.
-3. Set up your web server properly so that you can access the sample app page or your own app page on the supported browsers, see [Prerequisites](#pre) .
+3. Set up your web server so that you can access the sample app page or your own app page on the supported browsers, see [Prerequisites](#pre).
 
 The Web environment is now set to use the Agora SDK.
