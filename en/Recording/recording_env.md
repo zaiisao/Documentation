@@ -3,11 +3,9 @@
 title: Setting up Your Environment
 description: 
 platform: Linux
-updatedAt: Thu Nov 01 2018 08:05:26 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:00:59 GMT+0000 (UTC)
 ---
 # Setting up Your Environment
-# Setting up Your Environment
-
 In this topic, you will learn how to set up environment to integrate Agora Recording SDK.
 
 ## Hardware Requirements
@@ -126,7 +124,7 @@ The recording SDK is compatible with the following Agora SDKs:
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Agora Recording SDK for Linux package. The package structure is listed as follows:
 
-    <img alt="../_images/linux_structure.png" src="https://web-cdn.agora.io/docs-files/en/linux_structure.png" style="width: 412.0px; height: 712.0px;"/>
+    <img alt="../_images/linux_structure.png" src="https://web-cdn.agora.io/docs-files/en/linux_structure.png" style="width: 500.0px;"/>
 
 <table>
 <colgroup>
