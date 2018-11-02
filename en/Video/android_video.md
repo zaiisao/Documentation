@@ -3,11 +3,9 @@
 title: Integrate SDK
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 08:57:10 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:52 GMT+0000 (UTC)
 ---
 # Integrate SDK
-# Integrate SDK
-
 ## Prerequisites
 
 -   A device with audio and video running Android 4.1 or higher
@@ -29,14 +27,14 @@ Before getting started, connect ports and whitelist domains as described in [Fir
 
 5.  In the Android Studio project, locate the `app/src/main/res/values/strings.xml` file and add the APP ID:
 
-    <img alt="../_images/video_appid.png" src="https://web-cdn.agora.io/docs-files/en/video_appid.png" style="width: 742.0px; height: 119.0px;"/>
+    <img alt="../_images/video_appid.png" src="https://web-cdn.agora.io/docs-files/en/video_appid.png" style="width: 500px;"/>
 
 
 ## Adding the Agora SDK to Your Project
 
 1.  Open the `build.gradle` file under the **app** folder from the **Project Files** view in Android Studio. Make a note of the path of the libs folder to the right of compile fileTree. This is where you will put the Agora SDK for Android files later on.
 
-	<img alt="../_images/video_buildgradle.png" src="https://web-cdn.agora.io/docs-files/en/video_buildgradle.png" style="width: 774.2px; height: 322.0px;"/>
+	<img alt="../_images/video_buildgradle.png" src="https://web-cdn.agora.io/docs-files/en/video_buildgradle.png" />
 
 > -   The libs path directory is relative to the application’s app directory.
 > -   Ensure the path name contains no Chinese characters. Otherwise, if the path contains Chinese characters, compiling the code fails and displays an error message that contains random ASCII characters.
@@ -95,29 +93,29 @@ sourceSets{
 
 Click **Sync Project With Gradle Files** until the sync is complete.
 
-<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 508.8px; height: 212.4px;"/>
+<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px; 0"/>
 
 
 ## Configuring the Android NDK
 
 If you see the following “NDK not configured” error message, download and install the [Android NDK](https://developer.android.com/ndk/).
 
-<img alt="../_images/android6.png" src="https://web-cdn.agora.io/docs-files/en/android6.png" style="width: 559.2px; height: 157.2px;"/>
+<img alt="../_images/android6.png" src="https://web-cdn.agora.io/docs-files/en/android6.png" style="width: 500px;"/>
 
 
 1.  Click the **Configure** button menu and select **Project Defaults \> Project Structure** as shown below:
 
-	<img alt="../_images/project_structure.png" src="https://web-cdn.agora.io/docs-files/en/project_structure.png" style="width: 708.8px; height: 549.6px;"/>
+	<img alt="../_images/project_structure.png" src="https://web-cdn.agora.io/docs-files/en/project_structure.png" />
 
 
 2.  Copy the [Android NDK](https://developer.android.com/ndk/) into the Android NDK location listed in the Android Studio's Project Structure window.
 
-	<img alt="../_images/android7.png" src="https://web-cdn.agora.io/docs-files/en/android7.png" style="width: 680.8px; height: 605.6px;"/>
+	<img alt="../_images/android7.png" src="https://web-cdn.agora.io/docs-files/en/android7.png" />
 
 
 3.  Re-sync the Android project with the NDK files by clicking **Sync Project With Gradle Files** .
 
-	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 678.4px; height: 283.2px;"/>
+	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px; "/>
 
 
 ## Adding Device Permissions
@@ -141,7 +139,7 @@ If you see the following “NDK not configured” error message, download and in
 
 2.  Re-sync the Android project with the NDK files by clicking **Sync Project With Gradle Files** .
 
-	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 678.4px; height: 283.2px;"/>
+	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px; "/>
 
 
 ## Preventing Obfuscation of the Agora Classes
