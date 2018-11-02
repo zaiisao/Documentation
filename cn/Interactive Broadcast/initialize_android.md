@@ -3,9 +3,8 @@
 title: 创建实例
 description: 安卓平台初始化引擎
 platform: Android
-updatedAt: Thu Nov 01 2018 08:01:11 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:00:34 GMT+0000 (UTC)
 ---
-# 创建实例
 # 创建实例
 导入以下 Agora API 包:
 
