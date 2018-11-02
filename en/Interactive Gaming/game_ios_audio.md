@@ -3,11 +3,9 @@
 title: Interactive Gaming Audio Only API
 description: 
 platform: iOS_CPP
-updatedAt: Thu Nov 01 2018 09:51:07 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:23:12 GMT+0000 (UTC)
 ---
 # Interactive Gaming Audio Only API
-# Interactive Gaming Audio Only API
-
 The Interactive Gaming Audio Only API is composed of **Objective-C Interface** and **C++ Interface**:
 
 - Objective-C Interface: Provides main methods and callback events of the SDK on the iOS platform, including:
