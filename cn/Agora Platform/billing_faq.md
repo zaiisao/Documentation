@@ -3,11 +3,9 @@
 title: 计费
 description: 
 platform: 计费
-updatedAt: Thu Nov 01 2018 08:06:18 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:04:00 GMT+0000 (UTC)
 ---
 # 计费
-# 计费
-
 本页提供声网 Agora 实时音视频通话产品及服务相关的计费说明，以及常见问题和回答。关于直播、游戏等收费，请联系 sales@agora.io 。
 
 当每月通话总时长不超过 1 万分钟时，Agora 不收取任何费用。总时长为语音和视频的总时长, 扣取顺序依次往下：
