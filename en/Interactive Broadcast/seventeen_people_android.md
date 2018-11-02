@@ -1,11 +1,11 @@
 
 ---
-title: Video Conference of 7+ participants
+title: Video Conference of 7+ Users
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:23:44 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 19:53:11 GMT+0000 (UTC)
 ---
-# Video Conference of 7+ participants
+# Video Conference of 7+ Users
 If a video conference has too many host broadcasters, latency or packet loss may occur.
 
 Now, if we set the subscribing stream to the **1-N** Mode, that is, set 1 stream as high and the rest low, then a maximum of 17 participants can join host an interactive broadcast without experiencing latency.
