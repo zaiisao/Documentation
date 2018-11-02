@@ -3,12 +3,9 @@
 title: 安全
 description: 
 platform: 安全
-updatedAt: Thu Nov 01 2018 08:05:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:55 GMT+0000 (UTC)
 ---
 # 安全
-# 安全
-
-
 ### 声网 Agora 的服务安全吗？可以加密吗？
 
 声网 Agora 是一个安全的平台。在发送信号时会进行加密（通话设置）。为了遵守法律相关要求，媒体流（通话本身）不会加密。
