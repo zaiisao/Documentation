@@ -3,11 +3,9 @@
 title:  Android Specific Questions
 description: 
 platform:  Android Specific Questions
-updatedAt: Thu Nov 01 2018 09:27:03 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:18:37 GMT+0000 (UTC)
 ---
 #  Android Specific Questions
-# Android Specific Questions
-
 ### Can I mix my code with the SDK code on Android?
 
 No, the .so files cannot be called if the codes are mixed.
