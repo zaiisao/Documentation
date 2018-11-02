@@ -3,16 +3,14 @@
 title: Implementing Voice for Gaming
 description: 
 platform: Unity_(iOS)
-updatedAt: Thu Nov 01 2018 09:40:55 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:20:39 GMT+0000 (UTC)
 ---
 # Implementing Voice for Gaming
-# Implementing Voice for Gaming
-
 ## Step 1: Prepare the Environment
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Game SDK for **Unity** Voice. See the following structure:
 
-    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Unity3D.png" style="width: 310.8px; height: 328.2px;"/>
+    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Unity3D.png" style="width: 370.0px;"/>
 
 -   **include**: header files. Typically not used in Unity3D projects except for when modifying the raw data.
 
@@ -57,7 +55,7 @@ Create a Unity3D project. Refer to [here](https://developer.apple.com/library/co
 
     -   Add the necessary system libraries:
 
-    <img alt="../_images/Intergration-Libraries-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Libraries-iOS.png" style="width: 750.0px; height: 418.0px;"/>
+    <img alt="../_images/Intergration-Libraries-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Libraries-iOS.png" />
 
 
 
@@ -70,14 +68,14 @@ Create a Unity3D project. Refer to [here](https://developer.apple.com/library/co
 3.  Select **Enable Bitcode**, and set it to **No**.
 
 
-<img alt="../_images/Intergration-Bitcode-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bitcode-iOS.png" style="width: 792.0px; height: 322.0px;"/>
+<img alt="../_images/Intergration-Bitcode-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bitcode-iOS.png" />
 
 
 ## Step 5: Add Permissions
 
 Add any necessary permission, such as access permission to the microphone:
 
-<img alt="../_images/Intergration-Privileges-Microphone-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Privileges-Microphone-iOS.png" style="width: 690.0px; height: 334.0px;"/>
+<img alt="../_images/Intergration-Privileges-Microphone-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Privileges-Microphone-iOS.png" />
 
 
 ## Step 6: Call the APIs
