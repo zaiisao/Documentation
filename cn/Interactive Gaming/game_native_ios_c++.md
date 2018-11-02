@@ -3,11 +3,9 @@
 title: 实现游戏语音功能
 description: 
 platform: iOS_CPP
-updatedAt: Thu Nov 01 2018 08:33:36 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:09:00 GMT+0000 (UTC)
 ---
 # 实现游戏语音功能
-# 实现游戏语音功能
-
 在本页你可以了解如何使用游戏语音版 C++ SDK 在 iOS 平台上实现语音通话。
 
 ## 准备环境
