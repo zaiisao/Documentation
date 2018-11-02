@@ -3,16 +3,14 @@
 title: 信息安全说明
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 07:47:15 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:20 GMT+0000 (UTC)
 ---
 # 信息安全说明
-# 信息安全说明
-
 ## 简介
 
 本文提供了 Agora 的信息安全说明。
 
-<img alt="../_images/security.png" src="https://web-cdn.agora.io/docs-files/cn/security.png" style="width: 840.0px; height: 906.0px;"/>
+<img alt="../_images/security.png" src="https://web-cdn.agora.io/docs-files/cn/security.png" />
 
 
 ### 目的
