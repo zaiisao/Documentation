@@ -3,11 +3,9 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: Linux
-updatedAt: Thu Nov 01 2018 08:30:37 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:55 GMT+0000 (UTC)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
-# 客户端：发送点对点文本消息和频道文本消息
-
 ## 第一节：快速集成
 
 本章介绍信令 SDK 的集成方法。
