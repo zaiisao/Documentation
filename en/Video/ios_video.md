@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 20:37:30 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 20:37:58 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
@@ -55,7 +55,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    pod init
    ```
 
-2. Add the Agora SDK reference in the Podfile. Open the Podfile, and fill it with the following content. Fill **“Your App”** with the name of your Target.
+2. Add the Agora SDK reference in the Podfile. Open the Podfile, and put in the following content. Fill **“Your App”** with the name of your Target.
 
    ```
    platform :ios, '9.0'
@@ -78,7 +78,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    pod install
    ```
 
-   If Terminal says `Pod installation complete!`, you have successfully added the libraries. Click open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
+   If Terminal says `Pod installation complete!`, you have successfully added the libraries. Click to open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
 
    ```
    open YourApp.xcworkspace
@@ -96,7 +96,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    <img alt="../_images/ios_video_2.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_2.jpg" />
 
-4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding new libraries, click the **+** button.
+4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding the new libraries, click the **+** button.
 
    - `AgoraRtcEngineKit.framework`
    - `Accelerate.framework`
@@ -117,7 +117,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    <img alt="../_images/ios_video_4.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_4.jpg" />
 
-   `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK and add `AgoraRtcEngineKit.framework`.
+   `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
 
    <img alt="../_images/ios_video_5.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_5.jpg" />
 
@@ -125,8 +125,8 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 Before enabling a video call, you need to enable camera and microphone access to the SDK on your device. Open `info.plist` and click **+** to add:
 
-- **Privacy - Microphone Usage Description**, and add a note in the **Value** colume.
-- **Privacy - Camera Usage Description**, and add a note in the **Value** colume.
+- **Privacy - Microphone Usage Description**, and add a note in the **Value** column.
+- **Privacy - Camera Usage Description**, and add a note in the **Value** column.
 
 **Before:**
 
@@ -142,13 +142,13 @@ You can access the added library using [Objective-C](#oc) or [Swift](#swift).
 
 ### <a name = "oc"></a>Objective-C
 
-In the main file that uses Agora APIs, add `#import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>`.
+In the main file that uses the Agora APIs, add `#import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>`.
 
 > The SDK provides FAT image libraries with multi-architecture support for both 32/64-bit audio emulators and 32/64-bit audio/video real devices.
 
 ### <a name = "swift"></a>Swift
 
-In the main file that uses Agora APIs, add `import AgoraRtcEngineKit`.
+In the main file that uses the Agora APIs, add `import AgoraRtcEngineKit`.
 
 <img alt="../_images/ios_video_8.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_8.jpg" />
 
@@ -160,7 +160,7 @@ The Agora SDK provides the following additional settings and permissions for you
 
   <img alt="../_images/ios_video_9.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_9.jpg" />
 
-- Enable or disable Bitcode. Applications developed with Bitcode can be optimized once it is uploaded to the App Store. Select the current Target, click the **Build Settings** tab, and enable or disable Bitcode according to your actual needs.
+- Enable or disable Bitcode. Applications developed with Bitcode can be optimized once it is uploaded to the App Store. Select the current Target, click the **Build Settings** tab, and enable or disable Bitcode according to your needs.
 
   <img alt="../_images/ios_video_10.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_10.jpg" />
 	
