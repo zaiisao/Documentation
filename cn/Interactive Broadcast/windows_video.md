@@ -3,11 +3,9 @@
 title: 集成客户端
 description: 
 platform: Windows
-updatedAt: Thu Nov 01 2018 07:50:16 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 03:59:39 GMT+0000 (UTC)
 ---
 # 集成客户端
-# 集成客户端
-
 ## 前提条件
 
 请确保满足以下开发环境要求:
@@ -21,13 +19,18 @@ updatedAt: Thu Nov 01 2018 07:50:16 GMT+0000 (UTC)
 
 > 使用版本号高于 Microsoft Visual Studio 2013 的开发环境时，可能会有兼容性问题。
 
-## 注册账号，并获取 App ID
+## 创建 Agora 账号并获取 App ID
 
-1.  在 [Agora 官网](https://www.agora.io/cn/)注册一个账号。注册成功后，页面会跳转到[Dashboard](https://dashboard.agora.io/)。
+1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
+2. 登陆 Dashboard 页面，点击 **添加新项目**。
 
-2.  在 **项目列表** 页面点击 **添加新项目** 。
+	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
-3.  填写想要的 **项目名**， 然后点击 **提交** ，获取 App ID。
+1. 填写 **项目名**，然后点击 **提交**。
+2. 在你创建的项目下，查看并获取该项目对应的 **App ID**。
+
+	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" />
+
 
 
 ## 添加 SDK
