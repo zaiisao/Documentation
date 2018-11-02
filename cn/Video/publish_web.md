@@ -3,9 +3,8 @@
 title: 发布和订阅音视频流
 description: Web平台上发布音视频流
 platform: Web
-updatedAt: Thu Nov 01 2018 08:17:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:30 GMT+0000 (UTC)
 ---
-# 发布和订阅音视频流
 # 发布和订阅音视频流
 ## 创建音视频流
 使用 `AgoraRTC.createStream` 方法创建音视频流对象。
