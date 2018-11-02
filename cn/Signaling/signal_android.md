@@ -3,9 +3,8 @@
 title: 信令 API
 description: 
 platform: Android
-updatedAt: Thu Nov 01 2018 08:46:10 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:08:06 GMT+0000 (UTC)
 ---
-# 信令 API
 # 信令 API
 > 版本：v1.4.0
 > 属性名称前如果有下划线表示其为内置属性（而非自定义属性）。
