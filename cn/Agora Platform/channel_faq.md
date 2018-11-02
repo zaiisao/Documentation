@@ -3,11 +3,9 @@
 title: 频道类常见问题
 description: 
 platform: 频道类常见问题
-updatedAt: Thu Nov 01 2018 08:10:55 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:11 GMT+0000 (UTC)
 ---
 # 频道类常见问题
-# 频道类常见问题
-
 ### 为什么提示我被踢出了设备？
 
 如果一个已经登录的用户，在另一个设备登录，则当前用户会被踢。
