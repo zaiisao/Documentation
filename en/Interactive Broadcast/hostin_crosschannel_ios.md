@@ -3,11 +3,9 @@
 title: Host In Across Channels
 description: 
 platform: macOS,iOS
-updatedAt: Fri Nov 02 2018 02:34:13 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:20:13 GMT+0000 (UTC)
 ---
 # Host In Across Channels
-# Hosting In Across Channels
-
 In an ordinary live broadcast, hosts in the same channel can host in for interaction, while hosts from different channels cannot. This page provides solutions for users to host in from different channels:
 
 <table>
@@ -42,7 +40,7 @@ The channel of host A and audience A is one app live channel. Cross-channel host
 
 The audience of host A pulls the RTMP stream of the app live channel with the layout set according to host A. The following figure shows the Channel A audience displaying host A to be bigger than hosts B and C:
 
-<img alt="../_images/server_hostin_en.jpg" src="https://web-cdn.agora.io/docs-files/en/server_hostin_en.jpg" style="width: 590.5px; height: 787.5px;"/>
+<img alt="../_images/server_hostin_en.jpg" src="https://web-cdn.agora.io/docs-files/en/server_hostin_en.jpg" style="width: 630px; "/>
 
 
 ### Preparation
