@@ -3,9 +3,8 @@
 title: Initialize AgoraRtcEngine
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 09:00:51 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:29 GMT+0000 (UTC)
 ---
-# Initialize AgoraRtcEngine
 # Initialize AgoraRtcEngine
 Create an AgoraRtcEngine instance by invoking `sharedEngineWithAppId` before joining a live broadcast channel.
 
