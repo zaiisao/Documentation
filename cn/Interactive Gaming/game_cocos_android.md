@@ -2,7 +2,7 @@
 ---
 title: 实现游戏语音功能
 description: 
-platform: Cocos_(Android)
+platform: Cocos
 updatedAt: Fri Nov 02 2018 04:10:37 GMT+0000 (UTC)
 ---
 # 实现游戏语音功能

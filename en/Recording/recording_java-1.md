@@ -2,7 +2,7 @@
 ---
 title: Enabling Recording
 description: 
-platform: java
+platform: Java
 updatedAt: Fri Nov 02 2018 04:01:22 GMT+0000 (UTC)
 ---
 # Enabling Recording

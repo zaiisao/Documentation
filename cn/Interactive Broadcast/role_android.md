@@ -3,9 +3,8 @@
 title: 切换用户角色
 description: android平台上切换用户角色
 platform: Android
-updatedAt: Thu Nov 01 2018 08:11:17 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:18:26 GMT+0000 (UTC)
 ---
-# 切换用户角色
 # 切换用户角色
 直播频道分主播和观众两种用户角色。在将频道模式为直播后，调用 `setClientRole` 方法，并根据需要将用户设置为主播或观众。两者的区别在于：
 

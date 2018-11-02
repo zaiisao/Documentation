@@ -2,12 +2,10 @@
 ---
 title: Enabling Recording
 description: 
-platform: C++
-updatedAt: Thu Nov 01 2018 08:06:18 GMT+0000 (UTC)
+platform: CPP
+updatedAt: Fri Nov 02 2018 04:01:12 GMT+0000 (UTC)
 ---
 # Enabling Recording
-# Enabling Recording
-
 In this quickstart, you will learn how to use the Agora Recording SDK to enable recording.
 
 The Agora Recording SDK for Linux (Recording SDK) supports:
@@ -21,7 +19,7 @@ The Agora Recording SDK for Linux (Recording SDK) supports:
 
 The Agora Recording SDK for Linux is integrated on your Linux server instead of your application:
 
-<img alt="../_images/recording_linux_en.png" src="https://web-cdn.agora.io/docs-files/en/recording_linux_en.png" style="width: 579.6px; height: 374.5px;"/>
+<img alt="../_images/recording_linux_en.png" src="https://web-cdn.agora.io/docs-files/en/recording_linux_en.png" style="width: 500px;"/>
 
 
 To record the content of a channel, a ‘special audience’ joins the channel, gets the content and stores the content on a Linux server. You must:

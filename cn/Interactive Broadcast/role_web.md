@@ -3,9 +3,8 @@
 title: 切换用户角色
 description: web平台上设置或切换用户角色
 platform: Web
-updatedAt: Thu Nov 01 2018 08:13:31 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:18:49 GMT+0000 (UTC)
 ---
-# 切换用户角色
 # 切换用户角色
 Web 平台通过如下 3 个接口控制用户角色的切换：
 

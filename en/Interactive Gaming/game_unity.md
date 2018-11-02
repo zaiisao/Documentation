@@ -3,11 +3,9 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Thu Nov 01 2018 09:51:48 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:23:26 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
-# Interactive Gaming API
-
 This document is provided for the C\# programming language with the following classes:
 
 -   [IRtcEngineForGaming Abstract Class](#irtcengine): includes the main methods for the application to call.

@@ -2,7 +2,7 @@
 ---
 title: 实现游戏语音功能
 description: 
-platform: Unity_(Android)
+platform: Unity
 updatedAt: Fri Nov 02 2018 04:09:14 GMT+0000 (UTC)
 ---
 # 实现游戏语音功能

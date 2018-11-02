@@ -2,12 +2,10 @@
 ---
 title: 录制 API
 description: 
-platform: C++
-updatedAt: Thu Nov 01 2018 07:57:03 GMT+0000 (UTC)
+platform: CPP
+updatedAt: Fri Nov 02 2018 04:06:06 GMT+0000 (UTC)
 ---
 # 录制 API
-# 录制 API
-
 > 版本：v2.2.3
 
 <table>
@@ -890,7 +888,7 @@ virtual int setVideoMixingLayout(const agora::linuxsdk::VideoMixingLayout &layou
 
 下面的例子用来描述主播图像的位置和尺寸: x, y, width, height 分别为 0.5， 0.4， 0.2， 0.3
 
-<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/cn/sei_overview.png" style="width: 561.4px; height: 484.4px;"/>
+<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/cn/sei_overview.png" style="width: 500px"/>
 
 <a name = "leaveChannel"></a>
 

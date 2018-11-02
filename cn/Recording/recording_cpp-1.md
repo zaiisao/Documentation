@@ -2,7 +2,7 @@
 ---
 title: 录制快速开始
 description: 
-platform: C++
+platform: CPP
 updatedAt: Fri Nov 02 2018 04:05:36 GMT+0000 (UTC)
 ---
 # 录制快速开始

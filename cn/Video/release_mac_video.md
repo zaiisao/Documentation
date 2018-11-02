@@ -3,11 +3,9 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 07:57:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 03:57:55 GMT+0000 (UTC)
 ---
 # 发版说明
-# 发版说明
-
 本文提供 Agora 完整包的发版说明。
 
 ## **简介**

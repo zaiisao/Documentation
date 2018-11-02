@@ -3,11 +3,9 @@
 title: Error Codes and Warning Codes
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 01 2018 08:18:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:13 GMT+0000 (UTC)
 ---
 # Error Codes and Warning Codes
-# Error Codes and Warning Codes
-
 The Agora Native SDK will return error or warning codes when calling APIs or during runtime:
 
 -   **Error Codes** occur when the SDK encounters an error that cannot be recovered automatically without any application intervention. For example, the SDK returns an error if it fails to turn on the camera, and reminds the user not to use the camera.

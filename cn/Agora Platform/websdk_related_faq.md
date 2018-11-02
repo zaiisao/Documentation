@@ -3,11 +3,9 @@
 title: Web SDK 相关
 description: 
 platform: Web SDK 相关
-updatedAt: Thu Nov 01 2018 08:10:06 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:36 GMT+0000 (UTC)
 ---
 # Web SDK 相关
-# Web SDK 相关
-
 ### H264 模式下，在 macOS 上用 Firefox 浏览器加入通话，打开小流时，获取的分辨率与大流一致？
 
 H264模式下，在 macOS 设备上使用 Firefox 打开小流时，获取的分辨率与大流相同；如果是 VP8 模式，则没有此问题。我们会持续关注并更新在该问题上的进展。

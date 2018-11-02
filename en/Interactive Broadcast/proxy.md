@@ -2,7 +2,7 @@
 ---
 title: Deploy the Enterprise Proxy
 description: 
-platform: Android,iOS,macOS,Windows,Linux
+platform: Android,iOS,macOS,Windows
 updatedAt: Fri Nov 02 2018 04:11:01 GMT+0000 (UTC)
 ---
 # Deploy the Enterprise Proxy

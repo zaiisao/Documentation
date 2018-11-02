@@ -3,11 +3,9 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Thu Nov 01 2018 08:07:15 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:04:27 GMT+0000 (UTC)
 ---
 # 音频相关
-# 音频相关
-
 ## 回声
 
 回声问题通常是由对方的设备引起的，佩戴耳机即可规避。

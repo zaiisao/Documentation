@@ -3,9 +3,8 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 09:01:16 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:34 GMT+0000 (UTC)
 ---
-# Create and Initialize a Client
 # Create and Initialize a Client
 ## Create a Client
 Use the `AgoraRTC.createClient` method to create a client object. Set the mode and codec parameters. 

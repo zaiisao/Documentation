@@ -3,11 +3,9 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Thu Nov 01 2018 09:21:17 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:17:18 GMT+0000 (UTC)
 ---
 # Audio-related Issues
-# Audio-related Issues
-
 ## Echo
 
 An echo is usually caused by the remote user’s device, which in most cases can be fixed by using a headset.

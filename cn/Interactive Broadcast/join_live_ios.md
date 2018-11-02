@@ -3,9 +3,8 @@
 title: 加入频道
 description: ios平台加入直播频道
 platform: iOS
-updatedAt: Thu Nov 01 2018 08:04:32 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:18:00 GMT+0000 (UTC)
 ---
-# 加入频道
 # 加入频道
 App 在加入频道前，需要先设置频道模式，再加入频道。
 

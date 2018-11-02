@@ -2,7 +2,7 @@
 ---
 title: 企业部署代理服务器
 description: 
-platform: Android,iOS,macOS,Windows,Linux
+platform: Android,iOS,macOS,Windows
 updatedAt: Fri Nov 02 2018 04:04:24 GMT+0000 (UTC)
 ---
 # 企业部署代理服务器
