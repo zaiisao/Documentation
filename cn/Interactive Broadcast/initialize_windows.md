@@ -3,9 +3,8 @@
 title: 创建 AgoraRtcEngine 实例并初始化
 description: windows平台初始化
 platform: Windows
-updatedAt: Thu Nov 01 2018 08:05:06 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:01:04 GMT+0000 (UTC)
 ---
-# 创建 AgoraRtcEngine 实例并初始化
 # 创建 AgoraRtcEngine 实例并初始化
 
 进入频道之前，调用 <code>create</code> 方法创建一个 AgoraRtcEngine 实例，并调用 <code>initialize</code> 方法完成初始化。
