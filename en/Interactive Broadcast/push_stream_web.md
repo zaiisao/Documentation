@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 17:08:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 17:08:48 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 On the website, you can push streams by following the steps in the following figure:
