@@ -3,11 +3,9 @@
 title: Integrate SDK
 description: 
 platform: Windows
-updatedAt: Thu Nov 01 2018 08:46:03 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:22 GMT+0000 (UTC)
 ---
 # Integrate SDK
-# Integrate SDK
-
 ## Prerequisites
 
 -   OS: Microsoft Windows 7+
@@ -21,17 +19,17 @@ updatedAt: Thu Nov 01 2018 08:46:03 GMT+0000 (UTC)
 
 ## Creating an Agora Account and Getting an App ID
 
-1.  Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
+1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
-2.  Click **Add New Project** on the **Projects** page of the dashboard.
+2. Click **Add New Project** on the **Projects** page of the dashboard.
 
+   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
 
-<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" style="width: 1142.0px; height: 360.0px;"/>
+3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
 
+4. Find the **App ID** under the created project.
 
-1.  Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
-
-2.  Find the **App ID** under the created project.
+   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
 
 
 <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" style="width: 1138.0px; height: 344.0px;"/>
