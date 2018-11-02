@@ -3,9 +3,8 @@
 title: 直播相关
 description: 
 platform: 直播相关
-updatedAt: Thu Nov 01 2018 08:16:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:16 GMT+0000 (UTC)
 ---
-# 直播相关
 # 直播相关
 ### Agora 直播如何支持大并发？
 Agora 在全球部署了近百个数据中心，几千台服务器保证亿级并发，同时有国内外顶级的 CDN 厂商作为合作伙伴保证旁路直播的高并发。
