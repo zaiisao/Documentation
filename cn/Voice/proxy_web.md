@@ -3,11 +3,9 @@
 title: 企业部署代理服务器
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 08:29:17 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:04:31 GMT+0000 (UTC)
 ---
 # 企业部署代理服务器
-# 企业部署代理服务器
-
 本页为有防火墙的企业用户展示如何通过部署 Nginx 和 TurnServer 中转服务器，并调用 Agora 的接口，来使用 Agora Web SDK 的服务。
 
 > - 本文内容适用于 Agora Web SDK。
