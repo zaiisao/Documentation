@@ -3,11 +3,9 @@
 title: Sending Point-to-point Text and Channel Messages from the Client
 description: 
 platform: Linux
-updatedAt: Thu Nov 01 2018 09:03:53 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:44 GMT+0000 (UTC)
 ---
 # Sending Point-to-point Text and Channel Messages from the Client
-# Sending Point-to-point Text and Channel Messages from the Client
-
 ## Section 1: Integration
 
 ### Step 1: Download the Agora Signaling SDK and Unpack the SDK.
