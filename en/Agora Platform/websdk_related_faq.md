@@ -3,11 +3,9 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Thu Nov 01 2018 09:23:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:17:55 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
-# Web SDK-related Issues
-
 ### Why can’t I set the low stream in H.264 mode when joining a session with the Firefox browser on a macOS device?
 
 On a macOS device, if you join a session in H.264 mode with the Firefox browser, you may not be able to set the low stream parameter, and the resolution is the same as that of the high stream. This does not occur in VP8 mode. Agora is investigating this issue.
