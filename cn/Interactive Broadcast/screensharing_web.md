@@ -3,11 +3,9 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Thu Nov 01 2018 08:42:36 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:04:56 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
-# 进行屏幕共享
-
 要实现屏幕共享的功能，只需要在创建流的时候设置相关的属性（Chrome 和 Firefox 的实现方式不同）。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕图像。
 
 本页包含以下内容：
@@ -86,7 +84,7 @@ videoClient.join(channelKey, channel, null, function(uid) {
 
 自己订阅自己，会产生额外的计费，如图：
 
-<img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/cn/screensharing_streams.png" style="width: 559.2px; height: 399.2px;"/>
+<img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/cn/screensharing_streams.png" style="width: 500px;" />
 
 Agora 建议，为避免重复计费，每个 Client 成功加入频道以后，把返回的 uid 存在列表里。每次监听到 `’stream-added’` 事件的时候，先判断加入的流是否是本地流，如果是，则不订阅。
 
