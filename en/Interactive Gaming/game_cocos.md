@@ -3,11 +3,9 @@
 title: Interactive Gaming API
 description: 
 platform: Cocos
-updatedAt: Thu Nov 01 2018 09:51:12 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:23:19 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
-# Interactive Gaming API
-
 This document is provided for the C++ language with the following classes:
 
 -   [IRtcEngineForGaming Interface Class](#IRtcEngineForGamingInterfaceClass): includes the main methods for the application to call.
