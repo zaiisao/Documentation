@@ -3,28 +3,28 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 20:31:55 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 20:32:00 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
 
--   A device with audio running Android 4.1 or higher
--   Android SDK for API level 16 or higher
+-   A device with audio support running Android 4.1+.
+-   Android SDK for API level 16+.
 -   [Android Studio 2.0](https://developer.android.com/studio/)
 -   Agora [Voice SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads)
 
 
-Before getting started, connect ports and whitelist domains as described in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
+Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
 ## Creating an Agora Account and App ID
 
-1.  Create a developer account at [www.agora.io](https://dashboard.agora.io/signin/). When you finish the sign-up, the website displays your [Dashboard](https://dashboard.agora.io/) .
+1.  Create a developer account at [www.agora.io](https://dashboard.agora.io/signin/). When you finish the sign-up, the website displays your [Dashboard](https://dashboard.agora.io/).
 
 2.  Click **Add New Project** on the **Projects** page of the dashboard.
 
-3.  Fill in the **Project Name** and click **Submit** .
+3.  Fill in the **Project Name** and click **Submit**.
 
-4.  Copy the value of your **App ID** .
+4.  Copy the value of your **App ID**.
 
 5.  In the Android Studio project, locate the `app/src/main/res/values/strings.xml` file and add the APP ID:
 
@@ -32,12 +32,12 @@ Before getting started, connect ports and whitelist domains as described in [Fir
 
 ## Adding the Agora SDK to Your Project
 
-1. Open the `build.gradle` file under the **app** folder from the **Project Files** view in Android Studio. Make a note of the path of the libs folder to the right of compile `fileTree`. This is where you will put the Agora SDK for Android files later on.
+1. Open the `build.gradle` file under the **app** folder from the **Project Files** view in Android Studio. Make a note of the path of the libs folder to the right of `fileTree`. This is where you will put the Agora SDK for Android files later on.
 
    <img alt="../_images/video_buildgradle.png" src="https://web-cdn.agora.io/docs-files/en/video_buildgradle.png" />
 
 > -   The libs path directory is relative to the application’s app directory.
-> -   Ensure the path name contains no Chinese characters. Otherwise, if the path contains Chinese characters, compiling the code fails and displays an error message that contains random ASCII characters.
+> -   Ensure that the path name contains no Chinese characters. If the path contains Chinese characters, compiling the code fails and displays an error message that contains random ASCII characters.
 
 2.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Agora Voice SDK for Android.
 
@@ -90,7 +90,7 @@ sourceSets{
 
 ## Synchronizing the Project
 
-Click **Sync Project With Gradle Files** until the sync is complete.
+Click **Sync Project With Gradle Files** until the synchronization is complete.
 
 <img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px;"/>
 
@@ -102,7 +102,7 @@ If you see the following “NDK not configured” error message, download and in
 <img alt="../_images/android6.png" src="https://web-cdn.agora.io/docs-files/en/android6.png" style="width: 500px;"/>
 
 
-1. Click the **Configure** button menu and select **Project Defaults \> Project Structure** as shown below:
+1. Click the **Configure** button at the bottom of the main menu and select **Project Defaults \> Project Structure** as shown below:
 
 	<img alt="../_images/project_structure.png" src="https://web-cdn.agora.io/docs-files/en/project_structure.png" style="width: 708.8px; height: 549.6px;"/>
 
@@ -110,14 +110,14 @@ If you see the following “NDK not configured” error message, download and in
 
 	<img alt="../_images/android7.png" src="https://web-cdn.agora.io/docs-files/en/android7.png" />
 
-3. Re-sync the Android project with the NDK files by clicking **Sync Project With Gradle Files** .
+3. Re-synchronize the Android project with the NDK files by clicking **Sync Project With Gradle Files**.
 
 	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px;"/>
 
 
 ## Adding Device Permissions
 
-1. Open the `AndroidManifest.xml` file located under **app \> src \> main** and Add the required device permissions to the file.
+1. Open the `AndroidManifest.xml` file located under **app \> src \> main** and add the required device permissions to the file.
 
     ```
     <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -134,7 +134,7 @@ If you see the following “NDK not configured” error message, download and in
      </manifest>
     ```
 
-2. Re-sync the Android project with the NDK files by clicking **Sync Project With Gradle Files** .
+2. Re-synchronize the Android project with the NDK files by clicking **Sync Project With Gradle Files**.
 
 	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px;"/>
 
