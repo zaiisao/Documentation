@@ -3,11 +3,9 @@
 title: Sending Point-to-point Text and Channel Messages from the Server
 description: 
 platform: Java
-updatedAt: Thu Nov 01 2018 09:07:56 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:26 GMT+0000 (UTC)
 ---
 # Sending Point-to-point Text and Channel Messages from the Server
-# Java Server: Sending Point-to-point Text and Channel Messages from the Server
-
 ## Section 1: Integration
 
 ### Step 1: Prepare the Environment
