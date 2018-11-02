@@ -3,11 +3,9 @@
 title: 游戏纯语音版 API
 description: 
 platform: iOS_CPP
-updatedAt: Thu Nov 01 2018 08:59:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:12:25 GMT+0000 (UTC)
 ---
 # 游戏纯语音版 API
-# 游戏纯语音版 API
-
 游戏纯语音版 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成，其中：
 
 - Objective-C 接口：提供纯语音版游戏 SDK 在 iOS 平台上的语音相关方法和回调，包括：
