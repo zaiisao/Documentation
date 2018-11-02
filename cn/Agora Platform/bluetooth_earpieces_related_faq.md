@@ -3,11 +3,9 @@
 title: 蓝牙耳机相关
 description: 
 platform: 蓝牙耳机相关
-updatedAt: Thu Nov 01 2018 08:09:44 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:30 GMT+0000 (UTC)
 ---
 # 蓝牙耳机相关
-# 蓝牙耳机相关
-
 iOS 会自动为系统电话和 VoIP 通话选择音频路由，即使蓝牙设备已经连接，也不一定走蓝牙：
 
 ## 系统电话（包括 CallKit）
