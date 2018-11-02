@@ -3,11 +3,9 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 08:31:35 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:02 GMT+0000 (UTC)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
-# 客户端：发送点对点文本消息和频道文本消息
-
 ## 第一节：快速集成
 
 ### 第一步：下载最新的 Agora Signaling SDK 软件包。
