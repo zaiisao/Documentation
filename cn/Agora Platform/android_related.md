@@ -3,11 +3,9 @@
 title: Android 平台常见问题
 description: 
 platform: Android 平台常见问题
-updatedAt: Thu Nov 01 2018 08:10:39 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:04 GMT+0000 (UTC)
 ---
 # Android 平台常见问题
-# Android 平台常见问题
-
 ### 安卓平台上，可以将 SDK 代码与我自己的代码混用吗？
 
 不能，否则无法回调 `.so` 文件。
