@@ -3,12 +3,12 @@
 title: Use Signaling Security Keys
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 15:41:10 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 15:41:43 GMT+0000 (UTC)
 ---
 # Use Signaling Security Keys
 ## Introduction
 
-The Agora SDK provides two different keys for authentication: [App ID](#APPID) and [SignalingToken](#SignalingToken). The following figure shows the environments in which the keys are used:
+The Agora SDK provides two different security keys for authentication: [App ID](#APPID) and [SignalingToken](#SignalingToken). The following figure shows the environments in which the security keys are used:
 
 <img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_signaling.jpg" style="width: 630px;"/>
 
