@@ -96,7 +96,6 @@ updatedAt: Fri Nov 02 2018 03:59:16 GMT+0000 (UTC)
  - `SystemConfiguration.framework`
  - `CoreWLAN.framework`
  - `Foundation.framework`
- - `QTKit.framework`
  - `CoreAudio.framework`
  - `CoreMedia.framework`
  - `AVFoudation.framework`
