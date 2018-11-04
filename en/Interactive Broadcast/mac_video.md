@@ -104,7 +104,6 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    - `SystemConfiguration.framework`
    - `CoreWLAN.framework`
    - `Foundation.framework`
-   - `QTKit.framework`
    - `CoreAudio.framework`
    - `CoreMedia.framework`
    - `AVFoudation.framework`
