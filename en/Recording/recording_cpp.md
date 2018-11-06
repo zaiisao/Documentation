@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Tue Nov 06 2018 16:32:34 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 16:32:51 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -20,10 +20,10 @@ updatedAt: Tue Nov 06 2018 16:32:34 GMT+0000 (UTC)
 </thead>
 <tbody>
 <tr><td><a href="#irecordingengine">IRecordingEngine</a></td>
-<td>The <code>IRecordingEngine</code> class provides the main methods that can be invoked by your application</td>
+<td>The <code>IRecordingEngine</code> class provides the main methods that can be invoked by your application.</td>
 </tr>
 <tr><td><a href="#irecordingengineeventhandler">IRecordingEngineEventHandler</a></td>
-<td>The <code>IRecordingEngineEventHandler</code> class enables callback event notifications to your application</td>
+<td>The <code>IRecordingEngineEventHandler</code> class enables callbacks to your application.</td>
 </tr>
 </tbody>
 </table>
@@ -70,7 +70,7 @@ public static IRecordingEngine* createAgoraRecordingEngine(const char * appId, I
 <td>The App ID used in the communications to be recorded. For details, see <a href="../../en/Agora%20Platform/token.md">Getting an App ID</a>.</td>
 </tr>
 <tr><td><code>eventHandler</code></td>
-<td>The Agora Recording SDK notifies the application of the triggered events according to <a href="#irecordingengineeventhandler">IRecordingEngineEventHandler</a>.</td>
+<td>The Agora Recording SDK notifies the application of the triggered callbacks found in <a href="#irecordingengineeventhandler">IRecordingEngineEventHandler</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -100,10 +100,10 @@ virtual int joinChannel(const char * token, const char *channelId, uid_t uid, co
 <td>The token used in the communications to be recorded. For details, see <a href="../../en/Agora%20Platform/token.md">Getting an App ID</a>.</td>
 </tr>
 <tr><td><code>channelId</code></td>
-<td>Name of the channel to be recorded</td>
+<td>Name of the channel to be recorded.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>User ID: A 32-bit unsigned integer ranging from 1 to (2^32-1) that is unique in a channel.</td>
+<td>User ID. A 32-bit unsigned integer ranging from 1 to (2^32-1) that is unique in a channel.</td>
 </tr>
 <tr><td><code>config</code></td>
 <td>Detailed recording configuration. See the definition in the table below.</td>
@@ -118,8 +118,8 @@ virtual int joinChannel(const char * token, const char *channelId, uid_t uid, co
 </tbody>
 </table>
 
-> -   The Recording SDK has <code>requestToken</code> and <code>renewToken</code> as private interfaces. Make sure that you set <code>expireTimestamp</code> as 0 when generating a Token, which means that the privilege, once generated, never expires.
-> -   A channel does not accept duplicate uids, otherwise there will be unpredictable behaviors.
+> -   In the Recording SDK, <code>requestToken</code> and <code>renewToken</code> are private methods. Make sure that you set <code>expireTimestamp</code> as 0 when generating a token, which means that the privilege, once generated, never expires.
+> -   A channel does not accept duplicate uids. Otherwise, there will be unpredictable behaviors.
 
 
 The structure of <code>RecordingConfig</code>:
@@ -186,6 +186,7 @@ typedef struct RecordingConfig {
 ```
 
 <table>
+<caption>Recording Configuration</caption>
 <colgroup>
 <col/>
 <col/>
@@ -199,13 +200,13 @@ typedef struct RecordingConfig {
 <tr><td><code>channelProfile</code></td>
 <td><p>Sets the channel mode:</p>
 <ul>
-<li>CHANNEL_PROFILE_COMMUNICATION: (Default) Communication mode. This is used in one-on-one calls or group calls, where all users in the channel can talk freely.</li>
-<li>CHANNEL_PROFILE_LIVE_BROADCAST: Live broadcast. Host and audience roles that can be set by calling <code>setClientRole</code>. The host sends and receives voice/video, while the audience only receives voice/video.</li>
+<li>CHANNEL_PROFILE_COMMUNICATION: (Default) Communication mode. This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
+<li>CHANNEL_PROFILE_LIVE_BROADCAST: Live broadcast. The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <code>setClientRole</code>. </li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isAudioOnly</code></td>
-<td><p>Sets whether to record audio only:</p>
+<td><p>Sets whether or not to record audio only:</p>
 <ul>
 <li>true: Enable audio recording only.</li>
 <li>false: (Default) Record both audio and video.</li>
@@ -213,7 +214,7 @@ typedef struct RecordingConfig {
 </td>
 </tr>
 <tr><td><code>isVideoOnly</code></td>
-<td><p>Sets whether to record video only:</p>
+<td><p>Sets whether or not to record video only:</p>
 <ul>
 <li>true: Enable video recording only.</li>
 <li>false: (Default) Record both audio and video.</li>
@@ -221,26 +222,29 @@ typedef struct RecordingConfig {
 </td>
 </tr>
 <tr><td><code>isMixingEnabled</code></td>
-<td><p>Sets whether to enable audio-mixing or/and video-mixing mode:</p>
+<td><p>Sets the audio-mixing or/and video-mixing mode:</p>
 <ul>
 <li>false: (Default) Enable individual mode. The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
-<li>true: Enable composite mode. The sample rate, the bitrate and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
+<li>true: Enable composite mode. The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
 </ul>
-<p>If composite mode is enabled:</p>
+<p>If the composite mode is enabled:</p>
 <div><ul>
-<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, this parameter sets to record audio only.</li>
-<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true, this parameter sets to record video only.</li>
-<li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are false, this parameter sets to enable voice mixing and video mixing, that is, to record the audio and video of all uids respectively.</li>
-<li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set to true at the same time.</li>
+<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only audio is recorded.</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true,  only video is recorded.</li>
+<li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are false, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
+	<li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set to <code>true</code> at the same time.</li>
 </ul>
+	<note><p>The <code>isAudioOnly</code> and <code>isVideoOnly</code> parameters are disabled by default.</p>
+	<p>Do not set <code>isAudioOnly</code> and <code>isVideoOnly</code> as <code>true</code> at the same time.</note>
+</p>
 </div>
 </td>
 </tr>
 <tr><td><code>mixResolution</code> <sup>[1]</sup></td>
-<td>If you have enabled the video mixing mode, this parameter sets the resolution in the format: width, height, fps, and Kbps, representing the width, height, frame rate, and bitrate of the video stream.</td>
+<td>If you have enabled the video mixing mode, this parameter sets the resolution in the format: width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
-<td><p>When the whole channel is encrypted, the recording SDK uses this parameter to enable the built-in decryption function:</p>
+<td><p>When the whole channel is encrypted, the recording SDK uses <code>decryptionMode</code> to enable the built-in decryption function:</p>
 
 <div><ul>
 <li>“aes-128-xts”: AES-128, XTS mode</li>
@@ -251,60 +255,62 @@ typedef struct RecordingConfig {
 </td>
 </tr>
 <tr><td><code>secret</code></td>
-<td>(Default: NULL) The decryption password when decryption mode is enabled.</td>
+<td>The decryption password when decryption mode is enabled. The default value is NULL.</td>
 </tr>
 <tr><td><code>idleLimitSec</code></td>
-<td>The Agora Recording SDK automatically stops recording after there is no user in the recorded channel for a time period of <code>idleLimitSec</code>.  The value must be &ge; three seconds, and the default value is 300 seconds.</td>
+<td>The Agora Recording SDK automatically stops recording when there is no user in the recorded channel after a time period of <code>idleLimitSec</code>.  The value must be &ge; three seconds. The default value is 300 seconds.</td>
 </tr>
 <tr><td><code>appliteDir</code></td>
-<td>(Default: NULL) The directory to store AgoraCoreService.</td>
+<td>The directory to store AgoraCoreService. The default value is NULL.</td>
 </tr>
 <tr><td><code>recordFilrRootDir</code></td>
-<td>(Default: NULL) The root directory to store the recording files. Do not set <code>recordFileRootDir</code> and <code>cfgFilePath</code> at the same time.</td>
+<td>The root directory to store the recording files. The default value is NULL. Do not set <code>recordFileRootDir</code> and <code>cfgFilePath</code> at the same time.</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>(Default: NULL) The path of the configuration file. In this configuration file, you can set the absolute path of the recording file, and the content in the configuration file must be in JSON format. Do not set <code>recordFileRootDir</code> and <code>cfgFilePath</code> at the same time.
-For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Recording_Dir</code> is fixed</td>
+<td>The path of the configuration file. The default value is NULL. In this configuration file, you can set the absolute path of the recording file, and the content in the configuration file must be in JSON format. Do not set <code>recordFileRootDir</code> and <code>cfgFilePath</code> at the same time.
+For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Recording_Dir</code> is fixed.</td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
-<td>(Default: 0) The lowest UDP port. Ensure that the value of <code>highUdpPort</code> - <code>lowUdpPort</code> is &ge; 4.</td>
+<td>The lowest UDP port. Ensure that the value of <code>highUdpPort</code> - <code>lowUdpPort</code> is &ge; 4. The default value is 0.</td>
 </tr>
 <tr><td><code>highUdpPort</code></td>
-<td>(Default: 0) The highest UDP port. Ensure that the value of <code>highUdpPort</code> - <code>lowUdpPort</code> is &ge; 4.</td>
+<td>The highest UDP port. Ensure that the value of <code>highUdpPort</code> - <code>lowUdpPort</code> is &ge; 4. The default value is 0.</td>
 </tr>
 <tr><td><code>captureInterval</code></td>
-<td>Time interval between two consecutive screen captures. The value ranges from one second to five seconds. Need to be used with decodeVideo = 3/4 when joining the channel. See <code>joinChannel<code> to allows a user to join a channel.</td>
+<td>The time interval of the screen captures. The value ranges from one second to five seconds. You need to use <code>captureInterval</code> with decodeVideo = 3/4 when joining a channel. See <code>joinChannel<code> to allow a user to join a channel.</td>
 </tr>
 <tr><td><code>audioIndicationInterval</code></td>
-<td><p>Time interval (ms) between two consecutive detection of active speakers.</p>
+<td><p>Whether or not to detect the speakers.</p>
 
 <div><ul>
-<li>&le; 0: Disables the speaker detection;</li>
-<li>&gt; 0: The time interval between two consecutive detection of active speakers in milliseconds. When an active speaker found, the SDK returns the user ID of the speaker in the <code>onActiveSpeaker</code> callback function.</li>
+<li>&le; 0: Disables detecting the speakers.</li>
+<li>&gt; 0: The time interval (ms) of detecting the speakers. When a speaker is found, the SDK returns the user ID of the speaker in the <code>onActiveSpeaker</code> callback.</li>
 </ul>
 </div>
 </td>
 </tr>
 	<tr><td><code>decodeAudio</code> <sup>[2]</sup></td>
-<td><ul>
-<li>AUDIO_FORMAT_DEFAULT_TYPE = 0: Default audio format</li>
-<li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1: AAC format</li>
-<li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2: PCM format</li>
-<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: PCM audio-mixing format</li>
+		<td><p>Audio Decoding Format:</p>
+<ul>
+<li>AUDIO_FORMAT_DEFAULT_TYPE = 0: Default audio format.</li>
+<li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1: AAC format.</li>
+<li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2: PCM format.</li>
+<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: PCM audio-mixing format.</li>
 </ul>
 </td>
 </tr>
 	<tr><td><code>decodeVideo</code> <sup>[2]</sup></td>
-<td><ul>
-<li><p>VIDEO_FORMAT_DEFAULT_TYPE = 0: Default video format</p>
+<td><p>Video Decoding Format:</p>
+	<ul>
+<li><p>VIDEO_FORMAT_DEFAULT_TYPE = 0: Default video format.</p>
 </li>
-<li><p>VIDEO_FORMAT_H264_FRAME_TYPE = 1: H.264 format</p>
+<li><p>VIDEO_FORMAT_H264_FRAME_TYPE = 1: H.264 format.</p>
 </li>
-<li><p>VIDEO_FORMAT_YUV_FRAME_TYPE = 2: YUV format</p>
+<li><p>VIDEO_FORMAT_YUV_FRAME_TYPE = 2: YUV format.</p>
 </li>
-<li><p>VIDEO_FORMAT_JPG_FRAME_TYPE = 3: JPEG format</p>
+<li><p>VIDEO_FORMAT_JPG_FRAME_TYPE = 3: JPEG format.</p>
 </li>
-<li><p>VIDEO_FORMAT_JPG_FILE_TYPE = 4: JPEG file format</p>
+<li><p>VIDEO_FORMAT_JPG_FILE_TYPE = 4: JPEG file format.</p>
 </li>
 <li><p>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5:</p>
 
@@ -318,45 +324,49 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </td>
 </tr>
 <tr><td><code>mixedVideoAudio</code></td>
-<td><p>If you have set <code>isMixingEnabled</code> as <code>true</code>, this parameter allows you to mix audio and video in real time:</p>
+<td><p>If you have set <code>isMixingEnabled</code> as <code>true</code>, <code>mixedVideoAudio</code> allows you to mix audio and video in real time:</p>
 <ul>
-<li>0: (Default) Mix audio and video respectively.</li>
-<li>1: Mix audio and video in real time into an MP4 file. Supported limited players.</li>
-<li>2: Mix audio and video in real time into an MP4 file. Support more players.</li>
+<li>0: (Default) Mix the audio and video respectively.</li>
+<li>1: Mix the audio and video in real time into an MPEG-4 file. Supports limited players.</li>
+<li>2: Mix the audio and video in real time into an MPEG-4 file. Supports more players.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>streamType</code></td>
-<td><p>This parameter takes effect only when the Agora Native SDK has enabled dual-stream mode (high stream by default).</p>
+<td><p><code>streamType</code> takes effect only when the Agora Native SDK has enabled dual-stream mode (high stream by default).</p>
 
 <div><ul>
-<li>0: (Default) High stream</li>
-<li>1: Low stream</li>
+<li>0: (Default) High stream.</li>
+<li>1: Low stream.</li>
 </ul>
 </div>
 </td>
 </tr>
 <tr><td><code>triggerMode</code></td>
-<td><p>Choose to record automatically or manually.</p>
+<td><p>Sets to record automatically or manually.</p>
 <ul>
-<li>0: Automatically</li>
+<li>0: Automatically.</li>
 <li>1: Manually. To start and stop recording, call <code>startRecording</code> and <code>stopRecording</code> respectively.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>lang</code></td>
-<td>CPP_LANG or java</td>
+	<td><p>Sets the programming language:</p>
+		<ul>
+			<li>CPP_LANG (CPP)</li>
+			<li>java (Java)</li>
+		</ul></td>
 </tr>
 <tr><td><code>proxyserver</code></td>
-<td>You can set the parameter to record the content with the Intranet server. For details, please contact <a href="mailto:sales%40agora.io">sales@agora.io</a>.</td>
+<td><code>proxyserver</code> allows you to record the content with the Intranet server. For details, please contact <a href="mailto:sales%40agora.io">sales@agora.io</a>.</td>
 </tr>
 <tr><td><code>audioProfile</code></td>
-<td><p>Audio profile of the recording file.</p>
+<td><p>Audio profile of the recording file:</p>
 
 <div><ul>
 <li>AUDIO_PROFILE_DEFAULT = 0: (Default) Sampling rate of 48 kHz, communication encoding, mono.</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 4: Sampling rate of 48 kHz, music encoding, mono, and bitrate up to 128 Kbps.</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 5: Sampling rate of 48 kHz, music encoding, stereo, and bitrate up to 192 Kbps.</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 4: Sampling rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 5: Sampling rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.</li>
 </ul>
 </div>
 </td>
@@ -368,12 +378,12 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 <td>The default background image of the user.</td>
 </tr>
 <tr><td><code>avSyncMode</code></td>
-<td><p>Audio and video sync mode</p>
+<td><p>Audio and video synchronization mode:</p>
 
 <div><ul>
-<li>UNKNOWN_AVSYNC = -1: Sync error.</li>
+<li>UNKNOWN_AVSYNC = -1: Synchronization error.</li>
 <li>AVSYNC_V0 = 0: Compatible with older versions.</li>
-<li>AVSYNC_V1 = 1: New audio and video sync mode.</li>
+<li>AVSYNC_V1 = 1: New audio and video synchronization mode.</li>
 </ul>
 </div>
 </td>
@@ -381,11 +391,9 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </tbody>
 </table>
 
-> [1] The <code>isAudioOnly</code> and <code>isVideoOnly</code> parameters are disabled by default, and do not set <code>isAudioOnly</code> and <code>isVideoOnly</code> as <code>true</code> at the same time.
-
-> [2] If the raw data is enabled:
-	> - Only supports audio mixing; video mixing is not supported. 
-	> - Only supports video raw data in H.264 for Web SDK; VP8 is not supported.
+> If the raw data is enabled:
+	> - Only audio mixing is supported. Video mixing is not supported. 
+	> - Only raw video data in H.264 for the Web SDK is supported. VP8 is not supported.
 
 
 **Video Profile for the Communication Mode:**
@@ -400,10 +408,10 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </colgroup>
 <thead>
 <tr><th>Resolution</th>
-<th>Frame Rate</th>
-<th>Minimum Bitrate</th>
-<th>Maximum Bitrate</th>
-<th>Recommended Bitrate</th>
+<th>Frame Rate (fps)</th>
+<th>Minimum Bitrate (Kbps)</th>
+<th>Maximum Bitrate (Kbps)</th>
+<th>Recommended Bitrate (Kbps)</th>
 </tr>
 </thead>
 <tbody>
@@ -532,10 +540,10 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </colgroup>
 <thead>
 <tr><th>Resolution</th>
-<th>Frame Rate</th>
-<th>Minimum Bitrate</th>
-<th>Maximum Bitrate</th>
-<th>Recommended Bitrate</th>
+<th>Frame Rate (fps)</th>
+<th>Minimum Bitrate (Kbps)</th>
+<th>Maximum Bitrate (Kbps)</th>
+<th>Recommended Bitrate (Kbps)</th>
 </tr>
 </thead>
 <tbody.
@@ -806,7 +814,7 @@ The structure of <code>VideoMixingLayout</code>:
        int zOrder; //optional, [0, 100] //0 (default): bottom most, 100: top most
 
        //  Optional
-       //  [0, 1.0] where 0 denotes throughly transparent, 1.0 opaque
+       //  [0, 1.0] where 0 denotes thoroughly transparent, 1.0 opaque
        double alpha;
 
        int renderMode;//RENDER_MODE_HIDDEN: Crop, RENDER_MODE_FIT: Zoom to fit
@@ -868,13 +876,13 @@ The structure of <code>VideoMixingLayout</code>:
 <td><p>The host list of <code>VideoMixingLayout</code>. Each host in the channel has a region to display the video on the screen with the following parameters to be set:</p>
 <ul>
 <li><code>uid</code>: User ID of the host displaying the video in the region.</li>
-<li><code>x</code>: Relative horizontal position of the top-left corner of the region. The value is in the range of [0.0,1.0].</li>
-<li><code>y</code>: Relative vertical position of the top-left corner of the region. The value is in the range of [0.0,1.0].</li>
-<li><code>width</code>: Relative width of the region. The value is in the range of [0.0,1.0].</li>
-<li><code>height</code>: Actual height of the region. The value is in the range of [0.0,1.0].</li>
-<li><code>zOrder</code>: The index of the layer. The value is in the range of [1,100]. 1 means the bottom layer, and 100 means the top layer.</li>
-<li><code>alpha</code>: The transparency of the image. The value is in the range of [0.0,1.0]. 0 means transparent, and 1 means opaque.</li>
-<li><code>renderMode</code>：<ul>
+<li><code>x</code>: Relative horizontal position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
+<li><code>y</code>: Relative vertical position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
+<li><code>width</code>: Relative width of the region. The value is between 0.0 and 1.0.</li>
+<li><code>height</code>: Actual height of the region. The value is between 0.0 and 1.0.</li>
+<li><code>zOrder</code>: The index of the layer. The value is between 1 (bottom layer) and 100 (top layer).</li>
+<li><code>alpha</code>: The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque).</li>
+	<li><code>renderMode</code>：<p>Render mode:</p><ul>
 <li>RENDER_MODE_HIDDEN(1): Cropped</li>
 <li>RENDER_MODE_FIT(2): Proportionate</li>
 </ul>
@@ -886,7 +894,7 @@ The structure of <code>VideoMixingLayout</code>:
 <td>User-defined data.</td>
 </tr>
 <tr><td><code>appDataLength</code></td>
-<td>The length of user-defined data.</td>
+<td>The length of the user-defined data.</td>
 </tr>
 <tr><td>Returns</td>
 <td><ul>
@@ -900,7 +908,7 @@ The structure of <code>VideoMixingLayout</code>:
 
 
 
-Here is an example to show the position and size of the host’s head portrait. x, y, width and height are 0.5, 0.4, 0.2 and 0.3 respectively.
+Here is an example to show the position and size of the host’s head portrait. x, y, width, and height are 0.5, 0.4, 0.2, and 0.3 respectively.
 
 <img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/en/sei_overview.png" style="width: 500.0px;"/>
 
@@ -973,7 +981,7 @@ virtual const RecordingEngineProperties* getProperties() = 0;
 
 This method manually starts recording.
 
-The method is only valid when you set <code>triggermode</code> to <code>manually</code> when joining the channel. For more information, see [Allows an Application to Join a Channel (joinChannel)](#joinChannel) about <code>triggerMode</code>.
+The method is only valid when you set <code>triggerMode</code> to <code>Manually</code> when joining the channel. For more information, see [Allows an Application to Join a Channel (joinChannel)](#joinChannel) on <code>triggerMode</code>.
 
 ```
 virtual int startService() = 0;
@@ -1001,7 +1009,7 @@ virtual int startService() = 0;
 
 This method manually stops recording.
 
-The method is only valid when you set <code>triggermode</code> to <code>manually</code> when joining the channel. For more information, see [Allows an Application to Join a Channel (joinChannel)](#joinChannel) about <code>triggerMode</code>.
+The method is only valid when you set <code>triggerMode</code> to <code>Manually</code> when joining the channel. For more information, see [Allows an Application to Join a Channel (joinChannel)](#joinChannel) on <code>triggerMode</code>.
 
 ```
 virtual int stopService() = 0;
@@ -1045,7 +1053,7 @@ virtual int setUserBackground(uid_t uid, const char* img_path) = 0;
 </thead>
 <tbody>
 <tr><td><code>uid</code></td>
-<td>The user ID of the user to set the background image.</td>
+<td>The user ID of the user for the background image to be set.</td>
 </tr>
 <tr><td><code>image_path</code></td>
 <td>The path of the image file.</td>
@@ -1068,7 +1076,7 @@ virtual int setUserBackground(uid_t uid, const char* img_path) = 0;
 virtual int setLogLevel(agora::linuxsdk::agora_log_level level) = 0;
 ```
 
-This method sets the log level. Only log levels preceding the selected level are generated. The default value of level is 6.
+This method sets the log level. Only log levels preceding the selected level are generated. The default value of the log level is 6.
 
 ### <a name="enableModuleLog"></a>Enables the Module Log (enableModuleLog)
 
@@ -1080,7 +1088,7 @@ This method enables/disables generating logs for specified modules.
 
 ## <a name="irecordingengineeventhandler"></a>IRecordingEngineEventHandler Class
 
-The IRecordingEngineEventHandler class provides the following callback functions for the recording engine:
+The IRecordingEngineEventHandler class provides the following callbacks for the recording engine:
 
 -   [An Error has Occurred During SDK Runtime (onError)](#onError)
 
@@ -1096,14 +1104,14 @@ The IRecordingEngineEventHandler class provides the following callback functions
 
 -   [The Raw Audio Data has Been Received (audioFrameReceived)](#audioFrameReceived)
 
--   [The Raw Audio Data has Been Received (videoFrameReceived)](#videoFrameReceived)
+-   [The Raw Video Data has Been Received (videoFrameReceived)](#videoFrameReceived)
 
--   [The User who is Speaking in the Channel (onActiveSpeaker)](#onActiveSpeaker)
+-   [Indicates the Speaker in the Channel (onActiveSpeaker)](#onActiveSpeaker)
 
 
 ### <a name="onError"></a>An Error has Occurred During SDK Runtime (onError)
 
-This callback function indicates that an error occurred during SDK runtime.
+This callback indicates that an error has occurred during SDK runtime.
 
 The SDK cannot fix the issue or resume running, which requires intervention from the application and informs the user on the issue.
 
@@ -1128,12 +1136,12 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 <div><ul>
 <li>ERR_OK = 0: No error.</li>
 <li>ERR_FAILED = 1: General error (no classified reason).</li>
-<li>ERR_INVALID_ARGUMENT = 2</code>: Invalid parameter called. For example, the specific channel name includes illegal characters.</li>
+<li>ERR_INVALID_ARGUMENT = 2</code>: Invalid parameter called. For example, the specific channel name contains illegal characters.</li>
 <li>ERR_NOT_READY = 3: The SDK module is not ready. Agora recommends the following methods to solve this error:
 <ul>
-<li>Check the state of the audio device.</li>
- <li>Check the completeness of the App.</li>
-<li>Try to re-initiate the SDK.</li>
+<li>Check the audio device.</li>
+ <li>Check the completeness of the app.</li>
+<li>Re-initialize the SDK.</li>
 </ul></li>
 </ul>
 </div>
@@ -1147,7 +1155,7 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 <li>STAT_ERR_FROM_ENGINE = 1: Error from the engine.</li>
 <li>STAT_ERR_ARS_JOIN_CHANNEL = 2: Failure to join the channel.</li>
 <li>STAT_ERR_CREATE_PROCESS = 3: Failure to create a process.</li>
-<li>STAT_ERR_MIXED_INVALID_VIDEO_PARAM = 4: Failure to mix video.</li>
+<li>STAT_ERR_MIXED_INVALID_VIDEO_PARAM = 4: Failure to mix the video.</li>
 <li>STAT_ERR_NULL_POINTER = 5: Null pointer.</li>
 <li>STAT_ERR_PROXY_SERVER_INVALID_PARAM = 6: Invalid parameters of the proxy server.</li>
 <li>STAT_POLL_ERR = 0x8: Error in polling.</li>
@@ -1164,7 +1172,7 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 
 ### <a name="onWarning"></a>A Warning has Occurred During SDK Runtime (onWarning)
 
-This callback function indicates that some warning occurred during SDK runtime.
+This callback indicates that a warning has occurred during SDK runtime.
 
 In most cases, the application can ignore the warnings reported by the SDK because the SDK can usually fix the issue and resume running.
 
@@ -1187,9 +1195,9 @@ virtual void onWarning(int warn) = 0;
 <td><p>Warning codes:</p>
 <ul>
 <li>WARN_NO_AVAILABLE_CHANNEL = 103: No channel resources are available. Maybe because the server cannot allocate any channel resource.</li>
-<li>WARN_LOOKUP_CHANNEL_TIMEOUT = 104: A timeout when looking up the channel. When joining a channel, the SDK looks up the specified channel. The warning usually occurs when the network condition is too poor to connect to the server.</li>
+<li>WARN_LOOKUP_CHANNEL_TIMEOUT = 104: A timeout when looking up the channel. When joining a channel, the SDK looks up the specified channel. This warning usually occurs when the network conditions are too poor to connect to the server.</li>
 <li>WARN_LOOKUP_CHANNEL_REJECTED = 105: The server rejected the request to look up the channel. The server cannot process this request or the request is illegal.</li>
-<li>WARN_OPEN_CHANNEL_TIMEOUT = 106: A timeout occurred when opening the channel. Once the specific channel is found, the SDK opens the channel. The warning usually occurs when the network condition is too poor to connect to the server.</li>
+<li>WARN_OPEN_CHANNEL_TIMEOUT = 106: A timeout occurred when opening the channel. Once the specific channel is found, the SDK opens the channel. This warning usually occurs when the network conditions are too poor to connect to the server.</li>
 <li>WARN_OPEN_CHANNEL_REJECTED = 107: The server rejected the request to open the channel. The server cannot process this request or the request is illegal.</li>
 </ul>
 </td>
@@ -1201,7 +1209,7 @@ virtual void onWarning(int warn) = 0;
 
 ### <a name="onJoinChannelSuccess"></a>The User has Joined the Specified Channel (onJoinChannelSuccess)
 
-This callback function indicates that the user has successfully joined the specified channel with an assigned Channel ID and user ID.
+This callback indicates that the user has successfully joined the specified channel with an assigned Channel ID and user ID.
 
 ```
 virtual void onJoinChannelSuccess(const char * channelId, uid_t uid) = 0;
@@ -1231,7 +1239,7 @@ virtual void onJoinChannelSuccess(const char * channelId, uid_t uid) = 0;
 
 ### <a name="onLeaveChannel"></a>The User has Left the Channel (onLeaveChannel)
 
-This callback function indicates that the SDK has successfully left the channel.
+This callback function indicates that the user has left the channel.
 
 ```
 virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
@@ -1252,10 +1260,10 @@ virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
 <td>
 <div>Reason:</div>
 <ul>
-<li>LEAVE_CODE_INIT(0): Initialization failure</li>
-<li>LEAVE_CODE_SIG(1&lt;&lt;1): Signal triggered exit</li>
+<li>LEAVE_CODE_INIT(0): Initialization failure.</li>
+<li>LEAVE_CODE_SIG(1&lt;&lt;1): Signal triggered exit.</li>
 <li>LEAVE_CODE_NO_USERS(1&lt;&lt;2): There is no user in the channel except for the recording application.</li>
-<li>LEAVE_CODE_TIMER_CATCH(1&lt;&lt;3): Timer catch exit</li>
+<li>LEAVE_CODE_TIMER_CATCH(1&lt;&lt;3): Timer catch exit.</li>
 <li>LEAVE_CODE_CLIENT_LEAVE(1&lt;&lt;4): The client leaves the channel.</li>
 </ul>
 </td>
@@ -1269,7 +1277,7 @@ virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
 
 This callback function indicates that another user has joined the channel.
 
-If other users are already in the channel, the SDK reports to the application on these users as well. The callback is called as many times as the number of users in the channel.
+If other users are already in the channel, the SDK reports to the application on the existing users as well. This callback is called as many times as the number of users in the channel.
 
 ```
 virtual void onUserJoined(uid_t uid, agora::linuxsdk::UserJoinInfos &infos) = 0;
@@ -1287,22 +1295,22 @@ virtual void onUserJoined(uid_t uid, agora::linuxsdk::UserJoinInfos &infos) = 0;
 </thead>
 <tbody>
 <tr><td><code>uid</code></td>
-<td>User ID of the user</td>
+<td>User ID of the user.</td>
 </tr>
 <tr><td><code>infos</code></td>
-<td>Information about the user</td>
+<td>Information about the user.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-The structure of <code>UserJoinInfos</code> is as follows:
+The structure of <code>UserJoinInfos</code>:
 
 ```
 typedef struct UserJoinInfos {
     const char* storageDir;
-    //new attached info add below
+    //add information about the user below
 
     UserJoinInfos():
         storageDir(NULL)
@@ -1331,7 +1339,7 @@ typedef struct UserJoinInfos {
 
 ### <a name="onUserOffline"></a>A User has Left the Channel or Gone Offline (onUserOffline)
 
-This callback function notifies the application that a user has left the channel or gone offline.
+This callback notifies the application that a user has left the channel or gone offline.
 
 The SDK reads the timeout data to determine if a user has left the channel (or has gone offline). If no data package is received from the user within 15 seconds, the SDK assumes the user is offline. A poor network connection may lead to false detections, so use signaling for reliable offline detection.
 
@@ -1358,7 +1366,7 @@ virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE 
 <ul>
 <li>USER_OFFLINE_QUIT = 0: The user has quit the call.</li>
 <li>USER_OFFLINE_DROPPED</code> = 1: The SDK timed out and the user dropped offline because it has not received any data package for a period of time. If a user quits the call and the message is not passed to the SDK (due to an unreliable channel), the SDK assumes the user has dropped offline. </li>
-<li>USER_OFFLINE_BECOME_AUDIENCE = 2: Triggered when the client role has changed from the host to the audience. The option is only valid when you set the channel profile as live broadcast when calling <code>joinChannel</code>.</li>
+<li>USER_OFFLINE_BECOME_AUDIENCE = 2: The client role has changed from the host to the audience. The option is only valid when you set the channel profile as live broadcast when calling <code>joinChannel</code>.</li>
 </ul>
 </td>
 </tr>
@@ -1397,7 +1405,7 @@ virtual void audioFrameReceived(unsigned int uid, const agora::linuxsdk::AudioFr
 
 
 
-The structure of <code>AudioFrame</code> is as follows:
+The structure of <code>AudioFrame</code>:
 
 ```
 struct AudioFrame {
@@ -1453,7 +1461,7 @@ class AudioPcmFrame {
 <td>Number of audio channels.</td>
 </tr>
 <tr><td><code>sample_bits</code></td>
-<td>Bit number of the sampling data.</td>
+<td>Number of bits of the sampling data.</td>
 </tr>
 <tr><td><code>sample_rates</code></td>
 <td>Sampling rate.</td>
@@ -1474,7 +1482,7 @@ class AudioPcmFrame {
 
 #### AudioAacFrame
 
-The structure of <code>AudioAacFrame</code> is as follows:
+The structure of <code>AudioAacFrame</code>:
 
 ```
 class AudioAacFrame {
@@ -1501,13 +1509,13 @@ class AudioAacFrame {
 </thead>
 <tbody>
 <tr><td><code>frame_ms</code></td>
-<td>Timestamp of the frame</td>
+<td>Timestamp of the frame.</td>
 </tr>
 <tr><td><code>aacBuf</code></td>
-<td>Audio frame buffer</td>
+<td>Audio frame buffer.</td>
 </tr>
 <tr><td><code>aacBufSize</code></td>
-<td>Size of the audio frame buffer</td>
+<td>Size of the audio frame buffer.</td>
 </tr>
 </tbody>
 </table>
@@ -1516,9 +1524,9 @@ class AudioAacFrame {
 
 ### <a name="videoFrameReceived"></a>The Raw Video Data has Been Received (videoFrameReceived)
 
-This callback function is triggered when the raw video data has been received.
+This callback is triggered when the raw video data has been received.
 
-Callbacks are available for every frame of the video and this callback function can be used to detect sexually explicit content, if necessary.
+The callbacks are available for every frame of the video and this callback can be used to detect sexually explicit content, if necessary.
 
 Agora recommends capturing the i frame only and neglecting the others.
 
@@ -1526,7 +1534,7 @@ Agora recommends capturing the i frame only and neglecting the others.
 virtual void videoFrameReceived(unsigned int uid, const agora::linuxsdk::VideoFrame *frame) const = 0;
 ```
 
-The structure of <code>VideoFrame</code> is as follows:
+The structure of <code>VideoFrame</code>:
 
 ```
 struct VideoFrame {
@@ -1547,7 +1555,7 @@ struct VideoFrame {
 
 #### VideoYuvFrame
 
-The structure of <code>VideoYuvFrame</code> is as follows:
+The structure of <code>VideoYuvFrame</code>:
 
 ```
 class VideoYuvFrame {
@@ -1599,10 +1607,10 @@ class VideoYuvFrame {
 <td>V buffer pointer.</td>
 </tr>
 <tr><td><code>width</code></td>
-<td>Width of the video in pixel.</td>
+<td>Width of the video in the number of pixels.</td>
 </tr>
 <tr><td><code>height</code></td>
-<td>Height of the video in pixel.</td>
+<td>Height of the video in the number of pixels.</td>
 </tr>
 <tr><td><code>ystride</code></td>
 <td>Line span of the Y buffer.</td>
@@ -1626,7 +1634,7 @@ class VideoYuvFrame {
 
 #### VideoH264Frame
 
-The structure of <code>VideoH264Frame</code> is as follows:
+The structure of <code>VideoH264Frame</code>:
 
 ```
 struct VideoH264Frame {
@@ -1678,7 +1686,7 @@ struct VideoH264Frame {
 
 #### VideoJpgFrame
 
-The structure of <code>VideoJpgFrame</code> is as follows:
+The structure of <code>VideoJpgFrame</code>:
 
 ```
 struct VideoJpgFrame {
@@ -1722,13 +1730,13 @@ struct VideoJpgFrame {
 
 
 
-### <a name="onActiveSpeaker"></a>The User who is Speaking in the Channel (onActiveSpeaker)
+### <a name="onActiveSpeaker"></a>Indicates the Speaker in the Channel (onActiveSpeaker)
 
 ```
 virtual void onActiveSpeaker(uid_t uid);
 ```
 
-This callback function returns the user ID of the active speaker.
+This callback returns the user ID of the active speaker.
 
 <table>
 <colgroup>
