@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Tue Nov 06 2018 16:34:15 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 16:34:25 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -39,7 +39,7 @@ The <code>IRecordingEngine</code> class provides the following main methods that
 -   [Sets the Video Mixing Layout (setVideoMixingLayout)](#setVideoMixingLayout)
 -   [Allows the Application to Leave the Channel (leaveChannel)](#leaveChannel)
 -   [Releases the IRecordingEngine Object (release)](#release)
--   [Retrieves the Properties (getProperties)](#getProperties)
+-   [Retrieves the Recording Properties (getProperties)](#getProperties)
 -   [Starts the Recording (startService)](#startService)
 -    [Stops the Recording (stopService)](#stopService))
 -    [Sets the User Background Image (setUserBackground)](#setUserBackground))
@@ -965,7 +965,7 @@ virtual int release() = 0;
 
 
 
-### <a name="getProperties"></a>Retrieves the Properties (getProperties)
+### <a name="getProperties"></a>Retrieves the Recording Properties (getProperties)
 
 This method allows you to retrieve the recording properties without joining a channel.
 
