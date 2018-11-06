@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Tue Nov 06 2018 18:08:11 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 18:08:27 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -165,8 +165,8 @@ public class RecordingConfig {
 </ul>
 <p>If the composite mode is enabled:</p>
 <div><ul>
-<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only audio is recorded.</li>
-<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true, only video is recorded.</li>
+<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only the audio is recorded.</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true, only the video is recorded.</li>
 <li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are false, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
 <li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set as <code>true</code> at the same time.</li>
 </ul>
