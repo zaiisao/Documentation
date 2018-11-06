@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Tue Nov 06 2018 18:01:00 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 18:01:10 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -22,17 +22,17 @@ updatedAt: Tue Nov 06 2018 18:01:00 GMT+0000 (UTC)
 </thead>
 <tbody>
 <tr><td><a href="#native-interface">Native Interface</a></td>
-<td>Main methods that can be invoked by your application.</td>
+<td>Main methods that can be invoked by your app.</td>
 </tr>
 <tr><td><a href="#callback-functions">Callbacks</a></td>
-<td>Enables callbacks to your application.</td>
+<td>Callbacks returned to your app.</td>
 </tr>
 </tbody>
 </table>
 
 ## <a name="native-interface"></a>Native Interface
 
-The Native Interface provides main methods that can be invoked by your application.
+The Native Interface provides main methods that can be invoked by your app.
 
 -   [Creates a Channel (createChannel)](#createChannel)
 
@@ -1025,7 +1025,7 @@ This method enables/disables generating logs for specified modules.
 
 ## <a name="callback-functions"></a>Callbacks
 
-The following callbacks are available to your application:
+The following callbacks are available to your app:
 
 -   [Returns the JNI Instance (nativeObjectRef)](#nativeObjectRef)
 -   [An Error has Occurred During SDK Runtime (onError)](#onError)
@@ -1040,7 +1040,7 @@ The following callbacks are available to your application:
 
 ### <a name="nativeObjectRef"></a>Returns the JNI Instance (nativeObjectRef)
 
-This callback function retrieves the JNI instance. You need to pass this JNI instance when calling each main method, except [Creates a Channel (createChannel)](#createChannel).
+This callback returns the JNI instance. You need to pass this JNI instance when calling each main method, except [Creates a Channel (createChannel)](#createChannel).
 
 ```
 private void nativeObjectRef(long nativeHandle){
@@ -1050,7 +1050,7 @@ private void nativeObjectRef(long nativeHandle){
 
 ### <a name="onError"></a>An Error has Occurred During SDK Runtime (onError)
 
-This callback function indicates that an error has occurred during SDK runtime.
+This callback is triggered when an error has occurred during SDK runtime.
 
 The SDK cannot fix the issue or resume running, which requires intervention from the app and informs the user on the issue.
 
@@ -1110,7 +1110,7 @@ private void onError(int error, int stat_code) {
 
 ### <a name="onWarning"></a>A Warning has Occurred During SDK Runtime (onWarning)
 
-This callback indicates that a warning has occurred during SDK runtime.
+This callback is triggered when a warning has occurred during SDK runtime.
 
 In most cases, the app can ignore the warnings reported by the SDK because the SDK can usually fix the issue and resume running.
 
@@ -1127,7 +1127,7 @@ public void onWarning(int warn) {
 </colgroup>
 <thead>
 <tr><th>Name</th>
-<th>description</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -1155,7 +1155,7 @@ private void onLeaveChannel(int reason){
 }
 ```
 
-This callback indicates that a user has left the channel.
+This callback is triggered when a user has left the channel.
 
 <table>
 <colgroup>
@@ -1187,7 +1187,7 @@ This callback indicates that a user has left the channel.
 
 ### <a name="onUserJoined"></a>The User/Host has Joined the Channel (onUserJoined)
 
-This callback indicates that another user has joined the channel.
+This callback is triggered when another user has joined the channel.
 
 If other users are already in the channel, the SDK reports to the app on the existing users as well. This callback is called as many times as the number of users in the channel.
 
@@ -1221,7 +1221,7 @@ private void onUserJoined(long uid, String recordingDir){
 
 ### <a name="onUserOffline"></a>A User has Left the Channel or Gone Offline (onUserOffline)
 
-This callback notifies the app that a user has left the channel or gone offline.
+This callback is triggered when a user has left the channel or gone offline.
 
 The SDK reads the timeout data to determine if a user has left the channel (or has gone offline). If no data package is received from the user within 15 seconds, the SDK assumes the user is offline. A poor network connection may lead to false detections, so use signaling for reliable offline detection.
 
@@ -1410,7 +1410,9 @@ public class AudioAacFrame {
 
 ### <a name="videoFrameReceived"></a>The Raw Video Data has Been Received (videoFrameReceived)
 
-This callback is triggered when the raw video data has been received. The callbacks are available for every frame of the video and this callback can be used to detect sexually explicit content, if necessary.
+This callback is triggered when the raw video data has been received. 
+
+The callbacks are available for every frame of the video and this callback can be used to detect sexually explicit content, if necessary.
 
 Agora recommends capturing the i frame only and neglecting the others.
 
@@ -1435,7 +1437,7 @@ private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotati
 <td>User ID as specified in the <code>createChannel()</code> method. If no uid is previously assigned, the Agora server automatically assigns a uid.</td>
 </tr>
 <tr><td><code>type</code></td>
-<td><p>Format of the received video data:</p>
+<td><p>The format of the received video data:</p>
 <div><ul>
 <li>yuv(0)</li>
 <li>h.264(1)</li>
