@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Tue Nov 06 2018 18:01:04 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 18:01:17 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -222,26 +222,24 @@ typedef struct RecordingConfig {
 </td>
 </tr>
 <tr><td><code>isMixingEnabled</code></td>
-<td><p>Sets the audio-mixing or/and video-mixing mode:</p>
+<td><p>Enables the audio- or video-mixing mode:</p>
 <ul>
-<li>false: (Default) Enable individual mode. The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
-<li>true: Enable composite mode. The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
+<li>false: (Default) Enable the individual mode (audio). The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
+<li>true: Enable the composite mode (video). The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
 </ul>
 <p>If the composite mode is enabled:</p>
 <div><ul>
 <li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only audio is recorded.</li>
 <li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true,  only video is recorded.</li>
 <li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are false, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
-	<li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set to <code>true</code> at the same time.</li>
+	<li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set as <code>true</code> at the same time.</li>
 </ul>
-	<note><p>The <code>isAudioOnly</code> and <code>isVideoOnly</code> parameters are disabled by default.</p>
-	<p>Do not set <code>isAudioOnly</code> and <code>isVideoOnly</code> as <code>true</code> at the same time.</note>
 </p>
 </div>
 </td>
 </tr>
 <tr><td><code>mixResolution</code> <sup>[1]</sup></td>
-<td>If you have enabled the video mixing mode, this parameter sets the resolution in the format: width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
+<td>If you have set <code>isMixingEnabled</code> as <code>true</code>, <code>mixResolution</code> sets the resolution in the format: width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
 <td><p>When the whole channel is encrypted, the recording SDK uses <code>decryptionMode</code> to enable the built-in decryption function:</p>
@@ -261,10 +259,10 @@ typedef struct RecordingConfig {
 <td>The Agora Recording SDK automatically stops recording when there is no user in the recorded channel after a time period of <code>idleLimitSec</code>.  The value must be &ge; three seconds. The default value is 300 seconds.</td>
 </tr>
 <tr><td><code>appliteDir</code></td>
-<td>The directory to store AgoraCoreService. The default value is NULL.</td>
+<td>The directory of AgoraCoreService. The default value is NULL.</td>
 </tr>
 <tr><td><code>recordFilrRootDir</code></td>
-<td>The root directory to store the recording files. The default value is NULL. Do not set <code>recordFileRootDir</code> and <code>cfgFilePath</code> at the same time.</td>
+<td>The root directory of the recording files. The default value is NULL. Do not set <code>recordFileRootDir</code> and <code>cfgFilePath</code> at the same time.</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
 <td>The path of the configuration file. The default value is NULL. In this configuration file, you can set the absolute path of the recording file, and the content in the configuration file must be in JSON format. Do not set <code>recordFileRootDir</code> and <code>cfgFilePath</code> at the same time.
@@ -280,7 +278,7 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 <td>The time interval of the screen captures. The value ranges from one second to five seconds. You need to use <code>captureInterval</code> with decodeVideo = 3/4 when joining a channel. See <code>joinChannel<code> to allow a user to join a channel.</td>
 </tr>
 <tr><td><code>audioIndicationInterval</code></td>
-<td><p>Whether or not to detect the speakers.</p>
+<td><p>Whether or not to detect the speakers:</p>
 
 <div><ul>
 <li>&le; 0: Disables detecting the speakers.</li>
@@ -343,7 +341,7 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </td>
 </tr>
 <tr><td><code>triggerMode</code></td>
-<td><p>Sets to record automatically or manually.</p>
+<td><p>Sets whether to record automatically or manually:</p>
 <ul>
 <li>0: Automatically.</li>
 <li>1: Manually. To start and stop recording, call <code>startRecording</code> and <code>stopRecording</code> respectively.</li>
@@ -391,7 +389,7 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </tbody>
 </table>
 
-> [1] The <code>isAudioOnly</code> and <code>isVideoOnly</code> parameters are disabled by default, and do not set <code>isAudioOnly</code> and <code>isVideoOnly</code> as <code>true</code> at the same time.
+> [1] The <code>isAudioOnly</code> and <code>isVideoOnly</code> parameters are disabled by default. Do not set <code>isAudioOnly</code> and <code>isVideoOnly</code> as <code>true</code> at the same time.
 
 > [2] If the raw data is enabled:
 	> - Only audio mixing is supported. Video mixing is not supported. 
@@ -884,7 +882,7 @@ The structure of <code>VideoMixingLayout</code>:
 <li><code>height</code>: Actual height of the region. The value is between 0.0 and 1.0.</li>
 <li><code>zOrder</code>: The index of the layer. The value is between 1 (bottom layer) and 100 (top layer).</li>
 <li><code>alpha</code>: The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque).</li>
-	<li><code>renderMode</code>：<p>Render mode:</p><ul>
+	<li><code>renderMode</code>: Render mode<ul>
 <li>RENDER_MODE_HIDDEN(1): Cropped</li>
 <li>RENDER_MODE_FIT(2): Proportionate</li>
 </ul>
@@ -1037,7 +1035,7 @@ virtual int stopService() = 0;
 
 ### <a name="setUserBackground"></a>Sets the User Background Image (setUserBackground)
 
-This method sets the background image for a specified user.
+This method sets the background image of a specified user.
 
 ```
 virtual int setUserBackground(uid_t uid, const char* img_path) = 0;
@@ -1113,7 +1111,7 @@ The IRecordingEngineEventHandler class provides the following callbacks for the 
 
 ### <a name="onError"></a>An Error has Occurred During SDK Runtime (onError)
 
-This callback indicates that an error has occurred during SDK runtime.
+This callback is triggered when an error has occurred during SDK runtime.
 
 The SDK cannot fix the issue or resume running, which requires intervention from the application and informs the user on the issue.
 
@@ -1174,7 +1172,7 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 
 ### <a name="onWarning"></a>A Warning has Occurred During SDK Runtime (onWarning)
 
-This callback indicates that a warning has occurred during SDK runtime.
+This callback is triggered when a warning has occurred during SDK runtime.
 
 In most cases, the application can ignore the warnings reported by the SDK because the SDK can usually fix the issue and resume running.
 
@@ -1211,7 +1209,7 @@ virtual void onWarning(int warn) = 0;
 
 ### <a name="onJoinChannelSuccess"></a>The User has Joined the Specified Channel (onJoinChannelSuccess)
 
-This callback indicates that the user has successfully joined the specified channel with an assigned Channel ID and user ID.
+This callback is triggered when the user has successfully joined the specified channel with an assigned Channel ID and user ID.
 
 ```
 virtual void onJoinChannelSuccess(const char * channelId, uid_t uid) = 0;
@@ -1241,7 +1239,7 @@ virtual void onJoinChannelSuccess(const char * channelId, uid_t uid) = 0;
 
 ### <a name="onLeaveChannel"></a>The User has Left the Channel (onLeaveChannel)
 
-This callback function indicates that the user has left the channel.
+This callback is triggered when the user has left the channel.
 
 ```
 virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
@@ -1277,7 +1275,7 @@ virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
 
 ### <a name="onUserJoined"></a>A Remote User or a Host has Joined the Channel. (onUserJoined)
 
-This callback function indicates that another user has joined the channel.
+This callback is triggered when another user has joined the channel.
 
 If other users are already in the channel, the SDK reports to the application on the existing users as well. This callback is called as many times as the number of users in the channel.
 
@@ -1341,7 +1339,7 @@ typedef struct UserJoinInfos {
 
 ### <a name="onUserOffline"></a>A User has Left the Channel or Gone Offline (onUserOffline)
 
-This callback notifies the application that a user has left the channel or gone offline.
+This callback is triggered when a user has left the channel or gone offline.
 
 The SDK reads the timeout data to determine if a user has left the channel (or has gone offline). If no data package is received from the user within 15 seconds, the SDK assumes the user is offline. A poor network connection may lead to false detections, so use signaling for reliable offline detection.
 
@@ -1367,7 +1365,7 @@ virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE 
 <td><p>Reason:</p>
 <ul>
 <li>USER_OFFLINE_QUIT = 0: The user has quit the call.</li>
-<li>USER_OFFLINE_DROPPED</code> = 1: The SDK timed out and the user dropped offline because it has not received any data package for a period of time. If a user quits the call and the message is not passed to the SDK (due to an unreliable channel), the SDK assumes the user has dropped offline. </li>
+<li>USER_OFFLINE_DROPPED</code> = 1: The SDK timed out and the user dropped offline because it has not received any data packet for a period of time. If a user quits the call and the message is not passed to the SDK (due to an unreliable channel), the SDK assumes the user has dropped offline. </li>
 <li>USER_OFFLINE_BECOME_AUDIENCE = 2: The client role has changed from the host to the audience. The option is only valid when you set the channel profile as live broadcast when calling <code>joinChannel</code>.</li>
 </ul>
 </td>
@@ -1379,7 +1377,7 @@ virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE 
 
 ### <a name="audioFrameReceived"></a>The Raw Audio Data has Been Received (audioFrameReceived)
 
-This callback function is triggered when raw audio data has been received.
+This callback is triggered when the raw audio data has been received.
 
 ```
 virtual void audioFrameReceived(unsigned int uid, const agora::linuxsdk::AudioFrame *frame) const = 0;
@@ -1463,7 +1461,7 @@ class AudioPcmFrame {
 <td>Number of audio channels.</td>
 </tr>
 <tr><td><code>sample_bits</code></td>
-<td>Number of bits of the sampling data.</td>
+<td>Bitrate of the sampling data.</td>
 </tr>
 <tr><td><code>sample_rates</code></td>
 <td>Sampling rate.</td>
