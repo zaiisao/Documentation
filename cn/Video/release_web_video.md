@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue Nov 06 2018 07:03:17 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 07:03:25 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -84,7 +84,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 该版本于 2018 年 10 月 30 日发布。新增功能与修复问题列表详见下文。
 
-> 使用此版本时需将 .agoraio.cn 添加到白名单。
+> 使用此版本时需将 `*.agoraio.cn` 添加到白名单。
 
 ### 新增功能
 
