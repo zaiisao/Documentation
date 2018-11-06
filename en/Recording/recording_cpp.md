@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Tue Nov 06 2018 16:37:26 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 16:37:32 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -391,7 +391,9 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </tbody>
 </table>
 
-> If the raw data is enabled:
+> [1] The <code>isAudioOnly</code> and <code>isVideoOnly</code> parameters are disabled by default, and do not set <code>isAudioOnly</code> and <code>isVideoOnly</code> as <code>true</code> at the same time.
+
+> [2] If the raw data is enabled:
 	> - Only audio mixing is supported. Video mixing is not supported. 
 	> - Only raw video data in H.264 for the Web SDK is supported. VP8 is not supported.
 
