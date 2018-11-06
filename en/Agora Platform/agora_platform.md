@@ -3,11 +3,9 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 06 2018 03:10:42 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 03:10:50 GMT+0000 (UTC)
 ---
 # Agora Platform Overview
-# Agora Platform Overview
-
 ## SD-RTN
 
 
