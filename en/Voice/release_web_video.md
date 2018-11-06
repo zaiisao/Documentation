@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Tue Nov 06 2018 08:22:39 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 08:24:02 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -85,7 +85,7 @@ For more issues, see [Web FAQs](../../en/Voice/websdk_related_faq.md).
 
 The version 2.5.0 was released on October 30, 2018. See below for new features and fixed issues. 
 
-> If you have set the domain firewall, ensure `*.agoraio.cn` and `*.agora.io` are added to your white list before using this version.
+> <font color="red">If you have set the domain firewall, ensure `*.agoraio.cn` and `*.agora.io` are added to your white list before using this version.</font>
 
 ### New Features
 
