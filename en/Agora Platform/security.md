@@ -3,11 +3,9 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 06 2018 03:12:00 GMT+0000 (UTC)
+updatedAt: Tue Nov 06 2018 03:12:09 GMT+0000 (UTC)
 ---
 # Information Security Policy
-# Information Security Policy
-
 ## Introduction
 
 This page describes the information security policy for Agora products. The following figure shows the Agora security architecture:
