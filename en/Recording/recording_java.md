@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Wed Nov 07 2018 15:24:53 GMT+0000 (UTC)
+updatedAt: Wed Nov 07 2018 15:24:59 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -160,8 +160,8 @@ public class RecordingConfig {
 <tr><td><code>isMixingEnabled</code></td>
 <td><p>Enables the audio- or video-mixing mode:</p>
 <ul>
-<li>false: (Default) Enable the individual mode (audio). The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
-<li>true: Enable the composite mode (video). The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
+<li>false: (Default) Enables the individual mode (audio). The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
+<li>true: Enables the composite mode (video). The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
 </ul>
 <p>If the composite mode is enabled:</p>
 <div><ul>
@@ -183,7 +183,7 @@ public class RecordingConfig {
 </td>
 </tr>
 	<tr><td><code>mixResolution</code> <sup>[1]</sup></td>
-<td>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixResolution</code> sets the resolution in the format: width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
+<td>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixResolution</code> allows you to set the resolution in the format of width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
 <td><p>When the whole channel is encrypted, the recording SDK uses <code>decryptionMode</code> to enable the built-in decryption function:</p>
@@ -208,7 +208,7 @@ public class RecordingConfig {
 For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Recording_Dir</code> is fixed.</td>
 </tr>
 <tr><td><code>decodeAudio</code> <sup>[2]</sup></td>
-<td><p>Audio Decoding Format:</p><ul>
+<td><p>Audio decoding format:</p><ul>
 <li>AUDIO_FORMAT_DEFAULT_TYPE = 0: Default audio format.</li>
 <li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1: AAC format.</li>
 <li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2: PCM format.</li>
@@ -217,7 +217,7 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </td>
 </tr>
 <tr><td><code>decodeVideo</code> <sup>[2]</sup></td>
-<td><p>Video Decoding Format:</p><ul>
+<td><p>Video decoding format:</p><ul>
 <li>VIDEO_FORMAT_DEFAULT_TYPE = 0: Default video format.</li>
 <li>VIDEO_FORMAT_H264_FRAME_TYPE = 1: H.264 format.</li>
 <li>VIDEO_FORMAT_YUV_FRAME_TYPE = 2: YUV format.</li>
@@ -1287,8 +1287,8 @@ private void audioFrameReceived(long uid, int type, AudioFrame frame) {
 <tr><td><code>type</code></td>
 <td><p>Format of the received raw audio data:</p>
 <div><ul>
-<li>pcm (0)</li>
-<li>aac (1)</li>
+<li>0: PCM</li>
+<li>1: AAC</li>
 </ul>
 </div>
 </td>
@@ -1412,7 +1412,7 @@ public class AudioAacFrame {
 
 This callback is triggered when the raw video data has been received. 
 
-The callbacks are available for every frame of the video and this callback can be used to detect sexually explicit content, if necessary.
+This callback is triggered for every received raw video frame and can be used to detect sexually explicit content, if necessary.
 
 Agora recommends capturing the i frame only and neglecting the others.
 
@@ -1439,9 +1439,9 @@ private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotati
 <tr><td><code>type</code></td>
 <td><p>The format of the received video data:</p>
 <div><ul>
-<li>yuv(0)</li>
-<li>h.264(1)</li>
-<li>jpg(2)</li>
+<li>0: YUV</li>
+<li>1: H.264</li>
+<li>2: JPEG</li>
 </ul>
 </div>
 </td>
