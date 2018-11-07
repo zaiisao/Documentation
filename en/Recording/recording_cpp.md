@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Wed Nov 07 2018 15:51:19 GMT+0000 (UTC)
+updatedAt: Wed Nov 07 2018 15:51:24 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -208,30 +208,30 @@ typedef struct RecordingConfig {
 <tr><td><code>isAudioOnly</code></td>
 <td><p>Sets whether or not to record audio only:</p>
 <ul>
-<li>true: Enable audio recording only.</li>
-<li>false: (Default) Record both audio and video.</li>
+<li>true: Enables audio recording only.</li>
+<li>false: (Default) Records both audio and video.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isVideoOnly</code></td>
 <td><p>Sets whether or not to record video only:</p>
 <ul>
-<li>true: Enable video recording only.</li>
-<li>false: (Default) Record both audio and video.</li>
+<li>true: Enables video recording only.</li>
+<li>false: (Default) Records both audio and video.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isMixingEnabled</code></td>
 <td><p>Enables the audio- or video-mixing mode:</p>
 <ul>
-<li>false: (Default) Enable the individual mode (audio). The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
-<li>true: Enable the composite mode (video). The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
+<li>false: (Default) Enables the individual mode (audio). The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
+<li>true: Enables the composite mode (video). The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
 </ul>
 <p>If the composite mode is enabled:</p>
 <div><ul>
-<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only the audio is recorded.</li>
-<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true,  only the video is recorded.</li>
-<li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are false, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
+<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is <code>false</code>, only the audio is recorded.</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is <code>true</code>,  only the video is recorded.</li>
+<li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are <code>false</code>, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
 	<li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set as <code>true</code> at the same time.</li>
 </ul>
 </p>
@@ -239,7 +239,7 @@ typedef struct RecordingConfig {
 </td>
 </tr>
 <tr><td><code>mixResolution</code> <sup>[1]</sup></td>
-<td>If you have set <code>isMixingEnabled</code> as <code>true</code>, <code>mixResolution</code> sets the resolution in the format: width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
+<td>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixResolution</code> allows you to set the resolution in the format of width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
 <td><p>When the whole channel is encrypted, the recording SDK uses <code>decryptionMode</code> to enable the built-in decryption function:</p>
@@ -288,7 +288,7 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </td>
 </tr>
 	<tr><td><code>decodeAudio</code> <sup>[2]</sup></td>
-		<td><p>Audio Decoding Format:</p>
+		<td><p>Audio decoding format:</p>
 <ul>
 <li>AUDIO_FORMAT_DEFAULT_TYPE = 0: Default audio format.</li>
 <li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1: AAC format.</li>
@@ -298,7 +298,7 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </td>
 </tr>
 	<tr><td><code>decodeVideo</code> <sup>[2]</sup></td>
-<td><p>Video Decoding Format:</p>
+<td><p>Video decoding format:</p>
 	<ul>
 <li><p>VIDEO_FORMAT_DEFAULT_TYPE = 0: Default video format.</p>
 </li>
@@ -322,7 +322,7 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 </td>
 </tr>
 <tr><td><code>mixedVideoAudio</code></td>
-<td><p>If you have set <code>isMixingEnabled</code> as <code>true</code>, <code>mixedVideoAudio</code> allows you to mix audio and video in real time:</p>
+<td><p>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixedVideoAudio</code> allows you to mix audio and video in real time:</p>
 <ul>
 <li>0: (Default) Mix the audio and video respectively.</li>
 <li>1: Mix the audio and video in real time into an MPEG-4 file. Supports limited players.</li>
@@ -814,7 +814,7 @@ The structure of <code>VideoMixingLayout</code>:
        int zOrder; //optional, [0, 100] //0 (default): bottom most, 100: top most
 
        //  Optional
-       //  [0, 1.0] where 0 denotes thoroughly transparent, 1.0 opaque
+       //  [0, 1.0] where 0 means transparent, 1.0 means opaque
        double alpha;
 
        int renderMode;//RENDER_MODE_HIDDEN: Crop, RENDER_MODE_FIT: Zoom to fit
@@ -981,7 +981,7 @@ virtual const RecordingEngineProperties* getProperties() = 0;
 
 This method manually starts recording.
 
-The method is only valid when you set <code>triggerMode</code> to <code>Manually</code> when joining the channel. For more information, see [Allows an Application to Join a Channel (joinChannel)](#joinChannel) on <code>triggerMode</code>.
+The method is only valid when you set <code>triggerMode</code> to <code>1</code> (manually) when joining the channel. For more information, see [Allows an Application to Join a Channel (joinChannel)](#joinChannel) on <code>triggerMode</code>.
 
 ```
 virtual int startService() = 0;
@@ -1009,7 +1009,7 @@ virtual int startService() = 0;
 
 This method manually stops recording.
 
-The method is only valid when you set <code>triggerMode</code> to <code>Manually</code> when joining the channel. For more information, see [Allows an Application to Join a Channel (joinChannel)](#joinChannel) on <code>triggerMode</code>.
+The method is only valid when you set <code>triggerMode</code> to <code>1</code> (manually) when joining the channel. For more information, see [Allows an Application to Join a Channel (joinChannel)](#joinChannel) on <code>triggerMode</code>.
 
 ```
 virtual int stopService() = 0;
@@ -1526,7 +1526,7 @@ class AudioAacFrame {
 
 This callback is triggered when the raw video data has been received.
 
-The callbacks are available for every frame of the video and this callback can be used to detect sexually explicit content, if necessary.
+This callback is triggered for every received raw video frame and can be used to detect sexually explicit content, if necessary.
 
 Agora recommends capturing the i frame only and neglecting the others.
 
