@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Wed Nov 07 2018 15:07:02 GMT+0000 (UTC)
+updatedAt: Wed Nov 07 2018 15:07:11 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -144,16 +144,16 @@ public class RecordingConfig {
 <tr><td><code>isAudioOnly</code></td>
 <td><p>Sets whether or not to record audio only:</p>
 <ul>
-<li>true: Enable audio recording only.</li>
-<li>false: (Default) Record both audio and video.</li>
+<li>true: Enables audio recording only.</li>
+<li>false: (Default) Records both audio and video.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isVideoOnly</code></td>
 <td><p>Sets whether or not to record video only:</p>
 <ul>
-<li>true: Enable video recording only.</li>
-<li>false: (Default) Record both audio and video.</li>
+<li>true: Enables video recording only.</li>
+<li>false: (Default) Records both audio and video.</li>
 </ul>
 </td>
 </tr>
@@ -174,7 +174,7 @@ public class RecordingConfig {
 </td>
 </tr>
 <tr><td><code>mixedVideoAudio</code></td>
-<td><p>If you have set <code>isMixingEnabled</code> as <code>true</code>, <code>mixedVideoAudio</code> allows you to mix the audio and video in real time:</p>
+<td><p>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixedVideoAudio</code> allows you to mix the audio and video in real time:</p>
 <ul>
 <li>0: (Default) Mix the audio and video respectively.</li>
 <li>1: Mix the audio and video in real time into an MPEG-4 file. Supports limited players.</li>
@@ -183,7 +183,7 @@ public class RecordingConfig {
 </td>
 </tr>
 	<tr><td><code>mixResolution</code> <sup>[1]</sup></td>
-<td>If you have <code>isMixingEnabled</code> as <code>true</code>, <code>mixResolution</code> sets the resolution in the format: width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
+<td>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixResolution</code> sets the resolution in the format: width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
 <td><p>When the whole channel is encrypted, the recording SDK uses <code>decryptionMode</code> to enable the built-in decryption function:</p>
