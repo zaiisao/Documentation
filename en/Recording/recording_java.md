@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Wed Nov 07 2018 15:51:09 GMT+0000 (UTC)
+updatedAt: Wed Nov 07 2018 16:48:38 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -165,9 +165,9 @@ public class RecordingConfig {
 </ul>
 <p>If the composite mode is enabled:</p>
 <div><ul>
-<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only the audio is recorded.</li>
-<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true, only the video is recorded.</li>
-<li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are false, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
+<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is <code>false</code>, only the audio is recorded.</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is <code>true</code>, only the video is recorded.</li>
+<li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are <code>false</code>, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
 <li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set as <code>true</code> at the same time.</li>
 </ul>
 </div>
@@ -725,7 +725,7 @@ public class VideoMixingLayout
     public double height;//[0,1]
     public int zOrder; //optional, [0, 100] //0 (default): bottom most, 100: top most
     //Optional
-    //[0, 1.0] where 0 denotes thoroughly transparent, 1.0 opaque
+    //[0, 1.0] where 0 means transparent, 1.0 means opaque
     public double alpha;
     public int renderMode;//RENDER_MODE_HIDDEN: Crop, RENDER_MODE_FIT: Zoom to fit
     public Region(){
@@ -857,7 +857,7 @@ private native RecordingEngineProperties getProperties(long nativeHandle);
 
 This method manually starts a recording.
 
-The method is only valid when you set <code>triggerMode</code> to <code>Manually</code> when joining the channel. For more information, see [Creates a Channel (createChannel)](#createChannel) on <code>triggerMode</code>.
+The method is only valid when you set <code>triggerMode</code> to <code>1</code> (manually) when joining the channel. For more information, see [Creates a Channel (createChannel)](#createChannel) on <code>triggerMode</code>.
 
 ```
 private native void startService(long nativeHandle);
@@ -885,7 +885,7 @@ private native void startService(long nativeHandle);
 
 This method manually stops the recording.
 
-The method is only valid when you set <code>triggerMode</code> to <code>Manually</code> when joining the channel. For more information, see [Create a Channel (createChannel)](#createChannel) on <code>triggerMode</code>.
+The method is only valid when you set <code>triggerMode</code> to <code>1</code> (manually) when joining the channel. For more information, see [Create a Channel (createChannel)](#createChannel) on <code>triggerMode</code>.
 
 ```
 private native void stopService(long nativeHandle);
