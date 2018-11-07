@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:15:57 GMT+0000 (UTC)
+updatedAt: Wed Nov 07 2018 03:38:01 GMT+0000 (UTC)
 ---
 # 产品概述
 Agora 互动直播（Agora Live Broadcast），依托 Agora 独创的实时互动网络 SD-RTN ™ 以及自主研发的音视频编解码技术，提供真正意义上全球范围无缝衔接、全平台兼容互通的多路音视频实时连麦互动服务，帮助客户快速实现各种基于互动直播的场景玩法，满足娱乐、社交、游戏、电商、培训等行业的需要。
