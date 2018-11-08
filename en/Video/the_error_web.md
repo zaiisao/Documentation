@@ -3,11 +3,9 @@
 title: Error Codes and Warning Codes
 description: 
 platform: Web
-updatedAt: Thu Nov 08 2018 10:47:22 GMT+0000 (UTC)
+updatedAt: Thu Nov 08 2018 10:47:33 GMT+0000 (UTC)
 ---
 # Error Codes and Warning Codes
-# Error Codes and Warning Codes
-
 The Agora Web SDK will return error or warning codes when calling APIs or during runtime:
 
 -   **Error Codes** occur when the SDK encounters an error that cannot be recovered automatically without any application intervention. For example, the SDK returns an error if it fails to turn on the camera, and reminds the user not to use the camera.
