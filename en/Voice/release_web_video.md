@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Nov 08 2018 03:52:57 GMT+0000 (UTC)
+updatedAt: Thu Nov 08 2018 03:53:04 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -103,13 +103,7 @@ To give users a better idea of the call quality, the following APIs on call stat
 - `Client.getLocalVideoStats` : Retrieves the video statistics of the local stream.
 - `Client.getTransportStats` : Retrieves statistics of the network transportation.
 
-#### 2. Support for IPv6
-
-Supports using the Agora Web SDK under IPv6 network.
-
-> The local gateway must support IPv4 at the same time.
-
-#### 3. Device Management
+#### 2. Device Management
 
 Provides flexible device management and device status notification.
 
@@ -134,7 +128,7 @@ Provides flexible device management and device status notification.
   - `Steream.switchDevice` :  Switches the media input devices in the channel, for example the microphone and camera.
   - `Stream.setAudioOutput` : Sets the audio output device. You can use this API to switch between the microphone and the speaker.
 
-#### 4. Audio Mixing
+#### 3. Audio Mixing
 
 Supports audio mixing, namely mixing the original sound (audio captured by the microphone) with the playback (an audio file).
 
@@ -149,7 +143,7 @@ Supports audio mixing, namely mixing the original sound (audio captured by the m
 - `Stream.getAudioMixingCurrentPosition` : Retrieves the audio mixing current position.
 - `Stream.setAudioMixingPosition` : Sets the playing position of the audio mixing.
 
-#### 5. Audio/Video Track Management
+#### 4. Audio/Video Track Management
 
 Provides flexible management of the audio and video tracks.
 
@@ -161,7 +155,7 @@ Added the following APIs:
 - `Stream.addTrack` : Adds an audio/video track.
 - `Stream.removeTrack` : Removes an audio/video track.
 
-#### 6. Other New Features
+#### 5. Other New Features
 
 - Support for two video display modes. You can set the display mode in  `Stream.play`.
 - Added the `Stream.setScreenBitrate` method to enable the users to set the video bitrate for screen sharing.
