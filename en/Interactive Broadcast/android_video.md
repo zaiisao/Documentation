@@ -150,6 +150,6 @@ In the `proguard-rules.pro` file, add a `-keep` class configuration for the Agor
 -keep class io.agora.**{*;}
 ```
 
-The Android environment is now set up to use the Agora Video SDK.
+The Android environment is now set up to use the Agora Video SDK.test
 
 
