@@ -1,4 +1,4 @@
 
 # How to Edit Documentation
 
-简体中文: 如何编辑文档
+*Other languages: [如何编辑文档](README.zh.md)*
