@@ -1,4 +1,4 @@
 
 # How to Edit Documentation
 
-Other Language: 如何编辑文档
+简体中文: 如何编辑文档
