@@ -5,7 +5,8 @@
 
 Follow the instruction to edit the Agora Documentation:
 
-1. Go to <a  href ="https://docs.agora.io/en/">Agora Developer Center</a> [Agora Developer Center] (https://docs.agora.io/en/ ) and open any article, for example, [Integrate the SDK] (https://docs.agora.io/en/Interactive%20Broadcast/android_video?platform=Android).
+1. Go to <a  href ="https://docs.agora.io/en/">Agora Developer Center</a> and open any article, for example, 
+<a  href ="https://docs.agora.io/en/Interactive%20Broadcast/android_video?platform=Android">Integrate the SDK</a>.
 
 2. Click **Edit Documentation** on the right bottom of the page.
 
