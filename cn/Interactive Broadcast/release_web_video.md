@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Nov 08 2018 03:53:47 GMT+0000 (UTC)
+updatedAt: Thu Nov 08 2018 03:53:57 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -102,13 +102,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - `Client.getLocalVideoStats` ：获取本地视频统计数据。
 - `Client.getTransportStats` ：获取网络连接统计数据。
 
-#### 2. 支持 IPv6
-
-支持 IPv6 网络环境接入，并正常使用 Agora 服务。
-
- > 本地网关必须同时支持 IPv4 协议栈。
-
-#### 3. 媒体设备管理
+#### 2. 媒体设备管理
 
 提供灵活的设备管理功能，以及设备状态查询。
 
@@ -130,7 +124,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
   - 新增 `Stream.switchDevice` 接口，支持在频道内切换媒体输入设备，如麦克风、摄像头等。
   - 新增 `Stream.setAudioOutput` 接口，支持选择音频输出设备，可以切换麦克风和扬声器。
 
-#### 4. 支持伴奏混音
+#### 3. 支持伴奏混音
 
 支持混音功能，混音是指原音（麦克风采集的音频）和伴奏（音频文件声音）混合。
 
@@ -145,7 +139,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - `Stream.getAudioMixingCurrentPosition` ：获取伴奏播放进度。
 - `Stream.setAudioMixingPosition` ：设置伴奏音频文件的播放位置。
 
-#### 5. 音视频轨道管理
+#### 4. 音视频轨道管理
 
 支持灵活管理音视频频道，新增如下接口：
 
@@ -155,7 +149,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - `Stream.addTrack` ：添加音视频轨道。
 - `Stream.removeTrack` ：移除音视频轨道。
 
-#### 6. 其他新增功能
+#### 5. 其他新增功能
 
 - 支持两种视频显示模式，可以在 `Stream.play` 接口中设置播放流的显示模式。
 - 新增 `Stream.setScreenBitrate` 接口，支持手动设置屏幕共享时的视频码率。
