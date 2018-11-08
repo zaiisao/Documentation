@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Thu Nov 08 2018 02:51:37 GMT+0000 (UTC)
+updatedAt: Thu Nov 08 2018 02:51:44 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -73,9 +73,6 @@ https://miniapp-4.agoraio.cn
 ## **1.1.0 Beta 版**
 
 该版本于 2018 年 7 月 27 日发布。新增特性与修复问题列表详见下文。
-
-下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
-
 
 **包含功能**
 
