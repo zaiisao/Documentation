@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Thu Nov 08 2018 10:32:12 GMT+0000 (UTC)
+updatedAt: Thu Nov 08 2018 10:32:39 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -60,6 +60,54 @@ This method creates a channel and enables the app to join the channel.
 ```
 public native boolean createChannel(String appId, String token, String name, int uid, RecordingConfig config, int logLevel, int logModules);
 ```
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td><code>appId</code></td>
+<td>The App ID used in the communication to be recorded. For details, see  <a href="../../en/Agora%20Platform/token.md"><span>Getting an App ID</span></a>.</td>
+</tr>
+<tr><td><code>token</code></td>
+<td>The token used in the communication to be recorded. For details, see  <a href="../../en/Agora%20Platform/token.md"><span>Security Keys</span></a>.</td>
+</tr>
+<tr><td><code>name</code></td>
+<td>Name of the channel to be recorded.</td>
+</tr>
+<tr><td><code>uid</code></td>
+	<td><p>User ID. A 32-bit unsigned integer ranging from 1 to (2^32-1) that is unique in a channel. Two Settings:</p>
+<ul>
+<li>Set to 0, the system will automatically assign a uid.</li>
+<li>Set a unique uid (cannot be repeated with any uid in the current channel).</li>
+</ul>
+</td>
+</tr>
+<tr><td><code>config</code></td>
+<td>Detailed recording configuration. See the definition in the table below.</td>
+</tr>
+<tr><td><code>logLevel</code></td>
+<td>Generate the level of the log. After setting up, only logs with a level lower than <code>logLevel</code> will be generated. See <a href="#setloglevel-recording-java"><span>Sets the Log Level (setLogLevel)
+</span></a> .</td>
+</tr>
+<tr><td><code>logModules</code></td>
+<td>Generate the Module of the log. After setting up, only the log of the specified module will be generated. See <a href="#enablelogmodule-recording-java"><span>Enables the Module Log (enableModuleLog)</span></a> .</td>
+</tr>
+<tr><td>Returns:</td>
+<td><ul>
+<li>0: Success.</li>
+<li>&lt; 0: Failure.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+
 
 > -   In the Recording SDK, <code>requestToken</code> and <code>renewToken</code> are private interfaces. Make sure that you set <code>expireTimestamp</code> as 0 when generating a token, which means that the privilege, once generated, never expires.
 > -   A channel does not accept duplicate uids. Otherwise, there will be unpredictable behaviors.
@@ -944,7 +992,7 @@ private native int setUserBackground(long nativeHandle, int uid, String image_pa
 </tbody>
 </table>
 
-
+<a id="setloglevel-recording-java"></a>
 
 ### <a name="setLogLevel"></a>Sets the Log Level (setLogLevel)
 
@@ -979,7 +1027,7 @@ This method sets the log level. Only log levels preceding the selected level are
 </tbody>
 </table>
 
-
+ <a id="enablelogmodule-recording-java"></a>
 
 ### <a name="enableModuleLog"></a>Enables the Module Log (enableModuleLog)
 
