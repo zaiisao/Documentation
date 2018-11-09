@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Fri Nov 09 2018 14:56:04 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 15:12:02 GMT+0000 (UTC)
 ---
 # Join a Channel
 You need to set the channel profile before the app joins a channel.
@@ -25,7 +25,7 @@ Call the `joinChannel` method to join a channel.
 
 In the `joinChannel` method:
 
--   Pass a token that can identify the role and privilege of the user. Set token as null if the security requirements are low. A token is generated at the server of the application. For how to generate a token, see [Security Keys](../../en/Interactive%20Broadcast/token.md).
+-   Pass a token that can identify the role and privilege of the user. Set token as null for low security requirements. A token is generated at the server of the application. For how to generate a token, see [Security Keys](../../en/Interactive%20Broadcast/token.md).
 -   Pass a channel ID that can identify the channel. Users that input the same channel ID enter into the same channel.
 -   Pass a uid that can identify the user. Every user in a channel requires a unique uid. If you want to join the same channel on different devices, ensure that different uids are used for each device.
 
