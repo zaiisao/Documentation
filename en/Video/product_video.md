@@ -3,7 +3,7 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 09 2018 10:33:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 11:02:46 GMT+0000 (UTC)
 ---
 # Agora Video Overview
 ## Brief Introduction
