@@ -3,12 +3,12 @@
 title: Customize the Video Source and Renderer
 description: 
 platform: macOS
-updatedAt: Fri Nov 09 2018 19:29:57 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 19:30:01 GMT+0000 (UTC)
 ---
 # Customize the Video Source and Renderer
 ## Scenario Description
 
-The Agora SDK provides access to the default camera configuration. To extend the functionality, Agora provides access to customize the video source.
+The Agora SDK provides access to the default camera configuration. Agora provides access to customize the video source for the following functions:
 
 - To add new functions in the SDK for the camera’s video source, such as image enhancement or using the preprocessing library.
 - If an app contains a video module, the video source can be customized for code reuse.
@@ -21,7 +21,7 @@ See [Integrate SDK](../../en/Video/mac_video.md) .
 
 ## Customize the Video Source
 
-Step 1. Implement the `AgoraVideoSourceProtocol` to create the customized video source class:
+Step 1. Implement `AgoraVideoSourceProtocol` to create the customized video source class:
 
 - Specify the buffer type in `bufferType`.
 
@@ -29,13 +29,13 @@ Step 1. Implement the `AgoraVideoSourceProtocol` to create the customized video 
   - (AgoraVideoBufferType)bufferType;
   ```
 
-- Save the AgoraVideoFrameConsumer object in `shouldInitialize`.
+- Save the `AgoraVideoFrameConsumer` object in the `shouldInitialize` method.
 
   ```c++
   - (BOOL)shouldInitialize;
   ```
 
-- Send the video frame after `shouldStart`.
+- Send the video frame in the `shouldStart` method.
 
   ```c++
   - (void)shouldStart;
@@ -43,13 +43,13 @@ Step 1. Implement the `AgoraVideoSourceProtocol` to create the customized video 
 
 - Send the data to the media engine through `AgoraVideoFrameConsumer`.
 
-- Stop sending the frame in `shouldStop`.
+- Stop sending the frame in the `shouldStop` method.
 
   ```c++
   - (void)shouldStop;
   ```
 
-- Remove the frame in `shouldDispose`.
+- Remove the frame in the `shouldDispose` method.
 
   ```c++
   - (void)shouldDispose;
@@ -67,9 +67,9 @@ Step 4. The media engine implements the methods in `AgoraVideoSourceProtocol`.
 
 ## Customize the Video Sink
 
-Step 1. Call `bufferType` and `pixelFormat` to set the buffer type and pixel format of the video frame.
+Step 1. Call the `bufferType` and `pixelFormat` methods to set the buffer type and pixel format of the video frame.
 
-Step 2. Implement `shouldInitialize`, `shouldStart`, `shouldStop`, and `shouldDispose` to manage the customized video sink.
+Step 2. Implement the `shouldInitialize`, `shouldStart`, `shouldStop`, and `shouldDispose` methods to manage the customized video sink.
 
 Step 3. Implement the buffer type and pixel format as specified in Step 1 of `AgoraVideoFrameConsumer`.
 
