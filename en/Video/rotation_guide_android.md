@@ -3,7 +3,7 @@
 title: Use Video Rotation
 description: 
 platform: Android
-updatedAt: Fri Nov 09 2018 18:56:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 19:04:21 GMT+0000 (UTC)
 ---
 # Use Video Rotation
 From v2.3.0, Agora provides a `setVideoEncoderConfiguration` method for users to set the video profile. This method includes an `orientationMode` parameter for users to set the video orientation mode.
