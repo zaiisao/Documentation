@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Fri Nov 09 2018 08:49:25 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 08:49:40 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -23,6 +23,20 @@ updatedAt: Fri Nov 09 2018 08:49:25 GMT+0000 (UTC)
 -   高端客服：对高价值的 VIP 客户提供远程视频服务，1 对 1 实时交流
 -   远程报警：一键报警，通过实时视频通信，为警方提供一手现场情况
 -   银行开户：实时视频认证，清晰画质、超低延时、隐私保护，提升开户效率
+
+## 技术方案
+
+下图为小程序连麦的声网实现架构图：
+
+<img alt="../_images/wechat_live_solution.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_live_solution.jpg" style="width: 601.6px; height: 240.8px;"/>
+
+在这个架构图中：
+
+1.  在大网边缘节点部署协议转换服务对小程序端发出的 RTMP 流进行转换；
+2.  将转化后的 UDP 传输到 Agora SD-RTN 上；
+3.  通过 Agora SD-RTN 与 Agora 其他平台 SDK 实现音视频互通。
+
+下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
 
 ## **1.1.3 Beta 版**
 
@@ -73,6 +87,7 @@ https://miniapp-4.agoraio.cn
 ## **1.1.0 Beta 版**
 
 该版本于 2018 年 7 月 27 日发布。新增特性与修复问题列表详见下文。
+
 
 **包含功能**
 
