@@ -3,7 +3,7 @@
 title: Modify Raw Data
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:09:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 18:05:38 GMT+0000 (UTC)
 ---
 # Modify Raw Data
 The Agora raw data interface is an advanced feature provided in the SDK library for users to obtain the voice or video raw data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
