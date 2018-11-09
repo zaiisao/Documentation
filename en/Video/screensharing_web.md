@@ -3,16 +3,16 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Nov 09 2018 19:33:23 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 19:33:38 GMT+0000 (UTC)
 ---
 # Share the Screen
-To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screen\(s\) to share.
+To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screens to share.
 
 This page includes:
 
-- [Screen sharing on Google Chrome](#chrome)
-- [Screen sharing on Firefox](#ff)
-- [Enabling both screen sharing and video](#both)
+- [Screen Sharing on Google Chrome](#chrome)
+- [Screen Sharing on Firefox](#ff)
+- [Enabling Both Screen Sharing and Video](#both)
 
 Before enabling screen sharing on the web, ensure that you have prepared the environment and downloaded the package. For details, see [Making a Video Call](../../en/Quickstart%20Guide/communication_web_video-1.md).
 
@@ -88,7 +88,7 @@ If two clients of a host subscribe to each other, extra charges will occur:
 
 <img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/en/screensharing_streams.png" style="width: 500px; "/>
 
-Agora recommends that you to save the returned `uid` when each client joins the channel. When the `‘stream-added’` event occurs, first check if the joined client is a local stream, if `yes`, do not subscribe to the client.
+Agora recommends that you to save the returned `uid` when each client joins the channel. When the `stream-added` event occurs, first check if the joined client is a local stream, if `yes`, do not subscribe to the client.
 
 ```javascript
 var localStreams = [];
