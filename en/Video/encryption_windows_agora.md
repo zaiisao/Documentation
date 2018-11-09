@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: Windows
-updatedAt: Fri Nov 09 2018 17:17:10 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:17:15 GMT+0000 (UTC)
 ---
 # Implement Encryption
 This page describes how to use Agora's built-in encryption.
@@ -181,11 +181,11 @@ class AgoraPacketObserver : public agora::IPacketObserver
                  }
 
              private:
-                 std::vector<unsigned char> m_txAudioBuffer; //buffer for sending voice data
-                 std::vector<unsigned char> m_txVideoBuffer; //buffer for sending video data
+                 std::vector<unsigned char> m_txAudioBuffer; //buffer for sending the voice data
+                 std::vector<unsigned char> m_txVideoBuffer; //buffer for sending the video data
 
-                 std::vector<unsigned char> m_rxAudioBuffer; //buffer for receiving voice data
-                 std::vector<unsigned char> m_rxVideoBuffer; //buffer for receiving video data
+                 std::vector<unsigned char> m_rxAudioBuffer; //buffer for receiving the voice data
+                 std::vector<unsigned char> m_rxVideoBuffer; //buffer for receiving the video data
      };
 ```
 
