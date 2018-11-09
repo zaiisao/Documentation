@@ -3,12 +3,12 @@
 title: Join a Channel
 description: 
 platform: macOS
-updatedAt: Fri Nov 09 2018 15:10:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 15:11:03 GMT+0000 (UTC)
 ---
 # Join a Channel
-Set the channel profile before the App joins a channel.
+You need to set the channel profile before the app joins a channel.
 
-## Set the channel profile as live broadcast
+## Set the channel profile as Live Broadcast
 After initializing AgoraRtcEngine, call the `setChannelProfile` method to set the channel profile. AgoraRtcEngine applies optimization according to the channel profile.
 
 In the `setChannelProfile` method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles: Host and Audience. The host (broadcaster) sends and receives audio and video streams while the audience can only receive the audio streams.
