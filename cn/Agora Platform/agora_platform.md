@@ -3,7 +3,7 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 08 2018 09:37:28 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 07:01:13 GMT+0000 (UTC)
 ---
 # Agora 平台概述
 ## SD-RTN（Software Defined Real-time Network）
