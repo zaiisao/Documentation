@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:09:31 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:26:22 GMT+0000 (UTC)
 ---
 # Implement Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
