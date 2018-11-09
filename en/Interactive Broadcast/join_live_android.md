@@ -3,12 +3,12 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Fri Nov 09 2018 15:12:02 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 15:12:05 GMT+0000 (UTC)
 ---
 # Join a Channel
 You need to set the channel profile before the app joins a channel.
 
-## Set the channel profile as live broadcast
+## Set the channel profile as Live Broadcast
 After initializing RtcEngine, call the `setChannelProfile` method to set the channel profile. RtcEngine applies optimization according to the channel profile.
 
 In the `setChannelProfile` method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles: Host and Audience. The host\(broadcaster\) sends and receives audio and video streams while the audience can only receive the audio and video streams.
