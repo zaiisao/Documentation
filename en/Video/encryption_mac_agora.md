@@ -3,7 +3,7 @@
 title: Use Agora Built-in Encryption
 description: 
 platform: macOS
-updatedAt: Fri Nov 09 2018 17:28:11 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:28:17 GMT+0000 (UTC)
 ---
 # Use Agora Built-in Encryption
 # Using Agora Built-in Encryption
@@ -31,7 +31,7 @@ Call the setEncryptionSecret` method to enable built-in encryption and set the e
 
 Call the `setEncryptionMode` method to set the built-in encryption mode. 
 
-## Scenario 3: Use a Customized Encryption
+## Scenario 3: Use Customized Encryption
 
 The following figure shows the customized encryption/decryption process:
 
