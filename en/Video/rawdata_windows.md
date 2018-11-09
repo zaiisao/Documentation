@@ -3,7 +3,7 @@
 title: Modify Raw Data
 description: 
 platform: Windows
-updatedAt: Fri Nov 09 2018 18:11:37 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 18:11:42 GMT+0000 (UTC)
 ---
 # Modify Raw Data
 The Agora Raw Data interface is an advanced feature provided in the SDK library for users to obtain the raw voice or video data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
@@ -43,7 +43,7 @@ class AgoraAudioFrameObserver : public agora::media::IAudioFrameObserver
 };
 ```
 
-This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data if necessary:
+This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data, if necessary:
 
 ```
 class IAudioFrameObserver
@@ -176,7 +176,7 @@ extern "C" __declspec(dllexport) __cdecl int loadAgoraRtcEnginePlugin(agora::IRt
 }
 ```
 
-The following plugin interface function is optional and called when the Agora SDK removes the plugin.
+The following plugin interface function is optional and can be called when the Agora SDK removes the plugin.
 
 ```
 extern "C" __declspec(dllexport) __cdecl void unloadAgoraRtcEnginePlugin(agora::IRtcEngine* engine)
@@ -196,7 +196,7 @@ The process of the Agora Native SDK loading the plugin is as follows:
 
 2.  The Agora SDK loads the plugin using LoadLibrary.
 
-3.  The user must implement the plugin and export the <code>loadAgoraRtcEnginePlugin</code> interface according to the instructions above. The SDK obtains and calls <code>loadAgoraRtcEnginePlugin</code> for each plugin found. If it returns 0 after calling the <code>loadAgoraRtcEnginePlugin</code> function, then the execution succeeds. Otherwise the SDK will remove the plugin (FreeLibrary). The input parameter of the interface is <code>agora::</code>. The IRtcEngine interface object can be used by the plugin in the <code>loadAgoraRtcEnginePlug</code> function to register <code>IPacketObserver</code>, <code>IAudioFrameObserver</code>, and <code>IVideoFrameObserver</code>.
+3.  The user must implement the plugin and export the <code>loadAgoraRtcEnginePlugin</code> interface according to the instructions above. The SDK obtains and calls <code>loadAgoraRtcEnginePlugin</code> for each plugin found. If it returns 0 after calling the <code>loadAgoraRtcEnginePlugin</code> function, then the execution succeeds. Otherwise, the SDK will remove the plugin (FreeLibrary). The input parameter of the interface is <code>agora::</code>. The IRtcEngine interface object can be used by the plugin in the <code>loadAgoraRtcEnginePlug</code> function to register <code>IPacketObserver</code>, <code>IAudioFrameObserver</code>, and <code>IVideoFrameObserver</code>.
 
 4.  When the SDK engine is destroyed, call the optional <code>unloadAgoraRtcEnginePlugin</code> function of the plugin.
 
