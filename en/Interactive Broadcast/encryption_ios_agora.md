@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:09:36 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:17:04 GMT+0000 (UTC)
 ---
 # Implement Encryption
 This page describes how to implement encryption.
