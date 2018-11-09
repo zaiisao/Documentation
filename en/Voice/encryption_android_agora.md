@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: Android
-updatedAt: Fri Nov 09 2018 17:27:10 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:27:16 GMT+0000 (UTC)
 ---
 # Implement Encryption
 This page describes how to implement Agora's built-in encryption. 
@@ -36,7 +36,7 @@ Call the`setEncryptionMode` method to set the built-in encryption mode.
 
 > To reduce the SDK size, if your app uses `libcrypto.so`, you can use it instead of `libagora-crypto.so` included in the Agora SDK since both files are the same. The Agora SDK `libagora-crypto.so` version is 1.0.2g.
 
-## Scenario 3: Use a Customized Encryption
+## Scenario 3: Use Customized Encryption
 
 The following figure shows the customized data encryption/decryption process:
 
