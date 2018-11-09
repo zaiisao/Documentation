@@ -3,12 +3,12 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Fri Nov 09 2018 15:14:26 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 15:14:30 GMT+0000 (UTC)
 ---
 # Join a Channel
-Set the channel profile before the App joins a channel.
+You need to set the channel profile before the app joins a channel.
 
-## Set the channel profile as communication
+## Set the channel profile as Communication
 After initializing the Agora engine, call the `setChannelProfile` method to set the channel profile. The Agora engine applies optimization according to the channel profile.
 
 In the `setChannelProfile` method, set the channel profile as Communication. This profile applies to voice or video calls, such as one-to-one or group calls, where all users in the channel can talk freely. The Communication profile is the default setting.
