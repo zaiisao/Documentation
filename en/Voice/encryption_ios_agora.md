@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 09 2018 17:21:46 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:21:52 GMT+0000 (UTC)
 ---
 # Implement Encryption
 This page describes how to implement Agora's built-in encryption.
@@ -230,4 +230,4 @@ class AgoraPacketObserver : public agora::IPacketObserver
 
 ## Step 3: Register the Instance
 
-Call `registerAgoraPacketObserver` to register the instance of the `agora::IPacketObserver` class implemented by your application.
+Call the `registerAgoraPacketObserver` method to register the instance of the `agora::IPacketObserver` class implemented by your application.
