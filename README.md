@@ -10,3 +10,9 @@ Follow the instruction to edit the Agora Documentation:
 
 2. Click **Edit Documentation** on the right bottom of the page.
 
+3. Click the **Edit** icon on the right top of the github article.
+
+4. Locate the correct position and edit with *Markdown* .
+
+5. 
+
