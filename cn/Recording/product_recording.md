@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:11:20 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 04:08:53 GMT+0000 (UTC)
 ---
 # 产品概述
 本文为你展示 Agora Recording SDK 的产品简介、功能描述、适用场景、产品特性，以及相关文档。
