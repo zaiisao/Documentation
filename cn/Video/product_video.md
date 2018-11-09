@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 09 2018 10:54:02 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 11:01:58 GMT+0000 (UTC)
 ---
 # 产品概述
 Agora 视频通话可以实现一对一、一对多的音视频通话，提供极致的流畅体验和低延时互动效果，适用于各种视频社交和在线教育场景。
