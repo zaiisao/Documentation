@@ -3,7 +3,7 @@
 title: Modify Raw Data
 description: 
 platform: macOS
-updatedAt: Fri Nov 09 2018 18:12:25 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 18:12:30 GMT+0000 (UTC)
 ---
 # Modify Raw Data
 The Agora Raw Data interface is an advanced feature provided in the SDK library for users to obtain the raw voice or video data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
@@ -43,7 +43,7 @@ class AgoraAudioFrameObserver : public agora::media::IAudioFrameObserver
 };
 ```
 
-This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data if necessary:
+This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data, if necessary:
 
 ```
 class IAudioFrameObserver
@@ -141,7 +141,7 @@ class IVideoFrameObserver
 };
 ```
 
-2.  Register the video frame observer to the SDK engine. After creating the IRtcEngine object and enabling the video mode, and before joining a channel, you can register the video frame observer object.
+2.  Register the video frame observer to the SDK engine. After creating the `IRtcEngine` object and enabling the video mode, and before joining a channel, you can register the video frame observer object.
 
 
 ```
