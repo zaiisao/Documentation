@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 09 2018 08:26:22 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 08:26:32 GMT+0000 (UTC)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -63,18 +63,18 @@ For details on specific methods and callbacks, see the Agora API Reference:
 
 As an analogy, if we imagine an app being a building, a channel will be a room in the building. A channel is created when the first user joins the channel and is automatically destroyed when the last user leaves the channel. When entering a room in a building, you need a key to open the door. Similarly, when joining a channel, you need an [App ID](#appid) or [Dynamic Key](#key) for authentication.
 
-### Channel Mode
+### Channel Profile
 
-The SDK applies different optimization methods according to the channel mode. Users in the same channel must use the same channel mode. Agora supports the following channel  modes:
+The SDK applies different optimization methods according to the channel profile. Users in the same channel must use the same channel profile. Agora supports the following channel  profiles:
 
 
-| Channel Mode | Description | 
+| Channel Profile | Description | 
 | ---------------- | ---------------- | 
 | Communication     | One-on-one or group calls, where all users in the channel can talk freely.    | 
 | Live Broadcast     | In a live broadcast channel, users have two client roles: [Host](#host) and [audience](#audience). The host sends and receives audio/video, and the audience receives audio/video with the sending function disabled.   | 
-| Gaming    | Any user in the channel can talk freely. This mode uses the codec with low-power consumption and low bitrate by default.   | 
+| Gaming    | Any user in the channel can talk freely. This profile uses the codec with low-power consumption and low bitrate by default.   | 
 
-> The gaming mode applies to the Agora Gaming SDK only.
+> The gaming profile applies to the Agora Gaming SDK only.
 
 
 ### uid
