@@ -3,10 +3,10 @@
 title: Implement Encryption
 description: 
 platform: Windows
-updatedAt: Fri Nov 09 2018 17:06:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:06:29 GMT+0000 (UTC)
 ---
 # Implement Encryption
-This page describes how to use Agora built-in encryption.
+This page describes how to use Agora's built-in encryption.
 
 > Both Communication and Live Broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
 
