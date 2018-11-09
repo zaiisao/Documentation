@@ -3,7 +3,7 @@
 title: Use Agora Built-in Encryption
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 09:24:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:20:49 GMT+0000 (UTC)
 ---
 # Use Agora Built-in Encryption
 # Using Agora Built-in Encryption
