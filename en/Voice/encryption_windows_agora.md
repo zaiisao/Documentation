@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: Windows
-updatedAt: Fri Nov 09 2018 17:13:35 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:13:39 GMT+0000 (UTC)
 ---
 # Implement Encryption
 This page describes how to use Agora's built-in encryption.
@@ -29,7 +29,7 @@ Call the `setEncryptionSecret` method to enable built-in encryption and set the 
 
 Call the `setEncryptionMode` method to set the built-in encryption mode.
 
-## Scenario 3: Use a Customized Encryption
+## Scenario 3: Use Customized Encryption
 
 The following figure shows the data encryption/decryption process:
 
