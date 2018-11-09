@@ -3,127 +3,42 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 09 2018 11:01:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 11:04:04 GMT+0000 (UTC)
 ---
 # Agora Voice Overview
-## Brief Introduction
+The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many voice calls that feature high stability and low latency. It is applicable to voice-only scenarios in the entertainment and education industries.
 
-Agora Voice Call is based on the UDP protocol and the sound codec technology of Agora. It provides reliable real-time audio services, making real-time audio available everywhere.
+The major difference between Agora Voice Call and [Agora Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
+* During an Agora Voice Call that highlights fluency and low latency, all users are of the same role and can talk to each other freely. A typical scenario of the Agora Voice Call is video conference call for multi persons. 
+* During an Agora Voice Interactive Broadcast that highlights high voice quality, users are divided into Host and Audience. Only the host can talk. If a user wants to talk, he must change his role as host first. A typical scenario of the Agora Video Interactive Broadcast is the online Trivia Game.
 
-Based on Agora’s global deployment of SD-RTN, Agora Voice Call is implemented with:
+## Functions and Scenarios
 
--   End-to-end delay of less than 76ms
+The Agora Native SDK for Voice Call boasts a flexible combination of functions for different scenarios.
 
--   99.9% connectivity rate
+| Function                              | Description                                                  | Scenario                                                     |
+| ----------------- | ------------------------------------------------------------ | --------------------------------------- |
+| Audio Mixing                          | Send local and online audio and user vioce to other audience in the channel. | <li>Online KTV <li>Interactive music classes for children    |
+| Play Sound Effect Files          | Enable developers to play sound effect files, adjust volume and set the position of these files.        | Online chess or card games                                |
+| Adjust Pitch     | To adjust the pitch and use equalisation and reverb modes.                    | <li>Online KTV<li>Change the voice in an online chatroom         |
+| Enabling 2-channel Mode/High Sound Quality Mode | Enable users to use the 2-channel mode and the high sound quality mode.                               | <li>Online music classes<li> FM applications        |
+| Modify Raw Data                    | Enable developers to obtain and modify the voice raw data to create special effects, such as voice change. | Change the voice in an online voice chatroom |
 
--   99.99% high availability
+## Key Properties
 
--   Excellent anti-lost technology
+| Property                                          | Agora Live Broadcast Specifications                          |
+| ------------ | ------------------------------------------------------------ |
+| SDK Package Size                                  | 3.69 M - 7.75 M                                              |
+| Capacity     | 7 peopel (To support more people, use [Agora Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).) |
+| Video Profile                                     | <li>SDK video source: up to 1080p, 60fps<li>Custom vide source: up to 4K |
+| Audio Profile                                     | <li>Sample rate: 16 KHz - 48 KHz<li>Support for mono and stereo audio |
+| Audio Anti Packet Loss Rate                       | 70% (both uplink and downlink)                               |
 
+## Compatibility
 
-Agora Voice Call provides SDK for all platforms, including:
+The Agora Native SDK for Voice Call is supported on a variety of platforms, including iOS, Android, Windows, macOS, Linux, Web and Wechat Miniapp, and allows cross-platform connection. Below is the list of supported versions for different platforms.
 
--   iOS
-
--   Android
-
--   Windows
-
--   macOS
-
--   Linux
-
--   Web
-
--   WeChat applications
-
-
-## Functions
-
-Agora Voice Call supports:
-
--   Real-time audio interaction among up to 7 people in the same channel
-
--   Audio:
-
-    -   3A audio algorithm \(echo cancellation, auto gain, noise suppression\)
-
-    -   Full-band audio sampling with sampling rate of up to 48 KHz
-
-    -   2-channel stereo audio effect
-
-    -   Spatial sound effect
-
-    -   Audio codec optimization for calls, music, and games
-
-    -   Sound mixing
-
-    -   Sound reverb
-
-    -   Audio self-collection
-
--   Implementing recording with Agora Recording SDK
-
-
-## Application
-
-Agora Voice Call can be used in the following scenarios:
-
--   Social entertainment industry
-
-    -   Enables multi-party chat, voice chat room, and other scenarios;
-
--   Education industry
-
-    -   Enables 1 on 1 or 1 on N teaching, high-quality music class and other scenes;
-
-    -   Achieves low latency, high quality audio and Voice experience;
-
-    -   Provides quality indicators such as connectivity, packet loss rate, jitter, delay, and cardot;
-
-    -   Provides flexible recording modes.
-
--   Game industry
-
-    -   Provides solutions for team-gaming, voice radio, real-time audio and Voice in board games and FPS games, etc;
-
-    -   High sound quality, low latency, no stagnation, no echo, etc;
-
-    -   Optimization for package size, CPU consumption, memory consumption, and power consumption.
-
--   IoT industry
-
-    -   smart robot, enabling remote audio and Voice calls between the robot and the mobile APP.
-
-
-## Features
-
-Agora Voice Call has the following features:
-
--   High reliability:
-
-    -   100+ data centers around the world, covering 200+ countries, which enables dynamic routing and avoiding network failures automatically
-
-    -   Distributed architecture, which enables massive concurrent and high availability
-
-    -   7\*24 hour operation and maintenance monitoring
-
--   High quality:
-
-    -   Unique network bandwidth prediction algorithm, congestion control algorithm, packet loss compensation, anti-lost coding and other technical means to ensure high-quality real-time audio and Voice experience under bad networks
-
--   Security:
-
-    -   Support for built-in AES128, AES256 encryption and third-party data encryption
-
--   Ease of use:
-
-    -   Elegant API design
-
--   Compatibility:
-
-    -   Provides SDK for all platforms, see the table below for supported versions:
-    <table>
+<table>
   <tr>
     <th>Platform</th>
     <th>Supported Version</th>
@@ -154,17 +69,7 @@ Agora Voice Call has the following features:
 			<li>Firefox 56+</li>
 			<li>Safari 11+</li>
 			<li>Opera 45+</li>
-			<li>QQ 10+</li></ul></td>
+			<li>QQ 10+</li>
+            <li>360 Security Browser 9.1+</li></ul></td>
   </tr>
 </table>
-
-
-
-## References
-
--   [Quickstart Guides](../../en/Quickstart%20Guide/communication_android_audio-1.md) on how to deploy and quickly get started on using the Agora Native SDK for Voice.
-
--   [API Reference](https://docs.agora.io/en/Voice/API%20Reference/java/index.html) lists various APIs to call and their functions when using the Agora Native SDK for Voice.
-
-
-
