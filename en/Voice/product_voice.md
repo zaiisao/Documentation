@@ -3,7 +3,7 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:05:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 10:33:53 GMT+0000 (UTC)
 ---
 # Agora Voice Overview
 ## Brief Introduction
