@@ -3,10 +3,10 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 09 2018 16:22:40 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 16:22:48 GMT+0000 (UTC)
 ---
 # Use Security Keys
-This page describes the Token (Agora’s authentication mechanism). Before you start, check if your SDK version supports the Token:
+This page describes the token (Agora’s authentication mechanism). Before you start, check if your SDK version supports the token:
 
 <table>
 <colgroup>
@@ -40,15 +40,15 @@ To get the SDK version information, call the following API methods:
 
 
 >-   For the Agora Signaling SDK, see [Signaling Security Keys](../../en/Agora%20Platform/key_signaling.md).
--   If you are using Agora SDKs that do not support the Token, see [Channel Keys](../../en/null/channel_key.md).
+-   If you are using Agora SDKs that do not support the token, see [Channel Keys](../../en/null/channel_key.md).
 
 
 ## Agora’s Authentication Mechanisms
 
 The `joinChannel` method requires a security key as an essential parameter. The Agora SDK provides two different security key mechanisms based on your security requirements: 
 
-1. For low-security requirements, such as for testing: [App ID](#APPID) 
-2. For high-security requirements, such as for production: App ID + App Certificate + [Token](#Token) . Note that an App Certificate is enabled solely for the purposes of generating a Channel Key and cannot be used alone.
+1. For low-security requirements, such as for testing: [App ID](#APPID).
+2. For high-security requirements, such as for production: App ID + App Certificate + [Token](#Token). Note that an App Certificate is enabled solely for the purposes of generating a Channel Key and cannot be used alone.
 
 <img alt="../_images/key_relation_web.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_web.jpg" style="width: 500px;" />
 
@@ -67,7 +67,7 @@ Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to saf
 
 1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
-2. Click **Add New Project** on the **Projects** page of  [Dashboard](https://dashboard.agora.io/).
+2. Click **Add New Project** on the **Projects** page of the dashboard.
 
    <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
 
@@ -88,30 +88,30 @@ You can access the Agora services with the unique App ID:
 
 3.  Set the `appId` parameter as the App ID when initializing the client.
 
-4.  Set the `token` parameter to NULL when joining the channel.
+4.  Set the `token` parameter as NULL when joining the channel.
 
 <a name = "Token"></a>
 
 ## Token
 
-The following is the process for generating a Token:
+The following is the process for generating a token:
 
-1.  Deploy a Token Generator on your server.
+1.  Deploy a token generator on your server.
 
-2.  The client sends a request for a Token to the server.
+2.  The client sends a request for a token to the server.
 
-3.  The server uses the Token Generator to create a Token and sends it back to the client.
+3.  The server uses the token generator to create a token and sends the token back to the client.
 
-4.  The client passes in the Token when joining a channel.
+4.  The client passes in the token when joining a channel.
 
-5.  When the Token is about to expire or has expired, repeat Steps 2 to 4.
+5.  When the token is about to expire or has expired, repeat Steps 2 to 4.
 
-6.  The app client calls `renewToken` to use the new Token.
+6.  The application client calls `renewToken` to use the new token.
 
 
 ### Deploying a Token Generator
 
-Before using a Token, you need to deploy a Token Generator on your server to generate a Token.
+Before using a token, you need to deploy a token generator on your server to generate a token.
 
 Agora provides the server-side [sample code](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey).
 
@@ -121,7 +121,7 @@ If you have implemented Agora’s algorithm in other languages, you can file a p
 
 ### Generating a Token
 
-The app client needs to send the following parameters to the server to generate a Token:
+The application client needs to send the following parameters to the server to generate a token:
 
 <table>
 <colgroup>
@@ -160,12 +160,12 @@ The app client needs to send the following parameters to the server to generate 
 <td>Privileges to services corresponding to the specified roles. See <a href="#Role-privilege Model"><span>Role-privilege Model</span></a>.</td>
 </tr>
 <tr><td><code>expireTimestamp</code> <sup>[1]</sup></a></td>
-<td>The Token expiration time. The default value is 0 where the Token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
+<td>The token expiration time. The default value is 0 where the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
 </tr>
 </tbody>
 </table>
 
->[1] `expireTimestamp` is represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the Token is generated, set `expireTimestamp` as the current timestamp + 600 \(seconds\). The valid time for each Token is independent, and you can set it through the `setPrivilege` method.
+>[1] `expireTimestamp` is represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set `expireTimestamp` as the current timestamp + 600 \(seconds\). The valid time for each token is independent, and you can set it through the `setPrivilege` method.
 
 <a id ="getting-an-app-certificate"></a>
 
@@ -177,7 +177,7 @@ To get an App Certificate:
 
 1.  Login to [https://dashboard.agora.io](https://dashboard.agora.io).
 
-2.  Click **Add New Project** on the **Projects** page of  [Dashboard](https://dashboard.agora.io).
+2.  Click **Add New Project** on the **Projects** page of the dashboard.
 
 3.  Fill in the **Project Name** and click **Submit**. Find the App ID under the created project.
 
@@ -201,19 +201,19 @@ To get an App Certificate:
 > 
 > -   The App Certificate takes about an hour to take effect after it is enabled.
 > 
-> -   Once the App Certificate is enabled for a project, a token must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a token or a Channel Key must be used to join a channel.
+> -   Once the App Certificate is enabled for a project, a Token must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a Token or a Channel Key must be used to join a channel.
 
 <a id ="Role-privilege Model"></a>
 
 ### Role-privilege Model
 
-The design of a Token is based on the authentication of different user roles, each of which is associated with a set of privileges.
+The design of a token is based on the authentication of different user roles, each of which is associated with a set of privileges.
 
--   You must define the user role and expiration time when creating a Token.
+-   You must define the user role and expiration time when creating a token.
 
--   When you join a channel with a Token, the SDK sends the Token to the Agora servers for authenticating the assigned privileges.
+-   When you join a channel with a token, the SDK sends the token to the Agora servers for authenticating the assigned privileges.
 
--   During a call or live broadcast, you can update the Token for the clients in the channel to modify their privileges.
+-   During a call or live broadcast, you can update the token for the clients in the channel to modify their privileges.
 
 
 <table>
@@ -230,7 +230,7 @@ The design of a Token is based on the authentication of different user roles, ea
 </thead>
 <tbody>
 <tr><td>Attendee</td>
-<td>Participants in a voice call or video call</td>
+<td>Participants in a voice or video call</td>
 <td><ul>
 <li>Join a channel.</li>
 <li>Publish a voice stream.</li>
@@ -281,26 +281,26 @@ Before a user joins a channel from the client：
 
 1.  The client requests authentication from your organization’s business server.
 
-2.  The server, upon receiving the request, generates a Token using the Token Generator and sends it back to the client.
+2.  The server, upon receiving the request, generates a token using the token generator and sends the token back to the client.
 
-3.  To join a channel, the client calls the `join` method, which requires the Token as the first parameter.
+3.  To join a channel, the client calls the `join` method, which requires the token as the first parameter.
 
-4.  The Agora server receives the Token and confirms that the call comes from a legitimate user, and then allows the user to access the Agora SD-RTN™ \(Software Defined Real-time Network\).
+4.  The Agora server receives the token and confirms that the call comes from a legitimate user, and then allows the user to access the Agora SD-RTN™ \(Software Defined Real-time Network\).
 
-> -   When you deploy the Token, it replaces the original App ID when a user joins a channel.
+> -   When you deploy the token, the token replaces the original App ID when a user joins a channel.
 > 
-> -   The Token expires after a certain period of time. The App must call renewToken when notified by the onTokenPrivilegeWillExpire callback that the Token is about to expire or has expired.
+> -   The token expires after a certain period of time. The application must call `renewToken` when notified by the `onTokenPrivilegeWillExpire` callback that the token is about to expire or has expired.
 > 
-> -   The Token encoding uses the industry-standard HMAC/SHA1 approach and the libraries are available on most server-side development platforms, such as Node.js, Java, PHP, Python, and C++. For more information, see [http://en.wikipedia.org/wiki/Hash-based\_message\_authentication\_code](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code).
+> -   The token encoding uses the industry-standard HMAC/SHA1 approach and the libraries are available on most server-side development platforms, such as Node.js, Java, PHP, Python, and C++. For more information, see [http://en.wikipedia.org/wiki/Hash-based\_message\_authentication\_code](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code).
 
 
 ### References
 
 If your SDK version is earlier than v2.1.0 and you wish to migrate to the latest version, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 
-Learn how to generate a Token on the server on the [Generating a Token](../../en/null/token_server.md) page.
+Learn how to generate a token on the server on the [Generating a Token](../../en/null/token_server.md) page.
 
-The following table lists the APIs that require a Token as a parameter:
+The following table lists the API methods that require a token as a parameter:
 
 <table>
 <colgroup>
@@ -317,15 +317,15 @@ The following table lists the APIs that require a Token as a parameter:
 <tbody>
 <tr><td>Android</td>
 <td><a href="https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c"><span>Join a Channel (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af1428905e5778a9ca209f64592b5bf80"><span>Renew Token (renewToken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af1428905e5778a9ca209f64592b5bf80"><span>Renew the Token (renewToken)</span></a></td>
 </tr>
 <tr><td>iOS/macOS</td>
 <td><a href="https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:"><span>Join a Channel (joinChannelByToken)</span></a></td>
-<td><a href="https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/renewToken:"><span>Renew a Token (renewToken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/renewToken:"><span>Renew the Token (renewToken)</span></a></td>
 </tr>
 <tr><td>Windows</td>
-<td><a href="https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c"><span>Join Channel (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8f25b5ff97e2a070a69102e379295739"><span>Renew a Token (renewtoken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c"><span>Join a Channel (joinChannel)</span></a></td>
+<td><a href="https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8f25b5ff97e2a070a69102e379295739"><span>Renew the Token (renewtoken)</span></a></td>
 </tr>
 <tr><td>Web</td>
 <td><a href="https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#join"><span>Join an AgoraRTC Channel (join)</span></a></td>
