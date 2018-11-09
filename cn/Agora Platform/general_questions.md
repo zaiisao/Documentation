@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: 常见问题
-updatedAt: Fri Nov 09 2018 10:07:39 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 10:08:45 GMT+0000 (UTC)
 ---
 # FAQ
 该部分包含声网 Agora 产品、服务、参数等相关的问题及回答。
