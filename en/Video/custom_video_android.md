@@ -3,7 +3,7 @@
 title: Customize the Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:10:09 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 19:22:53 GMT+0000 (UTC)
 ---
 # Customize the Video Source and Renderer
 ## Scenario Description
