@@ -3,7 +3,7 @@
 title: Use Video Rotation
 description: 
 platform: Android
-updatedAt: Fri Nov 09 2018 19:04:21 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 19:04:38 GMT+0000 (UTC)
 ---
 # Use Video Rotation
 From v2.3.0, Agora provides a `setVideoEncoderConfiguration` method for users to set the video profile. This method includes an `orientationMode` parameter for users to set the video orientation mode.
@@ -40,7 +40,7 @@ After you have joined the Agora channel, use the `setVideoEncoderConfiguration` 
 public abstract int setVideoEncoderConfiguration(VideoEncoderConfiguration config);
 ```
 
-The `VideoEncoderConfiguration` class includes an `orientationMode` parameter to set the rotation mode of your video. Agora recommends using the following flowchart to select your video orientation mode \(applicable to both Communication and Live Broadcast scenarios\).
+The `VideoEncoderConfiguration` class includes an `orientationMode` parameter to set the rotational mode of your video. Agora recommends using the following flowchart to select your video orientation mode \(applicable to both Communication and Live Broadcast scenarios\).
 
 <img alt="../_images/rotation_mode.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_mode.jpg" style="width: 500px; "/>
 
@@ -62,7 +62,7 @@ The following figures show the video orientations at the video capturer and play
 		
     For a landscape capturer:
 
-    <img alt="../_images/rotation_adaptive_uilock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uilock_landscape.jpg" "/>
+  <img alt="../_images/rotation_adaptive_uilock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uilock_landscape.jpg" />
 
     For a portrait capturer:
    
@@ -85,7 +85,7 @@ The following figures show the video orientations at the video capturer and play
 <a name = "orientation_fixed_landscape"></a>
 ### Fixed\_Landscape
 
-In the Fixed\_Landscape mode, the video capturer sends out the video in the landscape orientation relative to the status bar and video cropping may be necessary. The player renders the received video frame directly without rotating the video.
+In the Fixed\_Landscape mode, the video capturer sends the video in the landscape orientation relative to the status bar and video cropping may be necessary. The player renders the received video frame directly without rotating the video.
 
 > In this mode, both sides of the captured video will be cropped in the direction perpendicular to the status bar.
 
