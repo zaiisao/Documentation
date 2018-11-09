@@ -3,12 +3,12 @@
 title: Customize the Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Fri Nov 09 2018 19:30:32 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 19:30:36 GMT+0000 (UTC)
 ---
 # Customize the Video Source and Renderer
 ## Scenario Description
 
-The Agora SDK provides access to the default camera configuration. To extend the functionality, Agora provides access to customize the video source for the following functions:
+The Agora SDK provides access to the default camera configuration. Agora provides access to customize the video source for the following functions:
 
 -   To add new functions in the SDK for the camera’s video source, such as image enhancement or using the preprocessing library.
 -   If an app contains a video module, the video source can be customized for code reuse.
@@ -24,31 +24,31 @@ See [Integrate the SDK](../../en/Video/android_video.md).
 
 Step 1. Implement the `IVideoSource` Interface to create the customized video source class:
 
--   Specify the buffer type in `getBufferType`.
+-   Specify the buffer type in the `getBufferType` method.
 
     ```
     int getBufferType();
     ```
 
--   Save the `IVideoFrameConsumer` object in `onInitialize`.
+-   Save the `IVideoFrameConsumer` object in the `onInitialize` method.
 
     ```
     boolean onInitialize(IVideoFrameConsumer consumer);
     ```
 
--   Send the video frame after `onStart`.
+-   Send the video frame in the `onStart` method.
 
     ```
     boolean onStart();
     ```
 
--   Stop sending the video frame in `onStop`.
+-   Stop sending the video frame in the `onStop` method.
 
     ```
     void onStop();
     ```
 
--   Remove the video frame in `onDispose`.
+-   Remove the video frame in the `onDispose` method.
 
     ```
     void onDispose();
