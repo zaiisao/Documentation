@@ -3,7 +3,7 @@
 title: 设置视频编码
 description: 
 platform: Windows
-updatedAt: Mon Nov 12 2018 10:01:40 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 10:01:44 GMT+0000 (UTC)
 ---
 # 设置视频编码
 ## 功能简介
@@ -26,7 +26,7 @@ lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 ```
 
 **相关 API 及链接**
-* [setVideoEncoderConfiguration](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
 
 ## 开发注意事项
 - 如果用户加入频道后不需要重新设置视频编码属性，建议在 `enableVideo` 前调用 `setVideoEncoderConfiguration` ，可以加快首帧出图的时间。
