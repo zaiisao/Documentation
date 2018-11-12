@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Mon Nov 12 2018 03:10:23 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 03:10:29 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -20,6 +20,19 @@ updatedAt: Mon Nov 12 2018 03:10:23 GMT+0000 (UTC)
 ## 实现方法
 
 在查看下文内容前，请确保你已参考 [集成客户端](../../cn/Interactive%20Broadcast/ios_video.md) 完成 SDK 集成。
+
+### 音频自采集
+
+音频自采集通过 `pushExternalAudioFrame` 接口实现。
+
+```swift
+//swift
+// 推入数据类型为 rawData
+agoraKit.pushExternalAudioFrameRawData("your rawData", samples: "per push samples", timestamp: 0)
+
+// 推入数据类型为 CMSampleBuffer
+agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
+```
 
 ### 视频自采集
 
@@ -47,18 +60,6 @@ videoFrame.ratation = 0
 agoraKit.pushExternalVideoFrame(videoFrame)
 ```
 
-### 音频自采集
-
-音频自采集通过 `pushExternalAudioFrame` 接口实现。
-
-```swift
-//swift
-// 推入数据类型为 rawData
-agoraKit.pushExternalAudioFrameRawData("your rawData", samples: "per push samples", timestamp: 0)
-
-// 推入数据类型为 CMSampleBuffer
-agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
-```
 
 ### 使用 MediaIO 接口自定义采集和渲染
 
