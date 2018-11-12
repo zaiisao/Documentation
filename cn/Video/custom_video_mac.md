@@ -3,77 +3,165 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Mon Nov 12 2018 02:56:12 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 02:56:17 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
-## 场景描述
+## 功能介绍
 
-实时通讯过程中，Agora SDK 通常会启动默认的内置的摄像头进行视频推流，以及默认的视频渲染器进行视频渲染。如果需要自定义视频源及视频渲染器，则可以通过参考本文中的步骤调用 API 实现。一般来讲，本章内容适合以下场景：
+实时通信过程中，Agora SDK 通常会启动默认的音视频模块进行采集和渲染。如果想要在客户端实现自定义音视频采集和渲染，则可以使用自定义的音视频源或渲染器，来进行实现。
 
-- SDK 内置的 Camera 视频源功能不能满足开发者需求时，比如需要使用自定义的美颜库或者前处理库
-- 开发者 App 中已经有自己的图像视频模块，为了复用代码可以自定义视频源
-- 开发者希望使用非 Camera 的视频源，比如录屏数据
-- 有些系统独占的视频采集设备，为了避免与其他业务冲突，需要灵活的设备管理策略
+自定义采集和渲染主要适用于以下场景：
 
-## 集成 SDK
+- 当 SDK 内置的音视频源不能满足开发者需求时，比如需要使用自定义的美颜库或前处理库
+- 开发者的 App 中已有自己的音频或视频模块，为了复用代码，也可以自定义音视频源
+- 开发者希望使用非 Camera 采集的视频源，如录屏数据
+- 有些系统独占的视频采集设备，为避免与其他业务产生冲突，需要灵活的设备管理策略
 
-详见 [集成客户端](../../cn/Video/mac_video.md) 。
+## 实现方法
 
-## 实现自定义视频源
+在查看下文内容前，请确保你已参考 [集成客户端](../../cn/Video/ios_video.md) 完成 SDK 集成。
 
-步骤 1：实现 `AgoraVideoSourceProtocol` 接口，构建自定义的 Video Source 类
+### 视频自采集
 
-1. 在 获取 Buffer 类型 (`bufferType`) 的实现中指定视频采集使用的 Buffer 类型
+视频自采集通过 `pushExternalVideoFrame` 接口实现。 
 
-	```c++
-	- (AgoraVideoBufferType)bufferType;
-	```
+```swift
+//swift
+// 推入数据类型为 CVPixelBufferRef
+let videoFrame = AgoraVideoFrame()
+videoFrame.format = 12
+videoFrame.time = CMTimeMake(1, 15)
+videoFrame.textureBuf = "Your CVPixelBufferRef"
+videoFrame.ratation = 0
 
-2. 在 初始化视频源 (`shouldInitialize`) 中准备好系统环境，进行初始化参数等设置
+// 推入数据类型为 rawData
+let videoFrame = AgoraVideoFrame()
+videoFrame.format = "your data fromat"
+videoFrame.time = CMTimeMake(1, 15)
+videoFrame.data = "your CVPixelBufferRef"
+videoFrame.strideInPixels = "your stride"
+videoFrame.height = "your height"
+videoFrame.dataBuf = "your rawData"
+videoFrame.ratation = 0
 
-	```c++
-	- (BOOL)shouldInitialize;
-	```
-
-3. 在 启动视频源 (`shouldStart`) 中开始采集视频数据
-
-	```c++
-	- (void)shouldStart;
-	```
-
-4. 将采集到的数据通过 `AgoraVideoFrameConsumer` 接口传给 Media Engine
-5. 在 停止视频源 (`shouldStop`) 中停止采集视频数据
-
-	```c++
-	- (void)shouldStop;
-	```
-
-6. 在 释放视频源 (`shouldDispose`) 中释放硬件等系统资源
-
-	```c++
-	- (void)shouldDispose;
-	```
-
-步骤 2：创建自定义的视频源对象
-
-步骤 3：通过 Media Engine 的 设置视频源 (`setVideoSource`) 方法把自定义的视频源对象设置给 Media Engine
-
-```c++
-- (void)setVideoSource:(id<AgoraVideoSourceProtocol>_Nullable)videoSource;
+agoraKit.pushExternalVideoFrame(videoFrame)
 ```
 
-步骤 4：Media Engine 会在适当的实际调用自定义视频源中实现的 `AgoraVideoSourceProtocol` 的方法
+### 音频自采集
 
-## 实现自定义渲染器
+音频自采集通过 `pushExternalAudioFrame` 接口实现。
 
-步骤 1：根据实际需要的数据类型和格式，实现 获取 Buffer 类型 (`bufferType`) 和 获取像素格式 (`pixelFormat`) ，设置数据帧的类型和格式
+```swift
+//swift
+// 推入数据类型为 rawData
+agoraKit.pushExternalAudioFrameRawData("your rawData", samples: "per push samples", timestamp: 0)
 
-步骤 2：依次实现 初始化渲染器 (`shouldInitialize`)、 启动渲染器 (`shouldStart`)、 停止渲染器 (`shouldStop`) 和 释放渲染器 (`shouldDispose`) ，实现对自定义渲染器的状态控制
+// 推入数据类型为 CMSampleBuffer
+agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
+```
 
-步骤 3：根据步骤 1 中 Buffer Type 定义的类型，选择实现对应的 Render 方法，用于获取视频帧数据
+### 使用 MediaIO 接口自定义采集和渲染
 
-步骤 4：创建自定义的渲染对象
+#### 自定义视频源
 
-步骤 5：通过 Media Engine 的 设置本地视频渲染器 (`setLocalVideoRenderer`) 和 设置远端视频渲染器 (`setRemoteVideoRenderer`) 方法，设置用于本地渲染或者对方图像渲染
+1. 遵守 AgoraVideoSourceProtocol 协议， 并实现接口，构建自定义的 Video Source 类。
 
-步骤 6：Media Engine 会再根据内部状态调用 `AgoraVideoSinkProtocol` 中定义的方法。
+	```swift
+	//swift
+	// 协议中的变量
+		 var consumer: AgoraVideoFrameConsumer?
+	// 调用 consumer 的方法，将视频数据推入Agora SDK:
+
+		// 推入rawData类型
+		 consumer.consumeRawData("your rawData", withTimestamp: CMTimeMake(1, 15), format: "your data format", size: size, rotation: rotation)
+
+		 // 推入CVPixelBuffer
+		 consumer.consumePixelBuffer("your pixelBuffer", withTimestamp: CMTimeMake(1, 15), rotation: rotation)
+
+	// 协议中的方法
+	1. 视频采集使用的 Buffer 类型
+		func bufferType() -> AgoraVideoBufferType {
+				return bufferType
+		}
+
+	2. 在初始化视频源 (shouldInitialize) 中, 初始化自定义的 Video Source
+		func shouldInitialize() -> Bool {
+		}
+
+	3. 自定义视频源开始采集视频数据，并通过 consumer 推入视频数据
+		func shouldStart() {
+		}
+
+	4. 自定义视频源停止采集视频数据
+		func shouldStop() { 
+		}
+
+	5. 在释放自定义视频源
+		func shouldDispose() {
+		}
+	```
+
+2. 将遵守了 AgoraVideoSourceProtocol 协议的自定义 VideoSource 对象设给 AgoraRtcEngineKit。
+
+	```swift
+	//swift
+	agoraKit.setVideoSource(videoSource)
+	```
+
+#### 自定义渲染源
+
+1. 遵守 AgoraVideoSinkProtocol 协议， 并实现接口，构建自定义的 Video Renderer 类。
+
+	```swift
+	//swift
+	// 协议中的方法
+	1. 希望 Agora SDK 抛出的视频 Buffer 类型
+		func bufferType() -> AgoraVideoBufferType {
+				return bufferType
+		}
+
+		希望 Agora SDK 抛出的视频数据格式
+		func pixelFormat() -> AgoraVideoPixelFormat {
+				return pixelFormat
+		}
+
+	2. 初始化自定义的 Video Renderer
+		func shouldInitialize() -> Bool {
+				return true
+		}
+
+	3. 	启动自定义的 Video Renderer   
+		func shouldStart() {
+
+		}
+
+	4. Agora SDK 停止抛出视频数据
+		func shouldStop() {
+
+		}
+
+	5. 自定义的 Video Renderer 可以被释放   
+		func shouldDispose() {
+
+		}
+
+	6. Agora SDK 通过该接口抛出 CVPixelBuffer 类型的视频数据, 自定义 Video Renderer 可以获取数据进行渲染
+		func renderPixelBuffer(_ pixelBuffer: CVPixelBuffer, rotation: AgoraVideoRotation) {
+		}
+
+		Agora SDK 通过该接口抛出 rawData 类型的视频数据, 自定义 Video Renderer 可以获取数据进行渲染
+		func renderRawData(_ rawData: UnsafeMutableRawPointer, size: CGSize, rotation: AgoraVideoRotation) {
+		}
+	}
+	```
+
+2. 将遵守了  AgoraVideoSourceProtocol 协议的自定义 VideoRenderer 对象设给 AgoraRtcEngineKit。
+
+	```swift
+	//swift
+	agoraKit.setLocalVideoRenderer(videoRenderer)
+	agoraKit.setRemoteVideoRenderer(videoRenderer, forUserId: uid)
+	```
+
+## 开发注意事项
+客户端自定义采集和渲染属于较复杂的功能，开发者自身需要具备音视频相关知识，能够自己独立开发完成采集与渲染。
