@@ -11,10 +11,10 @@ Use the `client.createStream`  method to create a stream.
 
 The sample app passes in an object with the following properties:
 
-- **streamID**: The stream ID, set as the user ID, which can be retrieved from the callback of `client.join` .
-- **audio**: Enable/Disable audio.
-- **video**: Enable/Disable video.
-- **screen**: Enable/Disable screen sharing. Do not set `video` and `screen` as `true` at the same time.
+- **streamID**: The stream ID (set as the user ID) which can be retrieved from the `client.join` callback.
+- **audio**: Enables/Disables audio.
+- **video**: Enables/Disables video.
+- **screen**: Enables/Disables screen sharing. Do not set `video` and `screen` as `true` at the same time.
 
 ```javascript
 localStream = AgoraRTC.createStream({
@@ -54,10 +54,10 @@ client.on('stream-published', function (evt) {
 ```
 
 ## Subscribe to the remote stream
-To subscribe a remote stream:
+To subscribe to a remote stream:
 
 1. Use the `client.on('stream-added')` event listener to detect when a new stream is added to the channel.
-2. When the event is detected, use the `client.subscribe`  method in the callback to subscribe the stream.
+2. When the event is detected, use the `client.subscribe`  method in the callback to subscribe to the stream.
 
 ```javascript
 client.on('stream-added', function (evt) {
@@ -76,14 +76,14 @@ client.on('stream-subscribed', function (evt) {
 ```
 
 ## Play the stream
-After initializing the local stream or subscribing the remote stream, use the `stream.play`  method to play the stream on the web page. The `stream.play`  method takes the ID of a dom element as paramter, and SDK creates a `<video>` tag and plays the audio.
+After initializing the local stream or subscribing to the remote stream, use the `stream.play`  method to play the stream on the web page. The `stream.play`  method takes the ID of a dom element as a parameter, and the SDK creates a `<video>` tag and plays the audio.
 
-- Play the stream after initializing the local stream
+- Play the stream after initializing the local stream.
 
 	```javascript
 	localStream.init(function() {
 			console.log("getUserMedia successfully");
-			// Use agora_local as ID of the dom element
+			// Use agora_local as the ID of the dom element
 			localStream.play('agora_local');
 
 		}, function (err) {
@@ -91,7 +91,7 @@ After initializing the local stream or subscribing the remote stream, use the `s
 		});
 	```
 
-- Play the stream after subscribing the remote stream
+- Play the stream after subscribing to the remote stream.
 
 	```javascript
 	client.on('stream-subscribed', function (evt) {

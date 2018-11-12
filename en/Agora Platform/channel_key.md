@@ -20,7 +20,7 @@ After signing up at [Dashboard](http://dashboard.agora.io/), multiple projects c
 
 1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
-2. Click **Add New Project** on the **Projects** page of the dashboard.
+2. Click **Add New Project** on the **Projects** page of  [Dashboard](https://dashboard.agora.io/).
 
    <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
 
@@ -88,7 +88,7 @@ To get an App Certificate:
 
 1.  Login to [https://dashboard.agora.io](https://dashboard.agora.io).
 
-2.  Click **Add New Project** on the **Projects** page of the dashboard.
+2.  Click **Add New Project** on the **Projects** page of  [Dashboard](https://dashboard.agora.io).
 
 3.  Fill in the **Project Name** and click **Submit**. Find the App ID under the created project.
 
@@ -112,7 +112,7 @@ To get an App Certificate:
 > 
 > -   The App Certificate takes about an hour to take effect after it is enabled.
 > 
-> -   Once the App Certificate is enabled for a project, a Token must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a Token or a Channel Key must be used to join a channel.
+> -   Once the App Certificate is enabled for a project, a token must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a token or a Channel Key must be used to join a channel.
 
 ### Step 3: Integrate the Schema
 

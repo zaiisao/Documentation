@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 16:01:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 16:02:04 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Create an AgoraRtcEngine instance by invoking `sharedEngineWithAppId` before joining a live broadcast channel.

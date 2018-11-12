@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Wed Nov 07 2018 16:48:46 GMT+0000 (UTC)
+updatedAt: Wed Nov 07 2018 16:48:51 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -200,8 +200,8 @@ typedef struct RecordingConfig {
 <tr><td><code>channelProfile</code></td>
 <td><p>Sets the channel mode:</p>
 <ul>
-<li>CHANNEL_PROFILE_COMMUNICATION: (Default) Communication mode. This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
-<li>CHANNEL_PROFILE_LIVE_BROADCAST: Live broadcast. The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <code>setClientRole</code>. </li>
+<li>0: (Default) Communication mode (CHANNEL_PROFILE_COMMUNICATION). This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
+<li>1: Live broadcast (CHANNEL_PROFILE_LIVE_BROADCAST). The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <code>setClientRole</code>. </li>
 </ul>
 </td>
 </tr>
@@ -229,8 +229,8 @@ typedef struct RecordingConfig {
 </ul>
 <p>If the composite mode is enabled:</p>
 <div><ul>
-<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is <code>false</code>, only the audio is recorded.</li>
-<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is <code>true</code>,  only the video is recorded.</li>
+<li>If <code>isAudioOnly</code> is <code>true</code> and <code>isVideoOnly</code> is <code>false</code>, only the audio is recorded.</li>
+<li>If <code>isAudioOnly</code> is <code>false</code> and <code>isVideoOnly</code> is <code>true</code>,  only the video is recorded.</li>
 <li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are <code>false</code>, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
 	<li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set as <code>true</code> at the same time.</li>
 </ul>
@@ -290,31 +290,31 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 	<tr><td><code>decodeAudio</code> <sup>[2]</sup></td>
 		<td><p>Audio decoding format:</p>
 <ul>
-<li>AUDIO_FORMAT_DEFAULT_TYPE = 0: Default audio format.</li>
-<li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1: AAC format.</li>
-<li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2: PCM format.</li>
-<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: PCM audio-mixing format.</li>
+<li>0: Default audio format (AUDIO_FORMAT_DEFAULT_TYPE).</li>
+<li>1: AAC format (AUDIO_FORMAT_AAC_FRAME_TYPE).</li>
+<li>2: PCM format (AUDIO_FORMAT_PCM_FRAME_TYPE).</li>
+<li>3: PCM audio-mixing format (AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE).</li>
 </ul>
 </td>
 </tr>
 	<tr><td><code>decodeVideo</code> <sup>[2]</sup></td>
 <td><p>Video decoding format:</p>
 	<ul>
-<li><p>VIDEO_FORMAT_DEFAULT_TYPE = 0: Default video format.</p>
+<li><p>0: Default video format (VIDEO_FORMAT_DEFAULT_TYPE).</p>
 </li>
-<li><p>VIDEO_FORMAT_H264_FRAME_TYPE = 1: H.264 format.</p>
+<li><p>1: H.264 format (VIDEO_FORMAT_H264_FRAME_TYPE).</p>
 </li>
-<li><p>VIDEO_FORMAT_YUV_FRAME_TYPE = 2: YUV format.</p>
+<li><p>2: YUV format (VIDEO_FORMAT_YUV_FRAME_TYPE).</p>
 </li>
-<li><p>VIDEO_FORMAT_JPG_FRAME_TYPE = 3: JPEG format.</p>
+<li><p>3: JPEG format (VIDEO_FORMAT_JPG_FRAME_TYPE).</p>
 </li>
-<li><p>VIDEO_FORMAT_JPG_FILE_TYPE = 4: JPEG file format.</p>
+<li><p>4: JPEG file format (VIDEO_FORMAT_JPG_FILE_TYPE).</p>
 </li>
-<li><p>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5:</p>
+<li><p>5: JPEG video file format (VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE).</p>
 
 <div><ul>
-<li>Individual Mode (<code>isMixingEnabled=false</code>): MPEG-4 video and JPEG files.</li>
-<li>Mixing Mode (<code>isMixingEnabled=true</code>): MPEG-4 video file for combined streams and JPEG files for individual streams. </li>
+<li>Individual Mode (<code>isMixingEnabled</code> is set as <code>false</code>): MPEG-4 video and JPEG files.</li>
+<li>Mixing Mode (<code>isMixingEnabled</code> is set as <code>true</code>): MPEG-4 video file for combined streams and JPEG files for individual streams. </li>
 </ul>
 </div>
 </li>
@@ -324,9 +324,9 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 <tr><td><code>mixedVideoAudio</code></td>
 <td><p>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixedVideoAudio</code> allows you to mix audio and video in real time:</p>
 <ul>
-<li>0: (Default) Mix the audio and video respectively.</li>
-<li>1: Mix the audio and video in real time into an MPEG-4 file. Supports limited players.</li>
-<li>2: Mix the audio and video in real time into an MPEG-4 file. Supports more players.</li>
+<li>0: (Default) Mixes the audio and video respectively.</li>
+<li>1: Mixes the audio and video in real time into an MPEG-4 file. Supports limited players.</li>
+<li>2: Mixes the audio and video in real time into an MPEG-4 file. Supports more players.</li>
 </ul>
 </td>
 </tr>
@@ -362,9 +362,9 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 <td><p>Audio profile of the recording file:</p>
 
 <div><ul>
-<li>AUDIO_PROFILE_DEFAULT = 0: (Default) Sampling rate of 48 kHz, communication encoding, mono.</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 4: Sampling rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 5: Sampling rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.</li>
+<li>0: (Default) Sampling rate of 48 kHz, communication encoding, mono (AUDIO_PROFILE_DEFAULT).</li>
+<li>4: Sampling rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps (AUDIO_PROFILE_MUSIC_HIGH_QUALITY).</li>
+<li>5: Sampling rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps (AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO).</li>
 </ul>
 </div>
 </td>
@@ -379,9 +379,9 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 <td><p>Audio and video synchronization mode:</p>
 
 <div><ul>
-<li>UNKNOWN_AVSYNC = -1: Synchronization error.</li>
-<li>AVSYNC_V0 = 0: Compatible with older versions.</li>
-<li>AVSYNC_V1 = 1: New audio and video synchronization mode.</li>
+<li>-1: Synchronization error (UNKNOWN_AVSYNC).</li>
+<li>0: Compatible with older versions (AVSYNC_V0).</li>
+<li>1: New audio and video synchronization mode (AVSYNC_V1).</li>
 </ul>
 </div>
 </td>
@@ -883,8 +883,8 @@ The structure of <code>VideoMixingLayout</code>:
 <li><code>zOrder</code>: The index of the layer. The value is between 1 (bottom layer) and 100 (top layer).</li>
 <li><code>alpha</code>: The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque).</li>
 	<li><code>renderMode</code>: Render mode<ul>
-<li>RENDER_MODE_HIDDEN(1): Cropped</li>
-<li>RENDER_MODE_FIT(2): Proportionate</li>
+<li>1: Cropped (RENDER_MODE_HIDDEN).</li>
+<li>2: Proportionate (RENDER_MODE_FIT).</li>
 </ul>
 </li>
 </ul>
@@ -1134,10 +1134,10 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 <td><p>Error codes:</p>
 
 <div><ul>
-<li>ERR_OK = 0: No error.</li>
-<li>ERR_FAILED = 1: General error (no classified reason).</li>
-<li>ERR_INVALID_ARGUMENT = 2</code>: Invalid parameter called. For example, the specific channel name contains illegal characters.</li>
-<li>ERR_NOT_READY = 3: The SDK module is not ready. Agora recommends the following methods to solve this error:
+<li>0: No error (ERR_OK).</li>
+<li>1: General error with no classified reason (ERR_FAILED).</li>
+<li>2: Invalid parameter is called (ERR_INVALID_ARGUMENT). For example, the specific channel name contains illegal characters.</li>
+<li>3: The SDK module is not ready (ERR_NOT_READY). Agora recommends the following methods to solve this error:
 <ul>
 <li>Check the audio device.</li>
  <li>Check the completeness of the app.</li>
@@ -1151,16 +1151,16 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 <td><p>State codes:</p>
 
 <div><ul>
-<li>STAT_OK = 0: Everything is normal.</li>
-<li>STAT_ERR_FROM_ENGINE = 1: Error from the engine.</li>
-<li>STAT_ERR_ARS_JOIN_CHANNEL = 2: Failure to join the channel.</li>
-<li>STAT_ERR_CREATE_PROCESS = 3: Failure to create a process.</li>
-<li>STAT_ERR_MIXED_INVALID_VIDEO_PARAM = 4: Failure to mix the video.</li>
-<li>STAT_ERR_NULL_POINTER = 5: Null pointer.</li>
-<li>STAT_ERR_PROXY_SERVER_INVALID_PARAM = 6: Invalid parameters of the proxy server.</li>
-<li>STAT_POLL_ERR = 0x8: Error in polling.</li>
-<li>STAT_POLL_HANG_UP = 0x10: Polling hangs up.</li>
-<li>STAT_POLL_NVAL = 0x20: Invalid polling request.</li>
+<li>0: Everything is normal (STAT_OK).</li>
+<li>1: Error from the engine (STAT_ERR_FROM_ENGINE).</li>
+<li>2: Failure to join the channel (STAT_ERR_ARS_JOIN_CHANNEL).</li>
+<li>3: Failure to create a process (STAT_ERR_CREATE_PROCESS).</li>
+<li>4: Failure to mix the video (STAT_ERR_MIXED_INVALID_VIDEO_PARAM).</li>
+<li>5: Null pointer (STAT_ERR_NULL_POINTER ).</li>
+<li>6: Invalid parameters of the proxy server (STAT_ERR_PROXY_SERVER_INVALID_PARAM).</li>
+<li>0x8: Error in polling (STAT_POLL_ERR).</li>
+<li>0x10: Polling hangs up (STAT_POLL_HANG_UP).</li>
+<li>0x20: Invalid polling request (STAT_POLL_NVAL).</li>
 </ul>
 </div>
 </td>
@@ -1194,11 +1194,11 @@ virtual void onWarning(int warn) = 0;
 <tr><td><code>warn</code></td>
 <td><p>Warning codes:</p>
 <ul>
-<li>WARN_NO_AVAILABLE_CHANNEL = 103: No channel resources are available. Maybe because the server cannot allocate any channel resource.</li>
-<li>WARN_LOOKUP_CHANNEL_TIMEOUT = 104: A timeout when looking up the channel. When joining a channel, the SDK looks up the specified channel. This warning usually occurs when the network conditions are too poor to connect to the server.</li>
-<li>WARN_LOOKUP_CHANNEL_REJECTED = 105: The server rejected the request to look up the channel. The server cannot process this request or the request is illegal.</li>
-<li>WARN_OPEN_CHANNEL_TIMEOUT = 106: A timeout occurred when opening the channel. Once the specific channel is found, the SDK opens the channel. This warning usually occurs when the network conditions are too poor to connect to the server.</li>
-<li>WARN_OPEN_CHANNEL_REJECTED = 107: The server rejected the request to open the channel. The server cannot process this request or the request is illegal.</li>
+<li>103: No channel resources are available (WARN_NO_AVAILABLE_CHANNEL). Maybe because the server cannot allocate any channel resource.</li>
+<li>104: A timeout when looking up the channel (WARN_LOOKUP_CHANNEL_TIMEOUT). When joining a channel, the SDK looks up the specified channel. This warning usually occurs when the network conditions are too poor to connect to the server.</li>
+<li>105: The server rejected the request to look up the channel (WARN_LOOKUP_CHANNEL_REJECTED). The server cannot process this request or the request is illegal.</li>
+<li>106: A timeout occurred when opening the channel (WARN_OPEN_CHANNEL_TIMEOUT). Once the specific channel is found, the SDK opens the channel. This warning usually occurs when the network conditions are too poor to connect to the server.</li>
+<li>107: The server rejected the request to open the channel (WARN_OPEN_CHANNEL_REJECTED). The server cannot process this request or the request is illegal.</li>
 </ul>
 </td>
 </tr>
@@ -1260,11 +1260,11 @@ virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
 <td>
 <div>Reason:</div>
 <ul>
-<li>LEAVE_CODE_INIT(0): Initialization failure.</li>
-<li>LEAVE_CODE_SIG(1&lt;&lt;1): Signal triggered exit.</li>
-<li>LEAVE_CODE_NO_USERS(1&lt;&lt;2): There is no user in the channel except for the recording application.</li>
-<li>LEAVE_CODE_TIMER_CATCH(1&lt;&lt;3): Timer catch exit.</li>
-<li>LEAVE_CODE_CLIENT_LEAVE(1&lt;&lt;4): The client leaves the channel.</li>
+<li>0: Initialization failure (LEAVE_CODE_INIT).</li>
+<li>1: Signal triggered exit (LEAVE_CODE_SIG).</li>
+<li>2: There is no user in the channel except for the recording application (LEAVE_CODE_NO_USERS).</li>
+<li>3: Timer catch exit (LEAVE_CODE_TIMER_CATCH).</li>
+<li>4: The client leaves the channel (LEAVE_CODE_CLIENT_LEAVE).</li>
 </ul>
 </td>
 </tr>
@@ -1364,9 +1364,9 @@ virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE 
 <tr><td><code>reason</code></td>
 <td><p>Reason:</p>
 <ul>
-<li>USER_OFFLINE_QUIT = 0: The user has quit the call.</li>
-<li>USER_OFFLINE_DROPPED</code> = 1: The SDK timed out and the user dropped offline because it has not received any data packet for a period of time. If a user quits the call and the message is not passed to the SDK (due to an unreliable channel), the SDK assumes the user has dropped offline. </li>
-<li>USER_OFFLINE_BECOME_AUDIENCE = 2: The client role has changed from the host to the audience. The option is only valid when you set the channel profile as live broadcast when calling <code>joinChannel</code>.</li>
+<li>0: The user has quit the call (USER_OFFLINE_QUIT).</li>
+<li>1: The SDK timed out and the user dropped offline because it has not received any data packet for a period of time (USER_OFFLINE_DROPPED). If a user quits the call and the message is not passed to the SDK (due to an unreliable channel), the SDK assumes the user has dropped offline. </li>
+<li>2: The client role has changed from the host to the audience (USER_OFFLINE_BECOME_AUDIENCE ). The option is only valid when you set the channel profile as live broadcast when calling <code>joinChannel</code>.</li>
 </ul>
 </td>
 </tr>
