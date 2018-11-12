@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: 微信小程序
-updatedAt: Mon Nov 12 2018 02:43:40 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 02:43:51 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
@@ -98,3 +98,6 @@ const AgoraMiniappSDK = require('../../lib/mini-app-sdk-production.js');
 其中 `../../lib/mini-app-sdk-production.js` 为你的 js 文件本地路径。
 
 你已经完成了客户端集成，可以开始使用 Agora SDK 了。
+
+你可以直接参考下图中 API 的调用顺序，实现想要的功能。也可以分别参考**快速开始**中的其他步骤进行实现。
+![](https://web-cdn.agora.io/docs-files/1541990512316)
