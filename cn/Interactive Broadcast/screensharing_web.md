@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:04:56 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 07:28:42 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 要实现屏幕共享的功能，只需要在创建流的时候设置相关的属性（Chrome 和 Firefox 的实现方式不同）。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕图像。
