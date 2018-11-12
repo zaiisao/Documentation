@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Mon Nov 12 2018 07:54:12 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 07:54:41 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -34,6 +34,15 @@ agoraKit.pushExternalAudioFrameRawData("your rawData", samples: "per push sample
 agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 ```
 
+```objective-c
+//objective-c
+// 推入数据类型为 rawData
+[agoraKit pushExternalAudioFrameRawData: "your rawData" samples: "per push samples", timestamp: 0];
+
+// 推入数据类型为 CMSampleBuffer
+[agoraKit pushExternalAudioFrameSampleBuffer: "your CMSampleBuffer"];
+```
+
 ### 视频自采集
 
 视频自采集通过 `pushExternalVideoFrame` 接口实现。 
@@ -58,6 +67,28 @@ videoFrame.dataBuf = "your rawData"
 videoFrame.ratation = 0
 
 agoraKit.pushExternalVideoFrame(videoFrame)
+```
+
+```objective-c
+//objective-c
+// 推入数据类型为 CVPixelBufferRef
+AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
+videoFrame.format = 12;
+videoFrame.time = CMTimeMake(1, 15);
+videoFrame.textureBuf = "Your CVPixelBufferRef";
+videoFrame.ratation = 0;
+
+// 推入数据类型为 rawData
+AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
+videoFrame.format = "your data fromat";
+videoFrame.time = CMTimeMake(1, 15);
+videoFrame.data = "your CVPixelBufferRef";
+videoFrame.strideInPixels = "your stride";
+videoFrame.height = "your height";
+videoFrame.dataBuf = "your rawData";
+videoFrame.ratation = 0;
+
+[agoraKit pushExternalVideoFrame: videoFrame];
 ```
 
 ### 使用 MediaIO 接口自定义采集和渲染
@@ -100,12 +131,40 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 		func shouldDispose() {
 		}
 	```
+	
+	```objective-c
+	//objective-c
+	@synthesize consumer;
+
+	- (BOOL)shouldInitialize {
+			return YES;
+	}
+
+	- (void)shouldStart {
+	}
+
+	- (void)shouldStop {
+	}
+
+	- (void)shouldDispose {
+	}
+
+	- (AgoraVideoBufferType)bufferType {
+			return AgoraVideoBufferTypePixelBuffer;
+	}
+	```
+	
 
 2. 将遵守了 AgoraVideoSourceProtocol 协议的自定义 VideoSource 对象设给 AgoraRtcEngineKit。
 
 	```swift
 	//swift
 	agoraKit.setVideoSource(videoSource)
+	```
+
+	```objective-c
+	//objective-c
+	[agoraKit setVideoSource: videoSource];
 	```
 
 #### 自定义渲染源
@@ -155,12 +214,48 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 	}
 	```
 
+	```objective-c
+	//objective-c
+	- (BOOL)shouldInitialize {
+		return YES;
+	}
+
+	- (void)shouldStart {
+	}
+
+	- (void)shouldStop {
+	}
+
+	- (void)shouldDispose {
+	}
+
+	- (AgoraVideoBufferType)bufferType {
+		 return AgoraVideoBufferTypePixelBuffer;
+	}
+
+	- (AgoraVideoPixelFormat)pixelFormat {
+		 return AgoraVideoPixelFormatI420;
+	}
+
+	- (void)renderPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer rotation:(AgoraVideoRotation)rotation {
+	}
+
+	- (void)renderRawData:(void * _Nonnull)rawData size:(CGSize)size rotation:(AgoraVideoRotation)rotation {
+	}
+	```
+
 2. 将遵守了  AgoraVideoSourceProtocol 协议的自定义 VideoRenderer 对象设给 AgoraRtcEngineKit。
 
 	```swift
 	//swift
 	agoraKit.setLocalVideoRenderer(videoRenderer)
 	agoraKit.setRemoteVideoRenderer(videoRenderer, forUserId: uid)
+	```
+	
+	```objective-c
+	//objective-c
+	[agoraKit setLocalVideoRenderer: videoRenderer];
+	[agoraKit setRemoteVideoRenderer: videoRenderer];
 	```
 
 Agora 目前提供自定义视频源和渲染器的示例程序，请前往 Github 下载 [Agora Custom Media Device](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS) 并体验。
