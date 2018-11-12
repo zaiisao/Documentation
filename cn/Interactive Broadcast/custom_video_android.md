@@ -3,24 +3,28 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Mon Nov 12 2018 03:03:21 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 03:03:58 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
-## 场景描述
+## 功能介绍
 
-实时通讯过程中，Agora SDK 通常会启动默认的内置的摄像头进行视频推流，以及默认的视频渲染器进行视频渲染。如果需要自定义视频源及视频渲染器，则可以通过参考本文中的步骤调用 API 实现。一般来讲，本章内容适合以下场景：
+实时通信过程中，Agora SDK 通常会启动默认的音视频模块进行采集和渲染。如果想要在客户端实现自定义音视频采集和渲染，则可以使用自定义的音视频源或渲染器，来进行实现。
 
--   SDK 内置的 Camera 视频源功能不能满足开发者需求时，比如需要使用自定义的美颜库或者前处理库
--   开发者 App 中已经有自己的图像视频模块，为了复用代码可以自定义视频源
--   开发者希望使用非 Camera 的视频源，比如录屏数据
--   有些系统独占的视频采集设备，为了避免与其他业务冲突，需要灵活得设备管理策略
+自定义采集和渲染主要适用于以下场景：
+
+当 SDK 内置的音视频源不能满足开发者需求时，比如需要使用自定义的美颜库或前处理库
+开发者的 App 中已有自己的音频或视频模块，为了复用代码，也可以自定义音视频源
+开发者希望使用非 Camera 采集的视频源，如录屏数据
+有些系统独占的视频采集设备，为避免与其他业务产生冲突，需要灵活的设备管理策略
 
 
-## 集成 SDK
+## 实现方法
 
-详见 [集成客户端](../../cn/Interactive%20Broadcast/android_video.md) 。
+在查看下文内容前，请确保你已参考 [集成客户端](../../cn/Interactive%20Broadcast/android_video.md) 完成 SDK 集成。
 
-## 实现自定义视频源
+### 使用 MediaIO 接口自定义采集和渲染
+
+#### 自定义视频源
 
 步骤 1：实现 `IVideoSource` 接口，构建自定义的 Video Source 类
 
@@ -67,7 +71,7 @@ public abstract int setVideoSource(IVideoSource source);
 
 > 开发者也可以选择自己管理视频设备的生命周期，只是根据 Media Engine 的回调来打开和关闭视频帧的输入开关。对于开发者 App 之前已有自己的采集模块，需要集成 Agora SDK 以获得实时通信能力的使用场景下，这种方式更简单。详见下文 [使用 Agora SDK 提供的组件自定义视频源](#custom_video_source) 中的描述。
 
-## 实现自定义渲染器
+#### 自定义渲染器
 
 步骤 1：根据实际需要的数据类型和格式，实现 获取 Buffer 类型 `getBufferType` 和 获取像素格式 `getPixelFormat` ，设置数据帧的类型和格式
 
@@ -83,14 +87,12 @@ public abstract int setVideoSource(IVideoSource source);
 
 > 为了方便开发者集成和创建自定义的视频渲染器，Agora 也提供了一些辅助类和示例 demo；开发者也可以直接使用这些组件，或者利用这些组件构建自定义的渲染器，详见下文的 [使用 Agora SDK 提供的组件自定义渲染器](#custom_video_renderer) 。
 
-## 示例程序
-
-声网 Agora 目前提供自定义视频源及渲染器的示例程序，请前往 Github 下载 [Agora Custom Media Device Sample App for Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) 并体验。
+Agora 目前提供自定义视频源及渲染器的示例程序，请前往 Github 下载 [Agora Custom Media Device](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) 并体验。
 
 <a name = "custom_video_source"></a>
-## 使用 Agora SDK 提供的组件自定义视频源
+### 使用 Agora SDK 提供的组件自定义视频源
 
-### 1. AgoraBufferedCamera2 的用法
+#### 1. AgoraBufferedCamera2 的用法
 
 `AgoraBufferedCamera2.java` 这个类展示了实现 ByteBuffer 和 ByteArray 类型的自定义视频源。
 
@@ -104,7 +106,7 @@ rtcEngine.setVideoSource(source);
 
 当使用 ByteArray 或 ByteBuffer 类型的视频源的时候，SDK 可以接收 Pixel format 为 YUV420p, NV21 或 RGBA 格式的视频帧数据。
 
-### 2. AgoraTextureCamera 的用法
+#### 2. AgoraTextureCamera 的用法
 
 AgoraTextureCamera.java 这个类展示了实现 Texture 类型的自定义视频源，开发者可以直接使用 AgoraTextureCamera 作为视频源。
 
@@ -113,9 +115,9 @@ IVideoSource source = new AgoraTextureCamera(this, 640, 480);
 rtcEngine.setVideoSource(source);
 ```
 
-### 3. 辅助类和组件
+#### 3. 辅助类和组件
 
-#### SurfaceTextureHelper 类
+##### SurfaceTextureHelper 类
 
 `SurfaceTextureHelper` 类 SDK 提供的辅助类，用于方便开发者使用 SurfaceTexture，而无需关心构建 GL 环境，创建 texture，以及线程之间的交互。 SurfaceTextureHelper 的主要功能：
 
@@ -124,7 +126,7 @@ rtcEngine.setVideoSource(source);
 2.  当 SurfaceTexture 捕获到视频帧时，通知开发者 texture 内容已经更新
 
 
-##### 创建 SurfaceTextureHelper
+**创建 SurfaceTextureHelper**
 
 ```
 public static SurfaceTextureHelper create(final String threadName, final EglBase.Context sharedContext);
@@ -132,7 +134,7 @@ public static SurfaceTextureHelper create(final String threadName, final EglBase
 
 利用 `create` 方法可以创建 SurfaceTextureHelper。这时会新创建一个 GL 线程，并在这个 GL 环境中创建好 texture 和 SurfaceTexture。
 
-##### 获取 SurfaceTexture
+**获取 SurfaceTexture**
 
 ```
 public EglBase.Context getEglContext();
@@ -142,7 +144,7 @@ public SurfaceTexture getSurfaceTexture();
 
 该方法获取创建出来的 texture；如果需要访问 GL 环境或者 GL 线程，也可以通过 `getEglContext` 和 `getHandler` 拿到。
 
-##### 监听 SurfaceTexture
+**监听 SurfaceTexture**
 
 ```
 public interface OnTextureFrameAvailableListener {
@@ -154,7 +156,7 @@ public void stopListening();
 
 该方法设置 Listener 来监听SurfaceTexture是否有新的视频帧，通过 `startListening` 和 `stopListening` 来启动或停止监听。
 
-##### 释放视频资源
+**释放视频资源**
 
 ```
 void dispose();
@@ -162,7 +164,7 @@ void dispose();
 
 如果不再需要使用 SurfaceTexture，使用该方法释放相关资源。
 
-#### TextureSource 类
+##### TextureSource 类
 
 SDK 提供了 TextureSource 类，来方便开发者构建 Texture 类型的视频源；它封装了 SurfaceTexture 的创建和与其关联的 Texture 内容的更新，以及对 `IVideoFrameConsumer` 的操作；只需要关心三点：
 
@@ -204,11 +206,11 @@ public void onTextureFrameAvailable(int oesTextureId, float[] transformMatrix, l
 public void release();
 ```
 
-### 4. 示例：利用 TextureSource 实现自定义屏幕录制视频源
+#### 4. 示例：利用 TextureSource 实现自定义屏幕录制视频源
 
 以自定义的屏幕录制视频源为例，全部代码请参考 Github。
 
-#### 步骤 1：实现设备回调方法
+##### 步骤 1：实现设备回调方法
 
 ```
 public class ScreenRecordSource extends TextureSource {
@@ -243,7 +245,7 @@ public class ScreenRecordSource extends TextureSource {
  }
 ```
 
-#### 步骤 2：获取 SurfaceTexture 并使用创建 Virtual Display，用于捕获屏幕数据
+##### 步骤 2：获取 SurfaceTexture 并使用创建 Virtual Display，用于捕获屏幕数据
 
 ```
 private void createVirtualDisplay() {
@@ -262,7 +264,7 @@ private void virtualDisplay() {
 }
 ```
 
-#### 步骤 3：重载获取视频数据的回调方法
+##### 步骤 3：重载获取视频数据的回调方法
 
 ```
 @Override
@@ -277,7 +279,7 @@ public void onTextureFrameAvailable(int oesTextureId, float[] transformMatrix, l
 
 > 确认调用了父类方法：*super.onTextureFrameAvailable\(oesTextureId, transformMatrix, timeStampNs\);*
 
-#### 步骤 4：不再使用视频源时，需要在适当的地方释放之前申请的资源
+##### 步骤 4：不再使用视频源时，需要在适当的地方释放之前申请的资源
 
 ```
 public void sourceRelease() {
@@ -287,7 +289,7 @@ public void sourceRelease() {
 ```
 
 <a name = "custom_video_renderer"></a>
-## 使用 Agora SDK 提供的组件自定义渲染器
+### 使用 Agora SDK 提供的组件自定义渲染器
 
 Agora SDK 中提供了默认的渲染器的实现，用来显示本地视频图像和对端视频图像。大部分应用场景下，使用默认的渲染器就可以满足 App 开发者的需求。但考虑到复杂业务场景，我们也开放了自定义渲染器的接口。
 
@@ -296,7 +298,7 @@ Agora SDK 中提供了默认的渲染器的实现，用来显示本地视频图�
 -   开发者希望往特定区域渲染图像，比如在游戏框架中使用
 
 
-### AgoraSurfaceView 的用法
+#### AgoraSurfaceView 的用法
 
 `AgoraSurfaceView` 继承了 SurfaceView 同时实现了 `IVideoSink` 接口，可以渲染 YUV、RGB 和 texture 类型（2D/OES）的视频帧。
 
@@ -307,7 +309,7 @@ render.setZOrderOnTop(true);
 rtcEngine.setLocalVideoRenderer(render);
 ```
 
-### AgoraTextureView 的用法
+#### AgoraTextureView 的用法
 
 `AgoraTextureView` 继承了 TextureView 并实现了 `IVideoSink` 接口,可以渲染 YUV、RGB 和 texture类型（2D/OES）的视频帧。 下面代码展示了 `AgoraTextureView` 与自定义视频源配合使用，利用 TextureSource 所创建的 GL 环境：
 
@@ -321,9 +323,9 @@ rtcEngine().setVideoSource(source);
 rtcEngine().setLocalVideoRenderer(render);
 ```
 
-### 辅助类和组件
+#### 辅助类和组件
 
-#### BaseVideoRenderer 类
+##### BaseVideoRenderer 类
 
 Agora SDK 提供了 `BaseVideoRenderer` 类，辅助开发者自定义渲染器。其主要功能：
 
@@ -346,5 +348,7 @@ Agora SDK 提供了 `BaseVideoRenderer` 类，辅助开发者自定义渲染器�
 
 6.  实现 `IVideoFrameConsumer` 的 `consumer` 方法，调用 `BaseVideoRenderer` 对象的对应格式的 `consumer` 方法可以将接收到的视频帧渲染到渲染目标上。
 
+## 开发注意事项
 
+客户端自定义采集和渲染属于较复杂的功能，开发者自身需要具备音视频相关知识，能够自己独立开发完成采集与渲染。
 
