@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Mon Nov 12 2018 02:55:46 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 02:55:50 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -19,7 +19,7 @@ updatedAt: Mon Nov 12 2018 02:55:46 GMT+0000 (UTC)
 
 ## 实现方法
 
-在查看下文内容前，请确保你已参考 [集成客户端](../../cn/Interactive%20Broadcast/ios_video.md) 完成 SDK 集成。
+在查看下文内容前，请确保你已参考 [集成客户端](../../cn/Video/ios_video.md) 完成 SDK 集成。
 
 ### 视频自采集
 
