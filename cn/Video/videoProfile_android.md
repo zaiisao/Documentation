@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Android
-updatedAt: Mon Nov 12 2018 10:01:07 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 10:01:12 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -30,7 +30,7 @@ Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的�
 
 **相关 API 及注释**
 
-* [setVideoEncoderConguration](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
+* [`setVideoEncoderConguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
 
 ## 开发注意事项
 - 如果用户加入频道后不需要重新设置视频编码属性，建议在 `enableVideo` 前调用 `setVideoEncoderConfiguration` ，可以加快首帧出图的时间。
