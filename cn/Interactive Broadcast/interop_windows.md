@@ -3,7 +3,7 @@
 title: 移动端、桌面端、Web 端互通
 description: 
 platform: Windows
-updatedAt: Tue Nov 13 2018 09:25:21 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 09:44:16 GMT+0000 (UTC)
 ---
 # 移动端、桌面端、Web 端互通
 ## 功能简介
