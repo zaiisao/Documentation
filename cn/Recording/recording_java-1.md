@@ -225,7 +225,7 @@ String key = "";
 String value = "";
 Map<String,String> map = new HashMap<String,String>();
 if(0 < args.length ){
-  for(int i = 0; i<args.length-1; i++){
+  for(int i = 0; i<args.length-1; i+=2){
     key = args[i];
     value = args[i+1];
     map.put(key, value);
