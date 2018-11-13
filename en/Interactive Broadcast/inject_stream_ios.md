@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: iOS
-updatedAt: Tue Nov 13 2018 09:06:00 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 09:06:23 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -44,12 +44,35 @@ To inject an online media stream, the user need first join a live broadcast chan
 - To inject an online media stream:
 
   The broadcaster(host) in the live broadcast channel can call `addInjectStreamUrl` to specify an online media stream and inject it into the channel.
-	
+
 	```swift
-	//Swift
-	let urlPath = "Some online RTMP/HLS url path"
-	let config = AgoraLiveInjectStreamConfig.default()
-	agoraKit.addInjectStreamUrl(urlPath, config: config)
+	//swift
+	// Adds a voice or video stream into an ongoing broadcast.
+
+	let config = AgoraLiveInjectStreamConfig()
+	config.size = CGSize(width: 640, height: 360)
+	config.videoGop = 30
+	config.videoBitrate = 400
+	config.videoFramerate = 15
+	config.audioSampleRate = 48000
+	config.audioBitrate = 48
+	config.audioChannels = 1
+
+	agoraKit.addInjectStreamUrl("media stream url", config: config)
+	```
+
+	```objective-c
+	//objective-c
+	AgoraLiveInjectStreamConfig *config = [[AgoraLiveInjectStreamConfig alloc] init];
+	config.size = CGSizeMake(640, 360);
+	config.videoGop = 30
+	config.videoBitrate = 400
+	config.videoFramerate = 15
+	config.audioSampleRate = 48000
+	config.audioBitrate = 48
+	config.audioChannels = 1
+
+	[agoraKit addInjectStreamUrl: @"media stream url" config: config];
 	```
 
 	You can modify the parameter values of `config` to set the resolution, bitrate, frame rate and audio sampling rate of the injected stream. For more information, see [Agora Live Inject Stream Config](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveInjectStreamConfig.html).
@@ -59,12 +82,18 @@ To inject an online media stream, the user need first join a live broadcast chan
 	The broadcaster(host) in the live broadcast channel can call `removeInjectStreamUrl` to remove a previously injected media stream.
 
 	```swift
-	//Swift
+	//swift
 	let urlPath = "Some online RTMP/HLS url path"
 	agoraKit.removeInjectStreamUrl(urlPath)
 	```
+	
+	```
+	//objective-c
+	NSString *urlPath = @"Some online RTMP/HLS url path";
+	[agoraKit removeInjectStreamUrl: urlPath];
+	```
 
-> If the host has left the channel, it is unnecessary to call `removeInjectStreamUrl`.
+	> If the host has left the channel, it is unnecessary to call `removeInjectStreamUrl`.
 
 ## Working Principles
 
