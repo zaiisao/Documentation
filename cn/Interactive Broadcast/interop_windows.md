@@ -3,7 +3,7 @@
 title: 移动端、桌面端、Web 端互通
 description: 
 platform: Windows
-updatedAt: Tue Nov 13 2018 09:44:16 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 09:44:20 GMT+0000 (UTC)
 ---
 # 移动端、桌面端、Web 端互通
 ## 功能简介
@@ -20,7 +20,7 @@ Agora SDK 的桌面端和 Web 端互通，需要在移动端和 Web 端同时进
 
 	```cpp
 	//cpp
-	//ensure this api is called from native side to interop with web sdk
+	//ensure that this api is called from native side to interop with web sdk
 	lpAgoraEngine->enableWebSdkInteroperability
 	```
 
