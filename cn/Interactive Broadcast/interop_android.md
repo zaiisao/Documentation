@@ -3,7 +3,7 @@
 title: 移动端、桌面端、Web 端互通
 description: 
 platform: Android
-updatedAt: Tue Nov 13 2018 09:42:51 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 09:42:55 GMT+0000 (UTC)
 ---
 # 移动端、桌面端、Web 端互通
 ## 功能简介
@@ -19,7 +19,7 @@ Agora SDK 的移动端和 Web 端互通，需要在移动端和 Web 端同时进
 
 	```java
 	//java
-	//ensure that his api is called from native side to interop with websdk
+	//ensure that this api is called from native side to interop with web sdk
 	rtcEngine.enableWebSdkInteroperability(true);
 	```
 
