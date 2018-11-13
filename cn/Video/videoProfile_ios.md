@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: iOS,macOS
-updatedAt: Mon Nov 12 2018 10:19:17 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 03:46:50 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
