@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Android
-updatedAt: Tue Nov 13 2018 03:45:54 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 03:45:59 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -11,7 +11,10 @@ updatedAt: Tue Nov 13 2018 03:45:54 GMT+0000 (UTC)
 
 视频属性一般包含视频分辨率、帧率、码率、方向模式等参数。
 
-## 功能简介
+## 实现方法
+
+在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Interactive%20Broadcast/android_video.md)。
+
 Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的属性，比如分辨率、码率、帧率等。参数均为理想情况下的最大值。当视频引擎因网络环境等原因无法达到设置的分辨率、帧率或码率的最大值时，会取最接近最大值的那个值。
 
 ```java
