@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Tue Nov 13 2018 03:49:31 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 03:49:36 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -19,7 +19,7 @@ updatedAt: Tue Nov 13 2018 03:49:31 GMT+0000 (UTC)
 
 ## 实现方法
 
-在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Video/ios_video.md)。
+在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Video/ios_video.md)。
 
 ### 音频自采集
 
