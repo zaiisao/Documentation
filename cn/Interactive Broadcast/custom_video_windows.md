@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Windows
-updatedAt: Tue Nov 13 2018 03:45:05 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 03:45:09 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -17,7 +17,8 @@ updatedAt: Tue Nov 13 2018 03:45:05 GMT+0000 (UTC)
 * 有些系统独占的视频采集设备，为避免与其他业务产生冲突，需要灵活的设备管理策略
 
 ## 实现方法
-在查看下文内容前，请确保你已参考 [集成客户端](../../cn/Interactive%20Broadcast/windows_video.md) 完成 SDK 集成。
+
+在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Interactive%20Broadcast/windows_video.md)。
 
 ### 使用外部音频数据源
 
