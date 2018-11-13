@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Tue Nov 13 2018 03:43:19 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 03:43:28 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -20,7 +20,7 @@ updatedAt: Tue Nov 13 2018 03:43:19 GMT+0000 (UTC)
 
 ## 实现方法
 
-在查看下文内容前，请确保你已参考 [集成客户端](../../cn/Video/android_video.md) 完成 SDK 集成。
+在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Video/android_video.md)。
 
 ### 自定义音频源
 
