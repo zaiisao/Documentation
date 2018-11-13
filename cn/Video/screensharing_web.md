@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Mon Nov 12 2018 09:52:16 GMT+0000 (UTC)
+updatedAt: Mon Nov 12 2018 09:52:22 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -23,7 +23,7 @@ updatedAt: Mon Nov 12 2018 09:52:16 GMT+0000 (UTC)
 ## 实现方法
 在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](https://docs.agora.io/cn/Interactive%20Broadcast/web_prepare?platform=Web)。
 
-Chrome 和 Firefox 浏览器在创建流的时候，相关的属性是不同的。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕提箱。
+Chrome 和 Firefox 浏览器在创建流的时候，相关的属性是不同的。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕信息。
 
 ### <a name = "chrome"></a>Chrome 屏幕共享
 
