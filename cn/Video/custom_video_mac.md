@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Tue Nov 13 2018 06:17:32 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 06:17:42 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -19,11 +19,11 @@ updatedAt: Tue Nov 13 2018 06:17:32 GMT+0000 (UTC)
 
 ## 实现方法
 
-在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Video/ios_video.md)。
+在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Video/mac_video.md)。
 
-### 音频自采集
+### 自定义音频源
 
-音频自采集通过 `pushExternalAudioFrame` 接口实现。
+目前音频源只有 Push一种方式，同视频源类似，SDK 不会对采用 Push 方法传入的音频数据做消噪等处理。
 
 ```swift
 //swift
@@ -34,36 +34,24 @@ agoraKit.pushExternalAudioFrameRawData("your rawData", samples: "per push sample
 agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 ```
 
-### 视频自采集
-
-视频自采集通过 `pushExternalVideoFrame` 接口实现。 
-
-```swift
-//swift
-// 推入数据类型为 CVPixelBufferRef
-let videoFrame = AgoraVideoFrame()
-videoFrame.format = 12
-videoFrame.time = CMTimeMake(1, 15)
-videoFrame.textureBuf = "Your CVPixelBufferRef"
-videoFrame.ratation = 0
-
+```objective-c
+//objective-c
 // 推入数据类型为 rawData
-let videoFrame = AgoraVideoFrame()
-videoFrame.format = "your data fromat"
-videoFrame.time = CMTimeMake(1, 15)
-videoFrame.data = "your CVPixelBufferRef"
-videoFrame.strideInPixels = "your stride"
-videoFrame.height = "your height"
-videoFrame.dataBuf = "your rawData"
-videoFrame.ratation = 0
+[agoraKit pushExternalAudioFrameRawData: "your rawData" samples: "per push samples", timestamp: 0];
 
-agoraKit.pushExternalVideoFrame(videoFrame)
+// 推入数据类型为 CMSampleBuffer
+[agoraKit pushExternalAudioFrameSampleBuffer: "your CMSampleBuffer"];
 ```
 
 
-### 使用 MediaIO 接口自定义采集和渲染
+### 自定义视频源
 
-#### 自定义视频源
+* 通过 Video Source 方法。Agora 推荐使用该方法自定义视频源。
+* 通过 External Frame 方法。该方法为旧的接口使用形式，略过了 SDK 对帧的优化处理，适合客户端有能力对帧进行优化的用户。
+
+#### 使用 Video Source 自定义视频源
+
+Video Source 是新 MediaIO 系列接口的视频输出源部分。需要注意的是，这个 API 只负责将视频帧数据传输到服务器，如需本地预览则需要应用开发者自己处理本地渲染逻辑。示例代码如下：
 
 1. 遵守 AgoraVideoSourceProtocol 协议， 并实现接口，构建自定义的 Video Source 类。
 
@@ -101,6 +89,29 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 		func shouldDispose() {
 		}
 	```
+	
+	```objective-c
+	//objective-c
+	@synthesize consumer;
+
+	- (BOOL)shouldInitialize {
+			return YES;
+	}
+
+	- (void)shouldStart {
+	}
+
+	- (void)shouldStop {
+	}
+
+	- (void)shouldDispose {
+	}
+
+	- (AgoraVideoBufferType)bufferType {
+			return AgoraVideoBufferTypePixelBuffer;
+	}
+	```
+	
 
 2. 将遵守了 AgoraVideoSourceProtocol 协议的自定义 VideoSource 对象设给 AgoraRtcEngineKit。
 
@@ -109,7 +120,63 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 	agoraKit.setVideoSource(videoSource)
 	```
 
-#### 自定义渲染源
+	```objective-c
+	//objective-c
+	[agoraKit setVideoSource: videoSource];
+	```
+
+#### 使用 External Frame 方法自定义视频源
+
+External Frame 使用的是外部视频源 Push 接口。相对于 MedioIO 接口，Push 接口代码较少，但缺少 SDK 对帧的优化过程，需要用户对自己采集到的视频数据进行处理。
+
+```swift
+//swift
+// 推入数据类型为 CVPixelBufferRef
+let videoFrame = AgoraVideoFrame()
+videoFrame.format = 12
+videoFrame.time = CMTimeMake(1, 15)
+videoFrame.textureBuf = "Your CVPixelBufferRef"
+videoFrame.ratation = 0
+
+// 推入数据类型为 rawData
+let videoFrame = AgoraVideoFrame()
+videoFrame.format = "your data fromat"
+videoFrame.time = CMTimeMake(1, 15)
+videoFrame.data = "your CVPixelBufferRef"
+videoFrame.strideInPixels = "your stride"
+videoFrame.height = "your height"
+videoFrame.dataBuf = "your rawData"
+videoFrame.ratation = 0
+
+agoraKit.pushExternalVideoFrame(videoFrame)
+```
+
+```objective-c
+//objective-c
+// 推入数据类型为 CVPixelBufferRef
+AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
+videoFrame.format = 12;
+videoFrame.time = CMTimeMake(1, 15);
+videoFrame.textureBuf = "Your CVPixelBufferRef";
+videoFrame.ratation = 0;
+
+// 推入数据类型为 rawData
+AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
+videoFrame.format = "your data fromat";
+videoFrame.time = CMTimeMake(1, 15);
+videoFrame.data = "your CVPixelBufferRef";
+videoFrame.strideInPixels = "your stride";
+videoFrame.height = "your height";
+videoFrame.dataBuf = "your rawData";
+videoFrame.ratation = 0;
+
+[agoraKit pushExternalVideoFrame: videoFrame];
+```
+
+
+### 自定义渲染器
+
+你可以使用 MediaIO 接口实现 Video Sink 来自定义渲染器。示例代码如下：
 
 1. 遵守 AgoraVideoSinkProtocol 协议， 并实现接口，构建自定义的 Video Renderer 类。
 
@@ -156,12 +223,48 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 	}
 	```
 
+	```objective-c
+	//objective-c
+	- (BOOL)shouldInitialize {
+		return YES;
+	}
+
+	- (void)shouldStart {
+	}
+
+	- (void)shouldStop {
+	}
+
+	- (void)shouldDispose {
+	}
+
+	- (AgoraVideoBufferType)bufferType {
+		 return AgoraVideoBufferTypePixelBuffer;
+	}
+
+	- (AgoraVideoPixelFormat)pixelFormat {
+		 return AgoraVideoPixelFormatI420;
+	}
+
+	- (void)renderPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer rotation:(AgoraVideoRotation)rotation {
+	}
+
+	- (void)renderRawData:(void * _Nonnull)rawData size:(CGSize)size rotation:(AgoraVideoRotation)rotation {
+	}
+	```
+
 2. 将遵守了  AgoraVideoSourceProtocol 协议的自定义 VideoRenderer 对象设给 AgoraRtcEngineKit。
 
 	```swift
 	//swift
 	agoraKit.setLocalVideoRenderer(videoRenderer)
 	agoraKit.setRemoteVideoRenderer(videoRenderer, forUserId: uid)
+	```
+	
+	```objective-c
+	//objective-c
+	[agoraKit setLocalVideoRenderer: videoRenderer];
+	[agoraKit setRemoteVideoRenderer: videoRenderer];
 	```
 
 ## 开发注意事项
