@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 17:10:33 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 09:03:17 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
