@@ -3,7 +3,7 @@
 title: 移动端、桌面端、Web 端互通
 description: 
 platform: macOS
-updatedAt: Tue Nov 13 2018 09:25:18 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 09:43:41 GMT+0000 (UTC)
 ---
 # 移动端、桌面端、Web 端互通
 ## 功能简介
