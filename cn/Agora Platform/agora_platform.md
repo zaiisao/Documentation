@@ -3,7 +3,7 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 13 2018 06:22:40 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 06:22:45 GMT+0000 (UTC)
 ---
 # Agora 平台概述
 ## SD-RTN（Software Defined Real-time Network）
@@ -116,6 +116,6 @@ Agora 原生 SDK 支持 iOS，Android，Windows，和 Mac 等各平台。原生 
 
 ### Agora 基于 Web 的 SDK
 
-Agora 基于 Web 的 SDK 使基于 Web 开发的 App 能够实现原生应用同样的功能。
+Agora 基于 WebRTC 的 SDK 使基于 Web 开发的 App 能够实现原生应用同样的功能。
 
 
