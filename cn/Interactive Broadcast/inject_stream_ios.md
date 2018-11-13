@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: iOS
-updatedAt: Tue Nov 13 2018 09:09:15 GMT+0000 (UTC)
+updatedAt: Tue Nov 13 2018 09:09:49 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -48,7 +48,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 	直播频道的主播可以使用 `addInjectStreamUrl` ，指定一个在线媒体流作为连麦端接入房间。
 	
 	```swift
-	//Swift
+	//swift
 	// Adds a voice or video stream into an ongoing broadcast.
 
 	let config = AgoraLiveInjectStreamConfig()
@@ -91,7 +91,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 
 	```objective-c
 	//objective-c
-	NSString *urlPath = @"Some online...";
+	NSString *urlPath = @"Some online  RTMP/HLS url path";
 	[agoraKit removeInjectStreamUrl: urlPath];
 	```
 
