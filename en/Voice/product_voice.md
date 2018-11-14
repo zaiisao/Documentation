@@ -3,7 +3,7 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 09 2018 11:04:04 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:14:33 GMT+0000 (UTC)
 ---
 # Agora Voice Overview
 The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many voice calls that feature high stability and low latency. It is applicable to voice-only scenarios in the entertainment and education industries.
