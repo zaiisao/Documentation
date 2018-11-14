@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Windows
-updatedAt: Wed Nov 14 2018 03:22:28 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:33:48 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
@@ -35,9 +35,10 @@ updatedAt: Wed Nov 14 2018 03:22:28 GMT+0000 (UTC)
 
 ## 添加 SDK
 
-1.  下载 [Windows SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)。
-
-2.  将 `AgoraRtcEngineSDK/lib` 目录放入项目的 LIB 目录下。
+1.  下载 [Windows SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)，解压并打开。
+2.  将 `sdk/include` 目录添加到项目的 INCLUDE 目录下。
+3.  将 `sdk/lib` 目录放入项目的 LIB 目录下，并确认 agora_rtc_sdk.lib 与项目有连接。 
+4.  将 `sdk/dll` 下的 dll 文件复制到你的可执行文件所在的目录下。
 
 现在你已经设置好了 Windows 开发环境，可以开始使用 Agora SDK 了！
 
