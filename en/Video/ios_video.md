@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Wed Nov 14 2018 04:03:41 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 04:03:48 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
@@ -17,7 +17,7 @@ This page contains information on how to prepare the development environment bef
 
 > Use a physical device to run the sample. Simulators may lack the functionality or the performance needed to run the sample.
 
-## Create an Agora Account and Getting an App ID
+## Create an Agora Account and Get an App ID
 
 1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
