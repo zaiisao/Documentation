@@ -3,7 +3,7 @@
 title: 录制快速开始
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:05:45 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 06:16:37 GMT+0000 (UTC)
 ---
 # 录制快速开始
 本页介绍如何使用 Agora Recording SDK for Linux 录制语音或视频通话。
