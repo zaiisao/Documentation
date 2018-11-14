@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Wed Nov 14 2018 02:41:44 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 02:41:54 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
@@ -67,7 +67,7 @@ This page contains information on how to prepare the development environment bef
 > Agora Web SDK 2.5 also supports Chrome 49 on Windows XP.
 
 2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
-3. Understand the limitations in [Known Issues](../../en/Interactive%20Broadcast/release_web_video.md) and [FAQ](https://docs.agora.io/en/2.4.1/faq/faq/web).
+3. Understand the limitations in [Known Issues](../../en/Interactive%20Broadcast/release_web_video.md) and [FAQ](../../en/Interactive%20Broadcast/websdk_related_faq.md).
 
 ## Create an Agora Account and Get an App ID
 
@@ -107,7 +107,7 @@ This method requires npm, see [Install npm](https://www.npmjs.com/get-npm) for d
 Add the following code to the line above `</body>` in your project.
 
  ```javascript
-	<script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.5-latest.js"></script>
+<script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.5-latest.js"></script>
 	```
 
 ### Method 3: Get the SDK from the official Agora website
@@ -116,9 +116,9 @@ Add the following code to the line above `</body>` in your project.
 
    <img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/en/web_sdk_download.png" style="width: 500px;"/>
 
-2. Copy the `AgoraRTCSDK-2.4.js` file to your project.
+2. Copy the `AgoraRTCSDK-2.5.js` file to your project.
 
-3. Reference the `AgoraRTCSDK-2.4.js` file in your project.
+3. Reference the `AgoraRTCSDK-2.5.js` file in your project.
 
    <img alt="../_images/web_sdk_reference.jpeg" src="https://web-cdn.agora.io/docs-files/en/web_sdk_reference.jpeg" />
 
