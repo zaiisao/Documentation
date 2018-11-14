@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Wed Nov 14 2018 03:45:52 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:45:57 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -17,7 +17,7 @@ This page contains information on how to prepare the development environment bef
 
 > Use a physical device to run the sample. Simulators may lack the functionality or performance needed to run the sample.
 
-## Creating an Agora Account and Getting an App ID
+## Create an Agora Account and Get an App ID
 
 1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
@@ -31,14 +31,14 @@ This page contains information on how to prepare the development environment bef
 
    <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
 
-## Adding the Agora SDK to Your Project
+## Add the Agora SDK to Your Project
 
 Choose one of the following methods to add the Agora SDK libraries to your project:
 
 - [Adding the Libraries Automatically](#auto-add): Add the libraries automatically using *CocoaPods*. You do not need to download the SDK.
 - [Adding the Libraries Manually](#man-add): Download the SDK and add the libraries manually.
 
-### <a name = "auto-add"></a>Adding the Libraries Automatically
+### <a name = "auto-add"></a>Add the Libraries Automatically
 
 1. Install *CocoaPods* by running the following command in Terminal:
 
@@ -84,7 +84,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    open YourApp.xcworkspace
    ```
 
-### <a name = "man-add"></a>Adding the Libraries Manually
+### <a name = "man-add"></a>Add the Libraries Manually
 
 1. Download the [Agora Voice SDK for iOS](https://docs.agora.io/en/Agora%20Platform/downloads) and unzip the downloaded SDK package.
 
@@ -120,7 +120,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    <img alt="../_images/ios_voice_5.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_5.jpg" />
 
-## Authorizing the Use of the Agora SDK
+## Authorize the Use of the Agora SDK
 
 Before enabling a voice call, you need to enable microphone access to the SDK on your device. Open `info.plist` and click **+** to add:
 
@@ -134,7 +134,7 @@ Before enabling a voice call, you need to enable microphone access to the SDK on
 
 <img alt="../_images/ios_voice_7.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_7.jpg" />
 
-## Accessing the Library
+## Access the Library
 
 You can access the added library using [Objective-C](#oc) or [Swift](#swift).
 
