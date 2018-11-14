@@ -3,14 +3,14 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 14 2018 03:24:53 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:25:05 GMT+0000 (UTC)
 ---
 # Agora Video Overview
-The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many video calls that feature high stability and low latency. It is applicable to scenarios in the entertainment and education industries.
+The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
 
-The major difference between Agora Video Call and [Agora Video Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
-* During an Agora Video Call that highlights fluency and low latency, all users are of the same role and can talk to each other freely. A typical scenario of the Agora Voice Call is video conference call for multi persons. 
-* During an Agora Video Interactive Broadcast that highlights high voice quality, users are divided into Host and Audience. Only the host can talk. If a user wants to talk, he must change his role as host first. A typical scenario of the Agora Video Interactive Broadcast is the online interactive class.
+The major difference between Agora Video Call and [Agora Video Interactive Broadcast (Video)](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
+* During an Agora Video Call that highlights fluency and low latency, all users are of the same role and can talk to each other freely. A typical scenario of the Agora Voice Call is the video conference call for multi persons. 
+* During an Agora Video Interactive Broadcast (Video) that highlights high voice quality, users are divided into Host and Audience. Only the host can talk. If a user wants to talk, he must change his role as host first. A typical scenario of the Agora Video Interactive Broadcast is the online interactive class.
 
 ## Functions and Scenarios
 
@@ -21,7 +21,7 @@ The Agora Native SDK for Video Call boasts a flexible combination of functions f
 | Audio Mixing          | Send local and online audio and user vioce to other audience in the channel. | <li>Online KTV <li>Interactive music classes for children |
 | Screen Sharing             | Enable hosts to share their screen to audience in the channel.                         | Interactive online classes                                                  |
 | Modify Raw Data   | Enable developers to obtain and modify the voice or video raw data and to create special effects, such as voice change. | <li>Change the voice in an online chatroom <li>Facial beautification in a video call                  |
-| Customize Video Source and Renderer | Enable access to customized video sources and renderers, which means, besides the system camera, users can utilize their self-built camera, videos from screen sharing or files, etc. In this way, they are able to process videos more flexibly, such as to adding beauty effects and filters. | <li>Users want to use a customized beauty effect library or pre-processing library;<li>The App already has built-in image and video modules;<li>Developers want to use other video sources, such as a recorded video, besides the system camera;<li>Some video capture devices are exclusive, so they need flexible device management strategies to avoid conflicts with other services. |
+| Customize Video Source and Renderer | Enable access to customized video sources and renderers, which means, besides the system camera, users can utilize their self-built camera, videos from screen sharing or files, etc. In this way, they are able to process videos more flexibly, such as to adding beauty effects and filters. | <li>Users want to use a customized beauty effect library or pre-processing library;<li>The App already has built-in image and video modules;<li>Developers want to use other video sources, such as a recorded video;<li>Some video capture devices are exclusive, so they need flexible device management strategies to avoid conflicts with other services. |
 
 ## Key Properties
 
