@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Fri Nov 02 2018 20:32:42 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:50:19 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
