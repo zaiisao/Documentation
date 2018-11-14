@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 14 2018 21:58:22 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 21:58:26 GMT+0000 (UTC)
 ---
 # Agora Platform Overview
 ## SD-RTN
@@ -29,14 +29,14 @@ SD-RTN \(Software Defined Real-time Network\) is a “smart” network that reli
     -   After-sales business support
 -   Global network reliability:
     -   Global network availability: 99.999%
-    -   Invisible core business, such as anti-DDOS
+    -   Invisible core business, such as anti-DDoS
     -   More than 99% global 5-second landing success rate
 -   End-to-end network guaranteed an average delay of less than 76 ms:
     -   Last mile access algorithm optimization: Full platform, full interoperability
     -   Support for iOS & 5000+ Android terminals
     -   Support for iOS, Android, Windows, MacOS, Linux, CoCos, Unity, and so on.
 -   UDP (User Datagram Protocol) optimization:
-    -   Optimizes multiple private protocols based on the UDP protocol
+    -   Optimizes multiple private protocols based on the UDP
 -   Self-developed audio and video codecs:
     -   Efficient use of network resources
     -   Self-developed SOLO, NOVA codecs
