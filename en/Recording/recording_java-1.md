@@ -3,7 +3,7 @@
 title: Enabling Recording
 description: 
 platform: Java
-updatedAt: Wed Nov 14 2018 06:18:04 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 06:18:09 GMT+0000 (UTC)
 ---
 # Enabling Recording
 In this quickstart, you will learn how to use the Agora Recording SDK to enable recording.
@@ -217,7 +217,7 @@ String key = "";
 String value = "";
 Map<String,String> map = new HashMap<String,String>();
 if(0 < args.length ){
-  for(int i = 0; i<args.length-1; i++){
+  for(int i = 0; i<args.length-1; i+=2){
     key = args[i];
     value = args[i+1];
     map.put(key, value);
