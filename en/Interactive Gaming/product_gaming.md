@@ -3,7 +3,7 @@
 title: Agora Interactive Gaming Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:19:40 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 20:58:11 GMT+0000 (UTC)
 ---
 # Agora Interactive Gaming Overview
 The Agora Interactive Gaming SDK aims at helping you quickly integrate voice and video functions into your gaming projects.
