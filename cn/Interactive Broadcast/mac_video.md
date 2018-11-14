@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Wed Nov 14 2018 04:04:07 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 04:04:19 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
@@ -96,7 +96,6 @@ updatedAt: Wed Nov 14 2018 04:04:07 GMT+0000 (UTC)
  - `SystemConfiguration.framework`
  - `CoreWLAN.framework`
  - `Foundation.framework`
- - `QTKit.framework`
  - `CoreAudio.framework`
  - `CoreMedia.framework`
  - `AVFoudation.framework`
