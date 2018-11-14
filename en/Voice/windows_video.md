@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Windows
-updatedAt: Wed Nov 14 2018 03:42:59 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:43:12 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
@@ -17,7 +17,7 @@ updatedAt: Wed Nov 14 2018 03:42:59 GMT+0000 (UTC)
 
 > If you decide to use Microsoft Visual Studio 2013+, you may encounter compatibility issues.
 
-## Creating an Agora Account and Getting an App ID
+## Create an Agora Account and Get an App ID
 
 1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
@@ -32,15 +32,12 @@ updatedAt: Wed Nov 14 2018 03:42:59 GMT+0000 (UTC)
    <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
 
 
-<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" style="width: 1138.0px; height: 344.0px;"/>
+## Add the Agora SDK to Your Project
 
-
-## Adding the Agora SDK to Your Project
-
-1.  Download the [Windows SDK](https://docs.agora.io/en/Agora%20Platform/downloads)
-
-2.  Copy the directory **AgoraRtcEngineSDK/lib** to the **LIB** directory of your project.
-
+1.  Download the [Windows SDK](https://docs.agora.io/en/Agora%20Platform/downloads), and unzip it.
+2.  Add the `sdk/include` folder to the INCLUDE directory of your project.
+3.  Add the `sdk/lib` folder to the LIB directory of your project, and ensure that agora_rtc_sdk.lib is linked with your project.
+4.  Copy all the *dll* files under `sdk/dll`  to the directory where your executable file is located.
 
 You have set up the development environment for Windows. Try the Agora SDK now!
 
