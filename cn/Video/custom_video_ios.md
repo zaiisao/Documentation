@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Wed Nov 14 2018 09:36:00 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 09:36:04 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -23,7 +23,7 @@ updatedAt: Wed Nov 14 2018 09:36:00 GMT+0000 (UTC)
 
 ### 自定义音频源
 
-目前音频源只有 Push一种方式，同视频源类似，SDK 不会对采用 Push 方法传入的音频数据做消噪等处理。
+你可以使用 Push 方法自定义音频源。该方法下，SDK 不会对采用传入的音频数据做消噪等处理。
 
 ```swift
 //swift
@@ -46,12 +46,14 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 
 ### 自定义视频源
 
-* 通过 Video Source 方法。Agora 推荐使用该方法自定义视频源。
-* 通过 External Frame 方法。该方法为旧的接口使用形式，略过了 SDK 对帧的优化处理，适合客户端有能力对帧进行优化的用户。
+Agora SDK 目前提供两种自定义视频源的方法：
 
-#### 使用 Video Source 自定义视频源
+* 通过 MediaIO 接口实现（推荐）。
+*  通过 Push 方法实现。和自定义音频源一样，该方法略过了 SDK 对视频帧的优化处理，因此适合客户端有能力对帧进行优化的用户。
 
-Video Source 是新 MediaIO 系列接口的视频输出源部分。需要注意的是，这个 API 只负责将视频帧数据传输到服务器，如需本地预览则需要应用开发者自己处理本地渲染逻辑。示例代码如下：
+#### 使用 MediaIO 接口自定义视频源
+
+你可以使用 MediaIO 中的 AgoraVideoSourceProtocol 协议实现自定义视频源。该方法将视频帧数据传输到服务器，如需本地预览，还需要应用开发者自己处理本地渲染逻辑。示例代码如下：
 
 1. 遵守 AgoraVideoSourceProtocol 协议， 并实现接口，构建自定义的 Video Source 类。
 
@@ -125,9 +127,9 @@ Video Source 是新 MediaIO 系列接口的视频输出源部分。需要注意�
 	[agoraKit setVideoSource: videoSource];
 	```
 
-#### 使用 External Frame 方法自定义视频源
+#### 使用 Push 方法自定义视频源
 
-External Frame 使用的是外部视频源 Push 接口。相对于 MedioIO 接口，Push 接口代码较少，但缺少 SDK 对帧的优化过程，需要用户对自己采集到的视频数据进行处理。
+相对于 MedioIO 接口，Push 方法代码较少，但缺少 SDK 对帧的优化过程，需要用户对自己采集到的视频数据进行处理。
 
 ```swift
 //swift
@@ -176,7 +178,7 @@ videoFrame.ratation = 0;
 
 ### 自定义渲染器
 
-你可以使用 MediaIO 接口实现 Video Sink 来自定义渲染器。示例代码如下：
+你可以使用 MediaIO 中 AgoraVideoSinkProtocol 协议来自定义渲染器。示例代码如下：
 
 1. 遵守 AgoraVideoSinkProtocol 协议， 并实现接口，构建自定义的 Video Renderer 类。
 
