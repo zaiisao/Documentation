@@ -3,7 +3,7 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 09 2018 11:02:53 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:24:53 GMT+0000 (UTC)
 ---
 # Agora Video Overview
 The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many video calls that feature high stability and low latency. It is applicable to scenarios in the entertainment and education industries.
