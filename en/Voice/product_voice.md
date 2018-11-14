@@ -3,14 +3,14 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 14 2018 03:26:07 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:26:20 GMT+0000 (UTC)
 ---
 # Agora Voice Overview
 The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many **voice-only** calls. With a small SDK package size, it is applicable to a variety of recreational and business activities.
 
 The major difference between Agora Voice Call and [Agora Interactive Broadcast (Voice)](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
 * During an Agora Voice Call that highlights fluency and low latency by default, all users are of the same role and can talk to each other freely. A typical scenario of the Agora Voice Call is the video conference call for multi persons. 
-* During an Agora Voice Interactive Broadcast that highlights high voice quality by default, users are divided into Host and Audience. Only the host can talk. If a user wants to talk, he must change his role as host first. A typical scenario of the Agora Video Interactive Broadcast is the online Trivia Game.
+* During an Agora Voice Interactive Broadcast (Voice) that highlights high voice quality by default, users are divided into Host and Audience. Only the host can talk. If a user wants to talk, he must change his role as host first. A typical scenario of the Agora Video Interactive Broadcast is the online Trivia Game.
 
 ## Functions and Scenarios
 
