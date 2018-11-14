@@ -3,7 +3,7 @@
 title: Agora Recording Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 09 2018 06:14:10 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 20:40:07 GMT+0000 (UTC)
 ---
 # Agora Recording Overview
 The Agora Recording SDK is an add-on to record and save voice calls, video calls, and interactive broadcasts on your server. It is compatible with the Agora Native SDK version 1.7.0 or later and the Agora Web SDK version 1.12.0 or later.
