@@ -3,7 +3,7 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 14 2018 19:38:19 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 19:38:24 GMT+0000 (UTC)
 ---
 # Agora Voice Overview
 The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many **voice-only** calls. With a small SDK package size, the Agora Native SDK for Voice Call is applicable to a variety of recreational and business activities.
@@ -36,7 +36,7 @@ The Agora Native SDK for Voice Call boasts a flexible combination of functions f
 
 ## Compatibility
 
-The Agora Native SDK for Video Call is supported on platforms such as iOS, Android, Windows, macOS, Linux, Web, and WeChat mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
+The Agora Native SDK for Voice Call is supported on platforms such as iOS, Android, Windows, macOS, Linux, Web, and WeChat mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
 
 <table>
   <tr>
