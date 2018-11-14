@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Tue Nov 13 2018 06:17:42 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 09:37:33 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
