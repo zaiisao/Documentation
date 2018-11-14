@@ -3,14 +3,14 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 14 2018 03:14:33 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:14:44 GMT+0000 (UTC)
 ---
 # Agora Voice Overview
-The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many voice calls that feature high stability and low latency. It is applicable to voice-only scenarios in the entertainment and education industries.
+The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many **voice-only** calls. With a small SDK package size, it is applicable to a variety of recreational and business activities.
 
-The major difference between Agora Voice Call and [Agora Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
-* During an Agora Voice Call that highlights fluency and low latency, all users are of the same role and can talk to each other freely. A typical scenario of the Agora Voice Call is video conference call for multi persons. 
-* During an Agora Voice Interactive Broadcast that highlights high voice quality, users are divided into Host and Audience. Only the host can talk. If a user wants to talk, he must change his role as host first. A typical scenario of the Agora Video Interactive Broadcast is the online Trivia Game.
+The major difference between Agora Voice Call and [Agora Interactive Broadcast (Voice)](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
+* During an Agora Voice Call that highlights fluency and low latency by default, all users are of the same role and can talk to each other freely. A typical scenario of the Agora Voice Call is the video conference call for multi persons. 
+* During an Agora Voice Interactive Broadcast that highlights high voice quality by default, users are divided into Host and Audience. Only the host can talk. If a user wants to talk, he must change his role as host first. A typical scenario of the Agora Video Interactive Broadcast is the online Trivia Game.
 
 ## Functions and Scenarios
 
@@ -19,9 +19,9 @@ The Agora Native SDK for Voice Call boasts a flexible combination of functions f
 | Function                              | Description                                                  | Scenario                                                     |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------- |
 | Audio Mixing                          | Send local and online audio and user vioce to other audience in the channel. | <li>Online KTV <li>Interactive music classes for children    |
-| Play Sound Effect Files          | Enable developers to play sound effect files, adjust volume and set the position of these files.        | Online chess or card games                                |
+| Play Sound Effect Files          | Enable developers to play specific sound effect files, adjust volume and set the position of these files.        | Online chess or card games                                |
 | Adjust Pitch     | To adjust the pitch and use equalisation and reverb modes.                    | <li>Online KTV<li>Change the voice in an online chatroom         |
-| Enabling 2-channel Mode/High Sound Quality Mode | Enable users to use the 2-channel mode and the high sound quality mode.                               | <li>Online music classes<li> FM applications        |
+| Enabling 2-channel Mode/High Sound Quality Mode | Enable the 2-channel mode and the high sound quality mode.                               | <li>Online music classes<li> FM applications        |
 | Modify Raw Data                    | Enable developers to obtain and modify the voice raw data to create special effects, such as voice change. | Change the voice in an online voice chatroom |
 
 ## Key Properties
