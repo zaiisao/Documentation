@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 09 2018 10:55:22 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 02:31:37 GMT+0000 (UTC)
 ---
 # 产品概述
 Agora 语音通话可以实现一对一、一对多的音频通话，提供极致的流畅体验和低延时互动效果，适用于各种语音社交和在线教育场景。
