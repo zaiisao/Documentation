@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Wed Nov 14 2018 04:07:43 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 04:07:52 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -27,7 +27,7 @@ updatedAt: Wed Nov 14 2018 04:07:43 GMT+0000 (UTC)
 目前音频源只有 Push一种方式，同视频源类似，SDK 不会对采用 Push 方法传入的音频数据做消噪等处理。
 
 ```java
-//java
+	//java
 	// 首先开启外部音频源模式
 	rtcEngine.setExternalAudioSource(
 		true,      // 开启外部音频源
@@ -54,7 +54,7 @@ Agora SDK 目前提供两种自定义视频源的方法：
 Video Source 是新 MediaIO 系列接口的视频输出源部分。需要注意的是，这个 API 只负责将视频帧数据传输到服务器，如需本地预览则需要应用开发者自己处理本地渲染逻辑。示例代码如下：
 
 ```java
-//java
+	//java
 	IVideoFrameConsumer mConsumer;
 	boolean mHasStarted;
 
@@ -111,7 +111,7 @@ Video Source 是新 MediaIO 系列接口的视频输出源部分。需要注意�
 External Frame 使用的是外部视频源 Push 接口。相对于 MedioIO 接口，Push 接口代码较少，但缺少 SDK 对帧的优化过程，需要用户对自己采集到的视频数据进行处理。
 
 ```java
-//java
+	//java
 	// 首先通知SDK现在开始使用外部视频源
 	rtcEngine.setExternalVideoSource(
 		true，      // 是否使用外部视频源
@@ -133,7 +133,7 @@ External Frame 使用的是外部视频源 Push 接口。相对于 MedioIO 接�
 你可以使用 MediaIO 接口实现 Video Sink 来自定义渲染器。示例代码如下：
 
 ```java
-//java
+	//java
 	IVideoSink sink = new IVideoSink() {
 		@Override
 		public boolean onInitialize () {
