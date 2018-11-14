@@ -3,14 +3,14 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 14 2018 16:54:47 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 16:55:48 GMT+0000 (UTC)
 ---
 # Agora Video Overview
 The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
 
-The major difference between Agora Video Call and [Agora Video Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
-* During an Agora Video Call that highlights fluency and low latency, all users are of the same role and can talk to each other freely. A typical scenario of the Agora Video Call is the video conference call for multi persons. 
-* During an Agora Video Interactive Broadcast that highlights high voice quality, users are divided into Host and Audience. Only the host can talk. If a user wants to talk, he must change his role as host first. A typical scenario of the Agora Video Interactive Broadcast is the online interactive class.
+The difference between an Agora Video Call and [Agora Video Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
+* An Agora Video Call prioritizes fluency and low latency. All users are the same role and can talk to each other freely. A typical scenario of an Agora Video Call is a video conference call for many persons. 
+* An Agora Video Interactive Broadcast prioritizes high voice quality. Users can be the host or audience, where only the host can talk. A user who wants to talk must change the role to a host. A typical scenario of an Agora Video Interactive Broadcast is an interactive online class.
 
 ## Functions and Scenarios
 
@@ -18,24 +18,24 @@ The Agora Native SDK for Video Call boasts a flexible combination of functions f
 
 | Function                              | Description                                                  | Scenario                                                     |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------- |
-| Audio Mixing          | Send local and online audio and user vioce to other audience in the channel. | <li>Online KTV <li>Interactive music classes |
-| Screen Sharing             | Enable hosts to share their screen to audience in the channel.                         | Interactive online classes                                                  |
-| Modify Raw Data   | Enable developers to obtain and modify the voice or video raw data and to create special effects, such as voice change. | <li>Change the voice in an online chatroom <li>Facial beautification in a video call                  |
-| Customize Video Source and Renderer | Enable access to customized video sources and renderers, which means, besides the system camera, users can utilize their self-built camera, videos from screen sharing or files, etc. In this way, they are able to process videos more flexibly, such as to adding beauty effects and filters. | <li>Users want to use a customized beauty effect library or pre-processing library;<li>The App already has built-in image and video modules;<li>Developers want to use other video sources, such as a recorded video;<li>Some video capture devices are exclusive, so they need flexible device management strategies to avoid conflicts with other services. |
+| Audio Mixing          | Sends the local and online audio with the user voice to other audience members in the channel. | <li>Online KTV. <li>Interactive music classes. |
+| Screen Sharing             | Enables hosts to share their screen to the audience in the channel.                         | Interactive online classes.                                                  |
+| Modify the Raw Data   | Enables developers to obtain and modify the raw voice or video data and to create special effects, such as a voice change. | <li>To change the voice in an online chatroom. <li>Image enhancement in a video call.                  |
+| Customize the Video Source and Renderer | Enables customization of the video sources and renderers. This allows users to use self-built cameras and videos from screen sharing or files to process videos, such as for image enhancement and filtering. | <li>To use a customized image enhancement library or pre-processing library.<li>To customize the application's built-in image and video modules.<li>To use other video sources, such as a recorded video.<li>To provide flexible device management for exclusive video capture devices to avoid conflicts with other services. |
 
 ## Key Properties
 
 | Property                                          | Agora Live Broadcast Specifications                          |
 | ------------ | ------------------------------------------------------------ |
-| SDK Package Size                                  | 3.69 M - 7.75 M                                              |
-| Capacity     | 7 people (To support more people, use [Agora Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).) |
-| Video Profile                                     | <li>SDK video source: up to 1080p, 60fps<li>Custom video source: up to 4K |
-| Audio Profile                                     | <li>Sample rate: 16 KHz - 48 KHz<li>Support for mono and stereo audio |
-| Audio Anti Packet Loss Rate                       | 70% (both uplink and downlink)                               |
+| SDK Package Size                                  | 3.69 MB to 7.75 MB                                              |
+| Capacity     | Seven users (To support more users, use [Agora Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).) |
+| Video Profile                                     | <li>SDK video source: Up to 1080p @ 60 fps.<li>Custom video source: Up to 4K. |
+| Audio Profile                                     | <li>Sample rate: 16 KHz to 48 KHz.<li>Support for mono and stereo sound. |
+| Audio Anti-packet-loss Rate                       | 70% (uplink and downlink)                               |
 
 ## Compatibility
 
-The Agora Native SDK for Video Call is supported on a variety of platforms, including iOS, Android, Windows, macOS, Linux, Web and Wechat Miniapp, and allows cross-platform connection. Below is the list of supported versions for different platforms.
+The Agora Native SDK for Video Call is supported on platforms such as, iOS, Android, Windows, macOS, Linux, Web, and Wechat Miniapp, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
 
 <table>
   <tr>
