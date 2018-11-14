@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 20:44:14 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:51:18 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
