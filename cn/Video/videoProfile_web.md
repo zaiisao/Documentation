@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Web
-updatedAt: Tue Nov 13 2018 03:48:28 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 06:49:03 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
