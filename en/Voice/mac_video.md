@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Wed Nov 14 2018 04:03:06 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 04:03:13 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
@@ -104,7 +104,6 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    - `SystemConfiguration.framework`
    - `CoreWLAN.framework`
    - `Foundation.framework`
-   - `QTKit.framework`
    - `CoreAudio.framework`
    - `CoreMedia.framework`
    - `AVFoudation.framework`
