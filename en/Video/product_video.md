@@ -3,7 +3,7 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 14 2018 19:20:36 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 19:20:40 GMT+0000 (UTC)
 ---
 # Agora Video Overview
 The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
@@ -18,7 +18,7 @@ The Agora Native SDK for Video Call boasts a flexible combination of functions f
 
 | Function                              | Description                                                  | Scenario                                                     |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------- |
-| Audio Mixing          | Sends the local and online audio with the user voice to other audience members in the channel. | <li>Online KTV. <li>Interactive music classes. |
+| Audio Mixing          | Sends the local and online audio with the user's voice to other audience members in the channel. | <li>Online KTV. <li>Interactive music classes. |
 | Screen Sharing             | Enables hosts to share their screen to the audience in the channel.                         | Interactive online classes.                                                  |
 | Modify the Raw Data   | Enables developers to obtain and modify the raw voice or video data and to create special effects, such as a voice change. | <li>To change the voice in an online chatroom. <li>Image enhancement in a video call.                  |
 | Customize the Video Source and Renderer | Enables customization of the video sources and renderers. This allows users to use self-built cameras and videos from screen sharing or files to process videos, such as for image enhancement and filtering. | <li>To use a customized image enhancement library or pre-processing library.<li>To customize the application's built-in image and video modules.<li>To use other video sources, such as a recorded video.<li>To provide flexible device management for exclusive video capture devices to avoid conflicts with other services. |
@@ -35,7 +35,7 @@ The Agora Native SDK for Video Call boasts a flexible combination of functions f
 
 ## Compatibility
 
-The Agora Native SDK for Video Call is supported on platforms such as, iOS, Android, Windows, macOS, Linux, Web, and Wechat Miniapp, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
+The Agora Native SDK for Video Call is supported on platforms such as iOS, Android, Windows, macOS, Linux, Web, and WeChat Mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
 
 <table>
   <tr>
