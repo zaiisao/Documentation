@@ -3,103 +3,68 @@
 title: Agora Signaling Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 14 2018 21:13:10 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 21:13:15 GMT+0000 (UTC)
 ---
 # Agora Signaling Overview
-Agora Signaling SDK is based on TCP protocal. It provides stable message channel enabling you to implement real-time senerio.
+The Agora Signaling SDK is based on the TCP protocol and provides a stable messaging channel for you to implement real-time communication scenarios.
 
 ## Functions
 
-Agora Signaling SDK provides the following functions:
+The Agora Signaling SDK provides the following functions:
 
--   1 on 1 message
-
--   CHannel message
-
--   Get user attributes
-
--   Get channel attributes
-
--   Get the user list of the channel
+-   1-on-1 messages.
+-   Channel messages.
+-   Gets the user attributes
+-   Gets the channel attributes
+-   Gets the user list of the channel
 
 
 ## Applications
 
-Agora Signlaing SDK is useful in the following scenerios:
+The Agora Signaling SDK can be used in the following scenarios:
 
--   Broadcast
-
+-   Broadcasting
     -   Comment streams
-
     -   Chatroom
-
-    -   Gifts, likes
-
+    -   Gifting, likes
     -   Maintenance of the live room status
-
-    -   Channel list
-
+    -   Channel lists
     -   Access control
-
 -   Social
-
-    -   Private chat message
-
-    -   Group message
-
-    -   Voice/Video Call Invitation Instructions
-
+    -   Private chat messages
+    -   Group messages
+    -   Voice/Video call invitation instructions
 -   Education
-
     -   Class group message
-
     -   Private chat message
-
     -   Whiteboard
-
-    -   Authority management \(reward, raise hand, like\)
-
+    -   Authority management \(reward, raising a hand, like\)
 -   Games
-
-    -   Game sync
-
+    -   Gaming synchronization
 -   Call Center
-
-    -   Compatible with SIP protocol
-
+    -   Compatible with the SIP protocol
 -   IoT
-
-    -   Control message
-
+    -   Control messages
 
 ## Features
 
 The Agora Signaling SDK provides the following features:
 
 -   High concurrency
-
-    -   Support a million concurrents in a single channel
-
+    -   Supports concurrently sending a single channel a million times
 -   High reliability
-
-    -   Service availability 99.999%
-
+    -   Service availability at 99.999%
 -   Low latency
-
-    -   Average delay of 100ms
-
+    -   Average delay of 100 ms
 -   Compatibility
-
-    -   Support multiple platforms such as iOS, Android, macOS, windows, Linux, applets, browsers, etc.
-
-    -   Support java, C++ server side
-
+    -   Supports multiple platforms such as iOS, Android, macOS, windows, Linux, applets, and web browsers.
+    -   Supports Java, C++ on the server side
 
 ## References
 
 -   [Quickstart Guides](../../en/Quickstart%20Guide/signal_android-1.md) on how to deploy and use the Agora Signaling SDK, to complete various tasks, such as sending text messages and making a call.
 
--   [API Reference](../../en/API%20Reference/signal_android.md) lists various APIs to call and their functions when using the Agora Signaling SDK.
+-   [API Reference](../../en/API%20Reference/signal_android.md) lists the API methods of the Agora Signaling SDK.
 
 
 
