@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Windows
-updatedAt: Wed Nov 14 2018 03:42:34 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:42:59 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
