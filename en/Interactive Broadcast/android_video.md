@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Wed Nov 14 2018 03:51:18 GMT+0000 (UTC)
+updatedAt: Wed Nov 14 2018 03:51:27 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
@@ -15,7 +15,7 @@ updatedAt: Wed Nov 14 2018 03:51:18 GMT+0000 (UTC)
 
 Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
-## Creating an Agora Account and App ID
+## Create an Agora Account and Get an App ID
 
 1.  Create a developer account at [www.agora.io](https://dashboard.agora.io/signin/). When you finish the sign-up, the website displays your [Dashboard](https://dashboard.agora.io/).
 
@@ -30,7 +30,7 @@ Before accessing Agora’s services, ensure that you have opened the ports and w
     <img alt="../_images/video_appid.png" src="https://web-cdn.agora.io/docs-files/en/video_appid.png" style="width: 500px;"/>
 
 
-## Adding the Agora SDK to Your Project
+## Add the Agora SDK to Your Project
 
 1.  Open the `build.gradle` file under the **app** folder from the **Project Files** view in Android Studio. Make a note of the path of the libs folder to the right of **fileTree**. This is where you will put the Agora SDK for Android files later on.
 
@@ -71,7 +71,7 @@ Before accessing Agora’s services, ensure that you have opened the ports and w
 </table>
 
 
-## Adding the sourceSets
+## Add the sourceSets
 
 In the `build.gradle` file, add the `sourceSets` to the Android JSON object. Set the path for **libs** to the relative path for the **libs** app directory.
 
@@ -89,14 +89,14 @@ sourceSets{
 }
 ```
 
-## Synchronizing the Project
+## Synchronize the Project
 
 Click **Sync Project With Gradle Files** until the synchronization is complete.
 
 <img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px; 0"/>
 
 
-## Configuring the Android NDK
+## Configure the Android NDK
 
 If you see the following “NDK not configured” error message, download and install the [Android NDK](https://developer.android.com/ndk/).
 
@@ -118,7 +118,7 @@ If you see the following “NDK not configured” error message, download and in
 	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px; "/>
 
 
-## Adding the Device Permissions
+## Add the Device Permissions
 
 1.  Open the `AndroidManifest.xml` file located under **app \> src \> main** and add the required device permissions to the file.
 
@@ -142,7 +142,7 @@ If you see the following “NDK not configured” error message, download and in
 	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px; "/>
 
 
-## Preventing Obfuscation of the Agora Classes
+## Prevent Obfuscation of the Agora Classes
 
 In the `proguard-rules.pro` file, add a `-keep` class configuration for the Agora SDK. This prevents obfuscation of the Agora SDK public class names.
 
