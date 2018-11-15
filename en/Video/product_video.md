@@ -3,7 +3,7 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 15 2018 02:20:23 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 02:20:29 GMT+0000 (UTC)
 ---
 # Agora Video Overview
 The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
@@ -25,7 +25,7 @@ The Agora Native SDK for Video Call boasts a flexible combination of functions f
 
 ## Key Properties
 
-| Property                                          | Agora Live Broadcast Specifications                          |
+| Property                                          | Agora Video Call Specifications                          |
 | ------------ | ------------------------------------------------------------ |
 | SDK Package Size                                  | 3.69 MB to 7.75 MB                                              |
 | Capacity     | Seven users (To support more users, use [Agora Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms)) |
