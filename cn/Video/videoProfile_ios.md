@@ -2,7 +2,7 @@
 ---
 title: 设置视频属性
 description: 
-platform: iOS,macOS
+platform: iOS
 updatedAt: Wed Nov 14 2018 08:09:33 GMT+0000 (UTC)
 ---
 # 设置视频属性
