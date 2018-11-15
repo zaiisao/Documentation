@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 02 2018 04:20:38 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 09:50:42 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
