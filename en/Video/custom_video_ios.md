@@ -1,11 +1,11 @@
 
 ---
-title: Customize the Video Source and Renderer
+title: Customize the Audio/Video Source and Renderer
 description: 
 platform: iOS
-updatedAt: Thu Nov 15 2018 04:21:05 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 06:24:27 GMT+0000 (UTC)
 ---
-# Customize the Video Source and Renderer
+# Customize the Audio/Video Source and Renderer
 ## Introduction
 
 By default, An App uses the internal audio and video modules for capturing and rendering during real-time communication. If developers hope to use external audio or video source and renderer, this page shows how to use the APIs provided by Agora SDK to customize the audio and video source and renderer.
