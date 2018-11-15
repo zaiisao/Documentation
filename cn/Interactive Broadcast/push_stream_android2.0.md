@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Thu Nov 15 2018 03:46:34 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 09:49:19 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 声网推出的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
