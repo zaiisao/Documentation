@@ -3,7 +3,7 @@
 title: Customize the Video Source and Renderer
 description: 
 platform: iOS
-updatedAt: Thu Nov 15 2018 04:20:12 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 04:20:45 GMT+0000 (UTC)
 ---
 # Customize the Video Source and Renderer
 ## Scenario Description
