@@ -3,7 +3,7 @@
 title: Customize the Video Source and Renderer
 description: 
 platform: macOS
-updatedAt: Fri Nov 09 2018 19:30:01 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 06:07:58 GMT+0000 (UTC)
 ---
 # Customize the Video Source and Renderer
 ## Scenario Description
