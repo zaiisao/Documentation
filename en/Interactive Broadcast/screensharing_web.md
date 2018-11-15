@@ -3,20 +3,25 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Thu Nov 15 2018 09:39:05 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 09:40:40 GMT+0000 (UTC)
 ---
 # Share the Screen
-To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screens to share.
+## Introduction
 
-This page includes:
+During a video call or live broadcast, **sharing the screen** enhances communication by bringing whatever is on the speaker's screen to the other speakers or audience in the channel.
 
-- [Screen Sharing on Google Chrome](#chrome)
-- [Screen Sharing on Firefox](#ff)
-- [Enabling Both Screen Sharing and Video](#both)
+Screen share has extensive application in the following scenarios:
 
-Before enabling screen sharing on the web, ensure that you have prepared the environment and downloaded the package. For details, see [Making a Video Call](../../en/Quickstart%20Guide/communication_web_video-1.md).
+- For a video conference, the speaker can share the image of the local file, web page, and PPT with other users in the channel.
+- For an online class, the teacher can share the image of the slides or notes with the students.
 
-## <a name = "chrome"></a>Screen Sharing on Google Chrome
+## Implementations
+
+Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md) for details.
+
+To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screens to share. The attribute settings of the Chrome and Firefox browser vary.
+
+### <a name = "chrome"></a>Screen Sharing on Google Chrome
 
 Before enabling screen sharing on Google Chrome, ensure that you have added the [Google Chrome Extension for Screen Sharing](../../en/Quickstart%20Guide/chrome_screensharing_plugin.md) provided by Agora.
 
@@ -36,7 +41,7 @@ screenStream = AgoraRTC.createStream({
 > - Do not set the `video` and `screen` attributes as `true` at the same time.
 > - Agora recommends that you set the `audio` attribute as `false` to avoid any echo during the call.
 
-## <a name = "ff"></a>Screen Sharing on Firefox
+### <a name = "ff"></a>Screen Sharing on Firefox
 
 To enable screen sharing on Firefox, set the `mediaSource` attribute to specify the sharing mode:
 
@@ -58,7 +63,7 @@ screenStream = AgoraRTC.createStream({
 > - Agora recommends that you set the `audio` attribute as `false` to avoid echo during the call.
 > - Firefox on Windows does not support the application mode.
 
-## <a name = "both"></a>Enabling Both Screen Sharing and Video
+### <a name = "both"></a>Enabling Both Screen Sharing and Video
 
 One client only sends one stream. If you want to enable both screen sharing and video on one host, you need to create two clients; one to send the screen-sharing stream, and the other to send the video stream.
 
@@ -112,7 +117,7 @@ screenClient.on('stream-added', function(evt) {
 })
 ```
 
-The sample code:
+### Sample Code
 
 ```javascript
 var key = “********************************”;
@@ -209,3 +214,16 @@ screenClient.subscribe(stream);
   })
 });
 ```
+
+## Considerations
+
+- Do not set the UID of the screen sharing stream to a fixed value. Streams with the same UID can interfere with each other.
+- **Do not subscribe to a locally published screen sharing stream**, or additional charge will occur.
+- Ensure that the argument `video`/`audio` is set to `false` when creating the screen sharing stream.
+
+## Working Principles
+
+Screen sharing on the Web client is essentially enabled by creating a screen sharing stream.
+
+- If you publish the screen sharing stream only, set the `video` argument as false, and the `screen` argument as true when creating a stream.
+- If you publish both the local video stream and your screen sharing stream, you need to create two Client objects, one for sending the local stream, and the other the screen sharing stream. For the local video stream, set `video` as true and `screen` as false; for the screen sharing scree, set `video` as false and `screen` as true.
