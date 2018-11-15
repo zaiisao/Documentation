@@ -1,11 +1,11 @@
 
 ---
-title: 实现四人以上视频通话
+title: 实现七人以上视频通话
 description: 17-Way Live Video Broadcast for web
 platform: Web
-updatedAt: Thu Nov 15 2018 07:52:19 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 09:33:16 GMT+0000 (UTC)
 ---
-# 实现四人以上视频通话
+# 实现七人以上视频通话
 在一般的网页端视频通话场景中，如果参与人数过多，可能会引起音画不同步、信息丢失等问题。
 
 如果参与视频通话的各方将订阅流设置为 **1-N** 模式，即 1 方设为大流，其余各方均设为小流，那么最多可以有 17 人加入视频通话，或进行互动直播。
