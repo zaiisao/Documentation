@@ -1,11 +1,11 @@
 
 ---
-title: Video Conference of 7+ Participants
+title: Video Conference of 7+ Users
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:24:08 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 09:43:32 GMT+0000 (UTC)
 ---
-# Video Conference of 7+ Participants
+# Video Conference of 7+ Users
 If a video call is participated by too many people, latency or packet loss may occur.
 
 Now, if we set the subscribing stream to the **1-N** Mode, that is, set 1 strem as high and the rest low, then a maximum of 17 people can join a video call or interactive broadcast without experiencing latency.
