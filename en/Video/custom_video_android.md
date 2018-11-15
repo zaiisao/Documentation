@@ -3,349 +3,183 @@
 title: Customize the Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Thu Nov 15 2018 03:07:07 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 03:12:59 GMT+0000 (UTC)
 ---
 # Customize the Video Source and Renderer
-## Scenario Description
+## Introduction
 
-The Agora SDK provides access to the default camera configuration. Agora provides access to customize the video source for the following functions:
+By default, An App uses the internal audio and video modules for capturing and rendering during real-time communication. If developers hope to use external audio or video source and renderer, this page shows how to use the APIs provided by Agora SDK to customize the audio and video source and renderer.
 
--   To add new functions in the SDK for the camera’s video source, such as image enhancement or using the preprocessing library.
--   If an app contains a video module, the video source can be customized for code reuse.
--   To use non-camera video sources, such as recorded screen data.
--   Flexible video capturing device resource allocation to avoid conflicts with other services.
+**Customizing audio and video source and renderer** mainly applies to the following scenarios:
 
+- When the audio or video source captured by the internal modules can not meet the needs of the developers. For example, for the purpose of image enhancement, developers need to process the captured video frame with a preprocessing library.
+- When an App contains its own audio or video module and wants a cusmized source for  code reuse.
+- When developers want to use non-camera source, such as recorded screen data.
+- When developers need flexible device resource allocation to avoid conflicts with other services.
 
-## Integrate the Agora SDK
+## Implementaions
 
-See [Integrate the SDK](../../en/Video/android_video.md).
+Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for details.
 
-## Customize the Video Source
+### Customize the Audio Source
 
-Step 1. Implement the `IVideoSource` Interface to create the customized video source class:
+Use the Push method to customize the audio source, where the SDK conducts no data processing to the audio frame, such as noise reduction.
 
--   Specify the buffer type in the `getBufferType` method.
+```java
+    //java
+    //Enable the external audio source mode
+    rtcEngine.setExternalAudioSource(
+        true,      // enable the external audio source
+        44100,     // sampling rate. Set it as 8k, 16k, 32k, 44.1k or 48kHz
+        1          // the number of external audio channels. The maximum value is 2
+    );
 
-    ```
-    int getBufferType();
-    ```
-
--   Save the `IVideoFrameConsumer` object in the `onInitialize` method.
-
-    ```
-    boolean onInitialize(IVideoFrameConsumer consumer);
-    ```
-
--   Send the video frame in the `onStart` method.
-
-    ```
-    boolean onStart();
-    ```
-
--   Stop sending the video frame in the `onStop` method.
-
-    ```
-    void onStop();
-    ```
-
--   Remove the video frame in the `onDispose` method.
-
-    ```
-    void onDispose();
-    ```
-
-
-Step 2. Implement the `IVideoSource` interface to create a customized video source object.
-
-Step 3. Pass the external video source to the media engine by the `setVideoSource` method.
-
-```
-public abstract int setVideoSource(IVideoSource source);
+    // To continually push the enternal audio frame
+    rtcEngine.pushExternalAudioFrame(
+        data,             // the audio data in the formart of byte[]
+        timestamp         // the timestamp of the audio frame
+    );
 ```
 
-Step 4. The media engine implements the methods in the `IVideoSource` Interface.
+### Customize the Video Source
 
-> The video source and renderer can be customized by switching on/off the video frame input based on the media engine callback. This simpler method can be used if an app has its own video module and only needs the Agora SDK for real-time communications. See [Customize the Video Source with the Agora Component](#custom_video_source).
+Agora SDK provides two methods to customze the video source:
 
-## Customize the Video Sink
+- The MediaIO method (Recommended).
+- The Push method. This method skips processing the video frame, and works best for clients with frame optimization capacity.
 
-Step 1. Call the `getBufferType` and `getPixelFormat` methods to set the buffer type and pixel format of the video frame.
+#### The MediaIO Method
 
-Step 2. Implement the `onInitialize`, `onStart`, `onStop`, and `onDispose` methods to manage the customized video sink.
-
-Step 3. Implement the buffer type and pixel format as specified in Step 1 of `IVideoFrameConsumer`.
-
-Step 4. Create the customized video sink object.
-
-Step 5. Call the `setLocalVideoRenderer` and `setRemoteVideoRenderer` methods to set the local and remote renderers.
-
-Step 6. The media engine will call methods in the `IVideoSink` Interface according to its internal state.
-
-> Agora provides a sample demo for developers to create and integrate a customized video sink. See [Customize the Video Sink with the Agora Component](#custom_video_source).
-
-## Sample App
-
-Agora provides a sample app for customizing the video source and video sink. You can go to Github to download the [Agora Custom Media Device Sample App for Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android).
-
-<a name = "custom_video_source"></a>
-## Customize the Video Source with the Agora Component
-
-### 1. AgoraBufferedCamera2 Class
-
-The `AgoraBufferedCamera2.java` class shows how to customize the video source in `ByteBuffer` and `ByteArray`.
-
-The construct of `AgoraBufferedCamera2` needs a `Context` and an optional `CaptureParameter` that defines the parameters of the camera and buffer type. By default, the resolution is 640 x 480, video format is YUV420P; and data type is `ByteBuffer`.
-
-```
-AgoraBufferedCamera2 source = new AgoraBufferedCamera2(this);
-source.useFrontCamera(true);
-rtcEngine.setVideoSource(source);
-```
-
-When using the `ByteArray` or `ByteBuffer` video source, the SDK receives the pixel format in YUV420p, NV21, or RGBA.
-
-### 2. AgoraTextureCamera Class
-
-The `AgoraTextureCamera.java `class shows how to customize a textured video source. `AgoraTextureCamera` can be used directly as the video source.
-
-```
-IVideoSource source = new AgoraTextureCamera(this, 640, 480);
-rtcEngine.setVideoSource(source);
-```
-
-### 3. Helper Class and Component
-
-Compared with YUV or RGB, the textured video source is more complex considering the GL environment and thread requirements when being transmitted.
-
-#### SurfaceTextureHelper Interface
-
-The `SurfaceTextureHelper` class is an assisting class provided by the Agora SDK to help users use `SurfaceTexture` without the need to build a GL environment, textures, and interact between threads.
-
-Major functions of `SurfaceTextureHelper`:
-
-1.  Create a textured object, and build a `SurfaceTexture` with the textured object
-2.  Notify developers on texture updates when `SurfaceTexture` has captured the video frame
+Use the IVideoSource interface in MediaIO to customize the video source. This method sends the external video frame to the server, and developers need to implement local rendering if local preview is to be enabled.
 
 
-##### Create a SurfaceTextureHelper
 
-```
-public static SurfaceTextureHelper create(final String threadName, final EglBase.Context sharedContext);
+```java
+    //java
+    IVideoFrameConsumer mConsumer;
+    boolean mHasStarted;
+
+    // Create a VideoSource instance
+    VideoSource source = new VideoSource() {
+        @Override
+        public int getBufferType() {
+            // Get the current frame type. 
+            // The SDK uses different methods to process different frame types.
+            // If you want to switch to another VideoSource type, create another instance
+            // There are three types of video frame type
+            return BufferType.BYTE_ARRAY;
+            // return BufferType.TEXTURE
+            // return BufferType.BYTE_BUFFER;
+        }
+
+        @Override
+         public boolean onInitialize(IVideoFrameConsumer consumer) {
+            // consumer was created by the SDK.
+            // Ensure to save it in the life cycle of the VideoSource。
+            mConsumer = consumer;
+        }
+
+        @Override
+         public boolean onStart() {
+            mHasStarted = true;
+        }
+
+        @Override
+          public void onStop() {
+            mHasStarted = false;
+        }
+
+        @Override
+         public void onDispose() {
+            // Release the consumer
+            mConsumer = null;
+        }
+    };
+
+    // Change the inputting video stream to the VideoSource instance
+    rtcEngine.setVideoSource(source);
+
+    // After receving the video frame data, use the consumer class to send the data
+    // Choose differnet methods according to the frame type.
+    // Suppose the current frame type is byte array, i.e. NV21
+    if (mHasStarted && mConsumer != null) {
+        mConsumer.consumeByteArrayFrame(data, AgoraVideoFrame.NV21, width, height, rotation, timestamp);
+    }
 ```
 
-Call the `create` method to create `SurfaceTextureHelper`. In this method, a GL thread is built together with textures and `SurfaceTexture`.
+#### The Push Method
 
-##### Get the SurfaceTexture
+Compared to the MediaIO method, the Push method uses less codes, but lacks any optimization to the captured video frame. This method requires developers to do the processing.
 
-```
-public EglBase.Context getEglContext();
-public Handler getHandler();
-public SurfaceTexture getSurfaceTexture();
-```
+```java
+    //java
+    // Notifies the SDK that the external video source is used
+    rtcEngine.setExternalVideoSource(
+        true，      // whether to use external video source
+        false,      // whether to use texture as the output format
+        true        // whether to use the push mode. True means yes. False means to use the pull mode, which is not supported
+    );
 
-This method gets the created texture. If in the GL environment or a thread is required, call the `getEglContext` and `getHandler` methods.
-
-##### Monitor the SurfaceTexture
-
-```
-public interface OnTextureFrameAvailableListener {
-    abstract void onTextureFrameAvailable(int oesTextureId, float[] transformMatrix, long timestampNs);
-}
-public void startListening(final OnTextureFrameAvailableListener listener);
-public void stopListening();
+    // Use the push method to send out the video frame data once it is received.
+    rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
+        // Pass parameters of the frame such as format, width and height of the in the AgoraVideoFrame construct
+    ));
 ```
 
-This method creates a listener to monitor the new video frame of `SurfaceTexture`, and start or end monitoring by calling the `startListening` and `stopListening` methods.
+The video source and renderer can be customized by switching on/off the video frame input based on the media engine callback. This simpler method can be used if an app has its own video module and only needs the Agora SDK for real-time communications. See [Customize the Video Source with the Agora Component](../../en/Video/custom_advanced_android.md) for details.
 
-##### Release SurfaceTexture
+### Customize the Video Renderer
 
-```
-void dispose();
-```
+Use the IVideoSink Interface of MediaIO to customize the video renderer.
 
-Call this method to release relevant resources when `SurfaceTexture` is no longer needed.
+```java
+    //java
+    IVideoSink sink = new IVideoSink() {
+        @Override
+        public boolean onInitialize () {
+            return true;
+        }
 
-#### TextureSource Interface
+        @Override
+        public boolean onStart() {
+            return true;
+        }
 
-The `TextureSource` interface includes `SurfaceTextureHelper` and `IVideoFrameConsumer` methods to implement customized textured video source operations. `SurfaceTexture` can be created by `SurfaceTextureHelper`, and used to capture a video frame and convert it into a texture to be sent to `RtcEngine`. With the `TextureSource` interface, developers only need to care about the following:
+        @Override
+        public void onStop() {
 
--   Video source functionality and compatibility.
--   Capturing the `SurfaceTexture` video frame.
--   Sending the updated texture to `RtcEngine`.
+        }
 
+        @Override
+        public void onDispose() {
 
-1.  Implement four `TextureSource` callbacks for the video source functionality and compatibility.
+        }
 
-    ```
-    abstract protected boolean onCapturerOpened();
-    abstract protected boolean onCapturerStarted();
-    abstract protected void onCapturerStopped();
-    abstract protected void onCapturerClosed();
-    ```
+        @Override
+        public long getEGLContextHandle() {
+            // create your egl context
+            // a return value of 0 means there no egl context is created in the renderer
+            return 0;
+        }
 
-2.  Use `SurfaceTexture` to capture the video frame.
+        @Override
+        public int getBufferType() {
+            return BufferType.BYTE_ARRAY;
+        }
 
-    ```
-    public SurfaceTexture getSurfaceTexture();
-    ```
-
-    See `SurfaceTexture` for methods to capture video frame.
-
-3.  Once the video frame is captured and updated as a texture, call `onTextureFrameAvailable` to send the video frame to `RtcEngine`.
-
-    ```
-    public void onTextureFrameAvailable(int oesTextureId, float[] transformMatrix, long timestampNs);
-    ```
-
-4.  Release the resources when the video frame is no longer needed.
-
-    ```
-    public void release();
-    ```
-
-
-### 4. Example of Using External Screen Recording as the Video Source with TextureSource
-
-The following sequence shows an example of how to use external screen recording as the video source.
-
-Step 1. Implement the following callbacks:
-
-```
-public class ScreenRecordSource extends TextureSource {
-    private Context mContext;
-    private boolean mIsStart;
-    private VirtualDisplay mVirtualDisplay;
-    private MediaProjection mMediaProjection;
-
-    public ScreenRecordSource(Context context, int width, int height, int dpi, MediaProjection mediaProjection) {
-        super(null, width, height);
-        mContext = context;
-        mMediaProjection = mediaProjection;
+        @Override
+        public int getPixelFormat() {
+            return PixelFormat.NV21;
+        }
     }
 
-    @Override
-    protected boolean onCapturerOpened() {
-        createVirtualDisplay();
-        return true;
-    }
-    @Override
-    protected boolean onCapturerStarted() {
-        return mIsStart = true;
-    }
-    @Override
-    protected void onCapturerStopped() {
-        mIsStart = false;
-    }
-    @Override
-    protected void onCapturerClosed() {
-        releaseVirtualDisplay();
-    }
- }
+    rtcEngine.setLocalVideoRenderer(sink);
 ```
 
-Step 2. Use `SurfaceTexture` to create a virtual display for capturing the screen data.
+Agora provides a helper class and sample code for developers to customize the video renderer. See [Customize the Video Renderer with Agora Components](../../en/Video/custom_advanced_android.md) for details.
 
-```
-private void createVirtualDisplay() {
-    Surface inputSurface = new Surface(getSurfaceTexture);
-    if (mVirtualDisplay == null) {
-        mVirtualDisplay = mediaProjection.createVirtualDisplay("MainScreen", mWidth, mHeight, mDpi,
-                    DisplayManager.VIRTUAL_DISPLAY_FLAG_AUTO_MIRROR, inputSurface, null, null);
-    }
-}
+Agora also provides a sample app for customizing the video source and video sink. For details, see [Agora Custom Media Device](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android).
 
-private void virtualDisplay() {
-    if (virtualDisplay != null) {
-        virtualDisplay.release();
-    }
-    virtualDisplay = null;
-}
-```
+## Consideration
 
-Step 3. Reimplement the callbacks for getting the video data.
-
-```
-@Override
-public void onTextureFrameAvailable(int oesTextureId, float[] transformMatrix, long timeStampNs) {
-    super.onTextureFrameAvailable(oesTextureId, transformMatrix, timeStampNs);
-    if (mIsStart && mConsumer != null && mConsumer.get() != null) {
-        mConsumer.get().consumeTextureFrame(oesTextureId, TEXTURE_OES.intValue(), mWidth, mHeight,
-                                            0, System.currentTimeMillis(), transformMatrix);
-    }
-}
-```
-
-> Make sure to call the `super.onTextureFrameAvailable(oesTextureId, transformMatrix, timeStampNs)` parent class method.
-
-Step 4. Release the resources when the external video source is no longer needed.
-
-```
-public void sourceRelease() {
-   releaseProjection();
-   release();
-}
-```
-
-<a name = "custome_video_renderer"></a>
-## Customize the Video Sink with the Agora Component
-
-The Agora SDK uses its default renderer to render the local and remote video. The `IVideoSink` interface can be used for more advanced functions, such as:
-
--   To render the local or remote video frame instead of directly on the view component.
--   To use the general `SurfaceView` object or customized view component.
--   To render images in specific areas, such as in gaming.
-
-
-### AgoraSurfaceView Class
-
-`AgoraSurfaceView` inherits `SurfaceView` and implements the `IVideoSink` interface to render video frames in YUV, RGB, and Texture \(2D/OES\).
-
-```
-AgoraSurfaceView render = new AgoraSurfaceView(this);
-render.init(MediaIO.BufferType.BYTE_ARRAY, I420, null);
-render.setZOrderOnTop(true);
-rtcEngine.setLocalVideoRenderer(render);
-```
-
-### AgoraTextureView Class
-
-`AgoraTextureView` inherits `TextureView` and implements the `IVideoSink` interface to render video frames in YUV, RGB, and Texture \(2D/OES\).
-
-The following code shows the usage of `AgoraTextureView` with external video sources, and creates the GL environment with `TextureSource`:
-
-```
-AgoraTextureCamera source = new AgoraTextureCamera(this, 640, 480);
-AgoraTextureView render = (AgoraTextureView) findViewById(R.id.agora_texture_view);
-render.init(source.getEglContext());
-render.setBufferType(MediaIO.BufferType.TEXTURE);
-render.setPixelFormat(MediaIO.PixelFormat.TEXTURE_OES);
-rtcEngine().setVideoSource(source);
-rtcEngine().setLocalVideoRenderer(render);
-```
-
-### Helper Class and Component
-
-#### BaseVideoRenderer Class
-
-**Major functions of the BaseVideoRenderer class:**
-
--   Supports rendering various formats: I420, RGBA, and TEXTURE\_2D/OES.
--   Supports various rendering targets: SurfaceView, TextureView, Surface, and SurfaceTexture.
-
-
-Follow these steps to use the `BaseVideoRenderer` class:
-
-1.  Create a customized renderer class to implement the `IVideoSink` interface and embed the `BaseVideoRenderer` object.
-
-2.  Specify the type and format of the video frame, or call the `setBufferType` and `setPixelFormat` methods of the embedded `BaseVideoRenderer` object.
-
-3.  Share `EGLContextHandle` with `RtcEngine`, now that `BaseVideoRenderer` uses OpenGL as the renderer and has created the `EGLContext`.
-
-4.  Set the object to render by calling the `setRenderView` and `setRenderSurface` methods of the embedded `BaseVideoRenderer` object.
-
-5.  Implement methods to control the renderer by calling the `onInitialize`, `onStart`, `onStop`, and `onDispose` methods.
-
-6.  Implement `IVideoFrameConsumer`, and call the `BaseVideoRenderer` object in the corresponding format to render the received video frame on the rendered target.
-
-
-
+Customizing audio/video source and renderer is an advanced feature provided by Agora SDK. To develop this function, we believe it necessary that you have adequate knowledge and experience in audio and video application development.
