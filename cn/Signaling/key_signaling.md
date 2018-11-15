@@ -1,11 +1,11 @@
 
 ---
-title: 信令密钥说明
+title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 08:52:45 GMT+0000 (UTC)
+updatedAt: Thu Nov 15 2018 10:26:36 GMT+0000 (UTC)
 ---
-# 信令密钥说明
+# 校验用户权限
 ## 简介
 
 针对用户的项目开发需求，Agora SDK 提供了两种鉴权机制：[App ID](#APPID) 和 [SignalingToken](#SignalingToken) 。下图描述这两种鉴权机制的关系以及适用场景：
