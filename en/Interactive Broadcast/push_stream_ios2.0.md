@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 02 2018 17:09:04 GMT+0000 (UTC)
+updatedAt: Fri Nov 16 2018 05:47:05 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 Agora's CDN publishing solution is based on the following APIs to publish streams to the CDN, inject external video streams, transcode, and set the output layout.
