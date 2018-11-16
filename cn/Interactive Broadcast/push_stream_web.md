@@ -3,16 +3,24 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Fri Nov 16 2018 03:46:18 GMT+0000 (UTC)
+updatedAt: Fri Nov 16 2018 03:46:27 GMT+0000 (UTC)
 ---
 # 推流到 CDN
+## 功能描述
+
+旁路推流功能用于将主播的上行音视频流转化为 RTMP 流分发，供 Web 端或流媒体播放器端观看。
+
+> 请联系 sales@agora.io 开通旁路推流功能。
+
 网页端直播场景下，你可以通过以下步骤实现推流：
 
 <img alt="../_images/push_stream_web.png" src="https://web-cdn.agora.io/docs-files/cn/push_stream_web.png" style="width: 500px;"/>
 
 > 请联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
 
-## 1. 检查浏览器兼容性
+## 实现方法
+
+### 1. 检查浏览器兼容性
 
 检查浏览器兼容性 \(`checkSystemRequirements`\)
 
@@ -20,7 +28,7 @@ updatedAt: Fri Nov 16 2018 03:46:18 GMT+0000 (UTC)
 checkSystemRequirements()
 ```
 
-## 2. 创建音视频对象
+### 2. 创建音视频对象
 
 创建音视频对象 \(`createClient`\)
 
@@ -28,7 +36,7 @@ checkSystemRequirements()
 createClient()
 ```
 
-## 3. 初始化客户端对象
+### 3. 初始化客户端对象
 
 初始化客户端对象 \(`init`\)
 
@@ -36,7 +44,7 @@ createClient()
 init(appId, onSuccess, onFailure)
 ```
 
-## 4. 加入频道
+### 4. 加入频道
 
 加入 AgoraRTC 频道 \(`join`\)
 
@@ -44,7 +52,7 @@ init(appId, onSuccess, onFailure)
 join(token, channel, uid, onSuccess, onFailure)
 ```
 
-## 5. 创建音视频流对象
+### 5. 创建音视频流对象
 
 创建音视频流对象 \(`createStream`\)
 
@@ -52,7 +60,7 @@ join(token, channel, uid, onSuccess, onFailure)
 createStream(spec)
 ```
 
-## 6. 新建直播流
+### 6. 新建直播流
 
 新建直播流 \(`startLiveStream`\)
 
@@ -62,7 +70,7 @@ client.setLiveTranscoding(coding);
 client.startLiveStreaming(url, true)
 ```
 
-## 7. 设置直播转码
+### 7. 设置直播转码
 
 设置直播转码 \(`setLiveTranscoding`\)
 
@@ -91,7 +99,7 @@ var LiveTranscoding = {
 >
 > 影响：Agora 转码需要收取转码费用。
 
-## 8. 删除直播流
+### 8. 删除直播流
 
 删除直播流 \(`stopLiveStreaming`\)
 
@@ -99,7 +107,7 @@ var LiveTranscoding = {
 client.stopLiveStreaming(url);
 ```
 
-## 9. 退出频道
+### 9. 退出频道
 
 离开 AgoraRTC 频道 \(`leave`\)
 
