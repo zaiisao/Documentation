@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Fri Nov 16 2018 03:40:16 GMT+0000 (UTC)
+updatedAt: Fri Nov 16 2018 03:46:18 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 网页端直播场景下，你可以通过以下步骤实现推流：
