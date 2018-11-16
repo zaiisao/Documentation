@@ -3,7 +3,7 @@
 title: 通话前的网络质量检测
 description: 通话前的网络质量检测。
 platform: Android
-updatedAt: Fri Nov 16 2018 06:19:08 GMT+0000 (UTC)
+updatedAt: Fri Nov 16 2018 06:19:19 GMT+0000 (UTC)
 ---
 # 通话前的网络质量检测
 ## 功能描述
@@ -32,7 +32,7 @@ updatedAt: Fri Nov 16 2018 06:19:08 GMT+0000 (UTC)
 	rtcEngine.disableLastmileTest();
 ```
 
-### API参考
+## API参考
 
 - [RtcEngine.enableLastmileTest()](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
 - [RtcEngine.disableLastmileTest()](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
