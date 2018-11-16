@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Web
-updatedAt: Fri Nov 16 2018 06:36:14 GMT+0000 (UTC)
+updatedAt: Fri Nov 16 2018 06:36:17 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -39,7 +39,7 @@ localStream.init(function(){
 
 - 2 人视频通话场景：
   - 240p（分辨率 320*240、帧率 15 fps、码率 200 Kbps） 
-  - 360p（分辨率 640*360、帧率 16 fps、码率 400 Kbps）
+  - 360p（分辨率 640*360、帧率 15 fps、码率 400 Kbps）
 - 多人视频通话场景：
   - 120p（分辨率 160*120、帧率 15 fps、码率 65 Kbps）
   - 180p（分辨率 320*180、帧率 15 fps、码率 140 Kbps）
