@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: macOS
-updatedAt: Fri Nov 16 2018 06:38:34 GMT+0000 (UTC)
+updatedAt: Fri Nov 16 2018 06:38:40 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -49,7 +49,7 @@ AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] 
 
 - 2 人视频通话场景：
   - 分辨率 320*240、帧率 15 fps、码率 200 Kbps 
-  - 分辨率 640*360、帧率 16 fps、码率 400  Kbps
+  - 分辨率 640*360、帧率 15 fps、码率 400  Kbps
 - 多人视频通话场景：
   - 分辨率 160*120、帧率 15 fps、码率 65 Kbps
   - 分辨率 320*180、帧率 15 fps、码率 140  Kbps

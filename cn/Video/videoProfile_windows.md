@@ -3,7 +3,7 @@
 title: 设置视频编码
 description: 
 platform: Windows
-updatedAt: Fri Nov 16 2018 06:36:27 GMT+0000 (UTC)
+updatedAt: Fri Nov 16 2018 06:36:33 GMT+0000 (UTC)
 ---
 # 设置视频编码
 ## 功能简介
@@ -41,7 +41,7 @@ lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 
 - 2 人视频通话场景：
   - 分辨率 320*240、帧率 15 fps、码率 200Kbps 
-  - 分辨率 640*360、帧率 16 fps、码率 400Kbps
+  - 分辨率 640*360、帧率 15 fps、码率 400Kbps
 - 多人视频通话场景：
   - 分辨率 160*120、帧率 15 fps、码率 65 Kbps
   - 分辨率 320*180、帧率 15 fps、码率 140 Kbps
