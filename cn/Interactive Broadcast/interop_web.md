@@ -1,11 +1,11 @@
 
 ---
-title: 移动端、桌面端、Web 端互通
+title: 移动、桌面、Web 端互通
 description: 
 platform: Web
-updatedAt: Tue Nov 13 2018 09:25:25 GMT+0000 (UTC)
+updatedAt: Mon Nov 19 2018 09:04:00 GMT+0000 (UTC)
 ---
-# 移动端、桌面端、Web 端互通
+# 移动、桌面、Web 端互通
 ## 功能简介
 
 开启移动端、桌面端、Web 端**互通**，是指开发者可以将不同平台的 SDK 集成到自己的 App 中，实现实时音视频通话服务。用户无论是从移动端（iOS 或  Android 设备）、PC 端（Windows 或 macOS 设备），还是 Web 端（浏览器或 Web App）都能使用该 App 进入同一个频道进行互通。
