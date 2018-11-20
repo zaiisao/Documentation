@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: macOS
-updatedAt: Tue Nov 20 2018 06:23:46 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 06:24:15 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -42,6 +42,10 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 // Push the video frame in the format of CMSampleBuffe
 [agoraKit pushExternalAudioFrameSampleBuffer: "your CMSampleBuffer"];
 ```
+
+**Relevant APIs and descriptions**
+* [`pushExternalAudioFrameRawData:samples:timestamp:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameRawData:samples:timestamp:)
+* [`pushExternalAudioFrameSampleBuffer:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameSampleBuffer:)
 
 ### Customize the Video Source
 
@@ -93,24 +97,38 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 	
 	```objective-c
 	//objective-c
+	// variable in the protocal
 	@synthesize consumer;
+	// use the consumer method to transfer the video data to Agora SDK:
 
-	- (BOOL)shouldInitialize {
-			return YES;
-	}
+		// transfer the video frame in the format of rawData
+		[consumer consumeRawData: "your rawData" withTimestamp: CMTimeMake(1, 15) format: "your data format" size: size rotation: rotation];
 
-	- (void)shouldStart {
-	}
+		// transfer the video frame in the format of CVPixelBuffer
+		[consumer consumePixelBuffer: "your pixelBuffer" withTimestamp: CMTimeMake(1, 15) rotation: rotation];
 
-	- (void)shouldStop {
-	}
+	// Implement the protocal
+	1. Set the buffer type to capture the video
+		- (AgoraVideoBufferType)bufferType {
+				return AgoraVideoBufferTypePixelBuffer;
+		}
 
-	- (void)shouldDispose {
-	}
+	2. initialize the custom  video source
+		- (BOOL)shouldInitialize {
+				return YES;
+		}
 
-	- (AgoraVideoBufferType)bufferType {
-			return AgoraVideoBufferTypePixelBuffer;
-	}
+	3. transfer the video data with Consumer when the customized video source starts capturing 
+		- (void)shouldStart {
+		}
+
+	4. stop capturing
+		- (void)shouldStop {
+		}
+
+	5. release the video source
+		- (void)shouldDispose {
+		}
 	```
 	
 2. Pass the VideoSource object to AgoraRtcEngineKit.
@@ -124,6 +142,10 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 	//objective-c
 	[agoraKit setVideoSource: videoSource];
 	```
+	
+**Relevant APIs and descriptions**
+* [`setVideoSource:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
+* [`AgoraVideoSourceProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
 	
 #### The Push Method
 
@@ -172,6 +194,9 @@ videoFrame.ratation = 0;
 
 [agoraKit pushExternalVideoFrame: videoFrame];
 ```
+
+**Relevant APIs and descriptions**
+* [`pushExternalVideoFrame:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalVideoFrame:)
 
 ### Customize the Video Renderer
 
@@ -224,35 +249,44 @@ Use the IVideoSink Interface of MediaIO to customize the video renderer.
 
 	```objective-c
 	//objective-c
-	- (BOOL)shouldInitialize {
-		return YES;
-	}
+	//Implement AgoraVideoSinkProtocal
+	1. Set the buffer type that Agora SDK sends
+		- (AgoraVideoBufferType)bufferType {
+				return AgoraVideoBufferTypePixelBuffer;
+		}
 
-	- (void)shouldStart {
-	}
+		Set the video data format that Agora SDK send
+		- (AgoraVideoPixelFormat)pixelFormat {
+			 return AgoraVideoPixelFormatI420;
+		}
 
-	- (void)shouldStop {
-	}
+	2. Initialize the custom Video Renderer
+		- (BOOL)shouldInitialize {
+			return YES;
+		}
 
-	- (void)shouldDispose {
-	}
+	3. Start the Video Renderer 
+		- (void)shouldStart {
+		}
 
-	- (AgoraVideoBufferType)bufferType {
-		 return AgoraVideoBufferTypePixelBuffer;
-	}
+	4. Agora SDK stops sending out video data
+		- (void)shouldStop {
+		}
 
-	- (AgoraVideoPixelFormat)pixelFormat {
-		 return AgoraVideoPixelFormatI420;
-	}
+	5. Release the custom Video Renderer
+		- (void)shouldDispose {
+		}
 
-	- (void)renderPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer rotation:(AgoraVideoRotation)rotation {
-	}
+	6. Agora SDK sends out the video frame in the format of CVPixelBuffer, and the customized Video Renderer gets the data for rendering
+		- (void)renderPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer rotation:(AgoraVideoRotation)rotation {
+		}
 
-	- (void)renderRawData:(void * _Nonnull)rawData size:(CGSize)size rotation:(AgoraVideoRotation)rotation {
-	}
+		Agora SDK sends out the video frame in the format of rawData, and the customized Video Renderer gets the data for rendering
+		- (void)renderRawData:(void * _Nonnull)rawData size:(CGSize)size rotation:(AgoraVideoRotation)rotation {
+		}
 	```
 	
-2. Pass the VideoREnderer object to AgoraRtcEngineKit.
+2. Pass the VideoRenderer object to AgoraRtcEngineKit.
 
 	```swift
 	//swift
@@ -263,8 +297,13 @@ Use the IVideoSink Interface of MediaIO to customize the video renderer.
 	```objective-c
 	//objective-c
 	[agoraKit setLocalVideoRenderer: videoRenderer];
-	[agoraKit setRemoteVideoRenderer: videoRenderer];
+	[agoraKit setRemoteVideoRenderer: videoRenderer, uid];
 	```
+
+**Relevant APIs and descriptions**
+* [`setLocalVideoRenderer:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVideoRenderer:)
+* [`setRemoteVideoRenderer:forUserId:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoRenderer:forUserId:)
+* [`AgoraVideoSinkProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSinkProtocol.html)
 
 ## Considerations
 Customizing audio/video source and renderer is an advanced feature provided by Agora SDK. To develop this function, we believe it necessary that you have adequate knowledge and experience in audio and video application development.
