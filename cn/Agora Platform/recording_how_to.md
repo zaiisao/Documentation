@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Fri Nov 02 2018 04:06:32 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 09:39:39 GMT+0000 (UTC)
 ---
 # 录制相关
 ### 录制完成动作如何捕获
