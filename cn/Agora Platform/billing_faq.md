@@ -3,7 +3,7 @@
 title: 计费
 description: 
 platform: 计费
-updatedAt: Fri Nov 02 2018 04:04:00 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 08:34:12 GMT+0000 (UTC)
 ---
 # 计费
 本页提供声网 Agora 实时音视频通话产品及服务相关的计费说明，以及常见问题和回答。关于直播、游戏等收费，请联系 sales@agora.io 。
