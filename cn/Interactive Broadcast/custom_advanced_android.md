@@ -3,7 +3,7 @@
 title: 使用组件自定义视频源和渲染器
 description: 
 platform: Android
-updatedAt: Mon Nov 12 2018 09:52:30 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 06:49:19 GMT+0000 (UTC)
 ---
 # 使用组件自定义视频源和渲染器
 <a name = "custom_video_source"></a>
