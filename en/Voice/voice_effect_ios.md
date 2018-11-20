@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to set voice effects on iOS/macOS
 platform: iOS,macOS
-updatedAt: Tue Nov 20 2018 07:34:07 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 07:34:15 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Feature Description 
@@ -12,7 +12,7 @@ In social and entertainment scenarios, the users often need various voice effect
 
 ## Implementation
 
-The sample code shows how to set the voice effect for FM applications.
+The sample code shows how to set the FM voice effect.
 
 ```swift
 // swift
