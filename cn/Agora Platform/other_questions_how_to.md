@@ -3,7 +3,7 @@
 title: 其它常见问题
 description: 
 platform: 其它常见问题
-updatedAt: Tue Nov 20 2018 10:57:54 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 10:57:58 GMT+0000 (UTC)
 ---
 # 其它常见问题
 ## Android 平台常见问题
@@ -114,17 +114,17 @@ E:\Rock\videoIM\Agora_Native_SDK_for_Android_v1_7_4_FULL\Agora_Native_SDK_for_An
 
 当 A 进程被杀：
 - 如果 A 是 iOS 或 mac 平台：A 自动触发 leaveChannel，B 有回调：
-      - 如果 B 是 Android， Windows，或 Linux 平台：onUserOffline
-      - 如果 B 是 iOS 或 mac 平台： didOfflineOfUid
-      - 如果 B 是 Web 平台： client.on('peer-leave')
+   - 如果 B 是 Android， Windows，或 Linux 平台：onUserOffline
+   - 如果 B 是 iOS 或 mac 平台： didOfflineOfUid
+   - 如果 B 是 Web 平台： client.on('peer-leave')
 - 如果 A 是 Android， Windows，或 Linux 平台，且 B 使用的是 Native SDK：
-      - 如果 20 秒内， A 没有重启 app 并加入原频道，B 有回调：（20 秒这个参数可以更改，具体请咨询 support@agora.io）
-         - 如果 B 是 Android， Windows，或 Linux 平台： onUserOffline
-         - 如果 B 是 iOS 或 mac 平台：didOfflineOfUid
-      - 如果 20 秒内， A 重启 app 并加入原频道，B 不会收到回调。
+   - 如果 20 秒内， A 没有重启 app 并加入原频道，B 有回调：（20 秒这个参数可以更改，具体请咨询 support@agora.io）
+      - 如果 B 是 Android， Windows，或 Linux 平台： onUserOffline
+      - 如果 B 是 iOS 或 mac 平台：didOfflineOfUid
+   - 如果 20 秒内， A 重启 app 并加入原频道，B 不会收到回调。
 - 如果 A 是 Android， Windows，或 Linux 平台，且 B 使用的是 Web SDK：
-      - 如果 10 秒内， A 没有重启 app 并加入原频道，B 有回调：client.on('stream-removed')
-      - 如果 10 秒内， A 重启 app 并加入原频道，B 不会收到回调。
+   - 如果 10 秒内， A 没有重启 app 并加入原频道，B 有回调：client.on('stream-removed')
+   - 如果 10 秒内， A 重启 app 并加入原频道，B 不会收到回调。
 - 如果 A 使用的是 Web SDK，进程被杀与掉线的行为是一样的。
 - 如果 A 是频道内最后一个用户，服务端会在 10s 后销毁频道。
 
