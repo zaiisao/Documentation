@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Tue Nov 20 2018 03:48:41 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 03:48:45 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -41,6 +41,9 @@ updatedAt: Tue Nov 20 2018 03:48:41 GMT+0000 (UTC)
 		timestamp         // 时间戳
 	);
 ```
+
+**相关 API 及链接**
+* [`pushExternalAudioFrame`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e219a679d066cfc2544b5e8f9d4d69f)：推送外部音频帧
 
 ### 自定义视频源
 
@@ -107,6 +110,11 @@ Agora SDK 目前提供两种自定义视频源的方法：
 	}
 ```
 
+**相关 API 及链接**
+
+* [`setlVideoSource`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa240e991d12b5240fc5fd362cbc0d521)：设置视频源
+* [`IVideoSource`](https://docs.agora.io/cn/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_source.html)：IVideoSource 接口类
+
 #### 使用 Push 方法自定义视频源
 相对于 MedioIO 接口，Push 方法代码较少，但缺少 SDK 对帧的优化过程，需要用户对自己采集到的视频数据进行处理。
 
@@ -125,6 +133,9 @@ Agora SDK 目前提供两种自定义视频源的方法：
 		// 具体的请查看AgoraVideoFrame类的说明
 	));
 ```
+
+**相关 API 及链接**
+* [`pushExternalVideoFrame`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6e7327f4449800a2c2ddc200eb2c0386)：推送外部视频帧
 
 开发者也可以选择自己管理视频设备的生命周期，只是根据 Media Engine 的回调来打开和关闭视频帧的输入开关。对于开发者 App 之前已有自己的采集模块，需要集成 Agora SDK 以获得实时通信能力的使用场景下，这种方式更简单。详见 [使用 Agora SDK 提供的组件自定义视频源](../../cn/Video/custom_advanced_android.md) 中的描述。
 
@@ -175,6 +186,11 @@ Agora SDK 目前提供两种自定义视频源的方法：
 
 	rtcEngine.setLocalVideoRenderer(sink);
 ```
+
+**相关  API 及链接**
+* [`setLocalVideoRenderer`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab10fd6d8dd89a5bca09b115ecd9e3416)：自定义本地视频渲染器
+* [`setRemoteVideoRenderer`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0da32c040cb9d987df2950b83459ba56)：自定义远端视频渲染器
+* [`IVideoSink`](https://docs.agora.io/cn/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_sink.html)：IVideoSink 接口类
 
 
 为了方便开发者集成和创建自定义的视频渲染器，Agora 也提供了一些辅助类和示例 demo；开发者也可以直接使用这些组件，或者利用这些组件构建自定义的渲染器，详见下文的 [使用 Agora SDK 提供的组件自定义渲染器](../../cn/Video/custom_advanced_android.md) 。
