@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: 集成和使用
-updatedAt: Fri Nov 02 2018 04:03:26 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 10:14:53 GMT+0000 (UTC)
 ---
 # FAQ
 该部分包含集成和使用 Agora SDK 过程中常见的问题。
