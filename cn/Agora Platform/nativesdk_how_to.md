@@ -3,7 +3,7 @@
 title: Native SDK 相关
 description: 
 platform: Native SDK 相关
-updatedAt: Fri Nov 02 2018 04:06:57 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 09:48:47 GMT+0000 (UTC)
 ---
 # Native SDK 相关
 ### setLogFilter最佳实践
