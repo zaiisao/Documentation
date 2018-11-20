@@ -3,9 +3,11 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 19 2018 10:47:16 GMT+0000 (UTC)
+updatedAt: Tue Sep 25 2018 01:58:07 GMT+0800 (CST)
 ---
 # Agora 平台概述
+# Agora 平台概述
+
 ## SD-RTN（Software Defined Real-time Network）
 
 SD-RTN（Software Defined Real-time Network）是依赖于云计算技术并致力于全球实时音视频业务传输的“智简”网络，覆盖全球 200+ 国家。作为提供实时音视频业务的 PaaS（Platform as a Service）层，SD-RTN 专注为上层（SaaS）业务开放音视频业务的网络基础能力，解决开发者共性问题，营造友好的开发环境，实现敏捷开发，并为实时音视频业务打造“专网”级别沉浸式网络体验。
@@ -116,6 +118,6 @@ Agora 原生 SDK 支持 iOS，Android，Windows，和 Mac 等各平台。原生 
 
 ### Agora 基于 Web 的 SDK
 
-Agora 基于 WebRTC 的 SDK 使基于 Web 开发的 App 能够实现原生应用同样的功能。
+Agora 基于 Web 的 SDK 使基于 Web 开发的 App 能够实现原生应用同样的功能。
 
 

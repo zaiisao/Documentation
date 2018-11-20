@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: macOS
-updatedAt: Tue Oct 23 2018 08:28:24 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 19:55:09 GMT+0800 (CST)
 ---
 # 选择加密方案
 # 选择加密方案
@@ -98,48 +98,45 @@ class IPacketObserver
 {
 public:
 
-struct Packet
-{
-        /** Buffer address of the sent or received data.
-         */
-const unsigned char* buffer;
-        /** Buffer size of the sent or received data.
-         */
-unsigned int size;
-};
-/** An audio packet is sent to other users.
+        struct Packet
+        {
+                const unsigned char* buffer;
+                unsigned int size;
+        };
+        /**
+        * called by sdk before the audio packet is sent to other participants
+        * @param [in,out] packet:
+        *      buffer *buffer points the data to be sent
+        *      size of buffer data to be sent
+        * @return returns true to send out the packet, returns false to discard the packet
+        */
+        virtual bool onSendAudioPacket(Packet& packet) = 0;
+        /**
+        * called by sdk before the video packet is sent to other participants
+        * @param [in,out] packet:
+        *      buffer *buffer points the data to be sent
+        *      size of buffer data to be sent
+        * @return returns true to send out the packet, returns false to discard the packet
+        */
 
-     @param packet See Packet.
-     @return
-     - true: The packet is sent successfully.
-     - false: The packet is discarded.
-     */
-virtual bool onSendAudioPacket(Packet& packet) = 0;
-/** A video packet is sent to other users.
 
-     @param packet See Packet.
-     @return
-     - true: The packet is sent successfully.
-     - false: The packet is discarded.
-     */
 virtual bool onSendVideoPacket(Packet& packet) = 0;
-/** An audio packet is sent by other users.
-
-     @param packet See Packet.
-     @return
-     - true: The packet is received successfully.
-     - false: The packet is discarded.
-*/
-virtual bool onReceiveAudioPacket(Packet& packet) = 0;
-/** A video packet is sent by other users.
-
-     @param packet See Packet.
-     @return
-     - true: The packet is received successfully.
-     - false: The packet is discarded.
-*/
-virtual bool onReceiveVideoPacket(Packet& packet) = 0;
-};
+        /**
+        * called by sdk when the audio packet is received from other participants
+        * @param [in,out] packet
+        *      buffer *buffer points the data to be sent
+        *      size of buffer data to be sent
+        * @return returns true to process the packet, returns false to discard the packet
+        */
+        virtual bool onReceiveAudioPacket(Packet& packet) = 0;
+        /**
+        * called by sdk when the video packet is received from other participants
+        * @param [in,out] packet
+        *      buffer *buffer points the data to be sent
+        *      size of buffer data to be sent
+        * @return returns true to process the packet, returns false to discard the packet
+        */
+        virtual bool onReceiveVideoPacket(Packet& packet) = 0;
 ```
 
 ### 步骤 2: 使用定制的数据加密算法

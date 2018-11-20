@@ -3,9 +3,11 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 13 2018 09:13:39 GMT+0000 (UTC)
+updatedAt: Tue Sep 25 2018 02:12:42 GMT+0800 (CST)
 ---
 # 产品概述
+# 产品概述
+
 本文为你展示 Agora Interactive Gaming SDK 的产品简介、适用场景、产品特性，以及相关文档。
 
 ## 产品简介

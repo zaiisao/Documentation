@@ -3,7 +3,7 @@
 title: 实现跨直播间连麦
 description: 
 platform: iOS,macOS
-updatedAt: Mon Oct 08 2018 03:18:07 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 19:52:11 GMT+0800 (CST)
 ---
 # 实现跨直播间连麦
 # 实现跨直播间连麦
@@ -44,7 +44,7 @@ updatedAt: Mon Oct 08 2018 03:18:07 GMT+0000 (UTC)
 
 ### 准备工作
 
-1. 你已根据 [推流到 CDN](../../cn/Quickstart%20Guide/push_stream_ios.md) 文档里的 **服务器端推流** 章节开通了 RTMP 流查看功能。
+1. 你已根据 [进阶：推流到 CDN](../../cn/Quickstart%20Guide/push_stream_ios.md) 文档里的 **服务器端推流** 章节开通了 RTMP 流查看功能。
 2. 你已搭建好 web 服务器。
 3. 你已创建好一个内嵌了播放器的 HTML 文件。
 
@@ -102,7 +102,7 @@ PublisherConfiguration:
 主播们加入频道后，观众打开直播频道 URL \(各自拉到的 RTMP 流不同\)，看到的布局方式为:
 
 - 默认看到主播上文调用配置旁路直播推流 \(`configPublisher`)的 `defaultLayout` 设置的布局
-- 如果用户使用 [推流到 CDN](../../cn/Quickstart%20Guide/push_stream_ios.md) 设置了合图布局，则会看到对应的合图布局信息
+- 如果用户使用 [进阶：推流到 CDN](../../cn/Quickstart%20Guide/push_stream_ios.md) 设置了合图布局，则会看到对应的合图布局信息
 
 ## <a name = "app"></a>客户端跨直播间连麦
 

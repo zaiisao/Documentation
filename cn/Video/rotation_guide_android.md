@@ -3,9 +3,11 @@
 title: 视频采集旋转
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:03:47 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 18:13:50 GMT+0800 (CST)
 ---
 # 视频采集旋转
+# 视频采集旋转
+
 本文指导用户如何选择与场景适配的视频旋转模式。
 
 为满足用户处理视频旋转的需求，Agora 为用户提供了设置视频编码属性 `setVideoEncoderConfiguration` 接口，其中就包含了 `orientationMode` 参数，即旋转模式。
@@ -14,7 +16,7 @@ updatedAt: Fri Nov 02 2018 04:03:47 GMT+0000 (UTC)
 
 Agora 的视频采集、渲染和输出的流程大致如下：
 
-<img alt="../_images/rotation_encoding_decoding.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_encoding_decoding.jpg" style="width: 500px; "/>
+<img alt="../_images/rotation_encoding_decoding.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_encoding_decoding.jpg" style="width: 616.5px; height: 268.5px;"/>
 
 
 因此在视频旋转场景中，我们主要关注两个端：采集端和播放端 。
@@ -42,7 +44,7 @@ public abstract int setVideoEncoderConfiguration(VideoEncoderConfiguration confi
 
 其中的 **VideoEncoderConfiguration** 就包含 `orientationMode` 参数。Agora 推荐根据下表来选择适合你场景的旋转模式（通信和直播模式均适用）：
 
-<img alt="../_images/rotation_mode.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_mode.jpg" style="width: 500px; "/>
+<img alt="../_images/rotation_mode.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_mode.jpg" style="width: 634.9px; height: 366.8px;"/>
 
 
 ## 视频旋转模式
@@ -62,11 +64,11 @@ Agora 通过 `orientaionMode` 参数，提供了 [ADAPTIVE 模式](#orientation_
 
     采集端横屏时：
 
-    <img alt="../_images/rotation_adaptive_uilock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uilock_landscape.jpg" />
+    <img alt="../_images/rotation_adaptive_uilock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uilock_landscape.jpg" style="width: 859.5px; height: 270.0px;"/>
 
     采集端竖屏时：
 
-    <img alt="../_images/rotation_adaptive_uilock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uilock_portrait.jpg" />
+    <img alt="../_images/rotation_adaptive_uilock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uilock_portrait.jpg" style="width: 840.64px; height: 270.98px;"/>
 
 
 -   UI 不锁定且客户端开启屏幕自动旋转时：
@@ -75,11 +77,11 @@ Agora 通过 `orientaionMode` 参数，提供了 [ADAPTIVE 模式](#orientation_
 
     采集端横屏时：
 
-    <img alt="../_images/rotation_adaptive_uiunlock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uiunlock_landscape.jpg" />
+    <img alt="../_images/rotation_adaptive_uiunlock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uiunlock_landscape.jpg" style="width: 868.5px; height: 270.5px;"/>
 
      采集端竖屏时：
 
-    <img alt="../_images/rotation_adaptive_uiunlock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uiunlock_portrait.jpg" />
+    <img alt="../_images/rotation_adaptive_uiunlock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uiunlock_portrait.jpg" style="width: 881.28px; height: 270.72px;"/>
 
 
 <a name = "orientation_fixed_landscape"></a>
@@ -93,12 +95,12 @@ Agora 通过 `orientaionMode` 参数，提供了 [ADAPTIVE 模式](#orientation_
 
 -   采集到的视频是横屏模式：（采集端未对硬件采集的视频进行裁剪处理）
 
-    <img alt="../_images/rotation_fixed_landscape.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_fixed_landscape.jpg" />
+    <img alt="../_images/rotation_fixed_landscape.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_fixed_landscape.jpg" style="width: 916.8px; height: 240.2px;"/>
 
 
 -   采集到的视频是竖屏模式：（采集端对硬件采集的视频进行裁剪处理，使其成为横屏画面。图中红色虚线部分演示 SDK 对采集到的图像裁剪后留下的部分）
 
-    <img alt="../_images/rotation_fixed_landscape_cut.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_fixed_landscape_cut.jpg" />
+    <img alt="../_images/rotation_fixed_landscape_cut.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_fixed_landscape_cut.jpg" style="width: 865.2px; height: 240.6px;"/>
 
 
 <a name = "orientation_fixed_portrait"></a>
@@ -112,9 +114,13 @@ Agora 通过 `orientaionMode` 参数，提供了 [ADAPTIVE 模式](#orientation_
 
 -   采集到的视频是竖屏模式：（采集端未对硬件采集的视频进行裁剪处理）
 
-    <img alt="../_images/rotation_fixed_portrait.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_fixed_portrait.jpg" />
+    <img alt="../_images/rotation_fixed_portrait.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_fixed_portrait.jpg" style="width: 849.6px; height: 240.2px;"/>
 
 
 -   采集到的视频是横屏模式：（采集端对硬件采集的视频进行裁剪处理，使其成为竖屏画面。图中红色虚线部分演示 SDK 对采集到的图像裁剪后留下的部分）
 
-    <img alt="../_images/rotation_fixed_portrait_cut.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_fixed_portrait_cut.jpg" />
+    <img alt="../_images/rotation_fixed_portrait_cut.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_fixed_portrait_cut.jpg" style="width: 909.0px; height: 240.2px;"/>
+
+
+
+

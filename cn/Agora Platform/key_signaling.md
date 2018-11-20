@@ -1,16 +1,18 @@
 
 ---
-title: 校验用户权限
+title: 信令密钥说明
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 15 2018 10:26:42 GMT+0000 (UTC)
+updatedAt: Mon Sep 17 2018 02:43:54 GMT+0800 (CST)
 ---
-# 校验用户权限
+# 信令密钥说明
+# 密钥说明
+
 ## 简介
 
 针对用户的项目开发需求，Agora SDK 提供了两种鉴权机制：[App ID](#APPID) 和 [SignalingToken](#SignalingToken) 。下图描述这两种鉴权机制的关系以及适用场景：
 
-<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_signaling.jpg" style="width: 500px;"/>
+<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_signaling.jpg" style="width: 526.4px; height: 389.6px;"/>
 
 
 其中：
@@ -63,15 +65,15 @@ updatedAt: Thu Nov 15 2018 10:26:42 GMT+0000 (UTC)
 
 	1. 点击激活项目右上方的 **编辑** 按钮。
 
-     <img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" />
+     <img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" style="width: 1171.0px; height: 308.0px;"/>
 
  2. 点击 App Certificate 右方的 **启用** 按钮。仔细阅读关于 App Certificate 介绍后，根据屏幕提示，确认启用 App Certificate。
 
-     <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" />
+     <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" style="width: 1169.0px; height: 409.0px;"/>
 
  3. 点击 App Certificate 后面的“眼睛”图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击“眼睛”图标。
 
-     <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
+     <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" style="width: 582.75px; height: 155.75px;"/>
 		 
 	>  -   如果出于某种原因你需要更新 App Certificate，请联系 [support@agora.io](mailto:support@agora.io) 。
 	>  -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
@@ -79,19 +81,19 @@ updatedAt: Thu Nov 15 2018 10:26:42 GMT+0000 (UTC)
 	>  -   当项目的 App Certificate 被启用后，你必须使用 Token。例如: 在启用 App Certificate 前，你可以使用 App ID 加入频道。但启用了 App Certificate 后，你就必须使用 Token 加入频道。
 
    4. 如果你的项目同时集成了声网的信令 SDK，你可以调试 App Certificate 下方的信令Token调试开关
-    <img alt="../_images/SignalingToken_debug.png" src="https://web-cdn.agora.io/docs-files/cn/SignalingToken_debug.png" />
+    <img alt="../_images/SignalingToken_debug.png" src="https://web-cdn.agora.io/docs-files/cn/SignalingToken_debug.png" style="width: 1173.0px; height: 314.0px;"/>
 		
 	 -   如果 App Certificate 未启用，信令Token调试开关默认不生效，SignalingToken 支持任意值
 
 	 -   如果 App Certificate 已启用：
 
-		 -   信令Token调试开关默认随 App Certificate 一同启用：你可以正常设置 SignalingToken，也可以通过 `_no_need_token` 参数不使用 SignalingToken。
+		 -   信令Token调试开关默认随 App Certificate 一同启用：你可以正常设置 SignalingToken，也可以通过` \_no\_need\_token` 参数不使用 SignalingToken。
 
-		 -   如果关闭信令Token调试开关：你可以正常设置 SignalingToken，但是不能将 SignalingToken 设成 `_no_need_token`，否则将得到信令错误码 206.
+		 -   如果关闭信令Token调试开关：你可以正常设置 SignalingToken，但是不能将 SignalingToken 设成 `\_no\_need\_token`，否则将得到信令错误码 206.
 
-> 建议客户业务上线后，关闭信令Token调试开关，禁用`_no_need_token`。
+> 建议客户业务上线后，关闭信令Token调试开关，禁用`\_no\_need\_token`。
 
-3.  集成算法。使用以下方法生成令牌 (SignalingToken):
+3.  集成算法。使用以下方法生成令牌 \(SignalingToken\):
     **输入**:
     ```
     appId             = "C5D15F8FD394285DA5227B533302A518" //App ID
@@ -148,17 +150,17 @@ updatedAt: Thu Nov 15 2018 10:26:42 GMT+0000 (UTC)
 
 > Agora 已在 GitHub 上提供了生成 SignalingToken 的示例代码：
 
-> -   [C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/generatorSignalToken.h)
+> -   C++: [https://github.com/AgoraIO/AgoraDynamicKey/blob/master/cpp/src/generatorSignalToken.h](https://github.com/AgoraIO/AgoraDynamicKey/blob/master/cpp/src/generatorSignalToken.h)
 
-> -   [Go](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/go/src/SignalingToken/SignalingToken.go)
+> -   Go: [https://github.com/AgoraIO/AgoraDynamicKey/blob/master/go/src/SignalingToken/SignalingToken.go](https://github.com/AgoraIO/AgoraDynamicKey/blob/master/go/src/SignalingToken/SignalingToken.go)
 
-> -   [Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/signal/SignalingToken.java)
+> -   Java: [https://github.com/AgoraIO/AgoraDynamicKey/blob/master/java/src/main/java/io/agora/signal/SignalingToken.java](https://github.com/AgoraIO/AgoraDynamicKey/blob/master/java/src/main/java/io/agora/signal/SignalingToken.java)
 
-> -   [Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/src/SignalingToken.js)
+> -   Node.js: [https://github.com/AgoraIO/AgoraDynamicKey/blob/master/nodejs/src/SignalingToken.js](https://github.com/AgoraIO/AgoraDynamicKey/blob/master/nodejs/src/SignalingToken.js)
 
-> -   [PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/SignalingToken.php)
+> -   PHP: [https://github.com/AgoraIO/AgoraDynamicKey/blob/master/php/src/SignalingToken.php](https://github.com/AgoraIO/AgoraDynamicKey/blob/master/php/src/SignalingToken.php)
 
-> -   [Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/src/SignalingToken.py)
+> -   Python: [https://github.com/AgoraIO/AgoraDynamicKey/blob/master/python/src/SignalingToken.py](https://github.com/AgoraIO/AgoraDynamicKey/blob/master/python/src/SignalingToken.py)
 
 
 ### 使用 SignalingToken
@@ -172,7 +174,6 @@ updatedAt: Thu Nov 15 2018 10:26:42 GMT+0000 (UTC)
 3.  客户端应用程序调用 login，参数 token 要求设为 SignalingToken。
 
 4.  Agora 的服务器接收到 SignalingToken 信息，验证该通话是来自于合法用户，并允许访问 Agora 信令系统。
-
 
 
 

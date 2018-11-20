@@ -3,9 +3,11 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Nov 07 2018 07:43:00 GMT+0000 (UTC)
+updatedAt: Tue Sep 11 2018 17:56:38 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
+# Dashboard RESTful API
+
 ## 1. 认证
 
 RESTful API 仅支持 HTTPS。用户必须通过 basic HTTP 认证:
@@ -65,17 +67,17 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "projects":[
+      projects:[
     
                   {
     
-                    "id": 'xxxx',
-                    "name": 'project1',
-                    "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-                    "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
-                    "recording_server": '10.2.2.8:8080',
-                    "status": 1,
-                    "created": 1464165672
+                    id: 'xxxx',
+                    name: 'project1',
+                    vendor_key: '4855898a22ae4102a29b81ba76f2eae2',
+                    sign_key: '4855898a22ae4102a29b81ba76f2eae2',
+                    recording_server: '10.2.2.8:8080',
+                    status: 1,
+                    created: 1464165672
     
                   }
     
@@ -97,8 +99,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "id":'xxxx',
-      "name":'xxxx'
+      id:'xxxx',
+      name:'xxxx'
     }
     ```
 
@@ -106,17 +108,17 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "projects":[
+      projects:[
     
                {
     
-                    "id": 'xxxx',
-                    "name": 'project1',
-                    "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-                    "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
-                    "recording_server": '10.2.2.8:8080',
-                    "status": 1,
-                    "created": 1464165672
+                    id: 'xxxx',
+                    name: 'project1',
+                    vendor_key: '4855898a22ae4102a29b81ba76f2eae2',
+                    sign_key: '4855898a22ae4102a29b81ba76f2eae2',
+                    recording_server: '10.2.2.8:8080',
+                    status: 1,
+                    created: 1464165672
     
                   }
     
@@ -138,8 +140,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "name":'projectx',
-      "enable_sign_key": true
+      name:'projectx',
+      enable_sign_key: true
     }
     ```
 
@@ -147,15 +149,15 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "project":
+      project:
               {
     
-                 "id": 'xxxx',
-                 "name": 'project1',
-                 "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-                 "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
-                 "status": 1,
-                 "created": 1464165672
+                 id: 'xxxx',
+                 name: 'project1',
+                 vendor_key: '4855898a22ae4102a29b81ba76f2eae2',
+                 sign_key: '4855898a22ae4102a29b81ba76f2eae2',
+                 status: 1,
+                 created: 1464165672
     
               }
     }
@@ -170,8 +172,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "id":'xxx',
-      "status": 0
+      id:'xxx',
+      status: 0
     }
     ```
 
@@ -181,15 +183,15 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
         ```
         {
-          "project":
+          project:
                   {
         
-                   "id": 'xxxx',
-                   "name": 'project1',
-                   "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-                   "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
-                   "status": 0,
-                   "created": 1464165672
+                   id: 'xxxx',
+                   name: 'project1',
+                   vendor_key: '4855898a22ae4102a29b81ba76f2eae2',
+                   sign_key: '4855898a22ae4102a29b81ba76f2eae2',
+                   status: 0,
+                   created: 1464165672
         
                    }
         
@@ -203,7 +205,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
         content:
         {
         
-          "error_msg": "project not exist"
+          error_msg: "project not exist"
         
         }
         ```
@@ -217,7 +219,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "id":'xxxx'
+      id:'xxxx'
     }
     ```
 
@@ -227,7 +229,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
         ```
         {
-          "success": true
+          success: true
         }
         ```
 
@@ -237,7 +239,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
         status 404
         
          {
-            "error_msg": "project not exist"
+            error_msg: "project not exist"
          }
         ```
 
@@ -245,18 +247,18 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 设置项目的录制项目服务器 IP（POST）
 
 -   方法：POST
--   路径：BaseUrl/recording_config/
+-   路径：BaseUrl/recording\_config/
 -   参数：
 
     ```
     {
-      "id":'xxxx',
-      "recording_server": '10.12.1.5:8080'
+      id:'xxxx',
+      recording_server: '10.12.1.5:8080'
     }
     ```
 
 >  - 如果您使用的 Recording SDK 版本 <= v1.9.0，请关注 `recording_server` 字段；
->  - 如果您使用的 Recording SDK 版本 >= v1.11.0，请忽略 `recording_server` 字段。
+>  - 如果您使用的 Recording SDK 版本 \>= v1.11.0，请忽略 `recording_server` 字段。
 
 -   响应：
 
@@ -264,7 +266,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
         ```
         {
-          "success": true
+          success: true
         }
         ```
 
@@ -274,7 +276,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
         status 404
         
          {
-           "error_msg": "project not exist"
+           error_msg: "project not exist"
          }
         ```
 
@@ -287,8 +289,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "id": `xxx`,
-      "enable": true
+      id: `xxx`,
+      enable: true
     }
     ```
 
@@ -299,7 +301,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
         ```
         {
         
-          "success": true
+          success: true
         
         }
         ```
@@ -310,7 +312,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
         status 404
         {
         
-          "error_msg": "project not exist"
+          error_msg: "project not exist"
         
         }
         ```
@@ -319,11 +321,11 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 重置项目的 App Certificate（POST）
 
 -   方法：POST
--   路径：BaseUrl/reset_signkey/
+-   路径：BaseUrl/reset\_signkey/
 -   参数：
 
     ```
-    { "id" : “xxx”} // 项目 id
+    { id : “xxx”} // 项目 id
     ```
 
 -   响应：
@@ -332,7 +334,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
         ```
         {
-          "success": true
+          success: true
         }
         ```
 
@@ -341,7 +343,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
         ```
         status 404
           {
-            "error_msg": "project not exist"
+            error_msg: "project not exist"
           }
         ```
 
@@ -351,15 +353,15 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 BaseUrl：**https://api.agora.io/dev/v1**
 
-### 获取用量数据（GET)
+### 获取用量数据（GET\)
 
 -   方法：GET
 -   路径：BaseUrl/usage/
--   参数 (格式为一个日期到另一个日期的YYYY-MM-DD)：
+-   参数 \(格式为一个日期到另一个日期的YYYY-MM-DD\)：
 
     ```
-    "from_date"=YYYY-MM-DD&to_date=YYYY-MM-DD&projects=id1,id2,id3
-    "from_date"=2015-01-01&to_date=2015-03-21&projects=id1,id2
+    from_date=YYYY-MM-DD&to_date=YYYY-MM-DD&projects=id1,id2,id3
+    from_date=2015-01-01&to_date=2015-03-21&projects=id1,id2
     ```
 
     您可以指定项目，但如果不指定，系统将查询该账户下的全部项目。
@@ -370,24 +372,24 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
         ```
         {
-          "usages":[
+          usages:[
         
-                    { "project": 'xxx',
-                                "daily": [
-                                      { "date": 20150101, "audio": 20, "sd": 100, "hd": 132, "hdp": 225},
-                                      { "date": 20150102, "audio": 20, "sd": 100, "hd": 132, "hdp": 225},
+                    { project: 'xxx',
+                                daily: [
+                                      { date: 20150101, audio: 20, sd: 100, hd: 132, hdp: 225},
+                                      { date: 20150102, audio: 20, sd: 100, hd: 132, hdp: 225},
                                   ]
                                 },
         
-                                { "project": 'yyy',
-                                  "daily": [....]
+                                { project: 'yyy',
+                                  daily: [....]
                                 }
         
                   ]
         }
         ```
 
-    -   报错: 如果指定的项目 (projects) 不存在，会直接被忽略。不会报错。
+    -   报错: 如果指定的项目 \(projects\) 不存在，会直接被忽略。不会报错。
 
 > 该响应中 *audio*、*sd*、*hd* 及 *hdp* 的单位为分钟。
 
@@ -395,8 +397,9 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 BaseUrl: **https://api.agora.io/dev/v1**
 
+> 使用服务端踢人功能前，请联系 [sales@agora.io](mailto:sales@agora.io) 开通相关权限。
 
-### 创建规则 (POST)
+### 创建规则 \(POST\)
 
 -   方法：POST
 -   路径：BaseUrl/kicking-rule/
@@ -404,11 +407,11 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-            "appid":"",   // dashboard中项目的appID，必填
-            "cname":"",   // channel name 频道名称，非必填，可以不传，但不能传 cname:""
-            "uid":"",     // uid，sdk可以获取到，非必填，可以不传，但不能传 uid:0
-            "ip":"",      // IP地址需要封的用户IP，非必填，可以不传，但不能传 ip:0
-            "time": 60    //  封人时间，单位是分钟，最大 1440 分钟，最小一分钟。如果大于 1440 分钟，会被处理成 1440 分钟，如果不传默认为 1 小时。非必填。比如：time:60
+            appid:"",   // dashboard中项目的appID，必填
+            cname:"",   // channel name 频道名称，非必填，可以不传，但不能传 cname:""
+            uid:"",     // uid，sdk可以获取到，非必填，可以不传，但不能传 uid:0
+            ip:"",      // IP地址需要封的用户IP，非必填，可以不传，但不能传 ip:0
+            time: 60    //  封人时间，单位是分钟，最大1440分钟，如果大于1440分钟，会被处理成1440分钟，最小一分钟,非必填。比如：time:60
      }
     ```
 
@@ -436,7 +439,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-       "appid":""    // dashboard中项目的appID，必填
+       appid:""    // dashboard中项目的appID，必填
      }
     ```
 
@@ -470,9 +473,9 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-             "appid":"",   // dashboard中项目的appID，必填
-             "id":"",      // 获取规则列表的规则id，必填
-             "time":""     // 需要更新的封人的时间，必填
+             appid:"",   // dashboard中项目的appID，必填
+             id:"",      // 获取规则列表的规则id，必填
+             time:""     // 需要更新的封人的时间，必填
     }
     ```
 
@@ -497,8 +500,8 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-        "appid":"",   // dashboard中项目的appID，必填
-        "id":""       // 获取规则列表的规则id，必填
+        appid:"",   // dashboard中项目的appID，必填
+        id:""       // 获取规则列表的规则id，必填
     }
     ```
 

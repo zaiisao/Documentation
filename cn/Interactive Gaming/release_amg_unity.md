@@ -3,9 +3,11 @@
 title: 游戏语音软件包
 description: 
 platform: Unity
-updatedAt: Fri Nov 02 2018 04:08:47 GMT+0000 (UTC)
+updatedAt: Thu Sep 27 2018 22:56:30 GMT+0800 (CST)
 ---
 # 游戏语音软件包
+# 游戏语音软件包
+
 ## 简介
 
 该游戏软件包提供游戏语音功能。
@@ -38,7 +40,7 @@ updatedAt: Fri Nov 02 2018 04:08:47 GMT+0000 (UTC)
 <td>指挥模式下，新增回调接口提醒频道内用户指挥与被指挥者角色状态发生变化</td>
 </tr>
 <tr><td>API 名称变化</td>
-<td>所有出现 <code>forGaming</code> 的 API 类和枚举值名称，<code>forGaming</code> 全部删除</td>
+<td>所有出现 forGaming 的 API 类和枚举值名称，forGaming 全部删除</td>
 </tr>
 </tbody>
 </table>
@@ -87,13 +89,13 @@ updatedAt: Fri Nov 02 2018 04:08:47 GMT+0000 (UTC)
 </colgroup>
 <tbody>
 <tr><td><ul>
-<li>Native-iOS: 将 API <code>joinChannel</code> 改名为 <code>joinChannelByKey</code></li>
-<li>Native-iOS: 增加 API: <code>startAudioRecording</code> 和 <code>stopAudioRecording</code></li>
-<li>Native-iOS: 增加录制声音小的 <code>onWarning</code> 消息</li>
-<li>Native-Android: 增加 API: <code>startAudioRecording</code> 和 <code>stopAudioRecording</code></li>
-<li>Android: 优化了原生开发接口: <code>pause</code>/<code>resume</code></li>
+<li>Native-iOS: 将 API joinChannel 改名为 joinChannelByKey</li>
+<li>Native-iOS: 增加 API: startAudioRecording 和 stopAudioRecording</li>
+<li>Native-iOS: 增加录制声音小的 onWarning 消息</li>
+<li>Native-Android: 增加 API: startAudioRecording 和 stopAudioRecording</li>
+<li>Android: 优化了原生开发接口: pause/resume</li>
 <li>优化了若干手机的音频问题</li>
-<li>解决了 <code>startAudioRecording</code> 录音有杂音的问题</li>
+<li>解决了 startAudioRecording 录音有杂音的问题</li>
 </ul>
 </td>
 </tr>

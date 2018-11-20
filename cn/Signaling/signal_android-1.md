@@ -3,9 +3,11 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:06:41 GMT+0000 (UTC)
+updatedAt: Wed Sep 26 2018 23:55:26 GMT+0800 (CST)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
+# 客户端：发送点对点文本消息和频道文本消息
+
 ## 第一节：快速集成
 
 本章介绍信令 SDK 的集成方法。
@@ -35,7 +37,7 @@ updatedAt: Fri Nov 02 2018 04:06:41 GMT+0000 (UTC)
 
 ### 第二步：下载最新的 Agora Signaling SDK 软件包。
 
-下载 [Agora Signaling SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads) 并将其中 **libs** 文件夹内的库复制到你的项目文件夹里。
+下载 [Agora Signaling SDK 软件包](https://docs.agora.io/cn/2.2/download) 并将其中 **libs** 文件夹内的库复制到你的项目文件夹里。
 
 ### 第三步：
 

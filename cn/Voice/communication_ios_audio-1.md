@@ -3,15 +3,17 @@
 title: 实现语音通话
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:00:09 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 20:11:11 GMT+0800 (CST)
 ---
 # 实现语音通话
+# 实现语音通话
+
 在本页你可以了解如何使用 Agora SDK 实现语音通话。
 
 ## 环境准备
 
 1. 具体的开发环境要求、如何获取 App ID 以及 SDK 集成方法，详见 [设置开发环境](../../cn/voice/ios_audio.md)。
-2. 参考 [Agora iOS Voice Tutorial Sample App](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/One-to-One-Voice/Agora-iOS-Voice-Tutorial-Swift-1to1) 了解如何从头创建一个示例项目。
+2. 参考 [Agora iOS Voice Tutorial Sample App](https://github.com/AgoraIO/Agora-iOS-Voice-Tutorial-Swift-1to1) 了解如何从头创建一个示例项目。
 
 ## 快速开始
 
@@ -137,8 +139,8 @@ func leaveChannel() {
 
 在实现语音通话的过程中，你还可能需要使用以下功能:
 
-- [录制音视频](../../cn/recording/recording_voice_video.md)
-- [选择加密方案](../../cn/voice/encryption_ios_agora.md)
-- [修改裸数据](../../cn/voice/rawdata_ios.md)
+- [进阶：录制音视频](../../cn/recording/recording_voice_video.md)
+- [进阶：选择加密方案](../../cn/voice/encryption_ios_agora.md)
+- [进阶：修改裸数据](../../cn/voice/rawdata_ios.md)
 
 更多功能实现，请参考 [语音通话 API](https://docs.agora.io/cn/Voice/API%20Reference/oc/index.html) 中各 API 的功能及描述。

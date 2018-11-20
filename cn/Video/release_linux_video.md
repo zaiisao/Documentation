@@ -3,9 +3,11 @@
 title: 发版说明
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 03:58:43 GMT+0000 (UTC)
+updatedAt: Thu Sep 27 2018 20:17:38 GMT+0800 (CST)
 ---
 # 发版说明
+# 发版说明
+
 本文提供 Agora 完整包的发版说明。
 
 ## **简介**

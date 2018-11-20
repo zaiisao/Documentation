@@ -3,9 +3,11 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Tue Nov 20 2018 02:24:04 GMT+0000 (UTC)
+updatedAt: Tue Sep 11 2018 22:04:40 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
+# 录制 SDK 发版说明
+
 ## 简介
 
 Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。
@@ -13,26 +15,6 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 ### 兼容性
 
 录制 SDK 与以下 SDK 兼容:
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><th>SDK</th>
-<th>描述</th>
-</tr>
-<tr><td>Agora Native SDK</td>
-<td>录制 SDK 与全平台 Agora Native SDK(1.7.0 或更高版本) 兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。</td>
-</tr>
-<tr><td>Agora Web SDK</td>
-<td>录制 SDK 与 Agora Web SDK(1.12.0 或更高版本兼容)。</td>
-</tr>
-</tbody>
-</table>
-
-> 从 2.2.0 版本起，下载包里有两个包，Java 和 C++ 。
 
 ### 已知问题和局限性
 
@@ -44,23 +26,12 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 -   录制 SDK 仅保存从 Client 端传来的视频。在生成 mp4 文件时，SDK 会根据 `uid\xxx.txt `文件中的信息对视频旋转一次。因此无论视频在录制过程中旋转几次，录制 SDK 只会按 `uid\xxx.txt `文件中的第一个旋转信息进行旋转。你可以根据 `uid\xxx.txt` 文件的旋转信息自己修改转码脚本，然后得到旋转后的视频。目前计划在 2.3 版本中加入使用转码脚本进行视频旋转的功能。
 
-## **2.2.3 版**
-
-该版本于 2018 年 10 月 18 日发布。修复问题列表详见下文。
-
-### 修复问题
-
-- 由 .backtrace 引起的 coredump 文件丢失。
-- Java jni 引起的崩溃和稳定性的优化。
-- manully mode 下转码脚本的 bug 修复。
-- Web 端客户加入频道后录制视频生成两份视频文件。
-- 偶现的主线程释放后子线程继续使用引起的崩溃。
 
 ## **2.2.2 版**
 
 该版本于 2018 年 8 月 1 日发布。新增特性与修复问题列表详见下文。
 
-
+> 下载包里有两个包，Java 和 C++ 。
 
 **改进**
 
@@ -90,6 +61,7 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 该版本于 2018 年 6 月 5 日发布。新增特性与修复问题列表详见下文。
 
+> 下载包里有两个包，Java 和 C++ 。
 
 **改进**
 
@@ -219,7 +191,7 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 -   支持音视频混合录制, 在 `API joinChannel`里新增参数 `mixedVideoAudio` 和 `cfgFilePath `。
 
--   新增合并同一个 uid 音视频文件功能，详见 [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)。
+-   新增合并同一个 uid 音视频文件功能，详见 [进阶：录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)。
 
 -   新增 `API getProperties`用于在录制开启时便能立即获取录制路径而无需加入频道。
 

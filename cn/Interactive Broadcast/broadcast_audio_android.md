@@ -3,7 +3,7 @@
 title: 实现语音直播
 description: 
 platform: Android
-updatedAt: Tue Oct 16 2018 10:26:22 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 20:00:51 GMT+0800 (CST)
 ---
 # 实现语音直播
 # 实现语音直播
@@ -14,7 +14,7 @@ updatedAt: Tue Oct 16 2018 10:26:22 GMT+0000 (UTC)
 
 1.  关于具体的开发环境要求、如何获取 App ID 以及 SDK 集成方法，详见 [设置开发环境](../../cn/Quickstart%20Guide/android_video.md) 。
 
-2.  参考 [OpenLive Voice Only for Android](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-Android) 了解如何从头创建一个实例项目。
+2.  参考 [OpenLive Voice Only for Android](https://github.com/AgoraIO/OpenLive-Voice-Only-Android) 了解如何从头创建一个实例项目。
 
 
 ## 快速开始
@@ -125,12 +125,12 @@ mRtcEngine.setClientRole(Constants.CLIENT_ROLE_BROADCASTER)
 
 在实现语音直播的过程中，你还可能需要使用以下功能:
 
--   [实现客户端连麦](../../cn/Quickstart%20Guide/hostin_android.md)
--   [实现跨直播间连麦](../../cn/Quickstart%20Guide/hostin_crosschannel_android.md)
--   [推流到 CDN](../../cn/Quickstart%20Guide/push_stream_android.md)
--   [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)
--   [选择加密方案](../../cn/Quickstart%20Guide/encryption_android_agora.md)
--   [修改裸数据](../../cn/Quickstart%20Guide/rawdata_android.md)
+-   [进阶：实现客户端连麦](../../cn/Quickstart%20Guide/hostin_android.md)
+-   [进阶：实现跨直播间连麦](../../cn/Quickstart%20Guide/hostin_crosschannel_android.md)
+-   [进阶：推流到 CDN](../../cn/Quickstart%20Guide/push_stream_android.md)
+-   [进阶：录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)
+-   [进阶：选择加密方案](../../cn/Quickstart%20Guide/encryption_android_agora.md)
+-   [进阶：修改裸数据](../../cn/Quickstart%20Guide/rawdata_android.md)
 
 更多功能实现，请参考 [互动直播 API](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/index.html) 中各 API 的功能及描述。
 
