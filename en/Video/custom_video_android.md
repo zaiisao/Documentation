@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Tue Nov 20 2018 03:48:34 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 03:48:39 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -40,6 +40,9 @@ Use the Push method to customize the audio source, where the SDK conducts no dat
         timestamp         // the timestamp of the audio frame
     );
 ```
+
+**Relevant APIs and descriptions**
+*  [`pushExternalAudioFrame`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e219a679d066cfc2544b5e8f9d4d69f)
 
 ### Customize the Video Source
 
@@ -107,6 +110,11 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
     }
 ```
 
+**Relevant APIs and descriptions**
+
+* [`setlVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa240e991d12b5240fc5fd362cbc0d521)
+* [`IVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_source.html)
+
 #### The Push Method
 
 Compared to the MediaIO method, the Push method uses less codes, but lacks any optimization to the captured video frame. This method requires developers to do the processing.
@@ -125,6 +133,9 @@ Compared to the MediaIO method, the Push method uses less codes, but lacks any o
         // Pass parameters of the frame such as format, width and height of the in the AgoraVideoFrame construct
     ));
 ```
+
+**Relevant APIs and descriptions**
+* [`pushExternalVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6e7327f4449800a2c2ddc200eb2c0386)
 
 The video source and renderer can be customized by switching on/off the video frame input based on the media engine callback. This simpler method can be used if an app has its own video module and only needs the Agora SDK for real-time communications. See [Customize the Video Source with the Agora Component](../../en/Video/custom_advanced_android.md) for details.
 
@@ -175,6 +186,12 @@ Use the IVideoSink Interface of MediaIO to customize the video renderer.
 
     rtcEngine.setLocalVideoRenderer(sink);
 ```
+
+**Relevant APIs and descriptions**
+* [`setLocalVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab10fd6d8dd89a5bca09b115ecd9e3416)
+* [`setRemoteVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0da32c040cb9d987df2950b83459ba56)
+* [`IVideoSink`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_sink.html)
+
 
 Agora provides a helper class and sample code for developers to customize the video renderer. See [Customize the Video Renderer with Agora Components](../../en/Video/custom_advanced_android.md) for details.
 
