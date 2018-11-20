@@ -3,7 +3,7 @@
 title: 计费
 description: 
 platform: 计费
-updatedAt: Tue Nov 20 2018 08:51:37 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 08:51:48 GMT+0000 (UTC)
 ---
 # 计费
 本页提供声网 Agora 实时音视频通话产品及服务相关的计费说明，以及常见问题和回答。关于直播、游戏等收费，请联系 sales@agora.io 。
@@ -251,7 +251,7 @@ updatedAt: Tue Nov 20 2018 08:51:37 GMT+0000 (UTC)
 
 则录制集合分辨率 = A 面积 + B 面积 + C 面积 + D 面积 = 547200 。因 547200 < 1280 x 720, 故该录制的集合分辨率位于 HD 档。
 
-> 在上面的示例里，如果用户 B 仅使用语音，则 B 面积 = 0 。录制集合分辨率 = A 面积 + B 面积 + C 面积 + D 面积 = 316800。因 316800 <1280 x 720, 故该录制的集合分辨率仍旧位于 HD 档。详见下文示例：
+> 在上面的示例里，如果用户 B 仅使用语音，则 B 面积 = 0 。录制集合分辨率 = A 面积 + B 面积 + C 面积 + D 面积 = 316800。因 316800 < 1280 x 720, 故该录制的集合分辨率仍旧位于 HD 档。详见下文示例：
 
 ### 示例 1: 高清档（HD）
 
@@ -271,35 +271,35 @@ updatedAt: Tue Nov 20 2018 08:51:37 GMT+0000 (UTC)
     <td>A</td>
     <td>30</td>
     <td>640 x 360</td>
-    <td>547200&lt;1280 x 720</td>
+    <td>547200 &lt; 1280 x 720</td>
     <td>高清（HD）</td>
   </tr>
   <tr>
     <td>B</td>
     <td>40</td>
     <td>640 x 360</td>
-    <td>547200&lt;1280 x 720</td>
+    <td>547200 &lt; 1280 x 720</td>
     <td>高清（HD）</td>
   </tr>
   <tr>
     <td>C</td>
     <td>10</td>
     <td>640 x 360</td>
-    <td>547200&lt;1280 x 720</td>
+    <td>547200 &lt; 1280 x 720</td>
     <td>高清（HD）</td>
   </tr>
   <tr>
     <td>D</td>
     <td>15</td>
     <td>240 x 180</td>
-    <td>734400&lt;1280 x 720</td>
+    <td>734400 &lt; 1280 x 720</td>
     <td>高清（HD）</td>
   </tr>
   <tr>
     <td>E</td>
     <td>30</td>
     <td>240 x 180</td>
-    <td>734400&lt;1280 x 720</td>
+    <td>734400 &lt; 1280 x 720</td>
     <td>高清（HD）</td>
   </tr>
 </table>
@@ -373,35 +373,35 @@ updatedAt: Tue Nov 20 2018 08:51:37 GMT+0000 (UTC)
     <td>A</td>
     <td>30</td>
     <td>640 x 360</td>
-    <td>1612800&gt;1280 x 720</td>
+    <td>1612800 &gt; 1280 x 720</td>
     <td>超清（HD+）</td>
   </tr>
   <tr>
     <td>B</td>
     <td>40</td>
     <td>640 x 360</td>
-    <td>1612800&gt;1280 x 720</td>
+    <td>1612800 &gt; 1280 x 720</td>
     <td>超清（HD+）</td>
   </tr>
   <tr>
     <td>C</td>
     <td>10</td>
     <td>640 x 360</td>
-    <td>1612800&gt;1280 x 720</td>
+    <td>1612800 &gt; 1280 x 720</td>
     <td>超清（HD+）</td>
   </tr>
   <tr>
     <td>D</td>
     <td>15</td>
     <td>1280 x 720</td>
-    <td>921600=1280 x 720</td>
+    <td>921600 = 1280 x 720</td>
     <td>高清（HD）</td>
   </tr>
   <tr>
     <td>E</td>
     <td>30</td>
     <td>1280 x 720</td>
-    <td>1612800&gt;1280 x 720</td>
+    <td>1612800 &gt; 1280 x 720</td>
     <td>超清（HD+）</td>
   </tr>
 </table>
@@ -474,35 +474,35 @@ updatedAt: Tue Nov 20 2018 08:51:37 GMT+0000 (UTC)
     <td>A</td>
     <td>30</td>
     <td>640 x 360</td>
-    <td>关闭其他视频 - 仅使用语音(自身640 x 360)</td>
+    <td>关闭其他视频 - 仅使用语音（自身640 x 360）</td>
     <td>N/A 按语音通信计费</td>
   </tr>
   <tr>
     <td>B</td>
     <td>40</td>
     <td>640 x 360</td>
-    <td>1612800&gt;1280 x 720</td>
+    <td>1612800 &gt; 1280 x 720</td>
     <td>超清（HD+）</td>
   </tr>
   <tr>
     <td>C</td>
     <td>10</td>
     <td>640 x 360</td>
-    <td>1612800&gt;1280 x 720</td>
+    <td>1612800 &gt; 1280 x 720</td>
     <td>超清（HD+）</td>
   </tr>
   <tr>
     <td>D</td>
     <td>15</td>
     <td>1280 x 720</td>
-    <td>921600=1280 x 720</td>
+    <td>921600 = 1280 x 720</td>
     <td>高清（HD）</td>
   </tr>
   <tr>
     <td>E</td>
     <td>30</td>
     <td>640 x 360</td>
-    <td>1612800&gt;1280 x 720</td>
+    <td>1612800 &gt; 1280 x 720</td>
     <td>超清（HD+）</td>
   </tr>
 </table>
