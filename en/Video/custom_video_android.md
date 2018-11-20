@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Thu Nov 15 2018 06:24:15 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 03:48:34 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
