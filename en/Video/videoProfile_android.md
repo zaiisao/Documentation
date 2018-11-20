@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Tue Nov 20 2018 03:33:02 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 03:33:05 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -33,7 +33,7 @@ The parameters specified in this API are the ideal values under ideal network co
 ```
 
 **Relevant APIs and descriptions**
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f): Set the video encoder configuration
 
 ## Considerations
 - If you do not need to set the video profile after joining the channel, call `setVideoEncoderConfiguration` before `enableVideo` to reduce the render time of the first video frame.
