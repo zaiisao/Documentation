@@ -3,7 +3,7 @@
 title: 视频相关
 description: 
 platform: 视频相关
-updatedAt: Tue Nov 20 2018 09:33:19 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 09:33:24 GMT+0000 (UTC)
 ---
 # 视频相关
 ### 我该如何选择视频分辨率、帧率、码率？
@@ -19,7 +19,7 @@ updatedAt: Tue Nov 20 2018 09:33:19 GMT+0000 (UTC)
    *    分辨率 320 * 240、帧率 15 fps、码率 200 Kbps
 
 如果你希望自定义视频参数，比如调高码率以保证视频质量，也可以使用 `setVideoEncoderConfiguration` 对各参数进行自定义设置。
-通常的，直播场景下需要较大码率来提升视频质量。因此 Agora 建议将直播码率值设为通信值的 2 倍。详情请[参考设置码率](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8) 。
+通常的，直播场景下需要较大码率来提升视频质量。因此 Agora 建议将直播码率值设为通信值的 2 倍。详情请参考 [设置码率](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8) 。
 
 ### 我该如何调整参数获取我想要的视频方向？
 
