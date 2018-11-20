@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Web
-updatedAt: Tue Nov 20 2018 03:07:47 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 03:07:51 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -27,7 +27,7 @@ localStream.init(function(){
 ```
 
 ## 开发注意事项
-- 不同的浏览器对分辨率的支持可能不同，详细的视频分辨率表可以在[这里](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setvideoprofile)查看。
+- 不同的浏览器对分辨率的支持可能不同，详细的视频分辨率表可以在[这里](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#setvideoprofile)查看。
 - 由于设备和浏览器的限制，部分浏览器对设置的 Video Profile 不一定能全部适配。这种情况下浏览器会自动调整分辨率，计费也将按照实际分辨率计算。
 - 视频能否达到 1080P 以上的分辨率取决于设备的性能，在性能配备较低的设备上有可能无法实现。如果采用720P分辨率而设备性能跟不上，则有可能出现帧率过低的情况。
 - Safari 浏览器视频帧率为 30 fps，不支持自定义视频帧率。
