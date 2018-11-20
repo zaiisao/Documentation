@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: iOS
-updatedAt: Tue Nov 20 2018 06:24:18 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 06:24:25 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -287,7 +287,7 @@ Use the IVideoSink Interface of MediaIO to customize the video renderer.
 		}
 	```
 	
-2. Pass the VideoREnderer object to AgoraRtcEngineKit.
+2. Pass the VideoRenderer object to AgoraRtcEngineKit.
 
 	```swift
 	//swift
