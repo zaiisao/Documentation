@@ -3,7 +3,7 @@
 title: 视频相关
 description: 
 platform: 视频相关
-updatedAt: Fri Nov 02 2018 04:06:10 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 09:19:41 GMT+0000 (UTC)
 ---
 # 视频相关
 ### 我该如何选择视频分辨率、帧率、码率？
