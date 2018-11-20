@@ -3,7 +3,7 @@
 title: 使用组件自定义视频源和渲染器
 description: 
 platform: Android
-updatedAt: Tue Nov 20 2018 06:49:19 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 06:49:24 GMT+0000 (UTC)
 ---
 # 使用组件自定义视频源和渲染器
 <a name = "custom_video_source"></a>
@@ -217,7 +217,7 @@ Agora SDK 中提供了默认的渲染器的实现，用来显示本地视频图�
 
 ### AgoraSurfaceView 的用法
 
-`AgoraSurfaceView` 继承了 SurfaceView 同时实现了 `IVideoSink` 接口，可以渲染 YUV、RGB 和 texture 类型（2D/OES）的视频帧。
+`AgoraSurfaceView` 继承了 SurfaceView 同时实现了 `IVideoSink` 接口，可以渲染 YUV420P、RGB 和 texture 类型（2D/OES）的视频帧。
 
 ```
 AgoraSurfaceView render = new AgoraSurfaceView(this);
@@ -228,7 +228,7 @@ rtcEngine.setLocalVideoRenderer(render);
 
 ### AgoraTextureView 的用法
 
-`AgoraTextureView` 继承了 TextureView 并实现了 `IVideoSink` 接口,可以渲染 YUV、RGB 和 texture类型（2D/OES）的视频帧。 下面代码展示了 `AgoraTextureView` 与自定义视频源配合使用，利用 TextureSource 所创建的 GL 环境：
+`AgoraTextureView` 继承了 TextureView 并实现了 `IVideoSink` 接口,可以渲染 YUV420P、RGB 和 texture类型（2D/OES）的视频帧。 下面代码展示了 `AgoraTextureView` 与自定义视频源配合使用，利用 TextureSource 所创建的 GL 环境：
 
 ```
 AgoraTextureCamera source = new AgoraTextureCamera(this, 640, 480);
