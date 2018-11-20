@@ -3,7 +3,7 @@
 title: Native SDK 相关
 description: 
 platform: Native SDK 相关
-updatedAt: Tue Nov 20 2018 09:52:43 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 09:53:34 GMT+0000 (UTC)
 ---
 # Native SDK 相关
 ## 踢人API
