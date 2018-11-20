@@ -3,11 +3,13 @@
 title: FAQ
 description: 
 platform: 集成和使用
-updatedAt: Tue Nov 20 2018 10:14:53 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 10:14:58 GMT+0000 (UTC)
 ---
 # FAQ
 该部分包含集成和使用 Agora SDK 过程中常见的问题。
 
+ [音频相关](../../cn/Agora%20Platform/audio_how_to.md)
+ 
  [视频相关](../../cn/Agora%20Platform/video_how_to.md)
 
  [直播相关](../../cn/Agora%20Platform/live_how_to.md)
@@ -20,10 +22,6 @@ updatedAt: Tue Nov 20 2018 10:14:53 GMT+0000 (UTC)
 
  [Native SDK 相关](../../cn/Agora%20Platform/nativesdk_how_to.md)
  
- [频道类常见问题](../../cn/Agora%20Platform/channel_faq.md)
-
- [Android 平台常见问题](../../cn/Agora%20Platform/android_related.md)
-
- [SDK 对断网、杀进程的处理](../../cn/Agora%20Platform/sdk_behaviors.md)
+ [小程序 SDK 相关](../../cn/Agora%20Platform/wechat_how_to.md)
 
  [其他常见问题](../../cn/Agora%20Platform/other_questions_how_to.md)
