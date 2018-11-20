@@ -3,7 +3,7 @@
 title: Native SDK 相关
 description: 
 platform: Native SDK 相关
-updatedAt: Tue Nov 20 2018 09:53:34 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 09:53:40 GMT+0000 (UTC)
 ---
 # Native SDK 相关
 ## 踢人API
@@ -25,18 +25,21 @@ Restful 踢人 API：https://api.agora.io/dev/v1/kicking-rule 。
 ## 两人语音聊天室集成 FAQ
 
 ### 客户场景
-社交行业 LB 客户：1 v 1音频聊天室，通信模式，客户集成代码简单，对错误回调或者质量参数缺少监控，问题发生时无法快速定位。
+
+社交行业 LB 客户：1 v 1 音频聊天室，通信模式，客户集成代码简单，对错误回调或者质量参数缺少监控，问题发生时无法快速定位。
 
 ### 集成问题及解决方案
 
 #### 频道内用户听对方声音小
 
 问题原因：用户使用通信模式，通信模式默认走听筒，公放场景客户不点公放，通话音量路由不会切换到扬声器，容易造成用户听声音特别小。
+
 解决方案：建议用户设置 `setEnableSpeakerphone`：YES，将默认路由设置为扬声器。
 
 #### 业务部门反馈声音效果差，技术部门缺少录音验证
 
 问题原因：客户对质量参数没有进行监控
+
 解决方案：
 * 监控 `onFirstLocalAudioFrame` 验证本地推流是否成功；
 * 监控 `onFirstRemoteAudioFram` 验证远端拉留是否成功；
@@ -47,5 +50,6 @@ Restful 踢人 API：https://api.agora.io/dev/v1/kicking-rule 。
 #### onError 中重复调用 leaveChannel 导致报错 18
 
 问题原因：声网一个 `joinChannel` 对应一个 `leaveChannel`，如果调用多次 `leaveChannel` 会导致 18 错误。
+
 解决方案：检查应用逻辑，同时增加 `onError` 错误判断，如果有18则不再执行 `leaveChannel` 避免死循环
 
