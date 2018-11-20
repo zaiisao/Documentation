@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS
-updatedAt: Tue Nov 20 2018 03:36:24 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 03:36:28 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -37,7 +37,7 @@ AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] 
 ```
 
 **Relevant APIs and descriptions**
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:): Set the video encoder configuration
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
 
 ## Considerations
 - If you do not need to set the video profile after joining the channel, call `setVideoEncoderConfiguration` before `enableVideo` to reduce the render time of the first video frame.
