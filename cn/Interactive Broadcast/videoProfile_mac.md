@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: macOS
-updatedAt: Tue Nov 20 2018 02:09:39 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 02:09:43 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -19,13 +19,17 @@ Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的�
 
 ```swift
 //swift
-// sets video profile before join channel
+// 首先配置一个VideoEncoderConfiguration实例
+// 参数请到API参考中的链接文档查看
 let config = AgoraVideoEncoderConfiguration(size: size, frameRate: frameRate, bitrate: bitrate, orientationMode: orientationMode)
+
 agoraKit.setVideoEncoderConfiguration(config)
 ```
 
 ```objective-c
 //objective-c
+// 首先配置一个VideoEncoderConfiguration实例
+// 参数请到API参考中的链接文档查看
 AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] initWithSize: size frameRate: frameRate bitrate: bitrate orientationMode: AgoraVideoOutputOrientationModeAdaptative];
 
 [agoraKit setVideoEncoderConfiguration: config];
