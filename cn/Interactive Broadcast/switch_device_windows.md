@@ -65,9 +65,10 @@ rep.enableAudioVolumeIndication(1000, // 回调间隔，以毫秒为单位
 ### 摄像头测试
 
 ```C++
+// 初始化参数对象
+RtcEngineParameters rep(*lpRtcEngine);
 
-// 1. Find all video capture devices.
-
+// 枚举所有视频采集设备
 AVideoDeviceManager* lpDeviceManager = new AVideoDeviceManager(lpRtcEngine);
 IVideoDeviceCollection *lpVideoDeviceCollection = (*lpDeviceManager)->enumerateVideoDevices();
 
@@ -81,18 +82,16 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 	...
 }
 
-// 2. Choose one device.
+// 选择一个视频采集设备
+lpDeviceManager->setDevice(strDeviceID); // device ID chosen
 
-lpDeviceManager->setDevice(strDeviceID); // The chosen device ID.
+// 开始视频采集设备测试，如果正常的话，你将会看到画面预览
+(*lpDeviceManager)->startDeviceTest(view); // pass a window handler to it
 
-// 3. Start video capture device testing and you will see the preview.
-
-(*lpDeviceManager)->startDeviceTest(view); // Pass a window handler on to it.
-
-// 4. Stop video capture device testing.
-
+// 停止视频采集设备测试
 (*lpDeviceManager)->stopDeviceTest();
 ```
+
 
 ### 外放测试
 
