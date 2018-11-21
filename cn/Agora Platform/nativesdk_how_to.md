@@ -3,16 +3,14 @@
 title: Native SDK 相关
 description: 
 platform: Native SDK 相关
-updatedAt: Wed Nov 21 2018 10:09:34 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 10:09:38 GMT+0000 (UTC)
 ---
 # Native SDK 相关
 ## 踢人API
 
 ### 功能介绍
 
-Restful 踢人 API：https://api.agora.io/dev/v1/kicking-rule 。
-
-具体使用方法请参见开发者中心：https://docs.agora.io/cn/Video/dashboard_restful_communication?platform=All_Platforms 。
+Restful 踢人 API：`https://api.agora.io/dev/v1/kicking-rule `，具体使用方法请参见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
 
 ### 适用场景
 
