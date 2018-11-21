@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Wed Nov 21 2018 08:10:39 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:10:44 GMT+0000 (UTC)
 ---
 # 录制相关
 ## 录制 SDK
@@ -35,6 +35,7 @@ updatedAt: Wed Nov 21 2018 08:10:39 GMT+0000 (UTC)
 ### 客户端和服务器端使用相同的 appId，为什么没有录制文件?
 
 当你在服务器端调用 API `joinChannel`，设置 `channelProfile` 参数时，请将频道模式设置的与客户端设置的一样。例如:
+
 当客户端设为直播模式，录制服务器端设为通信模式，加入频道后，直播模式与通信模式无法互通，因此没有录制文件。
 
 ### 如何使用 Channel Key?
@@ -67,6 +68,7 @@ updatedAt: Wed Nov 21 2018 08:10:39 GMT+0000 (UTC)
 ### 如何对录制文件进行转码?
 
 关于如何手动对录制文件进行转码，详见 [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)。
+
 如果出现问题，请联系客户支持分析和定位问题。
 
 ### 我可以自己设置录制文件的路径和文件名？
@@ -223,5 +225,5 @@ agorasdk.json
    a. 如果没有专门设置 core 文件的目录，那么 core 文件一般是在录制的 AgoraCoreService文件所在的目录。
    b. 如果还是没有找到，Linux 上执行 ulimit -c， 输出如果为0，则说明 coredump 没有打开，需要通过执行 ulimit -c unlimited 打开。
    c. 同时跑开启 coredump 的脚本 。
-   d.打开后，之后再出现 crash 就可以生成 core 文件了。
-   e.针对这次没有 core 文件生成的场景，收集 `recording_sys.log`，这种场景很难分析出问题，建议用户后续再生成 core 文件再分析。
+   d. 打开后，之后再出现 crash 就可以生成 core 文件了。
+   e. 针对这次没有 core 文件生成的场景，收集 `recording_sys.log`，这种场景很难分析出问题，建议用户后续再生成 core 文件再分析。
