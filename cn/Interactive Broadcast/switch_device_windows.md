@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 14:22:16 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 14:22:22 GMT+0000 (UTC)
 ---
 # 音视频设备测试与切换
 ## 功能描述
@@ -17,6 +17,8 @@ updatedAt: Wed Nov 21 2018 14:22:16 GMT+0000 (UTC)
     2、线上用户进行自我排查纠错。
 
 ## 实现方法
+
+### 麦克风测试
 
 ```C++
 // 1. find all audio recording devices
@@ -63,6 +65,10 @@ rep.enableAudioVolumeIndication(1000 /* interval */, 10 /* smooth */);
 
 
 
+### 摄像头测试
+
+### 摄像头测试
+
 ```C++
 
 // 1. Find all video capture devices.
@@ -92,6 +98,8 @@ lpDeviceManager->setDevice(strDeviceID); // The chosen device ID.
 
 (*lpDeviceManager)->stopDeviceTest();
 ```
+
+### 外放测试
 
 ```C++
 // 1. find all audio playback devices
