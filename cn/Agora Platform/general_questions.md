@@ -2,8 +2,8 @@
 ---
 title: FAQ
 description: 
-platform: 常见问题
-updatedAt: Wed Nov 21 2018 10:23:31 GMT+0000 (UTC)
+platform: All Platforms
+updatedAt: Wed Nov 21 2018 10:27:43 GMT+0000 (UTC)
 ---
 # FAQ
 ## 常见问题回答
