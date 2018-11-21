@@ -3,12 +3,14 @@
 title: 音视频设备测试与切换
 description: 
 platform: Android
-updatedAt: Wed Nov 21 2018 14:07:42 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 14:07:59 GMT+0000 (UTC)
 ---
 # 音视频设备测试与切换
 ## 功能描述
 
-很多开发者在 App 上线后会收到用户反馈听不到对方说话，或看不到对方的视频画面。这些问题部分是因为客户的本地麦克风或者喇叭不可用，部分是客户的摄像头损坏。声网提供的音视频测试与切换功能可以帮助开发者进行一些设备测试，检测摄像头是否能正常工作，检测音频设备是否可以正常录音及播放。
+很多开发者在 App 上线后会收到用户反馈听不到对方说话，或看不到对方的视频画面。这些问题部分是因为客户的本地麦克风或者喇叭不可用，部分是客户的摄像头损坏。
+
+声网提供的音视频测试与切换功能可以帮助开发者进行一些设备测试，检测摄像头是否能正常工作，检测音频设备是否可以正常录音及播放。音频测试检查系统的音频设备（耳麦、扬声器等）和网络连接是否正常。在测试过程中，用户先说一段话，在 10 秒后，声音会回放出来。如果 10 秒后用户能正常听到自己刚才说的话，就表示系统音频设备和网络连接都是正常的。
 
 你可以在以下情况使用该功能：
     1、直播场景下，在开播前请主播自测。
@@ -26,7 +28,7 @@ updatedAt: Wed Nov 21 2018 14:07:42 GMT+0000 (UTC)
 	rtcEngine.stopEchoTest();
 ```
 
-### API参考
+## API 参考
 
 - [startEchoTest()](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac93b84c9ebbb32f5ee304732804ec1b9)
 - [stopEchoTest()](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a01b8067275003c011f6d81bb41ee0fe1)
