@@ -3,7 +3,7 @@
 title: 信令密钥说明
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 21 2018 03:28:11 GMT+0800 (CST)
+updatedAt: Wed Nov 21 2018 03:31:43 GMT+0800 (CST)
 ---
 # 信令密钥说明
 # 密钥说明
