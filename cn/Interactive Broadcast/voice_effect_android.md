@@ -3,7 +3,7 @@
 title: 调整音调、音色
 description: How to adjust voice effect for Android
 platform: Android
-updatedAt: Wed Nov 21 2018 02:46:01 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 02:46:05 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
@@ -18,9 +18,9 @@ double pitch = 0.5;
 rtcEngine.setLocalVoicePitch(pitch);
   
 // 设置本地语音均衡波段的中心频率
-// 第1个参数为频谱子带索引，取值范围 [0-9]，分别代表 10 个频带，对应的中心频率是 [31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, 16k] Hz
+// 第1个参数为频谱子带索引，取值范围 [0, 9]，分别代表 10 个频带，对应的中心频率是 [31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, 16k] Hz
 // 第2个参数为每个频率区间的增益值，取值范围 [-15,15]，单位 dB, 默认值为 0
-rtcEngine.setLocalVoiceEqualization(0, -15]);
+rtcEngine.setLocalVoiceEqualization(0, -15);
 rtcEngine.setLocalVoiceEqualization(1, 3);
 rtcEngine.setLocalVoiceEqualization(2, -9);
 rtcEngine.setLocalVoiceEqualization(3, -8);
