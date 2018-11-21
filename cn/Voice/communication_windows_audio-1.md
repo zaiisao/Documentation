@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Windows
-updatedAt: Thu Nov 01 2018 08:19:56 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 02:27:22 GMT+0800 (CST)
 ---
 # 实现语音通话
 # 实现语音通话
@@ -14,7 +14,7 @@ updatedAt: Thu Nov 01 2018 08:19:56 GMT+0000 (UTC)
 
 -   具体的开发环境要求、如何获取 App ID 以及 SDK 集成方法，详见 [设置开发环境](../../cn/Quickstart%20Guide/windows_video.md) 。
 
--   参考 [示例项目](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows) 了解如何从头创建一个示例项目。
+-   参考 [https://github.com/AgoraIO/OpenVideoCall-Windows/tree/dev/2.3.0](https://github.com/AgoraIO/OpenVideoCall-Windows/tree/dev/2.3.0) 了解如何从头创建一个示例项目。
 
 
 ## 快速开始

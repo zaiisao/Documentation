@@ -3,9 +3,11 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Fri Nov 02 2018 04:07:56 GMT+0000 (UTC)
+updatedAt: Thu Sep 27 2018 20:10:43 GMT+0800 (CST)
 ---
 # 发版说明
+# 发版说明
+
 ## 简介
 
 该游戏软件包提供游戏语音和视频功能。

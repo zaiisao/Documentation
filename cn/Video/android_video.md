@@ -1,11 +1,13 @@
 
 ---
-title: 集成客户端 
+title: 设置开发环境
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 03:59:02 GMT+0000 (UTC)
+updatedAt: Tue Sep 18 2018 21:35:12 GMT+0800 (CST)
 ---
-# 集成客户端 
+# 设置开发环境
+# 设置开发环境
+
 ## 前提条件
 
 请确保满足以下开发环境要求:
@@ -14,12 +16,15 @@ updatedAt: Fri Nov 02 2018 03:59:02 GMT+0000 (UTC)
 
 -   Android Studio 2.0 或以上版本
 
--   Android [视频通话/视频直播 SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)
+-   Android [视频通话/视频直播 SDK](https://docs.agora.io/cn/2.3.1/download)
 
 -   App 要求 Android 4.1 或以上设备
 
 
 请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
+
+
+> 你也可以下载 [语音通话/语音直播 SDK](https://docs.agora.io/cn/2.3.1/download) 并设置开发环境。语音和视频包的唯一区别是视频 SDK 包含语音和视频功能，详见 [设置开发环境](../../cn/Quickstart%20Guide/android_audio.md)。
 
 ## 注册账号和 App ID
 
@@ -33,20 +38,20 @@ updatedAt: Fri Nov 02 2018 03:59:02 GMT+0000 (UTC)
 
 5.  在你的 Android Studio 项目里，定位到 `app/src/main/res/values/strings.xml` 文件，并添加 App ID，如下图所示:
 
-	<img alt="../_images/video_appid.png" src="https://web-cdn.agora.io/docs-files/cn/video_appid.png" style="width: 500.0px;"/>
+	<img alt="../_images/video_appid.png" src="https://web-cdn.agora.io/docs-files/cn/video_appid.png" style="width: 530.0px; height: 85.0px;"/>
 
 
 ## 添加 SDK
 
 1.  在你的 Android Studio 项目里，从 **Project Files** 视图的 `app `文件夹下打开 `build.gradle` 文件。请把 `libs` 文件夹路径记在右边的 `fileTree` 里，因为这是你稍后放置 Android SDK 文件的路径。
 
-	<img alt="../_images/video_buildgradle.png" src="https://web-cdn.agora.io/docs-files/cn/video_buildgradle.png" />
+	<img alt="../_images/video_buildgradle.png" src="https://web-cdn.agora.io/docs-files/cn/video_buildgradle.png" style="width: 884.8px; height: 368.0px;"/>
 
 > -  `libs` 路径与应用程序的 `app` 目录相关。
 > -   确保路径名称不包含中文字符。如果路径包含中文字符，则代码无法编译成功且会显示包含随机 ASCII 字符的错误信息。
 
 
-2.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) Android 视频通话/视频直播 SDK。
+2.  [下载](https://docs.agora.io/cn/2.3.1/download) Android 视频通话/视频直播 SDK。
 
 3.  将下载的软件包中 `libs` 文件夹下的库复制到上文 `build.gradle` 文件的路径下。下表列出了 `libs` 文件夹内包含的内容:
 
@@ -101,26 +106,26 @@ sourceSets{
 
 点击 **Sync Project With Gradle Files** ，直到同步完成。
 
-<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 500px;"/>
+<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 508.8px; height: 212.4px;"/>
 
 
 ## 配置 NDK
 
 如果出现以下问题，请下载并安装 [Android NDK](https://developer.android.com/ndk/)：
 
-<img alt="../_images/android6.png" src="https://web-cdn.agora.io/docs-files/cn/android6.png" style="width: 500px; "/>
+<img alt="../_images/android6.png" src="https://web-cdn.agora.io/docs-files/cn/android6.png" style="width: 559.2px; height: 157.2px;"/>
 
 1.  点击 Configure 按钮，并选择 **Project Defaults** \> **Project Structure**。 如下图所示:
 
-	<img alt="../_images/project_structure.png" src="https://web-cdn.agora.io/docs-files/cn/project_structure.png" />
+	<img alt="../_images/project_structure.png" src="https://web-cdn.agora.io/docs-files/cn/project_structure.png" style="width: 886.0px; height: 687.0px;"/>
 
 2.  将 [Android NDK](https://developer.android.com/ndk/) 复制到 Android Studio 项目的 Android NDK 位置。如下图所示：
 
-	<img alt="../_images/android7.png" src="https://web-cdn.agora.io/docs-files/cn/android7.png"/>
+	<img alt="../_images/android7.png" src="https://web-cdn.agora.io/docs-files/cn/android7.png" style="width: 680.8px; height: 605.6px;"/>
 
 3.  点击 **Sync Project With Gradle Files** , 重新将 Android 项目与 NDK 文件进行同步。
 
-	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 500px; "/>
+	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 508.8px; height: 212.4px;"/>
 
 
 ## 添加权限
@@ -144,7 +149,7 @@ sourceSets{
 
 2.  点击 **Sync Project With Gradle Files** , 重新将 Android 项目与 `AndroidManifest.xml` 文件进行同步。
 
-	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 500px; "/>
+	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/cn/android9.png" style="width: 508.8px; height: 212.4px;"/>
 
 
 ## 防止混淆代码
@@ -155,6 +160,6 @@ sourceSets{
 -keep class io.agora.**{*;}
 ```
 
-你已经完成了客户端集成, 可以开始使用 Agora SDK 了！
+现在你已经设置好了 Android 开发环境, 可以开始使用 Agora 视频通话/视频直播 SDK 了！
 
 

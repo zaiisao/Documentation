@@ -1,11 +1,13 @@
 
 ---
-title: 集成客户端
+title: 设置开发环境
 description: 
 platform: macOS
-updatedAt: Wed Nov 14 2018 04:04:19 GMT+0000 (UTC)
+updatedAt: Tue Sep 18 2018 00:55:25 GMT+0800 (CST)
 ---
-# 集成客户端
+# 设置开发环境
+# 设置开发环境
+
 ## 前提条件
 
 - Xcode 9.0+。
@@ -14,16 +16,17 @@ updatedAt: Wed Nov 14 2018 04:04:19 GMT+0000 (UTC)
 - 请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
 
 ## <a name = "appid-mac"></a>创建 Agora 账号并获取 App ID
+
 1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
 2. 登陆 Dashboard 页面，点击 **添加新项目**。
 
-	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
+	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" style="width: 1133.0px; height: 372.0px;"/>
 
-1. 填写 **项目名**，然后点击 **提交**。
-2. 在你创建的项目下，查看并获取该项目对应的 **App ID**。
+3. 填写 **项目名**，然后点击 **提交**。
 
-	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" />
+4. 在你创建的项目下，查看并获取该项目对应的 **App ID**。
 
+	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" style="width: 1141.0px; height: 334.0px;"/>
 
 ## 添加 Agora SDK 到项目中
 
@@ -80,14 +83,14 @@ updatedAt: Wed Nov 14 2018 04:04:19 GMT+0000 (UTC)
 
 ### <a name = "man-add"></a>手动添加库
 
-1. 下载 [Agora Video SDK for macOS](https://docs.agora.io/cn/Agora%20Platform/downloads)，并解压。
+1. 下载 [Agora Video SDK for macOS](https://docs.agora.io/cn/2.4/download)，并解压。
 2. 使用 Xcode 打开你想要运行的项目，然后选中当前 Target。
 
-	<img alt="../_images/mac_video_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_1.jpg" />
+	<img alt="../_images/mac_video_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_1.jpg" style="width: 991.0px; height: 342.0px;"/>
 
 3. 打开 **Build Phases** 页签。
 
-	<img alt="../_images/mac_video_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_2.jpg" />
+	<img alt="../_images/mac_video_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_2.jpg" style="width: 994.0px; height: 291.0px;"/>
 
 4. 展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加。
   - `libresolv.tbd`
@@ -96,6 +99,7 @@ updatedAt: Wed Nov 14 2018 04:04:19 GMT+0000 (UTC)
  - `SystemConfiguration.framework`
  - `CoreWLAN.framework`
  - `Foundation.framework`
+ - `QTKit.framework`
  - `CoreAudio.framework`
  - `CoreMedia.framework`
  - `AVFoudation.framework`
@@ -105,15 +109,15 @@ updatedAt: Wed Nov 14 2018 04:04:19 GMT+0000 (UTC)
 
 	**添加前：**
 
-	<img alt="../_images/mac_video_3.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_3.jpg" />
+	<img alt="../_images/mac_video_3.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_3.jpg" style="width: 992.0px; height: 379.0px;"/>
 
 	**添加后：**
 
-	<img alt="../_images/mac_video_4.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_4.jpg" />
+	<img alt="../_images/mac_video_4.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_4.jpg" style="width: 993.0px; height: 567.0px;"/>
 
 	其中，`AgoraRtcEngineKit.framework` 位于下载下来的 SDK 包 `libs` 文件夹下。因此点击 **+** 后，还需要点击 **Add Other…** ，然后进入到 SDK 的 `libs` 路径下，点击并添加 `AgoraRtcEngineKit.framework`。
 
-	<img alt="../_images/mac_video_5.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_5.jpg" />
+	<img alt="../_images/mac_video_5.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_5.jpg" style="width: 994.0px; height: 547.0px;"/>
 
 ## 授权使用 Agora SDK
 
@@ -124,11 +128,11 @@ updatedAt: Wed Nov 14 2018 04:04:19 GMT+0000 (UTC)
 
 **添加前：**
 
-<img alt="../_images/mac_video_6.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_6.jpg" />
+<img alt="../_images/mac_video_6.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_6.jpg" style="width: 992.0px; height: 352.0px;"/>
 
 **添加后：**
 
-<img alt="../_images/mac_video_7.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_7.jpg" />
+<img alt="../_images/mac_video_7.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_7.jpg" style="width: 992.0px; height: 368.0px;"/>
 
 ## 访问库
 
@@ -144,6 +148,4 @@ updatedAt: Wed Nov 14 2018 04:04:19 GMT+0000 (UTC)
 
 在项目需要使用 Agora Video SDK API 的文件里，填入  `import AgoraAudioKit`。
 
-<img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_8.jpg" />
-
-你已经完成了客户端集成，可以 开始使用 Agora SDK。
+<img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_8.jpg" style="width: 990.0px; height: 367.0px;"/>

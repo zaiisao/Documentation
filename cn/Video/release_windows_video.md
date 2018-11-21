@@ -3,8 +3,9 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 03:58:33 GMT+0000 (UTC)
+updatedAt: Thu Sep 27 2018 19:12:59 GMT+0800 (CST)
 ---
+# 发版说明
 # 发版说明
 
 本文提供 Agora 完整包的发版说明。
@@ -20,17 +21,17 @@ Windows 完整包支持两种主要场景:
 
 将下载的 Windows 软件包解压后, 你会看见两个包，根据实际情况选择使用 x64 或 x86 包:
 
-<img alt="../_images/windows_package.png" src="https://web-cdn.agora.io/docs-files/cn/windows_package.png" style="width: 300px; "/>
+<img alt="../_images/windows_package.png" src="https://web-cdn.agora.io/docs-files/cn/windows_package.png" style="width: 297.0px; height: 51.0px;"/>
 
 
 解压 x64 或 x86 后，包内的 examples 文件夹下有两个示例代码供你演示功能使用: AgoraOpenLive 和 OpenVideoCall 。 在编译示例代码时须确保编译环境选对。例如，x64 编译环境选择 x64:
 
-<img alt="../_images/x64.png" src="https://web-cdn.agora.io/docs-files/cn/x64.png" style="width: 300px; "/>
+<img alt="../_images/x64.png" src="https://web-cdn.agora.io/docs-files/cn/x64.png" style="width: 282.0px; height: 53.5px;"/>
 
 
 x86 的编译环境选择 Win32:
 
-<img alt="../_images/x86.png" src="https://web-cdn.agora.io/docs-files/cn/x86.png" style="width: 300px; "/>
+<img alt="../_images/x86.png" src="https://web-cdn.agora.io/docs-files/cn/x86.png" style="width: 278.0px; height: 42.0px;"/>
 
 
 ## **2.2.0 版**
@@ -53,7 +54,7 @@ x86 的编译环境选择 Win32:
 
 #### 2. 服务端部署代理服务器
 
-通过 Agora 部署的代理服务器，方便有企业防火墙的用户设置代理服务器，以使用 Agora 的服务。详见 [企业部署代理服务器](../../cn/Quickstart%20Guide/proxy.md) 中的描述。
+通过 Agora 部署的代理服务器，方便有企业防火墙的用户设置代理服务器，以使用 Agora 的服务。详见 [进阶：企业部署代理服务器](../../cn/Quickstart%20Guide/proxy.md) 中的描述。
 
 修复了连麦后退出频道后再进入频道连麦对端看不到自己的问题。
 
@@ -114,7 +115,7 @@ x86 的编译环境选择 Win32:
 
 **升级必看**
 
-SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，但带宽也会变大。
+SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，但带宽也会变大。如出现带宽异常，请联系商务 [sales@agora.io](mailto:sales@agora.io) 或拨打 400 632 6626。
 
 **问题修复**
 
@@ -153,14 +154,14 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 在直播场景下，同一频道内支持 17 位主播同时进行视频直播和连麦，详见:
 
--   [实现视频直播](../../cn/Quickstart%20Guide/broadcast_video_windows.md)
+-   [入门: 实现视频直播](../../cn/Quickstart%20Guide/broadcast_video_windows.md)
 
--   [实现 17 人直播场景](../../cn/Quickstart%20Guide/seventeen_people.md)
+-   [进阶：实现 17 人直播场景](../../cn/Quickstart%20Guide/seventeen_people.md)
 
 
 #### 5. 插入外部视频源
 
-直播场景下，可以将采集到的视频添加到正在进行的直播中，直播室里的主播和观众可以一起边看电影、比赛或演出，边进行点评、互动等功能，会让现有的直播话题更广、体验更好。 仅支持拉入一路流，格式包括: RTMP, HLS, FLV。赛事直播最多同时支持 5 人连麦直播。详见 [外部输入直播视频源](../../cn/Quickstart%20Guide/inject_stream_windows.md) 。
+直播场景下，可以将采集到的视频添加到正在进行的直播中，直播室里的主播和观众可以一起边看电影、比赛或演出，边进行点评、互动等功能，会让现有的直播话题更广、体验更好。 仅支持拉入一路流，格式包括: RTMP, HLS, FLV。赛事直播最多同时支持 5 人连麦直播。详见 [进阶：外部输入直播视频源](../../cn/Quickstart%20Guide/inject_stream_windows.md) 。
 
 
 #### 6. 新增直播场景下的屏幕共享功能
@@ -234,9 +235,9 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 附上 Agora Recording SDK 的使用方法:
 
--   [录制快速开始](../../cn/Quickstart%20Guide/recording_cpp-1.md)
+-   [入门：录制快速开始](../../cn/Quickstart%20Guide/recording_cpp-1.md)
 
--   [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)
+-   [进阶：录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)
 
 -   [录制 API](../../cn/API%20Reference/recording_cpp.md)
 
@@ -362,7 +363,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
     -   1.14 以前: 码率控制不够精准，上下波动幅度较大。波动过大容易造成网络拥塞，增加丢包、丢帧的概率，影响了带宽估计模块的精度，特别是在弱网低码率情况下尤为明显。
 
-    -   1.14 开始: 精准的码率控制，要多少给多少，不多给也不少给，避免波动过大造成的网络拥塞，减少传输延时，有助于减少网络卡顿。
+    -   1.14 开始: 精准的码率控制，要多少给多少，不多给也不少给，避免波动过大造成的网络拥塞，减少传输延时，有助于减少网络卡顿。如有需要，请联系 [sales@agora.io](mailto:sales@agora.io) 获取使用方法。
 
 
 **问题修复**
@@ -388,11 +389,11 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 -   新增 API `onClientRoleChanged` 用于提醒直播场景下主播、观众上下麦的回调。
 
--   新增单独关闭语音播放的功能。
+-   新增单独关闭语音播放的功能。如有需要，请联系 [sales@agora.io](mailto:sales@agora.io)。
 
 -   新增功能支持服务端推流失败回调。
 
--   屏幕共享直播场景下采集声卡选项动态开启和关闭。
+-   屏幕共享直播场景下采集声卡选项动态开启和关闭。如有需要，请联系 [sales@agora.io](mailto:sales@agora.io)。
 
 
 **改进**
@@ -437,6 +438,8 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 -   网络和设备状态良好的情况下可以做到比 180P 更好的画质清晰度。
 
+
+如有需要，请联系 [sales@agora.io](mailto:sales@agora.io) 。
 
 **修复问题**
 

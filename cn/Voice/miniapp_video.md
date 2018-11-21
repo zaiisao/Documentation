@@ -1,11 +1,13 @@
 
 ---
-title: 集成客户端
+title: 设置开发环境
 description: 
 platform: 微信小程序
-updatedAt: Mon Nov 12 2018 02:43:51 GMT+0000 (UTC)
+updatedAt: Tue Sep 18 2018 01:00:00 GMT+0800 (CST)
 ---
-# 集成客户端
+# 设置开发环境
+# 设置开发环境
+
 ## 前提条件
 
 请确保满足以下开发环境要求：
@@ -14,17 +16,13 @@ updatedAt: Mon Nov 12 2018 02:43:51 GMT+0000 (UTC)
 
 -   请确保你的微信小程序基础库支持 `live-pusher` 及 `live-player` 组件，且这两个组件在微信开发者工具中打开。
 
--   请确保在微信公众平台账号的开发设置中，给予以下域名请求权限：
+-   请确保给予以下域名请求权限：
 
-	```
-	https://miniapp.agoraio.cn
-	https://miniapp-1.agoraio.cn
-	https://miniapp-2.agoraio.cn
-	https://miniapp-3.agoraio.cn
-	https://miniapp-4.agoraio.cn
-	https://uni-webcollector.agora.io
-	wss://miniapp.agoraio.cn
-	```
+    ```
+    https://miniapp.agoraio.cn
+    https://uni-webcollector.agora.io
+    wss://miniapp.agoraio.cn
+    ```
 
 -   请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
 
@@ -37,13 +35,17 @@ updatedAt: Mon Nov 12 2018 02:43:51 GMT+0000 (UTC)
 
 2.  登陆 Dashboard 页面，点击 **添加新项目**。
 
-	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
+
+<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" style="width: 906.4px; height: 260.6px;"/>
+
 
 3.  填写 **项目名**，然后点击 **提交**。
 
 4.  在你创建的项目下，查看并获取该项目对应的 **App ID**。
 
-	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" />
+
+<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" style="width: 912.8px; height: 230.2px;"/>
+
 
 5.  联系 [sales@agora.io](mailto:sales@agora.io) 为该 App ID 开通小程序权限。
 
@@ -84,7 +86,7 @@ updatedAt: Mon Nov 12 2018 02:43:51 GMT+0000 (UTC)
 
 ## 集成小程序 SDK
 
-1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 声网小程序 SDK 并解压。
+1.  [下载](https://docs.agora.io/cn/2.3.1/download) 声网小程序 SDK 并解压。
 
 2.  将 SDK 包中到的 mini-app-sdk-production 文件复制到你的小程序项目文件夹中。
 
@@ -97,7 +99,4 @@ const AgoraMiniappSDK = require('../../lib/mini-app-sdk-production.js');
 
 其中 `../../lib/mini-app-sdk-production.js` 为你的 js 文件本地路径。
 
-你已经完成了客户端集成，可以开始使用 Agora SDK 了。
 
-你可以直接参考下图中 API 的调用顺序，实现想要的功能。也可以分别参考**快速开始**中的其他步骤进行实现。
-![](https://web-cdn.agora.io/docs-files/1541990512316)

@@ -3,9 +3,11 @@
 title: 错误代码和警告代码
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:09:15 GMT+0000 (UTC)
+updatedAt: Wed Sep 26 2018 04:22:54 GMT+0800 (CST)
 ---
 # 错误代码和警告代码
+# 错误代码和警告代码
+
 <table>
 <colgroup>
 <col/>

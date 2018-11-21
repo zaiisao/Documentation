@@ -3,9 +3,11 @@
 title: 选择加密方案
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:04:18 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 19:56:18 GMT+0800 (CST)
 ---
 # 选择加密方案
+# 选择加密方案
+
 本文描述如何使用 Agora 内置的加密方案。
 
 > 通信和直播均支持加密功能。但是在直播场景下，如果你需要使用旁路推流，录制和储存，请勿使用数据加密功能。
@@ -16,7 +18,7 @@ updatedAt: Fri Nov 02 2018 04:04:18 GMT+0000 (UTC)
 
 ## 场景 2: 需要加密
 
-<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 500px;"/>
+<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 532.0px; height: 410.2px;"/>
 
 
 ### 步骤 1: 启用加密功能。
@@ -31,7 +33,7 @@ updatedAt: Fri Nov 02 2018 04:04:18 GMT+0000 (UTC)
 
 下图描述了集成了自定义加密解密算法的声网音视频通信方案：
 
-<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 500px;"/>
+<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 532.0px; height: 424.2px;"/>
 
 
 ### 步骤 1: 注册数据包观测器
@@ -49,48 +51,45 @@ class IPacketObserver
 {
 public:
 
-struct Packet
-{
-        /** Buffer address of the sent or received data.
-         */
-const unsigned char* buffer;
-        /** Buffer size of the sent or received data.
-         */
-unsigned int size;
-};
-/** An audio packet is sent to other users.
+        struct Packet
+        {
+                const unsigned char* buffer;
+                unsigned int size;
+        };
+        /**
+        * called by sdk before the audio packet is sent to other participants
+        * @param [in,out] packet:
+        *      buffer *buffer points the data to be sent
+        *      size of buffer data to be sent
+        * @return returns true to send out the packet, returns false to discard the packet
+        */
+        virtual bool onSendAudioPacket(Packet& packet) = 0;
+        /**
+        * called by sdk before the video packet is sent to other participants
+        * @param [in,out] packet:
+        *      buffer *buffer points the data to be sent
+        *      size of buffer data to be sent
+        * @return returns true to send out the packet, returns false to discard the packet
+        */
 
-     @param packet See Packet.
-     @return
-     - true: The packet is sent successfully.
-     - false: The packet is discarded.
-     */
-virtual bool onSendAudioPacket(Packet& packet) = 0;
-/** A video packet is sent to other users.
 
-     @param packet See Packet.
-     @return
-     - true: The packet is sent successfully.
-     - false: The packet is discarded.
-     */
 virtual bool onSendVideoPacket(Packet& packet) = 0;
-/** An audio packet is sent by other users.
-
-     @param packet See Packet.
-     @return
-     - true: The packet is received successfully.
-     - false: The packet is discarded.
-*/
-virtual bool onReceiveAudioPacket(Packet& packet) = 0;
-/** A video packet is sent by other users.
-
-     @param packet See Packet.
-     @return
-     - true: The packet is received successfully.
-     - false: The packet is discarded.
-*/
-virtual bool onReceiveVideoPacket(Packet& packet) = 0;
-};
+        /**
+        * called by sdk when the audio packet is received from other participants
+        * @param [in,out] packet
+        *      buffer *buffer points the data to be sent
+        *      size of buffer data to be sent
+        * @return returns true to process the packet, returns false to discard the packet
+        */
+        virtual bool onReceiveAudioPacket(Packet& packet) = 0;
+        /**
+        * called by sdk when the video packet is received from other participants
+        * @param [in,out] packet
+        *      buffer *buffer points the data to be sent
+        *      size of buffer data to be sent
+        * @return returns true to process the packet, returns false to discard the packet
+        */
+        virtual bool onReceiveVideoPacket(Packet& packet) = 0;
 ```
 
 ### 步骤 2: 使用定制的数据加密算法

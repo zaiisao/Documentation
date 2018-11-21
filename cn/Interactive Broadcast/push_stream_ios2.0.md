@@ -3,28 +3,32 @@
 title: 推流到 CDN
 description: 
 platform: iOS,macOS
-updatedAt: Thu Nov 15 2018 09:50:49 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 19:59:03 GMT+0800 (CST)
 ---
 # 推流到 CDN
-## 功能描述
+# 推流到 CDN
 
-旁路推流功能用于将主播的上行音视频流转化为 RTMP 流分发，供 Web 端或流媒体播放器端观看。
+互动直播目前同时提供新老两套 CDN 推流方案：
 
+- 新的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
+  - `addPublishStreamUrl`
+  - `removePublishStreamUrl`
+  - `addInjectStreamUrl`
+  - `removeInjectStreamUrl`
+  - `setLiveTranscoding`
+- 老的 CDN 旁路推流方案主要基于以下两个 API 进行推流和布局设置：
+  - 配置旁路直播推流 \(`configPublisher`)
+  - 设置画中画布局 \(`setVideoCompositingLayout`)
 
-声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
-
-- `addPublishStreamUrl`
-- `removePublishStreamUrl`
-- `setLiveTranscoding`
-
-声网的 CDN 推流方案具有以下优点：
+声网推荐您采用新的旁路推流方案推流到 CDN。新方案较老方案更加灵活：
 
 - 能够随时启动或停止推流
 - 增加了控制信息
 - 能够在不间断推流的同时增减推流地址
 - 通过回调接口掌握推流成功与否
-- 较少的接口便于客户快速升级。
+- 较少的接口保证客户能够快速从旧的推流方案升级到新的推流方案。
 
+如果你希望用老的 CDN 推流方案，请参考 [进阶：推流到 CDN](../../cn/Interactive%20Broadcast/push_stream_ios.md) 。
 
 ## 推流到 CDN
 
@@ -78,7 +82,7 @@ transcoding.transcodingUsers = @[user];
 
 如果你想显示以下布局:
 
-<img alt="../_images/sei_2host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_2host.png" style="width: 500px;"/>
+<img alt="../_images/sei_2host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_2host.png" style="width: 416.0px; height: 240.0px;"/>
 
 设置参数如下:
 
@@ -111,7 +115,7 @@ User1:
 
 如果你想显示以下布局:
 
-<img alt="../_images/sei_3host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_3host.png" style="width: 370px;"/>
+<img alt="../_images/sei_3host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_3host.png" style="width: 236.0px; height: 416.0px;"/>
 
 设置参数如下:
 
@@ -153,7 +157,7 @@ Canvas:
 
 如果你想显示以下布局:
 
-<img alt="../_images/sei_random.png" src="https://web-cdn.agora.io/docs-files/cn/sei_random.png" style="width: 370px;"/>
+<img alt="../_images/sei_random.png" src="https://web-cdn.agora.io/docs-files/cn/sei_random.png" style="width: 236.0px; height: 416.0px;"/>
 
 设置参数如下:
 

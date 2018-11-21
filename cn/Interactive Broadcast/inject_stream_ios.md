@@ -1,102 +1,109 @@
 
 ---
-title: 输入在线媒体流
+title: 外部输入直播视频源
 description: 
 platform: iOS
-updatedAt: Tue Nov 13 2018 09:09:49 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 19:49:47 GMT+0800 (CST)
 ---
-# 输入在线媒体流
-## 简介
+# 外部输入直播视频源
+# 外部输入直播视频源
 
-**输入在线媒体流**功能可以将媒体流作为一个发送端接入正在进行的直播房间。通过将正在播放的视频添加到直播中，主播和观众可以在一起收听/观看媒体流的同时，实时互动。
+直播场景下，如果可以将采集到的视频，添加到正在进行的直播中，直播室里的主播和观众可以一起边看电影、比赛或演出，边进行点评、互动等功能，会让现有的直播话题更广、体验更好。
 
-Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过该接口：
+针对该需求，Agora 开发了 **外部输入直播视频源** 功能。通过该功能，
 
-- 主播可以指定媒体流输入源，作为视频源输入给直播频道内的所有观众。
-- 支持主播对输入媒体流的 Video Profile 进行设置。
-- 如果主播开启并设置了旁路直播，输入的媒体流也可以直播给所有旁路观众。
+- 可以指定输入源（视频或纯音频），比如常用在音视频网站上的内容，作为直播源，替代 Camera 输入直播给频道内所有观众
+- 可以对输入源的 video profile 进行设置
+- 如果启动并设置了旁路直播，也可以将输入的视频源直播给所有旁路观众
 
-## 常见使用场景
+主要涉及如下场景：
 
-在线流媒体输入主要适用于如下场景：
+- 无人机或网络摄像头直接把采集到的视频推流出去，作为视频源导入直播
+- 直播中直接拉入一路或多路 RTMP 或者 HLS 流，实现多人看视频互动的功能
+- 支持赛事直播，最多同时支持 6 人连麦直播
 
-- 赛事直播中，主播直接拉流，实现主播与观众边看比赛边点评的功能。
-- 同一直播间内，主播与观众在欣赏电影、音乐、演出的同时，实时讨论或交流想法。
-- 无人机或网络摄像头直接把采集到的视频推流出去，作为在线媒体流导入直播。
+> 外部视频源的启动/停止，只能由主播使用。 主播退出频道后，无需再调用 `removeInjectStreamUrl` 接口。 观众需要订阅主播才能观看外部视频源。 外部音视频源可以为纯音频源。
 
-## 注意事项
+## 实现方法
 
-- 频道内同一时间只允许输入一个在线媒体流。
-- 只有主播可以输入和移除在线媒体流，连麦主播和普通用户不可以。
-- 主播在直播过程中启用输入在线媒体流。观众需要订阅主播才能观看外部视频。
-- 支持的媒体流格式包括：RTMP、HLS、FLV。纯音频流也可以作为在线媒体流输入。
-- 如果媒体流输入成功，该媒体流会出现在频道中，并收到 `didJoinChannel` 和 `firstRemoteVideoDecodedOfUid` 回调，其中 `uid` 为 666。
-- 如果媒体流输入失败，会返回错误码。可能会出现的错误码及处理方法如下：
+本页演示如何通过调用 API 来实现输入外部视频源的功能。你也可以按照实际需要，自由组合 API，实现更多功能。
 
-  - `AgoraErrorCodeInvalidArgument(2)`：输入的 URL 为空。请重新调用该方法，并确认输入的媒体流的 URL 是有效的
-  - `AgoraErrorCodeNotInitialized(7)`：引擎没有初始化。请确认调用该方法前已创建 `RtcEngine` 对象并完成初始化
-  - `AgoraErrorCodeNotSupported(4)`：频道非直播模式。请调用 `setChannelProfile` 并将频道设置为直播模式再调用该方法
-  - `AgoraErrorCodeNotReady(3)`：没有加入频道。请确认 App 在频道内
+<img alt="../_images/inject_live_ios.png" src="https://web-cdn.agora.io/docs-files/cn/inject_live_ios.png" style="width: 651.0px; height: 554.0px;"/>
 
+1. 初始化 AgoraRtcEngineKit 对象（`sharedEngineWithAppId`）
 
-## 方法实现
+```objective-c
++ (instancetype _Nonnull)sharedEngineWithAppId:(NSString * _Nonnull)appId
+                                      delegate:(id<AgoraRtcEngineDelegate> _Nullable)delegate;
+```
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/ios_video?platform=iOS)。
+2. 设置频道属性 \(`setChannelProfile`)
 
-- 输入在线媒体流：
+```objective-c
+- (int)setChannelProfile (AgoraChannelProfile) profile;
+```
 
-	直播频道的主播可以使用 `addInjectStreamUrl` ，指定一个在线媒体流作为连麦端接入房间。
-	
-	```swift
-	//swift
-	// Adds a voice or video stream into an ongoing broadcast.
+3. 设置本地视频显示属性 \(`setupLocalVideo`)
 
-	let config = AgoraLiveInjectStreamConfig()
-	config.size = CGSize(width: 640, height: 360)
-	config.videoGop = 30
-	config.videoBitrate = 400
-	config.videoFramerate = 15
-	config.audioSampleRate = 48000
-	config.audioBitrate = 48
-	config.audioChannels = 1
+```objective-c
+- (int)setupLocalVideo:(AgoraRtcVideoCanvas*)local;
+```
 
-	agoraKit.addInjectStreamUrl("media stream url", config: config)
-	```
+4. 设置远端视频显示属性 \(`setupRemoteVideo`)
 
-	```objecitve-c
-	//objective-c
-	AgoraLiveInjectStreamConfig *config = [[AgoraLiveInjectStreamConfig alloc] init];
-	config.size = CGSizeMake(640, 360);
-	config.videoGop = 30
-	config.videoBitrate = 400
-	config.videoFramerate = 15
-	config.audioSampleRate = 48000
-	config.audioBitrate = 48
-	config.audioChannels = 1
+```objective-c
+- (int)setupRemoteVideo:(AgoraRtcVideoCanvas*)remote;
+```
 
-	[agoraKit addInjectStreamUrl: @"media stream url" config: config];
-	```
+5. 打开视频模式 \(`enableVideo`)
 
-	你可以通过修改 `config` 的参数值控制接入媒体流的分辨率、码率、帧率、音频采样率等参数。详见 [AgoraLiveInjectStreamConfig 参数说明](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveInjectStreamConfig.html)。
+```objective-c
+- (int)enableVideo
+```
 
-- 移除在线媒体流：
+6. 设置本地视频属性 \(`setVideoProfile`)
 
-	频道内的主播可以使用 `removeInjectStreamUrl` 接口，移除一个已经接入的在线媒体流。
+```objective-c
+- (int)setVideoProfile:(AgoraVideoProfile)profile
+swapWidthAndHeight:(BOOL)swapWidthAndHeight;
+```
 
-	```swift
-	//swift
-	let urlPath = "Some online RTMP/HLS url path"
-	agoraKit.removeInjectStreamUrl(urlPath)
-	```
+7. 开始视频预览 \(`startPreview`)
 
-	```objective-c
-	//objective-c
-	NSString *urlPath = @"Some online  RTMP/HLS url path";
-	[agoraKit removeInjectStreamUrl: urlPath];
-	```
+```objective-c
+- (int)startPreview;
+```
 
-	> 主播退出频道后，无需再调用 `removeInjectStreamUrl` 接口。
+8. 加入频道 \(`joinChannelByToken`)
 
-## 工作原理
-- 频道中的主播通过 Video Inject 服务器，将在线媒体流拉取到 Agora SD-RTN 上，推送到直播频道内，频道内的连麦主播、普通观众都可以看到对应的媒体流。
-- 如果主播开启了 CDN 推流，对应的媒体流也会被推送到 CDN 上，CDN 观众就也可以听到或看到这路媒体流。
+```objective-c
+- (int)joinChannelByToken:(NSString *)token
+            channelName:(NSString *)channelName
+            info:(NSString *)info
+            uid:(NSUInteger)uid
+            joinSuccess:(void(^)(NSString* channel, NSUInteger uid, NSInteger elapsed))joinChannelSuccessBlock;
+```
+
+9. 输入外部视频源 \(`addInjectStreamUrl`)
+
+```objective-c
+- (void)addInjectStreamUrl:(NSString *_Nonnull)url config:(AgoraLiveInjectStreamConfig * _Nonnull)config;
+```
+
+10. 删除外部视频源 \(`removeInjectStreamUrl`)
+
+```objective-c
+- (void)removeInjectStreamUrl:(NSString *_Nonnull)url;
+```
+
+11. 离开频道 \(`leaveChannel`)
+
+```objective-c
+- (int)leaveChannel:(void(^)(AgoraRtcStats* stat))leaveChannelBlock;
+```
+
+12. 停止视频预览 \(`stopPreview`)
+
+```objective-c
+- (int)stopPreview
+```

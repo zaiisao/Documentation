@@ -167,7 +167,7 @@ Agora 提供以下平台生成 Token 的 [示例代码](https://github.com/Agora
 
 #### 获取 App Certificate
 
-每个 Agoraxxxx 账户下可创建多个项目，且每个项目有独立的 App ID 和 App Certificate。 在上文项目列表中查看 App ID 的地方，启用该项目的 App Certificate:
+每个 Agora 账户下可创建多个项目，且每个项目有独立的 App ID 和 App Certificate。 在上文项目列表中查看 App ID 的地方，启用该项目的 App Certificate:
 
 首先，点击激活项目右上方的 **编辑** 按钮。
 

@@ -3,9 +3,11 @@
 title: 录制快速开始
 description: 
 platform: Java
-updatedAt: Wed Nov 14 2018 06:16:43 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 19:19:52 GMT+0800 (CST)
 ---
 # 录制快速开始
+# 录制快速开始
+
 本页介绍如何使用 Agora Recording SDK for Linux 录制语音或视频通话。
 
 Agora Recording SDK for Linux（简称录制 SDK）支持：
@@ -23,7 +25,7 @@ Agora Recording SDK for Linux（简称录制 SDK）支持：
 
 你需要将 Agora Recording SDK for Linux 集成在你的 Linux 服务器上而不是你的 App 上。
 
-<img alt="../_images/recording_linux_cn.png" src="https://web-cdn.agora.io/docs-files/cn/recording_linux_cn.png" style="width: 500.0px;"/>
+<img alt="../_images/recording_linux_cn.png" src="https://web-cdn.agora.io/docs-files/cn/recording_linux_cn.png" style="width: 490.0px; height: 308.0px;"/>
 
 
 录制某频道内的音视频信息相当于将一个特殊的观众加入该频道。该观众获取频道内的音视频信息，将获取到的信息转码并储存在 Linux 服务器上。 因此，你必须：
@@ -225,7 +227,7 @@ String key = "";
 String value = "";
 Map<String,String> map = new HashMap<String,String>();
 if(0 < args.length ){
-  for(int i = 0; i<args.length-1; i+=2){
+  for(int i = 0; i<args.length-1; i++){
     key = args[i];
     value = args[i+1];
     map.put(key, value);
@@ -345,7 +347,7 @@ ars.createChannel(appId, channelKey,name,uid,config);
 
 ## 参考文档
 
-关于录制的更多功能，参考 [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md) 。
+关于录制的更多功能，参考 [进阶：录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md) 。
 
 关于录制 SDK 的 API 的详细信息，参考 [录制 API Beta](../../cn/API%20Reference/recording_java.md) 。
 

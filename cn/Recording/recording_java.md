@@ -3,10 +3,11 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:06:17 GMT+0000 (UTC)
+updatedAt: Wed Sep 26 2018 23:14:10 GMT+0800 (CST)
 ---
 # 录制 API 
-> 版本：v2.2.3
+# 录制 API 
+> 版本：v2.2.2
 > Java 的 API 是对 C++ 的 sample code 通过 jni 做的二次封装，因此和 C++ 提供的录制 API 在结构上稍有差异：Agora SDK \(C++ 和 java 共有的 sample code\)实现 C++ 录制 API 的接口和对回调的处理； jni 层封装 Agora SDK，最后通过 jni proxy 层提供 Native 的 Java 接口和类。
 
 <table>
@@ -28,22 +29,29 @@ updatedAt: Fri Nov 02 2018 04:06:17 GMT+0000 (UTC)
 </table>
 
 
-
 <a id = "native"></a>
 
 ## Native 接口
 
 该类用于管理 Agora SDK 的录制引擎，主要包含以下方法：
 
-- [创建并加入频道 \(createChannel\)](#createChanne)
-- [设置视频合图布局 \(setVideoMixingLayout\)](#setVideoMixingLayout)
-- [退出频道 \(leaveChannel\)](#leaveChannel)
-- [获取属性 \(getProperties\)](#getProperties)
-- [开始录制 \(startService\)](#startService)
-- [停止录制 \(stopService\)](#stopService)
-- [设置背景图片 \(setUserBackground\)](#setUserBackground)
-- [设置生成 log 的等级 \(setLogLevel\)](#setLogLevel)
-- [设置生成 log 的模块 \(enableLogModule\)](#enableLogModule)
+-   [创建并加入频道 \(createChannel\)](#createChanne)
+
+-   [设置视频合图布局 \(setVideoMixingLayout\)](#setVideoMixingLayout)
+
+-   [退出频道 \(leaveChannel\)](#leaveChannel)
+
+-   [获取属性 \(getProperties\)](#getProperties)
+
+-   [开始录制 \(startService\)](#startService)
+
+-   [停止录制 \(stopService\)](#stopService)
+
+-   [设置背景图片 \(setUserBackground\)](#setUserBackground)
+
+-   [设置生成 log 的等级 \(setLogLevel\)](#setLogLevel)
+
+-   [设置生成 log 的模块 \(enableLogModule\)](#enableLogModule)
 
 <a name="createChannel"></a>
 
@@ -103,10 +111,10 @@ public native boolean createChannel(String appId, String token, String name, int
 
 
 
+> -  由于录制端暂时未开放` requestToken`和`renewToken`接口，在获取 Token 时，请务必将服务到期时间（`expireTimestamp`\) 设置为 0，表示权限一旦生成，永不过期。
 
-> - 由于录制端暂时未开放` requestToken`和`renewToken`接口，在获取 Token 时，请务必将服务到期时间（`expireTimestamp`\) 设置为 0，表示权限一旦生成，永不过期。
+> -   同一个频道里不能出现两个相同的 `uid`。如果你的 App 支持多设备同时登录，即同一个用户账号可以在不同的设备上同时登录\(例如微信支持在 PC 端和移动端同时登录\)，请保证传入的 `uid `不相同。 例如你之前都是用同一个用户标识作为` uid`, 建议从现在开始加上设备 ID, 以保证传入的` uid` 不相同 。如果你的 App 不支持多设备同时登录，例如在电脑上登录时，手机上会自动退出，这种情况下就不需要在` uid `上添加设备 ID。
 
-> - 同一个频道里不能出现两个相同的 `uid`。如果你的 App 支持多设备同时登录，即同一个用户账号可以在不同的设备上同时登录\(例如微信支持在 PC 端和移动端同时登录\)，请保证传入的 `uid `不相同。 例如你之前都是用同一个用户标识作为` uid`, 建议从现在开始加上设备 ID, 以保证传入的` uid` 不相同 。如果你的 App 不支持多设备同时登录，例如在电脑上登录时，手机上会自动退出，这种情况下就不需要在` uid `上添加设备 ID。
 
 `RecordingConfig `结构如下:
 
@@ -199,10 +207,10 @@ public class RecordingConfig {
 </td>
 </tr>
 <tr><td><code>isMixingEnabled</code></td>
-<td><p>是否启用多流（混音或合图）模式：</p>
+<td><p>是否启用混音或合图模式：</p>
 <ul>
 <li>false(默认)：启用单流模式录制。录制文件的声道数和码率与原始音频流的声道数和码率保持一致。</li>
-<li>true：启用多流模式录制。录制文件的采样率，码率和声道数与录制前各音视频流的最高值保持一致。<ul>
+<li>true：启用合图模式录制。录制文件的采样率，码率和声道数与录制前各音视频流的最高值保持一致。<ul>
 <li>如果<code> isAudioOnly </code>为 true，且<code> isVideoOnly </code>为 false，则表示启用纯音频混合</li>
 <li>如果 <code>isAudioOnly</code> 为 false，且<code> isVideoOnly </code>为 true，则表示启用纯视频混合</li>
 <li>如果 <code>isAudioOnly</code> 为 false，且 <code>isVideoOnly</code> 为 false，则表示音视频模式混合，即多个 uid 的音频混合、多个 uid 的视频混合</li>
@@ -222,7 +230,7 @@ public class RecordingConfig {
 </td>
 </tr>
 <tr><td><code>mixResolution </code> <sup>[1]</sup></td>
-<td>如果你启用了多流模式，可以通过该参数设置合图的视频属性，格式为：width，hight，fps，kbps，分别对应合图的宽、高、帧率和码率</td>
+<td>如果你启用了合图模式，可以通过该参数设置分辨率，格式为：width，hight，fps，kbps，分别对应合图的宽、高、帧率和码率</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
 <td><p>当整个频道进行加密时，录制 SDK 启用内置的解密功能。目前支持以下几种解密方式：</p>
@@ -340,11 +348,12 @@ public class RecordingConfig {
 
 
 > [1] 关于设置合图的推荐分辨率，详见下表。
+ 
+> [2] 开启裸数据时，不支持合图模式。.. \[\#f2\] 开启裸数据时，不支持合图模式。当录制 SDK 用于 Web 端录制时：
 
-> [2] 开启裸数据时，有以下限制：
->
-> - 合流模式仅支持纯音频通话/直播，不支持视频。
-> - Web 端录制仅支持 H.264 格式的视频裸数据，不支持 VP8 格式。
+> -   支持音频裸数据
+> -   支持 H.264 格式的视频裸数据
+> -   不支持 VP8 格式的视频裸数据
 
 
 
@@ -855,7 +864,7 @@ public class VideoMixingLayout
 
 下面的例子用来描述主播图像的位置和尺寸: x, y, width, height 分别为 0.5， 0.4， 0.2， 0.3
 
-<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/cn/sei_overview.png" style="width: 500px;"/>
+<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/cn/sei_overview.png" style="width: 561.4px; height: 484.4px;"/>
 
 <a name = "leaveChannel"></a>
 
@@ -895,9 +904,9 @@ private native RecordingEngineProperties getProperties(long nativeHandle);
 
 
 
-> - 目前仅支持获取录制路径信息;
+> -   目前仅支持获取录制路径信息;
 
-> - 该方法与 `onUserJoined`区别是: `onUserJoined`需要在加入频道后使用。
+> -   该方法与 `onUserJoined`区别是: `onUserJoined`需要在加入频道后使用。
 
 <a name = "startService"></a>
 
@@ -994,7 +1003,6 @@ private native void setLogLevel(long vativeHandle, int level)
 </table>
 
 
-
  <a id="enablelogmodule-recording-java"></a>
 
 <a name = "enableLogModule"></a>
@@ -1046,15 +1054,23 @@ private native void enableLogModule(long vativeHandle, int module, int enable)
 
 该类用于为 <code>Recording engine </code>提供回调。该类包含如下回调：
 
-- [获取 jni 层实例 \(nativeObjectRef\)](#nativeObjectRef)
-- [发生错误回调 \(onError\)](#onError)
-- [发生警告回调 \(onWarning\)](#onWarning)
-- [离开频道回调 \(onLeaveChannel\)](#onLeaveChanne)
-- [其他用户加入当前频道回调 \(onUserJoined\)](#onUserJoined)
-- [其他用户离开当前频道回调 \(onUserOffline\)](#onUserOffline)
-- [获取音频裸数据回调 \(audioFrameReceived\)](#audioFrameReceived)
-- [获取视频裸数据回调 \(videoFrameReceived\)](#videoFrameReceived)
-- [启用说话者提示 \(onActiveSpeaker\)](#onActiveSpeaker)
+-   [获取 jni 层实例 \(nativeObjectRef\)](#nativeObjectRef)
+
+-   [发生错误回调 \(onError\)](#onError)
+
+-   [发生警告回调 \(onWarning\)](#onWarning)
+
+-   [离开频道回调 \(onLeaveChannel\)](#onLeaveChanne)
+
+-   [其他用户加入当前频道回调 \(onUserJoined\)](#onUserJoined)
+
+-   [其他用户离开当前频道回调 \(onUserOffline\)](#onUserOffline)
+
+-   [获取音频裸数据回调 \(audioFrameReceived\)](#audioFrameReceived)
+
+-   [获取视频裸数据回调 \(videoFrameReceived\)](#videoFrameReceived)
+
+-   [启用说话者提示 \(onActiveSpeaker\)](#onActiveSpeaker)
 
 <a name = "nativeObjectRef"></a>
 
@@ -1118,7 +1134,6 @@ private void onError(int error, int stat_code) {
 </tr>
 </tbody>
 </table>
-
 
 
 <a name = "onWarning"></a>
@@ -1190,7 +1205,6 @@ private void onLeaveChannel(int reason){
 </tr>
 </tbody>
 </table>
-
 
 
 <a name = "onUserJoined"></a>
@@ -1403,7 +1417,6 @@ public class AudioAacFrame {
 </tr>
 </tbody>
 </table>
-
 
 
 <a name = "videoFrameReceived"></a>
@@ -1656,3 +1669,5 @@ void onActiveSpeaker(long uid){
 ## 错误代码和警告代码
 
 相关错误代码见 [错误报告回调 \(onError\)](#onError)。更多详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_native.md)。
+
+
