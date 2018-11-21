@@ -3,7 +3,7 @@
 title: 音乐混音
 description: How to enable audio mixing on the Web
 platform: Web
-updatedAt: Tue Nov 20 2018 07:09:58 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 09:45:31 GMT+0000 (UTC)
 ---
 # 音乐混音
 ## 功能描述
