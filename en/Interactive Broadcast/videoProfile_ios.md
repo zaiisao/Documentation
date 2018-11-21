@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS
-updatedAt: Wed Nov 21 2018 03:21:26 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 03:21:37 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -38,12 +38,14 @@ AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] 
 
 **Relevant APIs and descriptions**
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
+* For more information on video orientation mode, see [Rotate the Video](../../en/Interactive%20Broadcast/rotation_guide_ios.md).
 
 ## Considerations
 - If you do not need to set the video profile after joining the channel, call `setVideoEncoderConfiguration` before `enableVideo` to reduce the render time of the first video frame.
 - Adjustments to the set parameters can be made by the Agora SDK under poor network conditions. 
 -  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast mode twice that in the communication mode. See [Set the bitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/bitrate) for details.
 - For better video quality during a live broadcast, stable network connection is recommended.
+- Setting parameters in the `setVideoEncoderConfiguration` API may cause billing changes. For more information, see [Pricing and Billing](../../en/Agora%20Platform/billing_faq.md).
 
 ## Frequently Asked Questions
 ### How to choose the video resolution, frame rate and bitrate?
