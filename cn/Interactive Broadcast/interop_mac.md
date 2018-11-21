@@ -3,7 +3,7 @@
 title: 移动、桌面、Web 端互通
 description: 
 platform: macOS
-updatedAt: Wed Nov 21 2018 03:42:29 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 03:42:34 GMT+0000 (UTC)
 ---
 # 移动、桌面、Web 端互通
 ## 功能简介
@@ -20,7 +20,7 @@ Agora SDK 的桌面端和 Web 端互通，需要在桌面端和 Web 端同时进
 
 	```swift
 	//swift
-	//ensure that this api is called from native side to interop with web sdk
+	//桌面端调用 enableWebSdkInteroperability 方法开启与 Web SDK 的互通
 	agoraKit.enableWebSdkInteroperability(true)
 	```
 
@@ -34,7 +34,7 @@ Agora SDK 的桌面端和 Web 端互通，需要在桌面端和 Web 端同时进
 
 	```javascript
 	//javascript
-	//make sure corrent mode and codec is picked
+	//Web 端在创建客户端时，选择正确的 mode 和 codec 参数
 	var client = AgoraRTC.createClient({ mode: 'live', codec: 'h264' });
 	```
 
