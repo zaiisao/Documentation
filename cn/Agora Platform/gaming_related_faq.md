@@ -3,7 +3,7 @@
 title: 游戏相关
 description: 
 platform: 游戏相关
-updatedAt: Fri Nov 02 2018 04:05:07 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 07:42:08 GMT+0000 (UTC)
 ---
 # 游戏相关
 ### 进入指挥模式语音频道之前，通过系统的静音键将游戏的音效静音了，但是进入频道之后，为什么游戏的音效就被自动打开了？
