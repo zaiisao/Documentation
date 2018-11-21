@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: macOS
-updatedAt: Wed Nov 21 2018 03:25:37 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 03:25:40 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -38,6 +38,7 @@ AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] 
 
 **Relevant APIs and descriptions**
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
+* For mode information on video orientation mode, see [Rotate the Video](../../en/Video/rotation_guide_ios.md).
 
 ## Considerations
 
@@ -45,6 +46,7 @@ AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] 
 - Adjustments to the set parameters can be made by the Agora SDK under poor network conditions. 
 -  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast mode twice that in the communication mode. See [Set the bitrate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/bitrate) for details.
 - For better video quality during a live broadcast, stable network connection is recommended.
+- Setting the parameters in the `setVideoEncoderConfiguration` API may cause billing changes. See [Pricing and Billing](../../en/Agora%20Platform/billing_faq.md).
 
 ## Frequently Asked Questions
 
