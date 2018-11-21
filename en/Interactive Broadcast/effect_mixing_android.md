@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Wed Nov 21 2018 08:34:25 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:34:30 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -65,7 +65,8 @@ manager.unloadAllEffects();
 
 ### Considerations
 
-The above methods have return values. If the API fails, the return is < 0.
+- Preloading is not mandatory, but to improve effeciency or to play the audio effect multiple times, Agora recommends you preload the audio effect.
+- The above methods have return values. If the API fails, the return is < 0.
 
 ## Audio Mixing
 
