@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 01:55:05 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 01:55:17 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -19,20 +19,20 @@ updatedAt: Wed Nov 21 2018 01:55:05 GMT+0000 (UTC)
 
 ```cpp
 //cpp
-// 1. start screensharing
+// 1. 开始屏幕共享
 
-if (lpRect != NULL) { // share some area on window
+if (lpRect != NULL) { // 共享屏幕窗口的某个区域
 	rect.left = lpRect->left;
 	rect.right = lpRect->right;
 	rect.top = lpRect->top;
 	rect.bottom = lpRect->bottom;
 
 	lpAgoraEngine->startScreenCapture(hWnd, nFPS, &rect, nBitrate);
-} else { // share the window by window id(hWnd), 0 means the full screen
+} else { // 通过 window ID 共享屏幕窗口。如果window ID 为  0，则代表全屏共享
 	lpAgoraEngine->startScreenCapture(hWnd, nCapFPS, NULL, nBitrate);
 }
 
-// 2. stop screensharing
+// 2. 停止屏幕共享
 
 lpAgoraEngine->stopScreenCapture();
 ```
