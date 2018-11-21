@@ -3,7 +3,7 @@
 title: 信令相关
 description: 
 platform: 信令相关
-updatedAt: Wed Nov 21 2018 08:44:17 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:46:34 GMT+0000 (UTC)
 ---
 # 信令相关
 ### 怎么获取用户在线列表？
