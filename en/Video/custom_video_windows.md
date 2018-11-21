@@ -3,7 +3,7 @@
 title: Customize Audio/Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 01:51:32 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 01:52:55 GMT+0000 (UTC)
 ---
 # Customize Audio/Video Source and Renderer
 ## Introduction
@@ -23,10 +23,12 @@ Before proceeding, ensure that you have finished preparing the development envir
 
 ```cpp
 //cpp
-// 1. preparations
+// Initialize the RtcEngine Parameters
+RtcEngineParameters rep(*lpAgoraEngine);
+AParameter apm(*lpAgoraEngine);
 
-// an audio queue for push/pop audio pcm data
-CAudioPlayPackageQueue    *CAudioPlayPackageQueue::m_lpAudioPackageQueue = NULL;
+// Preparation. Implement audio capture and the audio play package queue to store the captured data, or data ready for play.
+CAudioPlayPackageQueue	*CAudioPlayPackageQueue::m_lpAudioPackageQueue = NULL;
 
 CAudioPlayPackageQueue::CAudioPlayPackageQueue()
 {
@@ -114,7 +116,7 @@ BOOL CAudioPlayPackageQueue::PopAudioPackage(LPVOID lpAudioPackage, SIZE_T *nPac
   return TRUE;
 }
 
-// audio observer implementation for external audio source
+// Implement audio observer for external audio source
 CExternalAudioFrameObserver::CExternalAudioFrameObserver()
 {
 }
@@ -149,10 +151,7 @@ bool CExternalAudioFrameObserver::onPlaybackAudioFrameBeforeMixing(unsigned int 
   return true;
 }
 
-2. enable customized audio capturing
-
-RtcEngineParameters rep(lpAgoraEngine);
-
+// Enable the external audio source mode and register the audio observer. Use the observer to pass the data from the external source to the Engine, and then from the Engine to the application.
 int nRet = rep.setExternalAudioSource(true, nSampleRate, nChannels);
 
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
@@ -160,20 +159,17 @@ mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
 
 mediaEngine->registerAudioFrameObserver(lpExternalAudioFrameObserver);
 
-nRet = apm->setParameters("{\"che.audio.external_capture\":true}");
+// Start pushing data into the Engine and retrieving data from the Engine. Usually you need to maintain a process loop.
 
-3. start push/pull audio data to/from Agora SDK
-// need to maintain a thread loop
+CAudioCapturePackageQueue *lpBufferQueue = CAudioCapturePackageQueue::GetInstance();
 
-  CAudioCapturePackageQueue *lpBufferQueue = CAudioCapturePackageQueue::GetInstance();
-
-  IAudioFrameObserver::AudioFrame frame;
-  frame.bytesPerSample = gWaveFormatEx.wBitsPerSample / 8;
-  frame.channels = gWaveFormatEx.nChannels;
-  frame.renderTimeMs = 10;
-  frame.samples = gWaveFormatEx.nSamplesPerSec / 100;
-  frame.samplesPerSec = gWaveFormatEx.nSamplesPerSec;
-  frame.type = IAudioFrameObserver::AUDIO_FRAME_TYPE::FRAME_TYPE_PCM16;
+IAudioFrameObserver::AudioFrame frame;
+frame.bytesPerSample = gWaveFormatEx.wBitsPerSample / 8;
+frame.channels = gWaveFormatEx.nChannels;
+frame.renderTimeMs = 10;
+frame.samples = gWaveFormatEx.nSamplesPerSec / 100;
+frame.samplesPerSec = gWaveFormatEx.nSamplesPerSec;
+frame.type = IAudioFrameObserver::AUDIO_FRAME_TYPE::FRAME_TYPE_PCM16;
 
   do {
     if (::WaitForSingleObject(lpParam->hExitEvent, 0) == WAIT_OBJECT_0)
@@ -190,9 +186,8 @@ nRet = apm->setParameters("{\"che.audio.external_capture\":true}");
     mediaEngine->pushAudioFrame(MEDIA_SOURCE_TYPE::AUDIO_RECORDING_SOURCE, &frame, true);
   } while (TRUE);
 
-4. disable customized audio capturing
-
-nRet = apm->setParameters("{\"che.audio.external_capture\":false}");
+// Disable the external audio source mode.
+int nRet = rep.setExternalAudioSource(false, nSampleRate, nChannels);
 
 mediaEngine->registerAudioFrameObserver(NULL);
 ```
@@ -201,39 +196,37 @@ mediaEngine->registerAudioFrameObserver(NULL);
 
 ```cpp
 //cpp
-// 1. preparations
-
-// a video queue for push/pop video frame data
+// Preparation. Implement video capture and the video package queue to store the captured data or data to be rendered.
 CVideoPackageQueue *CVideoPackageQueue::m_lpVideoPackageQueue = NULL;
 
 CVideoPackageQueue::CVideoPackageQueue()
 {
-    m_nPackageSize = 0;
-    m_nBufferSize = 0x800000;
-    m_bufQueue.Create(32, 0x800000);
+	m_nPackageSize = 0;
+	m_nBufferSize = 0x800000;
+	m_bufQueue.Create(32, 0x800000);
 }
 
 CVideoPackageQueue::~CVideoPackageQueue()
 {
-    m_bufQueue.FreeAllBusyBlock();
-    m_bufQueue.Close();
+	m_bufQueue.FreeAllBusyBlock();
+	m_bufQueue.Close();
 }
 
 CVideoPackageQueue *CVideoPackageQueue::GetInstance()
 {
-    if (m_lpVideoPackageQueue == NULL)
-        m_lpVideoPackageQueue = new CVideoPackageQueue();
+	if (m_lpVideoPackageQueue == NULL)
+		m_lpVideoPackageQueue = new CVideoPackageQueue();
 
-    return m_lpVideoPackageQueue;
+	return m_lpVideoPackageQueue;
 }
 
 void CVideoPackageQueue::CloseInstance()
 {
-    if (m_lpVideoPackageQueue == NULL)
-        return;
+	if (m_lpVideoPackageQueue == NULL)
+		return;
 
-    delete m_lpVideoPackageQueue;
-    m_lpVideoPackageQueue = NULL;
+	delete m_lpVideoPackageQueue;
+	m_lpVideoPackageQueue = NULL;
 }
 
 void CVideoPackageQueue::SetVideoFormat(const BITMAPINFOHEADER *lpInfoHeader)
@@ -253,7 +246,7 @@ BOOL CVideoPackageQueue::PushVideoPackage(LPCVOID lpVideoPackage, SIZE_T nPackag
 {
   if (m_bufQueue.GetFreeCount() == 0)
     m_bufQueue.FreeBusyHead(NULL, 0);
-
+    
   LPVOID lpBuffer = m_bufQueue.AllocBuffer(FALSE);
   if (lpBuffer == NULL) 
     return FALSE;
@@ -286,7 +279,7 @@ BOOL CVideoPackageQueue::PopVideoPackage(LPVOID lpVideoPackage, SIZE_T *nPackage
   return TRUE;
 }
 
-// video observer implementation for external video source
+// Implement the video observer for external video source
 CExternalVideoFrameObserver::CExternalVideoFrameObserver()
 {
   m_lpImageBuffer = new BYTE[0x800000];
@@ -311,7 +304,7 @@ bool CExternalVideoFrameObserver::onCaptureVideoFrame(VideoFrame& videoFrame)
 
   memcpy_s(videoFrame.yBuffer, videoFrame.height*videoFrame.width, m_lpY, videoFrame.height*videoFrame.width);
   videoFrame.yStride = videoFrame.width;
-
+	
   memcpy_s(videoFrame.uBuffer, videoFrame.height*videoFrame.width / 4, m_lpU, videoFrame.height*videoFrame.width / 4);
   videoFrame.uStride = videoFrame.width/2;
 
@@ -329,25 +322,21 @@ bool CExternalVideoFrameObserver::onRenderVideoFrame(unsigned int uid, VideoFram
   return true;
 }
 
-2. enable customized video capturing
-
-RtcEngineParameters rep(lpAgoraEngine);
-
+// Enable the external video source mode and register the video observer. Use the observer to pass the video data from the external source to the Engine  and then from the Engine to the application.
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
 mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
 
-int mRet = apm->setParameters("{\"che.video.local.camera_index\":1024}");
+int mRet = apm->setParameters("{\"che.video.local.camera_index\":1024}"); 
 nRet = mediaEngine->registerVideoFrameObserver(lpVideoFrameObserver);
 
-3. start push/pull video data to/from Agora SDK
-
+// Start pushing the data into the Engine and retrieving data from the Engine. Usually you need to maintain a process loop.
 lpPackageQueue->PushVideoPackage(m_lpYUVBuffer, nYUVSize); // push to Agora SDK
 
-4. disable customized video capturing
-
+// Disable the external video source mode.
 nRet = apm->setParameters("{\"che.video.local.camera_index\":0}");
 
 mediaEngine->registerVideoFrameObserver(NULL);
+
 ```
 
 ## Considerations
