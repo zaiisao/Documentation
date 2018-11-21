@@ -3,7 +3,7 @@
 title: Customize Audio/Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 02:40:27 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 02:40:31 GMT+0000 (UTC)
 ---
 # Customize Audio/Video Source and Renderer
 ## Introduction
@@ -193,6 +193,8 @@ mediaEngine->registerAudioFrameObserver(NULL);
 ```
 
 ### Customize the Video Source
+
+To implement external video source, you need to use the customized method [`setParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_parameter.html#adde9cb68e2ef2216d7fd1976fd5f1d75). See the sample code for details.
 
 ```cpp
 //cpp
