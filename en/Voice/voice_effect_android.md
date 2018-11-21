@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Wed Nov 21 2018 02:46:51 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 02:46:55 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Feature Description 
@@ -19,9 +19,9 @@ double pitch = 0.5;
 rtcEngine.setLocalVoicePitch(pitch);
 
 // Set the local voice equalization
-// The first parameter sets the band frequency. The value range is [0-9], each value representing the center frequency of the band: [31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, 16k] Hz
+// The first parameter sets the band frequency. The value range is [0, 9], each value representing the center frequency of the band: [31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, 16k] Hz
 // The second parameter set the gain of each band. The value range is [-15,15], in dB, and the default is 0.
-rtcEngine.setLocalVoiceEqualization(0, -15]);
+rtcEngine.setLocalVoiceEqualization(0, -15);
 rtcEngine.setLocalVoiceEqualization(1, 3);
 rtcEngine.setLocalVoiceEqualization(2, -9);
 rtcEngine.setLocalVoiceEqualization(3, -8);
