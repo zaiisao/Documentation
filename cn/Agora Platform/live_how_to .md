@@ -3,7 +3,7 @@
 title: 直播相关
 description: 
 platform: 直播相关
-updatedAt: Tue Nov 20 2018 09:03:07 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 09:29:47 GMT+0000 (UTC)
 ---
 # 直播相关
 ### Agora 直播如何支持大并发？
