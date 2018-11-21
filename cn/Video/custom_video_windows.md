@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 02:40:18 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 02:40:49 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -194,6 +194,8 @@ mediaEngine->registerAudioFrameObserver(NULL);
 ```
 
 ### 使用外部视频数据源
+
+在 Windows 平台上实现外部视频源，需要使用私有接口 [`setParameters`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_parameter.html#adde9cb68e2ef2216d7fd1976fd5f1d75) 。具体的用法和实现详见示例代码。
 
 ```cpp
 //cpp
