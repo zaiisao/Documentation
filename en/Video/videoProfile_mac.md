@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: macOS
-updatedAt: Tue Nov 20 2018 03:10:57 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 03:25:37 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
