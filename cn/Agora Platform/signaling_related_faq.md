@@ -3,7 +3,7 @@
 title: 信令相关
 description: 
 platform: 信令相关
-updatedAt: Wed Nov 21 2018 09:10:31 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 09:10:39 GMT+0000 (UTC)
 ---
 # 信令相关
 ### 怎么获取用户在线列表？
@@ -96,7 +96,7 @@ Agora 不提供完整的 PSTN 解决方案，但提供从 VoIP 到 PSTN 的对�
 
 通过 Error Code 进行初步判断：
 
-Error206
+Error 206
 
 token 错误
 
@@ -108,7 +108,7 @@ token 错误
 * 确认时间戳是 10 位，并且没有过期。
 * token 过期当时不会被踢出频道，过期时间尝试登录会失败。
 
-Error201
+Error 201
 
 * App ID 没填或 token 直接传 null 或者空，或者配置文件内的格式不对（没回车换行，有空格等等）导致没识别到 App ID。
 * 网络有问题，看下是否上网正常。
