@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Wed Nov 21 2018 08:21:00 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:35:20 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
