@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 01:39:24 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 01:39:27 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -117,7 +117,7 @@ BOOL CAudioPlayPackageQueue::PopAudioPackage(LPVOID lpAudioPackage, SIZE_T *nPac
   return TRUE;
 }
 
-// audio observer implementation for external audio source
+// 实现语音观测器，为采集外部音频源做准备
 CExternalAudioFrameObserver::CExternalAudioFrameObserver()
 {
 }
@@ -280,7 +280,7 @@ BOOL CVideoPackageQueue::PopVideoPackage(LPVOID lpVideoPackage, SIZE_T *nPackage
   return TRUE;
 }
 
-// video observer implementation for external video source
+// 实现视频观测器，为采集外部视频源做准备
 CExternalVideoFrameObserver::CExternalVideoFrameObserver()
 {
   m_lpImageBuffer = new BYTE[0x800000];
