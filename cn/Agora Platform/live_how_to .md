@@ -3,12 +3,9 @@
 title: 直播相关
 description: 
 platform: 直播相关
-updatedAt: Wed Nov 21 2018 09:29:47 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 09:29:52 GMT+0000 (UTC)
 ---
 # 直播相关
-### Agora 直播如何支持大并发？
-Agora 在全球部署了近百个数据中心，几千台服务器保证亿级并发，同时有国内外顶级的 CDN 厂商作为合作伙伴保证旁路直播的高并发。
-
 ### 直播中如何踢人？
 目前 App 可以支持服务端踢人功能。具体用法可参考 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
 
