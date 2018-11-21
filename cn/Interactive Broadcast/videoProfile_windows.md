@@ -3,7 +3,7 @@
 title: 设置视频编码
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 01:44:41 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 01:44:45 GMT+0000 (UTC)
 ---
 # 设置视频编码
 ## 功能简介
@@ -22,7 +22,7 @@ Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的�
 VideoEncoderConfiguration lpVideoConfig(640, 360), // 发送视频流宽和高，交换不影响
 FRAME_RATE_FPS_15, // 发送视频帧率
 800, // 发送视频码率 kbps
-ORIENTATION_MODE_ADAPTIVE // 输出视频的正方位
+ORIENTATION_MODE_ADAPTIVE // 输出视频的方向模式
 );
 
 lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
