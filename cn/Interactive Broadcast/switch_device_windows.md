@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 23:57:22 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 23:57:29 GMT+0000 (UTC)
 ---
 # 音视频设备测试与切换
 ## 功能描述
@@ -21,10 +21,8 @@ updatedAt: Wed Nov 21 2018 23:57:22 GMT+0000 (UTC)
 ### 麦克风测试
 
 ```C++
-// 初始化参数对象
-RtcEngineParameters rep(*lpRtcEngine);
+// 1. find all audio recording devices
 
-// 枚举所有音频设备
 AAudioDeviceManager* lpDeviceManager = new AAudioDeviceManager(lpRtcEngine);
 IAudioDeviceCollection *lpRecordingDeviceCollection = (*lpDeviceManager)->enumerateRecordingDevices();
 
@@ -38,37 +36,41 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 	...
 }
 
-// 选择一个音频采集设备
-lpDeviceManager->setRecordingDevice(strDeviceID); // device ID chosen
+// 2. choose one device
 
-// 实现音频音量回调接口
+lpDeviceManager->setRecordingDevice(strDeviceID); // device ID choosed
+
+// 3. implement callbacks for audio volume indication
+
 virtual void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speakerNumber, int totalVolume) {
         (void)speakers;
         (void)speakerNumber;
         (void)totalVolume;
     }
 
-// 启用音频音量回调功能
-rep.enableAudioVolumeIndication(1000, // 回调间隔，以毫秒为单位
-	10 // 顺滑度
-	);
+// 4. enable audio volume indication callbacks
 
-// 开始音频采集设备测试
+RtcEngineParameters rep(*lpRtcEngine);
+rep.enableAudioVolumeIndication(1000 /* interval */, 10 /* smooth */);
+
+// 5. start recording deivce testing and you will get callbacks
+
 (*lpDeviceManager)->startRecordingDeviceTest(1000);
 
-// 停止音频采集设备测试
+// 6. stop recording deivce testing
+
 (*lpDeviceManager)->stopRecordingDeviceTest();
 ```
+
 
 
 
 ### 摄像头测试
 
 ```C++
-// 初始化参数对象
-RtcEngineParameters rep(*lpRtcEngine);
 
-// 枚举所有视频采集设备
+// 1. Find all video capture devices.
+
 AVideoDeviceManager* lpDeviceManager = new AVideoDeviceManager(lpRtcEngine);
 IVideoDeviceCollection *lpVideoDeviceCollection = (*lpDeviceManager)->enumerateVideoDevices();
 
@@ -82,22 +84,23 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 	...
 }
 
-// 选择一个视频采集设备
-lpDeviceManager->setDevice(strDeviceID); // device ID chosen
+// 2. Choose one device.
 
-// 开始视频采集设备测试，如果正常的话，你将会看到画面预览
-(*lpDeviceManager)->startDeviceTest(view); // pass a window handler to it
+lpDeviceManager->setDevice(strDeviceID); // The chosen device ID.
 
-// 停止视频采集设备测试
+// 3. Start video capture device testing and you will see the preview.
+
+(*lpDeviceManager)->startDeviceTest(view); // Pass a window handler on to it.
+
+// 4. Stop video capture device testing.
+
 (*lpDeviceManager)->stopDeviceTest();
 ```
-
 
 ### 外放测试
 
 ```C++
-// 初始化参数对象
-RtcEngineParameters rep(*lpRtcEngine);
+// 1. find all audio playback devices
 
 AAudioDeviceManager* lpDeviceManager = new AAudioDeviceManager(lpRtcEngine);
 IAudioDeviceCollection *lpPlaybackDeviceCollection = (*lpDeviceManager)->enumeratePlaybackDevices();
@@ -112,16 +115,32 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 	...
 }
 
-// 选择一个音频播放设备
-lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
+// 2. choose one device
 
-// 开始音频采集设备测试，并且你直接会从外放设备中听到声音
+lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID choosed
+
+// 3. start recording deivce testing and you will hear voice from device you choosed
 // do not need to call `enableAudioVolumeIndication`, because you can directly hear the sound
+
 (*lpDeviceManager)->startRecordingDeviceTest(1000);
 
-// 停止音频采集设备测试
+// 4. stop recording deivce testing
+
 (*lpDeviceManager)->stopRecordingDeviceTest();
 ```
+
+## API 参考
+
+* [enableAudioVolumeIndication](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a59ae67333fbc61a7002a46c809e2ec4f)
+* [enumerateRecordingDevices](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a1ea4f53d60dc91ea83960885f9ab77ee)
+* [setRecordingDevice](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a723941355030636cd7d183d53cc7ace7)
+* [enumeratePlaybackDevices](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#aa13c99d575d89e7ceeeb139be723b18a)
+* [setPlaybackDevice](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a1ee23eae83165a27bcbd88d80158b4f1)
+* [startRecordingDeviceTest](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a9e732d31f179a90d388998f5b86ebf06)
+* [stopRecordingDeviceTest](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a796e7b8a58eb303f18f04e1e9d12a94b)
+* [enumerateVideoDevices](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_video_device_manager.html#aef51744162ec544abf2aaf0488ca062d)
+* [startDeviceTest](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_video_device_manager.html#ac148cafcb191841fd4aa7f5b6166b16d)
+* [stopDeviceTest](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_video_device_manager.html#ae3fe9f7ad1ddf4d5cda5e30d14b9d321)
 
 ## 注意事项
 
