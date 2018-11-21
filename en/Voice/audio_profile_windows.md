@@ -3,7 +3,7 @@
 title: Set the Stereo/High-quality Audio Profile
 description: How to set high-quality audio on Windows
 platform: Windows
-updatedAt: Wed Nov 21 2018 08:41:32 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:41:36 GMT+0000 (UTC)
 ---
 # Set the Stereo/High-quality Audio Profile
 ## Feature Description 
@@ -17,13 +17,31 @@ In some professional scenarios, the audio quality is essential for the user expe
   - `profile` sets the sampling rate, bitrate, encode mode, and the number of channels.
   - `scenario` sets the audio application scenario, for example entertainment, education, and live gaming. The SDK optimizes the audio fluency, noise control, and the audio quality based on the scenarios.
 
-  ```c++
-  RtcEngineParameters rep(*lpAgoraEngine);
-    // Set the stereo and high-quality audio profile
-    int nRet = rep.setAudioProfile(AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO, AUDIO_SCENARIO_DEFAULT);
-  ```
+```c++
+RtcEngineParameters rep(*lpAgoraEngine);
+// Set the stereo and high-quality audio profile
+int nRet = rep.setAudioProfile(AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO, AUDIO_SCENARIO_DEFAULT);
+```
 
-  > For more options, see [setAudioProfile](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e).
+Besides the stereo and high-quality audio quality, the sample code shows the frequently used parameter settings for your reference.
+
+ ```C++
+// FM high-quality
+rep.setAudioProfile(AUDIO_PROFILE_TYPE::AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO, AUDIO_PROFILE_TYPE::AUDIO_SCENARIO_SHOWROOM);
+
+// Gaming
+rep.setAudioProfile(AUDIO_PROFILE_TYPE::AUDIO_PROFILE_SPEECH_STANDARD, AUDIO_PROFILE_TYPE::AUDIO_SCENARIO_CHATROOM_GAMING);
+
+// Entertainment
+rep.setAudioProfile(AUDIO_PROFILE_TYPE::AUDIO_PROFILE_MUSIC_STANDARD, AUDIO_PROFILE_TYPE::AUDIO_SCENARIO_CHATROOM_ENTERTAINMENT);
+
+// KTV
+rep.setAudioProfile(AUDIO_PROFILE_TYPE::AUDIO_PROFILE_MUSIC_HIGH_QUALITY, AUDIO_PROFILE_TYPE::AUDIO_SCENARIO_CHATROOM_ENTERTAINMENT);
+```
+
+### API Reference
+
+- [setAudioProfile](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e)
 
 ## Considerations
 
