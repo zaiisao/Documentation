@@ -96,7 +96,8 @@ lpDeviceManager->setDevice(strDeviceID); // device ID chosen
 ### 外放测试
 
 ```C++
-// 1. find all audio playback devices
+// 初始化参数对象
+RtcEngineParameters rep(*lpRtcEngine);
 
 AAudioDeviceManager* lpDeviceManager = new AAudioDeviceManager(lpRtcEngine);
 IAudioDeviceCollection *lpPlaybackDeviceCollection = (*lpDeviceManager)->enumeratePlaybackDevices();
@@ -111,17 +112,14 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 	...
 }
 
-// 2. choose one device
+// 选择一个音频播放设备
+lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
 
-lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID choosed
-
-// 3. start recording deivce testing and you will hear voice from device you choosed
+// 开始音频采集设备测试，并且你直接会从外放设备中听到声音
 // do not need to call `enableAudioVolumeIndication`, because you can directly hear the sound
-
 (*lpDeviceManager)->startRecordingDeviceTest(1000);
 
-// 4. stop recording deivce testing
-
+// 停止音频采集设备测试
 (*lpDeviceManager)->stopRecordingDeviceTest();
 ```
 
