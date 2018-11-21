@@ -18,8 +18,6 @@ updatedAt: Wed Nov 21 2018 10:34:48 GMT+0000 (UTC)
 
 ## 实现方法
 
-### 麦克风测试
-
 ```swift	
 // starts the microphone test
 agoraKit.startRecordingDeviceTest(1000)
@@ -34,22 +32,6 @@ agoraKit.stopRecordingDeviceTest()
 [agoraKit stopRecordingDeviceTest];
 ```
 
-
-### 外放测试
-
-```swift
-// starts a playback device test
-agoraKit.startPlaybackDeviceTest("audio file path")
-	
-// stops a playback device test
-agoraKit.stopPlaybackDeviceTest()
-```
-
-```oc
-[agoraKit startPlaybackDeviceTest: @"audio file path"];
-
-[agoraKit stopPlaybackDeviceTest];
-```
 
 ## 注意事项
 
