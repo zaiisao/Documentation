@@ -3,7 +3,7 @@
 title: 其它常见问题
 description: 
 platform: 其它常见问题
-updatedAt: Wed Nov 21 2018 03:23:45 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 03:23:51 GMT+0000 (UTC)
 ---
 # 其它常见问题
 ## Android 平台常见问题
@@ -204,13 +204,6 @@ ReplayKit 是 iOS 10 内置的录屏功能, 目前 Agora SDK 不支持 ReplayKit
 
 App 经常关心的是用户状态相关的回调，如 `userJoined`，`userOffline` 等，鉴于所有与用户相关的逻辑都是以 UDP 的方式传输，并不可靠。 同样原理，其他与远程用户相关的回调也是不可靠的。
 
-### 在使用和集成 SDK 过程中会返回哪些错误代码，哪里可以找到对应的描述?
-
-详见：
-Native SDK 错误码及警告码
-Web SDK 错误码及警告码
-Signaling SDK 错误码及警告码
-Gaming SDK 错误码及警告码
 
 ### Error Code 里哪些可以做 APP 的业务逻辑，哪些不可以？
 
