@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to play audio effect files and enable audio mixing 
 platform: Windows
-updatedAt: Wed Nov 21 2018 08:01:09 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:01:28 GMT+0000 (UTC)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -16,10 +16,10 @@ updatedAt: Wed Nov 21 2018 08:01:09 GMT+0000 (UTC)
 ### 实现方法
 
 ```c++
+// 初始化参数对象
 RtcEngineParameters rep(*lpAgoraEngine);
 
-// 1. 预加载音效文件，可选
-
+// 预加载音效（推荐），需注意音效文件的大小，并在加入频道前完成加载
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
   ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
@@ -28,45 +28,58 @@ RtcEngineParameters rep(*lpAgoraEngine);
   int nRet = rep.preloadEffect(nSoundID, filePath);
 #endif
 
-// 2. 播放音效文件。如果设置了预加载，需要指定 nSoundID 
-
+// 开始播放音效文件，如果设置了预加载，需要指定 nSoundID 
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
   ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
-  int nRet = rep.playEffect(nSoundID, wdFilePath, nLoopCount, dPitch, dPan, nGain, TRUE /* publish */);
+  int nRet = rep.playEffect(nSoundID, // 音效唯一标识
+  wdFilePath, // 文件路径
+  nLoopCount, // 重复播放次数
+  dPitch, // 音效的音调
+  dPan, // 音效的空间位置，0 表示正前方
+  nGain, // 音效音量，取值 0 - 100， 100 代表原始音量
+  TRUE // 是否令远端也能听到音效的声音
 #else
-  int nRet = rep.playEffect(nSoundID, filePath, nLoopCount, dPitch, dPan, nGain, TRUE /* publish */);
+  int nRet = rep.playEffect(nSoundID, filePath, nLoopCount, dPitch, dPan, nGain, TRUE);
 #endif
 
-// 3. 暂停播放指定的音效文件
+// 暂停指定的音效播放
+int nRet = rep.pauseEffect(nSoundID);
 
-nRet = rep.pauseEffect(nSoundID);
+// 暂停所有音效播放
+int nRet = rep.pauseAllEffects();
 
-// 4. 暂停播放所有的音效文件
+// 继续指定的已经暂停的音效播放
+int nRet = rep.resumeEffect(nSoundID);
 
-nRet = rep.pauseAllEffects();
+// 继续所有已经暂停的音效播放
+int nRet = rep.resumeAllEffects();
 
-// 5. 恢复播放指定的音效文件
+// 停止指定的音效播放
+int nRet = rep.stopEffect(nSoundID);
 
-nRet = rep.resumeEffect(nSoundID);
+// 停止所有音效播放
+int nRet = rep.stopAllEffects();
 
-// 6. 恢复播放所有的音效文件
-
-nRet = rep.resumeAllEffects();
-
-// 7. 停止播放音效文件
-
-nRet = rep.unloadEffect(nSoundID);
-
-// 8. 从内存释放某个预加载的音效文件
-
-nRet = rep.unloadEffect(nSoundID);
+// 释放预加载的音效
+int nRet = rep.unloadEffect(nSoundID);
 ```
+
+### API 参考
+
+* [preloadEffect](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a61e4eac3b78f2774ef1b22d69bd4e166)
+* [playEffect](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a26307c09cbbaecee3bd662294a935821)
+* [pauseEffect](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a75fc09bdd0bd8b2bfe9c47770eb1e928)
+* [pauseAllEffects](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a98ff58bdd2b8683bd27a1f75694641dc)
+* [resumeEffect](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#adae083a10afd4b316a2071ba8d01ff80)
+* [resumeAllEffects](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a66dd1578478dd3ca163768d1314cd50a)
+* [stopEffect](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#ab0520529fe0ca4eb56d75ff4468e4a03)
+* [stopAllEffects](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a7f742bd2262899a90f4a36205995419e)
+* [unloadEffect](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#afd2cc4d59101cef1b5dc9296e604d047)
 
 ### 开发注意事项
 
-- 注意音频文件的路径，以及文件是否完整可用
-- publish 设置为 `TRUE` ，频道内的其他用户也可以听见该音效
+以上方法都有返回值，返回值小于 0 表示方法调用失败。
 
 ## 音乐混音
 
@@ -79,29 +92,34 @@ Agora 混音功能支持如下设置：
 ### 实现方法
 
 ```c++
-  LPCTSTR filePath = "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3";
-  
-  int nRet = 0;
-  RtcEngineParameters rep(*lpAgoraEngine);
-  
-  // 1. 开始混音
-  
-  #ifdef UNICODE
-   CHAR wdFilePath[MAX_PATH];
-   ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
-   nRet = rep.startAudioMixing(wdFilePath, FALSE /* loopback */, TRUE /* replace */, 1 /* repeat times */);
-  #else
-   nRet = rep.startAudioMixing(filePath, FALSE /* loopback */, TRUE /* replace */, 1 /* repeat times */);
-  #endif
-  
-  // 2. 停止混音
-  
-  nRet = rep.stopAudioMixing();
+LPCTSTR filePath = "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3";
+
+// 初始化参数对象
+RtcEngineParameters rep(*lpAgoraEngine);
+
+// 开始播放混音
+#ifdef UNICODE
+ CHAR wdFilePath[MAX_PATH];
+ ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
+int nRet = rep.startAudioMixing(wdFilePath, // 混音文件路径，支持网络文件，比如 http 协议的
+ FALSE, // 只在本端播放
+  TRUE, // 混音文件内容替换麦克风采集的声音
+  1 // 混音文件重复播放次数
+  );
+#else
+int nRet = rep.startAudioMixing(filePath, FALSE, TRUE, 1);
+#endif
+
+// 结束播放混音
+int nRet = rep.stopAudioMixing();
 ```
+
+### API 参考
+
+- [startAudioMixing](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a13106dd42b618ab9d1a03f7ea1bc4f2f)
+- [stopAudioMixng](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1e7955a19257fe8388f79213a1b7ad5b)
 
 ### 开发注意事项
 
-- 注意混音文件的路径，以及文件是否完整可用
-- loopback 设置为 `TRUE` ，只有本地可以听见混音文件的声音
-- replace 设置为 `TRUE` ，混音文件的内容会替换麦克风采集的音频
-- repeat times 表示混音文件播放次数，设为 `-1` 表示无限循环播放
+- 在频道内调用混音方法，否则会有潜在问题。
+- 以上方法都有返回值，返回值小于 0 表示方法调用失败。
