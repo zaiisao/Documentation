@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 03:28:24 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 03:28:41 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -32,6 +32,7 @@ lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 
 **Relevant APIs and descriptions**
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
+* For more information on video orientation mode, see [Rotate the Video](../../en/Video/rotation_guide_android.md).
 
 ## Considerations
 
@@ -39,6 +40,7 @@ lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 - Adjustments to the set parameters can be made by the Agora SDK under poor network conditions. 
 -  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast mode twice that in the communication mode. See [Set the bitrate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69) for details.
 - For better video quality during a live broadcast, stable network connection is recommended.
+- Setting parameters in the setVideoEncoderConfiguration API may cause billing changes. For more information, see [Pricing and Billing](../../en/Agora%20Platform/billing_faq.md).
 
 ## Frequently Asked Questions
 
