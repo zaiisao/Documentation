@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 01:25:00 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 01:25:11 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -24,9 +24,11 @@ updatedAt: Wed Nov 21 2018 01:25:00 GMT+0000 (UTC)
 
 ```cpp
 //cpp
-// 1. preparations
+// 初始化参数对象
+RtcEngineParameters rep(*lpAgoraEngine);
+AParameter apm(*lpAgoraEngine);
 
-// an audio queue for push/pop audio pcm data
+// 准备工作，需要实现音频采集模块，以及音频数据队列(用来存放采集出来的数据/或者将要播放的数据)
 CAudioPlayPackageQueue	*CAudioPlayPackageQueue::m_lpAudioPackageQueue = NULL;
 
 CAudioPlayPackageQueue::CAudioPlayPackageQueue()
@@ -150,10 +152,7 @@ bool CExternalAudioFrameObserver::onPlaybackAudioFrameBeforeMixing(unsigned int 
   return true;
 }
 
-2. enable customized audio capturing
-
-RtcEngineParameters rep(lpAgoraEngine);
-
+// 启用外部音频数据源模式，注册音频观测器，我们使用观测器将外部的数据源传递给引擎以及把引擎返回的数据给到应用
 int nRet = rep.setExternalAudioSource(true, nSampleRate, nChannels);
 
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
@@ -161,20 +160,17 @@ mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
 
 mediaEngine->registerAudioFrameObserver(lpExternalAudioFrameObserver);
 
-nRet = apm->setParameters("{\"che.audio.external_capture\":true}");
+// 开始往引擎推送数据以及从引擎获取数据，通常需要自己维护一个线程循环
 
-3. start push/pull audio data to/from Agora SDK
-// need to maintain a thread loop
+CAudioCapturePackageQueue *lpBufferQueue = CAudioCapturePackageQueue::GetInstance();
 
-  CAudioCapturePackageQueue *lpBufferQueue = CAudioCapturePackageQueue::GetInstance();
-
-  IAudioFrameObserver::AudioFrame frame;
-  frame.bytesPerSample = gWaveFormatEx.wBitsPerSample / 8;
-  frame.channels = gWaveFormatEx.nChannels;
-  frame.renderTimeMs = 10;
-  frame.samples = gWaveFormatEx.nSamplesPerSec / 100;
-  frame.samplesPerSec = gWaveFormatEx.nSamplesPerSec;
-  frame.type = IAudioFrameObserver::AUDIO_FRAME_TYPE::FRAME_TYPE_PCM16;
+IAudioFrameObserver::AudioFrame frame;
+frame.bytesPerSample = gWaveFormatEx.wBitsPerSample / 8;
+frame.channels = gWaveFormatEx.nChannels;
+frame.renderTimeMs = 10;
+frame.samples = gWaveFormatEx.nSamplesPerSec / 100;
+frame.samplesPerSec = gWaveFormatEx.nSamplesPerSec;
+frame.type = IAudioFrameObserver::AUDIO_FRAME_TYPE::FRAME_TYPE_PCM16;
 
   do {
     if (::WaitForSingleObject(lpParam->hExitEvent, 0) == WAIT_OBJECT_0)
@@ -191,21 +187,17 @@ nRet = apm->setParameters("{\"che.audio.external_capture\":true}");
     mediaEngine->pushAudioFrame(MEDIA_SOURCE_TYPE::AUDIO_RECORDING_SOURCE, &frame, true);
   } while (TRUE);
 
-4. disable customized audio capturing
-
-nRet = apm->setParameters("{\"che.audio.external_capture\":false}");
+// 停止外部音频数据源模式
+int nRet = rep.setExternalAudioSource(false, nSampleRate, nChannels);
 
 mediaEngine->registerAudioFrameObserver(NULL);
-
 ```
 
 ### 使用外部视频数据源
 
 ```cpp
 //cpp
-// 1. preparations
-
-// a video queue for push/pop video frame data
+// 准备工作，需要实现视频采集模块，以及视频数据队列(用来存放采集出来的数据/或者将要渲染的数据)
 CVideoPackageQueue *CVideoPackageQueue::m_lpVideoPackageQueue = NULL;
 
 CVideoPackageQueue::CVideoPackageQueue()
@@ -331,25 +323,22 @@ bool CExternalVideoFrameObserver::onRenderVideoFrame(unsigned int uid, VideoFram
   return true;
 }
 
-2. enable customized video capturing
-
-RtcEngineParameters rep(lpAgoraEngine);
-
+// 启用外部音频数据源模式，注册音频观测器，我们使用观测器将外部的数据源传递给引擎以及把引擎返回的数据给到应用
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
 mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
 
-int mRet = apm->setParameters("{\"che.video.local.camera_index\":1024}");
+int mRet = apm->setParameters("{\"che.video.local.camera_index\":1024}"); // FIXME 这个私有参数怎么弄？
 nRet = mediaEngine->registerVideoFrameObserver(lpVideoFrameObserver);
 
-3. start push/pull video data to/from Agora SDK
-
+// 开始往引擎推送数据以及从引擎获取数据，通常需要自己维护一个线程循环
 lpPackageQueue->PushVideoPackage(m_lpYUVBuffer, nYUVSize); // push to Agora SDK
 
-4. disable customized video capturing
-
+// 停止外部视频数据源模式
 nRet = apm->setParameters("{\"che.video.local.camera_index\":0}");
 
 mediaEngine->registerVideoFrameObserver(NULL);
+
+
 ```
 
 ## 注意事项
