@@ -21,8 +21,10 @@ updatedAt: Wed Nov 21 2018 14:22:22 GMT+0000 (UTC)
 ### 麦克风测试
 
 ```C++
-// 1. find all audio recording devices
+// 初始化参数对象
+RtcEngineParameters rep(*lpRtcEngine);
 
+// 枚举所有音频设备
 AAudioDeviceManager* lpDeviceManager = new AAudioDeviceManager(lpRtcEngine);
 IAudioDeviceCollection *lpRecordingDeviceCollection = (*lpDeviceManager)->enumerateRecordingDevices();
 
@@ -36,36 +38,29 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 	...
 }
 
-// 2. choose one device
+// 选择一个音频采集设备
+lpDeviceManager->setRecordingDevice(strDeviceID); // device ID chosen
 
-lpDeviceManager->setRecordingDevice(strDeviceID); // device ID choosed
-
-// 3. implement callbacks for audio volume indication
-
+// 实现音频音量回调接口
 virtual void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speakerNumber, int totalVolume) {
         (void)speakers;
         (void)speakerNumber;
         (void)totalVolume;
     }
 
-// 4. enable audio volume indication callbacks
+// 启用音频音量回调功能
+rep.enableAudioVolumeIndication(1000, // 回调间隔，以毫秒为单位
+	10 // 顺滑度
+	);
 
-RtcEngineParameters rep(*lpRtcEngine);
-rep.enableAudioVolumeIndication(1000 /* interval */, 10 /* smooth */);
-
-// 5. start recording deivce testing and you will get callbacks
-
+// 开始音频采集设备测试
 (*lpDeviceManager)->startRecordingDeviceTest(1000);
 
-// 6. stop recording deivce testing
-
+// 停止音频采集设备测试
 (*lpDeviceManager)->stopRecordingDeviceTest();
 ```
 
 
-
-
-### 摄像头测试
 
 ### 摄像头测试
 
