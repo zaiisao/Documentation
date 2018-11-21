@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Wed Nov 21 2018 08:20:38 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:21:00 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -18,10 +18,10 @@ The audio effect is specified by the file path, but the SDK uses the sound id to
 ### Implementation
 
 ```c++
+// Initialization
 RtcEngineParameters rep(*lpAgoraEngine);
 
-// 1. Preload the audio effect file, optional
-
+// Preload the audio effect (recommended). Note the file size and preload the file before joining the channel.
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
   ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
@@ -30,45 +30,57 @@ RtcEngineParameters rep(*lpAgoraEngine);
   int nRet = rep.preloadEffect(nSoundID, filePath);
 #endif
 
-// 2. Play the audio effect file. If you preload the audio effect, you need to specify the nSoundID.
-
+// Play the audio effect file. If you preload the audio effect, you need to specify the nSoundID.
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
   ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
-  int nRet = rep.playEffect(nSoundID, wdFilePath, nLoopCount, dPitch, dPan, nGain, TRUE /* publish */);
+  int nRet = rep.playEffect(nSoundID, // The unique sound ID of the audio effect
+  wdFilePath, // File path to the audio effect
+  nLoopCount, // The playback count. -1 means inifinite loop until stopEffect() or stopAllEffects() is called.
+  dPitch, // Set the pitch of the audio effect
+  dPan, // Set the spatial position of the audio effect. 0 means the audio effect shows ahead.
+  nGain, // Set the volume. The value range is 0 to 100. 100 represents the original volume.
+  TRUE // Set whether to publish the audio effecet.
 #else
-  int nRet = rep.playEffect(nSoundID, filePath, nLoopCount, dPitch, dPan, nGain, TRUE /* publish */);
+  int nRet = rep.playEffect(nSoundID, filePath, nLoopCount, dPitch, dPan, nGain, TRUE);
 #endif
 
-// 3. Pause a specific audio effect
+// Pause a sepcified audio effect
+int nRet = rep.pauseEffect(nSoundID);
 
-nRet = rep.pauseEffect(nSoundID);
+// Pause all the audio effects
+int nRet = rep.pauseAllEffects();
 
-// 4. Pause all the audio effects
+// Resume playing the paused audio effect
+int nRet = rep.resumeEffect(nSoundID);
 
-nRet = rep.pauseAllEffects();
+// Resume playing all the audio effects
+int nRet = rep.resumeAllEffects();
 
-// 5. Resume playing a specific audio effect
+// Stop playing a sepcified audio effect
+int nRet = rep.stopEffect(nSoundID);
 
-nRet = rep.resumeEffect(nSoundID);
+// Stop playing all the audio effects
+int nRet = rep.stopAllEffects();
 
-// 6. Resume playing all the audio effects
-
-nRet = rep.resumeAllEffects();
-
-// 7. Stop playing a specific audio effect
-
-nRet = rep.unloadEffect(nSoundID);
-
-// 8. Release the preloaded audio effect from the memory.
-
-nRet = rep.unloadEffect(nSoundID);
+// Release the preloaded audio effect from the memory
+int nRet = rep.unloadEffect(nSoundID);
 ```
 
+### API References
+
+- [preloadEffect](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a61e4eac3b78f2774ef1b22d69bd4e166)
+- [playEffect](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a26307c09cbbaecee3bd662294a935821)
+- [pauseEffect](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a75fc09bdd0bd8b2bfe9c47770eb1e928)
+- [pauseAllEffects](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a98ff58bdd2b8683bd27a1f75694641dc)
+- [resumeEffect](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#adae083a10afd4b316a2071ba8d01ff80)
+- [resumeAllEffects](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a66dd1578478dd3ca163768d1314cd50a)
+- [stopEffect](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#ab0520529fe0ca4eb56d75ff4468e4a03)
+- [stopAllEffects](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a7f742bd2262899a90f4a36205995419e)
+- [unloadEffect](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#afd2cc4d59101cef1b5dc9296e604d047)
+
 ### Considerations
-- Ensure the file path is correct and the audio effect file is complete.
-- If the `publish` parameter is set as `TRUE`,  other users in the channel will hear the audio effect.
-- The above methods have return values. If the API fails, the return is < 0.
+The above methods have return values. If the API fails, the return is < 0.
 
 ## Audio Mixing
 
@@ -81,30 +93,34 @@ Agora audio mixing supports the following options:
 ### Implementation
 
 ```c++
-  LPCTSTR filePath = "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3";
+LPCTSTR filePath = "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3";
 
-  int nRet = 0;
-  RtcEngineParameters rep(*lpAgoraEngine);
+// Initialization
+RtcEngineParameters rep(*lpAgoraEngine);
 
-  // 1. Start audio mixing
+// Start audio mixing
+#ifdef UNICODE
+ CHAR wdFilePath[MAX_PATH];
+ ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
+int nRet = rep.startAudioMixing(wdFilePath, // Path to the audio mixing file. Supports online file
+ FALSE, // Sets whether other users can hear the audio mixing; if set to true, only the local user can hear the audio mixing.
+  TRUE, // The audio captured by the microphone is replaced by the audio mixing file.
+  1 // The number of times to play the audio mixing file. If set to -1, the file loops infinitely.
+  );
+#else
+int nRet = rep.startAudioMixing(filePath, FALSE, TRUE, 1);
+#endif
 
-  #ifdef UNICODE
-   CHAR wdFilePath[MAX_PATH];
-   ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
-   nRet = rep.startAudioMixing(wdFilePath, FALSE /* loopback */, TRUE /* replace */, 1 /* repeat times */);
-  #else
-   nRet = rep.startAudioMixing(filePath, FALSE /* loopback */, TRUE /* replace */, 1 /* repeat times */);
-  #endif
-
-  // 2. Stop audio mixing
-
-  nRet = rep.stopAudioMixing();   
+// Stop audio mixing
+int nRet = rep.stopAudioMixing();
 ```
+
+### API References
+
+- [startAudioMixing](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a13106dd42b618ab9d1a03f7ea1bc4f2f)
+- [stopAudioMixng](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1e7955a19257fe8388f79213a1b7ad5b)
 
 ### Considerations
 
-- If `loopback` is set as `TRUE` , only the local user can hear the audio mixing.
-- If `replace` is set as `TRUE`, the audio mixing file will replace the audio captured by the microphone.
-- `repeat times` represents the number of times to play the audio mixing file. `-1` means infinite loop. 
 - Ensure you call these methods when you are in the channel.
 - The above methods have return values. If the API fails, the return is < 0.
