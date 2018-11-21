@@ -3,7 +3,7 @@
 title: 信令密钥说明
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 21 2018 05:29:50 GMT+0800 (CST)
+updatedAt: Wed Nov 21 2018 05:30:55 GMT+0800 (CST)
 ---
 # 信令密钥说明
 # 密钥说明
@@ -37,7 +37,7 @@ updatedAt: Wed Nov 21 2018 05:29:50 GMT+0800 (CST)
 
 ### 获取 App ID
 
-每个 Agoraxxx 账户下可创建多个项目，且每个项目有独立的 App ID。
+每个 Agora 账户下可创建多个项目，且每个项目有独立的 App ID。
 
 1.  访问 [https://dashboard.agora.io/](https://dashboard.agora.io/)，按照屏幕提示依次填入您的邮箱、密码等信息。
 
