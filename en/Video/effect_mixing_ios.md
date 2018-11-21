@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS,macOS
-updatedAt: Wed Nov 21 2018 08:34:58 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:35:02 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -104,7 +104,8 @@ volume = volume < 80 ? 80 : volume
 
 ### Considerations
 
-The above methods have return values. If the API fails, the return is < 0.
+- Preloading is not mandatory, but to improve effeciency or to play the audio effect multiple times, Agora recommends you preload the audio effect.
+- The above methods have return values. If the API fails, the return is < 0.
 
 ## Audio Mixing
 
