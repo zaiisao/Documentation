@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Fri Nov 02 2018 04:05:13 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:06:48 GMT+0000 (UTC)
 ---
 # 录制相关
 ## 权限
