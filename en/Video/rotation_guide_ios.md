@@ -3,7 +3,7 @@
 title: Rotate the Video
 description: 
 platform: iOS
-updatedAt: Wed Nov 21 2018 02:56:08 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 02:56:12 GMT+0000 (UTC)
 ---
 # Rotate the Video
 From v2.3.0, Agora provides the `setVideoEncoderConfiguration` method for users to set the video profile. This method includes an `orientationMode` parameter for users to set the video orientation mode.
@@ -43,7 +43,7 @@ The `AgoraVideoEncoderConfiguration` class includes an `orientationMode` paramet
 
 ## Orientation Mode
 
-The `orientationMode` parameter provides three modes, [Adaptive](#adaptive), [Fixed\_Landscape](#fixedl), and [Fixed\_Portrait](#fixedp) for different user needs. **The relative position of the video and the status bar on the video capturer and the player remain the same for all modes.**
+The `orientationMode` parameter provides three modes, [Adaptive](#adaptive), [FixedLandscape](#fixedl), and [FixedPortrait](#fixedp) for different user needs. **The relative position of the video and the status bar on the video capturer and the player remain the same for all modes.**
 
 ### <a name = "adaptive"></a>Adaptive
 
@@ -77,7 +77,7 @@ The following figures show the video orientations at the video capturer and play
 
 
 
-### <a name = "fixedl"></a>Fixed\_Landscape
+### <a name = "fixedl"></a>FixedLandscape
 
 In the Fixed\_Landscape mode, the video capturer sends the video in the landscape orientation relative to the status bar and video cropping may be necessary. The player renders the received video frame directly without rotating the video.
 
@@ -95,7 +95,7 @@ The following figures show the video orientations at the video capturer and the 
 
 
 
-### <a name = "fixedp"></a>Fixed\_Portrait
+### <a name = "fixedp"></a>FixedPortrait
 
 In the Fixed\_Portrait mode, the video capturer sends the video in the portrait orientation relative to the status bar and video cropping may be necessary. The player renders the received video frame directly without rotating the video.
 
