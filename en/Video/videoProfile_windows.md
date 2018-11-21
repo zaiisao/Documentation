@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 01:21:58 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 01:22:08 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -20,9 +20,12 @@ The parameters specified in this API are the ideal values under ideal network co
 
 ```cpp
 //cpp
-// set video profile before join the channel
-
-VideoEncoderConfiguration lpVideoConfig(640, 360, FRAME_RATE_FPS_15, 800, ORIENTATION_MODE_ADAPTIVE);
+// Set the video encoder configuration
+VideoEncoderConfiguration lpVideoConfig(640, 360), // set the width and height of the video stream. Swapping the two values does not change the video orientation
+FRAME_RATE_FPS_15, // Set the video frame rate of the video
+800, // Set the bitrate of the video in kbps
+ORIENTATION_MODE_ADAPTIVE // The orientation mode the video
+);
 
 lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 ```
