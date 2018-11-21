@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Wed Nov 21 2018 08:24:43 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:25:05 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -17,46 +17,46 @@ Agora SDK provides the `AudioEffectManager` class to manage the audio effects, i
 ### Implementation
 
 ```java
-   // Get the global audio effect manager
-   IAudioEffectManager manager = rtcEngine.getAudioEffectManager();
+// Get the global audio effect manager
+IAudioEffectManager manager = rtcEngine.getAudioEffectManager();
   
-   // Preload the audio effect (recommended). Note the file size and preload the file before joining the channel.
-   // Only mp3, aac, m4a, 3gp, and wav are supported
-   // You may need to record the matching between the sound ids and the file paths.
-   int id = 0;
-   manager.preloadEffect(id++, "path/to/effect1");
+// Preload the audio effect (recommended). Note the file size and preload the file before joining the channel.
+// Only mp3, aac, m4a, 3gp, and wav are supported
+// You may need to record the matching between the sound ids and the file paths.
+int id = 0;
+manager.preloadEffect(id++, "path/to/effect1");
   
-   // You can preload multiple audio effects
-   manager.preloadEffect(id++, "path/to/effect2");
+// You can preload multiple audio effects
+manager.preloadEffect(id++, "path/to/effect2");
   
-   // Play an audio effect file
-   manager.playEffect(
-    0,                               // The sound id of the audio effect file to play
-    "path/to/effect1",               // The file path to the audio effect
-    -1,                              // The playback count. -1 means inifinite loop until stopEffect() or stopAllEffects() is called.
-    0.0,                             // Set the spatial position of the audio effect. 0 means the audio effect shows ahead.
-    100,                             // Set the volume. The value range is 0 to 100. 100 represents the original volume.
-    true                             // Set whether to publish the audio effecet.
-   );
+// Play an audio effect file
+manager.playEffect(
+	 0,                             // The sound id of the audio effect file to play
+	 "path/to/effect1",             // The file path to the audio effect
+	 -1,                            // The playback count. -1 means inifinite loop until stopEffect() or stopAllEffects() is called.
+	 0.0,                           // Set the spatial position of the audio effect. 0 means the audio effect shows ahead.
+	 100,                           // Set the volume. The value range is 0 to 100. 100 represents the original volume.
+	 true                           // Set whether to publish the audio effecet.
+);
   
-   // Pause all the audio effects
-   manager.pauseAllEffects();
+// Pause all the audio effects
+manager.pauseAllEffects();
   
-   // Get the volume of the audio effect. The value range is 0 to 100.
-   double volume = manager.getEffectsVolume();
+// Get the volume of the audio effect. The value range is 0 to 100.
+double volume = manager.getEffectsVolume();
   
-   // Ensure the audio effect's volume is always at least 80% of the original volume.
-   volume = volume < 80 ? 80 : volume;
-   manager.setEffectsVolume(volume);
+// Ensure the audio effect's volume is always at least 80% of the original volume.
+volume = volume < 80 ? 80 : volume;
+manager.setEffectsVolume(volume);
   
-   // Resume playing the audio effect
-   manager.resumeAllEffects();
+// Resume playing the audio effect
+manager.resumeAllEffects();
   
-   // Stop all the audio effect
-   manager.stopAllEffects();
+// Stop all the audio effect
+manager.stopAllEffects();
   
-   // Release the preloaded audio effect from the memory.
-   manager.unloadAllEffects();
+// Release the preloaded audio effect from the memory.
+manager.unloadAllEffects();
 ```
 
 ### API Reference
@@ -77,37 +77,37 @@ Agora audio mixing supports the following options:
 ### Implementation
 
 ```java
-   // Set audio mixing options
-   int loopCount = -1; // Loop the audio mixing file infinitely.If you use a positive integer, it represents the number of times to play the file.
-   boolean shouldLoop = true; // Sets whether other users can hear the audio mixing; if set to true, only the local user can hear the audio mixing.
-   boolean replaceMic = false; // The audio captured by the microphone is not replaced by the audio mixing file.
+// Set audio mixing options
+int loopCount = -1; // Loop the audio mixing file infinitely.If you use a positive integer, it represents the number of times to play the file.
+boolean shouldLoop = true; // Sets whether other users can hear the audio mixing; if set to true, only the local user can hear the audio mixing.
+boolean replaceMic = false; // The audio captured by the microphone is not replaced by the audio mixing file.
   
-   // Start audio mixing
-   rtcEngine.startAudioMixing("path/to/music", shouldLoop, replaceMic, loopCount);
+// Start audio mixing
+rtcEngine.startAudioMixing("path/to/music", shouldLoop, replaceMic, loopCount);
   
-   // Adjust the volume of the audio mixing. The value range is 0 to 100. 100 represents the orginial volume (default).
-   int volume = 50;
-   rtcEngine.adjustAudioMixingVolume(volume);
+// Adjust the volume of the audio mixing. The value range is 0 to 100. 100 represents the orginial volume (default).
+int volume = 50;
+rtcEngine.adjustAudioMixingVolume(volume);
   
-   // Get the duration of the current audio mixing file.
-   int duration = rtcEngine.getAudioMixingDuration();
-   // duration can be used to set the maximum length of the progress bar.
-   // seekBar.setMax(duration);
+// Get the duration of the current audio mixing file.
+int duration = rtcEngine.getAudioMixingDuration();
+// duration can be used to set the maximum length of the progress bar.
+// seekBar.setMax(duration);
   
-   // Get the current progress of the audio mixing playback.
-   int currentPosition = rtcEngine.getAudioMixingCurrentPosition();
-   // You can set a timer to get and display the progress regularly.
-   // seekBar.setProgress(currentPosition);
+// Get the current progress of the audio mixing playback.
+int currentPosition = rtcEngine.getAudioMixingCurrentPosition();
+// You can set a timer to get and display the progress regularly.
+// seekBar.setProgress(currentPosition);
   
-   // If the user drags the progress bar, you can get the progress in the callback of the seekBar and reset the current position of the music.
-   rtcEngine.setAudioMixingPosition(progress);
+// If the user drags the progress bar, you can get the progress in the callback of the seekBar and reset the current position of the music.
+rtcEngine.setAudioMixingPosition(progress);
   
-   // Pause and resume the audio mixing.
-   rtcEngine.pauseAudioMixing();
-   rtcEngine.resumeAudioMixing();
+// Pause and resume the audio mixing.
+rtcEngine.pauseAudioMixing();
+rtcEngine.resumeAudioMixing();
   
-   // Stop the audio mixing and re-enable the microphone capturing.
-   rtcEngine.stopAudioMixing()；
+// Stop the audio mixing and re-enable the microphone capturing.
+rtcEngine.stopAudioMixing()；
 ```
 
 ### API References
