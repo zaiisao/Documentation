@@ -3,16 +3,14 @@
 title: 调整音调、音色
 description: How to set voice effects for iOS/macOS
 platform: iOS,macOS
-updatedAt: Wed Nov 21 2018 08:42:38 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:42:41 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
 在社交娱乐应用中，为增加产品的趣味性和互动性，用户常常需要变声和混响效果。Agora 提供了一系列的方法让开发者灵活定制自己想要的声音，比如设置音调、均衡和混响等。 
 ## 实现方法
 
-Agora 提供了一系列的方法让开发者灵活定制自己想要的声音，比如设置音调、均衡和混响等。 
-
-可以根据以下方式把原始声音变 FM 的效果。
+你可以根据以下方式把原始声音变 FM 的效果。
 
 ```swift
 // swift
