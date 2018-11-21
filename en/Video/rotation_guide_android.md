@@ -2,7 +2,7 @@
 ---
 title: Rotate the Video
 description: 
-platform: Android
+platform: Android,Windows
 updatedAt: Wed Nov 21 2018 02:55:28 GMT+0000 (UTC)
 ---
 # Rotate the Video
