@@ -3,7 +3,7 @@
 title: 使用双声道/高音质
 description: How to set the audio profile on Windows
 platform: Windows
-updatedAt: Wed Nov 21 2018 08:39:39 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:39:43 GMT+0000 (UTC)
 ---
 # 使用双声道/高音质
 ## 功能描述
@@ -17,12 +17,31 @@ Agora SDK 提供 [setAudioProfile](https://docs.agora.io/cn/Voice/API%20Referenc
 - `scenario` 侧重于不同的使用场景，如娱乐、教学和游戏直播等。流畅度、噪声控制、音质等频道特性会根据不同的场景做出优化。
 
 ```c++
-  RtcEngineParameters rep(*lpAgoraEngine);
-  // 设置双声道高音质
-  int nRet = rep.setAudioProfile(AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO, AUDIO_SCENARIO_DEFAULT);
+RtcEngineParameters rep(*lpAgoraEngine);
+// 设置双声道高音质
+int nRet = rep.setAudioProfile(AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO, AUDIO_SCENARIO_DEFAULT);
 ```
 
-> 其他的参数选项，请参考 [setAudioProfile](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e)。
+除高音质外，本文同时给出几种常用的参数组合供开发者参考。
+
+```C++
+// FM 高音质
+rep.setAudioProfile(AUDIO_PROFILE_TYPE::AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO, AUDIO_PROFILE_TYPE::AUDIO_SCENARIO_SHOWROOM);
+
+// 游戏开黑场景
+rep.setAudioProfile(AUDIO_PROFILE_TYPE::AUDIO_PROFILE_SPEECH_STANDARD, AUDIO_PROFILE_TYPE::AUDIO_SCENARIO_CHATROOM_GAMING);
+
+// 娱乐场景
+rep.setAudioProfile(AUDIO_PROFILE_TYPE::AUDIO_PROFILE_MUSIC_STANDARD, AUDIO_PROFILE_TYPE::AUDIO_SCENARIO_CHATROOM_ENTERTAINMENT);
+
+// KTV
+rep.setAudioProfile(AUDIO_PROFILE_TYPE::AUDIO_PROFILE_MUSIC_HIGH_QUALITY, AUDIO_PROFILE_TYPE::AUDIO_SCENARIO_CHATROOM_ENTERTAINMENT);
+```
+
+
+### API 参考
+
+- [setAudioProfile](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e)
 
 ## 开发注意事项
 
