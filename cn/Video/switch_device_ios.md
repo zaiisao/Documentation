@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: iOS,macOS
-updatedAt: Wed Nov 21 2018 14:40:33 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 14:40:51 GMT+0000 (UTC)
 ---
 # 音视频设备测试与切换
 ## 功能描述
@@ -17,6 +17,8 @@ updatedAt: Wed Nov 21 2018 14:40:33 GMT+0000 (UTC)
     2、线上用户进行自我排查纠错。
 
 ## 实现方法
+
+### 麦克风测试
 
 ```swift	
 // starts the microphone test
@@ -32,6 +34,22 @@ agoraKit.stopRecordingDeviceTest()
 [agoraKit stopRecordingDeviceTest];
 ```
 
+
+### 外放测试
+
+```swift
+// starts a playback device test
+agoraKit.startPlaybackDeviceTest("audio file path")
+	
+// stops a playback device test
+agoraKit.stopPlaybackDeviceTest()
+```
+
+```oc
+[agoraKit startPlaybackDeviceTest: @"audio file path"];
+
+[agoraKit stopPlaybackDeviceTest];
+```
 
 ## 注意事项
 
