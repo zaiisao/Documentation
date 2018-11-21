@@ -3,26 +3,170 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Sep 27 2018 18:58:42 GMT+0800 (CST)
+updatedAt: Thu Nov 08 2018 03:53:57 GMT+0000 (UTC)
 ---
 # 发版说明
-# 发版说明
-
 本文提供 Agora Web SDK 的发版说明。
 
 ## 概览
 
 Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库在网页浏览器中调用 API 建立连接，控制音视频通话和直播服务。
 
-**已知问题和局限性**
+**兼容性说明**
 
-- 兼容性: 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
+下表列出目前 Agora Web SDK 对浏览器的支持情况：
+
+<table>
+  <tr>
+    <th>平台</th>
+    <th>Chrome 58+</th>
+    <th>Firefox 56+</th>
+    <th>Safari 11+</th>
+    <th>Opera 45+</th>
+    <th>QQ 浏览器最新版</th>
+    <th>360 安全浏览器</th>
+    <th>微信浏览器</th>
+  </tr>
+  <tr>
+    <td>Android 4.1+</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+		<td><b>N/A</b></td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+  </tr>
+  <tr>
+    <td>iOS 11+</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+  </tr>
+  <tr>
+    <td>macOS 10+</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+  </tr>
+  <tr>
+    <td>Windows 7+</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+		<td><b>N/A</b></td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+  </tr>
+</table>
+
+> Agora Web SDK 2.5 还支持 Windows XP 平台的 Chrome 49 版本。
+
+> 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
+
+**已知问题和局限性**
+ 
 - 如果在客户端安装了高清摄像头，则 Agora Web SDK 支持最大为 1080p 分辨率的视频流，但取决于不同的摄像头设备，最大分辨率也会受到影响。
-- 在 Agora Native SDK 中提供的一些功能，如质量提示、测试服务、通话服务评分、录音和日志记录等，在 Agora Web SDK 中未包含。
-- Agora Web SDK 暂不支持 IPv6 。
 - Agora Web SDK 暂不支持代码二次混淆。
 
-更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/2.4.1/faq/faq/web)。
+更多问题，详见 [Web 常见问题集](../../cn/Interactive%20Broadcast/websdk_related_faq.md)。
+
+## 2.5.0 版
+
+该版本于 2018 年 10 月 30 日发布。新增功能与修复问题列表详见下文。
+
+> <font color="red">如果设置了域名防火墙，使用此版本时需将 `*.agoraio.cn` 和 `*.agora.io` 添加到白名单。</font>
+
+### 新增功能
+
+为更好地与 Agora 其他 SDK 互通，实现更多功能，Web SDK 在本版本中新增了如下功能。详细的接口说明，请参考 [Agora Web SDK API Reference](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html)。
+
+#### 1. 质量监控
+
+为方便用户查看应用程序的通话质量，新增如下接口：
+
+- `Client.getNetworkStats` ：获取网络统计数据（网络类型）。
+- `Client.getSystemStats` ：获取系统数据（系统电量）。
+- `Client.getRemoteAudioStats` ：获取远端音频统计数据。
+- `Client.getLocalAudioStats` ：获取本地音频统计数据。
+- `Client.getRemoteVideoStats` ：获取远端视频统计数据。
+- `Client.getLocalVideoStats` ：获取本地视频统计数据。
+- `Client.getTransportStats` ：获取网络连接统计数据。
+
+#### 2. 媒体设备管理
+
+提供灵活的设备管理功能，以及设备状态查询。
+
+- **枚举可用设备**
+
+	新增如下接口：
+
+	* `Client.getRecordingDevices`：枚举音频输入设备，如麦克风。
+	*  `Client.getPlayoutDevices` ：枚举音频输出设备，如扬声器。
+	*  `Client.getCameras` ：枚举视频输入设备，如摄像头。
+
+  同时新增如下事件，用来告知应用程序设备状态的变化：
+
+  -  `recordingDeviceChanged` ：通知应用程序音频输入设备已改变。
+  - `playoutDeviceChanged` ：通知应用程序音频输出设备已改变。
+  - `cameraChanged` ：通知应用程序视频输入设备已改变。
+
+- **切换媒体设备**
+  - 新增 `Stream.switchDevice` 接口，支持在频道内切换媒体输入设备，如麦克风、摄像头等。
+  - 新增 `Stream.setAudioOutput` 接口，支持选择音频输出设备，可以切换麦克风和扬声器。
+
+#### 3. 支持伴奏混音
+
+支持混音功能，混音是指原音（麦克风采集的音频）和伴奏（音频文件声音）混合。
+
+新增如下伴奏混音相关的接口：
+
+- `Stream.startAudioMixing` ：开始播放伴奏。
+- `Stream.stopAudioMixing` ：停止播放伴奏。
+- `Stream.pauseAudioMixing` ：暂停播放伴奏。
+- `Stream.resumeAudioMixing` ：恢复播放伴奏。
+- `Stream.adjustAudioMixingVolume` ：调节伴奏音量。
+- `Stream.getAudioMixingDuration` ：获取伴奏时长。
+- `Stream.getAudioMixingCurrentPosition` ：获取伴奏播放进度。
+- `Stream.setAudioMixingPosition` ：设置伴奏音频文件的播放位置。
+
+#### 4. 音视频轨道管理
+
+支持灵活管理音视频频道，新增如下接口：
+
+- `Stream.getAudioTrack` ：获取音频轨道。
+- `Stream.getVideoTrack` ：获取视频轨道。
+- `Stream.replaceTrack` ：替换音视频轨道。
+- `Stream.addTrack` ：添加音视频轨道。
+- `Stream.removeTrack` ：移除音视频轨道。
+
+#### 5. 其他新增功能
+
+- 支持两种视频显示模式，可以在 `Stream.play` 接口中设置播放流的显示模式。
+- 新增 `Stream.setScreenBitrate` 接口，支持手动设置屏幕共享时的视频码率。
+- 新增 `Client.enableAudioVolumeIndicator` 接口，允许 SDK 定期向应用程序反馈当前谁在说话，以及说话者的音量。
+- 新增 `Stream.setAudioVolume`  接口，支持设置订阅流的音量。
+- 新增 `networkTypeChanged` 事件，通知应用程序网络类型已改变。
+- 新增 `streamTypeChange` 事件，通知应用程序视频流类型已由大流变为小流，或小流变为大流。
+- `Client.join` 接口中，在原来支持整型 `uid` 的基础上，新增对字符串类型的支持。
+- 支持 360 安全浏览器 9.1.0.432 及以上版本。
+- 支持 Windows XP 平台的 Chrome 49 浏览器。
+
+### 问题修复 
+
+- 修复了手机端使用 Safari 或 Chrome 浏览器进入频道后，在仅有音频通话的情况下对 video codec 的依赖。
+- 修复了使用 Safari 浏览器推流后调用 `Stream.close` 关闭流，对端 10 秒后无法收到 `stream-removed` 回调的问题。
+- 修复了重置 `Stream.userId` 后，收到 Warning 的问题。
+
 
 ## 2.4.1 版
 
@@ -76,6 +220,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 修复在 `client.createStream` 方法中同时开启 `audio` 和 `screen` 会出错的问题。
 - 修复屏幕共享时设置 `microphoneId` 不生效的问题。
 - 修复 `audioProcessing` 设置不生效的问题。
+- 修复了 Stream 能够 play 多次的问题。修复后 Stream 对象只能 play 一次，在调用 `stream.stop` 后才可以再次调用 `stream.play`。
 
 ## **2.3.1 版**
 
@@ -103,7 +248,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 #### 3. 网页端 Proxy 功能
 
-为解决设有防火墙的企业用户无法直接使用 Agora 服务的问题，新增 2 个接口，通过代理服务器将用户的内网请求转到 Agora SD-RTN 上，从而实现内网访问。使用该功能，用户需要自行部署 Nginx 和 TURN 服务器， 并在加入频道之前就调用相关接口。详见 [进阶：企业部署代理服务器](../../cn/Interactive%20Broadcast/proxy_web.md) 中关于代理服务器工作原理、部署步骤以及调用 API 接口的描述。
+为解决设有防火墙的企业用户无法直接使用 Agora 服务的问题，新增 2 个接口，通过代理服务器将用户的内网请求转到 Agora SD-RTN 上，从而实现内网访问。使用该功能，用户需要自行部署 Nginx 和 TURN 服务器， 并在加入频道之前就调用相关接口。详见 [企业部署代理服务器](../../cn/Interactive%20Broadcast/proxy_web.md) 中关于代理服务器工作原理、部署步骤以及调用 API 接口的描述。
 
 #### 4. 加密功能
 
@@ -199,9 +344,6 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 <tbody>
 <tr><td>功能</td>
 <td>描述</td>
-</tr>
-<tr><td>创建音视频对象优化</td>
-<td>[删除] 纯 web 客户端对象，方便客户集成</td>
 </tr>
 <tr><td>P2P 连接建立时间优化</td>
 <td>从 1.8 秒缩短到 500 毫秒</td>

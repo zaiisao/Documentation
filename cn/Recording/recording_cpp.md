@@ -2,13 +2,11 @@
 ---
 title: 录制 API
 description: 
-platform: C++
-updatedAt: Wed Sep 26 2018 23:15:29 GMT+0800 (CST)
+platform: CPP
+updatedAt: Fri Nov 16 2018 10:33:19 GMT+0000 (UTC)
 ---
 # 录制 API
-# 录制 API
-
-> 版本：v2.2.2
+> 版本：v2.2.3
 
 <table>
 <colgroup>
@@ -28,38 +26,28 @@ updatedAt: Wed Sep 26 2018 23:15:29 GMT+0800 (CST)
 </tbody>
 </table>
 
-
 <a id = "IRecordingEngine"></a>
-	 
+
 ## IRecordingEngine 类
 
 该类用于管理 Agora SDK 的录制引擎，主要包含以下方法：
 
--   [创建录制引擎 (createAgorarecordingEngine)](#createAgoraRecordingEngine)
-
--   [加入频道 \(joinChannel\)](#joinChannel)
-
--   [设置视频合图布局 \(setVideoMixingLayout\)](#setVideoMixingLayout)
-
--   [退出频道 \(leaveChannel\)](#leaveChannel)
-
--   [销毁 IRecordingEngine 对象 \(release\)](#release)
-
--   [获取属性 \(getProperties\)](#getProperties)
-
--   [开始录制 \(startService\)](#startService)
-
--   [停止录制 \(stopService\)](#stopService)
-
--   [设置生成 log 的等级 \(setLogLevel\)](#setLogLevel)
-
--   [设置生成 log 的模块 \(enableModuleLog\)](#enableModuleLog)
+- [创建录制引擎 (createAgorarecordingEngine)](#createAgoraRecordingEngine)
+- [加入频道 \(joinChannel\)](#joinChannel)
+- [设置视频合图布局 \(setVideoMixingLayout\)](#setVideoMixingLayout)
+- [退出频道 \(leaveChannel\)](#leaveChannel)
+- [销毁 IRecordingEngine 对象 \(release\)](#release)
+- [获取属性 \(getProperties\)](#getProperties)
+- [开始录制 \(startService\)](#startService)
+- [停止录制 \(stopService\)](#stopService)
+- [设置生成 log 的等级 \(setLogLevel\)](#setLogLevel)
+- [设置生成 log 的模块 \(enableModuleLog\)](#enableModuleLog)
 
 <a name = "createAgoraRecordingEngine"></a>
 
 ### 创建录制引擎 \(createAgoraRecordingEngine\)
 
-``` C++
+```C++
 public static IRecordingEngine* createAgoraRecordingEngine(const char * appId, IRecordingEngineEventHandler *eventHandler);
 ```
 
@@ -82,6 +70,7 @@ public static IRecordingEngine* createAgoraRecordingEngine(const char * appId, I
 </tr>
 </tbody>
 </table>
+
 
 
 <a name = "joinChannel"></a>
@@ -131,9 +120,9 @@ virtual int joinChannel(const char * token, const char *channelId, uid_t uid, co
 </table>
 
 
-> -   由于录制端暂时未开放 `requestToken `和 `renewToken`接口，在获取 Token 时，请务必将服务到期时间（`expireTimestamp`\) 设置为 0，表示权限一旦生成，永不过期。
-> -   同一个频道里不能出现两个相同的 `uid`，否则会产生未定义行为。
 
+> - 由于录制端暂时未开放 `requestToken `和 `renewToken`接口，在获取 Token 时，请务必将服务到期时间（`expireTimestamp`\) 设置为 0，表示权限一旦生成，永不过期。
+> - 同一个频道里不能出现两个相同的 `uid`，否则会产生未定义行为。
 
 `RecordingConfig` 结构如下:
 
@@ -232,10 +221,10 @@ typedef struct RecordingConfig {
 </td>
 </tr>
 <tr><td><code>isMixingEnabled</code></td>
-<td><p>是否启用混音或合图模式：</p>
+<td><p>是否启用合流（混音或合图）模式：</p>
 <ul>
 <li>false(默认)：启用单流模式录制。录制文件的声道数和码率与原始音频流的声道数和码率保持一致。</li>
-<li>true：启用合图模式录制。录制文件的采样率，码率和声道数与录制前各音视频流的最高值保持一致。<ul>
+<li>true：启用合流模式录制。录制文件的采样率，码率和声道数与录制前各音视频流的最高值保持一致。<ul>
 <li>如果 <code>isAudioOnly</code>为 true，且 <code>isVideoOnly</code>为 false，则表示启用纯音频混合</li>
 <li>如果 <code>isAudioOnly</code>为 false，且 <code>isVideoOnly</code>为 true，则表示启用纯视频混合</li>
 <li>如果<code>isAudioOnly</code>为 false，且<code>isVideoOnly</code> 为 false，则表示音视频模式混合，即多个 <code>uid </code>的音频混合、多个 <code>uid</code> 的视频混合</li>
@@ -246,7 +235,7 @@ typedef struct RecordingConfig {
 </td>
 </tr>
 <tr><td><code>mixResolution</code> <sup>[1]</sup></td>
-<td>如果你启用了合图模式，可以通过该参数设置分辨率，格式为：width，hight，fps，kbps，分别对应合图的宽、高、帧率和码率</td>
+<td>如果你启用了合流模式，可以通过该参数设置合图的视频属性，格式为：width，hight，fps，kbps，分别对应合图的宽、高、帧率和码率</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
 <td><p>当整个频道进行加密时，录制 SDK 启用内置的解密功能。目前支持以下几种解密方式：</p>
@@ -376,14 +365,13 @@ typedef struct RecordingConfig {
 </table>
 
 
-> [1] 关于设置合图的推荐分辨率，详见下表。
 
-> [2] 开启裸数据时，不支持合图模式。当录制 SDK 用于 Web 端录制时：
+> [1] 关于设置视频合图的推荐分辨率，详见下表。
 
-> - 支持音频裸数据
-> - 支持 H.264 格式的视频裸数据
-> - 不支持 VP8 格式的视频裸数据
-
+> [2] 开启裸数据时，有以下限制：
+>
+> - 合流模式仅支持纯音频录制，不支持视频。
+> - Web 端录制仅支持 H.264 格式的视频裸数据，不支持 VP8 格式。
 
 ### 视频属性
 
@@ -778,6 +766,7 @@ typedef struct RecordingConfig {
 </table>
 
 
+
 <a name = "setVideoMixingLayout"></a>
 
 ### 设置视频合图布局 \(setVideoMixingLayout\)
@@ -896,7 +885,7 @@ virtual int setVideoMixingLayout(const agora::linuxsdk::VideoMixingLayout &layou
 
 下面的例子用来描述主播图像的位置和尺寸: x, y, width, height 分别为 0.5， 0.4， 0.2， 0.3
 
-<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/cn/sei_overview.png" style="width: 561.4px; height: 484.4px;"/>
+<img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/cn/sei_overview.png" style="width: 500px"/>
 
 <a name = "leaveChannel"></a>
 
@@ -923,6 +912,7 @@ virtual int leaveChannel() = 0;
 </tr>
 </tbody>
 </table>
+
 
 
 <a name = "release"></a>
@@ -952,6 +942,7 @@ virtual int release() = 0;
 </table>
 
 
+
 <a name = "getProperties"></a>
 
 ### 获取属性 \(getProperties\)
@@ -962,10 +953,9 @@ virtual const RecordingEngineProperties* getProperties() = 0;
 
 获取录制属性信息。无需加入任何频道。
 
+> - 目前仅支持获取录制路径信息;
 
-> -   目前仅支持获取录制路径信息;
-
-> -   该方法与 `onUserJoined `区别是: `onUserJoined` 需要在加入频道后使用。
+> - 该方法与 `onUserJoined `区别是: `onUserJoined` 需要在加入频道后使用。
 
 <a name = "startService"></a>
 
@@ -994,6 +984,7 @@ virtual int startService() = 0;
 </tr>
 </tbody>
 </table>
+
 
 
 <a name = "stopService"></a>
@@ -1060,6 +1051,7 @@ virtual int setUserBackground(uid_t uid, const char* img_path) = 0;
 </table>
 
 
+
 <a name = "setLogLevel"></a>
 
 ### 设置生成 log 的等级 \(setLogLevel\)
@@ -1101,6 +1093,7 @@ virtual int setLogLevel(agora::linuxsdk::agora_log_level level) = 0;
 </table>
 
 
+
 <a name = "enableModuleLog"></a>
 
 ### 设置生成 log 的模块 \(enableModuleLog\)
@@ -1111,34 +1104,23 @@ virtual int enableModuleLog(uint32_t module, bool enable) = 0;
 
 该方法开启/关闭指定模块的 log 生成功能。
 
-	
 <a id = "id12"></a>
 
 <a id = "irecordingengineeventhandler"></a>
 
-	
 ## IRecordingEngineEventHandler 类
 
 该类用于为` Recording engine `提供回调。该类包含如下回调：
 
--   [发生错误回调 \(onError\)](#onError)
-
--   [发生警告回调 \(onWarning\)](#onWarning)
-
--   [加入频道回调 \(onJoinChannelSuccess\)](#onJoinChannelSuccess)
-
--   [离开频道回调 \(onLeaveChannel\)](#onLeaveChannel)
-
--   [其他用户加入当前频道回调 \(onUserJoined\)](#onUserJoined)
-
--   [其他用户离开当前频道回调 \(onUserOffline\)](#onUserOffline)
-
--   [获取音频裸数据回调 \(audioFrameReceived\)](#audioFrameReceived)
-
--   [获取视频裸数据回调 \(videoFrameReceived\)](#videoFrameReceived)
-
--   [启用说话者提示 \(onActiveSpeaker\)](#onActiveSpeaker)
-
+- [发生错误回调 \(onError\)](#onError)
+- [发生警告回调 \(onWarning\)](#onWarning)
+- [加入频道回调 \(onJoinChannelSuccess\)](#onJoinChannelSuccess)
+- [离开频道回调 \(onLeaveChannel\)](#onLeaveChannel)
+- [其他用户加入当前频道回调 \(onUserJoined\)](#onUserJoined)
+- [其他用户离开当前频道回调 \(onUserOffline\)](#onUserOffline)
+- [获取音频裸数据回调 \(audioFrameReceived\)](#audioFrameReceived)
+- [获取视频裸数据回调 \(videoFrameReceived\)](#videoFrameReceived)
+- [启用说话者提示 \(onActiveSpeaker\)](#onActiveSpeaker)
 
 <a name = "onError"></a>
 
@@ -1807,7 +1789,7 @@ struct VideoJpgFrame {
 </table>
 
 <a id="onactivespeaker-recording-cpp"></a>	
-	
+​	
 <a name = "onActiveSpeaker"></a>	
 
 ### 启用说话者提示 \(onActiveSpeaker\)
@@ -1838,5 +1820,3 @@ virtual void onActiveSpeaker(uid_t uid);
 ## 错误代码和警告代码
 
 相关错误代码见 [发生错误回调 \(onError\)](#onError)。更多详见 [错误代码和警告代码](https://docs.agora.io/cn/recording/API%20Reference/the_error_native)。
-
-

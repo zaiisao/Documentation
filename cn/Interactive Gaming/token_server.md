@@ -2,7 +2,7 @@
 ---
 title: 在服务端生成密钥
 description: Guide on how to generate tokens on the server side
-platform: Server
+platform: All Platforms
 updatedAt: Fri Nov 02 2018 04:03:33 GMT+0000 (UTC)
 ---
 # 在服务端生成密钥

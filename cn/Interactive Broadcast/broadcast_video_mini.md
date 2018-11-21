@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: 微信小程序
-updatedAt: Fri Sep 28 2018 19:36:07 GMT+0800 (CST)
+updatedAt: Mon Oct 08 2018 03:13:37 GMT+0000 (UTC)
 ---
 # 实现视频直播
 # 实现视频直播
@@ -245,10 +245,10 @@ client.init(APPID, () => {
 <td><strong>集成方法</strong></td>
 </tr>
 <tr><td>Android</td>
-<td><a href="../../cn/Quickstart%20Guide/broadcast_video_android.md"><span>入门：实现视频直播</span><a></td>
+<td><a href="../../cn/Quickstart%20Guide/broadcast_video_android.md"><span>实现视频直播</span><a></td>
 </tr>
 <tr><td>iOS</td>
-<td><a href="../../cn/Quickstart%20Guide/broadcast_video_ios.md"><span>入门：实现视频直播</span></a></td>
+<td><a href="../../cn/Quickstart%20Guide/broadcast_video_ios.md"><span>实现视频直播</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -269,7 +269,7 @@ client.init(APPID, () => {
 <td><strong>集成方法</strong></td>
 </tr>
 <tr><td>Web</td>
-<td><a href="../../cn/Quickstart%20Guide/broadcast_video_web.md"><span>入门: 实现视频直播</span></a></td>
+<td><a href="../../cn/Quickstart%20Guide/broadcast_video_web.md"><span>实现视频直播</span></a></td>
 </tr>
 </tbody>
 </table>

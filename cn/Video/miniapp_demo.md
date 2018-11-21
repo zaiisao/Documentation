@@ -3,24 +3,22 @@
 title: 声网小程序 Demo 体验
 description: 
 platform: Wechat
-updatedAt: Tue Sep 18 2018 19:22:47 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:00:25 GMT+0000 (UTC)
 ---
 # 声网小程序 Demo 体验
-# 声网小程序 Demo 体验
-
 ## 体验小程序 App
 
 1.  在 Android 或 iOS 上打开微信 App, 扫描识别下面的二维码，即可快速体验 Agora 小程序解决方案。
 
-	<img alt="../_images/wechat_live_code.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_live_code.jpg" style="width: 172.0px; height: 172.0px;"/>
+	<img alt="../_images/wechat_live_code.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_live_code.jpg" style="width: 270px;"/>
 
 2.  在小程序界面上输入你想要进入的房间名，点击 **加入房间** 即可进入小程序频道。
 
-	<img alt="../_images/wechat_join_channel.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_join_channel.jpg" style="width: 319.2px; height: 569.6px;"/>
+	<img alt="../_images/wechat_join_channel.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_join_channel.jpg" style="width: 370px;"/>
 
 3.  其他用户在自己的小程序上输入相同的房间名，点击 **加入房间**，即可进入相同的频道，实现通话。
 
-	<img alt="../_images/wechat_video_call.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_video_call.jpg" style="width: 300.0px; height: 533.6px;"/>
+	<img alt="../_images/wechat_video_call.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_video_call.jpg" style="width: 370px;"/>
 
 你可以点击屏幕上的按钮，依次体验 **静音**、**切换摄像头**、**美颜** 等功能。
 
@@ -32,7 +30,7 @@ updatedAt: Tue Sep 18 2018 19:22:47 GMT+0800 (CST)
 
 3.  点击 **Advanced**，选择 **H264-only**。
 
-	<img alt="../_images/wechat_webdemo.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_webdemo.jpg" style="width: 343.0px; height: 282.0px;"/>
+	<img alt="../_images/wechat_webdemo.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_webdemo.jpg" style="width: 370px;"/>
 
 4.  点击 **Join**。
 

@@ -3,9 +3,8 @@
 title: 信令 Server SDK API - Java
 description: 
 platform: Java
-updatedAt: Wed Sep 26 2018 23:06:15 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:09:08 GMT+0000 (UTC)
 ---
-# 信令 Server SDK API - Java
 # 信令 Server SDK API - Java
 > 版本：v1.4.0 BETA
 
@@ -480,7 +479,7 @@ public Signal.LoginSession.Call channelInviteUser2(String channel, String peer, 
 <li>{“_require_peer_online”:1}  如果对方不在线，则立即触发 <code>onInviteFailed</code> 回调</li>
 <li>{“_require_peer_online”:0}  如果对方不在线超过 20 秒，则触发 <code>onInviteFailed</code> 回调（默认）</li>
 <li>{“_timeout”:30} 呼叫超时。超时后收到 <code>inviteFailed</code> 的同时消息被销毁，被叫不再收到。范围：0～30s。</li>
-<li>{“destMediaUid” : “YourMediaUid123”}  指定的加入相应媒体频道的 uid。</li>
+<li>{“destMediaUid” : 123}  指定的加入相应媒体频道的 uid。</li>
 <li>{“srcNum” : “+123456789”} 指定的在远端手机屏幕上显示的手机号码。</li>
 </ul>
 </div>
@@ -494,7 +493,7 @@ public Signal.LoginSession.Call channelInviteUser2(String channel, String peer, 
 
 
 
-> SIP 呼叫时你不需要设置 <code>_require_peer_online</code> 字段。
+> SIP 呼叫时你不需要设置 `_require_peer_online` 字段。
 
 ### <a name="channeljoin-java"></a>加入频道 \(channelJoin\)
 
@@ -610,15 +609,15 @@ public void channelSetAttr(String name, String value)
 </table>
 
 > 以下是 参数 name 的内置属性： 
-> 
-> - <code>_userNotification</code> 1: 默认值，频道发送用户加入或离开频道的事件；0: 频道不发送用户加入或离开频道的事件。 
-> - <code>_channel_ttl</code> ：频道最后一个用户离开后，多久销毁，单位为秒，默认为7200 。特殊频道永不销毁。 
-> - <code>_member_num</code> ： 表示当前频道人数，由系统自动更新；更新频次由 <code>_auto_update_num</code> 确定。如果  <code>_auto_update_num</code> 时间内没有用户进出频道，不会收到人数更新回调  <code>onChannelAttrUpdated</code>；如果 <code>_auto_update_num</code> 内有用户频繁进出频道，只会按固定时间收到一次回调。
-> - <code>_auto_update_num</code> ：表示是否由系统自动更新频道人数。0：关闭（默认）；1-n：（每多少秒更新一次）
-> - <code>_total_member_num</code> ：表示当前频道累计登录人次，由系统自动更新。<code>_auto_update_num</code> 与 <code>_auto_update_total_num</code> 需要同时设置为非0。更新原则类似 <code>_member_num</code>
-> - <code>_auto_update_total_num</code> : 表示是否由系统自动更新频道人数，0：关闭（默认）；非0：每多少秒后台更新一次（与 <code>_auto_update_num</code> 相同）。
-> -  <code>_sendmsg_limit</code> : 整个频道每秒能发送的消息数
-> -  <code>_setattr_limit</code> : 频道每个属性每秒能修改的次数
+>
+> - `_userNotification` 1: 默认值，频道发送用户加入或离开频道的事件；0: 频道不发送用户加入或离开频道的事件。 
+> - `_channel_ttl` ：频道最后一个用户离开后，多久销毁，单位为秒，默认为7200 。特殊频道永不销毁。 
+> - `_member_num` ： 表示当前频道人数，由系统自动更新；更新频次由 `_auto_update_num` 确定。如果  `_auto_update_num` 时间内没有用户进出频道，不会收到人数更新回调  <code>onChannelAttrUpdated</code>；如果 `_auto_update_num` 内有用户频繁进出频道，只会按固定时间收到一次回调。
+> - `_auto_update_num` ：表示是否由系统自动更新频道人数。0：关闭（默认）；1-n：（每多少秒更新一次）
+> - `_total_member_num` ：表示当前频道累计登录人次，由系统自动更新。`_auto_update_num` 与 `_auto_update_total_num` 需要同时设置为非0。更新原则类似 `_member_num`
+> - `_auto_update_total_num` : 表示是否由系统自动更新频道人数，0：关闭（默认）；非0：每多少秒后台更新一次（与 `_auto_update_num` 相同）。
+> - `_sendmsg_limit` : 整个频道每秒能发送的消息数
+> - `_setattr_limit` : 频道每个属性每秒能修改的次数
 
 ### <a name="channeldelattr-java"></a>删除频道属性 \(channelDelAttr\)
 
@@ -1832,6 +1831,7 @@ public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call ca
 ## 错误代码和警告代码
 
 详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
+
 
 
 

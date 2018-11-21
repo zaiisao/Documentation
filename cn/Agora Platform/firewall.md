@@ -3,20 +3,18 @@
 title: 防火墙说明
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 25 2018 01:13:12 GMT+0800 (CST)
+updatedAt: Tue Nov 06 2018 09:52:57 GMT+0000 (UTC)
 ---
 # 防火墙说明
-# 防火墙说明
-
 在使用 Agora.io 提供的相关服务之前，您需要接入到某些特定的端口。本页提供使用 Agora 各 SDK 前必须要打开的端口及设置的域名白名单。
 
 ## Agora Native SDK
 
--   打开 TCP 端口：1080、8000
+-   打开 TCP 端口：1080、8000、9700、25000，30000。
 
--   打开 UDP 端口：1080、4000-4030、8000、9700、25000
+-   打开 UDP 端口：1080、4000-4030、7000、8000、8913、9700、25000。
 
--   将域名 .agora.io 设为白名单
+-   将域名 `.agora.io` 、 `vocs1.agora.io` 、 `vocs2.agora.io` 、 `vocs3.agora.io` 、 `vocs4.agora.io` 、 `vocs5.agora.io` 、 `qoslbs.agoralab.co` 、 `qos.agoralab.co` 、 `ap1.agora.io` 、 `ap2.agora.io` 、 `ap3.agora.io` 、 `ap4.agora.io` 、 `ap5.agora.io` 设为白名单
 
 
 ## Agora Web SDK
@@ -25,7 +23,8 @@ updatedAt: Tue Sep 25 2018 01:13:12 GMT+0800 (CST)
 
 -   打开 UDP 端口 3478、10000-65535
 
--   将域名 .agora.io、vocs.agora.io、qoslbs.agora.io 以及 qos.agora.io 设为白名单
+-   将域名 `*.agora.io` 和 `*.agoraio.cn` 设为白名单
+
 
 > 如果你使用了代理服务器，则需打开端口 3433；如果未使用代理服务器，则无需打开端口 3433。
 

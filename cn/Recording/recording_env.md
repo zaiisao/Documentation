@@ -3,11 +3,9 @@
 title: 设置开发环境
 description: 
 platform: Linux
-updatedAt: Wed Sep 26 2018 04:11:00 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:05:28 GMT+0000 (UTC)
 ---
 # 设置开发环境
-# 设置开发环境
-
 本页介绍如何设置环境以集成 Agora Recording SDK for Linux 。
 
 ## 硬件和网络要求
@@ -82,7 +80,7 @@ updatedAt: Wed Sep 26 2018 04:11:00 GMT+0800 (CST)
 
 
 
-假设每个频道内有两个人进行视频通话（通信模式），分辨率是 640\*480 ，帧率为 15fps ，单流码率为 500kbps ：
+假设每个频道内有两个人进行视频通话（通信模式），单流模式录制，分辨率是 640 * 480 ，帧率为 15 fps ，单流码率为 500 Kbps ：
 
 实测在参考硬件配置下， 12 核 24 线程的 CPU 满载并发 100 个频道，此时：
 
@@ -128,9 +126,9 @@ updatedAt: Wed Sep 26 2018 04:11:00 GMT+0800 (CST)
 
 ## 准备环境
 
-1.  [下载](https://docs.agora.io/cn/2.2/download)
+1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads)
 
-    <img alt="../_images/linux_structure.png" src="https://web-cdn.agora.io/docs-files/cn/linux_structure.png" style="width: 412.0px; height: 712.0px;"/>
+    <img alt="../_images/linux_structure.png" src="https://web-cdn.agora.io/docs-files/cn/linux_structure.png" style="width: 500.0px;"/>
 
 
 

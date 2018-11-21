@@ -3,11 +3,9 @@
 title: 游戏裁剪版 API
 description: 
 platform: iOS
-updatedAt: Wed Sep 19 2018 01:38:20 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:13:33 GMT+0000 (UTC)
 ---
 # 游戏裁剪版 API
-# 游戏裁剪版 API
-
 <table>
 <colgroup>
 <col/>

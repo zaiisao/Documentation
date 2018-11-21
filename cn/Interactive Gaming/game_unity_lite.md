@@ -3,12 +3,9 @@
 title: 游戏裁剪版 API
 description: 
 platform: Unity
-updatedAt: Wed Sep 19 2018 01:50:30 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:13:40 GMT+0000 (UTC)
 ---
 # 游戏裁剪版 API
-# 游戏裁剪版 API
-
-
 本文涵盖了 Agora AMG SDK for Unity 的 API 使用参考，适用于 Unity for iOS, Android, 和 Windows 三个平台。
 
 -   对于 Android 平台，需要申请以下系统权限：

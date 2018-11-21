@@ -1,13 +1,11 @@
 
 ---
-title: 设置开发环境
+title: 集成客户端
 description: 
 platform: iOS
-updatedAt: Thu Sep 27 2018 01:27:02 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 03:59:09 GMT+0000 (UTC)
 ---
-# 设置开发环境
-# 设置开发环境
-
+# 集成客户端
 ## 前提条件
 
 - Xcode 9.0+。
@@ -22,12 +20,12 @@ updatedAt: Thu Sep 27 2018 01:27:02 GMT+0800 (CST)
 1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
 2. 登陆 Dashboard 页面，点击 **添加新项目**。
 
-	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" style="width: 1133.0px; height: 372.0px;"/>
+	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
 1. 填写 **项目名**，然后点击 **提交**。
 2. 在你创建的项目下，查看并获取该项目对应的 **App ID**。
 
-	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" style="width: 1141.0px; height: 334.0px;"/>
+	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" />
 
 
 ## 添加 Agora SDK 到项目中
@@ -85,14 +83,14 @@ updatedAt: Thu Sep 27 2018 01:27:02 GMT+0800 (CST)
 
 ### <a name = "man-add"></a>手动添加库
 
-1. 下载 [Agora Video SDK for iOS](https://docs.agora.io/cn/2.4/download) ，并解压。
+1. 下载 [Agora Video SDK for iOS](https://docs.agora.io/cn/Agora%20Platform/downloads) ，并解压。
 2. 使用 Xcode 打开你想要运行的项目，然后选中当前 Target。
 
-	<img alt="../_images/ios_video_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_2.jpg" style="width: 1030.0px; height: 276.0px;"/>
+	<img alt="../_images/ios_video_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_2.jpg" />
 
 3. 打开 **Build Phases** 页签。
 
-	<img alt="../_images/ios_voice_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_voice_2.jpg" style="width: 1216.0px; height: 294.0px;"/>
+	<img alt="../_images/ios_voice_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_voice_2.jpg" />
 
 4. 展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加。
    - `AgoraRtcEngineKit.framework`
@@ -108,15 +106,15 @@ updatedAt: Thu Sep 27 2018 01:27:02 GMT+0800 (CST)
 
 	**添加前：**
 
-	<img alt="../_images/ios_video_3.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_3.jpg" style="width: 1029.0px; height: 386.0px;"/>
+	<img alt="../_images/ios_video_3.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_3.jpg" />
 
 	**添加后：**
 
-	<img alt="../_images/ios_video_4.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_4.jpg" style="width: 993.0px; height: 509.0px;"/>
+	<img alt="../_images/ios_video_4.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_4.jpg" />
 
 	其中，`AgoraAudioKit.framework` 位于下载下来的 SDK 包 **libs** 文件夹下。因此点击 **+** 后，还需要点击 **Add Other…** ，然后进入到 SDK 的 **libs** 路径下，点击并添加 `AgoraAudioKit.framework`。
 
-	<img alt="../_images/ios_video_5.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_5.jpg" style="width: 991.0px; height: 488.0px;"/>
+	<img alt="../_images/ios_video_5.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_5.jpg" />
 
 ## 授权使用 Agora SDK
 
@@ -127,11 +125,11 @@ updatedAt: Thu Sep 27 2018 01:27:02 GMT+0800 (CST)
 
 **添加前：**
 
-<img alt="../_images/ios_video_6.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_6.jpg" style="width: 995.0px; height: 355.0px;"/>
+<img alt="../_images/ios_video_6.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_6.jpg" />
 
 **添加后：**
 
-<img alt="../_images/ios_video_7.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_7.jpg" style="width: 993.0px; height: 384.0px;"/>
+<img alt="../_images/ios_video_7.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_7.jpg" />
 
 ## 访问库
 
@@ -147,7 +145,7 @@ updatedAt: Thu Sep 27 2018 01:27:02 GMT+0800 (CST)
 
 在项目需要使用 Agora Voice SDK API 的文件里，填入 `import AgoraAudioKit`。
 
-<img alt="../_images/ios_video_8.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_8.jpg" style="width: 992.0px; height: 401.0px;"/>
+<img alt="../_images/ios_video_8.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_8.jpg" />
 
 ## 其他设置
 
@@ -155,8 +153,10 @@ updatedAt: Thu Sep 27 2018 01:27:02 GMT+0800 (CST)
 
 - 设置后台模式。后台模式允许 iOS 设备退回后台后，依然可以运行相关功能。 选中当前 Target，在 **Capabilities** 下点击并展开 **Background Modes** 项，打开启用开关，然后勾选 **Audio，AirPlay and Picture in Picture** 。
 
-  <img alt="../_images/ios_video_9.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_9.jpg" style="width: 992.0px; height: 462.0px;"/>
+  <img alt="../_images/ios_video_9.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_9.jpg" />
 
 - 启用或禁用 Bitcode。使用 Bitcode 开发的 App 在上传 App Store 后，App Store 会对其进行优化或瘦身。 选中当前 Target，在 **Build Settings** 下，根据实际需要启用或禁用 Bitcode。
 
-  <img alt="../_images/ios_video_10.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_10.jpg" style="width: 992.0px; height: 343.0px;"/>
+  <img alt="../_images/ios_video_10.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_10.jpg" />
+	
+你已经完成了客户端集成，可以开始使用 Agora SDK 了。

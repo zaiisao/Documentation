@@ -3,35 +3,22 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Fri Sep 28 2018 19:59:57 GMT+0800 (CST)
+updatedAt: Fri Nov 16 2018 03:48:32 GMT+0000 (UTC)
 ---
 # 推流到 CDN
-# 推流到 CDN
+## 功能描述
 
-## 简介
-
-互动直播目前同时提供新老两套 CDN 推流方案：
-
--   新的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
-
-    -   <code>addPublishStreamUrl</code>
-
-    -   <code>removePublishStreamUrl</code>
-
-    -   <code>addInjectStreamUrl</code>
-
-    -   <code>removeInjectStreamUrl</code>
-
-    -   <code>setLiveTranscoding</code>
-
--   老的 CDN 旁路推流方案主要基于以下两个 API 进行推流和布局设置：
-
-    -   配置旁路直播推流 (<code>configPublisher</code>)
-
-    -   设置画中画布局 (<code>setVideoCompositingLayout</code>)
+旁路推流功能用于将主播的上行音视频流转化为 RTMP 流分发，供 Web 端或流媒体播放器端观看。
 
 
-声网推荐您采用新的旁路推流方案推流到 CDN。新方案较老方案更加灵活：
+声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
+
+-   <code>addPublishStreamUrl</code>
+-   <code>removePublishStreamUrl</code>
+-   <code>setLiveTranscoding</code>
+
+
+声网的 CDN 旁路推流方案具有以下优点：
 
 -   能够随时启动或停止推流
 
@@ -41,10 +28,7 @@ updatedAt: Fri Sep 28 2018 19:59:57 GMT+0800 (CST)
 
 -   通过回调接口掌握推流成功与否
 
--   较少的接口保证客户能够快速从旧的推流方案升级到新的推流方案。
-
-
-> 如果您希望用老的 CDN 推流方案，请参考 [进阶：推流到 CDN](../../cn/Quickstart%20Guide/push_stream_windows.md) 。
+-   较少的接口便于客户快速升级。
 
 ## 推流到 CDN
 
@@ -116,7 +100,7 @@ m_rtcEngine->removePublishStreamUrl(url);
 
 如果你想显示以下布局:
 
-<img alt="../_images/sei_2host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_2host.png" style="width: 416.0px; height: 240.0px;"/>
+<img alt="../_images/sei_2host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_2host.png" style="width: 500px;"/>
 
 
 设置参数如下:
@@ -150,7 +134,7 @@ User1:
 
 如果你想显示以下布局:
 
-<img alt="../_images/sei_3host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_3host.png" style="width: 236.0px; height: 416.0px;"/>
+<img alt="../_images/sei_3host.png" src="https://web-cdn.agora.io/docs-files/cn/sei_3host.png" style="width: 370px;"/>
 
 
 设置参数如下:
@@ -193,7 +177,7 @@ Canvas:
 
 如果你想显示以下布局:
 
-<img alt="../_images/sei_random.png" src="https://web-cdn.agora.io/docs-files/cn/sei_random.png" style="width: 236.0px; height: 416.0px;"/>
+<img alt="../_images/sei_random.png" src="https://web-cdn.agora.io/docs-files/cn/sei_random.png" style="width: 370px;"/>
 
 
 设置参数如下:

@@ -3,11 +3,9 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: iOS
-updatedAt: Wed Sep 26 2018 18:17:23 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:06:48 GMT+0000 (UTC)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
-# 客户端：发送点对点文本消息和频道文本消息
-
 ## 第一节：快速集成
 
 ### 第一步：准备开发环境。
@@ -39,7 +37,7 @@ updatedAt: Wed Sep 26 2018 18:17:23 GMT+0800 (CST)
 
 ### 第二步：下载最新的 Agora Signaling SDK 软件包。
 
-下载 [Agora Signaling SDK 软件包](https://docs.agora.io/cn/2.2/download)。
+下载 [Agora Signaling SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads)。
 
 ### 第三步：解压已下载的 SDK 软件包的 libs 并将其复制到对应的项目文件夹中。
 

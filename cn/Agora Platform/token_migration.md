@@ -3,21 +3,19 @@
 title: 动态秘钥升级说明
 description: 
 platform: All Platforms
-updatedAt: Fri Sep 28 2018 02:17:29 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:02:37 GMT+0000 (UTC)
 ---
 # 动态秘钥升级说明
-# 动态秘钥升级说明
-
 本文帮助需要从老版 SDK 升级高版本的用户升级到最新的动态秘钥 Token。
 
 2.1.0 版本之前，每一个鉴权服务都需要一个独立的秘钥（key）。比如：
 
--   joinChannel 需要 channel key
+-   `joinChannel` 需要 channel key
 
--   setClientRole 需要 permission key
+-   `setClientRole` 需要 permission key
 
 
-2.1.0 版本用一个 Token 包括了所有的服务权限信息。Token 参数仅在 joinChannel 时被传入；需要更新权限时调用 renewToken 即可。
+2.1.0 版本用一个 Token 包括了所有的服务权限信息。Token 参数仅在 `joinChannel `时被传入；需要更新权限时调用 `renewToken` 即可。
 
 ## 1. 客户端 API 更新日志
 

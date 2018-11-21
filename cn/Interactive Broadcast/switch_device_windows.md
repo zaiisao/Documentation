@@ -63,8 +63,6 @@ rep.enableAudioVolumeIndication(1000 /* interval */, 10 /* smooth */);
 
 
 
-### 摄像头测试
-
 ```C++
 
 // 1. Find all video capture devices.
