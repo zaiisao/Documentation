@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 21 2018 10:27:43 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 10:27:47 GMT+0000 (UTC)
 ---
 # FAQ
 ## 常见问题回答
@@ -21,6 +21,8 @@ updatedAt: Wed Nov 21 2018 10:27:43 GMT+0000 (UTC)
 ## 集成与使用类
  
 该部分包含集成和使用 Agora SDK 过程中常见的问题。
+
+ [音频相关](../../cn/Agora%20Platform/audio_how_to.md)
  
  [视频相关](../../cn/Agora%20Platform/video_how_to.md)
 
@@ -54,8 +56,6 @@ updatedAt: Wed Nov 21 2018 10:27:43 GMT+0000 (UTC)
 
  [录制相关](../../cn/Agora%20Platform/recording_related_faq.md)
 
- [信令相关](../../cn/Agora%20Platform/signaling_related_faq.md)
- 
  [Web SDK 相关](../../cn/Agora%20Platform/websdk_related_faq.md)
 
 
