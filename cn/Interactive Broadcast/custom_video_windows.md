@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 01:44:16 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 01:44:20 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -323,11 +323,11 @@ bool CExternalVideoFrameObserver::onRenderVideoFrame(unsigned int uid, VideoFram
   return true;
 }
 
-// 启用外部音频数据源模式，注册音频观测器，我们使用观测器将外部的数据源传递给引擎以及把引擎返回的数据给到应用
+// 启用外部视频数据源模式，注册视频观测器，我们使用观测器将外部的数据源传递给引擎以及把引擎返回的数据给到应用
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
 mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
 
-int mRet = apm->setParameters("{\"che.video.local.camera_index\":1024}"); // FIXME 这个私有参数怎么弄？
+int mRet = apm->setParameters("{\"che.video.local.camera_index\":1024}"); 
 nRet = mediaEngine->registerVideoFrameObserver(lpVideoFrameObserver);
 
 // 开始往引擎推送数据以及从引擎获取数据，通常需要自己维护一个线程循环
