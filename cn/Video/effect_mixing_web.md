@@ -3,7 +3,7 @@
 title: 音乐混音
 description: How to enable audio mixing on the Web
 platform: Web
-updatedAt: Wed Nov 21 2018 09:45:31 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 09:45:37 GMT+0000 (UTC)
 ---
 # 音乐混音
 ## 功能描述
@@ -17,24 +17,59 @@ Agora 混音功能支持如下设置：
 
 ```javascript
 // 设置混音选项
-var options = {  
-   filePath: "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3", // 指定混音的音频文件路径  
-   cycle: 1, // 设置音频文件循环播放的次数，仅支持 Chrome 65+    
-   playTime: 0, // 设置音频文件开始播放的位置，单位为 ms。设为 0 即从头开始播放。   
-   replace: false // 设置是否用音频文件内容替换本地麦克风采集的音频流 
-  }
-  // 开始混音
-  localStream.startAudioMixing(options, function(err){
-   if (err){
-     throw err;
-   }
-   // 5 秒后停止混音
-   setTimeout(function(){
-    localStream.stopAudioMixing();
-   }, 5 * 1000);
-  });
-  
+// filePath 必填，设置混音文件路径，仅支持在线文件。
+// cycle 选填，设置音频文件循环播放的次数，仅支持 Chrome 65+。如不设置则默认播放一次。 
+// replace 选填，设置是否用音频文件内容替换本地麦克风采集的音频流。默认为 false。
+// playTime 必填，设置音频文件开始播放的位置，单位为 ms。设为 0 即从头开始播放。 
+var options = {
+      filePath: "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3", 
+      cycle: 1, 
+      replace: false, 
+      playTime:0 
+}
+
+// 开始混音
+localStream.startAudioMixing(options, function(err){
+     if (err){
+             console.log("Failed to start audio mixing. " + err);
+      }
+});
+
+// 调整混音的音量。取值为 [0, 100]，100 代表维持原来混音的音量（默认）。
+localStream.adjustAudioMixingVolume(volume);
+
+// 获取当前播放的混音音乐的位置，返回值单位为 ms。
+localStream.getAudioMixingCurrentPosition();
+
+// 设置混音文件开始播放的位置，单位为 ms。
+localStream.setAudioMixingPosition(pos);
+
+// 暂停播放混音文件
+localStream.pauseAudioMixing();
+
+// 恢复播放混音文件
+localStream.resumeAudioMixing();
+
+// 获取当前混音的播放进度，返回值单位为 ms。
+localStream.getAudioMixingCurrentPosition();
+
+// 获取混音文件播放时长，返回值单位为 ms。
+localStream.getAudioMixingDuration();
+
+// 停止混音
+localStream.stopAudioMixing();
 ```
+
+### API 参考
+
+- [startAudioMixing](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)
+- [stopAudioMixing](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#stopaudiomixing)
+- [adjustAudioMixingVolume](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#adjustaudiomixingvolume)
+- [pauseAudioMixing](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#pauseaudiomixing)
+- [resumeAudioMixing](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#resumeaudiomixing)
+- [getAudioMixingDuration](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingduration)
+- [getAudioMixingCurrentPosition](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingcurrentposition)
+- [setAudioMixingPosition](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#setaudiomixingposition)
 
 ## 开发注意事项
 
