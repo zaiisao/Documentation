@@ -3,11 +3,9 @@
 title: Channel Key 密钥说明
 description: Guide on how to use channel keys
 platform: All Platform
-updatedAt: Thu Sep 27 2018 01:57:46 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:02:44 GMT+0000 (UTC)
 ---
 # Channel Key 密钥说明
-# Channel Key 密钥说明
-
 本文主要介绍在使用 Agora SDK 过程中使用 Channel Key 的方法。
 
 ## App ID
@@ -43,31 +41,31 @@ updatedAt: Thu Sep 27 2018 01:57:46 GMT+0800 (CST)
 1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
 2. 登陆 Dashboard 页面，点击 **添加新项目**。
 
-	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" style="width: 1133.0px; height: 372.0px;"/>
+	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
 1. 填写 **项目名**，然后点击 **提交**。
 2. 在你创建的项目下，查看并获取该项目对应的 **App ID**。
 
-	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" style="width: 1141.0px; height: 334.0px;"/>
+	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" />
 
 
 ### 步骤 2: 获取 App Certificate
 
-每个 Agoraxxxx 账户下可创建多个项目，且每个项目有独立的 App ID 和 App Certificate。 在上文项目列表中查看 App ID 的地方，启用该项目的 App Certificate:
+每个 Agora 账户下可创建多个项目，且每个项目有独立的 App ID 和 App Certificate。 在上文项目列表中查看 App ID 的地方，启用该项目的 App Certificate:
 
 首先，点击激活项目右上方的 **编辑** 按钮。
 
-<img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" style="width: 702.6px; height: 184.8px;"/>
+<img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" />
 
 
 然后，点击 App Certificate 右方的 **启用** 按钮。仔细阅读 关于 App Certificate 介绍后，根据屏幕提示，确认启用App Certificate。
 
-<img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" style="width: 701.4px; height: 245.4px;"/>
+<img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" />
 
 
 最后，点击 App Certificate 后面的“眼睛”图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击“眼睛”图标。
 
-<img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" style="width: 699.3px; height: 186.9px;"/>
+<img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 
 
 > -   如果出于某种原因你需要更新 App Certificate，请联系 [support@agora.io](mailto:support@agora.io) 。

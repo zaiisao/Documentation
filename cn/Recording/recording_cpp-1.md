@@ -2,12 +2,10 @@
 ---
 title: 录制快速开始
 description: 
-platform: C++
-updatedAt: Fri Sep 28 2018 19:20:21 GMT+0800 (CST)
+platform: CPP
+updatedAt: Fri Nov 02 2018 04:05:36 GMT+0000 (UTC)
 ---
 # 录制快速开始
-# 录制快速开始
-
 本页介绍如何使用 Agora Recording SDK for Linux 录制语音或视频通话。
 
 Agora Recording SDK for Linux（简称录制 SDK）支持：
@@ -25,7 +23,7 @@ Agora Recording SDK for Linux（简称录制 SDK）支持：
 
 你需要将 Agora Recording SDK for Linux 集成在你的 Linux 服务器上而不是你的 App 上。
 
-<img alt="../_images/recording_linux_cn.png" src="https://web-cdn.agora.io/docs-files/cn/recording_linux_cn.png" style="width: 490.0px; height: 308.0px;"/>
+<img alt="../_images/recording_linux_cn.png" src="https://web-cdn.agora.io/docs-files/cn/recording_linux_cn.png" style="width: 500.0px;"/>
 
 
 录制某频道内的音视频信息相当于将一个特殊的观众加入该频道。该观众获取频道内的音视频信息，将获取到的信息转码并储存在 Linux 服务器上。 因此，你必须：
@@ -608,7 +606,7 @@ return 0;
 
 -   关于录制 SDK 的 API 的详细信息，参考 [录制 API](../../cn/API%20Reference/recording_cpp.md) 。
 
--   录制完成后，你可能需要使用转码脚本将录制的文件进行合成，详见 [进阶：录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)  中关于转码脚本的说明。
+-   录制完成后，你可能需要使用转码脚本将录制的文件进行合成，详见 [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)  中关于转码脚本的说明。
 
 -   录制的示例代码已包含在录制 SDK 包中。C++ 的示例代码在位于 ./samples/cpp 中。
 

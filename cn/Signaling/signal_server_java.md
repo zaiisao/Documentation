@@ -3,11 +3,9 @@
 title: 在 Java 平台服务器上发送点对点文本消息和频道文本消息
 description: 
 platform: Java
-updatedAt: Tue Sep 25 2018 00:54:46 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:07:35 GMT+0000 (UTC)
 ---
 # 在 Java 平台服务器上发送点对点文本消息和频道文本消息
-# 在 Java 平台服务器上发送点对点文本消息和频道文本消息
-
 ## 第一节：快速集成
 
 本章介绍信令 SDK 的集成方法。
@@ -23,7 +21,7 @@ updatedAt: Tue Sep 25 2018 00:54:46 GMT+0800 (CST)
 
 ### 第二步：下载最新的 Agora Signaling SDK 软件包。
 
-下载 [Agora Signaling SDK 软件包](https://docs.agora.io/cn/2.2/download)。
+下载 [Agora Signaling SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads)。
 
 ### 第三步：
 

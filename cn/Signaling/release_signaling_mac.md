@@ -3,11 +3,9 @@
 title: 发版说明
 description: 
 platform: Mac
-updatedAt: Wed Sep 26 2018 22:47:29 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:16:54 GMT+0000 (UTC)
 ---
 # 发版说明
-# 发版说明
-
 ## 概览
 
 Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。
@@ -20,7 +18,7 @@ Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传
 
     -   每条消息最大为 8k 可见字符。
 
-    -   每个用户不超过 1 条/秒，整个频道不能超过 100 条消息/秒，超过频率限制的消息将丢失。如需超过 100 条消息/秒，请联系 [sales@agora.io](mailto:sales@agora.io)，电话 4006326626。
+    -   每个用户不超过 1 条/秒，整个频道不能超过 100 条消息/秒，超过频率限制的消息将丢失。
 
     -   暂不支持频道离线消息。
 

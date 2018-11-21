@@ -3,14 +3,14 @@
 title: 实现语音直播
 description: 
 platform: Web
-updatedAt: Fri Sep 28 2018 19:32:49 GMT+0800 (CST)
+updatedAt: Wed Oct 17 2018 06:50:36 GMT+0000 (UTC)
 ---
 # 实现语音直播
 # 实现语音直播
 
 本页介绍如何使用 Agora Web SDK 快速实现网页端语音直播。
 
-本页以声网提供的 [示例项目](https://github.com/AgoraIO/Agora-Web-Tutorial-1to1) 为例说明 API 的使用。如需了解示例代码具体如何实现和运行，请查看示例项目中的 **README** 文件。
+本页以声网提供的 [示例项目](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1) 为例说明 API 的使用。如需了解示例代码具体如何实现和运行，请查看示例项目中的 **README** 文件。
 
 ## 环境准备
 
@@ -215,7 +215,7 @@ client.leave(function () {
 
 在实现语音直播的过程中，可以使用以下功能:
 
-- [进阶：企业部署代理服务器](../../cn/Quickstart%20Guide/proxy_web.md)
-- [进阶：实现网页端屏幕共享](../../cn/Quickstart%20Guide/screensharing_web.md)
+- [企业部署代理服务器](../../cn/Quickstart%20Guide/proxy_web.md)
+- [实现网页端屏幕共享](../../cn/Quickstart%20Guide/screensharing_web.md)
 
 更多功能实现，请参考 [Agora Web SDK API](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html) 中各 API 的功能及描述。

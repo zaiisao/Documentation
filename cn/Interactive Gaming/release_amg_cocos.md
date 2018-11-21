@@ -3,14 +3,12 @@
 title: 发版说明
 description: 
 platform: Cocos
-updatedAt: Thu Sep 27 2018 20:07:01 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:07:51 GMT+0000 (UTC)
 ---
 # 发版说明
-# 发版说明
-
 ## 简介
 
-该游戏软件包提供游戏语音功能，如需视频功能，请联系 [sales@agora.io](mailto:sales@agora.io) 。
+该游戏软件包提供游戏语音功能。
 
 ## 2.1.0 版
 

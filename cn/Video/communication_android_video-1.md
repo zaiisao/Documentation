@@ -3,18 +3,16 @@
 title: 实现视频通话
 description: 
 platform: Android
-updatedAt: Fri Sep 28 2018 20:12:16 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 03:59:48 GMT+0000 (UTC)
 ---
 # 实现视频通话
-# 实现视频通话
-
 在本页你可以了解如何使用 Agora SDK 实现视频通话。
 
 ## 准备环境
 
 1.  关于具体的开发环境要求、如何获取 App ID 以及 SDK 集成方法，详见 [设置开发环境](../../cn/Quickstart%20Guide/android_video.md) 。
 
-2.  参考 [Android Video Tutorial](https://github.com/AgoraIO/Agora-Android-Tutorial-1to1) 了解如何从头创建一个示例项目。
+2.  参考 [Android Video Tutorial](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1) 了解如何从头创建一个示例项目。
 
 
 ## 快速开始
@@ -211,10 +209,10 @@ SDK 默认打开摄像头，你在加入频道后可以调用以下 API:
 
 在实现视频通话的过程中，你还可能需要使用以下功能:
 
--   [入门：视频采集旋转](../../cn/Quickstart%20Guide/rotation_guide_android.md)
--   [进阶：录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)
--   [进阶：选择加密方案](../../cn/Quickstart%20Guide/encryption_android_agora.md)
--   [进阶：修改裸数据](../../cn/Quickstart%20Guide/rawdata_android.md)
+-   [视频采集旋转](../../cn/Quickstart%20Guide/rotation_guide_android.md)
+-   [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)
+-   [选择加密方案](../../cn/Quickstart%20Guide/encryption_android_agora.md)
+-   [修改裸数据](../../cn/Quickstart%20Guide/rawdata_android.md)
 
 
 更多功能实现，请参考 [视频通话 API](https://docs.agora.io/cn/Video/API%20Reference/java/index.html) 中各 API 的功能及描述。

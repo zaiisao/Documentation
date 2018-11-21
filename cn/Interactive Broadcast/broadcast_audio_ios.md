@@ -2,8 +2,8 @@
 ---
 title: 实现语音直播
 description: 
-platform: macOS
-updatedAt: Tue Oct 16 2018 10:35:31 GMT+0000 (UTC)
+platform: iOS
+updatedAt: Wed Oct 17 2018 02:25:44 GMT+0000 (UTC)
 ---
 # 实现语音直播
 # 实现语音直播
@@ -13,7 +13,7 @@ updatedAt: Tue Oct 16 2018 10:35:31 GMT+0000 (UTC)
 ## 环境准备
 
 1. 具体的开发环境要求、如何获取 App ID 以及 SDK 集成方法，详见 [设置开发环境](../../cn/Quickstart%20Guide/ios_audio.md) 。
-2. 参考 [Agora macOS Live Sample App](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) 了解如何从头创建一个示例项目。
+2. 参考 [Agora iOS Voice Live Tutorial Sample App](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS) 了解如何从头创建一个示例项目。
 
 ## 快速开始
 
@@ -56,6 +56,7 @@ func initializeAgoraEngine() {
 
 > - 该方法必须在加入频道前调用才能生效。
 > - 同一频道只能设置一种频道模式。如果需要切换频道模式，请先调用 `destroy` 方法销毁后重新创建一个 Engine 实例，再调用该方法将频道设置为其他模式。
+
 
 ```objective-c
 //Objective-C

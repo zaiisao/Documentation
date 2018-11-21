@@ -3,11 +3,9 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: Linux
-updatedAt: Wed Sep 26 2018 18:17:52 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:06:55 GMT+0000 (UTC)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
-# 客户端：发送点对点文本消息和频道文本消息
-
 ## 第一节：快速集成
 
 本章介绍信令 SDK 的集成方法。
@@ -18,7 +16,7 @@ updatedAt: Wed Sep 26 2018 18:17:52 GMT+0800 (CST)
 
 ### 第二步：下载最新的 Agora Signaling SDK 软件包。
 
-下载地址： [Agora Signaling SDK 软件包](https://docs.agora.io/cn/2.2/download)。
+下载地址： [Agora Signaling SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads)。
 
 ### 第三步：
 
@@ -26,7 +24,7 @@ updatedAt: Wed Sep 26 2018 18:17:52 GMT+0800 (CST)
 
 ### 第四步：复制解压包中的 libs 文件夹。
 
-1.  下载 [Agora Signaling SDK 软件包](https://docs.agora.io/cn/2.2/download)。
+1.  下载 [Agora Signaling SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads)。
 
 2.  将解压后的 **libs** 文件夹内的 `libagorasig.so` 库复制到您本地项目的 **libs** 文件夹下。
 

@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: macOS
-updatedAt: Fri Sep 28 2018 20:10:20 GMT+0800 (CST)
+updatedAt: Tue Oct 16 2018 10:41:24 GMT+0000 (UTC)
 ---
 # 实现视频直播
 # 实现视频直播
@@ -13,7 +13,7 @@ updatedAt: Fri Sep 28 2018 20:10:20 GMT+0800 (CST)
 ## 环境准备
 
 1. 具体的开发环境要求、如何获取 App ID 以及 SDK 集成方法，详见 [设置开发环境](../../cn/Quickstart%20Guide/ios_video.md) 。
-2. 参考 [Agora macOS Live Sample App](https://github.com/AgoraIO/OpenLive-macOS) 了解如何从头创建一个示例项目。
+2. 参考 [Agora macOS Live Sample App](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) 了解如何从头创建一个示例项目。
 
 ## 快速开始
 
@@ -291,9 +291,9 @@ func leaveChannel() {
 
 在实现视频直播的过程中，你还可能需要使用以下功能:
 
-- [入门：视频采集旋转](../../cn/Quickstart%20Guide/rotation_guide_ios.md)
-- [进阶：录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)
-- [进阶：选择加密方案](../../cn/Quickstart%20Guide/encryption_ios_agora.md)
-- [进阶：修改裸数据](../../cn/Quickstart%20Guide/rawdata_ios.md)
+- [视频采集旋转](../../cn/Quickstart%20Guide/rotation_guide_ios.md)
+- [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)
+- [选择加密方案](../../cn/Quickstart%20Guide/encryption_ios_agora.md)
+- [修改裸数据](../../cn/Quickstart%20Guide/rawdata_ios.md)
 
 更多功能实现，请参考 [互动直播 API](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/index.html) 中各 API 的功能及描述。

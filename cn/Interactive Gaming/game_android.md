@@ -3,11 +3,9 @@
 title: 游戏 API
 description: 
 platform: Android
-updatedAt: Wed Sep 19 2018 01:10:29 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:12:52 GMT+0000 (UTC)
 ---
 # 游戏 API
-# 游戏 API
-
 <table>
 <colgroup>
 <col/>

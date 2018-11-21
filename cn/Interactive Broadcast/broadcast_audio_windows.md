@@ -3,7 +3,7 @@
 title: 实现语音直播
 description: 
 platform: Windows
-updatedAt: Fri Sep 28 2018 20:01:29 GMT+0800 (CST)
+updatedAt: Wed Oct 17 2018 06:53:09 GMT+0000 (UTC)
 ---
 # 实现语音直播
 # 实现语音直播
@@ -14,7 +14,7 @@ updatedAt: Fri Sep 28 2018 20:01:29 GMT+0800 (CST)
 
 -   具体的开发环境要求、如何获取 App ID 以及 SDK 集成方法，详见 [设置开发环境](../../cn/Quickstart%20Guide/windows_video.md) 。
 
--   参考 [https://github.com/AgoraIO/OpenLive-Windows/tree/dev/2.3.0](https://github.com/AgoraIO/OpenLive-Windows/tree/dev/2.3.0) 了解如何从头创建一个示例项目。
+-   参考 [示例项目](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 了解如何从头创建一个示例项目。
 
 
 ## 快速开始

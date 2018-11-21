@@ -3,7 +3,7 @@
 title: 实现语音直播
 description: 
 platform: 微信小程序
-updatedAt: Fri Sep 28 2018 19:31:20 GMT+0800 (CST)
+updatedAt: Mon Oct 08 2018 03:07:25 GMT+0000 (UTC)
 ---
 # 实现语音直播
 # 实现语音直播
@@ -246,10 +246,10 @@ client.init(APPID, () => {
 <td><strong>集成方法</strong></td>
 </tr>
 <tr><td>Android</td>
-<td><a href="../../cn/Quickstart%20Guide/broadcast_audio_android.md"><span>入门：实现语音直播</span><a></td>
+<td><a href="../../cn/Quickstart%20Guide/broadcast_audio_android.md"><span>实现语音直播</span><a></td>
 </tr>
 <tr><td>iOS</td>
-<td><a href="../../cn/Quickstart%20Guide/broadcast_audio_ios.md"><span>入门：实现语音直播</span></a></td>
+<td><a href="../../cn/Quickstart%20Guide/broadcast_audio_ios.md"><span>实现语音直播</span></a></td>
 </tr>
 </tbody>
 </table>

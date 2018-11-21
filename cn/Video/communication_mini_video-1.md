@@ -3,11 +3,9 @@
 title: 实现视频通话
 description: 
 platform: 微信小程序
-updatedAt: Fri Sep 28 2018 18:12:36 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:00:07 GMT+0000 (UTC)
 ---
 # 实现视频通话
-# 实现视频通话
-
 在本页你可以了解如何使用 Agora Miniapp SDK 实现视频通话。点击 [声网小程序 Demo 体验](../../cn/Quickstart%20Guide/miniapp_demo.md) 进行 Demo 体验。
 
 ## 准备环境
@@ -21,7 +19,7 @@ updatedAt: Fri Sep 28 2018 18:12:36 GMT+0800 (CST)
 
 小程序 API 调用流程图如下：
 
-<img alt="../_images/mini_flow.jpg" src="https://web-cdn.agora.io/docs-files/cn/mini_flow.jpg" style="width: 559.3px; height: 557.9px;"/>
+<img alt="../_images/mini_flow.jpg" src="https://web-cdn.agora.io/docs-files/cn/mini_flow.jpg" style="width: 630px; "/>
 
 
 实现小程序语音通话主要步骤为：
@@ -245,10 +243,10 @@ client.init(APPID, () => {
 <td><strong>集成方法</strong></td>
 </tr>
 <tr><td>Android</td>
-<td><a href="../../cn/Quickstart%20Guide/communication_android_video-1.md"><span>入门：实现视频通话</span><a></td>
+<td><a href="../../cn/Quickstart%20Guide/communication_android_video-1.md"><span>实现视频通话</span><a></td>
 </tr>
 <tr><td>iOS</td>
-<td><a href="../../cn/Quickstart%20Guide/communication_ios_video-1.md"><span>入门：实现视频通话</span></a></td>
+<td><a href="../../cn/Quickstart%20Guide/communication_ios_video-1.md"><span>实现视频通话</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -269,7 +267,7 @@ client.init(APPID, () => {
 <td><strong>集成方法</strong></td>
 </tr>
 <tr><td>Web</td>
-<td><a href="../../cn/Quickstart%20Guide/communication_web_video-1.md"><span>入门: 实现视频通话</span></a></td>
+<td><a href="../../cn/Quickstart%20Guide/communication_web_video-1.md"><span>实现视频通话</span></a></td>
 </tr>
 </tbody>
 </table>

@@ -3,14 +3,12 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Fri Sep 28 2018 19:38:43 GMT+0800 (CST)
+updatedAt: Fri Nov 02 2018 04:00:36 GMT+0000 (UTC)
 ---
 # 实现语音通话
-# 实现语音通话
-
 本页介绍如何使用 Agora Web SDK 快速实现网页端语音通话。
 
-本页以声网提供的 [示例项目](https://github.com/AgoraIO/Agora-Web-Tutorial-1to1) 为例说明 API 的使用。如需了解示例代码具体如何实现和运行，请查看示例项目中的 **README** 文件。
+本页以声网提供的 [示例项目](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1) 为例说明 API 的使用。如需了解示例代码具体如何实现和运行，请查看示例项目中的 **README** 文件。
 
 ## 环境准备
 
@@ -32,7 +30,7 @@ updatedAt: Fri Sep 28 2018 19:38:43 GMT+0800 (CST)
 
 示意图：
 
-<img alt="../_images/web-sdk-workflow.jpg" src="https://web-cdn.agora.io/docs-files/cn/web-sdk-workflow.jpg" style="width: 431.2px; height: 423.5px;"/>
+<img alt="../_images/web-sdk-workflow.jpg" src="https://web-cdn.agora.io/docs-files/cn/web-sdk-workflow.jpg" style="width: 500px"/>
 
 示例项目中的 `index.html` 文件包含了使用以下 API 的完整代码，供参考。这些 API 也可以在其他项目中用于实现语音通话。
 
@@ -215,7 +213,7 @@ client.leave(function () {
 
 在实现语音通话的过程中，可以使用以下功能:
 
-- [进阶：企业部署代理服务器](../../cn/Quickstart%20Guide/proxy_web.md)
-- [进阶：实现网页端屏幕共享](../../cn/Quickstart%20Guide/screensharing_web.md)
+- [企业部署代理服务器](../../cn/Quickstart%20Guide/proxy_web.md)
+- [实现网页端屏幕共享](../../cn/Quickstart%20Guide/screensharing_web.md)
 
 更多功能实现，请参考 [Agora Web SDK API](https://docs.agora.io/cn/Voice/API%20Reference/web/index.html) 中各 API 的功能及描述。

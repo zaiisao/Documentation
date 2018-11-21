@@ -2,8 +2,8 @@
 ---
 title: 输入在线媒体流
 description: 
-platform: Windows
-updatedAt: Wed Nov 07 2018 06:12:33 GMT+0000 (UTC)
+platform: Android
+updatedAt: Wed Nov 07 2018 06:11:36 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -40,35 +40,44 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 
 ## 实现方法
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/windows_video?platform=Windows)。
+实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/android_video?platform=Android)。
 
 - 输入在线媒体流：
 
 	直播频道的主播可以使用 `addInjectStreamUrl` ，指定一个在线媒体流作为连麦端接入房间。
-	
-	```cpp
-	//CPP
-	const char* urlPath = "Some online RTMP/HLS url path";
-	InjectStreamConfig config;
-	rtcEngine->addInjectStreamUrl(urlPath, config);
+
+	```java
+	//Java
+	String urlPath = "Some online RTMP/HLS url path"
+
+	LiveInjectStreamConfig config = new LiveInjectStreamConfig();
+	config.width = 0;
+	config.height = 0;
+	config.videoGop = 30;
+	config.videoFramerate = 15;
+	config.videoBitrate = 400;
+	config.audioSampleRate = LiveInjectStreamConfig.AudioSampleRateType.TYPE_44100;        config.audioBitrate = 48;
+	config.audioChannels = 1;
+
+	rtcEngine.addInjectStreamUrl(urlPath, config);
 	```
 
-	你可以通过修改 `config` 的参数值控制接入媒体流的分辨率、码率、帧率、音频采样率等参数。详见 [AgoraLiveInjectStreamConfig 参数说明](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_inject_stream_config.html)。
+	你可以通过修改 `config` 的参数值控制接入媒体流的分辨率、码率、帧率、音频采样率等参数。详见 [AgoraLiveInjectStreamConfig 参数说明](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_inject_stream_config.html) 。
 	
-- 移除在线媒体流：
+- 移除在线媒体流
 
 	频道内的主播可以使用 `removeInjectStreamUrl` 接口，移除一个已经接入的在线媒体流。
-
-	```cpp
-	//CPP
-	const char* urlPath = "The same online RTMP/HLS url path added before";
-	rtcEngine->removeInjectStreamUrl(urlPath)
+	
+	```java
+	//Java
+	String urlPath = "The same online RTMP/HLS url path added before"
+	rtcEngine.removeInjectStreamUrl(urlPath)
 	```
 
 	> 主播退出频道后，无需再调用 `removeInjectStreamUrl` 接口。
 
-## 工作原理
 
+## 工作原理
 - 频道中的主播通过 Video Inject 服务器，将在线媒体流拉取到 Agora SD-RTN 上，推送到直播频道内，频道内的连麦主播、普通观众都可以看到对应的媒体流。
 - 如果主播开启了 CDN 推流，对应的媒体流也会被推送到 CDN 上，CDN 观众就也可以听到或看到这路媒体流。
 
