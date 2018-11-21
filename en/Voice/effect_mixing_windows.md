@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Wed Nov 21 2018 08:35:20 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:35:24 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -80,7 +80,9 @@ int nRet = rep.unloadEffect(nSoundID);
 - [unloadEffect](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#afd2cc4d59101cef1b5dc9296e604d047)
 
 ### Considerations
-The above methods have return values. If the API fails, the return is < 0.
+
+- Preloading is not mandatory, but to improve effeciency or to play the audio effect multiple times, Agora recommends you preload the audio effect.
+- The above methods have return values. If the API fails, the return is < 0.
 
 ## Audio Mixing
 
