@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to play audio effect files and enable audio mixing 
 platform: Windows
-updatedAt: Wed Nov 21 2018 08:36:47 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 08:36:51 GMT+0000 (UTC)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -79,7 +79,8 @@ int nRet = rep.unloadEffect(nSoundID);
 
 ### 开发注意事项
 
-以上方法都有返回值，返回值小于 0 表示方法调用失败。
+- 预加载不是一个必须的步骤，但是一般来说为了提高性能或者需要反复播放某个特定的音效的时候，Agora 建议使用预加载。
+- 以上方法都有返回值，返回值小于 0 表示方法调用失败。
 
 ## 音乐混音
 
