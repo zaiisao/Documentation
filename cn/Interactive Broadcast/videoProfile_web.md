@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Web
-updatedAt: Wed Nov 21 2018 03:12:00 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 03:12:04 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -13,7 +13,7 @@ updatedAt: Wed Nov 21 2018 03:12:00 GMT+0000 (UTC)
 
 ## 实现方法
 
-在设置视频属性前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Interactive%20Broadcast/web_prepare.md)。
+在设置视频属性前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/web_prepare.md)。
 
 Agora Web SDK 通过 `setVideProfile` 方法来设置视频相关的属性，比如分辨率、码率、帧率等。参数均为理想情况下的最大值。当视频引擎因网络环境等原因无法达到设置的分辨率、帧率或码率的最大值时，会取最接近最大值的那个值。
 
