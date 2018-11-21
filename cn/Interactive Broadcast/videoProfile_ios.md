@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: iOS
-updatedAt: Wed Nov 21 2018 03:05:09 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 03:05:22 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -37,12 +37,14 @@ AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] 
 
 **相关 API 及链接**
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)：设置视频编码属性
+* 关于视频的方向模式，更多信息请参考 [视频采集旋转](../../cn/Interactive%20Broadcast/rotation_guide_ios.md)。
 
 ## 开发注意事项
 - 如果用户加入频道后不需要重新设置视频编码属性，建议在 `enableVideo` 前调用 `setVideoEncoderConfiguration` ，可以加快首帧出图的时间。
 - Agora SDK 会根据实时网络环境，对设置的参数作自适应调整，通常会下调参数。
 - 通常的，直播场景下需要较大码率来提升视频质量。因此 Agora 建议将直播码率值设为通信值的 2 倍。详情请参考[设置码率](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/bitrate)。 
 - 直播模式通常需要更大的码率来支持清晰度，因此建议主播使用较稳定的网络。
+- 本文中各参数的设置可能会影响计费，详情请参考 [计费](../../cn/Agora20%Platform/billing_faq.md)。
 
 
 ## 用户常见问题
