@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: 故障排除
-updatedAt: Wed Nov 21 2018 09:07:06 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 09:07:12 GMT+0000 (UTC)
 ---
 # FAQ
 该部分包含在使用 Agora SDK 过程中可能遇到的故障及解决方法。
@@ -22,4 +22,4 @@ updatedAt: Wed Nov 21 2018 09:07:06 GMT+0000 (UTC)
  
  [Web SDK 相关](../../cn/Agora%20Platform/websdk_related_faq.md)
  
- [其他常见问题](../../cn/Agora%20Platform/other_related_faq.md)
+
