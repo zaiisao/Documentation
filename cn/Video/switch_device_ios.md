@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: iOS,macOS
-updatedAt: Wed Nov 21 2018 10:34:48 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 14:40:33 GMT+0000 (UTC)
 ---
 # 音视频设备测试与切换
 ## 功能描述
