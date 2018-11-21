@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Windows
 platform: Windows
-updatedAt: Wed Nov 21 2018 09:49:15 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 09:49:29 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -52,7 +52,7 @@ int ret = rep.adjustPlaybackSignalVolume(200);
 - [adjustRecordingSignalVolume](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa9e9b5ae052022fe2e81232b9e6e7290)
 - [adjustPlaybackSignalVolume](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a8bed09e12b8e2d9934aafad50b77d364)
 
-### 开发注意事项
+## 开发注意事项
 
 - 所有相关的方法都有返回值。返回值小于 0 表示方法调用失败
 - 用调整信号设置音量的方法，如果音量设置太大，由于硬件设备的限制，在某些设备上可能会出现声音不自然的效果。
