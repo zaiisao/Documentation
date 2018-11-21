@@ -3,7 +3,7 @@
 title: Rotate the Video
 description: 
 platform: Android
-updatedAt: Wed Nov 21 2018 02:55:24 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 02:55:28 GMT+0000 (UTC)
 ---
 # Rotate the Video
 From v2.3.0, Agora provides a `setVideoEncoderConfiguration` method for users to set the video profile. This method includes an `orientationMode` parameter for users to set the video orientation mode.
@@ -47,10 +47,10 @@ The `VideoEncoderConfiguration` class includes an `orientationMode` parameter to
 
 ## Orientation Mode
 
-The `orientationMode` parameter provides three modes, [Adaptive](#orientation_adaptive), [Fixed_Landscape](#orientation_fixed_landscape), and [FIixed_Portrait](#orientation_fixed_portrait) for different user needs. **The relative position of the video and the status bar on the video capturer and the player remain the same for all modes.**
+The `orientationMode` parameter provides three modes, [ADAPTIVE](#orientation_adaptive), [FIXED_LANDSCAPE](#orientation_fixed_landscape), and [FIXED_PORTRAIT](#orientation_fixed_portrait) for different user needs. **The relative position of the video and the status bar on the video capturer and the player remain the same for all modes.**
 
 <a name = "orientation_adaptive"></a>
-### Adaptive
+### ADAPTIVE
 
 In the adaptive mode, the video capturer captures the video frame and sends the video together with its relative position to the status bar. The player notes the relative position and renders the video frame. No video cropping occurs in the adaptive mode.
 
@@ -83,7 +83,7 @@ The following figures show the video orientations at the video capturer and play
 
 
 <a name = "orientation_fixed_landscape"></a>
-### Fixed\_Landscape
+### FIXED_LANDSCAPE
 
 In the Fixed\_Landscape mode, the video capturer sends the video in the landscape orientation relative to the status bar and video cropping may be necessary. The player renders the received video frame directly without rotating the video.
 
@@ -101,7 +101,7 @@ The following figures show the video orientations at the video capturer and the 
     <img alt="../_images/rotation_fixed_landscape_cut.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_fixed_landscape_cut.jpg" />
 
 <a name = "orientation_fixed_portrait"></a>
-### Fixed\_Portrait
+### FIXED_PORTRAIT
 
 In the Fixed\_Portrait mode, the video capturer sends out the video in the portrait orientation relative to the status bar and video cropping may be necessary. The player renders the received video frame directly without rotating the video.
 
