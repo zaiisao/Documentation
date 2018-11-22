@@ -3,7 +3,7 @@
 title: 客户端通话录制
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 10:34:25 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 09:02:40 GMT+0000 (UTC)
 ---
 # 客户端通话录制
 ## 功能描述
