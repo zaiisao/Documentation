@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to play audio effect files and enable audio mixing
 platform: iOS,macOS
-updatedAt: Thu Nov 22 2018 06:34:53 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 06:35:07 GMT+0000 (UTC)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -29,13 +29,13 @@ let filePath = "your filepath"
 agoraKit.preloadEffect(soundId, filePath: filePath)
 
 // 播放音效
-let soundId = 1
-let filePath = "your filepath"
-let loopCount = 1
-let pitch = 1
-let pan = 1
-let gain = 0
-let publish = true
+let soundId = 1                 // 要播放的音效 id 
+let filePath = "your filepath"  // 播放文件的路径
+let loopCount = 1               // 播放次数，-1 代表无限循环
+let pitch = 1                   // 音效的音调
+let pan = 1                     // 音效的空间位置，0表示正前方
+let gain = 0                    // 音量，取值 0 ~ 100， 100 代表原始音量
+let publish = true              // 是否令远端也能听到音效的声音
 agoraKit.playEffect(Int32(soundId), filePath: filePath, loopCount: Int32(loopCount), pitch: pitch, pan: pan, gain: gain, publish: publish)
 
 // 暂停所有音效播放
@@ -138,7 +138,6 @@ agoraKit.startAudioMixing(filePath, loopback: loopback, replace: replace, cycle:
 // loopback 为 YES 只有本地可以听到混音或替换后的音频流; 为 NO 本地和对方都可以听到混音或替换后的音频流
 // replace 为 true 只推送设置的本地音频文件或者线上音频文件; 不传输麦克风收录的音频, 为 false 音频文件内容将会和麦克风采集的音频流进行混音
 // cycle 为 -1 代表永久循环；其它 >0 的整数表示预设混音播放的循环次数
-
 NSString *filePath = @"http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3";
 BOOL loopback = NO;
 BOOL replace = NO;
