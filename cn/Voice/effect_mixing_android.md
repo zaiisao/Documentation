@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to enable audio mixing, play audio effects and the related settings
 platform: Android
-updatedAt: Thu Nov 22 2018 06:30:59 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 06:31:03 GMT+0000 (UTC)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -30,12 +30,12 @@ manager.preloadEffect(id++, "path/to/effect2");
   
 // 播放一个音效
 manager.playEffect(
-0,                              // 要播放的音效 id 
-"path/to/effect1",              // 播放文件的路径
--1,                             // 播放次数，-1 代表无限循环。直到 stopEffect() 或者stopAllEffects() 被调用
-0.0,                            // 改变音效的空间位置，0表示正前方
-100,                            // 音量，取值 0 ~ 100， 100 代表原始音量
-true                            // 是否令远端也能听到音效的声音
+0,                         // 要播放的音效 id 
+"path/to/effect1",         // 播放文件的路径
+-1,                        // 播放次数，-1 代表无限循环
+0.0,                       // 改变音效的空间位置，0表示正前方
+100,                       // 音量，取值 0 ~ 100， 100 代表原始音量
+true                       // 是否令远端也能听到音效的声音
  );
   
 // 暂停所有音效播放
