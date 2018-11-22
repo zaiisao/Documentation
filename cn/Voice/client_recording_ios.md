@@ -3,7 +3,7 @@
 title: 客户端通话录制
 description: 
 platform: iOS,macOS
-updatedAt: Thu Nov 22 2018 08:50:09 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 08:50:16 GMT+0000 (UTC)
 ---
 # 客户端通话录制
 ## 功能描述
@@ -38,9 +38,12 @@ agoraKit.stopAudioRecording()
 [agoraKit stopAudioRecording];
 ```
 
-### API
+## API 参考
 
 - [startAudioRecording:quality:](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:quality:)
 - [stopAudioRecording](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioRecording)
 
-### 
+## 开发注意事项
+
+- 开启录音须在进入频道之后调用
+- 离开频道会自动停止录音
