@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS,macOS
-updatedAt: Thu Nov 22 2018 06:22:53 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 06:22:56 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -68,10 +68,10 @@ NSString *filePath = "your filepath"
 // Play an audio effect file
 int soundId = 1; // The sound id of the audio effect file to play
 NSString *filePath = "your filepath"; // The file path to the audio effect
-int loopCount = 1 // The playback count. -1 means inifinite loop until stopEffect() or stopAllEffects() is called.
+int loopCount = 1 // The playback count. -1 means inifinite loop.
 double pitch = 1 // Set the pitch of the audio effect.
-double pan = 1 // Set the spatial position of the audio effect. 0 means the audio effect shows ahead.
-double gain = 0 // Set the volume. The value range is 0 to 100. 100 represents the original volume.
+double pan = 1 // Set the spatial position of the effect. 0 means the effect shows ahead.
+double gain = 0 // Set the volume. The value range is 0 to 100. 100 is the original volume.
 BOOL publish = true // Set whether to publish the audio effecet.
 [agoraKit playEffect: soundId filePath: filePath loopCount: loopCount, pitch: pitch, pan: pan, gain: gain, publish: publish];
 
