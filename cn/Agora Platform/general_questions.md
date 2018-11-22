@@ -3,20 +3,20 @@
 title: FAQ
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 22 2018 10:42:39 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 10:42:59 GMT+0000 (UTC)
 ---
 # FAQ
 ## 常见问题回答
 
 该部分包含声网 Agora 产品、服务、参数等相关的问题及回答。
 
- - [产品](../../cn/Agora%20Platform/product_faq.md)
+ [产品](../../cn/Agora%20Platform/product_faq.md)
 
- - [安全](../../cn/Agora%20Platform/security_faq.md)
+ [安全](../../cn/Agora%20Platform/security_faq.md)
 
- - [计费](../../cn/Agora%20Platform/billing_faq.md)
+ [计费](../../cn/Agora%20Platform/billing_faq.md)
 
- - [技术参数](../../cn/Agora%20Platform/technical_specification_faq.md)
+ [技术参数](../../cn/Agora%20Platform/technical_specification_faq.md)
  
 ## 集成与使用类
  
