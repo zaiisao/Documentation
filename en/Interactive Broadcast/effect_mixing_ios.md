@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS,macOS
-updatedAt: Thu Nov 22 2018 06:21:42 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 06:21:49 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -30,10 +30,10 @@ agoraKit.preloadEffect(soundId, filePath: filePath)
 // Play an audio effect file
 let soundId = 1 // The sound id of the audio effect file to play
 let filePath = "your filepath" // The file path to the audio effect
-let loopCount = 1 // The playback count. -1 means inifinite loop until stopEffect() or stopAllEffects() is called.
+let loopCount = 1 // The playback count. -1 means inifinite loop.
 let pitch = 1 // Set the pitch of the audio effect.
-let pan = 1 // Set the spatial position of the audio effect. 0 means the audio effect shows ahead.
-let gain = 0 // Set the volume. The value range is 0 to 100. 100 represents the original volume.
+let pan = 1 // Set the spatial position of the effect. 0 means the effect shows ahead.
+let gain = 0 // Set the volume. The value range is 0 to 100. 100 is the original volume.
 let publish = true // Set whether to publish the audio effecet.
 agoraKit.playEffect(Int32(soundId), filePath: filePath, loopCount: Int32(loopCount), pitch: pitch, pan: pan, gain: gain, publish: publish)
 
