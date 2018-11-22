@@ -3,7 +3,7 @@
 title: Web SDK 相关
 description: 
 platform: Web SDK 相关
-updatedAt: Wed Nov 21 2018 09:05:34 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 08:55:20 GMT+0000 (UTC)
 ---
 # Web SDK 相关
 ### 在安卓设备上使用 Chrome 浏览器，无法与 Native 及 Safari 浏览器互通?
