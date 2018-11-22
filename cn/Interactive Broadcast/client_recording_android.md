@@ -3,7 +3,7 @@
 title: 客户端通话录制
 description: 
 platform: Android
-updatedAt: Wed Nov 21 2018 10:34:14 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 08:46:53 GMT+0000 (UTC)
 ---
 # 客户端通话录制
 ## 功能描述
