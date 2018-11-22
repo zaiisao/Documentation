@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Wed Nov 21 2018 08:10:44 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 09:15:01 GMT+0000 (UTC)
 ---
 # 录制相关
 ## 录制 SDK
