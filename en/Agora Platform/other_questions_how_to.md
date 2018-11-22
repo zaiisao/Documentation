@@ -3,7 +3,7 @@
 title: Other Questions
 description: 
 platform: Other Questions
-updatedAt: Fri Nov 02 2018 04:18:56 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 08:54:25 GMT+0000 (UTC)
 ---
 # Other Questions
 ### Which callback functions are important to apps?
