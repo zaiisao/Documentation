@@ -3,7 +3,7 @@
 title: 客户端通话录制
 description: 
 platform: Windows
-updatedAt: Thu Nov 22 2018 09:02:40 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 09:04:29 GMT+0000 (UTC)
 ---
 # 客户端通话录制
 ## 功能描述
@@ -17,39 +17,34 @@ Agora SDK 支持通话过程中在客户端进行录音。该方法录制频道�
 
 ## 实现方法
 
-```C++
+````C++
+// 初始化参数对象
 RtcEngineParameters rep(*lpRtcEngine);
-int nRet;
 
-// start recording audio to local storage
-
+// 开始本地音频文件录制
 #ifdef UNICODE
  CHAR aFilePath[MAX_PATH];
  ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, aFilePath, MAX_PATH, NULL, NULL);
- nRet = rep.startAudioRecording(aFilePath, AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH);
+int nRet = rep.startAudioRecording(aFilePath, // 本地合法文件路径
+	AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH // 录音音质 AUDIO_RECORDING_QUALITY_HIGH|MEDIUM|LOW
+	);
 #else
- nRet = rep.startAudioRecording(filePath);
+int nRet = rep.startAudioRecording(filePath, AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH);
 #endif
 
-// stop recording audio file
-ret = rep.stopAudioRecording();
-
-// constants for quality of audio file saved
-
-/** Audio recording quality.
-*/
-enum AUDIO_RECORDING_QUALITY_TYPE
-{
-/** 0: Low audio recording quality.
-*/
-AUDIO_RECORDING_QUALITY_LOW = 0,
-/** 1: Medium audio recording quality.
-*/
-AUDIO_RECORDING_QUALITY_MEDIUM = 1,
-/** 2: High audio recording quality.
-*/
-AUDIO_RECORDING_QUALITY_HIGH = 2,
-};
+// 结束音频文件录制
+int nRet = rep.stopAudioRecording();
 
 ```
+
+## API 参考
+
+* [startAudioRecording](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#acb567614081900eaaf94d02b7c809af5)
+* [stopAudioRecording](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#ac5f5a19d5f32d7f7d7d2765caafcdaec)
+```
+
+## 开发注意事项
+
+- 开启录音须在进入频道之后调用
+- 离开频道会自动停止录音
 
