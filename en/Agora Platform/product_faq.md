@@ -3,11 +3,9 @@
 title: Company And Products
 description: 
 platform: Company and Products
-updatedAt: Thu Nov 22 2018 10:02:42 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 10:02:45 GMT+0000 (UTC)
 ---
 # Company And Products
-This page contains frequently asked questions about Agora's products and services.
-
 ### Does Agora provide private cloud solutions?
 
 Currently, Agora does not provide any private cloud solution. If you have any questions, contact sales@agora.io.
