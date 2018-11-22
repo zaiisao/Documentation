@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Thu Nov 22 2018 06:28:13 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 06:28:17 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -12,7 +12,6 @@ In a call or live broadcast, sometimes you need to play custom audio or music fi
 ## Play Audio Effect Files
 
 Audio effects are usually very short sounds. The play effect methods can be used to play sound snaps such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.
-
 The audio effect is specified by the file path, but the SDK uses the sound id to identify the audio effect file. The SDK does not have a rule to define the sound id, and you need to ensure each audio effect file has a unique sound id. Common practices include automatically incrementing the id, and using the hashCode of the audio effect file.
 
 ### Implementation
