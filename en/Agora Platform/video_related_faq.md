@@ -3,7 +3,7 @@
 title: Video-related Issues
 description: 
 platform: Video-related Issues
-updatedAt: Fri Nov 02 2018 04:17:24 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 08:28:53 GMT+0000 (UTC)
 ---
 # Video-related Issues
 ## Unable to Turn On the Camera
