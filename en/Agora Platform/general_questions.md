@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: General Questions
-updatedAt: Thu Nov 22 2018 07:51:17 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 09:17:59 GMT+0000 (UTC)
 ---
 # FAQ
 This category contains questions and answers about Agora products, services, parameters, etc.
