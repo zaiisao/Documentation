@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Thu Nov 22 2018 09:15:01 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 09:15:10 GMT+0000 (UTC)
 ---
 # 录制相关
 ## 录制 SDK
@@ -224,6 +224,6 @@ agorasdk.json
 2. 如果没有找到 core 文件：
    a. 如果没有专门设置 core 文件的目录，那么 core 文件一般是在录制的 AgoraCoreService文件所在的目录。
    b. 如果还是没有找到，Linux 上执行 ulimit -c， 输出如果为0，则说明 coredump 没有打开，需要通过执行 ulimit -c unlimited 打开。
-   c. 同时跑开启 coredump 的脚本 。
+   c. 同时运行 coredump 的脚本 。
    d. 打开后，之后再出现 crash 就可以生成 core 文件了。
-   e. 针对这次没有 core 文件生成的场景，收集 `recording_sys.log`，这种场景很难分析出问题，建议用户后续再生成 core 文件再分析。
+   e. 针对这次没有 core 文件生成的场景，收集 `recording_sys.log`。
