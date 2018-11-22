@@ -3,7 +3,7 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Fri Nov 02 2018 04:17:55 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 08:48:37 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
 ### Why can’t I set the low stream in H.264 mode when joining a session with the Firefox browser on a macOS device?
