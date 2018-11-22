@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Thu Nov 22 2018 08:00:27 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 08:00:33 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 This page provides common troubleshooting strategies for Agora's audio products and services.
@@ -189,7 +189,7 @@ During a phone call, you can switch between the Bluetooth Headset, Handset, or S
 
 When making a VoIP call, the default audio route is the one used by the last phone or VoIP call made after a Bluetooth device is connected. If no phone call was made since the Bluetooth device was connected, the VoIP calls will be answered through the Bluetooth headset.
 
-During a VoIP call, users can change the audio route in the iPhone Control Center (swipe up from the bottom of the screen). Apps can call the setPreferredInput method to change the audio route.
+During a VoIP call, users can change the audio route in the iPhone Control Center (swipe up from the bottom of the screen). Apps can call the `setPreferredInput` method to change the audio route.
 
 **Other Settings**
 

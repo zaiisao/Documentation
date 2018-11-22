@@ -2,7 +2,7 @@
 ---
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
-platform: All Platforms
+platform: Server
 updatedAt: Fri Nov 09 2018 16:56:09 GMT+0000 (UTC)
 ---
 # Generate a Token
@@ -71,10 +71,10 @@ This method is the struct of SimpleTokenBuilder.
 <td><strong>Description</strong></td>
 </tr>
 <tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
+<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
 </tr>
 <tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
+<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>Name of the channel that the user wants to join.</td>
@@ -269,10 +269,10 @@ This method is the struct of SimpleTokenBuilder.
 <td><strong>Description</strong></td>
 </tr>
 <tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
+<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
 </tr>
 <tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
+<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>Name of the channel that the user wants to join.</td>
@@ -464,10 +464,10 @@ This method is the struct of SimpleTokenBuilder.
 <td><strong>Description</strong></td>
 </tr>
 <tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
+<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
 </tr>
 <tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
+<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
 </tr>
 	<tr><td><code>channelName</code></td>
 <td>Name of the channel that the user wants to join.</td>
@@ -660,10 +660,10 @@ This method is the struct of SimpleTokenBuilder.
 <td><strong>Description</strong></td>
 </tr>
 <tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
+<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
 </tr>
 <tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
+<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>Name of the channel that the user wants to join.</td>
@@ -854,10 +854,10 @@ This method is the struct of SimpleTokenBuilder.
 <td><strong>Description</strong></td>
 </tr>
 <tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
+<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
 </tr>
 <tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
+<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>Name of the channel that the user wants to join.</td>
@@ -1050,10 +1050,10 @@ This method is the struct of SimpleTokenBuilder.
 <td><strong>Description</strong></td>
 </tr>
 <tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
+<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
 </tr>
 <tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
+<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
 </tr>
 	<tr><td><code>channelName</code></td>
 <td>Name of the channel that the user wants to join.</td>
