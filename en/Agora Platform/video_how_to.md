@@ -1,11 +1,11 @@
 
 ---
-title: Video-related Questions
+title: Video-related Issues
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 22 2018 07:39:44 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 07:41:29 GMT+0000 (UTC)
 ---
-# Video-related Questions
+# Video-related Issues
 ### How to set the video orientation mode?
 
 From v2.3.0, Agora provides a `setVideoEncoderConfiguration` API for users to set the video profile. This API includes an `orientationMode` parameter with which users can set the video orientation mode.
