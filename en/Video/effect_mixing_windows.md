@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Thu Nov 22 2018 06:27:23 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 06:28:03 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -36,10 +36,10 @@ RtcEngineParameters rep(*lpAgoraEngine);
   ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
   int nRet = rep.playEffect(nSoundID, // The unique sound ID of the audio effect
   wdFilePath, // File path to the audio effect
-  nLoopCount, // The playback count. -1 means inifinite loop until stopEffect() or stopAllEffects() is called.
+  nLoopCount, // The playback count. -1 means inifinite loop.
   dPitch, // Set the pitch of the audio effect
-  dPan, // Set the spatial position of the audio effect. 0 means the audio effect shows ahead.
-  nGain, // Set the volume. The value range is 0 to 100. 100 represents the original volume.
+  dPan, // Set the spatial position of the effect. 0 means the effect shows ahead.
+  nGain, // Set the volume. The value range is 0 to 100. 100is the original volume.
   TRUE // Set whether to publish the audio effecet.
 #else
   int nRet = rep.playEffect(nSoundID, filePath, nLoopCount, dPitch, dPan, nGain, TRUE);
@@ -104,10 +104,10 @@ RtcEngineParameters rep(*lpAgoraEngine);
 #ifdef UNICODE
  CHAR wdFilePath[MAX_PATH];
  ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
-int nRet = rep.startAudioMixing(wdFilePath, // Path to the audio mixing file. Supports online file
- FALSE, // Sets whether other users can hear the audio mixing; if set to true, only the local user can hear the audio mixing.
+int nRet = rep.startAudioMixing(wdFilePath, // Path to the audio mixing file.
+ FALSE, // All users can hear the audio mixing.
   TRUE, // The audio captured by the microphone is replaced by the audio mixing file.
-  1 // The number of times to play the audio mixing file. If set to -1, the file loops infinitely.
+  1 // The number of playbacks of the file. If set to -1, the file loops infinitely.
   );
 #else
 int nRet = rep.startAudioMixing(filePath, FALSE, TRUE, 1);
