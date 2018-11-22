@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Thu Nov 22 2018 07:59:03 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 07:59:08 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ### How do you check the recording permissions?
@@ -44,6 +44,7 @@ Automatic recording mode: If no one is in the channel when the idle time is up, 
 ### How do I customize the recording file and set the directory of the recording file?
 
 To customize the recording file, you need to configure the CFG file. The SDK package has a hidden .cfg.json file under Agora_Recording_SDK_for_Linux_FULL/samples/cpp. You can refer to the method of setting the output file path and filename. See https://docs.agora.io/cn/Recording/recording_cpp?platform=C++.
+
 For example, the recording file needs to be saved as "root directory/dates/uid.aac" where /home/Agora_Recording_SDK_for_Linux_FULL/samples/recording_output is the root directory.
 
 ### Can I record the voice or video of a specific user?
