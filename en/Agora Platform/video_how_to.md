@@ -3,7 +3,7 @@
 title: Video-related Issues
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 22 2018 07:41:33 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 09:02:29 GMT+0000 (UTC)
 ---
 # Video-related Issues
 ### How to set the video orientation mode?
