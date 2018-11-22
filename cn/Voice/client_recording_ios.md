@@ -3,7 +3,7 @@
 title: 客户端通话录制
 description: 
 platform: iOS,macOS
-updatedAt: Thu Nov 22 2018 09:04:06 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 09:04:17 GMT+0000 (UTC)
 ---
 # 客户端通话录制
 ## 功能描述
@@ -18,7 +18,8 @@ Agora SDK 支持通话过程中在客户端进行录音。该方法录制频道�
 ## 实现方法
 
 ```swift
-// 开始录音（Swift）
+// Swift
+// 开始录音
 // 录音文件的本地保存路径，由用户自行指定，需精确到文件名及格式
 // 录音音质，分LOW, MEDIUM, HIGH
 agoraKit.startAudioRecording("recording file path", quality: .high)
@@ -28,7 +29,7 @@ agoraKit.stopAudioRecording()
 ```
 
 ```oc
-
+// Objective-C
 // 开始录音（Objective-C）
 // 录音文件的本地保存路径，由用户自行指定，需精确到文件名及格式
 // 录音音质，分LOW, MEDIUM, HIGH
