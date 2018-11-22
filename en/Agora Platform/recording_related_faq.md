@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Nov 02 2018 04:17:43 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 09:56:10 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ## Recording Solutions
