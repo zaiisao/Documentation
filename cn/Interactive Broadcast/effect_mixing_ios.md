@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to play audio effect files and enable audio mixing
 platform: iOS,macOS
-updatedAt: Wed Nov 21 2018 08:31:35 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 06:34:53 GMT+0000 (UTC)
 ---
 # 播放音效/音乐混音
 ## 功能描述
