@@ -70,7 +70,7 @@ App ID 提供了一个简单的方式，方便开发者使用 Agora 的服务，
 ### 获取 App ID
 
 1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
-2. 登陆 Dashboard 页面，点击 **添加新项目**。
+2. 登录 Dashboard 页面，点击 **添加新项目**。
 
 	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
