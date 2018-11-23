@@ -3,13 +3,14 @@
 title: Set the Stereo/High-quality Audio Profile
 description: How to set high-quality audio
 platform: Android
-updatedAt: Fri Nov 23 2018 08:41:57 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:42:02 GMT+0000 (UTC)
 ---
 # Set the Stereo/High-quality Audio Profile
 ## Feature Description 
 In some professional scenarios, the audio quality is essential for the user experience. For example, podcast applications require stereo and high-quality audio. The so-called high-quality audio refers to the audio profile of 48 KHz sampling rate and 192 Kbps bitrate, which suits the high-fidelity musical scenarios, such as online radio and singing competitions.
 
 ## Implementation
+Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for more information.
 
 Agora SDK provides the [setAudioProfile](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a34175b5e04c88d9dc6608b1f38c0275d) method for developers to set appropriate audio profiles according to the scenarios. This method has two parameters:
 
