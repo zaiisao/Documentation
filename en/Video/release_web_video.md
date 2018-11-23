@@ -3,14 +3,14 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Fri Nov 23 2018 08:42:06 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:42:14 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
 
 ## Overview
 
-The Agora Web SDK (WebRTC) is a JavaScript library loaded by an HTML web page. The Agora Web SDK library uses APIs in the web browser to establish connections and control the communication and live broadcast services.
+The Agora Web SDK (WebRTC) is a JavaScript library loaded by an HTML web page. The Agora Web SDK library uses APIs in the web browser to establish connections and control the communication and live broadcast services. For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms) and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 ### Compatibility
 
