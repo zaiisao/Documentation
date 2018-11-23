@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to enable audio mixing, play audio effects and the related settings
 platform: Android
-updatedAt: Fri Nov 23 2018 04:07:39 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 04:07:43 GMT+0000 (UTC)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -14,6 +14,8 @@ updatedAt: Fri Nov 23 2018 04:07:39 GMT+0000 (UTC)
 Agora SDK 提供 `AudioEffectManager` 类统一管理音效，包含一些管理音效的常用方法。 音效由音频文件路径指定，但在 `AudioEffectManager` 内部使用 sound id 来识别和处理音效。音效文件通常保存在 **assets** 文件夹下；SDK 并不强制如何定义 sound id，保证每个音效有唯一的识别即可。一般的做法有自增 id，使用音效文件名的 hashCode 等。
 
 ### 实现方法
+
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Interactive%20Broadcast/android_video.md)。
 
 ```java
 // 首先获取全局的音效管理类
@@ -78,6 +80,8 @@ Agora 混音功能支持如下设置：
 - 循环：可以设置是否循环播放混音文件，以及循环次数。
 
 ### 实现方法
+
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Interactive%20Broadcast/android_video.md)。
 
 ```java
 // 混音设置
