@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 03:58:08 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:54:56 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 完整包的发版说明。
