@@ -3,17 +3,19 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Fri Nov 23 2018 07:41:33 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:41:40 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
 
 ## **简介**
 
-声网 Agora 小程序 SDK 是一个全新的 SDK，能支持微信小程序实现功能：
+声网 Agora 小程序 SDK 支持微信小程序实现功能, 并能与声网其他 SDK 进行互通：
 
 -   音视频通话
 -   音视频直播
+
+点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 以及[互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 
 结合微信小程序，能实现如下场景：
