@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Nov 23 2018 06:21:02 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:21:18 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ### How do you check the recording permissions?
@@ -16,6 +16,10 @@ updatedAt: Fri Nov 23 2018 06:21:02 GMT+0000 (UTC)
 
 Yes, Agora provides recording API methods and allows you to store recorded files on specified servers.
 Should I use the Agora Recording Server, Agora Recording SDK, or CDN Recording?
+The Agora Recording SDK is the recommended solution for all users.
+
+### Should I use the Agora Recording Server, Agora Recording SDK, or CDN Recording?
+
 The Agora Recording SDK is the recommended solution for all users.
 
 ### Do I need to configure the ARS IP in the backend Dashboard?
@@ -43,7 +47,7 @@ Automatic recording mode: If no one is in the channel when the idle time is up, 
 
 ### How do I customize the recording file and set the directory of the recording file?
 
-To customize the recording file, you need to configure the CFG file. The SDK package has a hidden .cfg.json file under Agora_Recording_SDK_for_Linux_FULL/samples/cpp. You can refer to the method of setting the output file path and filename. See https://docs.agora.io/cn/Recording/recording_cpp?platform=C++.
+To customize the recording file, you need to configure the CFG file. The SDK package has a hidden .cfg.json file under Agora_Recording_SDK_for_Linux_FULL/samples/cpp. You can refer to the method of setting the output file path and filename. See [Recording API](../../en/Recording/recording_cpp.md).
 
 For example, the recording file needs to be saved as "root directory/dates/uid.aac" where /home/Agora_Recording_SDK_for_Linux_FULL/samples/recording_output is the root directory.
 
