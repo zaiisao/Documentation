@@ -3,7 +3,7 @@
 title: Video-related Issues
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 22 2018 09:02:35 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 03:16:26 GMT+0000 (UTC)
 ---
 # Video-related Issues
 ### How do you choose the video resolution, frame rate, and bitrate?
