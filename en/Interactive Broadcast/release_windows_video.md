@@ -3,18 +3,19 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:05:17 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:42:58 GMT+0000 (UTC)
 ---
 # Release Notes
-This page provides the release notes for the Agora Full SDK.
+This page provides the release notes for the Agora Video SDK.
 
 ## Overview
 
-The Full SDK for Windows supports the following scenarios:
+The Video SDK for Windows supports the following scenarios:
 
 -   Voice/Video Communication
 -   Live Voice/Video Broadcast
 
+For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms) and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 > The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version earlier than v2.1.0 and wish to migrate to the latest version, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 
