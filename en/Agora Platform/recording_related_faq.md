@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Nov 23 2018 06:42:06 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:42:10 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ## Agora Recording SDK
@@ -36,7 +36,7 @@ When you call the `joinChannel` method and set the `channelProfile` parameter, e
 
 ### How do I use a Channel Key?
 
-See [Use Security Keys](../../en/Agora%20Platform/token.md).
+See [Use Security Keys](../../en/recording/token.md).
 
 ### Why is there only one recording file with uid = 0 when audio mixing is enabled?
 
