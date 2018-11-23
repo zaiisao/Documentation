@@ -3,7 +3,7 @@
 title: 改善弱网环境下的用户体验
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 23 2018 08:24:58 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:25:06 GMT+0000 (UTC)
 ---
 # 改善弱网环境下的用户体验
 ## 功能描述
@@ -50,7 +50,7 @@ agoraKit.enableDualStreamMode(true);
 [agoraKit setRemoteSubscribeFallbackOption: AgoraStreamFallbackOptionAudioOnly];
 
 // 若开发者希望主动控制远端视频的大小流并进行切换，则调用以下方式
-// 将以uid识别的远端用户的视频切换成小流。
+// 将以 uid 识别的远端用户的视频切换成小流。
 // 注意：必须设置成双流模式才能真正获取小流视频
 [agoraKit setRemoteVideoStream: uid type:AgoraVideoStreamTypeLow];
 ```
