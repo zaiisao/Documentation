@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to enable audio mixing for Web
 platform: Web
-updatedAt: Fri Nov 23 2018 08:30:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:30:46 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -15,6 +15,7 @@ Agora audio mixing supports the following options:
 - Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
 
 ## Implementation
+Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
 
 ```javascript
 // Set audio mixing options
