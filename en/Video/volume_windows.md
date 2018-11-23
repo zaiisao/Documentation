@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Fri Nov 23 2018 07:58:46 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:58:52 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Feature Description
@@ -11,6 +11,7 @@ updatedAt: Fri Nov 23 2018 07:58:46 GMT+0000 (UTC)
 When using the Agora SDK, developers can adjust the volumes of the captured audio and the playback, to satisfy customization requirements. For example, you can mute the remote audio by setting the volume to 0.
 
 ## Implementation
+Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/windows_video.md) for more information.
 
 ### Adjust the Volume of the Device
 
