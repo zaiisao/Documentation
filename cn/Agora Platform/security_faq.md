@@ -3,7 +3,7 @@
 title: 安全
 description: 
 platform: 安全
-updatedAt: Fri Nov 02 2018 04:03:55 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 03:06:51 GMT+0000 (UTC)
 ---
 # 安全
 ### 声网 Agora 的服务安全吗？可以加密吗？
