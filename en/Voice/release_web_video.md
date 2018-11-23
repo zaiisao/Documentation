@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Nov 08 2018 03:53:04 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:42:06 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
