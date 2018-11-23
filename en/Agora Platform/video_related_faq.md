@@ -3,7 +3,7 @@
 title: Video-related Issues
 description: 
 platform: Video-related Issues
-updatedAt: Fri Nov 23 2018 02:42:42 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 02:42:48 GMT+0000 (UTC)
 ---
 # Video-related Issues
 This page provides common troubleshooting strategies for Agora's video products and services.
@@ -18,7 +18,7 @@ Check the following:
 * Try the video call on another device.
 * Turn off all pre-processing options, such as image enhancement, to ensure that the choppy video is not caused by any pre-processing option.
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 * The uid of the user who sees the choppy video playback (in a live broadcast, whether the user is the host or audience).
 * The time frame during which the choppy video playback appears.
 * SDK logs and screen recording files of the user.
@@ -33,7 +33,7 @@ Check the following:
 * Switch to 4G or another WiFi network to ensure that the blurry video is not caused by poor Internet connections.
 * Turn off all pre-processing options.
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 * The uid of the user who sees the blurry video.
 * The time frame during which the blurry video appears.
 * SDK logs and screen recording files of the user.
@@ -77,7 +77,7 @@ Check the following:
 	* `nRet = apm->setInt("che.video.renderer.type", 9)`;
 * If the app enabled the Other Rendering Method Mode, check for any rendering issue.
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 * The uid of the user whose screen goes black.
 * The time frame during which the black screen appears.
 * SDK logs and screen recording files of the user.
@@ -90,7 +90,7 @@ Mirror images may occur in the following scenarios:
 	* Images taken by the front camera are commonly mirrored.
 	* If the images are not taken by the front camera, check if the app calls the `setParameters(che.video.localViewMirrorSetting)` method.
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 * If the front or rear camera is used.
 * If the mirror image is on the local or remote side.
 * If you prefer the mirror or true image.
@@ -108,7 +108,7 @@ Big headshot and letterbox issues occur when the video size does not match the d
 * If the video size is different from the display window size and the receiver uses the Hidden mode for rendering, the video will also be cropped before being encoded, and then enlarged.
 * If the video size is different from the display window size and the receiver uses the Fit mode for rendering, the video will be reduced in size, resulting in dark bands on the margin of the screen.
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 
 * SDK logs of the sender.
 * If the sender uses a mobile phone, whether the sender’s screen is horizontal or vertical.
