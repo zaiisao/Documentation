@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Fri Nov 23 2018 08:41:37 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:43:19 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Full SDK for macOS.
