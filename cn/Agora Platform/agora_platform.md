@@ -3,7 +3,7 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 23 2018 10:34:58 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:35:02 GMT+0000 (UTC)
 ---
 # Agora 平台概述
 声网 Agora 为开发者提供实时音视频 API，只需集成 Agora SDK，最快 30 分钟在应用内构建多种实时互动场景。
@@ -22,7 +22,7 @@ updatedAt: Fri Nov 23 2018 10:34:58 GMT+0000 (UTC)
 
 > [1] 目前仅支持 Android 和 iOS 平台。
 
-## SD-RTN
+## 自建基础设施
 SD-RTN（Software Defined Real-time Network）软件定义实时网，这是声网自建的底层实时传输网络，实际上，所有通过声网 SDK 接入的实时音视频数据都是通过 SD-RTN 传输和调度。这也是全球唯一一个专门针对实时传输设计的基础设施。目前，声网在全球部署近 200 个数据中心，通过智能动态路由算法，确保全球范围内的毫秒级超低延迟传输，保证 n 个 9 的技术服务高可用。
 
 | 特性                | 描述                                                         |
