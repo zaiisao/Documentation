@@ -3,7 +3,7 @@
 title: 发版说明
 description: 开头加上语音通话和直播的产品概述 reference
 platform: Android
-updatedAt: Fri Nov 23 2018 07:12:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:15:10 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 语音包的发版说明。
