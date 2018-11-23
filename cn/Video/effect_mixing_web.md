@@ -3,7 +3,7 @@
 title: 音乐混音
 description: How to enable audio mixing on the Web
 platform: Web
-updatedAt: Fri Nov 23 2018 06:13:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:13:46 GMT+0000 (UTC)
 ---
 # 音乐混音
 ## 功能描述
@@ -14,6 +14,7 @@ Agora 混音功能支持如下设置：
 - 循环：可以设置是否循环播放混音文件，以及循环次数。
 
 ## 实现方法
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Video/web_prepare.md)。
 
 ```javascript
 // 设置混音选项
