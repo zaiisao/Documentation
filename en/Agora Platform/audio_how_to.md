@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Thu Nov 22 2018 09:52:08 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 02:54:45 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 ### My H5 game integrates the Agora SDK v2.2.0 for iOS. When the host uses WKWebview with Layabox and joins the channel, why is the game volume very low?
