@@ -3,7 +3,7 @@
 title: Security
 description: 
 platform: Security
-updatedAt: Thu Nov 22 2018 10:03:51 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 03:15:57 GMT+0000 (UTC)
 ---
 # Security
 ### Are the services provided by Agora safe?
