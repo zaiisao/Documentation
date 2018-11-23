@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Nov 23 2018 06:21:51 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:21:55 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ### How do you check the recording permissions?
@@ -15,8 +15,6 @@ updatedAt: Fri Nov 23 2018 06:21:51 GMT+0000 (UTC)
 ### Can I record in an audio or video call?
 
 Yes, Agora provides recording API methods and allows you to store recorded files on specified servers.
-Should I use the Agora Recording Server, Agora Recording SDK, or CDN Recording?
-The Agora Recording SDK is the recommended solution for all users.
 
 ### Should I use the Agora Recording Server, Agora Recording SDK, or CDN Recording?
 
