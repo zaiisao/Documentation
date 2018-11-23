@@ -3,12 +3,12 @@
 title: 发版说明
 description: 
 platform: Java
-updatedAt: Fri Nov 23 2018 08:31:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:31:29 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
 
-Agora Server SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。
+Agora Server SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。点击 [信令产品概述](https://docs.agora.io/cn/Signaling/product_signaling?platform=All%20Platforms) 了解关键特性。
 
 ### 已知问题和局限性
 
