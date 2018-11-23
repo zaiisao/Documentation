@@ -3,18 +3,19 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Fri Nov 23 2018 07:29:13 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:29:22 GMT+0000 (UTC)
 ---
 # 发版说明
-本文提供 Agora 语音包的发版说明。
+本文提供 Agora 语音 SDK 的发版说明。
 
 ## **简介**
 
-iOS 语音包支持两种主要场景:
+iOS 语音 SDK 支持两种主要场景:
 
--   语音通话
+-   语音通话，点击 [语音通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 了解关键特性。
 
--   语音直播
+-   语音直播，点击 [互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms) 了解关键特性。互动直播支持语音直播和音视频直播。
+
 
 ## **2.3.1 版**
 
