@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Android
 platform: Android
-updatedAt: Fri Nov 23 2018 03:50:47 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 03:50:52 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -13,7 +13,7 @@ updatedAt: Fri Nov 23 2018 03:50:47 GMT+0000 (UTC)
 
 
 ## 实现方法
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Video/android_audio.md)。
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Video/android_video.md)。
 
 Agora SDK 提供一套接口直接调整录制和播放声音的信号幅度，由此实现调整录音和播放的音量。
 
