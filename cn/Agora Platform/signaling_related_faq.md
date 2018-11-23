@@ -3,7 +3,7 @@
 title: 信令相关
 description: 
 platform: 信令相关
-updatedAt: Wed Nov 21 2018 09:10:39 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:47:04 GMT+0000 (UTC)
 ---
 # 信令相关
 ### 怎么获取用户在线列表？
@@ -92,7 +92,7 @@ Agora 不提供完整的 PSTN 解决方案，但提供从 VoIP 到 PSTN 的对�
 
 建议您在 [Agora.io](https://www.agora.io/cn/)  提供的 demo 程序里测试一下，如果在 demo 程序里可以打通电话，那就是 APP 的逻辑问题。
 
-登陆不成功，没有 loginsuccess 回调？
+登录不成功，没有 loginsuccess 回调？
 
 通过 Error Code 进行初步判断：
 
@@ -119,7 +119,7 @@ Error 201
 引起掉线的原因：
 
 * 弱网或断网。
-* 多个设备登陆同一个 App ID 下的同一个 account ID，会踢掉上一个登陆的人。
+* 多个设备登录同一个 App ID 下的同一个 account ID，会踢掉上一个登录的人。
 * SDK 无法连接服务器
    * Native SDK 网络不好的情况下内部会尝试重连，一旦 logout 回调出来就不再重连了。
    * Web SDK 1.4 版本的刚刚加入 SDK 的内部重连，之前版本，网络一断立即 logout。
