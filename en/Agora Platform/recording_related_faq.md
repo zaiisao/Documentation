@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Nov 23 2018 06:39:22 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:39:28 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ## Agora Recording SDK
@@ -36,7 +36,7 @@ When you call the `joinChannel` method and set the `channelProfile` parameter, e
 
 ### How do I use a Channel Key?
 
-See [Use Security Keys](../../en/recording/token.md).
+See [Use Security Keys](../../en/Agora%20Platform/token.md).
 
 ### Why is there only one recording file with uid = 0 when audio mixing is enabled?
 
@@ -218,6 +218,6 @@ Users of the Recording SDK versions earlier than v2.2.3 can check if there is a 
 2. If you cannot find the core file:
     a. If no directory is set for the core file, then the core file is usually found in the directory where the recorded AgoraCoreService file is located.
     b. If not, execute ulimit -c on Linux. If the output is 0, coredump is not open. Open coredump by executing: ulimit -c unlimited.
-    c. Run the create_core.sh script to open coredump.
+    c. Run the [create_core.sh](https://confluence.agora.io/download/attachments/624756698/create_core.sh?version=1&modificationDate=1539915915696&api=v2) script to open coredump.
     d. After opening coredump, users can generate the core file after a crash.
     e. Collect the recording_sys.log file and the core file.
