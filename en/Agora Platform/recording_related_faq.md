@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Nov 23 2018 06:39:28 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:42:06 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ## Agora Recording SDK
