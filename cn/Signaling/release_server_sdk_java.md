@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:17:18 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:31:24 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
