@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Thu Nov 22 2018 06:38:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:46:40 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -414,9 +414,9 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
 
 > 踢人规则通过 cname、uid 和 ip 三个字段组合起来过滤实现，规则如下：
-> - 如果填写 ip，不填写 cname 或 uid，则该 ip 无法登陆 App 中的任何频道
-> - 如果填写 cname，不填写 uid 或 ip，则任何人都无法登陆 App 中该 cname 对应的频道
-> - 如果填写 cname 和 uid，不填写 ip，则该 uid 无法登陆 App 中该 cname 对应的频道
+> - 如果填写 ip，不填写 cname 或 uid，则该 ip 无法登录 App 中的任何频道
+> - 如果填写 cname，不填写 uid 或 ip，则任何人都无法登录 App 中该 cname 对应的频道
+> - 如果填写 cname 和 uid，不填写 ip，则该 uid 无法登录 App 中该 cname 对应的频道
 
 -   响应：
 
