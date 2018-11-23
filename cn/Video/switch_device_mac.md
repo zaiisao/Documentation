@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 23 2018 10:09:50 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:09:55 GMT+0000 (UTC)
 ---
 # 音视频设备测试与切换
 ## 功能描述
@@ -50,6 +50,13 @@ agoraKit.stopPlaybackDeviceTest()
 
 [agoraKit stopPlaybackDeviceTest];
 ```
+
+## API 参考
+
+* [startRecordingDeviceTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
+* [stopPlaybackDeviceTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
+* [startPlaybackDeviceTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
+* [stopPlaybackDeviceTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopPlaybackDeviceTest)
 
 ## 注意事项
 
