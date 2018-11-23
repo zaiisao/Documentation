@@ -3,13 +3,13 @@
 title: Adjust the Volume
 description: How to adjust volume on Web
 platform: Web
-updatedAt: Fri Nov 23 2018 07:58:07 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:58:12 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Feature Description
 When using the Agora SDK, developers can adjust the volumes of the captured audio and the playback, to satisfy customization requirements. For example, you can mute the remote audio by setting the volume to 0.
 ## Implementation
-
+Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md) for more information.
 ### Adjust the Local Volume
 
 ```
