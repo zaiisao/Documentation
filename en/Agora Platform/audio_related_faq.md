@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Fri Nov 23 2018 02:36:15 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 02:36:31 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 This page provides common troubleshooting strategies for Agora's audio products and services.
@@ -30,7 +30,7 @@ Check the following:
 
 **Step 2: Contact Agora Customer Support**
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 
 <table>
   <tr>
@@ -60,7 +60,7 @@ Check the following:
 
 **Step 2: Contact Agora Customer Support**
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 
 <table>
   <tr>
@@ -92,7 +92,7 @@ Check the following:
 
 **Step 2: Contact Agora Customer Support**
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 * The name of the channel where the users who encountered this issue.
 * The uids of the users whose volume is too low.
 * The time frame during which the the volume is too low.
@@ -138,7 +138,7 @@ Check the following:
 
 **Step 2: Contact Agora Customer Support**
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 
 * The name of the channel where the users cannot hear the noise.
 * The uids of the users who cannot hear any voice in the channel.
@@ -153,7 +153,7 @@ Check if the network is stable and in good condition. If not, switch to 4G or an
 
 **Step 2: Contact Agora Customer Support**
 
-If the issue persists, contact Agora customer support and [submit the issue](http://https://docs.agora.io/en/2.2/faq/faq/troubleshooting#submit) with the following information:
+If the issue persists, contact Agora customer support and submit the issue with the following information:
 
 <table>
   <tr>
