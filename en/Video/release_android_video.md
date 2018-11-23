@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:03:23 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 09:22:17 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Full SDK for Android.
