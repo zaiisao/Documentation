@@ -3,11 +3,11 @@
 title: Interactive Broadcast-related Issues
 description: 
 platform: Live Broadcast-related Issues
-updatedAt: Fri Nov 23 2018 03:23:20 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 03:24:01 GMT+0000 (UTC)
 ---
 # Interactive Broadcast-related Issues
 ### How do you ban a user in a live broadcast?
-You can ban a user from the server. See [Dashboard RESTful API](http://https://docs.agora.io/en/Interactive%20Broadcast/dashboard_restful_live?platform=All_Platforms).
+You can ban a user from the server. See [Dashboard RESTful API](../../en/Agora%20Platform/dashboard_restful_live.md).
 
 ### How do you adjust the layout of a CDN live broadcast?
 Call the `setLiveTranscoding` method.
