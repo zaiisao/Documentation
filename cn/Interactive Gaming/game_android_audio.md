@@ -3,7 +3,7 @@
 title: 游戏纯语音版 API
 description: 
 platform: Android_CPP
-updatedAt: Fri Nov 02 2018 04:12:12 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:31:13 GMT+0000 (UTC)
 ---
 # 游戏纯语音版 API
 纯语音版游戏 API 由 **Java 接口** 和 **C++ 接口** 部分组成，其中：
@@ -1642,7 +1642,7 @@ public abstract int startEchoTest();
 
 
 > -   调用 startEchoTest 后必须调用 stopEchoTest 以结束测试，否则不能进行下一次回声测试，或者调用 `joinChannel()` 进行通话。
-> -   直播模式下，只有主播用户才能调用。如果用户由通信模式切换到直播模式，请务必调用 `setClientRole()` 方法将用户角色设置为主播后再调用该方法。
+> -   直播模式下，只有主播用户才能调用。如果用户由通信模式切换到直播模式，请务必调用 `setClientRole()` 方法将用户的橘色设置为。
 
 
 <table>
@@ -4396,7 +4396,7 @@ virtual int startEchoTest() = 0;
 
 
 > -   调用 startEchoTest 后必须调用 stopEchoTest 以结束测试，否则不能进行下一次回声测试，或者调用 `joinChannel()` 进行通话。
->-   直播模式下，只有主播用户才能调用。如果用户由通信模式切换到直播模式，请务必调用 `setClientRole()` 方法将用户角色设置为主播后再调用该方法。
+>-   直播模式下，只有主播用户才能调用。如果用户由通信模式切换到直播模式，请务必调用 `setClientRole()` 方法将用户的橘色设置为。
 
 
 <table>
