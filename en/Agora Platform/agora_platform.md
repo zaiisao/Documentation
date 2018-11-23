@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 23 2018 11:20:57 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 11:21:01 GMT+0000 (UTC)
 ---
 # Agora Platform Overview
 Agora.io provides the building blocks developers need to add real-time voice and video communications through a simple, powerful SDK. Integrate Agora SDK and enable real-time communications within 30 minutes.
@@ -66,9 +66,9 @@ Agora is the only RTC service provider who uses self-developed audio and video c
 
 - The [Developer Center](https://docs.agora.io/en) provides documentation for developers to integrate and use Agora SDKs, and SDK and sample code downloads.
 - [Agora Dashboard](https://dashboard.agora.io/) is a self-service system that enables the developers to monitor the usage statistics, track the QoE, manage the projects, manage the account privileges, and submit the tickets.
-- [Sample apps and use cases on Github](https://docs.agora.io/cn/Agora%20Platform/sampleapps)
+- [Sample apps and use cases on Github](https://docs.agora.io/en/Agora%20Platform/sampleapps)
 - 5 &times; 8 technical support. Developers can ask questions about integration on [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io), and [submit tickets](https://dashboard.agora.io/show-ticket-submission) for quality issues.
-- [Agora Dashboard](https://docs.agora.io/en/Agora%20Platform/%3Chttps://dashboard.agora.io/%3E) provides a tool (Agora Analytics) to track the QoE (Quality of Experience), which presents rich data in the whole process of a call in diagrams,for example:
+- [Agora Dashboard](https://dashboard.agora.io/) provides a tool (Agora Analytics) to track the QoE (Quality of Experience), which presents rich data in the whole process of a call in diagrams,for example:
 
   - Device status, including the system CPU usage and the App CPU usage
   - User events, for example stopping sending audio or starting receiving video
