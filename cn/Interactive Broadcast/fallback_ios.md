@@ -3,7 +3,7 @@
 title: 改善弱网环境下的用户体验
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 23 2018 08:25:06 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:25:36 GMT+0000 (UTC)
 ---
 # 改善弱网环境下的用户体验
 ## 功能描述
