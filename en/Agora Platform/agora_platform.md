@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 23 2018 10:35:25 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:35:29 GMT+0000 (UTC)
 ---
 # Agora Platform Overview
 Agora.io provides the building blocks developers need to add real-time voice and video communications through a simple, powerful SDK. Integrate Agora SDK and enable real-time communications within 30 minutes.
@@ -22,7 +22,7 @@ After integrating Agora SDK, you can call different sets of APIs to implement vo
 
 > [1] Only supports Android and iOS for now.
 
-## SD-RTN
+## Self-built Infrastructure
 
 SD-RTN (Software Defined Real-time Network) is the real-time transmission network built by Agora itself. Actually, all the audio and video services provided by Agora SDK are dispatched and transmitted through SD-RTN, which is the only network infrastructure specifically designed for real-time communication in the world.
 Currently, Agora has deployed nearly 200 data centers worldwide that use intelligent dynamic routing algorithm to achieve millisecond latency and ensure high availability of our service.
