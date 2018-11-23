@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Nov 23 2018 08:30:39 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:46:55 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
@@ -40,7 +40,7 @@ Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传
 
 发布于 2018 年 8 月 24 日。
 
--   login 登陆接口增加参数：最高重连次数 `reconnect_count` （默认 10 次）和重连失败时间 `reconnect_timeout`（默认 30 秒）
+-   login 登录接口增加参数：最高重连次数 `reconnect_count` （默认 10 次）和重连失败时间 `reconnect_timeout`（默认 30 秒）
 
 -   支持 UMD 规范
 
