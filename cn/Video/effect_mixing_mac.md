@@ -1,9 +1,9 @@
 
 ---
 title: 播放音效/音乐混音
-description: How to play audio effect files and enable audio mixing
-platform: iOS
-updatedAt: Fri Nov 23 2018 06:03:44 GMT+0000 (UTC)
+description: How to play audio effect files and enable audio mixing on macOS
+platform: macOS
+updatedAt: Fri Nov 23 2018 06:12:22 GMT+0000 (UTC)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -16,7 +16,7 @@ updatedAt: Fri Nov 23 2018 06:03:44 GMT+0000 (UTC)
 音效由音频文件路径指定，soundId 为自行设定的音效 ID，需保证唯一性。SDK 并不强制如何定义 sound id，保证每个音效有唯一的识别即可。一般的做法有自增 id，使用音效文件名的 hashCode 等。
 
 ### 实现方法
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/ios_video.md)。
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/mac_video.md)。
 
 ```swift
 // swift
@@ -97,13 +97,13 @@ volume = volume < 80 ? 80 : volume
 
 ### API 参考
 
-- [playEffect](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/playEffect:filePath:loopCount:pitch:pan:gain:)
-- [preloadEffect](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/preloadEffect:filePath:)
-- [pauseAllEffects](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pauseAllEffects)
-- [getEffectsVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getEffectsVolume)
-- [setEffectsVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
-- [resumeAllEffects](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/resumeAllEffects)
-- [stopAllEffects](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAllEffects)
+- [playEffect](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/playEffect:filePath:loopCount:pitch:pan:gain:)
+- [preloadEffect](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/preloadEffect:filePath:)
+- [pauseAllEffects](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pauseAllEffects)
+- [getEffectsVolume](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getEffectsVolume)
+- [setEffectsVolume](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
+- [resumeAllEffects](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/resumeAllEffects)
+- [stopAllEffects](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAllEffects)
 
 ### 开发注意事项
 
@@ -119,7 +119,7 @@ Agora 混音功能支持如下设置：
 - 循环：可以设置是否循环播放混音文件，以及循环次数。
 
 ### 实现方法
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/ios_video.md)。
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/mac_video.md)。
 
 ```swift
 // swift
@@ -151,7 +151,7 @@ NSInteger cycle = 1;
 
 ### API 参考
 
-- [startAudioMixing](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
+- [startAudioMixing](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
 
 ### 开发注意事项
 

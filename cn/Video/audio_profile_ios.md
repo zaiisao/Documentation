@@ -2,7 +2,7 @@
 ---
 title: 使用双声道/高音质
 description: How to set audio profile for iOS
-platform: iOS,macOS
+platform: iOS
 updatedAt: Fri Nov 23 2018 06:50:11 GMT+0000 (UTC)
 ---
 # 使用双声道/高音质

@@ -1,15 +1,15 @@
 
 ---
 title: 调整音调、音色
-description: How to set voice effects for iOS
-platform: iOS
-updatedAt: Fri Nov 23 2018 07:19:36 GMT+0000 (UTC)
+description: How to set voice effects for macOS
+platform: macOS
+updatedAt: Fri Nov 23 2018 07:22:11 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
 在社交娱乐应用中，为增加产品的趣味性和互动性，用户常常需要变声和混响效果。Agora 提供了一系列的方法让开发者灵活定制自己想要的声音，比如设置音调、均衡和混响等。 
 ## 实现方法
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/ios_video.md)。
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/mac_video.md)。
 
 你可以根据以下方式把原始声音变 FM 的效果。
 
@@ -87,9 +87,9 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 
 ### API 参考
 
-- [setLocalVoicePitch](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
-- [setLocalVoiceEqualizationOfBandFrequency](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
-- [setLocalVoiceReverbOfType](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
+- [setLocalVoicePitch](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
+- [setLocalVoiceEqualizationOfBandFrequency](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
+- [setLocalVoiceReverbOfType](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
 
 ## 开发注意事项
 以上方法都有返回值，返回值小于 0 表示方法调用失败。
