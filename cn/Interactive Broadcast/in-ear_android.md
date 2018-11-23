@@ -3,7 +3,7 @@
 title: 耳返
 description: How to enable ear-monitoring and adjust the volume
 platform: Android
-updatedAt: Fri Nov 23 2018 07:09:50 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:10:00 GMT+0000 (UTC)
 ---
 # 耳返
 ## 功能描述
@@ -11,6 +11,8 @@ updatedAt: Fri Nov 23 2018 07:09:50 GMT+0000 (UTC)
 Agora SDK 支持耳返功能，同时支持调节耳返的音量。
 
 ## 实现方法
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Interactive%20Broadcast/android_video.md)。
+
 ```java
  // 设置开启耳返监听功能，默认为 false
  rtcEngine.enableInEarMonitoring(true);
