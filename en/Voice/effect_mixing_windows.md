@@ -3,11 +3,13 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Fri Nov 23 2018 08:32:37 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:33:07 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
 In a call or live broadcast, sometimes you need to play custom audio or music files to all the users in the channel, for example adding sound effects in a game, or playing a background music. Agora provides two groups of methods that supports playing audio effect files and audio mixing.
+
+Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/windows_video.md) for more information.
 
 ## Play Audio Effect Files
 
