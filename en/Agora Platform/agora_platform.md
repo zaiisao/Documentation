@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 23 2018 11:21:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 22:33:13 GMT+0000 (UTC)
 ---
 # Agora Platform Overview
 Agora.io provides the building blocks developers need to add real-time voice and video communications through a simple, powerful SDK. Integrate Agora SDK and enable real-time communications within 30 minutes.
