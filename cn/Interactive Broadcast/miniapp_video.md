@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: 微信小程序
-updatedAt: Mon Nov 12 2018 02:43:51 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:46:53 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
@@ -35,7 +35,7 @@ updatedAt: Mon Nov 12 2018 02:43:51 GMT+0000 (UTC)
 
 1.  进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
 
-2.  登陆 Dashboard 页面，点击 **添加新项目**。
+2.  登录 Dashboard 页面，点击 **添加新项目**。
 
 	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
