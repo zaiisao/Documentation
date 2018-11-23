@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:03:39 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 09:22:59 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Full SDK for iOS.
