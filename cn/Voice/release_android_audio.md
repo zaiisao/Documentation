@@ -1,9 +1,9 @@
 
 ---
 title: 发版说明
-description: 开头加上语音通话和直播的产品概述 reference
+description: 
 platform: Android
-updatedAt: Fri Nov 23 2018 07:15:20 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:18:30 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
