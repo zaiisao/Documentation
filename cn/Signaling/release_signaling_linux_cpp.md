@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 04:16:49 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:28:29 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
