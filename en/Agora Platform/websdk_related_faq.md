@@ -3,7 +3,7 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Fri Nov 23 2018 02:52:34 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 02:52:40 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
 ### When I use Google Chrome on Android, why can't I connect with people who use the Safari browser or Native SDK?
@@ -36,18 +36,14 @@ This is a known issue and the macOS user needs to refresh the page. Agora is wor
 Safari on iOS does not support the dual-stream mode.
 
 ### Why can't I join the channel and why is there a WebSocket error and DDoS-like attacks?
-The `joinChannel` parameters of the Web SDK vary in different versions:
-
-The join attribute of ChannelKey is added in Web SDK v1.12+: https://docs.agora.io/en/2.3.1/product/Video/API%20Reference/web_API_video?platform=Web.
-Web SDK versions earlier than v1.12 do not have this attribute: https://docs.agora.io/cn/1.8/user_guide/API/webrtc_api.html.
+The `joinChannel` parameters of the Web SDK vary in different versions.
+The join attribute of ChannelKey is added in Web SDK v1.12+. Web SDK versions earlier than v1.12 do not have this attribute.
 
 ### Why can't the receiver switch to the low-stream video in h264_interop mode if the sender is using a Firefox browser?
 The low-stream or high-stream video setting is dependent on the browser, resolution, and codec type. Web browsers use an internal algorithm to set the stream. Therefore, the stream setting may not be according to your setting.
 
 ### During a live broadcast, why is there no video if the host does not set the transcoding stream in the AgoraRTC.createClient({mode:’interop’}) mode?
-In the `AgoraRTC.createClient({mode:’interop’})` mode, if the host is the sole host in the channel, the host needs to transcode before publishing the stream. Otherwise, there will be no video.
-
-To push the stream to the CDN, enable the `AgoraRTC.createClient({mode:’h264_interop’})` mode.
+In the `AgoraRTC.createClient({mode:’interop’})` mode, if the host is the sole host in the channel, the host needs to transcode before publishing the stream. Otherwise, there will be no video. To push the stream to the CDN, enable the `AgoraRTC.createClient({mode:’h264_interop’})` mode.
 
 Note: Agora charges an extra fee for transcoding.
 
