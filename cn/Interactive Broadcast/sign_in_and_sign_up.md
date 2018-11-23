@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 23 2018 10:26:36 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:47:08 GMT+0000 (UTC)
 ---
 # 注册与登录
 ## 创建新账号
@@ -32,7 +32,7 @@ updatedAt: Fri Nov 23 2018 10:26:36 GMT+0000 (UTC)
 
 如果用户忘记了密码，可通过以下方式找回密码：
 
-1. 进入 Agora 官网，点击右上角的**登陆**按钮，进入登陆页面。
+1. 进入 Agora 官网，点击右上角的**登录**按钮，进入登录页面。
 
 ![](https://web-cdn.agora.io/docs-files/1542771747129)
 
