@@ -3,18 +3,18 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Nov 23 2018 07:25:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:25:34 GMT+0000 (UTC)
 ---
 # 发版说明
-本文提供 Agora 完整包的发版说明。
+本文提供 Agora 视频 SDK 的发版说明。
 
 ## **简介**
 
-Android 完整包支持两种主要场景:
+Android 视频 SDK 支持两种主要场景:
 
--   音视频通话
+-   音视频通话，点击 [视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 了解关键特性。
 
--   音视频直播
+-   音视频直播，点击 [互动直播产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 了解关键特性。
 
 ## **2.3.1 版**
 
