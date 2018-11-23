@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to play audio effect files and enable audio mixing 
 platform: Windows
-updatedAt: Fri Nov 23 2018 06:14:20 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:14:24 GMT+0000 (UTC)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -14,6 +14,7 @@ updatedAt: Fri Nov 23 2018 06:14:20 GMT+0000 (UTC)
 音效由音频文件路径指定，但在 SDK 内部使用 sound id 来识别和处理音效。SDK 并不强制如何定义 sound id，保证每个音效有唯一的识别即可。一般的做法有自增 id，使用音效文件名的 hashCode 等。
 
 ### 实现方法
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Voice/windows_video.md)。
 
 ```c++
 // 初始化参数对象
