@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 03:58:00 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:25:24 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 完整包的发版说明。
