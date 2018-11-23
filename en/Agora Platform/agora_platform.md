@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 23 2018 22:35:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 22:35:49 GMT+0000 (UTC)
 ---
 # Agora Platform Overview
 Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications within 30 minutes.
@@ -14,11 +14,11 @@ After integrating the Agora SDK, you can call different sets of APIs to implemen
 
 | Agora SDK  | Functions                   | Description                                                  |
 | ---------- | ------------------------------------ | ------------------------------------------------------------ |
-| Voice SDK  | [Voice Call](../../en/Voice/product_voice.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only <br>live broadcasts. <sup>[1]</sup> |
+| Voice SDK  | [Voice Call](../../en/Voice/product_voice.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only live broadcasts. <sup>[1]</sup> |
 | Video SDK  | [Video Call](../../en/Video/product_video.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | Provides both voice and video functions. |
 | Gaming SDK | [Interactive Gaming](../../cn/Interactive%20Gaming/product_gaming.md)                   | Optimized for gaming applications. The package size is about 1 MB. |
 | Recording Add-on  | [Recording](../../en/Recording/product_recording.md)                     | Records and saves voice/video calls and live broadcasts on your server. |
-| Signalling Add-on | [Signalling](../../en/Signaling/product_signaling.md)                    | Based on the TCP and provides a stable messaging channel <br>for real-time communication scenarios. |
+| Signalling Add-on | [Signalling](../../en/Signaling/product_signaling.md)                    | Based on the TCP and provides a stable messaging channel for real-time communication scenarios. |
 
 > [1] Only supports Android and iOS for now.
 
