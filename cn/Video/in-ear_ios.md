@@ -3,7 +3,7 @@
 title: 耳返
 description: How to enable ear-monitoring and adjust the volume of ear-monitoring.
 platform: iOS
-updatedAt: Fri Nov 23 2018 07:12:34 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:12:38 GMT+0000 (UTC)
 ---
 # 耳返
 ## 功能描述
@@ -11,7 +11,7 @@ updatedAt: Fri Nov 23 2018 07:12:34 GMT+0000 (UTC)
 Agora SDK 支持耳返功能，同时支持调节耳返的音量。
 
 ## 实现方法
-
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/ios_video.md)。
 
 ```swift
 // swift
