@@ -3,7 +3,7 @@
 title: Gaming-related Issues
 description: 
 platform: Gaming-related Issues
-updatedAt: Fri Nov 23 2018 06:34:58 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:35:03 GMT+0000 (UTC)
 ---
 # Gaming-related Issues
 ## Gaming Sound Effects
@@ -75,7 +75,8 @@ Bluetooth terminology:
 Bluetooth headsets use two channels in the SCO link for audio playback and recording. However, Bluetooth headsets only support mono sound in SCO and stereo sound in A2DP.
 
 Bluetooth headsets cannot be used for voice calls if they only support A2DP and not SCO.
-Device Compatibility
+
+## Device Compatibility
 
 ### Can I use Android and iPhone headsets interchangeably?
 No, the layout of the left and right audio channels and microphone interfaces is different for iPhone and Android headsets.
