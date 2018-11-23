@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Fri Nov 23 2018 02:40:09 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 02:40:14 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 This page provides common troubleshooting strategies for Agora's audio products and services.
@@ -124,7 +124,7 @@ Check the following:
 * Check if the headset is working.
 * Call the `setEnableSpeakphone` method and ensure that you cannot hear any voice from the headset when the speaker mode is on.
 * Check if the headset is working and if the audio output is set to the headset.
-* Test your device with the Agora Video Call demo (downloaded from [Agora.io](http://https://docs.agora.io/en/Voice/downloads)).
+* Test your device with the Agora Video Call demo (downloaded from [Agora.io](https://docs.agora.io/en/Voice/downloads)).
 * In Windows, if users cannot hear any voice from the speaker or headset:
 	* Right click on the speaker icon and select Sounds.
     ![](https://web-cdn.agora.io/docs-files/1539335697243)
