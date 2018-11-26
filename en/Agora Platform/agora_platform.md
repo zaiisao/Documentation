@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 26 2018 08:00:20 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 08:00:24 GMT+0000 (UTC)
 ---
 # Agora Platform Overview
 Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications within 30 minutes.
@@ -24,13 +24,13 @@ After integrating the Agora SDK, you can call different sets of APIs to implemen
 
 ## Self-built Infrastructure
 
-Agora's SD-RTN (Software Defined Real-time Network) is a real-time transmission network built by Agora and is the only network infrastructure specifically designed for real-time communications in the world. All voice and video services provided by the Agora SDK are deployed and transmitted through the Agora SD-RTN. 
+Agora's SD-RTN™ (Software Defined Real-time Network) is a real-time transmission network built by Agora and is the only network infrastructure specifically designed for real-time communications in the world. All voice and video services provided by the Agora SDK are deployed and transmitted through the Agora SD-RTN™. 
 
 Agora deploys about 200 data centers worldwide that use intelligent dynamic routing algorithms to achieve millisecond latency and ensure high availability of Agora's service.
 
 | Feature                                         | Description                                                  |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| Global network coverage                         | <li>Covers 200+ countries<li>Covers 100+ telecommunication providers in China |
+| Global network coverage                         | <li>Covers 200+ countries and regions<li>Covers dozens of small and medium telecommunication providers in China |
 | Mass access capability                          | <li>Supports multiple intelligent terminal access<li>A single channel can support a million people online at the same time |
 | QoS (Quality of Service) capability enhancement | <li>Prevents network congestion in advance<li>Weak network anti-loss guarantee |
 | QoS-based dynamic routing                       | <li>Comprehensive assessment of network resources<li>QoS optimal path guarantee |
@@ -66,9 +66,9 @@ Agora is the only RTC service provider in the world using self-developed audio a
 
 - The [Developer Center](https://docs.agora.io/en) provides documentation for developers to integrate and use Agora SDKs, and for SDK and sample code downloads.
 - [Agora Dashboard](https://dashboard.agora.io/) is a self-service system that enables developers to monitor usage statistics, track the QoE, manage projects, manage account privileges, and submit tickets.
-- [Sample apps and use cases on Github.](https://docs.agora.io/en/Agora%20Platform/sampleapps)
+- [Agora Github](https://github.com/AgoraIO) and [GitHub Community](https://github.com/AgoraIO-Community) provide demos and use cases, which can also be found at the [Developer Center](https://docs.agora.io/en/Agora%20Platform/sampleapps).
 - 5 &times; 8 technical support. Developers can ask questions about integration on [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io), and [submit tickets](https://dashboard.agora.io/show-ticket-submission) for quality issues.
-- [Agora Dashboard](https://dashboard.agora.io/) provides Agora Analytics to track the QoE. Agora Analytics displays data of the call process in diagrams. For example:
+- [Agora Dashboard](https://dashboard.agora.io/) provides [Agora Analytics](https://dashboard.agora.io/analytics/call/search) to track the QoE. Agora Analytics displays data of the call process in diagrams. For example:
 
   - Device status, including the system CPU usage and the app's CPU usage
   - User events. For example, stop sending audio or start receiving video
