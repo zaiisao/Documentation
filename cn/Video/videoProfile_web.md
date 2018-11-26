@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Web
-updatedAt: Mon Nov 26 2018 10:31:54 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:31:58 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -26,8 +26,8 @@ localStream.init(function(){
 });
 ```
 
-**相关 API 及链接**
-* [`setVideoProfiloe`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#setvideoprofile)：设置视频编码属性
+### API 参考
+* [`setVideoProfiloe`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#setvideoprofile)
 
 ## 开发注意事项
 - 不同的浏览器对分辨率的支持可能不同，详细的视频分辨率表可以在[这里](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#setvideoprofile)查看。
