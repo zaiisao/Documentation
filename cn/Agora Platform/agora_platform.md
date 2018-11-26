@@ -3,7 +3,7 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 26 2018 07:50:36 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 07:50:40 GMT+0000 (UTC)
 ---
 # Agora 平台概述
 声网 Agora 为开发者提供实时音视频 API，只需集成 Agora SDK，最快 30 分钟在应用内构建多种实时互动场景。
@@ -62,7 +62,6 @@ SD-RTN™（Software Defined Real-time Network）软件定义实时网，这是�
 - [开发者中心](https://docs.agora.io/cn)提供集成和使用 Agora 产品所需的文档、SDK 和 Sample Code 下载。
 2. [开发者后台 Dashboard](https://dashboard.agora.io/stat) 提供用量统计、项目管理、权限管理、质量追踪、付费等功能。
 3. Agora [Github 官方](https://github.com/AgoraIO) 和 [Github 社区](https://github.com/AgoraIO-Community) 提供丰富的开源示例程序和场景化解决方案，也可以通过[开发者中心](https://docs.agora.io/cn/Agora%20Platform/sampleapps)直接获得。
-5. GitHub 开发者社区 [Agora Community](https://github.com/AgoraIO-Community)
 6. 开发者支持与服务保证 5 &times; 8，集成问题可提交[论坛](https://dev.agora.io/cn/)提问，售后质量问题可[提交工单](https://dashboard.agora.io/show-ticket-submission)。
 7. 实时质量监控工具 – [水晶球](https://dashboard.agora.io/analytics/call/search) Agora Analytics ，以图表的形式展示每一通通话全链路质量数据，极大提高解决通话问题的效率：
    - 设备状态，包括系统 CPU 的使用率，以及 SDK 的 CPU 使用率
