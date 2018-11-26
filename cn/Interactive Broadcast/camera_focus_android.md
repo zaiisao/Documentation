@@ -1,11 +1,11 @@
 
 ---
-title: 摄像头对焦
+title: 摄像头曝光、对焦
 description: 
 platform: Android
-updatedAt: Mon Nov 26 2018 07:32:35 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 07:36:16 GMT+0000 (UTC)
 ---
-# 摄像头对焦
+# 摄像头曝光、对焦
 ## 功能简介
 
 视频场景中，经常会使用到摄像头对焦的功能，帮助被拍摄物成像清晰。
