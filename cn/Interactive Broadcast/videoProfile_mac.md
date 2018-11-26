@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: macOS
-updatedAt: Mon Nov 26 2018 10:31:22 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:31:26 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -35,8 +35,8 @@ AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] 
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
-**相关 API 及链接**
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)：设置视频编码属性
+### API 参考
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
 * 关于视频的方向模式，更多信息请参考[视频采集旋转](../../cn/Interactive%20Broadcast/rotation_guide_ios.md)。
 
 ## 开发注意事项
