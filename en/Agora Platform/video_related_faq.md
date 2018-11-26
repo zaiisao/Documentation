@@ -3,7 +3,7 @@
 title: Video-related Issues
 description: 
 platform: Video-related Issues
-updatedAt: Mon Nov 26 2018 09:48:36 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 09:48:40 GMT+0000 (UTC)
 ---
 # Video-related Issues
 This page provides common troubleshooting strategies for Agora's video products and services.
@@ -72,7 +72,7 @@ This problem occurs when the video is not rendered correctly or the video functi
 Check the following:
 * Check if the app calls the enableVideo method to enable the video.
 * Check if the video is enabled on the local and remote sides.
-* Check the rendering type in the SDK log. If the rendering type is D2D, ensure that you update to the latest graphics card driver. If the issue persists after updating the driver, switch to GDI rendering, which means the app calls the following function before the user joins the channel:
+* Check the rendering type in the SDK log in Windows. If the rendering type is D2D, ensure that you update to the latest graphics card driver. If the issue persists after updating the driver, switch to GDI rendering, which means the app calls the following function before the user joins the channel:
 	* `AParameter apm(*pRTCEngine)`;
 	* `nRet = apm->setInt("che.video.renderer.type", 9)`;
 * If the app enabled the Other Rendering Method Mode, check for any rendering issue.
