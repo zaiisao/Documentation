@@ -3,7 +3,7 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 26 2018 07:49:59 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 07:50:03 GMT+0000 (UTC)
 ---
 # Agora 平台概述
 声网 Agora 为开发者提供实时音视频 API，只需集成 Agora SDK，最快 30 分钟在应用内构建多种实时互动场景。
@@ -23,11 +23,11 @@ updatedAt: Mon Nov 26 2018 07:49:59 GMT+0000 (UTC)
 > [1] 目前仅支持 Android 和 iOS 平台。
 
 ## 自建基础设施
-SD-RTN（Software Defined Real-time Network）软件定义实时网，这是声网自建的底层实时传输网络，实际上，所有通过声网 SDK 接入的实时音视频数据都是通过 SD-RTN 传输和调度。这也是全球唯一一个专门针对实时传输设计的基础设施。目前，声网在全球部署近 200 个数据中心，通过智能动态路由算法，确保全球范围内的毫秒级超低延迟传输，保证 n 个 9 的技术服务高可用。
+SD-RTN™（Software Defined Real-time Network）软件定义实时网，这是声网自建的底层实时传输网络，实际上，所有通过声网 SDK 接入的实时音视频数据都是通过 SD-RTN™ 传输和调度。这也是全球唯一一个专门针对实时传输设计的基础设施。目前，声网在全球部署近 200 个数据中心，通过智能动态路由算法，确保全球范围内的毫秒级超低延迟传输，保证技术服务高可用。
 
 | 特性                | 描述                                                         |
 | ------------------- | ------------------------------------------------------------ |
-| 全球网络覆盖        | <li>覆盖全球 200+ 国家<li>覆盖中国 100+ 中小运营商           |
+| 全球网络覆盖        | <li>覆盖全球 200+ 国家和地区<li>国内数十家中小运营商全覆盖           |
 | 接入能力            | <li>多智能终端接入<li>单频道可支持百万人同时在线             |
 | QoS 能力增强        | <li>提前预防网络拥塞<li>弱网抗丢包保证                       |
 | 基于 QoS 的动态路由 | <li>网络资源综合评估<li>QoS 最优路径保证                     |
@@ -61,9 +61,10 @@ SD-RTN（Software Defined Real-time Network）软件定义实时网，这是声�
 
 - [开发者中心](https://docs.agora.io/cn)提供集成和使用 Agora 产品所需的文档、SDK 和 Sample Code 下载。
 2. [开发者后台 Dashboard](https://dashboard.agora.io/stat) 提供用量统计、项目管理、权限管理、质量追踪、付费等功能。
-3. Github 开源[示例程序和场景化解决方案](https://docs.agora.io/cn/Agora%20Platform/sampleapps)
-4. 开发者支持与服务保证 5 &times; 8，集成问题可提交[论坛](https://rtcdeveloper.com/)提问，售后质量问题可[提交工单](https://dashboard.agora.io/show-ticket-submission)。
-5. 实时质量监控工具 – 水晶球 Agora Analytics ，以图表的形式展示每一通通话全链路质量数据，极大提高解决通话问题的效率：
+3. Agora [Github 官方](https://github.com/AgoraIO) 和 [Github 社区](https://github.com/AgoraIO-Community) 提供丰富的开源示例程序和场景化解决方案，也可以通过[开发者中心](https://docs.agora.io/cn/Agora%20Platform/sampleapps)直接获得。
+5. GitHub 开发者社区 [Agora Community](https://github.com/AgoraIO-Community)
+6. 开发者支持与服务保证 5 &times; 8，集成问题可提交[论坛](https://dev.agora.io/cn/)提问，售后质量问题可[提交工单](https://dashboard.agora.io/show-ticket-submission)。
+7. 实时质量监控工具 – [水晶球](https://dashboard.agora.io/analytics/call/search) Agora Analytics ，以图表的形式展示每一通通话全链路质量数据，极大提高解决通话问题的效率：
    - 设备状态，包括系统 CPU 的使用率，以及 SDK 的 CPU 使用率
    - 用户行为，比如静音、离线等
    - 音视频发送/接收码率
