@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 26 2018 10:38:06 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:38:10 GMT+0000 (UTC)
 ---
 # 产品概述
 语音通话可以实现纯语音的一对一单聊和多人群聊，不具备视频通话功能，包体积更小，适用于各种语音社交、语音会议等场景。
@@ -25,7 +25,6 @@ updatedAt: Mon Nov 26 2018 10:38:06 GMT+0000 (UTC)
 | 特性         | Agora 音频通话指标                                           |
 | ------------ | ------------------------------------------------------------ |
 | SDK 包体积   | 3.69 M - 7.75 M                                              |
-| 多人语音     | 支持 7 人音频通话（如需更多人数，可以使用 [Agora 互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)） |
 | 音频属性     | <li>音频采样率：16 KHz - 48 KHz <li>支持单、双声道           |
 | 音频抗丢包率 | 上下行抗丢包率 70%                                           |
 
