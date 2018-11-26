@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Android
-updatedAt: Mon Nov 26 2018 10:27:22 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:27:33 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -18,17 +18,17 @@ updatedAt: Mon Nov 26 2018 10:27:22 GMT+0000 (UTC)
 Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的属性，比如分辨率、码率、帧率等。参数均为理想情况下的最大值。当视频引擎因网络环境等原因无法达到设置的分辨率、帧率或码率的最大值时，会取最接近最大值的那个值。
 
 ```java
-	//java	
-	// 首先配置一个VideoEncoderConfiguration实例
-	// 参数请到API参考中的链接文档查看
-	VideoEncoderConfiguration config = new VideoEncoderConfiguration(
-		VideoDimensions.VD_640x480,  // 可以选择默认的几种分辨率选项，也可以自定义
-		FRAME_RATE_FPS_15,           // 帧率，可自定义。通常建议是15帧，不超过30帧
-		STANDARD_BITRATE,            // 标准码率，具体的参数配置请参照 VideoEncoderConfiguration文档中关于bitrate的说明。也可以配置其它的码率值，但一般情况下推荐使用标准码率。
-		ORIENTATION_MODE_ADAPTIVE    // 方向模式，请参照API参考的链接查看详细的说明
-	);
+//java	
+// 首先配置一个VideoEncoderConfiguration实例
+// 参数请到API参考中的链接文档查看
+VideoEncoderConfiguration config = new VideoEncoderConfiguration(
+	VideoDimensions.VD_640x480,  // 可以选择默认的几种分辨率选项，也可以自定义
+	FRAME_RATE_FPS_15,           // 帧率，可自定义。通常建议是15帧，不超过30帧
+	STANDARD_BITRATE,            // 标准码率，具体的参数配置请参照文档中关于bitrate的说明。也可以配置其它的码率值，但一般情况下推荐使用标准码率。
+	ORIENTATION_MODE_ADAPTIVE    // 方向模式，请参照API参考的链接查看详细的说明
+);
 
-	rtcEngine.setVideoEncoderConfiguration(config);
+rtcEngine.setVideoEncoderConfiguration(config);
 ```
 
 **相关 API 及注释**
