@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Windows
-updatedAt: Mon Nov 26 2018 03:48:07 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 03:48:14 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0
@@ -168,7 +168,7 @@ public virtual void login (char const * appId, size_t appId_size,char const * ac
 
 
 
->  You can skip generating a token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the <code>login</code> call will be ignored. To cancel the previous login, you can call <code>logout</code> first without having to wait until it is successfully executed.
+>  You can skip generating a token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the `login` call will be ignored. To cancel the previous login, you can call `logout` first without having to wait until it is successfully executed.
 
 #### Log into Agora's Signaling System (login2)
 
@@ -218,7 +218,7 @@ public virtual void login2 (char const * appId, size_t appId_size,char const * a
 
 
 
->  You can skip generating the token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. <code>onLoginFailed</code> will be triggered and reconnection stopped when either <code>retry_time_in_s</code> or <code>retry_count</code> is reached.
+>  You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. `onLoginFailed` will be triggered and reconnection stopped when either `retry_time_in_s` or `retry_count` is reached.
 
 #### Log out of Agora's Signaling System (logout)
 
