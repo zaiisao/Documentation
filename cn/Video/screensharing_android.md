@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Android
-updatedAt: Mon Nov 26 2018 10:43:00 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:43:04 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -25,28 +25,28 @@ Agora SDK 不提供在 Android 平台实现屏幕共享的 API，但你可以结
 * 将从 SurfaceView 绘制回调中得到的图像数据作为外部视频源，调用 SDK 的 `pushExternalVideoFrame` 传给远端
 
 ```java
-	MediaProjectionManager projectManager = (MediaProjectionManager) mContext.getSystemService(
+MediaProjectionManager projectManager = (MediaProjectionManager) mContext.getSystemService(
 Context.MEDIA_PROJECTION_SERVICE);
 
-	// 代表桌面获取的intent，并使用 startActivityForResult()调用分享功能
-	Intent intent = projectManager.createScreenCaptureIntent();
-	startActivityForResult(intent);
+// 代表桌面获取的intent，并使用 startActivityForResult()调用分享功能
+Intent intent = projectManager.createScreenCaptureIntent();
+startActivityForResult(intent);
 
-	MediaProjection projection;
-	VirtualDisplay display;
+MediaProjection projection;
+VirtualDisplay display;
 
-	// startActivityForResult()的Activity复写这个接口
-	@Override
-	onActivityResult(int requestCode, int resultCode, Intent resuleData) {
-		projection = projectManager.getMediaProjection(resultCode, resultData);
-		display = projection.createVirtualDisplay(name, width, height, dpi, flags, surface, callback, handler);
-	}
+// startActivityForResult()的Activity复写这个接口
+@Override
+onActivityResult(int requestCode, int resultCode, Intent resuleData) {
+	projection = projectManager.getMediaProjection(resultCode, resultData);
+	display = projection.createVirtualDisplay(name, width, height, dpi, flags, surface, callback, handler);
+}
 
-	// 其中在Surface中得到的texture由SDK的方法发送出去
-	rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
+// 其中在Surface中得到的texture由SDK的方法发送出去
+rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
 
-	// 停止桌面共享
-	projection.stop();
+// 停止桌面共享
+projection.stop();
 ```
 
 你也可以参考完整的 [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Android#agora-screen-sharing-android)  示例代码实现屏幕共享。
