@@ -3,12 +3,12 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 26 2018 04:00:15 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 04:00:21 GMT+0000 (UTC)
 ---
 # 注册与登录
 ## 创建新账号
 
-1. 新用户请单击 [Agora 官网](http://https://www.agora.io/cn/) 右上角**注册**按钮，进入注册页面。
+1. 新用户请单击 [Agora 官网](http://www.agora.io/cn/) 右上角**注册**按钮，进入注册页面。
 
 ![](https://web-cdn.agora.io/docs-files/1542770523172)
 
@@ -32,7 +32,7 @@ updatedAt: Mon Nov 26 2018 04:00:15 GMT+0000 (UTC)
 
 如果用户忘记了密码，可通过以下方式找回密码：
 
-1. 进入 Agora 官网，点击右上角的**登录**按钮，进入登录页面。
+1. 进入 [Agora 官网](http://www.agora.io/cn/)，点击右上角的**登录**按钮，进入登录页面。
 
 ![](https://web-cdn.agora.io/docs-files/1542771747129)
 
