@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Mon Nov 26 2018 10:40:16 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:40:31 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
