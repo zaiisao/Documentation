@@ -3,7 +3,7 @@
 title: 摄像头曝光、对焦
 description: 
 platform: Android
-updatedAt: Mon Nov 26 2018 07:36:16 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 07:36:39 GMT+0000 (UTC)
 ---
 # 摄像头曝光、对焦
 ## 功能简介
