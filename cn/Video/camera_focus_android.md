@@ -3,7 +3,7 @@
 title: 摄像头对焦
 description: 
 platform: Android
-updatedAt: Mon Nov 26 2018 10:29:02 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:29:08 GMT+0000 (UTC)
 ---
 # 摄像头对焦
 ## 功能简介
@@ -17,24 +17,24 @@ Agora SDK 在 Android 平台提供整套的摄像头管理方法，方便用户�
 
 
 ```java
-	//java
-	// 检测当前设备是否支持人脸自动对焦并设置
-	boolean shouldSetFaceMode = rtcEngine.isCameraAutoFocusFaceModeSupported();
-	rtcEngine.setCameraAutoFocusFaceModeEnabled(shouldSetFaceMode);
+//java
+// 检测当前设备是否支持人脸自动对焦并设置
+boolean shouldSetFaceMode = rtcEngine.isCameraAutoFocusFaceModeSupported();
+rtcEngine.setCameraAutoFocusFaceModeEnabled(shouldSetFaceMode);
 	
-	// 检测设备是否支持手动对焦功能并设置
-	boolean shouldManualFocus = rtcEngine.isCameraFocusSupported();
-	if (shouldManualFocus) {
-		// 假设在屏幕(50, 100)的位置对焦
-		float positionX = 50.0f;
-		float positionY = 100.0f;
-		rtcEngine.setCameraFocusPositionInPreview(positionX, positionY);
-	}
+// 检测设备是否支持手动对焦功能并设置
+boolean shouldManualFocus = rtcEngine.isCameraFocusSupported();
+if (shouldManualFocus) {
+	// 假设在屏幕(50, 100)的位置对焦
+	float positionX = 50.0f;
+	float positionY = 100.0f;
+	rtcEngine.setCameraFocusPositionInPreview(positionX, positionY);
+}
 ```
 
-**相关 API 及链接**
+### API 参考
 
-- [`isCameraFocusSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0e20f04ccecfc41aa23bf63116c9a8cd)：检测设备是否支持手动对焦功能
-- [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a09f61f738cf7d8a1902761e03a7fa600)：检测设备是否支持人脸对焦功能
-- [`setCameraFocusPositionInPreview`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aba273e4337a760d883b6c7c1344183c0)：设置手动对焦位置，并触发对焦
-- [`setCameraAutoFocusFaceModeEnabled`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a7e67afe7ad0045448fe0bd97203afcee)：设置是否开启人脸对焦功能
+- [`isCameraFocusSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0e20f04ccecfc41aa23bf63116c9a8cd)
+- [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a09f61f738cf7d8a1902761e03a7fa600)
+- [`setCameraFocusPositionInPreview`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aba273e4337a760d883b6c7c1344183c0)
+- [`setCameraAutoFocusFaceModeEnabled`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a7e67afe7ad0045448fe0bd97203afcee)
