@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Wed Nov 21 2018 06:29:28 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:37:39 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
