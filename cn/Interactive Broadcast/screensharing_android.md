@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Android
-updatedAt: Tue Nov 20 2018 08:17:01 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:43:00 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
