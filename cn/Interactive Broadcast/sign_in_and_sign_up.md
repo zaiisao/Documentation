@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 26 2018 04:02:07 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 04:02:15 GMT+0000 (UTC)
 ---
 # 注册与登录
 ## 创建新账号
@@ -16,7 +16,7 @@ updatedAt: Mon Nov 26 2018 04:02:07 GMT+0000 (UTC)
 
 ![](https://web-cdn.agora.io/docs-files/1542770582091)
 
-3. 完善相关信息：填写**姓名**、**公司**和**电话**，选择**所处行业**。
+3. 根据屏幕提示完善相关信息。
 
 ![](https://web-cdn.agora.io/docs-files/1542770666219)
 
