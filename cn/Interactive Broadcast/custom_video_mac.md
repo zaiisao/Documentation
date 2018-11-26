@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Mon Nov 26 2018 10:41:52 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:41:56 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -19,7 +19,7 @@ updatedAt: Mon Nov 26 2018 10:41:52 GMT+0000 (UTC)
 
 ## 实现方法
 
-在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Interactive%20Broadcast/mac_video.md)。
+在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/mac_video.md)。
 
 ### 自定义音频源
 
@@ -43,7 +43,7 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 [agoraKit pushExternalAudioFrameSampleBuffer: "your CMSampleBuffer"];
 ```
 
-**相关 API 及链接**
+####  API 参考
 * [`pushExternalAudioFrameRawData:samples:timestamp:`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameRawData:samples:timestamp:)
 * [`pushExternalAudioFrameSampleBuffer:`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameSampleBuffer:)
 
@@ -145,7 +145,7 @@ Agora SDK 目前提供两种自定义视频源的方法：
 	[agoraKit setVideoSource: videoSource];
 	```
 	
-**相关 API 及链接**
+##### API 参考
 * [`setVideoSource:`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
 * [`AgoraVideoSourceProtocal`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
 
@@ -197,7 +197,7 @@ videoFrame.ratation = 0;
 [agoraKit pushExternalVideoFrame: videoFrame];
 ```
 
-**相关 API 及链接**
+##### API 参考
 * [`pushExternalVideoFrame:`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalVideoFrame:)
 
 ### 自定义渲染器
@@ -302,7 +302,8 @@ videoFrame.ratation = 0;
 	[agoraKit setRemoteVideoRenderer: videoRenderer, uid];
 	```
 
-**相关 API 及链接**
+#### API 参考
+
 * [`setLocalVideoRenderer:`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVideoRenderer:)
 * [`setRemoteVideoRenderer:forUserId:`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoRenderer:forUserId:)
 * [`AgoraVideoSinkProtocal`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSinkProtocol.html)
