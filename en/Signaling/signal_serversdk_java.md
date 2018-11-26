@@ -3,7 +3,7 @@
 title: Server SDK API
 description: 
 platform: Java
-updatedAt: Mon Nov 26 2018 03:51:42 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 03:51:48 GMT+0000 (UTC)
 ---
 # Server SDK API
 > Version: v1.4.0 BETA
@@ -146,7 +146,7 @@ public Signal.LoginSession login(String account, String token, Signal.LoginCallb
 
 
 
->  You can skip the generation of the token in a test environment by setting `token` to `_no_need_token`. Agora does not recommend doing so in a production environment. By default, if you are already logged in, the call of login\(\) will be ignored. To cancel the previous login, call logout\(\) beforehand without having to wait until it is successfully executed.
+>  You can skip the generation of the token in a test environment by setting `token` to `_no_need_token`. Agora does not recommend doing so in a production environment. By default, if you are already logged in, the call of `login` will be ignored. To cancel the previous login, call `logout` beforehand without having to wait until it is successfully executed.
 
 #### Set a User Attribute \(userSetAttr\)
 
