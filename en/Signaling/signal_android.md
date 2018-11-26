@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Android
-updatedAt: Mon Nov 26 2018 02:25:26 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 02:25:45 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0.
@@ -144,7 +144,7 @@ public void login(String appId,String account,String token,int uid,String device
 
 
 
->  You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the call of `login` will be ignored. To cancel the previous login, call `logout` beforehand without having to wait until it is successfully executed.
+>  You can skip generating the token in a test environment by setting `token` to `\_no_need_token`. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the call of `login` will be ignored. To cancel the previous login, call `logout` beforehand without having to wait until it is successfully executed.
 
 #### Log into Agora's Signaling System (login2)
 
@@ -193,7 +193,7 @@ public void login2(String appId,String account,String token,int uid,String devic
 
 
 
->  You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. `onLoginFailed` will be triggered and reconnection stopped when either `retry_time_in_s` or `retry_count` is reached.
+>  You can skip generating the token in a test environment by setting `token` to `\_no_need_token`. However, Agora does not recommend this in a production environment. `onLoginFailed` will be triggered and reconnection stopped when either `retry_time_in_s` or `retry_count` is reached.
 
 #### Log out of the Agora's Signaling System(logout)
 
