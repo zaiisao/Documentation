@@ -3,7 +3,7 @@
 title: 设置视频编码
 description: 
 platform: Windows
-updatedAt: Mon Nov 26 2018 10:32:20 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:32:24 GMT+0000 (UTC)
 ---
 # 设置视频编码
 ## 功能简介
@@ -30,8 +30,8 @@ ORIENTATION_MODE_ADAPTIVE // 输出视频的方向模式
 lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 ```
 
-**相关 API 及链接**
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)：设置视频编码属性
+### API 参考
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
 * 关于视频的方向模式，更多信息请参考[视频采集旋转](../../cn/Interactive%20Broadcast/rotation_guide_android.md)。
 
 ## 开发注意事项
