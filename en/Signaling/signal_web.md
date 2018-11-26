@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Web
-updatedAt: Mon Nov 26 2018 03:45:25 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 03:45:38 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0 BETA
@@ -84,7 +84,7 @@ login(account, token, reconnect_count, reconnect_time) : Session
 
 
 
->  You can skip generating the token in a test environment by setting *token* to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the <code>login</code> call will be ignored. To cancel the previous login, call <code>logout</code> first without having to wait until it is successfully executed. The system will stop reconnecting to the server, if either <code>reconnect_count</code> or <code>reconnect_time</code> is reached.
+>  You can skip generating the token in a test environment by setting *token* to `_no_need_token`. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the `login` call will be ignored. To cancel the previous login, call `logout` first without having to wait until it is successfully executed. The system will stop reconnecting to the server, if either `reconnect_count` or `reconnect_time` is reached.
 
 #### Sets the System Log（setDoLog）
 
