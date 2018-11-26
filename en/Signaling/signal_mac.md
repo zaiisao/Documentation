@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: macOS
-updatedAt: Mon Nov 26 2018 03:32:39 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 03:32:45 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0
@@ -91,7 +91,7 @@ Use this method to log into Agora’s signaling system. Users must always log in
 
 
 
->  You can skip generating the token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the call of <code>login</code> will be ignored. To cancel the previous login, call <code>logout</code> first without having to wait until it is successfully executed.
+>  You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the call of `login` will be ignored. To cancel the previous login, call `logout` first without having to wait until it is successfully executed.
 
 #### Log into Agora's Signaling System (login2:account:token:uid:deviceID:retry_time_in_s:retry_count:)
 
@@ -141,7 +141,7 @@ Use this method to log into Agora’s signaling system. Users must always log in
 
 
 
->  You can skip generating the token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. <code>onLoginFailed</code> will be triggered and reconnection stopped when either <code>retry_time_in_s</code> or <code>retry_count</code> is reached.
+>  You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. `onLoginFailed` will be triggered and reconnection stopped when either `retry_time_in_s` or `retry_count` is reached.
 
 #### Log out of Agora's Signaling System (logout)
 
