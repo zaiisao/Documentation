@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Mon Nov 26 2018 02:11:27 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 02:18:47 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -161,7 +161,7 @@ public class RecordingConfig {
   public int idleLimitSec;
   public int captureInterval;
   public int audioIndicationInterval;
-  //channelProfile:0 communicate, 1:braodacast; default is 0
+  //channelProfile:0 braodacast, 1:communicate; default is 1
   public CHANNEL_PROFILE_TYPE channelProfile;
   //streamType:0:get high stream 1:get low stream; default is 0
   public REMOTE_VIDEO_STREAM_TYPE streamType;
