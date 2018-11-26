@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Android
-updatedAt: Mon Nov 26 2018 10:29:49 GMT+0000 (UTC)
+updatedAt: Mon Nov 26 2018 10:30:04 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -31,9 +31,9 @@ VideoEncoderConfiguration config = new VideoEncoderConfiguration(
 rtcEngine.setVideoEncoderConfiguration(config);
 ```
 
-**相关 API 及注释**
+###  API 参考
 
-* [`setVideoEncoderConguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)：设置视频编码属性
+* [`setVideoEncoderConguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
 * 关于视频的方向模式，更多信息请参考[视频采集旋转](../../cn/Interactive%20Broadcast/rotation_guide_android.md)。
 
 ## 开发注意事项
