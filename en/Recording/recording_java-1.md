@@ -3,7 +3,7 @@
 title: Enabling Recording
 description: 
 platform: Java
-updatedAt: Wed Nov 14 2018 06:18:09 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:29:24 GMT+0000 (UTC)
 ---
 # Enabling Recording
 In this quickstart, you will learn how to use the Agora Recording SDK to enable recording.
