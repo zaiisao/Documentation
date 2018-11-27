@@ -2,7 +2,7 @@
 ---
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
-platform: iOS,macOS
+platform: iOS
 updatedAt: Fri Nov 23 2018 08:29:01 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing

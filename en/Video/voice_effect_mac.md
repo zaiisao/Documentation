@@ -1,9 +1,9 @@
 
 ---
 title: Adjust the Pitch and Tone
-description: How to set voice effects on iOS
-platform: iOS
-updatedAt: Fri Nov 23 2018 08:55:27 GMT+0000 (UTC)
+description: How to set voice effects on macOS
+platform: macOS
+updatedAt: Fri Nov 23 2018 09:00:48 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Feature Description 
@@ -11,7 +11,7 @@ updatedAt: Fri Nov 23 2018 08:55:27 GMT+0000 (UTC)
 In social and entertainment scenarios, the users often need various voice effects for more interesting and interacrtive experiences. Agora provides a series of methods for developer to flexibly change the users' voice, including adjusting the pitch, setting the equalization and reverberation modes.
 
 ## Implementation
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/ios_video.md) for more information.
+Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/mac_video.md) for more information.
 
 The sample code shows how to set the FM voice effect.
 
