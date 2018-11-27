@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 05:30:25 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:30:29 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -17,14 +17,15 @@ Agora SDK provides a set of camera management methods on the Android platform, w
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for details.
 
 ```java
-//Check whether auto face-focus function is supported and enable auto-face focus
+// java
+// Check whether auto face-focus function is supported and enable auto-face focus
 boolean shouldSetFaceMode = rtcEngine.isCameraAutoFocusFaceModeSupported();
 rtcEngine.setCameraAutoFocusFaceModeEnabled(shouldSetFaceMode);
 
-//Check whether manual focus function is supported and set the focus
+// Check whether manual focus function is supported and set the focus
 boolean shouldManualFocus = rtcEngine.isCameraFocusSupported();
 if (shouldManualFocus) {
-    //Set the camera focus at (50, 100)
+    // Set the camera focus at (50, 100)
     float positionX = 50.0f;
     float positionY = 100.0f;
     rtcEgnine.setCameraFocusPositionInPreview(positionX, positionY);
