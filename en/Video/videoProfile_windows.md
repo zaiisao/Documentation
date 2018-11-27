@@ -3,14 +3,14 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Tue Nov 27 2018 05:51:01 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:51:04 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
 
 Setting the video profile, either before or after a user joins a channel, enables the user to enjoy better video quality during a video call or video live broadcast.
 
-## Implementations
+## Implementation
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/windows_video.md) for more information.
 
@@ -19,7 +19,7 @@ Agora SDK uses the `setVideoEncoderConfiguration` API to set the video profile a
 The parameters specified in this API are the ideal values under ideal network conditions. If the video engine cannot render the video with the specified parameters dut to poor network conditions, the parameters further down the list are considered.
 
 ```cpp
-//cpp
+// cpp
 // Set the video encoder configuration
 VideoEncoderConfiguration lpVideoConfig(640, 360), // set the width and height of the video stream. Swapping the two values does not change the video orientation
 FRAME_RATE_FPS_15, // Set the video frame rate of the video
@@ -30,7 +30,7 @@ ORIENTATION_MODE_ADAPTIVE // The orientation mode the video
 lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 ```
 
-**Relevant APIs and descriptions**
+### API Reference
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
 * For more information on video orientation mode, see [Rotate the Video](../../en/Video/rotation_guide_android.md).
 
