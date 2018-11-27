@@ -3,7 +3,7 @@
 title: 摄像头对焦
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 01:27:59 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 01:28:03 GMT+0000 (UTC)
 ---
 # 摄像头对焦
 ## 功能简介
@@ -13,7 +13,7 @@ Agora SDK 在 iOS 平台提供整套的摄像头管理方法，方便用户切�
 
 ## 实现方法
 
-在设置摄像头对焦前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Interactive%20Broadcast/ios_video.md)。
+在设置摄像头对焦前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/ios_video.md)。
 
 
 ```swift
