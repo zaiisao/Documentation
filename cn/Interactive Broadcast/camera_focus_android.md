@@ -3,7 +3,7 @@
 title: 摄像头对焦
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 05:28:13 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:28:19 GMT+0000 (UTC)
 ---
 # 摄像头对焦
 ## 功能简介
@@ -17,7 +17,7 @@ Agora SDK 在 Android 平台提供整套的摄像头管理方法，方便用户�
 
 
 ```java
-//java
+// java
 // 检测当前设备是否支持人脸自动对焦并设置
 boolean shouldSetFaceMode = rtcEngine.isCameraAutoFocusFaceModeSupported();
 rtcEngine.setCameraAutoFocusFaceModeEnabled(shouldSetFaceMode);
