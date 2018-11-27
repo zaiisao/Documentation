@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Tue Nov 27 2018 07:04:19 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 07:04:27 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -203,6 +203,7 @@ typedef struct RecordingConfig {
 <li>0: (Default) Communication mode (CHANNEL_PROFILE_COMMUNICATION). This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
 <li>1: Live broadcast (CHANNEL_PROFILE_LIVE_BROADCAST). The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <code>setClientRole</code>. </li>
 </ul>
+The Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
 </td>
 </tr>
 <tr><td><code>isAudioOnly</code></td>
