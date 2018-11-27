@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 05:48:44 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:48:48 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -84,13 +84,13 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 	频道内的主播可以使用 `removeInjectStreamUrl` 接口，移除一个已经接入的在线媒体流。
 
 	```swift
-	//swift
+	// swift
 	let urlPath = "Some online RTMP/HLS url path"
 	agoraKit.removeInjectStreamUrl(urlPath)
 	```
 
 	```objective-c
-	//objective-c
+	// objective-c
 	NSString *urlPath = @"Some online  RTMP/HLS url path";
 	[agoraKit removeInjectStreamUrl: urlPath];
 	```
