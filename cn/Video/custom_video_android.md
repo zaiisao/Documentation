@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 05:24:22 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:24:26 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -27,7 +27,7 @@ updatedAt: Tue Nov 27 2018 05:24:22 GMT+0000 (UTC)
 你可以使用 Push 方法自定义音频源。该方法下，SDK 不会对采用传入的音频数据做消噪等处理。
 
 ```java
-//java
+// java
 // 首先开启外部音频源模式
 rtcEngine.setExternalAudioSource(
 	true,      // 开启外部音频源
@@ -57,7 +57,7 @@ Agora SDK 目前提供两种自定义视频源的方法：
 你可以使用 MediaIO 中的 IVideoSource 接口实现自定义视频源。该方法将视频帧数据传输到服务器，如需本地预览，还需要应用开发者自己处理本地渲染逻辑。示例代码如下：
 
 ```java
-//java
+// java
 IVideoFrameConsumer mConsumer;
 boolean mHasStarted;
 
@@ -119,7 +119,7 @@ if (mHasStarted && mConsumer != null) {
 相对于 MedioIO 接口，Push 方法代码较少，但缺少 SDK 对帧的优化过程，需要用户对自己采集到的视频数据进行处理。
 
 ```java
-//java
+// java
 // 首先通知SDK现在开始使用外部视频源
 rtcEngine.setExternalVideoSource(
 	true，      // 是否使用外部视频源
@@ -144,7 +144,7 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
 你可以使用 MediaIO 中的 IVideoSink 接口来自定义渲染器。示例代码如下：
 
 ```java
-//java
+// java
 IVideoSink sink = new IVideoSink() {
 	@Override
 	public boolean onInitialize () {
