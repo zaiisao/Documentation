@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Wed Nov 21 2018 03:28:41 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:51:01 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
