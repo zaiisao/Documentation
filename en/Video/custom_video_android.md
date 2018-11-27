@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 05:39:26 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:39:31 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -17,7 +17,7 @@ By default, An App uses the internal audio and video modules for capturing and r
 - When developers want to use non-camera source, such as recorded screen data.
 - When developers need flexible device resource allocation to avoid conflicts with other services.
 
-## Implementaions
+## Implementaion
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for details.
 
@@ -26,22 +26,23 @@ Before proceeding, ensure that you have finished preparing the development envir
 Use the Push method to customize the audio source, where the SDK conducts no data processing to the audio frame, such as noise reduction.
 
 ```java
-    //java
-    //Enable the external audio source mode
-    rtcEngine.setExternalAudioSource(
-        true,      // enable the external audio source
-        44100,     // sampling rate. Set it as 8k, 16k, 32k, 44.1k or 48kHz
-        1          // the number of external audio channels. The maximum value is 2
-    );
+// java
+// Enable the external audio source mode
+rtcEngine.setExternalAudioSource(
+	true,      // enable the external audio source
+	44100,     // sampling rate. Set it as 8k, 16k, 32k, 44.1k or 48kHz
+	1          // the number of external audio channels. The maximum value is 2
+);
 
-    // To continually push the enternal audio frame
-    rtcEngine.pushExternalAudioFrame(
-        data,             // the audio data in the formart of byte[]
-        timestamp         // the timestamp of the audio frame
-    );
+// To continually push the enternal audio frame
+rtcEngine.pushExternalAudioFrame(
+	data,             // the audio data in the formart of byte[]
+	timestamp         // the timestamp of the audio frame
+);
 ```
 
-**Relevant APIs and descriptions**
+
+#### API Reference
 *  [`pushExternalAudioFrame`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e219a679d066cfc2544b5e8f9d4d69f)
 
 ### Customize the Video Source
@@ -55,62 +56,60 @@ Agora SDK provides two methods to customze the video source:
 
 Use the IVideoSource interface in MediaIO to customize the video source. This method sends the external video frame to the server, and developers need to implement local rendering if local preview is to be enabled.
 
-
-
 ```java
-    //java
-    IVideoFrameConsumer mConsumer;
-    boolean mHasStarted;
+// java
+IVideoFrameConsumer mConsumer;
+boolean mHasStarted;
 
-    // Create a VideoSource instance
-    VideoSource source = new VideoSource() {
-        @Override
-        public int getBufferType() {
-            // Get the current frame type. 
-            // The SDK uses different methods to process different frame types.
-            // If you want to switch to another VideoSource type, create another instance
-            // There are three types of video frame type
-            return BufferType.BYTE_ARRAY;
-            // return BufferType.TEXTURE
-            // return BufferType.BYTE_BUFFER;
-        }
+// Create a VideoSource instance
+VideoSource source = new VideoSource() {
+	@Override
+	public int getBufferType() {
+		// Get the current frame type. 
+		// The SDK uses different methods to process different frame types.
+		// If you want to switch to another VideoSource type, create another instance
+		// There are three types of video frame type
+		return BufferType.BYTE_ARRAY;
+		// return BufferType.TEXTURE
+		// return BufferType.BYTE_BUFFER;
+	}
 
-        @Override
-         public boolean onInitialize(IVideoFrameConsumer consumer) {
-            // consumer was created by the SDK.
-            // Ensure to save it in the life cycle of the VideoSource。
-            mConsumer = consumer;
-        }
+	@Override
+ 	public boolean onInitialize(IVideoFrameConsumer consumer) {
+		// consumer was created by the SDK.
+		// Ensure to save it in the life cycle of the VideoSource
+		mConsumer = consumer;
+	}
 
-        @Override
-         public boolean onStart() {
-            mHasStarted = true;
-        }
+	@Override
+ 	public boolean onStart() {
+		mHasStarted = true;
+	}
 
-        @Override
-          public void onStop() {
-            mHasStarted = false;
-        }
+	@Override
+  	public void onStop() {
+		mHasStarted = false;
+	}
 
-        @Override
-         public void onDispose() {
-            // Release the consumer
-            mConsumer = null;
-        }
-    };
+	@Override
+ 	public void onDispose() {
+		// Release the consumer
+		mConsumer = null;
+	}
+};
 
-    // Change the inputting video stream to the VideoSource instance
-    rtcEngine.setVideoSource(source);
+// Change the inputting video stream to the VideoSource instance
+rtcEngine.setVideoSource(source);
 
-    // After receving the video frame data, use the consumer class to send the data
-    // Choose differnet methods according to the frame type.
-    // Suppose the current frame type is byte array, i.e. NV21
-    if (mHasStarted && mConsumer != null) {
-        mConsumer.consumeByteArrayFrame(data, AgoraVideoFrame.NV21, width, height, rotation, timestamp);
-    }
+// After receving the video frame data, use the consumer class to send the data
+// Choose differnet methods according to the frame type.
+// Suppose the current frame type is byte array, i.e. NV21
+if (mHasStarted && mConsumer != null) {
+	mConsumer.consumeByteArrayFrame(data, AgoraVideoFrame.NV21, width, height, rotation, timestamp);
+}
 ```
 
-**Relevant APIs and descriptions**
+##### API Reference
 
 * [`setlVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa240e991d12b5240fc5fd362cbc0d521)
 * [`IVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_source.html)
@@ -120,18 +119,18 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 Compared to the MediaIO method, the Push method uses less codes, but lacks any optimization to the captured video frame. This method requires developers to do the processing.
 
 ```java
-    //java
-    // Notifies the SDK that the external video source is used
-    rtcEngine.setExternalVideoSource(
-        true，      // whether to use external video source
-        false,      // whether to use texture as the output format
-        true        // whether to use the push mode. True means yes. False means to use the pull mode, which is not supported
+// java
+// Notify the SDK that the external video source is used
+rtcEngine.setExternalVideoSource(
+    true，      // whether to use external video source
+    false,      // whether to use texture as the output format
+    true        // whether to use the push mode. True means yes. False means to use the pull mode, which is not supported
     );
 
-    // Use the push method to send out the video frame data once it is received.
-    rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
-        // Pass parameters of the frame such as format, width and height of the in the AgoraVideoFrame construct
-    ));
+// Use the push method to send out the video frame data once it is received.
+rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
+    // Pass parameters of the frame such as format, width and height of the in the AgoraVideoFrame construct
+));
 ```
 
 **Relevant APIs and descriptions**
@@ -144,50 +143,50 @@ The video source and renderer can be customized by switching on/off the video fr
 Use the IVideoSink Interface of MediaIO to customize the video renderer.
 
 ```java
-    //java
-    IVideoSink sink = new IVideoSink() {
-        @Override
-        public boolean onInitialize () {
-            return true;
-        }
-
-        @Override
-        public boolean onStart() {
-            return true;
-        }
-
-        @Override
-        public void onStop() {
-
-        }
-
-        @Override
-        public void onDispose() {
-
-        }
-
-        @Override
-        public long getEGLContextHandle() {
-            // create your egl context
-            // a return value of 0 means there no egl context is created in the renderer
-            return 0;
-        }
-
-        @Override
-        public int getBufferType() {
-            return BufferType.BYTE_ARRAY;
-        }
-
-        @Override
-        public int getPixelFormat() {
-            return PixelFormat.NV21;
-        }
+// java
+IVideoSink sink = new IVideoSink() {
+    @Override
+    public boolean onInitialize () {
+        return true;
     }
 
-    rtcEngine.setLocalVideoRenderer(sink);
+    @Override
+    public boolean onStart() {
+        return true;
+    }
+
+    @Override
+    public void onStop() {
+
+    }
+
+    @Override
+    public void onDispose() {
+
+    }
+
+    @Override
+    public long getEGLContextHandle() {
+        // create your egl context
+        // a return value of 0 means there no egl context is created in the renderer
+        return 0;
+    }
+
+    @Override
+    public int getBufferType() {
+        return BufferType.BYTE_ARRAY;
+    }
+
+    @Override
+    public int getPixelFormat() {
+        return PixelFormat.NV21;
+    }
+}
+
+rtcEngine.setLocalVideoRenderer(sink);
 ```
 
-**Relevant APIs and descriptions**
+#### API Reference
 * [`setLocalVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab10fd6d8dd89a5bca09b115ecd9e3416)
 * [`setRemoteVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0da32c040cb9d987df2950b83459ba56)
 * [`IVideoSink`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_sink.html)
