@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 06:24:15 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:24:22 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
