@@ -3,7 +3,7 @@
 title: 移动、桌面、Web 端互通
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 06:27:07 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:27:10 GMT+0000 (UTC)
 ---
 # 移动、桌面、Web 端互通
 ## 功能简介
@@ -19,22 +19,22 @@ Agora SDK 的移动端和 Web 端互通，需要在移动端和 Web 端同时进
 * 移动端：调用 `enableWebSdkInteroperability` API 方法。
 
 	```swift
-	//swift
-	//移动端调用 enableWebSdkInteroperability 方法开启与 Web SDK 的互通
+	// swift
+	// 移动端调用 enableWebSdkInteroperability 方法开启与 Web SDK 的互通
 	agoraKit.enableWebSdkInteroperability(true)
 	```
 
 	```objective-c
-	//objective-c
-	//Web 端在创建客户端时，选择正确的 mode 和 codec 参数
+	// objective-c
+	// Web 端在创建客户端时，选择正确的 mode 和 codec 参数
 	[agoraKit enableWebSdkInteroperability: YES];
 	```
 
 * Web 端：将 `createClient` 方法中的 `mode` 设置为 `'live'` 实现互通。
 
 	```javascript
-	//javascript
-	//make sure corrent mode and codec is picked
+	// javascript
+	// make sure corrent mode and codec is picked
 	var client = AgoraRTC.createClient({ mode: 'live', codec: 'h264' });
 	```
 
