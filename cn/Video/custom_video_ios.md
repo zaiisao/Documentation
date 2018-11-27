@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 05:40:36 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:40:40 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -67,7 +67,7 @@ Agora SDK 目前提供两种自定义视频源的方法：
 		 var consumer: AgoraVideoFrameConsumer?
 	// 调用 consumer 的方法，将视频数据推入Agora SDK:
 
-		// 推入rawData类型
+		 // 推入rawData类型
 		 consumer.consumeRawData("your rawData", withTimestamp: CMTimeMake(1, 15), format: "your data format", size: size, rotation: rotation)
 
 		 // 推入CVPixelBuffer
