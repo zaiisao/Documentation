@@ -3,7 +3,7 @@
 title: Customize Audio/Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Tue Nov 27 2018 05:44:42 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:44:46 GMT+0000 (UTC)
 ---
 # Customize Audio/Video Source and Renderer
 ## Introduction
@@ -16,13 +16,13 @@ By default, An App uses the internal audio and video modules for capturing and r
 * When developers want to use non-camera source, such as recorded screen data.
 * When developers need flexible device resource allocation to avoid conflicts with other services.
 
-## Implementaions
+## Implementaion
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/windows_video.md) for details.
 
 ### Customize the Audio Source
 
 ```cpp
-//cpp
+// cpp
 // Initialize the RtcEngine Parameters
 RtcEngineParameters rep(*lpAgoraEngine);
 AParameter apm(*lpAgoraEngine);
@@ -197,7 +197,7 @@ mediaEngine->registerAudioFrameObserver(NULL);
 To implement external video source, you need to use the customized method [`setParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_parameter.html#adde9cb68e2ef2216d7fd1976fd5f1d75). See the sample code for details.
 
 ```cpp
-//cpp
+// cpp
 // Preparation. Implement video capture and the video package queue to store the captured data or data to be rendered.
 CVideoPackageQueue *CVideoPackageQueue::m_lpVideoPackageQueue = NULL;
 
