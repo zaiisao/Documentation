@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 01:52:55 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 01:52:59 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -62,10 +62,10 @@ Agora SDK 目前提供两种自定义视频源的方法：
 1. 遵守 AgoraVideoSourceProtocol 协议， 并实现接口，构建自定义的 Video Source 类。
 
 	```swift
-	   //swift
-	   // 协议中的变量
+	     //swift
+	     // 协议中的变量
 		 var consumer: AgoraVideoFrameConsumer?
-	   // 调用 consumer 的方法，将视频数据推入Agora SDK:
+	     // 调用 consumer 的方法，将视频数据推入Agora SDK:
 
 		 // 推入rawData类型
 		 consumer.consumeRawData("your rawData", withTimestamp: CMTimeMake(1, 15), format: "your data format", size: size, rotation: rotation)
