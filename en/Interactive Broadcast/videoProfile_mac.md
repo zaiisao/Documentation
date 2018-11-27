@@ -3,14 +3,14 @@
 title: Set the Video Profile
 description: 
 platform: macOS
-updatedAt: Tue Nov 27 2018 05:50:29 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:50:33 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
 
 Setting the video profile, either before or after a user joins a channel, enables the user to enjoy better video quality during a video call or video live broadcast.
 
-## Implementations
+## Implementation
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md) for more information.
 
@@ -19,7 +19,7 @@ Agora SDK uses the `setVideoEncoderConfiguration` API to set the video profile a
 The parameters specified in this API are the ideal values under ideal network conditions. If the video engine cannot render the video with the specified parameters dut to poor network conditions, the parameters further down the list are considered.
 
 ```swift
-//swift
+// swift
 // Set a VideoEncoderConfiguration instance
 // See deatiled description in the API link
 let config = AgoraVideoEncoderConfiguration(size: size, frameRate: frameRate, bitrate: bitrate, orientationMode: orientationMode)
@@ -28,7 +28,7 @@ agoraKit.setVideoEncoderConfiguration(config)
 ```
 
 ```objective-c
-//objective-c
+// objective-c
 // Set a VideoEncoderConfiguration instance
 // See deatiled description in the API link
 AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] initWithSize: size frameRate: frameRate bitrate: bitrate orientationMode: AgoraVideoOutputOrientationModeAdaptative];
@@ -36,7 +36,7 @@ AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] 
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
-**Relevant APIs and descriptions**
+### API Reference
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
 * For mode information on video orientation mode, see [Rotate the Video](../../en/Interactive%20Broadcast/rotation_guide_ios.md).
 
