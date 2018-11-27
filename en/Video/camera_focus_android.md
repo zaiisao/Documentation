@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 01:46:53 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 01:46:57 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -12,7 +12,7 @@ Camera focus is a commonly used function in video calls to enable high quality v
 
 Agora SDK provides a set of camera management methods on the Android platform, with which users can switch between the front and rear camera, set the camera zoom factor and set the focus position.
 
-## Implementations
+## Implementation
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for details.
 
