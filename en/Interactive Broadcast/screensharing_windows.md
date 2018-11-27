@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Tue Nov 27 2018 06:25:57 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:26:01 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
@@ -15,12 +15,12 @@ Screen share has extensive application in the following scenarios:
 - For a video conference, the speaker can share the image of the local file, web page, and PPT with other users in the channel.
 - For an online class, the teacher can share the image of the slides or notes with the students.
 
-## Implementations
+## Implementation
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md) for details.
 
 ```cpp
-//cpp
+// cpp
 // 1. start screensharing
 
 if (lpRect != NULL) { // share some area on window
@@ -39,7 +39,7 @@ if (lpRect != NULL) { // share some area on window
 lpAgoraEngine->stopScreenCapture();
 ```
 
-**Relevant APIs and descriptions**
+### API Reference
 * [`startScreenCapture`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#af71935ad435402f776bcfc2be3cf687f)
 * [`stopScreenCapture`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
 * [`updateScreenCaptureRegion`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a99ce13ce3b9b2c65e5ec35b9861b56e3)
