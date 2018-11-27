@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 06:20:42 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:20:46 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -23,7 +23,7 @@ updatedAt: Tue Nov 27 2018 06:20:42 GMT+0000 (UTC)
 * 使用 Agora SDK 进行视频流的传输
 
 ```
-//swift
+// swift
 override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBufferType: RPSampleBufferType) {
         DispatchQueue.main.async {
             switch sampleBufferType {
@@ -42,7 +42,7 @@ override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBuf
 ```
 
 ```objective-c
-//objective-c
+// objective-c
 - (void)processSampleBuffer:(CMSampleBufferRef)sampleBuffer withType:(RPSampleBufferType)sampleBufferType {
     dispatch_async(dispatch_get_main_queue(), ^{
     	switch (sampleBufferType) {
