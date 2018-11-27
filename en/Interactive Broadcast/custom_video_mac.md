@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: macOS
-updatedAt: Tue Nov 27 2018 05:44:19 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:44:23 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -17,7 +17,7 @@ By default, An App uses the internal audio and video modules for capturing and r
 - When developers want to use non-camera source, such as recorded screen data.
 - When developers need flexible device resource allocation to avoid conflicts with other services.
 
-## Implementaions
+## Implementaion
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md) for details.
 
