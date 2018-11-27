@@ -3,7 +3,7 @@
 title: 录制快速开始
 description: 
 platform: CPP
-updatedAt: Tue Nov 27 2018 06:24:11 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:25:10 GMT+0000 (UTC)
 ---
 # 录制快速开始
 本页介绍如何使用 Agora Recording SDK for Linux 录制语音或视频通话。
@@ -34,7 +34,7 @@ Agora Recording SDK for Linux（简称录制 SDK）支持：
 
 -   指定希望录制的频道。
 
-
+> 使用录制 SDK 必须与 Agora Native/Web SDK 设置相同的频道模式，否则可能导致问题。
 ## 安装要求
 
 参看 [设置开发环境](../../cn/Quickstart%20Guide/recording_env.md) 以完成环境配置。
