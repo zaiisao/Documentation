@@ -3,7 +3,7 @@
 title: Enable Interoperability 
 description: 
 platform: iOS
-updatedAt: Tue Nov 13 2018 10:02:01 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:30:06 GMT+0000 (UTC)
 ---
 # Enable Interoperability 
 ## Introduction
