@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Linux
-updatedAt: Tue Nov 27 2018 08:32:03 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 08:32:15 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
@@ -41,13 +41,13 @@ updatedAt: Tue Nov 27 2018 08:32:03 GMT+0000 (UTC)
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#getagorasdkinstancecpp-linux"><span>agora_sdk_cpp::IAgoraAPI* getAgoraSDKInstanceCPP</span></a></td>
+<tr><td><a href="#getagorasdkinstancecpp-linux"><span>getAgoraSDKInstanceCPP</span></a></td>
 <td>获取 AgoraSDK 单实例</td>
 </tr>
-<tr><td><a href="#createagorasdkinstancecpp-linux"><span>agora_sdk_cpp::IAgoraAPI* createAgoraSDKInstanceCPP</span></a></td>
+<tr><td><a href="#createagorasdkinstancecpp-linux"><span>createAgoraSDKInstanceCPP</span></a></td>
 <td>创建 AgoraSDK 多实例</td>
 </tr>
-<tr><td><a href="#destroy-linux"><span>public virtual void destroy</span></a></td>
+<tr><td><a href="#destroy-linux"><span>destroy</span></a></td>
 <td>销毁信令实例</td>
 </tr>
 </tbody>
@@ -90,13 +90,13 @@ public virtual void destroy ();
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#callbackset-linux"><span>public native void callbackSet(ICallBack handler)</span></a></td>
+<tr><td><a href="#callbackset-linux"><span>callbackSet</span></a></td>
 <td>为信令实例设置回调对象</td>
 </tr>
-<tr><td><a href="#callbackget-linux"><span>public ICallBack* callbackGet</span></a></td>
+<tr><td><a href="#callbackget-linux"><span>callbackGet</span></a></td>
 <td>获取信令实例的回调对象</td>
 </tr>
-<tr><td><a href="#login-linux"><span>public virtual void login (char const * appId, size_t appId_size,char const * account, size_t account_size,char const * token, size_t token_size,uint32_t uid,char const * deviceID, size_t deviceID_size)</span></a></td>
+<tr><td><a href="#login-linux"><span>login</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功： 收到 <a href="#onloginsuccess-linux"><span>onLoginSuccess</span></a> 回调</li>
@@ -104,7 +104,7 @@ public virtual void destroy ();
 </ul>
 </td>
 </tr>
-<tr><td><a href="#login2-linux"><span>public virtual void login2 (char const * appId, size_t appId_size,char const * account, size_t account_size,char const * token, size_t token_size,uint32_t uid,char const * deviceID, size_t deviceID_size,int retry_time_in_s,int retry_count)</span></a></td>
+<tr><td><a href="#login2-linux"><span>login2</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功： 收到 <a href="#onloginsuccess-linux"><span>onLoginSuccess</span></a> 回调</li>
@@ -112,31 +112,31 @@ public virtual void destroy ();
 </ul>
 </td>
 </tr>
-<tr><td><a href="#logout-linux"><span>public virtual void logout</span></a></td>
+<tr><td><a href="#logout-linux"><span>logout</span></a></td>
 <td>登出信令系统。登出成功将收到 <a href="#onlogout-linux"><span>onLogout</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#invoke-linux"><span>public virtual void invoke (char const * name, size_t name_size,char const * req, size_t req_size,char const * callID, size_t callID_size)</span></a></td>
+<tr><td><a href="#invoke-linux"><span>invoke</span></a></td>
 <td>RPC 远程过程调用方法。可用于用户或频道相关操作。结果通过 <a href="#oninvokeret-linux"><span>onInvokeRet</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#queryuserstatus-linux"><span>public virtual void queryUserStatus (char const * account, size_t account_size)</span></a></td>
+<tr><td><a href="#queryuserstatus-linux"><span>queryUserStatus</span></a></td>
 <td>查询名为 account 的用户是否在线。结果通过 <a href="#onqueryuserstatusresult-linux"><span>onQueryUserStatusResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#setattr-linux"><span>public virtual void setAttr (char const * name, size_t name_size,char const * value, size_t value_size)</span></a></td>
+<tr><td><a href="#setattr-linux"><span>setAttr</span></a></td>
 <td>设置当前登录用户的相关属性值。</td>
 </tr>
-<tr><td><a href="#getattr-linux"><span>public virtual void getAttr (char const * name, size_t name_size)</span></a></td>
+<tr><td><a href="#getattr-linux"><span>getAttr</span></a></td>
 <td>获取当前登录用户的相关属性值。结果通过 <a href="#onuserattrresult-linux"><span>onUserAttrResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getattrall-linux"><span>public virtual void getAttrAll</span></a></td>
+<tr><td><a href="#getattrall-linux"><span>getAttrAll</span></a></td>
 <td>获取当前登录用户的全部属性值。结果通过 <a href="#onuserattrallresult-linux"><span>onUserAttrAllResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getuserattr-linux"><span>public virtual void getUserAttr (char const * account, size_t account_size,char const * name, size_t name_size)</span></a></td>
+<tr><td><a href="#getuserattr-linux"><span>getUserAttr</span></a></td>
 <td>获取名为 account 的用户的 name 属性值。结果通过 <a href="#onuserattrresult-linux"><span>onUserAttrResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getuserattrall-linux"><span>public virtual void getUserAttrAll (char const * account, size_t account_size)</span></a></td>
+<tr><td><a href="#getuserattrall-linux"><span>getUserAttrAll</span></a></td>
 <td>获取名为 account 的用户的所有属性值。结果通过 <a href="#onuserattrallresult-linux"><span>onUserAttrAllResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#messageinstantsend-linux"><span>public virtual void messageInstantSend (char const * account, size_t account_size,uint32_t uid,char const * msg, size_t msg_size,char const * msgID, size_t msgID_size)</span></a></td>
+<tr><td><a href="#messageinstantsend-linux"><span>messageInstantSend</span></a></td>
 <td>
 <div>向名为 account 的用户发送点对点消息</div>
 <ul>
@@ -145,7 +145,7 @@ public virtual void destroy ();
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channeljoin-linux"><span>public virtual void channelJoin (char const * channelID, size_t channelID_size)</span></a></td>
+<tr><td><a href="#channeljoin-linux"><span>channelJoin</span></a></td>
 <td><p>加入指定频道。</p>
 <ul>
 <li>成功： 自己收到 <a href="#onchanneljoined-linux"><span>onChannelJoined</span></a> 回调，同频道其他用户收到 <a href="#onchanneluserjoined-linux"><span>onChannelUserJoined</span></a> 回调；</li>
@@ -153,7 +153,7 @@ public virtual void destroy ();
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelleave-linux"><span>public virtual void channelLeave (char const * channelID, size_t channelID_size)</span></a></td>
+<tr><td><a href="#channelleave-linux"><span>channelLeave</span></a></td>
 <td><p>退出指定频道。若退出成功：</p>
 <ul>
 <li>频道内所有用户都将收到 <a href="#onchanneluserleaved-linux"><span>onChannelUserLeaved</span></a> 回调</li>
@@ -161,19 +161,19 @@ public virtual void destroy ();
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelqueryusernum-linux"><span>public virtual void channelQueryUserNum (char const * channelID, size_t channelID_size)</span></a></td>
+<tr><td><a href="#channelqueryusernum-linux"><span>channelQueryUserNum</span></a></td>
 <td>查询频道用户数。结果通过 <a href="#onchannelqueryusernumresult-linux"><span>onChannelQueryUserNumResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#channelsetattr-linux"><span>public virtual void channelSetAttr (char const * channelID, size_t channelID_size,char const * name, size_t name_size,char const * value, size_t value_size)</span></a></td>
+<tr><td><a href="#channelsetattr-linux"><span>channelSetAttr</span></a></td>
 <td>设置频道属性。设置成功将收到 <a href="#onchannelattrupdated-linux"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channeldelattr-linux"><span>public virtual void channelDelAttr (char const * channelID, size_t channelID_size,char const * name, size_t name_size)</span></a></td>
+<tr><td><a href="#channeldelattr-linux"><span>channelDelAttr</span></a></td>
 <td>删除频道属性。删除成功将收到 <a href="#onchannelattrupdated-linux"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelclearattr-linux"><span>public virtual void channelClearAttr (char const * channelID, size_t channelID_size)</span></a></td>
+<tr><td><a href="#channelclearattr-linux"><span>channelClearAttr</span></a></td>
 <td>删除所有频道属性。删除成功将收到 <a href="#onchannelattrupdated-linux"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#messagechannelsend-linux"><span>public virtual void messageChannelSend (char const * channelID, size_t channelID_size,char const * msg, size_t msg_size,char const * msgID, size_t msgID_size)</span></a></td>
+<tr><td><a href="#messagechannelsend-linux"><span>messageChannelSend</span></a></td>
 <td><p>发送频道消息（消息发送者必须在频道内）</p>
 <ul>
 <li>成功： 自己收到 <a href="#onmessagesendsuccess-linux"><span>onMessageSendSuccess</span></a> 回调，频道内所有用户收到 <a href="#onmessagechannelreceive-linux"><span>onMessageChannelReceive</span></a> 回调；</li>
@@ -181,10 +181,10 @@ public virtual void destroy ();
 </ul>
 </td>
 </tr>
-<tr><td><a href="#messagechannelsendforce-linux"><span>public virtual void messageChannelSendForce (char const * channelID, size_t channelID_size,char const * msg, size_t msg_size,char const * msgID, size_t msgID_size)</span></a></td>
+<tr><td><a href="#messagechannelsendforce-linux"><span>messageChannelSendForce</span></a></td>
 <td>发送频道消息（消息发送者不必在频道内）</td>
 </tr>
-<tr><td><a href="#channelinviteuser-linux"><span>public virtual void channelInviteUser (char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid=0)</span></a></td>
+<tr><td><a href="#channelinviteuser-linux"><span>channelInviteUser</span></a></td>
 <td><p>邀请名为 account 的用户加入指定频道</p>
 <ul>
 <li>成功： 自己收到 <a href="#oninviteacceptedbypeer-linux"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 <a href="#callbackset-linux"><span>onInviteReceived</span></a> 回调；</li>
@@ -192,7 +192,7 @@ public virtual void destroy ();
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelinviteuser2-linux"><span>public virtual void channelInviteUser2 (char const * channelID, size_t channelID_size,char const * account, size_t account_size,char const * extra, size_t extra_size)</span></a></td>
+<tr><td><a href="#channelinviteuser2-linux"><span>channelInviteUser2</span></a></td>
 <td><p>邀请名为 account 的用户加入指定频道，呼叫方可以附带一段额外信息。</p>
 <ul>
 <li>成功： 自己收到 <a href="#oninviteacceptedbypeer-linux"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 <a href="#callbackset-linux"><span>onInviteReceived</span></a> 回调；</li>
@@ -200,22 +200,22 @@ public virtual void destroy ();
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelinvitedtmf-linux"><span>public virtual void channelInviteDTMF (char const * channelID, size_t channelID_size,char const * phoneNum, size_t phoneNum_size,char const * dtmf, size_t dtmf_size)</span></a></td>
+<tr><td><a href="#channelinvitedtmf-linux"><span>channelInviteDTMF</span></a></td>
 <td>发送 DTMF 消息到对端 phoneNum 用户，一般用于 SIP 网关的呼叫。</td>
 </tr>
-<tr><td><a href="#channelinviteaccept-linux"><span>public virtual void channelInviteAccept (char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size)</span></a></td>
+<tr><td><a href="#channelinviteaccept-linux"><span>channelInviteAccept</span></a></td>
 <td>接受来自 account 用户的加入指定频道的呼叫邀请。接收后主叫方将收到 <a href="#oninviteacceptedbypeer-linux"><span>onInviteAcceptedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviterefuse-linux"><span>public virtual void channelInviteRefuse (char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size)</span></a></td>
+<tr><td><a href="#channelinviterefuse-linux"><span>channelInviteRefuse</span></a></td>
 <td>拒绝来自 account 用户的加入指定频道的呼叫邀请。拒绝后主叫方将收到 <a href="#oninviterefusedbypeer-linux"><span>onInviteRefusedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviteend-linux"><span>public virtual void channelInviteEnd (char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid)</span></a></td>
+<tr><td><a href="#channelinviteend-linux"><span>channelInviteEnd</span></a></td>
 <td>终止向 account 用户发送加入指定频道的邀请。终止成功后主叫方将收到 <a href="#oninviteendbymyself-linux"><span>onInviteEndByMyself</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#getstatus-linux"><span>public virtual int getStatus</span></a></td>
+<tr><td><a href="#getstatus-linux"><span>getStatus</span></a></td>
 <td>获取用户登录状态 （未登录、正在登录、登录成功、正在重连）</td>
 </tr>
-<tr><td><a href="#getsdkversion-linux"><span>public virtual int getSdkVersion</span></a></td>
+<tr><td><a href="#getsdkversion-linux"><span>getSdkVersion</span></a></td>
 <td>获取SDK版本，版本号示例：1010104019</td>
 </tr>
 </tbody>
@@ -316,7 +316,7 @@ public virtual void login (char const * appId, size_t appId_size,char const * ac
 
 
 
-> 在测试环境下您可以将参数 token 设为 <code>_no\_need\_token</code> 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 <code>login</code> 方法会被忽略。如果希望踢掉老的登录，可以在 
+> 在测试环境下您可以将参数 token 设为 `_no_need_token` 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 <code>login</code> 方法会被忽略。如果希望踢掉老的登录，可以在 
 <code>login</code> 之前调用 <code>logout</code> 且不用等退出成功就可登录。
 
 #### <a name="login2-linux"></a>登录 \(login2\)
@@ -362,7 +362,7 @@ public virtual void login2 (char const * appId, size_t appId_size,char const * a
 
 
 
-> 在测试环境下您可以将参数 token 设为 <code>_no_need_token</code> 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 当达到 <code>retry_time_in_s</code> 或 <code>retry_count</code> 其中任一上限时，将触发 <code>onLoginFailed</code> 回调并停止重连。
+> 在测试环境下您可以将参数 token 设为 `_no_need_token` 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 当达到 `retry_time_in_s` 或 `retry_count` 其中任一上限时，将触发 <code>onLoginFailed</code> 回调并停止重连。
 
 #### <a name="logout-linux"></a>退出 \(logout\)
 
@@ -1176,97 +1176,97 @@ public virtual int getSdkVersion () ;
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onreconnecting-linux"><span>public virtual void onReconnecting(uint32_t nretry) {}</span></a></td>
+<tr><td><a href="#onreconnecting-linux"><span>onReconnecting</span></a></td>
 <td>连接丢失回调</td>
 </tr>
-<tr><td><a href="#onerror-linux"><span>public virtual void onError(char const * name, size_t name_size,int ecode,char const * desc, size_t desc_size) {}</span></a></td>
+<tr><td><a href="#onerror-linux"><span>onError</span></a></td>
 <td>出错回调</td>
 </tr>
-<tr><td><a href="#onqueryuserstatusresult-linux"><span>public virtual void onQueryUserStatusResult(char const * name, size_t name_size,char const * status, size_t status_size) {}</span></a></td>
+<tr><td><a href="#onqueryuserstatusresult-linux"><span>onQueryUserStatusResult</span></a></td>
 <td>用户状态查询回调</td>
 </tr>
-<tr><td><a href="#onreconnected-linux"><span>public virtual void onReconnected(int fd) {}</span></a></td>
+<tr><td><a href="#onreconnected-linux"><span>onReconnected</span></a></td>
 <td>重连成功回调</td>
 </tr>
-<tr><td><a href="#onloginsuccess-linux"><span>public virtual void onLoginSuccess(uint32_t uid,int fd) {}</span></a></td>
+<tr><td><a href="#onloginsuccess-linux"><span>onLoginSuccess</span></a></td>
 <td>登录成功回调</td>
 </tr>
-<tr><td><a href="#onlogout-linux"><span>public virtual void onLogout(int ecode) {}</span></a></td>
+<tr><td><a href="#onlogout-linux"><span>onLogout</span></a></td>
 <td>退出登录回调</td>
 </tr>
-<tr><td><a href="#onloginfailed-linux"><span>public virtual void onLoginFailed(int ecode) {}</span></a></td>
+<tr><td><a href="#onloginfailed-linux"><span>onLoginFailed</span></a></td>
 <td>登录失败回调</td>
 </tr>
-<tr><td><a href="#oninvokeret-linux"><span>public virtual void onInvokeRet(char const * callID, size_t callID_size,char const * err, size_t err_size,char const * resp, size_t resp_size) {}</span></a></td>
+<tr><td><a href="#oninvokeret-linux"><span>onInvokeRet</span></a></td>
 <td>RPC 远程过程调用成功回调</td>
 </tr>
-<tr><td><a href="#onchanneljoined-linux"><span>public virtual void onChannelJoined(char const * channelID, size_t channelID_size) {}</span></a></td>
+<tr><td><a href="#onchanneljoined-linux"><span>onChannelJoined</span></a></td>
 <td>加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneljoinfailed-linux"><span>public virtual void onChannelJoinFailed(char const * channelID, size_t channelID_size,int ecode) {}</span></a></td>
+<tr><td><a href="#onchanneljoinfailed-linux"><span>onChannelJoinFailed</span></a></td>
 <td>加入频道失败回调</td>
 </tr>
-<tr><td><a href="#onchannelleaved-linux"><span>public virtual void onChannelLeaved(char const * channelID, size_t channelID_size,int ecode) {}</span></a></td>
+<tr><td><a href="#onchannelleaved-linux"><span>onChannelLeaved</span></a></td>
 <td>离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserjoined-linux"><span>public virtual void onChannelUserJoined(char const * account, size_t account_size,uint32_t uid) {}</span></a></td>
+<tr><td><a href="#onchanneluserjoined-linux"><span>onChannelUserJoined</span></a></td>
 <td>其他用户加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserleaved-linux"><span>public virtual void onChannelUserLeaved(char const * account, size_t account_size,uint32_t uid) {}</span></a></td>
+<tr><td><a href="#onchanneluserleaved-linux"><span>onChannelUserLeaved</span></a></td>
 <td>其他用户离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserlist-linux"><span>public virtual void onChannelUserList(int n,char** accounts,uint32_t* uids) {}</span></a></td>
+<tr><td><a href="#onchanneluserlist-linux"><span>onChannelUserList</span></a></td>
 <td>获取频道内用户列表回调</td>
 </tr>
-<tr><td><a href="#onchannelqueryusernumresult-linux"><span>public virtual void onChannelQueryUserNumResult(char const * channelID, size_t channelID_size,int ecode,int num) {}</span></a></td>
+<tr><td><a href="#onchannelqueryusernumresult-linux"><span>onChannelQueryUserNumResult</span></a></td>
 <td>返回查询的用户数量回调</td>
 </tr>
-<tr><td><a href="#onchannelattrupdated-linux"><span>public virtual void onChannelAttrUpdated(char const * channelID, size_t channelID_size,char const * name, size_t name_size,char const * value, size_t value_size,char const * type, size_t type_size) {}</span></a></td>
+<tr><td><a href="#onchannelattrupdated-linux"><span>onChannelAttrUpdated</span></a></td>
 <td>频道属性发生变化回调</td>
 </tr>
-<tr><td><a href="#oninvitereceived-linux"><span>public virtual void onInviteReceived(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}</span></a></td>
+<tr><td><a href="#oninvitereceived-linux"><span>onInviteReceived</span></a></td>
 <td>收到呼叫邀请回调</td>
 </tr>
-<tr><td><a href="#oninvitereceivedbypeer-linux"><span>public virtual void onInviteReceivedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid) {}</span></a></td>
+<tr><td><a href="#oninvitereceivedbypeer-linux"><span>onInviteReceivedByPeer</span></a></td>
 <td>远端已收到呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteacceptedbypeer-linux"><span>public virtual void onInviteAcceptedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}</span></a></td>
+<tr><td><a href="#oninviteacceptedbypeer-linux"><span>onInviteAcceptedByPeer</span></a></td>
 <td>远端已接受呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviterefusedbypeer-linux"><span>public virtual void onInviteRefusedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}</span></a></td>
+<tr><td><a href="#oninviterefusedbypeer-linux"><span>onInviteRefusedByPeer</span></a></td>
 <td>对方已拒绝呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitefailed-linux"><span>public virtual void onInviteFailed(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,int ecode,char const * extra, size_t extra_size) {}</span></a></td>
+<tr><td><a href="#oninvitefailed-linux"><span>onInviteFailed</span></a></td>
 <td>呼叫失败回调</td>
 </tr>
-<tr><td><a href="#oninviteendbypeer-linux"><span>public virtual void onInviteEndByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}</span></a></td>
+<tr><td><a href="#oninviteendbypeer-linux"><span>onInviteEndByPeer</span></a></td>
 <td>对方已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteendbymyself-linux"><span>public virtual void onInviteEndByMyself(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid) {}</span></a></td>
+<tr><td><a href="#oninviteendbymyself-linux"><span>onInviteEndByMyself</span></a></td>
 <td>本地已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitemsg-linux"><span>public virtual void onInviteMsg(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * msgType, size_t msgType_size,char const * msgData, size_t msgData_size,char const * extra, size_t extra_size)</span></a></td>
+<tr><td><a href="#oninvitemsg-linux"><span>onInviteMsg</span></a></td>
 <td>本地已收到消息回调</td>
 </tr>
-<tr><td><a href="#onmessagesenderror-linux"><span>public virtual void onMessageSendError(char const * messageID, size_t messageID_size,int ecode) {}</span></a></td>
+<tr><td><a href="#onmessagesenderror-linux"><span>onMessageSendError</span></a></td>
 <td>消息发送失败回调</td>
 </tr>
-<tr><td><a href="#onmessagesendsuccess-linux"><span>public virtual void onMessageSendSuccess(char const * messageID, size_t messageID_size) {}</span></a></td>
+<tr><td><a href="#onmessagesendsuccess-linux"><span>onMessageSendSuccess</span></a></td>
 <td>消息已发送成功回调</td>
 </tr>
-<tr><td><a href="#onmessageinstantreceive-linux"><span>public virtual void onMessageInstantReceive(char const * account, size_t account_size,uint32_t uid,char const * msg, size_t msg_size) {}</span></a></td>
+<tr><td><a href="#onmessageinstantreceive-linux"><span>onMessageInstantReceive</span></a></td>
 <td>对方用户收到消息回调</td>
 </tr>
-<tr><td><a href="#onmessagechannelreceive-linux"><span>public virtual void onMessageChannelReceive(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * msg, size_t msg_size) {}</span></a></td>
+<tr><td><a href="#onmessagechannelreceive-linux"><span>onMessageChannelReceive</span></a></td>
 <td>收到频道消息回调</td>
 </tr>
-<tr><td><a href="#onlog-linux"><span>public virtual void onLog(char const * txt, size_t txt_size) {}</span></a></td>
+<tr><td><a href="#onlog-linux"><span>onLog</span></a></td>
 <td>已打印日志回调</td>
 </tr>
-<tr><td><a href="#onuserattrresult-linux"><span>public virtual void onUserAttrResult(char const * account, size_t account_size,char const * name, size_t name_size,char const * value, size_t value_size) {}</span></a></td>
+<tr><td><a href="#onuserattrresult-linux"><span>onUserAttrResult</span></a></td>
 <td>已获取用户属性查询结果回调</td>
 </tr>
-<tr><td><a href="#onuserattrallresult-linux"><span>public virtual void onUserAttrAllResult(char const * account, size_t account_size,char const * value, size_t value_size) {}</span></a></td>
+<tr><td><a href="#onuserattrallresult-linux"><span>onUserAttrAllResult</span></a></td>
 <td>已获取所有用户属性查询结果回调</td>
 </tr>
 </tbody>
