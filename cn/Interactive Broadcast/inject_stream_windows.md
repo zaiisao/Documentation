@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Windows
-updatedAt: Tue Nov 27 2018 05:47:07 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:47:11 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -47,7 +47,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 	直播频道的主播可以使用 `addInjectStreamUrl` ，指定一个在线媒体流作为连麦端接入房间。
 	
 	```cpp
-	//CPP
+	// cpp
 	const char* urlPath = "Some online RTMP/HLS url path";
 	InjectStreamConfig config;
 	rtcEngine->addInjectStreamUrl(urlPath, config);
