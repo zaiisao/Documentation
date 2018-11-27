@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 01:30:07 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 01:30:22 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -18,37 +18,39 @@ Before proceeding, ensure that you have finished preparing the development envir
 
 ```swift
 //swift
-// Check if auto face focus is supported and start focusing
+//Check if auto face focus is supported and start focusing
 let isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
 agoraKit. setCameraAutoFocusFaceModeEnabled(isSupported)
 
-// Check if manual focus is suppoeted and start focusing
+//Check if manual focus is suppoeted and start focusing
 let isSupported = agoraKit.isCameraFocusPositionInPreviewSupported()
 
 if isSupported {
-	let point = CGPoint(x: 50, y: 50)
+	//Set the camera focus at (50, 100)
+	let point = CGPoint(x: 50, y: 100)
 	agoraKit.setCameraFocusPositionInPreview(point)
 }
 ```
 
 ```objective-c
 //objective-c
-// Check if auto face focus is supported and start focusing
+//Check if auto face focus is supported and start focusing
 Bool isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
 [agoraKit setCameraAutoFocusFaceModeEnabled: isSupported];
 
-// Check if manual focus is supported and start focusing
+//Check if manual focus is supported and start focusing
 let isSupported = [agoraKit isCameraFocusPositionInPreviewSupported];
 
 if (isSupported) {
-	CGPoint *point = CGPointMake(50, 50);
+	//Set the camera focus at (50, 100)
+	CGPoint *point = CGPointMake(50, 100);
 	[agoraKit setCameraFocusPositionInPreview: point];
 }
 ```
 
-**Relevant APIs and descriptions**
+### API Reference
 
--  [`isCameraFocusPositionInPreviewSupported`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraFocusPositionInPreviewSupported): Checks whether the camera zoom function is supported.
-- [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraAutoFocusFaceModeSupported): Checks whether the camera auto-face focus function is supported.
-- [`setCameraFocusPositionInPreview`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraFocusPositionInPreview:): Sets the camera manual focus position.
-- [`setCameraAutoFocusModeEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraAutoFocusFaceModeEnabled:): Enables the camera auto-face focus function.
+-  [`isCameraFocusPositionInPreviewSupported`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraFocusPositionInPreviewSupported)
+- [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraAutoFocusFaceModeSupported)
+- [`setCameraFocusPositionInPreview`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraFocusPositionInPreview:)
+- [`setCameraAutoFocusModeEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraAutoFocusFaceModeEnabled:)
