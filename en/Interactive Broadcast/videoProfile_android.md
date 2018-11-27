@@ -3,14 +3,14 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 05:49:33 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:49:37 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
 
 Setting the video profile, either before or after a user joins a channel, enables the user to enjoy better video quality during a video call or video live broadcast.
 
-## Implementations
+## Implementation
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md) for more information.
 
@@ -19,20 +19,20 @@ Agora SDK uses the `setVideoEncoderConfiguration` API to set the video profile a
 The parameters specified in this API are the ideal values under ideal network conditions. If the video engine cannot render the video with the specified parameters dut to poor network conditions, the parameters further down the list are considered.
 
 ```java
-	//java
-	//First create a VideoEncoderConfiguration Instance
-	//See descriptions of the parameters in the API link
-	VideoEncoderConfiguration config = new VideoEncoderConfiguration(
-		VideoDimensions.VD_640x480,  //Choose a video resolution, or customize one
-		FRAME_RATE_FPS_15,           //Frame rate. 15 is the common setting. Agora recommends not setting ot over 30
-		STANDARD_BITRATE,            //The standard bitrate. See descriptions of bitrate in the API link. Agora recommends setting the bitrate to the standard mode.
-		ORIENTATION_MODE_ADAPTIVE    //The adaptive orientation mode. See details in the API link.
-	);
+// java
+// First create a VideoEncoderConfiguration Instance
+// See descriptions of the parameters in the API link
+VideoEncoderConfiguration config = new VideoEncoderConfiguration(
+	VideoDimensions.VD_640x480,  // Choose a video resolution, or customize one
+	FRAME_RATE_FPS_15,           // Frame rate. 15 is the common setting. Agora recommends not setting ot over 30
+	STANDARD_BITRATE,            // The standard bitrate. See descriptions of bitrate in the API link. Agora recommends setting the bitrate to the standard mode.
+	ORIENTATION_MODE_ADAPTIVE    // The adaptive orientation mode. See details in the API link.
+);
 
-	rtcEngine.setVideoEncoderConfiguration(config);
+rtcEngine.setVideoEncoderConfiguration(config);
 ```
 
-**Relevant APIs and descriptions**
+### API Reference
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
 * For more information on video orientation mode, see [Rotate the Video](../../en/Interactive%20Broadcast/rotation_guide_android.md).
 
