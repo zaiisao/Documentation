@@ -3,7 +3,7 @@
 title: Enabling Recording
 description: 
 platform: CPP
-updatedAt: Tue Nov 27 2018 06:28:54 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:28:59 GMT+0000 (UTC)
 ---
 # Enabling Recording
 In this quickstart, you will learn how to use the Agora Recording SDK to enable recording.
@@ -28,7 +28,7 @@ To record the content of a channel, a ‘special audience’ joins the channel, 
 -   Use the same App ID in the Agora Recording SDK and in other Agora SDKs implementing voice or video communication. For detailed information about App ID, see [Getting an App ID](../../en/Agora%20Platform/token.md).
 -   Specify the channel to record.
 
-
+> The Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
 ## Prerequisites
 
 See [Setting up Your Environment](../../en/Quickstart%20Guide/recording_env.md) for the prerequisites.
