@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 05:41:12 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:41:16 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -43,7 +43,8 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 [agoraKit pushExternalAudioFrameSampleBuffer: "your CMSampleBuffer"];
 ```
 
-**相关 API 及链接**
+#### API 参考
+
 * [`pushExternalAudioFrameRawData:samples:timestamp:`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameRawData:samples:timestamp:)
 * [`pushExternalAudioFrameSampleBuffer:`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameSampleBuffer:)
 
