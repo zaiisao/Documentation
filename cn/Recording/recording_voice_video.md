@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 27 2018 06:26:33 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:26:36 GMT+0000 (UTC)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -13,7 +13,7 @@ updatedAt: Tue Nov 27 2018 06:26:33 GMT+0000 (UTC)
 - 音频录制过程中，推流用户退出频道，超过 15 秒再进入频道，会认为是一个新的 session，录制文件会切片。
 - 视频录制过程中，退出频道后再进入、修改分辨率、视频静音或取消静音，均会导致视频文件切片。
 
-> 使用录制 SDK 时务必与 Agora Native/Web SDK 设置相同的频道模式，否则可能导致问题。
+> 使用录制 SDK 必须与 Agora Native/Web SDK 设置相同的频道模式，否则可能导致问题。
 
 ## 录制文件
 
