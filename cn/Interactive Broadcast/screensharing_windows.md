@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Windows
-updatedAt: Tue Nov 27 2018 06:22:50 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:22:56 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -18,7 +18,7 @@ updatedAt: Tue Nov 27 2018 06:22:50 GMT+0000 (UTC)
 在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Interactive%20Broadcast/windows_video.md)。
 
 ```cpp
-//cpp
+// cpp
 // 1. 开始屏幕共享
 
 if (lpRect != NULL) { // 共享屏幕窗口的某个区域
@@ -37,8 +37,8 @@ if (lpRect != NULL) { // 共享屏幕窗口的某个区域
 lpAgoraEngine->stopScreenCapture();
 ```
 
-**相关 API 及链接**
-* [`startScreenCapture`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#af71935ad435402f776bcfc2be3cf687f)：开始屏幕共享
-* [`stopScreenCapture`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)：停止屏幕共享
-* [`updateScreenCaptureRegion`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a99ce13ce3b9b2c65e5ec35b9861b56e3)：更新屏幕共享区域
+### API 参考
+* [`startScreenCapture`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#af71935ad435402f776bcfc2be3cf687f)
+* [`stopScreenCapture`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
+* [`updateScreenCaptureRegion`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a99ce13ce3b9b2c65e5ec35b9861b56e3)
 
