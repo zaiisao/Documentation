@@ -3,7 +3,7 @@
 title: 移动、桌面、Web 端互通
 description: 
 platform: Windows
-updatedAt: Tue Nov 27 2018 06:29:10 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:29:14 GMT+0000 (UTC)
 ---
 # 移动、桌面、Web 端互通
 ## 功能简介
@@ -19,16 +19,16 @@ Agora SDK 的桌面端和 Web 端互通，需要在移动端和 Web 端同时进
 * 桌面端：调用 `enableWebSdkInteroperability` API 方法。
 
 	```cpp
-	//cpp
-	//桌面端调用 enableWebSdkInteroperability 方法开启与 Web SDK 的互通
+	// cpp
+	// 桌面端调用 enableWebSdkInteroperability 方法开启与 Web SDK 的互通
 	lpAgoraEngine->enableWebSdkInteroperability
 	```
 
 * Web 端：将 `createClient` 方法中的 `mode` 设置为 `'live'` 实现互通。
 
 	```javascript
-	//javascript
-	//Web 端在创建客户端时，选择正确的 mode 和 codec 参数
+	// javascript
+	// Web 端在创建客户端时，选择正确的 mode 和 codec 参数
 	var client = AgoraRTC.createClient({ mode: 'live', codec: 'h264' });
 	```
 
