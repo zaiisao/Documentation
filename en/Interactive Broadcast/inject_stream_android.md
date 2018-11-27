@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 05:51:38 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:51:42 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -39,7 +39,7 @@ Online media stream injection can be applied to the following scenarios:
   - `ERR_NOT_READY(3)`: The App is not in the channel. Make sure that the App has joined the channel.
 
 
-## Implementations
+## Implementation
 
 To inject an online media stream, the user need first join a live broadcast channel in the "broadcaster" role. For how to intialize the engine and join a live broadcast channel, see [Quickstart Guide](https://docs.agora.io/en/Interactive%20Broadcast/android_video?platform=Android).
 
@@ -48,7 +48,7 @@ To inject an online media stream, the user need first join a live broadcast chan
 	The broadcaster(host) in the live broadcast channel can call `addInjectStreamUrl` to specify an online media stream and inject it into the channel.
 
 	```java
-	//Java
+	// java
 	String urlPath = "Some online RTMP/HLS url path"
 
 	LiveInjectStreamConfig config = new LiveInjectStreamConfig();
@@ -70,7 +70,7 @@ To inject an online media stream, the user need first join a live broadcast chan
 	The broadcaster(host) in the live broadcast channel can call `removeInjectStreamUrl` to remove a previously injected media stream.
 
 	```java
-	//Java
+	// java
 	String urlPath = "The same online RTMP/HLS url path added before"
 	rtcEngine.removeInjectStreamUrl(urlPath)
 	```
