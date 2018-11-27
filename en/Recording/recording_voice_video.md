@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Tue Nov 27 2018 06:51:24 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:51:29 GMT+0000 (UTC)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -19,7 +19,7 @@ The Agora Recording SDK supports recording in two modes:
 -   Individual recording: To record the voice and video stream respectively for each user ID.
 -   Composite recording: To mix the voice and video recordings for different users in the same channel; the video mixing layout is also supported.
 
-
+> The Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
 ### <a name ="individualrecording"></a>Individual Recording
 
 Individual recording enables the SDK to record the voice and video respectively for each user ID in the channel.
