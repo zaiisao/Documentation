@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 01:51:30 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 01:52:09 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -62,10 +62,10 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 1. Implement the AgoraVideoSourceProtocal to create a video source class.
 
 	```swift
-	    //swift
-	    // variable in the protocal
+	     //swift
+	     // variable in the protocal
 		 var consumer: AgoraVideoFrameConsumer?
-	    // use the consumer method to transfer the video data to Agora SDK
+	     // use the consumer method to transfer the video data to Agora SDK
 
 		 // transfer the video frame in the format of rawData
 		 consumer.consumeRawData("your rawData", withTimestamp: CMTimeMake(1, 15), format: "your data format", size: size, rotation: rotation)
@@ -144,7 +144,8 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 	[agoraKit setVideoSource: videoSource];
 	```
 	
-**Relevant APIs and descriptions**
+##### API Reference
+
 * [`setVideoSource:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
 * [`AgoraVideoSourceProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
 	
@@ -196,7 +197,8 @@ videoFrame.ratation = 0;
 [agoraKit pushExternalVideoFrame: videoFrame];
 ```
 
-**Relevant APIs and descriptions**
+##### API Reference
+
 * [`pushExternalVideoFrame:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalVideoFrame:)
 
 ### Customize the Video Renderer
@@ -301,7 +303,8 @@ Use the IVideoSink Interface of MediaIO to customize the video renderer.
 	[agoraKit setRemoteVideoRenderer: videoRenderer, uid];
 	```
 
-**Relevant APIs and descriptions**
+#### API Reference
+
 * [`setLocalVideoRenderer:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVideoRenderer:)
 * [`setRemoteVideoRenderer:forUserId:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoRenderer:forUserId:)
 * [`AgoraVideoSinkProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSinkProtocol.html)
