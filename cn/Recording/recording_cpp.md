@@ -3,7 +3,7 @@
 title: 录制 API
 description: 
 platform: CPP
-updatedAt: Tue Nov 27 2018 07:10:32 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 07:10:38 GMT+0000 (UTC)
 ---
 # 录制 API
 > 版本：v2.2.3
@@ -202,7 +202,7 @@ typedef struct RecordingConfig {
 <li>CHANNEL_PROFILE_COMMUNICATION：通信（默认），即常见的 1 对 1 单聊或群聊，频道内任何用户可以自由说话</li>
 <li>CHANNEL_PROFILE_LIVE_BROADCAST：直播，有两种用户角色：主播和观众</li>
 </ul>
-录制的频道模式必须和 Native SDK 或 Web SDK 设置的频道模式保持一致，如果设置不一致，可能会出现问题。
+录制的频道模式必须和 Native SDK 或 Web SDK 设置的频道模式保持一致，否则可能导致问题。
 </td>
 </tr>
 <tr><td><code>isAudioOnly</code></td>
