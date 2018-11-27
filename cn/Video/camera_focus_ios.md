@@ -3,7 +3,7 @@
 title: 摄像头对焦
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 05:28:42 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:28:46 GMT+0000 (UTC)
 ---
 # 摄像头对焦
 ## 功能简介
@@ -17,32 +17,32 @@ Agora SDK 在 iOS 平台提供整套的摄像头管理方法，方便用户切�
 
 
 ```swift
-//swift
-//检测当前设备是否支持人脸自动对焦并设置
+// swift
+// 检测当前设备是否支持人脸自动对焦并设置
 let isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
 agoraKit. setCameraAutoFocusFaceModeEnabled(isSupported)
 
-//检测当前设备是否支持手动对焦功能并设置
+// 检测当前设备是否支持手动对焦功能并设置
 let isSupported = agoraKit.isCameraFocusPositionInPreviewSupported()
 
 if isSupported {
-	//假设在屏幕（50，100）的位置对焦
+	// 假设在屏幕（50，100）的位置对焦
 	let point = CGPoint(x: 50, y: 100)
 	agoraKit.setCameraFocusPositionInPreview(point)
 }
 ```
 
 ```objective-c
-//objective-c
-//检测当前设备是否支持人脸自动对焦并设置
+// objective-c
+// 检测当前设备是否支持人脸自动对焦并设置
 Bool isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
 [agoraKit setCameraAutoFocusFaceModeEnabled: isSupported];
 
-//检测当前设备是否支持手动对焦功能并设置
+// 检测当前设备是否支持手动对焦功能并设置
 let isSupported = [agoraKit isCameraFocusPositionInPreviewSupported];
 
 if (isSupported) {
-	//假设在屏幕（50，100）的位置对焦
+	// 假设在屏幕（50，100）的位置对焦
 	CGPoint *point = CGPointMake(50, 100);
 	[agoraKit setCameraFocusPositionInPreview: point];
 }
