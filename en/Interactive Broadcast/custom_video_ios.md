@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 05:42:29 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:42:32 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -17,7 +17,7 @@ By default, An App uses the internal audio and video modules for capturing and r
 - When developers want to use non-camera source, such as recorded screen data.
 - When developers need flexible device resource allocation to avoid conflicts with other services.
 
-## Implementaions
+## Implementaion
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md) for details.
 
@@ -26,7 +26,7 @@ Before proceeding, ensure that you have finished preparing the development envir
 Use the Push method to customize the audio source, where the SDK conducts no data processing to the audio frame, such as noise reduction.
 
 ```swift
-//swift
+// swift
 // Push the video frame in the format of rawData
 agoraKit.pushExternalAudioFrameRawData("your rawData", samples: "per push samples", timestamp: 0)
 
@@ -35,7 +35,7 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 ```
 
 ```objective-c
-//objective-c
+// objective-c
 // Push the video frame in the format of rawData
 [agoraKit pushExternalAudioFrameRawData: "your rawData" samples: "per push samples", timestamp: 0];
 
@@ -62,10 +62,10 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 1. Implement the AgoraVideoSourceProtocal to create a video source class.
 
 	```swift
-	     //swift
-	     // variable in the protocal
+	//swift
+	// variable in the protocal
 		 var consumer: AgoraVideoFrameConsumer?
-	     // use the consumer method to transfer the video data to Agora SDK
+	// use the consumer method to transfer the video data to Agora SDK
 
 		 // transfer the video frame in the format of rawData
 		 consumer.consumeRawData("your rawData", withTimestamp: CMTimeMake(1, 15), format: "your data format", size: size, rotation: rotation)
@@ -97,7 +97,7 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 	```
 	
 	```objective-c
-	//objective-c
+	// objective-c
 	// variable in the protocal
 	@synthesize consumer;
 	// use the consumer method to transfer the video data to Agora SDK:
@@ -135,12 +135,12 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 2. Pass the VideoSource object to AgoraRtcEngineKit.
 
 	```swift
-	//swift
+	// swift
 	agoraKit.setVideoSource(videoSource)
 	```
 
 	```objective-c
-	//objective-c
+	// objective-c
 	[agoraKit setVideoSource: videoSource];
 	```
 	
@@ -154,7 +154,7 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 Compared to the MediaIO method, the Push method uses less codes, but lacks any optimization to the captured video frame. This method requires developers to do the processing.
 
 ```swift
-//swift
+// swift
 // push the video frame in the format of CVPixelBufferRef
 let videoFrame = AgoraVideoFrame()
 videoFrame.format = 12
@@ -176,7 +176,7 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 ```
 
 ```objective-c
-//objective-c
+// objective-c
 // push the video frame in the format of CVPixelBufferRef
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = 12;
@@ -208,8 +208,8 @@ Use the IVideoSink Interface of MediaIO to customize the video renderer.
 1. Implement the AgoraVideoSinkProtocal and create the customized video renderer class.
 
 	```swift
-	//swift
-	//Implement AgoraVideoSinkProtocal
+	// swift
+	// Implement AgoraVideoSinkProtocal
 	1. Set the buffer type that Agora SDK sends
 		func bufferType() -> AgoraVideoBufferType {
 				return bufferType
@@ -251,8 +251,8 @@ Use the IVideoSink Interface of MediaIO to customize the video renderer.
 	```
 
 	```objective-c
-	//objective-c
-	//Implement AgoraVideoSinkProtocal
+	// objective-c
+	// Implement AgoraVideoSinkProtocal
 	1. Set the buffer type that Agora SDK sends
 		- (AgoraVideoBufferType)bufferType {
 				return AgoraVideoBufferTypePixelBuffer;
@@ -292,13 +292,13 @@ Use the IVideoSink Interface of MediaIO to customize the video renderer.
 2. Pass the VideoRenderer object to AgoraRtcEngineKit.
 
 	```swift
-	//swift
+	// swift
 	agoraKit.setLocalVideoRenderer(videoRenderer)
 	agoraKit.setRemoteVideoRenderer(videoRenderer, forUserId: uid)
 	```
 	
 	```objective-c
-	//objective-c
+	// objective-c
 	[agoraKit setLocalVideoRenderer: videoRenderer];
 	[agoraKit setRemoteVideoRenderer: videoRenderer, uid];
 	```
