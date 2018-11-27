@@ -3,7 +3,7 @@
 title: 信令 Server SDK API - Java
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:09:08 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 09:14:52 GMT+0000 (UTC)
 ---
 # 信令 Server SDK API - Java
 > 版本：v1.4.0 BETA
