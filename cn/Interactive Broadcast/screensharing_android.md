@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 06:20:18 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:20:27 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -25,6 +25,7 @@ Agora SDK 不提供在 Android 平台实现屏幕共享的 API，但你可以结
 * 将从 SurfaceView 绘制回调中得到的图像数据作为外部视频源，调用 SDK 的 `pushExternalVideoFrame` 传给远端
 
 ```java
+// java
 MediaProjectionManager projectManager = (MediaProjectionManager) mContext.getSystemService(
 Context.MEDIA_PROJECTION_SERVICE);
 
