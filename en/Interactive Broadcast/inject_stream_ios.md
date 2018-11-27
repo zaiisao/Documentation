@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 05:52:03 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:52:09 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -37,7 +37,7 @@ Online media stream injection can be applied to the following scenarios:
   - `AgoraErrorCodeNotInitialized(7)`: The SDK is not initialized. Make sure that the `RtcEngine` object is initialized before using this method.
   - `AgoraErrorCodeNotSupported(4)`: The channel profile is not live broadcast. Call `setChannelProfile` and set the channel to the live broadcast profile before calling this method.
   - `AgoraErrorCodeNotReady(3)`: The App is not in the channel. Make sure that the App has joined the channel.
-## Implementations
+## Implementation
 
 To inject an online media stream, the user need first join a live broadcast channel in the "broadcaster" role. For how to intialize the engine and join a live broadcast channel, see [Quickstart Guide](https://docs.agora.io/en/Interactive%20Broadcast/ios_video?platform=iOS).
 
@@ -46,7 +46,7 @@ To inject an online media stream, the user need first join a live broadcast chan
   The broadcaster(host) in the live broadcast channel can call `addInjectStreamUrl` to specify an online media stream and inject it into the channel.
 
 	```swift
-	//swift
+	// swift
 	// Adds a voice or video stream into an ongoing broadcast.
 
 	let config = AgoraLiveInjectStreamConfig()
@@ -62,7 +62,7 @@ To inject an online media stream, the user need first join a live broadcast chan
 	```
 
 	```objective-c
-	//objective-c
+	// objective-c
 	AgoraLiveInjectStreamConfig *config = [[AgoraLiveInjectStreamConfig alloc] init];
 	config.size = CGSizeMake(640, 360);
 	config.videoGop = 30
@@ -82,13 +82,13 @@ To inject an online media stream, the user need first join a live broadcast chan
 	The broadcaster(host) in the live broadcast channel can call `removeInjectStreamUrl` to remove a previously injected media stream.
 
 	```swift
-	//swift
+	// swift
 	let urlPath = "Some online RTMP/HLS url path"
 	agoraKit.removeInjectStreamUrl(urlPath)
 	```
 	
 	```
-	//objective-c
+	// objective-c
 	NSString *urlPath = @"Some online RTMP/HLS url path";
 	[agoraKit removeInjectStreamUrl: urlPath];
 	```
