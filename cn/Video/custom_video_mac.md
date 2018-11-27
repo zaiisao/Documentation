@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Tue Nov 27 2018 02:06:15 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 02:06:32 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -27,19 +27,19 @@ updatedAt: Tue Nov 27 2018 02:06:15 GMT+0000 (UTC)
 
 ```swift
 //swift
-// 推入数据类型为 rawData
+//推入数据类型为 rawData
 agoraKit.pushExternalAudioFrameRawData("your rawData", samples: "per push samples", timestamp: 0)
 
-// 推入数据类型为 CMSampleBuffer
+//推入数据类型为 CMSampleBuffer
 agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 ```
 
 ```objective-c
 //objective-c
-// 推入数据类型为 rawData
+//推入数据类型为 rawData
 [agoraKit pushExternalAudioFrameRawData: "your rawData" samples: "per push samples", timestamp: 0];
 
-// 推入数据类型为 CMSampleBuffer
+//推入数据类型为 CMSampleBuffer
 [agoraKit pushExternalAudioFrameSampleBuffer: "your CMSampleBuffer"];
 ```
 
@@ -63,17 +63,17 @@ Agora SDK 目前提供两种自定义视频源的方法：
 
 	```swift
 	//swift
-	// 协议中的变量
+	//协议中的变量
 		 var consumer: AgoraVideoFrameConsumer?
 	// 调用 consumer 的方法，将视频数据推入Agora SDK:
 
-		// 推入rawData类型
+		 //推入rawData类型
 		 consumer.consumeRawData("your rawData", withTimestamp: CMTimeMake(1, 15), format: "your data format", size: size, rotation: rotation)
 
-		 // 推入CVPixelBuffer
+		 //推入CVPixelBuffer
 		 consumer.consumePixelBuffer("your pixelBuffer", withTimestamp: CMTimeMake(1, 15), rotation: rotation)
 
-	// 协议中的方法
+	//协议中的方法
 	1. 视频采集使用的 Buffer 类型
 		func bufferType() -> AgoraVideoBufferType {
 				return bufferType
@@ -95,20 +95,20 @@ Agora SDK 目前提供两种自定义视频源的方法：
 		func shouldDispose() {
 		}
 	```
-	
+
 	```objective-c
 	//objective-c
-	// 协议中的变量
+	//协议中的变量
 	@synthesize consumer;
 	// 调用 consumer 的方法，将视频数据推入Agora SDK:
 
-		// 推入rawData类型
+		//推入rawData类型
 		[consumer consumeRawData: "your rawData" withTimestamp: CMTimeMake(1, 15) format: "your data format" size: size rotation: rotation];
 
-		// 推入CVPixelBuffer
+		//推入CVPixelBuffer
 		[consumer consumePixelBuffer: "your pixelBuffer" withTimestamp: CMTimeMake(1, 15) rotation: rotation];
 
-	// 协议中的方法
+	//协议中的方法
 	1. 视频采集使用的 Buffer 类型
 		- (AgoraVideoBufferType)bufferType {
 				return AgoraVideoBufferTypePixelBuffer;
@@ -155,14 +155,14 @@ Agora SDK 目前提供两种自定义视频源的方法：
 
 ```swift
 //swift
-// 推入数据类型为 CVPixelBufferRef
+//推入数据类型为 CVPixelBufferRef
 let videoFrame = AgoraVideoFrame()
 videoFrame.format = 12
 videoFrame.time = CMTimeMake(1, 15)
 videoFrame.textureBuf = "Your CVPixelBufferRef"
 videoFrame.ratation = 0
 
-// 推入数据类型为 rawData
+//推入数据类型为 rawData
 let videoFrame = AgoraVideoFrame()
 videoFrame.format = "your data fromat"
 videoFrame.time = CMTimeMake(1, 15)
@@ -177,14 +177,14 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 
 ```objective-c
 //objective-c
-// 推入数据类型为 CVPixelBufferRef
+//推入数据类型为 CVPixelBufferRef
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = 12;
 videoFrame.time = CMTimeMake(1, 15);
 videoFrame.textureBuf = "Your CVPixelBufferRef";
 videoFrame.ratation = 0;
 
-// 推入数据类型为 rawData
+//推入数据类型为 rawData
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = "your data fromat";
 videoFrame.time = CMTimeMake(1, 15);
@@ -208,7 +208,7 @@ videoFrame.ratation = 0;
 
 	```swift
 	//swift
-	// 协议中的方法
+	//协议中的方法
 	1. 希望 Agora SDK 抛出的视频 Buffer 类型
 		func bufferType() -> AgoraVideoBufferType {
 				return bufferType
@@ -251,7 +251,7 @@ videoFrame.ratation = 0;
 
 	```objective-c
 	//objective-c
-	// 协议中的方法
+	//协议中的方法
 	1. 希望 Agora SDK 抛出的视频 Buffer 类型
 		- (AgoraVideoBufferType)bufferType {
 				return AgoraVideoBufferTypePixelBuffer;
@@ -288,7 +288,7 @@ videoFrame.ratation = 0;
 		}
 	```
 
-2. 将遵守了  AgoraVideoSourceProtocol 协议的自定义 VideoRenderer 对象设给 AgoraRtcEngineKit。
+2. 将遵守了 AgoraVideoSourceProtocol 协议的自定义 VideoRenderer 对象设给 AgoraRtcEngineKit。
 
 	```swift
 	//swift
