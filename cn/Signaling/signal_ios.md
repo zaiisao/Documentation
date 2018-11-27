@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 07:46:08 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 07:49:27 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0
@@ -20,7 +20,7 @@ updatedAt: Tue Nov 27 2018 07:46:08 GMT+0000 (UTC)
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#getinstance-android"><span>getInstance()</span></a></td>
+<tr><td><a href="#getinstance-android"><span>public static AgoraAPIOnlySignal getInstance(Context context, String appId)</span></a></td>
 <td>获取 AgoraAPIOnlySignal 实例</td>
 </tr>
 </tbody>
@@ -41,16 +41,16 @@ IAgoraAPI 类为信令的接口类。
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#destroy-android"><span>destroy()</span></a></td>
+<tr><td><a href="#destroy-android"><span>public void destroy</span></a></td>
 <td>销毁信令实例</td>
 </tr>
-<tr><td><a href="#callbackset-android"><span>callbackSet()</span></a></td>
+<tr><td><a href="#callbackset-android"><span>public native void callbackSet(ICallBack handler)</span></a></td>
 <td>为信令实例设置回调对象</td>
 </tr>
-<tr><td><a href="#callbackget-android"><span>callbackGet()</span></a></td>
+<tr><td><a href="#callbackget-android"><span>public ICallBack callbackGet</span></a></td>
 <td>获取信令实例的回调对象</td>
 </tr>
-<tr><td><a href="#login-android"><span>login()</span></a></td>
+<tr><td><a href="#login-android"><span>public void login(String appId, String account, String token, int uid, String deviceID)</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功： 收到 <code>ICallBack</code> 类的 <a href="#onloginsuccess-android"><span>onLoginSuccess</span></a> 回调</li>
@@ -58,7 +58,7 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#login2-android"><span>login2()</span></a></td>
+<tr><td><a href="#login2-android"><span>public void login2(String appId, String account, String token, int uid, String deviceID, int retry_time_in_s, int retry_count)</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功：收到 <code>ICallBack</code> 类的 <a href="#onloginsuccess-android"><span>onLoginSuccess</span></a> 回调</li>
@@ -66,31 +66,31 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#logout-android"><span>logout()</span></a></td>
+<tr><td><a href="#logout-android"><span>public void logout</span></a></td>
 <td>登出信令系统。登出成功将收到 ICallBack 类的 <a href="#onlogout-android"><span>onLogout</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#invoke-android"><span>invoke()</span></a></td>
+<tr><td><a href="#invoke-android"><span>public void invoke(String name, String req, String callID)</span></a></td>
 <td>RPC 远程过程调用方法。可用于用户或频道相关操作。结果通过 <code>ICallBack</code> 类的 <a href="#oninvokeret-android"><span>onInvokeRet</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#queryuserstatus-android"><span>queryUserStatus()</span></a></td>
+<tr><td><a href="#queryuserstatus-android"><span>public void queryUserStatus(String account)</span></a></td>
 <td>查询名为 account 的用户是否在线。结果通过 <code>ICallBack</code> 类的 <a href="#onqueryuserstatusresult-android"><span>onQueryUserStatusResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#setattr-android"><span>setAttr()</span></a></td>
+<tr><td><a href="#setattr-android"><span>public void setAttr(String name, String value)</span></a></td>
 <td>设置当前登录用户的相关属性值。</td>
 </tr>
-<tr><td><a href="#getattr-android"><span>getAttr()</span></a></td>
+<tr><td><a href="#getattr-android"><span>public void getAttr(String name)</span></a></td>
 <td>获取当前登录用户的相关属性值。结果通过 ICallBack 类的 <a href="#onuserattrresult-android"><span>onUserAttrResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getattrall-android"><span>getAttrAll()</span></a></td>
+<tr><td><a href="#getattrall-android"><span>public void getAttrAll</span></a></td>
 <td>获取当前登录用户的全部属性值。结果通过 ICallBack 类的 <a href="#onuserattrallresult-android"><span>onUserAttrAllResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getuserattr-android"><span>getUserAttr()</span></a></td>
+<tr><td><a href="#getuserattr-android"><span>public void getUserAttr(String account, String name)</span></a></td>
 <td>获取名为 account 的用户的 name 属性值。结果通过 ICallBack 类的 <a href="#onuserattrresult-android"><span>onUserAttrResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getuserattrall-android"><span>getUserAttrAll()</span></a></td>
+<tr><td><a href="#getuserattrall-android"><span>public void getUserAttrAll(String account)</span></a></td>
 <td>获取名为 account 的用户的所有属性值。结果通过 ICallBack 类的 <a href="#onuserattrallresult-android"><span>onUserAttrAllResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#messageinstantsend-android"><span>messageInstantSend()</span></a></td>
+<tr><td><a href="#messageinstantsend-android"><span>public void messageInstantSend(String account, int uid, String msg, String msgID)</span></a></td>
 <td><p>向名为 account 的用户发送点对点消息</p>
 <ul>
 <li>成功：自己收到 <code>ICallBack</code> 类的 <a href="#onmessagesendsuccess-android"><span>onMessageSendSuccess</span></a> 回调， 消息接收方收到 <code>ICallback</code> 类的 <a href="#onmessageinstantreceive-android"><span>onMessageInstantReceive</span></a> 回调；</li>
@@ -98,7 +98,7 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channeljoin-android"><span>channelJoin()</span></a></td>
+<tr><td><a href="#channeljoin-android"><span>public void channelJoin(String channelID)</span></a></td>
 <td><p>加入指定频道。</p>
 <ul>
 <li>成功：自己收到 <code>ICallBack</code> 类的 <a href="#onchanneljoined-android"><span>onChannelJoined</span></a> 回调，同频道其他用户收到 <code>ICallback</code> 类的 <a href="#onchanneluserjoined-android"><span>onChannelUserJoined</span></a> 回调；</li>
@@ -106,7 +106,7 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelleave-android"><span>channelLeave()</span></a></td>
+<tr><td><a href="#channelleave-android"><span>public void channelLeave(String channelID)</span></a></td>
 <td><p>退出指定频道。退出成功时：</p>
 <ul>
 <li>频道内所有用户都将收到 <a href="#onchanneluserleaved-android"><span>onChannelUserLeaved</span></a> 回调</li>
@@ -114,19 +114,19 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelqueryusernum-android"><span>channelQueryUserNum()</span></a></td>
+<tr><td><a href="#channelqueryusernum-android"><span>public void channelQueryUserNum(String channelID)</span></a></td>
 <td>查询频道用户数。结果通过 <code>ICallBack</code> 类的 <a href="#onchannelqueryusernumresult-android"><span>onChannelQueryUserNumResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#channelsetattr-android"><span>channelSetAttr()</span></a></td>
+<tr><td><a href="#channelsetattr-android"><span>public void channelSetAttr(String channelID, String name, String value)</span></a></td>
 <td>设置频道属性。设置成功将收到 <code>ICallBack</code> 类的 <a href="#onchannelattrupdated-android"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channeldelattr-android"><span>channelDelAttr()</span></a></td>
+<tr><td><a href="#channeldelattr-android"><span>public void channelDelAttr(String channelID, String name)</span></a></td>
 <td>删除频道属性。删除成功将收到 <code>ICallBack</code> 类的 <a href="#onchannelattrupdated-android"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelclearattr-android"><span>channelClearAttr()</span></a></td>
+<tr><td><a href="#channelclearattr-android"><span>public void channelClearAttr(String channelID)</span></a></td>
 <td>删除所有频道属性。删除成功将收到 <code>ICallBack</code> 类的 <a href="#onchannelattrupdated-android"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#messagechannelsend-android"><span>messageChannelSend()</span></a></td>
+<tr><td><a href="#messagechannelsend-android"><span>public void messageChannelSend(String channelID, String msg, String msgID)</span></a></td>
 <td><p>发送频道消息（消息发送者必须在频道内）</p>
 <ul>
 <li>成功： 自己收到 <code>ICallBack</code> 类的 <a href="#onmessagesendsuccess-android"><span>onMessageSendSuccess</span></a> 回调，频道内所有用户收到 <code>ICallback</code> 类的 <a href="#onmessagechannelreceive-android"><span>onMessageChannelReceive</span></a> 回调；</li>
@@ -134,10 +134,10 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#messagechannelsendforce-android"><span>messageChannelSendForce()</span></a></td>
+<tr><td><a href="#messagechannelsendforce-android"><span>public void messageChannelSendForce(String channelID, String msg, String msgID)</span></a></td>
 <td>发送频道消息（消息发送者不必在频道内）</td>
 </tr>
-<tr><td><a href="#channelinviteuser-android"><span>channelInviteUser()</span></a></td>
+<tr><td><a href="#channelinviteuser-android"><span>public void channelInviteUser(String channelID, String account, int uid)</span></a></td>
 <td><p>邀请名为 account 的用户加入指定频道</p>
 <ul>
 <li>成功： 自己收到 <code>ICallBack</code> 类的 <a href="#oninviteacceptedbypeer-android"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 <code>ICallback</code> 类的 <a href="#callbackset-android"><span>onInviteReceived</span></a> 回调；</li>
@@ -145,7 +145,7 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelinviteuser2-android"><span>channelInviteUser2()</span></a></td>
+<tr><td><a href="#channelinviteuser2-android"><span>public void channelInviteUser2(String channelID, String account, String extra)</span></a></td>
 <td><p>邀请名为 account 的用户加入指定频道，呼叫方可以附带一段额外信息。</p>
 <ul>
 <li>成功： 自己收到 <code>ICallBack</code> 类的 <a href="#oninviteacceptedbypeer-android"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 <code>ICallback</code> 类的 <a href="#callbackset-android"><span>onInviteReceived</span></a> 回调；</li>
@@ -153,22 +153,22 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelinvitedtmf-android"><span>channelInviteDTMF()</span></a></td>
+<tr><td><a href="#channelinvitedtmf-android"><span>public void channelInviteDTMF(String channelID, String phoneNum, String dtmf)</span></a></td>
 <td>发送 DTMF 消息到对端 <code>phoneNum</code> 用户，一般用于 SIP 网关的呼叫。</td>
 </tr>
-<tr><td><a href="#channelinviteaccept-android"><span>channelInviteAccept()</span></a></td>
+<tr><td><a href="#channelinviteaccept-android"><span>public void channelInviteAccept(String channelID, String account, int uid, String extra)</span></a></td>
 <td>接受来自 account 用户的加入指定频道的呼叫邀请。接收后主叫方将收到 <a href="#oninviteacceptedbypeer-android"><span>onInviteAcceptedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviterefuse-android"><span>channelInviteRefuse()</span></a></td>
+<tr><td><a href="#channelinviterefuse-android"><span>public void channelInviteRefuse(String channelID, String account, int uid, String extra)</span></a></td>
 <td>拒绝来自 account 用户的加入指定频道的呼叫邀请。拒绝后主叫方将收到 <a href="#oninviterefusedbypeer-android"><span>onInviteRefusedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviteend-android"><span>channelInviteEnd()</span></a></td>
+<tr><td><a href="#channelinviteend-android"><span>public void channelInviteEnd(String channelID, String account, int uid)</span></a></td>
 <td>终止向 account 用户发送加入指定频道的邀请。终止成功后主叫方将收到 <a href="#oninviteendbymyself-android"><span>onInviteEndByMyself</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#getstatus-android"><span>getStatus()</span></a></td>
+<tr><td><a href="#getstatus-android"><span>public int getStatus</span></a></td>
 <td>获取用户登录状态 （未登录、正在登录、登录成功、正在重连）</td>
 </tr>
-<tr><td><a href="#getsdkversion-android"><span>getSdkVersion()</span></a></td>
+<tr><td><a href="#getsdkversion-android"><span>public int getSdkVersion</span></a></td>
 <td>获取SDK版本，版本号示例：1010104019</td>
 </tr>
 </tbody>
@@ -311,7 +311,7 @@ public void login(String appId,String account,String token,int uid,String device
 
 
 
-> 在测试环境下您可以将参数 token 设为 `_no_need_token` 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 `login` 方法会被忽略。如果希望踢掉老的登录，可以在 `login` 之前调用 `logout` 且不用等退出成功就可登录。
+> 在测试环境下您可以将参数 token 设为 <code>_no_need\_token</code> 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 <code>login</code> 方法会被忽略。如果希望踢掉老的登录，可以在 <code>login</code> 之前调用 <code>logout</code> 且不用等退出成功就可登录。
 
 #### <a name="login2-android"></a>登录 \(login2\)
 
@@ -363,7 +363,7 @@ public void login2(String appId,String account,String token,int uid,String devic
 
 
 
-> 在测试环境下您可以将参数 token 设为 `_no_need_token` 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 当达到 `retry_time_in_s` 或 `retry_count` 其中任一上限时，将触发 `onLoginFailed` 回调并停止重连。
+> 在测试环境下您可以将参数 token 设为 <code>_no\_need\_token</code> 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 当达到 <code>retry\_time\_in\_s</code> 或 <code>retry\_count</code> 其中任一上限时，将触发 <code>onLoginFailed</code> 回调并停止重连。
 
 #### <a name="logout-android"></a>登出 \(logout\)
 
@@ -792,13 +792,13 @@ public void channelSetAttr(String channelID,String name,String value);
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#getinstancewithoutmedia-ios"><span>getInstanceWithoutMedia</span></a></td>
+<tr><td><a href="#getinstancewithoutmedia-ios"><span>+ (AgoraAPI*) getInstanceWithoutMedia:(NSString*)appId</span></a></td>
 <td>获取 AgoraAPI 实例</td>
 </tr>
-<tr><td><a href="#destroy-ios"><span>destroy</span></a></td>
+<tr><td><a href="#destroy-ios"><span>- (void) destroy</span></a></td>
 <td>销毁信令实例</td>
 </tr>
-<tr><td><a href="#login-ios"><span>login</span></a></td>
+<tr><td><a href="#login-ios"><span>- (void) login:(NSString*)appId account:(NSString*)account token:(NSString*)token uid:(uint32_t)uid deviceID:(NSString*)deviceID</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功： 收到 <a href="#onloginsuccess-ios"><span>onLoginSuccess</span></a> 回调</li>
@@ -806,7 +806,7 @@ public void channelSetAttr(String channelID,String name,String value);
 </ul>
 </td>
 </tr>
-<tr><td><a href="#login2-ios"><span>login2</span></a></td>
+<tr><td><a href="#login2-ios"><span>- (void) login2:(NSString*)appId account:(NSString*)account token:(NSString*)token uid:(uint32_t)uid deviceID:(NSString*)deviceID retry_time_in_s:(int)retry_time_in_s retry_count:(int)retry_count</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功： 收到 <a href="#onloginsuccess-ios"><span>onLoginSuccess</span></a> 回调</li>
@@ -814,31 +814,31 @@ public void channelSetAttr(String channelID,String name,String value);
 </ul>
 </td>
 </tr>
-<tr><td><a href="#logout-ios"><span>logout</span></a></td>
+<tr><td><a href="#logout-ios"><span>- (void) logout</span></a></td>
 <td>登出信令系统。登出成功将收到 <a href="#onlogout-ios"><span>onLogout</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#invoke-ios"><span>invoke</span></a></td>
+<tr><td><a href="#invoke-ios"><span>- (void) invoke:(NSString*)name req:(NSString*)req callID:(NSString*)callID</span></a></td>
 <td>RPC 远程过程调用方法。可用于用户或频道相关操作。结果通过 <a href="#oninvokeret-ios"><span>onInvokeRet</span></a> 回调返回。</td>
 </tr>
 <tr><td><a href="#queryuserstatus-ios"><span>- (void) queryUserStatus:(NSString*)account</span></a></td>
 <td>查询名为 account 的用户是否在线。结果通过 <a href="#onqueryuserstatusresult-ios"><span>onQueryUserStatusResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#setattr-ios"><span>setAttr</span></a></td>
+<tr><td><a href="#setattr-ios"><span>- (void) setAttr:(NSString*)name value:(NSString*)value</span></a></td>
 <td>设置当前登录用户的相关属性值。</td>
 </tr>
-<tr><td><a href="#getattr-ios"><span>getAttr</span></a></td>
+<tr><td><a href="#getattr-ios"><span>- (void) getAttr:(NSString*)name</span></a></td>
 <td>获取当前登录用户的相关属性值。结果通过 <a href="#onuserattrresult-ios"><span>onUserAttrResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getattrall-ios"><span>getAttrAll</span></a></td>
+<tr><td><a href="#getattrall-ios"><span>- (void) getAttrAll</span></a></td>
 <td>获取当前登录用户的全部属性值。结果通过 <a href="#onuserattrallresult-ios"><span>onUserAttrAllResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getuserattr-ios"><span>getUserAttr</span></a></td>
+<tr><td><a href="#getuserattr-ios"><span>- (void) getUserAttr:(NSString*)account name:(NSString*)name</span></a></td>
 <td>获取名为 account 的用户的 name 属性值。结果通过 <a href="#onuserattrresult-ios"><span>onUserAttrResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getuserattrall-ios"><span>getUserAttrAll</span></a></td>
+<tr><td><a href="#getuserattrall-ios"><span>- (void) getUserAttrAll:(NSString*)account</span></a></td>
 <td>获取名为 account 的用户的所有属性值。结果通过 <a href="#onuserattrallresult-ios"><span>onUserAttrAllResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#messageinstantsend-ios"><span>messageInstantSend</span></a></td>
+<tr><td><a href="#messageinstantsend-ios"><span>- (void) messageInstantSend:(NSString*)account uid:(uint32_t)uid msg:(NSString*)msg msgID:(NSString*)msgID</span></a></td>
 <td><p>向名为 account 的用户发送点对点消息</p>
 <ul>
 <li>成功： 自己收到 <a href="#onmessagesendsuccess-ios"><span>onMessageSendSuccess</span></a> 回调， 消息接收方收到 <a href="#onmessageinstantreceive-ios"><span>onMessageInstantReceive</span></a> 回调；</li>
@@ -846,7 +846,7 @@ public void channelSetAttr(String channelID,String name,String value);
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channeljoin-ios"><span>channelJoin</span></a></td>
+<tr><td><a href="#channeljoin-ios"><span>- (void) channelJoin:(NSString*)channelID</span></a></td>
 <td><p>加入指定频道。</p>
 <ul>
 <li>成功： 自己收到 <a href="#onchanneljoined-ios"><span>onChannelJoined</span></a> 回调，同频道其他用户收到 <a href="#onchanneluserjoined-ios"><span>onChannelUserJoined</span></a> 回调；</li>
@@ -854,7 +854,7 @@ public void channelSetAttr(String channelID,String name,String value);
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelleave-ios"><span>channelLeave</span></a></td>
+<tr><td><a href="#channelleave-ios"><span>- (void) channelLeave:(NSString*)channelID</span></a></td>
 <td><p>退出指定频道。若退出成功：</p>
 <ul>
 <li>频道内所有用户都将收到 <a href="#onchanneluserleaved-ios"><span>onChannelUserLeaved</span></a> 回调</li>
@@ -862,19 +862,19 @@ public void channelSetAttr(String channelID,String name,String value);
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelqueryusernum-ios"><span>channelQueryUserNum</span></a></td>
+<tr><td><a href="#channelqueryusernum-ios"><span>- (void) channelQueryUserNum:(NSString*)channelID</span></a></td>
 <td>查询频道用户数。结果通过 <a href="#onchannelqueryusernumresult-ios"><span>onChannelQueryUserNumResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#channelsetattr-ios"><span>channelSetAttr</span></a></td>
+<tr><td><a href="#channelsetattr-ios"><span>- (void) channelSetAttr:(NSString*)channelID name:(NSString*)name value:(NSString*)value</span></a></td>
 <td>设置频道属性。设置成功将收到 <a href="#onchannelattrupdated-ios"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channeldelattr-ios"><span>channelDelAttr</span></a></td>
+<tr><td><a href="#channeldelattr-ios"><span>- (void) channelDelAttr:(NSString*)channelID name:(NSString*)name</span></a></td>
 <td>删除频道属性。删除成功将收到 <a href="#onchannelattrupdated-ios"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelclearattr-ios"><span>channelClearAttr</span></a></td>
+<tr><td><a href="#channelclearattr-ios"><span>- (void) channelClearAttr:(NSString*)channelID</span></a></td>
 <td>删除所有频道属性。删除成功将收到 <a href="#onchannelattrupdated-ios"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#messagechannelsend-ios"><span>messageChannelSend</span></a></td>
+<tr><td><a href="#messagechannelsend-ios"><span>- (void) messageChannelSend:(NSString*)channelID msg:(NSString*)msg msgID:(NSString*)msgID</span></a></td>
 <td><p>发送频道消息（消息发送者必须在频道内）</p>
 <ul>
 <li>成功： 自己收到 <a href="#onmessagesendsuccess-ios"><span>onMessageSendSuccess</span></a> 回调，频道内所有用户收到 <a href="#onmessagechannelreceive-ios"><span>onMessageChannelReceive</span></a> 回调；</li>
@@ -882,10 +882,10 @@ public void channelSetAttr(String channelID,String name,String value);
 </ul>
 </td>
 </tr>
-<tr><td><a href="#messagechannelsendforce-ios"><span>messageChannelSendForce</span></a></td>
+<tr><td><a href="#messagechannelsendforce-ios"><span>- (void) messageChannelSendForce:(NSString*)channelID msg:(NSString*)msg msgID:(NSString*)msgID</span></a></td>
 <td>发送频道消息（消息发送者不必在频道内）</td>
 </tr>
-<tr><td><a href="#channelinviteuser-ios"><span>channelInviteUser</span></a></td>
+<tr><td><a href="#channelinviteuser-ios"><span>- (void) channelInviteUser:(NSString*)channelID account:(NSString*)account uid:(uint32_t)uid</span></a></td>
 <td><p>邀请名为 account 的用户加入指定频道</p>
 <ul>
 <li>成功： 自己收到 <a href="#oninviteacceptedbypeer-ios"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 <a href="#oninvitereceived-ios"><span>onInviteReceived</span></a> 回调；</li>
@@ -893,7 +893,7 @@ public void channelSetAttr(String channelID,String name,String value);
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelinviteuser2-ios"><span>channelInviteUser2</span></a></td>
+<tr><td><a href="#channelinviteuser2-ios"><span>- (void) channelInviteUser2:(NSString*)channelID account:(NSString*)account extra:(NSString*)extra</span></a></td>
 <td><p>邀请名为 account 的用户加入指定频道，呼叫方可以附带一段额外信息。</p>
 <ul>
 <li>成功： 自己收到 <a href="#oninviteacceptedbypeer-ios"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 <a href="#oninvitereceived-ios"><span>onInviteReceived</span></a> 回调；</li>
@@ -901,22 +901,22 @@ public void channelSetAttr(String channelID,String name,String value);
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelinvitedtmf-ios"><span>channelInviteDTMF</span></a></td>
+<tr><td><a href="#channelinvitedtmf-ios"><span>- (void) channelInviteDTMF:(NSString*)channelID phoneNum:(NSString*)phoneNum dtmf:(NSString*)dtmf</span></a></td>
 <td>发送 DTMF 消息到对端 phoneNum 用户，一般用于 SIP 网关的呼叫。</td>
 </tr>
-<tr><td><a href="#channelinviteaccept-ios"><span>channelInviteAccept</span></a></td>
+<tr><td><a href="#channelinviteaccept-ios"><span>- (void) channelInviteAccept:(NSString*)channelID account:(NSString*)account uid:(uint32_t)uid extra:(NSString*)extra</span></a></td>
 <td>接受来自 account 用户的加入指定频道的呼叫邀请。接收后主叫方将收到 <a href="#oninviteacceptedbypeer-ios"><span>onInviteAcceptedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviterefuse-ios"><span>channelInviteRefuse</span></a></td>
+<tr><td><a href="#channelinviterefuse-ios"><span>- (void) channelInviteRefuse:(NSString*)channelID account:(NSString*)account uid:(uint32_t)uid extra:(NSString*)extra</span></a></td>
 <td>拒绝来自 account 用户的加入指定频道的呼叫邀请。拒绝后主叫方将收到 <a href="#oninviterefusedbypeer-ios"><span>onInviteRefusedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviteend-ios"><span>channelInviteEnd</span></a></td>
+<tr><td><a href="#channelinviteend-ios"><span>- (void) channelInviteEnd:(NSString*)channelID account:(NSString*)account uid:(uint32_t)uid</span></a></td>
 <td>终止向 account 用户发送加入指定频道的邀请。终止成功后主叫方将收到 <a href="#oninviteendbymyself-ios"><span>onInviteEndByMyself</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#getstatus-ios"><span>getStatus</span></a></td>
+<tr><td><a href="#getstatus-ios"><span>- (int) getStatus</span></a></td>
 <td>获取用户登录状态 （未登录、正在登录、登录成功、正在重连）</td>
 </tr>
-<tr><td><a href="#getsdkversion-ios"><span>getSdkVersion</span></a></td>
+<tr><td><a href="#getsdkversion-ios"><span>- (int) getSdkVersion</span></a></td>
 <td>获取SDK版本，版本号示例：1010104019</td>
 </tr>
 </tbody>
@@ -1003,7 +1003,7 @@ public void channelSetAttr(String channelID,String name,String value);
 
 
 
-> 在测试环境下您可以将参数 token 设为 `_no_need_token` 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 `login` 方法会被忽略。如果希望踢掉老的登录，可以在 `login` 之前调用 `logout` 且不用等退出成功就可登录。
+> 在测试环境下您可以将参数 token 设为 <code>_no_need_token</code> 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 <code>login</code> 方法会被忽略。如果希望踢掉老的登录，可以在 <code>login</code> 之前调用 <code>logout</code> 且不用等退出成功就可登录。
 
 #### <a name="login2-ios"></a>登录 \(login2:account:token:uid:deviceID:retry\_time\_in\_s:retry\_count:\)
 
@@ -1885,97 +1885,97 @@ public void channelSetAttr(String channelID,String name,String value);
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onreconnecting-ios"><span>onReconnecting</span></a></td>
+<tr><td><a href="#onreconnecting-ios"><span>@property (copy) void(^onReconnecting)(uint32_t nretry)</span></a></td>
 <td>连接丢失回调</td>
 </tr>
-<tr><td><a href="#onerror-ios"><span>onError</span></a></td>
+<tr><td><a href="#onerror-ios"><span>@property (copy) void(^onError)(NSString* name,AgoraEcode ecode,NSString* desc)</span></a></td>
 <td>出错回调</td>
 </tr>
-<tr><td><a href="#onqueryuserstatusresult-ios"><span>onQueryUserStatusResult</span></a></td>
+<tr><td><a href="#onqueryuserstatusresult-ios"><span>@property (copy) void(^onQueryUserStatusResult)(NSString* name,NSString* status)</span></a></td>
 <td>用户状态查询回调</td>
 </tr>
-<tr><td><a href="#onreconnected-ios"><span>onReconnected</span></a></td>
+<tr><td><a href="#onreconnected-ios"><span>@property (copy) void(^onReconnected)(int fd)</span></a></td>
 <td>重连成功回调</td>
 </tr>
-<tr><td><a href="#onloginsuccess-ios"><span>onLoginSuccess</span></a></td>
+<tr><td><a href="#onloginsuccess-ios"><span>@property (copy) void(^onLoginSuccess)(uint32_t uid,int fd)</span></a></td>
 <td>登录成功回调</td>
 </tr>
-<tr><td><a href="#onlogout-ios"><span>onLogout</span></a></td>
+<tr><td><a href="#onlogout-ios"><span>@property (copy) void(^onLogout)(AgoraEcode ecode)</span></a></td>
 <td>退出登录回调</td>
 </tr>
-<tr><td><a href="#onloginfailed-ios"><span>onLoginFailed</span></a></td>
+<tr><td><a href="#onloginfailed-ios"><span>@property (copy) void(^onLoginFailed)(AgoraEcode ecode)</span></a></td>
 <td>登录失败回调</td>
 </tr>
-<tr><td><a href="#oninvokeret-ios"><span>onInvokeRet</span></a></td>
+<tr><td><a href="#oninvokeret-ios"><span>@property (copy) void(^onInvokeRet)(NSString* callID,NSString* err,NSString* resp)</span></a></td>
 <td>RPC 远程过程调用成功回调</td>
 </tr>
-<tr><td><a href="#onchanneljoined-ios"><span>onChannelJoined</span></a></td>
+<tr><td><a href="#onchanneljoined-ios"><span>@property (copy) void(^onChannelJoined)(NSString* channelID)</span></a></td>
 <td>加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneljoinfailed-ios"><span>onChannelJoinFailed</span></a></td>
+<tr><td><a href="#onchanneljoinfailed-ios"><span>@property (copy) void(^onChannelJoinFailed)(NSString* channelID,AgoraEcode ecode)</span></a></td>
 <td>加入频道失败回调</td>
 </tr>
-<tr><td><a href="#onchannelleaved-ios"><span>onChannelLeaved</span></a></td>
+<tr><td><a href="#onchannelleaved-ios"><span>@property (copy) void(^onChannelLeaved)(NSString* channelID,AgoraEcode ecode)</span></a></td>
 <td>离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserjoined-ios"><span>onChannelUserJoined</span></a></td>
+<tr><td><a href="#onchanneluserjoined-ios"><span>@property (copy) void(^onChannelUserJoined)(NSString* account,uint32_t uid)</span></a></td>
 <td>其他用户加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserleaved-ios"><span>onChannelUserLeaved</span></a></td>
+<tr><td><a href="#onchanneluserleaved-ios"><span>@property (copy) void(^onChannelUserLeaved)(NSString* account,uint32_t uid)</span></a></td>
 <td>其他用户离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserlist-ios"><span>onChannelUserList</span></a></td>
+<tr><td><a href="#onchanneluserlist-ios"><span>@property (copy) void(^onChannelUserList)(NSMutableArray* accounts, NSMutableArray* uids)</span></a></td>
 <td>获取频道内用户列表回调</td>
 </tr>
-<tr><td><a href="#onchannelqueryusernumresult-ios"><span>onChannelQueryUserNumResult</span></a></td>
+<tr><td><a href="#onchannelqueryusernumresult-ios"><span>@property (copy) void(^onChannelQueryUserNumResult)(NSString* channelID,AgoraEcode ecode,int num)</span></a></td>
 <td>返回查询的用户数量回调</td>
 </tr>
-<tr><td><a href="#onchannelattrupdated-ios"><span>onChannelAttrUpdated</span></a></td>
+<tr><td><a href="#onchannelattrupdated-ios"><span>@property (copy) void(^onChannelAttrUpdated)(NSString* channelID,NSString* name,NSString* value,NSString* type)</span></a></td>
 <td>频道属性发生变化回调</td>
 </tr>
-<tr><td><a href="#oninvitereceived-ios"><span>onInviteReceived</span></a></td>
+<tr><td><a href="#oninvitereceived-ios"><span>@property (copy) void(^onInviteReceived)(NSString* channelID,NSString* account,uint32_t uid, NSString* extra)</span></a></td>
 <td>收到呼叫邀请回调</td>
 </tr>
-<tr><td><a href="#oninvitereceivedbypeer-ios"><span>onInviteReceivedByPeer</span></a></td>
+<tr><td><a href="#oninvitereceivedbypeer-ios"><span>@property (copy) void(^onInviteReceivedByPeer)(NSString* channelID,NSString* account,uint32_t uid)</span></a></td>
 <td>远端已收到呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteacceptedbypeer-ios"><span>onInviteAcceptedByPeer</span></a></td>
+<tr><td><a href="#oninviteacceptedbypeer-ios"><span>@property (copy) void(^onInviteAcceptedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra)</span></a></td>
 <td>远端已接受呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviterefusedbypeer-ios"><span>onInviteRefusedByPeer</span></a></td>
+<tr><td><a href="#oninviterefusedbypeer-ios"><span>@property (copy) void(^onInviteRefusedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra)</span></a></td>
 <td>对方已拒绝呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitefailed-ios"><span>onInviteFailed</span></a></td>
+<tr><td><a href="#oninvitefailed-ios"><span>@property (copy) void(^onInviteFailed)(NSString* channelID,NSString* account,uint32_t uid,AgoraEcode ecode,NSString* extra)</span></a></td>
 <td>呼叫失败回调</td>
 </tr>
-<tr><td><a href="#oninviteendbypeer-ios"><span>onInviteEndByPeer</span></a></td>
+<tr><td><a href="#oninviteendbypeer-ios"><span>@property (copy) void(^onInviteEndByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra)</span></a></td>
 <td>对方已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteendbymyself-ios"><span>onInviteEndByMyself</span></a></td>
+<tr><td><a href="#oninviteendbymyself-ios"><span>@property (copy) void(^onInviteEndByMyself)(NSString* channelID,NSString* account,uint32_t uid)</span></a></td>
 <td>本地已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitemsg-ios"><span>onInviteMsg</span></a></td>
+<tr><td><a href="#oninvitemsg-ios"><span>@property (copy) void(^onInviteMsg)(NSString* channelID,NSString* account,uint32_t uid,NSString* msgType,NSString* msgData,NSString* extra)</span></a></td>
 <td>本地已收到消息回调</td>
 </tr>
-<tr><td><a href="#onmessagesenderror-ios"><span>onMessageSendError</span></a></td>
+<tr><td><a href="#onmessagesenderror-ios"><span>@property (copy) void(^onMessageSendError)(NSString* messageID,AgoraEcode ecode)</span></a></td>
 <td>消息发送失败回调</td>
 </tr>
-<tr><td><a href="#onmessagesendsuccess-ios"><span>onMessageSendSuccess</span></a></td>
+<tr><td><a href="#onmessagesendsuccess-ios"><span>@property (copy) void(^onMessageSendSuccess)(NSString* messageID)</span></a></td>
 <td>消息已发送成功回调</td>
 </tr>
-<tr><td><a href="#onmessageinstantreceive-ios"><span>onMessageInstantReceive</span></a></td>
+<tr><td><a href="#onmessageinstantreceive-ios"><span>@property (copy) void(^onMessageInstantReceive)(NSString* account,uint32_t uid,NSString* msg)</span></a></td>
 <td>接收方收到消息时接收方收到的回调</td>
 </tr>
-<tr><td><a href="#onmessagechannelreceive-ios"><span>onMessageChannelReceive</span></a></td>
+<tr><td><a href="#onmessagechannelreceive-ios"><span>@property (copy) void(^onMessageChannelReceive)(NSString* channelID,NSString* account,uint32_t uid,NSString* msg)</span></a></td>
 <td>收到频道消息回调</td>
 </tr>
-<tr><td><a href="#onlog-ios"><span>onLog</span></a></td>
+<tr><td><a href="#onlog-ios"><span>@property (copy) void(^onLog)(NSString* txt)</span></a></td>
 <td>已打印日志回调</td>
 </tr>
-<tr><td><a href="#onuserattrresult-ios"><span>onUserAttrResult</span></a></td>
+<tr><td><a href="#onuserattrresult-ios"><span>@property (copy) void(^onUserAttrResult)(NSString* account,NSString* name,NSString* value)</span></a></td>
 <td>已获取用户属性查询结果回调</td>
 </tr>
-<tr><td><a href="#onuserattrallresult-ios"><span>onUserAttrAllResult</span></a></td>
+<tr><td><a href="#onuserattrallresult-ios"><span>@property (copy) void(^onUserAttrAllResult)(NSString* account, NSString* value)</span></a></td>
 <td>已获取所有用户属性查询结果回调</td>
 </tr>
 </tbody>
@@ -3177,7 +3177,7 @@ public void channelInviteUser2(String channelID,String account,String extra);
 
 
 
-> SIP 呼叫时你不需要设置 `_require_peer_online` 字段。
+> SIP 呼叫时你不需要设置 <code>\_require\_peer\_online</code> 字段。
 
 #### <a name="channelinvitedtmf-android"></a>向远端发送DTMF消息 \(channelInviteDTMF\)
 
