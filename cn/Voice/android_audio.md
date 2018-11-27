@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 09:49:45 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 09:49:53 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
@@ -22,7 +22,7 @@ updatedAt: Tue Nov 27 2018 09:49:45 GMT+0000 (UTC)
 
 -   Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)
 
-下载的文件包括 libs 文件和 sample 文件，其中 `libs` 文件包括：
+下载的文件包括 libs 文件和 sample 文件，其中 libs 文件包括：
 
 <table>
 <colgroup>
@@ -75,15 +75,15 @@ updatedAt: Tue Nov 27 2018 09:49:45 GMT+0000 (UTC)
 
   ![](https://web-cdn.agora.io/docs-files/1543305505192)
 
-> -   确保路径名称不包含中文字符。如果路径包含中文字符，则代码无法编译成功且会显示包含随机 ASCII 字符的错误信息。
+> 确保路径名称不包含中文字符。如果路径包含中文字符，则代码无法编译成功且会显示包含随机 ASCII 字符的错误信息。
 
-2. 添加 `libs` 文件包。
+2. 添加 libs 文件包。
 
-   根据步骤 1 中预设的路径添加 `libs` 文件包。
+   根据步骤 1 中预设的路径添加 libs 文件包。
 
 3. 添加 sourceSets。
 
-   在 `build.gradle` 文件里, 设置 `sourceSets` 的存放路径，该路径必须与 `libs` 路径一致。
+   在 `build.gradle` 文件里, 设置 `sourceSets` 的存放路径，该路径必须与 libs 路径一致。
 
    ```
    android {
