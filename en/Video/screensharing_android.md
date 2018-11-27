@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 06:24:22 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:24:26 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
@@ -14,7 +14,7 @@ Screen share has extensive application in the following scenarios:
 - For a video conference, the speaker can share the image of the local file, web page, and PPT with other users in the channel.
 - For an online class, the teacher can share the image of the slides or notes with the students.
 
-## Implementations
+## Implementation
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for details.
 
@@ -24,28 +24,28 @@ Agora SDK does not provide specific APIs for screen sharing on the Android platf
 - Take the image data retrived from the SurfaceView callback as the external video source. Call `pushExternalVideoFrame` to transfer the image data to the remote user.
 
 ```java
-    MediaProjectionManager projectManager = (MediaProjectionManager) mContext.getSystemService(
+MediaProjectionManager projectManager = (MediaProjectionManager) mContext.getSystemService(
 Context.MEDIA_PROJECTION_SERVICE);
 
-    // create the intent for screen capture. Call startActivityForResult() to use the sharing funciton
-    Intent intent = projectManager.createScreenCaptureIntent();
-    startActivityForResult(intent);
+// create the intent for screen capture. Call startActivityForResult() to use the sharing funciton
+Intent intent = projectManager.createScreenCaptureIntent();
+startActivityForResult(intent);
 
-    MediaProjection projection;
-    VirtualDisplay display;
+MediaProjection projection;
+VirtualDisplay display;
 
-    // Override and implement onActivityResult() method of the Activity where you just called startActivityForResult()
-    @Override
-    onActivityResult(int requestCode, int resultCode, Intent resuleData) {
-        projection = projectManager.getMediaProjection(resultCode, resultData);
-        display = projection.createVirtualDisplay(name, width, height, dpi, flags, surface, callback, handler);
-    }
+// Override and implement onActivityResult() method of the Activity where you just called startActivityForResult()
+@Override
+onActivityResult(int requestCode, int resultCode, Intent resuleData) {
+    projection = projectManager.getMediaProjection(resultCode, resultData);
+    display = projection.createVirtualDisplay(name, width, height, dpi, flags, surface, callback, handler);
+}
 
-    // The texture retrieved from the Surface will be sent by the SDK
-    rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
+// The texture retrieved from the Surface will be sent by the SDK
+rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
 
-    // Stop screen sharing
-    projection.stop();
+// Stop screen sharing
+projection.stop();
 ```
 
 You can also refer to the [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Android#agora-screen-sharing-android) Sample Code to implement screen sharing on Android.
