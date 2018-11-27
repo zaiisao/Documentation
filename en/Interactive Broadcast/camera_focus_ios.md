@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 09:02:24 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 09:02:32 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -20,7 +20,7 @@ Before proceeding, ensure that you have finished preparing the development envir
 // swift
 // Check if auto face focus is supported and start focusing
 let isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
-agoraKit. setCameraAutoFocusFaceModeEnabled(isSupported)
+agoraKit.setCameraAutoFocusFaceModeEnabled(isSupported)
 
 // Check if manual focus is suppoeted and start focusing
 let isSupported = agoraKit.isCameraFocusPositionInPreviewSupported()
