@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 05:31:05 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:31:09 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -17,32 +17,32 @@ Agora SDK provides a set of camera management methods on the Android platform, w
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md) for details.
 
 ```swift
-//swift
-//Check if auto face focus is supported and start focusing
+// swift
+// Check if auto face focus is supported and start focusing
 let isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
 agoraKit. setCameraAutoFocusFaceModeEnabled(isSupported)
 
-//Check if manual focus is suppoeted and start focusing
+// Check if manual focus is suppoeted and start focusing
 let isSupported = agoraKit.isCameraFocusPositionInPreviewSupported()
 
 if isSupported {
-	//Set the camera focus at (50, 100)
+	// Set the camera focus at (50, 100)
 	let point = CGPoint(x: 50, y: 100)
 	agoraKit.setCameraFocusPositionInPreview(point)
 }
 ```
 
 ```objective-c
-//objective-c
-//Check if auto face focus is supported and start focusing
+// objective-c
+// Check if auto face focus is supported and start focusing
 Bool isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
 [agoraKit setCameraAutoFocusFaceModeEnabled: isSupported];
 
-//Check if manual focus is supported and start focusing
+// Check if manual focus is supported and start focusing
 let isSupported = [agoraKit isCameraFocusPositionInPreviewSupported];
 
 if (isSupported) {
-	//Set the camera focus at (50, 100)
+	// Set the camera focus at (50, 100)
 	CGPoint *point = CGPointMake(50, 100);
 	[agoraKit setCameraFocusPositionInPreview: point];
 }
