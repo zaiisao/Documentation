@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Tue Nov 27 2018 07:05:51 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 07:05:58 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -307,6 +307,7 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 <li>0: (Default) Communication mode (CHANNEL_PROFILE_COMMUNICATION). This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
 <li>1: Live broadcast (CHANNEL_PROFILE_LIVE_BROADCAST). The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <code>setClientRole</code>. </li>
 </ul>
+The Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
 </td>
 </tr>
 <tr><td><code>streamType</code></td>
