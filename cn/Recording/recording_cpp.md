@@ -3,7 +3,7 @@
 title: 录制 API
 description: 
 platform: CPP
-updatedAt: Tue Nov 27 2018 06:19:22 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 07:10:32 GMT+0000 (UTC)
 ---
 # 录制 API
 > 版本：v2.2.3
