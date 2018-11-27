@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 08:08:29 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 09:49:52 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0
@@ -1120,97 +1120,97 @@ updatedAt: Tue Nov 27 2018 08:08:29 GMT+0000 (UTC)
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onreconnecting-ios"><span>onReconnecting)(uint32_t nretry)</span></a></td>
+<tr><td><a href="#onreconnecting-ios"><span>onReconnecting</span></a></td>
 <td>连接丢失回调</td>
 </tr>
-<tr><td><a href="#onerror-ios"><span>onError)(NSString* name,AgoraEcode ecode,NSString* desc)</span></a></td>
+<tr><td><a href="#onerror-ios"><span>onError</span></a></td>
 <td>出错回调</td>
 </tr>
-<tr><td><a href="#onqueryuserstatusresult-ios"><span>onQueryUserStatusResult)(NSString* name,NSString* status)</span></a></td>
+<tr><td><a href="#onqueryuserstatusresult-ios"><span>onQueryUserStatusResult</span></a></td>
 <td>用户状态查询回调</td>
 </tr>
-<tr><td><a href="#onreconnected-ios"><span>onReconnected)(int fd)</span></a></td>
+<tr><td><a href="#onreconnected-ios"><span>onReconnected</span></a></td>
 <td>重连成功回调</td>
 </tr>
-<tr><td><a href="#onloginsuccess-ios"><span>onLoginSuccess)(uint32_t uid,int fd)</span></a></td>
+<tr><td><a href="#onloginsuccess-ios"><span>onLoginSuccess</span></a></td>
 <td>登录成功回调</td>
 </tr>
-<tr><td><a href="#onlogout-ios"><span>onLogout)(AgoraEcode ecode)</span></a></td>
+<tr><td><a href="#onlogout-ios"><span>onLogout</span></a></td>
 <td>退出登录回调</td>
 </tr>
-<tr><td><a href="#onloginfailed-ios"><span>onLoginFailed)(AgoraEcode ecode)</span></a></td>
+<tr><td><a href="#onloginfailed-ios"><span>onLoginFailed</span></a></td>
 <td>登录失败回调</td>
 </tr>
-<tr><td><a href="#oninvokeret-ios"><span>onInvokeRet)(NSString* callID,NSString* err,NSString* resp)</span></a></td>
+<tr><td><a href="#oninvokeret-ios"><span>onInvokeRet</span></a></td>
 <td>RPC 远程过程调用成功回调</td>
 </tr>
-<tr><td><a href="#onchanneljoined-ios"><span>onChannelJoined)(NSString* channelID)</span></a></td>
+<tr><td><a href="#onchanneljoined-ios"><span>onChannelJoined</span></a></td>
 <td>加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneljoinfailed-ios"><span>onChannelJoinFailed)(NSString* channelID,AgoraEcode ecode)</span></a></td>
+<tr><td><a href="#onchanneljoinfailed-ios"><span>onChannelJoinFailed</span></a></td>
 <td>加入频道失败回调</td>
 </tr>
-<tr><td><a href="#onchannelleaved-ios"><span>onChannelLeaved)(NSString* channelID,AgoraEcode ecode)</span></a></td>
+<tr><td><a href="#onchannelleaved-ios"><span>onChannelLeaved</span></a></td>
 <td>离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserjoined-ios"><span>onChannelUserJoined)(NSString* account,uint32_t uid)</span></a></td>
+<tr><td><a href="#onchanneluserjoined-ios"><span>onChannelUserJoined</span></a></td>
 <td>其他用户加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserleaved-ios"><span>onChannelUserLeaved)(NSString* account,uint32_t uid)</span></a></td>
+<tr><td><a href="#onchanneluserleaved-ios"><span>onChannelUserLeaved</span></a></td>
 <td>其他用户离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserlist-ios"><span>onChannelUserList)(NSMutableArray* accounts, NSMutableArray* uids)</span></a></td>
+<tr><td><a href="#onchanneluserlist-ios"><span>onChannelUserList</span></a></td>
 <td>获取频道内用户列表回调</td>
 </tr>
-<tr><td><a href="#onchannelqueryusernumresult-ios"><span>onChannelQueryUserNumResult)(NSString* channelID,AgoraEcode ecode,int num)</span></a></td>
+<tr><td><a href="#onchannelqueryusernumresult-ios"><span>onChannelQueryUserNumResult</span></a></td>
 <td>返回查询的用户数量回调</td>
 </tr>
-<tr><td><a href="#onchannelattrupdated-ios"><span>onChannelAttrUpdated)(NSString* channelID,NSString* name,NSString* value,NSString* type)</span></a></td>
+<tr><td><a href="#onchannelattrupdated-ios"><span>onChannelAttrUpdated</span></a></td>
 <td>频道属性发生变化回调</td>
 </tr>
-<tr><td><a href="#oninvitereceived-ios"><span>onInviteReceived)(NSString* channelID,NSString* account,uint32_t uid, NSString* extra)</span></a></td>
+<tr><td><a href="#oninvitereceived-ios"><span>onInviteReceived</span></a></td>
 <td>收到呼叫邀请回调</td>
 </tr>
-<tr><td><a href="#oninvitereceivedbypeer-ios"><span>onInviteReceivedByPeer)(NSString* channelID,NSString* account,uint32_t uid)</span></a></td>
+<tr><td><a href="#oninvitereceivedbypeer-ios"><span>onInviteReceivedByPeer</span></a></td>
 <td>远端已收到呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteacceptedbypeer-ios"><span>onInviteAcceptedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra)</span></a></td>
+<tr><td><a href="#oninviteacceptedbypeer-ios"><span>onInviteAcceptedByPeer</span></a></td>
 <td>远端已接受呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviterefusedbypeer-ios"><span>onInviteRefusedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra)</span></a></td>
+<tr><td><a href="#oninviterefusedbypeer-ios"><span>onInviteRefusedByPeer</span></a></td>
 <td>cv对方已拒绝呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitefailed-ios"><span>onInviteFailed)(NSString* channelID,NSString* account,uint32_t uid,AgoraEcode ecode,NSString* extra)</span></a></td>
+<tr><td><a href="#oninvitefailed-ios"><span>onInviteFailed</span></a></td>
 <td>呼叫失败回调</td>
 </tr>
-<tr><td><a href="#oninviteendbypeer-ios"><span>onInviteEndByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra)</span></a></td>
+<tr><td><a href="#oninviteendbypeer-ios"><span>onInviteEndByPeer</span></a></td>
 <td>对方已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteendbymyself-ios"><span>onInviteEndByMyself)(NSString* channelID,NSString* account,uint32_t uid)</span></a></td>
+<tr><td><a href="#oninviteendbymyself-ios"><span>onInviteEndByMyself</span></a></td>
 <td>本地已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitemsg-ios"><span>onInviteMsg)(NSString* channelID,NSString* account,uint32_t uid,NSString* msgType,NSString* msgData,NSString* extra)</span></a></td>
+<tr><td><a href="#oninvitemsg-ios"><span>onInviteMsg</span></a></td>
 <td>本地已收到消息回调</td>
 </tr>
-<tr><td><a href="#onmessagesenderror-ios"><span>onMessageSendError)(NSString* messageID,AgoraEcode ecode)</span></a></td>
+<tr><td><a href="#onmessagesenderror-ios"><span>onMessageSendError</span></a></td>
 <td>消息发送失败回调</td>
 </tr>
-<tr><td><a href="#onmessagesendsuccess-ios"><span>onMessageSendSuccess)(NSString* messageID)</span></a></td>
+<tr><td><a href="#onmessagesendsuccess-ios"><span>onMessageSendSuccess</span></a></td>
 <td>消息已发送成功回调</td>
 </tr>
-<tr><td><a href="#onmessageinstantreceive-ios"><span>onMessageInstantReceive)(NSString* account,uint32_t uid,NSString* msg)</span></a></td>
+<tr><td><a href="#onmessageinstantreceive-ios"><span>onMessageInstantReceive</span></a></td>
 <td>接收方收到消息时接收方收到的回调</td>
 </tr>
-<tr><td><a href="#onmessagechannelreceive-ios"><span>onMessageChannelReceive)(NSString* channelID,NSString* account,uint32_t uid,NSString* msg)</span></a></td>
+<tr><td><a href="#onmessagechannelreceive-ios"><span>onMessageChannelReceive</span></a></td>
 <td>收到频道消息回调</td>
 </tr>
-<tr><td><a href="#onlog-ios"><span>onLog)(NSString* txt)</span></a></td>
+<tr><td><a href="#onlog-ios"><span>onLog</span></a></td>
 <td>已打印日志回调</td>
 </tr>
-<tr><td><a href="#onuserattrresult-ios"><span>onUserAttrResult)(NSString* account,NSString* name,NSString* value)</span></a></td>
+<tr><td><a href="#onuserattrresult-ios"><span>onUserAttrResult</span></a></td>
 <td>已获取用户属性查询结果回调</td>
 </tr>
-<tr><td><a href="#onuserattrallresult-ios"><span>onUserAttrAllResult)(NSString* account, NSString* value)</span></a></td>
+<tr><td><a href="#onuserattrallresult-ios"><span>onUserAttrAllResult</span></a></td>
 <td>已获取所有用户属性查询结果回调</td>
 </tr>
 </tbody>
