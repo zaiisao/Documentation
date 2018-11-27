@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Fri Nov 02 2018 04:01:35 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:51:24 GMT+0000 (UTC)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
