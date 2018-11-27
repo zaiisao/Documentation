@@ -3,7 +3,7 @@
 title: 摄像头对焦
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 09:01:41 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 09:01:49 GMT+0000 (UTC)
 ---
 # 摄像头对焦
 ## 功能简介
@@ -20,7 +20,7 @@ Agora SDK 在 iOS 平台提供整套的摄像头管理方法，方便用户切�
 // swift
 // 检测当前设备是否支持人脸自动对焦并设置
 let isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
-agoraKit. setCameraAutoFocusFaceModeEnabled(isSupported)
+agoraKit.setCameraAutoFocusFaceModeEnabled(isSupported)
 
 // 检测当前设备是否支持手动对焦功能并设置
 let isSupported = agoraKit.isCameraFocusPositionInPreviewSupported()
