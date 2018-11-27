@@ -3,13 +3,13 @@
 title: Enable Interoperability 
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 06:29:47 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:29:51 GMT+0000 (UTC)
 ---
 # Enable Interoperability 
 ## Introduction
 To **enable interoperability** means that developers can enable real-time audio and video call services by integrating SDKs of different platfroms to their App, so that users of the App can join the same channel and interop with each other either from a mobile device (iOS  or Android), or from a desktop device (Windows or macOS), or even from a Web browser or Web App.
 
-## Implementations
+## Implementation
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md) for more information.
 
 To enable interoperability between a mobile device and a Web browser or App, you need to do settings on both platforms. Notice that in the communication mode, interoperability is enabled by default and requires no further configuration.
@@ -17,16 +17,16 @@ To enable interoperability between a mobile device and a Web browser or App, you
 * For the mobile device:  call the `enableWebSdkInteroperability` API method.
 
 	```java
-	//java
-	//ensure that this api is called from native side to interop with web sdk
+	// java
+	// ensure that this api is called from native side to interop with web sdk
 	rtcEngine.enableWebSdkInteroperability(true);
 	```
 
 * For the Web: set the `mode` argument in the `createClient` API as `'live'`.
 
 	```javascript
-	//javascript
-	//make sure corrent mode and codec is picked
+	// javascript
+	// make sure corrent mode and codec is picked
 	var client = AgoraRTC.createClient({ mode: 'live', codec: 'h264' });
 	```
 
