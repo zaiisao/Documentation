@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 06:24:41 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 06:24:45 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
@@ -14,7 +14,7 @@ Screen share has extensive application in the following scenarios:
 - For a video conference, the speaker can share the image of the local file, web page, and PPT with other users in the channel.
 - For an online class, the teacher can share the image of the slides or notes with the students.
 
-## Implementations
+## Implementation
 
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/ios_video.md) for details.
 
@@ -25,7 +25,7 @@ Screen sharing on the iOS platform is implemented with the following steps:
 - Use the Agora SDK to transfer the video stream.
 
 ```
-//swift
+// swift
 override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBufferType: RPSampleBufferType) {
         DispatchQueue.main.async {
             switch sampleBufferType {
@@ -44,7 +44,7 @@ override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBuf
 ```
 
 ```objective-c
-//objective-c
+// objective-c
 - (void)processSampleBuffer:(CMSampleBufferRef)sampleBuffer withType:(RPSampleBufferType)sampleBufferType {
     dispatch_async(dispatch_get_main_queue(), ^{
     	switch (sampleBufferType) {
