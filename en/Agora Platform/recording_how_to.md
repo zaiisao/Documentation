@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Wed Nov 28 2018 02:26:13 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 02:26:20 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ### How do you check the recording permissions?
@@ -52,3 +52,5 @@ For example, the recording file needs to be saved as "root directory/dates/uid.a
 ### Can I record the voice or video of a specific user?
 This function is not supported. You will record the audio or video of all users.
 
+### Must the Recording SDK use the same channel profile as the Agora Native/Web SDK?
+Yes. If not, issues may occur.
