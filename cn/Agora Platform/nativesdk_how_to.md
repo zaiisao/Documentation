@@ -3,7 +3,7 @@
 title: Native SDK 相关
 description: 
 platform: Native SDK 相关
-updatedAt: Wed Nov 28 2018 08:36:55 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 08:37:01 GMT+0000 (UTC)
 ---
 # Native SDK 相关
 ## 踢人API
@@ -45,9 +45,9 @@ Restful 踢人 API：`https://api.agora.io/dev/v1/kicking-rule `，具体使用�
 * 监控 `onAudioVolumeIndication` 收集频道内用户音量值，判断客户端采集音量是否正常；
 * 监控 `onRecordFrame` 验证音频前处理阶段麦克风采集的声音是否有问题。
 
-#### onError 中重复调用 leaveChannel 导致报错 18
+#### onError 中重复调用 leaveChannel 导致报错 ERR_LEAVE_CHANNEL_REJECTED = 18?
 
-问题原因：声网一个 `joinChannel` 对应一个 `leaveChannel`，如果调用多次 `leaveChannel` 会导致 18 错误。
+问题原因：声网一个 `joinChannel` 对应一个 `leaveChannel`，如果调用多次 `leaveChannel` 会导致 ERR_LEAVE_CHANNEL_REJECTED = 18 错误。
 
-解决方案：检查应用逻辑，同时增加 `onError` 错误判断，如果有18则不再执行 `leaveChannel` 避免死循环
+解决方案：检查应用逻辑，同时增加 `onError` 错误判断，如果有 ERR_LEAVE_CHANNEL_REJECTED = 18 则不再执行 `leaveChannel` 避免死循环。
 
