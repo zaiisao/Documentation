@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Tue Nov 27 2018 06:51:29 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 08:52:13 GMT+0000 (UTC)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -66,7 +66,7 @@ To merge the recorded voice and video files of each user ID, use the *video\_con
 
 ### Composite Recording + Unsynchronized Transcoding
 
-Set <code>isMixingEnabled</code> = 1 and <code>mixedAudioVideo</code> = 0 to start composite recording with unsynchronized transcoding.
+Set <code>isMixingEnabled</code> = 1 and <code>mixedVideoAudio</code> = 0 to start composite recording with unsynchronized transcoding.
 
 This enables mixed-voice and mixed-video recordings, and the voice and video files are separated.
 
@@ -108,7 +108,7 @@ To merge the recorded voice and video files, use the `video\convert.py` script f
 
 ### Composite Recording + Synchronized Transcoding
 
-Set <code>isMixingEnabled</code> = 1 and <code>mixedAudioVideo</code> = 1 to start composite recording with synchronized transcoding. This enables mixed voice and video recording without using the transcoding script.
+Set <code>isMixingEnabled</code> = 1 and <code>mixedVideoAudio</code> = 1 to start composite recording with synchronized transcoding. This enables mixed voice and video recording without using the transcoding script.
 
 Choose the recording mode by setting the parameters according to the following table:
 
