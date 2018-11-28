@@ -3,20 +3,14 @@
 title: 产品
 description: 
 platform: 产品
-updatedAt: Wed Nov 28 2018 07:22:03 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 07:22:12 GMT+0000 (UTC)
 ---
 # 产品
 本页包含 Agora 产品的相关问题。
 
 ### 请问你们提供的解决方案包含什么内容？
 
-我们提供的是 PAAS 层的解决方案。简单来说，我们提供一个SDK，里面含有一整套 API，你可以将此 SDK 集成到任何 app 或者网页上，实现音视频通话和直播。我们的 SDK 支持 iOS，Android，Windows，macOS，Linux 和 Web。
-
-### 一般情况下，从集成声网 SDK 开始到产品上线需要多长时间？
-
-跑通 Demo，大致只需要 30 分钟。如果是要集成到 App 里面验证功能，做 POC，一般 1 周左右。
-
-如果要达到上线状态，大致需要 1-4 个月，视具体集成工程复杂度而定。如果需要额外的定制化功能，需要和我们的商务联系，经过技术评估后，才能给出时间预期。
+我们提供的是 PAAS 层的解决方案。简单来说，我们提供SDK，里面含有整套 API，你可以将此 SDK 集成到任何 App 或者网页上，实现音视频通话和直播。我们的 SDK 支持 iOS，Android，Windows，macOS，Linux，Web 和微信小程序。
 
 ### 声网  SDK 与哪些平台和版本兼容？
 
