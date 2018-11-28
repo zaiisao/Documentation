@@ -3,14 +3,14 @@
 title: 集成客户端
 description: 
 platform: Android
-updatedAt: Wed Nov 28 2018 03:25:48 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 03:25:52 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
 
 请确保满足以下开发环境要求：
 
-- Android SDK API Level \>= 16
+- Android SDK API Level Level ≥ 16
 
 - Android Studio 2.0 或以上版本
 
@@ -20,11 +20,11 @@ updatedAt: Wed Nov 28 2018 03:25:48 GMT+0000 (UTC)
 
 需要下载的文件：
 
--   Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)
+Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)
 
-  下载的文件包括 libs 文件和 sample 文件，其中 libs 文件包括：
+下载的文件包括 libs 文件和 sample 文件，其中 libs 文件包括：
 
-  <table>
+<table>
 <colgroup>
 <col/>
 <col/>
@@ -51,8 +51,8 @@ updatedAt: Wed Nov 28 2018 03:25:48 GMT+0000 (UTC)
 </tbody>
 </table>
 
- 
-   > 在正式使用 SDK 前，你可以尝试先在 sample 文件上集成 SDK。
+
+> 在正式使用 SDK 前，你可以尝试先在 sample 文件上集成 SDK。
 
 
 
@@ -70,7 +70,7 @@ updatedAt: Wed Nov 28 2018 03:25:48 GMT+0000 (UTC)
 	 
 ## 添加 SDK
 
-1. 设置 libs 存放路径。使用 Android Studio 打开你想要运行的项目（本文以 sample 文件为例），选择 app/src/main/build.gradle 文件，将预设的 libs 路径添加到 fileTree 代码行中。
+1. 设置 libs 存放路径。使用 Android Studio 打开你想要运行的项目（本文以 sample 文件为例），选择 *app/src/main/build.gradle* 文件，将预设的 libs 路径添加到 fileTree 代码行中。
 
   ![](https://web-cdn.agora.io/docs-files/1543305505192)
 
@@ -91,7 +91,7 @@ updatedAt: Wed Nov 28 2018 03:25:48 GMT+0000 (UTC)
    }
    ```
 
-4. 添加 App ID。选择 app/src/main/res/values/strings.xml 文件，在下列代码中填写 App ID。
+4. 添加 App ID。选择 *app/src/main/res/values/strings.xml* 文件，在下列代码中填写 App ID。
 
    ```
    <resources>
@@ -125,7 +125,7 @@ updatedAt: Wed Nov 28 2018 03:25:48 GMT+0000 (UTC)
 
 ## 添加权限
 
-1. 打开 app/ src/ main/AndroidManifest.xml 文件，添加必要的设备权限。例如：
+1. 打开 *app/src/main/AndroidManifest.xml* 文件，添加必要的设备权限。例如：
 
   ```
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
