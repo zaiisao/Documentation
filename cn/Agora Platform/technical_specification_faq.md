@@ -3,14 +3,14 @@
 title: 技术参数
 description: 
 platform: 技术参数
-updatedAt: Wed Nov 28 2018 08:01:21 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 08:01:26 GMT+0000 (UTC)
 ---
 # 技术参数
 ## 平台与规模
 
 ### 声网 Agora.io 支持哪些平台？
 
-全平台：Android、iOS、Windows、macOS、Linux 以及 Web。
+全平台：Android、iOS、Windows、macOS、Linux、Web 以及微信小程序。
 
 ### 声网 Agora.io 音视频最多支持多少人同时在线通话？
 
@@ -43,7 +43,7 @@ updatedAt: Wed Nov 28 2018 08:01:21 GMT+0000 (UTC)
 各平台主流的开发语言都支持，例如：
 
 * Android: Java, C
-* iOS/macOS: Objective-c, Swift
+* iOS/macOS: Objective-C, Swift
 * Windows: C++
 * Web: JavaScript
 * Cocos: C++
@@ -60,9 +60,9 @@ updatedAt: Wed Nov 28 2018 08:01:21 GMT+0000 (UTC)
 
 基于UDP的私有应用层协议。
 
-### 现有 Android demo 是否有 eclipse 版？
+### 现有 Android 示例代码是否有 Eclipse 版？
 
-没有。demo 支持 Android Studio 版本。
+由于 Eclipse 开发环境较为陈旧，目前不支持 Eclipse，只支持 Android Studio 版本。
 
 ## 编码
 
