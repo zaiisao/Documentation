@@ -3,19 +3,12 @@
 title: Company And Products
 description: 
 platform: Company and Products
-updatedAt: Wed Nov 28 2018 07:26:43 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 07:26:48 GMT+0000 (UTC)
 ---
 # Company And Products
 ### Does Agora provide private cloud solutions?
 
 Currently, Agora does not provide any private cloud solution. If you have any questions, contact sales@agora.io.
-
-### How long does it take to integrate the Agora SDK into our product?
-
-It takes:
-* 30 minutes to run a demo.
-* One week to integrate the SDK into your application, verify the functionalities, and perform a proof of concept (POC).
-* One to four months to launch your product depending on the complexity. Contact Agora sales for any customization requirements.
 
 ### What platforms can I use with the Agora SDK?
 
