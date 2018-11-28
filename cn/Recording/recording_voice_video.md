@@ -94,7 +94,7 @@ updatedAt: Wed Nov 28 2018 08:49:51 GMT+0000 (UTC)
 
 ### 合流 + 不实时转码模式录制
 
-设置参数 <code>isMixingEnabled</code> = 1，<code>mixedAudioVideo</code>= 0，即启动合流 + 不实时转码录制。 该模式可实现音频混音录制和视频合图录制，且音视频文件分开。 你还可以调用 setVideoMixingLayout 接口来设置视频合图布局。
+设置参数 <code>isMixingEnabled</code> = 1，<code>mixedVideoAudio</code>= 0，即启动合流 + 不实时转码录制。 该模式可实现音频混音录制和视频合图录制，且音视频文件分开。 你还可以调用 setVideoMixingLayout 接口来设置视频合图布局。
 
 你可以根据需要生成的文件类型，设置其他参数以选择不同的录制模式：
 
@@ -154,7 +154,7 @@ updatedAt: Wed Nov 28 2018 08:49:51 GMT+0000 (UTC)
 
 ### 合流 + 实时转码录制模式录制
 
-设置参数 isMixingEnabled = 1，mixedAudioVideo= 1，即启动合流 + 实时转码录制。 该模式无需转码即可实时合成音视频合流录制文件。
+设置参数 isMixingEnabled = 1，mixedVideoAudio= 1，即启动合流 + 实时转码录制。 该模式无需转码即可实时合成音视频合流录制文件。
 
 你可以根据需要生成的文件类型，设置其他参数以选择不同的录制模式：
 
