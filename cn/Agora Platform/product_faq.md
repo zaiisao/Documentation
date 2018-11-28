@@ -3,14 +3,14 @@
 title: 产品
 description: 
 platform: 产品
-updatedAt: Wed Nov 28 2018 07:24:44 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 07:24:49 GMT+0000 (UTC)
 ---
 # 产品
 本页包含 Agora 产品的相关问题。
 
 ### 请问你们提供的解决方案包含什么内容？
 
-我们提供的是 PAAS 层的解决方案。简单来说，我们提供SDK，里面含有整套 API，你可以将此 SDK 集成到任何 App 或者网页上，实现音视频通话和直播。我们的 SDK 支持 iOS，Android，Windows，macOS，Linux，Web 和微信小程序。
+我们提供的是 PAAS 层的解决方案。简单来说，我们提供 SDK，里面含有整套 API，你可以将此 SDK 集成到任何 App 或者网页上，实现音视频通话和直播。我们的 SDK 支持 iOS，Android，Windows，macOS，Linux，Web 和微信小程序。
 
 ### 声网  SDK 与哪些平台和版本兼容？
 
