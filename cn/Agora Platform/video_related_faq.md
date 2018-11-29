@@ -3,7 +3,7 @@
 title: 视频相关
 description: 
 platform: 视频相关
-updatedAt: Thu Nov 29 2018 06:54:54 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 06:55:01 GMT+0000 (UTC)
 ---
 # 视频相关
 ## 卡顿
@@ -22,6 +22,8 @@ updatedAt: Thu Nov 29 2018 06:54:54 GMT+0000 (UTC)
 * 如果频道中有语音，检查语音是否流畅、清晰；
 * 卡顿用户的 SDK 日志及录屏文件。
 
+你可以使用 Agora Dashboard 的[水晶球](http://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+
 ## 模糊
 视频模糊一般是由视频码率或分辨率过低导致，请按以下步骤进行排查：
 
@@ -35,6 +37,8 @@ updatedAt: Thu Nov 29 2018 06:54:54 GMT+0000 (UTC)
 * 出现模糊画面的用户的 UID；
 * 模糊的具体时间端；
 * 出现问题的用户的 SDK 日志及录屏文件。
+
+你可以使用 Agora Dashboard 的[水晶球](http://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
 
 ## 黑屏
 可能出现黑屏的原因有很多，其中两个最重要的原因是：
