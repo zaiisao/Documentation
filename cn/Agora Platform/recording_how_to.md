@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Wed Nov 28 2018 08:17:24 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 07:01:13 GMT+0000 (UTC)
 ---
 # 录制相关
 ### 怎么检测录音权限？
@@ -21,17 +21,8 @@ updatedAt: Wed Nov 28 2018 08:17:24 GMT+0000 (UTC)
 
 推荐所有的新用户使用录制 SDK 版，其他方案均已被弃用。
 
-### 我还需要在 Dashboard 后台配置 ARS IP 吗？
-不需要。
-
-### 我还需要使用 Recording Key 才能录制吗？
-不需要。
-
 ### 录制的触发是由 Linux 服务器控制的吗？
 是的。
-
-### 我还需要调用 API startRecordingService 开始录制吗？
-不需要。
 
 ### 由于服务器自己触发录制，那它怎么知道什么时候加入频道，频道号等？
 通过你自己的信令。
