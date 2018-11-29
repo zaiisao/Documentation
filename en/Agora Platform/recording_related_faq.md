@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Thu Nov 29 2018 08:14:33 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 08:14:38 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ## Agora Recording SDK
@@ -14,13 +14,11 @@ Check whether the `appID` and `channelProfile` (Communication or Live Broadcast)
 
 ### Why is there no audio when playing the recorded video?
 
-The recorded audio and video files are independent; the audio is in AAC format, while the video is in MPEG-4 format. The video file does not contain any voice, you need to manually merge the audio and video files into one file.
+The recorded audio and video files are independent; the audio is in AAC format, while the video is in MPEG-4 format. The video file does not contain any voice, you need to manually merge the audio and video files into one file. If the recorded files you paly have already been transcoded, contact Agora customer support.
 
 ### Why can’t I play the MPEG-4 file after the recording is complete?
 
-Before Agora SDK v1.1, the real-time video mixing function is not supported. You have to use the transcoding tools in the Agora Recording SDK to transcode first before you can play the MPEG-4 file.
-
-After Agora SDK v1.1, you can play the MPEG-4 file if you have called the setVideoMixingLayout method to mix the video in real time. Otherwise, you need to use the transcoding tools in the Agora Recording SDK to transcode first before you can play the MPEG-4 file.
+This is usually because the player is not supported. Refer to the [Supported Players List](../../en/API%20Reference/recording_java.md).
 
 ### Why can’t I play the recorded video files after enabling encryption mode?
 
@@ -30,10 +28,6 @@ In encryption mode, if the encryption password is not entered or incorrect, the 
 
 Ensure that the encryption parameters are set as the same as in the app. Ensure that the encryption mode is set as aes-128-xts or aes-256-xts in lowercase.
 
-### Why is there no recording file even though I set the same App ID at the client and server?
-
-When you call the `joinChannel` method and set the `channelProfile` parameter, ensure that the settings on the client and the recording server are the same. For example, if the client is in Live Broadcast mode while the recording server is in Communication mode, there will no recording file created after joining the channel.
-
 ### How do I use a Channel Key?
 
 See [Use Security Keys](../../en/recording/token.md).
@@ -41,26 +35,6 @@ See [Use Security Keys](../../en/recording/token.md).
 ### Why is there only one recording file with uid = 0 when audio mixing is enabled?
 
 By default, when audio mixing is enabled and multiple users have joined the channel, all voice will record in one file, and uid = 0.
-
-### Why is the display blurred or green when I drag the playback progress bar of the recording file?
-
-By default, you need to transcode the recorded video files. Otherwise, if you drag the progress bar, a blurred or green screen occurs.
-
-### Is there any callback that indicates a recording failure? For example, the server is offline and the recording process is stuck.
-
-A callback indicating a recording failure is available in Agora SDK v1.1+.
-
-### How can I inform the recording app to leave a channel?
-
-The `onLeaveChannel` callback informs the recording app to leave a channel and is available from v1.1.
-
-Before v1.1, the Linux server informs the recording app to leave a channel and stop recording through your own signaling. The Recording SDK calls the `leaveChannel` method, and a `recording2_done.txt` file is created after the recording app leaves the channel.
-
-### How can I inform the recording app that the user is offline?
-
-When there is no user in the channel, recording stops automatically after the time set in `idleLimitSec expires` when calling the `joinChannel` method.
-
-A `recording2_done.txt` file is created after the recording stops.
 
 ### How do I transcode the recorded file?
 
@@ -72,37 +46,12 @@ You can configure the root directory of the recording file, but not the name. Se
 
 ### How do I ensure that the number of channels being recorded simultaneously does not exceed the server capacity?
 
-See [Record Voice and Video](../../en/recording/recording_voice_video.md).
+See [Set Up Your Environment](../../en/Recording/recording_env.md).
 
-### How do I estimate the size of the recording file?
-
-The size of the recording file = bitrate x length of the recording.
-
-The default bitrate of each recording video file is 400 Kbps. The file size is also related to the recording content and the environment. 
-
-### When will you support other programming languages besides C++?
-
-Currently, we only support C++ and command line execution for recording.
-
-### Why is it invalid when I type “–appId = f4637604af81440596a54254d53ade20 –uid = 222 –channel = ttt” in the command line?
-
-The equal sign (=) is not supported. The correct command should be:
---appId f4637604af81440596a54254d53ade20 --uid 222 --channel ttt
 
 ### Why can't the recording app login while the client can, and why can the recording app send but not receive packets from the Agora servers?
 
-The recording app randomly selects a port to communicate with the Agora server. If the recording app runs in an environment with restrictions on the port, it may fail to connect.
-
-If you need to specify a port, you can write a configuration file, agorasdk.json, in the same directory as the executable with the following content:
-`agorasdk.json { “rtc.udp_port_range”: [ 40000, 40004 ] }`
-
-You can change the port number with a range of: high - low > = 4. This method only supports one channel of recording. If you support multiple recording channels, the server environment must not have restrictions on the UDP port.
-
-### When will the recording stop when I use the command line to record?
-
-The recording stops in one of the following scenarios when you use the command line to record:
-* Press **Ctrl + C**.
-* When you set the idle value to configure the channel idle duration, and If no user in the channel succeeds the predefined duration, the channel will be disconnected and the recording will be stopped automatically. The default value is 300 seconds.
+Check the firewall configuration. See [Set Up Your Environment](../../en/Recording/recording_env.md). 
 
 ### Can I record the voice and video of a specified user?
 
@@ -116,10 +65,6 @@ The recording application failed to leave the channel If the SDK triggers the `o
 
 ### What is the file format of the recorded files after transcoding?
 See [Record Voice and Video](../../en/recording/recording_voice_video.md).
-
-### Why doesn’t the recording app start when I use the command line with the "must" parameters?
-
-Ensure that you specify the video_recorder folder instead of the file when you set the appliteDir parameter.
 
 ### Why is there a blank period at the beginning of the recorded and transcoded video during playback?
 
@@ -153,19 +98,11 @@ If the same communication mode is used, check the following parameters for the c
 
 ### Why is there a black screen when playing the recorded video, but the sound is normal?
 
-This is usually because the player is not supported. Refer to the following player support list.
-
-![](https://web-cdn.agora.io/docs-files/1542879634290)
+This is usually because the player is not supported. Refer to the [Supported Players List](../../en/API%20Reference/recording_java.md).
 
 ### Why is the recorded video inverted?
 
-This is usually due to the recording user keep switching rotations (switching 180 degrees in landscape mode or switching front and rear cameras). The Native client automatically rotates to display the correct orientation.
-
-In the Recording SDK versions earlier than v2.0, the uid_xxx.txt file does not contain any real-time rotational information, only the first rotational information.
-
-In the Recording SDK v2.0 to v2.2, the `uid_xxx.txt` file contains real-time rotational information and users can process the video based on this information. 
-
-In the Recording SDK v2.3+, recording supports automatic rotation.
+Please upgrade to the latest official version. Contact Agora customer support for any issues.
 
 ### Why is the recorded file split?
 
@@ -176,9 +113,7 @@ This may be caused by:
 
 ### What should I do if the audio and video are out of sync when I play the recording file? 
 
-* The Recording SDK v2.1.1+ fixed the issue of fast recorded video playback with normal recorded audio playback.
-* The Recording SDK v2.3 added the AVsyncMode method to fix the issues of occasional out of sync audio and video and channel not synchronized within 15 seconds.
-* If the audio and video are often out of sync, check the recording server's CPU usage and VOQA data. You may need to adjust the number of concurrent recordings on the network or server.
+Please upgrade to the latest official version. Contact Agora customer support for any issues.
 
 ## Recording status
 
@@ -194,8 +129,9 @@ If Error: 3, with stat_code:16 is reported, the recording quits normally. You ca
 * LEAVE_CODE_TIMER_CATCH(1<<3)：Timer catch exit.
 * LEAVE_CODE_CLIENT_LEAVE(1<<4)：The client leaves the channel.
  
-> * The code in the error log is a decimal number after a binary shift. For example, (1<<1) = 2; (1<<2) = 4. So "leave channel with code:12" is derived from (1<<2) = 4 + (1<<3) = 8.
-> * Generally, the recording quits normally if the channel has no users. Check the `recording_sys.log` file for the "No users in channel" line to confirm.
+> The code in the error log is a decimal number after a binary shift. For example, (1<<1) = 2; (1<<2) = 4. So "leave channel with code:12" is derived from (1<<2) = 4 + (1<<3) = 8.
+
+Generally, the recording quits normally if the channel has no users. Check the `recording_sys.log` file for the "No users in channel" line to confirm.
 
 ### How do I know whether the recording crashed?
 
@@ -218,6 +154,5 @@ Users of the Recording SDK versions earlier than v2.2.3 can check if there is a 
 2. If you cannot find the core file:
     a. If no directory is set for the core file, then the core file is usually found in the directory where the recorded AgoraCoreService file is located.
     b. If not, execute ulimit -c on Linux. If the output is 0, coredump is not open. Open coredump by executing: ulimit -c unlimited.
-    c. Run the [create_core.sh](https://confluence.agora.io/download/attachments/624756698/create_core.sh?version=1&modificationDate=1539915915696&api=v2) script to open coredump.
-    d. After opening coredump, users can generate the core file after a crash.
-    e. Collect the recording_sys.log file and the core file.
+    c. After opening coredump, users can generate the core file after a crash.
+    d. Provide the recording_sys.log file and the core file to Agora technical support.
