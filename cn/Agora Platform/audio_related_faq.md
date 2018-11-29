@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Thu Nov 29 2018 06:54:24 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 06:54:28 GMT+0000 (UTC)
 ---
 # 音频相关
 ## 回声
@@ -206,8 +206,9 @@ updatedAt: Thu Nov 29 2018 06:54:24 GMT+0000 (UTC)
   </tr>
 </table>
 
+
 **步骤 3：水晶球监控通话质量**
-你可以使用 Agora Dashboard 的水晶球功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+你可以使用 Agora Dashboard 的[水晶球](http://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
 
 ## iOS 蓝牙耳机相关问题
 
