@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 28 2018 08:49:51 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 06:58:06 GMT+0000 (UTC)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
