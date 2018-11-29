@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Thu Nov 29 2018 06:01:07 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 06:01:14 GMT+0000 (UTC)
 ---
 # 音频相关
 ## 回声
@@ -17,7 +17,7 @@ updatedAt: Thu Nov 29 2018 06:01:07 GMT+0000 (UTC)
 * 请检查 SDK 版本，如果低于以下版本，请升级至以下版本再尝试：
 	* Android/iOS: v1.6.0 或更高版本
 	* Windows/macOS: v1.7.0 或更高版本
-* 确认音频是否使用了自采集模式？自采集本身不会引起回声，但在传输给 SDK 的过程中，可能会因为数据不完整而产生回声。该模式 SDK 不支持回声消除。
+* 确认音频是否使用了自采集模式。自采集本身不会引起回声，但在传输给 SDK 的过程中，可能会因为数据不完整而产生回声。该模式 SDK 不支持回声消除。
 * Windows 平台上，检查在麦克风属性里是否已勾选 监听麦克风 选项，如有，取消该勾选。
 * iOS 平台上，检查是否设置了 Mixable option，并且有其他音频类应用也在使用 Mic，这种情况可能会导致回声。
 * Android 平台上 检查是否使用了 `setAudioProfile` 的 `GameStreaming` 场景，该模式下回声消除默认关闭。
