@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Thu Nov 29 2018 07:16:32 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 07:16:37 GMT+0000 (UTC)
 ---
 # 录制相关
 ## 录制 SDK
@@ -143,7 +143,7 @@ updatedAt: Thu Nov 29 2018 07:16:32 GMT+0000 (UTC)
 录制崩溃可能导致以下情况：
 
 * 视频文件无法播放。
-* `uid****.txt` 文件最后没有 mp4 文件的 close 信息。
+* `uid_xxx.txt` 文件最后没有 mp4 文件的 close 信息。
 
 
 ### 录制崩溃之后怎么办
