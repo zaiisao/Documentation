@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Thu Nov 29 2018 03:17:04 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 03:17:08 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -609,7 +609,7 @@ public class RecordingConfig {
 </tbody>
 </table>
 
-
+<a id = "player_support_list"></a>
 
 ### 播放器列表
 
