@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Thu Nov 29 2018 07:05:10 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 07:05:15 GMT+0000 (UTC)
 ---
 # 录制相关
 ## 录制 SDK
@@ -19,7 +19,7 @@ updatedAt: Thu Nov 29 2018 07:05:10 GMT+0000 (UTC)
 
 ### 录制结束后，为什么无法播放录制的 MP4 文件？
 
-请参考[播放器列表](#player_support_list)，查看是否使用了不支持的播放器
+请参考[播放器列表](../../cn/API%20Reference/recording_java.md)，查看是否使用了不支持的播放器
 
 ### 启用加密模式后，为什么无法播放录制的视频文件，声音也不正常？
 
@@ -47,7 +47,7 @@ updatedAt: Thu Nov 29 2018 07:05:10 GMT+0000 (UTC)
 
 ### 我可以自己设置录制文件的路径和文件名？
 
-你可以自己设置录制文件的根目录，但是自己无法命名。详见 [录制音视频](../../cn/Recording/recording_voice_video.md)。
+你可以自己设置录制文件的根目录，但是自己无法命名。详见[录制音视频](../../cn/Recording/recording_voice_video.md)。
 
 ### 如何保证同时录制的频道数没有超过服务器容量(CPU/内存)?
 
@@ -105,7 +105,7 @@ updatedAt: Thu Nov 29 2018 07:05:10 GMT+0000 (UTC)
 
 ### 录制出来的视频，打开播放黑屏，但是声音正常
 
-可能是由于使用了不支持的播放器，请参考[播放器列表](#player_support_list)。
+可能是由于使用了不支持的播放器，请参考[播放器列表](../../cn/API%20Reference/recording_java.md)。
 
 ### 录制出来的视频倒置
 
