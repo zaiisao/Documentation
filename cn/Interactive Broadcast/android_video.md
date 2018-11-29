@@ -3,7 +3,7 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Thu Nov 29 2018 09:14:15 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 09:18:01 GMT+0000 (UTC)
 ---
 # 集成客户端 
 ## 前提条件
