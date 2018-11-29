@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Thu Nov 29 2018 08:43:48 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 08:43:52 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ## Agora Recording SDK
@@ -87,8 +87,7 @@ The recording SDK only stores the original video passed from the client. When cr
 
 ### Why is the recording duration of the recorded file incorrect?
 
-* Check whether the Argus duration is the same as the recorded file's recording duration. If not, ask the user to provide the `recording_sys.log` file under the recording folder.
-* Compare the recording durations of the audio and video of the same user. If the durations are not the same, ask the user to provide the `recording.sys.log` file under the recording folder, the corresponding audio and video recording file, and the `uid_xxx.txt` file.
+Check whether the Native/Web SDK and Recording SDK are in the same channel for the same time. If so, Contact Agora customer support.
 
 ### Why are there only audio files and no video files after recording?
 
