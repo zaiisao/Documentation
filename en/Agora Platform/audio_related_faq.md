@@ -3,24 +3,24 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Thu Nov 29 2018 06:52:29 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 06:52:33 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 This page provides common troubleshooting strategies for Agora's audio products and services.
 
 ## Echo
 
-Echo may be caused by the remote user’s device, which in most cases can be fixed by using a headset.
+Echo is commonly caused by the device of the user who hears the echo. This problem can be fixed by using a headset in most cases and ensure that the headset does not cause an echo. Our SDK supports echo cancellation.
 
 **Step 1: Self-check**
 
 Check the following:
+* Check if the echo is occasional or continuous. The occasional echo is caused by CPU overload. If the CPU usage is too high, voice recording and playback will be unstable. You can check this in Agora Analytics in Dashboard.
 * Ensure that all users are in separated physical environments.
 * Check the SDK version:
 	* Android/iOS: v1.6.0+.
 	* Windows/macOS: v1.7.0+.
-* Check if you have enabled an external audio source. This mode does not support echo cancellation.
-* Ensure that your device is not overloaded. If the CPU usage is too high, voice recording and playback will be unstable. You can check this in Agora Analytics in Dashboard.
+* Check if you have enabled an external audio source. The echo in the mode may be caused by data loss during the transmission to the SDK. This mode does not support echo cancellation. 
 * In Windows, ensure the `Monitoring Microphone` option is not checked. 
 * On iOS, ensure that the `Mixable` option is not enabled. If it is enabled and another app is using the microphone, echo may occur.
 * On Android, check whether the app sets the `Game Streaming` scenario in the `setAudioProfile` method. In this scenario, echo cancellation is turned off by default.
@@ -54,7 +54,7 @@ Noise may be caused by the physical environment or recording and playback device
 
 Check the following:
 * Ensure that all users are in separated physical environments (no near-field tests).
-* Check if an external audio source is used and if the captured external audio source is normal.
+* Check if an external audio source is used and if the captured external audio source is normal. The noise in the mode may be caused by data loss during the transmission to the SDK. This mode does not support noise cancellation.
 * Check if any user is talking in a noisy environment. 
 * Check if the recording device is working properly. For example, check whether the headset is plugged in correctly, use another headset, or switch to another audio route.
 
@@ -117,6 +117,7 @@ No voice may occur in the following scenarios:
 
 Check the following:
 
+* Ensure that the app is granted access to audio devices.
 * Ensure that the app receives the `onJoinChannelSuccess` callback, which means users have joined the channel successfully.
 * Check if you muted yourself or others.
 * Check if you called the `adjustRecordingSignalVolume` or `adjustPlaybackSignalVolume` method to mute the audio.
@@ -169,6 +170,10 @@ If the issue persists, contact Agora customer support and submit the issue with 
     <td><li>Live broadcast: If the jitter comes from the host.</li><li>Video mode: If the video is smooth and clear.</li></td>
   </tr>
 </table>
+
+**Step 3: Monitor Quality of Experience in Agora Analytics in Dashboard**
+
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
 
 ## Bluetooth Issues (iOS only)
 A user connects a Bluetooth headset to a phone, but not all incoming calls are answered through the Bluetooth headset.
