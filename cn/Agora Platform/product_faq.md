@@ -3,7 +3,7 @@
 title: 产品
 description: 
 platform: 产品
-updatedAt: Thu Nov 29 2018 02:47:07 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 02:47:20 GMT+0000 (UTC)
 ---
 # 产品
 本页包含 Agora 产品的相关问题。
@@ -79,8 +79,8 @@ CDN+RTMP 的直播技术使得用户在网页端安装 flash player 就能观看
   </tr>
   <tr>
     <td>传输协议</td>
-    <td>基于 RTM P的 TCP</td>
-    <td>基于 RTM P的 TCP基于 UDP 的私有协议</td>
+    <td>基于 RTM P 的 TCP</td>
+    <td>基于 RTM P 的 TCP 基于 UDP 的私有协议</td>
   </tr>
   <tr>
     <td>传输算法</td>
