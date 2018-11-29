@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Thu Nov 29 2018 08:02:49 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 08:02:53 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ### How do you check the recording permissions?
@@ -42,3 +42,9 @@ This function is not supported. You will record the audio or video of all users.
 
 ### Must the Recording SDK use the same channel profile as the Agora Native/Web SDK?
 Yes. If not, issues may occur.
+
+### When will the recording stop when I use the command line to record?
+
+The recording stops in one of the following scenarios when you use the command line to record:
+* Press **Ctrl + C**.
+* When you set the idle value to configure the channel idle duration, and If no user in the channel succeeds the predefined duration, the channel will be disconnected and the recording will be stopped automatically. The default value is 300 seconds.
