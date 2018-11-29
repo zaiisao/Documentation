@@ -3,7 +3,7 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Thu Nov 29 2018 09:18:01 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 09:18:05 GMT+0000 (UTC)
 ---
 # 集成客户端 
 ## 前提条件
@@ -20,7 +20,7 @@ updatedAt: Thu Nov 29 2018 09:18:01 GMT+0000 (UTC)
 
 需要下载的文件：
 
-Android[视频通话/视频直播 SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)
+Android [视频通话/视频直播 SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)
 
 下载的文件包括 libs 文件和 sample 文件，其中 libs 文件包括：
 
