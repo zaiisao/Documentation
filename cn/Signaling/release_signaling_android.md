@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Nov 29 2018 06:12:57 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 06:13:02 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
@@ -56,8 +56,6 @@ Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传
 本版本发布于 2018 年 5 月 4 日。
 
 -   `channelInviteUser2` 的 `extra` 新增特殊属性` _timeout `。用于控制呼叫超时失败的时间，允许设置值为大于等于 1s。
-
--   支持 Jcenter 包管理工具，包名字是 `io.agora.sig:sdk:1.3.0`。
 
 
 ## 1.2.1 版
