@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Wed Nov 28 2018 08:28:05 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 08:02:49 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ### How do you check the recording permissions?
