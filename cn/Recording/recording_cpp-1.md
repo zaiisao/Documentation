@@ -3,7 +3,7 @@
 title: 录制快速开始
 description: 
 platform: CPP
-updatedAt: Tue Nov 27 2018 06:25:10 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 06:54:53 GMT+0000 (UTC)
 ---
 # 录制快速开始
 本页介绍如何使用 Agora Recording SDK for Linux 录制语音或视频通话。
