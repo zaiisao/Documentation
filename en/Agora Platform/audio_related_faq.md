@@ -3,28 +3,28 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Fri Nov 30 2018 04:08:22 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 04:08:29 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 This page provides common troubleshooting strategies for Agora's audio products and services.
 
 ## Echo
 
-Echo is commonly caused by the device of the user who hears the echo. This problem can be fixed by using a headset in most cases and ensure that the headset does not cause an echo. Our SDK supports echo cancellation.
+Echo is commonly caused by the device of the user who hears the echo. This problem can be fixed by using a headset in most cases, and ensure that the headset does not cause an echo. Our SDK supports echo cancellation.
 
 **Step 1: Self-check**
 
 Check the following:
-* Check if the echo is occasional or continuous. The occasional echo is caused by CPU overload. If the CPU usage is too high, voice recording and playback will be unstable. You can check this in Agora Analytics in Dashboard.
+* Check if the echo is occasional or continuous. An occasional echo may be caused by CPU overload. If the CPU usage is too high, voice recording and playback will be unstable. You can check this in Agora Analytics in Dashboard.
 * Ensure that all users are in separated physical environments.
 * Check the SDK version:
 	* Android/iOS: v1.6.0+.
 	* Windows/macOS: v1.7.0+.
-* Check if you have enabled an external audio source. The echo in the mode may be caused by data loss during the transmission to the SDK. This mode does not support echo cancellation. 
+* Check if you have enabled an external audio source. In this case, echo cancellation is not supported and the echo may be caused by data loss during the audio transmission to the SDK. 
 * In Windows, ensure the `Monitoring Microphone` option is not checked. 
 * On iOS, ensure that the `Mixable` option is not enabled. If it is enabled and another app is using the microphone, echo may occur.
 * On Android, check whether the app sets the `Game Streaming` scenario in the `setAudioProfile` method. In this scenario, echo cancellation is turned off by default.
-* Use a headset.
+* Use a headset:
 	* In a one-to-one call, if you hear an echo, ask the other user to use a headset.
 	* In a multi-user call, ask users to mute in turn to figure out who causes the echo. The users who cause the echo should use headsets or mute themselves.
 
