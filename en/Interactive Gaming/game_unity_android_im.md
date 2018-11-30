@@ -3,7 +3,7 @@
 title: Implementing IM for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Fri Nov 30 2018 09:10:48 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:17:55 GMT+0000 (UTC)
 ---
 # Implementing IM for Gaming
 With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:
