@@ -3,14 +3,14 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 30 2018 03:35:42 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:35:46 GMT+0000 (UTC)
 ---
 # Use Security Keys
 ## Introduction
 
 The Agora Signaling SDK provides two different security keys for authentication: [App ID](#APPID) and [SignalingToken](#SignalingToken). The following figure shows the environments in which the security keys are used:
 
-<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_signaling.jpg" style="width: 630px;"/>
+<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_signaling.jpg" style="width: 420px;"/>
 
 Where:
 
@@ -192,17 +192,11 @@ token       = "1:appId:expiredTime:md5(account + appId + appCertificate + expire
 The generated token is the SignalingToken used to log in the Agora signaling system for [Step 4: Use a SignalingToken](#Use-a-SignalingToken).
 
 > Agora has provided sample code on GitHub for generating the token.
-
 > -   [C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/generatorSignalToken.h)
-
 > -   [Go](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/go/src/SignalingToken/SignalingToken.go)
-
 > -   [Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/signal/SignalingToken.java)
-
 > -   [Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/src/SignalingToken.js)
-
 > -   [PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/SignalingToken.php)
-
 > -   [Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/src/SignalingToken.py)
 
 <a name = "Use-a-SignalingToken"></a>
