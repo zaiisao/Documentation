@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:04:06 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:52:08 GMT+0000 (UTC)
 ---
 # 选择加密方案
 本文介绍如何选择加密方案。
