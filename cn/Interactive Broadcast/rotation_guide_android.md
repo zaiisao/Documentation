@@ -3,7 +3,7 @@
 title: 视频采集旋转
 description: 
 platform: Android,Windows
-updatedAt: Fri Nov 30 2018 04:14:23 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 04:14:27 GMT+0000 (UTC)
 ---
 # 视频采集旋转
 本文指导用户如何选择与场景适配的视频旋转模式。
@@ -14,7 +14,7 @@ updatedAt: Fri Nov 30 2018 04:14:23 GMT+0000 (UTC)
 
 Agora 的视频采集、渲染和输出的流程大致如下：
 
-<img alt="../_images/rotation_encoding_decoding.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_encoding_decoding.jpg" style="width: 500px; "/>
+<img alt="../_images/rotation_encoding_decoding.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_encoding_decoding.jpg" style="width: 840px; "/>
 
 
 因此在视频旋转场景中，我们主要关注两个端：采集端和播放端 。
@@ -42,7 +42,7 @@ public abstract int setVideoEncoderConfiguration(VideoEncoderConfiguration confi
 
 其中的 **VideoEncoderConfiguration** 就包含 `orientationMode` 参数。Agora 推荐根据下表来选择适合你场景的旋转模式（通信和直播模式均适用）：
 
-<img alt="../_images/rotation_mode.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_mode.jpg" style="width: 500px; "/>
+<img alt="../_images/rotation_mode.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_mode.jpg" style="width: 840px; "/>
 
 
 ## 视频旋转模式
