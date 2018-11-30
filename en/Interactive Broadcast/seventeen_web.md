@@ -3,7 +3,7 @@
 title: Video Conference of 7+ Users
 description: 
 platform: Web
-updatedAt: Fri Nov 30 2018 06:29:37 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 06:29:43 GMT+0000 (UTC)
 ---
 # Video Conference of 7+ Users
 If a video call is participated by too many people, latency or packet loss may occur.
@@ -203,7 +203,7 @@ When a user is offline, the website releases the memory resources of the video v
 ## 6. Enabling a 17-way Video Call with the Sample Code
 
 You can enable a 17-way video call on the website by using the following methods:
-![](https://web-cdn.agora.io/docs-files/1539758012237)
+![](https://web-cdn.agora.io/docs-files/1543559372644)
 
 1. Check the browser compatibility.
 
