@@ -3,7 +3,7 @@
 title: Implement Voice for Gaming
 description: 
 platform: Cocos
-updatedAt: Fri Nov 30 2018 08:12:21 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:06:52 GMT+0000 (UTC)
 ---
 # Implement Voice for Gaming
 With the `Hello-Cocos2D-Agora` Sample App provided by Agora, you can:
