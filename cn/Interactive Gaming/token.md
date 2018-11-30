@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 30 2018 03:22:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:22:49 GMT+0000 (UTC)
 ---
 # 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
@@ -39,7 +39,7 @@ updatedAt: Fri Nov 30 2018 03:22:45 GMT+0000 (UTC)
 - Gaming SDK: `getSdkVersion`
 
 
->-   如果你使用的是 Agora Signaling SDK，请参考 [信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
+>-   如果你使用的是 Agora Signaling SDK，请参考[信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
 -   如果你使用的产品版本不支持 Token，需使用密钥功能请参考 [Channel Key 密钥说明](../../cn/null/channel_key.md)。
 
 
@@ -47,7 +47,7 @@ updatedAt: Fri Nov 30 2018 03:22:45 GMT+0000 (UTC)
 
 在调用 `joinChannel` 方法时，必须传入鉴权密钥作为参数。针对用户的项目开发需求，Agora SDK 提供了两种鉴权机制：[App ID](#APPID) 和 [Token](#Token) 。下图描述这两种鉴权机制的关系以及适用场景：
 
-<img alt="../_images/key_relation_native.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_native.jpg" style="width: 500px; "/>
+<img alt="../_images/key_relation_native.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_native.jpg" style="width: 840px; "/>
 
 
 其中：
@@ -109,7 +109,7 @@ App ID 提供了一个简单的方式，方便开发者使用 Agora 的服务，
 
 在使用 Token 之前，你需要先在你的 Server 端部署一个 Token Generator 用来生成 Token。
 
-Agora 提供以下平台生成 Token 的 [示例代码](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 供你参考：
+Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey)供你参考：
 
 -   C++
 
@@ -281,7 +281,7 @@ Token 的设计基于用户角色模型。一个用户的角色，关联着多�
 
 ## 参考
 
-如果你需要从老版本升级到支持 Token 的版本，请参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
+如果你需要从老版本升级到支持 Token 的版本，请参考[动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
 了解在 Server 端如何实现生成密钥的功能，请查看[在服务端生成密钥](../../cn/null/token_server.md)。
 
