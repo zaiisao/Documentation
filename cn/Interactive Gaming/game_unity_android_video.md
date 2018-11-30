@@ -3,7 +3,7 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(Android)
-updatedAt: Fri Nov 30 2018 09:39:30 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:39:33 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
 使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
@@ -70,7 +70,7 @@ updatedAt: Fri Nov 30 2018 09:39:30 GMT+0000 (UTC)
 
 4.  选择 **File\> Build Settings…** 。
 
-     <img alt="../_images/AMG-Video-Unity3D_7.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_7.png" />
+     <img alt="../_images/AMG-Video-Unity3D_7.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_7.png" style="width: 1000.0px;"/>
 
     1.  在弹出的对话框里:
 
