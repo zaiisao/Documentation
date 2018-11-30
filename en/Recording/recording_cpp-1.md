@@ -3,7 +3,7 @@
 title: Enabling Recording
 description: 
 platform: CPP
-updatedAt: Tue Nov 27 2018 06:28:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 07:01:08 GMT+0000 (UTC)
 ---
 # Enabling Recording
 In this quickstart, you will learn how to use the Agora Recording SDK to enable recording.
