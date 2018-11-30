@@ -3,7 +3,7 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(iOS)
-updatedAt: Fri Nov 02 2018 04:11:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:41:26 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
 使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
