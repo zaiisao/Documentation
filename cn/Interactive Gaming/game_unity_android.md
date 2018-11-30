@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Unity
-updatedAt: Fri Nov 30 2018 09:44:42 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:44:46 GMT+0000 (UTC)
 ---
 # 实现游戏语音功能
 使用 Agora 的 `Hello-Unity3D-Agora` 代码示例可以演示以下功能:
@@ -21,7 +21,7 @@ updatedAt: Fri Nov 30 2018 09:44:42 GMT+0000 (UTC)
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新的 Unity3D 软件包。软件包结构如下:
 
-    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Unity3D.png" style="width: 370px;"/>
+    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Unity3D.png" style="width: 840px;"/>
 
 > `Hello-Unity3D-Agora` 即为本文需要使用的代码示例。你也可以直接从 [Github](https://github.com/AgoraIO/Hello-Unity3D-Agora/)下载。
 
@@ -56,7 +56,7 @@ updatedAt: Fri Nov 30 2018 09:44:42 GMT+0000 (UTC)
 
 1.  在两部手机上输入相同频道名称。
 
-    <img alt="../_images/AMG-Voice-Unity3D-Hello-World-Running.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Voice-Unity3D-Hello-World-Running.png" />
+   ![](https://web-cdn.agora.io/docs-files/1543570993172)
 
 
 2.  点击 **Join Channel** 即可加入同一频道。
@@ -70,7 +70,7 @@ updatedAt: Fri Nov 30 2018 09:44:42 GMT+0000 (UTC)
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新的 Unity3D 软件包。软件包结构如下:
 
-    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Unity3D.png" style="width: 370px;"/>
+    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Unity3D.png" style="width: 840px;"/>
 
 `Hello-Unity3D-Agora` 即为本文需要使用的代码示例。你也可以直接从 [Github](https://github.com/AgoraIO/Hello-Unity3D-Agora/)下载。
 
@@ -109,7 +109,7 @@ updatedAt: Fri Nov 30 2018 09:44:42 GMT+0000 (UTC)
 
 1.  在两部手机上输入相同频道名称。
 
-    <img alt="../_images/AMG-Voice-Unity3D-Hello-World-Running.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Voice-Unity3D-Hello-World-Running.png" style="width: 300"/>
+    ![](https://web-cdn.agora.io/docs-files/1543571014803)
 
 2.  点击 **Join Channel** 即可加入同一频道。
 
