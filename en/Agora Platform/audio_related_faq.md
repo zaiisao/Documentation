@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Fri Nov 30 2018 03:08:35 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:08:39 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 This page provides common troubleshooting strategies for Agora's audio products and services.
@@ -128,7 +128,7 @@ Check the following:
 * Test your device with the Agora Video Call demo (downloaded from [Agora.io](https://docs.agora.io/en/Voice/downloads)).
 * In Windows, if users cannot hear any voice from the speaker or headset:
 	* Right click on the speaker icon and select Sounds.
-    ![](https://web-cdn.agora.io/docs-files/1539335697243)
+    ![](https://web-cdn.agora.io/docs-files/1543547283115)
   
 	* On the Playback tab, check whether the green bar of the speaker changes according to the volume. If not, the speaker is not working.
     ![](https://web-cdn.agora.io/docs-files/1539335709730)
