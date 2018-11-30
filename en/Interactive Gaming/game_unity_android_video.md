@@ -3,14 +3,14 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Fri Nov 30 2018 09:08:15 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:08:19 GMT+0000 (UTC)
 ---
 # Implement Video for Gaming
 ## Step 1: Prepare the Environment
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Unity video kit. See the following structure:
 
-    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 420.0px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 840.0px;"/>
 
 
 2.  Hardware and software requirements:
@@ -243,7 +243,7 @@ To demonstrate the video for gaming functions, you will need two or more Android
 
 Run **RollingVideo** on both devices and click **Join**.
 
-<img alt="../_images/AMG-Video-Unity3D_20.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_20.png" style="width: 420.0px;"/>
+<img alt="../_images/AMG-Video-Unity3D_20.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_20.png" style="width: 840.0px;"/>
 
 
 You can now use video for gaming. If there is no video or voice, check the following:
