@@ -3,7 +3,7 @@
 title: 视频采集旋转
 description: 
 platform: Android,Windows
-updatedAt: Fri Nov 02 2018 04:03:47 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 04:14:23 GMT+0000 (UTC)
 ---
 # 视频采集旋转
 本文指导用户如何选择与场景适配的视频旋转模式。
