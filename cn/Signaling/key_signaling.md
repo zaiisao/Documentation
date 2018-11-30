@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 30 2018 03:38:46 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:38:50 GMT+0000 (UTC)
 ---
 # 校验用户权限
 ## 简介
@@ -147,17 +147,11 @@ updatedAt: Fri Nov 30 2018 03:38:46 GMT+0000 (UTC)
 
 
 > Agora 已在 GitHub 上提供了生成 SignalingToken 的示例代码：
-
 > -   [C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/generatorSignalToken.h)
-
 > -   [Go](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/go/src/SignalingToken/SignalingToken.go)
-
 > -   [Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/signal/SignalingToken.java)
-
 > -   [Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/src/SignalingToken.js)
-
 > -   [PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/SignalingToken.php)
-
 > -   [Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/src/SignalingToken.py)
 
 
