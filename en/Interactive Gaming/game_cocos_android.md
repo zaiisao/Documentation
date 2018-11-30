@@ -3,7 +3,7 @@
 title: Implement Voice for Gaming
 description: 
 platform: Cocos
-updatedAt: Fri Nov 30 2018 09:06:52 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:06:56 GMT+0000 (UTC)
 ---
 # Implement Voice for Gaming
 With the `Hello-Cocos2D-Agora` Sample App provided by Agora, you can:
@@ -151,17 +151,17 @@ Create a new Cocos2d project. Refer to [here](http://www.cocos2d-x.org/docs/coco
 
 3.  Add `.framework` files:
 
-    1.  Select the current **Target**.
+    a.  Select the current **Target**.
 
-    2.  Select **Build Phases** > **Link Binary With Libraries**.
+    b.  Select **Build Phases** > **Link Binary With Libraries**.
 
-    3.  Click **+**, and then **Add Other…**:
+    c.  Click **+**, and then **Add Other…**:
 
-    4.  Select `AgoraAudioKit.framework`.
+    d.  Select `AgoraAudioKit.framework`.
 
-    5.  Add the following required system libraries:
+    e.  Add the following required system libraries:
 
-        <img alt="../_images/Intergration-Libraries-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Libraries-iOS.png" />
+       ![](https://web-cdn.agora.io/docs-files/1543568726412)
 
 
 
@@ -173,9 +173,7 @@ Create a new Cocos2d project. Refer to [here](http://www.cocos2d-x.org/docs/coco
 
 3.  Select **Enable Bitcode**, and set it to **No**.
 
-
-<img alt="../_images/Intergration-Bitcode-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bitcode-iOS.png" />
-
+ ![](https://web-cdn.agora.io/docs-files/1543568747162)
 
 ### Step 5: Include Header Files
 
@@ -199,20 +197,16 @@ The default programming language in Cocos2d projects is Objective-C, so include 
 
 3.  Set the bridging file to the Objective-C Bridging Header:
 
-    1.  Select the current **Target**.
+    a.  Select the current **Target**.
 
-    2.  Select **Building Settings** > **Swift Compiler-General**; set **Objective-C Bridging Header** to `<Target_Name>/MyAgora-Bridging-Header.h`.
-
-        <img alt="../_images/Intergration-Bridging-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bridging-iOS.png" />
-
+    b.  Select **Building Settings** > **Swift Compiler-General**; set **Objective-C Bridging Header** to `<Target_Name>/MyAgora-Bridging-Header.h`.
 
 
 ### Step 6: Add Permissions
 
 Add any necessary permission, such as access permission to the microphone:
 
-<img alt="../_images/Intergration-Privileges-Microphone-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Privileges-Microphone-iOS.png" />
-
+![](https://web-cdn.agora.io/docs-files/1543568795521)
 
 ### Step 7: Call the APIs
 
