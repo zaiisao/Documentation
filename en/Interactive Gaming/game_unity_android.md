@@ -3,7 +3,7 @@
 title: Implement Voice for Gaming
 description: 
 platform: Unity
-updatedAt: Fri Nov 30 2018 09:03:36 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:03:40 GMT+0000 (UTC)
 ---
 # Implement Voice for Gaming
 With the `Hello-Unity-Agora` Sample App provided by Agora, you can:
@@ -19,7 +19,7 @@ This page shows how to use the Unity3D SDK to implement these functions on the A
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Game SDK for **Unity** Voice. See the following structure:
 
-    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Unity3D.png" style="width: 370.0px;"/>
+    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Unity3D.png" style="width: 840.0px;"/>
 
 -   **include**: header files. Typically not used in Unity3D projects except for modifying raw data.
 
@@ -85,10 +85,6 @@ Add any necessary permission to `AndroidManifest.xml`. **AgoraGamingRtcSDKWrappe
 
 -   android.permission.BLUETOOTH
 
-
-<img alt="../_images/Intergration-Privileges-Android-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Privileges-Android-Unity3D.png" style="width: 500.0px;"/>
-
-
 ### Step 5: Obfuscate the Code
 
 Add the following line to obfuscate the code:
@@ -114,7 +110,7 @@ You can choose which mode to use by calling `setChannelProfile`.
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Game SDK for **Unity** Voice. See the following structure:
 
-    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Unity3D.png" style="width: 370.0px;"/>
+    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Unity3D.png" style="width: 840.0px;"/>
 
 -   **include**: header files. Typically not used in Unity3D projects except for when modifying the raw data.
 
@@ -159,27 +155,27 @@ Create a Unity3D project. Refer to [here](https://developer.apple.com/library/co
 
     -   Add the necessary system libraries:
 
-    <img alt="../_images/Intergration-Libraries-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Libraries-iOS.png" />
+    ![](https://web-cdn.agora.io/docs-files/1543568568723)
 
 
 
 ### Step 4: Disable bitcode
 
-1.  Select the current **Target**.
+a.  Select the current **Target**.
 
-2.  Select **Build Settings**.
+b.  Select **Build Settings**.
 
-3.  Select **Enable Bitcode**, and set it to **No**.
+c.  Select **Enable Bitcode**, and set it to **No**.
 
 
-<img alt="../_images/Intergration-Bitcode-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bitcode-iOS.png" />
+![](https://web-cdn.agora.io/docs-files/1543568593668)
 
 
 ### Step 5: Add Permissions
 
 Add any necessary permission, such as access permission to the microphone:
 
-<img alt="../_images/Intergration-Privileges-Microphone-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Privileges-Microphone-iOS.png" />
+![](https://web-cdn.agora.io/docs-files/1543568604885)
 
 
 ### Step 6: Call the APIs
