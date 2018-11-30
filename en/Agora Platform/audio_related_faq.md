@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Fri Nov 30 2018 04:13:55 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 04:14:00 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 This page provides common troubleshooting strategies for Agora's audio products and services.
@@ -54,7 +54,7 @@ Noise may be caused by the physical environment or recording and playback device
 
 Check the following:
 * Ensure that all users are in separated physical environments (no near-field tests).
-* Check if an external audio source is used and if the captured external audio source is normal. The noise in the mode may be caused by data loss during the transmission to the SDK. This mode does not support noise cancellation.
+* Check if an external audio source is used and if the captured external audio source is normal. In this case noise cancellation is not supported and the noise may be caused by data loss during the audio transmission to the SDK.
 * Check if any user is talking in a noisy environment. 
 * Check if the recording device is working properly. For example, check whether the headset is plugged in correctly, use another headset, or switch to another audio route.
 
@@ -117,7 +117,7 @@ No voice may occur in the following scenarios:
 
 Check the following:
 
-* Ensure that the app is granted access to audio devices.
+* Ensure that the app has granted access to the audio devices.
 * Ensure that the app receives the `onJoinChannelSuccess` callback, which means users have joined the channel successfully.
 * Check if you muted yourself or others.
 * Check if you called the `adjustRecordingSignalVolume` or `adjustPlaybackSignalVolume` method to mute the audio.
@@ -171,7 +171,7 @@ If the issue persists, contact Agora customer support and submit the issue with 
   </tr>
 </table>
 
-**Step 3: Monitor Quality of Experience in Agora Analytics in Dashboard**
+**Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard**
 
 You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
 
