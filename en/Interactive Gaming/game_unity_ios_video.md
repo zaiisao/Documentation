@@ -3,7 +3,7 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(iOS)
-updatedAt: Fri Nov 02 2018 08:54:18 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:09:23 GMT+0000 (UTC)
 ---
 # Implement Video for Gaming
 ## Step 1: Prepare the Environment
