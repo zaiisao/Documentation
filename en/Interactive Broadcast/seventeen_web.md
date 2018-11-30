@@ -3,7 +3,7 @@
 title: Video Conference of 7+ Users
 description: 
 platform: Web
-updatedAt: Thu Nov 15 2018 09:43:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 06:29:37 GMT+0000 (UTC)
 ---
 # Video Conference of 7+ Users
 If a video call is participated by too many people, latency or packet loss may occur.
