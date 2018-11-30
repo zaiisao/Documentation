@@ -3,7 +3,7 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(iOS)
-updatedAt: Fri Nov 30 2018 09:41:26 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:41:31 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
 使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
@@ -19,7 +19,7 @@ updatedAt: Fri Nov 30 2018 09:41:26 GMT+0000 (UTC)
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新的 Unity 视频软件包。软件包结构如下:
 
-    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_0.png" style="width: 370.0px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_0.png" style="width: 840.0px;"/>
 
 > `Hello-Video-Unity-Agora` 即为本文需要使用的代码示例。
 
@@ -55,19 +55,19 @@ updatedAt: Fri Nov 30 2018 09:41:26 GMT+0000 (UTC)
 
     -   检查 SceneHelloVideo 中的 Cube 和 Cylinder，是否显示 script 文件丢失。如果显示这样的标记:
 
-        <img alt="../_images/AMG-Video-Unity3D_4.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_4.png" style="width: 370.0px;"/>
+        <img alt="../_images/AMG-Video-Unity3D_4.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_4.png" style="width: 840.0px;"/>
 
         则需要重新绑定 Script 文件。
 
     -   点击上图被红框标记的圆形按钮，弹出下面的脚本对话框:
 
-        <img alt="../_images/AMG-Video-Unity3D_5.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_5.png" style="width: 370.0px;"/>
+     ![](https://web-cdn.agora.io/docs-files/1543570841328)
 
     -   选择 `videoSurface` 。
 
 4.  选择 **File\> Build Settings…** 。
 
-    <img alt="../_images/AMG-Video-Unity3D_7.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_7.png"/>
+      <img alt="../_images/AMG-Video-Unity3D_7.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_7.png" style="width: 900.0px;"/>
 
 5.  在弹出的对话框里:
 
@@ -106,11 +106,7 @@ updatedAt: Fri Nov 30 2018 09:41:26 GMT+0000 (UTC)
 
 1.  两部手机上都运行 `Hello Gaming Video Agora `。
 
-    <img alt="../_images/AMG-Video-Unity3D_11.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_11.png" style="width: 370.0px;"/>
-
 2.  两部手机加入相同的频道名，默认频道名为 unit3d，你可以自行修改。只有加入相同的频道才能互通。
-
-    <img alt="../_images/AMG-Video-Unity3D_12.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_12.png" style="width: 370.0px;"/>
 
 你现在可以在频道内自由发言了！请观察该页面的文字提示消息来确定演示程序的运行状况。
 
