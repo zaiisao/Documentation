@@ -3,14 +3,14 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 30 2018 03:28:54 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:28:58 GMT+0000 (UTC)
 ---
 # 校验用户权限
 ## 简介
 
 针对用户的项目开发需求，Agora SDK 提供了两种鉴权机制：[App ID](#APPID) 和 [SignalingToken](#SignalingToken) 。下图描述这两种鉴权机制的关系以及适用场景：
 
-<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_signaling.jpg" style="width: 500px;"/>
+<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_signaling.jpg" style="width: 840px;"/>
 
 
 其中：
@@ -57,7 +57,7 @@ updatedAt: Fri Nov 30 2018 03:28:54 GMT+0000 (UTC)
 
 ### 获取 SignalingToken
 
-1.  获取 App ID。详见上文的 [获取 App ID](#GetAnAppID) 。
+1.  获取 App ID。详见上文的[获取 App ID](#GetAnAppID) 。
 
 2.  获取 App Certificate。在上文项目列表中查看 App ID 的地方，启用该项目的 App Certificate:
 
@@ -142,7 +142,7 @@ updatedAt: Fri Nov 30 2018 03:28:54 GMT+0000 (UTC)
  ```
 
 
- 生成的 token 即为登录 Agora 信令系统所需的 SignalingToken，详见 [使用 SignalingToken](#SignalingToken) 。
+ 生成的 token 即为登录 Agora 信令系统所需的 SignalingToken，详见[使用 SignalingToken](#SignalingToken) 。
 
 
 
