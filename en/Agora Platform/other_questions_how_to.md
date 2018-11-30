@@ -3,7 +3,7 @@
 title: Other Questions
 description: 
 platform: Other Questions
-updatedAt: Fri Nov 30 2018 02:44:08 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 02:44:45 GMT+0000 (UTC)
 ---
 # Other Questions
 ## Android
@@ -162,7 +162,7 @@ When an application is running, it calls functions included in the APIs. Callbac
 
 The following figure shows how callback functions work:
 
-![](https://web-cdn.agora.io/docs-files/1539331143464)
+![](https://web-cdn.agora.io/docs-files/1543545706059)
 
 ### When debugging in Windows, it says that agorartc.pdb is required. Where can I get it?
 
