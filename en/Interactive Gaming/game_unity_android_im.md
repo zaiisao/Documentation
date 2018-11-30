@@ -3,7 +3,7 @@
 title: Implementing IM for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Fri Nov 30 2018 09:10:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:10:48 GMT+0000 (UTC)
 ---
 # Implementing IM for Gaming
 With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:
@@ -21,7 +21,7 @@ With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Unity IM kit. See the following structure:
 
-    <img alt="../_images/AMG-Video-Unity3D_0.jpeg" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 420.0px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_0.jpeg" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 840.0px;"/>
 
 
 2.  Hardware and software requirements:
