@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Unity
-updatedAt: Mon Dec 03 2018 02:37:19 GMT+0000 (UTC)
+updatedAt: Mon Dec 03 2018 02:37:23 GMT+0000 (UTC)
 ---
 # 实现游戏语音功能
 使用 Agora 的 `Hello-Unity3D-Agora` 代码示例可以演示以下功能:
@@ -48,7 +48,7 @@ updatedAt: Mon Dec 03 2018 02:37:19 GMT+0000 (UTC)
 
 3.  按照下图顺序选择 **Build And Run** \(导出并安装到设备\)。
 
-    <img alt="../_images/AMG-Voice-Unity3D-Hello-World-Android-Build.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Voice-Unity3D-Hello-World-Android-Build.png" />
+    ![](https://web-cdn.agora.io/docs-files/1543804584356)
 
 ### 步骤 3: 演示游戏语音
 
@@ -97,7 +97,7 @@ updatedAt: Mon Dec 03 2018 02:37:19 GMT+0000 (UTC)
 
 3.  按照下图顺序选择 **Build And Run**。
 
-    <img alt="../_images/AMG-Voice-Unity3D-Hello-World-iOS-Build.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Voice-Unity3D-Hello-World-iOS-Build.png" />
+    ![](https://web-cdn.agora.io/docs-files/1543804619166)
 
 4.  连接好真机，点击 **Run** 编译代码示例。
 
