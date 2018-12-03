@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Thu Nov 29 2018 08:18:29 GMT+0000 (UTC)
+updatedAt: Mon Dec 03 2018 08:45:02 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -612,7 +612,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 </tbody>
 </table>
 
-
+<a name = "player_support_list"></a>
 
 **Supported Players:**
 
