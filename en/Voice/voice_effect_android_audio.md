@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Tue Dec 04 2018 18:48:55 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 18:48:59 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Feature Description 
@@ -12,16 +12,16 @@ In social and entertainment scenarios, users often need various voice effects to
 ## Implementation
 Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
 
-The sample code shows how to change the original voice to Hulk's voice.
+The following sample code shows how to change the original voice to Hulk's voice.
 
 ```java
-// Set the pitch. The value range is [0.5, 2.0]. The lower the value, the lower the pitch. The default value is 1.0, which is the original pitch.
+// Sets the pitch. The value ranges between 0.5 and 2.0. The lower the value, the lower the pitch. The default value is 1.0, which is the original pitch.
 double pitch = 0.5;
 rtcEngine.setLocalVoicePitch(pitch);
 
-// Set the local voice equalization
-// The first parameter sets the band frequency. The value range is [0, 9], each value representing the center frequency of the band: [31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, 16k] Hz
-// The second parameter set the gain of each band. The value range is [-15,15], in dB, and the default is 0.
+// Sets the local voice equalization.
+// The first parameter sets the band frequency. The value ranges between 0 and 9. Each value represents the center frequency of the band: 31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, and 16k Hz
+// The second parameter sets the gain of each band. The value ranges between -15 and 15 dB. The default value is 0.
 rtcEngine.setLocalVoiceEqualization(0, -15);
 rtcEngine.setLocalVoiceEqualization(1, 3);
 rtcEngine.setLocalVoiceEqualization(2, -9);
@@ -39,7 +39,7 @@ rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_DRY_LEVEL, 10);
 // The level of the early reflection signal (wet signal) in dB. The value ranges between -20 and 10.
 rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_WET_LEVEL, 7);
 
-// The room size of the reverberation. A larger romm size means a stronger reverberation. The value ranges between 0 and 100.
+// The room size of the reverberation. A larger room size means a stronger reverberation. The value ranges between 0 and 100.
 rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_ROOM_SIZE, 6);
 
 // The length of the initial delay of the wet signal (ms). The value range between 0 and 200.
@@ -49,7 +49,7 @@ rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_WET_DELAY, 124);
 rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_STRENGTH, 78);
 ```
 
-### API References
+### API Methods
 
 - [setLocalVoicePitch](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
 - [setLocalVoiceEqualization](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
