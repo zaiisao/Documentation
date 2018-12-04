@@ -32,4 +32,4 @@ agoraKit.setInEarMonitoringVolume(50)
 
 ## Considerations
 
-The above methods have return values. If the API fails, the return is < 0.
+The API methods have return values. If the method fails, the return value is < 0.

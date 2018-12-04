@@ -92,5 +92,5 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 - [setLocalVoiceReverbOfType](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
 
 ## Considerations
-The above methods have return values. If the API fails, the return is < 0.
+The API methods have return values. If the method fails, the return value is < 0.
 

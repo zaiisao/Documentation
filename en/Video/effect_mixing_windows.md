@@ -83,7 +83,7 @@ int nRet = rep.unloadEffect(nSoundID);
 ### Considerations
 
 - Preloading is not mandatory, but to improve effeciency or to play the audio effect multiple times, Agora recommends you preload the audio effect.
-- The above methods have return values. If the API fails, the return is < 0.
+- The API methods have return values. If the method fails, the return value is < 0.
 
 ## Audio Mixing
 
@@ -126,4 +126,4 @@ int nRet = rep.stopAudioMixing();
 ### Considerations
 
 - Ensure you call these methods when you are in the channel.
-- The above methods have return values. If the API fails, the return is < 0.
+- The API methods have return values. If the method fails, the return value is < 0.

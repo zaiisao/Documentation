@@ -69,7 +69,7 @@ manager.unloadAllEffects();
 ### Considerations
 
 - Preloading is not mandatory, but to improve effeciency or to play the audio effect multiple times, Agora recommends you preload the audio effect.
-- The above methods have return values. If the API fails, the return is < 0.
+- The API methods have return values. If the method fails, the return value is < 0.
 
 ## Audio Mixing
 
@@ -130,4 +130,4 @@ rtcEngine.stopAudioMixing()；
 - The audio mixing methods require Android 4.2+, and API level 16+.
 - Ensure you call these methods when you are in the channel.
 - If you call these methods on an emulator, you can only play the mp3 files in the **/sdcard/** folder for audio mixing.
-- The above methods have return values. If the API fails, the return is < 0.
+- The API methods have return values. If the method fails, the return value is < 0.

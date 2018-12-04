@@ -56,4 +56,4 @@ rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_STRENGTH, 78);
 - [setLocalVoiceReverb](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
 
 ## Considerations
-The above methods have return values. If the API fails, the return is < 0.
+The API methods have return values. If the method fails, the return value is < 0.

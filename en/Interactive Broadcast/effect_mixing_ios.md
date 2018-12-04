@@ -107,7 +107,7 @@ volume = volume < 80 ? 80 : volume
 ### Considerations
 
 - Preloading is not mandatory, but to improve effeciency or to play the audio effect multiple times, Agora recommends you preload the audio effect.
-- The above methods have return values. If the API fails, the return is < 0.
+- The API methods have return values. If the method fails, the return value is < 0.
 
 ## Audio Mixing
 
@@ -155,4 +155,4 @@ NSInteger cycle = 1;
 
 ### Considerations
 
-The above methods have return values. If the API fails, the return is < 0.
+The API methods have return values. If the method fails, the return value is < 0.
