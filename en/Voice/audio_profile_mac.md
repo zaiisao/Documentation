@@ -8,7 +8,8 @@ updatedAt: Tue Dec 04 2018 21:48:43 GMT+0000 (UTC)
 # Set the Stereo/High-quality Audio Profile
 ## Feature Description 
 
-In some professional scenarios, the audio quality is essential for the user experience. For example, podcast applications require stereo and high-quality audio. The so-called high-quality audio refers to the audio profile of 48 KHz sampling rate and 192 Kbps bitrate, which suits the high-fidelity musical scenarios, such as online radio and singing competitions.
+A high-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. The high-fidelity audio refers to an audio profile with a 48-KHz sampling rate and a 192-Kbps bitrate. 
+
 
 ## Implementation
 Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/mac_video.md) for more information.
