@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 04 2018 16:41:00 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 16:41:04 GMT+0000 (UTC)
 ---
 # Use Security Keys
 ## Introduction
@@ -90,7 +90,7 @@ Each Agora account can create multiple projects, and each project has a unique A
 > -   Once the App Certificate is enabled for a project, a SignalingToken must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a SignalingToken must be used to join a channel.
 
 
-5.  If your project has integrated Agora’s Signaling SDK, you can use the Signaling Token Debugging Switch under App Certificate.
+5.  If your project integrates Agora’s Signaling SDK, you can use the Signaling Token Debugging Switch under App Certificate.
 
     -   If the App Certificate is not enabled, the Signaling Token Debugging Switch is disabled and you can set the SignalingToken to any value.
 
