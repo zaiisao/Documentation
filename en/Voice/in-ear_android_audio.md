@@ -3,7 +3,7 @@
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
 platform: Android
-updatedAt: Fri Nov 23 2018 08:53:19 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 19:03:26 GMT+0000 (UTC)
 ---
 # In-ear Monitoring
 In-ear monitoring can provide a mix of audio sources (for example the vocal and the music) to the host with a low latency, frequently used in professional scenarios such as concerts.
