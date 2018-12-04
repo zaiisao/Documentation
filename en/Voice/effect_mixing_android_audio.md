@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Tue Dec 04 2018 20:41:45 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 20:41:48 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -36,7 +36,7 @@ manager.preloadEffect(id++, "path/to/effect2");
 manager.playEffect(
 0,  // The sound ID of the audio effect file to be played.
 "path/to/effect1",  // The file path of the audio effect file.
--1,   // The number of playback loops. -1 means an inifinite loop.
+-1,   // The number of playback loops. -1 means an infinite loop.
 0.0,  // Sets the spatial position of the audio effect. 0 means the effect shows ahead.
 100,  // Sets the volume. The value ranges between 0 and 100. 100 is the original volume.
 true // Sets whether to publish the audio effect.
