@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Tue Dec 04 2018 12:10:31 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 12:33:52 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
