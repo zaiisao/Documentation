@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to set voice effects on iOS
 platform: iOS
-updatedAt: Tue Dec 04 2018 18:52:38 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 18:52:41 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Feature Description 
@@ -78,7 +78,7 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 // The room size of the reverberation. A larger room size means a stronger reverberation. The value ranges between 0 and 100.
 [agoraKit setLocalVoiceReverbOfType:AgoraAudioReverbRoomSize withValue: 57];
 
-// The length of the initial delay of the wet signal (ms). The value range between 0 and 200.
+// The length of the initial delay of the wet signal (ms). The value ranges between 0 and 200.
 [agoraKit setLocalVoiceReverbOfType:AgoraAudioReverbWetDelay withValue: 135];
 
 // The reverberation strength. The value ranges between 0 and 100. The higher the value, the stronger the reverberation.
