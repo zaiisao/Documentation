@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Mon Dec 03 2018 08:43:55 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 12:08:57 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -327,7 +327,6 @@ For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Re
 <ul>
 <li>0: (Default) Mixes the audio and video respectively.</li>
 <li>1: Mixes the audio and video in real time into an MPEG-4 file. Supports limited players.</li>
-<li>2: Mixes the audio and video in real time into an MPEG-4 file. Supports more players.</li>
 </ul>
 </td>
 </tr>
