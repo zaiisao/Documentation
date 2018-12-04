@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Tue Dec 04 2018 12:08:18 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 12:08:25 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -239,10 +239,10 @@ public class RecordingConfig {
 <td>AgoraCoreService 所在的目录</td>
 </tr>
 <tr><td><code>recordFileRootDir</code></td>
-<td>设置录制文件存放的根目录。<em><code>recordFileRootDir</code></em> 和 <em><code>cfgFilePath</code></em> 不能同时设置。</td>
+<td>设置录制文件存放的根目录。默认值为 NULL。设置了此目录后，子路径会自动生成。</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>设置配置文件的路径。格式为 JSON，例如：{“Recording_Dir” : “&lt;recording path&gt;”}。<em><code>recordFileRootDir</code></em> 和 <em><code>cfgFilePath</code></em> 不能同时设置。</td>
+<td>设置配置文件的路径。默认为 NULL，文件内容为 JSON 格式，在配置文件中可设置录制文件的路径，例如：{“Recording_Dir” : “<recording path>”}，但不会自动创建子路径。</td>
 </tr>
 <tr><td><code>decodeVideo</code> <sup>[2]</sup></td>
 <td><ul>
