@@ -3,7 +3,7 @@
 title: Set the Stereo/High-fidelity Audio Profile
 description: How to set the high-quality audio for iOS and macOS
 platform: macOS
-updatedAt: Tue Dec 04 2018 22:18:12 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 22:18:16 GMT+0000 (UTC)
 ---
 # Set the Stereo/High-fidelity Audio Profile
 ## Feature Description 
@@ -16,7 +16,7 @@ Before proceeding, ensure that you have prepared the development environment. Se
 
 The Agora SDK provides the [setAudioProfile](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) method for developers to set appropriate audio profiles according to the scenarios. This method has two parameters:
 
-- `profile` sets the sampling rate, bitrate, encode mode, and the number of channels.
+- `profile` sets the sampling rate, bitrate, encoding mode, and the number of channels.
 - `scenario` sets the audio application scenario. For example, entertainment, education, or live gaming. The SDK optimizes the noise control and audio quality based on the scenarios.
 
 ```swift
