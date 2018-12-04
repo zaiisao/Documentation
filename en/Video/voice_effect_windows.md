@@ -11,7 +11,7 @@ updatedAt: Fri Nov 23 2018 08:56:02 GMT+0000 (UTC)
 In social and entertainment scenarios, the users often need various voice effects for more interesting and interacrtive experiences. Agora provides a series of methods for developer to flexibly change the users' voice, including adjusting the pitch, setting the equalization and reverberation modes.
 
 ## Implementation
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/windows_video.md) for more information.
+Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md) for more information.
 
 The sample code shows how to change the original voice to Hulk's voice.
 
