@@ -3,7 +3,7 @@
 title: Set the Stereo/High-fidelity Audio Profile
 description: How to set high-quality audio
 platform: Android
-updatedAt: Tue Dec 04 2018 22:12:05 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 22:12:09 GMT+0000 (UTC)
 ---
 # Set the Stereo/High-fidelity Audio Profile
 ## Feature Description 
