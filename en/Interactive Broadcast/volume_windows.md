@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Tue Dec 04 2018 17:39:26 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 17:39:29 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Feature Description
@@ -15,36 +15,36 @@ Before proceeding, ensure that you have finished preparing the development envir
 
 ### Adjust the Volume of the Device
 
-On Windows, Agora recommends adjusting the recording and playback volume by setting the device's volume:
+On Windows, Agora recommends adjusting the recording and playback volumes by setting the device's volume:
 
 ```c++
-// Set the recording volume
+// Sets the recording volume.
 int setRecordingDeviceVolume(int volume);
-// Set the playback volume
+// Sets the playback volume.
 int setPlaybackDeviceVolume(int volume);
 ```
 
-The value range of `volume` is 0 to 255. 0 means muting the device, and 255 represents the maximum volume of the device.
-The value of `volume` corresponds to the system volume on Windows, as shown in the following screenshot.
+The value of `volume` ranges between 0 and 255. 0 means muting the device, and 255 represents the maximum volume of the device.
+The value of `volume` corresponds to the system volume in Windows, as shown in the following screenshot.
 
 ![](https://web-cdn.agora.io/docs-files/1542792457096)
 
 ### Adjust the Volume of the Audio Signal 
 
-If the above methods do not meet your requirements, Agora SDK provides methods to adjust the volume of the audio signals, which enables adjusting the recording and playback volume.
-The volume value range is 0 to 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
+If the above methods do not meet your requirements, the Agora SDK provides methods to adjust the volume of the audio signals, which enables adjusting the recording and playback volumes.
+The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
 
 ```c++
 RtcEngineParameters rep(*lpAgoraEngine);
 
-// Set the volume of the recording audio signal to 200
+// Sets the volume of the recording signal to 200.
 int ret = rep.adjustRecordingSignalVolume(200);
 
-// Set the volume of the playback audio signal to 200
+// Sets the volume of the playback signal to 200.
 int ret = rep.adjustPlaybackSignalVolume(200);
 ```
 
-### API References
+### API Methods
 
 - [setRecordingDeviceVolume](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac24424e86ded2727a532df739ebf8086)
 - [setPlaybackDeviceVolume](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac14a1238e83303abed2f36e02fcc9366)
@@ -53,6 +53,6 @@ int ret = rep.adjustPlaybackSignalVolume(200);
 
 ## Considerations
 
-- If the volume of the audio signal is set too high, unnatural sounds may occur on some devices.
+- If the volume of the audio signal is set too high, noise may occur on some devices.
 - The API methods have return values. If the method fails, the return value is < 0.
 
