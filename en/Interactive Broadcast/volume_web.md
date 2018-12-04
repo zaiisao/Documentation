@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on Web
 platform: Web
-updatedAt: Tue Dec 04 2018 17:12:24 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 17:12:28 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Feature Description
@@ -22,7 +22,7 @@ Before proceeding, ensure that you have finished preparing the development envir
 ```
  client.on("stream-subscribed", function(evt){
   var stream = evt.stream;
-  // Set the volume of the remote stream to 50
+  // Sets the volume of the remote stream to 50.
   stream.setAudioVolume(50);
  });
 ```
@@ -32,11 +32,11 @@ Before proceeding, ensure that you have finished preparing the development envir
 ```
  client.on("stream-subscribed", function(evt){
   var stream = evt.stream;
-  // Mute the remote stream
+  // Mutes the remote stream.
   stream.setAudioVolume(0);
  });
 ```
 
 ## Considerations
 
-- If the volume is set too high, popping sounds may occur on some devices.
+- If the volume is set too high, noise may occur on some devices.
