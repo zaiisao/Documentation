@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 04 2018 16:23:46 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 16:26:16 GMT+0000 (UTC)
 ---
 # Use Security Keys
 This page describes the token (Agora’s authentication mechanism). Before you start, check if your SDK version supports the token:
@@ -20,13 +20,13 @@ This page describes the token (Agora’s authentication mechanism). Before you s
 </thead>
 <tbody>
 <tr><td>Native</td>
-<td>2.1.0 and later</td>
+<td>2.1.0+</td>
 </tr>
 <tr><td>Web</td>
-<td>2.4.0 and later</td>
+<td>2.4.0+</td>
 </tr>
 <tr><td>Gaming</td>
-<td>2.2.0 and later</td>
+<td>2.2.0+</td>
 </tr>
 </tbody>
 </table>
@@ -83,29 +83,21 @@ Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to saf
 You can access the Agora services with the unique App ID:
 
 1.  Enter the App ID in the start window to enable communications.
-
 2.  Add the App ID to the code when developing the application.
-
 3.  Set the `appId` parameter as the App ID when initializing the client.
-
 4.  Set the `token` parameter as NULL when joining the channel.
 
 <a name = "Token"></a>
 
 ## Token
 
-The following is the process for generating a token:
+The following process generates a token:
 
 1.  Deploy a token generator on your server.
-
 2.  The client sends a request for a token to the server.
-
 3.  The server uses the token generator to create a token and sends the token back to the client.
-
 4.  The client passes in the token when joining a channel.
-
 5.  When the token is about to expire or has expired, repeat Steps 2 to 4.
-
 6.  The application client calls `renewToken` to use the new token.
 
 
@@ -117,7 +109,7 @@ Agora provides the server-side [sample code](https://github.com/AgoraIO/Tools/tr
 
 You can deploy the corresponding sample code on your server, or write your own code in a different programming language.
 
-If you have implemented Agora’s algorithm in other languages, you can file a pull request at [GitHub](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey). Agora will merge any valid implementations and test cases.
+If you have implemented Agora’s algorithm in other languages, you can file a pull request on [GitHub](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey). Agora will merge any valid implementations and test cases.
 
 ### Generating a Token
 
@@ -141,10 +133,10 @@ The application client needs to send the following parameters to the server to g
 <td>The App Certificate of the user’s project in the Agora Dashboard, see <a href="#getting-an-app-certificate">Getting an App Certificate</a>.</td>
 </tr>
 <tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join</td>
+<td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>ID of the user who wants to join a channel</td>
+<td>ID of the user who wants to join a channel.</td>
 </tr>
 <tr><td><code>role</code></td>
 <td><p>Role of the user who wants to join a channel. Choose one of the following roles:</p>
@@ -157,15 +149,15 @@ The application client needs to send the following parameters to the server to g
 </td>
 </tr>
 <tr><td><code>privilege</code></td>
-<td>Privileges to services corresponding to the specified roles. See <a href="#Role-privilege Model"><span>Role-privilege Model</span></a>.</td>
+<td>Privileges corresponding to the specified roles. See <a href="#Role-privilege Model"><span>Role-privilege Model</span></a>.</td>
 </tr>
 <tr><td><code>expireTimestamp</code> <sup>[1]</sup></a></td>
-<td>The token expiration time. The default value is 0 where the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
+<td>The token expiration time. The default value is 0, where the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
 </tr>
 </tbody>
 </table>
 
->[1] `expireTimestamp` is represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set `expireTimestamp` as the current timestamp + 600 \(seconds\). The valid time for each token is independent, and you can set it through the `setPrivilege` method.
+>[1] `expireTimestamp` is represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set `expireTimestamp` as the current timestamp + 600 \(seconds\). The expiration time for each token is independent, and you can set it through the `setPrivilege` method.
 
 <a id ="getting-an-app-certificate"></a>
 
@@ -210,9 +202,7 @@ To get an App Certificate:
 The design of a token is based on the authentication of different user roles, each of which is associated with a set of privileges.
 
 -   You must define the user role and expiration time when creating a token.
-
 -   When you join a channel with a token, the SDK sends the token to the Agora servers for authenticating the assigned privileges.
-
 -   During a call or live broadcast, you can update the token for the clients in the channel to modify their privileges.
 
 
@@ -230,7 +220,7 @@ The design of a token is based on the authentication of different user roles, ea
 </thead>
 <tbody>
 <tr><td>Attendee</td>
-<td>Participants in a voice or video call</td>
+<td>Participants in a voice or video call.</td>
 <td><ul>
 <li>Join a channel.</li>
 <li>Publish a voice stream.</li>
@@ -244,7 +234,7 @@ The design of a token is based on the authentication of different user roles, ea
 <tr/>
 <tr/>
 <tr><td>Publisher</td>
-<td>Users (hosts) who publish video or/and voice streams in a live broadcast.</td>
+<td>Users (Hosts) who publish video or/and voice streams in a live broadcast.</td>
 <td><ul>
 <li>Join a channel.</li>
 <li>Publish a voice stream.</li>
@@ -262,7 +252,7 @@ The design of a token is based on the authentication of different user roles, ea
 <tr/>
 <tr/>
 <tr><td>Subscriber</td>
-<td>Users (audience) who need to subscribe to the voice and video streams in a live broadcast.</td>
+<td>Users (Audience) who need to subscribe to the voice and video streams in a live broadcast.</td>
 <td><ul>
 <li>Join a channel.</li>
 </ul>
