@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on Web
 platform: Web
-updatedAt: Tue Dec 04 2018 17:18:58 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 17:19:02 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Feature Description
@@ -13,7 +13,7 @@ Before proceeding, ensure that you have finished preparing the development envir
 ### Adjust the Local Volume
 
 ```
-  // Set the volume of the local stream to 50
+  // Sets the volume of the local stream to 50.
   localStream.setAudioVolume(50);
 ```
 
