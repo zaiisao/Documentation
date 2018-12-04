@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Tue Dec 04 2018 17:43:33 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 17:43:36 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Feature Description
@@ -13,24 +13,24 @@ When using the Agora SDK, developers can adjust the recording and playback volum
 ## Implementation
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
 
-Agora SDK provides methods to adjust the volume of the audio signals, which enables adjusting the recording and playback volume.
-The volume value range is 0 to 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
+The Agora SDK provides methods to adjust the volume of the audio signals, which enables adjusting the recording and playback volumes.
+The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
 
 ```java
 int volume = 200;
-// Set the volume of the recording audio signal.
+// Sets the volume of the recording signal.
 rtcEngine.adjustRecordingSignalVolume(volume);
-// Set the volume of the playback audio signal.
+// Sets the volume of the playback signal.
 rtcEngine.adjustPlaybackSignalVolume(volume);
 ```
 
-### API References
+### API Methods
 
 - [adjustRecordingSignalVolume](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af3747f72256eb683feadbca2b742bd05)
 - [adjustPlaybackSignalVolume](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
 
 ## Considerations
 
-- If the volume of the audio signal is set too high, unnatural sounds may occur on some devices.
+- If the volume of the audio signal is set too high, noise may occur on some devices.
 - The API methods have return values. If the method fails, the return value is < 0.
 
