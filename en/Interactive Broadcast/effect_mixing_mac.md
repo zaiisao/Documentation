@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: macOS
-updatedAt: Tue Dec 04 2018 19:35:09 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 19:35:19 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -12,89 +12,89 @@ In a call or live broadcast, sometimes you need to play custom audio or music fi
 Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md) for more information.
 ## Play Audio Effect Files
 
-Audio effects are usually very short sounds. The play effect methods can be used to play sound snaps such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.
+The play audio effect methods can be used to play audio effects, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.
 
- The audio effect is specified by the file path, but the SDK uses the sound id to identify the audio effect file. The SDK does not have a rule to define the sound id, and you need to ensure each audio effect file has a unique sound id. Common practices include automatically incrementing the id, and using the hashCode of the audio effect file.
+The audio effect file is specified by the file path, but the SDK uses the sound ID to identify the audio effect file. The SDK does not have the rule to define the sound ID. You need to ensure that each audio effect file has a unique sound ID. Common practices include automatically incrementing the ID, and using the hashCode of the audio effect file.
 
 ### Implementation
 
 ```swift
 // swift
-// Preload the audio effect (recommended). Note the file size and preload the file before joining the channel.
-// Only mp3, aac, m4a, 3gp, and wav are supported
-// You may need to record the matching between the sound ids and the file paths.
+// Preloads the audio effect (recommended). Note the file size and preload the file before joining the channel.
+// Only mp3, aac, m4a, 3gp, and wav files are supported.
+// You may need to record the correlation between the sound IDs and the file paths.
 let soundId = 1
 let filePath = "your filepath"
 
-// You can preload multiple audio effects
+// You can preload multiple audio effects files.
 agoraKit.preloadEffect(soundId, filePath: filePath)
 
-// Play an audio effect file
-let soundId = 1 // The sound id of the audio effect file to play
-let filePath = "your filepath" // The file path to the audio effect
-let loopCount = 1 // The playback count. -1 means inifinite loop.
-let pitch = 1 // Set the pitch of the audio effect.
-let pan = 1 // Set the spatial position of the effect. 0 means the effect shows ahead.
-let gain = 0 // Set the volume. The value range is 0 to 100. 100 is the original volume.
-let publish = true // Set whether to publish the audio effecet.
+// Plays an audio effect file.
+let soundId = 1 // The sound ID of the audio effect file to be played.
+let filePath = "your filepath" // The file path of the audio effect file.
+let loopCount = 1 // The number of playback loops. -1 means an infinite loop.
+let pitch = 1 // Sets the pitch of the audio effect.
+let pan = 1 // Sets the spatial position of the audio effect. 0 means the effect shows ahead.
+let gain = 0 // Sets the volume. The value ranges between 0 and 100. 100 is the original volume.
+let publish = true // Sets whether to publish the audio effect.
 agoraKit.playEffect(Int32(soundId), filePath: filePath, loopCount: Int32(loopCount), pitch: pitch, pan: pan, gain: gain, publish: publish)
 
-// Pause all the audio effects
+// Pauses all audio effects.
 agoraKit.pauseAllEffects()
 
-// Get the volume of the audio effect. The value range is 0 to 100.
+// Gets the volume of the audio effect. The value ranges between 0 and 100.
 let volume = agoraKit.getEffectsVolume()
 
-// Ensure the audio effect's volume is always at least 80% of the original volume.
+// Ensures that the audio effect's volume is at least 80% of the original volume.
 volume = volume < 80 ? 80 : volume
 agoraKit.setEffectsVolume(volume)
 
-// Resume playing the audio effect
+// Resumes playing the audio effect.
 agoraKit.resumeAllEffects()
 
-// Stop all the audio effects
+// Stop playing all audio effects.
 agoraKit.stopAllEffects()
 ```
 
 ```objective-c
 // objective-c
-// Preload the audio effect (recommended). Note the file size and preload the file before joining the channel.
-// Only mp3, aac, m4a, 3gp, and wav are supported
-// You may need to record the matching between the sound ids and the file paths.
+// Preloads the audio effect (recommended). Note the file size and preload the file before joining the channel.
+// Only mp3, aac, m4a, 3gp, and wav files are supported.
+// You may need to record the correlation between the sound IDs and the file paths.
 int soundId = 1
 NSString *filePath = "your filepath"
 
-// You can preload multiple audio effects
+// You can preload multiple audio effects.
 [agoraKit preloadEffect: soundId filePath: filePath];
 
-// Play an audio effect file
-int soundId = 1; // The sound id of the audio effect file to play
-NSString *filePath = "your filepath"; // The file path to the audio effect
-int loopCount = 1 // The playback count. -1 means inifinite loop.
-double pitch = 1 // Set the pitch of the audio effect.
-double pan = 1 // Set the spatial position of the effect. 0 means the effect shows ahead.
-double gain = 0 // Set the volume. The value range is 0 to 100. 100 is the original volume.
-BOOL publish = true // Set whether to publish the audio effecet.
+// Plays an audio effect file.
+int soundId = 1; // The sound ID of the audio effect file to be played.
+NSString *filePath = "your filepath"; // The file path of the audio effect file.
+int loopCount = 1 // The number of playback loops. -1 means an inifinite loop.
+double pitch = 1 // Sets the pitch of the audio effect.
+double pan = 1 // Sets the spatial position of the audio effect. 0 means the effect shows ahead.
+double gain = 0 // Sets the volume. The value ranges between 0 and 100. 100 is the original volume.
+BOOL publish = true // Sets whether to publish the audio effect.
 [agoraKit playEffect: soundId filePath: filePath loopCount: loopCount, pitch: pitch, pan: pan, gain: gain, publish: publish];
 
-// Pause all the audio effects
+// Pauses all audio effects.
 [agoraKit pauseAllEffects];
 
-// Get the volume of the audio effect. The value range is 0 to 100.
+// Gets the volume of the audio effect. The value ranges between 0 and 100.
 int volume = [agoraKit getEffectsVolume];
 
-// Ensure the audio effect's volume is always at least 80% of the original volume.
+// Ensures that the audio effect's volume is at least 80% of the original volume.
 volume = volume < 80 ? 80 : volume
 [agoraKit setEffectsVolume: volume];
 
-// Resume playing the audio effect
+// Resumes playing the audio effect.
 [agoraKit resumeAllEffects];
 
-// Stop all the audio effects
+// Stops playing all audio effects.
 [agoraKit stopAllEffects];
 ```
 
-### API Reference
+### API Methods
 
 - [playEffect](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/playEffect:filePath:loopCount:pitch:pan:gain:)
 - [preloadEffect](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/preloadEffect:filePath:)
@@ -106,50 +106,52 @@ volume = volume < 80 ? 80 : volume
 
 ### Considerations
 
-- Preloading is not mandatory, but to improve effeciency or to play the audio effect multiple times, Agora recommends you preload the audio effect.
+- Preloading the audio effect is not mandatory. Agora recommends you preload the audio effect to improve the efficiency or to play the audio effect multiple times.
 - The API methods have return values. If the method fails, the return value is < 0.
 
 ## Audio Mixing
 
-Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play longer background music, for example playing music in a live broadcast. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file playback stops.
+Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play longer background music, for example, playing music in a live broadcast. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file stops playing.
 Agora audio mixing supports the following options:
 
-- Mix or replace the audio: Mixing means to mix the music file with the audio captured by the microphone and send to to other users; replacing means to replace the audio captured by the microphone with the music file.
+- Mix or replace the audio: 
+	- Mix the music file with the audio captured by the microphone and send it to other users.
+	- Replace the audio captured by the microphone with the music file.
 - Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
 
 ### Implementation
 
 ```swift
 // swift
-// loopback sets whether other users can hear the audio mixing; if set to true, only the local user can hear the audio mixing.
+// loopback sets whether other users can hear the audio mixing. If loopback is set as true, only the local user can hear the audio mixing.
 // replace sets whether the audio captured by the microphone is replaced by the audio mixing file. 
-// cycle set as -1 means looping the audio mixing file infinitely.If you use a positive integer, it represents the number of times to play the file.
+// Setting cycle as -1 means looping the audio mixing file infinitely. Setting cycle as a positive integer means the number of times to play the file.
 let filePath = "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3"
 let loopback = false
 let replace = false 
 let cycle = 1 
   
-// Start audio mixing
+// Starts audio mixing.
 agoraKit.startAudioMixing(filePath, loopback: loopback, replace: replace, cycle: cycle)
 ```
 
 ```objective-c
 // objective-c
-// loopback sets whether other users can hear the audio mixing; if set to YES, only the local user can hear the audio mixing.
+// loopback sets whether other users can hear the audio mixing. If loopback is set as YES, only the local user can hear the audio mixing.
 // replace sets whether the audio captured by the microphone is replaced by the audio mixing file. 
-// cycle set as -1 means looping the audio mixing file infinitely.If you use a positive integer, it represents the number of times to play the file.
+// Setting cycle as -1 means looping the audio mixing file infinitely. Setting cycle as a positive integer means the number of times to play the file.
 NSString *filePath = @"http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3";
 BOOL loopback = NO;
 BOOL replace = NO;
 NSInteger cycle = 1;
 
-// Start audio mixing
+// Starts audio mixing.
 [agoraKit startAudioMixing: filePath loopback: loopback replace: replace cycle: cycle];
 ```
 
 
 
-### API References
+### API Methods
 
 - [startAudioMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
 
