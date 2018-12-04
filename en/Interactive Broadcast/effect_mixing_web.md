@@ -3,26 +3,28 @@
 title: Play Audio Effects/Audio Mixing
 description: How to enable audio mixing for Web
 platform: Web
-updatedAt: Tue Dec 04 2018 20:24:54 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 20:24:59 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
 
-Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play longer background music, for example playing music in a live broadcast. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file playback stops.
+Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play longer background music, for example, playing music in a live broadcast. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file stops playing.
 Agora audio mixing supports the following options:
 
-- Mix or replace the audio: Mixing means to mix the music file with the audio captured by the microphone and send to to other users; replacing means to replace the audio captured by the microphone with the music file.
+- Mix or replace the audio: 
+	- Mix the music file with the audio captured by the microphone and send it to other users.
+	- Replace the audio captured by the microphone with the music file.
 - Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
 
 ## Implementation
 Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md) for more information.
 
 ```javascript
-// Set audio mixing options
-// filePath is a mandatory parameter to indicate an online url of mixing audio.
-// cycle is an optional parameter to indicate the number of playback and it needs to be a positive integer. The browser needs to be Chrome 65+.
-// replace is an optional parameter to indicate if the audio mixing replaces the original audio. 
-// playTime is a mandotary parameter to set the starting position of mixing audio. 0 means playing the mixing file from the beginning.
+// Sets the audio mixing options.
+// filePath is a mandatory parameter used to indicate an online URL of the mixing audio.
+// cycle is an optional parameter used to indicate the number of playback loops and it needs to be a positive integer. The web browser needs to be Google Chrome 65+.
+// replace is an optional parameter used to indicate if the audio mixing replaces the original audio. 
+// playTime is a mandatory parameter used to set the starting position of mixing audio playback. 0 means playing the mixing file from the beginning.
 var options = {
       filePath: "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3", 
       cycle: 1, 
@@ -30,39 +32,36 @@ var options = {
       playTime:0 
 }
 
-// Start audio mixing
+// Starts audio mixing.
 localStream.startAudioMixing(options, function(err){
      if (err){
              console.log("Failed to start audio mixing. " + err);
       }
 });
 
-// Adjust the volume of audio mixing. The volume is a number with the value range [1, 100].
+// Adjusts the volume of audio mixing. The value of volume ranges between 1 and 100.
 localStream.adjustAudioMixingVolume(volume);
 
-// Retrieve the position of the mixed audio. The unit of return value is ms.
+// Gets the playback position (ms) of the mixed audio.
 localStream.getAudioMixingCurrentPosition();
 
-// Set the mixing audio position
+// Sets the playback position of the mixed audio.
 localStream.setAudioMixingPosition(pos);
 
-// Pause the audio mixing
+// Pauses audio mixing.
 localStream.pauseAudioMixing();
 
-// Resume the audio mixing
+// Resumes audio mixing.
 localStream.resumeAudioMixing();
 
-// Get the current position of audio mixing. The unit of returned value is ms.
-localStream.getAudioMixingCurrentPosition();
-
-// Get the duration of audio mixing. The unit of returned value is ms.
+// Gets the duration (ms) of audio mixing. 
 localStream.getAudioMixingDuration();
 
-// Stop audio mixing
+// Stops audio mixing.
 localStream.stopAudioMixing();
 ```
 
-### API References
+### API Methods
 
 - [startAudioMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)
 - [stopAudioMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#stopaudiomixing)
@@ -75,10 +74,10 @@ localStream.stopAudioMixing();
 
 ## Considerations
 
-- Agora Web SDK supports only online music files for audio mixing
+- Agora Web SDK supports using only online music files for audio mixing.
 - The audio mixing methods support the following browsers:
   - Safari 12+
-  - Chrome 65+
-  - Latest Firefox
-- Call this method when you are in the channel. Otherwise, issues may occur.
-- Some parameters are supported by specific browsers, see [startAudioMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing) for details.
+  - Google Chrome 65+
+  - Firefox
+- Call the methods when you are in the channel.
+- Some parameters are supported by specific web browsers. See [startAudioMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing) for details.
