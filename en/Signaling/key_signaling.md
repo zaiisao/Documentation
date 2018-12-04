@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 04 2018 16:42:02 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 16:42:07 GMT+0000 (UTC)
 ---
 # Use Security Keys
 ## Introduction
@@ -151,10 +151,10 @@ Use the following field names in the sequence:
 <td>32</td>
 <td><p>Hex code for the signature. A string calculated by the MD5 algorithm based on inputs including the App Certificate and the following fields:</p>
 <ul>
-<li>`account`: User ID defined by the client.</li>
-<li>`appId`:  A 32-character App ID string.</li>
-<li>`appCertificate`: A 32-character App Certificate string.</li>
-<li>`expiredTime`: The UTC timestamp indicating when a user cannot access the Agora Signaling System.</li>
+<li>account: User ID defined by the client.</li>
+<li>appId:  A 32-character App ID string.</li>
+<li>appCertificate: A 32-character App Certificate string.</li>
+<li>expiredTime: The UTC timestamp indicating when a user cannot access the Agora Signaling System.</li>
 </ul>
 </td>
 </tr>
