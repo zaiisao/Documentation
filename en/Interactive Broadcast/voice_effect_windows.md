@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Tue Dec 04 2018 18:53:27 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 18:53:30 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Feature Description 
@@ -45,7 +45,7 @@ nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_WET_LEVEL, 7);
 // The room size of the reverberation. A larger room size means a stronger reverberation. The value ranges between 0 and 100.
 nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_ROOM_SIZE, 6);
 
-// The length of the initial delay of the wet signal (ms). The value range between 0 and 200.
+// The length of the initial delay of the wet signal (ms). The value ranges between 0 and 200.
 nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_WET_DELAY, 124);
 
 // The reverberation strength. The value ranges between 0 and 100. The higher the value, the stronger the reverberation.
