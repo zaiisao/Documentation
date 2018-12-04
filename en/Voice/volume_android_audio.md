@@ -11,7 +11,7 @@ updatedAt: Tue Dec 04 2018 17:43:36 GMT+0000 (UTC)
 When using the Agora SDK, developers can adjust the recording and playback volumes for customization. For example, you can mute the remote audio by setting the volume to 0.
 
 ## Implementation
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
+Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
 
 The Agora SDK provides methods to adjust the volume of the audio signals, which enables adjusting the recording and playback volumes.
 The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).

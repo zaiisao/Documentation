@@ -10,7 +10,7 @@ updatedAt: Fri Nov 23 2018 08:47:26 GMT+0000 (UTC)
 In some professional scenarios, the audio quality is essential for the user experience. For example, podcast applications require stereo and high-quality audio. The so-called high-quality audio refers to the audio profile of 48 KHz sampling rate and 192 Kbps bitrate, which suits the high-fidelity musical scenarios, such as online radio and singing competitions.
 
 ## Implementation
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
+Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
 
 Agora SDK provides the [setAudioProfile](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a34175b5e04c88d9dc6608b1f38c0275d) method for developers to set appropriate audio profiles according to the scenarios. This method has two parameters:
 
