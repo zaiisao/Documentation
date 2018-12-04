@@ -6,8 +6,8 @@ platform: Android
 updatedAt: Tue Dec 04 2018 19:03:30 GMT+0000 (UTC)
 ---
 # In-ear Monitoring
-In-ear monitoring can provide a mix of audio sources (for example the vocal and the music) to the host with a low latency, frequently used in professional scenarios such as concerts.
-Agora SDK supports the in-ear monitoring function and adjusting the volume of the in-ear monitor.
+In-ear monitoring provides a mix of the audio sources (for example, a mix of the vocals and music) to the host with low latency, commonly used in professional scenarios, such as in concerts.
+The Agora SDK supports the in-ear monitoring function and volume adjustment of the in-ear monitor.
 
 ## Implementation
 Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
