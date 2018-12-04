@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Tue Dec 04 2018 17:14:12 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 17:14:15 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Feature Description
@@ -13,14 +13,14 @@ When using the Agora SDK, developers can adjust the audio recording and playback
 ## Implementation
 Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md) for more information.
 
-Agora SDK provides methods to adjust the volume of the audio signals, which enables adjusting the recording and playback volume.
-The volume value range is 0 to 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
+The Agora SDK provides methods to adjust the volume of the audio signals, which enables adjusting the recording and playback volumes.
+The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
 
 ```java
 int volume = 200;
-// Set the volume of the recording audio signal.
+// Sets the volume of the recording audio signal.
 rtcEngine.adjustRecordingSignalVolume(volume);
-// Set the volume of the playback audio signal.
+// Sets the volume of the playback audio signal.
 rtcEngine.adjustPlaybackSignalVolume(volume);
 ```
 
@@ -31,6 +31,6 @@ rtcEngine.adjustPlaybackSignalVolume(volume);
 
 ## Considerations
 
-- If the volume of the audio signal is set too high, unnatural sounds may occur on some devices.
+- If the volume of the audio signal is set too high, noise may occur on some devices.
 - The API methods have return values. If the method fails, the return value is < 0.
 
