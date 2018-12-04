@@ -3,7 +3,7 @@
 title: Set the Stereo/High-quality Audio Profile
 description: How to set the high-quality audio for iOS and macOS
 platform: macOS
-updatedAt: Tue Dec 04 2018 22:04:05 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 22:04:09 GMT+0000 (UTC)
 ---
 # Set the Stereo/High-quality Audio Profile
 ## Feature Description 
@@ -27,7 +27,7 @@ agoraKit.setAudioProfile(.speechStandard, scenario: .chatRoomGaming)
 agoraKit.setAudioProfile(.musicStandard, scenario: .chatRoomEntertainment)
 // KTV
 agoraKit.setAudioProfile(.musicHighQuality, scenario: .chatRoomEntertainment)
-// FM high-quality
+// FM high-fidelity
 agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 ```
 
@@ -39,7 +39,7 @@ agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 [agoraKit setAudioProfile: AgoraAudioProfilemusicStandard, scenario: AgoraAudioScenarioChatRoomEntertainment];
 // KTV
 [agoraKit setAudioProfile: AgoraAudioProfileMusicHighQuality, scenario: AgoraAudioScenarioChatRoomEntertainment];
-// FM high-quality
+// FM high-fidelity
 [agoraKit setAudioProfile: AgoraAudioProfilemusicHighQuality, scenario: AgoraAudioScenarioGameStreaming]
 ```
 
