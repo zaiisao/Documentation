@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: macOS
-updatedAt: Tue Dec 04 2018 20:34:45 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 20:34:48 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -14,7 +14,7 @@ Before proceeding, ensure that you have prepared the development environment. Se
 
 The play audio effect methods can be used to play audio effects, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.
 
-The audio effect file is specified by the file path, but the SDK uses the sound ID to identify the audio effect file. The SDK does not have the rule to define the sound ID. You need to ensure that each audio effect file has a unique sound ID. Common practices include automatically incrementing the ID, and using the hashCode of the audio effect file.
+The audio effect file is specified by the file path, but the SDK uses the sound ID to identify the audio effect file. The SDK does not have any rule to define the sound ID. You need to ensure that each audio effect file has a unique sound ID. You may increment the ID and use the hashCode of the audio effect file.
 
 ### Implementation
 
