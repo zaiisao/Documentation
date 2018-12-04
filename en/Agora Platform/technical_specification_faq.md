@@ -3,14 +3,14 @@
 title: Technical Specification
 description: 
 platform: Technical Specification
-updatedAt: Wed Nov 28 2018 07:51:59 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 07:52:04 GMT+0000 (UTC)
 ---
 # Technical Specification
 ## Platform and Scale
 
 #### What platforms does Agora support?
 
-Android, iOS, macOS, Windows, and the web
+Android, iOS, macOS, Windows, and the web.
 
 ### How many users can the Agora products support simultaneously?
 
@@ -59,7 +59,7 @@ We use a private application layer protocol based on UDP.
 
 ### Does the current Android demo have an Eclipse edition?
 
-No. The demo only supports Android Studio.
+No. Due to the Eclipse development environment is outmoded, the current demo does not support Eclipse, but only Android Studio.
 
 ## Codec
 

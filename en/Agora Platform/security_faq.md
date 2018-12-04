@@ -3,7 +3,7 @@
 title: Security
 description: 
 platform: Security
-updatedAt: Wed Nov 28 2018 07:35:38 GMT+0000 (UTC)
+updatedAt: Wed Nov 28 2018 07:35:43 GMT+0000 (UTC)
 ---
 # Security
 ### Are the services provided by Agora safe?
@@ -28,4 +28,4 @@ Agora regularly scans the core network nodes, checks, and cleans up possible sec
 
 ### Do the Agora servers store any voice or video content?
 
-No, the Agora servers do not store any voice or video content. The Agora SDKs send some information to the Agora servers for quality and problem reporting purposes. This information includes the date, time, duration of the call, and failure records. Agora does not collect information that affects privacy. For any concerns, contact support@agora.io.
+No, the Agora servers do not store any voice or video content. The Agora SDKs send some information to the Agora servers for quality and problem reporting purposes. This information includes the date, time, duration of the call, and failure records. Agora does not collect information that affects privacy, such as login, identification and payment. For any concerns, contact support@agora.io.

@@ -8,7 +8,7 @@ updatedAt: Tue Dec 04 2018 16:55:17 GMT+0000 (UTC)
 # Adjust the Volume
 ## Feature Description
 
-When using the Agora SDK, developers can adjust the volumes of the captured audio and the playback, to satisfy customization requirements. For example, you can mute the remote audio by setting the volume to 0.
+When using the Agora SDK, developers can adjust the audio recording and playback volumes for customization. For example, you can mute the remote audio by setting the volume to 0.
 
 ## Implementation
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for more information.

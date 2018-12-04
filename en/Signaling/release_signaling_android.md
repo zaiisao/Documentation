@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Nov 29 2018 06:09:02 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 06:09:08 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
@@ -44,7 +44,6 @@ Fixed a crash issue caused by the DNS.
 The version 1.3.0 was released on May 4, 2018. See below for new features.
 
 -   Added a special <code>_timeout</code> attribute to the `extra` parameter of <code>channelInviteUser2</code> to set the call timeout equal to or greater than 1 s.
--   Added support for the JCenter package management tool, io.agora.sig:sdk:1.3.0.
 
 
 ## v1.2.1

@@ -3,7 +3,7 @@
 title: Video-related Issues
 description: 
 platform: Video-related Issues
-updatedAt: Thu Nov 29 2018 06:53:21 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 06:53:26 GMT+0000 (UTC)
 ---
 # Video-related Issues
 This page provides common troubleshooting strategies for Agora's video products and services.
@@ -23,6 +23,8 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The time frame during which the choppy video playback appears.
 * SDK logs and screen recording files of the user.
 
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+
 ## Blurry Video
 
 Blurry videos may be caused by low bitrates and resolution ratios. 
@@ -37,6 +39,8 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The uid of the user who sees the blurry video.
 * The time frame during which the blurry video appears.
 * SDK logs and screen recording files of the user.
+
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
 
 ## Black Screens
 
