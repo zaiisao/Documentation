@@ -8,7 +8,7 @@ updatedAt: Fri Nov 23 2018 08:59:18 GMT+0000 (UTC)
 # Adjust the Pitch and Tone
 ## Feature Description 
 
-In social and entertainment scenarios, the users often need various voice effects for more interesting and interacrtive experiences. Agora provides a series of methods for developer to flexibly change the users' voice, including adjusting the pitch, setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance the interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
 Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md) for more information.
