@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: macOS
-updatedAt: Tue Dec 04 2018 19:44:32 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 19:44:36 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -52,7 +52,7 @@ agoraKit.setEffectsVolume(volume)
 // Resumes playing the audio effect.
 agoraKit.resumeAllEffects()
 
-// Stop playing all audio effects.
+// Stops playing all audio effects.
 agoraKit.stopAllEffects()
 ```
 
