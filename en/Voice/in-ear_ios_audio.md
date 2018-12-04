@@ -3,7 +3,7 @@
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
 platform: iOS
-updatedAt: Tue Dec 04 2018 19:04:09 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 19:04:12 GMT+0000 (UTC)
 ---
 # In-ear Monitoring
 In-ear monitoring can provide a mix of audio sources (for example the vocal and the music) to the host with a low latency, frequently used in professional scenarios such as concerts.
@@ -17,7 +17,7 @@ Before proceeding, ensure that you have prepared the development environment. Se
 // Enables in-ear monitoring. The default value is false.
 agoraKit.enable(inEarMonitoring: true)
 
-// Sets the volume of the in-ear monitor. The value range is 0 to 100, and the default is 100 which represents the original volume captured by the microphone.
+// Sets the volume of the in-ear monitor. The value ranges between 0 and 100. The default is 100, which represents the original volume captured by the microphone.
 agoraKit.setInEarMonitoringVolume(50)
 ```
 
@@ -26,7 +26,7 @@ agoraKit.setInEarMonitoringVolume(50)
 // Enables in-ear monitoring. The default value is NO.
 [agoraKit enableInEarMonitoring:YES];
 
-// Sets the volume of the in-ear monitor. The value range is 0 to 100, and the default is 100 which represents the original volume captured by the microphone.
+// Sets the volume of the in-ear monitor. The value ranges between 0 and 100. The default value is 100, which represents the original volume captured by the microphone.
 [agoraKit setInEarMonitoringVolume: 50];
 ```
 
