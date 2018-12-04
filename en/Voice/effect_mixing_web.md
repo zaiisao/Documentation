@@ -15,7 +15,7 @@ Agora audio mixing supports the following options:
 - Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
 
 ## Implementation
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
+Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
 
 ```javascript
 // Set audio mixing options
