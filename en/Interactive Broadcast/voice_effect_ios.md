@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to set voice effects on iOS
 platform: iOS
-updatedAt: Tue Dec 04 2018 18:44:30 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 18:47:20 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Feature Description 
