@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Tue Dec 04 2018 12:08:57 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 12:09:04 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -263,11 +263,10 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>The directory of AgoraCoreService. The default value is NULL.</td>
 </tr>
 <tr><td><code>recordFilrRootDir</code></td>
-<td>The root directory of the recording files. The default value is NULL. Do not set <code>recordFileRootDir</code> and <code>cfgFilePath</code> at the same time.</td>
+<td>The root directory of the recording files. The default value is NULL. The sub-path will be generated automatically.</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>The path of the configuration file. The default value is NULL. In this configuration file, you can set the absolute path of the recording file, and the content in the configuration file must be in JSON format. Do not set <code>recordFileRootDir</code> and <code>cfgFilePath</code> at the same time.
-For example, {“Recording_Dir” :”&lt;recording path&gt;”}, where <code>Recording_Dir</code> is fixed.</td>
+<td>The path of the configuration file. The default value is NULL. The content in the configuration file must be in JSON format. In this configuration file, you can set the absolute path of the recording file, such as {“Recording_Dir” : “<recording path>”}, but the sub-path will not be generated automatically.</td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
 <td>The lowest UDP port. Ensure that the value of <code>highUdpPort</code> - <code>lowUdpPort</code> is &ge; 4. The default value is 0.</td>
