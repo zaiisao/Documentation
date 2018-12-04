@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Mon Dec 03 2018 08:41:20 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 12:08:18 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -217,7 +217,6 @@ public class RecordingConfig {
 <ul>
 <li>0：音视频分别混合（默认）</li>
 <li>1：音频和视频一起混合，录制文件格式为 mp4，但播放器支持有限</li>
-<li>2：音频和视频一起混合，录制文件格式为 mp4，支持更多播放器</li>
 </ul>
 </td>
 </tr>
