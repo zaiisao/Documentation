@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Tue Dec 04 2018 20:06:50 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 20:40:44 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -129,7 +129,7 @@ rtcEngine.stopAudioMixing()；
 
 ### Considerations
 
-- The audio mixing methods require Android 4.2+, and API v16+.
+- The audio mixing methods require Android 4.2+ and API v16+.
 - Ensure that you call the methods when you are in the channel.
 - If you call the methods on an emulator, you can only play the MP3 files in the **/sdcard/** folder for audio mixing.
 - The API methods have return values. If the method fails, the return value is < 0.
