@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 04 2018 16:34:58 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 16:39:12 GMT+0000 (UTC)
 ---
 # Use Security Keys
 ## Introduction
@@ -26,7 +26,7 @@ Where:
 
 After signing up at [Dashboard](http://dashboard.agora.io), multiple projects can be created. Each project will be assigned a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to safeguard the App IDs.
 
-> To switch your App ID, you must first call the destroy() function to destroy the current instance.
+> To switch your App ID, you must first call the `destroy` method to destroy the current instance.
 
 <a name = "SignalingToken"></a>
 
@@ -43,13 +43,9 @@ Agora recommends using a SignalingToken for added security.
 Each Agora account can create multiple projects, and each project has a unique App ID.
 
 1.  Sign up for a new account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
-
-2.  Click **Add New Project** on the **Projects** page of the dashboard.
-
+2.  Click **Add New Project** on the **Projects** page of Dashboard.
 3.  Fill in the **Project Name** and click **Submit**.
-
     <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
-
 4.  Find the App ID under the created project.
 
 
@@ -58,10 +54,8 @@ Each Agora account can create multiple projects, and each project has a unique A
 Access the Agora services by using your unique App ID:
 
 1.  Enter the App ID in the start window to enable voice or video communication in the demo.
-
 2.  Add the App ID to the code when developing the application.
-
-3.  Set the `appId` parameter as the App ID when calling APIs.
+3.  Set the `appId` parameter as the App ID when calling the API methods.
 
 
 ## How to Get and Use a SignalingToken
@@ -75,25 +69,17 @@ Each Agora account can create multiple projects, and each project has a unique A
 ### Step 2: Get an App Certificate
 
 1.  Login to [https://dashboard.agora.io](https://dashboard.agora.io).
-
-2.  Click **Add New Project** on the **Projects** page of the dashboard.
-
+2.  Click **Add New Project** on the **Projects** page of Dashboard.
 3.  Fill in the **Project Name** and click **Submit**. Find the App ID under the created project.
-
      <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
-
 4.  Enable the App Certificate for the project.
-
 	-   Click **Edit** on the top-right of the project.
 	-   Click **Enable** to the right of the App Certificate. Read **About App Certificate** before confirming the operation.
-
          <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/en/enable_app_cert.png" style="width: 420.0px;"/>
-
 	-  Click the ‘eye’ icon to view the App Certificate. You can re-click this icon to hide the App Certificate.
-
         <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/en/view_app_certificate.png" style="width: 420.0px;"/>
 
-> -   An App Certificate is enabled for the sole purpose of generating a Token and cannot be used alone.
+> -   An App Certificate is enabled for the sole purpose of generating a token and cannot be used alone.
 > 
 > -   Contact [support@agora.io](mailto:support@agora.io) to renew an App Certificate.
 > 
@@ -106,11 +92,11 @@ Each Agora account can create multiple projects, and each project has a unique A
 
 5.  If your project has integrated Agora’s Signaling SDK, you can use the Signaling Token Debugging Switch under App Certificate.
 
-    -   If App Certificate is not enabled, the Signaling Token Debugging Switch is disabled and you can set the SignalingToken to any value.
+    -   If the App Certificate is not enabled, the Signaling Token Debugging Switch is disabled and you can set the SignalingToken to any value.
 
-    -   If App Certificate is enabled:
+    -   If the App Certificate is enabled:
 
-        -   The Signaling Token Debugging Switch is on if App Certificate is enabled: You can set the SignalingToken or use `_no_need_token` to skip the setting.
+        -   The Signaling Token Debugging Switch is on if the App Certificate is enabled: You can set the SignalingToken or use `_no_need_token` to skip the setting.
 
         -   If you switch off the Signaling Token Debugging Switch, you can set the SignalingToken but cannot set it to `_no_need_token`. Otherwise, you will receive the Signaling error code 206.
 
@@ -158,17 +144,17 @@ Use the following field names in the sequence:
 <tr><td>Authorized Timestamp</td>
 <td>Number</td>
 <td>10</td>
-<td>UTC timestamp represented by the number of seconds elapsed since 1/1/1970. Indicates the exact time when a party can no longer use the Agora service (for example, when someone is forced to leave an ongoing call).</td>
+<td>The UTC timestamp represented by the number of seconds elapsed since 1/1/1970. Indicates the exact time when a user can no longer use the Agora service (for example, when a user is forced to leave an ongoing call).</td>
 </tr>
 <tr><td>Sign</td>
 <td>String</td>
 <td>32</td>
 <td><p>Hex code for the signature. A string calculated by the MD5 algorithm based on inputs including the App Certificate and the following fields:</p>
 <ul>
-<li>account: User ID defined by the client.</li>
-<li>appId:  A 32-character App ID string.</li>
-<li>appCertificate: A 32-character App Certificate string.</li>
-<li>expiredTime: UTC timestamp indicating the specific moment when a user cannot access the Agora Signaling System.</li>
+<li>`account`: User ID defined by the client.</li>
+<li>`appId`:  A 32-character App ID string.</li>
+<li>`appCertificate`: A 32-character App Certificate string.</li>
+<li>`expiredTime`: The UTC timestamp indicating when a user cannot access the Agora Signaling System.</li>
 </ul>
 </td>
 </tr>
@@ -191,7 +177,7 @@ token       = "1:appId:expiredTime:md5(account + appId + appCertificate + expire
 
 The generated token is the SignalingToken used to log in the Agora signaling system for [Step 4: Use a SignalingToken](#Use-a-SignalingToken).
 
-> Agora has provided sample code on GitHub for generating the token.
+> Agora provides sample code on GitHub for generating the token.
 > -   [C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/generatorSignalToken.h)
 > -   [Go](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/go/src/SignalingToken/SignalingToken.go)
 > -   [Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/signal/SignalingToken.java)
@@ -205,13 +191,13 @@ The generated token is the SignalingToken used to log in the Agora signaling sys
 
 Before a user requests to log in the Agora signaling system:
 
-1.  The client application requests authentication from your organization’s business server.
+1.  The client application requests authentication from your organization’s server.
 
-2.  The server, upon receiving the request, uses the algorithm provided by Agora to generate a SignalingToken and then passes the SignalingToken back to the client application. The SignalingToken is based on the App Certificate, App ID, and User ID defined by the client, and the Authorized Timestamp.
+2.  The server, upon receiving the request, uses the algorithm provided by Agora to generate a SignalingToken and then passes the SignalingToken back to the client application. The SignalingToken is based on the App Certificate, App ID, User ID defined by the client, and the Authorized Timestamp.
 
 3.  The client application calls the `login` method and is required to set the token parameter as the generated SignalingToken.
 
-4.  The Agora server receives the SignalingToken and confirms that the call comes from a legitimate user, then allows the user to access the Agora Signaling System.
+4.  The Agora server receives the SignalingToken, confirms that the call comes from a legitimate user, then allows the user to access the Agora Signaling System.
 
 
 
