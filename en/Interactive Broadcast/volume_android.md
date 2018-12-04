@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Tue Dec 04 2018 17:19:29 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 17:19:33 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Feature Description
@@ -18,9 +18,9 @@ The value of the volume ranges between 0 and 400. 100 (default) represents the o
 
 ```java
 int volume = 200;
-// Sets the volume of the recording audio signal.
+// Sets the volume of the recording signal.
 rtcEngine.adjustRecordingSignalVolume(volume);
-// Sets the volume of the playback audio signal.
+// Sets the volume of the playback signal.
 rtcEngine.adjustPlaybackSignalVolume(volume);
 ```
 
