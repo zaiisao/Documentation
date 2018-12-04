@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Tue Dec 04 2018 20:06:47 GMT+0000 (UTC)
+updatedAt: Tue Dec 04 2018 20:06:50 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -15,7 +15,7 @@ Before proceeding, ensure that you have prepared the development environment. Se
 
 The play audio effect methods can be used to play audio effects, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.
 
-The Agora SDK provides the `AudioEffectManager` class to manage the audio effects, including a series of methods. The audio effect file is specified by the file path, but the `AudioEffectManager` class uses the sound ID to identify the audio effect file. The file is usually placed in **assets**. The SDK does not have the rule to define the sound ID. You need to ensure each audio effect file has a unique sound ID. Common practices include automatically incrementing the ID, and using the hashCode of the audio effect file.
+The Agora SDK provides the `AudioEffectManager` class to manage the audio effects, including a series of methods. The audio effect file is specified by the file path, but the `AudioEffectManager` class uses the sound ID to identify the audio effect file. The file is usually placed in the **assets** folder. The SDK does not have any rule to define the sound ID. You need to ensure that each audio effect file has a unique sound ID. You may increment the ID and use the hashCode of the audio effect file.
 
 ### Implementation
 
