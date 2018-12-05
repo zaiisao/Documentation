@@ -3,7 +3,7 @@
 title: 发布和订阅音频流
 description: 
 platform: Android
-updatedAt: Wed Dec 05 2018 09:24:01 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 09:26:52 GMT+0000 (UTC)
 ---
 # 发布和订阅音频流
 在发布或订阅音频流前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/android_audio.md)。
