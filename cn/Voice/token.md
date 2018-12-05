@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 05 2018 08:45:35 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 08:45:39 GMT+0000 (UTC)
 ---
 # 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
@@ -126,6 +126,7 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 
 你可以直接使用相应的示例代码，也可以使用其他语言实现生成 Token 的功能。 Agora 欢迎开发者将自己实现的动态密钥生成方式在 [GitHub](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 上提交 Pull request 贡献出来。
 
+<a name = "Generate_Token"></a>
 ### 生成 Token
 
 生成 Token 时需要向 Server 端传入以下参数：
