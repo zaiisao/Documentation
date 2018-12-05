@@ -10,7 +10,7 @@ updatedAt: Wed Dec 05 2018 03:03:26 GMT+0000 (UTC)
 
 The pre-call networkd quality test checks if the current network quality suits the audio bitrate or the target bitrate of the chosen video profile before a user joins a channel. Returned to the user by callbacks every two seconds, the test results are a network quality rating based on packet-loss rate and network jitter and reflect the uplink network quality of the client.
 
-> The audio SDK uses a fixed bitrate of 48 kbps; the video SDK adjust the actual bitrate against the chosen video profile.
+> The audio SDK uses a fixed bitrate of 48 kbps; the video SDK adjust the actual bitrate according to the chosen video profile.
 
 
 
