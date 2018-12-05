@@ -3,9 +3,11 @@
 title: 加入频道
 description: android平台加入通信频道
 platform: Android
-updatedAt: Wed Dec 05 2018 08:36:40 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 08:36:47 GMT+0000 (UTC)
 ---
 # 加入频道
+在加入频道前，请确保你已完成环境准备、安装包获取、创建实例等步骤，详见[集成客户端](../../cn/Video/android_audio.md)和[创建实例](../../cn/Video/initialize_android.md)。
+
 App 在加入频道前，需要先设置频道模式，再加入频道。
 
 ## 设置频道模式为通信
@@ -36,3 +38,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
     mRtcEngine.joinChannel(null, "demoChannel1", "Extra Optional Data", 0); // if you do not specify the uid, Agora will assign one.
 }
 ```
+
+现在你已经成功加入了频道，可以使用 Agora SDK 一次实现如下功能：
+* [发布和订阅音频流](../../cn/Video/publish_android_audio.md)
+* [离开频道](../../cn/Video/leave_android.md)
