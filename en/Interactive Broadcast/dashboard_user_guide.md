@@ -3,7 +3,7 @@
 title: Dashboard User Guide
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 05 2018 07:05:51 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 07:24:31 GMT+0000 (UTC)
 ---
 # Dashboard User Guide
 Welcome to Agora Dashboard! Here, you can do things like checking your usage and the QoE, managing projects and team members, getting Agora customer support, and more.
