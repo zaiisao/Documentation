@@ -3,7 +3,7 @@
 title: 创建实例
 description: 安卓平台初始化引擎
 platform: Android
-updatedAt: Wed Dec 05 2018 09:41:57 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 09:42:01 GMT+0000 (UTC)
 ---
 # 创建实例
 在创建实例前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/android_video.md)。
@@ -40,9 +40,8 @@ private void initializeAgoraEngine() {
 ```
 
 
-现在你已经完成了创建实例，可以使用 Agora SDK，依次实现如下功能：
+现在你已经完成了创建实例，可以使用 Agora SDK，实现如下功能：
 * [加入频道](../../cn/Interactive%20Broadcast/join_live_android.md)
 * [切换用户角色](../../cn/Interactive%20Broadcast/role_android.md)
 * [发布和订阅音视频流](../../cn/Interactive%20Broadcast/publish_android.md)
-* [离开频道](../../cn/Interactive%20Broadcast/leave_android.md)
 
