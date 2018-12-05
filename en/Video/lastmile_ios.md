@@ -52,7 +52,7 @@ agoraKit.disableLastmileTest()
 
 ## Considerations
 
-- Only before joining a channel can you conduct a lastmile test.
+- Only before joining a channel can you conduct a last mile test.
 - Chances are, the callback returns UNKNOWN the first time it is triggered. Still you can get the test result from the callbacks coming after it. 
 
 
