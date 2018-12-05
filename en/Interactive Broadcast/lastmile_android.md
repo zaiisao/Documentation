@@ -1,11 +1,11 @@
 
 ---
-title: Conduct a Lastmile Test
+title: Conduct a Last Mile Test
 description: 
 platform: Android
-updatedAt: Wed Nov 21 2018 10:40:30 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 03:01:32 GMT+0000 (UTC)
 ---
-# Conduct a Lastmile Test
+# Conduct a Last Mile Test
 ## Introduction
 
 The pre-call networkd quality test checks if the current network quality suits the audio bitrate or the target bitrate of the chosen video profile before a user joins a channel. Returned to the user by callbacks every two seconds, the test results are a network quality rating based on packet-loss rate and network jitter and reflect the uplink network quality of the client.
