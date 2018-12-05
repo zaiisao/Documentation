@@ -3,14 +3,14 @@
 title: Use Dashboard
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 05 2018 10:35:33 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 10:35:42 GMT+0000 (UTC)
 ---
 # Use Dashboard
 Welcome to Agora Dashboard! Here, you can do things like checking your usage and the QoE, managing projects and team members, getting Agora customer support, and more.
 
 Before using Agora Dashboard, please head on over to [www.agora.io](https://www.agora.io/en/) to create an Agora account. Learn how to [create an Agora account](../../en/Interactive%20Broadcast/sign_in_and_sign_up.md) and how to [reset your password](../../en/Interactive%20Broadcast/sign_in_and_sign_up.md) if you forget it.
 
-## Functions
+## Overview
 
 <table>
 <tr>
