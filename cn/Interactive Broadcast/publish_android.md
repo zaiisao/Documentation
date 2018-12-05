@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: android平台上发布音视频流
 platform: Android
-updatedAt: Fri Nov 02 2018 04:01:55 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 10:01:12 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 ## 打开视频模式
