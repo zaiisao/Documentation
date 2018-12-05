@@ -3,7 +3,7 @@
 title: Agora Signaling Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 05 2018 03:58:01 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 03:58:06 GMT+0000 (UTC)
 ---
 # Agora Signaling Overview
 The Agora Signaling SDK is based on the TCP protocol and provides a stable messaging channel for you to implement real-time communication scenarios.
@@ -58,10 +58,10 @@ The Agora Signaling SDK can be used in the following scenarios:
 
 The Agora Signaling SDK provides the following features:
 
-<table>
+<table border="1" width="100%">
   <tr>
-    <th>Feature </th>
-    <th>Description</th>
+    <th width="20%">Feature </th>
+    <th width="50%">Description</th>
   </tr>
   <tr>
     <td>High concurrency</td>
@@ -83,9 +83,9 @@ The Agora Signaling SDK provides the following features:
 
 ## References
 
--   [Quickstart Guides](../../en/Quickstart%20Guide/signal_android-1.md) on how to deploy and use the Agora Signaling SDK, to complete various tasks, such as sending text messages and making a call.
+-   [Quickstart Guides](../../en/Quickstart%20Guide/signal_android-1.md) decribe how to integrate the Agora Signaling SDK and provide short code snippets of common functions, such as sending point-to-point and channel messages.
 
--   [API Reference](../../en/API%20Reference/signal_android.md) lists the API methods of the Agora Signaling SDK.
+-   [API Reference](../../en/API%20Reference/signal_android.md) lists the core methods and callbacks of the Agora Signaling SDK.
 
 
 
