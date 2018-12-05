@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Windows
-updatedAt: Wed Dec 05 2018 03:28:13 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 03:28:21 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -20,13 +20,13 @@ The pre-call networkd quality test checks if the current network quality suits t
 // Implement the onLastmileQuality callback. 
 void onLastmileQuality(int quality) {
  		// Quality here refers to the detected network quality type. You can use it for the related logics. 
-		// ⑴ You can choose to end the lastmile test in the callback. 
+		// ⑴ You can choose to end the last mile test in the callback. 
 }
 
-// Enable the lastmile test at an appropriate time and before joining a channel. 
+// Enable the last mile test at an appropriate time and before joining a channel. 
 int ret = lpAgoraEngine->enableLastmileTest();
 
-	// ⑵ You can also choose to end the lastmile test at any other time. Before the test ends, the onLastmileQuality() callback can be returned multiple times. 
+	// ⑵ You can also choose to end the last mile test at any other time. Before the test ends, the onLastmileQuality() callback can be returned multiple times. 
 int ret = lpAgoraEngine->disableLastmileTest();
 
 ```
