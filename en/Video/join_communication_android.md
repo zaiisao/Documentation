@@ -3,9 +3,11 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Wed Dec 05 2018 10:09:01 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 10:09:13 GMT+0000 (UTC)
 ---
 # Join a Channel
+Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_audio.md) for more information.
+
 You need to set the channel profile before the app joins a channel.
 
 ## Set the channel profile as Communication
@@ -38,3 +40,5 @@ In the `joinChannel` method:
     mRtcEngine.joinChannel(null, "demoChannel1", "Extra Optional Data", 0); // if you do not specify the uid, Agora will assign one.
 }
 ```
+
+Now that you are in the channel, you can start an audio call by [Publishing and Subscribing to Streams](../../en/Video/publish_android_audio.md).
