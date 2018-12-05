@@ -3,7 +3,7 @@
 title: Agora Signaling Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 14 2018 21:13:15 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 02:44:30 GMT+0000 (UTC)
 ---
 # Agora Signaling Overview
 The Agora Signaling SDK is based on the TCP protocol and provides a stable messaging channel for you to implement real-time communication scenarios.
