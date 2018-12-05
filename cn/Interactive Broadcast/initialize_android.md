@@ -3,9 +3,11 @@
 title: 创建实例
 description: 安卓平台初始化引擎
 platform: Android
-updatedAt: Wed Dec 05 2018 08:28:06 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 08:28:35 GMT+0000 (UTC)
 ---
 # 创建实例
+在创建实例前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/android_audio.md)。
+
 导入以下 Agora API 包:
 
 - `io.agora.rtc.Constants`
@@ -37,4 +39,9 @@ private void initializeAgoraEngine() {
 }
 ```
 
+
+现在你已经完成了创建实例，可以开始使用 Agora SDK，依次实现如下功能：
+* [加入频道](../../cn/Interactive%20Broadcast/join_communication_android.md)
+* [发布和订阅音频流](../../cn/Interactive%20Broadcast/publish_android_audio.md)
+* [离开频道](../../cn/Interactive%20Broadcast/leave_android.md)
 
