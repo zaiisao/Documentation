@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Android
-updatedAt: Wed Dec 05 2018 08:25:38 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 08:28:44 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
@@ -153,4 +153,8 @@ Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
 -keep class io.agora.**{*;}
 ```
 
-你已经完成了客户端集成，可以开始使用 Agora SDK 了。
+现在你已经完成了客户端集成，可以开始使用 Agora SDK，依次实现如下功能：
+* [创建实例](../../cn/Voice/initialize_android.md)
+* [加入频道](../../cn/Voice/join_communication_android.md)
+* [发布和订阅音频流](../../cn/Voice/publish_android_audio.md)
+* [离开频道](../../cn/Voice/leave_android.md)
