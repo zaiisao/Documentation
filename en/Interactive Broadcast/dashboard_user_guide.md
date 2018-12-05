@@ -3,10 +3,10 @@
 title: Dashboard User Guide
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 05 2018 07:05:19 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 07:05:51 GMT+0000 (UTC)
 ---
 # Dashboard User Guide
-Welcome to Agora Dashboard! Here, you can do things like checking your usage and the QoE, managing projects and team members, getting Agora technical support, and more.
+Welcome to Agora Dashboard! Here, you can do things like checking your usage and the QoE, managing projects and team members, getting Agora customer support, and more.
 
 Before using Agora Dashboard, please head on over to [https://www.agora.io/en/](https://www.agora.io/en/) to create an Agora account. Learn how to [create an Agora account](../../en/Interactive%20Broadcast/sign_in_and_sign_up.md) and how to [reset your password](../../en/Interactive%20Broadcast/sign_in_and_sign_up.md) if you forget it.
 
@@ -19,8 +19,7 @@ Before using Agora Dashboard, please head on over to [https://www.agora.io/en/](
 </tr>
 <tr>
 <td>Check Usage</td>
-<td>Check the duration of each voice and video call during a specific time frame and calculate your fees.
-T</td>
+<td>Check the usage of voice and video calls in a channel during a specific time frame to help you calculate fees.</td>
 </tr>
 <tr>
 <td>Check Quality of Experience</td>
@@ -28,11 +27,11 @@ T</td>
 </tr>
 <tr>
 <td>Manage Projects</td>
-<td>Create and manage projects and get the App ID and App Certificates.</td>
+<td>Create and manage projects, and get the App ID and App Certificates.</td>
 </tr>
 <tr>
 <td>Manage Team Members</td>
-<td>在项目中添加并管理成员角色，设置角色对应的项目管理权限。</td>
+<td>Add and manage team members, and set permissions for different roles.</td>
 </tr>
 <tr>
 <td>Submit and Check a Ticket</td>
@@ -50,19 +49,18 @@ T</td>
 
 ## Check Usage
 
-Click on ** Usage > Usage Statistics** in the left-side navigation menu and enter the page of **Usage Details**, where you can check the total usage of voice and video calls in a specific channel during a specific time frame and calculate your fees.charts 
+Click on **Usage > Usage Statistics** in the left-side navigation menu and enter the page of **Usage Details**, where you can check the total usage of voice and video calls in a specific channel during a specific time frame and calculate your fees. 
 
-![](https://web-cdn.agora.io/docs-files/1542965752366)
+![](https://web-cdn.agora.io/docs-files/1543989847923)
 
-如上图所示，选择频道和周期后，可查看该频道在所选周期内的用量统计。该图展示频道中包括 [主播](../../cn/Agora%20Platform/terms.md) 和 [观众](../../cn/Agora%20Platform/terms.md) 在内的所有用户的通话用量，其中，
-As shown in the figure above, you select the channel, enter the time frame, and then view the total usage (minute) of audio, SD Video, HD Video and HD+ Video respectively on a daily basis. These figures include the usage of all users, including the [hosts](../../cn/Agora%20Platform/terms.md) and [audience](../../cn/Agora%20Platform/terms.md) in the selected channel.
+As shown in the figure above, you can select the channel and time frame, and then view the usage (minutes) of audio, SD Video, HD Video and HD+ Video. These figures show the usage of all users, including the [host](../../en/Agora%20Platform/terms.md) and [audience](../../en/Agora%20Platform/terms.md).
 
-* **Audio Usage**: The duration of audio The total number of minutes of audio calls for this channel during the selected period. The total number of audio calls for this channel between November 16 and 22, 2018 is 618,958 minutes.该频道在所选周期内音频通话的总分钟数。如图所示该频道在 2018 年 11 月 16 日至 22 日期间的音频通话的总分钟为 618958 分钟。
-* **SD Video Usage**: 该频道在所选周期内视频分辨率小于 360p 的标清视频通话的总分钟数，目前视频通话质量均按 HD 视频总量计费。Resolutions <360P
-* **HD Video Usage**: 该频道在所选周期内视频分辨率介于 360p 和 720p 之间的高清视频通话的总分钟数。如图所示该频道在 2018 年 11 月 16 日至 22 日期间的 HD 视频通话的总分钟为 145964 分钟。360p < Resolutions < 720p
-* **HD+ Video Usage**: 该频道在所选周期内视频分辨率大于 720p 的高清视频通话的总分钟数。如图所示该频道在 2018 年 11 月 19 日的 HD+ 视频通话的总分钟为 1328 分钟。720p < Resolutions
+* **Audio Usage**: The total usage of audio calls for the selected channel during the selected time frame. As shown in the figure, the total usage of audio calls for this channel between November 16 and 22, 2018 is 618,958 minutes. 
+* **SD Video Usage**: The total usage of SD video calls (resolutions < 360p) for the selected channel during the selected time frame. Currently, the usage of SD video calls are incorporated into the usage of HD video call for charging.
+* **HD Video Usage**: The total usage of HD video calls (360p ≤ resolutions ≤ 720p) for the selected channel during the selected time frame. As shown in the figure, the total usage of HD video calls for this channel between November 16 and 22, 2018 is 145,964 minutes. 
+* **HD+ Video Usage**: The total usage of HD+ video calls (resolutions > 720p) for the selected channel during the selected time frame. As shown in the figure, the total usage of HD+ video calls for this channel on November 19, 2018 is 1,328 minutes.
 
-> 关于音视频对应的计费方式，详见 [计费](https://docs.agora.io/cn/Agora%20Platform/billing_faq)。
+> For more information about fees, see [Pricing and Billing](https://docs.agora.io/en/Agora%20Platform/billing_faq).
 
 ## Check the QoE
 
@@ -80,45 +78,44 @@ Click on **Project > Project List** in the left-side navigation menu and enter t
 
 #### Create a Project and Get an App ID
 
-See the detailed introduction and steps of [creating a project and getting an App ID](../../cn/Interactive%20Broadcast/token.md).
+For the detailed introduction and steps,  see  [Getting an App ID](../../en/Interactive%20Broadcast/token.md).
 
 > You can sort the existing projects by the creation time, project name, and project status, or look for a specific project by entering the project name.
 >
-> 若需要修改项目名称，可点击**编辑**进行修改或添加录制服务器 IP 或域名。Click on Edit to modify the project name and add the recording server IP or domain name.
+> Click on **Edit** to modify the project name.
 
 #### Get App Certificates
 
-For the detailed introduction and steps of getting [App Certificates](../../cn/Interactive%20Broadcast/token.md).
+For the detailed introduction and steps,  see  [Getting an App Certificate](../../en/Interactive%20Broadcast/token.md).
 
 #### Ban a User
 
-If you want to ban a user in the app, you can use the [Dashboard RESTful API](https://docs.agora.io/cn/Interactive%20Broadcast/dashboard_restful_live?platform=All_Platforms#5-api) of banning user at the server, or contact the Agora technical support for the permissions ，也可以联系 Agora 技术支持开通权限后，直接在**项目**中进行配置。
+If you want to ban a user in the app, you can use the ban-user API at the server. See [Ban Users at the Server](https://docs.agora.io/en/Interactive%20Broadcast/dashboard_restful_live?platform=All_Platforms#5-api) for details. Or you can contact the Agora customer support to acquire permissions to directly ban users in your project.
 
 
-## 管理成员
+## Manage Team Members
 
-点击左侧导航栏**成员管理**，进入成员管理页面。Click on ** Member** in the left-side navigation menu and enter the page of **Member Management**.
+Click on **Member** in the left-side navigation menu and enter the page of **Member Management**.
 
-![](https://web-cdn.agora.io/docs-files/1542624935837)
+![](https://web-cdn.agora.io/docs-files/1543990035082)
 
 You can:
 
-* Click on **Add**, 设置不同的用户权限，进行协同管理。受邀者将收到邀请邮件。
-* Click on **Edit**, 根据需求重新设置该成员的角色和权限。
-* Click on **重置成员密码Reset Member Password**，该成员会收到密码重置邮件。
-* Click on **Delete**，将不需要继续参与该项目的成员移出。
+- Click on **Add Member** to add a new team member and set his role permissions and the invitee will receive an email invitation.
+- Click on **Edit** to reset the role and permissions of the team member.
+- Click on **Reset Password** to help the team member reset the password and he or she will receive a password reset email.
+- Click on **Remove** to remove the member out of your project.
 
-#### Role Permission 
+### Right Instructions
 
-不同角色对应的不同功能权限，其中，
+Different permissions for different roles.
 
-* 管理员：拥有最大权限，能够查看用量、水晶球及项目详情，并负责项目管理和成员管理。View usage, Agora Analytics, projects	Manage Project
-* 产品/运营：仅能查看用量，其他功能对其不开放。
-* 技术支持/运维：仅能使用水晶球，其他功能对其不开放。
-* 工程师：能够使用水晶球，有权查看项目和管理项目。
+- The **Administrator** can view usage, Agora Analytics and projects and manage projects.
+- The **Product Manager** or **Operation Manager** can only view usage.
+- The **Customer Support** or **Maintenance Manager** can only view Agora Analytics.
+- The **Engineer** can view Agora Analytics and projects and manage projects.
 
-你也可以根据所需自定义团队成员的角色和权限。
-
+You can also customize the roles by select the role as customised and select the check boxes to set permissions of team members as needed.
 ## Submit and Check a Ticket
 
 If you have any question when using the Agora products, take the following steps to get seek for an answer: 
