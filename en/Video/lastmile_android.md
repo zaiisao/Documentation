@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Android
-updatedAt: Wed Dec 05 2018 03:01:32 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 03:01:48 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -25,7 +25,7 @@ Consumption: You have initialized rtcEngine before running the following sample 
 	// The onLastmileQuality callback is in the global IRtcEngineEventHandler:
 	public void onLastmileQuality(int quality) {
  		// Quality here refers to the detected network quality type. You can use it for the related logics. 
-		// ⑴ You can choose to end the lastmile test in the callback. 
+		// ⑴ You can choose to end the last mile test in the callback. 
 		rtcEngine.disableLastmileTest();
 	}
 
