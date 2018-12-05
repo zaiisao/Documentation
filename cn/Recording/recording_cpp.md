@@ -3,7 +3,7 @@
 title: 录制 API
 description: 
 platform: CPP
-updatedAt: Wed Dec 05 2018 02:03:02 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 02:03:10 GMT+0000 (UTC)
 ---
 # 录制 API
 > 版本：v2.2.3
@@ -260,7 +260,7 @@ typedef struct RecordingConfig {
 <td>设置录制文件存放的根目录。默认为 NULL。设置了此目录后，子路径会自动生成。</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>设置配置文件的路径。默认为 NULL。文件内容为 JSON 格式。在配置文件中，可设置录制文件的路径，例如：{“Recording_Dir” : “<recording path>”}，但不会自动创建子路径。</td>
+<td>设置配置文件的路径。默认为 NULL。文件内容为 JSON 格式。在配置文件中，可设置录制文件的路径，例如：{“Recording_Dir” :”&lt;recording path&gt;”}，但不会自动创建子路径。</td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
 <td>最低 UDP 端口。高 UDP 端口与低 UDP 端口差值不能小于 4</td>
