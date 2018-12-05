@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Wed Dec 05 2018 02:21:28 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 02:21:34 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -251,7 +251,7 @@ public class RecordingConfig {
 <td>The root directory of the recording files. The default value is NULL. The sub-path will be generated automatically.</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>The path of the configuration file. The default value is NULL. The content in the configuration file must be in JSON format. In this configuration file, you can set the absolute path of the recording file, such as {“Recording_Dir” : “<recording path>”}, but the sub-path will not be generated automatically.
+<td>The path of the configuration file. The default value is NULL. The content in the configuration file must be in JSON format. In this configuration file, you can set the absolute path of the recording file, such as {“Recording_Dir” : “&lt;recording path&gt;”}, but the sub-path will not be generated automatically.
 </td>
 </tr>
 <tr><td><code>decodeAudio</code> <sup>[2]</sup></td>
