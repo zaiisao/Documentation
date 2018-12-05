@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 05 2018 08:46:40 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 08:46:43 GMT+0000 (UTC)
 ---
 # Use Security Keys
 This page describes the token (Agora’s authentication mechanism). Before you start, check if your SDK version supports the token:
@@ -111,6 +111,7 @@ You can deploy the corresponding sample code on your server, or write your own c
 
 If you have implemented Agora’s algorithm in other languages, you can file a pull request on [GitHub](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey). Agora will merge any valid implementations and test cases.
 
+<a name = "Generate_Token"></a>
 ### Generating a Token
 
 The application client needs to send the following parameters to the server to generate a token:
