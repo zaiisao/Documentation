@@ -3,9 +3,12 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: macOS
-updatedAt: Thu Dec 06 2018 10:09:45 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 10:09:56 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
+Before creating an AgoraRtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/initialize_mac.md) for more information.
+
+## Implementation
 Create an AgoraRtcEngine instance by invoking `sharedEngineWithAppId` before joining a live broadcast channel.
 
 In this method:
@@ -34,3 +37,14 @@ func initializeAgoraEngine() {
    agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: "Your App ID", delegate: self)
 }
 ```
+
+## Next Steps
+You have now finished creating the AgoraRtcEngine instance and can start a voice call with the following steps:
+
+* [Join a Channel](../../en/Voice/join_communication_mac.md)
+* [Publish and Subscribe to Streams](../../en/Voice/publish_mac_audio.md)
+
+For added requirements on network connection or audio quality, you can also take the following steps before joining a channel:
+
+* [Conduct a Last mile Test](../../en/Voice/lastmile_ios.md)
+* [Set the Stereo/High-fidelity Audio Profile](../../en/Voice/audio_profile_mac.md)
