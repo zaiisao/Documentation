@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Thu Dec 06 2018 08:28:37 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 09:47:00 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
