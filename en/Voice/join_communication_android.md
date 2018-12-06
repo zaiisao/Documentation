@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Thu Dec 06 2018 08:09:47 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 10:10:40 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
