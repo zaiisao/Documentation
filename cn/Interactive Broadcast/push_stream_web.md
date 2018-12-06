@@ -10,6 +10,8 @@ updatedAt: Fri Nov 16 2018 03:46:27 GMT+0000 (UTC)
 
 旁路推流功能用于将主播的上行音视频流转化为 RTMP 流分发，供 Web 端或流媒体播放器端观看。
 
+> 请联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
+
 
 网页端直播场景下，你可以通过以下步骤实现推流：
 

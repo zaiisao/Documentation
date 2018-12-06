@@ -3,9 +3,11 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Wed Dec 05 2018 09:28:44 GMT+0000 (UTC)
+updatedAt: Wed Dec 05 2018 09:28:49 GMT+0000 (UTC)
 ---
 # 集成客户端 
+本文介绍在正式使用 Agora SDK for Android 进行视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+
 ## 前提条件
 
 请确保满足以下开发环境要求：
