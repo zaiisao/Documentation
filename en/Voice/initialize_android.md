@@ -3,11 +3,12 @@
 title: Create and Initialize an Agora Instance
 description: 
 platform: Android
-updatedAt: Thu Dec 06 2018 07:56:58 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 07:57:18 GMT+0000 (UTC)
 ---
 # Create and Initialize an Agora Instance
 Before creating an RtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
 
+## Implementation
 The following imports define the interface of the Agora API that provides communication functionality:
 
 -   `io.agora.rtc.Constants`
@@ -38,6 +39,11 @@ private void initializeAgoraEngine() {
 }
 ```
 
-Now that you have created the RtcEngine instance, you can implement the following functions with the Agora SDK:
-* [Join a Channel](../../en/Voice/join_video_android.md)
+## More Steps
+You have now finished creating the RtcEngine instance and can start a voice call with the following steps:
+* [Join a Channel](../../en/Voice/join_communication_android.md)
 * [Publish and Subscribe to Streams](../../en/Voice/publish_android_audio.md)
+
+For added requirements on network connection or audio quality, you can also take the following steps before joining a channel:
+* [Conduct a Last mile Test](../../en/Voice/lastmile_android.md)
+* [Set the Stereo/High-fidelity Audio Profile](../../en/Voice/audio_profile_android_audio.md)
