@@ -3,12 +3,15 @@
 title: Join a Channel
 description: 
 platform: iOS
-updatedAt: Thu Dec 06 2018 08:53:03 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 09:54:00 GMT+0000 (UTC)
 ---
 # Join a Channel
+Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md) for more information.
+
+## Implementation
 You need to set the channel profile before the app joins a channel.
 
-## Set the channel profile as Communication
+### Set the channel profile as Communication
 After initializing AgoraRtcEngine, call the `setChannelProfile` method to set the channel profile. AgoraRtcEngine applies optimization according to the channel profile.
 
 In the `setChannelProfile` method, set the channel profile as Communication. This profile applies to voice or video calls such as one-to-one or group calls, where all users in the channel can talk freely. The Communication profile the default setting.
@@ -30,7 +33,7 @@ func setChannelProfile() {
 }
 ```
 
-## Join a communication channel
+### Join a communication channel
 Call the `joinChannelByToken` method to join a channel. 
 
 In the `joinChannelByToken` method:
@@ -58,3 +61,15 @@ func joinChannel() {
   }
 }
 ```
+
+## More Steps
+You are now in the channel and can start a voice call with the following step:
+
+* [Publish and Subscrib to Streams](../../en/Voice/publish_ios_audio.md)
+
+For added requirements on the audio volume, audio effect or voice pitch, you can alse take the following steps:
+
+* [Adjust the Volume](../../en/Voice/volume_ios_audio.md)
+* [Play Audio Effects/Audio Mixing](../../en/Voice/effect_mixing_ios_audio.md)
+* [Use In-Ear Monitoring](../../en/Voice/in-ear_ios_audio.md)
+* [Adjust the Pitch and Tone](../../en/Voice/voice_effect_ios_audio.md)
