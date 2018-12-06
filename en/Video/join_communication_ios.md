@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: iOS
-updatedAt: Fri Nov 09 2018 15:14:08 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 08:53:03 GMT+0000 (UTC)
 ---
 # Join a Channel
 You need to set the channel profile before the app joins a channel.
