@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: iOS
-updatedAt: Thu Dec 06 2018 09:54:00 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 10:10:55 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md) for more information.
