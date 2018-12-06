@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Web
-updatedAt: Thu Dec 06 2018 06:41:19 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 06:41:25 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -11,8 +11,6 @@ updatedAt: Thu Dec 06 2018 06:41:19 GMT+0000 (UTC)
 The CDN live streaming feature enables a host (broadcaster) to transform his or her uplink stream into RTMP and distribute it through different channels such as Web browser or streaming media player. 
 
 > Contact sales@agora.io to enable Agora's CDN live streaming feature. 
-
-> Contact [sales@agora.io](mailto:sales@agora.io) to enable this function.
 
 ## Implementation
 
