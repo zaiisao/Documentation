@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Thu Dec 06 2018 10:07:05 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 10:07:09 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora SDK for macOS.
@@ -154,7 +154,7 @@ In the main file that uses the Agora APIs, add `import AgoraRtcEngineKit`.
 
 <img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_8.jpg" />
 
-## More Steps
+## Next Steps
 You have now finished setting up the macOS environment and can start a voice call with the following steps:
 
 * [Create and Initialize an Agora Instance](../../en/Voice/initialize_mac.md)
