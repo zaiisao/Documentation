@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Thu Dec 06 2018 10:06:29 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 10:06:33 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -154,7 +154,7 @@ In the `proguard-rules.pro` file, add a `-keep` class configuration for the Agor
 -keep class io.agora.**{*;}
 ```
 
-## More Steps
+## Next Steps
 
 You have now finished setting up the Android environment and can start a voice call with the following steps:
 * [Create and Initialize an Agora Instance](../../en/Voice/initialize_android.md)
