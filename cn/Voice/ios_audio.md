@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 03:59:19 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 08:24:37 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
