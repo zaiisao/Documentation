@@ -3,21 +3,13 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Thu Dec 06 2018 06:46:14 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 06:46:28 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 ## 功能描述
 
 旁路推流功能用于将主播的上行音视频流转化为 RTMP 流分发，供 Web 端或流媒体播放器端观看。
 
-> 请联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
-
-
-网页端直播场景下，你可以通过以下步骤实现推流：
-
-<img alt="../_images/push_stream_web.png" src="https://web-cdn.agora.io/docs-files/cn/push_stream_web.png" style="width: 500px;"/>
-
-> 请联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
 
 ## 实现方法
 
@@ -61,17 +53,7 @@ join(token, channel, uid, onSuccess, onFailure)
 createStream(spec)
 ```
 
-### 6. 新建直播流
-
-新建直播流 \(`startLiveStream`\)
-
-```javascript
-client.setLiveTranscoding(coding);
-//if enableTranscoding is set to true, setLiveTranscoding must be called before _startLiveStreaming
-client.startLiveStreaming(url, true)
-```
-
-### 7. 设置直播转码
+### 6. 设置直播转码
 
 设置直播转码 \(`setLiveTranscoding`\)
 
@@ -99,6 +81,16 @@ var LiveTranscoding = {
 > 若要对 Web 单主播直接进行推流，请使用 `AgoraRTC.createClient({mode: ‘h264_interop’})` 模式。
 >
 > 影响：Agora 转码需要收取转码费用。
+> 
+### 7. 新建直播流
+
+新建直播流 \(`startLiveStream`\)
+
+```javascript
+client.setLiveTranscoding(coding);
+//if enableTranscoding is set to true, setLiveTranscoding must be called before _startLiveStreaming
+client.startLiveStreaming(url, true)
+```
 
 ### 8. 删除直播流
 
