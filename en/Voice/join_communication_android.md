@@ -3,14 +3,15 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Thu Dec 06 2018 08:09:30 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 08:09:47 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
 
+## Implementation
 You need to set the channel profile before the app joins a channel.
 
-## Set the channel profile as Communication
+### Set the channel profile as Communication
 After initializing the Agora engine, call the `setChannelProfile` method to set the channel profile. The Agora engine applies optimization according to the channel profile.
 
 In the `setChannelProfile` method, set the channel profile as Communication. This profile applies to voice or video calls, such as one-to-one or group calls, where all users in the channel can talk freely. The Communication profile is the default setting.
@@ -24,7 +25,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
 ```
 
 
-## Join a communication channel
+### Join a communication channel
 Call the `joinChannel` method to join a channel. 
 
 In the `joinChannel` method:
@@ -41,4 +42,13 @@ In the `joinChannel` method:
 }
 ```
 
-Now that you are in the channel, you can start an audio call by [Publishing and Subscribing to Streams](../../en/Voice/publish_android_audio.md).
+## More Steps
+
+You are now in the channel and can start a voice call with the following step:
+* [Publish and Subscrib to Streams](../../en/Voice/publish_android_audio.md)
+
+For added requirements on the audio volume, audio effect or voice pitch, you can alse take the following steps:
+* [Adjust the Volume](../../cn/Voice/volume_android_auido.md)
+* [Play Audio Effects/Audio Mixing](../../cn/Voice/effect_mixing_android_audio.md)
+* [Use In-Ear Monitoring](../../cn/Voice/in-ear_android_audio.md)
+* [Adjust the Pitch and Tone](../../cn/Voice/voice_effect_android_audio.md)
