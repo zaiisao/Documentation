@@ -3,7 +3,7 @@
 title: 加入频道
 description: android平台加入通信频道
 platform: Android
-updatedAt: Thu Dec 06 2018 09:41:13 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 09:41:16 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/android_audio.md)。
@@ -47,7 +47,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
 * [发布和订阅音频流](../../cn/Voice/publish_android_audio.md)
 
 如果在通话过程中，对音量、音效、音调等有特殊需求，你还可以：
-* [调整通话音量](../../cn/Voice/volume_android_auido.md)
+* [调整通话音量](../../cn/Voice/volume_android_audio.md)
 * [播放音效/音乐混音](../../cn/Voice/effect_mixing_android_audio.md)
 * [使用耳返](../../cn/Voice/in-ear_android_audio.md)
 * [调整音调、音色](../../cn/Voice/voice_effect_android_audio.md)
