@@ -3,12 +3,14 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Thu Dec 06 2018 06:58:34 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 06:58:46 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 ## 功能描述
 
 旁路推流功能用于将主播的上行音视频流转化为 RTMP 流分发，供 Web 端或流媒体播放器端观看。
+
+> 请联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
 
 
 ## 实现方法
