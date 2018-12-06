@@ -3,9 +3,11 @@
 title: 集成客户端
 description: 
 platform: iOS
-updatedAt: Thu Dec 06 2018 08:24:37 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 08:24:51 GMT+0000 (UTC)
 ---
 # 集成客户端
+本文介绍在正式使用 Agora SDK for iOS 进行语音通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+
 ## 前提条件
 
 - Xcode 9.0+。
@@ -157,4 +159,8 @@ updatedAt: Thu Dec 06 2018 08:24:37 GMT+0000 (UTC)
 
   <img alt="../_images/ios_voice_10.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_voice_10.jpg" />
 	
-你已经完成了客户端集成，可以开始使用 Agora SDK 了。
+## 相关文档
+完成了客户端集成后，你可以使用 Agora SDK，依次实现如下功能进行语音通话。
+* [初始化 AgoraRtcEngineKit](../../cn/Voice/initialize_ios.md)
+* [加入频道](../../cn/Voice/join_communication_ios.md)
+* [发布和订阅音频流](../../cn/Voice/publish_ios_audio.md)
