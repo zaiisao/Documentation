@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: iOS
-updatedAt: Thu Dec 06 2018 10:12:04 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 10:12:07 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Voice/ios_audio.md) for more information.
@@ -11,7 +11,7 @@ Before publishing or subscribing to any streams, ensure that you have finished p
 ## Implementation
 The audio function of the Agora SDK for iOS is enabled by default. Users can subscribe to and publish audio streams without calling any other API methods once they have joined the channel.
 
-## More Steps
+## Next Steps
 You are now in a voice call. When the call ends, use the Agora SDK to exit the current call:
 
 * [Leave the Channel](../../en/Voice/leave_ios.md)
