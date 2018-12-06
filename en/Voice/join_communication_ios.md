@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: iOS
-updatedAt: Thu Dec 06 2018 10:10:55 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 10:10:59 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md) for more information.
@@ -62,7 +62,7 @@ func joinChannel() {
 }
 ```
 
-## More Steps
+## Next Steps
 You are now in the channel and can start a voice call with the following step:
 
 * [Publish and Subscrib to Streams](../../en/Voice/publish_ios_audio.md)
