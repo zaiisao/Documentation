@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Fri Dec 07 2018 18:27:41 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 18:27:45 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -14,7 +14,7 @@ You can set the video profile, either before or after a user joins a channel, fo
 
 Ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
 
-The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video profile and each video profile corresponds to a set of video parameters, including the resolution, frame rate, bitrate, and video orientation.
+The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video profile. Each video profile corresponds to a set of video parameters, including the resolution, frame rate, bitrate, and video orientation.
 
 The parameters specified in the `setVideoEncoderConfiguration` method are ideal values under ideal network conditions. If the video engine cannot render the video with the specified parameters due to poor network conditions, the parameters further down the list are considered.
 
@@ -37,11 +37,11 @@ rtcEngine.setVideoEncoderConfiguration(config);
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Interactive%20Broadcast/rotation_guide_android.md).
 
 ## Considerations
-- If you do not need to set the video profile after joining the channel, call the `setVideoEncoderConfiguration` method before the `enableVideo` method to reduce the render time of the first video frame.
+- If you do not need to set the video profile after joining the channel, you can call the `setVideoEncoderConfiguration` method before the `enableVideo` method to reduce the render time of the first video frame.
 - The Agora SDK may adjust the parameters under poor network conditions. 
--  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast mode to twice of that in the communication mode. See [Set the bitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8).
+-  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8).
 - For better video quality during a live broadcast, a stable network connection is recommended.
-- Setting parameters in the `setVideoEncoderConfiguration` method may cause billing changes. For more information, see [Pricing and Billing](../../en/Agora%20Platform/billing_faq.md).
+- Setting parameters in the `setVideoEncoderConfiguration` method may affect your bill. For more information, see [Pricing and Billing](../../en/Agora%20Platform/billing_faq.md).
 
 ## Frequently Asked Questions
 ### How do I choose the video resolution, frame rate, and bitrate?
