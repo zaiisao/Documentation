@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: iOS
-updatedAt: Fri Dec 07 2018 18:45:53 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 18:46:28 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
