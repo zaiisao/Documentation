@@ -3,7 +3,7 @@
 title: Customize Audio/Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Fri Dec 07 2018 19:36:02 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 19:36:06 GMT+0000 (UTC)
 ---
 # Customize Audio/Video Source and Renderer
 ## Introduction
@@ -27,7 +27,7 @@ Ensure that you prepared the development environment. See [Integrate the SDK](..
 RtcEngineParameters rep(*lpAgoraEngine);
 AParameter apm(*lpAgoraEngine);
 
-// Preparation. Implement audio capture and the audio playback queue to store the captured data, or data for playback.
+// Preparation. Implement the audio capture and audio playback queue to store the captured data or data for playback.
 CAudioPlayPackageQueue	*CAudioPlayPackageQueue::m_lpAudioPackageQueue = NULL;
 
 CAudioPlayPackageQueue::CAudioPlayPackageQueue()
@@ -346,4 +346,4 @@ mediaEngine->registerVideoFrameObserver(NULL);
 * Ensure the accuracy and efficiency of the audio and video data processing in the callback methods to avoid any possible crash.
 * Set the audio data to `RAW_AUDIO_FRAME_OF_MODE_READ_WRITE` if you want to read, write, and manipulate the data.
 * Use raw data methods to customize the video renderer. If you do not want the SDK to render the video frame, do not call the `setupLocalVideo` method. Ensure compatibility on the Windows platform when customizing the video renderer.
-* Customizing the audio/video source and renderer is an advanced feature provided by the Agora SDK. 
+* Customizing the audio/video source and renderer is an advanced feature provided by the Agora SDK. Ensure that you are experienced in audio and video application development.
