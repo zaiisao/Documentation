@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: Conduct a Pre-call Lastmile Test
 platform: iOS,macOS
-updatedAt: Fri Dec 07 2018 16:29:02 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 16:29:07 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -19,33 +19,33 @@ You can conduct a last mile network quality test before a call to check if the n
 
 ```swift
 //Swift:
-// Call the enableLastmileTest function before joining a channel. 
+// Call the enableLastmileTest method before joining a channel. 
 agoraKit.enableLastmileTest()
 
-// Register the callback
+// Register the callback.
 func rtcEngine(_ engine: AgoraRtcEngineKit, lastmileQuality quality: AgoraNetworkQuality) {
- 		// Quality here refers to the detected network quality type. You can use it for the related logics. 
-		// ⑴ You can choose to end the lastmile test in the callback. 
+ 		// quality means the detected network quality type. You can use it for the related logic. 
+		// ⑴ You can choose to end the last mile test in the callback. 
 }
 
-// ⑵ You can also choose to end the lastmile test at any other time. Before the test ends, the onLastmileQuality() callback can be triggered multiple times. 
+// ⑵ You can also choose to end the last mile test at any time. Before the test ends, the onLastmileQuality callback can be triggered multiple times. 
 agoraKit.disableLastmileTest()
 ```
 
 ```oc
 //Objective-C
-// Call the enableLastmileTest function before joining a channel. 
+// Call the enableLastmileTest method before joining a channel. 
 [agoraKit enableLastmileTest];
 
-// Register the callback
+// Register the callback.
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine lastmileQuality:(AgoraNetworkQuality)quality {
 }
 
-	// You can also choose to end the lastmile test at any other time. Before the test ends, the onLastmileQuality() callback can be returned multiple times. 
+	// You can also choose to end the last mile test at any time. Before the test ends, the onLastmileQuality callback can be returned multiple times. 
 [agoraKit disableLastmileTest];
 ```
 
-## API Reference
+## API Method
 
 - [enableLastmileTest](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableLastmileTest)
 - [disableLastmileTest](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/disableLastmileTest)
