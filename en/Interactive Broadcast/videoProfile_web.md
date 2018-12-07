@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Web
-updatedAt: Fri Dec 07 2018 18:49:36 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 18:49:39 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -12,7 +12,7 @@ You can set the video profile, either before or after a user joins a channel, fo
 
 ## Implementation
 
-Ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
 
 The Agora SDK uses the `setVideoProfile` method to set the video profile. Each video profile corresponds to a set of video parameters, including the resolution, frame rate, and bitrate.
 
