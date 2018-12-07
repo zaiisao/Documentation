@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Web
-updatedAt: Fri Dec 07 2018 16:33:39 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 16:33:45 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -18,51 +18,51 @@ You can conduct a last mile network quality test before a call to check if the n
 ## Implementation
 
 ```javascript
-// testing WebRTC network full roundtrip requires two clients to
-// simulate stream publish/subscribe
+// Testing the WebRTC network round trip requires two clients to
+// simulate stream publish/subscribe.
 // ---------------------------------
 // |	    local   <----   remote   |
 // |              subscribe         |
 // ---------------------------------
 //
-// 1. remote client that push streams only
+// 1. Remote client that pushes streams only.
 var remoteClient = AgoraRTC.createClient({ mode: 'live', codec: 'h264' });
-// ... init client and join
+// Initialize the client and join the channel.
 var remoteStream = AgoraRTC.createStream({
 	streamID: remoteUid,
 	audio: true,
 	video: true,
 	screen: false
 });
-// ... init stream
+// Initialize the stream.
 remoteStream.publish();
 		
-// 2. local client that subscribe remote stream
+// 2. Local client that subscribes to the remote stream.
 var localClient = AgoraRTC.createClient({ mode: 'live', codec:'h264' });
 // ... init client and join
 
-// 3. start timer getting network stats
+// 3. Start the timer getting the network statistics.
 setInterval(function(){
 	localClient.getRemoteVideoStats(function(statsMap){
-		// video stats map for remote streams, indexed by uid
+		// Video statistics map for the remote streams, indexed by uid.
 		var stats = statsMap[remoteUid];
 		console.log(JSON.stringify(stats));
 	})
 		
 	localClient.getRemoteAudioStats(function(statsMap){
-		// audio stats map for remote streams, indexed by uid
+		// Audio statistics map for the remote streams, indexed by uid.
 		var stats = statsMap[remoteUid];
 		console.log(JSON.stringify(stats));
 	})
 		
 	localClient.getTransportStats(function(stats){
-		// gateway network stats
+		// Gateway network statistics.
 		console.log(JSON.stringify(stats));
 	})
 }, 2 * 1000);
 ```
 
-## API Reference
+## API Methods
 
 - [getRemoteVideoStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats)
 - [getRemoteAudioStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats)
@@ -70,4 +70,4 @@ setInterval(function(){
 
 ## Considerations
 
-- Only after joining a channel and after subscribing to the corresponding stream is the acquired remote video/audio stream information valid. 
+- The acquired remote video/audio stream information is valid only after joining a channel and after subscribing to the corresponding stream. 
