@@ -3,22 +3,22 @@
 title: Share the Screen
 description: 
 platform: iOS
-updatedAt: Fri Dec 07 2018 19:57:35 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 19:58:30 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
-During a video call or live broadcast, **sharing the screen** enhances communication by bringing whatever is on the speaker's screen to the other speakers or audience in the channel.
+During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
-Screen share has extensive application in the following scenarios:
+Screen sharing is applied in the following scenarios:
 
-- For a video conference, the speaker can share the image of the local file, web page, and PPT with other users in the channel.
-- For an online class, the teacher can share the image of the slides or notes with the students.
+- In a video conference, the speaker can share an image of a local file, web page, or presentation with other users in the channel.
+- In an online class, the teacher can share the slides or notes with students.
 
 ## Implementation
 
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md) for details.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md).
 
-Screen sharing on the iOS platform is implemented with the following steps:
+Screen sharing on iOS is implemented with the following steps:
 
 - Create a process with Broadcast Upload Extension.
 - Record the screen with Apple ReplayKit.
@@ -64,4 +64,4 @@ override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBuf
 }
 ```
 
-You can also refer to the [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-iOS) Sample Code to implement screen sharing on Android.
+You can refer to the [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-iOS) sample code to implement screen sharing on iOS.
