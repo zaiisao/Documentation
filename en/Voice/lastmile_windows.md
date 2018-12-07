@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Windows
-updatedAt: Fri Dec 07 2018 16:35:52 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 16:36:08 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -20,19 +20,19 @@ You can conduct a last mile network quality test before a call to check if the n
 ```C++
 // Implement the onLastmileQuality callback. 
 void onLastmileQuality(int quality) {
- 		// Quality here refers to the detected network quality type. You can use it for the related logics. 
+ 		// quality means the detected network quality type. You can use it for the related logic. 
 		// ⑴ You can choose to end the last mile test in the callback. 
 }
 
 // Enable the last mile test at an appropriate time and before joining a channel. 
 int ret = lpAgoraEngine->enableLastmileTest();
 
-	// ⑵ You can also choose to end the last mile test at any other time. Before the test ends, the onLastmileQuality() callback can be returned multiple times. 
+	// ⑵ You can also choose to end the last mile test at any time. Before the test ends, the onLastmileQuality callback can be returned multiple times. 
 int ret = lpAgoraEngine->disableLastmileTest();
 
 ```
 
-## API Reference
+## API Methods
 * [enableLastmileTest](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2803623f129eeb92503a7a4e5a09a46d)
 * [disableLastmileTest](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a544fb9fda664578b80bbd7dbfffafd53)
 * [onLastmileQuality](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7e14d1a26eb35ef236a0662d28d2b33)
