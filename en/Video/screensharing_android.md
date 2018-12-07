@@ -3,54 +3,54 @@
 title: Share the Screen
 description: 
 platform: Android
-updatedAt: Fri Dec 07 2018 19:55:59 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 19:56:03 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
-During a video call or live broadcast, **sharing the screen** enhances communication by bringing whatever is on the speaker's screen to the other speakers or audience in the channel.
+During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
-Screen share has extensive application in the following scenarios:
+Screen sharing is applied in the following scenarios:
 
-- For a video conference, the speaker can share the image of the local file, web page, and PPT with other users in the channel.
-- For an online class, the teacher can share the image of the slides or notes with the students.
+- In a video conference, the speaker can share an image of a local file, web page, or presentation with other users in the channel.
+- In an online class, the teacher can share the slides or notes with students.
 
 ## Implementation
 
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for details.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/android_video.md).
 
-Agora SDK does not provide specific APIs for screen sharing on the Android platform. With the system API provided by Android, however, you can enable screen sharing with the following steps:
+The Agora SDK does not provide specific methods for screen sharing on Android. With system methods provided by Android, you can enable screen sharing with the following steps:
 - Use MediaProjection/VirtualDisplay to get the screen image data.
-- Maintain an OpenGL environment, screate a SurfaceView and pass the View to VirtualDisplay as the recipient of the screen image data.
-- Take the image data retrived from the SurfaceView callback as the external video source. Call `pushExternalVideoFrame` to transfer the image data to the remote user.
+- Maintain an OpenGL environment, create a SurfaceView and pass the View to VirtualDisplay as the recipient of the screen image data.
+- Take the image data retrieved from the SurfaceView callback as the external video source. Call the `pushExternalVideoFrame` method to transfer the image data to the remote user.
 
 ```java
 MediaProjectionManager projectManager = (MediaProjectionManager) mContext.getSystemService(
 Context.MEDIA_PROJECTION_SERVICE);
 
-// create the intent for screen capture. Call startActivityForResult() to use the sharing funciton
+// Create the intent for screen capture. Call the startActivityForResult method to use the sharing function.
 Intent intent = projectManager.createScreenCaptureIntent();
 startActivityForResult(intent);
 
 MediaProjection projection;
 VirtualDisplay display;
 
-// Override and implement onActivityResult() method of the Activity where you just called startActivityForResult()
+// Override and implement the onActivityResult method of the Activity where you just called startActivityForResult.
 @Override
 onActivityResult(int requestCode, int resultCode, Intent resuleData) {
     projection = projectManager.getMediaProjection(resultCode, resultData);
     display = projection.createVirtualDisplay(name, width, height, dpi, flags, surface, callback, handler);
 }
 
-// The texture retrieved from the Surface will be sent by the SDK
+// The texture retrieved from the Surface will be sent by the SDK.
 rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
 
-// Stop screen sharing
+// Stop screen sharing.
 projection.stop();
 ```
 
-You can also refer to the [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Android#agora-screen-sharing-android) Sample Code to implement screen sharing on Android.
+You can also refer to the [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Android#agora-screen-sharing-android) sample code to implement screen sharing on Android.
 
 ## Considerations
 
-- Android API Level 21+ is required for APIs like MeidaProjection. See [Google MediaProjection API  Reference](https://developer.android.com/reference/android/media/projection/MediaProjection) for details.
-- The code snippets in this article is the abridged version. See the [Sample Code](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Android#agora-screen-sharing-android) for details on the design and implementation.
+- Android API Level 21+ is required for API methods like MediaProjection. See [Google MediaProjection API  Reference](https://developer.android.com/reference/android/media/projection/MediaProjection).
+- The code snippets on this page are shortened. See [Sample Code](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Android#agora-screen-sharing-android) on the design and implementation.
