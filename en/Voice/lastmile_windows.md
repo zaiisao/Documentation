@@ -39,6 +39,6 @@ int ret = lpAgoraEngine->disableLastmileTest();
 ## Considerations
 
 - You can conduct a last mile test only before joining a channel.
-- The onLastmileQuality callback may return UNKNOWN the first time it is triggered. Subsequent callbacks will return the test results. 
+- The `onLastmileQuality` callback may return UNKNOWN the first time it is triggered. Subsequent callbacks will return the test results. 
 
 
