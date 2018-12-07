@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: iOS
-updatedAt: Fri Dec 07 2018 18:48:23 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 18:48:27 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -14,7 +14,7 @@ The Agora SDK provides a set of camera management methods on iOS, with which use
 
 ## Implementation
 
-Ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
 
 ```swift
 // swift
