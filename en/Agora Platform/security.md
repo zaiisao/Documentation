@@ -3,16 +3,14 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 05 2018 07:08:02 GMT+0800 (CST)
+updatedAt: Tue Nov 06 2018 03:12:09 GMT+0000 (UTC)
 ---
 # Information Security Policy
-# Information Security Policy
-
 ## Introduction
 
 This page describes the information security policy for Agora products. The following figure shows the Agora security architecture:
 
-<img alt="../_images/security_en.png" src="https://web-cdn.agora.io/docs-files/en/security_en.png" style="width: 672.0px; height: 724.8px;"/>
+<img alt="../_images/security_en.png" src="https://web-cdn.agora.io/docs-files/en/security_en.png" />
 
 
 ### Purpose

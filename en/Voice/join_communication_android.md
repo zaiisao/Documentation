@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Thu Dec 06 2018 10:10:40 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 10:10:45 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
@@ -42,13 +42,13 @@ In the `joinChannel` method:
 }
 ```
 
-## More Steps
+## Next Steps
 
 You are now in the channel and can start a voice call with the following step:
 * [Publish and Subscrib to Streams](../../en/Voice/publish_android_audio.md)
 
 For added requirements on the audio volume, audio effect or voice pitch, you can alse take the following steps:
-* [Adjust the Volume](../../cn/Voice/volume_android_auido.md)
+* [Adjust the Volume](../../cn/Voice/volume_android_audio.md)
 * [Play Audio Effects/Audio Mixing](../../cn/Voice/effect_mixing_android_audio.md)
 * [Use In-Ear Monitoring](../../cn/Voice/in-ear_android_audio.md)
 * [Adjust the Pitch and Tone](../../cn/Voice/voice_effect_android_audio.md)
