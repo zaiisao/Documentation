@@ -8,9 +8,9 @@ updatedAt: Fri Dec 07 2018 15:48:41 GMT+0000 (UTC)
 # Conduct a Last Mile Test
 ## Introduction
 
-The pre-call networkd quality test checks if the current network quality suits the audio bitrate or the target bitrate of the chosen video profile before a user joins a channel. Returned to the user by callbacks every two seconds, the test results are a network quality rating based on packet-loss rate and network jitter and reflect the uplink network quality of the client.
+You can conduct a last mile network quality test before a call to check if the network supports the audio bitrate or target bitrate of the chosen video profile before a user joins a channel. The `onLastmileQuality` callback reports the test results once every two seconds. The test results are based on the network quality ratings determined by the packet-loss rates and network jitter, which reflect the uplink network quality of the client.
 
-> The audio SDK uses a fixed bitrate of 48 kbps; the video SDK adjust the actual bitrate according to the chosen video profile.
+> The audio SDK uses a fixed bitrate of 48 Kbps. The video SDK adjusts the actual bitrate according to the chosen video profile.
 
 
 
