@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Fri Dec 07 2018 18:10:41 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 18:10:49 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -16,7 +16,7 @@ Ensure that you have prepared the development environment. See [Integrate the SD
 
 The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video profile and each video profile corresponds to a set of video parameters, including the resolution, frame rate, bitrate, and video orientation.
 
-The parameters specified in the `setVideoEncoderConfiguration` method are the ideal values under ideal network conditions. If the video engine cannot render the video with the specified parameters due to poor network conditions, the parameters further down the list are considered.
+The parameters specified in the `setVideoEncoderConfiguration` method are ideal values under ideal network conditions. If the video engine cannot render the video with the specified parameters due to poor network conditions, the parameters further down the list are considered.
 
 ```java
 // java
