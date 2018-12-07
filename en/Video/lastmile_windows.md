@@ -10,7 +10,8 @@ updatedAt: Wed Dec 05 2018 03:28:21 GMT+0000 (UTC)
 
 You can conduct a last mile network quality test before a call to check if the network supports the audio bitrate or target bitrate of the chosen video profile before a user joins a channel. The `onLastmileQuality` callback reports the test results once every two seconds. The test results are based on the network quality ratings determined by the packet-loss rates and network jitter, which reflect the uplink network quality of the client.
 
-> The audio SDK uses a fixed bitrate of 48 Kbps. The video SDK adjusts the actual bitrate according to the chosen video profile.
+> The audio SDK uses a fixed bitrate of 48 Kbps. 
+> The video SDK adjusts the actual bitrate according to the chosen video profile.
 
 
 
