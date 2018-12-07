@@ -3,27 +3,27 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Dec 07 2018 19:50:00 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 19:50:06 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
 
-During a video call or live broadcast, **sharing the screen** enhances communication by bringing whatever is on the speaker's screen to the other speakers or audience in the channel.
+During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
-Screen share has extensive application in the following scenarios:
+Screen sharing is applied in the following scenarios:
 
-- For a video conference, the speaker can share the image of the local file, web page, and PPT with other users in the channel.
-- For an online class, the teacher can share the image of the slides or notes with the students.
+- In a video conference, the speaker can share an image of a local file, web page, or presentation with other users in the channel.
+- In an online class, the teacher can share the slides or notes with students.
 
-## Implementations
+## Implementation
 
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md) for details.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
 
-To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screens to share. The attribute settings of the Chrome and Firefox browser vary.
+To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screens to share. The attribute settings are different on Google Chrome and Firefox.
 
 ### <a name = "chrome"></a>Screen Sharing on Google Chrome
 
-Before enabling screen sharing on Google Chrome, ensure that you have added the [Google Chrome Extension for Screen Sharing](../../en/Quickstart%20Guide/chrome_screensharing_plugin.md) provided by Agora.
+Ensure that you added the [Google Chrome Extension for Screen Sharing](../../en/Quickstart%20Guide/chrome_screensharing_plugin.md) provided by Agora.
 
 Fill in the `extensionId` when you create the stream.
 
@@ -43,10 +43,10 @@ screenStream = AgoraRTC.createStream({
 
 ### <a name = "ff"></a>Screen Sharing on Firefox
 
-To enable screen sharing on Firefox, set the `mediaSource` attribute to specify the sharing mode:
+Set the `mediaSource` attribute to specify the sharing mode:
 
 - `screen`：Shares the whole screen.
-- `application`：Shares all the windows of an application.
+- `application`：Shares all windows of an application.
 - `window`：Shares a specific window of an application.
 
 ```javascript
@@ -65,7 +65,9 @@ screenStream = AgoraRTC.createStream({
 
 ### <a name = "both"></a>Enabling Both Screen Sharing and Video
 
-One client only sends one stream. If you want to enable both screen sharing and video on one host, you need to create two clients; one to send the screen-sharing stream, and the other to send the video stream.
+One client only sends one stream. If you want to enable both screen sharing and video on one host, you need to create two clients: 
+- A client to send the screen-sharing stream.
+- A client to send the video stream.
 
 ```javascript
 // Create the client to send the screen-sharing stream.
@@ -89,11 +91,11 @@ videoClient.join(channelKey, channel, null, function(uid) {
 }
 ```
 
-If two clients of a host subscribe to each other, extra charges will occur:
+If two clients of a host subscribe to each other, extra charges will occur.
 
 <img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/en/screensharing_streams.png" style="width: 500px; "/>
 
-Agora recommends that you to save the returned `uid` when each client joins the channel. When the `stream-added` event occurs, first check if the joined client is a local stream, if `yes`, do not subscribe to the client.
+Agora recommends that you save the returned `uid` when each client joins the channel. When the `stream-added` event occurs, first check if the joined client is a local stream, if `yes`, do not subscribe to the client.
 
 ```javascript
 var localStreams = [];
@@ -217,13 +219,15 @@ screenClient.subscribe(stream);
 
 ## Considerations
 
-- Do not set the UID of the screen sharing stream to a fixed value. Streams with the same UID can interfere with each other.
-- **Do not subscribe to a locally published screen sharing stream**, or additional charge will occur.
-- Ensure that the argument `video`/`audio` is set to `false` when creating the screen sharing stream.
+- Do not set the uid of the screen-sharing stream to a fixed value. Streams with the same uid can interfere with each other.
+- **Do not subscribe to a locally published screen-sharing stream**, else additional charges will incur.
+- Ensure that `video`/`audio` is set to `false` when creating the screen-sharing stream.
 
 ## Working Principles
 
-Screen sharing on the Web client is essentially enabled by creating a screen sharing stream.
+Screen sharing on the Web client is enabled by creating a screen-sharing stream.
 
-- If you publish the screen sharing stream only, set the `video` argument as false, and the `screen` argument as true when creating a stream.
-- If you publish both the local video stream and your screen sharing stream, you need to create two Client objects, one for sending the local stream, and the other the screen sharing stream. For the local video stream, set `video` as true and `screen` as false; for the screen sharing scree, set `video` as false and `screen` as true.
+- If you publish the screen-sharing stream only, set the `video` as `false`, and the `screen` as `true` when creating a stream.
+- If you publish both the local video stream and your screen-sharing stream, you need to create two client objects:
+	-  A client object for sending the local stream. Set `video` as true and `screen` as false.
+	-  A client object for sending the screen-sharing stream. Set `video` as false and `screen` as true.
