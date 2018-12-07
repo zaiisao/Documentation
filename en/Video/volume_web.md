@@ -9,7 +9,7 @@ updatedAt: Tue Dec 04 2018 17:19:02 GMT+0000 (UTC)
 ## Feature Description
 When using the Agora SDK, developers can adjust the recording and playback volumes for customization. For example, you can mute the remote audio by setting the volume to 0.
 ## Implementation
-Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md) for more information.
+Before proceeding, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
 ### Adjust the Local Volume
 
 ```
