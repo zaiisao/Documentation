@@ -3,30 +3,30 @@
 title: Share the screen
 description: 
 platform: macOS
-updatedAt: Fri Dec 07 2018 20:17:07 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 20:17:11 GMT+0000 (UTC)
 ---
 # Share the screen
 ## Introduction
 
-During a video call or live broadcast, **sharing the screen** enhances communication by bringing whatever is on the speaker's screen to the other speakers or audience in the channel.
+During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
-Screen share has extensive application in the following scenarios:
+Screen sharing is applied in the following scenarios:
 
-- For a video conference, the speaker can share the image of the local file, web page, and PPT with other users in the channel.
-- For an online class, the teacher can share the image of the slides or notes with the students.
+- In a video conference, the speaker can share an image of a local file, web page, or presentation with other users in the channel.
+- In an online class, the teacher can share the slides or notes with students.
 
 ## Implementation
 
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/mac_video.md) for details.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/mac_video.md).
 
-Screen sharing on the macOS platform is implemented with the following steps:
+Screen sharing on macOS is implemented with the following steps:
 
-- Get the `windowId` of the view. If the `windowId` is 0, it means to share the whole screen.
-- Switch the video source from camera to view and transfer the video frame to the remote user.
+- Get the `windowId` of the view. `windowId` = 0 means sharing the whole screen.
+- Switch the video source from the camera to the view and transfer the video frame to the remote user.
 
 ```swift
 // swift
-// start sharing the screen
+// Start sharing the screen.
 let windowId = 0
 let captureFreq = 15
 let bitRate = 400
@@ -34,11 +34,11 @@ let rect = CGRect.zero
 agoraKit.startScreenCapture(windowId, withCaptureFreq: captureFreq, bitRate: bitRate, andRect: rect)
 
 
-// Update the screen region to be shared
+// Update the screen region to be shared.
 let rect = CGRect(x: 0, y: 0, width: 100, height: 100)
 agoraKit.updateScreenCaptureRegion(rect)
 
-// stop sharing the screen
+// Stop sharing the screen.
 agoraKit.stopScreenCapture()
 ```
 
@@ -49,15 +49,15 @@ int captureFreq = 15;
 int bitRate = 400;
 CGRect rect = CGRectZero;
 
-// Update the screen region to be shared
+// Update the screen region to be shared.
 CGRect rect = CGRectMake(0, 0, 100, 100);
 [agoraKit startScreenCapture: windowId withCaptureFreq: captureFreq bitRate:(NSInteger)bitRate andRect: rect]; 
 
-// stop sharing the screen
+// Stop sharing the screen.
 [agoraKit stopScreenCapture];
 ```
 
-### API Reference
+### API Methods
 * [`startScreenCapture:withCaptureFreq:bitrRate:andRect`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCapture:withCaptureFreq:bitRate:andRect:)
 * [`stopScreenCapture`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
 * [`updateScreenCaptureRegion:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
