@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Fri Dec 07 2018 19:15:43 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 19:15:47 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -52,7 +52,7 @@ The Agora SDK provides two methods to customize the video source:
 - The MediaIO method (Recommended).
 - The push method. This method skips processing the video frame and works best for clients with frame optimization capacity.
 
-#### The MediaIO Method
+#### MediaIO Method
 
 Use the IVideoSource interface in MediaIO to customize the video source. This method sends the external video frame to the server, and you need to implement local rendering if the local preview is enabled.
 
@@ -114,7 +114,7 @@ if (mHasStarted && mConsumer != null) {
 * [`setlVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa240e991d12b5240fc5fd362cbc0d521)
 * [`IVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_source.html)
 
-#### The Push Method
+#### Push Method
 
 Compared to the MediaIO method, the push method uses less code but lacks any optimization of the captured video frame. This method requires you to do the processing.
 
@@ -133,7 +133,7 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
 ));
 ```
 
-#### API Method
+##### API Method
 * [`pushExternalVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6e7327f4449800a2c2ddc200eb2c0386)
 
 The video source and renderer can be customized by switching on/off the video frame input based on the media engine callback. This method can be used if an app has its own video module and only needs the Agora SDK for real-time communications. See [Customize the Video Source with the Agora Component](../../en/Video/custom_advanced_android.md).
