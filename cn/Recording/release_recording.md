@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Fri Nov 23 2018 08:16:18 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 03:56:52 GMT+0000 (UTC)
 ---
 # 录制 SDK 发版说明
 ## 简介
