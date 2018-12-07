@@ -3,29 +3,29 @@
 title: Set the Camera Focus
 description: 
 platform: Android
-updatedAt: Fri Dec 07 2018 18:48:09 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 18:48:13 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
 
-Camera focus is a commonly used function in video calls to enable high quality video capture.
+The camera focus function is used in video calls to enable high-quality video capture.
 
-Agora SDK provides a set of camera management methods on the Android platform, with which users can switch between the front and rear camera, set the camera zoom factor and set the focus position.
+The Agora SDK provides a set of camera management methods on Android, with which users can switch between the front and rear cameras, set the camera zoom factor, and set the camera focus position.
 
 ## Implementation
 
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md) for details.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
 
 ```java
 // java
-// Check whether auto face-focus function is supported and enable auto-face focus
+// Check whether auto-face focus is supported and enable auto-face focus.
 boolean shouldSetFaceMode = rtcEngine.isCameraAutoFocusFaceModeSupported();
 rtcEngine.setCameraAutoFocusFaceModeEnabled(shouldSetFaceMode);
 
-// Check whether manual focus function is supported and set the focus
+// Check whether manual focus is supported and set the focus.
 boolean shouldManualFocus = rtcEngine.isCameraFocusSupported();
 if (shouldManualFocus) {
-    // Set the camera focus at (50, 100)
+    // Set the camera focus at (50, 100).
     float positionX = 50.0f;
     float positionY = 100.0f;
     rtcEgnine.setCameraFocusPositionInPreview(positionX, positionY);
@@ -33,7 +33,7 @@ if (shouldManualFocus) {
 
 ```
 
-### API Reference
+### API Methods
 
 -  [`isCameraFocusSupported`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0e20f04ccecfc41aa23bf63116c9a8cd)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a09f61f738cf7d8a1902761e03a7fa600)
