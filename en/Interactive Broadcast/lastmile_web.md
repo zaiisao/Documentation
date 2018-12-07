@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Web
-updatedAt: Fri Dec 07 2018 16:35:04 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 16:35:08 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -39,7 +39,7 @@ remoteStream.publish();
 		
 // 2. Local client that subscribes to the remote stream.
 var localClient = AgoraRTC.createClient({ mode: 'live', codec:'h264' });
-// ... init client and join
+// Initialize the client and join the channel.
 
 // 3. Start the timer getting the network statistics.
 setInterval(function(){
@@ -70,4 +70,4 @@ setInterval(function(){
 
 ## Considerations
 
-- The acquired remote video/audio stream information is valid only after joining a channel and after subscribing to the corresponding stream. 
+- The acquired remote audio/video stream information is valid only after joining a channel and after subscribing to the corresponding stream. 
