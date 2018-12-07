@@ -3,27 +3,26 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Fri Dec 07 2018 20:18:29 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 20:18:33 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
 
-During a video call or live broadcast, **sharing the screen** enhances communication by bringing whatever is on the speaker's screen to the other speakers or audience in the channel.
+During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
-Screen share has extensive application in the following scenarios:
+Screen sharing is applied in the following scenarios:
 
-- For a video conference, the speaker can share the image of the local file, web page, and PPT with other users in the channel.
-- For an online class, the teacher can share the image of the slides or notes with the students.
-
+- In a video conference, the speaker can share an image of a local file, web page, or presentation with other users in the channel.
+- In an online class, the teacher can share the slides or notes with students.
 ## Implementation
 
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/windows_video.md) for details.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md).
 
 ```cpp
 // cpp
-// 1. start screensharing
+// 1. Start screen sharing.
 
-if (lpRect != NULL) { // share some area on window
+if (lpRect != NULL) { // Share some area on the window.
 	rect.left = lpRect->left;
 	rect.right = lpRect->right;
 	rect.top = lpRect->top;
@@ -34,12 +33,12 @@ if (lpRect != NULL) { // share some area on window
 	lpAgoraEngine->startScreenCapture(hWnd, nCapFPS, NULL, nBitrate);
 }
 
-// 2. stop screensharing
+// 2. Stop screen sharing.
 
 lpAgoraEngine->stopScreenCapture();
 ```
 
-### API Reference
+### API Methods
 * [`startScreenCapture`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#af71935ad435402f776bcfc2be3cf687f)
 * [`stopScreenCapture`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
 * [`updateScreenCaptureRegion`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a99ce13ce3b9b2c65e5ec35b9861b56e3)
