@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: macOS
-updatedAt: Fri Dec 07 2018 18:49:08 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 18:49:14 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -12,7 +12,7 @@ You can set the video profile, either before or after a user joins a channel, fo
 
 ## Implementation
 
-Ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Video/mac_video.md).
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/mac_video.md).
 
 The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video profile. Each video profile corresponds to a set of video parameters, including the resolution, frame rate, bitrate, and video orientation.
 
