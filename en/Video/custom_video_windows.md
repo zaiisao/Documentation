@@ -3,31 +3,31 @@
 title: Customize Audio/Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Fri Dec 07 2018 19:01:30 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 19:01:36 GMT+0000 (UTC)
 ---
 # Customize Audio/Video Source and Renderer
 ## Introduction
-By default, An App uses the internal audio and video modules for capturing and rendering during real-time communication. If developers hope to use external audio or video source and renderer, this page shows how to use the APIs provided by Agora SDK to customize the audio and video source and renderer.
+By default, an application uses the internal audio and video modules for capturing and rendering during real-time communication. You can use an external audio or video source and renderer. This page shows how to use the methods provided by the Agora SDK to customize the audio and video source and renderer.
 
-**Customizing audio and video source and renderer** mainly applies to the following scenarios:
+**Customizing the audio and video source and renderer** mainly applies to the following scenarios:
 
-* When the audio or video source captured by the internal modules can not meet the needs of the developers. For example, for the purpose of image enhancement, developers need to process the captured video frame with a preprocessing library.
-* When an App contains its own audio or video module and wants a cusmized source for code reuse.
-* When developers want to use non-camera source, such as recorded screen data.
-* When developers need flexible device resource allocation to avoid conflicts with other services.
+* When the audio or video source captured by the internal modules do not meet your needs. For example, you need to process the captured video frame with a preprocessing library for image enhancement.
+* When an application has its own audio or video module and uses a customized source for code reuse.
+* When you want to use a non-camera source, such as recorded screen data.
+* When you need flexible device resource allocation to avoid conflicts with other services.
 
-## Implementaion
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/windows_video.md) for details.
+## Implementation
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md).
 
 ### Customize the Audio Source
 
 ```cpp
 // cpp
-// Initialize the RtcEngine Parameters
+// Initialize the RtcEngine parameters.
 RtcEngineParameters rep(*lpAgoraEngine);
 AParameter apm(*lpAgoraEngine);
 
-// Preparation. Implement audio capture and the audio play package queue to store the captured data, or data ready for play.
+// Preparation. Implement audio capture and the audio playback queue to store the captured data, or data for playback.
 CAudioPlayPackageQueue	*CAudioPlayPackageQueue::m_lpAudioPackageQueue = NULL;
 
 CAudioPlayPackageQueue::CAudioPlayPackageQueue()
@@ -116,7 +116,7 @@ BOOL CAudioPlayPackageQueue::PopAudioPackage(LPVOID lpAudioPackage, SIZE_T *nPac
   return TRUE;
 }
 
-// Implement audio observer for external audio source
+// Implement an audio observer for the external audio source.
 CExternalAudioFrameObserver::CExternalAudioFrameObserver()
 {
 }
@@ -151,7 +151,7 @@ bool CExternalAudioFrameObserver::onPlaybackAudioFrameBeforeMixing(unsigned int 
   return true;
 }
 
-// Enable the external audio source mode and register the audio observer. Use the observer to pass the data from the external source to the Engine, and then from the Engine to the application.
+// Enable the external audio source mode and register the audio observer. Use the observer to pass the data from the external source to the engine, and then from the engine to the app.
 int nRet = rep.setExternalAudioSource(true, nSampleRate, nChannels);
 
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
@@ -159,7 +159,7 @@ mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
 
 mediaEngine->registerAudioFrameObserver(lpExternalAudioFrameObserver);
 
-// Start pushing data into the Engine and retrieving data from the Engine. Usually you need to maintain a process loop.
+// Start pushing the data into the engine and retrieve the data from the engine. You may need to maintain a process loop.
 
 CAudioCapturePackageQueue *lpBufferQueue = CAudioCapturePackageQueue::GetInstance();
 
@@ -194,11 +194,11 @@ mediaEngine->registerAudioFrameObserver(NULL);
 
 ### Customize the Video Source
 
-To implement external video source, you need to use the customized method [`setParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_parameter.html#adde9cb68e2ef2216d7fd1976fd5f1d75). See the sample code for details.
+To implement an external video source, you need to use the customized method [`setParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_parameter.html#adde9cb68e2ef2216d7fd1976fd5f1d75). See the following sample code for details:
 
 ```cpp
 // cpp
-// Preparation. Implement video capture and the video package queue to store the captured data or data to be rendered.
+// Preparation. Implement the video capture and the video playback queue to store the captured data or data to be rendered.
 CVideoPackageQueue *CVideoPackageQueue::m_lpVideoPackageQueue = NULL;
 
 CVideoPackageQueue::CVideoPackageQueue()
@@ -281,7 +281,7 @@ BOOL CVideoPackageQueue::PopVideoPackage(LPVOID lpVideoPackage, SIZE_T *nPackage
   return TRUE;
 }
 
-// Implement the video observer for external video source
+// Implement the video observer for the external video source.
 CExternalVideoFrameObserver::CExternalVideoFrameObserver()
 {
   m_lpImageBuffer = new BYTE[0x800000];
@@ -324,15 +324,15 @@ bool CExternalVideoFrameObserver::onRenderVideoFrame(unsigned int uid, VideoFram
   return true;
 }
 
-// Enable the external video source mode and register the video observer. Use the observer to pass the video data from the external source to the Engine  and then from the Engine to the application.
+// Enable the external video source mode and register the video observer. Use the observer to pass the video data from the external source to the engine and then from the engine to the app.
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
 mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
 
 int mRet = apm->setParameters("{\"che.video.local.camera_index\":1024}"); 
 nRet = mediaEngine->registerVideoFrameObserver(lpVideoFrameObserver);
 
-// Start pushing the data into the Engine and retrieving data from the Engine. Usually you need to maintain a process loop.
-lpPackageQueue->PushVideoPackage(m_lpYUVBuffer, nYUVSize); // push to Agora SDK
+// Start pushing the data into the engine and retrieve the data from the engine. You may need to maintain a process loop.
+lpPackageQueue->PushVideoPackage(m_lpYUVBuffer, nYUVSize); // Push to the Agora SDK.
 
 // Disable the external video source mode.
 nRet = apm->setParameters("{\"che.video.local.camera_index\":0}");
@@ -343,7 +343,7 @@ mediaEngine->registerVideoFrameObserver(NULL);
 
 ## Considerations
 
-* Ensure the accuracy and efficiency of audio and video data processing in the callback methods to avoid any possible crash.
-* Set the audio data to `RAW_AUDIO_FRAME_OF_MODE_READ_WRITE` if you hope to read, write and manipulate the data.
-* Use raw data APIs to customize the video renderer. If you do not want the SDK to render the video frame, do not call `setupLocalVideo`. Ensure compatibility on the Windows platform when customizing the video renderer.
-* Customizing audio/video source and renderer is an advanced feature provided by Agora SDK. To develop this function, we believe it necessary that you have adequate knowledge and experience in audio and video application development.
+* Ensure the accuracy and efficiency of the audio and video data processing in the callback methods to avoid any possible crash.
+* Set the audio data to `RAW_AUDIO_FRAME_OF_MODE_READ_WRITE` if you want to read, write, and manipulate the data.
+* Use raw data methods to customize the video renderer. If you do not want the SDK to render the video frame, do not call the `setupLocalVideo` method. Ensure compatibility on the Windows platform when customizing the video renderer.
+* Customizing the audio/video source and renderer is an advanced feature provided by the Agora SDK. 
