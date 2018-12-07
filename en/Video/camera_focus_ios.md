@@ -3,14 +3,14 @@
 title: Set the Camera Focus
 description: 
 platform: iOS
-updatedAt: Fri Dec 07 2018 18:46:28 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 18:46:31 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
 
 The camera focus function is used in video calls to enable high-quality video capture.
 
-The Agora SDK provides a set of camera management methods on Android, with which users can switch between the front and rear cameras, set the camera zoom factor, or set the camera focus position.
+The Agora SDK provides a set of camera management methods on iOS, with which users can switch between the front and rear cameras, set the camera zoom factor, or set the camera focus position.
 
 ## Implementation
 
