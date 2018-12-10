@@ -3,7 +3,7 @@
 title: 加入频道
 description: macos平台加入频道
 platform: macOS
-updatedAt: Mon Dec 10 2018 10:16:19 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 10:16:22 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/mac_audio.md)。
@@ -71,5 +71,4 @@ func joinChannel() {
 
 * [调整通话音量](../../cn/Voice/volume_mac.md)
 * [播放音效/音乐混音](../../cn/Voice/effect_mixing_mac.md)
-* [使用耳返](../../cn/Voice/in-ear_android_audio.md)
-* [调整音调、音色](../../cn/Voice/voice_effect_android_audio.md)
+* [调整音调、音色](../../cn/Voice/voice_effect_mac.md)
