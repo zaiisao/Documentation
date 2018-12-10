@@ -3,9 +3,11 @@
 title: 集成客户端
 description: 
 platform: Windows
-updatedAt: Mon Dec 10 2018 09:59:05 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 09:59:16 GMT+0000 (UTC)
 ---
 # 集成客户端
+本文介绍在正式使用 Agora SDK for Windows 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+
 ## 前提条件
 
 请确保满足以下开发环境要求:
@@ -41,6 +43,13 @@ updatedAt: Mon Dec 10 2018 09:59:05 GMT+0000 (UTC)
 4.  将 `sdk/dll` 下的 dll 文件复制到你的可执行文件所在的目录下。
 
 现在你已经设置好了 Windows 开发环境，可以开始使用 Agora SDK 了！
+
+## 相关文档
+完成了客户端集成后，你可以使用 Agora SDK，依次实现左侧《快速开始》菜单栏下的步骤，进行通话/直播：
+
+- 初始化
+- 加入频道
+- 发布和订阅流
 
 
 
