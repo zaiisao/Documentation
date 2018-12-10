@@ -3,7 +3,7 @@
 title: 计费
 description: 
 platform: 计费
-updatedAt: Mon Dec 10 2018 07:53:58 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 07:54:04 GMT+0000 (UTC)
 ---
 # 计费
 本页提供声网 Agora 实时音视频通话产品及服务相关的计费说明，以及常见问题和回答。关于直播、游戏等收费，请联系 sales@agora.io。
@@ -24,12 +24,12 @@ updatedAt: Mon Dec 10 2018 07:53:58 GMT+0000 (UTC)
   </tr>
   <tr>
     <td>视频</td>
-    <td>高清（HD）</td>
+    <td>高清 (HD)</td>
     <td><li>如果语音加上高清的时长超过 1 万分钟，则从本档当中扣除 1 万分钟剩余的时长；</li><li>如果语音加上高清的时长少于 1 万分钟，继续往下扣除超清（HD+）档的通信时长。</li></td>
   </tr>
   <tr>
     <td>视频</td>
-    <td>超清（HD+）</td>
+    <td>超清 (HD+)</td>
     <td>逻辑同上，直到 1 万分钟扣完为止</td>
   </tr>
 </table>
@@ -56,7 +56,7 @@ updatedAt: Mon Dec 10 2018 07:53:58 GMT+0000 (UTC)
   </tr>
 </table>
 
->  单价指的是每分钟的价格, 详见 [价格方案](https://www.agora.io/cn/price/) 。
+>  单价指的是每分钟的价格, 详见[价格方案](https://www.agora.io/cn/price/) 。
 >  
 >  同一频道内只要有人开启录制（无论几人），录制均按照单路音频流计费。
 
