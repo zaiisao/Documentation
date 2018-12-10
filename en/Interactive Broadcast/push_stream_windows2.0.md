@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Windows
-updatedAt: Mon Dec 10 2018 21:46:50 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 21:46:53 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -18,7 +18,7 @@ Agora's CDN publishing solution is based on the following API methods to publish
 -   `removePublishStreamUrl`
 -   `setLiveTranscoding`
 
-This solution is flexiible and allows:
+This solution is flexible and allows:
 
 -   Starting or stopping publishing to the CDN.
 -   Adding or removing a streaming URL without interrupting the ongoing publishing.
@@ -41,7 +41,7 @@ The following figure shows a typical CDN-pushing scenario.
 
 
 
-### Sample code
+### Sample Code
 
 ```
 // CDN transcoding settings.
