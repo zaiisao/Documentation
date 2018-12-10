@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Android
-updatedAt: Mon Dec 10 2018 22:14:49 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 22:14:53 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -20,7 +20,7 @@ The Agora SDK v2.1.0+ provides the `addInjectStreamUrl` method for:
 
 Injecting an online media stream can be applied to the following scenarios:
 
-- During game events, by injecting the video stream of an ongoing game. The hosts and audience can watch the game while commenting on it.
+- During sporting events, by injecting the video stream of an ongoing game. The hosts and audience can watch the game while commenting on it.
 - During music shows, movies, and entertainment shows. The hosts and audience can have real-time discussions and exchange ideas while watching the show.
 - Video streams captured by drones or network cameras can be injected into a live broadcast and broadcasted to the audience in the channel.
 
