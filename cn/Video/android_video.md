@@ -3,10 +3,10 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Mon Dec 10 2018 10:00:39 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 10:00:43 GMT+0000 (UTC)
 ---
 # 集成客户端 
-本文介绍在正式使用 Agora SDK for Android 进行视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
 
 ## 前提条件
 
@@ -155,4 +155,10 @@ Android [视频通话/视频直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
 -keep class io.agora.**{*;}
 ```
 
-你已经完成了客户端集成，可以开始使用 Agora SDK 了。
+## 相关文档
+
+完成了客户端集成后，你可以使用 Agora SDK，依次实现左侧《快速开始》菜单栏下的步骤，进行通话/直播：
+
+- 初始化
+- 加入频道
+- 发布和订阅流
