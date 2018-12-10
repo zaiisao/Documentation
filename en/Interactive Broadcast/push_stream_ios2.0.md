@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 16 2018 05:47:12 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 21:46:19 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
