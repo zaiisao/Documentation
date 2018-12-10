@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 05:51:42 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 22:00:40 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
