@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Windows
-updatedAt: Wed Nov 14 2018 03:33:48 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 09:59:05 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
