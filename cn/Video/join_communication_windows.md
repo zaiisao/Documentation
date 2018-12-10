@@ -3,7 +3,7 @@
 title: 加入频道
 description: windows平台加入频道
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:01:40 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 10:15:32 GMT+0000 (UTC)
 ---
 # 加入频道
 App 在加入频道前，需要先设置频道模式，再加入频道。
