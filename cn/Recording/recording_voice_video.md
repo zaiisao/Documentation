@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 10 2018 08:35:14 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 09:04:32 GMT+0000 (UTC)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -600,7 +600,7 @@ config.json <sup>[2]</sup> 文件中的 recordFileRootDir指定了顶级录制�
 
 你也可以参考下面的图示，来理解转码脚本的选择：
 
-
+![](https://web-cdn.agora.io/docs-files/1544430828726)
 
 转码完成后的 mp4 文件几乎支持所有主流播放器，例如:
 
