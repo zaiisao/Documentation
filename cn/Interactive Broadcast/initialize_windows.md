@@ -3,7 +3,7 @@
 title: 创建 AgoraRtcEngine 实例并初始化
 description: windows平台初始化
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:01:04 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 10:11:15 GMT+0000 (UTC)
 ---
 # 创建 AgoraRtcEngine 实例并初始化
 
