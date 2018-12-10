@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Mon Dec 10 2018 09:55:39 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 09:55:49 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for macOS 进行语音通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -149,8 +149,9 @@ updatedAt: Mon Dec 10 2018 09:55:39 GMT+0000 (UTC)
 <img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_8.jpg" />
 
 ## 相关文档
-完成了客户端集成后，你可以使用 Agora SDK，依次实现如下功能进行语音通话。
-* [初始化 AgoraRtcEngineKit](../../cn/Voice/initialize_mac.md)
-* [加入频道](../../cn/Voice/join_communication_mac.md)
-* [发布和订阅音频流](../../cn/Voice/publish_mac_audio.md)
+完成了客户端集成后，你可以使用 Agora SDK，依次实现左侧《快速开始》菜单栏下的步骤，进行通话/直播：
+
+- 初始化
+- 加入频道
+- 发布和订阅流
 
