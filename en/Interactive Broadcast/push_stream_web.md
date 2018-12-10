@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Web
-updatedAt: Mon Dec 10 2018 21:40:26 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 21:40:31 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -14,13 +14,13 @@ The CDN live streaming feature enables a host (broadcaster) to transform his or 
 
 ## Implementation
 
-### 1. Check Browser Compatibility
+### 1. Check Web Browser Compatibility
 
 ```javascript
 checkSystemRequirements()
 ```
 
-### 2. Create A Client Object
+### 2. Create a Client Object
 
 ```javascript
 createClient()
@@ -69,7 +69,7 @@ var LiveTranscoding = {
 
 ```javascript
 client.setLiveTranscoding(coding);
-//if enableTranscoding is set to true, setLiveTranscoding must be called before _startLiveStreaming
+//If enableTranscoding is set to true, setLiveTranscoding must be called before _startLiveStreaming.
 client.startLiveStreaming(url, true)
 ```
 
