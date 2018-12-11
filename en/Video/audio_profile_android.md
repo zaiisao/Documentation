@@ -11,7 +11,7 @@ High-fidelity audio is essential for professional audio scenarios, such as for p
 
 
 ## Implementation
-Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for more information.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/android_video.md).
 
 The Agora SDK provides the [setAudioProfile](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a34175b5e04c88d9dc6608b1f38c0275d) method for developers to set appropriate audio profiles according to the scenarios. This method has two parameters:
 
