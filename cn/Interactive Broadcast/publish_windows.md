@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: windows平台上发布音视频流
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:02:36 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:14:57 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 ## 打开视频模式
