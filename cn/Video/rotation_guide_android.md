@@ -3,7 +3,7 @@
 title: 视频采集旋转
 description: 
 platform: Android,Windows
-updatedAt: Tue Dec 11 2018 09:55:17 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 09:55:20 GMT+0000 (UTC)
 ---
 # 视频采集旋转
 本文指导用户如何选择与场景适配的视频旋转模式。
@@ -52,7 +52,7 @@ Agora 通过 `orientaionMode` 参数，提供了 [ADAPTIVE 模式](#orientation_
 <a name = "orientation_adaptive"></a>
 ### ADAPTIVE 模式
 
-该模式下，采集端采集视频和视频与 Status Bar 的相对方向信息并传输；播放端播放视频并还原视频与 Status Bar 的相对方向信息。整个过程中不裁剪硬件采集的视频。
+该模式下，采集端采集视频和视频与 Status Bar 的相对方向信息并传输；播放端播放视频并还原视频与 Status Bar 的相对方向信息。
 
 假设视频采集设备使用后置摄像头进行采集，下图演示了 Adaptive 模式分别在 UI 锁定和 UI 不锁定情况下的行为：
 
