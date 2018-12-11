@@ -102,10 +102,10 @@ Call the `setupRemoteVideo` method to configure the remote video display.
 In the `setupRemoteVideo` method:
 
 - Choose the display window of the remote video streams.
-- Specify the video display mode.
+- Specify the video display mode:
   - Hidden mode: The SDK scales the video until it fills the visible view boundaries. One dimension of the video may be clipped.
   - Fit mode: The SDK scales the video until one of its dimensions fits the boundaries. Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
-- Pass the uid of the remote user. If the remote uid is unknown to the app, set it when the app receives the `didJoinedOfUid` event.
+- Pass the uid of the remote user. If the remote uid is unknown to the app, set it when the app receives the `didJoinedOfUid` callback.
 
 ```objective-c
 //Objective-C
@@ -116,7 +116,7 @@ In the `setupRemoteVideo` method:
   videoCanvas.view = self.remoteVideo;
   videoCanvas.renderMode = AgoraVideoRenderModeFit;
   [self.agoraKit setupRemoteVideo:videoCanvas];
-  // Bind the remote video stream to the view
+  // Bind the remote video stream to the view.
 }
 ```
 
