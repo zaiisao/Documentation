@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Tue Dec 11 2018 07:16:12 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:16:31 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -15,7 +15,7 @@ updatedAt: Tue Dec 11 2018 07:16:12 GMT+0000 (UTC)
 </colgroup>
 <thead>
 <tr><th>C++ Interface Class</th>
-<th>description</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
@@ -35,14 +35,14 @@ updatedAt: Tue Dec 11 2018 07:16:12 GMT+0000 (UTC)
 The <code>IRecordingEngine</code> class provides the following main methods that can be invoked by your application:
 
 -   [Creates a Recording Engine (createAgoraRecordingEngine)](#createAgoraRecordingEngine)
--   [Allows an Application to Join a Channel (joinChannel)](#joinChannel)
+-   [Allows the Recording Application to Join a Channel (joinChannel)](#joinChannel)
 -   [Sets the Video Mixing Layout (setVideoMixingLayout)](#setVideoMixingLayout)
--   [Allows the Application to Leave the Channel (leaveChannel)](#leaveChannel)
+-   [Allows the Recording Application to Leave the Channel (leaveChannel)](#leaveChannel)
 -   [Releases the IRecordingEngine Object (release)](#release)
 -   [Retrieves the Recording Properties (getProperties)](#getProperties)
 -   [Starts the Recording (startService)](#startService)
--    [Stops the Recording (stopService)](#stopService))
--    [Sets the User Background Image (setUserBackground)](#setUserBackground))
+-   [Stops the Recording (stopService)](#stopService))
+-   [Sets the User Background Image (setUserBackground)](#setUserBackground))
 -   [Sets the Log Level (setLogLevel)](#setLogLevel)
 -   [Enables the Module Log (enableModuleLog)](#enableModuleLog)
 
@@ -67,7 +67,7 @@ public static IRecordingEngine* createAgoraRecordingEngine(const char * appId, I
 </thead>
 <tbody>
 <tr><td><code>appId</code></td>
-<td>The App ID used in the communications to be recorded. For details, see <a href="../../en/Agora%20Platform/token.md">Getting an App ID</a>.</td>
+<td>The App ID used in the communication to be recorded. For more information, see <a href="../../en/Agora%20Platform/token.md">Getting an App ID</a>.</td>
 </tr>
 <tr><td><code>eventHandler</code></td>
 <td>The Agora Recording SDK notifies the application of the triggered callbacks found in <a href="#irecordingengineeventhandler">IRecordingEngineEventHandler</a>.</td>
@@ -77,7 +77,7 @@ public static IRecordingEngine* createAgoraRecordingEngine(const char * appId, I
 
 
 
-### <a name="joinChannel"></a>Allows an Application to Join a Channel (joinChannel)
+### <a name="joinChannel"></a>Allows the Recording Application to Join a Channel (joinChannel)
 
 This method allows the recording application to join a channel and start recording.
 
@@ -97,13 +97,13 @@ virtual int joinChannel(const char * token, const char *channelId, uid_t uid, co
 </thead>
 </body>
 <tr><td><code>token</code></td>
-<td>The token used in the communications to be recorded. For details, see <a href="../../en/Agora%20Platform/token.md">Getting an App ID</a>.</td>
+<td>The token used in the communications to be recorded. For more information, see <a href="../../en/Recording/token.md">Use Security Keys</a>.</td>
 </tr>
 <tr><td><code>channelId</code></td>
-<td>Name of the channel to be recorded.</td>
+<td>Name of the channel to be recorded. The length must be within 64 bytes. <br>The following is the supported scope: <br><li>The 26 lowercase English letters from a to z</li><li>The 26 uppercase English letters from A to Z</li><li>The 10 numbers from 0 to 9</li><li>The space</li><li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","</li></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>User ID. A 32-bit unsigned integer ranging from 1 to (2^32-1) that is unique in a channel.</td>
+<td>User ID. A 32-bit unsigned integer ranging from 1 to (2<sup>32</sup>-1) that is unique in a channel.</td>
 </tr>
 <tr><td><code>config</code></td>
 <td>Detailed recording configuration. See the definition in the table below.</td>
@@ -118,8 +118,9 @@ virtual int joinChannel(const char * token, const char *channelId, uid_t uid, co
 </tbody>
 </table>
 
-> -   In the Recording SDK, <code>requestToken</code> and <code>renewToken</code> are private methods. Make sure that you set <code>expireTimestamp</code> as 0 when generating a token, which means that the privilege, once generated, never expires.
-> -   A channel does not accept duplicate uids. Otherwise, there will be unpredictable behaviors.
+> - In the Recording SDK, <code>requestToken</code> and <code>renewToken</code> are private methods. Make sure that you set <code>expireTimestamp</code> as 0 when generating a token, which means that the privilege, once generated, never expires.
+> 
+> - A channel does not accept duplicate uids. Otherwise, there will be unpredictable behaviors.
 
 
 The structure of <code>RecordingConfig</code>:
@@ -186,143 +187,140 @@ typedef struct RecordingConfig {
 ```
 
 <table>
-<caption>Recording Configuration</caption>
 <colgroup>
 <col/>
 <col/>
 </colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
 <tbody>
+<tr><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
 <tr><td><code>channelProfile</code></td>
-<td><p>Sets the channel mode:</p>
+<td><p>Sets the channel mode. </p>
 <ul>
-<li>0: (Default) Communication mode (CHANNEL_PROFILE_COMMUNICATION). This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
-<li>1: Live broadcast (CHANNEL_PROFILE_LIVE_BROADCAST). The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <code>setClientRole</code>. </li>
+<li>CHANNEL_PROFILE_COMMUNICATION (0): (Default) Communication mode. This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
+<li>CHANNEL_PROFILE_LIVE_BROADCAST (1): Live broadcast mode. The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <em><code>setClientRole</code></em>.</li>
 </ul>
 The Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
 </td>
 </tr>
 <tr><td><code>isAudioOnly</code></td>
-<td><p>Sets whether or not to record audio only:</p>
+<td><p>Sets whether or not to record audio only.</p>
 <ul>
-<li>true: Enables audio recording only.</li>
-<li>false: (Default) Records both audio and video.</li>
+<li>true: Enables audio recording and disables video recording.</li>
+<li>false: (Default) Enables both audio and video recording.</li>
+</ul>
+<p>Used together with <code>isVideoOnly</code></p>
+<ul>
+<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only records audio;</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true, only records video;</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is false, records both audio and video;</li>
+<li><code>isAudioOnly</code> and <code>isVideoOnly</code> can not be set as true at the same time.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isVideoOnly</code></td>
-<td><p>Sets whether or not to record video only:</p>
+<td><p>Sets whether or not to record video only.</p>
 <ul>
-<li>true: Enables video recording only.</li>
-<li>false: (Default) Records both audio and video.</li>
+<li>true: Enables video recording and disables audio recording.</li>
+<li>false: (Default) Enables both audio and video recording.</li>
+</ul>
+<p>Used together with <code>isAudioOnly</code></p>
+<ul>
+<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only records audio;</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true, only records video;</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is false, records both audio and video;</li>
+<li><code>isAudioOnly</code> and <code>isVideoOnly</code> can not be set as true at the same time.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isMixingEnabled</code></td>
-<td><p>Enables the audio- or video-mixing mode:</p>
+<td><p>Sets whether or not to enable the audio- or video-mixing mode.</p>
 <ul>
-<li>false: (Default) Enables the individual mode (audio). The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
-<li>true: Enables the composite mode (video). The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
+<li>true: Enables the composite mode, which means the audio of all uids is mixed in an audio file and the video of all uids is mixed in a video file. The sample rate, bitrate, and audio channel number of the recorded file are the same as the highest level of those of the original audio streams.</li>
+<li>false: (Default) Enables the individual mode, which means one audio or video file for an uid. The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
 </ul>
-<p>If the composite mode is enabled:</p>
-<div><ul>
-<li>If <code>isAudioOnly</code> is <code>true</code> and <code>isVideoOnly</code> is <code>false</code>, only the audio is recorded.</li>
-<li>If <code>isAudioOnly</code> is <code>false</code> and <code>isVideoOnly</code> is <code>true</code>,  only the video is recorded.</li>
-<li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are <code>false</code>, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
-	<li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set as <code>true</code> at the same time.</li>
-</ul>
-</p>
-</div>
 </td>
 </tr>
-<tr><td><code>mixResolution</code> <sup>[1]</sup></td>
-<td>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixResolution</code> allows you to set the resolution in the format of width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
+<tr><td><code>mixResolution</code></td>
+<td>If you set <code>isMixingEnabled</code> as true and enable the composite mode, <code>mixResolution</code> allows you to set the video profile, including the width, height, frame rate, and bitrate. For the recommended bitrates, see the tables below.</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
-<td><p>When the whole channel is encrypted, the recording SDK uses <code>decryptionMode</code> to enable the built-in decryption function:</p>
-
-<div><ul>
-<li>“aes-128-xts”: AES-128, XTS mode</li>
-<li>“aes-128-ecb”: AES-128, ECB mode</li>
-<li>“aes-256-xts”: AES-256, XTS mode</li>
+<td><p>When the whole channel is encrypted, the recording SDK uses <code>decryptionMode</code> to enable the built-in decryption function.
+The following decryption methods are supported:</p>
+<ul>
+<li>“aes-128-xts”: AES-128, XTS mode.</li>
+<li>“aes-128-ecb”: AES-128, ECB mode.</li>
+<li>“aes-256-xts”: AES-256, XTS mode.</li>
 </ul>
-</div>
 </td>
 </tr>
 <tr><td><code>secret</code></td>
-<td>The decryption password when decryption mode is enabled. The default value is NULL.</td>
+<td>The decryption password when the <code>decryptionMode</code> is enabled. The default value is NULL.</td>
 </tr>
 <tr><td><code>idleLimitSec</code></td>
-<td>The Agora Recording SDK automatically stops recording when there is no user in the recorded channel after a time period of <code>idleLimitSec</code>.  The value must be &ge; three seconds. The default value is 300 seconds.</td>
+<td>The Agora Recording SDK automatically stops recording when there is no user in the channel after a time period of idleLimitSec. The value must be ≥ 3 seconds. The default value is 300 seconds.</td>
 </tr>
 <tr><td><code>appliteDir</code></td>
 <td>The directory of AgoraCoreService. The default value is NULL.</td>
 </tr>
-<tr><td><code>recordFilrRootDir</code></td>
-<td>The root directory of the recording files. The default value is NULL. The sub-path will be generated automatically.</td>
+<tr><td><code>recordFileRootDir</code></td>
+<td>The root directory of the recorded files. The default value is NULL. The sub-path will be generated automatically.</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>The path of the configuration file. The default value is NULL. The content in the configuration file must be in JSON format. In this configuration file, you can set the absolute path of the recording file, such as {“Recording_Dir” :”&lt;recording path&gt;”}, but the sub-path will not be generated automatically.</td>
+<td>The path of the configuration file. The default value is NULL. The content in the configuration file must be in JSON format. In the configuration file, you can set the absolute path of the recorded file, such as {“Recording_Dir” : “<recording path>”}. “Recording_Dir” can not be changed. But the sub-path will not be generated automatically.</td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
-<td>The lowest UDP port. Ensure that the value of <code>highUdpPort</code> - <code>lowUdpPort</code> is &ge; 4. The default value is 0.</td>
+<td>The lowest UDP port. Ensure that the value of highUdpPort - lowUdpPort is ≥ 4. The default value is 0.</td>
 </tr>
 <tr><td><code>highUdpPort</code></td>
-<td>The highest UDP port. Ensure that the value of <code>highUdpPort</code> - <code>lowUdpPort</code> is &ge; 4. The default value is 0.</td>
+<td>The highest UDP port. Ensure that the value of highUdpPort - lowUdpPort is ≥ 4. The default value is 0.</td>
 </tr>
 <tr><td><code>captureInterval</code></td>
-<td>The time interval of the screen captures. The value ranges from one second to five seconds. You need to use <code>captureInterval</code> with decodeVideo = 3/4 when joining a channel. See <code>joinChannel<code> to allow a user to join a channel.</td>
+<td>The time interval of the screen capture. The time interval must be longer than 1 second and the default value is 5 seconds. <code>captureInterval</code> is only valid when the <code>VIDEO_FORMAT_TYPE</code> = 3, 4 or 5.</td>
 </tr>
 <tr><td><code>audioIndicationInterval</code></td>
-<td><p>Whether or not to detect the speakers:</p>
-
+<td><p>Whether or not to detect speakers. It is disabled by default.</p>
 <div><ul>
-<li>&le; 0: Disables detecting the speakers.</li>
-<li>&gt; 0: The time interval (ms) of detecting the speakers. When a speaker is found, the SDK returns the user ID of the speaker in the <code>onActiveSpeaker</code> callback.</li>
+<li>&lt;= 0: Disables the function of detecting speakers.</li>
+<li>&gt; 0: The time interval (ms) of detecting speakers. Agora recommends setting the time interval to be longer than 200ms. When a speaker is found, the SDK returns the UID of the speaker in the <code>onActiveSpeaker</code> callback.</li>
 </ul>
 </div>
 </td>
 </tr>
-	<tr><td><code>decodeAudio</code> <sup>[2]</sup></td>
-		<td><p>Audio decoding format:</p>
+<tr><td><code>decodeAudio</code></td>
+<td>Audio decoding format.
 <ul>
-<li>0: Default audio format (AUDIO_FORMAT_DEFAULT_TYPE).</li>
-<li>1: AAC format (AUDIO_FORMAT_AAC_FRAME_TYPE).</li>
-<li>2: PCM format (AUDIO_FORMAT_PCM_FRAME_TYPE).</li>
-<li>3: PCM audio-mixing format (AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE).</li>
+<li>AUDIO_FORMAT_DEFAULT_TYPE = 0: Default audio format.</li>
+<li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1: Audio frame in AAC format.</li>
+<li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2: Audio frame in PCM format.</li>
+<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: Audio-mixing frame in PCM format. <code>isMixingEnabled</code> cannot be set as true.</li>
 </ul>
 </td>
 </tr>
-	<tr><td><code>decodeVideo</code> <sup>[2]</sup></td>
-<td><p>Video decoding format:</p>
-	<ul>
-<li><p>0: Default video format (VIDEO_FORMAT_DEFAULT_TYPE).</p>
-</li>
-<li><p>1: H.264 format (VIDEO_FORMAT_H264_FRAME_TYPE).</p>
-</li>
-<li><p>2: YUV format (VIDEO_FORMAT_YUV_FRAME_TYPE).</p>
-</li>
-<li><p>3: JPEG format (VIDEO_FORMAT_JPG_FRAME_TYPE).</p>
-</li>
-<li><p>4: JPEG file format (VIDEO_FORMAT_JPG_FILE_TYPE).</p>
-</li>
-<li><p>5: JPEG video file format (VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE).</p>
-
-<div><ul>
-<li>Individual Mode (<code>isMixingEnabled</code> is set as <code>false</code>): MPEG-4 video and JPEG files.</li>
-<li>Mixing Mode (<code>isMixingEnabled</code> is set as <code>true</code>): MPEG-4 video file for combined streams and JPEG files for individual streams. </li>
+<tr><td><code>decodeVideo</code></td>
+<td>Video decoding format.
+<ul>
+<li>VIDEO_FORMAT_DEFAULT_TYPE = 0: Default video format.</li>
+<li>VIDEO_FORMAT_H264_FRAME_TYPE = 1: Video frame in H.264 format.</li>
+<li>VIDEO_FORMAT_YUV_FRAME_TYPE = 2: Video frame in YUV format.</li>
+<li>VIDEO_FORMAT_JPG_FRAME_TYPE = 3: Video frame in JPEG format.</li>
+<li>VIDEO_FORMAT_JPG_FILE_TYPE = 4: JPEG file format.</li>
+<li>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5：Video frame in JPEG format + MPEG-4 video. </li>
+<ul>
+<li>Individual Mode (<code>isMixingEnabled</code> is set as false): MPEG-4 video and JPEG files.</li>
+<li>Composite Mode (<code>isMixingEnabled</code> is set as true): MPEG-4 video file for mixed streams and JPEG files for individual streams.</li>
 </ul>
-</div>
-</li>
+</ul>
+When the video is decoded into raw video data, that is VIDEO_FORMAT_TYPE = 1, 2, 3 or 5:
+<ul>
+<li>Video mixing is not supported.</li>
+<li>Raw video data in YUV format for the Web SDK is supported while H.264 format is not supported.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>mixedVideoAudio</code></td>
-<td><p>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixedVideoAudio</code> allows you to mix audio and video in real time:</p>
+<td><p>f you set <code>isMixingEnabled</code> as true and enable the composite mode, <code>mixedVideoAudio</code> allows you to mix the audio and video in a file in real time.</p>
 <ul>
 <li>0: (Default) Mixes the audio and video respectively.</li>
 <li>1: Mixes the audio and video in real time into an MPEG-4 file. Supports limited players.</li>
@@ -330,8 +328,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 </td>
 </tr>
 <tr><td><code>streamType</code></td>
-<td><p><code>streamType</code> takes effect only when the Agora Native SDK has enabled dual-stream mode (high stream by default).</p>
-
+<td><p>Takes effect only when the Agora Native SDK or Web SDK has enabled the dual-stream mode (high stream by default).</p>
 <div><ul>
 <li>0: (Default) High stream.</li>
 <li>1: Low stream.</li>
@@ -340,59 +337,46 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 </td>
 </tr>
 <tr><td><code>triggerMode</code></td>
-<td><p>Sets whether to record automatically or manually:</p>
+<td><p>Sets whether to record automatically or manually upon joining the channel.</p>
 <ul>
 <li>0: Automatically.</li>
-<li>1: Manually. To start and stop recording, call <code>startRecording</code> and <code>stopRecording</code> respectively.</li>
+<li>1: Manually. To start and stop recording, call <code>startService</code> and <code>stopService</code> respectively.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>lang</code></td>
-	<td><p>Sets the programming language:</p>
-		<ul>
-			<li>CPP_LANG (CPP)</li>
-			<li>java (Java)</li>
-		</ul></td>
+<td>Sets the programming language (C++ or Java).</td>
 </tr>
-<tr><td><code>proxyserver</code></td>
-<td><code>proxyserver</code> allows you to record the content with the Intranet server. For details, please contact <a href="mailto:sales%40agora.io">sales@agora.io</a>.</td>
+<tr><td><code>proxyServer</code></td>
+<td>Sets the proxy server, which allows recording with the Intranet server. For more information, please contact <a href="mailto:sales%40agora.io">sales<span>@</span>agora<span>.</span>io</a> .</td>
 </tr>
-<tr><td><code>audioProfile</code></td>
-<td><p>Audio profile of the recording file:</p>
-
+<tr><td><code>audioProfile</code> </td>
+<td><p>Audio profile of the recording file. Sets the sampling rate, bitrate, encode mode, and the number of channels. Takes effect only when <code>isMixingEnabled</code> is set as true.</p>
 <div><ul>
-<li>0: (Default) Sampling rate of 48 kHz, communication encoding, mono (AUDIO_PROFILE_DEFAULT).</li>
-<li>4: Sampling rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps (AUDIO_PROFILE_MUSIC_HIGH_QUALITY).</li>
-<li>5: Sampling rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps (AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO).</li>
+<li>AUDIO_PROFILE_DEFAULT = 0: (Default) Sampling rate of 48 kHz, communication encoding, mono, and a bitrate of up to 18 Kbps.</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 1: Sampling rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 2: Sampling rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.</li>
 </ul>
-</div>
 </td>
 </tr>
-<tr><td><code>defaultVideoBg</code></td>
-<td>The default background image of the video.</td>
+<tr><td><code>defaultVideoBg </code></td>
+<td>The default background image of the canvas.</td>
 </tr>
 <tr><td><code>defaultUserBg</code></td>
 <td>The default background image of the user.</td>
 </tr>
 <tr><td><code>avSyncMode</code></td>
-<td><p>Audio and video synchronization mode:</p>
-
+<td><p>Audio and video synchronization mode.</p>
 <div><ul>
-<li>-1: Synchronization error (UNKNOWN_AVSYNC).</li>
-<li>0: Compatible with older versions (AVSYNC_V0).</li>
-<li>1: New audio and video synchronization mode (AVSYNC_V1).</li>
+<li>UNKNOWN_AVSYNC = -1: Synchronization error (UNKNOWN_AVSYNC).</li>
+<li>AVSYNC_V0 = 0: Compatible with older versions (AVSYNC_V0).</li>
+<li>AVSYNC_V1 = 1: New audio and video synchronization mode (AVSYNC_V1).</li>
 </ul>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-
-> [1] The <code>isAudioOnly</code> and <code>isVideoOnly</code> parameters are disabled by default. Do not set <code>isAudioOnly</code> and <code>isVideoOnly</code> as <code>true</code> at the same time.
-
-> [2] If the raw data is enabled:
-	> - Only audio mixing is supported. Video mixing is not supported. 
-	> - Only raw video data in H.264 for the Web SDK is supported. VP8 is not supported.
 
 
 **Video Profile for the Communication Mode:**
@@ -662,34 +646,28 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 **Supported Players:**
 
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
 <thead>
 <tr><th>Platform</th>
 <th>Player/Explorer</th>
-<th>mixedVideoAudio=0</th>
-<th>mixedVideoAudio=1</th>
+<th>mixedVideoAudio = 0</th>
+<th>mixedVideoAudio = 1</th>
 </tr>
 </thead>
 <tbody>
 <tr><td>Linux</td>
-<td>Default Player</td>
+<td>VLC Media Playerr</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
 <tr><td>Linux</td>
-<td>VLC Media Player</td>
+<td>ffplayer</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
 <tr><td>Linux</td>
-<td>ffplay</td>
-<td>Supported</td>
-<td>Supported</td>
+<td>Chrome</td>
+<td><strong>Not Supported</strong></td>
+<td><strong>Not Supported</strong></td>
 </tr>
 <tr><td>Windows</td>
 <td>Media Player</td>
@@ -697,7 +675,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>Windows</td>
-<td>KMPlayer</td>
+<td>KM Player</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -717,6 +695,11 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>macOS</td>
+<td>VLC</td>
+<td><strong>Not Supported</strong></td>
+<td><strong>Not Supported</strong></td>
+</tr>
+<tr><td>macOS</td>
 <td>Movist</td>
 <td>Supported</td>
 <td>Supported</td>
@@ -727,9 +710,9 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>macOS</td>
-<td>KMPlayer</td>
-<td><b>Not Supported</b></td>
-<td><b>Not Supported</b></td>
+<td>KM Player</td>
+<th><strong>Not Supported</strong></th>
+<th><strong>Not Supported</strong></th>
 </tr>
 <tr><td>macOS</td>
 <td>Chrome (47.0.2526.111+)</td>
@@ -747,12 +730,12 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>iOS</td>
-<td>VLC</td>
-<td><b>Not Supported</b></td>
-<td>Supported</td>
+<td>VLC for Mobile</td>
+<th><strong>Not Supported</strong></th>
+<td><strong>Not Supported</strong>d</td>
 </tr>
 <tr><td>iOS</td>
-<td>KMPlayer</td>
+<td>KM Player</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -767,7 +750,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>Android</td>
-<td>MXPlayer</td>
+<td>MX Player</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -777,7 +760,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>Android</td>
-<td>KMPlayer</td>
+<td>KM Player</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -869,21 +852,21 @@ The structure of <code>VideoMixingLayout</code>:
 <td>The background color of the canvas (the display window or screen) in RGB hex value.</td>
 </tr>
 <tr><td><code>regionCount</code></td>
-<td>The number of the hosts in the channel.</td>
+<td>The number of the users (communication mode)/hosts (live broadcast mode) in the channel.</td>
 </tr>
 <tr><td><code>regions</code></td>
-<td><p>The host list of <code>VideoMixingLayout</code>. Each host in the channel has a region to display the video on the screen with the following parameters to be set:</p>
+<td><p>The user (communication mode)/host (live broadcast mode) list of <code>VideoMixingLayout</code>. Each user (communication mode)/host (live broadcast mode) in the channel has a region to display the video on the screen with the following parameters to be set:</p>
 <ul>
-<li><code>uid</code>: User ID of the host displaying the video in the region.</li>
+<li><code>uid</code>: UID of the user (communication mode)/host (live broadcast mode) displaying the video in the region.</li>
 <li><code>x</code>: Relative horizontal position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
 <li><code>y</code>: Relative vertical position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
 <li><code>width</code>: Relative width of the region. The value is between 0.0 and 1.0.</li>
-<li><code>height</code>: Actual height of the region. The value is between 0.0 and 1.0.</li>
+<li><code>height</code>: Relative height of the region. The value is between 0.0 and 1.0.</li>
 <li><code>zOrder</code>: The index of the layer. The value is between 1 (bottom layer) and 100 (top layer).</li>
 <li><code>alpha</code>: The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque).</li>
 	<li><code>renderMode</code>: Render mode<ul>
-<li>1: Cropped (RENDER_MODE_HIDDEN).</li>
-<li>2: Proportionate (RENDER_MODE_FIT).</li>
+<li>RENDER_MODE_HIDDEN(1): Cropped mode. Uniformly scale the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents.</li>
+<li>2RENDER_MODE_FIT(2): Fit mode. Uniformly scale the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio will be filled with black.</li>
 </ul>
 </li>
 </ul>
@@ -912,7 +895,7 @@ Here is an example to show the position and size of the host’s head portrait. 
 <img alt="../_images/sei_overview.png" src="https://web-cdn.agora.io/docs-files/en/sei_overview.png" style="width: 500.0px;"/>
 
 
-### <a name="leaveChannel"></a>Allows the Application to Leave the Channel  (leaveChannel)
+### <a name="leaveChannel"></a>Allows the Recording Application to Leave the Channel (leaveChannel)
 
 This method allows the recording application to leave the channel and release the thread resources.
 
@@ -940,7 +923,7 @@ virtual int leaveChannel() = 0;
 
 ### <a name="release"></a>Releases the IRecordingEngine Object (release)
 
-This method releases the IRecordingEngine object.
+This method destroys the `IRecordingEngine` object.
 
 ```
 virtual int release() = 0;
@@ -968,8 +951,9 @@ virtual int release() = 0;
 
 This method allows you to retrieve the recording properties without joining a channel.
 
-> -   The recording properties only include the information of the path where the recording files are stored.
-> -   This method is different from [onUserJoined](#onUserJoined). You must call <code>onUserJoined</code> after joining the channel.
+> - The recording properties only include the information of the path where the recording files are stored.
+> 
+> - This method is different from [onUserJoined](#onUserJoined). You must call <code>onUserJoined</code> after joining the channel.
 
 
 ```
@@ -1034,7 +1018,7 @@ virtual int stopService() = 0;
 
 ### <a name="setUserBackground"></a>Sets the User Background Image (setUserBackground)
 
-This method sets the background image of a specified user.
+This method sets the background image of a specified user. The backgrouds for different users can be different.
 
 ```
 virtual int setUserBackground(uid_t uid, const char* img_path) = 0;
@@ -1052,7 +1036,7 @@ virtual int setUserBackground(uid_t uid, const char* img_path) = 0;
 </thead>
 <tbody>
 <tr><td><code>uid</code></td>
-<td>The user ID of the user for the background image to be set.</td>
+<td>The UID of the user for the background image to be set.</td>
 </tr>
 <tr><td><code>image_path</code></td>
 <td>The path of the image file.</td>
@@ -1105,12 +1089,12 @@ The IRecordingEngineEventHandler class provides the following callbacks for the 
 
 -   [The Raw Video Data has Been Received (videoFrameReceived)](#videoFrameReceived)
 
--   [Indicates the Speaker in the Channel (onActiveSpeaker)](#onActiveSpeaker)
+-   [A Speaker is Detectesd in the Channel (onActiveSpeaker)](#onActiveSpeaker)
 
 
-### <a name="onError"></a>An Error has Occurred During SDK Runtime (onError)
+### <a name="onError"></a>An Error Occurs During SDK Runtime (onError)
 
-This callback is triggered when an error has occurred during SDK runtime.
+This callback is triggered when an error occurs during SDK runtime.
 
 The SDK cannot fix the issue or resume running, which requires intervention from the application and informs the user on the issue.
 
@@ -1129,7 +1113,7 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 </tr>
 </thead>
 <tbody>
-<tr><td><code>error</code></td>
+<tr><td><code>error_code</code></td>
 <td><p>Error codes:</p>
 
 <div><ul>
@@ -1169,9 +1153,9 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 
 
 
-### <a name="onWarning"></a>A Warning has Occurred During SDK Runtime (onWarning)
+### <a name="onWarning"></a>A Warning Occurs During SDK Runtime (onWarning)
 
-This callback is triggered when a warning has occurred during SDK runtime.
+This callback is triggered when a warning occurs during SDK runtime.
 
 In most cases, the application can ignore the warnings reported by the SDK because the SDK can usually fix the issue and resume running.
 
@@ -1190,7 +1174,7 @@ virtual void onWarning(int warn) = 0;
 </tr>
 </thead>
 <tbody>
-<tr><td><code>warn</code></td>
+<tr><td><code>warn_code</code></td>
 <td><p>Warning codes:</p>
 <ul>
 <li>103: No channel resources are available (WARN_NO_AVAILABLE_CHANNEL). Maybe because the server cannot allocate any channel resource.</li>
@@ -1206,9 +1190,9 @@ virtual void onWarning(int warn) = 0;
 
 
 
-### <a name="onJoinChannelSuccess"></a>The User has Joined the Specified Channel (onJoinChannelSuccess)
+### <a name="onJoinChannelSuccess"></a>The Recording Application Joins the Specified Channel (onJoinChannelSuccess)
 
-This callback is triggered when the user has successfully joined the specified channel with an assigned Channel ID and user ID.
+This callback is triggered when the recording application has successfully joined the specified channel with an assigned Channel ID and UID.
 
 ```
 virtual void onJoinChannelSuccess(const char * channelId, uid_t uid) = 0;
@@ -1229,16 +1213,16 @@ virtual void onJoinChannelSuccess(const char * channelId, uid_t uid) = 0;
 <td>Channel ID assigned based on the channel name specified in <code>joinChannel</code>.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>User ID of the user.</td>
+<td>UID of the user.</td>
 </tr>
 </tbody>
 </table>
 
 
 
-### <a name="onLeaveChannel"></a>The User has Left the Channel (onLeaveChannel)
+### <a name="onLeaveChannel"></a>The Recording Application Leaves the Channel (onLeaveChannel)
 
-This callback is triggered when the user has left the channel.
+This callback is triggered when the recording application leaves the channel.
 
 ```
 virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
@@ -1257,7 +1241,7 @@ virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
 <tbody>
 <tr><td><code>code</code></td>
 <td>
-<div>Reason:</div>
+<div>The reasons why the recording application leaves the channel.</div>
 <ul>
 <li>0: Initialization failure (LEAVE_CODE_INIT).</li>
 <li>1: Signal triggered exit (LEAVE_CODE_SIG).</li>
@@ -1272,11 +1256,11 @@ virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
 
 
 
-### <a name="onUserJoined"></a>A Remote User or a Host has Joined the Channel. (onUserJoined)
+### <a name="onUserJoined"></a>A User Joins the Channel (onUserJoined)
 
-This callback is triggered when another user has joined the channel.
+This callback is triggered when a user joins the channel and returns the UID of the new user.
 
-If other users are already in the channel, the SDK reports to the application on the existing users as well. This callback is called as many times as the number of users in the channel.
+If there are users in the channel before the recording app joins the channel, the SDK will also reports on the UIDs of the existing users. This callback is triggered as many times as the number of the users in the channel.
 
 ```
 virtual void onUserJoined(uid_t uid, agora::linuxsdk::UserJoinInfos &infos) = 0;
@@ -1294,7 +1278,7 @@ virtual void onUserJoined(uid_t uid, agora::linuxsdk::UserJoinInfos &infos) = 0;
 </thead>
 <tbody>
 <tr><td><code>uid</code></td>
-<td>User ID of the user.</td>
+<td>UID of the user.</td>
 </tr>
 <tr><td><code>infos</code></td>
 <td>Information about the user.</td>
@@ -1336,11 +1320,11 @@ typedef struct UserJoinInfos {
 
 
 
-### <a name="onUserOffline"></a>A User has Left the Channel or Gone Offline (onUserOffline)
+### <a name="onUserOffline"></a>A User Leaves the Channel or Goes Offline (onUserOffline)
 
-This callback is triggered when a user has left the channel or gone offline.
+This callback is triggered when a user leaves the channel or goes offline.
 
-The SDK reads the timeout data to determine if a user has left the channel (or has gone offline). If no data package is received from the user within 15 seconds, the SDK assumes the user is offline. A poor network connection may lead to false detections, so use signaling for reliable offline detection.
+When no data package of a user is received for a certain period of time (15 seconds), the SDK assumes that the user has goes offline. Weak network connections may lead to misinformation, so Agora recommends using the signaling system for offline event detection.
 
 ```
 virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE reason) = 0;
@@ -1358,10 +1342,10 @@ virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE 
 </thead>
 <tbody>
 <tr><td>uid</td>
-<td>User ID of the user</td>
+<td>UID of the user</td>
 </tr>
 <tr><td><code>reason</code></td>
-<td><p>Reason:</p>
+<td><p>The reasons why the user leaves the channel or goes offline.</p>
 <ul>
 <li>0: The user has quit the call (USER_OFFLINE_QUIT).</li>
 <li>1: The SDK timed out and the user dropped offline because it has not received any data packet for a period of time (USER_OFFLINE_DROPPED). If a user quits the call and the message is not passed to the SDK (due to an unreliable channel), the SDK assumes the user has dropped offline. </li>
@@ -1376,7 +1360,7 @@ virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE 
 
 ### <a name="audioFrameReceived"></a>The Raw Audio Data has Been Received (audioFrameReceived)
 
-This callback is triggered when the raw audio data has been received.
+This callback is triggered when the raw audio data is received.
 
 ```
 virtual void audioFrameReceived(unsigned int uid, const agora::linuxsdk::AudioFrame *frame) const = 0;
@@ -1394,7 +1378,7 @@ virtual void audioFrameReceived(unsigned int uid, const agora::linuxsdk::AudioFr
 </thead>
 <tbody>
 <tr><td><code>uid</code></td>
-<td>User ID of the user.</td>
+<td>UID of the user.</td>
 </tr>
 <tr><td><code>frame</code></td>
 <td>Received raw audio data in PCM or AAC format.</td>
@@ -1532,6 +1516,26 @@ Agora recommends capturing the i frame only and neglecting the others.
 ```
 virtual void videoFrameReceived(unsigned int uid, const agora::linuxsdk::VideoFrame *frame) const = 0;
 ```
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr><th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><code>uid</code></td>
+<td>UID of the user.</td>
+</tr>
+<tr><td><code>frame</code></td>
+<td>Received raw video data in YUV, H.264 or JPG format.</td>
+</tr>
+</tbody>
+</table>
 
 The structure of <code>VideoFrame</code>:
 
@@ -1749,7 +1753,7 @@ This callback returns the user ID of the active speaker.
 </thead>
 <tbody>
 <tr><td><code>uid</code></td>
-<td>The user ID of the active speaker.</td>
+<td>The UID of the active speaker.</td>
 </tr>
 </tbody>
 </table>
