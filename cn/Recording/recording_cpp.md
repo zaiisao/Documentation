@@ -3,7 +3,7 @@
 title: 录制 API
 description: 
 platform: CPP
-updatedAt: Tue Dec 11 2018 07:04:56 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:05:04 GMT+0000 (UTC)
 ---
 # 录制 API
 > 版本：v2.2.3
@@ -63,10 +63,10 @@ public static IRecordingEngine* createAgoraRecordingEngine(const char * appId, I
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>appId</code></td>
-<td>希望录制的音视频通话中使用的 App ID ，详见 <a href="../../cn/Agora%20Platform/token.md"><span>获取 App ID</span></a></td>
+<td>希望录制的音视频通话中使用的 App ID ，详见 <a href="../../cn/Agora%20Platform/token.md"><span>获取 App ID。</span></a></td>
 </tr>
 <tr><td><code>eventHandler</code></td>
-<td>录制 SDK 所触发的事件通过 <a href="#irecordingengineeventhandler">IRecordingEngineEventHandler</a> 通知应用程序</td>
+<td>录制 SDK 所触发的事件通过 <a href="#irecordingengineeventhandler">IRecordingEngineEventHandler</a> 类回调通知应用程序。</td>
 </tr>
 </tbody>
 </table>
@@ -279,7 +279,7 @@ typedef struct RecordingConfig {
 <td>最高 UDP 端口。高 UDP 端口与低 UDP 端口差值不能小于 4。</td>
 </tr>
 <tr><td><code>captureInterval</code></td>
-<td>截屏的时间间隔，最小值为 1 秒，默认为 5 秒。仅当 <code>decodeVideo</code>= 3，4 或 5 时有效。</td>
+<td>截屏的时间间隔，最小值为 1 秒，默认为 5 秒。仅当 <code>VIDEO_FORMAT_TYPE</code> = 3，4 或 5 时有效。</td>
 </tr>
 <tr><td><code>audioIndicationInterval</code></td>
 <td><p>说话者检测的时间间隔。</p>
@@ -307,14 +307,14 @@ typedef struct RecordingConfig {
 <li>VIDEO_FORMAT_H264_FRAME_TYPE = 1：原始视频数据 H.264 帧格式。</li>
 <li>VIDEO_FORMAT_YUV_FRAME_TYPE = 2：原始视频数据 YUV 帧格式。</li>
 <li>VIDEO_FORMAT_JPG_FRAME_TYPE = 3：原始视频数据 JPG 帧格式。</li>
-<li>VIDEO_FORMAT_JPG_FILE_TYPE = 4：原始视频数据 JPG 文件格式。</li>
-<li>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5：原始视频数据 JPG + 视频文件格式。</li>
+<li>VIDEO_FORMAT_JPG_FILE_TYPE = 4：JPG 文件格式。</li>
+<li>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5：原始视频数据 JPG 帧格式 + MP4 视频文件格式。</li>
 <ul>
 <li>单流模式（<code>isMixingEnabled</code> 为 false）下，录制得 MP4 视频文件，并截图获得 JPG 文件。</li>
 <li>合流模式（<code>isMixingEnabled</code> 为 true）下，对合流录制，得到一个 MP4 视频文件，并对各单流截图，获得多个 JPG 文件。</li>
 </ul>
 </ul>
-当解码成原始视频数据格式，即 VIDEO_FORMAT_TYPE = 1，2，3 或 5 时，有以下限制：
+	当解码成原始视频数据格式，即 <code>VIDEO_FORMAT_TYPE</code> = 1，2，3 或 5 时，有以下限制：
 <ul>
 <li>该情况不支持合流模式。</li>
 <li>Web 端录制不支持 H.264 格式的原始视频数据，支持 YUV 的原始视频数据。</li>
@@ -884,7 +884,7 @@ virtual int setVideoMixingLayout(const agora::linuxsdk::VideoMixingLayout &layou
 <tr><td><code>regions</code></td>
 <td><p>频道内每位用户（通信模式）/主播（直播模式）在屏幕上显示自己的头像或视频的区域。详细参数包括：</p>
 <ul>
-<li><code>uid</code>：待显示在该区域的用户（通信模式）/主播（直播模式）的 UID。：</li>
+<li><code>uid</code>：待显示在该区域的用户（通信模式）/主播（直播模式）的 UID。</li>
 <li><code>x</code>：屏幕里该区域左上角的横坐标的相对值，取值范围是 [0.0,1.0]。</li>
 <li><code>y</code>：屏幕里该区域左上角的纵坐标的相对值，取值范围是 [0.0,1.0]。</li>
 <li><code>width</code>：该区域宽度的相对值，取值范围是 [0.0,1.0]。</li>
@@ -1261,7 +1261,7 @@ virtual void onJoinChannelSuccess(const char * channelId, uid_t uid) = 0;
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>channelId</code></td>
-<td>和调用 <em><code>joinChannel()</code></em> 时设置的频道名一致。</td>
+<td>和调用 <em><code>joinChannel</code></em> 时设置的频道名一致。</td>
 </tr>
 <tr><td><code>uid</code></td>
 <td>用户的 UID。</td>
@@ -1392,7 +1392,7 @@ SDK 判断用户离开频道或掉线的依据是：在一定时间内（15 秒�
 <ul>
 <li>USER_OFFLINE_QUIT = 0：用户主动离开。</li>
 <li>USER_OFFLINE_DROPPED = 1：因过长时间收不到对方数据包，超时掉线。注意：可能有误判。</li>
-<li>USER_OFFLINE_BECOME_AUDIENCE = 2： 用户身份从主播切换为观众时触发。该选项仅适用于当你在调用 <code>joinChannel</code> 时将频道模式设置为直播的场景。</li>
+	<li>USER_OFFLINE_BECOME_AUDIENCE = 2： 用户身份从主播切换为观众时触发。该选项仅适用于当你在调用 <em><code>joinChannel</code></em> 时将频道模式设置为直播的场景。</li>
 </ul>
 </td>
 </tr>
