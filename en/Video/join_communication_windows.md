@@ -3,12 +3,15 @@
 title: Join a Channel
 description: 
 platform: Windows
-updatedAt: Tue Dec 11 2018 07:34:48 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:34:52 GMT+0000 (UTC)
 ---
 # Join a Channel
+Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/windows_video.md) for more information.
+
+## Implementation
 You need to set the channel profile before the app joins a channel.
 
-## Set the channel profile as Communication
+### Set the channel profile as Communication
 After initializing the Agora engine, call the `setChannelProfile` method to set the channel profile. Agora engine applies optimization according to the channel profile.
 
 In the `setChannelProfile` method, set the channel profile as Communication. This profile applies to voice or video calls such as one-to-one or group calls, where all users in the channel can talk freely. The Communication profile is the default setting.
@@ -20,7 +23,7 @@ In the `setChannelProfile` method, set the channel profile as Communication. Thi
 nRet = m_lpAgoraEngine->setChannelProfile(CHANNEL_PROFILE_COMMUNICATION);
 ```
 
-## Join a communication channel
+### Join a communication channel
 Call the <code>joinChannel</code> method to join a channel. 
 
 In the <code>joinChannel</code> method:
@@ -38,3 +41,14 @@ In the <code>joinChannel</code> method:
 LPCSTR lpStreamInfo = "{\"owner\":true,\"width\":640,\"height\":480,\"bitrate\":500}";
 nRet = m_lpAgoraEngine->joinChannel(lpDynamicKey, lpChannelName, lpStreamInfo, nUID);
 ```
+
+## Next Steps
+You are now in the channel and can start a voice call with the following step:
+
+- [Publish and Subscrib to Streams](../../en/Voice/publish_windows_audio.md)
+
+For added requirements on the audio volume, audio effect or voice pitch, you can alse take the following steps:
+
+- [Adjust the Volume](../../en/Voice/volume_windows.md)
+- [Play Audio Effects/Audio Mixing](../../en/Voice/effect_mixing_windows.md)
+- [Adjust the Pitch and Tone](../../en/Voice/voice_effect_windows.md)
