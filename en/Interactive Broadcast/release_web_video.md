@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Tue Dec 11 2018 03:20:54 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 03:20:57 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -75,7 +75,7 @@ See the table below for the browser support of Agora Web SDK:
 
 ### Known Issues and Limitations
 
-- Affected by browser policy changes, `Stream.play`, `Stream.startAudioMixing`, and `Stream.getAudioLevel` must be triggered by the user's gesture on Chrome 70+ and Safari browsers, see [Autoplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) for details.
+- Affected by browser policy changes, `Stream.play`, `Stream.startAudioMixing`, and `Stream.getAudioLevel` must be triggered by the user's gesture on the Chrome 70+ and Safari browsers, see [Autoplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) for details.
 
 - The Agora Web SDK supports video profiles up to 1080p resolutions if the client has a true HD camera installed. However, the maximum resolution is limited by the camera device capabilities.
 - The Agora Web SDK does not support code obfuscation.
