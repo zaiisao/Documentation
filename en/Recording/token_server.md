@@ -3,7 +3,7 @@
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
 platform: Server
-updatedAt: Fri Nov 09 2018 16:56:09 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:50:51 GMT+0000 (UTC)
 ---
 # Generate a Token
 This page shows how to generate a token on your server for Agora SDK versions 2.1.0+. The token is used for joining a channel.
