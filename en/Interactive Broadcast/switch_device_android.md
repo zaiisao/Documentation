@@ -34,5 +34,5 @@ You can use the media device test and selection feature in the following scenari
 
 ## Considerations
 
-- After calling `startEchoTest`, you must call `stopEchoTest` to stop the test. Otherwise, you cannot proceed with a second test or call `joinChannel` to make a call. 
-- In the Live Broadcast profile, only the host (BROADCASTER) can call the `startEchoTest` method. If you have swtiched your profile from Communication to Live Broadcast, ensure that you call the `setClientRole` method to switch your role to BROADCASTER before calling `startEchoTest`.
+- After calling the `startEchoTest` method to start the test, you must call the `stopEchoTest` method to stop the test. Otherwise, you cannot proceed with a second test or call the `joinChannel` method to make a call. 
+- In the Live Broadcast profile, only the host (BROADCASTER) can call the `startEchoTest` method. If you swtiched your profile from Communication to Live Broadcast, ensure that you call the `setClientRole` method to switch your role to BROADCASTER before calling the `startEchoTest` method.
