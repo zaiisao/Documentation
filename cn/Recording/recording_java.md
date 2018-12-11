@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Tue Dec 11 2018 04:12:40 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 04:12:44 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -1241,7 +1241,7 @@ SDK 判断用户离开频道（或掉线）的依据是：在一定时间内（1
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>用户的 uid</td>
+<td>用户的 ID</td>
 </tr>
 <tr><td><code>reason</code></td>
 <td><p>离线原因</p>
@@ -1277,7 +1277,7 @@ private void audioFrameReceived(long uid, int type, AudioFrame frame) {
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>用户的 uid</td>
+<td>用户的 ID</td>
 </tr>
 <tr><td><code>type</code></td>
 <td>
