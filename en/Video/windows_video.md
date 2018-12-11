@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Windows
-updatedAt: Tue Dec 11 2018 21:08:11 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 21:08:14 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
@@ -40,7 +40,7 @@ updatedAt: Tue Dec 11 2018 21:08:11 GMT+0000 (UTC)
 4.  Copy all the *dll* files under `sdk/dll`  to the directory where your executable file is located.
 
 ## Next Steps
-You have now finished setting up the Windows development environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+You have now set up the Windows development environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
 - Initialize the SDK
 - Join a Channel
 - Publish and Subscribe to Streams
