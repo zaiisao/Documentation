@@ -3,7 +3,7 @@
 title: Rotate the Video
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 30 2018 04:22:46 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 09:57:15 GMT+0000 (UTC)
 ---
 # Rotate the Video
 From v2.3.0, Agora provides the `setVideoEncoderConfiguration` method for users to set the video profile. This method includes an `orientationMode` parameter for users to set the video orientation mode.
