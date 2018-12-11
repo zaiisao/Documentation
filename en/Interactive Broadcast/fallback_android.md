@@ -3,7 +3,7 @@
 title: Improve Experience Under Poor Network Conditions
 description: 
 platform: Android
-updatedAt: Tue Dec 11 2018 01:43:09 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 01:43:13 GMT+0000 (UTC)
 ---
 # Improve Experience Under Poor Network Conditions
 ## Introduction
@@ -15,8 +15,8 @@ The audio and video quality of a live broadcast or a video call deteriorates und
     // Enable the dual-stream mode.
     rtcEngine.enableDualStreamMode(true);
 
-    // Configurationa for the publisher.
-    // When the network condition is poor, send the video stream only. 
+    // Configuration for the publisher.
+    // When the network condition is poor, send the audio stream only. 
     rtcEngine.setLocalPublishFallbackOption(Constants.STREAM_FALLBACK_OPTION_AUDIO_ONLY);
 
     // Configuration for the subscriber.
