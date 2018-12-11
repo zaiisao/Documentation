@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 11 2018 08:17:08 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:19:35 GMT+0000 (UTC)
 ---
 # 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
@@ -148,18 +148,6 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 <tr><td><code>uid</code></td>
 <td>申请加入频道的用户 ID</td>
 </tr>
-<tr><td><code>role</code></td>
-<td><p>申请加入频道的用户角色，根据需要选择一种：</p>
-<ul>
-<li>Attendee：通信模式下的通话人</li>
-<li>Publisher：直播模式下的主播</li>
-<li>Subscriber：直播模式下的观众</li>
-</ul>
-</td>
-</tr>
-<tr><td><code>privilege</code></td>
-<td>用户申请加入频道时指定的角色所对应的一系列服务权限。各用户角色对应的权限详见 <a href="#roleprivilege"><span>Token 的角色权限</span></a>。</td>
-</tr>
 <tr><td><code>expireTimestamp</code>  <sup>[1]</sup></td>
 <td>Token 服务有效时间，默认为 0，表示 Token 一旦生成，永不失效。有效时间内用户可以无限次加入频道，超过有效时间用户将被踢出频道。</td>
 </tr>
@@ -201,59 +189,6 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 
 <a id ="roleprivilege"></a>
 
-#### Token 的角色权限
-
-Token 的设计基于用户角色模型。一个用户的角色，关联着多个权限。
-
--   创建 Token 时，指定用户角色以及使用期限
-
--   使用 Token 加入频道时，SDK 把 Token 提交给 Agora 的服务器验证，并使用 Token 赋予的权限
-
--   使用过程中，可以更新 Token，为频道内的用户端修改权限
-
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>角色</strong></td>
-<td><strong>描述</strong></td>
-<td><strong>权限</strong></td>
-</tr>
-<tr><td>Attendee（通话人）</td>
-<td>语音及视频通话参与通话的各方</td>
-<td><ul>
-<li>加入频道</li>
-<li>发布音频流</li>
-<li>发布视频流</li>
-<li>发布数据流</li>
-</ul>
-</td>
-</tr>
-<tr><td>Publisher（发布者）</td>
-<td>发布音视频的用户（主播）</td>
-<td><ul>
-<li>加入频道</li>
-<li>发布音频流</li>
-<li>发布视频流</li>
-<li>发布数据流</li>
-<li>发布音频 CDN</li>
-<li>发布视频 CDN</li>
-</ul>
-</td>
-</tr>
-<tr><td>Subscriber（订阅者）</td>
-<td>订阅音视频流的用户（观众）</td>
-<td><ul>
-<li>加入频道</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 
 
 
