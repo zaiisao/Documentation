@@ -12,7 +12,7 @@ High-fidelity audio is essential for professional audio scenarios, such as for p
 
 
 ## Implementation
-Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md) for more information.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md).
 
 The Agora SDK provides the [setAudioProfile](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) method for developers to set appropriate audio profiles according to the scenarios. This method has two parameters:
 

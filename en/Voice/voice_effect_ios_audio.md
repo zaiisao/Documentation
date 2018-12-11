@@ -11,7 +11,7 @@ updatedAt: Tue Dec 04 2018 18:51:36 GMT+0000 (UTC)
 In social and entertainment scenarios, users often need various voice effects to enhance the interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
-Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md) for more information.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md).
 
 The following sample code shows how to set the FM voice effect.
 
