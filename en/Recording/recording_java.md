@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Tue Dec 11 2018 06:30:19 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:30:33 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -83,7 +83,7 @@ public native boolean createChannel(String appId, String token, String name, int
 </td>
 </tr>
 <tr><td><code>uid</code></td>
-	<td><p>User ID. A 32-bit unsigned integer ranging from 1 to (2^32-1) that is unique in a channel. Two Settings:</p>
+<td><p>User ID. A 32-bit unsigned integer ranging from 1 to (2^32-1) that is unique in a channel. Two Settings:</p>
 <ul>
 <li>Set to 0, the system will automatically assign a uid.</li>
 <li>Set a unique uid (cannot be repeated with any uid in the current channel).</li>
@@ -261,10 +261,10 @@ Used together with <code>isAudioOnly</code>:
 </tr>
 <tr><td><code>decodeAudio</code></td>
 <td><p>Audio decoding format:</p><ul>
-<li>0: Default audio format (AUDIO_FORMAT_DEFAULT_TYPE).</li>
-<li>1: Audio frame in AAC format (AUDIO_FORMAT_AAC_FRAME_TYPE).</li>
-<li>2: Audio frame in PCM format (AUDIO_FORMAT_PCM_FRAME_TYPE).</li>
-<li>3: Audio frame in PCM audio-mixing format (AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE). In this situation, <code>isMixingEnabled</code> cannot be set as true.</li>
+<li>AUDIO_FORMAT_DEFAULT_TYPE = 0: Default audio format.</li>
+<li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1: Audio frame in AAC format.</li>
+<li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2: Audio frame in PCM format (AUDIO_FORMAT_PCM_FRAME_TYPE).</li>
+<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: Audio frame in PCM audio-mixing format. In this situation, <code>isMixingEnabled</code> cannot be set as true.</li>
 </ul>
 </td>
 </tr>
@@ -1077,7 +1077,7 @@ The RecordingEventHandler class enables the following callbacks to your app:
 
 ### <a name="nativeObjectRef"></a>Returns the JNI Instance (nativeObjectRef)
 
-This callback returns the JNI instance. You need to pass this JNI instance when calling each main method, except [Creates a Channel (createChannel)](#createChannel).
+This callback returns the JNI instance. You need to pass this JNI instance when calling each main method, except [createChannel](#createChannel).
 
 ```
 private void nativeObjectRef(long nativeHandle){
@@ -1470,7 +1470,7 @@ private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotati
 </thead>
 <tbody>
 <tr><td><code>uid</code></td>
-<td>User ID of the remote user as specified in the <code>createChannel()</code> method. If no uid is previously assigned, the Agora server automatically assigns a uid.</td>
+<td>User ID of the remote user as specified in the <code>createChannel</code> method. If no uid is previously assigned, the Agora server automatically assigns a uid.</td>
 </tr>
 <tr><td><code>type</code></td>
 <td><p>The format of the received video data:</p>
