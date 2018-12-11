@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 11 2018 08:21:26 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:22:12 GMT+0000 (UTC)
 ---
 # Use Security Keys
 This page describes the token (Agora’s authentication mechanism). Before you start, check if your SDK version supports the token:
@@ -139,19 +139,6 @@ The application client needs to send the following parameters to the server to g
 <tr><td><code>uid</code></td>
 <td>ID of the user who wants to join a channel.</td>
 </tr>
-<tr><td><code>role</code></td>
-<td><p>Role of the user who wants to join a channel. Choose one of the following roles:</p>
-<div><ul>
-<li>Attendee: User in the communication mode.</li>
-<li>Publisher: Host in the live-broadcast mode.</li>
-<li>Subscriber: Audience in the live-broadcast mode.</li>
-</ul>
-</div>
-</td>
-</tr>
-<tr><td><code>privilege</code></td>
-<td>Privileges corresponding to the specified roles. See <a href="#Role-privilege Model"><span>Role-privilege Model</span></a>.</td>
-</tr>
 <tr><td><code>expireTimestamp</code> <sup>[1]</sup></a></td>
 <td>The token expiration time. The default value is 0, where the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
 </tr>
@@ -197,73 +184,6 @@ To get an App Certificate:
 > -   Once the App Certificate is enabled for a project, a token must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a token or a Channel Key must be used to join a channel.
 
 <a id ="Role-privilege Model"></a>
-
-### Role-privilege Model
-
-The design of a token is based on the authentication of different user roles, each of which is associated with a set of privileges.
-
--   You must define the user role and expiration time when creating a token.
--   When you join a channel with a token, the SDK sends the token to the Agora servers for authenticating the assigned privileges.
--   During a call or live broadcast, you can update the token for the clients in the channel to modify their privileges.
-
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Role</th>
-<th>Description</th>
-<th>Privileges</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Attendee</td>
-<td>Participants in a voice or video call.</td>
-<td><ul>
-<li>Join a channel.</li>
-<li>Publish a voice stream.</li>
-<li>Publish a video stream.</li>
-<li>Publish a data stream.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-<tr/>
-<tr/>
-<tr><td>Publisher</td>
-<td>Users (Hosts) who publish video or/and voice streams in a live broadcast.</td>
-<td><ul>
-<li>Join a channel.</li>
-<li>Publish a voice stream.</li>
-<li>Publish a video stream.</li>
-<li>Publish a data stream.</li>
-<li>Publish a voice stream on the CDN.</li>
-<li>Publish a video stream on the CDN.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-<tr/>
-<tr/>
-<tr/>
-<tr/>
-<tr><td>Subscriber</td>
-<td>Users (Audience) who need to subscribe to the voice and video streams in a live broadcast.</td>
-<td><ul>
-<li>Join a channel.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-</tbody>
-</table>
-
 
 
 ### Using a Token
