@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:08:26 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:17:59 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 ##  Enable the video mode
