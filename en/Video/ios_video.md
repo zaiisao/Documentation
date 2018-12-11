@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Tue Dec 11 2018 08:22:19 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:22:22 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
@@ -163,5 +163,10 @@ The Agora SDK provides the following additional settings and permissions for you
 - Enable or disable Bitcode. Applications developed with Bitcode can be optimized once it is uploaded to the App Store. Select the current Target, click the **Build Settings** tab, and enable or disable Bitcode according to your needs.
 
   <img alt="../_images/ios_video_10.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_10.jpg" />
-	
-The iOS environment is now set to use the Agora SDK.
+
+## Next Steps
+You have now finished setting up the iOS environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+
+- Initialize the SDK
+- Join a Channel
+- Publish and Subscribe to Streams
