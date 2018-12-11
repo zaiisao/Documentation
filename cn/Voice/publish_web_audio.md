@@ -3,7 +3,7 @@
 title: 发布和订阅音频流
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:02:36 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:52:25 GMT+0000 (UTC)
 ---
 # 发布和订阅音频流
 ## 创建音频流
