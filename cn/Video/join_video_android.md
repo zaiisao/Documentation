@@ -3,14 +3,16 @@
 title: 加入频道
 description: android平台加入通信频道
 platform: Android
-updatedAt: Tue Dec 11 2018 08:02:10 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:02:14 GMT+0000 (UTC)
 ---
 # 加入频道
-在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Video/android_audio.md)。
+在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Video/android_video.md)。
+
+## 实现方法
 
 App 在加入频道前，需要先设置频道模式，再加入频道。
 
-## 设置频道模式为通信
+### 设置频道模式为通信
 创建实例后，调用 `setChannelProfile` 方法设置频道模式。SDK 会根据所设置的频道模式使用不同的优化手段。 
 
 在该方法中，将频道模式设置为通信模式。通信模式适用于语音或视频通话场景，如一对一聊天或群聊。频道中的任何用户都可以自由发言。该模式为默认模式。
@@ -22,7 +24,7 @@ App 在加入频道前，需要先设置频道模式，再加入频道。
 mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
 ```
 
-## 加入通信频道
+### 加入通信频道
 调用 `joinChannel` 方法加入频道。在该方法中:
 
 在该方法中：
@@ -39,4 +41,15 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
 }
 ```
 
-现在你已经成功加入了频道，下一步可以使用 Agora SDK [发布和订阅音视频流](../../cn/Video/publish_android.md)了。
+## 相关文档
+成功加入频道后，你可以使用 Agora SDK，实现如下功能进行视频通话：
+
+- [发布和订阅音视频流](../../cn/Video/publish_android.md)
+
+如果在通话过程中，对音量、音质、视频分辨率等有特殊需求，你还可以：
+
+- [调整通话音量](../../cn/Video/volume_android.md)
+- [播放音效/音乐混音](../../cn/Video/effect_mixing_android.md)
+- [使用耳返](../../cn/Video/in-ear_android.md)
+- [调整音调、音色](../../cn/Video/voice_effect_android.md)
+- [设置视频属性](../../cn/Video/videoProfile_android.md)
