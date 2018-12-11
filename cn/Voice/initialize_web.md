@@ -3,7 +3,7 @@
 title: 创建并初始化 Client 对象
 description: Web SDK 初始化客户端对象
 platform: Web
-updatedAt: Tue Dec 11 2018 07:18:55 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:18:59 GMT+0000 (UTC)
 ---
 # 创建并初始化 Client 对象
 在创建并初始化 Client 对象前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/web_prepare.md)。
@@ -30,7 +30,7 @@ client.init(<APPID>, function () {
 
 ## 相关文档
 初始化 Client 对象后，你可以使用 Agora SDK，依次实现如下功能进行通话/直播：
-- [加入频道](../../cn/Voice/join_web.md)
+- [加入频道](../../cn/Voice/join_web_audio.md)
 - [发布和订阅音频流](../../cn/Voice/publish_web_audio.md)
 
 如果对网络或音质有特殊的需求，你还可以在加入频道前：
