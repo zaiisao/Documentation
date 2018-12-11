@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Tue Dec 11 2018 20:48:28 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 20:48:31 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
@@ -165,7 +165,7 @@ The Agora SDK provides the following additional settings and permissions for you
   <img alt="../_images/ios_video_10.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_10.jpg" />
 
 ## Next Steps
-You have now finished setting up the iOS environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+You have now set up the iOS environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
 
 - Initialize the SDK
 - Join a Channel
