@@ -3,7 +3,7 @@
 title: Record the Audio from the Client
 description: 
 platform: Android
-updatedAt: Thu Nov 22 2018 09:17:30 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 20:23:27 GMT+0000 (UTC)
 ---
 # Record the Audio from the Client
 ## Introduction
