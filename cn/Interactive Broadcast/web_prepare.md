@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Web
-updatedAt: Tue Dec 11 2018 06:37:28 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:37:31 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Web SDK 进行音视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -107,7 +107,7 @@ updatedAt: Tue Dec 11 2018 06:37:28 GMT+0000 (UTC)
 
  ```javascript
 <script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.5.0.js"></script>
-	```
+```
 
 ### 方法 3. 从官网获取安装包
 
@@ -128,4 +128,9 @@ updatedAt: Tue Dec 11 2018 06:37:28 GMT+0000 (UTC)
 2. 将下载下来的 Agora Web SDK 部署到网页服务器上。
 3. 在网页服务器上用浏览器打开示例程序页面或者你自己创建的页面。
 
-你已经完成了客户端集成，可以开始使用 Agora SDK 了。
+## 相关文档
+
+完成了客户端集成，你可以使用 Agora SDK，依次实现左侧《快速开始》菜单栏下的步骤，进行通话/直播。
+- 初始化
+- 加入频道
+- 发布和订阅流
