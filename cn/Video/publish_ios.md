@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: ios平台上发布音视频流
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:02:00 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:52:08 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 ## 打开视频模式
