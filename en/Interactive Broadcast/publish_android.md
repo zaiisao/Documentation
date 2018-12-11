@@ -3,10 +3,13 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Android
-updatedAt: Tue Dec 11 2018 08:17:59 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:18:03 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
-##  Enable the video mode
+Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Video/android_video.md) for more information.
+
+## Implementation
+###  Enable the video mode
 Call the `enableVideo` method to enable the video mode. The voice function is enabled by default in the Agora SDK, so you can call the `enableVideo` method before or after joining a channel.
 
 -   If you enable the video mode before joining a channel, you enter directly into a video call.
@@ -17,7 +20,7 @@ Call the `enableVideo` method to enable the video mode. The voice function is en
 mRtcEngine.enableVideo();
 ```
 
-## Set the video profile
+### Set the video profile
 After the video mode is enabled, use the `setVideoEncoderConfiguration` method to set the video encoder profile.
 
 In the `setVideoEncoderConfiguration` method, specify the video encoding resolution, frame rate, bitrate, and orientation mode. See the `setVideoEncoderConfiguration` method for more information.
@@ -37,7 +40,7 @@ VideoEncoderConfiguration.ORIENTATION_MODE.ORIENTATION_MODE_FIXED_PORTRAIT;
 mRtcEngine.setVideoEncoderConfiguration(videoEncoderConfiguration);
 ```
 
-## Set the local video view
+### Set the local video view
 The local video view is the display area of the local video streams on the user’s local device.
 
 Call the `setupLocalVideo` method before entering into a channel to bind the application with the video window of the local stream and configure the local video display. The `setupLocalVideo` method creates a `surfaceView` object for the video stream by initializing:
@@ -57,7 +60,7 @@ To complete the local video setup, pass a new `VideoCanvas` object to mRtcEngine
 }
 ```
 
-## Set the remote video view
+### Set the remote video view
 The remote video view is the display area of the remote video streams on the user’s local device.
 
 Call the `setupRemoteVideo` method to set the video display view for the remote user with their guid.
@@ -90,3 +93,18 @@ private void setupRemoteVideo(int uid) {
    tipMsg.setVisibility(View.GONE);
   }
 ```
+
+## Next Steps
+You are now in a video call. When the call ends, use the Agora SDK to exit the current call:
+
+- [Leave the Channel](../../en/Video/leave_android.md)
+
+For added requirements on the audio volume, audio effect, video resolution or video source, you can alse take the following steps:
+
+- [Adjust the volume](../../en/Video/volume_android.md)
+- [Play the Audio Effects/Audio Mixing](../../en/Video/effect_mixing_android.md)
+- [Use In-ear Monitoring](../../en/Video/in-ear_android.md)
+- [Adjust the Pitch and Tone](../../en/Video/voice_effect_android.md)
+- [Set the Video Profile](../../en/Video/videoProfile_android.md)
+- [Customize the Video/Audio Source and Renderer](../../en/Video/custom_video_android.md)
+- [Share the Screen](../../en/Video/screensharing_android.md)
