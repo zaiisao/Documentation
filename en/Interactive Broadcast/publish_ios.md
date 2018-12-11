@@ -3,10 +3,10 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: iOS
-updatedAt: Tue Dec 11 2018 20:32:36 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 20:32:39 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
-Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Video/ios_video.md) for more information.
+Before publishing or subscribing to any streams, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Video/ios_video.md).
 
 ## Implementation
 ### Enable the video mode
@@ -137,7 +137,7 @@ You are now in a video call. When the call ends, use the Agora SDK to exit the c
 
 - [Leave the Channel](../../en/Video/leave_ios.md)
 
-For added requirements on the audio volume, audio effect, video resolution or video source, you can alse take the following steps:
+To manipulate other functions such as the audio volume, audio effect, video resolution, or video source, you can refer to the following sections:
 
 - [Adjust the volume](../../en/Video/volume_ios.md)
 - [Play the Audio Effects/Audio Mixing](../../en/Video/effect_mixing_ios.md)
