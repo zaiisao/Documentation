@@ -3,7 +3,7 @@
 title: Enable Interoperability 
 description: 
 platform: Android
-updatedAt: Tue Dec 11 2018 20:07:06 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 20:07:10 GMT+0000 (UTC)
 ---
 # Enable Interoperability 
 ## Introduction
@@ -26,7 +26,7 @@ To enable interoperability between a mobile device and a web browser or app, you
 
 	```javascript
 	// javascript
-	// make sure corrent mode and codec is picked
+	// Choose the current mode and codec.
 	var client = AgoraRTC.createClient({ mode: 'live', codec: 'h264' });
 	```
 
