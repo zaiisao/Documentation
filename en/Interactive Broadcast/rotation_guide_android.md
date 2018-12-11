@@ -3,7 +3,7 @@
 title: Rotate the Video
 description: 
 platform: Android,Windows
-updatedAt: Tue Dec 11 2018 09:56:59 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 09:57:02 GMT+0000 (UTC)
 ---
 # Rotate the Video
 From v2.3.0, Agora provides a `setVideoEncoderConfiguration` method for users to set the video profile. This method includes an `orientationMode` parameter for users to set the video orientation mode.
@@ -52,7 +52,7 @@ The `orientationMode` parameter provides three modes, [ADAPTIVE](#orientation_ad
 <a name = "orientation_adaptive"></a>
 ### ADAPTIVE
 
-In the adaptive mode, the video capturer captures the video frame and sends the video together with its relative position to the status bar. The player notes the relative position and renders the video frame. No video cropping occurs in the adaptive mode.
+In the adaptive mode, the video capturer captures the video frame and sends the video together with its relative position to the status bar. The player notes the relative position and renders the video frame. 
 
 The following figures show the video orientations at the video capturer and player when a rear camera is used as the video capturer. Note that the video orientation differs according to the UI lock of your app.
 
