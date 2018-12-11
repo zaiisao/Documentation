@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Windows
-updatedAt: Tue Dec 11 2018 07:12:33 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:12:37 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
@@ -39,7 +39,11 @@ updatedAt: Tue Dec 11 2018 07:12:33 GMT+0000 (UTC)
 3.  Add the `sdk/lib` folder to the LIB directory of your project, and ensure that agora_rtc_sdk.lib is linked with your project.
 4.  Copy all the *dll* files under `sdk/dll`  to the directory where your executable file is located.
 
-You have set up the development environment for Windows. Try the Agora SDK now!
+## Next Steps
+You have now finished setting up the Windows development environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+- Initialize the SDK
+- Join a Channel
+- Publish and Subscribe to Streams
 
 
 
