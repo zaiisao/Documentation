@@ -3,10 +3,13 @@
 title: 发布和订阅音频流
 description: 
 platform: Web
-updatedAt: Tue Dec 11 2018 06:52:25 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:52:35 GMT+0000 (UTC)
 ---
 # 发布和订阅音频流
-## 创建音频流
+在发布或订阅音频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Voice/web_prepare.md)。
+
+## 实现方法
+### 创建音频流
 使用 `AgoraRTC.createStream` 方法创建音频流对象。
 
 示例代码中设置了以下参数：
@@ -25,7 +28,7 @@ var localStream = AgoraRTC.createStream({
 );
 ```
 
-## 初始化音频流
+### 初始化音频流
 接下来调用 `stream.init` 方法初始化创建的音频流。
 
 ```javascript
@@ -39,7 +42,7 @@ localStream.init(function() {
 ```
 
 
-## 发布本地音频流
+### 发布本地音频流
 初始化完成后，在成功的回调中通过 `client.publish` 方法发布音频流。
 
 ```javascript
@@ -52,7 +55,7 @@ client.on('stream-published', function (evt) {
 });
 ```
 
-## 订阅远端音频流
+### 订阅远端音频流
 订阅远端音频流步骤如下：
 
 1. 监听 `client.on('stream-added')` 事件, 当有人发布音频流到频道里时，会收到该事件。
@@ -74,7 +77,7 @@ client.on('stream-subscribed', function (evt) {
 })
 ```
 
-## 播放音频流
+### 播放音频流
 在初始化流成功和订阅流成功后，都可以在回调中调用 `stream.play` 在页面上播放流。 `stream.play` 接受一个 dom 元素的 id 作为参数，SDK 会在这个 dom 下面创建一个 `<video>` 标签并播放音频。
 
 - 初始化流成功时，播放本地流
@@ -100,3 +103,12 @@ client.on('stream-subscribed', function (evt) {
 		remoteStream.play('agora_remote' + stream.getId());
 	})
 	```
+
+## 相关文档
+你已成功开始语音通话。通话结束后，可以使用 Agora SDK 退出当前通话：
+- [离开频道](../../cn/Voice/leave_windows.md)
+
+如果在通话过程中，对音量、音效、音调等有特殊需求，你还可以：
+- [调整通话音量](../../cn/Voice/volume_windows.md)
+- [播放音效/音乐混音](../../cn/Voice/effect_mixing_windows.md)
+- [调整音调、音色](../../cn/Voice/voice_effect_windows.md)
