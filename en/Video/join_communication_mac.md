@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: macOS
-updatedAt: Tue Dec 11 2018 07:23:36 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:23:45 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../cn/Voice/mac_audio.md) for more information.
@@ -72,5 +72,4 @@ For added requirements on the audio volume, audio effect or voice pitch, you can
 
 * [Adjust the Volume](../../en/Voice/volume_mac.md)
 * [Play Audio Effects/Audio Mixing](../../en/Voice/effect_mixing_mac.md)
-* [Use In-Ear Monitoring](../../en/Voice/in-ear_android_audio.md)
 * [Adjust the Pitch and Tone](../../en/Voice/voice_effect_android_audio.md)
