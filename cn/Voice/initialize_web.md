@@ -3,7 +3,7 @@
 title: 创建并初始化 Client 对象
 description: Web SDK 初始化客户端对象
 platform: Web
-updatedAt: Fri Nov 02 2018 04:01:08 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:42:40 GMT+0000 (UTC)
 ---
 # 创建并初始化 Client 对象
 ## 创建 Client 对象
