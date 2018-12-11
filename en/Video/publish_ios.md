@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: iOS
-updatedAt: Tue Dec 11 2018 20:32:39 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 20:46:46 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any streams, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Video/ios_video.md).
