@@ -3,10 +3,10 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: iOS
-updatedAt: Tue Dec 11 2018 20:44:13 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 20:45:20 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
-Before creating an AgoraRtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/ios_video.md) for more information.
+Before creating an AgoraRtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
 
 ## Implementation
 
@@ -40,10 +40,10 @@ func initializeAgoraEngine() {
 ```
 
 ## Next Steps
-You have now finished creating the AgoraRtcEngine instance and can start a voice call with the following steps:
+You have now created the AgoraRtcEngine instance and can start a voice call with the following steps:
 * [Join a Channel](../../cn/Video/join_video_ios.md)
 * [Publish and Subscribe to Streams](../../cn/Video/publish_ios.md)
 
-For added requirements on network connection or audio quality, you can also take the following steps before joining a channel:
+To check the network connection or audio quality before joining a channel, you can refer to the following sections:
 * [Conduct a Last mile Test](../../cn/Video/lastmile_ios.md)
 * [Set the Stereo/High-fidelity Audio Profile](../../cn/Video/audio_profile_ios.md)
