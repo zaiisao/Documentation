@@ -3,7 +3,7 @@
 title: 录制 API
 description: 
 platform: CPP
-updatedAt: Tue Dec 11 2018 03:09:03 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 03:09:09 GMT+0000 (UTC)
 ---
 # 录制 API
 > 版本：v2.2.3
@@ -20,7 +20,7 @@ updatedAt: Tue Dec 11 2018 03:09:03 GMT+0000 (UTC)
 	<tr><td><a href="#IRecordingEngine">IRecordingEngine 类</a></td>
 <td>包含应用程序调用的主要方法。</td>
 </tr>
-<tr><td><a href="#id12">IRecordingEngineEventHandler类</a></td>
+<tr><td><a href="#id12">IRecordingEngineEventHandler 类</a></td>
 <td>用于向应用程序发送回调通知。</td>
 </tr>
 </tbody>
@@ -122,7 +122,7 @@ virtual int joinChannel(const char * token, const char *channelId, uid_t uid, co
 
 
 
-> - 由于录制端暂时未开放 `requestToken `和 `renewToken`接口，在获取 Token 时，请务必将服务到期时间（`expireTimestamp`\) 设置为 0，表示权限一旦生成，永不过期。
+> - 由于录制端暂时未开放 `requestToken `和 `renewToken` 接口，在获取 Token 时，请务必将服务到期时间（`expireTimestamp`\) 设置为 0，表示权限一旦生成，永不过期。
 > 
 > - 同一个频道里不能出现两个相同的 `UID`，否则会产生未定义行为。
 
@@ -285,7 +285,7 @@ typedef struct RecordingConfig {
 <td><p>说话者检测的时间间隔。</p>
 <div><ul>
 <li>&lt;= 0: 禁用说话者检测的功能；</li>
-<li>&gt; 0: 说话者检测的时间间隔，单位为 ms 。一旦检测到频道内有人说话，就会在 <a href="#onactivespeaker-recording-cpp"><span>启用说话者提示 (onActiveSpeaker)</span></a> 回调中返回说话者 UID 。</li>
+<li>&gt; 0: 说话者检测的时间间隔，单位为 ms 。一旦检测到频道内有人说话，就会在<a href="#onactivespeaker-recording-cpp"><span>监测到活跃用户回调 (onActiveSpeaker) </span></a>中返回说话者 UID 。</li>
 </ul>
 </div>
 </td>
