@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: android平台上发布音视频流
 platform: Android
-updatedAt: Tue Dec 11 2018 08:09:36 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:14:22 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 在发布和订阅音视频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Video/android_video.md)。
