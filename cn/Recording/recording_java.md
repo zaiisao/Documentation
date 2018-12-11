@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Tue Dec 11 2018 03:42:56 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 03:43:01 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -63,7 +63,7 @@ public native boolean createChannel(String appId, String token, String name, int
 </thead>
 <tbody>
 <tr><td><code>appId</code></td>
-<td>希望录制的音视频通话中使用的 App ID ，详见 <a href="../../cn/Recording/token.md"><span>获取 App ID</span></a></td>
+<td>希望录制的音视频通话中使用的 App ID ，详见<a href="../../cn/Recording/token.md"><span>获取 App ID</span></a></td>
 </tr>
 <tr><td><code>token</code></td>
 <td>希望录制的音视频通话中使用的 token ，详见<a href="../../cn/Recording/token.md"><span>校验用户权限</span></a></td>
@@ -322,8 +322,7 @@ public class RecordingConfig {
 </div>
 </td>
 </tr>
-<a name="triggerMode"></a>
-<tr><td><code>triggerMode</code></td>
+<tr><td><a name="triggerMode"></a><code>triggerMode</code></td>
 <td><p>选择录制启动模式：</p>
 <ul>
 <li>0：<code>automatically</code> 模式，即自动模式</li>
