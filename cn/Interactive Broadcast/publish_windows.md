@@ -3,10 +3,13 @@
 title: 发布和订阅音视频流
 description: windows平台上发布音视频流
 platform: Windows
-updatedAt: Tue Dec 11 2018 06:14:57 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:15:08 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
-## 打开视频模式
+在发布或订阅音频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Voice/windows_video.md)。
+
+## 实现方法
+### 打开视频模式
 调用 <code>enableVideo</code> 方法打开视频模式。在加入频道前，或通话过程中，你都可以调用该方法开启视频。音频功能是默认打开的。
 
 -   如果在加入频道前打开视频模式，则进入频道后直接加入视频通话或直播。
@@ -17,7 +20,7 @@ updatedAt: Tue Dec 11 2018 06:14:57 GMT+0000 (UTC)
 nRet = m_lpAgoraEngine->enableVideo();
 ```
 
-## 设置视频编码属性
+### 设置视频编码属性
 打开视频模式后，调用 <code>setVideoProfile</code> 方法设置视频编码属性。
 
 在该方法中：
@@ -33,7 +36,7 @@ int nVideoSolution = m_dlgSetup.GetVideoSolution();
 lpAgoraEngine->setVideoProfile((VIDEO_PROFILE_TYPE)nVideoSolution, m_dlgSetup.IsWHSwap());
 ```
 
-## 设置本地视频视图
+### 设置本地视频视图
 本地视频视图，是指用户在本地设备上看到的本地视频流的视图。
 
 在进入频道前调用 <code>setupLocalVideo</code> 方法，使应用程序绑定本地视频流的显示视窗，并设置本地看到的本地视频视图。
@@ -60,7 +63,7 @@ lpRtcEngine->setupLocalVideo(vc);
 ```
 
 
-## 设置远端视频视图
+### 设置远端视频视图
 远端视频视图，是指用户在本地设备上看到的远端视频流的视图。
 
 在进入频道后，调用 <code>setupRemoteVideo</code> 方法设置本地看到的远端用户的视频视图。
@@ -82,3 +85,12 @@ canvas.view = m_wndVideo[nIndex].GetSafeHwnd();
 
 CAgoraObject::GetEngine()->setupRemoteVideo(canvas);
 ```
+
+## 相关文档
+你已成功开始语音通话。通话结束后，可以使用 Agora SDK 退出当前通话：
+- [离开频道](../../cn/Voice/leave_windows.md)
+
+如果在通话过程中，对音量、音效、音调等有特殊需求，你还可以：
+- [调整通话音量](../../cn/Voice/volume_windows.md)
+- [播放音效/音乐混音](../../cn/Voice/effect_mixing_windows.md)
+- [调整音调、音色](../../cn/Voice/voice_effect_windows.md)
