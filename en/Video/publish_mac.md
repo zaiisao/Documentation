@@ -23,7 +23,7 @@ Call the `enableVideo` method to enable the video mode. The voice function is en
 ```swift
 //Swift
 func enableVideo() {
-  agoraKit.enableVideo()  //Default mode is disableVideo
+  agoraKit.enableVideo()  //Default mode is disableVideo.
 }
 ```
 
