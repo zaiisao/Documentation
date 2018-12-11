@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:08:11 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:22:47 GMT+0000 (UTC)
 ---
 # Join a Channel
 Once the client initialization is complete, call the  `client.join`  method in the `onSuccess` callback.
