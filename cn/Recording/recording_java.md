@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Tue Dec 11 2018 08:19:56 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:20:02 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -186,7 +186,7 @@ public class RecordingConfig {
 <td><p>仅启用音频录制功能：</p>
 <ul>
 <li>true：启用音频录制且关闭视频录制</li>
-<li>false：（默认）启用音视频录制制</li>
+<li>false：（默认）启用音视频录制</li>
 </ul>
 与 isVideoOnly 结合使用：
 <ul>
@@ -224,7 +224,7 @@ public class RecordingConfig {
 <tr><td><code>mixedVideoAudio</code></td>
 <td><p>实时混合语音和视频。仅当 <code>isMixingEnabled</code> = 1 时有效。该参数有两种模式：</p>
 <ul>
-<li>0：不混合音频和视频分别（默认）</li>
+<li>0：不混合音频和视频（默认）</li>
 <li>1：音频和视频混合成一个文件，录制文件格式为 mp4，但播放器支持有限，详见下表</li>
 </ul>
 </td>
@@ -912,7 +912,7 @@ private native void startService(long nativeHandle);
 private native void stopService(long nativeHandle);
 ```
 
-该方法手动暂停录制。仅在参数 [triggerMode](#triggerMode) 为`manually `时有效。
+该方法手动暂停录制。仅在参数 [triggerMode](#triggerMode) 为 `manually `时有效。
 
 <a name = "setUserBackground"></a>
 
@@ -1209,7 +1209,7 @@ private void onUserJoined(long uid, String recordingDir){
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>用户的 uid。</td>
+<td>用户的 ID。</td>
 </tr>
 <tr><td><code>recordingDir</code></td>
 <td>录制文件所在的目录</td>
@@ -1420,7 +1420,7 @@ private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotati
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>用户的 uid</td>
+<td>用户的 ID</td>
 </tr>
 <tr><td><code>type</code></td>
 <td><p>返回的原始视频数据的格式：</p>
@@ -1443,7 +1443,7 @@ private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotati
 
 
 
-`VideoFrame `结构如下：
+`VideoFrame` 结构如下：
 
 ```
 public class VideoFrame {
@@ -1626,7 +1626,7 @@ void onActiveSpeaker(long uid){
 }
 ```
 
-返回说话者的 uid 。
+返回说话者的 ID 。
 
 <table>
 <colgroup>
@@ -1638,7 +1638,7 @@ void onActiveSpeaker(long uid){
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>说话者的 UID</td>
+<td>说话者的 ID</td>
 </tr>
 </tbody>
 </table>
