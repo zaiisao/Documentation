@@ -3,7 +3,7 @@
 title: Improve Experience Under Poor Network Conditions
 description: 
 platform: iOS,macOS
-updatedAt: Wed Nov 21 2018 10:38:42 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 01:42:35 GMT+0000 (UTC)
 ---
 # Improve Experience Under Poor Network Conditions
 ## Introduction
