@@ -3,7 +3,7 @@
 title: Video Conference of 7+ Users
 description: 
 platform: Windows
-updatedAt: Thu Nov 15 2018 09:44:37 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 17:52:57 GMT+0000 (UTC)
 ---
 # Video Conference of 7+ Users
 If a video conference has too many host broadcasters, latency or packet loss may occur.
