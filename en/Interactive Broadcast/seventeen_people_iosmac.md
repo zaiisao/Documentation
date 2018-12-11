@@ -3,7 +3,7 @@
 title: Video Conference of 7+ Users
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 11 2018 17:54:58 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 17:55:01 GMT+0000 (UTC)
 ---
 # Video Conference of 7+ Users
 A video conference with too many hosts may cause network latency and packet loss. 
@@ -74,7 +74,7 @@ A 17-way live video broadcast supports all the video profiles supported in the I
 
 ### 3.3 Customize Low-stream Video Parameters
 
-If you enable dual-stream mode, you can customize the default low-stream video parameters at the app level. For example, setting the video profile to 320 x 180, 15 fps, and 140 kbps:
+If you enable dual-stream mode, you can customize the default low-stream video parameters at the app level. For example, setting the video profile to 320 x 180, 15 fps, and 140 Kbps:
 
 ```
 setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\":180,\"frameRate\":15,\"bitRate\":140}}"
