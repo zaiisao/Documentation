@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Tue Dec 11 2018 08:21:01 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:22:19 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
