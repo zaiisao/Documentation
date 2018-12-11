@@ -3,10 +3,14 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:08:43 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:27:51 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
-## Create a stream
+Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
+
+## Implementation
+
+### Create a stream
 Use the `client.createStream`  method to create a stream.
 
 The sample app passes in an object with the following properties:
@@ -27,7 +31,7 @@ localStream = AgoraRTC.createStream({
 
 The `createStream` object has additional optional properties. 
 
-## Initialize the stream
+### Initialize the stream
 Next, call the `stream.init`  method to initialize the stream.
 
 ```javascript
@@ -40,7 +44,7 @@ localStream.init(function() {
 });
 ```
 
-## Publish the local stream
+### Publish the local stream
 Once initialized, use the `client.publish` method in the `onSuccess` callback to publish the stream.
 
 ```javascript
@@ -53,7 +57,7 @@ client.on('stream-published', function (evt) {
 });
 ```
 
-## Subscribe to the remote stream
+### Subscribe to the remote stream
 To subscribe to a remote stream:
 
 1. Use the `client.on('stream-added')` event listener to detect when a new stream is added to the channel.
@@ -75,7 +79,7 @@ client.on('stream-subscribed', function (evt) {
 })
 ```
 
-## Play the stream
+### Play the stream
 After initializing the local stream or subscribing to the remote stream, use the `stream.play`  method to play the stream on the web page. The `stream.play`  method takes the ID of a dom element as a parameter, and the SDK creates a `<video>` tag and plays the audio.
 
 - Play the stream after initializing the local stream.
@@ -102,3 +106,13 @@ After initializing the local stream or subscribing to the remote stream, use the
 	})
 	```
 
+
+## Next steps
+You are now in a voice call. When the call ends, use the Agora SDK to exit the current call:
+
+- [Leave the Channel](../../en/Voice/leave_web.md)
+
+For added requirements on the audio volume, audio effect or voice pitch, you can alse take the following steps:
+
+- [Adjust the volume](../../en/Voice/volume_web.md)
+- [Play the Audio Effects/Audio Mixing](../../en/Voice/effect_mixing_web.md)
