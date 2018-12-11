@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Tue Dec 11 2018 04:10:46 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 04:10:52 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -11,28 +11,24 @@ updatedAt: Tue Dec 11 2018 04:10:46 GMT+0000 (UTC)
 
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <thead>
-	<tr><th>Interface</th>
+<tr><th>Interface</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr><td><a href="#native-interface">Native Interface</a></td>
+<tr><td><a href="#RecordingSDK">RecordingSDK</a></td>
 <td>Main methods that can be invoked by your app.</td>
 </tr>
-<tr><td><a href="#callback-functions">Callbacks</a></td>
+<tr><td><a href="#RecordingEventHandler">RecordingEventHandler</a></td>
 <td>Callbacks returned to your app.</td>
 </tr>
 </tbody>
 </table>
 
-## <a name="native-interface"></a>Native Interface
+## <a name="RecordingSDK"></a>RecordingSDK
 
-The Native Interface provides main methods that can be invoked by your app.
+The RecordingSDK provides main methods that can be invoked by your app.
 
 -   [Creates a Channel (createChannel)](#createChannel)
 
@@ -42,7 +38,7 @@ The Native Interface provides main methods that can be invoked by your app.
 
 -   [Starts the Recording (startService)](#startService)
 
--   [Stops the Recording (stopService)](#stopService)
+-   [Pauses the Recording (stopService)](#stopService)
 
 -   [Retrieves the Recording Properties (getProperties)](#getProperties)
 
@@ -62,22 +58,29 @@ public native boolean createChannel(String appId, String token, String name, int
 ```
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>名称</strong></td>
-<td><strong>描述</strong></td>
+<thead>
+<tr><th>Name</th>
+<th>Description</th>
 </tr>
+</thead>
+<tbody>
 <tr><td><code>appId</code></td>
 <td>The App ID used in the communication to be recorded. For details, see  <a href="../../en/Agora%20Platform/token.md"><span>Getting an App ID</span></a>.</td>
 </tr>
 <tr><td><code>token</code></td>
 <td>The token used in the communication to be recorded. For details, see  <a href="../../en/Agora%20Platform/token.md"><span>Security Keys</span></a>.</td>
 </tr>
-<tr><td><code>name</code></td>
-<td>Name of the channel to be recorded.</td>
+<tr>
+<td><code>name</code></td>
+<td>Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are:
+<ul>
+<li>The 26 lowercase English letters from a to z</li>
+<li>The 26 uppercase English letters from A to Z</li>
+<li>The 10 numbers from 0 to 9</li>
+<li>The space</li>
+<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","</li>
+</ul>
+</td>
 </tr>
 <tr><td><code>uid</code></td>
 	<td><p>User ID. A 32-bit unsigned integer ranging from 1 to (2^32-1) that is unique in a channel. Two Settings:</p>
@@ -109,7 +112,7 @@ public native boolean createChannel(String appId, String token, String name, int
 
 
 
-> -   In the Recording SDK, <code>requestToken</code> and <code>renewToken</code> are private interfaces. Make sure that you set <code>expireTimestamp</code> as 0 when generating a token, which means that the privilege, once generated, never expires.
+> -   In the Recording SDK, <code>requestToken</code> and <code>renewToken</code> are private interfaces. Make sure that you set [expireTimestamp](../../en/Recording/token.md) as 0 when generating a token, which means that the privilege, once generated, never expires.
 > -   A channel does not accept duplicate uids. Otherwise, there will be unpredictable behaviors.
 
 
@@ -179,10 +182,6 @@ public class RecordingConfig {
 ```
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <thead>
 <tr><th>Name</th>
 <th>Description</th>
@@ -192,44 +191,50 @@ public class RecordingConfig {
 <tr><td><code>isAudioOnly</code></td>
 <td><p>Sets whether or not to record audio only:</p>
 <ul>
-<li>true: Enables audio recording only.</li>
-<li>false: (Default) Records both audio and video.</li>
+<li>true: Enables audio recording and disables video recording.</li>
+<li>false: (Default) Enables both audio and video recording.</li>
+</ul>
+Used together with <code>isVideoOnly</code>:
+<ul>
+<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only records audio.</li>
+<li>If <code>isAudioOnly</code>y is false and <code>isVideoOnly</code> is true, only records video.</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is false, records both audio and video.</li>
+<li><code>isAudioOnly</code> and <code>isVideoOnly</code> can not be set as true at the same time.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isVideoOnly</code></td>
 <td><p>Sets whether or not to record video only:</p>
 <ul>
-<li>true: Enables video recording only.</li>
-<li>false: (Default) Records both audio and video.</li>
+<li>true: Enables video recording and disable audio recording.</li>
+<li>false: (Default) Enables both audio and video recording.</li>
+</ul>
+Used together with <code>isAudioOnly</code>:
+<ul>
+<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only records audio.</li>
+<li>If <code>isAudioOnly</code>y is false and <code>isVideoOnly</code> is true, only records video.</li>
+<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is false, records both audio and video.</li>
+<li><code>isAudioOnly</code> and <code>isVideoOnly</code> can not be set as true at the same time.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isMixingEnabled</code></td>
-<td><p>Enables the audio- or video-mixing mode:</p>
+<td><p>Sets whether or not to enable the audio- or video-composite mode.</p>
 <ul>
-<li>false: (Default) Enables the individual mode (audio). The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
-<li>true: Enables the composite mode (video). The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
+<li>true: Enables the composite mode, which means the audio of all uids is mixed in an audio file and the video of all uids is mixed in a video file.The sample rate, bitrate, and audio channel number of the recording file are the same as the highest level of those of the original audio streams.</li>
+<li>false: (Default) Enables the individual mode, which means one audio or video file for an uid. The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
 </ul>
-<p>If the composite mode is enabled:</p>
-<div><ul>
-<li>If <code>isAudioOnly</code> is <code>true</code> and <code>isVideoOnly</code> is <code>false</code>, only the audio is recorded.</li>
-<li>If <code>isAudioOnly</code> is <code>false</code> and <code>isVideoOnly</code> is <code>true</code>, only the video is recorded.</li>
-<li>If both <code>isAudioOnly</code> and <code>isVideoOnly</code> are <code>false</code>, voice and video mixing are enabled (the audio and video of all uids are recorded respectively).</li>
-<li><code>isVideoOnly</code> and <code>isVideoOnly</code> cannot be set as <code>true</code> at the same time.</li>
-</ul>
-</div>
 </td>
 </tr>
 <tr><td><code>mixedVideoAudio</code></td>
 <td><p>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixedVideoAudio</code> allows you to mix the audio and video in real time:</p>
 <ul>
-<li>0: (Default) Mixes the audio and video respectively.</li>
+<li>0: (Default) Not mixes the audio and video.</li>
 <li>1: Mixes the audio and video in real time into an MPEG-4 file. Supports limited players.</li>
 </ul>
 </td>
 </tr>
-	<tr><td><code>mixResolution</code> <sup>[1]</sup></td>
+<tr><td><code>mixResolution</code></td>
 <td>If you set <code>isMixingEnabled</code> as <code>true</code>, <code>mixResolution</code> allows you to set the resolution in the format of width, height, fps, and Kbps; representing the width, height, frame rate, and bitrate of the video stream.</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
@@ -254,29 +259,33 @@ public class RecordingConfig {
 <td>The path of the configuration file. The default value is NULL. The content in the configuration file must be in JSON format. In this configuration file, you can set the absolute path of the recording file, such as {“Recording_Dir” : “&lt;recording path&gt;”}, but the sub-path will not be generated automatically.
 </td>
 </tr>
-<tr><td><code>decodeAudio</code> <sup>[2]</sup></td>
+<tr><td><code>decodeAudio</code></td>
 <td><p>Audio decoding format:</p><ul>
 <li>0: Default audio format (AUDIO_FORMAT_DEFAULT_TYPE).</li>
-<li>1: AAC format (AUDIO_FORMAT_AAC_FRAME_TYPE).</li>
-<li>2: PCM format (AUDIO_FORMAT_PCM_FRAME_TYPE).</li>
-<li>3: PCM audio-mixing format (AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE).</li>
+<li>1: Audio frame in AAC format (AUDIO_FORMAT_AAC_FRAME_TYPE).</li>
+<li>2: Audio frame in PCM format (AUDIO_FORMAT_PCM_FRAME_TYPE).</li>
+<li>3: Audio frame in PCM audio-mixing format (AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE). In this situation, <code>isMixingEnabled</code> cannot be set as true.</li>
 </ul>
 </td>
 </tr>
-<tr><td><code>decodeVideo</code> <sup>[2]</sup></td>
+<tr><td><code>decodeVideo</code></td>
 <td><p>Video decoding format:</p><ul>
-<li>0: Default video format (VIDEO_FORMAT_DEFAULT_TYPE).</li>
-<li>1: H.264 format (VIDEO_FORMAT_H264_FRAME_TYPE).</li>
-<li>2: YUV format (VIDEO_FORMAT_YUV_FRAME_TYPE).</li>
-<li>3: JPEG format (VIDEO_FORMAT_JPG_FRAME_TYPE).</li>
-<li>4: JPEG file format (VIDEO_FORMAT_JPG_FILE_TYPE).</li>
-<li>5: JPEG video file format (VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE).</li>
-</ul>
-<div><ul>
+<li>VIDEO_FORMAT_DEFAULT_TYPE = 0: Default video format.</li>
+<li>VIDEO_FORMAT_H264_FRAME_TYPE = 1: Video frame in H.264 format.</li>
+<li>VIDEO_FORMAT_YUV_FRAME_TYPE = 2: Video frame in YUV format.</li>
+<li>VIDEO_FORMAT_JPG_FRAME_TYPE = 3: Video frame in JPEG format.</li>
+<li>VIDEO_FORMAT_JPG_FILE_TYPE = 4: JPEG file format.</li>
+<li>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5: Video frame in JPEG format + MPEG-4 video.</li>
+<ul>
 <li>Individual Mode (<code>isMixingEnabled</code> is set as <code>false</code>): MPEG-4 video and JPEG files are supported.</li>
 <li>Mixing Mode (<code>isMixingEnabled</code> is set as <code>true</code>): MPEG-4 video files for combined streams and JPEG files for individual streams are supported.</li>
 </ul>
-</div>
+</ul>
+When the video is decoded into raw video data, that is, VIDEO_FORMAT_TYPE = 1, 2, 3 or 5:
+<ul>
+<li>Video mixing is not supported.</li>
+<li>Raw video data in YUV format for the Web SDK is supported while H.264 format is not supported.</li>
+</ul>
 </td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
@@ -303,8 +312,8 @@ public class RecordingConfig {
 <tr><td><code>channelProfile</code></td>
 <td><p>Sets the channel mode:</p>
 <ul>
-<li>0: (Default) Communication mode (CHANNEL_PROFILE_COMMUNICATION). This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
-<li>1: Live broadcast (CHANNEL_PROFILE_LIVE_BROADCAST). The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <code>setClientRole</code>. </li>
+<li>CHANNEL_PROFILE_COMMUNICATION = 0: (Default) Communication mode. This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
+<li>CHANNEL_PROFILE_LIVE_BROADCAST = 1: Live broadcast. The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <code>setClientRole</code>. </li>
 </ul>
 The Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
 </td>
@@ -312,7 +321,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <tr><td><code>streamType</code></td>
 <td><code>streamType</code> takes effect only when the Agora Native SDK has enabled the dual-stream mode (high stream by default).</td>
 </tr>
-<tr><td><code>triggerMode</code></td>
+<tr><td><a name="triggerMode"></a><code>triggerMode</code></td>
 <td><p>Sets whether to record automatically or manually upon joining the channel:</p>
 <ul>
 <li>0: Automatically</li>
@@ -327,9 +336,9 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <tr><td><code>audioProfile</code> </td>
 <td><p>Audio profile of the recording file:</p>
 <div><ul>
-<li>0: (Default) Sampling rate of 48 kHz, communication encoding, mono (AUDIO_PROFILE_DEFAULT).</li>
-<li>4: Sampling rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps (AUDIO_PROFILE_MUSIC_HIGH_QUALITY).</li>
-<li>5: Sampling rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps (AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO).</li>
+<li>AUDIO_PROFILE_DEFAULT = 0: (Default) Sampling rate of 48 kHz, communication encoding, mono.</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 4: Sampling rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 5: Sampling rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.</li>
 </ul>
 </div>
 </td>
@@ -343,22 +352,10 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 </tbody>
 </table>
 
-> [1] The <code>isAudioOnly</code> and <code>isVideoOnly</code> parameters are disabled by default. Do not set <code>isAudioOnly</code> and <code>isVideoOnly</code> as <code>true</code> at the same time.
-
-> [2] If the raw data is enabled:
-	> - Only audio mixing is supported. Video mixing is not supported. 
-	> - Only raw video data in H.264 for the Web SDK is supported. VP8 is not supported.
 
 **Video Profile for the Communication Mode:**
 
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
 <thead>
 <tr><th>Resolution</th>
 <th>Frame Rate (fps)</th>
@@ -484,13 +481,6 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 **Video Profile for the Live Broadcast Mode:**
 
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
 <thead>
 <tr><th>Resolution</th>
 <th>Frame Rate (fps)</th>
@@ -616,12 +606,6 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 **Supported Players:**
 
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
 <thead>
 <tr><th>Platform</th>
 <th>Player/Explorer</th>
@@ -631,19 +615,19 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 </thead>
 <tbody>
 <tr><td>Linux</td>
-<td>Default Player</td>
+<td>VLC Media Playerr</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
 <tr><td>Linux</td>
-<td>VLC Media Player</td>
+<td>ffplayer</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
 <tr><td>Linux</td>
-<td>ffplay</td>
-<td>Supported</td>
-<td>Supported</td>
+<td>Chrome</td>
+<td><strong>Not Supported</strong></td>
+<td><strong>Not Supported</strong></td>
 </tr>
 <tr><td>Windows</td>
 <td>Media Player</td>
@@ -651,7 +635,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>Windows</td>
-<td>KMPlayer</td>
+<td>KM Player</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -671,6 +655,11 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>macOS</td>
+<td>VLC</td>
+<td><strong>Not Supported</strong></td>
+<td><strong>Not Supported</strong></td>
+</tr>
+<tr><td>macOS</td>
 <td>Movist</td>
 <td>Supported</td>
 <td>Supported</td>
@@ -681,9 +670,9 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>macOS</td>
-<td>KMPlayer</td>
-<th>Not Supported</th>
-<th>Not Supported</th>
+<td>KM Player</td>
+<th><strong>Not Supported</strong></th>
+<th><strong>Not Supported</strong></th>
 </tr>
 <tr><td>macOS</td>
 <td>Chrome (47.0.2526.111+)</td>
@@ -701,12 +690,12 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>iOS</td>
-<td>VLC</td>
-<th>Not Supported</th>
-<td>Supported</td>
+<td>VLC for Mobile</td>
+<th><strong>Not Supported</strong></th>
+<td><strong>Not Supported</strong>d</td>
 </tr>
 <tr><td>iOS</td>
-<td>KMPlayer</td>
+<td>KM Player</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -721,7 +710,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>Android</td>
-<td>MXPlayer</td>
+<td>MX Player</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -731,7 +720,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>Android</td>
-<td>KMPlayer</td>
+<td>KM Player</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -820,21 +809,21 @@ public class VideoMixingLayout
 <td>The background color of the canvas (the display window or screen) in RGB hex value.</td>
 </tr>
 <tr><td><code>regionCount</code></td>
-<td>The number of the hosts in the channel.</td>
+<td>The number of the users (communication mode) or hosts (live broadcast mode) in the channel.</td>
 </tr>
 <tr><td><code>regions</code></td>
-<td><p>The host list of <code>VideoMixingLayout</code>. Each host in the channel has a region to display the video on the screen with the following parameters to be set:</p>
+<td><p>The users (communication mode) or hosts (live broadcast mode) list of <code>VideoMixingLayout</code>. Each user (communication mode) or host (live broadcast mode) in the channel has a region to display the video on the screen with the following parameters to be set:</p>
 <ul>
-<li><code>uid</code>: User ID of the host displaying the video in the region.</li>
+<li><code>uid</code>: User IDs of the users (communication mode) or host (live broadcast mode) displaying the video in the region.</li>
 <li><code>x</code>: Relative horizontal position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
 <li><code>y</code>: Relative vertical position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
 <li><code>width</code>: Relative width of the region. The value is between 0.0 and 1.0.</li>
-<li><code>height</code>: Actual height of the region. The value is between 0.0 and 1.0.</li>
+<li><code>height</code>: Relative height of the region. The value is between 0.0 and 1.0.</li>
 <li><code>zOrder</code>: The index of the layer. The value is between 1 (bottom layer) and 100 (top layer).</li>
 <li><code>alpha</code>: The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque).</li>
 <li><code>renderMode</code>: Render mode:<ul>
-<li>1: Cropped (RENDER_MODE_HIDDEN).</li>
-<li>2: Proportionate (RENDER_MODE_FIT).</li>
+<li>RENDER_MODE_HIDDEN(1):Cropped mode. Uniformly scale the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents..</li>
+<li>RENDER_MODE_FIT(2):Fit mode. Uniformly scale the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio will be filled with black.</li>
 </ul>
 </li>
 </ul>
@@ -905,7 +894,7 @@ private native RecordingEngineProperties getProperties(long nativeHandle);
 
 This method manually starts a recording.
 
-The method is only valid when you set <code>triggerMode</code> to <code>1</code> (manually) when joining the channel. For more information, see [Creates a Channel (createChannel)](#createChannel) on <code>triggerMode</code>.
+The method is only valid when you set [triggerMode](#triggerMode) to 1 (manually) when joining the channel. 
 
 ```
 private native void startService(long nativeHandle);
@@ -929,11 +918,11 @@ private native void startService(long nativeHandle);
 
 
 
-### <a name="stopService"></a>Stops the Recording (stopService)
+### <a name="stopService"></a>Pauses the Recording (stopService)
 
-This method manually stops the recording.
+This method manually pauses the recording.
 
-The method is only valid when you set <code>triggerMode</code> to <code>1</code> (manually) when joining the channel. For more information, see [Create a Channel (createChannel)](#createChannel) on <code>triggerMode</code>.
+The method is only valid when you set [triggerMode](#triggerMode) to 1 (manually) when joining the channel. 
 
 ```
 private native void stopService(long nativeHandle);
@@ -1071,9 +1060,9 @@ This method enables/disables generating logs for specified modules.
 
 
 
-## <a name="callback-functions"></a>Callbacks
+## <a name="RecordingEventHandler"></a>RecordingEventHandler
 
-The following callbacks are available to your app:
+The RecordingEventHandler class enables the following callbacks to your app: 
 
 -   [Returns the JNI Instance (nativeObjectRef)](#nativeObjectRef)
 -   [An Error has Occurred During SDK Runtime (onError)](#onError)
@@ -1122,10 +1111,10 @@ private void onError(int error, int stat_code) {
 <tr><td><code>error</code></td>
 <td><p>Error codes:</p>
 <div><ul>
-<li>0: No error (ERR_OK).</li>
-<li>1: General error with no classified reason (ERR_FAILED).</li>
-<li>2: Invalid parameter is called (ERR_INVALID_ARGUMENT). For example, the specific channel name contains illegal characters.</li>
-<li>3: The SDK module is not ready (ERR_NOT_READY). Agora recommends the following methods to solve this error:
+<li>ERR_OK = 0: No error.</li>
+<li>ERR_FAILED = 1: General error with no classified reason.</li>
+<li>ERR_INVALID_ARGUMENT = 2: Invalid parameter is called. For example, the specific channel name contains illegal characters.</li>
+<li>ERR_NOT_READY = 3: The SDK module is not ready. Agora recommends the following methods to solve this error:
 <ul>
 <li>Check the audio device.</li>
  <li>Check the completeness of the app.</li>
@@ -1138,15 +1127,15 @@ private void onError(int error, int stat_code) {
 <tr><td><code>stat_code</code></td>
 <td><p>State codes:</p>
 <div><ul>
-<li>1: Error from the engine  (STAT_ERR_FROM_ENGINE).</li>
-<li>2: Failure to join the channel (STAT_ERR_ARS_JOIN_CHANNEL).</li>
-<li>3: Failure to create a process (STAT_ERR_CREATE_PROCESS).</li>
-<li>4: Failure to mix the video (STAT_ERR_MIXED_INVALID_VIDEO_PARAM).</li>
-<li>5: Null pointer (STAT_ERR_NULL_POINTER = 5).</li>
-<li>6: Invalid parameters of the proxy server (STAT_ERR_PROXY_SERVER_INVALID_PARAM).</li>
-<li>0x8: Error in polling (STAT_POLL_ERR).</li>
-<li>0x10: Polling hangs up (STAT_POLL_HANG_UP).</li>
-<li>0x20: Invalid polling request (STAT_POLL_NVAL).</li>
+<li>STAT_ERR_FROM_ENGINE = 1: Error from the engine.</li>
+<li>STAT_ERR_ARS_JOIN_CHANNEL = 2: Failure to join the channel.</li>
+<li>STAT_ERR_CREATE_PROCESS = 3: Failure to create a process.</li>
+<li>STAT_ERR_MIXED_INVALID_VIDEO_PARAM = 4: Failure to mix the video.</li>
+<li>STAT_ERR_NULL_POINTER = 5: Null pointer.</li>
+<li>STAT_ERR_PROXY_SERVER_INVALID_PARAM = 6: Invalid parameters of the proxy server.</li>
+<li>STAT_POLL_ERR = 0x8: Error in polling.</li>
+<li>STAT_POLL_HANG_UP = 0x10: Polling hangs up.</li>
+<li>STAT_POLL_NVAL = 0x20: Invalid polling request.</li>
 </ul>
 </div>
 </td>
@@ -1182,11 +1171,11 @@ public void onWarning(int warn) {
 <tr><td><code>warn</code></td>
 <td><p>Warning codes:</p>
 <ul>
-<li>103: No channel resources are available (WARN_NO_AVAILABLE_CHANNEL). Maybe because the server cannot allocate any channel resource.</li>
-<li>104: A timeout when looking up the channel (WARN_LOOKUP_CHANNEL_TIMEOUT). When joining a channel, the SDK looks up the specified channel. This warning usually occurs when the network conditions are too poor to connect to the server.</li>
-<li>105: The server rejected the request to look up the channel (WARN_LOOKUP_CHANNEL_REJECTED). The server cannot process this request or the request is illegal.</li>
-<li>106: A timeout occurred when opening the channel (WARN_OPEN_CHANNEL_TIMEOUT). Once the specific channel is found, the SDK opens the channel. This warning usually occurs when the network condition is too poor to connect to the server.</li>
-<li>107: The server rejected the request to open the channel (WARN_OPEN_CHANNEL_REJECTED). The server cannot process this request or the request is illegal.</li>
+<li>WARN_NO_AVAILABLE_CHANNEL = 103: No channel resources are available. Maybe because the server cannot allocate any channel resource.</li>
+<li>WARN_LOOKUP_CHANNEL_TIMEOUT = 104: A timeout when looking up the channel. When joining a channel, the SDK looks up the specified channel. This warning usually occurs when the network conditions are too poor to connect to the server.</li>
+<li>WARN_LOOKUP_CHANNEL_REJECTED = 105: The server rejected the request to look up the channel. The server cannot process this request or the request is illegal.</li>
+<li>WARN_OPEN_CHANNEL_TIMEOUT = 106: A timeout occurred when opening the channel. Once the specific channel is found, the SDK opens the channel. This warning usually occurs when the network condition is too poor to connect to the server.</li>
+<li>WARN_OPEN_CHANNEL_REJECTED = 107: The server rejected the request to open the channel . The server cannot process this request or the request is illegal.</li>
 </ul>
 </td>
 </tr>
@@ -1220,11 +1209,11 @@ This callback is triggered when a user has left the channel.
 <td>
 <div>Reason:</div>
 <ul>
-<li>0: Initialization failure (LEAVE_CODE_INIT).</li>
-<li>1: Signal triggered exit (LEAVE_CODE_SIG).</li>
-<li>2: There is no user in the channel except for the recording app (LEAVE_CODE_NO_USERS).</li>
-<li>3: Timer catch exit (LEAVE_CODE_TIMER_CATCH).</li>
-<li>4: The client leaves the channel (LEAVE_CODE_CLIENT_LEAVE).</li>
+<li>LEAVE_CODE_INIT = 0: Initialization failure.</li>
+<li>LEAVE_CODE_SIG= 1: Signal triggered exit.</li>
+<li>LEAVE_CODE_NO_USERS = 2: There is no user in the channel except for the recording app.</li>
+<li>LEAVE_CODE_TIMER_CATCH = 3: Timer catch exit.</li>
+<li>LEAVE_CODE_CLIENT_LEAVE = 4: The client leaves the channel.</li>
 </ul>
 </td>
 </tr>
@@ -1296,10 +1285,9 @@ private void onUserOffline(long uid, int reason) {
 <tr><td><code>reason</code></td>
 <td><p>Reason:</p>
 <ul>
-<li>0: The user has quit the call (USER_OFFLINE_QUIT).</li>
-<li>1: The SDK timed out and the user dropped offline because it has not received any data packet for a period of time (USER_OFFLINE_DROPPED). If a user quits the call and the message is not passed to the SDK (due to an unreliable channel), the SDK assumes the user has dropped offline.
-    </li>
-<li>2: The client role has changed from the host to the audience (USER_OFFLINE_BECOME_AUDIENCE). The option is only valid when you set the channel profile as live broadcast when calling <code>joinChannel</code>.</li>
+<li>USER_OFFLINE_QUIT = 0: The user has quit the call.</li>
+<li>USER_OFFLINE_DROPPED = 1: The SDK timed out and the user dropped offline because it has not received any data packet for a period of time. If a user quits the call and the message is not passed to the SDK (due to an unreliable channel), the SDK assumes the user has dropped offline.</li>
+<li>USER_OFFLINE_BECOME_AUDIENCE = 2: The client role has changed from the host to the audience. The option is only valid when you set the channel profile as live broadcast when calling <code>joinChannel</code>.</li>
 </ul>
 </td>
 </tr>
