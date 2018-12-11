@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:08:40 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:37:57 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 ## Create a stream
