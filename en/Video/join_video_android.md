@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Tue Dec 11 2018 20:52:19 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 20:52:22 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for more information.
@@ -47,7 +47,7 @@ You are now in the channel and can start a voice call with the following step:
 
 - [Publish and Subscrib to Streams](../../en/Video/publish_android.md)
 
-For added requirements on the audio volume, audio effect or video resolution you can alse take the following steps:
+For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
 
 - [Adjust the Volume](../../en/Video/volume_android.md)
 - [Play Audio Effects/Audio Mixing](../../en/Video/effect_mixing_android.md)
