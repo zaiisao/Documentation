@@ -3,7 +3,7 @@
 title: 创建并初始化 Client 对象
 description: Web SDK 初始化客户端对象
 platform: Web
-updatedAt: Tue Dec 11 2018 06:42:44 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:18:55 GMT+0000 (UTC)
 ---
 # 创建并初始化 Client 对象
 在创建并初始化 Client 对象前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/web_prepare.md)。
