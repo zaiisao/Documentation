@@ -3,7 +3,7 @@
 title: Record the Audio from the Client
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 11 2018 01:54:38 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 01:54:44 GMT+0000 (UTC)
 ---
 # Record the Audio from the Client
 ## Introduction
@@ -19,27 +19,27 @@ Agora's Native SDK supports audio recording at the client. You can record the au
 
 ```swift
 // Swift
-// Start audio recording
-// local path to the recording file. Specified by the user. Accurate to the file name and format.
-// Audio quality of the recording. Is classified into LOW, MEDIUM, and HIGH.
+// Start audio recording.
+// Local path of the recording file specified by the user, including the filename and format.
+// Audio quality of the recording: LOW, MEDIUM, and HIGH.
 agoraKit.startAudioRecording("recording file path", quality: .high)
 
-// Stop audio recording
+// Stop audio recording.
 agoraKit.stopAudioRecording()
 ```
 
 ```oc
 // Objective-C
-// Start audio recording
-// local path to the recording file. Specified by the user. Accurate to the file name and format.
-// Audio quality of the recording. Is classified into LOW, MEDIUM, and HIGH.
+// Start audio recording.
+// Local path to the recording file specified by the user, including the filename and format.
+// Audio quality of the recording: LOW, MEDIUM, and HIGH.
 [agoraKit startAudioRecording:@"recording file path", quality: AgoraAudioRecordingQualityHigh];
 
-// Stop audio recording
+// Stop audio recording.
 [agoraKit stopAudioRecording];
 ```
 
-## API Reference
+## API Methods
 
 - [startAudioRecording:quality:](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:quality:)
 - [stopAudioRecording](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioRecording)
