@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Tue Dec 11 2018 07:08:30 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:08:35 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora SDK for iOS.
@@ -163,7 +163,7 @@ The Agora SDK provides the following additional settings and permissions for you
   <img alt="../_images/ios_voice_10.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_10.jpg" />
 	
 ## Next Steps
-You have now finished setting up the iOS environment and can start a voice call with the following steps:
-* [Create and Initialize an AgoraRtcEngine Instance](../../en/Voice/initialize_ios.md)
-* [Join a Channel](../../en/Voice/join_communication_ios.md)
-* [Publish and Subscribe to Streams](../../en/Voice/publish_ios_audio.md)
+You have now finished setting up the iOS environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+* Initialize the SDK
+* Join a Channel
+* Publish and Subscribe to Streams
