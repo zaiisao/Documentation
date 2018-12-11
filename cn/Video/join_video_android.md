@@ -3,7 +3,7 @@
 title: 加入频道
 description: android平台加入通信频道
 platform: Android
-updatedAt: Wed Dec 05 2018 09:52:29 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:02:10 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Video/android_audio.md)。
