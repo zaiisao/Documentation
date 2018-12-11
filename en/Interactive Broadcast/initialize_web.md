@@ -3,7 +3,7 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:07:34 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:19:36 GMT+0000 (UTC)
 ---
 # Create and Initialize a Client
 ## Create a Client
