@@ -9,7 +9,7 @@ updatedAt: Tue Dec 04 2018 20:41:48 GMT+0000 (UTC)
 ## Feature Description
 In a call or live broadcast, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
 
-Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md).
 
 ## Play Audio Effect Files
 

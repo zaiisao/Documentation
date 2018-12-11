@@ -10,7 +10,7 @@ In-ear monitoring provides a mix of the audio sources (for example, a mix of the
 The Agora SDK supports the in-ear monitoring function and volume adjustment of the in-ear monitor.
 
 ## Implementation
-Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md).
 
 ```java
 // Enables in-ear monitoring. The default value is false.
