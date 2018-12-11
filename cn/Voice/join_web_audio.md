@@ -3,7 +3,7 @@
 title: 加入频道
 description: web平台加入频道
 platform: Web
-updatedAt: Tue Dec 11 2018 06:49:13 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:49:16 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/web_prepare.md)。
@@ -31,7 +31,7 @@ client.join(<TOKEN_OR_KEY>, <CHANNEL_NAME>, <UID>, function(uid) {
 
 ## 相关文档
 成功加入频道后，你可以使用 Agora SDK，实现如下功能进行通话/直播：
-- [发布和订阅流](../../cn/Voice/publish_web_audio.md)
+- [发布和订阅音频流](../../cn/Voice/publish_web_audio.md)
 
 如果在通话过程中，对音量、音效、音调等有特殊需求，你还可以：
 - [调整通话音量](../../cn/Voice/volume_web.md)
