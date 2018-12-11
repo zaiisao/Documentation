@@ -3,7 +3,7 @@
 title: Improve Experience Under Poor Network Conditions
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 11 2018 01:42:35 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 01:43:18 GMT+0000 (UTC)
 ---
 # Improve Experience Under Poor Network Conditions
 ## Introduction
@@ -15,41 +15,41 @@ The audio and video quality of a live broadcast or a video call deteriorates und
 
 ```swift
 // Swift
-// Enable the dual-stream mode
+// Enable the dual-stream mode.
 agoraKit.enableDualStreamMode(true);
 
-// Configurationa for the publisher
-// When the network condition is poor, send video stream only. 
+// Configuration for the publisher.
+// When the network condition is poor, send the audio stream only. 
 agoraKit.setLocalPublishFallbackOption(.audioOnly)
 
-// Configurations for the subscriber.
-// Try to receive low stream under poor network conditions. When the current network conditions are not sufficient for video streams, receive audio stream only. 
+// Configuration for the subscriber.
+// Try to receive the low-stream video under poor network conditions. When the network condition is not good for the video stream, receive the audio stream only. 
 agoraKit.setRemoteSubscribeFallbackOption(.audioOnly)
 
-// You can switch the remote video stream with a specified uid to low stream. 
-// Note that you have to set the remote stream to dual-stream mode before receiving its low stream. 
+// You can switch the remote video stream with a specified uid to the low stream. 
+// Note that you have to set the remote stream to dual-stream mode before receiving the low stream. 
 agoraKit.setRemoteVideoStream(uid, type: .low)
 ```
 
 ```oc
 //Objective-C
-// Enable the dual-stream mode
+// Enable the dual-stream mode.
 agoraKit.enableDualStreamMode(true);
 
-// Configurationa for the publisher
-// When the network condition is poor, send video stream only. 
+// Configuration for the publisher.
+// When the network condition is poor, send the audio stream only. 
 [agoraKit setLocalPublishFallbackOption: AgoraStreamFallbackOptionAudioOnly];
 
-// Configurations for the subscriber.
-// Try to receive low stream under poor network conditions. When the current network conditions are not sufficient for video streams, receive audio stream only. 
+// Configuration for the subscriber.
+// Try to receive the low-stream video under poor network conditions. When the network condition is not good for the video stream, receive the audio stream only. 
 [agoraKit setRemoteSubscribeFallbackOption: AgoraStreamFallbackOptionAudioOnly];
 
-// You can switch the remote video stream with a specified uid to low stream. 
-// Note that you have to set the remote stream to dual-stream mode before receiving its low stream. 
+// You can switch the remote video stream with a specified uid to the low stream. 
+// Note that you have to set the remote stream to dual-stream mode before receiving the low stream. 
 [agoraKit setRemoteVideoStream: uid type:AgoraVideoStreamTypeLow];
 ```
 
-## API Reference
+## API Methods
 
 - [enableDualStreamMode:](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableDualStreamMode:)
 - [setRemoteVideoStream:type:](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoStream:type:)
