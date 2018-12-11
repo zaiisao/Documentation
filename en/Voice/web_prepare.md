@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Tue Dec 11 2018 07:11:07 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:11:11 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
@@ -108,7 +108,7 @@ Add the following code to the line above `</body>` in your project.
 
  ```javascript
 	<script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.5.0.js"></script>
-	```
+```
 
 ### Method 3: Get the SDK from the official Agora website
 
@@ -130,4 +130,8 @@ Add the following code to the line above `</body>` in your project.
 2. Import the downloaded Agora Web SDK to your web server.
 3. Set up your web server so that you can access the sample app page or your own app page on the supported browsers, see [Prerequisites](#pre).
 
-The Web environment is now set to use the Agora SDK.
+## Next Steps
+You have now finished setting up the environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+- Initialize the SDK
+- Join a Channel
+- Publish and Subscribe to Streams
