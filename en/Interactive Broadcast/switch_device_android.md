@@ -21,7 +21,7 @@ You can use the media device test and selection feature in the following scenari
 	// Start the echo test. 
 	rtcEngine.startEchoTest();
 
-	// Wait and check if you can hear the voice of yours.
+	// Wait and check if you can hear your voice.
 
 	// Stop the echo test. 
 	rtcEngine.stopEchoTest();
