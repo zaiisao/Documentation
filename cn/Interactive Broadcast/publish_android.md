@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: android平台上发布音视频流
 platform: Android
-updatedAt: Tue Dec 11 2018 08:16:52 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:16:57 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 在发布和订阅音视频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Video/android_video.md)。
@@ -98,12 +98,11 @@ private void setupRemoteVideo(int uid) {
 你已成功开始视频通话。通话结束后，可以使用 Agora SDK 退出当前通话：
 * [离开频道](../../cn/Video/leave_android.md)
 
-在发布或订阅音视频流过程中，你还可以使用 Agora SDK 实现更多功能：
+如果在通话过程中，对音量、音效、视频分辨率、视频源等有特殊需求，你还可以：
 * [调整通话音量](../../cn/Video/volume_android.md)
 * [播放音效/音乐混音](../../cn/Video/effect_mixing_android.md)
 * [使用耳返](../../cn/Video/in-ear_android.md)
 * [调整音调、音色](../../cn/Video/voice_effect_android.md)
 * [设置视频属性](../../cn/Video/videoProfile_android.md)
-* [视频采集旋转](../../cn/Video/rotation_guide_android.md)
 * [自定义视频采集和渲染](../../cn/Video/custom_video_android.md)
 * [进行屏幕共享](../../cn/Video/screensharing_android.md)
