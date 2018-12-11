@@ -3,12 +3,13 @@
 title: 发布和订阅音视频流
 description: android平台上发布音视频流
 platform: Android
-updatedAt: Tue Dec 11 2018 08:09:31 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:09:36 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 在发布和订阅音视频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Video/android_video.md)。
 
-## 打开视频模式
+## 实现方法
+### 打开视频模式
 调用 `enableVideo` 方法打开视频模式。在 Agora SDK 中，音频功能是默认打开的，因此在加入频道前，或加入频道后，你都可以调用该方法开启视频。
 
 -   如果在加入频道前打开，则进入频道后直接加入视频通话或直播。
@@ -19,7 +20,7 @@ updatedAt: Tue Dec 11 2018 08:09:31 GMT+0000 (UTC)
 mRtcEngine.enableVideo();
 ```
 
-## 设置视频编码属性
+### 设置视频编码属性
 打开视频模式后，调用 `setVideoEncoderConfiguration` 方法设置视频的编码属性。
 
 在该方法中，指定你想要的视频编码的分辨率、帧率、码率以及视频编码的方向模式。详细的视频编码参数定义，参考 `setVideoEncoderConfiguration` 中的描述。
@@ -40,7 +41,7 @@ VideoEncoderConfiguration.ORIENTATION_MODE.ORIENTATION_MODE_FIXED_PORTRAIT;
 mRtcEngine.setVideoEncoderConfiguration(videoEncoderConfiguration);
 ```
 
-## 设置本地视频视图
+### 设置本地视频视图
 本地视频视图，是指用户在本地设备上看到的本地视频流的视图。
 
 在加入频道前，调用 `setupLocalVideo` 方法使应用程序绑定本地视频流的显示视窗，并设置本地看到的本地视频视图。`setupLocalVideo` 为视频流创建 SurfaceView 对象，并初始化:
@@ -61,7 +62,7 @@ mRtcEngine.setVideoEncoderConfiguration(videoEncoderConfiguration);
 }
 ```
 
-## 设置远端视频视图
+### 设置远端视频视图
 远端视频视图，是指用户在本地设备上看到的远端视频流的视图。
 
 调用 `setupRemoteVideo` 方法设置本地看到的远端用户的视频视图。该方法：
@@ -91,6 +92,11 @@ private void setupRemoteVideo(int uid) {
    tipMsg.setVisibility(View.GONE);
   }
 ```
+
+## 相关文档
+
+你已成功开始视频通话。通话结束后，可以使用 Agora SDK 退出当前通话：
+* [离开频道](../../cn/Video/leave_android.md)
 
 在发布或订阅音视频流过程中，你还可以使用 Agora SDK 实现更多功能：
 * [调整通话音量](../../cn/Video/volume_android.md)
