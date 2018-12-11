@@ -3,9 +3,11 @@
 title: 集成客户端
 description: 
 platform: iOS
-updatedAt: Tue Dec 11 2018 08:19:53 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 08:19:57 GMT+0000 (UTC)
 ---
 # 集成客户端
+本文介绍在正式使用 Agora SDK for iOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+
 ## 前提条件
 
 - Xcode 9.0+。
@@ -159,4 +161,10 @@ updatedAt: Tue Dec 11 2018 08:19:53 GMT+0000 (UTC)
 
   <img alt="../_images/ios_video_10.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_10.jpg" />
 	
-你已经完成了客户端集成，可以开始使用 Agora SDK 了。
+## 相关文档
+
+完成了客户端集成后，你可以使用 Agora SDK，依次实现左侧《快速开始》菜单栏下的步骤，进行通话/直播：
+
+- 初始化
+- 加入频道
+- 发布和订阅流
