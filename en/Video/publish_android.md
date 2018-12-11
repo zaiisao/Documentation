@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Android
-updatedAt: Tue Dec 11 2018 08:18:03 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 20:50:52 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Video/android_video.md) for more information.
