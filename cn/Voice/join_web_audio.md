@@ -3,7 +3,7 @@
 title: 加入频道
 description: web平台加入频道
 platform: Web
-updatedAt: Tue Dec 11 2018 06:48:44 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:49:13 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/web_prepare.md)。
