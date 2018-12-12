@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed Dec 12 2018 10:04:49 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 10:04:54 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -40,6 +40,9 @@ Two solutions are available:
 
 2.  For users who want to continue using the Agora Recording Server, you can use your current Windows SDK version (version 1.14 and before). Contact Technical Support for any questions.
 
+## v2.2.1
+
+The version 2.2.0 was released on May 30, 2018. 
 
 ## v2.2.0
 
