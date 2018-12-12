@@ -3,11 +3,12 @@
 title: Create and Initialize an Agora Instance
 description: 
 platform: Android
-updatedAt: Wed Dec 12 2018 08:39:37 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 08:39:41 GMT+0000 (UTC)
 ---
 # Create and Initialize an Agora Instance
-Before creating an RtcEngine instance, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md) for more information.
+Before creating an RtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for more information.
 
+## Implementation
 The following imports define the interface of the Agora API that provides communication functionality:
 
 -   `io.agora.rtc.Constants`
@@ -38,8 +39,12 @@ private void initializeAgoraEngine() {
 }
 ```
 
-Having created the RtcEngine instance, you can use the Agora SDK to implement the following functions:
-
-* [Join the Channel](../../en/Interactive%20Broadcast/join_live_android.md)
+## Next Steps
+You have now finished creating the RtcEngine instance and can start a live broadcast with the following steps:
+* [Join a Channel](../../en/Interactive%20Broadcast/join_live_android.md)
 * [Switch the User Role](../../en/Interactive%20Broadcast/role_android.md)
-* [Publish and subscribe to Streams](../../en/Interactive%20Broadcast/publish_android.md)
+* [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_android.md)
+
+For added requirements on network connection or audio quality, you can also take the following steps before joining a channel:
+* [Conduct a Last mile Test](../../en/Interactive%20Broadcast/lastmile_android.md)
+* [Set the Stereo/High-fidelity Audio Profile](../../en/Interactive%20Broadcast/audio_profile_android.md)
