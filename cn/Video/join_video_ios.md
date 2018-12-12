@@ -3,7 +3,7 @@
 title: 加入频道
 description: ios平台加入通信频道
 platform: iOS
-updatedAt: Tue Dec 11 2018 08:42:30 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 03:35:53 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Video/ios_video.md)。
