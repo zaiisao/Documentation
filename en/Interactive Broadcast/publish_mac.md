@@ -3,10 +3,13 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: macOS
-updatedAt: Wed Dec 12 2018 07:08:22 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:08:26 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
-## Enable the video mode
+Before publishing or subscribing to any streams, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Video/mac_video.md).
+
+## Implementation
+### Enable the video mode
 Call the `enableVideo` method to enable the video mode. The voice function is enabled by default in the Agora SDK, so you can call the `enableVideo` method before or after joining a channel.
 
 - If you enable the video mode before joining a channel, you enter directly into a video broadcast.
@@ -27,7 +30,7 @@ func enableVideo() {
 }
 ```
 
-## Set the video profile
+### Set the video profile
 After the video mode is enabled, call the `setVideoEncoderConfiguration` method to set the video encoding profile.
 
 In the `setVideoEncoderConfiguration` method, specify the video encoding resolution, frame rate, bitrate, and orientation mode. 
@@ -54,7 +57,7 @@ orientationMode: .fixedPortrait)
 agoraKit.setVideoEncoderConfiguration(configuration)
 ```
 
-## Set the local video view
+### Set the local video view
 The local video view is the display area of the local video streams on the user’s local device.
 
 Call the `setupLocalVideo` method before entering into a channel to bind the application with the video window of the local stream and configure the local video display.
@@ -91,7 +94,7 @@ func setupLocalVideo() {
 }
 ```
 
-## Set the remote video view
+### Set the remote video view
 The remote video view is the display area of the remote video streams on the user’s local device.
 
 Call the `setupRemoteVideo` method to configure the remote video display.
@@ -128,3 +131,17 @@ func setupRemoteVideo() {
 }
 ```
 
+
+## Next Steps
+You are now in a video call. When the call ends, use the Agora SDK to exit the current call:
+
+- [Leave the Channel](../../en/Video/leave_mac.md)
+
+For other functions such as manipulating the audio volume, audio effect, video resolution, or video source, you can refer to the following sections:
+
+- [Adjust the volume](../../en/Video/volume_mac.md)
+- [Play the Audio Effects/Audio Mixing](../../en/Video/effect_mixing_mac.md)
+- [Adjust the Pitch and Tone](../../en/Video/voice_effect_mac.md)
+- [Set the Video Profile](../../en/Video/videoProfile_mac.md)
+- [Customize the Video/Audio Source and Renderer](../../en/Video/custom_video_mac.md)
+- [Share the Screen](../../en/Video/screensharing_mac.md)
