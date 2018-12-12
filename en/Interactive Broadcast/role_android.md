@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 16:32:06 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 09:09:31 GMT+0000 (UTC)
 ---
 # Switch the Client Role
 The channel includes two user roles once you set the channel profile as live broadcast. Call `setClientRole` method to set the user roles according to the needs. The differences of the two roles are:
