@@ -3,7 +3,7 @@
 title: Video Conference of 7+ Users
 description: 
 platform: Android
-updatedAt: Wed Dec 12 2018 07:06:43 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:06:49 GMT+0000 (UTC)
 ---
 # Video Conference of 7+ Users
 A video conference with too many hosts may cause network latency and packet loss. 
@@ -39,7 +39,7 @@ Enable the following modes before calling the `joinChannel` API  method.
 
 ### 3.1 Enable Dual-stream Mode
 
-Whether or not to enable dual-stream mode depends on the application scenario. If your app uses dual windows (one big and one small), then Agora recommends enabling dual-stream mode. Use the following code snippet to enable dual-stream mode:
+Whether or not to enable dual-stream mode depends on the application scenario. If your app uses dual windows (one big and one small), then Agora recommends enabling dual-stream mode. Use `enableDualStreamMode` to enable dual-stream mode:
 
 ### 3.2 Supported High-stream Parameters
 
@@ -98,7 +98,7 @@ Agora recommends using a layout with one big window and multiple small windows.
 
 ## 4. Release Memory Resources
 
-When a user is offline, the app can release all memory resources of the view used by that user. The recommended procedure is:
+When a user is offline, the app releases all memory resources of the view used by that user. The recommended procedure is:
 
 1.  When receiving the callback indicating that a `uid` is offline, call the `setupremotevideo` method.
 2.  Set the view of the `remote` parameter as NULL.
