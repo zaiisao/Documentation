@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: mac平台上发布音视频流
 platform: macOS
-updatedAt: Fri Nov 02 2018 04:02:07 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:08:28 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 ## 打开视频模式
