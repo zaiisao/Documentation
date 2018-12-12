@@ -3,7 +3,7 @@
 title: Create and Initialize an Agora Instance
 description: 
 platform: Android
-updatedAt: Wed Dec 12 2018 07:15:01 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:15:04 GMT+0000 (UTC)
 ---
 # Create and Initialize an Agora Instance
 Before creating an RtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for more information.
@@ -40,7 +40,7 @@ private void initializeAgoraEngine() {
 ```
 
 ## Next Steps
-You have now finished creating the RtcEngine instance and can start a voice call with the following steps:
+You have now finished creating the RtcEngine instance and can start a video call with the following steps:
 * [Join a Channel](../../en/Video/join_video_android.md)
 * [Publish and Subscribe to Streams](../../en/Video/publish_android.md)
 
