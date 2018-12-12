@@ -13,7 +13,7 @@ updatedAt: Tue Dec 11 2018 08:55:13 GMT+0000 (UTC)
 
 
 ## 实现方法
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Interactive%20Broadcast/windows_video.md)。
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/windows_video.md)。
 
 ### 调整设备音量
 
