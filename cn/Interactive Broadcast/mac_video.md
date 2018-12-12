@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Wed Nov 14 2018 04:04:19 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 02:49:49 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
