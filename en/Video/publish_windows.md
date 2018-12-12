@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:08:48 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:30:54 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 ## Enable the video mode
