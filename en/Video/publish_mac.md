@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: macOS
-updatedAt: Fri Nov 02 2018 04:08:37 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:08:22 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 ## Enable the video mode
