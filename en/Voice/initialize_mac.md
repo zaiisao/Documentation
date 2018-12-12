@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: macOS
-updatedAt: Thu Dec 06 2018 10:09:56 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 03:10:41 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating an AgoraRtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/initialize_mac.md) for more information.
