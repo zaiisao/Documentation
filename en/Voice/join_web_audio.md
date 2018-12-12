@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Web
-updatedAt: Wed Dec 12 2018 08:10:49 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 08:10:52 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
@@ -39,4 +39,3 @@ For added requirements on the audio volume, audio effect or voice pitch, you can
 
 - [Adjust the Volume](../../en/Voice/volume_web.md)
 - [Play Audio Effects/Audio Mixing](../../en/Voice/effect_mixing_web.md)
-- [Adjust the Pitch and Tone](../../en/Voice/audio_profile_web.md)
