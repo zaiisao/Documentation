@@ -3,10 +3,10 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Web
-updatedAt: Wed Dec 12 2018 08:22:25 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 08:22:33 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
-Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
+Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Video/web_prepare.md) for more information.
 
 ## Implementation
 
@@ -110,9 +110,11 @@ After initializing the local stream or subscribing to the remote stream, use the
 ## Next steps
 You are now in a voice call. When the call ends, use the Agora SDK to exit the current call:
 
-- [Leave the Channel](../../en/Voice/leave_web.md)
+- [Leave the Channel](../../en/Video/leave_web.md)
 
 For added requirements on the audio volume, audio effect or voice pitch, you can alse take the following steps:
 
-- [Adjust the volume](../../en/Voice/volume_web.md)
-- [Play the Audio Effects/Audio Mixing](../../en/Voice/effect_mixing_web.md)
+- [Adjust the volume](../../en/Video/volume_web.md)
+- [Play the Audio Effects/Audio Mixing](../../en/Video/effect_mixing_web.md)
+- [Set the Video Profile](../../en/Video/videoProfile_web.md)
+- [Share the Screen](../../en/Video/screensharing_web.md)
