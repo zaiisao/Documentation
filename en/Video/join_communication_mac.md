@@ -3,10 +3,10 @@
 title: Join a Channel
 description: 
 platform: macOS
-updatedAt: Wed Dec 12 2018 03:42:09 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 03:42:12 GMT+0000 (UTC)
 ---
 # Join a Channel
-Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../cn/Voice/mac_audio.md) for more information.
+Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../cn/Voice/mac_video.md) for more information.
 
 ## Implementation
 
