@@ -3,7 +3,7 @@
 title: 加入频道
 description: web平台加入频道
 platform: Web
-updatedAt: Wed Dec 12 2018 08:06:23 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 08:06:26 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/web_prepare.md)。
@@ -36,4 +36,3 @@ client.join(<TOKEN_OR_KEY>, <CHANNEL_NAME>, <UID>, function(uid) {
 如果在通话过程中，对音量、音效、音调等有特殊需求，你还可以：
 - [调整通话音量](../../cn/Voice/volume_web.md)
 - [播放音效/音乐混音](../../cn/Voice/effect_mixing_web.md)
-- [调整音调、音色](../../cn/Voice/voice_effect_android_audio.md) 
