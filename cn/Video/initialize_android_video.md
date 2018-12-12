@@ -3,7 +3,7 @@
 title: 创建实例
 description: 安卓平台初始化引擎
 platform: Android
-updatedAt: Wed Dec 12 2018 07:12:25 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:12:29 GMT+0000 (UTC)
 ---
 # 创建实例
 在创建实例前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/android_video.md)。
@@ -43,7 +43,7 @@ private void initializeAgoraEngine() {
 
 ## 相关文档
 
-完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行语音通话：
+完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行视频通话：
 
 - [加入频道](../../cn/Video/join_video_android.md)
 - [发布和订阅音视频流](../../cn/Video/publish_android.md)
