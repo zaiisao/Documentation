@@ -3,9 +3,13 @@
 title: Switch the Client Role
 description: 
 platform: Android
-updatedAt: Wed Dec 12 2018 09:09:31 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 09:09:37 GMT+0000 (UTC)
 ---
 # Switch the Client Role
+Before switching the client role, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md) for more information.
+
+## Implementation
+
 The channel includes two user roles once you set the channel profile as live broadcast. Call `setClientRole` method to set the user roles according to the needs. The differences of the two roles are:
 
 -   Host (Broadcaster): A host can receive and publish the voice streams. The host can also interact with other hosts using voice.
@@ -63,3 +67,17 @@ If one user joins the channel as a host, and the other as an audience. A while l
    //Set the user role as broadcaster
    mRtcEngine.setClientRole(Constants.CLIENT_ROLE_BROADCASTER)
    ```
+
+## Next Steps
+Once the client role is swithced to the broadcaster, you can start a live broadcast with the following step:
+
+- [Publish and Subscrib to Streams](../../en/Interactive%20Broadcast/publish_android_live.md)
+
+For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+
+- [Adjust the Volume](../../en/Interactive%20Broadcast/volume_android.md)
+- [Play Audio Effects/Audio Mixing](../../en/Interactive%20Broadcast/effect_mixing_android.md)
+- [Use In-Ear Monitoring](../../en/Interactive%20Broadcast/in-ear_android.md)
+- [Adjust the Pitch and Tone](../../en/Interactive%20Broadcast/voice_effect_android.md)
+- [Set the Video Profile](../../en/Interactive%20Broadcast/videoProfile_android.md)
+
