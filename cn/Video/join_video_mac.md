@@ -3,7 +3,7 @@
 title: 加入频道
 description: macos平台加入频道
 platform: macOS
-updatedAt: Wed Dec 12 2018 03:35:39 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 03:36:40 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Video/mac_video.md)。
