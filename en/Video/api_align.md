@@ -3,7 +3,7 @@
 title: Summary of Core APIs
 description: List APIs of the key functions across the platforms
 platform: All Platforms
-updatedAt: Thu Dec 06 2018 03:40:16 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 23:23:19 GMT+0000 (UTC)
 ---
 # Summary of Core APIs
 Agora SDK supports multiple platforms, but the implementations of the APIs are not exactly the same across platforms. The table below lists the core APIs on Android, iOS/macOS, Web, and Windows to help you quickly understand the differences.
