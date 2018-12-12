@@ -3,7 +3,7 @@
 title: 音乐混音
 description: How to enable audio mixing on the Web
 platform: Web
-updatedAt: Wed Dec 12 2018 07:49:31 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:49:37 GMT+0000 (UTC)
 ---
 # 音乐混音
 ## 功能描述
@@ -80,7 +80,7 @@ localStream.stopAudioMixing();
   - Chrome 65+
   - 最新版 Firefox
 - 请在频道内调用该方法，如果在频道外调用该方法可能会出现问题。
-- 部分参数选项只有特定浏览器支持，详见[startAudioMixing](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)。
+- 部分参数选项只有特定浏览器支持，详见 [startAudioMixing](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)。
 
 
 
