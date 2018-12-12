@@ -3,7 +3,7 @@
 title: 加入频道
 description: macos平台加入频道
 platform: macOS
-updatedAt: Wed Dec 12 2018 03:36:40 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 03:36:44 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Video/mac_video.md)。
@@ -67,7 +67,7 @@ func joinChannel() {
 
 * [发布和订阅音视频流](../../cn/Video/publish_mac.md)
 
-如果在通话过程中，对音量、音效、音调等有特殊需求，你还可以：
+如果在通话过程中，对音量、音质、视频分辨率等有特殊需求，你还可以：
 
 * [调整通话音量](../../cn/Video/volume_mac.md)
 * [播放音效/音乐混音](../../cn/Video/effect_mixing_mac.md)
