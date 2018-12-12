@@ -3,7 +3,7 @@
 title: 初始化 AgoraRtcEngineKit
 description: macOS平台初始化
 platform: macOS
-updatedAt: Wed Dec 12 2018 08:25:18 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 08:29:46 GMT+0000 (UTC)
 ---
 # 初始化 AgoraRtcEngineKit
 在初始化 AgoraRtcEngineKit 前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/mac_video.md)。
@@ -39,7 +39,7 @@ func initializeAgoraEngine() {
 ```
 
 ## 相关文档
-完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行视频通话/直播：
+完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行视频通话：
 
 * [加入频道](../../cn/Voice/join_communication_mac.md)
 * [发布和订阅音视频流](../../cn/Voice/publish_mac_audio.md)
