@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Dec 12 2018 10:03:05 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 10:03:12 GMT+0000 (UTC)
 ---
 # 发版说明
 
@@ -34,6 +34,9 @@ x86 的编译环境选择 Win32:
 
 <img alt="../_images/x86.png" src="https://web-cdn.agora.io/docs-files/cn/x86.png" style="width: 300px; "/>
 
+## **2.2.1 版**
+
+该版本于 2018 年 5 月 30 日发布。
 
 ## **2.2.0 版**
 
