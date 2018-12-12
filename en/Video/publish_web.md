@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Web
-updatedAt: Tue Dec 11 2018 07:27:51 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 08:22:25 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
