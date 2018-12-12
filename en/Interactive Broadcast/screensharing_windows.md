@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Wed Dec 12 2018 02:58:00 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 02:58:08 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
@@ -14,6 +14,7 @@ Screen sharing is applied in the following scenarios:
 
 - In a video conference, the speaker can share an image of a local file, web page, or presentation with other users in the channel.
 - In an online class, the teacher can share the slides or notes with students.
+
 ## Implementation
 
 Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
