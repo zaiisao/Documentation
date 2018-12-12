@@ -3,7 +3,7 @@
 title: 加入频道
 description: ios平台加入通信频道
 platform: iOS
-updatedAt: Wed Dec 12 2018 03:35:53 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 03:35:57 GMT+0000 (UTC)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Video/ios_video.md)。
@@ -63,7 +63,7 @@ func joinChannel() {
 ```
 
 ## 相关文档
-成功加入频道后，你可以使用 Agora SDK，实现如下功能进行语音通话：
+成功加入频道后，你可以使用 Agora SDK，实现如下功能进行通话：
 
 * [发布和订阅音视频流](../../cn/Video/publish_ios.md)
 
