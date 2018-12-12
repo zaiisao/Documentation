@@ -3,10 +3,13 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Windows
-updatedAt: Wed Dec 12 2018 07:30:54 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:30:57 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
-## Enable the video mode
+Before publishing or subscribing to any streams, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Video/windows_video.md).
+
+## Implementation
+### Enable the video mode
 Call the <code>enableVideo</code> method to enable the video mode. The voice function is enabled by default in the Agora SDK, so you can call the <code>enableVideo</code> method before or after joining a channel.
 
 -   If you enable the video mode before joining a channel, you enter directly into a video broadcast.
@@ -17,7 +20,7 @@ Call the <code>enableVideo</code> method to enable the video mode. The voice fun
 nRet = m_lpAgoraEngine->enableVideo();
 ```
 
-## Set the video profile
+### Set the video profile
 After the video mode is enabled, call the <code>setVideoProfile</code> method to set the video encoding profile.
 
 In the <code>setVideoProfile</code> method, specify the video encoding resolution, frame rate, bitrate, and orientation mode. See the <code>setChannelProfile</code> method for more information.
@@ -32,7 +35,7 @@ int nVideoSolution = m_dlgSetup.GetVideoSolution();
 lpAgoraEngine->setVideoProfile((VIDEO_PROFILE_TYPE)nVideoSolution, m_dlgSetup.IsWHSwap());
 ```
 
-## Set the local video view 
+### Set the local video view 
 The local video view is the display area of the local video streams on the user’s local device.
 
 Call the <code>setupLocalVideo</code> method before entering into a channel to bind the application with the video window of the local stream and configure the local video display area.
@@ -60,7 +63,7 @@ lpRtcEngine->setupLocalVideo(vc);
 ```
 
 
-## Set the remote local view
+### Set the remote local view
 The remote video view is the display area of the remote video streams on the user’s local device.
 
 Call the <code>setupRemoteVideo</code> method to configure the remote video display.
@@ -83,3 +86,17 @@ canvas.view = m_wndVideo[nIndex].GetSafeHwnd();
 
 CAgoraObject::GetEngine()->setupRemoteVideo(canvas);
 ```
+
+## More Steps
+You are now in a video call. When the call ends, use the Agora SDK to exit the current call:
+
+- [Leave the Channel](../../en/Video/leave_windows.md)
+
+For other functions such as manipulating the audio volume, audio effect, video resolution, or video source, you can refer to the following sections:
+
+- [Adjust the volume](../../en/Video/volume_windows.md)
+- [Play the Audio Effects/Audio Mixing](../../en/Video/effect_mixing_windows.md)
+- [Adjust the Pitch and Tone](../../en/Video/voice_effect_windows.md)
+- [Set the Video Profile](../../en/Video/videoProfile_windows.md)
+- [Customize the Video/Audio Source and Renderer](../../en/Video/custom_video_windows.md)
+- [Share the Screen](../../en/Video/screensharing_windows.md)
