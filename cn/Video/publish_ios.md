@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: ios平台上发布音视频流
 platform: iOS
-updatedAt: Wed Dec 12 2018 07:09:38 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:09:42 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 在发布和订阅音视频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Video/ios_video.md)。
@@ -144,5 +144,5 @@ func setupRemoteVideo() {
 - [使用耳返](../../cn/Video/in-ear_ios.md)
 - [调整音调、音色](../../cn/Video/voice_effect_ios.md)
 - [设置视频属性](../../cn/Video/videoProfile_ios.md)
-- [自定义视频采集和渲染](../../cn/Video/custom_video_ios.md)
+- [自定义采集和渲染](../../cn/Video/custom_video_ios.md)
 - [进行屏幕共享](../../cn/Video/screensharing_ios.md)
