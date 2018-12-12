@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: iOS
-updatedAt: Wed Dec 12 2018 03:46:12 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 03:46:15 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
@@ -67,7 +67,7 @@ You are now in the channel and can start a voice call with the following step:
 
 * [Publish and Subscribe to Streams](../../en/Video/publish_ios.md)
 
-For added requirements on the audio volume, audio effect or video profile, you can alse take the following steps:
+For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
 
 * [Adjust the Volume](../../en/Video/volume_ios.md)
 * [Play Audio Effects/Audio Mixing](../../en/Video/effect_mixing_ios.md)
