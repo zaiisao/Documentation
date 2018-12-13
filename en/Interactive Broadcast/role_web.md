@@ -3,13 +3,13 @@
 title: Switch the Client Role
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 16:06:01 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:06:05 GMT+0000 (UTC)
 ---
 # Switch the Client Role
 Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
 
 ## Implementation
-On the Web Client, the client role is switched with the following methods:
+On the Web Client, the following methods are used to switch the client role:
 
 - `client.publish`: Publish the local stream.
 
