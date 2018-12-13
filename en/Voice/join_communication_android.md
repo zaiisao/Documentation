@@ -38,7 +38,7 @@ In the `joinChannel` method:
 
 ```
  private void joinChannel() {
-    mRtcEngine.joinChannel(null, "demoChannel1", "Extra Optional Data", 0); // if you do not specify the uid, Agora will assign one.
+    mRtcEngine.joinChannel(null, "demoChannel1", "Extra Optional Data", 0); // If you do not specify the uid, Agora will assign one.
 }
 ```
 
