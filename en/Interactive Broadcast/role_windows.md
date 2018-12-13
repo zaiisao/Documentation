@@ -28,10 +28,10 @@ int nRet = m_lpAgoraEngine->setClientRole(role);
 
 If two users join a live broadcast channel as hosts:
 
-1. User A calls the `setClientRole` method to set the user role as a host, and calls `joinChannel` to join the channel.
+1. User A calls the `setClientRole` method to set the user role as the host, and calls `joinChannel` to join the channel.
 
    ```cpp
-   //Set the user role as a host.
+   //Set the user role as the host.
    int nRet = m_lpAgoraEngine->setClientRole(role);
    
    //Create and join a channel.
@@ -39,10 +39,10 @@ If two users join a live broadcast channel as hosts:
    nRet = m_lpAgoraEngine->joinChannel(lpDynamicKey, lpChannelName, lpStreamInfo, nUID);
    ```
 	 
-2. User B calls the `setClientRole` method to set the user role as a host, and calls `joinChannel` to join the channel.
+2. User B calls the `setClientRole` method to set the user role as the host, and calls `joinChannel` to join the channel.
 
    ```cpp
-   //Set the user role as a host.
+   //Set the user role as the host.
    int nRet = m_lpAgoraEngine->setClientRole(role);
    
    //Create and join a channel.
@@ -50,12 +50,12 @@ If two users join a live broadcast channel as hosts:
    nRet = m_lpAgoraEngine->joinChannel(lpDynamicKey, lpChannelName, lpStreamInfo, nUID);
    ```
 
-User A joins the channel as a host and user B joins as an audience. If user B wants to switch to a host:
+User A joins the channel as a host and user B joins as an audience. If user B wants to switch to the host:
 
-1. User A calls the `setClientRole` method and sets the user role as a host, and calls the `joinChannel` method to join a channel.
+1. User A calls the `setClientRole` method and sets the user role as the host, and calls the `joinChannel` method to join a channel.
 
    ```cpp
-   //Set the user role as a host.
+   //Set the user role as the host.
    int nRet = m_lpAgoraEngine->setClientRole(role);
    
    //Create and join a channel.
@@ -63,14 +63,14 @@ User A joins the channel as a host and user B joins as an audience. If user B wa
    nRet = m_lpAgoraEngine->joinChannel(lpDynamicKey, lpChannelName, lpStreamInfo, nUID);
    ```
 
-2. User B calls the `joinChannel` method, joins the channel as an audience, and then calls the `setClientRole` method to switch the user role to a host.
+2. User B calls the `joinChannel` method, joins the channel as an audience, and then calls the `setClientRole` method to switch the user role to the host.
 
    ```cpp
 //Create and join a channel.
    LPCSTR lpStreamInfo = "{\"owner\":true,\"width\":640,\"height\":480,\"bitrate\":500}";
    nRet = m_lpAgoraEngine->joinChannel(lpDynamicKey, lpChannelName, lpStreamInfo, nUID);
 	 
-   //Set the user role as a host.
+   //Set the user role as the host.
    int nRet = m_lpAgoraEngine->setClientRole(role);
    ```
 
