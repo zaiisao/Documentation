@@ -3,7 +3,7 @@
 title: 切换用户角色
 description: mac平台切换用户角色
 platform: macOS
-updatedAt: Fri Nov 02 2018 04:18:36 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 07:11:12 GMT+0000 (UTC)
 ---
 # 切换用户角色
 # 切换用户角色
