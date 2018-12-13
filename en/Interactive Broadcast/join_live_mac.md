@@ -3,10 +3,10 @@
 title: Join a Channel
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 16:32:36 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:32:39 GMT+0000 (UTC)
 ---
 # Join a Channel
-Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md) for more information.
+Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md).
 
 ##  Implementation
 
@@ -64,10 +64,10 @@ func joinChannel() {
 ```
 
 ## Next Steps
-You are now in the channel and can start a live broadcast with the following step:
+You are in the channel and can start a live broadcast with the following steps:
 
 - [Switch the Client Role](../../en/Interactive%20Broadcast/role_mac.md)
-- [Publish and Subscrib to Streams](../../en/Interactive%20Broadcast/publish_mac_live.md)
+- [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_mac_live.md)
 
 For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
 
