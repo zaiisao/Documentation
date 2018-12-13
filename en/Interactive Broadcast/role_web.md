@@ -3,9 +3,12 @@
 title: Switch the Client Role
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 16:31:19 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 07:44:09 GMT+0000 (UTC)
 ---
 # Switch the Client Role
+Before switching the client role, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md) for more information.
+
+## Implementation
 On the Web Client, the client role is switched with the following three interfaces:
 
 - `client.publish`: Publish the local stream
@@ -70,4 +73,16 @@ How to switch the client role:
 
   * `client.publish`
 
-> Create and intialize the stream before calling `client.publish` to publish the local audio and video stream. See [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/.publish_web.md).
+> Create and intialize the stream before calling `client.publish` to publish the local audio and video stream. See [Publish and Subscribe to Streams](../../cn/Interactive%20Broadcast/publish_web_video.md).
+
+## Next Steps
+
+Once the client role is swithced to the broadcaster, you can start a live broadcast with the following step:
+
+- [Publish and Subscrib to Streams](../../en/Interactive%20Broadcast/publish_web_live.md)
+
+For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+
+- [Adjust the Volume](../../en/Interactive%20Broadcast/volume_web.md)
+- [Play Audio Effects/Audio Mixing](../../en/Interactive%20Broadcast/effect_mixing_web.md)
+- [Set the Video Profile](../../en/Interactive%20Broadcast/videoProfile_web.md)
