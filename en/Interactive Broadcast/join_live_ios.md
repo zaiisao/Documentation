@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 22:34:21 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:34:24 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md).
@@ -70,7 +70,7 @@ You are in the channel and can start a live broadcast with the following steps:
 - [Switch the Client Role](../../en/Interactive%20Broadcast/role_ios.md)
 - [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_ios_live.md)
 
-For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+For more functions, you can refer to the following sections:
 
 - [Adjust the Volume](../../en/Interactive%20Broadcast/volume_ios.md)
 - [Play Audio Effects/Audio Mixing](../../en/Interactive%20Broadcast/effect_mixing_ios.md)
