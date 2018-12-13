@@ -3,7 +3,7 @@
 title: Leave the Channel
 description: 
 platform: Android
-updatedAt: Thu Dec 13 2018 15:37:15 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 15:37:19 GMT+0000 (UTC)
 ---
 # Leave the Channel
 When a call or live broadcast ends, use the Agora SDK to leave the channel.
@@ -26,4 +26,4 @@ If you encounter any problem integrating or using the Agora SDK, refer to the fo
 
 - [General Asked Questions](../../en/Agora%20Platform/general_questions.md)
 - [Integration and Deployment](../../en/Agora%20Platform/general_questions.md)
-- [Trouble Shooting](../../en/Agora%20Platform/general_questions.md)
+- [Troubleshooting](../../en/Agora%20Platform/general_questions.md)
