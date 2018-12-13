@@ -3,12 +3,16 @@
 title: Join a Channel
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 07:06:51 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 07:07:44 GMT+0000 (UTC)
 ---
 # Join a Channel
+Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md) for more information.
+
+##  Implementation
+
 You need to set the channel profile before the app joins a channel.
 
-## Set the channel profile as Live Broadcast
+### Set the channel profile as Live Broadcast
 After initializing AgoraRtcEngine, call the `setChannelProfile` method to set the channel profile. AgoraRtcEngine applies optimization according to the channel profile.
 
 In the `setChannelProfile` method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles: Host and Audience. The host (broadcaster) sends and receives audio and video streams while the audience can only receive the audio streams.
@@ -30,7 +34,7 @@ func setChannelProfile() {
 }
 ```
 
-## Join a live broadcast channel
+### Join a live broadcast channel
 Call the `joinChannelByToken` method to join a channel. 
 
 In the `joinChannelByToken` method:
@@ -58,3 +62,16 @@ func joinChannel() {
   }
 }
 ```
+
+## Next Steps
+You are now in the channel and can start a live broadcast with the following step:
+
+- [Switch the Client Role](../../en/Interactive%20Broadcast/role_mac.md)
+- [Publish and Subscrib to Streams](../../en/Interactive%20Broadcast/publish_mac_live.md)
+
+For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+
+- [Adjust the Volume](../../en/Interactive%20Broadcast/volume_mac.md)
+- [Play Audio Effects/Audio Mixing](../../en/Interactive%20Broadcast/effect_mixing_mac.md)
+- [Adjust the Pitch and Tone](../../en/Interactive%20Broadcast/voice_effect_mac.md)
+- [Set the Video Profile](../../en/Interactive%20Broadcast/videoProfile_mac.md)
