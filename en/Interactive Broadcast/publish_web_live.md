@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 09:47:01 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 09:47:05 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md) for more information.
@@ -115,3 +115,4 @@ You are now in a live broadcast. When the session ends, use the Agora SDK to exi
 For more functions, you can refer to the following sections:
 
 - [Enable the Interoperability with the Native SDK](../../en/Interactive%20Broadcast/interop_web.md)
+- [Push Streams to the CDN](../../en/Interactive%20Broadcast/push_stream_web.md)
