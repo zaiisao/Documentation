@@ -3,10 +3,10 @@
 title: Create and Initialize an Agora Instance
 description: 
 platform: Android
-updatedAt: Thu Dec 13 2018 22:09:41 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:09:46 GMT+0000 (UTC)
 ---
 # Create and Initialize an Agora Instance
-Before creating an RtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for more information.
+Before creating an RtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/android_video.md).
 
 ## Implementation
 The following imports define the interface of the Agora API that provides communication functionality:
@@ -40,11 +40,11 @@ private void initializeAgoraEngine() {
 ```
 
 ## Next Steps
-You have now finished creating the RtcEngine instance and can start a live broadcast with the following steps:
+You have created the RtcEngine instance and can start a live broadcast with the following steps:
 * [Join a Channel](../../en/Interactive%20Broadcast/join_live_android.md)
 * [Switch the User Role](../../en/Interactive%20Broadcast/role_android.md)
 * [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_android_live.md)
 
-For added requirements on network connection or audio quality, you can also take the following steps before joining a channel:
+To check the network connection or audio quality before joining a channel, you can refer to the following sections:
 * [Conduct a Last mile Test](../../en/Interactive%20Broadcast/lastmile_android.md)
 * [Set the Stereo/High-fidelity Audio Profile](../../en/Interactive%20Broadcast/audio_profile_android.md)
