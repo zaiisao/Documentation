@@ -3,7 +3,7 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Wed Dec 12 2018 07:38:50 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:24:17 GMT+0000 (UTC)
 ---
 # Create and Initialize a Client
 Before creating and initizing the Client, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md) for more information.
