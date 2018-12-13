@@ -3,7 +3,7 @@
 title: 离开频道
 description: android平台离开频道
 platform: Android
-updatedAt: Fri Nov 02 2018 04:02:44 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:34:18 GMT+0000 (UTC)
 ---
 # 离开频道
 调用 `leaveChannel` 方法离开频道，结束或退出通话或直播。
