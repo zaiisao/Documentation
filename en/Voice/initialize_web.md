@@ -3,10 +3,10 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 23:14:19 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:14:27 GMT+0000 (UTC)
 ---
 # Create and Initialize a Client
-Before creating and initizing the Client, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
+Before creating and initizing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md).
 
 ## Implementation
 
@@ -30,10 +30,10 @@ client.init(<APPID>, function () {
 ```
 
 ## Next Steps
-You hava now finished creating the Client and can start a voice call with the following steps:
+You hava created the client and can start a voice call with the following steps:
 - [Join a Channel](../../en/Voice/join_web_audio.md)
 - [Publish and Subscribe to Streams](../../en/Voice/publish_web_audio.md)
 
-For added requirements on network connection or audio quality, you can also take the following steps before joining a channel.
+To check the network connection or audio quality before joining a channel, you can refer to the following sections.
 - [Conduct a Last Mile Test](../../en/Voice/lastmile_web.md)
 - [Set the Stereo/High-fidelity Audio Profile](../../en/Voice/audio_profile_web.md)
