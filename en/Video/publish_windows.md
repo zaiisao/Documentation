@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Windows
-updatedAt: Wed Dec 12 2018 07:30:57 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:25:57 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any streams, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Video/windows_video.md).
