@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 16:17:18 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:17:21 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating and initializing the AgoraRtcEngine instance, ensure that you  prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
@@ -34,5 +34,5 @@ You have created the AgoraRtcEngine instance and can start a live broadcast with
 
 To check the network connection or audio quality before joining a channel, you can refer to the following sections:
 
-* [Conduct a Last mile Test](../../en/Interactive%20Broadcast/lastmile_windows.md)
+* [Conduct a Last Mile Test](../../en/Interactive%20Broadcast/lastmile_windows.md)
 * [Set the Stereo/High-fidelity Audio Profile](../../en/Interactive%20Broadcast/audio_profile_windows.md)
