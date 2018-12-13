@@ -3,10 +3,10 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 23:02:55 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:02:58 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
-Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
+Before publishing or subscribing to any stream, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Voice/web_prepare.md).
 
 ## Implementation
 ### Create a stream
@@ -105,7 +105,7 @@ After initializing the local stream or subscribing to the remote stream, use the
 
 
 ## Next Steps
-You are now in a voice call. When the call ends, use the Agora SDK to exit the current call:
+You are in a voice call. When the call ends, use the Agora SDK to exit the current call:
 
 - [Leave the Channel](../../en/Voice/leave_web.md)
 
