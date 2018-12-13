@@ -45,7 +45,7 @@ The local video view is the display area of the local video streams on the userâ
 
 Call the `setupLocalVideo` method before entering into a channel to bind the application with the video window of the local stream and configure the local video display. The `setupLocalVideo` method creates a `surfaceView` object for the video stream by initializing:
 
--   For the Z order media overlay using `surfaceView.setZOrderMediaOverlay`, setting the parameter to true places the view over of the parent view.
+-   For the Z-order media overlay using `surfaceView.setZOrderMediaOverlay`, setting the parameter to true places the view over of the parent view.
 -   For `surfaceView`, add `surfaceView` to the `local_video_view_container` layout `container`.
 
 To complete the local video setup, pass a new `VideoCanvas` object to mRtcEngine. This binds the video window `surfaceView` and configures the video display settings.
