@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 22:39:11 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:39:14 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating and initializing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md).
@@ -27,7 +27,7 @@ m_lpAgoraEngine->initialize(ctx);
 
 
 ## Next Steps
-You created the client and can start a video call with the following steps:
+You have created the client and can start a video call with the following steps:
 
 - [Join a Channel](../../en/Video/join_video_windows.md)
 - [Publish and Subscribe to Streams](../../en/Video/publish_windows.md)
