@@ -3,7 +3,7 @@
 title: 初始化 AgoraRtcEngineKit
 description: iOS平台初始化
 platform: iOS
-updatedAt: Thu Dec 13 2018 07:50:09 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 07:50:12 GMT+0000 (UTC)
 ---
 # 初始化 AgoraRtcEngineKit
 在初始化 AgoraRtcEngineKit 前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/ios_video.md)。
@@ -40,7 +40,7 @@ func initializeAgoraEngine() {
 ```
 
 ## 相关文档
-完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行语音通话：
+完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行互动直播：
 * [加入频道](../../cn/Interactive%20Broadcast/join_live_ios.md)
 * [切换用户角色](../../cn/Interactive%20Broadcast/role_ios.md)
 * [发布和订阅音频流](../../cn/Interactive%20Broadcast/publish_ios_live.md)
