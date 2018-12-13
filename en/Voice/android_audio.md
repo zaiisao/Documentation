@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Thu Dec 13 2018 23:18:07 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:18:12 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -17,9 +17,9 @@ Development environment:
 - Android Studio 2.0+.
 - Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
-Download Agora SDK：
+Download the Agora SDK：
 
-Agora [Voice SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads)
+The Agora [Voice SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads).
 
 Downloaded files include the libs folder and the sample folder. The following table lists the contents of the libs folder.
 
@@ -76,7 +76,7 @@ Downloaded files include the libs folder and the sample folder. The following ta
 
 2. Add the libs folder according to the storage directory preset in step 1.
 
-3. Add `sourceSets`. In the `build.gradle` file, set the the same storage directory as the libs folder.
+3. Add `sourceSets`. In the `build.gradle` file, set the same storage directory as the libs folder.
 
     ```
     android {
@@ -104,7 +104,7 @@ Downloaded files include the libs folder and the sample folder. The following ta
 
 ## Configure the Android NDK
 
-To call the plug-ins in the inlude files in the libs folder, you need to configure the Android NDK: 
+To call the plug-ins in the include files in the libs folder, you need to configure the Android NDK: 
 
 
 1. Click the **Configure** button and select **Project Defaults \> Project Structure**. Click to download Android NDK.
@@ -156,7 +156,7 @@ In the `proguard-rules.pro` file, add a `-keep` class configuration for the Agor
 
 ## Next Steps
 
-You have now finished setting up the Android environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+You have set up the Android environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
 * Initialize the SDK
 * Join a Channel
 * Publish and Subscrbe to Streams
