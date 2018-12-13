@@ -3,15 +3,15 @@
 title: Switch the Client Role
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 16:04:00 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:04:04 GMT+0000 (UTC)
 ---
 # Switch the Client Role
-Before switching the client role, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md) for more information.
+Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
 
 ## Implementation
-On the Web Client, the client role is switched with the following three interfaces:
+On the Web Client, the client role is switched with the following methods:
 
-- `client.publish`: Publish the local stream
+- `client.publish`: Publish the local stream.
 
 	```
 		client.publish(localStream, function (err) {
@@ -24,7 +24,7 @@ On the Web Client, the client role is switched with the following three interfac
 
 	```
 
-- `client.unpublish`: Unpublish the local stream
+- `client.unpublish`: Unpublish the local stream.
 
 	```
 		client.unpublish(localStream, function (err) {
@@ -37,7 +37,7 @@ On the Web Client, the client role is switched with the following three interfac
 
 	```
 
-- `client.subscribe`: Subscribe to the remote stream
+- `client.subscribe`: Subscribe to the remote stream.
 
 	```
 		client.on('stream-added', function (evt) {
@@ -55,13 +55,13 @@ On the Web Client, the client role is switched with the following three interfac
 		})
 		```
 	
-How to switch the client role:
+To switch the client role:
 - Set the user as the host (broadcaster)
 
   * `client.publish`
   * `client.subscribe`
 
-- Switch the client role from host to audience
+- Switch the client role from the host to the audience
 
   * `client.unpublish`
 
@@ -69,17 +69,17 @@ How to switch the client role:
 
   * `client.subscribe`
 
-- Swtich the client role from audience to host
+- Swtich the client role from the audience to the host
 
   * `client.publish`
 
-> Create and intialize the stream before calling `client.publish` to publish the local audio and video stream. See [Publish and Subscribe to Streams](../../cn/Interactive%20Broadcast/publish_web_video.md).
+> Create and intialize the stream before calling the `client.publish` method to publish the local audio and video stream. See [Publish and Subscribe to Streams](../../cn/Interactive%20Broadcast/publish_web_video.md).
 
 ## Next Steps
 
-Once the client role is swithced to the broadcaster, you can start a live broadcast with the following step:
+Once the client role is switched to the host, you can start a live broadcast with the following step:
 
-- [Publish and Subscrib to Streams](../../en/Interactive%20Broadcast/publish_web_live.md)
+- [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_web_live.md)
 
 For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
 
