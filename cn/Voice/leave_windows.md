@@ -3,7 +3,7 @@
 title: 离开频道
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:03:09 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:38:01 GMT+0000 (UTC)
 ---
 # 离开频道
 通话或直播结束时，调用 <code>leaveChannel</code> 方法离开频道。
