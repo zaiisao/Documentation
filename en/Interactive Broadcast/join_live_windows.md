@@ -15,7 +15,10 @@ You need to set the channel profile before the app joins a channel.
 ### Set the channel profile as Live Broadcast
 After initializing AgoraRtcEngine, call the <code>setChannelProfile</code> method to set the channel profile. AgoraRtcEngine applies optimization according to the channel profile.
 
-In the <code>setChannelProfile</code> method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles: Host and Audience. The host (broadcaster) sends and receives audio streams while the audience can only receive the audio streams.
+In the <code>setChannelProfile</code> method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles:
+
+- The host (broadcaster) sends and receives audio streams.
+- The audience receives audio streams.
 
 
 > -   Call the <code>setChannelProfile</code> method before joining a channel.
