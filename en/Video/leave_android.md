@@ -3,10 +3,10 @@
 title: Leave the Channel
 description: 
 platform: Android
-updatedAt: Thu Dec 13 2018 15:34:09 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 15:34:35 GMT+0000 (UTC)
 ---
 # Leave the Channel
-When a call or live broadcast ends, use the Agora SDK to leave the channel.
+Use the Agora SDK to leave the channel when a call or live broadcast ends.
 
 ## Implementation
 The `leaveChannel` method allows a user to leave a channel and releases all resources related to the call or live broadcast. When the user leaves the channel, the SDK triggers the `onLeaveChannel` callback.
@@ -20,9 +20,9 @@ The `leaveChannel` method allows a user to leave a channel and releases all reso
 > If the `destroy` method is called immediately after the `leaveChannel` method, the `leaveChannel` process will be interrupted, and the SDK will not trigger the `onLeaveChannel` callback.
 
 ## Next Steps
-You hava now integrated basic communication or live broadcast into your app, and can experience more advanced and complex functions following the articles listed under **Advanced Guide**.
+You have now integrated basic communication or live broadcast into your app. For advanced functions, see the sections under **Advanced Guide**.
 
-If you encounter any problem integrating or using the Agora SDK, refer to the following documents or file a Ticket at [Agora Dashboard](https://dashboard.agora.io).
+If you encounter any problem integrating or using the Agora SDK, refer to the following sections or submit a ticket at [Agora Dashboard](https://dashboard.agora.io).
 
 - [General Asked Questions](../../en/Agora%20Platform/general_questions.md)
 - [Integration and Deployment](../../en/Agora%20Platform/general_questions.md)
