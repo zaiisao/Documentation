@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: 微信小程序
-updatedAt: Tue Dec 11 2018 07:04:33 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:46:59 GMT+0000 (UTC)
 ---
 # 集成客户端
 ## 前提条件
