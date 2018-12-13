@@ -3,10 +3,10 @@
 title: Join a Channel
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 22:51:34 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:51:37 GMT+0000 (UTC)
 ---
 # Join a Channel
-Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
+Before joining a channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
 
 ## Implementation
 You need to set the channel profile before the app joins a channel.
@@ -63,11 +63,11 @@ func joinChannel() {
 ```
 
 ## Next Steps
-You are now in the channel and can start a voice call with the following step:
+You are in the channel and can start a voice call with the following step:
 
 * [Publish and Subscribe to Streams](../../en/Video/publish_ios.md)
 
-For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+For more functions, you can refer to the following sections:
 
 * [Adjust the Volume](../../en/Video/volume_ios.md)
 * [Play Audio Effects/Audio Mixing](../../en/Video/effect_mixing_ios.md)
