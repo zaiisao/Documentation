@@ -3,7 +3,7 @@
 title: Create and Initialize an Agora Instance
 description: 
 platform: Android
-updatedAt: Thu Dec 06 2018 10:07:24 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:25:27 GMT+0000 (UTC)
 ---
 # Create and Initialize an Agora Instance
 Before creating an RtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
