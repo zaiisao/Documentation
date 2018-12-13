@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 15:56:37 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:30:05 GMT+0000 (UTC)
 ---
 # Switch the Client Role
 Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
