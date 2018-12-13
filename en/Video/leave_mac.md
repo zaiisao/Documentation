@@ -3,7 +3,7 @@
 title: Leave the Channel
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 15:40:32 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 15:40:40 GMT+0000 (UTC)
 ---
 # Leave the Channel
 When a call or live broadcast ends, use the Agora SDK to leave the channel.
@@ -30,10 +30,10 @@ func leaveChannel() {
 
 
 ## Next Steps
-You hava now integrated basic communication or live broadcast into your app, and can experience more advanced and complex functions following the articles listed under **Advanced Guide**.
+You have integrated basic communication or live broadcast into your app. For advanced functions, see the sections under **Advanced Guide**.
 
-If you encounter any problem integrating or using the Agora SDK, refer to the following documents or file a Ticket at [Agora Dashboard](https://dashboard.agora.io).
+If you encounter any problem integrating or using the Agora SDK, refer to the following sections or submit a ticket at [Agora Dashboard](https://dashboard.agora.io).
 
-- [General Asked Questions](../../en/Agora%20Platform/general_questions.md)
+- [General Questions](../../en/Agora%20Platform/general_questions.md)
 - [Integration and Deployment](../../en/Agora%20Platform/general_questions.md)
-- [Trouble Shooting](../../en/Agora%20Platform/general_questions.md)
+- [Troubleshooting](../../en/Agora%20Platform/general_questions.md)
