@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 22:39:56 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:40:17 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating an AgoraRtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
