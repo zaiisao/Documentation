@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 22:32:55 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:32:58 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md).
@@ -72,7 +72,7 @@ You are in the channel and can start a live broadcast with the following steps:
 - [Switch the Client Role](../../en/Interactive%20Broadcast/role_mac.md)
 - [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_mac_live.md)
 
-For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+For other functions you can refer to the following sections:
 
 - [Adjust the Volume](../../en/Interactive%20Broadcast/volume_mac.md)
 - [Play Audio Effects/Audio Mixing](../../en/Interactive%20Broadcast/effect_mixing_mac.md)
