@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: ios平台上发布音视频流
 platform: iOS
-updatedAt: Thu Dec 13 2018 09:42:39 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 09:42:42 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 在发布和订阅音视频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Interactive%20Broadcast/ios_video.md)。
@@ -140,5 +140,6 @@ func setupRemoteVideo() {
 直播过程中，你还可以实现如下功能：
 * [自定义采集和渲染](../../cn/Interactive%20Broadcast/custom_video_ios.md)
 * [开启与 Web SDK 的互通](../../cn/Interactive%20Broadcast/interop_ios.md)
+* [推流到 CDN](../../cn/Interactive%20Broadcast/push_stream_ios2.0.md)
 * [导入在线媒体流](../../cn/Interactive%20Broadcast/inject_stream_ios.md)
 * [改善弱网环境下的用户体验](../../cn/Interactive%20Broadcast/fallback_ios.md)
