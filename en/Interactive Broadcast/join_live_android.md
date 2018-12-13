@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Thu Dec 13 2018 22:34:47 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:34:50 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
@@ -49,7 +49,7 @@ You are in the channel and can start a live broadcast with the following steps:
 - [Switch the Client Role](../../en/Interactive%20Broadcast/role_android.md)
 - [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_android_live.md)
 
-For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+For more functions, you can refer to the following sections:
 
 - [Adjust the Volume](../../en/Interactive%20Broadcast/volume_android.md)
 - [Play Audio Effects/Audio Mixing](../../en/Interactive%20Broadcast/effect_mixing_android.md)
