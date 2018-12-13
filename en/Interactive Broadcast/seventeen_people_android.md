@@ -3,7 +3,7 @@
 title: Video Conference of 7+ Users
 description: 
 platform: Android
-updatedAt: Wed Dec 12 2018 07:06:49 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:56:10 GMT+0000 (UTC)
 ---
 # Video Conference of 7+ Users
 A video conference with too many hosts may cause network latency and packet loss. 
