@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 16:06:51 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:06:54 GMT+0000 (UTC)
 ---
 # Switch the Client Role
 Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
@@ -69,11 +69,11 @@ To switch the client role:
 
   * `client.subscribe`
 
-- Swtich the client role from the audience to the host
+- Switch the client role from the audience to the host
 
   * `client.publish`
 
-> Create and intialize the stream before calling the `client.publish` method to publish the local audio and video stream. See [Publish and Subscribe to Streams](../../cn/Interactive%20Broadcast/publish_web_video.md).
+> Create and initialize the stream before calling the `client.publish` method to publish the local audio and video stream. See [Publish and Subscribe to Streams](../../cn/Interactive%20Broadcast/publish_web_video.md).
 
 ## Next Steps
 
