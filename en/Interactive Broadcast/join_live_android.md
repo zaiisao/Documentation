@@ -14,10 +14,13 @@ You need to set the channel profile before the app joins a channel.
 ### Set the channel profile as Live Broadcast
 After initializing RtcEngine, call the `setChannelProfile` method to set the channel profile. RtcEngine applies optimization according to the channel profile.
 
-In the `setChannelProfile` method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles: Host and Audience. The host\(broadcaster\) sends and receives audio and video streams while the audience can only receive the audio and video streams.
+In the `setChannelProfile` method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles: 
+
+- The host\(broadcaster\) sends and receives audio and video streams
+- The audience receives the audio and video streams.
 
 > -   Call the `setChannelProfile` method before joining a channel.
-> -   One engine can be specified one profile only. If you want to switch to another profile, destroy the current RtcEngine using the `destroy` method and create a new RtcEngine before calling the `setChannelProfile` method to set the new channel profile.
+> -   One engine uses one profile only. If you want to switch to another profile, destroy the current RtcEngine using the `destroy` method and create a new RtcEngine before calling the `setChannelProfile` method to set the new channel profile.
 
 ```
 mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_LIVE_BROADCASTING);
