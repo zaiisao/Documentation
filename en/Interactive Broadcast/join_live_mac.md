@@ -21,7 +21,7 @@ In the `setChannelProfile` method, set the channel profile as Live Broadcast. Th
 - The audience receives audio and video streams.
 
 > - Call the `setChannelProfile` method before joining a channel.
-> - One engine can specify one profile only. If you want to switch to another profile, destroy the current engine using the `destroy` method and create a new engine before calling the `setChannelProfile` method to set the new channel profile.
+> - One engine uses one profile only. If you want to switch to another profile, destroy the current engine using the `destroy` method and create a new engine before calling the `setChannelProfile` method to set the new channel profile.
 
 ```objective-c
 //Objective-C
