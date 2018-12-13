@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 07:53:26 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 07:53:30 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating an AgoraRtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md) for more information.
@@ -39,7 +39,7 @@ func initializeAgoraEngine() {
 ```
 
 ## Next Steps
-You have now finished creating the AgoraRtcEngine instance and can start a video call with the following steps:
+You have now finished creating the AgoraRtcEngine instance and can start a live broadcast with the following steps:
 * [Join a Channel](../../en/Interactive%20Broadcast/join_live_mac.md)
 * [Switch the Client Role](../../en/Interactive%20Broadcast/role_mac.md)
 * [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_mac_live.md)
