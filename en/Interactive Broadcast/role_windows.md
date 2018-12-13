@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 16:30:05 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:30:11 GMT+0000 (UTC)
 ---
 # Switch the Client Role
 Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
@@ -75,7 +75,7 @@ User A joins the channel as a host and user B joins as an audience. If user B wa
    ```
 
 ## Next Steps
-Once the client role is switched to the broadcaster, you can start a live broadcast with the following step:
+Once the client role is switched to the host, you can start a live broadcast with the following step:
 
 - [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_windows_live.md)
 
