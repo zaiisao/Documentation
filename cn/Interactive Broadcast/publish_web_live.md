@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: Web平台上发布音视频流
 platform: Web
-updatedAt: Thu Dec 13 2018 09:46:37 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 09:46:40 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 在发布和订阅音视频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Interactive%20Broadcast/web_prepare.md)。
@@ -109,3 +109,4 @@ client.on('stream-subscribed', function (evt) {
 
 直播过程中，你还可以实现如下功能：
 * [开启与 Native SDK 的互通](../../cn/Interactive%20Broadcast/interop_web.md)
+* [推流到 CDN](../../cn/Interactive%20Broadcast/push_stream_web.md)
