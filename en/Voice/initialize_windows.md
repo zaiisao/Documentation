@@ -3,10 +3,10 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 23:09:07 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:09:10 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
-Before creating and initizing the Client, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/windows_video.md) for more information.
+Before creating and initizing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/windows_video.md).
 
 ## Implementation
 
@@ -27,12 +27,12 @@ m_lpAgoraEngine->initialize(ctx);
 
 
 ## Next Steps
-You hava now finished creating the Client and can start a voice call with the following steps:
+You hava created the Client and can start a voice call with the following steps:
 
 - [Join a Channel](../../en/Voice/join_communication_windows.md)
 - [Publish and Subscribe to Streams](../../en/Voice/publish_windows_audio.md)
 
-For added requirements on network connection or audio quality, you can also take the following steps before joining a channel.
+To check the network connection or audio quality before joining a channel, you can refer to the following sections.
 
 - [Conduct a Last Mile Test](../../en/Voice/lastmile_windows.md)
 - [Set the Stereo/High-fidelity Audio Profile](../../en/Voice/audio_profile_windows.md)
