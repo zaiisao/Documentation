@@ -3,7 +3,7 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 16:09:53 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:10:03 GMT+0000 (UTC)
 ---
 # Create and Initialize a Client
 Before creating and initizing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
@@ -30,7 +30,7 @@ client.init(<APPID>, function () {
 ```
 
 ## Next Steps
-You have finished creating the AgoraRtcEngine instance and can start a video call with the following steps:
+You have created the AgoraRtcEngine instance and can start a video call with the following steps:
 * [Join a Channel](../../en/Interactive%20Broadcast/join_live_web.md)
 * [Switch the Client Role](../../en/Interactive%20Broadcast/role_web.md)
 * [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_web_live.md)
