@@ -3,10 +3,10 @@
 title: Join a Channel
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 22:49:37 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:49:40 GMT+0000 (UTC)
 ---
 # Join a Channel
-Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../cn/Video/mac_video.md) for more information.
+Before joining a channel, ensure that you prepared the development environment. See [Integrate the SDK](../../cn/Video/mac_video.md).
 
 ## Implementation
 
@@ -64,11 +64,11 @@ func joinChannel() {
 ```
 
 ## Next Steps
-You are now in the channel and can start a voice call with the following step:
+You are in the channel and can start a voice call with the following step:
 
-* [Publish and Subscrib to Streams](../../en/Video/publish_mac.md)
+* [Publish and Subscribe to Streams](../../en/Video/publish_mac.md)
 
-For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+For more functions, you can refer to the following sections:
 
 * [Adjust the Volume](../../en/Video/volume_mac.md)
 * [Play Audio Effects/Audio Mixing](../../en/Video/effect_mixing_mac.md)
