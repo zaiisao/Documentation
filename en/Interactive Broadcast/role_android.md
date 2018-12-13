@@ -3,10 +3,10 @@
 title: Switch the Client Role
 description: 
 platform: Android
-updatedAt: Thu Dec 13 2018 21:53:17 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 21:53:21 GMT+0000 (UTC)
 ---
 # Switch the Client Role
-Before switching the client role, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md) for more information.
+Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
 
 ## Implementation
 
@@ -69,9 +69,9 @@ If one user joins the channel as a host, and the other as an audience. A while l
    ```
 
 ## Next Steps
-Once the client role is swithced to the broadcaster, you can start a live broadcast with the following step:
+Once the client role is switched to the host, you can start a live broadcast with the following step:
 
-- [Publish and Subscrib to Streams](../../en/Interactive%20Broadcast/publish_android_live.md)
+- [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_android_live.md)
 
 For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
 
