@@ -3,7 +3,7 @@
 title: Leave the Channel
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:09:04 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:43:40 GMT+0000 (UTC)
 ---
 # Leave the Channel
 Use the `client.leave`  method to remove the user from the current channel.
