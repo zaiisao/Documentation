@@ -3,7 +3,7 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 16:11:08 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:17:45 GMT+0000 (UTC)
 ---
 # Create and Initialize a Client
 Before creating and initializing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
