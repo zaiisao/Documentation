@@ -3,7 +3,7 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Tue Dec 11 2018 07:19:41 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:14:19 GMT+0000 (UTC)
 ---
 # Create and Initialize a Client
 Before creating and initizing the Client, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md) for more information.
