@@ -3,7 +3,7 @@
 title: 离开频道
 description: 
 platform: macOS
-updatedAt: Fri Nov 02 2018 04:02:59 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:36:12 GMT+0000 (UTC)
 ---
 # 离开频道
 通话或直播结束时，调用 `leaveChannel` 方法离开频道。
