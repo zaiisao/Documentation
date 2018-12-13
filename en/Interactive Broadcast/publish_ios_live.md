@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 09:42:25 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 09:42:29 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any streams, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
@@ -141,5 +141,6 @@ For more functions, you can refer to the following sections:
 
 - [Customize the Video/Audio Source and Renderer](../../en/Interactive%20Broadcast/custom_video_ios.md)
 - [Enable the Interoperability with the Web SDK](../../en/Interactive%20Broadcast/interop_ios.md)
+- [Push Streams to the CDN](../../en/Interactive%20Broadcast/push_stream_ios2.0.md)
 - [Inject an Online Media Stream](../../en/Interactive%20Broadcast/inject_stream_ios.md)
 - [Improve Experience Under Poor Network Conditions](../../en/Interactive%20Broadcast/fallback_ios.md)
