@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 16:21:35 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:21:40 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating an AgoraRtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md).
@@ -46,5 +46,5 @@ You have created the AgoraRtcEngine instance and can start a live broadcast with
 
 To check the network connection or audio quality before joining a channel, you can refer to the following sections:
 
-* [Conduct a Last mile Test](../../en/Interactive%20Broadcast/lastmile_ios.md)
+* [Conduct a Last Mile Test](../../en/Interactive%20Broadcast/lastmile_ios.md)
 * [Set the Stereo/High-fidelity Audio Profile](../../en/Interactive%20Broadcast/audio_profile_mac.md)
