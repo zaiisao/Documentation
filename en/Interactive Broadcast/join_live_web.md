@@ -3,10 +3,10 @@
 title: Join a Channel
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 16:11:50 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:11:54 GMT+0000 (UTC)
 ---
 # Join a Channel
-Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md) for more information.
+Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
 
 ## Implementation
 
@@ -31,10 +31,10 @@ client.join(<TOKEN_OR_KEY>, <CHANNEL_NAME>, <UID>, function(uid) {
 
 ## Next Steps
 
-You are now in the channel and can start a live broadcast with the following step:
+You are in the channel and can start a live broadcast with the following step:
 
 - [Switch the Client Role](../../en/Interactive%20Broadcast/role_web.md)
-- [Publish and Subscrib to Streams](../../en/Interactive%20Broadcast/publish_web_live.md)
+- [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_web_live.md)
 
 For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
 
