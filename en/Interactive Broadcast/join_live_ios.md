@@ -13,10 +13,13 @@ Before joining the channel, ensure that you have finished preparing the developm
 ### Set the channel profile as Live Broadcast
 After initializing AgoraRtcEngine, call the `setChannelProfile` method to set the channel profile. AgoraRtcEngine applies optimization according to the channel profile.
 
-In the `setChannelProfile` method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles: Host and Audience. The host (broadcaster) sends and receives audio and video streams while the audience can only receive the audio streams.
+In the `setChannelProfile` method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles:
+
+- The host (broadcaster) sends and receives audio and video streams.
+- The audience receives the audio and video streams.
 
 > - Call the `setChannelProfile` method before joining a channel.
-> - One engine can be specified one profile only. If you want to switch to another profile, destroy the current engine using the `destroy` method and create a new engine before calling the `setChannelProfile` method to set the new channel profile.
+> - One engine can specify one profile only. If you want to switch to another profile, destroy the current engine using the `destroy` method and create a new engine before calling the `setChannelProfile` method to set the new channel profile.
 
 ```objective-c
 //Objective-C
