@@ -10,61 +10,63 @@ Before switching the client role, ensure that you prepared the development envir
 
 ## Implementation
 
-The channel includes two user roles once you set the channel profile as live broadcast. Call `setClientRole` method to set the user roles according to the needs. The differences of the two roles are:
+A live broadcast channel consists of two user roles: 
 
--   Host (Broadcaster): A host can receive and publish the voice streams. The host can also interact with other hosts using voice.
--   Audience: An audience can only hear the host(s).
+-   Host (Broadcaster): A host receives and publishes the voice streams, and interacts with other hosts using voice.
+-   Audience: An audience can only hear the hosts.
+
+You can call the `setClientRole` method to set the user role. 
 
 ```
 mRtcEngine.setClientRole(Constants.CLIENT_ROLE_BROADCASTER)
 ```
 
-> This method can be called either before joining a live broadcast channel or during a live broadcast:
+> You can call the `setClientRole` method before joining a live broadcast channel or during a live broadcast:
 > 
->  - Before joining the channel: Set the client role as the broadcaster or audience.
->  -  During a live broadcast: Switch the user role from audience to broadcaster or vice versa.
+>  - Before joining the channel: Set the client role as the host or audience.
+>  -  During a live broadcast: Switch the user role from an audience to the host or vice versa.
 
-Suppose two users join a live broadcast channel. If both users join the channel as hosts:
+If two users join a live broadcast channel as hosts:
 
-1. User A calls `setClientRole`, sets the user role as boradcaster, and calls `joinChannel` to join the channel.
+1. User A calls the `setClientRole` method to set the user role as the host, and calls the `joinChannel` method to join the channel.
 
    ```Java
-   //Set the user role as broadcaster
+   //Set the user role as the host.
    mRtcEngine.setClientRole(Constants.CLIENT_ROLE_BROADCASTER)
    
-   //Create and join a channel
+   //Create and join a channel.
    mRtcEngine.joinChannel(null, "channelName", null, myUid)
    ```
 	 
-2. User B calls `setClientRole`, sets the user role as broadcaster, and calls `joinChannel` to join the channel.
+2. User B calls the `setClientRole` method to set the user role as the host, and calls the `joinChannel` method to join a channel.
 
    ```Java
-   //Set the user role as broadcaster
+   //Set the user role as the host.
    mRtcEngine.setClientRole(Constants.CLIENT_ROLE_BROADCASTER)
    
-   //Create and join a channel
+   //Create and join a channel.
    mRtcEngine.joinChannel(null, "channelName", null, myUid)
    ```
 	 
-If one user joins the channel as a host, and the other as an audience. A while later, the other user wants to swtich to a host:
+User A joins the channel as a host and user B joins as an audience. If user B wants to switch to a host:
 
-1. User A calls `setClientRole`, sets the user role as host, and then calls `joinChannel` to join a channel.
+1. User A calls the `setClientRole` method to set the user role as the host, and calls the `joinChannel` method to join a channel.
 
    ```Java
-   //Set the user role as boradcaster
+   //Set the user role as the host.
    mRtcEngine.setClientRole(Constants.CLIENT_ROLE_BROADCASTER)
    
-   //Create and join a channel
+   //Create and join a channel.
    mRtcEngine.joinChannel(null, "channelName", null, myUid)
    ```
 	 
-2. User B calls `joinChannel`, joins the channel as an audience, and then calls `setClientRole` to switch the user role to host.
+2. User B calls the `joinChannel` method to join the channel as an audience, and calls the `setClientRole` method to switch the user role to the host.
 
    ```Java
-   //Create and join a channel
+   //Create and join a channel.
    mRtcEngine.joinChannel(null, "channelName", null, myUid)
    
-   //Set the user role as broadcaster
+   //Set the user role as the host.
    mRtcEngine.setClientRole(Constants.CLIENT_ROLE_BROADCASTER)
    ```
 
