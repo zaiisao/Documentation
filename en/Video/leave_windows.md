@@ -3,7 +3,7 @@
 title: Leave the Channel
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 08:44:07 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 15:36:10 GMT+0000 (UTC)
 ---
 # Leave the Channel
 When a call or live broadcast ends, use the Agora SDK to leave the channel.
