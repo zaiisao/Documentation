@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 07:34:30 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 07:34:34 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating an AgoraRtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md).
@@ -41,10 +41,10 @@ func initializeAgoraEngine() {
 
 ## Next Steps
 You have now created the AgoraRtcEngine instance and can start a video call with the following steps:
-* [Join a Channel](../../cn/Interactive%20Broadcast/join_live_ios.md)
+* [Join a Channel](../../en/Interactive%20Broadcast/join_live_ios.md)
 * [Switch the Client Role](../../en/Interactive%20Broadcast/role_ios.md)
-* [Publish and Subscribe to Streams](../../cn/Interactive%20Broadcast/publish_ios_live.md)
+* [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_ios_live.md)
 
 To check the network connection or audio quality before joining a channel, you can refer to the following sections:
-* [Conduct a Last mile Test](../../cn/Interactive%20Broadcast/lastmile_ios.md)
-* [Set the Stereo/High-fidelity Audio Profile](../../cn/Interactive%20Broadcast/audio_profile_ios.md)
+* [Conduct a Last mile Test](../../en/Interactive%20Broadcast/lastmile_ios.md)
+* [Set the Stereo/High-fidelity Audio Profile](../../en/Interactive%20Broadcast/audio_profile_ios.md)
