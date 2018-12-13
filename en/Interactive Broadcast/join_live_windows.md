@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 16:13:28 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:13:32 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
@@ -47,7 +47,7 @@ nRet = m_lpAgoraEngine->joinChannel(lpDynamicKey, lpChannelName, lpStreamInfo, n
 ```
 
 ## Next Steps
-You are now in the channel and can start a live broadcast with the following step:
+You are in the channel and can start a live broadcast with the following step:
 
 - [Switch the Client Role](../../en/Interactive%20Broadcast/role_windows.md)
 - [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_windows_live.md)
