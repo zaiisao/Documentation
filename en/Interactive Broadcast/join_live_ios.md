@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: iOS
-updatedAt: Wed Dec 12 2018 09:54:45 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:46:39 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md) for more information.
