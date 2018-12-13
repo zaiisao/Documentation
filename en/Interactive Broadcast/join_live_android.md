@@ -28,9 +28,9 @@ Call the `joinChannel` method to join a channel.
 
 In the `joinChannel` method:
 
--   Pass a token that can identify the role and privilege of the user. Set token as null for low security requirements. A token is generated at the server of the application. For how to generate a token, see [Security Keys](../../en/Interactive%20Broadcast/token.md).
--   Pass a channel ID that can identify the channel. Users that input the same channel ID enter into the same channel.
--   Pass a uid that can identify the user. Every user in a channel requires a unique uid. If you want to join the same channel on different devices, ensure that different uids are used for each device.
+-   Pass a token that identifies the role and privilege of the user. Set token as null for low-security requirements. A token is generated at the server of the app. For how to generate a token, see [Security Keys](../../en/Interactive%20Broadcast/token.md).
+-   Pass a channel ID that identifies the channel. Users that input the same channel ID enter into the same channel.
+-   Pass a uid that identifies the user. Each user in a channel requires a unique uid. If you want to join the same channel on different devices, ensure that different uids are used for each device.
 
 > Once in a channel, a user must call the `leaveChannel` method to exit the current channel before entering another channel.
 
