@@ -9,12 +9,12 @@ updatedAt: Thu Dec 13 2018 16:38:15 GMT+0000 (UTC)
 Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md).
 
 ## Implementation
-An interactive broadcast channel consists of two user roles: 
+A live broadcast channel consists of two user roles: 
 
 - Host (Broadcaster): A host receives and publishes the voice/video streams, and interacts with other hosts using voice and video.
 - Audience: An audience receives the voice and video streams of the hosts.
 
-You can call the `setClientRole` method to set the user role as the host or audience according to your needs
+You can call the `setClientRole` method to set the user role.
 
 
 ```objective-c
@@ -38,7 +38,7 @@ You can call the `setClientRole` method to set the user role as the host or audi
 
 If two users join a live broadcast channel as hosts:
 
-1. User A calls the `setClientRole` method to set the user role as the host, and calls the `joinChannelByToken` method to join the channel.
+1. User A calls the `setClientRole` method to set the user role as the host, and calls the `joinChannelByToken` method to join a channel.
 
    ```objective-c
    //Objective-C
@@ -70,7 +70,7 @@ If two users join a live broadcast channel as hosts:
    }
    ```
 	 
-2. User B calls the `setClientRole` method to set the user role as the host, and calls the `joinChannelByToken` method to join the channel.
+2. User B calls the `setClientRole` method to set the user role as the host, and calls the `joinChannelByToken` method to join a channel.
 
    ```objective-c
    //Objective-C
@@ -104,7 +104,7 @@ If two users join a live broadcast channel as hosts:
 
 User A joins the channel as a host and user B joins as an audience. If user B wants to switch to a host:
 
-1. User A calls the `setClientRole` method to set the user role as the host, and then calls the `joinChannelByToken` method to join a channel.
+1. User A calls the `setClientRole` method to set the user role as the host, and calls the `joinChannelByToken` method to join a channel.
 
    ```objective-c
    //Objective-C
@@ -136,7 +136,7 @@ User A joins the channel as a host and user B joins as an audience. If user B wa
    }
    ```
 
-2. User B calls the `joinChannelByToken` method to join the channel as an audience, and then calls the `setClientRole` method to switch the user role to the host.
+2. User B calls the `joinChannelByToken` method to join the channel as an audience, and calls the `setClientRole` method to switch the user role to the host.
 
    ```objective-c
 //Objective-C
