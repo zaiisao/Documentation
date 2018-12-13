@@ -3,10 +3,11 @@
 title: 信令 API
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:58:51 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0
+
 ## 方法
 
 
@@ -197,12 +198,9 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 该方法用于登录 Agora 信令系统。用户在进行任何操作前，必须先登录。
 
--   登录成功：回调 <code>onLoginSuccess</code>，
-
--   登录失败：回调 <code>onLoginFailed</code>，
-
--   登录之后失去与服务器的连接：回调 <code>onLogout</code>。
-
+- 登录成功：回调 <code>onLoginSuccess</code>，
+- 登录失败：回调 <code>onLoginFailed</code>，
+- 登录之后失去与服务器的连接：回调 <code>onLogout</code>。
 
 <table>
 <colgroup>
@@ -245,12 +243,9 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 该方法用于登录 Agora 信令系统。用户在进行任何操作前，必须先登录。
 
--   登录成功：回调 <code>onLoginSuccess</code>，
-
--   登录失败：回调 <code>onLoginFailed</code>，
-
--   登录之后失去与服务器的连接：回调 <code>onLogout</code>。
-
+- 登录成功：回调 <code>onLoginSuccess</code>，
+- 登录失败：回调 <code>onLoginFailed</code>，
+- 登录之后失去与服务器的连接：回调 <code>onLogout</code>。
 
 <table>
 <colgroup>
@@ -710,7 +705,6 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 > - `_sendmsg_limit` : 整个频道每秒能发送的消息数
 > - `_setattr_limit` : 频道每个属性每秒能修改的次数
 
-
 #### <a name="channeldelattr-mac"></a>删除频道属性 \(channelDelAttr:name:\)
 
 ```
@@ -842,12 +836,9 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 如果呼叫失败，会回调 <code>onInviteFailed</code>。可能的原因有：
 
--   对方不在线；
-
--   本端网络不通；
-
--   服务器异常
-
+- 对方不在线；
+- 本端网络不通；
+- 服务器异常
 
 如果收到对方的确认信息，本地将回调 <code>onInviteReceivedByPeer</code>, 对方会回调 <code>onInviteReceived</code>。
 
@@ -1247,6 +1238,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onError)(NSString* name,AgoraEcode ecode,NSString* desc) ;
+
 ```
 
 该回调返回详细的出错信息。
@@ -1287,6 +1279,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onQueryUserStatusResult)(NSString* name,NSString* status) ;
+
 ```
 
 该回调返回用户状态查询结果。调用 <code>queryUserStatus</code> 方法时触发此回调。
@@ -1320,6 +1313,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onReconnected)(int fd) ;
+
 ```
 
 当重连成功会触发此回调。重连失败会触发 <code>onLogout</code> 回调。
@@ -1345,6 +1339,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onLoginSuccess)(uint32_t uid,int fd) ;
+
 ```
 
 当登录成功后触发此回调。
@@ -1373,6 +1368,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onLogout)(AgoraEcode ecode) ;
+
 ```
 
 当退出登录时触发此回调。
@@ -1398,6 +1394,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInvokeRet)(NSString* callID,NSString* err,NSString* resp) ;
+
 ```
 
 当 RPC 远程过程调用成功触发此回调。
@@ -1429,6 +1426,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onLoginFailed)(AgoraEcode ecode) ;
+
 ```
 
 当登录失败时触发此回调。
@@ -1454,6 +1452,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelJoined)(NSString* channelID) ;
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1479,6 +1478,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelJoinFailed)(NSString* channelID,AgoraEcode ecode) ;
+
 ```
 
 当加入频道失败触发此回调。
@@ -1507,6 +1507,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelLeaved)(NSString* channelID,AgoraEcode ecode) ;
+
 ```
 
 当离开频道成功触发此回调。
@@ -1535,6 +1536,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelUserJoined)(NSString* account,uint32_t uid) ;
+
 ```
 
 当有用户加入频道触发此回调。
@@ -1563,6 +1565,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelUserLeaved)(NSString* account,uint32_t uid) ;
+
 ```
 
 当有用户离开频道触发此回调。
@@ -1591,6 +1594,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelUserList)(NSMutableArray* accounts, NSMutableArray* uids);
+
 ```
 
 当加入频道成功后，本人会收到此回调。
@@ -1621,6 +1625,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelQueryUserNumResult)(NSString* channelID,AgoraEcode ecode,int num) ;
+
 ```
 
 查询频道用户数量时触发。
@@ -1652,6 +1657,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelAttrUpdated)(NSString* channelID,NSString* name,NSString* value,NSString* type) ;
+
 ```
 
 当频道属性变化时触发。
@@ -1694,6 +1700,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteReceived)(NSString* channelID,NSString* account,uint32_t uid, NSString* extra) ;
+
 ```
 
 当收到呼叫邀请时触发。
@@ -1728,6 +1735,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteReceivedByPeer)(NSString* channelID,NSString* account,uint32_t uid) ;
+
 ```
 
 当呼叫被对方收到时触发。
@@ -1762,6 +1770,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteAcceptedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
+
 ```
 
 当呼叫被对方接受时触发。
@@ -1796,6 +1805,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteRefusedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
+
 ```
 
 当呼叫被对方拒绝时触发。
@@ -1819,7 +1829,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 <td>废弃字段</td>
 </tr>
 <tr><td><code>extra</code></td>
-<td>呼叫方向对方发送的其他信息，如该呼叫为视频通话还是语音通话。必须为 JSON 模式。</td>
+<td>呼叫方向对方发送的其他信息。无论该呼叫为视频通话还是语音通话，必须为 JSON 格式。</td>
 </tr>
 </tbody>
 </table>
@@ -1830,6 +1840,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteFailed)(NSString* channelID,NSString* account,uint32_t uid,AgoraEcode ecode,NSString* extra) ;
+
 ```
 
 当呼叫失败时触发。
@@ -1867,6 +1878,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteEndByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
+
 ```
 
 当呼叫被对方结束时触发。
@@ -1901,6 +1913,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteEndByMyself)(NSString* channelID,NSString* account,uint32_t uid) ;
+
 ```
 
 当呼叫被自己结束时触发。
@@ -1932,6 +1945,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteMsg)(NSString* channelID,NSString* account,uint32_t uid,NSString* msgType,NSString* msgData,NSString* extra) ;
+
 ```
 
 当本地接收到远端用户发送的 DTMF 消息时触发该回调。
@@ -1972,6 +1986,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onMessageSendError)(NSString* messageID,AgoraEcode ecode) ;
+
 ```
 
 当发送消息失败时触发。
@@ -2000,6 +2015,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onMessageSendSuccess)(NSString* messageID) ;
+
 ```
 
 当发送消息成功时触发。
@@ -2025,6 +2041,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onMessageInstantReceive)(NSString* account,uint32_t uid,NSString* msg) ;
+
 ```
 
 接收方收到消息时接收方收到的回调。
@@ -2056,6 +2073,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onMessageChannelReceive)(NSString* channelID,NSString* account,uint32_t uid,NSString* msg) ;
+
 ```
 
 当收到频道消息时触发。
@@ -2090,6 +2108,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onLog)(NSString* txt) ;
+
 ```
 
 当有日志打印时触发。
@@ -2115,6 +2134,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onUserAttrResult)(NSString* account,NSString* name,NSString* value) ;
+
 ```
 
 用户属性查询结果回调。
@@ -2146,6 +2166,7 @@ updatedAt: Thu Dec 13 2018 08:58:43 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onUserAttrAllResult)(NSString* account, NSString* value) ;
+
 ```
 
 用户属性查询结果回调。
