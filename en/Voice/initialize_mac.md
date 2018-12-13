@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 23:27:58 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:28:02 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating an AgoraRtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/mac_video.md).
@@ -44,7 +44,7 @@ You have created the AgoraRtcEngine instance and can start a voice call with the
 * [Join a Channel](../../en/Voice/join_communication_mac.md)
 * [Publish and Subscribe to Streams](../../en/Voice/publish_mac_audio.md)
 
-For more functions, you can refer to the following sections:
+To check the network connection or audio quality before joining a channel, you can refer to the following sections:
 
 * [Conduct a Last Mile Test](../../en/Voice/lastmile_ios.md)
 * [Set the Stereo/High-fidelity Audio Profile](../../en/Voice/audio_profile_mac.md)
