@@ -3,7 +3,7 @@
 title: 加入频道
 description: 小程序加入频道
 platform: 微信小程序
-updatedAt: Fri Nov 02 2018 04:01:34 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:59:24 GMT+0000 (UTC)
 ---
 # 加入频道
 初始化客户端对象后，在成功的回调中调用  加入频道 `join` 方法，并在该方法中填入以下参数值：
