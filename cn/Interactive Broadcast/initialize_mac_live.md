@@ -3,7 +3,7 @@
 title: 初始化 AgoraRtcEngineKit
 description: macOS平台初始化
 platform: macOS
-updatedAt: Thu Dec 13 2018 07:02:34 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 07:49:38 GMT+0000 (UTC)
 ---
 # 初始化 AgoraRtcEngineKit
 在初始化 AgoraRtcEngineKit 前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/mac_video.md)。
