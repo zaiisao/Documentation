@@ -3,10 +3,10 @@
 title: Switch the Client Role
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 16:38:12 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:38:15 GMT+0000 (UTC)
 ---
 # Switch the Client Role
-Before switching the client role, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md) for more information.
+Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md).
 
 ## Implementation
 An interactive broadcast channel consists of two user roles: 
@@ -169,9 +169,9 @@ User A joins the channel as a host and user B joins as an audience. If user B wa
 
 
 ## Next Steps
-Once the client role is swithced to the broadcaster, you can start a live broadcast with the following step:
+Once the client role is switched to the host, you can start a live broadcast with the following step:
 
-- [Publish and Subscrib to Streams](../../en/Interactive%20Broadcast/publish_ios_live.md)
+- [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_ios_live.md)
 
 For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
 
