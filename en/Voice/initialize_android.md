@@ -9,17 +9,17 @@ updatedAt: Thu Dec 06 2018 10:07:24 GMT+0000 (UTC)
 Before creating an RtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md) for more information.
 
 ## Implementation
-The following imports define the interface of the Agora API that provides communication functionality:
+The following imports define the interface of the Agora API that provides the communication functionality:
 
 -   `io.agora.rtc.Constants`
 -   `io.agora.rtc.IRtcEngineEventHandler`
 -   `io.agora.rtc.RtcEngine`
 -   `io.agora.rtc.video.VideoCanvas`
 
-Create a singleton by invoking `create` during initialization. In this method:
+Create a singleton instance by invoking the `create` method during initialization. In the `create` method:
 
--  Pass the Agora App ID. Only Applications with the same App ID can join the same channel.
--  Specify a reference to the activity’s event handler. The Agora API uses events to inform the application about Agora engine runtime events, such as joining or leaving a channel and adding new participants.
+-  Pass the Agora App ID. Only app with the same App ID can join the same channel.
+-  Specify a reference to the activity’s event handler. The Agora API uses callbacks to inform the app about Agora engine runtime events, such as joining or leaving a channel and adding users.
 
 ```
 import io.agora.rtc.Constants;
