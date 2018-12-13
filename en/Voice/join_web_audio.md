@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 22:21:40 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:22:04 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md).
