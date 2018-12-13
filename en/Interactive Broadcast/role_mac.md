@@ -3,9 +3,13 @@
 title: Switch the Client Role
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 07:11:19 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 07:11:23 GMT+0000 (UTC)
 ---
 # Switch the Client Role
+Before switching the client role, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md) for more information.
+
+## Implementation
+
 An interactive broadcast channel consists of two user roles: the host and the audience. Call the `setClientRole` method to set the user role as broadcaster or audience according to your needs. The differences of the two roles are:
 
 - Host (Broadcaster): A host receives and publishes the voice/video streams. The host can also interact with other hosts using voice and video.
@@ -161,3 +165,16 @@ If one user joins the channel as a host, and the other as an audience. A while l
    }
    ```
 
+
+## Next Steps
+
+Once the client role is swithced to the broadcaster, you can start a live broadcast with the following step:
+
+- [Publish and Subscrib to Streams](../../en/Interactive%20Broadcast/publish_mac_live.md)
+
+For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+
+- [Adjust the Volume](../../en/Interactive%20Broadcast/volume_mac.md)
+- [Play Audio Effects/Audio Mixing](../../en/Interactive%20Broadcast/effect_mixing_mac.md)
+- [Adjust the Pitch and Tone](../../en/Interactive%20Broadcast/voice_effect_mac.md)
+- [Set the Video Profile](../../en/Interactive%20Broadcast/videoProfile_mac.md)
