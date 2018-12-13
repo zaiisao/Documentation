@@ -3,10 +3,10 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 22:20:04 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:20:08 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
-Before publishing or subscribing to any streams, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
+Before publishing or subscribing to any stream, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
 
 ## Implementation
 ### Enable the video mode
@@ -88,7 +88,7 @@ CAgoraObject::GetEngine()->setupRemoteVideo(canvas);
 ```
 
 ## More Steps
-You are now in a live broadcast. When the session ends, use the Agora SDK to exit the current channel:
+You are in a live broadcast. When the session ends, use the Agora SDK to exit the current channel:
 
 - [Leave the Channel](../../en/Interactive%20Broadcast/leave_windows.md)
 
