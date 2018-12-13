@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 22:39:53 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:39:56 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating an AgoraRtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
@@ -40,7 +40,7 @@ func initializeAgoraEngine() {
 ```
 
 ## Next Steps
-You have now created the AgoraRtcEngine instance and can start a video call with the following steps:
+You have created the AgoraRtcEngine instance and can start a video call with the following steps:
 * [Join a Channel](../../cn/Video/join_video_ios.md)
 * [Publish and Subscribe to Streams](../../cn/Video/publish_ios.md)
 
