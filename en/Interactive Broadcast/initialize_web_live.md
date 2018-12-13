@@ -3,7 +3,7 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 16:17:45 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:17:49 GMT+0000 (UTC)
 ---
 # Create and Initialize a Client
 Before creating and initializing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
@@ -35,7 +35,7 @@ You have created the AgoraRtcEngine instance and can start a video call with the
 * [Switch the Client Role](../../en/Interactive%20Broadcast/role_web.md)
 * [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_web_live.md)
 
-To check the network connection or audio quality, you can refer to the following sections before joining a channel:
+To check the network connection or audio quality before joining a channel, you can refer to the following sections:
 
 * [Conduct a Last Mile Test](../../en/Interactive%20Broadcast/lastmile_web.md)
 * [Set the Stereo/High-fidelity Audio Profile](../../en/Interactive%20Broadcast/audio_profile_web.md)
