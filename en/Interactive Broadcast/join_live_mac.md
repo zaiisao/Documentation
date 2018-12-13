@@ -18,7 +18,7 @@ After initializing AgoraRtcEngine, call the `setChannelProfile` method to set th
 In the `setChannelProfile` method, set the channel profile as Live Broadcast. This profile applies to an interactive broadcast scenario. Each channel includes two roles:
 
 - The host (broadcaster) sends and receives audio and video streams.
-- The audience receives the audio and video streams.
+- The audience receives audio and video streams.
 
 > - Call the `setChannelProfile` method before joining a channel.
 > - One engine can specify one profile only. If you want to switch to another profile, destroy the current engine using the `destroy` method and create a new engine before calling the `setChannelProfile` method to set the new channel profile.
