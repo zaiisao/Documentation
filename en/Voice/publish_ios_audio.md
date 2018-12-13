@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: iOS
-updatedAt: Thu Dec 06 2018 10:12:07 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:19:22 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any streams, ensure that you have finished preparing the development environment and joined the channel. See [Integrate the SDK](../../en/Voice/ios_audio.md) for more information.
