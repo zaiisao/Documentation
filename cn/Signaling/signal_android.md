@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 04:25:42 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:53:01 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0
