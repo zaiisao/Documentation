@@ -3,10 +3,10 @@
 title: Join a Channel
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 22:22:51 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:22:54 GMT+0000 (UTC)
 ---
 # Join a Channel
-Before joining the channel, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md) for more information.
+Before joining a channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
 
 ## Implementation
 
@@ -31,11 +31,11 @@ client.join(<TOKEN_OR_KEY>, <CHANNEL_NAME>, <UID>, function(uid) {
 
 ## Next Steps
 
-You are now in the channel and can start a voice call with the following step:
+You are in the channel and can start a voice call with the following step:
 
-- [Publish and Subscrib to Streams](../../en/Video/publish_web.md)
+- [Publish and Subscribe to Streams](../../en/Video/publish_web.md)
 
-For added requirements on the audio volume, audio effect or voice pitch, you can alse take the following steps:
+For more functions, you can refer to the following sections:
 
 - [Adjust the Volume](../../en/Video/volume_web.md)
 - [Play Audio Effects/Audio Mixing](../../en/Video/effect_mixing_web.md)
