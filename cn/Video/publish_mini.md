@@ -3,7 +3,7 @@
 title: 发布和订阅音视频流
 description: 小程序平台发布音视频流
 platform: 微信小程序
-updatedAt: Fri Nov 02 2018 04:02:13 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 09:11:42 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
 ## 发布本地音视频流
