@@ -9,7 +9,7 @@ updatedAt: Wed Dec 12 2018 07:15:04 GMT+0000 (UTC)
 Before creating an RtcEngine instance, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/android_video.md) for more information.
 
 ## Implementation
-The following imports define the interface of the Agora API that provides the communication functionality:
+The following imports define the interface of the Agora API that provides  communication functionality:
 
 -   `io.agora.rtc.Constants`
 -   `io.agora.rtc.IRtcEngineEventHandler`
@@ -18,7 +18,7 @@ The following imports define the interface of the Agora API that provides the co
 
 Create a singleton instance by invoking the `create` method during initialization. In the `create` method:
 
--  Pass the Agora App ID. Only app with the same App ID can join the same channel.
+-  Pass the Agora App ID. Only apps with the same App ID can join the same channel.
 -  Specify a reference to the activity’s event handler. The Agora API uses callbacks to inform the app about Agora engine runtime events, such as joining or leaving a channel and adding users.
 
 ```
