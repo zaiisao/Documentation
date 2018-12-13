@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: macOS
-updatedAt: Thu Dec 13 2018 07:11:23 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:22:55 GMT+0000 (UTC)
 ---
 # Switch the Client Role
 Before switching the client role, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md) for more information.
