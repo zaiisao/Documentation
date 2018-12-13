@@ -3,7 +3,7 @@
 title: 切换用户角色
 description: windows平台上设置或切换用户角色
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:18:53 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:14:07 GMT+0000 (UTC)
 ---
 # 切换用户角色
 直播频道分主播和观众两种用户角色。在将频道模式为直播后，调用 <code>setClientRole</code> 方法，并根据需要将用户设置为主播或观众。两者的区别在于：
