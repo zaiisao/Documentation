@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Dec 14 2018 07:35:18 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 07:35:28 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
@@ -35,6 +35,13 @@ Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传
 
 -   如需开通 SIP 网关接入 Agora 信令系统，请联系 [support@agora.io](mailto:support@agora.io)。后续将提供自行配置方案。
 
+
+## 1.4.4 版 
+
+本版本发布于 2018 年 12 月 13 日。
+
+- 修复了部分 Android 系统崩溃的问题。
+- Android 代码内部优化。
 
 ## 1.4.0 版 
 
