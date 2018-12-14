@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Fri Dec 14 2018 08:03:35 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 08:03:40 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -276,12 +276,14 @@ When AUDIO_FORMAT_TYPE = 1, 2 or 3, <code>isMixingEnabled</code> cannot be set a
 <li>VIDEO_FORMAT_YUV_FRAME_TYPE = 2: Video frame in YUV format.</li>
 <li>VIDEO_FORMAT_JPG_FRAME_TYPE = 3: Video frame in JPEG format.</li>
 <li>VIDEO_FORMAT_JPG_FILE_TYPE = 4: JPEG file format.</li>
-<li>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5: Video frame in JPEG format + MPEG-4 video.</li>
+<li>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5: Video frame in JPEG format + MPEG-4 video</li>
 <ul>
 <li>Individual Mode (<code>isMixingEnabled</code> is set as <code>false</code>): MPEG-4 video and JPEG files are supported.</li>
 <li>Mixing Mode (<code>isMixingEnabled</code> is set as <code>true</code>): MPEG-4 video files for combined streams and JPEG files for individual streams are supported.</li>
-</ul>
-When VIDEO_FORMAT_TYPE = 1, 2, 3 or 4, <code>isMixingEnabled</code> cannot be set as true.
+</ul>	
+</ul>	
+When VIDEO_FORMAT_TYPE = 1, 2, 3 or 4, <code>isMixingEnabled</code> cannot be set as true.	
+
 When the video is decoded into raw video data, that is, VIDEO_FORMAT_TYPE = 1, 2, 3 or 5, raw video data in YUV format for the Web SDK is supported while H.264 format is not supported.
 </td>
 </tr>
