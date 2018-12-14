@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Fri Dec 14 2018 08:04:57 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 08:05:01 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -266,7 +266,9 @@ public class RecordingConfig {
 <li>单流模式 (<code>isMixingEnabled</code> 为 false) 下，录制得 MP4 视频文件，并截图获得 JPG 文件</li>
 <li>合流模式 (<code>isMixingEnabled</code> 为 true) 下，对合流录制，得到 MP4 视频文件，并对各单流截图，获得 JPG 文件</li>
 </ul>
+</ul>
 VIDEO_FORMAT_TYPE = 1，2，3 或 4 时，<code>isMixingEnabled</code> 不能设为 true。
+
 当解码成原始视频数据，即 VIDEO_FORMAT_TYPE = 1，2，3 或 5 时，Web 端录制不支持 H.264 格式的原始视频数据，支持 YUV 格式的原始视频数据。
 </td>
 </tr>
@@ -275,8 +277,8 @@ VIDEO_FORMAT_TYPE = 1，2，3 或 4 时，<code>isMixingEnabled</code> 不能设
 <li>AUDIO_FORMAT_DEFAULT_TYPE = 0：默认音频格式</li>
 <li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1：原始视频数据 AAC 格式</li>
 <li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2：原始视频数据 PCM 格式</li>
-AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 true。
 </ul>
+AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 true。
 </td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
