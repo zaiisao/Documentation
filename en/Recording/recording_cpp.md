@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Fri Dec 14 2018 08:01:49 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 08:01:54 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -268,7 +268,7 @@ The following decryption methods are supported:</p>
 <td>The root directory of the recorded files. The default value is NULL. The sub-path will be generated automatically.</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>The path of the configuration file. The default value is NULL. The content in the configuration file must be in JSON format. In the configuration file, you can set the absolute path of the recorded file, such as {“Recording_Dir” : “<recording path>”}. “Recording_Dir” can not be changed. But the sub-path will not be generated automatically.</td>
+<td>The path of the configuration file. The default value is NULL. In the configuration file, you can set the absolute path of the recorded file, but the sub-path will not be generated automatically. The content in the configuration file must be in JSON format, such as {“Recording_Dir” : “<recording path>”}. “Recording_Dir” can not be changed.</td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
 <td>The lowest UDP port. Ensure that the value of highUdpPort - lowUdpPort is ≥ 4. The default value is 0.</td>
@@ -294,8 +294,9 @@ The following decryption methods are supported:</p>
 <li>AUDIO_FORMAT_DEFAULT_TYPE = 0: Default audio format.</li>
 <li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1: Audio frame in AAC format.</li>
 <li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2: Audio frame in PCM format.</li>
-<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: Audio-mixing frame in PCM format. <code>isMixingEnabled</code> cannot be set as true.</li>
+<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: Audio-mixing frame in PCM format.</li>
 </ul>
+When <code>AUDIO_FORMAT_TYPE</code> = 1, 2 or 3, <code>isMixingEnabled</code> cannot be set as true.
 </td>
 </tr>
 <tr><td><code>decodeVideo</code></td>
@@ -312,11 +313,8 @@ The following decryption methods are supported:</p>
 <li>Composite Mode (<code>isMixingEnabled</code> is set as true): MPEG-4 video file for mixed streams and JPEG files for individual streams.</li>
 </ul>
 </ul>
-When the video is decoded into raw video data, that is VIDEO_FORMAT_TYPE = 1, 2, 3 or 5:
-<ul>
-<li>Video mixing is not supported.</li>
-<li>Raw video data in YUV format for the Web SDK is supported while H.264 format is not supported.</li>
-</ul>
+When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 4, <code>isMixingEnabled</code> cannot be set as true.
+When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format for the Web SDK is supported while H.264 format is not supported.
 </td>
 </tr>
 <tr><td><code>mixedVideoAudio</code></td>
@@ -648,7 +646,7 @@ When the video is decoded into raw video data, that is VIDEO_FORMAT_TYPE = 1, 2,
 <table>
 <thead>
 <tr><th>Platform</th>
-<th>Player/Explorer</th>
+<th>Player/Browser</th>
 <th>mixedVideoAudio = 0</th>
 <th>mixedVideoAudio = 1</th>
 </tr>
