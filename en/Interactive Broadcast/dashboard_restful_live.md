@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Dec 14 2018 10:06:21 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 10:23:14 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -564,7 +564,7 @@ Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
     {
          "success": true,
          "data": {
-             "in_channel": false,
+             "in_channel": true,
              "role": 2
          }
     }
