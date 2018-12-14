@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Dec 14 2018 07:54:27 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 07:54:34 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
@@ -24,6 +24,12 @@ The Agora Signaling SDK facilitates real-time communications through functions s
     -   A maximum of 10 channel-attributes-updated callbacks can be sent each second.
 -   To access Agora’s signaling system through the SIP gateway, contact [support@agora.io](mailto:support@agora.io). A self-configurable solution will be available soon.
 
+## v1.4.4
+
+The version 1.4.4 was released on December 13, 2018. See below for issues fixed.
+
+- Fixed a couple of crash issues on iOS. 
+- Improved the code implementation for iOS. 
 
 ## v1.4.0 
 
