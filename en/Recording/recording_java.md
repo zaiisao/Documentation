@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Fri Dec 14 2018 07:57:17 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 07:57:21 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -256,7 +256,7 @@ Used together with <code>isAudioOnly</code>:
 <td>The root directory of the recording files. The default value is NULL. The sub-path will be generated automatically.</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>The path of the configuration file. The default value is NULL. The content in the configuration file must be in JSON format. In this configuration file, you can set the absolute path of the recording file, such as {“Recording_Dir” : “&lt;recording path&gt;”}, but the sub-path will not be generated automatically.
+<td>The path of the configuration file. The default value is NULL. In the configuration file, you can set the absolute path of the recorded file, but the sub-path will not be generated automatically. The content in the configuration file must be in JSON format, such as {“Recording_Dir” : “&lt;recording path&gt;”}. “Recording_Dir” can not be changed.
 </td>
 </tr>
 <tr><td><code>decodeAudio</code></td>
@@ -264,8 +264,9 @@ Used together with <code>isAudioOnly</code>:
 <li>AUDIO_FORMAT_DEFAULT_TYPE = 0: Default audio format.</li>
 <li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1: Audio frame in AAC format.</li>
 <li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2: Audio frame in PCM format (AUDIO_FORMAT_PCM_FRAME_TYPE).</li>
-<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: Audio frame in PCM audio-mixing format. In this situation, <code>isMixingEnabled</code> cannot be set as true.</li>
+<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: Audio frame in PCM audio-mixing format.</li>
 </ul>
+When AUDIO_FORMAT_TYPE = 1, 2 or 3, <code>isMixingEnabled</code> cannot be set as true.
 </td>
 </tr>
 <tr><td><code>decodeVideo</code></td>
@@ -280,12 +281,8 @@ Used together with <code>isAudioOnly</code>:
 <li>Individual Mode (<code>isMixingEnabled</code> is set as <code>false</code>): MPEG-4 video and JPEG files are supported.</li>
 <li>Mixing Mode (<code>isMixingEnabled</code> is set as <code>true</code>): MPEG-4 video files for combined streams and JPEG files for individual streams are supported.</li>
 </ul>
-</ul>
-When the video is decoded into raw video data, that is, VIDEO_FORMAT_TYPE = 1, 2, 3 or 5:
-<ul>
-<li>Video mixing is not supported.</li>
-<li>Raw video data in YUV format for the Web SDK is supported while H.264 format is not supported.</li>
-</ul>
+When VIDEO_FORMAT_TYPE = 1, 2, 3 or 4, <code>isMixingEnabled</code> cannot be set as true.
+When the video is decoded into raw video data, that is, VIDEO_FORMAT_TYPE = 1, 2, 3 or 5, raw video data in YUV format for the Web SDK is supported while H.264 format is not supported.
 </td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
@@ -608,7 +605,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <table>
 <thead>
 <tr><th>Platform</th>
-<th>Player/Explorer</th>
+<th>Player/Browser</th>
 <th>mixedVideoAudio=0</th>
 <th>mixedVideoAudio=1</th>
 </tr>
