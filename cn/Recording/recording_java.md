@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Fri Dec 14 2018 07:39:29 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 07:58:50 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -251,7 +251,7 @@ public class RecordingConfig {
 <td>设置录制文件存放的根目录。默认值为 NULL。设置了此目录后，子路径会自动生成。</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>设置配置文件的路径。默认为 NULL，文件内容为 JSON 格式，在配置文件中可设置录制文件的路径，例如：{“Recording_Dir” : “&lt;recording path&gt;”}，但不会自动创建子路径。</td>
+<td>指定配置文件的路径。默认值为 NULL。在该配置文件里，你可以设置保存录制文件的绝对路径，但不会自动生成子目录。配置文件的内容必须为 JSON 格式，例如：{“Recording_Dir” : “&lt;recording path&gt;”}，其中 “Recording_Dir” 是固定的，不能改动。</td>
 </tr>
 <tr><td><code>decodeVideo</code></td>
 <td>
@@ -266,11 +266,9 @@ public class RecordingConfig {
 <li>单流模式 (<code>isMixingEnabled</code> 为 false) 下，录制得 MP4 视频文件，并截图获得 JPG 文件</li>
 <li>合流模式 (<code>isMixingEnabled</code> 为 true) 下，对合流录制，得到 MP4 视频文件，并对各单流截图，获得 JPG 文件</li>
 </ul>
-</ul>
-当解码成原始视频数据，即 VIDEO_FORMAT_TYPE = 1，2，3 或 5 时，有以下限制：
 <ul>
-<li>该情况不适用于合流模式。</li>
-<li>Web 端录制不支持 H.264 格式的原始视频数据，支持 YUV 格式的原始视频数据。</li>
+<li>VIDEO_FORMAT_TYPE = 1，2，3 或 4 时，<code>isMixingEnabled</code> 不能设为 true。</li>
+<li>当解码成原始视频数据，即 VIDEO_FORMAT_TYPE = 1，2，3 或 5 时，Web 端录制不支持 H.264 格式的原始视频数据，支持 YUV 格式的原始视频数据。</li>
 </ul>
 </td>
 </tr>
@@ -279,7 +277,7 @@ public class RecordingConfig {
 <li>AUDIO_FORMAT_DEFAULT_TYPE = 0：默认音频格式</li>
 <li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1：原始视频数据 AAC 格式</li>
 <li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2：原始视频数据 PCM 格式</li>
-<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3：原始视频数据 PCM 混音格式，此时 <code>isMixingEnabled</code> 不能设置为 true。</li>
+<li>AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 true。</li>
 </ul>
 </td>
 </tr>
