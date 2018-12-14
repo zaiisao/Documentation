@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Dec 14 2018 10:04:46 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 10:04:51 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -553,7 +553,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 > 目前 *直播模式纯音频主播* 尚未区分，会被归属到 *直播模式观众* 中。
 
-### 查询用户在频道中的状态信息 \(GET\)
+### 查询用户在频道中的状态及角色信息 \(GET\)
 
 该方法查询某个用户是否在指定频道中，如果是，则给出用户在该频道中的角色等状态。
 
@@ -590,7 +590,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**
     {
          "success": true,
          "data": {
-             "in_channel": false,
+             "in_channel": true,
              "role": 2
          }
     }
