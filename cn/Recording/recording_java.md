@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Fri Dec 14 2018 06:05:45 GMT+0000 (UTC)
+updatedAt: Fri Dec 14 2018 06:05:50 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -1033,7 +1033,7 @@ private native void enableLogModule(long vativeHandle, int module, int enable)
 
 <a id="RecordingEventHandler"></a>
 
-## 录制回调接口类
+## RecordingEventHandler 回调接口类
 
 该接口类用于向应用程序发送回调通知。该类包含如下回调：
 
