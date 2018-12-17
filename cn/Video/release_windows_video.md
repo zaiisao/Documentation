@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Dec 12 2018 10:39:45 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:42:45 GMT+0000 (UTC)
 ---
 # 发版说明
 
@@ -36,7 +36,7 @@ x86 的编译环境选择 Win32:
 
 ## **2.2.1 版**
 
-该版本于 2018 年 5 月 30 日发布。
+该版本于 2018 年 5 月 30 日发布。内部代码优化。
 
 ## **2.2.0 版**
 
