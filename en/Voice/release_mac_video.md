@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon Dec 17 2018 07:26:57 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:27:02 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -201,11 +201,12 @@ The version 2.0.2 was released on December 15, 2017. See below for issues fixed.
 
 Fixed the FFmpeg symbol conflict.
 
-## v2.0
+## v2.0 and Earlier
+### v2.0
 
 The version 2.0 was released on December 6, 2017. See below for new features and issues fixed.
 
-### New Features
+#### New Features
 
 -   Added the <code>setRemoteVideoStreamType</code> and <code>enableDualStreamMode</code> methods in the communication scenario to support dual stream.
 -   Updated the following callback functions for audio mixing and sound effects:
@@ -309,22 +310,22 @@ The version 2.0 was released on December 6, 2017. See below for new features and
 -   Provided a set of RESTful APIs to kick out a peer user from the server in the communication and live broadcast scenarios. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable this function if required.
 
 
-### Issues Fixed
+#### Issues Fixed
 
 Audio routing and Bluetooth issues.
 
-## v1.14
+### v1.14
 
 The version 1.14 was released on October 20, 2017. See below for new features and improvements.
 
-### New Features
+#### New Features
 
 -   Added the <code>setAudioProfile</code> method to set the audio parameters and scenarios.
 -   Added the <code>setLocalVoicePitch</code> method to set the local voice pitch.
 -   Live Broadcast: Added the <code>setInEarMonitoringVolume</code> method to adjust the volume of the in-ear monitor.
 
 
-### Improvements
+#### Improvements
 
 -   Optimized the audio at high bitrates.
 -   Live Broadcast: The audience can view the host within one second in a single-stream mode (858 ms on average, and 625 ms when in good network conditions).
@@ -336,17 +337,17 @@ The version 1.14 was released on October 20, 2017. See below for new features an
     -   Starting from v1.14: Accurate control over the bitrate prevents huge fluctuations avoiding network congestion and shortening the transmission latency.
 
 
-## v1.13.1
+### v1.13.1
 
 The version 1.13.1 was realeased on September 28, 2017. 
 
 Optimized the echo issue under certain circumstances.
 
-## v1.13
+### v1.13
 
 The version 1.13 was released on September 4, 2017. See below for new features, improvements, and issues fixed.
 
-### New Features
+#### New Features
 
 -   Added the function to dynamically enable and disable acquiring the sound card in a live broadcast.
 -   Added the function to disable the audio playback.
@@ -356,22 +357,22 @@ The version 1.13 was released on September 4, 2017. See below for new features, 
 -   Supported the push-stream failure callback on the server side.
 
 
-### Improvements:
+#### Improvements:
 
 -   Screen Sharing: Enhanced the video definition and fluency.
 -   Screen Sharing: Supported updating the captured region dynamically.
 -   The video profile is controllable by the software codec.
 
 
-### Issues Fixed:
+#### Issues Fixed:
 
 Occasional crashes on some devices.
 
-## v1.12
+### v1.12
 
 The version 1.12  was released on July 25, 2017. See below for new features and issues fixed.
 
-### New Functions:
+#### New Functions:
 
 -   Added the <code>injectStream</code> method to inject an RTMP stream into the current channel in a live broadcast scenario.
 -   Added the <code>aes-128-ecb</code> encryption mode in the API method, `setEncryptionMode`.
@@ -382,7 +383,7 @@ The version 1.12  was released on July 25, 2017. See below for new features and 
 -   Added the displaying the mouse function when the screen sharing function is enabled in the communication scenario.
 
 
-### Improvements:
+#### Improvements:
 
 In the communication scenario, improved the 320 &times; 180 resolution profile.
 
@@ -390,7 +391,7 @@ In the communication scenario, improved the 320 &times; 180 resolution profile.
 -   Enhance the image quality better than 180p under good network and equipment conditions.
 
 
-### Issues Fixed:
+#### Issues Fixed:
 
 Occasional crashes.
 
