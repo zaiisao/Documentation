@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Dec 17 2018 07:25:55 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:25:59 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -275,7 +275,7 @@ The version 2.0.2 was released on December 15, 2017. See below for issues fixed.
 
 Fixed occasional audio routing issues.
 
-## v2.0 and Before
+## v2.0 and Earlier
 ### v2.0
 
 The version 2.0 was released on December 6, 2017. See below for new features and issues fixed.
