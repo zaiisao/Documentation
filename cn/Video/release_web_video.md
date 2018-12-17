@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Dec 17 2018 07:42:00 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:42:04 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -363,7 +363,9 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 修复了 Safari 上视频旋转 90 度的问题
 - 修复了 macOS 上 Firefox v59.01 浏览器使用 Web SDK 只能看到本地视频看不到对方视频的问题
 
-## **2.0 版**
+## **2.0 版及之前**
+
+### **2.0 版**
 
 该版本于 2017 年 12 月 6 日发布。新增特性与修复问题列表详见下文。
 
@@ -384,13 +386,13 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 修复了 Chrome 浏览器未启用摄像头进入频道时，不提示需获取摄像头权限的问题。
 - 修复了 iOS 端使用 Safari 浏览器互通时，退到后台后不显示对方画面的问题。
 
-## **1.14 版**
+### **1.14 版**
 
 该版本于 2017 年 10 月 20 日发布。
 
 新增了屏幕共享功能，在 `createStream` 里修改了参数 `screen`, 并新增了参数 `extensionId` 。
 
-## **1.13 版**
+### **1.13 版**
 
 该版本于 2017 年 9 月 4 日发布。新增特性与修复问题列表详见下文。
 
@@ -399,7 +401,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 支持 Web 端 CDN 推流，进行旁路支持，详见 `API configPublisher` 描述
 - 在 Android 上支持最新版 Chrome
 
-## **1.12 版**
+### **1.12 版**
 
 该版本于 2017 年 7 月 25 日发布。。新增特性与修复问题列表详见下文。
 
