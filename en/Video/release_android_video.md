@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Dec 17 2018 07:31:03 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:31:13 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -407,11 +407,13 @@ The version 2.0.2 was released on December 15, 2017.
 
 Occasional audio routing issues.
 
-## v2.0
+## v2.0 and Earlier
+
+### v2.0
 
 The version 2.0 was released on December 6, 2017. See below for new features, improvements and issues fixed.
 
-### New Features
+#### New Features
 
 -   Added the <code>setRemoteVideoStreamType</code> and <code>enableDualStreamMode</code> methods in the communication scenario to support dual streams.
 -   Added the camera management function in the communication and live broadcast scenarios by adding the following API methods:
@@ -487,28 +489,28 @@ The version 2.0 was released on December 6, 2017. See below for new features, im
 -   Supported the following Android emulators: NOX, Lightning, and Xiaoyao.
 
 
-### Improvements
+#### Improvements
 
 Optimized the hardware encoder by supporting encoding resolutions as low as 64 x 64.
 
-### Issues Fixed
+#### Issues Fixed
 
 -   Audio routing and Bluetooth issues.
 -   Optimized the volume balance control.
 
 
-## v1.14
+### v1.14
 
 The version 1.14 was released on October 20, 2017. See below for new features, improvements and issues fixed.
 
-### New Features
+#### New Features
 
 -   Added the <code>setAudioProfile</code> method to set the audio parameters and scenarios
 -   Added the <code>setLocalVoicePitch</code> method to set the local voice pitch
 -   Live Broadcast: Added the <code>setInEarMonitoringVolume</code> method to adjust the volume of the in-ear monitor
 
 
-### Improvements
+#### Improvements
 
 -   Optimized the audio at high bitrates
 -   Live Broadcast: The audience can view the host within one second in a single-stream mode (226 ms on average, and 204 ms under good network conditions)
@@ -520,21 +522,21 @@ The version 1.14 was released on October 20, 2017. See below for new features, i
     -   Starting from v1.14: Accurate control over the bitrate prevents huge fluctuations avoiding network congestion and shortening the transmission latency.
 
 
-### Issues Fixed:
+#### Issues Fixed
 
 Camera related issues on Android devices.
 
-## v1.13.1
+### v1.13.1
 
 The version 1.13.1 was released on September 28, 2017. 
 
 Optimized the echo issue under certain circumstances.
 
-## v1.13
+### v1.13
 
 The version 1.13 was released on September 4, 2017. See below for new features, improvements, and issues fixed.
 
-### New Features
+#### New Features
 
 -   Added the function to dynamically enable and disable acquiring the sound card in a live broadcast.
 -   Added the function to disable the audio playback.
@@ -543,25 +545,25 @@ The version 1.13 was released on September 4, 2017. See below for new features, 
 -   Supported the push-stream failure callback on the server side.
 
 
-### Improvements:
+#### Improvements:
 
 The video profile is controllable by the software codec.
 
-### Issues Fixed:
+#### Issues Fixed:
 
 Occasional crashes on some devices
 
-## v1.12
+### v1.12
 
 The version 1.12  was released on July 25, 2017. See below for new features and issues fixed.
 
-### New Features:
+#### New Features:
 
 -   Added the <code>aes-128-ecb</code> encryption mode in the <code>setEncryptionMode</code> method.
 -   Added the <code>quality</code> parameter in the <code>startAudioRecording</code> method to set the recording audio quality.
 
 
-### Issues Fixed:
+#### Issues Fixed:
 
 -   Android: Bluetooth issues related to audio routing.
 -   Android/iOS/Mac/Windows: Occasional crashes.
