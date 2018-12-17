@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Dec 17 2018 07:37:09 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:37:13 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -151,7 +151,7 @@ Added Restful APIs to check the status of the users in the channel, the channel 
 Added the support of 17-way video in an Interactive Broadcast scenario, see:
 
 -   [Starting a Live Video Broadcast](../../en/Quickstart%20Guide/broadcast_video_ios.md)
--   [17-Way Live Video Broadcast](../../en/Quickstart%20Guide/seventeen_people.md)
+-   [Video Conference of 7+ Users](../../en/Video/seventeen_people_windows.md)
 
 
 #### 5. Injecting an External Video Stream
