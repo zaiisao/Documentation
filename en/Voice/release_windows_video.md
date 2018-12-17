@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Dec 17 2018 07:29:39 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:29:51 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -203,11 +203,12 @@ Added an interface <code>enableLoopbackRecording</code> to collect all the local
 -   Occasional crashes.
 
 
-## v2.0
+## v2.0 and Earlier
+### v2.0
 
 The version 2.0 was released on November 21, 2017. See below for new features.
 
-### New Features
+#### New Features
 
 -   Added the <code>setRemoteVideoStreamType</code> and <code>enableDualStreamMode</code> methods in the communication scenario to support dual stream.
 -   Supported the external audio source in the communication and live broadcast scenarios by adding the following APIs:
@@ -282,11 +283,11 @@ The version 2.0 was released on November 21, 2017. See below for new features.
 
 
 
-## v1.14
+### v1.14
 
 The version 1.14 was released on October 20, 2017. See below for new features, improvements and issues.
 
-### New Features
+#### New Features
 
 -   Added the <code>setAudioProfile</code> method to set the audio parameters and scenarios.
 -   Added the <code>setLocalVoicePitch</code> method to set the local voice pitch.
@@ -294,7 +295,7 @@ The version 1.14 was released on October 20, 2017. See below for new features, i
 -   Live Broadcast: Added the <code>setInEarMonitoringVolume</code> method to adjust the volume of the in-ear monitor.
 
 
-### Improvements
+#### Improvements
 
 -   Optimized the audio at high bitrates.
 -   Live Broadcast: The audience can view the host within one second in a single-stream mode (226 ms on average, and 204 ms under good network conditions).
@@ -306,23 +307,23 @@ The version 1.14 was released on October 20, 2017. See below for new features, i
     -   Starting from v1.14: Accurate control over the bitrate prevents huge fluctuations avoiding network congestion and shortening the transmission latency.
 
 
-### Issues Fixed:
+#### Issues Fixed:
 
 -   Unable to hear any audio on certain Windows systems.
 -   Camera-related issues on certain Windows systems.
 
 
-## v1.13.1
+### v1.13.1
 
 The version 1.13.1 was released on September 28, 2017. 
 
 Optimized the echo issue under certain circumstances.
 
-## v1.13
+### v1.13
 
 The version 1.13 was released on September 4, 2017. See below for new features, improvements, and issues fixed.
 
-### New Features
+#### New Features:
 
 -   Added the function to dynamically enable and disable acquiring the sound card in a live broadcast.
 -   Added the function to disable the audio playback.
@@ -331,22 +332,22 @@ The version 1.13 was released on September 4, 2017. See below for new features, 
 -   Supported the push-stream failure callback on the server side.
 
 
-### Improvements:
+#### Improvements:
 
 -   Screen Sharing: Enhanced the video definition and fluency.
 -   Screen Sharing: Supported updating the captured region dynamically.
 -   The video profile is controllable by the software codec.
 
 
-### Issues Fixed:
+#### Issues Fixed:
 
 Occasional crashes.
 
-## v1.12
+### v1.12
 
 The version 1.12  was released on July 25, 2017. See below for new features, inprovements and issues fixed.
 
-### New Features:
+#### New Features:
 
 -   Added the <code>injectStream</code> method to inject an RTMP stream into the current channel in a live broadcast scenario.
 -   Added the <code>aes-128-ecb</code> encryption mode in the <code>setEncryptionMode</code>  method.
@@ -355,12 +356,12 @@ The version 1.12  was released on July 25, 2017. See below for new features, inp
 -   Added the <code>ActiveSpeaker</code> method to indicate who is the active speaker in the current channel.
 -   Removed the <code>setScreenCaptureWindow</code> method, and updated the <code>startScreenCapture</code> method to share the whole screen and specify the window or region in the communication scenario.
 -   Added displaying the mouse function when the screen sharing function is enabled in the communication scenario.
--   Web: Added and updated a series of APIs to enable interoperability between the web browsers and native clients for communication or live broadcast scenarios. For details, refer to [Release Notes](../../en/Product%20Overview/release_web_video.md).
+-   Web: Added and updated a series of APIs to enable interoperability between the web browsers and native clients for communication or live broadcast scenarios. For details, refer to [Release Notes](../../en/Voice/release_web_video.md).
 
 
 Recording: Added real-time video mixing, web recording, and callback functions. For details, refer to [Release Notes for the Recording SDK](../../en/Product%20Overview/release_recording.md).
 
-### Improvements:
+#### Improvements:
 
 Android/iOS/macOS/Windows: In the communication scenario, an improvement for the 320 &times; 180 resolution profile:
 
@@ -369,7 +370,7 @@ Android/iOS/macOS/Windows: In the communication scenario, an improvement for the
 
 
 
-### Issues Fixed:
+#### Issues Fixed:
 
 - Android: Bluetooth issues related to audio routing.
 - Android/iOS/macOS/Windows: Occasional crashes.
