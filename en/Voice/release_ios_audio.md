@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Mon Dec 17 2018 07:25:30 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:25:38 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -281,11 +281,12 @@ The version 2.0.2 was released on December 15, 2017. See below for issues fixed.
 
 Fixed the FFmpeg symbol conflict.
 
-## v2.0
+## v2.0 and Earlier
+### v2.0
 
 The version 2.0 was released on December 6, 2017. See below for new features and issues fixed.
 
-### New Features
+#### New Features
 
 - Updated the following callback functions for audio mixing and sound effects:
 
@@ -348,13 +349,13 @@ The version 2.0 was released on December 6, 2017. See below for new features and
 -   Provided a set of RESTful APIs to ban a peer user from the server in the communication and live broadcast scenarios. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable this function if required.
 
 
-### Issues Fixed
+#### Issues Fixed
 
 Audio routing and Bluetooth issues.
 
-## v1.14 
+### v1.14 
 
-### New Functions
+#### New Functions
 
 The version 1.14 was released on October 20, 2017. See below for new features and improvements.
 
@@ -362,7 +363,7 @@ The version 1.14 was released on October 20, 2017. See below for new features an
 -   Added the <code>setLocalVoicePitch</code> method to set the local voice pitch.
 -   Live Broadcast: Added the <code>setInEarMonitoringVolume</code> method to adjust the volume of the in-ear monitor.
 
-### Improvements
+#### Improvements
 
 -   Optimized the audio at high bitrates.
 -   Added the ability to reduce the bandwidth.
@@ -370,11 +371,11 @@ The version 1.14 was released on October 20, 2017. See below for new features an
     -   Starting from v1.14: If you mute the audio of a specific user, the network will not send the stream of the user to reduce the bandwidth.
 
 
-### Issues Fixed:
+###$# Issues Fixed:
 
 Occasional crashes on iOS devices.
 
-## v1.13.1
+### v1.13.1
 
 The version 1.13.1 was released on September 28, 2017. 
 
@@ -382,7 +383,7 @@ The version 1.13.1 was released on September 28, 2017.
 -   Optimized the echo issue.
 
 
-## v1.13
+### v1.13
 
 The version 1.13 was released on September 4, 2017. See below for new features, improvements, and issues fixed.
 
@@ -390,11 +391,11 @@ The version 1.13 was released on September 4, 2017. See below for new features, 
 -   Fixed occasional crashes.
 
 
-## v1.12
+### v1.12
 
 The version 1.12  was released on July 25, 2017. See below for new features and issues fixed.
 
-### New Features:
+#### New Features:
 
 -   Added the <code>aes-128-ecb</code> encryption mode in the <code>setEncryptionMode</code>  method.
 -   Added the <code>quality</code> parameter in the <code>startAudioRecording</code> method to set the recording audio quality.
@@ -453,7 +454,7 @@ The version 1.12  was released on July 25, 2017. See below for new features and 
 
 
 
-### Issues Fixed:
+#### Issues Fixed:
 
 Occasional crashes.
 
