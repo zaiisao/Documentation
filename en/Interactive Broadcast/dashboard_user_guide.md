@@ -3,7 +3,7 @@
 title: Use Dashboard
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 17 2018 18:09:42 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 18:09:45 GMT+0000 (UTC)
 ---
 # Use Dashboard
 Agora Dashboard allows you to check your usage and the QoE, manage your projects and team members, and connect with Agora customer support.
@@ -34,7 +34,7 @@ Before using Agora Dashboard, [create an Agora account](../../en/Interactive%20B
 <td>Add and manage team members, and set the permissions for different roles.</td>
 </tr>
 <tr>
-<td>Submit and Track a Ticket</td>
+<td>Submit and Track Tickets</td>
 <td>Search for solutions to problems or submit tickets to Agora customer support.</td>
 </tr>
 <tr>
@@ -55,12 +55,12 @@ The following figure shows an example.
 
 ![](https://web-cdn.agora.io/docs-files/1543989847923)
 
-You can select the channel and time frame to view the usage (minutes) of your voice and video (SD, HD, and HD+) calls for all users.
+You can select a channel and time frame to view the usage (minutes) of your voice and video (SD, HD, and HD+) calls for all users.
 
-* **Audio Usage**: The total usage of voice calls. In the example, the total usage of the voice calls for this channel between 16 and 22 November 2018 is 618,958 minutes. 
-* **SD Video Usage**: The total usage of SD video calls (resolution < 360p). For billing purposes, the usage of SD video calls is incorporated into the usage of HD video calls.
-* **HD Video Usage**: The total usage of HD video calls (360p ≤ resolution ≤ 720p). In the example, the total usage of the HD video calls for this channel between 16 and 22 November 2018 is 145,964 minutes. 
-* **HD+ Video Usage**: The total usage of HD+ video calls (resolutions > 720p). In the example, the total usage of HD+ video calls for this channel on 19 November 2018 is 1,328 minutes.
+* **Total Audio Usage**: The total usage of voice calls. In the example, between 16 and 22 November 2018, the total usage of voice calls for the channel is 618,958 minutes. 
+* **Total SD Video Usage**: The total usage of SD (resolution < 360p) video calls. For billing purposes, the usage of SD video calls is incorporated into the usage of HD video calls.
+* **Total HD Video Usage**: The total usage of HD (360p ≤ resolution ≤ 720p) video calls. In the example, between 16 and 22 November 2018, the total usage of HD video calls for the channel is 145,964 minutes. 
+* **Total HD+ Video Usage**: The total usage of HD+ (resolution > 720p) video calls. In the example, on 19 November 2018, the total usage of HD+ video calls for the channel is 1,328 minutes.
 
 > See [Pricing and Billing](https://docs.agora.io/en/Agora%20Platform/billing_faq).
 
@@ -113,20 +113,20 @@ You can:
 Different roles have different permissions:
 
 - **Administrator** can view the usage, Agora Analytics, projects, and manage the projects.
-- **Product Manager** or **Operation Manager** can only view the usage.
-- **Customer Support** or **Maintenance Manager** can only view Agora Analytics.
+- **Product Manager** and **Operation Manager** can only view the usage.
+- **Customer Support** and **Maintenance Manager** can only view Agora Analytics.
 - **Engineer** can view Agora Analytics, projects, and manage projects.
 
-You can also customize roles under **Customized**.
+You can also create custom roles under **Customized**.
 ## Submit and Track a Ticket
 
 If you have any questions about Agora's products, you can: 
 
-1. Click on **Support > Submit Ticket** at the top of the navigation menu and type in your question or keywords to see if the question has been answered.
-2. If you cannot find your answer, select a category and submit a ticket to Agora customer support.
-3. Click on **Support > View Ticket** to track the status of your ticket.
-
+1. Click on **Support > Submit Ticket** at the top of the navigation menu to go to **Agora Customer Service Center**.
 ![](https://web-cdn.agora.io/docs-files/1543913838952)
+2. Type in your question or keywords to see if the question has been answered.
+3. If you cannot find your answer, select a category and submit a ticket to Agora customer support.
+4. Click on **Support > View Ticket** to track the status of your ticket.
 
 ## Use RESTful APIs
 
@@ -138,11 +138,11 @@ Click on **User Name > RESTful API** at the top of the navigation menu to get th
 
 ### Change the Profile Information and Account Settings
 
-By clicking on **User Name** at the top of the navigation bar, you can:
+By clicking on **User Name** at the top of the navigation menu, you can:
 * Modify personal information.
 * Change the password
 * Change the language of the Dashboard and Agora newsletter.
 
 ### Reach out to Developer Communities
 
-Click on **Community** at the top of the navigation bar to connect with global developers in developer communities, such as Github, online forums, and WeChat public accounts.
+Click on **Community** at the top of the navigation menu to connect with global developers in developer communities such as Github, online forums, and WeChat public accounts.
