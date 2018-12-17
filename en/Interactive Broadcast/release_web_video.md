@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Dec 17 2018 07:27:49 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:27:54 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -364,17 +364,18 @@ The version 2.1.0 was released on March 7, 2018. See below for new features, imp
 - Fixed the 90-degree video rotation on Safari
 - Fixed the issue of not seeing the remote video when using the Web SDK on the Firefox browser v59.01 on macOS
 
-## v.2.0
+## v2.0 and Earlier
+### v2.0
 
 The version 2.0 was released on November 21, 2017. See below for new features and issues fixed.
 
-### New Features
+#### New Features
 
 - Added the check browser compatibility function before calling <code>CreateClient</code>, to check the compatibility between the system and the browser.
 - Added the callback to notify the application that the user has granted or denied access to the camera or microphone.
 - Added the video self-adjustment function, by automatically lowering the resolution or frame rate until the video profile matches the input hardware’s capability.
 
-### Issues Fixed
+#### Issues Fixed
 
 - Volume issue with iOS SDK interop.
 - Disconnection issue on Google Chrome caused by prolonged communication.
@@ -383,22 +384,22 @@ The version 2.0 was released on November 21, 2017. See below for new features an
 - No camera-access-grant notification on Google Chrome when it joins the channel without access to the camera.
 - No image on the iOS Safari web browser after the user has returned from another application.
 
-## v1.14
+### v1.14
 
 The version 1.14 was released on October 20, 2017. See below for new features.
 
 Added the screen sharing function by modifying the screen parameter and adding the parameter in the <code>createStream</code> API.
 
-## v1.13
+### v1.13
 
 The version 1.13 was released on September 4, 2017. See below for new features.
 
-### New Features
+#### New Features
 
 - Supported CDN Live with the <code>configPublisher</code> API.
 - Supported Google Chrome for Android.
 
-## v1.12 
+### v1.12 
 
 The version 1.12 was released on July 25, 2017. See below for new features.
 
@@ -450,13 +451,13 @@ The version 1.12 was released on July 25, 2017. See below for new features.
 
 - Updated the error codes.
 
-## v1.8.1
+### v1.8.1
 
 The version 1.8.1 was released on March 16, 2017. See below for issues fixed.
 
 Fixed the incompatibility issue on Google Chrome v57.
 
-## v1.8
+### v1.8
 
 The version 1.8 was released on December 26, 2016. 
 
