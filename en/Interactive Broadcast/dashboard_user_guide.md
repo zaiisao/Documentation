@@ -3,7 +3,7 @@
 title: Use Dashboard
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 17 2018 18:12:49 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 18:12:52 GMT+0000 (UTC)
 ---
 # Use Dashboard
 Agora Dashboard allows you to check your usage and the QoE, manage your projects and team members, and connect with Agora customer support.
@@ -58,9 +58,9 @@ The following figure shows an example.
 You can select a channel and time frame to view the usage (minutes) of your voice and video (SD, HD, and HD+) calls for all users.
 
 * **Total Audio Usage**: The total usage of voice calls. In the example, between 16 and 22 November 2018, the total usage of voice calls for the channel is 618,958 minutes. 
-* **Total SD Video Usage**: The total usage of SD (resolution < 360p) video calls. For billing purposes, the usage of SD video calls is incorporated into the usage of HD video calls.
-* **Total HD Video Usage**: The total usage of HD (360p ≤ resolution ≤ 720p) video calls. In the example, between 16 and 22 November 2018, the total usage of HD video calls for the channel is 145,964 minutes. 
-* **Total HD+ Video Usage**: The total usage of HD+ (resolution > 720p) video calls. In the example, on 19 November 2018, the total usage of HD+ video calls for the channel is 1,328 minutes.
+* **Total SD Video Resolutions < 360P**: The total usage of SD (resolution < 360p) video calls. For billing purposes, the usage of SD video calls is incorporated into the usage of HD video calls.
+* **Total HD Video Resolutions ≤ 720**: The total usage of HD (360p ≤ resolution ≤ 720p) video calls. In the example, between 16 and 22 November 2018, the total usage of HD video calls for the channel is 145,964 minutes. 
+* **Total HD+ Video Resolutions > 720**: The total usage of HD+ (resolution > 720p) video calls. In the example, on 19 November 2018, the total usage of HD+ video calls for the channel is 1,328 minutes.
 
 > See [Pricing and Billing](https://docs.agora.io/en/Agora%20Platform/billing_faq).
 
