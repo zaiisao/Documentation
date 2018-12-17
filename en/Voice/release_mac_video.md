@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon Dec 17 2018 07:37:55 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 07:37:59 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -148,7 +148,7 @@ Added Restful APIs to check the status of the users in the channel, the channel 
 Added the support of 17-way video in interactive broadcasts, see:
 
 -   [Starting a Live Video Broadcast](../../en/Quickstart%20Guide/broadcast_video_mac.md)
--   [17-Way Live Video Broadcast](../../en/Quickstart%20Guide/seventeen_people.md)
+-   [Video Conference of 7+ Users](../../en/Voice/seventeen_people_iosmac.md)
 
 
 #### 5. Video Source Customization
