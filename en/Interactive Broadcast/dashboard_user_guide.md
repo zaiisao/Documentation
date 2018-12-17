@@ -3,7 +3,7 @@
 title: Use Dashboard
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 17 2018 17:19:31 GMT+0000 (UTC)
+updatedAt: Mon Dec 17 2018 18:09:42 GMT+0000 (UTC)
 ---
 # Use Dashboard
 Agora Dashboard allows you to check your usage and the QoE, manage your projects and team members, and connect with Agora customer support.
