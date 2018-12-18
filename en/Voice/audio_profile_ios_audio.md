@@ -3,10 +3,10 @@
 title: Set the Stereo/High-fidelity Audio Profile
 description: How to set the high-quality audio for iOS and macOS
 platform: iOS
-updatedAt: Tue Dec 04 2018 22:25:11 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:59:04 GMT+0000 (UTC)
 ---
 # Set the Stereo/High-fidelity Audio Profile
-## Feature Description 
+## Introduction 
 
 High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a 48-KHz sampling rate and a 192-Kbps bitrate. 
 
