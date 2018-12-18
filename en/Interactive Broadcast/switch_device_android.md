@@ -8,12 +8,12 @@ updatedAt: Tue Dec 11 2018 20:19:18 GMT+0000 (UTC)
 # Test or Select a Media Device
 ## Introduction
 
-Agora supports the media device test and selection, allowing you to check if a camera or an audio device (a headeset, microphone, or speaker) functions well or connects properly to the SD-RTN. For example, in an audio device test, if a user's speech can be replayed in 10 seconds, then the system's audio device is properly connected to the SD-RTN.
+Agora supports the media device test and selection feature, allowing you to check if a camera or an audio device (a headset, microphone, or speaker) works or connects properly to the SD-RTN. For example, in an audio device test, if a user's recorded voice is replayed in 10 seconds, then the system's audio device works and is connected properly to the SD-RTN.
 
 You can use the media device test and selection feature in the following scenarios:
 
-- As a host in a live broadcast, do a self-check before airing the broadcast.
-- As an online user, check if the media device works well.
+- A host self-checks before starting a live broadcast.
+- An online user checks if the media device works.
 
 ## Implementation
 
