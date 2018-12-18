@@ -3,10 +3,10 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: macOS
-updatedAt: Tue Dec 18 2018 02:58:59 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:59:00 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
-## Feature Description
+## Introduction
 In a call or live broadcast, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
 
 Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Video/mac_video.md) for more information.
