@@ -3,7 +3,7 @@
 title: 客户端通话录制
 description: 
 platform: Windows
-updatedAt: Tue Dec 18 2018 02:06:10 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:06:11 GMT+0000 (UTC)
 ---
 # 客户端通话录制
 ## 功能描述
@@ -24,7 +24,7 @@ RtcEngineParameters rep(*lpRtcEngine);
 // 开始本地音频文件录制
 #ifdef UNICODE
  CHAR aFilePath[MAX_PATH];
- ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, aFilePath, MAX_PATH, NULL, NULL);
+ ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, aFilePath, MAX_PATH, NULL, NULL);
 int nRet = rep.startAudioRecording(aFilePath, // 本地合法文件路径
 	AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH // 录音音质 AUDIO_RECORDING_QUALITY_HIGH|MEDIUM|LOW
 	);
