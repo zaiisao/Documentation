@@ -3,7 +3,7 @@
 title: Set the Stereo/High-fidelity Audio Profile
 description: How to set high-quality audio on Windows
 platform: Windows
-updatedAt: Tue Dec 04 2018 22:20:38 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:58:38 GMT+0000 (UTC)
 ---
 # Set the Stereo/High-fidelity Audio Profile
 ## Feature Description 
