@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on Web
 platform: Web
-updatedAt: Tue Dec 04 2018 17:19:02 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:58:19 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Feature Description
