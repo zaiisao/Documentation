@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Tue Dec 04 2018 20:31:16 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:05:55 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Feature Description
@@ -26,7 +26,7 @@ RtcEngineParameters rep(*lpAgoraEngine);
 // Preloads the audio effect (recommended). Note the file size and preload the file before joining the channel.
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
-  ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
+  ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
   int nRet = rep.preloadEffect(nSoundID, wdFilePath);
 #else
   int nRet = rep.preloadEffect(nSoundID, filePath);
@@ -35,7 +35,7 @@ RtcEngineParameters rep(*lpAgoraEngine);
 // Plays the audio effect file. If you preload the audio effect, you need to specify nSoundID.
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
-  ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
+  ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
   int nRet = rep.playEffect(nSoundID, // The unique sound ID of the audio effect.
   wdFilePath, // File path of the audio effect file.
   nLoopCount, // The number of playback loops. -1 means an infinite loop.
