@@ -6,7 +6,7 @@ platform: Android
 updatedAt: Tue Dec 18 2018 02:59:08 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
-## Feature Description 
+## Introduction 
 In social and entertainment scenarios, users often need various voice effects to enhance the interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
