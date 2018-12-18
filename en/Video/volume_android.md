@@ -3,10 +3,10 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Tue Dec 11 2018 10:01:59 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:58:15 GMT+0000 (UTC)
 ---
 # Adjust the Volume
-## Feature Description
+## Introduction
 
 When using the Agora SDK, developers can adjust the recording and playback volumes for customization. For example, you can mute the remote audio by setting the volume to 0.
 
