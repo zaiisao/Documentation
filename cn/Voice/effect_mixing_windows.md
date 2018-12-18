@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to play audio effect files and enable audio mixing 
 platform: Windows
-updatedAt: Tue Dec 18 2018 02:06:08 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:06:09 GMT+0000 (UTC)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -23,7 +23,7 @@ RtcEngineParameters rep(*lpAgoraEngine);
 // 预加载音效（推荐），需注意音效文件的大小，并在加入频道前完成加载
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
-  ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
+  ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
   int nRet = rep.preloadEffect(nSoundID, wdFilePath);
 #else
   int nRet = rep.preloadEffect(nSoundID, filePath);
@@ -32,7 +32,7 @@ RtcEngineParameters rep(*lpAgoraEngine);
 // 开始播放音效文件，如果设置了预加载，需要指定 nSoundID 
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
-  ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
+  ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
   int nRet = rep.playEffect(nSoundID, // 音效唯一标识
   wdFilePath, // 文件路径
   nLoopCount, // 重复播放次数
