@@ -3,7 +3,7 @@
 title: Test or Select a Media Device
 description: 
 platform: Android
-updatedAt: Tue Dec 18 2018 16:16:25 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 16:16:29 GMT+0000 (UTC)
 ---
 # Test or Select a Media Device
 ## Introduction
@@ -27,7 +27,7 @@ You can use the media device test and selection feature in the following scenari
 	rtcEngine.stopEchoTest();
 ```
 
-## API Reference
+## API Methods
 
 - [startEchoTest()](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac93b84c9ebbb32f5ee304732804ec1b9)
 - [stopEchoTest()](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a01b8067275003c011f6d81bb41ee0fe1)
