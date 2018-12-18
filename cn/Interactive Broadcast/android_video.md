@@ -3,7 +3,7 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Tue Dec 18 2018 08:29:22 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 08:29:25 GMT+0000 (UTC)
 ---
 # 集成客户端 
 本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -108,7 +108,7 @@ Android [视频通话/视频直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
 
 ## 配置 NDK
 
-如需调用 `libs` 包中 inlude 文件夹里的插件时，需要配置 NDK 环境：
+如需调用 `libs` 包中 include 文件夹里的插件时，需要配置 NDK 环境：
 
 1. 点击 **Configure** 按钮，并选择 **Project Defaults** \> **Project Structure**，点击下载 Android NDK。
 
