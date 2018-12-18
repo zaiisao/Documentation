@@ -3,10 +3,10 @@
 title: Play Audio Effects/Audio Mixing
 description: How to enable audio mixing for Web
 platform: Web
-updatedAt: Tue Dec 04 2018 20:26:12 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:58:28 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
-## Feature Description
+## Introduction
 
 Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play background music. For example, playing music in a live broadcast. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file stops playing.
 Agora audio mixing supports the following options:
