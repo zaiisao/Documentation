@@ -3,10 +3,10 @@
 title: Adjust the Pitch and Tone
 description: How to set voice effects on macOS
 platform: macOS
-updatedAt: Tue Dec 18 2018 02:59:12 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:59:13 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
-## Feature Description 
+## Introduction 
 
 In social and entertainment scenarios, users often need various voice effects to enhance the interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
