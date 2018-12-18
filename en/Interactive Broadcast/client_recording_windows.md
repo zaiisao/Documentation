@@ -3,7 +3,7 @@
 title: Record the Audio from the Client
 description: 
 platform: Windows
-updatedAt: Tue Dec 11 2018 01:45:25 GMT+0000 (UTC)
+updatedAt: Tue Dec 18 2018 02:06:01 GMT+0000 (UTC)
 ---
 # Record the Audio from the Client
 ## Introduction
@@ -24,7 +24,7 @@ RtcEngineParameters rep(*lpRtcEngine);
 // Start local audio recording. 
 #ifdef UNICODE
  CHAR aFilePath[MAX_PATH];
- ::WideCharToMultiByte(CP_ACP, 0, filePath, -1, aFilePath, MAX_PATH, NULL, NULL);
+ ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, aFilePath, MAX_PATH, NULL, NULL);
 int nRet = rep.startAudioRecording(aFilePath, // Valid path to the local recording file.
 	AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH // AUDIO_RECORDING_QUALITY_HIGH|MEDIUM|LOW
 	);
