@@ -3,21 +3,17 @@
 title: 信令 API
 description: 
 platform: Web
-updatedAt: Wed Dec 19 2018 07:59:06 GMT+0000 (UTC)
+updatedAt: Wed Dec 19 2018 07:59:25 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
 
 信令 Web API 包含以下类：
 
--   [Signal 类](#signal)
-
--   [Session 类](#session)
-
--   [Call 类](#call)
-
--   [Channel 类](#channel)
-
+- [Signal 类](#signal)
+- [Session 类](#session)
+- [Call 类](#call)
+- [Channel 类](#channel)
 
 ## <a name="signal"></a>Signal 类
 
@@ -83,12 +79,9 @@ login(account, token, reconnect_count, reconnect_time) : Session
 
 使用该方法登录 Agora 信令系统，它返回一个 session 。您可以在 Session 中设置回调，完成消息、频道、呼叫等操作。
 
--   登录成功：回调 <code>onLoginSuccess</code> ，
-
--   登录失败：回调 <code>onLoginFailed</code> ，
-
--   登录之后失去与服务器的连接：回调 <code>onLogout</code> 。
-
+- 登录成功：回调 <code>onLoginSuccess</code> ，
+- 登录失败：回调 <code>onLoginFailed</code> ，
+- 登录之后失去与服务器的连接：回调 <code>onLogout</code> 。
 
 <table>
 <colgroup>
@@ -218,11 +211,10 @@ getSDKVersion() : String
 </tr>
 <tr><td><a href="#messageinstantsend-web"><span>messageInstantSend</span></a></td>
 <td><p>向名为 account 的用户发送点对点消息</p>
-<blockquote>
 <div><ul>
 <li>成功：消息接收方收到 Session 类的 <a href="#onmessageinstantreceive-web"><span>onMessageInstantReceive</span></a> 回调；</li>
 </ul>
-</div></blockquote>
+</div>
 </td>
 </tr>
 <tr><td><a href="#logout-web"><span>logout</span></a></td>
@@ -472,12 +464,9 @@ channelInviteUser2(channelID, peer, extra) : Call
 
 如果呼叫失败，会回调 <code>onInviteFailed</code>。可能的原因有：
 
--   对方不在线
-
--   本端网络不通
-
--   服务器异常
-
+- 对方不在线
+- 本端网络不通
+- 服务器异常
 
 如果收到对方的确认信息，本地将收到回调 <code>onInviteReceivedByPeer</code>, 对方会收到回调 <code>onInviteReceived</code>。
 
@@ -877,6 +866,7 @@ onInviteReceivedByPeer(extra)
 
 
 
+
 #### <a name="oninviteacceptedbypeer-web"></a>远端已接受呼叫回调 \(onInviteAcceptedByPeer\)
 
 ```
@@ -899,6 +889,7 @@ onInviteAcceptedByPeer(extra)
 </tr>
 </tbody>
 </table>
+
 
 
 #### <a name="oninviterefusedbypeer-web"></a>对方已拒绝呼叫回调 \(onInviteRefusedByPeer\)
@@ -1173,6 +1164,7 @@ channelLeave(cb)
 
 ```
 channelSetAttr(name, value, cb)
+
 ```
 
 该方法用于设置频道属性。当操作成功，所有频道用户都将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -1216,6 +1208,7 @@ channelSetAttr(name, value, cb)
 ```
 channel.channelSetAttr("name", "john", function(){
   // attr name was set
+
 ```
 
 \}\);
@@ -1224,6 +1217,7 @@ channel.channelSetAttr("name", "john", function(){
 
 ```
 channelDelAttr(name, cb)
+
 ```
 
 该方法用于删除频道的某一属性。
@@ -1254,12 +1248,14 @@ channelDelAttr(name, cb)
 channel.channelDelAttr("name", function(){
   // attr name was deleted
 });
+
 ```
 
 #### <a name="channelclearattr-web"></a>删除所有频道属性 \(channelClearAttr\)
 
 ```
 channelClearAttr(cb)
+
 ```
 
 该方法用于删除指定频道的所有属性。当操作成功，所有频道用户都将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -1287,6 +1283,7 @@ channelClearAttr(cb)
 channel.channelClearAttr(function(){
   // attr was cleared
 });
+
 ```
 
 ### 回调
@@ -1295,6 +1292,7 @@ channel.channelClearAttr(function(){
 
 ```
 onChannelJoined()
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1303,6 +1301,7 @@ onChannelJoined()
 
 ```
 onChannelJoinFailed(ecode)
+
 ```
 
 当加入频道失败时触发此回调。
@@ -1328,6 +1327,7 @@ onChannelJoinFailed(ecode)
 
 ```
 onChannelLeaved(ecode)
+
 ```
 
 当离开频道时触发此回调。
@@ -1353,6 +1353,7 @@ onChannelLeaved(ecode)
 
 ```
 onChannelUserJoined(account, uid)
+
 ```
 
 当有其他用户加入频道触发该回调。
@@ -1381,6 +1382,7 @@ onChannelUserJoined(account, uid)
 
 ```
 onChannelUserLeaved(account, uid)
+
 ```
 
 当有用户离开频道触发此回调。
@@ -1409,6 +1411,7 @@ onChannelUserLeaved(account, uid)
 
 ```
 onChannelUserList(users)
+
 ```
 
 当加入频道成功后，本人会收到此回调。
@@ -1436,6 +1439,7 @@ onChannelUserList(users)
 
 ```
 onChannelAttrUpdated(name, value, type)
+
 ```
 
 <table>
@@ -1473,6 +1477,7 @@ onChannelAttrUpdated(name, value, type)
 
 ```
 onMessageChannelReceive(account, uid, msg)
+
 ```
 
 当收到频道消息时触发。
@@ -1503,7 +1508,3 @@ onMessageChannelReceive(account, uid, msg)
 ## 错误代码和警告代码
 
 详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
-
-
-
-
