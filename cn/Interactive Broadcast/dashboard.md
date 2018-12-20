@@ -3,12 +3,12 @@
 title: 使用 Dashboard
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 20 2018 03:14:47 GMT+0000 (UTC)
+updatedAt: Thu Dec 20 2018 03:14:53 GMT+0000 (UTC)
 ---
 # 使用 Dashboard
 欢迎使用 Agora Dashboard。在这里，你可以查看频道用量，追踪通话质量，管理项目和权限，以及获取 Agora 技术支持。
 
-使用 Agora Dashboard 前，你需要创建 Agora 账号，详见 [注册与登录](../../cn/Interactive%20Broadcast/sign_in_and_sign_up.md)。如需找回账号密码，详见 [找回密码](../../cn/Interactive%20Broadcast/sign_in_and_sign_up.md)。
+使用 Agora Dashboard 前，你需要创建 Agora 账号，详见[注册与登录](../../cn/Interactive%20Broadcast/sign_in_and_sign_up.md)。如需找回账号密码，详见[找回密码](../../cn/Interactive%20Broadcast/sign_in_and_sign_up.md)。
 
 ## 功能简介
 
@@ -53,14 +53,14 @@ updatedAt: Thu Dec 20 2018 03:14:47 GMT+0000 (UTC)
 
 ![](https://web-cdn.agora.io/docs-files/1542965752366)
 
-如上图所示，选择频道和周期后，可查看该频道在所选周期内的用量统计。该图展示频道中包括 [主播](../../cn/Agora%20Platform/terms.md) 和 [观众](../../cn/Agora%20Platform/terms.md) 在内的所有用户的通话用量，其中，
+如上图所示，选择频道和周期后，可查看该频道在所选周期内的用量统计。该图展示频道中包括[主播](../../cn/Agora%20Platform/terms.md) 和 [观众](../../cn/Agora%20Platform/terms.md) 在内的所有用户的通话用量，其中，
 
 * **音频总量**：该频道在所选周期内音频通话的总分钟数。如图所示该频道在 2018 年 11 月 16 日至 22 日期间的音频通话的总分钟为 618958 分钟。
 * **SD 视频总量**：该频道在所选周期内视频分辨率小于 360p 的标清视频通话的总分钟数，目前视频通话质量均按 HD 视频总量计费。
 * **HD 视频总量**：该频道在所选周期内视频分辨率介于 360p 和 720p 之间的高清视频通话的总分钟数。如图所示该频道在 2018 年 11 月 16 日至 22 日期间的 HD 视频通话的总分钟为 145964 分钟。
 * **HD+ 视频总量**：该频道在所选周期内视频分辨率大于 720p 的高清视频通话的总分钟数。如图所示该频道在 2018 年 11 月 19 日的 HD+ 视频通话的总分钟为 1328 分钟。
 
-> 关于音视频对应的计费方式，详见 [计费](https://docs.agora.io/cn/Agora%20Platform/billing_faq)。
+> 关于音视频对应的计费方式，详见[计费](https://docs.agora.io/cn/Agora%20Platform/billing_faq)。
 
 ## 追踪质量
 
@@ -68,7 +68,7 @@ updatedAt: Thu Dec 20 2018 03:14:47 GMT+0000 (UTC)
 
 点击左侧导航栏**水晶球 > 通话调查**，进入通话调查页面。
 
-使用 SDK 后，你可在本页面选择**项目**和**时间段**、输入**频道名称**或 **UID** 查看通话质量，详见 [水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+使用 SDK 后，你可在本页面选择**项目**和**时间段**、输入**频道名称**或 **UID** 查看通话质量，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
 
 ![](https://web-cdn.agora.io/docs-files/1542771871816)
 
@@ -78,7 +78,7 @@ updatedAt: Thu Dec 20 2018 03:14:47 GMT+0000 (UTC)
 
 #### 创建项目并获取 App ID
 
-详见校验用户权限中的 [获取 App ID](../../cn/Interactive%20Broadcast/token.md)。
+详见校验用户权限中的[获取 App ID](../../cn/Interactive%20Broadcast/token.md)。
 
 > 对于已创建的项目，可根据创建时间、项目名和项目状态等对项目进行排序，也可通过输入项目名进行查找。
 > 
@@ -86,11 +86,11 @@ updatedAt: Thu Dec 20 2018 03:14:47 GMT+0000 (UTC)
 
 #### 获取 App Certificate
 
-详见校验用户权限中的 [获取 App Certificate](../../cn/Interactive%20Broadcast/token.md)。
+详见校验用户权限中的[获取 App Certificate](../../cn/Interactive%20Broadcast/token.md)。
 
 #### 踢人
 
-如果想从 App 中踢出某个用户，可以选择使用 Dashboard RESTful 的 [服务端踢人 API](https://docs.agora.io/cn/Interactive%20Broadcast/dashboard_restful_live?platform=All_Platforms#5-api)，也可以联系 Agora 技术支持开通权限后，直接在**项目**中进行配置。
+如果想从 App 中踢出某个用户，可以选择使用 Dashboard RESTful 的[服务端踢人 API](https://docs.agora.io/cn/Interactive%20Broadcast/dashboard_restful_live?platform=All_Platforms#5-api)，也可以联系 Agora 技术支持开通权限后，直接在**项目**中进行配置。
 
 
 ## 管理成员
