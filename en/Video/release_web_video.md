@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Dec 20 2018 08:33:46 GMT+0000 (UTC)
+updatedAt: Thu Dec 20 2018 08:33:52 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -160,7 +160,6 @@ Added the following APIs:
 #### 5. Other New Features
 
 - Support for two video display modes. You can set the display mode in  `Stream.play`.
-- Added the `Stream.setScreenBitrate` method to enable the users to set the video bitrate for screen sharing.
 - Added the `Client.enableAudioVolumeIndicator` method to enable the SDK regularly reports the active speakers and their volumes.
 - Added the `Stream.setAudioVolume` method, which sets the audio volume of the subscribed stream.
 - Added the `networkTypeChanged` callback to inform the application that the network type is changed.
