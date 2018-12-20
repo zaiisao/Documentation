@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Dec 20 2018 08:28:37 GMT+0000 (UTC)
+updatedAt: Thu Dec 20 2018 08:28:43 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -154,7 +154,6 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 #### 5. 其他新增功能
 
 - 支持两种视频显示模式，可以在 `Stream.play` 接口中设置播放流的显示模式。
-- 新增 `Stream.setScreenBitrate` 接口，支持手动设置屏幕共享时的视频码率。
 - 新增 `Client.enableAudioVolumeIndicator` 接口，允许 SDK 定期向应用程序反馈当前谁在说话，以及说话者的音量。
 - 新增 `Stream.setAudioVolume`  接口，支持设置订阅流的音量。
 - 新增 `networkTypeChanged` 事件，通知应用程序网络类型已改变。
