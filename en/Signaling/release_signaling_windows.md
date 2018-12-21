@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Dec 21 2018 07:50:14 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 07:50:19 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
@@ -15,7 +15,7 @@ Agora Signaling SDK facilitates real-time communications through functions such 
 -   Each channel can hold up to 10,000 users at the same time.
 -   Channel Messages:
     -   Each message can be up to 8-k visible characters.
-    -   A user can send messages at a maximum speed of one message per second. In a channel, a maximum of 100 messages can be sent each second. 
+    -   A user can send messages at a maximum speed of 60 messages per second. In a channel, a maximum of 200 messages can be sent each second. 
     -   Offline channel messages are not supported.
 -   Point-to-point messages:
     -   Each message can be up to 8-k visible characters.
