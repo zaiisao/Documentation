@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: iOS
-updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 08:10:07 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -781,7 +781,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 <td>频道名。最大为 128 字节可见字符</td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 1000 条消息。</td>
+<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 200 条消息。</td>
 </tr>
 <tr><td><code>msgID</code></td>
 <td>可见字符，消息的 ID。声网建议将其设置为”“（即由 SDK 接管 <code>msgID</code> 的生成、分配并保证唯一）</td>
@@ -1240,6 +1240,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onError)(NSString* name,AgoraEcode ecode,NSString* desc) ;
 
 
+
 ```
 
 该回调返回详细的出错信息。
@@ -1282,6 +1283,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onQueryUserStatusResult)(NSString* name,NSString* status) ;
 
 
+
 ```
 
 该回调返回用户状态查询结果。调用 <code>queryUserStatus</code> 方法时触发此回调。
@@ -1317,6 +1319,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onReconnected)(int fd) ;
 
 
+
 ```
 
 当重连成功会触发此回调。重连失败会触发 <code>onLogout</code> 回调。
@@ -1342,6 +1345,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onLoginSuccess)(uint32_t uid,int fd) ;
+
 
 
 ```
@@ -1374,6 +1378,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onLogout)(AgoraEcode ecode) ;
 
 
+
 ```
 
 当退出登录时触发此回调。
@@ -1399,6 +1404,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInvokeRet)(NSString* callID,NSString* err,NSString* resp) ;
+
 
 
 ```
@@ -1434,6 +1440,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onLoginFailed)(AgoraEcode ecode) ;
 
 
+
 ```
 
 当登录失败时触发此回调。
@@ -1461,6 +1468,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onChannelJoined)(NSString* channelID) ;
 
 
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1486,6 +1494,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelJoinFailed)(NSString* channelID,AgoraEcode ecode) ;
+
 
 
 ```
@@ -1518,6 +1527,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onChannelLeaved)(NSString* channelID,AgoraEcode ecode) ;
 
 
+
 ```
 
 当离开频道成功触发此回调。
@@ -1546,6 +1556,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelUserJoined)(NSString* account,uint32_t uid) ;
+
 
 
 ```
@@ -1578,6 +1589,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onChannelUserLeaved)(NSString* account,uint32_t uid) ;
 
 
+
 ```
 
 当有用户离开频道触发此回调。
@@ -1606,6 +1618,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelUserList)(NSMutableArray* accounts, NSMutableArray* uids);
+
 
 
 ```
@@ -1640,6 +1653,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onChannelQueryUserNumResult)(NSString* channelID,AgoraEcode ecode,int num) ;
 
 
+
 ```
 
 查询频道用户数量时触发。
@@ -1671,6 +1685,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onChannelAttrUpdated)(NSString* channelID,NSString* name,NSString* value,NSString* type) ;
+
 
 
 ```
@@ -1717,6 +1732,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onInviteReceived)(NSString* channelID,NSString* account,uint32_t uid, NSString* extra) ;
 
 
+
 ```
 
 当收到呼叫邀请时触发。
@@ -1751,6 +1767,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteReceivedByPeer)(NSString* channelID,NSString* account,uint32_t uid) ;
+
 
 
 ```
@@ -1789,6 +1806,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onInviteAcceptedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
 
 
+
 ```
 
 当呼叫被对方接受时触发。
@@ -1825,6 +1843,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onInviteRefusedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
 
 
+
 ```
 
 当呼叫被对方拒绝时触发。
@@ -1859,6 +1878,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteFailed)(NSString* channelID,NSString* account,uint32_t uid,AgoraEcode ecode,NSString* extra) ;
+
 
 
 ```
@@ -1900,6 +1920,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onInviteEndByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
 
 
+
 ```
 
 当呼叫被对方结束时触发。
@@ -1936,6 +1957,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onInviteEndByMyself)(NSString* channelID,NSString* account,uint32_t uid) ;
 
 
+
 ```
 
 当呼叫被自己结束时触发。
@@ -1967,6 +1989,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onInviteMsg)(NSString* channelID,NSString* account,uint32_t uid,NSString* msgType,NSString* msgData,NSString* extra) ;
+
 
 
 ```
@@ -2011,6 +2034,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onMessageSendError)(NSString* messageID,AgoraEcode ecode) ;
 
 
+
 ```
 
 当发送消息失败时触发。
@@ -2041,6 +2065,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onMessageSendSuccess)(NSString* messageID) ;
 
 
+
 ```
 
 当发送消息成功时触发。
@@ -2066,6 +2091,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onMessageInstantReceive)(NSString* account,uint32_t uid,NSString* msg) ;
+
 
 
 ```
@@ -2099,6 +2125,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onMessageChannelReceive)(NSString* channelID,NSString* account,uint32_t uid,NSString* msg) ;
+
 
 
 ```
@@ -2137,6 +2164,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 @property (copy) void(^onLog)(NSString* txt) ;
 
 
+
 ```
 
 当有日志打印时触发。
@@ -2162,6 +2190,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onUserAttrResult)(NSString* account,NSString* name,NSString* value) ;
+
 
 
 ```
@@ -2195,6 +2224,7 @@ updatedAt: Fri Dec 21 2018 08:10:00 GMT+0000 (UTC)
 
 ```
 @property (copy) void(^onUserAttrAllResult)(NSString* account, NSString* value) ;
+
 
 
 ```
