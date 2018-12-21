@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Web
-updatedAt: Fri Dec 21 2018 08:56:48 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 08:56:59 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
@@ -1117,7 +1117,7 @@ messageChannelSend(msg, cb)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>频道消息正文。如果是大规模群组通话，每条消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 1000 条消息。</td>
+<td>频道消息正文。如果是大规模群组通话，每条消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 200 条消息。</td>
 </tr>
 <tr><td><code>cb</code></td>
 <td>当该方法执行成功时的回调。</td>
@@ -1165,6 +1165,7 @@ channelLeave(cb)
 ```
 channelSetAttr(name, value, cb)
 
+
 ```
 
 该方法用于设置频道属性。当操作成功，所有频道用户都将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -1209,6 +1210,7 @@ channelSetAttr(name, value, cb)
 channel.channelSetAttr("name", "john", function(){
   // attr name was set
 
+
 ```
 
 \}\);
@@ -1217,6 +1219,7 @@ channel.channelSetAttr("name", "john", function(){
 
 ```
 channelDelAttr(name, cb)
+
 
 ```
 
@@ -1249,12 +1252,14 @@ channel.channelDelAttr("name", function(){
   // attr name was deleted
 });
 
+
 ```
 
 #### <a name="channelclearattr-web"></a>删除所有频道属性 \(channelClearAttr\)
 
 ```
 channelClearAttr(cb)
+
 
 ```
 
@@ -1284,6 +1289,7 @@ channel.channelClearAttr(function(){
   // attr was cleared
 });
 
+
 ```
 
 ### 回调
@@ -1293,6 +1299,7 @@ channel.channelClearAttr(function(){
 ```
 onChannelJoined()
 
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1301,6 +1308,7 @@ onChannelJoined()
 
 ```
 onChannelJoinFailed(ecode)
+
 
 ```
 
@@ -1328,6 +1336,7 @@ onChannelJoinFailed(ecode)
 ```
 onChannelLeaved(ecode)
 
+
 ```
 
 当离开频道时触发此回调。
@@ -1353,6 +1362,7 @@ onChannelLeaved(ecode)
 
 ```
 onChannelUserJoined(account, uid)
+
 
 ```
 
@@ -1383,6 +1393,7 @@ onChannelUserJoined(account, uid)
 ```
 onChannelUserLeaved(account, uid)
 
+
 ```
 
 当有用户离开频道触发此回调。
@@ -1412,6 +1423,7 @@ onChannelUserLeaved(account, uid)
 ```
 onChannelUserList(users)
 
+
 ```
 
 当加入频道成功后，本人会收到此回调。
@@ -1439,6 +1451,7 @@ onChannelUserList(users)
 
 ```
 onChannelAttrUpdated(name, value, type)
+
 
 ```
 
@@ -1477,6 +1490,7 @@ onChannelAttrUpdated(name, value, type)
 
 ```
 onMessageChannelReceive(account, uid, msg)
+
 
 ```
 
