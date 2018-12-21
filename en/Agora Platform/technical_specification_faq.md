@@ -3,7 +3,7 @@
 title: Technical Specification
 description: 
 platform: Technical Specification
-updatedAt: Wed Nov 28 2018 07:52:04 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 03:33:57 GMT+0000 (UTC)
 ---
 # Technical Specification
 ## Platform and Scale
@@ -28,7 +28,7 @@ Android, iOS, macOS, Windows, and the web.
   <tr>
     <td>Live Broadcast</td>
     <td>Android, iOS, macOS, Windows, the web</td>
-    <td>Hosts: Up to seven video hosts in a channel; 10,000 voice hosts in a channel (a scenario with more users is under development).<br>Audience: Up to 30,000 people in a channel.<br>Number of Channels: No limit.<br></td>
+    <td>Hosts: Up to seven video hosts in a channel; 10,000 voice hosts in a channel (a scenario with more users is under development).<br>Audience: Up to 1,000,000 people in a channel.<br>Number of Channels: No limit.<br></td>
   </tr>
   <tr>
     <td>Signaling</td>
