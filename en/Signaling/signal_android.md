@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Android
-updatedAt: Mon Nov 26 2018 02:34:48 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 09:04:42 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0.
