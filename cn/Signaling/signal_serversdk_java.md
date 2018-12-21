@@ -3,7 +3,7 @@
 title: 信令 Server SDK API - Java
 description: 
 platform: Java
-updatedAt: Fri Dec 21 2018 08:59:59 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 09:00:08 GMT+0000 (UTC)
 ---
 # 信令 Server SDK API - Java
 > 版本：v1.4.0 BETA
@@ -670,7 +670,7 @@ public void messageChannelSend(String msg)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 1000 条消息。</td>
+<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 200 条消息。</td>
 </tr>
 </tbody>
 </table>
@@ -1068,6 +1068,7 @@ public void onLoginFailed(Signal.LoginSession session, int ecode)
 
 ```
 public void onMessageInstantReceive(Signal.LoginSession session, String account, int uid, String msg)
+
 ```
 
 接收方收到消息时接收方收到的回调。
@@ -1102,6 +1103,7 @@ public void onMessageInstantReceive(Signal.LoginSession session, String account,
 
 ```
 public void onInviteReceived(Signal.LoginSession session, Signal.LoginSession.Call call)
+
 ```
 
 当对方收到呼叫邀请触发该回调。
@@ -1130,6 +1132,7 @@ public void onInviteReceived(Signal.LoginSession session, Signal.LoginSession.Ca
 
 ```
 public void onError(Signal.LoginSession session, int ecode, String reason)
+
 ```
 
 当出错时会触发该回调。
@@ -1203,6 +1206,7 @@ ChannelCallback 类是 Signal 类的内部类，用于管理频道相关回调�
 
 ```
 public void onChannelJoined(Signal.LoginSession session, Signal.LoginSession.Channel channelName)
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1231,6 +1235,7 @@ public void onChannelJoined(Signal.LoginSession session, Signal.LoginSession.Cha
 
 ```
 public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
+
 ```
 
 当加入频道失败触发此回调。
@@ -1262,6 +1267,7 @@ public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession
 
 ```
 public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
+
 ```
 
 当离开频道成功触发此回调。
@@ -1293,6 +1299,7 @@ public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Cha
 
 ```
 public void onChannelUserJoined(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)
+
 ```
 
 当有用户加入频道触发此回调。
@@ -1327,6 +1334,7 @@ public void onChannelUserJoined(Signal.LoginSession session, Signal.LoginSession
 
 ```
 public void onChannelUserLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)
+
 ```
 
 当有用户调用 <code>channelLeave</code> 成功时触发此回调。
@@ -1361,6 +1369,7 @@ public void onChannelUserLeaved(Signal.LoginSession session, Signal.LoginSession
 
 ```
 public void onChannelUserList(Signal.LoginSession session, Signal.LoginSession.Channel channel, List<String> users, List<Integer> uids)
+
 ```
 
 当加入频道成功后，本人会收到此回调。
@@ -1397,6 +1406,7 @@ public void onChannelUserList(Signal.LoginSession session, Signal.LoginSession.C
 
 ```
 public void onChannelAttrUpdated(Signal.LoginSession session, Signal.LoginSession.Channel channel, String name, String value, String type)
+
 ```
 
 当频道属性变化时触发。
@@ -1434,6 +1444,7 @@ public void onChannelAttrUpdated(Signal.LoginSession session, Signal.LoginSessio
 
 ```
 public void onChannelQueryUserNum(Signal.LoginSession session, String err, int num)
+
 ```
 
 查询频道用户数量时触发此回调。
@@ -1465,6 +1476,7 @@ public void onChannelQueryUserNum(Signal.LoginSession session, String err, int n
 
 ```
 public void onMessageChannelReceive(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid, String msg)
+
 ```
 
 当收到频道消息时触发。
@@ -1526,6 +1538,7 @@ MessageCallback 的内部类。用于管理消息相关回调。
 
 ```
 public void onMessageSendSuccess(Signal.LoginSession session)
+
 ```
 
 当发送消息成功时触发。
@@ -1551,6 +1564,7 @@ public void onMessageSendSuccess(Signal.LoginSession session)
 
 ```
 public void onMessageSendError(Signal.LoginSession session, int ecode)
+
 ```
 
 当消息发送失败时触发该回调。
@@ -1618,6 +1632,7 @@ CallCallback 类是 Signal 类的内部类，用于管理呼叫相关回调。
 
 ```
 public void onInviteReceivedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call)
+
 ```
 
 当呼叫被对方收到时触发该回调。
@@ -1646,6 +1661,7 @@ public void onInviteReceivedByPeer(Signal.LoginSession session, Signal.LoginSess
 
 ```
 public void onInviteAcceptedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当呼叫被对方接受时触发该回调。
@@ -1677,6 +1693,7 @@ public void onInviteAcceptedByPeer(Signal.LoginSession session, Signal.LoginSess
 
 ```
 public void onInviteRefusedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当呼叫被对方拒绝时触发该回调。
@@ -1708,6 +1725,7 @@ public void onInviteRefusedByPeer(Signal.LoginSession session, Signal.LoginSessi
 
 ```
 public void onInviteFailed(Signal.LoginSession session, Signal.LoginSession.Call call, int ecode)
+
 ```
 
 当呼叫失败时触发该回调。
@@ -1739,6 +1757,7 @@ public void onInviteFailed(Signal.LoginSession session, Signal.LoginSession.Call
 
 ```
 public void onInviteEndByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当呼叫被对方结束时触发该回调。
@@ -1770,6 +1789,7 @@ public void onInviteEndByPeer(Signal.LoginSession session, Signal.LoginSession.C
 
 ```
 public void onInviteEndByMyself(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当呼叫被自己结束时触发该回调。
@@ -1801,6 +1821,7 @@ public void onInviteEndByMyself(Signal.LoginSession session, Signal.LoginSession
 
 ```
 public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当本地收到对方发的 DTMF 消息时会触发该回调。
@@ -1831,7 +1852,3 @@ public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call ca
 ## 错误代码和警告代码
 
 详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
-
-
-
-
