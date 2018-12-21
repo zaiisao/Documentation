@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Android
-updatedAt: Fri Dec 21 2018 08:06:02 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 08:06:09 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -855,7 +855,7 @@ public void messageChannelSend(String channelID,String msg,String msgID);
 <td>频道名。最大为 128 字节可见字符</td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 1000 条消息。</td>
+<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 200 条消息。</td>
 </tr>
 <tr><td><code>msgID</code></td>
 <td>可见字符，消息的 ID。声网建议将其设置为”“（即由 SDK 接管 msgID 的生成、分配并保证唯一）</td>
@@ -1151,6 +1151,7 @@ public int getStatus();
 ```
 public int getSdkVersion();
 
+
 ```
 
 该方法用于获取 SDK 版本信息。
@@ -1290,6 +1291,7 @@ ICallBack 类为信令的回调接口类。
 ```
 public void onReconnecting(int nretry);
 
+
 ```
 
 与Agora信令系统的连接时触发本回调。
@@ -1315,6 +1317,7 @@ public void onReconnecting(int nretry);
 
 ```
 public void onError(String name,int ecode,String desc)
+
 
 ```
 
@@ -1357,6 +1360,7 @@ public void onError(String name,int ecode,String desc)
 ```
 public void onQueryUserStatusResult(String name,String status)
 
+
 ```
 
 该回调返回用户状态查询结果。调用 <code>queryUserStatus</code> 方法时触发此回调。
@@ -1391,6 +1395,7 @@ public void onQueryUserStatusResult(String name,String status)
 ```
 public void onReconnected(int fd);
 
+
 ```
 
 - 当与 Agora 信令系统重连成功时会触发此回调。
@@ -1417,6 +1422,7 @@ public void onReconnected(int fd);
 
 ```
 public void onLoginSuccess(int uid,int fd);
+
 
 ```
 
@@ -1447,6 +1453,7 @@ public void onLoginSuccess(int uid,int fd);
 ```
 public void onLogout(int ecode);
 
+
 ```
 
 当退出登录时触发此回调。
@@ -1473,6 +1480,7 @@ public void onLogout(int ecode);
 ```
 public void onLoginFailed(int ecode);
 
+
 ```
 
 当登录失败时触发此回调。
@@ -1498,6 +1506,7 @@ public void onLoginFailed(int ecode);
 
 ```
 void onInvokeRet(String callID, String err, String resp);
+
 
 ```
 
@@ -1531,6 +1540,7 @@ void onInvokeRet(String callID, String err, String resp);
 ```
 public void onChannelJoined(String channelID);
 
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1556,6 +1566,7 @@ public void onChannelJoined(String channelID);
 
 ```
 public void onChannelJoinFailed(String channelID,int ecode);
+
 
 ```
 
@@ -1586,6 +1597,7 @@ public void onChannelJoinFailed(String channelID,int ecode);
 ```
 public void onChannelLeaved(String channelID,int ecode);
 
+
 ```
 
 当离开频道成功时触发此回调。
@@ -1614,6 +1626,7 @@ public void onChannelLeaved(String channelID,int ecode);
 
 ```
 public void onChannelUserJoined(String account,int uid);
+
 
 ```
 
@@ -1644,6 +1657,7 @@ public void onChannelUserJoined(String account,int uid);
 ```
 public void onChannelUserLeaved(String account,int uid);
 
+
 ```
 
 当有用户离开频道触发此回调。
@@ -1652,6 +1666,7 @@ public void onChannelUserLeaved(String account,int uid);
 
 ```
 public void onChannelUserList(String[] accounts, int[] uids);
+
 
 ```
 
@@ -1684,6 +1699,7 @@ public void onChannelUserList(String[] accounts, int[] uids);
 ```
 public void onChannelQueryUserNumResult(String channelID,int ecode,int num);
 
+
 ```
 
 查询频道用户数量时触发此回调。
@@ -1715,6 +1731,7 @@ public void onChannelQueryUserNumResult(String channelID,int ecode,int num);
 
 ```
 public void onChannelAttrUpdated(String channelID,String name,String value,String type);
+
 
 ```
 
@@ -1761,6 +1778,7 @@ public void onChannelAttrUpdated(String channelID,String name,String value,Strin
 
 当收到呼叫邀请时触发此回调。
 
+
 ```
 
 <table>
@@ -1794,6 +1812,7 @@ public void onChannelAttrUpdated(String channelID,String name,String value,Strin
 ```
 public void onInviteReceivedByPeer(String channelID,String account,int uid);
 
+
 ```
 
 当呼叫被对方收到时触发。
@@ -1825,6 +1844,7 @@ public void onInviteReceivedByPeer(String channelID,String account,int uid);
 
 ```
 public void onInviteAcceptedByPeer(String channelID,String account,int uid, String extra);
+
 
 ```
 
@@ -1861,6 +1881,7 @@ public void onInviteAcceptedByPeer(String channelID,String account,int uid, Stri
 ```
 public void onInviteRefusedByPeer(String channelID,String account,int uid, String extra);
 
+
 ```
 
 当呼叫被对方拒绝时触发此回调。
@@ -1895,6 +1916,7 @@ public void onInviteRefusedByPeer(String channelID,String account,int uid, Strin
 
 ```
 public void onInviteFailed(String channelID,String account,int uid,int ecode, String extra);
+
 
 ```
 
@@ -1934,6 +1956,7 @@ public void onInviteFailed(String channelID,String account,int uid,int ecode, St
 ```
 public void onInviteEndByPeer(String channelID,String account,int uid, String extra);
 
+
 ```
 
 当呼叫被对方结束时触发此回调。
@@ -1969,6 +1992,7 @@ public void onInviteEndByPeer(String channelID,String account,int uid, String ex
 ```
 public void onInviteEndByMyself(String channelID,String account,int uid);
 
+
 ```
 
 当呼叫被自己结束时触发。
@@ -2000,6 +2024,7 @@ public void onInviteEndByMyself(String channelID,String account,int uid);
 
 ```
 public void onInviteMsg(String channelID, String account, int uid, String msgType, String msgData, String extra)
+
 
 ```
 
@@ -2042,6 +2067,7 @@ public void onInviteMsg(String channelID, String account, int uid, String msgTyp
 ```
 public void onMessageSendError(String messageID,int ecode);
 
+
 ```
 
 当发送消息失败时触发。
@@ -2071,6 +2097,7 @@ public void onMessageSendError(String messageID,int ecode);
 ```
 public void onMessageSendSuccess(String messageID);
 
+
 ```
 
 当发送消息成功时触发。
@@ -2096,6 +2123,7 @@ public void onMessageSendSuccess(String messageID);
 
 ```
 public void onMessageInstantReceive(String account,int uid,String msg);
+
 
 ```
 
@@ -2128,6 +2156,7 @@ public void onMessageInstantReceive(String account,int uid,String msg);
 
 ```
 public void onMessageChannelReceive(String channelID,String account,int uid,String msg);
+
 
 ```
 
@@ -2164,6 +2193,7 @@ public void onMessageChannelReceive(String channelID,String account,int uid,Stri
 ```
 public void onLog(String txt)
 
+
 ```
 
 当有日志打印时触发。
@@ -2189,6 +2219,7 @@ public void onLog(String txt)
 
 ```
 public void onUserAttrResult(String account,String name,String value);
+
 
 ```
 
@@ -2221,6 +2252,7 @@ public void onUserAttrResult(String account,String name,String value);
 
 ```
 public void onUserAttrAllResult(String account,String value);
+
 
 ```
 
