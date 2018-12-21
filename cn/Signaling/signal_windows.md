@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Windows
-updatedAt: Tue Nov 27 2018 09:01:04 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 08:58:24 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0
