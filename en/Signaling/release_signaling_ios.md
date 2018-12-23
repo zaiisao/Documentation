@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Dec 21 2018 07:46:23 GMT+0000 (UTC)
+updatedAt: Sun Dec 23 2018 08:19:58 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
