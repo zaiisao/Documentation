@@ -3,7 +3,7 @@
 title: Technical Specification
 description: 
 platform: Technical Specification
-updatedAt: Fri Dec 21 2018 03:33:57 GMT+0000 (UTC)
+updatedAt: Mon Dec 24 2018 20:00:18 GMT+0000 (UTC)
 ---
 # Technical Specification
 ## Platform and Scale
