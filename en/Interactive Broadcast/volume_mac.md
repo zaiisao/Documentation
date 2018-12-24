@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Mon Dec 24 2018 07:37:15 GMT+0000 (UTC)
+updatedAt: Mon Dec 24 2018 08:06:25 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
