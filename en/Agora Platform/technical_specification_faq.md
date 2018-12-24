@@ -3,7 +3,7 @@
 title: Technical Specification
 description: 
 platform: Technical Specification
-updatedAt: Mon Dec 24 2018 20:01:11 GMT+0000 (UTC)
+updatedAt: Mon Dec 24 2018 20:01:14 GMT+0000 (UTC)
 ---
 # Technical Specification
 ## Platform and Scale
@@ -21,7 +21,7 @@ Agora supports Android, iOS, macOS, Windows, and the Web.
     <th>Aggregate Resolution</th>
   </tr>
   <tr>
-    <td>Communication(Voice/Video)</td>
+    <td>Communication (Voice/Video)</td>
     <td>Android, iOS, macOS, Windows, the Web</td>
     <td>Voice Communication: Up to 10,000 users in a channel.<br>Video Communication: Up to seven users in a channel (a 17-user scenario is under development).<br>Number of Channels: No limit.</td>
   </tr>
@@ -45,6 +45,7 @@ Agora supports Android, iOS, macOS, Windows, and the Web.
 * Web: JavaScript
 * Cocos: C++
 * Unity: C#
+
 For other requirements, contact sales-us@agora.io.
 
 ### What is the supported audio-capture sampling rate on each platform?
