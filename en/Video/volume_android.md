@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Tue Dec 18 2018 02:58:15 GMT+0000 (UTC)
+updatedAt: Mon Dec 24 2018 03:19:51 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
