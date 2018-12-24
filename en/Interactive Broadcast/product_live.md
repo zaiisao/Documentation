@@ -3,7 +3,7 @@
 title: Agora Interactive Broadcast Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 24 2018 18:42:56 GMT+0000 (UTC)
+updatedAt: Mon Dec 24 2018 18:43:00 GMT+0000 (UTC)
 ---
 # Agora Interactive Broadcast Overview
 The Agora Native SDK for Interactive Broadcast enables one-to-many and many-to-many audio or video live streaming. Different from the traditional CDN live broadcast, which only allows one-way communication from the hosts to the audience, the Agora SDK for Interactive Broadcast empowers the audience to interact with the hosts through [hosting-in](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#hosting-in), like a viewer jumping onto the stage in the middle of a play to perform. The Agora Native SDK for Interactive Broadcast is applicable to scenarios that encourage active engagement, such as game-playing, online classes for students in small groups, and Q&A sessions during E-commerce live streaming. You can also use this SDK for one-to-one video calls that require high image quality.
@@ -17,10 +17,10 @@ The Agora Native SDK for Interactive Broadcast Agora boasts a flexible combinati
 | Host-in at the Client Side         | An audience switches to a co-host and interacts with the existing host. | <li>Large-scale live streams where hosts can invite the audience to interact with them. <li>Online games such as Murder Mystery and Werewolf Killing. |
 | Host-in across Channels            | Hosts interact with each other across channels.    | PK Hosting.                                                  |
 | Audio Mixing                          | Sends the local and online audio with the user's voice to other audience members in the channel. | <li>Online KTV. <li>Interactive music classes for children.    |
-| Screen Sharing                        | Hosts share their screens to the audience in the channel. | <li>Interactive online classes.<li>Live streaming of gaming hosts. |
+| Screen Sharing                        | Hosts share their screens with the audience in the channel. | <li>Interactive online classes.<li>Live streaming of gaming hosts. |
 | Modify the Raw Data                    | Developers obtain and modify the raw voice or video data of the SDK engine to create special effects, such as a voice change. | <li>To change the voice in an online voice chatroom.<li>Image enhancement in a live stream. |
-| Inject an Online Media Stream         | Injects an external audio or video stream to an ongoing live broadcast channel, so the host and audience in the channel can listen to or watch the stream while interacting with each other. The attributes of the video source can be set. | <li>The host and audience watching a movie or game together.    |
-| Customize the Video Source and Renderer | Users process videos from self-built cameras, screen sharing, or files, for image enhancement and filtering. | <li>To use a customized image enhancement library or pre-processing library.<li>To customize the application's built-in image and video modules.<li>To use other video sources, such as a recorded video.<li>To provide flexible device management for exclusive video capture devices to avoid conflicts with other services. |
+| Inject an Online Media Stream         | Injects an external audio or video stream to an ongoing live broadcast channel. The host and audience in the channel can listen to or watch the stream while interacting with each other. You can set the attributes of the video source. | <li>The host and audience watching a movie or game together.    |
+| Customize the Video Source and Renderer | Users process videos (from self-built cameras, screen sharing, or files) for image enhancement and filtering. | <li>To use a customized image enhancement library or pre-processing library.<li>To customize the application's built-in image and video modules.<li>To use other video sources, such as a recorded video.<li>To provide flexible device management for exclusive video capture devices to avoid conflicts with other services. |
 | Push Streams to the CDN                | Sends the audio and video of your channel to other RTMP servers through the CDN:<li>Starts or stops publishing at any time.<li>Adds or removes an address while continuously publishing the stream. <li>Adjusts the picture-in-picture layout. | <li>To send a live stream to WeChat or Weibo.<li>To allow more people to watch the live stream when the number of audience members in the channel reached the limit. |
 
 See the following sample code for application scenarios:
