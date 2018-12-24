@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Mon Dec 24 2018 07:35:38 GMT+0000 (UTC)
+updatedAt: Mon Dec 24 2018 08:13:44 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
