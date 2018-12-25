@@ -3,7 +3,7 @@
 title: 通话前的网络质量检测
 description: 通话前的网络质量检测
 platform: Windows
-updatedAt: Wed Nov 21 2018 10:33:14 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 04:05:29 GMT+0000 (UTC)
 ---
 # 通话前的网络质量检测
 ## 功能描述
