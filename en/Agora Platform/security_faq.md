@@ -3,7 +3,7 @@
 title: Security
 description: 
 platform: Security
-updatedAt: Wed Nov 28 2018 07:35:43 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 15:10:42 GMT+0000 (UTC)
 ---
 # Security
 ### Are the services provided by Agora safe?
@@ -24,8 +24,8 @@ Yes.
 
 ### How does the Agora network handle DDoS attacks？
 
-Agora regularly scans the core network nodes, checks, and cleans up possible security vulnerabilities. An anti-DDoS firewall is also implemented on each cloud data center to protect core nodes from any attack. In our global data centers, Agora reserves over 50% of redundant bandwidth for core servers with sufficient capacity and resources to minimize the risk of DDoS.
+Agora regularly scans core network nodes, checks, and cleans up possible security vulnerabilities. An anti-DDoS firewall is also implemented on each cloud data center to protect core nodes from any attack. In our global data centers, Agora reserves over 50% of redundant bandwidth for core servers with sufficient capacity and resources to minimize the risk of DDoS attacks.
 
 ### Do the Agora servers store any voice or video content?
 
-No, the Agora servers do not store any voice or video content. The Agora SDKs send some information to the Agora servers for quality and problem reporting purposes. This information includes the date, time, duration of the call, and failure records. Agora does not collect information that affects privacy, such as login, identification and payment. For any concerns, contact support@agora.io.
+No, the Agora servers do not store any voice or video content. The Agora SDKs send some information to the Agora servers for quality and problem reporting purposes. This information includes the date, time, duration of the call, and failure records. Agora does not collect information that affects privacy, such as login, identification, and payment. For any concerns, contact support@agora.io.
