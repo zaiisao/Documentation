@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Tue Dec 25 2018 15:45:18 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 15:45:21 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 ### My H5 game integrates the Agora SDK v2.2.0 for iOS. When the host uses WKWebview with Layabox and joins the channel, why is the game volume very low?
@@ -16,9 +16,7 @@ Setting `scenario` to the `GameStreaming` mode may lead to echo issues. If you h
 
 ### Why is no audio captured when an Android 9 device locks its screen or the app on the device runs in the background?
 
-This issue os caused bu the behavioral change of the Android 9 system.
-Users may observe no audio within 1 minute after the Android 9 device locks its screen.
-According to the official website of Android, this is s system restriction:
+According to the Android Developer website, this is a system restriction:
 
 > **Limited access to sensors in background**
 > Android 9 limits the ability for background apps to access user input and sensor data. If your app is running in the background on a device running Android 9, the system applies the following restrictions to your app:
@@ -27,12 +25,12 @@ According to the official website of Android, this is s system restriction:
 > * Sensors that use the on-change or one-shot reporting modes don't receive events.
 > If your app needs to detect sensor events on devices running Android 9, use a foreground service.
 
-See [Behavior changes: all apps](https://developer.android.com/about/versions/pie/android-9.0-changes-all) for details.
+See [Behavior changes: all apps](https://developer.android.com/about/versions/pie/android-9.0-changes-all).
 
-By far the Android official website does not provide a solution for background capture, but developers can use **Foreground Service** to address this problem.
-If you need to use an Android 9 device to capture audio after the device locks its screen, you can start a Service before the screen locks, and stop the Service before exiting screen lock. See the following code snippets for reference:
+Developers can use **Foreground Service** to workaround this restriction.
+If you need to use an Android 9 device to capture audio after the device locks its screen, you can start a foreground service before the screen locks, and stop the service before exiting the screen lock. See the following code snippets:
 
-- Start a Foreground Service
+- Starts a Foreground Service
 
 	```java
 	Intent intent = new Intent(this, MyForegroundService.class);
@@ -40,7 +38,7 @@ If you need to use an Android 9 device to capture audio after the device locks i
 	this.startService(intent);
 	```
 	
-- Stop a Foreground Service
+- Stops a Foreground Service
 
 	```java
 	Intent intent = new Intent(this, MyForegroundService.class);
@@ -105,45 +103,45 @@ If you need to use an Android 9 device to capture audio after the device locks i
 					return super.onStartCommand(intent, flags, startId);
 			}
 
-			/* Used to build and start foreground service. */
+			/* Builds and starts a foreground service. */
 			private void startForegroundService() {
 					Log.d(TAG_FOREGROUND_SERVICE, "Start foreground service.");
 
-					// Create notification default intent.
+					// Creates the notification default intent.
 					Intent intent = new Intent();
 					PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
-					// Create notification builder.
+					// Creates the notification builder.
 					NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "sfdsfds");
 
-					// Make notification show big text.
+					// Enables the notification to show in big text.
 					NotificationCompat.BigTextStyle bigTextStyle = new NotificationCompat.BigTextStyle();
 					bigTextStyle.setBigContentTitle("Music player implemented by foreground service.");
 					bigTextStyle.bigText("Android foreground service is a android service which can run in foreground always, it can be controlled by user via notification.");
-					// Set big text style.
+					// Sets the big text style.
 					builder.setStyle(bigTextStyle);
 
 					builder.setWhen(System.currentTimeMillis());
 
-					// Make the notification max priority.
+					// Sets the notification to maximum priority.
 					builder.setPriority(Notification.PRIORITY_MAX);
-					// Make head-up notification.
+					// Creates a heads-up notification.
 					builder.setFullScreenIntent(pendingIntent, true);
 
-					// Build the notification.
+					// Builds the notification.
 					Notification notification = builder.build();
 
-					// Start foreground service.
+					// Starts the foreground service.
 					startForeground(1, notification);
 			}
 
 			private void stopForegroundService() {
 					Log.d(TAG_FOREGROUND_SERVICE, "Stop foreground service.");
 
-					// Stop foreground service and remove the notification.
+					// Stops the foreground service and removes the notification.
 					stopForeground(true);
 
-					// Stop the foreground service.
+					// Stops the foreground service.
 					stopSelf();
 			}
 	}
