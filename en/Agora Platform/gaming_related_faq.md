@@ -3,14 +3,14 @@
 title: Gaming-related Issues
 description: 
 platform: Gaming-related Issues
-updatedAt: Tue Dec 25 2018 16:42:27 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 16:42:30 GMT+0000 (UTC)
 ---
 # Gaming-related Issues
 ## Gaming Sound Effects
 
 ### Before joining an audio channel, the gaming sound effects are muted through the system's mute button. After joining the channel, I can hear the gaming sound effects.
 
-The volume is not 0 for calls in all communication apps. After joining an audio channel, the volume of the gaming sound effects is controlled by the call volume.
+The volume is not 0 for calls in all communication applications. After joining an audio channel, the volume of the gaming sound effects is controlled by the call volume.
 
 ### I set the gaming sound effects at a certain system volume. After joining an audio channel, the volume of the gaming sound effects is higher than before.
 
@@ -28,7 +28,7 @@ To work around this issue, when leaving an audio channel, you must set the Audio
 
 ### The gaming sound effects conflict with the voice after accessing the SDK.
 
-This is an expected behavior because the process of joining the channel is interrupted. You can set the gaming sound effects to be controlled by the media volume, but this may lead to other problems, such as echo.
+This is expected behavior because the process of joining the channel is interrupted. You can set the gaming sound effects to be controlled by the media volume, but this may lead to other problems, such as echo.
 
 ### The background music of all players is mixed into a call in the Mahjong game.
 
@@ -74,7 +74,7 @@ Bluetooth terminology:
 
 Bluetooth headsets use two channels in the SCO link for audio playback and recording. However, Bluetooth headsets only support mono sound in SCO and stereo sound in A2DP.
 
-Bluetooth headsets cannot be used for voice calls if they only support A2DP and not SCO.
+If the Bluetooth headsets only support A2DP and not SCO, you cannot use them for voice calls.
 
 ## Device Compatibility
 
