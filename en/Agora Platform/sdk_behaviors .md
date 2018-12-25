@@ -3,7 +3,7 @@
 title: SDK Behavior when a User Drops Offline or a Process Gets Kill
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 25 2018 18:23:18 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 18:30:47 GMT+0000 (UTC)
 ---
 # SDK Behavior when a User Drops Offline or a Process Gets Kill
 ### Does the Agora SDK reconnect when a user drops offline or a process gets killed?
