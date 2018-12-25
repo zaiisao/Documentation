@@ -187,7 +187,7 @@ Use the `client.leave`  method to remove the user from the current broadcast \(c
 
 ```javascript
 client.leave(function () {
-  console.log("Leavel channel successfully");
+  console.log("Leave channel successfully");
 }, function (err) {
   console.log("Leave channel failed");
 });
