@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Tue Dec 25 2018 15:46:02 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 15:46:07 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 ### My H5 game integrates the Agora SDK v2.2.0 for iOS. When the host uses WKWebview with Layabox and joins the channel, why is the game volume very low?
@@ -27,7 +27,7 @@ According to the Android Developer website, this is a system restriction:
 
 See [Behavior changes: all apps](https://developer.android.com/about/versions/pie/android-9.0-changes-all).
 
-Developers can use **Foreground Service** to workaround this restriction.
+Developers can use **Foreground Service** to work around this restriction.
 If you need to use an Android 9 device to capture audio after the device locks its screen, you can start a foreground service before the screen locks, and stop the service before exiting the screen lock. See the following code snippets:
 
 - Starts a Foreground Service
