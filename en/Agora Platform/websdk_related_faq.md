@@ -3,14 +3,14 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Tue Dec 25 2018 18:02:56 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 18:03:00 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
 ### When I use Google Chrome on Android, why can't I connect with people who use the Safari browser or Native SDK?
-Safari uses the H.264 video codec for video streaming and all calls made with the Safari browser must support this codec. Google Chrome for Android v61+ has an issue that prevents devices from streaming H.264 video to other users, causing a black screen on remote Safari browsers. For more information, see:
+Safari uses the H.264 video codec for video streaming and all calls made with the Safari browser must support this codec. Google Chrome for Android v61+ has an issue that prevents devices from streaming H.264 video to other users, causing a black screen on remote Safari browsers. For more information, see 
 https://bugs.chromium.org/p/chromium/issues/detail?id=761336.
 
-You may encounter another issue on Google Chrome for Android, where you receive only voice, but no image. Google Chrome for Android v57 supports the H.264 codec. Only Qualcomm (KitKat and later) and Samsung Exynos (Lollipop and later) chipsets support the H.264 video codec. For more information, see:
+You may encounter another issue on Google Chrome for Android, where you receive only voice, but no image. Google Chrome for Android v57 supports the H.264 codec. Only Qualcomm (KitKat and later) and Samsung Exynos (Lollipop and later) chipsets support the H.264 video codec. See 
 https://groups.google.com/forum/#!msg/discuss-webrtc/xXjeKbW_JYI/LIXzVrKWCwAJ.
 
 ### In the H.264 mode, when I join a channel using the Firefox browser on macOS and enable the low-stream video, why do I get the high stream?
@@ -36,8 +36,9 @@ This is a known issue and the macOS user needs to refresh the page. Agora is wor
 Safari on iOS does not support the dual-stream mode.
 
 ### Why can't I join the channel and why is there a WebSocket error and DDoS-like attacks?
-The `joinChannel` parameters of the Web SDK vary in different versions.
-The join attribute of ChannelKey is added in Web SDK v1.12+. Web SDK versions earlier than v1.12 do not have this attribute.
+The `joinChannel` parameters of the Web SDK vary in different versions:
+- The join attribute of ChannelKey is added in Web SDK v1.12+. 
+- Web SDK versions earlier than v1.12 do not have this attribute.
 
 ### Why can't the receiver switch to the low-stream video in h264_interop mode if the sender is using a Firefox browser?
 The low-stream or high-stream video setting is dependent on the browser, resolution, and codec type. Web browsers use an internal algorithm to set the stream. Therefore, the stream setting may not be according to your setting.
@@ -64,4 +65,4 @@ This is a limitation of the iOS Safari browser.
 You need to call the `enableWebSdkInteroperability` method in the Agora Native SDK to enable the interoperability functionality with WebRTC.
 
 ### Why aren't the charges calculated based on the video resolution that I set for the low-stream video?
-Due to device and web browser limitations, the resolution you set may not take effect and may be set by the browser instead. In this case, the charges will be calculated based on the actual resolution.
+Due to device and web browser limitations, the resolution you set may not take effect and may be set by the browser instead. In this case, the charges are calculated based on the actual resolution.
