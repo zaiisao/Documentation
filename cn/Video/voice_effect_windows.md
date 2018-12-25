@@ -3,7 +3,7 @@
 title: 调整音调、音色
 description: How to adjust the voice effect on Windows
 platform: Windows
-updatedAt: Fri Nov 23 2018 07:16:22 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 06:30:12 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
