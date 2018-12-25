@@ -3,7 +3,7 @@
 title: Video-related Issues
 description: 
 platform: Video-related Issues
-updatedAt: Tue Dec 25 2018 16:24:01 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 16:24:05 GMT+0000 (UTC)
 ---
 # Video-related Issues
 This page provides common troubleshooting strategies for Agora's video products and services.
@@ -13,7 +13,7 @@ This page provides common troubleshooting strategies for Agora's video products 
 Choppy videos may be caused by slow Internet connections or bad device performances. 
 
 Check the following:
-* Check if the choppy videos are intermittent or consistent. Choppy videos being intermittent are normal due to the nature of the network and device.
+* Check if the choppy videos are intermittent or consistent. Intermittent choppy videos are normal due to the nature of the network and device.
 * Check if the Internet connection is stable. If it is stable but the video is still choppy, switch to 4G or another Wi-Fi network and check the video performance.
 * Try the video call on another device.
 * Turn off all pre-processing options, such as image enhancement, to ensure that the choppy video is not caused by any pre-processing option.
@@ -23,7 +23,7 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The time frame during which the choppy video playback appears.
 * SDK logs and screen recording files of the user.
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. See [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
 
 ## Blurry Video
 
@@ -32,7 +32,7 @@ Blurry videos may be caused by low bitrates and resolution ratios.
 Check the following:
 * Check `videoProfile`. If possible, set `videoProfile` to a higher level to see whether the video is clearer.
 * Check the stream type of the receiver. If the stream type is low, call the `setRemoteVideoStreamType` method to switch from a low stream to high stream.
-* Switch to 4G or another WiFi network to ensure that the blurry video is not caused by poor Internet connections.
+* Switch to 4G or another Wi-Fi network to ensure that the blurry video is not caused by poor Internet connections.
 * Turn off all pre-processing options.
 
 If the issue persists, contact Agora customer support and submit the issue with the following information:
@@ -40,11 +40,11 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The time frame during which the blurry video appears.
 * SDK logs and screen recording files of the user.
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. See [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
 
 ## Black Screens
 
-Common reasons of black screens:
+Common reasons for black screens:
 * Network failure: If the local network connection is poor or interrupted, the user cannot see other users. If any user in the call has network issues, none of the other users in the call can see this user.
 * The user disabled the video. 
 
@@ -52,7 +52,7 @@ Black screen scenarios:
 
 **Black screen on the local side**
 
-This may be caused by a video capture failure on the local side. The camera is not working properly or is being used by another application.
+This may be caused by a video capture failure on the local side. The camera does not work properly or is used by another application.
 
 Check the following:
 * Check the camera hardware. Start the built-in video camera to test the recording function.
@@ -79,7 +79,7 @@ Check the following:
 * Check the rendering type in the SDK log in Windows. If the rendering type is D2D, ensure that you update to the latest graphics card driver. If the issue persists after updating the driver, switch to GDI rendering, which means the app calls the following function before the user joins the channel:
 	* `AParameter apm(*pRTCEngine)`;
 	* `nRet = apm->setInt("che.video.renderer.type", 9)`;
-* If the app enabled the Other Rendering Method Mode, check for any rendering issue.
+* If the app enables the Other Rendering Method Mode, check for any rendering issue.
 
 If the issue persists, contact Agora customer support and submit the issue with the following information:
 * The uid of the user whose screen goes black.
@@ -108,9 +108,9 @@ Check the following:
 ## Big Headshot and Letterbox
 Big headshot and letterbox issues occur when the video size does not match the display window size and under the following scenarios:
 
-* If the video size is different from the camera output size, the video will be cropped before being encoded, and then enlarged.
-* If the video size is different from the display window size and the receiver uses the Hidden mode for rendering, the video will also be cropped before being encoded, and then enlarged.
-* If the video size is different from the display window size and the receiver uses the Fit mode for rendering, the video will be reduced in size, resulting in dark bands on the margin of the screen.
+* If the video size is different from the camera output size, the video is cropped before it is encoded and then enlarged.
+* If the video size is different from the display window size and the receiver uses the Hidden mode for rendering, the video is also cropped before it is encoded and then enlarged.
+* If the video size is different from the display window size and the receiver uses the Fit mode for rendering, the video is reduced in size, resulting in dark bands on the margin of the screen.
 
 If the issue persists, contact Agora customer support and submit the issue with the following information:
 
