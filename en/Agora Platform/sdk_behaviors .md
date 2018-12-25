@@ -3,14 +3,14 @@
 title: SDK Behavior when a User Drops Offline or a Process Gets Kill
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 25 2018 18:30:47 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 18:30:51 GMT+0000 (UTC)
 ---
 # SDK Behavior when a User Drops Offline or a Process Gets Kill
 ### Does the Agora SDK reconnect when a user drops offline or a process gets killed?
 
 #### User Drops Offline
 
-User A and User B are in the same channel and User A loses network connection:
+User A and user B are in the same channel and user A loses network connection:
 
 1.  User A loses connection with the server (no data is received from the server within four seconds):
     -   Android, Windows, or Linux: User A receives the `onConnectionInterrupted` callback.
@@ -30,7 +30,7 @@ User A and User B are in the same channel and User A loses network connection:
         -  iOS or macOS: User A receives the `didRejoinChannel` callback. 
         -   The Web: User A does not receive any callback. 
 
-If user B does not receive any callback indicating that user A fails to reconnect, then user B does not receive a callback even if user A reconnects to the server.
+If user B does not receive any callback indicating that user A fails to reconnect, then user B does not receive any callback even if user A reconnects to the server.
 
 If user B previously receives a callback indicating that user A fails to reconnect to the server, then: 
 -   Android, Windows, or Linux: User B receives the `onUserJoined` callback.  
