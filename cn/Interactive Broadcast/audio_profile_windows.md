@@ -3,7 +3,7 @@
 title: 使用双声道/高音质
 description: How to set the audio profile on Windows
 platform: Windows
-updatedAt: Fri Nov 23 2018 07:09:04 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 08:16:25 GMT+0000 (UTC)
 ---
 # 使用双声道/高音质
 ## 功能描述
