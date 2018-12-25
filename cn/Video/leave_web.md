@@ -14,7 +14,7 @@ updatedAt: Thu Dec 13 2018 08:37:39 GMT+0000 (UTC)
 
 ```javascript
 client.leave(function () {
-  console.log("Leavel channel successfully");
+  console.log("Leave channel successfully");
 }, function (err) {
   console.log("Leave channel failed");
 });

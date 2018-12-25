@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:00:14 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:10:35 GMT+0000 (UTC)
 ---
 # 实现视频通话
 本页介绍如何使用 Agora Web SDK 快速实现网页端视频通话。
@@ -184,7 +184,7 @@ client.on('stream-subscribed', function (evt) {
 
 ```javascript
 client.leave(function () {
-  console.log("Leavel channel successfully");
+  console.log("Leave channel successfully");
 }, function (err) {
   console.log("Leave channel failed");
 });
