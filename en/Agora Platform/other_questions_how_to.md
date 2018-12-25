@@ -3,7 +3,7 @@
 title: Other Questions
 description: 
 platform: Other Questions
-updatedAt: Fri Nov 30 2018 02:44:45 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 18:43:42 GMT+0000 (UTC)
 ---
 # Other Questions
 ## Android
