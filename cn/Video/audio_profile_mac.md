@@ -3,7 +3,7 @@
 title: 使用双声道/高音质
 description: How to set audio profile for mac
 platform: macOS
-updatedAt: Tue Dec 25 2018 08:15:20 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:32:20 GMT+0000 (UTC)
 ---
 # 使用双声道/高音质
 ## 功能描述
@@ -45,7 +45,7 @@ agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 
 ### API 参考
 
-- [setAudioProfile](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) 
+- [`setAudioProfile`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) 
 
 ## 开发注意事项
 
