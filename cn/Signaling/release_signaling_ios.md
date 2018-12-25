@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Sun Dec 23 2018 08:08:30 GMT+0000 (UTC)
+updatedAt: Sun Dec 23 2018 08:08:36 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
@@ -12,7 +12,7 @@ Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传
 
 ### 已知问题和局限性
 
--   一个频道目前最多可容纳一万人同时在线。
+-   一个频道目前最多可容纳一万人同时在线。声网建议用户在使用千人以上大频道时关闭用户上下线通知以减小 SDK 压力和带宽消耗。详见 `channelSetAttr` 方法。
 
 -   频道消息：
 
