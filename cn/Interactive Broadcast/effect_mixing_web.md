@@ -3,7 +3,7 @@
 title: 音乐混音
 description: How to enable audio mixing on the Web
 platform: Web
-updatedAt: Tue Dec 25 2018 04:15:49 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:29:15 GMT+0000 (UTC)
 ---
 # 音乐混音
 ## 功能描述
@@ -63,14 +63,14 @@ localStream.stopAudioMixing();
 
 ### API 参考
 
-- [startAudioMixing](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)
-- [stopAudioMixing](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#stopaudiomixing)
-- [adjustAudioMixingVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#adjustaudiomixingvolume)
-- [pauseAudioMixing](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#pauseaudiomixing)
-- [resumeAudioMixing](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#resumeaudiomixing)
-- [getAudioMixingDuration](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingduration)
-- [getAudioMixingCurrentPosition](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingcurrentposition)
-- [setAudioMixingPosition](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudiomixingposition)
+- [`startAudioMixing`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)
+- [`stopAudioMixing`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#stopaudiomixing)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#adjustaudiomixingvolume)
+- [`pauseAudioMixing`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#pauseaudiomixing)
+- [`resumeAudioMixing`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#resumeaudiomixing)
+- [`getAudioMixingDuration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingduration)
+- [`getAudioMixingCurrentPosition`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingcurrentposition)
+- [`setAudioMixingPosition`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudiomixingposition)
 
 ## 开发注意事项
 
