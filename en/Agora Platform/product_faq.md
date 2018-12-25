@@ -3,7 +3,7 @@
 title: Company And Products
 description: 
 platform: Company and Products
-updatedAt: Tue Dec 25 2018 15:00:17 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 15:00:20 GMT+0000 (UTC)
 ---
 # Company And Products
 ### Does Agora provide private cloud solutions?
@@ -30,6 +30,6 @@ Agora provides SDKs for all platforms. The following versions are supported:
 
 ### Does Agora use WebRTC?
 
-Agora uses its own high-resolution audio codec and audio/video pre- and post-processing modules, which provide you with high-quality application voice and video experiences. In web browser solutions, the Agora Web SDK is based on WebRTC. However, the Agora Native SDK is not based on WebRTC.
+Agora uses a proprietary high-resolution audio codec and audio/video pre- and post-processing modules, which provide you with high-quality application voice and video experiences. In web browser solutions, the Agora Web SDK is WebRTC based. However, the Agora Native SDK is not WebRTC based.
 
-If you are using WebRTC or require other customized solutions, contact sales-us@agora.io.
+If you use WebRTC or require other customized solutions, contact sales-us@agora.io.
