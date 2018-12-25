@@ -3,7 +3,7 @@
 title: 改善弱网环境下的用户体验
 description: 
 platform: Android
-updatedAt: Wed Nov 21 2018 10:32:52 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 06:39:13 GMT+0000 (UTC)
 ---
 # 改善弱网环境下的用户体验
 ## 功能描述
