@@ -3,14 +3,14 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Tue Dec 25 2018 16:07:04 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 16:07:08 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 This page provides common troubleshooting strategies for Agora's audio products and services.
 
 ## Echo
 
-Echo is commonly caused by the device of the user who hears the echo. This problem can be fixed by using a headset in most cases, and ensure that the headset does not cause an echo. Our SDK supports echo cancellation.
+Echo is commonly caused by the device of the user who hears the echo. This problem can be fixed by using a headset in most cases, and ensure that the headset does not cause an echo. The Agora SDK supports echo cancellation.
 
 **Step 1: Self-check**
 
@@ -20,7 +20,7 @@ Check the following:
 * Check the SDK version:
 	* Android/iOS: v1.6.0+.
 	* Windows/macOS: v1.7.0+.
-* Check if you have enabled an external audio source. In this case, echo cancellation is not supported and the echo may be caused by data loss during the audio transmission to the SDK. 
+* Check if you enabled an external audio source. In this case, echo cancellation is not supported and the echo may be caused by data loss during the audio transmission to the SDK. 
 * In Windows, ensure the `Monitoring Microphone` option is not checked. 
 * On iOS, ensure that the `Mixable` option is not enabled. If it is enabled and another app is using the microphone, echo may occur.
 * On Android, check whether the app sets the `Game Streaming` scenario in the `setAudioProfile` method. In this scenario, echo cancellation is turned off by default.
@@ -39,7 +39,7 @@ If the issue persists, contact Agora customer support and submit the issue with 
   </tr>
   <tr>
     <td>Mandatory</td>
-    <td>The name of the channel where the echo occurs.<br>The uids of the users who heard the echo.<br>The uid of the user who causes the echo.<br>The recording files, if available.</td>
+    <td>The name of the channel where the echo occurs.<br>The uids of the users who hear the echo.<br>The uid of the user who causes the echo.<br>The recording files, if available.</td>
   </tr>
   <tr>
     <td>Additional</td>
@@ -54,7 +54,7 @@ Noise may be caused by the physical environment or recording and playback device
 
 Check the following:
 * Ensure that all users are in separated physical environments (no near-field tests).
-* Check if an external audio source is used and if the captured external audio source is normal. In this case noise cancellation is not supported and the noise may be caused by data loss during the audio transmission to the SDK.
+* Check if an external audio source is used and if the captured external audio source is normal. In this case, noise cancellation is not supported and the noise may be caused by data loss during the audio transmission to the SDK.
 * Check if any user is talking in a noisy environment. 
 * Check if the recording device is working properly. For example, check whether the headset is plugged in correctly, use another headset, or switch to another audio route.
 
@@ -73,7 +73,7 @@ If the issue persists, contact Agora customer support and submit the issue with 
   </tr>
   <tr>
     <td>Additional</td>
-    <td><li>The time frame during which the users hear the noise.<</li><li>If the issue remains after rejoining the channel.</li><li>If the device test result is normal on macOS or Windows.</li><li>If the noise is consistent, or only when you speak and disappears when the remote user speaks.</li></td>
+    <td><li>The time frame during which the users hear the noise.<</li><li>If the issue remains after rejoining the channel.</li><li>If the device test result is normal on macOS or Windows.</li><li>If the noise is consistent or only when you speak, and disappears when the remote user speaks.</li></td>
   </tr>
 </table>
 
@@ -86,20 +86,20 @@ If the issue persists, contact Agora customer support and submit the issue with 
 Check the following:
 * Turn up the system volume of the receiver.
 * Check whether the issue is caused by the device. You can change your playback device or try other VoIP services on the same device.
-* Check whether the user opened another app during the call, which may have changed the audio settings or routing.
+* Check whether the user opens another app during the call, which may change the audio settings or routing.
 * Call the following methods to adjust the volume: `enableAudioVolumeIndication`, `adjustRecordingSignalVolume`, `adjustPlaybackSignalVolume`, and `adjustAudioMixingVolume`.
 * Check the `onAudioRouteChanged` callback to see whether the audio route is set to the headset or speaker. If the audio route is set to the headset, call the `setDefaultRouteToSpeakerphone` method and switch the audio route to the speaker.
 
 **Step 2: Contact Agora Customer Support**
 
 If the issue persists, contact Agora customer support and submit the issue with the following information:
-* The name of the channel where the users who encountered this issue.
+* The name of the channel where the users encounter this issue.
 * The uids of the users whose volume is too low.
-* The time frame during which the the volume is too low.
+* The time frame during which the volume is too low.
 
 ### The volume changes when users change their roles in a live broadcast.
 
-To ensure better voice quality, the volume controls are switched when the client role changes:
+To ensure better voice quality, the volume controls switch when the client role changes:
 * The audience role uses the media volume control.
 * The host role uses the call volume control. 
 
@@ -117,8 +117,8 @@ No voice may occur in the following scenarios:
 
 Check the following:
 
-* Ensure that the app has granted access to the audio devices.
-* Ensure that the app receives the `onJoinChannelSuccess` callback, which means users have joined the channel successfully.
+* Ensure that the app grants access to audio devices.
+* Ensure that the app receives the `onJoinChannelSuccess` callback, which means users join the channel successfully.
 * Check if you muted yourself or others.
 * Check if you called the `adjustRecordingSignalVolume` or `adjustPlaybackSignalVolume` method to mute the audio.
 * Check if the recording device is working. You can call the `startEchoTest` method to test it.
@@ -127,14 +127,14 @@ Check the following:
 * Check if the headset is working and if the audio output is set to the headset.
 * Test your device with the Agora Video Call demo (downloaded from [Agora.io](https://docs.agora.io/en/Voice/downloads)).
 * In Windows, if users cannot hear any voice from the speaker or headset:
-	* Right click on the speaker icon and select Sounds.
+	* Right-click on the speaker icon and select Sounds.
     ![](https://web-cdn.agora.io/docs-files/1543547283115)
   
 	* On the Playback tab, check whether the green bar of the speaker changes according to the volume. If not, the speaker is not working.
     ![](https://web-cdn.agora.io/docs-files/1539335709730)
 		If the green bar changes according to the volume, check if you can hear any audio output with another app. If yes, there is something wrong with your app. If the green bar does not appear regardless of the app, unplug and plug the headset, change the playback device, or stop and restart the playback device.
    
-	* If none of these methods work, check the recording device by clicking on the Recording tab and checking whether the green bar will change according to your voice volume. Ensure that you select the correct device when multiple devices are available.
+	* If none of these methods work, check the recording device by clicking on the Recording tab and checking whether the green bar changes according to your voice volume. Ensure that you select the correct device when multiple devices are available.
     ![](https://web-cdn.agora.io/docs-files/1539335720712)
 
 **Step 2: Contact Agora Customer Support**
@@ -180,19 +180,19 @@ A user connects a Bluetooth headset to a phone, but not all incoming calls are a
 
 This is because iOS selects audio routes for phone and VoIP calls:
 
-**Phone Call (Including Facetime and CallKit)**
+**Phone Call (Including FaceTime and CallKit)**
 
 When a phone rings:
-* If you press the answer button on the iPhone, the iPhone handset is used by default.
-* If you press the answer button on the Bluetooth device, the Bluetooth headset is used by default.
+* If you press the answer button on iPhone, the iPhone handset is used by default.
+* If you press the answer button on a Bluetooth device, the Bluetooth headset is used by default.
 
-You can change the audio route setting in Settings > General > Accessibility > Call Audio Routing. When you select the Bluetooth Headset option, all incoming calls will be answered through the headset even if you press the answer button on the iPhone.
+You can change the audio route setting in Settings > General > Accessibility > Call Audio Routing. When you select the Bluetooth Headset option, all incoming calls are answered through the headset even if you press the answer button on iPhone.
 
 During a phone call, you can switch between the Bluetooth Headset, Handset, or Speaker options in the call interface. 
 
 **VoIP Call**
 
-When making a VoIP call, the default audio route is the one used by the last phone or VoIP call made after a Bluetooth device is connected. If no phone call was made since the Bluetooth device was connected, the VoIP calls will be answered through the Bluetooth headset.
+When making a VoIP call, the default audio route is the one used by the last phone or VoIP call made after a Bluetooth device is connected. If no phone call is made since the Bluetooth device is connected, the VoIP calls are answered through the Bluetooth headset.
 
 During a VoIP call, users can change the audio route in the iPhone Control Center (swipe up from the bottom of the screen). Apps can call the `setPreferredInput` method to change the audio route.
 
@@ -204,7 +204,7 @@ Users can record calls with a Bluetooth speaker only when they make phone calls 
 
 **Frequently Asked Questions**
 
-* **Q:** When I am in a VoIP call with the Bluetooth headset and a phone call interrupts, why do I have to continue the VoIP call with the handset?
+* **Q:** When I am in a VoIP call with a Bluetooth headset and a phone call interrupts, why do I have to continue the VoIP call with the handset?
 **A:** If you tap the answer button on your phone, the default audio route for the phone and VoIP calls switches to the iPhone handset. If you tap the answer button on your Bluetooth headset, you can continue your call with the Bluetooth headset.
 
 * **Q:** My iPhone is connected to a Bluetooth headset. When I join a channel to make a VoIP call, why is the audio routed to the handset or speaker?
@@ -214,4 +214,4 @@ Users can record calls with a Bluetooth speaker only when they make phone calls 
 **A:** Music playback is different from VoIP calls.
 
 * **Q:** My iPhone is connected to a Bluetooth speaker. Why can't I use it to make a VoIP call?
-**A:** VoIP calls cannot be recorded by a Bluetooth speaker unless the app uses the CallKit framework. Hence, users cannot answer VoIP calls with the Bluetooth speaker. In a live broadcast, the audience does not need to record their voice, so they can listen to the broadcast with the Bluetooth speaker.
+**A:** VoIP calls cannot be recorded by a Bluetooth speaker unless the app uses the CallKit framework. Hence, users cannot answer VoIP calls with a Bluetooth speaker. In a live broadcast, the audience does not need to record the voice, so the audience can listen to the broadcast with a Bluetooth speaker.
