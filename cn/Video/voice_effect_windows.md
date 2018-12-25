@@ -3,7 +3,7 @@
 title: 调整音调、音色
 description: How to adjust the voice effect on Windows
 platform: Windows
-updatedAt: Tue Dec 25 2018 06:30:12 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:34:49 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
@@ -54,9 +54,9 @@ nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_STRENGTH, 78);
 
 ### API 参考
 
-- [setLocalVoicePitch](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fef48b6aa3954d7e76164a43d660b94)
-- [setLocalVoiceEqualization](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a3de79ba906e6b254b997eda4d395d052)
-- [setLocalVoiceReverb](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa00e903b1cc6f2752373afbe556ef456)
+- [`setLocalVoicePitch`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fef48b6aa3954d7e76164a43d660b94)
+- [`setLocalVoiceEqualization`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a3de79ba906e6b254b997eda4d395d052)
+- [`setLocalVoiceReverb`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa00e903b1cc6f2752373afbe556ef456)
 
 ## 开发注意事项
 
