@@ -3,7 +3,7 @@
 title: Other Questions
 description: 
 platform: Other Questions
-updatedAt: Tue Dec 25 2018 18:43:42 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 18:43:46 GMT+0000 (UTC)
 ---
 # Other Questions
 ## Android
@@ -14,31 +14,27 @@ Check whether the system suspension window permission is enabled. The app cannot
 
 ### Can I use the Agora Native SDK on 64-bit Android devices?
 
-* If you are using the Agora Native SDK v1.7.4+:
+* If you use the Agora Native SDK v1.7.4+:
 
    The Agora Native SDK supports the 64-bit ARM architecture, and you only need to copy the files from the arm64-v8a folder (included in the SDK package) to the corresponding folder in your project.
-Currently, only x86 compatibility mode is supported but not x86_64. Ensure that there is no x86_64 directory in the App of any x86 64-bit device.
+Currently, only x86 compatibility mode is supported but not x86_64. Ensure that there is no x86_64 directory in the app of any x86 64-bit device.
 
 * If you are using an Agora Native SDK before v1.7.4:
 
-   The Agora Native SDK provides a 32-bit native library (armeabi-v7a). On 64-bit devices, Android allows starting the App in the 32-bit processing mode. Ensure that the arm64 folder of the App is empty. Otherwise, the Android system loads the App in the 64-bit mode and the App boot will fail.
+   The Agora Native SDK provides a 32-bit native library (armeabi-v7a). On 64-bit devices, Android allows starting the app in the 32-bit processing mode. Ensure that the arm64 folder of the app is empty. Otherwise, the Android system loads the app in the 64-bit mode and the app boot fails.
 
 Since most Android clients are 32-bit devices, manufacturers generally provide 32-bit libraries. Hence, it is common to start in the 32-bit processing mode on 64-bit Android devices.
 
-If you see the following error on 64-bit devices: `java.lang.UnsatisfiedLinkError: dlopen failed: "libHDACEngine.so"`
+If you see the following error on 64-bit devices, `java.lang.UnsatisfiedLinkError: dlopen failed: "libHDACEngine.so"`, possible reasons include:
 
-Possible reasons:
+- When installing the app, the system looks for the directory of the native library (the existing ABI:armeabi, armeabi-v7a, arm64-v8a, x86, x86_64, MIPS64, MIPs) under the lib directory of the app according to `Build.SUPPORTED_ABIS` lib.
+- If the app has a 64-bit compatible directory with missing library files, do not replace them from the ABI directory. The library files cannot be mixed. The corresponding library files for each architecture must be used.
+- On Android, if there is no arm64-v8a directory on a 64-bit system, it will try to find the libraries under armeabi-v7a.
 
-When installing the App, the system will look for the directory of the native library (the existing ABI:armeabi, armeabi-v7a, arm64-v8a, x86, x86_64, MIPS64, MIPs) under the lib directory of the App according to `Build.SUPPORTED_ABIS` lib.
+Solutions:
 
-If the app has a 64-bit compatible directory with missing library files, do not replace them from the ABI directory. The library files cannot be mixed. The corresponding library files for each architecture must be used.
-
-On Android, if there is no arm64-v8a directory on a 64-bit system, it will try to find the libraries under armeabi-v7a.
-
-Solution:
-
-* Method 1: When building the application, delete the arm64-v8a directory in the project. After the application is built, ensure that there is no arm64-v81directory under lib in the App package.
-* Method 2: Set abiFilters in the gradle build file, and only pack the 32-bit library.
+* Method 1: When building the app, delete the arm64-v8a directory in the project. After the app is built, ensure that there is no arm64-v81directory under lib in the app package.
+* Method 2: Set abiFilters in the gradle build file, and only include the 32-bit library.
  
 ```
  android {
@@ -66,31 +62,31 @@ This error occurs when the referenced file name is too long.
 
 ## Login
 
-### Why am I automatically logged out of a device?
+### Why do I automatically log out of a device?
 
-You will be automatically logged out of your current device if you log in another device.
+You automatically log out of your current device if you log in another device.
 
 ## Channel
 
 ### In poor network conditions, does the SDK force users to leave a channel?
 
-No, users will not automatically leave a channel unless they do so themselves. For example, the application calls the `leaveChannel` method.
+No, users do not automatically leave a channel unless they do so themselves. For example, the application calls the `leaveChannel` method.
 
 ### Does each channel/room need an administrator in a call?
 
-No, an administrator can only be implemented in the business management layer. Your signaling server sends commands and calls the SDK interfaces for call management.
+No, an administrator is only implemented in the business management layer. Your signaling server sends commands and calls the SDK interfaces for call management.
 
 ### Does the client need to maintain the channel?
 
-No, a channel is created and deleted automatically. When all users have left the channel, the channel will be deleted automatically.
+No, a channel is created and deleted automatically. When all users leave the channel, the channel is deleted automatically.
 
 ### What are the App ID and Dynamic Key? How can I use them?
 
 See [Use Security Keys](../../en/voice/token.md) for details.
 
-### How do I check who is talking in the channel?
+### How do I check who is speaking in the channel?
 
-The following callbacks indicate who is talking and the speaker’s volume.
+The following callbacks indicate who is speaking and the speakers' volume.
 
 * For Android and Windows: `onAudioVolumeIndication`
 * For iOS and macOS: `reportAudioVolumeIndicationOfSpeakers`
@@ -119,7 +115,7 @@ When an error code is received, you should end the call.
 
 ### Which callback informs users that the server is disconnected?
 
-The `rtcEngineConnectionDidLost` or `connectionLostBlock` callback notifies users that the server is disconnected. When a server is disconnected, the SDK will try to reconnect automatically.
+The `rtcEngineConnectionDidLost` or `connectionLostBlock` callback notifies users that the server is disconnected. When a server is disconnected, the SDK tries to reconnect automatically.
 
 ### What happens after calling initWithAppId multiple times?
 
@@ -131,11 +127,11 @@ Encryption and decryption may affect CPU performance and network latency. This r
 
 ### Why does the phone screen rotate with the phone in a call?
 
-If the screen rotation function is enabled in your phone settings, the screen will rotate with the phone.
+If the screen rotation function is enabled in your phone settings, the screen rotates with the phone.
 
-### Why does the screen display a frozen image of the other user after the network is reconnected?
+### Why does the screen display a frozen image of the other user after the network reconnects?
 
-It takes some time for the video communication to resume after the network is reconnected. Latency is a common problem for all video communications and worsens in poor network conditions.
+It takes some time for the video communication to resume after the network reconnects. Latency is a common problem for all video communications and worsens in poor network conditions.
 
 ### What should I do when the user ID is a string?
 
@@ -145,7 +141,7 @@ The user ID in the SDK only accepts 32-bit unsigned integers. Agora recommends m
 
 The volume indicator is off by default. Call the `enableAudioVolumeIndication` method to enable the callback before or after joining a channel.
 
-### Why did the initialization fail on Windows XP?
+### Why does the initialization fail on Windows XP?
 
 Starting from v1.1, the Agora SDK uses Visual C++ 2013. Since Windows XP does not include the Visual C++ Redistributable Packages by default, download and install them from the Microsoft website: https://www.microsoft.com/en-us/download/details.aspx?id=40784
 
@@ -177,9 +173,9 @@ You can ignore this message as this file is not necessary.
 
 1. Check the algorithm to generate the Dynamic Key.
 2. Check the App ID and App Certificate; note that they are case-sensitive.
-3. Check whether `expireTime` has expired.
+3. Check whether `expireTime` expired.
 
-### Why did the iOS app crash after the user joined a channel and switched to Background Mode?
+### Why does the iOS app crash after the user joins a channel and switches to Background Mode?
 
 This issue is caused if you did not select the Audio, AirPlay, and Picture-in-Picture options in Background Mode when integrating the Agora SDK in Xcode.
 
@@ -194,10 +190,6 @@ To fix this issue, enable Background Mode in Xcode:
 ### Why does the log contain “Failed to decode frame xxx, return error code is -1”?
 
 This is a decoding failure, most likely due to a bad network connection causing the device not to receive a full frame. Check the network conditions.
-
-### Why did initialization fail on Windows XP?
-
-Starting from v1.1, the Agora SDK uses Visual C++ 2013. Since Windows XP does not include the Visual C++ Redistributable Packages by default, download and install them from the Microsoft website：https://www.microsoft.com/en-us/download/details.aspx?id=40784.
 
 ### Why did an exception message occur when starting the app?
 
