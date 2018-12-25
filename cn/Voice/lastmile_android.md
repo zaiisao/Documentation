@@ -3,7 +3,7 @@
 title: 通话前的网络质量检测
 description: 通话前的网络质量检测。
 platform: Android
-updatedAt: Tue Dec 25 2018 03:54:26 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:24:32 GMT+0000 (UTC)
 ---
 # 通话前的网络质量检测
 ## 功能描述
@@ -34,11 +34,11 @@ updatedAt: Tue Dec 25 2018 03:54:26 GMT+0000 (UTC)
 	rtcEngine.disableLastmileTest();
 ```
 
-## API参考
+### API参考
 
-- [RtcEngine.enableLastmileTest()](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
-- [RtcEngine.disableLastmileTest()](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
-- [IRtcEngineEventHandler.onLastmileQuality()](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
+- [`RtcEngine.enableLastmileTest()`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
+- [`RtcEngine.disableLastmileTest()`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
+- [`IRtcEngineEventHandler.onLastmileQuality()`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
 
 ## 开发注意事项
 
