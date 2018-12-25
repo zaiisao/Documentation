@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 25 2018 09:42:33 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 09:42:37 GMT+0000 (UTC)
 ---
 # 产品概述
 Agora Interactive Gaming SDK，是 Agora 针对游戏开发者 （Unity，Cocos）提供的音视频通话软件开发包。其主要目的是帮助游戏开发者在游戏中快速集成音视频通话的功能。
@@ -26,7 +26,6 @@ Agora Interactive Gaming SDK 应用丰富，主要适用于使用 Unity 和 Coco
 
 * [在线语音聊天室](https://github.com/AgoraIO-Usecase/Chatroom)
 * [剧本杀](https://github.com/AgoraIO-Usecase/Murder-Mystery-Game)
-* [游戏语音电台](https://docs.agora.io/cn/2.3.1/product/Interactive%20Gaming/Solutions/game_radio_android?platform=Unity%20(Android))
 
 ## 关键特性
 
