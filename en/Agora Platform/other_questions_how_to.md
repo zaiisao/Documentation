@@ -3,7 +3,7 @@
 title: Other Questions
 description: 
 platform: Other Questions
-updatedAt: Tue Dec 25 2018 18:50:29 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 18:50:32 GMT+0000 (UTC)
 ---
 # Other Questions
 ## Android
@@ -14,12 +14,12 @@ Check whether the system suspension window permission is enabled. The app cannot
 
 ### Can I use the Agora Native SDK on 64-bit Android devices?
 
-* If you use the Agora Native SDK v1.7.4+:
+* Agora Native SDK v1.7.4+:
 
    The Agora Native SDK supports the 64-bit ARM architecture, and you only need to copy the files from the arm64-v8a folder (included in the SDK package) to the corresponding folder in your project.
 Currently, only x86 compatibility mode is supported but not x86_64. Ensure that there is no x86_64 directory in the app of any x86 64-bit device.
 
-* If you are using an Agora Native SDK before v1.7.4:
+* Agora Native SDK before v1.7.4:
 
    The Agora Native SDK provides a 32-bit native library (armeabi-v7a). On 64-bit devices, Android allows starting the app in the 32-bit processing mode. Ensure that the arm64 folder of the app is empty. Otherwise, the Android system loads the app in the 64-bit mode and the app boot fails.
 
@@ -93,7 +93,7 @@ The following callbacks indicate who is speaking and the speakers' volume.
 
 By default, these callbacks are disabled. You can use the `enableAudioVolumeIndication` method to enable them.
 
-### What should I be aware of for initialization-related API methods in Windows?
+### What should I be aware of for initialization in Windows?
 
 * Always ensure that the initialize method is called before joining a channel.
 * If you want to enable the video function, call the `enableVideo` method before joining a channel.
@@ -175,11 +175,11 @@ You can ignore this message as this file is not necessary.
 2. Check the App ID and App Certificate; note that they are case-sensitive.
 3. Check whether `expireTime` expired.
 
-### Why does the iOS app crash after the user joins a channel and switches to Background Mode?
+### Why does the iOS app crash after a user joins a channel and switches to Background Mode?
 
 This issue is caused if you did not select the Audio, AirPlay, and Picture-in-Picture options in Background Mode when integrating the Agora SDK in Xcode.
 
-### The call is interrupted after the app switches to Background Mode on iOS?
+### Why is the call interrupted after the app switches to Background Mode on iOS?
 
 To fix this issue, enable Background Mode in Xcode:
 
