@@ -183,7 +183,7 @@ client.on('stream-subscribed', function (evt) {
 
 ```javascript
 client.leave(function () {
-  console.log("Leavel channel successfully");
+  console.log("Leave channel successfully");
 }, function (err) {
   console.log("Leave channel failed");
 });
