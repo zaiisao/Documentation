@@ -3,7 +3,7 @@
 title: 通话前的网络质量检测
 description: 通话前的网络质量检测
 platform: macOS,iOS
-updatedAt: Tue Dec 25 2018 03:56:05 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:24:46 GMT+0000 (UTC)
 ---
 # 通话前的网络质量检测
 ## 功能描述
@@ -45,9 +45,9 @@ agoraKit.disableLastmileTest()
 
 ### API参考
 
-- [enableLastmileTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableLastmileTest)
-- [disableLastmileTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/disableLastmileTest)
-- [rtcEngine:lastmileQuality:](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileQuality:)
+- [`enableLastmileTest`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableLastmileTest)
+- [`disableLastmileTest`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/disableLastmileTest)
+- [`rtcEngine:lastmileQuality:`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileQuality:)
 
 ## 开发注意事项
 
