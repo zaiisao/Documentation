@@ -3,7 +3,7 @@
 title: 通话前的网络质量检测
 description: 通话前的网络质量检测
 platform: Web
-updatedAt: Tue Dec 25 2018 04:02:10 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:25:21 GMT+0000 (UTC)
 ---
 # 通话前的网络质量检测
 ## 功能描述
@@ -59,11 +59,11 @@ setInterval(function(){
 }, 2 * 1000);
 ```
 
-## API 参考
+### API 参考
 
-- [getRemoteVideoStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats)
-- [getRemoteAudioStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats)
-- [getTransportStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#gettransportstats)
+- [`getRemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats)
+- [`getRemoteAudioStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats)
+- [`getTransportStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#gettransportstats)
 
 ## 开发注意事项
 
