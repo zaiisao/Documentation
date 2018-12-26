@@ -3,7 +3,7 @@
 title: Record the Audio from the Client
 description: 
 platform: Android
-updatedAt: Tue Dec 25 2018 09:49:49 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:14:48 GMT+0000 (UTC)
 ---
 # Record the Audio from the Client
 ## Introduction
@@ -32,10 +32,10 @@ Agora's Native SDK supports audio recording at the client. You can record the au
 	rtcEngine.stopAudioRecording();
 ```
 
-## API Methods
+### API Methods
 
-- [startAudioRecording()](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a44744695d723b7d18c704a57f828cddb)
-- [stopAudioRecording()](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2d751055a21611b3cf99fe39d24bb1a0)
+- [`startAudioRecording()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a44744695d723b7d18c704a57f828cddb)
+- [`stopAudioRecording()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2d751055a21611b3cf99fe39d24bb1a0)
 
 ## Considerations
 
