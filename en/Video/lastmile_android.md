@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Android
-updatedAt: Tue Dec 25 2018 08:49:30 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 09:56:40 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -34,11 +34,11 @@ Initialize rtcEngine before running the following sample code.
 	rtcEngine.disableLastmileTest();
 ```
 
-## API Methods
+### API Methods
 
-- [RtcEngine.enableLastmileTest()](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
-- [RtcEngine.disableLastmileTest()](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
-- [IRtcEngineEventHandler.onLastmileQuality()](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
+- [`RtcEngine.enableLastmileTest()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
+- [`RtcEngine.disableLastmileTest()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
+- [`IRtcEngineEventHandler.onLastmileQuality()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
 
 ## Considerations
 
