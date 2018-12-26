@@ -3,7 +3,7 @@
 title: Set the Stereo/High-fidelity Audio Profile
 description: How to set the high-quality audio for iOS and macOS
 platform: macOS
-updatedAt: Tue Dec 25 2018 09:08:57 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:03:28 GMT+0000 (UTC)
 ---
 # Set the Stereo/High-fidelity Audio Profile
 ## Introduction 
@@ -44,7 +44,7 @@ agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 ```
 
 ### API Method
-- [setAudioProfile](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:)
+- [`setAudioProfile`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:)
 
 ## Considerations
 
