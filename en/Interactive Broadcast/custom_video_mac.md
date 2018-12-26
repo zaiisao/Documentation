@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: macOS
-updatedAt: Fri Dec 07 2018 19:35:39 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:19:34 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -43,7 +43,7 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 [agoraKit pushExternalAudioFrameSampleBuffer: "your CMSampleBuffer"];
 ```
 
-#### API Methods
+#### API References
 
 * [`pushExternalAudioFrameRawData:samples:timestamp:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameRawData:samples:timestamp:)
 * [`pushExternalAudioFrameSampleBuffer:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameSampleBuffer:)
@@ -144,7 +144,7 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 	[agoraKit setVideoSource: videoSource];
 	```
 	
-##### API Methods
+##### API References
 * [`setVideoSource:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
 * [`AgoraVideoSourceProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
 	
@@ -196,7 +196,7 @@ videoFrame.ratation = 0;
 [agoraKit pushExternalVideoFrame: videoFrame];
 ```
 
-##### API Method
+##### API Reference
 
 * [`pushExternalVideoFrame:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalVideoFrame:)
 
@@ -302,7 +302,7 @@ Use the IVideoSink interface of MediaIO to customize the video renderer.
 	[agoraKit setRemoteVideoRenderer: videoRenderer, uid];
 	```
 
-#### API Methods
+#### API References
 * [`setLocalVideoRenderer:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVideoRenderer:)
 * [`setRemoteVideoRenderer:forUserId:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoRenderer:forUserId:)
 * [`AgoraVideoSinkProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSinkProtocol.html)
