@@ -3,7 +3,7 @@
 title: 改善弱网环境下的用户体验
 description: 
 platform: Android
-updatedAt: Tue Dec 25 2018 06:39:13 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 09:50:55 GMT+0000 (UTC)
 ---
 # 改善弱网环境下的用户体验
 ## 功能描述
@@ -34,10 +34,10 @@ updatedAt: Tue Dec 25 2018 06:39:13 GMT+0000 (UTC)
     rtcEngine.setRemoteVideoStreamType(uid, Constants.VIDEO_STREAM_LOW);
 ```
 
-## API参考
-* [enableDualStreamMode](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a645cb7d0f3a59dda27b157cf130c8c9a)
-* [setLocalPublishFallbackOption](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac8c08e79844a4e62e0670553484cbe90)
-* [setRemoteSubscribeFallbackOption](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af64301ea1788dad0561aa678f3fe6ad3)
-* [setRemoteVideoStreamType](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a51756b4d2e7997fbe6481d2deb5c0396)
+### API参考
+* [`enableDualStreamMode`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a645cb7d0f3a59dda27b157cf130c8c9a)
+* [`setLocalPublishFallbackOption`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac8c08e79844a4e62e0670553484cbe90)
+* [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af64301ea1788dad0561aa678f3fe6ad3)
+* [`setRemoteVideoStreamType`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a51756b4d2e7997fbe6481d2deb5c0396)
 
 
