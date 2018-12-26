@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Tue Dec 25 2018 08:57:12 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 09:57:34 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -34,8 +34,8 @@ agoraKit.adjustPlaybackSignalVolume(50)
 
 ### API Methods
 
-- [adjustRecordingSignalVolume](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustRecordingSignalVolume:)
-- [adjustPlaybackSignalVolume](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
+- [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustRecordingSignalVolume:)
+- [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
 
 ## Considerations
 
