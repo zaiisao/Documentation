@@ -3,7 +3,7 @@
 title: 使用双声道/高音质
 description: How to set audio profile for iOS
 platform: iOS
-updatedAt: Tue Dec 25 2018 08:14:41 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 09:43:51 GMT+0000 (UTC)
 ---
 # 使用双声道/高音质
 ## 功能描述
@@ -45,7 +45,7 @@ agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 
 ### API 参考
 
-- [setAudioProfile](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) 
+- [`setAudioProfile`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) 
 
 ## 开发注意事项
 
