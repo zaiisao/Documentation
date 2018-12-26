@@ -3,7 +3,7 @@
 title: Improve Experience Under Poor Network Conditions
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 25 2018 09:42:40 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:14:24 GMT+0000 (UTC)
 ---
 # Improve Experience Under Poor Network Conditions
 ## Introduction
@@ -49,11 +49,11 @@ agoraKit.enableDualStreamMode(true);
 [agoraKit setRemoteVideoStream: uid type:AgoraVideoStreamTypeLow];
 ```
 
-## API Methods
+### API Methods
 
-- [enableDualStreamMode:](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableDualStreamMode:)
-- [setRemoteVideoStream:type:](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoStream:type:)
-- [setLocalPublishFallbackOption:](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalPublishFallbackOption:)
-- [setRemoteSubscribeFallbackOption:](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteSubscribeFallbackOption:)
+- [`enableDualStreamMode:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableDualStreamMode:)
+- [`setRemoteVideoStream:type:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoStream:type:)
+- [`setLocalPublishFallbackOption:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalPublishFallbackOption:)
+- [`setRemoteSubscribeFallbackOption:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteSubscribeFallbackOption:)
 
 
