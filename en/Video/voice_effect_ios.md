@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to set voice effects on iOS
 platform: iOS
-updatedAt: Tue Dec 25 2018 09:20:57 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:11:18 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
@@ -87,9 +87,9 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 
 ### API Methods
 
-- [setLocalVoicePitch](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
-- [setLocalVoiceEqualizationOfBandFrequency](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
-- [setLocalVoiceReverbOfType](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
+- [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
+- [`setLocalVoiceEqualizationOfBandFrequency`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
+- [`setLocalVoiceReverbOfType`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
 
 ## Considerations
 The API methods have return values. If the method fails, the return value is < 0.
