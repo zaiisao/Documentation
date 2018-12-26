@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Tue Dec 25 2018 09:25:32 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:06:10 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
@@ -54,9 +54,9 @@ nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_STRENGTH, 78);
 
 ### API Methods
 
-- [setLocalVoicePitch](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fef48b6aa3954d7e76164a43d660b94)
-- [setLocalVoiceEqualization](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a3de79ba906e6b254b997eda4d395d052)
-- [setLocalVoiceReverb](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa00e903b1cc6f2752373afbe556ef456)
+- [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fef48b6aa3954d7e76164a43d660b94)
+- [`setLocalVoiceEqualization`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a3de79ba906e6b254b997eda4d395d052)
+- [`setLocalVoiceReverb`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa00e903b1cc6f2752373afbe556ef456)
 
 ## Considerations
 
