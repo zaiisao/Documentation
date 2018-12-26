@@ -3,7 +3,7 @@
 title: 客户端通话录制
 description: 
 platform: Android
-updatedAt: Tue Dec 25 2018 07:16:30 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 02:32:26 GMT+0000 (UTC)
 ---
 # 客户端通话录制
 ## 功能描述
@@ -28,10 +28,10 @@ Agora SDK 支持通话过程中在客户端进行录音。该方法录制频道�
 	rtcEngine.stopAudioRecording();
 ```
 
-## API参考
+### API参考
 
-- [startAudioRecording()](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a44744695d723b7d18c704a57f828cddb)
-- [stopAudioRecording()](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2d751055a21611b3cf99fe39d24bb1a0)
+- [`startAudioRecording()`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a44744695d723b7d18c704a57f828cddb)
+- [`stopAudioRecording()`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2d751055a21611b3cf99fe39d24bb1a0)
 
 ## 注意事项
 
