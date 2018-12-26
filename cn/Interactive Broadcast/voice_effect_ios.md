@@ -3,7 +3,7 @@
 title: 调整音调、音色
 description: How to set voice effects for iOS
 platform: iOS
-updatedAt: Tue Dec 25 2018 06:27:42 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 09:46:13 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
@@ -87,9 +87,9 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 
 ### API 参考
 
-- [setLocalVoicePitch](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
-- [setLocalVoiceEqualizationOfBandFrequency](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
-- [setLocalVoiceReverbOfType](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
+- [`setLocalVoicePitch`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
+- [`setLocalVoiceEqualizationOfBandFrequency`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
+- [`setLocalVoiceReverbOfType`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
 
 ## 开发注意事项
 以上方法都有返回值，返回值小于 0 表示方法调用失败。
