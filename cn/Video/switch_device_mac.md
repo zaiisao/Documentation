@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 25 2018 08:34:29 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 09:49:07 GMT+0000 (UTC)
 ---
 # 音视频设备测试与切换
 ## 功能描述
@@ -51,12 +51,12 @@ agoraKit.stopPlaybackDeviceTest()
 [agoraKit stopPlaybackDeviceTest];
 ```
 
-## API 参考
+### API 参考
 
-* [startRecordingDeviceTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
-* [stopPlaybackDeviceTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
-* [startPlaybackDeviceTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
-* [stopPlaybackDeviceTest](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopPlaybackDeviceTest)
+* [`startRecordingDeviceTest`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
+* [`stopPlaybackDeviceTest`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
+* [`startPlaybackDeviceTest`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
+* [`stopPlaybackDeviceTest`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopPlaybackDeviceTest)
 
 ## 注意事项
 
