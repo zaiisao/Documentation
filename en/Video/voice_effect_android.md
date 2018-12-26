@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Tue Dec 25 2018 09:19:58 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:11:11 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
@@ -51,9 +51,9 @@ rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_STRENGTH, 78);
 
 ### API Methods
 
-- [setLocalVoicePitch](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
-- [setLocalVoiceEqualization](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
-- [setLocalVoiceReverb](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
+- [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
+- [`setLocalVoiceEqualization`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
+- [`setLocalVoiceReverb`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
 
 ## Considerations
 The API methods have return values. If the method fails, the return value is < 0.
