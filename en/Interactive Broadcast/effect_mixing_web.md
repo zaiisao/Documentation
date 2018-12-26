@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to enable audio mixing for Web
 platform: Web
-updatedAt: Tue Dec 25 2018 09:06:01 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:02:39 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -63,14 +63,14 @@ localStream.stopAudioMixing();
 
 ### API Methods
 
-- [startAudioMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)
-- [stopAudioMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#stopaudiomixing)
-- [adjustAudioMixingVolume](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#adjustaudiomixingvolume)
-- [pauseAudioMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#pauseaudiomixing)
-- [resumeAudioMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#resumeaudiomixing)
-- [getAudioMixingDuration](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingduration)
-- [getAudioMixingCurrentPosition](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingcurrentposition)
-- [setAudioMixingPosition](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudiomixingposition)
+- [`startAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)
+- [`stopAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#stopaudiomixing)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#adjustaudiomixingvolume)
+- [`pauseAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#pauseaudiomixing)
+- [`resumeAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#resumeaudiomixing)
+- [`getAudioMixingDuration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingduration)
+- [`getAudioMixingCurrentPosition`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#getaudiomixingcurrentposition)
+- [`setAudioMixingPosition`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudiomixingposition)
 
 ## Considerations
 
