@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Wed Dec 26 2018 10:18:59 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:19:00 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -42,7 +42,7 @@ rtcEngine.pushExternalAudioFrame(
 ```
 
 
-#### API Method
+#### API Reference
 *  [`pushExternalAudioFrame`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e219a679d066cfc2544b5e8f9d4d69f)
 
 ### Customize the Video Source
@@ -109,7 +109,7 @@ if (mHasStarted && mConsumer != null) {
 }
 ```
 
-##### API Methods
+##### API References
 
 * [`setlVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa240e991d12b5240fc5fd362cbc0d521)
 * [`IVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_source.html)
@@ -133,7 +133,7 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
 ));
 ```
 
-##### API Method
+##### API Reference
 * [`pushExternalVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6e7327f4449800a2c2ddc200eb2c0386)
 
 The video source and renderer can be customized by switching on/off the video frame input based on the media engine callback. This method can be used if an app has its own video module and only needs the Agora SDK for real-time communications. See [Customize the Video Source with the Agora Component](../../en/Video/custom_advanced_android.md).
@@ -186,7 +186,7 @@ IVideoSink sink = new IVideoSink() {
 rtcEngine.setLocalVideoRenderer(sink);
 ```
 
-#### API Methods
+#### API References
 * [`setLocalVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab10fd6d8dd89a5bca09b115ecd9e3416)
 * [`setRemoteVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0da32c040cb9d987df2950b83459ba56)
 * [`IVideoSink`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_sink.html)
