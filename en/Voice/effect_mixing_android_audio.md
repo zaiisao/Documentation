@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Wed Dec 26 2018 10:01:52 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:01:56 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -64,7 +64,7 @@ manager.unloadAllEffects();
 
 ### API Methods
 
-- [getAudioEffectManager](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#afd61b8d5e923f9e03cd419dcaf23b4af)
+- [`getAudioEffectManager`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#afd61b8d5e923f9e03cd419dcaf23b4af)
 
 ### Considerations
 
