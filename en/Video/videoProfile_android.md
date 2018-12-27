@@ -21,18 +21,18 @@ The parameters specified in the `setVideoEncoderConfiguration` method are ideal 
 ```java
 // java
 // Create a VideoEncoderConfiguration instance.
-// See the descriptions of the parameters in API Method.
+// See the descriptions of the parameters in API Reference.
 VideoEncoderConfiguration config = new VideoEncoderConfiguration(
 	VideoDimensions.VD_640x480,  // Choose a video resolution or customize one.
 	FRAME_RATE_FPS_15,           // Frame rate. 15 is the default setting. Agora recommends not setting to over 30.
-	STANDARD_BITRATE,            // The standard bitrate. See the description in API Method. Agora recommends setting the bitrate to the standard mode.
-	ORIENTATION_MODE_ADAPTIVE    // The adaptive orientation mode. See the description in API Method.
+	STANDARD_BITRATE,            // The standard bitrate. See the description in API Reference. Agora recommends setting the bitrate to the standard mode.
+	ORIENTATION_MODE_ADAPTIVE    // The adaptive orientation mode. See the description in API Reference.
 );
 
 rtcEngine.setVideoEncoderConfiguration(config);
 ```
 
-### API Method
+### API Reference
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Video/rotation_guide_android.md).
 
