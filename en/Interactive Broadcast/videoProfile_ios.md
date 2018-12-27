@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS
-updatedAt: Fri Dec 07 2018 18:48:54 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:41:18 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -21,7 +21,7 @@ The parameters specified in the `setVideoEncoderConfiguration` method are ideal 
 ```swift
 // swift
 // Set a VideoEncoderConfiguration instance.
-// See the descriptions of the parameters in API Method.
+// See the descriptions of the parameters in API Reference.
 let config = AgoraVideoEncoderConfiguration(size: size, frameRate: frameRate, bitrate: bitrate, orientationMode: orientationMode)
 
 agoraKit.setVideoEncoderConfiguration(config)
@@ -30,13 +30,13 @@ agoraKit.setVideoEncoderConfiguration(config)
 ```objective-c
 // objective-c
 // Set a VideoEncoderConfiguration instance.
-// See the descriptions of the parameters in API Method.
+// See the descriptions of the parameters in API Reference.
 AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] initWithSize: size frameRate: frameRate bitrate: bitrate orientationMode: AgoraVideoOutputOrientationModeAdaptative];
 
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
-### API Method
+### API Reference
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Interactive%20Broadcast/rotation_guide_ios.md).
 
