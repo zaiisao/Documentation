@@ -85,7 +85,7 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 [agoraKit setLocalVoiceReverbOfType:AgoraAudioReverbStrength withValue: 45];
 ```
 
-### API Methods
+### API References
 
 - [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
 - [`setLocalVoiceEqualizationOfBandFrequency`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
