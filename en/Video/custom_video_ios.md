@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: iOS
-updatedAt: Wed Dec 26 2018 10:20:31 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:55:51 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -43,7 +43,7 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 [agoraKit pushExternalAudioFrameSampleBuffer: "your CMSampleBuffer"];
 ```
 
-#### API References
+#### API Reference
 * [`pushExternalAudioFrameRawData:samples:timestamp:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameRawData:samples:timestamp:)
 * [`pushExternalAudioFrameSampleBuffer:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameSampleBuffer:)
 
@@ -144,7 +144,7 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 	[agoraKit setVideoSource: videoSource];
 	```
 	
-##### API References
+##### API Reference
 
 * [`setVideoSource:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
 * [`AgoraVideoSourceProtocal`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
