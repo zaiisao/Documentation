@@ -62,7 +62,7 @@ manager.stopAllEffects();
 manager.unloadAllEffects();
 ```
 
-### API Methods
+### API References
 
 - [`getAudioEffectManager`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#afd61b8d5e923f9e03cd419dcaf23b4af)
 
@@ -116,7 +116,7 @@ rtcEngine.resumeAudioMixing();
 rtcEngine.stopAudioMixing()；
 ```
 
-### API Methods
+### API References
 
 - [`startAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac56ceea1a143a4898382bce10b04df09)
 - [`stopAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#addb1cbc23b7f725eea6eedd18412854d)
