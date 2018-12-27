@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Thu Dec 27 2018 02:42:30 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:56:40 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -28,7 +28,7 @@ int volume = 200;
 rtcEngine.adjustRecordingSignalVolume(volume);
 ```
 
-#### API References
+#### API Reference
 
 - [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af3747f72256eb683feadbca2b742bd05)
 
@@ -45,7 +45,7 @@ int volume = 200;
 rtcEngine.adjustPlaybackSignalVolume(volume);
 ```
 
-#### API References
+#### API Reference
 
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
 
@@ -73,7 +73,7 @@ int volume = 50;
 rtcEngine.adjustAudioMixingVolume(volume);
 ```
 
-#### API References
+#### API Reference
 
 - [`adjustAudioMixingPublishingVolume`](../../en/Video/volume_android.md)
 - [`adjustAudioMixingPlayoutVolume`](../../en/Video/volume_android.md)
@@ -99,7 +99,7 @@ manager.setEffectsVolume(volume);
 manager.setVolumeOfEffect(soundId, volume);
 ```
 
-#### API References
+#### API Reference
 
 - [`setEffectsVolume`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#ab758558563b3dd70771e5d44ba1a96f3)
 - [`setVolumeOfEffect`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#afcd8cd6d733703c0ba153b8e1ac81ec0)
@@ -119,7 +119,7 @@ int volume = 50;
 rtcEngine.setInEarMonitoringVolume(volume);
 ```
 
-#### API References
+#### API Reference
 
 - [`setInEarMonitoringVolume`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af71afdf140660b10c4fb0c40029c432d)
 
@@ -153,7 +153,7 @@ public void onActiveSpeaker(int uid) {
 }
 ```
 
-#### API References
+#### API Reference
 - [`onAudioVolumeIndication`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a4d37f2b4d569fa787bb8c0e3ae8cd424)
 - [`onActiveSpeaker`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a895e965178d808f9d33b387ab3e50300)
 
