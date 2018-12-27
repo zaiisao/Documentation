@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS
-updatedAt: Thu Dec 27 2018 02:57:34 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:57:35 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -94,7 +94,7 @@ volume = volume < 80 ? 80 : volume
 [agoraKit stopAllEffects];
 ```
 
-### API References
+### API Reference
 
 - [playEffect](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/playEffect:filePath:loopCount:pitch:pan:gain:)
 - [preloadEffect](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/preloadEffect:filePath:)
@@ -151,7 +151,7 @@ NSInteger cycle = 1;
 
 
 
-### API References
+### API Reference
 
 - [`startAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
 
