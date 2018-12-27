@@ -43,7 +43,7 @@ agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 [agoraKit setAudioProfile: AgoraAudioProfilemusicHighQuality, scenario: AgoraAudioScenarioGameStreaming]
 ```
 
-### API Method
+### API Reference
 - [`setAudioProfile`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:)
 
 ## Considerations
