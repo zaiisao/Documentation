@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Wed Dec 26 2018 10:08:41 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:42:46 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -33,7 +33,7 @@ agoraKit.adjustRecordingSignalVolume(50)
 [agoraKit adjustRecordingSignalVolume: 50];
 ```
 
-#### API Methods
+#### API References
 
 - [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustRecordingSignalVolume:)
 
@@ -55,7 +55,7 @@ agoraKit.adjustRecordingSignalVolume(50)
 [agoraKit adjustRecordingSignalVolume: 50];
 ```
 
-#### API Methods
+#### API References
 
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
 
@@ -95,7 +95,7 @@ agoraKit.adjustAudioMixingVolume(50)
 [agoraKit adjustAudioMixingVolume: 50];
 ```
 
-#### API Methods
+#### API References
 
 - [`adjustAudioMixingPublishingVolume`](../../en/Video/volume_ios.md)
 - [`adjustAudioMixingPlayoutVolume`](../../en/Video/volume_ios.md)
@@ -125,7 +125,7 @@ agoraKit.setVolumeOfEffect(soundId:"1", 50.0)
 [agoraKit setVolumeOfEffect: soundId:@"1" volume:50.0];
 ```
 
-#### API Methods
+#### API References
 
 - [`setEffectsVolume`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
 - [`setVolumeOfEffect`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVolumeOfEffect:withVolume:)
@@ -152,7 +152,7 @@ agoraKit.setInEarMonitoringVolume(50)
 [agoraKit setInEarMonitoringVolume: 50];
 ```
 
-#### API Methods
+#### API References
 
 - [`enableInEarMonitoring`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableInEarMonitoring:)
 - [`setInEarMonitoringVolume`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setInEarMonitoringVolume:)
@@ -200,7 +200,7 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, activeSpeaker speakerUid: UInt) {
 }
 ```
 
-#### API Methods
+#### API References
 
 - [`reportAudioVolumeIndicationOfSpeakers`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:4)
 - [`activeSpeaker`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:activeSpeaker:)
