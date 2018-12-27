@@ -49,7 +49,7 @@ agoraKit.enableDualStreamMode(true);
 [agoraKit setRemoteVideoStream: uid type:AgoraVideoStreamTypeLow];
 ```
 
-### API Methods
+### API References
 
 - [`enableDualStreamMode:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableDualStreamMode:)
 - [`setRemoteVideoStream:type:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoStream:type:)
