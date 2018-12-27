@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Web
-updatedAt: Thu Dec 27 2018 02:46:30 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:46:31 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -62,7 +62,7 @@ setInterval(function(){
 }, 2 * 1000);
 ```
 
-### API Methods
+### API References
 
 - [`getRemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats)
 - [`getRemoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats)
