@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Thu Dec 27 2018 02:59:27 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:59:28 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
@@ -52,7 +52,7 @@ nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_WET_DELAY, 124);
 nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_STRENGTH, 78);
 ```
 
-### API References
+### API Reference
 
 - [`setLocalVoicePitch`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fef48b6aa3954d7e76164a43d660b94)
 - [`setLocalVoiceEqualization`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a3de79ba906e6b254b997eda4d395d052)
