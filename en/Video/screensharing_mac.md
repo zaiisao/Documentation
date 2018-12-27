@@ -3,7 +3,7 @@
 title: Share the screen
 description: 
 platform: macOS
-updatedAt: Thu Dec 27 2018 02:43:48 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:57:52 GMT+0000 (UTC)
 ---
 # Share the screen
 ## Introduction
@@ -57,7 +57,7 @@ CGRect rect = CGRectMake(0, 0, 100, 100);
 [agoraKit stopScreenCapture];
 ```
 
-### API References
+### API Reference
 * [`startScreenCapture:withCaptureFreq:bitrRate:andRect`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCapture:withCaptureFreq:bitRate:andRect:)
 * [`stopScreenCapture`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
 * [`updateScreenCaptureRegion:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
