@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Wed Dec 26 2018 10:11:11 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:45:56 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
@@ -49,7 +49,7 @@ rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_WET_DELAY, 124);
 rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_STRENGTH, 78);
 ```
 
-### API Methods
+### API References
 
 - [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
 - [`setLocalVoiceEqualization`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
