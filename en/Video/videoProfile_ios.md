@@ -21,7 +21,7 @@ The parameters specified in the `setVideoEncoderConfiguration` method are ideal 
 ```swift
 // swift
 // Set a VideoEncoderConfiguration instance.
-// See the descriptions of the parameters in API Method.
+// See the descriptions of the parameters in API Reference.
 let config = AgoraVideoEncoderConfiguration(size: size, frameRate: frameRate, bitrate: bitrate, orientationMode: orientationMode)
 
 agoraKit.setVideoEncoderConfiguration(config)
@@ -30,13 +30,13 @@ agoraKit.setVideoEncoderConfiguration(config)
 ```objective-c
 // objective-c
 // Set a VideoEncoderConfiguration instance.
-// See the descriptions of the parameters in API Method.
+// See the descriptions of the parameters in API Reference.
 AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] initWithSize: size frameRate: frameRate bitrate: bitrate orientationMode: AgoraVideoOutputOrientationModeAdaptative];
 
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
-### API Method
+### API Reference
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Video/rotation_guide_ios.md).
 
