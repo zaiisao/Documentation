@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Wed Dec 26 2018 10:06:10 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:50:14 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
