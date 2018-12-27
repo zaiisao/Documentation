@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Fri Dec 14 2018 08:05:01 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 10:30:44 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
