@@ -34,7 +34,7 @@ Initialize rtcEngine before running the following sample code.
 	rtcEngine.disableLastmileTest();
 ```
 
-### API References
+### API Reference
 
 - [`RtcEngine.enableLastmileTest()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
 - [`RtcEngine.disableLastmileTest()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
