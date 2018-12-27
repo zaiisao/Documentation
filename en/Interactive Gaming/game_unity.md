@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Fri Nov 02 2018 04:23:26 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 08:11:55 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
