@@ -3,7 +3,7 @@
 title: Improve Experience Under Poor Network Conditions
 description: 
 platform: Android
-updatedAt: Wed Dec 26 2018 10:14:16 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:49:12 GMT+0000 (UTC)
 ---
 # Improve Experience Under Poor Network Conditions
 ## Introduction
