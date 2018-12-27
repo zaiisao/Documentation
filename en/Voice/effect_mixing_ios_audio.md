@@ -94,7 +94,7 @@ volume = volume < 80 ? 80 : volume
 [agoraKit stopAllEffects];
 ```
 
-### API Methods
+### API References
 
 - [`playEffect`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/playEffect:filePath:loopCount:pitch:pan:gain:)
 - [`preloadEffect`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/preloadEffect:filePath:)
@@ -150,7 +150,7 @@ NSInteger cycle = 1;
 
 
 
-### API Methods
+### API References
 
 - [`startAudioMixing`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
 
