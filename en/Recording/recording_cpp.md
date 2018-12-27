@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Thu Dec 27 2018 10:21:08 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 10:26:32 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -673,7 +673,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <td>Supported</td>
 </tr>
 <tr><td>Windows</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -708,7 +708,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <td>Supported</td>
 </tr>
 <tr><td>macOS</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <th><strong>Not Supported</strong></th>
 <th><strong>Not Supported</strong></th>
 </tr>
@@ -733,7 +733,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <td><strong>Not Supported</strong>d</td>
 </tr>
 <tr><td>iOS</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -758,7 +758,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <td>Supported</td>
 </tr>
 <tr><td>Android</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
