@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: Android
-updatedAt: Thu Dec 27 2018 02:41:55 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:41:56 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -33,7 +33,7 @@ if (shouldManualFocus) {
 
 ```
 
-### API Methods
+### API References
 
 -  [`isCameraFocusSupported`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0e20f04ccecfc41aa23bf63116c9a8cd)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a09f61f738cf7d8a1902761e03a7fa600)
