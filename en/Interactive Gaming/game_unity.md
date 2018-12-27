@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Thu Dec 27 2018 08:11:55 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 09:05:35 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -54,7 +54,7 @@ This method queries an engine instance. Unlike `GetEngine`, `QueryEngine` will n
 #### Set the Channel Profile (SetChannelProfile)
 
 ```
-public abstract int SetChannelProfile(CHANNEL_PROFILE profile);
+public int SetChannelProfile(CHANNEL_PROFILE profile);
 ```
 
 This method configures the channel profile. The Agora RtcEngine needs to know what scenario the application is in to apply different methods for optimization.
@@ -77,8 +77,8 @@ This method configures the channel profile. The Agora RtcEngine needs to know wh
 <tr><td><code>profile</code></td>
 <td><p>The channel profile. Choose from the following:</p>
 <ul>
-<li><code>CHANNEL_PROFILE _GAME_FREEMODE</code> = 2: Free Mode</li>
-<li><code>CHANNEL_PROFILE _GAME_COMMANDMODE</code> = 3: Command Mode</li>
+<li><code>CHANNEL_PROFILE _GAME_FREEMODE</code> = 0: Free Mode</li>
+<li><code>CHANNEL_PROFILE _GAME_COMMANDMODE</code> = 1: Command Mode</li>
 </ul>
 </td>
 </tr>
@@ -100,7 +100,7 @@ This method configures the channel profile. The Agora RtcEngine needs to know wh
 #### Set the Client Role (SetClientRole)
 
 ```
-public abstract int SetClientRole(CLIENT_ROLE role);
+public int SetClientRole(CLIENT_ROLE role);
 ```
 
 This method sets the user role before joining a channel, and allows you to switch the user role after joining a channel.
@@ -146,7 +146,7 @@ This method sets the user role before joining a channel, and allows you to switc
 #### Join a Channel (JoinChannel)
 
 ```
-public abstract int JoinChannel (string token, string channelName, string optionalInfo, uint optionalUid);
+public int JoinChannel (string token, string channelName, string optionalInfo, uint optionalUid);
 ```
 
 This method allows a user to join a channel. Users in the same channel can talk to each other; and multiple users in the same channel can start a group chat. Users using different App IDs cannot call each other. Once in a call, the user must call the `leaveChannel` method to exit the current call before entering another channel.
@@ -215,7 +215,7 @@ This method allows a user to join a channel. Users in the same channel can talk 
 #### Enable the Audio Mode (EnableAudio)
 
 ```
-public abstract int EnableAudio();
+public int EnableAudio();
 ```
 
 This method enables the audio mode, which is enabled by default.
@@ -247,7 +247,7 @@ This method enables the audio mode, which is enabled by default.
 #### Disable the Audio Mode \(DisableAudio\)
 
 ```
-public abstract int DisableAudio();
+public int DisableAudio();
 ```
 
 This method disables the audio mode.
@@ -279,7 +279,7 @@ This method disables the audio mode.
 #### Leave a Channel (LeaveChannel)
 
 ```
-public abstract int LeaveChannel();
+public int LeaveChannel();
 ```
 
 <table>
@@ -308,15 +308,13 @@ public abstract int LeaveChannel();
 
 ### Set the Audio Route
 
-#### Set the Default Audio Route to Speakerphone (setDefaultAudioRouteToSpeakerphone)
+#### Set the Default Audio Route to Speakerphone (SetDefaultAudioRouteToSpeakerphone)
 
 ```
-public int SetDefaultAudioRouteToSpeakerphone(bool speakerphone)
+public int setDefaultAudioRouteToSpeakerphone(bool speakerphone)
 ```
 
 This method sets the default audio route to *speakerphone* or *earpiece*.
-
-Once a headset is plugged in or bluetooth is connected, the audio route will be changed accordingly. Once removing the headset or disconnecting bluetooth, the audio route will be the default value.
 
 <table>
 <colgroup>
@@ -344,7 +342,8 @@ Once a headset is plugged in or bluetooth is connected, the audio route will be 
 </tbody>
 </table>
 
-> This method only works in audio mode.
+> On Unity for iOS, this method only works in audio mode.
+> Once a headset is plugged in or bluetooth is connected, the audio route will be changed accordingly. Once removing the headset or disconnecting bluetooth, the audio route will be the default value.
 
 The original default value for audio route is as follows:
 
@@ -358,7 +357,7 @@ The original default value for audio route is as follows:
 <td><strong>Original Default Audio Route</strong></td>
 </tr>
 <tr><td>Free Talk</td>
-<td>Earpiece</td>
+<td>Speakerphone</td>
 </tr>
 <tr><td>Command</td>
 <td>Speakerphone</td>
@@ -368,7 +367,7 @@ The original default value for audio route is as follows:
 
 
 
-#### Set the Audio Route to Speakerphone (setEnableSpeakerphone)
+#### Set the Audio Route to Speakerphone (SetEnableSpeakerphone)
 
 ```
 public int SetEnableSpeakerphone (bool speakerphone)
@@ -446,47 +445,10 @@ This method checks whether the audio route is set to speakerphone.
 
 ### Set the Audio Volume
 
-#### Set the Speakerphone Volume (SetSpeakerphoneVolume)
-
-```
-public int SetSpeakerphoneVolume(int volume)
-```
-
-This method sets the speakerphone volume.
-
-> The method is only valid on Unity for Windows.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td><code>volume</code></td>
-<td>Sets the speakerphone volume between 0 (lowest volume) to 255 (highest volume).</td>
-</tr>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
 #### Enable the Audio Volume Indication (EnableAudioVolumeIndication)
 
 ```
-public abstract int EnableAudioVolumeIndication (int interval, int smooth);
+public int EnableAudioVolumeIndication (int interval, int smooth);
 ```
 
 This method enables or disables the audio volume indication.
@@ -532,13 +494,61 @@ This method enables the SDK to regularly report to the application on which user
 
 ### Mute the Audio and Video Stream
 
+#### Enable/Disable the Local Audio Module (EnableLocalAudio)
+
+```
+public int EnableLocalAudio (bool enabled);
+```
+
+When an app joins a channel, the audio module is enabled by default. This method disables or re-enables the local audio capture, that is, to stop or restart local audio capturing and processing.
+
+The `didMicrophoneEnabled` callback is triggered once the local audio module is disabled or re-enabled.
+
+This method does not affect receiving or playing the remote audio streams, and is applicable to scenarios where the user wants to receive remote audio streams without sending any audio stream to other users in the channel.
+
+> Call this method after `joinChannelByToken`.
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><td><code>enabled</code></td>
+<td><ul>
+<li>True: Enables the local audio module.</li>
+<li>False: Disables the local audio module.</li>
+</ul>
+</td>
+</tr>
+<tr/>
+<tr><td>Return Value</td>
+<td><ul>
+<li>0: Method call succeeded.</li>
+<li>&lt;0: Method call failed.</li>
+</ul>
+</td>
+</tr>
+<tr/>
+</tbody>
+</table>
+
+
 #### Mute the Local Audio Stream (MuteLocalAudioStream)
 
 ```
-public abstract int MuteLocalAudioStream (bool mute);
+public int MuteLocalAudioStream (bool mute);
 ```
 
 This method enables/disables sending local audio streams to the network.
+> - This method is only valid in the channel. If you leave the channel, the mute settings are cleared. 
+
+> - Difference between `EnableLocalAudio` and `MuteLocalAudioStream`:
+ `EnableLocalAudio`: Disables/Re-enables the local audio capturing and processing.
+ `MuteLocalAudioStream`: Stops/Continues sending the local audio streams.
 
 <table>
 <colgroup>
@@ -575,10 +585,11 @@ This method enables/disables sending local audio streams to the network.
 #### Mute all Remote Audio Streams (MuteAllRemoteAudioStreams)
 
 ```
-public abstract int MuteAllRemoteAudioStreams (bool mute);
+public int MuteAllRemoteAudioStreams (bool mute);
 ```
 
 This method mutes/unmutes all remote users’ audio streams.
+> This method is only valid in the channel. If you leave the channel, the mute settings are cleared. 
 
 <table>
 <colgroup>
@@ -615,10 +626,11 @@ This method mutes/unmutes all remote users’ audio streams.
 #### Mute a Remote Audio Stream (MuteRemoteAudioStream)
 
 ```
-public abstract int MuteRemoteAudioStream (uint uid, bool mute);
+public int MuteRemoteAudioStream (uint uid, bool mute);
 ```
 
 This method mutes/unmutes a specified remote user’s audio stream.
+> This method is only valid in the channel. If you leave the channel, the mute settings are cleared. 
 
 <table>
 <colgroup>
@@ -676,7 +688,7 @@ This method returns the error code when an error is detected during SDK runtime.
 #### Start Audio Mixing (StartAudioMixing)
 
 ```
-public abstract int StartAudioMixing (string filePath, bool loopback, bool replace, int cycle, int playTime = 0);
+public int StartAudioMixing (string filePath, bool loopback, bool replace, int cycle, int playTime = 0);
 ```
 
 This method mixes the specified local audio file with the audio stream from the microphone; or, it replaces the microphone’s audio stream with the specified local audio file. You can choose whether the other user can hear the local audio playback and specify the number of loop playbacks. This API also supports online music playback.
@@ -748,7 +760,7 @@ This method mixes the specified local audio file with the audio stream from the 
 #### Stop Audio Mixing (StopAudioMixing)
 
 ```
-public abstract int StopAudioMixing();
+public int StopAudioMixing();
 ```
 
 This method stops mixing the specified local audio with the microphone input. Call this API when you are in the channel.
@@ -780,7 +792,7 @@ This method stops mixing the specified local audio with the microphone input. Ca
 #### Pause Audio Mixing (PauseAudioMixing)
 
 ```
-public abstract int PauseAudioMixing();
+public int PauseAudioMixing();
 ```
 
 This method pauses mixing the specified local audio with the microphone input. Call this API when you are in the channel.
@@ -812,7 +824,7 @@ This method pauses mixing the specified local audio with the microphone input. C
 #### Resume Audio Mixing (ResumeAudioMixing)
 
 ```
-public abstract int ResumeAudioMixing();
+public int ResumeAudioMixing();
 ```
 
 This method resumes mixing the specified local audio with the microphone input. Call this API when you are in the channel.
@@ -844,7 +856,7 @@ This method resumes mixing the specified local audio with the microphone input. 
 #### Adjust the Audio Mixing Volume (AdjustAudioMixingVolume)
 
 ```
-public abstract int AdjustAudioMixingVolume (int volume);
+public int AdjustAudioMixingVolume (int volume);
 ```
 
 This method adjusts the volume during audio mixing. Call this API when you are in the channel.
@@ -879,7 +891,7 @@ This method adjusts the volume during audio mixing. Call this API when you are i
 #### Get the Audio Mixing Duration (GetAudioMixingDuration)
 
 ```
-public abstract int GetAudioMixingDuration();
+public int GetAudioMixingDuration();
 ```
 
 This method gets the duration (ms) of the audio mixing. Call this API when you are in the channel.
@@ -911,7 +923,7 @@ This method gets the duration (ms) of the audio mixing. Call this API when you a
 #### Get the Current Audio Position (GetAudioMixingCurrentPosition)
 
 ```
-public abstract int GetAudioMixingCurrentPosition();
+public int GetAudioMixingCurrentPosition();
 ```
 
 This method gets the playback position (ms) of the audio. Call this API when you are in the channel.
@@ -945,7 +957,7 @@ This method gets the playback position (ms) of the audio. Call this API when you
 #### Start an Audio Recording (StartAudioRecording)
 
 ```
-public abstract int StartAudioRecording(string filePath);
+public int StartAudioRecording(string filePath);
 ```
 
 This method starts an audio recording. The SDK allows recording during a call, which supports either one of the following two formats:
@@ -986,7 +998,7 @@ Ensure that the directory to save the recording file exists and is writable. Thi
 #### Stop an Audio Recording (StopAudioRecording)
 
 ```
-public abstract int StopAudioRecording();
+public int StopAudioRecording();
 ```
 
 This method stops recording on the client.
@@ -1020,7 +1032,7 @@ Call this method before calling `LeaveChannel`, otherwise the recording automati
 #### Adjust the Recording Volume (AdjustRecordingSignalVolume)
 
 ```
-public abstract int AdjustRecordingSignalVolume (int volume);
+public int AdjustRecordingSignalVolume (int volume);
 ```
 
 This method adjusts the recording volume.
@@ -1064,7 +1076,7 @@ This method adjusts the recording volume.
 #### Adjust the Playback Volume (AdjustPlaybackSignalVolume)
 
 ```
-public abstract int AdjustPlaybackSignalVolume (int volume);
+public int AdjustPlaybackSignalVolume (int volume);
 ```
 
 This method adjusts the playback volume.
@@ -1105,7 +1117,7 @@ This method adjusts the playback volume.
 
 
 
-#### Start an Audio Call Test (startEchoTest)
+#### Start an Audio Call Test (StartEchoTest)
 
 ```
 public int StartEchoTest()
@@ -1317,13 +1329,8 @@ public void Resume ()
 
 This method resumes the paused audio.
 
-#### Get the Message Count (getMessageCount)
+> `Pause`/`Resume` have dependencies with the method `EnableLocalAudio`. For example, when EnableLocalAudio is set to False to disable local audio, calling `Resume` can enable local audio again.
 
-```
-public int GetMessageCount ()
-```
-
-This method gets the number of messages in the message queue.
 
 #### Destroy an Engine Instance (Destroy)
 
@@ -2011,6 +2018,7 @@ public int MuteLocalVideoStream(bool mute)
 ```
 
 This method enables/disables sending local video streams to the network. When set to True, this method does not disable the camera and thus does not affect getting local video streams.
+> This method is only valid in the channel. If you leave the channel, the mute settings are cleared. 
 
 <table>
 <colgroup>
@@ -2050,6 +2058,7 @@ public int MuteAllRemoteVideoStreams(bool mute)
 ```
 
 This method enables/disables playing all remote users’ video streams. When set to True, this method stops playing video streams without affecting the video stream receiving process.
+> This method is only valid in the channel. If you leave the channel, the mute settings are cleared. 
 
 <table>
 <colgroup>
@@ -2090,6 +2099,7 @@ public int MuteRemoteVideoStream(uint uid, bool mute)
 ```
 
 This method pauses/resumes playing a specified user’s video, that is, enables/disables playing a specified user’s video stream.
+> This method is only valid in the channel. If you leave the channel, the mute settings are cleared. 
 
 <table>
 <colgroup>
@@ -2126,17 +2136,9 @@ This method pauses/resumes playing a specified user’s video, that is, enables/
 
 
 
-#### Trigger an SDK Event (Poll)
-
-```
-public abstract void Poll ();
-```
-
-This method triggers an SDK event according to vertical synchronization, such as `Update` (Unity3D\).
-
 ### Encryption
 
-#### Enable Built-in Encryption (setEncryptionSecret)
+#### Enable Built-in Encryption (SetEncryptionSecret)
 
 ```
 public int SetEncryptionSecret(string secret)
@@ -2226,7 +2228,7 @@ Call `setEncryptionSecret` to enable the built-in encryption function before cal
 #### Set the Log Filter (SetLogFilter)
 
 ```
-public abstract int SetLogFilter (LOG_FILTER filter);
+public int SetLogFilter (LOG_FILTER filter);
 ```
 
 This method sets the SDK output log filter.
@@ -2274,7 +2276,7 @@ This method sets the SDK output log filter.
 #### Set a Log File (SetLogFile)
 
 ```
-public abstract int SetLogFile (string filePath);
+public int SetLogFile (string filePath);
 ```
 
 This method sets the path to save the log file.
@@ -2318,7 +2320,6 @@ The token expires after a certain period of time once the Token schema is enable
 
 -   The `onError` callback reports the ERR_TOKEN_EXPIRED (109) error, or
 -   The `onRequestToken` callback reports the ERR_TOKEN_EXPIRED (109) error, or
--   The user receives the `onTokenPrivilegeWillExpire` callback.
 
 The application should retrieve a new token and then call this method to renew it. Failure to do so will result in the SDK disconnecting from the server.
 
@@ -2350,6 +2351,8 @@ The application should retrieve a new token and then call this method to renew i
 
 
 ### Callbacks
+
+> All callbacks are returned in the main thread.
 
 #### Join Channel Callback (JoinChannelSuccessHandler)
 
@@ -2811,12 +2814,39 @@ This method is triggered when the video size of the specific user is changed.
 </tbody>
 </table>
 
-
-
-#### Client Role Changed Callback (onClientRoleChangedHandler)
+#### Microphone Enabled Callback (OnMicrophoneEnabledHandler)
 
 ```
-public delegate void onClientRoleChangedHandler(int oldRole, int newRole)
+public delegate void OnMicrophoneEnabledHandler (bool isEnabled);
+```
+
+This callback is triggered when the microphone is enabled or disabled.
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><td><code>isEnabled</code></td>
+<td>
+<div><ul>
+<li><code>True</code>: The microphone is enabled.</li>
+	<li><code>False</code>: The microphone is disabled.</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+
+#### Client Role Changed Callback (OnClientRoleChangedHandler)
+
+```
+public delegate void OnClientRoleChangedHandler(int oldRole, int newRole)
 ```
 
 When you set the channel profile as Live Broadcast when calling `setChannelProfile`, this callback is triggered when there is any role change in the channel.
@@ -2880,7 +2910,7 @@ This callback indicates that some other user has paused/resumed his/her video st
 <a id = "iaudioeffectmanager"></a>
 ## IAudioEffectManager Interface Class
 
-### Set Voice-only Mode (setVoiceOnlyMode)
+### Set Voice-only Mode (SetVoiceOnlyMode)
 
 ```
 int setVoiceOnlyMode(bool enable);
@@ -3169,15 +3199,15 @@ This method stops playing a specific audio effect.
 
 
 
-### Stop Playing all Audio Effects (stopAllEffects)
+### Stop Playing all Audio Effects (StopAllEffects)
 
 ```
-int stopAllEffects();
+int StopAllEffects();
 ```
 
 This method stops playing all the audio effects.
 
-### Preload an Audio Effect (preloadEffect)
+### Preload an Audio Effect (PreloadEffect)
 
 ```
 int PreloadEffect(int soundId, String filePath);
@@ -3215,10 +3245,10 @@ This method preloads a specific audio effect file (compressed audio file) to the
 
 
 
-### Release an Audio Effect (unloadEffect)
+### Release an Audio Effect (UnloadEffect)
 
 ```
-int unloadEffect(int soundId);
+int UnloadEffect(int soundId);
 ```
 
 This method releases a specific preloaded audio effect from the memory.
@@ -3250,10 +3280,10 @@ This method releases a specific preloaded audio effect from the memory.
 
 
 
-### Pause an Audio Effect (pauseEffect)
+### Pause an Audio Effect (PauseEffect)
 
 ```
-virtual int pauseEffect(int soundId)
+virtual int PauseEffect(int soundId)
 ```
 
 This method pauses a specific audio effect.
@@ -3285,10 +3315,10 @@ This method pauses a specific audio effect.
 
 
 
-### Pause all Audio Effects (pauseAllEffects)
+### Pause all Audio Effects (PauseAllEffects)
 
 ```
-int pauseAllEffects();
+int PauseAllEffects();
 ```
 
 This method pauses all audio effects.
@@ -3317,10 +3347,10 @@ This method pauses all audio effects.
 
 
 
-### Resume an Audio Effect (resumeEffect)
+### Resume an Audio Effect (ResumeEffect)
 
 ```
-int resumeEffect(int soundId);
+int ResumeEffect(int soundId);
 ```
 
 This method resumes playing a specific audio effect.
@@ -3352,10 +3382,10 @@ This method resumes playing a specific audio effect.
 
 
 
-### Resume all Audio Effects (resumeAllEffects)
+### Resume all Audio Effects (ResumeAllEffects)
 
 ```
-int resumeAllEffects();
+int ResumeAllEffects();
 ```
 
 This method resumes all audio effects.
