@@ -3,7 +3,7 @@
 title: Improve Experience Under Poor Network Conditions
 description: 
 platform: Android
-updatedAt: Thu Dec 27 2018 02:59:13 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:59:14 GMT+0000 (UTC)
 ---
 # Improve Experience Under Poor Network Conditions
 ## Introduction
@@ -29,7 +29,7 @@ The audio and video quality of a live broadcast or a video call deteriorates und
     rtcEngine.setRemoteVideoStreamType(uid, Constants.VIDEO_STREAM_LOW);
 ```
 
-### API References
+### API Reference
 * [`enableDualStreamMode`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a645cb7d0f3a59dda27b157cf130c8c9a)
 * [`setLocalPublishFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac8c08e79844a4e62e0670553484cbe90)
 * [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af64301ea1788dad0561aa678f3fe6ad3)
