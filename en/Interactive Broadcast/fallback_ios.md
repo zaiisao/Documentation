@@ -3,7 +3,7 @@
 title: Improve Experience Under Poor Network Conditions
 description: 
 platform: iOS,macOS
-updatedAt: Thu Dec 27 2018 02:59:20 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:59:21 GMT+0000 (UTC)
 ---
 # Improve Experience Under Poor Network Conditions
 ## Introduction
@@ -49,7 +49,7 @@ agoraKit.enableDualStreamMode(true);
 [agoraKit setRemoteVideoStream: uid type:AgoraVideoStreamTypeLow];
 ```
 
-### API References
+### API Reference
 
 - [`enableDualStreamMode:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableDualStreamMode:)
 - [`setRemoteVideoStream:type:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoStream:type:)
