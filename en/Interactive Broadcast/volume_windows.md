@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Thu Dec 27 2018 02:42:59 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:57:12 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -44,7 +44,7 @@ RtcEngineParameters rep(*lpAgoraEngine);
 int ret = rep.adjustRecordingSignalVolume(200);
 ```
 
-#### API References
+#### API Reference
 - [`setRecordingDeviceVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac24424e86ded2727a532df739ebf8086)
 - [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa9e9b5ae052022fe2e81232b9e6e7290)
 
@@ -79,7 +79,7 @@ RtcEngineParameters rep(*lpAgoraEngine);
 int ret = rep.adjustPlaybackSignalVolume(200);
 ```
 
-#### API References
+#### API Reference
 
 - [`setPlaybackDeviceVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a20b66e126ff710afc0e9258f96be8e7a)
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a8bed09e12b8e2d9934aafad50b77d364)
@@ -112,7 +112,7 @@ RtcEngineParameters rep(*lpAgoraEngine);
 int ret = rep.adjustAudioMixingVolume(50);
 ```
 
-#### API References
+#### API Reference
 
 - [`adjustAudioMixingPublishingVolume`](../../en/Interactive%20Broadcast/volume_windows.md)
 - [`adjustAudioMixingPlayoutVolume`](../../en/Interactive%20Broadcast/volume_windows.md)
@@ -135,7 +135,7 @@ int ret = rep.setEffectsVolume(50);
 int ret = rep.setVolumeOfEffect(soundId, 50);
 ```
 
-#### API References
+#### API Reference
 
 - [`setEffectsVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa3041ef19bfe10ffc5a1130cda91ab7b)
 - [`setVolumeOfEffect`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a71fac1633ea84c892879781bee56d001)
@@ -169,7 +169,7 @@ void onActiveSpeaker(uid_t uid) {
 }
 ```
 
-#### API References
+#### API Reference
 
 - [`onAudioVolumeIndication`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a59ae67333fbc61a7002a46c809e2ec4f)
 - [`onActiveSpeaker`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae643c9dbf94360a23a8b3a56c93f90bc)
