@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Web
-updatedAt: Wed Dec 26 2018 09:57:02 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:46:30 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
