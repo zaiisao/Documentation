@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Android
-updatedAt: Wed Dec 26 2018 09:56:40 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:46:15 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -34,7 +34,7 @@ Initialize rtcEngine before running the following sample code.
 	rtcEngine.disableLastmileTest();
 ```
 
-### API Methods
+### API References
 
 - [`RtcEngine.enableLastmileTest()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
 - [`RtcEngine.disableLastmileTest()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
