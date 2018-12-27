@@ -45,7 +45,7 @@ agoraKit.disableLastmileTest()
 [agoraKit disableLastmileTest];
 ```
 
-### API Method
+### API Reference
 
 - [`enableLastmileTest`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableLastmileTest)
 - [`disableLastmileTest`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/disableLastmileTest)
