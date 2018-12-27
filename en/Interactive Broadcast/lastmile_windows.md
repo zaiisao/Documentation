@@ -3,7 +3,7 @@
 title: Conduct a Last Mile Test
 description: 
 platform: Windows
-updatedAt: Thu Dec 27 2018 02:58:49 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:58:50 GMT+0000 (UTC)
 ---
 # Conduct a Last Mile Test
 ## Introduction
@@ -32,7 +32,7 @@ int ret = lpAgoraEngine->disableLastmileTest();
 
 ```
 
-### API References
+### API Reference
 * [`enableLastmileTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2803623f129eeb92503a7a4e5a09a46d)
 * [`disableLastmileTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a544fb9fda664578b80bbd7dbfffafd53)
 * [`onLastmileQuality`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7e14d1a26eb35ef236a0662d28d2b33)
