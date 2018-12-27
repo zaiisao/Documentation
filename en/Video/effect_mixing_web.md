@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to enable audio mixing for Web
 platform: Web
-updatedAt: Thu Dec 27 2018 02:43:35 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:57:43 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -61,7 +61,7 @@ localStream.getAudioMixingDuration();
 localStream.stopAudioMixing();
 ```
 
-### API References
+### API Reference
 
 - [`startAudioMixing`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)
 - [`stopAudioMixing`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#stopaudiomixing)
