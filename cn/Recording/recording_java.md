@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Thu Dec 27 2018 10:30:44 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 10:30:50 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -637,7 +637,7 @@ AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 
 <td>支持</td>
 </tr>
 <tr><td>Windows</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
@@ -672,7 +672,7 @@ AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 
 <td>支持</td>
 </tr>
 <tr><td>macOS</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td><strong>不支持</strong></td>
 <td><strong>不支持</strong></td>
 </tr>
@@ -697,7 +697,7 @@ AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 
 <td><strong>不支持</strong></td>
 </tr>
 <tr><td>iOS</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
@@ -722,7 +722,7 @@ AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 
 <td>支持</td>
 </tr>
 <tr><td>Android</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
