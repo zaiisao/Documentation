@@ -69,7 +69,7 @@ int nRet = rep.stopAllEffects();
 int nRet = rep.unloadEffect(nSoundID);
 ```
 
-### API Methods
+### API References
 
 - [`preloadEffect`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a61e4eac3b78f2774ef1b22d69bd4e166)
 - [`playEffect`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a26307c09cbbaecee3bd662294a935821)
@@ -121,7 +121,7 @@ int nRet = rep.startAudioMixing(filePath, FALSE, TRUE, 1);
 int nRet = rep.stopAudioMixing();
 ```
 
-### API Methods
+### API References
 
 - [`startAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a13106dd42b618ab9d1a03f7ea1bc4f2f)
 - [`stopAudioMixng`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1e7955a19257fe8388f79213a1b7ad5b)
