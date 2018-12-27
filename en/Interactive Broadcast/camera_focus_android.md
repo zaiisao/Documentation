@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: Android
-updatedAt: Thu Dec 27 2018 02:41:56 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:56:16 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
