@@ -32,7 +32,7 @@ agoraKit.adjustPlaybackSignalVolume(50)
 [agoraKit adjustPlaybackSignalVolume: 50];
 ```
 
-### API References
+### API Reference
 
 - [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustRecordingSignalVolume:)
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
