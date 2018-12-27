@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to set voice effects on macOS
 platform: macOS
-updatedAt: Wed Dec 26 2018 10:05:54 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:52:55 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
