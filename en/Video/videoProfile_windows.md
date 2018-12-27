@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Fri Dec 07 2018 18:49:26 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:41:46 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -30,7 +30,7 @@ ORIENTATION_MODE_ADAPTIVE // The orientation mode the video.
 lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 ```
 
-### API Method
+### API Reference
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Video/rotation_guide_android.md).
 
