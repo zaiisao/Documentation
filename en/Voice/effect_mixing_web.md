@@ -61,7 +61,7 @@ localStream.getAudioMixingDuration();
 localStream.stopAudioMixing();
 ```
 
-### API Methods
+### API References
 
 - [`startAudioMixing`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing)
 - [`stopAudioMixing`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#stopaudiomixing)
