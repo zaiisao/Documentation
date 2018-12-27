@@ -39,7 +39,7 @@ agoraKit.stopAudioRecording()
 [agoraKit stopAudioRecording];
 ```
 
-### API References
+### API Reference
 
 - [`startAudioRecording:quality:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:quality:)
 - [`stopAudioRecording`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioRecording)
