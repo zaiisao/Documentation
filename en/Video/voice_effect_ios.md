@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to set voice effects on iOS
 platform: iOS
-updatedAt: Wed Dec 26 2018 10:11:18 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:46:04 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
@@ -85,7 +85,7 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 [agoraKit setLocalVoiceReverbOfType:AgoraAudioReverbStrength withValue: 45];
 ```
 
-### API Methods
+### API References
 
 - [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
 - [`setLocalVoiceEqualizationOfBandFrequency`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
