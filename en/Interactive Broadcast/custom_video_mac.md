@@ -43,7 +43,7 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 [agoraKit pushExternalAudioFrameSampleBuffer: "your CMSampleBuffer"];
 ```
 
-#### API References
+#### API Reference
 
 * [`pushExternalAudioFrameRawData:samples:timestamp:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameRawData:samples:timestamp:)
 * [`pushExternalAudioFrameSampleBuffer:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalAudioFrameSampleBuffer:)
@@ -144,7 +144,7 @@ Use the IVideoSource interface in MediaIO to customize the video source. This me
 	[agoraKit setVideoSource: videoSource];
 	```
 	
-##### API References
+##### API Reference
 * [`setVideoSource:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
 * [`AgoraVideoSourceProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
 	
@@ -302,7 +302,7 @@ Use the IVideoSink interface of MediaIO to customize the video renderer.
 	[agoraKit setRemoteVideoRenderer: videoRenderer, uid];
 	```
 
-#### API References
+#### API Reference
 * [`setLocalVideoRenderer:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVideoRenderer:)
 * [`setRemoteVideoRenderer:forUserId:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoRenderer:forUserId:)
 * [`AgoraVideoSinkProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSinkProtocol.html)
