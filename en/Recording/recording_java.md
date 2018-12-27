@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Thu Dec 27 2018 10:20:16 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 10:20:22 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -634,7 +634,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>Windows</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -669,7 +669,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>macOS</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <th><strong>Not Supported</strong></th>
 <th><strong>Not Supported</strong></th>
 </tr>
@@ -694,7 +694,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td><strong>Not Supported</strong>d</td>
 </tr>
 <tr><td>iOS</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -719,7 +719,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>Supported</td>
 </tr>
 <tr><td>Android</td>
-<td>KM Player</td>
+<td>KMPlayer</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
