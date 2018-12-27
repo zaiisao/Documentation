@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Wed Dec 26 2018 10:19:00 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:54:39 GMT+0000 (UTC)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -109,7 +109,7 @@ if (mHasStarted && mConsumer != null) {
 }
 ```
 
-##### API References
+##### API Reference
 
 * [`setlVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa240e991d12b5240fc5fd362cbc0d521)
 * [`IVideoSource`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_source.html)
@@ -186,7 +186,7 @@ IVideoSink sink = new IVideoSink() {
 rtcEngine.setLocalVideoRenderer(sink);
 ```
 
-#### API References
+#### API Reference
 * [`setLocalVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab10fd6d8dd89a5bca09b115ecd9e3416)
 * [`setRemoteVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0da32c040cb9d987df2950b83459ba56)
 * [`IVideoSink`](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_sink.html)
