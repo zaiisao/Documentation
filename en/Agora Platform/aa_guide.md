@@ -3,7 +3,7 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Thu Dec 27 2018 08:18:57 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 08:19:01 GMT+0000 (UTC)
 ---
 # Agora Analytics
 ## Overview
@@ -14,7 +14,7 @@ updatedAt: Thu Dec 27 2018 08:18:57 GMT+0000 (UTC)
 - User events. For example, stop sending audio or start receiving video.
 - Bitrates of the sent/received audio and video.
 - The freeze time in rendering the audio and video.
-- The local captured volume and the remote playback volume.
+- The local captured volume and the remote playout volume.
 - The packet loss rates of the audio and video.
 - The users' rating of the call.
 
