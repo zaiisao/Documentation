@@ -62,7 +62,7 @@ setInterval(function(){
 }, 2 * 1000);
 ```
 
-### API References
+### API Reference
 
 - [`getRemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats)
 - [`getRemoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats)
