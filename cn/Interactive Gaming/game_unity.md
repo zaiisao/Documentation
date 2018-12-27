@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Thu Dec 27 2018 08:17:35 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 09:05:53 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -68,7 +68,7 @@ puiblic static IRtcEngine QueryEngine();
 #### 设置频道属性 (SetChannelProfile)
 
 ```
-public abstract int SetChannelProfile(CHANNEL_PROFILE profile);
+public int SetChannelProfile(CHANNEL_PROFILE profile);
 ```
 
 该方法用于设置频道模式 (Profile)。Agora RtcEngine 需知道应用程序的使用场景, 从而使用不同的优化手段。
@@ -90,8 +90,8 @@ public abstract int SetChannelProfile(CHANNEL_PROFILE profile);
 <tr><td><code>profile</code></td>
 <td><p>频道模式:</p>
 <ul>
-<li>CHANNEL_PROFILE_GAME_FREE_MODE = 2: 自由发言模式</li>
-<li>CHANNEL_PROFILE_GAME_COMMAND_MODE = 3: 指挥模式</li>
+<li>CHANNEL_PROFILE_GAME_FREE_MODE = 0: 自由发言模式</li>
+<li>CHANNEL_PROFILE_GAME_COMMAND_MODE = 1: 指挥模式</li>
 </ul>
 </td>
 </tr>
@@ -113,7 +113,7 @@ public abstract int SetChannelProfile(CHANNEL_PROFILE profile);
 #### 设置用户角色 (SetClientRole)
 
 ```
-public abstract int SetClientRole(CLIENT_ROLE role, string permissionKey);
+public int SetClientRole(CLIENT_ROLE role);
 ```
 
 该方法用于加入频道前设置用户角色，同时允许用户在加入频道后切换角色。
@@ -139,8 +139,7 @@ public abstract int SetClientRole(CLIENT_ROLE role, string permissionKey);
 </tr>
 <tr/>
 <tr/>
-<tr><td><code>permissionKey</code></td>
-<td>将其设置为空</td>
+<tr>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
@@ -158,7 +157,7 @@ public abstract int SetClientRole(CLIENT_ROLE role, string permissionKey);
 #### 加入频道 (JoinChannel)
 
 ```
-public abstract int JoinChannel (string token, string channelName, string optionalInfo, uint optionalUid);
+public int JoinChannel (string token, string channelName, string optionalInfo, uint optionalUid);
 ```
 
 该方法让用户加入通话频道，在同一个频道内的用户可以互相通话，多个用户加入同一个频道，可以群聊。 使用不同 App ID 的应用程序是不能互通的。如果已在通话中，用户必须调用 `leaveChannel` 退出当前通话，才能进入下一个频道。
@@ -211,7 +210,7 @@ public abstract int JoinChannel (string token, string channelName, string option
 #### 打开音频 (EnableAudio)
 
 ```
-public abstract int EnableAudio();
+public int EnableAudio();
 ```
 
 该方法打开音频 (默认为打开)。
@@ -240,7 +239,7 @@ public abstract int EnableAudio();
 #### 关闭音频 (DisableAudio)
 
 ```
-public abstract int DisableAudio();
+public int DisableAudio();
 ```
 
 该方法关闭音频。
@@ -269,7 +268,7 @@ public abstract int DisableAudio();
 #### 离开频道 (LeaveChannel)
 
 ```
-public abstract int LeaveChannel();
+public int LeaveChannel();
 ```
 
 该方法离开频道。
@@ -297,7 +296,7 @@ public abstract int LeaveChannel();
 
 ### 设置语音路由
 
-#### 修改语音路由的默认值 setDefaultAudioRouteToSpeakerPhone)
+#### 修改语音路由的默认值 SetDefaultAudioRouteToSpeakerPhone)
 
 ```
 public int setDefaultAudioRouteToSpeakerphone(bool speakerphone)
@@ -331,8 +330,8 @@ public int setDefaultAudioRouteToSpeakerphone(bool speakerphone)
 </tbody>
 </table>
 
-> -   该方法只在纯音频模式下工作，在有视频的模式下不工作。
-> -   如果插上耳机或连接蓝牙，语音路由会发生相应改变。拔出耳机或断开蓝牙后，语音路由将恢复成默认值。
+> -   在Unity for iOS中，该方法只在纯音频模式下工作，在有视频的模式下不工作。
+> -   如果插上耳机或连接蓝牙，语音路由会发生相应改变。拔出耳机或断开蓝牙后，语音路由将恢复成默认值（自由说话模式下为外放）。
 
 
 语音路由的默认值如下表:
@@ -437,44 +436,10 @@ public bool IsSpeakerphoneEnabled()
 
 ### 设置语音音量
 
-#### 设定扬声器音量 (SetSpeakerphoneVolume)
-
-```
-public int SetSpeakerphoneVolume(int volume)
-```
-
-使用该方法设定扬声器音量。
-
-> 该方法只在 Unity for Windows 平台有效。
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>名称</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td><code>volume</code></td>
-<td>设定音量，最小为 0，最大为 255</td>
-</tr>
-<tr><td>返回值</td>
-<td><ul>
-<li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
 #### 启用说话者音量提示 (EnableAudioVolumeIndication)
 
 ```
-public abstract int EnableAudioVolumeIndication (int interval, int smooth);
+public int EnableAudioVolumeIndication (int interval, int smooth);
 ```
 
 该方法启用或禁用音量提示。该方法允许 SDK 定期向应用程序反馈当前谁在说话以及说话者的音量。
@@ -513,14 +478,54 @@ public abstract int EnableAudioVolumeIndication (int interval, int smooth);
 
 
 ### 暂停发送音视频流
+#### 开关本地音频采集 (EnableLocalAudio)
+
+```
+public int EnableLocalAudio (bool enabled);
+```
+
+当 App 加入频道时，语音功能默认是开启的。该方法可以关闭或重新开启本地语音功能，停止或重新开始本地音频采集及处理。
+语音功能关闭或重新开启后，会收到回调 `didMicrophoneEnabled`。
+该方法不影响接收或播放远端音频流，适用于只听不发的用户场景。
+> 该方法需要在 `joinChannelByToken` 之后调用才能生效。
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td><code>enabled</code></td>
+<td><ul>
+<li>True: 本地语音功能开启</li>
+<li>False: 本地语音功能关闭</li>
+</ul>
+</td>
+</tr>
+<tr/>
+<tr><td>返回值</td>
+<td><ul>
+<li>0: 方法调用成功</li>
+<li>&lt;0: 方法调用失败</li>
+</ul>
+</td>
+</tr>
+<tr/>
+</tbody>
+</table>
+
 
 #### 将自己静音 (MuteLocalAudioStream)
 
 ```
-public abstract int MuteLocalAudioStream (bool mute);
+public int MuteLocalAudioStream (bool mute);
 ```
 
 静音/取消静音。该方法用于允许/禁止往网络发送本地音频流。
+> 该方法只在频道内有效。离开频道后，之前设置的静音状态会全部清除，请开发者自行检查代码逻辑。
 
 <table>
 <colgroup>
@@ -555,10 +560,11 @@ public abstract int MuteLocalAudioStream (bool mute);
 #### 静音所有远端音频 (MuteAllRemoteAudioStreams)
 
 ```
-public abstract int MuteAllRemoteAudioStreams (bool mute);
+public int MuteAllRemoteAudioStreams (bool mute);
 ```
 
 该方法用于允许/禁止播放远端用户的音频流，即对所有远端用户进行静音与否。
+> 该方法只在频道内有效。离开频道后，之前设置的静音状态会全部清除，请开发者自行检查代码逻辑。
 
 <table>
 <colgroup>
@@ -591,10 +597,11 @@ public abstract int MuteAllRemoteAudioStreams (bool mute);
 #### 静音指定用户音频 (MuteRemoteAudioStream)
 
 ```
-public abstract int MuteRemoteAudioStream (uint uid, bool mute);
+public int MuteRemoteAudioStream (uint uid, bool mute);
 ```
 
 静音指定远端用户/对指定远端用户取消静音。本方法用于允许/禁止播放远端用户的音频流。
+> 该方法只在频道内有效。离开频道后，之前设置的静音状态会全部清除，请开发者自行检查代码逻辑。
 
 <table>
 <colgroup>
@@ -648,7 +655,7 @@ SDK 运行时如果出错，该方法可以获取错误代码。
 #### 开始客户端本地混音 (StartAudioMixing)
 
 ```
-public abstract int StartAudioMixing (string filePath, bool loopback, bool replace, int cycle, int playTime = 0);
+public int StartAudioMixing (string filePath, bool loopback, bool replace, int cycle, int playTime = 0);
 ```
 
 指定本地音频文件来和麦克风采集的音频流进行混音和替换 (用音频文件替换麦克风采集的音频流)，可以通过参数选择是否让对方听到本地播放的音频和指定循环播放的次数。
@@ -747,7 +754,7 @@ public abstract int StopAudioMixing();
 #### 暂停伴奏播放 (PauseAudioMixing)
 
 ```
-public abstract int PauseAudioMixing();
+public int PauseAudioMixing();
 ```
 
 使用该方法暂停伴奏播放。请在频道内调用该方法。
@@ -776,7 +783,7 @@ public abstract int PauseAudioMixing();
 #### 恢复伴奏播放 (ResumeAudioMixing)
 
 ```
-public abstract int ResumeAudioMixing();
+public int ResumeAudioMixing();
 ```
 
 使用该方法恢复混音，继续播放伴奏。请在频道内调用该方法。
@@ -805,7 +812,7 @@ public abstract int ResumeAudioMixing();
 #### 调节伴奏音量 (AdjustAudioMixingVolume)
 
 ```
-public abstract int AdjustAudioMixingVolume (int volume);
+public int AdjustAudioMixingVolume (int volume);
 ```
 
 使用该方法调节混音里伴奏的音量大小。请在频道内调用该方法。
@@ -837,7 +844,7 @@ public abstract int AdjustAudioMixingVolume (int volume);
 #### 获取伴奏时长 (GetAudioMixingDuration)
 
 ```
-public abstract int GetAudioMixingDuration();
+public int GetAudioMixingDuration();
 ```
 
 该方法获取伴奏时长，单位为毫秒。请在频道内调用该方法。
@@ -866,7 +873,7 @@ public abstract int GetAudioMixingDuration();
 #### 获取伴奏播放进度 (GetAudioMixingCurrentPosition)
 
 ```
-public abstract int GetAudioMixingCurrentPosition();
+public int GetAudioMixingCurrentPosition();
 ```
 
 该方法获取当前伴奏播放进度，单位为毫秒。请在频道内调用该方法。
@@ -897,7 +904,7 @@ public abstract int GetAudioMixingCurrentPosition();
 #### 开始客户端录音 (StartAudioRecording)
 
 ```
-public abstract int StartAudioRecording(string filePath);
+public int StartAudioRecording(string filePath);
 ```
 
 Agora SDK 支持通话过程中在客户端进行录音，且录音文件格式可以为:
@@ -945,7 +952,7 @@ Agora SDK 支持通话过程中在客户端进行录音，且录音文件格式�
 #### 停止客户端录音 (StopAudioRecording)
 
 ```
-public abstract int StopAudioRecording();
+public int StopAudioRecording();
 ```
 
 该方法停止客户端录音。该接口需要在调用 `LeaveChannel` 之前调用，如果没有调用，在调用 `LeaveChannel` 时会自动停止。
@@ -974,7 +981,7 @@ public abstract int StopAudioRecording();
 #### 调节录音信号音量 (AdjustRecordingSignalVolume)
 
 ```
-public abstract int AdjustRecordingSignalVolume (int volume);
+public int AdjustRecordingSignalVolume (int volume);
 ```
 
 该方法调节录音信号音量。
@@ -1013,7 +1020,7 @@ public abstract int AdjustRecordingSignalVolume (int volume);
 #### 调节播放信号音量 \(AdjustPlaybackSignalVolume\)
 
 ```
-public abstract int AdjustPlaybackSignalVolume (int volume);
+public int AdjustPlaybackSignalVolume (int volume);
 ```
 
 该方法调节播放信号音量。
@@ -1048,7 +1055,7 @@ public abstract int AdjustPlaybackSignalVolume (int volume);
 </table>
 
 
-#### 启动语音通话测试 (startEchoTest)
+#### 启动语音通话测试 (StartEchoTest)
 
 ```
 public int StartEchoTest()
@@ -1234,13 +1241,7 @@ public void Resume ()
 
 该方法恢复暂停的语音。
 
-#### 获取消息数量 (getMessageCount)
-
-```
-public int GetMessageCount ()
-```
-
-该方法获取消息队列里的消息数量。
+> `Pause` 与 `Resume` 和 `EnableLocalAudio`方法耦合。例如,使用 EnableLocalAudio(false) 禁用本地音频采集时，调用 `Resume` 会开启本地音频，请开发者自行检查代码逻辑。
 
 #### 销毁引擎实例 (Destroy)
 
@@ -1886,6 +1887,7 @@ public int MuteLocalVideoStream(bool mute)
 ```
 
 暂停/恢复发送本地视频流。该方法用于允许/禁止往网络发送本地视频流。该方法不影响本地视频流获取，没有禁用摄像头。
+> 该方法只在频道内有效。离开频道后，之前设置的静音状态会全部清除，请开发者自行检查代码逻辑。
 
 <table>
 <colgroup>
@@ -1922,6 +1924,7 @@ public int MuteAllRemoteVideoStreams(bool mute)
 ```
 
 暂停/恢复所有人视频流。本方法用于允许/禁止播放所有人的视频流。
+> 该方法只在频道内有效。离开频道后，之前设置的静音状态会全部清除，请开发者自行检查代码逻辑。
 
 <table>
 <colgroup>
@@ -1958,6 +1961,7 @@ public int MuteRemoteVideoStream(uint uid, bool mute)
 ```
 
 允许/禁止接收指定的远端视频流。
+> 该方法只在频道内有效。离开频道后，之前设置的静音状态会全部清除，请开发者自行检查代码逻辑。
 
 <table>
 <colgroup>
@@ -1989,18 +1993,9 @@ public int MuteRemoteVideoStream(uint uid, bool mute)
 </table>
 
 
-
-#### 触发 SDK 事件 (Poll)
-
-```
-public abstract void Poll ();
-```
-
-该方法取出回调信息。在 Unity 中，回调方法响应到上层，你需要通过调用 Poll 方法取出回调信息。
-
 ### 加密
 
-#### 启用内置的加密功能 (setEncryptionSecret)
+#### 启用内置的加密功能 (SetEncryptionSecret)
 
 ```
 public int SetEncryptionSecret(string secret)
@@ -2077,7 +2072,7 @@ Agora SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如
 #### 设置日志过滤器 (SetLogFilter)
 
 ```
-public abstract int SetLogFilter (LOG_FILTER filter);
+public int SetLogFilter (LOG_FILTER filter);
 ```
 
 设置 SDK 的输出日志过滤器。不同的过滤器可以用或组合。
@@ -2119,7 +2114,7 @@ public abstract int SetLogFilter (LOG_FILTER filter);
 #### 设置日志文件 (SetLogFile)
 
 ```
-public abstract int SetLogFile (string filePath);
+public int SetLogFile (string filePath);
 ```
 
 设置 SDK 输出的日志文件。SDK 运行时产生的所有日志将写入该文件。应用程序必须保证指定的目录存在而且可写。
@@ -2158,7 +2153,6 @@ public override int RenewToken (string token);
 
 当：
 
--   发生 `onTokenPrivilegeWillExpire` 回调时，
 -   `onError` 回调报告 ERR_TOKEN_EXPIRED (109) 时，
 -   `onRequestToken` 回调报告 ERR_TOKEN_EXPIRED (109) 时，
 
@@ -2190,7 +2184,9 @@ public override int RenewToken (string token);
 
 ### 回调
 
-#### 加入频道回调 (onJoinChannelSuccess)
+> 所有回调在主线程中返回。
+
+#### 加入频道回调 (OnJoinChannelSuccess)
 
 ```
 public delegate void JoinChannelSuccessHandler (string channelName, uint uid, int elapsed);
@@ -2599,9 +2595,36 @@ public delegate void OnVideoSizeChangedHandler (uint uid, int width, int height,
 </tbody>
 </table>
 
+#### 麦克风状态已改变回调(OnMicrophoneEnabledHandler)
 
+```
+public delegate void OnMicrophoneEnabledHandler (bool isEnabled);
+```
 
-#### 上下麦回调 (onClientRoleChanged)
+麦克风状态改变时会触发该回调。
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td><code>isEnabled</code></td>
+<td>
+<div><ul>
+<li><code>True</code>: 麦克风已启用</li>
+<li><code>False</code>: 麦克风已禁用</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+
+#### 上下麦回调 (onClientRoleChangedHandler)
 
 ```
 public delegate void onClientRoleChangedHandler(int oldRole, int newRole)
@@ -2775,7 +2798,7 @@ int SetLocalVoicePitch (double pitch);
 
 
 
-### 获取音效音量 (getEffectsVolume)
+### 获取音效音量 (GetEffectsVolume)
 
 ```
 double GetEffectsVolume();
@@ -2921,15 +2944,15 @@ int StopEffect(int soundId);
 
 
 
-### 停止播放所有的音效 (stopAllEffects)
+### 停止播放所有的音效 (StopAllEffects)
 
 ```
-int stopAllEffects();
+int StopAllEffects();
 ```
 
 该方法停止播放所有的音效。
 
-### 预加载音效 (preloadEffect)
+### 预加载音效 (PreloadEffect)
 
 ```
 int PreloadEffect(int soundId, String filePath);
