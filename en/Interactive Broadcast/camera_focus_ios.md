@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: iOS
-updatedAt: Thu Dec 27 2018 02:42:07 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:56:23 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -48,7 +48,7 @@ if (isSupported) {
 }
 ```
 
-### API References
+### API Reference
 
 - [`isCameraFocusPositionInPreviewSupported`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraFocusPositionInPreviewSupported)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraAutoFocusFaceModeSupported)
