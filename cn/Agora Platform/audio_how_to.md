@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Thu Dec 27 2018 10:20:15 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 10:20:18 GMT+0000 (UTC)
 ---
 # 音频相关
 ### iOS 端集成 H5 游戏音量低
@@ -28,7 +28,7 @@ updatedAt: Thu Dec 27 2018 10:20:15 GMT+0000 (UTC)
 
 **问题现象：** Android 9 设备锁屏 1 分钟内，音频无声
 
-**问题原因：** 从 Anroid 官网来看，这是系统强制限制。原文如下：
+**问题原因：** 从 Android 官网来看，这是系统强制限制。原文如下：
 
 > **Limited access to sensors in background**
 > Android 9 limits the ability for background apps to access user input and sensor data. If your app is running in the background on a device running Android 9, the system applies the following restrictions to your app:
