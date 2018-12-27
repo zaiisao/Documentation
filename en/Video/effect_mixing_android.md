@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Wed Dec 26 2018 10:09:31 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:43:11 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
