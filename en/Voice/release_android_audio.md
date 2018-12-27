@@ -365,7 +365,7 @@ The version 1.12  was released on July 25, 2017. See below for new features and 
 <col/>
 </colgroup>
 <thead>
-<tr><th>API Method</th>
+<tr><th>API Reference</th>
 <th>Description</th>
 </tr>
 </thead>
