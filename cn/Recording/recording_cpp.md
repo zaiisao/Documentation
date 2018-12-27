@@ -3,7 +3,7 @@
 title: 录制 API
 description: 
 platform: CPP
-updatedAt: Thu Dec 27 2018 10:32:12 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 10:32:16 GMT+0000 (UTC)
 ---
 # 录制 API
 > 版本：v2.2.3
@@ -683,7 +683,7 @@ typedef struct RecordingConfig {
     </tr>
     <tr>
       <td>Windows</td>
-      <td>KM Player</td>
+      <td>KMPlayer</td>
       <td>支持</td>
       <td>支持</td>
     </tr>
@@ -725,7 +725,7 @@ typedef struct RecordingConfig {
     </tr>
     <tr>
       <td>macOS</td>
-      <td>KM Player</td>
+      <td>KMPlayer</td>
       <td><strong>不支持</strong></td>
       <td><strong>不支持</strong></td>
     </tr>
@@ -755,7 +755,7 @@ typedef struct RecordingConfig {
     </tr>
     <tr>
       <td>iOS</td>
-      <td>KM Player</td>
+      <td>KMPlayer</td>
       <td>支持</td>
       <td>支持</td>
     </tr>
@@ -785,7 +785,7 @@ typedef struct RecordingConfig {
     </tr>
     <tr>
       <td>Android</td>
-      <td>KM Player</td>
+      <td>KMPlayer</td>
       <td>支持</td>
       <td>支持</td>
     </tr>
