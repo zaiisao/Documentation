@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Dec 28 2018 08:09:56 GMT+0000 (UTC)
+updatedAt: Fri Dec 28 2018 08:10:03 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -528,7 +528,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 > 为防止大量异常请求影响其他用户的正常使用，我们对 API 的调用频率做了限制。当达到限流阈值时，会返回 HTTP 错误 429 \(Too Many Requests\)。我们认为设置的阈值可以满足绝大多数用户的使用场景，如果您被限制，请尝试调整调用频率。如果该限制使您的需求无法得到满足，请联系 [sales@agora.io](mailto:sales@agora.io) 。
 
 下图展示了查询频道信息相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1545984305351)
+![](https://web-cdn.agora.io/docs-files/1545984592537)
 
 ### 关于用户角色
 
