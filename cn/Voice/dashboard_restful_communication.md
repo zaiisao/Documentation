@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Dec 28 2018 08:27:19 GMT+0000 (UTC)
+updatedAt: Fri Dec 28 2018 08:27:26 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -56,6 +56,9 @@ RESTful API 仅支持 HTTPS。用户必须通过 basic HTTP 认证:
 ## 3. 项目相关的 API
 
 BaseUrl：**https://api.agora.io/dev/v1**
+
+下图展示了项目相关 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1545985558459)
 
 ### 获取所有项目 \(GET\)
 
@@ -352,6 +355,9 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 BaseUrl：**https://api.agora.io/dev/v1**
 
+下图展示了用量相关 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1545985575734)
+
 ### 获取用量数据（GET)
 
 -   方法：GET
@@ -396,6 +402,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 BaseUrl: **https://api.agora.io/dev/v1**
 
+下图展示了服务器踢人相关 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1545985590584)
 
 ### 创建规则 (POST)
 
@@ -518,6 +526,9 @@ BaseUrl: **https://api.agora.io/dev/v1**
 BaseUrl：**http://api.agora.io/dev/v1/**
 
 > 为防止大量异常请求影响其他用户的正常使用，我们对 API 的调用频率做了限制。当达到限流阈值时，会返回 HTTP 错误 429 \(Too Many Requests\)。我们认为设置的阈值可以满足绝大多数用户的使用场景，如果您被限制，请尝试调整调用频率。如果该限制使您的需求无法得到满足，请联系 [sales@agora.io](mailto:sales@agora.io) 。
+
+下图展示了查询频道信息相关 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1545985608224)
 
 ### 关于用户角色
 
