@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 06 2018 09:55:28 GMT+0000 (UTC)
+updatedAt: Sat Dec 29 2018 21:05:14 GMT+0000 (UTC)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for all Agora SDKs. Before accessing Agora’s services, ensure that you have opened ports and whitelisted domains as specified in this article.
