@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on web
 platform: Web
-updatedAt: Sat Dec 29 2018 07:28:59 GMT+0000 (UTC)
+updatedAt: Sat Dec 29 2018 07:29:04 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -12,13 +12,6 @@ updatedAt: Sat Dec 29 2018 07:28:59 GMT+0000 (UTC)
 
 ## 实现方法
 开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Video/web_prepare.md)。
-
-### 调节自己的音量
-
-```javascript
-// 将本地流的音量设置为 50
-localStream.setAudioVolume(50);
-```
 
 ### 调节别人的音量
 
