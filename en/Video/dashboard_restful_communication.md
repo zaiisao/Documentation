@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Dec 28 2018 09:49:00 GMT+0000 (UTC)
+updatedAt: Sat Dec 29 2018 03:14:17 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -36,7 +36,7 @@ All requests should be sent to BaseUrl: *https://api.agora.io/dev/v1*.
 
 BaseUrl: **http://api.agora.io/dev/v1**.
 
-The following chart shows the how you can use Project APIs.
+The following chart shows how you can use Project APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990089418)
 
 ### Fetch all Projects (GET)
@@ -331,7 +331,7 @@ The following chart shows the how you can use Project APIs.
 
 BaseUrl: **https://api.agora.io/dev/v1**.
 
-The following chart shows the how you can use Usage APIs.
+The following chart shows how you can use Usage APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990118195)
 
 ### Fetch Usages (GET)
@@ -380,7 +380,7 @@ The following chart shows the how you can use Usage APIs.
 
 BaseUrl: **https://api.agora.io/dev/v1**.
 
-The following chart shows the how you can use related APIs.
+The following chart shows how you can use related APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990162139)
 
 ### Create a Rule (POST)
@@ -503,7 +503,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**.
 
 > To ensure the availability of this function to all our customers, Agora decides to rate limit on the call frequency of this API. When this frequency limit is exceeded, the HTTP Error Code 429 \(Too Many Requests\) is triggered. Agora considers this frequency limit adequate for most of our customers in most scenarios. Should you receive this Error Code, Agora recommends adjusting your call frequency. Should this limit fails to meet your need, please contact [sales-us@agora.io](mailto:sales-us@agora.io).
 
-The following chart shows the how you can use Online Statistics Query APIs.
+The following chart shows how you can use Online Statistics Query APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990190974)
 
 ### About the User Role
