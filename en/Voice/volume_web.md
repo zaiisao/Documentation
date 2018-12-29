@@ -3,21 +3,15 @@
 title: Adjust the Volume
 description: How to adjust volume on Web
 platform: Web
-updatedAt: Sat Dec 29 2018 07:29:55 GMT+0000 (UTC)
+updatedAt: Sat Dec 29 2018 07:30:01 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
-When using the Agora SDK, developers can adjust the recording and playback volumes for customization. For example, you can mute the remote audio by setting the volume to 0.
+When using the Agora SDK, developers can adjust the recording and playout volumes for customization. For example, you can mute the remote audio by setting the volume to 0.
 ## Implementation
 Before proceeding, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md).
-### Adjust the Local Volume
 
-```
-  // Sets the volume of the local stream to 50.
-  localStream.setAudioVolume(50);
-```
-
-### Adjust the Playback Volume
+### Adjust the Playout Volume
 
 ```
  client.on("stream-subscribed", function(evt){
