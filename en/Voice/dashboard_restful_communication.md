@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Sat Dec 29 2018 03:14:17 GMT+0000 (UTC)
+updatedAt: Sat Dec 29 2018 03:14:48 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -382,6 +382,12 @@ BaseUrl: **https://api.agora.io/dev/v1**.
 
 The following chart shows how you can use related APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990162139)
+
+> The banned user receives the corresponding callback as follows:
+- Android: [`onConnectionBanned`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
+- iOS/macOS:[`ConnectionDidBanned`](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:)
+- Web:[`onclient-banned`](https://docs.agora.io/en/Voice/.API%20Reference/web/interfaces/agorartc.client.html#on)
+- Windows:[`onConnectionBanned`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a38e9d403ae4732dff71110b454149404)
 
 ### Create a Rule (POST)
 
