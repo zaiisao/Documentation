@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Sat Dec 29 2018 07:43:26 GMT+0000 (UTC)
+updatedAt: Sat Dec 29 2018 08:21:06 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
