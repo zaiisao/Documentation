@@ -3,7 +3,7 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Sat Dec 29 2018 04:15:00 GMT+0000 (UTC)
+updatedAt: Sat Dec 29 2018 04:15:05 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
 ### When I use Google Chrome on Android, why can't I connect with people who use the Safari browser or Native SDK?
@@ -31,9 +31,6 @@ A third-party application, such as QQ, takes over the audio device during a web 
 
 ### I make a call with Google Chrome in Windows to a user using Google Chrome on macOS. When I switch my Wi-Fi, why does the image on macOS freeze?
 This is a known issue and the macOS user needs to refresh the page. Agora is working on a fix for this issue.
-
-### If a user uses Safari on iOS 11 and enables the dual-stream mode, why does the screen turn black and the remote user not receive any video?
-Safari on iOS does not support the dual-stream mode.
 
 ### Why can't I join the channel and why is there a WebSocket error and DDoS-like attacks?
 The `joinChannel` parameters of the Web SDK vary in different versions:
