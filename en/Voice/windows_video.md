@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Windows
-updatedAt: Mon Dec 31 2018 21:53:13 GMT+0000 (UTC)
+updatedAt: Mon Dec 31 2018 21:53:16 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 ## Prerequisites
@@ -15,7 +15,7 @@ updatedAt: Mon Dec 31 2018 21:53:13 GMT+0000 (UTC)
 -   Development environment: Microsoft Visual Studio 2013 (Recommended)
 
 
-> If you decide to use Microsoft Visual Studio 2013+, you may encounter compatibility issues.
+> If you use Microsoft Visual Studio 2013+, you may encounter compatibility issues.
 
 ## Create an Agora Account and Get an App ID
 
