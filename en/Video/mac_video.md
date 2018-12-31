@@ -3,25 +3,26 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Mon Dec 31 2018 21:36:38 GMT+0000 (UTC)
+updatedAt: Mon Dec 31 2018 21:36:43 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for macOS.
 
 ## Prerequisites
 
+Development environment:
 - Xcode 9.0+.
 - Physical OS X 10.0+.
 - Ensure that your project has a validated provisioning profile certificate.
-- Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
+- Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
-> Use a physical device to run the sample. Simulators may lack the functionality or the performance needed to run the sample.
+> Use a physical device to run the sample. Emulators may lack the functionality or the performance needed to run the sample.
 
 ## Create an Agora Account and Get an App ID
 
 1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
-2. Click **Add New Project** on the **Projects** page of  [Dashboard](https://dashboard.agora.io/).
+2. Click **Add New Project** on the **Projects** page in [Dashboard](https://dashboard.agora.io/).
 
    <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
 
@@ -47,7 +48,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    ```
 
  > - Skip this step if you have preconfigured **CocoaPods** and **Homebrew** on your system.
- > - If Terminal says `-bash: brew: command not found`, install Homebrew before running the command. See [Homebrew Installation Method](http://brew.sh/index.html).
+ > - If you see `-bash: brew: command not found` in Terminal, install Homebrew before running the command. See [Homebrew Installation Method](http://brew.sh/index.html).
 
 1. Create a Podfile in your project. In the root directory of your project, run the following command in Terminal. This creates a Podfile in the same directory.
 
@@ -156,7 +157,7 @@ In the main file that uses the Agora APIs, add `import AgoraRtcEngineKit`.
 
 ## Next Steps
 
-You have now set up the macOS environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+You have set up the macOS environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
 
 - Initialize the SDK
 - Join a Channel

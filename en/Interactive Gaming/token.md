@@ -67,7 +67,7 @@ Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to saf
 
 1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
-2. Click **Add New Project** on the **Projects** page of  [Dashboard](https://dashboard.agora.io/).
+2. Click **Add New Project** on the **Projects** page in [Dashboard](https://dashboard.agora.io/).
 
    <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
 
