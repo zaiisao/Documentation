@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Mon Dec 31 2018 21:45:05 GMT+0000 (UTC)
+updatedAt: Mon Dec 31 2018 21:45:09 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for Android.
@@ -15,11 +15,11 @@ Development environment:
 - A device with audio support running Android 4.1+.
 - Android SDK for API level 16+.
 - Android Studio 2.0+.
-- Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
+- Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
-Download Agora SDK：
+Download the Agora SDK：
 
-Agora [Video SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads)
+The Agora [Video SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads)
 
 Downloaded files include the libs folder and the sample folder. The following table lists the contents of the libs folder.
 
@@ -58,7 +58,7 @@ Downloaded files include the libs folder and the sample folder. The following ta
 
 1. Sign up for a developer account at <https://dashboard.agora.io/>.
 
-2.  Click **Add New Project** on the **Projects** page of [Dashboard](https://dashboard.agora.io/).
+2.  Click **Add New Project** on the **Projects** page in [Dashboard](https://dashboard.agora.io/).
 
 3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
 
@@ -68,7 +68,7 @@ Downloaded files include the libs folder and the sample folder. The following ta
 
 ## Add the Agora SDK to Your Project
 
-1. Set the storage directory of the libs folder. Open your project in Android Studio (this article takes the sample  as an example), select the *app/src/main/build.gradle* file, and add the preset storage directory to the `fileTree` code line.
+1. Set the storage directory of the libs folder. Open your project in Android Studio (this article takes the sample as an example), select the *app/src/main/build.gradle* file, and add the preset storage directory to the `fileTree` code line.
 
    ![](https://web-cdn.agora.io/docs-files/1543388550043)
 
@@ -76,7 +76,7 @@ Downloaded files include the libs folder and the sample folder. The following ta
 
 2. Add the libs folder according to the storage directory preset in step 1.
 
-3. Add `sourceSets`. In the `build.gradle` file, set the the same storage directory as the libs folder.
+3. Add `sourceSets`. In the `build.gradle` file, set the same storage directory as the libs folder.
 
     ```
     android {
@@ -104,14 +104,13 @@ Downloaded files include the libs folder and the sample folder. The following ta
 
 ## Configure the Android NDK
 
-To call the plug-ins in the inlude files in the libs folder, you need to configure the Android NDK: 
+To call the plug-ins in the include files under the libs folder, you need to configure the Android NDK: 
 
-
-1. Click the **Configure** button and select **Project Defaults \> Project Structure**. Click to download Android NDK.
+1. Click the **Configure** button and select **Project Defaults \> Project Structure**. Click to download the Android NDK.
    
 	 ![](https://web-cdn.agora.io/docs-files/1543388575943)
 
-2. Click **Finish** when the download is complete and Android Studio will automatically add the NDK path.
+2. Click **Finish** when the download is complete and Android Studio automatically adds the NDK path.
    
 	 ![](https://web-cdn.agora.io/docs-files/1543388586395)
    
@@ -155,8 +154,8 @@ In the `proguard-rules.pro` file, add a `-keep` class configuration for the Agor
 ```
 
 ## Next Steps
-You have now finished setting up the Android environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+You have set up the Android environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
 
 - Initialize the SDK
 - Join a Channel
-- Publish and Subscrbe to Streams
+- Publish and Subscribe to Streams
