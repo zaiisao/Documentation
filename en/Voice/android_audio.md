@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Mon Dec 31 2018 21:47:10 GMT+0000 (UTC)
+updatedAt: Mon Dec 31 2018 21:47:14 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -15,7 +15,7 @@ Development environment:
 - A device with audio support running Android 4.1+.
 - Android SDK for API level 16+.
 - Android Studio 2.0+.
-- Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
+- Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
 Download the Agora SDK：
 
@@ -104,14 +104,14 @@ Downloaded files include the libs folder and the sample folder. The following ta
 
 ## Configure the Android NDK
 
-To call the plug-ins in the include files in the libs folder, you need to configure the Android NDK: 
+To call the plug-ins in the include files under the libs folder, you need to configure the Android NDK: 
 
 
-1. Click the **Configure** button and select **Project Defaults \> Project Structure**. Click to download Android NDK.
+1. Click the **Configure** button and select **Project Defaults \> Project Structure**. Click to download the Android NDK.
    
 	 ![](https://web-cdn.agora.io/docs-files/1543388575943)
 
-2. Click **Finish** when the download is complete and Android Studio will automatically add the NDK path.
+2. Click **Finish** when the download is complete and Android Studio automatically adds the NDK path.
    
 	 ![](https://web-cdn.agora.io/docs-files/1543388586395)
    
@@ -159,4 +159,4 @@ In the `proguard-rules.pro` file, add a `-keep` class configuration for the Agor
 You have set up the Android environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
 * Initialize the SDK
 * Join a Channel
-* Publish and Subscrbe to Streams
+* Publish and Subscribe to Streams
