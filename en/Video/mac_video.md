@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Mon Dec 31 2018 21:57:35 GMT+0000 (UTC)
+updatedAt: Mon Dec 31 2018 21:57:39 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for macOS.
@@ -79,7 +79,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    pod install
    ```
 
-   If Terminal says `Pod installation complete!`, you have successfully added the libraries. Click to open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
+   If you see `Pod installation complete!` in Terminal, you have successfully added the libraries. Click to open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
 
    ```
    open YourApp.xcworkspace
