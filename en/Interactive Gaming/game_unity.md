@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Wed Jan 02 2019 06:23:48 GMT+0000 (UTC)
+updatedAt: Wed Jan 02 2019 06:23:53 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -176,10 +176,15 @@ This method allows a user to join a channel. Users in the same channel can talk 
 <tr/>
 <tr><td><code>channelName</code></td>
 <td><p>A string providing the unique channel name for the AgoraRTC session. The length must be within 64 bytes.</p>
-<p>The following is the supported scope: a-z, A-Z, 0-9, space, !</p>
-<p>#$%&amp;, ()+,</p>
-<p>-, :;&lt;=., &gt;?</p>
-<p>@[], ^_, {|}, ~</p>
+<p>The following is the supported scope: 
+<ul>
+<li>The 26 lowercase English letters from a to z</li>
+<li>The 26 uppercase English letters from A to Z</li>
+<li>The 10 numbers from 0 to 9</li>
+<li>The space</li>
+<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","</li>
+</ul>
+
 </td>
 </tr>
 <tr/>
