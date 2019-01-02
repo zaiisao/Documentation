@@ -3,7 +3,7 @@
 title: 游戏纯语音版 API
 description: 
 platform: iOS_CPP
-updatedAt: Thu Dec 27 2018 08:50:47 GMT+0000 (UTC)
+updatedAt: Wed Jan 02 2019 08:43:52 GMT+0000 (UTC)
 ---
 # 游戏纯语音版 API
 游戏纯语音版 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成，其中：
