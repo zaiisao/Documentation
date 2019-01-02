@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Wed Jan 02 2019 06:21:56 GMT+0000 (UTC)
+updatedAt: Wed Jan 02 2019 06:22:02 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -176,12 +176,19 @@ public int JoinChannel (string token, string channelName, string optionalInfo, u
 <tr><td><code>token</code></td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="https://docs.agora.io/cn/Interactive%20Gaming/cn/Agora%20Platform/token"><span>密钥说明</span></a> 。</li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Quickstart%20Guide/token.md"><span>密钥说明</span></a> 。</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>channelName</code></td>
-<td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
+<td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）：
+<ul>
+<li>26 个小写英文字母 a-z</li>
+<li>26 个大写英文字母 A-Z</li>
+<li>10 个数字 0-9</li>
+<li>空格</li>
+<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","<li>
+</ul></td>
 </tr>
 <tr><td><code>optionalInfo</code></td>
 <td>(非必选项) 开发者需加入的任何附加信息。一般可设置为空字符串，或频道相关信息。该信息不会传递给频道内的其他用户</td>
