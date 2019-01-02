@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Jan 02 2019 04:20:47 GMT+0000 (UTC)
+updatedAt: Wed Jan 02 2019 04:21:44 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -405,10 +405,11 @@ The following chart shows how you can use related APIs.
      }
     ```
 
-> The ban rule is based on the permutation and combination of the three fields: cname, uid and ip. See the following examples:
-> -   If you pass the ip parameter, but not cname or uid, then the rule is that this ip cannot login any channel in the App.
-> -   If you pass the cname parameter, but not uid or ip, then the rule is that no one can login the channel specified by the cname parameter.
-> -   If you pass the cname and uid parameter, but not ip, then the rule is that the uid cannot login the channel specified by the cname parameter.
+> - Setting the `time` argument means that the banning rule does not take effect. The server sets all the users in the channel that comform to the rule offline and the users can log in again to rejoin the channel.
+> - The ban rule is based on the permutation and combination of the three fields: cname, uid and ip. See the following examples:
+>    -   If you pass the ip parameter, but not cname or uid, then the rule is that this ip cannot login any channel in the App.
+>    -   If you pass the cname parameter, but not uid or ip, then the rule is that no one can login the channel specified by the cname parameter.
+>    -   If you pass the cname and uid parameter, but not ip, then the rule is that the uid cannot login the channel specified by the cname parameter.
 
 -  Response:
 
