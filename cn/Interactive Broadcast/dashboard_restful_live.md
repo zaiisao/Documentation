@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Jan 02 2019 06:08:52 GMT+0000 (UTC)
+updatedAt: Wed Jan 02 2019 06:08:56 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -407,7 +407,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 > 用户被踢出频道后，会收到网络连接已被服务器禁止回调。
 - Android: [`onConnectionBanned`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
 - iOS/macOS:[`ConnectionDidBanned`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:)
-- Web:[`onclient-banned`](https://docs.agora.io/cn/Interactive%20Broadcast/.API%20Reference/web/interfaces/agorartc.client.html#on)
+- Web:[`onclient-banned`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)
 - Windows:[`onConnectionBanned`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a38e9d403ae4732dff71110b454149404)
 
 ### 创建规则 (POST)
