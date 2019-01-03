@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Thu Jan 03 2019 08:57:45 GMT+0000 (UTC)
+updatedAt: Thu Jan 03 2019 08:57:49 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -397,12 +397,12 @@ The following chart shows how you can use related APIs.
 
     ```
     {
-            "appid":"",   // Mandatory, project App ID
-            "cname":"",   // Optional, channel name. Do not pass cname:""
-            "uid":"",     // Optional, UID which can be obtained by using the SDK API. Do not pass uid:0
-            "ip":"",      // Optional, IP address of the user to be banned. Do not pass ip:0
-            "time": 60    // Optional, banned period in minutes. 1440 minutes maximum, 1 minute minimum. If you set it to over 1440 minutes, it will be processed as 1440 minutes. If you do not set it, the default duration is 1 hour, that is, time:60 
-						"privileges":["join_channel"]
+				"appid":"",   // Mandatory, project App ID
+				"cname":"",   // Optional, channel name. Do not pass cname:""
+				"uid":"",     // Optional, UID which can be obtained by using the SDK API. Do not pass uid:0
+				"ip":"",      // Optional, IP address of the user to be banned. Do not pass ip:0
+				"time": 60    // Optional, banned period in minutes. 1440 minutes maximum, 1 minute minimum. If you set it to over 1440 minutes, it will be processed as 1440 minutes. If you do not set it, the default duration is 1 hour, that is, time:60 
+				"privileges":["join_channel"]
      }
     ```
 
