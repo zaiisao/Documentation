@@ -3,7 +3,7 @@
 title: Technical Specification
 description: 
 platform: Technical Specification
-updatedAt: Thu Jan 03 2019 07:20:46 GMT+0000 (UTC)
+updatedAt: Thu Jan 03 2019 07:20:58 GMT+0000 (UTC)
 ---
 # Technical Specification
 ## Platform and Scale
@@ -137,42 +137,61 @@ Your phone performs software processing in a voice or video call, which uses lot
 
 Agora SDKs have all the required voice/video functions ready to go. Developers need only four lines of code for integration.
 
-### What is the benchmark of the voice/video quality?
+### How to evaluate the voice/video quality?
 
-On a subjective basis, refer to the MOS (Mean Opinion Score).
+Agora provide the following statistics to evaluate the voice or video quality:
 
-The video quality benchmark of one host:
+#### Audio Statistics of the Remote Users
 
-The host uses 360p, 15 fps @ 500 Kbps by default:
+The following callbacks report the audio quality of the end-to-end and transport layer:
 
-* Excellent: The host bandwidth > 450 Kbps more than 80% of the time.
-* Good: The host bandwidth > 400 Kbps more than 80% of the time.
-* Poor: The host bandwidth > 300 Kbps more than 80% of the time.
-* Bad: The host bandwidth > 200 Kbps more than 80% of the time.
-* Very Bad: The host bandwidth > 100 Kbps more than 80% of the time.
+1. `onRemoteAudioStats`: Reports the end-to-end quality of a remote audio stream that is closely linked to the real-user experience. This callback returns the following information:
 
-The video quality benchmark of one audience:
+	- `quality`: Audio quality rating at the receiver's end.
 
-* Excellent: The audience receives a frame rate of 13 fps more than 80% of the time.
-* Good: The audience receives a frame rate of 11 fps more than 80% of the time.
-* Poor: The audience receives a frame rate of 9 fps more than 80% of the time.
-* Bad: The audience receives a frame rate of 6 fps more than 80% of the time.
-* Very Bad: The audience receives a frame rate of 4 fps more than 80% of the time.
+		- 0: The network quality is unknown.
+		- 1: The network quality is excellent.
+		- 2: The network quality is quite good, but the bitrate may be slightly lower than excellent.
+		- 3: Users can feel the communication slightly impaired.
+		- 4: Users cannot communicate smoothly.
+		- 5: The network is so bad that users can barely communicate.
 
-The voice communication benchmark:
+  - `networkTransportDelay`: Network delay in the transport layer (ms).
+  - `jitterBufferDelay`: Jitter buffer delay at the receiver's end (ms).
+  - `audioLossRate`: Audio packet loss rate (%).
 
-* Excellent: The average packet loss rate is less than 1%.
-* Good: The average packet loss rate is less than 2%.
-* Poor: The average packet loss rate is less than 3%.
-* Bad: The average packet loss rate is less than 5%.
-* Very Bad: The average packet loss rate equals to or more than 5%.
+2. `onRemoteAudioTransportStats`: Reports the transport layer quality of a remote audio stream. This callback returns the following information:
 
-The video communication benchmark:
+	- `delay`: Network delay in the transport layer (ms).
+	- `lost`: Audio packet loss rate in the transport layer (%).
+	- `rxKBitRate`: Received audio bitrate (Kbps).
 
-* Excellent: The average receiving frame rate equals or is higher than 12 fps.
-* Good: The average receiving frame rate is lower than 12 fps.
-* Poor: The average receiving frame rate is lower than 10 fps.
-* Bad: The average receiving frame rate is lower than 7 fps.
-* Very Bad: The average receiving frame rate is lower than 4 fps.
+#### Video Statistics of the Remote Users
+
+The following callbacks reports the video quality of the end-to-end and transport layer:
+
+1. `onRemoteVideoStats`: Reports the end-to-end quality of a remote video stream that is closely linked to the real-user experience. This callback returns the following information:
+
+	- `receivedBitrate`: Received bitrate (Kbps).
+	- `receivedFrameRate`: Received frame rate (fps).
+	- `rxStreamType`: Received stream type.
+
+2. `onRemoteVideoTransportStats`: The SDK triggers this callback once every two seconds to report the transport layer quality of a remote video stream. This callback returns the following information:
+
+	- `delay`: Network delay in the transport layer (ms)
+	- `lost`: Video packet loss rate in the transport layer (%).
+	- `rxKBitRate`: Received video bitrate (Kbps).
+
+#### Video Statitics of the Local User
+
+The following callback reports the video quality of the local video stream:
+
+`onLocalVideoStats`: Reports the video quality of the local video stream. This callback returns the following information:
+
+- `sentBitrate`: Sent bitrate (Kbps).
+- `sentFrameRate`: Sent frame rate (fps).
+
+
+
 
 
