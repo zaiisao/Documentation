@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: Web
-updatedAt: Fri Jan 04 2019 10:11:43 GMT+0000 (UTC)
+updatedAt: Fri Jan 04 2019 10:11:47 GMT+0000 (UTC)
 ---
 # 选择加密方案
 
@@ -33,6 +33,6 @@ client.setEncryptionSecret(password);
 
 ## 开发注意事项
 
-请确保在[加入 Agora RTC 频道（`join`）](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#join)之前调用该方法。
+请确保在调用 [`join`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#join) 加入 Agora RTC 频道之前调用该方法。
 
 
