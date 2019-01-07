@@ -1,11 +1,11 @@
 
 ---
-title: Interactive Gaming Audio Only API
+title: Interactive Gaming API
 description: 
-platform: Android_CPP
-updatedAt: Mon Jan 07 2019 08:07:44 GMT+0000 (UTC)
+platform: Android
+updatedAt: Mon Jan 07 2019 08:17:30 GMT+0000 (UTC)
 ---
-# Interactive Gaming Audio Only API
+# Interactive Gaming API
 The Interactive Gaming Audio Only API is composed of **Java Interface** and **C++ Interface**:
 
 - Java Interface: Provides main methods and callback events of the SDK on the Android platform, including:
