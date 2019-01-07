@@ -3,16 +3,16 @@
 title: 游戏 API
 description: 
 platform: iOS_CPP
-updatedAt: Mon Jan 07 2019 09:28:27 GMT+0000 (UTC)
+updatedAt: Mon Jan 07 2019 09:28:44 GMT+0000 (UTC)
 ---
 # 游戏 API
-游戏纯语音版 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成，其中：
+游戏 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成，提供游戏 SDK 在 iOS 平台上的主要方法和回调。
 
-- Objective-C 接口：提供纯语音版游戏 SDK 在 iOS 平台上的语音相关方法和回调，包括：
+- Objective-C 接口：
    * [主要方法](#irtcengine)
    * [Delegate 方法](#irtcenginedelegate)
    * [Block 回调事件](#block) 
-- C++ 接口：提供纯语音版游戏 SDK 在 Windows 平台上的其他方法和回调，包括：
+- C++ 接口：
    * [主要方法](#irtcengine)
    * [参数方法](#rtcengineparameters)
    * [音频设备管理方法](#iaudiodevicemanage)
@@ -2770,57 +2770,6 @@ typedef NS_ENUM(NSInteger, AgoraAudioOutputRouting)
 </tbody>
 </table>
 
-
-
-#### 设备已发生变化的回调 (stateChanged)
-
-```
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine device:(NSString * _Nonnull) deviceId type:(AgoraMediaDeviceType) deviceType stateChanged:(NSInteger) state;
-```
-
-AgoraMediaDeviceType 定义：
-
-```
-typedef NS_ENUM(NSInteger, AgoraMediaDeviceType) {
-    AgoraMediaDeviceTypeAudioUnknown = -1,
-    AgoraMediaDeviceTypeAudioRecording = 0,
-    AgoraMediaDeviceTypeAudioPlayout = 1,
-    AgoraMediaDeviceTypeVideoRender = 2,
-    AgoraMediaDeviceTypeVideoCapture = 3,
-};
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>名称</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>deviceId</td>
-<td>设备 ID</td>
-</tr>
-<tr><td>deviceType</td>
-<td><ul>
-<li>-1: 未知语音设备类型</li>
-<li>0: 录音类语音设备</li>
-<li>1: 播放类语音设备</li>
-<li>2: 渲染类视频设备</li>
-<li>3: 采集类视频设备</li>
-</ul>
-</td>
-</tr>
-<tr><td>state</td>
-<td><ul>
-<li>0: 已添加设备</li>
-<li>1: 已移除设备</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 
 
 #### 网络连接中断回调 (rtcEngineConnectionDidInterrupted)
