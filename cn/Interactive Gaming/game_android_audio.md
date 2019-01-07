@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Android_CPP
-updatedAt: Mon Jan 07 2019 09:06:53 GMT+0000 (UTC)
+updatedAt: Mon Jan 07 2019 09:38:24 GMT+0000 (UTC)
 ---
 # 游戏 API
 游戏 API 由 **Java 接口** 和 **C++ 接口** 部分组成，其中：
