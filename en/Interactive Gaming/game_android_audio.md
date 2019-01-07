@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Android
-updatedAt: Mon Jan 07 2019 08:24:18 GMT+0000 (UTC)
+updatedAt: Mon Jan 07 2019 08:24:22 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming API is composed of **Java Interface** and **C++ Interface**, both of which provide main methods and callback events of the SDK on the Android platform:
@@ -908,6 +908,7 @@ public abstract int muteLocalAudioStream(boolean muted);
 This method enables/disables sending local audio streams to the network.
 
 > When set to true, this method does not disable the microphone, and thus does not affect any ongoing recording.
+> This method is valid only when the user is in the channel. Once the user leaves the channel, all the mute states are reset.
 
 <table>
 <colgroup>
@@ -951,6 +952,7 @@ This method enables/disables playing all remote users’ audio streams.
 
 
 > When set to true, this method stops playing audio streams without affecting the audio stream receiving process.
+> This method is valid only when the user is in the channel. Once the user leaves the channel, all the mute states are reset.
 
 <table>
 <colgroup>
@@ -994,6 +996,7 @@ This method mutes/unmutes a specified remote user’s audio stream.
 
 
 > When set to true, this method stops playing audio streams without affecting the audio stream receiving process.
+> This method is valid only when the user is in the channel. Once the user leaves the channel, all the mute states are reset.
 
 <table>
 <colgroup>
