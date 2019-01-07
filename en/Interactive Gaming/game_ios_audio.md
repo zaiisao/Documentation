@@ -3,23 +3,21 @@
 title: Interactive Gaming API
 description: 
 platform: iOS
-updatedAt: Mon Jan 07 2019 08:45:54 GMT+0000 (UTC)
+updatedAt: Mon Jan 07 2019 08:45:59 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
-The Interactive Gaming Audio Only API is composed of **Objective-C Interface** and **C++ Interface**:
+The Interactive Gaming Audio Only API is composed of **Objective-C Interface** and **C++ Interface**, both of which provide main methods and callback events of the SDK on the iOS platform:
 
-- Objective-C Interface: Provides main methods and callback events of the SDK on the iOS platform, including:
+- Objective-C Interface: 
 
   * [Basic Methods](#rtcenginekit)
   * [Delegate Methods](#rtcenginedelegate)
   * [Block Callbacks](#block)
 
-- C++ Interface: Provides main methods and callback events of the SDK on the Windows platform, including:
+- C++ Interface: 
 
   * [Basic Methods](#irtcengine)
   * [Parameter Methods](#rtcengineparameters)
-  * [Audio Device Management Methods](#iaudiodevicemanager)
-  * [Audio Device Collection Methods](#iaudiodevicecollection)
   * [Callback Methods](#irtcengineeventhandler)
 
 ## Objective-C Interface
@@ -277,133 +275,8 @@ This method disables the audio mode.
 </tbody>
 </table>
 
-
 > This method sets to disable the internal engine, and still works after `leaveChannel` is called.
 
-#### Set the Audio Profile (setAudioProfile)
-
-```
-- (int)setAudioProfile:(AgoraAudioProfile)profile
-        scenario:(AgoraAudioScenario)scenario;
-```
-
-This method sets the audio parameters and application scenarios.
-
-> This API is only valid when you call it before joining a channel.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>profile</td>
-<td><p>Sets the sampling rate, bitrate, encode mode, and the number of channels:</p>
-<ul>
-<li>AgoraAudioProfileSpeechStandard = 1: Specifies the sampling rate as 32 kHz, audio encoding, single channel, and bitrate up to 18 kbit/s</li>
-<li>AgoraAudioProfileMusicStandard = 2: Specifies the sampling rate as 48 kHz, music encoding, single channel, and bitrate up to 48 kbit/s</li>
-<li>AgoraAudioProfileMusicStandardStereo = 3: Specifies the sampling rate as 48 kHz, music encoding, dual-channel, and bitrate up to 56 kbit/s</li>
-<li>AgoraAudioProfileMusicHighQuality = 4: Specifies the sampling rate as 48 kHz, music encoding, single channel, and bitrate up to 128 kbit/s</li>
-<li>AgoraAudioProfileMusicHighQualityStereo = 5: Specifies the sampling rate as 48 kHz, music encoding, dual-channel, and bitrate up to 192 kbit/s</li>
-</ul>
-</td>
-</tr>
-<tr><td>scenario</td>
-<td><p>Sets the audio application scenarios:</p>
-<ul>
-<li>AgoraAudioScenarioDefault = 0: default</li>
-<li>AgoraAudioScenarioChatRoomEntertainment = 1: Applicable to the entertainment scenario that supports voice during gameplay</li>
-<li>AgoraAudioScenarioEducation = 2: Applicable to the education scenario that prioritizes fluency and stability</li>
-<li>AgoraAudioScenarioGameStreaming = 3: Applicable to the live gaming scenario that needs to enable the gameing audio effects in the speaker mode in a live broadcast scenario. Choose this scenario if you wish to achieve high-fidelity music play</li>
-<li>AgoraAudioScenarioShowRoom = 4: Applicable to the showroom scenario that optimizes the audio quality with professional external equipment</li>
-<li>AgoraAudioScenarioChatRoomGaming = 5: Applicable to the gaming scenario</li>
-</ul>
-</td>
-</tr>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-> -   Use this method before `joinChannelByToken`, else it does not work.
-> -   In the communication mode, setting `profile` works, but not `scenario`.
-> -   In the communication and live-broadcast mode, the bitrate may be different from your settings due to network self-adaptation.
-> -   In scenarios with music teaching, Agora recommends setting `profile` as MusicHighQuality(4) and `scenario` as GameStreaming(3).
-> -   ChatRoomEntertainment(1) and ChatRoomGaming(5) are recommended for audio-only scenarios.
-
-
-#### Set High-quality Audio Preferences (setHighQualityAudioParametersWithFullband)
-
-```
-- (int)setHighQualityAudioParametersWithFullband:(BOOL)fullband
-                            stereo:(BOOL)stereo
-                       fullBitrate:(BOOL)fullBitrate;
-```
-
-This method sets high-quality audio preferences. Call this method and set all the three modes before joining a channel. Do **NOT** call this method again after joining channel.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>fullband</td>
-<td><p>Full-band codec (48 kHz sampling rate), not compatible with versions before v1.7.4.</p>
-<ul>
-<li>True: Enable full-band codec.</li>
-<li>False: Disable full-band codec.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-<tr><td>stereo</td>
-<td><p>Stereo codec, not compatible with versions before v1.7.4.</p>
-<ul>
-<li>True: Enable stereo codec.</li>
-<li>False: Disable stereo codec.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-<tr><td>fullBitrate</td>
-<td><p>High bitrate. Recommended in voice-only mode.</p>
-<ul>
-<li>True: Enable high bitrate mode.</li>
-<li>False: Disable high bitrate mode.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-> Agora does not recommend using this method. If you want to set the audio profile, see `setAudioProfile` .
 
 #### Join a Channel (joinChannelByToken)
 
@@ -468,7 +341,6 @@ Once this method is called successfully, the SDK will trigger the callback. If b
 </tr>
 </tbody>
 </table>
-
 
 
 > [1] For example, when a host wants to customize the resolution and bitrate for a live broadcast channel with CDN Live enabled, they can include them in this parameter in JSON format. For example, \{“owner”:true, …, “width”:300, “height”:400, “bitrate”:100\}. Only when neither `width`, `height`, and `bitrate` is 0 can the bitrate and resolution settings take effect.
@@ -1398,6 +1270,8 @@ This method resumes all the audio effects.
 
 This method mutes/unmutes the local audio.
 
+> This method is valid only when the user is in the channel. Once the user leaves the channel, all the mute states are reset.
+
 <table>
 <colgroup>
 <col/>
@@ -1437,6 +1311,7 @@ This method mutes/unmutes the local audio.
 ```
 
 This method mutes/unmutes all remote users’ audio streams.
+> This method is valid only when the user is in the channel. Once the user leaves the channel, all the mute states are reset.
 
 <table>
 <colgroup>
@@ -1479,6 +1354,7 @@ This method mutes/unmutes all remote users’ audio streams.
 Mute/unmute a specified remote user’s audio stream.
 
 > When set to **True**, this method stops playing audio streams without affecting the audio stream receiving process.
+> This method is valid only when the user is in the channel. Once the user leaves the channel, all the mute states are reset.
 
 <table>
 <colgroup>
@@ -3053,48 +2929,6 @@ This callback is triggered every 2 seconds to update the application on the curr
 </table>
 
 
-
-#### Device Changed Callback (stateChanged)
-
-```
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine device:(NSString * _Nonnull) deviceId type:(AgoraMediaDeviceType) deviceType stateChanged:(NSInteger) state;
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>deviceId</td>
-<td>Device ID</td>
-</tr>
-<tr><td>deviceType</td>
-<td>-1: Audio unknown</td>
-</tr>
-<tr><td>0: Audio recording</td>
-</tr>
-<tr><td>1: Audio playback</td>
-</tr>
-<tr><td>2: Render</td>
-</tr>
-<tr><td>3: Capture</td>
-</tr>
-<tr><td>state</td>
-<td>0: Device is added</td>
-</tr>
-<tr><td>1: Device is removed</td>
-</tr>
-</tbody>
-</table>
-
-
-
 #### Connection Interrupted Callback (rtcEngineConnectionDidInterrupted)
 
 ```
@@ -3213,7 +3047,7 @@ This callback indicates that the local user has not received the data stream fro
 <li>ERR_NOT_IN_CHANNEL=113, the user is not in a channel</li>
 <li>ERR_BITRATE_LIMIT=115, limited bitrate</li>
 </ul>
-<p>For more error code descriptions, see <a href="../../en/Interactive%20Gaming/the_error_native.html.md"><span>Error Codes and Warning Codes</span></a>.</p>
+<p>For more error code descriptions, see <a href="../../en/Interactive%20Gaming/the_error_native.md"><span>Error Codes and Warning Codes</span></a>.</p>
 </td>
 </tr>
 <tr/>
@@ -3318,7 +3152,7 @@ This callback indicates that the API call has been executed.
 <tbody>
 <tr><td>settRemoteVideoStream</td>
 <td>rtc.video.set_remote_video_stream</td>
-<td>See <a href="../../en/Interactive%20Gaming/the_error_native.html.md"><span>Error Codes and Warning Codes</span></a></td>
+<td>See <a href="../../en/Interactive%20Gaming/the_error_native.md"><span>Error Codes and Warning Codes</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -3831,7 +3665,7 @@ This callback indicates that the local user has not received the data stream fro
 <li>ERR_TOO_MANY_DATA_STREAMS =116, too many data streams</li>
 <li>ERR_STREAM_MESSAGE_TIMEOUT=117, data stream timed out</li>
 </ul>
-<p>For more error code descriptions, see <a href="../../en/Interactive%20Gaming/the_error_native.html.md"><span>Error Codes and Warning Codes</span></a>.</p>
+<p>For more error code descriptions, see <a href="../../en/Interactive%20Gaming/the_error_native.md"><span>Error Codes and Warning Codes</span></a>.</p>
 </td>
 </tr>
 <tr/>
@@ -3971,7 +3805,7 @@ struct RtcEngineContext
 <td><strong>Description</strong></td>
 </tr>
 <tr><td>appID</td>
-<td>App ID issued to application developers by Agora. Apply for a new one from Agora if the key is missing from your kit. See <a href="../../en/Agora%20Platform/key_native.html.md"><span>Getting an App ID</span></a> for more information to how to get an App ID.</td>
+<td>App ID issued to application developers by Agora. Apply for a new one from Agora if the key is missing from your kit. See <a href="../../en/Agora%20Platform/token.md"><span>Getting an App ID</span></a> for more information to how to get an App ID.</td>
 </tr>
 <tr><td>eventHandler</td>
 <td>IRtcEngineEventHandler is an abstract class that provides default implementations. The SDK uses this class to report to the application on SDK runtime events.</td>
@@ -4212,125 +4046,6 @@ This method disables the audio mode.
 
 > This method sets to disable the internal engine, and still works after `leaveChannel` is called.
 
-#### Set the Audio Profile (setAudioProfile)
-
-```
-virtual int setAudioProfile(AUDIO_PROFILE_TYPE profile, AUDIO_SCENARIO_TYPE scenario) = 0;
-```
-
-This method sets the audio parameters and application scenarios.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>profile</td>
-<td><p>Sets the sampling rate, bitrate, encode mode, and the number of channels:</p>
-<ul>
-<li>AUDIO_PROFILE_SPEECH_STANDARD = 1: Specifies the sampling rate as 32 kHz, audio encoding, single channel, and bitrate up tp 18 kbit/s</li>
-<li>AUDIO_PROFILE_MUSIC_STANDARD = 2: Specifies the sampling rate as 48 kHz, music encoding, single channel, and bitrate up to 48 kbit/s</li>
-<li>AUDIO_PROFILE_MUSIC_STANDARD_STEREO = 3: Specifies the sampling rate as 48 kHz, music encoding, dual-channel, and bitrate up to 56 kbit/s</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 4: Specifies the sampling rate as 48 kHz, music encoding, single channel, and bitrate up to 128 kbit/s</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 5: Specifies the sampling rate as 48 kHz, music encoding, dual-channel, and bitrate up to 192 kbit/s</li>
-</ul>
-</td>
-</tr>
-<tr><td>scenario</td>
-<td><p>Sets the audio application scenarios:</p>
-<ul>
-<li>AUDIO_SCENARIO_DEFAULT = 0: default</li>
-<li>AUDIO_SCENARIO_CHARROOM_ENTERTAINMENT = 1: Applicable to the entertainment scenario that supports voice during gameplay</li>
-<li>AUDIO_SCENARIO_EDUCATION = 2: Applicable to the education scenario that prioritizes fluency and stability</li>
-<li>AUDIO_SCENARIO_GAME_STREAMING = 3: Applicable to the live gaming scenario that needs to enable the gaming audio effects in the speaker mode in a live broadcast scenario</li>
-<li>AUDIO_SCENARIO_SHOWROOM = 4: Applicable to the showroom scenario that optimizes the audio quality with professional external equipment</li>
-<li>AUDIO_SCENARIO_CHATROOM_GAMING = 5: Applicable to the gaming scenario</li>
-</ul>
-</td>
-</tr>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-> -   Use this method before `joinChannel`, else it does not work.
-> -   In the communication mode, setting `profile` works, but not `scenario`.
-> -   In the communication and live-broadcast mode, the bitrate may be different from your settings due to network self-adaptation.
-> -   In scenarios with music teaching, Agora recommends setting `profile` as MUSIC_HIGH_QUALITY(4) and `scenario` as GAME_STREAMING(3).
-> -   CHATROOM_ENTERTAINMENT(1) and CHATROOM_GAMING(5) are recommended for audio-only scenarios.
-
-
-#### Set High-quality Audio Preferences (setHighQualityAudioParameters)
-
-```
-int setHighQualityAudioParameters(boolean fullband, boolean stereo, boolean fullBitrate)
-```
-
-This method sets high-quality audio preferences. Call this method and set all the three modes before joining a channel. Do **NOT** call this method again after joining a channel.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>fullband</td>
-<td><p>Full-band codec (48 kHz sampling rate), not compatible with versions before v1.7.4.</p>
-<ul>
-<li>True: Enable full-band codec.</li>
-<li>False: Disable full-band codec.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-<tr><td>stereo</td>
-<td><p>Stereo codec, not compatible with versions before v1.7.4.</p>
-<ul>
-<li>True: Enable stereo codec.</li>
-<li>False: Disable stereo codec.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-<tr><td>fullBitrate</td>
-<td><p>High bitrate. Recommended in voice-only mode.</p>
-<ul>
-<li>True: Enable high bitrate mode.</li>
-<li>False: Disable high bitrate mode.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-> Agora does not recommend using this method. If you want to set the audio profile, see `setAudioProfile`.
 
 #### Join a Channel (joinChannel)
 
@@ -5557,8 +5272,7 @@ This method specifies an SDK output log file. The log file records all the log d
 </tbody>
 </table>
 
-
-> The default log file location is at: C:Users<user_name\>AppDataLocalAgora<process_name\>.
+> The default log file location is at: Library/caches/agorasdk.log.
 
 #### Set the Log Filter (setLogFilter)
 
@@ -5671,6 +5385,7 @@ This method mutes/unmutes local audio. It enables/disables sending local audio s
 
 
 > This method does not disable the microphone, and thus does not affect the recording process, if any.
+> This method is valid only when the user is in the channel. Once the user leaves the channel, all the mute states are reset.
 
 <table>
 <colgroup>
@@ -5713,6 +5428,7 @@ This method enables/disables playing all remote callers’ audio streams.
 
 
 > When set to True, this method stops playing audio streams without affecting the audio stream receiving process.
+> This method is valid only when the user is in the channel. Once the user leaves the channel, all the mute states are reset.
 
 <table>
 <colgroup>
@@ -5755,6 +5471,7 @@ This method mutes/unmutes the audio streams of a specified user. It enables or d
 
 
 > When set to True, this method stops playing audio streams without affecting the audio stream receiving process.
+> This method is valid only when the user is in the channel. Once the user leaves the channel, all the mute states are reset.
 
 <table>
 <colgroup>
@@ -6233,803 +5950,6 @@ This method adjusts the playback volume.
 </table>
 
 
-<a id = "iaudiodevicemanager)"></a>
-### Audio Device Management Methods (IAudioDeviceManager)
-
-The *agora::IAudioDeviceManager* interface class tests the interfaces of the audio devices. Instantiate an AAudioDeviceManager class to get an IAudioDeviceManager interface.
-
-#### Enumerate Playback Devices (enumeratePlaybackDevices)
-
-```
-virtual IAudioDeviceCollection* enumeratePlaybackDevices() = 0;
-```
-
-This method returns an IAudioDeviceCollection object that includes all the playback devices in the system. With the IAudioDeviceCollection object, the application can enumerate the playback devices. The application must call the IAudioDeviceCollection::release() method to release the returned object after using it.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Return Value</td>
-<td><p>It returns an IAudioDeviceCollection object that includes all the playback devices in the system when the method call succeeds.</p>
-<p>It returns NULL when the method call fails.</p>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
-#### Enumerate Recording Devices (enumerateRecordingDevices)
-
-```
-virtual IAudioDeviceCollection* enumerateRecordingDevices() = 0;
-```
-
-This method returns an IAudioDeviceCollection object that includes all the recording devices in the system. With the IAudioDeviceCollection object, the application can enumerate the recording devices. The application needs to call the IAudioDeviceCollection::release() method to release the returned object after using it.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Return Value</td>
-<td><p>When successful, it returns an IAudioDeviceCollection object that includes all the recording devices in the system when the call succeeds.</p>
-<p>It returns NULL when the call fails.</p>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
-#### Specify a Playback Device with the Device ID (setPlaybackDevice)
-
-```
-virtual int setPlaybackDevice(const char deviceId[MAX_DEVICE_ID_LENGTH]) = 0;
-```
-
-This method uses the device ID to specify a playback device.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>deviceId</td>
-<td>Device ID of the playback device. It can be retrieved by the enumeratePlaybackDevices() method. Plugging or unplugging the device does not change the device ID.</td>
-</tr>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
-#### Specify a Recording Device with the Device ID (setRecordingDevice)
-
-```
-virtual int setRecordingDevice(const char deviceId[MAX_DEVICE_ID_LENGTH]) = 0;
-```
-
-This method uses the device ID to specify a recording device.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>deviceId</td>
-<td>Device ID of the recording device. It can be retrieved by the enumerateRecordingDevices() method. Plugging or unplugging the device does not change the device ID.</td>
-</tr>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
-#### Set the Playback Device Volume (setPlaybackDeviceVolume)
-
-```
-virtual int setPlaybackDeviceVolume(int volume) = 0;
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>volume</td>
-<td>Volume of the playing device, ranging from 0 to 255</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>&lt; 0: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Get the Playback Device Volume (getPlaybackDeviceVolume)
-
-```
-virtual int getPlaybackDeviceVolume(int *volume) = 0;
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>volume</td>
-<td>Volume of the playing device, ranging from 0 to 255</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>&lt; 0: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Set the Recording Device Volume (setRecordingDeviceVolume)
-
-```
-virtual int setRecordingDeviceVolume(int volume) = 0;
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>volume</td>
-<td>Volume of the microphone, ranging from 0 to 255</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>&lt; 0: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Get the Recording Device Volume (getRecordingDeviceVolume)
-
-```
-virtual int getRecordingDeviceVolume(int *volume) = 0;
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>volume</td>
-<td>Volume of the microphone, ranging from 0 to 255</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>&lt; 0: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Mute the Playback Device (setPlaybackDeviceMute)
-
-```
-virtual int setPlaybackDeviceMute(bool mute) = 0;
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>mute</td>
-<td>
-<div>Mute the playback device:</div>
-<ul>
-<li>True: Mute</li>
-<li>False: Unmute</li>
-</ul>
-</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>&lt; 0: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Check Whether the Playback Device is Muted (getPlaybackDeviceMute)
-
-```
-virtual int getPlaybackDeviceMute(bool *mute) = 0;
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>mute</td>
-<td>
-<div>Checks whether the playback device is muted:</div>
-<ul>
-<li>True: Muted</li>
-<li>False: Unmuted</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Mute the Recording Device (setRecordingDeviceMute)
-
-```
-virtual int setRecordingDeviceMute(bool mute) = 0;
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>mute</td>
-<td>
-<div>Mute the recording device:</div>
-<ul>
-<li>True: Mute</li>
-<li>False: Unmute</li>
-</ul>
-</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>&lt; 0: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Check Whether the Recording Device is Mute (getRecordingDeviceMute)
-
-```
-virtual int getRecordingDeviceMute(bool *mute) = 0;
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>mute</td>
-<td>
-<div>Check whether the recording device is muted:</div>
-<ul>
-<li>True: Muted</li>
-<li>False: Unmuted</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Enable Loopback Recording (enableLoopbackRecording)
-
-```
-int enableLoopbackRecording(bool enabled);
-```
-
-This method enables loopback recording. Once enabled, the SDK collects all local sounds.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>enabled</td>
-<td>Enable loopback recording</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>&lt; 0: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Start the Playback Device Test (startPlaybackDeviceTest)
-
-```
-virtual int startPlaybackDeviceTest(const char* testAudioFilePath) = 0;
-```
-
-This method checks whether the playback device works properly. The SDK plays an audio file specified by the user. If the user can hear the sound, then the playback device works properly.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>testAudioFilePath</td>
-<td><p>File path of the audio file for the test, which is in UTF-8 absolute path:</p>
-<ul>
-<li>File formats: wav, mp3, m4a, and aac</li>
-<li>File sampling rates: 8000, 16000, 32000, 44100, and 48000</li>
-</ul>
-</td>
-</tr>
-<tr/>
-<tr/>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
-#### Stop the Playback Device Test (stopPlaybackDeviceTest)
-
-```
-virtual int stopPlaybackDeviceTest() = 0;
-```
-
-This method stops a playback device test. To stop the test, call this method after calling the `startPlaybackDeviceTest()` method.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
-#### Start the Microphone Test (startRecordingDeviceTest)
-
-```
-virtual int startRecordingDeviceTest(int indicationInterval) = 0;
-```
-
-This method checks whether the microphone works properly. Once the test starts, the SDK uses the onAudioVolumeIndication callback to notify the application about the volume information.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
-#### Stop the Microphone Test (stopRecordingDeviceTest)
-
-```
-virtual int stopRecordingDeviceTest() = 0;
-```
-
-This method stops the microphone test. To stop the test, call this method after calling the startRecordingDeviceTest() method.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-<a id = "iaudiodevicecollection"></a>
-### Audio Device Collection Methods (IAudioDeviceCollection)
-
-The `agora::IAudioDeviceCollection` interface class retrieves device-related information.
-
-#### Retrieve the Total Number of Playback or Recording Devices (getCount)
-
-```
-virtual int getCount() = 0;
-```
-
-First call `enumeratePlaybackDevices()`, then call this method to return the number of audio playback devices. First call `enumerateRecordingDevices()`, then call this method to return the number of audio recording devices.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Return Value</td>
-<td>The number of audio devices.</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Retrieve the Indexed Device Information (getDevice)
-
-```
-virtual int getDevice(int index, char deviceName[MAX_DEVICE_ID_LENGTH], char deviceId[MAX_DEVICE_ID_LENGTH]) = 0;
-```
-
-This method retrieves information about an audio device.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>index</td>
-<td>An input parameter to specify the device information to be retrieved.</td>
-</tr>
-<tr><td>deviceName</td>
-<td>An output parameter that indicates the device name.</td>
-</tr>
-<tr><td>deviceId</td>
-<td>An output parameter that indicates the device ID.</td>
-</tr>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
-#### Specify a Device with the Device ID (setDevice)
-
-```
-virtual int setDevice(const char deviceId[MAX_DEVICE_ID_LENGTH]) = 0;
-```
-
-This method (recommended) uses the device ID to specify a video-capture device.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>deviceId</td>
-<td>Device ID.</td>
-</tr>
-<tr><td>Return Value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-<tr/>
-</tbody>
-</table>
-
-
-
-#### Set the Application Volume (setApplicationVolume)
-
-```
-virtual int setApplicationVolume(int volume) = 0;
-```
-
-This method sets the volume of the Application.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>volume</td>
-<td>The volume value, which ranges from 0-255</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>1: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Get the Application Volume (getApplicationVolume)
-
-```
-virtual int getApplicationVolume(int& volume) = 0;
-```
-
-This method gets the volume of the Application.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>volume</td>
-<td>The volume value, which ranges from 0-255</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>1: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Set the Application Mute (setApplicationMute)
-
-```
-virtual int setApplicationMute(bool mute) = 0;
-```
-
-This method sets the Application mute.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>mute</td>
-<td><p>Whether to mute the Application</p>
-<ul>
-<li>True: Mute the Application</li>
-<li>False: Unmute the Application</li>
-</ul>
-</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>1: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### Get the Mute State of the Application (isApplicationMute)
-
-```
-virtual int isApplicationMute(bool& mute) = 0;
-```
-
-This method gets the mute state of the Application.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>mute</td>
-<td><p>The mute state of the current Application</p>
-<ul>
-<li>True: The application is mute</li>
-<li>False: The application is not mute</li>
-</ul>
-</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded</li>
-<li>&lt; 0: Method call failed</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 
 <a id = "irtcengineeventhandler"></a>
 ### Callback Methods (IRtcEngineEventHandler)
@@ -7815,7 +6735,7 @@ This callback indicates that the local user has not received the data stream fro
 <li>ERR_NOT_IN_CHANNEL=113, the user is not in a channel</li>
 <li>ERR_BITRATE_LIMIT=115, limited bitrate</li>
 </ul>
-<p>For more error code descriptions, see <a href="../../en/Interactive%20Gaming/the_error_native.html.md"><span>Error Codes and Warning Codes</span></a></p>
+<p>For more error code descriptions, see <a href="../../en/Interactive%20Gaming/the_error_native.md"><span>Error Codes and Warning Codes</span></a></p>
 </td>
 </tr>
 <tr/>
@@ -7935,56 +6855,6 @@ This callback is triggered when the user role is switched, for example, from a h
 </tbody>
 </table>
 
-
-
-#### Audio Device Volume Changed Callback (onAudioDeviceVolumeChanged)
-
-```
-virtual void onAudioDeviceVolumeChanged(MEDIA_DEVICE_TYPE deviceType, int volume, bool muted);
-```
-
-This callback is triggered when the volume of the playback, microphone, or application is changed.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>deviceType</td>
-<td>Device type:</td>
-</tr>
-<tr><td>deviceType</td>
-<td><ul>
-<li>AUDIO_PLAYOUT_DEVICE: Playback device</li>
-</ul>
-</td>
-</tr>
-<tr><td>deviceType</td>
-<td><ul>
-<li>AUDIO_RECORDING_DEVICE: Recording device, microphone</li>
-</ul>
-</td>
-</tr>
-<tr><td>deviceType</td>
-<td><ul>
-<li>AUDIO_APPLICATION_PLAYOUT_DEVICE: Application</li>
-</ul>
-</td>
-</tr>
-<tr><td>volume</td>
-<td>Volume, ranging from 0 to 255</td>
-</tr>
-<tr><td>muted</td>
-<td>Whether the device is muted: True/False</td>
-</tr>
-</tbody>
-</table>
 
 
 ### Error Codes
