@@ -3,18 +3,18 @@
 title: 游戏 API
 description: 
 platform: Android_CPP
-updatedAt: Mon Jan 07 2019 09:38:24 GMT+0000 (UTC)
+updatedAt: Mon Jan 07 2019 09:38:34 GMT+0000 (UTC)
 ---
 # 游戏 API
-游戏 API 由 **Java 接口** 和 **C++ 接口** 部分组成，其中：
+游戏 API 由 **Java 接口** 和 **C++ 接口** 部分组成，提供游戏 SDK 在 Android 平台上的主要方法和回调。
 
-- Java 接口：提供游戏 SDK 在 Android 平台上的相关方法和回调，包括：
+- Java 接口：
 
   * [主要方法](#rtcengine)
   * [音效管理方法](#iaudioeffectmanager)
   * [主回调事件](#irtcengineeventhandler)
 
-- C++ 接口：提供游戏 SDK 在 Android 平台上的相关方法和回调，包括：
+- C++ 接口：
 
   * [主要方法](#irtcengine)
   * [参数方法](#rtcengineparameters)
