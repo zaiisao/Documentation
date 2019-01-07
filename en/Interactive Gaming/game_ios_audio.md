@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: iOS
-updatedAt: Mon Jan 07 2019 09:10:47 GMT+0000 (UTC)
+updatedAt: Mon Jan 07 2019 09:10:56 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming API is composed of **Objective-C Interface** and **C++ Interface**, both of which provide main methods and callback events of the SDK on the iOS platform:
@@ -6437,53 +6437,6 @@ This callback method is triggered when the first remote audio frame is received.
 </tr>
 </tbody>
 </table>
-
-
-
-#### Audio Device State Changed Callback (onAudioDeviceStateChanged)
-
-```
-virtual void onAudioDeviceStateChanged(const char* deviceId, int deviceType, int deviceState);
-```
-
-This callback notifies the application that the system’s audio device state has been changed, for example, a headset is unplugged from the device.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>deviceId</td>
-<td>The device ID.</td>
-</tr>
-<tr><td>deviceType</td>
-<td><p>The device type defined as follows:</p>
-<div><ul>
-<li>UNKNOWN_DEVICE(-1): The device type is unknown.</li>
-<li>AUDIO_PLAYOUT_DEVICE(0): The device is a playout device.</li>
-<li>AUDIO_RECORDING_DEVICE(1): The device is a recording device.</li>
-</ul>
-</div>
-</td>
-</tr>
-<tr><td>deviceState</td>
-<td><p>The device state defined as follows:</p>
-<div><ul>
-<li>DEVICE_STATE_ACTIVE(1): The device is active.</li>
-<li>DEVICE_STATE_DISABLED(2): The device is disabled.</li>
-<li>DEVICE_STATE_NOT_PRESENT(4): The device is not present.</li>
-<li>DEVICE_STATE_UNPLUGGED(8): The device is unplugged.</li>
-</ul>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-
 
 
 #### Network Quality Callback (onLastmileQuality)
