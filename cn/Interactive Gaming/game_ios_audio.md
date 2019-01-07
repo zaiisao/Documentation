@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: iOS_CPP
-updatedAt: Mon Jan 07 2019 09:20:38 GMT+0000 (UTC)
+updatedAt: Mon Jan 07 2019 09:21:34 GMT+0000 (UTC)
 ---
 # 游戏 API
 游戏纯语音版 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成，其中：
