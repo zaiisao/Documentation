@@ -3,7 +3,7 @@
 title: Record a Call
 description: 
 platform: Java
-updatedAt: Tue Jan 08 2019 08:45:04 GMT+0000 (UTC)
+updatedAt: Tue Jan 08 2019 08:45:13 GMT+0000 (UTC)
 ---
 # Record a Call
 This page demonstrates how to record a call by using the command line. You can also record calls by calling the APIs. For the detailed API reference, see [Recording API](https://docs.agora.io/en/Recording/API%20Reference/recording_java/index.html). The command line and APIs implement the same function. 
@@ -17,7 +17,7 @@ Ensure you integrate the recording SDK before proceeding, see [Integrate the SDK
 Open a command-line tool and run the `java RecordingSample` command under the **/samples/java/src/io/agora/recording/test** directory. You can see the recording parameters and options as follows:
 
 ```
-Usage:java RecordingSDK --appId STRING --uid UINTEGER32 --channel STRING --appliteDir STRING --channelKey STRING --channelProfile UINTEGER32 --isAudioOnly --isVideoOnly --isMixingEnabled --mixResolution STRING --mixedVideoAudio --decryptionMode STRING --secret STRING --idle INTEGER32 --recordFileRootDir STRING --lowUdpPort INTEGER32 --highUdpPort INTEGER32 --getAudioFrame UINTEGER32 --getVideoFrame UINTEGER32 --captureInterval INTEGER32 --cfgFilePath STRING --streamType UINTEGER32 --triggerMode INTEGER32 
+Usage:java RecordingSample --appId STRING --uid UINTEGER32 --channel STRING --appliteDir STRING --channelKey STRING --channelProfile UINTEGER32 --isAudioOnly --isVideoOnly --isMixingEnabled --mixResolution STRING --mixedVideoAudio --decryptionMode STRING --secret STRING --idle INTEGER32 --recordFileRootDir STRING --lowUdpPort INTEGER32 --highUdpPort INTEGER32 --getAudioFrame UINTEGER32 --getVideoFrame UINTEGER32 --captureInterval INTEGER32 --cfgFilePath STRING --streamType UINTEGER32 --triggerMode INTEGER32 
  --appId     (App Id/must) 
  --uid     (User Id default is 0/must)  
  --channel     (Channel Id/must) 
