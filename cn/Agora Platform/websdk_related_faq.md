@@ -3,7 +3,7 @@
 title: Web SDK 相关
 description: 
 platform: Web SDK 相关
-updatedAt: Sat Dec 29 2018 04:15:55 GMT+0000 (UTC)
+updatedAt: Sat Dec 29 2018 04:16:00 GMT+0000 (UTC)
 ---
 # Web SDK 相关
 ### 用户在安卓设备上使用 Chrome 浏览器发起通话，无法与使用 Native 及 Safari 浏览器的用户互通?
@@ -31,9 +31,6 @@ http://bugs.webkit.org/show_bug.cgi?id=178357
 
 ### Mac 和 Windows 上均使用 Chrome 浏览器通话，如果 Windows 端切换 Wi-Fi，Mac 端画面卡住？
 Mac 端需刷新界面后才能恢复画面。Agora 会持续关注并更新在该问题上的进展。
-
-### 通话或直播过程中在 iOS 11 的 Safari 浏览器端开启双流后本地窗口黑屏，另一端也接收不到 iOS 端的画面？
-双流功能在 iOS 端 Safari 浏览器的支持受到 Safari 浏览器本身的限制，出现设置不生效或异常现象。我们会持续关注该问题。
 
 ### 无法加入 channel，报 websocket error，同时会产生类似 ddos 的攻击，短时间巨量的 ws 的连接？
 Web SDK join channel 参数数据类型因版本变化有差异。

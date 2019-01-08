@@ -2,7 +2,7 @@
 ---
 title: 游戏 API
 description: 
-platform: iOS
+platform: Objective-C
 updatedAt: Tue Jan 08 2019 07:03:30 GMT+0000 (UTC)
 ---
 # 游戏 API
