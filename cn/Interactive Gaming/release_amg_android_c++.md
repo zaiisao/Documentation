@@ -3,11 +3,11 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Tue Jan 08 2019 07:38:45 GMT+0000 (UTC)
+updatedAt: Tue Jan 08 2019 07:38:51 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 简介
-Android 游戏语音 SDK，即游戏语音 C++ SDK，能实现在 Android 平台和 C++ 平台上的游戏语音功能。
+Android 语音版互动游戏 SDK，支持使用 Java 和/或 C++ 语言在 Android 平台上实现游戏语音功能。
 点击 [游戏产品概述](https://docs.agora.io/cn/Interactive%20Gaming/product_gaming?platform=All%20Platforms) 了解关键特性。
 
 ## 2.2 版
