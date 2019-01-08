@@ -3,14 +3,14 @@
 title: 开始录制
 description: How to start recording using cmd
 platform: CPP
-updatedAt: Tue Jan 08 2019 07:33:18 GMT+0000 (UTC)
+updatedAt: Tue Jan 08 2019 07:36:29 GMT+0000 (UTC)
 ---
 # 开始录制
-本文介绍如何通过命令行进行录制。 你也可以通过调用 API 实现录制，详见 [C++](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html) API 参考。
+本文介绍如何通过命令行进行录制。 你也可以通过调用 API 实现录制，详见 [C++](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html) API 参考。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
 
-无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。当录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道模式。
+开始前请确保你已经完成录制 SDK 的环境准备和集成工作，详见[集成客户端](../../cn/Recording/recording_integrate_cpp.md)。
 
-开始前请确保你已经完成录制 SDK 的环境准备和集成工作，详见[集成客户端](../../cn/Recording/recording_integrate.md)。
+> 当录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道模式。
 
 ## 查看录制选项
 
