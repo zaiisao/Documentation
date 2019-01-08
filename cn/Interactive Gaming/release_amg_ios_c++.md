@@ -3,11 +3,11 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Tue Jan 08 2019 07:39:56 GMT+0000 (UTC)
+updatedAt: Tue Jan 08 2019 07:40:00 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 简介
-iOS 语音版 SDK，即游戏语音 C++ SDK，能实现在 iOS 平台和 C++ 平台上的游戏语音功能。
+iOS 语音版互动游戏 SDK，支持使用 Objective-C 和/或 C++ 语言在 iOS 平台上实现游戏语音功能。
 点击 [游戏产品概述](https://docs.agora.io/cn/Interactive%20Gaming/product_gaming?platform=All%20Platforms) 了解关键特性。
 
 ## 2.2 版
