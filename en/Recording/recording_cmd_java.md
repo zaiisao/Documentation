@@ -3,10 +3,10 @@
 title: Record a Call
 description: 
 platform: Java
-updatedAt: Tue Jan 08 2019 22:29:37 GMT+0000 (UTC)
+updatedAt: Tue Jan 08 2019 22:29:41 GMT+0000 (UTC)
 ---
 # Record a Call
-This page demonstrates how to record a call by using the command line. You can also record calls by calling the APIs. For the detailed API reference, see [Recording API](https://docs.agora.io/en/Recording/API%20Reference/recording_java/index.html). The command line and APIs implement the same function. 
+This page demonstrates how to record a call by using the command line. You can also record calls by calling the API methods. For the detailed API reference, see [Recording API](https://docs.agora.io/en/Recording/API%20Reference/recording_java/index.html). The command line and API methods implement the same functions. 
 
 Ensure you integrate the recording SDK before proceeding, see [Integrate the SDK](../../en/Recording/recording_integrate_java.md).
 
@@ -18,44 +18,44 @@ Open a command-line tool and run the `java RecordingSample` command under the **
 
 ```
 Usage:java RecordingSample --appId STRING --uid UINTEGER32 --channel STRING --appliteDir STRING --channelKey STRING --channelProfile UINTEGER32 --isAudioOnly --isVideoOnly --isMixingEnabled --mixResolution STRING --mixedVideoAudio --decryptionMode STRING --secret STRING --idle INTEGER32 --recordFileRootDir STRING --lowUdpPort INTEGER32 --highUdpPort INTEGER32 --getAudioFrame UINTEGER32 --getVideoFrame UINTEGER32 --captureInterval INTEGER32 --cfgFilePath STRING --streamType UINTEGER32 --triggerMode INTEGER32 
- --appId     (App Id/must) 
- --uid     (User Id default is 0/must)  
- --channel     (Channel Id/must) 
- --appliteDir     (directory of app lite 'AgoraCoreService', Must pointer to 'Agora_Server_SDK_for_Linux_FULL/bin/' folder/must) 
- --channelKey     (channelKey/option)
- --channelProfile     (channel_profile:(0:COMMUNICATION),(1:broadcast) default is 0/option)  
- --isAudioOnly     (Default 0:A/V, 1:AudioOnly (0:1)/option) 
- --isVideoOnly     (Default 0:A/V, 1:VideoOnly (0:1)/option)
- --isMixingEnabled     (Mixing Enable? (0:1)/option)
- --mixResolution     (change default resolution for vdieo mix mode/option)                 
- --mixedVideoAudio     (mixVideoAudio:(0:seperated Audio,Video) (1:mixed Audio & Video with legacy codec) (2:mixed Audio & Video with new codec) default is 0 /option)                 
- --decryptionMode     (decryption Mode, default is NULL/option)                 
- --secret     (input secret when enable decryptionMode/option)                 
- --idle     (Default 300s, should be above 3s/option)                 
- --recordFileRootDir     (recording file root dir/option)                 
- --lowUdpPort     (default is random value/option)                 
- --highUdpPort     (default is random value/option)                 
- --getAudioFrame     (default 0 (0:save as file, 1:aac frame, 2:pcm frame, 3:mixed pcm frame) (Can't combine with isMixingEnabled) /option)                 
- --getVideoFrame     (default 0 (0:save as file, 1:h.264, 2:yuv, 3:jpg buffer, 4:jpg file, 5:jpg file and video file) (Can't combine with isMixingEnabled) /option)              
+ --appId     (App Id / mandatory) 
+ --uid     (User Id / default is 0 / mandatory)  
+ --channel     (Channel Id / mandatory) 
+ --appliteDir     (directory of app lite 'AgoraCoreService', must point to 'Agora_Server_SDK_for_Linux_FULL/bin/' folder / mandatory) 
+ --channelKey     (channelKey / optional)
+ --channelProfile     (channel_profile: (0:COMMUNICATION),(1:broadcast) / default is 0 / optional)  
+ --isAudioOnly     (Default 0:A/V, 1:AudioOnly (0:1) / optional) 
+ --isVideoOnly     (Default 0:A/V, 1:VideoOnly (0:1) / optional)
+ --isMixingEnabled     (Mixing Enable? (0:1) / optional)
+ --mixResolution     (change the default resolution for the video mixing mode / optional)                 
+ --mixedVideoAudio     (mixVideoAudio: (0:seperated Audio,Video) (1:mixed Audio & Video with legacy codec) (2:mixed Audio & Video with new codec) default is 0 / optional)                 
+ --decryptionMode     (decryption Mode, default is NULL / optional)                 
+ --secret     (input password when enable decryptionMode / optional)                 
+ --idle     (Default 300 s, should be above 3 s / optional)                 
+ --recordFileRootDir     (recording file root dir / optional)                 
+ --lowUdpPort     (default is random value / optional)                 
+ --highUdpPort     (default is random value / optional)                 
+ --getAudioFrame     (default 0 (0:save as file, 1:aac frame, 2:pcm frame, 3:mixed pcm frame) (Can't combine with isMixingEnabled) /optional)                 
+ --getVideoFrame     (default 0 (0:save as file, 1:h.264, 2:yuv, 3:jpg buffer, 4:jpg file, 5:jpg file and video file) (Can't combine with isMixingEnabled) /optional)              
  --captureInterval     (default 5 (Video snapshot interval (second)))                 
- --cfgFilePath     (config file path / option)                 
- --streamType     (remote video stream type(0:STREAM_HIGH,1:STREAM_LOW), default is 0/option)  
- --triggerMode     (triggerMode:(0: automatically mode, 1: manually mode) default is 0/option) 
- --proxyServer     proxyServer:format ip:port, eg,"127.0.0.1:1080"/option 
- --defaultVideoBg    (default user background image path/option) 
- --defaultUserBg (default user background image path/option))  
- --audioProfile (audio profile(0: standard single channel, 1: high quality single channel, 2: high quality two channels) defualt is 0/option)   
- --logLevel (log level default INFO/option) 
- --audioIndicationInterval(0: no indication, audio indication interval(ms) default is 0/option) 
- --layoutMode    (mix video layout mode:(0: default layout, 1:bestFit Layout mode, 2:vertical presentation Layout mode, default is 0/option)(combine with isMixingEnabled)) 
- --maxResolutionUid    (max resolution uid (uid with maxest resolution under vertical presentation Layout mode  ( default is -1 /option))
+ --cfgFilePath     (config file path / optional)                 
+ --streamType     (remote video stream type (0:STREAM_HIGH,1:STREAM_LOW), default is 0 / optional)  
+ --triggerMode     (triggerMode: (0: automatically mode, 1: manually mode) default is 0 / optional) 
+ --proxyServer     proxyServer:format ip:port, eg,"127.0.0.1:1080" / optional 
+ --defaultVideoBg    (default user background image path / optional) 
+ --defaultUserBg (default user background image path / optional)  
+ --audioProfile (audio profile (0: standard single channel, 1: high quality single channel, 2: high quality two channels) defualt is 0 / optional)   
+ --logLevel (log level default INFO / optional) 
+ --audioIndicationInterval (0: no indication, audio indication interval (ms) default is 0 / optional) 
+ --layoutMode  (mix video layout mode: (0: default layout, 1:bestFit Layout mode, 2:vertical presentation Layout mode, default is 0 / optional) (combine with isMixingEnabled)) 
+ --maxResolutionUid    (maximum resolution uid (uid with maximum resolution under vertical presentation layout mode / default is -1 / optional))
 ```
 
 
 
 ## Set the Recording Parameters
 
-Set up the following parameters to start recording.
+Set the following parameters to start recording.
 
 > The `appId`, `uid`, `channel`, and `appliteDir` parameters are mandatory to start a recording. Other parameters can be set as needed.
 
@@ -97,5 +97,5 @@ Set up the following parameters to start recording.
 
 After the recording is complete, use the transcoding script to merge the recorded files. See [Using the Transcoding Script](../../en/Recording/recording_voice_video.md).
 
-If error or warning occurs during the recording, see [Error codes](https://docs.agora.io/en/Recording/API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_e_r_r_o_r___c_o_d_e___t_y_p_e.html) and [Warning codes](https://docs.agora.io/en/Recording/API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_w_a_r_n___c_o_d_e___t_y_p_e.html) for detailed information.
+If any error or warning occurs during the recording, see [Error codes](https://docs.agora.io/en/Recording/API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_e_r_r_o_r___c_o_d_e___t_y_p_e.html) and [Warning codes](https://docs.agora.io/en/Recording/API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_w_a_r_n___c_o_d_e___t_y_p_e.html).
 
