@@ -3,7 +3,7 @@
 title: Record a Call
 description: 
 platform: Java
-updatedAt: Tue Jan 08 2019 07:53:10 GMT+0000 (UTC)
+updatedAt: Tue Jan 08 2019 08:45:04 GMT+0000 (UTC)
 ---
 # Record a Call
 This page demonstrates how to record a call by using the command line. You can also record calls by calling the APIs. For the detailed API reference, see [Recording API](https://docs.agora.io/en/Recording/API%20Reference/recording_java/index.html). The command line and APIs implement the same function. 
