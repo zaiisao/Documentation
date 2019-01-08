@@ -3,11 +3,11 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Tue Jan 08 2019 07:46:47 GMT+0000 (UTC)
+updatedAt: Tue Jan 08 2019 07:46:51 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Introduction
-The Agora Interactive Gaming Voice Android  SDK, also known as the Interactive Gaming Voice C++ SDK, provides the voice function for gaming on the Android and C++ platforms. 
+The Agora Android Voice SDK for Interactive Gaming, provides Java and C++ Interfaces to implement the voice function for gaming on the Android platform. 
 
 For the key features included, see [Interactive Gaming Overview](https://docs.agora.io/en/Interactive%20Gaming/product_gaming?platform=All%20Platforms).
 
