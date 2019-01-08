@@ -3,7 +3,7 @@
 title: 开始录制
 description: How to start recording using cmd for Java
 platform: Java
-updatedAt: Tue Jan 08 2019 07:48:32 GMT+0000 (UTC)
+updatedAt: Tue Jan 08 2019 07:49:30 GMT+0000 (UTC)
 ---
 # 开始录制
 本文介绍如何通过命令行进行录制。你也可以通过调用 API 实现录制，详见 [Java](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/index.html) API 参考。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
@@ -99,4 +99,4 @@ Usage:java RecordingSDK --appId STRING --uid UINTEGER32 --channel STRING --appli
 
 录制完成后，你可能需要使用转码脚本将录制的文件进行合成，详见[使用转码脚本](../../cn/Recording/recording_voice_video.md)。 
 
-录制过程中，如果出现错误码或警告码，请参考[警告代码](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a11cab69078db26c1f166c68e469dcfcf)和[错误代码](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a5f37e3fa14fad2982f248d247d76996b)。
+录制过程中，如果出现错误码或警告码，请参考[警告代码](https://docs.agora.io/cn/Recording/.API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_w_a_r_n___c_o_d_e___t_y_p_e.html)和[错误代码](https://docs.agora.io/cn/Recording/.API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_e_r_r_o_r___c_o_d_e___t_y_p_e.html)。
