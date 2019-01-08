@@ -3,7 +3,7 @@
 title: 开始录制
 description: How to start recording using cmd
 platform: CPP
-updatedAt: Mon Jan 07 2019 09:04:57 GMT+0000 (UTC)
+updatedAt: Tue Jan 08 2019 07:15:47 GMT+0000 (UTC)
 ---
 # 开始录制
 本文介绍如何通过命令行进行录制。 你也可以通过调用 API 实现录制，详见 [C++](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html) API 参考。
