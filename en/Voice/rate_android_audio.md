@@ -17,7 +17,7 @@ After the rating function is implemented, you can see your users' ratings in [Ag
 ![](https://web-cdn.agora.io/docs-files/1545801217929)
 
 ## Implementation
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md).
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md).
 
 ```java
 String callId = rtcEngine.getCallId();
