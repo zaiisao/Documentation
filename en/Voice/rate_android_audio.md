@@ -31,4 +31,4 @@ rtcEngine.rate(callId, 5, "This is an awesome call!");
 
 ## Considerations
 
-The API methods have return values. If the method fails, the return value is < 0.
+The API methods have return values. If the method call fails, the return value is < 0.
