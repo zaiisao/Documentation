@@ -3,7 +3,7 @@
 title: 录制 API
 description: 
 platform: CPP
-updatedAt: Wed Jan 09 2019 03:18:49 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 03:19:03 GMT+0000 (UTC)
 ---
 # 录制 API
 > 版本：v2.2.3
@@ -397,12 +397,6 @@ typedef struct RecordingConfig {
 <td>最高码率</td>
 <td>推荐码率</td>
 </tr>
-<tr><td>3840x2160</td>
-<td>15</td>
-<td>3000</td>
-<td>9000</td>
-<td>6000</td>
-</tr>
 <tr><td>2560x1440</td>
 <td>15</td>
 <td>1600</td>
@@ -526,12 +520,6 @@ typedef struct RecordingConfig {
 <td>最低码率</td>
 <td>最高码率</td>
 <td>推荐码率</td>
-</tr>
-<tr><td>3840x2160</td>
-<td>15</td>
-<td>6000</td>
-<td>18000</td>
-<td>12000</td>
 </tr>
 <tr><td>2560x1440</td>
 <td>15</td>
@@ -1854,4 +1842,4 @@ virtual void onActiveSpeaker(uid_t uid);
 
 ## 错误代码和警告代码
 
-相关错误代码见[发生错误回调 \(onError\)](#onError) 和[错误代码和警告代码](https://docs.agora.io/cn/recording/API%20Reference/the_error_native)。
+相关错误代码见[发生错误回调 \(onError\)](#onError) 和[错误代码和警告代码](../../cn/Recording/the_error_native.md)。
