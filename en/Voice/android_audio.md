@@ -3,7 +3,7 @@
 title: Setting up Your Development Environment
 description: 
 platform: Android
-updatedAt: Wed Jan 09 2019 06:49:13 GMT+0800 (CST)
+updatedAt: Wed Jan 09 2019 08:32:05 GMT+0800 (CST)
 ---
 # Setting up Your Development Environment
 # Setting up Your Development Environment
