@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Wed Jan 09 2019 03:20:14 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 03:20:33 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -365,12 +365,6 @@ AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 
 </tr>
 </thead>
 <tbody>
-<tr><td>3840x2160</td>
-<td>15</td>
-<td>3000</td>
-<td>9000</td>
-<td>6000</td>
-</tr>
 <tr><td>2560x1440</td>
 <td>15</td>
 <td>1600</td>
@@ -490,12 +484,6 @@ AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 
 </tr>
 </thead>
 <tbody>
-<tr><td>3840x2160</td>
-<td>15</td>
-<td>6000</td>
-<td>18000</td>
-<td>12000</td>
-</tr>
 <tr><td>2560x1440</td>
 <td>15</td>
 <td>3200</td>
