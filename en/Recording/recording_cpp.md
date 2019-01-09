@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Wed Jan 09 2019 03:23:06 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 03:23:11 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -396,12 +396,6 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 </tr>
 </thead>
 <tbody>
-<tr><td>3840 &times; 2160</td>
-<td>15</td>
-<td>3000</td>
-<td>9000</td>
-<td>6000</td>
-</tr>
 <tr><td>2560 &times; 1440</td>
 <td>15</td>
 <td>1600</td>
@@ -527,13 +521,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <th>Recommended Bitrate (Kbps)</th>
 </tr>
 </thead>
-<tbody.
-<tr><td>3840 &times; 2160</td>
-<td>15</td>
-<td>6000</td>
-<td>18000</td>
-<td>12000</td>
-</tr>
+<tbody>
 <tr><td>2560 &times; 1440</td>
 <td>15</td>
 <td>3200</td>
