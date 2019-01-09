@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Wed Jan 09 2019 03:21:31 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 03:21:36 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
@@ -364,12 +364,6 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 </tr>
 </thead>
 <tbody>
-<tr><td>3840 &times; 2160</td>
-<td>15</td>
-<td>3000</td>
-<td>9000</td>
-<td>6000</td>
-</tr>
 <tr><td>2560 &times; 1440</td>
 <td>15</td>
 <td>1600</td>
@@ -489,12 +483,6 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 </tr>
 </thead>
 <tbody>
-<tr><td>3840 &times; 2160</td>
-<td>15</td>
-<td>6000</td>
-<td>18000</td>
-<td>12000</td>
-</tr>
 <tr><td>2560 &times; 1440</td>
 <td>15</td>
 <td>3200</td>
