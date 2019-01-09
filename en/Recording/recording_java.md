@@ -3,7 +3,7 @@
 title: Recording API 
 description: 
 platform: Java
-updatedAt: Thu Dec 27 2018 10:20:22 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 03:21:31 GMT+0000 (UTC)
 ---
 # Recording API 
 > Version: v2.2.3
