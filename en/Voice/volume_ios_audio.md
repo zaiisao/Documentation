@@ -3,18 +3,18 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Wed Jan 09 2019 21:40:02 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 21:44:22 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
 
-When using the Agora SDK, developers can adjust the recording and playback volumes for customization. For example, you can mute the remote audio by setting the volume to 0.
+When using the Agora SDK, you can adjust the audio recording and playback volumes for customization. For example, you can mute the remote audio by setting the volume as 0.
 
 ## Implementation
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md).
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md).
 
 The Agora SDK provides methods to adjust the volume of the audio signals, which enables adjusting the recording and playback volumes.
-The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
+The value of the volume ranges between 0 and 400. 100 (default) is the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
 
 ```swift
 // swift
@@ -40,4 +40,4 @@ agoraKit.adjustPlaybackSignalVolume(50)
 ## Considerations
 
 - If the volume of the audio signal is set too high, noise may occur on some devices.
-- The API methods have return values. If the method fails, the return value is < 0.
+- The API methods have return values. If the method call fails, the return value is < 0.
