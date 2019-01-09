@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed Jan 09 2019 17:46:02 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 17:46:06 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -46,7 +46,7 @@ v2.2.0 was released on May 30, 2018, and improves the internal code implementati
 
 ## v2.2.0
 
-v2.2.0 was released on May 4, 2018. See the following sections for new features and improvements.
+v2.2.0 was released on May 4, 2018. 
 
 ### New Features
 
@@ -78,7 +78,7 @@ Improves the function of <code>enableAudioVolumeIndication</code>. The method, o
 
 To meet the customers’ need for real-time network quality detection in a channel, the <code>onNetworkQuality</code> method improved its data accuracy. 
 
-#### 3. Lastmile quality detection before joining a channel
+#### 3. Last-mile network quality detection before joining a channel
 
 To test if the customers’ network condition can support audio or video calls before joining the channel, the <code>onLastmileQuality</code> callback has changed its detection base from a fixed bitrate to the bitrate set by the customer in <code>videoProfile</code> to improve data accuracy. When the network condition is unknown, the SDK still triggers this callback once every two seconds. 
 
@@ -88,13 +88,13 @@ Improves the audio quality in music playback scenarios.
 
 ### Issues Fixed
 
--   Occasional screen display abnormalities when a large number of the audience join as hosts in a live-broadcast channel.
+-   Occasional screen display abnormalities when a large number of the audience joins as hosts in a live-broadcast channel.
 -   Occasional audio block issues during a live broadcast.
 
 
 ## v2.1.3
 
-v2.1.3 was released on April 19, 2018. See the following sections for improvements and issues fixed.
+v2.1.3 was released on April 19, 2018. 
 
 In v2.1.3, Agora updates the bitrate values in the <code>setVideoProfile</code> method in the Live-broadcast profile. The bitrate values in v2.1.3 stay consistent with those in v2.0. 
 
@@ -108,21 +108,21 @@ Improved the performance of screen sharing by shortening the time interval betwe
 
 ## v2.1.2
 
-v2.1.2 was released on April 2, 2018. See the following sections for issues fixed.
+v2.1.2 was released on April 2, 2018. 
 
 >  If you upgraded the SDK to v2.1.2 from an earlier version, the live-broadcast video quality is better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth.
 
 ### Issues Fixed
 
 -   The co-host is not seen by the other host after leaving and rejoining a channel.
--   The video resolution of a shared screen is worse in the communication mode than in the live-broadcast mode.
+-   The video resolution of a shared screen is worse in the communication profile than in the live-broadcast profile.
 
 
 ## v2.1.1
 
 v2.1.1 was released on March 16, 2018. 
 
-Agora has identified a critical bug in SDK v2.1. Upgrade to v2.1.1 if you are using Agora SDK v2.1.
+Agora identified a critical issue in v2.1. Upgrade to v2.1.1 if you are using Agora SDK v2.1.
 
 ## v2.1.0
 
@@ -161,8 +161,8 @@ Adds the function of injecting an external video stream to an ongoing live broad
 
 #### 6. Screen sharing for interactive broadcast
 
--   Before v2.1.0: The Agora SDK only supports the screen sharing function in a video call scenario;
--   From v2.1.0: The Agora SDK supports the screen-sharing function in both a video-call and interactive-broadcast scenario.
+-   Before v2.1.0: The Agora SDK supported the screen-sharing function only in video calls.
+-   From v2.1.0: The Agora SDK supports the screen-sharing function in video-calls and interactive-broadcasts.
 
 
 #### 7. Loopback recording
@@ -206,7 +206,7 @@ Adds the <code>enableLoopbackRecording</code> method to collect all local sounds
 ## v2.0 and Earlier
 ### v2.0
 
-v2.0 was released on November 21, 2017. See the following sections for new features.
+v2.0 was released on November 21, 2017. 
 
 #### New Features
 
@@ -235,7 +235,7 @@ v2.0 was released on November 21, 2017. See the following sections for new featu
 
 
 
--   Provides a set of RESTful APIs to ban a peer user from the server in the communication and live broadcast profiles. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable this function if required.
+-   Provides a set of RESTful APIs to ban a peer user from the server in the communication and live broadcast profiles. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable this function, if required.
 -   Supports Windows (x64).
 -   Adds API method to control the volume, mute, and system volume settings.
 
@@ -285,7 +285,7 @@ v2.0 was released on November 21, 2017. See the following sections for new featu
 
 ### v1.14
 
-v1.14 was released on October 20, 2017. See the following sections for new features, improvements, and issues.
+v1.14 was released on October 20, 2017. 
 
 #### New Features
 
@@ -345,7 +345,7 @@ Occasional crashes.
 
 ### v1.12
 
-v1.12  was released on July 25, 2017. See the following sections for new features, improvements, and issues fixed.
+v1.12  was released on July 25, 2017. 
 
 #### New Features:
 
