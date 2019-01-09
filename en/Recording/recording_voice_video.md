@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Wed Jan 09 2019 03:24:03 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 03:24:07 GMT+0000 (UTC)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -140,9 +140,6 @@ Choose the recording mode by setting the parameters according to the following t
 </tbody>
 </table>
 
-
-
->  The Agora Recording SDK does not support composite recording + synchronized transcoding in the web-only mode. See `joinChannel` to allows an application to join a channel for the supported players.
 
 ## Raw Data
 
