@@ -3,19 +3,19 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Jan 09 2019 17:44:44 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 17:44:50 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
 
 ## Overview
 
-The Video SDK supports the following scenarios:
+The Agora Video SDK supports the following scenarios:
 
 -   Voice/Video Communication
 -   Live Voice/Video Broadcast
 
-For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms) and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
+For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 ### Known Issues and Limitations
 
@@ -23,146 +23,146 @@ A USB device driver issue occurs when users do not hear any audio or the audio i
 
 ## v2.2.3
 
-The version 2.2.3 was released on July 5, 2018. See below for issues fixed.
+v2.2.3 was released on July 5, 2018. 
 
 >  The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version earlier than v2.1.0 and wish to migrate to the latest version, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 
 ### Issues Fixed
 
--   Fixed occasional online statistics crashes.
--   Fixed occasional crashes during a live broadcast.
--   Fixed the excessive increase in the memory use when multiple delegated hosts broadcast in the channel.
--   Fixed the issue of occasional video freeze after a view size change.
--   Fixed the issue of failing to report the uid and volume of the speaker in a channel.
+-   Occasional online statistics crashes.
+-   Occasional crashes during a live broadcast.
+-   Excessive increase in the memory use when multiple delegated hosts broadcast in the channel.
+-   Occasional video freeze after a view size change.
+-   Failing to report the uid and volume of the speaker in a channel.
 
 
 ## v2.2.0
 
-The version 2.2.0 was released on May 4, 2018. See below for new features and improvements.
+v2.2.0 was released on May 4, 2018. 
 
 ### New Features
 
 #### 1. Play the audio effect in the channel
 
-Added a <code>publish</code> parameter in the <code>playEffect</code> method, to enable the remote user in the channel to hear the audio effect played locally. 
+Adds a <code>publish</code> parameter in the <code>playEffect</code> method for the remote user in the channel to hear the audio effect played locally. 
 
->  If your SDK is upgraded to v2.2 from a previous version, pay attention to the functional changes of this API.
+>  If your SDK is upgraded to v2.2 from an earlier version, pay attention to the functional changes of this method.
 
 #### 2. Deploy the proxy at the server
 
-Agora has provided a proxy package for enterprise users with corporate firewalls to deploy before accessing the services of Agora. 
+Agora provides a proxy package for enterprise users with corporate firewalls to deploy before accessing the services of Agora. 
 
 #### 3. Get the remote video state
 
-Added the <code>remoteVideoStateChangedOfUid</code> method to get the state of the remote video stream. 
+Adds the <code>remoteVideoStateChangedOfUid</code> method to get the state of the remote video stream. 
 
 #### 4. Add watermarks on the broadcasting video
 
-Added the watermark function which enables users to add a PNG file to the local or CDN broadcast as a watermark. Added the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> APIs to add and delete watermarks in a local live-broadcast; the <code>watermark</code> parameter in the <code>LiveTranscording</code> interface enables watermarks in CDN broadcasts. 
+Adds the watermark function which enables users to add a PNG file to a local or CDN broadcast as a watermark. Adds the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> methods to add and delete watermarks in a local live-broadcast. The <code>watermark</code> parameter in the <code>LiveTranscording</code> interface enables watermarks in CDN broadcasts. 
 
 ### Improvements
 
 #### 1. Audio volume indication
 
-Improved the function of <code>enableAudioVolumeIndication</code>. The method, once enabled, sends the audio volume indication of the speaker in its callback at set intervals, regardless of whether any one is speaking in the channel.
+Improves the function of the <code>enableAudioVolumeIndication</code> method. The method, once enabled, sends the audio volume indication of the speaker in its callback at set intervals, regardless of whether anyone is speaking in the channel.
 
 #### 2. Network quality detection during a session
 
 To meet the customers’ need for real-time network quality detection in the channel, the <code>onNetworkQuality</code> method has improved its data accuracy. 
 
-#### 3. Lastmile quality detection before joining a channel
+#### 3. Last-mile network quality detection before joining a channel
 
-To test if the customers’ network condition can support voice or video calls before joining the channel, <code>onLastmileQuality</code> changed its detection from a fixed bitrate to the bitrate set by the customer in <code>videoProfile</code> to improve data accuracy. When the network condition is unknown, this callback is still triggered at two-second intervals. 
+To test if the customers’ network condition can support voice or video calls before joining the channel, the <code>onLastmileQuality</code> callback changes its detection from a fixed bitrate to the bitrate set by the customer in <code>videoProfile</code> to improve data accuracy. When the network condition is unknown, the SDK still triggers this callback once every two seconds. 
 
-#### 4. Audio Quality Enhancement
+#### 4. Audio quality enhancement
 
-Improved the audio quality in scenarios that involve music play.
+Improves the audio quality in music playback scenarios.
 
 ### Issues Fixed
 
--   Fixed occasional crashes on the macOS device.
--   Fixed occasional screen display abnormalities when a large number of audience join host in the live-broadcast channel.
+-   Occasional crashes on the macOS device.
+-   Occasional screen display abnormalities when a large number of the audience joins as hosts in the live-broadcast channel.
 
 
 ## v2.1.3
 
-The version 2.1.3 was released on April 19, 2018. See below for issues fixed.
+v2.1.3 was released on April 19, 2018. 
 
-In v2.1.3, Agora has updated the bitrate values of the <code>setVideoProfile</code> method in the live-broadcast mode. The bitrate values in v2.1.3 stay consistent with those in v2.0. 
+In v2.1.3, Agora updates the bitrate values of the <code>setVideoProfile</code> method in the live-broadcast mode. The bitrate values in v2.1.3 stay consistent with those in v2.0. 
 
 ### Issues Fixed
 
--   Block callbacks were occasionally not received if the delegate was not set.
--   NSAssertionHandler appeared in external links to the SDK.
--   Occasional recording failures on some phones when the user leaves the channel and turns on the in-built recording device.
+-   Block callbacks are occasionally not received if the delegate is not set.
+-   NSAssertionHandler appears in external links to the SDK.
+-   Occasional recording failures on some phones when the user leaves the channel and turns on the built-in recording device.
 
 
 ### Improvements
 
-Improved the performance of screen sharing by shortening the time interval between which users switch from screen sharing to normal communication or live-broadcast mode.
+Improves the performance of screen sharing by shortening the time interval between which users switch from screen sharing to normal communication or live-broadcast mode.
 
 ## v2.1.2
 
-he version 2.1.2 was released on April 2, 2018. See below for issues fixed.
+v2.1.2 was released on April 2, 2018. 
 
->  If you upgraded the SDK to v2.1.2 from a previous version, the live-broadcast video quality will be better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth. 
+>  If you upgrade the SDK to v2.1.2 from an earlier version, the live-broadcast video quality is better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth. 
 
 ### New Features
 
-Extended the <code>setVideoProfile</code> method to enable users to manually set the resolution, frame rate, and bitrate of the video. 
+Extends the <code>setVideoProfile</code> method for users to manually set the resolution, frame rate, and bitrate of the video. 
 
 ### Issues Fixed
 
-The video resolution of the shared screen is worse in communication mode than in live broadcast mode.
+The video resolution of the shared screen is worse in the communication profile than in the live broadcast profile.
 
 ## v2.1.1
 
-The version 2.1.1 was released on March 16, 2018. 
+v2.1.1 was released on March 16, 2018. 
 
-Agora has identified a critical bug in SDK v2.1. Upgrade to v2.1.1 if you are using Agora SDK v2.1.
+Agora identified a critical issue in v2.1. Upgrade to v2.1.1 if you are using Agora SDK v2.1.
 
 ## v2.1.0
 
-The version 2.1.0 was released on March 7, 2018. See below for new features, improvements, and issues fixed.
+v2.1.0 was released on March 7, 2018. 
 
 ### New Features
 
 #### 1. Voice Optimization
 
-Added a scenario for the game chat room to reduce the bandwidth and cancel the noise with the <code>setAudioProfile</code> method.
+Adds a scenario for the game chat room to reduce the bandwidth and cancel the noise with the <code>setAudioProfile</code> method.
 
 #### 2. Enhanced audio effect input from a built-in microphone
 
 In an interactive broadcast, the host can enhance the local audio effects from the built-in microphone with the <code>setLocalVoiceEqualization</code> and <code>setLocalVoiceReverb</code> methods by implementing the voice equalization and reverberation effects.
 
-#### 3. Online Statistics Query
+#### 3. Online statistics query
 
-Added Restful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host:
+Adds Restful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host:
 
 -   For voice or video calls, see [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_communication.md).
 -   For interactive broadcasts, see [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_live.md).
 
 
-#### 4. 17-way Video
+#### 4. 17-way video
 
-Added the support of 17-way video in interactive broadcasts, see:
+Adds the support of 17-way video in interactive broadcasts, see:
 
 -   [Starting a Live Video Broadcast](../../en/Quickstart%20Guide/broadcast_video_mac.md)
 -   [Video Conference of 7+ Users](../../en/Video/seventeen_people_iosmac.md)
 
 
-#### 5. Video Source Customization
+#### 5. Video source customization
 
-Supported the default video-capturing features provided by the camera and the customized video source. 
+Supports the default video-capturing features provided by the camera and the customized video source. 
 
-#### 6. Renderer Customization
+#### 6. Renderer customization
 
-Supported the default functions provided by the renderers to display the local and remote videos to meet developers’ requirements. Agora provides a set of interfaces for customized renderers. 
+Supports the default functions provided by the renderers to display the local and remote videos to meet developers’ requirements. Agora provides a set of interfaces for customized renderers. 
 
-#### 7. Screen Sharing for Interactive Broadcast
+#### 7. Screen sharing for interactive broadcast
 
--   Before v2.1.0: The Agora SDK only supported the screen sharing function in video calls
--   From v2.1.0: The Agora SDK added the screen sharing function in interactive broadcasts.
+-   Before v2.1.0: The Agora SDK supported the screen-sharing function only in video calls.
+-   From v2.1.0: The Agora SDK supports the screen-sharing function in video-calls and interactive-broadcasts.
 
 
 ### Improvements
@@ -179,16 +179,16 @@ Supported the default functions provided by the renderers to display the local a
 </thead>
 <tbody>
 <tr><td>Video Freeze Rate</td>
-<td>Reduced the video freeze rate in the audience mode and for specific devices.</td>
+<td>Reduces the video freeze rate in the audience mode and for specific devices.</td>
 </tr>
 <tr><td>Authentication</td>
-<td>Supported a new authentication mechanism. Each legacy Dynamic Key (Channel Key) corresponds to a single privilege (for example, joining a channel), but each Token in the new authentication mechanism includes all the privileges (for example, joining a channel, hosting in, and stream-pushing).</td>
+<td>Supports a new authentication mechanism. Each legacy Dynamic Key (Channel Key) corresponds to a single privilege (for example, joining a channel), but each token in the new authentication mechanism includes all privileges (for example, joining a channel, hosting in, and stream-pushing).</td>
 </tr>
 <tr><td>Billing Optimization</td>
-<td>Small video resolutions will be billed according to voice-only mode, for example, 16 x 16.</td>
+<td>Small video resolutions are billed according to voice-only mode. For example, 16 x 16.</td>
 </tr>
 <tr><td>API Naming Optimization</td>
-<td>Modified a set of names for the API attributes and numeration values.</td>
+<td>Modifies a set of names for the API attributes and enumeration values.</td>
 </tr>
 </tbody>
 </table>
@@ -197,19 +197,17 @@ Supported the default functions provided by the renderers to display the local a
 
 ## v2.0.2
 
-The version 2.0.2 was released on December 15, 2017. See below for issues fixed.
-
-Fixed the FFmpeg symbol conflict.
+v2.0.2 was released on December 15, 2017 and fixes the FFmpeg symbol conflict.
 
 ## v2.0 and Earlier
 ### v2.0
 
-The version 2.0 was released on December 6, 2017. See below for new features and issues fixed.
+v2.0 was released on December 6, 2017. 
 
 #### New Features
 
--   Added the <code>setRemoteVideoStreamType</code> and <code>enableDualStreamMode</code> methods in the communication scenario to support dual stream.
--   Updated the following callback functions for audio mixing and sound effects:
+-   Adds the <code>setRemoteVideoStreamType</code> and <code>enableDualStreamMode</code> methods in the Communication profile to support dual streams.
+-   Updates the following callbacks for audio mixing and sound effects:
 
     <table>
 <colgroup>
@@ -229,7 +227,7 @@ The version 2.0 was released on December 6, 2017. See below for new features and
 <td>Added. Notifies that the local audio effect has stopped.</td>
 </tr>
 <tr><td><code>rtcEngineRemoteAudioMixingDidStart</code></td>
-<td>Added. Notifies that the remote user has started the audio mxing.</td>
+<td>Added. Notifies that the remote user has started the audio mixing.</td>
 </tr>
 <tr><td><code>rtcEngineRemoteAudioMixingDidFinish</code></td>
 <td>Added. Notifies that the remote user has stopped the audio mixing.</td>
@@ -238,7 +236,7 @@ The version 2.0 was released on December 6, 2017. See below for new features and
 </table>
 
 
--   Added the camera management function in the communication and live broadcast scenarios by adding the following API methods:
+-   Adds the camera management function in the Communication and Live-broadcast profiles by adding the following API methods:
 
     <table>
 <colgroup>
@@ -278,9 +276,7 @@ The version 2.0 was released on December 6, 2017. See below for new features and
 </tbody>
 </table>
 
-
-
--   Supported the external audio source in the communication and live broadcast scenarios by adding the following API methods:
+-   Supports an external audio source in the communication and live broadcast profiles by adding the following API methods:
 
     <table>
 <colgroup>
@@ -294,20 +290,18 @@ The version 2.0 was released on December 6, 2017. See below for new features and
 </thead>
 <tbody>
 <tr><td><code>enableExternalAudioSourceWithSampleRate</code></td>
-<td>Enables the external audio source.</td>
+<td>Enables an external audio source.</td>
 </tr>
 <tr><td><code>disableExternalAudioSource</code></td>
 <td>Disables the external audio source.</td>
 </tr>
 <tr><td><code>pushExternalAudioFrameRawData</code></td>
-<td>Pushes the external audio frame to the Agora SDK.</td>
+<td>Pushes an external audio frame to the Agora SDK.</td>
 </tr>
 </tbody>
 </table>
 
-
-
--   Provided a set of RESTful APIs to kick out a peer user from the server in the communication and live broadcast scenarios. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable this function if required.
+-   Provides a set of RESTful APIs to ban a peer user from the server in the Communication and Live-broadcast profiles. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable this function, if required.
 
 
 #### Issues Fixed
@@ -316,20 +310,20 @@ Audio routing and Bluetooth issues.
 
 ### v1.14
 
-The version 1.14 was released on October 20, 2017. See below for new features and improvements.
+v1.14 was released on October 20, 2017. 
 
 #### New Features
 
--   Added the <code>setAudioProfile</code> method to set the audio parameters and scenarios.
--   Added the <code>setLocalVoicePitch</code> method to set the local voice pitch.
--   Live Broadcast: Added the <code>setInEarMonitoringVolume</code> method to adjust the volume of the in-ear monitor.
+-   Adds the <code>setAudioProfile</code> method to set the audio parameters and scenarios.
+-   Adds the <code>setLocalVoicePitch</code> method to set the local voice pitch.
+-   Live Broadcast: Adds the <code>setInEarMonitoringVolume</code> method to adjust the volume of the in-ear monitor.
 
 
 #### Improvements
 
--   Optimized the audio at high bitrates.
+-   Optimizes the audio at high bitrates.
 -   Live Broadcast: The audience can view the host within one second in a single-stream mode (858 ms on average, and 625 ms when in good network conditions).
--   Added the ability to reduce the bandwidth.
+-   Adds the ability to reduce the bandwidth.
     -   Before v1.14: If you muted the audio of a specific user, the network still sent the stream.
     -   Starting from v1.14: If you mute the audio of a specific user, the network will not send the stream of the user to reduce the bandwidth.
 -   Accurate control over the bitrate:
@@ -339,28 +333,26 @@ The version 1.14 was released on October 20, 2017. See below for new features an
 
 ### v1.13.1
 
-The version 1.13.1 was realeased on September 28, 2017. 
-
-Optimized the echo issue under certain circumstances.
+v1.13.1 was released on September 28, 2017, and optimized the echo issue under certain circumstances.
 
 ### v1.13
 
-The version 1.13 was released on September 4, 2017. See below for new features, improvements, and issues fixed.
+v1.13 was released on September 4, 2017.
 
 #### New Features
 
--   Added the function to dynamically enable and disable acquiring the sound card in a live broadcast.
--   Added the function to disable the audio playback.
--   Added the module map for the SDK, which means bridging header files are not necessary for Swift projects.
--   Supported the profile configuration for stream-pushing on the client side.
--   Added the <code>didClientRoleChanged</code> callback function to indicate a user role change between the host and audience in a live broadcast.
--   Supported the push-stream failure callback on the server side.
+-   Adds the function to dynamically enable and disable acquiring the sound card in a live broadcast.
+-   Adds the function to disable the audio playback.
+-   Adds the module map for the SDK, which means bridging header files are not necessary for Swift projects.
+-   Supports the profile configuration for stream-pushing on the client side.
+-   Adds the <code>didClientRoleChanged</code> callback to indicate a user role change between a host and an audience in a live broadcast.
+-   Supports the push-stream failure callback on the server side.
 
 
 #### Improvements:
 
--   Screen Sharing: Enhanced the video definition and fluency.
--   Screen Sharing: Supported updating the captured region dynamically.
+-   Screen Sharing: Enhances the video definition and fluency.
+-   Screen Sharing: Supports updating the captured region dynamically.
 -   The video profile is controllable by the software codec.
 
 
@@ -370,25 +362,25 @@ Occasional crashes on some devices.
 
 ### v1.12
 
-The version 1.12  was released on July 25, 2017. See below for new features and issues fixed.
+v1.12  was released on July 25, 2017. 
 
 #### New Functions:
 
--   Added the <code>injectStream</code> method to inject an RTMP stream into the current channel in a live broadcast scenario.
--   Added the <code>aes-128-ecb</code> encryption mode in the API method, `setEncryptionMode`.
--   Added the <code>quality</code> parameter in the <code>startAudioRecording</code> method to set the recording audio quality.
--   Added a set of API methods to manage the audio effect.
--   Added the <code>ActiveSpeaker</code> method to indicate who is the active speaker in the current channel.
--   Removed the <code>setScreenCaptureWindow</code> method, and updated the <code>startScreenCapture</code> method to share the whole screen and specify the window or region in the communication scenario.
--   Added the displaying the mouse function when the screen sharing function is enabled in the communication scenario.
+-   Adds the <code>injectStream</code> method to inject an RTMP stream into the current channel in a live broadcast scenario.
+-   Adds the <code>aes-128-ecb</code> encryption mode in the `setEncryptionMode` method.
+-   Adds the <code>quality</code> parameter in the <code>startAudioRecording</code> method to set the recording audio quality.
+-   Adds a set of API methods to manage the audio effect.
+-   Adds the <code>ActiveSpeaker</code> method to indicate who is the active speaker in the current channel.
+-   Removes the <code>setScreenCaptureWindow</code> method, and updates the <code>startScreenCapture</code> method to share the whole screen and specify the window or region in the Communication profile.
+-   Adds the displaying the mouse function when the screen-sharing function is enabled in the Communication profile.
 
 
 #### Improvements:
 
-In the communication scenario, improved the 320 &times; 180 resolution profile.
+In the Communication profile, improves the 320 &times; 180 resolution profile.
 
--   Keep the video smooth under poor network and equipment conditions.
--   Enhance the image quality better than 180p under good network and equipment conditions.
+-   Keeps the video smooth under poor network and equipment conditions.
+-   Enhances the image quality better than 180p under good network and equipment conditions.
 
 
 #### Issues Fixed:
