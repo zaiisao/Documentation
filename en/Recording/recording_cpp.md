@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Thu Jan 10 2019 17:16:41 GMT+0000 (UTC)
+updatedAt: Thu Jan 10 2019 17:17:12 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -196,10 +196,10 @@ typedef struct RecordingConfig {
 <td><strong>Description</strong></td>
 </tr>
 <tr><td><code>channelProfile</code></td>
-<td><p>Sets the channel mode. </p>
+<td><p>Sets the channel profile. </p>
 <ul>
-<li>CHANNEL_PROFILE_COMMUNICATION (0): (Default) Communication mode. This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
-<li>CHANNEL_PROFILE_LIVE_BROADCAST (1): Live broadcast mode. The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <em><code>setClientRole</code></em>.</li>
+<li>CHANNEL_PROFILE_COMMUNICATION (0): (Default) Communication profile. This is used in one-on-one or group calls, where all users in the channel can talk freely.</li>
+<li>CHANNEL_PROFILE_LIVE_BROADCAST (1): Live-broadcast profile. The host sends and receives voice/video, while the audience only receives voice/video. Host and audience roles can be set by calling <em><code>setClientRole</code></em>.</li>
 </ul>
 The Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
 </td>
@@ -238,7 +238,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td><p>Sets whether or not to enable the audio- or video-mixing mode.</p>
 <ul>
 <li>true: Enables the composite mode, which means the audio of all uids is mixed in an audio file and the video of all uids is mixed in a video file. The sample rate, bitrate, and number of audio channels of the recorded file are the same as the highest level of those of the original audio streams.</li>
-<li>false: (Default) Enables the individual mode, which means one audio or video file for an uid. The bitrate and number of audio channels of the recording file are the same as those of the original audio stream.</li>
+<li>false: (Default) Enables the individual mode, which means one audio or video file for a uid. The bitrate and number of audio channels of the recording file are the same as those of the original audio stream.</li>
 </ul>
 </td>
 </tr>
@@ -246,7 +246,7 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 <td>If you set <code>isMixingEnabled</code> as true and enable the composite mode, <code>mixResolution</code> allows you to set the video profile, including the width, height, frame rate, and bitrate. For the recommended bitrates, see the tables below.</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
-<td><p>When the whole channel is encrypted, the recording SDK uses <code>decryptionMode</code> to enable the built-in decryption function.
+<td><p>When the whole channel is encrypted, the Recording SDK uses <code>decryptionMode</code> to enable the built-in decryption function.
 The following decryption methods are supported:</p>
 <ul>
 <li>“aes-128-xts”: AES-128, XTS mode.</li>
@@ -265,10 +265,10 @@ The following decryption methods are supported:</p>
 <td>The directory of AgoraCoreService. The default value is NULL.</td>
 </tr>
 <tr><td><code>recordFileRootDir</code></td>
-<td>The root directory of the recorded files. The default value is NULL. The sub-path will be generated automatically.</td>
+<td>The root directory of the recorded files. The default value is NULL. The sub-path is generated automatically.</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>The path of the configuration file. The default value is NULL. In the configuration file, you can set the absolute path of the recorded file, but the sub-path will not be generated automatically. The content in the configuration file must be in JSON format, such as {“Recording_Dir” : “<recording path>”}. “Recording_Dir” cannot be changed.</td>
+<td>The path of the configuration file. The default value is NULL. In the configuration file, you can set the absolute path of the recorded file, but the sub-path is not generated automatically. The content in the configuration file must be in JSON format, such as {“Recording_Dir” : “<recording path>”}. “Recording_Dir” cannot be changed.</td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
 <td>The lowest UDP port. Ensure that the value of highUdpPort - lowUdpPort is ≥ 4. The default value is 0.</td>
@@ -296,7 +296,7 @@ The following decryption methods are supported:</p>
 <li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2: Audio frame in PCM format.</li>
 <li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3: Audio-mixing frame in PCM format.</li>
 </ul>
-When <code>AUDIO_FORMAT_TYPE</code> = 1, 2 or 3, <code>isMixingEnabled</code> cannot be set as true.
+When <code>AUDIO_FORMAT_TYPE</code> = 1, 2, or 3, <code>isMixingEnabled</code> cannot be set as true.
 </td>
 </tr>
 <tr><td><code>decodeVideo</code></td>
@@ -335,7 +335,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3, or 5, raw video data in YUV forma
 </td>
 </tr>
 <tr><td><code>triggerMode</code></td>
-<td><p>Sets whether to record automatically or manually upon joining the channel.</p>
+<td><p>Sets whether to record automatically or manually upon joining a channel.</p>
 <ul>
 <li>0: Automatically.</li>
 <li>1: Manually. To start and stop recording, call <code>startService</code> and <code>stopService</code> respectively.</li>
@@ -346,14 +346,14 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3, or 5, raw video data in YUV forma
 <td>Sets the programming language (C++ or Java).</td>
 </tr>
 <tr><td><code>proxyServer</code></td>
-<td>Sets the proxy server, which allows recording with the Intranet server. For more information, please contact <a href="mailto:sales%40agora.io">sales<span>@</span>agora<span>.</span>io</a> .</td>
+<td>Sets the proxy server, which allows recording with the Intranet server. For more information, please contact <a href="mailto:sales%40agora.io">sales<span>@</span>agora<span>.</span>io</a>.</td>
 </tr>
 <tr><td><code>audioProfile</code> </td>
 <td><p>Audio profile of the recording file. Sets the sampling rate, bitrate, encode mode, and the number of channels. Takes effect only when <code>isMixingEnabled</code> is set as true.</p>
 <div><ul>
-<li>AUDIO_PROFILE_DEFAULT = 0: (Default) Sampling rate of 48 kHz, communication encoding, mono, and a bitrate of up to 18 Kbps.</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 1: Sampling rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 2: Sampling rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.</li>
+<li>AUDIO_PROFILE_DEFAULT = 0: (Default) Sample rate of 48 kHz, communication encoding, mono, and a bitrate of up to 18 Kbps.</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 1: Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 2: Sample rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.</li>
 </ul>
 </td>
 </tr>
@@ -377,7 +377,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3, or 5, raw video data in YUV forma
 </table>
 
 
-**Video Profile for the Communication Mode:**
+**Video Profile for the Communication Profile:**
 
 <table>
 <colgroup>
@@ -503,7 +503,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3, or 5, raw video data in YUV forma
 
 
 
-**Video Profile for the Live Broadcast Mode:**
+**Video Profile for the Live Broadcast Profile:**
 
 <table>
 <colgroup>
@@ -651,7 +651,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3, or 5, raw video data in YUV forma
 <td>Supported</td>
 </tr>
 <tr><td>Linux</td>
-<td>Chrome</td>
+<td>Google Chrome</td>
 <td><strong>Not Supported</strong></td>
 <td><strong>Not Supported</strong></td>
 </tr>
@@ -838,12 +838,12 @@ The structure of <code>VideoMixingLayout</code>:
 <td>The background color of the canvas (the display window or screen) in RGB hex value.</td>
 </tr>
 <tr><td><code>regionCount</code></td>
-<td>The number of the users (communication profile)/hosts (live broadcast profile) in the channel.</td>
+<td>The number of the users (Communication profile)/hosts (Live-broadcast profile) in the channel.</td>
 </tr>
 <tr><td><code>regions</code></td>
-<td><p>The user (communication profile)/host (live broadcast profile) list of <code>VideoMixingLayout</code>. Each user (communication profile)/host (live broadcast profile) in the channel has a region to display the video on the screen with the following parameters to be set:</p>
+<td><p>The user (Communication profile)/host (Live-broadcast profile) list of <code>VideoMixingLayout</code>. Each user (Communication profile)/host (Live-broadcast profile) in the channel has a region to display the video on the screen with the following parameters to be set:</p>
 <ul>
-<li><code>uid</code>: UID of the user (communication profile)/host (live broadcast profile) displaying the video in the region.</li>
+<li><code>uid</code>: UID of the user (Communication profile)/host (Live-broadcast profile) displaying the video in the region.</li>
 <li><code>x</code>: Relative horizontal position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
 <li><code>y</code>: Relative vertical position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
 <li><code>width</code>: Relative width of the region. The value is between 0.0 and 1.0.</li>
@@ -852,7 +852,7 @@ The structure of <code>VideoMixingLayout</code>:
 <li><code>alpha</code>: The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque).</li>
 	<li><code>renderMode</code>: Render mode<ul>
 <li>RENDER_MODE_HIDDEN(1): Cropped mode. Uniformly scale the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents.</li>
-<li>2RENDER_MODE_FIT(2): Fit mode. Uniformly scale the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio will be filled with black.</li>
+<li>2RENDER_MODE_FIT(2): Fit mode. Uniformly scale the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio are filled with black.</li>
 </ul>
 </li>
 </ul>
@@ -1059,9 +1059,9 @@ This method enables/disables generating logs for specified modules.
 
 The IRecordingEngineEventHandler class provides the following callbacks for the recording engine:
 
--   [Occurs when an Error Occurs During SDK Runtime (onError)](#onError)
+-   [Reports an Error During SDK Runtime (onError)](#onError)
 
--   [Occurs when a Warning Occurs During SDK Runtime (onWarning)](#onWarning)
+-   [Reports a Warning During SDK Runtime (onWarning)](#onWarning)
 
 -   [Occurs when the Recording Application Joins the Specified Channel (onJoinChannelSuccess)](#onJoinChannelSuccess)
 
@@ -1078,7 +1078,7 @@ The IRecordingEngineEventHandler class provides the following callbacks for the 
 -   [Occurs when a Speaker is Detected in the Channel (onActiveSpeaker)](#onActiveSpeaker)
 
 
-### <a name="onError"></a>Occurs when an Error Occurs During SDK Runtime (onError)
+### <a name="onError"></a>Reports an Error During SDK Runtime (onError)
 
 The SDK triggers this callback when an error occurs during SDK runtime.
 
@@ -1139,7 +1139,7 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 
 
 
-### <a name="onWarning"></a>Occurs when a Warning Occurs During SDK Runtime (onWarning)
+### <a name="onWarning"></a>Reports a Warning During SDK Runtime (onWarning)
 
 The SDK triggers this callback when a warning occurs during SDK runtime.
 
@@ -1244,7 +1244,7 @@ virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
 
 ### <a name="onUserJoined"></a>Occurs when a Remote User or Host Joins the Channel (onUserJoined)
 
-The SDK triggers this callback when a user joins the channel and returns the UID of the new user.
+The SDK triggers this callback when another user joins the channel and returns the UID of the new user.
 
 If there are other users in the channel before the recording app joins the channel, the SDK also reports on the UIDs of the existing users. The SDK triggers this callback as many times as the number of the users in the channel.
 
@@ -1335,7 +1335,7 @@ virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE 
 <ul>
 <li>0: The user has quit the call (USER_OFFLINE_QUIT).</li>
 <li>1: The SDK timed out and the user dropped offline because it has not received any data packet for a period of time (USER_OFFLINE_DROPPED). If a user quits the call and the message is not passed to the SDK (due to an unreliable channel), the SDK assumes the user has dropped offline. </li>
-<li>2: The client role has changed from the host to the audience (USER_OFFLINE_BECOME_AUDIENCE ). The option is only valid when you set the channel profile as live broadcast when calling <code>joinChannel</code>.</li>
+<li>2: The client role has changed from the host to the audience (USER_OFFLINE_BECOME_AUDIENCE). This option is only valid when you set the channel profile as live broadcast when calling <code>joinChannel</code>.</li>
 </ul>
 </td>
 </tr>
@@ -1430,10 +1430,10 @@ class AudioPcmFrame {
 <td>Number of audio channels.</td>
 </tr>
 <tr><td><code>sample_bits</code></td>
-<td>Bitrate of the sampling data.</td>
+<td>Bitrate of the sample data.</td>
 </tr>
 <tr><td><code>sample_rates</code></td>
-<td>Sampling rate.</td>
+<td>Sample rate.</td>
 </tr>
 <tr><td><code>samples</code></td>
 <td>Number of samples of the frame.</td>
@@ -1518,12 +1518,12 @@ virtual void videoFrameReceived(unsigned int uid, const agora::linuxsdk::VideoFr
 <td>UID of the user.</td>
 </tr>
 <tr><td><code>frame</code></td>
-<td>Received raw video data in YUV, H.264, or JPG format.</td>
+<td>Received raw video data in YUV, H.264, or JPEG format.</td>
 </tr>
 </tbody>
 </table>
 
-The structure of <code>VideoFrame</code>:
+The struct of <code>VideoFrame</code>:
 
 ```
 struct VideoFrame {
@@ -1544,7 +1544,7 @@ struct VideoFrame {
 
 #### VideoYuvFrame
 
-The structure of <code>VideoYuvFrame</code>:
+The struct of <code>VideoYuvFrame</code>:
 
 ```
 class VideoYuvFrame {
@@ -1623,7 +1623,7 @@ class VideoYuvFrame {
 
 #### VideoH264Frame
 
-The structure of <code>VideoH264Frame</code>:
+The struct of <code>VideoH264Frame</code>:
 
 ```
 struct VideoH264Frame {
@@ -1675,7 +1675,7 @@ struct VideoH264Frame {
 
 #### VideoJpgFrame
 
-The structure of <code>VideoJpgFrame</code>:
+The struct of <code>VideoJpgFrame</code>:
 
 ```
 struct VideoJpgFrame {
