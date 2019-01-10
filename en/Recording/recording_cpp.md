@@ -3,7 +3,7 @@
 title: Recording API
 description: 
 platform: CPP
-updatedAt: Thu Jan 10 2019 15:59:57 GMT+0000 (UTC)
+updatedAt: Thu Jan 10 2019 16:00:03 GMT+0000 (UTC)
 ---
 # Recording API
 > Version: v2.2.2
@@ -100,7 +100,7 @@ virtual int joinChannel(const char * token, const char *channelId, uid_t uid, co
 <td>The token used in the communications to be recorded. For more information, see <a href="../../en/Recording/token.md">Use Security Keys</a>.</td>
 </tr>
 <tr><td><code>channelId</code></td>
-<td>Name of the channel to be recorded. The length must be within 64 bytes. <br>The following is the supported scope: <br><li>The 26 lowercase English letters from a to z</li><li>The 26 uppercase English letters from A to Z</li><li>The 10 numbers from 0 to 9</li><li>The space</li><li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","</li></td>
+<td>Name of the channel to be recorded. The length must be within 64 bytes. <br>The following is the supported scope: <br><li>The 26 lowercase English letters: a to z</li><li>The 26 uppercase English letters: A to Z</li><li>The 10 numbers: 0 to 9</li><li>Space</li><li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","</li></td>
 </tr>
 <tr><td><code>uid</code></td>
 <td>User ID. A 32-bit unsigned integer ranging from 1 to (2<sup>32</sup>-1) that is unique in a channel.</td>
@@ -212,10 +212,10 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 </ul>
 <p>Used together with <code>isVideoOnly</code></p>
 <ul>
-<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only records audio;</li>
-<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true, only records video;</li>
-<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is false, records both audio and video;</li>
-<li><code>isAudioOnly</code> and <code>isVideoOnly</code> can not be set as true at the same time.</li>
+<li>If <code>isAudioOnly</code> is set as true and <code>isVideoOnly</code> set as is false, only record audio.</li>
+<li>If <code>isAudioOnly</code> is set as false and <code>isVideoOnly</code> is set as true, only record video.</li>
+<li>If <code>isAudioOnly</code> is set as false and <code>isVideoOnly</code> is set as false, record both audio and video.</li>
+<li><code>isAudioOnly</code> and <code>isVideoOnly</code> cannot be set as true at the same time.</li>
 </ul>
 </td>
 </tr>
@@ -227,18 +227,18 @@ The Recording SDK must use the same channel profile as the Agora Native/Web SDK,
 </ul>
 <p>Used together with <code>isAudioOnly</code></p>
 <ul>
-<li>If <code>isAudioOnly</code> is true and <code>isVideoOnly</code> is false, only records audio;</li>
-<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is true, only records video;</li>
-<li>If <code>isAudioOnly</code> is false and <code>isVideoOnly</code> is false, records both audio and video;</li>
-<li><code>isAudioOnly</code> and <code>isVideoOnly</code> can not be set as true at the same time.</li>
+<li>If <code>isAudioOnly</code> is set as true and <code>isVideoOnly</code> is set as false, only record audio.</li>
+<li>If <code>isAudioOnly</code> is set as false and <code>isVideoOnly</code> is set as true, only record video.</li>
+<li>If <code>isAudioOnly</code> is set as false and <code>isVideoOnly</code> is set as false, record both audio and video.</li>
+<li><code>isAudioOnly</code> and <code>isVideoOnly</code> cannot be set as true at the same time.</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isMixingEnabled</code></td>
 <td><p>Sets whether or not to enable the audio- or video-mixing mode.</p>
 <ul>
-<li>true: Enables the composite mode, which means the audio of all uids is mixed in an audio file and the video of all uids is mixed in a video file. The sample rate, bitrate, and audio channel number of the recorded file are the same as the highest level of those of the original audio streams.</li>
-<li>false: (Default) Enables the individual mode, which means one audio or video file for an uid. The bitrate and audio channel number of the recording file are the same as those of the original audio stream.</li>
+<li>true: Enables the composite mode, which means the audio of all uids is mixed in an audio file and the video of all uids is mixed in a video file. The sample rate, bitrate, and number of audio channels of the recorded file are the same as the highest level of those of the original audio streams.</li>
+<li>false: (Default) Enables the individual mode, which means one audio or video file for an uid. The bitrate and number of audio channels of the recording file are the same as those of the original audio stream.</li>
 </ul>
 </td>
 </tr>
@@ -268,7 +268,7 @@ The following decryption methods are supported:</p>
 <td>The root directory of the recorded files. The default value is NULL. The sub-path will be generated automatically.</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>The path of the configuration file. The default value is NULL. In the configuration file, you can set the absolute path of the recorded file, but the sub-path will not be generated automatically. The content in the configuration file must be in JSON format, such as {“Recording_Dir” : “<recording path>”}. “Recording_Dir” can not be changed.</td>
+<td>The path of the configuration file. The default value is NULL. In the configuration file, you can set the absolute path of the recorded file, but the sub-path will not be generated automatically. The content in the configuration file must be in JSON format, such as {“Recording_Dir” : “<recording path>”}. “Recording_Dir” cannot be changed.</td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
 <td>The lowest UDP port. Ensure that the value of highUdpPort - lowUdpPort is ≥ 4. The default value is 0.</td>
@@ -277,13 +277,13 @@ The following decryption methods are supported:</p>
 <td>The highest UDP port. Ensure that the value of highUdpPort - lowUdpPort is ≥ 4. The default value is 0.</td>
 </tr>
 <tr><td><code>captureInterval</code></td>
-<td>The time interval of the screen capture. The time interval must be longer than 1 second and the default value is 5 seconds. <code>captureInterval</code> is only valid when the <code>VIDEO_FORMAT_TYPE</code> = 3, 4 or 5.</td>
+<td>The time interval of the screen capture. The time interval must be longer than 1 second and the default value is 5 seconds. <code>captureInterval</code> is only valid when <code>VIDEO_FORMAT_TYPE</code> = 3, 4, or 5.</td>
 </tr>
 <tr><td><code>audioIndicationInterval</code></td>
-<td><p>Whether or not to detect speakers. It is disabled by default.</p>
+<td><p>Whether or not to detect the speakers.</p>
 <div><ul>
-<li>&lt;= 0: Disables the function of detecting speakers.</li>
-<li>&gt; 0: The time interval (ms) of detecting speakers. Agora recommends setting the time interval to be longer than 200ms. When a speaker is found, the SDK returns the UID of the speaker in the <code>onActiveSpeaker</code> callback.</li>
+<li>&lt;= 0: (Default) Disables the function of detecting the speakers.</li>
+<li>&gt; 0: The time interval (ms) of detecting the speakers. Agora recommends setting the time interval to be longer than 200ms. When a speaker is found, the SDK returns the UID of the speaker in the <code>onActiveSpeaker</code> callback.</li>
 </ul>
 </div>
 </td>
@@ -313,12 +313,12 @@ When <code>AUDIO_FORMAT_TYPE</code> = 1, 2 or 3, <code>isMixingEnabled</code> ca
 <li>Composite Mode (<code>isMixingEnabled</code> is set as true): MPEG-4 video file for mixed streams and JPEG files for individual streams.</li>
 </ul>
 </ul>
-When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 4, <code>isMixingEnabled</code> cannot be set as true.
-When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format for the Web SDK is supported while H.264 format is not supported.
+When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3, or 4, <code>isMixingEnabled</code> cannot be set as true.
+When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3, or 5, raw video data in YUV format for the Web SDK is supported while H.264 format is not supported.
 </td>
 </tr>
 <tr><td><code>mixedVideoAudio</code></td>
-<td><p>f you set <code>isMixingEnabled</code> as true and enable the composite mode, <code>mixedVideoAudio</code> allows you to mix the audio and video in a file in real time.</p>
+<td><p>If you set <code>isMixingEnabled</code> as true and enable the composite mode, <code>mixedVideoAudio</code> allows you to mix the audio and video in a file in real time.</p>
 <ul>
 <li>0: (Default) Mixes the audio and video respectively.</li>
 <li>1: Mixes the audio and video in real time into an MPEG-4 file. Supports limited players.</li>
@@ -641,7 +641,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 </thead>
 <tbody>
 <tr><td>Linux</td>
-<td>VLC Media Playerr</td>
+<td>VLC Media Player</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -671,7 +671,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <td>Supported</td>
 </tr>
 <tr><td>Windows</td>
-<td>Chrome (49.0.2623+)</td>
+<td>Google Chrome 49.0.2623 or later</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -701,12 +701,12 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <th><strong>Not Supported</strong></th>
 </tr>
 <tr><td>macOS</td>
-<td>Chrome (47.0.2526.111+)</td>
+<td>Google Chrome 47.0.2526.111 or later</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
 <tr><td>macOS</td>
-<td>Safari (11.0.3+)</td>
+<td>Safari 11.0.3 or later</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -718,7 +718,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <tr><td>iOS</td>
 <td>VLC for Mobile</td>
 <th><strong>Not Supported</strong></th>
-<td><strong>Not Supported</strong>d</td>
+<td><strong>Not Supported</strong></td>
 </tr>
 <tr><td>iOS</td>
 <td>KMPlayer</td>
@@ -726,7 +726,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <td>Supported</td>
 </tr>
 <tr><td>iOS</td>
-<td>Safari (9.0+)</td>
+<td>Safari 9.0 or later</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -751,7 +751,7 @@ When <code>VIDEO_FORMAT_TYPE</code> = 1, 2, 3 or 5, raw video data in YUV format
 <td>Supported</td>
 </tr>
 <tr><td>Android</td>
-<td>Chrome (49.0.2623+)</td>
+<td>Google Chrome 49.0.2623 or later</td>
 <td>Supported</td>
 <td>Supported</td>
 </tr>
@@ -838,12 +838,12 @@ The structure of <code>VideoMixingLayout</code>:
 <td>The background color of the canvas (the display window or screen) in RGB hex value.</td>
 </tr>
 <tr><td><code>regionCount</code></td>
-<td>The number of the users (communication mode)/hosts (live broadcast mode) in the channel.</td>
+<td>The number of the users (communication profile)/hosts (live broadcast profile) in the channel.</td>
 </tr>
 <tr><td><code>regions</code></td>
-<td><p>The user (communication mode)/host (live broadcast mode) list of <code>VideoMixingLayout</code>. Each user (communication mode)/host (live broadcast mode) in the channel has a region to display the video on the screen with the following parameters to be set:</p>
+<td><p>The user (communication profile)/host (live broadcast profile) list of <code>VideoMixingLayout</code>. Each user (communication profile)/host (live broadcast profile) in the channel has a region to display the video on the screen with the following parameters to be set:</p>
 <ul>
-<li><code>uid</code>: UID of the user (communication mode)/host (live broadcast mode) displaying the video in the region.</li>
+<li><code>uid</code>: UID of the user (communication profile)/host (live broadcast profile) displaying the video in the region.</li>
 <li><code>x</code>: Relative horizontal position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
 <li><code>y</code>: Relative vertical position of the top-left corner of the region. The value is between 0.0 and 1.0.</li>
 <li><code>width</code>: Relative width of the region. The value is between 0.0 and 1.0.</li>
@@ -1004,7 +1004,7 @@ virtual int stopService() = 0;
 
 ### <a name="setUserBackground"></a>Sets the User Background Image (setUserBackground)
 
-This method sets the background image of a specified user. The backgrouds for different users can be different.
+This method sets the background image of a specified user. The background images for different users can be different.
 
 ```
 virtual int setUserBackground(uid_t uid, const char* img_path) = 0;
@@ -1059,28 +1059,28 @@ This method enables/disables generating logs for specified modules.
 
 The IRecordingEngineEventHandler class provides the following callbacks for the recording engine:
 
--   [An Error has Occurred During SDK Runtime (onError)](#onError)
+-   [Occurs when an Error Occurs During SDK Runtime (onError)](#onError)
 
--   [A Warning has Occurred During SDK Runtime (onWarning)](#onWarning)
+-   [Occurs when a Warning Occurs During SDK Runtime (onWarning)](#onWarning)
 
--   [The User has Joined the Specified Channel (onJoinChannelSuccess)](#onJoinChannelSuccess)
+-   [Occurs when the Recording Application Joins the Specified Channel (onJoinChannelSuccess)](#onJoinChannelSuccess)
 
--   [The User has Left the Channel (onLeaveChannel)](#onLeaveChannel)
+-   [Occurs when the Recording Application Leaves the Channel (onLeaveChannel)](#onLeaveChannel)
 
--   [A Remote User or a Host has Joined the Channel (onUserJoined)](#onUserJoined)
+-   [Occurs when a Remote User or Host Joins the Channel (onUserJoined)](#onUserJoined)
 
--   [A User has Left the Channel or Gone Offline (onUserOffline)](#onUserOffline)
+-   [Occurs when a User Leaves the Channel or Goes Offline (onUserOffline)](#onUserOffline)
 
--   [The Raw Audio Data has Been Received (audioFrameReceived)](#audioFrameReceived)
+-   [Occurs when the Raw Audio Data is Received (audioFrameReceived)](#audioFrameReceived)
 
--   [The Raw Video Data has Been Received (videoFrameReceived)](#videoFrameReceived)
+-   [Occurs when the Raw Video Data is Received (videoFrameReceived)](#videoFrameReceived)
 
--   [A Speaker is Detectesd in the Channel (onActiveSpeaker)](#onActiveSpeaker)
+-   [Occurs when a Speaker is Detected in the Channel (onActiveSpeaker)](#onActiveSpeaker)
 
 
-### <a name="onError"></a>An Error Occurs During SDK Runtime (onError)
+### <a name="onError"></a>Occurs when an Error Occurs During SDK Runtime (onError)
 
-This callback is triggered when an error occurs during SDK runtime.
+The SDK triggers this callback when an error occurs during SDK runtime.
 
 The SDK cannot fix the issue or resume running, which requires intervention from the application and informs the user on the issue.
 
@@ -1139,9 +1139,9 @@ virtual void onError(int error, agora::linuxsdk::STAT_CODE_TYPE stat_code) = 0;
 
 
 
-### <a name="onWarning"></a>A Warning Occurs During SDK Runtime (onWarning)
+### <a name="onWarning"></a>Occurs when a Warning Occurs During SDK Runtime (onWarning)
 
-This callback is triggered when a warning occurs during SDK runtime.
+The SDK triggers this callback when a warning occurs during SDK runtime.
 
 In most cases, the application can ignore the warnings reported by the SDK because the SDK can usually fix the issue and resume running.
 
@@ -1176,9 +1176,9 @@ virtual void onWarning(int warn) = 0;
 
 
 
-### <a name="onJoinChannelSuccess"></a>The Recording Application Joins the Specified Channel (onJoinChannelSuccess)
+### <a name="onJoinChannelSuccess"></a>Occurs when the Recording Application Joins the Specified Channel (onJoinChannelSuccess)
 
-This callback is triggered when the recording application has successfully joined the specified channel with an assigned Channel ID and UID.
+The SDK triggers this callback when the recording application successfully joins the specified channel with an assigned Channel ID and UID.
 
 ```
 virtual void onJoinChannelSuccess(const char * channelId, uid_t uid) = 0;
@@ -1206,9 +1206,9 @@ virtual void onJoinChannelSuccess(const char * channelId, uid_t uid) = 0;
 
 
 
-### <a name="onLeaveChannel"></a>The Recording Application Leaves the Channel (onLeaveChannel)
+### <a name="onLeaveChannel"></a>Occurs when the Recording Application Leaves the Channel (onLeaveChannel)
 
-This callback is triggered when the recording application leaves the channel.
+The SDK triggers this callback when the recording application leaves the channel.
 
 ```
 virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
@@ -1242,11 +1242,11 @@ virtual void onLeaveChannel(agora::linuxsdk::LEAVE_PATH_CODE code) = 0;
 
 
 
-### <a name="onUserJoined"></a>A User Joins the Channel (onUserJoined)
+### <a name="onUserJoined"></a>Occurs when a Remote User or Host Joins the Channel (onUserJoined)
 
-This callback is triggered when a user joins the channel and returns the UID of the new user.
+The SDK triggers this callback when a user joins the channel and returns the UID of the new user.
 
-If there are users in the channel before the recording app joins the channel, the SDK will also reports on the UIDs of the existing users. This callback is triggered as many times as the number of the users in the channel.
+If there are other users in the channel before the recording app joins the channel, the SDK also reports on the UIDs of the existing users. The SDK triggers this callback as many times as the number of the users in the channel.
 
 ```
 virtual void onUserJoined(uid_t uid, agora::linuxsdk::UserJoinInfos &infos) = 0;
@@ -1306,11 +1306,11 @@ typedef struct UserJoinInfos {
 
 
 
-### <a name="onUserOffline"></a>A User Leaves the Channel or Goes Offline (onUserOffline)
+### <a name="onUserOffline"></a>Occurs when a User Leaves the Channel or Goes Offline (onUserOffline)
 
-This callback is triggered when a user leaves the channel or goes offline.
+The SDK triggers this callback when a user leaves the channel or goes offline.
 
-When no data package of a user is received for a certain period of time (15 seconds), the SDK assumes that the user has goes offline. Weak network connections may lead to misinformation, so Agora recommends using the signaling system for offline event detection.
+When no data package of a user is received for a certain period of time (15 seconds), the SDK assumes that the user has gone offline. Weak network connections may lead to misinformation, so Agora recommends using the signaling system for offline event detection.
 
 ```
 virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE reason) = 0;
@@ -1344,9 +1344,9 @@ virtual void onUserOffline(uid_t uid, agora::linuxsdk::USER_OFFLINE_REASON_TYPE 
 
 
 
-### <a name="audioFrameReceived"></a>The Raw Audio Data has Been Received (audioFrameReceived)
+### <a name="audioFrameReceived"></a>Occurs when the Raw Audio Data is Received (audioFrameReceived)
 
-This callback is triggered when the raw audio data is received.
+The SDK triggers this callback when the raw audio data is received.
 
 ```
 virtual void audioFrameReceived(unsigned int uid, const agora::linuxsdk::AudioFrame *frame) const = 0;
@@ -1491,11 +1491,11 @@ class AudioAacFrame {
 
 
 
-### <a name="videoFrameReceived"></a>The Raw Video Data has Been Received (videoFrameReceived)
+### <a name="videoFrameReceived"></a>Occurs when the Raw Video Data is Received (videoFrameReceived)
 
-This callback is triggered when the raw video data has been received.
+The SDK triggers this callback when the raw video data is received.
 
-This callback is triggered for every received raw video frame and can be used to detect sexually explicit content, if necessary.
+The SDK triggers this callback for every received raw video frame and can be used to detect sexually explicit content, if necessary.
 
 Agora recommends capturing the i frame only and neglecting the others.
 
@@ -1518,7 +1518,7 @@ virtual void videoFrameReceived(unsigned int uid, const agora::linuxsdk::VideoFr
 <td>UID of the user.</td>
 </tr>
 <tr><td><code>frame</code></td>
-<td>Received raw video data in YUV, H.264 or JPG format.</td>
+<td>Received raw video data in YUV, H.264, or JPG format.</td>
 </tr>
 </tbody>
 </table>
@@ -1719,7 +1719,7 @@ struct VideoJpgFrame {
 
 
 
-### <a name="onActiveSpeaker"></a>Indicates the Speaker in the Channel (onActiveSpeaker)
+### <a name="onActiveSpeaker"></a>Occurs when a Speaker is Detected in the Channel (onActiveSpeaker)
 
 ```
 virtual void onActiveSpeaker(uid_t uid);
