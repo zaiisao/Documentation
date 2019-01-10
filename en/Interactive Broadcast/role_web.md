@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 16:06:54 GMT+0000 (UTC)
+updatedAt: Thu Jan 10 2019 02:16:53 GMT+0000 (UTC)
 ---
 # Switch the Client Role
 Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
