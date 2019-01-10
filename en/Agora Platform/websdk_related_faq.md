@@ -3,7 +3,7 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Thu Jan 10 2019 10:01:25 GMT+0000 (UTC)
+updatedAt: Thu Jan 10 2019 10:01:31 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
 ### When I use Google Chrome on Android, why can't I connect with people who use the Safari browser or Native SDK?
@@ -63,3 +63,6 @@ You need to call the `enableWebSdkInteroperability` method in the Agora Native S
 
 ### Why aren't the charges calculated based on the video resolution that I set for the low-stream video?
 Due to device and web browser limitations, the resolution you set may not take effect and may be set by the browser instead. In this case, the charges are calculated based on the actual resolution.
+
+### When the Firefox browser interoperate with the Native SDK, the video in the Firefox browser is rotated in the communication mode. How can I fix that?
+Due to the browser limitations, Agora recommends you use the Chrome browser to interoperate with the Native SDK in the communication mode.
