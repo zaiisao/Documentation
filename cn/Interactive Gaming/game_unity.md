@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Fri Jan 11 2019 05:45:28 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 07:28:06 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
