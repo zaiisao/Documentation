@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Objective-C
-updatedAt: Fri Jan 11 2019 08:50:00 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 08:50:10 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming Audio Only API is composed of **Objective-C Interface** and **C++ Interface**, both of which provide main methods and callback events of the SDK on the iOS platform.
@@ -53,7 +53,7 @@ The SDK uses `Delegate` to inform the application on the engine runtime events. 
 <td>The App ID issued to the application developers by Agora. Apply for a new one from Agora if the key is missing in your kit.</td>
 </tr>
 <tr><td>delegate</td>
-<td> </td>
+<td>The AgoraRtcEngineDelegate Class</td>
 </tr>
 </tbody>
 </table>
@@ -147,15 +147,11 @@ In a live broadcasr channel, this method allows you:
 </thead>
 <tbody>
 <tr><td>role</td>
-<td>The user role in a live broadcast:</td>
-</tr>
-<tr><td><ul>
-<li>AgoraClientRoleBroadcaster = 1; Host</li>
-<li>AgoraClientRoleAudience = 2; Audience (default)</li>
+<td>The user role in a live broadcast<ul>
+<li>AgoraClientRoleBroadcaster = 1: Host.</li>
+<li>AgoraClientRoleAudience = 2: (Default) Audience.)</li>
 </ul>
 </td>
-</tr>
-<tr/>
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: The Method is called successfully</li>
@@ -488,8 +484,8 @@ This method sets to voice-only mode (transmit the audio stream only), and the ot
 <tr><td>enable</td>
 <td>
 <ul>
-<li>true: Enable voice-only mode.</li>
-<li>false: Disable voice-only mode.</li>
+<li>True: Enable voice-only mode.</li>
+<li>False: Disable voice-only mode.</li>
 </ul>
 </td>
 </tr>
@@ -1611,17 +1607,31 @@ If the user does not call this method, the audio is routed to the earpiece by de
 </thead>
 <tbody>
 <tr><td>defaultToSpeaker</td>
-<td>YES: Audio is routed to the speakerphone</td>
-</tr>
-<tr><td>NO: Audio is routed to the earpiece</td>
+<td>
+<ul>
+<li>YES: The audio is routed to the speakerphone.
+</li>
+<li>
+NO: The audio is routed to the earpiece.
+</li>
+</ul>
+</td>
 </tr>
 <tr><td>Return Value</td>
-<td>0: Method call succeeded.</td>
-</tr>
-<tr><td>&lt;0: Method call failed.</td>
+<td>
+<ul>
+<li>
+0: Method call succeeded.
+</li>
+<li>
+&lt;0: Method call failed.
+</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -1649,14 +1659,18 @@ After this method is called, the SDK returns the didAudioRouteChanged callback, 
 </thead>
 <tbody>
 <tr><td>enableSpeaker</td>
-<td>Yes: Switches to the speaker.</td>
-</tr>
-<tr><td>No: Switches to the headset.</td>
+<td><ul>
+<li>Yes: Switches to the speaker.</li>
+<li>No: Switches to the headset.</li>
+</ul>
+</td>
 </tr>
 <tr><td>Return Value</td>
-<td>0: Method call succeeded.</td>
-</tr>
-<tr><td>&lt;0: Method call failed.</td>
+<td><ul>
+<li>0: Success.</li>
+<li>&lt; 0: Failure.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2521,31 +2535,30 @@ This method mixes the specified local audio file with the audio stream from the 
 </thead>
 <tbody>
 <tr><td>filePath</td>
-<td>Name and path of the local audio file to be mixed.</td>
-</tr>
-<tr><td>Supported audio formats: mp3, aac, m4a, 3gp, and wav.</td>
+<td>Name and path of the local audio file to be mixed. <li>Supported audio formats: mp3, aac, m4a, 3gp, and wav.</li></td>
 </tr>
 <tr><td>loopback</td>
-<td>True:  Only the local user can hear the remix or the replaced audio stream.</td>
-</tr>
-<tr><td>False:  Both users can hear the remix or the replaced audio stream.</td>
+<td>
+<ul><li>True: Only the local user can hear the remix or the replaced audio stream.</li>
+<li>False: Both users can hear the remix or the replaced audio stream.</li></ul>
+</td>
 </tr>
 <tr><td>replace</td>
-<td>True:  The content of the local audio file replaces the audio stream from the microphone.</td>
-</tr>
-<tr><td>False:  Local audio file mixed with the audio stream from the microphone.</td>
+<td>
+<ul><li>True: The content of the local audio file replaces the audio stream from the microphone.</li>
+<li>False: Mix the local audio file with the audio stream from the microphone.</li>
 </tr>
 <tr><td>cycle</td>
-<td>Number of loop playbacks:</td>
-</tr>
-<tr><td>Positive integer: Number of loop playbacks</td>
-</tr>
-<tr><td>-1：Infinite loop</td>
+<td>Number of loop playbacks:
+<ul><li>Positive integer: Number of loop playbacks.</li>
+<li>-1：Infinite loop.</li></ul>
+</td>
 </tr>
 <tr><td>Return Value</td>
-<td>0: Method call succeeded.</td>
-</tr>
-<tr><td>&lt;0: Method call failed.</td>
+<td>
+<ul><li>0: Method call succeeded.</li>
+<li>&lt;0: Method call failed.</li></ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2668,12 +2681,14 @@ This method adjusts the volume during audio mixing. Call this API when you are i
 </thead>
 <tbody>
 <tr><td>volume</td>
-<td>Volume ranging from 0 to 100. By default, 100 is the original volume.</td>
+<td>The audio mixing volume. The value ranges between 0 and 100. By default, 100 is the original volume.</td>
 </tr>
 <tr><td>Return Value</td>
-<td>0: Method call succeeded.</td>
+<td>
+<ul><li>0: Method call succeeded.</li>
+<li>&lt;0: Method call failed.</li></ul>
+</td>
 </tr>
-<tr><td>&lt;0: Method call failed.</td>
 </tr>
 </tbody>
 </table>
@@ -2843,9 +2858,11 @@ This method adjusts the recording volume.
 <tr/>
 <tr/>
 <tr><td>Return Value</td>
-<td>0: Method call succeeded.</td>
-</tr>
-<tr><td>&lt;0: Method call failed.</td>
+<td><ul>
+<li>0: Success.</li>
+<li>&lt; 0: Failure.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -2884,9 +2901,11 @@ This method adjusts the playback volume.
 <tr/>
 <tr/>
 <tr><td>Return Value</td>
-<td>0: Method call succeeded.</td>
-</tr>
-<tr><td>&lt;0: Method call failed.</td>
+<td><ul>
+<li>0: Success.</li>
+<li>&lt; 0: Failure.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -3024,8 +3043,8 @@ This method creates a data stream. Each user can only have up to five data chann
 <tr/>
 <tr><td>Return Value</td>
 <td><ul>
-<li>&lt;0: Returns an error code when it fails to create the data stream. <sup>[5]</sup></li>
-<li>&gt;0: Returns the Stream ID when the data stream is created.</li>
+<li>&lt; 0: Returns an error code when it fails to create the data stream. <sup>[5]</sup></li>
+<li>&gt; 0: Returns the Stream ID when the data stream is created.</li>
 </ul>
 </td>
 </tr>
@@ -3099,9 +3118,12 @@ This method launches an audio call test to determine whether the audio devices (
 </tr>
 <tr><td>Return Value</td>
 <td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-<li>ERR_REFUSED (-5): Failed to launch the echo test, for example, initialization failed.</li>
+<li>0: Success.</li>
+<li>&lt; 0: Failure:
+	<ul>
+		<li>ERR_REFUSED (-5): Failed to launch the echo test, for example, initialization failed.</li>
+	</ul>
+	</li>
 </ul>
 </td>
 </tr>
@@ -3133,9 +3155,12 @@ This method stops an audio call test.
 <tbody>
 <tr><td>Return Value</td>
 <td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-<li>ERR_REFUSED(-5): Failed to stop the echo test. It could be that the echo test is not running.</li>
+<li>0: Success.</li>
+<li>&lt; 0: Failure:
+	<ul>
+		<li>ERR_REFUSED(-5): Fails to stop the echo test. The echo test may not be running.</li>
+	</ul>
+	</li>
 </ul>
 </td>
 </tr>
@@ -3276,18 +3301,18 @@ This method lets the user rate the call. It is usually called after the call end
 <td>Rating for the call between 1 (lowest score) to 10 (highest score).</td>
 </tr>
 <tr><td>description</td>
-<td>A given description for the call with a length less than 800 bytes.</td>
-</tr>
-<tr><td>This parameter is optional.</td>
+<td>(Optional) A description of the call with a length less of than 800 bytes.</td>
 </tr>
 <tr><td>Return Value</td>
-<td>0: Method call succeeded.</td>
-</tr>
-<tr><td>&lt;0: Method call failed.</td>
-</tr>
-<tr><td>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</td>
-</tr>
-<tr><td>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</td>
+<td>
+<ul><li>0: Succeess.</li>
+<li>&lt; 0: Failure.</li>
+<ul>
+<li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid. For example, <code>callId</code> is invalid.</li>
+<li>ERR_NOT_READY (-3): The SDK status is incorrect. For example, initialization failed.</li>
+</ul>	
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -3318,18 +3343,17 @@ This method allows the user to complain about the call quality. It is usually ca
 <td>Call ID retrieved from the getCallId method.</td>
 </tr>
 <tr><td>description</td>
-<td>A given description of the call with a length less than 800 bytes.</td>
-</tr>
-<tr><td>This parameter is optional.</td>
+<td>(Optional) A description of the call with a length of less than 800 bytes.</td>
 </tr>
 <tr><td>Return Value</td>
-<td>0: Method call succeeded.</td>
-</tr>
-<tr><td>&lt;0: Method call failed.</td>
-</tr>
-<tr><td>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</td>
-</tr>
-<tr><td>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</td>
+<td>
+<ul>
+<li>0: Succeess.</li>
+<li>&lt; 0: Failure.</li>
+<ul><li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid. For example, <code>callId</code> is invalid.</li>
+<li>ERR_NOT_READY (-3): The SDK status is incorrect. For example, initialization failed.</</li></ul>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -3368,7 +3392,7 @@ The application should retrieve a new key and then call this method to renew it.
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
+<li>&lt; 0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -3403,7 +3427,7 @@ This method specifies an SDK output log file. The log file records all the log d
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
+<li>&lt; 0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -3451,7 +3475,7 @@ For example, if you set the log level as *Warning*, then you can see logs in lev
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
+<li>&lt; 0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -3940,9 +3964,12 @@ Same as userMuteAudioBlock. This callback indicates that some other user has mut
 <td>User ID.</td>
 </tr>
 <tr><td>muted</td>
-<td>Yes: User has muted his/her audio.</td>
-</tr>
-<tr><td>No: User has unmuted his/her audio.</td>
+<td>
+<ul>
+<li>Yes: The remote user's audio is muted.</li>
+<li>No: The remote user's audio is unmuted.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4268,38 +4295,6 @@ Same as `firstRemoteVideoFrameBlock`. Indicates that the first remote video fram
 </tbody>
 </table>
 
-
-#### Other User Muted Audio Callback (didAudioMuted)
-
-```
-- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didAudioMuted:(BOOL)muted byUid:(NSUInteger)uid;
-```
-
-Same as userMuteAudioBlock. This callback indicates that some other user has muted/unmuted his/her audio streams.
-
-> Currently, this callback returns invalid when the number of broadcasters in a channel exceeds 20, which will be improved in the future.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>uid</td>
-<td>User ID.</td>
-</tr>
-<tr><td>muted</td>
-<td>Yes: User has muted his/her audio.</td>
-</tr>
-<tr><td>No: User has unmuted his/her audio.</td>
-</tr>
-</tbody>
-</table>
 
 
 #### Other User Paused/Resumed Video Callback (didVideoMuted)
@@ -4807,9 +4802,7 @@ This callback method notifies the application the broadcaster has joined the cha
 </thead>
 <tbody>
 <tr><td>uid</td>
-<td>User ID.</td>
-</tr>
-<tr><td>If the uid is specified in the joinChannelByToken method, returns the specified ID; if not, returns an ID that is automatically allocated by the Agora server.</td>
+<td>User ID. If the uid is specified in the joinChannelByToken method, returns the specified ID; if not, returns an ID that is automatically allocated by the Agora server.</td>
 </tr>
 <tr><td>elapsed</td>
 <td>Time elapsed (ms) from calling joinChannelByToken until this callback is triggered.</td>
@@ -5012,9 +5005,11 @@ This callback indicates who is talking and the speaker’s volume. By default it
 <tr><td>speakers</td>
 <td>The speakers (array). Each speaker ():</td>
 </tr>
-<tr><td>uid: User ID of the speaker.</td>
+<tr><td>uid</td>
+<td>User ID of the speaker</td>
 </tr>
-<tr><td>volume：Volume of the speaker, between 0 (lowest volume) to 255 (highest volume).</td>
+<tr><td>volume</td>
+<td>Volume of the speaker, between 0 (lowest volume) to 255 (highest volume).</td>
 </tr>
 <tr><td>totalVolume</td>
 <td>The total volume after audio mixing between 0 (lowest volume) to 255 (highest volume).</td>
@@ -5155,9 +5150,9 @@ This callback indicates that a user has muted/unmuted his/her audio stream.
 <td>User ID.</td>
 </tr>
 <tr><td>muted</td>
-<td>Yes: Muted audio.</td>
-</tr>
-<tr><td>No: Unmuted audio.</td>
+<td><li>Yes: Muted audio.</li>
+<li>No: Unmuted audio.</li></ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -5187,9 +5182,9 @@ This callback indicates that a user has paused/resumed his/her video stream.
 <td>User ID</td>
 </tr>
 <tr><td>muted</td>
-<td>Yes: User has paused his/her video.</td>
-</tr>
-<tr><td>No: User has resumed his/her video.</td>
+<td><ul><li>Yes: User has paused his/her video.</li>
+<li>No: User has resumed his/her video.</li></ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -5339,21 +5334,16 @@ This callback is triggered once every two seconds during a call to report on the
 </thead>
 <tbody>
 <tr><td>quality</td>
-<td>Rating of the network quality:</td>
-</tr>
-<tr><td>AgoraRtc_Quality_Unknown = 0</td>
-</tr>
-<tr><td>AgoraRtc_Quality_Excellent = 1</td>
-</tr>
-<tr><td>AgoraRtc_Quality_Good = 2</td>
-</tr>
-<tr><td>AgoraRtc_Quality_Poor = 3</td>
-</tr>
-<tr><td>AgoraRtc_Quality_Bad = 4</td>
-</tr>
-<tr><td>AgoraRtc_Quality_VBad = 5</td>
-</tr>
-<tr><td>AgoraRtc_Quality_Down = 6</td>
+<td>Rating of the network quality:
+<ul>
+<li>AgoraRtc_Quality_Unknown = 0</li>
+<li>AgoraRtc_Quality_Excellent = 1</li>
+<li>AgoraRtc_Quality_Good = 2</li>
+<li>AgoraRtc_Quality_Poor = 3</li>
+<li>AgoraRtc_Quality_Bad = 4</li>
+<li>AgoraRtc_Quality_VBad = 5</li>
+<li>AgoraRtc_Quality_Down = 6</li>
+</ul></td>
 </tr>
 </tbody>
 </table>
@@ -5446,7 +5436,7 @@ struct RtcEngineContext
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt; 0: Method call failed.</li>
-<li>ERR_INVALID_VENDOR_KEY(-101): The entered App ID is invalid.</li>
+<ul><li>ERR_INVALID_VENDOR_KEY(-101): The entered App ID is invalid.</li></ul>
 </ul>
 </td>
 </tr>
@@ -7664,7 +7654,7 @@ This method launches an audio call test to determine whether the audio devices (
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
-<li>ERR_REFUSED (-5): Failed to launch the echo test, for example, initialization failed.</li>
+<ul><li>ERR_REFUSED (-5): Failed to launch the echo test, for example, initialization failed.</li></ul>
 </ul>
 </td>
 </tr>
@@ -7698,7 +7688,7 @@ This method stops an audio call test.
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
-<li>ERR_REFUSED(-5): Failed to stop the echo test. It could be that the echo test is not running.</li>
+<ul><li>ERR_REFUSED(-5): Failed to stop the echo test. It could be that the echo test is not running.</li></ul>
 </ul>
 </td>
 </tr>
@@ -7856,8 +7846,8 @@ This method lets the user rate the call. It is usually called after the call end
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
-<li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</li>
-<li>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</li>
+<ul><li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</li>
+<li>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</li></ul>
 </ul>
 </td>
 </tr>
@@ -7901,8 +7891,8 @@ This method allows the user to complain about the call quality. It is usually ca
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
-<li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</li>
-<li>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</li>
+<ul><li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</li>
+<li>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</li></ul>
 </ul>
 </td>
 </tr>
