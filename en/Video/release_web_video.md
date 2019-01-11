@@ -69,7 +69,7 @@ See the table below for the browser support of Agora Web SDK:
   </tr>
 </table>
 
-> Agora Web SDK 2.5 also supports Chrome 49 on Windows XP.
+> Agora Web SDK 2.5 or later also supports Chrome 49 on Windows XP.
 
 > To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
 

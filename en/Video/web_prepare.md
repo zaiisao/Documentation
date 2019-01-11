@@ -64,7 +64,7 @@ This page contains information on how to prepare the development environment bef
   </tr>
 </table>
 
-> Agora Web SDK 2.5 also supports Chrome 49 on Windows XP.
+> Agora Web SDK 2.5 or later also supports Chrome 49 on Windows XP.
 
 2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 3. Understand the limitations in [Known Issues](../../en/Video/release_web_video.md) and [FAQ](../../en/Video/websdk_related_faq.md).
