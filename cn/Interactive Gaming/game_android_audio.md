@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Java
-updatedAt: Fri Jan 11 2019 05:31:13 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 05:31:19 GMT+0000 (UTC)
 ---
 # 游戏 API
 游戏 API 由 **Java 接口** 和 **C++ 接口** 部分组成，提供游戏 SDK 在 Android 平台上的主要方法和回调。
@@ -4789,8 +4789,65 @@ int startAudioMixing(const char* filePath, bool loopback, bool replace, int cycl
 
 指定本地音频文件来和麦克风采集的音频流进行混音和替换(用音频文件替换麦克风采集的音频流)， 可以通过参数选择是否让对方听到本地播放的音频和指定循环播放的次数。
 
-
 > 请在频道内调用该方法，如果在频道外调用该方法可能会出现问题。
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>filePath</td>
+<td><p>指定需要混音的本地音频文件名和文件路径名:</p>
+<ul>
+<li>如果用户提供的目录以 /assets/ 开头，则去 assets 里面查找该文件</li>
+<li>如果用户提供的目录不是以 /assets/ 开头，一律认为是在绝对路径里查找该文件</li>
+</ul>
+<p>支持以下音频格式: mp3，aac，m4a, 3gp, wav, flac</p>
+</td>
+</tr>
+<tr/>
+<tr/>
+<tr/>
+<tr><td>loopback</td>
+<td><ul>
+<li>true: 只有本地可以听到混音或替换后的音频流</li>
+<li>false: 本地和对方都可以听到混音或替换后的音频流</li>
+</ul>
+</td>
+</tr>
+<tr/>
+<tr><td>replace</td>
+<td><ul>
+<li>true: 音频文件内容将会替换本地录音的音频流</li>
+<li>false: 音频文件内容将会和麦克风采集的音频流进行混音</li>
+</ul>
+</td>
+</tr>
+<tr/>
+<tr><td>cycle</td>
+<td><p>指定音频文件循环播放的次数:</p>
+<ul>
+<li>正整数: 循环的次数</li>
+<li>-1：无限循环</li>
+</ul>
+</td>
+</tr>
+<tr/>
+<tr/>
+<tr><td>返回值</td>
+<td><ul>
+<li>0：方法调用成功</li>
+<li>&lt;0: 方法调用失败</li>
+</ul>
+</td>
+</tr>
+<tr/>
+</tbody>
+</table>
 
 #### 停止播放伴奏 (stopAudioMixing)
 
