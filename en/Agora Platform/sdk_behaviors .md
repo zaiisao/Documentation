@@ -3,7 +3,7 @@
 title: SDK Behavior when a User Drops Offline or a Process Gets Kill
 description: 
 platform: All Platforms
-updatedAt: Fri Jan 11 2019 08:37:50 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 08:38:17 GMT+0000 (UTC)
 ---
 # SDK Behavior when a User Drops Offline or a Process Gets Kill
 ### Does the Agora SDK reconnect when a user drops offline or a process gets killed?
@@ -17,7 +17,7 @@ User A and user B are in the same channel and user A loses network connection:
     -   iOS or macOS: User A receives the `rtcEngineConnectionDidInterrupted` callback. 
     -   The Web: User A does not receive any callback. 
 2.  After being disconnected, user A tries to reconnect to other servers until connection. 
- - If User A does not reconnect to a server within 10 seconds (you can set the timeout value. For more information, contact [support@agora.io](mailto:support@agora.io)): 
+ - If User A does not reconnect to a server within 10 seconds: 
         -   Android, Windows, or Linux: User A receives the `onConnectionLost` callback. 
         -   iOS or macOS: User A receives the `rtcEngineConnectionDidLost` callback. 
         -   The Web: User A does not receive any callback. 
@@ -55,7 +55,7 @@ When the process of user A gets killed:
     -   The Web: User B receives the `client.on('peer-leave')` callback. 
 
 -   If user A is in Android, Windows, or Linux and user B uses the Native SDK:
-    -   If user A does not restart the application and rejoin the original channel within 20 seconds (you can set the timeout value. For more information, contact [support@agora.io](mailto:support@agora.io)), user B receives a callback:
+    -   If user A does not restart the application and rejoin the original channel within 20 seconds, user B receives a callback:
         -   Android, Windows, or Linux: User B receives the `onUserOffline` callback. 
         -   iOS or macOS: User B receives the ` didOfflineOfUid` callback. 
     -   If user A restarts the application and rejoins the original channel within 20 seconds, user B does not receive any callback function. 
