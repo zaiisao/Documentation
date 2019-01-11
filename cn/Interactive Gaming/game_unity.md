@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Fri Jan 11 2019 05:45:19 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 05:45:28 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -161,7 +161,7 @@ public int JoinChannel (string token, string channelName, string optionalInfo, u
 ```
 
 该方法让用户加入通话频道，在同一个频道内的用户可以互相通话，多个用户加入同一个频道，可以群聊。 使用不同 App ID 的应用程序是不能互通的。如果已在通话中，用户必须调用 `leaveChannel` 退出当前通话，才能进入下一个频道。
- 
+
 > 同一个频道里不能出现两个相同的 UID。如果你的 App 支持多设备同时登录，即同一个用户账号可以在不同的设备上同时登录 (例如微信支持在 PC 端和移动端同时登录)，请保证传入的 UID 不相同。 例如你之前都是用同一个用户标识作为 UID, 建议从现在开始加上设备 ID, 以保证传入的 UID 不相同 。如果你的 App 不支持多设备同时登录，例如在电脑上登录时，手机上会自动退出，这种情况下就不需要在 UID 上添加设备 ID。
 
 <table>
@@ -187,7 +187,7 @@ public int JoinChannel (string token, string channelName, string optionalInfo, u
 <li>26 个大写英文字母 A-Z</li>
 <li>10 个数字 0-9</li>
 <li>空格</li>
-<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","<li>
+<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","</li>
 </ul></td>
 </tr>
 <tr><td><code>optionalInfo</code></td>
@@ -211,6 +211,7 @@ public int JoinChannel (string token, string channelName, string optionalInfo, u
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -384,18 +385,16 @@ public int SetEnableSpeakerphone (bool speakerphone)
 </tr>
 <tr><td><code>enabled</code></td>
 <td><p>是否将语音路由设置为扬声器(外放)：</p>
-<div><ul>
-<li><p>True:</p>
-<div><ul>
+<ul>
+<li><p>True:
+<ul>
 <li>如果用户已在频道内，调用该 API 后，会切换到从扬声器(外放)出声</li>
 <li>如果用户尚未加入频道，调用该API后，在加入频道时会默认从扬声器(外放)出声</li>
-</ul>
-</div>
+</ul></p>
 </li>
-<li><p>False: 语音会根据语音路由的默认值出声，详见 <code>setDefaultAudioRouteToSpeakerPhone</code></p>
-</li>
+<li><p>False: 语音会根据语音路由的默认值出声，详见 <code>setDefaultAudioRouteToSpeakerPhone</code>
+</li></p>
 </ul>
-</div>
 </td>
 </tr>
 <tr><td>返回值</td>
@@ -407,6 +406,7 @@ public int SetEnableSpeakerphone (bool speakerphone)
 </tr>
 </tbody>
 </table>
+
 
 > 使用该方法后，插上耳机或连接蓝牙等动作不影响语音路由。
 
@@ -1567,7 +1567,7 @@ public int SetVideoProfile(int profile, bool swapWidthAndHeight)
 </tbody>
 </table>
 
- 
+
 > [1] 视频能否达到 1080P 的分辨率取决于设备的性能，在性能配备较低的设备上有可能无法实现。如果采用 1080P 分辨率而设备性能跟不上，则有可能出现帧率过低的情况。Agora.io 将继续在后续版本中为较低端设备进行视频优化。如设备有特别需求，请联系support@agora.io。
 
 #### 使用双流/单流模式 (EnableDualStreamMode)
