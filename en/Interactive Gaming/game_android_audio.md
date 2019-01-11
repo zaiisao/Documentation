@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Java
-updatedAt: Fri Jan 11 2019 04:02:22 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 04:03:12 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming API is composed of **Java Interface** and **C++ Interface**, both of which provide main methods and callback events of the SDK on the Android platform:
@@ -351,8 +351,10 @@ This method allows a user to join a channel. Users in the same channel can talk 
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid.</li>
 <li>ERR_NOT_READY (-3): Initialization failed.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -1665,7 +1667,9 @@ This method launches an audio call test to determine whether the audio devices (
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_REFUSED (-5): Failed to launch the echo test, for example, initialization failed.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -1699,7 +1703,9 @@ This method stops an audio call test.
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_REFUSED(-5): Failed to stop the echo test. It could be that the echo test is not running.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -1853,8 +1859,10 @@ This method lets the user rate the call. It is usually called after the call end
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</li>
 <li>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -1899,8 +1907,10 @@ This method allows the user to complain about the call quality. It is usually ca
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</li>
 <li>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -3356,7 +3366,9 @@ struct RtcEngineContext
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt; 0: Method call failed.</li>
+<ul>
 <li>ERR_INVALID_VENDOR_KEY(-101): The entered App ID is invalid.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -3638,8 +3650,10 @@ This method allows a user to join a channel. Users in the same channel can talk 
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid.</li>
 <li>ERR_NOT_READY (-3): Initialization failed.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -3680,7 +3694,9 @@ After joining a channel, the user must call the leaveChannel method to end the c
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_REFUSED (-5): Failed to leave the channel, reasons being that the user is not currently in a call or is in the process of leaving the channel.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -4491,7 +4507,9 @@ This method launches an audio call test to determine whether the audio devices (
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_REFUSED (-5): Failed to launch the echo test, for example, initialization failed.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -4525,7 +4543,9 @@ This method stops an audio call test.
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_REFUSED(-5): Failed to stop the echo test. It could be that the echo test is not running.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -4683,8 +4703,10 @@ This method lets the user rate the call. It is usually called after the call end
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</li>
 <li>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -4728,8 +4750,10 @@ This method allows the user to complain about the call quality. It is usually ca
 <td><ul>
 <li>0: Method call succeeded.</li>
 <li>&lt;0: Method call failed.</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2): The passed argument is invalid, for example, callId invalid.</li>
 <li>ERR_NOT_READY (-3): The SDK status is incorrect, for example, initialization failed.</li>
+</ul>
 </ul>
 </td>
 </tr>
