@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Fri Jan 11 2019 09:46:43 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 09:46:55 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -47,7 +47,7 @@ public static IRtcEngine GetEngine (string appId);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>appId</code></td>
-<td>App ID，详见 <a href="../../cn/Agora%20Platform/token.md"><span>获取 App ID</span></a></td>
+<td>App ID，详见<a href="../../cn/Agora%20Platform/token.md"><span>获取 App ID</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -100,7 +100,7 @@ public int SetChannelProfile(CHANNEL_PROFILE profile);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -118,7 +118,7 @@ public int SetClientRole(CLIENT_ROLE role);
 
 该方法用于加入频道前设置用户角色，同时允许用户在加入频道后切换角色。
 
-> 该方法仅适用于: 您已通过调用 `setChannelProfile` 将频道模式设置为指挥模式。
+> 该方法仅适用于: 您已通过调用 `SetChannelProfile` 将频道模式设置为指挥模式。
 
 <table>
 <colgroup>
@@ -144,7 +144,7 @@ public int SetClientRole(CLIENT_ROLE role);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -153,6 +153,7 @@ public int SetClientRole(CLIENT_ROLE role);
 </table>
 
 
+<a id = "joinChannel"></a>
 
 #### 加入频道 (JoinChannel)
 
@@ -176,7 +177,7 @@ public int JoinChannel (string token, string channelName, string optionalInfo, u
 <tr><td><code>token</code></td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Quickstart%20Guide/token.md"><span>密钥说明</span></a> 。</li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见<a href="../../cn/Quickstart%20Guide/token.md"><span>密钥说明</span></a> 。</li>
 </ul>
 </td>
 </tr>
@@ -187,14 +188,14 @@ public int JoinChannel (string token, string channelName, string optionalInfo, u
 <li>26 个大写英文字母 A-Z</li>
 <li>10 个数字 0-9</li>
 <li>空格</li>
-<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","<li>
+<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","</li>
 </ul></td>
 </tr>
 <tr><td><code>optionalInfo</code></td>
 <td>(非必选项) 开发者需加入的任何附加信息。一般可设置为空字符串，或频道相关信息。该信息不会传递给频道内的其他用户</td>
 </tr>
 <tr><td><code>optionalUid</code></td>
-<td><p>(非必选项) 用户ID，32位无符号整数。建议设置范围：1到(2^32-1)，并保证唯一性。如果不指定（即设为0），SDK 会自动分配一个，并在 <code>onJoinChannelSuccess</code> 回调方法中返回，App 层必须记住该返回值并维护，SDK不对该返回值进行维护</p>
+<td><p>(非必选项) 用户 ID，32位无符号整数。建议设置范围：1 到(2^32-1)，并保证唯一性。如果不指定（即设为0），SDK 会自动分配一个，并在 <code>onJoinChannelSuccess</code> 回调方法中返回，App 层必须记住该返回值并维护，SDK 不对该返回值进行维护</p>
 <p>uid 在 SDK 内部用 32 位无符号整数表示，由于 Java 不支持无符号整数，uid 被当成 32 位有符号整数处理，对于过大的整数，Java 会表示为负数，如有需要可以用(uid&amp;0xffffffffL)转换成 64 位整数</p>
 </td>
 </tr>
@@ -234,7 +235,7 @@ public int EnableAudio();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -263,7 +264,7 @@ public int DisableAudio();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -292,7 +293,7 @@ public int LeaveChannel();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -303,10 +304,10 @@ public int LeaveChannel();
 
 ### 设置语音路由
 
-#### 修改语音路由的默认值 SetDefaultAudioRouteToSpeakerPhone)
+#### 修改语音路由的默认值（setDefaultAudioRouteToSpeakerPhone）
 
-```
-public int setDefaultAudioRouteToSpeakerphone(bool speakerphone)
+```c#
+public int setDefaultAudioRouteToSpeakerphone(bool speakerphone);
 ```
 
 该方法将语音路由的默认值修改为 **扬声器 (外放)** / **听筒**。插上耳机或连接蓝牙的动作对语音路由影响的优先级高于该方法。
@@ -320,7 +321,7 @@ public int setDefaultAudioRouteToSpeakerphone(bool speakerphone)
 <tr><td><strong>名称</strong></td>
 <td><strong>描述</strong></td>
 </tr>
-<tr><td><code>defaultToSpeaker</code></td>
+<tr><td><code>speakerphone</code></td>
 <td><ul>
 <li>True: 将语音路由设置为扬声器(外放)</li>
 <li>False: 将语音路由设置为听筒</li>
@@ -330,14 +331,14 @@ public int setDefaultAudioRouteToSpeakerphone(bool speakerphone)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 
-> -   在Unity for iOS中，该方法只在纯音频模式下工作，在有视频的模式下不工作。
+> -   在 Unity for iOS 中，该方法只在纯音频模式下工作，在有视频的模式下不工作。
 > -   如果插上耳机或连接蓝牙，语音路由会发生相应改变。拔出耳机或断开蓝牙后，语音路由将恢复成默认值（自由说话模式下为外放）。
 
 
@@ -363,10 +364,10 @@ public int setDefaultAudioRouteToSpeakerphone(bool speakerphone)
 
 
 
-#### 将语音路由设置为扬声器外放 (setEnableSpeakerphone)
+#### 将语音路由设置为扬声器外放 (SetEnableSpeakerphone)
 
 ```
-public int SetEnableSpeakerphone (bool speakerphone)
+public int SetEnableSpeakerphone (bool speakerphone);
 ```
 
 该方法将语音路由设置为 **扬声器(外放)**。该方法对语音路由影响的优先级高于插上耳机或连接蓝牙的动作。
@@ -382,13 +383,13 @@ public int SetEnableSpeakerphone (bool speakerphone)
 <tr><td><strong>名称</strong></td>
 <td><strong>描述</strong></td>
 </tr>
-<tr><td><code>enabled</code></td>
+<tr><td><code>speakerphone</code></td>
 <td><p>是否将语音路由设置为扬声器(外放)：</p>
 <div><ul>
 <li><p>True:</p>
 <div><ul>
 <li>如果用户已在频道内，调用该 API 后，会切换到从扬声器(外放)出声</li>
-<li>如果用户尚未加入频道，调用该API后，在加入频道时会默认从扬声器(外放)出声</li>
+<li>如果用户尚未加入频道，调用该 API 后，在加入频道时会默认从扬声器(外放)出声</li>
 </ul>
 </div>
 </li>
@@ -401,7 +402,7 @@ public int SetEnableSpeakerphone (bool speakerphone)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt; 1: 方法调用不成功</li>
+<li>&lt; 1: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -413,7 +414,7 @@ public int SetEnableSpeakerphone (bool speakerphone)
 #### 是否将语音路由设置为扬声器外放 \(IsSpeakerphoneEnabled\)
 
 ```
-public bool IsSpeakerphoneEnabled()
+public bool IsSpeakerphoneEnabled();
 ```
 
 该方法检查是否将语音路由设置为扬声器外放。
@@ -432,7 +433,7 @@ public bool IsSpeakerphoneEnabled()
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -463,8 +464,8 @@ public int EnableAudioVolumeIndication (int interval, int smooth);
 <tr><td><code>interval</code></td>
 <td><p>指定音量提示的时间间隔。</p>
 <div><ul>
-<li>&lt;=0: 禁用音量提示功能</li>
-<li>&gt;0: 提示间隔，单位为毫秒。建议设置到大于 200 毫秒</li>
+<li>&lt;= 0: 禁用音量提示功能</li>
+<li>&gt; 0: 提示间隔，单位为毫秒。建议设置到大于 200 毫秒</li>
 </ul>
 </div>
 </td>
@@ -475,7 +476,7 @@ public int EnableAudioVolumeIndication (int interval, int smooth);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -486,7 +487,7 @@ public int EnableAudioVolumeIndication (int interval, int smooth);
 
 ### 暂停发送音视频流
 
-
+<a name = "muteLocalAudioStream"></a>
 #### 将自己静音 (MuteLocalAudioStream)
 
 ```
@@ -505,7 +506,7 @@ public int MuteLocalAudioStream (bool mute);
 <tr><td><strong>名称</strong></td>
 <td><strong>描述</strong></td>
 </tr>
-<tr><td><code>muted</code></td>
+<tr><td><code>mute</code></td>
 <td><ul>
 <li>True: 麦克风静音</li>
 <li>False: 取消静音</li>
@@ -516,7 +517,7 @@ public int MuteLocalAudioStream (bool mute);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -554,7 +555,7 @@ public int MuteAllRemoteAudioStreams (bool mute);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -594,7 +595,46 @@ public int MuteRemoteAudioStream (uint uid, bool mute);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<a name = "setDefaultMuteAllRemoteVideoStreams"></a>
+
+#### 默认接收音频流 (setDefaultMuteAllRemoteAudioStreams)
+
+```c#
+public int setDefaultMuteAllRemoteAudioStreams(bool mute);
+```
+
+设置是否默认接收所有的远端音频流。
+
+> 该方法在加入频道前后都可调用。如果在加入频道后调用，会接收不到后面加入频道的用户的音频流。
+
+<table>
+<thead>
+<td>名称</td>
+<td>描述</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>mute</code></td>
+<td>
+是否默认不接收所有远端音频：
+<ul>
+<li>True：默认不接收所有远端音频流</li>
+<li>False：默认接收所有远端音频流（默认）</li>
+</ul>
+</td>
+</tr>
+<tr><td>返回值</td>
+<td>
+<ul>
+<li>0: 方法调用成功</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -602,11 +642,10 @@ public int MuteRemoteAudioStream (uint uid, bool mute);
 </table>
 
 
-
 #### 查询 SDK 版本号 (GetSdkVersion)
 
-```
-public static string GetSdkVersion ()
+```c#
+public static string GetSdkVersion ();
 ```
 
 该犯法返回 SDK 版本号的字符串 (char 格式)。
@@ -614,7 +653,7 @@ public static string GetSdkVersion ()
 #### 获取错误描述 (GetErrorDescription)
 
 ```
-public static string GetErrorDescription (int code)
+public static string GetErrorDescription (int code);
 ```
 
 SDK 运行时如果出错，该方法可以获取错误代码。
@@ -681,7 +720,7 @@ public int StartAudioMixing (string filePath, bool loopback, bool replace, int c
 <tr><td>返回值</td>
 <td><ul>
 <li>0：方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -711,7 +750,7 @@ public abstract int StopAudioMixing();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -740,7 +779,7 @@ public int PauseAudioMixing();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -769,7 +808,7 @@ public int ResumeAudioMixing();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -801,7 +840,7 @@ public int AdjustAudioMixingVolume (int volume);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -830,7 +869,7 @@ public int GetAudioMixingDuration();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -859,7 +898,7 @@ public int GetAudioMixingCurrentPosition();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -882,7 +921,7 @@ Agora SDK 支持通话过程中在客户端进行录音，且录音文件格式�
 -   .aac : 文件小，有一定的音质保真度损失
 
 
-确保应用程序里指定的目录存在且可写。该接口需在加入频道之后调用。如果调用 `leaveChannel` 时还在录音，录音会自动停止。
+确保应用程序里指定的目录存在且可写。该接口需在加入频道之后调用。如果调用 `LeaveChannel` 时还在录音，录音会自动停止。
 
 <table>
 <colgroup>
@@ -909,7 +948,7 @@ Agora SDK 支持通话过程中在客户端进行录音，且录音文件格式�
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -938,7 +977,7 @@ public int StopAudioRecording();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -977,7 +1016,7 @@ public int AdjustRecordingSignalVolume (int volume);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1016,7 +1055,7 @@ public int AdjustPlaybackSignalVolume (int volume);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1027,7 +1066,7 @@ public int AdjustPlaybackSignalVolume (int volume);
 #### 启动语音通话测试 (StartEchoTest)
 
 ```
-public int StartEchoTest()
+public int StartEchoTest();
 ```
 
 该方法启动语音通话测试，目的是测试系统的音频设备（耳麦、扬声器等）和网络连接是否正常。 在测试过程中，用户先说一段话，在 10 秒后，声音会回放出来。如果 10 秒后用户能正常听到自己刚才说的话，就表示系统音频设备和网络连接都是正常的。
@@ -1046,7 +1085,7 @@ public int StartEchoTest()
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 <ul>
 <li>ERR_REFUSED (-5): 不能启动测试，可能没有成功初始化</li>
 </ul>
@@ -1061,7 +1100,7 @@ public int StartEchoTest()
 #### 终止语音通话测试 (StopEchoTest)
 
 ```
-public int StopEchoTest()
+public int StopEchoTest();
 ```
 
 该方法停止语音通话测试。
@@ -1078,7 +1117,7 @@ public int StopEchoTest()
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 <ul>
 <li>ERR_REFUSED(-5): 停止 EchoTest 失败，可能是因为不在进行 EchoTest</li>
 </ul>
@@ -1093,7 +1132,7 @@ public int StopEchoTest()
 #### 获取通话 ID (GetCallId)
 
 ```
-public string GetCallId()
+public string GetCallId();
 ```
 
 <table>
@@ -1116,7 +1155,7 @@ public string GetCallId()
 #### 给通话评分 (Rate)
 
 ```
-public int Rate(string callId, int rating, string desc)
+public int Rate(string callId, int rating, string desc);
 ```
 
 该方法能够让用户为通话评分，一般在通话结束后调用。
@@ -1131,7 +1170,7 @@ public int Rate(string callId, int rating, string desc)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>callId</code></td>
-<td>从 getCallId() 获取的通话 ID</td>
+<td>从 <code>getCallId</code> 获取的通话 ID</td>
 </tr>
 <tr><td><code>rating</code></td>
 <td>给通话的评分，最低 1 分，最高 10 分。</td>
@@ -1142,7 +1181,7 @@ public int Rate(string callId, int rating, string desc)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 <ul>
 <li>ERR_INVALID_ARGUMENT (-2): 传递的参数无效</li>
 <li>ERR_NOT_READY (-3): 没有成功初始化</li>
@@ -1158,7 +1197,7 @@ public int Rate(string callId, int rating, string desc)
 #### 投诉通话质量 (Complain)
 
 ```
-public int Complain(string callId, string desc)
+public int Complain(string callId, string desc);
 ```
 
 该方法让用户就通话质量进行投诉。一般在通话结束后调用。
@@ -1173,7 +1212,7 @@ public int Complain(string callId, string desc)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>callId</code></td>
-<td>从 getCallId() 获取的通话 ID</td>
+<td>从 <code>getCallId</code> 获取的通话 ID</td>
 </tr>
 <tr><td><code>desc</code></td>
 <td>[非必选项]给通话的描述，可选，长度应小于 800 字节。</td>
@@ -1181,7 +1220,7 @@ public int Complain(string callId, string desc)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 <ul>
 <li>ERR_INVALID_ARGUMENT (-2): 传递的参数无效</li>
 <li>ERR_NOT_READY (-3): 没有成功初始化</li>
@@ -1197,7 +1236,7 @@ public int Complain(string callId, string desc)
 #### 暂停语音 (Pause)
 
 ```
-public void Pause ()
+public void Pause ();
 ```
 
 该方法暂停语音，例如: 当进入后台模式，你可以调用该 API 暂停语音。
@@ -1205,17 +1244,17 @@ public void Pause ()
 #### 恢复语音 (Resume)
 
 ```
-public void Resume ()
+public void Resume ();
 ```
 
 该方法恢复暂停的语音。
 
-> `Pause` 与 `Resume` 和 `EnableLocalAudio`方法耦合。例如,使用 EnableLocalAudio(false) 禁用本地音频采集时，调用 `Resume` 会开启本地音频，请开发者自行检查代码逻辑。
+> `Pause` 与 `Resume` 和 `EnableLocalAudio` 方法耦合。例如,使用 EnableLocalAudio(false) 禁用本地音频采集时，调用 `Resume` 会开启本地音频，请开发者自行检查代码逻辑。
 
 #### 销毁引擎实例 (Destroy)
 
 ```
-public static void Destroy()
+public static void Destroy();
 ```
 
 该方法释放 Agora SDK 使用的所有资源。有些应用程序只在用户需要时才使用音视频功能，不需要时则将资源释放出来用于其他操作，该方法对这类程序可能比较有用。
@@ -1244,7 +1283,7 @@ public int EnableVideo ();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1256,7 +1295,7 @@ public int EnableVideo ();
 #### 关闭视频模式 (DisableVideo)
 
 ```
-public int DisableVideo ()
+public int DisableVideo ();
 ```
 
 该方法用于关闭视频。可以在加入频道前或者通话中调用，在加入频道前调用，则自动开启纯音频模式，在通话中调用则由视频模式切换为纯音频模式。调用 `EnableVideo` 方法可开启视频模式。
@@ -1273,7 +1312,7 @@ public int DisableVideo ()
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1286,7 +1325,7 @@ public int DisableVideo ()
 #### 设置视频属性 (SetVideoProfile)
 
 ```
-public int SetVideoProfile(int profile, bool swapWidthAndHeight)
+public int SetVideoProfile(int profile, bool swapWidthAndHeight);
 ```
 
 该方法设置视频编码属性（Profile）。每个属性对应一套视频参数，如分辨率、帧率、码率等。 当设备的摄像头不支持指定的分辨率时，SDK 会自动选择一个合适的摄像头分辨率，但是编码分辨率仍然用 `SetVideoProfile` 指定的。
@@ -1312,15 +1351,15 @@ public int SetVideoProfile(int profile, bool swapWidthAndHeight)
 <tr><td><code>swapWidthAndHeight</code></td>
 <td><p>是否交换宽和高:</p>
 <ul>
-<li>true:交换宽和高</li>
-<li>false：不交换宽和高(默认)</li>
+<li>True:交换宽和高</li>
+<li>False：不交换宽和高(默认)</li>
 </ul>
 </td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1486,43 +1525,43 @@ public int SetVideoProfile(int profile, bool swapWidthAndHeight)
 </tr>
 <tr><td>720P</td>
 <td>50</td>
-<td>1280x720 *</td>
+<td>1280x720</td>
 <td>15</td>
 <td>1130</td>
 </tr>
 <tr><td>720P_3</td>
 <td>52</td>
-<td>1280x720 *</td>
+<td>1280x720</td>
 <td>30</td>
 <td>1710</td>
 </tr>
 <tr><td>720P_5</td>
 <td>54</td>
-<td>960x720 *</td>
+<td>960x720</td>
 <td>15</td>
 <td>910</td>
 </tr>
 <tr><td>720P_6</td>
 <td>55</td>
-<td>960x720 *</td>
+<td>960x720</td>
 <td>30</td>
 <td>1380</td>
 </tr>
 <tr><td>1080P</td>
 <td>60</td>
-<td>1920x1080 * <sup>[1]</sup></td>
+<td>1920x1080 <sup>[1]</sup></td>
 <td>15</td>
 <td>2080</td>
 </tr>
 <tr><td>1080P_3</td>
 <td>62</td>
-<td>1920x1080 * <sup>[1]</sup></td>
+<td>1920x1080 <sup>[1]</sup></td>
 <td>30</td>
 <td>3150</td>
 </tr>
 <tr><td>1080P_5</td>
 <td>64</td>
-<td>1920x1080 * <sup>[1]</sup></td>
+<td>1920x1080 <sup>[1]</sup></td>
 <td>60</td>
 <td>4780</td>
 </tr>
@@ -1535,7 +1574,7 @@ public int SetVideoProfile(int profile, bool swapWidthAndHeight)
 #### 使用双流/单流模式 (EnableDualStreamMode)
 
 ```
-public int EnableDualStreamMode(bool enabled)
+public int EnableDualStreamMode(bool enabled);
 ```
 
 使用该方法设置单流（默认）或者双流直播模式，只有当你在调用 `setChannelProfile` 将频道设为指挥模式时，该方法才有效。
@@ -1552,15 +1591,15 @@ public int EnableDualStreamMode(bool enabled)
 <tr><td><code>enabled</code></td>
 <td><p>指定双流或者单流模式:</p>
 <ul>
-<li>true: 双流</li>
-<li>false: 单流</li>
+<li>True: 双流</li>
+<li>False: 单流</li>
 </ul>
 </td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1572,7 +1611,7 @@ public int EnableDualStreamMode(bool enabled)
 #### 设置视频大小流 (SetRemoteVideoStreamType)
 
 ```
-public int SetRemoteVideoStreamType(uint uid, int streamType)
+public int SetRemoteVideoStreamType(uint uid, int streamType);
 ```
 
 当远端用户发送了双流 (视频大流和小流)时，使用该方法本地用户可以选择接收远端用户的视频大流还是小流。 使用该方法可以根据视频窗口的大小动态调整对应视频流的大小，以节约带宽和计算资源。
@@ -1604,7 +1643,7 @@ Agora SDK 默认收到视频大流。如需使用视频小流，调用本方法�
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1652,7 +1691,7 @@ Agora SDK 默认收到视频大流。如需使用视频小流，调用本方法�
 #### 设置视频优化选项 (SetVideoQualityParameters)
 
 ```
-public int SetVideoQualityParameters(bool preferFrameRateOverImageQuality)
+public int SetVideoQualityParameters(bool preferFrameRateOverImageQuality);
 ```
 
 设置 SDK 输出的日志文件。SDK 运行时产生的所有日志将写入该文件。应用程序必须保证指定的目录存在而且可写。
@@ -1678,7 +1717,7 @@ public int SetVideoQualityParameters(bool preferFrameRateOverImageQuality)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1690,7 +1729,7 @@ public int SetVideoQualityParameters(bool preferFrameRateOverImageQuality)
 #### 禁用本地视频功能 (EnableLocalVideo)
 
 ```
-public int EnableLocalVideo (bool enabled)
+public int EnableLocalVideo (bool enabled);
 ```
 
 禁用/启用本地视频功能。该方法用于只看不发的视频场景。该方法不需要本地有摄像头。
@@ -1706,15 +1745,15 @@ public int EnableLocalVideo (bool enabled)
 </tr>
 <tr><td><code>enabled</code></td>
 <td><ul>
-<li>true: 启用本地视频（默认）</li>
-<li>false: 禁用本地视频</li>
+<li>True: 启用本地视频（默认）</li>
+<li>False: 禁用本地视频</li>
 </ul>
 </td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1726,7 +1765,7 @@ public int EnableLocalVideo (bool enabled)
 #### 开启视频预览 (StartPreview)
 
 ```
-public int StartPreview ()
+public int StartPreview ();
 ```
 
 使用该方法启动本地视频预览。
@@ -1743,7 +1782,7 @@ public int StartPreview ()
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1755,7 +1794,7 @@ public int StartPreview ()
 #### 停止视频预览 (StopPreview)
 
 ```
-public int StopPreview ()
+public int StopPreview ();
 ```
 
 使用该方法停止本地视频预览。
@@ -1772,7 +1811,7 @@ public int StopPreview ()
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1784,7 +1823,7 @@ public int StopPreview ()
 #### 切换前置/后置摄像头 (SwitchCamera)
 
 ```
-public int SwitchCamera()
+public int SwitchCamera();
 ```
 
 使用该方法切换前置/后置摄像头。
@@ -1794,10 +1833,10 @@ public int SwitchCamera()
 #### 直接发送图片给 App (EnableVideoObserver)
 
 ```
-public int EnableVideoObserver ()
+public int EnableVideoObserver ();
 ```
 
-该方法直接将视频图片发送给 app，而无需经过传统的视图渲染器。
+该方法直接将视频图片发送给 App，而无需经过传统的视图渲染器。
 
 <table>
 <colgroup>
@@ -1811,7 +1850,7 @@ public int EnableVideoObserver ()
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1823,10 +1862,10 @@ public int EnableVideoObserver ()
 #### 禁止直接发送图片给 App (DisableVideoObserver)
 
 ```
-public int DisableVideoObserver ()
+public int DisableVideoObserver ();
 ```
 
-该方法禁止直接将视频图片发送给 app。
+该方法禁止直接将视频图片发送给 App。
 
 <table>
 <colgroup>
@@ -1840,7 +1879,7 @@ public int DisableVideoObserver ()
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1852,7 +1891,7 @@ public int DisableVideoObserver ()
 #### 暂停发送本地视频流 (MuteLocalVideoStream)
 
 ```
-public int MuteLocalVideoStream(bool mute)
+public int MuteLocalVideoStream(bool mute);
 ```
 
 暂停/恢复发送本地视频流。该方法用于允许/禁止往网络发送本地视频流。该方法不影响本地视频流获取，没有禁用摄像头。
@@ -1877,7 +1916,7 @@ public int MuteLocalVideoStream(bool mute)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1889,7 +1928,7 @@ public int MuteLocalVideoStream(bool mute)
 #### 暂停播放所有远端视频流 (MuteAllRemoteVideoStreams)
 
 ```
-public int MuteAllRemoteVideoStreams(bool mute)
+public int MuteAllRemoteVideoStreams(bool mute);
 ```
 
 暂停/恢复所有人视频流。本方法用于允许/禁止播放所有人的视频流。
@@ -1914,7 +1953,7 @@ public int MuteAllRemoteVideoStreams(bool mute)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1926,7 +1965,7 @@ public int MuteAllRemoteVideoStreams(bool mute)
 #### 暂停指定远端视频流 (MuteRemoteVideoStream)
 
 ```
-public int MuteRemoteVideoStream(uint uid, bool mute)
+public int MuteRemoteVideoStream(uint uid, bool mute);
 ```
 
 允许/禁止接收指定的远端视频流。
@@ -1954,23 +1993,61 @@ public int MuteRemoteVideoStream(uint uid, bool mute)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 
+<a name = "setDefaultMuteAllRemoteVideoStreams"></a>
+
+#### 默认接收视频流 (setDefaultMuteAllRemoteVideoStreams)
+
+```c#
+public int setDefaultMuteAllRemoteVideoStreams(bool mute);
+```
+
+设置是否默认接收所有的远端视频流。 
+
+> 该方法在加入频道前后都可调用。如果在加入频道后调用，会接收不到后面加入频道的用户的视频流。
+
+<table>
+<thead>
+<td>名称</td>
+<td>描述</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>mute</code></td>
+<td>
+是否默认不接收所有远端视频：
+<ul>
+<li>True：默认不接收所有远端视频流</li>
+<li>False：默认接收所有远端视频流（默认）</li>
+</ul>
+</td>
+</tr>
+<tr><td>返回值</td>
+<td>
+<ul>
+<li>0: 方法调用成功</li>
+<li>&lt; 0: 方法调用失败</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 
 ### 加密
 
 #### 启用内置的加密功能 (SetEncryptionSecret)
 
 ```
-public int SetEncryptionSecret(string secret)
+public int SetEncryptionSecret(string secret);
 ```
 
-在加入频道之前，您的应用程序需调用 `setEncryptionSecret` 指定 secret 来启用内置的加密功能，否则该通话未加密。 同一频道内的所有用户应设置相同的 secret。 当用户离开频道时，该频道的 secret 会自动清除。如果未指定 secret 或将 secret 设置为空，则无法激活加密功能。
+在加入频道之前，您的应用程序需调用 `SetEncryptionSecret` 指定 secret 来启用内置的加密功能，否则该通话未加密。 同一频道内的所有用户应设置相同的 secret。 当用户离开频道时，该频道的 secret 会自动清除。如果未指定 secret 或将 secret 设置为空，则无法激活加密功能。
 
 <table>
 <colgroup>
@@ -1987,7 +2064,7 @@ public int SetEncryptionSecret(string secret)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1999,10 +2076,10 @@ public int SetEncryptionSecret(string secret)
 #### 设置内置的加密方案 (SetEncryptionMode)
 
 ```
-public int SetEncryptionMode(string encryptionMode)
+public int SetEncryptionMode(string encryptionMode);
 ```
 
-Agora SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。 同一频道内的所有用户必须设置相同的加密方式和 secret，才能进行通话。关于这几种加密方式的区别，请参考 AES 加密算法的相关资料。 调用本方法前，需调用 setEncryptionSecret\(\) 启用内置的加密密码。
+Agora SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如需使用其他加密方式，可以调用该 API 设置。 同一频道内的所有用户必须设置相同的加密方式和 secret，才能进行通话。关于这几种加密方式的区别，请参考 AES 加密算法的相关资料。 调用本方法前，需调用 `SetEncryptionSecret` 启用内置的加密密码。
 
 <table>
 <colgroup>
@@ -2027,7 +2104,7 @@ Agora SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方式。如
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2071,7 +2148,7 @@ public int SetLogFilter (LOG_FILTER filter);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2103,7 +2180,7 @@ public int SetLogFile (string filePath);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2155,7 +2232,7 @@ public override int RenewToken (string token);
 
 > 所有回调在主线程中返回。
 
-#### 加入频道回调 (OnJoinChannelSuccess)
+#### 加入频道回调 (JoinChannelSuccessHandler)
 
 ```
 public delegate void JoinChannelSuccessHandler (string channelName, uint uid, int elapsed);
@@ -2164,10 +2241,6 @@ public delegate void JoinChannelSuccessHandler (string channelName, uint uid, in
 该方法表示用户已成功加入指定频道。频道 ID 的分配是根据 `JoinChannel` API 中指定的频道名称。如果调用 `JoinChannel` 时并未指定用户 ID，服务器就会分配一个。
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr><td><strong>名称</strong></td>
 <td><strong>描述</strong></td>
@@ -2195,10 +2268,6 @@ public delegate void ReJoinChannelSuccessHandler (string channelName, uint uid, 
 有时候由于网络原因，客户端可能会和服务器失去连接，SDK 会进行自动重连，自动重连成功后触发此回调方法。
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr><td><strong>名称</strong></td>
 <td><strong>描述</strong></td>
@@ -2242,10 +2311,6 @@ public delegate void UserJoinedHandler (uint uid, int elapsed);
 提示有用户加入了频道。 如果该客户端加入频道时已经有人在频道中，SDK 也会向应用程序上报这些已在频道中的用户。
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr><td><strong>名称</strong></td>
 <td><strong>描述</strong></td>
@@ -2270,10 +2335,6 @@ public delegate void UserOfflineHandler (uint uid, USER_OFFLINE_REASON reason);
 提示有用户离开了频道（或掉线）。SDK 判断用户离开频道（或掉线）的依据是超时: 在一定时间内（15 秒）没有收到对方的任何数据包，判定为对方掉线。在网络较差的情况下，可能会有误报。建议可靠的掉线检测应该由信令来做。
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr><td><strong>名称</strong></td>
 <td><strong>描述</strong></td>
@@ -2376,6 +2437,55 @@ public delegate void VolumeIndicationHandler (AudioVolumeInfo[] speakers, int sp
 </tbody>
 </table>
 
+<a name ="onFirstRemoteAudioFrameHandler"></a>
+
+#### 接收到远端音频首帧回调 (OnFirstRemoteAudioFrameHandler)
+
+```c#
+public delegate void OnFirstRemoteAudioFrameHandler (uint userId, int elapsed);
+```
+
+接收到远端音频首帧时会触发该回调。
+
+<table>
+<thead>
+<td>名称</td>
+<td>描述</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>userId</code></td>
+<td>发送音频帧的远端用户的 ID</td>
+</tr>
+<tr>
+<td><code>elapsed</code></td>
+<td>从调用 <a href="#joinChannel">joinChannel</a> 方法直至该回调被触发的延迟（毫秒）</td>
+</tr>
+</tbody>
+</table>
+
+<a name ="onFirstLocalAudioFrameHandler"></a>
+
+#### 已发送本地音频首帧回调 (OnFirstLocalAudioFrameHandler)
+
+```c#
+public delegate void OnFirstLocalAudioFrameHandler (int elapsed);
+```
+
+已发送本地音频首帧时会触发该回调。
+
+<table>
+<thead>
+<td>名称</td>
+<td>描述</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>elapsed</code></td>
+<td>从调用 <a href="#joinChannel">joinChannel</a> 方法直至该回调被触发的延迟（毫秒）</td>
+</tr>
+</tbody>
+</table>
 
 
 #### 用户静音回调 (UserMutedHandler)
@@ -2490,13 +2600,46 @@ public delegate void AudioRouteChangedHandler (AUDIO_ROUTE route);
 
 SDK 会通过该回调通知 App 语音路由状态已发生变化。该回调返回当前的语音路由已切换至听筒，外放 (扬声器)，耳机或蓝牙。
 
+<a name = "onApiExecutedHandler"></a>
+
+#### 已执行 API 方法回调 (OnApiExecutedHandler)
+
+```c#
+public delegate void OnApiExecutedHandler (int err, string api, string result);
+```
+
+执行API方法时会触发该回调。
+
+<table>
+<thead>
+<td>名称</td>
+<td>描述</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>err</code></td>
+<td>错误码。如果方法调用失败，会返回<a href="https://docs.agora.io/cn/Interactive%20Gaming/the_error_game?platform=All%20Platforms#errorcode">错误代码</a>；如果返回 0，则表示方法调用成功</td>
+</tr>
+<tr>
+<td><code>api</code></td>
+<td>SDK 所调用的 API</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td>SDK 调用 API 的调用结果</td>
+</tr>
+</tbody>
+</table>
+
+
+
 #### Token 过期回调 (RequestTokenHandler)
 
 ```
 public delegate void RequestTokenHandler ();
 ```
 
-在调用 `joinChannel` 时如果指定了 Token，由于 Token 具有一定的时效，在通话过程中如果 Token 即将失效，SDK 会提前 30 秒触发该回调，提醒应用程序更新 Token。 当收到该回调时，用户需要重新在服务端生成新的 Token，然后调用 `renewToken` 将新生成的 Token 传给 SDK。
+在调用 `JoinChannel` 时如果指定了 Token，由于 Token 具有一定的时效，在通话过程中如果 Token 即将失效，SDK 会提前 30 秒触发该回调，提醒应用程序更新 Token。 当收到该回调时，用户需要重新在服务端生成新的 Token，然后调用 `RenewToken` 将新生成的 Token 传给 SDK。
 
 #### 接收到远程视频并完成解码回调 (OnFirstRemoteVideoDecodedHandler)
 
@@ -2568,7 +2711,7 @@ public delegate void OnVideoSizeChangedHandler (uint uid, int width, int height,
 #### 上下麦回调 (onClientRoleChangedHandler)
 
 ```
-public delegate void onClientRoleChangedHandler(int oldRole, int newRole)
+public delegate void onClientRoleChangedHandler(int oldRole, int newRole);
 ```
 
 直播场景下，当用户上下麦时会触发此回调，即主播切换为观众时，或观众切换为主播时。
@@ -2596,7 +2739,7 @@ public delegate void onClientRoleChangedHandler(int oldRole, int newRole)
 #### 远端用户暂停发送视频流回调 (OnUserMuteVideoHandler)
 
 ```
-public delegate void OnUserMuteVideoHandler (uint uid, bool muted)
+public delegate void OnUserMuteVideoHandler (uint uid, bool muted);
 ```
 
 远端用户暂停/恢复发送视频流时会触发此回调。
@@ -2656,7 +2799,7 @@ int SetVoiceOnlyMode(bool enable);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2730,7 +2873,7 @@ int SetLocalVoicePitch (double pitch);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2750,7 +2893,7 @@ double GetEffectsVolume();
 ### 设置音效音量 (SetEffectsVolume)
 
 ```
-int SetEffectsVolume(double volume)
+int SetEffectsVolume(double volume);
 ```
 
 该方法设置音效的音量。
@@ -2770,7 +2913,7 @@ int SetEffectsVolume(double volume)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2842,7 +2985,7 @@ int PlayEffect (int soundId,
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2850,7 +2993,7 @@ int PlayEffect (int soundId,
 </tbody>
 </table>
 
-> [2] 如果你已通过 `preloadEffect` 将音效加载至内存，确保这里设置的 *soundId* 与 `preloadEffect` 设置的 *soundId* 相同。
+> [2] 如果你已通过 `PreloadEffect` 将音效加载至内存，确保这里设置的 `soundId` 与 `PreloadEffect` 设置的 `soundId` 相同。
 
 ### 停止播放指定音效 (StopEffect)
 
@@ -2875,7 +3018,7 @@ int StopEffect(int soundId);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2919,7 +3062,7 @@ int PreloadEffect(int soundId, String filePath);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2952,7 +3095,7 @@ int UnloadEffect(int soundId);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -2965,7 +3108,7 @@ int UnloadEffect(int soundId);
 ### 暂停音效播放 (PauseEffect)
 
 ```
-virtual int PauseEffect(int soundId)
+virtual int PauseEffect(int soundId);
 ```
 
 该方法暂停播放指定音效。
@@ -2985,7 +3128,7 @@ virtual int PauseEffect(int soundId)
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -3015,7 +3158,7 @@ int PauseAllEffects();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -3048,7 +3191,7 @@ int ResumeEffect(int soundId);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -3081,7 +3224,7 @@ int ResumeAllEffects();
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt;0: 方法调用失败</li>
+<li>&lt; 0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -3091,7 +3234,7 @@ int ResumeAllEffects();
 
 
 
-## 错误代码和警告代码 - Interactive Gaming SDK
+## 错误代码和警告代码
 
 详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_game.md)。
 
