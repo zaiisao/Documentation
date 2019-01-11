@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Java
-updatedAt: Tue Jan 08 2019 03:49:43 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 03:51:32 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming API is composed of **Java Interface** and **C++ Interface**, both of which provide main methods and callback events of the SDK on the Android platform:
