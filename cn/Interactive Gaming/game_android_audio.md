@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Java
-updatedAt: Fri Jan 11 2019 03:46:10 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 03:47:03 GMT+0000 (UTC)
 ---
 # 游戏 API
 游戏 API 由 **Java 接口** 和 **C++ 接口** 部分组成，提供游戏 SDK 在 Android 平台上的主要方法和回调。
@@ -301,7 +301,7 @@ public abstract int joinChannel(String token,
 <tr><td>token</td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.html.md"><span>密钥说明</span></a> 。</li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> 。</li>
 </ul>
 </td>
 </tr>
@@ -319,14 +319,18 @@ public abstract int joinChannel(String token,
 <tr><td>返回值</td>
 <td><ul>
 <li>0：方法调用成功</li>
-<li>&lt; 0：方法调用失败</li>
+<li>&lt; 0：方法调用失败
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2)：传递的参数无效</li>
 <li>ERR_NOT_READY (-3)：没有成功初始化</li>
+</ul>
+</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -1369,17 +1373,10 @@ public abstract int setEncryptionSecret(String secret);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-</ul>
-</td>
-</tr>
-<tr><td><ul>
 <li>&lt;0: 方法调用失败</li>
-</ul>
-</td>
-</tr>
+</ul></tr>
 </tbody>
 </table>
-
 
 
 #### 设置内置的加密方案 (setEncryptionMode)
@@ -1503,22 +1500,20 @@ public abstract int sendStreamMessage(int streamId, byte[] message);
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 发送成功</li>
-<li><dl>
-<dt>&lt; 0: 发送失败，返回错误码：</dt>
-<dd><ul>
+<li>&lt; 0: 发送失败，返回错误码：
+<ul>
 <li>ERR_SIZE_TOO_LARGE (114)</li>
 <li>ERR_TOO_OFTEN (12)</li>
 <li>ERR_BITRATE_LIMIT (115)</li>
 <li>ERR_INVALID_ARGUMENT (2)</li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 #### 开始语音通话测试 (startEchoTest)
 
@@ -1531,7 +1526,6 @@ public abstract int startEchoTest();
 
 > -   调用 startEchoTest 后必须调用 stopEchoTest 以结束测试，否则不能进行下一次回声测试，或者调用 `joinChannel()` 进行通话。
 > -   直播模式下，只有主播用户才能调用。如果用户由通信模式切换到直播模式，请务必调用 `setClientRole()` 方法将用户的橘色设置为。
-
 
 <table>
 <colgroup>
@@ -1546,7 +1540,9 @@ public abstract int startEchoTest();
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_REFUSED (-5)：无法启动测试，可能没有成功初始化</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -1554,6 +1550,7 @@ public abstract int startEchoTest();
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -1578,7 +1575,9 @@ public abstract int stopEchoTest();
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_REFUSED (-5)：不能启动测试，可能语音通话测试没有成功启动</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -1586,6 +1585,7 @@ public abstract int stopEchoTest();
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -1710,8 +1710,10 @@ public abstract int rate(String callId,
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT(-2): 传入的参数无效，例如 callId 无效</li>
-<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>
+<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>     
+</ul>
 </ul>
 </td>
 </tr>
@@ -1720,6 +1722,7 @@ public abstract int rate(String callId,
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -1751,8 +1754,10 @@ public abstract int complain(String callId,
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT(-2): 传入的参数无效，例如 callId 无效</li>
-<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>
+<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>     
+</ul>
 </ul>
 </td>
 </tr>
@@ -1761,6 +1766,7 @@ public abstract int complain(String callId,
 <tr/>
 </tbody>
 </table>
+
 
 
 #### 更新 Token (renewToken)
@@ -3141,7 +3147,7 @@ struct RtcEngineContext
 <td><strong>描述</strong></td>
 </tr>
 <tr><td>appId</td>
-<td>Agora 为应用程序开发者签发的厂商秘钥。详见 <a href="../../cn/Agora%20Platform/token.html.md"><span>获取 App ID</span></a></td>
+<td>Agora 为应用程序开发者签发的厂商秘钥。详见 <a href="../../cn/Agora%20Platform/token.md"><span>获取 App ID</span></a></td>
 </tr>
 <tr><td>eventHandler</td>
 <td>IRtcEngineEventHandler 是一个提供了缺省实现的抽象类，SDK 通过该抽象类向应用程序报告 SDK 运行时的各种事件</td>
@@ -3150,12 +3156,15 @@ struct RtcEngineContext
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_VENDOR_KEY(-101): 传入的 App ID 无效</li>
+</ul>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 #### 设置频道属性 (setChannelProfile)
@@ -3375,13 +3384,16 @@ uid 在 SDK 内部用 32 位无符号整数表示，由于 Java 不支持无符�
 <td><ul>
 <li>0：方法调用成功</li>
 <li>&lt; 0：方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2)：传递的参数无效</li>
-<li>ERR_NOT_READY (-3)：没有成功初始化</li>
+<li>ERR_NOT_READY (-3)：没有成功初始化</li>      
+</ul>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -3412,12 +3424,15 @@ leaveChannel 是异步操作，调用返回时并没有真正退出频道。在�
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
-<li>ERR_REFUSED (-5): 离开频道失败，当前状态不在通话中，或者正在离开频道</li>
+<ul>
+<li>ERR_REFUSED (-5): 离开频道失败，当前状态不在通话中，或者正在离开频道</li> 
+</ul>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 #### 设置本地语音音调 (setLocalVoicePitch)
@@ -4145,16 +4160,13 @@ virtual int sendStreamMessage(int streamId, const char* data, size_t length) = 0
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 发送成功</li>
-<li><dl>
-<dt>&lt; 0: 发送失败，返回错误码：</dt>
-<dd><ul>
+<li>&lt; 0: 发送失败，返回错误码：
+<ul>
 <li>ERR_SIZE_TOO_LARGE (114)</li>
 <li>ERR_TOO_OFTEN (12)</li>
 <li>ERR_BITRATE_LIMIT (115)</li>
 <li>ERR_INVALID_ARGUMENT (2)</li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
 </td>
@@ -4172,8 +4184,7 @@ virtual int startEchoTest() = 0;
 
 
 > -   调用 startEchoTest 后必须调用 stopEchoTest 以结束测试，否则不能进行下一次回声测试，或者调用 `joinChannel()` 进行通话。
->-   直播模式下，只有主播用户才能调用。如果用户由通信模式切换到直播模式，请务必调用 `setClientRole()` 方法将用户的橘色设置为。
-
+> -   直播模式下，只有主播用户才能调用。如果用户由通信模式切换到直播模式，请务必调用 `setClientRole()` 方法将用户的橘色设置为。
 
 <table>
 <colgroup>
@@ -4188,7 +4199,9 @@ virtual int startEchoTest() = 0;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
-<li>ERR_REFUSED (-5)：无法启动测试，可能没有成功初始化</li>
+<ul>
+<li>ERR_REFUSED (-5)：无法启动测试，可能没有成功初始化</li>      
+</ul>
 </ul>
 </td>
 </tr>
@@ -4196,6 +4209,7 @@ virtual int startEchoTest() = 0;
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -4220,7 +4234,9 @@ virtual int stopEchoTest() = 0;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
-<li>ERR_REFUSED (-5)：不能启动测试，可能语音直播测试没有成功启动</li>
+<ul>
+<li>ERR_REFUSED (-5)：不能启动测试，可能语音直播测试没有成功启动</li>        
+</ul>
 </ul>
 </td>
 </tr>
@@ -4228,6 +4244,7 @@ virtual int stopEchoTest() = 0;
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -4364,8 +4381,10 @@ virtual int rate(const char* callId, int rating, const char* description) = 0;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT(-2): 传入的参数无效，例如 callId 无效</li>
-<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>
+<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>        
+</ul>
 </ul>
 </td>
 </tr>
@@ -4374,6 +4393,7 @@ virtual int rate(const char* callId, int rating, const char* description) = 0;
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -4404,8 +4424,10 @@ virtual int complain(const char* callId, const char* description) = 0;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT(-2): 传入的参数无效，例如 callId 无效</li>
-<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>
+<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>       
+</ul>
 </ul>
 </td>
 </tr>
@@ -4414,6 +4436,7 @@ virtual int complain(const char* callId, const char* description) = 0;
 <tr/>
 </tbody>
 </table>
+
 
 
 #### 更新 Token (renewToken)
@@ -4491,7 +4514,7 @@ int setLogFile(const char* filePath);
 
 
 
-> Android 平台下日志文件的默认地址为：sdcard/<appname>/agorasdk.log。appname 为应用名称。
+> Android 平台下日志文件的默认地址为：sdcard/<appname\>/agorasdk.log。appname 为应用名称。
 
 
 
@@ -5870,5 +5893,3 @@ virtual void onClientRoleChanged(CLIENT_ROLE_TYPE oldRole, CLIENT_ROLE_TYPE newR
 ### 错误代码和警告代码 - Agora Native SDK
 
 详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_native.md)。
-
-
