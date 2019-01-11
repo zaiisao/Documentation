@@ -70,7 +70,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
   </tr>
 </table>
 
-> Agora Web SDK 2.5 还支持 Windows XP 平台的 Chrome 49 版本。
+> Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
 
 > 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
 
