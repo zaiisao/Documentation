@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Objective-C
-updatedAt: Fri Jan 11 2019 05:36:27 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 05:36:38 GMT+0000 (UTC)
 ---
 # 游戏 API
 游戏 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成，提供游戏 SDK 在 iOS 平台上的主要方法和回调。
@@ -19,7 +19,7 @@ updatedAt: Fri Jan 11 2019 05:36:27 GMT+0000 (UTC)
 
 
 ## Objective-C 接口
-   
+
 <a id = "rtcenginekit"></a>
 ### 主要方法 (AgoraRtcEngineKit)
 
@@ -376,13 +376,16 @@ updatedAt: Fri Jan 11 2019 05:36:27 GMT+0000 (UTC)
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt; 0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2)：传递的参数无效</li>
-<li>ERR_NOT_READY (-3)：没有成功初始化</li>
+<li>ERR_NOT_READY (-3)：没有成功初始化</li>       
+</ul>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 > 在 `joinChannel()` 时，SDK 调用 setCategoryAVAudioSessionCategoryPlayAndRecord 将 AVAudioSession 设置到 PlayAndRecord 模式，应用程序不应将其设置到其他模式。设置该模式时，正在播放的声音会被打断（比如正在播放的响铃声）。
@@ -666,11 +669,8 @@ updatedAt: Fri Jan 11 2019 05:36:27 GMT+0000 (UTC)
 <tr/>
 <tr><td>返回值</td>
 <td>
-<div><ul>
-<li>0: 方法调用成功</li>
-</ul>
-</div>
 <ul>
+<li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
 </ul>
 </td>
@@ -678,6 +678,7 @@ updatedAt: Fri Jan 11 2019 05:36:27 GMT+0000 (UTC)
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -1367,8 +1368,11 @@ updatedAt: Fri Jan 11 2019 05:36:27 GMT+0000 (UTC)
 </tr>
 <tr><td>cycle</td>
 <td>指定音频文件循环播放的次数：
-* 正整数: 循环的次数
-* -1: 无限循环</td>
+<ul>
+<li>正整数: 循环的次数</li>
+<li>-1: 无限循环</li>
+</ul>
+</td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
@@ -1379,6 +1383,7 @@ updatedAt: Fri Jan 11 2019 05:36:27 GMT+0000 (UTC)
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -1862,22 +1867,20 @@ Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方�
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 发送成功</li>
-<li><dl>
-<dt>&lt; 0: 发送失败，返回错误码：</dt>
-<dd><ul>
+<li>&lt; 0: 发送失败，返回错误码：
+<ul>
 <li>ERR_SIZE_TOO_LARGE (114)</li>
 <li>ERR_TOO_OFTEN (12)</li>
 <li>ERR_BITRATE_LIMIT (115)</li>
 <li>ERR_INVALID_ARGUMENT (2)</li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 #### 开始语音直播测试 (startEchoTest)
@@ -1890,7 +1893,6 @@ Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方�
 
 > -   调用 startEchoTest 后必须调用 stopEchoTest 以结束测试，否则不能进行下一次回声测试，或者调用 `joinChannel()` 进行通话。
 > -   直播模式下，只有主播用户才能调用。如果用户由通信模式切换到直播模式，请务必调用 `setClientRole()` 方法将用户的橘色设置为。
-
 
 <table>
 <colgroup>
@@ -1905,7 +1907,9 @@ Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方�
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_REFUSED (-5)：无法启动测试，可能没有成功初始化</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -1913,6 +1917,7 @@ Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方�
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -1937,7 +1942,9 @@ Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方�
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
-<li>ERR_REFUSED (-5)：不能启动测试，可能语音直播测试没有成功启动</li>
+<ul>
+<li>ERR_REFUSED (-5)：不能启动测试，可能语音直播测试没有成功启动</li> 
+</ul>
 </ul>
 </td>
 </tr>
@@ -1945,6 +1952,7 @@ Agora Native SDK 支持内置加密功能，默认使用 AES-128-XTS 加密方�
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -2068,8 +2076,10 @@ description:(NSString * _Nullable)description;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT(-2): 传入的参数无效，例如 callId 无效</li>
-<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>
+<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>      
+</ul>
 </ul>
 </td>
 </tr>
@@ -2078,6 +2088,7 @@ description:(NSString * _Nullable)description;
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -2109,8 +2120,10 @@ description:(NSString * _Nullable)description;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT(-2): 传入的参数无效，例如 callId 无效</li>
-<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>
+<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>       
+</ul>
 </ul>
 </td>
 </tr>
@@ -2119,6 +2132,7 @@ description:(NSString * _Nullable)description;
 <tr/>
 </tbody>
 </table>
+
 
 #### 更新 Token (renewToken)
 
@@ -2344,8 +2358,6 @@ SDK 会通过代理方法 AgoraRtcEngineDelegate 向应用程序上报一些运�
 </tbody>
 </table>
 
-
-
 #### 加入频道回调 (didJoinChannel)
 
 ```
@@ -2354,7 +2366,27 @@ SDK 会通过代理方法 AgoraRtcEngineDelegate 向应用程序上报一些运�
 
 该回调方法表示该客户端成功加入了指定的频道。同 `joinChannelByToken()` API 的 `joinSuccessBlock` 回调。
 
-### 重新加入频道回调 (didRejoinChannel)
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>channel</td>
+<td>频道名</td>
+</tr>
+<tr><td>uid</td>
+<td>用户 ID。如果 <code>joinChannelByToken</code> 中指定了 uid，则此处返回该 ID；否则使用 Agora 服务器自动分配的 ID</td>
+<tr><td>elapsed</td>
+<td>从 <code>joinChannelByToken</code> 开始到该事件产生的延迟（毫秒）</td>
+</tr>
+</tbody>
+</table>
+
+#### 重新加入频道回调 (didRejoinChannel)
 
 ```
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didRejoinChannel:(NSString * _Nonnull)channel withUid:(NSUInteger)uid elapsed:(NSInteger) elapsed;
@@ -2362,7 +2394,27 @@ SDK 会通过代理方法 AgoraRtcEngineDelegate 向应用程序上报一些运�
 
 有时候由于网络原因，客户端可能会和服务器失去连接，SDK 会进行自动重连，自动重连成功后触发此回调方法。
 
-### 已离开频道回调 (didLeaveChannelWithStats)
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>channel</td>
+<td>频道名</td>
+</tr>
+<tr><td>uid</td>
+<td>用户 ID。如果 <code>joinChannelByToken</code> 中指定了 uid，则此处返回该 ID；否则使用 Agora 服务器自动分配的 ID</td>
+<tr><td>elapsed</td>
+<td>从 <code>joinChannelByToken</code> 开始到该事件产生的延迟（毫秒）</td>
+</tr>
+</tbody>
+</table>
+
+#### 已离开频道回调 (didLeaveChannelWithStats)
 
 ```
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine didLeaveChannelWithStats:(AgoraChannelStats * _Nonnull)stats;
@@ -2973,7 +3025,7 @@ typedef NS_ENUM(NSInteger, AgoraAudioOutputRouting)
 
 之前的处理方法是在 didOccurError() 回调报告 ERR_TOKEN_EXPIRED(109)、ERR_INVALID_TOKEN(110) 时，APP 需要生成新的 Token。 在新版本中，原来的处理仍然有效，但建议把相关逻辑放进该回调里。
 
-### 本地伴奏播放已结束回调 (rtcEngineLocalAudioMixingDidFinish)
+#### 本地伴奏播放已结束回调 (rtcEngineLocalAudioMixingDidFinish)
 
 ```
 - (void)rtcEngineLocalAudioMixingDidFinish:(AgoraRtcEngineKit * _Nonnull)engine;
@@ -3012,7 +3064,7 @@ typedef NS_ENUM(NSInteger, AgoraAudioOutputRouting)
 
 当远端有用户调用 startAudioMixing 播放伴奏音乐，会触发该回调。在合唱应用中可以利用这个回调作为本端歌词播放的触发条件。
 
-### 远端伴奏播放已结束回调 (rtcEngineRemoteAudioMixingDidFinish)
+#### 远端伴奏播放已结束回调 (rtcEngineRemoteAudioMixingDidFinish)
 
 ```
 - (void)rtcEngineRemoteAudioMixingDidFinish:(AgoraRtcEngineKit * _Nonnull)engine;
@@ -3396,7 +3448,7 @@ struct RtcEngineContext
 <td><strong>描述</strong></td>
 </tr>
 <tr><td>appId</td>
-<td>Agora 为应用程序开发者签发的厂商秘钥。详见 <a href="../../cn/Agora%20Platform/token.html.md"><span>获取 App ID</span></a></td>
+<td>Agora 为应用程序开发者签发的厂商秘钥。详见 <a href="../../cn/Agora%20Platform/token.md"><span>获取 App ID</span></a></td>
 </tr>
 <tr><td>eventHandler</td>
 <td>IRtcEngineEventHandler 是一个提供了缺省实现的抽象类，SDK 通过该抽象类向应用程序报告 SDK 运行时的各种事件</td>
@@ -3405,12 +3457,15 @@ struct RtcEngineContext
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_VENDOR_KEY(-101): 传入的 App ID 无效</li>
+</ul>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 #### 设置频道属性 (setChannelProfile)
@@ -3742,13 +3797,16 @@ uid 在 SDK 内部用 32 位无符号整数表示，由于 Java 不支持无符�
 <td><ul>
 <li>0：方法调用成功</li>
 <li>&lt; 0：方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT (-2)：传递的参数无效</li>
-<li>ERR_NOT_READY (-3)：没有成功初始化</li>
+<li>ERR_NOT_READY (-3)：没有成功初始化</li>       
+</ul>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -3779,12 +3837,15 @@ leaveChannel 是异步操作，调用返回时并没有真正退出频道。在�
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
-<li>ERR_REFUSED (-5): 离开频道失败，当前状态不在通话中，或者正在离开频道</li>
+<ul>
+<li>ERR_REFUSED (-5): 离开频道失败，当前状态不在通话中，或者正在离开频道</li>       
+</ul>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 #### 设置本地语音音调 (setLocalVoicePitch)
@@ -4321,7 +4382,7 @@ int resumeAllEffects();
 
 该方法恢复播放所有音效。
 
-### 打开与 Web SDK 的互通 (enableWebSdkInteroperability)
+#### 打开与 Web SDK 的互通 (enableWebSdkInteroperability)
 
 ```
 int enableWebSdkInteroperability(bool enabled);
@@ -4512,22 +4573,20 @@ virtual int sendStreamMessage(int streamId, const char* data, size_t length) = 0
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 发送成功</li>
-<li><dl>
-<dt>&lt; 0: 发送失败，返回错误码：</dt>
-<dd><ul>
+<li>&lt; 0: 发送失败，返回错误码：
+<ul>
 <li>ERR_SIZE_TOO_LARGE (114)</li>
 <li>ERR_TOO_OFTEN (12)</li>
 <li>ERR_BITRATE_LIMIT (115)</li>
 <li>ERR_INVALID_ARGUMENT (2)</li>
 </ul>
-</dd>
-</dl>
 </li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 #### 开始语音直播测试 (startEchoTest)
 
@@ -4540,7 +4599,6 @@ virtual int startEchoTest() = 0;
 
 > -   调用 startEchoTest 后必须调用 stopEchoTest 以结束测试，否则不能进行下一次回声测试，或者调用 `joinChannel()` 进行通话。
 >-   直播模式下，只有主播用户才能调用。如果用户由通信模式切换到直播模式，请务必调用 `setClientRole()` 方法将用户的橘色设置为。
-
 
 <table>
 <colgroup>
@@ -4555,7 +4613,9 @@ virtual int startEchoTest() = 0;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
-<li>ERR_REFUSED (-5)：无法启动测试，可能没有成功初始化</li>
+<ul>
+<li>ERR_REFUSED (-5)：无法启动测试，可能没有成功初始化</li> 
+</ul>
 </ul>
 </td>
 </tr>
@@ -4563,6 +4623,7 @@ virtual int startEchoTest() = 0;
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -4587,7 +4648,9 @@ virtual int stopEchoTest() = 0;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_REFUSED (-5)：不能启动测试，可能语音直播测试没有成功启动</li>
+</ul>
 </ul>
 </td>
 </tr>
@@ -4595,6 +4658,7 @@ virtual int stopEchoTest() = 0;
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -4731,8 +4795,10 @@ virtual int rate(const char* callId, int rating, const char* description) = 0;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT(-2): 传入的参数无效，例如 callId 无效</li>
-<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>
+<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>      
+</ul>
 </ul>
 </td>
 </tr>
@@ -4741,6 +4807,7 @@ virtual int rate(const char* callId, int rating, const char* description) = 0;
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -4771,8 +4838,10 @@ virtual int complain(const char* callId, const char* description) = 0;
 <td><ul>
 <li>0: 方法调用成功</li>
 <li>&lt;0: 方法调用失败</li>
+<ul>
 <li>ERR_INVALID_ARGUMENT(-2): 传入的参数无效，例如 callId 无效</li>
-<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>
+<li>ERR_NOT_READY(-3)：SDK 不在正确的状态，可能是因为没有成功初始化</li>       
+</ul>
 </ul>
 </td>
 </tr>
@@ -4781,6 +4850,7 @@ virtual int complain(const char* callId, const char* description) = 0;
 <tr/>
 </tbody>
 </table>
+
 
 
 #### 更新 Token (renewToken)
@@ -4856,7 +4926,7 @@ int setLogFile(const char* filePath);
 </table>
 
 
-> Windows 平台下日志文件的默认地址为：C:Users<user_name\>AppDataLocalAgora<process_name\>。
+> Android 平台下日志文件的默认地址为：sdcard/<appname>/agorasdk.log。appname 为应用名称。
 
 #### 设置日志过滤器 (setLogFilter)
 
@@ -5068,15 +5138,13 @@ int muteRemoteAudioStream(uid_t uid, bool mute);
 <td>
 <div><ul>
 <li>0: 方法调用成功</li>
-</ul>
-</div>
-<ul>
 <li>&lt;0: 方法调用失败</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 #### 启用说话者音量提示 (enableAudioVolumeIndication)
@@ -5118,9 +5186,6 @@ int enableAudioVolumeIndication(int interval, int smooth);
 </table>
 
 
-
-### 播放伴奏
-
 #### 开始播放伴奏 (startAudioMixing)
 
 ```
@@ -5161,8 +5226,11 @@ int startAudioMixing(const char* filePath, bool loopback, bool replace, int cycl
 </tr>
 <tr><td>cycle</td>
 <td>指定音频文件循环播放的次数：
-* 正整数: 循环的次数
-* -1: 无限循环</td>
+<ul>
+<li>正整数: 循环的次数</li>
+<li>-1: 无限循环</li>
+</ul>
+</td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
@@ -5173,6 +5241,7 @@ int startAudioMixing(const char* filePath, bool loopback, bool replace, int cycl
 </tr>
 </tbody>
 </table>
+
 
 
 #### 停止播放伴奏 (stopAudioMixing)
@@ -5664,14 +5733,15 @@ virtual void onMicrophoneEnabled(bool enabled)
 </tr>
 <tr><td>enabled</td>
 <td>
-	<ul>
-		<li>true：麦克风已启用</li>
-		<li>false：麦克风已禁用</li>
-	</ul>
-	</td>
+<ul>
+<li>true：麦克风已启用</li>
+<li>false：麦克风已禁用</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
+
 
 #### 声音质量回调 (onAudioQuality)
 
