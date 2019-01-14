@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Wed Jan 09 2019 06:46:22 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 07:37:32 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
