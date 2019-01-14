@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Mon Jan 14 2019 09:40:36 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 09:40:41 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -20,6 +20,8 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 ## v2.3.2
 
 The version 2.3.2 was released on Dec. 29th, 2018. See below for new features, improvements, and issues fixed.
+
+### Before Getting Started
 
 v2.3.2 key features:
 
