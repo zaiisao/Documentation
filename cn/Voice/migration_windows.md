@@ -3,7 +3,7 @@
 title: 升级指南：从 v2.0.x 升级至 v2.3.2 
 description: 
 platform: Windows
-updatedAt: Mon Jan 14 2019 09:53:01 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 09:54:22 GMT+0000 (UTC)
 ---
 # 升级指南：从 v2.0.x 升级至 v2.3.2 
 本页包含 Agora SDK for Windows 从 v2.0.x 到 v2.3.2 升级后，用户需要注意的 API 用法变更。
