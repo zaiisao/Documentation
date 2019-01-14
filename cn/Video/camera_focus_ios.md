@@ -3,7 +3,7 @@
 title: 摄像头对焦
 description: 
 platform: iOS
-updatedAt: Mon Jan 14 2019 07:21:02 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 07:21:06 GMT+0000 (UTC)
 ---
 # 摄像头对焦
 ## 功能简介
@@ -98,11 +98,11 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, cameraExposureDidChangedToRect: CGRe
 
 ### API 参考
 
-- [`isCameraExposurePositionSupported`](../../cn/Video/camera_focus_ios.md)
-- [`setCameraExposurePosition`](../../cn/Video/camera_focus_ios.md)
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraExposurePositionSupported)
+- [`setCameraExposurePosition`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraExposurePosition:)
 - [`isCameraFocusPositionInPreviewSupported`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraFocusPositionInPreviewSupported)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraAutoFocusFaceModeSupported)
 - [`setCameraFocusPositionInPreview`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraFocusPositionInPreview:)
-- [`setCameraAutoFocusFaceModeEnabled`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraAutoFocusFaceModeEnabled:)
-- [`cameraFocusDidChangedToRect`](../../cn/Video/camera_focus_ios.md)
-- [`cameraExposureDidChangedToRect`](../../cn/Video/camera_focus_ios.md)
+- [`setCameraAutoFocusModeEnabled`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraAutoFocusFaceModeEnabled:)
+- [`cameraFocusDidChangedToRect`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:cameraFocusDidChangedToRect:)
+- [`cameraExposureDidChangedToRect`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:cameraExposureDidChangedToRect:)
