@@ -3,10 +3,10 @@
 title: Migration Guide: from v2.0.8 to v2.3.2
 description: 
 platform: Windows
-updatedAt: Mon Jan 14 2019 11:38:42 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 11:38:48 GMT+0000 (UTC)
 ---
 # Migration Guide: from v2.0.8 to v2.3.2
-This page contains information on major API changes during release v2.0.x and v2.3.2 for Agora SDK for Windows.
+This page contains information on major API changes during release v2.0.8 and v2.3.2 for Agora SDK for Windows.
 
 ## Important Changes
 
@@ -41,8 +41,8 @@ To support scenarios with video rotation and enable better quality for the custo
 
 For more information, see the following documents:
 
-- [Set the Video Profile](https://docs.agora.io/en/Video/videoProfile_web?platform=Web)
-- [Rotate the Video](https://docs.agora.io/en/Interactive%20Broadcast/rotation_guide_android?platform=Windows)
+- [Set the Video Profile](../../en/Interactive%20Broadcast/videoProfile_windows.md)
+- [Rotate the Video](../../en/Interactive%20Broadcast/rotation_guide_android.md)
 
 #### 3. More Accurate Call Quality Statistics
 
@@ -56,7 +56,7 @@ v2.3.2 adds the  [`getConnectionState`](https://docs.agora.io/en/Interactive%20B
 
 #### 5. Speaker Volume Indication
 
-v2.2.0 improves the function of [`enableAudioVolumeIndication`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a59ae67333fbc61a7002a46c809e2ec4f). The method, once enabled, sends the audio volume indication of the speaker in its callback at set intervals, regardless of whether any one is speaking in the channel
+v2.2.0 improves the function of [`enableAudioVolumeIndication`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a59ae67333fbc61a7002a46c809e2ec4f). The method, once enabled, sends the audio volume indication of the speaker in its callback [`onAudioVolumeIndication`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aab1184a2b276f509870c055a9ff8fac4) at set intervals, regardless of whether any one is speaking in the channel
 
 ## Major New Features
 
