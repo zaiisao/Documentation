@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Android
-updatedAt: Mon Jan 14 2019 09:33:02 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 09:34:16 GMT+0000 (UTC)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -17,21 +17,19 @@ updatedAt: Mon Jan 14 2019 09:33:02 GMT+0000 (UTC)
 注：所有示例代码均假设rtcEngine已经初始化完毕。
 
 ```Java
-	// 在合适的时机启动lastmile测试，启用网络测试的情景请参考方法文档
-	rtcEngine.enableLastmileTest();
+// 在合适的时机启动 lastmile 测试，启用网络测试的情景请参考方法文档
+rtcEngine.enableLastmileTest();
 
-	// 位于全局IRtcEngineEventHandler中会发生回调
-	public void onLastmileQuality(int quality) {
-		// 若启动了lastmile测试，在还未获得此回调之前不要调用其它方法
- 		// quality即为当前检测到的quality类型，可以
-		// 根据此参数执行相关逻辑。
-		// ⑴ 可以选择在回调内部结束测试
-		rtcEngine.disableLastmileTest();
-	}
+// 位于全局 IRtcEngineEventHandler 中会发生回调
+public void onLastmileQuality(int quality) {
+// 若启动了 lastmile 测试，在还未获得此回调之前不要调用其它方法
+// quality 即为当前检测到的 quality 类型，可以根据此参数执行相关逻辑。
+// ⑴ 可以选择在回调内部结束测试
+rtcEngine.disableLastmileTest();
+}
 
-	// ⑵ 也可以选择其它时候结束测试, 结束测试之前
-	// onLastmileQuality() 回调可能会被调用多次
-	rtcEngine.disableLastmileTest();
+// ⑵ 也可以选择其它时候结束测试, 结束测试之前 onLastmileQuality() 回调可能会被调用多次
+rtcEngine.disableLastmileTest();
 ```
 
 ### API参考
