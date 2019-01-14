@@ -3,30 +3,42 @@
 title: Set the Camera Focus
 description: 
 platform: iOS
-updatedAt: Thu Dec 27 2018 02:56:23 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 07:14:08 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
 
-The camera focus function is used in video calls to enable high-quality video capture.
+Camera exposure and focus are commonly used functions in video calls to enable high quality video capture.
 
-The Agora SDK provides a set of camera management methods on iOS, with which users can switch between the front and rear cameras, set the camera zoom factor, or set the camera focus position.
+Agora SDK provides a set of camera management methods on the Android platform, with which users can switch between the front and rear camera, set the camera zoom factor, set the exposure region and set the focus position.
+
+* Camera exposure: Auto exposure is supported where users can maually set the exposure region.
+* Camera focus: Auto face-focus and manual focus are supported.
 
 ## Implementation
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
+Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Video/ios_video.md) for details.
 
 ```swift
 // swift
-// Check if auto-face focus is supported and start focusing.
+// Check if camera exposure is supported
+let isSupported = agoraKit.isCameraExposurePositionSupported()
+
+if isSupported {
+    // Set the camera exposure at (50, 100)
+    let point = CGPoint(x: 50, y: 100)
+    agoraKit.setCameraExposurePosition(point)
+}
+
+// Check if auto face focus is supported and start focusing
 let isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
 agoraKit.setCameraAutoFocusFaceModeEnabled(isSupported)
 
-// Check if manual focus is supported and start focusing.
+// Check if manual focus is suppoeted and start focusing
 let isSupported = agoraKit.isCameraFocusPositionInPreviewSupported()
 
 if isSupported {
-	// Set the camera focus at (50, 100).
+	// Set the camera focus at (50, 100)
 	let point = CGPoint(x: 50, y: 100)
 	agoraKit.setCameraFocusPositionInPreview(point)
 }
@@ -34,23 +46,62 @@ if isSupported {
 
 ```objective-c
 // objective-c
-// Check if auto-face focus is supported and start focusing.
+// Check if camera exposure is supported
+let isSuppported = [agoraKit isCameraExposurePositionSupported];
+
+if (isSupported) {
+    // Set the camera exposure at (50, 100)
+    CGPoint *point = CGPointMake(50, 100);
+    [agoraKit setCameraExposurePosition: point];
+}
+
+// Check if auto face focus is supported and start focusing
 Bool isSupported = agoraKit.isCameraAutoFocusFaceModeSupported()
 [agoraKit setCameraAutoFocusFaceModeEnabled: isSupported];
 
-// Check if manual focus is supported and start focusing.
+// Check if manual focus is supported and start focusing
 let isSupported = [agoraKit isCameraFocusPositionInPreviewSupported];
 
 if (isSupported) {
-	// Set the camera focus at (50, 100).
+	// Set the camera focus at (50, 100)
 	CGPoint *point = CGPointMake(50, 100);
 	[agoraKit setCameraFocusPositionInPreview: point];
 }
 ```
 
+You can get the camera expousre and focus area in the `cameraExposureDidChangedToRect` and `cameraFocusDidChangedToRect` callbacks.
+
+```swift
+// swift
+// The camera focus area is updated
+// You can monitor the focus event and implement corrensponding logic
+func rtcEngine(_ engine: AgoraRtcEngineKit, cameraFocusDidChangedTo rect: CGRect) {
+}
+// The camera exposure area is updated
+// You can monitor the exposure event and implement corrensponding logic
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine cameraExposureDidChangedToRect:(CGRect)rect{
+}
+```
+
+```objective-c
+// objective-c
+// The camera focus area is updated
+// You can monitor the focus event and implement corrensponding logic
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine cameraFocusDidChangedToRect:(CGRect)rect {
+}
+// The camera exposure area is updated
+// You can monitor the exposure event and implement corrensponding logic
+- (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine cameraExposureDidChangedToRect:(CGRect)rect {
+}
+```
+
 ### API Reference
 
+- [`isCameraExposurePositionSupported`](../../en/Video/camera_focus_ios.md)
+- [`setCameraExposurePosition`](../../en/Video/camera_focus_ios.md)
 - [`isCameraFocusPositionInPreviewSupported`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraFocusPositionInPreviewSupported)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraAutoFocusFaceModeSupported)
 - [`setCameraFocusPositionInPreview`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraFocusPositionInPreview:)
 - [`setCameraAutoFocusModeEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraAutoFocusFaceModeEnabled:)
+- [`cameraFocusDidChangedToRect`](../../en/Video/camera_focus_ios.md)
+- [`cameraExposureDidChangedToRect`](../../en/Video/camera_focus_ios.md)
