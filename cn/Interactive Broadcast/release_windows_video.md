@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Mon Jan 14 2019 11:39:41 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 11:51:36 GMT+0000 (UTC)
 ---
 # 发版说明
 
@@ -45,7 +45,7 @@ x86 的编译环境选择 Win32:
 - Native SDK 版本号须大于等于 1.11 版本
 - Web SDK 版本号须大于等于 2.1 版本
 
-如果你的 Native SDK 是由 v2.0.x 升级至 v2.3.2，Agora 建议你另外参考[升级指南](../../cn/Interactive%20Broadcast/migration_windows.md)了解主要 API 的变动。
+如果你的 Native SDK 是由 v2.0.8 升级至 v2.3.2，Agora 建议你另外参考[升级指南](../../cn/Interactive%20Broadcast/migration_windows.md)了解主要 API 的变动。
 
 ### **新增功能**
 
