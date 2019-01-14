@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Mon Jan 14 2019 08:16:16 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 08:16:21 GMT+0000 (UTC)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -45,7 +45,7 @@ This component package is compatible with the following SDKs:
 
 ## v2.3.0
 
-The version 2.3.0 was released on November 20, 2018. See below for new features and improvements . 
+The version 2.3.0 was released on January 14, 2019. See below for new features and improvements . 
 
 > The billing of Recording SDK v2.3.0 or later is seperated from that of Agora Voice Call/Voice Interactive Broadcast SDK and Agora Video Call/Video Interactive Broadcast SDK. If you do not update your SDK to v2.3.0 or later, the billing will remain the same.
 
