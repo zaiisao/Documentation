@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Jan 14 2019 11:39:15 GMT+0000 (UTC)
+updatedAt: Tue Jan 15 2019 04:03:37 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -57,7 +57,7 @@ Before upgrading your SDK, ensure that the version is:
 - Native SDK v1.11 or later
 - Web SDK v2.1 or later
 
-If you using an Agora SDK version v2.0.x and wish to migrate the v2.3.2, refer to the [Migration Guide](../../en/Interactive%20Broadcast/migration_windows.md) for major API changes.
+If you using an Agora SDK version v2.0.8 and wish to migrate the v2.3.2, refer to the [Migration Guide](../../en/Interactive%20Broadcast/migration_windows.md) for major API changes.
 
 ### New Features
 
