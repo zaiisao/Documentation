@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Tue Jan 15 2019 04:05:53 GMT+0000 (UTC)
+updatedAt: Tue Jan 15 2019 04:05:58 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -102,7 +102,7 @@ In the new API method, the network connection states are "disconnected", "connec
 v2.3.2 changes the rating parameter in the [`rate`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/rate:rating:description:) method to "1 to 5" to encourage more feedback from end-users on the quality of a call or live broadcast. Application developers can use this feedback for future product improvement. Agora strongly recommends integrating this method in your application.
 
 
-### Other improvements
+#### 4. Other improvements
 
 - Minimizes packet loss under unreliable network conditions in the Live Broadcast profile.
 - Accelerates the video quality recovery under network congestion.
