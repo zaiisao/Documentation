@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Tue Jan 15 2019 10:42:18 GMT+0000 (UTC)
+updatedAt: Tue Jan 15 2019 10:42:27 GMT+0000 (UTC)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -44,7 +44,7 @@ Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Ag
 
 该版本于 2019 年 1 月 15 日发布。新增特性与改进问题详见下文。
 
-> Recording SDK 从 2.3.0 版本起，费用将单独计算，不再与语音通话/语音直播 SDK、视频通话/视频直播 SDK 的费用混合在一起。如果 SDK 没有升级至 2.3.0 及以上版本，将不会受到影响，仍维持之前的模式。
+> Recording SDK 从 2.3.0 版本起，可支持费用独立计算，录制的用量和费用不与语音通话/语音直播 SDK、视频通话/视频直播 SDK混合在一起。具体可咨询商务。
 
 ### 新增功能
 
