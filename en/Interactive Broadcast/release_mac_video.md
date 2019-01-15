@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Tue Jan 15 2019 04:02:56 GMT+0000 (UTC)
+updatedAt: Tue Jan 15 2019 04:05:53 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -101,9 +101,6 @@ In the new API method, the network connection states are "disconnected", "connec
 #### 3. Improves the call rating system
 v2.3.2 changes the rating parameter in the [`rate`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/rate:rating:description:) method to "1 to 5" to encourage more feedback from end-users on the quality of a call or live broadcast. Application developers can use this feedback for future product improvement. Agora strongly recommends integrating this method in your application.
 
-#### 4. Improves the screen-sharing experience
-
-v2.3.2 optimizes the screen-sharing algorithm for different scenarios. The video smoothness and quality are enhanced when a user presents slides or browses websites. v2.3.2 also improves the initial image quality in the Communication profile.
 
 ### Other improvements
 
