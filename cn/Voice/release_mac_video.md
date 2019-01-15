@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Tue Jan 15 2019 04:05:05 GMT+0000 (UTC)
+updatedAt: Tue Jan 15 2019 04:05:10 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -92,11 +92,8 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 为方便用户（开发者）收集最终用户（应用程序使用者）对使用应用进行通话或直播的反馈，该版本将 [`rate`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/rate:rating:description:) 接口中的打分范围由 1 - 10 修改为 1 - 5，减少最终用户的打分干扰。Agora 建议在应用程序中集成该接口，方便应用程序收集用户反馈。
 
-#### 4. 屏幕共享质量优化
 
-为提升用户体验，屏幕共享做了大量算法优化。针对不同的共享场景提供不同的屏幕共享策略，尤其针对 PPT 翻页和网页浏览场景，提升了屏幕共享过程中的流畅度和清晰度。同时改善了通信模式下屏幕共享开启阶段画面模糊的现象。
-
-#### 5. 其他改进
+#### 4. 其他改进
 
 - 优化了直播模式下视频弱网抗丢包能力
 - 加快了严重拥塞状态视频的恢复速度s
