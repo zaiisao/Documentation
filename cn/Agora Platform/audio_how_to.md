@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Tue Jan 15 2019 09:07:11 GMT+0000 (UTC)
+updatedAt: Tue Jan 15 2019 09:07:15 GMT+0000 (UTC)
 ---
 # 音频相关
 ### iOS 端集成 H5 游戏音量低
@@ -54,7 +54,7 @@ updatedAt: Tue Jan 15 2019 09:07:11 GMT+0000 (UTC)
 
 **问题原因**：
 
-这个问题是由于退出 WorkerThread 时，没有销毁 RtcEgnine 引起的。
+这个问题是由于退出 WorkerThread 时，没有销毁 RtcEngine 引起的。
 
 有些 Agora 的 Android 示例程序通过创建一个 WorkerThread 线程来初始化引擎，这个线程的生命周期与示例程序的进程生命周期是一致的。线程里会维护一个全局的 RtcEngine 实例，这个全局的实例随着应用进程的销毁（调用 `destroy` 方法）而消亡。
 
