@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Jan 16 2019 03:14:13 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 03:14:18 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -463,7 +463,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
         "rules": [
             {
                 "id": 1953,                                     // 规则id，如：更新规则是需要带上此id
-                "appid": "80e54398fed94ae8a010acf782f569b7"     // 对应dashboard中项目的appID
+                "appid": ""                                     // 对应dashboard中项目的appID
                 "uid": 1,                                       // uid，客户端中看到
                 "opid": 1406,                                   // 操作id，用于核对操作记录（查问题时使用）
                 "cname": "11",                                  // 频道名
