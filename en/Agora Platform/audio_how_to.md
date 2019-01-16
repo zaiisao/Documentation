@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Wed Jan 16 2019 08:29:29 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 08:29:34 GMT+0000 (UTC)
 ---
 # Audio-related Issues
 ### My H5 game integrates the Agora SDK v2.2.0 for iOS. When the host uses WKWebview with Layabox and joins the channel, why is the game volume very low?
@@ -36,9 +36,9 @@ Some Android sample apps provided by Agora maintain a global RtcEngine instance 
 
 The problem of no audio or abnormal audio routing may occur when developers fail to manage WorkerThread appropriately.
 
-In their design, developers tend to operate on a WorkerThread to manage the life cycle of the RtcEngine instance, which is quite right for creating the engine and joining a channel. But when they quit the WorkerThread, they do not destroy the RtcEngine instance. This may cause problems, especially when the life cycle of the WorkerThread is not the same as the app process.
+In their design, developers tend to operate on WorkerThread to manage the life cycle of the RtcEngine instance, which is quite right for creating the engine and joining a channel. But when they quit the WorkerThread, they do not destroy the RtcEngine instance. This may cause problems, especially when the life cycle of the WorkerThread is not the same as the app process.
 
-By calling `destroy`, the RtcEngine removes all registered system listeners (in this case, PhoneStateListener), some of which may reference to the Looper of the current Thread. If a system listener is not removed when the WorkerThread quits, the listener still monitors but the Looper it references to is already invalid, leading to a dead binder error.
+By calling `destroy`, the RtcEngine removes all registered system listeners (in this case, PhoneStateListener), some of which may reference to the Looper of the current Thread. If a system listener is not removed when WorkerThread quits, the listener still monitors but the Looper it references to is already invalid, leading to a dead binder error.
 
 Agora recommends using one of the following solutions to solve this problem:
 
