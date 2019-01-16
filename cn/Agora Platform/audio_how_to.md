@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Wed Jan 16 2019 08:56:21 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 08:56:27 GMT+0000 (UTC)
 ---
 # 音频相关
 ### iOS 端集成 H5 游戏音量低
@@ -54,15 +54,13 @@ updatedAt: Wed Jan 16 2019 08:56:21 GMT+0000 (UTC)
 
 **问题原因**：
 
-这个问题是由于退出 WorkerThread 时，没有销毁 RtcEngine 引起的。
+有些 Agora 的 Android 示例程序通过创建 WorkerThread 线程来维护一个全局的 RtcEngine 实例。WorkerThread 的生命周期与示例程序的生命周期是一致的。当应用程序进程销毁（调用 `destroy` 方法），WorkerThread 也随之消亡。
 
-有些 Agora 的 Android 示例程序通过创建一个 WorkerThread 线程来初始化引擎，这个线程的生命周期与示例程序的进程生命周期是一致的。线程里会维护一个全局的 RtcEngine 实例，这个全局的实例随着应用进程的销毁（调用 `destroy` 方法）而消亡。
+如果开发者没能正确退出 WorkerThread，就有可能会导致耳机无声，或语音路由不正常等问题。
 
-而在实际开发的应用程序中，开发者应注意自己维护 RtcEngine 的生命周期，在合适的时机销毁引擎。
+在实际的应用开发中，开发者会通过操控 WorkerThread 来管理 RtcEngine 实例的生命周期。在创建引擎和加入频道时这么做是可以的。但是开发者在离开 WorkerThread 时，没有销毁 RtcEngine 实例。如果 WorkerThreader 和应用程序的生命周期不一致，这就很容易产生问题。
 
-若开发者想要自定义 WorkerThread 的生命周期（如跟join/leave channel保持一致），则需要主动调用 `destroy` 方法来主动销毁引擎，单纯的退出 WorkerThread 是不会销毁 RtcEngine 的。
-
-RtcEngine 调用 `destroy` 方法会移除所有注册过的系统 Listener （对于音频来说是 PhoneStateListener），这些监听可能会引用线程的 Looper。在相应的 Demo 里，这个 Looper 位于 WorkerThread 中。若退出 WorkerThread 时不主动调用 `destroy`，注册过的 Listener 会持续监听，但其引用的 Looper 会随着 WorkerThread 线程的停止而被置为无效或清空。最终会以 Dead Binder 的形式出错，使 SDK 的一些监听失效。
+RtcEngine 调用 `destroy` 方法会移除所有注册过的系统 Listener （对于音频来说是 PhoneStateListener），这些监听可能会引用线程的 Looper。如果在退出 WorkerThread 时不移除系统 Listener，注册过的 Listener 会持续监听，但其引用的 Looper 已经随着 WorkerThread 线程的停止而被置为无效或清空。最终会以 Dead Binder 的形式出错。
 
 **解决方案**：
 
