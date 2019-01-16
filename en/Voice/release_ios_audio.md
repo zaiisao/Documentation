@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Mon Jan 14 2019 09:41:19 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 15:23:42 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
