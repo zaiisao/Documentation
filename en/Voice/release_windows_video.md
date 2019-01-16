@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Jan 15 2019 04:03:37 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 15:28:08 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -155,15 +155,12 @@ In the new API method, the network connection states are "disconnected", "connec
 
 v2.3.2 changes the rating parameter in the [`rate`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a748c30a6339ec9798daa0d1b21585411) method to "1 to 5" to encourage more feedback from end-users on the quality of a call or live broadcast. Application developers can use this feedback for future product improvement. Agora strongly recommends integrating this method in your application.
 
-#### 4. Improves the screen-sharing experience
 
-v2.3.2 optimizes the screen-sharing algorithm for different scenarios. The video smoothness and quality are enhanced when a user presents slides or browses websites. v2.3.2 also improves the initial image quality in the Communication profile.
-
-#### 5. Improves the audio device usability
+#### 4. Improves the audio device usability
 
 v2.3.2 optimizes the audio device selection to fix the no audio issue when a user switches the audio device during a call or live broadcast.
 
-#### 6. Other improvements
+#### 5. Other improvements
 
 - Minimizes packet loss under unreliable network conditions in the Live Broadcast profile.
 - Accelerates the video quality recovery under network congestion.
