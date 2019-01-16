@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Jan 16 2019 15:36:35 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 15:36:41 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -19,7 +19,7 @@ Android 视频 SDK 支持两种主要场景:
 
 ## **2.3.2 版**
 
-该版本于 2018 年 12 月 29 日发布。新增特性与修复问题列表详见下文。
+该版本于 2019 年 1 月 16 日发布。新增特性与修复问题列表详见下文。
 
 ### **升级前必看**
 
