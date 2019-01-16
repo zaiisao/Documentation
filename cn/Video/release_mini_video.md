@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Fri Jan 04 2019 09:28:21 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 15:15:03 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -40,6 +40,24 @@ updatedAt: Fri Jan 04 2019 09:28:21 GMT+0000 (UTC)
 
 点击 [声网小程序 Demo 体验](../../cn/Video/miniapp_demo.md) 了解小程序通话、互通等功能。
 下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
+
+## **2.3.2 版**
+
+该版本于 2019 年 1 月 3 日发布。新增特性及功能改进详见下文。
+
+**新增功能**
+
+为方便用户了解是否成功调用 [`Client.leave`](https://docs.agora.io/cn/Video/API%20Reference/wechat/interfaces/client.html#leave) 和 [`Client.destroy`](https://docs.agora.io/cn/Video/API%20Reference/wechat/interfaces/client.html#destroy) 方法，该版本分别在这两个方法中新增了方法调用成功或失败的回调函数。
+
+**改进**
+
+为提升 [`Client.setRole`](https://docs.agora.io/cn/Video/API%20Reference/wechat/interfaces/client.html#setRole) 方法的易用性，该版本优化了该方法的调用逻辑。用户在调用 [`Client.join`](https://docs.agora.io/cn/Video/API%20Reference/wechat/interfaces/client.html#join) 加入频道**前**或**后**均可以调用该方法，设置或改变用户角色。
+
+同时，该版本对 `broadcaster` 和 `audience` 两个角色的行为进行了更为严格的定义：
+
+- 用户角色为 `broadcaster` 时，可以调用 [`Client.publish`](https://docs.agora.io/cn/Video/API%20Reference/wechat/interfaces/client.html#publish) 和 [`Client.unpublish`](https://docs.agora.io/cn/Video/API%20Reference/wechat/interfaces/client.html#unpublish) 方法
+- 用户角色为 `audience` 时，不可以调用 [`Client.publish`](https://docs.agora.io/cn/Video/API%20Reference/wechat/interfaces/client.html#publish) 和 [`Client.unpublish`](https://docs.agora.io/cn/Video/API%20Reference/wechat/interfaces/client.html#unpublish) 方法
+
 
 ## **1.1.3 Beta 版**
 
