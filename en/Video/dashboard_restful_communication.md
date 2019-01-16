@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Jan 16 2019 03:12:55 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 03:12:59 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -442,7 +442,7 @@ The following chart shows how you can use related APIs.
         "rules": [
             {
                 "id": 1953,                                     // The rule ID. If you want to update the rule, then you need the rule ID to specify one
-                "appid": "80e54398fed94ae8a010acf782f569b7"     // project App ID
+                "appid": ""                                     // project App ID
                 "uid": 1,                                       // UID which can be obtained by using the SDK API
                 "opid": 1406,                                   // Operating ID which is used to check the operation records for issues tracking
                 "cname": "11",                                  // The channel name
