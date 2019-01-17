@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Thu Jan 17 2019 03:00:40 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 03:00:45 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -23,7 +23,7 @@ The version 2.3.2 was released on Jan.16th, 2019. See below for new features, im
 
 ### Before Getting Started
 
-v2.3.2 key features:
+Besides the new features and improvements mentioned below, it is worth noting that v2.3.2:
 
 - Improves the SDK's ability to counter packet loss under unreliable network conditions.
 - Improves the communication smoothness.
@@ -31,8 +31,8 @@ v2.3.2 key features:
 
 Before upgrading your SDK, ensure that the version is:
 
-- Native SDK v1.11 or later
-- Web SDK v2.1 or later
+- Native SDK v1.11 or later.
+- Web SDK v2.1 or later.
 
 ### New Features
 
