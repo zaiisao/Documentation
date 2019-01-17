@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Thu Jan 17 2019 09:06:30 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 09:06:41 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -24,7 +24,6 @@ Ensure that you prepare the development environment. See [Integrate the SDK](../
 The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
 
 ```java
-// java
 int volume = 200;
 // Sets the volume of the recording signal.
 rtcEngine.adjustRecordingSignalVolume(volume);
@@ -41,7 +40,6 @@ rtcEngine.adjustRecordingSignalVolume(volume);
 The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
 
 ```java
-// java
 int volume = 200;
 // Sets the volume of the playback signal.
 rtcEngine.adjustPlaybackSignalVolume(volume);
@@ -58,7 +56,6 @@ rtcEngine.adjustPlaybackSignalVolume(volume);
 The value of the audio mixing volume ranges between 0 and 100. 100 (default) represents the original volume, and 0 means the audio mixing is muted.
 
 ```java
-// java
 int volume = 50;
 // Sets the audio mixing volume for remote users.
 rtcEngine.adjustAudioMixingPublishVolume(volume);
@@ -69,7 +66,6 @@ rtcEngine.adjustAudioMixingPlayoutVolume(volume);
 You can also call the API `adjustAudioMixingVolume` to set the volume of audio playing for both remote users and local users.
 
 ```java
-// java
 int volume = 50;
 // Sets the audio mixing volume for both local and remote users.
 rtcEngine.adjustAudioMixingVolume(volume);
@@ -88,7 +84,6 @@ rtcEngine.adjustAudioMixingVolume(volume);
 The value of the audio effects volume ranges between 0.0 and 100.0. 100 .0 (default) represents the original volume, and 0.0 means the audio effect is muted.
 
 ```java
-// java
 // Gets the global audio effect manager.
 IAudioEffectManager manager = rtcEngine.getAudioEffectManager();
 ...
@@ -113,7 +108,6 @@ In audio recording, mixing and playing, you can use `setInEarMonitoringVolume` t
 The value of the in-ear monitoring volume ranges between 0 and 100. 100 (default) represents the original volume, and 0 means the in-ear monitoring is muted.
 
 ```java
-// java
 // Enables in-ear monitoring.
 rtcEngine.enableInEarMoniroting(true);
 int volume = 50;
@@ -134,7 +128,6 @@ In audio recording, mixing and playing, you can use the following APIs to get th
   This callback gets the ID and volume value of the loudest speaker at an instant. A user ID of 0 indicates it is a local user.
 
 ```java
-// java
 /**
  * Gets the ID of the loudest speakers at an instant.
  * @param speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
@@ -149,7 +142,6 @@ public void onAudioVolumeIndication(AudioVolumeInfo[] speakers, int totalVolume)
   This callback gets the ID of the loudest speaker for a certain period. A user ID of 0 indicates it is a local user.
 	
 ```java
-// java
 // Gets the ID of the loudest speaker for a period.
 public void onActiveSpeaker(int uid) {
 }
