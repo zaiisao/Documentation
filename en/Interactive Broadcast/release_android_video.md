@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Jan 17 2019 02:59:11 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 02:59:16 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -30,7 +30,7 @@ Besides the new features and improvements mentioned below, it is worth noting th
 
 Before upgrading your SDK, ensure that the version is:
 
-- Native SDK v1.11 or later;
+- Native SDK v1.11 or later.
 - Web SDK v2.1 or later.
 
 ### New Features
