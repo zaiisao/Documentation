@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Android
 platform: Android
-updatedAt: Thu Jan 17 2019 09:10:25 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 09:24:55 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -24,7 +24,6 @@ updatedAt: Thu Jan 17 2019 09:10:25 GMT+0000 (UTC)
 调节音量的参数值范围是 0 - 400，默认值 100 表示原始音量，即不对信号做缩放，400 表示原始音量的 4 倍（把信号放大到原始信号的 4 倍）。
 
 ```java
-// java
 int volume = 200;
 // 设置录音信号音量
 rtcEngine.adjustRecordingSignalVolume(volume);
@@ -40,7 +39,6 @@ rtcEngine.adjustRecordingSignalVolume(volume);
 调节音量的参数值范围是 0 - 400，默认值 100 表示原始音量，即不对信号做缩放，400 表示原始音量的 4 倍（把信号放大到原始信号的 4 倍）。
 
 ```java
-// java
 int volume = 200;
 // 设置播放信号音量
 rtcEngine.adjustPlaybackSignalVolume(volume);
@@ -55,7 +53,6 @@ rtcEngine.adjustPlaybackSignalVolume(volume);
 调节混音音量的参数值范围是 0 - 100，默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音文件播放静音。
 
 ```java
-// java
 int volume = 50;
 // 设置远端用户听到的音乐文件音量
 rtcEngine.adjustAudioMixingPublishVolume(volume);
@@ -66,7 +63,6 @@ rtcEngine.adjustAudioMixingPlayoutVolume(volume);
 你也可以直接调用 `adjustAudioMixingVolume`，同时设置本地及远端用户听到的音乐文件音量。
 
 ```java
-// java
 int volume = 50;
 // 设置本地及远端用户听到的音乐文件音量
 rtcEngine.adjustAudioMixingVolume(volume);
@@ -83,7 +79,6 @@ rtcEngine.adjustAudioMixingVolume(volume);
 调节音效音量的参数值范围是 0.0 - 100.0，默认值 100.0 表示原始音效音量，即不对信号做缩放。0.0 表示音效文件播放静音。
 
 ```java
-// java
 // 获取全局的音效管理类
 IAudioEffectManager manager = rtcEngine.getAudioEffectManager();
 ...
@@ -106,7 +101,6 @@ manager.setVolumeOfEffect(soundId, volume);
 调节耳返音量的参数值范围是 0 - 100，默认值 100 表示原始音效音量，即不对信号做缩放。0 表示耳返静音。
 
 ```java
-// java
 // 开启耳返监听功能
 rtcEngine.enableInEarMoniroting(true);
 int volume = 50;
@@ -124,7 +118,6 @@ rtcEngine.setInEarMonitoringVolume(volume);
 - 瞬时说话声音音量提示。如下回调获取瞬时说话音量最大的用户 ID，及音量大小。如果返回的用户 ID 为 0，则表示瞬时说话音量最大的是本地用户。
 	
 ```java
-// java
 /**
  * 获取瞬时说话音量最大的几个用户 ID
  * @param speakers 为一个数组，包含说话者的用户 ID 及音量，音量范围为 0 - 255
@@ -137,7 +130,6 @@ public void onAudioVolumeIndication(AudioVolumeInfo[] speakers, int totalVolume)
 - 当前时间内累积音量最大者。如下回调获取获取特定时间段内，累积音量最大的用户 ID。如果返回的 uid 是 0，则默认为本地用户。
 	
 ```java
-// java
 // 获取当前时间段声音最大的用户 ID（仅 1 个）
 public void onActiveSpeaker(int uid) {
 }
