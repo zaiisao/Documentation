@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Jan 17 2019 02:57:37 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 02:58:30 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -46,7 +46,7 @@ The version 2.3.2 was released on Jan. 16th, 2019. See below for new features, i
 
 ### Before Getting Started
 
-v2.3.2 key features:
+Besides the new features and improvements mentioned below, it is worth noting that v2.3.2:
 
 - Improves the SDK's ability to counter packet loss under unreliable network conditions.
 - Improves the communication smoothness.
@@ -54,8 +54,8 @@ v2.3.2 key features:
  
 Before upgrading your SDK, ensure that the version is:
 
-- Native SDK v1.11 or later
-- Web SDK v2.1 or later
+- Native SDK v1.11 or later.
+- Web SDK v2.1 or later.
 
 If you using an Agora SDK version v2.0.8 and wish to migrate the v2.3.2, refer to the [Migration Guide](../../en/Voice/migration_windows.md) for major API changes.
 
