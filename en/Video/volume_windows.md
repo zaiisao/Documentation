@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Thu Jan 17 2019 09:08:28 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 09:08:44 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -59,7 +59,6 @@ int ret = rep.adjustRecordingSignalVolume(200);
 The value of the volume ranges between 0 and 255. 0 represents the recording device is muted, and 255 is the maiximum volume.
 
 ```cpp
-// cpp
 // Sets the volume of the playback device.
 int setPlaybackDeviceVolume(int volume);
 ```
@@ -74,7 +73,6 @@ If the above methods do not meet your requirements, the Agora SDK provides metho
 The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
 
 ```cpp
-// cpp
 // Initializes the parameter engine.
 RtcEngineParameters rep(*lpAgoraEngine);
 
@@ -94,7 +92,6 @@ int ret = rep.adjustPlaybackSignalVolume(200);
 The value of the audio mixing volume ranges between 0 and 100. 100 (default) represents the original volume, and 0 means the audio mixing is muted.
 
 ```cpp
-// cpp
 // Initializes the parameter engine.
 RtcEngineParameters rep(*lpAgoraEngine);
 
@@ -107,7 +104,6 @@ int ret = rep.adjustAudioMixingPlayoutVolume(50);
 You can also call the API `adjustAudioMixingVolume` to set the volume of audio playing for both remote users and local users.
 
 ```cpp
-// cpp
 // Initializes the parameter engine.
 RtcEngineParameters rep(*lpAgoraEngine);
 
@@ -128,7 +124,6 @@ int ret = rep.adjustAudioMixingVolume(50);
 The value of the audio effects volume ranges between 0.0 and 100.0. 100 .0 (default) represents the original volume, and 0.0 means the audio effect is muted.
 
 ```cpp
-// cpp
 // Initializes the parameter engine.
 RtcEngineParameters rep(*lpAgoraEngine);
 
@@ -152,7 +147,6 @@ In audio recording, mixing and playing, you can use the following APIs to get th
   This callback gets the ID and volume value of the loudest speaker at an instant. A user ID of 0 indicates it is a local user.
 
 ```cpp
-// cpp
 void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speakerNumber, int totalVolume)  {
 // Gets the ID of the loudest speakers at an instant.
 // speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
@@ -166,7 +160,6 @@ void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speak
   This callback gets the ID of the loudest speaker for a certain period. A user ID of 0 indicates it is a local user.
 
 ```cpp
-// cpp
 void onActiveSpeaker(uid_t uid) {
 // Gets the ID of the loudest speaker for a period.
 }
