@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Windows
 platform: Windows
-updatedAt: Thu Jan 17 2019 09:12:23 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 09:12:26 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -63,7 +63,6 @@ int ret = rep.adjustRecordingSignalVolume(200);
 录音设备音量的参数值范围是 0 - 255，0 代表设备静音，255 代表设备的最大音量。
 
 ```cpp
-// cpp
 // 设置播放音量
 int setPlaybackDeviceVolume(int volume);
 ```
@@ -78,7 +77,6 @@ int setPlaybackDeviceVolume(int volume);
 调节音量的参数值范围是 0 - 400，默认值 100 表示原始音量，即不对信号做缩放，400 表示原始音量的 4 倍（把信号放大到原始信号的 4 倍）。
 
 ```cpp
-// cpp
 // 初始化参数对象
 RtcEngineParameters rep(*lpAgoraEngine);
 
@@ -98,7 +96,6 @@ int ret = rep.adjustPlaybackSignalVolume(200);
 调节混音音量的参数值范围是 0 - 100，默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音文件播放静音。
 
 ```cpp
-// cpp
 // 初始化参数对象
 RtcEngineParameters rep(*lpAgoraEngine);
 
@@ -111,7 +108,6 @@ int ret = rep.adjustAudioMixingPlayoutVolume(50);
 你也可以直接调用 `adjustAudioMixingVolume` ，同时设置本地及远端用户听到的音乐文件音量。
 
 ```cpp
-// cpp
 // 初始化参数对象
 RtcEngineParameters rep(*lpAgoraEngine);
 
@@ -132,7 +128,6 @@ int ret = rep.adjustAudioMixingVolume(50);
 调节音效音量的参数值范围是 0 - 100，默认值 100 表示原始音效音量，即不对信号做缩放。0 表示音效文件播放静音。
 
 ```cpp
-// cpp
 // 初始化参数对象
 RtcEngineParameters rep(*lpAgoraEngine);
 
@@ -154,7 +149,6 @@ int ret = rep.setVolumeOfEffect(soundId, 50);
 - 瞬时说话声音音量提示。如下回调获取瞬时说话音量最大的用户 ID，及音量大小。如果返回的用户 ID 为 0，则表示瞬时说话音量最大的是本地用户。
 
 ```cpp
-// cpp
 void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speakerNumber, int totalVolume)  {
 // 获取瞬时说话音量最大的几个用户 ID
 // speakers 为一个数组，包含说话者的用户 ID 及音量，音量范围为 0 - 255
@@ -166,7 +160,6 @@ void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speak
 - 当前时间内累积音量最大者。如下回调获取获取特定时间段内，累积音量最大的用户 ID。
 
 ```cpp
-// cpp
 void onActiveSpeaker(uid_t uid) {
 // 获取当前时间段声音最大的用户 ID（仅 1 个）
 }
