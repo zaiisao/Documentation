@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Thu Jan 17 2019 07:18:31 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 07:18:36 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -35,6 +35,7 @@ agoraKit.setDeviceVolume(.audioRecording, volume: 50)
 ```
 
 ```objective-c
+// objective-c
 // 设置录音设备音量
 [agoraKit setDeviceVolume: AgoraMediaDeviceTypeAudioRecording volume: 50];
 ```
