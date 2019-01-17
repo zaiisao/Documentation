@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Objective-C
-updatedAt: Thu Jan 17 2019 03:07:21 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 03:07:26 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming Audio Only API is composed of **Objective-C Interface** and **C++ Interface**, both of which provide main methods and callback events of the SDK on the iOS platform.
@@ -2750,7 +2750,7 @@ This method starts an audio recording. The SDK allows recording during a call, w
 -   *.aac*: Small file size with low sound fidelity
 
 
-Ensure that the saving directory in the application exists and is writable. This method is usually called after the `joinChannelByToken` method. The recording automatically stops when the `leaveChannel` method is called.
+Ensure that the saving directory in the application exists and is writable. Call this method after the `joinChannelByToken` method. The recording automatically stops when the `leaveChannel` method is called.
 
 <table>
 <colgroup>
@@ -8638,7 +8638,7 @@ This method starts an audio recording. The SDK allows recording during a call, w
 -   *.aac*: Small file size with low sound fidelity
 
 
-Ensure that the directory to save the recording file exists and is writable. This method is usually called after the joinChannel method. The recording automatically stops when the leaveChannel method is called.
+Ensure that the directory to save the recording file exists and is writable. Call this method after the joinChannel method. The recording automatically stops when the leaveChannel method is called.
 
 <table>
 <colgroup>
