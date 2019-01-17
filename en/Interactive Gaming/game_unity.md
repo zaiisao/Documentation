@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Thu Jan 17 2019 03:16:03 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 03:16:07 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -928,7 +928,7 @@ This method starts an audio recording. The SDK allows recording during a call, w
 - .aac: Small file size with low sound fidelity
 
 
-Ensure that the directory to save the recording file exists and is writable. Called this method after joining a channel. The recording automatically stops when the `LeaveChannel` method is called.
+Ensure that the directory to save the recording file exists and is writable. Call this method after joining a channel. The recording automatically stops when the `LeaveChannel` method is called.
 
 <table>
 <colgroup>
