@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Mon Jan 14 2019 07:36:40 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 09:21:16 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -99,8 +99,8 @@ agoraKit.adjustAudioMixingVolume(50)
 
 #### API Reference
 
-- [`adjustAudioMixingPublishingVolume`](../../en/Interactive%20Broadcast/volume_ios.md)
-- [`adjustAudioMixingPlayoutVolume`](../../en/Interactive%20Broadcast/volume_ios.md)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
 - [`adjustAudioMixingVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
 
 ### Set the Audio Effects Volume
