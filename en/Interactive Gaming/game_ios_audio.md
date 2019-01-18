@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Objective-C
-updatedAt: Fri Jan 18 2019 08:12:00 GMT+0000 (UTC)
+updatedAt: Fri Jan 18 2019 08:12:38 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming Audio Only API is composed of **Objective-C Interface** and **C++ Interface**, both of which provide main methods and callback events of the SDK on the iOS platform.
@@ -7447,6 +7447,142 @@ This method enables interoperability with the Agora Web SDK.
 <tr/>
 </tbody>
 </table>
+
+
+### Set the Audio Route
+
+#### Set the Default Audio Route (setDefaultAudioRouteToSpeakerphone)
+
+```
+int setDefaultAudioRouteToSpeakerphone(bool defaultToSpeaker) = 0;
+```
+
+This method modifies the default audio route if necessary.
+
+> -   Call this method only if you want to change the default settings.
+> -   This method only works in audio mode.
+> -   Call this method before `joinChannel`.
+
+
+The default audio routes are listed in the following table:
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr><th>Channel Mode</th>
+<th>Default Audio Route</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Communication</td>
+<td><p>Voice Communication: Earpiece</p>
+<p>Video Communication: Speakerphone</p>
+<p>If the user in a communication channel has called <code>disableVideo</code> or if the user has called <code>muteLocalVideoStream</code> and <code>muteAllRemoteVideoStreams</code>, the audio route is switched back to the earpiece automatically.</p>
+</td>
+</tr>
+<tr/>
+<tr/>
+<tr><td>Live Broadcast</td>
+<td>Speakerphone</td>
+</tr>
+<tr><td>Game Voice</td>
+<td>Speakerphone</td>
+</tr>
+</tbody>
+</table>
+
+
+
+Modify the default audio route **if necessary** according to the following table:
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr><th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>defaultToSpeaker</td>
+<td><ul>
+<li>True: Speakerphone.</li>
+<li>False: Earpiece.</li>
+</ul>
+<p>Whether the audio is routed to the speakerphone or earpiece, once a headset is plugged in or Bluetooth is connected,</p>
+<p>the audio route will be changed. The audio route will be switched to default once removing the headset or disconnecting Bluetooth.</p>
+</td>
+</tr>
+<tr/>
+<tr/>
+<tr/>
+<tr><td>Return Value</td>
+<td><ul>
+<li>0: Method call succeeded.</li>
+<li>&lt;0: Method call failed.</li>
+</ul>
+</td>
+</tr>
+<tr/>
+</tbody>
+</table>
+
+
+
+#### Enable the Speakerphone (setEnableSpeakerphone)
+
+```
+int setEnableSpeakerphone(bool speakerOn) = 0;
+```
+
+This method enables the audio routing to the speakerphone.
+
+After calling this method, the SDK will return the `onAudioRouteChanged` callback to indicate the changes.
+
+> Read the default audio route explanation according to `setDefaultAudioRouteToSpeakerphone` and check whether it is necessary to call this method.
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr><th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>enabled</td>
+<td><ul>
+<li>True:<ul>
+<li>If this API is called after joining a channel, whether the audio was routed to the headset, Bluetooth device, or earpiece, it will be routed to the speaker.</li>
+<li>If this API is called before joining a channel, when joining a channel, the audio will be routed to the speaker whether the user uses a headset or Bluetooth device.</li>
+</ul>
+</li>
+<li>False: The audio will follow the default audio route mentioned in <a href="#setdefaultroutetospeakerphone-live"><span>Set the Default Audio Route (setDefaultAudioRouteToSpeakerphone)</span></a>.</li>
+</ul>
+</td>
+</tr>
+<tr/>
+<tr/>
+<tr/>
+<tr><td>Return Value</td>
+<td><ul>
+<li>0: Method call succeeded.</li>
+<li>&lt;0: Method call failed.</li>
+</ul>
+</td>
+</tr>
+<tr/>
+</tbody>
+</table>
+
+
 
 
 
