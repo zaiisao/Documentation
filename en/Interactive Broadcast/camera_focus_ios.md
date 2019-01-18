@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: iOS
-updatedAt: Mon Jan 14 2019 07:18:24 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 07:18:30 GMT+0000 (UTC)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -97,11 +97,11 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, cameraFocusDidChangedTo rect: CGRect
 
 ### API Reference
 
-- [`isCameraExposurePositionSupported`](../../en/Interactive%20Broadcast/camera_focus_ios.md)
-- [`setCameraExposurePosition`](../../en/Interactive%20Broadcast/camera_focus_ios.md)
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraExposurePositionSupported)
+- [`setCameraExposurePosition`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraExposurePosition:)
 - [`isCameraFocusPositionInPreviewSupported`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraFocusPositionInPreviewSupported)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraAutoFocusFaceModeSupported)
 - [`setCameraFocusPositionInPreview`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraFocusPositionInPreview:)
 - [`setCameraAutoFocusModeEnabled`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraAutoFocusFaceModeEnabled:)
-- [`cameraFocusDidChangedToRect`](../../en/Interactive%20Broadcast/camera_focus_ios.md)
-- [`cameraExposureDidChangedToRect`](../../en/Interactive%20Broadcast/camera_focus_ios.md)
+- [`cameraFocusDidChangedToRect`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:cameraFocusDidChangedToRect:)
+- [`cameraExposureDidChangedToRect`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:cameraExposureDidChangedToRect:)
