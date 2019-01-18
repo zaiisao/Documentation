@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Windows
-updatedAt: Fri Dec 21 2018 08:58:24 GMT+0000 (UTC)
+updatedAt: Fri Jan 18 2019 08:31:14 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0
@@ -846,7 +846,7 @@ msgID, size_t msgID_size) ;
 <td>频道名。最大为 128 字节可见字符</td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 1000 条消息。</td>
+<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 200 条消息。</td>
 </tr>
 <tr><td><code>msgID</code></td>
 <td>可见字符，消息的 ID。声网建议将其设置为”“（即由 SDK 接管 msgID 的生成、分配并保证唯一）</td>
@@ -897,12 +897,9 @@ public virtual void channelInviteUser (char const * channelID, size_t channelID_
 
 该方法用于发起呼叫，即邀请某用户加入某个频道。 呼叫和加入频道，是两个独立的过程。用户必须自己再另行加入频道，用户可以选择：先加入频道，再发送呼叫邀请或先发送呼叫邀请，对方接受后再加入频道。如果呼叫失败，会回调 <code>onInviteFailed</code>。可能的原因有：
 
--   对方不在线；
-
--   本端网络不通；
-
--   服务器异常；
-
+- 对方不在线；
+- 本端网络不通；
+- 服务器异常；
 
 如果收到对方的确认信息，本地将回调 <code>onInviteReceivedByPeer</code>, 对方会回调 <code>onInviteReceived</code>。
 
@@ -1106,6 +1103,7 @@ public virtual void channelInviteEnd (char const * channelID, size_t channelID_s
 
 ```
 public virtual int getStatus () ;
+
 ```
 
 该方法用于获取用户状态信息。
@@ -1140,6 +1138,7 @@ public virtual int getStatus () ;
 
 ```
 public virtual int getSdkVersion () ;
+
 ```
 
 该方法用于获取 SDK 版本信息。
@@ -1274,6 +1273,7 @@ public virtual int getSdkVersion () ;
 
 ```
 public virtual void onReconnecting(uint32_t nretry) {}
+
 ```
 
 与 Agora 信令系统丢失连接时触发本回调。
@@ -1299,6 +1299,7 @@ public virtual void onReconnecting(uint32_t nretry) {}
 
 ```
 public virtual void onError(char const * name, size_t name_size,int ecode,char const * desc, size_t desc_size) {}
+
 ```
 
 该回调返回详细的出错信息。
@@ -1339,6 +1340,7 @@ public virtual void onError(char const * name, size_t name_size,int ecode,char c
 
 ```
 public virtual void onQueryUserStatusResult(char const * name, size_t name_size,char const * status, size_t status_size) {}
+
 ```
 
 该回调返回用户状态查询结果。调用 <code>queryUserStatus</code> 方法时触发此回调。
@@ -1372,6 +1374,7 @@ public virtual void onQueryUserStatusResult(char const * name, size_t name_size,
 
 ```
 public virtual void onReconnected(int fd) {}
+
 ```
 
 当重连成功会触发此回调。重连失败会触发 <code>onLogout</code> 回调。
@@ -1397,6 +1400,7 @@ public virtual void onReconnected(int fd) {}
 
 ```
 public virtual void onLoginSuccess(uint32_t uid,int fd) {}
+
 ```
 
 当登录成功后触发此回调。
@@ -1425,6 +1429,7 @@ public virtual void onLoginSuccess(uint32_t uid,int fd) {}
 
 ```
 public virtual void onLogout(int ecode) {}
+
 ```
 
 当退出登录时触发此回调。
@@ -1450,6 +1455,7 @@ public virtual void onLogout(int ecode) {}
 
 ```
 public virtual void onLoginFailed(int ecode) {}
+
 ```
 
 当登录失败时触发此回调。
@@ -1475,6 +1481,7 @@ public virtual void onLoginFailed(int ecode) {}
 
 ```
 public virtual void onInvokeRet(char const * callID, size_t callID_size,char const * err, size_t err_size,char const * resp, size_t resp_size) {}
+
 ```
 
 当 RPC 远程过程调用成功触发此回调。
@@ -1506,6 +1513,7 @@ public virtual void onInvokeRet(char const * callID, size_t callID_size,char con
 
 ```
 public virtual void onChannelJoined(char const * channelID, size_t channelID_size) {}
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1531,6 +1539,7 @@ public virtual void onChannelJoined(char const * channelID, size_t channelID_siz
 
 ```
 public virtual void onChannelJoinFailed(char const * channelID, size_t channelID_size,int ecode) {}
+
 ```
 
 当加入频道失败触发此回调。
@@ -1559,6 +1568,7 @@ public virtual void onChannelJoinFailed(char const * channelID, size_t channelID
 
 ```
 public virtual void onChannelLeaved(char const * channelID, size_t channelID_size,int ecode) {}
+
 ```
 
 当离开频道成功触发此回调。
@@ -1587,6 +1597,7 @@ public virtual void onChannelLeaved(char const * channelID, size_t channelID_siz
 
 ```
 public virtual void onChannelUserJoined(char const * account, size_t account_size,uint32_t uid) {}
+
 ```
 
 当有用户加入频道触发此回调。
@@ -1615,6 +1626,7 @@ public virtual void onChannelUserJoined(char const * account, size_t account_siz
 
 ```
 public virtual void onChannelUserLeaved(char const * account, size_t account_size,uint32_t uid) {}
+
 ```
 
 当有用户离开频道时触发此回调。
@@ -1640,6 +1652,7 @@ public virtual void onChannelUserLeaved(char const * account, size_t account_siz
 
 ```
 public virtual void onChannelUserList(int n,char** accounts,uint32_t* uids) {}
+
 ```
 
 当加入频道成功后，本人会收到此回调。
@@ -1673,6 +1686,7 @@ public virtual void onChannelUserList(int n,char** accounts,uint32_t* uids) {}
 
 ```
 public virtual void onChannelQueryUserNumResult(char const * channelID, size_t channelID_size,int ecode,int num) {}
+
 ```
 
 查询频道用户数量时触发此回调。
@@ -1704,6 +1718,7 @@ public virtual void onChannelQueryUserNumResult(char const * channelID, size_t c
 
 ```
 public virtual void onChannelAttrUpdated(char const * channelID, size_t channelID_size,char const * name, size_t name_size,char const * value, size_t value_size,char const * type, size_t type_size) {}
+
 ```
 
 当频道属性变化时触发。
@@ -1745,6 +1760,7 @@ public virtual void onChannelAttrUpdated(char const * channelID, size_t channelI
 
 ```
 public virtual void onInviteReceived(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 ```
 
 当收到呼叫邀请时触发。
@@ -1779,6 +1795,7 @@ public virtual void onInviteReceived(char const * channelID, size_t channelID_si
 
 ```
 public virtual void onInviteReceivedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid) {}
+
 ```
 
 当呼叫被对方收到时触发。
@@ -1810,6 +1827,7 @@ public virtual void onInviteReceivedByPeer(char const * channelID, size_t channe
 
 ```
 public virtual void onInviteAcceptedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 ```
 
 当呼叫被对方接受时触发。
@@ -1844,6 +1862,7 @@ public virtual void onInviteAcceptedByPeer(char const * channelID, size_t channe
 
 ```
 public virtual void onInviteRefusedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 ```
 
 当呼叫被对方拒绝时触发。
@@ -1878,6 +1897,7 @@ public virtual void onInviteRefusedByPeer(char const * channelID, size_t channel
 
 ```
 public virtual void onInviteFailed(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,int ecode,char const * extra, size_t extra_size) {}
+
 ```
 
 当呼叫失败时触发。
@@ -1915,6 +1935,7 @@ public virtual void onInviteFailed(char const * channelID, size_t channelID_size
 
 ```
 virtual void onInviteEndByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 ```
 
 当呼叫被对方结束时触发。
@@ -1949,6 +1970,7 @@ virtual void onInviteEndByPeer(char const * channelID, size_t channelID_size,cha
 
 ```
 public virtual void onInviteEndByMyself(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid) {}
+
 ```
 
 当呼叫被自己结束时触发。
@@ -1980,6 +2002,7 @@ public virtual void onInviteEndByMyself(char const * channelID, size_t channelID
 
 ```
 public virtual void onInviteMsg(char const * channelID, size_t channelID_size, char const * account, size_t account_size, int uid, String msgType, String msgData, String extra)
+
 ```
 
 当本地接收到远端用户发送的 DTMF 消息时触发该回调。
@@ -2020,6 +2043,7 @@ public virtual void onInviteMsg(char const * channelID, size_t channelID_size, c
 
 ```
 public virtual void onMessageSendError(char const * messageID, size_t messageID_size,int ecode) {}
+
 ```
 
 当发送消息失败时触发。
@@ -2048,6 +2072,7 @@ public virtual void onMessageSendError(char const * messageID, size_t messageID_
 
 ```
 public virtual void onMessageSendSuccess(char const * messageID, size_t messageID_size) {}
+
 ```
 
 当发送消息成功时触发。
@@ -2073,6 +2098,7 @@ public virtual void onMessageSendSuccess(char const * messageID, size_t messageI
 
 ```
 public virtual void onMessageInstantReceive(char const * account, size_t account_size,uint32_t uid,char const * msg, size_t msg_size) {}
+
 ```
 
 接收方收到消息时接收方收到的回调。
@@ -2104,6 +2130,7 @@ public virtual void onMessageInstantReceive(char const * account, size_t account
 
 ```
 public virtual void onMessageChannelReceive(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * msg, size_t msg_size) {}
+
 ```
 
 当收到频道消息时触发。
@@ -2138,6 +2165,7 @@ public virtual void onMessageChannelReceive(char const * channelID, size_t chann
 
 ```
 public virtual void onLog(char const * txt, size_t txt_size) {}
+
 ```
 
 当有日志打印时触发。
@@ -2163,6 +2191,7 @@ public virtual void onLog(char const * txt, size_t txt_size) {}
 
 ```
 public virtual void onUserAttrResult(char const * account, size_t account_size,char const * name, size_t name_size,char const * value, size_t value_size) {}
+
 ```
 
 用户属性查询结果回调。
@@ -2194,6 +2223,7 @@ public virtual void onUserAttrResult(char const * account, size_t account_size,c
 
 ```
 public virtual void onUserAttrAllResult(char const * account, size_t account_size,char const * value, size_t value_size) {}
+
 ```
 
 用户属性查询结果回调。
@@ -2252,8 +2282,3 @@ public virtual void onUserAttrAllResult(char const * account, size_t account_siz
 ## 错误代码和警告代码
 
 详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
-
-
-
-
-
