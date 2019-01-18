@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Objective-C
-updatedAt: Fri Jan 18 2019 08:48:31 GMT+0000 (UTC)
+updatedAt: Fri Jan 18 2019 08:48:49 GMT+0000 (UTC)
 ---
 # 游戏 API
 游戏 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成，提供游戏 SDK 在 iOS 平台上的主要方法和回调。
@@ -4417,6 +4417,136 @@ int enableWebSdkInteroperability(bool enabled);
 </tr>
 </tbody>
 </table>
+
+
+#### 修改默认的语音路由 (setDefaultAudioRouteToSpeakerphone)
+
+```
+int setDefaultAudioRouteToSpeakerphone(bool defaultToSpeaker) = 0;
+```
+
+> -  该方法只在纯音频模式下工作，在有视频的模式下不工作。
+> -  该方法需要在 `joinChannel` 前设置，否则不生效。
+
+
+如有必要，调用该方法修改默认的语音路由。默认的语音路由如下:
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>频道模式</strong></td>
+<td><strong>默认语音路由</strong></td>
+</tr>
+<tr><td>通信</td>
+<td><ul>
+<li>语音通话: 听筒</li>
+<li>视频通话: 外放</li>
+<li>视频通话中关闭视频 <sup>[2]</sup> : 听筒</li>
+</ul>
+</td>
+</tr>
+<tr/>
+<tr/>
+<tr><td>直播</td>
+<td>外放</td>
+</tr>
+<tr><td>游戏语音</td>
+<td>外放</td>
+</tr>
+</tbody>
+</table>
+
+
+
+> [2] 已调用 disableVideo 或 已调用 muteLocalVideoStream/muteAllRemoteVideoStreams
+
+**如有需要**， 根据下表修改上述默认的语音路由:
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>defaultToSpeaker</td>
+<td><ul>
+<li>true: 默认路由改为外放(扬声器)</li>
+<li>false: 默认路由改为听筒</li>
+</ul>
+<p>无论语音是从外放还是听筒出声，如果插上耳机或连接蓝牙，语音路由会发生相应改变。拔出耳机或断开蓝牙后语音路由将恢复成默认路由。</p>
+</td>
+</tr>
+<tr/>
+<tr/>
+<tr><td>返回值</td>
+<td><ul>
+<li>0: 方法调用成功</li>
+<li>&lt;0: 方法调用失败</li>
+</ul>
+</td>
+</tr>
+<tr/>
+</tbody>
+</table>
+
+
+
+#### 打开扬声器 (setEnableSpeakerphone)
+
+```
+int setEnableSpeakerphone(bool speakerOn) = 0;
+```
+
+该方法将语音路由强制设置为扬声器（外放）。调用该方法后，SDK 将返回 `onAudioRouteChanged` 回调提示状态已更改。
+
+
+> 在调用该方法前，请先阅读 `setDefaultAudioRouteToSpeakerphone` 里关于默认语音路由的说明，确认是否需要调用该方法。
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>enabled</td>
+<td><ul>
+<li><p>true:</p>
+<div><ul>
+<li>如果用户已在频道内，无论之前语音是路由到耳机，蓝牙，还是听筒，调用该 API 后均会默认切换到从外放(扬声器)出声。</li>
+<li>如果用户尚未加入频道，调用该API后，无论用户是否有耳机或蓝牙设备，在加入频道时均会默认从外放(扬声器)出声。</li>
+</ul>
+</div>
+</li>
+<li><p>false: 语音会根据默认路由出声，详见 <code>setDefaultAudioRouteToSpeakerphone</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr/>
+<tr/>
+<tr/>
+<tr><td>返回值</td>
+<td><ul>
+<li>0: 方法调用成功</li>
+<li>&lt;0: 方法调用失败</li>
+</ul>
+</td>
+</tr>
+<tr/>
+</tbody>
+</table>
+
+
+
 
 
 #### 启用内置加密，并设置数据加密密码 (setEncryptionSecret)
