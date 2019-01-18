@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Web
-updatedAt: Mon Nov 26 2018 03:45:38 GMT+0000 (UTC)
+updatedAt: Fri Jan 18 2019 09:12:02 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0 BETA
