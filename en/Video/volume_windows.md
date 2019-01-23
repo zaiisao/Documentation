@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Wed Jan 23 2019 09:06:31 GMT+0000 (UTC)
+updatedAt: Wed Jan 23 2019 09:06:42 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -12,7 +12,7 @@ When using the Agora SDK, you can adjust the audio recording and playback volume
 
 This article describes the scenarios when you need to adjust the volume, the corresponding APIs and considerations in the process from audio recording to playing. 
 
-![](https://web-cdn.agora.io/docs-files/1546416068141)
+![](https://web-cdn.agora.io/docs-files/1548234386634)
 
 ## Implementation
 Before proceeding, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md).
