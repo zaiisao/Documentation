@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed Jan 23 2019 08:26:11 GMT+0000 (UTC)
+updatedAt: Wed Jan 23 2019 09:11:39 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -39,6 +39,19 @@ Two solutions are available:
     -   [API Reference](../../en/API%20Reference/recording_cpp.md)
 
 2.  For users who want to continue using the Agora Recording Server, you can use your current Windows SDK version (version 1.14 and before). Contact Technical Support for any questions.
+
+
+## v2.3.3
+
+The version 2.3.3 was released on Jan. 23rd, 2019. See below for improvements and issues fixed.
+
+### Improvements
+
+v2.3.3 optimizes the screen-sharing algorithm for different scenarios. The video smoothness and quality are enhanced when a user presents slides or browses websites. v2.3.2 also improves the initial image quality in the Communication profile.
+
+### Issues Fixed
+
+Occasional inaccurate statistics returned in the `onNetworkQuality` callback.
 
 ## v2.3.2
 
