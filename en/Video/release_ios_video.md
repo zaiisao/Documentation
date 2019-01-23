@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Wed Jan 23 2019 08:40:35 GMT+0000 (UTC)
+updatedAt: Wed Jan 23 2019 09:12:05 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -16,6 +16,13 @@ The Video SDK supports the following scenarios:
 -   Live Voice/Video Broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms) and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
+
+## v2.3.3
+The version 2.3.3 was released on Jan. 23rd, 2019. See below for issues fixed.
+
+### Issues Fixed
+
+Occasional inaccurate statistics returned in the `networkQuality` callback.
 
 ## v2.3.2
 
