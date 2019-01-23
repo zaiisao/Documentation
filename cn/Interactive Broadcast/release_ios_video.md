@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Wed Jan 23 2019 08:40:54 GMT+0000 (UTC)
+updatedAt: Wed Jan 23 2019 09:12:20 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -17,6 +17,14 @@ iOS 视频 SDK 支持两种主要场景:
 -   音视频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)以及 [互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms) 了解关键特性。
+
+## **2.3.3 版**
+
+该版本于 2019 年 1 月 23 日发布。修复问题详见下文。
+
+### **问题修复**
+
+修复了 `networkQuality` 回调不准确的问题。
 
 ## **2.3.2 版**
 该版本于 2019 年 1 月 16 日发布。新增特性与修复问题详见下文。
