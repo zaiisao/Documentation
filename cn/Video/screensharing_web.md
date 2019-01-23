@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Wed Jan 23 2019 09:50:49 GMT+0000 (UTC)
+updatedAt: Wed Jan 23 2019 09:54:05 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
