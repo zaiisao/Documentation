@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Wed Jan 23 2019 09:02:19 GMT+0000 (UTC)
+updatedAt: Wed Jan 23 2019 09:02:29 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -14,7 +14,7 @@ updatedAt: Wed Jan 23 2019 09:02:19 GMT+0000 (UTC)
 
 本文梳理了在使用 SDK 从音频采集到播放各阶段中，用户可能需要调整音量的场景、各场景对应的 API 及其使用注意事项。
 
-![](https://web-cdn.agora.io/docs-files/1545991278347)
+![](https://web-cdn.agora.io/docs-files/1548234126655)
 
 ## 实现方法
 
