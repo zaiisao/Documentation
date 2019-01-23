@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Wed Jan 23 2019 09:03:49 GMT+0000 (UTC)
+updatedAt: Wed Jan 23 2019 09:04:00 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -12,7 +12,7 @@ When using the Agora SDK, developers can adjust the recording and playback volum
 
 This article describes the scenarios when you need to adjust the volume, the corresponding APIs and considerations in the process from audio recording to playing. 
 
-![](https://web-cdn.agora.io/docs-files/1546416068141)
+![](https://web-cdn.agora.io/docs-files/1548234220762)
 
 ## Implementation
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
