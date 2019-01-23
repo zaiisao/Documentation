@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Jan 23 2019 08:28:25 GMT+0000 (UTC)
+updatedAt: Wed Jan 23 2019 09:11:27 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -20,6 +20,19 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 ### Known Issues and Limitations
 
 A USB device driver issue occurs when users do not hear any audio or the audio is corrupted with a USB headset. USB is not user-friendly on macOS, and the use of higher quality headsets is recommended.
+
+## v2.3.3
+
+The version 2.3.3 was released on Jan. 23rd, 2019. See below for improvements and issues fixed.
+
+### Improvements
+
+v2.3.3 optimizes the screen-sharing algorithm for different scenarios. The video smoothness and quality are enhanced when a user presents slides or browses websites. v2.3.2 also improves the initial image quality in the Communication profile.
+
+### Issues Fixed
+
+Occasional inaccurate statistics returned in the `networkQuality` callback.
+
 
 ## v2.3.2
 
