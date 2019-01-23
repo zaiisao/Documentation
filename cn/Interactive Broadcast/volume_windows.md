@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Windows
 platform: Windows
-updatedAt: Thu Jan 17 2019 09:26:58 GMT+0000 (UTC)
+updatedAt: Wed Jan 23 2019 09:02:53 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
