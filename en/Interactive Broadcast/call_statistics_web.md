@@ -3,7 +3,7 @@
 title: Report Call Statistics
 description: 
 platform: Web
-updatedAt: Thu Jan 24 2019 15:21:02 GMT+0000 (UTC)
+updatedAt: Thu Jan 24 2019 15:21:13 GMT+0000 (UTC)
 ---
 # Report Call Statistics
 # Report Call Statistics
@@ -26,7 +26,7 @@ Before proceeding, ensure that you prepare the development environment. See [Int
 <a name ="system_statistics"></a>
 ### Get the statistics of the system
 
-You can use the [`Client.getSystemStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getsystemstats) method to get the statistics of the system for optimizing your app. Currently, only the battery level information is provided.
+You can use the [`Client.getSystemStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getsystemstats) method to get the statistics of the system for optimizing your application. Currently, only the battery level information is provided.
 
 ```javascript
 client.getSystemStats((stats) => {
@@ -39,7 +39,7 @@ client.getSystemStats((stats) => {
 <a name ="network_statistics"></a>
 ### Get the statistics of the network
 
-The statistics of the network include the network type and the network connection. You can use these statistics to optimize your app to provide customized content.
+The statistics of the network include the network type and the network connection. You can use these statistics to optimize your application to provide customized content.
 
 You can:  
 
@@ -61,7 +61,7 @@ client.getNetworkStats((stats) => {
 ```
 
 - Use the [`Client.getTransportStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#gettransportstats) method to get the statistics of the network connection, including:
-  - `RTT`: RTT (Round-trip time) between the Agora Web SDK and the access node of the Agora SD-RTN, in ms.
+  - `RTT`: RTT (Round-trip time) (ms) between the Agora Web SDK and the access node of the Agora SD-RTN.
 
 ```javascript
 client.getTransportStats((stats) => {
@@ -70,7 +70,7 @@ client.getTransportStats((stats) => {
 ```
 
 > - The `Client.getNetworkStats` method requires Google Chrome 61 or later and compatibility is not guaranteed. See [Network Information API](https://developer.mozilla.org/en-US/docs/Web/API/Network_Information_API).
-> - It takes at most 3 seconds to get the statistics of the `Client.getTransportStats` method.
+> - It takes less than 3 seconds to get the statistics of the `Client.getTransportStats` method.
 
 <a name ="local_stream_statistics"></a>
 ### Get the statistics of the local stream
@@ -121,7 +121,7 @@ client.getLocalVideoStats((localVideoStats) => {
 });
 ```
 
-> Call the `getLocalAudioStats` and `getLocalVideoStats` methods after receiving the `stream-published` callback. It takes at most 3 seconds to get the statistics.
+> Call the `getLocalAudioStats` and `getLocalVideoStats` methods after receiving the `stream-published` callback. It takes less than 3 seconds to get the statistics.
 
 <a name ="remote_stream_statistics"></a>
 ### Get the statistics of the remote stream
@@ -176,5 +176,5 @@ client.getRemoteVideoStats((remoteVideoStatsMap) => {
 });
 ```
 
-> Call the `Client.getRemoteAudioStats` and `Client.getRemoteVideoStats` methods after receiving the `stream-subscribed` callback. It takes at most 3 seconds to get the statistics.
+> Call the `Client.getRemoteAudioStats` and `Client.getRemoteVideoStats` methods after receiving the `stream-subscribed` callback. It takes less than 3 seconds to get the statistics.
 
