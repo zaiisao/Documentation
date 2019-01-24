@@ -3,7 +3,7 @@
 title: 创建并初始化 Client 对象
 description: Web SDK 初始化客户端对象
 platform: Web
-updatedAt: Thu Jan 24 2019 05:26:48 GMT+0000 (UTC)
+updatedAt: Thu Jan 24 2019 05:26:52 GMT+0000 (UTC)
 ---
 # 创建并初始化 Client 对象
 在创建并初始化 Client 对象前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/web_prepare.md)。
@@ -34,6 +34,5 @@ client.init(<APPID>, function () {
 - [发布和订阅音视频流](../../cn/Video/publish_web.md)
 
 如果对网络或音质有特殊的需求，你还可以在加入频道前：
-- [进行通话前网络质量检测](../../cn/Video/lastmile_web.md)
 - [使用双声道/高音质](../../cn/Video/audio_profile_web.md)
 
