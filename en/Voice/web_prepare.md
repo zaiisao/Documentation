@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Thu Jan 24 2019 02:10:53 GMT+0000 (UTC)
+updatedAt: Thu Jan 24 2019 02:11:00 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
@@ -132,6 +132,6 @@ Add the following code to the line above `</body>` in your project.
 
 ## Next Steps
 You have now set up the environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
-- Initialize the SDK
-- Join a Channel
-- Publish and Subscribe to Streams
+- [Initialize the SDK](../../en/Voice/initialize_web_live.md)
+- [Join a Channel](../../en/Voice/join_live_web.md)
+- [Publish and Subscribe to Streams](../../en/Voice/publish_web_live.md)
