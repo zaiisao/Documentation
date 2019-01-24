@@ -3,7 +3,7 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Thu Jan 24 2019 03:56:49 GMT+0000 (UTC)
+updatedAt: Thu Jan 24 2019 03:56:55 GMT+0000 (UTC)
 ---
 # Create and Initialize a Client
 Before creating and initizing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md).
@@ -35,5 +35,4 @@ You have created the client and can start a voice call with the following steps:
 - [Publish and Subscribe to Streams](../../en/Voice/publish_web_audio.md)
 
 To check the network connection or audio quality before joining a channel, you can refer to the following sections:
-- [Conduct a Last Mile Test](../../en/Voice/lastmile_web.md)
 - [Set the Stereo/High-fidelity Audio Profile](../../en/Voice/audio_profile_web.md)
