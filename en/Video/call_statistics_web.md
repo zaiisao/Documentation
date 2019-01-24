@@ -21,7 +21,7 @@ The statistics include:
 
 ## Implementation
 
-Before proceeding, ensure that you have your development environment prepared. See [Integrate the SDK](../../en/Video/web_prepare.md).
+Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
 
 <a name ="system_statistics"></a>
 ### Get the statistics of the system

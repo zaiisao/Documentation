@@ -14,7 +14,7 @@ The following figure shows how Agora’s communications use built-in encryption:
 <img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" />
 
 ## Implementation
-Before proceeding, ensure that you have your development environment prepared. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
+Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
 
 ```
 //javascript

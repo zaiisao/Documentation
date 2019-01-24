@@ -10,7 +10,7 @@ updatedAt: Thu Jan 17 2019 09:47:06 GMT+0000 (UTC)
 The Agora Web SDK provides methods for you to set the output log level or to enable/disable log upload.
 
 ## Implementation
-Before proceeding, ensure that you have your development environment prepared. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
+Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
 
 ### Set Output Log Level
 The output log levels are in the order of NONE, ERROR, WARNING, INFO, and DEBUG. Select a level, and you can see the logs in the preceding levels. For example, enter `AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.INFO);`, and you can see the logs in the WARNING, ERROR and INFO levels.
