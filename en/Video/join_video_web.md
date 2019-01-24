@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Web
-updatedAt: Thu Jan 24 2019 02:43:47 GMT+0000 (UTC)
+updatedAt: Thu Jan 24 2019 02:43:58 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining a channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
@@ -31,7 +31,7 @@ client.join(<TOKEN_OR_KEY>, <CHANNEL_NAME>, <UID>, function(uid) {
 
 ## Next Steps
 
-You are in the channel and can start a voice call with the following step:
+You are in the channel and can start a video call with the following step:
 
 - [Publish and Subscribe to Streams](../../en/Video/publish_web.md)
 
