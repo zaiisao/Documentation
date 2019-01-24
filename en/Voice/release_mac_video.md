@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Thu Jan 24 2019 14:31:45 GMT+0000 (UTC)
+updatedAt: Thu Jan 24 2019 14:31:51 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -27,7 +27,7 @@ The version 2.3.3 was released on Jan. 23rd, 2019. See below for improvements an
 
 ### Improvements
 
-v2.3.3 optimizes the screen-sharing algorithm for different scenarios. The video smoothness and quality are enhanced when a user presents slides or browses websites. v2.3.2 also improves the initial image quality in the Communication profile.
+v2.3.3 optimizes the screen-sharing algorithm for different scenarios. The video smoothness and quality are enhanced when a user presents slides or browses websites. v2.3.3 also improves the initial image quality in the Communication profile.
 
 ### Issues Fixed
 
