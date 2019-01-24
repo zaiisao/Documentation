@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Jan 24 2019 22:05:33 GMT+0000 (UTC)
+updatedAt: Thu Jan 24 2019 22:05:37 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -305,7 +305,7 @@ Occasional recording failures on some phones when a user leaves a channel and tu
 
 ### Improvements
 
-Improves the performance of screen sharing by shortening the time interval between which users switch from screen sharing to a normal communication or live-broadcast.
+Improves the performance of screen sharing by shortening the time interval between which users switch from screen sharing to a normal communication or live-broadcast profile.
 
 ## v2.1.2
 
@@ -363,7 +363,7 @@ Adds the function of injecting an external video stream to an ongoing Live Broad
 #### 6. Screen sharing for Interactive Broadcast
 
 -   Before v2.1.0: The Agora SDK only supports the screen sharing function in a video call scenario.
--   From v2.1.0: The Agora SDK also supports the screen sharing function in an Interactive Broadcast scenario.
+-   From v2.1.0: The Agora SDK adds the screen-sharing function in interactive broadcasts.
 
 
 #### 7. Loopback recording
