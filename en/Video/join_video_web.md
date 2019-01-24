@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 22:22:54 GMT+0000 (UTC)
+updatedAt: Thu Jan 24 2019 02:43:47 GMT+0000 (UTC)
 ---
 # Join a Channel
 Before joining a channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
