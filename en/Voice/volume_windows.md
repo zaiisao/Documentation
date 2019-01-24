@@ -15,7 +15,7 @@ This article describes the scenarios when you need to adjust the volume, the cor
 ![](https://web-cdn.agora.io/docs-files/1548234386634)
 
 ## Implementation
-Before proceeding, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/windows_video.md).
+Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/windows_video.md).
 
 ### Set the Recording Volume
 
