@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Jan 25 2019 05:21:22 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 05:21:26 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -43,7 +43,7 @@ Two solutions are available:
 
 ## v2.3.3
 
-v2.3.3 is released on Jan. 23, 2019. 
+v2.3.3 is released on Jan. 24, 2019. 
 
 ### Improvements
 
