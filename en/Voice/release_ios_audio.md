@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Jan 25 2019 00:12:01 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 00:12:05 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -190,7 +190,7 @@ The SDK and app both have control over the audio session. However, the app may r
 - Occasional inter-operational failures between an iOS and a macOS device.
 - Occasional crashes on some iOS devices when a user leaves the live broadcast channel while playing music using a third-party app.
 - Occasional crashes on some iOS devices when leaving the channel.
-- Occasional echoes when using a specific audio card.
+- Occasional echo issues when using a specific audio card.
 - Failure to adjust the volume on some iOS devices.
 
 
@@ -322,7 +322,7 @@ Video freeze in DTX + AAC mode.
 
 v2.1.1 was released on March 16, 2018. 
 
-Agora has identified a critical issue in SDK v2.1. Upgrade to v2.1.1 if you are using Agora SDK v2.1.
+We have identified a critical issue in SDK v2.1. Upgrade to v2.1.1 if you are using Agora SDK v2.1.
 
 ## v2.1.0 
 
@@ -334,7 +334,7 @@ v2.1.0 is released on March 7, 2018.
 
 Adds a scenario for the game chat room to reduce the bandwidth and cancel the noise with the <code>setAudioProfile</code> method.
 
-#### 2. Enhanced the audio effect input from the built-in microphone
+#### 2. Enhances the audio effect input from the built-in microphone
 
 In an interactive broadcast, the host can enhance the local audio effects from the built-in microphone with the <code>setLocalVoiceEqualization</code> and <code>setLocalVoiceReverb</code> methods by implementing the voice equalization and reverberation effects.
 
