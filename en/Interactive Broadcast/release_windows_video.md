@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Jan 25 2019 04:01:34 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 05:21:22 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -240,6 +240,15 @@ To improve the user experience, Agora has made the following changes to the APIs
 - [`onConnectionInterrupted`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9927b5cd2a67c1f48f17b5ed2303f483)
 - [`onConnectionBanned`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a38e9d403ae4732dff71110b454149404)
 
+## v2.2.2
+
+v2.2.2 is released on Jun 21st, 2018.
+
+### Issues Fixed
+
+- Fixed occasional online statistics crashes.
+- Fixed the issue of failing to report the uid and volume of the speaker in a channel.
+- Fixed the issue of occasional video freeze after a view size change.
 
 ## v2.2.1
 
