@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Fri Jan 25 2019 03:59:33 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 04:09:38 GMT+0000 (UTC)
 ---
 # 发版说明
 
@@ -209,6 +209,15 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 - [`onConnectionInterrupted`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9927b5cd2a67c1f48f17b5ed2303f483)
 - [`onConnectionBanned`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a38e9d403ae4732dff71110b454149404)
 
+## **2.2.2 版**
+
+该版本于 2018 年 6 月 21 日发布。修复问题列表详见下文。
+
+### **修复问题**
+
+- 修复了偶发的线上统计崩溃的问题
+- 修复了特定场景下偶发的视频窗口尺寸变化后，视频卡住的问题
+- 修复了偶发的无法正常反馈频道内谁在说话以及说话者的音量的问题
 
 ## **2.2.1 版**
 
