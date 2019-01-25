@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Fri Jan 25 2019 04:02:06 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 04:04:24 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -186,6 +186,19 @@ v2.2.3 is released on July 5, 2018.
 -   Occasional video freeze after a view size change.
 -   Failing to report the uid and volume of the speaker in a channel.
 
+## v2.2.2
+
+v2.2.2 is released on Jun 21st, 2018.
+
+### Issues Fixed
+
+- Fixed occasional online statistics crashes.
+- Fixed the issue of failing to report the uid and volume of the speaker in a channel.
+- Fixed the issue of occasional video freeze after a view size change.
+
+## v2.2.1
+
+v2.2.1 is released on May 30th, 2018 and improves the internal code implementation.
 
 ## v2.2.0
 
