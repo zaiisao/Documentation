@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Jan 25 2019 03:52:42 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 04:04:42 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -321,6 +321,16 @@ The security keys are improved and updated in v2.1.0. If you are using an Agora 
 - Unsteady voice volume of the broadcaster in a live broadcast.
 - Occasional video freeze after a view size change.
 
+## v2.2.2
+
+v2.2.2 is released on Jun 21st, 2018.
+
+### Issues Fixed
+
+- Fixed occasional online statistics crashes.
+- Fixed the issue that the media and the signaling services cannot be accessed at the same time on some iOS devices.
+- Fixed the issue of failing to report the uid and volume of the speaker in a channel.
+- Fixed the issue of occasional video freeze after a view size change.
 
 ## v2.2.1
 
