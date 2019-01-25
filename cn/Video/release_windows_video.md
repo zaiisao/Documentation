@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jan 23 2019 08:22:53 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 03:59:33 GMT+0000 (UTC)
 ---
 # 发版说明
 
@@ -32,6 +32,18 @@ Windows 视频 SDK 支持两种主要场景:
 x86 的编译环境选择 Win32:
 
 <img alt="../_images/x86.png" src="https://web-cdn.agora.io/docs-files/cn/x86.png" style="width: 300px; "/>
+
+## **2.3.3 版**
+
+该版本于 2019 年 1 月 23 日发布。功能改进与修复问题详见下文。
+
+### **改进**
+
+为提升用户体验，屏幕共享做了大量算法优化。针对不同的共享场景提供不同的屏幕共享策略，尤其针对 PPT 翻页和网页浏览场景，提升了屏幕共享过程中的流畅度和清晰度。同时改善了通信模式下屏幕共享开启阶段画面模糊的现象。
+
+### **问题修复**
+
+修复了 `onNetworkQuality` 回调不准确的问题。
 
 
 ## **2.3.2 版**
