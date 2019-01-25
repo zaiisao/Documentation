@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Jan 25 2019 00:05:15 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 00:05:19 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -226,7 +226,7 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 
 ### Issues Fixed
 
-- Increases the memory usage when multiple delegated hosts broadcast in the channel.
+- Excessive increase in the memory usage when multiple delegated hosts broadcast in the channel.
 - Occasional video renderer crashes when the app switches to the background on some iOS devices.
 - Occasional app crashes on some iOS devices.
 - The remote view does not display on some devices.
@@ -266,7 +266,7 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 - Occasional crashes on some iOS devices when the user frequently turns on and off the camera.
 - Occasional video freezes when switching from multiple hosts to a single host.
 - Occasional inter-operational failures between SIP devices and the SDK.
-- Occasional echoes when using a specific audio card.
+- Occasional echo issues when using a specific audio card.
 - Occasional video delays on some iOS devices.
 - The video window size jumps from small to big on some iOS devices.
 - Image blurs on some iOS devices when the camera vibrates.
@@ -409,7 +409,7 @@ Improves the performance of screen sharing by shortening the time interval betwe
 
 v2.1.2 is released on April 2, 2018. 
 
->  If you upgraded the SDK to v2.1.2 from a previous version, the live-broadcast video quality is better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth. 
+>  If you upgrade the SDK to v2.1.2 from a previous version, the live-broadcast video quality is better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth. 
 
 ### New Features
 
@@ -437,7 +437,7 @@ v2.1.0 is released on March 7, 2018.
 
 Adds a scenario for the game chat room to reduce the bandwidth and cancel the noise with the <code>setAudioProfile</code> method.
 
-#### 2. Enhanced the audio effect input from the built-in microphone
+#### 2. Enhance the audio effect input from the built-in microphone
 
 In an interactive broadcast, the host can enhance the local audio effects from the built-in microphone with the <code>setLocalVoiceEqualization</code> and <code>setLocalVoiceReverb</code> methods by implementing the voice equalization and reverberation effects.
 
