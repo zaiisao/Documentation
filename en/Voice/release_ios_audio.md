@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Jan 25 2019 03:37:55 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 04:05:12 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -243,6 +243,15 @@ The security keys are improved and updated in v2.1.0. If you are using an Agora 
 - Failing to report the uid and volume of the speaker in a channel.
 - Unsteady voice volume of the broadcaster in a live broadcast.
 
+## v2.2.2
+
+v2.2.2 is released on Jun 21st, 2018.
+
+### Issues Fixed
+
+- Fixed occasional online statistics crashes.
+- Fixed the issue that the media and the signaling services cannot be accessed at the same time on some iOS devices.
+- Fixed the issue of failing to report the uid and volume of the speaker in a channel.
 
 ## v2.2.1
 
