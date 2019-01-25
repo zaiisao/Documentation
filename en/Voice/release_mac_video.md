@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Fri Jan 25 2019 05:20:20 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 05:20:25 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -23,7 +23,7 @@ A USB device driver issue occurs when you do not hear any audio or the audio is 
 
 ## v2.3.3
 
-v2.3.3 is released on Jan. 23rd, 2019. 
+v2.3.3 is released on Jan. 24rd, 2019. 
 
 ### Improvements
 
