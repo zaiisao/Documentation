@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Jan 25 2019 00:09:25 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 03:49:06 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -188,7 +188,7 @@ v2.3.0 is released on August 31, 2018.
 -   To support video rotation and enable better quality for the custom video source, this version deprecates the `setVideoProfile` method and uses the `setVideoEncoderConfiguration` method instead to set the video encoding configurations. You can still use the `setVideoProfile` method, but Agora recommends using the `setVideoEncoderConfiguration` method to set the video profile because:
     -   During a live broadcast, users can set the video orientation mode as adaptive, under which the SDK can transfer rotated video frames without cropping them, thus avoiding the “big headshot” or blurry images at the player.
     -   In scenarios involving external video sources, the SDK adjusts the width and height of the output video frames based on the inputting video frames, avoiding unnecessary cropping and thereby rendering more image frames at the player.
--   From v2.3.0, the `LiveTranscoding` Class was moved from the *io.agora.live* package to the `io.agora.rtc.live` package.
+-   From v2.3.0, the `LiveTranscoding` class is moved from the *io.agora.live* package to the `io.agora.rtc.live` package.
 -   Fixed a typo in the constants.java API in v2.3.0.
     -   Before:
 
@@ -243,7 +243,7 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 
 ### Issues Fixed
 
-- Increased memory usage when multiple delegated hosts broadcast in the channel.
+- Excessive increase in memory usage when multiple delegated hosts broadcast in the channel.
 - Occasional crashes on some Android devices.
 - The remote view does not display on some devices.
 - The local video cannot be enabled on some Android devices.
@@ -255,11 +255,11 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 - Occasionally, the remote user cannot hear the host when the host switches between AUDIENCE and BROADCASTER.
 - Occasionally, the settings applied to the background image in live transcoding do not take effect.
 - Occasionally on some devices, the video height and width are swapped in the Communication profile.
-- Occasionally, the destroy method does not respond after a user enables the video and joins a channel.
+- Occasionally, the `destroy` method does not respond after a user enables the video and joins a channel.
 - Occasional crashes on Android devices when remote users frequently join and leave the channel.
 - Black screen due to failure to render the remote video on some Android devices.
 - Occasionally, the audience cannot adjust the channel volume.
-- Occasionally, applications do not respond on some Android devices.
+- Occasionally, apps do not respond on some Android devices.
 - Occasional crashes on some Android devices when switching video resolutions in a live broadcast.
 - A delegated host cannot see the video of the other hosts in the channel on some Android devices.
 - The bitrates cannot reach the target values on some Android devices when a user frequently joins and leaves the communication channel with different video profiles.
@@ -290,7 +290,7 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 - Occasional inter-operational failures between SIP devices and the SDK.
 - Occasionally on Mi 8, the local video cannot be seen locally or remotely.
 - Occasionally on some Android devices, users cannot see each other.
-- Occasional echoes when using a specific audio card.
+- Occasional echo issues when using a specific audio card.
 - Occasional video delays on some Android devices.
 - Occasional crashes on some Android devices when transmitting the video streams.
 
@@ -456,7 +456,7 @@ v2.1.0 is released on March 7, 2018.
 
 Adds a scenario for the game chat room to reduce the bandwidth and cancel the noise with the <code>setAudioProfile</code> method.
 
-#### 2. Enhanced audio effect input from a built-in microphone
+#### 2. Enhance the audio effect input from the built-in microphone
 
 In an interactive broadcast scenario, the host can enhance the local audio effects from the built-in microphone with the <code>setLocalVoiceEqualization</code> and <code>setLocalVoiceReverb</code> methods by implementing the voice equalization and reverberation effects.
 
