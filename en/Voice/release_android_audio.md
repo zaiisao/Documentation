@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Jan 25 2019 05:18:18 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 05:18:22 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -18,7 +18,7 @@ The Voice SDK supports the following scenarios:
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 ## v2.3.3
-v2.3.3 is released on January 23, 2019. 
+v2.3.3 is released on January 24, 2019. 
 
 ### Issues Fixed
 
