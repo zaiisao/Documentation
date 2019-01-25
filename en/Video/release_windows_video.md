@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Jan 25 2019 05:38:55 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 05:39:03 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -43,7 +43,7 @@ Two solutions are available:
 
 ## v2.3.3
 
-v2.3.3 is released on Jan. 24, 2019. 
+v2.3.3 is released on January 24, 2019. 
 
 ### Improvements
 
@@ -55,7 +55,7 @@ Occasional inaccurate statistics returned in the `onNetworkQuality` callback.
 
 ## v2.3.2
 
-v2.3.2 is released on Jan. 16, 2019. 
+v2.3.2 is released on January 16, 2019. 
 
 ### Before Getting Started
 
@@ -242,7 +242,7 @@ To improve the user experience, Agora has made the following changes to the APIs
 
 ## v2.2.2
 
-v2.2.2 is released on Jun 21st, 2018.
+v2.2.2 is released on June 21, 2018.
 
 ### Issues Fixed
 
