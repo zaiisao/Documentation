@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Jan 25 2019 03:49:06 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 04:04:32 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -350,7 +350,19 @@ The security keys are improved and updated in v2.1.0. If you are using an Agora 
 - Occasional ANR (application no response) problem on some Android devices after a user turns off the camera to end a video session.
 - Occasional video freeze after a view size change.
 
+## v2.2.2
 
+v2.2.2 is released on Jun 21st, 2018.
+
+### Issues Fixed
+
+- Fixed occasional online statistics crashes.
+- Fixed occasional audio crashes on some Android devices.
+- Fixed the issue that the broadcaster’s voice distorts occasionally on some Android devices.
+- Fixed the issue of failing to report the uid and volume of the speaker in a channel.
+- Fixed the issue of receiving the onLeaveChannel callback long after a user has left the channel on some Android devices.
+- Fixed the issue of occasional video freeze after a view size change.
+- Fixed the occasional ANR (application no response) problem on some Android devices after the user turns off the camera to end a video session.
 
 ## v2.2.1
 
