@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Sat Jan 26 2019 08:47:27 GMT+0000 (UTC)
+updatedAt: Sat Jan 26 2019 08:47:48 GMT+0000 (UTC)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -91,7 +91,7 @@ A stream is an object that contains audio/video data. Users in a channel can [pu
 
 Publishing a stream describes the action of a user sending the local audio/video data to other users in the channel after joining a channel.
 
-In a live broadcast channel, only the hosts can publish streams.
+In a live broadcast channel, only hosts can publish streams.
 
 ### <a name ="sub"></a>Subscribe
 
