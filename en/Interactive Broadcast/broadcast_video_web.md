@@ -147,7 +147,7 @@ client.on('stream-added', function (evt) {
   });
 });
 client.on('stream-subscribed', function (evt) {
-  var remoteStream = evt.stream;
+  var stream = evt.stream;
   console.log("Subscribe remote stream successfully: " + stream.getId());
   stream.play('agora_remote' + stream.getId());
 })
@@ -174,10 +174,10 @@ localStream.init(function() {
 
 ```javascript
 client.on('stream-subscribed', function (evt) {
-  var remoteStream = evt.stream;
+  var stream = evt.stream;
   console.log("Subscribe remote stream successfully: " + stream.getId());
   // Use agora_remote + stream.getId() as the ID of the dom element
-  remoteStream.play('agora_remote' + stream.getId());
+  stream.play('agora_remote' + stream.getId());
 })
 ```
 

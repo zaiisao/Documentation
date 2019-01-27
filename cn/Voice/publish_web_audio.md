@@ -71,7 +71,7 @@ client.on('stream-added', function (evt) {
   });
 });
 client.on('stream-subscribed', function (evt) {
-  var remoteStream = evt.stream;
+  var stream = evt.stream;
   console.log("Subscribe remote stream successfully: " + stream.getId());
   stream.play('agora_remote' + stream.getId());
 })
@@ -97,10 +97,10 @@ client.on('stream-subscribed', function (evt) {
 
 	```javascript
 	client.on('stream-subscribed', function (evt) {
-		var remoteStream = evt.stream;
+		var stream = evt.stream;
 		console.log("Subscribe remote stream successfully: " + stream.getId());
 		// 这里使用agora_remote + stream.getId()作为dom元素的id。
-		remoteStream.play('agora_remote' + stream.getId());
+		stream.play('agora_remote' + stream.getId());
 	})
 	```
 

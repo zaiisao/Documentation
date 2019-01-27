@@ -48,7 +48,7 @@ Web 平台通过如下 3 个接口控制用户角色的切换：
 		});
 	});
 	client.on('stream-subscribed', function (evt) {
-		var remoteStream = evt.stream;
+		var stream = evt.stream;
 		console.log("Subscribe remote stream successfully: " + stream.getId());
 		stream.play('agora_remote' + stream.getId());
 	})
