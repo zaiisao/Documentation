@@ -97,9 +97,9 @@ client.on('stream-subscribed', function (evt) {
 	```javascript
 	client.on('stream-subscribed', function (evt) {
 		var remoteStream = evt.stream;
-		console.log("Subscribe remote stream successfully: " + stream.getId());
-		// 这里使用agora_remote + stream.getId()作为dom元素的id。
-		remoteStream.play('agora_remote' + stream.getId());
+		console.log("Subscribe remote stream successfully: " + remoteStream.getId());
+		// 这里使用agora_remote + remoteStream.getId()作为dom元素的id。
+		remoteStream.play('agora_remote' + remoteStream.getId());
 	})
 	```
 
