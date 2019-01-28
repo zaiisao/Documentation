@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Java
-updatedAt: Mon Jan 28 2019 11:28:11 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 11:28:17 GMT+0000 (UTC)
 ---
 # 游戏 API
 互动游戏 API 由 **Java 接口** 和 **C++ 接口** 部分组成。
