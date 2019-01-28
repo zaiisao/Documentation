@@ -3,7 +3,7 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Mon Jan 28 2019 07:09:06 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 07:09:20 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
 ### When I use Google Chrome on Android, why can't I connect with people who use the Safari browser or Native SDK?
@@ -66,3 +66,8 @@ Due to device and web browser limitations, the resolution you set may not take e
 
 ### When the Firefox browser interoperates with the Native SDK, the video in the Firefox browser is rotated in the communication channel. How can I fix that?
 Due to the browser limitations, Agora recommends you use the Chrome browser to interoperate with the Native SDK in the communication channel.
+
+### Why can't I subscribe to the remote streams on Firefox v59.0.2?
+This is a known issue of the Firefox browser, please use a later version of Firefox.
+
+
