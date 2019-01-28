@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Jan 25 2019 05:39:39 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 05:39:44 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -18,7 +18,7 @@ Android 语音 SDK 支持两种主要场景:
 
 ## **2.3.3 版**
 
-该版本于 2019 年 1 月 23 日发布。修复问题详见下文。
+该版本于 2019 年 1 月 24 日发布。修复问题详见下文。
 
 ### **问题修复**
 

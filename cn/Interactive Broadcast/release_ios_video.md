@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Fri Jan 25 2019 05:43:38 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 05:43:43 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -20,7 +20,7 @@ iOS 视频 SDK 支持两种主要场景:
 
 ## **2.3.3 版**
 
-该版本于 2019 年 1 月 23 日发布。修复问题详见下文。
+该版本于 2019 年 1 月 24 日发布。修复问题详见下文。
 
 ### **问题修复**
 
