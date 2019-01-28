@@ -3,16 +3,16 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Mon Jan 28 2019 03:22:03 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 11:27:47 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Introduction
-The Agora iOS Voice SDK for Interactive Gaming provides Objective-C and C++ Interfaces to implement the voice function for gaming on the iOS platform.
+The Agora iOS SDK for Interactive Gaming provides Objective-C and C++ Interfaces to implement the voice and video functions for gaming on the iOS platform.
 
 For the key features included, see [Interactive Gaming Overview](https://docs.agora.io/en/Interactive%20Gaming/product_gaming?platform=All%20Platforms).
 
 ## v2.2
-Developed on the basis of Agora Native SDK and Agora C++ SDK, the version 2.2 was released on Oct. 31. See below for new features.
+Developed on the basis of Agora Native SDK and Agora C++ SDK, the version 2.2 was released on January 28, 2019. See below for new features.
 
 ### New Features
 
