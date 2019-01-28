@@ -73,7 +73,7 @@ client.on('stream-added', function (evt) {
 client.on('stream-subscribed', function (evt) {
   var remoteStream = evt.stream;
   console.log("Subscribe remote stream successfully: " + stream.getId());
-  stream.play('agora_remote' + stream.getId());
+  remoteStream.play('agora_remote' + stream.getId());
 })
 ```
 
