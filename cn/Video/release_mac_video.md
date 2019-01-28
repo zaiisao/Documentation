@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Mon Jan 28 2019 02:48:16 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 02:48:33 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -304,45 +304,39 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 本次发版新增如下功能：
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>功能</td>
-<td>描述</td>
-</tr>
-<tr><td>开黑</td>
-<td>新增了一个游戏开黑场景，用于节省流量和去除杂音</td>
-</tr>
-<tr><td>音效均衡</td>
-<td>新增接口设置本地语音音效均衡</td>
-</tr>
-<tr><td>音效混响</td>
-<td>新增接口设置本地音效混响</td>
-</tr>
-<tr><td>在线查询频道信息</td>
-<td>新增 Restful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等</td>
-</tr>
-<tr><td>17 人视频</td>
-<td>同一个频道内可最多支持 17 人同时进行视频直播</td>
-</tr>
-<tr><td>自定义视频源</td>
-<td>Agora SDK 提供了摄像头采集的默认实现，同时允许开发者使用自定义视频源。主要适用场景详见 <a href="../../cn/Quickstart%20Guide/custom_video_mac.md"><span>自定义视频源和渲染器</span></a></td>
-</tr>
-<tr><td>自定义渲染器</td>
-<td>Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和对端视频图像。使用默认的渲染器就能满足大部分开发者需求，复杂的业务场景下，Agora 也开放了自定义渲染器接口。主要适用场景详见 <a href="../../cn/Quickstart%20Guide/custom_video_mac.md"><span>自定义视频源和渲染器</span></a></td>
-</tr>
-<tr><td>插入外部视频源</td>
-<td>直播场景下，可以将采集到的视频添加到正在进行的直播中，直播室里的主播和观众可以一起边看电影、比赛或演出，边进行点评、互动等功能，会让现有的直播话题更广、体验更好。仅支持拉入一路流，格式包括: RTMP, HLS, FLV。赛事直播最多同时支持 5 人连麦直播</td>
-</tr>
-<tr><td>直播屏幕共享</td>
-<td>新增直播场景下的屏幕共享功能</td>
-</tr>
-</tbody>
-</table>
+#### 1. 开黑
 
+新增了一个游戏开黑场景，用于节省流量和去除杂音，通过调用 API `setAudioProfile` 实现。
+
+#### 2. 音效均衡和音效混响
+
+在直播场景下，主播如果需要通过内置的麦克风美化和定制自己的语音输入，可以通过调用 API `setLocalVoiceEqualization` 和 `setLocalVoiceReverb` 轻易地设置音效均衡和混响来实现所需要的效果。
+
+#### 3. 在线频道信息查询
+
+新增 Restful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见:
+
+- 通话场景，详见 [Dashboard RESTful API](../../cn/Video/dashboard_restful_communication.md)
+- 互动直播场景，详见 [Dashboard RESTful API](../../cn/Interactive%20Braodcast/dashboard_restful_live.md)
+
+#### 4. 17 人视频
+
+在直播场景下，同一频道内支持 17 位主播同时进行视频直播和连麦，详见文档:
+
+- [实现视频直播](../../cn/Video/broadcast_video_mac.md)
+- [实现七人以上视频通话](../../cn/Video/seventeen_people_iosmac.md)
+
+#### 5. 自定义视频源
+
+Agora SDK 提供了摄像头采集的默认实现，同时允许开发者使用自定义视频源。
+
+#### 6. 自定义渲染器
+
+Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和对端视频图像。使用默认的渲染器就能满足大部分开发者需求，复杂的业务场景下，Agora 也开放了自定义渲染器接口。
+
+#### 7. 插入外部视频源
+
+直播场景下，可以将采集到的视频添加到正在进行的直播中，直播室里的主播和观众可以一起边看电影、比赛或演出，边进行点评、互动等功能，会让现有的直播话题更广、体验更好。 仅支持拉入一路流，格式包括: RTMP, HLS, FLV。赛事直播最多同时支持 5 人连麦直播。
 
 
 ### **改进**
