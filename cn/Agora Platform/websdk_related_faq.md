@@ -3,7 +3,7 @@
 title: Web SDK 相关
 description: 
 platform: Web SDK 相关
-updatedAt: Mon Jan 28 2019 07:00:58 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 07:06:01 GMT+0000 (UTC)
 ---
 # Web SDK 相关
 ### 用户在安卓设备上使用 Chrome 浏览器发起通话，无法与使用 Native 及 Safari 浏览器的用户互通?
@@ -71,3 +71,6 @@ PC 或移动端用户（使用 Agora Native SDK 的用户）在直播场景下�
 
 ### 使用 Firefox 浏览器和 Native SDK 互通时，通信模式下，Firefox 浏览器看到的视频方向会旋转，如何解决？
 由于浏览器自身的限制，通信模式下建议使用 Chrome 浏览器与 Native SDK 互通。
+
+### 在 Firefox 浏览器 v59.0.2 上订阅远端流失败？
+该问题是由于浏览器自身限制导致的，建议更新 Firefox 浏览器版本。
