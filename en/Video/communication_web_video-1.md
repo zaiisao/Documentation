@@ -3,7 +3,7 @@
 title: Making a Video Call
 description: 
 platform: Web
-updatedAt: Tue Dec 25 2018 10:11:45 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 04:08:26 GMT+0000 (UTC)
 ---
 # Making a Video Call
 This page introduces how to use Agora’s Web SDK to make a video call.
