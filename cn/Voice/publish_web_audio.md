@@ -83,25 +83,24 @@ client.on('stream-subscribed', function (evt) {
 - 初始化流成功时，播放本地流
 
 	```javascript
-	localStream.init(function() {
-		console.log("getUserMedia successfully");
-		// 这里使用agora_local作为dom元素的id。
-		localStream.play('agora_local');
-
-	}, function (err) {
-		console.log("getUserMedia failed", err);
-	});
+localStream.init(function() {
+	console.log("getUserMedia successfully");
+	// 这里使用agora_local作为dom元素的id。
+	localStream.play('agora_local');
+}, function (err) {
+	console.log("getUserMedia failed", err);
+});
 	```
 
 - 订阅流成功时，播放远端流
 
 	```javascript
-	client.on('stream-subscribed', function (evt) {
-		var remoteStream = evt.stream;
-		console.log("Subscribe remote stream successfully: " + remoteStream.getId());
-		// 这里使用agora_remote + remoteStream.getId()作为dom元素的id。
-		remoteStream.play('agora_remote' + remoteStream.getId());
-	})
+client.on('stream-subscribed', function (evt) {
+	var remoteStream = evt.stream;
+	console.log("Subscribe remote stream successfully: " + remoteStream.getId());
+	// 这里使用agora_remote + remoteStream.getId()作为dom元素的id。
+	remoteStream.play('agora_remote' + remoteStream.getId());
+})
 	```
 
 ## 相关文档
