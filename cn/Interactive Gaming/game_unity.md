@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Fri Jan 11 2019 10:00:32 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 11:29:09 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -486,6 +486,50 @@ public int EnableAudioVolumeIndication (int interval, int smooth);
 
 
 ### 暂停发送音视频流
+
+<a name = "enableLocalAudio"></a>
+#### 开关本地音频采集 (EnableLocalAudio)
+
+```
+public int EnableLocalAudio (bool enabled);
+```
+
+当 App 加入频道时，语音功能默认是开启的。该方法可以关闭或重新开启本地语音功能，停止或重新开始本地音频采集及处理。
+语音功能关闭或重新开启后，会收到回调 [OnMicrophoneEnabledHandler](#onMicrophoneEnabledHandler)。
+该方法不影响接收或播放远端音频流，适用于只听不发的用户场景。
+
+> - 该方法需要在加入频道后调用才能生效。 
+> - 该方法与  [MuteLocalAudioStream](#muteLocalAudioStream) 的区别在于：
+>   - [EnableLocalAudio](#enableLocalAudio)：开启或关闭本地语音采集及处理 
+>   - [MuteLocalAudioStream](#muteLocalAudioStream)：停止或继续发送本地音频流
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td><code>enabled</code></td>
+<td><ul>
+<li>True: 本地语音功能开启</li>
+<li>False: 本地语音功能关闭</li>
+</ul>
+</td>
+</tr>
+<tr/>
+<tr><td>返回值</td>
+<td><ul>
+<li>0: 方法调用成功</li>
+<li>&lt; 0: 方法调用失败</li>
+</ul>
+</td>
+</tr>
+<tr/>
+</tbody>
+</table>
 
 <a name = "muteLocalAudioStream"></a>
 #### 将自己静音 (MuteLocalAudioStream)
@@ -2707,6 +2751,32 @@ public delegate void OnVideoSizeChangedHandler (uint uid, int width, int height,
 </tbody>
 </table>
 
+<a name = onMicrophoneEnabledHandler></a>
+
+#### 麦克风状态已改变回调 (OnMicrophoneEnabledHandler)
+
+```
+public delegate void OnMicrophoneEnabledHandler (bool isEnabled);
+```
+
+麦克风状态改变时会触发该回调。
+
+<table>
+<tbody>
+<tr><td><strong>名称</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td><code>isEnabled</code></td>
+<td>
+<div><ul>
+<li><code>True</code>: 麦克风已启用</li>
+<li><code>False</code>: 麦克风已禁用</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 
 #### 上下麦回调 (onClientRoleChangedHandler)
 
