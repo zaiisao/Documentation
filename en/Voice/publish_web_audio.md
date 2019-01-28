@@ -97,9 +97,9 @@ After initializing the local stream or subscribing to the remote stream, use the
 	```javascript
 	client.on('stream-subscribed', function (evt) {
 		var remoteStream = evt.stream;
-		console.log("Subscribe remote stream successfully: " + stream.getId());
-		// Use agora_remote + stream.getId() as the ID of the dom element
-		remoteStream.play('agora_remote' + stream.getId());
+		console.log("Subscribe remote stream successfully: " + remoteStream.getId());
+		// Use agora_remote + remoteStream.getId() as the ID of the dom element
+		remoteStream.play('agora_remote' + remoteStream.getId());
 	})
 	```
 
