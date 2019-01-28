@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Thu Jan 17 2019 03:16:07 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 11:29:48 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -105,7 +105,7 @@ public int SetClientRole(CLIENT_ROLE role);
 
 This method sets the user role before joining a channel, and allows you to switch the user role after joining a channel.
 
-> This method is only applicable when you set the channel profile as command mode when calling `setChannelProfile`.
+> This method is only applicable when you set the channel profile as command mode when calling `SetChannelProfile`.
 
 <table>
 <colgroup>
@@ -141,15 +141,15 @@ This method sets the user role before joining a channel, and allows you to switc
 </tbody>
 </table>
 
-
-
+<a id = "joinChannel"></a>
+<a name = "joinChannel"></a>
 #### Join a Channel (JoinChannel)
 
 ```
 public int JoinChannel (string token, string channelName, string optionalInfo, uint optionalUid);
 ```
 
-This method allows a user to join a channel. Users in the same channel can talk to each other; and multiple users in the same channel can start a group chat. Users using different App IDs cannot call each other. Once in a call, the user must call the `leaveChannel` method to exit the current call before entering another channel.
+This method allows a user to join a channel. Users in the same channel can talk to each other; and multiple users in the same channel can start a group chat. Users using different App IDs cannot call each other. Once in a call, the user must call the `LeaveChannel` method to exit the current call before entering another channel.
 
 > A channel does not accept duplicate UIDs, such as two users with the same UID. If your app supports logging in a user from different devices at the same time, ensure that you use different UIDs. For example, if you already used the same UID, make the UIDs different by adding the respective device ID to the UID. This is not applicable if your app does not support a user logging in from different devices at the same time. In this case, when you log in a new device, you will be logged out from the other device.
 
@@ -203,7 +203,7 @@ This method allows a user to join a channel. Users in the same channel can talk 
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
+<li>&lt;0: Method call failed.</li>
 <ul>
 <li>ERR_INVALID_ARGUMENT (-2): Invalid argument</li>
 <li>ERR_NOT_READY (-3): Initiazation failed</li>
@@ -239,7 +239,7 @@ This method enables the audio mode, which is enabled by default.
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
+<li>&lt;0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -271,7 +271,7 @@ This method disables the audio mode.
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
+<li>&lt; 0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -313,13 +313,13 @@ public int LeaveChannel();
 
 ### Set the Audio Route
 
-#### Set the Default Audio Route to Speakerphone (SetDefaultAudioRouteToSpeakerphone)
+#### Set the Default Audio Route to Speakerphone (setDefaultAudioRouteToSpeakerphone)
 
 ```
-public int setDefaultAudioRouteToSpeakerphone(bool speakerphone)
+public int setDefaultAudioRouteToSpeakerphone(bool speakerphone);
 ```
 
-This method sets the default audio route to speakerphone or earpiece.
+This method sets the default audio route to `speakerphone` or `earpiece`.
 
 <table>
 <colgroup>
@@ -330,7 +330,7 @@ This method sets the default audio route to speakerphone or earpiece.
 <tr><td><strong>Name</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr><td><code>defaultToSpeaker</code></td>
+<tr><td><code>speakerphone</code></td>
 <td><ul>
 <li>True: sets the default audio route to <em>speakerphone</em></li>
 <li>False: sets the default audio route to <em>earpiece</em></li>
@@ -375,7 +375,7 @@ The original default value for audio route is as follows:
 #### Set the Audio Route to Speakerphone (SetEnableSpeakerphone)
 
 ```
-public int SetEnableSpeakerphone (bool speakerphone)
+public int SetEnableSpeakerphone (bool speakerphone);
 ```
 
 This method sets the audio route to *speakerphone*. The action, that a headset is plugged in or bluetooth is connected, does not affect the audio route.
@@ -391,7 +391,7 @@ After calling this method, the SDK will return the `onAudioRouteChanged` callbac
 <tr><td><strong>Name</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr><td><code>enabled</code></td>
+<tr><td><code>speakerphone</code></td>
 <td><ul>
 <li>True:<ul>
 <li>If this API is called after a user joins a channel, the audio route of the user will be the speakerphone.</li>
@@ -405,7 +405,7 @@ After calling this method, the SDK will return the `onAudioRouteChanged` callbac
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
+<li>&lt; 0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -414,10 +414,10 @@ After calling this method, the SDK will return the `onAudioRouteChanged` callbac
 
 
 
-#### Check Whether Audio Route is Set to Speakerphone (isSpeakerphoneEnabled)
+#### Check Whether Audio Route is Set to Speakerphone (IsSpeakerphoneEnabled)
 
 ```
-public bool IsSpeakerphoneEnabled()
+public bool IsSpeakerphoneEnabled();
 ```
 
 This method checks whether the audio route is set to speakerphone.
@@ -499,6 +499,53 @@ This method enables the SDK to regularly report to the application on which user
 
 ### Mute the Audio and Video Stream
 
+<a name = "enableLocalAudio"></a>
+
+#### Enable/Disable the Local Audio Module (EnableLocalAudio)
+
+```
+public int EnableLocalAudio (bool enabled);
+```
+
+When an app joins a channel, the audio module is enabled by default. This method disables or re-enables the local audio capture, that is, to stop or restart local audio capturing and processing.
+
+The [OnMicrophoneEnabledHandler](#onMicrophoneEnabledHandler) callback is triggered once the local audio module is disabled or re-enabled.
+
+This method does not affect receiving or playing the remote audio streams, and is applicable to scenarios where the user wants to receive remote audio streams without sending any audio stream to other users in the channel.
+
+> - Call this method after [JoinChannel](#joinChannel).
+> - This method is different from [muteLocalAudioStream](#muteLocalAudioStream) :
+>   - [EnableLocalAudio](#enableLocalAudio): Disables/Re-enables the local audio capture and processing. 
+>   - [MuteLocalAudioStream](#muteLocalAudioStream): Stops/Continues sending the local audio streams.
+
+<table>
+<thead>
+<td>Name</td>
+<td>Description</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td>
+Sets whether to disable/re-enable the local audio function:
+<ul>
+<li>True: (Default) Re-enable the local audio function, that is, to start local audio capture and processing.</li>
+<li>False: Disable the local audio function, that is, to stop local audio capture and processing.</li>
+</ul>
+</td>
+</tr>
+<tr><td>Returns</td>
+<td>
+<ul>
+<li>0: Success</li>
+<li>&lt; 0: Failure</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+<a name = "muteLocalAudioStream"></a>
 #### Mute the Local Audio Stream (MuteLocalAudioStream)
 
 ```
@@ -523,7 +570,7 @@ This method enables/disables sending local audio streams to the network.
 </tr>
 </thead>
 <tbody>
-<tr><td><code>muted</code></td>
+<tr><td><code>mute</code></td>
 <td><ul>
 <li>True: Stops sending local audio streams to the network.</li>
 <li>False: Allows sending local audio streams to the network.</li>
@@ -608,7 +655,7 @@ This method mutes/unmutes a specified remote user’s audio stream.
 <tr><td><code>uid</code></td>
 <td>User ID of the user whose audio stream is to be muted.</td>
 </tr>
-<tr><td><code>muted</code></td>
+<tr><td><code>mute</code></td>
 <td><ul>
 <li>True: Mutes the user’s audio stream.</li>
 <li>False: Unmutes the user’s audio stream.</li>
@@ -627,12 +674,50 @@ This method mutes/unmutes a specified remote user’s audio stream.
 </tbody>
 </table>
 
+<a name = "setDefaultMuteAllRemoteAudioStreams"></a>
+#### Receive the Audio Streams by Default (setDefaultMuteAllRemoteAudioStreams)
+
+```c#
+public int setDefaultMuteAllRemoteAudioStreams(bool mute);
+```
+
+Sets whether to receive the audio streams by default.
+
+> Call this method either before or after joining a channel. If you call this method after joining the channel, the audio streams of any subsequent user are not received.
+
+<table>
+<thead>
+<td>Name</td>
+<td>Description</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>mute</code></td>
+<td>
+Sets whether or not to receive/stop receiving all remote users' audio streams by default:
+<ul>
+<li>true: Stop receiving all remote users' audio streams by default.</li>
+<li>false: (Default) Receive all remote users' audio streams by default.</li>
+</ul>
+</td>
+</tr>
+<tr><td>Returns</td>
+<td>
+<ul>
+<li>0: Succes</li>
+<li>&lt; 0: Failure</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
 
 
 #### Get the SDK Version (GetSdkVersion)
 
 ```
-public static string GetSdkVersion ()
+public static string GetSdkVersion ();
 ```
 
 This method returns the string of the version number in character format.
@@ -640,7 +725,7 @@ This method returns the string of the version number in character format.
 #### Get the Error Description (GetErrorDescription)
 
 ```
-public static string GetErrorDescription (int code)
+public static string GetErrorDescription (int code);
 ```
 
 This method returns the error code when an error is detected during SDK runtime.
@@ -741,7 +826,7 @@ This method stops mixing the specified local audio with the microphone input. Ca
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
+<li>&lt;0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -1082,7 +1167,7 @@ This method adjusts the playback volume.
 #### Start an Audio Call Test (StartEchoTest)
 
 ```
-public int StartEchoTest()
+public int StartEchoTest();
 ```
 
 This method launches an audio call test to determine whether the audio devices (for example, headset and speaker) and the network connection work properly. In the test, the user speaks first, and the recording is played back in 10 seconds. If the user can hear what he or she says in 10 seconds, it indicates that the audio devices and network connection work properly.
@@ -1120,7 +1205,7 @@ This method launches an audio call test to determine whether the audio devices (
 #### Stop an Audio Call Test (StopEchoTest)
 
 ```
-public int StopEchoTest()
+public int StopEchoTest();
 ```
 
 This method stops an audio call test.
@@ -1139,7 +1224,7 @@ This method stops an audio call test.
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
+<li>&lt;0: Method call failed.</li>
 <ul>
 <li>ERR_REFUSED(-5): Failed to stop the echo test. It could be that the echo test is not running.</li>
 </ul>
@@ -1156,7 +1241,7 @@ This method stops an audio call test.
 #### Retrieve the Current Call ID (GetCallId)
 
 ```
-public string GetCallId()
+public string GetCallId();
 ```
 
 <table>
@@ -1181,7 +1266,7 @@ public string GetCallId()
 #### Rate the Call (Rate)
 
 ```
-public int Rate(string callId, int rating, string desc)
+public int Rate(string callId, int rating, string desc);
 ```
 
 This method lets the user rate the call. It is usually called after the call ends.
@@ -1231,7 +1316,7 @@ This method lets the user rate the call. It is usually called after the call end
 #### Complain about the Call Quality (Complain)
 
 ```
-public int Complain(string callId, string desc)
+public int Complain(string callId, string desc);
 ```
 
 This method allows the user to complain about the call quality. It is usually called after the call ends.
@@ -1278,7 +1363,7 @@ This method allows the user to complain about the call quality. It is usually ca
 #### Pause the Audio (Pause)
 
 ```
-public void Pause ()
+public void Pause ();
 ```
 
 This method pauses the audio. Ffor example, when using background mode, you can call this API to pause the audio.
@@ -1286,7 +1371,7 @@ This method pauses the audio. Ffor example, when using background mode, you can 
 #### Resume the Audio (Resume)
 
 ```
-public void Resume ()
+public void Resume ();
 ```
 
 This method resumes the paused audio.
@@ -1297,12 +1382,12 @@ This method resumes the paused audio.
 #### Destroy an Engine Instance (Destroy)
 
 ```
-public static void Destroy()
+public static void Destroy();
 ```
 
 This method releases all the resources used by the Agora SDK.  This is useful for applications that occassionaly make voice or video calls, to free up resources for other operations when not making calls.
 
-Once the application has called `destroy` to destroy the created RtcEngine instance,
+Once the application has called `Destroy` to destroy the created RtcEngine instance,
 no other methods in the SDK can be used and no callbacks occur.
 
 
@@ -1313,7 +1398,7 @@ Before you implement the video function, read [Implement the Voice Function](#vo
 #### Enable the Video Mode (EnableVideo)
 
 ```
-public int EnableVideo ()
+public int EnableVideo ();
 ```
 
 This method enables the video mode. The application can call this method either before entering a channel or during a call. If called before entering the channel, the service starts in the video mode; if it is called during a call, it switches from the audio to video mode. To disable the video mode, call the `Disablevideo` method.
@@ -1332,7 +1417,7 @@ This method enables the video mode. The application can call this method either 
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
+<li>&lt; 0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -1345,7 +1430,7 @@ This method enables the video mode. The application can call this method either 
 #### Disable the Video Mode (DisableVideo)
 
 ```
-public int DisableVideo ()
+public int DisableVideo ();
 ```
 
 This method disables the video mode. The application can call this method either before entering a channel or during a call. If it is called before entering the channel, the service starts in the audio mode; if it is called during a call, it switches from the video to audio mode. To enable the video mode, call the `EnableVideo` method.
@@ -1377,15 +1462,15 @@ This method disables the video mode. The application can call this method either
 #### Set the Video Profile (SetVideoProfile)
 
 ```
-public int SetVideoProfile(int profile, bool swapWidthAndHeight)
+public int SetVideoProfile(int profile, bool swapWidthAndHeight);
 ```
 
-This method sets the video encoding profile. Each profile includes a set of parameters such as resolution, frame rate, and bitrate. When the camera does not support the specified resolution, the SDK chooses a suitable camera resolution, but the encoder resolution still uses the one specified by `setVideoProfile`.
+This method sets the video encoding profile. Each profile includes a set of parameters such as resolution, frame rate, and bitrate. When the camera does not support the specified resolution, the SDK chooses a suitable camera resolution, but the encoder resolution still uses the one specified by `SetVideoProfile`.
 
 The method only sets the attributes of the streams encoded by the encoder which may be inconsistent with the final display. For example, when the resolution of the encoded stream is 640 x 480, and the rotation attribute of the stream is 90 degrees, then the resolution of the final display will be in portrait mode.
 
 > -   Always set the video profile after calling the `EnableVideo` method.
-> -   Always set the video profile before calling the `joinChannel`/`startPreview` method.
+> -   Always set the video profile before calling the `JoinChannel`/`StartPreview` method.
 
 
 <table>
@@ -1405,8 +1490,8 @@ The method only sets the attributes of the streams encoded by the encoder which 
 <tr><td><code>swapWidthAndHeight</code></td>
 <td><p>Whether to swap the width and height of the stream:</p>
 <ul>
-<li>True: Swap</li>
-<li>False: No swap (default)</li>
+<li>true: Swap</li>
+<li>false: No swap (default)</li>
 </ul>
 </td>
 </tr>
@@ -1606,19 +1691,19 @@ The method only sets the attributes of the streams encoded by the encoder which 
 </tr>
 <tr><td>1080P</td>
 <td>60</td>
-<td>1920 x 1080* <sup>[1]</sup></td>
+<td>1920 x 1080 <sup>[1]</sup></td>
 <td>15</td>
 <td>2080</td>
 </tr>
 <tr><td>1080P_3</td>
 <td>62</td>
-<td>1920 x 1080* <sup>[1]</sup></td>
+<td>1920 x 1080 <sup>[1]</sup></td>
 <td>30</td>
 <td>3150</td>
 </tr>
 <tr><td>1080P_5</td>
 <td>64</td>
-<td>1920 x 1080* <sup>[1]</sup></td>
+<td>1920 x 1080 <sup>[1]</sup></td>
 <td>60</td>
 <td>4780</td>
 </tr>
@@ -1631,7 +1716,7 @@ The method only sets the attributes of the streams encoded by the encoder which 
 #### Enable Dual-stream Mode (EnableDualStreamMode)
 
 ```
-public int EnableDualStreamMode(bool enabled)
+public int EnableDualStreamMode(bool enabled);
 ```
 
 This method sets the stream mode: Single- (default) or dual-stream, which is only applicable when you set the channel profile as command mode when calling `setChannelProfile`.
@@ -1673,7 +1758,7 @@ This method sets the stream mode: Single- (default) or dual-stream, which is onl
 #### Set the Video Stream Type (SetRemoteVideoStreamType)
 
 ```
-public int SetRemoteVideoStreamType(uint uid, int streamType)
+public int SetRemoteVideoStreamType(uint uid, int streamType);
 ```
 
 This method specifies the video stream type of the remote user to be received by the local user when the remote user sends dual streams. This method allows the application to adjust the corresponding video stream type according to the size of the video windows to save bandwidth and resources.
@@ -1757,7 +1842,7 @@ The resolutions of the high-video stream are 1:1, 4:3, and 16:9. The low-video s
 #### Set High-quality Video Preferences (SetVideoQualityParameters)
 
 ```
-public int SetVideoQualityParameters(bool preferFrameRateOverImageQuality)
+public int SetVideoQualityParameters(bool preferFrameRateOverImageQuality);
 ```
 
 This method allows the users to set the video preferences.
@@ -1799,7 +1884,7 @@ This method allows the users to set the video preferences.
 #### Disable the Local Video (EnableLocalVideo)
 
 ```
-public int EnableLocalVideo (bool enabled)
+public int EnableLocalVideo (bool enabled);
 ```
 
 This method disables the local video, which is only applicable to the scenario when the user only wants to watch the remote video without sending any video stream to the other user. This method does not require a local camera.
@@ -1839,7 +1924,7 @@ This method disables the local video, which is only applicable to the scenario w
 #### Start the Video Preview (StartPreview)
 
 ```
-public int StartPreview ()
+public int StartPreview ();
 ```
 
 This method starts the local video preview.
@@ -1871,7 +1956,7 @@ This method starts the local video preview.
 #### Stop the Video Preview (StopPreview)
 
 ```
-public int StopPreview ()
+public int StopPreview ();
 ```
 
 This method stops the local video preview and closes the video.
@@ -1903,7 +1988,7 @@ This method stops the local video preview and closes the video.
 #### Switch Between Front and Back Cameras (SwitchCamera)
 
 ```
-public int SwitchCamera()
+public int SwitchCamera();
 ```
 
 This method switches between front and back cameras.
@@ -1913,7 +1998,7 @@ This method switches between front and back cameras.
 #### Enable the Video Observer (EnableVideoObserver)
 
 ```
-public int EnableVideoObserver ()
+public int EnableVideoObserver ();
 ```
 
 This method sends the video pictures directly to the app instead of to the traditional view renderer.
@@ -1944,7 +2029,7 @@ This method sends the video pictures directly to the app instead of to the tradi
 #### Disable the Video Observer (DisableVideoObserver)
 
 ```
-public int DisableVideoObserver ()
+public int DisableVideoObserver ();
 ```
 
 This method disables sending video directly to the app.
@@ -1976,7 +2061,7 @@ This method disables sending video directly to the app.
 #### Mute the Local Video Stream (MuteLocalVideoStream)
 
 ```
-public int MuteLocalVideoStream(bool mute)
+public int MuteLocalVideoStream(bool mute);
 ```
 
 This method enables/disables sending local video streams to the network. When set to True, this method does not disable the camera and thus does not affect getting local video streams.
@@ -2016,7 +2101,7 @@ This method enables/disables sending local video streams to the network. When se
 #### Mute all Remote Video Streams (MuteAllRemoteVideoStreams)
 
 ```
-public int MuteAllRemoteVideoStreams(bool mute)
+public int MuteAllRemoteVideoStreams(bool mute);
 ```
 
 This method enables/disables playing all remote users’ video streams. When set to True, this method stops playing video streams without affecting the video stream receiving process.
@@ -2057,7 +2142,7 @@ This method enables/disables playing all remote users’ video streams. When set
 #### Mute a Specified Remote Video Stream (MuteRemoteVideoStream)
 
 ```
-public int MuteRemoteVideoStream(uint uid, bool mute)
+public int MuteRemoteVideoStream(uint uid, bool mute);
 ```
 
 This method pauses/resumes playing a specified user’s video, that is, enables/disables playing a specified user’s video stream.
@@ -2096,6 +2181,45 @@ This method pauses/resumes playing a specified user’s video, that is, enables/
 </tbody>
 </table>
 
+<a name = "setDefaultMuteAllRemoteVideoStreams"></a>
+
+#### Receive the Video Streams by Default (setDefaultMuteAllRemoteVideoStreams)
+
+```c#
+public int setDefaultMuteAllRemoteVideoStreams(bool mute);
+```
+
+Sets whether to receive the video streams by default.
+
+> Call this method either before or after joining a channel. If you call this method after joining the channel, the video streams of any subsequent user are not received.
+
+<table>
+<thead>
+<td>Name</td>
+<td>Description</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>mute</code></td>
+<td>
+Sets whether or not to receive/stop receiving all remote users' video streams by default:
+<ul>
+<li>True：Stop receiving all remote video streams by default.</li>
+<li>False: (Default) Receive all remote users' video streams by default.</li>
+</ul>
+</td>
+</tr>
+<tr><td>Returns</td>
+<td>
+<ul>
+<li>0: Succes</li>
+<li>&lt; 0: Failure</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
 
 
 ### Encryption
@@ -2103,7 +2227,7 @@ This method pauses/resumes playing a specified user’s video, that is, enables/
 #### Enable Built-in Encryption (SetEncryptionSecret)
 
 ```
-public int SetEncryptionSecret(string secret)
+public int SetEncryptionSecret(string secret)；
 ```
 
 Call `setEncryptionSecret` to specify an encryption password to enable built-in encryption before joining a channel, otherwise the communication will be unencrypted. All users in a channel must set the same encryption password. The encryption password is automatically cleared once the user has left the channel. If the encryption password is not specified or set to empty, the encryption function will be disabled.
@@ -2138,14 +2262,14 @@ Call `setEncryptionSecret` to specify an encryption password to enable built-in 
 #### Set the Built-in Encryption Mode (SetEncryptionMode)
 
 ```
-public int SetEncryptionMode(string encryptionMode)
+public int SetEncryptionMode(string encryptionMode)；
 ```
 
 The Agora SDK supports built-in encryption in AES-128-XTS mode by default. To use other modes, call this API to set the encryption mode.
 
 All users in the same channel must use the same encryption mode and password. Refer to information related to the AES encryption algorithm on the differences between encryption modes.
 
-Call `setEncryptionSecret` to enable the built-in encryption function before calling this API.
+Call `SetEncryptionSecret` to enable the built-in encryption function before calling this API.
 
 <table>
 <colgroup>
@@ -2574,6 +2698,56 @@ This callback indicates who is talking and the speaker’s volume. By default th
 </table>
 
 
+<a name ="onFirstRemoteAudioFrameHandler"></a>
+#### First Remote Audio Frame Received Callback (OnFirstRemoteAudioFrameHandler)
+
+```c#
+public delegate void OnFirstRemoteAudioFrameHandler (uint userId, int elapsed);
+```
+
+This callback is triggered when the first remote audio frame is received.
+
+<table>
+<thead>
+<td>Name</td>
+<td>Description</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>userId</code></td>
+<td>User ID of the remote user.</td>
+</tr>
+<tr>
+<td><code>elapsed</code></td>
+<td>Time elapsed (ms) from the remote user calling <a href="#joinChannel">JoinChannel</a> until this callback is triggered.</td>
+</tr>
+</tbody>
+</table>
+
+<a name ="onFirstLocalAudioFrameHandler"></a>
+
+#### First Local Audio Frame Sent Callback (OnFirstLocalAudioFrameHandler)
+
+```c#
+public delegate void OnFirstLocalAudioFrameHandler (int elapsed);
+```
+
+This callback is triggered when the first local audio frame is sent.
+
+<table>
+<thead>
+<td>Name</td>
+<td>Description</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>elapsed</code></td>
+<td>Time elapsed (ms) from the local user calling <a href="#joinChannel">JoinChannel</a> until this callback is triggered.</td>
+</tr>
+</tbody>
+</table>
+
+
 
 #### Other User Muted Audio Callback (UserMutedHandler)
 
@@ -2698,6 +2872,40 @@ public delegate void AudioRouteChangedHandler (AUDIO_ROUTE route);
 
 The SDK notifies the application that the audio route is changed, and is switched to an earpiece, speakerphone, headset, or bluetooth device.
 
+
+<a name = "onApiExecutedHandler"></a>
+
+#### API Executed Callback (OnApiExecutedHandler)
+
+```c#
+public delegate void OnApiExecutedHandler (int err, string api, string result);
+```
+
+This callback is triggered when an API method is executed.
+
+<table>
+<thead>
+<td>Name</td>
+<td>Description</td>
+</thead> 
+<tbody>
+<tr>
+<td><code>err</code></td>
+<td><a href="https://docs.agora.io/en/Interactive%20Gaming/the_error_game?platform=All%20Platforms#errorcode">Error code</a> that the SDK returns when the method call fails. If the SDK returns 0, then the method call was successful.</td>
+</tr>
+<tr>
+<td><code>api</code></td>
+<td>The method executed by the SDK.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td>The result of the method call.</td>
+</tr>
+</tbody>
+</table>
+
+
+
 #### Token Expired Callback (RequestTokenHandler)
 
 ```
@@ -2776,6 +2984,35 @@ This method is triggered when the video size of the specific user is changed.
 </tbody>
 </table>
 
+<a name = onMicrophoneEnabledHandler></a>
+#### Microphone Enabled Callback (OnMicrophoneEnabledHandler)
+
+```
+public delegate void OnMicrophoneEnabledHandler (bool isEnabled);
+```
+
+This callback is triggered when the microphone is enabled or disabled.
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><td><code>isEnabled</code></td>
+<td>
+<div><ul>
+<li>True: The microphone is enabled.</li>
+<li>False: The microphone is disabled.</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 
 #### Client Role Changed Callback (OnClientRoleChangedHandler)
 
@@ -2847,7 +3084,7 @@ This callback indicates that some other user has paused/resumed his/her video st
 ### Set Voice-only Mode (SetVoiceOnlyMode)
 
 ```
-int setVoiceOnlyMode(bool enable);
+int SetVoiceOnlyMode(bool enable);
 ```
 
 This method sets to voice-only mode (transmit the audio stream only), and the other streams will be ignored; for example the sound of the keyboard strokes.
@@ -2872,7 +3109,7 @@ This method sets to voice-only mode (transmit the audio stream only), and the ot
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
+<li>&lt;0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -2925,7 +3162,7 @@ Sets the voice position of the remote user.
 <p>Default value is 100.0. The smaller the number, the lower the volume.</p>
 <ul>
 <li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
+<li>&lt;0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -2986,7 +3223,7 @@ This method gets the volume of the effects from 0.0 to 100.0.
 ### Set the Audio Effect Volume (SetEffectsVolume)
 
 ```
-int SetEffectsVolume(double volume)
+int SetEffectsVolume(double volume);
 ```
 
 This method sets the volume of the audio effects.
@@ -3087,7 +3324,7 @@ This method plays the audio effect.
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
+<li>&lt;0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -3123,7 +3360,7 @@ This method stops playing a specific audio effect.
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
+<li>&lt; 0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -3217,7 +3454,7 @@ This method releases a specific preloaded audio effect from the memory.
 ### Pause an Audio Effect (PauseEffect)
 
 ```
-virtual int PauseEffect(int soundId)
+virtual int PauseEffect(int soundId);
 ```
 
 This method pauses a specific audio effect.
@@ -3239,7 +3476,7 @@ This method pauses a specific audio effect.
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
+<li>&lt;0: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -3306,7 +3543,7 @@ This method resumes playing a specific audio effect.
 <tr><td>Return Value</td>
 <td><ul>
 <li>0: Method call succeeded.</li>
-<li>&lt; 0: Method call failed.</li>
+<li>&lt;0: Method call failed.</li>
 </ul>
 </td>
 </tr>
