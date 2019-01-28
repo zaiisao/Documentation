@@ -92,7 +92,8 @@ updatedAt: Wed Dec 12 2018 02:50:02 GMT+0000 (UTC)
 	<img alt="../_images/mac_video_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_2.jpg" />
 
 4. 展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加。
-  - `libresolv.tbd`
+ - `AgoraRtcEngineKit.framework`
+ - `libresolv.tbd`
  - `libc++.1.dylib`
  - `Accelerate.framework`
  - `SystemConfiguration.framework`
@@ -103,7 +104,10 @@ updatedAt: Wed Dec 12 2018 02:50:02 GMT+0000 (UTC)
  - `AVFoudation.framework`
  - `VideoToolbox.framework`
  - `AudioToolbox.framework`
- - `AgoraRtcEngineKit.framework`
+ - `CFNetwork.framework`
+ - `CoreGraphics.framework`
+ - `CoreVideo.framework`
+ - `AppKit.framework`
 
 	**添加前：**
 
