@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Mon Jan 28 2019 01:57:58 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 01:59:12 GMT+0000 (UTC)
 ---
 # 发版说明
 
@@ -389,49 +389,44 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 -   修复了偶现的视频卡顿问题;
 
 
-**2.0 预告**
-
-致各位开发者:
-
-由于 Agora 的产品升级， 当 Windows SDK 升级至 2.0 将不支持 Agora Recording Server（<=1.8.2）的调用接口，相关 API 将被废弃。
-
-#### 受影响范围
-
--   使用 Windows SDK 并且使用 Agora Recording Server（<= version 1.8.2）的用户
-
--   涉及到的 API 为 `startRecordingService`，`stopRecordingService` 以及 `refreshRecordingServiceStatus`，将在后续版本中不再支持。
-
-
-#### 解决方案
-
-我们提供了两种方案供您选择:
-
-**方案一**: 将 Agora Recording Server（<=version 1.8.2）升级到 Agora Recording SDK\( \>= version 1.12\)。Agora Recording SDK 无需在客户端触发录制，将不影响 Windows SDK 的后续升级（推荐该方法）
-
-附上 Agora Recording SDK 的使用方法:
-
--   [录制快速开始](../../cn/Quickstart%20Guide/recording_cpp-1.md)
-
--   [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)
-
--   [录制 API](../../cn/API%20Reference/recording_cpp.md)
-
-
-**方案二**：如果你希望继续使用 Agora Recording Server，维持 Windows SDK 版本不变（<=v1.14），将不影响您继续使用 Windows SDK的 API 触发录制。
-
-若您有任何疑问，可以通过以下方式获得技术支持:
-
-1.  通过 Agora 开发者社区提问: [https://dev.agora.io/cn/](https://dev.agora.io/cn/)
-
-2.  通过 Agora 工单系统提交工单
-
-3.  您还可以随时联系技术支持群里的同事或商务
-
 
 ## **2.0 版及之前**
 ### **2.0 版**
 
 该版本于 2017 年 12 月 6 日发布。新增特性与修复问题列表详见下文。
+
+#### **升级必看**
+
+致各位开发者:
+
+由于 Agora 的产品升级， 当 Windows SDK 升级至 2.0 将不支持 Agora Recording Server（<=1.8.2）的调用接口，相关 API 将被废弃。
+
+**受影响范围**
+
+-   使用 Windows SDK 并且使用 Agora Recording Server（<= version 1.8.2）的用户
+-   涉及到的 API 为 `startRecordingService`，`stopRecordingService` 以及 `refreshRecordingServiceStatus`，将在后续版本中不再支持。
+
+**解决方案**
+
+我们提供了两种方案供您选择:
+
+方案一: 将 Agora Recording Server（<= version 1.8.2）升级到 Agora Recording SDK\( \>= version 1.12\)。Agora Recording SDK 无需在客户端触发录制，将不影响 Windows SDK 的后续升级（推荐该方法）
+
+附上 Agora Recording SDK 的使用方法:
+
+-   [集成 SDK](../../cn/Recording/recording_integrate_cpp.md)
+-   [开始录制](../../cn/Recording/recording_cmd_cpp.md)
+-   [录制 API](https://docs.agora.io/cn/Voice/API%20Reference/recording_cpp/index.html)
+
+
+方案二：如果你希望继续使用 Agora Recording Server，维持 Windows SDK 版本不变（<=v1.14），将不影响您继续使用 Windows SDK的 API 触发录制。
+
+若您有任何疑问，可以通过以下方式获得技术支持:
+
+1.  通过 Agora 开发者社区提问: [https://dev.agora.io/cn/](https://dev.agora.io/cn/)
+2.  通过 Agora 工单系统提交工单
+3.  您还可以随时联系技术支持群里的同事或商务
+
 
 #### **新增功能**
 
