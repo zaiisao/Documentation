@@ -3,7 +3,7 @@
 title: 切换用户角色
 description: web平台上设置或切换用户角色
 platform: Web
-updatedAt: Mon Jan 28 2019 05:57:34 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 06:28:58 GMT+0000 (UTC)
 ---
 # 切换用户角色
 在切换用户角色前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Interactive%20Broadcast/web_prepare.md)。
