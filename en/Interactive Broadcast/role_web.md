@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: Web
-updatedAt: Mon Jan 28 2019 06:31:08 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 06:31:13 GMT+0000 (UTC)
 ---
 # Switch the Client Role
 Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
@@ -49,8 +49,8 @@ On the Web Client, the following methods are used to switch the client role:
   });
   client.on('stream-subscribed', function (evt) {
   		var remoteStream = evt.stream;
-  		console.log("Subscribe remote stream successfully: " + stream.getId());
-  		remoteStream.play('agora_remote' + stream.getId());
+  		console.log("Subscribe remote stream successfully: " + remoteStream.getId());
+  		remoteStream.play('agora_remote' + remoteStream.getId());
   })
   ```
 
