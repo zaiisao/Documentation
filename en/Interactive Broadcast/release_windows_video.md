@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Jan 28 2019 02:08:37 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 02:18:59 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -18,27 +18,6 @@ The Video SDK for Windows supports the following scenarios:
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 > The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version earlier than v2.1.0 and wish to migrate to the latest version, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
-
-### Notice on Windows SDK 2.0
-
-Developers,
-
-Due to the upgrade of Agora products, Windows SDK 2.0 no longer supports the Agora Recording Server version 1.8.2 and before, or relevant APIs.
-
-This may affect:
-
--   Users of both the Windows SDK and Agora Recording Server v1.8.2 or before.
--   The following API methods are no longer supported: startRecordingService, stopRecordingService, and refreshRecordingServiceStatus.
-
-
-Two solutions are available:
-
-1.  Migrate from the Agora Recording Server v1.8.2 or before to the Agora Recording SDK v1.12 or later. The Agora Recording SDK does not require recording on the client side and does not affect subsequent upgrades of the Windows SDK (recommended). For how to use the Agora Recording SDK, refer to:
-
-    -   [Quickstart Guides](../../en/API%20Reference/recording_cpp-1.md)
-    -   [API Reference](../../en/API%20Reference/recording_cpp.md)
-
-2.  If you want to continue using the Agora Recording Server, you can use your current Windows SDK version (v1.14 and before). Contact Technical Support for any questions.
 
 
 ## v2.3.3
@@ -414,9 +393,32 @@ Adds the <code>enableLoopbackRecording</code> method to collect all local sounds
 
 
 ## v2.0 and Earlier
+
 ### v2.0
 
 v2.0 is released on November 21, 2017. 
+
+#### Before Getting Started
+
+Developers,
+
+Due to the upgrade of Agora products, Windows SDK 2.0 no longer supports the Agora Recording Server version 1.8.2 and before, or relevant APIs.
+
+**This may affect:**
+
+-   Users of both the Windows SDK and Agora Recording Server v1.8.2 or before.
+-   The following API methods are no longer supported: startRecordingService, stopRecordingService, and refreshRecordingServiceStatus.
+
+**Two solutions are available:**
+
+1.  Migrate from the Agora Recording Server v1.8.2 or before to the Agora Recording SDK v1.12 or later. The Agora Recording SDK does not require recording on the client side and does not affect subsequent upgrades of the Windows SDK (recommended). For how to use the Agora Recording SDK, refer to:
+
+-   [Integrate the SDK](../../en/Recording/recording_integrate_cpp.md)
+-   [Record a Call](../../en/Recording/recording_cmd_cpp.md)
+-   [API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/recording_cpp/index.html)
+
+2.  If you want to continue using the Agora Recording Server, you can use your current Windows SDK version (v1.14 and before). Contact Technical Support for any questions.
+
 
 #### New Features
 
