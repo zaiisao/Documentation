@@ -85,25 +85,25 @@ After initializing the local stream or subscribing to the remote stream, use the
 - Play the stream after initializing the local stream.
 
 	```javascript
-	localStream.init(function() {
-			console.log("getUserMedia successfully");
-			// Use agora_local as the ID of the dom element
-			localStream.play('agora_local');
+localStream.init(function() {
+		console.log("getUserMedia successfully");
+		// Use agora_local as the ID of the dom element
+		localStream.play('agora_local');
 
-		}, function (err) {
-			console.log("getUserMedia failed", err);
-		});
+	}, function (err) {
+		console.log("getUserMedia failed", err);
+});
 	```
 
 - Play the stream after subscribing to the remote stream.
 
 	```javascript
-	client.on('stream-subscribed', function (evt) {
-		var remoteStream = evt.stream;
-		console.log("Subscribe remote stream successfully: " + remoteStream.getId());
-		// Use agora_remote + remoteStream.getId() as the ID of the dom element
-		remoteStream.play('agora_remote' + remoteStream.getId());
-	})
+client.on('stream-subscribed', function (evt) {
+	var remoteStream = evt.stream;
+	console.log("Subscribe remote stream successfully: " + remoteStream.getId());
+	// Use agora_remote + remoteStream.getId() as the ID of the dom element
+	remoteStream.play('agora_remote' + remoteStream.getId());
+})
 	```
 
 
