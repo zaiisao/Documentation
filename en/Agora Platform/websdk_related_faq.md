@@ -3,7 +3,7 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Thu Jan 10 2019 15:23:47 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 07:09:06 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
 ### When I use Google Chrome on Android, why can't I connect with people who use the Safari browser or Native SDK?
