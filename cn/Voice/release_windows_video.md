@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Mon Jan 28 2019 01:49:59 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 01:50:05 GMT+0000 (UTC)
 ---
 # 发版说明
 
@@ -18,20 +18,6 @@ Windows 视频 SDK 支持两种主要场景:
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 以及[互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
-
-将下载的 Windows 软件包解压后, 你会看见两个包，根据实际情况选择使用 x64 或 x86 包:
-
-<img alt="../_images/windows_package.png" src="https://web-cdn.agora.io/docs-files/cn/windows_package.png" style="width: 300px; "/>
-
-
-解压 x64 或 x86 后，包内的 examples 文件夹下有两个示例代码供你演示功能使用: AgoraOpenLive 和 OpenVideoCall 。 在编译示例代码时须确保编译环境选对。例如，x64 编译环境选择 x64:
-
-<img alt="../_images/x64.png" src="https://web-cdn.agora.io/docs-files/cn/x64.png" style="width: 300px; "/>
-
-
-x86 的编译环境选择 Win32:
-
-<img alt="../_images/x86.png" src="https://web-cdn.agora.io/docs-files/cn/x86.png" style="width: 300px; "/>
 
 ## **2.3.3 版**
 
