@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Android
-updatedAt: Tue Jan 29 2019 09:12:07 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 09:12:24 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -129,10 +129,11 @@ Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
 
 1. 打开 *app/src/main/AndroidManifest.xml* 文件，添加必要的设备权限。例如：
 
-  ```
+	```
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="io.agora.tutorials1v1acall">
       
+  <uses-permission android:name="android.permission.READ_PHONE_STATE” />	
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
   <uses-permission android:name="android.permission.CAMERA" />
@@ -143,7 +144,7 @@ Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
   
   ...
   </manifest>
-  ```
+	```
 
 2. 点击 **Sync Project With Gradle Files** , 重新同步 Android 项目文件。
 
