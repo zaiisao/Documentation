@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Tue Jan 29 2019 02:57:07 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 02:59:43 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for macOS.
@@ -99,6 +99,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding the new libraries, click the **+** button.
 
+   - `AgoraRtcEngineKit.framework`
    - `libresolv.tbd`
    - `libc++.1.dylib`
    - `Accelerate.framework`
@@ -110,7 +111,10 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    - `AVFoudation.framework`
    - `VideoToolbox.framework`
    - `AudioToolbox.framework`
-   - `AgoraRtcEngineKit.framework`
+   - `CFNetwork.framework`
+   - `CoreGraphics.framework`
+   - `CoreVideo.framework`
+
 
    **Before:**
 
@@ -118,7 +122,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    **After:**
 
-   <img alt="../_images/mac_video_4.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_4.jpg" />
+   ![](https://web-cdn.agora.io/docs-files/1548730616440)
 
    `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
 
