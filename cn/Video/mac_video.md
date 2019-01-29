@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Tue Jan 29 2019 02:36:52 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 02:59:28 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for macOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
