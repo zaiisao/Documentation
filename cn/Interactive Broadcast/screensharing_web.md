@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Tue Jan 29 2019 02:39:00 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 02:39:06 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -216,6 +216,7 @@ screenClient.subscribe(stream);
 - 屏幕共享流的 UID 尽量不要固定在同一个值，否则某些场景下同 UID 的共享流可能会引起互踢。
 - 在本地共享的时候，本地流的 Client **不要订阅本地的分享流**，否则会增加计费。
 - 创建屏幕共享流的时候，`video`/`audio` 必须设置为 `false`。
+- 在 Windows 平台上进行屏幕共享时，如果共享的是 QQ 聊天窗口会导致黑屏。
 
 ## 工作原理
 Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现的。
