@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Tue Jan 29 2019 09:58:22 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 09:58:33 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
@@ -43,3 +43,6 @@ lpAgoraEngine->stopScreenCapture();
 * [`startScreenCapture`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#af71935ad435402f776bcfc2be3cf687f)
 * [`stopScreenCapture`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
 * [`updateScreenCaptureRegion`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a99ce13ce3b9b2c65e5ec35b9861b56e3)
+
+## Considerations
+Sharing the window of a QQ chat on Windows causes the black screen.
