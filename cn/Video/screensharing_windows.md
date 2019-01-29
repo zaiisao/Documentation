@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Windows
-updatedAt: Tue Jan 29 2019 09:59:35 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 09:59:49 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -42,3 +42,5 @@ lpAgoraEngine->stopScreenCapture();
 * [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
 * [`updateScreenCaptureRegion`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a99ce13ce3b9b2c65e5ec35b9861b56e3)
 
+## 开发注意事项
+在 Windows 平台上进行屏幕共享时，如果共享的是 QQ 聊天窗口会导致黑屏。
