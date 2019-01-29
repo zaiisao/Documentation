@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Tue Jan 29 2019 09:28:16 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 09:28:33 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for Android.
@@ -125,21 +125,22 @@ To call the plug-ins in the include files under the libs folder, you need to con
 
 1. Open the *app/src/main/AndroidManifest.xml* file and add the required device permissions to the file.
 
-    ```
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-       package="io.agora.tutorials1v1acall">
-    
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- If the app uses Bluetooth, please add Bluetooth permissions.-->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    
-    ...
-    </manifest>
-    ```
+	```
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="io.agora.tutorials1v1acall">
+      
+  <uses-permission android:name="android.permission.READ_PHONE_STATE” />	
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <!-- If the app uses Bluetooth, please add Bluetooth permissions.-->
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  
+  ...
+  </manifest>
+	```
 
 2. Re-synchronize the Android project by clicking **Sync Project With Gradle Files**.
 
