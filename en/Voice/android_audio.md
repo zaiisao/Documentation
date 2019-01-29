@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Mon Dec 31 2018 21:52:04 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 09:19:09 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
