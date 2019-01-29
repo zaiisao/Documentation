@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Tue Jan 29 2019 02:54:36 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 09:59:19 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
@@ -222,6 +222,7 @@ screenClient.subscribe(stream);
 - Do not set the uid of the screen-sharing stream to a fixed value. Streams with the same uid can interfere with each other.
 - **Do not subscribe to a locally published screen-sharing stream**, else additional charges will incur.
 - Ensure that `video`/`audio` is set to `false` when creating the screen-sharing stream.
+- Sharing the window of a QQ chat on Windows causes the black screen.
 
 ## Working Principles
 
