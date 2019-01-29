@@ -3,7 +3,7 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Tue Dec 18 2018 08:29:25 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 09:14:45 GMT+0000 (UTC)
 ---
 # 集成客户端 
 本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
