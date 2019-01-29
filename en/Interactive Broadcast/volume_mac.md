@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Tue Jan 29 2019 02:33:13 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 02:33:18 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -12,7 +12,7 @@ When using the Agora SDK, you can adjust the audio recording and playback volume
 
 This article describes the scenarios when you need to adjust the volume, the corresponding APIs and considerations in the process from audio recording to playing. 
 
-![](https://web-cdn.agora.io/docs-files/1548234333101)
+![](https://web-cdn.agora.io/docs-files/1548729191542)
 
 ## Implementation
 Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md).
