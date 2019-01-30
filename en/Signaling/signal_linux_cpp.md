@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Linux
-updatedAt: Fri Dec 21 2018 09:09:22 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:24:34 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0 BETA
