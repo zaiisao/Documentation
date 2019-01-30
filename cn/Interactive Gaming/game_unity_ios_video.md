@@ -3,7 +3,7 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(iOS)
-updatedAt: Wed Jan 30 2019 09:31:36 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 12:55:46 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
 ## 步骤 1: 准备环境
@@ -39,12 +39,12 @@ updatedAt: Wed Jan 30 2019 09:31:36 GMT+0000 (UTC)
 
 1. 在你的项目的根目录下，创建 `Assets/Scripts` 文件夹。
 
-2. 把 SDK 包中的 `Assets/Scripts/AgoraGamingSDK` 复制到你的项目中的 `Assets/Scripts` 文件夹下。
+2. 把示例代码中的 `Assets/Scripts/AgoraGamingSDK` 复制到你的项目中的 `Assets/Scripts` 文件夹下。
 
 3. 添加 `.framework` 文件：
 
-- 把 SDK 包中的 `Assets/Plugins/iOS/AgoraRtcEngineKit.framework` 文件复制到你的项目中的 `Assets/Plugins/iOS` 文件夹下。
-- 把 SDK 包中的 `Assets/Plugins/iOS/libagoraSdkCWrapper.a` 文件复制到你的项目中的 `Assets/Plugins/iOS` 文件夹下。
+- 把示例代码中的 `Assets/Plugins/iOS/AgoraRtcEngineKit.framework` 文件复制到你的项目中的 `Assets/Plugins/iOS` 文件夹下。
+- 把示例代码中的 `Assets/Plugins/iOS/libagoraSdkCWrapper.a` 文件复制到你的项目中的 `Assets/Plugins/iOS` 文件夹下。
 - 添加如下图所示系统文件：`MediaToolBox.framwork`，`VideoToolbox.framework`，`CoreTelephony.framework` 和 `libresolv.tbd`。
 
 <img alt="../_images/AMG-Video-Unity3D_22.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_22.png"/>
