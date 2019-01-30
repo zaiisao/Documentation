@@ -3,7 +3,7 @@
 title: Implement Voice for Gaming
 description: 
 platform: Unity
-updatedAt: Wed Jan 30 2019 08:11:44 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 12:31:19 GMT+0000 (UTC)
 ---
 # Implement Voice for Gaming
 With the `Hello-Unity-Agora` Sample App provided by Agora, you can:
@@ -40,7 +40,7 @@ This page shows how to use the Unity3D SDK to implement these functions on the A
 
 ### Step 2: Create a New Project
 
-Create a Unity3D project. Refer to [here](https://docs.unity3d.com/2018.2/Documentation/Manual/GettingStarted.html) if necessary. Skip this step if a project already exists.
+Create a Unity3D project. Refer to [Unity Quick Start](https://docs.unity3d.com/2018.2/Documentation/Manual/GettingStarted.html) if necessary. Skip this step if a project already exists.
 
 ### Step 3: Add the SDK
 
@@ -55,9 +55,9 @@ Create a Unity3D project. Refer to [here](https://docs.unity3d.com/2018.2/Docume
 
 4.  Copy the `Assets/Plugins/Android/mainTemplate.gradle` file from the Sample in the SDK to the `Assets/Plugins/Android` path of your project.
 
-5.  Copy the `Assets/Plugins/Android/AgoraAudioKit.plugin/AndroidManifest.xml` from the Sample in the SDK to the`Assets/Plugins/Android/AgoraAudioKit.plugin` directory of your project.
+5.  Copy the `Assets/Plugins/Android/AgoraAudioKit.plugin/AndroidManifest.xml` from the Sample in the SDK to the `Assets/Plugins/Android/AgoraAudioKit.plugin` directory of your project.
 
-6.  Copy the **armeabi-v7a** and **x86** files in **libs/Android** of the SDK to the `Assets/Plugins/Android/AgoraAudioKit.plugin/libs` path your project.
+6.  Copy the **armeabi-v7a** and **x86** files in `libs/Android` of the SDK to the `Assets/Plugins/Android/AgoraAudioKit.plugin/libs` path your project.
 
 
 ### Step 4: Add Permissions
@@ -79,7 +79,7 @@ Add the following permissions to the `Assets/Plugins/Android/AgoraAudioKit.plugi
 
 ### Step 5: Prevent Code Obfuscation
 
-Add the following line in the `Assets/Plugins/Android/AgoraAudioKit.plugin/project.properties` to obfuscate the code:
+Add the following line in the `Assets/Plugins/Android/AgoraAudioKit.plugin/project.properties` to prevent obfuscating the code:
 
 ```
 -keep class io.agora.**{*;}
