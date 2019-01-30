@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: iOS
-updatedAt: Wed Jan 30 2019 07:22:15 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:22:30 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0 
@@ -134,7 +134,7 @@ Use this method to log into Agora’s signaling system. Users must always log in
 <td>The maximum time allowed to re-login, 30 seconds by default.</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>The maximum times allowed to re-login, 3 times by default.</td>
+<td>The maximum times allowed to re-login, 15 times by default.</td>
 </tr>
 </tbody>
 </table>
