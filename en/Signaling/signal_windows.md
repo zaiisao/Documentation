@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Windows
-updatedAt: Wed Jan 30 2019 07:27:20 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:27:27 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0
@@ -209,7 +209,7 @@ public virtual void login2 (char const * appId, size_t appId_size,char const * a
 <td>The maximum time allowed to re-login, 30 seconds by default.</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>The maximum times allowed to re-login, 3 times by default.</td>
+<td>The maximum times allowed to re-login, 15 times by default.</td>
 </tr>
 </tbody>
 </table>
