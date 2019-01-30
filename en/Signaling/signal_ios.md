@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: iOS
-updatedAt: Wed Jan 30 2019 07:22:30 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:23:03 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0 
