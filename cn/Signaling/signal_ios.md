@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: iOS
-updatedAt: Wed Jan 30 2019 07:30:14 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:30:30 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -275,7 +275,7 @@ updatedAt: Wed Jan 30 2019 07:30:14 GMT+0000 (UTC)
 <td>登录重试时间，默认为 30 秒</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>登录重试次数，默认为 3 次</td>
+<td>登录重试次数，默认为 15 次</td>
 </tr>
 </tbody>
 </table>
