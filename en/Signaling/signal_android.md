@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Android
-updatedAt: Wed Jan 30 2019 07:21:30 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:21:38 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.4.
@@ -187,7 +187,7 @@ public void login2(String appId,String account,String token,int uid,String devic
 <td>Maximum time allowed to re-login, 30 seconds by default.</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>Maximum times allowed to re-login, 3 times by default.</td>
+<td>Maximum times allowed to re-login, 15 times by default.</td>
 </tr>
 </tbody>
 </table>
