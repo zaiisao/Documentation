@@ -3,7 +3,7 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Wed Jan 30 2019 13:14:29 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 13:14:35 GMT+0000 (UTC)
 ---
 # Implement Video for Gaming
 ## Step 1: Prepare the Environment
@@ -244,7 +244,7 @@ public class example : MonoBehaviour
     -   Delete **OpenGLES3** and **Vulkan**
     -   Ensure that you keep **OpenGLES2** which applies for video functions
 
-5.  Click **save** to save the settings.
+5.  Click **Save** to save the settings.
 
 6.  Click **Build** to build the app.
 
