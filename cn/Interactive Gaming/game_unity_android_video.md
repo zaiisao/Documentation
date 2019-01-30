@@ -3,15 +3,13 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(Android)
-updatedAt: Wed Jan 30 2019 12:45:04 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 12:45:49 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
 使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
 
 -   创建/加入频道
-
 -   自由发言
-
 -   离开频道
 
 
@@ -28,7 +26,7 @@ updatedAt: Wed Jan 30 2019 12:45:04 GMT+0000 (UTC)
     -   Unity 5.5 或更高版本
     -   Android Studio 2.0 或更高版本
     -   两部支持语音和视频的 Android 真机设备
-    -   准备一个 App ID，详见 [获取 App ID](../../cn/Agora%20Platform/token.md)
+    -   准备一个 App ID，详见 [获取 App ID](../../cn/Interactive%20Gaming/token.md)
 
 3.  请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
 
@@ -89,175 +87,147 @@ updatedAt: Wed Jan 30 2019 12:45:04 GMT+0000 (UTC)
 
 ## 步骤 6：调用 API 实现游戏视频
 
-调用 [互动游戏 API](../../cn/API%20Reference/game_unity.md) 中的 API，实现你想要的功能。下图展示如何创建一个 C# `example.cs` 文件：
+调用 [互动游戏 API](../../cn/Interactive%20Gaming/game_unity.md) 中的 API，实现你想要的功能。下图展示如何创建一个 C# `example.cs` 文件：
 
 <img alt="../_images/AMG-Video-Unity3D_25.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_25.png" />
 
 ```
-	private static string appId = #YOUR APP ID#;
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using agora_gaming_rtc;
 
-	// load agora engine
-	public void loadEngine()
-	{
-		// start sdk
-		Debug.Log ("initializeEngine");
+public class example : MonoBehaviour
+{
+    private IRtcEngine mRtcEngine;
+    private string mVendorKey = <your app id>;
 
-		if (mRtcEngine != null) {
-			Debug.Log ("Engine exists. Please unload it first!");
-			return;
-		}
+    // Use this for initialization
+    void Start ()
+    {
+        GameObject g = GameObject.Find (“Join”);
+        Text text = g.GetComponentInChildren<Text>(true);
+        text.text = “Join”;
+    }
 
-		// init engine
-		mRtcEngine = IRtcEngine.getEngine (appId);
+    // Update is called once per frame
+    void Update ()
+    {
 
-		// enable log
-		mRtcEngine.SetLogFilter (LOG_FILTER.DEBUG | LOG_FILTER.INFO | LOG_FILTER.WARNING | LOG_FILTER.ERROR | LOG_FILTER.CRITICAL);
-	}
+    }
 
-	public void join(string channel)
-	{
-		Debug.Log ("calling join (channel = " + channel + ")");
+    public void onButtonClicked() {
+        GameObject g = GameObject.Find (“Join”);
+        Text text = g.GetComponentInChildren<Text>(true);
+        if (ReferenceEquals (mRtcEngine, null)) {
+            startCall ();
+            text.text = “Leave”;
+        } else {
+            endCall ();
+            text.text = “Join”;
+        }
+    }
 
-		if (mRtcEngine == null)
-			return;
+    void startCall()
+    {
+        // init engine
+        mRtcEngine = IRtcEngine.getEngine (mVendorKey);
+        // enable log
+        mRtcEngine.SetLogFilter (LOG_FILTER.DEBUG | LOG_FILTER.INFO | LOG_FILTER.WARNING | LOG_FILTER.ERROR | LOG_FILTER.CRITICAL);
 
-		// set callbacks (optional)
-		mRtcEngine.OnJoinChannelSuccess = onJoinChannelSuccess;
-		mRtcEngine.OnUserJoined = onUserJoined;
-		mRtcEngine.OnUserOffline = onUserOffline;
+        // set callbacks (optional)
+        mRtcEngine.OnJoinChannelSuccess = onJoinChannelSuccess;
+        mRtcEngine.OnUserJoined = onUserJoined;
+        mRtcEngine.OnUserOffline = onUserOffline;
 
-		// enable video
-		mRtcEngine.EnableVideo();
+        // enable video
+        mRtcEngine.EnableVideo();
+        // allow camera output callback
+        mRtcEngine.EnableVideoObserver();
 
-		// allow camera output callback
-		mRtcEngine.EnableVideoObserver();
+        // join channel
+        mRtcEngine.JoinChannel(“exampleChannel”, null, 0);
+    }
 
-		// join channel
-		mRtcEngine.JoinChannel(channel, null, 0);
+    void endCall()
+    {
+        // leave channel
+        mRtcEngine.LeaveChannel();
+        // deregister video frame observers in native-c code
+        mRtcEngine.DisableVideoObserver();
 
-		Debug.Log ("initializeEngine done");
-	}
+        IRtcEngine.Destroy ();
+        mRtcEngine = null;
+    }
 
-	public string getSdkVersion () {
-		return IRtcEngine.GetSdkVersion ();
-	}
+    // Callbacks
+    private void onJoinChannelSuccess (string channelName, uint uid, int elapsed)
+    {
+        Debug.Log (“JoinChannelSuccessHandler: uid = “ + uid);
+    }
 
-	public void leave()
-	{
-		Debug.Log ("calling leave");
+    // When a remote user joined, this delegate will be called. Typically
+    // create a GameObject to render video on it
+    private void onUserJoined(uint uid, int elapsed)
+    {
+        Debug.Log (“onUserJoined: uid = “ + uid);
+        // this is called in the main thread
 
-		if (mRtcEngine == null)
-			return;
+        // find a game object to render the video stream from ‘uid’
+        GameObject go = GameObject.Find (uid.ToString ());
+        if (!ReferenceEquals (go, null)) {
+            return; // reuse
+        }
 
-		// leave channel
-		mRtcEngine.LeaveChannel();
-		// deregister video frame observers in native-c code
-		mRtcEngine.DisableVideoObserver();
-	}
+        // create a GameObject and assign it to this new user
+        go = GameObject.CreatePrimitive (PrimitiveType.Plane);
+        if (!ReferenceEquals (go, null)) {
+            go.name = uid.ToString ();
 
-	// unload agora engine
-	public void unloadEngine()
-	{
-		Debug.Log ("calling unloadEngine");
+            // configure videoSurface
+            VideoSurface o = go.AddComponent<VideoSurface> ();
+            o.SetForUser (uid);
+            o.mAdjustTransfrom += onTransformDelegate;
+            o.SetEnable (true);
+            o.transform.Rotate (-90.0f, 0.0f, 0.0f);
+            float r = Random.Range (-5.0f, 5.0f);
+            o.transform.position = new Vector3 (0f, r, 0f);
+            o.transform.localScale = new Vector3 (0.5f, 0.5f, 1.0f);
+        }
+    }
 
-		// delete
-		if (mRtcEngine != null) {
-			IRtcEngine.Destroy ();
-			mRtcEngine = null;
-		}
-	}
+    // When a remote user is offline, this delegate will be called. Typically
+    // delete the GameObject for this user
+    private void onUserOffline(uint uid, USER_OFFLINE_REASON reason)
+    {
+        // remove the video stream
+        Debug.Log (“onUserOffline: uid = “ + uid);
+        // this is called in the main thread
+        GameObject go = GameObject.Find (uid.ToString());
+        if (!ReferenceEquals (go, null)) {
+            Destroy (go);
+        }
+    }
 
-	// accessing GameObject in Scnene1
-	// set video transform delegate for statically created GameObject
-	public void onSceneHelloVideoLoaded()
-	{
-		GameObject go = GameObject.Find ("Cylinder");
-		if (ReferenceEquals (go, null)) {
-			Debug.Log ("BBBB: failed to find Cylinder");
-			return;
-		}
-		VideoSurface o = go.GetComponent<VideoSurface> ();
-		o.mAdjustTransfrom += onTransformDelegate;
-	}
-
-	// instance of agora engine
-	public IRtcEngine mRtcEngine;
-
-	// implement engine callbacks
-
-	public uint mRemotePeer = 0; // insignificant. only record one peer
-
-	private void onJoinChannelSuccess (string channelName, uint uid, int elapsed)
-	{
-		Debug.Log ("JoinChannelSuccessHandler: uid = " + uid);
-		GameObject textVersionGameObject = GameObject.Find ("VersionText");
-		textVersionGameObject.GetComponent<Text> ().text = "Version : " + getSdkVersion ();
-	}
-
-	// When a remote user joined, this delegate will be called. Typically
-	// create a GameObject to render video on it
-	private void onUserJoined(uint uid, int elapsed)
-	{
-		Debug.Log ("onUserJoined: uid = " + uid);
-		// this is called in main thread
-
-		// find a game object to render video stream from 'uid'
-		GameObject go = GameObject.Find (uid.ToString ());
-		if (!ReferenceEquals (go, null)) {
-			return; // reuse
-		}
-
-		// create a GameObject and assigne to this new user
-		go = GameObject.CreatePrimitive (PrimitiveType.Plane);
-		if (!ReferenceEquals (go, null)) {
-			go.name = uid.ToString ();
-
-			// configure videoSurface
-			VideoSurface o = go.AddComponent<VideoSurface> ();
-			o.SetForUser (uid);
-			o.mAdjustTransfrom += onTransformDelegate;
-			o.SetEnable (true);
-			o.transform.Rotate (-90.0f, 0.0f, 0.0f);
-			float r = Random.Range (-5.0f, 5.0f);
-			o.transform.position = new Vector3 (0f, r, 0f);
-			o.transform.localScale = new Vector3 (0.5f, 0.5f, 1.0f);
-		}
-
-		mRemotePeer = uid;
-	}
-
-	// When remote user is offline, this delegate will be called. Typically
-	// delete the GameObject for this user
-	private void onUserOffline(uint uid, USER_OFFLINE_REASON reason)
-	{
-		// remove video stream
-		Debug.Log ("onUserOffline: uid = " + uid);
-		// this is called in main thread
-		GameObject go = GameObject.Find (uid.ToString());
-		if (!ReferenceEquals (go, null)) {
-			Destroy (go);
-		}
-	}
-
-	// delegate: adjust transfrom for game object 'objName' connected with user 'uid'
-	// you could save information for 'uid' (e.g. which GameObject is attached)
-	private void onTransformDelegate (uint uid, string objName, ref Transform transform)
-	{
-		if (uid == 0) {
-			transform.position = new Vector3 (0f, 2f, 0f);
-			transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
-			transform.Rotate (0f, 1f, 0f);
-		} else {
-			transform.Rotate (0.0f, 1.0f, 0.0f);
-		}
-	}
-
+    // Delegate: Adjust the transform for the game object ‘objName’ connected with the user ‘uid’
+    // You can save information for ‘uid’ (e.g. which GameObject is attached)
+    private void onTransformDelegate (uint uid, string objName, ref Transform transform)
+    {
+        if (uid == 0) {
+            transform.position = new Vector3 (0f, 2f, 0f);
+            transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
+            transform.Rotate (0f, 1f, 0f);
+        } else {
+            transform.Rotate (0.0f, 1.0f, 0.0f);
+        }
+    }
+}
 ```
 
 ## 步骤 7：设置 GameObject 脚本文件
 
 1. 点击 **Join**，选择 `example.cs`
-2. 在 **Sphere** 中选择 `videoSource.cs`
+2. 在 **Sphere** 中选择 `VideoSource.cs`
 3. 连接 Android 设备
 
 ## 步骤 8：编译及安装
@@ -272,14 +242,14 @@ updatedAt: Wed Jan 30 2019 12:45:04 GMT+0000 (UTC)
 
   - **Other Settings**/**Rendering**/**Auto Graphics API**：选择 **False**
   - 删除 **OpenGLES3** 和 **Vulkan**
-  - 保留 **OpenGLES2**
+  - 请确认保留了 **OpenGLES2**，使用视频功能需要使用
 
 5. 点击 **Save** 保存相关设置
 6. 点击 **Build** 编译项目
 
 ## 步骤 9：运行项目
 
-你需要两台 Android 设备来实现游戏视频功能。在两台设备上点击 **RollingVideo**，并点击 **Join**。
+你需要两台 Android 设备来实现游戏视频功能。在两台设备上点击 **Join** 加入频道。
 
 <img alt="../_images/AMG-Video-Unity3D_20.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_20.png" style="width: 840.0px;"/>
 
