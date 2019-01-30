@@ -3,7 +3,7 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(iOS)
-updatedAt: Wed Jan 30 2019 07:53:03 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:53:10 GMT+0000 (UTC)
 ---
 # Implement Video for Gaming
 ## Step 1: Prepare the Environment
@@ -41,15 +41,15 @@ For information on how to use the Unity, refer to the official Unity documentati
 
 ## Step 3: Add the SDK
 
-1. Open the root directory of your project and create a `libs/Scripts` folder.
+1. Open the root directory of your project and create a `Assets/Scripts` folder.
 
-2. Copy the `libs/Scripts/AgoraGamingSDK` folder from the sample to `libs/Scripts` of your project.
+2. Copy the `Assets/Scripts/AgoraGamingSDK` folder from the sample to `Assets/Scripts` of your project.
 
 3. Add `.framework` files:
 
-- Copy `libs/iOS/AgoraRtcEngineKit.framework` from the sample to `libs/iOS` of your project.
+- Copy `Assets/Plugins/iOS/AgoraRtcEngineKit.framework` from the sample to `Assets/Plugins/iOS` of your project.
 
-- Copy `libs/iOS/libagoraSdkCWrapper.a` from the sample to `libs/iOS` of your project.
+- Copy `Assets/Plugins/iOS/libagoraSdkCWrapper.a` from the sample to `Assets/Plugins/iOS` of your project.
 
 - Add the necessary system libraries: `MediaToolBox.framwork`, `VideoToolbox.framework`, `CoreTelephony.framework` and `libresolv.tbd`.
 
