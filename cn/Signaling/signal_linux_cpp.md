@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Linux
-updatedAt: Wed Jan 30 2019 07:31:00 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:31:17 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
@@ -355,7 +355,7 @@ public virtual void login2 (char const * appId, size_t appId_size,char const * a
 <td>登录重试时间，默认为 30 秒</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>登录重试次数，默认为 3 次</td>
+<td>登录重试次数，默认为 15 次</td>
 </tr>
 </tbody>
 </table>
