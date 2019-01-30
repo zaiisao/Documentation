@@ -3,7 +3,7 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(Android)
-updatedAt: Wed Jan 30 2019 08:33:13 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 08:34:09 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
 使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
