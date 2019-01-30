@@ -3,14 +3,14 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(iOS)
-updatedAt: Wed Jan 30 2019 07:46:22 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:46:38 GMT+0000 (UTC)
 ---
 # Implement Video for Gaming
 ## Step 1: Prepare the Environment
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Unity video kit. See the following structure:
 
-    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 840.0px;"/>
+![](https://web-cdn.agora.io/docs-files/1548831707751)
 
 2.  Hardware and software requirements:
 
@@ -41,149 +41,201 @@ For information on how to use the Unity, refer to the official Unity documentati
 
 ## Step 3: Add the SDK
 
-Import the Agora Agora Interactive Gaming SDK Package:
+1. Open the root directory of your project and create a `libs/Scripts` folder.
 
-```
-mkdir -p Assets/Plugins/iOS/
-cp <SDKDIR>/libs/Plugins/iOS/libagoraSdkCWrapper.a Assets/Plugins/iOS/
-cp -r <SDKDIR>/libs/Plugins/iOS/AgoraRtcEngineKit.framework Assets/Plugins/iOS/
-```
+2. Copy the `libs/Scripts/AgoraGamingSDK` folder from the sample to `libs/Scripts` of your project.
 
-## Step 4: Call the API
+3. Add `.framework` files:
+
+- Copy `libs/iOS/AgoraRtcEngineKit.framework` from the sample to `libs/iOS` of your project.
+
+- Copy `libs/iOS/libagoraSdkCWrapper.a` from the sample to `libs/iOS` of your project.
+
+- Add the necessary system libraries: `MediaToolBox.framwork`, `VideoToolbox.framework`, `CoreTelephony.framework` and `libresolv.tbd`.
+
+<img alt="../_images/AMG-Video-Unity3D_22.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_22.png"/>
+ 
+
+## Step 4: Call the APIs
 
 Follow [Interactive Gaming API](../../en/API%20Reference/game_unity.md) to call the APIs to implement the required functions. The following figure shows how to create a C\# script `example.cs`:
 
 ```
-using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
-using agora_gaming_rtc;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using agora_gaming_rtc;
+using UnityEngine.UI;
 
-public class example : MonoBehaviour
-{
-    private IRtcEngineForGaming mRtcEngine;
-    private string mVendorKey = <your app id>;
+// this is an example of using Agora Unity SDK
+// It demonstrates:
+// How to enable video
+// How to join/leave channel
+// 
+public class HelloUnityVideo : MonoBehaviour {
 
-    // Use this for initialization
-    void Start ()
-    {
-        GameObject g = GameObject.Find ("Join");
-        Text text = g.GetComponentInChildren<Text>(true);
-        text.text = "Join";
-    }
+	// PLEASE KEEP THIS App ID IN SAFE PLACE
+	// Get your own App ID at https://dashboard.agora.io/
+	// After you entered the App ID, remove ## outside of Your App ID
+	private static string appId = #YOUR APP ID#;
 
-    // Update is called once per frame
-    void Update ()
-    {
+	// load agora engine
+	public void loadEngine()
+	{
+		// start sdk
+		Debug.Log ("initializeEngine");
 
-    }
+		if (mRtcEngine != null) {
+			Debug.Log ("Engine exists. Please unload it first!");
+			return;
+		}
 
-    public void onButtonClicked() {
-        GameObject g = GameObject.Find ("Join");
-        Text text = g.GetComponentInChildren<Text>(true);
-        if (ReferenceEquals (mRtcEngine, null)) {
-            startCall ();
-            text.text = "Leave";
-        } else {
-            endCall ();
-            text.text = "Join";
-        }
-    }
+		// init engine
+		mRtcEngine = IRtcEngine.getEngine (appId);
 
-    void startCall()
-    {
-        // Initialize the engine
-        mRtcEngine = IRtcEngineForGaming.getEngine (mVendorKey);
-        // enable log
-        mRtcEngine.SetLogFilter (LOG_FILTER.DEBUG | LOG_FILTER.INFO | LOG_FILTER.WARNING | LOG_FILTER.ERROR | LOG_FILTER.CRITICAL);
+		// enable log
+		mRtcEngine.SetLogFilter (LOG_FILTER.DEBUG | LOG_FILTER.INFO | LOG_FILTER.WARNING | LOG_FILTER.ERROR | LOG_FILTER.CRITICAL);
+	}
 
-        // Set callbacks (optional)
-        mRtcEngine.OnJoinChannelSuccess = onJoinChannelSuccess;
-        mRtcEngine.OnUserJoined = onUserJoined;
-        mRtcEngine.OnUserOffline = onUserOffline;
+	public void join(string channel)
+	{
+		Debug.Log ("calling join (channel = " + channel + ")");
 
-        // Enable the video
-        mRtcEngine.EnableVideo();
-        // allow camera output callback
-        mRtcEngine.EnableVideoObserver();
+		if (mRtcEngine == null)
+			return;
 
-        // Join the channel
-        mRtcEngine.JoinChannel("exampleChannel", null, 0);
-    }
+		// set callbacks (optional)
+		mRtcEngine.OnJoinChannelSuccess = onJoinChannelSuccess;
+		mRtcEngine.OnUserJoined = onUserJoined;
+		mRtcEngine.OnUserOffline = onUserOffline;
 
-    void endCall()
-    {
-        // Leave the channel
-        mRtcEngine.LeaveChannel();
-        // De-register the video frame observers in native-c code
-        mRtcEngine.DisableVideoObserver();
+		// enable video
+		mRtcEngine.EnableVideo();
 
-        IRtcEngineForGaming.Destroy ();
-        mRtcEngine = null;
-    }
+		// allow camera output callback
+		mRtcEngine.EnableVideoObserver();
 
-    // Callbacks
-    private void onJoinChannelSuccess (string channelName, uint uid, int elapsed)
-    {
-        Debug.Log ("JoinChannelSuccessHandler: uid = " + uid);
-    }
+		// join channel
+		mRtcEngine.JoinChannel(channel, null, 0);
 
-    // When a remote user joined, this delegate will be called. Typically
-    // create a GameObject to render video on it
-    private void onUserJoined(uint uid, int elapsed)
-    {
-        Debug.Log ("onUserJoined: uid = " + uid);
-        // This is called in main thread
+		Debug.Log ("initializeEngine done");
+	}
 
-        // Find a game object to render the video stream from 'uid'
-        GameObject go = GameObject.Find (uid.ToString ());
-        if (!ReferenceEquals (go, null)) {
-            return; // reuse
-        }
+	public string getSdkVersion () {
+		return IRtcEngine.GetSdkVersion ();
+	}
 
-        // Create a GameObject and assign it to this new user
-        go = GameObject.CreatePrimitive (PrimitiveType.Plane);
-        if (!ReferenceEquals (go, null)) {
-            go.name = uid.ToString ();
+	public void leave()
+	{
+		Debug.Log ("calling leave");
 
-            // Configure videoSurface
-            videoSurface o = go.AddComponent<videoSurface> ();
-            o.SetForUser (uid);
-            o.mAdjustTransfrom += onTransformDelegate;
-            o.SetEnable (true);
-            o.transform.Rotate (-90.0f, 0.0f, 0.0f);
-            float r = Random.Range (-5.0f, 5.0f);
-            o.transform.position = new Vector3 (0f, r, 0f);
-            o.transform.localScale = new Vector3 (0.5f, 0.5f, 1.0f);
-        }
-    }
+		if (mRtcEngine == null)
+			return;
 
-    // When the remote user is offline, this delegate will be called. Typically
-    // delete the GameObject for this user
-    private void onUserOffline(uint uid, USER_OFFLINE_REASON reason)
-    {
-        // remove the video stream
-        Debug.Log ("onUserOffline: uid = " + uid);
-        // this is called in main thread
-        GameObject go = GameObject.Find (uid.ToString());
-        if (!ReferenceEquals (go, null)) {
-            Destroy (go);
-        }
-    }
+		// leave channel
+		mRtcEngine.LeaveChannel();
+		// deregister video frame observers in native-c code
+		mRtcEngine.DisableVideoObserver();
+	}
 
-    // Delegate: Adjust the transform for the game object 'objName' connected with the user 'uid'
-    // You can save information for 'uid' (e.g. which GameObject is attached)
-    private void onTransformDelegate (uint uid, string objName, ref Transform transform)
-    {
-        if (uid == 0) {
-            transform.position = new Vector3 (0f, 2f, 0f);
-            transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
-            transform.Rotate (0f, 1f, 0f);
-        } else {
-            transform.Rotate (0.0f, 1.0f, 0.0f);
-        }
-    }
+	// unload agora engine
+	public void unloadEngine()
+	{
+		Debug.Log ("calling unloadEngine");
+
+		// delete
+		if (mRtcEngine != null) {
+			IRtcEngine.Destroy ();
+			mRtcEngine = null;
+		}
+	}
+
+	// accessing GameObject in Scnene1
+	// set video transform delegate for statically created GameObject
+	public void onSceneHelloVideoLoaded()
+	{
+		GameObject go = GameObject.Find ("Cylinder");
+		if (ReferenceEquals (go, null)) {
+			Debug.Log ("BBBB: failed to find Cylinder");
+			return;
+		}
+		VideoSurface o = go.GetComponent<VideoSurface> ();
+		o.mAdjustTransfrom += onTransformDelegate;
+	}
+
+	// instance of agora engine
+	public IRtcEngine mRtcEngine;
+
+	// implement engine callbacks
+
+	public uint mRemotePeer = 0; // insignificant. only record one peer
+
+	private void onJoinChannelSuccess (string channelName, uint uid, int elapsed)
+	{
+		Debug.Log ("JoinChannelSuccessHandler: uid = " + uid);
+		GameObject textVersionGameObject = GameObject.Find ("VersionText");
+		textVersionGameObject.GetComponent<Text> ().text = "Version : " + getSdkVersion ();
+	}
+
+	// When a remote user joined, this delegate will be called. Typically
+	// create a GameObject to render video on it
+	private void onUserJoined(uint uid, int elapsed)
+	{
+		Debug.Log ("onUserJoined: uid = " + uid);
+		// this is called in main thread
+
+		// find a game object to render video stream from 'uid'
+		GameObject go = GameObject.Find (uid.ToString ());
+		if (!ReferenceEquals (go, null)) {
+			return; // reuse
+		}
+
+		// create a GameObject and assigne to this new user
+		go = GameObject.CreatePrimitive (PrimitiveType.Plane);
+		if (!ReferenceEquals (go, null)) {
+			go.name = uid.ToString ();
+
+			// configure videoSurface
+			VideoSurface o = go.AddComponent<VideoSurface> ();
+			o.SetForUser (uid);
+			o.mAdjustTransfrom += onTransformDelegate;
+			o.SetEnable (true);
+			o.transform.Rotate (-90.0f, 0.0f, 0.0f);
+			float r = Random.Range (-5.0f, 5.0f);
+			o.transform.position = new Vector3 (0f, r, 0f);
+			o.transform.localScale = new Vector3 (0.5f, 0.5f, 1.0f);
+		}
+
+		mRemotePeer = uid;
+	}
+
+	// When remote user is offline, this delegate will be called. Typically
+	// delete the GameObject for this user
+	private void onUserOffline(uint uid, USER_OFFLINE_REASON reason)
+	{
+		// remove video stream
+		Debug.Log ("onUserOffline: uid = " + uid);
+		// this is called in main thread
+		GameObject go = GameObject.Find (uid.ToString());
+		if (!ReferenceEquals (go, null)) {
+			Destroy (go);
+		}
+	}
+
+	// delegate: adjust transfrom for game object 'objName' connected with user 'uid'
+	// you could save information for 'uid' (e.g. which GameObject is attached)
+	private void onTransformDelegate (uint uid, string objName, ref Transform transform)
+	{
+		if (uid == 0) {
+			transform.position = new Vector3 (0f, 2f, 0f);
+			transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
+			transform.Rotate (0f, 1f, 0f);
+		} else {
+			transform.Rotate (0.0f, 1.0f, 0.0f);
+		}
+	}
 }
+
 ```
 
 ## Step 5: Set the GameObject Script File
@@ -213,17 +265,12 @@ public class example : MonoBehaviour
 
     <img alt="../_images/AMG-Video-Unity3D_21.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_21.png" style="width: 840.0px;"/>
 
-   1.  Click **save** to save the settings.
+4.  Click **save** to save the settings.
 
-   2.  Click **Build And Run**, and a dialog box pops up to name the targeted folder of the exported projects, for example:
+5.  Click **Build And Run**, and a dialog box pops up to name the targeted folder of the exported projects, for example:
 
        <img alt="../_images/AMG-Video-Unity3D_14.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_14.png" />
 
-   3.  Set the bit code as **NO**.
-
-   4.  Add the following libraries: `VideoToolbox.framework`, `CoreTelephony.framework` and `libresolv.tbd`:
-
-       <img alt="../_images/AMG-Video-Unity3D_22.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_22.png"/>
 
 ## Step 7: Run the Application
 
