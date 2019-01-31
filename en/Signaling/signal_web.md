@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Web
-updatedAt: Fri Jan 18 2019 09:12:02 GMT+0000 (UTC)
+updatedAt: Thu Jan 31 2019 08:22:24 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0 BETA
@@ -125,41 +125,6 @@ This method sets the system log.
 </tbody>
 </table>
 
-
-
-#### Retrieves the Login Status (getStatus)
-
-This method retrieves the login status and is synchronous. The return value indicates the current login status.
-
-```
-getStatus() : Integer
-```
-
-The following table shows the relationship between the return value and the login status.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><th>Return Value</th>
-<th>Login Status</th>
-</tr>
-<tr><td>0</td>
-<td>Not logged in/Logged out.</td>
-</tr>
-<tr><td>1</td>
-<td>Connecting/Logging in.</td>
-</tr>
-<tr><td>2</td>
-<td>Logged in.</td>
-</tr>
-</tbody>
-</table>
-
-
-
 #### Retrieves the SDK Version (getSDKVersion)
 
 This method retrieves the SDK version and is synchronous. The return value is a string containing the SDK version, such as ‘1.3.0’.
@@ -192,7 +157,7 @@ invoke(func, args, cb)
 <tr><td>Queries the user status.</td>
 <td><ul>
 <li>name: io.agora.signal.user_query_user_status</li>
-<li>req: {“account”:account of the user}</li>
+<li>req: {“account”:account of the user, must be a JSON string}</li>
 <li>Returns: status(1:online; 0:offline)</li>
 </ul>
 </td>
@@ -207,7 +172,7 @@ invoke(func, args, cb)
 <tr><td>Retrieves a user attribute.</td>
 <td><ul>
 <li>name: io.agora.signal.user_get_attr</li>
-<li>req: {“account”:account of the user,”name”:attribute name}</li>
+<li>req: {“account”:account of the user, must be a JSON string,”name”:attribute name}</li>
 <li>Returns: {“value”:attribute value}</li>
 </ul>
 </td>
@@ -215,7 +180,7 @@ invoke(func, args, cb)
 <tr><td>Retrieves all attributes of a user.</td>
 <td><ul>
 <li>name: io.agora.signal.user_get_attr_all</li>
-<li>req: {“account”:account of the user}</li>
+<li>req: {“account”:account of the user, must be a JSON string}</li>
 <li>Returns: The JSON value of all attributes</li>
 </ul>
 </td>
@@ -231,7 +196,7 @@ invoke(func, args, cb)
 <tr><td>Checks if a user is in a specific channel.</td>
 <td><ul>
 <li>name: io.agora.signal.channel_query_user_isin</li>
-<li>req: {“name”:channel name,”account”:account of the user}</li>
+<li>req: {“name”:channel name,”account”:account of the user, must be a JSON string}</li>
 <li>Returns: isin（1: in the channel; 0:not in the channel）</li>
 </ul>
 </td>
@@ -410,9 +375,38 @@ If the call fails, the user will receive the <code>onInviteFailed</code> callbac
 </tbody>
 </table>
 
-
-
 >  You do not need to set the `_require_peer_online` field when making a SIP call.
+
+#### Retrieves the Login Status (getStatus)
+
+This method retrieves the login status and is synchronous. The return value indicates the current login status.
+
+```
+getStatus() : Integer
+```
+
+The following table shows the relationship between the return value and the login status.
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><th>Return Value</th>
+<th>Login Status</th>
+</tr>
+<tr><td>0</td>
+<td>Not logged in/Logged out.</td>
+</tr>
+<tr><td>1</td>
+<td>Connecting/Logging in.</td>
+</tr>
+<tr><td>2</td>
+<td>Logged in.</td>
+</tr>
+</tbody>
+</table>
 
 ### Callback Functions
 
