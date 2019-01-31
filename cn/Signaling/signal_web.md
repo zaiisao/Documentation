@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Web
-updatedAt: Fri Jan 18 2019 09:06:56 GMT+0000 (UTC)
+updatedAt: Thu Jan 31 2019 08:23:18 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
@@ -37,9 +37,6 @@ updatedAt: Fri Jan 18 2019 09:06:56 GMT+0000 (UTC)
 </tr>
 <tr><td><a href="#setdolog-web"><span>setDoLog</span></a></td>
 <td>SDK 打开日志</td>
-</tr>
-<tr><td><a href="#getstatus-web"><span>getStatus</span></a></td>
-<td>查询当前登录状态</td>
 </tr>
 <tr><td><a href="#getsdkversion-web"><span>getSDKVersion</span></a></td>
 <td>查询 SDK 版本</td>
@@ -151,40 +148,6 @@ setDolog(isEnabled, level)
 </table>
 
 
-
-#### <a name="getstatus-web"></a>查询当前登录状态 \(getStatus\)
-
-```
-getStatus() : Integer
-```
-
-使用该方法查询当前登录状态。
-
-该请求是同步请求。返回值表示了当前登录状态，对应关系如下：
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>返回值</strong></td>
-<td><strong>当前登录状态</strong></td>
-</tr>
-<tr><td>0</td>
-<td>未登录</td>
-</tr>
-<tr><td>1</td>
-<td>连接中</td>
-</tr>
-<tr><td>2</td>
-<td>已登录</td>
-</tr>
-</tbody>
-</table>
-
-
-
 #### <a name="getsdkversion-web"></a>查询 SDK 版本 \(getSDKVersion\)
 
 ```
@@ -237,6 +200,9 @@ getSDKVersion() : String
 </ul>
 </div>
 </td>
+</tr>
+<tr><td><a href="#getstatus-web"><span>getStatus</span></a></td>
+<td>查询当前登录状态</td>
 </tr>
 </tbody>
 </table>
@@ -297,7 +263,7 @@ invoke(func, args, cb)
 <tr><td>查询用户状态</td>
 <td><ul>
 <li>func: io.agora.signal.user_query_user_status</li>
-<li>args: {“account”:用户名}</li>
+<li>args: {“account”:用户名, JSON 字符串}</li>
 <li>返回值：status(1:在线；0:不在线)</li>
 </ul>
 </td>
@@ -312,7 +278,7 @@ invoke(func, args, cb)
 <tr><td>获取用户属性</td>
 <td><ul>
 <li>func: io.agora.signal.user_get_attr</li>
-<li>args: {“account”:用户名,”name”:属性名}</li>
+<li>args: {“account”:用户名, JSON 字符串,”name”:属性名}</li>
 <li>返回值: {“value”:属性值}</li>
 </ul>
 </td>
@@ -320,7 +286,7 @@ invoke(func, args, cb)
 <tr><td>获取用户所有属性</td>
 <td><ul>
 <li>func: io.agora.signal.user_get_attr_all</li>
-<li>args: {“account”:用户名}</li>
+<li>args: {“account”:用户名, JSON 字符串}</li>
 <li>返回值：所有属性的 JSON 值</li>
 </ul>
 </td>
@@ -336,7 +302,7 @@ invoke(func, args, cb)
 <tr><td>查询是否在频道内</td>
 <td><ul>
 <li>func: io.agora.signal.channel_query_user_isin</li>
-<li>args: {“name”:频道名,”account”:用户名}</li>
+<li>args: {“name”:频道名,”account”:用户名, JSON 字符串}</li>
 <li>返回值：isin（1: 在频道内；0:不在频道内）</li>
 </ul>
 </td>
@@ -503,6 +469,39 @@ channelInviteUser2(channelID, peer, extra) : Call
 
 
 > SIP 呼叫时你不需要设置 `_require_peer_online` 字段。
+
+
+#### <a name="getstatus-web"></a>查询当前登录状态 \(getStatus\)
+
+```
+getStatus() : Integer
+```
+
+使用该方法查询当前登录状态。
+
+该请求是同步请求。返回值表示了当前登录状态，对应关系如下：
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>返回值</strong></td>
+<td><strong>当前登录状态</strong></td>
+</tr>
+<tr><td>0</td>
+<td>未登录</td>
+</tr>
+<tr><td>1</td>
+<td>连接中</td>
+</tr>
+<tr><td>2</td>
+<td>已登录</td>
+</tr>
+</tbody>
+</table>
+
 
 ### 回调
 
