@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Sat Feb 02 2019 09:52:41 GMT+0000 (UTC)
+updatedAt: Sat Feb 02 2019 09:53:25 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -1613,7 +1613,7 @@ public int SetVideoProfile(int profile, bool swapWidthAndHeight);
 </table>
 
  
-> [1] 视频能否达到 1080P 的分辨率取决于设备的性能，在性能配备较低的设备上有可能无法实现。如果采用 1080P 分辨率而设备性能跟不上，则有可能出现帧率过低的情况。Agora.io 将继续在后续版本中为较低端设备进行视频优化。如设备有特别需求，请联系support@agora.io。
+> [1] 视频能否达到 1080P 的分辨率取决于设备的性能，在性能配备较低的设备上有可能无法实现。如果采用 1080P 分辨率而设备性能跟不上，则有可能出现帧率过低的情况。Agora.io 将继续在后续版本中为较低端设备进行视频优化。
 
 #### 使用双流/单流模式 (EnableDualStreamMode)
 
