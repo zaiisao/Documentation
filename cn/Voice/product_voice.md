@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 11 2019 08:10:32 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 08:44:24 GMT+0000 (UTC)
 ---
 # 产品概述
 语音通话可以实现纯语音的一对一单聊和多人群聊，不具备视频通话功能，包体积更小，适用于各种语音社交、语音会议等场景。
@@ -34,7 +34,7 @@ updatedAt: Mon Feb 11 2019 08:10:32 GMT+0000 (UTC)
 
 | 平台       | 支持版本                                                     |
 | ---------- | ------------------------------------------------------------ |
-| Android    | 4.1+                                                         |
+	| Android    | <p>4.1+</p>Android SDK 支持如下架构：<li>ARMv7<li>ARM64<li>X86                                                         |
 | iOS        | 8.0+                                                         |
 | Windows    | XP SP3+                                                      |
 | macOS      | 10.0+                                                        |
