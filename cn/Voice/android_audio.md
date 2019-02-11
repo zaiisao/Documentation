@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Android
-updatedAt: Mon Feb 11 2019 06:12:09 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 06:20:59 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -14,7 +14,7 @@ updatedAt: Mon Feb 11 2019 06:12:09 GMT+0000 (UTC)
 
 - Android SDK API Level Level ≥ 16
 
-- Android Studio 2.0 或以上版本
+- Android Studio 3.3 或以上版本
 
 - App 要求 Android 4.1 或以上设备
 
@@ -74,7 +74,7 @@ Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
 
 1. 设置 libs 存放路径。使用 Android Studio 打开你想要运行的项目（本文以 sample 文件为例），选择 *app/src/main/build.gradle* 文件，将预设的 libs 路径添加到 fileTree 代码行中。
 
-  ![](https://web-cdn.agora.io/docs-files/1543305505192)
+  ![](https://web-cdn.agora.io/docs-files/1549865429141)
 
 > 确保路径名称不包含中文字符。如果路径包含中文字符，则代码无法编译成功且会显示包含随机 ASCII 字符的错误信息。
 
@@ -99,7 +99,7 @@ Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
    <resources>
        <string name="app_name">Agora-Android-Voice-Tutorial</string>
        ...
-       <string name="agora_app_id"><#YOUR APP ID#></string>
+       <string name="agora_app_id">YOUR APP ID</string>
    </resources>
    ```
 
