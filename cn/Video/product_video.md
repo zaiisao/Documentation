@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 11 2019 08:43:09 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 08:43:27 GMT+0000 (UTC)
 ---
 # 产品概述
 视频通话 SDK 可实现一对一单聊、多人群聊，同时具备纯语音通话和视频通话功能。
@@ -36,7 +36,7 @@ updatedAt: Mon Feb 11 2019 08:43:09 GMT+0000 (UTC)
 
 | 平台       | 支持版本                                                     |
 | ---------- | ------------------------------------------------------------ |
-| Android    | 4.1+                                                         |
+	| Android    | <p>4.1+</p><p>Android SDK 支持如下架构：<li>ARMv7<li>ARM64<li>X86                                                         |
 | iOS        | 8.0+                                                         |
 | Windows    | XP SP3+                                                      |
 | macOS      | 10.0+                                                        |
