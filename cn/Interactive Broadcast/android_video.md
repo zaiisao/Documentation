@@ -3,7 +3,7 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Mon Feb 11 2019 06:33:42 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 06:33:46 GMT+0000 (UTC)
 ---
 # 集成客户端 
 本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -14,7 +14,7 @@ updatedAt: Mon Feb 11 2019 06:33:42 GMT+0000 (UTC)
 
 - Android SDK API Level Level ≥ 16
 
-- Android Studio 3.3 或以上版本
+- Android Studio 3.0 或以上版本
 
 - App 要求 Android 4.1 或以上设备
 
