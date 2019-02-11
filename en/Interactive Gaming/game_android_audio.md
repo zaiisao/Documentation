@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Java
-updatedAt: Mon Feb 11 2019 03:00:03 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 03:00:31 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming API for Android is composed of **Java Interface** and **C++ Interface**.
@@ -926,8 +926,7 @@ This method sets the video encoding profile. If the user does not need to set th
 </table>
 
 
-
-##### Manually Set the Video Profile (SetVideoProfile)
+#### Manually Set the Video Profile (SetVideoProfile)
 
 
 > This method has been deprecated. If you hope to set the video encoder profile, Agora recommends using `setVideoEncoderConfiguration`.
