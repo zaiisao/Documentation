@@ -3,7 +3,7 @@
 title: 实现七人以上视频通话
 description: 
 platform: iOS,macOS
-updatedAt: Tue Nov 20 2018 08:55:20 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 11:58:18 GMT+0000 (UTC)
 ---
 # 实现七人以上视频通话
 ## 场景描述
