@@ -14,16 +14,16 @@ This page contains information on how to prepare the development environment bef
   <table>
   <tr>
     <th>Platform</th>
-    <th>Chrome 58+</th>
-    <th>Firefox 56+</th>
-    <th>Safari 11+</th>
-    <th>Opera 45+</th>
-    <th>QQ Browser Latest</th>
-    <th>360 Security  Browser</th>
-    <th>Wechat Built-in Browser</th>
+    <th>Google Chrome 58 or later</th>
+    <th>Firefox 56 or later</th>
+    <th>Safari 11 or later</th>
+    <th>Opera 45 or later</th>
+    <th>QQ Browser</th>
+    <th>360 Secure Browser</th>
+    <th>WeChat Built-in Browser</th>
   </tr>
    <tr>
-    <td>Android 4.1+</td>
+    <td>Android 4.1 or later</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
 		<td><b>N/A</b></td>
@@ -33,7 +33,7 @@ This page contains information on how to prepare the development environment bef
     <td><font color="red">✘</td>
   </tr>
   <tr>
-    <td>iOS 11+</td>
+    <td>iOS 11 or later</td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
     <td><font color="green">✔</td>
@@ -43,7 +43,7 @@ This page contains information on how to prepare the development environment bef
     <td><font color="red">✘</td>
   </tr>
   <tr>
-    <td>macOS 10+</td>
+    <td>macOS 10 or later</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
@@ -53,7 +53,7 @@ This page contains information on how to prepare the development environment bef
     <td><font color="red">✘</td>
   </tr>
   <tr>
-    <td>Windows 7+</td>
+    <td>Windows 7 or later</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
 		<td><b>N/A</b></td>
@@ -64,7 +64,7 @@ This page contains information on how to prepare the development environment bef
   </tr>
 </table>
 
-> Agora Web SDK 2.5 or later also supports Chrome 49 on Windows XP.
+> The Agora Web SDK v2.5 or later also supports Google Chrome 49 on Windows XP.
 
 2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 3. Understand the limitations in [Known Issues](../../en/Video/release_web_video.md) and [FAQ](../../en/Video/websdk_related_faq.md).

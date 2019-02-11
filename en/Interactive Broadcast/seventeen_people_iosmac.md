@@ -3,7 +3,7 @@
 title: Video Conference of 7+ Users
 description: 
 platform: iOS,macOS
-updatedAt: Mon Feb 11 2019 11:54:01 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 11:54:06 GMT+0000 (UTC)
 ---
 # Video Conference of 7+ Users
 A video conference with too many hosts may cause network latency and packet loss. 
@@ -29,10 +29,9 @@ In a 17-way live video broadcast, each client is set as a host \(broadcaster\). 
 
 ## 2. Parameter Settings
 
-Enable the following modes before calling the `joinChannel` API  method.
+Enable the following mode before calling the `joinChannel` API  method.
 
 -   Enable the multi-party video mode: `setParameters("{\"che.audio.live_for_comm\":true}");`
--   Enable the counteracting-packet-loss mode: `setParameters("{\"che.video.moreFecSchemeEnable\":true}");`
 
 
 ## 3. Stream Type Settings

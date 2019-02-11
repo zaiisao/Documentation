@@ -19,16 +19,16 @@ See the table below for the browser support of Agora Web SDK:
 <table>
   <tr>
     <th>Platform</th>
-    <th>Chrome 58+</th>
-    <th>Firefox 56+</th>
-    <th>Safari 11+</th>
-    <th>Opera 45+</th>
-    <th>QQ Browser Latest</th>
-    <th>360 Security  Browser</th>
-    <th>Wechat Built-in Browser</th>
+    <th>Google Chrome 58 or later</th>
+    <th>Firefox 56 or later</th>
+    <th>Safari 11 or later</th>
+    <th>Opera 45 or later</th>
+    <th>QQ Browser</th>
+    <th>360 Secure Browser</th>
+    <th>WeChat Built-in Browser</th>
   </tr>
    <tr>
-    <td>Android 4.1+</td>
+    <td>Android 4.1 or later</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
 		<td><b>N/A</b></td>
@@ -38,7 +38,7 @@ See the table below for the browser support of Agora Web SDK:
     <td><font color="red">✘</td>
   </tr>
   <tr>
-    <td>iOS 11+</td>
+    <td>iOS 11 or later</td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
     <td><font color="green">✔</td>
@@ -48,7 +48,7 @@ See the table below for the browser support of Agora Web SDK:
     <td><font color="red">✘</td>
   </tr>
   <tr>
-    <td>macOS 10+</td>
+    <td>macOS 10 or later</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
@@ -58,7 +58,7 @@ See the table below for the browser support of Agora Web SDK:
     <td><font color="red">✘</td>
   </tr>
   <tr>
-    <td>Windows 7+</td>
+    <td>Windows 7 or later</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
 		<td><b>N/A</b></td>
@@ -69,7 +69,7 @@ See the table below for the browser support of Agora Web SDK:
   </tr>
 </table>
 
-> Agora Web SDK 2.5 or later also supports Chrome 49 on Windows XP.
+> The Agora Web SDK v2.5 or later also supports Google Chrome 49 on Windows XP.
 
 > To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
 
