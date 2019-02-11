@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: CPP
-updatedAt: Mon Feb 11 2019 03:36:21 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 03:36:33 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This page provides the **C++ Interface**, with which you can integrate the voice and video function into your app on Android and iOS. 
@@ -1140,7 +1140,7 @@ If the user does not need to set the video encoding profile after joining a chan
 </tbody>
 </table>
 
-**Landscape Mode**
+**Video profile definition**
 
 <table>
 <colgroup>
@@ -1157,450 +1157,190 @@ If the user does not need to set the video encoding profile after joining a chan
 <td>Frame Rate（fps）</td>
 <td>Bitrate</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_120P</td>
+<tr><td>120P</td>
 <td>0</td>
-<td>160 x 120</td>
+<td>160x120</td>
 <td>15</td>
 <td>65</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_120P_3</td>
+<tr><td>120P_3</td>
 <td>2</td>
-<td>120 x 120</td>
+<td>120x120</td>
 <td>15</td>
 <td>50</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_180P</td>
+<tr><td>180P</td>
 <td>10</td>
-<td>320 x 180</td>
+<td>320x180</td>
 <td>15</td>
 <td>140</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_180P_3</td>
+<tr><td>180P_3</td>
 <td>12</td>
-<td>180 x 180</td>
+<td>180x180</td>
 <td>15</td>
 <td>100</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_180P_4</td>
+<tr><td>180P_4</td>
 <td>13</td>
-<td>240 x 180</td>
+<td>240x180</td>
 <td>15</td>
 <td>120</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_240P</td>
+<tr><td>240P</td>
 <td>20</td>
-<td>320 x 240</td>
+<td>320x240</td>
 <td>15</td>
 <td>200</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_240P_3</td>
+<tr><td>240P_3</td>
 <td>22</td>
-<td>240 x 240</td>
+<td>240x240</td>
 <td>15</td>
 <td>140</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_240P_4</td>
-<td>23</td>
-<td>424 x 240</td>
+<tr><td>240P_4</td>
+<td>24</td>
+<td>424x240</td>
 <td>15</td>
 <td>220</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_360P</td>
+<tr><td>360P</td>
 <td>30</td>
-<td>640 x 360</td>
+<td>640x360</td>
 <td>15</td>
 <td>400</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_360P_3</td>
+<tr><td>360P_3</td>
 <td>32</td>
-<td>360 x 360</td>
+<td>360x360</td>
 <td>15</td>
 <td>260</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_360P_4</td>
+<tr><td>360P_4</td>
 <td>33</td>
-<td>640 x 360</td>
+<td>640x360</td>
 <td>30</td>
 <td>600</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_360P_6</td>
+<tr><td>360P_6</td>
 <td>35</td>
-<td>360 x 360</td>
+<td>360x360</td>
 <td>30</td>
 <td>400</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_360P_7</td>
+<tr><td>360P_7</td>
 <td>36</td>
-<td>480 x 360</td>
+<td>480x360</td>
 <td>15</td>
 <td>320</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_360P_8</td>
+<tr><td>360P_8</td>
 <td>37</td>
-<td>480 x 360</td>
+<td>480x360</td>
 <td>30</td>
 <td>490</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_360P_9</td>
+<tr><td>360P_9</td>
 <td>38</td>
-<td>640 x 360</td>
+<td>640x360</td>
 <td>15</td>
 <td>800</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_360P_10</td>
+<tr><td>360P_10</td>
 <td>39</td>
-<td>640 x 360</td>
+<td>640x360</td>
 <td>24</td>
 <td>800</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_360P_11</td>
+<tr><td>360P_11</td>
 <td>100</td>
-<td>640 x 360</td>
+<td>640x360</td>
 <td>24</td>
 <td>1000</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_480P</td>
+<tr><td>480P</td>
 <td>40</td>
-<td>640 x 480</td>
+<td>640x480</td>
 <td>15</td>
 <td>500</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_480P_3</td>
+<tr><td>480P_3</td>
 <td>42</td>
-<td>480 x 480</td>
+<td>480x480</td>
 <td>15</td>
 <td>400</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_480P_4</td>
+<tr><td>480P_4</td>
 <td>43</td>
-<td>640 x 480</td>
+<td>640x480</td>
 <td>30</td>
 <td>750</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_480P_6</td>
+<tr><td>480P_6</td>
 <td>45</td>
-<td>480 x 480</td>
+<td>480x480</td>
 <td>30</td>
 <td>600</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_480P_8</td>
+<tr><td>480P_8</td>
 <td>47</td>
-<td>848 x 480</td>
+<td>848x480</td>
 <td>15</td>
 <td>610</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_480P_9</td>
+<tr><td>480P_9</td>
 <td>48</td>
-<td>848 x 480</td>
+<td>848x480</td>
 <td>30</td>
 <td>930</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_480P_10</td>
-<td>49</td>
-<td>640 x 480</td>
-<td>10</td>
-<td>400</td>
-</tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_720P</td>
+<tr><td>720P</td>
 <td>50</td>
-<td>1280 x 720 <sup>[3]</sup></td>
+<td>1280x720</td>
 <td>15</td>
 <td>1130</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_720P_3</td>
+<tr><td>720P_3</td>
 <td>52</td>
-<td>1280 x 720 <sup>[3]</sup></td>
+<td>1280x720</td>
 <td>30</td>
 <td>1710</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_720P_5</td>
+<tr><td>720P_5</td>
 <td>54</td>
-<td>960 x 720 <sup>[3]</sup></td>
+<td>960x720</td>
 <td>15</td>
 <td>910</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_720P_6</td>
+<tr><td>720P_6</td>
 <td>55</td>
-<td>960 x 720 <sup>[3]</sup></td>
+<td>960x720</td>
 <td>30</td>
 <td>1380</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_1080P</td>
+<tr><td>1080P</td>
 <td>60</td>
-<td>1920 x 1080 <sup>[3]</sup></td>
+<td>1920x1080</td>
 <td>15</td>
 <td>2080</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_1080P_3</td>
+<tr><td>1080P_3</td>
 <td>62</td>
-<td>1920 x 1080 <sup>[3]</sup></td>
+<td>1920x1080</td>
 <td>30</td>
 <td>3150</td>
 </tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_1080P_5</td>
+<tr><td>1080P_5</td>
 <td>64</td>
-<td>1920 x 1080 <sup>[3]</sup></td>
+<td>1920x1080</td>
 <td>60</td>
 <td>4780</td>
-</tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_1440P</td>
-<td>66</td>
-<td>2560 x 1440 <sup>[3]</sup></td>
-<td>30</td>
-<td>4850</td>
-</tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_1440P_2</td>
-<td>67</td>
-<td>2560 x 1440 <sup>[3]</sup></td>
-<td>60</td>
-<td>6500</td>
-</tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_4K</td>
-<td>70</td>
-<td>3840 x 2160 <sup>[3]</sup></td>
-<td>30</td>
-<td>6500</td>
-</tr>
-<tr><td>VIDEO_PROFILE_LANDSCAPE_4K_3</td>
-<td>72</td>
-<td>3840 x 2160 <sup>[3]</sup></td>
-<td>60</td>
-<td>6500</td>
 </tr>
 </tbody>
 </table>
 
-**Portrait Mode**
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Video Profile</td>
-<td>Enumeration</td>
-<td>Resolution (Width x Height)</td>
-<td>Frame Rate（fps）</td>
-<td>Bitrate</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_120P</td>
-<td>1000</td>
-<td>120 x 160</td>
-<td>15</td>
-<td>65</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_120P_3</td>
-<td>1002</td>
-<td>120 x 120</td>
-<td>15</td>
-<td>50</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_180P</td>
-<td>1010</td>
-<td>180 x 360</td>
-<td>15</td>
-<td>140</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_180P_3</td>
-<td>1012</td>
-<td>180 x 180</td>
-<td>15</td>
-<td>100</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_180P_4</td>
-<td>1013</td>
-<td>180 x 240</td>
-<td>15</td>
-<td>120</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_240P</td>
-<td>1020</td>
-<td>240 x 320</td>
-<td>15</td>
-<td>200</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_240P_3</td>
-<td>1022</td>
-<td>240 x 240</td>
-<td>15</td>
-<td>140</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_240P_4</td>
-<td>1023</td>
-<td>240 x 424</td>
-<td>15</td>
-<td>220</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_360P</td>
-<td>1030</td>
-<td>360 x 640</td>
-<td>15</td>
-<td>400</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_360P_3</td>
-<td>1032</td>
-<td>360 x 360</td>
-<td>15</td>
-<td>260</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_360P_4</td>
-<td>1033</td>
-<td>360 x 640</td>
-<td>30</td>
-<td>600</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_360P_6</td>
-<td>1035</td>
-<td>360 x 360</td>
-<td>30</td>
-<td>400</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_360P_7</td>
-<td>1036</td>
-<td>360 x 480</td>
-<td>15</td>
-<td>320</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_360P_8</td>
-<td>1037</td>
-<td>360 x 480</td>
-<td>30</td>
-<td>490</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_360P_9</td>
-<td>1038</td>
-<td>360 x 640</td>
-<td>15</td>
-<td>800</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_360P_10</td>
-<td>1039</td>
-<td>360 x 640</td>
-<td>24</td>
-<td>800</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_360P_11</td>
-<td>1100</td>
-<td>360 x 640</td>
-<td>24</td>
-<td>1000</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_480P</td>
-<td>1040</td>
-<td>480 x 640</td>
-<td>15</td>
-<td>500</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_480P_3</td>
-<td>1042</td>
-<td>480 x 480</td>
-<td>15</td>
-<td>400</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_480P_4</td>
-<td>1043</td>
-<td>480 x 640</td>
-<td>30</td>
-<td>750</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_480P_6</td>
-<td>1045</td>
-<td>480 x 480</td>
-<td>30</td>
-<td>600</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_480P_8</td>
-<td>1047</td>
-<td>480 x 848</td>
-<td>15</td>
-<td>610</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_480P_9</td>
-<td>1048</td>
-<td>480 x 848</td>
-<td>30</td>
-<td>930</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_480P_10</td>
-<td>1049</td>
-<td>480 x 640</td>
-<td>10</td>
-<td>400</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_720P</td>
-<td>1050</td>
-<td>720 x 1280 <sup>[3]</sup></td>
-<td>15</td>
-<td>1130</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_720P_3</td>
-<td>1052</td>
-<td>720 x 1280 <sup>[3]</sup></td>
-<td>30</td>
-<td>1710</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_720P_5</td>
-<td>1054</td>
-<td>720 x 960 <sup>[3]</sup></td>
-<td>15</td>
-<td>910</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_720P_6</td>
-<td>1055</td>
-<td>720 x 960 <sup>[3]</sup></td>
-<td>30</td>
-<td>1380</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_1080P</td>
-<td>1060</td>
-<td>1080 x 1920 <sup>[3]</sup></td>
-<td>15</td>
-<td>2080</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_1080P_3</td>
-<td>1062</td>
-<td>1080 x 1920 <sup>[3]</sup></td>
-<td>30</td>
-<td>3150</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_1080P_5</td>
-<td>1064</td>
-<td>1080 x 1920 <sup>[3]</sup></td>
-<td>60</td>
-<td>4780</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_1440P</td>
-<td>1066</td>
-<td>1440 x 2560 <sup>[3]</sup></td>
-<td>30</td>
-<td>4850</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_1440P_2</td>
-<td>1067</td>
-<td>1440 x 2560 <sup>[3]</sup></td>
-<td>60</td>
-<td>6500</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_4K</td>
-<td>1070</td>
-<td>2160 x 3840 <sup>[3]</sup></td>
-<td>30</td>
-<td>6500</td>
-</tr>
-<tr><td>VIDEO_PROFILE_PORTRAIT_4K_3</td>
-<td>1072</td>
-<td>2160 x 3840 <sup>[3]</sup></td>
-<td>60</td>
-<td>6500</td>
-</tr>
-</tbody>
-</table>
-
-> [3] Whether 720p or above can be supported depends on the device. If the device cannot support 1080p, the frame rate will be lower than the one listed in the table. 
+> Whether 720p or above can be supported depends on the device. If the device cannot support 1080p, the frame rate will be lower than the one listed in the table. 
 
 #### Sets the Local Video View (setupLocalVideo)
 
