@@ -3,7 +3,7 @@
 title: 技术参数
 description: 
 platform: 技术参数
-updatedAt: Mon Feb 11 2019 02:53:59 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 02:54:03 GMT+0000 (UTC)
 ---
 # 技术参数
 ## 平台与规模
@@ -108,8 +108,6 @@ updatedAt: Mon Feb 11 2019 02:53:59 GMT+0000 (UTC)
 * 如果用户是在非 Wi-Fi 的网络环境（比如3 G 或2 G）中，我们的算法会自动根据网络状况进行调整，以保证在较低带宽下能够流畅通话。
 
 一般来说，带宽使用率为每秒 4 KB 到 13 KB 不等（在非 Wi-Fi 环境中可能为 4-6 KB 每秒）。在某些情况下，可以将其调整到 1 KB 每秒以下。
-
-更多详细信息，请联系 support@agora.io 。
 
 ### 通话时会耗费多少流量？
 
