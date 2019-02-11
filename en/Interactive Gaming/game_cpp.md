@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: CPP
-updatedAt: Mon Feb 11 2019 02:58:56 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 02:59:05 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This page provides the **C++ Interface**, with which you can integrate the voice and video function into your app on Android and iOS. 
@@ -1600,7 +1600,7 @@ If the user does not need to set the video encoding profile after joining a chan
 </tbody>
 </table>
 
-> [3] Whether 720p or above can be supported depends on the device. If the device cannot support 1080p, the frame rate will be lower than the one listed in the table. Agora optimizes the video in lower-end devices. Contact [support@agora.io](mailto:support@agora.io) for special requirements.
+> [3] Whether 720p or above can be supported depends on the device. If the device cannot support 1080p, the frame rate will be lower than the one listed in the table. Agora optimizes the video in lower-end devices.
 
 #### Sets the Local Video View (setupLocalVideo)
 
