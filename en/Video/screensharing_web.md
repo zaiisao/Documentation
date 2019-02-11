@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Mon Feb 11 2019 07:49:00 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 07:49:06 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
@@ -41,7 +41,7 @@ screenStream = AgoraRTC.createStream({
 > - Do not set the `video` and `screen` attributes as `true` at the same time.
 > - Agora recommends that you set the `audio` attribute as `false` to avoid any echo during the call.
 
-### Screen Sharing on Electron
+### <a name = "electron"></a>Screen Sharing on Electron
 
 Screen sharing on Electron does not require any plugin, but you need to draw the UI for screen-source selection. Electron only provides interfaces for sharing the screen. 
 
