@@ -3,12 +3,12 @@
 title: 游戏 API
 description: 
 platform: Objective-C
-updatedAt: Mon Feb 11 2019 03:32:41 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 03:32:54 GMT+0000 (UTC)
 ---
 # 游戏 API
 游戏 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成。
 
-本文主要介绍游戏 SDK 在 iOS 平台上的 Objective-C 接口。如果想参考 C++ 接口的调用方法，请点击 [C++ 接口](../../cn/Interactive%20Gaming/gaming_app.md)。
+本文主要介绍游戏 SDK 在 iOS 平台上的 Objective-C 接口。如果想参考 C++ 接口的调用方法，请点击 [C++ 接口](../../cn/Interactive%20Gaming/gaming_cpp.md)。
 
 
 
@@ -892,6 +892,8 @@ updatedAt: Mon Feb 11 2019 03:32:41 GMT+0000 (UTC)
 </tr>
 </tbody>
 </table>
+
+> 视频能否达到 720P 或以上的分辨率取决于设备的性能，在性能配备较低的设备上有可能无法实现。如果采用 720P 分辨率而设备性能跟不上，则有可能出现帧率过低的情况。
 
 
 #### 手动设置视频属性 (setVideoResolution)
