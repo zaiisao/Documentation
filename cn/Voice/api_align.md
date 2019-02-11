@@ -3,7 +3,7 @@
 title: 核心方法对照表
 description: List APIs of the key functions across the platforms
 platform: All Platforms
-updatedAt: Thu Dec 06 2018 03:39:52 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 08:01:50 GMT+0000 (UTC)
 ---
 # 核心方法对照表
 Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API 的调用和实现上不完全一致，本文将 Android，iOS/macOS，Windows 和 Web 这几个平台的核心功能 API 对照列出，帮助你快速了解各个平台之间的差异。
