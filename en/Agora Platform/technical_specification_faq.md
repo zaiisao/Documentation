@@ -3,7 +3,7 @@
 title: Technical Specification
 description: 
 platform: Technical Specification
-updatedAt: Mon Feb 11 2019 02:52:50 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 02:52:55 GMT+0000 (UTC)
 ---
 # Technical Specification
 ## Platform and Scale
@@ -118,7 +118,6 @@ You use bandwidth whenever you access the Internet in a voice or video call. Com
 
 Depending on the phone modes, operating systems, and CPU chips, the minimum CPU usage is 3%. For the latest high-end mobile phones, the CPU usage may be 20% or more. However, Agora can optimize the CPU usage according to your needs.
 
-For more information, contact support@agora.io.
 
 ### How can Agora ensure that the data transmission is smooth without any data loss and with minimal latency?
 
