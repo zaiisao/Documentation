@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Objective-C
-updatedAt: Mon Feb 11 2019 03:52:54 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 03:53:06 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming API is composed of the **Objective-C Interface** and **C++ Interface**, 
@@ -880,6 +880,7 @@ This method sets the video encoding profile. If the user does not need to set th
 </tbody>
 </table>
 
+> Whether the video can achieve 720p resolution depends on the performance and capabilities of the device. Devices with lower performance may experience low frame rates when using 1080p.
 
 #### Sets the Video Resolution (setVideoResolution)
 
