@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Mon Feb 11 2019 07:52:52 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 07:54:52 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -604,15 +604,16 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 -   响应:
 
-    ```
-    {
-         "success": true,
-         "data": {
-             "in_channel": true,
-             "role": 2
-         }
-    }
-    ```
+	```
+	{
+		"success": true,
+		"data": {
+			"join": 1549073054,
+			"in_channel": true,
+			"role": 2
+		}
+	}
+	```
 
     <table>
 <colgroup>
@@ -623,7 +624,10 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 <tr><td><strong>参数</strong></td>
 <td><strong>描述</strong></td>
 </tr>
-<tr><td>success</td>
+<tr><tr><td>join</td>
+<td><p>该用户加入频道的时间戳</p>
+</td></tr>
+<td>success</td>
 <td><p>查询请求状态</p>
 <ul>
 <li>true：请求成功</li>
