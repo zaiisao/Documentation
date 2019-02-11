@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Mon Feb 11 2019 06:20:33 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 06:20:51 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -12,9 +12,9 @@ This page contains information on how to prepare the development environment bef
 
 Development environment:
 
-- A device with audio support running Android 4.1+.
-- Android SDK for API level 16+.
-- Android Studio 2.0+.
+- A device with audio support running Android 4.1 or later.
+- Android SDK for API level 16 or later.
+- Android Studio 3.3 or later.
 - Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
 Download the Agora SDK：
@@ -70,7 +70,7 @@ Downloaded files include the libs folder and the sample folder. The following ta
 
 1. Set the storage directory of the libs folder. Open your project in Android Studio (this article takes the sample  as an example), select the *app/src/main/build.gradle* file, and add the preset storage directory to the `fileTree` code line.
 
-   ![](https://web-cdn.agora.io/docs-files/1543388550043)
+   ![](https://web-cdn.agora.io/docs-files/1549866011937)
 
 > Ensure that the path name contains no Chinese characters. If the path contains Chinese characters, compiling the code fails and displays an error message that contains random ASCII characters.
 
@@ -95,7 +95,7 @@ Downloaded files include the libs folder and the sample folder. The following ta
     <resources>
         <string name="app_name">Agora-Android-Voice-Tutorial</string>
         ...
-        <string name="agora_app_id"><#YOUR APP ID#></string>
+        <string name="agora_app_id">YOUR APP ID</string>
     </resources>
     ```
 
