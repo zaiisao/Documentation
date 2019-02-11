@@ -3,11 +3,10 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Mon Feb 11 2019 07:35:38 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 10:33:05 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
-
 在视频通话或互动直播中进行屏幕共享，可以将说话人或主播的屏幕内容，以视频画面的方式分享给其他说话人或观众观看，以提高沟通效率。
 
 屏幕共享在如下场景中应用广泛：
@@ -16,14 +15,13 @@ updatedAt: Mon Feb 11 2019 07:35:38 GMT+0000 (UTC)
 - 在线课堂场景中，屏幕共享可以将老师的课件、笔记、讲课内容等画面展示给学生观看。
 
 ## 实现方法
-
 在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](https://docs.agora.io/cn/Interactive%20Broadcast/web_prepare?platform=Web)。
 
 开始屏幕共享前，你需要在创建流的时候配置某些属性。Chrome 和 Firefox 浏览器在创建流的时候，相关的属性是不同的。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕信息。
 
 ### <a name = "chrome"></a>Chrome 屏幕共享
 
-在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Video/chrome_screensharing_plugin.md) ，并获取插件的 `extensionId`，在建流的时候填入 `extensionId`。
+在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Video/chrome_screensharing_plugin.md) ，在建流的时候把插件的 **extensionId** 填进字段。
 
 ```javascript
 screenStream = AgoraRTC.createStream({
@@ -36,58 +34,8 @@ screenStream = AgoraRTC.createStream({
 });
 ```
 
-> - 因为一个 Stream 只能有一路视频流，所以 `video` 和 `screen` 属性不能同时为 `true`。
-> - `audio` 属性建议设置为 `false`，避免订阅端收到的两路流中都有音频，导致回声。
-
-### Electron 屏幕共享
-
-Electron 屏幕共享不需要安装插件，但选择界面需要你自行绘制, Electron 仅提供用于获取共享源的接口。
-
-Electron 屏幕共享主要通过如下步骤实现：
-
-1. 调用 SDK 提供的  `AgoraRTC.getScreenSources` 方法获取可共享的屏幕信息。
-
-   ```javascript
-   AgoraRTC.getScreenSources(function(err, sources) {
-   	console.log(sources)
-   }
-   ```
-
-    `sources` 是一个 `source` 对象的列表，`source` 里包含了分享源的信息和 `sourceId`，`source` 的属性如下：
-
-   ![](https://web-cdn.agora.io/docs-files/1547455349613)
-
-   - `id`： 即 `sourceId`
-   - `name`：屏幕源的名字
-   - `thumbnail`：屏幕源的快照
-
-2. 根据 `source` 的属性，（用 html 和 css）绘制选择界面，让用户选择要共享的屏幕源。为方便快速集成，Agora 提供默认的选择界面。
-
-   `source` 的属性与 Chrome 屏幕共享的选择界面对应关系如下：
-
-   ![](https://web-cdn.agora.io/docs-files/1547456888707)
-
-3. 获取用户选择的 `sourceId`。
-
-4. 调用 `AgoraRTC.createStream`， 将 `screen` 设置为 `true` 并填入 `sourceId`，就能创建相应的屏幕共享流了。
-
-   ```javascript
-   localStream = AgoraRTC.createStream({
-       streamID: UID,
-       audio: false,
-       video: false,
-       screen: true,
-       sourceId: sourceId
-   });
-   localStream.init(function(stream) {})
-   ```
-
-   如果未填写 `sourceId`，在调用 `localStream.init` 时，SDK 会提供自带的默认界面。默认的选择界面与 Chrome 的选择界面类似，如下图所示：
-
-   ![](https://web-cdn.agora.io/docs-files/1547455511311)
-
-> - `getScreenSources` 方法是对 Electron 提供的 `desktopCapturer.getSources` 进行的封装，详情可参考 [desktopCapturer](https://electronjs.org/docs/api/desktop-capturer)。
-> - 在非 Electron 下传入 `sourceId` 会被忽略。
+> - 因为一个 Stream 只能有一路视频流，所以 `video` 和 `screen` 属性不能同时为 true。
+> - `audio` 属性建议设置为 false，避免订阅端收到的两路流中都有音频，导致回声。
 
 ### <a name = "ff"></a>Firefox 屏幕共享
 
@@ -271,7 +219,6 @@ screenClient.subscribe(stream);
 - 在 Windows 平台上进行屏幕共享时，如果共享的是 QQ 聊天窗口会导致黑屏。
 
 ## 工作原理
-
 Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现的。
 
 - 如果只使用屏幕共享，则在新建流的时候，把 `video` 字段设为 false， `screen` 字段设为 true 即可。
