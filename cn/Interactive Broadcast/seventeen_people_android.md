@@ -3,7 +3,7 @@
 title: 实现七人以上视频通话
 description: 
 platform: Android
-updatedAt: Tue Nov 20 2018 08:48:23 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 11:57:07 GMT+0000 (UTC)
 ---
 # 实现七人以上视频通话
 ## 场景描述
