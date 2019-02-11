@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 11 2019 02:47:58 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 02:48:04 GMT+0000 (UTC)
 ---
 # 产品概述
 Agora 互动直播（Interactive Broadcasting）可以实现一对多，多对多的纯音频和视频互动直播。常见的CDN直播是一个主播和多个观众，是单向的。而互动直播还能多个主播之间，观众与主播之间连麦，就像在小剧场里观众可以上台表演一样。适用于娱乐直播如狼人杀、教育直播如小班课、电商直播中的导购问答等强互动场景。同时，也适用对图像质量要求高的一对一视频聊天。
@@ -63,14 +63,15 @@ Agora 互动直播提供丰富的功能，你可以根据自己的场景需求�
 
 ### 视频互动直播 - Agora Live
 
-在应用市场下载Agora Live app，快速体验超低延迟多人连麦互动直播。
+在应用市场下载 Agora Live app，快速体验超低延迟多人连麦互动直播。
 
 - [Android](http://android.myapp.com/myapp/detail.htm?apkName=io.agora.vlive)
 - [iOS](https://itunes.apple.com/cn/app/id1116886856?mt=8)
+- [Web](https://webdemo.agora.io/videocall/?_ga=2.212778772.1474390666.1541382528-1513744824.1530171825)
 - [Windows](http://download.agora.io/avc/AgoraLiveBroadcast_for_windows_2.2.0.zip?_ga=2.231750175.1098053192.1540804434-1796221125.1530266296)
 
 ### 语音聊天室 - 分贝
 
-在应用市场下载分贝app，快速体验多人语音聊天室，感受麦序麦位、听歌、聊天等玩法。
+在应用市场下载分贝 app，快速体验多人语音聊天室，感受麦序麦位、听歌、聊天等玩法。
 
 - [iOS](https://itunes.apple.com/cn/app/id1417827292?mt=8)
