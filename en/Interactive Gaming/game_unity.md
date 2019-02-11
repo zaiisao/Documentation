@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Mon Feb 11 2019 03:05:54 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 03:21:32 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -1711,7 +1711,7 @@ The method only sets the attributes of the streams encoded by the encoder which 
 </table>
 
 
-> [1] Whether the video can achieve 1080p resolution depends on the performance and capabilities of the device. Devices with lower performance may experience low frame rates when using 1080p. Agora will optimize the video for lower-end devices in future releases. Contact [support@agora.io](mailto:support@agora.io) for details.
+> [1] Whether the video can achieve 1080p resolution depends on the performance and capabilities of the device. Devices with lower performance may experience low frame rates when using 1080p.
 
 #### Enable Dual-stream Mode (EnableDualStreamMode)
 
