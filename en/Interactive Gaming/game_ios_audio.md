@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Objective-C
-updatedAt: Mon Jan 28 2019 11:30:30 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 03:52:54 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming API is composed of the **Objective-C Interface** and **C++ Interface**, 
