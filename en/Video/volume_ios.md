@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Tue Jan 29 2019 02:32:48 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 02:32:53 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -12,7 +12,7 @@ When using the Agora SDK, you can adjust the audio recording and playback volume
 
 This page describes the scenarios when you need to adjust the volume, and provides the corresponding APIs and considerations in the process from audio recording to playback. 
 
-![](https://web-cdn.agora.io/docs-files/1548234267909)
+![](https://web-cdn.agora.io/docs-files/1548729166359)
 
 ## Implementation
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).

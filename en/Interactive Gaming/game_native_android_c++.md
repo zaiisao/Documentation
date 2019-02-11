@@ -2,7 +2,7 @@
 ---
 title: Implement Voice for Gaming
 description: 
-platform: Android_CPP
+platform: Android
 updatedAt: Fri Nov 02 2018 08:53:38 GMT+0000 (UTC)
 ---
 # Implement Voice for Gaming

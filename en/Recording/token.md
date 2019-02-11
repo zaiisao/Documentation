@@ -175,8 +175,7 @@ To get an App Certificate:
     
       <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/en/view_app_certificate.png" />
 
-> -   Contact [support@agora.io](mailto:support@agora.io) to renew an App Certificate.
-> 
+
 > -   Keep the App Certificate on the server, never on any client machine.
 > 
 > -   The App Certificate takes about an hour to take effect after it is enabled.
