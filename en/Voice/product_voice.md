@@ -3,7 +3,7 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 11 2019 08:05:21 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 08:33:03 GMT+0000 (UTC)
 ---
 # Agora Voice Overview
 The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many **voice-only** calls. With a small SDK package size, the Agora Native SDK for Voice Call is applicable to a variety of recreational and business activities.
@@ -43,7 +43,13 @@ The Agora Native SDK for Voice Call is supported on platforms such as iOS, Andro
   </tr>
   <tr>
     <td>Android</td>
-    <td>4.1+</td>
+		<td><p>4.1+</p>
+		<p>The Android SDK supports the following architecture:
+		<ul>
+			<li>ARMv7</li>
+			<li>ARM64</li>
+			<li>X86</li>
+			</ul></p></td>
   </tr>
   <tr>
     <td>iOS</td>
