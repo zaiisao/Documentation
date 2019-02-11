@@ -3,7 +3,7 @@
 title: Video Conference of 7+ Users
 description: 
 platform: iOS,macOS
-updatedAt: Thu Dec 13 2018 22:45:18 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 11:53:20 GMT+0000 (UTC)
 ---
 # Video Conference of 7+ Users
 A video conference with too many hosts may cause network latency and packet loss. 
