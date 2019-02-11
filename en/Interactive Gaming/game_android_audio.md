@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Java
-updatedAt: Mon Feb 11 2019 03:54:39 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 03:54:46 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 The Interactive Gaming API for Android is composed of **Java Interface** and **C++ Interface**.
@@ -924,6 +924,8 @@ This method sets the video encoding profile. If the user does not need to set th
 </tr>
 </tbody>
 </table>
+
+Whether the video can achieve 720p resolution depends on the performance and capabilities of the device. Devices with lower performance may experience low frame rates when using 1080p.
 
 
 #### Manually Set the Video Profile (SetVideoProfile)
