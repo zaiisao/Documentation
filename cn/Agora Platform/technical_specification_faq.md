@@ -3,7 +3,7 @@
 title: 技术参数
 description: 
 platform: 技术参数
-updatedAt: Mon Feb 11 2019 02:53:16 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 02:53:20 GMT+0000 (UTC)
 ---
 # 技术参数
 ## 平台与规模
@@ -123,8 +123,6 @@ updatedAt: Mon Feb 11 2019 02:53:16 GMT+0000 (UTC)
 视电话模式、操作系统和CPU芯片而定。最低占用率为 3%。
 
 对最新的中高端手机来说，可能会占用 20%+ 的 CPU（与 Skype 在手机上的占用率相近）。但我们可以根据您的需求进行优化。
-
-更多详细信息，请联系 support@agora.io 。
 
 ### 音视频质量的打分依据是什么?
 
