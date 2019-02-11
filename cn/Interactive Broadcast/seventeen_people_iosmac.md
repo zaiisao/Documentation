@@ -3,7 +3,7 @@
 title: 实现七人以上视频通话
 description: 
 platform: iOS,macOS
-updatedAt: Mon Feb 11 2019 11:58:18 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 11:58:27 GMT+0000 (UTC)
 ---
 # 实现七人以上视频通话
 ## 场景描述
@@ -29,7 +29,6 @@ updatedAt: Mon Feb 11 2019 11:58:18 GMT+0000 (UTC)
 在 `joinChannel` 前需要进行如下设置:
 
 - 开启多人视频通信模式：`setParameters("{\"che.audio.live_for_comm\":true}");`
-- 开启全面丢包对抗模式：`setParameters("{\"che.video.moreFecSchemeEnable\":true}");`
 
 ### 3. 大小流设置
 
