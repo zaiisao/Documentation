@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Feb 11 2019 07:41:30 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 10:31:53 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -11,6 +11,7 @@ updatedAt: Mon Feb 11 2019 07:41:30 GMT+0000 (UTC)
 ## 概览
 
 Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库在网页浏览器中调用 API 建立连接，控制音视频通话和直播服务。点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 以及[互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
+
 
 ### 兼容性说明
 
@@ -74,146 +75,12 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 > 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
 
 ### 已知问题和局限性
-
+ 
 - 受浏览器策略影响，在 Chrome 70+ 和 Safari 浏览器上，`Stream.play`，`Stream.startAudioMixing` 以及 `Stream.getAudioLevel` 这三个方法必须由用户手势触发，详情请参考 [Autoplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes)。
 - 如果在客户端安装了高清摄像头，则 Agora Web SDK 支持最大为 1080p 分辨率的视频流，但取决于不同的摄像头设备，最大分辨率也会受到影响。
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](../../cn/Interactive%20Broadcast/websdk_related_faq.md)。
-
-## 2.5.1 版
-
-该版本于 2019 年 2 月 11 日发布。新增功能、改进及修复问题详见下文。
-
-### 新增功能
-
-#### 1. 质量透明
-
-支持获取更多通话质量的统计数据：
-
-- 新增 `Client.getSessionStats` 方法，获取当前通话相关的统计数据，包括在频道内的时长，音视频总发送/接收码率，频道内的人数等。
-- 新增 `network-quality` 回调，每 2 秒报告一次本地用户的上下行网络质量。
-- `Client.getRemoteAudioStats` 获取的远端音频统计数据中新增以下数据：
-  - 音频卡顿总时长
-  - 音频播放总时长
-- `Client.getRemoteVideoStats` 获取的远端视频统计数据中新增以下数据：
-  - 视频渲染分辨率宽度
-  - 视频渲染分辨率高度
-  - 视频播放总时长
-  - 视频卡顿总时长
-- `Client.getLocalVideoStats` 获取的本地视频统计数据中新增以下数据：
-  - 视频采集分辨率宽度
-  - 视频采集分辨率高度
-  - 视频采集帧率
-  - 视频编码卡顿总时长
-  - 视频编码总时长
-- `Client.getTransportStats` 获取的与网关的连接统计数据中新增以下数据：
-  - 上行可用带宽估计
-  - 网络类型
-
-#### 2. 独立订阅音频流/视频流
-
-在 `Client.subscribe` 方法中新增 `options` 参数，用于设置是否接收音频数据和视频数据。
-
-该方法可以根据需要在通话中多次调用，在订阅音频和/或视频之间灵活切换。
-
-#### 3. 直播导入在线媒体流
-
-新增 `Client.addInjectStreamUrl` 方法，支持拉取在线音视频流并发送到频道中，将正在播放的音视频导入到正在进行的直播中。可主要应用于赛事直播、多人看视频互动等直播场景。
-
-相应新增 `streamInjectedStatus` 回调，用于通知导入状态的改变。
-
-#### 4. 设置用户角色
-
-新增 `Client.setClientRole` 方法，支持在直播模式下设置用户的角色为主播或者观众。主播可以发布和接收音视频流，观众只能接收音视频流，无法发布。
-
-相应新增 `client-role-changed` 回调，用于通知用户角色的改变。
-
-
-#### 5. 获取 SDK 与服务器的连接状态
-
-- 新增 `Client.getConnectionState` 方法，用于获取 SDK 与服务器的连接状态。
-- 新增 `connection-state-change` 回调，用于通知连接状态的变化。
-
-
-#### 6. 其他新增功能
-
-- 新增 `Stream.isPlaying` 方法，用于检测音视频流当前是否在播放状态。
-- `Client.on` 中新增以下回调：
-  - `peer-online` ：通知应用程序有其他用户/主播上线。
-  - `stream-reconnect-start` ：通知应用程序 SDk 开始重新发布/订阅音视频流。
-  - `stream-reconnect-end` ：通知应用程序重新发布/订阅音视频流已结束。
-  - `exception` ：通知应用程序频道内的异常事件。
-- `Stream.on` 中新增以下回调：
-  - `audioMixingPlayed` ：通知应用程序混音开始播放。
-  - `audioMixingFinished` ：通知应用程序混音结束播放。
-
-### 改进
-
-- `Stream.play` 方法中新增 `muted` 参数，用于规避浏览器自动播放策略。
-- `Stream.setAudioMixingPosition` 方法中新增 `callback` 参数，可用于返回方法调用失败的错误信息。
-- 修改了部分 `Client.on` 回调事件的名称，以保持风格统一。
-
-### 问题修复
-
-- 修复了 macOS 使用 Safari 浏览器互通时，调用 `getStats` 方法返回的对端视频分辨率为 0 的问题。
-- 修复了调用 `disableAudio` 方法后开启混音功能，再调用 `enableAudio` 方法，无法听到麦克风声音的问题。
-- 修复了掉线时，日志无法正常上传的问题。
-- 修复了调用 `switchDevice` 方法切换音频设备后，调用 `getAudioLevel` 方法获取的音量为 0 的问题。
-- 修复了调用 `replaceTrack` 方法后，在本地听到自己声音的问题。
-- 修复了 iOS 端调用 `switchDevice` 方法无法二次切换的问题。
-
-### API 整理
-
-本次发版 API 变动如下。
-
-#### 新增
-
-- [`AgoraRTC.getScreenSources`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#getscreensources)
-- [`Client.addInjectStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#addinjectstreamurl)
-- [`Client.removeInjectStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#removeinjectstreamurl)
-- [`Client.getSessionStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getsessionstats)
-- [`Client.setClientRole`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole)
-- [`Client.getConnectionState`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getconnectionstate)
-- [`Stream.isPlaying`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#isplaying)
-- [`Stream.muteAudio`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#muteAudio)
-- [`Stream.unmuteAudio`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#unmuteAudio)
-- [`Stream.muteVideo`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#muteVideo)
-- [`Stream.unmuteVideo`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#unmuteVideo)
-- [`Client.on`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) 新增以下事件：
-  - `streamInjectedStatus`
-  - `client-role-changed`
-  - `peer-online`
-  - `network-quality`
-  - `connection-state-change`
-  - `stream-reconnect-start`
-  - `stream-reconnect-end`
-  - `exception`
-- [`Stream.on`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#on) 新增以下事件：
-  - `audioMixingPlayed`
-  - `audioMixingFinished`
-
-#### 修改
-
-- [`Client.subscribe`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) 方法增加 `options` 参数
-- [`Stream.setAudioMixingPosition`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudiomixingposition) 方法增加 `callback` 参数
-- [`Stream.play`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) 方法增加 `muted` 参数
-- [`Client.on`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html?#on) 以下事件名称修改：
-| 原事件名               | 现事件名                 |
-| ---------------------- | ------------------------ |
-| networkTypeChanged     | network-type-changed     |
-| recordingDeviceChanged | recording-device-changed |
-| playoutDeviceChanged   | playout-device-changed   |
-| cameraChanged          | camera-changed           |
-| streamTypeChange       | stream-type-changed      |
-
-#### 废弃
-
-- `Client.getNetworkStats`
-- `Stream.enableAudio`
-- `Stream.disableAudio`
-- `Stream.enableVideo`
-- `Stream.disableVideo`
 
 ## 2.5.0 版
 
@@ -223,11 +90,11 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 ### 新增功能
 
-为更好地与 Agora 其他 SDK 互通，实现更多功能，Web SDK 在本版本中新增了如下功能。详细的方法说明，请参考 [Agora Web SDK API Reference](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html)。
+为更好地与 Agora 其他 SDK 互通，实现更多功能，Web SDK 在本版本中新增了如下功能。详细的接口说明，请参考 [Agora Web SDK API Reference](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html)。
 
 #### 1. 质量监控
 
-为方便用户查看应用程序的通话质量，新增如下方法：
+为方便用户查看应用程序的通话质量，新增如下接口：
 
 - `Client.getNetworkStats` ：获取网络统计数据（网络类型）。
 - `Client.getSystemStats` ：获取系统数据（系统电量）。
@@ -243,28 +110,27 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 - **枚举可用设备**
 
-  新增如下方法：
+	新增如下接口：
 
-  - `Client.getRecordingDevices`：枚举音频输入设备，如麦克风。
-  - `Client.getPlayoutDevices` ：枚举音频输出设备，如扬声器。
-  - `Client.getCameras` ：枚举视频输入设备，如摄像头。
+	* `Client.getRecordingDevices`：枚举音频输入设备，如麦克风。
+	*  `Client.getPlayoutDevices` ：枚举音频输出设备，如扬声器。
+	*  `Client.getCameras` ：枚举视频输入设备，如摄像头。
 
   同时新增如下事件，用来告知应用程序设备状态的变化：
 
-  - `recordingDeviceChanged` ：通知应用程序音频输入设备已改变。
+  -  `recordingDeviceChanged` ：通知应用程序音频输入设备已改变。
   - `playoutDeviceChanged` ：通知应用程序音频输出设备已改变。
   - `cameraChanged` ：通知应用程序视频输入设备已改变。
 
 - **切换媒体设备**
-
-  - 新增 `Stream.switchDevice` 方法，支持在频道内切换媒体输入设备，如麦克风、摄像头等。
-  - 新增 `Stream.setAudioOutput` 方法，支持选择音频输出设备，可以切换麦克风和扬声器。
+  - 新增 `Stream.switchDevice` 接口，支持在频道内切换媒体输入设备，如麦克风、摄像头等。
+  - 新增 `Stream.setAudioOutput` 接口，支持选择音频输出设备，可以切换麦克风和扬声器。
 
 #### 3. 支持伴奏混音
 
 支持混音功能，混音是指原音（麦克风采集的音频）和伴奏（音频文件声音）混合。
 
-新增如下伴奏混音相关的方法：
+新增如下伴奏混音相关的接口：
 
 - `Stream.startAudioMixing` ：开始播放伴奏。
 - `Stream.stopAudioMixing` ：停止播放伴奏。
@@ -277,7 +143,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 #### 4. 音视频轨道管理
 
-支持灵活管理音视频频道，新增如下方法：
+支持灵活管理音视频频道，新增如下接口：
 
 - `Stream.getAudioTrack` ：获取音频轨道。
 - `Stream.getVideoTrack` ：获取视频轨道。
@@ -287,12 +153,12 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 #### 5. 其他新增功能
 
-- 支持两种视频显示模式，可以在 `Stream.play` 方法中设置播放流的显示模式。
-- 新增 `Client.enableAudioVolumeIndicator` 方法，允许 SDK 定期向应用程序反馈当前谁在说话，以及说话者的音量。
-- 新增 `Stream.setAudioVolume`  方法，支持设置订阅流的音量。
+- 支持两种视频显示模式，可以在 `Stream.play` 接口中设置播放流的显示模式。
+- 新增 `Client.enableAudioVolumeIndicator` 接口，允许 SDK 定期向应用程序反馈当前谁在说话，以及说话者的音量。
+- 新增 `Stream.setAudioVolume`  接口，支持设置订阅流的音量。
 - 新增 `networkTypeChanged` 事件，通知应用程序网络类型已改变。
 - 新增 `streamTypeChange` 事件，通知应用程序视频流类型已由大流变为小流，或小流变为大流。
-- `Client.join` 方法中，在原来支持整型 `uid` 的基础上，新增对字符串类型的支持。
+- `Client.join` 接口中，在原来支持整型 `uid` 的基础上，新增对字符串类型的支持。
 - 支持 360 安全浏览器 9.1.0.432 及以上版本。
 - 支持 Windows XP 平台的 Chrome 49 浏览器。
 
@@ -301,6 +167,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 修复了手机端使用 Safari 或 Chrome 浏览器进入频道后，在仅有音频通话的情况下对 video codec 的依赖。
 - 修复了使用 Safari 浏览器推流后调用 `Stream.close` 关闭流，对端 10 秒后无法收到 `stream-removed` 回调的问题。
 - 修复了重置 `Stream.userId` 后，收到 Warning 的问题。
+
 
 ## 2.4.1 版
 
@@ -333,7 +200,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 #### 4. 支持设置音频属性
 
-新增 `stream.setAudioProfile` 方法，提供多组音频属性设置（采样率、单双声道、编码码率）。
+新增 `stream.setAudioProfile` 接口，提供多组音频属性设置（采样率、单双声道、编码码率）。
 
 #### 5. 支持弱网时音视频流回退
 
@@ -376,7 +243,6 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 #### 1. 新通信模式
 
 为增加 Web SDK 的适用场景，提升与 Native SDK 在通信和直播下的互通质量，在 `createClient` 方法中新增 `mode` 和 `codec` 参数，其中 `mode` 参数支持 rtc 和 live 两种场景，`codec` 参数支持 vp8 和 264 两种编解码方式。 
-
 #### 2. 支持语音自动增益控制
 
 为满足通话或直播中对语音响度进行控制和调整的需要，在 `createStream` 方法中新增 `audioProcessing` 参数。
