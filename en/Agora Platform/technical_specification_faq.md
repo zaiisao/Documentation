@@ -3,7 +3,7 @@
 title: Technical Specification
 description: 
 platform: Technical Specification
-updatedAt: Mon Feb 11 2019 02:55:01 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 02:55:05 GMT+0000 (UTC)
 ---
 # Technical Specification
 ## Platform and Scale
@@ -104,8 +104,6 @@ Depending on the network conditions:
 * In a cellular network, the Agora algorithm automatically lowers the bandwidth allocation according to the network conditions to allow quality calls.
 
 Generally speaking, the bandwidth allocation ranges between 4 Kbps and 13 Kbps (between 4 Kbps and 6 Kbps in a cellular network). In some cases, the bandwidth allocation can be as low as 1 Kbps.
-
-For more information, contact support@agora.io.
 
 ### How much bandwidth does a call use？
 
