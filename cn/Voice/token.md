@@ -179,8 +179,6 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 
 
-> -   如果出于某种原因你需要更新 App Certificate，请联系 [support@agora.io](mailto:support@agora.io) 。
->
 > -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
 >
 > -   通常 App Certificate 在启用一小时后生效。

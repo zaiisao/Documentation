@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Mon Feb 11 2019 03:33:51 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 03:33:57 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -1593,19 +1593,19 @@ public int SetVideoProfile(int profile, bool swapWidthAndHeight);
 </tr>
 <tr><td>1080P</td>
 <td>60</td>
-<td>1920x1080 <sup>[1]</sup></td>
+<td>1920x1080</td>
 <td>15</td>
 <td>2080</td>
 </tr>
 <tr><td>1080P_3</td>
 <td>62</td>
-<td>1920x1080 <sup>[1]</sup></td>
+<td>1920x1080</td>
 <td>30</td>
 <td>3150</td>
 </tr>
 <tr><td>1080P_5</td>
 <td>64</td>
-<td>1920x1080 <sup>[1]</sup></td>
+<td>1920x1080</td>
 <td>60</td>
 <td>4780</td>
 </tr>
@@ -1613,7 +1613,7 @@ public int SetVideoProfile(int profile, bool swapWidthAndHeight);
 </table>
 
  
-> [1] 视频能否达到 1080P 的分辨率取决于设备的性能，在性能配备较低的设备上有可能无法实现。如果采用 1080P 分辨率而设备性能跟不上，则有可能出现帧率过低的情况。Agora.io 将继续在后续版本中为较低端设备进行视频优化。
+> 视频能否达到 1080P 的分辨率取决于设备的性能，在性能配备较低的设备上有可能无法实现。如果采用 1080P 分辨率而设备性能跟不上，则有可能出现帧率过低的情况。
 
 #### 使用双流/单流模式 (EnableDualStreamMode)
 

@@ -2,7 +2,7 @@
 ---
 title: 实现游戏语音功能
 description: 
-platform: iOS_CPP
+platform: iOS
 updatedAt: Fri Nov 02 2018 04:09:00 GMT+0000 (UTC)
 ---
 # 实现游戏语音功能
