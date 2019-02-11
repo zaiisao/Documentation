@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Java
-updatedAt: Mon Feb 11 2019 03:31:24 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 03:31:36 GMT+0000 (UTC)
 ---
 # 游戏 API
 互动游戏 API 由 **Java 接口** 和 **C++ 接口** 部分组成。
@@ -857,6 +857,8 @@ public abstract int setVideoProfile(int profile, boolean swapWidthAndHeight);
 </tr>
 </tbody>
 </table>
+
+> 视频能否达到 720P 或以上的分辨率取决于设备的性能，在性能配备较低的设备上有可能无法实现。如果采用 720P 分辨率而设备性能跟不上，则有可能出现帧率过低的情况。
 
 
 #### 手动设置视频属性（setVideoProfile)
