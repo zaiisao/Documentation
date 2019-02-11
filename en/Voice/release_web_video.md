@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Feb 11 2019 07:25:08 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 07:43:19 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -76,12 +76,144 @@ See the table below for the browser support of Agora Web SDK:
 ### Known Issues and Limitations
 
 - Affected by browser policy changes, `Stream.play`, `Stream.startAudioMixing`, and `Stream.getAudioLevel` must be triggered by the user's gesture on the Chrome 70+ and Safari browsers, see [Autoplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) for details.
-
 - The Agora Web SDK supports video profiles up to 1080p resolutions if the client has a true HD camera installed. However, the maximum resolution is limited by the camera device capabilities.
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](../../en/Voice/websdk_related_faq.md).
 
+## v2.5.1
+
+The version 2.5.1 was released on February 11, 2019. See below for new features, improvements, and issues fixed.
+
+### New Features
+
+#### 1. More Quality Statistics
+
+Added more statistics on call quality. 
+
+- Added the `Client.getSessionStats` method to get the statistics of sessions, including the duration in the channel, the total received and sent bitrate of the stream, the number of users in the channel, and so on.
+- Added the `network-quality` callback to report the uplink and downlink network conditions of the local user every two seconds. 
+- Added the following audio statistics of the remote stream to the `Client.getRemoteAudioStats` method:
+  - Total freeze time of the received audio
+  - Total playing duration of the received audio
+- Added the following video statistics of the remote stream to the `Client.getRemoteVideoStats` method:
+  - Resolution width of the received video
+  - Resolution height of the received video
+  - Total playing duration of the received video
+  - Total freeze time of the received video
+- Added the following video statistics of the local stream to the `Client.getLocalVideoStats` method:
+  - Resolution width of the sent video
+  - Resolution height of the sent video
+  - Frame rate of the sent video
+  - Total duration of the encoded video
+  - Total freeze time of the encoded video
+- Added the following statistics of the transmission quality to Agora service to the `Client.getTransportStats` method:
+  - The estimated uplink bandwidth
+  - The network type
+
+#### 2. Support for Receiving Audio/Video Data Independently
+
+Added the `options` parameter to the `Client.subscribe` method to set whether to receive the audio and/or video data. 
+
+This method can be called multiple times, and enables users to switch between receiving and not receiving the audio and/or video data flexibly.
+
+#### 3. Support for Injecting Online Media Streams to Live Broadcasts
+
+Added the `Client.addInjectStreamUrl` method to pull a voice or video stream and inject it into a live channel. This is applicable to scenarios where all of the audience members in the channel can watch a live show and interact with each other.
+
+Added the `streamInjectedStatus` callback to inform the app of the change in the injection status.
+
+#### 4. Support for Setting the User Role
+
+Added the `Client.setClientRole` method to set the user role as a host or an audience in a live broadcast. A host can both send and receive streams while an audience can only receive streams.
+
+Added the `client-role-changed` callback to inform the app of the change in the user role.
+
+#### 5. Connection Status
+
+- Added the `Client.getConnectionState` method to retrieve the connection status between the SDK and Agora's edge server.
+- Added the `connection-state-change` callback to inform the app of the change in the connection status. 
+
+#### 6. Other New Features
+
+- Added the `Stream.isPlaying` method to detect whether the stream is playing.
+- Added the following callbacks in `Client.on`:
+  - `peer-online`: Informs the app that a remote user or host joins the channel.
+  - `stream-reconnect-start`: Informs the app that the SDK starts republishing or re-subscribing to streams.
+  - `stream-reconnect-end`: Informs the app that the SDK finishes republishing or re-subscribing to streams.
+  - `exception`: Informs the app of  the exception events.
+- Added the following callbacks in `Stream.on`:
+  - `audioMixingPlayed`: Informs the app that the audio mixing stream starts or resumes playing.
+  - `audioMixingFinished`: Informs the app that the audio mixing stream finishes playing. 
+
+### Improvements
+
+- Added the `muted` parameter to the `Stream.play` method to be a workaround for the browser's autoplay policy.
+- Added the `callback` parameter to the `Stream.setAudioMixingPosition` method to return error messages when the method fails.
+- Modified names of some events in `Client.on` to be consistent in style.
+
+### Issues Fixed
+
+- Fixed the issue that the video resolution of the remote video returned by the `getStats` method was 0 on  Safari for macOS.
+- Fixed the issue that the user could not hear the microphone when `enableAudio` was called after disabling audio and then starting audio mixing.
+- Fixed the issue that logs could not be uploaded when offline.
+- Fixed the issue that the volume retrieved by calling the `getAudioLevel` method was 0 after calling the `switchDevice` method to switch audio devices.
+- Fixed the issue that users heard their own voice after calling the `replaceTrack` method.
+- Fixed the issue that users could not switch devices twice on iOS when calling the `switchDevice` method.
+
+### API Changes
+
+#### New APIs
+
+- [`AgoraRTC.getScreenSources`](https://docs.agora.io/en/Voice/API%20Reference/web/globals.html#getscreensources)
+- [`Client.addInjectStreamUrl`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#addinjectstreamurl)
+- [`Client.removeInjectStreamUrl`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#removeinjectstreamurl)
+- [`Client.getSessionStats`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#getsessionstats)
+- [`Client.setClientRole`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#setclientrole)
+- [`Client.getConnectionState`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#getconnectionstate)
+- [`Stream.isPlaying`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#isplaying)
+- [`Stream.muteAudio`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#muteAudio)
+- [`Stream.unmuteAudio`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#unmuteAudio)
+- [`Stream.muteVideo`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#muteVideo)
+- [`Stream.unmuteVideo`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#unmuteVideo)
+- New events of [`Client.on`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#on):
+  - `streamInjectedStatus`
+  - `client-role-changed`
+  - `peer-online`
+  - `network-quality`
+  - `connection-state-change`
+  - `stream-reconnect-start`
+  - `stream-reconnect-end`
+  - `exception`
+- New events of [`Stream.on`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html?transId=883bbba0-1968-11e9-aeca-4be8cfc1d3d0#on):
+  - `audioMixingPlayed`
+  - `audioMixingFinished`
+
+#### Updated APIs
+
+- [`Client.subscribe`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#subscribe): Added the `options` parameter.
+
+- [`Stream.setAudioMixingPosition`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#setaudiomixingposition): Added the `callback` parameter.
+
+- [`Stream.play`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#play): Added the `muted` parameter.
+
+- Renamed the following events in [`Client.on`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#on):
+
+  | Old event name         | Current event name       |
+  | ---------------------- | ------------------------ |
+  | networkTypeChanged     | network-type-changed     |
+  | recordingDeviceChanged | recording-device-changed |
+  | playoutDeviceChanged   | playout-device-changed   |
+  | cameraChanged          | camera-changed           |
+  | streamTypeChange       | stream-type-changed      |
+
+#### Deprecated APIs
+
+- `Client.getNetworkStats`
+- `Stream.enableAudio`
+- `Stream.disableAudio`
+- `Stream.enableVideo`
+- `Stream.disableVideo`
 
 ## v2.5.0
 
@@ -109,7 +241,7 @@ To give users a better idea of the call quality, the following APIs on call stat
 
 Provides flexible device management and device status notification.
 
-- **Enumera Devices**
+- **Enumerate Devices**
 
   Added the following APIs:
 
@@ -117,7 +249,7 @@ Provides flexible device management and device status notification.
   - `Client.getPlayoutDevices` : Enumerates the audio output device, such as the speakers.
   - `Client.getCameras` : Enumerates the video input device, such as the cameras.
 
-  Added the following callbacks to inform the application that the relevant device is changed:
+  Added the following callbacks to inform the app that the relevant device is changed:
 
   - `recordingDeviceChanged` : The audio input device is changed.
   - `playoutDeviceChanged` : The audio output device is changed.
@@ -162,8 +294,8 @@ Added the following APIs:
 - Support for two video display modes. You can set the display mode in  `Stream.play`.
 - Added the `Client.enableAudioVolumeIndicator` method to enable the SDK regularly reports the active speakers and their volumes.
 - Added the `Stream.setAudioVolume` method, which sets the audio volume of the subscribed stream.
-- Added the `networkTypeChanged` callback to inform the application that the network type is changed.
-- Adde the `streamTypeChanged` callback to infrom the application that the stream type has changed (from low-video stream to high-video stream or vice versa).
+- Added the `networkTypeChanged` callback to inform the app that the network type is changed.
+- Adde the `streamTypeChanged` callback to infrom the app that the stream type has changed (from low-video stream to high-video stream or vice versa).
 - Support for both string and number types for the `uid` parameter in  `Client.join`.
 - Support for 360 Security Browser 9.1.0.432+.
 - Support for Chrome 49 on the Windows XP system.
@@ -173,7 +305,6 @@ Added the following APIs:
 - Fixed the dependency on the video codec in audio-only calls when the user joins the channel from Safari or Chrome on mobile devices.
 - Fixed the failure to receive the `stream-removed` callback 10 seconds after the other user has called `Stream.close` to stop streaming from the Safari browser.
 - Fixed the issue of receiving warning after the user has used the same UID to reset `Stream.userID`.
-
 
 ## v2.4.1
 
@@ -364,6 +495,7 @@ The version 2.1.0 was released on March 7, 2018. See below for new features, imp
 - Fixed the issue of not seeing the remote video when using the Web SDK on the Firefox browser v59.01 on macOS
 
 ## v2.0 and Earlier
+
 ### v2.0
 
 The version 2.0 was released on November 21, 2017. See below for new features and issues fixed.
@@ -371,7 +503,7 @@ The version 2.0 was released on November 21, 2017. See below for new features an
 #### New Features
 
 - Added the check browser compatibility function before calling <code>CreateClient</code>, to check the compatibility between the system and the browser.
-- Added the callback to notify the application that the user has granted or denied access to the camera or microphone.
+- Added the callback to notify the app that the user has granted or denied access to the camera or microphone.
 - Added the video self-adjustment function, by automatically lowering the resolution or frame rate until the video profile matches the input hardware’s capability.
 
 #### Issues Fixed
@@ -381,7 +513,7 @@ The version 2.0 was released on November 21, 2017. See below for new features an
 - Abnormal screen display on Android devices when the device switches between its front and rear cameras.
 - Abnormal screen display on Android devices when one of the Android devices in the session leaves the channel.
 - No camera-access-grant notification on Google Chrome when it joins the channel without access to the camera.
-- No image on the iOS Safari web browser after the user has returned from another application.
+- No image on the iOS Safari web browser after the user has returned from another app.
 
 ### v1.14
 
