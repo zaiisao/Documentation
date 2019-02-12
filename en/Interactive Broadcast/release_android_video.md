@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Jan 25 2019 05:25:21 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:20:39 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
