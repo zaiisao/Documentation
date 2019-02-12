@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Mon Jan 28 2019 02:48:33 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:44:10 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
