@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Tue Feb 12 2019 07:20:39 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:22:58 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -243,6 +243,7 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 
 ### Issues Fixed
 
+- The users on the Web client cannot see the video sent from the Native client due to codec bugs.
 - Excessive increase in memory usage when multiple delegated hosts broadcast in the channel.
 - Occasional crashes on some Android devices.
 - The remote view does not display on some devices.
