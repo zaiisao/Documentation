@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Tue Feb 12 2019 06:16:27 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 06:16:39 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
@@ -32,8 +32,6 @@ Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传
 -   频道属性回调：
 
     -   每条频道属性回调不超过 10 条/s。
-
--   如需开通 SIP 网关接入 Agora 信令系统，请联系 [support@agora.io](mailto:support@agora.io)。后续将提供自行配置方案。
 
 
 ## 1.4.0 版 
