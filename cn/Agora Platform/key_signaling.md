@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Feb 12 2019 07:19:05 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:19:11 GMT+0000 (UTC)
 ---
 # 校验用户权限
 ## 简介
@@ -73,7 +73,6 @@ updatedAt: Tue Feb 12 2019 07:19:05 GMT+0000 (UTC)
 
      <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 		 
-	>  -   如果出于某种原因你需要更新 App Certificate，请联系 [support@agora.io](mailto:support@agora.io) 。
 	>  -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
 	>  -   通常 App Certificate 在启用一小时后生效。
 	>  -   当项目的 App Certificate 被启用后，你必须使用 Token。例如: 在启用 App Certificate 前，你可以使用 App ID 加入频道。但启用了 App Certificate 后，你就必须使用 Token 加入频道。
