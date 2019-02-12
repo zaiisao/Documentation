@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Tue Feb 12 2019 07:20:48 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:20:56 GMT+0000 (UTC)
 ---
 # Use Security Keys
 ## Introduction
@@ -80,8 +80,6 @@ Each Agora account can create multiple projects, and each project has a unique A
         <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/en/view_app_certificate.png" style="width: 420.0px;"/>
 
 > -   An App Certificate is enabled for the sole purpose of generating a token and cannot be used alone.
-> 
-> -   Contact [support@agora.io](mailto:support@agora.io) to renew an App Certificate.
 > 
 > -   Keep the App Certificate on the server, never on any client machine.
 > 
