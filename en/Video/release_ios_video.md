@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Tue Feb 12 2019 07:22:31 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:22:52 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -226,6 +226,7 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 
 ### Issues Fixed
 
+- The users on the Web client cannot see the video sent from the Native client due to codec bugs.
 - Excessive increase in the memory usage when multiple delegated hosts broadcast in the channel.
 - Occasional video renderer crashes when the app switches to the background on some iOS devices.
 - Occasional app crashes on some iOS devices.
