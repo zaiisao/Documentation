@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Tue Feb 12 2019 07:44:59 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:45:03 GMT+0000 (UTC)
 ---
 # 发版说明
 
@@ -156,6 +156,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 #### 视频相关：
 
+- 修复了因视频编码问题引起的 Native 设备与 Web 端互通时，Web 端看不到 Native 端视频画面的问题
 - 修复了 x86 设备上自采集图像时硬件编码器的相关问题
 - 修复了视频自采集时的偶现问题
 - 修复了 Windows 设备上出现的屏幕共享时鼠标位置问题
