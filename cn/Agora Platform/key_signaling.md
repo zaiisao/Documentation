@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 30 2018 03:38:50 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:19:05 GMT+0000 (UTC)
 ---
 # 校验用户权限
 ## 简介
