@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Tue Feb 12 2019 06:19:49 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 06:19:56 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
@@ -22,7 +22,6 @@ The Agora Signaling SDK facilitates real-time communications through functions s
     -   Offline messages are not supported.
 -   Channel-attributes-updated callback:
     -   A maximum of 10 channel-attributes-updated callbacks can be sent each second.
--   To access Agora’s signaling system through the SIP gateway, contact [support@agora.io](mailto:support@agora.io). A self-configurable solution will be available soon.
 
 ## v1.4.4
 
