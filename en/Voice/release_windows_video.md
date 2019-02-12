@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Feb 12 2019 07:35:00 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:35:06 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -181,6 +181,7 @@ The following issues are fixed in v2.3.2:
 
 #### Video
 
+- The users on the Web client cannot see the video sent from the Native client due to codec bugs.
 - Hardware encoder issues when using an external video source on x86 devices.
 - Occasional issues when using an external video source.
 - The cursor on the remote side is not in the same position as the local side when sharing the desktop.
