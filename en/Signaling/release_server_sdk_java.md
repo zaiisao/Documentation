@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Java
-updatedAt: Tue Feb 12 2019 06:23:53 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 06:24:00 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
@@ -22,7 +22,6 @@ The Agora Server SDK facilitates real-time communications through functions such
     -   Offline messages are not supported for now.
 -   Channel-attributes-updated callback:
     -   A maximum of 10 of this callback can be sent each second.
--   To access Agora’s signaling system through the SIP gateway, contact [support@agora.io](mailto:support@agora.io). A self-configuration solution will be available soon
 
 
 ## v1.4.0 BETA
