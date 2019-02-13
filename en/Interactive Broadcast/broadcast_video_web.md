@@ -3,7 +3,7 @@
 title: Starting a Live Video Broadcast
 description: 
 platform: Web
-updatedAt: Tue Dec 25 2018 10:11:51 GMT+0000 (UTC)
+updatedAt: Wed Feb 13 2019 07:08:10 GMT+0000 (UTC)
 ---
 # Starting a Live Video Broadcast
 This page introduces how to use Agora’s Web SDK to start a live video broadcast.
