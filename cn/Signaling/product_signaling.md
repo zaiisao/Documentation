@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Feb 13 2019 11:39:41 GMT+0000 (UTC)
+updatedAt: Wed Feb 13 2019 11:40:05 GMT+0000 (UTC)
 ---
 # 产品概述
 Agora Signaling SDK 基于 TCP 协议，提供了稳定可靠的消息通道，帮助你快速构建实时场景。
@@ -47,10 +47,6 @@ Agora Signlaing SDK 应用丰富，适用于以下实时场景：
   <tr>
     <td>游戏</td>
     <td>游戏同步</td>
-  </tr>
-  <tr>
-    <td>呼叫中心</td>
-    <td>兼容 SIP 协议</td>
   </tr>
   <tr>
     <td>IoT</td>
