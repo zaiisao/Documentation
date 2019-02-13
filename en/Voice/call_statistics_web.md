@@ -3,11 +3,9 @@
 title: Report Call Statistics
 description: 
 platform: Web
-updatedAt: Wed Feb 13 2019 07:00:25 GMT+0000 (UTC)
+updatedAt: Wed Feb 13 2019 07:00:31 GMT+0000 (UTC)
 ---
 # Report Call Statistics
-# Report In-call Statistics
-
 ## Introduction
 
 The Agora Web SDK provides API methods for you to get the audio-and-video statistics reflecting the overall quality of a call. 
