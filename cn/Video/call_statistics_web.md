@@ -3,11 +3,9 @@
 title: 检测通话质量
 description: 
 platform: Web
-updatedAt: Thu Feb 14 2019 04:03:16 GMT+0000 (UTC)
+updatedAt: Thu Feb 14 2019 04:03:25 GMT+0000 (UTC)
 ---
 # 检测通话质量
-# 通话质量检测
-
 ## 功能描述
 
 Agora Web SDK 支持获取通话质量相关的统计数据，包括：
