@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu Feb 14 2019 03:18:02 GMT+0000 (UTC)
+updatedAt: Thu Feb 14 2019 03:18:07 GMT+0000 (UTC)
 ---
 # 产品概述
 视频通话 SDK 可实现一对一单聊、多人群聊，同时具备纯语音通话和视频通话功能。
@@ -52,5 +52,5 @@ updatedAt: Thu Feb 14 2019 03:18:02 GMT+0000 (UTC)
 - [Android](http://android.myapp.com/myapp/detail.htm?apkName=io.agora.vcall)
 - [iOS](https://itunes.apple.com/cn/app/agora-video-call/id1080303824)
 - [macOS](https://itunes.apple.com/cn/app/agora-video-call/id1112106913)
-- [Web](https://webdemo.agora.io/videocall/?_ga=2.212778772.1474390666.1541382528-1513744824.1530171825)
-- [Windows](http://download.agora.io/avc/AgoraVideoCall_for_windows_2.2.0.zip?_ga=2.212778772.1474390666.1541382528-1513744824.1530171825)
+- [Web](https://webdemo.agora.io/videocall)
+- [Windows](https://download.agora.io/avc/release/AgoraVideoCall_for_windows_3.0.1.zip)
