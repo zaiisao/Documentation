@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: Web
-updatedAt: Thu Feb 14 2019 04:03:25 GMT+0000 (UTC)
+updatedAt: Thu Feb 14 2019 08:23:58 GMT+0000 (UTC)
 ---
 # 检测通话质量
 ## 功能描述
