@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Feb 15 2019 08:51:46 GMT+0000 (UTC)
+updatedAt: Fri Feb 15 2019 08:51:51 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -839,6 +839,6 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 ## 7. 错误代码和警告代码
 
-详见 [错误代码和警告代码](../../cn/Voice/the_error_native.md)。
+详见 [错误代码和警告代码](../../cn/Video/the_error_native.md)。
 
 
