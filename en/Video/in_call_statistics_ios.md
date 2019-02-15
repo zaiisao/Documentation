@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: 
 platform: iOS
-updatedAt: Mon Jan 14 2019 08:20:40 GMT+0000 (UTC)
+updatedAt: Fri Feb 15 2019 06:10:45 GMT+0000 (UTC)
 ---
 # Report In-call Statistics
 The in-call audio-and-video statistics reflect the overall quality of a call after the SDK joins a channel and are reported once every two seconds.
