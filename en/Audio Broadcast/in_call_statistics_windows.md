@@ -53,7 +53,7 @@ The `onNetworkQuality` callback uses the `uid` parameter. If a channel has multi
 
 ### API Reference
 
-[`onNetworkQuality`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80003ae8cce02039f3aa0e8ffad7deed)
+[`onNetworkQuality`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80003ae8cce02039f3aa0e8ffad7deed)
 
 ```cpp
 virtual void onNetworkQuality(uid_t uid, int txQuality, int rxQuality) {
@@ -98,7 +98,7 @@ As shown in the figure above, this feature reports the end-to-end audio quality 
 
 ### API Reference
 
-- [`onRemoteAudioStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a)
+- [`onRemoteAudioStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a)
 
 ```cpp
     virtual void onRemoteAudioStats(const RemoteAudioStats& stats) {
@@ -106,7 +106,7 @@ As shown in the figure above, this feature reports the end-to-end audio quality 
     }
 ```
 
-- [`onRemoteAudioTransportStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad79bcd56075fa9c9f907bb4a7462352d)
+- [`onRemoteAudioTransportStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad79bcd56075fa9c9f907bb4a7462352d)
 
 ```cpp
     virtual void onRemoteAudioTransportStats(
@@ -146,7 +146,7 @@ As shown in the figure above, this feature reports the video quality of the end-
 
 ### API Reference
 
-- [`onRemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7163ffb650852be270ba0215b596d968)
+- [`onRemoteVideoStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7163ffb650852be270ba0215b596d968)
 
 ```cpp
     virtual void onRemoteVideoStats(const RemoteVideoStats& stats) {
@@ -154,7 +154,7 @@ As shown in the figure above, this feature reports the video quality of the end-
     }
 ```
 
-- [`onRemoteVideoTransportStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a3b8fd883a31d4a504ac3cbd50b1c5d0f)
+- [`onRemoteVideoTransportStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a3b8fd883a31d4a504ac3cbd50b1c5d0f)
 
 ```cpp
     virtual void onRemoteVideoTransportStats(
@@ -186,7 +186,7 @@ This feature reports the video quality of the local video stream.
 
 ### API Reference
 
-[`onLocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ab611030063161c594cd7c4cc0dfe0681)
+[`onLocalVideoStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ab611030063161c594cd7c4cc0dfe0681)
 
 ```cpp
     virtual void onLocalVideoStats(const LocalVideoStats& stats) {
