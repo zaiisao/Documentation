@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Feb 15 2019 08:41:31 GMT+0000 (UTC)
+updatedAt: Fri Feb 15 2019 08:42:36 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -812,6 +812,6 @@ Example with parameters: /channel/<appid\>/page\_no=0&page\_size=100
 
 ## 7. Error Codes
 
-See [Error Codes and Warning Codes](../../en/Interactive%20Broadcast/the_error_native.md).
+See [Error Codes and Warning Codes](../../en/Video/the_error_native.md).
 
 
