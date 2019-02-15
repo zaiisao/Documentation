@@ -53,7 +53,7 @@ The `onNetworkQuality` callback uses the `uid` parameter. If a channel has multi
 
 ### API Reference
 
-[`onNetworkQuality`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a76be982389183c5fe3f6e4b03eaa3bd4)
+[`onNetworkQuality`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a76be982389183c5fe3f6e4b03eaa3bd4)
 
 ```java
 void onNetworkQuality(int uid, int txQuality, int rxQuality) {
@@ -95,14 +95,14 @@ As shown in the figure above, this feature reports the end-to-end audio quality 
 
 ### API Reference
 
-- [`onRemoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html?transId=250ddca0-0759-11e9-aad5-0347068be2f5#a9eaf8021d6f0c97d056e400b50e02d54)
+- [`onRemoteAudioStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html?transId=250ddca0-0759-11e9-aad5-0347068be2f5#a9eaf8021d6f0c97d056e400b50e02d54)
 
 ```java
 void onRemoteAudioStats(RemoteAudioStats stats) {
     }
 ```
 
-- [`onRemoteAudioTransportStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a826009699e73d5225d4ce9e3a29b91f4)
+- [`onRemoteAudioTransportStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a826009699e73d5225d4ce9e3a29b91f4)
 
 ```
 void onRemoteAudioTransportStats(int uid, int delay, int lost, int rxKBitRate) {
@@ -136,12 +136,12 @@ As shown in the figure above, this feature reports the video quality of the end-
 
 ### API Reference
 
-- [`onRemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#abb7af6e2827bbd03c6ab8338a0f616ca)
+- [`onRemoteVideoStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#abb7af6e2827bbd03c6ab8338a0f616ca)
 ```java
 void onRemoteVideoStats(RemoteVideoStats stats) {
     }
 ```
-- [`onRemoteVideoTransportStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8e8bea20663388c250b299641b25ade9)
+- [`onRemoteVideoTransportStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8e8bea20663388c250b299641b25ade9)
 ```java
 void onRemoteVideoTransportStats(int uid, int delay, int lost, int rxKBitRate) {
     }
@@ -166,7 +166,7 @@ This feature reports the video quality of the local video stream.
 
 ### API Reference
 
-[`onLocalVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a79fb5d32bb694d24b54a523d924dc7ef)
+[`onLocalVideoStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a79fb5d32bb694d24b54a523d924dc7ef)
 
 ```java
 void onLocalVideoStats(LocalVideoStats stats) {
