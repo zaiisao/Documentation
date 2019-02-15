@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Feb 15 2019 08:36:59 GMT+0000 (UTC)
+updatedAt: Fri Feb 15 2019 08:43:31 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -581,54 +581,58 @@ Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
 
 -  Response:
 
-    ```
-    {
-         "success": true,
-         "data": {
-             "in_channel": true,
-             "role": 2
-         }
-    }
-    ```
+	```
+	{
+		"success": true,
+		"data": {
+			"join": 1549073054,
+			"in_channel": true,
+			"role": 2
+		}
+	}
+	```
 
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>success</td>
-	<td><p>Checks the request state</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>in_channel</td>
-	<td><p>Checks if the user is in the channel</p>
-	<ul>
-	<li>true: The user is in the channel</li>
-	<li>false: The user is not in the channel</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>role</td>
-	<td><p>Checks the role of the user in the channel</p>
-	<ul>
-	<li>0: Unknown role</li>
-	<li>1: Communication user</li>
-	<li>2: Video live broadcaster</li>
-	<li>3: Live broadcast audience</li>
-	<li>4: Audio live broadcaster</li>
-	</ul>
-	</td>
-	</tr>
-	</tbody>
-	</table>
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Parameter</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><tr><td>join</td>
+<td><p>The timestamp when the user joins the channel</p>
+</td></tr>
+<td>success</td>
+<td><p>Checks the request state</p>
+<ul>
+<li>true: Request succeeded</li>
+<li>false: Request failed</li>
+</ul>
+</td>
+</tr>
+<tr><td>in_channel</td>
+<td><p>Checks if the user is in the channel</p>
+<ul>
+<li>true: The user is in the channel</li>
+<li>false: The user is not in the channel</li>
+</ul>
+</td>
+</tr>
+<tr><td>role</td>
+<td><p>Checks the role of the user in the channel</p>
+<ul>
+<li>0: Unknown role</li>
+<li>1: Communication user</li>
+<li>2: Video live broadcaster</li>
+<li>3: Live broadcast audience</li>
+<li>4: Audio live broadcaster</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -880,6 +884,6 @@ Example: /channel/business/hostin/<appid\>/<uid\>/<channelName\>
 
 ## 7. Error Codes
 
-See [Error Codes and Warning Codes](../../en/API%20Reference/the_error_native.md).
+See [Error Codes and Warning Codes](../../en/Interactive%20Broadcast/the_error_native.md).
 
 
