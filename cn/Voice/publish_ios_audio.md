@@ -3,16 +3,16 @@
 title: 发布和订阅音频流
 description: 
 platform: iOS
-updatedAt: Mon Feb 18 2019 08:33:19 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 08:33:24 GMT+0000 (UTC)
 ---
 # 发布和订阅音频流
 在发布或订阅音频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[集成客户端](../../cn/Voice/ios_audio.md)。
 
 ## 实现方法
-Agora SDK for iOS 中默认开启语音功能。用户加入频道后，无需调用其它方法，可以直接发布或订阅音频流，进行语音通话。
+Agora SDK for iOS 中默认开启语音功能。用户加入频道后，无需调用其它方法，可以直接发布或订阅音频流，进行语音通话或直播。
 
 ## 相关文档
-你已成功开始语音通话。通话结束后，可以使用 Agora SDK 退出当前通话：
+你已成功开始语音通话或直播。结束后，可以使用 Agora SDK 退出当前频道：
 
 * [离开频道](../../cn/Voice/leave_ios.md)
 
