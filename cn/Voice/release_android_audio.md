@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Feb 18 2019 09:26:00 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 09:26:05 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -178,9 +178,9 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 由于 Token 具有一定的时效，在通话过程中如果 Token 即将失效，SDK 会提前 30 秒触发回调 `onTokenPrivilegeWillExpire` ，提醒应用程序更新 Token。当收到该回调时，用户需要重新在服务端生成新的 Token，然后调用 `renewToken` 将新生成的 Token 传给 SDK。
 
-#### 2. 按用户返回上下行音频码率、丢包率及延迟
+#### 2. 按用户返回上下行音频码率、帧率、丢包率及延迟
 
-为方便统计每个用户的音频上下行码率及丢包率，该版本新增 `onRemoteAudioTransportStats` 回调。 通话或直播过程中，当用户收到远端用户发送的音视频数据包后，会周期性地发生该回调上报，频率约为 2 秒 1 次。 回调中包含用户的 UID、音频接收码率、丢包率、以及延迟时间（毫秒）。 并在统计频道内通话相关数据的 Rtcstats 类中增加 `lastmileDelay` 参数，返回客户端到 vos 服务器的延迟。
+为方便统计每个用户的音频上下行码率、帧率及丢包率，该版本新增 `onRemoteAudioTransportStats` 回调。 通话或直播过程中，当用户收到远端用户发送的音视频数据包后，会周期性地发生该回调上报，频率约为 2 秒 1 次。 回调中包含用户的 UID、音频接收码率、丢包率、以及延迟时间（毫秒）。 并在统计频道内通话相关数据的 Rtcstats 类中增加 `lastmileDelay` 参数，返回客户端到 vos 服务器的延迟。
 
 ### **改进功能**
 
