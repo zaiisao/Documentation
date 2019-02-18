@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux
-updatedAt: Mon Feb 18 2019 09:13:14 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 09:15:07 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
@@ -22,12 +22,15 @@ Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传
 
     -   暂不支持频道离线消息。
 
+    -   仅支持 UTF-8 字符编码。
+
 -   点对点消息：
 
     -   每条消息最大为 8k 可见字符。
 
     -   暂不支持频道离线消息。
 
+    -   仅支持 UTF-8 字符编码。
 
 -   频道属性回调：
 
