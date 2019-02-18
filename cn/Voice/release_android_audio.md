@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Feb 18 2019 06:33:32 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 06:33:40 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -464,8 +464,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 </table>
 
 
-
--   通信和直播场景下支持服务端踢人功能。如有需要，请联系 [sales@agora.io](mailto:sales@agora.io) 开通该功能。
+-   通信和直播场景下支持服务端踢人功能。
 
 -   新增以下 Android 模拟器支持: 夜神、雷电、逍遥。
 
@@ -488,19 +487,6 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 -   新增 API `setLocalVoicePitch` 提供基础变声功能。
 
 -   直播场景: 新增 API `setInEarMonitoringVolume` 提供调节耳返音量功能。
-
-
-#### **改进**
-
--   优化了在高码率下的音频体验。
-
--   秒开: 直播场景下，单流模式时观众加入频道 1 秒内看见主播图像 (均值为 226 ms, 网络状态良好时可达 204 ms)。
-
--   节省带宽:
-
-    -   1.14 以前: 如果你选择不听某人的音频，音频流会照发。
-
-    -   1.14 开始: 如果你选择不听某人的音频，则不会下发音频流，从而节省带宽。
 
 
 #### **改进**
