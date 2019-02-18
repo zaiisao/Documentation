@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: iOS
-updatedAt: Mon Feb 18 2019 07:38:24 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 07:38:30 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -23,7 +23,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 
 ## 注意事项
 
-- 在语音直播中，你只能输入纯音频流，不能够将视频文件的音频作为在线媒体流输入。
+- 在语音直播中，你只能输入纯音频流，而不能够将视频文件的音频作为在线媒体流输入。
 - 频道内同一时间只允许输入一个在线媒体流。
 - 只有主播可以输入和移除在线媒体流，连麦主播和普通用户不可以。
 - 主播在直播过程中启用输入在线媒体流。观众需要订阅主播才能收听外部音频。
@@ -39,7 +39,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 
 ## 方法实现
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](https://docs.agora.io/cn/Audio%20Broadcast/android_video?platform=Android)。
+实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](https://docs.agora.io/cn/Audio%20Broadcast/ios_video?platform=iOS)。
 
 - 输入在线媒体流：
 
