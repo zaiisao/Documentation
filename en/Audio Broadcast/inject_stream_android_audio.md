@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Android
-updatedAt: Mon Feb 18 2019 08:28:23 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 08:28:29 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -19,7 +19,7 @@ The Agora SDK v2.1.0+ provides the `addInjectStreamUrl` method for:
 
 Injecting an online media stream can be applied to the following scenarios:
 
-- During music shows, the hosts and audience can have real-time discussions and exchange ideas while watching the show.
+- During music shows, the hosts and audience can have real-time discussions and exchange ideas while enjoying the show.
 
 ## Considerations
 
