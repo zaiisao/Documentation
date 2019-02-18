@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Windows
-updatedAt: Mon Feb 18 2019 09:00:16 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 09:00:21 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -40,7 +40,7 @@ Injecting an online media stream can be applied to the following scenarios:
 
 ## Implementation
 
-To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](https://docs.agora.io/en/Interactive%20Broadcast/windows_video?platform=Windows).
+To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Audio%20Broadcast/web_prepare.md).
 
 - To inject an online media stream:
 
