@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: iOS
-updatedAt: Mon Feb 18 2019 08:57:49 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 08:57:53 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -37,7 +37,7 @@ Injecting an online media stream can be applied to the following scenarios:
   - `AgoraErrorCodeNotReady(3)`: The app is not in the channel. Ensure that the app has joined the channel.
 ## Implementation
 
-To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](https://docs.agora.io/en/Interactive%20Broadcast/ios_video?platform=iOS).
+To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Audio%20Broadcast/iOS_audio.md).
 
 - To inject an online media stream:
 
