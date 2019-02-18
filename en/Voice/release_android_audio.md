@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Feb 18 2019 09:26:40 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 09:26:44 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -177,7 +177,7 @@ v2.3.0 is released on August 31, 2018.
 
 The SDK returns the `onTokenPrivilegeWillExpire` callback 30 seconds before a token expires to notify the app to renew it. When this callback is received, you need to generate a new token on your server and call the `renewToken` method to pass the newly-generated token to the SDK.
 
-#### 2. Returns user-specific upstream and downstream statistics, including the bitrate, packet loss rate and time delay
+#### 2. Returns user-specific upstream and downstream statistics, including the bitrate, frame rate, packet loss rate and time delay
 
 The `onRemoteAudioTransportStats` callback is added to provide user-specific upstream and downstream statistics, including the bitrate, frame rate, and packet loss rate. During a call or a live broadcast, the SDK triggers these callbacks once every two seconds after the user receives audio/video packets from a remote user. The callbacks include the user ID, audio bitrate at the receiver, packet loss rate, and time delay (ms).
 
