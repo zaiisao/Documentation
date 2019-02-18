@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Java
-updatedAt: Mon Feb 18 2019 09:25:25 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 09:25:29 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
@@ -17,9 +17,11 @@ The Agora Server SDK facilitates real-time communications through functions such
     -   Each message can be up to 8 k visible characters.
     -   A user can send messages at a maximum speed of 60 messages per second. In a channel a maximum of 200 messages can be sent each second.
     -   Offline channel messages are not supported for now.
+    -   Supports UTF-8 character encoding only.
 -   Point-to-point messages:
     -   Each message can be up to 8 k visible characters.
     -   Offline messages are not supported for now.
+    -   Supports UTF-8 character encoding only.
 -   Channel-attributes-updated callback:
     -   A maximum of 10 of this callback can be sent each second.
 
