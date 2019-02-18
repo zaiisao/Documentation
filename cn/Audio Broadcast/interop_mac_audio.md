@@ -3,7 +3,7 @@
 title: 移动、桌面、Web 端互通
 description: 
 platform: macOS
-updatedAt: Mon Feb 18 2019 06:59:39 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 06:59:47 GMT+0000 (UTC)
 ---
 # 移动、桌面、Web 端互通
 ## 功能简介
@@ -12,7 +12,7 @@ updatedAt: Mon Feb 18 2019 06:59:39 GMT+0000 (UTC)
 
 ## 实现方法
 
-在开启互通前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Audio%20Broadcast/mac_audio.md)。
+在开启互通前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Audio%20Broadcast/mac_video.md)。
 
 Agora SDK 的桌面端和 Web 端互通，需要在桌面端和 Web 端同时进行配置。该功能仅在直播模式下需要，通信模式下默认互通是打开的。
 
