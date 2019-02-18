@@ -3,7 +3,7 @@
 title: 发版说明
 description: 1
 platform: Android
-updatedAt: Mon Feb 18 2019 06:43:33 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 06:43:37 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -86,7 +86,6 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 - 优化了 API 的调用线程
 - 增加了重新检测耳机插入和蓝牙设备连接的代码
 - 降低了音频延时
-- 新增了对锤子手机摄像头的适配
 
 
 ### **问题修复**
