@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Feb 18 2019 09:24:58 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 09:25:02 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
@@ -17,9 +17,11 @@ Agora Signaling SDK facilitates real-time communications through functions such 
     -   Each message can be up to 8-k visible characters.
     -   A user can send messages at a maximum speed of 60 messages per second. In a channel, a maximum of 200 messages can be sent each second. 
     -   Offline channel messages are not supported.
+    -   Supports UTF-8 character encoding only.
 -   Point-to-point messages:
     -   Each message can be up to 8-k visible characters.
     -   Offline messages are not supported.
+    -   Supports UTF-8 character encoding only.
 -   Channel-attributes-updated callback:
     -   A maximum of 10 channel-attributes-updated callbacks can be sent each second.
 
