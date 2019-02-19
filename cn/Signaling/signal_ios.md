@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: iOS
-updatedAt: Tue Feb 19 2019 09:37:44 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:37:51 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -183,7 +183,7 @@ updatedAt: Tue Feb 19 2019 09:37:44 GMT+0000 (UTC)
 </tbody>
 </table>
 
-#### <a name="createSigInstance--ios"></a>创建多个 AgoraAPI 实例 \(createSigInstance:\)
+#### <a name="createSigInstance-ios"></a>创建多个 AgoraAPI 实例 \(createSigInstance:\)
 
 ```
 + (AgoraAPI*) createSigInstance: (NSString*)appId;
