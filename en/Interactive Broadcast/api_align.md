@@ -3,7 +3,7 @@
 title: Core API Summary
 description: List APIs of the key functions across the platforms
 platform: All Platforms
-updatedAt: Tue Feb 12 2019 02:39:48 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 06:16:21 GMT+0000 (UTC)
 ---
 # Core API Summary
 The Agora SDK supports multiple platforms with different implementations of the API methods. The following table lists the core API methods on Android, iOS/macOS, the Web, and Windows to help you quickly understand the differences.
@@ -34,7 +34,7 @@ The Agora SDK supports multiple platforms with different implementations of the 
     <td>Set the Client Role</td>
     <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa2affa28a23d44d18b6889fba03f47ec">setClientRole</a></td>
     <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setClientRole:">setClientRole</a></td>
-    <td>N/A<sup>[2]</sup></td>
+    <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole">setClientRole</a></td>
     <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a89ca6a15d5a388f3c82038e74bad4040">setClientRole</a></td>
   </tr>
   <tr>
@@ -62,7 +62,7 @@ The Agora SDK supports multiple platforms with different implementations of the 
     <td>Enable Interoperability</td>
     <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a49636ee063476d7c3da533668771fa03">enableWebSdkInteroperability</a></td>
     <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableWebSdkInteroperability:">enableWebSdkInteroperability</a></td>
-    <td>N/A<sup>[3]</sup></td>
+    <td>N/A</td>
     <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a5b82667e75a8f299a60b9b7968da48de">enableWebSdkInteroperability</a></td>
   </tr>
   <tr>
@@ -76,6 +76,3 @@ The Agora SDK supports multiple platforms with different implementations of the 
 
 > [1] The Agora Web SDK sets the channel profile by calling the `ClientConfig` method in `AgoraRTC.createClient`, see [ClientConfig](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html).
 
-> [2] The Agora Web SDK does not have a method to set the client role, but you can use the `Client.publish`, `Client.unpublish`, and `Client.subscribe` methods to switch roles between the host and audience, see [Switch the Client Role](../../en/Interactive%20Broadcast/role_web.md).
-
-> [3] To communicate with other platforms, set the `mode` parameter as `live` in [ClientConfig](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html) for the Web SDK.
