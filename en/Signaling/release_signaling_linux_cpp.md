@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux
-updatedAt: Mon Feb 18 2019 09:23:37 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 07:16:44 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
