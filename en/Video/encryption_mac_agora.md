@@ -1,11 +1,11 @@
 
 ---
-title: Use Agora Built-in Encryption
+title: Implement Encryption
 description: 
 platform: macOS
-updatedAt: Fri Nov 09 2018 17:28:17 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:11:57 GMT+0000 (UTC)
 ---
-# Use Agora Built-in Encryption
+# Implement Encryption
 # Using Agora Built-in Encryption
 This page describes how to use Agora's built-in encryption.
 
