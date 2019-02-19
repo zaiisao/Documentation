@@ -17,12 +17,12 @@ Agora Web SDK 支持获取通话质量相关的统计数据，包括：
 
 ## 实现方法
 
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Video/web_prepare.md)。
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Audio%20Broadcast/web_prepare.md)。
 
 <a name ="system_statistics"></a>
 ### 获取系统信息
 
-Agora Web SDK 通过 [`Client.getSystemStats`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#getsystemstats) 方法提供系统信息供开发者使用。目前暂只提供系统电量信息。
+Agora Web SDK 通过 [`Client.getSystemStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getsystemstats) 方法提供系统信息供开发者使用。目前暂只提供系统电量信息。
 
 ``` javascript
 client.getSystemStats((stats) => {
@@ -39,7 +39,7 @@ client.getSystemStats((stats) => {
 
 Agora Web SDK 提供： 
 
-- [`Client.getNetworkStats`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#getnetworkstats) 方法获取网络类型，包括：
+- [`Client.getNetworkStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getnetworkstats) 方法获取网络类型，包括：
   - `bluetooth`：蓝牙网络。
   - `cellular`：蜂窝移动数据网络。
   - `ethernet`：以太网。
@@ -56,7 +56,7 @@ client.getNetworkStats((stats) => {
 });                                                        
 ```
 
-- [`Client.getTransportStats`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#gettransportstats) 方法获取网络连接状况统计数据，包括：
+- [`Client.getTransportStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#gettransportstats) 方法获取网络连接状况统计数据，包括：
   - `RTT`：Agora Web SDK 到 Agora SD-RTN 接入节点的平均往返延时（ RTT，Round-Trip Time），单位 ms。
 
 ``` javascript
@@ -74,7 +74,7 @@ client.getTransportStats((stats) => {
 
 Agora Web SDK 提供：
 
-- [`Client.getLocalAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#getlocalaudiostats) 方法获取本地发布流的**音频**统计数据，一个 uid 对应一组数据，包括：
+- [`Client.getLocalAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getlocalaudiostats) 方法获取本地发布流的**音频**统计数据，一个 uid 对应一组数据，包括：
   - `CodecType`：音频编码类型。
   - `MuteState`：音频是否静音。
   - `RecordingLevel`：音频采集能量。
@@ -95,7 +95,7 @@ client.getLocalAudioStats((localAudioStats) => {
 		});
 ```
 
-- [`Client.getLocalVideoStats`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#getlocalvideostats) 方法获取本地发布流的**视频**统计数据，一个 uid 对应一组数据，包括：
+- [`Client.getLocalVideoStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getlocalvideostats) 方法获取本地发布流的**视频**统计数据，一个 uid 对应一组数据，包括：
   - `EncodeDelay`：本地视频从采集到编码的延时（ms）。
   - `MuteState`：视频画面是否开启。
   - `SendBitrate`：视频发送码率（Kbps）。
@@ -125,7 +125,7 @@ client.getLocalVideoStats((localVideoStats) => {
 
 Agora Web SDK 提供：
 
-- [`Client.getRemoteAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats) 方法获取远端订阅流的**音频**统计数据，一个 uid 对应一组数据，包括：
+- [`Client.getRemoteAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats) 方法获取远端订阅流的**音频**统计数据，一个 uid 对应一组数据，包括：
   - `CodecType`：音频解码类型。
   - `End2EndDelay`：端到端延时（ms），从远端采集音频到本地播放音频的延时。
   - `MuteState`：音频是否静音。
@@ -148,7 +148,7 @@ client.getRemoteAudioStats((remoteAudioStatsMap) => {
 });
 ```
 
-- [`Client.getRemoteVideoStats`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats) 方法获取远端订阅流的**视频**统计数据，一个 uid 对应一组数据，包括：
+- [`Client.getRemoteVideoStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats) 方法获取远端订阅流的**视频**统计数据，一个 uid 对应一组数据，包括：
   - `End2EndDelay`：端到端延时（ms），从远端采集视频到本地播放视频的延时。
   - `MuteState`：视频画面是否开启。
   - `PacketLossRate`：远端视频的丢包率（%）。
