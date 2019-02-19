@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue Feb 19 2019 06:22:48 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 06:22:53 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -176,10 +176,10 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - [`Client.setClientRole`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#setclientrole)
 - [`Client.getConnectionState`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#getconnectionstate)
 - [`Stream.isPlaying`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#isplaying)
-- [`Stream.muteAudio`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#muteAudio)
-- [`Stream.unmuteAudio`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#unmuteAudio)
-- [`Stream.muteVideo`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#muteVideo)
-- [`Stream.unmuteVideo`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#unmuteVideo)
+- [`Stream.muteAudio`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#muteaudio)
+- [`Stream.unmuteAudio`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#unmuteaudio)
+- [`Stream.muteVideo`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#mutevideo)
+- [`Stream.unmuteVideo`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#unmutevideo)
 - [`Client.on`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#on) 新增以下事件：
   - `streamInjectedStatus`
   - `client-role-changed`
