@@ -3,11 +3,11 @@
 title: Implement Encryption
 description: 
 platform: macOS
-updatedAt: Tue Feb 19 2019 09:33:49 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:33:57 GMT+0000 (UTC)
 ---
 # Implement Encryption
 # Using Agora Built-in Encryption
-This page describes how to use Agora's built-in encryption.
+This page introduces various encryption modes. Choose one that best suits your needs.
 
 > Both Communication and Live Broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
 
@@ -21,7 +21,7 @@ The following figure shows how Agora’s communications use built-in encryption:
 
 <img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" style="width: 760.0px; height: 586.0px;"/>
 
-> To reduce the SDK size, if your app uses `libcrypto.so`, you can use it instead of `libagora-crypto.so` included in the Agora SDK since both files are the same. The Agora SDK `libagora-crypto.so` version is 1.0.2g.
+> To reduce the SDK size, if your app uses `libcrypto.a`, you can use it instead of `libagora-crypto.a` included in the Agora SDK since both files are the same. The Agora SDK `libagora-crypto.a` version is 1.0.2g.
 
 ### Step 1: Enable encryption.
 
