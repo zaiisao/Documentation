@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Android
-updatedAt: Tue Feb 19 2019 09:25:14 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:25:25 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -22,6 +22,10 @@ updatedAt: Tue Feb 19 2019 09:25:14 GMT+0000 (UTC)
 </tr>
 <tr><td><a href="#getinstance-android"><span>getInstance()</span></a></td>
 <td>获取 AgoraAPIOnlySignal 实例</td>
+</tr>
+</tr>
+<tr><td><a href="#createinstance-android"><span>createAgoraSDKInstance()</span></a></td>
+<td>创建多个 AgoraAPIOnlySignal 实例</td>
 </tr>
 </tbody>
 </table>
@@ -204,7 +208,32 @@ public static AgoraAPIOnlySignal getInstance(Context context, String appId);
 </tbody>
 </table>
 
+#### <a name="createinstance-android"></a>创建多个 AgoraAPIOnlySignal 实例 \(createAgoraSDKInstance\)
 
+多次调用该方法可创建多个 <code>AgoraAPIOnlySignal</code> 实例。
+
+返回：一个 <code>AgoraAPIOnlySignal</code> 实例。
+
+```
+public static AgoraAPIOnlySignal createAgoraSDKInstance(Context context,String appId)
+```
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td><code>context</code></td>
+<td>Android activity 的 Context（上下文环境）</td>
+</tr>
+<tr><td><code>appId</code></td>
+<td>Agora 提供的 App 账号，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>App ID</span></a>。</td>
+</tbody>
+</table>
 
 #### <a name="callbackset-android"></a>设置回调 \(callbackSet\)
 
