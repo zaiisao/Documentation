@@ -80,7 +80,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 如果在客户端安装了高清摄像头，则 Agora Web SDK 支持最大为 1080p 分辨率的视频流，但取决于不同的摄像头设备，最大分辨率也会受到影响。
 - Agora Web SDK 暂不支持代码二次混淆。
 
-更多问题，详见 [Web 常见问题集](../../cn/Video/websdk_related_faq.md)。
+更多问题，详见 [Web 常见问题集](../../cn/Audio%20Broadcast/websdk_related_faq.md)。
 
 ## 2.5.0 版
 
@@ -249,7 +249,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 #### 3. 网页端 Proxy 功能
 
-为解决设有防火墙的企业用户无法直接使用 Agora 服务的问题，新增 2 个接口，通过代理服务器将用户的内网请求转到 Agora SD-RTN 上，从而实现内网访问。使用该功能，用户需要自行部署 Nginx 和 TURN 服务器， 并在加入频道之前就调用相关接口。详见 [企业部署代理服务器](../../cn/Video/proxy_web.md) 中关于代理服务器工作原理、部署步骤以及调用 API 接口的描述。
+为解决设有防火墙的企业用户无法直接使用 Agora 服务的问题，新增 2 个接口，通过代理服务器将用户的内网请求转到 Agora SD-RTN 上，从而实现内网访问。使用该功能，用户需要自行部署 Nginx 和 TURN 服务器， 并在加入频道之前就调用相关接口。详见 [企业部署代理服务器](../../cn/Audio%20Broadcast/proxy_web.md) 中关于代理服务器工作原理、部署步骤以及调用 API 接口的描述。
 
 #### 4. 加密功能
 
@@ -277,7 +277,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 #### 3. Firefox 浏览器屏幕共享
 
-新增 Firefox 浏览器屏幕共享功能，通过在` createStream` 方法中增加`mediaSource` 参数实现。详见 [Firefox 屏幕共享](../../cn/Video/screensharing_web.md)。
+新增 Firefox 浏览器屏幕共享功能，通过在` createStream` 方法中增加`mediaSource` 参数实现。详见 [Firefox 屏幕共享](../../cn/Audio%20Broadcast/screensharing_web.md)。
 
 #### 4. QQ 浏览器支持
 
