@@ -3,28 +3,27 @@
 title: Release Notes
 description: 
 platform: Java
-updatedAt: Tue Feb 19 2019 07:18:31 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 07:18:36 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
 
-The Agora Server SDK facilitates real-time communications through functions such as call invitations, messaging, and state synchronization.
+The Agora Signaling SDK facilitates real-time communications through functions such as call invitations, messaging, and state synchronization.
 
-### Known Issues and Limitation
+### Known Issues and Limitations
 
 -   Each channel can hold up to 10,000 users at the same time. To reduce data volume and stress on the SDK, Agora recommends disabling notifications of a user going online or dropping offline for a large channel holding more than 1,000 users. For more information, see the `channelSetAttr` method. 
 -   Channel Messages:
-    -   Each message can be up to 8 k visible characters.
-    -   A user can send messages at a maximum speed of 60 messages per second. In a channel a maximum of 200 messages can be sent each second.
-    -   Offline channel messages are not supported for now.
+    -   Each message can be up to 8-K visible characters.
+    -   A user can send messages at a maximum speed of 60 messages per second. In a channel, a maximum of 200 messages can be sent each second. Messages exceeding this limit will be discarded. 
+    -   Offline channel messages are not supported.
     -   Supports UTF-8 character encoding only.
 -   Point-to-point messages:
-    -   Each message can be up to 8 k visible characters.
-    -   Offline messages are not supported for now.
+    -   Each message can be up to 8-K visible characters.
+    -   Offline messages are not supported.
     -   Supports UTF-8 character encoding only.
 -   Channel-attributes-updated callback:
-    -   A maximum of 10 of this callback can be sent each second.
-
+    -   A maximum of 10 channel-attributes-updated callbacks can be sent each second.
 
 ## v1.4.0 BETA
 
