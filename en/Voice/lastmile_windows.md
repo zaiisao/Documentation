@@ -1,11 +1,11 @@
 
 ---
-title: Conduct a Last Mile Test
+title: Conduct a Last-mile Test
 description: 
 platform: Windows
-updatedAt: Thu Dec 27 2018 02:58:50 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:51:02 GMT+0000 (UTC)
 ---
-# Conduct a Last Mile Test
+# Conduct a Last-mile Test
 ## Introduction
 
 You can conduct a last mile network quality test before starting a call to check if the network supports the audio bitrate or target bitrate of the chosen video profile before a user joins a channel. The `onLastmileQuality` callback reports the test results once every two seconds. The test results are based on the network quality ratings determined by the packet-loss rates and network jitter, which reflect the uplink network quality of the client.
