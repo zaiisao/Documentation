@@ -3,12 +3,12 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Tue Feb 19 2019 07:29:08 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 07:29:17 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
 
-Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。点击 [信令产品概述](https://docs.agora.io/cn/Signaling/product_signaling?platform=All%20Platforms) 了解关键特性。
+Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。点击[信令产品概述](https://docs.agora.io/cn/Signaling/product_signaling?platform=All%20Platforms)了解关键特性。
 
 ### 已知问题和局限性
 
@@ -35,9 +35,6 @@ Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传
 -   频道属性回调：
 
     -   每条频道属性回调不超过 10 条/s。
-
-
-
 ## 1.4.4 版 
 
 本版本发布于 2018 年 12 月 13 日。
