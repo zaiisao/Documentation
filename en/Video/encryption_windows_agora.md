@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: Windows
-updatedAt: Fri Nov 09 2018 17:17:15 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:39:45 GMT+0000 (UTC)
 ---
 # Implement Encryption
 This page describes how to use Agora's built-in encryption.
