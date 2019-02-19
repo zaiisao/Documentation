@@ -3,7 +3,7 @@
 title: 核心方法对照表
 description: List APIs of the key functions across the platforms
 platform: All Platforms
-updatedAt: Tue Feb 12 2019 02:40:05 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 06:09:54 GMT+0000 (UTC)
 ---
 # 核心方法对照表
 Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API 的调用和实现上不完全一致，本文将 Android，iOS/macOS，Windows 和 Web 这几个平台的核心功能 API 对照列出，帮助你快速了解各个平台之间的差异。
@@ -35,7 +35,7 @@ Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API �
     <td>设置用户角色</td>
     <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa2affa28a23d44d18b6889fba03f47ec">setClientRole</a></td>
     <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setClientRole:">setClientRole</a></td>
-    <td>无<sup>[2]</sup></td>
+    <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#setclientrole">setClientRole</a></td>
     <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a89ca6a15d5a388f3c82038e74bad4040">setClientRole</a></td>
   </tr>
   <tr>
@@ -63,7 +63,7 @@ Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API �
     <td>打开互通</td>
     <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a49636ee063476d7c3da533668771fa03">enableWebSdkInteroperability</a></td>
     <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableWebSdkInteroperability:">enableWebSdkInteroperability</a></td>
-    <td>N/A<sup>[3]</sup></td>
+    <td>N/A</td>
     <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a5b82667e75a8f299a60b9b7968da48de">enableWebSdkInteroperability</a></td>
   </tr>
   <tr>
@@ -77,6 +77,3 @@ Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API �
 
 > [1] Web 平台设置频道模式通过 `createClient` 中的 `ClientConfig` 的设置实现，详见 [ClientConfig](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.clientconfig.html)。
 
-> [2] Web 平台目前没有用于设置用户角色的方法，但是你可以通过调用 `Client.publish`，`Client.unpublish` 和 `Client.subscribe` 来实现主播和观众的角色设置，详见[切换用户角色](../../cn/Voice/role_web.md)。
-
-> [3] Web 平台如需与其他各平台互通，需要将 [ClientConfig](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.clientconfig.html) 中的 `mode` 设置为 `live`。
