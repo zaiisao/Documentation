@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: iOS
-updatedAt: Tue Feb 19 2019 09:38:51 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:38:56 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -190,6 +190,8 @@ updatedAt: Tue Feb 19 2019 09:38:51 GMT+0000 (UTC)
 ```
 
 多次调用该方法可创建多个 <code>AgoraAPIOnlySignal</code> 实例。
+
+返回：一个 <code>AgoraAPIOnlySignal</code> 实例。
 
 <table>
 <colgroup>
