@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: Android
-updatedAt: Fri Nov 09 2018 17:27:16 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:02:28 GMT+0000 (UTC)
 ---
 # Implement Encryption
 This page describes how to implement Agora's built-in encryption. 
