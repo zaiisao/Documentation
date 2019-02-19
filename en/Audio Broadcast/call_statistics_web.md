@@ -3,7 +3,7 @@
 title: Report Call Statistics
 description: 
 platform: Web
-updatedAt: Tue Feb 19 2019 06:46:03 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 06:46:09 GMT+0000 (UTC)
 ---
 # Report Call Statistics
 ## Introduction
@@ -226,14 +226,16 @@ The [`network-quality`](https://docs.agora.io/en/Audio%20Broadcast/API%20Referen
 - `uplinkNetworkQuality`: The downlink network quality.
 
 Quality Rating Table:
-| Rating | Description                                                  |
-| ------ | :----------------------------------------------------------- |
-| 0      | UNKNOWN: The network quality is unknown.                     |
-| 1      | EXCELLENT: The network quality is excellent.                 |
-| 2      | GOOD: The network quality is quite good, but the bitrate may be slightly lower than excellent. |
-| 3      | POOR: Users can feel the communication slightly impaired.    |
-| 4      | BAD: Users cannot communicate smoothly.                      |
-| 5      | VBAD: The network is so bad that users can barely communicate. |
+
+| Rating   | Description                                                         |
+| -------- | :----------------------------------------------------------- |
+| 0        | The network quality is unknown.                                        |
+| 1        | The network quality is excellent.                                      |
+| 2        | The network quality is quite good, but the bitrate may be slightly lower than excellent. |
+| 3        | Users can feel the communication slightly impaired.                       |
+| 4        | Users cannot communicate smoothly.                                    |
+| 5        | The network is so bad that users can barely communicate.                         |
+| 6        | The network is down and users cannot communicate at all.                         |
 
 ``` javascript
 client.on("network-quality", function(stats) {
