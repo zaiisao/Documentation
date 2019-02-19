@@ -80,7 +80,7 @@ See the table below for the browser support of Agora Web SDK:
 - The Agora Web SDK supports video profiles up to 1080p resolutions if the client has a true HD camera installed. However, the maximum resolution is limited by the camera device capabilities.
 - The Agora Web SDK does not support code obfuscation.
 
-For more issues, see [Web FAQs](../../en/Voice/websdk_related_faq.md).
+For more issues, see [Web FAQs](../../en/Audio%20Broadcast/websdk_related_faq.md).
 
 
 ## v2.5.0
@@ -252,7 +252,7 @@ To meet the customers’ needs for audio control during a communication or live 
 
 #### 3. Support for Proxy on the Web Side
 
-To enable enterprises with a company firewall to access the Agora’s services, <code>setProxyServer</code> and <code>setTurnServer</code> methods are added. By calling these two methods, users can bypass the firewall and send the signaling messages and media data directly to the Agora SD-RTN through the servers. Users need to deploy the Nginx and TURN Server before using this function and calling the methods before joining the channel. For more information on how the proxy works, deploy steps and APIs, see [Deploying the Enterprise Proxy](../../en/Voice/proxy_web.md).
+To enable enterprises with a company firewall to access the Agora’s services, <code>setProxyServer</code> and <code>setTurnServer</code> methods are added. By calling these two methods, users can bypass the firewall and send the signaling messages and media data directly to the Agora SD-RTN through the servers. Users need to deploy the Nginx and TURN Server before using this function and calling the methods before joining the channel. For more information on how the proxy works, deploy steps and APIs, see [Deploying the Enterprise Proxy](../../en/Audio%20Broadcast/proxy_web.md).
 
 #### 4. Support for Encryption
 
@@ -278,7 +278,7 @@ Added `setLowStreamParameter` interface to set the low-stream parameter.
 
 #### 3. Support screen-sharing for the Firefox browser.
 
-Added the support for the Firefox browser to share the screen, by adding a <code>mediaSource</code> property in the <code>createStream</code> method. See [Screen Sharing on Firefox](../../en/Voice/screensharing_web.md) for details.
+Added the support for the Firefox browser to share the screen, by adding a <code>mediaSource</code> property in the <code>createStream</code> method. See [Screen Sharing on Firefox](../../en/Audio%20Broadcast/screensharing_web.md) for details.
 
 #### 4. Support the QQ browser.
 
