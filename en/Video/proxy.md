@@ -3,7 +3,7 @@
 title: Deploy the Enterprise Proxy
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Fri Nov 02 2018 04:11:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 18:19:46 GMT+0000 (UTC)
 ---
 # Deploy the Enterprise Proxy
 This page shows how enterprises can deploy the proxy package provided by Agora to access Agora’s services through a company firewall.
@@ -40,26 +40,26 @@ Agora provides an open-source proxy package for enterprises to downland and depl
    <td><strong>Description</strong></td>
    </tr>
    <tr><td>IP</td>
-   <td>IP addresses that you want to add. They are strings, for example 127.0.0.1.</td>
+   <td>IP addresses that you want to add. The IP addresses are strings. For example 127.0.0.1.</td>
    </tr>
    <tr><td>port</td>
-   <td>Ports that you want to add to the Agora proxy. Please enter 1080.</td>
+   <td>Ports that you want to add to the Agora proxy. Enter 1080.</td>
    </tr>
    </tbody>
    </table>
 
 ### Deploy Multiple Proxies
 
-Enterprises can deploy multiple proxies to enable uninterrupted access in case the proxy server is overloaded or breaks down. We have yet to conduct tests on the capacity of the proxy, but estimates are that one proxy can support around 100 users.
+Enterprises can deploy multiple proxies to enable uninterrupted access in case the proxy server is overloaded or breaks down. Agora has yet to conduct tests on the capacity of the proxy, but estimates are that one proxy can support around 100 users.
 
-- Round-robin DNS
+- Round-robin DNS:
 
 	- Deploy a Shadowsocks cluster.
 	- The proxies share a single domain name.
 	- The proxies use a round-robin system to ensure load balancing.
 	- Update the DNS log whenever the proxy breaks down.
 
-- Random Proxy Server in the App
+- Random proxy server in the app:
 
 	The app can randomly choose which proxy to use, and then pass it to the SDK.
 
@@ -69,9 +69,9 @@ The following figure shows how the proxy works:
 
 <img alt="../_images/proxy_theory.jpg" src="https://web-cdn.agora.io/docs-files/en/proxy_theory.jpg" />
 
-- The enterprise sets up a firewall that separates the enterprise network from the public internet to limit employees’ access to unauthorized websites.
-- The enterprise deploys a proxy on the public internet. When an enterprise device accesses the internet, it sends a visit request to the enterprise firewall, which then sends the request to the proxy. The proxy then sends it to the public internet server, like a relay.
-- The public internet server sends relevant website content back to the proxy, which then sends the content to the firewall. Finally, the firewall sends the content back to the requesting device.
+- The enterprise sets up a firewall that separates the enterprise network from the public Internet to limit employees’ access to unauthorized websites.
+- The enterprise deploys a proxy on the public Internet. When an enterprise device accesses the Internet, the device sends a visit request to the enterprise firewall, which then sends the request to the proxy. The proxy then sends the request to the public Internet server, like a relay.
+- The public Internet server sends relevant website content back to the proxy, which then sends the content to the firewall. Finally, the firewall sends the content back to the requesting device.
 
 The following figure shows how the enterprise app accesses the Agora Cloud through the proxy:
 

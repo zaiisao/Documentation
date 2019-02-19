@@ -3,24 +3,154 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 03:58:00 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:41:00 GMT+0000 (UTC)
 ---
 # 发版说明
-本文提供 Agora 完整包的发版说明。
+本文提供 Agora 视频 SDK 的发版说明。
 
 ## **简介**
 
-Android 完整包支持两种主要场景:
+Android 视频 SDK 支持两种主要场景:
 
 -   音视频通话
-
 -   音视频直播
+
+点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)以及 [互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms) 了解关键特性。
+
+
+## **2.3.3 版**
+
+该版本于 2019 年 1 月 24 日发布。修复问题详见下文。
+
+### **问题修复**
+
+- 修复了 `onNetworkQuality` 回调不准确的问题。
+- 修复了特定场景下华为 P9 上偶发的崩溃问题。
+
+## **2.3.2 版**
+
+该版本于 2019 年 1 月 16 日发布。新增特性与修复问题列表详见下文。
+
+### **升级前必看**
+
+2.3.2 整体提升直播模式下视频弱网抗丢包能力，提高流畅度，降低卡顿率。升级前，请了解以下版本兼容性:
+
+* Native SDK 版本不能低于 1.11.0
+* Web SDK（若互通）版本不能低于 2.1.0
+
+### **新增功能**
+
+#### 1. 对兴趣点自动曝光
+
+为提升视频采集质量，该版本新增如下接口，支持对兴趣点自动曝光功能。开发者可以将需要自动曝光的区域位置发送给 Agora SDK，摄像头会基于该区域自动曝光。
+
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6818c2a98bebeb72e4802b1c585da99b)：检查设备是否支持摄像头曝光
+- [`setCameraExposurePosition`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0ac20919f60df42635850c53c9cbdefd)：设置摄像头曝光区域
+- [`onCameraExposureAreaChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ab6bc82a55191e596d5bf5a7c56bdf95e)：摄像头曝光区域已更改
+
+#### 2. 提升直播清晰度
+
+Agora SDK 会根据网络条件进行码率自适应。为满足用户在直播场景下对视频清晰度的要求，该版本在 [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f) 接口中新增 [`minBitrate`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a9cd44566bc19eca4006fda264ea96dc7) 参数，强制视频编码器输出高质量图片。如果将参数设为高于默认值，在网络状况不佳情况下可能会导致网络丢包，并影响视频播放的流畅度。因此如非对画质有特殊需求，Agora 建议不要修改该参数的值。
+
+#### 3. 控制音乐文件的播放音量 
+
+为方便用户控制混音音乐文件在本地及远端的播放音量，该版本在已有 [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a) 的基础上新增 [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9) 和 [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a16c4dc66d9c43eef9bee7afc86762c00) 接口，用于分别控制混音音乐文件在本地和远端的播放音量。
+
+该版本梳理了用户在音频采集到播放过程中可能会需要调整音量的场景，及各场景对应的 API，供用户参考使用。详见官网文档[调整通话音量](../../cn/Video/volume_android.md)。
+
+
+### **改进**
+
+#### 1. 提供更透明的质量数据统计
+
+为提升质量透明的用户体验，该版本废弃了原有的 `onAudioQuality` 回调，并新增 `onRemoteAudioStats` 回调进行取代。和原来的接口相比，新接口使用更为综合的算法，通过引入音频丢帧率、端到端的音频延迟、接收端网络抖动的缓冲延迟等参数，使回调结果更贴近用户感受。同时，该版本优化了 `onNetworkQuality` 的算法，对上下行网络质量采用不同的计算方法，使评分更精准。
+
+- [`onRemoteAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54)：通话中远端音频流的统计信息回调。用于替换	`onAudioQuality`
+- [`onNetworkQuality`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a76be982389183c5fe3f6e4b03eaa3bd4)：通话中每个用户的网络上下行 Last mile 质量报告回调
+
+Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
+
+- [`onLastmileQuality`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)：通话前网络上下行 Last mile 质量报告回调
+
+该版本对数据统计相关回调进行了统一梳理，相关回调及算法详见[通话中数据统计](../../cn/Video/in_call_statistics_android.md)。
+
+#### 2. 改进获取 SDK 网络连接状态的生成策略
+
+为提升 SDK 使用数据统计的准确性和合理性，该版本新增如下接口，用以获取 SDK 的网络连接状态，以及连接状态发生改变的原因。
+
+- [`getConnectionState`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8635e3c9e26ffe95e7ab9a518af533b9) ：获取 SDK 的网络连接状态
+- [`onConnectionStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e)：SDK 的网络连接状态已改变回调
+
+该版本废弃了原有的 [`onConnectionInterrupted`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0841fb3453a1a271249587fa3d3b3c88) 和 [`onConnectionBanned`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db) 回调。
+
+在新的接口下，SDK 共有 5 种连接状态：未连接、正在连接、已连接、正在重新建立连接和连接失败。当连接状态发生改变时，都会触发 `onConnectionStateChanged` 回调。当条件满足时，原有的 `onConnectionInterrupted` 和 `onConnectionBanned` 回调也会触发，但 Agora 不再推荐使用。
+
+
+#### 3. 优化打分反馈机制
+
+为方便用户（开发者）收集最终用户（应用程序使用者）对使用应用进行通话或直播的反馈，该版本将 [`rate`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab7083355af531cc43d455024bd1f7662) 接口中的打分范围缩小为 1 - 5，减少最终用户的打分干扰。Agora 建议在应用程序中集成该接口，方便应用程序收集用户反馈。
+
+#### 4. 其他改进
+
+- 优化了直播模式下视频弱网抗丢包能力
+- 加快了严重拥塞状态视频的恢复速度
+- 提升了推流稳定性
+- 优化了 SDK 在 Android 6.0 以上设备上的性能
+- 优化了 API 的调用线程
+- 增加了重新检测耳机插入和蓝牙设备连接的代码
+- 降低了音频延时
+- 新增了对锤子手机摄像头的适配
+
+
+### **问题修复**
+
+#### SDK 相关：
+
+- 修复了 SDK 在部分模拟器（夜神、mumu 等）上的崩溃问题
+- 修复了 Android 6.0 以上 x86 so 重定位导致的崩溃问题
+
+#### 音频相关：
+
+- 修复了设备在连接蓝牙的状态下，退出频道后，音频不走蓝牙的问题
+- 修复了调用 `startAudioMixing` 播放音乐文件时出现的崩溃问题
+- 修复了麦克风在禁用的状态下，设备插上耳机后，禁用失效的问题
+- 修复了华为 Mate 20X 上出现的应用切至后台，使用其他应用时出现的远端听不到本地说话的问题
+- 修复了 Pixel 2 设备上出现的回声问题
+- 修复了外放条件下，上下麦、系统电话打断、进退频道等多种场景下，出现的无法调节外放音量的问题
+- 修复了应用从后台切回前台时，出现的出声音慢的问题
+
+#### 视频相关：
+
+- 修复了 x86 设备上自采集图像时硬件编码器的相关问题
+- 修复了视频自采集时的偶现问题
+
+
+### **API 整理**
+
+为提升用户体验，Agora 在 v2.3.2 版本中对 API 进行了如下变动。
+
+#### 新增
+
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6818c2a98bebeb72e4802b1c585da99b)
+- [`setCameraExposurePosition`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0ac20919f60df42635850c53c9cbdefd)
+- [`getConnectionState`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8635e3c9e26ffe95e7ab9a518af533b9)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a16c4dc66d9c43eef9bee7afc86762c00)
+- [`onConnectionStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e)
+- [`onCameraExposureAreaChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ab6bc82a55191e596d5bf5a7c56bdf95e)
+- [`onRemoteAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54)
+
+#### 废弃
+
+- [`onAudioQuality`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#abeac442a777e103536dcf9c8ce2d7135)
+- [`onConnectionInterrupted`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0841fb3453a1a271249587fa3d3b3c88)
+- [`onConnectionBanned`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
 
 ## **2.3.1 版**
 
 该版本于 2018 年 10 月 12 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+### **新增功能**
 
 ####  关闭/重新开启本地语音功能
 
@@ -28,11 +158,11 @@ Android 完整包支持两种主要场景:
 
 该功能与 `muteLocalAudioStream` 的区别在于前者不采集不发送，而后者是采集但不发送。
 
-**改进**
+### **改进**
 
 * 提升了 SDK 与 Android 设备上视频编码器的适配度。
 
-**问题修复**
+### **问题修复**
 
 * 修复了直播模式下，多次上下麦后某些 Android 设备上偶现的崩溃问题。
 * 修复了切换前后摄像头过程中偶现的崩溃问题。
@@ -49,7 +179,7 @@ Android 完整包支持两种主要场景:
 
 Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可用性，保证了更加可靠的实时通信。同时音视频质量也得到进一步提高。 视频方面，通过优化编码性能，增强了弱网对抗能力，减少卡顿时间，提升视频流畅度；音频方面，采用深度学习算法，改进了通话中的音频质量。
 
-**升级必看**
+### **升级必看**
 
 -   为满足场景中视频旋转的需要，提升自定义视频源画质，该版本引入 `setVideoEncoderConfiguration` 替换原 `setVideoProfile` 接口。 `setVideoProfile` 接口仍可用，但不再推荐。
 
@@ -76,7 +206,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
 
-**新增功能**
+### **新增功能**
 
 本次发版新增如下功能：
 
@@ -100,7 +230,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 在设置直播转码接口 `setLiveTranscoding` 中，新增 `backgroundImage` 参数，支持设置直播转码合图的背景图片。
 
-**改进功能**
+### **改进功能**
 
 -   优化了一对一音视频的质量，在降低延时、防止卡顿方面提升明显。优化效果重点覆盖东南亚、南美、非洲和中东等地区
 
@@ -109,7 +239,9 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   采用深度学习算法，改进了通话及直播中的音频质量
 
 
-**问题修复**
+### **问题修复**
+
+-   修复了因视频编码问题引起的 Native 设备与 Web 端互通时，Web 端看不到 Native 端视频画面的问题
 
 -   修复了多人视频直播连麦场景下，SDK 内存异常增长的问题
 
@@ -210,7 +342,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   修复了特定场景下某些 Android 设备上出现的传视频过程中出现的崩溃的问题
 
 
-**API 整理**
+### **API 整理**
 
 为提升用户体验，Agora 在 v2.3.0 版本中对 API 进行了梳理，并针对部分接口进行了如下处理：
 
@@ -249,11 +381,11 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 7 月 5 日发布。新增特性与修复问题列表详见下文。
 
-**升级必看**
+### **升级必看**
 
 为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
-**问题修复**
+### **问题修复**
 
 -   修复了特定场景下偶发的线上统计崩溃的问题。
 
@@ -275,12 +407,25 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 -   修复了特定场景下偶发的视频窗口尺寸变化后，视频卡住的问题。
 
+## **2.2.2 版**
+
+该版本于 2018 年 6 月 21 日发布。修复问题列表详见下文。
+
+### **问题修复**
+
+- 修复了特定场景下偶发的线上统计崩溃的问题
+- 修复了部分安卓设备上偶发的音频崩溃的问题
+- 修复了直播模式下部分安卓设备上主播声音变音的问题
+- 修复了偶发的无法正常反馈频道内谁在说话以及说话者的音量的问题
+- 修复了部分安卓设备上偶现的离开频道后，收到 `onLeaveChannel` 回调偏慢的问题
+- 修复了特定场景下偶发的视频窗口尺寸变化后，视频卡住的问题
+- 修复了部分安卓设备上偶现的关闭摄像头结束通话时，程序界面无响应的问题
 
 ## **2.2.1 版**
 
 该版本于 2018 年 5 月 30 日发布。新增特性与修复问题列表详见下文。
 
-**问题修复**
+### **问题修复**
 
 -   修复了部分设备上偶现的游戏过程中 Crash 的问题。
 
@@ -295,7 +440,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 5 月 4 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+### **新增功能**
 
 本次发版新增如下功能：
 
@@ -317,7 +462,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 在本地直播及旁路直播中增加水印功能，允许用户将一张 PNG 图片作为水印添加到正在进行的本地直播或旁路直播中。新增 `addVideoWatermark` 和 `clearVideoWatermarks` 接口，以添加或删除本地直播水印；`LiveTranscoding` 接口中新增 `watermark` 参数，用于控制旁路直播中水印的添加。
 
-**改进功能**
+### **改进功能**
 
 本次发版改进如下功能：
 
@@ -337,7 +482,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 提升了用户在播放音乐等场景下的音乐音质。
 
-**问题修复**
+### **问题修复**
 
 -   修复了大量用户同时直播连麦时，偶发的抖屏现象
 
@@ -348,15 +493,15 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 4 月 19 日发布。新增特性与修复问题列表详见下文。
 
-**升级必看**
+### **升级必看**
 
 该版本的 SDK 修改了`setVideoProfile` 方法在直播模式下的码率值，修改后的码率值与 2.0 版本一致。
 
-**问题修复**
+### **问题修复**
 
 修复了部分手机上，用户离开频道后，开启自带的录音设备时，偶现录音出错的问题。
 
-**改进**
+### **改进**
 
 改进了通信和直播模式下屏幕共享的效果，缩短了用户从屏幕共享模式切换回普通模式需要的时间间隔。
 
@@ -364,15 +509,15 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 4 月 2 日发布。新增特性与修复问题列表详见下文。
 
-**升级必看**
+### **升级必看**
 
 SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，但带宽也会变大。
 
-**新增功能**
+### **新增功能**
 
 在已有 `setVideoProfile `接口的基础上，新增一个同名接口。用户可以用此接口，根据自身业务需要，手动设置视频的分辨率、帧率和码率。
 
-**问题修复**
+### **问题修复**
 
 修复了之前版本 SDK 在 dtx + aac 模式下会视频卡顿的问题。
 
@@ -386,7 +531,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 该版本于 2018 年 3 月 7 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+### **新增功能**
 
 本次发版新增如下功能：
 
@@ -413,7 +558,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 -   [实现视频直播](../../cn/Quickstart%20Guide/broadcast_video_android.md)
 
--   [实现 17 人直播场景](../../cn/Quickstart%20Guide/seventeen_people.md)
+-   [实现七人以上视频通话](../../cn/Video/seventeen_people_android.md)
 
 
 #### 5. 自定义视频源
@@ -436,7 +581,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 
 新增回调接口提示相机的对焦区域已发生改变，新增了回调 `onCameraFocusAreaChanged` 。
 
-**改进**
+### **改进**
 
 本次发版改进如下功能：
 
@@ -472,7 +617,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 
 
 
-**问题修复**
+### **问题修复**
 
 -   修复了华为 Nexus 6p 播放杂音的问题。
 
@@ -487,15 +632,17 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 
 该版本于 2017 年 12 月 15 日发布。新增特性与修复问题列表详见下文。
 
-**问题修复**
+### **问题修复**
 
 修复了偶现的语音路由问题。
 
-## **2.0 版**
+## **2.0 版及之前**
+
+### **2.0 版**
 
 该版本于 2017 年 12 月 6 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
 -   通信场景支持视频大小流功能，新增 API `setRemoteVideoStreamType` 和 `enableDualStreamMode`
 
@@ -569,22 +716,22 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   新增以下 Android 模拟器支持: 夜神、雷电、逍遥。
 
 
-**改进**
+#### **改进**
 
 硬件编码器优化: 支持超小分辨率的编码，例如 64 x 64。
 
-**问题修复**
+#### **问题修复**
 
 -   修复了音频路由和蓝牙相关的若干问题。
 
 -   优化了音量均衡控制。
 
 
-## **1.14 版**
+### **1.14 版**
 
 该版本于 2017 年 10 月 20 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
 -   新增 API `setAudioProfile 设`置音频参数和应用场景。
 
@@ -593,7 +740,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   直播场景: 新增 API `setInEarMonitoringVolume`提供调节耳返音量功能。
 
 
-**改进**
+#### **改进**
 
 -   优化了在高码率下的音频体验。
 
@@ -612,23 +759,23 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
     -   1.14 开始: 精准的码率控制，要多少给多少，不多给也不少给，避免波动过大造成的网络拥塞，减少传输延时，有助于减少网络卡顿。
 
 
-**问题修复**
+#### **问题修复**
 
 修复了部分 Android 机器上摄像头相关的问题。
 
-## **1.13.1 版**
+### **1.13.1 版**
 
 该版本于 2017 年 9 月 28 日发布。新增特性与修复问题列表详见下文。
 
-**优化**
+#### **优化**
 
 优化了特定场景下出现的回声问题。
 
-## **1.13 版**
+### **1.13 版**
 
 该版本于 2017 年 9 月 4 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
 -   新增 API `onClientRoleChanged` 用于提醒直播场景下主播、观众上下麦的回调。
 
@@ -639,22 +786,22 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   新增功能支持服务端推流失败回调。
 
 
-**改进**
+#### **改进**
 
 -   软编情况下，视频属性可控。
 
 -   可以在客户端设置推流的 Profile。
 
 
-**修复问题**
+#### **修复问题**
 
 修复了部分机型上偶现的崩溃
 
-## **1.12 版**
+### **1.12 版**
 
 该版本于 2017 年 7 月 25 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
 -   在 API 方法 `setEncryptionMode`里新增了加密模式 `aes-128-ecb`。
 
@@ -665,7 +812,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   直播场景下， 新增了 API 方法 `injectStream`在当前频道内插入一条 RTMP 流。该功能目前为 beta 版。
 
 
-**改进**
+#### **改进**
 
 通信场景下针对 320 x 180 分辨率提供了以下改进方案:
 
@@ -674,7 +821,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   网络和设备状态良好的情况下可以做到比 180P 更好的画质清晰度。
 
 
-**修复问题**
+#### **修复问题**
 
 -   修复了部分机型上蓝牙相关的语音路由问题。
 

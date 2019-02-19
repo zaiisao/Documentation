@@ -3,7 +3,7 @@
 title: Making a Voice Call
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:06:58 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:11:49 GMT+0000 (UTC)
 ---
 # Making a Voice Call
 This page introduces how to use Agora’s Web SDK to make a voice call.
@@ -187,7 +187,7 @@ Use the `client.leave`  method to remove the user from the current broadcast \(c
 
 ```javascript
 client.leave(function () {
-  console.log("Leavel channel successfully");
+  console.log("Leave channel successfully");
 }, function (err) {
   console.log("Leave channel failed");
 });

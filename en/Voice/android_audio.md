@@ -3,143 +3,151 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 20:44:37 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 06:34:37 GMT+0000 (UTC)
 ---
 # Integrate the SDK
+This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
+
 ## Prerequisites
 
--   A device with audio support running Android 4.1+.
--   Android SDK for API level 16+.
--   [Android Studio 2.0](https://developer.android.com/studio/)
--   Agora [Voice SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads)
+Development environment:
 
+- A device with audio support running Android 4.1 or later.
+- Android SDK for API level 16 or later.
+- Android Studio 3.0 or later.
+- Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
-Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
+Download the Agora SDK：
 
-## Creating an Agora Account and App ID
+The Agora [Voice SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads).
 
-1.  Create a developer account at [www.agora.io](https://dashboard.agora.io/signin/). When you finish the sign-up, the website displays your [Dashboard](https://dashboard.agora.io/).
+Downloaded files include the libs folder and the sample folder. The following table lists the contents of the libs folder.
 
-2.  Click **Add New Project** on the **Projects** page of the dashboard.
-
-3.  Fill in the **Project Name** and click **Submit**.
-
-4.  Copy the value of your **App ID**.
-
-5.  In the Android Studio project, locate the `app/src/main/res/values/strings.xml` file and add the APP ID:
-
-	<img alt="../_images/video_appid.png" src="https://web-cdn.agora.io/docs-files/en/video_appid.png" style="width: 500px;"/>
-
-## Adding the Agora SDK to Your Project
-
-1. Open the `build.gradle` file under the **app** folder from the **Project Files** view in Android Studio. Make a note of the path of the libs folder to the right of `fileTree`. This is where you will put the Agora SDK for Android files later on.
-
-   <img alt="../_images/video_buildgradle.png" src="https://web-cdn.agora.io/docs-files/en/video_buildgradle.png" />
-
-> -   The libs path directory is relative to the application’s app directory.
-> -   Ensure that the path name contains no Chinese characters. If the path contains Chinese characters, compiling the code fails and displays an error message that contains random ASCII characters.
-
-2.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Agora Voice SDK for Android.
-
-3.  Copy the contents of the **libs** folder from the SDK to the **libs** folder whose path you found earlier in the `build.gradle` file. The following table lists the contents of the libs folder.
-
-    <table>
+<table>
 <colgroup>
 <col/>
 <col/>
 </colgroup>
 <tbody>
 <tr><td><strong>File/Folder Name</strong></td>
-<td><strong>Notes</strong></td>
+<td><strong>File Type</strong></td>
 </tr>
 <tr><td>agora-rtc-sdk.jar</td>
-<td>.jar file (required)</td>
-</tr>
-<tr><td>armeabi-v7a</td>
-<td>folder</td>
-</tr>
-<tr><td>x86</td>
-<td>folder</td>
+<td>Java JAR file</td>
 </tr>
 <tr><td>arm64-v8a</td>
+<td>folder</td>
+</tr>
+<tr><td>armeabi-v7a</td>
 <td>folder</td>
 </tr>
 <tr><td>include</td>
 <td>folder</td>
 </tr>
+<tr><td>x86</td>
+<td>folder</td>
+</tr>
 </tbody>
-</table>
+</table></strong></td>
 
-## Adding the sourceSets
-
-In the `build.gradle` file, add the `sourceSets` to the Android JSON object. Set the path for **libs** to the relative path for the **libs** app directory.
-
-```
-android {
-
-...
-
-sourceSets{
- main {
-   jniLibs.srcDirs = ['../../../libs']
- }
-}
-
-}
-```
-
-## Synchronizing the Project
-
-Click **Sync Project With Gradle Files** until the synchronization is complete.
-
-<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px;"/>
+> Before integrating the SDK into your project, you can try to integrate the SDK into the sample first.
 
 
-## Configuring the Android NDK
 
-If you see the following “NDK not configured” error message, download and install the [Android NDK](https://developer.android.com/ndk/).
+## Create an Agora Account and Get an App ID
 
-<img alt="../_images/android6.png" src="https://web-cdn.agora.io/docs-files/en/android6.png" style="width: 500px;"/>
+1. Sign up for a developer account at <https://dashboard.agora.io/>.
 
+2.  Click **Add New Project** on the **Projects** page in [Dashboard](https://dashboard.agora.io/).
 
-1. Click the **Configure** button at the bottom of the main menu and select **Project Defaults \> Project Structure** as shown below:
+3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
 
-	<img alt="../_images/project_structure.png" src="https://web-cdn.agora.io/docs-files/en/project_structure.png" style="width: 708.8px; height: 549.6px;"/>
+4.  Find the **App ID** under the created project.
 
-2. Copy the [Android NDK](https://developer.android.com/ndk/) into the Android NDK location listed in the Android Studio's Project Structure window.
+    ![](https://web-cdn.agora.io/docs-files/1543388532968)
 
-	<img alt="../_images/android7.png" src="https://web-cdn.agora.io/docs-files/en/android7.png" />
+## Add the Agora SDK to Your Project
 
-3. Re-synchronize the Android project with the NDK files by clicking **Sync Project With Gradle Files**.
+1. Set the storage directory of the libs folder. Open your project in Android Studio (this article takes the sample  as an example), select the *app/src/main/build.gradle* file, and add the preset storage directory to the `fileTree` code line.
 
-	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px;"/>
+   ![](https://web-cdn.agora.io/docs-files/1549866011937)
 
+> Ensure that the path name contains no Chinese characters. If the path contains Chinese characters, compiling the code fails and displays an error message that contains random ASCII characters.
 
-## Adding the Device Permissions
+2. Add the libs folder according to the storage directory preset in step 1.
 
-1. Open the `AndroidManifest.xml` file located under **app \> src \> main** and add the required device permissions to the file.
+3. Add `sourceSets`. In the `build.gradle` file, set the same storage directory as the libs folder.
 
     ```
-    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-     package="io.agora.openvideocall">
-    
-     <uses-permission android:name="android.permission.INTERNET" />
-     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-     <uses-permission android:name="android.permission.CAMERA" />
-     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
+    android {
      ...
-    
-     </manifest>
+     sourceSets {
+            main {
+                jniLibs.srcDirs = ['../../../libs']
+            }
+        }
+    }
     ```
 
-2. Re-synchronize the Android project with the NDK files by clicking **Sync Project With Gradle Files**.
+4.  Add the App ID in the *app/src/main/res/values/strings.xml* file.
 
-	<img alt="../_images/android9.png" src="https://web-cdn.agora.io/docs-files/en/android9.png" style="width: 500px;"/>
+    ```
+    <resources>
+        <string name="app_name">Agora-Android-Voice-Tutorial</string>
+        ...
+        <string name="agora_app_id">YOUR APP ID</string>
+    </resources>
+    ```
+
+5. Click **Sync Project With Gradle Files** until the synchronization is complete.
 
 
-## Preventing Obfuscation of the Agora Classes
+## Configure the Android NDK
+
+To call the plug-ins in the include files under the libs folder, you need to configure the Android NDK: 
+
+
+1. Click the **Configure** button and select **Project Defaults \> Project Structure**. Click to download the Android NDK.
+   
+	 ![](https://web-cdn.agora.io/docs-files/1543388575943)
+
+2. Click **Finish** when the download is complete and Android Studio automatically adds the NDK path.
+   
+	 ![](https://web-cdn.agora.io/docs-files/1543388586395)
+   
+	 If the path is not automatically added, add it manually and check it in the `local.properties` file.
+   
+	 ![](https://web-cdn.agora.io/docs-files/1543388615750)
+	 
+3. Re-synchronize the Android project by clicking **Sync Project With Gradle Files**.
+
+
+## Add the Device Permissions
+
+1. Open the *app/src/main/AndroidManifest.xml* file and add the required device permissions to the file.
+
+	```
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="io.agora.tutorials1v1acall">
+      
+  <uses-permission android:name="android.permission.READ_PHONE_STATE” />	
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.RECORD_AUDIO" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <!-- If the app uses Bluetooth, please add Bluetooth permissions.-->
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  
+  ...
+  </manifest>
+	```
+
+2. Re-synchronize the Android project by clicking **Sync Project With Gradle Files**.
+
+
+
+## Prevent Obfuscation of the Agora Classes
 
 In the `proguard-rules.pro` file, add a `-keep` class configuration for the Agora SDK. This prevents obfuscation of the Agora SDK public class names.
 
@@ -147,5 +155,9 @@ In the `proguard-rules.pro` file, add a `-keep` class configuration for the Agor
 -keep class io.agora.**{*;}
 ```
 
-The Android environment is now set up to use the Agora SDK.
+## Next Steps
 
+You have set up the Android environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+* Initialize the SDK
+* Join a Channel
+* Publish and Subscribe to Streams

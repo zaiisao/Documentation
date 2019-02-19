@@ -3,13 +3,13 @@
 title: Use Agora Built-in Encryption
 description: 
 platform: macOS
-updatedAt: Thu Nov 01 2018 09:24:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:28:17 GMT+0000 (UTC)
 ---
 # Use Agora Built-in Encryption
 # Using Agora Built-in Encryption
-This page describes how to use Agora built-in encryption.
+This page describes how to use Agora's built-in encryption.
 
-> Both communications and live broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
+> Both Communication and Live Broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
 
 ## Scenario 1: Do Not Use Encryption
 
@@ -25,13 +25,13 @@ The following figure shows how Agora’s communications use built-in encryption:
 
 ### Step 1: Enable encryption.
 
-Call `setEncryptionSecret` to enable built-in encryption and set the encryption secret.
+Call the setEncryptionSecret` method to enable built-in encryption and set the encryption password.
 
 ### Step 2: Set the encryption mode to be used.
 
-Call `setEncryptionMode` to set the built-in encryption mode. 
+Call the `setEncryptionMode` method to set the built-in encryption mode. 
 
-## Scenario 3: Use a Customized Encryption
+## Scenario 3: Use Customized Encryption
 
 The following figure shows the customized encryption/decryption process:
 
@@ -42,13 +42,13 @@ The following figure shows the customized encryption/decryption process:
 
 The Agora Native SDK allows your application to register a packet observer to receive events whenever a voice or video packet is transmitting.
 
-Register a packet observer on your application using the following API:
+Register a packet observer on your application using the following method:
 
 ```
 virtual int registerPacketObserver(IPacketObserver* observer);
 ```
 
-The observer must inherit from `agora::IPacketObserver` and be implemented in C++. The following is the definition of the IPacketObserver class:
+The observer must be inherited from `agora::IPacketObserver` and be implemented in C++. The following is the definition of the `IPacketObserver` class:
 
 ```
 class IPacketObserver
@@ -101,7 +101,7 @@ virtual bool onReceiveVideoPacket(Packet& packet) = 0;
 
 ## Step 2: Implement a Customized Data Encryption Algorithm
 
-Inherit from `agora::IPacketObserver` to implement the customized data encryption algorithm on your application. The following example uses XOR for data processing. For the Agora Native SDK, sending and receiving packets are handled by different threads, which is why encryption and decryption can use different buffers:
+The observer must be inherited from `agora::IPacketObserver` to be implemented in the customized data encryption algorithm on your application. The following example uses XOR for data processing. For the Agora Native SDK, sending and receiving packets are handled by different threads, which is why encryption and decryption can use different buffers:
 
 ```
 class AgoraPacketObserver : public agora::IPacketObserver
@@ -126,7 +126,7 @@ class AgoraPacketObserver : public agora::IPacketObserver
                      {
                          m_txAudioBuffer[i] = *p ^ 0x55;
                      }
-                     //assign new buffer and the length back to SDK
+                     //assign the new buffer and the length back to the SDK
                      packet.buffer = &m_txAudioBuffer[0];
                      packet.size = i;
                      return true;
@@ -142,7 +142,7 @@ class AgoraPacketObserver : public agora::IPacketObserver
                      {
                          m_txVideoBuffer[i] = *p ^ 0x55;
                      }
-                     //assign new buffer and the length back to SDK
+                     //assign the new buffer and the length back to the SDK
                      packet.buffer = &m_txVideoBuffer[0];
                      packet.size = i;
                      return true;
@@ -158,7 +158,7 @@ class AgoraPacketObserver : public agora::IPacketObserver
                      {
                          m_rxAudioBuffer[i] = *p ^ 0x55;
                      }
-                     //assign new buffer and the length back to SDK
+                     //assign the new buffer and the length back to the SDK
                      packet.buffer = &m_rxAudioBuffer[0];
                      packet.size = i;
                      return true;
@@ -176,23 +176,23 @@ class AgoraPacketObserver : public agora::IPacketObserver
                      {
                          m_rxVideoBuffer[i] = *p ^ 0x55;
                      }
-                     //assign new buffer and the length back to SDK
+                     //assign the new buffer and the length back to the SDK
                      packet.buffer = &m_rxVideoBuffer[0];
                      packet.size = i;
                      return true;
                  }
 
              private:
-                 std::vector<unsigned char> m_txAudioBuffer; //buffer for sending voice data
-                 std::vector<unsigned char> m_txVideoBuffer; //buffer for sending video data
+                 std::vector<unsigned char> m_txAudioBuffer; //buffer for sending the voice data
+                 std::vector<unsigned char> m_txVideoBuffer; //buffer for sending the video data
 
-                 std::vector<unsigned char> m_rxAudioBuffer; //buffer for receiving voice data
-                 std::vector<unsigned char> m_rxVideoBuffer; //buffer for receiving video data
+                 std::vector<unsigned char> m_rxAudioBuffer; //buffer for receiving the voice data
+                 std::vector<unsigned char> m_rxVideoBuffer; //buffer for receiving the video data
      };
 ```
 
 ## Step 3: Register the Instance
 
-Call registerAgoraPacketObserver to register the instance of the `agora::IPacketObserver` class implemented by your application.
+Call the `registerAgoraPacketObserver` method to register the instance of the `agora::IPacketObserver` class implemented by your application.
 
 

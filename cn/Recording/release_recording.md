@@ -3,12 +3,12 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 04:11:27 GMT+0000 (UTC)
+updatedAt: Tue Jan 15 2019 10:42:27 GMT+0000 (UTC)
 ---
 # 录制 SDK 发版说明
 ## 简介
 
-Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。
+Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。点击[录制产品概述](../../cn/Recording/product_recording.md))了解关键特性。
 
 ### 兼容性
 
@@ -24,10 +24,10 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 <th>描述</th>
 </tr>
 <tr><td>Agora Native SDK</td>
-<td>录制 SDK 与全平台 Agora Native SDK(1.7.0 或更高版本) 兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。</td>
+<td>录制 SDK 与全平台 Agora Native SDK (1.7.0 或更高版本) 兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。</td>
 </tr>
 <tr><td>Agora Web SDK</td>
-<td>录制 SDK 与 Agora Web SDK(1.12.0 或更高版本兼容)。</td>
+<td>录制 SDK 与 Agora Web SDK (1.12.0 或更高版本兼容)。</td>
 </tr>
 </tbody>
 </table>
@@ -36,13 +36,113 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 ### 已知问题和局限性
 
--   在用移动客户端 \(仅 Android 系统\) 录像的过程中，从前置摄像头切换到后置摄像头后，画面将被倒置。
+- 在用移动客户端 \(仅 Android 系统\) 录像的过程中，从前置摄像头切换到后置摄像头后，画面将被倒置。
+- 如果在频道内调用 `leaveChannel`, 录制会停止, 但默认录制文件最后会包含一段空白片段，这个时间段由调用 `joinChannel` 时在 `config` 里设定的 `idleLimitSec` 字段值决定。详见 [录制 API](../../cn/API%20Reference/recording_cpp.md)。
+- 由于录制的音视频文件是没有加密的，如果要满足 HIPPA 要求，需使用磁盘加密工具对硬盘进行加密，例如 cryptsetup。
 
--   如果在频道内调用 `leaveChannel`, 录制会停止, 但默认录制文件最后会包含一段空白片段, 这个时间段由调用 `joinChannel`时在 `config`里设定的 `idleLimitSec`字段值决定。详见 [录制 API](../../cn/API%20Reference/recording_cpp.md)。
+## 2.3.0 版
 
--   由于录制的音视频文件是没有加密的，如果要满足 HIPPA 要求，需使用磁盘加密工具对硬盘进行加密，例如 cryptsetup。
+该版本于 2019 年 1 月 15 日发布。新增特性与改进问题详见下文。
 
--   录制 SDK 仅保存从 Client 端传来的视频。在生成 mp4 文件时，SDK 会根据 `uid\xxx.txt `文件中的信息对视频旋转一次。因此无论视频在录制过程中旋转几次，录制 SDK 只会按 `uid\xxx.txt `文件中的第一个旋转信息进行旋转。你可以根据 `uid\xxx.txt` 文件的旋转信息自己修改转码脚本，然后得到旋转后的视频。目前计划在 2.3 版本中加入使用转码脚本进行视频旋转的功能。
+> Recording SDK 从 2.3.0 版本起，可支持费用独立计算，录制的用量和费用不与语音通话/语音直播 SDK、视频通话/视频直播 SDK混合在一起。具体可咨询商务。
+
+### 新增功能
+
+#### 1. 合流模式音频录制支持双声道
+
+合流模式下音频录制支持双声道高音质：采样率 48 KHz，双声道，码率 192 Kbps。
+
+> 裸数据不支持双声道。
+
+`audio profile` 开放 `0` 和 `1` 两种设置，具体如下：
+
+- 单流模式（file mode）：
+  - 默认行为或者 `audio profile=0`，采样率 48 KHz，与原始音频流的单/双声道保持一致，码率根据发送端的码率自适应。
+- 单流模式（裸数据）
+  - 固定采样率 48 KHz，声道与原始流保持一致
+    - PCM：码率可能改变
+    - AAC：码率与 file mode 单流的保持一致
+- 合流模式（file mode）：  
+  - `audio profile=0`，采样率 48 KHz，单声道，码率 48 Kbps
+  - `audio profile=1`，采样率 48 KHz，单声道，码率 128 Kbps
+  - `audio profile=2`，采样率 48 KHz，双声道，码率 192 Kbps
+- 合流模式（裸数据）
+  - 固定采样率 48 KHz，单声道
+
+#### 2. 增加 Web 播放器支持
+
+实时转码后的录像文件，和转码脚本转码后的录像文件支持 Android、iOS/macOS、Windows 平台下的 Chrome 和 Safari 浏览器的播放。各平台浏览器播放支持如下表所示：
+
+<table>
+  <tr>
+    <th>平台</th>
+    <th>Chrome </th>
+    <th>Safari</th>
+  </tr>
+  <tr>
+    <td>Android </td>
+    <td>Chrome 49+</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>iOS</td>
+    <td>✘</td>
+    <td>Safari 9+</td>
+  </tr>
+  <tr>
+    <td>macOS 10+</td>
+    <td>Chrome 47+</td>
+    <td>Safari 11+</td>
+  </tr>
+  <tr>
+    <td>Windows</td>
+    <td>Chrome 49+</td>
+    <td>N/A</td>
+  </tr>
+</table>
+
+#### 3. 支持合图模式自定义背景图片
+
+- 合图模式没有视频时可以显示背景图片使录制画面更好看
+- 合图模式某个用户没有视频时可以用自定义图片代替该用户的视频画面
+
+> 仅适用于合图模式，且不支持裸数据和截图。
+
+#### 4. 示例代码中增加预置的合图布局模版
+
+为提高录制 SDK 自带的示例代码的易用性，增加两种预置的合图布局模版：
+
+##### **自适应布局 （bestFit**）
+
+根据录制画面的数量自动调整每个画面的大小，每个画面大小一致，最多支持 17 个录制画面。例如：
+
+![](https://web-cdn.agora.io/docs-files/1542680053900)
+
+##### **垂直布局 （verticalPresentation）**
+
+指定一个 uid 在屏幕左侧显示大流画面，其他用户的小流画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。例如：
+
+![](https://web-cdn.agora.io/docs-files/1542680070362)
+
+#### 5. 支持合图模式录制时截图
+
+在合图模式下录制时，支持对每个用户分别截图，并且截图和录制订阅同一路流。
+
+#### 6. 支持说话者监测功能
+
+增加 `onActiveSpeaker` 回调，用于返回频道内说话的用户 UID。
+
+说话者监测功能默认为关闭状态，通过设置 `RecordingConfig` 中的 `audioIndicationInterval` 参数开启。将该参数设置为正整数，SDK 会按照设置的时间间隔返回 `onActiveSpeaker` 回调。
+
+### 改进
+
+- 改善了单流模式下的音画同步问题。
+- 支持单流模式非实时转码下的录像视频自动旋转。
+- 修改手动模式录制的 idle 行为：
+  - 2.3.0 以前的版本，手动模式录制时，idle 一进入频道就开始生效。如果一开始频道内只有一个录制 SDK，进程挂起，会导致录制退出频道，idle 不能发挥真正的作用。
+  - 2.3.0 版本，`startService`之后，idle 才生效。
+- 优化日志信息级别，把一些重要的信息从 INFO 中分拆到 NOTICE，WARN，以及 ERROR 中。
+- 优化录制目录命名，确保目录名称的唯一性。
 
 ## **2.2.3 版**
 
@@ -52,7 +152,7 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 - 由 .backtrace 引起的 coredump 文件丢失。
 - Java jni 引起的崩溃和稳定性的优化。
-- manully mode 下转码脚本的 bug 修复。
+- manually mode 下转码脚本的 bug 修复。
 - Web 端客户加入频道后录制视频生成两份视频文件。
 - 偶现的主线程释放后子线程继续使用引起的崩溃。
 
@@ -60,52 +160,37 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 该版本于 2018 年 8 月 1 日发布。新增特性与修复问题列表详见下文。
 
-
-
 **改进**
 
--   jpeg 图片命名改动：从 `uid\YmdHMS.jpg` 改成 `uid\YmdHMS\ms.jpg`
-
--   转码脚本自动旋转
-
--   java 包结构改动
-
+- jpeg 图片命名改动：从 `uid\YmdHMS.jpg` 改成 `uid\YmdHMS\ms.jpg`
+- 转码脚本自动旋转
+- java 包结构改动
 
 **修复问题**
 
 主要修复了以下问题：
 
--   web 录制时间不正常
-
--   内存泄漏
-
--   三方互通 bug
-
--   h.264 parser bug
-
--   音画不同步
-
+- web 录制时间不正常
+- 内存泄漏
+- 三方互通 bug
+- h.264 parser bug
+- 音画不同步
 
 ## **2.2.1 版**
 
 该版本于 2018 年 6 月 5 日发布。新增特性与修复问题列表详见下文。
 
-
 **改进**
 
--   提升了通信模式的性能。相同性能的机器能够支持的录制通道数多达 2.2 版的 2.5 倍。
-
--   减少了寻找端口的时间。
-
--   寻找端口的时间不再计入 idle 时间。
-
+- 提升了通信模式的性能。相同性能的机器能够支持的录制通道数多达 2.2 版的 2.5 倍。
+- 减少了寻找端口的时间。
+- 寻找端口的时间不再计入 idle 时间。
 
 **修复问题**
 
 主要修复了以下问题：
 
--   端口冲突导致寻找端口时间过长，超出 idle 时间，以至未连接成功就下线。
-
+- 端口冲突导致寻找端口时间过长，超出 idle 时间，以至未连接成功就下线。
 
 ## **2.2.0 版**
 
@@ -117,16 +202,11 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 主要修复了以下问题：
 
--   修复了日志过大的问题
-
--   修复了录制过程中视频快进的异常问题
-
--   修复了某些间歇性故障
-
--   性能提升
-
--   提高了稳定性
-
+- 修复了日志过大的问题
+- 修复了录制过程中视频快进的异常问题
+- 修复了某些间歇性故障
+- 性能提升
+- 提高了稳定性
 
 ## **2.1.0 版**
 
@@ -183,33 +263,22 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 主要修复了以下问题:
 
--   修复了偶现的录制文件转码失败问题;
-
--   修复了偶现的录制画面翻转问题;
-
--   修复了录制过程中偶现的音频异常问题;
-
+- 修复了偶现的录制文件转码失败问题;
+- 修复了偶现的录制画面翻转问题;
+- 修复了录制过程中偶现的音频异常问题;
 
 ## **2.0 版**
 
 该版本于 2017 年 11 月 21 日发布。新增特性与修复问题列表详见下文。
 
--   裸数据优化，多种格式支持:
-
-    -   修改了参数 `decodeAudio` 和 `decodeVideo` 并新增 `VideoJpgFrame` 结构体。
-
-    -   修改了参数 `getAudioFrame `和 `getVideoFrame `。
-
--   屏幕截图，新增参数 `captureInterval `用户设置截图的时间间隔。
-
--   视频大小流，新增参数 `streamType` 。
-
--   纯视频录制，新增参数 `isVideoOnly`。
-
--   只要使用了转码脚本，转码完成后会生成一个`convert.log`文件，和音视频文件在同一个路径下。
-
--   `UID\_HHMMSSMS.txt` 里新增了视频旋转信息。
-
+- 裸数据优化，多种格式支持:
+  - 修改了参数 `decodeAudio` 和 `decodeVideo` 并新增 `VideoJpgFrame` 结构体。
+  - 修改了参数 `getAudioFrame `和 `getVideoFrame `。
+- 屏幕截图，新增参数 `captureInterval `用户设置截图的时间间隔。
+- 视频大小流，新增参数 `streamType` 。
+- 纯视频录制，新增参数 `isVideoOnly`。
+- 只要使用了转码脚本，转码完成后会生成一个`convert.log`文件，和音视频文件在同一个路径下。
+- `UID\_HHMMSSMS.txt` 里新增了视频旋转信息。
 
 ## **1.3 版**
 
@@ -217,14 +286,10 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 **新增功能**
 
--   支持音视频混合录制, 在 `API joinChannel`里新增参数 `mixedVideoAudio` 和 `cfgFilePath `。
-
--   新增合并同一个 uid 音视频文件功能，详见 [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)。
-
--   新增 `API getProperties`用于在录制开启时便能立即获取录制路径而无需加入频道。
-
--   修改了 `onError` 和 `onLeaveChannel` 回调。
-
+- 支持音视频混合录制, 在 `API joinChannel`里新增参数 `mixedVideoAudio` 和 `cfgFilePath `。
+- 新增合并同一个 uid 音视频文件功能，详见 [录制音视频](../../cn/Quickstart%20Guide/recording_voice_video.md)。
+- 新增 `API getProperties`用于在录制开启时便能立即获取录制路径而无需加入频道。
+- 修改了 `onError` 和 `onLeaveChannel` 回调。
 
 ## **1.2 版**
 
@@ -232,14 +297,10 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 **新增功能**
 
--   新增功能获取音视频裸数据
-
--   新增功能支持鉴黄截图
-
--   新增日志文件 `recording\sys.log` 便于用户查找问题原因
-
--   新增功能支持录制 SDK 时间戳
-
+- 新增功能获取音视频裸数据
+- 新增功能支持鉴黄截图
+- 新增日志文件 `recording\sys.log` 便于用户查找问题原因
+- 新增功能支持录制 SDK 时间戳
 
 ## **1.1 版**
 
@@ -247,25 +308,17 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 **新增功能**
 
--   支持 Web 端录制功能, 生成的录制文件格式为 `UID\_HHMMSSMS.webm`
-
--   新增实时合图功能
-
--   新增了回调功能
-
--   修改了转码文件格式
-
--   新增了自由设置 UDP 端口的功能
-
+- 支持 Web 端录制功能, 生成的录制文件格式为 `UID\_HHMMSSMS.webm`
+- 新增实时合图功能
+- 新增了回调功能
+- 修改了转码文件格式
+- 新增了自由设置 UDP 端口的功能
 
 **修复问题**
 
--   修复了偶现的错误时间戳问题
-
--   修复了偶现的转码失败问题
-
--   修复了偶现的 VLC 文件无法播放的问题
-
+- 修复了偶现的错误时间戳问题
+- 修复了偶现的转码失败问题
+- 修复了偶现的 VLC 文件无法播放的问题
 
 ## **1.0.1 版**
 
@@ -279,15 +332,8 @@ Agora Recording SDK for Linux \(简称录制 SDK\) 在 Agora Native SDK 或/和 
 
 该版本于 2017 年 6 月 15 日发布。本次发版为录制 SDK 的第一次发版，主要包括以下功能:
 
--   录制通信或直播模式
-
--   录制一个频道内所有参与者的语音和视频内容
-
--   同时录制多个频道内所有参与者的语音和视频内容
-
--   同时录制一个或多个频道内所有参与者的纯语音内容
-
--   支持加密频道\(使用了 Agora SDK 内置的加密方案\)的录制
-
-
-
+- 录制通信或直播模式
+- 录制一个频道内所有参与者的语音和视频内容
+- 同时录制多个频道内所有参与者的语音和视频内容
+- 同时录制一个或多个频道内所有参与者的纯语音内容
+- 支持加密频道\(使用了 Agora SDK 内置的加密方案\)的录制

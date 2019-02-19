@@ -2,7 +2,7 @@
 ---
 title: Implement Voice for Gaming
 description: 
-platform: iOS_CPP
+platform: iOS
 updatedAt: Fri Nov 02 2018 08:47:55 GMT+0000 (UTC)
 ---
 # Implement Voice for Gaming

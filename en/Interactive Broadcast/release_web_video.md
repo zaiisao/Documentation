@@ -3,14 +3,14 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Nov 08 2018 03:53:04 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 05:47:55 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
 
 ## Overview
 
-The Agora Web SDK (WebRTC) is a JavaScript library loaded by an HTML web page. The Agora Web SDK library uses APIs in the web browser to establish connections and control the communication and live broadcast services.
+The Agora Web SDK (WebRTC) is a JavaScript library loaded by an HTML web page. The Agora Web SDK library uses APIs in the web browser to establish connections and control the communication and live broadcast services. For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms) and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 ### Compatibility
 
@@ -19,16 +19,16 @@ See the table below for the browser support of Agora Web SDK:
 <table>
   <tr>
     <th>Platform</th>
-    <th>Chrome 58+</th>
-    <th>Firefox 56+</th>
-    <th>Safari 11+</th>
-    <th>Opera 45+</th>
-    <th>QQ Browser Latest</th>
-    <th>360 Security  Browser</th>
-    <th>Wechat Built-in Browser</th>
+    <th>Google Chrome 58 or later</th>
+    <th>Firefox 56 or later</th>
+    <th>Safari 11 or later</th>
+    <th>Opera 45 or later</th>
+    <th>QQ Browser</th>
+    <th>360 Secure Browser</th>
+    <th>WeChat Built-in Browser</th>
   </tr>
    <tr>
-    <td>Android 4.1+</td>
+    <td>Android 4.1 or later</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
 		<td><b>N/A</b></td>
@@ -38,7 +38,7 @@ See the table below for the browser support of Agora Web SDK:
     <td><font color="red">✘</td>
   </tr>
   <tr>
-    <td>iOS 11+</td>
+    <td>iOS 11 or later</td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
     <td><font color="green">✔</td>
@@ -48,7 +48,7 @@ See the table below for the browser support of Agora Web SDK:
     <td><font color="red">✘</td>
   </tr>
   <tr>
-    <td>macOS 10+</td>
+    <td>macOS 10 or later</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
@@ -58,7 +58,7 @@ See the table below for the browser support of Agora Web SDK:
     <td><font color="red">✘</td>
   </tr>
   <tr>
-    <td>Windows 7+</td>
+    <td>Windows 7 or later</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
 		<td><b>N/A</b></td>
@@ -69,11 +69,13 @@ See the table below for the browser support of Agora Web SDK:
   </tr>
 </table>
 
-> Agora Web SDK 2.5 also supports Chrome 49 on Windows XP.
+> The Agora Web SDK v2.5 or later also supports Google Chrome 49 on Windows XP.
 
 > To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
 
 ### Known Issues and Limitations
+
+- Affected by browser policy changes, `Stream.play`, `Stream.startAudioMixing`, and `Stream.getAudioLevel` must be triggered by the user's gesture on the Chrome 70+ and Safari browsers, see [Autoplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes) for details.
 
 - The Agora Web SDK supports video profiles up to 1080p resolutions if the client has a true HD camera installed. However, the maximum resolution is limited by the camera device capabilities.
 - The Agora Web SDK does not support code obfuscation.
@@ -158,7 +160,6 @@ Added the following APIs:
 #### 5. Other New Features
 
 - Support for two video display modes. You can set the display mode in  `Stream.play`.
-- Added the `Stream.setScreenBitrate` method to enable the users to set the video bitrate for screen sharing.
 - Added the `Client.enableAudioVolumeIndicator` method to enable the SDK regularly reports the active speakers and their volumes.
 - Added the `Stream.setAudioVolume` method, which sets the audio volume of the subscribed stream.
 - Added the `networkTypeChanged` callback to inform the application that the network type is changed.
@@ -362,17 +363,18 @@ The version 2.1.0 was released on March 7, 2018. See below for new features, imp
 - Fixed the 90-degree video rotation on Safari
 - Fixed the issue of not seeing the remote video when using the Web SDK on the Firefox browser v59.01 on macOS
 
-## v.2.0
+## v2.0 and Earlier
+### v2.0
 
 The version 2.0 was released on November 21, 2017. See below for new features and issues fixed.
 
-### New Features
+#### New Features
 
 - Added the check browser compatibility function before calling <code>CreateClient</code>, to check the compatibility between the system and the browser.
 - Added the callback to notify the application that the user has granted or denied access to the camera or microphone.
 - Added the video self-adjustment function, by automatically lowering the resolution or frame rate until the video profile matches the input hardware’s capability.
 
-### Issues Fixed
+#### Issues Fixed
 
 - Volume issue with iOS SDK interop.
 - Disconnection issue on Google Chrome caused by prolonged communication.
@@ -381,22 +383,22 @@ The version 2.0 was released on November 21, 2017. See below for new features an
 - No camera-access-grant notification on Google Chrome when it joins the channel without access to the camera.
 - No image on the iOS Safari web browser after the user has returned from another application.
 
-## v1.14
+### v1.14
 
 The version 1.14 was released on October 20, 2017. See below for new features.
 
 Added the screen sharing function by modifying the screen parameter and adding the parameter in the <code>createStream</code> API.
 
-## v1.13
+### v1.13
 
 The version 1.13 was released on September 4, 2017. See below for new features.
 
-### New Features
+#### New Features
 
 - Supported CDN Live with the <code>configPublisher</code> API.
 - Supported Google Chrome for Android.
 
-## v1.12 
+### v1.12 
 
 The version 1.12 was released on July 25, 2017. See below for new features.
 
@@ -448,13 +450,13 @@ The version 1.12 was released on July 25, 2017. See below for new features.
 
 - Updated the error codes.
 
-## v1.8.1
+### v1.8.1
 
 The version 1.8.1 was released on March 16, 2017. See below for issues fixed.
 
 Fixed the incompatibility issue on Google Chrome v57.
 
-## v1.8
+### v1.8
 
 The version 1.8 was released on December 26, 2016. 
 

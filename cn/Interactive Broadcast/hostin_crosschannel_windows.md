@@ -3,7 +3,7 @@
 title: 实现跨直播间连麦
 description: 
 platform: Windows
-updatedAt: Mon Oct 08 2018 03:18:59 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 19:52:46 GMT+0800 (CST)
 ---
 # 实现跨直播间连麦
 # 实现跨直播间连麦
@@ -47,7 +47,7 @@ updatedAt: Mon Oct 08 2018 03:18:59 GMT+0000 (UTC)
 
 ### 准备工作
 
-1.  你已根据 [推流到 CDN](../../cn/Quickstart%20Guide/push_stream_windows.md) 文档里的 **服务器端推流** 章节开通了 RTMP 流查看功能。
+1.  你已根据 [进阶：推流到 CDN](../../cn/Quickstart%20Guide/push_stream_windows.md) 文档里的 **服务器端推流** 章节开通了 RTMP 流查看功能。
 
 2.  你已搭建好 web 服务器。
 
@@ -111,7 +111,7 @@ PublisherConfiguration:
 
 -   默认看到主播上文调用 <code>configPublisher</code> 的 <code>defaultLayout</code> 设置的布局
 
--   如果用户使用 [推流到 CDN](../../cn/Quickstart%20Guide/push_stream_windows.md) 设置了合图布局，则会看到对应的合图布局信息
+-   如果用户使用 [进阶：推流到 CDN](../../cn/Quickstart%20Guide/push_stream_windows.md) 设置了合图布局，则会看到对应的合图布局信息
 
 <a name="id7"></a>
 ## 客户端跨直播间连麦

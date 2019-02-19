@@ -3,13 +3,14 @@
 title: Signaling API
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:04:00 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:21:38 GMT+0000 (UTC)
 ---
 # Signaling API
-> Version: v1.4.0.
+> Version: v1.4.4.
+
 ## Methods
 
->  Only the built-in attributes come after an underscore; the custom attributes do not.
+> Only the built-in attributes come after an underscore; the custom attributes do not.
 
 ### Lifecycle
 
@@ -74,7 +75,7 @@ public native void callbackSet(ICallBack handler);
 
 
 
->  Avoid using synchronous or blocking callback operations. Otherwise, the signaling system may crash.
+> Avoid using synchronous or blocking callback operations. Otherwise, the signaling system may crash.
 
 #### Retrieves a Callback (callbackGet)
 
@@ -144,7 +145,7 @@ public void login(String appId,String account,String token,int uid,String device
 
 
 
->  You can skip generating the token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the call of <code>login</code> will be ignored. To cancel the previous login, call <code>logout</code> beforehand without having to wait until it is successfully executed.
+> You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the call of `login` will be ignored. To cancel the previous login, call `logout` beforehand without having to wait until it is successfully executed.
 
 #### Log into Agora's Signaling System (login2)
 
@@ -186,14 +187,14 @@ public void login2(String appId,String account,String token,int uid,String devic
 <td>Maximum time allowed to re-login, 30 seconds by default.</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>Maximum times allowed to re-login, 3 times by default.</td>
+<td>Maximum times allowed to re-login, 15 times by default.</td>
 </tr>
 </tbody>
 </table>
 
 
 
->  You can skip generating the token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. <code>onLoginFailed</code> will be triggered and reconnection stopped when either <code>retry_time_in_s</code> or <code>retry_count</code> is reached.
+> You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. `onLoginFailed` will be triggered and reconnection stopped when either `retry_time_in_s` or `retry_count` is reached.
 
 #### Log out of the Agora's Signaling System(logout)
 
@@ -526,7 +527,7 @@ public void channelJoin(String channelID);
 
 
 
->  Special channels are used by servers only to receive login and channel events.
+> Special channels are used by servers only to receive login and channel events.
 
 #### Allows a User to Leave a Channel (channelleave)
 
@@ -784,7 +785,7 @@ public void messageChannelSend(String channelID,String msg,String msgID);
 <td>Channel name. It can be up to 128 visible characters.</td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>Message body. Each channel message must not exceed 8 KB visible characters. Each user cannot send more than 60 messages per second, and the entire channel cannot send more than 1,000 messages per second.</td>
+<td>Message body. Each channel message must not exceed 8 KB visible characters. Each user cannot send more than 60 messages per second, and the entire channel cannot send more than 200 messages per second.</td>
 </tr>
 <tr><td><code>msgID</code></td>
 <td>Visible characters. Message ID. Agora recommends setting it to “”, allowing the SDK to generate and assign the <code>msgID</code> and to ensure its uniqueness.</td>
@@ -800,7 +801,7 @@ public void messageChannelSend(String channelID,String msg,String msgID);
 
 This method initiates a call, that is, invites a user to join a specified channel.
 
->  Calling and joining a channel are two separate processes. The user has to call <code>channelJoin</code> to join the channel. The user can either join the channel before sending a call invitation or send a call invitation before joining the channel (when the counterpart accepts the invitation).
+> Calling and joining a channel are two separate processes. The user has to call <code>channelJoin</code> to join the channel. The user can either join the channel before sending a call invitation or send a call invitation before joining the channel (when the counterpart accepts the invitation).
 
 If the call fails, the user will receive the <code>onInviteFailed</code> callback function. Possible reasons include:
 
@@ -877,7 +878,7 @@ public void channelInviteUser2(String channelID,String account,String extra);
 
 
 
->  You do not need to set the `_require_peer_online` field when making a SIP call.
+> You do not need to set the `_require_peer_online` field when making a SIP call.
 
 #### Sends a DTMF (Dual-tone Multi-frequency) Message to the Other User (channelInviteDTMF)
 
@@ -1066,6 +1067,7 @@ This method retrieves the version of the SDK.
 ```
 public int getSdkVersion();
 
+
 ```
 
 <table>
@@ -1091,6 +1093,7 @@ This method sends a channel message without joining the channel. Agora does not 
 
 ```
 public native void messageChannelSendForce(String channelID,String msg,String msgID);
+
 
 ```
 
@@ -1159,6 +1162,7 @@ This callback function is triggered when the connection to Agora’s signaling s
 ```
 public void onReconnecting(int nretry);
 
+
 ```
 
 <table>
@@ -1184,6 +1188,7 @@ This callback function returns a detailed description of the error.
 
 ```
 public void onError(String name,int ecode,String desc)
+
 
 ```
 
@@ -1226,6 +1231,7 @@ This callback function returns the query result of the user status and is trigge
 ```
 public void onQueryUserStatusResult(String name,String status)
 
+
 ```
 
 <table>
@@ -1260,6 +1266,7 @@ This callback function is triggered when the application is reconnected to Agora
 ```
 public void onReconnected(int fd);
 
+
 ```
 
 <table>
@@ -1285,6 +1292,7 @@ This callback function is triggered when a user is logged into Agora’s signali
 
 ```
 public void onLoginSuccess(int uid,int fd);
+
 
 ```
 
@@ -1315,6 +1323,7 @@ This callback function is triggered when a user is logged out of Agora’s signa
 ```
 public void onLogout(int ecode);
 
+
 ```
 
 <table>
@@ -1341,6 +1350,7 @@ This callback function is triggered when a user has failed to log into Agora’s
 ```
 public void onLoginFailed(int ecode);
 
+
 ```
 
 <table>
@@ -1366,6 +1376,7 @@ This callback function is triggered when the remote calling process has succeede
 
 ```
 void onInvokeRet(String callID, String err, String resp);
+
 
 ```
 
@@ -1399,6 +1410,7 @@ This callback function is triggered when a user has joined a channel.
 ```
 public void onChannelJoined(String channelID);
 
+
 ```
 
 <table>
@@ -1424,6 +1436,7 @@ This callback function is triggered when a user has failed to join a channel.
 
 ```
 public void onChannelJoinFailed(String channelID,int ecode);
+
 
 ```
 
@@ -1454,6 +1467,7 @@ This callback is triggered when a user has left a channel.
 ```
 public void onChannelLeaved(String channelID,int ecode);
 
+
 ```
 
 <table>
@@ -1482,6 +1496,7 @@ This callback function is triggered when another user has joined the channel.
 
 ```
 public void onChannelUserJoined(String account,int uid);
+
 
 ```
 
@@ -1512,6 +1527,7 @@ This callback function is triggered when another user has left the channel.
 ```
 public void onChannelUserLeaved(String account,int uid);
 
+
 ```
 
 <table>
@@ -1538,12 +1554,13 @@ public void onChannelUserLeaved(String account,int uid);
 
 A user will receive this callback function after joining a channel.
 
->  The retrieved user list includes a maximum of the latest 200 users in the channel.
+> The retrieved user list includes a maximum of the latest 200 users in the channel.
 
 <br/>
 
 ```
 public void onChannelUserList(String[] accounts, int[] uids);
+
 
 ```
 
@@ -1573,6 +1590,7 @@ This callback function is triggered when a user has queried the number of users 
 
 ```
 public void onChannelQueryUserNumResult(String channelID,int ecode,int num);
+
 
 ```
 
@@ -1605,6 +1623,7 @@ This callback function is triggered when a user has queried whether he/she is in
 
 ```
 public virtual void onChannelQueryUserIsIn(std::string channelID, std::string account, int isIn){}
+
 
 ```
 
@@ -1643,6 +1662,7 @@ This callback function is triggered when a channel attribute has changed.
 
 ```
 public void onChannelAttrUpdated(String channelID,String name,String value,String type);
+
 
 ```
 
@@ -1687,6 +1707,7 @@ This callback function is received by the callee when the callee has received a 
 ```
 public void onInviteReceived(String channelID,String account,int uid,String extra);
 
+
 ```
 
 <table>
@@ -1722,6 +1743,7 @@ This callback function is received by the caller when the callee has received th
 ```
 public void onInviteReceivedByPeer(String channelID,String account,int uid);
 
+
 ```
 
 <table>
@@ -1753,6 +1775,7 @@ This callback function is received by the caller when the callee has accepted th
 
 ```
 public void onInviteAcceptedByPeer(String channelID,String account,int uid, String extra);
+
 
 ```
 
@@ -1792,6 +1815,7 @@ This callback function is received by the caller when the callee rejects the cal
 ```
 public void onInviteRefusedByPeer(String channelID,String account,int uid, String extra);
 
+
 ```
 
 <table>
@@ -1827,6 +1851,7 @@ This callback function is triggered when a call has failed.
 ```
 public void onInviteFailed(String channelID,String account,int uid,int ecode, String extra);
 
+
 ```
 
 <table>
@@ -1861,6 +1886,7 @@ This callback function is triggered when the callee has ended the call.
 
 ```
 public void onInviteEndByPeer(String channelID,String account,int uid, String extra);
+
 
 ```
 
@@ -1900,6 +1926,7 @@ This callback function is triggered when the caller ends the call.
 ```
 public void onInviteEndByMyself(String channelID,String account,int uid);
 
+
 ```
 
 <table>
@@ -1931,6 +1958,7 @@ This callback function is triggered when the caller has received the DTMF messag
 
 ```
 public void onInviteMsg(String channelID, String account, int uid, String msgType, String msgData, String extra)
+
 
 ```
 
@@ -1973,6 +2001,7 @@ This callback function is triggered when a user has failed to send a message.
 ```
 public void onMessageSendError(String messageID,int ecode);
 
+
 ```
 
 <table>
@@ -2002,6 +2031,7 @@ This callback function is triggered when a user has successfully sent a message.
 ```
 public void onMessageSendSuccess(String messageID);
 
+
 ```
 
 <table>
@@ -2027,6 +2057,7 @@ This callback function notifies a user that a message has been received.
 
 ```
 public void onMessageInstantReceive(String account,int uid,String msg);
+
 
 ```
 
@@ -2059,6 +2090,7 @@ This callback function is triggered when a channel message has been received.
 
 ```
 public void onMessageChannelReceive(String channelID,String account,int uid,String msg);
+
 
 ```
 
@@ -2095,6 +2127,7 @@ This callback function is triggered when a line has been created in a log file.
 ```
 public void onLog(String txt);
 
+
 ```
 
 <table>
@@ -2120,6 +2153,7 @@ This callback function is triggered when a user has queried an attribute of a sp
 
 ```
 public void onUserAttrResult(String account,String name,String value);
+
 
 ```
 
@@ -2152,6 +2186,7 @@ This callback function is triggered when a user has queried all attributes of a 
 
 ```
 public void onUserAttrAllResult(String account,String value);
+
 
 ```
 

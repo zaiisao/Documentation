@@ -3,10 +3,13 @@
 title: 发布和订阅音视频流
 description: 小程序平台发布音视频流
 platform: 微信小程序
-updatedAt: Fri Nov 02 2018 04:02:13 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 09:11:53 GMT+0000 (UTC)
 ---
 # 发布和订阅音视频流
-## 发布本地音视频流
+在发布和订阅音视频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Video/miniapp_video.md)。
+
+## 实现方法
+### 发布本地音视频流
 加入频道后，使用 发布本地音视频流 `publish` 方法发布本地音视频流。
 
 ```
@@ -14,7 +17,7 @@ client.publish(onSuccess, onFailure);
 ```
 
 
-## 订阅远端音视频流
+### 订阅远端音视频流
 订阅远端音视频流步骤如下：
 
 1.  监听事件 `on`。当有人发布音视频流到频道里时，会收到该事件。
@@ -59,3 +62,8 @@ let client = new AgoraMiniappSDK.Client();
     });
 		
 ```
+
+## 相关文档
+你已成功开始通话/直播。通话/直播结束后，可以使用 Agora SDK 退出当前频道：
+
+- [离开频道](../../cn/Video/leave_mini.md)

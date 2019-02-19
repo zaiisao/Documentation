@@ -3,24 +3,146 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 03:58:08 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:42:29 GMT+0000 (UTC)
 ---
 # 发版说明
-本文提供 Agora 完整包的发版说明。
+本文提供 Agora 视频 SDK 的发版说明。
 
 ## **简介**
 
-iOS 完整包支持两种主要场景:
+iOS 视频 SDK 支持两种主要场景:
 
 -   音视频通话
 
 -   音视频直播
 
+点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)以及 [互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms) 了解关键特性。
+
+## **2.3.3 版**
+
+该版本于 2019 年 1 月 24 日发布。修复问题详见下文。
+
+### **问题修复**
+
+修复了 `networkQuality` 回调不准确的问题。
+
+## **2.3.2 版**
+该版本于 2019 年 1 月 16 日发布。新增特性与修复问题详见下文。
+
+### **升级必看**
+
+2.3.2 除了下文提到的功能和改进外，整体提升直播模式下视频弱网下抗丢包能力，提高流畅度，降低卡顿率。升级前，请了解版本兼容性:
+
+- Native SDK 版本号须大于等于 1.11 版本
+- Web SDK 版本号须大于等于 2.1 版本
+
+### **新增功能**
+
+#### 1. 摄像头曝光
+
+为提升视频采集质量，该版本新增如下接口，支持摄像头曝光功能。开发者可以将需要自动曝光的区域位置发送给  Agora SDK，摄像头会基于该区域自动曝光。
+
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraExposurePositionSupported)：检查设备是否支持摄像头曝光
+- [`setCameraExposurePosition`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraExposurePosition:)：设置摄像头曝光区域
+- [`cameraExposureDidChangedToRect`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:cameraExposureDidChangedToRect:)：摄像头曝光区域已更改
+
+#### 2. 提升直播清晰度
+
+Agora SDK 会根据网络条件进行码率自适应。为满足用户在直播场景下对视频清晰度的要求，该版本在 [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:) 接口中新增 [`minBitrate`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/minBitrate) 参数，强制视频编码器输出高质量图片。如果将参数设为高于默认值，在网络状况不佳情况下可能会导致网络丢包，并影响视频播放的流畅度。因此如非对画质有特殊需求，Agora 建议不要修改该参数的值。
+
+#### 3. 控制音乐文件的播放音量
+
+为方便用户控制混音音乐文件在本地及远端的播放音量，该版本在已有 [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:) 的基础上新增 [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:) 和 [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:) 接口，用于分别控制混音音乐文件在本地和远端的播放音量。
+
+该版本梳理了用户在音频采集到播放过程中可能会需要调整音量的场景，及各场景对应的 API，供用户参考使用。详见官网文档[调整通话音量](../../cn/Video/volume_ios.md)。
+
+### **改进**
+
+#### 1. 提供更透明的质量数据统计
+
+为提升质量透明的用户体验，该版本废弃了原有的 `audioQualityOfUid` 回调，并新增 `remoteAudioStats` 回调进行取代。和原来的接口相比，新接口使用更为综合的算法，通过引入音频丢帧率、端到端的音频延迟、接收端网络抖动的缓冲延迟等参数，使回调结果更贴近用户感受。同时，该版本优化了 `networkQuality` 的算法，对上下行网络质量采用不同的计算方法，使评分更精准。
+
+- [`remoteAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:)：通话中远端音频流的统计信息回调。用于替换	`audioQualityOfUid`
+- [`networkQuality`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkQuality:txQuality:rxQuality:)：通话中每个用户的网络上下行 Last mile 质量报告回调。
+
+Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
+
+- [`lastmileQuality`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileQuality:)：通话前网络上下行 Last mile 质量报告回调
+
+该版本对数据统计相关回调进行了统一梳理，相关回调及算法详见[通话中数据统计](../../cn/Video/in_call_statistics_ios.md)。
+
+#### 2. 改进获取 SDK 网络连接状态的生成策略
+
+为提升 SDK 使用数据统计的准确性和合理性，该版本新增如下接口，用以获取 SDK 的网络连接状态，以及连接状态发生改变的原因。
+
+- [`getConnectionState`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getConnectionState)：获取 SDK 的网络连接状态
+- [`connectionChangedToState`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)：SDK 的网络连接状态已改变回调
+
+该版本废弃了原有的 [`rtcEngineConnectionDidInterrupted`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidInterrupted:) 和 [`rtcEngineConnectionDidBanned`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:) 回调。
+
+在新的接口下，SDK 共有 5 种连接状态：未连接、正在连接、已连接、正在重新建立连接和连接失败。当连接状态发生改变时，都会触发 `connectionChangedToState` 回调。当条件满足时，原有的 `rtcEngineConnectionDidInterrupted` 和 `rtcEngineConnectionDidBanned` 回调也会触发，但 Agora 不再推荐使用。
+
+#### 3. 优化打分反馈机制
+
+为方便用户（开发者）收集最终用户（应用程序使用者）对使用应用进行通话或直播的反馈，该版本将 [`rate`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/rate:rating:description:) 接口中的打分范围缩小为 1 - 5，减少最终用户的打分干扰。Agora 建议在应用程序中集成该接口，方便应用程序收集用户反馈。
+
+#### 4. 音乐场景的音质优化
+
+该版本针对高音质需求场景，如音乐教学等进行了音质改进。通过调用 [`setAudioProfile`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:)，将 [`AgoraAudioProfile`](https://docs.agora.io/cn/Video/API%20Reference/oc/Constants/AgoraAudioProfile.html) 设置为 `MusicHighQuality(4)`，[`AgoraAudioScenario`](https://docs.agora.io/cn/Video/API%20Reference/oc/Constants/AgoraAudioScenario.html) 设置为 `GameStreaming(3)` 实现，在有效消除回声、降低噪音的同时，不损害音乐的音质。
+
+#### 5. 其他改进
+
+- 优化了直播模式下视频弱网抗丢包能力
+- 加快了严重拥塞状态视频的恢复速度
+- 提升了推流稳定性
+- 优化了 API 的调用线程
+- 优化了 SDK 在 iOS 中低端设备上的性能
+- 增加了重新检测耳机插入和蓝牙设备连接的代码
+- 降低了音频延时
+
+
+### **问题修复**
+
+#### 音频相关：
+
+- 修复了设备在连接蓝牙的状态下，退出频道后，音频不走蓝牙的问题
+- 修复了调用 `startAudioMixing` 播放音乐文件时出现的崩溃问题
+- 修复了麦克风在禁用的状态下，设备插上耳机后，禁用失效的问题
+- 修复了外放条件下，上下麦、系统电话打断、Siri 中断、进退频道等多种场景下，出现的无法调节外放音量的问题
+- 修复了应用从后台切回前台时，出现的出声音慢的问题
+
+#### 视频相关：
+
+- 修复了视频自采集时的偶现问题
+- 修复了屏幕共享时出现的本地和远端鼠标位置不一致的问题
+
+
+### **API 整理**
+
+为提升用户体验，Agora 在 v2.3.2 版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraExposurePositionSupported)
+- [`setCameraExposurePosition`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraExposurePosition:)
+- [`getConnectionState`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getConnectionState)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
+- [`connectionChangedToState`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)
+- [`CameraExposureDidChangedToRect`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:cameraExposureDidChangedToRect:)
+- [`remoteAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:)
+
+#### 废弃
+
+- [`audioQualityOfUid`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:audioQualityOfUid:quality:delay:lost:)
+- [`rtcEngineConnectionDidInterrupted`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidInterrupted:)
+- [`rtcEngineConnectionDidBanned`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:)
+
 ## **2.3.1 版**
 
 该版本于 2018 年 9 月 28 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+### **新增功能**
 
 ####  关闭/重新开启本地语音功能
 
@@ -28,11 +150,11 @@ iOS 完整包支持两种主要场景:
 
 该功能与 `muteLocalAudioStream` 的区别在于前者不采集不发送，而后者是采集但不发送。
 
-**改进**
+### **改进**
 
 - 优化了 iOS 低端设备在纯音频通信模式下的 CPU 消耗
 
-**问题修复**
+### **问题修复**
 
 - 修复了某些 iOS 设备上偶现的崩溃问题
 - 修复了使用自定义视频源功能时某些 iOS 设备上出现的崩溃问题
@@ -50,7 +172,7 @@ iOS 完整包支持两种主要场景:
 
 Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可用性，保证了更加可靠的实时通信。同时音视频质量也得到进一步提高。 视频方面，通过优化编码性能，增强了弱网对抗能力，减少卡顿时间，提升视频流畅度；音频方面，采用深度学习算法，改进了通话中的音频质量。
 
-**升级必看**
+### **升级必看**
 
 -   为满足场景中视频旋转的需要，提升自定义视频源画质，该版本引入 `setVideoEncoderConfiguration` 替换原 `setVideoProfile` 接口。 `setVideoProfile` 接口仍可用，但不再推荐。
 
@@ -63,7 +185,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
 
-**新增功能**
+### **新增功能**
 
 本次发版新增如下功能：
 
@@ -91,7 +213,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 在设置直播转码接口 `setLiveTranscoding` 中，新增 `backgroundImage` 参数，支持设置直播转码合图的背景图片。
 
-**改进功能**
+### **改进功能**
 
 -   优化了一对一音视频的质量，在降低延时、防止卡顿方面提升明显。优化效果重点覆盖东南亚、南美、非洲和中东等地区
 
@@ -100,7 +222,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   采用深度学习算法，改进了通话及直播中的音频质量
 
 
-**问题修复**
+### **问题修复**
 
 -   修复了多人视频直播连麦场景下，SDK 内存异常增长的问题
 
@@ -193,7 +315,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   修复了特定场景下，某些 iOS 设备上无法调节音量的问题
 
 
-**API 整理**
+### **API 整理**
 
 为提升用户体验，Agora 在 v2.3.0 版本中对 API 进行了梳理，并针对部分接口进行了如下处理：
 
@@ -226,11 +348,11 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 7 月 5 日发布。新增特性与修复问题列表详见下文。
 
-**升级必看**
+### **升级必看**
 
 为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
-**问题修复**
+### **问题修复**
 
 -   修复了特定场景下偶发的线上统计崩溃的问题。
 
@@ -244,12 +366,22 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 -   修复了特定场景偶发的视频尺寸变化后，视频卡住的问题。
 
+## **2.2.2 版**
+
+该版本于 2018 年 6 月 21 日发布。修复问题列表详见下文。
+
+### **问题修复**
+
+- 修复了特定场景下偶发的线上统计崩溃的问题
+- 修复了 iOS 设备无法同时使用媒体和信令服务的问题
+- 修复了偶发的无法正常反馈频道内谁在说话以及说话者的音量的问题
+- 修复了特定场景下偶发的视频窗口尺寸变化后，视频卡住的问题
 
 ## **2.2.1 版**
 
 该版本于 2018 年 5 月 30 日发布。新增特性与修复问题列表详见下文。
 
-**问题修复**
+### **问题修复**
 
 -   修复了部分设备上偶现的 Crash 问题。
 
@@ -262,7 +394,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 5 月 4 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+### **新增功能**
 
 本次发版新增如下功能：
 
@@ -284,7 +416,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 在本地直播及旁路直播中增加水印功能，允许用户将一张 PNG 图片作为水印添加到正在进行的本地直播或旁路直播中。新增 `addVideoWatermark` 和 `clearVideoWatermarks` 接口，以添加或删除本地直播水印；`LiveTranscoding`接口中新增 `watermark` 参数，用于控制旁路直播中水印的添加。
 
-**改进功能**
+### **改进功能**
 
 本次发版改进如下功能：
 
@@ -308,7 +440,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 新增支持 Bitcode 功能。支持 Bitcode 的 SDK 包大小约为普通包的 2.5 倍；使用 Bitcode 开发的 App 在上传 App Store 后，App Store 会对其进行优化及瘦身，瘦身程度视 App 的代码量而定，代码量越大，瘦身程度越高。
 
-**问题修复**
+### **问题修复**
 
 -   修复了某些 iOS 设备横屏时，偶现的其他用户看 iOS 设备画面异常的问题。
 
@@ -321,11 +453,11 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 4 月 19 日发布。新增特性与修复问题列表详见下文。
 
-**升级必看**
+### **升级必看**
 
 该版本的 SDK 修改了 `setVideoProfile` 方法在直播模式下的码率值，修改后的码率值与 2.0 版本一致。
 
-**问题修复**
+### **问题修复**
 
 -   修复了 SDK 没有设置 Delegate 时，偶尔收不到 Block 回调的问题。
 
@@ -340,7 +472,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   修复了通信或直播过程中偶现 Crash 的问题。
 
 
-**改进**
+### **改进**
 
 改进了通信和直播模式下屏幕共享的效果，缩短了用户从屏幕共享模式切换回普通模式需要的时间间隔。
 
@@ -348,15 +480,15 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 4 月 2 日发布。新增特性与修复问题列表详见下文。
 
-**升级必看**
+### **升级必看**
 
 SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，但带宽也会变大。
 
-**新增功能**
+### **新增功能**
 
 在已有 `setVideoProfile` 接口的基础上，新增一个 `setVideoResolution` 接口。用户可以用此接口，根据自身业务需要，手动设置视频的分辨率、帧率和码率。
 
-**问题修复**
+### **问题修复**
 
 -   修复了之前版本 SDK 在 iOS 11 平台上崩溃的问题。
 
@@ -373,7 +505,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 该版本于 2018 年 3 月 7 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+### **新增功能**
 
 本次发版新增如下功能：
 
@@ -400,7 +532,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 -   [实现视频直播](../../cn/Quickstart%20Guide/broadcast_video_ios.md)
 
--   [实现 17 人直播场景](../../cn/Quickstart%20Guide/seventeen_people.md)
+-   [实现七人以上视频通话](../../cn/Video/seventeen_people_iosmac.md)
 
 
 #### 5. 自定义视频源
@@ -419,7 +551,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 
 新增回调接口提示相机的对焦区域已发生改变，新增了回调 `cameraFocusDidChanged` 。
 
-**改进**
+### **改进**
 
 本次发版改进如下功能：
 
@@ -455,7 +587,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 
 
 
-**问题修复**
+### **问题修复**
 
 -   修复了自采集方案退出频道后 app 录不到声音的问题;
 
@@ -470,15 +602,17 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 
 该版本于 2017 年 12 月 15 日发布。新增特性与修复问题列表详见下文。
 
-**问题修复**
+### **问题修复**
 
 修复了 ffmpeg 符号冲突问题;
 
-## **2.0 版**
+## **2.0 版及之前**
+
+### **2.0 版**
 
 该版本于 2017 年 12 月 6 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
 -   通信场景支持视频大小流功能，新增 API `setRemoteVideoStreamType()`和 `enableDualStreamMode()` 。
 
@@ -578,15 +712,15 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   通信和直播场景下支持服务端踢人功能。如有需要，请联系 [sales@agora.io](mailto:sales@agora.io) 开通该功能。
 
 
-**问题修复**
+#### **问题修复**
 
 修复了音频路由和蓝牙相关的若干问题。
 
-## **1.14 版**
+### **1.14 版**
 
 该版本于 2017 年 10 月 20 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
 -   新增 API `setAudioProfile` 设置音频参数和应用场景。
 
@@ -595,7 +729,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   直播场景: 新增 API `setInEarMonitoringVolume` 提供调节耳返音量功能。
 
 
-**改进**
+#### **改进**
 
 -   优化了在高码率下的音频体验。
 
@@ -614,45 +748,27 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
     -   1.14 开始: 精准的码率控制，要多少给多少，不多给也不少给，避免波动过大造成的网络拥塞，减少传输延时，有助于减少网络卡顿。
 
 
-**问题修复**
+#### **问题修复**
 
 修复了部分 iOS 机器上偶现的崩溃。
 
-**改进**
 
--   优化了在高码率下的音频体验。
-
--   秒开: 直播场景下，单流模式时观众加入频道1 秒内看见主播图像\(均值为 226 ms, 网络状态良好时可达 204 ms\)。
-
--   节省带宽: 1.14 以前如果你选择不听某人的音频或不看某人的视频，音视频流会照发。从 1.14 开始，如果你选择不听或不看某人的流，则不会下发，从而节省带宽。
-
--   精准的码率控制:
-
-    -   1.14 之前: 码率控制不够精准，上下波动幅度较大。波动过大容易造成网络拥塞，增加丢包、丢帧的概率，影响了带宽估计模块的精度，特别是在弱网低码率情况下尤为明显。
-
-    -   1.14 开始: 精准的码率控制，要多少给多少，不多给也不少给，避免波动过大造成的网络拥塞，减少传输延时，有助于减少网络卡顿。
-
-
-**问题修复**
-
-修复了部分机器上偶现的崩溃问题。
-
-## **1.13.1 版**
+### **1.13.1 版**
 
 该版本于 2017 年 9 月 28 日发布。新增特性与修复问题列表详见下文。
 
-**问题修复**
+#### **问题修复**
 
 -   解决了 iOS 11 在 iPhone 7\(及以上版本\) 手机外放下无法调节音量的问题。
 
 -   优化了特定场景下出现的回声问题。
 
 
-## **1.13 版**
+### **1.13 版**
 
 该版本于 2017 年 9 月 4 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
 -   新增 API `didClientRoleChanged` 用于提醒直播场景下主播、观众上下麦的回调。
 
@@ -663,22 +779,22 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   为 SDK 新增了 module map, 意味着 Swift 项目以后不需要添加桥接文件才能使用。
 
 
-**改进**
+#### **改进**
 
 -   软编情况下，视频属性可控
 
 -   可以在客户端设置推流的 profile
 
 
-**修复问题**
+#### **修复问题**
 
 修复了部分机型上偶现的崩溃。
 
-## **1.12 版**
+### **1.12 版**
 
 该版本于 2017 年 7 月 25 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
 -   在 API 方法 `setEncryptionMode` 里新增了加密模式 `aes-128-ecb`。
 
@@ -689,7 +805,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   直播场景下， 新增了 API 方法 `injectStream`在当前频道内插入一条 RTMP 流。该功能目前为 beta 版。
 
 
-**改进**
+#### **改进**
 
 通信场景下针对 320 x 180 分辨率提供了以下改进方案:
 
@@ -698,7 +814,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 -   网络和设备状态良好的情况下可以做到比 180P 更好的画质清晰度。
 
 
-**修复问题**
+#### **修复问题**
 
 修复了部分机型上偶现的崩溃问题。
 

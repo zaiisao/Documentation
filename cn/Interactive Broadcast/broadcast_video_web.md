@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Web
-updatedAt: Wed Oct 17 2018 06:51:38 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:10:42 GMT+0000 (UTC)
 ---
 # 实现视频直播
 # 入门: 实现视频直播
@@ -186,7 +186,7 @@ client.on('stream-subscribed', function (evt) {
 
 ```javascript
 client.leave(function () {
-  console.log("Leavel channel successfully");
+  console.log("Leave channel successfully");
 }, function (err) {
   console.log("Leave channel failed");
 });

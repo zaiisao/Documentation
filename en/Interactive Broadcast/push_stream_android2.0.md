@@ -3,16 +3,22 @@
 title: Push Streams to the CDN
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 17:09:24 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 21:48:29 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
-Agora's CDN publishing solution is based on the following APIs to publish streams to the CDN, inject external video streams, transcode, and set the output layout.
+## Introduction
+
+The CDN live streaming feature enables a host (broadcaster) to transform the uplink stream into RTMP and distribute it through different channels such as the Web browser or streaming media player. 
+
+> Contact sales@agora.io to enable Agora's CDN live streaming feature. 
+
+Agora's CDN publishing solution is based on the following API methods to publish streams to the CDN, inject external video streams, transcode, and set the output layout.
 
 -   `addPublishStreamUrl`
 -   `removePublishStreamUrl`
 -   `setLiveTranscoding`
 
-This solution is flexiible. It allows:
+This solution is flexible and allows:
 
 -   Starting or stopping publishing to the CDN.
 -   Adding or removing a streaming URL without interrupting the ongoing publishing.
@@ -25,9 +31,9 @@ This solution is flexiible. It allows:
 
 Contact [sales@agora.io](mailto:sales@agora.io) to enable this function.
 
-> You will be able to enable this function in the Dashboard in future releases.
-> -   A host can dynamically add or remove a URL after joining the channel.
-> -   A host can set transcoding and the layout, for example, the canvas settings and multiple-host window settings, only after joining a channel.
+> You can enable this function in Dashboard in future releases.
+> -  A host can dynamically add or remove a URL after joining the channel.
+> -  A host can set transcoding and the layout, for example, the canvas settings and multiple-host window settings, only after joining a channel.
 
 The following figure shows a typical CDN-pushing scenario.
 

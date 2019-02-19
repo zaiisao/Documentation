@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Nov 07 2018 07:43:00 GMT+0000 (UTC)
+updatedAt: Fri Feb 15 2019 08:53:07 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -55,6 +55,9 @@ RESTful API 仅支持 HTTPS。用户必须通过 basic HTTP 认证:
 ## 3. 项目相关的 API
 
 BaseUrl：**https://api.agora.io/dev/v1**
+
+下图展示了项目相关 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1545984231749)
 
 ### 获取所有项目 \(GET\)
 
@@ -351,6 +354,9 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 BaseUrl：**https://api.agora.io/dev/v1**
 
+下图展示了用量相关 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1545984263920)
+
 ### 获取用量数据（GET)
 
 -   方法：GET
@@ -395,6 +401,14 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 BaseUrl: **https://api.agora.io/dev/v1**
 
+下图展示了服务器踢人相关 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1545984284445)
+
+> 用户被踢出频道后，会收到网络连接已被服务器禁止回调。
+- Android: [`onConnectionBanned`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
+- iOS/macOS:[`ConnectionDidBanned`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:)
+- Web:[`onclient-banned`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)
+- Windows:[`onConnectionBanned`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a38e9d403ae4732dff71110b454149404)
 
 ### 创建规则 (POST)
 
@@ -404,19 +418,20 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-            "appid":"",   // dashboard中项目的appID，必填
-            "cname":"",   // channel name 频道名称，非必填，可以不传，但不能传 cname:""
-            "uid":"",     // uid，sdk可以获取到，非必填，可以不传，但不能传 uid:0
-            "ip":"",      // IP地址需要封的用户IP，非必填，可以不传，但不能传 ip:0
-            "time": 60    //  封人时间，单位是分钟，最大 1440 分钟，最小一分钟。如果大于 1440 分钟，会被处理成 1440 分钟，如果不传默认为 1 小时。非必填。比如：time:60
+				"appid":"",   // dashboard中项目的appID，必填
+				"cname":"",   // channel name 频道名称，非必填，可以不传，但不能传 cname:""
+				"uid":"",     // uid，sdk可以获取到，非必填，可以不传，但不能传 uid:0
+				"ip":"",      // IP地址需要封的用户IP，非必填，可以不传，但不能传 ip:0
+				"time": 60    //  封人时间，单位是分钟，最大 1440 分钟，最小一分钟。如果大于 1440 分钟，会被处理成 1440 分钟，如果不传默认为 1 小时。非必填。比如：time:60
+				"privileges":["join_channel"]
      }
     ```
 
-
->     踢人规则通过 cname、uid 和 ip 三个字段组合起来过滤实现，规则如下：
->     -   如果填写 ip，不填写 cname 或 uid，则该 ip 无法登陆 App 中的任何频道
->     -   如果填写 cname，不填写 uid 或 ip，则任何人都无法登陆 App 中该 cname 对应的频道
->     -   如果填写 cname 和 uid，不填写 ip，则该 uid 无法登陆 App 中该 cname 对应的频道
+> - 如果 time 字段设置为 0，则表示不封禁，服务端会对频道内符合设定规则的用户进行下线一次的操作。用户可以重新登录进入频道。 
+> - 踢人规则通过 cname、uid 和 ip 三个字段组合起来过滤实现，规则如下：
+>   - 如果填写 ip，不填写 cname 或 uid，则该 ip 无法登录 App 中的任何频道
+>   - 如果填写 cname，不填写 uid 或 ip，则任何人都无法登录 App 中该 cname 对应的频道
+>   - 如果填写 cname 和 uid，不填写 ip，则该 uid 无法登录 App 中该 cname 对应的频道
 
 -   响应：
 
@@ -448,7 +463,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
         "rules": [
             {
                 "id": 1953,                                     // 规则id，如：更新规则是需要带上此id
-                "appid": "80e54398fed94ae8a010acf782f569b7"     // 对应dashboard中项目的appID
+                "appid": ""                                     // 对应dashboard中项目的appID
                 "uid": 1,                                       // uid，客户端中看到
                 "opid": 1406,                                   // 操作id，用于核对操作记录（查问题时使用）
                 "cname": "11",                                  // 频道名
@@ -519,6 +534,9 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 > 为防止大量异常请求影响其他用户的正常使用，我们对 API 的调用频率做了限制。当达到限流阈值时，会返回 HTTP 错误 429 \(Too Many Requests\)。我们认为设置的阈值可以满足绝大多数用户的使用场景，如果您被限制，请尝试调整调用频率。如果该限制使您的需求无法得到满足，请联系 [sales@agora.io](mailto:sales@agora.io) 。
 
+下图展示了查询频道信息相关 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1545984592537)
+
 ### 关于用户角色
 
 目前通过 RESTful API 查询到的用户角色（即 online role），和调用 SDK 的 setClientRole 指定的角色含义不同。Online role 是根据频道模式，以及用户的上行媒体流类型来区分的，共有以下几种：
@@ -553,7 +571,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 > 目前 *直播模式纯音频主播* 尚未区分，会被归属到 *直播模式观众* 中。
 
-### 查询用户在频道中的状态信息 \(GET\)
+### 查询用户在频道中的状态及角色信息 \(GET\)
 
 该方法查询某个用户是否在指定频道中，如果是，则给出用户在该频道中的角色等状态。
 
@@ -586,15 +604,16 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 -   响应:
 
-    ```
-    {
-         "success": true,
-         "data": {
-             "in_channel": false,
-             "role": 2
-         }
-    }
-    ```
+	```
+	{
+		"success": true,
+		"data": {
+			"join": 1549073054,
+			"in_channel": true,
+			"role": 2
+		}
+	}
+	```
 
     <table>
 <colgroup>
@@ -605,7 +624,10 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 <tr><td><strong>参数</strong></td>
 <td><strong>描述</strong></td>
 </tr>
-<tr><td>success</td>
+<tr><tr><td>join</td>
+<td><p>该用户加入频道的时间戳</p>
+</td></tr>
+<td>success</td>
 <td><p>查询请求状态</p>
 <ul>
 <li>true：请求成功</li>
@@ -890,6 +912,6 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 ## 7. 错误代码和警告代码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_native.md)。
+详见 [错误代码和警告代码](../../cn/Interactive%20Broadcast/the_error_native.md)。
 
 

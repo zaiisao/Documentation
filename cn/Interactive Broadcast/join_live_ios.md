@@ -3,12 +3,15 @@
 title: 加入频道
 description: ios平台加入直播频道
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:18:00 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 09:54:50 GMT+0000 (UTC)
 ---
 # 加入频道
+在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Interactive%20Broadcast/ios_video.md)。
+
+## 实现方法
 App 在加入频道前，需要先设置频道模式，再加入频道。
 
-## 设置频道模式为直播
+### 设置频道模式为直播
 创建实例后，调用 `setChannelProfile` 方法设置频道模式。SDK 会根据所设置的频道模式使用不同的优化手段。
 
 在该方法中，将频道模式设置为直播模式。直播模式适用于互动直播场景。频道内有主播和观众两种角色，主播收发音视频消息，观众只收不发。
@@ -30,7 +33,7 @@ func setChannelProfile() {
 }
 ```
 
-## 加入直播频道
+### 加入直播频道
 调用 `joinChannelByToken` 方法加入频道。
 
 在该方法中：
@@ -58,3 +61,18 @@ func joinChannel() {
   }
 }
 ```
+
+## 相关文档
+
+成功加入频道后，你可以使用 Agora SDK，实现如下功能进行互动直播：
+
+- [切换用户角色](../../cn/Interactive%20Broadcast/role_ios.md)
+- [发布和订阅音视频流](../../cn/Interactive%20Broadcast/publish_ios_live.md)
+
+在直播过程中，如果对音量、音效、视频分辨率等有特殊需求，你还可以：
+
+- [调整通话音量](../../cn/Interactive%20Broadcast/volume_ios.md)
+- [播放音效/音乐混音](../../cn/Interactive%20Broadcast/effect_mixing_ios.md)
+- [使用耳返](../../cn/Interactive%20Broadcast/in-ear_ios.md)
+- [调整音调、音色](../../cn/Interactive%20Broadcast/voice_effect_ios.md)
+- [设置视频属性](../../cn/Interactive%20Broadcast/videoProfile_ios.md)

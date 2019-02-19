@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Android
-updatedAt: Wed Nov 07 2018 06:11:36 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:48:30 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -47,7 +47,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 	直播频道的主播可以使用 `addInjectStreamUrl` ，指定一个在线媒体流作为连麦端接入房间。
 
 	```java
-	//Java
+	// java
 	String urlPath = "Some online RTMP/HLS url path"
 
 	LiveInjectStreamConfig config = new LiveInjectStreamConfig();
@@ -69,7 +69,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 	频道内的主播可以使用 `removeInjectStreamUrl` 接口，移除一个已经接入的在线媒体流。
 	
 	```java
-	//Java
+	// java
 	String urlPath = "The same online RTMP/HLS url path added before"
 	rtcEngine.removeInjectStreamUrl(urlPath)
 	```

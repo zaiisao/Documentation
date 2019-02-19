@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: iOS
-updatedAt: Wed Nov 07 2018 06:11:58 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:48:48 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -46,12 +46,35 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 - 输入在线媒体流：
 
 	直播频道的主播可以使用 `addInjectStreamUrl` ，指定一个在线媒体流作为连麦端接入房间。
-
+	
 	```swift
-	//Swift
-	let urlPath = "Some online RTMP/HLS url path"
-	let config = AgoraLiveInjectStreamConfig.default()
-	agoraKit.addInjectStreamUrl(urlPath, config: config)
+	// swift
+	// Adds a voice or video stream into an ongoing broadcast.
+
+	let config = AgoraLiveInjectStreamConfig()
+	config.size = CGSize(width: 640, height: 360)
+	config.videoGop = 30
+	config.videoBitrate = 400
+	config.videoFramerate = 15
+	config.audioSampleRate = 48000
+	config.audioBitrate = 48
+	config.audioChannels = 1
+
+	agoraKit.addInjectStreamUrl("media stream url", config: config)
+	```
+
+	```objecitve-c
+	// objective-c
+	AgoraLiveInjectStreamConfig *config = [[AgoraLiveInjectStreamConfig alloc] init];
+	config.size = CGSizeMake(640, 360);
+	config.videoGop = 30
+	config.videoBitrate = 400
+	config.videoFramerate = 15
+	config.audioSampleRate = 48000
+	config.audioBitrate = 48
+	config.audioChannels = 1
+
+	[agoraKit addInjectStreamUrl: @"media stream url" config: config];
 	```
 
 	你可以通过修改 `config` 的参数值控制接入媒体流的分辨率、码率、帧率、音频采样率等参数。详见 [AgoraLiveInjectStreamConfig 参数说明](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveInjectStreamConfig.html)。
@@ -61,9 +84,15 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 	频道内的主播可以使用 `removeInjectStreamUrl` 接口，移除一个已经接入的在线媒体流。
 
 	```swift
-	//Swift
+	// swift
 	let urlPath = "Some online RTMP/HLS url path"
 	agoraKit.removeInjectStreamUrl(urlPath)
+	```
+
+	```objective-c
+	// objective-c
+	NSString *urlPath = @"Some online  RTMP/HLS url path";
+	[agoraKit removeInjectStreamUrl: urlPath];
 	```
 
 	> 主播退出频道后，无需再调用 `removeInjectStreamUrl` 接口。

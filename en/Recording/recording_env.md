@@ -3,7 +3,7 @@
 title: Set Up Your Environment
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 16:23:55 GMT+0000 (UTC)
+updatedAt: Thu Dec 20 2018 06:18:12 GMT+0000 (UTC)
 ---
 # Set Up Your Environment
 In this topic, you will learn how to set up environment to integrate Agora Recording SDK.
@@ -13,10 +13,6 @@ In this topic, you will learn how to set up environment to integrate Agora Recor
 The following table lists the hardware requirements:
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <thead>
 <tr><th>Hardware</th>
 <th>Requirements</th>
@@ -51,13 +47,8 @@ The following table lists the hardware requirements:
 Agora recommends the following hardware configurattions:
 
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
 <thead>
-<tr><thg>Product</th>
+<tr><th>Product</th>
 <th>Description</th>
 <th>Number</th>
 </tr>
@@ -127,10 +118,6 @@ The recording SDK is compatible with the following Agora SDKs:
     <img alt="../_images/linux_structure.png" src="https://web-cdn.agora.io/docs-files/en/linux_structure.png" style="width: 500.0px;"/>
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <thead>
 <tr><th>Folder</th>
 <th>Description</th>
@@ -179,9 +166,9 @@ The recording SDK is compatible with the following Agora SDKs:
 
 
 
-1.  Open the TCP ports 1080 and 8000.
+2.  Open the TCP ports 1080 and 8000.
 
-2.  Open the UDP ports:
+3.  Open the UDP ports:
 
     -   Duplex ports: 1080, 4000-4030, 8000, 9700 and 25000;
 
@@ -189,15 +176,12 @@ The recording SDK is compatible with the following Agora SDKs:
 
 
 > -   Use the command line `iptables -L` to check the UDP port.
-> 
 > -   To record the content in channels, you need one recording process for each of the channels. One recording process requires four simplex downstream ports. There must be no port conflict among the processes, including the system processes and all the recording processes.
-> 
 >  -   Agora recommends that you specify the range of ports used by the recording processes. Configure a large range for all recording processes \(Agora recommends 40000 ~ 41000 or larger\). If so, the Recording SDK assigns ports to each recording process within the specified range and avoids port conflicts automatically. To set the port range, you need to configure the parameters `lowUdpPort` and `highUdpPort`;
-> 
 >  -   If the parameters, `lowUdpPort` and `highUdpPort`, are not specified, the ports used by the recording processes are at random, which may cause port conflicts.
 
 
-1.  Set whitelist domains:
+4.  Set whitelist domains:
 
     -   agora.io
 
@@ -207,11 +191,10 @@ The recording SDK is compatible with the following Agora SDKs:
 
     -   qos.agora.io
 
-2.  Ensure that your compiler is gcc 4.4+.
+5.  Ensure that your compiler is gcc 4.4+.
 
-3.  For the purpose of debug, Agora recommends you to enable core dump on your Linux system. Possible crash information will be recorded. You can refer to the script `create_core.sh` .
-
-4.  If you wish to use java delegate to enable recording, you must install JDK.
+6.  For the purpose of debug, Agora recommends you to enable core dump on your Linux system. Possible crash information will be recorded. 
+7.  If you wish to use java delegate to enable recording, you must install JDK.
 
 
 

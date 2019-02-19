@@ -3,117 +3,240 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(iOS)
-updatedAt: Fri Nov 02 2018 04:11:45 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 13:04:13 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
-使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
-
--   创建/加入频道
-
--   自由发言
-
--   离开频道
-
-
 ## 步骤 1: 准备环境
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新的 Unity 视频软件包。软件包结构如下:
 
-    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_0.png" style="width: 370.0px;"/>
+![](https://web-cdn.agora.io/docs-files/1548831707751)
 
-> `Hello-Video-Unity-Agora` 即为本文需要使用的代码示例。
+2. 请确保已满足以下环境要求:
+- Unity 5.5 或更高版本
+- Xcode 8.0 或更高版本
+- 两部或多部支持音频功能的 iOS 真机(9.0 或更高版本)
 
-   1.  请确保已满足以下环境要求:
+3. [获取 App ID](../../cn/Interactive%20Gaming/token.md)
 
-       -   Unity 5.5 或更高版本
+4. 请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
 
-       -   Xcode 8.0 或更高版本
+## 步骤 2: 创建项目
 
-       -   两部或多部支持音频功能的 iOS 真机 \(9.0 或更高版本\)
+1.  在 Unity 中新建一个项目，选择 **3D**。
 
-       -   准备一个 App ID，详见 [获取 App ID](../../cn/Agora%20Platform/token.md)
+    <img alt="../_images/AMG-Video-Unity3D_23.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_23.png" />
 
-   2.  请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
+2.  在默认场景中添加 **Game Object**: **Sphere** 和一个 **Button**。
 
-## 步骤 2: 编译代码示例
+    <img alt="../_images/AMG-Video-Unity3D_24.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_24.png" />
 
-1.  使用 Unity 打开项目 `Hello-Video-Unity-Agora`。
+3.  把该场景保存于 `Assets/playscene.unity`。
 
-    <img alt="../_images/AMG-Video-Unity3D_1.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_1.png" />
+更多 Unity 使用相关问题，请参考 [Unity 官方文档](https://docs.unity3d.com/2018.2/Documentation/Manual)。
 
-2.  填写 App ID。Unity 会提示 error，点击状态栏的红色惊叹号，自动打开 MonoDevelop 并定位到出错的脚本处填写 App ID。
+## 步骤 3：添加 SDK
 
-    <img alt="../_images/AMG-Video-Unity3D_2.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_2.png" />
+1. 在你的项目的根目录下，创建 `Assets/Scripts` 文件夹。
 
-3.  检查 Script 文件和 GameObject 的绑定状态。**关于如何绑定，请参考 Unity 官方文档** 。
+2. 把示例代码中的 `Assets/Scripts/AgoraGamingSDK` 复制到你的项目中的 `Assets/Scripts` 文件夹下。
 
-    -   打开 SceneHome, 选择 **JoinButton**，检查对应的 Script 是否正常（如果有黄色的惊叹号，则需要重新选择 `ButtonClick.cs` 文件\) 。
+3. 添加 `.framework` 文件：
 
-        <img alt="../_images/AMG-Video-Unity3D_3.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_3.png" />
+- 把示例代码中的 `Assets/Plugins/iOS/AgoraRtcEngineKit.framework` 文件复制到你的项目中的 `Assets/Plugins/iOS` 文件夹下。
+- 把示例代码中的 `Assets/Plugins/iOS/libagoraSdkCWrapper.a` 文件复制到你的项目中的 `Assets/Plugins/iOS` 文件夹下。
+- 添加如下图所示系统文件：`MediaToolBox.framwork`，`VideoToolbox.framework`，`CoreTelephony.framework` 和 `libresolv.tbd`。
 
-    -   打开 SceneHelloVideo，选择 **LeaveButton**，和检查 Scene0 中的 **JoinButton** 一样，检查对应的 Script 是否正常（如果有黄色的惊叹号，则需要重新选择 `ButtonClick.cs` 文件）。
+	<img alt="../_images/AMG-Video-Unity3D_22.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_22.png"/>
 
-    -   检查 SceneHelloVideo 中的 Cube 和 Cylinder，是否显示 script 文件丢失。如果显示这样的标记:
+## 步骤 4：调用 API
 
-        <img alt="../_images/AMG-Video-Unity3D_4.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_4.png" style="width: 370.0px;"/>
+参考 [互动游戏 API](../../en/Interactive%20Gaming/game_unity.md) 或以下实例代码，实现基本 API 的调用。
 
-        则需要重新绑定 Script 文件。
+```
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using agora_gaming_rtc;
 
-    -   点击上图被红框标记的圆形按钮，弹出下面的脚本对话框:
+public class example : MonoBehaviour
+{
+    private IRtcEngine mRtcEngine;
+    private string mVendorKey = <your app id>;
 
-        <img alt="../_images/AMG-Video-Unity3D_5.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_5.png" style="width: 370.0px;"/>
+    // Use this for initialization
+    void Start ()
+    {
+        GameObject g = GameObject.Find (“Join”);
+        Text text = g.GetComponentInChildren<Text>(true);
+        text.text = “Join”;
+    }
 
-    -   选择 `videoSurface` 。
+    // Update is called once per frame
+    void Update ()
+    {
 
-4.  选择 **File\> Build Settings…** 。
+    }
 
-    <img alt="../_images/AMG-Video-Unity3D_7.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_7.png"/>
+    public void onButtonClicked() {
+        GameObject g = GameObject.Find (“Join”);
+        Text text = g.GetComponentInChildren<Text>(true);
+        if (ReferenceEquals (mRtcEngine, null)) {
+            startCall ();
+            text.text = “Leave”;
+        } else {
+            endCall ();
+            text.text = “Join”;
+        }
+    }
 
-5.  在弹出的对话框里:
+    void startCall()
+    {
+        // init engine
+        mRtcEngine = IRtcEngine.getEngine (mVendorKey);
+        // enable log
+        mRtcEngine.SetLogFilter (LOG_FILTER.DEBUG | LOG_FILTER.INFO | LOG_FILTER.WARNING | LOG_FILTER.ERROR | LOG_FILTER.CRITICAL);
 
-    -   选择 **iOS** 平台；
+        // set callbacks (optional)
+        mRtcEngine.OnJoinChannelSuccess = onJoinChannelSuccess;
+        mRtcEngine.OnUserJoined = onUserJoined;
+        mRtcEngine.OnUserOffline = onUserOffline;
 
-        <img alt="../_images/AMG-Video-Unity3D_13.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_13.png" />
+        // enable video
+        mRtcEngine.EnableVideo();
+        // allow camera output callback
+        mRtcEngine.EnableVideoObserver();
 
-    -   选择 **Player Settings\> Other Settings\>Graphics API\> OpenGLES2**;
+        // join channel
+        mRtcEngine.JoinChannel(“exampleChannel”, null, 0);
+    }
 
-    -   点击 **Build And Run**, 弹出一个对话框选择导出的目标文件夹（这里设置为iOS\):
+    void endCall()
+    {
+        // leave channel
+        mRtcEngine.LeaveChannel();
+        // deregister video frame observers in native-c code
+        mRtcEngine.DisableVideoObserver();
 
-        <img alt="../_images/AMG-Video-Unity3D_14.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_14.png" />
+        IRtcEngine.Destroy ();
+        mRtcEngine = null;
+    }
 
-    -   按回车 \(Enter\) 键, 等到导出完成后，会自动通过 Xcode 打开已经导出的工程:
+    // Callbacks
+    private void onJoinChannelSuccess (string channelName, uint uid, int elapsed)
+    {
+        Debug.Log (“JoinChannelSuccessHandler: uid = “ + uid);
+    }
 
-        <img alt="../_images/AMG-Video-Unity3D_15.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_15.png" />
+    // When a remote user joined, this delegate will be called. Typically
+    // create a GameObject to render video on it
+    private void onUserJoined(uint uid, int elapsed)
+    {
+        Debug.Log (“onUserJoined: uid = “ + uid);
+        // this is called in the main thread
 
-    -   将 bit code 设置为 NO。
+        // find a game object to render the video stream from ‘uid’
+        GameObject go = GameObject.Find (uid.ToString ());
+        if (!ReferenceEquals (go, null)) {
+            return; // reuse
+        }
 
-        <img alt="../_images/AMG-Video-Unity3D_16.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_16.png" />
+        // create a GameObject and assign it to this new user
+        go = GameObject.CreatePrimitive (PrimitiveType.Plane);
+        if (!ReferenceEquals (go, null)) {
+            go.name = uid.ToString ();
 
-6.  按照普通的 Xcode 开发流程，设置好你的开发者证书。
+            // configure videoSurface
+            VideoSurface o = go.AddComponent<VideoSurface> ();
+            o.SetForUser (uid);
+            o.mAdjustTransfrom += onTransformDelegate;
+            o.SetEnable (true);
+            o.transform.Rotate (-90.0f, 0.0f, 0.0f);
+            float r = Random.Range (-5.0f, 5.0f);
+            o.transform.position = new Vector3 (0f, r, 0f);
+            o.transform.localScale = new Vector3 (0.5f, 0.5f, 1.0f);
+        }
+    }
 
-7.  增加以下 framework:
+    // When a remote user is offline, this delegate will be called. Typically
+    // delete the GameObject for this user
+    private void onUserOffline(uint uid, USER_OFFLINE_REASON reason)
+    {
+        // remove the video stream
+        Debug.Log (“onUserOffline: uid = “ + uid);
+        // this is called in the main thread
+        GameObject go = GameObject.Find (uid.ToString());
+        if (!ReferenceEquals (go, null)) {
+            Destroy (go);
+        }
+    }
 
-    -   `VideoToolbox.framework`
+    // Delegate: Adjust the transform for the game object ‘objName’ connected with the user ‘uid’
+    // You can save information for ‘uid’ (e.g. which GameObject is attached)
+    private void onTransformDelegate (uint uid, string objName, ref Transform transform)
+    {
+        if (uid == 0) {
+            transform.position = new Vector3 (0f, 2f, 0f);
+            transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
+            transform.Rotate (0f, 1f, 0f);
+        } else {
+            transform.Rotate (0.0f, 1.0f, 0.0f);
+        }
+    }
+}
+```
 
-    -   `CoreTelephony.framework`
+## 步骤 5：设置 GameObject Script 文件
 
-8.  点击 **Run**, 连接真机编译运行。
+1. 点击 **Join**，选择 `example.cs`。
+
+2.  **Sphere** 选择 `VideoSurface.cs`。
+
+3.  将你的 iOS 设备连接到电脑。
 
 
-## 步骤 3: 演示游戏视频
+## 步骤 6: 编译与安装
 
-演示游戏视频至少需要两部或多部 iOS 真机，本文仅以两部手机为例进行演示。
+1.  选择 **File/Build Settings…**，出现 **Build Settings** 弹窗。
 
-1.  两部手机上都运行 `Hello Gaming Video Agora `。
+2.  选择 **iOS** 平台。
 
-    <img alt="../_images/AMG-Video-Unity3D_11.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_11.png" style="width: 370.0px;"/>
+3.  点击 **Player Settings…**，打开 **PlayerSettings** 面板：
 
-2.  两部手机加入相同的频道名，默认频道名为 unit3d，你可以自行修改。只有加入相同的频道才能互通。
+    -   **Other Settings/Rendering/Auto Graphics API**，设置为 `False`。
 
-    <img alt="../_images/AMG-Video-Unity3D_12.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_12.png" style="width: 370.0px;"/>
+    -   删除 **Metal**
 
-你现在可以在频道内自由发言了！请观察该页面的文字提示消息来确定演示程序的运行状况。
+    -   请确认保留了 **OpenGLES2**，使用视频功能需要使用
 
-> 有的系统会弹出授权对话框（麦克风，网络等），需要同意。如果没有声音，或者不通，请检查权限是否被禁掉了。
+		<img alt="../_images/AMG-Video-Unity3D_21.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_21.png" style="width: 840.0px;"/>
+
+4.  点击 **Save** 保存设置。
+
+5.  点击 **Build And Run**，在对话框中选择导出到某个文件夹（需要对新文件夹进行命名），例如：
+
+     <img alt="../_images/AMG-Video-Unity3D_14.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_14.png" />
+		 
+6. 在 **Build And Run** 后生成的 XCode Project 中，确保进行如下权限配置：
+
+    -   **Privacy**：`Camera and Microphone`
+
+
+## 步骤 7：运行程序
+
+演示游戏视频至少需要两部或多部 iOS 真机。在两台设备上点击 **Join** 加入频道。
+
+<img alt="../_images/AMG-Video-Unity3D_20.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_20.png" style="width: 840.0px;"/>
+
+现在你可以在游戏中使用视频功能了。
+
+如果没有声音或影像，请检查以下事项：
+
+- App ID 是否设置正确。
+- 网络连接是否正常。
+- 是否开启网络与摄像头权限。
+
+
+
 
 

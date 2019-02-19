@@ -3,21 +3,17 @@
 title: 信令 API
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:08:50 GMT+0000 (UTC)
+updatedAt: Thu Jan 31 2019 08:23:18 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
 
 信令 Web API 包含以下类：
 
--   [Signal 类](#signal)
-
--   [Session 类](#session)
-
--   [Call 类](#call)
-
--   [Channel 类](#channel)
-
+- [Signal 类](#signal)
+- [Session 类](#session)
+- [Call 类](#call)
+- [Channel 类](#channel)
 
 ## <a name="signal"></a>Signal 类
 
@@ -30,7 +26,7 @@ updatedAt: Fri Nov 02 2018 04:08:50 GMT+0000 (UTC)
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#login-web"><span>login(account, token, reconnect_count, reconnect_time) : Session</span></a></td>
+<tr><td><a href="#login-web"><span>login</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功： 收到 Session 类的 <a href="#onloginsuccess-web"><span>onLoginSuccess</span></a> 回调</li>
@@ -39,13 +35,10 @@ updatedAt: Fri Nov 02 2018 04:08:50 GMT+0000 (UTC)
 </ul>
 </td>
 </tr>
-<tr><td><a href="#setdolog-web"><span>setDoLog(isEnabled, level)</span></a></td>
+<tr><td><a href="#setdolog-web"><span>setDoLog</span></a></td>
 <td>SDK 打开日志</td>
 </tr>
-<tr><td><a href="#getstatus-web"><span>getStatus : Integer</span></a></td>
-<td>查询当前登录状态</td>
-</tr>
-<tr><td><a href="#getsdkversion-web"><span>getSDKVersion : String</span></a></td>
+<tr><td><a href="#getsdkversion-web"><span>getSDKVersion</span></a></td>
 <td>查询 SDK 版本</td>
 </tr>
 </tbody>
@@ -83,12 +76,9 @@ login(account, token, reconnect_count, reconnect_time) : Session
 
 使用该方法登录 Agora 信令系统，它返回一个 session 。您可以在 Session 中设置回调，完成消息、频道、呼叫等操作。
 
--   登录成功：回调 <code>onLoginSuccess</code> ，
-
--   登录失败：回调 <code>onLoginFailed</code> ，
-
--   登录之后失去与服务器的连接：回调 <code>onLogout</code> 。
-
+- 登录成功：回调 <code>onLoginSuccess</code> ，
+- 登录失败：回调 <code>onLoginFailed</code> ，
+- 登录之后失去与服务器的连接：回调 <code>onLogout</code> 。
 
 <table>
 <colgroup>
@@ -116,7 +106,7 @@ login(account, token, reconnect_count, reconnect_time) : Session
 
 
 
-> 在测试环境下您可以将参数 token 设为 <code>_no_need_token</code> 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 <code>login</code> 方法会被忽略。如果希望踢掉老的登录，可以在 <code>login</code> 之前调用 <code>logout</code> 且不用等退出成功就可登录。 与系统失去链接后，当 <code>reconnect_count</code> 或 <code>reconnect_time</code> 任一项达到设置值时，系统退出重连。
+> 在测试环境下您可以将参数 token 设为 `_no_need_token` 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 <code>login</code> 方法会被忽略。如果希望踢掉老的登录，可以在 <code>login</code> 之前调用 <code>logout</code> 且不用等退出成功就可登录。 与系统失去链接后，当 `reconnect_count` 或 `reconnect_time` 任一项达到设置值时，系统退出重连。
 
 #### <a name="setdolog-web"></a>SDK 打开日志（setDoLog）
 
@@ -158,40 +148,6 @@ setDolog(isEnabled, level)
 </table>
 
 
-
-#### <a name="getstatus-web"></a>查询当前登录状态 \(getStatus\)
-
-```
-getStatus() : Integer
-```
-
-使用该方法查询当前登录状态。
-
-该请求是同步请求。返回值表示了当前登录状态，对应关系如下：
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>返回值</strong></td>
-<td><strong>当前登录状态</strong></td>
-</tr>
-<tr><td>0</td>
-<td>未登录</td>
-</tr>
-<tr><td>1</td>
-<td>连接中</td>
-</tr>
-<tr><td>2</td>
-<td>已登录</td>
-</tr>
-</tbody>
-</table>
-
-
-
 #### <a name="getsdkversion-web"></a>查询 SDK 版本 \(getSDKVersion\)
 
 ```
@@ -216,19 +172,18 @@ getSDKVersion() : String
 <tr><td><a href="#invoke-web"><span>invoke(func, args, cb)</span></a></td>
 <td>RPC 远程过程调用方法。可用于用户或频道相关操作。</td>
 </tr>
-<tr><td><a href="#messageinstantsend-web"><span>messageInstantSend(peer, msg, cb)</span></a></td>
+<tr><td><a href="#messageinstantsend-web"><span>messageInstantSend</span></a></td>
 <td><p>向名为 account 的用户发送点对点消息</p>
-<blockquote>
 <div><ul>
 <li>成功：消息接收方收到 Session 类的 <a href="#onmessageinstantreceive-web"><span>onMessageInstantReceive</span></a> 回调；</li>
 </ul>
-</div></blockquote>
+</div>
 </td>
 </tr>
 <tr><td><a href="#logout-web"><span>logout</span></a></td>
 <td>登出信令系统。登出成功将收到 Session 类的 <a href="#onlogout-web"><span>onLogout</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channeljoin-web"><span>channelJoin(name)</span></a></td>
+<tr><td><a href="#channeljoin-web"><span>channelJoin</span></a></td>
 <td><p>加入指定频道。</p>
 <div><ul>
 <li>成功：自己收到 Channel 类的 <a href="#onchanneljoined-web"><span>onChannelJoined</span></a> 回调，同频道其他用户收到 Channel 类的 <a href="#onchanneluserjoined-web"><span>onChannelUserJoined</span></a> 回调；</li>
@@ -237,7 +192,7 @@ getSDKVersion() : String
 </div>
 </td>
 </tr>
-<tr><td><a href="#channelinviteuser2-web"><span>channelInviteUser2(peer, channel, extra) : Call</span></a></td>
+<tr><td><a href="#channelinviteuser2-web"><span>channelInviteUser2</span></a></td>
 <td><p>邀请名为 peer 的用户加入指定频道，呼叫方可以附带一段额外信息。</p>
 <div><ul>
 <li>成功： 自己收到 Call 类的 <a href="#oninviteacceptedbypeer-web"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 Call 类的 <a href="#oninvitereceived-web"><span>onInviteReceived</span></a> 回调；</li>
@@ -245,6 +200,9 @@ getSDKVersion() : String
 </ul>
 </div>
 </td>
+</tr>
+<tr><td><a href="#getstatus-web"><span>getStatus</span></a></td>
+<td>查询当前登录状态</td>
 </tr>
 </tbody>
 </table>
@@ -260,22 +218,22 @@ getSDKVersion() : String
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onloginsuccess-web"><span>onLoginSuccess(uid)</span></a></td>
+<tr><td><a href="#onloginsuccess-web"><span>onLoginSuccess</span></a></td>
 <td>登录成功回调</td>
 </tr>
-<tr><td><a href="#onerror-web"><span>onError(evt)</span></a></td>
+<tr><td><a href="#onerror-web"><span>onError</span></a></td>
 <td>出错回调</td>
 </tr>
-<tr><td><a href="#onloginfailed-web"><span>onLoginFailed(ecode)</span></a></td>
+<tr><td><a href="#onloginfailed-web"><span>onLoginFailed</span></a></td>
 <td>登录失败回调</td>
 </tr>
-<tr><td><a href="#onlogout-web"><span>onLogout(reason)</span></a></td>
+<tr><td><a href="#onlogout-web"><span>onLogout</span></a></td>
 <td>退出登录回调</td>
 </tr>
-<tr><td><a href="#onmessageinstantreceive-web"><span>onMessageInstantReceive(account, uid, msg)</span></a></td>
+<tr><td><a href="#onmessageinstantreceive-web"><span>onMessageInstantReceive</span></a></td>
 <td>接收方收到消息时接收方收到的回调</td>
 </tr>
-<tr><td><a href="#oninvitereceived-web"><span>onInviteReceived(call)</span></a></td>
+<tr><td><a href="#oninvitereceived-web"><span>onInviteReceived</span></a></td>
 <td>收到呼叫邀请回调</td>
 </tr>
 </tbody>
@@ -305,7 +263,7 @@ invoke(func, args, cb)
 <tr><td>查询用户状态</td>
 <td><ul>
 <li>func: io.agora.signal.user_query_user_status</li>
-<li>args: {“account”:用户名}</li>
+<li>args: {“account”:用户名, JSON 字符串}</li>
 <li>返回值：status(1:在线；0:不在线)</li>
 </ul>
 </td>
@@ -320,7 +278,7 @@ invoke(func, args, cb)
 <tr><td>获取用户属性</td>
 <td><ul>
 <li>func: io.agora.signal.user_get_attr</li>
-<li>args: {“account”:用户名,”name”:属性名}</li>
+<li>args: {“account”:用户名, JSON 字符串,”name”:属性名}</li>
 <li>返回值: {“value”:属性值}</li>
 </ul>
 </td>
@@ -328,7 +286,7 @@ invoke(func, args, cb)
 <tr><td>获取用户所有属性</td>
 <td><ul>
 <li>func: io.agora.signal.user_get_attr_all</li>
-<li>args: {“account”:用户名}</li>
+<li>args: {“account”:用户名, JSON 字符串}</li>
 <li>返回值：所有属性的 JSON 值</li>
 </ul>
 </td>
@@ -344,7 +302,7 @@ invoke(func, args, cb)
 <tr><td>查询是否在频道内</td>
 <td><ul>
 <li>func: io.agora.signal.channel_query_user_isin</li>
-<li>args: {“name”:频道名,”account”:用户名}</li>
+<li>args: {“name”:频道名,”account”:用户名, JSON 字符串}</li>
 <li>返回值：isin（1: 在频道内；0:不在频道内）</li>
 </ul>
 </td>
@@ -472,12 +430,9 @@ channelInviteUser2(channelID, peer, extra) : Call
 
 如果呼叫失败，会回调 <code>onInviteFailed</code>。可能的原因有：
 
--   对方不在线
-
--   本端网络不通
-
--   服务器异常
-
+- 对方不在线
+- 本端网络不通
+- 服务器异常
 
 如果收到对方的确认信息，本地将收到回调 <code>onInviteReceivedByPeer</code>, 对方会收到回调 <code>onInviteReceived</code>。
 
@@ -514,6 +469,39 @@ channelInviteUser2(channelID, peer, extra) : Call
 
 
 > SIP 呼叫时你不需要设置 `_require_peer_online` 字段。
+
+
+#### <a name="getstatus-web"></a>查询当前登录状态 \(getStatus\)
+
+```
+getStatus() : Integer
+```
+
+使用该方法查询当前登录状态。
+
+该请求是同步请求。返回值表示了当前登录状态，对应关系如下：
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>返回值</strong></td>
+<td><strong>当前登录状态</strong></td>
+</tr>
+<tr><td>0</td>
+<td>未登录</td>
+</tr>
+<tr><td>1</td>
+<td>连接中</td>
+</tr>
+<tr><td>2</td>
+<td>已登录</td>
+</tr>
+</tbody>
+</table>
+
 
 ### 回调
 
@@ -699,7 +687,7 @@ onMessageInstantReceive(account, uid, msg)
 onInviteReceived(call)
 ```
 
-当收到 呼叫<call\> 邀请触发该回调。
+当收到 呼叫<call> 邀请触发该回调。
 
 ## <a name="call"></a>Call 类
 
@@ -712,10 +700,10 @@ onInviteReceived(call)
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#channelinviteaccept-web"><span>channelInviteAccept(extra)</span></a></td>
+<tr><td><a href="#channelinviteaccept-web"><span>channelInviteAccept</span></a></td>
 <td>接受来自 account 用户的加入指定频道的呼叫邀请。接收后主叫方将收到 <a href="#oninviteacceptedbypeer-web"><span>onInviteAcceptedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviterefuse-web"><span>channelInviteRefuse(extra)</span></a></td>
+<tr><td><a href="#channelinviterefuse-web"><span>channelInviteRefuse</span></a></td>
 <td>拒绝来自 account 用户的加入指定频道的呼叫邀请。拒绝后主叫方将收到 <a href="#oninviterefusedbypeer-web"><span>onInviteRefusedByPeer</span></a> 回调。</td>
 </tr>
 <tr><td><a href="#channelinvitedtmf-web"><span>channelInviteDTMF(dtmf)</span></a></td>
@@ -738,25 +726,25 @@ onInviteReceived(call)
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#oninvitereceivedbypeer-web"><span>onInviteReceivedByPeer(extra)</span></a></td>
+<tr><td><a href="#oninvitereceivedbypeer-web"><span>onInviteReceivedByPeer</span></a></td>
 <td>远端已收到呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteacceptedbypeer-web"><span>onInviteAcceptedByPeer(extra)</span></a></td>
+<tr><td><a href="#oninviteacceptedbypeer-web"><span>onInviteAcceptedByPeer</span></a></td>
 <td>远端已接受呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviterefusedbypeer-web"><span>onInviteRefusedByPeer(extra)</span></a></td>
+<tr><td><a href="#oninviterefusedbypeer-web"><span>onInviteRefusedByPeer</span></a></td>
 <td>对方已拒绝呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitefailed-web"><span>onInviteFailed(extra)</span></a></td>
+<tr><td><a href="#oninvitefailed-web"><span>onInviteFailed</span></a></td>
 <td>呼叫失败回调</td>
 </tr>
-<tr><td><a href="#oninviteendbypeer-web"><span>onInviteEndByPeer(extra)</span></a></td>
+<tr><td><a href="#oninviteendbypeer-web"><span>onInviteEndByPeer</span></a></td>
 <td>对方已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteendbymyself-web"><span>onInviteEndByMyself(extra)</span></a></td>
+<tr><td><a href="#oninviteendbymyself-web"><span>onInviteEndByMyself</span></a></td>
 <td>本地已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitemsg-web"><span>onInviteMsg(extra)</span></a></td>
+<tr><td><a href="#oninvitemsg-web"><span>onInviteMsg</span></a></td>
 <td>本地已收到消息回调</td>
 </tr>
 </tbody>
@@ -877,6 +865,7 @@ onInviteReceivedByPeer(extra)
 
 
 
+
 #### <a name="oninviteacceptedbypeer-web"></a>远端已接受呼叫回调 \(onInviteAcceptedByPeer\)
 
 ```
@@ -899,6 +888,7 @@ onInviteAcceptedByPeer(extra)
 </tr>
 </tbody>
 </table>
+
 
 
 #### <a name="oninviterefusedbypeer-web"></a>对方已拒绝呼叫回调 \(onInviteRefusedByPeer\)
@@ -1037,7 +1027,7 @@ onInviteMsg(extra)
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#messagechannelsend-web"><span>messageChannelSend(msg, cb)</span></a></td>
+<tr><td><a href="#messagechannelsend-web"><span>messageChannelSend</span></a></td>
 <td><p>发送频道消息（消息发送者必须在频道内）</p>
 <div><ul>
 <li>成功： 频道内所有用户收到 Channel 类的 <a href="#onmessagechannelreceive-web"><span>onMessageChannelReceive</span></a> 回调；</li>
@@ -1045,7 +1035,7 @@ onInviteMsg(extra)
 </div>
 </td>
 </tr>
-<tr><td><a href="#channelleave-web"><span>channelLeave(cb)</span></a></td>
+<tr><td><a href="#channelleave-web"><span>channelLeave</span></a></td>
 <td><p>退出指定频道。退出成功时：</p>
 <div><ul>
 <li>频道内所有用户都将收到 <a href="#onchanneluserleaved-web"><span>onChannelUserLeaved</span></a> 回调</li>
@@ -1054,13 +1044,13 @@ onInviteMsg(extra)
 </div>
 </td>
 </tr>
-<tr><td><a href="#channelsetattr-web"><span>channelSetAttr(name, value, cb)</span></a></td>
+<tr><td><a href="#channelsetattr-web"><span>channelSetAttr</span></a></td>
 <td>设置频道属性。设置成功将收到 Channel 类的 <a href="#onchannelattrupdated-web"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channeldelattr-web"><span>channelDelAttr(name, cb)</span></a></td>
+<tr><td><a href="#channeldelattr-web"><span>channelDelAttr</span></a></td>
 <td>删除频道属性。删除成功将收到 Channel 类的 <a href="#onchannelattrupdated-web"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelclearattr-web"><span>channelClearAttr(cb)</span></a></td>
+<tr><td><a href="#channelclearattr-web"><span>channelClearAttr</span></a></td>
 <td>删除所有频道属性。删除成功将收到 Channel 类的 <a href="#onchannelattrupdated-web"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
 </tbody>
@@ -1077,28 +1067,28 @@ onInviteMsg(extra)
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onchanneljoined-web"><span>onChannelJoined()</span></a></td>
+<tr><td><a href="#onchanneljoined-web"><span>onChannelJoined</span></a></td>
 <td>加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneljoinfailed-web"><span>onChannelJoinFailed(ecode)</span></a></td>
+<tr><td><a href="#onchanneljoinfailed-web"><span>onChannelJoinFailed</span></a></td>
 <td>加入频道失败回调</td>
 </tr>
-<tr><td><a href="#onchannelleaved-web"><span>onChannelLeaved(ecode)</span></a></td>
+<tr><td><a href="#onchannelleaved-web"><span>onChannelLeaved</span></a></td>
 <td>离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserjoined-web"><span>onChannelUserJoined(account, uid)</span></a></td>
+<tr><td><a href="#onchanneluserjoined-web"><span>onChannelUserJoined</span></a></td>
 <td>其他用户加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserleaved-web"><span>onChannelUserLeaved(account, uid)</span></a></td>
+<tr><td><a href="#onchanneluserleaved-web"><span>onChannelUserLeaved</span></a></td>
 <td>其他用户离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserlist-web"><span>onChannelUserList(users)</span></a></td>
+<tr><td><a href="#onchanneluserlist-web"><span>onChannelUserList</span></a></td>
 <td>获取频道内用户列表回调</td>
 </tr>
-<tr><td><a href="#onchannelattrupdated-web"><span>onChannelAttrUpdated(type, name, value)</span></a></td>
+<tr><td><a href="#onchannelattrupdated-web"><span>onChannelAttrUpdated</span></a></td>
 <td>频道属性发生变化回调</td>
 </tr>
-<tr><td><a href="#onmessagechannelreceive-web"><span>onMessageChannelReceive(account, uid, msg)</span></a></td>
+<tr><td><a href="#onmessagechannelreceive-web"><span>onMessageChannelReceive</span></a></td>
 <td>收到频道消息回调</td>
 </tr>
 </tbody>
@@ -1126,7 +1116,7 @@ messageChannelSend(msg, cb)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>频道消息正文。如果是大规模群组通话，每条消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 1000 条消息。</td>
+<td>频道消息正文。如果是大规模群组通话，每条消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 200 条消息。</td>
 </tr>
 <tr><td><code>cb</code></td>
 <td>当该方法执行成功时的回调。</td>
@@ -1173,6 +1163,8 @@ channelLeave(cb)
 
 ```
 channelSetAttr(name, value, cb)
+
+
 ```
 
 该方法用于设置频道属性。当操作成功，所有频道用户都将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -1216,6 +1208,8 @@ channelSetAttr(name, value, cb)
 ```
 channel.channelSetAttr("name", "john", function(){
   // attr name was set
+
+
 ```
 
 \}\);
@@ -1224,6 +1218,8 @@ channel.channelSetAttr("name", "john", function(){
 
 ```
 channelDelAttr(name, cb)
+
+
 ```
 
 该方法用于删除频道的某一属性。
@@ -1254,12 +1250,16 @@ channelDelAttr(name, cb)
 channel.channelDelAttr("name", function(){
   // attr name was deleted
 });
+
+
 ```
 
 #### <a name="channelclearattr-web"></a>删除所有频道属性 \(channelClearAttr\)
 
 ```
 channelClearAttr(cb)
+
+
 ```
 
 该方法用于删除指定频道的所有属性。当操作成功，所有频道用户都将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -1287,6 +1287,8 @@ channelClearAttr(cb)
 channel.channelClearAttr(function(){
   // attr was cleared
 });
+
+
 ```
 
 ### 回调
@@ -1295,6 +1297,8 @@ channel.channelClearAttr(function(){
 
 ```
 onChannelJoined()
+
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1303,6 +1307,8 @@ onChannelJoined()
 
 ```
 onChannelJoinFailed(ecode)
+
+
 ```
 
 当加入频道失败时触发此回调。
@@ -1328,6 +1334,8 @@ onChannelJoinFailed(ecode)
 
 ```
 onChannelLeaved(ecode)
+
+
 ```
 
 当离开频道时触发此回调。
@@ -1353,6 +1361,8 @@ onChannelLeaved(ecode)
 
 ```
 onChannelUserJoined(account, uid)
+
+
 ```
 
 当有其他用户加入频道触发该回调。
@@ -1381,6 +1391,8 @@ onChannelUserJoined(account, uid)
 
 ```
 onChannelUserLeaved(account, uid)
+
+
 ```
 
 当有用户离开频道触发此回调。
@@ -1409,6 +1421,8 @@ onChannelUserLeaved(account, uid)
 
 ```
 onChannelUserList(users)
+
+
 ```
 
 当加入频道成功后，本人会收到此回调。
@@ -1436,6 +1450,8 @@ onChannelUserList(users)
 
 ```
 onChannelAttrUpdated(name, value, type)
+
+
 ```
 
 <table>
@@ -1473,6 +1489,8 @@ onChannelAttrUpdated(name, value, type)
 
 ```
 onMessageChannelReceive(account, uid, msg)
+
+
 ```
 
 当收到频道消息时触发。
@@ -1503,7 +1521,3 @@ onMessageChannelReceive(account, uid, msg)
 ## 错误代码和警告代码
 
 详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
-
-
-
-

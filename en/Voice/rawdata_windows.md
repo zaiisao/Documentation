@@ -3,18 +3,18 @@
 title: Modify Raw Data
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:09:59 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 18:11:42 GMT+0000 (UTC)
 ---
 # Modify Raw Data
-The Agora raw data interface is an advanced feature provided in the SDK library for users to obtain the voice or video raw data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
+The Agora Raw Data interface is an advanced feature provided in the SDK library for users to obtain the raw voice or video data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
 
 You can implement a preprocessing stage before sending the data to the encoder and modifying the captured video frames or voice signals. You can also implement a postprocessing stage after sending the data to the decoder and modifying the received video frames or voice signals.
 
-The Agora raw data interface is a C++ interface. 
+The Agora Raw Data interface is a C++ interface. 
 
-## Modify Voice Raw Data
+## Modify the Raw Voice Data
 
-1.  Define AgoraAudioFrameObserver by inheriting <code>IAudioFrameObserver</code> (the <code>IAudioFrameObserver</code> Class is defined in <code>IAgoraMediaEngine.h</code>). You need the following virtual interfaces:
+1.  Define <code>AgoraAudioFrameObserver</code> by inheriting <code>IAudioFrameObserver</code> (the <code>IAudioFrameObserver</code> Class is defined in <code>IAgoraMediaEngine.h</code>). You need the following virtual interfaces:
 
 
 For example,
@@ -43,7 +43,7 @@ class AgoraAudioFrameObserver : public agora::media::IAudioFrameObserver
 };
 ```
 
-This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data if necessary:
+This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data, if necessary:
 
 ```
 class IAudioFrameObserver
@@ -69,7 +69,7 @@ class IAudioFrameObserver
 };
 ```
 
-1.  Register the voice frame observer to the SDK engine. After creating the <code>IRtcEngine</code> object, and before joining a channel, you can register the voice frame observer object.
+2.  Register the voice frame observer to the SDK engine. After creating the <code>IRtcEngine</code> object, and before joining a channel, you can register the voice frame observer object.
 
 
 ```
@@ -83,11 +83,11 @@ if (mediaEngine)
 }
 ```
 
-> Here <code>engine</code> can be passed in by <code>loadAgoraRtcEnginePlugin</code> in [Create the Agora Native SDK Plugin](#create_plugin).
+> <code>engine</code> can be passed in by <code>loadAgoraRtcEnginePlugin</code> in [Create the Agora Native SDK Plugin](#create_plugin).
 
-## Modify Video Raw Data
+## Modify the Raw Video Data
 
-1.  Define <code>AgoraVideoFrameObserver</code> by inheriting <code>IVideoFrameObserver</code> (the <code>IVideoFrameObserver</code> Class is defined in <code>IAgoraMediaEngine.h</code>). You need the following virtual interfaces:
+1.  Define <code>AgoraVideoFrameObserver</code> by inheriting <code>IVideoFrameObserver</code> (the <code>IVideoFrameObserver</code> class is defined in <code>IAgoraMediaEngine.h</code>). You need the following virtual interfaces:
 
     For example,
 
@@ -107,7 +107,7 @@ if (mediaEngine)
 ```
 
 
-This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data if necessary:
+This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data, if necessary:
 
 ```
 class IVideoFrameObserver
@@ -118,11 +118,11 @@ class IVideoFrameObserver
     };
   struct VideoFrame {
     VIDEO_FRAME_TYPE type;
-    int width;  //width of video frame
-    int height;  //height of video frame
-    int yStride;  //stride of Y data buffer
-    int uStride;  //stride of U data buffer
-    int vStride;  // stride of V data buffer
+    int width;  //width of the video frame
+    int height;  //height of the video frame
+    int yStride;  //stride of the Y data buffer
+    int uStride;  //stride of the U data buffer
+    int vStride;  // stride of the V data buffer
     void* yBuffer;  //Y data buffer
     void* uBuffer;  //U data buffer
     void* vBuffer;  //V data buffer
@@ -135,7 +135,7 @@ class IVideoFrameObserver
 };
 ```
 
-1.  Register the video frame observer to the SDK engine. After creating the <code>IRtcEngine</code> object and enabling the video mode, and before joining a channel, you can register the video frame observer object.
+2.  Register the video frame observer to the SDK engine. After creating the <code>IRtcEngine</code> object and enabling the video mode, and before joining a channel, you can register the video frame observer object.
 
 
 ```
@@ -149,14 +149,14 @@ agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
   }
 ```
 
-> Here <code>engine</code> can be passed in by <code>loadAgoraRtcEnginePlugin</code> in [Create the Agora Native SDK Plugin](#create_plugin).
+> <code>engine</code> can be passed in by <code>loadAgoraRtcEnginePlugin</code> in [Create the Agora Native SDK Plugin](#create_plugin).
 
 <a name="create_plugin"></a>
 ## Create the Agora Native SDK Plugin
 
 The Agora Native SDK supports loading the third-party plugin by using dynamically linked libraries. The usage is as follows:
 
-1.  Create a Windows DLL project, and the DLL file must be created with <code>libapm-</code> as the prefix and <code>dll</code> as the suffix. For example, <code>libapm-encryption.dll</code>.
+1.  Create a Windows DLL project. The DLL file must be created with <code>libapm-</code> as the prefix and <code>dll</code> as the suffix. For example, <code>libapm-encryption.dll</code>.
 
 2.  Implement and export the related interface functions.
 
@@ -176,7 +176,7 @@ extern "C" __declspec(dllexport) __cdecl int loadAgoraRtcEnginePlugin(agora::IRt
 }
 ```
 
-The following plugin interface function is optional and called when the Agora SDK removes the plugin.
+The following plugin interface function is optional and can be called when the Agora SDK removes the plugin.
 
 ```
 extern "C" __declspec(dllexport) __cdecl void unloadAgoraRtcEnginePlugin(agora::IRtcEngine* engine)
@@ -196,7 +196,7 @@ The process of the Agora Native SDK loading the plugin is as follows:
 
 2.  The Agora SDK loads the plugin using LoadLibrary.
 
-3.  The user must implement the plugin and export the <code>loadAgoraRtcEnginePlugin</code> interface according to the instructions above. The SDK obtains and calls <code>loadAgoraRtcEnginePlugin</code> for each plugin found. If it returns 0 after calling the <code>loadAgoraRtcEnginePlugin</code> function, then the execution succeeds. Otherwise the SDK will remove the plugin (FreeLibrary). The input parameter of the interface is <code>agora::</code> The IRtcEngine interface object can be used by the plugin in the <code>loadAgoraRtcEnginePlug</code> function to register <code>IPacketObserver</code>, <code>IAudioFrameObserver</code>, and <code>IVideoFrameObserver</code>.
+3.  The user must implement the plugin and export the <code>loadAgoraRtcEnginePlugin</code> interface according to the instructions above. The SDK obtains and calls <code>loadAgoraRtcEnginePlugin</code> for each plugin found. If it returns 0 after calling the <code>loadAgoraRtcEnginePlugin</code> function, then the execution succeeds. Otherwise, the SDK will remove the plugin (FreeLibrary). The input parameter of the interface is <code>agora::</code>. The IRtcEngine interface object can be used by the plugin in the <code>loadAgoraRtcEnginePlug</code> function to register <code>IPacketObserver</code>, <code>IAudioFrameObserver</code>, and <code>IVideoFrameObserver</code>.
 
 4.  When the SDK engine is destroyed, call the optional <code>unloadAgoraRtcEnginePlugin</code> function of the plugin.
 

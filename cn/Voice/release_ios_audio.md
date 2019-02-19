@@ -3,24 +3,124 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 03:57:47 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 10:09:08 GMT+0000 (UTC)
 ---
 # 发版说明
-本文提供 Agora 语音包的发版说明。
+本文提供 Agora 语音 SDK 的发版说明。
 
 ## **简介**
 
-iOS 语音包支持两种主要场景:
+iOS 语音 SDK 支持两种主要场景:
 
 -   语音通话
-
 -   语音直播
+
+点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms) 了解关键特性。
+
+## **2.3.3 版**
+
+该版本于 2019 年 1 月 24 日发布。修复问题详见下文。
+
+### **问题修复**
+
+修复了 `networkQuality` 回调不准确的问题。
+
+## **2.3.2 版**
+该版本于 2019 年 1 月 16 日发布。新增特性与修复问题详见下文。
+
+### **升级必看**
+
+2.3.2 除了下文提到的功能和改进外，整体提升直播模式下视频弱网下抗丢包能力，提高流畅度，降低卡顿率。升级前，请了解版本兼容性:
+
+- Native SDK 版本号须大于等于 1.11 版本
+- Web SDK 版本号须大于等于 2.1 版本
+
+### **新增功能**
+
+#### 1. 控制音乐文件的播放音量
+
+为方便用户控制混音音乐文件在本地及远端的播放音量，该版本在已有 [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:) 的基础上新增 [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:) 和 [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:) 接口，用于分别控制混音音乐文件在本地和远端的播放音量。
+
+该版本梳理了用户在音频采集到播放过程中可能会需要调整音量的场景，及各场景对应的 API，供用户参考使用。详见官网文档[调整通话音量](../../cn/Voice/volume_ios_audio.md)。
+
+### **改进**
+
+#### 1. 提供更透明的质量数据统计
+
+为提升质量透明的用户体验，该版本废弃了原有的 `audioQualityOfUid` 回调，并新增 `remoteAudioStats` 回调进行取代。和原来的接口相比，新接口使用更为综合的算法，通过引入音频丢帧率、端到端的音频延迟、接收端网络抖动的缓冲延迟等参数，使回调结果更贴近用户感受。同时，该版本优化了 `networkQuality` 的算法，对上下行网络质量采用不同的计算方法，使评分更精准。
+
+- [`remoteAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:)：通话中远端音频流的统计信息回调。用于替换	`audioQualityOfUid`
+- [`networkQuality`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkQuality:txQuality:rxQuality:)：通话中每个用户的网络上下行 Last mile 质量报告回调。
+
+Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
+
+- [`lastmileQuality`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileQuality:)：通话前网络上下行 Last mile 质量报告回调
+
+该版本对数据统计相关回调进行了统一梳理，相关回调及算法详见[通话中数据统计](../../cn/Voice/in_call_statistics_ios.md)。
+
+#### 2. 改进获取 SDK 网络连接状态的生成策略
+
+为提升 SDK 使用数据统计的准确性和合理性，该版本新增如下接口，用以获取 SDK 的网络连接状态，以及连接状态发生改变的原因。
+
+- [`getConnectionState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getConnectionState)：获取 SDK 的网络连接状态
+- [`connectionChangedToState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)：SDK 的网络连接状态已改变回调
+
+该版本废弃了原有的 [`rtcEngineConnectionDidInterrupted`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidInterrupted:) 和 [`rtcEngineConnectionDidBanned`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:) 回调。
+
+在新的接口下，SDK 共有 5 种连接状态：未连接、正在连接、已连接、正在重新建立连接和连接失败。当连接状态发生改变时，都会触发 `connectionChangedToState` 回调。当条件满足时，原有的 `rtcEngineConnectionDidInterrupted` 和 `rtcEngineConnectionDidBanned` 回调也会触发，但 Agora 不再推荐使用。
+
+#### 3. 优化打分反馈机制
+
+为方便用户（开发者）收集最终用户（应用程序使用者）对使用应用进行通话或直播的反馈，该版本将 [`rate`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/rate:rating:description:) 接口中的打分范围缩小为 1 - 5，减少最终用户的打分干扰。Agora 建议在应用程序中集成该接口，方便应用程序收集用户反馈。
+
+#### 4. 音乐场景的音质优化
+
+该版本针对高音质需求场景，如音乐教学等进行了音质改进。通过调用 [`setAudioProfile`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:)，将 [`AgoraAudioProfile`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Constants/AgoraAudioProfile.html) 设置为 `MusicHighQuality(4)`，[`AgoraAudioScenario`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Constants/AgoraAudioScenario.html) 设置为 `GameStreaming(3)` 实现，在有效消除回声、降低噪音的同时，不损害音乐的音质。
+
+#### 5. 其他改进
+
+- 提升了推流稳定性
+- 优化了 API 的调用线程
+- 优化了 SDK 在 iOS 中低端设备上的性能
+- 增加了重新检测耳机插入和蓝牙设备连接的代码
+- 降低了音频延时
+
+
+### **问题修复**
+
+#### 音频相关：
+
+- 修复了设备在连接蓝牙的状态下，退出频道后，音频不走蓝牙的问题
+- 修复了调用 `startAudioMixing` 播放音乐文件时出现的崩溃问题
+- 修复了麦克风在禁用的状态下，设备插上耳机后，禁用失效的问题
+- 修复了外放条件下，上下麦、系统电话打断、Siri 中断、进退频道等多种场景下，出现的无法调节外放音量的问题
+- 修复了应用从后台切回前台时，出现的出声音慢的问题
+
+
+
+### **API 整理**
+
+为提升用户体验，Agora 在 v2.3.2 版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [`getConnectionState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getConnectionState)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
+- [`connectionChangedToState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)
+- [`remoteAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:)
+
+#### 废弃
+
+- [`audioQualityOfUid`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:audioQualityOfUid:quality:delay:lost:)
+- [`rtcEngineConnectionDidInterrupted`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidInterrupted:)
+- [`rtcEngineConnectionDidBanned`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:)
 
 ## **2.3.1 版**
 
 该版本于 2018 年 9 月 28 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+### **新增功能**
 
 ####  关闭/重新开启本地语音功能
 
@@ -28,27 +128,28 @@ iOS 语音包支持两种主要场景:
 
 该功能与 `muteLocalAudioStream` 的区别在于前者不采集不发送，而后者是采集但不发送。
 
-**改进**
+### **改进**
 
 - 优化了 iOS 低端设备在纯音频通信模式下的 CPU 消耗
 
-**问题修复**
+### **问题修复**
 
 - 修复了某些 iOS 设备上偶现的崩溃问题
 - 修复了直播模式下，观众端因统计有误出现的延迟的问题
 
-## **2.3.0**
+## **2.3.0 版**
 
 该版本于 2018 年 8 月 31 日发布。新增特性与修复问题列表详见下文。
 
-**升级必看**
+Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可用性，保证了更加可靠的实时通信。同时音视频质量也得到进一步提高。 视频方面，通过优化编码性能，增强了弱网对抗能力，减少卡顿时间，提升视频流畅度；音频方面，采用深度学习算法，改进了通话中的音频质量。
+
+### **升级必看**
 
 -   该版本新增了一个系统库依赖：`Accelerate.framework`。该系统库可以进行大规模的数学计算和图像计算，并针对高性能进行了优化。
-
 -   为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
 
-**新增功能**
+### **新增功能**
 
 本次发版新增如下功能：
 
@@ -58,77 +159,59 @@ iOS 语音包支持两种主要场景:
 
 #### 2. 按用户返回音频上下行码率、帧率、丢包率及延迟
 
-为方便统计每个用户的音频上下行码率、帧率及丢包率，该版本新增 `audioTransportStatsOfUid` 回调。通话或直播过程中， 当用户收到远端用户发送的音视频数据包后，会周期性地发生该回调上报，频率约为 2 秒 1 次。回调中包含用户的 UID、音频接收码率、丢包率、以及延迟时间（毫秒）。 并在统计频道内通话相关数据的 `Rtcstats` 类中增加 `lastmileDelay` 参数，返回客户端到 vos 服务器的延迟。
+为方便统计每个用户的音视频上下行码率、帧率及丢包率，该版本新增 `audioTransportStatsOfUid` 回调。 通话或直播过程中，当用户收到远端用户发送的音视频数据包后，会周期性地发生该回调上报，频率约为 2 秒 1 次。 回调中包含用户的 UID、音/视频接收码率、丢包率、以及延迟时间（毫秒）。 并在统计频道内通话相关数据的 `Rtcstats` 类中增加 `lastmileDelay` 参数，返回客户端到 vos 服务器的延迟。
 
 #### 3. 设置 SDK 对 Audio Session 的管理限制
 
 在默认情况下，SDK 和 App 对 Audio Session 都有控制权，但某些场景下，App 会希望限制 Agora SDK 对 Audio Session 的控制权限， 而使用其他应用或第三方组件对 Audio Session 进行操控。为满足该需求，本版本新增 `setAudioSessionOperationRestriction` 接口。 用户可以选择相应的 Restriction，来实现 SDK 不同程度的管理限制。该方法可动态使用，在加入频道前，或频道中均能调用。
 
-**改进功能**
+
+### **改进功能**
 
 -   优化了一对一音视频的质量，在降低延时、防止卡顿方面提升明显。优化效果重点覆盖东南亚、南美、非洲和中东等地区
-
 -   直播场景下，改善了音频编码器的效率，保证通话质量的同时节省用户流量
-
 -   采用深度学习算法，改进了通话及直播中的音频质量
 
 
-**问题修复**
+### **问题修复**
 
+-   修复了某些 iOS 设备上 App 偶发的闪退的问题
 -   修复了特定场景下某些 iOS 设备上推流后出现的崩溃问题
-
 -   修复了某些 iOS 设备上偶现的崩溃的问题
-
 -   修复了某些 iOS 设备上频繁暂停、恢复播放所有音效时出现的崩溃的问题
-
 -   修复了多人连麦场景下，主播频繁进出频道时，偶现的主播内存异常增长的问题
-
 -   修复了特定场景下偶现的主播加入频道、下麦再上麦后，远端用户听不到主播声音的问题
-
 -   修复了特定场景下某些 iOS 设备上偶现的接听系统电话再回到频道后，听不到声音的问题
-
 -   修复了特定场景下偶现的直播观众无法调节频道内通话音量的问题
-
 -   修复了频繁进出频道时，某些 iOS 设备上出现的崩溃的问题
-
+-   修复了通信模式下偶现的其他端看不到 iOS 端视频画面的问题
 -   修复了 2 人连麦过程中，一端播放背景音乐时将自己静音或关闭音频后，另一端闪退的问题
-
 -   修复了特定场景下，iOS 端和 Web 端互通时，Web 频繁进出频道后，iOS 设备上出现的崩溃的问题
-
 -   修复了特定场景下，预加载音效时某些设备上偶现的崩溃问题
-
 -   修复了偶现的 iOS 与 macOS 设备 无法进入频道互通的问题
-
 -   修复了直播模式下，使用第三方应用播放音乐时，某些 iOS 设备上出现的退出频道时崩溃的问题
-
 -   修复了特定场景下，某些 iOS 设备上出现的退出频道时崩溃的问题
-
+-   修复了直播场景下，某些 iOS 设备上出现的拉流过程中，其他用户拉流也能成功的问题
 -   修复了部分设备上偶现的使用声卡时回声的问题
-
 -   修复了特定场景下，某些 iOS 设备上无法调节音量的问题
 
 
-**API 整理**
+### **API 整理**
 
 为提升用户体验，Agora 在 v2.3.0 版本中对 API 进行了梳理，并针对部分接口进行了如下处理：
 
 为避免在直播转码推流中添加多个相同 User，v2.3.0 版本中新增如下接口：
 
 -   `addUser`
-
 -   `removeUser`
 
 
 以下接口与录制相关，在 v2.3.0 版本后不再支持。Agora 提供专门的 Recording SDK 用于更好的录制服务，详见 [Agora Recording SDK 发版说明](../../cn/Product%20Overview/release_recording.md)。
 
 -   `startRecordingService`
-
 -   `stopRecordingService`
-
 -   `refreshRecordingServiceStatus`
-
 -   `didRefreshRecordingServiceStatus`
-
 
 以下接口长期处于弃用状态，现进行删除，v2.3.0 版本后不再支持：
 
@@ -139,33 +222,37 @@ iOS 语音包支持两种主要场景:
 
 该版本于 2018 年 7 月 5 日发布。新增特性与修复问题列表详见下文。
 
-**升级必看**
+### **升级必看**
 
 为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
-**问题修复**
+### **问题修复**
 
 -   修复了特定场景下偶发的线上统计崩溃的问题。
-
 -   修复了直播时特定场景下偶发的崩溃的问题。
-
 -   修复了多人直播连麦时，SDK 内存增长的问题。
-
 -   复了偶发的无法正常反馈频道内谁在说话以及说话者音量的问题。
-
 -   修复了直播时偶发的观众听到主播声忽大忽小的问题。
 
+
+## **2.2.2 版**
+
+该版本于 2018 年 6 月 21 日发布。修复问题列表详见下文。
+
+### **问题修复**
+
+- 修复了特定场景下偶发的线上统计崩溃的问题
+- 修复了 iOS 设备无法同时使用媒体和信令服务的问题
+- 修复了偶发的无法正常反馈频道内谁在说话以及说话者的音量的问题
 
 ## **2.2.1 版**
 
 该版本于 2018 年 5 月 30 日发布。新增特性与修复问题列表详见下文。
 
-**问题修复**
+### **问题修复**
 
 -   修复了部分设备上偶现的 Crash 问题。
-
 -   修复了部分设备上内存泄漏的问题。
-
 -   修复了部分设备上播放网络伴奏时某些 App 闪退的问题。
 
 
@@ -173,13 +260,13 @@ iOS 语音包支持两种主要场景:
 
 该版本于 2018 年 5 月 4 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+### **新增功能**
 
 本次发版新增如下功能：
 
 #### 1. 音效混响进频道
 
-播放音效 `playEffect`接口新增了一个 `publish` 参数，用于在播放音效时，远端用户可以听到本地播放的音效。
+播放音效 `playEffect` 接口新增了一个 `publish` 参数，用于在播放音效时，远端用户可以听到本地播放的音效。
 
 > 如果你的 SDK 是由之前版本升级到 v2.2 版本，请务必关注该接口功能的变动。
 
@@ -187,21 +274,22 @@ iOS 语音包支持两种主要场景:
 
 通过部署 Agora 提供的代理服务器安装包，设有企业防火墙的用户可以设置代理服务器，使用 Agora 的服务。详见 [企业部署代理服务器](../../cn/Quickstart%20Guide/proxy.md) 中的描述。
 
-**改进功能**
+
+### **改进功能**
 
 本次发版改进如下功能：
 
 #### 1. 当前说话者音量提示
 
-改进 `enableAudioVolumeIndication` 接口的功能，无论频道内是否有人说话，都会在回调中按设置的时间间隔返回说话者音量提示。
+改进 `enableAudioVolumeIndication`接口的功能，无论频道内是否有人说话，都会在回调中按设置的时间间隔返回说话者音量提示。
 
 #### 2. 频道内网络质量监测
 
-根据用户对频道内实时网络质量监测的需求，在 onNetworkQuality* 中改进了返回数据的准确度。
+根据用户对频道内实时网络质量监测测的需求，在 `onNetworkQuality` 中改进了返回数据的准确度。
 
 #### 3. 进入频道前网络条件监测
 
-为方便用户在进频道前检查当前网络是否能支撑语音或视频通话，在 `onLastmileQuality` 中，由根据恒定的码率优化为通过用户设定的 Video Profile 的码率进行监测，提高返回数据的准确度。且在网络状态为 unknown 时，依然以 2 秒的间隔返回回调。
+为方便用户在进频道前检查当前网络是否能支撑语音或视频通话，在 `onLastmileQuality` 中，由通过恒定码率监测优化为根据用户设定的 Video Profile 的码率进行监测，提高返回数据的准确度。且在网络状态为 unknown 时，依然以 2 秒的间隔返回回调。
 
 #### 4. 提升音乐场景下的音质
 
@@ -211,24 +299,28 @@ iOS 语音包支持两种主要场景:
 
 新增支持 Bitcode 功能。支持 Bitcode 的 SDK 包大小约为普通包的 2.5 倍；使用 Bitcode 开发的 App 在上传 App Store 后，App Store 会对其进行优化及瘦身，瘦身程度视 App 的代码量而定，代码量越大，瘦身程度越高。
 
-**问题修复**
+### **问题修复**
 
 -   修复了某些 iOS 设备导致频道内其他端的回音问题。
-
--   修复了大量用户同时直播连麦时，偶发的抖屏现象。
 
 
 ## **2.1.3 版**
 
 该版本于 2018 年 4 月 19 日发布。新增特性与修复问题列表详见下文。
 
-**问题修复**
+### **升级必看**
+
+该版本的 SDK 修改了 `setVideoProfile` 方法在直播模式下的码率值，修改后的码率值与 2.0 版本一致。
+
+### **问题修复**
 
 -   修复了 SDK 没有设置 Delegate 时，偶尔收不到 Block 回调的问题。
 
 -   修复了 SDK 的外链符号里，有 NSAssertionHandler 的问题。
 
 -   修复了部分手机上，用户离开频道后，开启自带的录音设备时，偶现录音出错的问题。
+
+-   修复了直播模式下，调用 `enableWebSdkInteroperability `接口后，iOS 端偶尔看不到 Win 10 系统 Web 端视频画面的问题。
 
 -   修复了通信或直播过程中偶现 Crash 的问题。
 
@@ -237,9 +329,13 @@ iOS 语音包支持两种主要场景:
 
 该版本于 2018 年 4 月 2 日发布。新增特性与修复问题列表详见下文。
 
-**问题修复**
 
-修复了之前版本 SDK 在 dtx+aac 模式下会视频卡顿的问题。
+### **问题修复**
+
+-   修复了之前版本 SDK 在 iOS 11 平台上崩溃的问题。
+
+-   修复了之前版本 SDK 在 dtx+aac 模式下会视频卡顿的问题。
+
 
 ## **2.1.1 版**
 
@@ -251,13 +347,13 @@ iOS 语音包支持两种主要场景:
 
 该版本于 2018 年 3 月 7 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+### **新增功能**
 
 本次发版新增如下功能：
 
 #### 1. 开黑
 
-新增了一个游戏开黑场景，用于节省流量和去除杂音，通过调用 API `setAudioProfile` 实现。
+新增了一个游戏开黑场景，用于节省流量和去除杂音，通过调用 API setAudioProfile 实现。
 
 #### 2. 音效均衡和音效混响
 
@@ -272,7 +368,7 @@ iOS 语音包支持两种主要场景:
 -   互动直播场景, 详见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)
 
 
-**改进**
+### **改进**
 
 本次发版改进如下功能：
 
@@ -299,9 +395,9 @@ iOS 语音包支持两种主要场景:
 
 
 
-**问题修复**
+### **问题修复**
 
--   修复了自采集方案退出频道后 App 录不到声音的问题;
+-   修复了自采集方案退出频道后 app 录不到声音的问题;
 
 -   修复了偶现的崩溃;
 
@@ -312,15 +408,18 @@ iOS 语音包支持两种主要场景:
 
 该版本于 2017 年 12 月 15 日发布。新增特性与修复问题列表详见下文。
 
-**问题修复**
+### **问题修复**
 
 修复了 ffmpeg 符号冲突问题;
 
-## **2.0 版**
+## **2.0 版及之前**
+
+### **2.0 版**
 
 该版本于 2017 年 12 月 6 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
+
 
 -   伴奏和音效回调更新如下:
 
@@ -349,7 +448,6 @@ iOS 语音包支持两种主要场景:
 </table>
 
 
-
 -   通信和直播场景下支持音频自采集功能，新增以下 API:
 
     <table>
@@ -374,89 +472,93 @@ iOS 语音包支持两种主要场景:
 </table>
 
 
-
 -   通信和直播场景下支持服务端踢人功能。如有需要，请联系 [sales@agora.io](mailto:sales@agora.io) 开通该功能。
 
 
-**问题修复**
+#### **问题修复**
 
-修复了音频路由和蓝牙相关的若干问题;
+修复了音频路由和蓝牙相关的若干问题。
 
-## **1.14 版**
+### **1.14 版**
 
 该版本于 2017 年 10 月 20 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
 -   新增 API `setAudioProfile` 设置音频参数和应用场景。
 
--   新增 API `setLocalVoicePitch`提供基础变声功能。
+-   新增 API `setLocalVoicePitch` 提供基础变声功能。
 
 -   直播场景: 新增 API `setInEarMonitoringVolume` 提供调节耳返音量功能。
 
 
-**改进**
+#### **改进**
 
 -   优化了在高码率下的音频体验。
 
--   秒开: 直播场景下，单流模式时观众加入频道 1 秒内看见主播图像 (均值为 938 ms, 网络状态良好时可达 734 ms)。
+-   秒开: 直播场景下，单流模式时观众加入频道 1 秒内看见主播图像\(均值为 938 ms, 网络状态良好时可达 734 ms\)。
 
 -   节省带宽:
 
-    -   1.14 以前: 如果你选择不听某人的音频，音频流会照发。
+    -   1.14 以前: 如果你选择不听某人的音频或不看某人的视频，音视频流会照发。
 
-    -   1.14 开始: 如果你选择不听某人的音频，则不会下发音频流，从而节省带宽。
-
-
-**问题修复**
-
-修复了部分机器上偶现的崩溃问题。
-
-**改进**
-
--   优化了在高码率下的音频体验。
-
--   节省带宽: 1.14 以前如果你选择不听某人的音频，音频流会照发。从 1.14 开始，如果你选择不听某人的音频，则不会下发流，从而节省带宽。
+    -   1.14 开始: 如果你选择不听或不看某人的流，则不会下发，从而节省带宽。
 
 
-**修复问题**
 
-修复了部分机器上偶现的崩溃问题。
+#### **问题修复**
 
-## **1.13.1 版**
+修复了部分 iOS 机器上偶现的崩溃。
+
+
+### **1.13.1 版**
 
 该版本于 2017 年 9 月 28 日发布。新增特性与修复问题列表详见下文。
 
-**修复问题**
+#### **问题修复**
 
--   解决了 iOS 11 在 iPhone 7 (及以上版本) 手机外放下无法调节音量的问题。
+-   解决了 iOS 11 在 iPhone 7\(及以上版本\) 手机外放下无法调节音量的问题。
 
 -   优化了特定场景下出现的回声问题。
 
 
-## **1.13 版**
+### **1.13 版**
 
 该版本于 2017 年 9 月 4 日发布。新增特性与修复问题列表详见下文。
 
+#### **新增功能**
+
 -   新增 API `didClientRoleChanged` 用于提醒直播场景下主播、观众上下麦的回调。
 
--   修复了部分机型上偶现的崩溃。
+-   新增单独关闭语音播放的功能。
+
+-   新增功能支持服务端推流失败回调。
+
+-   为 SDK 新增了 module map, 意味着 Swift 项目以后不需要添加桥接文件才能使用。
 
 
-## **1.12 版**
+#### **改进**
+
+-   可以在客户端设置推流的 profile
+
+
+#### **修复问题**
+
+修复了部分机型上偶现的崩溃。
+
+### **1.12 版**
 
 该版本于 2017 年 7 月 25 日发布。新增特性与修复问题列表详见下文。
 
-**新增功能**
+#### **新增功能**
 
--   在 API 方法 `setEncryptionMode` 里新增加密模式 `aes-128-ecb`。
-
--   在 API 方法 `startAudioRecording` 里新增参数 `quality` 用于设置录音音质。
-
+-   在 API 方法 `setEncryptionMode` 里新增了加密模式 `aes-128-ecb`。
+-   在 API 方法 `startAudioRecording`里新增了参数 `quality` 用于设置录音音质。
 -   新增了一系列 API 管理音效。
+-   直播场景下， 新增了 API 方法 `injectStream`在当前频道内插入一条 RTMP 流。该功能目前为 beta 版。
 
 
-**修复问题**
+#### **修复问题**
 
 修复了部分机型上偶现的崩溃问题。
 

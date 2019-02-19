@@ -3,12 +3,12 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 04:00:44 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 02:12:31 GMT+0000 (UTC)
 ---
 # Release Notes for the Recording SDK
 ## Overview
 
-The Agora Recording SDK records communication and live broadcast contents based on the Agora Native SDK or/and Agora Web SDK.
+The Agora Recording SDK records communication and live broadcast contents based on the Agora Native SDK.
 
 ### Compatibility
 
@@ -39,10 +39,118 @@ This component package is compatible with the following SDKs:
 -   When you record using an Android client, the image is turned upside down when you switch from a front-facing camera to a rear one.
 -   If the user calls <code>leaveChannel</code> in the channel to stop recording, the recording file ends with a period of silence determined by the <code>idleLimitSec</code> field set for the configuration when calling <code>joinChannel</code>.
 -   The recorded voice or video files are not encrypted. To be compliant with HIPPA, encrypt the disk with a disk encryption tool, such as cryptsetup.
--   The recording SDK only stores the original video file passed from the client’s side. When creating the MPEG-4 media file, the SDK adjusts the rotation once based on the rotational information found in the `uid_xxx.txt` file. In other words, no matter how many times the video rotates, the Agora Recording SDK rotates it once only according to the first rotational information in the `uid_xxx.txt` file. You can change the converting script according to the rotational information in the `uid_xxx.txt` file to generate the rotated video. Agora plans to add a new feature enabling video rotation by a converting script in version 2.3.
 
 
 > Agora Recording SDK supports both Java and C++ from v2.2.0.
+
+## v2.3.0
+
+The version 2.3.0 was released on January 14, 2019. See below for new features and improvements . 
+
+> The billing of Recording SDK v2.3.0 or later is seperated from that of Agora Voice Call/Voice Interactive Broadcast SDK and Agora Video Call/Video Interactive Broadcast SDK. Contact [sales@agora.io](mailto:sales@agora.io) to get more details.
+
+### New Features
+
+#### 1. Support for Stereo Audio in Composite Recording Mode
+
+Support high audio quality (sampling rate of 48 kHz, stereo and a bitrate of up to 192 Kbps) in the composite recording mode.
+
+> Stereo is not applicable to raw data. 
+
+`audio profile` can be set as `0` or `1` :
+
+- Individual recording (file mode)
+  - By default or set `audio profile=0`: the sampling rate 48 KHz, same number of sound channels as the orignal audio, and adaptive bitrate.
+- Individual recording (raw data)
+  - The sampling rate is fixed to 48 KHz and the number of sound channels is the same as the original audio.
+    - PCM: The bitrate may change.
+    - AAC: The bitrate is the same as in the file mode.
+- Composite recording (file mode)  
+  - `audio profile=0`: Sampleing rate 48 KHz, mono, bitrate 48 Kbps
+  - `audio profile=1`: Sampleing rate 48 KHz, mono, bitrate 128 Kbps
+  - `audio profile=2`: Sampleing rate 48 KHz, stereo, bitrate 192 Kbps
+- Composite recording (raw data)  
+  - Fixed sampling rate 48 KHz, mono
+
+#### 2. Support for Web Video Players 
+
+The video files transcoded in real time or transcoded by the transcoding script can be played by browsers on Android, iOS/macOS, and Windows. Below is a list of compatible browsers on each platform.
+
+<table>
+  <tr>
+    <th>Platform</th>
+    <th>Chrome </th>
+    <th>Safari</th>
+  </tr>
+  <tr>
+    <td>Android </td>
+    <td>Chrome 49+</td>
+    <td>N/A</td>
+  </tr>
+  <tr>
+    <td>iOS</td>
+    <td>✘</td>
+    <td>Safari 9+</td>
+  </tr>
+  <tr>
+    <td>macOS 10+</td>
+    <td>Chrome 47+</td>
+    <td>Safari 11+</td>
+  </tr>
+  <tr>
+    <td>Windows</td>
+    <td>Chrome 49+</td>
+    <td>N/A</td>
+  </tr>
+</table>
+
+#### 3. Support for Customizing Background Image in Composite Recording Mode 
+
+- Users can add a backgroud image while recording audio in the Composite Recording Mode;
+
+- Use a customized image for the user who do not have video while recording video in the Composite Recording Mode.
+
+> This function is not applicable to raw data and screenshot.
+
+#### 4. Added Two Pre-defined Layout Templates to the Sample Code
+
+To make the sample code in the Recoridng SDK easier to use, two pre-defined layout templates for composite recording are provided:
+
+##### Best Fit (bestFit)
+
+The default layout. Supports up to 17 video streams.
+
+This layout automatically scales according to the number of videos. The number of columns and rows of varies depending on the number of videos. For example:
+
+![](https://web-cdn.agora.io/docs-files/1542680053900)
+
+##### Vertiacal Presentation （verticalPresentation）
+
+A specified uid displays the large video on the left of the screen, while the others are arranged vertically on the right with small videos. At most two columns with 8 videos each column are supported. 
+
+For example:
+
+![](https://web-cdn.agora.io/docs-files/1542680070362)
+
+#### 5. Screenshot in Composite Recording Mode
+
+Capture the screen of every single user while recording video in the Composite Recording Mode. The recording and the screen capturing use the same video stream.
+
+#### 6. Speaker Detection
+
+The new callback `onActiveSpeaker` returns the UID of the active speaker in the channel.
+
+This function is disabled by default and can be enabled by setting the parameter of `audioIndicationInterval` in `RecordingConfig`. The Recording SDK will return `onActiveSpeaker` at the set interval.
+
+### Improvements
+
+- Improved audio and video synchronization in the Individual Recording Mode;
+- Supported automatic rotation of recorded videos which are not transcoded in real time in the Individual Recording Mode;
+- Changed the idle behavior in the manual mode:
+     - For the versions earlier than v2.3.0, in the Manually Mode, the idle mechanism takes effect immediately after joining the channel, which might cause the recording SDK to exit the channel.
+     - For v2.3.0 or later versions,  the idle mechanism does not take effect until `startService` is called.
+- Optimized the log levels and split some major logs in INFO into NOTICE, WARN, and ERROR.
+- Optimized the naming of recording directory to ensure the uniqueness of each folder.
 
 ## v2.2.3 
 

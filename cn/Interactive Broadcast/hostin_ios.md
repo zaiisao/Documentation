@@ -3,7 +3,7 @@
 title: 实现客户端连麦
 description: 
 platform: iOS
-updatedAt: Mon Oct 08 2018 03:28:02 GMT+0000 (UTC)
+updatedAt: Fri Sep 28 2018 19:57:06 GMT+0800 (CST)
 ---
 # 实现客户端连麦
 # 实现客户端连麦
@@ -14,7 +14,7 @@ updatedAt: Mon Oct 08 2018 03:28:02 GMT+0000 (UTC)
 - 多个嘉宾同时和主播连麦、进行实时互动
 - 有定制化需求的用户，可以由用户控制视频源的采集
 
-连麦都是在客户端实现的，如有推流需求，你可以结合 [推流到 CDN](../../cn/Quickstart%20Guide/push_stream_ios2.0.md) 选择在服务器端推流还是客户端推流。本文以两人连麦场景为例。
+连麦都是在客户端实现的，如有推流需求，你可以结合 [进阶：推流到 CDN](../../cn/Quickstart%20Guide/push_stream_ios2.0.md) 选择在服务器端推流还是客户端推流。本文以两人连麦场景为例。
 
 ### 方案
 
@@ -40,8 +40,8 @@ updatedAt: Mon Oct 08 2018 03:28:02 GMT+0000 (UTC)
 
 ### 准备工作
 
-- 如果你想实现语音连麦，确保你已经根据 [实现语音直播](../../cn/Quickstart%20Guide/broadcast_audio_ios.md) 实现语音直播功能。
-- 如果你想实现音视频连麦，确保你已经根据 [实现视频直播](../../cn/Quickstart%20Guide/broadcast_video_ios.md) 实现视频直播功能。
+- 如果你想实现语音连麦，确保你已经根据 [入门: 实现语音直播](../../cn/Quickstart%20Guide/broadcast_audio_ios.md) 实现语音直播功能。
+- 如果你想实现音视频连麦，确保你已经根据 [入门: 实现视频直播](../../cn/Quickstart%20Guide/broadcast_video_ios.md) 实现视频直播功能。
 
 ## 模式 A
 

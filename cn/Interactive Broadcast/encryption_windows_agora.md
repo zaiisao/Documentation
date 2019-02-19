@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:04:18 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:54:45 GMT+0000 (UTC)
 ---
 # 选择加密方案
 本文描述如何使用 Agora 内置的加密方案。
@@ -16,7 +16,7 @@ updatedAt: Fri Nov 02 2018 04:04:18 GMT+0000 (UTC)
 
 ## 场景 2: 需要加密
 
-<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 500px;"/>
+<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 840px;"/>
 
 
 ### 步骤 1: 启用加密功能。
@@ -31,7 +31,7 @@ updatedAt: Fri Nov 02 2018 04:04:18 GMT+0000 (UTC)
 
 下图描述了集成了自定义加密解密算法的声网音视频通信方案：
 
-<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 500px;"/>
+<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 840px;"/>
 
 
 ### 步骤 1: 注册数据包观测器

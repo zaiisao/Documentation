@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Cocos
-updatedAt: Fri Nov 02 2018 04:23:19 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 03:05:31 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is provided for the C++ language with the following classes:
@@ -990,7 +990,7 @@ This method starts an audio recording. The SDK allows recording during a call, w
 -   `.aac`: Small file size with low sound fidelity
 
 
-Ensure that the directory to save the recording file exists and is writable. This method is usually called after joining a channel. The recording automatically stops when the leaveChannel method is called.
+Ensure that the directory to save the recording file exists and is writable. Call this method after joining a channel. The recording automatically stops when the leaveChannel method is called.
 
 <table>
 <colgroup>

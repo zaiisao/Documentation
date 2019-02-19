@@ -3,9 +3,12 @@
 title: 加入频道
 description: 小程序加入频道
 platform: 微信小程序
-updatedAt: Fri Nov 02 2018 04:01:34 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:59:29 GMT+0000 (UTC)
 ---
 # 加入频道
+在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Interactive%20Broadcast/miniapp_video.md)。
+
+## 实现方法
 初始化客户端对象后，在成功的回调中调用  加入频道 `join` 方法，并在该方法中填入以下参数值：
 
 -   `tokenOrKey`：在用户服务器端生成的动态密钥（Channel Key 或 Token）。详细生成办法见 [密钥说明](../../cn/Interactive%20Broadcast/token.md) 。如果没有开启动态密钥，设置为 null。
@@ -51,3 +54,8 @@ client.init(APPID, () => {
   reject(e);
 });
 ```
+
+## 相关文档
+成功加入频道后，你可以使用 Agora SDK，实现如下功能进行通话/直播：
+
+- [发布和订阅音视频流](../../cn/Interactive%20Broadcast/publish_mini.md)

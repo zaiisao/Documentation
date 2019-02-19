@@ -3,9 +3,11 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Fri Nov 02 2018 03:59:16 GMT+0000 (UTC)
+updatedAt: Tue Jan 29 2019 02:59:49 GMT+0000 (UTC)
 ---
 # 集成客户端
+本文介绍在正式使用 Agora SDK for macOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+
 ## 前提条件
 
 - Xcode 9.0+。
@@ -15,7 +17,7 @@ updatedAt: Fri Nov 02 2018 03:59:16 GMT+0000 (UTC)
 
 ## <a name = "appid-mac"></a>创建 Agora 账号并获取 App ID
 1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
-2. 登陆 Dashboard 页面，点击 **添加新项目**。
+2. 登录 Dashboard 页面，点击 **添加新项目**。
 
 	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
@@ -90,18 +92,22 @@ updatedAt: Fri Nov 02 2018 03:59:16 GMT+0000 (UTC)
 	<img alt="../_images/mac_video_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_2.jpg" />
 
 4. 展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加。
-  - `libresolv.tbd`
- - `libc++.1.dylib`
- - `Accelerate.framework`
- - `SystemConfiguration.framework`
- - `CoreWLAN.framework`
- - `Foundation.framework`
- - `CoreAudio.framework`
- - `CoreMedia.framework`
- - `AVFoudation.framework`
- - `VideoToolbox.framework`
- - `AudioToolbox.framework`
- - `AgoraRtcEngineKit.framework`
+
+   - `AgoraRtcEngineKit.framework`
+   - `libresolv.tbd`
+   - `libc++.1.dylib`
+   - `Accelerate.framework`
+   - `SystemConfiguration.framework`
+   - `CoreWLAN.framework`
+   - `Foundation.framework`
+   - `CoreAudio.framework`
+   - `CoreMedia.framework`
+   - `AVFoudation.framework`
+   - `VideoToolbox.framework`
+   - `AudioToolbox.framework`
+   - `CFNetwork.framework`
+   - `CoreGraphics.framework`
+   - `CoreVideo.framework`
 
 	**添加前：**
 
@@ -109,7 +115,7 @@ updatedAt: Fri Nov 02 2018 03:59:16 GMT+0000 (UTC)
 
 	**添加后：**
 
-	<img alt="../_images/mac_video_4.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_4.jpg" />
+	![](https://web-cdn.agora.io/docs-files/1548730707020)
 
 	其中，`AgoraRtcEngineKit.framework` 位于下载下来的 SDK 包 `libs` 文件夹下。因此点击 **+** 后，还需要点击 **Add Other…** ，然后进入到 SDK 的 `libs` 路径下，点击并添加 `AgoraRtcEngineKit.framework`。
 
@@ -146,4 +152,10 @@ updatedAt: Fri Nov 02 2018 03:59:16 GMT+0000 (UTC)
 
 <img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_8.jpg" />
 
-你已经完成了客户端集成，可以 开始使用 Agora SDK。
+## 相关文档
+
+完成了客户端集成后，你可以使用 Agora SDK，依次实现左侧《快速开始》菜单栏下的步骤，进行通话/直播：
+
+- 初始化
+- 加入频道
+- 发布和订阅流

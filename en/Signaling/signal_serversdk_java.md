@@ -3,7 +3,7 @@
 title: Server SDK API
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:05:03 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 09:56:43 GMT+0000 (UTC)
 ---
 # Server SDK API
 > Version: v1.4.0 BETA
@@ -146,7 +146,7 @@ public Signal.LoginSession login(String account, String token, Signal.LoginCallb
 
 
 
->  You can skip the generation of the token in a test environment by setting `token` to `_no_need_token`. Agora does not recommend doing so in a production environment. By default, if you are already logged in, the call of login\(\) will be ignored. To cancel the previous login, call logout\(\) beforehand without having to wait until it is successfully executed.
+> You can skip the generation of the token in a test environment by setting `token` to `_no_need_token`. Agora does not recommend doing so in a production environment. By default, if you are already logged in, the call of `login` will be ignored. To cancel the previous login, call `logout` beforehand without having to wait until it is successfully executed.
 
 #### Set a User Attribute \(userSetAttr\)
 
@@ -603,7 +603,7 @@ public void messageChannelSend(String msg)
 <td><strong>Description</strong></td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>Message body. Each channel message must not exceed 8 k visible characters. A user cannot send more than 60 messages per second, and the entire channel can not send more than 1,000 messages per second.</td>
+<td>Message body. Each channel message must not exceed 8 k visible characters. A user cannot send more than 60 messages per second, and the entire channel can not send more than 200 messages per second.</td>
 </tr>
 </tbody>
 </table>
@@ -913,6 +913,7 @@ This callback notifies a user that he/she has received a message.
 
 ```
 public void onMessageInstantReceive(Signal.LoginSession session, String account, int uid, String msg)
+
 ```
 
 <table>
@@ -947,6 +948,7 @@ This callback is triggered when a user has received a call invitation/request.
 
 ```
 public void onInviteReceived(Signal.LoginSession session, Signal.LoginSession.Call call)
+
 ```
 
 <table>
@@ -975,6 +977,7 @@ This callback is triggered when an error is detected.
 
 ```
 public void onError(Signal.LoginSession session, int ecode, String reason)
+
 ```
 
 <table>
@@ -1012,6 +1015,7 @@ This callback is triggered when a user has sent a message.
 
 ```
 public void onMessageSendSuccess(Signal.LoginSession session)
+
 ```
 
 <table>
@@ -1037,6 +1041,7 @@ This callback is triggered when a user fails to send a message.
 
 ```
 public void onMessageSendError(Signal.LoginSession session, int ecode)
+
 ```
 
 <table>
@@ -1071,6 +1076,7 @@ This callback is triggered when a user has joined a channel.
 
 ```
 public void onChannelJoined(Signal.LoginSession session, Signal.LoginSession.Channel channelName)
+
 ```
 
 <table>
@@ -1099,6 +1105,7 @@ This callback is triggered when a user has failed to join a channel.
 
 ```
 public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
+
 ```
 
 <table>
@@ -1130,6 +1137,7 @@ This callback is triggered when the user has left a channel.
 
 ```
 public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
+
 ```
 
 <table>
@@ -1161,6 +1169,7 @@ This callback is triggered when another user has joined the channel.
 
 ```
 public void onChannelUserJoined(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid);
+
 ```
 
 <table>
@@ -1195,6 +1204,7 @@ This callback is triggered when a user has left the channel.
 
 ```
 public void onChannelUserLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)
+
 ```
 
 <table>
@@ -1233,6 +1243,7 @@ The retrieved user list includes a maximum of 200 users latest in the channel.
 
 ```
 public void onChannelUserList(Signal.LoginSession session, Signal.LoginSession.Channel channel, List<String> users, List<Integer> uids)
+
 ```
 
 <table>
@@ -1267,6 +1278,7 @@ This callback is triggered when a channel attribute is changed.
 
 ```
 public void onChannelAttrUpdated(Signal.LoginSession session, Signal.LoginSession.Channel channel, String name, String value, String type)
+
 ```
 
 <table>
@@ -1304,6 +1316,7 @@ This callback is triggered when the number of users in a channel is queried.
 
 ```
 public void onChannelQueryUserNum(Signal.LoginSession session, String err, int num)
+
 ```
 
 <table>
@@ -1341,6 +1354,7 @@ This callback is trigged upon receiving the channel message.
 
 ```
 public void onMessageChannelReceive(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid, String msg)
+
 ```
 
 <table>
@@ -1384,6 +1398,7 @@ This callback is triggered when the callee has received a call invitation/reques
 
 ```
 public void onInviteReceivedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call)
+
 ```
 
 <table>
@@ -1412,6 +1427,7 @@ This callback is triggered when the callee has accepted a call invitation/reques
 
 ```
 public void onInviteAcceptedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 <table>
@@ -1443,6 +1459,7 @@ This callback is triggered when the callee has rejected a call invitation/reques
 
 ```
 public void onInviteRefusedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 <table>
@@ -1474,6 +1491,7 @@ This callback is triggered when a call fails.
 
 ```
 public void onInviteFailed(Signal.LoginSession session, Signal.LoginSession.Call call, int ecode)
+
 ```
 
 <table>
@@ -1505,6 +1523,7 @@ This callback is triggered when the callee has ended the call.
 
 ```
 public void onInviteEndByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 <table>
@@ -1536,6 +1555,7 @@ This callback is triggered when the user ended the call.
 
 ```
 public void onInviteEndByMyself(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 <table>
@@ -1567,6 +1587,7 @@ This callback is triggered when the user has received a DTMF message from the ot
 
 ```
 public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 <table>
@@ -1595,6 +1616,3 @@ public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call ca
 ## Error Codes and Warning Codes
 
 See [Error Codes and Warning Codes](../../en/API%20Reference/the_error_signaling.md).
-
-
-

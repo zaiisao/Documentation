@@ -1,11 +1,11 @@
 
 ---
-title: 七人以上视频通话
-description: 
+title: 实现七人以上视频通话
+description: 7+
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:21:35 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 11:59:42 GMT+0000 (UTC)
 ---
-# 七人以上视频通话
+# 实现七人以上视频通话
 在七人以上的视频会议场景中，如果连麦人数过多，可能会引起音画不同步、信息丢失等问题。 如果参与连麦的各方将订阅流设置为 **1-N** 模式，即将 1 方设为大流，其余各方设为小流，那么最多可以支持 17 人互动视频通话，并支持实时转码推流。
 
 本文展示七人以上视频通话的适用场景及相关接口，以及使用该功能的相关注意事项。
@@ -27,7 +27,6 @@ updatedAt: Fri Nov 02 2018 04:21:35 GMT+0000 (UTC)
 在 `joinChannel` 前需要进行如下设置:
 
 - 开启多人视频通信模式：`setParameters("{\"che.audio.live_for_comm\":true}");`
-- 开启全面丢包对抗模式：`setParameters("{\"che.video.moreFecSchemeEnable\":true}");`
 
 ## 3. 大小流设置
 

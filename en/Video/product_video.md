@@ -3,167 +3,53 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:05:33 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 08:32:50 GMT+0000 (UTC)
 ---
 # Agora Video Overview
-## Brief Introduction
+The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
 
-Agora Video Call is based on the UDP protocol and the sound and video codec technology of Agora. It provides reliable real-time audio and video services, making real-time audio and video available everywhere.
+The difference between an Agora Video Call and [Agora Video Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
+* An Agora Video Call prioritizes fluency and low latency. All users are the same role and can talk to each other freely. A typical scenario of an Agora Video Call is a video conference call for many persons. 
+* An Agora Video Interactive Broadcast prioritizes high voice quality. Users can be the host or audience, where only the host can talk. A user who wants to talk must change the role to a host. A typical scenario of an Agora Video Interactive Broadcast is an interactive online class.
 
-Based on Agora’s global deployment of SD-RTN, Agora Video Call is implemented with:
+## Functions and Scenarios
 
--   End-to-end delay of less than 76 ms
+The Agora Native SDK for Video Call boasts a flexible combination of functions for different scenarios.
 
--   99.9% connectivity rate
+| Function                              | Description                                                  | Scenario                                                     |
+| ----------------- | ------------------------------------------------------------ | --------------------------------------- |
+| Audio Mixing          | Sends the local and online audio with the user's voice to other audience members in the channel. | <li>Online KTV. <li>Interactive music classes. |
+| Screen Sharing             | Enables hosts to share their screen to the audience in the channel.                         | Interactive online classes.                                                  |
+| Modify the Raw Data   | Enables developers to obtain and modify the raw voice or video data and to create special effects, such as a voice change. | <li>To change the voice in an online chatroom. <li>Image enhancement in a video call.                  |
+| Customize the Video Source and Renderer | Enables customization of the video sources and renderers. This allows users to use self-built cameras and videos from screen sharing or files to process videos, such as for image enhancement and filtering. | <li>To use a customized image enhancement library or pre-processing library.<li>To customize the application's built-in image and video modules.<li>To use other video sources, such as a recorded video.<li>To provide flexible device management for exclusive video capture devices to avoid conflicts with other services. |
 
--   99.99% high availability
+## Key Properties
 
--   Excellent anti-lost technology
+| Property                                          | Agora Video Call Specifications                          |
+| ------------ | ------------------------------------------------------------ |
+| SDK Package Size                                  | 3.69 MB to 7.75 MB                                              |
+| Capacity     | Seven users (To support more users, use [Agora Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms)) |
+| Video Profile                                     | <li>SDK video source: Up to 1080p @ 60 fps<li>Custom video source: Up to 4K |
+| Audio Profile                                     | <li>Sample rate: 16 KHz to 48 KHz<li>Support for mono and stereo sound |
+| Audio Anti-packet-loss Rate                       | 70% (uplink and downlink)                               |
 
--   The ability to support 4K, 60 fps ultra clear video
+## Compatibility
 
--   The ability to support full-band audio acquisition at 48 KHz. The original sound effect is perfectly restored through the 3A algorithm based on machine learning.
+The Agora Native SDK for Video Call is supported on platforms such as iOS, Android, Windows, macOS, Linux, Web, and WeChat Mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
 
-
-Agora Video Call provides SDK for all platforms, including:
-
--   iOS
-
--   Android
-
--   Windows
-
--   macOS
--    Linux 
-
--   Web
-
--   Wechat applications
-
-
-## Functions
-
-Agora Video Call supports:
-
--   Real-time audio and video interaction among up to 7 people in the same channel
-
--   Audio:
-
-    -   3A audio algorithm \(echo cancellation, auto gain, noise suppression\)
-
-    -   Full-band audio sampling with sampling rate of up to 48 KHz
-
-    -   2-channel stereo audio effect
-
-    -   Spatial sound effect
-
-    -   Audio codec optimization for calls, music, and games
-
-    -   Sound mixing
-
-    -   Sound reverb
-
-    -   Audio self-collection
-
--   Video:
-
-    -   Ultra-clear video up to 4K, 60 fps
-
-    -   Screen sharing
-
-    -   Self-adaptive adjustment of bit rate, frame rate, resolution
-
-    -   High-resoulution / Low-resolution stream
-
-    -   Video self-collection
-
-    -   Third-party interfaces such as beauty, stickers, face recognition, and background segmentation
-
--   Implementing recording with Agora Recording SDK
-
-
-## Application
-
-Agora Video Call can be used in the following scenarios:
-
--   Social entertainment industry
-
-    -   Enables multi-party chat, voice chat room, and other scenarios;
-
-    -   Supports third-party algorithm integration like beauty and sticker.
-
--   Education industry
-
-    -   Enables 1 on 1 or 1 on N teaching, high-quality music class and other scenes;
-
-    -   Achieves low latency, high quality audio and video experience;
-
-    -   Provides quality indicators such as connectivity, packet loss rate, jitter, delay, and cardot;
-
-    -   Provides flexible recording modes.
-
--   Game industry
-
-    -   Provides solutions for team-gaming, voice radio, real-time audio and video in board games and FPS games, etc;
-
-    -   High sound quality, low latency, no stagnation, no echo, etc;
-
-    -   Optimization for package size, CPU consumption, memory consumption, and power consumption.
-
--   Financial sector
-
-    -   Provides solutions for video customer service. For example, online account registration, VIP online banking, video customer service and other scenarios;
-
-    -   Insurance forensics. Insurance companies can remotely determine loss and evidence through real-time audio and video efficiently.
-
--   IoT industry
-
-    -   Remote audio and video monitoring;
-
-    -   Children’s smart watch, enabling parents to master the status of their children;
-
-    -   Smart glasses. Remote audio and video calls via smart glasses for remote troubleshooting;
-
-    -   Intelligent access control, which enables remote video 1V1 connection and authentication between the visitor and the owner;
-
-    -   smart robot, enabling remote audio and video calls between the robot and the mobile APP.
-
-
-## Features
-
-Agora Video Call has the following features:
-
--   High reliability:
-
-    -   100+ data centers around the world, covering 200+ countries, which enables dynamic routing and avoiding network failures automatically
-
-    -   Distributed architecture, which enables massive concurrent and high availability.
-
-    -   7\*24 hour operation and maintenance monitoring
-
--   High quality:
-
-    -   Unique network bandwidth prediction algorithm, congestion control algorithm, packet loss compensation, anti-lost coding and other technical means to ensure high-quality real-time audio and video experience under bad networks
-
--   Security:
-
-    -   Support for built-in AES128, AES256 encryption and third-party data encryption
-
--   Ease of use:
-
-    -   Elegant API design
-
--   Compatibility:
-
-    -   Provides SDK for all platforms, see the table below for supported versions:
-    <table>
+<table>
   <tr>
     <th>Platform</th>
     <th>Supported Version</th>
   </tr>
   <tr>
     <td>Android</td>
-    <td>4.1+</td>
+		<td><p>4.1+</p>
+		<p>The Android SDK supports the following architecture:</p>
+			<ul><li>ARMv7</li>
+				<li>ARM64</li>
+				<li>X86</li>
+				</td>
   </tr>
   <tr>
     <td>iOS</td>
@@ -178,7 +64,7 @@ Agora Video Call has the following features:
     <td>10.0+</td>
   </tr>
   <tr>
-    <td>WeChat Mini App</td>
+    <td>WeChat Mini-programs</td>
     <td>Support</td>
   </tr>
   <tr>
@@ -187,22 +73,7 @@ Agora Video Call has the following features:
 			<li>Firefox 56+</li>
 			<li>Safari 11+</li>
 			<li>Opera 45+</li>
-			<li>QQ 10+</li></ul></td>
+			<li>QQ 10+</li>
+            <li>360 Security Browser 9.1+</li></ul></td>
   </tr>
 </table>
-
--   Third-part support:
-
-    -   Support for beauty, sticker, face recognition, background segmentation algorithms
-
-    -   Support for pornography-detection algorithms
-
-
-## References
-
--   [Quickstart Guides](../../en/Quickstart%20Guide/communication_android_video-1.md) on how to deploy and quickly get started on using the Agora Native SDK for Video.
-
--   [API Reference](https://docs.agora.io/en/Video/API%20Reference/java/index.html) lists various APIs to call and their functions when using the Agora Native SDK for Video.
-
-
-

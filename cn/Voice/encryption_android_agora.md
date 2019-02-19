@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:04:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:42:36 GMT+0000 (UTC)
 ---
 # 选择加密方案
 本文介绍如何选择加密方案。
@@ -18,7 +18,7 @@ updatedAt: Fri Nov 02 2018 04:04:01 GMT+0000 (UTC)
 
 使用 Agora SDK 内置的加密算法会用到通信模式下的 API。下图描述了启用了内置加密方案的声网音视频通信方案：
 
-<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 500px;"/>
+<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 840px;"/>
 
 
 在下载的 [SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads) 的 `/libs/arm64-v8a` 和 `/libs/armeabi-v7a` 文件夹下均包含一个独立的动态库 `libagora-crypto.so` 供 App 动态加载。
@@ -42,7 +42,7 @@ updatedAt: Fri Nov 02 2018 04:04:01 GMT+0000 (UTC)
 
 下图描述了集成了自定义加密解密算法的声网音视频通信方案：
 
-<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 500px;"/>
+<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 840px;"/>
 
 
 ### 步骤 1: 注册数据包观测器

@@ -3,14 +3,14 @@
 title: Signaling API
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:04:53 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:27:27 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0
 
 ## Methods
 
->  Only the built-in attributes come after an underscore; the custom attributes do not.
+> Only the built-in attributes come after an underscore; the custom attributes do not.
 
 ### Lifecycle
 
@@ -97,7 +97,7 @@ public virtual void callbackSet (ICallBack* handler) ;
 
 
 
->  Avoid using synchronous or block callback operations. Otherwise, the signaling system may crash. To avoid memory leakage, delete the instance pointer which was set by <code>callbackSet</code> the last time your app logged out of the signaling system.
+> Avoid using synchronous or block callback operations. Otherwise, the signaling system may crash. To avoid memory leakage, delete the instance pointer which was set by <code>callbackSet</code> the last time your app logged out of the signaling system.
 
 #### Retrieves the Callback (callbackGet)
 
@@ -134,10 +134,9 @@ Use this method to log into Agora’s signaling system. Users must log in before
 public virtual void login (char const * appId, size_t appId_size,char const * account, size_t account_size,char const * token, size_t token_size,uint32_t uid,char const * deviceID, size_t deviceID_size) ;
 ```
 
--   When login is successful, the <code>onLoginSuccess</code> callback function is triggered.
--   When login fails, the <code>onLoginFailed</code> callback function is triggered.
--   When the connection to the server is lost, the <code>onLogout</code> callback function is triggered.
-
+- When login is successful, the <code>onLoginSuccess</code> callback function is triggered.
+- When login fails, the <code>onLoginFailed</code> callback function is triggered.
+- When the connection to the server is lost, the <code>onLogout</code> callback function is triggered.
 
 <table>
 <colgroup>
@@ -168,7 +167,7 @@ public virtual void login (char const * appId, size_t appId_size,char const * ac
 
 
 
->  You can skip generating a token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the <code>login</code> call will be ignored. To cancel the previous login, you can call <code>logout</code> first without having to wait until it is successfully executed.
+> You can skip generating a token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the `login` call will be ignored. To cancel the previous login, you can call `logout` first without having to wait until it is successfully executed.
 
 #### Log into Agora's Signaling System (login2)
 
@@ -178,10 +177,9 @@ Use this method to log into Agora’s signaling system. Users must always log in
 public virtual void login2 (char const * appId, size_t appId_size,char const * account, size_t account_size,char const * token, size_t token_size,uint32_t uid,char const * deviceID, size_t deviceID_size,int retry_time_in_s,int retry_count) ;
 ```
 
--   When login is successful, the <code>onLoginSuccess</code> callback function is triggered.
--   When login fails, the <code>onLoginFailed</code> callback function is triggered.
--   When the connection to the server is lost, the <code>onLogout</code> callback function is triggered.
-
+- When login is successful, the <code>onLoginSuccess</code> callback function is triggered.
+- When login fails, the <code>onLoginFailed</code> callback function is triggered.
+- When the connection to the server is lost, the <code>onLogout</code> callback function is triggered.
 
 <table>
 <colgroup>
@@ -211,14 +209,14 @@ public virtual void login2 (char const * appId, size_t appId_size,char const * a
 <td>The maximum time allowed to re-login, 30 seconds by default.</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>The maximum times allowed to re-login, 3 times by default.</td>
+<td>The maximum times allowed to re-login, 15 times by default.</td>
 </tr>
 </tbody>
 </table>
 
 
 
->  You can skip generating the token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. <code>onLoginFailed</code> will be triggered and reconnection stopped when either <code>retry_time_in_s</code> or <code>retry_count</code> is reached.
+> You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. `onLoginFailed` will be triggered and reconnection stopped when either `retry_time_in_s` or `retry_count` is reached.
 
 #### Log out of Agora's Signaling System (logout)
 
@@ -550,7 +548,7 @@ public virtual void channelJoin (char const * channelID, size_t channelID_size) 
 
 
 
->  Special channels are used by servers only to receive login and channel events.
+> Special channels are used by servers only to receive login and channel events.
 
 #### Allows a User to Leave a Channel (channelleave)
 
@@ -803,7 +801,7 @@ public virtual void messageInstantSend (char const * account, size_t account_siz
 <td>Channel name. It can be up to 128 visible characters.</td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>Message body. Each channel message must not exceed 8 KB visible characters. Each user cannot send more than 60 messages per second, and the entire channel cannot send more than 1,000 messages per second.</td>
+<td>Message body. Each channel message must not exceed 8 KB visible characters. Each user cannot send more than 60 messages per second, and the entire channel cannot send more than 200 messages per second.</td>
 </tr>
 <tr><td><code>msgID</code></td>
 <td>Visible characters. Message ID. Agora recommends setting it to “”, allowing the SDK to generate and assign the <code>msgID</code> and to ensure its uniqueness.</td>
@@ -819,14 +817,13 @@ public virtual void messageInstantSend (char const * account, size_t account_siz
 
 This method initiates a call, that is, invites a user to join a specified channel.
 
->  Calling and joining a channel are two separate processes. The user has to call channelJoin() to join the channel. The user can either join the channel before sending a call invitation or send a call invitation before joining the channel (when the counterpart accepts the invitation).
+> Calling and joining a channel are two separate processes. The user has to call channelJoin() to join the channel. The user can either join the channel before sending a call invitation or send a call invitation before joining the channel (when the counterpart accepts the invitation).
 
 If the call fails, the user will receive the <code>onInviteFailed</code> callback function. Possible reasons include:
 
--   The other user is offline
--   Local network issues
--   Server errors
-
+- The other user is offline
+- Local network issues
+- Server errors
 
 If the caller gets a confirmation from the callee, the caller will receive the <code>onInviteReceivedByPeer</code> callback function, and the callee will receive the <code>onInviteReceived</code> callback function.
 
@@ -897,7 +894,7 @@ public virtual void channelInviteUser2 (char const * channelID, size_t channelID
 
 
 
->  You do not need to set the `_require_peer_online` field when making a SIP call.
+> You do not need to set the `_require_peer_online` field when making a SIP call.
 
 #### Sends a DTMF (Dual-tone Multi-frequency) Message to the Other User (channelInviteDTMF)
 
@@ -1050,6 +1047,7 @@ This method retrieves the user status.
 
 ```
 public virtual int getStatus () ;
+
 ```
 
 <table>
@@ -1084,6 +1082,7 @@ This method retrieves the version of the SDK.
 
 ```
 public virtual int getSdkVersion () ;
+
 ```
 
 <table>
@@ -1109,6 +1108,7 @@ This method sends a channel message without joining a channel. Agora does not re
 
 ```
 public virtual void messageChannelSendForce (char const * channelID, size_t channelID_size,char const * msg, size_t msg_size,char const * msgID, size_t msgID_size) ;
+
 ```
 
 <table>
@@ -1175,6 +1175,7 @@ This callback function is triggered when the connection to Agora’s signaling s
 
 ```
 public virtual void onReconnecting(uint32_t nretry) {}
+
 ```
 
 <table>
@@ -1200,6 +1201,7 @@ This callback function returns a detailed description of the error.
 
 ```
 public virtual void onError(char const * name, size_t name_size,int ecode,char const * desc, size_t desc_size) {}
+
 ```
 
 <table>
@@ -1240,6 +1242,7 @@ This callback function returns the query result of the user status and is trigge
 
 ```
 public virtual void onQueryUserStatusResult(char const * name, size_t name_size,char const * status, size_t status_size) {}
+
 ```
 
 <table>
@@ -1273,6 +1276,7 @@ This callback function is triggered when the application has reconnected to Agor
 
 ```
 public virtual void onReconnected(int fd) {}
+
 ```
 
 <table>
@@ -1298,6 +1302,7 @@ This callback function is triggered when a user has logged into Agora’s signal
 
 ```
 public virtual void onLoginSuccess(uint32_t uid,int fd) {}
+
 ```
 
 <table>
@@ -1323,6 +1328,7 @@ This callback function is triggered when a user has logged out of Agora’s sign
 
 ```
 public virtual void onLogout(int ecode) {}
+
 ```
 
 <table>
@@ -1347,6 +1353,7 @@ This callback function is triggered when a user has failed to log into Agora’s
 
 ```
 public virtual void onLoginFailed(int ecode) {}
+
 ```
 
 <table>
@@ -1372,6 +1379,7 @@ This callback function is triggered when the remote calling process has succeede
 
 ```
 void onInvokeRet(String callID, String err, String resp);
+
 ```
 
 <table>
@@ -1403,6 +1411,7 @@ This callback function is triggered when a user has joined a channel.
 
 ```
 public virtual void onChannelJoined(char const * channelID, size_t channelID_size) {}
+
 ```
 
 <table>
@@ -1428,6 +1437,7 @@ This callback function is triggered when the user has failed to join a channel.
 
 ```
 public virtual void onChannelJoinFailed(char const * channelID, size_t channelID_size,int ecode) {}
+
 ```
 
 <table>
@@ -1456,6 +1466,7 @@ This callback function is triggered when a user has left a channel.
 
 ```
 public virtual void onChannelLeaved(char const * channelID, size_t channelID_size,int ecode) {}
+
 ```
 
 <table>
@@ -1484,6 +1495,7 @@ This callback function is triggered when another user has joined the channel.
 
 ```
 public virtual void onChannelUserJoined(char const * account, size_t account_size,uint32_t uid) {}
+
 ```
 
 <table>
@@ -1512,6 +1524,7 @@ This callback function is triggered when another user has left the channel.
 
 ```
 public virtual void onChannelUserLeaved(char const * account, size_t account_size,uint32_t uid) {}
+
 ```
 
 <table>
@@ -1538,10 +1551,11 @@ public virtual void onChannelUserLeaved(char const * account, size_t account_siz
 
 A user will receive this callback function after joining a channel.
 
->  The retrieved user list includes a maximum of the latest 200 users in the channel.
+> The retrieved user list includes a maximum of the latest 200 users in the channel.
 
 ```
 public virtual void onChannelUserList(int n,char** accounts,uint32_t* uids) {}
+
 ```
 
 <table>
@@ -1573,6 +1587,7 @@ This callback function is triggered when a user has queried the number of users 
 
 ```
 public virtual void onChannelQueryUserNumResult(char const * channelID, size_t channelID_size,int ecode,int num) {}
+
 ```
 
 <table>
@@ -1603,6 +1618,7 @@ This callback function is triggered when a user has queried whether he/she is in
 
 ```
 public virtual void onChannelQueryUserIsIn(char const * channelID, size_t channelID_size,char const * account, size_t account_size,int isIn) {}
+
 ```
 
 <table>
@@ -1640,6 +1656,7 @@ This callback function is triggered when the channel attribute has changed.
 
 ```
 public virtual void onChannelAttrUpdated(char const * channelID, size_t channelID_size,char const * name, size_t name_size,char const * value, size_t value_size,char const * type, size_t type_size) {}
+
 ```
 
 <table>
@@ -1682,6 +1699,7 @@ This callback function is received by the callee when the callee has received a 
 
 ```
 public virtual void onInviteReceived(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 ```
 
 <table>
@@ -1716,6 +1734,7 @@ This callback function is received by the caller when the callee has received th
 
 ```
 public virtual void onInviteReceivedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid) {}
+
 ```
 
 <table>
@@ -1747,6 +1766,7 @@ This callback function is received by the caller when the callee has accepted th
 
 ```
 public virtual void onInviteAcceptedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 ```
 
 <table>
@@ -1781,6 +1801,7 @@ This callback function is received by the caller when the callee has rejected th
 
 ```
 public virtual void onInviteRefusedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 ```
 
 <table>
@@ -1815,6 +1836,7 @@ This callback function is triggered when a call has failed.
 
 ```
 public virtual void onInviteFailed(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,int ecode,char const * extra, size_t extra_size) {}
+
 ```
 
 <table>
@@ -1852,6 +1874,7 @@ This callback function is triggered when the callee has ended the call.
 
 ```
 public virtual void onInviteEndByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 ```
 
 <table>
@@ -1889,6 +1912,7 @@ This callback function is triggered when the caller has ended the call.
 
 ```
 public virtual void onInviteEndByMyself(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid) {}
+
 ```
 
 <table>
@@ -1920,6 +1944,7 @@ This callback function is triggered when the caller has received the DTMF messag
 
 ```
 public virtual void onInviteMsg(char const * channelID, size_t channelID_size, char const * account, size_t account_size, int uid, String msgType, String msgData, String extra)
+
 ```
 
 <table>
@@ -1960,6 +1985,7 @@ This callback function is triggered when the user has failed to send a message.
 
 ```
 public virtual void onMessageSendError(char const * messageID, size_t messageID_size,int ecode) {}
+
 ```
 
 <table>
@@ -1988,6 +2014,7 @@ This callback function is triggered when the user has successfully sent a messag
 
 ```
 public virtual void onMessageSendSuccess(char const * messageID, size_t messageID_size) {}
+
 ```
 
 <table>
@@ -2013,6 +2040,7 @@ This callback function notifies a user that a message has been received.
 
 ```
 public virtual void onMessageInstantReceive(char const * account, size_t account_size,uint32_t uid,char const * msg, size_t msg_size) {}
+
 ```
 
 <table>
@@ -2044,6 +2072,7 @@ This callback function is triggered when a channel message has been received.
 
 ```
 public virtual void onMessageChannelReceive(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * msg, size_t msg_size) {}
+
 ```
 
 <table>
@@ -2078,6 +2107,7 @@ This callback function is triggered when a line has been created in a log file.
 
 ```
 public virtual void onLog(char const * txt, size_t txt_size) {}
+
 ```
 
 <table>
@@ -2103,6 +2133,7 @@ This callback function is triggered when the user has queried an attribute of a 
 
 ```
 public virtual void onUserAttrResult(char const * account, size_t account_size,char const * name, size_t name_size,char const * value, size_t value_size) {}
+
 ```
 
 <table>
@@ -2134,6 +2165,7 @@ This callback function is triggered when a user has queried all attributes of a 
 
 ```
 public virtual void onUserAttrAllResult(char const * account, size_t account_size,char const * value, size_t value_size) {}
+
 ```
 
 <table>
@@ -2159,10 +2191,3 @@ public virtual void onUserAttrAllResult(char const * account, size_t account_siz
 ## Error Codes and Warning Codes
 
 See [Error Codes and Warning Codes](../../en/API%20Reference/the_error_signaling.md).
-
-
-
-
-
-
-

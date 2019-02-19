@@ -3,7 +3,7 @@
 title: Pricing and Billing
 description: 
 platform: Pricing and Billing
-updatedAt: Fri Nov 02 2018 04:16:52 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 15:26:44 GMT+0000 (UTC)
 ---
 # Pricing and Billing
 This page describes how to calculate Agora's real-time communications and recording charges. For live broadcast and billing questions, contact sales-us@agora.io.
@@ -39,7 +39,7 @@ The service is free of charge if the monthly voice and video usage is less than 
 
 ### What is the price of integrating the Agora SDK?
 
-* Voice or video calls are charged by minutes, and is free for light usage.
+* Voice or video calls are charged by minutes and is free for light usage.
 * Live broadcast is charged by the minute or bandwidth. Contact sales@agora.io for details on how to calculate the charges
 
 ### Can I use the Agora service for free because my app only has very few users?
@@ -48,19 +48,19 @@ Yes, your users can use up to 10,000 minutes for free each month.
 
 ### If I do not use all my minutes this month, can I carry them over to the next month?
 
-No, you cannot carry over any unused free minutes. The unused free minutes will be removed from your account at the beginning of each month.
+No, you cannot carry over any unused free minutes. The unused free minutes are removed from your account at the beginning of each month.
 
-### How often will I receive a bill from Agora？
+### How often do I receive a bill from Agora？
 
-You can login the Agora website to check your usage statistics in the dashboard. To receive a monthly bill, you can sign up with the Agora sales department. You will not be charged if you use less than 10,000 minutes a month.
+You can log in the Agora website to check your usage statistics in Dashboard. To receive a monthly bill, you can sign up with the Agora sales department. You are not charged if you use less than 10,000 minutes a month.
 
-### Why does the dashboard display minutes used for voice communication even though my project is for video communication?
+### Why does Dashboard display minutes used for voice communication even though my project is for video communication?
 
 If you see voice minutes used in a video communication or live broadcast, it may not be a billing error but may be caused by the following reasons:
 
 * A user disabled video and only transmitted voice communication.
 * The video or images in the video communication could not be transmitted due to poor network connections.
-* A single channel will be calculated even if there is only one user in the channel. For example, user A joined the channel before user B joined, or other users in the channel were disconnected.
+* A single channel is calculated even if only one user is in the channel. For example, user A joins the channel before user B joins, or other users in the channel are disconnected.
 
 ### Does Agora provide other information on the bill besides the usage?
 
@@ -94,7 +94,7 @@ After deducting the free monthly 10,000 minutes, Agora charges you:
 </table>
 
 The Unit Price (price per minute) can be found at [Pricing](https://www.agora.io/en/price/).
-Regardless of the number of users recording at the same time in a channel, the recording of the entire channel will only be charged as one stream.
+Regardless of the number of users recording at the same time in a channel, the recording of the entire channel is only charged as one stream.
 
 ### Example: Voice Only
 
@@ -195,8 +195,8 @@ After deducting the monthly 10,000 minutes, Agora charges:
   </tr>
 </table>
 
-* For communication, each user will be calculated as one stream based on the user's `:ref: communication aggregate resolution<video_communication_aggregate>`. For recording, regardless of the number of users recording at the same time in a channel, the entire channel is calculated as one stream based on the `:ref: recording aggregate resolution<video_recording_aggregate> `of all users.
-* Σ is a mathematical symbol to sum up the values.
+* For communication, each user is calculated as one stream based on the user's `:ref: communication aggregate resolution<video_communication_aggregate>`. For recording, regardless of the number of users recording at the same time in a channel, the entire channel is calculated as one stream based on the `:ref: recording aggregate resolution<video_recording_aggregate> `of all users.
+* Σ is a mathematical symbol meaning to sum up the values.
 
 The unit price is the same for communication and recording in the same video format decided by the aggregate resolution:
 
@@ -507,6 +507,6 @@ Communication Fee = Video Unit Price (≤ 720p) x 30 min + Video Unit Price (> 7
 
 #### Recording Fee
 
-Recording is not enabled so no recording fee will be charged.
+Recording is not enabled so no recording fee is charged.
 
 

@@ -2,8 +2,8 @@
 ---
 title: 在服务端生成密钥
 description: Guide on how to generate tokens on the server side
-platform: Server
-updatedAt: Fri Nov 02 2018 04:03:33 GMT+0000 (UTC)
+platform: All Platforms
+updatedAt: Fri Nov 23 2018 10:47:07 GMT+0000 (UTC)
 ---
 # 在服务端生成密钥
 本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
@@ -180,7 +180,7 @@ public void setPrivilege(AccessToken.Privileges privilege, int expireTimestamp) 
 <td><p>服务过期时间：</p>
 <div><ul>
 <li>0（默认）：服务不过期</li>
-<li>&lt; now：拒绝登陆，强行下线</li>
+<li>&lt; now：拒绝登录，强行下线</li>
 <li>&gt; now：正常服务</li>
 </ul>
 </div>
@@ -413,7 +413,7 @@ void setPrivilege(AccessToken::Privileges privilege, uint32_t expireTimestamp = 
 <td><p>服务过期时间：</p>
 <div><ul>
 <li>0（默认）：服务不过期</li>
-<li>&lt; now：拒绝登陆，强行下线</li>
+<li>&lt; now：拒绝登录，强行下线</li>
 <li>&gt; now：正常服务</li>
 </ul>
 </div>
@@ -642,7 +642,7 @@ def setPrivilege(self, privilege, expireTimestamp);
 <td><p>服务过期时间：</p>
 <div><ul>
 <li>0（默认）：服务不过期</li>
-<li>&lt; now：拒绝登陆，强行下线</li>
+<li>&lt; now：拒绝登录，强行下线</li>
 <li>&gt; now：正常服务</li>
 </ul>
 </div>
@@ -871,7 +871,7 @@ func (builder SimpleTokenBuilder) SetPrivilege(privilege AccessToken.Privileges,
 <td><p>服务过期时间：</p>
 <div><ul>
 <li>0（默认）：服务不过期</li>
-<li>&lt; now：拒绝登陆，强行下线</li>
+<li>&lt; now：拒绝登录，强行下线</li>
 <li>&gt; now：正常服务</li>
 </ul>
 </div>
@@ -1100,7 +1100,7 @@ public function setPrivilege($privilege, $expireTimestamp)
 <td><p>服务过期时间：</p>
 <div><ul>
 <li>0（默认）：服务不过期</li>
-<li>&lt; now：拒绝登陆，强行下线</li>
+<li>&lt; now：拒绝登录，强行下线</li>
 <li>&gt; now：正常服务</li>
 </ul>
 </div>
@@ -1331,7 +1331,7 @@ this.setPrivilege = function (privilege, expireTimestamp);
 <td><p>服务过期时间：</p>
 <div><ul>
 <li>0（默认）：服务不过期</li>
-<li>&lt; now：拒绝登陆，强行下线</li>
+<li>&lt; now：拒绝登录，强行下线</li>
 <li>&gt; now：正常服务</li>
 </ul>
 	</div>

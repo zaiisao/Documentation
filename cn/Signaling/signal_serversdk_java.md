@@ -3,7 +3,7 @@
 title: 信令 Server SDK API - Java
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:09:08 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 09:00:08 GMT+0000 (UTC)
 ---
 # 信令 Server SDK API - Java
 > 版本：v1.4.0 BETA
@@ -63,13 +63,13 @@ Signal 类为信令的基础类。
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#signal-java"><span>public Signal(String appid)</span></a></td>
+<tr><td><a href="#signal-java"><span>Signal</span></a></td>
 <td>创建 Signal 对象</td>
 </tr>
-<tr><td><a href="#setdolog-java"><span>public void setDoLog(boolean doLog)</span></a></td>
+<tr><td><a href="#setdolog-java"><span>setDoLog</span></a></td>
 <td>开启打印调试</td>
 </tr>
-<tr><td><a href="#login-java"><span>public Signal.LoginSession login(String account, String token, Signal.LoginCallback cb)</span></a></td>
+<tr><td><a href="#login-java"><span>public Signal.LoginSession login</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功： 收到 <a href="#onloginsuccess-java"><span>onLoginSuccess</span></a> 回调</li>
@@ -77,19 +77,19 @@ Signal 类为信令的基础类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#usersetattr-java"><span>public void userSetAttr(String name, String value, final Signal.UserAttrCallback cb)</span></a></td>
+<tr><td><a href="#usersetattr-java"><span>userSetAttr</span></a></td>
 <td>设置用户属性</td>
 </tr>
-<tr><td><a href="#usergetattr-java"><span>public void userGetAttr(String account, String name, final Signal.UserAttrCallback cb)</span></a></td>
+<tr><td><a href="#usergetattr-java"><span>userGetAttr</span></a></td>
 <td>查询用户属性</td>
 </tr>
-<tr><td><a href="#usergetattrall-java"><span>public void userGetAttrAll(String account, final Signal.UserAttrCallback cb)</span></a></td>
+<tr><td><a href="#usergetattrall-java"><span>userGetAttrAll</span></a></td>
 <td>查询用户所有属性</td>
 </tr>
-<tr><td><a href="#channelqueryusernum-java"><span>public void channelQueryUserNum(String name, final Signal.ChannelCallback cb)</span></a></td>
+<tr><td><a href="#channelqueryusernum-java"><span>channelQueryUserNum</span></a></td>
 <td>查询指定频道内用户数量</td>
 </tr>
-<tr><td><a href="#getstatus-java"><span>public int getStatus</span></a></td>
+<tr><td><a href="#getstatus-java"><span>getStatus</span></a></td>
 <td>查询当前登录状态</td>
 </tr>
 </tbody>
@@ -178,7 +178,7 @@ public Signal.LoginSession login(String account, String token, Signal.LoginCallb
 
 
 
-> 在测试环境下您可以将参数 token 设为 <code>_no_need_token</code> 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 <code>login</code> 方法会被忽略。如果希望踢掉老的登录，可以在 <code>login</code> 之前调用 <code>logout</code> 且不用等退出成功就可登录。
+> 在测试环境下您可以将参数 token 设为 `_no_need_token` 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 默认情况下如果当前已经处于登录状态，调用 <code>login</code> 方法会被忽略。如果希望踢掉老的登录，可以在 <code>login</code> 之前调用 <code>logout</code> 且不用等退出成功就可登录。
 
 ### <a name="usersetattr-java"></a>设置用户属性 \(userSetAttr\)
 
@@ -337,10 +337,10 @@ Signal 类的内部类。在调用 Signal 类的 <code>login</code> 方法时创
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#logout-java"><span>public void logout</span></a></td>
+<tr><td><a href="#logout-java"><span>logout</span></a></td>
 <td>登出信令系统。登出成功将收到 <a href="#onlogout-java"><span>onLogout</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#messageinstantsend-java"><span>public void messageInstantSend(String account, String msg, Signal.MessageCallback cb)</span></a></td>
+<tr><td><a href="#messageinstantsend-java"><span>messageInstantSend</span></a></td>
 <td><p>向名为 account 的用户发送点对点消息</p>
 <ul>
 <li>成功： 自己收到 <a href="#onmessagesendsuccess-java"><span>onMessageSendSuccess</span></a> 回调， 消息接收方收到 <a href="#onmessageinstantreceive-java"><span>onMessageInstantReceive</span></a> 回调；</li>
@@ -348,7 +348,7 @@ Signal 类的内部类。在调用 Signal 类的 <code>login</code> 方法时创
 </ul>
 </td>
 </tr>
-<tr><td><a href="#messageinstantsend2-java"><span>public void messageInstantSend(String account, String msg, int ttl, Signal.MessageCallback cb)</span></a></td>
+<tr><td><a href="#messageinstantsend2-java"><span>messageInstantSend</span></a></td>
 <td><p>向名为 account 的用户发送点对点消息</p>
 <ul>
 <li>成功： 自己收到 <a href="#onmessagesendsuccess-java"><span>onMessageSendSuccess</span></a> 回调， 消息接收方收到 <a href="#onmessageinstantreceive-java"><span>onMessageInstantReceive</span></a> 回调；</li>
@@ -356,7 +356,7 @@ Signal 类的内部类。在调用 Signal 类的 <code>login</code> 方法时创
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelinviteuser2-java"><span>public Signal.LoginSession.Call channelInviteUser2(String channel, String peer, String extra, final Signal.CallCallback cb)</span></a></td>
+<tr><td><a href="#channelinviteuser2-java"><span>channelInviteUser2</span></a></td>
 <td><p>邀请名为 account 的用户加入指定频道，呼叫方可以附带一段额外信息。</p>
 <ul>
 <li>成功： 自己收到 <a href="#oninviteacceptedbypeer-java"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 <a href="#oninvitereceived-java"><span>onInviteReceived</span></a> 回调；</li>
@@ -364,7 +364,7 @@ Signal 类的内部类。在调用 Signal 类的 <code>login</code> 方法时创
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channeljoin-java"><span>public Signal.LoginSession.Channel channelJoin(String name, Signal.ChannelCallback cb)</span></a></td>
+<tr><td><a href="#channeljoin-java"><span>channelJoin</span></a></td>
 <td><p>加入指定频道。</p>
 <ul>
 <li>成功： 自己收到 <a href="#onchanneljoined-java"><span>onChannelJoined</span></a> 回调，同频道其他用户收到 <a href="#onchanneluserjoined-java"><span>onChannelUserJoined</span></a> 回调；</li>
@@ -544,7 +544,7 @@ Signal 类的内部类。在调用 LoginSession 对象的 <code>channelJoin</cod
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#channelleave-java"><span>public void channelLeave</span></a></td>
+<tr><td><a href="#channelleave-java"><span>channelLeave</span></a></td>
 <td><p>退出指定频道。若退出成功：</p>
 <ul>
 <li>频道内所有用户都将收到 <a href="#onchanneluserleaved-java"><span>onChannelUserLeaved</span></a> 回调</li>
@@ -552,16 +552,16 @@ Signal 类的内部类。在调用 LoginSession 对象的 <code>channelJoin</cod
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelsetattr-java"><span>public void channelSetAttr(String name, String value)</span></a></td>
+<tr><td><a href="#channelsetattr-java"><span>channelSetAttr(String name, String value)</span></a></td>
 <td>设置频道属性。设置成功将收到 <a href="#onchannelattrupdated-java"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channeldelattr-java"><span>public void channelDelAttr(String name)</span></a></td>
+<tr><td><a href="#channeldelattr-java"><span>channelDelAttr(String name)</span></a></td>
 <td>删除频道属性。删除成功将收到 <a href="#onchannelattrupdated-java"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelclearattr-java"><span>public void channelClearAttr</span></a></td>
+<tr><td><a href="#channelclearattr-java"><span>channelClearAttr</span></a></td>
 <td>删除所有频道属性。删除成功将收到 <a href="#onchannelattrupdated-java"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#messagechannelsend-java"><span>public void messageChannelSend(String msg)</span></a></td>
+<tr><td><a href="#messagechannelsend-java"><span>messageChannelSend(String msg)</span></a></td>
 <td><p>发送频道消息（消息发送者必须在频道内）</p>
 <ul>
 <li>成功： 自己收到 <a href="#onmessagesendsuccess-java"><span>onMessageSendSuccess</span></a> 回调，频道内所有用户收到 <a href="#onmessagechannelreceive-java"><span>onMessageChannelReceive</span></a> 回调；</li>
@@ -670,7 +670,7 @@ public void messageChannelSend(String msg)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 1000 条消息。</td>
+<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 200 条消息。</td>
 </tr>
 </tbody>
 </table>
@@ -690,22 +690,22 @@ Signal 类的内部类。在调用 LoginSession 对象的 <code>channelInviteUse
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#channelinviteaccept-java"><span>public void channelInviteAccept</span></a></td>
+<tr><td><a href="#channelinviteaccept-java"><span>channelInviteAccept</span></a></td>
 <td>接受来自 account 用户的加入指定频道的呼叫邀请。接收后主叫方将收到 <a href="#oninviteacceptedbypeer-java"><span>onInviteAcceptedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviteaccept2-java"><span>public void channelInviteAccept(String extra)</span></a></td>
+<tr><td><a href="#channelinviteaccept2-java"><span>channelInviteAccept</span></a></td>
 <td>接受来自 account 用户的加入指定频道的呼叫邀请。接收后主叫方将收到 <a href="#oninviteacceptedbypeer-java"><span>onInviteAcceptedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviterefuse-java"><span>public void channelInviteRefuse</span></a></td>
+<tr><td><a href="#channelinviterefuse-java"><span>channelInviteRefuse</span></a></td>
 <td>拒绝来自 account 用户的加入指定频道的呼叫邀请。拒绝后主叫方将收到 <a href="#oninviterefusedbypeer-java"><span>onInviteRefusedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviterefuse2-java"><span>public void channelInviteRefuse(String extra)</span></a></td>
+<tr><td><a href="#channelinviterefuse2-java"><span>channelInviteRefuse</span></a></td>
 <td>拒绝来自 account 用户的加入指定频道的呼叫邀请。拒绝后主叫方将收到 <a href="#oninviterefusedbypeer-java"><span>onInviteRefusedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviteend-java"><span>public void channelInviteEnd</span></a></td>
+<tr><td><a href="#channelinviteend-java"><span>channelInviteEnd</span></a></td>
 <td>终止向 account 用户发送加入指定频道的邀请。终止成功后主叫方将收到 <a href="#oninviteendbymyself-java"><span>onInviteEndByMyself</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviteend2-java"><span>public void channelInviteEnd(String extra)</span></a></td>
+<tr><td><a href="#channelinviteend2-java"><span>channelInviteEnd</span></a></td>
 <td>终止向 account 用户发送加入指定频道的邀请。终止成功后主叫方将收到 <a href="#oninviteendbymyself-java"><span>onInviteEndByMyself</span></a> 回调。</td>
 </tr>
 </tbody>
@@ -825,13 +825,13 @@ UserAttrCallback 的内部类。用于管理消息相关回调。
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onusergetattr-java"><span>public void onUserGetAttr(String err, JSONObject ret)</span></a></td>
+<tr><td><a href="#onusergetattr-java"><span>onUserGetAttr</span></a></td>
 <td>查询用户属性回调</td>
 </tr>
-<tr><td><a href="#onusergetattrall-java"><span>public void onUserGetAttrAll(String err, JSONObject ret)</span></a></td>
+<tr><td><a href="#onusergetattrall-java"><span>onUserGetAttrAll</span></a></td>
 <td>查询用户所有属性回调</td>
 </tr>
-<tr><td><a href="#onusersetattr-java"><span>public void onUserSetAttr(String err, JSONObject ret)</span></a></td>
+<tr><td><a href="#onusersetattr-java"><span>onUserSetAttr</span></a></td>
 <td>设置用户属性回调</td>
 </tr>
 </tbody>
@@ -948,31 +948,31 @@ Signal 类的内部类。用于管理登录相关回调。
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onloginsuccess-java"><span>public void onLoginSuccess(Signal.LoginSession session, int uid)</span></a></td>
+<tr><td><a href="#onloginsuccess-java"><span>onLoginSuccess</span></a></td>
 <td>登录成功回调</td>
 </tr>
-<tr><td><a href="#onlogout-java"><span>public void onLogout(Signal.LoginSession session, int ecode)</span></a></td>
+<tr><td><a href="#onlogout-java"><span>onLogout</span></a></td>
 <td>退出登录回调</td>
 </tr>
-<tr><td><a href="#onloginfailed-java"><span>public void onLoginFailed(Signal.LoginSession session, int ecode)</span></a></td>
+<tr><td><a href="#onloginfailed-java"><span>onLoginFailed</span></a></td>
 <td>登录失败回调</td>
 </tr>
-<tr><td><a href="#onmessageinstantreceive-java"><span>public void onMessageInstantReceive(Signal.LoginSession session, String account, int uid, String msg)</span></a></td>
+<tr><td><a href="#onmessageinstantreceive-java"><span>onMessageInstantReceive</span></a></td>
 <td>接收方收到消息时接收方收到的回调</td>
 </tr>
-<tr><td><a href="#oninvitereceived-java"><span>public void onInviteReceived(Signal.LoginSession session, Signal.LoginSession.Call call)</span></a></td>
+<tr><td><a href="#oninvitereceived-java"><span>onInviteReceived</span></a></td>
 <td>收到呼叫邀请回调</td>
 </tr>
-<tr><td><a href="#onerror-java"><span>public void onError(Signal.LoginSession session, int ecode, String reason)</span></a></td>
+<tr><td><a href="#onerror-java"><span>onError</span></a></td>
 <td>出错回调</td>
 </tr>
-<tr><td><a href="#onchanneljoined-java"><span>public void onChannelJoined(Signal.LoginSession session, Signal.LoginSession.Channel channelName)</span></a></td>
+<tr><td><a href="#onchanneljoined-java"><span>onChannelJoined</span></a></td>
 <td>加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneljoinfailed-java"><span>public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)</span></a></td>
+<tr><td><a href="#onchanneljoinfailed-java"><span>onChannelJoinFailed</span></a></td>
 <td>加入频道失败回调</td>
 </tr>
-<tr><td><a href="#onchannelleaved-java"><span>public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)</span></a></td>
+<tr><td><a href="#onchannelleaved-java"><span>onChannelLeaved</span></a></td>
 <td>离开频道回调</td>
 </tr>
 </tbody>
@@ -1068,6 +1068,7 @@ public void onLoginFailed(Signal.LoginSession session, int ecode)
 
 ```
 public void onMessageInstantReceive(Signal.LoginSession session, String account, int uid, String msg)
+
 ```
 
 接收方收到消息时接收方收到的回调。
@@ -1102,6 +1103,7 @@ public void onMessageInstantReceive(Signal.LoginSession session, String account,
 
 ```
 public void onInviteReceived(Signal.LoginSession session, Signal.LoginSession.Call call)
+
 ```
 
 当对方收到呼叫邀请触发该回调。
@@ -1130,6 +1132,7 @@ public void onInviteReceived(Signal.LoginSession session, Signal.LoginSession.Ca
 
 ```
 public void onError(Signal.LoginSession session, int ecode, String reason)
+
 ```
 
 当出错时会触发该回调。
@@ -1170,28 +1173,28 @@ ChannelCallback 类是 Signal 类的内部类，用于管理频道相关回调�
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onchanneljoinfailed-java"><span>public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)</span></a></td>
+<tr><td><a href="#onchanneljoinfailed-java"><span>onChannelJoinFailed</span></a></td>
 <td>加入频道失败回调</td>
 </tr>
-<tr><td><a href="#onchannelleaved-java"><span>public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)</span></a></td>
+<tr><td><a href="#onchannelleaved-java"><span>onChannelLeaved</span></a></td>
 <td>离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserjoined-java"><span>public void onChannelUserJoined(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)</span></a></td>
+<tr><td><a href="#onchanneluserjoined-java"><span>onChannelUserJoined</span></a></td>
 <td>其他用户加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserleaved-java"><span>public void onChannelUserLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)</span></a></td>
+<tr><td><a href="#onchanneluserleaved-java"><span>onChannelUserLeaved</span></a></td>
 <td>其他用户离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserlist-java"><span>public void onChannelUserList(Signal.LoginSession session, Signal.LoginSession.Channel channel, List&lt;String&gt; users, List&lt;Integer&gt; uids)</span></a></td>
+<tr><td><a href="#onchanneluserlist-java"><span>onChannelUserList</span></a></td>
 <td>获取频道内用户列表回调</td>
 </tr>
-<tr><td><a href="#onchannelattrupdated-java"><span>public void onChannelAttrUpdated(Signal.LoginSession session, Signal.LoginSession.Channel channel, String name, String value, String type)</span></a></td>
+<tr><td><a href="#onchannelattrupdated-java"><span>onChannelAttrUpdated</span></a></td>
 <td>频道属性发生变化回调</td>
 </tr>
-<tr><td><a href="#onchannelqueryusernum-java"><span>public void onChannelQueryUserNum(Signal.LoginSession session, String err, int num)</span></a></td>
+<tr><td><a href="#onchannelqueryusernum-java"><span>onChannelQueryUserNum</span></a></td>
 <td>查询频道内用户数回调</td>
 </tr>
-<tr><td><a href="#onmessagechannelreceive-java"><span>public void onMessageChannelReceive(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid, String msg)</span></a></td>
+<tr><td><a href="#onmessagechannelreceive-java"><span>onMessageChannelReceive</span></a></td>
 <td>收到频道消息回调</td>
 </tr>
 </tbody>
@@ -1203,6 +1206,7 @@ ChannelCallback 类是 Signal 类的内部类，用于管理频道相关回调�
 
 ```
 public void onChannelJoined(Signal.LoginSession session, Signal.LoginSession.Channel channelName)
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1231,6 +1235,7 @@ public void onChannelJoined(Signal.LoginSession session, Signal.LoginSession.Cha
 
 ```
 public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
+
 ```
 
 当加入频道失败触发此回调。
@@ -1262,6 +1267,7 @@ public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession
 
 ```
 public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
+
 ```
 
 当离开频道成功触发此回调。
@@ -1293,6 +1299,7 @@ public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Cha
 
 ```
 public void onChannelUserJoined(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)
+
 ```
 
 当有用户加入频道触发此回调。
@@ -1327,6 +1334,7 @@ public void onChannelUserJoined(Signal.LoginSession session, Signal.LoginSession
 
 ```
 public void onChannelUserLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)
+
 ```
 
 当有用户调用 <code>channelLeave</code> 成功时触发此回调。
@@ -1361,6 +1369,7 @@ public void onChannelUserLeaved(Signal.LoginSession session, Signal.LoginSession
 
 ```
 public void onChannelUserList(Signal.LoginSession session, Signal.LoginSession.Channel channel, List<String> users, List<Integer> uids)
+
 ```
 
 当加入频道成功后，本人会收到此回调。
@@ -1397,6 +1406,7 @@ public void onChannelUserList(Signal.LoginSession session, Signal.LoginSession.C
 
 ```
 public void onChannelAttrUpdated(Signal.LoginSession session, Signal.LoginSession.Channel channel, String name, String value, String type)
+
 ```
 
 当频道属性变化时触发。
@@ -1434,6 +1444,7 @@ public void onChannelAttrUpdated(Signal.LoginSession session, Signal.LoginSessio
 
 ```
 public void onChannelQueryUserNum(Signal.LoginSession session, String err, int num)
+
 ```
 
 查询频道用户数量时触发此回调。
@@ -1465,6 +1476,7 @@ public void onChannelQueryUserNum(Signal.LoginSession session, String err, int n
 
 ```
 public void onMessageChannelReceive(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid, String msg)
+
 ```
 
 当收到频道消息时触发。
@@ -1511,10 +1523,10 @@ MessageCallback 的内部类。用于管理消息相关回调。
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onmessagesendsuccess-java"><span>public void onMessageSendSuccess(Signal.LoginSession session)</span></a></td>
+<tr><td><a href="#onmessagesendsuccess-java"><span>onMessageSendSuccess</span></a></td>
 <td>消息已发送成功回调</td>
 </tr>
-<tr><td><a href="#onmessagesenderror-java"><span>public void onMessageSendError(Signal.LoginSession session, int ecode)</span></a></td>
+<tr><td><a href="#onmessagesenderror-java"><span>onMessageSendError</span></a></td>
 <td>消息发送失败回调</td>
 </tr>
 </tbody>
@@ -1526,6 +1538,7 @@ MessageCallback 的内部类。用于管理消息相关回调。
 
 ```
 public void onMessageSendSuccess(Signal.LoginSession session)
+
 ```
 
 当发送消息成功时触发。
@@ -1551,6 +1564,7 @@ public void onMessageSendSuccess(Signal.LoginSession session)
 
 ```
 public void onMessageSendError(Signal.LoginSession session, int ecode)
+
 ```
 
 当消息发送失败时触发该回调。
@@ -1588,25 +1602,25 @@ CallCallback 类是 Signal 类的内部类，用于管理呼叫相关回调。
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#oninvitereceivedbypeer-java"><span>public void onInviteReceivedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call)</span></a></td>
+<tr><td><a href="#oninvitereceivedbypeer-java"><span>onInviteReceivedByPeer</span></a></td>
 <td>远端已收到呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteacceptedbypeer-java"><span>public void onInviteAcceptedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)</span></a></td>
+<tr><td><a href="#oninviteacceptedbypeer-java"><span>onInviteAcceptedByPeer</span></a></td>
 <td>远端已接受呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviterefusedbypeer-java"><span>public void onInviteRefusedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)</span></a></td>
+<tr><td><a href="#oninviterefusedbypeer-java"><span>onInviteRefusedByPeer</span></a></td>
 <td>对方已拒绝呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitefailed-java"><span>public void onInviteFailed(Signal.LoginSession session, Signal.LoginSession.Call call, int ecode)</span></a></td>
+<tr><td><a href="#oninvitefailed-java"><span>onInviteFailed</span></a></td>
 <td>呼叫失败回调</td>
 </tr>
-<tr><td><a href="#oninviteendbypeer-java"><span>public void onInviteEndByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)</span></a></td>
+<tr><td><a href="#oninviteendbypeer-java"><span>onInviteEndByPeer</span></a></td>
 <td>对方已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteendbymyself-java"><span>public void onInviteEndByMyself(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)</span></a></td>
+<tr><td><a href="#oninviteendbymyself-java"><span>onInviteEndByMyself</span></a></td>
 <td>本地已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitemsg-java"><span>public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)</span></a></td>
+<tr><td><a href="#oninvitemsg-java"><span>onInviteMsg</span></a></td>
 <td>本地已收到消息回调</td>
 </tr>
 </tbody>
@@ -1618,6 +1632,7 @@ CallCallback 类是 Signal 类的内部类，用于管理呼叫相关回调。
 
 ```
 public void onInviteReceivedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call)
+
 ```
 
 当呼叫被对方收到时触发该回调。
@@ -1646,6 +1661,7 @@ public void onInviteReceivedByPeer(Signal.LoginSession session, Signal.LoginSess
 
 ```
 public void onInviteAcceptedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当呼叫被对方接受时触发该回调。
@@ -1677,6 +1693,7 @@ public void onInviteAcceptedByPeer(Signal.LoginSession session, Signal.LoginSess
 
 ```
 public void onInviteRefusedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当呼叫被对方拒绝时触发该回调。
@@ -1708,6 +1725,7 @@ public void onInviteRefusedByPeer(Signal.LoginSession session, Signal.LoginSessi
 
 ```
 public void onInviteFailed(Signal.LoginSession session, Signal.LoginSession.Call call, int ecode)
+
 ```
 
 当呼叫失败时触发该回调。
@@ -1739,6 +1757,7 @@ public void onInviteFailed(Signal.LoginSession session, Signal.LoginSession.Call
 
 ```
 public void onInviteEndByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当呼叫被对方结束时触发该回调。
@@ -1770,6 +1789,7 @@ public void onInviteEndByPeer(Signal.LoginSession session, Signal.LoginSession.C
 
 ```
 public void onInviteEndByMyself(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当呼叫被自己结束时触发该回调。
@@ -1801,6 +1821,7 @@ public void onInviteEndByMyself(Signal.LoginSession session, Signal.LoginSession
 
 ```
 public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 ```
 
 当本地收到对方发的 DTMF 消息时会触发该回调。
@@ -1831,7 +1852,3 @@ public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call ca
 ## 错误代码和警告代码
 
 详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
-
-
-
-

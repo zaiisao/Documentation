@@ -3,28 +3,31 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:08:48 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:26:00 GMT+0000 (UTC)
 ---
 # Publish and Subscribe to Streams
-## Enable the video mode
-Call <code>enableVideo</code> to enable the video mode. The voice function is enabled by default in the Agora SDK, so you can call this method before or after joining in the channel.
+Before publishing or subscribing to any stream, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Video/windows_video.md).
 
--   If you enable the video mode before joining the channel, you enter directly into a video broadcast.
--   If you enable the video mode after joining the channel, the voice broadcast switches to a video broadcast.
+## Implementation
+### Enable the video mode
+Call the <code>enableVideo</code> method to enable the video mode. The voice function is enabled by default in the Agora SDK, so you can call the <code>enableVideo</code> method before or after joining a channel.
+
+-   If you enable the video mode before joining a channel, you enter directly into a video broadcast.
+-   If you enable the video mode after joining a channel, the voice broadcast switches to a video broadcast.
 
 
 ```
 nRet = m_lpAgoraEngine->enableVideo();
 ```
 
-## Set the video profile
-After the video mode is enabled, call <code>setVideoProfile</code> to set the video encoding profile.
+### Set the video profile
+After the video mode is enabled, call the <code>setVideoProfile</code> method to set the video encoding profile.
 
-In this method, secify the video encoding resolution, frame rate bitrate and orientation mode. See <code>setChannelProfile</code> for more information.
+In the <code>setVideoProfile</code> method, specify the video encoding resolution, frame rate, bitrate, and orientation mode. See the <code>setChannelProfile</code> method for more information.
 
-> -   The parameters specified in this method are the maximum values under ideal network conditions. If the video engine cannot render the video using the specified parameters due to poor network conditions, the parameters further down the list are considered until success.
+> -   The parameters specified in the <code>setVideoProfile</code> method are the maximum values under ideal network conditions. If the video engine cannot render the video using the specified parameters due to poor network conditions, the parameters further down the list are considered until a successful configuration is found.
 
-> -   If the device camera does not support the resolution specified by the video profile, the SDK automatically chooses a suitable camera resolution. This does not change the encoder resolution, and encoding will still use the resolution specified by <code>setVideoProfile</code> .
+> -   If the device camera does not support the resolution specified by the video profile, the SDK automatically chooses a suitable camera resolution. This does not change the encoder resolution, and encoding will still use the resolution specified by the <code>setVideoProfile</code> method.
 
 
 ```
@@ -32,21 +35,21 @@ int nVideoSolution = m_dlgSetup.GetVideoSolution();
 lpAgoraEngine->setVideoProfile((VIDEO_PROFILE_TYPE)nVideoSolution, m_dlgSetup.IsWHSwap());
 ```
 
-## Set the local video view 
-The local video view is the display of the local video streams on the user’s local device.
+### Set the local video view 
+The local video view is the display area of the local video streams on the user’s local device.
 
-Call the <code>setupLocalVideo</code> method before entering into a channel to bind the application with the video window of the local stream and configure the local video display.
+Call the <code>setupLocalVideo</code> method before entering into a channel to bind the application with the video window of the local stream and configure the local video display area.
 
-In this method:
+In the <code>setupLocalVideo</code> method:
 
 -   Choose the display window of the local video streams.
 
--   Specify the video display mode.
+-   Specify the video display mode:
 
     -   Hidden mode: The SDK scales the video until it fills the visible view boundaries. One dimension of the video may be clipped.
     -   Fit mode: The SDK scales the video until one of its dimensions fits the boundaries. Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
 
--   Pass the UID of the local user. The default value is 0.
+-   Pass the uid of the local user. The default value is 0.
 
 
 ```
@@ -60,12 +63,12 @@ lpRtcEngine->setupLocalVideo(vc);
 ```
 
 
-## Set the remote local view
-The remote video view is the display of the remote video streams on the user’s local device.
+### Set the remote local view
+The remote video view is the display area of the remote video streams on the user’s local device.
 
 Call the <code>setupRemoteVideo</code> method to configure the remote video display.
 
-In this method:
+In the <code>setupRemoteVideo</code> method:
 
 -   Choose the display window of the remote video streams.
 
@@ -74,7 +77,7 @@ In this method:
     -   Hidden mode: The SDK scales the video until it fills the visible view boundaries. One dimension of the video may be clipped.
     -   Fit mode: The SDK scales the video until one of its dimensions fits the boundaries. Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
 
--   Pass the UID of the remote user. If the remote UID is unknown to the application, set it later when the application receives the <code>onUserJoined</code> event.
+-   Pass the uid of the remote user. If the remote uid is unknown to the application, set it when the application receives the <code>onUserJoined</code> event.
 
 
 ```
@@ -83,3 +86,17 @@ canvas.view = m_wndVideo[nIndex].GetSafeHwnd();
 
 CAgoraObject::GetEngine()->setupRemoteVideo(canvas);
 ```
+
+## More Steps
+You are in a video call. When the call ends, use the Agora SDK to exit the current call:
+
+- [Leave the Channel](../../en/Video/leave_windows.md)
+
+For other functions, you can refer to the following sections:
+
+- [Adjust the volume](../../en/Video/volume_windows.md)
+- [Play the Audio Effects/Audio Mixing](../../en/Video/effect_mixing_windows.md)
+- [Adjust the Pitch and Tone](../../en/Video/voice_effect_windows.md)
+- [Set the Video Profile](../../en/Video/videoProfile_windows.md)
+- [Customize the Video/Audio Source and Renderer](../../en/Video/custom_video_windows.md)
+- [Share the Screen](../../en/Video/screensharing_windows.md)

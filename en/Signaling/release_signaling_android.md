@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:14:02 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 09:22:46 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
@@ -12,18 +12,25 @@ The Agora Signaling SDK facilitates real-time communications through functions s
 
 ### Known Issues and Limitations
 
--   Each channel can hold up to 10,000 users at the same time.
+-   Each channel can hold up to 10,000 users at the same time. To reduce data volume and stress on the SDK, Agora recommends disabling notifications of a user going online or dropping offline for a large channel holding more than 1,000 users. For more information, see the `channelSetAttr` method. 
 -   Channel Messages:
     -   Each message can be up to 8-k visible characters.
-    -   A user can send messages at a maximum speed of one message per second. In a channel, a maximum of 100 messages can be sent each second. Messages exceeding this limit will be discarded. 
+    -   A user can send messages at a maximum speed of 60 messages per second. In a channel, a maximum of 200 messages can be sent each second. Messages exceeding this limit will be discarded. 
     -   Offline channel messages are not supported.
+    -   Supports UTF-8 character encoding only.
 -   Point-to-point messages:
     -   Each message can be up to 8-k visible characters.
     -   Offline messages are not supported.
+    -   Supports UTF-8 character encoding only.
 -   Channel-attributes-updated callback:
     -   A maximum of 10 channel-attributes-updated callbacks can be sent each second.
--   To access Agora’s signaling system through the SIP gateway, contact [support@agora.io](mailto:support@agora.io). A self-configurable solution will be available soon.
 
+## v1.4.4
+
+The version 1.4.4 was released on December 13, 2018. See below for issues fixed.
+
+- Fixed a couple of crash issues on Android. 
+- Improved the code implementation for Android. 
 
 ## v1.4.0
 
@@ -44,7 +51,6 @@ Fixed a crash issue caused by the DNS.
 The version 1.3.0 was released on May 4, 2018. See below for new features.
 
 -   Added a special <code>_timeout</code> attribute to the `extra` parameter of <code>channelInviteUser2</code> to set the call timeout equal to or greater than 1 s.
--   Added support for the JCenter package management tool, io.agora.sig:sdk:1.3.0.
 
 
 ## v1.2.1

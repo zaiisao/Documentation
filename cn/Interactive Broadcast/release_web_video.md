@@ -3,16 +3,17 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Nov 08 2018 03:53:57 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 10:31:53 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
 
 ## 概览
 
-Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库在网页浏览器中调用 API 建立连接，控制音视频通话和直播服务。
+Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库在网页浏览器中调用 API 建立连接，控制音视频通话和直播服务。点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 以及[互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
-**兼容性说明**
+
+### 兼容性说明
 
 下表列出目前 Agora Web SDK 对浏览器的支持情况：
 
@@ -69,12 +70,13 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
   </tr>
 </table>
 
-> Agora Web SDK 2.5 还支持 Windows XP 平台的 Chrome 49 版本。
+> Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
 
 > 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
 
-**已知问题和局限性**
+### 已知问题和局限性
  
+- 受浏览器策略影响，在 Chrome 70+ 和 Safari 浏览器上，`Stream.play`，`Stream.startAudioMixing` 以及 `Stream.getAudioLevel` 这三个方法必须由用户手势触发，详情请参考 [Autoplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes)。
 - 如果在客户端安装了高清摄像头，则 Agora Web SDK 支持最大为 1080p 分辨率的视频流，但取决于不同的摄像头设备，最大分辨率也会受到影响。
 - Agora Web SDK 暂不支持代码二次混淆。
 
@@ -152,7 +154,6 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 #### 5. 其他新增功能
 
 - 支持两种视频显示模式，可以在 `Stream.play` 接口中设置播放流的显示模式。
-- 新增 `Stream.setScreenBitrate` 接口，支持手动设置屏幕共享时的视频码率。
 - 新增 `Client.enableAudioVolumeIndicator` 接口，允许 SDK 定期向应用程序反馈当前谁在说话，以及说话者的音量。
 - 新增 `Stream.setAudioVolume`  接口，支持设置订阅流的音量。
 - 新增 `networkTypeChanged` 事件，通知应用程序网络类型已改变。
@@ -361,7 +362,9 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 修复了 Safari 上视频旋转 90 度的问题
 - 修复了 macOS 上 Firefox v59.01 浏览器使用 Web SDK 只能看到本地视频看不到对方视频的问题
 
-## **2.0 版**
+## **2.0 版及之前**
+
+### **2.0 版**
 
 该版本于 2017 年 12 月 6 日发布。新增特性与修复问题列表详见下文。
 
@@ -382,13 +385,13 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 修复了 Chrome 浏览器未启用摄像头进入频道时，不提示需获取摄像头权限的问题。
 - 修复了 iOS 端使用 Safari 浏览器互通时，退到后台后不显示对方画面的问题。
 
-## **1.14 版**
+### **1.14 版**
 
 该版本于 2017 年 10 月 20 日发布。
 
 新增了屏幕共享功能，在 `createStream` 里修改了参数 `screen`, 并新增了参数 `extensionId` 。
 
-## **1.13 版**
+### **1.13 版**
 
 该版本于 2017 年 9 月 4 日发布。新增特性与修复问题列表详见下文。
 
@@ -397,7 +400,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 支持 Web 端 CDN 推流，进行旁路支持，详见 `API configPublisher` 描述
 - 在 Android 上支持最新版 Chrome
 
-## **1.12 版**
+### **1.12 版**
 
 该版本于 2017 年 7 月 25 日发布。。新增特性与修复问题列表详见下文。
 

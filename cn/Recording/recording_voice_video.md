@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:05:54 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 03:24:47 GMT+0000 (UTC)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -12,6 +12,8 @@ updatedAt: Fri Nov 02 2018 04:05:54 GMT+0000 (UTC)
 
 - 音频录制过程中，推流用户退出频道，超过 15 秒再进入频道，会认为是一个新的 session，录制文件会切片。
 - 视频录制过程中，退出频道后再进入、修改分辨率、视频静音或取消静音，均会导致视频文件切片。
+
+> 使用录制 SDK 必须与 Agora Native/Web SDK 设置相同的频道模式，否则可能导致问题。
 
 ## 录制文件
 
@@ -92,7 +94,7 @@ updatedAt: Fri Nov 02 2018 04:05:54 GMT+0000 (UTC)
 
 ### 合流 + 不实时转码模式录制
 
-设置参数 <code>isMixingEnabled</code> = 1，<code>mixedAudioVideo</code>= 0，即启动合流 + 不实时转码录制。 该模式可实现音频混音录制和视频合图录制，且音视频文件分开。 你还可以调用 setVideoMixingLayout 接口来设置视频合图布局。
+设置参数 <code>isMixingEnabled</code> = 1，<code>mixedVideoAudio</code>= 0，即启动合流 + 不实时转码录制。 该模式可实现音频混音录制和视频合图录制，且音视频文件分开。 你还可以调用 setVideoMixingLayout 接口来设置视频合图布局。
 
 你可以根据需要生成的文件类型，设置其他参数以选择不同的录制模式：
 
@@ -152,7 +154,7 @@ updatedAt: Fri Nov 02 2018 04:05:54 GMT+0000 (UTC)
 
 ### 合流 + 实时转码录制模式录制
 
-设置参数 isMixingEnabled = 1，mixedAudioVideo= 1，即启动合流 + 实时转码录制。 该模式无需转码即可实时合成音视频合流录制文件。
+设置参数 isMixingEnabled = 1，mixedVideoAudio= 1，即启动合流 + 实时转码录制。 该模式无需转码即可实时合成音视频合流录制文件。
 
 你可以根据需要生成的文件类型，设置其他参数以选择不同的录制模式：
 
@@ -206,7 +208,6 @@ updatedAt: Fri Nov 02 2018 04:05:54 GMT+0000 (UTC)
 
 </table>
 
-Agora 录制 SDK 目前不支持在 web-only 模式下对混合录制进行实时转码。 
 
 ## 原始音视频数据
 
@@ -426,7 +427,7 @@ Agora 录制 SDK 目前仅支持单流的录制文件 + 单流的截屏，截屏
 
 </table>
 
-
+<a name = "Managing_the_Recorded_Files"></a>
 
 ## 管理录制文件
 
@@ -598,7 +599,7 @@ config.json <sup>[2]</sup> 文件中的 recordFileRootDir指定了顶级录制�
 
 你也可以参考下面的图示，来理解转码脚本的选择：
 
-
+![](https://web-cdn.agora.io/docs-files/1544430828726)
 
 转码完成后的 mp4 文件几乎支持所有主流播放器，例如:
 

@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Cocos
-updatedAt: Fri Nov 02 2018 04:12:32 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 05:40:35 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C++ 语言的游戏语音 API 描述，包括以下类:
@@ -156,16 +156,18 @@ virtual int joinChannel(const char* token, const char* channelName, const char* 
 <tr><td>返回值</td>
 <td><ul>
 <li>0：方法调用成功</li>
-<li>&lt; 0：方法调用失败</li>
+<li>&lt; 0：方法调用失败
 <ul>
 <li>ERR_INVALID_ARGUMENT (-2)：传递的参数无效</li>
 <li>ERR_NOT_READY (-3)：没有成功初始化</li>
 </ul>
+</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -578,12 +580,13 @@ virtual int adjustRecordingSignalVolume(int volume);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>volume</code></td>
-<td><p>录音信号音量可在 0~400 范围内进行调节:</p>
+<td><p>录音信号音量可在 0~400 范围内进行调节:
 <ul>
 <li>0: 静音</li>
 <li>100: 原始音量</li>
 <li>400: 最大可为原始音量的 4 倍(自带溢出保护)</li>
 </ul>
+</p>
 </td>
 </tr>
 <tr/>
@@ -599,6 +602,7 @@ virtual int adjustRecordingSignalVolume(int volume);
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -620,12 +624,13 @@ virtual int adjustPlaybackSignalVolume(int volume);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>volume</code></td>
-<td><p>播放信号音量可在 0~400 范围内进行调节:</p>
+<td><p>播放信号音量可在 0~400 范围内进行调节:
 <ul>
 <li>0: 静音</li>
 <li>100: 原始音量</li>
 <li>400: 最大可为原始音量的 4 倍(自带溢出保护)</li>
 </ul>
+    </p>
 </td>
 </tr>
 <tr/>
@@ -641,6 +646,7 @@ virtual int adjustPlaybackSignalVolume(int volume);
 <tr/>
 </tbody>
 </table>
+
 
 
 
@@ -696,11 +702,12 @@ virtual int startAudioMixing(const char* filePath,
 </tr>
 <tr/>
 <tr><td><code>cycle</code></td>
-<td><p>指定音频文件循环播放的次数:</p>
+<td><p>指定音频文件循环播放的次数:
 <ul>
 <li>正整数: 循环的次数</li>
 <li>-1：无限循环</li>
 </ul>
+</p>
 </td>
 </tr>
 <tr/>
@@ -715,6 +722,7 @@ virtual int startAudioMixing(const char* filePath,
 <tr/>
 </tbody>
 </table>
+
 
 
 

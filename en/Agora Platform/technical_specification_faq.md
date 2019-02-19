@@ -3,16 +3,16 @@
 title: Technical Specification
 description: 
 platform: Technical Specification
-updatedAt: Fri Nov 02 2018 04:16:58 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 02:55:05 GMT+0000 (UTC)
 ---
 # Technical Specification
 ## Platform and Scale
 
 #### What platforms does Agora support?
 
-Android, iOS, macOS, Windows, and the web
+Agora supports Android, iOS, macOS, Windows, and the Web.
 
-### How many users can the Agora products support simultaneously?
+### How many users can be supported at the same time on each of Agora's products? 
 
 <table>
   <tr>
@@ -21,18 +21,18 @@ Android, iOS, macOS, Windows, and the web
     <th>Aggregate Resolution</th>
   </tr>
   <tr>
-    <td>Communication(Voice/Video)</td>
-    <td>Android, iOS, macOS, Windows, the web</td>
+    <td>Communication (Voice/Video)</td>
+    <td>Android, iOS, macOS, Windows, the Web</td>
     <td>Voice Communication: Up to 10,000 users in a channel.<br>Video Communication: Up to seven users in a channel (a 17-user scenario is under development).<br>Number of Channels: No limit.</td>
   </tr>
   <tr>
     <td>Live Broadcast</td>
-    <td>Android, iOS, macOS, Windows, the web</td>
-    <td>Hosts: Up to seven video hosts in a channel; 10,000 voice hosts in a channel (a scenario with more users is under development).<br>Audience: Up to 30,000 people in a channel.<br>Number of Channels: No limit.<br></td>
+    <td>Android, iOS, macOS, Windows, the Web</td>
+    <td>Hosts: Up to seven video hosts in a channel; 10,000 voice hosts in a channel (a scenario with more users is under development).<br>Audience: Up to 1,000,000 people in a channel.<br>Number of Channels: No limit.<br></td>
   </tr>
   <tr>
     <td>Signaling</td>
-    <td>Android, iOS, macOS, Windows, the web</td>
+    <td>Android, iOS, macOS, Windows, the Web</td>
     <td>Number of Users: Up to 100,000 users in a channel.<br>Number of Channels: No limit.</td>
   </tr>
 </table>
@@ -45,31 +45,32 @@ Android, iOS, macOS, Windows, and the web
 * Web: JavaScript
 * Cocos: C++
 * Unity: C#
+
 For other requirements, contact sales-us@agora.io.
 
-### What is the supported scope of the audio-capture sampling rate on each platform?
+### What is the supported audio-capture sampling rate on each platform?
 
 You can select one of the following sampling rates in Windows (including Windows systems built on a Mac): 48000, 44100, 16000, 96000, 32000, 8000, 192000, 88200, and 176400.
 
-Mac systems do not have any limitation on the supported sampling rate of the audio devices, and do not require selecting any sampling rate.
+Mac systems do not have any limitation on the supported sampling rate of the audio devices and do not require selecting any sampling rate.
 
-### What transport protocol is the user-related logic based on?
+### What transport protocol does Agora use for the user-related logic?
 
-We use a private application layer protocol based on UDP.
+Agora uses a private application layer protocol based on UDP.
 
-### Does the current Android demo have an Eclipse edition?
+### Is there an Eclipse edition of the Android demo?
 
-No. The demo only supports Android Studio.
+No, the Eclipse development environment is no longer supported. The Android demo only supports Android Studio.
 
 ## Codec
 
-#### What makes codecs used by Agora unique？
+#### How are Agora's codecs unique？
 
-Agora uses its proprietary audio codec, NOVA, which is simple, low bitrate, and highly adaptive. It ranks in the industry’s highest quality level (on average, the score of broadband PESQ-WB is 3.92, and the score of the average narrowband PESQ in 4-kpbs low-bitrate mode is 3.21). NOVA supports narrowband, broadband, and ultra-high frequency, all in one. The bitrate can vary in the range of 2 kbps to 24 kbps (2 kbps for ultra-low bitrate communications).
+Agora uses a proprietary audio codec, NOVA, which is simple, low bitrate, and highly adaptive. NOVA ranks in the industry’s highest quality level (on average, the score of broadband PESQ-WB is 3.92, and the score of the average narrowband PESQ in 4-Kbps low-bitrate mode is 3.21). NOVA supports narrowband, broadband, and ultra-high frequency, all in one. The bitrate varies in the range between 2 Kbps and 24 Kbps (2 Kbps for ultra-low bitrate communications).
 
-At the same time, it can flexibly switch between different modes, including adaptable, high-quality, low energy consumption, super high frequency, and ultra-low bitrate.
+NOVA flexibly switches between different modes, including adaptable, high-quality, low energy consumption, super high frequency, and ultra-low bitrate.
 
-We use our proprietary video codec, and the performance in the RTC environment is excellent with low latency and no jitter.
+Agora uses a proprietary video codec, and the performance in the RTC environment is excellent with low latency and no jitter.
 
 #### Which voice codecs does Agora support？
 
@@ -83,95 +84,111 @@ Agora supports the following voice codecs:
 
 ### Does Agora provide echo cancellation?
 
-Echo cancellation is one of our strengths. Agora echo cancellation has the following characteristics:
+Yes, Agora's superior echo cancellation has the following characteristics:
 
 * Simple and efficient.
-* Support super high quality.
+* Super high-quality support.
 * Quick convergence and high echo return loss enhancement (ERLE).
 * Optimization for high- and low-end phones.
 * Device-specific parameter configuration.
 
-### Will a call be interrupted when switching networks, such as from Wi-Fi to 3G/4G?
+### Will a call be interrupted when switching networks, such as from a Wi-Fi to a cellular network?
 
-There might be a short interruption after switching networks during a call. For example, from Wi-Fi to 3G/4G due to the clients’ need to reconnect with the servers. The call continues after the network is reconnected.
+A short interruption may occur after switching networks during a call. The call continues after the network reconnects.
 
 ### How much bandwidth does the Agora SDK require?
 
-It depends on the network conditions:
+Depending on the network conditions:
 
-* If the Wi-Fi connection is strong, Agora will increase the bandwidth allocation to ensure an optimal user experience.
-* In a non Wi-Fi environment (for example in 3G or 2G), the Agora algorithm automatically lowers the bandwidth allocation according to the network conditions in order to allow quality calls.
+* If the Wi-Fi connection is strong, Agora increases the bandwidth allocation to ensure an optimal user experience.
+* In a cellular network, the Agora algorithm automatically lowers the bandwidth allocation according to the network conditions to allow quality calls.
 
-Generally speaking, the bandwidth usage is 4 kB to 13 kB per second (in a non Wi-Fi environment, it may be 4 kB to 6 kB per second). In some cases, it can be adjusted to as low as 1 kB per second.
+Generally speaking, the bandwidth allocation ranges between 4 Kbps and 13 Kbps (between 4 Kbps and 6 Kbps in a cellular network). In some cases, the bandwidth allocation can be as low as 1 Kbps.
 
-For more information, contact support@agora.io.
+### How much bandwidth does a call use？
 
-### How much bandwidth is required for a call？
+You use bandwidth whenever you access the Internet in a voice or video call. Compared with similar products, the bandwidth used by Agora products is very low:
 
-You use bandwidth whenever you need to access the Internet in a voice or video call. Compared with similar products, the traffic consumption of Agora products is very low:
-
-* Voice Call: 5 kbps to 10 kbps.
-* Video Call: The bitrate changes according to the resolution and frame rate. In general terms (for example without taking color depth into account), if the resolution is 180 by 320 pixels, and the frame rate is 15 fps, then the bit rate is 160 kbps.
+* Voice Call: 5 Kbps to 10 Kbps.
+* Video Call: The bitrate changes according to the resolution and frame rate. In general terms (for example without taking color depth into account), if the resolution is 180 by 320 pixels, and the frame rate is 15 fps, then the bitrate is 160 Kbps.
 
 ### What percentage of CPU resources does the Agora SDK typically use?
 
-It depends on phone modes, operating systems, and CPU chips. The minimum usage is 3% of the CPU resources. For the latest high-end mobile phones, it may use 20% or more. However, we can optimize the CPU usage according to your needs.
+Depending on the phone modes, operating systems, and CPU chips, the minimum CPU usage is 3%. For the latest high-end mobile phones, the CPU usage may be 20% or more. However, Agora can optimize the CPU usage according to your needs.
 
-For more information, contact support@agora.io.
 
-### How can Agora ensure that the data transmission is smooth without data loss and with little latency?
+### How can Agora ensure that the data transmission is smooth without any data loss and with minimal latency?
 
-* Agora patented NOVA codec is simple, low bitrate ,and highly adaptive.
+* Agora's patented NOVA codec is simple, low bitrate, and highly adaptive.
 * Users automatically access the Agora Global Virtual Network in poor network conditions.
 
-###  Does Agora support reconnection automatically?
+###  Does Agora support automatic reconnection?
 
 Yes.
 
-### Why does my phone get hot after being in a call for a while?
+### Why is my phone hot after being in a call for a while?
 
-Your phone performs software processing in a voice or video call, which uses lots of CPU resources and causes your phone to heat up. It is normal for the phone to heat up after a call or playing videos for a long time with any app.
+Your phone performs software processing in a voice or video call, which uses lots of CPU resources and causes your phone to heat up. It is normal for the phone to heat up after a call or playing videos for a long time with an app.
 
-### How can it only take 30 minutes to implement voice and video communications?
+### How can it take only 30 minutes to implement voice and video communications?
 
-Agora SDKs have all the required voice/video functions ready to go, and developers just need four lines of code for integration.
+Agora SDKs have all the required voice/video functions ready to go. Developers need only four lines of code for integration.
 
-### What is the benchmark of the voice/video quality?
+### How to evaluate the voice/video quality?
 
-On a subjective basis, refer to the MOS (Mean Opinion Score).
+Agora provide the following statistics to evaluate the voice or video quality:
 
-Benchmark for the quality of one host:
+#### Audio Statistics of the Remote Users
 
-The host uses 360p @ 15 fps @ 500 kbps by default:
+The following callbacks report the audio quality of the end-to-end and transport layer:
 
-* Excellent: If the percentage of host bandwidth > 450 kbps exceeds 80%.
-* Good: If the percentage of host bandwidth > 400 kbps exceeds 80%.
-* Poor: If the percentage of host bandwidth > 300 kbps exceeds 80%.
-* Bad: If the percentage of host bandwidth > 200 kbps exceeds 80%.
-* Very Bad: If the percentage of host bandwidth > 100 kbps exceeds 80%.
+1. `onRemoteAudioStats`: Reports the end-to-end quality of a remote audio stream that is closely linked to the real-user experience. This callback returns the following information:
 
-Benchmark for the FPS quality of one audience:
+	- `quality`: Audio quality rating at the receiver's end.
 
-* Excellent: If the percentage of audience receiving 13 fps exceeds 80%.
-* Good: If the percentage of audience receiving 11 fps exceeds 80%.
-* Poor: If the percentage of audience receiving 9 fps exceeds 80%.
-* Bad: If the percentage of audience receiving 6 fps exceeds 80%.
-* Very Bad: If the percentage of audience receiving 4 fps exceeds 80%.
+		- 0: The network quality is unknown.
+		- 1: The network quality is excellent.
+		- 2: The network quality is quite good, but the bitrate may be slightly lower than excellent.
+		- 3: Users can feel the communication slightly impaired.
+		- 4: Users cannot communicate smoothly.
+		- 5: The network is so bad that users can barely communicate.
 
-Benchmark for voice communication:
+  - `networkTransportDelay`: Network delay in the transport layer (ms).
+  - `jitterBufferDelay`: Jitter buffer delay at the receiver's end (ms).
+  - `audioLossRate`: Audio packet loss rate (%).
 
-* Excellent: The average packet loss rate is less than 1%.
-* Good: The average packet loss rate is less than 2%.
-* Poor: The average packet loss rate is less than 3%.
-* Bad: The average packet loss rate is less than 5%.
-* Very Bad: The average packet loss rate equals to or more than 5%.
+2. `onRemoteAudioTransportStats`: Reports the transport layer quality of a remote audio stream. This callback returns the following information:
 
-Benchmark for video communication:
+	- `delay`: Network delay in the transport layer (ms).
+	- `lost`: Audio packet loss rate in the transport layer (%).
+	- `rxKBitRate`: Received audio bitrate (Kbps).
 
-* Excellent: The average receiving frame rate equals to or is higher than 12 fps.
-* Good: The average receiving frame rate is lower than 12 fps.
-* Poor: The average receiving frame rate is lower than 10 fps.
-* Bad: The average receiving frame rate is lower than 7 fps.
-* Very Bad: The average receiving frame rate is lower than 4 fps.
+#### Video Statistics of the Remote Users
+
+The following callbacks reports the video quality of the end-to-end and transport layer:
+
+1. `onRemoteVideoStats`: Reports the end-to-end quality of a remote video stream that is closely linked to the real-user experience. This callback returns the following information:
+
+	- `receivedBitrate`: Received bitrate (Kbps).
+	- `receivedFrameRate`: Received frame rate (fps).
+	- `rxStreamType`: Received stream type.
+
+2. `onRemoteVideoTransportStats`: The SDK triggers this callback once every two seconds to report the transport layer quality of a remote video stream. This callback returns the following information:
+
+	- `delay`: Network delay in the transport layer (ms)
+	- `lost`: Video packet loss rate in the transport layer (%).
+	- `rxKBitRate`: Received video bitrate (Kbps).
+
+#### Video Statitics of the Local User
+
+The following callback reports the video quality of the local video stream:
+
+`onLocalVideoStats`: Reports the video quality of the local video stream. This callback returns the following information:
+
+- `sentBitrate`: Sent bitrate (Kbps).
+- `sentFrameRate`: Sent frame rate (fps).
+
+
+
 
 

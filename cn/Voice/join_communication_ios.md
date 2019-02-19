@@ -3,12 +3,15 @@
 title: 加入频道
 description: ios平台加入通信频道
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:01:19 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 08:50:38 GMT+0000 (UTC)
 ---
 # 加入频道
+在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/ios_audio.md)。
+
+## 实现方法
 App 在加入频道前，需要先设置频道模式，再加入频道。
 
-## 设置频道模式为通信
+### 设置频道模式为通信
 创建实例后，调用 `setChannelProfile` 方法设置频道模式。SDK 会根据所设置的频道模式使用不同的优化手段。
 
 在该方法中，将频道模式设置为通信模式。通信模式适用于语音或视频通话场景，如一对一聊天或群聊。频道中的任何用户都可以自由发言。该模式为默认模式。
@@ -30,7 +33,7 @@ func setChannelProfile() {
 }
 ```
 
-## 加入通信频道
+### 加入通信频道
 调用 `joinChannelByToken` 方法加入频道。
 
 在该方法中：
@@ -58,3 +61,15 @@ func joinChannel() {
   }
 }
 ```
+
+## 相关文档
+成功加入频道后，你可以使用 Agora SDK，实现如下功能进行语音通话：
+
+* [发布和订阅音频流](../../cn/Voice/publish_ios_audio.md)
+
+如果在通话过程中，对音量、音效、音调等有特殊需求，你还可以：
+
+* [调整通话音量](../../cn/Voice/volume_ios_audio.md)
+* [播放音效/音乐混音](../../cn/Voice/effect_mixing_ios_audio.md)
+* [使用耳返](../../cn/Voice/in-ear_ios_audio.md)
+* [调整音调、音色](../../cn/Voice/voice_effect_ios_audio.md)

@@ -3,22 +3,27 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 16:29:32 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 10:33:16 GMT+0000 (UTC)
 ---
 # Share the Screen
-To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screen\(s\) to share.
+## Introduction
 
-This page includes:
+During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
-- [Screen sharing on Google Chrome](#chrome)
-- [Screen sharing on Firefox](#ff)
-- [Enabling both screen sharing and video](#both)
+Screen sharing is applied in the following scenarios:
 
-Before enabling screen sharing on the web, ensure that you have prepared the environment and downloaded the package. For details, see [Making a Video Call](../../en/Quickstart%20Guide/communication_web_video-1.md).
+- In a video conference, the speaker can share an image of a local file, web page, or presentation with other users in the channel.
+- In an online class, the teacher can share the slides or notes with students.
 
-## <a name = "chrome"></a>Screen Sharing on Google Chrome
+## Implementation
 
-Before enabling screen sharing on Google Chrome, ensure that you have added the [Google Chrome Extension for Screen Sharing](../../en/Quickstart%20Guide/chrome_screensharing_plugin.md) provided by Agora.
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
+
+To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser will ask you to select which screens to share. The attribute settings are different on Google Chrome and Firefox.
+
+### <a name = "chrome"></a>Screen Sharing on Google Chrome
+
+Ensure that you added the [Google Chrome Extension for Screen Sharing](../../en/Quickstart%20Guide/chrome_screensharing_plugin.md) provided by Agora.
 
 Fill in the `extensionId` when you create the stream.
 
@@ -36,12 +41,12 @@ screenStream = AgoraRTC.createStream({
 > - Do not set the `video` and `screen` attributes as `true` at the same time.
 > - Agora recommends that you set the `audio` attribute as `false` to avoid any echo during the call.
 
-## <a name = "ff"></a>Screen Sharing on Firefox
+### <a name = "ff"></a>Screen Sharing on Firefox
 
-To enable screen sharing on Firefox, set the `mediaSource` attribute to specify the sharing mode:
+Set the `mediaSource` attribute to specify the sharing mode:
 
 - `screen`：Shares the whole screen.
-- `application`：Shares all the windows of an application.
+- `application`：Shares all windows of an application.
 - `window`：Shares a specific window of an application.
 
 ```javascript
@@ -58,9 +63,11 @@ screenStream = AgoraRTC.createStream({
 > - Agora recommends that you set the `audio` attribute as `false` to avoid echo during the call.
 > - Firefox on Windows does not support the application mode.
 
-## <a name = "both"></a>Enabling Both Screen Sharing and Video
+### <a name = "both"></a>Enabling Both Screen Sharing and Video
 
-One client only sends one stream. If you want to enable both screen sharing and video on one host, you need to create two clients; one to send the screen-sharing stream, and the other to send the video stream.
+One client only sends one stream. If you want to enable both screen sharing and video on one host, you need to create two clients: 
+- A client to send the screen-sharing stream.
+- A client to send the video stream.
 
 ```javascript
 // Create the client to send the screen-sharing stream.
@@ -84,11 +91,11 @@ videoClient.join(channelKey, channel, null, function(uid) {
 }
 ```
 
-If two clients of a host subscribe to each other, extra charges will occur:
+If two clients of a host subscribe to each other, extra charges will occur.
 
 <img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/en/screensharing_streams.png" style="width: 500px; "/>
 
-Agora recommends that you to save the returned `uid` when each client joins the channel. When the `‘stream-added’` event occurs, first check if the joined client is a local stream, if `yes`, do not subscribe to the client.
+Agora recommends that you save the returned `uid` when each client joins the channel. When the `stream-added` event occurs, first check if the joined client is a local stream, if `yes`, do not subscribe to the client.
 
 ```javascript
 var localStreams = [];
@@ -112,7 +119,7 @@ screenClient.on('stream-added', function(evt) {
 })
 ```
 
-The sample code:
+### Sample Code
 
 ```javascript
 var key = “********************************”;
@@ -209,3 +216,19 @@ screenClient.subscribe(stream);
   })
 });
 ```
+
+## Considerations
+
+- Do not set the uid of the screen-sharing stream to a fixed value. Streams with the same uid can interfere with each other.
+- **Do not subscribe to a locally published screen-sharing stream**, else additional charges will incur.
+- Ensure that `video`/`audio` is set to `false` when creating the screen-sharing stream.
+- Sharing the window of a QQ chat on Windows causes the black screen.
+
+## Working Principles
+
+Screen sharing on the Web client is enabled by creating a screen-sharing stream.
+
+- If you publish the screen-sharing stream only, set the `video` as `false`, and the `screen` as `true` when creating a stream.
+- If you publish both the local video stream and your screen-sharing stream, you need to create two client objects:
+	-  A client object for sending the local stream. Set `video` as true and `screen` as false.
+	-  A client object for sending the screen-sharing stream. Set `video` as false and `screen` as true.

@@ -3,14 +3,14 @@
 title: Signaling API
 description: 
 platform: macOS
-updatedAt: Fri Nov 02 2018 04:04:33 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:25:48 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0
 
 ## Methods
 
->  Only the built-in attributes come after an underscore; the custom attributes do not.
+> Only the built-in attributes come after an underscore; the custom attributes do not.
 
 ### Lifecycle
 
@@ -57,10 +57,9 @@ Use this method to log into Agora’s signaling system. Users must always log in
 - (void) login:(NSString*)appId account:(NSString*)account token:(NSString*)token uid:(uint32_t)uid deviceID:(NSString*)deviceID ;
 ```
 
--   When login is successful, the <code>onLoginSuccess</code> callback function is triggered.
--   When login fails, the <code>onLoginFailed</code> callback function is triggered.
--   When the SDK loses connection with the server, the <code>onLogout</code> callback function is triggered.
-
+- When login is successful, the <code>onLoginSuccess</code> callback function is triggered.
+- When login fails, the <code>onLoginFailed</code> callback function is triggered.
+- When the SDK loses connection with the server, the <code>onLogout</code> callback function is triggered.
 
 <table>
 <colgroup>
@@ -91,7 +90,7 @@ Use this method to log into Agora’s signaling system. Users must always log in
 
 
 
->  You can skip generating the token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the call of <code>login</code> will be ignored. To cancel the previous login, call <code>logout</code> first without having to wait until it is successfully executed.
+> You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. By default, if you are already logged in, the call of `login` will be ignored. To cancel the previous login, call `logout` first without having to wait until it is successfully executed.
 
 #### Log into Agora's Signaling System (login2:account:token:uid:deviceID:retry_time_in_s:retry_count:)
 
@@ -101,10 +100,9 @@ Use this method to log into Agora’s signaling system. Users must always log in
 
 Use this method to log into Agora’s signaling system. Users must always log in before performing any operations.
 
--   When Login is successful, the <code>onLoginSuccess</code> callback function is triggered.
--   When login fails, the <code>onLoginFailed</code> callback function is triggered.
--   When loses connection with server, the <code>onLogout</code> callback function is triggered.
-
+- When Login is successful, the <code>onLoginSuccess</code> callback function is triggered.
+- When login fails, the <code>onLoginFailed</code> callback function is triggered.
+- When loses connection with server, the <code>onLogout</code> callback function is triggered.
 
 <table>
 <colgroup>
@@ -134,14 +132,14 @@ Use this method to log into Agora’s signaling system. Users must always log in
 <td>The maximum time allowed to re-login, 30 seconds by default.</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>The maximum times allowed to re-login, 3 times by default.</td>
+<td>The maximum times allowed to re-login, 15 times by default.</td>
 </tr>
 </tbody>
 </table>
 
 
 
->  You can skip generating the token in a test environment by setting <code>token</code> to <code>_no_need_token</code>. However, Agora does not recommend this in a production environment. <code>onLoginFailed</code> will be triggered and reconnection stopped when either <code>retry_time_in_s</code> or <code>retry_count</code> is reached.
+> You can skip generating the token in a test environment by setting `token` to `_no_need_token`. However, Agora does not recommend this in a production environment. `onLoginFailed` will be triggered and reconnection stopped when either `retry_time_in_s` or `retry_count` is reached.
 
 #### Log out of Agora's Signaling System (logout)
 
@@ -473,7 +471,7 @@ Once a user joins a channel, the user receives the <code>onChannelJoined</code> 
 
 
 
->  Special channels are used by servers only to receive login and channel events.
+> Special channels are used by servers only to receive login and channel events.
 
 #### Allows a User to Leave a Channel (channelleave:)
 
@@ -732,7 +730,7 @@ The user who sent the message receives the <code>onMessageSendSuccess</code> cal
 <td>Channel name. It can be up to 128 visible characters.</td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>Message body. Each channel message must not exceed 8 KB visible characters. Each user cannot send more than 60 messages per second, and the entire channel cannot send more than 1,000 messages per second.</td>
+<td>Message body. Each channel message must not exceed 8 KB visible characters. Each user cannot send more than 60 messages per second, and the entire channel cannot send more than 200 messages per second.</td>
 </tr>
 <tr><td><code>msgID</code></td>
 <td>Visible characters. Message ID. Agora recommends setting it to “”, allowing the SDK to generate and assign the msgID and to ensure its uniqueness.</td>
@@ -746,14 +744,13 @@ The user who sent the message receives the <code>onMessageSendSuccess</code> cal
 
 #### Initiates a Call (channelInviteUser:account:uid:)
 
->  Calling and joining a channel are two separate processes. The user has to call channelJoin() to join the channel. The user can either join the channel before sending a call invitation or send a call invitation before joining the channel (when the counterpart accepts the invitation).
+> Calling and joining a channel are two separate processes. The user has to call channelJoin() to join the channel. The user can either join the channel before sending a call invitation or send a call invitation before joining the channel (when the counterpart accepts the invitation).
 
 This method initiates a call, that is, invites a user to join a specified channel. If the call fails, the user will receive the <code>onInviteFailed</code> callback function. Possible reasons include:
 
--   The other user is offline;
--   Local network issues;
--   Server errors;
-
+- The other user is offline;
+- Local network issues;
+- Server errors;
 
 If the caller gets a confirmation from the callee, the caller will receive the <code>onInviteReceivedByPeer</code> callback function, and the callee will receive the <code>onInviteReceived</code> callback function.
 
@@ -824,7 +821,7 @@ Same as channelInviteUser:account:uid: except for the parameters.
 
 
 
->  You do not need to set the `_require_peer_online` field when making a SIP call.
+> You do not need to set the `_require_peer_online` field when making a SIP call.
 
 #### Sends a DTMF (Dual-tone Multi-frequency) Message to the Other User (channelInviteDTMF:phoneNum:dtmf:)
 
@@ -882,7 +879,7 @@ This method accepts a call request or invitation. Once this API is called, the o
 </td>
 </tr>
 <tr><td><code>account</code></td>
-<td>The caller’s user ID.</td>
+<td>The caller’s user ID.</td>
 </tr>
 <tr><td><code>uid</code></td>
 <td><p>N/A.</p>
@@ -1103,7 +1100,7 @@ This method sends a channel message without joining a channel. Agora does not re
 
 The following callback functions are related to Agora’s signaling system.
 
->  Avoid using synchronous or block callback operations. Otherwise, the signaling system may crash.
+> Avoid using synchronous or block callback operations. Otherwise, the signaling system may crash.
 
 ### The Connection with the Agora’s Signaling System has been Lost (onReconnecting)
 
@@ -1111,6 +1108,7 @@ This callback function is triggered when the connection with Agora’s signaling
 
 ```
 @property (copy) void(^onReconnecting)(uint32_t nretry) ;
+
 ```
 
 <table>
@@ -1136,6 +1134,7 @@ This callback function returns a detailed description of the error.
 
 ```
 @property (copy) void(^onError)(NSString* name,AgoraEcode ecode,NSString* desc) ;
+
 ```
 
 <table>
@@ -1176,6 +1175,7 @@ This callback function returns the query result of the user status and is trigge
 
 ```
 @property (copy) void(^onQueryUserStatusResult)(NSString* name,NSString* status) ;
+
 ```
 
 <table>
@@ -1209,6 +1209,7 @@ This callback function is triggered when the application has reconnected to the 
 
 ```
 @property (copy) void(^onReconnected)(int fd) ;
+
 ```
 
 <table>
@@ -1234,6 +1235,7 @@ This callback function is triggered when a user has logged into the Agora’s si
 
 ```
 @property (copy) void(^onLoginSuccess)(uint32_t uid,int fd) ;
+
 ```
 
 <table>
@@ -1259,6 +1261,7 @@ This callback function is triggered when a user has logged out of Agora’s sign
 
 ```
 @property (copy) void(^onLogout)(AgoraEcode ecode) ;
+
 ```
 
 <table>
@@ -1284,6 +1287,7 @@ This callback function is triggered when the remote calling process has succeede
 
 ```
 @property (copy) void(^onInvokeRet)(NSString* callID,NSString* err,NSString* resp) ;
+
 ```
 
 <table>
@@ -1315,6 +1319,7 @@ This callback function is triggered when a user has failed to log into Agora’s
 
 ```
 @property (copy) void(^onLoginFailed)(AgoraEcode ecode) ;
+
 ```
 
 <table>
@@ -1340,6 +1345,7 @@ This callback function is triggered when a user has joined a channel.
 
 ```
 @property (copy) void(^onChannelJoined)(NSString* channelID) ;
+
 ```
 
 <table>
@@ -1365,6 +1371,7 @@ This callback function is triggered when a user has failed to join a channel.
 
 ```
 @property (copy) void(^onChannelJoinFailed)(NSString* channelID,AgoraEcode ecode) ;
+
 ```
 
 <table>
@@ -1393,6 +1400,7 @@ This callback function is triggered when a user has left a channel.
 
 ```
 @property (copy) void(^onChannelLeaved)(NSString* channelID,AgoraEcode ecode) ;
+
 ```
 
 <table>
@@ -1421,6 +1429,7 @@ This callback function is triggered when another user has joined the channel.
 
 ```
 @property (copy) void(^onChannelUserJoined)(NSString* account,uint32_t uid) ;
+
 ```
 
 <table>
@@ -1449,6 +1458,7 @@ This callback function is triggered when another user has left the channel.
 
 ```
 @property (copy) void(^onChannelUserLeaved)(NSString* account,uint32_t uid) ;
+
 ```
 
 <table>
@@ -1479,6 +1489,7 @@ A user will receive this callback function after joining a channel.
 
 ```
 @property (copy) void(^onChannelUserList)(NSMutableArray* accounts, NSMutableArray* uids);
+
 ```
 
 <table>
@@ -1507,6 +1518,7 @@ This callback function is triggered when a user has queried the number of users 
 
 ```
 @property (copy) void(^onChannelQueryUserNumResult)(NSString* channelID,AgoraEcode ecode,int num) ;
+
 ```
 
 <table>
@@ -1538,6 +1550,7 @@ This callback function is triggered when a user has queried whether he/she is in
 
 ```
 public virtual void onChannelQueryUserIsIn(std::string channelID, std::string account, int isIn){}
+
 ```
 
 <table>
@@ -1575,6 +1588,7 @@ This callback function is triggered when the channel attribute has changed.
 
 ```
 @property (copy) void(^onChannelAttrUpdated)(NSString* channelID,NSString* name,NSString* value,NSString* type) ;
+
 ```
 
 <table>
@@ -1616,6 +1630,7 @@ This callback function is received by the callee when the callee has received a 
 
 ```
 @property (copy) void(^onInviteReceived)(NSString* channelID,NSString* account,uint32_t uid, NSString* extra) ;
+
 ```
 
 <table>
@@ -1644,6 +1659,7 @@ This callback function is received by the callee when the callee has received a 
 </tr>
 
 
+
 </tbody>
 </table>
 
@@ -1655,6 +1671,7 @@ This callback function is received by the caller when the callee has received th
 
 ```
 @property (copy) void(^onInviteAcceptedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
+
 ```
 
 <table>
@@ -1692,6 +1709,7 @@ This callback function is received by the caller when the callee has accepted th
 
 ```
 @property (copy) void(^onInviteRefusedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
+
 ```
 
 <table>
@@ -1729,6 +1747,7 @@ This callback function is received by the caller when the callee has rejected th
 
 ```
 @property (copy) void(^onInviteRefusedByPeer)(NSString* channelID,NSString* account,uint32_t uid) ;
+
 ```
 
 <table>
@@ -1760,6 +1779,7 @@ This callback function is triggered when a call has failed.
 
 ```
 @property (copy) void(^onInviteFailed)(NSString* channelID,NSString* account,uint32_t uid,AgoraEcode ecode,NSString* extra) ;
+
 ```
 
 <table>
@@ -1788,6 +1808,7 @@ This callback function is triggered when a call has failed.
 </tr>
 
 
+
 </tbody>
 </table>
 
@@ -1799,6 +1820,7 @@ This callback function is triggered when the callee has ended the call.
 
 ```
 @property (copy) void(^onInviteEndByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
+
 ```
 
 <table>
@@ -1827,6 +1849,7 @@ This callback function is triggered when the callee has ended the call.
 </tr>
 
 
+
 </tbody>
 </table>
 
@@ -1838,6 +1861,7 @@ This callback function is triggered when the caller has ended the call.
 
 ```
 @property (copy) void(^onInviteEndByMyself)(NSString* channelID,NSString* account,uint32_t uid) ;
+
 ```
 
 <table>
@@ -1869,6 +1893,7 @@ This callback function is triggered when the caller has received the DTMF messag
 
 ```
 @property (copy) void(^onInviteMsg)(NSString* channelID,NSString* account,uint32_t uid,NSString* msgType,NSString* msgData,NSString* extra) ;
+
 ```
 
 <table>
@@ -1909,6 +1934,7 @@ This callback function is triggered when the user has failed to send a message.
 
 ```
 @property (copy) void(^onMessageSendError)(NSString* messageID,AgoraEcode ecode) ;
+
 ```
 
 <table>
@@ -1937,6 +1963,7 @@ This callback function is triggered when the user has successfully sent a messag
 
 ```
 @property (copy) void(^onMessageSendSuccess)(NSString* messageID) ;
+
 ```
 
 <table>
@@ -1962,6 +1989,7 @@ This callback function notifies a user that a message has been received.
 
 ```
 @property (copy) void(^onMessageInstantReceive)(NSString* account,uint32_t uid,NSString* msg) ;
+
 ```
 
 <table>
@@ -1985,7 +2013,7 @@ This callback function notifies a user that a message has been received.
 </tbody>
 </table>
 
-	
+​	
 
 ### A Channel Message has been Received (onMessageChannelReceive)
 
@@ -1993,6 +2021,7 @@ This callback function is triggered when a channel message has been received.
 
 ```
 @property (copy) void(^onMessageChannelReceive)(NSString* channelID,NSString* account,uint32_t uid,NSString* msg) ;
+
 ```
 
 <table>
@@ -2027,6 +2056,7 @@ This callback function is triggered when a line has been created in a log file.
 
 ```
 @property (copy) void(^onLog)(NSString* txt) ;
+
 ```
 
 <table>
@@ -2052,6 +2082,7 @@ This callback function is triggered when the user has queried an attribute of a 
 
 ```
 @property (copy) void(^onUserAttrResult)(NSString* account,NSString* name,NSString* value) ;
+
 ```
 
 <table>
@@ -2083,6 +2114,7 @@ This callback function is triggered when a user has queried all attributes of a 
 
 ```
 @property (copy) void(^onUserAttrAllResult)(NSString* account, NSString* value) ;
+
 ```
 
 <table>
@@ -2108,16 +2140,3 @@ This callback function is triggered when a user has queried all attributes of a 
 ## Error Codes and Warning Codes
 
 See [Error Codes and Warning Codes](../../en/API%20Reference/the_error_signaling.md).
-
-
-
-
-
-
-
-
-
-
-
-
-

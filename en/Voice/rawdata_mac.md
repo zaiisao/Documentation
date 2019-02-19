@@ -3,18 +3,18 @@
 title: Modify Raw Data
 description: 
 platform: macOS
-updatedAt: Fri Nov 02 2018 04:09:49 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 18:12:30 GMT+0000 (UTC)
 ---
 # Modify Raw Data
-The Agora raw data interface is an advanced feature provided in the SDK library for users to obtain the voice or video raw data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
+The Agora Raw Data interface is an advanced feature provided in the SDK library for users to obtain the raw voice or video data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
 
 You can implement a preprocessing stage before sending the data to the encoder and modifying the captured video frames or voice signals. You can also implement a postprocessing stage after sending the data to the decoder and modifying the received video frames or voice signals.
 
-The Agora raw data interface is a C++ interface. For all the APIs used on this page, refer to [Video Call API](https://docs.agora.io/en/Voice/API%20Reference/oc/index.html).
+The Agora Raw Data interface is a C++ interface. For all API methods used on this page, refer to [Video Call API](https://docs.agora.io/en/Voice/API%20Reference/oc/index.html).
 
-## Modify Voice Raw Data
+## Modify the Raw Voice Data
 
-1.  Define `AgoraAudioFrameObserver` by inheriting IAudioFrameObserver \(the `IAudioFrameObserver` Class is defined in `IAgoraMediaEngine.h`\). You need the following virtual interfaces:
+1.  Define `AgoraAudioFrameObserver` by inheriting IAudioFrameObserver \(the `IAudioFrameObserver` class is defined in `IAgoraMediaEngine.h`\). You need the following virtual interfaces:
 
 
 For example,
@@ -43,7 +43,7 @@ class AgoraAudioFrameObserver : public agora::media::IAudioFrameObserver
 };
 ```
 
-This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data if necessary:
+This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data, if necessary:
 
 ```
 class IAudioFrameObserver
@@ -83,7 +83,7 @@ if (mediaEngine)
 }
 ```
 
-> Here `engine` can be obtained using the following method, and kit means `AgoraRtcEngineKit`.
+> `engine` can be obtained using the following method. `kit` means `AgoraRtcEngineKit`.
 
 ```
 agora::IRtcEngine* rtc_engine = (agora::IRtcEngine*)kit.getNativeHandle;
@@ -91,9 +91,9 @@ agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
 mediaEngine.queryInterface(rtc_engine, agora::AGORA_IID_MEDIA_ENGINE);
 ```
 
-## Modify Video Raw Data
+## Modify the Raw Video Data
 
-1.  Define `AgoraVideoFrameObserver` by inheriting IVideoFrameObserver \(the `IVideoFrameObserver` Class is defined in `IAgoraMediaEngine.h`\). You need the following virtual interfaces:
+1.  Define `AgoraVideoFrameObserver` by inheriting IVideoFrameObserver \(the `IVideoFrameObserver` class is defined in `IAgoraMediaEngine.h`\). You need the following virtual interfaces:
 
     For example,
 
@@ -113,7 +113,7 @@ mediaEngine.queryInterface(rtc_engine, agora::AGORA_IID_MEDIA_ENGINE);
     ```
 
 
-This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data if necessary:
+This example returns true for voice preprocessing or postprocessing interfaces. Users can modify the data, if necessary:
 
 ```
 class IVideoFrameObserver
@@ -124,11 +124,11 @@ class IVideoFrameObserver
     };
   struct VideoFrame {
     VIDEO_FRAME_TYPE type;
-    int width;  //width of video frame
-    int height;  //height of video frame
-    int yStride;  //stride of Y data buffer
-    int uStride;  //stride of U data buffer
-    int vStride;  // stride of V data buffer
+    int width;  //width of the video frame
+    int height;  //height of the video frame
+    int yStride;  //stride of the Y data buffer
+    int uStride;  //stride of the U data buffer
+    int vStride;  // stride of the V data buffer
     void* yBuffer;  //Y data buffer
     void* uBuffer;  //U data buffer
     void* vBuffer;  //V data buffer
@@ -141,7 +141,7 @@ class IVideoFrameObserver
 };
 ```
 
-2.  Register the video frame observer to the SDK engine. After creating the IRtcEngine object and enabling the video mode, and before joining a channel, you can register the video frame observer object.
+2.  Register the video frame observer to the SDK engine. After creating the `IRtcEngine` object and enabling the video mode, and before joining a channel, you can register the video frame observer object.
 
 
 ```
@@ -155,7 +155,7 @@ agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
   }
 ```
 
-> Here `engine` can be obtained using the following method, and kit means `AgoraRtcEngineKit`.
+> `engine` can be obtained using the following method. `kit` means `AgoraRtcEngineKit`.
 
 ```
 agora::IRtcEngine* rtc_engine = (agora::IRtcEngine*)kit.getNativeHandle;

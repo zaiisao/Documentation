@@ -3,10 +3,10 @@
 title: 实现七人以上视频通话
 description: 17-Way Live Video Broadcast for web
 platform: Web
-updatedAt: Fri Nov 02 2018 04:21:30 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 06:25:36 GMT+0000 (UTC)
 ---
 # 实现七人以上视频通话
-在一般的网页端视频通话场景中，如果参与人数过多，可能会引起音画不同步、信息丢失等问题。
+在一般的网页端视频通话场景中，如果参与人数超过七人，可能会引起音画不同步、信息丢失等问题。
 
 如果参与视频通话的各方将订阅流设置为 **1-N** 模式，即 1 方设为大流，其余各方均设为小流，那么最多可以有 17 人加入视频通话，或进行互动直播。
 
@@ -205,7 +205,7 @@ client.enableDualStream();
 ## 6. 使用示例代码实现网页端 17 人视频通话
 
 在网页端，你可以通过如下方法实现 17 人视频通话：
-![](https://web-cdn.agora.io/docs-files/1539758012237)
+![](https://web-cdn.agora.io/docs-files/1543559099965)
 
 1. 检查浏览器兼容性 (checkSystemRequirements)
 

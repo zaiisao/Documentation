@@ -3,12 +3,15 @@
 title: 加入频道
 description: android平台直播模式加入频道
 platform: Android
-updatedAt: Fri Nov 02 2018 04:17:56 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 08:57:19 GMT+0000 (UTC)
 ---
 # 加入频道
+在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Interactive%20Broadcast/android_video.md)。
+
+## 实现方法
 App 在加入频道前，需要先设置频道模式，再加入频道。
 
-## 设置频道模式为直播
+### 设置频道模式为直播
 创建实例后，调用 `setChannelProfile` 方法设置频道模式。SDK 会根据所设置的频道模式使用不同的优化手段。 在该方法中，将频道模式设置为直播模式。直播模式用于频道内有主播和观众两种角色的直播场景。主播收发语音和视频消息，观众只收不发。
 
 > - 该方法必须在加入频道前调用才能生效。
@@ -20,7 +23,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_LIVE_BROADCASTING);
 ```
 
 
-## 加入直播频道
+### 加入直播频道
 调用 `joinChannel` 方法加入频道。在该方法中:
 
 在该方法中：
@@ -36,5 +39,19 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_LIVE_BROADCASTING);
     mRtcEngine.joinChannel(null, "demoChannel1", "Extra Optional Data", 0); // if you do not specify the uid, Agora will assign one.
 }
 ```
+
+## 相关文档
+成功加入频道后，你可以使用 Agora SDK，实现如下功能进行互动直播：
+
+- [切换用户角色](../../cn/Interactive%20Broadcast/role_android.md)
+- [发布和订阅音视频流](../../cn/Interactive%20Broadcast/publish_android_live.md)
+
+在直播过程中，如果对音量、音效、视频分辨率等有特殊需求，你还可以：
+
+- [调整通话音量](../../cn/Interactive%20Broadcast/volume_android.md)
+- [播放音效/音乐混音](../../cn/Interactive%20Broadcast/effect_mixing_android.md)
+- [使用耳返](../../cn/Interactive%20Broadcast/in-ear_android.md)
+- [调整音调、音色](../../cn/Interactive%20Broadcast/voice_effect_android.md)
+- [设置视频属性](../../cn/Interactive%20Broadcast/videoProfile_android.md)
 
 

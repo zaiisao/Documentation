@@ -1,11 +1,11 @@
 
 ---
-title: 密钥说明
+title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 07:34:21 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 04:01:20 GMT+0000 (UTC)
 ---
-# 密钥说明
+# 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
 
 <table>
@@ -39,7 +39,7 @@ updatedAt: Fri Nov 02 2018 07:34:21 GMT+0000 (UTC)
 - Gaming SDK: `getSdkVersion`
 
 
->-   如果你使用的是 Agora Signaling SDK，请参考 [信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
+>-   如果你使用的是 Agora Signaling SDK，请参考[信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
 -   如果你使用的产品版本不支持 Token，需使用密钥功能请参考 [Channel Key 密钥说明](../../cn/null/channel_key.md)。
 
 
@@ -47,7 +47,7 @@ updatedAt: Fri Nov 02 2018 07:34:21 GMT+0000 (UTC)
 
 在调用 `joinChannel` 方法时，必须传入鉴权密钥作为参数。针对用户的项目开发需求，Agora SDK 提供了两种鉴权机制：[App ID](#APPID) 和 [Token](#Token) 。下图描述这两种鉴权机制的关系以及适用场景：
 
-<img alt="../_images/key_relation_native.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_native.jpg" style="width: 500px; "/>
+<img alt="../_images/key_relation_native.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_native.jpg" style="width: 840px; "/>
 
 
 其中：
@@ -58,7 +58,7 @@ updatedAt: Fri Nov 02 2018 07:34:21 GMT+0000 (UTC)
 
 -   App Certificate 仅用于生成 Token，不可单独使用。一旦启用了 App Certificate，则必须使用 Token。
 
-<a name = "APPID"></a>
+<a name = "-App-ID"></a>
 
 ## App ID
 
@@ -70,7 +70,7 @@ App ID 提供了一个简单的方式，方便开发者使用 Agora 的服务，
 ### 获取 App ID
 
 1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
-2. 登陆 Dashboard 页面，点击 **添加新项目**。
+2. 登录 Dashboard 页面，点击 **添加新项目**。
 
 	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
@@ -109,7 +109,7 @@ App ID 提供了一个简单的方式，方便开发者使用 Agora 的服务，
 
 在使用 Token 之前，你需要先在你的 Server 端部署一个 Token Generator 用来生成 Token。
 
-Agora 提供以下平台生成 Token 的 [示例代码](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 供你参考：
+Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey)供你参考：
 
 -   C++
 
@@ -126,6 +126,7 @@ Agora 提供以下平台生成 Token 的 [示例代码](https://github.com/Agora
 
 你可以直接使用相应的示例代码，也可以使用其他语言实现生成 Token 的功能。 Agora 欢迎开发者将自己实现的动态密钥生成方式在 [GitHub](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 上提交 Pull request 贡献出来。
 
+<a name = "Generate_Token"></a>
 ### 生成 Token
 
 生成 Token 时需要向 Server 端传入以下参数：
@@ -147,18 +148,6 @@ Agora 提供以下平台生成 Token 的 [示例代码](https://github.com/Agora
 <tr><td><code>uid</code></td>
 <td>申请加入频道的用户 ID</td>
 </tr>
-<tr><td><code>role</code></td>
-<td><p>申请加入频道的用户角色，根据需要选择一种：</p>
-<ul>
-<li>Attendee：通信模式下的通话人</li>
-<li>Publisher：直播模式下的主播</li>
-<li>Subscriber：直播模式下的观众</li>
-</ul>
-</td>
-</tr>
-<tr><td><code>privilege</code></td>
-<td>用户申请加入频道时指定的角色所对应的一系列服务权限。各用户角色对应的权限详见 <a href="#roleprivilege"><span>Token 的角色权限</span></a>。</td>
-</tr>
 <tr><td><code>expireTimestamp</code>  <sup>[1]</sup></td>
 <td>Token 服务有效时间，默认为 0，表示 Token 一旦生成，永不失效。有效时间内用户可以无限次加入频道，超过有效时间用户将被踢出频道。</td>
 </tr>
@@ -168,6 +157,8 @@ Agora 提供以下平台生成 Token 的 [示例代码](https://github.com/Agora
 
 
 > [1] `expireTimestamp` 指 1970 年 1 月 1 日开始到 Token 服务到期的秒数。如果想设置 10 分钟的服务有效时间，则输入当前时间戳 + 600（秒）即可。每个服务的有效时间是独立的，可以通过 `setPrivilege` 接口进行单独设置。
+
+<a id = "-App-Certificate"></a>
 
 #### 获取 App Certificate
 
@@ -188,8 +179,6 @@ Agora 提供以下平台生成 Token 的 [示例代码](https://github.com/Agora
 <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 
 
-> -   如果出于某种原因你需要更新 App Certificate，请联系 [support@agora.io](mailto:support@agora.io) 。
->
 > -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
 >
 > -   通常 App Certificate 在启用一小时后生效。
@@ -198,59 +187,6 @@ Agora 提供以下平台生成 Token 的 [示例代码](https://github.com/Agora
 
 <a id ="roleprivilege"></a>
 
-#### Token 的角色权限
-
-Token 的设计基于用户角色模型。一个用户的角色，关联着多个权限。
-
--   创建 Token 时，指定用户角色以及使用期限
-
--   使用 Token 加入频道时，SDK 把 Token 提交给 Agora 的服务器验证，并使用 Token 赋予的权限
-
--   使用过程中，可以更新 Token，为频道内的用户端修改权限
-
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>角色</strong></td>
-<td><strong>描述</strong></td>
-<td><strong>权限</strong></td>
-</tr>
-<tr><td>Attendee（通话人）</td>
-<td>语音及视频通话参与通话的各方</td>
-<td><ul>
-<li>加入频道</li>
-<li>发布音频流</li>
-<li>发布视频流</li>
-<li>发布数据流</li>
-</ul>
-</td>
-</tr>
-<tr><td>Publisher（发布者）</td>
-<td>发布音视频的用户（主播）</td>
-<td><ul>
-<li>加入频道</li>
-<li>发布音频流</li>
-<li>发布视频流</li>
-<li>发布数据流</li>
-<li>发布音频 CDN</li>
-<li>发布视频 CDN</li>
-</ul>
-</td>
-</tr>
-<tr><td>Subscriber（订阅者）</td>
-<td>订阅音视频流的用户（观众）</td>
-<td><ul>
-<li>加入频道</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 
 
 
@@ -269,17 +205,14 @@ Token 的设计基于用户角色模型。一个用户的角色，关联着多�
 
 
 > -   出于安全考虑，请在 Token 生成后 24 小时内加入频道。超过 24 小时需要重新生成 Token。
-
-> -   采用了 Token 方案后，在用户进入频道时，Token 将替换原来的 App ID。
-
+> -   采用了 Token 方案后，Agora Native SDK 的用户进入频道时，Token 将替换原来的 App ID；Agora 不建议 Agora Web SDK 的用户用 Token 替换 App ID。
 > -   Token 在一段时间后会失效。当 Client 端收到回调提醒 Token 即将失效，或当获知密钥已失效时，需调用 `renewToken` 方法进行更新。
-
 > -   Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js, Java, Python, C++ 等绝大多数通用的服务器端开发平台上均可获得所需库。具体加密方案可参看以下网页：[http://en.wikipedia.org/wiki/Hash-based\_message\_authentication\_code](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)
 
 
 ## 参考
 
-如果你需要从老版本升级到支持 Token 的版本，请参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
+如果你需要从老版本升级到支持 Token 的版本，请参考[动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
 了解在 Server 端如何实现生成密钥的功能，请查看[在服务端生成密钥](../../cn/null/token_server.md)。
 

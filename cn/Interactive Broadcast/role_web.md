@@ -3,9 +3,13 @@
 title: 切换用户角色
 description: web平台上设置或切换用户角色
 platform: Web
-updatedAt: Fri Nov 02 2018 04:18:49 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 06:29:05 GMT+0000 (UTC)
 ---
 # 切换用户角色
+在切换用户角色前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Interactive%20Broadcast/web_prepare.md)。
+
+
+## 实现方法
 Web 平台通过如下 3 个接口控制用户角色的切换：
 
 - `client.publish`：发布本地音视频流
@@ -45,8 +49,8 @@ Web 平台通过如下 3 个接口控制用户角色的切换：
 	});
 	client.on('stream-subscribed', function (evt) {
 		var remoteStream = evt.stream;
-		console.log("Subscribe remote stream successfully: " + stream.getId());
-		stream.play('agora_remote' + stream.getId());
+		console.log("Subscribe remote stream successfully: " + remoteStream.getId());
+		remoteStream.play('agora_remote' + remoteStream.getId());
 	})
 	```
 
@@ -70,7 +74,18 @@ Web 平台通过如下 3 个接口控制用户角色的切换：
   *  `client.publish`
 
 
-> 在调用 `client.publish` 发布本地音视频流前，需要先创建并初始化音视频流，详见 [发布或订阅音视频流](../../cn/Interactive%20Broadcast/publish_web.md) 中的描述。
+> 在调用 `client.publish` 发布本地音视频流前，需要先创建并初始化音视频流，详见 [发布或订阅音视频流](../../cn/Interactive%20Broadcast/publish_web_live.md) 中的描述。
+
+## 相关文档
+直播频道中的用户角色切换为主播后，可以使用 Agora SDK，实现如下功能进行互动直播：
+
+- [发布和订阅音视频流](../../cn/Interactive%20Broadcast/publish_web_live.md)
+
+如果在直播过程中，对音量、音效、视频分辨率等有特殊需求，你还可以：
+
+- [调整通话音量](../../cn/Interactive%20Broadcast/volume_web.md)
+- [播放音效/音乐混音](../../cn/Interactive%20Broadcast/effect_mixing_web.md)
+- [设置视频属性](../../cn/Interactive%20Broadcast/videoProfile_web.md)
 
 
 

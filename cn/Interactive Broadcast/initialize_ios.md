@@ -3,9 +3,13 @@
 title: 初始化 AgoraRtcEngineKit
 description: iOS平台初始化
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:00:40 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 08:41:53 GMT+0000 (UTC)
 ---
 # 初始化 AgoraRtcEngineKit
+在初始化 AgoraRtcEngineKit 前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/ios_audio.md)。
+
+## 实现方法
+
 进入频道之前，调用 `sharedEngineWithAppId` 方法创建一个 AgoraRtcEngine 实例。
 
 在该方法中：
@@ -34,3 +38,12 @@ func initializeAgoraEngine() {
    agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId: "Your App ID", delegate: self)
 }
 ```
+
+## 相关文档
+完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行语音通话：
+* [加入频道](../../cn/Voice/join_communication_ios.md)
+* [发布和订阅音频流](../../cn/Voice/publish_ios_audio.md)
+
+如果对网络或音质有特殊的需求，你还可以在加入频道前：
+* [进行通话前网络质量监测](../../cn/Voice/lastmile_ios.md)
+* [使用双声道/高音质](../../cn/Voice/audio_profile_ios_audio.md)

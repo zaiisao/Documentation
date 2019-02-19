@@ -3,21 +3,21 @@
 title: 信令相关
 description: 
 platform: 信令相关
-updatedAt: Fri Nov 02 2018 04:05:23 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:47:04 GMT+0000 (UTC)
 ---
 # 信令相关
 ### 怎么获取用户在线列表？
 
-SDK 内有 `onUserJoined` 和 `onUserOffline` 的回调接口，可以知道用户上线和离线时刻的通知。也可以通过使用服务端 Dashboard RESTful API 来获取用户在线列表，详见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
+Agora 不提供获取用户在线列表的方法。 用户管理由信令处理，该功能可在信令层中实现。 信令SDK 的 `onUserJoined` 和 `onUserOffline` 回调将会在用户上线或离线频道时发出通知。
 
 ### 怎么设置 PSTN 的主叫号码？
 
-* 如果你使用 channelInvitePhone2，最后的参数为主叫号码。
+* 如果你使用 channelInvitePhone 2，最后的参数为主叫号码。
 * 如果你使用 channelInvitePhone，用户账号为主叫号码。
 
 ### Agora.io 提供 PSTN 方案吗？
 
-我们只提供 PSTN 对接能力，但不提供线路/解决方案。
+Agora 不提供完整的 PSTN 解决方案，但提供从 VoIP 到 PSTN 的对接功能。
 
 ### App 的用户之间要建立和发起一个呼叫，整个流程是怎样的？
 
@@ -82,49 +82,48 @@ SDK 内有 `onUserJoined` 和 `onUserOffline` 的回调接口，可以知道用�
 * 请检查 App Certificate 是否正确，是否在 Dashboard 已启用。App Certificate 在 Dashboard 上启用 1 小时后，方能生效。
 * 请检查生成 token (Signaling Key) 的算法是否正确。
 
-关于如何获取正确的 App ID 和 App Certificate, 以及如何使用正确的算法生成 Signaling Key, 详见 [信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
+关于如何获取正确的 App ID 和 App Certificate, 以及如何使用正确的算法生成 Signaling Key, 详见 [校验用户权限](../../cn/Agora%20Platform/key_signaling.md)。
 
 ### 无法拨通一个已经通过验证的 PSTN 电话号码
 
-确认您在号码前添加了国家代码。如果是固定电话或者800电话号码，必须在号码前加上区号。
+确认您在号码前添加了国家代码。如果是固定电话或者 800 电话号码，必须在号码前加上区号。
 
-### 打不通电话，如何判断是 APP 逻辑问题，还是 [Agora.io](https://www.agora.io/cn/)  提供的 SDK 有问题？
+### 打不通电话，如何判断是 APP 逻辑问题，还是 Agora.io 提供的 SDK 有问题？
 
 建议您在 [Agora.io](https://www.agora.io/cn/)  提供的 demo 程序里测试一下，如果在 demo 程序里可以打通电话，那就是 APP 的逻辑问题。
 
-登陆不成功，没有 loginsuccess 回调？
+登录不成功，没有 loginsuccess 回调？
 
 通过 Error Code 进行初步判断：
 
-Error206：token 错误
+Error 206
 
-先获取客户 app id，检查一下他登录传的 token 参数是什么。如果是 no need token 这种，确认 dashboard 里 token 调试开关已经打开。
+token 错误
+
+* 确认 token 参数，如果是 no need token，确认 dashboard 里 token 调试开关已经打开。
 
 ![](https://web-cdn.agora.io/docs-files/1540453296247)
 
-如果 token 传的是自己算的
+* 确认 app certificate 是开启的。
+* 确认时间戳是 10 位，并且没有过期。
+* token 过期当时不会被踢出频道，过期时间尝试登录会失败。
 
-* 确认客户的 app certificate 是开启的
-* 确认客户时间戳是 10 位，并且没有过期
-* 要来客户登录的 account 名字
-* 自己拿客户的 app id，certificate，account，时间戳，算 token 去登录，若成功，客户自己算的 token 有问题，双方都发出来比对一下
-* 若登录失败，询问后台（前提你要确认自己算的 token 是正确的，并且登录也是可以正常进行的，建议自己先拿测试 appid cert 等测一遍，确认你的测试 demo 是工作的）
+Error 201
 
-token 过期当时不会被踢出频道，过期时间尝试登录会失败。
-
-Error201
-
-* app id 没填或 token 直接传 null 或者空，或者配置文件内的格式不对（没回车换行，有空格等等）导致没识别到 app id。
-* 网络有问题，看下是否上网正常
-* 获取 SDK 日志
+* App ID 没填或 token 直接传 null 或者空，或者配置文件内的格式不对（没回车换行，有空格等等）导致没识别到 App ID。
+* 网络有问题，看下是否上网正常。
+* 获取 SDK 日志。
 
 ### 掉线问题
 
-* 断网/弱网：可以试一下打开百度的网页看速度怎么样
-* 被踢掉：多个设备/实例登陆同一个 app id下的同一个 account id，会踢掉上一个登陆的人
-* Web 和 Java SDK 被踢错误码和网络掉线错误码用的都是102，目前没办法，之后再改
-* 连不上服务器（有可能是我们的问题，拿日志给研发检查一下）
-* Native SDK 网络不好的情况下内部会尝试重连，一旦 `logout` 回调出来就不再重连了
-* Web SDK 1.4 版本的刚刚加入 SDK 的内部重连，之前版本，网络一断立即 `logout`
-* Java SDK 目前没有做 SDK 内部重连
+引起掉线的原因：
+
+* 弱网或断网。
+* 多个设备登录同一个 App ID 下的同一个 account ID，会踢掉上一个登录的人。
+* SDK 无法连接服务器
+   * Native SDK 网络不好的情况下内部会尝试重连，一旦 logout 回调出来就不再重连了。
+   * Web SDK 1.4 版本的刚刚加入 SDK 的内部重连，之前版本，网络一断立即 logout。
+   * Java SDK 目前没有做 SDK 内部重连。
+
+> Web 和 Java SDK 被踢错误码和网络掉线错误码用的都是 102，Agora 之后会修复这个问题。
 

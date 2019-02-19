@@ -3,7 +3,7 @@
 title: Implementing IM for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Fri Nov 02 2018 04:22:38 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 09:18:07 GMT+0000 (UTC)
 ---
 # Implementing IM for Gaming
 With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:
@@ -21,7 +21,7 @@ With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Unity IM kit. See the following structure:
 
-    <img alt="../_images/AMG-Video-Unity3D_0.jpeg" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 420.0px;"/>
+    <img alt="../_images/AMG-Video-Unity3D_0.jpeg" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_0.png" style="width: 840.0px;"/>
 
 
 2.  Hardware and software requirements:
@@ -48,16 +48,14 @@ With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:
 
     Unity shows error. Click on the red exclamation mark in the status bar and open **MonoDevelop**. Locate the error and fill in the App ID and App Key.
 
-	![AMG-IM-Unity_fill_in_id.jpeg](https://agora-web-cdn.oss-cn-beijing.aliyuncs.com/docs-files/1537412581475)
-
+	 ![](https://web-cdn.agora.io/docs-files/1543569407488)
 
 3.  Customize compile settings.
 
-    1.  Select **File\> Build Settings…**.
+    a.  Select **File\> Build Settings…**.
 
-        <img alt="../_images/AMG-Video-Unity3D_7.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_7.png"/>
-
-    2.  In **Build Settings**:
+        ![](https://web-cdn.agora.io/docs-files/1543569424738)
+    b.  In **Build Settings**:
 
        - Select **Android**;
        
@@ -97,33 +95,33 @@ With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:
 
 1.  Send point-to-point messages.
 
-    1.  Fill in the ID of the receiver in **SenderId**;
+    a.  Fill in the ID of the receiver in **SenderId**;
 
-    2.  Fill in the text to send in **MessageText**;
+    b.  Fill in the text to send in **MessageText**;
 
-    3.  Click on **SendPrivate** to send the message.
+    c.  Click on **SendPrivate** to send the message.
 
 2.  Send chatroom messages.
 
-    1.  Fill in the text to send in **MessageText**;
+    a.  Fill in the text to send in **MessageText**;
 
-    2.  Click on **SendChannel** to send the message to corresponding chatroom.
+    b.  Click on **SendChannel** to send the message to corresponding chatroom.
 
 3.  Send discussion messages.
 
-    1.  Click on **CreateDiscussion** to create and join a discussion;
+    a.  Click on **CreateDiscussion** to create and join a discussion;
 
-    2.  Fill in the text to send in **MessageText**;
+    b.  Fill in the text to send in **MessageText**;
 
-    3.  Click on **SendDiscussion** to send the message to corresponding discussion.
+    c.  Click on **SendDiscussion** to send the message to corresponding discussion.
 
 4.  Send voice messages.
 
-    1.  Click on **StartRecording** to start recording;
+    a.  Click on **StartRecording** to start recording;
 
-    2.  Click on **StopRecording** to stop recording;
+    b.  Click on **StopRecording** to stop recording;
 
-    3.  Click on **SendVoice** to send the recorded voice message.
+    c.  Click on **SendVoice** to send the recorded voice message.
 
 5.  Receive text message。
 

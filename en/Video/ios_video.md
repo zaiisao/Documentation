@@ -3,25 +3,26 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 20:37:58 GMT+0000 (UTC)
+updatedAt: Mon Dec 31 2018 21:57:15 GMT+0000 (UTC)
 ---
 # Integrate the SDK
-This page contains information on how to prepare the development environment before enabling a video call with the Agora Video SDK.
+This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for iOS.
 
 ## Prerequisites
 
+Development environment:
 - Xcode 9.0+.
 - Physical iOS device 8.0+ \(iPhone or iPad\).
 - Ensure that your project has a validated provisioning profile certificate.
-- Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
+- Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
-> Use a physical device to run the sample. Simulators may lack the functionality or the performance needed to run the sample.
+> Use a physical device to run the sample. Emulators may lack the functionality or the performance needed to run the sample.
 
-## Creating an Agora Account and Getting an App ID
+## Create an Agora Account and Get an App ID
 
 1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
 
-2. Click **Add New Project** on the **Projects** page of the dashboard.
+2. Click **Add New Project** on the **Projects** page in Dashboard.
 
    <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
 
@@ -31,14 +32,14 @@ This page contains information on how to prepare the development environment bef
 
    <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
 
-## Adding the Agora SDK to Your Project
+## Add the Agora SDK to Your Project
 
 Choose one of the following methods to add the Agora SDK libraries to your project:
 
 - [Adding the Libraries Automatically](#auto-add): Add the libraries automatically using CocoaPods. You do not need to download the SDK.
 - [Adding the Libraries Manually](#man-add): Download the SDK and add the libraries manually.
 
-### <a name = "auto-add"></a>Adding the Libraries Automatically
+### <a name = "auto-add"></a>Add the Libraries Automatically
 
 1. Install CocoaPods by running the following command in Terminal:
 
@@ -47,7 +48,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    ```
 
  > - Skip this step if you have preconfigured **CocoaPods** and **Homebrew** on your system.
- > - If Terminal says `-bash: brew: command not found`, install Homebrew before running the command. See [Homebrew Installation Method](http://brew.sh/index.html).
+ > - If you see `-bash: brew: command not found` in Terminal, install Homebrew before running the command. See [Homebrew Installation Method](http://brew.sh/index.html).
 
 1. Create a Podfile in your project. In the root directory of your project, run the following command in Terminal. This creates a Podfile in the same directory.
 
@@ -78,13 +79,13 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    pod install
    ```
 
-   If Terminal says `Pod installation complete!`, you have successfully added the libraries. Click to open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
+   If you see `Pod installation complete!` in Terminal, you have successfully added the libraries. Click to open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
 
    ```
    open YourApp.xcworkspace
    ```
 
-### Adding the Libraries Manually
+### Add the Libraries Manually
 
 1. Download the [Agora Video SDK for iOS](https://docs.agora.io/en/Agora%20Platform/downloads) and unzip the downloaded SDK package.
 
@@ -121,7 +122,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    <img alt="../_images/ios_video_5.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_5.jpg" />
 
-## Authorizing the Use of the Agora SDK
+## Authorize the Use of the Agora SDK
 
 Before enabling a video call, you need to enable camera and microphone access to the SDK on your device. Open `info.plist` and click **+** to add:
 
@@ -136,7 +137,7 @@ Before enabling a video call, you need to enable camera and microphone access to
 
 <img alt="../_images/ios_video_7.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_7.jpg" />
 
-## Accessing the Library
+## Access the Library
 
 You can access the added library using [Objective-C](#oc) or [Swift](#swift).
 
@@ -163,5 +164,10 @@ The Agora SDK provides the following additional settings and permissions for you
 - Enable or disable Bitcode. Applications developed with Bitcode can be optimized once it is uploaded to the App Store. Select the current Target, click the **Build Settings** tab, and enable or disable Bitcode according to your needs.
 
   <img alt="../_images/ios_video_10.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_10.jpg" />
-	
-The iOS environment is now set to use the Agora SDK.
+
+## Next Steps
+You have set up the iOS environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+
+- Initialize the SDK
+- Join a Channel
+- Publish and Subscribe to Streams

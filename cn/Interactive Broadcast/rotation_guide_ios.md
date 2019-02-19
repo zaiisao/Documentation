@@ -2,8 +2,8 @@
 ---
 title: 视频采集旋转
 description: 
-platform: iOS
-updatedAt: Fri Nov 02 2018 04:04:05 GMT+0000 (UTC)
+platform: iOS,macOS
+updatedAt: Tue Dec 11 2018 09:55:36 GMT+0000 (UTC)
 ---
 # 视频采集旋转
 本文指导用户如何选择与场景适配的视频旋转模式。
@@ -14,7 +14,7 @@ updatedAt: Fri Nov 02 2018 04:04:05 GMT+0000 (UTC)
 
 Agora 的视频采集、渲染和输出的流程大致如下：
 
-<img alt="../_images/rotation_encoding_decoding.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_encoding_decoding.jpg" style="width: 500px; "/>
+<img alt="../_images/rotation_encoding_decoding.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_encoding_decoding.jpg" style="width: 840px; "/>
 
 
 因此在视频旋转场景中，我们主要关注两个端：采集端和播放端 。
@@ -42,7 +42,7 @@ Agora 的视频采集、渲染和输出的流程大致如下：
 
 其中的 `AgoraVideoEncoderConfiguration` 就包含 `orientationMode` 参数。Agora 推荐根据下表来选择适合你场景的旋转模式（通信和直播模式均适用）：
 
-<img alt="../_images/rotation_mode.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_mode.jpg" style="width: 500px; "/>
+<img alt="../_images/rotation_mode.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_mode.jpg" style="width: 840px; "/>
 
 
 ## 视频旋转模式
@@ -51,7 +51,7 @@ Agora 通过 `orientaionMode` 参数，提供了 [Adaptive 模式](#adaptive) �
 
 ### <a name = "adaptive"></a>Adaptive 模式
 
-该模式下，采集端采集视频和视频与 Status Bar 的相对方向信息并传输；播放端播放视频并还原视频与 Status Bar 的相对方向信息。整个过程中不裁剪硬件采集的视频。
+该模式下，采集端采集视频和视频与 Status Bar 的相对方向信息并传输；播放端播放视频并还原视频与 Status Bar 的相对方向信息。
 
 假设视频采集设备使用后置摄像头进行采集，下图演示了 Adaptive 模式分别在 UI 锁定和 UI 不锁定情况下的行为：
 

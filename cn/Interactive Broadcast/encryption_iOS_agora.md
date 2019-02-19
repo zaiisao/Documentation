@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:04:06 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:52:13 GMT+0000 (UTC)
 ---
 # 选择加密方案
 本文介绍如何选择加密方案。
@@ -23,7 +23,7 @@ updatedAt: Fri Nov 02 2018 04:04:06 GMT+0000 (UTC)
 
 下图描述了启用了 Agora SDK 内置加密方案的声网音视频通信方案：
 
-<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 500px;"/>
+<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 840px;"/>
 
 > 如果你有缩小 SDK 包的考虑，且你的 App 已经有了 `libcrypto.a` ，由于 SDK 包里也包含了一个 `libcrypto.a` ，可以共用一个 `.a` 文件。 Agora 提供的库和 App 正在使用的库不同之处在于: Agora 提供的库版本指定为 1.0.2g，与 App 使用的库的版本不同。
 
@@ -79,7 +79,7 @@ updatedAt: Fri Nov 02 2018 04:04:06 GMT+0000 (UTC)
 
 下图描述了集成了第三方加密解密包的声网音视频通信方案：
 
-<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 500px;"/>
+<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 840px;"/>
 
 ### 步骤 1: 注册数据包观测器
 

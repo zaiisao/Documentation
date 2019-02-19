@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Cocos
-updatedAt: Fri Nov 02 2018 04:10:37 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 07:46:19 GMT+0000 (UTC)
 ---
 # 实现游戏语音功能
 使用 Agora 的 `Hello-Cocos2d-Agora` 代码示例可以实现以下功能:
@@ -12,7 +12,7 @@ updatedAt: Fri Nov 02 2018 04:10:37 GMT+0000 (UTC)
 -   自由发言
 -   离开频道
 
-本页分别展示如何使用 Unity3D 包在 Android 平台和 iOS 平台上实现上述功能。
+本页分别展示如何使用 Cocos2d 包在 Android 平台和 iOS 平台上实现上述功能。
 
 ## Android 平台实现
 
@@ -20,7 +20,7 @@ updatedAt: Fri Nov 02 2018 04:10:37 GMT+0000 (UTC)
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新的 Cocos2d 软件包。软件包结构如下:
 
-    <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Cocos2d.png" style="width: 370.0px;"/>
+    <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Cocos2d.png" style="width: 500.0px;"/>
 
 > `Hello-Cocos2d-Agora` 即为本文需要使用的代码示例。你也可以直接从 [Github](https://github.com/AgoraIO/Hello-Cocos2d-Agora/)下载。
 
@@ -63,7 +63,7 @@ updatedAt: Fri Nov 02 2018 04:10:37 GMT+0000 (UTC)
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新的 Cocos2d 软件包。软件包结构如下:
 
-    <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Cocos2d.png" style="width: 370.0px;"/>
+    <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Cocos2d.png" style="width: 500.0px;"/>
 
 > `Hello-Cocos2d-Agora` 即为本文需要使用的代码示例。你也可以直接从 [Github](https://github.com/AgoraIO/Hello-Cocos2d-Agora/)下载。
 

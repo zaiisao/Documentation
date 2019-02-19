@@ -3,22 +3,25 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:04:56 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 10:33:05 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
-要实现屏幕共享的功能，只需要在创建流的时候设置相关的属性（Chrome 和 Firefox 的实现方式不同）。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕图像。
+## 功能简介
+在视频通话或互动直播中进行屏幕共享，可以将说话人或主播的屏幕内容，以视频画面的方式分享给其他说话人或观众观看，以提高沟通效率。
 
-本页包含以下内容：
+屏幕共享在如下场景中应用广泛：
 
-- [Chrome 屏幕共享](#chrome)
-- [Firefox 屏幕共享](#ff)
-- [同时共享屏幕和开启视频](#both)
+- 视频会议场景中，屏幕共享可以将讲话者本地的文件、数据、网页、PPT 等画面分享给其他与会人；
+- 在线课堂场景中，屏幕共享可以将老师的课件、笔记、讲课内容等画面展示给学生观看。
 
-在开始屏幕共享前，请确保你已经完成环境准备、安装包获取等步骤，详见 [设置开发环境](../../cn/Video/web_prepare.md) 。
+## 实现方法
+在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](https://docs.agora.io/cn/Interactive%20Broadcast/web_prepare?platform=Web)。
 
-## <a name = "chrome"></a>Chrome 屏幕共享
+开始屏幕共享前，你需要在创建流的时候配置某些属性。Chrome 和 Firefox 浏览器在创建流的时候，相关的属性是不同的。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕信息。
 
-在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Quickstart%20Guide/chrome_screensharing_plugin.md) ，在建流的时候把插件的 **extensionId** 填进字段。
+### <a name = "chrome"></a>Chrome 屏幕共享
+
+在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Video/chrome_screensharing_plugin.md) ，在建流的时候把插件的 **extensionId** 填进字段。
 
 ```javascript
 screenStream = AgoraRTC.createStream({
@@ -34,7 +37,7 @@ screenStream = AgoraRTC.createStream({
 > - 因为一个 Stream 只能有一路视频流，所以 `video` 和 `screen` 属性不能同时为 true。
 > - `audio` 属性建议设置为 false，避免订阅端收到的两路流中都有音频，导致回声。
 
-## <a name = "ff"></a>Firefox 屏幕共享
+### <a name = "ff"></a>Firefox 屏幕共享
 
 Firefox 屏幕共享不需要安装插件，但是需要通过设置 `mediaSource` 指定分享屏幕的类型，`mediaSource` 的选择如下：
 
@@ -56,7 +59,7 @@ screenStream = AgoraRTC.createStream({
 > - `audio` 属性建议设置为 false，避免订阅端收到的两路流中都有音频，导致回声。
 > - Firefox 在 Windows 平台不支持 application 模式。
 
-## <a name = "both"></a>同时共享屏幕和开启视频
+### <a name = "both"></a>同时共享屏幕和开启视频
 
 因为每个 Client 对象只能发送一路 Stream 流，所以如果要在一个发送端同时分享屏幕和开启视频，需要创建两个 Client，一路发送屏幕共享流，一路发送视频流。
 
@@ -110,7 +113,7 @@ screenClient.on('stream-added', function(evt) {
 })
 ```
 
-完整代码如下：
+### 完整代码
 
 ```javascript
 var key = “********************************”;
@@ -207,3 +210,16 @@ screenClient.subscribe(stream);
   })
 });
 ```
+
+## 开发注意事项
+
+- 屏幕共享流的 UID 尽量不要固定在同一个值，否则某些场景下同 UID 的共享流可能会引起互踢。
+- 在本地共享的时候，本地流的 Client **不要订阅本地的分享流**，否则会增加计费。
+- 创建屏幕共享流的时候，`video`/`audio` 必须设置为 `false`。
+- 在 Windows 平台上进行屏幕共享时，如果共享的是 QQ 聊天窗口会导致黑屏。
+
+## 工作原理
+Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现的。
+
+- 如果只使用屏幕共享，则在新建流的时候，把 `video` 字段设为 false， `screen` 字段设为 true 即可。
+- 如果在使用屏幕共享的同时，还开启本地视频，则需要创建两个 Client 对象，一路发送屏幕共享流，一路发送视频流。新建流的时候，屏幕共享流的 `video` 字段设为 false， `screen` 字段设为 true；本地视频流的 `video` 字段设为 `true`，`screen` 字段设为 `false`。由于共享流也是一路流，因此也会占用一个 UID。

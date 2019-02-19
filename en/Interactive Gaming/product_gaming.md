@@ -3,12 +3,42 @@
 title: Agora Interactive Gaming Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:19:40 GMT+0000 (UTC)
+updatedAt: Thu Dec 06 2018 09:57:07 GMT+0000 (UTC)
 ---
 # Agora Interactive Gaming Overview
-The Agora Interactive Gaming SDK aims at helping you quickly integrate voice and video functions into your gaming projects.
+The Agora Interactive Gaming SDK helps you quickly integrate audio and video functions into your gaming projects.
 
-The Agora Interactive Gaming SDK consists of five SDKs. For details, see the following table:
+You can use SDK and Wrapper of C# in the Unity develoment environment for audio and video functions, or use SDK and Wrapper in the Cocos development for audio function. For native Objective-C and Java interfaces, you can also use Native SDK.
+
+## Functions and Scenarios
+
+The Agora Interactive Gaming SDK provides a variety of functions for different gaming scenarios, which are mainly used for applications based on Unity and Cocos gaming engines. You can also use native SDK for native development.
+
+| Function                      | Description                                                  | Scenario                    |
+| ----------------------------- | ------------------------------------------------------------ | --------------------------- |
+| Audio and Video Communication | Enables real-time audio and video communication in your game. | Group chatting in the games |
+| Radio Voice                   | <li>Supports sampling rates of up to 44.1K and super high-quality sound.<li>Enables interaction with the radio host. | <li>MMO<li>RPG                    |
+| Spatial Sound Effects         | Provides immersive experiences.                              | FPS                         |
+| Voice Change                  | Changes the speaker's voice, for example, to the opposite gender. | <li>MOBA<li>ACG games             |
+
+See the following sample code for application scenarios:
+* [Online Audio Chatroom](https://github.com/AgoraIO-Usecase/Chatroom)
+* [Murder Mystery Game](https://github.com/AgoraIO-Usecase/Murder-Mystery-Game)
+* [Gaming Radio](https://docs.agora.io/cn/2.3.1/product/Interactive%20Gaming/Solutions/game_radio_android?platform=Unity%20(Android))
+
+
+## Key Properties
+
+| Properties                  | Agora Interactive Gaming Specifications                      |
+| --------------------------- | ------------------------------------------------------------ |
+| Minimum Impact              | <li>No effects on FPS<li>Compatible with original gaming sounds (FMOD, WWISE)<li>Optimized in package size, CPU usage, and power comsumption |
+| High Quality                | <li>High-quality sound \(32 KHz ultra-wideband\)<li>Low latency \(global average delay of 76 ms\)<li>No interference \(echo cancellation and noise reduction\)<li>No stagnation \(strong anti-loss ability\) |
+| Special Features for Gaming | <li>Free/Command mode<li>Voice change<li>Spatial sound effects<li>Emulator supported |
+| Stereo                      | Supports stereo capture playback for the best live gaming experience. |
+
+
+## Compatibility
+The following chart shows all the Agora Interactive Gaming SDKs, supported operation systems and languages:
 
 <table>
 <colgroup>
@@ -22,61 +52,31 @@ The Agora Interactive Gaming SDK consists of five SDKs. For details, see the fol
 <td>Language</td>
 </tr>
 <tr><td>Unity Video</td>
-<td>iOS、 Android、 Windows</td>
+<td>iOS, Android, Windows</td>
 <td>C#</td>
 </tr>
 <tr><td>Unity Audio</td>
-<td>iOS、 Android、 Windows</td>
+<td>iOS, Android, Windows</td>
 <td>C#</td>
 </tr>
 <tr><td>Cocos Audio</td>
-<td>iOS、 Android</td>
-<td>C++、 Lua、 JS</td>
+<td>iOS, Android</td>
+<td>C++</td>
 </tr>
 <tr><td>iOS Audio</td>
 <td>iOS</td>
-<td>Objective-C、 Swift</td>
+<td>Objective-C, Swift, C++</td>
 </tr>
 <tr><td>Android Audio</td>
 <td>Android</td>
-<td>Java</td>
+<td>Java, C++</td>
 </tr>
 </tbody>
 </table>
 
 
-
-## Features
-
-The Agora Interactive Gaming SDK consists of the following features to enhance the gaming experience:
-
--   Audio and video communication: real-time audio and video communication in your game.
-
--   Radio voice: You can add voice radio function to the game, supporting sampling rate up to 44.1k and super high sound quality.
-
--   Spatial sound effect: Enable spatial sound effect. Add sense of reality to your game.
-
--   Voice change: Supports changing voice to the opposite gender. Add sense of interaction to your game.
-
-
-## Product Features
-
-Main features:
-
--   Minimum impact: The integration of voice does not affect the game FPS. It is perfectly compatible with original game sound effect. The package is optimized in size, CPU occupation, and power consumption.
-
--   High quality: high sound quality \(32KHz ultra-wideband\), low latency \(global average delay 76ms\), no interference \(echo cancellation, noise reduction\), no stagnation \(super anti-lost\).
-
--   Built for game: Free mode / Command mode, voice change function, spatial sound effect, simulator support.
-
--   Supports stereo capture playback for the best gaming live experience.
-
-
-## References
-
--   [Quickstart Guides](../../en/Quickstart%20Guide/game_cocos_android.md) on how to deploy and use the Agora Interactive Gaming SDK, such as preparing the environment, integration, sample code, and an example.
-
--   [API Reference](../../en/API%20Reference/game_android.md) lists various APIs to call and their functions when using the Agora Interactive Gaming SDK.
-
+## Demo
+* [Voice Call for Gaming](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming)
+* [Video Call for Gaming](https://github.com/AgoraIO/Video-Call-for-Mobile-Gaming)
 
 

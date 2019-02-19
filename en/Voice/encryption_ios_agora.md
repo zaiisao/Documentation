@@ -3,21 +3,21 @@
 title: Implement Encryption
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 02 2018 04:09:36 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 17:21:52 GMT+0000 (UTC)
 ---
 # Implement Encryption
-This page describes how to implement encryption.
+This page describes how to implement Agora's built-in encryption.
 
 The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) includes:
 
-- `AgoraRtcCryptoLoader.framework`: An independent static framework working as the encryption module.
-- `libcrypto.a`: A standard OpenSSL encryption library compatible with OpenSSL 1.0.2 or later.
+- `AgoraRtcCryptoLoader.framework`: An independent static framework that is the encryption module.
+- `libcrypto.a`: A standard OpenSSL encryption library compatible with OpenSSL 1.0.2+.
 
-Both communications and live broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
+Both Communication and Live Broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
 
 ## Scenario 1: Do Not Use Encryption
 
-Delete `AgoraRtcCryptoLoader.framework` and `libcrypto.a` in the [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) to reduce the SDK package size.
+If you do not use encryption, you can delete the unnecessary `AgoraRtcCryptoLoader.framework` and `libcrypto.a` files in the [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) to reduce the SDK package size.
 
 ## Scenario 2: Use Encryption
 
@@ -33,13 +33,13 @@ The following figure shows how Agora’s communications use built-in encryption:
 
 2. Add `AgoraRtcCryptoLoader.framework` and `libcrypto.a` in the **build phase**.
 
-3. Enable encryption.
+3. Enable encryption:
 
-   Call `setEncryptionSecret` to enable built-in encryption and set the encryption secret.
+   Call the `setEncryptionSecret` method to enable built-in encryption and set the encryption password.
 
-4. Set the encryption mode to be used.
+4. Set the encryption mode to be used:
 
-   Call `setEncryptionMode` to set the built-in encryption mode. 
+   Call the `setEncryptionMode` method to set the built-in encryption mode. 
 
 ### Swift
 
@@ -47,7 +47,7 @@ The following figure shows how Agora’s communications use built-in encryption:
 
    <img alt="../_images/encryption_search_path.jpg" src="https://web-cdn.agora.io/docs-files/en/encryption_search_path.jpg" />
 
-2. Add a bridging file, for example `XXX-bridge.h`, to your project folder. Under **Swift Compiler - General**, set **Objective-C Bridging Header** to the bridging file.
+2. Add a bridging header file, for example `XXX-bridge.h`, to your project folder. Under **Swift Compiler - General**, set **Objective-C Bridging Header** to the bridging header file.
 
    <img alt="../_images/encryption_select_bridgefile.jpg" src="https://web-cdn.agora.io/docs-files/en/encryption_select_bridgefile.jpg" />
 
@@ -61,15 +61,15 @@ The following figure shows how Agora’s communications use built-in encryption:
 
    <img alt="../_images/encryption_declare_loader.png" src="https://web-cdn.agora.io/docs-files/en/encryption_declare_loader.png" />
 
-6. Enable encryption.
+6. Enable encryption:
 
-    Call `setEncryptionSecret` tp enable built-in encryption and set the encryption secret. 
+    Call the `setEncryptionSecret` method to enable built-in encryption and set the encryption password. 
 
 7. Set the encryption mode to be used.
 
-    Call `setEncryptionMode` to set the built-in encryption mode. 
+    Call the `setEncryptionMode` method to set the built-in encryption mode. 
 
-## Scenario 3: Use a Customized Encryption
+## Scenario 3: Use Customized Encryption
 
 The following figure shows the customized encryption/decryption process:
 
@@ -79,13 +79,13 @@ The following figure shows the customized encryption/decryption process:
 
 The Agora Native SDK allows your application to register a packet observer to receive events whenever a voice or video packet is transmitting.
 
-Register a packet observer on your application using the following API:
+Register a packet observer on your application using the following method:
 
 ```c++
 virtual int registerPacketObserver(IPacketObserver* observer);
 ```
 
-The observer must inherit from `agora::IPacketObserver` and be implemented in C++. The following is the definition of the IPacketObserver class:
+The observer must be inherited from `agora::IPacketObserver` and be implemented in C++. The following is the definition of the `IPacketObserver` class:
 
 ```c++
 class IPacketObserver
@@ -138,7 +138,7 @@ virtual bool onReceiveVideoPacket(Packet& packet) = 0;
 
 ## Step 2: Implement a Customized Data Encryption Algorithm
 
-Inherit from `agora::IPacketObserver` to implement the customized data encryption algorithm on your application. The following example uses XOR for data processing. For the Agora Native SDK, sending and receiving packets are handled by different threads, which is why encryption and decryption can use different buffers:
+The observer must be inherited from `agora::IPacketObserver` to be implemented in the customized data encryption algorithm on your application. The following example uses XOR for data processing. For the Agora Native SDK, sending and receiving packets are handled by different threads, which is why encryption and decryption can use different buffers:
 
 ```c++
 class AgoraPacketObserver : public agora::IPacketObserver
@@ -179,7 +179,7 @@ class AgoraPacketObserver : public agora::IPacketObserver
                      {
                          m_txVideoBuffer[i] = *p ^ 0x55;
                      }
-                     //assign new buffer and the length back to SDK
+                     //assign the new buffer and the length back to the SDK
                      packet.buffer = &m_txVideoBuffer[0];
                      packet.size = i;
                      return true;
@@ -195,7 +195,7 @@ class AgoraPacketObserver : public agora::IPacketObserver
                      {
                          m_rxAudioBuffer[i] = *p ^ 0x55;
                      }
-                     //assign new buffer and the length back to SDK
+                     //assign the new buffer and the length back to the SDK
                      packet.buffer = &m_rxAudioBuffer[0];
                      packet.size = i;
                      return true;
@@ -213,21 +213,21 @@ class AgoraPacketObserver : public agora::IPacketObserver
                      {
                          m_rxVideoBuffer[i] = *p ^ 0x55;
                      }
-                     //assign new buffer and the length back to SDK
+                     //assign the new buffer and the length back to the SDK
                      packet.buffer = &m_rxVideoBuffer[0];
                      packet.size = i;
                      return true;
                  }
 
              private:
-                 std::vector<unsigned char> m_txAudioBuffer; //buffer for sending voice data
-                 std::vector<unsigned char> m_txVideoBuffer; //buffer for sending video data
+                 std::vector<unsigned char> m_txAudioBuffer; //buffer for sending the voice data
+                 std::vector<unsigned char> m_txVideoBuffer; //buffer for sending the video data
 
-                 std::vector<unsigned char> m_rxAudioBuffer; //buffer for receiving voice data
-                 std::vector<unsigned char> m_rxVideoBuffer; //buffer for receiving video data
+                 std::vector<unsigned char> m_rxAudioBuffer; //buffer for receiving the voice data
+                 std::vector<unsigned char> m_rxVideoBuffer; //buffer for receiving the video data
      };
 ```
 
 ## Step 3: Register the Instance
 
-Call `registerAgoraPacketObserver` to register the instance of the `agora::IPacketObserver` class implemented by your application.
+Call the `registerAgoraPacketObserver` method to register the instance of the `agora::IPacketObserver` class implemented by your application.

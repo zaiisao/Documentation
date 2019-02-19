@@ -3,10 +3,10 @@
 title: 信令 API
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:08:06 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:29:42 GMT+0000 (UTC)
 ---
 # 信令 API
-> 版本：v1.4.0
+> 版本：v1.4.4
 > 属性名称前如果有下划线表示其为内置属性（而非自定义属性）。
 
 ## 全局方法
@@ -20,7 +20,7 @@ updatedAt: Fri Nov 02 2018 04:08:06 GMT+0000 (UTC)
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#getinstance-android"><span>public static AgoraAPIOnlySignal getInstance(Context context, String appId)</span></a></td>
+<tr><td><a href="#getinstance-android"><span>getInstance()</span></a></td>
 <td>获取 AgoraAPIOnlySignal 实例</td>
 </tr>
 </tbody>
@@ -41,16 +41,16 @@ IAgoraAPI 类为信令的接口类。
 <tr><td><strong>方法</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#destroy-android"><span>public void destroy</span></a></td>
+<tr><td><a href="#destroy-android"><span>destroy()</span></a></td>
 <td>销毁信令实例</td>
 </tr>
-<tr><td><a href="#callbackset-android"><span>public native void callbackSet(ICallBack handler)</span></a></td>
+<tr><td><a href="#callbackset-android"><span>callbackSet()</span></a></td>
 <td>为信令实例设置回调对象</td>
 </tr>
-<tr><td><a href="#callbackget-android"><span>public ICallBack callbackGet</span></a></td>
+<tr><td><a href="#callbackget-android"><span>callbackGet()</span></a></td>
 <td>获取信令实例的回调对象</td>
 </tr>
-<tr><td><a href="#login-android"><span>public void login(String appId, String account, String token, int uid, String deviceID)</span></a></td>
+<tr><td><a href="#login-android"><span>login()</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功： 收到 <code>ICallBack</code> 类的 <a href="#onloginsuccess-android"><span>onLoginSuccess</span></a> 回调</li>
@@ -58,7 +58,7 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#login2-android"><span>public void login2(String appId, String account, String token, int uid, String deviceID, int retry_time_in_s, int retry_count)</span></a></td>
+<tr><td><a href="#login2-android"><span>login2()</span></a></td>
 <td><p>登录信令系统</p>
 <ul>
 <li>成功：收到 <code>ICallBack</code> 类的 <a href="#onloginsuccess-android"><span>onLoginSuccess</span></a> 回调</li>
@@ -66,31 +66,31 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#logout-android"><span>public void logout</span></a></td>
+<tr><td><a href="#logout-android"><span>logout()</span></a></td>
 <td>登出信令系统。登出成功将收到 ICallBack 类的 <a href="#onlogout-android"><span>onLogout</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#invoke-android"><span>public void invoke(String name, String req, String callID)</span></a></td>
+<tr><td><a href="#invoke-android"><span>invoke()</span></a></td>
 <td>RPC 远程过程调用方法。可用于用户或频道相关操作。结果通过 <code>ICallBack</code> 类的 <a href="#oninvokeret-android"><span>onInvokeRet</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#queryuserstatus-android"><span>public void queryUserStatus(String account)</span></a></td>
+<tr><td><a href="#queryuserstatus-android"><span>queryUserStatus()</span></a></td>
 <td>查询名为 account 的用户是否在线。结果通过 <code>ICallBack</code> 类的 <a href="#onqueryuserstatusresult-android"><span>onQueryUserStatusResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#setattr-android"><span>public void setAttr(String name, String value)</span></a></td>
+<tr><td><a href="#setattr-android"><span>setAttr()</span></a></td>
 <td>设置当前登录用户的相关属性值。</td>
 </tr>
-<tr><td><a href="#getattr-android"><span>public void getAttr(String name)</span></a></td>
+<tr><td><a href="#getattr-android"><span>getAttr()</span></a></td>
 <td>获取当前登录用户的相关属性值。结果通过 ICallBack 类的 <a href="#onuserattrresult-android"><span>onUserAttrResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getattrall-android"><span>public void getAttrAll</span></a></td>
+<tr><td><a href="#getattrall-android"><span>getAttrAll()</span></a></td>
 <td>获取当前登录用户的全部属性值。结果通过 ICallBack 类的 <a href="#onuserattrallresult-android"><span>onUserAttrAllResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getuserattr-android"><span>public void getUserAttr(String account, String name)</span></a></td>
+<tr><td><a href="#getuserattr-android"><span>getUserAttr()</span></a></td>
 <td>获取名为 account 的用户的 name 属性值。结果通过 ICallBack 类的 <a href="#onuserattrresult-android"><span>onUserAttrResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#getuserattrall-android"><span>public void getUserAttrAll(String account)</span></a></td>
+<tr><td><a href="#getuserattrall-android"><span>getUserAttrAll()</span></a></td>
 <td>获取名为 account 的用户的所有属性值。结果通过 ICallBack 类的 <a href="#onuserattrallresult-android"><span>onUserAttrAllResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#messageinstantsend-android"><span>public void messageInstantSend(String account, int uid, String msg, String msgID)</span></a></td>
+<tr><td><a href="#messageinstantsend-android"><span>messageInstantSend()</span></a></td>
 <td><p>向名为 account 的用户发送点对点消息</p>
 <ul>
 <li>成功：自己收到 <code>ICallBack</code> 类的 <a href="#onmessagesendsuccess-android"><span>onMessageSendSuccess</span></a> 回调， 消息接收方收到 <code>ICallback</code> 类的 <a href="#onmessageinstantreceive-android"><span>onMessageInstantReceive</span></a> 回调；</li>
@@ -98,7 +98,7 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channeljoin-android"><span>public void channelJoin(String channelID)</span></a></td>
+<tr><td><a href="#channeljoin-android"><span>channelJoin()</span></a></td>
 <td><p>加入指定频道。</p>
 <ul>
 <li>成功：自己收到 <code>ICallBack</code> 类的 <a href="#onchanneljoined-android"><span>onChannelJoined</span></a> 回调，同频道其他用户收到 <code>ICallback</code> 类的 <a href="#onchanneluserjoined-android"><span>onChannelUserJoined</span></a> 回调；</li>
@@ -106,7 +106,7 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelleave-android"><span>public void channelLeave(String channelID)</span></a></td>
+<tr><td><a href="#channelleave-android"><span>channelLeave()</span></a></td>
 <td><p>退出指定频道。退出成功时：</p>
 <ul>
 <li>频道内所有用户都将收到 <a href="#onchanneluserleaved-android"><span>onChannelUserLeaved</span></a> 回调</li>
@@ -114,19 +114,19 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelqueryusernum-android"><span>public void channelQueryUserNum(String channelID)</span></a></td>
+<tr><td><a href="#channelqueryusernum-android"><span>channelQueryUserNum()</span></a></td>
 <td>查询频道用户数。结果通过 <code>ICallBack</code> 类的 <a href="#onchannelqueryusernumresult-android"><span>onChannelQueryUserNumResult</span></a> 回调返回。</td>
 </tr>
-<tr><td><a href="#channelsetattr-android"><span>public void channelSetAttr(String channelID, String name, String value)</span></a></td>
+<tr><td><a href="#channelsetattr-android"><span>channelSetAttr()</span></a></td>
 <td>设置频道属性。设置成功将收到 <code>ICallBack</code> 类的 <a href="#onchannelattrupdated-android"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channeldelattr-android"><span>public void channelDelAttr(String channelID, String name)</span></a></td>
+<tr><td><a href="#channeldelattr-android"><span>channelDelAttr()</span></a></td>
 <td>删除频道属性。删除成功将收到 <code>ICallBack</code> 类的 <a href="#onchannelattrupdated-android"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelclearattr-android"><span>public void channelClearAttr(String channelID)</span></a></td>
+<tr><td><a href="#channelclearattr-android"><span>channelClearAttr()</span></a></td>
 <td>删除所有频道属性。删除成功将收到 <code>ICallBack</code> 类的 <a href="#onchannelattrupdated-android"><span>onChannelAttrUpdated</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#messagechannelsend-android"><span>public void messageChannelSend(String channelID, String msg, String msgID)</span></a></td>
+<tr><td><a href="#messagechannelsend-android"><span>messageChannelSend()</span></a></td>
 <td><p>发送频道消息（消息发送者必须在频道内）</p>
 <ul>
 <li>成功： 自己收到 <code>ICallBack</code> 类的 <a href="#onmessagesendsuccess-android"><span>onMessageSendSuccess</span></a> 回调，频道内所有用户收到 <code>ICallback</code> 类的 <a href="#onmessagechannelreceive-android"><span>onMessageChannelReceive</span></a> 回调；</li>
@@ -134,10 +134,10 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#messagechannelsendforce-android"><span>public void messageChannelSendForce(String channelID, String msg, String msgID)</span></a></td>
+<tr><td><a href="#messagechannelsendforce-android"><span>messageChannelSendForce()</span></a></td>
 <td>发送频道消息（消息发送者不必在频道内）</td>
 </tr>
-<tr><td><a href="#channelinviteuser-android"><span>public void channelInviteUser(String channelID, String account, int uid)</span></a></td>
+<tr><td><a href="#channelinviteuser-android"><span>channelInviteUser()</span></a></td>
 <td><p>邀请名为 account 的用户加入指定频道</p>
 <ul>
 <li>成功： 自己收到 <code>ICallBack</code> 类的 <a href="#oninviteacceptedbypeer-android"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 <code>ICallback</code> 类的 <a href="#callbackset-android"><span>onInviteReceived</span></a> 回调；</li>
@@ -145,7 +145,7 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelinviteuser2-android"><span>public void channelInviteUser2(String channelID, String account, String extra)</span></a></td>
+<tr><td><a href="#channelinviteuser2-android"><span>channelInviteUser2()</span></a></td>
 <td><p>邀请名为 account 的用户加入指定频道，呼叫方可以附带一段额外信息。</p>
 <ul>
 <li>成功： 自己收到 <code>ICallBack</code> 类的 <a href="#oninviteacceptedbypeer-android"><span>onInviteAcceptedByPeer</span></a> 回调， 受邀用户收到 <code>ICallback</code> 类的 <a href="#callbackset-android"><span>onInviteReceived</span></a> 回调；</li>
@@ -153,22 +153,22 @@ IAgoraAPI 类为信令的接口类。
 </ul>
 </td>
 </tr>
-<tr><td><a href="#channelinvitedtmf-android"><span>public void channelInviteDTMF(String channelID, String phoneNum, String dtmf)</span></a></td>
+<tr><td><a href="#channelinvitedtmf-android"><span>channelInviteDTMF()</span></a></td>
 <td>发送 DTMF 消息到对端 <code>phoneNum</code> 用户，一般用于 SIP 网关的呼叫。</td>
 </tr>
-<tr><td><a href="#channelinviteaccept-android"><span>public void channelInviteAccept(String channelID, String account, int uid, String extra)</span></a></td>
+<tr><td><a href="#channelinviteaccept-android"><span>channelInviteAccept()</span></a></td>
 <td>接受来自 account 用户的加入指定频道的呼叫邀请。接收后主叫方将收到 <a href="#oninviteacceptedbypeer-android"><span>onInviteAcceptedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviterefuse-android"><span>public void channelInviteRefuse(String channelID, String account, int uid, String extra)</span></a></td>
+<tr><td><a href="#channelinviterefuse-android"><span>channelInviteRefuse()</span></a></td>
 <td>拒绝来自 account 用户的加入指定频道的呼叫邀请。拒绝后主叫方将收到 <a href="#oninviterefusedbypeer-android"><span>onInviteRefusedByPeer</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#channelinviteend-android"><span>public void channelInviteEnd(String channelID, String account, int uid)</span></a></td>
+<tr><td><a href="#channelinviteend-android"><span>channelInviteEnd()</span></a></td>
 <td>终止向 account 用户发送加入指定频道的邀请。终止成功后主叫方将收到 <a href="#oninviteendbymyself-android"><span>onInviteEndByMyself</span></a> 回调。</td>
 </tr>
-<tr><td><a href="#getstatus-android"><span>public int getStatus</span></a></td>
+<tr><td><a href="#getstatus-android"><span>getStatus()</span></a></td>
 <td>获取用户登录状态 （未登录、正在登录、登录成功、正在重连）</td>
 </tr>
-<tr><td><a href="#getsdkversion-android"><span>public int getSdkVersion</span></a></td>
+<tr><td><a href="#getsdkversion-android"><span>getSdkVersion()</span></a></td>
 <td>获取SDK版本，版本号示例：1010104019</td>
 </tr>
 </tbody>
@@ -276,12 +276,9 @@ public void login(String appId,String account,String token,int uid,String device
 
 该方法用于登录 Agora 信令系统。用户在进行任何操作前，必须先登录。
 
--   登录成功：回调 <code>onLoginSuccess</code>，
-
--   登录失败：回调 <code>onLoginFailed</code>，
-
--   登录之后失去与服务器的连接：回调 <code>onLogout</code>。
-
+- 登录成功：回调 <code>onLoginSuccess</code>，
+- 登录失败：回调 <code>onLoginFailed</code>，
+- 登录之后失去与服务器的连接：回调 <code>onLogout</code>。
 
 <table>
 <colgroup>
@@ -321,12 +318,9 @@ public void login2(String appId,String account,String token,int uid,String devic
 
 该方法用于登录 Agora 信令系统。用户在进行任何操作前，必须先登录。
 
--   登录成功：回调 <code>onLoginSuccess</code>，
-
--   登录失败：回调 <code>onLoginFailed</code>，
-
--   登录之后失去与服务器的连接：回调 <code>onLogout</code>。
-
+- 登录成功：回调 <code>onLoginSuccess</code>，
+- 登录失败：回调 <code>onLoginFailed</code>，
+- 登录之后失去与服务器的连接：回调 <code>onLogout</code>。
 
 <table>
 <colgroup>
@@ -356,14 +350,14 @@ public void login2(String appId,String account,String token,int uid,String devic
 <td>登录重试时间，默认为 30 秒</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>登录重试次数，默认为 3 次</td>
+<td>登录重试次数，默认为 15 次</td>
 </tr>
 </tbody>
 </table>
 
 
 
-> 在测试环境下您可以将参数 token 设为 <code>_no\_need\_token</code> 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 当达到 <code>retry\_time\_in\_s</code> 或 <code>retry\_count</code> 其中任一上限时，将触发 <code>onLoginFailed</code> 回调并停止重连。
+> 在测试环境下您可以将参数 token 设为 `_no_need_token` 表示不使用秘钥，但是声网不建议在生产环境下不使用动态秘钥。 当达到 `retry_time_in_s` 或 `retry_count` 其中任一上限时，将触发 `onLoginFailed` 回调并停止重连。
 
 #### <a name="logout-android"></a>登出 \(logout\)
 
@@ -533,7 +527,7 @@ public void setAttr(String name,String value);
 
 
 
-#### <a name="getattr-android"></a>获取自己的属性 \(getAttr\)
+#### <a name="getattr-android"></a>获取自己的属性 (getAttr)
 
 该方法用于获取自己的用户属性。调用成功会回调 <code>onUserAttrResult</code>。
 
@@ -627,10 +621,8 @@ public void messageInstantSend(String account,int uid,String msg,String msgID);
 
 该方法发送点对点消息到某个指定账号。
 
--   发送成功本地将回调 <code>onMessageSendSuccess</code>，对方将收到 <code>onMessageInstantReceive</code> 回调。
-
--   发送失败将回调 <code>onMessageSendError</code> 。
-
+- 发送成功本地将回调 <code>onMessageSendSuccess</code>，对方将收到 <code>onMessageInstantReceive</code> 回调。
+- 发送失败将回调 <code>onMessageSendError</code> 。
 
 <table>
 <colgroup>
@@ -863,7 +855,7 @@ public void messageChannelSend(String channelID,String msg,String msgID);
 <td>频道名。最大为 128 字节可见字符</td>
 </tr>
 <tr><td><code>msg</code></td>
-<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 1000 条消息。</td>
+<td>消息正文。每条频道消息最大为 8K 字节可见字符。每个用户每秒不能发超过 60 条消息，整个频道每秒不能发超过 200 条消息。</td>
 </tr>
 <tr><td><code>msgID</code></td>
 <td>可见字符，消息的 ID。声网建议将其设置为”“（即由 SDK 接管 msgID 的生成、分配并保证唯一）</td>
@@ -918,12 +910,9 @@ public void channelInviteUser(String channelID,String account,int uid);
 
 如果呼叫失败，会回调 <code>onInviteFailed</code>。可能的原因有：
 
--   对方不在线
-
--   本端网络不通
-
--   服务器异常
-
+- 对方不在线
+- 本端网络不通
+- 服务器异常
 
 如果收到对方的确认信息，本地将回调 <code>onInviteReceivedByPeer</code>, 对方会回调 <code>onInviteReceived</code>。
 
@@ -989,9 +978,9 @@ public void channelInviteUser2(String channelID,String account,String extra);
 
 
 
-> SIP 呼叫时你不需要设置 `\_require\_peer\_online` 字段。
+> SIP 呼叫时你不需要设置 `_require_peer_online` 字段。
 
-#### <a name="channelinvitedtmf-android"></a>向远端发送DTMF消息 \(channelInviteDTMF\)
+#### <a name="channelinvitedtmf-android"></a>向远端发送 DTMF 消息 \(channelInviteDTMF\)
 
 ```
 public void channelInviteDTMF(String channelID,String phoneNum,String dtmf);
@@ -1090,7 +1079,7 @@ public void channelInviteRefuse(String channelID,String account,int uid, String 
 
 
 
-#### <a name="channelinviteend-android"></a>结束呼叫 \(channelInviteEnd\)
+#### <a name="channelinviteend-android"></a>结束呼叫 (channelInviteEnd)
 
 ```
 public void channelInviteEnd(String channelID,String account,int uid);
@@ -1157,10 +1146,12 @@ public int getStatus();
 
 
 
-#### <a name="getsdkversion-android"></a>获取 SDK 版本 \(getSdkVersion\)
+#### <a name="getsdkversion-android"></a>获取 SDK 版本 (getSdkVersion)
 
 ```
 public int getSdkVersion();
+
+
 ```
 
 该方法用于获取 SDK 版本信息。
@@ -1195,97 +1186,97 @@ ICallBack 类为信令的回调接口类。
 <tr><td><strong>回调</strong></td>
 <td><strong>说明</strong></td>
 </tr>
-<tr><td><a href="#onreconnecting-android"><span>public void onReconnecting(int nretry)</span></a></td>
+<tr><td><a href="#onreconnecting-android"><span>onReconnecting()</span></a></td>
 <td>连接丢失回调</td>
 </tr>
-<tr><td><a href="#onerror-android"><span>public void onError(String name,int ecode,String desc)</span></a></td>
+<tr><td><a href="#onerror-android"><span>onError()</span></a></td>
 <td>出错回调</td>
 </tr>
-<tr><td><a href="#onqueryuserstatusresult-android"><span>public void onQueryUserStatusResult(String name,String status)</span></a></td>
+<tr><td><a href="#onqueryuserstatusresult-android"><span>onQueryUserStatusResult()</span></a></td>
 <td>用户状态查询回调</td>
 </tr>
-<tr><td><a href="#onreconnected-android"><span>public void onReconnected(int fd)</span></a></td>
+<tr><td><a href="#onreconnected-android"><span>onReconnected()</span></a></td>
 <td>重连成功回调</td>
 </tr>
-<tr><td><a href="#onloginsuccess-android"><span>public void onLoginSuccess(int uid,int fd)</span></a></td>
+<tr><td><a href="#onloginsuccess-android"><span>onLoginSuccess()</span></a></td>
 <td>登录成功回调</td>
 </tr>
-<tr><td><a href="#onlogout-android"><span>public void onLogout(int ecode)</span></a></td>
+<tr><td><a href="#onlogout-android"><span>onLogout()</span></a></td>
 <td>退出登录回调</td>
 </tr>
-<tr><td><a href="#onloginfailed-android"><span>public void onLoginFailed(int ecode)</span></a></td>
+<tr><td><a href="#onloginfailed-android"><span>onLoginFailed()</span></a></td>
 <td>登录失败回调</td>
 </tr>
-<tr><td><a href="#oninvokeret-android"><span>public void onInvokeRet(String callID, String err, String resp)</span></a></td>
+<tr><td><a href="#oninvokeret-android"><span>onInvokeRet()</span></a></td>
 <td>RPC 远程过程调用成功回调</td>
 </tr>
-<tr><td><a href="#onchanneljoined-android"><span>public void onChannelJoined(String channelID)</span></a></td>
+<tr><td><a href="#onchanneljoined-android"><span>onChannelJoined()</span></a></td>
 <td>加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneljoinfailed-android"><span>public void onChannelJoinFailed(String channelID,int ecode)</span></a></td>
+<tr><td><a href="#onchanneljoinfailed-android"><span>onChannelJoinFailed()</span></a></td>
 <td>加入频道失败回调</td>
 </tr>
-<tr><td><a href="#onchannelleaved-android"><span>public void onChannelLeaved(String channelID,int ecode)</span></a></td>
+<tr><td><a href="#onchannelleaved-android"><span>onChannelLeaved()</span></a></td>
 <td>离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserjoined-android"><span>public void onChannelUserJoined(String account,int uid)</span></a></td>
+<tr><td><a href="#onchanneluserjoined-android"><span>onChannelUserJoined()</span></a></td>
 <td>其他用户加入频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserleaved-android"><span>public void onChannelUserLeaved(String account,int uid)</span></a></td>
+<tr><td><a href="#onchanneluserleaved-android"><span>onChannelUserLeaved()</span></a></td>
 <td>其他用户离开频道回调</td>
 </tr>
-<tr><td><a href="#onchanneluserlist-android"><span>public void onChannelUserList(String[] accounts, int[] uids)</span></a></td>
+<tr><td><a href="#onchanneluserlist-android"><span>onChannelUserList()</span></a></td>
 <td>获取频道内用户列表回调</td>
 </tr>
-<tr><td><a href="#onchannelqueryusernumresult-android"><span>public void onChannelQueryUserNumResult(String channelID,int ecode,int num)</span></a></td>
+<tr><td><a href="#onchannelqueryusernumresult-android"><span>onChannelQueryUserNumResult()</span></a></td>
 <td>返回查询的用户数量回调</td>
 </tr>
-<tr><td><a href="#onchannelattrupdated-android"><span>public void onChannelAttrUpdated(String channelID,String name,String value,String type)</span></a></td>
+<tr><td><a href="#onchannelattrupdated-android"><span>onChannelAttrUpdated()</span></a></td>
 <td>频道属性发生变化回调</td>
 </tr>
-<tr><td><a href="#oninvitereceived-android"><span>public void onInviteReceived(String channelID,String account,int uid,String extra)</span></a></td>
+<tr><td><a href="#oninvitereceived-android"><span>onInviteReceived()</span></a></td>
 <td>收到呼叫邀请回调</td>
 </tr>
-<tr><td><a href="#oninvitereceivedbypeer-android"><span>public void onInviteReceivedByPeer(String channelID,String account,int uid)</span></a></td>
+<tr><td><a href="#oninvitereceivedbypeer-android"><span>onInviteReceivedByPeer()</span></a></td>
 <td>远端已收到呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteacceptedbypeer-android"><span>public void onInviteAcceptedByPeer(String channelID,String account,int uid, String extra)</span></a></td>
+<tr><td><a href="#oninviteacceptedbypeer-android"><span>onInviteAcceptedByPeer()</span></a></td>
 <td>远端已接受呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviterefusedbypeer-android"><span>public void onInviteRefusedByPeer(String channelID,String account,int uid, String extra)</span></a></td>
+<tr><td><a href="#oninviterefusedbypeer-android"><span>onInviteRefusedByPeer()</span></a></td>
 <td>对方已拒绝呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitefailed-android"><span>public void onInviteFailed(String channelID,String account,int uid,int ecode, String extra)</span></a></td>
+<tr><td><a href="#oninvitefailed-android"><span>onInviteFailed()</span></a></td>
 <td>呼叫失败回调</td>
 </tr>
-<tr><td><a href="#oninviteendbypeer-android"><span>public void onInviteEndByPeer(String channelID,String account,int uid, String extra)</span></a></td>
+<tr><td><a href="#oninviteendbypeer-android"><span>onInviteEndByPeer()</span></a></td>
 <td>对方已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninviteendbymyself-android"><span>public void onInviteEndByMyself(String channelID,String account,int uid)</span></a></td>
+<tr><td><a href="#oninviteendbymyself-android"><span>onInviteEndByMyself()</span></a></td>
 <td>本地已结束呼叫回调</td>
 </tr>
-<tr><td><a href="#oninvitemsg-android"><span>public void onInviteMsg(String channelID, String account, int uid, String msgType, String msgData, String extra)</span></a></td>
+<tr><td><a href="#oninvitemsg-android"><span>onInviteMsg()</span></a></td>
 <td>本地已收到消息回调</td>
 </tr>
-<tr><td><a href="#onmessagesenderror-android"><span>public void onMessageSendError(String messageID,int ecode)</span></a></td>
+<tr><td><a href="#onmessagesenderror-android"><span>onMessageSendError()</span></a></td>
 <td>消息发送失败回调</td>
 </tr>
-<tr><td><a href="#onmessagesendsuccess-android"><span>public void onMessageSendSuccess(String messageID)</span></a></td>
+<tr><td><a href="#onmessagesendsuccess-android"><span>onMessageSendSuccess()</span></a></td>
 <td>消息已发送成功回调</td>
 </tr>
-<tr><td><a href="#onmessageinstantreceive-android"><span>public void onMessageInstantReceive(String account,int uid,String msg)</span></a></td>
+<tr><td><a href="#onmessageinstantreceive-android"><span>onMessageInstantReceive()</span></a></td>
 <td>接收方收到消息后，接收方收到的回调</td>
 </tr>
-<tr><td><a href="#onmessagechannelreceive-android"><span>public void onMessageChannelReceive(String channelID,String account,int uid,String msg)</span></a></td>
+<tr><td><a href="#onmessagechannelreceive-android"><span>onMessageChannelReceive()</span></a></td>
 <td>收到频道消息回调</td>
 </tr>
-<tr><td><a href="#onlog-android"><span>public void onLog(String txt)</span></a></td>
+<tr><td><a href="#onlog-android"><span>onLog()</span></a></td>
 <td>已打印日志回调</td>
 </tr>
-<tr><td><a href="#onuserattrresult-android"><span>public void onUserAttrResult(String account,String name,String value)</span></a></td>
+<tr><td><a href="#onuserattrresult-android"><span>onUserAttrResult()</span></a></td>
 <td>已获取用户属性查询结果回调</td>
 </tr>
-<tr><td><a href="#onuserattrallresult-android"><span>public void onUserAttrAllResult(String account,String value)</span></a></td>
+<tr><td><a href="#onuserattrallresult-android"><span>onUserAttrAllResult()</span></a></td>
 <td>已获取所有用户属性查询结果回调</td>
 </tr>
 </tbody>
@@ -1299,6 +1290,8 @@ ICallBack 类为信令的回调接口类。
 
 ```
 public void onReconnecting(int nretry);
+
+
 ```
 
 与Agora信令系统的连接时触发本回调。
@@ -1324,6 +1317,8 @@ public void onReconnecting(int nretry);
 
 ```
 public void onError(String name,int ecode,String desc)
+
+
 ```
 
 该回调返回详细的出错信息。
@@ -1364,6 +1359,8 @@ public void onError(String name,int ecode,String desc)
 
 ```
 public void onQueryUserStatusResult(String name,String status)
+
+
 ```
 
 该回调返回用户状态查询结果。调用 <code>queryUserStatus</code> 方法时触发此回调。
@@ -1397,12 +1394,12 @@ public void onQueryUserStatusResult(String name,String status)
 
 ```
 public void onReconnected(int fd);
+
+
 ```
 
--   当与 Agora 信令系统重连成功时会触发此回调。
-
--   重连失败会触发 <code>onLogout</code> 回调。
-
+- 当与 Agora 信令系统重连成功时会触发此回调。
+- 重连失败会触发 <code>onLogout</code> 回调。
 
 <table>
 <colgroup>
@@ -1425,6 +1422,8 @@ public void onReconnected(int fd);
 
 ```
 public void onLoginSuccess(int uid,int fd);
+
+
 ```
 
 当登录成功时触发此回调。
@@ -1453,6 +1452,8 @@ public void onLoginSuccess(int uid,int fd);
 
 ```
 public void onLogout(int ecode);
+
+
 ```
 
 当退出登录时触发此回调。
@@ -1478,6 +1479,8 @@ public void onLogout(int ecode);
 
 ```
 public void onLoginFailed(int ecode);
+
+
 ```
 
 当登录失败时触发此回调。
@@ -1503,6 +1506,8 @@ public void onLoginFailed(int ecode);
 
 ```
 void onInvokeRet(String callID, String err, String resp);
+
+
 ```
 
 <table>
@@ -1534,6 +1539,8 @@ void onInvokeRet(String callID, String err, String resp);
 
 ```
 public void onChannelJoined(String channelID);
+
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1559,6 +1566,8 @@ public void onChannelJoined(String channelID);
 
 ```
 public void onChannelJoinFailed(String channelID,int ecode);
+
+
 ```
 
 当加入频道失败时触发此回调。
@@ -1587,6 +1596,8 @@ public void onChannelJoinFailed(String channelID,int ecode);
 
 ```
 public void onChannelLeaved(String channelID,int ecode);
+
+
 ```
 
 当离开频道成功时触发此回调。
@@ -1615,6 +1626,8 @@ public void onChannelLeaved(String channelID,int ecode);
 
 ```
 public void onChannelUserJoined(String account,int uid);
+
+
 ```
 
 当有用户加入频道时触发此回调。
@@ -1643,6 +1656,8 @@ public void onChannelUserJoined(String account,int uid);
 
 ```
 public void onChannelUserLeaved(String account,int uid);
+
+
 ```
 
 当有用户离开频道触发此回调。
@@ -1651,6 +1666,8 @@ public void onChannelUserLeaved(String account,int uid);
 
 ```
 public void onChannelUserList(String[] accounts, int[] uids);
+
+
 ```
 
 当加入频道成功后，本人会收到此回调。
@@ -1681,6 +1698,8 @@ public void onChannelUserList(String[] accounts, int[] uids);
 
 ```
 public void onChannelQueryUserNumResult(String channelID,int ecode,int num);
+
+
 ```
 
 查询频道用户数量时触发此回调。
@@ -1708,10 +1727,12 @@ public void onChannelQueryUserNumResult(String channelID,int ecode,int num);
 
 
 
-#### <a name="onchannelattrupdated-android"></a>频道属性发生变化回调 \(onChannelAttrUpdated\)
+#### <a name="onchannelattrupdated-android"></a>频道属性发生变化回调 (onChannelAttrUpdated)
 
 ```
 public void onChannelAttrUpdated(String channelID,String name,String value,String type);
+
+
 ```
 
 当频道属性变化时触发此回调。
@@ -1756,6 +1777,8 @@ public void onChannelAttrUpdated(String channelID,String name,String value,Strin
   public void onInviteReceived(String channelID,String account,int uid,String extra);
 
 当收到呼叫邀请时触发此回调。
+
+
 ```
 
 <table>
@@ -1788,6 +1811,8 @@ public void onChannelAttrUpdated(String channelID,String name,String value,Strin
 
 ```
 public void onInviteReceivedByPeer(String channelID,String account,int uid);
+
+
 ```
 
 当呼叫被对方收到时触发。
@@ -1819,6 +1844,8 @@ public void onInviteReceivedByPeer(String channelID,String account,int uid);
 
 ```
 public void onInviteAcceptedByPeer(String channelID,String account,int uid, String extra);
+
+
 ```
 
 当呼叫被对方接受时触发此回调。
@@ -1853,6 +1880,8 @@ public void onInviteAcceptedByPeer(String channelID,String account,int uid, Stri
 
 ```
 public void onInviteRefusedByPeer(String channelID,String account,int uid, String extra);
+
+
 ```
 
 当呼叫被对方拒绝时触发此回调。
@@ -1876,7 +1905,7 @@ public void onInviteRefusedByPeer(String channelID,String account,int uid, Strin
 <td>固定填 0</td>
 </tr>
 <tr><td><code>extra</code></td>
-<td>呼叫方向对方发送的其他信息，如该呼叫为视频通话还是语音通话。必须为 JSON 模式。</td>
+<td>呼叫方向对方发送的其他信息，例如：该呼叫为视频通话还是语音通话。必须为 JSON 格式。</td>
 </tr>
 </tbody>
 </table>
@@ -1887,6 +1916,8 @@ public void onInviteRefusedByPeer(String channelID,String account,int uid, Strin
 
 ```
 public void onInviteFailed(String channelID,String account,int uid,int ecode, String extra);
+
+
 ```
 
 当呼叫失败时触发。
@@ -1924,6 +1955,8 @@ public void onInviteFailed(String channelID,String account,int uid,int ecode, St
 
 ```
 public void onInviteEndByPeer(String channelID,String account,int uid, String extra);
+
+
 ```
 
 当呼叫被对方结束时触发此回调。
@@ -1958,6 +1991,8 @@ public void onInviteEndByPeer(String channelID,String account,int uid, String ex
 
 ```
 public void onInviteEndByMyself(String channelID,String account,int uid);
+
+
 ```
 
 当呼叫被自己结束时触发。
@@ -1989,6 +2024,8 @@ public void onInviteEndByMyself(String channelID,String account,int uid);
 
 ```
 public void onInviteMsg(String channelID, String account, int uid, String msgType, String msgData, String extra)
+
+
 ```
 
 当本地接收到远端用户发送的 DTMF 消息时触发该回调。
@@ -2029,6 +2066,8 @@ public void onInviteMsg(String channelID, String account, int uid, String msgTyp
 
 ```
 public void onMessageSendError(String messageID,int ecode);
+
+
 ```
 
 当发送消息失败时触发。
@@ -2057,6 +2096,8 @@ public void onMessageSendError(String messageID,int ecode);
 
 ```
 public void onMessageSendSuccess(String messageID);
+
+
 ```
 
 当发送消息成功时触发。
@@ -2082,6 +2123,8 @@ public void onMessageSendSuccess(String messageID);
 
 ```
 public void onMessageInstantReceive(String account,int uid,String msg);
+
+
 ```
 
 接收方收到消息时接收方收到的回调。
@@ -2113,6 +2156,8 @@ public void onMessageInstantReceive(String account,int uid,String msg);
 
 ```
 public void onMessageChannelReceive(String channelID,String account,int uid,String msg);
+
+
 ```
 
 当收到频道消息时触发。
@@ -2147,6 +2192,8 @@ public void onMessageChannelReceive(String channelID,String account,int uid,Stri
 
 ```
 public void onLog(String txt)
+
+
 ```
 
 当有日志打印时触发。
@@ -2172,6 +2219,8 @@ public void onLog(String txt)
 
 ```
 public void onUserAttrResult(String account,String name,String value);
+
+
 ```
 
 当用户已查询到某个用户的属性后即触发该回调。
@@ -2203,6 +2252,8 @@ public void onUserAttrResult(String account,String name,String value);
 
 ```
 public void onUserAttrAllResult(String account,String value);
+
+
 ```
 
 当用户已查询到某个用户的所有属性后即触发该回调。

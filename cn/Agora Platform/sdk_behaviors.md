@@ -3,7 +3,7 @@
 title: SDK 对断网、杀进程的处理
 description: 
 platform: SDK 对断网、杀进程的处理
-updatedAt: Fri Nov 02 2018 04:07:16 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 08:36:16 GMT+0000 (UTC)
 ---
 # SDK 对断网、杀进程的处理
 ### 声网 SDK 有断线重连机制吗？
@@ -19,7 +19,7 @@ updatedAt: Fri Nov 02 2018 04:07:16 GMT+0000 (UTC)
     -   如果 A 是 iOS 或 mac 平台： `rtcEngineConnectionDidInterrupted`
     -   如果 A 是 Web 平台，A 没有回调。
 2.  失去连接后， A 尝试重连其他服务器,直到重连成功：
-    -   如果 A 在 10 秒内未连接成功，会有回调：（10 秒这个参数可以更改，具体请咨询 [support@agora.io](mailto:support@agora.io)）
+    -   如果 A 在 10 秒内未连接成功，会有回调：
 		* 		如果 A 是 Android， Windows，或 Linux 平台： `onConnectionLost`
 		*     如果 A 是 iOS 或 mac 平台： `rtcEngineConnectionDidLost`
 		*     如果 A 是 Web 平台，A 没有回调。
@@ -55,7 +55,7 @@ updatedAt: Fri Nov 02 2018 04:07:16 GMT+0000 (UTC)
     -   如果 B 是 Web 平台： `client.on('peer-leave')`
 
 -   如果 A 是 Android， Windows，或 Linux 平台，且 B 使用的是 Native SDK：
-    -   如果 20 秒内， A 没有重启 app 并加入原频道，B 有回调：（20 秒这个参数可以更改，具体请咨询 [support@agora.io](mailto:support@agora.io)）
+    -   如果 20 秒内， A 没有重启 app 并加入原频道，B 有回调：
         -   如果 B 是 Android， Windows，或 Linux 平台： `onUserOffline`
         -   如果 B 是 iOS 或 mac 平台：` didOfflineOfUid`
     -   如果 20 秒内， A 重启 app 并加入原频道，B 不会收到回调。

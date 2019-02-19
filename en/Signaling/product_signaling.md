@@ -3,103 +3,89 @@
 title: Agora Signaling Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:12:48 GMT+0000 (UTC)
+updatedAt: Wed Feb 13 2019 11:38:55 GMT+0000 (UTC)
 ---
 # Agora Signaling Overview
-Agora Signaling SDK is based on TCP protocal. It provides stable message channel enabling you to implement real-time senerio.
+The Agora Signaling SDK is based on the TCP protocol and provides a stable messaging channel for you to implement real-time communication scenarios.
 
 ## Functions
 
-Agora Signaling SDK provides the following functions:
+The Agora Signaling SDK enables the following functions:
 
--   1 on 1 message
-
--   CHannel message
-
--   Get user attributes
-
--   Get channel attributes
-
--   Get the user list of the channel
+-   1-on-1 messages.
+-   Channel messages.
+-   Gets the user attributes
+-   Gets the channel attributes
+-   Gets the user list of the channel
 
 
 ## Applications
 
-Agora Signlaing SDK is useful in the following scenerios:
+The Agora Signaling SDK can be used in the following scenarios:
 
--   Broadcast
-
-    -   Comment streams
-
-    -   Chatroom
-
-    -   Gifts, likes
-
-    -   Maintenance of the live room status
-
-    -   Channel list
-
-    -   Access control
-
--   Social
-
-    -   Private chat message
-
-    -   Group message
-
-    -   Voice/Video Call Invitation Instructions
-
--   Education
-
-    -   Class group message
-
-    -   Private chat message
-
-    -   Whiteboard
-
-    -   Authority management \(reward, raise hand, like\)
-
--   Games
-
-    -   Game sync
-
--   Call Center
-
-    -   Compatible with SIP protocol
-
--   IoT
-
-    -   Control message
-
+<table>
+  <tr>
+    <th>Industry</th>
+    <th>Application</th>
+  </tr>
+  <tr>
+    <td>Live Broadcast</td>
+    <td><li>Comment streams<br><li>Chatroom<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the live room status<br><li>Channel lists<br><li>Access control</td>
+  </tr>
+  <tr>
+    <td>Social Network</td>
+    <td><li>Private chat messages<br><li>Group messages<br><li>Voice/Video call invitation instructions</td>
+  </tr>
+  <tr>
+    <td>Education</td>
+    <td><li>Class group message<br><li>Private chat message<br><li>Whiteboard<br><li>Authority management (reward, raising a hand, like)</td>
+  </tr>
+  <tr>
+    <td>Game</td>
+    <td>Gaming synchronization</td>
+  </tr>
+  <tr>
+    <td>Call Center</td>
+    <td>Compatible with the SIP protocol</td>
+  </tr>
+  <tr>
+    <td>IoT</td>
+    <td>Control messages</td>
+  </tr>
+</table>
 
 ## Features
 
 The Agora Signaling SDK provides the following features:
 
--   High concurrency
-
-    -   Support a million concurrents in a single channel
-
--   High reliability
-
-    -   Service availability 99.999%
-
--   Low latency
-
-    -   Average delay of 100ms
-
--   Compatibility
-
-    -   Support multiple platforms such as iOS, Android, macOS, windows, Linux, applets, browsers, etc.
-
-    -   Support java, C++ server side
-
+<table border="1" width="100%">
+  <tr>
+    <th width="20%">Feature </th>
+    <th width="50%">Description</th>
+  </tr>
+  <tr>
+    <td>High concurrency</td>
+    <td>Supports concurrently sending a single channel a million times<br></td>
+  </tr>
+  <tr>
+    <td>High reliability</td>
+    <td>Service availability at 99.999%</td>
+  </tr>
+  <tr>
+    <td>Low latency</td>
+    <td>Average delay of 100 ms-</td>
+  </tr>
+  <tr>
+    <td>Compatibility</td>
+    <td><li>Supports multiple platforms such as iOS, Android, macOS, windows, Linux, applets, and web browsers.<br><li>Supports Java, C++ on the server side.</td>
+  </tr>
+</table>
 
 ## References
 
--   [Quickstart Guides](../../en/Quickstart%20Guide/signal_android-1.md) on how to deploy and use the Agora Signaling SDK, to complete various tasks, such as sending text messages and making a call.
+-   [Quickstart Guides](../../en/Quickstart%20Guide/signal_android-1.md) describe how to integrate the Agora Signaling SDK and provide short code snippets of common functions, such as sending point-to-point and channel messages.
 
--   [API Reference](../../en/API%20Reference/signal_android.md) lists various APIs to call and their functions when using the Agora Signaling SDK.
+-   [API Reference](../../en/API%20Reference/signal_android.md) lists the core methods and callbacks of the Agora Signaling SDK.
 
 
 

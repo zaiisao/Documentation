@@ -3,71 +3,79 @@
 title: Switch the Client Role
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 16:31:19 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 06:31:13 GMT+0000 (UTC)
 ---
 # Switch the Client Role
-On the Web Client, the client role is switched with the following three interfaces:
+Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
 
-- `client.publish`: Publish the local stream
+## Implementation
 
-	```
-		client.publish(localStream, function (err) {
-				console.log("Publish local stream error: " + err);
-		});
+On the Web Client, the following methods are used to switch the client role:
 
-		client.on('stream-published', function (evt) {
-				console.log("Publish local stream successfully");
-		});
+- `client.publish`: Publish the local stream.
 
-	```
+  ```javascript
+  client.publish(localStream, function (err) {
+  		console.log("Publish local stream error: " + err);
+  });
+  
+  client.on('stream-published', function (evt) {
+  		console.log("Publish local stream successfully");
+  });
+  ```
 
-- `client.unpublish`: Unpublish the local stream
+- `client.unpublish`: Unpublish the local stream.
 
-	```
-		client.unpublish(localStream, function (err) {
-				console.log("Unpublish local stream error: " + err);
-		});
+  ```javascript
+  client.unpublish(localStream, function (err) {
+  		console.log("Unpublish local stream error: " + err);
+  });
+  
+  client.on('stream-unpublished', function (evt) {
+  		console.log("Unpublish local stream successfully");
+  });
+  ```
 
-		client.on('stream-unpublished', function (evt) {
-				console.log("Unpublish local stream successfully");
-		});
+- `client.subscribe`: Subscribe to the remote stream.
 
-	```
+  ```javascript
+  client.on('stream-added', function (evt) {
+  		var stream = evt.stream;
+  		console.log("New stream added: " + stream.getId());
+  
+  		client.subscribe(stream, function (err) {
+  				console.log("Subscribe stream failed", err);
+  		});
+  });
+  client.on('stream-subscribed', function (evt) {
+  		var remoteStream = evt.stream;
+  		console.log("Subscribe remote stream successfully: " + remoteStream.getId());
+  		remoteStream.play('agora_remote' + remoteStream.getId());
+  })
+  ```
 
-- `client.subscribe`: Subscribe to the remote stream
+To switch the client role:
 
-	```
-		client.on('stream-added', function (evt) {
-				var stream = evt.stream;
-				console.log("New stream added: " + stream.getId());
-
-				client.subscribe(stream, function (err) {
-						console.log("Subscribe stream failed", err);
-				});
-		});
-		client.on('stream-subscribed', function (evt) {
-				var remoteStream = evt.stream;
-				console.log("Subscribe remote stream successfully: " + stream.getId());
-				stream.play('agora_remote' + stream.getId());
-		})
-		```
-	
-How to switch the client role:
 - Set the user as the host (broadcaster)
-
-  * `client.publish`
-  * `client.subscribe`
-
-- Switch the client role from host to audience
-
-  * `client.unpublish`
-
+  - `client.publish`
+  - `client.subscribe`
+- Switch the client role from the host to the audience
+  - `client.unpublish`
 - Set the user as the audience
+  - `client.subscribe`
+- Switch the client role from the audience to the host
+  - `client.publish`
 
-  * `client.subscribe`
+> Create and initialize the stream before calling the `client.publish` method to publish the local audio and video stream. See [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_web_video.md).
 
-- Swtich the client role from audience to host
+## Next Steps
 
-  * `client.publish`
+Once the client role is switched to the host, you can start a live broadcast with the following step:
 
-> Create and intialize the stream before calling `client.publish` to publish the local audio and video stream. See [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/.publish_web.md).
+- [Publish and Subscribe to Streams](../../en/Interactive%20Broadcast/publish_web_live.md)
+
+For other functions such as manipulating the audio volume, audio effect, or video resolution, you can refer to the following sections:
+
+- [Adjust the Volume](../../en/Interactive%20Broadcast/volume_web.md)
+- [Play Audio Effects/Audio Mixing](../../en/Interactive%20Broadcast/effect_mixing_web.md)
+- [Set the Video Profile](

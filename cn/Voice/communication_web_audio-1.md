@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:00:36 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:10:39 GMT+0000 (UTC)
 ---
 # 实现语音通话
 本页介绍如何使用 Agora Web SDK 快速实现网页端语音通话。
@@ -183,7 +183,7 @@ client.on('stream-subscribed', function (evt) {
 
 ```javascript
 client.leave(function () {
-  console.log("Leavel channel successfully");
+  console.log("Leave channel successfully");
 }, function (err) {
   console.log("Leave channel failed");
 });

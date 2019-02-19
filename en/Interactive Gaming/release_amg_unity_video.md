@@ -3,12 +3,62 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Fri Nov 02 2018 04:20:10 GMT+0000 (UTC)
+updatedAt: Mon Jan 28 2019 11:27:35 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Introduction
 
-The Agora Interactive Gaming Voice SDK provides the voice function for gaming. For the video function for gaming, please contact [sales-us@agora.io](mailto:sales-us@agora.io).
+The Agora Unity SDK for Interactive Gaming provides C# interfaces to implement the voice and video functions for gaming on the Unity platform. 
+
+For key features, see [Interactive Gaming Overview](https://docs.agora.io/en/Interactive%20Gaming/product_gaming?platform=All%20Platforms).
+
+## v2.2.0 
+
+v2.2.0 was released on January 28, 2019. See below for new features and API changes.
+
+### New Features
+
+#### 1. Set the Voice-only Mode
+
+Adds the `SetVoiceOnlyMode` method to set the voice-only mode. Once voice-only mode is enabled, the SDK transmits only the voice stream, but not other streams, like the sound of keyboard strokes. This function effectively optimizes the audio quality.
+
+#### 2. Set the Audio Effect Playback Position
+
+Adds the `SetRemoteVoicePosition` method to set the playback position and volume of the audio effects sent from the remote user.
+
+#### 3. Enables/Disables the Local Audio Module
+
+When an app joins a channel, the audio module is enabled by default. Added the `EnableLocalAudio` method to disable and re-enable the local audio capture, that is, to stop or restart local audio capturing and processing. The `OnMicrophoneEnabledHandler` callback is triggered once the local audio module is disabled or re-enabled. This method does not affect receiving or playing the remote audio streams, and is applicable to scenarios where the user wants to receive remote audio streams without sending any audio stream to other users in the channel.
+
+#### 4. Sets Whether to Receive the Audio/Video Streams by Default
+
+Added the `SetDefaultMuteAllRemoteAudioStreams` and `SetDefaultMuteAllRemoteVideoStreams` methods to set whether to receive the audio or video streams by default.
+
+#### 5. Indicate the First Local Audio Frame is Received/Sent 
+
+Added the `OnFirstRemoteAudioFrameHandler` and `OnFirstLocalAudioFrameHandler` callbacks to indicate that the first remote audio frame is received or sent successfully.
+
+#### 6. Indicate an API is Executed
+
+Added the `OnApiExecutedHandler` callback to indicate that an API method is executed.
+
+### API Changes
+
+#### Added
+
+- [EnableLocalAudio](../../en/API%20Reference/game_unity.md)
+- [SetDefaultMuteAllRemoteAudioStreams](../../cn/API%20Reference/game_unity.md)
+- [SetDefaultMuteAllRemoteVideoStreams](../../en/API%20Reference/game_unity.md)
+- [OnMicrophoneEnabledHandler](../../en/API%20Reference/game_unity.md)
+- [OnFirstRemoteAudioFrameHandler](../../en/API%20Reference/game_unity.md)
+- [OnFirstLocalAudioFrameHandler](../../en/API%20Reference/game_unity.md)
+- [OnApiExecutedHandler](../../cn/API%20Reference/game_unity.md)
+
+#### Deleted
+
+- `GetMediaEngineVersion`
+- `GetParemeter`
+- `Poll`
 
 ## v2.1.0
 

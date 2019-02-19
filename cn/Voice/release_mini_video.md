@@ -3,17 +3,19 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Thu Nov 08 2018 02:51:44 GMT+0000 (UTC)
+updatedAt: Wed Jan 16 2019 15:15:03 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
 
 ## **简介**
 
-声网 Agora 小程序 SDK 是一个全新的 SDK，能支持微信小程序实现功能：
+声网 Agora 小程序 SDK 支持微信小程序实现功能, 并能与声网其他 SDK 进行互通：
 
 -   音视频通话
 -   音视频直播
+
+点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 以及[互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 
 结合微信小程序，能实现如下场景：
@@ -23,6 +25,39 @@ updatedAt: Thu Nov 08 2018 02:51:44 GMT+0000 (UTC)
 -   高端客服：对高价值的 VIP 客户提供远程视频服务，1 对 1 实时交流
 -   远程报警：一键报警，通过实时视频通信，为警方提供一手现场情况
 -   银行开户：实时视频认证，清晰画质、超低延时、隐私保护，提升开户效率
+
+## 技术方案
+
+下图为小程序连麦的声网实现架构图：
+
+<img alt="../_images/wechat_live_solution.jpg" src="https://web-cdn.agora.io/docs-files/cn/wechat_live_solution.jpg" style="width: 601.6px; height: 240.8px;"/>
+
+在这个架构图中：
+
+1.  在大网边缘节点部署协议转换服务对小程序端发出的 RTMP 流进行转换；
+2.  将转化后的 UDP 传输到 Agora SD-RTN 上；
+3.  通过 Agora SD-RTN 与 Agora 其他平台 SDK 实现音视频互通。
+
+点击 [声网小程序 Demo 体验](../../cn/Voice/miniapp_demo.md) 了解小程序通话、互通等功能。
+下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
+
+## **2.3.2 版**
+
+该版本于 2019 年 1 月 3 日发布。新增特性及功能改进详见下文。
+
+**新增功能**
+
+为方便用户了解是否成功调用 [`Client.leave`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#leave) 和 [`Client.destroy`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#destroy) 方法，该版本分别在这两个方法中新增了方法调用成功或失败的回调函数。
+
+**改进**
+
+为提升 [`Client.setRole`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#setRole) 方法的易用性，该版本优化了该方法的调用逻辑。用户在调用 [`Client.join`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#join) 加入频道**前**或**后**均可以调用该方法，设置或改变用户角色。
+
+同时，该版本对 `broadcaster` 和 `audience` 两个角色的行为进行了更为严格的定义：
+
+- 用户角色为 `broadcaster` 时，可以调用 [`Client.publish`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#publish) 和 [`Client.unpublish`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#unpublish) 方法
+- 用户角色为 `audience` 时，不可以调用 [`Client.publish`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#publish) 和 [`Client.unpublish`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#unpublish) 方法
+
 
 ## **1.1.3 Beta 版**
 
@@ -73,6 +108,7 @@ https://miniapp-4.agoraio.cn
 ## **1.1.0 Beta 版**
 
 该版本于 2018 年 7 月 27 日发布。新增特性与修复问题列表详见下文。
+
 
 **包含功能**
 

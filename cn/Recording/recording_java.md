@@ -3,7 +3,7 @@
 title: 录制 API 
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:06:17 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 03:20:33 GMT+0000 (UTC)
 ---
 # 录制 API 
 > 版本：v2.2.3
@@ -18,29 +18,29 @@ updatedAt: Fri Nov 02 2018 04:06:17 GMT+0000 (UTC)
 <tr><td><strong>接口类</strong></td>
 <td><strong>描述</strong></td>
 </tr>
-<tr><td><a href="#native">Native 接口</a></td>
-<td>用于管理<code> Recording engine</code> 的方法</td>
+<tr><td><a href="#RecordingSDK">RecordingSDK</a></td>
+<td>应用程序调用的主要方法</td>
 </tr>
-<tr><td><a href="#id11">回调接口</a></td>
-<td>为 <code>Recording engine</code> 提供的回调</td>
+<tr><td><a href="#RecordingEventHandler">RecordingEventHandler</a></td>
+<td>向应用程序发送回调通知</td>
 </tr>
 </tbody>
 </table>
 
 
 
-<a id = "native"></a>
+<a id = "RecordingSDK"></a>
 
-## Native 接口
+## RecordingSDK 接口类
 
-该类用于管理 Agora SDK 的录制引擎，主要包含以下方法：
+该接口类包含应用程序调用的主要方法：
 
 - [创建并加入频道 \(createChannel\)](#createChanne)
 - [设置视频合图布局 \(setVideoMixingLayout\)](#setVideoMixingLayout)
 - [退出频道 \(leaveChannel\)](#leaveChannel)
-- [获取属性 \(getProperties\)](#getProperties)
+- [获取录制属性 \(getProperties\)](#getProperties)
 - [开始录制 \(startService\)](#startService)
-- [停止录制 \(stopService\)](#stopService)
+- [暂停录制 \(stopService\)](#stopService)
 - [设置背景图片 \(setUserBackground\)](#setUserBackground)
 - [设置生成 log 的等级 \(setLogLevel\)](#setLogLevel)
 - [设置生成 log 的模块 \(enableLogModule\)](#enableLogModule)
@@ -56,28 +56,34 @@ public native boolean createChannel(String appId, String token, String name, int
 该方法创建并让录制 App 加入频道，随后开始录制。
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>名称</strong></td>
-<td><strong>描述</strong></td>
+<thead>
+<tr><th>名称</th>
+<th>描述</th>
 </tr>
+</thead>
+<tbody>
 <tr><td><code>appId</code></td>
-<td>希望录制的音视频通话中使用的 App ID ，详见 <a href="../../cn/Agora%20Platform/token.md"><span>获取 App ID</span></a></td>
+<td>希望录制的音视频通话中使用的 App ID ，详见<a href="../../cn/Recording/token.md"><span>获取 App ID</span></a></td>
 </tr>
 <tr><td><code>token</code></td>
-<td>希望录制的音视频通话中使用的 token ，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a></td>
+<td>希望录制的音视频通话中使用的 token ，详见<a href="../../cn/Recording/token.md"><span>校验用户权限</span></a></td>
 </tr>
 <tr><td><code>name</code></td>
-<td>希望录制的视频通话的频道名称</td>
+<td>标识通话的频道名称，长度在 64 字节以内的字符串。以下为支持的字符集范围（共 89 个字符）：
+<ul>
+<li>26 个小写英文字母 a-z</li>
+<li>26 个大写英文字母 A-Z</li>
+<li>10 个数字 0-9</li>
+<li>空格</li>
+<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","</li>
+</ul>
+</td>
 </tr>
 <tr><td><code>uid</code></td>
-	<td><p>录制使用的用户 uid。取值范围：1 到（2<sup>32</sup>-1），并保证频道内 uid 不重复。有两种设置方法：</p>
+<td><p>录制使用的用户 UID。取值范围：1 到（2<sup>32</sup>-1），并保证频道内 UID 不重复。有两种设置方法：</p>
 <ul>
-<li>设置为 0，系统将自动分配一个uid</li>
-<li>设置一个唯一的uid（不能与现在频道内的任何 uid 重复）</li>
+<li>设置为 0，系统将自动分配一个 UID</li>
+<li>设置一个唯一的 UID（不能与现在频道内的任何 UID 重复）</li>
 </ul>
 </td>
 </tr>
@@ -85,30 +91,26 @@ public native boolean createChannel(String appId, String token, String name, int
 <td>录制的详细设置，详见下表</td>
 </tr>
 <tr><td><code>logLevel</code></td>
-<td>生成 log 的等级。设置完成后，只有等级低于<code> logLevel</code> 的 log 才会被生成。详见 <a href="#setloglevel-recording-java"><span>设置生成 log 的等级 (setLogLevel)</span></a> 。</td>
+<td>生成 log 的等级。设置完成后，只有等级低于<code> logLevel</code> 的 log 才会被生成。详见<a href="#setloglevel-recording-java"><span>设置生成 log 的等级 (setLogLevel)</span></a> 。</td>
 </tr>
 <tr><td><code>logModules</code></td>
-<td>生成 log 的模块。设置完成后，只有指定模块的 log 才会被生成。详见 <a href="#enablelogmodule-recording-java"><span>设置生成 log 的模块 (enableLogModule)</span></a> 。</td>
+<td>生成 log 的模块。设置完成后，只有指定模块的 log 才会被生成。详见<a href="#enablelogmodule-recording-java"><span>设置生成 log 的模块 (enableLogModule)</span></a> 。</td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
-<li>True：方法调用成功</li>
-<li>False：方法调用不成功</li>
+<li>0：方法调用成功</li>
+<li><0：方法调用失败</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 
+> - 由于录制端暂时未开放 `requestToken` 和 `renewToken` 接口，在获取 Token 时，请务必将 [expireTimestamp](../../cn/Recording/token.md) 设置为 0，表示权限一旦生成，永不过期。
 
+> - 同一个频道里不能出现两个相同的 UID，否则会产生未定义行为。
 
-
-
-> - 由于录制端暂时未开放` requestToken`和`renewToken`接口，在获取 Token 时，请务必将服务到期时间（`expireTimestamp`\) 设置为 0，表示权限一旦生成，永不过期。
-
-> - 同一个频道里不能出现两个相同的 `uid`。如果你的 App 支持多设备同时登录，即同一个用户账号可以在不同的设备上同时登录\(例如微信支持在 PC 端和移动端同时登录\)，请保证传入的 `uid `不相同。 例如你之前都是用同一个用户标识作为` uid`, 建议从现在开始加上设备 ID, 以保证传入的` uid` 不相同 。如果你的 App 不支持多设备同时登录，例如在电脑上登录时，手机上会自动退出，这种情况下就不需要在` uid `上添加设备 ID。
-
-`RecordingConfig `结构如下:
+`RecordingConfig` 结构如下:
 
 ```
 public class RecordingConfig {
@@ -161,7 +163,7 @@ public class RecordingConfig {
   public int idleLimitSec;
   public int captureInterval;
   public int audioIndicationInterval;
-  //channelProfile:0 braodacast, 1:communicate; default is 1
+  //channelProfile:0 communicate, 1:braodacast; default is 0
   public CHANNEL_PROFILE_TYPE channelProfile;
   //streamType:0:get high stream 1:get low stream; default is 0
   public REMOTE_VIDEO_STREAM_TYPE streamType;
@@ -174,55 +176,61 @@ public class RecordingConfig {
 ```
 
 <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>名称</strong></td>
-<td><strong>描述</strong></td>
+<thead>
+<tr><th>名称</th>
+<th>描述</th>
 </tr>
+</thead>
+<tbody>
 <tr><td><code>isAudioOnly</code></td>
-<td><p>仅启用音频录制功能，关闭视频录制：</p>
+<td><p>仅启用音频录制功能：</p>
 <ul>
-<li>true：仅启用音频录制功能</li>
-<li>false：音视频同时录制</li>
+<li>true：启用音频录制且关闭视频录制</li>
+<li>false：（默认）启用音视频录制</li>
+</ul>
+与 isVideoOnly 结合使用：
+<ul>
+<li>如果 <code>isAudioOnly</code> 为 true，且 <code>isVideoOnly</code> 为 false，则仅录制音频；</li>
+<li>如果 <code>isAudioOnly</code>y 为 false，且 <code>isVideoOnly</code> 为 true，则仅录制视频；</li>
+<li>如果 <code>isAudioOnly</code> 为 false，且 <code>isVideoOnly</code> 为 false，则既录制音频，也录制视频；</li>
+<li>不能将 <code>isAudioOnly</code> 和 <code>isVideoOnly</code> 同时设置为 true。</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>isVideoOnly</code></td>
-<td><p>仅启用视频录制功能，关闭音频录制：</p>
+<td><p>启用视频录制且关闭音频录制：</p>
 <ul>
 <li>true：仅启动视频录制功能</li>
-<li>false：音视频同时录制</li>
+<li>false：（默认）启用音视频录制</li>
+</ul>
+与 isAudioOnly 结合使用：
+<ul>
+<li>如果 <code>isAudioOnly</code> 为 true，且 <code>isVideoOnly</code> 为 false，则仅录制音频；</li>
+<li>如果 <code>isAudioOnly</code> 为 false，且 <code>isVideoOnly</code> 为 true，则仅录制视频；</li>
+<li>如果 <code>isAudioOnly</code> 为 false，且 <code>isVideoOnly</code> 为 false，则既录制音频，也录制视频；</li>
+<li>不能将 <code>isAudioOnly</code> 和 <code>isVideoOnly</code> 同时设置为 true。</li>
 </ul>
 </td>
 </tr>
+
 <tr><td><code>isMixingEnabled</code></td>
-<td><p>是否启用多流（混音或合图）模式：</p>
+<td><p>是否启用合流模式：</p>
 <ul>
-<li>false(默认)：启用单流模式录制。录制文件的声道数和码率与原始音频流的声道数和码率保持一致。</li>
-<li>true：启用多流模式录制。录制文件的采样率，码率和声道数与录制前各音视频流的最高值保持一致。<ul>
-<li>如果<code> isAudioOnly </code>为 true，且<code> isVideoOnly </code>为 false，则表示启用纯音频混合</li>
-<li>如果 <code>isAudioOnly</code> 为 false，且<code> isVideoOnly </code>为 true，则表示启用纯视频混合</li>
-<li>如果 <code>isAudioOnly</code> 为 false，且 <code>isVideoOnly</code> 为 false，则表示音视频模式混合，即多个 uid 的音频混合、多个 uid 的视频混合</li>
-<li>不能将<code> isAudioOnly </code>和 <code>isVideoOnly </code>同时设置为 true</li>
-</ul>
-</li>
+<li>true：启用合流模式录制。多个 UID 的音频混合成一个纯音频文件，多个 UID 的视频混合成一个纯视频文件。混合文件的采样率、码率和声道数与录制前各音视频流的最高值保持一致。</li>
+<li>false：（默认）启用单流模式录制。一个 UID 对应一个音频或视频文件。录制文件的声道数和码率与原始音频流的声道数和码率保持一致。</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>mixedVideoAudio</code></td>
-<td><p>实时混合语音和视频。仅当<code> isMixingEnabled </code>= 1 时有效。该参数有三种模式：</p>
+<td><p>实时混合语音和视频。仅当 <code>isMixingEnabled</code> = 1 时有效。该参数有两种模式：</p>
 <ul>
-<li>0：音视频分别混合（默认）</li>
-<li>1：音频和视频一起混合，录制文件格式为 mp4，但播放器支持有限</li>
-<li>2：音频和视频一起混合，录制文件格式为 mp4，支持更多播放器</li>
+<li>0：不混合音频和视频（默认）</li>
+<li>1：音频和视频混合成一个文件，录制文件格式为 mp4，但播放器支持有限，详见下表</li>
 </ul>
 </td>
 </tr>
-<tr><td><code>mixResolution </code> <sup>[1]</sup></td>
-<td>如果你启用了多流模式，可以通过该参数设置合图的视频属性，格式为：width，hight，fps，kbps，分别对应合图的宽、高、帧率和码率</td>
+<tr><td><code>mixResolution </code></td>
+<td>如果你启用了多流模式，可以通过该参数设置合图的视频属性，格式为：width，hight，fps，kbps，分别对应合图的宽、高、帧率和码率。关于设置合图的推荐码率，详见下表。</td>
 </tr>
 <tr><td><code>decryptionMode</code></td>
 <td><p>当整个频道进行加密时，录制 SDK 启用内置的解密功能。目前支持以下几种解密方式：</p>
@@ -240,33 +248,37 @@ public class RecordingConfig {
 <td>AgoraCoreService 所在的目录</td>
 </tr>
 <tr><td><code>recordFileRootDir</code></td>
-<td>设置录制文件存放的根目录。<em><code>recordFileRootDir</code></em> 和 <em><code>cfgFilePath</code></em> 不能同时设置。</td>
+<td>设置录制文件存放的根目录。默认值为 NULL。设置了此目录后，子路径会自动生成。</td>
 </tr>
 <tr><td><code>cfgFilePath</code></td>
-<td>设置配置文件的路径。格式为 JSON，例如：{“Recording_Dir” : “&lt;recording path&gt;”}。<em><code>recordFileRootDir</code></em> 和 <em><code>cfgFilePath</code></em> 不能同时设置。</td>
+<td>指定配置文件的路径。默认值为 NULL。在该配置文件里，你可以设置保存录制文件的绝对路径，但不会自动生成子目录。配置文件的内容必须为 JSON 格式，例如：{“Recording_Dir” : “&lt;recording path&gt;”}，其中 “Recording_Dir” 是固定的，不能改动。</td>
 </tr>
-<tr><td><code>decodeVideo</code> <sup>[2]</sup></td>
-<td><ul>
+<tr><td><code>decodeVideo</code></td>
+<td>
+<ul>
 <li>VIDEO_FORMAT_DEFAULT_TYPE = 0：默认视频格式</li>
-<li>VIDEO_FORMAT_H264_FRAME_TYPE = 1：H.264 帧格式</li>
-<li>VIDEO_FORMAT_YUV_FRAME_TYPE = 2：YUV 帧格式</li>
-<li>VIDEO_FORMAT_JPG_FRAME_TYPE = 3：JPG 帧格式</li>
+<li>VIDEO_FORMAT_H264_FRAME_TYPE = 1：原始视频数据 H.264 帧格式</li>
+<li>VIDEO_FORMAT_YUV_FRAME_TYPE = 2：原始视频数据 YUV 帧格式</li>
+<li>VIDEO_FORMAT_JPG_FRAME_TYPE = 3：原始视频数据 JPG 帧格式</li>
 <li>VIDEO_FORMAT_JPG_FILE_TYPE = 4：JPG 文件格式</li>
-<li>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5：JPG + 视频文件格式</a><ul>
-<li>单流模式 (<code>isMixingEnabled</code>=false) 下，录制得 MP4 视频文件，并截图获得 JPG 文件</li>
-<li>合流模式 (<code>isMixingEnabled</code>=true) 下，对合流录制，得到 MP4 视频文件，并对各单流截图，获得 JPG 文件</li>
+<li>VIDEO_FORMAT_JPG_VIDEO_FILE_TYPE = 5：J原始视频数据 JPG 帧格式 + MP4 视频文件格</li>
+<ul>
+<li>单流模式 (<code>isMixingEnabled</code> 为 false) 下，录制得 MP4 视频文件，并截图获得 JPG 文件</li>
+<li>合流模式 (<code>isMixingEnabled</code> 为 true) 下，对合流录制，得到 MP4 视频文件，并对各单流截图，获得 JPG 文件</li>
 </ul>
-</li>
 </ul>
+VIDEO_FORMAT_TYPE = 1，2，3 或 4 时，<code>isMixingEnabled</code> 不能设为 true。
+
+当解码成原始视频数据，即 VIDEO_FORMAT_TYPE = 1，2，3 或 5 时，Web 端录制不支持 H.264 格式的原始视频数据，支持 YUV 格式的原始视频数据。
 </td>
 </tr>
-<tr><td><code>decodeAudio</code> <sup>[2]</sup></td>
+<tr><td><code>decodeAudio</code></td>
 <td><ul>
 <li>AUDIO_FORMAT_DEFAULT_TYPE = 0：默认音频格式</li>
-<li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1：AAC 格式</li>
-<li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2：PCM 格式</li>
-<li>AUDIO_FORMAT_MIXED_PCM_FRAME_TYPE = 3：PCM 混音格式</li>
+<li>AUDIO_FORMAT_AAC_FRAME_TYPE = 1：原始视频数据 AAC 格式</li>
+<li>AUDIO_FORMAT_PCM_FRAME_TYPE = 2：原始视频数据 PCM 格式</li>
 </ul>
+AUDIO_FORMAT_TYPE = 1，2 或 3 时，<code>isMixingEnabled</code> 不能设为 true。
 </td>
 </tr>
 <tr><td><code>lowUdpPort</code></td>
@@ -279,57 +291,58 @@ public class RecordingConfig {
 <td>设置空闲频道的超时退出时间。该值需大于等于 3 秒，默认值为 300 秒。若频道空闲（无用户）超过设定的时间，录制程序自动退出。该时间也会纳入计费。</td>
 </tr>
 <tr><td><code>captureInterval</code></td>
-<td>截屏的时间间隔，最小值为 1 秒，默认为 5 秒。仅当 <code>decodeVideo</code> = 3/4 时有效。</td>
+<td>截屏的时间间隔，最小值为 1 秒，默认为 5 秒。仅当 <code>decodeVideo</code> = 3，4 或 5 时有效。</td>
 </tr>
 <tr><td><code>audioIndicationInterval</code> </td>
 <td><p>说话者检测的时间间隔。</p>
 <div><ul>
 <li>&lt;= 0: 禁用说话者检测的功能；</li>
-<li>&gt; 0: 说话者检测的时间间隔，单位为 ms 。一旦检测到频道内有人说话，就会在 <a href="#onactivespeaker-recording-java"><span>启用说话者提示 (onActiveSpeaker)</span></a> 回调中返回说话者 id 。</li>
+<li>&gt; 0: 说话者检测的时间间隔，单位为 ms 。一旦检测到频道内有人说话，就会在 <a href="#onactivespeaker-recording-java"><span>onActiveSpeaker</span></a> 回调中返回说话者 ID 。</li>
 </ul>
 </div>
 </td>
 </tr>
 <tr><td><code>channelProfile</code></td>
-<td><p>使用场景。Agora RtcEngine 针对不同的使用场景进行了不同的优化。目前支持：</p>
+<td><p>频道模式。Agora RtcEngine 针对不同的使用场景进行了不同的优化。目前支持：</p>
 <ul>
 <li>CHANNEL_PROFILE_COMMUNICATION：通信（默认），即常见的 1 对 1 单聊或群聊，频道内任何用户可以自由说话</li>
 <li>CHANNEL_PROFILE_LIVE_BROADCAST：直播，有两种用户角色：主播和观众</li>
 </ul>
+录制的频道模式必须和 Native SDK 或 Web SDK 设置的频道模式保持一致，否则可能导致问题。
 </td>
 </tr>
 <tr><td><code>streamType</code></td>
-<td><p>选择音视频流。仅在 Agora Native SDK 选择的是双流模式时有效：</p>
+<td><p>选择音视频流。仅在 Native SDK 或 Web SDK 选择的是双流模式时有效：</p>
 <div><ul>
-<li>0: 大流(默认值)</li>
+<li>0: 大流（默认值）</li>
 <li>1: 小流</li>
 </ul>
 </div>
 </td>
 </tr>
-<tr><td><code>triggerMode</code></td>
+<tr><td><a name="triggerMode"></a><code>triggerMode</code></td>
 <td><p>选择录制启动模式：</p>
 <ul>
 <li>0：<code>automatically</code> 模式，即自动模式</li>
-<li>1：<code>mannually</code> 模式，即手动模式。此模式下，可以调用 <em><code>startService</code></em> 和 <em><code>stopService</code></em> 方法灵活开始、结束录制。</li>
+<li>1：<code>mannually</code> 模式，即手动模式。此模式下，可以调用 <code>startService</code> 和 <code>stopService</code> 方法灵活开始、暂停录制。</li>
 </ul>
 </td>
 </tr>
 <tr><td><code>proxyServer</code></td>
-<td>使用该功能可以在内网进行录制。具体使用方法请联系 <a href="mailto:sales%40agora.io">sales<span>@</span>agora<span>.</span>io</a> 。</td>
+<td>设置代理服务器。使用该功能可以在内网进行录制。具体使用方法请联系 <a href="mailto:sales%40agora.io">sales<span>@</span>agora<span>.</span>io</a> 。</td>
 </tr>
 <tr><td><code>audioProfile</code></td>
 <td><p>录制文件的音频设置。</p>
 <div><ul>
-<li>AUDIO_PROFILE_DEFAULT = 0: 默认设置。指定 48k 采样率，通信编码，单声道，编码码率约 48 kbps</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 1: 指定 48 KHz 采样率，音乐编码, 单声道，编码码率约 128 kbps</li>
-<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 2, // 指定 48KHz采样率，音乐编码, 双声道，编码码率约 192 kbps</li>
+<li>AUDIO_PROFILE_DEFAULT = 0：默认设置。指定 48k 采样率，通信编码，单声道，编码码率约 48 kbps</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY = 1：指定 48 KHz 采样率，音乐编码, 单声道，编码码率约 128 kbps</li>
+<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO = 2：指定 48KHz采样率，音乐编码，双声道，编码码率约 192 kbps</li>
 </ul>
 </div>
 </td>
 </tr>
 <tr><td><code>defaultVideoBgPath </code></td>
-<td>默认视频背景图片的路径</td>
+<td>默认画布背景图片的路径</td>
 </tr>
 <tr><td><code>defaultUserBgPath</code></td>
 <td>默认用户背景图片的路径</td>
@@ -338,41 +351,20 @@ public class RecordingConfig {
 </table>
 
 
-
-> [1] 关于设置合图的推荐分辨率，详见下表。
-
-> [2] 开启裸数据时，有以下限制：
->
-> - 合流模式仅支持纯音频通话/直播，不支持视频。
-> - Web 端录制仅支持 H.264 格式的视频裸数据，不支持 VP8 格式。
-
-
-
 ### 视频属性
 
 视频属性 \(通信场景\):
 
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
+<thead>
+<tr><th>分辨率</th>
+<th>帧率</td>
+<th>最低码率</th>
+<th>最高码率</th>
+<th>推荐码率</th>
+</tr>
+</thead>
 <tbody>
-<tr><td>分辨率</td>
-<td>帧率</td>
-<td>最低码率</td>
-<td>最高码率</td>
-<td>推荐码率</td>
-</tr>
-<tr><td>3840x2160</td>
-<td>15</td>
-<td>3000</td>
-<td>9000</td>
-<td>6000</td>
-</tr>
 <tr><td>2560x1440</td>
 <td>15</td>
 <td>1600</td>
@@ -483,26 +475,15 @@ public class RecordingConfig {
 视频属性 \(直播场景\):
 
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
+<thead>
+<tr><th>分辨率</th>
+<th>帧率</td>
+<th>最低码率</th>
+<th>最高码率</th>
+<th>推荐码率</th>
+</tr>
+</thead>
 <tbody>
-<tr><td>分辨率</td>
-<td>帧率</td>
-<td>最低码率</td>
-<td>最高码率</td>
-<td>推荐码率</td>
-</tr>
-<tr><td>3840x2160</td>
-<td>15</td>
-<td>6000</td>
-<td>18000</td>
-<td>12000</td>
-</tr>
 <tr><td>2560x1440</td>
 <td>15</td>
 <td>3200</td>
@@ -608,39 +589,35 @@ public class RecordingConfig {
 </tbody>
 </table>
 
-
+<a name = "player_support_list"></a>
 
 ### 播放器列表
 
 播放器列表:
 
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
+<thead>
+<tr><th>平台</th>
+<th>播放器/浏览器</th>
+<th>mixedVideoAudio=0</th>
+<th>mixedVideoAudio=1</thd>
+</tr>
+</thead>
 <tbody>
-<tr><td><strong>平台</strong></td>
-<td><strong>播放器/浏览器</strong></td>
-<td><strong><code>mixedVideoAudio</code>=0</strong></td>
-<td><strong><code>mixedVideoAudio</code>=1</strong></td>
-</tr>
-<tr><td>Linux</td>
-<td>默认播放器</td>
-<td>支持</td>
-<td>支持</td>
-</tr>
 <tr><td>Linux</td>
 <td>VLC Media Player</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
 <tr><td>Linux</td>
-<td>ffplay</td>
+<td>ffplayer</td>
 <td>支持</td>
 <td>支持</td>
+</tr>
+<tr><td>Linux</td>
+<td>Chrome</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
 </tr>
 <tr><td>Windows</td>
 <td>Media Player</td>
@@ -658,7 +635,7 @@ public class RecordingConfig {
 <td>支持</td>
 </tr>
 <tr><td>Windows</td>
-<td>Chrome (&gt;=49.0.2623)</td>
+<td>Chrome (49.0.2623+)</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
@@ -666,6 +643,11 @@ public class RecordingConfig {
 <td>QuickTime Player</td>
 <td>支持</td>
 <td>支持</td>
+</tr>
+<tr><td>macOS</td>
+<td>VLC</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
 </tr>
 <tr><td>macOS</td>
 <td>Movist</td>
@@ -683,24 +665,24 @@ public class RecordingConfig {
 <td><strong>不支持</strong></td>
 </tr>
 <tr><td>macOS</td>
-<td>Chrome (&gt;=47.0.2526.111)</td>
+<td>Chrome (47.0.2526.111+)</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
 <tr><td>macOS</td>
-<td>Safari (&gt;=11.0.3)</td>
+<td>Safari (11.0.3+)</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
 <tr><td>iOS</td>
-<td>iOS 默认播放器</td>
+<td>Default Player</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
 <tr><td>iOS</td>
-<td>VLC</td>
-<td><strong>app 找不到视频文件，无法播放</strong></td>
-<td>支持</td>
+<td>VLC for Mobile</td>
+<td><strong>不支持</strong></td>
+<td><strong>不支持</strong></td>
 </tr>
 <tr><td>iOS</td>
 <td>KMPlayer</td>
@@ -708,17 +690,17 @@ public class RecordingConfig {
 <td>支持</td>
 </tr>
 <tr><td>iOS</td>
-<td>Safari (&gt;=9.0)</td>
+<td>Safari (9.0+)</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
 <tr><td>Android</td>
-<td>Android 默认播放器</td>
+<td>Default Player</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
 <tr><td>Android</td>
-<td>MXPlayer</td>
+<td>MX Player</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
@@ -733,7 +715,7 @@ public class RecordingConfig {
 <td>支持</td>
 </tr>
 <tr><td>Android</td>
-<td>Chrome (&gt;=49.0.2623)</td>
+<td>Chrome (49.0.2623+)</td>
 <td>支持</td>
 <td>支持</td>
 </tr>
@@ -815,21 +797,21 @@ public class VideoMixingLayout
 <td>屏幕（画布）的背景颜色。可根据所需颜色填写对应的 6 位 RGB 值</td>
 </tr>
 <tr><td><code>regionCount</code></td>
-<td>频道内显示头像或视频的主播的数量</td>
+<td>频道内显示用户（通信模式）/主播（直播模式）头像或视频的数量</td>
 </tr>
 <tr><td><code>regions</code></td>
-<td><p>频道内每位主播在屏幕上显示自己的头像或视频的区域。详细参数包括：</p>
+<td><p>频道内每位用户（通信模式）/主播（直播模式）在屏幕上显示自己的头像或视频的区域。详细参数包括：</p>
 <ul>
-<li><code>uid</code>：待显示在该区域的主播用户 uid：</li>
-<li><code>x</code>：屏幕里该区域左上角的横坐标的相对值，取值范围是 [0.0,1.0]</li>
-<li><code>y</code>：屏幕里该区域左上角的纵坐标的相对值，取值范围是 [0.0,1.0]</li>
-<li><code>width</code>：该区域宽度的相对值，取值范围是 [0.0,1.0]</li>
-<li><code>height</code>：该区域高度的相对值，取值范围是 [0.0,1.0]</li>
+<li><code>uid</code>：待显示在该区域的用户（通信模式）/主播（直播模式）的 UID。</li>
+<li><code>x</code>：屏幕里该区域左上角的横坐标的相对值，取值范围是 [0.0,1.0]。</li>
+<li><code>y</code>：屏幕里该区域左上角的纵坐标的相对值，取值范围是 [0.0,1.0]。</li>
+<li><code>width</code>：该区域宽度的相对值，取值范围是 [0.0,1.0]。</li>
+<li><code>height</code>：该区域高度的相对值，取值范围是 [0.0,1.0]。</li>
 <li><code>zOrder</code>：所在图层编号，取值范围是 [1, 100]。1 表示该区域图像位于最下层图层，而 100 表示该区域图像位于最上层图层</li>
 <li><code>alpha</code>：图像的透明度。取值范围是 [0.0,1.0] 。0 表示图像为透明的，1 表示图像为完全不透明的。</li>
 <li><code>renderMode</code>：<ul>
-<li>RENDER_MODE_HIDDEN(1)：裁减到合适大小</li>
-<li>RENDER_MODE_FIT(2)：缩放到合适大小</li>
+<li>RENDER_MODE_HIDDEN(1)：Cropped 模式。优先保证视窗被填满。视频尺寸等比缩放，直至整个视窗被视频填满。 如果视频长宽与显示窗口不同，则视频流会按照显示视窗的比例进行周边裁剪或图像拉伸后填满视窗。</li>
+<li>RENDER_MODE_FIT(2)：Fit 模式。优先保证视频内容全部显示。视频尺寸等比缩放，直至视频窗口的一边与视窗边框对齐。 如果视频尺寸与显示视窗尺寸不一致，在保持长宽比的前提下，将视频进行缩放后填满视窗，缩放后的视频四周会有一圈黑边。</li>
 </ul>
 </li>
 </ul>
@@ -844,7 +826,7 @@ public class VideoMixingLayout
 <tr><td>返回值</td>
 <td><ul>
 <li>0：方法调用成功</li>
-<li>&lt; 0：方法调用不成功</li>
+<li>&lt; 0：方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -875,8 +857,8 @@ private native boolean leaveChannel(long nativeHandle);
 <tbody>
 <tr><td>返回值</td>
 <td><ul>
-<li>True：方法调用成功</li>
-<li>False：方法调用不成功</li>
+<li>0：方法调用成功</li>
+<li>&lt; 0：方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -896,8 +878,7 @@ private native RecordingEngineProperties getProperties(long nativeHandle);
 
 
 > - 目前仅支持获取录制路径信息;
-
-> - 该方法与 `onUserJoined`区别是: `onUserJoined`需要在加入频道后使用。
+> - 该方法与 [onUserJoined](#onUserJoined) 区别是： `onUserJoined` 需要在加入频道后使用。
 
 <a name = "startService"></a>
 
@@ -907,9 +888,7 @@ private native RecordingEngineProperties getProperties(long nativeHandle);
 private native void startService(long nativeHandle);
 ```
 
-该方法手动启动录制。
-
-仅在参数` triggerMode `为`manually `时有效。详见 [创建并加入频道 \(createChannel\)](#createChannel) 中关于` triggerMode`的描述。
+该方法手动启动录制。仅在参数 [triggerMode](#triggerMode) 为 `manually` 时有效。
 
 <a name = "stopService"></a>
 
@@ -919,9 +898,7 @@ private native void startService(long nativeHandle);
 private native void stopService(long nativeHandle);
 ```
 
-该方法手动停止录制。
-
-仅在参数 `triggerMode` 为`manually `时有效。详见 [创建并加入频道 \(createChannel\)](#createChannel) 中关于` triggerMode `的描述。
+该方法手动暂停录制。仅在参数 [triggerMode](#triggerMode) 为 `manually `时有效。
 
 <a name = "setUserBackground"></a>
 
@@ -951,7 +928,7 @@ private native int setUserBackground(long nativeHandle, int uid, String image_pa
 <tr><td>返回值</td>
 <td><ul>
 <li>0：方法调用成功</li>
-<li>&lt; 0：方法调用不成功</li>
+<li>&lt; 0：方法调用失败</li>
 </ul>
 </td>
 </tr>
@@ -1040,25 +1017,25 @@ private native void enableLogModule(long vativeHandle, int module, int enable)
 
 
 
-<a id="id11"></a>
+<a id="RecordingEventHandler"></a>
 
-## 回调接口
+## RecordingEventHandler 回调接口类
 
-该类用于为 <code>Recording engine </code>提供回调。该类包含如下回调：
+该接口类用于向应用程序发送回调通知。该类包含如下回调：
 
-- [获取 jni 层实例 \(nativeObjectRef\)](#nativeObjectRef)
+- [获取到 jni 层实例回调 \(nativeObjectRef\)](#nativeObjectRef)
 - [发生错误回调 \(onError\)](#onError)
 - [发生警告回调 \(onWarning\)](#onWarning)
 - [离开频道回调 \(onLeaveChannel\)](#onLeaveChanne)
 - [其他用户加入当前频道回调 \(onUserJoined\)](#onUserJoined)
 - [其他用户离开当前频道回调 \(onUserOffline\)](#onUserOffline)
-- [获取音频裸数据回调 \(audioFrameReceived\)](#audioFrameReceived)
-- [获取视频裸数据回调 \(videoFrameReceived\)](#videoFrameReceived)
-- [启用说话者提示 \(onActiveSpeaker\)](#onActiveSpeaker)
+- [获取原始音频数据回调 \(audioFrameReceived\)](#audioFrameReceived)
+- [获取原始视频数据回调 \(videoFrameReceived\)](#videoFrameReceived)
+- [监测到活跃用户回调 \(onActiveSpeaker\)](#onActiveSpeaker)
 
 <a name = "nativeObjectRef"></a>
 
-### 获取 jni 层实例 \(nativeObjectRef\)
+### 获取到 jni 层实例回调 \(nativeObjectRef\)
 
 ```
 private void nativeObjectRef(long nativeHandle){
@@ -1078,7 +1055,7 @@ private void onError(int error, int stat_code) {
 }
 ```
 
-表示 SDK 运行时出现了（网络或媒体相关的）错误。通常情况下，SDK 上报的错误意味着 SDK 无法自动恢复，需要 APP 干预或提示用户。
+表示 SDK 运行时出现了（网络或媒体相关的）错误。通常情况下，SDK 上报的错误意味着 SDK 无法自动恢复，需要 App 干预或提示用户。
 
 <table>
 <colgroup>
@@ -1203,9 +1180,10 @@ private void onUserJoined(long uid, String recordingDir){
 }
 ```
 
-此回调提示有用户加入了频道。
+该回调方法提示有用户加入了频道，并返回新加入用户的 UID。
 
-如果该客户端加入频道时已经有人在频道中，SDK 也会向应用程序上报这些已在频道中的用户。频道内有多少用户，该回调就会调用几次。
+如果在录制 App 加入之前，已经有用户在频道中，SDK 也会上报这些已在频道中的用户 UID。频道内有多少用户，该回调就会调用几次。
+
 
 <table>
 <colgroup>
@@ -1217,7 +1195,7 @@ private void onUserJoined(long uid, String recordingDir){
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>用户的 uid。</td>
+<td>用户的 ID。</td>
 </tr>
 <tr><td><code>recordingDir</code></td>
 <td>录制文件所在的目录</td>
@@ -1249,7 +1227,7 @@ SDK 判断用户离开频道（或掉线）的依据是：在一定时间内（1
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>用户的 uid</td>
+<td>用户的 ID</td>
 </tr>
 <tr><td><code>reason</code></td>
 <td><p>离线原因</p>
@@ -1265,7 +1243,7 @@ SDK 判断用户离开频道（或掉线）的依据是：在一定时间内（1
 
 <a name = "audioFrameReceived"></a>
 
-### 获取音频裸数据回调 \(audioFrameReceived\)
+### 获取原始音频数据回调 \(audioFrameReceived\)
 
 ```
 private void audioFrameReceived(long uid, int type, AudioFrame frame) {
@@ -1273,7 +1251,7 @@ private void audioFrameReceived(long uid, int type, AudioFrame frame) {
 }
 ```
 
-当返回音频裸数据时，会触发该回调。
+当返回原始音频数据时，会触发该回调。
 
 <table>
 <colgroup>
@@ -1285,18 +1263,18 @@ private void audioFrameReceived(long uid, int type, AudioFrame frame) {
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>用户的 uid</td>
+<td>用户的 ID</td>
 </tr>
 <tr><td><code>type</code></td>
-<div><ul>
+<td>
+<ul>
 <li>pcm（0）</li>
 <li>aac（1）</li>
 </ul>
-</div>
 </td>
 </tr>
 <tr><td><code>frame</code></td>
-<td>返回的音频裸数据</td>
+<td>返回的原始音频数据</td>
 </tr>
 </tbody>
 </table>
@@ -1408,7 +1386,7 @@ public class AudioAacFrame {
 
 <a name = "videoFrameReceived"></a>
 
-### 获取视频裸数据回调 \(videoFrameReceived\)
+### 获取原始视频数据回调 \(videoFrameReceived\)
 
 ```
 private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotation) {
@@ -1416,7 +1394,7 @@ private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotati
 }
 ```
 
-当返回视频裸数据时，会触发该回调。该回调可用于实现高级功能，如鉴黄。这些功能可以通过采集并分析 I 帧实现。
+当返回原始视频数据时，会触发该回调。该回调可用于实现高级功能，如鉴黄。这些功能可以通过采集并分析 I 帧实现。
 
 <table>
 <colgroup>
@@ -1428,10 +1406,10 @@ private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotati
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>用户的 uid</td>
+<td>用户的 ID</td>
 </tr>
 <tr><td><code>type</code></td>
-<td><p>返回的视频裸数据的格式：</p>
+<td><p>返回的原始视频数据的格式：</p>
 <div><ul>
 <li>yuv(0)</li>
 <li>h.264(1)</li>
@@ -1441,7 +1419,7 @@ private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotati
 </td>
 </tr>
 <tr><td><code>frame</code></td>
-<td>返回的视频裸数据，格式为 YUV、H264 或 JPG</td>
+<td>返回的原始视频数据，格式为 YUV、H.264 或 JPG</td>
 </tr>
 <tr><td><code>rotation</code></td>
 <td>旋转角度, 0, 90, 180, 270</td>
@@ -1451,7 +1429,7 @@ private void videoFrameReceived(long uid, int type, VideoFrame frame, int rotati
 
 
 
-`VideoFrame `结构如下：
+`VideoFrame` 结构如下：
 
 ```
 public class VideoFrame {
@@ -1626,7 +1604,7 @@ public class VideoJpgFrame {
 
 <a name = "onActiveSpeaker"></a>
 
-### 启用说话者提示 \(onActiveSpeaker\)
+### 监测到活跃用户回调 \(onActiveSpeaker\)
 
 ```
 void onActiveSpeaker(long uid){
@@ -1634,7 +1612,7 @@ void onActiveSpeaker(long uid){
 }
 ```
 
-返回说话者的 uid 。
+返回说话者的 ID 。
 
 <table>
 <colgroup>
@@ -1646,7 +1624,7 @@ void onActiveSpeaker(long uid){
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>说话者的 uid</td>
+<td>说话者的 ID</td>
 </tr>
 </tbody>
 </table>

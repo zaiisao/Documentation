@@ -3,12 +3,12 @@
 title: Release Notes
 description: 
 platform: Cocos
-updatedAt: Fri Nov 02 2018 04:20:04 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:06:02 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Introduction
 
-The Agora Interactive Gaming Voice SDK provides the voice function for gaming. 
+The Agora Interactive Gaming Voice SDK provides the voice function for gaming. For the key features inlcudes, see [Interactive Gaming Overview](https://docs.agora.io/en/Interactive%20Gaming/product_gaming?platform=All%20Platforms).
 
 ## v2.1.0
 

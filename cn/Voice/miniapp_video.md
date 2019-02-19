@@ -3,9 +3,11 @@
 title: 集成客户端
 description: 
 platform: 微信小程序
-updatedAt: Fri Nov 02 2018 03:59:23 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 08:36:51 GMT+0000 (UTC)
 ---
 # 集成客户端
+本文介绍在正式使用 Agora Miniapp SDK for WeChat 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+
 ## 前提条件
 
 请确保满足以下开发环境要求：
@@ -35,7 +37,7 @@ updatedAt: Fri Nov 02 2018 03:59:23 GMT+0000 (UTC)
 
 1.  进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
 
-2.  登陆 Dashboard 页面，点击 **添加新项目**。
+2.  登录 Dashboard 页面，点击 **添加新项目**。
 
 	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
@@ -97,4 +99,10 @@ const AgoraMiniappSDK = require('../../lib/mini-app-sdk-production.js');
 
 其中 `../../lib/mini-app-sdk-production.js` 为你的 js 文件本地路径。
 
-你已经完成了客户端集成，可以开始使用 Agora SDK 了。
+## 相关文档
+
+完成了客户端集成后，你可以使用 Agora SDK，参考左侧《快速开始》菜单栏下的步骤，并结合下图中的 API 调用顺序，进行通话/直播：
+
+![](https://web-cdn.agora.io/docs-files/1541990512316)
+
+如果在使用过程中遇到问题，请参考[小程序 SDK 常见问题回答](../../cn/Agora%20Platform/wechat_how_to.md) 或 [错误代码和警告代码](../../cn/API%20Reference/the_error_wechat.md) 排除解决。

@@ -3,7 +3,7 @@
 title: Starting a Live Video Broadcast
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:13:00 GMT+0000 (UTC)
+updatedAt: Wed Feb 13 2019 07:08:28 GMT+0000 (UTC)
 ---
 # Starting a Live Video Broadcast
 This page introduces how to use Agoraâ€™s Web SDK to start a live video broadcast.
@@ -32,7 +32,7 @@ The following lists the major steps to start a live video broadcast on the Webï¼
 
 See the image below for the key steps in the process:
 
-<img alt="../_images/web-sdk-workflow.jpg" src="https://web-cdn.agora.io/docs-files/en/web-sdk-workflow.jpg" style="width: 486.2px; height: 423.5px;"/>
+![](https://web-cdn.agora.io/docs-files/1550041581805)
 
 The `index.html` file in the sample app contains the complete code of the following APIs for the reference. Use these APIs in a web app to start a live video broadcast.
 
@@ -187,7 +187,7 @@ Use the `client.leave`  method to remove the user from the current broadcast \(c
 
 ```javascript
 client.leave(function () {
-  console.log("Leavel channel successfully");
+  console.log("Leave channel successfully");
 }, function (err) {
   console.log("Leave channel failed");
 });

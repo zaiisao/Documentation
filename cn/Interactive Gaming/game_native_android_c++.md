@@ -2,7 +2,7 @@
 ---
 title: 实现游戏语音功能
 description: 
-platform: Android_CPP
+platform: Android
 updatedAt: Fri Nov 02 2018 04:08:54 GMT+0000 (UTC)
 ---
 # 实现游戏语音功能

@@ -1,16 +1,16 @@
 
 ---
-title: 信令密钥说明
+title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 08:52:45 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:19:11 GMT+0000 (UTC)
 ---
-# 信令密钥说明
+# 校验用户权限
 ## 简介
 
 针对用户的项目开发需求，Agora SDK 提供了两种鉴权机制：[App ID](#APPID) 和 [SignalingToken](#SignalingToken) 。下图描述这两种鉴权机制的关系以及适用场景：
 
-<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_signaling.jpg" style="width: 500px;"/>
+<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_signaling.jpg" style="width: 840px;"/>
 
 
 其中：
@@ -57,7 +57,7 @@ updatedAt: Fri Nov 02 2018 08:52:45 GMT+0000 (UTC)
 
 ### 获取 SignalingToken
 
-1.  获取 App ID。详见上文的 [获取 App ID](#GetAnAppID) 。
+1.  获取 App ID。详见上文的[获取 App ID](#GetAnAppID) 。
 
 2.  获取 App Certificate。在上文项目列表中查看 App ID 的地方，启用该项目的 App Certificate:
 
@@ -73,7 +73,6 @@ updatedAt: Fri Nov 02 2018 08:52:45 GMT+0000 (UTC)
 
      <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 		 
-	>  -   如果出于某种原因你需要更新 App Certificate，请联系 [support@agora.io](mailto:support@agora.io) 。
 	>  -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
 	>  -   通常 App Certificate 在启用一小时后生效。
 	>  -   当项目的 App Certificate 被启用后，你必须使用 Token。例如: 在启用 App Certificate 前，你可以使用 App ID 加入频道。但启用了 App Certificate 后，你就必须使用 Token 加入频道。
@@ -142,22 +141,16 @@ updatedAt: Fri Nov 02 2018 08:52:45 GMT+0000 (UTC)
  ```
 
 
- 生成的 token 即为登录 Agora 信令系统所需的 SignalingToken，详见 [使用 SignalingToken](#SignalingToken) 。
+ 生成的 token 即为登录 Agora 信令系统所需的 SignalingToken，详见[使用 SignalingToken](#SignalingToken) 。
 
 
 
 > Agora 已在 GitHub 上提供了生成 SignalingToken 的示例代码：
-
 > -   [C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/generatorSignalToken.h)
-
 > -   [Go](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/go/src/SignalingToken/SignalingToken.go)
-
 > -   [Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/signal/SignalingToken.java)
-
 > -   [Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/src/SignalingToken.js)
-
 > -   [PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/SignalingToken.php)
-
 > -   [Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/src/SignalingToken.py)
 
 

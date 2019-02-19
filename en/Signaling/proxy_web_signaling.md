@@ -3,38 +3,38 @@
 title: Deploy the Enterprise Proxy
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:03:44 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 18:43:00 GMT+0000 (UTC)
 ---
 # Deploy the Enterprise Proxy
-This page shows how enterprises can use the API provided by the Agora Signaling SDK for Web to access Agora’s services through a company firewall.
+This page shows how enterprises can use the API methods provided by the Agora Signaling SDK for the Web to access Agora’s services through a company firewall.
 
-> This page applies to the Agora Signaling SDK for Web only. Proxy services by different service providers may result in slow performance if you are using the Firefox browser. Therefore, Agora recommends using the same service provider for the proxy services. If you use different service providers, Agora recommends not using the Firefox browser.
+> This page applies to the Agora Signaling SDK for the Web only. Proxy services by different service providers may result in slow performance, if you use the Firefox browser. Therefore, Agora recommends using the same service provider for the proxy services. If you use different service providers, Agora recommends not using the Firefox browser.
 
 ## Introduction
 
-Enterprises may restrict employees’ access to unauthorized websites through a company firewall, which may restrict access to Agora’s services as well. Agora provides one interface in the Signaling SDK for Web, which allows requests to bypass the company firewall and reach Agora SD-RTN directly through proxy servers. Enterprises can deploy Nginx Server and call the provided interface to enable internal access to Agora’s services.
+Enterprises may restrict employees’ access to unauthorized websites through a company firewall. The firewall may also restrict access to Agora’s services. Agora provides an interface in the Signaling SDK for the Web. The interface allows requests to bypass the company firewall and reach the Agora SD-RTN directly through proxy servers. Enterprises can deploy the Nginx server and call the provided interface to enable internal access to Agora’s services.
 
 ## Implementations
 
-You need to deploy the Nginx Server by yourself before calling the method in the Signaling SDK for Web to enable the Proxy service. 
+You need to deploy the Nginx server before calling the method in the Signaling SDK for the Web to enable the proxy service. 
 
 ### 1. Deploying the Nginx Server
 
-> Please ensure that you have acquired the domain name and certificate of the Nginx Server before proceeding.
+> Ensure that you have acquired the domain name and certificate of the Nginx server before proceeding.
 
 #### Install the Nginx Server
 
-Refer to the steps in [Nginx Installation Guide](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/) to deploy the Nginx Server.
+Refer to the steps in [Nginx Installation Guide](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/) to deploy the Nginx server.
 
-#### Configure the conf file of the Nginx Server
+#### Configure the `conf` file of the Nginx Server
 
-1.  Run the following command line:
+1.  Run the following command line.
 
 	```
 	sudo vim /etc/nginx/nginx.conf
 	```
 
-2.  Add the following configuration in the http domain of the *conf* file:
+2.  Add the following configuration in the http domain of the `conf` file.
 
 	```
 	 resolver 8.8.8.8;
@@ -61,21 +61,21 @@ Refer to the steps in [Nginx Installation Guide](https://www.nginx.com/resources
 	```
 
 
-3.  Run the following command line:
+3.  Run the following command line.
 
 	```
 	sudo nginx -s reload
 	```
 
-### 2. Call the Method in the Signaling SDK for Web to Set the Proxy
+### 2. Call the Method in the Signaling SDK for the Web to Set the Proxy
 
-Set the `name` and `value` parameters in the `setupdebugging` API
+Set the `name` and `value` parameters in the `setupdebugging` method.
 
 ```
 setup_debugging(name, value)
 ```
 
-Set the `proxyServer` and `turnServer` parameters:
+Set the `proxyServer` and `turnServer` parameters.
 
 <table>
 <colgroup>
@@ -87,10 +87,10 @@ Set the `proxyServer` and `turnServer` parameters:
 <td><strong>Description</strong></td>
 </tr>
 <tr><td><code>name</code></td>
-<td>proxy_server: Enterprises with a company firewall can deploy the Nginx Server and then use this parameter to pass signaling messages to Agora through Nginx</td>
+<td>proxy_server: Enterprises with a company firewall can deploy the Nginx server and use this parameter to pass signaling messages to Agora through the Nginx server.</td>
 </tr>
 <tr><td><code>value</code></td>
-<td>Your server IP or URL</td>
+<td>Your server IP or URL.</td>
 </tr>
 </tbody>
 </table>
@@ -105,5 +105,5 @@ The following figure shows how the proxy works:
 
 -   The enterprise deploys an Nginx proxy server.
 
--   The enterprise users call the method provided by the Signaling SDK for Web. Signaling messages are passed to Agora through the Nginx Server, thus enabling access to Agora’s services.
+-   The enterprise users call the method provided by the Signaling SDK for the Web. Signaling messages are passed to Agora through the Nginx server, thus enabling access to Agora’s services.
 

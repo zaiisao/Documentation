@@ -1,0 +1,31 @@
+
+---
+title: Set the Stereo/High-fidelity Audio Profile
+description: How to set high-quality audio on Web
+platform: Web
+updatedAt: Tue Dec 18 2018 02:58:37 GMT+0000 (UTC)
+---
+# Set the Stereo/High-fidelity Audio Profile
+## Introduction 
+
+High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a 48-KHz sampling rate and a 192-Kbps bitrate. 
+
+
+## Implementation
+Before proceeding, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
+
+The Agora Web SDK provides the [setAudioProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudioprofile) method for developers to set appropriate audio profiles according to the scenarios. The `profile` parameter sets the sampling rate, bitrate, and encoding mode.
+
+```javascript
+  // Sets the audio profile with a 48-KHz sampling rate, stereo sound, and 192-Kbps bitrate.
+  localStream.setAudioProfile("high_quality_stereo");
+  localStream.init(function(){
+   // Initialization successful.
+  });
+```
+
+> For more options, see [setAudioProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudioprofile).
+
+## Considerations
+
+- Call the [setAudioProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudioprofile) method before `Stream.init`.

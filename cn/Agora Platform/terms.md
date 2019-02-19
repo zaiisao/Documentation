@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 09:35:34 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:29:19 GMT+0000 (UTC)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -36,7 +36,7 @@ Agora 提供 App Certificate 用以生成 [动态密钥](#key)。
 
 动态密钥具有有效期，并包含客户端权限，例如不同的角色权限（[主播](#host)和[观众](#audience)）。
 
-基于 SDK 版本，动态密钥可以是 Channel Key 或 Token，详细信息请查看 [密钥说明](../../cn/Voice/token.md)。
+基于 SDK 版本，动态密钥可以是 Channel Key 或 Token，详细信息请查看 [校验用户权限](../../cn/Voice/token.md)。
 
 ### SD-RTN
 

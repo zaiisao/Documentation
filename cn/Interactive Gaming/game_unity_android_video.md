@@ -3,15 +3,13 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(Android)
-updatedAt: Fri Nov 02 2018 04:11:39 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 12:45:49 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
 使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
 
 -   创建/加入频道
-
 -   自由发言
-
 -   离开频道
 
 
@@ -19,100 +17,246 @@ updatedAt: Fri Nov 02 2018 04:11:39 GMT+0000 (UTC)
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads)最新的 Unity 视频软件包。软件包结构如下:
 
-    <img alt="../_images/AMG-Video-Unity3D_0.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_0.png" style="width: 370.0px;"/>
+    ![](https://web-cdn.agora.io/docs-files/1548828163644)
 
 > `Hello-Video-Unity-Agora` 即为本文需要使用的代码示例。
 
-   1.  请确保已满足以下环境要求:
+2.  请确保已满足以下环境要求:
 
-       -   Unity 5.5 或更高版本
+    -   Unity 5.5 或更高版本
+    -   Android Studio 2.0 或更高版本
+    -   两部支持语音和视频的 Android 真机设备
+    -   准备一个 App ID，详见 [获取 App ID](../../cn/Interactive%20Gaming/token.md)
 
-       -   Android Studio 2.0 或更高版本
-
-       -   两部支持语音和视频的 Android 真机设备
-
-       -   准备一个 App ID，详见 [获取 App ID](../../cn/Agora%20Platform/token.md)
-
-   2.  请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
+3.  请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
 
 
-## 步骤 2: 编译代码示例
+## 步骤 2: 创建新项目
 
-1.  使用 Unity 打开项目 `Hello-Video-Unity-Agora` 。
+1. 打开 Unity 创建一个新的项目。选择 **3D**：
 
-    <img alt="../_images/AMG-Video-Unity3D_1.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_1.png" />
+	<img alt="../_images/AMG-Video-Unity3D_23.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_23.png" />
 
+2. 在默认的界面上添加 **Game Object: Sphere** 和一个 **Button** 按钮：
 
-2.  填写 App ID。Unity 会提示 error，点击状态栏的红色惊叹号，自动打开 MonoDevelop 并定位到出错的脚本处填写 App ID。
+	<img alt="../_images/AMG-Video-Unity3D_24.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_24.png"/>
+	
+3. 将界面保存至 `Assets/playscene.unity`。
 
-    <img alt="../_images/AMG-Video-Unity3D_2.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_2.png "/>
-
-
-3.  检查 Script 文件和 GameObject 的绑定状态。**关于如何绑定，请参考 Unity 官方文档** 。
-
-    1.  打开 SceneHome, 选择 **JoinButton**，检查对应的 Script 是否正常（如果有黄色的惊叹号，则需要重新选择 `ButtonClick.cs` 文件\)。
-
-        <img alt="../_images/AMG-Video-Unity3D_3.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_3.png" />
-
-    2.  打开 SceneHelloVideo，选择 **LeaveButton**，和检查 Scene0 中的 **JoinButton** 一样，检查对应的 Script 是否正常（如果有黄色的惊叹号，则需要重新选择 `ButtonClick.cs` 文件）。
-
-    3.  检查 SceneHelloVideo 中的 Cube 和 Cylinder，是否显示 script 文件丢失。如果显示这样的标记:
-
-         <img alt="../_images/AMG-Video-Unity3D_4.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_4.png" style="width: 370.0px;"/>
-
-         则需要重新绑定 Script 文件。
-
-         -   点击上图被红框标记的圆形按钮，弹出下面的脚本对话框:
-
-           <img alt="../_images/AMG-Video-Unity3D_5.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_5.png" style="width: 370.0px;"/>
-
-         -   选择 `videoSurface` 。
-
-4.  选择 **File\> Build Settings…** 。
-
-     <img alt="../_images/AMG-Video-Unity3D_7.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_7.png" />
-
-    1.  在弹出的对话框里:
-
-      -   选择 **Android** 平台；
-
-          <img alt="../_images/AMG-Video-Unity3D_8.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_8.png" />
-
-     -   Build System 选择 **Gradle\(New\)** ;
-
-     -   勾选 **Export Project** ;
-
-     -   选择 **Player Settings\> Other Settings\>Graphics API\> OpenGLES2**;
-
-     -   点击按钮 **Export**，在文件对话框里选择导出到某个文件夹\(需要对新文件夹进行命名\)，例如:
-
-         <img alt="../_images/AMG-Video-Unity3D_9.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_9.png" />
-
-     -   点击 **create** 进行确认。
-
-   2.  打开命令行终端\(Terminal\), 进入到 Android/RollingVideo 目录下，执行命令编译和安装:
-
-    ```
-    ./gradlew assembleDebug
-    adb install build/outputs/apk/Hello Gaming Video Agora-debug.apk
-    ```
+更多 Unity 使用相关问题，请参考 [Unity 官方文档](https://docs.unity3d.com/2018.2/Documentation/Manual)。
 
 
-## 步骤 3: 演示游戏视频
+## 步骤 3: 添加 SDK
 
-演示游戏视频至少需要两部或多部 Android 真机，本文仅以两部手机为例进行演示。
+1. 在项目的根目录下，创建如下文件夹或路径：
 
-1.  两部手机上都运行 `Hello Gaming Video Agora `。
+	- `Assets/Plugins/Android/AgoraRtcEngineKit.plugin/libs`
+	- `Assets/Scripts`
 
-    <img alt="../_images/AMG-Video-Unity3D_11.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_11.png" style="width: 370.0px;"/>
+2. 将下载下来的 SDK 包中的 `libs/Scripts/AgoraGamingSDK` 文件夹复制到你项目的 `Assets/Scripts` 路径下
+3. 将 SDK 包中的 `libs/Android/agora-rtc-sdk.jar` 文件复制到你项目的 `Assets/Plugins/Android/AgoraAudioKit.plugin/libs` 路径下
+4. 将示例代码中的 `Assets/Plugins/Android/mainTemplate.gradle` 文件复制到你项目的 `Assets/Plugins/Android` 路径下
+5. 将示例代码中的 `Assets/Plugins/Android/AgoraRtcEngine.plugin/AndroidManifest.xml` 文件复制到你项目的 `Assets/Plugins/Android/AgoraRtcEnginet.plugin` 路径下
+6. 将 SDK 包 `libs/Android` 路径下的 **armeabi-v7a** 和 **x86** 文件夹复制到你项目的 `Assets/Plugins/Android/AgoraRtcEngine.plugin/libs` 路径下
 
-2.  两部手机加入相同的频道名，默认频道名为 unit3d，你可以自行修改。只有加入相同的频道才能互通。
+## 步骤 4：添加权限
 
-    <img alt="../_images/AMG-Video-Unity3D_12.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-Video-Unity3D_12.png" style="width: 370.0px;"/>
+在你的项目的 `Assets/Plugins/Android/AgoraAudioKit.plugin/AndroidManifest.xml` 文件中，添加如下权限：
 
+```C#
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+```
 
-你现在可以在频道内自由发言了！请观察该页面的文字提示消息来确定演示程序的运行状况。
+## 步骤 5：防止混淆代码
 
-> 有的系统会弹出授权对话框（麦克风，网络等），需要同意。如果没有声音，或者不通，请检查权限是否被禁掉了。
+在你的项目的 `Assets/Plugins/Android/AgoraAudioKit.plugin/project.properties` 文件中添加如下行，防止混淆代码：
+
+```
+-keep class io.agora.**{*;}
+```
+
+## 步骤 6：调用 API 实现游戏视频
+
+调用 [互动游戏 API](../../cn/Interactive%20Gaming/game_unity.md) 中的 API，实现你想要的功能。下图展示如何创建一个 C# `example.cs` 文件：
+
+<img alt="../_images/AMG-Video-Unity3D_25.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_25.png" />
+
+```
+using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using agora_gaming_rtc;
+
+public class example : MonoBehaviour
+{
+    private IRtcEngine mRtcEngine;
+    private string mVendorKey = <your app id>;
+
+    // Use this for initialization
+    void Start ()
+    {
+        GameObject g = GameObject.Find (“Join”);
+        Text text = g.GetComponentInChildren<Text>(true);
+        text.text = “Join”;
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+
+    }
+
+    public void onButtonClicked() {
+        GameObject g = GameObject.Find (“Join”);
+        Text text = g.GetComponentInChildren<Text>(true);
+        if (ReferenceEquals (mRtcEngine, null)) {
+            startCall ();
+            text.text = “Leave”;
+        } else {
+            endCall ();
+            text.text = “Join”;
+        }
+    }
+
+    void startCall()
+    {
+        // init engine
+        mRtcEngine = IRtcEngine.getEngine (mVendorKey);
+        // enable log
+        mRtcEngine.SetLogFilter (LOG_FILTER.DEBUG | LOG_FILTER.INFO | LOG_FILTER.WARNING | LOG_FILTER.ERROR | LOG_FILTER.CRITICAL);
+
+        // set callbacks (optional)
+        mRtcEngine.OnJoinChannelSuccess = onJoinChannelSuccess;
+        mRtcEngine.OnUserJoined = onUserJoined;
+        mRtcEngine.OnUserOffline = onUserOffline;
+
+        // enable video
+        mRtcEngine.EnableVideo();
+        // allow camera output callback
+        mRtcEngine.EnableVideoObserver();
+
+        // join channel
+        mRtcEngine.JoinChannel(“exampleChannel”, null, 0);
+    }
+
+    void endCall()
+    {
+        // leave channel
+        mRtcEngine.LeaveChannel();
+        // deregister video frame observers in native-c code
+        mRtcEngine.DisableVideoObserver();
+
+        IRtcEngine.Destroy ();
+        mRtcEngine = null;
+    }
+
+    // Callbacks
+    private void onJoinChannelSuccess (string channelName, uint uid, int elapsed)
+    {
+        Debug.Log (“JoinChannelSuccessHandler: uid = “ + uid);
+    }
+
+    // When a remote user joined, this delegate will be called. Typically
+    // create a GameObject to render video on it
+    private void onUserJoined(uint uid, int elapsed)
+    {
+        Debug.Log (“onUserJoined: uid = “ + uid);
+        // this is called in the main thread
+
+        // find a game object to render the video stream from ‘uid’
+        GameObject go = GameObject.Find (uid.ToString ());
+        if (!ReferenceEquals (go, null)) {
+            return; // reuse
+        }
+
+        // create a GameObject and assign it to this new user
+        go = GameObject.CreatePrimitive (PrimitiveType.Plane);
+        if (!ReferenceEquals (go, null)) {
+            go.name = uid.ToString ();
+
+            // configure videoSurface
+            VideoSurface o = go.AddComponent<VideoSurface> ();
+            o.SetForUser (uid);
+            o.mAdjustTransfrom += onTransformDelegate;
+            o.SetEnable (true);
+            o.transform.Rotate (-90.0f, 0.0f, 0.0f);
+            float r = Random.Range (-5.0f, 5.0f);
+            o.transform.position = new Vector3 (0f, r, 0f);
+            o.transform.localScale = new Vector3 (0.5f, 0.5f, 1.0f);
+        }
+    }
+
+    // When a remote user is offline, this delegate will be called. Typically
+    // delete the GameObject for this user
+    private void onUserOffline(uint uid, USER_OFFLINE_REASON reason)
+    {
+        // remove the video stream
+        Debug.Log (“onUserOffline: uid = “ + uid);
+        // this is called in the main thread
+        GameObject go = GameObject.Find (uid.ToString());
+        if (!ReferenceEquals (go, null)) {
+            Destroy (go);
+        }
+    }
+
+    // Delegate: Adjust the transform for the game object ‘objName’ connected with the user ‘uid’
+    // You can save information for ‘uid’ (e.g. which GameObject is attached)
+    private void onTransformDelegate (uint uid, string objName, ref Transform transform)
+    {
+        if (uid == 0) {
+            transform.position = new Vector3 (0f, 2f, 0f);
+            transform.localScale = new Vector3 (2.0f, 2.0f, 1.0f);
+            transform.Rotate (0f, 1f, 0f);
+        } else {
+            transform.Rotate (0.0f, 1.0f, 0.0f);
+        }
+    }
+}
+```
+
+## 步骤 7：设置 GameObject 脚本文件
+
+1. 点击 **Join**，选择 `example.cs`
+2. 在 **Sphere** 中选择 `VideoSource.cs`
+3. 连接 Android 设备
+
+## 步骤 8：编译及安装
+
+1. 选择 **File > Build Settings**，会弹出一个 **Build Settings** 的弹框
+2. 打开游戏界面，点击 **Add Open Scenes**，加载游戏界面
+3. 将平台选择为 **Android**，并将 **Build System** 设置为 **Internal**：
+
+	![](https://web-cdn.agora.io/docs-files/1548830012546)
+	
+4. 点击 **Play Settings**，打开 **PlayerSettingspanel**：
+
+  - **Other Settings**/**Rendering**/**Auto Graphics API**：选择 **False**
+  - 删除 **OpenGLES3** 和 **Vulkan**
+  - 请确认保留了 **OpenGLES2**，使用视频功能需要使用
+
+5. 点击 **Save** 保存相关设置
+6. 点击 **Build** 编译项目
+
+## 步骤 9：运行项目
+
+你需要两台 Android 设备来实现游戏视频功能。在两台设备上点击 **Join** 加入频道。
+
+<img alt="../_images/AMG-Video-Unity3D_20.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_20.png" style="width: 840.0px;"/>
+
+现在你可以使用游戏视频功能了。如果没有看到视频，请检查如下项：
+
+- App ID 是否正确有效
+- 网络状态是否良好
+- 是否授权使用网络及摄像头
 
 

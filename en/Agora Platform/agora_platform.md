@@ -3,119 +3,77 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 06 2018 03:10:50 GMT+0000 (UTC)
+updatedAt: Fri Jan 25 2019 06:34:24 GMT+0000 (UTC)
 ---
 # Agora Platform Overview
-## SD-RTN
-
-
-
-SD-RTN \(Software Defined Real-time Network\) is a “smart” network that relies on cloud computing technology and is dedicated to the transmission of real-time audio and video services worldwide, covering 200+ countries worldwide. As a layer of PaaS \(Platform as a Service\) that provides real-time audio and video services, SD-RTN focuses on the network infrastructure capabilities of audio and video services for upper-layer \(SaaS\) services, solving common problems for developers, creating a friendly development environment and enabling agile development.
-
--   Global network coverage
-
-    -   Covering 200+ countries
-
-    -   Covering 100+ telecommunication providers in China
-
--   Mass access capability
-
-    -   Support multiple intelligent terminal access
-
-    -   Single channel can support 50K people online at the same time
-
--   QoS capability enhancement
-
-    -   Prevent network congestion in advance
-
-    -   Weak network anti-lost guarantee
-
--   QoS-based dynamic routing
-
-    -   Comprehensive assessment of network resources
-
-    -   QoS optimal path guarantee
-
--   Service SLA guarantee
-
-    -   Multi-service SLA protection
-
-    -   After-sales business support
-
--   Global network reliability
-
-    -   Global available time: 99.999%
-
-    -   Invisible core business, such as anti-DDOS
-
-    -   Above 99% global 5 s landing success rate
-
--   E2E network average delay 76 ms guarantee
-
-    -   Last Mile access algorithm optimization: full platform full interoperability
-
-    -   Support for iOS & 5000+ Android terminals
-
-    -   Support for iOS, Android, Windows, MacOS, Linux, CoCos, Unity, etc.
-
--   UDP protocol optimization
-
-    -   Optimize multiple private protocols based on UDP protocol
-
--   Self-developed audio and video codec
-
-    -   Efficient use of network resources
-
-    -   Self-developed SOLO, NOVA
-
--   Anti-loss package optimization
-
-    -   Algorithm for optimizing anti-packet-loss mechanism under weak network
-
-
-## Audio
-
-High fidelity, 3D surround sound experience
-
--   48kHz full-band acquisition: highly restored acoustic sound
-
--   3A algorithm based on machine learning: echo cancellation, automatic gain, noise suppression
-
--   Hearing enhancement: two-channel, panoramic sound, listening sound, mixing, reverb effects, ear return, voice change
-
-
-## Video
-
-Immersive visual experience
-
--   Continuous network detection: network detection before and after encoding, network friendly
-
--   Dynamic network flow control: maintain dynamic balance of network bandwidth resources
-
--   Highly efficient anti-lost coding products: optimized coding algorithm, smooth video transmission, prevent network impact
-
--   Lost packet compensation: Automatically repair the content to ensure the experience
-
--   Visual enhancement: beauty based on machine learning
-
+Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications in your own application quickly.
 
 ## Agora SDK
 
-The Agora SDK is designed to be flexible in incorperating the SDK to real-time applications such as IoT, education, social, financial, and network acceleration.
+After integrating the Agora SDK, you can call different sets of APIs to implement voice/video communications in different scenarios. 
 
--   API Usage Guide and Use Cases
+| Agora SDK  | Functions                   | Description                                                  |
+| ---------- | ------------------------------------ | ------------------------------------------------------------ |
+| Voice SDK  | [Voice Call](../../en/Voice/product_voice.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only live broadcasts. <sup>[1]</sup> |
+| Video SDK  | [Video Call](../../en/Video/product_video.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | Provides both voice and video functions. |
+| Gaming SDK | [Interactive Gaming](../../cn/Interactive%20Gaming/product_gaming.md)                   | Optimized for gaming applications. The package size is about 1 MB. |
+| Recording Add-on  | [Recording](../../en/Recording/product_recording.md)                     | Records and saves voice/video calls and live broadcasts on your server. |
+| Signalling Add-on | [Signalling](../../en/Signaling/product_signaling.md)                    | Based on the TCP and provides a stable messaging channel for real-time communication scenarios. |
 
--   Productized core module: more customized, split the original SDK on demand
+> [1] Only supports Android and iOS for now.
 
--   Modular audio and video processing interface: easier to integrate third-party SDK
+## Self-built Infrastructure
 
+Agora's Software Defined Real-time Network (SD-RTN™) is a real-time transmission network built by Agora and is the only network infrastructure specifically designed for real-time communications in the world. All voice and video services provided by the Agora SDK are deployed and transmitted through the Agora SD-RTN™. 
 
-### The Agora Native SDK
+Agora deploys about 200 data centers worldwide that use intelligent dynamic routing algorithms to achieve millisecond latency and ensure high availability of Agora's service.
 
-The Agora Native SDK is available to developers on iOS, Android, Windows, and Mac platforms. It has all the necessary voice and video codecs built-in, along with the logic to access the Agora Global Network and automatically respond to disconnections and varying network conditions. Developers simply need the provided high-level APIs. Everything else is built in.
+| Feature                                         | Description                                                  |
+| ----------------------------------------------- | ------------------------------------------------------------ |
+| Global network coverage                         | <li>Covers 200+ countries and regions<li>Covers dozens of small and medium telecommunication providers in China |
+| Mass access capability                          | <li>Supports multiple intelligent terminal access<li>A single channel can support a million people online at the same time |
+| QoS (Quality of Service) capability enhancement | <li>Prevents network congestion in advance<li>Weak network anti-loss guarantee |
+| QoS-based dynamic routing                       | <li>Comprehensive assessment of network resources<li>QoS optimal path guarantee |
+| SLA (Service Level Agreement) guarantee         | <li>7 &times; 24 support, including ticketing system/IM/community<li>One-to-one VIP service |
+| Global network reliability                      | <li>Global network availability at 99.999%<li>Invisible core business, such as anti-DDoS |
+| Compatibility and Interoperability              | <li>Support for 6000+ devices <li> Support for mainstream web browsers, including Google Chrome, Safari, and Firefox<li>Support for iOS, Android, the Web, Windows, macOS, Linux, CoCos, Unity, and so on |
+| UDP (User Datagram Protocol) optimization       | Optimizes multiple private protocols based on the UDP        |
+| Self-developed audio and video codecs           | <li>Efficient use of network resources<li>Self-developed SOLO and NOVA codecs |
+| Anti-packet-loss optimization                   | <li>Algorithm for optimizing anti-packet-loss mechanism under weak network conditions<li>Audio anti-packet-loss rate of 70% |
 
-### The Agora Web SDK
+## Self-developed Audio and Video Codecs
 
-The Agora Web SDK enables the development of web apps that have virtually the same functionalities as native apps developed with the Native SDK.
+Agora is the only RTC service provider in the world using self-developed audio and video codecs. This allows Agora to have unique advantages in audio and video qualities.
 
+## Audio
 
+- High-fidelity, 3D surround sound experience
+- 48 KHz full-band acquisition: Highly restored acoustic sound
+- 3A algorithm based on machine learning: Echo cancellation, automatic gain, and noise suppression
+- Audio enhancement: Stereo sound, 3D surround sound, sound localization, audio mixing, reverberation effects, in-ear monitoring, and voice changes
+
+## Video
+
+- Immersive visual experience
+
+- Continuous network detection: Network detection before and after encoding, and network friendliness
+- Dynamic network flow control: Maintains a dynamic balance of network bandwidth resources
+- Highly efficient anti-loss coding products: Optimized coding algorithms and smooth video transmission that minimizes network impact
+- Packet loss compensation: Automatically repairs content to ensure the best experience
+- Visual enhancement: Image enhancement based on machine learning
+
+## Developer Tools and Support
+
+- The [Developer Center](https://docs.agora.io/en) provides documentation for developers to integrate and use Agora SDKs, and for SDK and sample code downloads.
+- [Agora Dashboard](https://dashboard.agora.io/) is a self-service system that enables developers to monitor usage statistics, track the QoE, manage projects, manage account privileges, and submit tickets.
+- [Agora Github](https://github.com/AgoraIO) and [GitHub Community](https://github.com/AgoraIO-Community) provide demos and use cases, which can also be found at the [Developer Center](https://docs.agora.io/en/Agora%20Platform/sampleapps).
+- 5 &times; 8 technical support. Developers can ask questions about integration on [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io), and [submit tickets](https://dashboard.agora.io/show-ticket-submission) for quality issues.
+- [Agora Dashboard](https://dashboard.agora.io/) provides [Agora Analytics](https://dashboard.agora.io/analytics/call/search) to track the QoE. Agora Analytics displays data of the call process in diagrams. For example:
+
+  - Device status, including the system CPU usage and the app's CPU usage
+  - User events. For example, stop sending audio or start receiving video
+  - Bitrates of the sent/received audio and video
+  - The freeze time in rendering the audio and video
+  - The packet loss rates of the audio and video
+
+  You can quickly see the QoE and identify the issues from the diagrams. [Check out](https://dashboard.agora.io/analytics/call/tutorial) how you can analyze your calls with Agora Analytics.

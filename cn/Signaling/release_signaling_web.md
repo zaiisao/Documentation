@@ -3,44 +3,46 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:17:06 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 09:19:51 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
 
-Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。
+Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。点击 [信令产品概述](https://docs.agora.io/cn/Signaling/product_signaling?platform=All%20Platforms) 了解关键特性。
 
 ### 已知问题和局限性
 
--   一个频道目前最多可容纳一万人同时在线。
+-   一个频道目前最多可容纳一万人同时在线。声网建议用户在使用千人以上大频道时关闭用户上下线通知以减小 SDK 压力和带宽消耗。详见 `channelSetAttr` 方法。
 
 -   频道消息：
 
     -   每条消息最大为 8k 可见字符。
 
-    -   每个用户不超过 1 条/秒，整个频道不能超过 100 条消息/秒，超过频率限制的消息将丢失。
+    -   每个用户不超过 60 条/秒，整个频道不能超过 200 条消息/秒，超过频率限制的消息将丢失。
 
-    -   暂不支持频道离线消息。
+    -   暂不支持离线消息。
+
+    -   仅支持 UTF-8 字符编码。
 
 -   点对点消息：
 
     -   每条消息最大为 8k 可见字符。
 
-    -   暂不支持频道离线消息。
+    -   暂不支持离线消息。
 
+    -   仅支持 UTF-8 字符编码。
 
 -   频道属性回调：
 
     -   每条频道属性回调不超过 10 条/s。
 
--   如需开通 SIP 网关接入 Agora 信令系统，请联系 [support@agora.io](mailto:support@agora.io)。后续将提供自行配置方案。
 
 
 ## 1.4.0 BETA 版
 
 发布于 2018 年 8 月 24 日。
 
--   login 登陆接口增加参数：最高重连次数 `reconnect_count` （默认 10 次）和重连失败时间 `reconnect_timeout`（默认 30 秒）
+-   login 登录接口增加参数：最高重连次数 `reconnect_count` （默认 10 次）和重连失败时间 `reconnect_timeout`（默认 30 秒）
 
 -   支持 UMD 规范
 

@@ -3,10 +3,15 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:20:52 GMT+0000 (UTC)
+updatedAt: Fri Nov 16 2018 03:48:32 GMT+0000 (UTC)
 ---
 # 推流到 CDN
-## 简介
+## 功能描述
+
+旁路推流功能用于将主播的上行音视频流转化为 RTMP 流分发，供 Web 端或流媒体播放器端观看。
+
+> 请联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
+
 
 声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
 

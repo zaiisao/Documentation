@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Nov 07 2018 07:42:21 GMT+0000 (UTC)
+updatedAt: Fri Feb 15 2019 09:22:33 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -35,6 +35,9 @@ All requests should be sent to BaseUrl: *https://api.agora.io/dev/v1*.
 ## 3. Project API
 
 BaseUrl: **http://api.agora.io/dev/v1**.
+
+The following chart shows how you can use Project APIs.
+![](https://web-cdn.agora.io/docs-files/1545990299008)
 
 ### Fetch all Projects (GET)
 
@@ -328,6 +331,9 @@ BaseUrl: **http://api.agora.io/dev/v1**.
 
 BaseUrl: **https://api.agora.io/dev/v1**.
 
+The following chart shows how you can use Usage APIs.
+![](https://web-cdn.agora.io/docs-files/1545990365425)
+
 ### Fetch Usages (GET)
 
 -  Method: GET
@@ -374,6 +380,16 @@ BaseUrl: **https://api.agora.io/dev/v1**.
 
 BaseUrl: **https://api.agora.io/dev/v1**.
 
+The following chart shows how you can use related APIs.
+![](https://web-cdn.agora.io/docs-files/1545990392723)
+
+> The banned user receives the corresponding callback as follows:
+
+- Android: [`onConnectionBanned`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
+- iOS/macOS:[`ConnectionDidBanned`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:)
+- Web:[`onclient-banned`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)
+- Windows:[`onConnectionBanned`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a38e9d403ae4732dff71110b454149404)
+
 ### Create a Rule (POST)
 
 -  Method: POST
@@ -387,13 +403,15 @@ BaseUrl: **https://api.agora.io/dev/v1**.
             "uid":"",     // Optional, UID which can be obtained by using the SDK API. Do not pass uid:0
             "ip":"",      // Optional, IP address of the user to be banned. Do not pass ip:0
             "time": 60    // Optional, banned period in minutes. 1440 minutes maximum, 1 minute minimum. If you set it to over 1440 minutes, it will be processed as 1440 minutes. If you do not set it, the default duration is 1 hour, that is, time:60 
+						"privileges":["join_channel"]
      }
     ```
 
-> The ban rule is based on the permutation and combination of the three fields: cname, uid and ip. See the following examples:
-> -   If you pass the ip parameter, but not cname or uid, then the rule is that this ip cannot login any channel in the App.
-> -   If you pass the cname parameter, but not uid or ip, then the rule is that no one can login the channel specified by the cname parameter.
-> -   If you pass the cname and uid parameter, but not ip, then the rule is that the uid cannot login the channel specified by the cname parameter.
+> - Setting the `time` argument means that the banning rule does not take effect. The server sets all the users in the channel that comform to the rule offline and the users can log in again to rejoin the channel.
+> - The ban rule is based on the permutation and combination of the three fields: cname, uid and ip. See the following examples:
+>    -   If you pass the ip parameter, but not cname or uid, then the rule is that this ip cannot login any channel in the App.
+>    -   If you pass the cname parameter, but not uid or ip, then the rule is that no one can login the channel specified by the cname parameter.
+>    -   If you pass the cname and uid parameter, but not ip, then the rule is that the uid cannot login the channel specified by the cname parameter.
 
 -  Response:
 
@@ -425,7 +443,7 @@ BaseUrl: **https://api.agora.io/dev/v1**.
         "rules": [
             {
                 "id": 1953,                                     // The rule ID. If you want to update the rule, then you need the rule ID to specify one
-                "appid": "80e54398fed94ae8a010acf782f569b7"     // project App ID
+                "appid": ""                                     // project App ID
                 "uid": 1,                                       // UID which can be obtained by using the SDK API
                 "opid": 1406,                                   // Operating ID which is used to check the operation records for issues tracking
                 "cname": "11",                                  // The channel name
@@ -494,6 +512,9 @@ BaseUrl：**http://api.agora.io/dev/v1/**.
 
 > To ensure the availability of this function to all our customers, Agora decides to rate limit on the call frequency of this API. When this frequency limit is exceeded, the HTTP Error Code 429 \(Too Many Requests\) is triggered. Agora considers this frequency limit adequate for most of our customers in most scenarios. Should you receive this Error Code, Agora recommends adjusting your call frequency. Should this limit fails to meet your need, please contact [sales-us@agora.io](mailto:sales-us@agora.io).
 
+The following chart shows how you can use Online Statistics Query APIs.
+![](https://web-cdn.agora.io/docs-files/1545990432233)
+
 ### About the User Role
 
 At present, the user roles, also called online roles, retrieved by the RESTful API is different from the roles that are specified in the *setClientRole* method. The online roles are distinguished by the channel profile and the type of the upstream media data. Currently we have the following 5 online roles:
@@ -560,54 +581,58 @@ Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
 
 -  Response:
 
-    ```
-    {
-         "success": true,
-         "data": {
-             "in_channel": false,
-             "role": 2
-         }
-    }
-    ```
+	```
+	{
+		"success": true,
+		"data": {
+			"join": 1549073054,
+			"in_channel": true,
+			"role": 2
+		}
+	}
+	```
 
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>success</td>
-	<td><p>Checks the request state</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>in_channel</td>
-	<td><p>Checks if the user is in the channel</p>
-	<ul>
-	<li>true: The user is in the channel</li>
-	<li>false: The user is not in the channel</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>role</td>
-	<td><p>Checks the role of the user in the channel</p>
-	<ul>
-	<li>0: Unknown role</li>
-	<li>1: Communication user</li>
-	<li>2: Video live broadcaster</li>
-	<li>3: Live broadcast audience</li>
-	<li>4: Audio live broadcaster</li>
-	</ul>
-	</td>
-	</tr>
-	</tbody>
-	</table>
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Parameter</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><tr><td>join</td>
+<td><p>The timestamp when the user joins the channel</p>
+</td></tr>
+<td>success</td>
+<td><p>Checks the request state</p>
+<ul>
+<li>true: Request succeeded</li>
+<li>false: Request failed</li>
+</ul>
+</td>
+</tr>
+<tr><td>in_channel</td>
+<td><p>Checks if the user is in the channel</p>
+<ul>
+<li>true: The user is in the channel</li>
+<li>false: The user is not in the channel</li>
+</ul>
+</td>
+</tr>
+<tr><td>role</td>
+<td><p>Checks the role of the user in the channel</p>
+<ul>
+<li>0: Unknown role</li>
+<li>1: Communication user</li>
+<li>2: Video live broadcaster</li>
+<li>3: Live broadcast audience</li>
+<li>4: Audio live broadcaster</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -708,7 +733,7 @@ Example: /channel/user/<appid\>/<channelName\>
 
 
 
-### Get the Vendor Channel List (GET)
+### Get the Project List (GET)
 
 This method gets the channel list of a specified vendor.
 
@@ -859,6 +884,6 @@ Example: /channel/business/hostin/<appid\>/<uid\>/<channelName\>
 
 ## 7. Error Codes
 
-See [Error Codes and Warning Codes](../../en/API%20Reference/the_error_native.md).
+See [Error Codes and Warning Codes](../../en/Interactive%20Broadcast/the_error_native.md).
 
 

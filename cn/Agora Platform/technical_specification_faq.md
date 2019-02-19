@@ -3,14 +3,14 @@
 title: 技术参数
 description: 
 platform: 技术参数
-updatedAt: Fri Nov 02 2018 04:04:10 GMT+0000 (UTC)
+updatedAt: Mon Feb 11 2019 02:54:03 GMT+0000 (UTC)
 ---
 # 技术参数
 ## 平台与规模
 
 ### 声网 Agora.io 支持哪些平台？
 
-全平台：Android、iOS、Windows、macOS、Linux 以及 Web。
+全平台：Android、iOS、Windows、macOS、Linux、Web 以及微信小程序。
 
 ### 声网 Agora.io 音视频最多支持多少人同时在线通话？
 
@@ -43,7 +43,7 @@ updatedAt: Fri Nov 02 2018 04:04:10 GMT+0000 (UTC)
 各平台主流的开发语言都支持，例如：
 
 * Android: Java, C
-* iOS/macOS: Objective-c, Swift
+* iOS/macOS: Objective-C, Swift
 * Windows: C++
 * Web: JavaScript
 * Cocos: C++
@@ -60,9 +60,9 @@ updatedAt: Fri Nov 02 2018 04:04:10 GMT+0000 (UTC)
 
 基于UDP的私有应用层协议。
 
-### 现有 Android demo 是否有 eclipse 版？
+### 现有 Android 示例代码是否有 Eclipse 版？
 
-没有。demo 支持 Android Studio 版本。
+由于 Eclipse 开发环境较为陈旧，目前不支持 Eclipse，只支持 Android Studio 版本。
 
 ## 编码
 
@@ -109,8 +109,6 @@ updatedAt: Fri Nov 02 2018 04:04:10 GMT+0000 (UTC)
 
 一般来说，带宽使用率为每秒 4 KB 到 13 KB 不等（在非 Wi-Fi 环境中可能为 4-6 KB 每秒）。在某些情况下，可以将其调整到 1 KB 每秒以下。
 
-更多详细信息，请联系 support@agora.io 。
-
 ### 通话时会耗费多少流量？
 
 在音视频通话中，需要上网传输一定的数据, 有网络就会出现流量消耗，但我们产品的流量消耗跟同类产品比已经非常低了:
@@ -124,40 +122,56 @@ updatedAt: Fri Nov 02 2018 04:04:10 GMT+0000 (UTC)
 
 对最新的中高端手机来说，可能会占用 20%+ 的 CPU（与 Skype 在手机上的占用率相近）。但我们可以根据您的需求进行优化。
 
-更多详细信息，请联系 support@agora.io 。
-
 ### 音视频质量的打分依据是什么?
 
-主观依据: 请参考 MOS (Mean Opinion Score）标准。
+Agora 目前主要从如下维度对音视频质量进行检测：
 
-单主播打分：主播默认为 60P@15fps@500kbps：
+#### 远端用户音频质量统计
 
-* Excellent: 优秀，如果主播带宽 > 450kpbs 的比例超过 80%
-* Good: 良好，如果主播带宽 > 450kpbs 的比例超过 80%
-* Poor: 一般, 如果主播带宽 > 300kpbs 的比例超过 80%
-* Bad: 差，如果主播带宽 > 200kpbs 的比例超过 80%
-* Very Bad: 非常差，如果主播带宽 > 100kpbs 的比例超过 80%
+反映远端音频流全链路的音频质量以及传输层网络状态。涉及如下 2 个回调：
 
-单个观众接收 FPS 质量打分：
+1. `onRemoteAudioStats`：侧重反映通话中远端音频流的全链路音频质量，更贴近用户主观感受。主要返回信息：
 
-* Excellent: 优秀，观众接收帧率为 13 fps 的比例超过80%
-* Good: 良好，观众的接收帧率为 11 fps 的比例超过 80%
-* Poor: 一般，观众的接收帧率为 9 fps 的比例超过 80%
-* Bad: 差，观众的接收帧率为 6 fps 的比例超过 80%
-* Very Bad: 非常差，观众的接收帧率为 4 fps 的比例超过 80%
+	- `quality`：音频接收质量打分，主要反映用户的主观感受
+	
+		- 0：网络质量未知
+		- 1：网络质量极好
+		- 2：用户主观感受接近极好，但码率略低
+		- 3：用户主观感受有瑕疵，但不影响沟通
+		- 4：勉强能沟通，但不顺畅
+		- 5：网络质量非常差，基本不能沟通
 
-语音通话打分：
-* Excellent: 优秀，平均丢包率小于 1%
-* Good: 良好，平均丢包率小于 2%
-* Poor: 一般，平均丢包率小于 3%
-* Bad: 差，平均丢包率小于 5%
-* Very Bad: 非常差，平均丢包率大于等于 5%
+	- `networkTransportDelay`：网络传输层延时（毫秒）
+	- `jitterBufferDelay`：接收端网络抖动延时（毫秒）
+	- `audioLossRate`：音频丢帧率
 
-视频通话打分：
+2. `onRemoteAudioTransportStats`：侧重反映通话中远端音频流的传输层网络状态，数据更为客观。主要返回信息：
 
-* Excellent: 优秀，平均接收帧率大于或等于 12 fps
-* Good: 良好，平均接收帧率小于 12 fps
-* Poor: 一般，平均接收帧率小于 10 fps
-* Bad: 差，平均接收帧率小于 7 fps
-* Very Bad: 非常差，平均接收帧率小于 4 fps
+	- `delay`：网络传输层延时（毫秒）
+	- `lost`：传输层音频丢包率（%）
+	- `rxKBitRate`：音频接收码率（Kbps）
 
+#### 远端用户视频质量统计
+
+反映远端视频流全链路的视频质量以及传输层网络状态。涉及如下 2 个回调：
+
+1. `onRemoteVideoStats`：侧重反映通话中远端视频流的全链路音频质量，更贴近用户主观感受。主要返回信息：
+
+	- `receivedBitrate`：接收到的码率（kbps）
+	- `receivedFrameRate`：接收到的帧率（fps）
+	- `rxStreamType`：视频大小流类型
+
+2. `onRemoteVideoTransportStats`：侧重反映通话中远端视频流的传输层网络状态，数据更为客观。主要返回信息：
+
+	- `delay`：网络传输层延时（毫秒）
+	- `lost`：传输层视频包丢包率（%）
+	- `rxKBitRate`：远端视频包的实际接收码率（kbps）
+
+#### 本地用户视频质量统计
+
+反映的是本地视频流的实际发送帧率和实际发送码率。涉及如下回调：
+
+`onLocalVideoStats`：反映当前设备发送视频流的状态。主要返回信息：
+
+- `sentBitrate`：实际发送码率（kbps）
+- `sentFrameRate`：实际发送帧率（fps）

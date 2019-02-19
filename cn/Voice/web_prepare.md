@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Web
-updatedAt: Wed Nov 07 2018 09:56:15 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 06:37:31 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Web SDK 进行音视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -64,15 +64,15 @@ updatedAt: Wed Nov 07 2018 09:56:15 GMT+0000 (UTC)
   </tr>
 </table>
 
-> Agora Web SDK 2.5 还支持 Windows XP 平台的 Chrome 49 版本。
+> Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
 
-2. 请确保已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md) 。
-3. 请确保你已知悉发版说明中列出的问题，详见 [已知问题和局限](../../cn/Voice/release_web_video.md) 及 [常见问题回答](../../cn/Voice/websdk_related_faq.md)。
+2. 请确保已打开特定端口，详见[防火墙说明](../../cn/Agora%20Platform/firewall.md) 。
+3. 请确保你已知悉发版说明中列出的问题，详见[已知问题和局限](../../cn/Voice/release_web_video.md) 及[常见问题回答](../../cn/Voice/websdk_related_faq.md)。
 
 ## 创建 Agora 账号并获取 App ID
 
 1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
-2. 登陆 Dashboard 页面，点击 **添加新项目**。
+2. 登录 Dashboard 页面，点击 **添加新项目**。
 
 	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
 
@@ -89,7 +89,7 @@ updatedAt: Wed Nov 07 2018 09:56:15 GMT+0000 (UTC)
 
 ### 方法 1. 使用 npm 获取安装包
 
-使用该方法需要先安装 npm，详见[ npm 快速入门](https://www.npmjs.com.cn/getting-started/installing-node/)。
+使用该方法需要先安装 npm，详见 [npm 快速入门](https://www.npmjs.com.cn/getting-started/installing-node/)。
 
 1. 运行安装命令
   `npm install agora-rtc-sdk`
@@ -103,18 +103,20 @@ updatedAt: Wed Nov 07 2018 09:56:15 GMT+0000 (UTC)
 
 ### 方法 2. 使用 CDN 方法获取安装包
 
-该方法无需在官网下载安装包。在项目相应的前端页面文件中，将 `<script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.4-latest.js"></script>` 添加到 `</body>` 上一行：
+该方法无需在官网下载安装包。在项目相应的前端页面文件中，将如下代码添加到 `</body>` 上一行：
 
-<img alt="../_images/web_sdk_cdn.png" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_cdn.png" />
+ ```javascript
+<script src="http://cdn.agora.io/sdk/web/AgoraRTCSDK-2.5.0.js"></script>
+```
 
 ### 方法 3. 从官网获取安装包
 
-1. 从 Agora 官方网站 [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新版 Agora Web SDK 软件包。
+1. 从 Agora 官方网站[下载](https://docs.agora.io/cn/Agora%20Platform/downloads)最新版 Agora Web SDK 软件包。
 
-	<img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_download.png" style="width: 500px"/>
+	<img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_download.png" style="width: 840px"/>
 
-2. 将下载下来的软件包中的 `AgoraRTCSDK-2.3.1.js` 文件保存到你所操作的项目下。
-3. 在项目相应的前端页面文件中，对 `AgoraRTCSDK-2.3.1.js` 进行引用。
+2. 将下载下来的软件包中的 `AgoraRTCSDK-2.5.0.js` 文件保存到你所操作的项目下。
+3. 在项目相应的前端页面文件中，对 `AgoraRTCSDK-2.5.0.js` 进行引用。
 
 	<img alt="../_images/web_sdk_reference.jpg" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_reference.jpg" />
 
@@ -126,4 +128,9 @@ updatedAt: Wed Nov 07 2018 09:56:15 GMT+0000 (UTC)
 2. 将下载下来的 Agora Web SDK 部署到网页服务器上。
 3. 在网页服务器上用浏览器打开示例程序页面或者你自己创建的页面。
 
-你已经完成了客户端集成，可以开始使用 Agora SDK 了。
+## 相关文档
+
+完成了客户端集成，你可以使用 Agora SDK，依次实现左侧《快速开始》菜单栏下的步骤，进行通话/直播。
+- 初始化
+- 加入频道
+- 发布和订阅流

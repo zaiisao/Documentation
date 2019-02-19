@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Fri Nov 02 2018 04:01:35 GMT+0000 (UTC)
+updatedAt: Wed Jan 09 2019 03:24:07 GMT+0000 (UTC)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -19,7 +19,7 @@ The Agora Recording SDK supports recording in two modes:
 -   Individual recording: To record the voice and video stream respectively for each user ID.
 -   Composite recording: To mix the voice and video recordings for different users in the same channel; the video mixing layout is also supported.
 
-
+> The Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
 ### <a name ="individualrecording"></a>Individual Recording
 
 Individual recording enables the SDK to record the voice and video respectively for each user ID in the channel.
@@ -66,7 +66,7 @@ To merge the recorded voice and video files of each user ID, use the *video\_con
 
 ### Composite Recording + Unsynchronized Transcoding
 
-Set <code>isMixingEnabled</code> = 1 and <code>mixedAudioVideo</code> = 0 to start composite recording with unsynchronized transcoding.
+Set <code>isMixingEnabled</code> = 1 and <code>mixedVideoAudio</code> = 0 to start composite recording with unsynchronized transcoding.
 
 This enables mixed-voice and mixed-video recordings, and the voice and video files are separated.
 
@@ -108,7 +108,7 @@ To merge the recorded voice and video files, use the `video\convert.py` script f
 
 ### Composite Recording + Synchronized Transcoding
 
-Set <code>isMixingEnabled</code> = 1 and <code>mixedAudioVideo</code> = 1 to start composite recording with synchronized transcoding. This enables mixed voice and video recording without using the transcoding script.
+Set <code>isMixingEnabled</code> = 1 and <code>mixedVideoAudio</code> = 1 to start composite recording with synchronized transcoding. This enables mixed voice and video recording without using the transcoding script.
 
 Choose the recording mode by setting the parameters according to the following table:
 
@@ -140,9 +140,6 @@ Choose the recording mode by setting the parameters according to the following t
 </tbody>
 </table>
 
-
-
->  The Agora Recording SDK does not support composite recording + synchronized transcoding in the web-only mode. See `joinChannel` to allows an application to join a channel for the supported players.
 
 ## Raw Data
 
@@ -280,7 +277,7 @@ The Agora Recording SDK supports screen capture and recording in individual reco
 </tbody>
 </table>
 
-
+<a name = "Managing_the_Recorded_Files"></a>
 
 ## Managing the Recorded Files
 

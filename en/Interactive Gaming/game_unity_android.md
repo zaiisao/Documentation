@@ -3,7 +3,7 @@
 title: Implement Voice for Gaming
 description: 
 platform: Unity
-updatedAt: Fri Nov 02 2018 08:53:11 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 12:32:25 GMT+0000 (UTC)
 ---
 # Implement Voice for Gaming
 With the `Hello-Unity-Agora` Sample App provided by Agora, you can:
@@ -19,7 +19,7 @@ This page shows how to use the Unity3D SDK to implement these functions on the A
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Game SDK for **Unity** Voice. See the following structure:
 
-    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Unity3D.png" style="width: 370.0px;"/>
+	![](https://web-cdn.agora.io/docs-files/1548830935872)
 
 -   **include**: header files. Typically not used in Unity3D projects except for modifying raw data.
 
@@ -30,68 +30,56 @@ This page shows how to use the Unity3D SDK to implement these functions on the A
 2.  Hardware and software requirements:
 
     -   Unity3D 5.5 or later
-
     -   Android Studio 2.0 or later
-
     -   Two or more Android 4.0 or later devices with audio support
 
-3.  [Getting an App ID](../../en/Agora%20Platform/token.md).
+3.  [Getting an App ID](../../en/Interactive%20Gaming/token.md).
 
 4.  Before accessing Agora’s services, make sure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
 
 ### Step 2: Create a New Project
 
-Create a Unity3D project. Refer to [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html) if necessary. Skip this step if a project already exists.
+Create a Unity3D project. Refer to [Unity Quick Start](https://docs.unity3d.com/2018.2/Documentation/Manual/GettingStarted.html) if necessary. Skip this step if a project already exists.
 
 ### Step 3: Add the SDK
 
 1.  Open the root directory of the project and create:
 
-    -  `Plugins/Android/AgoraAudioKit.plugin/libs`
+    -  `Assets/Plugins/Android/AgoraAudioKit.plugin/libs`
+    -  `Assets/Scripts`
 
-    -   **Plugins/Scripts**
+2.  Copy the `libs/Scripts/AgoraGamingSDK` from the downloaded SDK to the `Assets/Scripts` directory of your project.
 
-2.  Copy the **libs/Scripts/AgoraGamingSDK** folder to **Plugins/Scripts**.
+3.  Copy the `libs/Android/agora-rtc-sdk.jar` file in the SDK to `Assets/Plugins/Android/AgoraAudioKit.plugin/libs` path of your project.
 
-3.  Add `.jar` files:
+4.  Copy the `Assets/Plugins/Android/mainTemplate.gradle` file from the Sample in the SDK to the `Assets/Plugins/Android` path of your project.
 
-    -   Copy `.jar` files to `Assets/Plugins/Android/AgoraAudioKit.plugin/libs`.
+5.  Copy the `Assets/Plugins/Android/AgoraAudioKit.plugin/AndroidManifest.xml` from the Sample in the SDK to the `Assets/Plugins/Android/AgoraAudioKit.plugin` directory of your project.
 
-    -   Copy `Hello-Unity3D-Agora/Assets/Plugins/Android/mainTemplate.gradle `to **Assets/Plugins/Android**.
-
-    -   Copy `Hello-Unity3D-Agora/Assets/Plugins/Android/AgoraAudioKit.plugin/libs/libagora-unity3d-wrapper.jar` to `Assets/Plugins/Android/AgoraAudioKit.plugin/libs`.
-
-    -   Copy `Hello-Unity3D-Agora/Assets/Plugins/Android/AgoraGamingRtcSDKWrapper/AndroidManifest.xml` to `Assets/Plugins/Android/AgoraAudioKit.plugin`.
-
-> `libagora-unity3d-wrapper.jar` is compiled from **Hello-Unity3D-Agora/Assets/Plugins/Android/AgoraGamingRtcSDKWrapper (./gradlew clean makeAndCopySDKWrapper)**.
-
-4.  Add `.so` files:
-
-    Copy **arm64-v8a/armeabi-v7a/x86** from **libs/Android** to `Assets/Plugins/Android/AgoraAudioKit.plugin/libs`.
+6.  Copy the **armeabi-v7a** and **x86** files in `libs/Android` of the SDK to the `Assets/Plugins/Android/AgoraAudioKit.plugin/libs` path your project.
 
 
 ### Step 4: Add Permissions
 
-Add any necessary permission to `AndroidManifest.xml`. **AgoraGamingRtcSDKWrapper** already includes the required permissions for voice calls, for example:
+Add the following permissions to the `Assets/Plugins/Android/AgoraAudioKit.plugin/AndroidManifest.xml` file:
 
--   android.permission.INTERNET
+```C#
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+```
 
--   android.permission.RECORD\_AUDIO
+### Step 5: Prevent Code Obfuscation
 
--   android.permission.MODIFY\_AUDIO\_SETTINGS
-
--   android.permission.ACCESS\_NETWORK\_STATE
-
--   android.permission.BLUETOOTH
-
-
-<img alt="../_images/Intergration-Privileges-Android-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Privileges-Android-Unity3D.png" style="width: 500.0px;"/>
-
-
-### Step 5: Obfuscate the Code
-
-Add the following line to obfuscate the code:
+Add the following line in the `Assets/Plugins/Android/AgoraAudioKit.plugin/project.properties` to prevent obfuscating the code:
 
 ```
 -keep class io.agora.**{*;}
@@ -102,9 +90,7 @@ Add the following line to obfuscate the code:
 Call the APIs in [Interactive Gaming API](../../en/API%20Reference/game_unity.md) to implement the required functions. Voice for gaming includes two modes:
 
 -   Free talk mode
-
 -   Command mode
-
 
 You can choose which mode to use by calling `setChannelProfile`.
 
@@ -114,7 +100,7 @@ You can choose which mode to use by calling `setChannelProfile`.
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Game SDK for **Unity** Voice. See the following structure:
 
-    <img alt="../_images/AMG-SDK-structure-full-Unity3D.png" src="https://web-cdn.agora.io/docs-files/en/AMG-SDK-structure-full-Unity3D.png" style="width: 370.0px;"/>
+	![](https://web-cdn.agora.io/docs-files/1548829843264)
 
 -   **include**: header files. Typically not used in Unity3D projects except for when modifying the raw data.
 
@@ -130,66 +116,45 @@ You can choose which mode to use by calling `setChannelProfile`.
 
     -   Two or more iOS 9.0 or later devices with audio support
 
-2.  [Getting an App ID](../../en/Agora%20Platform/token.md).
+2.  [Getting an App ID](../../en/Interactive%20Gaming/token.md).
 
 3.  Before accessing Agora’s services, make sure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
 
 ### Step 2: Create a New Project
 
-Create a Unity3D project. Refer to [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppStoreDistributionTutorial/Setup/Setup.html) if necessary. Skip this step if a project already exists.
+Create a Unity3D project. Refer to [Unity Quick Start](https://docs.unity3d.com/2018.2/Documentation/Manual/GettingStarted.html) if necessary. Skip this step if a project already exists.
 
 ### Step 3: Add the SDK
 
-1.  Open the root directory of the project and create the following:
+1.  Open the root directory of your project and create a `Assets/Scripts` folder.
 
-    -   `Plugins/Android/AgoraAudioKit.plugin/libs`
-
-    -   **Plugins/Scripts**
-
-2.  Copy the **libs/Scripts/AgoraGamingSDK** folder to **Plugins/Scripts**.
+2.  Copy the `Assets/Scripts/AgoraGamingSDK` folder from the sample to `Assets/Scripts` of your project.
 
 3.  Add `.framework` files:
 
-    -   Copy `AgoraAudioKit.framework` to **Plugins/iOS**.
+    -   Copy `Assets/Plugins/iOS/AgoraAudioKit.framework` from the sample to `Assets/Plugins/iOS` of your project.
 
-    -   Copy `Hello-Unity3D-Agora/Assets/Plugins/iOS/AgoraGamingRtcSDKWrapper.h` to **Plugins/iOS**.
+    -   Copy `Assets/Plugins/iOS/libagoraSdkCWrapper.a` from the sample to `Assets/Plugins/iOS` of your project.
 
-    -   Copy `Hello-Unity3D-Agora/Assets/Plugins/iOS/AgoraGamingRtcSDKWrapper.mm` to **Plugins/iOS**.
+    -   Add the necessary system libraries: `AgoraAudioKit.framework`, `AudioToolBox.framework`, `CoreTelephony.framework`, `AVFoundation.framework` and `libresolv.tbd`.
 
-    -   Add the necessary system libraries:
-
-    <img alt="../_images/Intergration-Libraries-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Libraries-iOS.png" />
+    ![](https://web-cdn.agora.io/docs-files/1543568568723)
 
 
-
-### Step 4: Disable bitcode
-
-1.  Select the current **Target**.
-
-2.  Select **Build Settings**.
-
-3.  Select **Enable Bitcode**, and set it to **No**.
-
-
-<img alt="../_images/Intergration-Bitcode-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Bitcode-iOS.png" />
-
-
-### Step 5: Add Permissions
+### Step 4: Add Permissions
 
 Add any necessary permission, such as access permission to the microphone:
 
-<img alt="../_images/Intergration-Privileges-Microphone-iOS.png" src="https://web-cdn.agora.io/docs-files/en/Intergration-Privileges-Microphone-iOS.png" />
+![](https://web-cdn.agora.io/docs-files/1543568604885)
 
 
-### Step 6: Call the APIs
+### Step 5: Call the APIs
 
 Call the APIs in [Interactive Gaming API](../../en/API%20Reference/game_unity.md) to implement the required functions. Voice for gaming includes two modes:
 
 -   Free talk mode
-
 -   Command mode
-
 
 You can choose which mode to use by calling `setChannelProfile`.
 
