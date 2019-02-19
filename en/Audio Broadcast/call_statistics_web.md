@@ -19,12 +19,12 @@ The statistics include:
 
 ## Implementation
 
-Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
+Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/web_prepare.md).
 
 <a name ="system_statistics"></a>
 ### Get the statistics of the system
 
-You can use the [`Client.getSystemStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getsystemstats) method to get the statistics of the system for optimizing your application. Currently, only the battery level information is provided.
+You can use the [`Client.getSystemStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getsystemstats) method to get the statistics of the system for optimizing your application. Currently, only the battery level information is provided.
 
 ```javascript
 client.getSystemStats((stats) => {
@@ -41,7 +41,7 @@ The statistics of the network include the network type and the network connectio
 
 You can:  
 
-- Use the [`Client.getNetworkStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getnetworkstats) method to get the network type, including:
+- Use the [`Client.getNetworkStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getnetworkstats) method to get the network type, including:
   - `bluetooth`: Bluetooth network.
   - `cellular`: Cellular network.
   - `ethernet`: Ethernet.
@@ -58,7 +58,7 @@ client.getNetworkStats((stats) => {
 });                                                        
 ```
 
-- Use the [`Client.getTransportStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#gettransportstats) method to get the statistics of the network connection, including:
+- Use the [`Client.getTransportStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#gettransportstats) method to get the statistics of the network connection, including:
   - `RTT`: RTT (Round-trip time) (ms) between the Agora Web SDK and the access node of the Agora SD-RTN.
 
 ```javascript
@@ -75,7 +75,7 @@ client.getTransportStats((stats) => {
 
 You can: 
 
-- Use the [`Client.getLocalAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getlocalaudiostats) method to get the audio statistics of the published stream, including the:
+- Use the [`Client.getLocalAudioStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getlocalaudiostats) method to get the audio statistics of the published stream, including the:
   - `CodecType`: Encoding type of the sent audio.
   - `MuteState`: Whether or not the audio is muted.
   - `RecordingLevel`: Frequency of the captured audio.
@@ -96,7 +96,7 @@ client.getLocalAudioStats((localAudioStats) => {
 		});
 ```
 
-- Use the [`Client.getLocalVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getlocalvideostats) method to get the video statistics of the published stream, including the:
+- Use the [`Client.getLocalVideoStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getlocalvideostats) method to get the video statistics of the published stream, including the:
   - `EncodeDelay`: Delay (ms) from capturing to encoding the local video.
   - `MuteState`: Whether or not the video is muted.
   - `SendBitrate`: Bitrate (Kbps) of the sent video.
@@ -126,7 +126,7 @@ client.getLocalVideoStats((localVideoStats) => {
 
 You can: 
 
-- Use the [`Client.getRemoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats) method to get the **audio** statistics of the remote stream, including the：
+- Use the [`Client.getRemoteAudioStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats) method to get the **audio** statistics of the remote stream, including the：
   - `CodecType`: Decoding type of the received audio.
   - `End2EndDelay`: End-to-end delay (ms). The delay from capturing to playing the audio.
   - `MuteState`: Whether or not the audio is muted.
@@ -149,7 +149,7 @@ client.getRemoteAudioStats((remoteAudioStatsMap) => {
 });
 ```
 
-- Use the [`Client.getRemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats) method to get the video statistics of the remote stream, including the: 
+- Use the [`Client.getRemoteVideoStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats) method to get the video statistics of the remote stream, including the: 
   - `End2EndDelay`: End-to-end delay (ms). The delay from capturing to playing the video.
   - `MuteState`: Whether or not the video is muted.
   - `PacketLossRate`: Packet loss rate (%) of the remote video.
