@@ -12,7 +12,7 @@ A live broadcast channel consists of two user roles:
 - Audience: An audience can only hear the hosts.
 
 Web v2.5.1 provides you with the `setClientRole` method to switch the client role.
-> Please ensure that you call the `setClientRole` method in the live-broadcast mode ([mode](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html#mode) is set to `live`). In the communication mode ([mode](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html#mode) is set to `rtc`), all client user is `host` by default and this method cannot be called.
+> Please ensure that you call the `setClientRole` method in the live-broadcast mode ([mode](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html#mode) is set to `live`). In the communication mode ([mode](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html#mode) is set to `rtc`), all client user is `host` by default and this method cannot be called.
 
 ## Implementation
 
@@ -45,8 +45,8 @@ When the client role is changed, you receive the `client-role-changed` callback.
 
 ### Considerations
 
-- If an audience calls [`client.publish`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#publish) ，`role` is automatically set to `host`;
-- If a host calls [`client.unpublish`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#unpublish) ，`role` is automatically set to `audience`.
+- If an audience calls [`client.publish`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#publish) ，`role` is automatically set to `host`;
+- If a host calls [`client.unpublish`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#unpublish) ，`role` is automatically set to `audience`.
 
 
 ## Next Steps
