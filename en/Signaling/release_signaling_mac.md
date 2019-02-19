@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Tue Feb 19 2019 07:17:12 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 07:17:17 GMT+0000 (UTC)
 ---
 # Release Notes
 ## Overview
@@ -14,18 +14,16 @@ The Agora Signaling SDK facilitates real-time communications through functions s
 
 -   Each channel can hold up to 10,000 users at the same time. To reduce data volume and stress on the SDK, Agora recommends disabling notifications of a user going online or dropping offline for a large channel holding more than 1,000 users. For more information, see the `channelSetAttr` method. 
 -   Channel Messages:
-    -   Each message can be up to 8-k visible characters.
-    -   A user can send messages at a maximum speed of 60 messages per second. In a channel, a maximum of 200 messages can be sent each second. 
+    -   Each message can be up to 8-K visible characters.
+    -   A user can send messages at a maximum speed of 60 messages per second. In a channel, a maximum of 200 messages can be sent each second. Messages exceeding this limit will be discarded. 
     -   Offline channel messages are not supported.
     -   Supports UTF-8 character encoding only.
 -   Point-to-point messages:
-    -   Each message can be up to 8-k visible characters.
+    -   Each message can be up to 8-K visible characters.
     -   Offline messages are not supported.
     -   Supports UTF-8 character encoding only.
 -   Channel-attributes-updated callback:
     -   A maximum of 10 channel-attributes-updated callbacks can be sent each second.
--   To access Agora’s signaling system through the SIP gateway, contact [support@agora.io](mailto:support@agora.io). A self-configurable solution will be available soon.
-
 
 ## v1.4.0
 
