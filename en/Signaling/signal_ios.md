@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: iOS
-updatedAt: Tue Feb 19 2019 09:41:16 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:41:20 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.4
@@ -16,7 +16,7 @@ updatedAt: Tue Feb 19 2019 09:41:16 GMT+0000 (UTC)
 
 #### Retrieves an AgoraAPI Instance (getInstanceWithoutMedia:)
 
-This method retrieves an <code>AgoraAPIOnlySignal</code> instance.
+This method retrieves an <code>AgoraAPI</code> instance.
 
 ```
 + (AgoraAPI*) getInstanceWithoutMedia:(NSString*)appId;
@@ -37,6 +37,30 @@ This method retrieves an <code>AgoraAPIOnlySignal</code> instance.
 </tbody>
 </table>
 
+#### Creates multiple AgoraAPI instances (createSigInstance:)
+
+To create multiple <code>AgoraAPI</code> instances, call this method as many times.
+
+Return: An AgoraAPI instance.
+
+```
++ (AgoraAPI*) createSigInstance: (NSString*)appId
+```
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><th>Parameter</th>
+<th>Description</th>
+</tr>
+<tr><td><code>appId</code></td>
+<td>The App ID provided by Agora. For more information, see <a href="../../en/Agora%20Platform/key_signaling.md">Get an App ID</a>.</td>
+</tr>
+</tbody>
+</table>
 
 
 #### Destroys the AgoraAPIOnlySignal Instance (destroy)
