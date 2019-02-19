@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue Feb 19 2019 06:18:52 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 06:18:59 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -141,7 +141,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 新增 `Stream.isPlaying` 方法，用于检测音视频流当前是否在播放状态。
 - `Client.on` 中新增以下回调：
   - `peer-online` ：通知应用程序有其他用户/主播上线。
-  - `stream-reconnect-start` ：通知应用程序 SDk 开始重新发布/订阅音视频流。
+  - `stream-reconnect-start` ：通知应用程序 SDK 开始重新发布/订阅音视频流。
   - `stream-reconnect-end` ：通知应用程序重新发布/订阅音视频流已结束。
   - `exception` ：通知应用程序频道内的异常事件。
 - `Stream.on` 中新增以下回调：
