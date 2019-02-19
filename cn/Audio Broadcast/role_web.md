@@ -12,7 +12,7 @@ updatedAt: Tue Feb 19 2019 10:55:32 GMT+0000 (UTC)
 - 观众：只能收听主播的音视频消息。根据应用程序的实现，还可以发布实时文字消息，与主播互动。同一直播频道内，所有观众都能看到主播以及连麦主播的音视频。
 
 Web v2.5.1 新增 `setClientRole` 接口，可实现用户角色切换。
-> 请确保在直播模式（[mode](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html#mode) 设置为 `live`）下调用。通信模式（[mode](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html#mode) 设置为 `rtc`）默认所有用户都是主播角色，无法使用本方法。
+> 请确保在直播模式（[mode](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html#mode) 设置为 `live`）下调用。通信模式（[mode](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html#mode) 设置为 `rtc`）默认所有用户都是主播角色，无法使用本方法。
 
 ## 实现方法
 
@@ -44,8 +44,8 @@ client.on("client-role-changed", function(evt) {
 
 ### 开发注意事项
 
-- 如果观众用户调用 [`client.publish`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#publish) ，`role` 会自动切换为 `host`； 
-- 如果主播用户调用 [`client.unpublish`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#unpublish) ，`role` 会自动切换为 `audience` 。
+- 如果观众用户调用 [`client.publish`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#publish) ，`role` 会自动切换为 `host`； 
+- 如果主播用户调用 [`client.unpublish`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#unpublish) ，`role` 会自动切换为 `audience` 。
 
 
 ## 相关文档
