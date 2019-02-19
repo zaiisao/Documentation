@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 09 2018 17:21:52 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:30:36 GMT+0000 (UTC)
 ---
 # Implement Encryption
 This page describes how to implement Agora's built-in encryption.
