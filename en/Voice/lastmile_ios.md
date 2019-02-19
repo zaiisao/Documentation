@@ -3,7 +3,7 @@
 title: Conduct a Last-mile Test
 description: Conduct a Pre-call Lastmile Test
 platform: iOS,macOS
-updatedAt: Tue Feb 19 2019 09:48:48 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:48:55 GMT+0000 (UTC)
 ---
 # Conduct a Last-mile Test
 ## Introduction
