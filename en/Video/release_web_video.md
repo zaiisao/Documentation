@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Tue Feb 19 2019 06:23:40 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 06:23:47 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -172,10 +172,10 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
 - [`Client.setClientRole`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#setclientrole)
 - [`Client.getConnectionState`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#getconnectionstate)
 - [`Stream.isPlaying`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#isplaying)
-- [`Stream.muteAudio`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#muteAudio)
-- [`Stream.unmuteAudio`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#unmuteAudio)
-- [`Stream.muteVideo`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#muteVideo)
-- [`Stream.unmuteVideo`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#unmuteVideo)
+- [`Stream.muteAudio`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#muteaudio)
+- [`Stream.unmuteAudio`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#unmuteaudio)
+- [`Stream.muteVideo`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#mutevideo)
+- [`Stream.unmuteVideo`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#unmutevideo)
 - New events of [`Client.on`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#on):
   - `streamInjectedStatus`
   - `client-role-changed`
