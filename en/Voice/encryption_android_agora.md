@@ -3,10 +3,10 @@
 title: Implement Encryption
 description: 
 platform: Android
-updatedAt: Tue Feb 19 2019 09:02:28 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:12:37 GMT+0000 (UTC)
 ---
 # Implement Encryption
-This page describes how to implement Agora's built-in encryption. 
+This page introduces various encryption modes. Choose one that best suits your needs.
 
 > Both Communication and Live Broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
 
