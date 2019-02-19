@@ -3,10 +3,10 @@
 title: Implement Encryption
 description: 
 platform: iOS,macOS
-updatedAt: Tue Feb 19 2019 09:30:36 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:30:51 GMT+0000 (UTC)
 ---
 # Implement Encryption
-This page describes how to implement Agora's built-in encryption.
+This page introduces various encryption modes. Choose one that best suits your needs.
 
 The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) includes:
 
@@ -25,7 +25,7 @@ The following figure shows how Agora’s communications use built-in encryption:
 
 <img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" />
 
-> To reduce the SDK size, if your app uses `libcrypto.so`, you can use it instead of `libagora-crypto.so` included in the Agora SDK since both files are the same. The Agora SDK `libagora-crypto.so` version is 1.0.2g.
+> To reduce the SDK size, if your app uses `libcrypto.a`, you can use it instead of `libagora-crypto.a` included in the Agora SDK since both files are the same. The Agora SDK `libagora-crypto.so` version is 1.0.2g.
 
 ### Objective-C
 
