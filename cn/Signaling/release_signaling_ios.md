@@ -3,12 +3,12 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Tue Feb 19 2019 07:30:16 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 07:30:29 GMT+0000 (UTC)
 ---
 # 发版说明
 ## 概览
 
-Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。点击 [信令产品概述](https://docs.agora.io/cn/Signaling/product_signaling?platform=All%20Platforms) 了解关键特性。
+Agora Signaling SDK 用于构建实时通信场景，可实现呼叫、消息传递、状态同步等功能。点击[信令产品概述](https://docs.agora.io/cn/Signaling/product_signaling?platform=All%20Platforms)了解关键特性。
 
 ### 已知问题和局限性
 
