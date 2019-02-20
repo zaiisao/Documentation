@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: macOS
-updatedAt: Fri Feb 15 2019 06:07:45 GMT+0000 (UTC)
+updatedAt: Fri Feb 15 2019 06:07:51 GMT+0000 (UTC)
 ---
 # 检测通话质量
 通话质量检测功能是在 SDK **加入频道后**通过每 2 秒触发一次的回调实现。
@@ -31,7 +31,7 @@ updatedAt: Fri Feb 15 2019 06:07:45 GMT+0000 (UTC)
 `networkQuality` 携带 `uid` 信息，如果频道内有多个用户或主播，SDK 会多次触发该回调。打分包括：
 
 - `txQuality`：基于当前设备到边缘服务器的上行网络质量打分（EXCELLENT～VBAD）<sup>[1]</sup>。打分依赖项：
-  - 上行视频实际发送码率与目标发送码率的比率，比率越低，通话质量越高；
+  - 上行视频实际发送码率与目标发送码率的比率，比率越高，通话质量越高；
   - 上行丢包率；
   - 平均往返延时（RTT）；
   - 上行网络抖动（Jitter）。

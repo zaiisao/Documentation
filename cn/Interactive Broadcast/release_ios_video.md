@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Tue Feb 12 2019 07:42:29 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 07:42:35 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -223,6 +223,8 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 
 ### **问题修复**
+
+-   修复了因视频编码问题引起的 Native 设备与 Web 端互通时，Web 端看不到 Native 端视频画面的问题
 
 -   修复了多人视频直播连麦场景下，SDK 内存异常增长的问题
 
