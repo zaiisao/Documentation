@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Windows
-updatedAt: Wed Feb 20 2019 07:36:11 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:36:20 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -16,7 +16,7 @@ updatedAt: Wed Feb 20 2019 07:36:11 GMT+0000 (UTC)
 
 ## 实现方法
 
-在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Audio%20Broadcast/windows_audio.md)。
+在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Audio%20Broadcast/windows_video.md)。
 
 ### 使用外部音频数据源
 
