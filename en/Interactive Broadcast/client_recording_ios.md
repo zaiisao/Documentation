@@ -3,7 +3,7 @@
 title: Record the Audio from the Client
 description: 
 platform: iOS,macOS
-updatedAt: Wed Feb 20 2019 06:49:00 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 06:49:05 GMT+0000 (UTC)
 ---
 # Record the Audio from the Client
 ## Introduction
@@ -41,8 +41,8 @@ agoraKit.stopAudioRecording()
 
 ### API Reference
 
-- [`startAudioRecording:quality:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:quality:)
-- [`stopAudioRecording`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioRecording)
+- [`startAudioRecording:quality:`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:quality:)
+- [`stopAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioRecording)
 
 ## Considerations
 
