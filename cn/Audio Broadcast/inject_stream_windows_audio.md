@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Windows
-updatedAt: Wed Feb 20 2019 07:34:31 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:34:38 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -38,7 +38,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 
 ## 实现方法
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](https://docs.agora.io/cn/Audio%20Broadcast/windows_video?platform=Windows)。
+实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Audio%20Broadcast/windows_video.md)。
 
 - 输入在线媒体流：
 
