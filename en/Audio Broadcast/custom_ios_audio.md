@@ -3,7 +3,7 @@
 title: Customize the Audio Source and Renderer
 description: 
 platform: iOS
-updatedAt: Wed Feb 20 2019 07:41:42 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:41:54 GMT+0000 (UTC)
 ---
 # Customize the Audio Source and Renderer
 ## Introduction
@@ -18,7 +18,7 @@ By default, an app uses the internal audio modules for capturing and rendering d
 
 ## Implementation
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_audio.md).
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_video.md).
 
 ### Customize the Audio Source
 
