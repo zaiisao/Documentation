@@ -3,7 +3,7 @@
 title: 设置日志信息
 description: 
 platform: Web
-updatedAt: Thu Jan 17 2019 09:46:05 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:05:03 GMT+0000 (UTC)
 ---
 # 设置日志信息
 ## 功能描述
@@ -13,7 +13,7 @@ Agora Web SDK 提供设置 logger 的方法，包括设置日志输出等级、�
 开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Interactive%20Broadcast/web_prepare.md)。
 
 ### 设置日志输出等级
-日志输出等级依次为 NONE，ERROR，WARNING，INFO，DEBUG。选择一个级别，你就可以看到在该级别及之前所有级别的日志信息。例如，输入代码 `AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.INFO);`，就可以看到 WARNING、ERROR 和 INFO 级别的日志信息。
+日志输出等级依次为 NONE，ERROR，WARNING，INFO，DEBUG。选择一个级别，你就可以看到在该级别及之前所有级别的日志信息。例如，输入代码 `AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.INFO);`，就可以看到 WARNING 和 ERROR 级别的日志信息以及其它相关的日志信息。
 
 #### API 参考
 
