@@ -3,7 +3,7 @@
 title: Record the Audio from the Client
 description: 
 platform: Windows
-updatedAt: Wed Feb 20 2019 06:49:51 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 06:49:55 GMT+0000 (UTC)
 ---
 # Record the Audio from the Client
 ## Introduction

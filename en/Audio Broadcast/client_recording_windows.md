@@ -3,7 +3,7 @@
 title: Record the Audio from the Client
 description: 
 platform: Windows
-updatedAt: Wed Feb 20 2019 06:49:51 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 06:49:55 GMT+0000 (UTC)
 ---
 # Record the Audio from the Client
 ## Introduction
@@ -39,8 +39,8 @@ int nRet = rep.stopAudioRecording();
 
 ### API Reference
 
-* [`startAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#acb567614081900eaaf94d02b7c809af5)
-* [`stopAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#ac5f5a19d5f32d7f7d7d2765caafcdaec)
+* [`startAudioRecording`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#acb567614081900eaaf94d02b7c809af5)
+* [`stopAudioRecording`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#ac5f5a19d5f32d7f7d7d2765caafcdaec)
 
 ## Considerations
 
