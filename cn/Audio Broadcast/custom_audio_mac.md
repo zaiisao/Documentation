@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Wed Feb 20 2019 07:37:55 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:38:00 GMT+0000 (UTC)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -17,7 +17,7 @@ updatedAt: Wed Feb 20 2019 07:37:55 GMT+0000 (UTC)
 
 ## 实现方法
 
-在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Audio%20Broadcast/mac_audio.md)。
+在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Audio%20Broadcast/mac_video.md)。
 
 ### 自定义音频源
 
