@@ -3,7 +3,7 @@
 title: 设置日志文件
 description: 设置日志文件
 platform: Android
-updatedAt: Thu Jan 17 2019 09:45:47 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 06:59:02 GMT+0000 (UTC)
 ---
 # 设置日志文件
 ## 功能描述
