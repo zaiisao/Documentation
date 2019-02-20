@@ -3,7 +3,7 @@
 title: 小程序 SDK 相关
 description: 
 platform: 小程序 SDK 相关
-updatedAt: Wed Feb 20 2019 07:57:05 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:57:20 GMT+0000 (UTC)
 ---
 # 小程序 SDK 相关
 ### 推流/拉流处理
@@ -51,3 +51,7 @@ AgoraMiniappSDK.LOG.onlog = (text) => {
 1. 退出后重新加入频道；
 2.  如果步骤 1 无法生效，请换台设备试试；
 3. 如果步骤 2 仍旧无效，请联系客户支持。
+
+### 出现错误码
+
+Agora Miniapp SDK for WeChat 在调用 API 或运行时，可能会返回一个错误码对象，也可能会返回一个错误码。详细可以参考 [错误代码和警告代码](../../cn/Agora%20Platform/the_error_wechat.md) 进行排查。
