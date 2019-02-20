@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Wed Feb 20 2019 09:50:10 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 09:50:16 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -17,7 +17,7 @@ updatedAt: Wed Feb 20 2019 09:50:10 GMT+0000 (UTC)
 
 -   [`addPublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4445b4ca9509cc4e2966b6d308a8f08f)
 -   [`removePublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a87b3f2f17bce8f4cc42b3ee6312d30d4)
--   [`setLiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a3cb9804ae71819038022d7575834b88c)
+-   [`setLiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a3cb9804ae71819038022d7575834b88c)
 
 该旁路推流方案具有以下优点：
 
