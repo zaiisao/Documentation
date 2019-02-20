@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: iOS
-updatedAt: Wed Feb 20 2019 06:31:15 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 06:31:30 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -39,7 +39,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 
 ## 方法实现
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](https://docs.agora.io/cn/Audio%20Broadcast/ios_video?platform=iOS)。
+实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Audio%20Broadcast/ios_audio.md)。
 
 - 输入在线媒体流：
 
