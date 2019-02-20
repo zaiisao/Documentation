@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Android
-updatedAt: Wed Feb 20 2019 06:23:27 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 06:30:17 GMT+0000 (UTC)
 ---
 # 输入在线媒体流
 ## 简介
@@ -38,7 +38,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 
 ## 实现方法
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](https://docs.agora.io/cn/Audio%20Broadcast/android_video?platform=Android)。
+实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Audio%20Broadcast/android_audio.md)。
 
 - 输入在线媒体流：
 
