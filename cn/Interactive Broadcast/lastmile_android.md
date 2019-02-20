@@ -1,6 +1,6 @@
 
 ---
-title: 通话前检测网络质量
+title:  通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Android
 updatedAt: Mon Jan 14 2019 09:34:16 GMT+0000 (UTC)
