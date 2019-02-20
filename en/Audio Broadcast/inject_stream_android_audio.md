@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Android
-updatedAt: Wed Feb 20 2019 07:43:52 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:43:57 GMT+0000 (UTC)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -39,7 +39,7 @@ Injecting an online media stream can be applied to the following scenarios:
 
 ## Implementation
 
-To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Audio%20Broadcast/android_audio.md).
+To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Audio%20Broadcast/android_video.md).
 
 - To inject an online media stream:
 
