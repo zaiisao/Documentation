@@ -3,7 +3,7 @@
 title: 设置日志文件
 description: 设置日志文件
 platform: macOS
-updatedAt: Wed Feb 20 2019 07:01:33 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:01:38 GMT+0000 (UTC)
 ---
 # 设置日志文件
 ## 功能描述
@@ -14,7 +14,8 @@ Agora Native SDK 提供设置 SDK 的输出日志文件的功能，SDK 运行时
 
 ## 实现方法
 
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Audio%20Broadcast/mac_video.md)。
+开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Audio%20Broadcast/ios_audio.md)。
+
 ```Objective-C
 // 将日志输出等级设置为 AgoraLogFilterDebug
 [engine setLogFilter: AgoraLogFilterDebug];
