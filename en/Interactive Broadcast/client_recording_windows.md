@@ -12,8 +12,8 @@ You can record the audio of all users in a call and save it on the client, just 
 
 Agora's Native SDK supports audio recording at the client. You can record the audio of all users in a channel and generate one recording file with the following format: 
 
-- wav: Large file (lossless compression)
-- aac: Smaller file (lossy compression)
+- WAV: Large file (lossless compression)
+- AAC: Smaller file (lossy compression)
 
 ## Implementation
 

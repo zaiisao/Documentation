@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: 
 platform: Android
-updatedAt: Fri Feb 15 2019 06:10:17 GMT+0000 (UTC)
+updatedAt: Fri Feb 15 2019 06:10:23 GMT+0000 (UTC)
 ---
 # Report In-call Statistics
 The in-call audio-and-video statistics reflect the overall quality of a call after the SDK joins a channel and are reported once every two seconds.
@@ -30,7 +30,7 @@ After joining a channel, you can get the ratings of the uplink or downlink last-
 The `onNetworkQuality` callback uses the `uid` parameter. If a channel has multiple users/hosts, the SDK triggers this callback as many times. The ratings include: 
 
 - `txQuality`: The uplink last-mile (from the device to the Agora edge server) network quality rating (EXCELLENT~VBAD) <sup>[1]</sup> in terms of:
-  - The ratio of the sent uplink video bitrate to the sent target bitrate. The lower the ratio, the higher the quality. 
+  - The ratio of the sent uplink video bitrate to the target uplink bitrate. The higher the ratio, the higher the quality. 
   - The uplink packet loss rate.
   - The average round-trip time (RTT).
   - The uplink jitter.
