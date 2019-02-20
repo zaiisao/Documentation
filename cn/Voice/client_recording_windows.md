@@ -3,7 +3,7 @@
 title: 客户端通话录制
 description: 
 platform: Windows
-updatedAt: Wed Feb 20 2019 06:40:09 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 06:40:15 GMT+0000 (UTC)
 ---
 # 客户端通话录制
 ## 功能描述
@@ -38,8 +38,8 @@ int nRet = rep.stopAudioRecording();
 
 ### API 参考
 
-* [`startAudioRecording`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#acb567614081900eaaf94d02b7c809af5)
-* [`stopAudioRecording`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#ac5f5a19d5f32d7f7d7d2765caafcdaec)
+* [`startAudioRecording`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#acb567614081900eaaf94d02b7c809af5)
+* [`stopAudioRecording`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#ac5f5a19d5f32d7f7d7d2765caafcdaec)
 
 ## 开发注意事项
 
