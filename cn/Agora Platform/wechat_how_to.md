@@ -3,7 +3,7 @@
 title: 小程序 SDK 相关
 description: 
 platform: 小程序 SDK 相关
-updatedAt: Tue Nov 20 2018 10:01:18 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:57:05 GMT+0000 (UTC)
 ---
 # 小程序 SDK 相关
 ### 推流/拉流处理
