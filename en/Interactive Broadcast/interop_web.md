@@ -3,7 +3,7 @@
 title: Enable Interoperability 
 description: 
 platform: Web
-updatedAt: Thu Feb 21 2019 08:11:54 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 08:12:01 GMT+0000 (UTC)
 ---
 # Enable Interoperability 
 ## Introduction
@@ -14,7 +14,9 @@ To **enable interoperability** means enabling real-time audio and video call ser
 
 Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
 
-To enable interoperability between a mobile device and a web browser or app, you need to adjust the settings on both platforms. In the communication profile, interoperability is enabled by default.
+To enable interoperability between a mobile device and a web browser or app, you need to adjust the settings on both platforms. 
+
+> Use this function only when the channel is in the live broadcast profile. Interoperability is enabled by default in the communication profile.
 
 * On the mobile/desktop device, call the `enableWebSdkInteroperability` method.
 
@@ -52,4 +54,4 @@ To enable interoperability between a mobile device and a web browser or app, you
 
 ## Considerations
 * The settings must be adjusted on both the mobile device and the web browser/app to enable interoperability.
-* Use this function only when the channel is in the live broadcast profile. Interoperability is enabled by default in the communication profile.
+
