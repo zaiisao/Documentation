@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Thu Feb 21 2019 06:21:15 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 06:21:20 GMT+0000 (UTC)
 ---
 # Adjust the Volume
 ## Introduction
@@ -63,7 +63,7 @@ agoraKit.adjustRecordingSignalVolume(50)
 
 ### Set the Audio Mixing Volume
 
-**Audio mixing** is playing local or online music while speaking, so that other users in the channel can hear the speaker and the music simultaneously. See [Audio Mixing](../../en/Voice/effect_mixing_ios.md) for enabling this function.
+**Audio mixing** is playing local or online music while speaking, so that other users in the channel can hear the speaker and the music simultaneously. See [Audio Mixing](../../en/Voice/effect_mixing_ios_audio.md) for enabling this function.
 
 The value of the audio mixing volume ranges between 0 and 100. 100 (default) represents the original volume, and 0 means the audio mixing is muted.
 
