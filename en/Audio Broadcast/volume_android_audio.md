@@ -15,7 +15,7 @@ This article describes the scenarios when you need to adjust the volume, the cor
 ![](https://web-cdn.agora.io/docs-files/1548729539637)
 
 ## Implementation
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md).
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/android_audio.md).
 
 ### Set the Recording Volume
 
@@ -31,7 +31,7 @@ rtcEngine.adjustRecordingSignalVolume(volume);
 
 #### API Reference
 
-- [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af3747f72256eb683feadbca2b742bd05)
+- [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af3747f72256eb683feadbca2b742bd05)
 
 ### Set the Playback Volume
 
@@ -47,7 +47,7 @@ rtcEngine.adjustPlaybackSignalVolume(volume);
 
 #### API Reference
 
-- [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
+- [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
 
 ### Set the Audio Mixing Volume
 
@@ -73,13 +73,13 @@ rtcEngine.adjustAudioMixingVolume(volume);
 
 #### API Reference
 
-- [`adjustAudioMixingPublishingVolume`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a16c4dc66d9c43eef9bee7afc86762c00)
-- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
+- [`adjustAudioMixingPublishingVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a16c4dc66d9c43eef9bee7afc86762c00)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
 
 ### Set the Audio Effects Volume
 
-**Audio effects** are certain short-time sounds such as clapping and gunshots. See [Audio Effects](../../en/Voice/effect_mixing_android_audio.md) for enabling this function.
+**Audio effects** are certain short-time sounds such as clapping and gunshots. See [Audio Effects](../../en/Audio%20Broadcast/effect_mixing_android_audio.md) for enabling this function.
 
 The value of the audio effects volume ranges between 0.0 and 100.0. 100 .0 (default) represents the original volume, and 0.0 means the audio effect is muted.
 
@@ -98,8 +98,8 @@ manager.setVolumeOfEffect(soundId, volume);
 
 #### API Reference
 
-- [`setEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#ab758558563b3dd70771e5d44ba1a96f3)
-- [`setVolumeOfEffect`](https://docs.agora.io/en/Voice/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#afcd8cd6d733703c0ba153b8e1ac81ec0)
+- [`setEffectsVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#ab758558563b3dd70771e5d44ba1a96f3)
+- [`setVolumeOfEffect`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#afcd8cd6d733703c0ba153b8e1ac81ec0)
 
 ### Set the In-ear Monitoring Volume
 
@@ -117,7 +117,7 @@ rtcEngine.setInEarMonitoringVolume(volume);
 
 #### API Reference
 
-- [`setInEarMonitoringVolume`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af71afdf140660b10c4fb0c40029c432d)
+- [`setInEarMonitoringVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af71afdf140660b10c4fb0c40029c432d)
 
 ### Get the Data of the Loudest Speaker (Callback Method)
 
@@ -148,8 +148,8 @@ public void onActiveSpeaker(int uid) {
 ```
 
 #### API Reference
-- [`onAudioVolumeIndication`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a4d37f2b4d569fa787bb8c0e3ae8cd424)
-- [`onActiveSpeaker`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a895e965178d808f9d33b387ab3e50300)
+- [`onAudioVolumeIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a4d37f2b4d569fa787bb8c0e3ae8cd424)
+- [`onActiveSpeaker`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a895e965178d808f9d33b387ab3e50300)
 
 ## Considerations
 
