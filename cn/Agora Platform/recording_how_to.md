@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Thu Feb 21 2019 10:20:17 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 10:20:28 GMT+0000 (UTC)
 ---
 # 录制相关
 ### 怎么检测录音权限？
@@ -53,3 +53,13 @@ updatedAt: Thu Feb 21 2019 10:20:17 GMT+0000 (UTC)
 
 * 在命令行运行时，在键盘上同时按下 Ctrl 和 C 键结束进程。
 * 当你设置参数 idle (设置空闲频道超时退出时间) 的值后，如果频道内无用户的状态超过设定的时间，录制程序自动退出。默认值为 300 秒。
+
+### 在使用命令行工具集成录制 SDK 时，报错 java.land.UnsatisfiedLinkError: no recording in java.library.path，如何解决？
+
+报错原因：系统环境找不到 librecording.so 库文件。
+
+解决方法：确认 java demo 是否成功编译并生成了库文件，查看并配置库文件的位置。
+
+例如，若库文件位置为 /home/pierre/Desktop/tool/Agora_Recording223/samples/java/bin/io/agora/recording/librecording.so，则在 Linux 系统下，在 /etc/profile 或者 ~/.bash_profile、~/.bashrc 下配置 LD_LIBRARY_PATH 为：LD_LIBRARY_PATH=/home/pierre/Desktop/tool/Agora_Recording223/samples/java/bin/io/agora/recording/librecording.so。
+
+不同系统与程序配置 java.library.path 的方法请参考 https://blog.csdn.net/quqibing001/article/details/51201768。
