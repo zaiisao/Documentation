@@ -3,7 +3,7 @@
 title: 音频设备测试与切换
 description: 音频设备测试与切换
 platform: iOS,macOS
-updatedAt: Thu Feb 21 2019 08:58:55 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 09:01:18 GMT+0000 (UTC)
 ---
 # 音频设备测试与切换
 ## 功能描述
@@ -32,6 +32,10 @@ agoraKit.stopRecordingDeviceTest()
 
 
 ## API 参考
+* [`startRecordingDeviceTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
+* [`stopPlaybackDeviceTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopPlaybackDeviceTest)
+* [`startPlaybackDeviceTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
+* [`stopPlaybackDeviceTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
 
 ## 开发注意事项
 
