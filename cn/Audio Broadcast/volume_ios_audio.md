@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume for iOS audio SDK
 platform: iOS
-updatedAt: Thu Feb 21 2019 03:56:26 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 03:56:30 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -107,7 +107,7 @@ agoraKit.adjustAudioMixingVolume(50)
 
 ### 设置音效音量
 
-播放音效是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效](../../cn/Audio%20Broadcast/effect_mixing_ios.md)开启音效播放。
+播放音效是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效](../../cn/Audio%20Broadcast/effect_mixing_ios_audio.md)开启音效播放。
 
 调节音效音量的参数值范围是 0.0 - 100.0，默认值 100.0 表示原始音效音量，即不对信号做缩放。0.0 表示音效文件播放静音。
 
