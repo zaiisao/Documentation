@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume for Android audio SDK
 platform: Android
-updatedAt: Thu Feb 21 2019 03:54:11 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 03:54:27 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -49,7 +49,7 @@ rtcEngine.adjustPlaybackSignalVolume(volume);
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
 
 ### 设置混音音量
-**混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[音乐混音](../../cn/Audio%20Broadcast/effect_mixing_android.md)开启混音功能。
+**混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[音乐混音](../../cn/Audio%20Broadcast/effect_mixing_android_audio.md)开启混音功能。
 
 调节混音音量的参数值范围是 0 - 100，默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音文件播放静音。
 
