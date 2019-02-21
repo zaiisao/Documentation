@@ -3,7 +3,7 @@
 title: Enable Interoperability 
 description: 
 platform: iOS
-updatedAt: Wed Feb 20 2019 07:46:12 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 03:55:56 GMT+0000 (UTC)
 ---
 # Enable Interoperability 
 ## Introduction
@@ -13,7 +13,7 @@ To **enable interoperability** means enabling real-time audio and video call ser
 
 ## Implementation
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_audio.md).
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_video.md).
 
 To enable interoperability between a mobile device and a web browser or app, you need to adjust the settings on both platforms. In the communication profile, interoperability is enabled by default.
 
