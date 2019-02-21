@@ -12,7 +12,7 @@ updatedAt: Thu Feb 21 2019 08:08:57 GMT+0000 (UTC)
 
 ## 实现方法
 
-在开启互通前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Interactive%20Broadcast/mac_video.md)。
+在开启互通前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Audio%20Broadcast/mac_video.md)。
 
 Agora SDK 的桌面端和 Web 端互通，需要在桌面端和 Web 端同时进行配置。该功能仅在直播模式下需要，通信模式下默认互通是打开的。
 
