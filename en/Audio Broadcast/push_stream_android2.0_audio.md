@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Android
-updatedAt: Thu Feb 21 2019 08:19:37 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 08:19:42 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -37,7 +37,7 @@ Contact [sales@agora.io](mailto:sales@agora.io) to enable this function.
 
 The following figure shows a typical CDN-pushing scenario.
 
-<img alt="../_images/live_ios_publishing_stream_en.png" src="https://web-cdn.agora.io/docs-files/en/live_ios_publishing_stream_en.png"/>
+![](https://web-cdn.agora.io/docs-files/1550737160039)
 
 
 ### Sample Code:
