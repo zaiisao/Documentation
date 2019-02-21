@@ -3,7 +3,7 @@
 title: Web SDK 相关
 description: 
 platform: Web SDK 相关
-updatedAt: Thu Feb 21 2019 06:20:46 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 06:20:53 GMT+0000 (UTC)
 ---
 # Web SDK 相关
 ### 用户在安卓设备上使用 Chrome 浏览器发起通话，无法与使用 Native 及 Safari 浏览器的用户互通?
@@ -74,3 +74,6 @@ PC 或移动端用户（使用 Agora Native SDK 的用户）在直播场景下�
 
 ### 在 Firefox 浏览器 v59.0.2 上订阅远端流失败？
 该问题是由于浏览器自身限制导致的，建议更新 Firefox 浏览器版本。
+
+### 调用 `stream.init` 报错 `Media access:SecurityError`？
+请使用 HTTPS 协议。
