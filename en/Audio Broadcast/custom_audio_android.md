@@ -3,7 +3,7 @@
 title: Customize the Audio Source and Renderer
 description: 
 platform: Android
-updatedAt: Thu Feb 21 2019 07:53:15 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 07:53:21 GMT+0000 (UTC)
 ---
 # Customize the Audio Source and Renderer
 ## Introduction
@@ -18,7 +18,7 @@ By default, an app uses the internal audio modules for capturing and rendering d
 
 ## Implementation
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/android_video.md).
+Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/android_audio.md).
 
 ### Customize the Audio Source
 
