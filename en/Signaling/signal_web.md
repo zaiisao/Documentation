@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Web
-updatedAt: Thu Feb 21 2019 03:16:21 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 03:16:30 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0 BETA
@@ -920,7 +920,7 @@ messageChannelSend(msg, cb)
 <th>Description</th>
 </tr>
 <tr><td>msg</td>
-<td>Channel message.</td>
+<td>Channel message. Each channel message must not exceed 8 KB visible characters. Each user cannot send more than 60 messages per second, and the entire channel cannot send more than 200 messages per second.</td>
 </tr>
 <tr><td><code>cb</code></td>
 <td>Callback function when this method is called successfully.</td>
@@ -1351,10 +1351,3 @@ onMessageChannelReceive(account, uid, msg)
 ## Error Codes and Warning Codes
 
 See [Error Codes and Warning Codes](../../en/API%20Reference/the_error_signaling.md).
-
-
-
-
-
-
-
