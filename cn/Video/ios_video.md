@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: iOS
-updatedAt: Thu Feb 21 2019 07:53:02 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 07:53:06 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for iOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -139,13 +139,13 @@ updatedAt: Thu Feb 21 2019 07:53:02 GMT+0000 (UTC)
 
 ### <a name = "oc"></a>Objective-C
 
-在项目需要使用 Agora Voice SDK API 的文件里，填入 `#import <AgoraAudioKit/AgoraRtcEngineKit.h>`。
+在项目需要使用 Agora Voice SDK API 的文件里，填入 `#import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>`。
 
 > SDK 提供的库是 Fat Image，包含 32/64 位模拟器、32/64 位真机版本。
 
 ### <a name = "swift"></a>Swift
 
-在项目需要使用 Agora Voice SDK API 的文件里，填入 `import AgoraAudioKit`。
+在项目需要使用 Agora Voice SDK API 的文件里，填入 `import AgoraRtcEngineKit`。
 
 <img alt="../_images/ios_video_8.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_8.jpg" />
 
