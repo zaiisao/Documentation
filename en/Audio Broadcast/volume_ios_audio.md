@@ -15,7 +15,7 @@ This article describes the scenarios when you need to adjust the volume, the cor
 ![](https://web-cdn.agora.io/docs-files/1548729570704)
 
 ## Implementation
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/ios_audio.md).
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_audio.md).
 
 ### Set the Recording Volume
 
@@ -37,7 +37,7 @@ agoraKit.adjustRecordingSignalVolume(50)
 
 #### API Reference
 
-- [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustRecordingSignalVolume:)
+- [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustRecordingSignalVolume:)
 
 ### Set the Playback Volume
 
@@ -59,11 +59,11 @@ agoraKit.adjustRecordingSignalVolume(50)
 
 #### API Reference
 
-- [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
+- [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
 
 ### Set the Audio Mixing Volume
 
-**Audio mixing** is playing local or online music while speaking, so that other users in the channel can hear the speaker and the music simultaneously. See [Audio Mixing](../../en/Voice/effect_mixing_ios.md) for enabling this function.
+**Audio mixing** is playing local or online music while speaking, so that other users in the channel can hear the speaker and the music simultaneously. See [Audio Mixing](../../en/Audio%20Broadcast/effect_mixing_ios.md) for enabling this function.
 
 The value of the audio mixing volume ranges between 0 and 100. 100 (default) represents the original volume, and 0 means the audio mixing is muted.
 
@@ -99,13 +99,13 @@ agoraKit.adjustAudioMixingVolume(50)
 
 #### API Reference
 
-- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
-- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
 
 ### Set the Audio Effects Volume
 
-**Audio effects** are certain short-time sounds such as clapping and gunshots. See [Audio Effects](../../en/Voice/effect_mixing_ios_audio.md) for enabling this function.
+**Audio effects** are certain short-time sounds such as clapping and gunshots. See [Audio Effects](../../en/Audio%20Broadcast/effect_mixing_ios_audio.md) for enabling this function.
 
 The value of the audio effects volume ranges between 0.0 and 100.0. 100 .0 (default) represents the original volume, and 0.0 means the audio effect is muted.
 
@@ -129,8 +129,8 @@ agoraKit.setVolumeOfEffect(soundId:"1", 50.0)
 
 #### API Reference
 
-- [`setEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
-- [`setVolumeOfEffect`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVolumeOfEffect:withVolume:)
+- [`setEffectsVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
+- [`setVolumeOfEffect`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVolumeOfEffect:withVolume:)
 
 ### Set the In-ear Monitoring Volume
 
@@ -156,8 +156,8 @@ agoraKit.setInEarMonitoringVolume(50)
 
 #### API Reference
 
-- [`enableInEarMonitoring`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableInEarMonitoring:)
-- [`setInEarMonitoringVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setInEarMonitoringVolume:)
+- [`enableInEarMonitoring`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableInEarMonitoring:)
+- [`setInEarMonitoringVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setInEarMonitoringVolume:)
 
 ### Get the Data of the Loudest Speaker (Callback Method)
 
@@ -204,8 +204,8 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, activeSpeaker speakerUid: UInt) {
 
 #### API Reference
 
-- [`reportAudioVolumeIndicationOfSpeakers`](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:4)
-- [`activeSpeaker`](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:activeSpeaker:)
+- [`reportAudioVolumeIndicationOfSpeakers`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:4)
+- [`activeSpeaker`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:activeSpeaker:)
 
 ## Considerations
 
