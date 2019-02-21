@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume for iOS audio SDK
 platform: iOS
-updatedAt: Tue Jan 29 2019 02:41:06 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 03:56:26 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
