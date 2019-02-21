@@ -3,7 +3,7 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Thu Feb 21 2019 06:21:26 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 06:22:05 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
 ### When I use Google Chrome on Android, why can't I connect with people who use the Safari browser or Native SDK?
@@ -72,7 +72,4 @@ This is a known issue of the Firefox browser, please use a later version of Fire
 
 ### Error `Media access:SecurityError` when calling stream.init?
 Please use HTTPS for your web app.
-
-### Error `Media access:Notfound` when calling stream.init?
-No access to the camera or microphone. 
 
