@@ -3,7 +3,7 @@
 title: 移动、桌面、Web 端互通
 description: 
 platform: iOS
-updatedAt: Thu Feb 21 2019 03:51:04 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 03:51:09 GMT+0000 (UTC)
 ---
 # 移动、桌面、Web 端互通
 ## 功能简介
@@ -14,7 +14,9 @@ updatedAt: Thu Feb 21 2019 03:51:04 GMT+0000 (UTC)
 
 在开启互通前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Audio%20Broadcast/ios_audio.md)。
 
-Agora SDK 的移动端和 Web 端互通，需要在移动端和 Web 端同时进行配置。该功能仅在直播模式下需要，通信模式下默认互通是打开的。
+Agora SDK 的移动端和 Web 端互通，需要在移动端和 Web 端同时进行配置。
+
+> 该功能仅在直播模式下需要，通信模式下默认互通是打开的。
 
 * 移动端：调用 `enableWebSdkInteroperability` API 方法。
 
@@ -40,4 +42,3 @@ Agora SDK 的移动端和 Web 端互通，需要在移动端和 Web 端同时进
 
 ## 开发注意事项
 * 移动端和 Web 端必须同时设置，才能实现互通。
-* Agora SDK 在通信模式下，默认互通是打开的。因此只有在直播模式下，才需要打开互通。
