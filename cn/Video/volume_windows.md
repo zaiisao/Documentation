@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Windows
 platform: Windows
-updatedAt: Thu Feb 21 2019 04:10:48 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 04:13:22 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
@@ -91,7 +91,7 @@ int ret = rep.adjustPlaybackSignalVolume(200);
 
 ### 设置混音音量
 
-**混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[音乐混音](https://docs.agora.io/cn/Video/effect_mixing_windows?platform=Windows#音乐混音)开启混音功能。
+**混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[音乐混音](../../cn/Video/effect_mixing_windows.md)开启混音功能。
 
 调节混音音量的参数值范围是 0 - 100，默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音文件播放静音。
 
@@ -123,7 +123,7 @@ int ret = rep.adjustAudioMixingVolume(50);
 
 ### 设置音效音量
 
-播放**音效**是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效](https://docs.agora.io/cn/Video/effect_mixing_windows?platform=Windows#播放音效文件)开启音效播放。
+播放**音效**是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效](../../cn/Video/effect_mixing_windows.md)开启音效播放。
 
 调节音效音量的参数值范围是 0 - 100，默认值 100 表示原始音效音量，即不对信号做缩放。0 表示音效文件播放静音。
 
