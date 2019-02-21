@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume for Android audio SDK
 platform: Android
-updatedAt: Wed Feb 20 2019 09:08:24 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 03:54:11 GMT+0000 (UTC)
 ---
 # 调整通话音量
 ## 功能描述
