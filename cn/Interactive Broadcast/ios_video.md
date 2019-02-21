@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: iOS
-updatedAt: Tue Dec 11 2018 08:19:57 GMT+0000 (UTC)
+updatedAt: Thu Feb 21 2019 07:53:02 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for iOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
