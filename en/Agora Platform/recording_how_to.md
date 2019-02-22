@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Feb 22 2019 02:58:02 GMT+0000 (UTC)
+updatedAt: Fri Feb 22 2019 02:58:06 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ### How do you check the recording permissions?
@@ -52,9 +52,11 @@ The recording stops in one of the following scenarios when you use the command l
 ### When I use the command line tool to integrate the recording SDK, the error java.land.UnsatisfiedLinkError: no recording in java.library.path occurs. How do I fix it?
 Reason: The system environment cannot find the `librecording.so` file.
 Solution: Check if the java demo is compiled and the library file is generated, and then, check and configure the path of the library file.
-For example, on Linux, if the path of the library file is `/home/user/Desktop/tool/Agora_Recording223/samples/java/bin/io/agora/recording/librecording.so`, 
-configure `LD_LIBRARY_PATH` under `/etc/profile`, `~/.bash_profile` or `~/.bashrc` as follows: 
-`LD_LIBRARY_PATH=/home/user/Desktop/tool/Agora_Recording223/samples/java/bin/io/agora/recording/librecording.so`.
+For example, on Linux, if the path of the library file is `/home/user/Desktop/tool/Agora_Recording/samples/java/bin/io/agora/recording/librecording.so`, 
+configure `LD_LIBRARY_PATH` in `/etc/profile`, `~/.bash_profile` or `~/.bashrc` as follows: 
+```
+LD_LIBRARY_PATH=/home/user/Desktop/tool/Agora_Recording/samples/java/bin/io/agora/recording/librecording.so
+```
 
 
 
