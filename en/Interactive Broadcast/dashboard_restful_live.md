@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Feb 22 2019 08:37:17 GMT+0000 (UTC)
+updatedAt: Fri Feb 22 2019 08:37:22 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -21,7 +21,7 @@ Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and C
 
 ## 2. EndPoint
 
-All requests should be sent to BaseUrl: *https://api.agora.io/dev/v1*.
+All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
 
 - Request: All parameters must be sent in JSON format, with content type: Content-Type: application/json.
 - Response: The response content is in JSON format. The response status is defined as follows:
@@ -34,7 +34,7 @@ All requests should be sent to BaseUrl: *https://api.agora.io/dev/v1*.
 
 ## 3. Project API
 
-BaseUrl: **http://api.agora.io/dev/v1**.
+BaseUrl: **https://api.agora.io/dev/v1**.
 
 The following chart shows how you can use Project APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990299008)
