@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Thu Feb 21 2019 10:31:54 GMT+0000 (UTC)
+updatedAt: Fri Feb 22 2019 02:54:19 GMT+0000 (UTC)
 ---
 # 录制相关
 ### 怎么检测录音权限？
