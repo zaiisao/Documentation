@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Fri Feb 22 2019 02:59:03 GMT+0000 (UTC)
+updatedAt: Fri Feb 22 2019 02:59:29 GMT+0000 (UTC)
 ---
 # 录制相关
 ### 怎么检测录音权限？
@@ -60,6 +60,9 @@ updatedAt: Fri Feb 22 2019 02:59:03 GMT+0000 (UTC)
 
 解决方法：确认 Java demo 是否成功编译并生成了库文件，查看并配置库文件的位置。
 
-例如，若库文件位置为 `/home/user/Desktop/tool/Agora_Recording223/samples/java/bin/io/agora/recording/librecording.so`，则在 Linux 系统下，在 `/etc/profile` 或者 `~/.bash_profile`、`~/.bashrc` 下配置 `LD_LIBRARY_PATH` ：`LD_LIBRARY_PATH=/home/user/Desktop/tool/Agora_Recording223/samples/java/bin/io/agora/recording/librecording.so`。
+例如，若库文件位置为 `/home/user/Desktop/tool/Agora_Recording/samples/java/bin/io/agora/recording/librecording.so`，则在 Linux 系统下，在 `/etc/profile` 或者 `~/.bash_profile`、`~/.bashrc` 下配置 `LD_LIBRARY_PATH` ：
+```
+LD_LIBRARY_PATH=/home/user/Desktop/tool/Agora_Recording/samples/java/bin/io/agora/recording/librecording.so
+```
 
 不同系统与程序配置 `java.library.path` 的方法请参考[修改java.library.path的位置](https://blog.csdn.net/quqibing001/article/details/51201768)。
