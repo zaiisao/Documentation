@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Feb 22 2019 02:51:56 GMT+0000 (UTC)
+updatedAt: Fri Feb 22 2019 02:52:14 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ### How do you check the recording permissions?
@@ -49,13 +49,12 @@ The recording stops in one of the following scenarios when you use the command l
 * Press **Ctrl + C**.
 * When you set the channel idle timeout duration and if no user is in the channel after this duration, the channel disconnects and the recording stops automatically. The default value is 300 seconds.
 
-### When I use the command line tool to integrate the recording SDK, the error java.land.UnsatisfiedLinkError: no recording in java.library.path occurs. How to fix it?
+### When I use the command line tool to integrate the recording SDK, the error java.land.UnsatisfiedLinkError: no recording in java.library.path occurs. How do I fix it?
 Reason: The system environment cannot find the `librecording.so` file.
-Solution: Check if the java demo is compiled and generates the library file, and then, check and configure the directory of the library file.
-For example, on Linux, if the directory of the library file is `/home/pierre/Desktop/tool/Agora_Recording223/samples/java/bin/io/agora/recording/librecording.so`, 
+Solution: Check if the java demo is compiled and the library file is generated, and then, check and configure the path of the library file.
+For example, on Linux, if the path of the library file is `/home/pierre/Desktop/tool/Agora_Recording223/samples/java/bin/io/agora/recording/librecording.so`, 
 configure `LD_LIBRARY_PATH` under `/etc/profile`, `~/.bash_profile` or `~/.bashrc` as follows: 
 `LD_LIBRARY_PATH=/home/pierre/Desktop/tool/Agora_Recording223/samples/java/bin/io/agora/recording/librecording.so`.
-To configure `java.library.path` on different systems, see https://blog.csdn.net/quqibing001/article/details/51201768.
 
 
 
