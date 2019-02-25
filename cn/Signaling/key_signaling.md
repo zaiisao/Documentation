@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 25 2019 07:57:43 GMT+0000 (UTC)
+updatedAt: Mon Feb 25 2019 07:58:01 GMT+0000 (UTC)
 ---
 # 校验用户权限
 ## 简介
@@ -76,19 +76,6 @@ updatedAt: Mon Feb 25 2019 07:57:43 GMT+0000 (UTC)
 	>  -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
 	>  -   通常 App Certificate 在启用一小时后生效。
 	>  -   当项目的 App Certificate 被启用后，你必须使用 Token。例如: 在启用 App Certificate 前，你可以使用 App ID 加入频道。但启用了 App Certificate 后，你就必须使用 Token 加入频道。
-
-   4. 如果你的项目同时集成了声网的信令 SDK，你可以调试 App Certificate 下方的信令Token调试开关
-    <img alt="../_images/SignalingToken_debug.png" src="https://web-cdn.agora.io/docs-files/cn/SignalingToken_debug.png" />
-		
-	 -   如果 App Certificate 未启用，信令Token调试开关默认不生效，SignalingToken 支持任意值
-
-	 -   如果 App Certificate 已启用：
-
-		 -   信令Token调试开关默认随 App Certificate 一同启用：你可以正常设置 SignalingToken，也可以通过 `_no_need_token` 参数不使用 SignalingToken。
-
-		 -   如果关闭信令Token调试开关：你可以正常设置 SignalingToken，但是不能将 SignalingToken 设成 `_no_need_token`，否则将得到信令错误码 206.
-
-> 建议客户业务上线后，关闭信令Token调试开关，禁用`_no_need_token`。
 
 3.  集成算法。使用以下方法生成令牌 (SignalingToken):
     **输入**:
