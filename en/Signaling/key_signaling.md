@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 25 2019 10:40:07 GMT+0000 (UTC)
+updatedAt: Mon Feb 25 2019 10:40:20 GMT+0000 (UTC)
 ---
 # Use Security Keys
 ## Introduction
@@ -86,6 +86,18 @@ Each Agora account can create multiple projects, and each project has a unique A
 > -   It takes about an hour for the App Certificate to take effect after it is enabled.
 > 
 > -   Once the App Certificate is enabled for a project, a SignalingToken must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a SignalingToken must be used to join a channel.
+
+
+5.  If your project integrates Agora’s Signaling SDK, you can use the Signaling Token Debugging Switch under App Certificate.
+
+    -   If the App Certificate is not enabled, the Signaling Token Debugging Switch is disabled and you can set the SignalingToken to any value.
+
+    -   If the App Certificate is enabled:
+
+        -   The Signaling Token Debugging Switch is on if the App Certificate is enabled: You can set the SignalingToken or use `_no_need_token` to skip the setting.
+
+        -   If you switch off the Signaling Token Debugging Switch, you can set the SignalingToken but cannot set it to `_no_need_token`. Otherwise, you will receive the Signaling error code 206.
+
 
 ### Step 3: Integrate the Schema
 
