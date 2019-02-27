@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Wed Feb 27 2019 07:02:08 GMT+0000 (UTC)
+updatedAt: Wed Feb 27 2019 07:02:12 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -40,7 +40,7 @@ updatedAt: Wed Feb 27 2019 07:02:08 GMT+0000 (UTC)
 
 > -   主播需要通过 <code>addPublishStreamUrl</code> 接口指定推流地址。推流地址可以在开始推流后动态增删。
 
-> -   主播需要在 <code>joinChannel</code> 后通过 <code>setLiveTranscoding</code> 接口定义转码参数和设置（RTMP 画布大小、多人混流布局等信息）。
+> -   主播需要在 <code>joinChannel</code> 成功后通过 <code>setLiveTranscoding</code> 接口定义转码参数和设置（RTMP 画布大小、多人混流布局等信息）。
 
 
 推流架构图如下：
