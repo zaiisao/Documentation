@@ -1,11 +1,11 @@
 
 ---
-title: 水晶球通话分析案例
+title: 水晶球通话调查案例
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 27 2018 07:27:07 GMT+0000 (UTC)
+updatedAt: Wed Feb 27 2019 03:40:48 GMT+0000 (UTC)
 ---
-# 水晶球通话分析案例
+# 水晶球通话调查案例
 本页列出几个典型的通话分析案例，帮助你快速了解如何使用[水晶球](../../cn/Agora%20Platform/aa_guide.md)的通话调查功能来查看和分析通话质量。
 
 点击下面的图片查看各个分析案例。
