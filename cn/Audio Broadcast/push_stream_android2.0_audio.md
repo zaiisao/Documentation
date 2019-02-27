@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Wed Feb 27 2019 07:27:46 GMT+0000 (UTC)
+updatedAt: Wed Feb 27 2019 07:27:50 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -34,7 +34,7 @@ updatedAt: Wed Feb 27 2019 07:27:46 GMT+0000 (UTC)
 
 > 声网今后将在 Dashboard 提供自助服务。
 > -   主播需要通过 `addPublishStreamUrl`接口指定推流地址。推流地址可以在开始推流后动态增删。
-> -   主播需要在 `joinChannel` 后通过 `setLiveTranscoding` 接口定义转码参数和设置（RTMP 画布大小等信息）。CDN 音频推流时仍需设置一个 16 &times; 16 的最小视窗。
+> -   主播需要在 `joinChannel` 成功后通过 `setLiveTranscoding` 接口定义转码参数和设置（RTMP 画布大小等信息）。CDN 音频推流时仍需设置一个 16 &times; 16 的最小视窗。
 
 
 推流架构图如下：
