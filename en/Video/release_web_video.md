@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Feb 28 2019 06:35:12 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 09:05:06 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -80,6 +80,15 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](../../en/Video/websdk_related_faq.md).
+
+## v2.5.2
+
+v2.5.2 is released on February 28, 2019. 
+
+### Issues Fixed
+
+- `Stream.switchDevice` fails to switch audio devices on Chrome 72 or later.
+- Errors occur when none of the optional parameters are set for `Client.subscribe`.
 
 ## v2.5.1
 
