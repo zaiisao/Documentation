@@ -3,7 +3,7 @@
 title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Thu Feb 28 2019 12:08:04 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 12:08:10 GMT+0000 (UTC)
 ---
 # Dashboard
 Agora Dashboard allows you to check your usage and the QoE, add money to your account, manage your projects and team members, and connect with Agora customer support.
@@ -140,9 +140,7 @@ Different roles have different permissions:
 
 You can also create custom roles under **Customized**.
 
-
-
-## Submit and Track a Ticket
+## Submit and track a ticket
 
 If you have any questions about Agora's products, you can: 
 
@@ -157,15 +155,15 @@ Agora Dashboard provides RESTful APIs for you to ban users, check your usage, an
 
 Click on **User Name > RESTful API** in the top navigation menu to get the Customer ID and Customer Certificate for the RESTful API. See [RESTful API](../../en/Agora%20Platform/dashboard_restful_live.md).
 
-## Other Functions
+## Other functions
 
-### Change the Profile Information and Account Settings
+### Change the profile information and account settings
 
 By clicking on **User Name** in the top navigation menu, you can:
 * Modify personal information;
 * Change the password;
 * And change the language of the Dashboard and Agora newsletter.
 
-### Reach out to Developer Communities
+### Reach out to developer communities
 
 Click on **Community** in the top navigation menu to connect with global developers in developer communities such as Github, online forums, and WeChat public accounts.
