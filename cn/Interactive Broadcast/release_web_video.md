@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Feb 28 2019 09:13:02 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 09:13:39 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
