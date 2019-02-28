@@ -3,10 +3,10 @@
 title: Agora Audio Broadcasting Overview
 description: 
 platform: All_Platforms
-updatedAt: Thu Feb 28 2019 08:51:11 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 08:51:18 GMT+0000 (UTC)
 ---
 # Agora Audio Broadcasting Overview
-The Agora Native SDK for Audio Broadcasting enables one-to-many and many-to-many audio or video live streaming. Different from the traditional CDN live broadcast, which only allows one-way communication from the hosts to the audience, the Agora SDK for Interactive Broadcast empowers the audience to interact with the hosts through [hosting-in](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#hosting-in), like a viewer jumping onto the stage in the middle of a play to perform. The Agora Native SDK for Interactive Broadcast is applicable to scenarios that encourage active engagement, such as game-playing, online classes for students in small groups, and Q&A sessions during E-commerce live streaming. You can also use this SDK for one-to-one video calls that require high image quality.
+The Agora Native SDK for Audio Broadcasting enables one-to-many and many-to-many audio live streaming. Different from the traditional CDN live broadcast, which only allows one-way communication from the hosts to the audience, the Agora SDK for Interactive Broadcast empowers the audience to interact with the hosts through [hosting-in](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#hosting-in), like a viewer jumping onto the stage in the middle of a play to perform. The Agora Native SDK for Interactive Broadcast is applicable to scenarios that encourage active engagement, such as game-playing, online classes for students in small groups, and Q&A sessions during E-commerce live streaming.
 
 ## Functions and Scenarios
 
@@ -19,8 +19,8 @@ The Agora Native SDK for Audio Broadcasting boasts a flexible combination of fun
 | Audio Mixing                          | Sends the local and online audio with the user's voice to other audience members in the channel. | <li>Online KTV. <li>Interactive music classes for children.    |
 | Screen Sharing                        | Hosts share their screens with the audience in the channel. | <li>Interactive online classes.<li>Live streaming of gaming hosts. |
 | Modify the Raw Data                    | Developers obtain and modify the raw voice data of the SDK engine to create special effects, such as a voice change. | <li>To change the voice in an online voice chatroom.<li>Image enhancement in a live stream. |
-| Inject an Online Media Stream         | Injects an external audio stream to an ongoing live broadcast channel. The host and audience in the channel can listen to or watch the stream while interacting with each other. You can set the attributes of the video source. | <li>The host and audience listening to a concert together.    |
-| Push Streams to the CDN                | Sends the audio and video of your channel to other RTMP servers through the CDN:<li>Starts or stops publishing at any time.<li>Adds or removes an address while continuously publishing the stream. <li>Adjusts the picture-in-picture layout. | <li>To send a live stream to WeChat or Weibo.<li>To allow more people to watch the live stream when the number of audience members in the channel reached the limit. |
+| Inject an Online Media Stream         | Injects an external audio stream to an ongoing live broadcast channel. The host and audience in the channel can listen to or watch the stream while interacting with each other. You can set the attributes of the audio source. | <li>The host and audience listening to a concert together.    |
+| Push Streams to the CDN                | Sends the audio of your channel to other RTMP servers through the CDN:<li>Starts or stops publishing at any time.<li>Adds or removes an address while continuously publishing the stream. <li>Adjusts the picture-in-picture layout. | <li>To send a live stream to WeChat or Weibo.<li>To allow more people to watch the live stream when the number of audience members in the channel reached the limit. |
 
 See the following sample code for application scenarios:
 
@@ -38,7 +38,6 @@ See the following sample code for application scenarios:
 | SDK Package Size                                  | 3.69 MB to 7.75 MB                                              |
 | Host Capacity                                     | 17 users                                                  |
 | Audience Capacity                                 | One million users                                       |
-| Video Profile                                     | <li>SDK video source: Up to 1080p @ 60fps.<li>Custom video source: Up to 4K |
 | Audio Profile                                     | <li>Sample rate: 16 KHz to 48 KHz.<li>Support for mono and stereo sound  |
 | Audio Anti-packet-loss Rate                       | 70% (uplink and downlink)                               |
 | Latency between the Host and the Host-in Audience/Host | 200 ms to 600 ms                                                  |
