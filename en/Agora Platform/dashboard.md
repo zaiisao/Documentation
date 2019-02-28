@@ -1,11 +1,11 @@
 
 ---
-title: Use Dashboard
+title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Thu Feb 28 2019 12:04:57 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 12:05:29 GMT+0000 (UTC)
 ---
-# Use Dashboard
+# Dashboard
 Agora Dashboard allows you to check your usage and the QoE, add money to your account, manage your projects and team members, and connect with Agora customer support.
 
 Before using Agora Dashboard, [create an Agora account](../../en/Agora%20Platform/sign_in_and_sign_up.md) at [www.agora.io](https://www.agora.io/en/).
@@ -96,6 +96,10 @@ Select a **Project** and **Time Frame**, and enter a **Channel Name** or **UID**
 #### Check the usage of recording
 
 Click on the **Recording** button in the left navigation menu to check the duration (minutes) of recording files during a specific time frame.
+
+## Add money to your account
+
+Click on ![](https://web-cdn.agora.io/docs-files/1551350477096) to enter the **Finance** page. Here, you can add money to your balance using Alipay, check your balance and view your transaction history. For more information, see [Online Payment](../../en/Agora%20Platform/online_payment.md).
 
 ## Manage projects
 
