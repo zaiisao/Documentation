@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Feb 28 2019 06:34:37 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 09:05:18 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -80,6 +80,17 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](../../cn/Video/websdk_related_faq.md)。
+
+## v2.5.2
+
+该版本于 2019 年 2 月 28 日发布。修复问题见下文。
+
+
+### 问题修复
+
+- 修复了在 Chrome 72 及以上调用 `Stream.switchDevice` 无法切换音频的问题。
+- 修复了如果未设置 `Client.subscribe` 的可选参数会报错的问题。
+
 
 ## 2.5.1 版
 
