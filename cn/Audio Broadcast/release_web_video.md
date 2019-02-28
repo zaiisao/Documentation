@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Feb 28 2019 09:13:39 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 09:13:47 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -81,7 +81,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 更多问题，详见 [Web 常见问题集](../../cn/Audio%20Broadcast/websdk_related_faq.md)。
 
-## v2.5.2 版
+## 2.5.2 版
 
 该版本于 2019 年 2 月 28 日发布。修复问题见下文。
 
