@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu Feb 28 2019 04:20:04 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 04:20:14 GMT+0000 (UTC)
 ---
 # 产品概述
 Agora Recording SDK，是 Agora 针对音视频通话、直播研发的录制插件，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK \(1.12.0 或更高版本\) 兼容，通过简单的操作方法，帮助开发者快速、灵活地部署录制服务，来实现一对一、一对多的音视频通话或直播的录制。
@@ -47,6 +47,6 @@ Agora Recording SDK 主要有以下特性：
 
 ## 相关文档和示例代码
 
-- [录制快速开始](../../cn/Quickstart%20Guide/recording_cpp-1.md)展示了如何从零开始完成 Agora 录制 SDK 的部署及使用，包括环境搭建、集成方法、编译代码、演示录制等内容。
-- [录制 API](../../cn/API%20Reference/recording_cpp.md) 展示了使用 Agora 录制 SDK 过程中你可以调用的各 API，以及调用这些 API 能实现的功能、以及会收到的回调等内容。
+- [集成录制 SDK](../../cn/Quickstart%20Guide/recording_integrate_cpp.md) 和[开始录制](../../cn/Quickstart%20Guide/recording_cmd_cpp.md)展示了如何从零开始完成 Agora 录制 SDK 的部署及使用，包括环境搭建、集成方法、编译代码、演示录制等内容。
+- [录制 API](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html) 展示了使用 Agora 录制 SDK 过程中你可以调用的各 API，以及调用这些 API 能实现的功能、以及会收到的回调等内容。
 - [服务端录制示例代码](https://github.com/AgoraIO/Basic-Recording/blob/master/Agora-LinuxServer-Recording/README_zh.md)演示了如何录制音视频, 例如: 纯音频录制，混音，合图，加解密，设置 UDP 端口等。
