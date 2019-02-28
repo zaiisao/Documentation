@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: General Questions
-updatedAt: Thu Nov 22 2018 10:20:33 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 03:52:17 GMT+0000 (UTC)
 ---
 # FAQ
 ## General Questions
