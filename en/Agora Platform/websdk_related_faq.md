@@ -3,7 +3,7 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Thu Feb 28 2019 09:53:25 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 09:53:32 GMT+0000 (UTC)
 ---
 # Web SDK-related Issues
 ### When I use Google Chrome on Android, why can't I connect with people who use the Safari browser or Native SDK?
@@ -74,5 +74,5 @@ This is a known issue of the Firefox browser, please use a later version of Fire
 Please use HTTPS for your web app.
 
 ### There is no audio on Safari if the user subscirbes to remote streams without publishing any stream?
-If autoplay is disabled in the Safari settings, you need to call `navigator.mediaDevices.getUserMedia` before `Stream.play`, otherwise the audio will not be played.
+If autoplay is disabled in the Safari settings, you need to call `navigator.mediaDevices.getUserMedia` before `Stream.play`, otherwise the audio is not played.
 
