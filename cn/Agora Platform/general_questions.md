@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 22 2018 10:42:59 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 03:51:50 GMT+0000 (UTC)
 ---
 # FAQ
 ## 常见问题回答
