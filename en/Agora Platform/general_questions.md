@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: General Questions
-updatedAt: Thu Feb 28 2019 03:52:17 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 03:52:24 GMT+0000 (UTC)
 ---
 # FAQ
 ## General Questions
@@ -13,8 +13,6 @@ This category contains questions and answers about Agora products, services, par
 [Company and Products](../../en/Agora%20Platform/product_faq.md)
 
 [Security](../../en/Agora%20Platform/security_faq.md)
-
-[Pricing and Billing](../../en/Agora%20Platform/billing_faq.md)
 
 [Technical Specification](../../en/Agora%20Platform/technical_specification_faq.md)
 
