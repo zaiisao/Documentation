@@ -3,7 +3,7 @@
 title: Web SDK 相关
 description: 
 platform: Web SDK 相关
-updatedAt: Thu Feb 28 2019 09:34:32 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 09:34:37 GMT+0000 (UTC)
 ---
 # Web SDK 相关
 ### 用户在安卓设备上使用 Chrome 浏览器发起通话，无法与使用 Native 及 Safari 浏览器的用户互通?
@@ -77,3 +77,6 @@ PC 或移动端用户（使用 Agora Native SDK 的用户）在直播场景下�
 
 ### 调用 `stream.init` 报错 `Media access:SecurityError`？
 请使用 HTTPS 协议。
+
+### Safari 浏览器只接收流不发送流时，听不到声音？
+如果 Safari 浏览器设置没有打开自动播放，需要在 `Stream.play` 之前调用方法 `navigator.mediaDevices.getUserMedia` 获取设备权限，否则会听不到声音。
