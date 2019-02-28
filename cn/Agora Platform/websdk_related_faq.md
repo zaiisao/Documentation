@@ -3,7 +3,7 @@
 title: Web SDK 相关
 description: 
 platform: Web SDK 相关
-updatedAt: Thu Feb 28 2019 07:11:19 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 07:26:23 GMT+0000 (UTC)
 ---
 # Web SDK 相关
 ### 用户在安卓设备上使用 Chrome 浏览器发起通话，无法与使用 Native 及 Safari 浏览器的用户互通?
