@@ -3,14 +3,14 @@
 title: Use Dashboard
 description: 
 platform: All Platforms
-updatedAt: Thu Feb 28 2019 11:55:29 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 11:55:37 GMT+0000 (UTC)
 ---
 # Use Dashboard
-Agora Dashboard allows you to check your usage and the QoE, manage your projects and team members, and connect with Agora customer support.
+Agora Dashboard allows you to check your usage and the QoE, add money to your account, manage your projects and team members, and connect with Agora customer support.
 
 Before using Agora Dashboard, [create an Agora account](../../en/Agora%20Platform/sign_in_and_sign_up.md) at [www.agora.io](https://www.agora.io/en/).
 
-## Overview
+## Introduction
 
 <table>
 <tr>
@@ -18,7 +18,7 @@ Before using Agora Dashboard, [create an Agora account](../../en/Agora%20Platfor
 <th>Description</th>
 </tr>
 <tr>
-<td>Check Your Usage</td>
+<td>Check your usage</td>
 <td>Check the usage of your voice and video calls in a channel during a specific time frame to calculate your charges.</td>
 </tr>
 <tr>
@@ -26,15 +26,19 @@ Before using Agora Dashboard, [create an Agora account](../../en/Agora%20Platfor
 <td>Check the performance of Agora's products from diagrams associated with your project to quickly identify problems.</td>
 </tr>
 <tr>
-<td>Manage Projects</td>
+<td>Add money to your account</td>
+<td>Add money to your balance using Alipay, check your balance and view your transaction history.</td>
+</tr>
+<tr>
+<td>Manage projects</td>
 <td>Create and manage projects, and get the App ID and App Certificate.</td>
 </tr>
 <tr>
-<td>Manage Team Members</td>
+<td>Manage team members</td>
 <td>Add and manage team members, and set the permissions for different roles.</td>
 </tr>
 <tr>
-<td>Submit and Track Tickets</td>
+<td>Submit and track tickets</td>
 <td>Search for solutions to problems or submit tickets to Agora customer support.</td>
 </tr>
 <tr>
@@ -42,82 +46,97 @@ Before using Agora Dashboard, [create an Agora account](../../en/Agora%20Platfor
 <td>Use RESTful APIs to ban users, check the usage, and inquire about online statistics at the server.</td>
 </tr>
 <tr>
-<td>Other Functions</td>
+<td>Other functions</td>
 <td>Change the profile information and account settings, and connect with developer communities.</td>
 </tr>
 </table>
 
-## Check Your Usage
+## Overview
 
-Click on **Usage > Usage Statistics** in the left navigation menu to go to the **Usage Details** page where you can check the total usage of your voice and video calls in a specific channel during a specific time frame, and calculate your charges. 
+![](https://web-cdn.agora.io/docs-files/1551353882782)
 
-The following figure shows an example.
+The **Overview** page provides entrypoints to commonly-used Dashboard features. On this page, you can:
 
-![](https://web-cdn.agora.io/docs-files/1543989847923)
+- View project usage.
+- View account balance and transactions, and add money your account.
+- Learn about Agora products, SDKs, code samples and API reference.
+- Learn to integrate Agora products.
+- View call quality.
 
-You can select a channel and time frame to view the usage (minutes) of your voice and video (SD, HD, and HD+) calls for all users.
+## Check your usage and the QoE
 
-* **Total Audio Usage**: The total usage of voice calls. In the example, between 16 and 22 November 2018, the total usage of voice calls for the channel is 618,958 minutes. 
-* **Total SD Video Resolutions < 360P**: The total usage of SD (resolution < 360p) video calls. For billing purposes, the usage of SD video calls is incorporated into the usage of HD video calls.
-* **Total HD Video Resolutions ≤ 720**: The total usage of HD (360p ≤ resolution ≤ 720p) video calls. In the example, between 16 and 22 November 2018, the total usage of HD video calls for the channel is 145,964 minutes. 
-* **Total HD+ Video Resolutions > 720**: The total usage of HD+ (resolution > 720p) video calls. In the example, on 19 November 2018, the total usage of HD+ video calls for the channel is 1,328 minutes.
+Click on ![](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Usage & Stats** page. Select a project, and then you can check the usage of your voice & video calls and recording, and analyze the QoE during a specific time frame. 
 
-> For more information, see [Pricing and Billing](https://docs.agora.io/en/Agora%20Platform/billing_faq).
+#### Check the usage of voice & video calls
 
-## Check the QoE
+![](https://web-cdn.agora.io/docs-files/1551354077719)
 
-You can check the QoE in **Agora Analytics**, which provides data of the call process in diagrams showing the device status, user events, bitrates of the sent/received audio and video, the freeze time in rendering the audio and video and the packet loss rates. You can quickly identify your issues from the diagrams.
+Click on the following icons to check the usage of your voice & video calls during a specific time frame. You can calculate your charges based on the usage<sup>[1]</sup>.
 
-Click on **Analytics > Call Search** in the left navigation menu to go to **QoE Page**.
+- **Duration**: Check the duration (minutes) of the voice & video calls for both [hosts](../../en/Agora%20Platform/terms.md) and [audience](../../en/Agora%20Platform/terms.md) during a specific time frame.
+- **Bandwidth**: Check the peak bandwidth of both [hosts](../../en/Agora%20Platform/terms.md) and [audience](../../en/Agora%20Platform/terms.md) during a specific time frame.
+- **Transcoding**: Check the duration (minutes) of the voice and video (SD, HD, and HDP<sup>[2]</sup>) calls during a specific time frame.
+- **Mini App**: Check the duration (minutes) of the voice & video calls made on Mini Apps during a specific time frame.
 
-After using Agora's products, you can select a **Project** and **Time Frame**, and enter a **Channel Name** or **UID** to check the QoE. See [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
-
-![](https://web-cdn.agora.io/docs-files/1543913574811)
-
-## Manage Projects
-
-Click on **Project > Project List** in the left navigation menu to go to **Project Page**, where you can create and manage projects, and get App IDs and App Certificates.
-
-#### Create a Project and Get an App ID
-
-See [Getting an App ID](../../en/Interactive%20Broadcast/token.md).
-
-> You can sort the existing projects by the creation time, project name, and project status, or look for a specific project by entering the project name.
+> [1] See [Pricing and Billing](https://docs.agora.io/en/Agora%20Platform/billing_faq).
 >
-> Click on **Edit** to modify the project name.
+> [2] Video Quality Types
+>
+> | SD | Resolution < 360p              |
+> |------|----------------------------------|
+> | HD | 360p ≤ Resolution ≤ 720p |
+> | HDP | Resolution > 720p             |
 
-#### Get an App Certificate
+#### Check the QoE of voice & video calls
 
-See [Getting an App Certificate](../../en/Interactive%20Broadcast/token.md).
+Click on **Agora Analytics > Call Search** in the left navigation menu to go to **QoE Page**.
 
-#### Ban Users
+Select a **Project** and **Time Frame**, and enter a **Channel Name** or **UID** to check the QoE. For more information, see [Agora Analytics Tutorial](../../en/Agora%20Platform/aa_guide.md).
 
-If you want to ban a user in the app, you can use the ban-user API at the server. See [Ban Users at the Server](https://docs.agora.io/en/Interactive%20Broadcast/dashboard_restful_live?platform=All_Platforms#5-api). You can also contact Agora customer support to directly ban users in your project.
+#### Check the usage of recording
 
+Click on the **Recording** button in the left navigation menu to check the duration (minutes) of recording files during a specific time frame.
 
-## Manage Team Members
+## Manage projects
 
-Click on **Member** in the left navigation menu to go to **Member Management**.
+Click on ![](https://web-cdn.agora.io/docs-files/1551254998344) **Project** in the left navigation menu to manage projects.
 
-![](https://web-cdn.agora.io/docs-files/1543990035082)
+![](https://web-cdn.agora.io/docs-files/1551257409179)
+
+You can: 
+
+- Click on **Create** to create a new project, get an app ID and enable a app certificate. For details, see [User Security Keys](../../en/Interactive%20Broadcast/token.md).
+- Enter a project name or app ID in the input box and click on ![](https://web-cdn.agora.io/docs-files/1551255111208) to search for projects.
+- Click on ![](https://web-cdn.agora.io/docs-files/1551255135678)to edit the project information.
+- Click on ![](https://web-cdn.agora.io/docs-files/1551255151708)to view the project usage.
+- View the project states according to the icons ![](https://web-cdn.agora.io/docs-files/1551255188685) and ![](https://web-cdn.agora.io/docs-files/1551255166718).
+
+## Manage members
+
+Click on ![](https://web-cdn.agora.io/docs-files/1551255228096) **Member** in the left navigation menu to manage team members.
+
+![](https://web-cdn.agora.io/docs-files/1551257470398)
 
 You can:
 
-- Click on **Add Member** to add a new team member and set the role permissions. The invitee will receive an email invitation.
-- Click on **Edit** to reset the role and permissions of a team member.
-- Click on **Reset Password** to allow a team member to reset the password. The team member will receive an email to reset the password.
-- Click on **Remove** to remove a team member from your project.
+- Click on **Add** to add a new team member and set the role permissions. The invitee will receive an email invitation.
+- Click on ![](https://web-cdn.agora.io/docs-files/1551255422216)to reset the role and permissions of a team member.
+- Click on ![](https://web-cdn.agora.io/docs-files/1551255494008) to allow a team member to reset the password. The team member will receive an email to reset the password.
+- Click on ![](https://web-cdn.agora.io/docs-files/1551255516590) to remove a team member from your project.
 
-### Role Permissions
+### Role permissions
 
 Different roles have different permissions:
 
-- **Administrator** can view the usage, Agora Analytics, projects, and manage the projects.
+- **Administrator** can view the usage, Agora Analytics, finance center, and manage the projects and members.
+- **Finance** can only view the finance center.
 - **Product Manager** and **Operation Manager** can only view the usage.
 - **Customer Support** and **Maintenance Manager** can only view Agora Analytics.
-- **Engineer** can view Agora Analytics, projects, and manage projects.
+- **Engineer** can only manage the projects.
 
 You can also create custom roles under **Customized**.
+
+
 
 ## Submit and Track a Ticket
 
@@ -125,9 +144,6 @@ If you have any questions about Agora's products, you can:
 
 1. Click on **Support > Submit Ticket** in the top navigation menu to go to **Agora Customer Service Center**.
 2. Type in your question or keywords to see if the question has been answered.
-
-![](https://web-cdn.agora.io/docs-files/1543913838952)
-
 3. If you cannot find your answer, select a category and submit a ticket to Agora customer support.
 4. Click on **Support > View Ticket** to track the status of your ticket.
 
