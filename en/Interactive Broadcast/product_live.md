@@ -3,14 +3,14 @@
 title: Agora Video Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Thu Feb 28 2019 03:43:52 GMT+0000 (UTC)
+updatedAt: Thu Feb 28 2019 03:43:59 GMT+0000 (UTC)
 ---
 # Agora Video Broadcasting Overview
 The Agora Native SDK for Video Broadcasting enables one-to-many and many-to-many audio or video live streaming. Different from the traditional CDN live broadcast, which only allows one-way communication from the hosts to the audience, the Agora SDK for Interactive Broadcast empowers the audience to interact with the hosts through [hosting-in](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#hosting-in), like a viewer jumping onto the stage in the middle of a play to perform. The Agora Native SDK for Interactive Broadcast is applicable to scenarios that encourage active engagement, such as game-playing, online classes for students in small groups, and Q&A sessions during E-commerce live streaming. You can also use this SDK for one-to-one video calls that require high image quality.
 
 ## Functions and Scenarios
 
-The Agora Native SDK for Interactive Broadcast Agora boasts a flexible combination of functions for different scenarios.
+The Agora Native SDK for Video Broadcasting boasts a flexible combination of functions for different scenarios.
 
 | Function                              | Description                                                  | Scenario                                                     |
 | ------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
