@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Mar 01 2019 10:12:37 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 10:12:43 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ## Agora Recording SDK
@@ -156,5 +156,5 @@ Users of the Recording SDK versions earlier than v2.2.3 can check if there is a 
     c. After opening coredump, users can generate the core file after a crash.
     d. Provide the recording_sys.log file and the core file to Agora technical support.
 		
-### The recorded video files on the native client are in webm format when the Native SDK interoperates with the Web SDK.
-To fix this issue, set the `codec` property as "h264" when calling the `createClient` method on the web client. If the `codec` property is "vp8", the recorded video files on the native side are in webm format.
+### The recorded video files of the native client are in webm format when the Native SDK interoperates with the Web SDK.
+To fix this issue, set the `codec` property as "h264" when calling the `createClient` method on the web client. If the `codec` property is "vp8", the recorded video files of the native client are in webm format.
