@@ -3,7 +3,7 @@
 title: 线上充值
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 01 2019 01:38:41 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 01:39:09 GMT+0000 (UTC)
 ---
 # 线上充值
 本文指导用户使用 Agora Dashboard 查看账户余额，使用支付宝线上充值，并查询充值记录。
@@ -13,8 +13,8 @@ updatedAt: Fri Mar 01 2019 01:38:41 GMT+0000 (UTC)
 如果你还没有 Agora 账号，请参考 [注册与登录](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。如需找回账号密码，请参考[找回密码](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。
 
 ## 查看账户余额
-1. 进入首页后，会在面板中看到你的余额。点击 **Recharge**，或者在左边导航栏中点击 **Finance**，进入财务页面。
-   ![](https://web-cdn.agora.io/docs-files/1550824229379)
+1. 登录 Dashboard 后，首页就可以看到你的余额。点击 **充值** 直接进入财务界面。你也可以点击左边导航栏中的 **财务图标**，进入相应页面。
+   ![](https://web-cdn.agora.io/docs-files/1551404316574)
 	 
 2. 在财务页面，你会看到你的账户余额与充值相关信息。
    ![](https://web-cdn.agora.io/docs-files/1550826764427)
