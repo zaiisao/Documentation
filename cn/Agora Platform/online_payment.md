@@ -3,7 +3,7 @@
 title: 线上充值
 description: 
 platform: All Platforms
-updatedAt: Thu Feb 28 2019 12:06:13 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 01:38:41 GMT+0000 (UTC)
 ---
 # 线上充值
 本文指导用户使用 Agora Dashboard 查看账户余额，使用支付宝线上充值，并查询充值记录。
