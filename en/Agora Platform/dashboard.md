@@ -3,10 +3,10 @@
 title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 01 2019 06:17:11 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 06:17:16 GMT+0000 (UTC)
 ---
 # Dashboard
-Agora Dashboard allows you to check your usage and the QoE, add money to your account, manage your projects and team members, and connect with Agora customer support.
+Agora Dashboard allows you to check your usage and the QoE, check your balance, manage your projects and team members, and connect with Agora customer support.
 
 Before using Agora Dashboard, [create an Agora account](../../en/Agora%20Platform/sign_in_and_sign_up.md) at [www.agora.io](https://www.agora.io/en/).
 
@@ -26,8 +26,8 @@ Before using Agora Dashboard, [create an Agora account](../../en/Agora%20Platfor
 <td>Check the performance of Agora's products from diagrams associated with your project to quickly identify problems.</td>
 </tr>
 <tr>
-<td>Add money to your account</td>
-<td>Add money to your balance using Alipay, check your balance and view your transaction history.</td>
+<td>Check your balance</td>
+<td>Check your balance and view your transaction history.</td>
 </tr>
 <tr>
 <td>Manage projects</td>
@@ -97,9 +97,9 @@ Select a **Project** and **Time Frame**, and enter a **Channel Name** or **UID**
 
 Click on the **Recording** button in the left navigation menu to check the duration (minutes) of recording files during a specific time frame.
 
-## Add money to your account
+## Check your balance
 
-Click on ![](https://web-cdn.agora.io/docs-files/1551350477096) to enter the **Finance** page. Here, you can add money to your balance using Alipay, check your balance and view your transaction history. For more information, see [Online Payment](../../en/Agora%20Platform/online_payment.md).
+Click on ![](https://web-cdn.agora.io/docs-files/1551350477096) to enter the **Finance** page. Here, you can check your balance and view your transaction history.
 
 ## Manage projects
 
