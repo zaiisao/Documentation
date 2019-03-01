@@ -3,7 +3,7 @@
 title: 使用 Dashboard
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 01 2019 17:43:23 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 17:43:29 GMT+0000 (UTC)
 ---
 # 使用 Dashboard
 欢迎使用 Agora Dashboard。在这里，你可以查看频道用量，追踪通话质量，进行账户充值，管理项目和权限，以及获取 Agora 技术支持。
@@ -70,13 +70,12 @@ updatedAt: Fri Mar 01 2019 17:43:23 GMT+0000 (UTC)
 
 #### 查看音视频用量相关数据
 
-![](https://web-cdn.agora.io/docs-files/1551351855578)
+![](https://web-cdn.agora.io/docs-files/1551462045419)
 
 点击左侧次级导航栏下列按钮查看选定时间段内音视频用量相关数据，自助计算费用<sup>[1]</sup>。
 
-- **分钟数**：查看特定时间段内[主播](../../cn/Agora%20Platform/terms.md)和[观众](../../cn/Agora%20Platform/terms.md)的语音及视频时长。
-- **带宽**：查看特定时间段内[主播](../../cn/Agora%20Platform/terms.md)和[观众](../../cn/Agora%20Platform/terms.md)的最大带宽。
-- **转码**：查看特定时间段内音频、标清视频、高清视频和超清视频<sup>[2]</sup>的时长。
+- **分钟数**：查看特定时间段内音频、高清视频和超清视频时长。
+- **转码**：查看特定时间段内转码的音频、标清视频、高清视频和超清视频<sup>[2]</sup>时长。
 - **小程序**：查看特定时间段内小程序的语音和视频时长。
 
 > [1] 计费方式详见[计费](https://docs.agora.io/cn/Agora%20Platform/billing_faq)。
