@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: iOS
-updatedAt: Fri Mar 01 2019 03:50:31 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 03:50:38 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -687,6 +687,31 @@ updatedAt: Fri Mar 01 2019 03:50:31 GMT+0000 (UTC)
 </tbody>
 </table>
 
+#### 查询用户是否在频道中 (channelQueryUserIsIn:account:)
+
+该方法用于查询指定用户是否在特定频道内，方法调用成功会触发 <code>onChannelQueryUserIsIn</code> 回调。
+
+```
+- (void) channelQueryUserIsIn:(NSString*)channelID account:(NSString*)account ;
+```
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><th>参数</th>
+<th>描述</th>
+</tr>
+<tr><td><code>channelID</code></td>
+<td>频道名。最大为 128 字节可见字符</td>
+</tr>
+<tr><td><code>account</code></td>
+<td>客户端定义的用户账号</td>
+</tr>
+</tbody>
+</table>
 
 
 #### <a name="channelsetattr-ios"></a>设置频道属性 \(channelSetAttr:name:value:\)
@@ -1705,7 +1730,43 @@ updatedAt: Fri Mar 01 2019 03:50:31 GMT+0000 (UTC)
 </tbody>
 </table>
 
+#### 用户是否在特定频道回调 (onChannelQueryUserIsIn)
 
+该方法在用户调用了 <code>channelQueryUserIsIn<c/code> 方法后触发。
+
+```
+public virtual void onChannelQueryUserIsIn(std::string channelID, std::string account, int isIn){}
+
+```
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><th>参数</th>
+<th>描述</th>
+</tr>
+<tr><td><code>channelID</code></td>
+<td>频道名</td>
+</tr>
+<tr><td><code>account</code></td>
+<td>客户端定义的用户 ID。</td>
+</tr>
+<tr><td><code>isIn</code></td>
+<td><p>用户是否在特定频道中：</p>
+
+<div><ul>
+<li>1：在频道中。</li>
+<li>0：不在频道中。</li>
+</ul>
+</div>
+
+</td>
+</tr>
+</tbody>
+</table>
 
 ### <a name="onchannelattrupdated-ios"></a>频道属性发生变化回调 \(onChannelAttrUpdated\)
 
