@@ -3,24 +3,24 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Fri Mar 01 2019 07:18:09 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 07:18:16 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
 
--   [IRtcEngineForGaming Abstract Class](#irtcengine): includes the main methods for the application to call.
+-   [IRtcEngine Abstract Class](#irtcengine): includes the main methods for the application to call.
 
 -   [IAudioEffectManager Interface Class](#iaudioeffectmanager): includes the methods for the application to manage the audio effects.
 
 <a name = "irtcengine"></a>
-## IRtcEngineForGaming Abstract Class
+## IRtcEngine Abstract Class
 
 ### Create an Engine Instance
 
 #### Get an Engine Instance (GetEngine)
 
 ```
-public static IRtcEngineForGaming GetEngine (string appId);
+public static IRtcEngine GetEngine (string appId);
 ```
 
 This method gets an engine instance. If none exists, it creates an instance. Once the API is executed successfully, it returns the IRtcEngineForGaming instance (not null).
@@ -43,7 +43,7 @@ This method gets an engine instance. If none exists, it creates an instance. Onc
 #### Query an Engine Instance (QueryEngine)
 
 ```
-puiblic static IRtcEngineForGaming QueryEngine();
+puiblic static IRtcEngine QueryEngine();
 ```
 
 This method queries an engine instance. Unlike `GetEngine`, `QueryEngine` will not create a new instance if none exists.
@@ -142,7 +142,6 @@ This method sets the user role before joining a channel, and allows you to switc
 </table>
 
 <a id = "joinChannel"></a>
-<a name = "joinChannel"></a>
 #### Join a Channel (JoinChannel)
 
 ```
@@ -316,7 +315,7 @@ public int LeaveChannel();
 #### Set the Default Audio Route to Speakerphone (setDefaultAudioRouteToSpeakerphone)
 
 ```
-public int setDefaultAudioRouteToSpeakerphone(bool speakerphone);
+public int SetDefaultAudioRouteToSpeakerphone(bool speakerphone);
 ```
 
 This method sets the default audio route to `speakerphone` or `earpiece`.
@@ -500,7 +499,6 @@ This method enables the SDK to regularly report to the application on which user
 ### Mute the Audio and Video Stream
 
 <a name = "enableLocalAudio"></a>
-
 #### Enable/Disable the Local Audio Module (EnableLocalAudio)
 
 ```
@@ -675,10 +673,10 @@ This method mutes/unmutes a specified remote user’s audio stream.
 </table>
 
 <a name = "setDefaultMuteAllRemoteAudioStreams"></a>
-#### Receive the Audio Streams by Default (setDefaultMuteAllRemoteAudioStreams)
+#### Receive the Audio Streams by Default (SetDefaultMuteAllRemoteAudioStreams)
 
 ```c#
-public int setDefaultMuteAllRemoteAudioStreams(bool mute);
+public int SetDefaultMuteAllRemoteAudioStreams(bool mute);
 ```
 
 Sets whether to receive the audio streams by default.
@@ -1802,41 +1800,6 @@ The Agora SDK receives the high-video stream by default. If needed, users can sw
 </tbody>
 </table>
 
-The resolutions of the high-video stream are 1:1, 4:3, and 16:9. The low-video stream has the same aspect ratio:
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Resolution</th>
-<th>Frame Rate</th>
-<th>Keyframe Interval</th>
-<th>Bitrate (kbit/s)</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>160 x 160</td>
-<td>5</td>
-<td>5</td>
-<td>45</td>
-</tr>
-<tr><td>160 x 120</td>
-<td>5</td>
-<td>5</td>
-<td>32</td>
-</tr>
-<tr><td>160 x 90</td>
-<td>5</td>
-<td>5</td>
-<td>28</td>
-</tr>
-</tbody>
-</table>
-
 
 
 #### Set High-quality Video Preferences (SetVideoQualityParameters)
@@ -2183,10 +2146,10 @@ This method pauses/resumes playing a specified user’s video, that is, enables/
 
 <a name = "setDefaultMuteAllRemoteVideoStreams"></a>
 
-#### Receive the Video Streams by Default (setDefaultMuteAllRemoteVideoStreams)
+#### Receive the Video Streams by Default (SetDefaultMuteAllRemoteVideoStreams)
 
 ```c#
-public int setDefaultMuteAllRemoteVideoStreams(bool mute);
+public int SetDefaultMuteAllRemoteVideoStreams(bool mute);
 ```
 
 Sets whether to receive the video streams by default.
@@ -2333,11 +2296,12 @@ This method sets the SDK output log filter.
 <tr><td><code>filter</code></td>
 <td><p>Sets the levels of the filters.</p>
 <ul>
-<li>1: INFO</li>
-<li>2: WARNING</li>
-<li>4: ERROR</li>
-<li>8: FATAL</li>
-<li>0x800: DEBUG</li>
+<li>LOG_FILTER_OFF = 0;</li>
+<li>LOG_FILTER_DEBUG = 0x80f;</li>
+<li>LOG_FILTER_INFO = 0x0f;</li>
+<li>LOG_FILTER_WARNING = 0x0e;</li>
+<li>LOG_FILTER_ERROR = 0x0c;</li>
+<li>LOG_FILTER_CRITICAL = 0x08;</li>
 </ul>
 </td>
 </tr>
