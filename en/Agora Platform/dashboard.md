@@ -3,7 +3,7 @@
 title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 01 2019 17:45:03 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 17:45:07 GMT+0000 (UTC)
 ---
 # Dashboard
 Agora Dashboard allows you to check your usage and the QoE, check your balance, manage your projects and team members, and connect with Agora customer support.
@@ -69,13 +69,12 @@ Click on ![](https://web-cdn.agora.io/docs-files/1551260936285) in the left navi
 
 #### Check the usage of voice & video calls
 
-![](https://web-cdn.agora.io/docs-files/1551354077719)
+![](https://web-cdn.agora.io/docs-files/1551462242490)
 
 Click on the following icons to check the usage of your voice & video calls during a specific time frame. You can calculate your charges based on the usage<sup>[1]</sup>.
 
-- **Duration**: Check the duration (minutes) of the voice & video calls for both [hosts](../../en/Agora%20Platform/terms.md) and [audience](../../en/Agora%20Platform/terms.md) during a specific time frame.
-- **Bandwidth**: Check the peak bandwidth of both [hosts](../../en/Agora%20Platform/terms.md) and [audience](../../en/Agora%20Platform/terms.md) during a specific time frame.
-- **Transcoding**: Check the duration (minutes) of the voice and video (SD, HD, and HDP<sup>[2]</sup>) calls during a specific time frame.
+- **Duration**: Check the duration (minutes) of the voice & video calls during a specific time frame.
+- **Transcoding**: Check the duration (minutes) of the transcoded voice and video (SD, HD, and HDP<sup>[2]</sup>) calls during a specific time frame.
 - **Mini App**: Check the duration (minutes) of the voice & video calls made on Mini Apps during a specific time frame.
 
 > [1] See [Pricing and Billing](https://docs.agora.io/en/Agora%20Platform/billing_faq).
