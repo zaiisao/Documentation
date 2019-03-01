@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Fri Mar 01 2019 07:18:25 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 07:18:33 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -154,7 +154,6 @@ public int SetClientRole(CLIENT_ROLE role);
 
 
 <a id = "joinChannel"></a>
-
 #### 加入频道 (JoinChannel)
 
 ```
@@ -304,10 +303,10 @@ public int LeaveChannel();
 
 ### 设置语音路由
 
-#### 修改语音路由的默认值（setDefaultAudioRouteToSpeakerPhone）
+#### 修改语音路由的默认值（SetDefaultAudioRouteToSpeakerPhone）
 
 ```c#
-public int setDefaultAudioRouteToSpeakerphone(bool speakerphone);
+public int SetDefaultAudioRouteToSpeakerphone(bool speakerphone);
 ```
 
 该方法将语音路由的默认值修改为 **扬声器 (外放)** / **听筒**。插上耳机或连接蓝牙的动作对语音路由影响的优先级高于该方法。
@@ -648,10 +647,10 @@ public int MuteRemoteAudioStream (uint uid, bool mute);
 
 <a name = "setDefaultMuteAllRemoteVideoStreams"></a>
 
-#### 默认接收音频流 (setDefaultMuteAllRemoteAudioStreams)
+#### 默认接收音频流 (SetDefaultMuteAllRemoteAudioStreams)
 
 ```c#
-public int setDefaultMuteAllRemoteAudioStreams(bool mute);
+public int SetDefaultMuteAllRemoteAudioStreams(bool mute);
 ```
 
 设置是否默认接收所有的远端音频流。
@@ -978,16 +977,6 @@ Agora SDK 支持通话过程中在客户端进行录音，且录音文件格式�
 </tr>
 <tr><td><code>filePath</code></td>
 <td>录音文件路径名。该文件名字符串为 UTF-8 编码</td>
-</tr>
-<tr><td><code>quality</code></td>
-<td><p>录音音质:</p>
-<div><ul>
-<li>AUDIO_RECORDING_QUALITY_LOW = 0: 低音质。录制 10 分钟的文件大小为 1.2 M 左右</li>
-<li>AUDIO_RECORDING_QUALITY_MEDIUM = 1: 中音质。录制 10 分钟的文件大小为 2 M 左右</li>
-<li>AUDIO_RECORDING_QUALITY_HIGH = 2: 高音质。录制 10 分钟的文件大小为 3.75 M 左右</li>
-</ul>
-</div>
-</td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
@@ -1697,41 +1686,6 @@ Agora SDK 默认收到视频大流。如需使用视频小流，调用本方法�
 
 
 
-视频大流的分辨率有三种配置分别为 1:1, 4:3, 16:9，小流与大流的画面长宽比一致，参数配置如下:
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>分辨率</strong></td>
-<td><strong>帧率</strong></td>
-<td><strong>关键帧间隔</strong></td>
-<td><strong>码率(kbps)</strong></td>
-</tr>
-<tr><td>160*160</td>
-<td>5</td>
-<td>5</td>
-<td>45</td>
-</tr>
-<tr><td>160*120</td>
-<td>5</td>
-<td>5</td>
-<td>32</td>
-</tr>
-<tr><td>160*90</td>
-<td>5</td>
-<td>5</td>
-<td>28</td>
-</tr>
-</tbody>
-</table>
-
-
-
 #### 设置视频优化选项 (SetVideoQualityParameters)
 
 ```
@@ -2046,10 +2000,10 @@ public int MuteRemoteVideoStream(uint uid, bool mute);
 
 <a name = "setDefaultMuteAllRemoteVideoStreams"></a>
 
-#### 默认接收视频流 (setDefaultMuteAllRemoteVideoStreams)
+#### 默认接收视频流 (SetDefaultMuteAllRemoteVideoStreams)
 
 ```c#
-public int setDefaultMuteAllRemoteVideoStreams(bool mute);
+public int SetDefaultMuteAllRemoteVideoStreams(bool mute);
 ```
 
 设置是否默认接收所有的远端视频流。 
