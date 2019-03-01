@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Fri Mar 01 2019 10:08:26 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 10:08:31 GMT+0000 (UTC)
 ---
 # 录制相关
 ## 录制 SDK
@@ -162,3 +162,7 @@ updatedAt: Fri Mar 01 2019 10:08:26 GMT+0000 (UTC)
    b. 如果还是没有找到，Linux 上执行 ulimit -c， 输出如果为0，则说明 coredump 没有打开，需要通过执行 ulimit -c unlimited 打开。
    c. 打开后，之后再出现 crash 就可以生成 core 文件了。
    d. 针对这次没有 core 文件生成的场景，提供 `recording_sys.log` 给技术支持。
+	 
+### Native SDK 与 Web SDK 互通时，在 Native 端录制视频生成的文件是 webm 格式，如何解决？
+
+Native SDK 与 Web SDK 互通时，在 Web 端调用 `createClient` 方法需要将 `codec` 属性设置为 h264，如果设为 vp8 则会导致 Native 端的视频录制文件为 webm 格式。
