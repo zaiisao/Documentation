@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 04 2019 04:04:14 GMT+0000 (UTC)
+updatedAt: Mon Mar 04 2019 04:04:19 GMT+0000 (UTC)
 ---
 # Information Security Policy
 ## Introduction
@@ -233,6 +233,5 @@ To facilitate troubleshooting and verification, please include the following inf
 - Description of the potential risks
 - Miscellaneous technical details, e.g., your system configurations, methods or steps for reproducing the issue. 
 
-Many thanks! 
 
 
