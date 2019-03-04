@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 04 2019 03:17:14 GMT+0000 (UTC)
+updatedAt: Mon Mar 04 2019 03:17:20 GMT+0000 (UTC)
 ---
 # Information Security Policy
 ## Introduction
@@ -222,9 +222,9 @@ Agora provides training related to information security, and all authorized empl
 
 Any employee who fails to comply with or breach the Agora information security policy will be dealt with accordingly, resulting in loss of employment or legal action.
 
-## Potential Security Risks
+## Reporting Potential Security Risks
 
-Please report any potential1 risks that you may spot of Agora's services to security@agora.io. Do please use our PGP public key (Key ID: 2F4553BE) to encrypt your report, as potential security risks are usually sensitive. We assure you our security experts will handle the issues immediately when they receive your report. 
+Please report any potential risks that you may spot of Agora's services to security@agora.io. Do please use our PGP public key (Key ID: 2F4553BE) to encrypt your report, as potential security risks are usually sensitive. We assure you our security experts will handle the issues immediately when they receive your report. 
 
 To facilitate troubleshooting and verification, please include the following information in your Email:
 
