@@ -3,7 +3,7 @@
 title: 使用 Dashboard
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 01 2019 17:43:29 GMT+0000 (UTC)
+updatedAt: Mon Mar 04 2019 02:18:01 GMT+0000 (UTC)
 ---
 # 使用 Dashboard
 欢迎使用 Agora Dashboard。在这里，你可以查看频道用量，追踪通话质量，进行账户充值，管理项目和权限，以及获取 Agora 技术支持。
