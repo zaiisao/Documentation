@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: How to integrate recording SDK for Java
 platform: Java
-updatedAt: Mon Mar 04 2019 09:47:51 GMT+0000 (UTC)
+updatedAt: Mon Mar 04 2019 09:47:56 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora Recording SDK.
@@ -125,6 +125,7 @@ The Recording SDK is compatible with the following Agora SDK versions:
 
 ## Set up the Environment
 
+Set up the environment on your Linux server:
 1. [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Agora Recording SDK for Linux package. The package structure is listed as follows:
 
    <table>
@@ -173,7 +174,12 @@ The Recording SDK is compatible with the following Agora SDK versions:
    </tr>
    </tbody>
    </table>
-
+6. Prepare the required libraries:
+   - Add the include folder to your project.
+   - Add the lib folder to your project and make sure the libRecordingEngine.a file is connected to the project.
+5. Ensure that your compiler is gcc 4.4+.
+8. Set up the JDK environment and ensure **jni.h** is included.
+9. Set `CLASSPATH` in Java and `LD_LIBRARY_PATH`  in Linux.
 2. Open the following TCP ports: 1080 and 8000.
 3. Open the following UDP ports:
    - Duplex ports: 1080, 4000 to 4030, 8000, 9700, and 25000.
@@ -191,13 +197,8 @@ The Recording SDK is compatible with the following Agora SDK versions:
    - qoslbs.agora.io
    - qos.agora.io
 
-5. Ensure that your compiler is gcc 4.4+.
-6. Prepare the required library:
-   - Add the include folder to your project.
-   - Add the lib folder to your project and make sure the libRecordingEngine.a file is connected to the project.
 7. For debug purposes, Agora recommends you enable core dump on your Linux system. 
-8. Set up the JDK environment and ensure **jni.h** is included.
-9. Set `CLASSPATH` in Java and `LD_LIBRARY_PATH`  in Linux.
+
 
 ## Compile the Sample Code
 
