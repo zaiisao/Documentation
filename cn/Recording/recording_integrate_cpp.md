@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: CPP
-updatedAt: Mon Mar 04 2019 09:38:01 GMT+0000 (UTC)
+updatedAt: Mon Mar 04 2019 09:38:06 GMT+0000 (UTC)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
@@ -114,7 +114,9 @@ updatedAt: Mon Mar 04 2019 09:38:01 GMT+0000 (UTC)
 
 ## 准备环境
 
-1. [下载](https://docs.agora.io/cn/Agora%20Platform/downloads)最新的 Agora 录制 SDK 软件包到你的 Linux 服务器。软件包内容如下:
+在你的 Linux 服务器上进行以下操作：
+
+1. [下载](https://docs.agora.io/cn/Agora%20Platform/downloads)最新的 Agora 录制 SDK 软件包。软件包内容如下:
 
    <table>
    <colgroup>
@@ -165,6 +167,11 @@ updatedAt: Mon Mar 04 2019 09:38:01 GMT+0000 (UTC)
    </tbody>
    </table>
 
+6. 为你的项目准备所需库：
+   - 将 **include** 文件夹添加到你的项目里。
+   - 将 **lib** 文件夹添加到你的项目里，并确保 `libRecordingEngine.a` 与项目有连接。
+
+5. 安装编译器: gcc 4.4+ 。
 2. 打开 TCP 端口：1080、8000。
 
 3. 打开 UDP 端口：双向 1080、4000-4030、8000、9700、25000 和 所有的录制进程所使用的单向下行端口。
@@ -175,10 +182,7 @@ updatedAt: Mon Mar 04 2019 09:38:01 GMT+0000 (UTC)
    > - 使用`iptables -L`命令查看 UDP 端口。
 
 4. 将域名 .agora.io、vocs.agora.io、qoslbs.agora.io、qos.agora.io 设为白名单。
-5. 安装编译器: gcc 4.4+ 。
-6. 请准备所需库：
-   - 将 **include** 文件夹添加到你的项目里。
-   - 将 **lib** 文件夹添加到你的项目里，并确保 `libRecordingEngine.a` 与项目有连接。
+
 7. 为调试方便，Agora 建议你打开系统的 core dump 功能以记录可能产生的程序崩溃信息。
 
 ## 编译代码示例
