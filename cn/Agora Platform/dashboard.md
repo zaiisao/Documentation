@@ -3,7 +3,7 @@
 title: 使用 Dashboard
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 04 2019 02:18:01 GMT+0000 (UTC)
+updatedAt: Mon Mar 04 2019 02:18:27 GMT+0000 (UTC)
 ---
 # 使用 Dashboard
 欢迎使用 Agora Dashboard。在这里，你可以查看频道用量，追踪通话质量，进行账户充值，管理项目和权限，以及获取 Agora 技术支持。
@@ -52,11 +52,11 @@ updatedAt: Mon Mar 04 2019 02:18:01 GMT+0000 (UTC)
 </table>
 
 ## 总览页
-![](https://web-cdn.agora.io/docs-files/1551348334226)
+![](https://web-cdn.agora.io/docs-files/1551665804009)
 
 总览页提供常用的 Dashboard 功能入口。在该页面，你可以：
 
-- 快速查看项目用量
+- 快速查看项目及其用量
 - 实时掌握账户余额与收支明细，进行充值
 - 深入了解 Agora 产品、SDK、示例代码和 API 方法等
 - 快速学习如何集成 Agora 产品
