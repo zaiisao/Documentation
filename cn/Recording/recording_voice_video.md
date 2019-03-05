@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 01 2019 07:58:43 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 08:34:58 GMT+0000 (UTC)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -497,7 +497,7 @@ config.json <sup>[2]</sup> 文件中的 recordFileRootDir指定了顶级录制�
 
 ## 使用转码脚本
 
-录制完成后，需要转码工具 video_convert.py 和ffmpeg将录制的文件进行合成 (转码工具可通过命令行 tar -xvf 解压)：
+录制完成后，需要转码工具 video_convert.py 和 ffmpeg 将录制的文件进行合成 (转码工具可通过命令行 tar -xvf 解压)：
 
 - 如果录制生成的是多个纯音频文件，转码后将合并生成 m4a 文件，文件名为 UID_HHMMSSMS.m4a
 - 如果录制生成的是多个音视频文件，转码后将合并生成 mp4 文件，文件名为UID_HHMMSSMS_av.mp4，如果希望合并每个 session 的音频文件和视频文件，则:
@@ -506,8 +506,8 @@ config.json <sup>[2]</sup> 文件中的 recordFileRootDir指定了顶级录制�
 - 如果录制生成的是多个音视频文件，并且希望把多个不同 session 的 mp4 文件以 merge 方式合并，转码后将合并生成 mp4 文件，文件名为 UID_0_merge_av.mp4、UID_1_merge_av.mp4、UID_2_merge_av.mp4……
   - automatically mode下使用-m参数，会把同一个 uid 的所有音视频文件合并，并生成唯一的一个UID_0_merge_av.mp4 文件。
   - manually mode 下，由于是根据 startService和 stopService 来划分文件管理的，每一个 start/stop 为一次 service。因此如果有多次 start 和 stop，就会产生多个 service，因此使用-m参数就会生成多个 UID_XX_merge_av.mp4文件。
-
-其中 python 脚本依赖 ffmpeg, ffmpeg 的所在目录要保证在 PATH 里面。
+  
+> Agora 在 [录制 SDK](https://docs-preview.agoralab.co/cn/Recording/downloads) 的 tools 文件夹下提供转码工具 ffmpeg 和 video_convert.py，解压 ffmpeg，并确保和 video_convert.py 在同一目录下。
 
 执行 python video_convert.py，即可看到相关用法：
 

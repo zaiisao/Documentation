@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Fri Mar 01 2019 07:56:01 GMT+0000 (UTC)
+updatedAt: Fri Mar 01 2019 07:56:08 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -776,7 +776,7 @@ public int StartAudioMixing (string filePath, bool loopback, bool replace, int c
 #### 停止客户端本地混音 (StopAudioMixing)
 
 ```
-public abstract int StopAudioMixing();
+public int StopAudioMixing();
 ```
 
 使用该方法停止伴奏播放。请在频道内调用该方法。

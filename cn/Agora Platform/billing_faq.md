@@ -2,7 +2,7 @@
 ---
 title: 计费
 description: 
-platform: 计费
+platform: All Platforms
 updatedAt: Mon Dec 10 2018 07:54:04 GMT+0000 (UTC)
 ---
 # 计费
