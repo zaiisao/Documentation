@@ -3,7 +3,7 @@
 title: 开始录制
 description: How to start recording using cmd for Java
 platform: Java
-updatedAt: Tue Mar 05 2019 07:52:24 GMT+0000 (UTC)
+updatedAt: Tue Mar 05 2019 07:52:30 GMT+0000 (UTC)
 ---
 # 开始录制
 本文介绍如何通过命令行进行录制。你也可以通过调用 API 实现录制，详见 [Java](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/index.html) API 参考。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
@@ -15,7 +15,7 @@ updatedAt: Tue Mar 05 2019 07:52:24 GMT+0000 (UTC)
 
 ## 查看录制选项
 
-打开命令行工具，在 **/samples/java/src/io/agora/recording/test** 目录下执行 `java RecordingSample` 命令, 即可看到录制相关的参数和选项，如下所示:
+打开命令行工具，在 **/samples/java/bin** 目录下执行 `java RecordingSample` 命令, 即可看到录制相关的参数和选项，如下所示:
 
 ```
 Usage:java RecordingSample --appId STRING --uid UINTEGER32 --channel STRING --appliteDir STRING --channelKey STRING --channelProfile UINTEGER32 --isAudioOnly --isVideoOnly --isMixingEnabled --mixResolution STRING --mixedVideoAudio --decryptionMode STRING --secret STRING --idle INTEGER32 --recordFileRootDir STRING --lowUdpPort INTEGER32 --highUdpPort INTEGER32 --getAudioFrame UINTEGER32 --getVideoFrame UINTEGER32 --captureInterval INTEGER32 --cfgFilePath STRING --streamType UINTEGER32 --triggerMode INTEGER32 
