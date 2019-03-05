@@ -17,7 +17,7 @@ The Agora Signaling SDK facilitates real-time communications through functions s
     -   Each message can be up to 8-K visible characters.
     -   A user can send messages at a maximum speed of 60 messages per second. In a channel, a maximum of 200 messages can be sent each second. Messages exceeding this limit will be discarded. 
     -   Offline channel messages are not supported.
-    -   Supports UTF-8 character encoding only.
+    -   Supports the string type and UTF-8 character encoding only.
 -   Point-to-point messages:
     -   Each message can be up to 8-K visible characters.
     -   Offline messages are not supported.

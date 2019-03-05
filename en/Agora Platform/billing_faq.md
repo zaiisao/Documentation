@@ -2,7 +2,7 @@
 ---
 title: Pricing and Billing
 description: 
-platform: Pricing and Billing
+platform: All Platforms
 updatedAt: Tue Dec 25 2018 15:26:44 GMT+0000 (UTC)
 ---
 # Pricing and Billing

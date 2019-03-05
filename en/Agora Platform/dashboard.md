@@ -3,7 +3,7 @@
 title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 04 2019 02:25:32 GMT+0000 (UTC)
+updatedAt: Mon Mar 04 2019 02:25:38 GMT+0000 (UTC)
 ---
 # Dashboard
 Agora Dashboard allows you to check your usage and the QoE, check your balance, manage your projects and team members, and connect with Agora customer support.
@@ -53,11 +53,11 @@ Before using Agora Dashboard, [create an Agora account](../../en/Agora%20Platfor
 
 ## Overview
 
-![](https://web-cdn.agora.io/docs-files/1551353882782)
+![](https://web-cdn.agora.io/docs-files/1551666003545)
 
 The **Overview** page provides entrypoints to commonly-used Dashboard features. On this page, you can:
 
-- View project usage.
+- View projects and usage.
 - View account balance and transactions, and add money your account.
 - Learn about Agora products, SDKs, code samples and API reference.
 - Learn to integrate Agora products.

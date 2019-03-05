@@ -3,7 +3,7 @@
 title: Record a Call
 description: 
 platform: Java
-updatedAt: Tue Mar 05 2019 07:57:52 GMT+0000 (UTC)
+updatedAt: Tue Mar 05 2019 07:58:00 GMT+0000 (UTC)
 ---
 # Record a Call
 This page demonstrates how to record a call by using the command line. You can also record calls by calling the API methods. For the detailed API reference, see [Recording API](https://docs.agora.io/en/Recording/API%20Reference/recording_java/index.html). The command line and API methods implement the same functions. 
@@ -14,7 +14,7 @@ Ensure you integrate the recording SDK before proceeding, see [Integrate the SDK
 
 ## View the Recording Parameters
 
-Open a command-line tool and run the `java RecordingSample` command under the **/samples/java/src/io/agora/recording/test** directory. You can see the recording parameters and options as follows:
+Open a command-line tool and run the `java RecordingSample` command under the **/samples/java/bin** directory. You can see the recording parameters and options as follows:
 
 ```
 Usage:java RecordingSample --appId STRING --uid UINTEGER32 --channel STRING --appliteDir STRING --channelKey STRING --channelProfile UINTEGER32 --isAudioOnly --isVideoOnly --isMixingEnabled --mixResolution STRING --mixedVideoAudio --decryptionMode STRING --secret STRING --idle INTEGER32 --recordFileRootDir STRING --lowUdpPort INTEGER32 --highUdpPort INTEGER32 --getAudioFrame UINTEGER32 --getVideoFrame UINTEGER32 --captureInterval INTEGER32 --cfgFilePath STRING --streamType UINTEGER32 --triggerMode INTEGER32 
