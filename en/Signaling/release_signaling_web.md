@@ -21,7 +21,7 @@ The Agora Signaling SDK facilitates real-time communications through functions s
 -   Point-to-point messages:
     -   Each message can be up to 8-K visible characters.
     -   Offline messages are not supported.
-    -   Supports UTF-8 character encoding only.
+    -   Supports the string type and UTF-8 character encoding only.
 -   Channel-attributes-updated callback:
     -   A maximum of 10 channel-attributes-updated callbacks can be sent each second.
 
