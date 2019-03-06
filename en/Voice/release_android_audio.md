@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed Mar 06 2019 07:34:57 GMT+0000 (UTC)
+updatedAt: Wed Mar 06 2019 07:35:03 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -29,6 +29,8 @@ If your app needs to access a device's hardware serial number, you should instea
 
 ##### DNS privacy
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
+
+For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
 
 ## v2.3.3
 v2.3.3 is released on January 24, 2019. 
