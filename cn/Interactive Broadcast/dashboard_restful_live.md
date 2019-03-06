@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Mar 06 2019 03:54:57 GMT+0000 (UTC)
+updatedAt: Wed Mar 06 2019 03:55:01 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -11,12 +11,13 @@ updatedAt: Wed Mar 06 2019 03:54:57 GMT+0000 (UTC)
 RESTful API 仅支持 HTTPS。用户必须通过 basic HTTP 认证:
 
 -   用户名: Customer ID
+
 -   密钥: Customer Certificate
+
 
 与 Agora SDK 所使用的 App ID 和 App Certificate 不同，Customer ID 和 Customer Certificate 仅用于访问 Restful API。
 
-
-> 你可以登录 [Dashboard](https://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTFUL API 页面获取 Customer ID 和 Customer Certificate。 Vendor Key 和 Sign Key 在 Dashboard 里已分别改名为 App ID 和 App Certificate，但本文代码里目前仍沿用 vendor_key 和 sign_key。
+> 你可以登录 [Dashboard](https://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTFUL API 页面获取 Customer ID 和 Customer Certificate。Vender Key 和 Sign Key 在 Dashboard 里已分别改名为 App ID 和 App Certificate，但本文代码里仍沿用 vendor_key 和 sign_key。
 
 ## 2. 接入点
 
@@ -57,7 +58,7 @@ RESTful API 仅支持 HTTPS。用户必须通过 basic HTTP 认证:
 BaseUrl：**https://api.agora.io/dev/v1**
 
 下图展示了项目相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1545984231749)
+![](https://web-cdn.agora.io/docs-files/1545985558459)
 
 ### 获取所有项目 \(GET\)
 
@@ -248,7 +249,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 设置项目的录制项目服务器 IP（POST）
 
 -   方法：POST
--   路径：BaseUrl/recording_config/
+-   路径：BaseUrl/recording\_config/
 -   参数：
 
     ```
@@ -259,11 +260,11 @@ BaseUrl：**https://api.agora.io/dev/v1**
     ```
 
 >  - 如果您使用的 Recording SDK 版本 <= v1.9.0，请关注 `recording_server` 字段；
->  - 如果您使用的 Recording SDK 版本 >= v1.11.0，请忽略 `recording_server` 字段。
+>  - 如果您使用的 Recording SDK 版本 \>= v1.11.0，请忽略 `recording_server` 字段。
 
 -   响应：
 
-    -   成功：
+    -   成功
 
         ```
         {
@@ -297,7 +298,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 -   响应：
 
-    -   成功：
+    -   成功
 
         ```
         {
@@ -322,16 +323,16 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 重置项目的 App Certificate（POST）
 
 -   方法：POST
--   路径：BaseUrl/reset_signkey/
+-   路径：BaseUrl/reset\_signkey/
 -   参数：
 
     ```
-    { "id" : “xxx”} // 项目 id
+    { "id": “xxx”} // 项目 id
     ```
 
 -   响应：
 
-    -   成功：
+    -   成功
 
         ```
         {
@@ -355,7 +356,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 BaseUrl：**https://api.agora.io/dev/v1**
 
 下图展示了用量相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1545984263920)
+![](https://web-cdn.agora.io/docs-files/1545985575734)
 
 ### 获取用量数据（GET)
 
@@ -393,7 +394,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
         }
         ```
 
-    -   报错: 如果指定的项目 (projects) 不存在，会直接被忽略。不会报错。
+    -   报错: 如果指定的项目 \(projects\) 不存在，会直接被忽略。不会报错。
 
 > 该响应中 *audio*、*sd*、*hd* 及 *hdp* 的单位为分钟。
 
@@ -402,7 +403,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 BaseUrl: **https://api.agora.io/dev/v1**
 
 下图展示了服务器踢人相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1545984284445)
+![](https://web-cdn.agora.io/docs-files/1545985590584)
 
 > 用户被踢出频道后，会收到网络连接已被服务器禁止回调。
 - Android: [`onConnectionBanned`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
@@ -429,9 +430,9 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
 > - 如果 time 字段设置为 0，则表示不封禁，服务端会对频道内符合设定规则的用户进行下线一次的操作。用户可以重新登录进入频道。 
 > - 踢人规则通过 cname、uid 和 ip 三个字段组合起来过滤实现，规则如下：
->   - 如果填写 ip，不填写 cname 或 uid，则该 ip 无法登录 App 中的任何频道
->   - 如果填写 cname，不填写 uid 或 ip，则任何人都无法登录 App 中该 cname 对应的频道
->   - 如果填写 cname 和 uid，不填写 ip，则该 uid 无法登录 App 中该 cname 对应的频道
+>   * 如果填写 ip，不填写 cname 或 uid，则该 ip 无法登录 App 中的任何频道
+>   * 如果填写 cname，不填写 uid 或 ip，则任何人都无法登录 App 中该 cname 对应的频道
+>   * 如果填写 cname 和 uid，不填写 ip，则该 uid 无法登录 App 中该 cname 对应的频道
 
 -   响应：
 
@@ -443,7 +444,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
     ```
 
 
-### 获取规则列表 \(GET\)
+### 获取规则列表 (GET)
 
 -   方法：GET
 -   路径：BaseUrl/kicking-rule/
@@ -477,7 +478,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
     ```
 
 
-### 更新规则时间 \(PUT\)
+### 更新规则时间 (PUT)
 
 -   方法：PUT
 -   路径：BaseUrl/kicking-rule/
@@ -531,7 +532,6 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
 BaseUrl：**http://api.agora.io/dev/v1/**
 
-
 > 为防止大量异常请求影响其他用户的正常使用，我们对 API 的调用频率做了限制。当达到限流阈值时，会返回 HTTP 错误 429 \(Too Many Requests\)。我们认为设置的阈值可以满足绝大多数用户的使用场景，如果您被限制，请尝试调整调用频率。如果该限制使您的需求无法得到满足，请联系 [sales@agora.io](mailto:sales@agora.io) 。
 
 下图展示了查询频道信息相关 API 的使用逻辑。
@@ -571,7 +571,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 > 目前 *直播模式纯音频主播* 尚未区分，会被归属到 *直播模式观众* 中。
 
-### 查询用户在频道中的状态及角色信息 \(GET\)
+### 查询某个用户在指定频道中的状态 \(GET\)
 
 该方法查询某个用户是否在指定频道中，如果是，则给出用户在该频道中的角色等状态。
 
@@ -624,7 +624,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 <tr><td><strong>参数</strong></td>
 <td><strong>描述</strong></td>
 </tr>
-<tr><tr><td>join</td>
+<tr><td>join</td>
 <td><p>该用户加入频道的时间戳</p>
 </td></tr>
 <td>success</td>
@@ -690,29 +690,40 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 -   响应:
 
-    ```
-    // 如果是直播频道
-    {
-         "success": true,
-         "data": {
-             "channel_exist": true,
-             "mode": 2,
-             "broadcasters": [<uid>],
-             "audience": [<uid>]
-             "audience_total": <count>
-          }
-     }
-    
-    // 如果频道不存在
-    {
-        "success": true,
-        "data": {
-            "channel_exist": false
-        }
-    }
-    ```
+	```
+	// 如果是通信频道
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 1,
+					"total": 1,
+					"users": [<uid>]
+			}
+	}
 
-    <table>
+	// 如果是直播频道
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 2
+					"broadcasters": [<uid>],
+					"audience": [<uid>]
+					"auience_total": <count>
+			}
+	}
+
+	// 如果频道不存在
+	{
+			"success": true,
+			"data": {
+					"channel_exist": false
+			}
+	}
+	```
+
+<table>
 <colgroup>
 <col/>
 <col/>
@@ -745,14 +756,11 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 </ul>
 </td>
 </tr>
-<tr><td>broadcasters</td>
-<td>频道内的主播 UID</td>
+<tr><td>total</td>
+<td>频道内的用户总人数</td>
 </tr>
-<tr><td>audience</td>
-<td>频道内的观众 UID</td>
-</tr>
-<tr><td>audience_total</td>
-<td>频道内的观众总人数</td>
+<tr><td>users</td>
+<td>频道内所有用户的 uid</td>
 </tr>
 </tbody>
 </table>
@@ -908,7 +916,6 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 </tr>
 </tbody>
 </table>
-
 
 ## 7. 错误代码和警告代码
 
