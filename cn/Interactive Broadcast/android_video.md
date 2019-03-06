@@ -3,7 +3,7 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Wed Mar 06 2019 07:25:29 GMT+0000 (UTC)
+updatedAt: Wed Mar 06 2019 07:27:01 GMT+0000 (UTC)
 ---
 # 集成客户端 
 本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -19,6 +19,8 @@ updatedAt: Wed Mar 06 2019 07:25:29 GMT+0000 (UTC)
 - App 要求 Android 4.1 或以上设备
 
 - 在使用 Agora 相关功能及服务前，已打开特定端口，详见[防火墙说明](../../cn/Agora%20Platform/firewall.md)。
+
+- 如果你的应用以 Android 9 为目标平台，请关注[Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
 
 需要下载的文件：
 
