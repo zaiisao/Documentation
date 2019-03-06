@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Mar 06 2019 03:45:18 GMT+0000 (UTC)
+updatedAt: Wed Mar 06 2019 03:49:55 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -535,7 +535,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 > 为防止大量异常请求影响其他用户的正常使用，我们对 API 的调用频率做了限制。当达到限流阈值时，会返回 HTTP 错误 429 \(Too Many Requests\)。我们认为设置的阈值可以满足绝大多数用户的使用场景，如果您被限制，请尝试调整调用频率。如果该限制使您的需求无法得到满足，请联系 [sales@agora.io](mailto:sales@agora.io) 。
 
 下图展示了查询频道信息相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1545985608224)
+![](https://web-cdn.agora.io/docs-files/1545984592537)
 
 ### 关于用户角色
 
@@ -690,30 +690,40 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 -   响应:
 
-    ```
-    // 如果是通信频道
-    {
-         "success": true,
-         "data": {
-             "channel_exist": true,
-             "mode": 1,
-             "total": 1,
-             "users": [
-                 <uid>
-             ]
-          }
-     }
-    
-    // 如果频道不存在
-    {
-        "success": true,
-        "data": {
-            "channel_exist": false
-        }
-    }
-    ```
+	```
+	// 如果是通信频道
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 1,
+					"total": 1,
+					"users": [<uid>]
+			}
+	}
 
-    <table>
+	// 如果是直播频道
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 2
+					"broadcasters": [<uid>],
+					"audience": [<uid>]
+					"auience_total": <count>
+			}
+	}
+
+	// 如果频道不存在
+	{
+			"success": true,
+			"data": {
+					"channel_exist": false
+			}
+	}
+	```
+
+<table>
 <colgroup>
 <col/>
 <col/>
@@ -836,6 +846,76 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 </table>
 
 > 使用该方法查询后会将结果缓存 1 分钟。因此一分钟内再次查询会从缓存结果中提取，而不再更新数据。
+
+### 查询用户是否连麦用户 \(GET\)
+
+该方法查询指定用户是否是指定频道中的连麦用户。
+
+-   方法：GET
+-   规则：BaseUrl/channel/business/hostin/
+-   参数：appid, uid, cname
+
+    <table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>appid</td>
+<td>必填，dashboard 中项目的 appID</td>
+</tr>
+<tr><td>uid</td>
+<td>必填，用户 ID，可以通过 SDK 获取到</td>
+</tr>
+<tr><td>cname</td>
+<td>必填，channel name，频道名称</td>
+</tr>
+</tbody>
+</table>
+
+如: /channel/business/hostin/<appid\>/<uid\>/<channelName\>
+
+-   响应：
+
+    ```
+    {
+         "success": true,
+         "data":{
+             "isHostIn": false
+         }
+    }
+    ```
+
+    <table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>success</td>
+<td><p>查询请求状态</p>
+<ul>
+<li>true：请求成功</li>
+<li>false：请求不成功</li>
+</ul>
+</td>
+</tr>
+<tr><td>isHostIn</td>
+<td><p>查询是否在连麦状态</p>
+<ul>
+<li>true：用户在连麦状态</li>
+<li>false：用户不在连麦状态</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 
 ## 7. 错误代码和警告代码
 
