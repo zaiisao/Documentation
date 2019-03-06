@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Wed Mar 06 2019 07:41:46 GMT+0000 (UTC)
+updatedAt: Wed Mar 06 2019 07:41:54 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -16,6 +16,7 @@ Development environment:
 - Android SDK for API level 16 or later.
 - Android Studio 3.0 or later.
 - Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
+- If you want to run your app on Android 9, see [Android Privacy changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p) for more information.
 
 Download the Agora SDK：
 
