@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Mar 06 2019 03:48:22 GMT+0000 (UTC)
+updatedAt: Wed Mar 06 2019 03:49:38 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
@@ -512,7 +512,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**.
 > To ensure the availability of this function to all our customers, Agora decides to rate limit on the call frequency of this API. When this frequency limit is exceeded, the HTTP Error Code 429 \(Too Many Requests\) is triggered. Agora considers this frequency limit adequate for most of our customers in most scenarios. Should you receive this Error Code, Agora recommends adjusting your call frequency. Should this limit fails to meet your need, please contact [sales-us@agora.io](mailto:sales-us@agora.io).
 
 The following chart shows how you can use Online Statistics Query APIs.
-![](https://web-cdn.agora.io/docs-files/1545990190974)
+![](https://web-cdn.agora.io/docs-files/1545990432233)
 
 ### About the User Role
 
@@ -665,28 +665,38 @@ Example: /channel/user/<appid\>/<channelName\>
 
 -  Response:
 
-    ```
-    // If it is a communication channel
-    {
-         "success": true,
-         "data": {
-             "channel_exist": true,
-             "mode": 1,
-             "total": 1,
-             "users": [
-                 <uid>
-             ]
-          }
-     }
-    
-    // No channel
-    {
-        "success": true,
-        "data": {
-            "channel_exist": false
-        }
-    }
-    ```
+	```
+	// If it is a communication channel:
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 1,
+					"total": 1,
+					"users": [<uid>]
+			}
+	}
+
+	// If it is a live-broadcast channel:
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 2
+					"broadcasters": [<uid>],
+					"audience": [<uid>]
+					"auience_total": <count>
+			}
+	}
+
+	// If the channel does not exist:
+	{
+			"success": true,
+			"data": {
+					"channel_exist": false
+			}
+	}
+	```
 
 	<table>
 	<colgroup>
@@ -809,6 +819,76 @@ Example with parameters: /channel/<appid\>/page\_no=0&page\_size=100
 	</table>
 
 > The channel lists retrieved in this method will cache for 1 minute. And if you use this method twice within 1 minute, the result stays the same.
+
+### Check if a User is a Co-host (GET)
+
+This method checks if a user is a co-host in a specified channel.
+
+-  Method: GET
+-  Path: BaseUrl/channel/business/hostin/
+-  Parameters: appid, uid, cname
+
+   <table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Parameter</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><td>appid</td>
+<td>Mandatory, App ID in the dashboard</td>
+</tr>
+<tr><td>uid</td>
+<td>Mandatory, user ID which can be obtained by using the SDK</td>
+</tr>
+<tr><td>cname</td>
+<td>Mandatory, channel name</td>
+</tr>
+</tbody>
+</table>
+
+Example: /channel/business/hostin/<appid\>/<uid\>/<channelName\>
+
+-  Response:
+
+    ```
+    {
+        "success": true,
+        "data": {
+            "isHostIn": false
+        }
+    }
+    ```
+
+	<table>
+	<colgroup>
+	<col/>
+	<col/>
+	</colgroup>
+	<tbody>
+	<tr><td><strong>Name</strong></td>
+	<td><strong>Description</strong></td>
+	</tr>
+	<tr><td>success</td>
+	<td><p>Checks the request state:</p>
+	<ul>
+	<li>true: Request succeeded</li>
+	<li>false: Request failed</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>isHostIn</td>
+	<td><p>Checks if the user is hosting:</p>
+	<ul>
+	<li>true: User is in the hosting role</li>
+	<li>false: User is not in the hosting role</li>
+	</ul>
+	</td>
+	</tr>
+	</tbody>
+	</table>
 
 ## 7. Error Codes
 
