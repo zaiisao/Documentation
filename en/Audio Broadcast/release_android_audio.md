@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed Mar 06 2019 07:32:57 GMT+0000 (UTC)
+updatedAt: Wed Mar 06 2019 07:33:15 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -16,6 +16,19 @@ The Voice SDK supports the following scenarios:
 -   Live audio broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
+
+#### Known Issues and Limitations
+
+##### Privacy changes
+If your app targets Android 9, you should keep the following behavior changes in mind. These updates to device serial and DNS information enhance user privacy.
+
+##### Build serial number deprecation
+In Android 9, Build.SERIAL is always set to "UNKNOWN" to protect users' privacy.
+
+If your app needs to access a device's hardware serial number, you should instead request the READ_PHONE_STATE permission, then call getSerial().
+
+##### DNS privacy
+Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 ## v2.3.3
 v2.3.3 is released on January 24, 2019. 
