@@ -60,4 +60,4 @@ agoraKit.stopPlaybackDeviceTest()
 
 ## Considerations
 
-If the input device fails to initialize, check the error message in [Developer Center](https://docs.agora.io/API%20Reference/oc/Constants/AgoraErrorCode.html).
+If the input device fails to initialize, check the error message in [Developer Center](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Constants/AgoraErrorCode.html).
