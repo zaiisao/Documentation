@@ -3,7 +3,7 @@
 title: Test or Select a Media Device
 description: 
 platform: macOS
-updatedAt: Thu Mar 07 2019 02:40:13 GMT+0000 (UTC)
+updatedAt: Thu Mar 07 2019 02:49:58 GMT+0000 (UTC)
 ---
 # Test or Select a Media Device
 ## Introduction
@@ -53,11 +53,11 @@ agoraKit.stopPlaybackDeviceTest()
 
 ### API Reference
 
-* [`startRecordingDeviceTest`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
-* [`stopRecordingDeviceTest`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
-* [`startPlaybackDeviceTest`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
-* [`stopPlaybackDeviceTest`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopPlaybackDeviceTest)
+* [`startRecordingDeviceTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
+* [`stopRecordingDeviceTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
+* [`startPlaybackDeviceTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
+* [`stopPlaybackDeviceTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopPlaybackDeviceTest)
 
 ## Considerations
 
-If the input device fails to initialize, check the error message in [Developer Center](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#Init).
+If the input device fails to initialize, check the error message in [Developer Center](https://docs.agora.io/API%20Reference/oc/Constants/AgoraErrorCode.html).
