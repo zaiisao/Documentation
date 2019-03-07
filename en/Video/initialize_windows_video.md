@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 22:39:14 GMT+0000 (UTC)
+updatedAt: Thu Mar 07 2019 07:33:53 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating and initializing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md).
