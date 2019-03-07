@@ -2,8 +2,8 @@
 ---
 title: Dashboard RESTful API
 description: 
-platform: All_Platforms
-updatedAt: Wed Mar 06 2019 03:54:31 GMT+0000 (UTC)
+platform: All Platforms
+updatedAt: Wed Mar 06 2019 03:49:38 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
@@ -384,10 +384,10 @@ The following chart shows how you can use related APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990162139)
 
 > The banned user receives the corresponding callback as follows:
-- Android: [`onConnectionBanned`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
-- iOS/macOS:[`ConnectionDidBanned`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:)
-- Web:[`onclient-banned`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)
-- Windows:[`onConnectionBanned`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a38e9d403ae4732dff71110b454149404)
+- Android: [`onConnectionBanned`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
+- iOS/macOS:[`ConnectionDidBanned`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:)
+- Web:[`onclient-banned`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/web/interfaces/agorartc.client.html#on)
+- Windows:[`onConnectionBanned`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a38e9d403ae4732dff71110b454149404)
 
 ### Create a Rule (POST)
 
@@ -892,6 +892,6 @@ Example: /channel/business/hostin/<appid\>/<uid\>/<channelName\>
 
 ## 7. Error Codes
 
-See [Error Codes and Warning Codes](../../en/Interactive%20Broadcast/the_error_native.md).
+See [Error Codes and Warning Codes](../../en/Agora%20Platform/the_error_native.md).
 
 

@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Mar 06 2019 03:54:26 GMT+0000 (UTC)
+updatedAt: Wed Mar 06 2019 03:54:31 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
@@ -37,7 +37,7 @@ All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
 BaseUrl: **https://api.agora.io/dev/v1**.
 
 The following chart shows how you can use Project APIs.
-![](https://web-cdn.agora.io/docs-files/1545990299008)
+![](https://web-cdn.agora.io/docs-files/1545990089418)
 
 ### Fetch all Projects (GET)
 
@@ -56,7 +56,7 @@ The following chart shows how you can use Project APIs.
 									"name": 'project1',
 									"vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
 									"sign_key": '4855898a22ae4102a29b81ba76f2eae2',
-									"recording_serve"r: '10.2.2.8:8080',
+									"recording_server": '10.2.2.8:8080',
 									"status": 1,
 									"created": 1464165672
 
@@ -121,8 +121,8 @@ The following chart shows how you can use Project APIs.
 
 	```
 	{
-		"name:'projectx',
-		"enable_sign_key: true
+		"name":'projectx',
+		"enable_sign_key": true
 	}
 	```
 
@@ -130,7 +130,7 @@ The following chart shows how you can use Project APIs.
 
 	```
 	{
-		project:
+		"project":
 						{
 
 							 "id": 'xxxx',
@@ -299,7 +299,7 @@ The following chart shows how you can use Project APIs.
 ### Reset a Project’s App Certificate (POST)
 
 -  Method: POST
--  Path: BaseUrl/reset\_signkey/
+-  Path: BaseUrl/reset_signkey/
 -  Parameter:
 
 	```
@@ -332,13 +332,13 @@ The following chart shows how you can use Project APIs.
 BaseUrl: **https://api.agora.io/dev/v1**.
 
 The following chart shows how you can use Usage APIs.
-![](https://web-cdn.agora.io/docs-files/1545990365425)
+![](https://web-cdn.agora.io/docs-files/1545990118195)
 
 ### Fetch Usages (GET)
 
 -  Method: GET
 -  Path: BaseUrl/usage/
--  Parameter: \(from date & to date pattern: YYYY-MM-DD\)
+-  Parameter: (from date & to date pattern: YYYY-MM-DD)
 
 	```
 	"from_date"=YYYY-MM-DD&to\_date=YYYY-MM-DD&projects=id1,id2,id3
@@ -381,10 +381,9 @@ The following chart shows how you can use Usage APIs.
 BaseUrl: **https://api.agora.io/dev/v1**.
 
 The following chart shows how you can use related APIs.
-![](https://web-cdn.agora.io/docs-files/1545990392723)
+![](https://web-cdn.agora.io/docs-files/1545990162139)
 
 > The banned user receives the corresponding callback as follows:
-
 - Android: [`onConnectionBanned`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
 - iOS/macOS:[`ConnectionDidBanned`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineConnectionDidBanned:)
 - Web:[`onclient-banned`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)
@@ -398,12 +397,12 @@ The following chart shows how you can use related APIs.
 
     ```
     {
-            "appid":"",   // Mandatory, project App ID
-            "cname":"",   // Optional, channel name. Do not pass cname:""
-            "uid":"",     // Optional, UID which can be obtained by using the SDK API. Do not pass uid:0
-            "ip":"",      // Optional, IP address of the user to be banned. Do not pass ip:0
-            "time": 60    // Optional, banned period in minutes. 1440 minutes maximum, 1 minute minimum. If you set it to over 1440 minutes, it will be processed as 1440 minutes. If you do not set it, the default duration is 1 hour, that is, time:60 
-						"privileges":["join_channel"]
+				"appid":"",   // Mandatory, project App ID
+				"cname":"",   // Optional, channel name. Do not pass cname:""
+				"uid":"",     // Optional, UID which can be obtained by using the SDK API. Do not pass uid:0
+				"ip":"",      // Optional, IP address of the user to be banned. Do not pass ip:0
+				"time": 60    // Optional, banned period in minutes. 1440 minutes maximum, 1 minute minimum. If you set it to over 1440 minutes, it will be processed as 1440 minutes. If you do not set it, the default duration is 1 hour, that is, time:60 
+				"privileges":["join_channel"]
      }
     ```
 
@@ -592,47 +591,47 @@ Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
 	}
 	```
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Parameter</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><tr><td>join</td>
-<td><p>The timestamp when the user joins the channel</p>
-</td></tr>
-<td>success</td>
-<td><p>Checks the request state</p>
-<ul>
-<li>true: Request succeeded</li>
-<li>false: Request failed</li>
-</ul>
-</td>
-</tr>
-<tr><td>in_channel</td>
-<td><p>Checks if the user is in the channel</p>
-<ul>
-<li>true: The user is in the channel</li>
-<li>false: The user is not in the channel</li>
-</ul>
-</td>
-</tr>
-<tr><td>role</td>
-<td><p>Checks the role of the user in the channel</p>
-<ul>
-<li>0: Unknown role</li>
-<li>1: Communication user</li>
-<li>2: Video live broadcaster</li>
-<li>3: Live broadcast audience</li>
-<li>4: Audio live broadcaster</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+	<table>
+	<colgroup>
+	<col/>
+	<col/>
+	</colgroup>
+	<tbody>
+	<tr><td><strong>Parameter</strong></td>
+	<td><strong>Description</strong></td>
+	</tr>
+	<tr><td>join</td>
+	<td><p>The timestamp when the user joins the channel</p>
+	</td>
+	<tr><td>success</td>
+	<td><p>Checks the request state</p>
+	<ul>
+	<li>true: Request succeeded</li>
+	<li>false: Request failed</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>in_channel</td>
+	<td><p>Checks if the user is in the channel</p>
+	<ul>
+	<li>true: The user is in the channel</li>
+	<li>false: The user is not in the channel</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>role</td>
+	<td><p>Checks the role of the user in the channel</p>
+	<ul>
+	<li>0: Unknown role</li>
+	<li>1: Communication user</li>
+	<li>2: Video live broadcaster</li>
+	<li>3: Live broadcast audience</li>
+	<li>4: Audio live broadcaster</li>
+	</ul>
+	</td>
+	</tr>
+	</tbody>
+	</table>
 
 
 
@@ -666,28 +665,38 @@ Example: /channel/user/<appid\>/<channelName\>
 
 -  Response:
 
-    ```
-    // If it is a communication channel
-    {
-         "success": true,
-         "data": {
-             "channel_exist": true,
-             "mode": 1,
-             "total": 1,
-             "users": [
-                 <uid>
-             ]
-          }
-     }
-    
-    // No channel
-    {
-        "success": true,
-        "data": {
-            "channel_exist": false
-        }
-    }
-    ```
+	```
+	// If it is a communication channel:
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 1,
+					"total": 1,
+					"users": [<uid>]
+			}
+	}
+
+	// If it is a live-broadcast channel:
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 2
+					"broadcasters": [<uid>],
+					"audience": [<uid>]
+					"auience_total": <count>
+			}
+	}
+
+	// If the channel does not exist:
+	{
+			"success": true,
+			"data": {
+					"channel_exist": false
+			}
+	}
+	```
 
 	<table>
 	<colgroup>
@@ -880,7 +889,6 @@ Example: /channel/business/hostin/<appid\>/<uid\>/<channelName\>
 	</tr>
 	</tbody>
 	</table>
-
 
 ## 7. Error Codes
 
