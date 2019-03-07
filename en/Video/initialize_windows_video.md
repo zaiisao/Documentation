@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: Windows
-updatedAt: Thu Mar 07 2019 07:33:53 GMT+0000 (UTC)
+updatedAt: Thu Mar 07 2019 07:49:44 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating and initializing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md).
@@ -36,3 +36,47 @@ To check the network connection or audio quality before joining a channel, you c
 
 - [Conduct a Last Mile Test](../../en/Video/lastmile_windows.md)
 - [Set the Stereo/High-fidelity Audio Profile](../../en/Video/audio_profile_windows.md)
+
+## Troubleshooting
+
+Media Foundation and DirectShow are two video-capture architectures for Microsoft Windows. Some cameras support both, while some do not. This may cause no-video from the capturer. Agora allows you to use its private interface to select your video capture architecture. 
+
+### Private Interfaces
+
+`agora::rtc::AParameter::AParameter::setInt(const char* key, int value);
+`
+
+### Parameter Descriptions
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Parameter</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><td><code>account</code></td>
+<td>"che.video.videoCaptureType"</td>
+</tr>
+<tr><td><code>value</code></td>
+<ul>
+<li>0: DirectShow</li>
+<li>1: VFW (Video for Windows)</li>
+<li>2: Media Foundation</li>
+<li>3: DirectShow</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+### Code Snippets
+
+`AParameter apm(*m_lpAgoraEngine);
+ int nRet = apm->setInt("che.video.videoCaptureType", nType);`
+
+
+
