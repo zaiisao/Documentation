@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: Windows
-updatedAt: Thu Mar 07 2019 07:49:44 GMT+0000 (UTC)
+updatedAt: Thu Mar 07 2019 07:49:51 GMT+0000 (UTC)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating and initializing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md).
@@ -57,7 +57,7 @@ Media Foundation and DirectShow are two video-capture architectures for Microsof
 <tr><td><strong>Parameter</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr><td><code>account</code></td>
+<tr><td><code>key</code></td>
 <td>"che.video.videoCaptureType"</td>
 </tr>
 <tr><td><code>value</code></td>
