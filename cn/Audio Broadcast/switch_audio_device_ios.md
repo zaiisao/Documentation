@@ -39,6 +39,6 @@ agoraKit.stopRecordingDeviceTest()
 
 ## 开发注意事项
 
-在初始化输入设备时可能失败，请查询对应的 [错误信息](https://docs.agora.io/cn/Audio%20Broadcast/Interactive%20Broadcast/API%20Reference/oc/Constants/AgoraErrorCode.html)。
+在初始化输入设备时可能失败，请查询对应的 [错误信息](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Constants/AgoraErrorCode.html)。
 
 
