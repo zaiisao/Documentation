@@ -3,7 +3,7 @@
 title: 创建 AgoraRtcEngine 实例并初始化
 description: windows平台初始化
 platform: Windows
-updatedAt: Thu Mar 07 2019 07:14:53 GMT+0000 (UTC)
+updatedAt: Thu Mar 07 2019 07:15:00 GMT+0000 (UTC)
 ---
 # 创建 AgoraRtcEngine 实例并初始化
 在创建 AgoraRtcEngine 实例并初始化前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/windows_video.md)。
@@ -25,7 +25,7 @@ m_lpAgoraEngine->initialize(ctx);
 ```
 
 ## 相关文档
-完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行视频通话：
+完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行通话/直播：
 
 - [加入频道](../../cn/Video/join_video_windows.md)
 - [发布和订阅音视频流](../../cn/Video/publish_windows.md)
@@ -34,4 +34,49 @@ m_lpAgoraEngine->initialize(ctx);
 
 - [进行通话前网络质量测试](../../cn/Video/lastmile_windows.md)
 - [使用双声道/高音质](../../cn/Video/audio_profile_windows.md)
+
+## 常见问题
+
+Media Foundation 和 dshow 是微软提供的两种视频采集方式。有些摄像头两个都支持；有些摄像头仅支持其中一个视频采集方式，造成摄像头无采集视频。声网允许客户通过如下私有接口设置 SDK 的视频采集方式。
+
+### 私有接口
+
+`agora::rtc::AParameter::AParameter::setInt(const char* key, int value);
+`
+
+### 参数说明
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>赋值</strong></td>
+</tr>
+<tr><td><code>key</code></td>
+<td>频道名。最大为 128 字节可见字符</td>
+</tr>
+<tr><td><code>account</code></td>
+<td>"che.video.videoCaptureType"</td>
+</tr>
+<tr><td><code>value</code></td>
+<ul>
+<li>0: DirectShow</li>
+<li>1: VFW (Video for Windows)</li>
+<li>2: Media Foundation</li>
+<li>3: DirectShow</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+### 示例代码
+
+`AParameter apm(*m_lpAgoraEngine);
+ int nRet = apm->setInt("che.video.videoCaptureType", nType);`
+
 
