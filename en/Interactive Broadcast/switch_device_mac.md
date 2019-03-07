@@ -2,8 +2,8 @@
 ---
 title: Test or Select a Media Device
 description: 
-platform: iOS,macOS
-updatedAt: Thu Feb 21 2019 09:05:14 GMT+0000 (UTC)
+platform: macOS
+updatedAt: Thu Mar 07 2019 02:39:12 GMT+0000 (UTC)
 ---
 # Test or Select a Media Device
 ## Introduction
