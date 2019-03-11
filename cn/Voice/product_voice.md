@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 11 2019 08:44:24 GMT+0000 (UTC)
+updatedAt: Mon Mar 11 2019 08:03:25 GMT+0000 (UTC)
 ---
 # 产品概述
 语音通话可以实现纯语音的一对一单聊和多人群聊，不具备视频通话功能，包体积更小，适用于各种语音社交、语音会议等场景。
