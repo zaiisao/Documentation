@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 11 2019 08:30:59 GMT+0000 (UTC)
+updatedAt: Mon Mar 11 2019 08:36:50 GMT+0000 (UTC)
 ---
 # 产品概述
 Agora 视频互动直播（Video Broadcasting）可以实现一对多，多对多的音视频互动直播。常见的CDN直播是一个主播和多个观众，是单向的。而互动直播还能多个主播之间，观众与主播之间连麦，就像在小剧场里观众可以上台表演一样。适用于娱乐直播如狼人杀、教育直播如小班课、电商直播中的导购问答等强互动场景。同时，也适用对图像质量要求高的一对一视频聊天。
