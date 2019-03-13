@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Cocos
-updatedAt: Wed Mar 13 2019 04:00:50 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 04:03:08 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is applicable for the versions before AMG SDK v2.2. If you are using AMG SDK v2.2 and later version, see [Gaming C++ API](../../en/Interactive%20Gaming/game_cpp.md).
