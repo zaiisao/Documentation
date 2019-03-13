@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 13 2019 08:03:55 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 08:04:05 GMT+0000 (UTC)
 ---
 # 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
@@ -205,7 +205,6 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 
 
 > -   出于安全考虑，请在 Token 生成后 24 小时内加入频道。超过 24 小时需要重新生成 Token。
-> -   采用了 Token 方案后，Agora Native SDK 的用户进入频道时，Token 将替换原来的 App ID；Agora 不建议 Agora Web SDK 的用户用 Token 替换 App ID。
 > -   Token 在一段时间后会失效。当 Client 端收到回调提醒 Token 即将失效，或当获知密钥已失效时，需调用 `renewToken` 方法进行更新。
 > -   Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js, Java, Python, C++ 等绝大多数通用的服务器端开发平台上均可获得所需库。具体加密方案可参看以下网页：[http://en.wikipedia.org/wiki/Hash-based\_message\_authentication\_code](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)
 
