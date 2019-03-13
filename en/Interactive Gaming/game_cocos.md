@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Cocos
-updatedAt: Thu Jan 17 2019 03:05:31 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 04:00:40 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
 This document is provided for the C++ language with the following classes:
