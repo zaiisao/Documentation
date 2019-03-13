@@ -3,7 +3,7 @@
 title: 调整音调、音色
 description: How to adjust voice effect for Android
 platform: Android
-updatedAt: Wed Mar 13 2019 09:58:25 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 09:58:31 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
@@ -33,19 +33,19 @@ rtcEngine.setLocalVoiceEqualization(8, -1);
 rtcEngine.setLocalVoiceEqualization(9, 1);
   
 // 原始声音强度，即所谓的 dry signal，取值范围 [-20, 10]，单位为 dB
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_DRY_LEVEL, 10);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_DRY_LEVEL, 10);
   
 // 早期反射信号强度，即所谓的 wet signal，取值范围 [-20, 10]，单位为 dB
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_WET_LEVEL, 7);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_WET_LEVEL, 7);
   
 // 所需混响效果的房间尺寸，一般房间越大，混响越强，取值范围 [0, 100]
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_ROOM_SIZE, 6);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_ROOM_SIZE, 6);
   
 // Wet signal 的初始延迟长度，取值范围 [0, 200]，单位为 ms
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_WET_DELAY, 124);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_WET_DELAY, 124);
   
 // 混响持续的强度，取值范围为 [0, 100]，值越大，混响越强
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_STRENGTH, 78);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_STRENGTH, 78);
 ```
 
 ### API 参考
