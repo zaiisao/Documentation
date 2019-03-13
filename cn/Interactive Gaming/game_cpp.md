@@ -2,8 +2,8 @@
 ---
 title: 游戏 API
 description: 
-platform: CPP
-updatedAt: Mon Feb 11 2019 03:31:33 GMT+0000 (UTC)
+platform: CPP,Cocos
+updatedAt: Wed Mar 13 2019 02:57:18 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供游戏 SDK 在 Android 和 iOS 平台上的 **C++ 接口**，使应用程序实现音视频功能。
