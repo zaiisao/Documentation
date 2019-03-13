@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Objective-C
-updatedAt: Mon Feb 11 2019 03:32:54 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 08:47:28 GMT+0000 (UTC)
 ---
 # 游戏 API
 游戏 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成。
