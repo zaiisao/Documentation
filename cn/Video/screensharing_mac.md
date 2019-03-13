@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: macOS
-updatedAt: Wed Mar 13 2019 09:36:40 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 09:40:01 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
