@@ -3,7 +3,7 @@
 title: 创建 AgoraRtcEngine 实例并初始化
 description: windows平台初始化
 platform: Windows
-updatedAt: Thu Mar 07 2019 07:47:24 GMT+0000 (UTC)
+updatedAt: Thu Mar 07 2019 07:47:30 GMT+0000 (UTC)
 ---
 # 创建 AgoraRtcEngine 实例并初始化
 在创建 AgoraRtcEngine 实例并初始化前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/windows_video.md)。
@@ -55,9 +55,6 @@ Media Foundation 和 dshow 是微软提供的两种视频采集方式。有些�
 <td><strong>赋值</strong></td>
 </tr>
 <tr><td><code>key</code></td>
-<td>频道名。最大为 128 字节可见字符</td>
-</tr>
-<tr><td><code>account</code></td>
 <td>"che.video.videoCaptureType"</td>
 </tr>
 <tr><td><code>value</code></td>

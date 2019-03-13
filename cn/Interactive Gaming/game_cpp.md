@@ -2,7 +2,7 @@
 ---
 title: 游戏 API
 description: 
-platform: Android,iOS,Cocos
+platform: Android
 updatedAt: Wed Mar 13 2019 09:22:58 GMT+0000 (UTC)
 ---
 # 游戏 API
