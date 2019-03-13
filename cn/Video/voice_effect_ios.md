@@ -3,7 +3,7 @@
 title: 调整音调、音色
 description: How to set voice effects for iOS
 platform: iOS
-updatedAt: Wed Dec 26 2018 09:46:13 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 07:11:34 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
