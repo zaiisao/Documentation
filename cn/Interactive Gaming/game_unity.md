@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Wed Mar 13 2019 02:25:13 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 02:25:20 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -1291,6 +1291,9 @@ public static void Destroy();
 ```
 
 该方法释放 Agora SDK 使用的所有资源。有些应用程序只在用户需要时才使用音视频功能，不需要时则将资源释放出来用于其他操作，该方法对这类程序可能比较有用。
+
+> - 该方法需要在子线程中操作.
+> - 该方法为同步调用。在等待 <a href="#irtcengine">RtcEngine 对象</a>资源释放后再返回。APP 不应该在 SDK 产生的回调中调用该接口，否则由于 SDK 要等待回调返回才能回收相关的对象资源，会造成死锁。
 
 ### 实现视频功能
 
