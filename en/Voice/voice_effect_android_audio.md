@@ -3,14 +3,14 @@
 title: Adjust the Pitch and Tone
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Wed Mar 13 2019 10:01:23 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 10:01:28 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
 In social and entertainment scenarios, users often need various voice effects to enhance the interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md).
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md).
 
 The following sample code shows how to change the original voice to Hulk's voice.
 
@@ -34,19 +34,19 @@ rtcEngine.setLocalVoiceEqualization(8, -1);
 rtcEngine.setLocalVoiceEqualization(9, 1);
 
 // The level of the dry signal in dB. The value ranges between -20 and 10.
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_DRY_LEVEL, 10);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_DRY_LEVEL, 10);
 
 // The level of the early reflection signal (wet signal) in dB. The value ranges between -20 and 10.
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_WET_LEVEL, 7);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_WET_LEVEL, 7);
 
 // The room size of the reverberation. A larger room size means a stronger reverberation. The value ranges between 0 and 100.
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_ROOM_SIZE, 6);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_ROOM_SIZE, 6);
 
 // The length of the initial delay of the wet signal (ms). The value ranges between 0 and 200.
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_WET_DELAY, 124);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_WET_DELAY, 124);
 
 // The reverberation strength. The value ranges between 0 and 100. The higher the value, the stronger the reverberation.
-rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_STRENGTH, 78);
+rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_STRENGTH, 78);
 ```
 
 ### API Reference
@@ -56,4 +56,4 @@ rtcEngine.setLocalVoiceReverb(AudioConst.REVERB_STRENGTH, 78);
 - [setLocalVoiceReverb](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
 
 ## Considerations
-The API methods have return values. If the method fails, the return value is < 0.
+The API methods have return values. If the method call fails, the return value is < 0.
