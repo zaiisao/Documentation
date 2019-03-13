@@ -3,12 +3,12 @@
 title: 游戏 API
 description: 
 platform: Objective-C
-updatedAt: Wed Mar 13 2019 08:47:28 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 08:47:39 GMT+0000 (UTC)
 ---
 # 游戏 API
 游戏 API 由 **Objective-C 接口** 和 **C++ 接口** 部分组成。
 
-本文主要介绍游戏 SDK 在 iOS 平台上的 Objective-C 接口。如果想参考 C++ 接口的调用方法，请点击 [C++ 接口](../../cn/Interactive%20Gaming/gaming_cpp.md)。
+本文主要介绍游戏 SDK 在 iOS 平台上的 Objective-C 接口。如果想参考 C++ 接口的调用方法，请点击 [C++ 接口](../../cn/Interactive%20Gaming/game_cpp.md)。
 
 
 
