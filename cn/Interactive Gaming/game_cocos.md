@@ -2,8 +2,8 @@
 ---
 title: 游戏 API
 description: 
-platform: Cocos2d-x
-updatedAt: Wed Mar 13 2019 06:43:43 GMT+0000 (UTC)
+platform: Cocos
+updatedAt: Wed Mar 13 2019 08:44:14 GMT+0000 (UTC)
 ---
 # 游戏 API
 本文内容适用于 AMG SDK v2.2 之前的版本。如果你使用的是 AMG SDK v2.2 及之后的版本，请参考 [C++ 接口](../../cn/Interactive%20Gaming/game_cpp.md)。
