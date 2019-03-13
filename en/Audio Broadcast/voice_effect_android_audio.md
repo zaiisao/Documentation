@@ -3,7 +3,7 @@
 title: Adjust the Pitch and Tone
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Thu Dec 27 2018 03:00:54 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 10:01:23 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
