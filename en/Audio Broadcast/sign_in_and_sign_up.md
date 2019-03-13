@@ -3,7 +3,7 @@
 title: Sign in and Sign up
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 13 2019 03:39:20 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 03:39:25 GMT+0000 (UTC)
 ---
 # Sign in and Sign up
 An Agora Account gives you access to the Agora Dashboard, which is your home for using Agora products. 
@@ -12,11 +12,11 @@ An Agora Account gives you access to the Agora Dashboard, which is your home for
 
 1. Click on the **Sign up** button in the upper right corner of [www.agora.io/en/](https://www.agora.io/en/) to begin your signup process.
 
-![](https://web-cdn.agora.io/docs-files/1543990897713)
+![](https://web-cdn.agora.io/docs-files/1552448166731)
 
 2. When you create an Agora Account, we ask for some personal info, which help make our services more useful.
 
-![](https://web-cdn.agora.io/docs-files/1543990487310)
+![](https://web-cdn.agora.io/docs-files/1552448342965)
 
 <a name = "Reset_Your_Password"></a > 
 ## Reset Your Password
