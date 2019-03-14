@@ -89,7 +89,7 @@ login(account, token, reconnect_count, reconnect_time) : Session
 #### Sets the System Log（setDoLog）
 
 ```
-setDolog(isEnabled, level)
+setDoLog(isEnabled, level)
 ```
 
 This method sets the system log.
