@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Thu Mar 14 2019 09:47:16 GMT+0000 (UTC)
+updatedAt: Thu Mar 14 2019 09:47:24 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
@@ -14,6 +14,16 @@ You can use screen sharing in the following scenarios:
 
 - Video conference: the speaker can share an image of a local file, web page, or presentation with other users in the channel.
 - Online class: the teacher can share slides or notes with students.
+
+## Working Principles
+
+Screen sharing on the web client is enabled by creating a screen-sharing stream.
+
+- If you publish the screen-sharing stream only, set `video` as `false`, and `screen` as `true` when creating a stream.
+- If you publish both the local video stream and your screen-sharing stream, you need to create two client objects:
+  - A client object for sending the local stream: Set `video` as true and `screen` as false.
+  - A client object for sending the screen-sharing stream: Set `video` as false and `screen` as true.
+
 
 ## Implementation
 
@@ -274,12 +284,3 @@ screenClient.subscribe(stream);
 - **Do not subscribe to a locally published screen-sharing stream**, else additional charges incur.
 - Ensure that `video`/`audio` is set as `false` when creating the screen-sharing stream.
 - Sharing the window of a QQ chat on Windows causes the black screen.
-
-## Working Principles
-
-Screen sharing on the web client is enabled by creating a screen-sharing stream.
-
-- If you publish the screen-sharing stream only, set `video` as `false`, and `screen` as `true` when creating a stream.
-- If you publish both the local video stream and your screen-sharing stream, you need to create two client objects:
-  - A client object for sending the local stream: Set `video` as true and `screen` as false.
-  - A client object for sending the screen-sharing stream: Set `video` as false and `screen` as true.
