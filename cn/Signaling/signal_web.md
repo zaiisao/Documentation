@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Web
-updatedAt: Thu Mar 14 2019 03:28:28 GMT+0000 (UTC)
+updatedAt: Thu Mar 14 2019 03:28:56 GMT+0000 (UTC)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
@@ -111,7 +111,7 @@ login(account, token, reconnect_count, reconnect_time) : Session
 #### <a name="setdolog-web"></a>SDK 打开日志（setDoLog）
 
 ```
-setDolog(isEnabled, level)
+setDoLog(isEnabled, level)
 ```
 
 该方法用于设置日志打印。
