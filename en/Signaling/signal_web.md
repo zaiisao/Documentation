@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Web
-updatedAt: Thu Feb 21 2019 03:16:30 GMT+0000 (UTC)
+updatedAt: Thu Mar 14 2019 03:27:26 GMT+0000 (UTC)
 ---
 # Signaling API
 > Version: v1.4.0 BETA
@@ -89,7 +89,7 @@ login(account, token, reconnect_count, reconnect_time) : Session
 #### Sets the System Log（setDoLog）
 
 ```
-setDoLog(isEnabled, level)
+setDolog(isEnabled, level)
 ```
 
 This method sets the system log.
