@@ -3,7 +3,7 @@
 title: 调整音调、音色
 description: How to adjust voice effect for Android
 platform: Android
-updatedAt: Wed Mar 13 2019 09:59:51 GMT+0000 (UTC)
+updatedAt: Thu Mar 14 2019 08:30:18 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
