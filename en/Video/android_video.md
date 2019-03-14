@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Wed Mar 06 2019 07:44:12 GMT+0000 (UTC)
+updatedAt: Thu Mar 14 2019 03:49:31 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for Android.
