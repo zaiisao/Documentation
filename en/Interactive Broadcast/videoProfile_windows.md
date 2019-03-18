@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Mon Mar 18 2019 06:57:35 GMT+0000 (UTC)
+updatedAt: Mon Mar 18 2019 06:57:39 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -21,7 +21,7 @@ The parameters specified in the `setVideoEncoderConfiguration` method are ideal 
 ```cpp
 // cpp
 // Set the video encoder configuration.
-VideoEncoderConfiguration lpVideoConfig(640, 360), // Set the width and height of the video stream. Swapping the two values does not change the video orientation.
+VideoEncoderConfiguration (lpVideoConfig(640, 360), // Set the width and height of the video stream. Swapping the two values does not change the video orientation.
 FRAME_RATE_FPS_15, // Set the video frame rate of the video.
 800, // Set the bitrate of the video in Kbps.
 ORIENTATION_MODE_ADAPTIVE // The orientation mode the video.
