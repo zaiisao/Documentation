@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Mon Mar 18 2019 06:07:09 GMT+0000 (UTC)
+updatedAt: Mon Mar 18 2019 06:09:52 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -39,19 +39,20 @@ RESTful API 仅支持 HTTPS。用户必须通过 basic HTTP 认证:
 <td>输入格式错误</td>
 </tr>
 <tr><td>Status 401</td>
-<td>未经授权的(App ID/Customer Certificate匹配错误)</td>
+<td>未经授权的（App ID/Customer Certificate匹配错误）</td>
 </tr>
 <tr><td>Status 404</td>
-<td>API调用错误</td>
+<td>API 调用错误</td>
+</tr>
+</tr>
+<tr><td>Status 429</td>
+<td>API 调用过于频繁</td>
 </tr>
 <tr><td>Status 500</td>
 <td>服务器内部错误</td>
 </tr>
 </tbody>
 </table>
-
-
-
 
 ## 3. 项目相关的 API
 
@@ -413,16 +414,18 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
 ### 创建规则 (POST)
 
+该方法创建服务端踢人规则。
+
 -   方法：POST
 -   路径：BaseUrl/kicking-rule/
 -   参数:
 
     ```
     {
-				"appid":"",   // dashboard中项目的appID，必填
+				"appid":"",   // dashboard中项目的 App ID，必填
 				"cname":"",   // channel name 频道名称，非必填，可以不传，但不能传 cname:""
-				"uid":"",     // uid，sdk可以获取到，非必填，可以不传，但不能传 uid:0
-				"ip":"",      // IP地址需要封的用户IP，非必填，可以不传，但不能传 ip:0
+				"uid":"",     // uid，SDK 可以获取到，非必填，可以不传，但不能传 uid:0
+				"ip":"",      // IP地址需要封的用户 IP，非必填，可以不传，但不能传 ip:0
 				"time": 60    //  封人时间，单位是分钟，最大 1440 分钟，最小一分钟。如果大于 1440 分钟，会被处理成 1440 分钟，如果不传默认为 1 小时。非必填。比如：time:60
 				"privileges":["join_channel"]
      }
@@ -446,13 +449,15 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
 ### 获取规则列表 (GET)
 
+该方法获取服务端的踢人规则列表。
+
 -   方法：GET
 -   路径：BaseUrl/kicking-rule/
 -   参数：
 
     ```
     {
-       "appid":""    // dashboard中项目的appID，必填
+       "appid":""    // dashboard中项目的 App ID，必填
      }
     ```
 
@@ -480,14 +485,16 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
 ### 更新规则时间 (PUT)
 
+该方法更新服务端踢人的生效时间。
+
 -   方法：PUT
 -   路径：BaseUrl/kicking-rule/
 -   参数：
 
     ```
     {
-             "appid":"",   // dashboard中项目的appID，必填
-             "id":"",      // 获取规则列表的规则id，必填
+             "appid":"",   // Dashboard 中项目的 App ID，必填
+             "id":"",      // 获取规则列表的规则 ID，必填
              "time":""     // 需要更新的封人的时间，必填
     }
     ```
@@ -497,7 +504,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
     ```
     {
         "result": {
-            "id": 1953,                         // 规则id，
+            "id": 1953,                         // 规则 ID，
             "ts": "2018-01-09T08:45:54.545Z"    // 规则生效截止时间
         },
         "status": "success"                     // 请求状态
@@ -505,7 +512,9 @@ BaseUrl: **https://api.agora.io/dev/v1**
     ```
 
 
-### 删除规则 \(DELETE\)
+### 删除规则 (DELETE)
+
+该方法删除服务端踢人规则。
 
 -   方法：DELETE
 -   路径：BaseUrl/kicking-rule/
@@ -513,8 +522,8 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-        "appid":"",   // dashboard中项目的appID，必填
-        "id":""       // 获取规则列表的规则id，必填
+        "appid":"",   // Dashboard 中项目的 App ID，必填
+        "id":""       // 获取规则列表的规则 ID，必填
     }
     ```
 
@@ -523,55 +532,21 @@ BaseUrl: **https://api.agora.io/dev/v1**
     ```
     {
         "status": "success",  // 请求状态
-        "id": 1953            // 规则id，如：更新规则是需要带上此id
+        "id": 1953            // 规则 ID，如：更新规则是需要带上此 ID
     }
     ```
 
 
-## 6. 在线查询频道信息 API
+## 6. 查询在线频道信息 API
 
 BaseUrl：**http://api.agora.io/dev/v1/**
 
-> 为防止大量异常请求影响其他用户的正常使用，我们对 API 的调用频率做了限制。当达到限流阈值时，会返回 HTTP 错误 429 \(Too Many Requests\)。我们认为设置的阈值可以满足绝大多数用户的使用场景，如果您被限制，请尝试调整调用频率。如果该限制使您的需求无法得到满足，请联系 [sales@agora.io](mailto:sales@agora.io) 。
-
 下图展示了查询频道信息相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1545984592537)
 
-### 关于用户角色
-
-目前通过 RESTful API 查询到的用户角色（即 online role），和调用 SDK 的 setClientRole 指定的角色含义不同。Online role 是根据频道模式，以及用户的上行媒体流类型来区分的，共有以下几种：
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Online Role</td>
-<td>枚举值</td>
-</tr>
-<tr><td>未知</td>
-<td>0</td>
-</tr>
-<tr><td>通信模式用户</td>
-<td>1</td>
-</tr>
-<tr><td>直播模式视频主播</td>
-<td>2</td>
-</tr>
-<tr><td>直播模式观众</td>
-<td>3</td>
-</tr>
-<tr><td>直播模式纯音频主播</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
+![](https://web-cdn.agora.io/docs-files/1545985608224)
 
 
-> 目前 *直播模式纯音频主播* 尚未区分，会被归属到 *直播模式观众* 中。
-
-### 查询某个用户在指定频道中的状态 \(GET\)
+### 查询某个用户在指定频道中的状态 (GET)
 
 该方法查询某个用户是否在指定频道中，如果是，则给出用户在该频道中的角色等状态。
 
@@ -650,7 +625,6 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 <li>1：用户角色为通信用户</li>
 <li>2：用户角色为直播模式视频主播</li>
 <li>3：用户角色为主播模式观众</li>
-<li>4：用户角色为直播模式纯音频主播</li>
 </ul>
 </td>
 </tr>
@@ -659,8 +633,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 
 
-
-### 查询频道内的分角色用户列表 \(GET\)
+### 查询频道内的分角色用户列表 (GET)
 
 该方法查询指定频道内的分角色用户列表。
 
@@ -688,9 +661,9 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 
 如：/channel/user/<appid\>/<channelName\>
 
--   响应:
+-   响应：不同的频道模式下，该方法返回的响应内容不同。
 
-	```
+	```json
 	// 如果是通信频道
 	{
 			"success": true,
@@ -701,29 +674,9 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 					"users": [<uid>]
 			}
 	}
-
-	// 如果是直播频道
-	{
-			"success": true,
-			"data": {
-					"channel_exist": true,
-					"mode": 2
-					"broadcasters": [<uid>],
-					"audience": [<uid>]
-					"auience_total": <count>
-			}
-	}
-
-	// 如果频道不存在
-	{
-			"success": true,
-			"data": {
-					"channel_exist": false
-			}
-	}
 	```
 
-<table>
+	<table>
 <colgroup>
 <col/>
 <col/>
@@ -764,17 +717,75 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 </tr>
 </tbody>
 </table>
+		
+	```json
+	// 如果是直播频道
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 2,
+					"broadcaster": [<uid>],
+					"audience": [<uid>],
+					"audience_total": <count>
+			}
+	}
+	```
+
+	<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>success</td>
+<td><p>查询请求状态</p>
+<ul>
+<li>true：请求成功</li>
+<li>false：请求不成功</li>
+</ul>
+</td>
+</tr>
+<tr><td>channel_exsit</td>
+<td><p>查询频道是否存在：</p>
+<ul>
+<li>true：频道存在</li>
+<li>false：频道不存在</li>
+</ul>
+</td>
+</tr>
+<tr><td>mode</td>
+<td><p>查询频道模式：</p>
+<ul>
+<li>1：频道为通信模式</li>
+<li>2：频道为直播模式</li>
+</ul>
+</td>
+</tr>
+<tr><td>broadcaster</td>
+<td>频道内所有主播的 uid 列表</td>
+</tr>
+<tr><td>audience</td>
+<td>频道内观众的 uid 列表，最多包含前 10000 名观众</td>
+</tr>
+<tr><td>audience_total</td>
+<td>频道内的观众总人数</td>
+</tr>
+</tbody>
+</table>
 
 
-
-
-### 查询厂商频道列表 \(GET\)
+### 分页查询厂商频道列表 (GET)
 
 该方法查询指定厂商的频道列表。
 
+
 -   方法：GET
 -   路径：BaseUrl/channel/appid/
--   参数：?page\_no=0&page\_size=100（非必须）
+-   参数：?page\_no=0&page\_size=100
 
     <table>
 <colgroup>
@@ -789,7 +800,7 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 <td>选填，起始页码，默认值为 0</td>
 </tr>
 <tr><td>page_size</td>
-<td>选填，每页条数，默认值为 100</td>
+<td>选填，每页条数，默认值为 100，最大值为 500</td>
 </tr>
 </tbody>
 </table>
@@ -845,77 +856,6 @@ BaseUrl：**http://api.agora.io/dev/v1/**
 </tbody>
 </table>
 
-> 使用该方法查询后会将结果缓存 1 分钟。因此一分钟内再次查询会从缓存结果中提取，而不再更新数据。
-
-### 查询用户是否连麦用户 \(GET\)
-
-该方法查询指定用户是否是指定频道中的连麦用户。
-
--   方法：GET
--   规则：BaseUrl/channel/business/hostin/
--   参数：appid, uid, cname
-
-    <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>appid</td>
-<td>必填，dashboard 中项目的 appID</td>
-</tr>
-<tr><td>uid</td>
-<td>必填，用户 ID，可以通过 SDK 获取到</td>
-</tr>
-<tr><td>cname</td>
-<td>必填，channel name，频道名称</td>
-</tr>
-</tbody>
-</table>
-
-如: /channel/business/hostin/<appid\>/<uid\>/<channelName\>
-
--   响应：
-
-    ```
-    {
-         "success": true,
-         "data":{
-             "isHostIn": false
-         }
-    }
-    ```
-
-    <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>success</td>
-<td><p>查询请求状态</p>
-<ul>
-<li>true：请求成功</li>
-<li>false：请求不成功</li>
-</ul>
-</td>
-</tr>
-<tr><td>isHostIn</td>
-<td><p>查询是否在连麦状态</p>
-<ul>
-<li>true：用户在连麦状态</li>
-<li>false：用户不在连麦状态</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 
 ## 7. 错误代码和警告代码
 
