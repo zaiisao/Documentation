@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 18 2019 09:33:56 GMT+0000 (UTC)
+updatedAt: Mon Mar 18 2019 09:34:47 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -426,8 +426,8 @@ BaseUrl: **https://api.agora.io/dev/v1**
 				"cname":"",   // channel name 频道名称，非必填，可以不传，但不能传 cname:""
 				"uid":"",     // uid，SDK 可以获取到，非必填，可以不传，但不能传 uid:0
 				"ip":"",      // IP地址需要封的用户 IP，非必填，可以不传，但不能传 ip:0
-				"time": 60    //  封人时间，单位是分钟，最大 1440 分钟，最小一分钟。如果大于 1440 分钟，会被处理成 1440 分钟，如果不传默认为 1 小时。非必填。比如：time:60
-				"privileges":["join_channel"]
+				"time": 60    // 封人时间，单位是分钟，最大 1440 分钟，最小一分钟。如果大于 1440 分钟，会被处理成 1440 分钟，如果不传默认为 1 小时。非必填。比如：time:60
+				"privileges":["join_channel"]  // 默认参数
      }
     ```
 
