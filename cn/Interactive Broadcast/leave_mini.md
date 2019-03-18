@@ -3,7 +3,7 @@
 title: 离开频道
 description: 
 platform: 微信小程序
-updatedAt: Mon Mar 18 2019 08:00:20 GMT+0000 (UTC)
+updatedAt: Mon Mar 18 2019 08:00:34 GMT+0000 (UTC)
 ---
 # 离开频道
 通话或直播结束时，你可以使用 Agora SDK 离开频道。
@@ -16,6 +16,8 @@ updatedAt: Mon Mar 18 2019 08:00:20 GMT+0000 (UTC)
 client.leave(onSuccess, onFailure);
 ```
 
+
+> 由于微信小程序的部分内容是黑盒且不太稳定，我们不建议复用 Client。我们的最佳实践是在每次加入频道的时候重新建立一个新的 Client对象。调用 `leave` 或 `destory` 都会销毁 Client 对象的内部属性。
 
 ## 相关文档
 你已在小程序中集成了基本的通话或直播功能。
