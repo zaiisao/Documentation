@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Thu Mar 14 2019 03:48:43 GMT+0000 (UTC)
+updatedAt: Thu Mar 14 2019 03:48:49 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -137,7 +137,7 @@ To call the plug-ins in the include files under the libs folder, you need to con
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <!-- If the app uses Bluetooth, please add Bluetooth permissions.-->
+  <!-- The Agora SDK requires Bluetooth permissions in case users are using Bluetooth devices.-->
   <uses-permission android:name="android.permission.BLUETOOTH" />
   
   ...

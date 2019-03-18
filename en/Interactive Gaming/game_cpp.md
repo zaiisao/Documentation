@@ -2,7 +2,7 @@
 ---
 title: Interactive Gaming API
 description: 
-platform: CPP
+platform: Android
 updatedAt: Wed Mar 13 2019 09:35:07 GMT+0000 (UTC)
 ---
 # Interactive Gaming API
