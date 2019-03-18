@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Android
-updatedAt: Thu Mar 14 2019 03:37:40 GMT+0000 (UTC)
+updatedAt: Thu Mar 14 2019 03:37:48 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -141,7 +141,7 @@ Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
   <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <!-- If the app uses Bluetooth, please add Bluetooth permissions.-->
+  <!-- The Agora SDK requires Bluetooth permissions in case users are using Bluetooth devices.-->
   <uses-permission android:name="android.permission.BLUETOOTH" />
   
   ...
