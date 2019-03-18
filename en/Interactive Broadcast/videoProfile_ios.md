@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS
-updatedAt: Thu Dec 27 2018 02:41:18 GMT+0000 (UTC)
+updatedAt: Mon Mar 18 2019 07:55:20 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
