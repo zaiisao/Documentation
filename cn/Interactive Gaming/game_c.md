@@ -3,14 +3,14 @@
 title: Cocos Creator 快速开始
 description: 
 platform: Cocos Creator
-updatedAt: Thu Mar 21 2019 09:11:55 GMT+0000 (UTC)
+updatedAt: Thu Mar 21 2019 09:12:00 GMT+0000 (UTC)
 ---
 # Cocos Creator 快速开始
 ## 前提条件
 
 请确保满足以下开发环境要求：
 
-- Cocos Creator v2.0.7 及以上版本（v2.1.0 除外）
+- Cocos Creator v2.0.9 
 - 移动端需要 Android 或 iOS 真机
 - Web 端浏览器需满足[特定要求](https://docs.agora.io/cn/Audio%20Broadcast/web_prepare?platform=Web)
 - 没有连接 VPN
