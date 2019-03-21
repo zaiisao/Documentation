@@ -3,7 +3,7 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Thu Mar 21 2019 08:39:37 GMT+0000 (UTC)
+updatedAt: Thu Mar 21 2019 08:39:44 GMT+0000 (UTC)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
@@ -36,11 +36,12 @@ Now you have created your project as follows:
 1. Open your project with Cocos Creator. Choose **Panel** and **Service** in the drop-down menu. 
 ![](https://web-cdn.agora.io/docs-files/1552018316864)
 
-The **Service** panel appears on the right.
-   ![](https://web-cdn.agora.io/docs-files/1552269837812)
+   The **Service** panel appears on the right.
+	 ![](https://web-cdn.agora.io/docs-files/1553157544030)
+   
 
 2. Select Agora service and enable the switch button.
-   ![](https://web-cdn.agora.io/docs-files/1552017332653)
+   ![](https://web-cdn.agora.io/docs-files/1553157559271)
 
 
 Cocos Creator automatically downloads and configures all the resources necessary for Agora service. The Agora object provides you with [major APIs](../../en/Interactive%20Gaming/game_coco.md).
