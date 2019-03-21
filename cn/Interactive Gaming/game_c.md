@@ -3,7 +3,7 @@
 title: Cocos Creator 快速开始
 description: 
 platform: Cocos Creator
-updatedAt: Thu Mar 21 2019 10:45:26 GMT+0000 (UTC)
+updatedAt: Thu Mar 21 2019 10:47:09 GMT+0000 (UTC)
 ---
 # Cocos Creator 快速开始
 ## 前提条件
@@ -37,11 +37,11 @@ updatedAt: Thu Mar 21 2019 10:45:26 GMT+0000 (UTC)
    ![](https://web-cdn.agora.io/docs-files/1552018474387)
 
    屏幕右边区域会出现**服务**面板。
-   ![](https://web-cdn.agora.io/docs-files/1553157400588)
+   ![](https://web-cdn.agora.io/docs-files/1553165103714)
    
 
 2. 选中声网服务，点击启用按钮。
-   ![](https://web-cdn.agora.io/docs-files/1553157415638)
+   ![](https://web-cdn.agora.io/docs-files/1553165116354)
    
    Cocos Creator 会自动下载和配置所有声网服务依赖的资源。Cocos Creator 中的 Agora 对象暴露和提供[主要 API 功能](../../cn/Interactive%20Gaming/game_coco.md)。
 	 > Cocos Creator 提供的 JavaScript API 为方便使用仅实现了主要功能，如果需要其他扩展功能，请参考各平台完整版 API 文档。
