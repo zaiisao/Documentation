@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Mar 21 2019 09:45:39 GMT+0000 (UTC)
+updatedAt: Thu Mar 21 2019 09:45:43 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -247,7 +247,7 @@ To support scenarios with video rotation and enable better quality for the custo
 
 The <code>VideoEncoderConfiguration</code> class provides a set of configurable video parameters, including the dimension, frame rate, bitrate, and orientation. For more information on the API, see `Set the Video Encoder Configuration`.
 
-#### 6. Adds support for background image settings in setLiveTranscoding
+#### 5. Adds support for background image settings in setLiveTranscoding
 
 The `backgroundImage` parameter is added to the `setLiveTranscoding` method allowing you to set the background image in the combined video of a live broadcast.
 
