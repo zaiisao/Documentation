@@ -3,7 +3,7 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Thu Mar 21 2019 09:13:40 GMT+0000 (UTC)
+updatedAt: Thu Mar 21 2019 10:42:57 GMT+0000 (UTC)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
