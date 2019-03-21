@@ -3,14 +3,14 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Thu Mar 21 2019 09:13:34 GMT+0000 (UTC)
+updatedAt: Thu Mar 21 2019 09:13:40 GMT+0000 (UTC)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
 
 Development environment:
 
-- Cocos Creator v2.0.7 or later (except v2.1.0)
+- Cocos Creator v2.0.9
 - An Android or iOS device for mobile end
 - No VPN connection
 - Ensure the browser for Web end meet the [requirements](https://docs.agora.io/en/Audio%20Broadcast/web_prepare?platform=Web).
