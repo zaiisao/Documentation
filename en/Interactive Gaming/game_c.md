@@ -3,7 +3,7 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Thu Mar 21 2019 08:19:25 GMT+0000 (UTC)
+updatedAt: Thu Mar 21 2019 08:19:41 GMT+0000 (UTC)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
@@ -43,7 +43,7 @@ The **Service** panel appears on the right.
    ![](https://web-cdn.agora.io/docs-files/1552017332653)
 
 
-    Cocos Creator automatically downloads and configures all the resources necessary for Agora service. The Agora object provides you with [major APIs](../../en/Interactive%20Gaming/game_coco.md).
+Cocos Creator automatically downloads and configures all the resources necessary for Agora service. The Agora object provides you with [major APIs](../../en/Interactive%20Gaming/game_coco.md).
 
    > The JavaScript APIs provided by Cocos Creator only covers major functions. For more advanced functions, see the full API reference documents on other platforms.
 
