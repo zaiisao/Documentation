@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 22 2019 03:53:11 GMT+0000 (UTC)
+updatedAt: Fri Mar 22 2019 03:53:15 GMT+0000 (UTC)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
@@ -30,6 +30,7 @@ All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
   -   Status 400: The input is in the wrong format.
   -   Status 401: Unauthorized \(incorrect App ID/Customer Certificate\).
   -   Status 404: Wrong API invoked.
+  -   Status 429: Too frequent API calls.
   -   Status 500: Internal error of the Agora RestfulAPI service.
 
 ## 3. Project API
@@ -509,43 +510,8 @@ The following chart shows how you can use related APIs.
 
 BaseUrl：**http://api.agora.io/dev/v1/**.
 
-> To ensure the availability of this function to all our customers, Agora decides to rate limit on the call frequency of this API. When this frequency limit is exceeded, the HTTP Error Code 429 \(Too Many Requests\) is triggered. Agora considers this frequency limit adequate for most of our customers in most scenarios. Should you receive this Error Code, Agora recommends adjusting your call frequency. Should this limit fails to meet your need, please contact [sales-us@agora.io](mailto:sales-us@agora.io).
-
 The following chart shows how you can use Online Statistics Query APIs.
-![](https://web-cdn.agora.io/docs-files/1545990432233)
-
-### About the User Role
-
-At present, the user roles, also called online roles, retrieved by the RESTful API is different from the roles that are specified in the *setClientRole* method. The online roles are distinguished by the channel profile and the type of the upstream media data. Currently we have the following 5 online roles:
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Online Role</td>
-<td>Enumeration</td>
-</tr>
-<tr><td>Unknown role</td>
-<td>0</td>
-</tr>
-<tr><td>Communication user</td>
-<td>1</td>
-</tr>
-<tr><td>Video live broadcaster</td>
-<td>2</td>
-</tr>
-<tr><td>Live broadcast audience</td>
-<td>3</td>
-</tr>
-<tr><td>Audio live broadcaster</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-
-> At present, the role of the *Audio live broadcaster* has yet to be distinguished and will be categorized as the *Live broadcast audience*.
+![](https://web-cdn.agora.io/docs-files/1545990190974)
 
 ### Get a User Role in the Channel (GET)
 
@@ -626,7 +592,6 @@ Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
 	<li>1: Communication user</li>
 	<li>2: Video live broadcaster</li>
 	<li>3: Live broadcast audience</li>
-	<li>4: Audio live broadcaster</li>
 	</ul>
 	</td>
 	</tr>
@@ -663,7 +628,7 @@ This method checks the user role list in a specified channel.
 
 Example: /channel/user/<appid\>/<channelName\>
 
--  Response:
+-  Response: the responses of difference channel profiles differ:
 
 	```
 	// If it is a communication channel:
@@ -676,28 +641,8 @@ Example: /channel/user/<appid\>/<channelName\>
 					"users": [<uid>]
 			}
 	}
-
-	// If it is a live-broadcast channel:
-	{
-			"success": true,
-			"data": {
-					"channel_exist": true,
-					"mode": 2
-					"broadcasters": [<uid>],
-					"audience": [<uid>]
-					"auience_total": <count>
-			}
-	}
-
-	// If the channel does not exist:
-	{
-			"success": true,
-			"data": {
-					"channel_exist": false
-			}
-	}
 	```
-
+	
 	<table>
 	<colgroup>
 	<col/>
@@ -739,8 +684,68 @@ Example: /channel/user/<appid\>/<channelName\>
 	</tr>
 	</tbody>
 	</table>
+	<br>
 
+	```json
+// If it is a live broadcast channel.
+{
+		"success": true,
+		"data": {
+				"channel_exist": true,
+				"mode": 2,
+				"broadcaster": [<uid>],
+				"audience": [<uid>],
+				"audience_total": <count>
+		}
+}
+```
+	
+	<table>
+	<colgroup>
+	<col/>
+	<col/>
+	</colgroup>
+	<tbody>
+	<tr><td><strong>Parameter</strong></td>
+	<td><strong>Description</strong></td>
+	</tr>
+	<tr><td>success</td>
+	<td><p>Checks the request state:</p>
+	<ul>
+	<li>true: Request succeeded</li>
+	<li>false: Request failed</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>channel_exist</td>
+	<td><p>Checks if the channel exits:</p>
+	<ul>
+	<li>true: Channel exists</li>
+	<li>false: Channel does not exist</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>mode</td>
+	<td><p>Checks the channel mode:</p>
+	<ul>
+	<li>1: The communication mode</li>
+	<li>2: The live broadcast mode</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>broadcaster</td>
+	<td>The ID list of all the broadcasters in the channel</td>
+	</tr>
+	<tr><td>audience</td>
+	<td>The ID list of the first 10000 auience in the channel</td>
+	</tr>
+	<tr><td>audience_total</td>
+	<td>The total number of auience in the channel</td>
+	</tr>
+	</tbody>
+	</table>
 
+	
 
 ### Get the Project List (GET)
 
@@ -763,7 +768,7 @@ This method gets the channel list of a specified vendor.
 	<td>Optional. The starting page; the default value is 0.</td>
 	</tr>
 	<tr><td>page_size</td>
-	<td>Optional. The number of items in a page; the default value is 100.</td>
+	<td>Optional. The number of items in a page; the default value is 100 and the greatest value is 500.</td>
 	</tr>
 	</tbody>
 	</table>
@@ -818,77 +823,6 @@ Example with parameters: /channel/<appid\>/page\_no=0&page\_size=100
 	</tbody>
 	</table>
 
-> The channel lists retrieved in this method will cache for 1 minute. And if you use this method twice within 1 minute, the result stays the same.
-
-### Check if a User is a Co-host (GET)
-
-This method checks if a user is a co-host in a specified channel.
-
--  Method: GET
--  Path: BaseUrl/channel/business/hostin/
--  Parameters: appid, uid, cname
-
-   <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Parameter</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>appid</td>
-<td>Mandatory, App ID in the dashboard</td>
-</tr>
-<tr><td>uid</td>
-<td>Mandatory, user ID which can be obtained by using the SDK</td>
-</tr>
-<tr><td>cname</td>
-<td>Mandatory, channel name</td>
-</tr>
-</tbody>
-</table>
-
-Example: /channel/business/hostin/<appid\>/<uid\>/<channelName\>
-
--  Response:
-
-    ```
-    {
-        "success": true,
-        "data": {
-            "isHostIn": false
-        }
-    }
-    ```
-
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Name</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>success</td>
-	<td><p>Checks the request state:</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>isHostIn</td>
-	<td><p>Checks if the user is hosting:</p>
-	<ul>
-	<li>true: User is in the hosting role</li>
-	<li>false: User is not in the hosting role</li>
-	</ul>
-	</td>
-	</tr>
-	</tbody>
-	</table>
 
 ## 7. Error Codes
 
