@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Fri Mar 22 2019 02:29:39 GMT+0000 (UTC)
+updatedAt: Fri Mar 22 2019 02:29:43 GMT+0000 (UTC)
 ---
 # 音频相关
 ### iOS 端集成 H5 游戏音量低
@@ -22,11 +22,11 @@ updatedAt: Fri Mar 22 2019 02:29:39 GMT+0000 (UTC)
 * 采用 `GameStreaming` 模式可能会出现一点回声，理论不影响使用，如有必现或大概率复现的情况可联系技术支持。
 * H5 的声音不是通过 SDK 播放的，无法消除回声。
 
-### Android 9 设备上应用退到后台或锁屏后，采集不到声音
+### Android 9 设备上应用退到后台或锁屏后，采集不到声音或视频
 
 **背景信息：** Android 9 系统行为变更。
 
-**问题现象：** Android 9 设备锁屏 1 分钟内，音频无声。
+**问题现象：** Android 9 设备锁屏 1 分钟内，音频无声或看不到视频。
 
 **问题原因：** 从 Android 官网来看，这是系统强制限制。原文如下：
 
@@ -41,9 +41,9 @@ updatedAt: Fri Mar 22 2019 02:29:39 GMT+0000 (UTC)
 详见 [Android 行为变更](https://developer.android.com/about/versions/pie/android-9.0-changes-all)。
 
 
-**解决方案：** 目前 Android 官网没有明确说明后台采集声音应如何处理，但使用**前台服务**可以让应用正常工作。
+**解决方案：** 目前 Android 官网没有明确说明后台采集声音或视频应如何处理，但使用**前台服务**可以让应用正常工作。
 
-如果 Android 9 设备用户有锁屏后采集音频的需求，可以在锁屏或退至后台前起一个 Service，并在退出锁屏或返回前台前终止 Service。
+如果 Android 9 设备用户有锁屏后采集音频或视频的需求，可以在锁屏或退至后台前起一个 Service，并在退出锁屏或返回前台前终止 Service。
 关于如何起 Service，请参考 https://developer.android.com/reference/android/app/Service 。
 
 ### Android 设备进入频道后，耳机无声/语音路由不正常
