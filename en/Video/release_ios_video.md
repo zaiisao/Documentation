@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Tue Feb 12 2019 07:22:52 GMT+0000 (UTC)
+updatedAt: Mon Mar 25 2019 07:32:36 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
