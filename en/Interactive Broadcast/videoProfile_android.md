@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Tue Mar 26 2019 07:40:50 GMT+0000 (UTC)
+updatedAt: Tue Mar 26 2019 07:41:30 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
