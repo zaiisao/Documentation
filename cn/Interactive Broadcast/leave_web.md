@@ -3,7 +3,7 @@
 title: 离开频道
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 08:37:39 GMT+0000 (UTC)
+updatedAt: Tue Mar 26 2019 02:56:58 GMT+0000 (UTC)
 ---
 # 离开频道
 通话或直播结束时，你可以使用 Agora SDK 离开频道。
