@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Web
-updatedAt: Tue Dec 25 2018 10:10:35 GMT+0000 (UTC)
+updatedAt: Tue Mar 26 2019 06:56:09 GMT+0000 (UTC)
 ---
 # 实现视频通话
 本页介绍如何使用 Agora Web SDK 快速实现网页端视频通话。
