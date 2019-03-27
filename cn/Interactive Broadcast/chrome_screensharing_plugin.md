@@ -3,7 +3,7 @@
 title: Chrome 屏幕共享插件
 description: 
 platform: Web
-updatedAt: Wed Mar 27 2019 09:06:04 GMT+0000 (UTC)
+updatedAt: Wed Mar 27 2019 09:06:10 GMT+0000 (UTC)
 ---
 # Chrome 屏幕共享插件
 在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的屏幕共享插件。
@@ -43,6 +43,8 @@ updatedAt: Wed Mar 27 2019 09:06:04 GMT+0000 (UTC)
 点击打开插件文件夹中的 `manifest.json` 文件，然后将 `match` 行的域名替换为你的网页域名。
 
 <img alt="../_images/chrome_extension_url.png" src="https://web-cdn.agora.io/docs-files/cn/chrome_extension_url.png" />
+
+> 如果在 localhost 本地环境下运行，则无需额外配置 `matches`。
 
 
 
