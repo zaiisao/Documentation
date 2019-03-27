@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 01 2019 08:34:58 GMT+0000 (UTC)
+updatedAt: Wed Mar 27 2019 07:57:18 GMT+0000 (UTC)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -154,21 +154,10 @@ updatedAt: Fri Mar 01 2019 08:34:58 GMT+0000 (UTC)
 
 ### 合流 + 实时转码录制模式录制
 
-设置参数 isMixingEnabled = 1，mixedVideoAudio= 1，即启动合流 + 实时转码录制。 该模式无需转码即可实时合成音视频合流录制文件。
+设置参数 isMixingEnabled = 1，mixedVideoAudio= 1，即启动合流 + 实时转码录制。 该模式无需转码即可实时合成音视频合流录制文件：
 
-你可以根据需要生成的文件类型，设置其他参数以选择不同的录制模式：
 
 <table>
-
-<colgroup>
-
-<col/>
-
-<col/>
-
-<col/>
-
-</colgroup>
 
 <tbody>
 
@@ -178,23 +167,7 @@ updatedAt: Fri Mar 01 2019 08:34:58 GMT+0000 (UTC)
 
 <td><strong>生成文件</strong></td>
 
-</tr>
 
-<tr><td>仅录制音频</td>
-
-<td><code>isAudioOnly = 1</code>, <code>isVideoOnly = 0</code></td>
-
-<td>一个 aac 混音文件</td>
-
-</tr>
-
-<tr><td>仅录制视频</td>
-
-<td><code>isAudioOnly = 0</code>, <code>isVideoOnly = 1</code></td>
-
-<td>一个 mp4 合图文件</td>
-
-</tr>
 
 <tr><td>同时录制音频 + 视频</td>
 
