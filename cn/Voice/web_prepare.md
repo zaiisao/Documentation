@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Web
-updatedAt: Thu Mar 28 2019 08:36:12 GMT+0000 (UTC)
+updatedAt: Thu Mar 28 2019 09:14:07 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Web SDK 进行音视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
