@@ -3,7 +3,7 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(iOS)
-updatedAt: Thu Mar 28 2019 09:59:48 GMT+0000 (UTC)
+updatedAt: Thu Mar 28 2019 09:59:53 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
 ## 步骤 1: 准备环境
@@ -201,15 +201,14 @@ public class example : MonoBehaviour
 
 2.  选择 **iOS** 平台。
 
-3.  点击 **Player Settings…**，打开 **PlayerSettings** 面板：
+3.  点击 **Player Settings…**，打开 **Other Settings** 面板：
 
-    -   **Other Settings/Rendering/Auto Graphics API**，设置为 `False`。
-
+    -   **Other Settings/Rendering/Auto Graphics API**，设置为 **False**。
     -   删除 **Metal**
-
     -   请确认保留了 **OpenGLES2**，使用视频功能需要使用
-
-		<img alt="../_images/AMG-Video-Unity3D_21.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_21.png" style="width: 840.0px;"/>
+    -   请确认 **Multithread Rendering** 为 **False**
+    
+    ![](https://web-cdn.agora.io/docs-files/1553767152433)
 
 4.  点击 **Save** 保存设置。
 
