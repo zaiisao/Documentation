@@ -64,7 +64,8 @@ This page contains information on how to prepare the development environment bef
   </tr>
 </table>
 
-> The Agora Web SDK v2.5 or later also supports Google Chrome 49 on Windows XP.
+> - The Agora Web SDK v2.5 or later also supports Google Chrome 49 on Windows XP.
+> - To use Safari on iOS 12.2 or later, upgrade to Agora Web SDK v2.6.
 
 2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 3. Understand the limitations in [Known Issues](../../en/Voice/release_web_video.md) and [FAQ](../../en/Voice/websdk_related_faq.md).

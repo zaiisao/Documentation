@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Wed Mar 27 2019 07:58:44 GMT+0000 (UTC)
+updatedAt: Wed Mar 27 2019 07:59:10 GMT+0000 (UTC)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -110,14 +110,7 @@ To merge the recorded voice and video files, use the `video\convert.py` script f
 
 Set <code>isMixingEnabled</code> = 1 and <code>mixedVideoAudio</code> = 1 to start composite recording with synchronized transcoding. This enables mixed voice and video recording without using the transcoding script.
 
-Choose the recording mode by setting the parameters according to the following table:
-
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
 <thead>
 <tr><th>Recording Mode</th>
 <th>Parameter</th>
@@ -125,14 +118,6 @@ Choose the recording mode by setting the parameters according to the following t
 </tr>
 </thead>
 <tbody>
-<tr><td>Voice-only</td>
-<td><code>isAudioOnly</code> = 1, <code>isVideoOnly</code> = 0</td>
-<td>A mixed AAC voice file.</td>
-</tr>
-<tr><td>Video-only</td>
-<td><code>isAudioOnly</code> = 0, <code>isVideoOnly</code> = 1</td>
-<td>A mixed MPEG-4 video file.</td>
-</tr>
 <tr><td>Voice + video</td>
 <td><code>isAudioOnly</code> = 0, <code>isVideoOnly</code> = 0</td>
 <td>An MPEG-4 voice + video file.</td>
