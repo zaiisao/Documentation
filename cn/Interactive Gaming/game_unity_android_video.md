@@ -3,7 +3,7 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(Android)
-updatedAt: Thu Mar 28 2019 09:57:50 GMT+0000 (UTC)
+updatedAt: Thu Mar 28 2019 09:57:56 GMT+0000 (UTC)
 ---
 # 实现游戏视频功能
 使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
@@ -238,11 +238,12 @@ public class example : MonoBehaviour
 
 	![](https://web-cdn.agora.io/docs-files/1548830012546)
 	
-4. 点击 **Play Settings**，打开 **PlayerSettingspanel**：
+4. 点击 **Play Settings**，打开 **Other Settings**：
 
   - **Other Settings**/**Rendering**/**Auto Graphics API**：选择 **False**
   - 删除 **OpenGLES3** 和 **Vulkan**
   - 请确认保留了 **OpenGLES2**，使用视频功能需要使用
+  - 请确认 **Multithread Rendering** 为 **False**
 
 5. 点击 **Save** 保存相关设置
 6. 点击 **Build** 编译项目
