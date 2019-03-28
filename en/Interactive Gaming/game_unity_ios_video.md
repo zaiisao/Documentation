@@ -3,7 +3,7 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(iOS)
-updatedAt: Thu Mar 28 2019 10:02:46 GMT+0000 (UTC)
+updatedAt: Thu Mar 28 2019 10:02:51 GMT+0000 (UTC)
 ---
 # Implement Video for Gaming
 ## Step 1: Prepare the Environment
@@ -208,15 +208,14 @@ public class example : MonoBehaviour
 
 2.  Select the platform as **iOS**.
 
-3.  Click **Player Settings…** and open the PlayerSettings panel:
+3.  Click **Player Settings…** and open the **Other Settings**:
 
     -   **Other Settings**/**Rendering**/**Auto Graphics API**: **False**
-
     -   Delete **Metal**
-
     -   Ensure that you keep **OpenGLES2** which applies for the video function
-
-    <img alt="../_images/AMG-Video-Unity3D_21.png" src="https://web-cdn.agora.io/docs-files/en/AMG-Video-Unity3D_21.png" style="width: 840.0px;"/>
+    -   Ensure that **Multithreaded Rendering** is set to **False**
+    
+		![](https://web-cdn.agora.io/docs-files/1553767348175)
 
 4.  Click **Save** to save the settings.
 
