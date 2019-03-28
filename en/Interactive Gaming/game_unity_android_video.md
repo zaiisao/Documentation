@@ -3,7 +3,7 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Thu Mar 28 2019 10:01:17 GMT+0000 (UTC)
+updatedAt: Thu Mar 28 2019 10:01:20 GMT+0000 (UTC)
 ---
 # Implement Video for Gaming
 ## Step 1: Prepare the Environment
@@ -238,11 +238,12 @@ public class example : MonoBehaviour
     ![](https://web-cdn.agora.io/docs-files/1548830012546)
 
 
-4.  Click **Player Settings…**, and open the **PlayerSettingspanel**:
+4.  Click **Player Settings…**, and open the **Other Settings**:
 
     -   **Other Settings**/**Rendering**/**Auto Graphics API**: **False**
     -   Delete **OpenGLES3** and **Vulkan**
     -   Ensure that you keep **OpenGLES2** which applies for video functions
+    -   Ensure that **Multithreaded Rendering** is set to **False**
 
 5.  Click **Save** to save the settings.
 
