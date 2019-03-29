@@ -3,7 +3,7 @@
 title: Share the screen
 description: 
 platform: macOS
-updatedAt: Fri Mar 22 2019 02:14:04 GMT+0000 (UTC)
+updatedAt: Fri Mar 29 2019 02:49:54 GMT+0000 (UTC)
 ---
 # Share the screen
 ## Introduction
