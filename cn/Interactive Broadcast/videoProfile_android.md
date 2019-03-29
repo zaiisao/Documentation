@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Android
-updatedAt: Wed Mar 13 2019 07:30:44 GMT+0000 (UTC)
+updatedAt: Fri Mar 29 2019 03:23:19 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
