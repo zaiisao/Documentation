@@ -3,7 +3,7 @@
 title: 设置视频编码
 description: 
 platform: Windows
-updatedAt: Mon Mar 18 2019 06:57:03 GMT+0000 (UTC)
+updatedAt: Fri Mar 29 2019 03:42:25 GMT+0000 (UTC)
 ---
 # 设置视频编码
 ## 功能简介
