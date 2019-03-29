@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed Mar 27 2019 08:39:17 GMT+0000 (UTC)
+updatedAt: Fri Mar 29 2019 03:56:13 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
