@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Apr 01 2019 09:31:21 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:31:25 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -76,14 +76,14 @@ v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Video/API%20Referen
 - v2.4.0 adds the intervalInSeconds parameter to the startEchoTest method, allowing you to set the interval between when you speak and when the recording plays back.
 - v2.4.0 adds three parameters to the [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_local_video_stats.html) class: [`targetBitrate`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_local_video_stats.html#a3e8d46c9b67c9fe62487ec56bc587fd6) for setting the target bitrate of the current encoder, [`targetFrameRate`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_local_video_stats.html#ac06928c5bf18c5db7eb4661dd783ba0a) for setting the target frame rate, and [`qualityAdaptIndication`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_local_video_stats.html#a902fc5b33956471b7a28f43399fa8b20) for reporting the quality of the local video since last count.
 
-#### 2.Video encoder preferences
+#### 2. Video encoder preferences
 
 v2.4.0 provides the following options for setting video encoder preferences:
 
 - Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_video_encoder_configuration.html) class: minFrameRate and degradationPrefer. You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Video/videoProfile_windows.md).
 - Setting the camera capture preference. v2.4.0 adds the [`setCameraCaptureConfiguration`](https://docs.agora.io/en/Video/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Video/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)).
 
-#### 3.Other improvements
+#### 3. Core quality improvements
 
 - Reduces the audio delay.
 - Improves the video quality and stability.
