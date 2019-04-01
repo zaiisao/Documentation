@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 01:29:46 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 01:41:19 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for iOS.
