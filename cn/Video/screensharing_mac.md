@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: macOS
-updatedAt: Fri Mar 29 2019 03:03:03 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:34:09 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -18,45 +18,179 @@ updatedAt: Fri Mar 29 2019 03:03:03 GMT+0000 (UTC)
 
 在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Video/mac_video.md)。
 
-Agora 在 macOS 平台上的屏幕共享主要通过如下步骤完成：
-1. 通过获取视窗对应的 `windowId`；如果 `windowId` 为 0，表示共享全屏
-2. 将视频源从摄像头切成该视窗进行视频传输，使远端用户可以看见被分享的窗口
+Agora 在 v2.4.0 对屏幕共享相关接口进行梳理，目前在 macOS 平台上支持：
+- 通过 displayId 共享指定屏幕，或指定屏幕的部分区域
+- 通过 windowId 共享指定窗口，或指定窗口的部分区域
 
-```swift
-// swift
-// 开始窗口分享
-let windowId = 0
-let captureFreq = 15
-let bitRate = 400
-let rect = CGRect.zero
-agoraKit.startScreenCapture(windowId, withCaptureFreq: captureFreq, bitRate: bitRate, andRect: rect)
+### 共享指定屏幕
+macOS 系统为每个屏幕分配一个 displayId，数据类型为 CGDirectDisplayID，32 位无符号整型。该 ID 对应唯一的 macOS 屏幕。通过获取该 displayId，我们可以按如下步骤在 macOS 平台上实现屏幕共享：
 
+1. 获取想要共享屏幕的 Display ID
+```
+// 获取屏幕列表
+NSArray *screens = [NSScreen screens];
+for (NSUInteger i = 0; i < [screens count]; ++i) {
+// 获取屏幕详情
+NSDictionary* device_description = [[screen objectAtIndex: i] deviceDescription];
+// 获取 displayId
+CGDirectDisplayID displayId = ([[device_description  objectForKey:@"NSScreenNumber"] intValue]);
+}
+```
+> 更多关于 displayId 的详情，请参考 [Apple NSScreen](https://developer.apple.com/documentation/appkit/nsscreen) 说明。
 
-// 更新该窗口分享的区域
-let rect = CGRect(x: 0, y: 0, width: 100, height: 100)
-agoraKit.updateScreenCaptureRegion(rect)
+2. 通过 Display ID 共享屏幕
 
-// 停止窗口分享
-agoraKit.stopScreenCapture()
+	```swift
+	// swift
+	// 开始共享屏幕
+	// displayId = 0 表示共享整个屏幕
+	let displayId = 0
+	let rectangle = CGRect.zero
+	let parameters = AgoraScreenCaptureParameters()
+	parameters.dimensions = CGSize.zero
+	parameters.frameRate = 15
+	parameters.bitrate = 1000
+	agoraKit.startScreenCapture(bydisplayId: displayId, rectangle: rectangle, parameters: parameters)
+
+	// 更新屏幕共享编码参数
+	let parameters = AgoraScreenCaptureParameters()
+	parameters.dimensions = CGSize.zero
+	parameters.frameRate = 15
+	parameters.bitrate = 1000
+	agoraKit.update(parameters)
+
+	// 更新屏幕共享区域
+	let region = CGRect.zero
+	agoraKit.updateScreenCaptureRegion(region)
+
+	// 设置屏幕共享内容类型
+	agoraKit.setScreenCapture(.none)
+
+	// 停止屏幕共享
+	agoraKit.stopScreenCapture()
+	```
+
+	```objective-c
+	// objective-c
+	// 开始共享屏幕
+	// displayId = 0 表示共享整个屏幕
+	NSUInteger displayId = 0;
+	CGRect rectangle = CGRectZero;
+	AgoraScreenCaptureParameters *parameters = [[AgoraScreenCaptureParameters alloc] init];
+	parameters.dimensions = CGSizeZero;
+	parameters.frameRate = 15;
+	parameters.bitrate = 1000;
+	[self.agoraKit startScreenCaptureByDisplayId:displayId rectangle:rectangle parameters:parameters];
+
+	// 更新屏幕共享编码参数
+	AgoraScreenCaptureParameters *parameters = [[AgoraScreenCaptureParameters alloc] init];
+	parameters.dimensions = CGSizeZero;
+	parameters.frameRate = 15;
+	parameters.bitrate = 1000;
+	[self.agoraKit updateScreenCaptureParameters:parameters];
+
+	// 更新屏幕共享区域
+	CGRect region = CGRectZero;
+	[self.agoraKit updateScreenCaptureRegion:region];
+
+	// 设置屏幕共享内容类型
+	[self.agoraKit setScreenCaptureContentHint:AgoraVideoContentHintNone];
+
+	// 停止屏幕共享
+	[self.agoraKit stopScreenCapture];
+	```
+
+### 共享指定窗口
+
+macOS 为每个窗口分配一个 windowId，数据类型为 CGWindowID，32 位无符号整型。该 ID 对应唯一的 macOS 窗口。通过获取该 windowId，我们可以按如下步骤在 macOS 平台上实现窗口共享：
+
+1. 获取想要共享窗口的 Window ID
+```
+// 获取窗口 ID
+CFArrayRef window_list = CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
+if (window_list) {
+    CFIndex count = CFArrayGetCount(window_array);
+    for (CFIndex  i = 0; i < count; ++i) {
+        CFDictionaryRef window = reinterpret_cast<CFDictionaryRef>(CFArrayAtIndex(window_array, i));
+        CFStringRef window_title = reinterpret_cast<CFStringRef>(CFDictionaryGetValue(window, kCGWindowName));
+        CFNumberRef window_id = reinterpret_cast<CFNumberRef>(CFDictionaryGetValue(window, kCGWindowNumber));
+   }
+}
 ```
 
-```objective-c
-// objective-c
-int windowId = 0;
-int captureFreq = 15;
-int bitRate = 400;
-CGRect rect = CGRectZero;
+更多关于 windowId 的详情，请参考 [Apple CGWindowListCopyWindowInfo(::) 说明](https://developer.apple.com/documentation/coregraphics/1455137-cgwindowlistcopywindowinfo)。
 
-// 更新该窗口分享的区域
-CGRect rect = CGRectMake(0, 0, 100, 100);
-[agoraKit startScreenCapture: windowId withCaptureFreq: captureFreq bitRate:(NSInteger)bitRate andRect: rect];  
+2. 通过 Window ID 共享窗口
 
-// 停止窗口分享
-[agoraKit stopScreenCapture];
-```
+	```swift
+	// swift
+	// 开始共享窗口
+	// windowId = 0 表示共享整个窗口
+	let windowId = 0
+	let rectangle = CGRect.zero
+	let parameters = AgoraScreenCaptureParameters()
+	parameters.dimensions = CGSize.zero
+	parameters.frameRate = 15
+	parameters.bitrate = 1000
+	agoraKit.startScreenCapture(byWindowId: windowId, rectangle: rectangle, parameters: parameters)
+
+	// 更新屏幕共享编码参数
+	let parameters = AgoraScreenCaptureParameters()
+	parameters.dimensions = CGSize.zero
+	parameters.frameRate = 15
+	parameters.bitrate = 1000
+	agoraKit.update(parameters)
+
+	// 更新屏幕共享区域
+	let region = CGRect.zero
+	agoraKit.updateScreenCaptureRegion(region)
+
+	// 设置屏幕共享内容类型
+	agoraKit.setScreenCapture(.none)
+
+	// 停止屏幕共享
+	agoraKit.stopScreenCapture()
+	```
+
+	```objective-c
+	// objective-c
+	// 开始共享窗口
+	// windowId = 0 表示共享整个窗口
+	NSUInteger windowId = 0;
+	CGRect rectangle = CGRectZero;
+	AgoraScreenCaptureParameters *parameters = [[AgoraScreenCaptureParameters alloc] init];
+	parameters.dimensions = CGSizeZero;
+	parameters.frameRate = 15;
+	parameters.bitrate = 1000;
+	[self.agoraKit startScreenCaptureByWindowId:windowId rectangle:rectangle parameters:parameters];
+
+	// 更新屏幕共享编码参数
+	AgoraScreenCaptureParameters *parameters = [[AgoraScreenCaptureParameters alloc] init];
+	parameters.dimensions = CGSizeZero;
+	parameters.frameRate = 15;
+	parameters.bitrate = 1000;
+	[self.agoraKit updateScreenCaptureParameters:parameters];
+
+	// 更新屏幕共享区域
+	CGRect region = CGRectZero;
+	[self.agoraKit updateScreenCaptureRegion:region];
+
+	// 设置屏幕共享内容类型
+	[self.agoraKit setScreenCaptureContentHint:AgoraVideoContentHintNone];
+
+	// 停止屏幕共享
+	[self.agoraKit stopScreenCapture];
+	```
 
 ### API 参考
-* [`startScreenCapture:withCaptureFreq:bitrRate:andRect`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCapture:withCaptureFreq:bitRate:andRect:)
-* [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
-* [`updateScreenCaptureRegion:`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
+* [`startScreenCaptureByDisplayId`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByDisplayId:rectangle:parameters:)
+* [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByWindowId:rectangle:parameters:)
+* [`updateScreenCaptureParameters`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureParameters:)
+* [`setScreenCaptureContentHint`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setScreenCaptureContentHint:)
+* [`updateScreenCaptureRegion:`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
+* [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
 
+## 开发注意事项
+
+- SDK 在 v2.4.0 版本中废弃了原有的屏幕共享接口 `startScreenCapture`，你仍然可以使用，但 Agora 不再推荐。
+- 视频共享编码属性 `AgoraScreenCaptureParameters` 类中各参数的设置可能会影响计费，详细请参考[计费](../../cn/Agora%20Platform/billing_faq.md)。
