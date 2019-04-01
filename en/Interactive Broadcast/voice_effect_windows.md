@@ -3,17 +3,66 @@
 title: Adjust the Pitch and Tone
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Thu Mar 21 2019 02:12:10 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:35:29 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
 
-In social and entertainment scenarios, users often need various voice effects to enhance the interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
-Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md) for more information.
+Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
 
-The following sample code shows how to change the original voice to Hulk's voice.
+
+### Use a preset voice changer and reverberation effect
+
+You can use one of the following preset voice changer options by calling  `setLocalVoiceChanger`:
+
+- An old man's voice.
+- A little boy's voice.
+- A little girl's voice.
+- Zhu Bajie's voice (Zhu Bajie is a character from Journey to the West who has a voice like a growling bear).
+- Ethereal vocal effects.
+- Hulk's voice.
+
+You can use one of the following preset reverberation effects by calling `setLocalVoiceReverbPreset`:
+
+- Pop music
+- R&B
+- Rock music
+- Hip-hop
+- Pop concert
+- Karaoke
+- Recording studio
+
+```c++
+// Initialize objects
+RtcEngineParameters rep(*m_lpAgoraEngine);
+VOICE_CHANGER_PRESET voiceChanger;
+AUDIO_REVERB_PRESET reverbPreset;
+
+// Set the voice changer as old man
+voiceChanger = VOICE_CHANGER_OLDMAN;
+rep.setLocalVoiceChanger(voiceChanger);
+
+// Turn off the voice changer
+voiceChanger = VOICE_CHANGER_OFF;
+rep.setLocalVoiceChanger(voiceChanger);
+
+// Set the reverberation effect as pop
+reverbPreset = AUDIO_REVERB_POPULAR;
+rep.setLocalVoiceReverbPreset(reverbPreset);
+
+// Turn off the reverberation effect
+reverbPreset = AUDIO_REVERB_OFF;
+rep.setLocalVoiceReverbPreset(reverbPreset);
+```
+
+### Customize the voice effects
+
+You can also customize the voice effects by adjusting the voice pitch, equalization, and reverberation settings.
+
+The following sample code shows how to change from the original voice to Hulk's voice.
 
 ```c++
 // Initialization
@@ -60,4 +109,4 @@ nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_STRENGTH, 78);
 
 ## Considerations
 
-The API methods have return values. If the method fails, the return value is < 0.
+The API methods have return values. If the method call fails, the return value is < 0.
