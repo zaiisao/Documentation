@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 10:05:32 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:05:36 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora SDK for iOS.
@@ -93,11 +93,9 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
    <img alt="../_images/ios_voice_1.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_1.jpg" />
 
-3. Navigate to the **Build Phases** tab.
+3. Navigate to the **Build Phases** tab. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding the new libraries, click the **+** button.
 
-   <img alt="../_images/ios_voice_2.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_2.jpg" />
-
-4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding the new libraries, click the **+** button.
+	<img alt="../_images/ios_voice_3.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_3.jpg" />
 
    - `AgoraAudioKit.framework`
    - `Accelerate.framework`
@@ -108,16 +106,9 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    - `AudioToolbox.framework`
    - `CoreTelephony.framework`
    - `AVFoundation.framework`
+   - `CoreML.framework`
 
-   **Before:**
-
-   <img alt="../_images/ios_voice_3.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_3.jpg" />
-
-   **After:**
-
-   <img alt="../_images/ios_voice_4.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_4.jpg" style="width: 1204.0px; height: 487.0px;"/>
-
-   `AgoraAudioKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
+ `AgoraAudioKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraAudioKit.framework`.
 
    <img alt="../_images/ios_voice_5.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_voice_5.jpg" />
 
