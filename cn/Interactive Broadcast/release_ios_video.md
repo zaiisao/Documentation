@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 09:15:48 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:15:56 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -13,10 +13,126 @@ updatedAt: Mon Apr 01 2019 09:15:48 GMT+0000 (UTC)
 iOS 视频 SDK 支持两种主要场景:
 
 -   音视频通话
-
 -   音视频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)以及 [互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms) 了解关键特性。
+
+## **2.4.0 版**
+
+该版本于 2019 年 4 月 1 日发布。新增特性、功能改进与修复问题列表详见下文。
+
+### **升级必看**
+
+Agora Video SDK for iOS 在 2.4.0 版本新增 `CoreML.framework` 库依赖。请确保在集成时添加该库，详见[集成客户端](../../cn/Interactive%20Broadcast/ios_video.md)。
+
+### **新增特性**
+
+#### 1. 美颜
+
+常见的视频社交、在线教育和连麦直播等场景中，用户普遍希望有基础的美颜功能。该版本新增接口 [`setBeautyEffectOptions`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setBeautyEffectOptions:options:)，用户可以调用该接口设置对比度、亮度、平滑度等参数，达到美白、磨皮、红润肤色等美颜效果。详情请参考[美颜](../../cn/Interactive%20Broadcast/image_enhancement_ios.md)。
+
+#### 2. 远端用户视频超分算法
+
+超分算法，即超级分辨率算法，作用于解码后的视频后处理阶段，可将解码后的图像分辨率增强至原来的两倍。该版本新增接口 [`enableRemoteSuperResolution`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/enableRemoteSuperResolution:enabled:)，用于在视频通话或直播中对指定的远端用户开启超分辨率算法，有效提升本地用户看到的远端视频画面的清晰度和细节。开启该方法后，网络正常时，可有效提升画质，让细节更加清晰；带宽受限时，可显著提升低分辨率视频的画质。
+
+超分算法会额外耗费系统资源。该方法要求 iOS 版本在 11.2 及以上；SDK 目前只支持对一个远端用户开启超分算法，且该用户的原始视频流分辨率不能超过 640 * 480。如果超出限制，SDK 会触发 `didOccurWarning` 回调，并返回响应的警告码。详见 [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/enableRemoteSuperResolution:enabled:)。
+
+#### 3. 变声和混响
+
+在语音聊天室场景中添加变声和混响效果，能有效增强社交的趣味性。该版本在原有音效设置接口的基础上，新增 [`setLocalVoiceChanger`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:) 和 [`setLocalVoiceReverbPreset`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:) 方法，开发者无需手动设置音效参数，直接选择想要的本地语音变声或混响效果。详情请参考[变声与混响](../../cn/Interactive%20Broadcast/voice_effect_ios.md)。
+
+#### 4. 听声辨位
+
+该版本新增 [`enableSoundPositionIndication`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/enableSoundPositionIndication:) 和 [`setRemoteVoicePosition`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVoicePosition:pan:gain:) 方法，支持本地用户听声辨位。用户需要在加入频道前调用 [`enableSoundPositionIndication`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/enableSoundPositionIndication:) 开启远端用户的语音立体声，然后在 [`setRemoteVoicePosition`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVoicePosition:pan:gain:) 中设置远端用户声音出现的位置，通过左右耳听到的声音差异，对远端用户的声音产生方位感。在多人在线游戏场景，如射击游戏中，该功能可以增加游戏角色的方位感，模拟真实场景。
+
+#### 5. 通话前 Last-mile 网络探测
+
+在通话前进行 Last-mile 网络探测，可以有效帮助本地用户判断和预测上行网络质量是否良好。该版本新增通话前 Last-mile 网络探测接口 [`startLastmileProbeTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startLastmileProbeTest:)、[`stopLastmileProbeTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/stopLastmileProbeTest) 及 [`lastmileProbeResult`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileProbeTestResult:)，向用户反馈开始通话前上下行网络的带宽、丢包、网络抖动和往返时延数据。
+
+#### 6. 设置用户媒体流优先级
+
+该版本新增接口 [`setRemoteUserPriority`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteUserPriority:type:) 用于设置远端用户媒体流的优先级。该方法可以与 [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteSubscribeFallbackOption:) 搭配使用。如果开启了订阅流回退选项，弱网下 SDK 会优先保证高优先级用户收到的流的质量。
+
+#### 7. 音乐文件播放状态
+
+该版本为播放音乐文件新增回调 [`localAudioMixingStateDidChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioMixingStateDidChanged:errorCode:)，方便用户获知音乐文件的播放状态（成功/失败），以及播放出错的原因。同时新增一个警告码 701，当播放音乐文件时，本地音乐文件不存在、文件格式不支持或无法访问在线音乐文件 URL 时，均会触发该警告码。
+
+#### 8. 设置日志文件大小
+
+Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决该大小无法满足部分用户需求的问题，该版本新增接口 [`setLogFileSize`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLogFileSize:)，用于设置 SDK 输出的日志文件大小。
+
+### **功能改进**
+
+#### 1. 质量测试与透明
+
+- 该版本使用新的 [`startEchoTestWithInterval`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startEchoTestWithInterval:successBlock:) 接口取代原有的 [`startEchoTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startEchoTest:)，新增参数 `intervalInSeconds`，用于设置返回测试结果的时间间隔。
+- 该版本在本地视频流统计信息 [`AgoraRtcLocalVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcLocalVideoStats.html) 类中新增 [`sentTargetBitrate`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcLocalVideoStats.html#//api/name/sentTargetBitrate)，[`sentTargetFrameRate`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcLocalVideoStats.html#//api/name/sentTargetFrameRate)，[`qualityAdaptIndication`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcLocalVideoStats.html#//api/name/qualityAdaptIndication) 三个参数，分别反映目标码率、目标帧率与和上次返回的本地视频流统计信息相比，本地视频质量的自适应情况。
+
+#### 2. 视频偏好设置
+
+一般场景下，Agora 默认的视频编码配置能满足需求。对于特定场景，该版本提供如下功能让用户选择视频偏好：
+
+- 弱网下画质或流畅偏好设置。该版本在视频编码属性 [`AgoraVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraVideoEncoderConfiguration.html) 类中新增 2 个参数 [`minFrameRate`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraVideoEncoderConfiguration.html#//api/name/minFrameRate) 和 [`degradationPreference`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraVideoEncoderConfiguration.html#//api/name/degradationPreference)，分别用于设置最低视频编码帧率，以及带宽受限时编码帧率的偏好。这两个参数需要搭配使用，详情请参考[设置视频属性](../../cn/Interactive%20Broadcast/videoProfile_ios.md)。
+
+- 采集时预览或性能偏好设置。该版本新增接口 [`setCameraCaptureConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setCameraCapturerConfiguration:)，通过设置摄像头采集偏好，用户可以根据实际场景选择优先保证设备性能还是视频质量。具体场景及参数选择，请参考 [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setCameraCapturerConfiguration)。
+
+#### 3. 其他改进
+
+- 降低了音频延时
+- 提升了视频质量和稳定性
+- 缩短了远端视频的出图时间
+
+### 问题修复
+
+#### 音频相关
+
+- 修复了调用 `enableLocalAudio` 接口导致的蓝牙断开的问题
+- 新增支持中文字符音乐
+- 修正 `pushExternalAudioFrameSampleBuffer` 成功的返回值为 YES
+- 修复了高音声音变弱的问题
+- 修复了偶现的声音快放问题
+
+#### 视频相关
+
+- 通过增加 `renderMode` 的默认值，修复了用户在没有设置的情况下，窗口和画面比例不符合引发的拉伸问题
+- 部分低性能设备上出现的播放视频卡住的问题
+- 优化了 SDK 出图时间
+
+#### 其他
+
+- 统一了 Android 和 iOS 平台上 SDK 判断远端用户掉线的时间
+- 修复了转码推流场景下，SEI 信息与媒体流不同步的问题
+
+### API 整理
+
+为提升用户体验，Agora 在 v2.4.0 版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [`setBeautyEffectOptions`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setBeautyEffectOptions:options:)
+- [`enableRemoteSuperResolution`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/enableRemoteSuperResolution:enabled:)
+- [`setLocalVoiceChanger`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:)
+- [`setLocalVoiceReverbPreset`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:)
+- [`enableSoundPositionIndication`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/enableSoundPositionIndication:)
+- [`setRemoteVoicePosition`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVoicePosition:pan:gain:) 
+- [`startLastmileProbeTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startLastmileProbeTest:)
+- [`stopLastmileProbeTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/stopLastmileProbeTest)
+- [`setRemoteUserPriority`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteUserPriority:type:)
+- [`startEchoTestWithInterval`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startEchoTestWithInterval:successBlock:)
+- [`setCameraCaptureConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setCameraCapturerConfiguration:)
+- [`setLogFileSize`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLogFileSize:)
+- [`localAudioMixingStateDidChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioMixingStateDidChanged:errorCode:)
+- [`lastmileProbeResult`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileProbeTestResult:)
+
+#### 废弃
+
+- `startEchoTest`
+- `setVideoQualityParameters`
+
+#### 其他
+
+[`AgoraVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraVideoEncoderConfiguration.html) 类中的 [`frameRate`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraVideoEncoderConfiguration.html#//api/name/frameRate) 参数由 `enum` 型修改为 `int` 型。
+
 
 ## **2.3.3 版**
 
