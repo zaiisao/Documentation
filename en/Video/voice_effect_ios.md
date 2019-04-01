@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to set voice effects on iOS
 platform: iOS
-updatedAt: Mon Apr 01 2019 10:56:35 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:56:40 GMT+0000 (UTC)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
@@ -153,6 +153,10 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 - [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
 - [`setLocalVoiceEqualizationOfBandFrequency`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
 - [`setLocalVoiceReverbOfType`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
+
+## Sample Code
+
+Agora provides an open source sample code that implements voice changer and reverberation. You can go to the [Chatroom Github Repo](https://github.com/AgoraIO-Usecase/Chatroom/tree/master/iOS) to download it.
 
 ## Considerations
 The API methods have return values. If the method call fails, the return value is < 0.
