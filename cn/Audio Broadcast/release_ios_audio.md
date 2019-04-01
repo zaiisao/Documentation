@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 10:06:13 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:06:17 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -23,7 +23,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 ### **升级必看**
 
-Agora Video SDK for iOS 在 2.4.0 版本新增 `CoreML.framework` 库依赖。请确保在集成时添加该库，详见[集成客户端](../../cn/Audio%20Broadcast/ios_video.md)。
+Agora Voice SDK for iOS 在 2.4.0 版本新增 `CoreML.framework` 库依赖。请确保在集成时添加该库，详见[集成客户端](../../cn/Audio%20Broadcast/ios_audio.md)。
 
 ### **新增特性**
 
