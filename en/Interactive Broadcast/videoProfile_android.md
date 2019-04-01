@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Fri Mar 29 2019 03:43:13 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:33:20 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -19,24 +19,34 @@ The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video pr
 The parameters specified in the `setVideoEncoderConfiguration` method are ideal values under ideal network conditions. If the video engine cannot render the video with the specified parameters due to poor network conditions, the parameters further down the list are considered.
 
 ```java
-// java
-// Create a VideoEncoderConfiguration instance.
-// See the descriptions of the parameters in API Reference.
+// Create a VideoEncoderConfiguration instance. See the descriptions of the parameters in API Reference.
 VideoEncoderConfiguration config = new VideoEncoderConfiguration(
-	VideoDimensions.VD_640x480,  // Choose a video resolution or customize one.
-	FRAME_RATE_FPS_15,           // Frame rate. 15 is the default setting. Agora recommends not setting to over 30.
-	STANDARD_BITRATE,            // The standard bitrate. See the description in API Reference. Agora recommends setting the bitrate to the standard mode.
-	ORIENTATION_MODE_ADAPTIVE    // The adaptive orientation mode. See the description in API Reference.
+	// Choose a video resolution or customize one.
+	VideoDimensions.VD_640x480,
+	// Frame rate. 15 is the default setting. Agora recommends not setting to over 30.
+	FRAME_RATE_FPS_15,
+	// The standard bitrate. See the description in API Reference. Agora recommends setting the bitrate to the standard mode.
+	STANDARD_BITRATE,
+	// The adaptive orientation mode. See the description in API Reference.
+	ORIENTATION_MODE_ADAPTIVE,
+	// The degradation preference under limited bandwidth. MIANTAIN_QUALITY means to degrade the frame rate to maintain the video quality.
+	MAINTAIN_QUALITY,
 );
 
 rtcEngine.setVideoEncoderConfiguration(config);
 ```
 
 ### API Reference
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Interactive%20Broadcast/rotation_guide_android.md).
 
 ## Considerations
+- Setting [`degradationPrefer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html?transId=2.4#a47f36783c1f9da09454c19cafb489b3c) as [`MAINTAIN_QUALITY`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/v2.4/enumio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration_1_1_d_e_g_r_a_d_a_t_i_o_n___p_r_e_f_e_r_e_n_c_e.html?transId=2.4#a654947f783b27ef8da2e7b1f1045ef50) means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the [`minFrameRate`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/v2.4.0/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#ad8d377cd077587ee0991d297b1a8c8bc) parameter to balance the frame rate and video quality under unreliable network connections:
+
+	- When  `minFrameRate` is relatively low, the frame rate degrades significantly, so the poor network conditions have little impact on the video quality.
+	- When `minFrameRate` is relatively high, the frame rate degrades within a limited range, so the poor network conditions can have huge impact on the video quality.
+
+Do not set the `minFrameRate` parameter to a value greater than `frameRate`. The default value of `minFrameRate` is experiment verified and can satisfy most use scenarios. We do not recommend changing it.
 - If you do not need to set the video profile after joining the channel, you can call the `setVideoEncoderConfiguration` method before the `enableVideo` method to reduce the render time of the first video frame.
 - The Agora SDK may adjust the parameters under poor network conditions. 
 -  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8).
