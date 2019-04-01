@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: iOS
-updatedAt: Fri Mar 29 2019 03:28:26 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:32:20 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -19,32 +19,37 @@ Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的�
 
 ```swift
 // swift
-// 首先配置一个VideoEncoderConfiguration实例
-// 参数请到API参考中的链接文档查看
-let config = AgoraVideoEncoderConfiguration(size: size, frameRate: frameRate, bitrate: bitrate, orientationMode: orientationMode)
+// 配置一个 VideoEncoderConfiguration 实例，参数可参考下文中的 API 参考链接
+let config = AgoraVideoEncoderConfiguration(size: size, frameRate: frameRate, bitrate: bitrate, orientationMode: orientationMode, degradationPreference: degradationPreference)
 
 agoraKit.setVideoEncoderConfiguration(config)
 ```
 
 ```objective-c
 // objective-c
-// 首先配置一个VideoEncoderConfiguration实例
-// 参数请到API参考中的链接文档查看
-AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] initWithSize: size frameRate: frameRate bitrate: bitrate orientationMode: AgoraVideoOutputOrientationModeAdaptative];
+// 配置一个 VideoEncoderConfiguration 实例，参数可参考下文中的 API 参考链接
+AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc] initWithSize: size frameRate: frameRate bitrate: bitrate orientationMode: AgoraVideoOutputOrientationModeAdaptative degradationPreference: AgoraDegradationMaintainQuality];
 
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
 ### API 参考
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
 * 关于视频的方向模式，更多信息请参考[视频采集旋转](../../cn/Interactive%20Broadcast/rotation_guide_ios.md)。
 
 ## 开发注意事项
+- [`degradationPreference`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraVideoEncoderConfiguration.html#//api/name/degradationPreference) 参数设置为 `AgoraDegradationMaintainQuality`，表示带宽受限时，降低编码帧率以保证视频质量。此时开发者可以使用 `minFrameRate` 参数设置当前最低的编码帧率，用于平衡帧率和视频质量。通常来说：
+
+	- `minFrameRate` 较低时，一旦带宽不足，帧率下降幅度较大，画质清晰度受影响比较小
+	- `minFrameRate` 较高时，一旦带宽不足，帧率下降幅度有限，画质清晰度受影响比较大
+
+ 请确保 `minFrameRate` 的值不超过 `frameRate` 的值。`minFrameRate` 的系统默认值是经过试验且能满足一般情况下的需求，我们建议用户不要修改该参数的默认值。
+
 - 如果用户加入频道后不需要重新设置视频编码属性，建议在 `enableVideo` 前调用 `setVideoEncoderConfiguration` ，可以加快首帧出图的时间。
 - Agora SDK 会根据实时网络环境，对设置的参数作自适应调整，通常会下调参数。
 - 通常的，直播场景下需要较大码率来提升视频质量。因此 Agora 建议将直播码率值设为通信值的 2 倍。详情请参考[设置码率](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/bitrate)。 
 - 直播模式通常需要更大的码率来支持清晰度，因此建议主播使用较稳定的网络。
-- 本文中各参数的设置可能会影响计费，详情请参考[计费](../../cn/Agora20%Platform/billing_faq.md)。
+- 本文中各参数的设置可能会影响计费，详情请参考[计费](../../cn/Agora%20Platform/billing_faq.md)。
 
 
 ## 用户常见问题
