@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Android
-updatedAt: Fri Mar 29 2019 03:23:19 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:32:15 GMT+0000 (UTC)
 ---
 # 设置视频属性
 ## 功能简介
@@ -18,14 +18,18 @@ updatedAt: Fri Mar 29 2019 03:23:19 GMT+0000 (UTC)
 Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的属性，比如分辨率、码率、帧率等。参数均为理想情况下的最大值。当视频引擎因网络环境等原因无法达到设置的分辨率、帧率或码率的最大值时，会取最接近最大值的那个值。
 
 ```java
-// java	
-// 首先配置一个VideoEncoderConfiguration实例
-// 参数请到API参考中的链接文档查看
+// 配置一个 VideoEncoderConfiguration 实例，参数可参考下文中的 API 参考链接
 VideoEncoderConfiguration config = new VideoEncoderConfiguration(
-	VideoDimensions.VD_640x480,  // 可以选择默认的几种分辨率选项，也可以自定义
-	FRAME_RATE_FPS_15,           // 帧率，可自定义。通常建议是15帧，不超过30帧
-	STANDARD_BITRATE,            // 标准码率，具体的参数配置请参照文档中关于bitrate的说明。也可以配置其它的码率值，但一般情况下推荐使用标准码率。
-	ORIENTATION_MODE_ADAPTIVE    // 方向模式，请参照API参考的链接查看详细的说明
+	// 视频分辨率。可以选择默认的几种分辨率选项，也可以自定义
+	VideoDimensions.VD_640x480,
+	// 视频编码帧率。可自定义。通常建议是 15 帧，不超过 30 帧
+	FRAME_RATE_FPS_15,
+	// 标准码率。也可以配置其它的码率值，但一般情况下推荐使用标准码率
+	STANDARD_BITRATE,
+	// 方向模式
+	ORIENTATION_MODE_ADAPTIVE,
+	// 带宽受限时，视频编码降级偏好；MAINTAIN_QUALITY(0)，表示带宽受限时，降低帧率以保证视频质量
+	MAINTAIN_QUALITY
 );
 
 rtcEngine.setVideoEncoderConfiguration(config);
@@ -33,10 +37,17 @@ rtcEngine.setVideoEncoderConfiguration(config);
 
 ###  API 参考
 
-* [`setVideoEncoderConguration`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
+* [`setVideoEncoderConguration`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
 * 关于视频的方向模式，更多信息请参考[视频采集旋转](../../cn/Video/rotation_guide_android.md)。
 
 ## 开发注意事项
+
+- [`degradationPrefer`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html?transId=2.4#a47f36783c1f9da09454c19cafb489b3c) 参数设置为 [`MAINTAIN_QUALITY`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/enumio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration_1_1_d_e_g_r_a_d_a_t_i_o_n___p_r_e_f_e_r_e_n_c_e.html?transId=2.4#a654947f783b27ef8da2e7b1f1045ef50)，表示带宽受限时，降低编码帧率以保证视频质量。此时开发者可以使用 `minFrameRate` 参数设置当前最低的编码帧率，用于平衡帧率和视频质量。通常来说：
+	- `minFrameRate` 较低时，一旦带宽不足，帧率下降幅度较大，画质清晰度受影响比较小
+	- `minFrameRate` 较高时，一旦带宽不足，帧率下降幅度有限，画质清晰度受影响比较大
+	
+ 请确保 `minFrameRate` 的值不超过 `frameRate` 的值。`minFrameRate` 的系统默认值是经过实验且能满足一般情况下的需求，我们建议用户不要修改该参数的默认值。
+
 - 如果用户加入频道后不需要重新设置视频编码属性，建议在 `enableVideo` 前调用 `setVideoEncoderConfiguration` ，可以加快首帧出图的时间。
 - Agora SDK 会根据实时网络环境，对设置的参数作自适应调整，通常会下调参数。
 - 通常的，直播场景下需要较大码率来提升视频质量。因此 Agora 建议将直播码率值设为通信值的 2 倍。详情请参考[设置码率](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8)。 
