@@ -1,11 +1,11 @@
 
 ---
-title: Adjust the Pitch and Tone
+title: Set the Voice Changer and Reverberation Effects
 description: How to set voice effects on macOS
 platform: macOS
-updatedAt: Mon Apr 01 2019 09:35:17 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:57:01 GMT+0000 (UTC)
 ---
-# Adjust the Pitch and Tone
+# Set the Voice Changer and Reverberation Effects
 ## Introduction 
 
 In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides multiple preset voice changers and reverberation effects. You can also flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
