@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Mon Apr 01 2019 03:19:25 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 03:22:49 GMT+0000 (UTC)
 ---
 # 录制相关
 ## 录制 SDK
@@ -19,7 +19,7 @@ updatedAt: Mon Apr 01 2019 03:19:25 GMT+0000 (UTC)
 
 ### 录制结束后，为什么无法播放录制的 MP4 文件？
 
-请参考[播放器列表](../../cn/API%20Reference/recording_java.md)，查看是否使用了不支持的播放器。
+请参考[播放器列表](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_m_i_x_e_d___a_v___c_o_d_e_c___t_y_p_e.html)，查看是否使用了不支持的播放器。
 
 ### 启用加密模式后，为什么无法播放录制的视频文件，声音也不正常？
 
