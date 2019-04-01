@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Mon Apr 01 2019 10:28:41 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:28:46 GMT+0000 (UTC)
 ---
 # 发版说明
 
@@ -42,7 +42,7 @@ Windows 视频 SDK 支持两种主要场景:
 
 #### 3. 听声辨位
 
-该版本新增 enableSoundPositionIndication 和 [`setRemoteVoicePosition`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20) 方法，支持本地用户听声辨位。用户需要在加入频道前调用 enableSoundPositionIndication 开启远端用户的语音立体声，然后在 [`setRemoteVoicePosition`](https://docs.agora.io/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20) 中设置远端用户声音出现的位置，通过左右耳听到的声音差异，对远端用户的声音产生方位感。在多人在线游戏场景，如射击游戏中，该功能可以增加游戏角色的方位感，模拟真实场景。
+该版本新增 [`enableSoundPositionIndication`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d) 和 [`setRemoteVoicePosition`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20) 方法，支持本地用户听声辨位。用户需要在加入频道前调用 [`enableSoundPositionIndication`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d) 开启远端用户的语音立体声，然后在 [`setRemoteVoicePosition`](https://docs.agora.io/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20) 中设置远端用户声音出现的位置，通过左右耳听到的声音差异，对远端用户的声音产生方位感。在多人在线游戏场景，如射击游戏中，该功能可以增加游戏角色的方位感，模拟真实场景。
 
 #### 4. 通话前 Last-mile 网络探测
 
