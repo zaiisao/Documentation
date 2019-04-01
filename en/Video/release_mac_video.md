@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon Apr 01 2019 09:18:07 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:30:17 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
