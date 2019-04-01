@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to set voice effects on macOS
 platform: macOS
-updatedAt: Mon Apr 01 2019 10:57:01 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:57:05 GMT+0000 (UTC)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
