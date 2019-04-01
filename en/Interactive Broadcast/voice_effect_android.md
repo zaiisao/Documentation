@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Mon Apr 01 2019 11:02:54 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 11:02:57 GMT+0000 (UTC)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
