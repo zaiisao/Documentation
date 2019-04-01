@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Apr 01 2019 09:27:37 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:27:47 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -82,7 +82,7 @@ v2.4.0 provides the following options for setting video encoder preferences:
 
 - Setting the camera capture preference. v2.4.0 adds the [`setCameraCaptureConfiguration`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab241578c1baf67e68bcabe1a07eb3363) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Video/API%20Reference/java/v2.4.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab241578c1baf67e68bcabe1a07eb3363).
 
-#### 3. Other improvements
+#### 3. Core quality improvements
 
 - Reduces the audio delay.
 - Improves the video quality and stability. 
