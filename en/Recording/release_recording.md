@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Fri Mar 29 2019 02:04:36 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 03:30:42 GMT+0000 (UTC)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -24,7 +24,7 @@ This component package is compatible with the following SDKs:
 <th>Description</th>
 </tr>
 <tr><td>The Agora Native SDK</td>
-<td>The Agora Recording SDK is compatible with the Agora Native SDK v1.7.0 or later. If any user in the channel uses the Agora SDK v1.6, the whole channel will not be able to record.</td>
+<td>The Agora Recording SDK is compatible with the Agora Native SDK v1.7.0 or later. If, for example, any user in the channel uses the Agora Native SDK v1.6, the whole channel cannot record.</td>
 </tr>
 <tr><td>The Agora Web SDK</td>
 <td>The Recording SDK is compatible with the Agora Web SDK v1.12.0 or later.</td>
@@ -37,44 +37,82 @@ This component package is compatible with the following SDKs:
 ### Known Issues and Limitation
 
 -   When you record using an Android client, the image is turned upside down when you switch from a front-facing camera to a rear one.
--   If the user calls <code>leaveChannel</code> in the channel to stop recording, the recording file ends with a period of silence determined by the <code>idleLimitSec</code> field set for the configuration when calling <code>joinChannel</code>.
+-   If the user calls the <code>leaveChannel</code> method in the channel to stop recording, the recording file ends with a period of silence determined by the <code>idleLimitSec</code> field set for the configuration when calling the <code>joinChannel</code> method.
 -   The recorded voice or video files are not encrypted. To be compliant with HIPPA, encrypt the disk with a disk encryption tool, such as cryptsetup.
 
 
-> Agora Recording SDK supports both Java and C++ from v2.2.0.
+> The Agora Recording SDK supports both Java and C++ from v2.2.0.
 
-## v2.3.0
+## v2.3.3
 
-The version 2.3.0 was released on January 14, 2019. See below for new features and improvements . 
-
-> The billing of Recording SDK v2.3.0 or later is seperated from that of Agora Voice Call/Voice Interactive Broadcast SDK and Agora Video Call/Video Interactive Broadcast SDK. Contact [sales@agora.io](mailto:sales@agora.io) to get more details.
+v2.3.3 is released on April 1, 2019. 
 
 ### New Features
 
-#### 1. Support for Stereo Audio in Composite Recording Mode
+#### 1. Supports monitoring the network connection status
 
-Support high audio quality (sampling rate of 48 kHz, stereo and a bitrate of up to 192 Kbps) in the composite recording mode.
+v2.3.3 adds the following callbacks to inform the app of the connection status between the recording SDK and Agora's edge server:
+
+- `onConnectionLost`: Informs that the SDK loses connection to the server.
+- `onConnectionInterrupted`: Informs that the connection between the SDK and the server is interrupted.
+
+#### 2. Informs the app of receiving the first frame 
+
+v2.3.3 adds the following callbacks to inform the app of receiving the first remote audio or video frame:
+
+- `onFirstRemoteAudioFrame`: Informs that the first remote audio frame is received.
+- `onFirstRemoteVideoDecoded`: Informs that the first remote video frame is decoded. 
+
+#### 3. Supports monitoring status changes of the receiving stream 
+
+v2.3.3 adds the `onReceivingStreamStatusChanged` callback to get status changes of the receiving audio or video stream.
+
+#### 4. Supports the volume indication
+
+v2.3.3 adds the `onAudioVolumeIndication` callback to get the list of users who are speaking and their volumes. 
+
+### Issues Fixed
+
+- Fails to run the transcoding script when the recording SDK exits the channel and then enters the channel again in manual mode.
+- Occasional crashes when using invalid parameters in the `mixedVideoAudio` method.
+- Freezes in HD video recordings.
+- Setting the recording video frame rate does not take effect.
+- Occasional crashes when compiling the recording Java sample code in Manual Mode.
+- Fails to run the transcoding command `-f . -m 3`.
+
+
+## v2.3.0
+
+v2.3.0 is released on January 14, 2019. 
+
+> The calculation of the usage of the Recording SDK v2.3.0 or later is separated from that of the Agora Voice Call/Voice Interactive Broadcast SDK and the Agora Video Call/Video Interactive Broadcast SDK. Contact [sales@agora.io](mailto:sales@agora.io) for details.
+
+### New Features
+
+#### 1. Supports Stereo Audio in Composite Recording Mode
+
+v2.3.0 supports high audio quality (a sample rate of 48 kHz, stereo, and a bitrate of up to 192 Kbps) in Composite Recording Mode.
 
 > Stereo is not applicable to raw data. 
 
-`audio profile` can be set as `0` or `1` :
+`audio profile` can be set as `0` or `1`:
 
-- Individual recording (file mode)
-  - By default or set `audio profile=0`: the sampling rate 48 KHz, same number of sound channels as the orignal audio, and adaptive bitrate.
-- Individual recording (raw data)
-  - The sampling rate is fixed to 48 KHz and the number of sound channels is the same as the original audio.
+- Individual recording (file mode):
+  - By default or set `audio profile=0`: A sample rate of 48 KHz, the same number of audio channels as the original audio, and an adaptive bitrate.
+- Individual recording (raw data):
+  - The sample rate is fixed at 48 KHz and the number of audio channels is the same as the original audio:
     - PCM: The bitrate may change.
     - AAC: The bitrate is the same as in the file mode.
-- Composite recording (file mode)  
-  - `audio profile=0`: Sampleing rate 48 KHz, mono, bitrate 48 Kbps
-  - `audio profile=1`: Sampleing rate 48 KHz, mono, bitrate 128 Kbps
-  - `audio profile=2`: Sampleing rate 48 KHz, stereo, bitrate 192 Kbps
-- Composite recording (raw data)  
-  - Fixed sampling rate 48 KHz, mono
+- Composite recording (file mode): 
+  - `audio profile=0`: A sample rate of 48 KHz, mono, and a bitrate of 48 Kbps
+  - `audio profile=1`: A sample rate of 48 KHz, mono, and a bitrate of 128 Kbps
+  - `audio profile=2`: A sample rate of 48 KHz, stereo, and a bitrate of 192 Kbps
+- Composite recording (raw data): 
+  - A fixed sample rate of 48 KHz and mono.
 
-#### 2. Support for Web Video Players 
+#### 2. Supports Web Video Players 
 
-The video files transcoded in real time or transcoded by the transcoding script can be played by browsers on Android, iOS/macOS, and Windows. Below is a list of compatible browsers on each platform.
+Video files transcoded in real time or transcoded by the transcoding script can be played by web browsers on Android, iOS/macOS, and Windows. The following is a list of compatible web browsers on each platform.
 
 <table>
   <tr>
@@ -104,95 +142,92 @@ The video files transcoded in real time or transcoded by the transcoding script 
   </tr>
 </table>
 
-#### 3. Support for Customizing Background Image in Composite Recording Mode 
+#### 3. Supports Custom Background Images in Composite Recording Mode 
 
-- Users can add a backgroud image while recording audio in the Composite Recording Mode;
+v2.3.0 adds the function for users to add a background image while recording audio in Composite Recording Mode. A custom image is used for any user who does not have video while recording video in Composite Recording Mode.
 
-- Use a customized image for the user who do not have video while recording video in the Composite Recording Mode.
+> This function is not applicable to raw data and screenshots.
 
-> This function is not applicable to raw data and screenshot.
+#### 4. Adds Two Pre-defined Layout Templates to the Sample Code
 
-#### 4. Added Two Pre-defined Layout Templates to the Sample Code
-
-To make the sample code in the Recoridng SDK easier to use, two pre-defined layout templates for composite recording are provided:
+v2.3.0 provides two pre-defined layout templates for composite recording to make the Recording SDK sample code easier to use.
 
 ##### Best Fit (bestFit)
 
-The default layout. Supports up to 17 video streams.
+v2.3.0 adds <code>bestFit</code> as the default layout supporting up to 17 video streams.
 
-This layout automatically scales according to the number of videos. The number of columns and rows of varies depending on the number of videos. For example:
+This layout automatically scales according to the number of video streams. The number of columns and rows varies depending on the number of video streams. For example:
 
 ![](https://web-cdn.agora.io/docs-files/1542680053900)
 
-##### Vertiacal Presentation （verticalPresentation）
+##### Vertical Presentation（verticalPresentation）
 
-A specified uid displays the large video on the left of the screen, while the others are arranged vertically on the right with small videos. At most two columns with 8 videos each column are supported. 
+v2.3.0 adds the function to display a specified user's video in a large window on the left of the screen, while displaying the other users' videos in small windows arranged vertically on the right. At most, two columns with eight video windows in each column are supported. 
 
 For example:
 
 ![](https://web-cdn.agora.io/docs-files/1542680070362)
 
-#### 5. Screenshot in Composite Recording Mode
+#### 5. Screenshots in Composite Recording Mode
 
-Capture the screen of every single user while recording video in the Composite Recording Mode. The recording and the screen capturing use the same video stream.
+v2.3.0 adds the function to capture the screen of every user while recording video in Composite Recording Mode. Recording and screen capturing use the same video stream.
 
 #### 6. Speaker Detection
 
-The new callback `onActiveSpeaker` returns the UID of the active speaker in the channel.
+v2.3.0 adds the `onActiveSpeaker` callback to return the UID of the active speaker in the channel.
 
-This function is disabled by default and can be enabled by setting the parameter of `audioIndicationInterval` in `RecordingConfig`. The Recording SDK will return `onActiveSpeaker` at the set interval.
+This function is disabled by default and can be enabled by setting the `audioIndicationInterval` parameter in `RecordingConfig`. The Recording SDK returns the `onActiveSpeaker` callback at set intervals.
 
 ### Improvements
 
-- Improved audio and video synchronization in the Individual Recording Mode;
-- Supported automatic rotation of recorded videos which are not transcoded in real time in the Individual Recording Mode;
-- Changed the idle behavior in the manual mode:
-     - For the versions earlier than v2.3.0, in the Manually Mode, the idle mechanism takes effect immediately after joining the channel, which might cause the recording SDK to exit the channel.
-     - For v2.3.0 or later versions,  the idle mechanism does not take effect until `startService` is called.
-- Optimized the log levels and split some major logs in INFO into NOTICE, WARN, and ERROR.
-- Optimized the naming of recording directory to ensure the uniqueness of each folder.
+- Improves audio and video synchronization in Individual Recording Mode.
+- Supports automatic rotation of recorded video streams that are not transcoded in real time in Individual Recording Mode.
+- Changed the idle behavior in Manual Mode:
+     - For versions earlier than v2.3.0 in Manual Mode, the idle mechanism takes effect immediately after joining a channel, which might cause the recording SDK to exit the channel.
+     - For v2.3.0 or later, the idle mechanism does not take effect until the `startService` method is called.
+- Optimizes the log levels and split some logs in INFO into NOTICE, WARN, and ERROR.
+- Optimizes the naming of the recording directory to ensure the uniqueness of each folder.
 
 ## v2.2.3 
 
-The version 2.2.3 was released on October 18, 2018. See below for issues fixed.
+v2.2.3 is released on October 18, 2018. 
 
 ### Issues Fixed
 
 -   Coredump loss caused by .backtrace.
--   Fixed system crash caused by Java jni. and optimized stability.
--   Bug of the transcoding script in manully mode. 
--   The recording video file was split into two files after a web client joined the channel.
--   Occasional system crash caused by the issue that the sub thread was still active after the main thread was released.
+-   System crashes caused by Java jni. and optimize stability.
+-   Transcoding script issues in Manual Mode. 
+-   The recording video file splits into two files after a web client joins the channel.
+-   Occasional system crashes caused by the subthread being active after the main thread is released.
 
 ## v2.2.2 
 
-The version 2.2.2 was released on August 1, 2018. See below for new features, improvements, and issues fixed.
+v2.2.2 is released on August 1, 2018. 
 
 ### Improvements
 
--   The naming of the screenshots will be `uidYmdHMSms.jpg` instead of `uidYmdHMS.jpg`.
+-   The screenshots are named `uidYmdHMSms.jpg` instead of `uidYmdHMS.jpg`.
 -   The transcoding script supports autorotation.
 -   The structure of the Java folder is modified.
 
 
 ### Issues Fixed
 
--   webm recording time abnormality.
--   Memory leak.
--   Multi-party intercommunication issue.
--   H.264 parser issue.
+-   Abnormal webm recording times.
+-   Memory leaks.
+-   Multi-party intercommunication issues.
+-   H.264 parser issues.
 -   Audio and video out of sync.
 
 
 ## v2.2.1
 
-The version 2.2.1 was released on June  5, 2018. See below for new features, improvements, and issues fixed.
+v2.2.1 is released on June 5, 2018. 
 
 ### Improvements
 
--   Improved the performance of the communication mode. The number of recording channels that a system supports with the same performance has increased by 150%.
--   Improved the efficiency to find the port.
--   The time to find the port is no longer part of the idle time.
+-   Improves the performance of the Communication profile. The number of recording channels that a system supports with the same performance increases by 150%.
+-   Improves the efficiency to find the port. The time to find the port is no longer part of the idle time.
 
 
 ### Issues Fixed
@@ -202,24 +237,24 @@ Port conflicts when the search for the port takes too long and exceeds the idle 
 
 ## v2.2.0
 
-The version 2.2.0 was released on May 4, 2018. See below for issues fixed.
+v2.2.0 is released on May 4, 2018.
 
 ### New Features
 
-> The package you downloaded supports both Java and C++.
+> Support for both Java and C++.
 
 ### Issues Fixed
 
--   Fixed the issue of oversized logs.
--   Fixed abnormal issues that occurred when recording fast-forward videos.
--   Fixed intermittent failures.
--   Performance improvements.
--   Fixed some crash issues.
+-   Issues of oversized logs.
+-   Abnormal issues when recording fast-forward videos.
+-   Intermittent failures.
+-   Performance issues.
+-   Some crash issues.
 
 
 ## v2.1.0
 
-The version 2.1.0 was released on March 7, 2018. See below for new features, improvements and issues fixed.
+v2.1.0 is released on March 7, 2018. 
 
 
 ### New Features
@@ -234,16 +269,16 @@ The version 2.1.0 was released on March 7, 2018. See below for new features, imp
 <th>Description</th>
 </tr>
 <tr><td>Recording Mode</td>
-<td>Supported selecting auto or manual mode when joining a channel to flexibly control the recording.</td>
+<td>Supports selecting auto or manual mode when joining a channel to flexibly control the recording.</td>
 </tr>
 <tr><td>Control Recording</td>
-<td>Added interfaces to unbind the operation of joining a channel and recording. If the auto recording mode is used, the recording starts when a user joins the channel. If the manual recording mode is used, you can control when to start and stop the recording.</td>
+<td>Adds interfaces to unbind the operations of joining a channel and recording. If the auto recording mode is used, the recording starts when a user joins the channel. If the manual recording mode is used, you can control when to start and stop the recording.</td>
 </tr>
 <tr><td>Mix Raw Audio</td>
-<td>Supported the function of mixing raw audio data.</td>
+<td>Supports the function of mixing raw audio data.</td>
 </tr>
 <tr><td>Java Recording API</td>
-<td>Supported Java APIs for recording.</td>
+<td>Supports Java APIs for recording.</td>
 </tr>
 </tbody>
 </table>
@@ -262,7 +297,7 @@ The version 2.1.0 was released on March 7, 2018. See below for new features, imp
 <th>Description</th>
 </tr>
 <tr><td>Transcoding Script</td>
-<td>Supported the setting of the transcoding frame rate and resolution, either in picture-in-picture or single-stream mode.</td>
+<td>Supports setting the transcoding frame rate and resolution, either in picture-in-picture or single-stream mode.</td>
 </tr>
 </tbody>
 </table>
@@ -272,78 +307,76 @@ The version 2.1.0 was released on March 7, 2018. See below for new features, imp
 ### Issues Fixed
 
 -   Occasional recording file transcoding failures.
--   Occasionally the video screen turns upside down.
+-   The video screen occasionally turns upside down.
 -   Occasional abnormal audio during recording.
 
 
 ## v2.0
 
-The version 2.0 was released on November 21, 2017. 
+v2.0 is released on November 21, 2017. 
 
-For 2.0 Beta documentation, see [2.0 Document Center](https://docs.agora.io/en/2.0/addons/Recording/Quickstart/recording?platform=All%20Platforms)
+For 2.0 Beta documentation, see [2.0 Document Center](https://docs.agora.io/en/2.0/addons/Recording/Quickstart/recording?platform=All%20Platforms).
 
--   Optimized the raw data to support various formats:
-    -   Modified the <code>decodeAudio</code> and <code>decodeVideo</code> parameters, and added the <code>VideoJpgFrame</code> struct. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md)
-    -   Modified the <code>getAudioFrame</code> and <code>getVideoFrame</code> parameters. For details, see [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
--   Added the <code>captureInterval</code> parameter to set the time interval of the captured screenshots. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md) and [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
--   Added the <code>streamType</code> parameter to support different video stream types. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md) and [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
--   Added the <code>isVideoOnly</code> parameter. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md) and [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
--   The transcoding scripts, once used, will generate a convert.log file under the same path as the voice/video file. For details, see [How to Record](https://docs.agora.io/en/2.0/addons/Recording/API%20Reference/recording?platform=All%20Platforms).
--   Added the video rotating information in `UID_HHMMSSMS.txt`. For details, see [How to Record](https://docs.agora.io/en/2.0/addons/Recording/API%20Reference/recording?platform=All%20Platforms).
+-   Optimizes the raw data to support various formats:
+    -   Modifies the <code>decodeAudio</code> and <code>decodeVideo</code> parameters, and adds the <code>VideoJpgFrame</code> struct. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md).
+    -   Modifies the <code>getAudioFrame</code> and <code>getVideoFrame</code> parameters. For details, see [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
+-   Adds the <code>captureInterval</code> parameter to set the time interval of capturing screenshots. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md) and [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
+-   Adds the <code>streamType</code> parameter to support different video stream types. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md) and [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
+-   Adds the <code>isVideoOnly</code> parameter. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md) and [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
+-   The transcoding scripts, once used, generate a convert.log file under the same path as the voice/video file. For details, see [How to Record](https://docs.agora.io/en/2.0/addons/Recording/API%20Reference/recording?platform=All%20Platforms).
+-   Adds the video rotating information in `UID_HHMMSSMS.txt`. For details, see [How to Record](https://docs.agora.io/en/2.0/addons/Recording/API%20Reference/recording?platform=All%20Platforms).
 
 
 ## v1.3 
 
-The version 1.3 was released on October 20, 2017. See below for new features.
+v1.3 is released on October 20, 2017.
 
 ### New Features:
 
--   Added the mixing of the audio and video recording functions by adding the <code>mixedVideoAudio</code> and <code>cfgFilePath</code> parameters in the <code>joinChannel</code> method.
--   Added the function of merging the audio and video file of the same uid as one, see [Play the Recording Files](https://docs.agora.io/en/1.14/addons/Recording/tutorial/recording?platform=All%20Platforms).
--   Added the <code>getProperties</code> method to get the recording path immediately after recording is started before joining any channel.
--   Modified the <code>onError</code> and <code>onLeaveChannel</code> callback functions.
+-   Adds mixing the audio and video recording functions by adding the <code>mixedVideoAudio</code> and <code>cfgFilePath</code> parameters in the <code>joinChannel</code> method.
+-   Adds the function of merging the audio and video file of the same uid as one, see [Play the Recording Files](https://docs.agora.io/en/1.14/addons/Recording/tutorial/recording?platform=All%20Platforms).
+-   Adds the <code>getProperties</code> method to get the recording path immediately after recording is started before joining any channel.
+-   Modifies the <code>onError</code> and <code>onLeaveChannel</code> callbacks.
 
 
 ## v1.2
 
-The version 1.2  was released on August 21, 2017. See below for new features.
+v1.2 is released on August 21, 2017. 
 
 ### New Features:
 
--   Supported the function of getting the audio and video raw data.
--   Supported the function of detecting sexually explicit content.
--   Provided a log file, `recordingsys.log`, to check for failures.
--   Supported the recording channel timestamp, that is, the first user who starts recording in the channel.
+-   Supports getting the audio and video raw data.
+-   Supports detecting sexually explicit content.
+-   Provides a `recordingsys.log` log file to check for failures.
+-   Supports the recording channel timestamp, that is, the first user who starts recording in the channel.
 
 
 ## v1.1
 
-The version 1.1  was released on July 25, 2017. See below for new features and issues fixed.
+v1.1 is released on July 25, 2017. 
 
 ### New Features:
 
-- Added recording at the web client side.
-- Added the real-time video mixing function.
-- Added a set of callback functions.
-- Modified the file format after transcoding.
-- Enabled the configure UDP port function.
-
+- Adds recording at the web client.
+- Adds the real-time video mixing function.
+- Adds a set of callback functions.
+- Modifies the file format after transcoding.
+- Enables configuring the UDP port.
+- 
 ### Issues Fixed:
 
 - Wrong timestamps.
-- Transcoding failure.
+- Transcoding failures.
 - Unable to playback VLC files.
 
 
 ## v1.0.1
 
-The version 1.0.1  was released on June 27, 2017. See below for issues fixed.
-
-Fixed the crash when you set the channel profile of the recording as live broadcast.
+v1.0.1 is released on June 27, 2017, and fixes the crash when you set the channel profile of the recording as live broadcast.
 
 ## v1.0.0
 
-The version 1.0.0  was released on June 15, 2017. 
+v1.0.0 is released on June 15, 2017. 
 
 This is the first release of the Recording SDK with the following functions:
 
