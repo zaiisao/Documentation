@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Android
-updatedAt: Mon Apr 01 2019 10:49:13 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:49:17 GMT+0000 (UTC)
 ---
 # Image Enhancement
 ## Introduction
@@ -24,6 +24,11 @@ This method has two parameters:
 ```java
 mRtcEngine.setBeautyEffectOptions(true, new BeautyOptions(LIGHTENING_CONTRAST_NORMAL, 0.5F, 0.5F, 0.5F));
 ```
+
+## Sample Code
+
+Agora provides an open source sample code that implements image enhancement. You can go to the [OpenLive-Android Github Repo](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) to download it.
+
 
 ## Considerations
 This API method has return values. If the method call fails, the return value is < 0.
