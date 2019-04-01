@@ -3,7 +3,7 @@
 title: 调整音调、音色
 description: How to adjust the voice effect on Windows
 platform: Windows
-updatedAt: Mon Mar 18 2019 04:08:23 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:34:50 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
@@ -12,6 +12,54 @@ updatedAt: Mon Mar 18 2019 04:08:23 GMT+0000 (UTC)
 
 ## 实现方法
 开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/windows_video.md)。
+
+### 使用预置效果
+
+通过 `setLocalVoiceChanger` 可以选择以下预设的语音变声效果：
+
+- 老男孩
+- 小男孩
+- 小女孩
+- 猪八戒
+- 空灵
+- 绿巨人
+
+通过 `setLocalVoiceReverbPreset` 可以选择以下预设的语音混响效果：
+
+- 流行
+- R&B
+- 摇滚
+- 嘻哈
+- 演唱会
+- KTV
+- 录音棚
+
+```c++
+// 初始化参数对象
+RtcEngineParameters rep(*m_lpAgoraEngine);
+VOICE_CHANGER_PRESET voiceChanger;
+AUDIO_REVERB_PRESET reverbPreset;
+
+// 设置变声效果为老男孩
+voiceChanger = VOICE_CHANGER_OLDMAN;
+rep.setLocalVoiceChanger(voiceChanger);
+
+// 关闭变声效果
+voiceChanger = VOICE_CHANGER_OFF;
+rep.setLocalVoiceChanger(voiceChanger);
+
+// 设置混响效果为流行
+reverbPreset = AUDIO_REVERB_POPULAR;
+rep.setLocalVoiceReverbPreset(reverbPreset);
+
+// 关闭混响效果
+reverbPreset = AUDIO_REVERB_OFF;
+rep.setLocalVoiceReverbPreset(reverbPreset);
+```
+
+### 定制变声和混响效果
+
+如果预置效果无法满足你的需求，你也可以自行调整音调、均衡和混响设置。
 
 你可以根据以下方法把原始声音变成绿巨人霍克的声音。
 
@@ -54,6 +102,8 @@ nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_STRENGTH, 78);
 
 ### API 参考
 
+- [`setLocalVoiceChanger`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a70175273dade14bcf8d74e71f8de7eda)
+- [`setLocalVoiceReverbPreset`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#add46038703f2f82dad83c0319d43433b)
 - [`setLocalVoicePitch`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fef48b6aa3954d7e76164a43d660b94)
 - [`setLocalVoiceEqualization`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a3de79ba906e6b254b997eda4d395d052)
 - [`setLocalVoiceReverb`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa00e903b1cc6f2752373afbe556ef456)
