@@ -1,11 +1,11 @@
 
 ---
-title: Adjust the Pitch and Tone
+title: Set the Voice Changer and Reverberation Effects
 description: How to set voice effects on iOS
 platform: iOS
-updatedAt: Mon Apr 01 2019 09:35:11 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:56:35 GMT+0000 (UTC)
 ---
-# Adjust the Pitch and Tone
+# Set the Voice Changer and Reverberation Effects
 ## Introduction 
 
 In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
