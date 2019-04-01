@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Fri Mar 29 2019 03:42:21 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:33:43 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -19,23 +19,34 @@ The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video pr
 The parameters specified in the `setVideoEncoderConfiguration` method are ideal values under ideal network conditions. If the video engine cannot render the video with the specified parameters due to poor network conditions, the parameters further down the list are considered.
 
 ```cpp
-// cpp
 // Set the video encoder configuration.
-VideoEncoderConfiguration (lpVideoConfig(640, 360), // Set the width and height of the video stream. Swapping the two values does not change the video orientation.
-FRAME_RATE_FPS_15, // Set the video frame rate of the video.
-800, // Set the bitrate of the video in Kbps.
-ORIENTATION_MODE_ADAPTIVE // The orientation mode the video.
+// Set the width and height of the video stream. Swapping the two values does not change the video orientation.
+VideoEncoderConfiguration (lpVideoConfig(640, 360),
+// Set the video frame rate of the video.
+FRAME_RATE_FPS_15,
+// Set the bitrate of the video in Kbps.
+800,
+// The orientation mode the video.
+ORIENTATION_MODE_ADAPTIVE,
+// The degradation preference under limited bandwidth. MIANTAIN_QUALITY means to degrade the frame rate to maintain the video quality.
+MAINTAIN_QUALITY
 );
 
 lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 ```
 
 ### API Reference
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Video/rotation_guide_android.md).
 
 ## Considerations
 
+- Setting [`degradationPreference`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_video_encoder_configuration.html#a491316b0de64bf930938404b113f062f) as `MAINTAIN_QUALITY` means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the `minFrameRate` parameter to balance the frame rate and video quality under unreliable network connections:
+
+	- When  `minFrameRate` is relatively low, the frame rate degrades significantly, so the poor network conditions have little impact on the video quality.
+	- When `minFrameRate` is relatively high, the frame rate degrades within a limited range, so the poor network conditions can have huge impact on the video quality.
+
+Do not set the `minFrameRate` parameter to a value greater than `frameRate`. The default value of `minFrameRate` is experiment verified and can satisfy most use scenarios. We do not recommend changing it.
 - If you do not need to set the video profile after joining the channel, you can call the `setVideoEncoderConfiguration` method before the `enableVideo` method to reduce the render time of the first video frame.
 - The Agora SDK may adjust the parameters under poor network conditions. 
 -  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69).
