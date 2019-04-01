@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 10:03:52 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:03:55 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -23,7 +23,7 @@ v2.4.0 is released on April 1, 2019.
 
 ### Before Getting Started
 
-Agora Video SDK for iOS adds the library dependency on `CoreML.framework` in v2.4.0. Ensure that you add this library when integrating the SDK. For details, see [Integrate the SDK](../../en/Voice/ios_video.md).
+Agora Audio SDK for iOS adds the library dependency on `CoreML.framework` in v2.4.0. Ensure that you add this library when integrating the SDK. For details, see [Integrate the SDK](../../en/Voice/ios_audio.md).
 
 ### New Features
 
