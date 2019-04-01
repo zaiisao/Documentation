@@ -3,7 +3,7 @@
 title: 变声与混响
 description: How to set voice effects for iOS
 platform: iOS
-updatedAt: Mon Apr 01 2019 11:00:00 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 11:00:04 GMT+0000 (UTC)
 ---
 # 变声与混响
 ## 功能描述
@@ -153,6 +153,10 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 - [`setLocalVoicePitch`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
 - [`setLocalVoiceEqualizationOfBandFrequency`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
 - [`setLocalVoiceReverbOfType`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
+
+## 示例代码
+
+Agora 提供一个实现了变声与混响功能的开源示例代码。你可以前往 [Chatroom Github Repo](https://github.com/AgoraIO-Usecase/Chatroom/tree/master/iOS) 下载。
 
 ## 开发注意事项
 以上方法都有返回值，返回值小于 0 表示方法调用失败。
