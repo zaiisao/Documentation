@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 10:06:17 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:15:48 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
