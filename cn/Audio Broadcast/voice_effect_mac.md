@@ -3,13 +3,74 @@
 title: 调整音调、音色
 description: How to set voice effects for macOS
 platform: macOS
-updatedAt: Mon Mar 18 2019 04:07:32 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:34:45 GMT+0000 (UTC)
 ---
 # 调整音调、音色
 ## 功能描述
 在社交娱乐应用中，为增加产品的趣味性和互动性，用户常常需要变声和混响效果。Agora 提供了一系列的方法让开发者灵活定制自己想要的声音，比如设置音调、均衡和混响等。 
 ## 实现方法
 开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Audio%20Broadcast/mac_video.md)。
+
+### 使用预置效果
+
+通过 `setLocalVoiceChanger` 可以选择以下预设的语音变声效果：
+
+- 老男孩
+- 小男孩
+- 小女孩
+- 猪八戒
+- 空灵
+- 绿巨人
+
+```swift
+// swift
+// 设置变声效果为老男孩
+agoraKit.setLocalVoiceChanger(.oldMan)
+
+// 关闭变声效果
+agoraKit.setLocalVoiceChanger(.off)
+```
+
+```objective-c
+// objective-c
+// 设置变声效果为老男孩
+[self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOldMan];
+
+// 关闭变声效果
+[self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOff];
+```
+
+通过 `setLocalVoiceReverbPreset` 可以选择以下预设的语音混响效果：
+
+- 流行
+- R&B
+- 摇滚
+- 嘻哈
+- 演唱会
+- KTV
+- 录音棚
+
+```swift
+// swift
+// 设置混响效果为流行
+agoraKit.setLocalVoiceReverbPreset(.popular)
+
+// 关闭混响效果
+agoraKit.setLocalVoiceReverbPreset(.off)
+```
+
+```objective-c
+// objective-c
+// 设置混响效果为流行
+[self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetPopular];
+
+// 关闭混响效果
+[self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetOff];
+```
+
+### 定制变声和混响效果
+
+如果预置效果无法满足你的需求，你也可以自行调整音调、均衡和混响设置。
 
 你可以根据以下方式把原始声音变 FM 的效果。
 
@@ -87,6 +148,8 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 
 ### API 参考
 
+- [`setLocalVoiceChanger`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:)
+- [`setLocalVoiceReverbPreset`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:)
 - [`setLocalVoicePitch`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
 - [`setLocalVoiceEqualizationOfBandFrequency`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
 - [`setLocalVoiceReverbOfType`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
