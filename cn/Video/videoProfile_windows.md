@@ -3,7 +3,7 @@
 title: 设置视频编码
 description: 
 platform: Windows
-updatedAt: Fri Mar 29 2019 03:42:25 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:32:31 GMT+0000 (UTC)
 ---
 # 设置视频编码
 ## 功能简介
@@ -19,22 +19,32 @@ updatedAt: Fri Mar 29 2019 03:42:25 GMT+0000 (UTC)
 Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的属性，比如分辨率、码率、帧率等。参数均为理想情况下的最大值。当视频引擎因网络环境等原因无法达到设置的分辨率、帧率或码率的最大值时，会取最接近最大值的那个值。
 
 ```cpp
-// cpp
-// 设置视频编码配置
-VideoEncoderConfiguration (lpVideoConfig(640, 360), // 发送视频流宽和高，交换不影响
-FRAME_RATE_FPS_15, // 发送视频帧率
-800, // 发送视频码率 kbps
-ORIENTATION_MODE_ADAPTIVE // 输出视频的方向模式
+// 配置一个 VideoEncoderConfiguration 实例，参数可参考下文中的 API 参考链接
+// 发送视频流宽和高，交换不影响
+VideoEncoderConfiguration (lpVideoConfig(640, 360), 
+// 发送视频帧率
+FRAME_RATE_FPS_15, 
+// 发送视频码率 kbps
+800,
+// 输出视频的方向模式
+ORIENTATION_MODE_ADAPTIVE
+// 带宽受限时，视频编码降级偏好；MAINTAIN_QUALITY 表示带宽受限时，降低帧率以保证视频质量
+MAINTAIN_QUALITY
 );
 
 lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 ```
 
 ### API 参考
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
 * 关于视频的方向模式，更多信息请参考[视频采集旋转](../../cn/Video/rotation_guide_android.md)。
 
 ## 开发注意事项
+- [`degradationPreference`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_video_encoder_configuration.html#a491316b0de64bf930938404b113f062f) 参数设置为 `MAINTAIN_QUALITY`，表示带宽受限时，降低编码帧率以保证视频质量。此时开发者可以使用 `minFrameRate` 参数设置当前最低的编码帧率，用于平衡帧率和视频质量。通常来说：
+	- `minFrameRate` 较低时，一旦带宽不足，帧率下降幅度较大，画质清晰度受影响比较小
+	- `minFrameRate` 较高时，一旦带宽不足，帧率下降幅度有限，画质清晰度受影响比较大
+	
+ 请确保 `minFrameRate` 的值不超过 `frameRate` 的值。`minFrameRate` 的系统默认值是经过实验且能满足一般情况下的需求，我们建议用户不要修改该参数的默认值。
 - 如果用户加入频道后不需要重新设置视频编码属性，建议在 `enableVideo` 前调用 `setVideoEncoderConfiguration` ，可以加快首帧出图的时间。
 - Agora SDK 会根据实时网络环境，对设置的参数作自适应调整，通常会下调参数。
 - 通常的，直播场景下需要较大码率来提升视频质量。因此 Agora 建议将直播码率值设为通信值的 2 倍。详情请参考[设置码率](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69)。 
