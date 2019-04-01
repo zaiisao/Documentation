@@ -3,15 +3,76 @@
 title: Adjust the Pitch and Tone
 description: How to set voice effects on macOS
 platform: macOS
-updatedAt: Thu Mar 21 2019 02:12:40 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:35:17 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
 
-In social and entertainment scenarios, users often need various voice effects to enhance the interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides multiple preset voice changers and reverberation effects. You can also flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
-Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Video/mac_video.md) for more information.
+Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/mac_video.md).
+
+### Use a preset voice changer and reverberation effect
+
+You can use one of the following preset voice changer options by calling `setLocalVoiceChanger`:
+
+- An old man's voice.
+- A little boy's voice.
+- A little girl's voice.
+- Zhu Bajie's voice (Zhu Bajie is a character from Journey to the West who has a voice like a growling bear).
+- Ethereal vocal effects.
+- Hulk's voice.
+
+```swift
+// swift
+// Set the voice changer as old man
+agoraKit.setLocalVoiceChanger(.oldMan)
+
+// Turn off the voice changer
+agoraKit.setLocalVoiceChanger(.off)
+```
+
+```objective-c
+// objective-c
+// Set the voice changer as old man
+[self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOldMan];
+
+// Turn off the voice changer
+[self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOff];
+```
+
+You can use one of the following preset reverberation effects by calling `setLocalVoiceReverbPreset`:
+
+- Pop music
+- R&B
+- Rock music
+- Hip-hop
+- Pop concert
+- Karaoke
+- Recording studio
+
+```swift
+// swift
+// Set the reverberation preset as pop
+agoraKit.setLocalVoiceReverbPreset(.popular)
+
+// Turn off the reverberation
+agoraKit.setLocalVoiceReverbPreset(.off)
+```
+
+```objective-c
+// objective-c
+// Set the reverberation preset as pop
+[self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetPopular];
+
+// Turn off the reverberation
+[self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetOff];
+```
+
+### Customize the voice effects
+
+You can also customize the voice effects by adjusting the voice pitch, equalization, and reverberation settings.
 
 The following sample code shows how to set the FM voice effect.
 
@@ -87,10 +148,12 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 
 ### API Reference
 
+- [`setLocalVoiceChanger`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:)
+- [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:)
 - [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
 - [`setLocalVoiceEqualizationOfBandFrequency`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceEqualizationOfBandFrequency:withGain:)
 - [`setLocalVoiceReverbOfType`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
 
 ## Considerations
-The API methods have return values. If the method fails, the return value is < 0.
+The API methods have return values. If the method call fails, the return value is < 0.
 

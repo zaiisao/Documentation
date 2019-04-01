@@ -3,11 +3,11 @@
 title: Set Voice Changer and Reverberation Effects
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Mon Apr 01 2019 10:55:22 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:55:28 GMT+0000 (UTC)
 ---
 # Set Voice Changer and Reverberation Effects
 ## Introduction 
-In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides multiple preset voice changers and reverberation effects. You can also flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
@@ -97,6 +97,10 @@ rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_STRENGTH, 78);
 - [`setLocalVoicePitch`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
 - [`setLocalVoiceEqualization`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
 - [`setLocalVoiceReverb`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
+
+## Sample Code
+
+Agora provides an open source sample code that implements voice changer and reverberation. You can go to the [Chatroom Github Repo](https://github.com/AgoraIO-Usecase/Chatroom/tree/master/Android) to download it.
 
 ## Considerations
 The API methods have return values. If the method call fails, the return value is < 0.

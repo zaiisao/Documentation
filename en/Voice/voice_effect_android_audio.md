@@ -7,7 +7,7 @@ updatedAt: Thu Mar 21 2019 02:04:29 GMT+0000 (UTC)
 ---
 # Adjust the Pitch and Tone
 ## Introduction 
-In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides multiple preset voice changers and reverberation effects. You can also flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/android_audio.md).
