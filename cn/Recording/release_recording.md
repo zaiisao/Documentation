@@ -3,12 +3,12 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Fri Mar 29 2019 02:05:37 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 03:30:57 GMT+0000 (UTC)
 ---
 # 录制 SDK 发版说明
 ## 简介
 
-Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。点击[录制产品概述](../../cn/Recording/product_recording.md))了解关键特性。
+Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。点击[录制产品概述](../../cn/Recording/product_recording.md)了解关键特性。
 
 ### 兼容性
 
@@ -39,6 +39,46 @@ Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Ag
 - 在用移动客户端 \(仅 Android 系统\) 录像的过程中，从前置摄像头切换到后置摄像头后，画面将被倒置。
 - 如果在频道内调用 `leaveChannel`, 录制会停止, 但默认录制文件最后会包含一段空白片段，这个时间段由调用 `joinChannel` 时在 `config` 里设定的 `idleLimitSec` 字段值决定。详见 [录制 API](../../cn/API%20Reference/recording_cpp.md)。
 - 由于录制的音视频文件是没有加密的，如果要满足 HIPPA 要求，需使用磁盘加密工具对硬盘进行加密，例如 cryptsetup。
+
+## 2.3.3 版
+
+该版本于 2019 年 4 月 1 日发布。新增特性与问题修复详见下文。
+
+### 新增功能
+
+#### 1. 支持监控网络连接状态
+
+为及时获取录制 SDK 与服务器的连接状态，该版本新增如下回调，用于监控录制 SDK 的网络连接丢失、中断状态。
+
+- `onConnectionLost`：网络连接丢失回调。
+- `onConnectionInterrupted`：网络连接中断回调。
+
+#### 2. 提示首帧出图
+
+为及时获取本地对远端音视频流的接收情况，该版本新增如下回调，通知录制 SDK 成功接收远端音视频首帧。
+
+- `onFirstRemoteAudioFrame`：已接收远端音频首帧回调。
+- `onFirstRemoteVideoDecoded`：已完成远端视频首帧解码回调。
+
+#### 3. 获取流状态
+
+为监控录制 SDK 接收音视频流的状态，该版本新增 `onReceivingStreamStatusChanged` 回调，提示录制 SDK 接收音频流或视频流的状态发生了变化。
+
+#### 4. 获取说话者音量
+
+为监控频道内通话的实时状态，了解说话者的具体信息，该版本新增 `onAudioVolumeIndication` 获取频道内说话者的人数、 用户 ID 及音量等信息。
+
+
+### 问题修复
+
+- 修复了手动模式下，录制 SDK 退出频道后再次进入频道时，转码脚本失败的问题。
+- 修复了调用 `mixedVideoAudio` 时非法参数导致程序崩溃的问题。
+- 修复了在录制高清视频时出现卡顿的问题。
+- 修复了录制视频帧率设置无效的问题。
+- 修复了录制 Java sample code 手动模式编译出错的问题。
+- 修复了使用转码命令 `-f . -m 3` 转码不成功的问题。
+
+
 
 ## 2.3.0 版
 
