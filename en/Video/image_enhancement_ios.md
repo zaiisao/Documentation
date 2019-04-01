@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 10:51:35 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:51:39 GMT+0000 (UTC)
 ---
 # Image Enhancement
 ## Introduction
@@ -42,6 +42,10 @@ options.lighteningContrastLevel = 0;
 
 [self.agoraKit setBeautyEffectOptions:YES options:options];
 ```
+
+## Sample Code
+
+Agora provides an open source sample code that implements image enhancement. You can go to the [OpenLive-iOS Github Repo](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) to download it.
 
 ## Considerations
 This API method has return values. If the method call fails, the return value is < 0.
