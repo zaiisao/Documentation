@@ -3,7 +3,7 @@
 title: 变声与混响
 description: How to adjust voice effect for Android
 platform: Android
-updatedAt: Mon Apr 01 2019 10:59:08 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:59:11 GMT+0000 (UTC)
 ---
 # 变声与混响
 ## 功能描述
@@ -96,6 +96,10 @@ rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_STRENGTH, 78);
 - [`setLocalVoicePitch`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
 - [`setLocalVoiceEqualization`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
 - [`setLocalVoiceReverb`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
+
+## 示例代码
+
+Agora 提供一个实现了变声与混响功能的开源示例代码。你可以前往 [Chatroom Github Repo](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) 下载。
 
 ## 开发注意事项
 
