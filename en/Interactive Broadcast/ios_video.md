@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 01:41:19 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 01:41:33 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for iOS.
@@ -95,6 +95,8 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 3. Navigate to the **Build Phases** tab. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding the new libraries, click the **+** button.
 
+   <img alt="../_images/ios_video_3.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_3.jpg" />
+
    - `AgoraRtcEngineKit.framework`
    - `Accelerate.framework`
    - `SystemConfiguration.framework`
@@ -107,9 +109,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    - `AVFoundation.framework`
    - `CoreML.framework`
 
-   <img alt="../_images/ios_video_3.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_3.jpg" />
-
-   `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
+ `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
 
    <img alt="../_images/ios_video_5.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_5.jpg" />
 
