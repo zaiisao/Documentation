@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 01:34:50 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 01:37:31 GMT+0000 (UTC)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for iOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -91,6 +91,8 @@ updatedAt: Mon Apr 01 2019 01:34:50 GMT+0000 (UTC)
 	<img alt="../_images/ios_video_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_2.jpg" />
 
 3. 打开 **Build Phases** 页签，展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加
+
+	<img alt="../_images/ios_video_3.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_3.jpg" />
  
    - `AgoraRtcEngineKit.framework`
    - `Accelerate.framework`
@@ -104,9 +106,7 @@ updatedAt: Mon Apr 01 2019 01:34:50 GMT+0000 (UTC)
    - `AVFoundation.framework`
    - `CoreML.framework`
 
-	<img alt="../_images/ios_video_3.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_3.jpg" />
-
-	其中，`AgoraRtcEngineKit.framework` 位于下载下来的 SDK 包 **libs** 文件夹下。因此点击 + 后，还需要点击 **Add Other…** ，然后进入到 SDK 的 **libs** 路径下，点击并添加 `AgoraRtcEngineKit.framework`。
+ 其中，`AgoraRtcEngineKit.framework` 位于下载下来的 SDK 包 **libs** 文件夹下。因此点击 + 后，还需要点击 **Add Other…** ，然后进入到 SDK 的 **libs** 路径下，点击并添加 `AgoraRtcEngineKit.framework`。
 
 	<img alt="../_images/ios_video_5.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_5.jpg" />
 
