@@ -3,7 +3,7 @@
 title: 变声与混响
 description: How to adjust voice effect for Android
 platform: Android
-updatedAt: Mon Apr 01 2019 10:59:11 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 11:00:41 GMT+0000 (UTC)
 ---
 # 变声与混响
 ## 功能描述
