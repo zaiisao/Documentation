@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS
-updatedAt: Fri Mar 29 2019 03:28:44 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:33:30 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -20,27 +20,32 @@ The parameters specified in the `setVideoEncoderConfiguration` method are ideal 
 
 ```swift
 // swift
-// Set a VideoEncoderConfiguration instance.
-// See the descriptions of the parameters in API Reference.
-let config = AgoraVideoEncoderConfiguration(size: size, frameRate: frameRate, bitrate: bitrate, orientationMode: orientationMode)
+// Set a VideoEncoderConfiguration instance. See the descriptions of the parameters in API Reference.
+let config = AgoraVideoEncoderConfiguration(size: size, frameRate: frameRate, bitrate: bitrate, orientationMode: orientationMode, degradationPreference: degradationPreference)
 
 agoraKit.setVideoEncoderConfiguration(config)
 ```
 
 ```objective-c
 // objective-c
-// Set a VideoEncoderConfiguration instance.
-// See the descriptions of the parameters in API Reference.
-AgoraVideoEncoderConfiguration *config = [AgoraVideoEncoderConfiguration alloc] initWithSize: size frameRate: frameRate bitrate: bitrate orientationMode: AgoraVideoOutputOrientationModeAdaptative];
+// Set a VideoEncoderConfiguration instance. See the descriptions of the parameters in API Reference.
+AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc] initWithSize: size frameRate: frameRate bitrate: bitrate orientationMode: AgoraVideoOutputOrientationModeAdaptative degradationPreference: AgoraDegradationMaintainQuality];
 
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
 ### API Reference
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Interactive%20Broadcast/rotation_guide_ios.md).
 
 ## Considerations
+
+- Setting [`degradationPreference`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraVideoEncoderConfiguration.html#//api/name/degradationPreference) as `AgoraDegradationMaintainQuality` means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the `minFrameRate` parameter to balance the frame rate and video quality under unreliable network connections:
+
+	- When  `minFrameRate` is relatively low, the frame rate degrades significantly, so the poor network conditions have little impact on the video quality.
+	- When `minFrameRate` is relatively high, the frame rate degrades within a limited range, so the poor network conditions can have huge impact on the video quality.
+
+Do not set the `minFrameRate` parameter to a value greater than `frameRate`. The default value of `minFrameRate` is experiment verified and can satisfy most use scenarios. We do not recommend changing it.
 - If you do not need to set the video profile after joining the channel, you can call the `setVideoEncoderConfiguration` method before the `enableVideo` method to reduce the render time of the first video frame.
 - The Agora SDK may adjust the parameters under poor network conditions. 
 -  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/bitrate).
