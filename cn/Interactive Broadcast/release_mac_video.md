@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Mon Apr 01 2019 09:30:57 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:31:02 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -82,7 +82,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 - 采集时预览或性能偏好设置。该版本新增接口 [`setCameraCaptureConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setCameraCapturerConfiguration:)，通过设置摄像头采集偏好，用户可以根据实际场景选择优先保证设备性能还是视频质量。具体场景及参数选择，请参考 [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setCameraCapturerConfiguration:))。
 
-#### 3. 其他改进
+#### 3. 核心质量改进
 
 - 降低了音频延时
 - 提升了视频质量和稳定性
