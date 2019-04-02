@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Tue Apr 02 2019 01:09:32 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 01:09:35 GMT+0000 (UTC)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
@@ -12,7 +12,48 @@ In social and entertainment scenarios, users often need various voice effects to
 ## Implementation
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/android_audio.md).
 
-The following sample code shows how to change the original voice to Hulk's voice.
+### Use a preset voice changer and reverberation effect
+
+You can use one of the following preset voice changer options by calling `setLocalVoiceChanger`:
+
+- An old man's voice.
+- A little boy's voice.
+- A little girl's voice.
+- Zhu Bajie's voice (Zhu Bajie is a character from Journey to the West who has a voice like a growling bear).
+- Ethereal vocal effects.
+- Hulk's voice.
+
+```java
+// Sets to an old man's voice.
+mRtcEngine.setLocalVoiceChanger(VOICE_CHANGER_OLDMAN);
+
+// Sets to the user's original voice.
+mRtcEngine.setLocalVoiceChanger(VOICE_CHANGER_OFF);
+```
+
+You can use one of the following preset reverberation effects by calling `setLocalVoiceReverbPreset`:
+
+- Pop music
+- R&B
+- Rock music
+- Hip-hop
+- Pop concert
+- Karaoke
+- Recording studio
+
+```java
+// Sets the preset reverberation effect to pop music.
+mRtcEngine.setLocalVoiceReverbPreset(AUDIO_REVERB_POPULAR);
+
+// Turns off reverberation.
+mRtcEngine.setLocalVoiceReverbPreset(AUDIO_REVERB_OFF);
+```
+
+### Customize the voice effects
+
+You can also customize the voice effects by adjusting the voice pitch, equalization, and reverberation settings.
+
+The following sample code shows how to change from the original voice to Hulk's voice.
 
 ```java
 // Sets the pitch. The value ranges between 0.5 and 2.0. The lower the value, the lower the pitch. The default value is 1.0, which is the original pitch.
@@ -51,9 +92,11 @@ rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_STRENGTH, 78);
 
 ### API Reference
 
-- [setLocalVoicePitch](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
-- [setLocalVoiceEqualization](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
-- [setLocalVoiceReverb](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
+- [`setLocalVoiceChanger`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ade6883c7878b7a596d5b2563462597dd)
+- [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a10dd25bc8e129512cd6727133b7fc42f)
+- [`setLocalVoicePitch`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
+- [`setLocalVoiceEqualization`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
+- [`setLocalVoiceReverb`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
 
 ## Considerations
 The API methods have return values. If the method call fails, the return value is < 0.
