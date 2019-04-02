@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Tue Apr 02 2019 09:55:31 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 09:55:36 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -27,7 +27,7 @@ v2.4.0 is released on April 1, 2019.
 
 ### Before Getting started
 
-If you integrate the SDK by using CocoaPods，ensure that you run `pod update` in your Terminal before `pod install`. If you prefer to specify the SDK version, ensure that you specify it in the format of `AgoraRtcEngine_macOS 2.4.0.1` in the Podfile.
+If you integrate the SDK by using CocoaPods，ensure that you run `pod update` in your Terminal before `pod install`. If you prefer to specify the SDK version, ensure that you specify it in the Podfile.
 
 ### New Features
 
