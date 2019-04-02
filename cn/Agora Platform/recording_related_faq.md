@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Tue Apr 02 2019 09:07:41 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 09:07:48 GMT+0000 (UTC)
 ---
 # 录制相关
 ## 录制 SDK
@@ -105,7 +105,7 @@ updatedAt: Tue Apr 02 2019 09:07:41 GMT+0000 (UTC)
 
 ### 录制出来的视频，打开播放黑屏，但是声音正常
 
-可能是由于使用了不支持的播放器，请参考[播放器列表](../../cn/API%20Reference/recording_java.md)。
+可能是由于使用了不支持的播放器，请参考[播放器列表](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_m_i_x_e_d___a_v___c_o_d_e_c___t_y_p_e.html)。
 
 ### 录制出来的视频倒置
 
