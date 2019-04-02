@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Tue Apr 02 2019 09:13:33 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 09:16:31 GMT+0000 (UTC)
 ---
 # Recording-related Issues
 ## Agora Recording SDK
@@ -18,7 +18,7 @@ The recorded audio and video files are independent; the audio is in AAC format, 
 
 ### Why can’t I play the MPEG-4 file after the recording is complete?
 
-This is usually because the player is not supported. Refer to the [Supported Players List](../../en/API%20Reference/recording_java.md).
+This is usually because the player is not supported. Refer to the [Supported Players List](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#af8f3a6529f57ccfa3621014808d1283a).
 
 ### Why can’t I play the recorded video files after enabling encryption mode?
 
@@ -97,7 +97,7 @@ If the same communication mode is used, check the following parameters for the c
 
 ### Why is there a black screen when playing the recorded video, but the sound is normal?
 
-This is usually because the player is not supported. Refer to the [Supported Players List](../../en/API%20Reference/recording_java.md).
+This is usually because the player is not supported. Refer to the [Supported Players List](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#af8f3a6529f57ccfa3621014808d1283a).
 
 ### Why is the recorded video inverted?
 
