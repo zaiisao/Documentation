@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Tue Apr 02 2019 10:07:52 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 10:07:56 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -25,6 +25,10 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 ## **2.4.0 版**
 
 该版本于 2019 年 4 月 1 日发布。新增特性、功能改进与修复问题列表详见下文。
+
+### **升级必看**
+
+如果你希望通过 CocoaPods 自动导入库，请确保在运行 `pod install` 前，先运行 `pop update` 更新本地 CocoaPods 库，以获取最新版的 SDK。如果你希望在 CocoaPods 中指定 SDK 版本号，请在 Podfile 中指定。
 
 ### **新增特性**
 
