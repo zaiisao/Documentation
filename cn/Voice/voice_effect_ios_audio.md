@@ -1,11 +1,11 @@
 
 ---
-title: 调整音调、音色
+title: 变声与混响
 description: How to adjust voice effect for iOS
 platform: iOS
-updatedAt: Mon Mar 18 2019 04:05:33 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 01:10:37 GMT+0000 (UTC)
 ---
-# 调整音调、音色
+# 变声与混响
 ## 功能描述
 在社交娱乐应用中，为增加产品的趣味性和互动性，用户常常需要变声和混响效果。Agora 提供多种预置的变声和混响效果，你也可以灵活定制自己想要的声音，比如设置音调、均衡和混响等。
 ## 实现方法
