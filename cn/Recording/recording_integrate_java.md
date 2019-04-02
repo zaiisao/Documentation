@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Java
-updatedAt: Tue Apr 02 2019 03:03:56 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 03:04:12 GMT+0000 (UTC)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
@@ -44,7 +44,7 @@ updatedAt: Tue Apr 02 2019 03:03:56 GMT+0000 (UTC)
 <td>这台 Linux 服务器要接入公网，有公网 IP</td>
 </tr>
 <tr><td>带宽</td>
-<td>根据需要同时录制的频道数量和频道内情况确定所需带宽。以下数据可供参考：录制一个分辨率为 640*480 的画面需要的带宽约为 500kbps；录制一个有两个人的频道则需 1Mbps；同时录制 100 个这样的频道，需要带宽为 100Mbps。关于分辨率和带宽的关系，详见 <a href="../../cn/API%20Reference/recording_cpp.md"><span>录制 API</span></a>。</td>
+<td>根据需要同时录制的频道数量和频道内情况确定所需带宽。以下数据可供参考：录制一个分辨率为 640*480 的画面需要的带宽约为 500kbps；录制一个有两个人的频道则需 1Mbps；同时录制 100 个这样的频道，需要带宽为 100Mbps。关于分辨率和带宽的关系，详见 <a href="https://docs.agora.io/cn/Recording/API%20Reference/recording_java/index.html"><span>录制 API</span></a>。</td>
 </tr>
 <tr><td>域名解析</td>
 <td>服务器允许访问 qos.agoralab.co，否则 SDK 无法上报必要的统计数据。</td>
