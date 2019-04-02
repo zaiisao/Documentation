@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Tue Apr 02 2019 10:07:17 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 10:07:22 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -23,7 +23,8 @@ iOS 视频 SDK 支持两种主要场景:
 
 ### **升级必看**
 
-Agora Video SDK for iOS 在 2.4.0 版本新增 `CoreML.framework` 库依赖。请确保在集成时添加该库，详见[集成客户端](../../cn/Video/ios_video.md)。
+- Agora Video SDK for iOS 在 2.4.0 版本新增 `CoreML.framework` 库依赖。请确保在集成时添加该库，详见[集成客户端](../../cn/Video/ios_video.md)。
+- 如果你希望通过 CocoaPods 自动导入库，请确保在运行 `pod install` 前，先运行 `pop update` 更新本地 CocoaPods 库，以获取最新版的 SDK。如果你希望在 CocoaPods 中指定 SDK 版本号，请在 Podfile 中指定。
 
 ### **新增特性**
 
