@@ -3,15 +3,15 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to adjust the voice effect on iOS
 platform: iOS
-updatedAt: Tue Apr 02 2019 01:09:55 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 01:10:01 GMT+0000 (UTC)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
 
-In social and entertainment scenarios, users often need various voice effects to enhance the interactive experiences. Agora provides methods to flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides multiple preset voice changers and reverberation effects. You can also flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_audio.md).
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_audio.md).
 
 The following sample code shows how to set the FM voice effect.
 
@@ -92,5 +92,5 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 - [setLocalVoiceReverbOfType](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbOfType:withValue:)
 
 ## Considerations
-The API methods have return values. If the method fails, the return value is < 0.
+The API methods have return values. If the method call fails, the return value is < 0.
 
