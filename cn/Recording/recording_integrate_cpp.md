@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: CPP
-updatedAt: Mon Mar 04 2019 09:38:06 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 02:57:10 GMT+0000 (UTC)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
