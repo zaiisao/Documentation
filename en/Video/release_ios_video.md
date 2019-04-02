@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Tue Apr 02 2019 09:56:26 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 09:56:30 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -24,7 +24,7 @@ v2.4.0 is released on April 1, 2019.
 ### Before Getting Started
 
 - Agora Video SDK for iOS adds the library dependency on `CoreML.framework` in v2.4.0. Ensure that you add this library when integrating the SDK. For details, see [Integrate the SDK](../../en/Video/ios_video.md).
-- If you integrate the SDK by using CocoaPods，ensure that you run `pod update` in your Terminal before `pod install`. If you prefer to specify the SDK version, ensure that you specify it in the format of `AgoraRtcEngine_iOS 2.4.0.1` in the Podfile.
+- If you integrate the SDK by using CocoaPods，ensure that you run `pod update` in your Terminal before `pod install`. If you prefer to specify the SDK version, ensure that you specify it in the Podfile.
 
 ### New Features
 
