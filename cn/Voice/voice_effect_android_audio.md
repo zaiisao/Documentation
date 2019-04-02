@@ -3,13 +3,54 @@
 title: 变声与混响
 description: How to adjust voice effect for Android
 platform: Android
-updatedAt: Tue Apr 02 2019 01:10:22 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 01:10:25 GMT+0000 (UTC)
 ---
 # 变声与混响
 ## 功能描述
 在社交娱乐应用中，为增加产品的趣味性和互动性，用户常常需要变声和混响效果。Agora 提供多种预置的变声和混响效果，你也可以灵活定制自己想要的声音，比如设置音调、均衡和混响等。
 ## 实现方法
 开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Voice/android_audio.md)。
+
+### 使用预置效果
+
+通过 `setLocalVoiceChanger` 可以选择以下预设的语音变声效果：
+
+- 老男孩
+- 小男孩
+- 小女孩
+- 猪八戒
+- 空灵
+- 绿巨人
+
+```java
+// 设置变声效果为老男孩
+mRtcEngine.setLocalVoiceChanger(VOICE_CHANGER_OLDMAN);
+
+// 关闭变声效果
+mRtcEngine.setLocalVoiceChanger(VOICE_CHANGER_OFF);
+```
+
+通过 `setLocalVoiceReverbPreset` 可以选择以下预设的语音混响效果：
+
+- 流行
+- R&B
+- 摇滚
+- 嘻哈
+- 演唱会
+- KTV
+- 录音棚
+
+```java
+// 设置混响效果为流行
+mRtcEngine.setLocalVoiceReverbPreset(AUDIO_REVERB_POPULAR);
+
+// 关闭混响效果
+mRtcEngine.setLocalVoiceReverbPreset(AUDIO_REVERB_OFF);
+```
+
+### 定制变声和混响效果
+
+如果预置效果无法满足你的需求，你也可以自行调整音调、均衡和混响设置。
 
 你可以根据以下方法把原始声音变成绿巨人霍克的声音。
 
@@ -50,6 +91,8 @@ rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_STRENGTH, 78);
 
 ### API 参考
 
+- [`setLocalVoiceChanger`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ade6883c7878b7a596d5b2563462597dd)
+- [`setLocalVoiceReverbPreset`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a10dd25bc8e129512cd6727133b7fc42f)
 - [`setLocalVoicePitch`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
 - [`setLocalVoiceEqualization`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
 - [`setLocalVoiceReverb`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
