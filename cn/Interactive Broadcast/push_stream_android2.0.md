@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Wed Apr 03 2019 02:30:08 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 02:30:16 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -63,7 +63,7 @@ LiveTranscoding.TranscodingUser user = new LiveTranscoding.TranscodingUser();
 user.uid = 123456;
 transcoding.addUser(user);
 user.x = 0;
-user.audioChannel = 2;
+user.audioChannel = 0;
 user.y = 0;
 user.width = 640;
 user.height = 720;
