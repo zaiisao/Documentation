@@ -64,7 +64,8 @@ This page contains information on how to prepare the development environment bef
   </tr>
 </table>
 
-> - To use Safari on iOS 12.2+ or macOS Mojave 10.14.4+, upgrade to Agora Web SDK v2.6.
+> - To use Safari on iOS 12.2 or later, upgrade to Agora Web SDK v2.6.
+> - To use Safari 12.1 or later on macOS, upgrade to Agora Web SDK v2.6.
 > - The Agora Web SDK v2.5 or later also supports Google Chrome 49 on Windows XP.
 
 2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).

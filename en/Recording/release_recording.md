@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Tue Apr 02 2019 09:27:42 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 09:27:48 GMT+0000 (UTC)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -315,17 +315,14 @@ v2.1.0 is released on March 7, 2018.
 
 v2.0 is released on November 21, 2017. 
 
-For 2.0 Beta documentation, see [2.0 Document Center](https://docs.agora.io/en/2.0/addons/Recording/Quickstart/recording?platform=All%20Platforms).
-
 -   Optimizes the raw data to support various formats:
-    -   Modifies the <code>decodeAudio</code> and <code>decodeVideo</code> parameters, and adds the <code>VideoJpgFrame</code> struct. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md).
-    -   Modifies the <code>getAudioFrame</code> and <code>getVideoFrame</code> parameters. For details, see [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
--   Adds the <code>captureInterval</code> parameter to set the time interval of capturing screenshots. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md) and [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
--   Adds the <code>streamType</code> parameter to support different video stream types. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md) and [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
--   Adds the <code>isVideoOnly</code> parameter. For details, see [Recording API Beta](../../en/API%20Reference/recording_java.md) and [Recording Quickstart](../../en/API%20Reference/recording_java-1.md).
--   The transcoding scripts, once used, generate a convert.log file under the same path as the voice/video file. For details, see [How to Record](https://docs.agora.io/en/2.0/addons/Recording/API%20Reference/recording?platform=All%20Platforms).
--   Adds the video rotating information in `UID_HHMMSSMS.txt`. For details, see [How to Record](https://docs.agora.io/en/2.0/addons/Recording/API%20Reference/recording?platform=All%20Platforms).
-
+    -   Modifies the <code>decodeAudio</code> and <code>decodeVideo</code> parameters, and adds the <code>VideoJpgFrame</code> struct.
+    -   Modifies the <code>getAudioFrame</code> and <code>getVideoFrame</code> parameters. 
+-   Adds the <code>captureInterval</code> parameter to set the time interval of capturing screenshots. 
+-   Adds the <code>streamType</code> parameter to support different video stream types. 
+-   Adds the <code>isVideoOnly</code> parameter. 
+-   The transcoding scripts, once used, generate a convert.log file under the same path as the voice/video file. 
+-   Adds the video rotating information in `UID_HHMMSSMS.txt`. 
 
 ## v1.3 
 

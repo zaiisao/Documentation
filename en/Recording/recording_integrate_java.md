@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: How to integrate recording SDK for Java
 platform: Java
-updatedAt: Tue Apr 02 2019 03:06:52 GMT+0000 (UTC)
+updatedAt: Tue Apr 02 2019 03:06:56 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora Recording SDK.
@@ -44,7 +44,7 @@ The following table lists the basic requirements for installing the Recording SD
 <li>To record 100 channels, you need a bandwidth of 100 Mbps.</li>
 </ul>
 </div>
-<p>For detailed bandwidth data, see <a href="../../en/API%20Reference/recording_cpp.md"><span>Recording API</span></a>.</p>
+<p>For detailed bandwidth data, see <a href="https://docs.agora.io/en/Recording/API%20Reference/recording_java/index.html"><span>Recording API</span></a>.</p>
 </td>
 </tr>
 </tbody>
