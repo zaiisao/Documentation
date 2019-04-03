@@ -71,7 +71,7 @@ See the table below for the web browser support of the Agora Web SDK:
 
 > - Upgrade to Agora Web SDK v2.6 in the following scenarios:
 >   - Safari on iOS 12.1.4 or later.
->   - Safari 12.1 or later on macOS
+>   - Safari 12.1 or later on macOS.
 > - The Agora Web SDK v2.5 or later also supports Google Chrome 49 on Windows XP.
 
 > To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
