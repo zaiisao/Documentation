@@ -3,7 +3,7 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 11 2019 09:23:20 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 06:36:17 GMT+0000 (UTC)
 ---
 # Agora Video Overview
 The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
@@ -18,10 +18,11 @@ The Agora Native SDK for Video Call boasts a flexible combination of functions f
 
 | Function                              | Description                                                  | Scenario                                                     |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------- |
-| Audio Mixing          | Sends the local and online audio with the user's voice to other audience members in the channel. | <li>Online KTV. <li>Interactive music classes. |
-| Screen Sharing             | Enables hosts to share their screen to the audience in the channel.                         | Interactive online classes.                                                  |
-| Modify the Raw Data   | Enables developers to obtain and modify the raw voice or video data and to create special effects, such as a voice change. | <li>To change the voice in an online chatroom. <li>Image enhancement in a video call.                  |
-| Customize the Video Source and Renderer | Enables customization of the video sources and renderers. This allows users to use self-built cameras and videos from screen sharing or files to process videos, such as for image enhancement and filtering. | <li>To use a customized image enhancement library or pre-processing library.<li>To customize the application's built-in image and video modules.<li>To use other video sources, such as a recorded video.<li>To provide flexible device management for exclusive video capture devices to avoid conflicts with other services. |
+| Audio mixing          | Sends the local and online audio with the user's voice to other users in the channel. | <li>Online KTV. <li>Interactive music classes. |
+| Screen sharing             | Enables the local user to share the screen to other users in the channel. Supports specifying which screen or which window to share, and supports specifying the sharing region.            | Interactive online classes.     |
+| Basic image enhancement     | Sets basic beauty effects, including skin smoothening, whitening, and cheek blushing. | Image enhancement in a video call.    |
+| Modify the raw data   | Enables developers to obtain and modify the raw voice or video data and to create special effects, such as a voice change. | <li>To change the voice in an online chatroom. <li>Image enhancement in a video call.                  |
+| Customize the video source and renderer | Enables customization of the video sources and renderers. This allows users to use self-built cameras and videos from screen sharing or files to process videos, such as for image enhancement and filtering. | <li>To use a customized image enhancement library or pre-processing library.<li>To customize the application's built-in image and video modules.<li>To use other video sources, such as a recorded video.<li>To provide flexible device management for exclusive video capture devices to avoid conflicts with other services. |
 
 ## Key Properties
 
@@ -37,43 +38,11 @@ The Agora Native SDK for Video Call boasts a flexible combination of functions f
 
 The Agora Native SDK for Video Call is supported on platforms such as iOS, Android, Windows, macOS, Linux, Web, and WeChat Mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
 
-<table>
-  <tr>
-    <th>Platform</th>
-    <th>Supported Version</th>
-  </tr>
-  <tr>
-    <td>Android</td>
-		<td><p>4.1+</p>
-		<p>The Android SDK supports the following architecture:</p>
-			<ul><li>ARMv7</li>
-				<li>ARM64</li>
-				<li>X86</li>
-				</td>
-  </tr>
-  <tr>
-    <td>iOS</td>
-    <td>8.0+</td>
-  </tr>
-	  <tr>
-    <td>Windows</td>
-    <td>XP SP3+</td>
-  </tr>
-  <tr>
-    <td>macOS</td>
-    <td>10.0+</td>
-  </tr>
-  <tr>
-    <td>WeChat Mini-programs</td>
-    <td>Support</td>
-  </tr>
-  <tr>
-    <td>Web</td>
-		<td><ul><li>Chrome 58+</li>
-			<li>Firefox 56+</li>
-			<li>Safari 11+</li>
-			<li>Opera 45+</li>
-			<li>QQ 10+</li>
-            <li>360 Security Browser 9.1+</li></ul></td>
-  </tr>
-</table>
+| Platform             | Supported Version                                            |
+| -------------------- | ------------------------------------------------------------ |
+| Android              | 4.1+<br>The Android SDK supports the following architecture:<li>ARMv7<li>ARM64<li>X86 |
+| iOS                  | 8.0+                                                         |
+| Windows              | XP SP3+                                                      |
+| macOS                | 10.0+                                                        |
+| WeChat Mini-Programs | Support                                                      |
+| Web                  | <li>Chrome 58+<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
