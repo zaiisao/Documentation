@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 11:06:53 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 11:06:56 GMT+0000 (UTC)
 ---
 # 美颜
 ## 功能描述
@@ -44,6 +44,10 @@ options.lighteningContrastLevel = 0;
 
 [self.agoraKit setBeautyEffectOptions:YES options:options];
 ```
+
+## 示例代码
+
+Agora 提供已实现美颜功能的开源示例代码。你可以前往[OpenLive-iOS Github Repo](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS)下载。
 
 ## 开发注意事项
 以上方法有返回值，返回值小于 0 表示方法调用失败。
