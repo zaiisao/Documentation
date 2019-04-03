@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Wed Apr 03 2019 03:39:51 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 03:39:56 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -67,7 +67,7 @@ config.videoCodecProfile = HIGH;
 config.transcodingUser = new TranscodingUser[config.userCount];
 config.transcodingUser[0].uid = 123456; //uid 应和 joinChannel() 输入的 uid 保持一致
 config.transcodingUser[0].x = 0;
-config.transcodingUser[0].audioChannel = 2;
+config.transcodingUser[0].audioChannel = 0;
 config.transcodingUser[0].y = 0;
 config.transcodingUser[0].width = 640;
 config.transcodingUser[0].height = 720;
