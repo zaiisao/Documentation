@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Windows
-updatedAt: Wed Apr 03 2019 03:56:39 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 03:56:43 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -59,7 +59,7 @@ config.videoCodecProfile = HIGH;
 config.transcodingUser = new TranscodingUser[config.userCount];
 config.transcodingUser[0].uid = 123456; // The uid must be identical to the uid used in joinChannel().
 config.transcodingUser[0].x = 0;
-config.transcodingUser[0].audioChannel = 2;
+config.transcodingUser[0].audioChannel = 0;
 config.transcodingUser[0].y = 0;
 config.transcodingUser[0].width = 640;
 config.transcodingUser[0].height = 720;
