@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Fri Mar 29 2019 06:12:21 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 02:50:40 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -81,6 +81,68 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](../../en/Voice/websdk_related_faq.md).
+
+## v2.6.0
+
+v2.6.0 is released on April 3, 2019.
+
+### New Features
+
+#### 1. Audio effect file playback and management
+
+Supports playing multiple audio effect files at the same time, and managing the files. You can set the volume, pause/stop the playback, and preload the audio effect file. See [Play Audio Effects/Audio Mixing](../../en/Voice/effect_mixing_web.md).
+
+#### 2. Screen sharing on Chrome without extension
+
+Supports screen sharing on Chrome 72 and later without using the Chrome extension. See [Share the Screen](../../en/Voice/screensharing_web.md).
+
+#### 3. Other new features
+
+- Supports Firefox ESR 60.1.0 and later on PC.
+- Supports releasing the audio mixing cache: adds the `cacheResource` parameter in the `Stream.startAudioMixing` method to set whether or not to store the audio mixing file in the cache.
+- Adds the `AgoraRTC.getSupportedCodec` method to get the supported codecs of the web browser.
+- Adds the `stream-updated` callback in  `Client.on` to notify users when the remote stream adds or removes a track.
+- Supports using URLs with Chinese characters in `startAudioMixing.`
+
+### Improvements
+
+- Improves the user experience in unreliable network conditions.
+- Adds the `stream-fallback` callback in `Client.on` to notify the user when the remote video stream falls back to audio-only when the network conditions worsen or switches back to video when the network conditions improve.
+
+### Issues Fixed
+
+- The `switchDevice` method fails to switch between microphones on Chrome 72.
+- Muting audio/video does not take effect after calling the `addTrack` method.
+- After the audio mixing stops, if you call the `switchDevice` method and start audio mixing again, the remote user cannot hear the audio mixing.
+- Users with the string UID cannot receive the `active-speaker` callback.
+- Calling the `muteAudio` and  `muteVideo` methods immediately after subscribing to the remote stream might not take effect.
+- After calling the `replaceTrack` method to switch the video track on Windows, if you call the `startAudioMixing` method, the remote user cannot hear the audio mixing.
+
+### API Changes
+
+#### New APIs
+
+- [`AgoraRTC.getSupportedCodec`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/globals.html?transId=2.6#getsupportedcodec)
+- [`Stream.playEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#playeffect)
+- [`Stream.stopEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#stopeffect)
+- [`Stream.pauseEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#pauseeffect)
+- [`Stream.resumeEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#resumeeffect)
+- [`Stream.setVolumeOfEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#setvolumeofeffect)
+- [`Stream.preloadEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#preloadeffect)
+- [`Stream.unloadEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#unloadeffect)
+- [`Stream.getEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#geteffectsvolume)
+- [`Stream.setEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#seteffectsvolume)
+- [`Stream.stopAllEffects`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#stopalleffects)
+- [`Stream.pauseAllEffects`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#pausealleffects)
+- [`Stream.resumeAllEffects`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#resumealleffects)
+- New callbacks added in [`Client.on`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.client.html?transId=2.6#on): 
+  - `stream-fallback`
+  - `stream-updated`
+
+#### API updates
+
+- Adds the `cacheResource` parameter in the [`Stream.startAudioMixing`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#startaudiomixing) method.
+
 
 ## v2.5.2
 
