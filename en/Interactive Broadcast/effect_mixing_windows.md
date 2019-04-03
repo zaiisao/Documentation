@@ -3,13 +3,13 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Thu Mar 14 2019 03:51:44 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 06:27:32 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
 In a call or live broadcast, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
 
-Before proceeding, ensure that you have prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md) for more information.
+Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
 
 ## Play Audio Effect Files
 
@@ -84,7 +84,7 @@ int nRet = rep.unloadEffect(nSoundID);
 ### Considerations
 
 -  Preloading the audio effect is not mandatory. Agora recommends you preload the audio effect to improve the efficiency or to play the audio effect multiple times.
-- The API methods have return values. If the method fails, the return value is < 0.
+- The API methods have return values. If the method call fails, the return value is < 0.
 
 ## Audio Mixing
 
@@ -95,6 +95,8 @@ Agora audio mixing supports the following options:
 	- Mix the music file with the audio captured by the microphone and send it to other users.
 	- Replace the audio captured by the microphone with the music file.
 - Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
+- State change notification: reports when the state of the audio mixing file changes, for example when the audio mixing file pauses playing or resumes playing.
+
 
 ### Implementation
 
@@ -125,8 +127,9 @@ int nRet = rep.stopAudioMixing();
 
 - [`startAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a13106dd42b618ab9d1a03f7ea1bc4f2f)
 - [`stopAudioMixng`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1e7955a19257fe8388f79213a1b7ad5b)
+- [`onAudioMixingStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a298389513bfaa50af4277fc3296e3f22)
 
 ### Considerations
 
 - Ensure that you call the methods when you are in the channel.
-- The API methods have return values. If the method fails, the return value is < 0.
+- The API methods have return values. If the method call fails, the return value is < 0.
