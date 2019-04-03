@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Mar 29 2019 06:11:49 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 02:50:03 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -82,20 +82,72 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 更多问题，详见 [Web 常见问题集](../../cn/Audio%20Broadcast/websdk_related_faq.md)。
 
-## 2.5.2 版
+## 2.6.0 版
 
-该版本于 2019 年 2 月 28 日发布。修复问题见下文。
+该版本于 2019 年 4 月 3 日发布。新增功能及修复问题详见下文。
+
+### 新增功能
+
+#### 1. 音效文件播放和管理
+
+新增一组方法支持在人声中同时播放效果音，支持同时播放多个音效文件，且支持对音效文件的管理，包括调节音量、暂停/停止播放、预加载音效文件等功能，详见[播放音效/音乐混音](https://docs.agora.io/cn/Interactive%20Broadcast/effect_mixing_web?platform=Web)。
+
+#### 2. Chrome 浏览器无插件屏幕共享
+
+Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进行屏幕共享](https://docs-preview.agoralab.co/cn/Video/screensharing_web?platform=Web&versionId=ca60b350-43d9-11e9-96ec-3f1aa1aa7938#a-name-chrome-a-chrome)。
+
+#### 3. 其他新增功能
+
+- 支持 PC 端 Firefox ESR 60.1.0 及以上版本
+- 支持手动释放混音缓存：在 `Stream.startAudioMixing` 中新增 `cacheResource` 参数用于设置是否缓存混音文件
+- 新增 `AgoraRTC.getSupportedCodec` 方法，可检查浏览器支持的编解码格式。
+- `Client.on` 新增 `stream-updated` 回调，当远端用户的音视频流进行 `addTrack` 或 `removeTrack` 操作时会触发该回调。
+- 混音功能（`startAudioMixing`）支持使用包含中文字符的 URL 作为音乐文件的地址
+
+### 改进
+
+该版本优化了弱网下的音视频流回退体验，同时在 `Client.on` 中新增 `stream-fallback` 回调，在开启音视频流回退（`setStreamFallbackOption`）的情况下，当订阅的流从音视频流回退为音频流或者从音频流恢复为音视频流时可以收到回调通知。
 
 
-### 问题修复
+### 修复问题
 
-- 修复了在 Chrome 72 及以上调用 `Stream.switchDevice` 无法切换音频的问题。
-- 修复了如果未设置 `Client.subscribe` 的可选参数会报错的问题。
+- 修复在 Chrome 72 上使用 `switchDevice` 无法切换麦克风的问题
+- 修复调用 `addTrack` 后 mute 操作不生效的问题
+- 修复停止混音后调用 `switchDevice` 然后再次开始混音，远端听不到混音音乐的问题
+- 修复使用 String 类型 UID 的通话/直播无法收到 `active-speaker` 回调的问题
+- 修复订阅远端流后立即调用 `muteAudio` 或 `muteVideo` 可能不生效的问题
+- 修复在 Windows 平台调用 `replaceTrack` 切换视频轨道后调用 `startAudioMixing` 远端无法听到混音音乐的问题
 
+### API 整理
+
+本次发版 API 变动如下。
+
+#### 新增
+
+- [`AgoraRTC.getSupportedCodec`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/globals.html?transId=2.6#getsupportedcodec)
+- [`Stream.playEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#playeffect)
+- [`Stream.stopEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#stopeffect)
+- [`Stream.pauseEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#pauseeffect)
+- [`Stream.resumeEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#resumeeffect)
+- [`Stream.setVolumeOfEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#setvolumeofeffect)
+- [`Stream.preloadEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#preloadeffect)
+- [`Stream.unloadEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#unloadeffect)
+- [`Stream.getEffectsVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#geteffectsvolume)
+- [`Stream.setEffectsVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#seteffectsvolume)
+- [`Stream.stopAllEffects`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#stopalleffects)
+- [`Stream.pauseAllEffects`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#pausealleffects)
+- [`Stream.resumeAllEffects`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#resumealleffects)
+- [`Client.on`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.client.html?transId=2.6#on) 新增以下事件：
+  - `stream-fallback`
+  - `stream-updated`
+
+#### 修改
+
+- [`Stream.startAudioMixing`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#startaudiomixing) 增加 `cacheResource` 参数
 
 ## 2.5.1 版
 
-该版本于 2019 年 2 月 19 日发布。新增功能、改进及修复问题详见下文。
+该版本于 2019 年 2 月 11 日发布。新增功能、改进及修复问题详见下文。
 
 ### 新增功能
 
@@ -141,19 +193,17 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 相应新增 `client-role-changed` 回调，用于通知用户角色的改变。
 
-
 #### 5. 获取 SDK 与服务器的连接状态
 
 - 新增 `Client.getConnectionState` 方法，用于获取 SDK 与服务器的连接状态。
 - 新增 `connection-state-change` 回调，用于通知连接状态的变化。
-
 
 #### 6. 其他新增功能
 
 - 新增 `Stream.isPlaying` 方法，用于检测音视频流当前是否在播放状态。
 - `Client.on` 中新增以下回调：
   - `peer-online` ：通知应用程序有其他用户/主播上线。
-  - `stream-reconnect-start` ：通知应用程序 SDK 开始重新发布/订阅音视频流。
+  - `stream-reconnect-start` ：通知应用程序 SDk 开始重新发布/订阅音视频流。
   - `stream-reconnect-end` ：通知应用程序重新发布/订阅音视频流已结束。
   - `exception` ：通知应用程序频道内的异常事件。
 - `Stream.on` 中新增以下回调：
@@ -188,10 +238,10 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - [`Client.setClientRole`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole)
 - [`Client.getConnectionState`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getconnectionstate)
 - [`Stream.isPlaying`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#isplaying)
-- [`Stream.muteAudio`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#muteaudio)
-- [`Stream.unmuteAudio`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#unmuteaudio)
-- [`Stream.muteVideo`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#mutevideo)
-- [`Stream.unmuteVideo`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#unmutevideo)
+- [`Stream.muteAudio`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#muteAudio)
+- [`Stream.unmuteAudio`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#unmuteAudio)
+- [`Stream.muteVideo`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#muteVideo)
+- [`Stream.unmuteVideo`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#unmuteVideo)
 - [`Client.on`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) 新增以下事件：
   - `streamInjectedStatus`
   - `client-role-changed`
@@ -211,6 +261,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - [`Stream.setAudioMixingPosition`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudiomixingposition) 方法增加 `callback` 参数
 - [`Stream.play`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) 方法增加 `muted` 参数
 - [`Client.on`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html?#on) 以下事件名称修改：
+
 | 原事件名               | 现事件名                 |
 | ---------------------- | ------------------------ |
 | networkTypeChanged     | network-type-changed     |
