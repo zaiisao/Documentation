@@ -65,8 +65,9 @@ updatedAt: Fri Mar 29 2019 07:15:39 GMT+0000 (UTC)
 </table>
 
 > - Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
-> - 如需在 iOS 12.2 及以上版本使用 Safari 浏览器， 必须升级至 Agora Web SDK 2.6。
-> - 如需在 macOS 上使用 Safari 12.1 及以上版本，必须升级至 Agora Web SDK 2.6。
+> - 以下场景中请务必将 Web SDK 升级至 2.6:
+>   - iOS 12.1.4 及以上版本使用 Safari 浏览器
+>   - macOS 上使用 Safari 12.1 及以上版本
 
 2. 请确保已打开特定端口，详见[防火墙说明](../../cn/Agora%20Platform/firewall.md) 。
 3. 请确保你已知悉发版说明中列出的问题，详见[已知问题和局限](../../cn/Audio%20Broadcast/release_web_video.md) 及[常见问题回答](../../cn/Audio%20Broadcast/websdk_related_faq.md)。

@@ -70,8 +70,9 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 </table>
 
 > - Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
-> - 如需在 iOS 12.2 及以上版本使用 Safari 浏览器， 必须升级至 Agora Web SDK 2.6。
-> - 如需在 macOS 上使用 Safari 12.1 及以上版本，必须升级至 Agora Web SDK 2.6。
+> - 以下场景中请务必将 Web SDK 升级至 2.6:
+>   - iOS 12.1.4 及以上版本使用 Safari 浏览器
+>   - macOS 上使用 Safari 12.1 及以上版本
 
 > 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
 
