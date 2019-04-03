@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: iOS,macOS
-updatedAt: Wed Apr 03 2019 03:56:12 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 03:56:18 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -49,7 +49,7 @@ The following figure shows a typical CDN-pushing scenario.
 AgoraLiveTranscodingUser *user = [[AgoraLiveTranscodingUser alloc] init];
 user.uid = 12345;
 user.rect = CGRectMake(0, 0, 640, 720);
-user.audioChannel = 2;
+user.audioChannel = 0;
 
 AgoraRtcEngineKit *rtcEngine = [AgoraRtcEngineKit sharedEngineWithAppId:@"" delegate:nil];
 AgoraLiveTranscoding *transcoding = [[AgoraLiveTranscoding alloc] init];
