@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Android
-updatedAt: Wed Apr 03 2019 03:50:24 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 03:50:29 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -46,7 +46,7 @@ The following figure shows a typical CDN-pushing scenario.
 // CDN transcoding settings.
 LiveTranscoding config;
 config.audioSampleRate = TYPE_44100;
-config.audioChannels = 0;
+config.audioChannels = 2;
 // config.audioBitrate
 config.width = 16;
 config.height = 16;
