@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Android
-updatedAt: Wed Apr 03 2019 03:55:49 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 03:55:54 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -60,7 +60,7 @@ LiveTranscoding.TranscodingUser user = new LiveTranscoding.TranscodingUser();
 user.uid = 123456;
 transcoding.addUser(user);
 user.x = 0;
-user.audioChannel = 2;
+user.audioChannel = 0;
 user.y = 0;
 user.width = 640;
 user.height = 720;
