@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: macOS,iOS
-updatedAt: Wed Apr 03 2019 03:46:00 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 03:46:06 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -49,7 +49,7 @@ user.audioChannel = 0;
 AgoraRtcEngineKit *rtcEngine = [AgoraRtcEngineKit sharedEngineWithAppId:@"" delegate:nil];
 AgoraLiveTranscoding *transcoding = [[AgoraLiveTranscoding alloc] init];
 transcoding.audioSampleRate = AgoraAudioSampleRateType44100;
-transcoding.audioChannels = 0;
+transcoding.audioChannels = 2;
 //config.audioBitrate
 transcoding.size = CGSizeMake(16, 16);
 transcoding.videoFramerate = 15;
