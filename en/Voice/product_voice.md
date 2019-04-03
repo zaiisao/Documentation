@@ -3,7 +3,7 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 11 2019 09:06:17 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 06:36:06 GMT+0000 (UTC)
 ---
 # Agora Voice Overview
 The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many **voice-only** calls. With a small SDK package size, the Agora Native SDK for Voice Call is applicable to a variety of recreational and business activities.
@@ -18,9 +18,10 @@ The Agora Native SDK for Voice Call boasts a flexible combination of functions f
 
 | Function                              | Description                                                  | Scenario                                                     |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------- |
-| Audio Mixing                          | Sends the local and online audio with the user's voice to other audience members in the channel. | <li>Online KTV. <li>Interactive music classes.    |
-| Play the Sound Effect Files          | Enables developers to play specific sound effect files, adjust the volume, and set the playback position of the sound effect files.        | Online chess or card games.                                |
-| Adjust the Pitch     | Adjusts the pitch and uses the equalization and reverberation modes.                    | <li>Online KTV.<li>To change the voice in an online chatroom.        |
+| Audio mixing                          | Sends the local and online audio with the user's voice to other audience members in the channel. | <li>Online KTV. <li>Interactive music classes.    |
+| Play the sound effect files          | Enables developers to play specific sound effect files, adjust the volume, and set the playback position of the sound effect files.        | Online chess or card games.                                |
+| Voice changer and reverberation     | Provides multiple presets to easily change the voice and set reverberation effects, also supports adjusting the pitch and using the equalization and reverberation modes flexibly.                    | <li>Online KTV.<li>To change the voice in an online chatroom.        |
+|Spatial Sound Effects |	Sets the spatial sound effects for remote users to provide immersive experiences.|	FPS games. |
 | Enable Two-channel/High-quality Sound Mode | Enables the two-channel and the high-quality sound mode.                               | <li>Online music classes.<li> FM applications.        |
 | Modify the Raw Data                    | Enables developers to obtain and modify the raw voice data to create special effects, such as a voice change. | To change the voice in an online voice chatroom. |
 
@@ -36,44 +37,11 @@ The Agora Native SDK for Voice Call boasts a flexible combination of functions f
 
 The Agora Native SDK for Voice Call is supported on platforms such as iOS, Android, Windows, macOS, Linux, Web, and WeChat mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
 
-<table>
-  <tr>
-    <th>Platform</th>
-    <th>Supported Version</th>
-  </tr>
-  <tr>
-    <td>Android</td>
-		<td><p>4.1+</p>
-		<p>The Android SDK supports the following architecture:
-		<ul>
-			<li>ARMv7</li>
-			<li>ARM64</li>
-			<li>X86</li>
-			</ul></p></td>
-  </tr>
-  <tr>
-    <td>iOS</td>
-    <td>8.0+</td>
-  </tr>
-	  <tr>
-    <td>Windows</td>
-    <td>XP SP3+</td>
-  </tr>
-  <tr>
-    <td>macOS</td>
-    <td>10.0+</td>
-  </tr>
-  <tr>
-    <td>WeChat Mini-programs</td>
-    <td>Support</td>
-  </tr>
-  <tr>
-    <td>Web</td>
-		<td><ul><li>Chrome 58+</li>
-			<li>Firefox 56+</li>
-			<li>Safari 11+</li>
-			<li>Opera 45+</li>
-			<li>QQ 10+</li>
-            <li>360 Security Browser 9.1+</li></ul></td>
-  </tr>
-</table>
+| Platform             | Supported Version                                            |
+| -------------------- | ------------------------------------------------------------ |
+| Android              | 4.1+<br>The Android SDK supports the following architecture:<li>ARMv7<li>ARM64<li>X86 |
+| iOS                  | 8.0+                                                         |
+| Windows              | XP SP3+                                                      |
+| macOS                | 10.0+                                                        |
+| WeChat Mini-Programs | Support                                                      |
+| Web                  | <li>Chrome 58+<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
