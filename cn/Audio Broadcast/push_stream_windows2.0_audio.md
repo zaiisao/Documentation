@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Wed Apr 03 2019 03:46:29 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 03:46:34 GMT+0000 (UTC)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -55,7 +55,7 @@ updatedAt: Wed Apr 03 2019 03:46:29 GMT+0000 (UTC)
 //CDN 转码设置
 LiveTranscoding config;
 config.audioSampleRate = TYPE_44100;
-config.audioChannels = 0;
+config.audioChannels = 2;
 //config.audioBitrate
 config.width = 16;
 config.height = 16;
