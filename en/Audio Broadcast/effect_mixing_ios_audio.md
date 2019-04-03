@@ -3,13 +3,13 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS
-updatedAt: Thu Mar 14 2019 03:48:46 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 06:30:25 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
 In a call or live broadcast, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_audio.md).
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_audio.md).
 ## Play Audio Effect Files
  
 The play audio effect methods can be used to play audio effects, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.
@@ -107,7 +107,7 @@ volume = volume < 80 ? 80 : volume
 ### Considerations
 
 - Preloading the audio effect is not mandatory. Agora recommends you preload the audio effect to improve the efficiency or to play the audio effect multiple times.
-- The API methods have return values. If the method fails, the return value is < 0.
+- The API methods have return values. If the method call fails, the return value is < 0.
 
 ## Audio Mixing
 
@@ -117,6 +117,7 @@ Agora audio mixing supports the following options:
 	- Mix the music file with the audio captured by the microphone and send it to other users 
 	- Replace the audio captured by the microphone with the music file.
 - Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
+- State change notification: reports when the state of the audio mixing file changes, for example when the audio mixing file pauses playing or resumes playing.
 
 ### Implementation
 
@@ -153,7 +154,8 @@ NSInteger cycle = 1;
 ### API Reference
 
 - [`startAudioMixing`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
+- [`localAudioMixingStateDidChanged`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioMixingStateDidChanged:errorCode:)
 
 ### Considerations
 
-The API methods have return values. If the method fails, the return value is < 0.
+The API methods have return values. If the method call fails, the return value is < 0.
