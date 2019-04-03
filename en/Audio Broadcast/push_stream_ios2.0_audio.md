@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: iOS,macOS
-updatedAt: Wed Apr 03 2019 03:52:54 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 03:53:03 GMT+0000 (UTC)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -51,7 +51,7 @@ user.audioChannel = 0;
 AgoraRtcEngineKit *rtcEngine = [AgoraRtcEngineKit sharedEngineWithAppId:@"" delegate:nil];
 AgoraLiveTranscoding *transcoding = [[AgoraLiveTranscoding alloc] init];
 transcoding.audioSampleRate = AgoraAudioSampleRateType44100;
-transcoding.audioChannels = 0;
+transcoding.audioChannels = 2;
 transcoding.size = CGSizeMake(16, 16);
 transcoding.videoFramerate = 15;
 transcoding.videoCodecProfile = AgoraVideoCodecProfileTypeHigh;
