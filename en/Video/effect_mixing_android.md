@@ -3,13 +3,13 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Thu Mar 14 2019 03:53:43 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 06:26:46 GMT+0000 (UTC)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
 In a call or live broadcast, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/android_video.md).
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/android_video.md).
 
 ## Play Audio Effect Files
 
@@ -69,7 +69,7 @@ manager.unloadAllEffects();
 ### Considerations
 
 - Preloading the audio effect is not mandatory. Agora recommends you preload the audio effect to improve the efficiency or to play the audio effect multiple times.
-- The API methods have return values. If the method fails, the return value is < 0.
+- The API methods have return values. If the method call fails, the return value is < 0.
 
 ## Audio Mixing
 
@@ -79,6 +79,7 @@ Agora audio mixing supports the following options:
 	- Mix the music file with the audio captured by the microphone and send it to other users 
 	- Replace the audio captured by the microphone with the music file.
 - Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
+- State change notification: reports when the state of the audio mixing file changes, for example when the audio mixing file pauses playing or resumes playing.
 
 ### Implementation
 
@@ -126,10 +127,11 @@ rtcEngine.stopAudioMixing()；
 - [`getAudioMixingDuration`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8bbeb8a8b07e4e7b1a0a493f1c66998d)
 - [`getAudioMixingCurrentPosition`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5119b0e6b356f867f7e13a6e1b2bb3e5)
 - [`setAudioMixingPosition`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a12c3dc250c86d54552c1589dfda2e002)
+- [`onAudioMixingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aee0aa9286a39654312b162750713e986)
 
 ### Considerations
 
 - The audio mixing methods require Android 4.2+ and API v16+.
 - Ensure that you call the methods when you are in the channel.
 - If you call the methods on an emulator, you can only play the MP3 files in the **/sdcard/** folder for audio mixing.
-- The API methods have return values. If the method fails, the return value is < 0.
+- The API methods have return values. If the method call fails, the return value is < 0.
