@@ -3,7 +3,7 @@
 title: Pricing and Billing
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 04 2019 03:55:34 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 03:55:45 GMT+0000 (UTC)
 ---
 # Pricing and Billing
 This page describes how to calculate Agora's real-time communications and recording charges. For live broadcast and billing questions, contact sales-us@agora.io.
@@ -233,7 +233,7 @@ Hence, the aggregate resolution for user A = B + C + D = 504000
 
 Since 504000 < 1280 x 720, User A is charged according to the ≤ 720p video format fee.
 
-<a id = "the-Recording-Aggregate-Resolution"></a>
+<a name = "the-Recording-Aggregate-Resolution"></a>
 
 #### Calculating the Recording Aggregate Resolution
 
