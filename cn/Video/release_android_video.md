@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Apr 04 2019 09:04:09 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 09:10:45 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -42,7 +42,7 @@ Android 视频 SDK 支持两种主要场景:
 
 #### 1. 美颜
 
-常见的视频社交、在线教育和连麦直播等场景中，用户普遍希望有基础的美颜功能。该版本新增接口 [`setBeautyEffectOptions`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6)，用户可以调用该接口设置对比度、亮度、平滑度等参数，达到美白、磨皮、红润肤色等美颜效果。详情请参考[美颜](../../cn/Video/image_enhancement_android.md)。
+常见的视频社交、在线教育和连麦直播等场景中，用户普遍希望有基础的美颜功能。该版本新增接口 [`setBeautyEffectOptions`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6)，用户可以调用该接口设置对比度、亮度、平滑度等参数，达到美白、磨皮、红润肤色等美颜效果。详情请参考[美颜](../../cn/Video/image_enhancement_android.md)。
 
 #### 2. 变声和混响
 
@@ -58,7 +58,7 @@ Android 视频 SDK 支持两种主要场景:
 
 #### 5. 设置用户媒体流优先级
 
-该版本新增接口 [`setRemoteUserPriority`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ad4705f9e56f0cf7e0a3e9cbd09ec8f61) 用于设置远端用户媒体流的优先级。该方法可以与 [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af64301ea1788dad0561aa678f3fe6ad3) 搭配使用。如果开启了订阅流回退选项，弱网下 SDK 会优先保证高优先级用户收到的流的质量。
+该版本新增接口 [`setRemoteUserPriority`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ad4705f9e56f0cf7e0a3e9cbd09ec8f61) 用于设置远端用户媒体流的优先级。该方法可以与 [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af64301ea1788dad0561aa678f3fe6ad3) 搭配使用。如果开启了订阅流回退选项，弱网下 SDK 会优先保证高优先级用户收到的流的质量。
 
 #### 6. 音乐文件播放状态
 
@@ -139,7 +139,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 #### 其他
 
-[`VideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html) 类中的 [`frameRate`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4.0/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a8ab46f09a0c6eee1f3f2b6f04efeab2b) 参数由 `enum` 型修改为 `int` 型。
+[`VideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html) 类中的 [`frameRate`](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a8ab46f09a0c6eee1f3f2b6f04efeab2b) 参数由 `enum` 型修改为 `int` 型。
 
 ## **2.3.3 版**
 
