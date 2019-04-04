@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Android
-updatedAt: Thu Apr 04 2019 09:07:45 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 09:07:46 GMT+0000 (UTC)
 ---
 # Image Enhancement
 ## Introduction
@@ -14,7 +14,7 @@ Agora provides an image enhancement API for users in social and entertainment sc
 ## Implementation
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
 
-The Agora SDK provides the [setBeautyEffectOptions](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/v2.4.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) method to enable developers to flexibly add image enhancement features.
+The Agora SDK provides the [setBeautyEffectOptions](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) method to enable developers to flexibly add image enhancement features.
 
 This method has two parameters: 
 
