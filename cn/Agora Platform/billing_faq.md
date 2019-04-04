@@ -3,7 +3,7 @@
 title: 计费
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 04 2019 03:57:40 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 03:57:44 GMT+0000 (UTC)
 ---
 # 计费
 本页提供声网 Agora 实时音视频通话产品及服务相关的计费说明，以及常见问题和回答。关于直播、游戏等收费，请联系 sales@agora.io。
@@ -200,6 +200,7 @@ updatedAt: Thu Apr 04 2019 03:57:40 GMT+0000 (UTC)
 
 因 504000 < 1280 x 720, 故 A 用户位于 HD 档。
 
+<a name = "the-Recording-Aggregate-Resolution"></a>
 **计算录制集合分辨率**
 
 假设通话中有 A，B，C，D 四个用户，录制的集合分辨率为：A，B，C，D 分辨率（宽 x 高）的面积之和。例如：
