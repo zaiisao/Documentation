@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Thu Apr 04 2019 09:07:42 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 09:07:43 GMT+0000 (UTC)
 ---
 # Set the Video Profile
 ## Introduction
@@ -41,7 +41,7 @@ rtcEngine.setVideoEncoderConfiguration(config);
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Video/rotation_guide_android.md).
 
 ## Considerations
-- Setting [`degradationPrefer`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html?transId=2.4#a47f36783c1f9da09454c19cafb489b3c) as [`MAINTAIN_QUALITY`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4/enumio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration_1_1_d_e_g_r_a_d_a_t_i_o_n___p_r_e_f_e_r_e_n_c_e.html?transId=2.4#a654947f783b27ef8da2e7b1f1045ef50) means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the [`minFrameRate`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4.0/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#ad8d377cd077587ee0991d297b1a8c8bc) parameter to balance the frame rate and video quality under unreliable network connections:
+- Setting [`degradationPrefer`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html?transId=2.4#a47f36783c1f9da09454c19cafb489b3c) as [`MAINTAIN_QUALITY`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4/enumio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration_1_1_d_e_g_r_a_d_a_t_i_o_n___p_r_e_f_e_r_e_n_c_e.html?transId=2.4#a654947f783b27ef8da2e7b1f1045ef50) means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the [`minFrameRate`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#ad8d377cd077587ee0991d297b1a8c8bc) parameter to balance the frame rate and video quality under unreliable network connections:
 
 	- When  `minFrameRate` is relatively low, the frame rate degrades significantly, so the poor network conditions have little impact on the video quality.
 	- When `minFrameRate` is relatively high, the frame rate degrades within a limited range, so the poor network conditions can have huge impact on the video quality.
