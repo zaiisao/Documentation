@@ -3,7 +3,7 @@
 title: Pricing and Billing
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 25 2018 15:26:44 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 03:45:26 GMT+0000 (UTC)
 ---
 # Pricing and Billing
 This page describes how to calculate Agora's real-time communications and recording charges. For live broadcast and billing questions, contact sales-us@agora.io.
