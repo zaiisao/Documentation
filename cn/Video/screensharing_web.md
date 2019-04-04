@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Thu Mar 14 2019 09:46:12 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 02:27:07 GMT+0000 (UTC)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -31,6 +31,8 @@ Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现�
 
 ### <a name = "chrome"></a>Chrome 屏幕共享
 
+#### 使用插件进行屏幕共享
+
 在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Video/chrome_screensharing_plugin.md) ，并获取插件的 `extensionId`，在建流的时候填入 `extensionId`。
 
 ```javascript
@@ -44,8 +46,22 @@ screenStream = AgoraRTC.createStream({
 });
 ```
 
+#### 无插件屏幕共享
+
+Chrome 72 及以上版本也可以不安装插件直接共享屏幕，在 `createStream` 时不填写 `extensionId` 参数即可。
+
+```javascript
+screenStream = AgoraRTC.createStream({
+  streamID: uid,
+  audio: false,
+  video: false,
+  screen: true,
+});
+```
+
 > - 因为一个 Stream 只能有一路视频流，所以 `video` 和 `screen` 属性不能同时为 `true`。
 > - `audio` 属性建议设置为 `false`，避免订阅端收到的两路流中都有音频，导致回声。
+
 
 ### Electron 屏幕共享
 
