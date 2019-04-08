@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 08 2019 09:11:30 GMT+0000 (UTC)
+updatedAt: Mon Apr 08 2019 09:44:56 GMT+0000 (UTC)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -406,19 +406,11 @@ Agora 录制 SDK 目前仅支持单流的录制文件 + 单流的截屏，截屏
 
 config.json <sup>[2]</sup> 文件中的 recordFileRootDir指定了顶级录制目录路径。录制子目录结构如下:
 
-- yyyy\mm\dd (日期)：每天都会创建一个新的日期目录（如果当天执行了录制操作）。该目录下包含所有当天的文件和目录。
-- ChannelName_HHMMSS：录制文件存储在执行录制操作当天的该目录下。录制文件带有频道名称和含有小时，分钟，以及秒的时间戳。时间戳为服务器开始录制的时间。
-- ChannelName_HHMMSS目录下包含以下录制相关的单个文件:
+- `yyyy\mm\dd` (日期)：每天都会创建一个新的日期目录（如果当天执行了录制操作）。该目录下包含所有当天的文件和目录。
+- `ChannelID_hhmmss_msμsns`：录制文件存储在执行录制操作当天的该目录下。录制文件带有频道名称和含有小时，分钟，秒，毫秒，微秒和纳秒的时间戳。时间戳为服务器开始录制的时间。
+- `ChannelID_hhmmss_msμsns`目录下包含以下录制相关的单个文件:
 
 <table>
-
-<colgroup>
-
-<col/>
-
-<col/>
-
-</colgroup>
 
 <tbody>
 
