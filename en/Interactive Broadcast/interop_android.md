@@ -3,7 +3,7 @@
 title: Enable Interoperability 
 description: 
 platform: Android
-updatedAt: Tue Dec 11 2018 20:07:10 GMT+0000 (UTC)
+updatedAt: Mon Apr 08 2019 09:24:42 GMT+0000 (UTC)
 ---
 # Enable Interoperability 
 ## Introduction
