@@ -3,7 +3,7 @@
 title: Enable Interoperability 
 description: 
 platform: Android
-updatedAt: Mon Apr 08 2019 09:37:20 GMT+0000 (UTC)
+updatedAt: Mon Apr 08 2019 09:37:26 GMT+0000 (UTC)
 ---
 # Enable Interoperability 
 ## Introduction
@@ -35,6 +35,6 @@ To enable interoperability between a mobile device and a web browser or app, you
 ## Considerations
 * The settings must be adjusted on both the mobile device and the web browser/app to enable interoperability.
 * Use this function only when the channel is in the live broadcast profile. Interoperability is enabled by default in the communication profile.
-* Given known test experience, if your scenario involves Safari, we recommend setting codec at the Web Client as h264; otherwise, set it as vp8.
+* Given known test experience, if your scenario involves Safari, we recommend setting `codec` at the Web Client as `h264`; otherwise, set it as `vp8`.
 
 	
