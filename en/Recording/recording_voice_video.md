@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Wed Mar 27 2019 07:59:10 GMT+0000 (UTC)
+updatedAt: Mon Apr 08 2019 09:14:01 GMT+0000 (UTC)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -270,7 +270,7 @@ The `recordFileRootDir` folder in the `config.json` <sup>[2]</sup> folder specif
 
 -   `yyyy\mm\dd (Date)`: A new directory with the date is created daily (assuming recording occurs daily), and all files and directories on the datum are stored under this directory.
 
--   `ChannelName_HHMMSS`: The recorded files are stored in the directory created on the same date as the recording. Each recorded file contains a channel name and a timestamp (hour, minute, and second) to indicate when the recording started.
+-   `ChannelID_hhmmss_msμsns`: The recorded files are stored in the directory created on the same date as the recording. Each recorded file contains a channel name and a timestamp (hour, minute, second, millisecon, dmicrosecond and nanosecond) to indicate when the recording started.
 
 
 <table>
@@ -318,7 +318,7 @@ Once recording is finished, use` video_convert.py` and `ffmpeg` to merge the rec
     -   In the automatically record mode, the <code>-m</code> parameter merges all voice and video files of one uid and generates a single `UID_0_merge_av.mp4` file.
     -   In the manually record mode, the <code>startService</code> and <code>stopService</code> parameters manage and divide the recorded files. Each start/stop makes one service, and the <code>-m</code> parameter generates multiple `UID_XX_merge_av.mp4` files.
 
-The transcoding tool includes `video_convert.py` and `ffmpeg`. The Python script can merge the separated voice and video recording files into one MPEG-4 file and the script relies on `ffmpeg`. You can get the transcoding tool `ffmpeg` and `video_convert.py` in the **tools** folder in [Recording SDK](https://docs-preview.agoralab.co/en/Recording/downloads). Decompress `ffmpeg`, and make sure it is in the same directory as `video_convert.py.` Execute the following command to run the transcoding tool:
+The transcoding tool includes `video_convert.py` and `ffmpeg`. The Python script can merge the separated voice and video recorded files into one MPEG-4 file and the script relies on `ffmpeg`. You can get the transcoding tool `ffmpeg` and `video_convert.py` in the **tools** folder in [Recording SDK](https://docs-preview.agoralab.co/en/Recording/downloads). Decompress `ffmpeg`, and make sure it is in the same directory as `video_convert.py.` Execute the following command to run the transcoding tool:
 
 Execute `python video_convert.py` with the following usage:
 
