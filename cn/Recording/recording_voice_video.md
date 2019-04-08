@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 08 2019 11:31:09 GMT+0000 (UTC)
+updatedAt: Mon Apr 08 2019 11:31:18 GMT+0000 (UTC)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -404,11 +404,13 @@ Agora 录制 SDK 目前仅支持单流的录制文件 + 单流的截屏，截屏
 
 ## 管理录制文件
 
-config.json <sup>[2]</sup> 文件中的 recordFileRootDir指定了顶级录制目录路径。录制子目录结构如下:
+录制默认子目录结构如下（也可以通过设置cfgFilePath 参数来自定义录制文件文件的存放路径）：
 
 - `yyyymmdd` (日期)：加入频道的日期。该目录下包含当日开始录制的所有的文件和目录，时区为 UTC+0。
 - `ChannelName_HHMMSS_MSUSNS`：录制文件的上一层目录，即录制文件存储在执行录制操作当天的该目录下。录制文件带有频道名称和含有小时，分钟，秒，毫秒，微秒和纳秒的时间戳。时间戳为服务器开始录制的时间，时区为 UTC+0。
 - 例如 mp4 文件的路径为 `yyyymmdd/ChannelName_HHMMSS_MSUSNS/xxxx.mp4`。
+
+
 
 >- v2.3.0之前的版本，录制文件的上一层目录为 `ChannelName_HHMMSS`，以频道名加上时间戳（含有小时，分钟和秒）命名。
 >- v2.3.0之后（包括v2.3.0）的版本，录制文件的上一层目录为 `ChannelName_HHMMSS_MSUSNS`，以频道名加上时间戳（含有小时，分钟，秒，毫秒，微秒和纳秒）命名。
@@ -460,8 +462,7 @@ config.json <sup>[2]</sup> 文件中的 recordFileRootDir指定了顶级录制�
 </table>
 
 
-
-[2] 配置文件config.json 的内容为录制文件存放的绝对路径，该文件由用户自己生成。录制时，需要通过 cfgFilePath 参数指定该配置文件中的存放路径。
+当需要自定义录制文件目录结构时，配置文件 `config.json` 的 `Recording_Dir` 为客户自定义的录制目录结构，该文件由用户自己生成。录制时，需要通过 `cfgFilePath` 参数指定该配置文件中的存放路径。
 
 <a name="using-transcoding-script"></a>
 
