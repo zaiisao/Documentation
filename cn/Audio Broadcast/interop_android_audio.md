@@ -3,7 +3,7 @@
 title: 移动、桌面、Web 端互通
 description: 
 platform: Android
-updatedAt: Thu Feb 21 2019 03:49:52 GMT+0000 (UTC)
+updatedAt: Mon Apr 08 2019 09:31:13 GMT+0000 (UTC)
 ---
 # 移动、桌面、Web 端互通
 ## 功能简介
