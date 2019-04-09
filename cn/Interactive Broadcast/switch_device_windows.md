@@ -115,12 +115,17 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 // 选择一个音频播放设备
 lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
 
-// 开始音频采集设备测试，并且你直接会从外放设备中听到声音
-// do not need to call `enableAudioVolumeIndication`, because you can directly hear the sound
-(*lpDeviceManager)->startRecordingDeviceTest(1000);
+#ifdef UNICODE
+	CHAR wdFilePath[MAX_PATH];
+	::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
+	(*lpDeviceManager)->startPlaybackDeviceTest(wdFilePath);
+#else
+	(*lpDeviceManager)->startPlaybackDeviceTest(filePath);
+#endif
 
-// 停止音频采集设备测试
-(*lpDeviceManager)->stopRecordingDeviceTest();
+
+// 停止音频播放设备测试
+(*lpDeviceManager)->stopPlaybackDeviceTest();
 ```
 
 ### API 参考

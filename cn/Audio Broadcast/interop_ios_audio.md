@@ -3,7 +3,7 @@
 title: 移动、桌面、Web 端互通
 description: 
 platform: iOS
-updatedAt: Mon Apr 08 2019 09:31:55 GMT+0000 (UTC)
+updatedAt: Mon Apr 08 2019 09:32:00 GMT+0000 (UTC)
 ---
 # 移动、桌面、Web 端互通
 ## 功能简介
@@ -42,3 +42,5 @@ Agora SDK 的移动端和 Web 端互通，需要在移动端和 Web 端同时进
 
 ## 开发注意事项
 * 移动端和 Web 端必须同时设置，才能实现互通。
+* Agora SDK 在通信模式下，默认互通是打开的。因此只有在直播模式下，才需要打开互通
+* 根据已知实验经验，如果场景中有 Safari 浏览器，则建议在 Web 端将 `codec` 设为 `h264`；如果没有，则建议设为 `vp8`

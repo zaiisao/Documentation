@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: Android
-updatedAt: Mon Apr 01 2019 11:06:16 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 09:10:52 GMT+0000 (UTC)
 ---
 # 美颜
 ## 功能描述
@@ -17,7 +17,7 @@ updatedAt: Mon Apr 01 2019 11:06:16 GMT+0000 (UTC)
 ## 实现方法
 开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Video/android_video.md)。
 
-Agora SDK 提供 [setBeautyEffectOptions](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) 方法帮助开发者根据场景需求灵活配置基础美颜功能。
+Agora SDK 提供 [setBeautyEffectOptions](https://docs.agora.io/cn/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) 方法帮助开发者根据场景需求灵活配置基础美颜功能。
 
 该方法有 2 个参数：
 
