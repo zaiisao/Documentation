@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Thu Mar 14 2019 09:47:43 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 02:27:16 GMT+0000 (UTC)
 ---
 # Share the Screen
 ## Introduction
@@ -33,6 +33,8 @@ To enable screen sharing, you need to set relevant attributes when creating the 
 
 ### <a name = "chrome"></a>Screen Sharing on Google Chrome
 
+#### Screen Sharing with the Google Chrome Extension
+
 Ensure that you add the [Google Chrome Extension for Screen Sharing](../../en/Quickstart%20Guide/chrome_screensharing_plugin.md) provided by Agora.
 
 Fill in the `extensionId` when you create the stream.
@@ -45,6 +47,19 @@ screenStream = AgoraRTC.createStream({
   screen: true,
   //chrome extension ID
   extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'
+});
+```
+
+#### Screen Sharing Without an Extension
+
+Chrome 72 or later supports screen sharing without an extension and you do not need to set the `extensionId` parameter.
+
+```javascript
+screenStream = AgoraRTC.createStream({
+  streamID: uid,
+  audio: false,
+  video: false,
+  screen: true,
 });
 ```
 
@@ -284,3 +299,4 @@ screenClient.subscribe(stream);
 - **Do not subscribe to a locally published screen-sharing stream**, else additional charges incur.
 - Ensure that `video`/`audio` is set as `false` when creating the screen-sharing stream.
 - Sharing the window of a QQ chat on Windows causes the black screen.
+

@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: CPP
-updatedAt: Tue Apr 09 2019 10:06:09 GMT+0000 (UTC)
+updatedAt: Tue Apr 09 2019 10:06:21 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora Recording SDK.
@@ -89,7 +89,7 @@ Intel® Xeon® E5-2600 Series Processor</td>
 
 Assuming two users are in a channel in a video call \(communication mode\), with a resolution of 640 x 360, frame rate of 15 fps, and bitrate of one video stream of 500 Kbps, using single-stream recording:
 
-The CPU is fully loaded and 100 channels are recorded simultaneously:
+The CPU with 12 cores and 24 threads is fully loaded and 100 channels are recorded simultaneously:
 
 - Each channel writes to the disk at a speed of 60 kB/s. The total write-in speed is 6.0 MB/s, which is much lower than the maximum write-in speed of the disk.
 - Each channel uses 25 MB of memory. Thus, 2.5 GB of memory, which is 31% of the total memory, is used.
