@@ -3,10 +3,23 @@
 title: Other Questions
 description: 
 platform: Other Questions
-updatedAt: Tue Apr 09 2019 08:18:30 GMT+0000 (UTC)
+updatedAt: Tue Apr 09 2019 08:18:37 GMT+0000 (UTC)
 ---
 # Other Questions
 ## Android
+
+### Building the sample code in the SDK crashes, and the error says that no `.so` file is found?
+
+This may be because you misplace the **samples** and **libs** folders in the SDK package.
+
+The Agora SDK contains the **libs** and **samples** folders. To build and run the sample code project, you need to fill in the App ID, and click **Run**. You do not need to move any file, not even the library files.
+
+If you misplace the **libs** and **samples** folders, build crashes occur due to the lack of `.so` library dependencies. Missing `.jar` files does not have this problem because **Android Studio** reports errors on missing `.jar` files when you build a project.
+
+Choose one of the following methods to build and run the sample code project:
+
+- Open the sample code project, fill in the App ID, and click **Run**. The SDK has preset the library dependencies with relative paths.
+- If you copy the `.so` files into the **jniLibs** folder, ensure that you delete the `jniLibs` reference in `SourceSets` of the `app/build.gradle` file. 
 
 ### Why does the Android suspension window not respond to clicking or dragging after integrating the Agora SDK?
 
