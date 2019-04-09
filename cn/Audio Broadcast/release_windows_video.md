@@ -80,7 +80,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 一般场景下，Agora 默认的视频编码配置能满足需求。对于特定场景，该版本提供如下功能让用户选择视频偏好：
 
 - 弱网下画质或流畅偏好设置。该版本在视频编码属性 [`VideoEncoderConfiguration`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_video_encoder_configuration.html) 类中新增 2 个参数 minFrameRate 和 degradationPrefer，分别用于设置最低视频编码帧率，以及带宽受限时编码帧率的偏好。这两个参数需要搭配使用，详情请参考[设置视频属性](../../cn/Audio%20Broadcast/videoProfile_windows.md)。
-- 采集时预览或性能偏好设置。该版本新增接口 [`setCameraCaptureConfiguration`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)，通过设置摄像头采集偏好，用户可以根据实际场景选择优先保证设备性能还是视频质量。具体场景及参数选择，请参考 [API 文档](https://docs.agora.io/cn/Audio%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af))。
+- 采集时预览或性能偏好设置。该版本新增接口 [`setCameraCapturerConfiguration`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)，通过设置摄像头采集偏好，用户可以根据实际场景选择优先保证设备性能还是视频质量。具体场景及参数选择，请参考 [API 文档](https://docs.agora.io/cn/Audio%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af))。
 
 #### 3. 核心质量改进
 
@@ -133,7 +133,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 - [`startEchoTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a842ed126b6e21a39059adaa4caa6d021)
 - [`startAudioDeviceLoopbackTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac78c08f3212dc3efa000e197207dec53)
 - [`stopAudioDeviceLoopbackTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#aad01da1e0bacd3f2fd355483f9e3befb)
-- [`setCameraCaptureConfiguration`](https://docs.agora.io/cn/Audio%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)
+- [`setCameraCapturerConfiguration`](https://docs.agora.io/cn/Audio%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)
 - [`setLogFileSize`](https://docs.agora.io/cn/Audio%20Broadcast/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1)
 - [`onAudioMixingStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a298389513bfaa50af4277fc3296e3f22)
 - [`onLastmileProbeResult`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a44134dfda5d412831fa8e44fa533fca5) 
