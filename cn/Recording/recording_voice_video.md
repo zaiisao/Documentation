@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 09 2019 08:16:13 GMT+0000 (UTC)
+updatedAt: Tue Apr 09 2019 08:16:20 GMT+0000 (UTC)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -410,14 +410,13 @@ Agora 录制 SDK 目前仅支持单流的录制文件 + 单流的截屏，截屏
 
 通过 `recordFileRootDir` 参数设置录制文件的根目录，设置了此目录后，会自动生成子目录。
 
-默认的子目录结构如下：
+以录制生成一个 mp4 文件为例，自动生成的子目录为 `yyyymmdd/ChannelName_HHMMSS_MSUSNS/xxxx.mp4`，其中：
 
-- `yyyymmdd` (日期)：加入频道的日期。该目录下包含当日开始录制的所有的文件和目录，时区为 UTC+0。
-- `ChannelName_HHMMSS_MSUSNS`：录制文件的上一层目录，即录制文件存储在执行录制操作当天的该目录下。录制文件带有频道名称和含有小时，分钟，秒，毫秒，微秒和纳秒的时间戳。时间戳为服务器开始录制的时间，时区为 UTC+0。
-- 例如 mp4 文件的路径为 `yyyymmdd/ChannelName_HHMMSS_MSUSNS/xxxx.mp4`。
+- `yyyymmdd`：加入频道的日期。该目录下包含当日开始录制的所有的文件和目录，时区为 UTC+0。
+- `ChannelName_HHMMSS_MSUSNS`：录制文件的上一层目录，即录制文件存储在执行录制操作当天的该目录下。该目录名包含频道名和含有小时、分钟、秒、毫秒、微秒和纳秒的时间戳。时间戳为服务器开始录制的时间，时区为 UTC+0。
 
->- v2.3.0 之前的版本，录制文件的上一层目录为 `ChannelName_HHMMSS`，以频道名加上时间戳（含有小时，分钟和秒）命名。
->- v2.3.0 之后（包括 v2.3.0）的版本，录制文件的上一层目录为 `ChannelName_HHMMSS_MSUSNS`，以频道名加上时间戳（含有小时，分钟，秒，毫秒，微秒和纳秒）命名。
+>- v2.3.0 之前的版本，录制文件的上一层目录为 `ChannelName_HHMMSS`，以频道名加上时间戳（含有小时、分钟和秒）命名。
+>- v2.3.0 之后（包括 v2.3.0）的版本，录制文件的上一层目录为 `ChannelName_HHMMSS_MSUSNS`，以频道名加上时间戳（含有小时、分钟、秒、毫秒、微秒和纳秒）命名。
 
 #### 自定义目录结构
 
