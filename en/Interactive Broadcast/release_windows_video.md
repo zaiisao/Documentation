@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Apr 09 2019 08:48:41 GMT+0000 (UTC)
+updatedAt: Tue Apr 09 2019 08:48:42 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -81,7 +81,7 @@ v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Interactive%20Broad
 v2.4.0 provides the following options for setting video encoder preferences:
 
 - Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_video_encoder_configuration.html) class: minFrameRate and degradationPrefer. You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Interactive%20Broadcast/videoProfile_windows.md).
-- Setting the camera capture preference. v2.4.0 adds the [`setCameraCaptureConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Interactive%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)).
+- Setting the camera capture preference. v2.4.0 adds the [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Interactive%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)).
 
 #### 3. Core quality improvements
 
@@ -134,7 +134,7 @@ To improve your experience, we made the following changes to the APIs:
 - [`startEchoTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a842ed126b6e21a39059adaa4caa6d021)
 - [`startAudioDeviceLoopbackTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac78c08f3212dc3efa000e197207dec53)
 - [`stopAudioDeviceLoopbackTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#aad01da1e0bacd3f2fd355483f9e3befb)
-- [`setCameraCaptureConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)
+- [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)
 - [`setLogFileSize`](https://docs.agora.io/en/Interactive%20Broadcast/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1)
 - [`onAudioMixingStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a298389513bfaa50af4277fc3296e3f22)
 - [`onLastmileProbeResult`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a44134dfda5d412831fa8e44fa533fca5) 
