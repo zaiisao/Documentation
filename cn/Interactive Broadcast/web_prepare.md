@@ -25,7 +25,7 @@ updatedAt: Fri Mar 29 2019 07:15:39 GMT+0000 (UTC)
   <tr>
     <td>Android 4.1+</td>
     <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
 		<td><b>N/A</b></td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>

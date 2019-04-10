@@ -3,7 +3,7 @@
 title: Cocos Creator 快速开始
 description: 
 platform: Cocos Creator
-updatedAt: Wed Apr 10 2019 03:58:13 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 03:58:18 GMT+0000 (UTC)
 ---
 # Cocos Creator 快速开始
 ## 前提条件
@@ -11,6 +11,7 @@ updatedAt: Wed Apr 10 2019 03:58:13 GMT+0000 (UTC)
 请确保满足以下开发环境要求：
 
 - Cocos Creator v2.0.9 
+- 注册 Cococs Creator 账号，并完成账号认证（系统认证需要 1-3 天）
 - 移动端需要 Android 或 iOS 真机
 - Web 端浏览器需满足[特定要求](https://docs.agora.io/cn/Audio%20Broadcast/web_prepare?platform=Web)
 - 没有连接 VPN
@@ -46,5 +47,5 @@ updatedAt: Wed Apr 10 2019 03:58:13 GMT+0000 (UTC)
    Cocos Creator 会自动下载和配置所有声网服务依赖的资源。Cocos Creator 中的 Agora 对象暴露和提供[主要 API 功能](../../cn/Interactive%20Gaming/game_coco.md)。
 	 > Cocos Creator 提供的 JavaScript API 为方便使用仅实现了主要功能，如果需要其他扩展功能，请参考各平台完整版 API 文档。
 
-3. 在你的项目中，调用 API 实现游戏通话。关键 API 的调用方法及逻辑可参考 `HelloAgora` Demo。
+3. 在你的项目中，调用 API 实现游戏通话。关键 API 的调用方法及逻辑可参考 [`HelloAgora` Demo](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming/tree/master/Basic-Voice-Call-for-Gaming/Hello-Cocos-Creator-Voice-Agora)。
 ![](https://web-cdn.agora.io/docs-files/1551929077432)

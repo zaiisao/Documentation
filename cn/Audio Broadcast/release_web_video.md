@@ -30,7 +30,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
   <tr>
     <td>Android 4.1+</td>
     <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
 		<td><b>N/A</b></td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
