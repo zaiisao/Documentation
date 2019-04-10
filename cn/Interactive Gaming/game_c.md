@@ -3,7 +3,7 @@
 title: Cocos Creator 快速开始
 description: 
 platform: Cocos Creator
-updatedAt: Wed Apr 10 2019 03:53:19 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 03:58:13 GMT+0000 (UTC)
 ---
 # Cocos Creator 快速开始
 ## 前提条件
