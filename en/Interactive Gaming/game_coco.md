@@ -3,7 +3,7 @@
 title: Gaming API
 description: 
 platform: null
-updatedAt: Wed Apr 10 2019 06:54:39 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 06:54:47 GMT+0000 (UTC)
 ---
 # Gaming API
 Agora Cocos Creator js SDK contains the following APIs:
@@ -40,7 +40,7 @@ Agora Cocos Creator js SDK contains the following APIs:
 **Examples:**
 
 ```
-require("js-agora.js");
+require("js-agora");
 agora.init("AGORA APP ID");
 ```
 
