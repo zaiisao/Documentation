@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Cocos Creator
-updatedAt: Wed Apr 10 2019 06:54:07 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 06:54:15 GMT+0000 (UTC)
 ---
 # 游戏 API
 Agora Cocos Creator js SDK 包含如下 API：
@@ -40,7 +40,7 @@ Agora Cocos Creator js SDK 包含如下 API：
 **Examples:**
 
 ```
-require("js-agora.js");
+require("js-agora");
 agora.init("AGORA APP ID");
 ```
 
