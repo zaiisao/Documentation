@@ -12,6 +12,7 @@ Agora supports the media device test and selection feature, allowing you to chec
 
 You can use the media device test and selection feature in the following scenarios:
 
+
 - A host self-checks before starting a live broadcast.
 - An online user checks if the media device works.
 
