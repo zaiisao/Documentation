@@ -3,12 +3,12 @@
 title: Test or Select a Media Device
 description: 
 platform: Windows
-updatedAt: Wed Apr 10 2019 03:31:13 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 07:02:07 GMT+0000 (UTC)
 ---
 # Test or Select a Media Device
 ## Introduction
 
-Agora supports the media device test and selection feature, allowing you to check if a camera or an audio device (a headset, microphone, or speaker) works or connects properly to the SD-RTN. For example, in an audio device test, if a user's recorded voice is replayed in 10 seconds, then the system's audio device works and is connected properly to the SD-RTN.
+Agora supports the media device test and selection feature, allowing you to check if a camera or an audio device (a headset, microphone, or speaker) works or connects properly to the SD-RTN.
 
 You can use the media device test and selection feature in the following scenarios:
 
@@ -113,10 +113,17 @@ lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
 
 // Start the audio capture device test, and you will hear the audio from the external device.
 // You do not need to call `enableAudioVolumeIndication`, because you can directly hear the audio.
-(*lpDeviceManager)->startRecordingDeviceTest(1000);
+
+#ifdef UNICODE
+	CHAR wdFilePath[MAX_PATH];
+	::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
+	(*lpDeviceManager)->startPlaybackDeviceTest(wdFilePath);
+#else
+	(*lpDeviceManager)->startPlaybackDeviceTest(filePath);
+#endif
 
 // Stop the audio capture device test.
-(*lpDeviceManager)->stopRecordingDeviceTest();
+(*lpDeviceManager)->stopPlaybackDeviceTest();
 ```
 
 ### API Reference
