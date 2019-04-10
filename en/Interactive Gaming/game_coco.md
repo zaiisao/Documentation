@@ -3,7 +3,7 @@
 title: Gaming API
 description: 
 platform: null
-updatedAt: Tue Mar 19 2019 14:43:25 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 06:54:39 GMT+0000 (UTC)
 ---
 # Gaming API
 Agora Cocos Creator js SDK contains the following APIs:
