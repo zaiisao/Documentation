@@ -25,7 +25,7 @@ This page contains information on how to prepare the development environment bef
    <tr>
     <td>Android 4.1 or later</td>
     <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
 		<td><b>N/A</b></td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>

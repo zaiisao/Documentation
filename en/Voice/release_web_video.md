@@ -30,7 +30,7 @@ See the table below for the web browser support of the Agora Web SDK:
    <tr>
     <td>Android 4.1 or later</td>
     <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
 		<td><b>N/A</b></td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
