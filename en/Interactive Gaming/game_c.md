@@ -3,7 +3,7 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Wed Apr 10 2019 04:09:21 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 04:10:19 GMT+0000 (UTC)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
@@ -11,6 +11,7 @@ updatedAt: Wed Apr 10 2019 04:09:21 GMT+0000 (UTC)
 Development environment:
 
 - Cocos Creator v2.0.9
+- A certified Cocos Creator account (After the sign-up, it takes 1 to 3 days for Cocos Creator to certify your account.)
 - An Android or iOS device for mobile end
 - No VPN connection
 - Ensure the browser for Web end meet the [requirements](https://docs.agora.io/en/Audio%20Broadcast/web_prepare?platform=Web).
@@ -48,5 +49,5 @@ Cocos Creator automatically downloads and configures all the resources necessary
 
    > The JavaScript APIs provided by Cocos Creator only covers major functions. For more advanced functions, see the full API reference documents on other platforms.
 
-3. In your project, call the APIs for voice call in gaming. For detailed information on the core API methods see the `HelloAgora` Demo。
+3. In your project, call the APIs for voice call in gaming. For detailed information on the core API methods see the [`HelloAgora` Demo](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming/tree/master/Basic-Voice-Call-for-Gaming/Hello-Cocos-Creator-Voice-Agora)。
    ![](https://web-cdn.agora.io/docs-files/1551929077432)
