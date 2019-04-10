@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Tue Apr 09 2019 08:27:04 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 02:41:59 GMT+0000 (UTC)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -272,22 +272,22 @@ The Agora Recording SDK supports screen capture and recording in individual reco
 
 Set the root directory of the recorded files by the `recordFileRootDir` parameter and the sub-directory is generated automatically. 
 
-For example, the path to a recored mp4 file is `yyyymmdd/ChannelName_HHMMSS_MSUSNS/xxxx.mp4`: 
+For example, the path to a recorded MP4 file is `yyyymmdd/ChannelName_HHMMSS_MSUSNS/xxxx.mp4`: 
 
 - `yyyymmdd`: The date when the SDK joins the channel. All files and directories on the same day are stored under this directory and the time zone is UTC+0.
 
 - `ChannelName_HHMMSS_MSUSNS`: The recorded files are stored in the directory created on the same date as the recording. The directory name contains a channel name and a timestamp (hour, minute, second, millisecond, microsecond, and nanosecond). The timestamp is the time when the server starts recording, and the time zone is UTC+0.
 
-> - In versions before v2.3.0, the directory of the recorded files is `ChannelName_HHMMSS`, named after the channel name and timestamp (with hour, minute and second).
-> - After v2.3.0 (including v2.3.0), the directory of  the recorded files is `ChannelName_HHMMSS_MSUSNS`, named after the channel name and timestamp (including hour, minute, second, millisecond, microsecond, and nanosecond).
+> - For versions earlier than v2.3.0, the directory of the recorded files is `ChannelName_HHMMSS`, named after the channel name and timestamp (hour, minute, and second).
+> - For v2.3.0 or later, the directory of the recorded files is `ChannelName_HHMMSS_MSUSNS`, named after the channel name and timestamp (hour, minute, second, millisecond, microsecond, and nanosecond).
 
 #### Customize the directory structure
 
 To customize the directory structure, you need to create a configuration file in JSON format and specify the path of the configuration file through the `cfgFilePath` parameter.
 
-Set the `Recording_Dir` parameter in the configuration file to customize the directory structure. For example: `{“Recording_Dir” : “<recording path>”}`. The `Recording_Dir` parameter cannot be changed.
+Set the `Recording_Dir` parameter in the configuration file to customize the directory structure. For example: `{“Recording_Dir” : “<recording path>”}`. You cannot change the `Recording_Dir` parameter.
 
-> We do not recommend customizing the directory structure, because if multiple recording instances use the same configuration parameter, the recorded files of different recording instances store in the same directory and cannot be distinguished.
+> We do not recommend customizing the directory structure because if multiple recording instances use the same configuration parameter, the recorded files of different recording instances are stored in the same directory and cannot be distinguished.
 
 ### The recorded files
 
@@ -303,22 +303,28 @@ Set the `Recording_Dir` parameter in the configuration file to customize the dir
 </thead>
 <tbody>
 <tr><td>UID_HHMMSSMS.aac</td>
-<td>If recording on the Agora Native SDK, PC, or the web, each uid has an AAC file containing the voice content of its corresponding uid only.</td>
+<td>If you record on the Agora Native SDK, PC, or the Web, each uid has an AAC file containing the voice content.</td>
 </tr>
 <tr><td>UID_HHMMSSMS.mp4</td>
-<td>If recording on the Agora Native SDK or PC, each uid has an MPEG-4 file. If the user joined and left the channel multiple times, this uid can have multiple MPEG-4 files containing the video content of this uid only.</td>
+<td>If you record on the Agora Native SDK or PC, each uid has an MPEG-4 file. If the user joins and leaves the channel multiple times, this uid can have multiple MPEG-4 files containing the video content.</td>
 </tr>
 <tr><td>UID_HHMMSSMS.webm</td>
-<td>If recording on the web, each uid has a WebM file. If the user joined and left the channel multiple times, this uid can have multiple WebM files containing the video content of this uid only.</td>
+<td>If you record on the Web, each uid has a WebM file. If the user joins and leaves the channel multiple times, this uid can have multiple WebM files containing the video content.</td>
 </tr>
 <tr><td>recording2-done.txt</td>
-<td>Indicates that the recording in this channel has finished.</td>
+<td>This text file indicates that the recording in this channel has finished.</td>
 </tr>
 <tr><td>UID_HHMMSSMS.txt</td>
-<td>Records the start and end time of each voice or video file, and the related information, such as the width and rotation.</td>
+<td>This text file indicates the start and end time of each voice or video file and the related information, such as the video width and rotation.</td>
 </tr>
 </tbody>
 </table>
+
+The recorded files are stored on your server only, and Agora has no access to them. You are responsible for the protection and security of the recorded files. Consult a security expert if necessary.
+
+The `recording.log` and `recording_sys.log` files under the `ChannelName_HHMMSS_MSUSNS` directory list any exception or problem that occurred during recording.
+
+
 
 
 ## <a name="using-transcoding-script"></a>Using the Transcoding Script
