@@ -3,7 +3,7 @@
 title: 在服务端生成密钥
 description: Guide on how to generate tokens on the server side
 platform: 服务端
-updatedAt: Fri Nov 23 2018 10:47:07 GMT+0000 (UTC)
+updatedAt: Thu Apr 11 2019 06:48:05 GMT+0000 (UTC)
 ---
 # 在服务端生成密钥
 本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
