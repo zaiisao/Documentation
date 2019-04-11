@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: CPP
-updatedAt: Tue Apr 09 2019 10:06:21 GMT+0000 (UTC)
+updatedAt: Thu Apr 11 2019 08:30:55 GMT+0000 (UTC)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora Recording SDK.
@@ -192,10 +192,8 @@ Set up the environment on your Linux server:
 
 4. Set whitelist domains:
 
-   - agora.io
-   - vocs.agora.io
-   - qoslbs.agora.io
-   - qos.agora.io
+   - .agora.io
+   - .agoralab.co
 
 7. For debug purposes, Agora recommends you enable core dump on your Linux system.
 
