@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 11 2019 06:50:57 GMT+0000 (UTC)
+updatedAt: Thu Apr 11 2019 06:51:11 GMT+0000 (UTC)
 ---
 # 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
@@ -39,8 +39,8 @@ updatedAt: Thu Apr 11 2019 06:50:57 GMT+0000 (UTC)
 - Gaming SDK: `getSdkVersion`
 
 
->-   如果你使用的是 Agora Signaling SDK，请参考[信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
--   如果你使用的产品版本不支持 Token，需使用密钥功能请参考 [Channel Key 密钥说明](../../cn/null/channel_key.md)。
+> -   如果你使用的是 Agora Signaling SDK，请参考[信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
+> -   如果你使用的产品版本不支持 Token，需使用密钥功能请参考 [Channel Key 密钥说明](../../cn/null/channel_key.md)。
 
 
 ## 鉴权机制简介
@@ -145,18 +145,18 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 <tr><td><code>channelName</code></td>
 <td>用户申请进入的频道名</td>
 </tr>
-<tr><td><code>uid</code></td>
+<tr><td><code>uid</code> <sup>[1]</sup></td>
 <td>申请加入频道的用户 ID</td>
 </tr>
-<tr><td><code>expireTimestamp</code>  <sup>[1]</sup></td>
+<tr><td><code>expireTimestamp</code>  <sup>[2]</sup></td>
 <td>Token 服务有效时间，默认为 0，表示 Token 一旦生成，永不失效。有效时间内用户可以无限次加入频道，超过有效时间用户将被踢出频道。</td>
 </tr>
 </tbody>
 </table>
 
 
-
-> [1] `expireTimestamp` 指 1970 年 1 月 1 日开始到 Token 服务到期的秒数。如果想设置 10 分钟的服务有效时间，则输入当前时间戳 + 600（秒）即可。每个服务的有效时间是独立的，可以通过 `setPrivilege` 接口进行单独设置。
+> [1] > 声网目前暂不支持用非 0 的 string 型 uid 生成 token。
+> [2] `expireTimestamp` 指 1970 年 1 月 1 日开始到 Token 服务到期的秒数。如果想设置 10 分钟的服务有效时间，则输入当前时间戳 + 600（秒）即可。每个服务的有效时间是独立的，可以通过 `setPrivilege` 接口进行单独设置。
 
 <a id = "-App-Certificate"></a>
 
