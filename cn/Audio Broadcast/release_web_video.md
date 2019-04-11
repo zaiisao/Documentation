@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Apr 11 2019 05:59:22 GMT+0000 (UTC)
+updatedAt: Thu Apr 11 2019 10:15:01 GMT+0000 (UTC)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -83,6 +83,20 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](../../cn/Audio%20Broadcast/websdk_related_faq.md)。
+
+## 2.6.1 版
+
+该版本于 2019 年 4 月 11 日发布。改进及修复问题详见下文。
+
+### 改进
+
+创建流（`AgoraRTC.createStream`）时支持 `cameraId` 和 `microphoneId` 使用空字符串。
+
+### 修复问题
+
+- 修复在最新版 iOS Safari 上最多只能同时播放两个视频流的问题。
+- 修复在发布流（`Client.publish`）之前调用 `enableDualStream` 方法报错的问题。
+- 修复使用 String UID 的通话中调用 `getStats` 返回的部分数据缺失的问题。
 
 ## 2.6.0 版
 
