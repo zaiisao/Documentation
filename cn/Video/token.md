@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 11 2019 07:01:10 GMT+0000 (UTC)
+updatedAt: Thu Apr 11 2019 07:01:16 GMT+0000 (UTC)
 ---
 # 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
@@ -155,7 +155,7 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 </table>
 
 
-> [1] > 声网目前暂不支持用非 0 的 string 型 uid 生成 token。
+> [1] 声网目前暂不支持用非 0 的 string 型 uid 生成 token。
 > [2] `expireTimestamp` 指 1970 年 1 月 1 日开始到 Token 服务到期的秒数。如果想设置 10 分钟的服务有效时间，则输入当前时间戳 + 600（秒）即可。每个服务的有效时间是独立的，可以通过 `setPrivilege` 接口进行单独设置。
 
 <a id = "-App-Certificate"></a>
