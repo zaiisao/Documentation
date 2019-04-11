@@ -3,7 +3,7 @@
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
 platform: All Platforms
-updatedAt: Thu Apr 11 2019 06:42:30 GMT+0000 (UTC)
+updatedAt: Thu Apr 11 2019 06:42:39 GMT+0000 (UTC)
 ---
 # Generate a Token
 This page shows how to generate a token on your server for Agora SDK versions 2.1.0+. The token is used for joining a channel.
@@ -16,6 +16,8 @@ The following programming languages are covered. Choose the one that applies to 
 - Go
 - PHP
 - Node.js
+
+> Agora does not support signing Token with a non-zero string uid for the time being.
 
 ## Java
 
