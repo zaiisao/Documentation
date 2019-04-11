@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Apr 11 2019 06:14:26 GMT+0000 (UTC)
+updatedAt: Thu Apr 11 2019 10:15:38 GMT+0000 (UTC)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -83,6 +83,20 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](../../en/Interactive%20Broadcast/websdk_related_faq.md).
+
+## v2.6.1
+
+v2.6.1 is released on April 11, 2019.
+
+### Improvement
+
+This version supports using empty strings as `cameraId` and `microphoneId` when creating a stream.
+
+### Issues Fixed
+
+- At mots only two video streams can be played on latest iOS Safari at the same time.
+- Errors occur when calling `enableDualStream` before publishing a stream.
+- Some statistics returned by `getStats` are missing in calls using string UIDs.
 
 ## v2.6.0
 
