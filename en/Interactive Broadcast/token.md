@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 11 2019 06:30:17 GMT+0000 (UTC)
+updatedAt: Thu Apr 11 2019 06:40:23 GMT+0000 (UTC)
 ---
 # Use Security Keys
 This page describes the token (Agora’s authentication mechanism). Before you start, check if your SDK version supports the token:
@@ -137,7 +137,7 @@ The application client needs to send the following parameters to the server to g
 </tr>
 </thead>
 <tbody>
-	<tr><td><code>appID</code></td>
+	<tr><td><code>appID</code> <sup>[1]</sup></td>
 <td>The App ID of the user’s project in the Agora Dashboard, see <a href="#getting-an-app-id">Getting an App ID</a>.</td>
 </tr>
 	<tr><td><code>appCertificate</code></td>
@@ -149,13 +149,14 @@ The application client needs to send the following parameters to the server to g
 <tr><td><code>uid</code></td>
 <td>ID of the user who wants to join a channel.</td>
 </tr>
-<tr><td><code>expireTimestamp</code> <sup>[1]</sup></a></td>
+<tr><td><code>expireTimestamp</code> <sup>[2]</sup></a></td>
 <td>The token expiration time. The default value is 0, where the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
 </tr>
 </tbody>
 </table>
 
->[1] `expireTimestamp` is represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set `expireTimestamp` as the current timestamp + 600 \(seconds\). The expiration time for each token is independent, and you can set it through the `setPrivilege` method.
+>[1] Agora does not support signing Token with a non-zero string uid for the time being.
+>[2] `expireTimestamp` is represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set `expireTimestamp` as the current timestamp + 600 \(seconds\). The expiration time for each token is independent, and you can set it through the `setPrivilege` method.
 
 <a id ="getting-an-app-certificate"></a>
 
