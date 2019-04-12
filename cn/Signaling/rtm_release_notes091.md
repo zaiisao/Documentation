@@ -1,11 +1,11 @@
 
 ---
-title: Agora RTM SDK v0.9.1 Android 平台版本更新信息
+title: Agora RTM SDK v0.9.1 版本更新信息
 description: 
 platform: Android
-updatedAt: Fri Apr 12 2019 12:45:21 GMT+0800 (CST)
+updatedAt: Fri Apr 12 2019 12:48:09 GMT+0800 (CST)
 ---
-# Agora RTM SDK v0.9.1 Android 平台版本更新信息
+# Agora RTM SDK v0.9.1 版本更新信息
 本文列举Agora RTM Android SDK v0.9.1 版本较 v0.9.0 版本的差异
 
 1. 将 IResultCallback 类重命名为 ResultCallback 以遵循 Java 命名规范。
