@@ -3,31 +3,32 @@
 title: Agora RTM v0.9.1 Migration Information
 description: 
 platform: Android
-updatedAt: Fri Apr 12 2019 16:00:53 GMT+0800 (CST)
+updatedAt: Fri Apr 12 2019 16:02:31 GMT+0800 (CST)
 ---
 # Agora RTM v0.9.1 Migration Information
-This page describes the difference between v0.9.1 and v0.9.0 of the Agora RTM Android SDK
+This page describes the differences between v0.9.1 and v0.9.0 of the Agora RTM Android SDK.
 
-1. Renamed the IResultCallback class to ResultCallback in order to conform to the naming convention of Java.
-2. Removed the IStateListener, the class for listening to message sending states, and used the ResultCallback class instead for listening to the peer or channel message sending results.
+v0.9.1:
+1. Renamed the IResultCallback class to ResultCallback in order to conform to the Java naming convention.
+2. Removed the IStateListener class for listening to message sending states, and used the ResultCallback class instead for listening to the peer or channel message sending results.
    - Success: the SDK returns the ResultCallback.onSuccess() callback. 
-   - Failure: the SDK returns the ResultCallback.onFailure() callback with the corresponding ChannelMessageError or PeerMessageError. 
+   - Failure: the SDK returns the ResultCallback.onFailure() callback with the corresponding ChannelMessageError or PeerMessageError enum. 
 
-3. Renamed the method for releasing all resources used by the RtmClient instance from destroy() to release(). 
+3. Renamed the destroy() method to release() for releasing all resources used by the RtmClient instance. 
 
-4. Removed PEER_MESSAGE_RECEIVED_BY_SERVER from the PeerMessageError.
+4. Removed PEER_MESSAGE_RECEIVED_BY_SERVER from the PeerMessageError enums.
 
 | v0.9                                                         | v0.9.1                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | interface PeerMessageState  <br>int PEER_MESSAGE_INIT = 0; <br>int PEER_MESSAGE_FAILURE = 1; <br>int PEER_MESSAGE_PEER_UNREACHABLE = 2; <br>int PEER_MESSAGE_RECEIVED_BY_PEER = 3; <br>int PEER_MESSAGE_SENT_TIMEOUT = 4; | interface PeerMessageError  <br>int PEER_MESSAGE_ERR_OK = 0; <br>int PEER_MESSAGE_ERR_FAILURE = 1; <br>int PEER_MESSAGE_ERR_TIMEOUT = 2; <br>int PEER_MESSAGE_ERR_PEER_UNREACHABLE = 3; |
 
-5. Removed CHANNEL_MESSAGE_RECEIVED_BY_SERVER from the ChannelMessageError. 
+5. Removed CHANNEL_MESSAGE_RECEIVED_BY_SERVER from the ChannelMessageError enums. 
 
 | v0.9                                                         | v0.9.1                                                       |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | interface ChannelMessageState  <br>int CHANNEL_MESSAGE_INIT = 0; <br>int CHANNEL_MESSAGE_FAILURE = 1; <br>int CHANNEL_MESSAGE_RECEIVED_BY_SERVER = 2; <br>int CHANNEL_MESSAGE_SENT_TIMEOUT = 4; | interface ChannelMessageError <br>int CHANNEL_MESSAGE_ERR_OK = 0; <br>int CHANNEL_MESSAGE_ERR_FAILURE = 1; <br>int CHANNEL_MESSAGE_ERR_TIMEOUT = 2; |
 
-6. You can call the object method of rtmClient to create a peer-to-peer message
+6. You can call the object method of rtmClient to create a peer-to-peer message.
 
 7. Added methods and enums for the call invitation function: 
 
