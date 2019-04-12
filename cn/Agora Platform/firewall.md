@@ -3,7 +3,7 @@
 title: 防火墙说明
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 12 2019 13:31:08 GMT+0800 (CST)
+updatedAt: Fri Apr 12 2019 13:31:19 GMT+0800 (CST)
 ---
 # 防火墙说明
 在使用 Agora.io 提供的相关服务之前，您需要接入到某些特定的端口。本页提供使用 Agora 各 SDK 前必须要打开的端口及设置的域名白名单。
@@ -43,7 +43,7 @@ updatedAt: Fri Apr 12 2019 13:31:08 GMT+0800 (CST)
 
 -   打开 UDP 端口：双向 1080、4000-4030、8000、9700、25000 和 所有的录制进程所使用的单向下行端口
 
--   将域名 .agora.io、vocs.agora.io、qoslbs.agora.io、qos.agora.io 设为白名单
+-   将域名 .agora.io、vocs.agora.io、qoslbs.agoralab.io、qos.agoralab.io 设为白名单
 
 
 
