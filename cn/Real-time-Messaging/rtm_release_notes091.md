@@ -3,7 +3,7 @@
 title: Agora RTM SDK v0.9.1 版本更新信息
 description: 
 platform: Android
-updatedAt: Fri Apr 12 2019 12:48:09 GMT+0800 (CST)
+updatedAt: Fri Apr 12 2019 12:50:12 GMT+0800 (CST)
 ---
 # Agora RTM SDK v0.9.1 版本更新信息
 本文列举Agora RTM Android SDK v0.9.1 版本较 v0.9.0 版本的差异
@@ -72,5 +72,7 @@ updatedAt: Fri Apr 12 2019 12:48:09 GMT+0800 (CST)
   - interface LocalInvitationError
   - interface RemoteInvitationError
   - interface InvitationApiCallError
+
+8 增加连接状态改变原因枚举值 int CONNECTION_CHANGE_REASON_REMOTE_LOGIN = 8;
 
 
