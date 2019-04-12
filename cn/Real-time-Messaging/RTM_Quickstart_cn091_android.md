@@ -3,7 +3,7 @@
 title: RTM Android 平台快速开始 v0.9.1
 description: 
 platform: Android
-updatedAt: Fri Apr 12 2019 12:30:51 GMT+0800 (CST)
+updatedAt: Fri Apr 12 2019 12:31:04 GMT+0800 (CST)
 ---
 # RTM Android 平台快速开始 v0.9.1
 # 01 初始化
