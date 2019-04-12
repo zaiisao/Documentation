@@ -3,10 +3,12 @@
 title: Agora RTM v0.9.1 Migration Information
 description: migration information
 platform: iOS
-updatedAt: Fri Apr 12 2019 16:04:38 GMT+0800 (CST)
+updatedAt: Fri Apr 12 2019 16:04:45 GMT+0800 (CST)
 ---
 # Agora RTM v0.9.1 Migration Information
-This page describes the difference between v0.9.1 and v0.9.0 of the Agora RTM Android SDK.
+This page describes the differences between v0.9.1 and v0.9.0 of the Agora RTM Android SDK.
+
+v0.9.1:
 
 1. Splited the AgoraRtmSendMessageErrorCode enum into the AgoraPeerMessageError and AgoraChannelMessageError enums.
 
@@ -20,7 +22,7 @@ This page describes the difference between v0.9.1 and v0.9.0 of the Agora RTM An
 |--------------------------------|----------------------|
 |N/A                     |AgoraRtmConnectionChangeReasonRemoteLogin = 8,|
 
-3. Changed the parameter of the `setParameters` method
+3. Changed the parameter of the `setParameters` method.
 
 \- (int)setParameters:(NSString * _Nonnull)parameters;
 
