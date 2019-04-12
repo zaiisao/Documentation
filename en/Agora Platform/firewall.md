@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Sat Dec 29 2018 21:05:24 GMT+0000 (UTC)
+updatedAt: Fri Apr 12 2019 13:20:34 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for all Agora SDKs. Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in this article.
@@ -35,7 +35,7 @@ This page describes the firewall requirements for all Agora SDKs. Before accessi
 -   Open UDP ports:
     -   Duplex ports: 1080, 4000 to 4030, 8000, 9700 and 25000;
     -   Simplex downstream ports used by recording processes.
--   Whitelist domains: `.agora.io`, `vocs.agora.io`, `qoslbs.agora.io`, and `qos.agora.io`.
+-   Whitelist domains: `.agora.io`, `vocs.agora.io`, `qoslbs.agoralab.io`, and `qos.agoralab.io`.
 
 > To record the content in channels, you need one recording process for each of the channels. One recording thread requires four simplex downstream ports. There must be no port conflict among processes, including system processes and all recording processes.
 > 
