@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: iOS
-updatedAt: Mon Apr 15 2019 07:09:19 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 07:39:31 GMT+0800 (CST)
 ---
 # 实现视频通话
 在本页你可以了解如何使用 Agora SDK 实现视频通话。
