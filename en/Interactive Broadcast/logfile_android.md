@@ -31,4 +31,4 @@ engine.setLogFile(filepath);
 
 ## Considerations
 
-We recommend calling the `setLogFile` before calling the rest of the methods, otherwise the log file that the SDK records may not be complete. 
+We recommend calling the `setLogFile` method before calling the rest of the methods, otherwise the log file that the SDK records may not be complete. 

@@ -65,17 +65,13 @@ Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to saf
 
 ### Get an App ID
 
-1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
+1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/).
 
-2. Click **Add New Project** on the **Projects** page in [Dashboard](https://dashboard.agora.io/).
-
-   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
+2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu and click **Create**.
 
 3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
 
 4. Find the **App ID** under the created project.
-
-   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
 
 
 ### Use an App ID
