@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: iOS
-updatedAt: Fri Feb 15 2019 06:07:20 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 08:13:02 GMT+0800 (CST)
 ---
 # 检测通话质量
 通话质量检测功能是在 SDK **加入频道后**通过每 2 秒触发一次的回调实现。
@@ -11,14 +11,14 @@ updatedAt: Fri Feb 15 2019 06:07:20 GMT+0800 (CST)
 通话质量检测包括：
 
 - 用户上下行网络质量打分
-- 本地用户视频质量统计
-  - 发送质量统计
 - 远端用户音频质量统计
   - 端到端质量统计
   - 网络传输层质量统计
 - 远端用户视频质量统计
   - 端到端质量统计
   - 网络传输层质量统计
+- 本地用户视频质量统计
+  - 发送质量统计
 
 ## 用户上下行网络质量打分
 
@@ -66,6 +66,30 @@ updatedAt: Fri Feb 15 2019 06:07:20 GMT+0800 (CST)
 用户上下行网络质量打分 `networkQuality` 不同于通话前的网络质量检测 `lastmileQuality`：
 - `lastmileQuality` 在用户加入频道前通过主动调用 `enableLastmileTest` 方法后才会触发；`networkQuality` 在用户加入频道后自动触发。
 - `lastmileQuality` 反映的是本地用户设备到边缘服务器的网络上下行质量；`networkQuality` 反映的是所有用户或主播的设备到边缘服务器的网络上下行质量（如果频道内有多个用户或主播，该回调会相应多次触发）。
+
+## 本地用户视频质量统计
+
+### 功能描述
+
+本地用户的视频质量统计反映的是本地视频流的实际发送帧率和实际发送码率。涉及回调：
+
+- `onLocalVideoStats` 2 秒自动回调：反映的是当前设备发送视频流的状态。主要返回信息：
+  - `sentBitrate`：实际发送码率（Kbps）。
+  - `sentFrameRate`：实际发送帧率（fps）。
+  - `targetBitrate`：当前编码器的目标编码码率（Kbps），该码率为 SDK 根据当前网络状况预估的一个值。
+  - `targetFrameRate`：当前编码器的目标编码帧率（fps）。
+  - `qualityAdaptIndication`：和上次返回的本地视频流统计信息相比，本地视频质量（主要是码率和帧率）的自适应情况：
+	- `ADAPT_NONE` = 0：未进行自适应
+	- `ADAPT_UP_BANDWIDTH` = 1：由于带宽增加，视频的码率和帧率向上自适应
+	- `ADAPT_DOWN_BANDWIDTH` = 2：由于带宽减少，视频的码率和帧率向下自适应
+
+### API 参考
+
+[`localVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStats:)
+
+```objective-c
+- (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine localVideoStats:(AgoraRtcLocalVideoStats *_Nonnull)stats
+```
 
 ## 远端用户音频质量统计
 
@@ -146,23 +170,5 @@ updatedAt: Fri Feb 15 2019 06:07:20 GMT+0800 (CST)
 
 - `videoTransportStatsOfUid` 用于描述用户通话中从边缘服务器到边缘服务器的网络状态，通过视频包计算，展示当前网络状态，体现真实网络客观数据，比如丢包、网络延迟。
 - `remoteVideoStats` 反映的是全链路的视频质量，更贴近用户的主观感受。
-
-## 本地用户视频质量统计
-
-### 功能描述
-
-本地用户的视频质量统计反映的是本地视频流的实际发送帧率和实际发送码率。涉及回调：
-
-- `localVideoStats` 2 秒自动回调：反映的是当前设备发送视频流的状态。主要返回信息：
-  - `sentBitrate`：实际发送码率（kbps）。
-  - `sentFrameRate`：实际发送帧率（fps）。
-
-### API 参考
-
-[`localVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStats:)
-
-```objective-c
-- (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine localVideoStats:(AgoraRtcLocalVideoStats *_Nonnull)stats
-```
 
 
