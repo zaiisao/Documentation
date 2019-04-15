@@ -3,7 +3,7 @@
 title: Set the Logger
 description: 
 platform: Web
-updatedAt: Mon Apr 15 2019 10:02:20 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 10:04:04 GMT+0800 (CST)
 ---
 # Set the Logger
 ## Introduction
@@ -30,6 +30,7 @@ Call the `enableLogUpload` method to upload logs on to the Agora Server, or call
 #### Considerations
 - The log-upload function is disabled by default. To enable this function, call the `enableLogUpload` method.
 - If the user fails to join the channel, the logs are unavailable on the Agora Server.
+- Call the `enableLogUpload()` method before calling the rest of the methods, otherwise the log may not be complete. 
 
 #### API Reference
 
