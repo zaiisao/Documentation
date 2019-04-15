@@ -3,7 +3,7 @@
 title: 设置日志文件
 description: 设置日志文件
 platform: macOS
-updatedAt: Mon Apr 15 2019 10:08:30 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 10:08:35 GMT+0800 (CST)
 ---
 # 设置日志文件
 ## 功能描述
@@ -33,6 +33,10 @@ NSString *logFilePath = [NSString stringWithFormat:@"%@/%@.log", [paths objectAt
 [engine setLogFile:logFilePath]
 ```
 
-### API 参考
+## API 参考
 - [`setLogFile`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html?transId=9fa366f0-01e7-11e9-a659-33e4b5b761ac#//api/name/setLogFile:)
 - [`setLogFilter`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html?transId=9fa366f0-01e7-11e9-a659-33e4b5b761ac#//api/name/setLogFilter:)
+
+## 注意事项
+
+建议在调用所有方法前调用 `setLogFile` 方法，否则日志记录可能不完整。
