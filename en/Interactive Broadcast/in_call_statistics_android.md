@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: 
 platform: Android
-updatedAt: Mon Apr 15 2019 08:29:45 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 08:32:16 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 The in-call audio-and-video statistics reflect the overall quality of a call after the SDK joins a channel and are reported once every two seconds.
@@ -72,6 +72,31 @@ Here are the differences between the `onNetworkQuality` and `onLastmileQuality` 
 `onLastmileQuality`:
 - The SDK triggers the `onLastmileQuality` callback when a user calls the `enableLastmileTest` method before joining a channel.
 - The `onLastmileQuality` callback reports the uplink and downlink last-mile quality between the local device and Agora's edge server.
+
+## Video Statistics of the Local User
+
+### Feature Description
+
+This feature reports the video quality of the local video stream.
+
+- `onLocalVideoStats`: The SDK triggers this callback once every two seconds to report the video quality of the local video stream. This callback returns the following information: 
+  - `sentBitrate`: The average sending bitrate (Kbps) since the last count.
+  - `sentFrameRate`: The average sending frame rate (fps).
+  - `targetBitrate`: The target bitrate (Kbps) of the current encoder. This value is estimated by the SDK based on the current network conditions.
+  - `targetFrameRate`: The target frame rate (fps) of the current encoder.
+  - `qualityAdaptIndication`: The adaptation of the local video (mainly the bitrate or the frame rate) compared with the statistics of the last count:
+	- `ADAPT_NONE` = 0: No adaptation for the local video bitrate and frame rate.
+	- `ADAPT_UP_BANDWIDTH` = 1: The local video bitrate or frame rate increases due to a bandwidth increase.
+	- `ADAPT_DOWN_BANDWIDTH` = 2: The local video bitrate or frame rate decreases due to a bandwidth decrease.
+
+### API Reference
+
+[`onLocalVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a79fb5d32bb694d24b54a523d924dc7ef)
+
+```java
+void onLocalVideoStats(LocalVideoStats stats) {
+    }
+```
 
 ## Audio Statistics of the Remote Users
 
@@ -153,24 +178,5 @@ Here is the difference between the `onRemoteVideoTransportStats` and `onRemoteVi
 
 - The `onRemoteVideoTransportStats` callback reports the network quality between the Agora edge servers at the two ends with objective video statistics, such as the packet loss rate and network delay. 
 - The `onRemoteVideoStats` callback reports the overall video quality from end to end that is closely linked to the real-user experience. 
-
-## Video Statistics of the Local User
-
-### Feature Description
-
-This feature reports the video quality of the local video stream.
-
-- `onLocalVideoStats`: The SDK triggers this callback once every two seconds to report the video quality of the local video stream. This callback returns the following information: 
-  - `sentBitrate`: Sent bitrate (Kbps).
-  - `sentFrameRate`: Sent frame rate (fps).
-
-### API Reference
-
-[`onLocalVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a79fb5d32bb694d24b54a523d924dc7ef)
-
-```java
-void onLocalVideoStats(LocalVideoStats stats) {
-    }
-```
 
 
