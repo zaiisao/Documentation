@@ -3,7 +3,7 @@
 title: Set the Log File
 description: 
 platform: Windows
-updatedAt: Thu Jan 17 2019 09:47:12 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 10:03:24 GMT+0800 (CST)
 ---
 # Set the Log File
 ## Introduction
