@@ -3,7 +3,7 @@
 title: 设置日志信息
 description: 
 platform: Web
-updatedAt: Mon Apr 15 2019 10:11:07 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 10:11:11 GMT+0800 (CST)
 ---
 # 设置日志信息
 ## 功能描述
@@ -30,6 +30,7 @@ Agora Web SDK 通过 `enableLogUpload` 方法将 SDK 的日志上传到 Agora �
 #### 开发注意事项
 - 日志上传功能默认为关闭状态，如果你需要开启此功能，请确保在所有方法之前调用 `enableLogUpload` 方法。
 - 如果没有成功加入频道，服务器上无法查看日志信息。
+- 请在调用所有方法前调用 `enableLogUpload` 方法，否则日志可能不完整。
 
 #### API 参考
 
