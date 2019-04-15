@@ -3,7 +3,7 @@
 title: 设置日志文件
 description: 设置日志文件
 platform: Windows
-updatedAt: Wed Feb 20 2019 07:05:17 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 10:12:42 GMT+0800 (CST)
 ---
 # 设置日志文件
 ## 功能简介
@@ -44,6 +44,10 @@ if (PathFileExists(szAppFolder)){
 }
 ```
 
-### API 参考
+## API 参考
 - [`setLogFile`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html?transId=ac204940-0343-11e9-bbd0-251679929d6b#a0e11f89f5b900279ed82a9d4fa9eb18a)
 - [`setLogFilter`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html?transId=ac204940-0343-11e9-bbd0-251679929d6b#a169cd86502290529b02eaf6748a63f2a)
+
+## 注意事项
+
+建议在调用所有方法前调用 `setLogFile` 方法，否则日志记录可能不完整。
