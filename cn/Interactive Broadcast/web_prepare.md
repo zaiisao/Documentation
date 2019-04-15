@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Web
-updatedAt: Fri Mar 29 2019 07:15:39 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 08:21:22 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Web SDK 进行音视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -109,7 +109,7 @@ updatedAt: Fri Mar 29 2019 07:15:39 GMT+0800 (CST)
 该方法无需在官网下载安装包。在项目相应的前端页面文件中，将如下代码添加到 `</body>` 上一行：
 
  ```javascript
-<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.5.2.js"></script>
+<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.6.1.js"></script>
 ```
 
 ### 方法 3. 从官网获取安装包
@@ -118,8 +118,8 @@ updatedAt: Fri Mar 29 2019 07:15:39 GMT+0800 (CST)
 
 	<img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_download.png" style="width: 840px"/>
 
-2. 将下载下来的软件包中的 `AgoraRTCSDK-2.5.2.js` 文件保存到你所操作的项目下。
-3. 在项目相应的前端页面文件中，对 `AgoraRTCSDK-2.5.2.js` 进行引用。
+2. 将下载下来的软件包中的 `AgoraRTCSDK-2.6.1.js` 文件保存到你所操作的项目下。
+3. 在项目相应的前端页面文件中，对 `AgoraRTCSDK-2.6.1.js` 进行引用。
 
 	<img alt="../_images/web_sdk_reference.jpg" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_reference.jpg" />
 
