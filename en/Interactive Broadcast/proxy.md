@@ -3,7 +3,7 @@
 title: Deploy the Enterprise Proxy
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Fri Nov 09 2018 18:19:46 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 18:19:46 GMT+0800 (CST)
 ---
 # Deploy the Enterprise Proxy
 This page shows how enterprises can deploy the proxy package provided by Agora to access Agora’s services through a company firewall.

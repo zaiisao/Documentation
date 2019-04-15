@@ -3,7 +3,7 @@
 title: Leave the Channel
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 16:14:08 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:14:08 GMT+0800 (CST)
 ---
 # Leave the Channel
 When a call or live broadcast ends, use the Agora SDK to leave the channel.

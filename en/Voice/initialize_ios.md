@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 23:27:05 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:27:05 GMT+0800 (CST)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating an AgoraRtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../cn/Voice/ios_audio.md).

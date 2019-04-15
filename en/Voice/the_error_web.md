@@ -3,7 +3,7 @@
 title: Error Codes and Warning Codes
 description: 
 platform: Web
-updatedAt: Thu Nov 08 2018 10:47:33 GMT+0000 (UTC)
+updatedAt: Thu Nov 08 2018 10:47:33 GMT+0800 (CST)
 ---
 # Error Codes and Warning Codes
 The Agora Web SDK will return error or warning codes when calling APIs or during runtime:

@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: macOS
-updatedAt: Tue Feb 19 2019 09:33:57 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:33:57 GMT+0800 (CST)
 ---
 # Implement Encryption
 # Using Agora Built-in Encryption

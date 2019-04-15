@@ -3,7 +3,7 @@
 title: Improve Experience Under Poor Network Conditions
 description: 
 platform: Web
-updatedAt: Wed Apr 03 2019 06:39:42 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 06:39:42 GMT+0800 (CST)
 ---
 # Improve Experience Under Poor Network Conditions
 ## Introduction

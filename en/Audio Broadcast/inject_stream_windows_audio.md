@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Windows
-updatedAt: Wed Feb 20 2019 07:45:01 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:45:01 GMT+0800 (CST)
 ---
 # Inject an Online Media Stream
 ## Introduction

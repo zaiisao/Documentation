@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: Windows
-updatedAt: Tue Feb 19 2019 09:39:55 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 09:39:55 GMT+0800 (CST)
 ---
 # Implement Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.

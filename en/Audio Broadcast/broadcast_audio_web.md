@@ -3,7 +3,7 @@
 title: Starting a Live Voice Broadcast
 description: 
 platform: Web
-updatedAt: Tue Dec 25 2018 10:11:47 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:11:47 GMT+0800 (CST)
 ---
 # Starting a Live Voice Broadcast
 This page introduces how to use Agora’s Web SDK to start a live voice broadcast.

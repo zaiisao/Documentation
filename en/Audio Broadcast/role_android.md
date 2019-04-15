@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: Android
-updatedAt: Thu Dec 13 2018 21:53:21 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 21:53:21 GMT+0800 (CST)
 ---
 # Switch the Client Role
 Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).

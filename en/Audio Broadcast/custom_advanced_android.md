@@ -3,7 +3,7 @@
 title: Agora Component for Customization
 description: 
 platform: Android
-updatedAt: Tue Nov 20 2018 06:48:36 GMT+0000 (UTC)
+updatedAt: Tue Nov 20 2018 06:48:36 GMT+0800 (CST)
 ---
 # Agora Component for Customization
 <a name = "custom_video_source"></a>

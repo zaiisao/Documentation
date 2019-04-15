@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: 
 platform: macOS
-updatedAt: Mon Feb 18 2019 08:52:35 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 08:52:35 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 The in-call audio statistics reflect the overall quality of a call after the SDK joins a channel and are reported once every two seconds.

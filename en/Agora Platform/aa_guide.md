@@ -3,7 +3,7 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Thu Dec 27 2018 08:19:01 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 08:19:01 GMT+0800 (CST)
 ---
 # Agora Analytics
 ## Overview

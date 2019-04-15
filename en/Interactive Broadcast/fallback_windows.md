@@ -3,7 +3,7 @@
 title: Improve Expereience Under Poor Network Conditions
 description: 
 platform: Windows
-updatedAt: Wed Dec 26 2018 10:14:34 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 10:14:34 GMT+0800 (CST)
 ---
 # Improve Expereience Under Poor Network Conditions
 ## Introduction

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Cocos
-updatedAt: Fri Nov 23 2018 10:06:02 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 10:06:02 GMT+0800 (CST)
 ---
 # Release Notes
 ## Introduction

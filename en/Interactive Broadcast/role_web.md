@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: Web
-updatedAt: Tue Feb 19 2019 10:50:25 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 10:50:25 GMT+0800 (CST)
 ---
 # Switch the Client Role
 

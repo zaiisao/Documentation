@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 23:04:52 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 23:04:52 GMT+0800 (CST)
 ---
 # Join a Channel
 Before joining a channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Voice/windows_video.md).

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Java
-updatedAt: Tue Feb 19 2019 07:37:43 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 07:37:43 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview

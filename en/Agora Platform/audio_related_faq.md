@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Tue Dec 25 2018 16:07:08 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 16:07:08 GMT+0800 (CST)
 ---
 # Audio-related Issues
 This page provides common troubleshooting strategies for Agora's audio products and services.

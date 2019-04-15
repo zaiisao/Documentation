@@ -3,7 +3,7 @@
 title: Server SDK API
 description: 
 platform: Java
-updatedAt: Fri Dec 21 2018 09:56:43 GMT+0000 (UTC)
+updatedAt: Fri Dec 21 2018 09:56:43 GMT+0800 (CST)
 ---
 # Server SDK API
 > Version: v1.4.0 BETA

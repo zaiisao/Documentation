@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:23:34 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:23:34 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This documentation is provided for the Java language with the following classes:

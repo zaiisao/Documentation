@@ -3,7 +3,7 @@
 title: Error Codes and Warning Codes
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:02:13 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:13 GMT+0800 (CST)
 ---
 # Error Codes and Warning Codes
 The Agora Native SDK will return error or warning codes when calling APIs or during runtime:

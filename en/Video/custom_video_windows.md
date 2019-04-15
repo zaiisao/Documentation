@@ -3,7 +3,7 @@
 title: Customize Audio/Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Fri Dec 07 2018 19:36:06 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 19:36:06 GMT+0800 (CST)
 ---
 # Customize Audio/Video Source and Renderer
 ## Introduction

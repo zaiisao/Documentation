@@ -3,7 +3,7 @@
 title: Agora Audio Broadcasting Overview
 description: 
 platform: All_Platforms
-updatedAt: Wed Apr 03 2019 06:36:35 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 06:36:35 GMT+0800 (CST)
 ---
 # Agora Audio Broadcasting Overview
 The Agora Native SDK for Audio Broadcasting enables one-to-many and many-to-many audio live streaming. Different from the traditional CDN live broadcast, which only allows one-way communication from the hosts to the audience, the Agora SDK for Interactive Broadcast empowers the audience to interact with the hosts through [hosting-in](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#hosting-in), like a viewer jumping onto the stage in the middle of a play to perform. The Agora Native SDK for Interactive Broadcast is applicable to scenarios that encourage active engagement, such as game-playing, online classes for students in small groups, and Q&A sessions during E-commerce live streaming.

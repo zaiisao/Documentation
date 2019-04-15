@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: Web
-updatedAt: Thu Dec 13 2018 22:14:53 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 22:14:53 GMT+0800 (CST)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any stream, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Video/web_prepare.md).

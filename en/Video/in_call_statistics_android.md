@@ -3,21 +3,21 @@
 title: Report In-call Statistics
 description: 
 platform: Android
-updatedAt: Fri Feb 15 2019 06:10:23 GMT+0000 (UTC)
+updatedAt: Fri Feb 15 2019 06:10:23 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 The in-call audio-and-video statistics reflect the overall quality of a call after the SDK joins a channel and are reported once every two seconds.
 
 The statistics include the:
 - Uplink and downlink ratings of each user in the channel.
+- Video statistics of the local user.
+  - Sent frame rate and bitrate.
 - Audio statistics of the remote users:
   - End-to-end audio statistics.
   - Transport-layer audio statistics.
 - Video statistics of the remote users:
   - End-to-end video statistics.
   - Transport-layer video statistics.
-- Video statistics of the local user.
-  - Sent frame rate and bitrate.
 
 ## Uplink and Downlink Ratings of Each User in the Channel
 

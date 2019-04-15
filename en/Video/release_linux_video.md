@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 04:05:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:41 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Full SDK for Linux.

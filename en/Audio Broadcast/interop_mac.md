@@ -3,7 +3,7 @@
 title: Enable Interoperability 
 description: 
 platform: macOS
-updatedAt: Mon Apr 08 2019 09:34:19 GMT+0000 (UTC)
+updatedAt: Mon Apr 08 2019 09:34:19 GMT+0800 (CST)
 ---
 # Enable Interoperability 
 ## Introduction

@@ -3,7 +3,7 @@
 title: Agora Web SDK API
 description: 
 platform: Web
-updatedAt: Tue Sep 25 2018 12:53:29 GMT+0000 (UTC)
+updatedAt: Tue Sep 25 2018 12:53:29 GMT+0800 (CST)
 ---
 # Agora Web SDK API
 # Agora Web SDK API

@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: macOS
-updatedAt: Wed Jan 30 2019 07:25:48 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:25:48 GMT+0800 (CST)
 ---
 # Signaling API
 > Version: v1.4.0

@@ -3,7 +3,7 @@
 title: Making a Video Call
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:06:30 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:30 GMT+0800 (CST)
 ---
 # Making a Video Call
 In this quickstart, you will learn how to use the Agora SDK to make a video call.

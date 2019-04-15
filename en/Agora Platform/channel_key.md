@@ -3,7 +3,7 @@
 title: Channel Keys
 description: Guide on how to use channel key
 platform: All Platform
-updatedAt: Fri Nov 02 2018 04:16:09 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:16:09 GMT+0800 (CST)
 ---
 # Channel Keys
 ## Introduction

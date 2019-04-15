@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:23:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:23:41 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This document is provided for the Objective-C language with the following classes:

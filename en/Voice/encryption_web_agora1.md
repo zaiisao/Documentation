@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: Web
-updatedAt: Fri Jan 04 2019 10:38:14 GMT+0000 (UTC)
+updatedAt: Fri Jan 04 2019 10:38:14 GMT+0800 (CST)
 ---
 # Implement Encryption
 ## Introduction

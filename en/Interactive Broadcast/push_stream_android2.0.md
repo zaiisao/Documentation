@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Android
-updatedAt: Wed Apr 03 2019 03:55:54 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 03:55:54 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction

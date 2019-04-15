@@ -3,7 +3,7 @@
 title: Making a Voice Call
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:06:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:45 GMT+0800 (CST)
 ---
 # Making a Voice Call
 In this quickstart, you will learn how to use the Agora SDK to make a voice call.

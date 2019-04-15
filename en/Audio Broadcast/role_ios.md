@@ -3,7 +3,7 @@
 title: Switch the Client Role
 description: 
 platform: iOS
-updatedAt: Thu Dec 13 2018 16:38:15 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 16:38:15 GMT+0800 (CST)
 ---
 # Switch the Client Role
 Before switching the client role, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md).

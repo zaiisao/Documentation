@@ -3,7 +3,7 @@
 title: Making a Voice Call
 description: 
 platform: Web
-updatedAt: Tue Dec 25 2018 10:11:49 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:11:49 GMT+0800 (CST)
 ---
 # Making a Voice Call
 This page introduces how to use Agora’s Web SDK to make a voice call.

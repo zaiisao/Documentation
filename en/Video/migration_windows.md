@@ -3,7 +3,7 @@
 title: Migration Guide from v2.0.8 to v2.3.2 (Windows)
 description: 
 platform: Windows
-updatedAt: Tue Jan 15 2019 01:44:41 GMT+0000 (UTC)
+updatedAt: Tue Jan 15 2019 01:44:41 GMT+0800 (CST)
 ---
 # Migration Guide from v2.0.8 to v2.3.2 (Windows)
 This page contains information on major API changes during release v2.0.8 and v2.3.2 for Agora SDK for Windows.

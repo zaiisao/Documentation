@@ -3,7 +3,7 @@
 title: Rate the Call
 description: How to enable the rating function on Android
 platform: Android
-updatedAt: Thu Dec 27 2018 07:34:09 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 07:34:09 GMT+0800 (CST)
 ---
 # Rate the Call
 ## Introduction

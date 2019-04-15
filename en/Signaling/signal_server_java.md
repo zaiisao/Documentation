@@ -3,7 +3,7 @@
 title: Sending Point-to-point Text and Channel Messages from the Server
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:03:26 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:26 GMT+0800 (CST)
 ---
 # Sending Point-to-point Text and Channel Messages from the Server
 ## Section 1: Integration

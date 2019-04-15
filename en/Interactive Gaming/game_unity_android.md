@@ -3,7 +3,7 @@
 title: Implement Voice for Gaming
 description: 
 platform: Unity
-updatedAt: Wed Jan 30 2019 12:32:25 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 12:32:25 GMT+0800 (CST)
 ---
 # Implement Voice for Gaming
 With the `Hello-Unity-Agora` Sample App provided by Agora, you can:

@@ -3,7 +3,7 @@
 title: Record the Audio from the Client
 description: 
 platform: iOS,macOS
-updatedAt: Wed Feb 20 2019 06:49:05 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 06:49:05 GMT+0800 (CST)
 ---
 # Record the Audio from the Client
 ## Introduction

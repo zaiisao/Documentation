@@ -3,7 +3,7 @@
 title: Live-related Issues
 description: 
 platform: Live-related Issues
-updatedAt: Thu Nov 22 2018 08:43:11 GMT+0000 (UTC)
+updatedAt: Thu Nov 22 2018 08:43:11 GMT+0800 (CST)
 ---
 # Live-related Issues
 This page provides common troubleshooting strategies for Agora's interactive broadcast products and services.

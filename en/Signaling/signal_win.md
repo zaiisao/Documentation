@@ -3,7 +3,7 @@
 title: Sending Point-to-point Text and Channel Messages from the Client
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:03:16 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:03:16 GMT+0800 (CST)
 ---
 # Sending Point-to-point Text and Channel Messages from the Client
 ## Section 1: Integration

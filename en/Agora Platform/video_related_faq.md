@@ -3,7 +3,7 @@
 title: Video-related Issues
 description: 
 platform: Video-related Issues
-updatedAt: Tue Dec 25 2018 16:24:05 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 16:24:05 GMT+0800 (CST)
 ---
 # Video-related Issues
 This page provides common troubleshooting strategies for Agora's video products and services.

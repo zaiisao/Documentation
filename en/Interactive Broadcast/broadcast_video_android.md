@@ -3,7 +3,7 @@
 title: Starting a Live Video Broadcast
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:11:19 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:11:19 GMT+0800 (CST)
 ---
 # Starting a Live Video Broadcast
 In this quickstart, you will learn how to use the Agora SDK to making a live video broadcast.

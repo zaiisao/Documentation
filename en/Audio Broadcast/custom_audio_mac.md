@@ -3,7 +3,7 @@
 title: Customize the Audio Source and Renderer
 description: 
 platform: macOS
-updatedAt: Mon Feb 18 2019 07:57:25 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 07:57:25 GMT+0800 (CST)
 ---
 # Customize the Audio Source and Renderer
 ## Introduction

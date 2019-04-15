@@ -3,7 +3,7 @@
 title: Deploy the Enterprise Proxy
 description: 
 platform: Web
-updatedAt: Fri Nov 09 2018 18:37:44 GMT+0000 (UTC)
+updatedAt: Fri Nov 09 2018 18:37:44 GMT+0800 (CST)
 ---
 # Deploy the Enterprise Proxy
 This page shows how enterprises can use the API methods provided by the Agora Web SDK to access Agora’s services through a company firewall.

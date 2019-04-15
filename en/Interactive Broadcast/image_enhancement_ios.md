@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 10:51:39 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:51:39 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction

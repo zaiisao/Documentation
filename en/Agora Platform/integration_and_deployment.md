@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: Integration and Deployment
-updatedAt: Fri Nov 02 2018 04:16:25 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:16:25 GMT+0800 (CST)
 ---
 # FAQ
 

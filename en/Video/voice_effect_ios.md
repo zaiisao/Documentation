@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to set voice effects on iOS
 platform: iOS
-updatedAt: Mon Apr 01 2019 10:56:40 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 10:56:40 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 

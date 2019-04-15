@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: iOS
-updatedAt: Fri Dec 07 2018 19:58:30 GMT+0000 (UTC)
+updatedAt: Fri Dec 07 2018 19:58:30 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction

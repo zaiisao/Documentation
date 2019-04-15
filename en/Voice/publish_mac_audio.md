@@ -3,7 +3,7 @@
 title: Publish and Subscribe to Streams
 description: 
 platform: macOS
-updatedAt: Mon Feb 18 2019 09:16:59 GMT+0000 (UTC)
+updatedAt: Mon Feb 18 2019 09:16:59 GMT+0800 (CST)
 ---
 # Publish and Subscribe to Streams
 Before publishing or subscribing to any stream, ensure that you prepared the development environment and joined the channel. See [Integrate the SDK](../../en/Voice/mac_video.md).

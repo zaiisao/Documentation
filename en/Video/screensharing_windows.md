@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Mon Apr 01 2019 09:34:01 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 09:34:01 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction

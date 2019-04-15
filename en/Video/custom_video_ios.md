@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: iOS
-updatedAt: Thu Dec 27 2018 02:55:51 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 02:55:51 GMT+0800 (CST)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction

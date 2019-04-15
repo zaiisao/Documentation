@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Android
-updatedAt: Thu Apr 04 2019 09:07:46 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 09:07:46 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction

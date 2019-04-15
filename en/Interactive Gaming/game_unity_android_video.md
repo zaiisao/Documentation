@@ -3,7 +3,7 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Thu Mar 28 2019 10:01:20 GMT+0000 (UTC)
+updatedAt: Thu Mar 28 2019 10:01:20 GMT+0800 (CST)
 ---
 # Implement Video for Gaming
 ## Step 1: Prepare the Environment

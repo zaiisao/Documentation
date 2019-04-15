@@ -3,7 +3,7 @@
 title: Set the Logger
 description: 
 platform: Web
-updatedAt: Thu Jan 17 2019 09:47:06 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 09:47:06 GMT+0800 (CST)
 ---
 # Set the Logger
 ## Introduction

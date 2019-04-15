@@ -3,7 +3,7 @@
 title: Interactive Broadcast-related Issues
 description: 
 platform: Live Broadcast-related Issues
-updatedAt: Fri Nov 23 2018 03:24:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 03:24:01 GMT+0800 (CST)
 ---
 # Interactive Broadcast-related Issues
 ### How do you ban a user in a live broadcast?

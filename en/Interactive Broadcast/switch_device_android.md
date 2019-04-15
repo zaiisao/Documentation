@@ -3,7 +3,7 @@
 title: Test or Select a Media Device
 description: 
 platform: Android
-updatedAt: Wed Apr 10 2019 07:02:51 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 07:02:51 GMT+0800 (CST)
 ---
 # Test or Select a Media Device
 ## Introduction

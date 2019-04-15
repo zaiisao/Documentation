@@ -3,7 +3,7 @@
 title: Starting a Live Voice Broadcast
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:07:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:24 GMT+0800 (CST)
 ---
 # Starting a Live Voice Broadcast
 In this quickstart, you will learn how to use the Agora SDK to making a live voice broadcast.

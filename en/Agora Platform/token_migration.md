@@ -3,7 +3,7 @@
 title: Token Migration Guide
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:16:03 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:16:03 GMT+0800 (CST)
 ---
 # Token Migration Guide
 This page describes how to migrate from the legacy Dynamic Key to a Token.

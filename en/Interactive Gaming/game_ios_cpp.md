@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: iOS
-updatedAt: Wed Mar 13 2019 09:37:00 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 09:37:00 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This page provides the **C++ Interface**, with which you can integrate the voice and video function into your app. 

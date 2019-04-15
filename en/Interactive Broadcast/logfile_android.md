@@ -3,7 +3,7 @@
 title: Set the Log File
 description: 
 platform: Android
-updatedAt: Thu Jan 17 2019 09:46:49 GMT+0000 (UTC)
+updatedAt: Thu Jan 17 2019 09:46:49 GMT+0800 (CST)
 ---
 # Set the Log File
 ## Introduction

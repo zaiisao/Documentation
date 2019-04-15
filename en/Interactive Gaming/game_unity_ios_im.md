@@ -3,7 +3,7 @@
 title: Implementing IM for Gaming
 description: 
 platform: Unity_(iOS)
-updatedAt: Fri Nov 02 2018 04:22:46 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:22:46 GMT+0800 (CST)
 ---
 # Implementing IM for Gaming
 With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:

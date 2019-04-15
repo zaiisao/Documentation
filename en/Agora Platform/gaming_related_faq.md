@@ -3,7 +3,7 @@
 title: Gaming-related Issues
 description: 
 platform: Gaming-related Issues
-updatedAt: Tue Dec 25 2018 16:42:30 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 16:42:30 GMT+0800 (CST)
 ---
 # Gaming-related Issues
 ## Gaming Sound Effects

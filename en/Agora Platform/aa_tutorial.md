@@ -3,7 +3,7 @@
 title: AA Use Case Tutorial
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 27 2018 07:32:07 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 07:32:07 GMT+0800 (CST)
 ---
 # AA Use Case Tutorial
 This page lists the call analysis of several typical calls to show you how to understand and analyze the quality of experience of your calls.

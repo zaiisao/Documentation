@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: unity
-updatedAt: Fri Nov 02 2018 04:23:52 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:23:52 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This topic provides API reference of Agora AMG SDK for Unity for iOS, Android, and Windows.
