@@ -3,7 +3,7 @@
 title: 使用双声道/高音质
 description: How to set audio profile for mac
 platform: macOS
-updatedAt: Tue Dec 25 2018 10:32:20 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:32:20 GMT+0800 (CST)
 ---
 # 使用双声道/高音质
 ## 功能描述

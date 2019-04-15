@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: macOS
-updatedAt: Fri Nov 02 2018 04:00:16 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:00:16 GMT+0800 (CST)
 ---
 # 实现语音通话
 ## 环境准备

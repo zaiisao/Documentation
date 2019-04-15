@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Cocos Creator
-updatedAt: Wed Apr 10 2019 06:54:15 GMT+0000 (UTC)
+updatedAt: Wed Apr 10 2019 06:54:15 GMT+0800 (CST)
 ---
 # 游戏 API
 Agora Cocos Creator js SDK 包含如下 API：

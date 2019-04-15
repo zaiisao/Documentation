@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Unity
-updatedAt: Wed Jan 30 2019 12:32:30 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 12:32:30 GMT+0800 (CST)
 ---
 # 实现游戏语音功能
 使用 Agora 的 `Hello-Unity3D-Agora` 代码示例可以演示以下功能:

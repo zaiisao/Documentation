@@ -3,7 +3,7 @@
 title: 创建并初始化 Client 对象
 description: Web SDK 初始化客户端对象
 platform: Web
-updatedAt: Tue Mar 26 2019 08:19:47 GMT+0000 (UTC)
+updatedAt: Tue Mar 26 2019 08:19:47 GMT+0800 (CST)
 ---
 # 创建并初始化 Client 对象
 在创建并初始化 Client 对象前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/web_prepare.md)。

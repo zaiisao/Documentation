@@ -3,7 +3,7 @@
 title: Native SDK 相关
 description: 
 platform: Native SDK 相关
-updatedAt: Fri Nov 02 2018 04:05:43 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:05:43 GMT+0800 (CST)
 ---
 # Native SDK 相关
 ## Crash问题处理

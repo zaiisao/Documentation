@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: macOS
-updatedAt: Wed Jan 30 2019 07:32:18 GMT+0000 (UTC)
+updatedAt: Wed Jan 30 2019 07:32:18 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.0

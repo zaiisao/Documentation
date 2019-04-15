@@ -3,7 +3,7 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:06:41 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:06:41 GMT+0800 (CST)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
 ## 第一节：快速集成

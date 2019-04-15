@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:17:08 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:17:08 GMT+0800 (CST)
 ---
 # 实现视频直播
 # 实现视频直播

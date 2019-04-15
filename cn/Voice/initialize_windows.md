@@ -3,7 +3,7 @@
 title: 创建 AgoraRtcEngine 实例并初始化
 description: windows平台初始化
 platform: Windows
-updatedAt: Mon Dec 10 2018 10:11:24 GMT+0000 (UTC)
+updatedAt: Mon Dec 10 2018 10:11:24 GMT+0800 (CST)
 ---
 # 创建 AgoraRtcEngine 实例并初始化
 在创建 AgoraRtcEngine 实例并初始化前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/windows_video.md)。

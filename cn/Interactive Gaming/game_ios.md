@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:13:00 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:13:00 GMT+0800 (CST)
 ---
 # 游戏 API
 <table>

@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Windows
-updatedAt: Wed Oct 17 2018 06:54:27 GMT+0000 (UTC)
+updatedAt: Wed Oct 17 2018 06:54:27 GMT+0800 (CST)
 ---
 # 实现视频直播
 # 实现视频直播

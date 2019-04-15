@@ -3,7 +3,7 @@
 title: 实现七人以上视频通话
 description: 17-Way Live Video Broadcast for web
 platform: Web
-updatedAt: Fri Nov 30 2018 06:25:36 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 06:25:36 GMT+0800 (CST)
 ---
 # 实现七人以上视频通话
 在一般的网页端视频通话场景中，如果参与人数超过七人，可能会引起音画不同步、信息丢失等问题。

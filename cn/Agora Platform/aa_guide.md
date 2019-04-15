@@ -3,7 +3,7 @@
 title: 水晶球
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Thu Dec 27 2018 07:26:56 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 07:26:56 GMT+0800 (CST)
 ---
 # 水晶球
 ## 概览

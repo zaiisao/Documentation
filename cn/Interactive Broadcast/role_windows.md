@@ -3,7 +3,7 @@
 title: 切换用户角色
 description: windows平台上设置或切换用户角色
 platform: Windows
-updatedAt: Thu Dec 13 2018 08:14:11 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:14:11 GMT+0800 (CST)
 ---
 # 切换用户角色
 在切换用户角色前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Interactive%20Broadcast/windows_video.md)。

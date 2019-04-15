@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:08:54 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:08:54 GMT+0800 (CST)
 ---
 # 实现游戏语音功能
 在本页你可以了解如何使用游戏语音版 C++ SDK 在 Android 平台上实现语音通话。

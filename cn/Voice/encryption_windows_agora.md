@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: Windows
-updatedAt: Fri Nov 30 2018 03:54:45 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:54:45 GMT+0800 (CST)
 ---
 # 选择加密方案
 本文描述如何使用 Agora 内置的加密方案。

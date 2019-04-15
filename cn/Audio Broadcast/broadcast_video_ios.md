@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: iOS
-updatedAt: Tue Oct 16 2018 10:40:51 GMT+0000 (UTC)
+updatedAt: Tue Oct 16 2018 10:40:51 GMT+0800 (CST)
 ---
 # 实现视频直播
 # 实现视频直播

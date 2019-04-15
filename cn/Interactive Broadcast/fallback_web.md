@@ -3,7 +3,7 @@
 title: 改善弱网环境下的用户体验
 description: 
 platform: Web
-updatedAt: Wed Apr 03 2019 06:39:26 GMT+0000 (UTC)
+updatedAt: Wed Apr 03 2019 06:39:26 GMT+0800 (CST)
 ---
 # 改善弱网环境下的用户体验
 ## 功能描述

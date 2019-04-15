@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Fri Nov 30 2018 03:07:15 GMT+0000 (UTC)
+updatedAt: Fri Nov 30 2018 03:07:15 GMT+0800 (CST)
 ---
 # 音频相关
 ## 回声

@@ -3,7 +3,7 @@
 title: 游戏相关
 description: 
 platform: 游戏相关
-updatedAt: Wed Nov 21 2018 07:42:14 GMT+0000 (UTC)
+updatedAt: Wed Nov 21 2018 07:42:14 GMT+0800 (CST)
 ---
 # 游戏相关
 ## 游戏音效问题

@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Android
-updatedAt: Wed Feb 20 2019 06:30:17 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 06:30:17 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 简介

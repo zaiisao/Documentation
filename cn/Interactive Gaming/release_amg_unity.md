@@ -3,7 +3,7 @@
 title: 游戏语音软件包
 description: 
 platform: Unity
-updatedAt: Fri Nov 02 2018 04:08:47 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:08:47 GMT+0800 (CST)
 ---
 # 游戏语音软件包
 ## 简介

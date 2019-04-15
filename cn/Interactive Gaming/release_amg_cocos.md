@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Cocos
-updatedAt: Fri Nov 23 2018 08:11:32 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 08:11:32 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介

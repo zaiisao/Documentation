@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Windows
-updatedAt: Wed Feb 20 2019 07:34:38 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:34:38 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 简介

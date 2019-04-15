@@ -3,7 +3,7 @@
 title: 游戏软件包发版说明
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:08:22 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:08:22 GMT+0800 (CST)
 ---
 # 游戏软件包发版说明
 ## 简介

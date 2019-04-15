@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: Android
-updatedAt: Thu Apr 04 2019 09:10:52 GMT+0000 (UTC)
+updatedAt: Thu Apr 04 2019 09:10:52 GMT+0800 (CST)
 ---
 # 美颜
 ## 功能描述

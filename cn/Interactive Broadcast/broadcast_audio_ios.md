@@ -3,7 +3,7 @@
 title: 实现语音直播
 description: 
 platform: iOS
-updatedAt: Wed Oct 17 2018 02:25:44 GMT+0000 (UTC)
+updatedAt: Wed Oct 17 2018 02:25:44 GMT+0800 (CST)
 ---
 # 实现语音直播
 # 实现语音直播

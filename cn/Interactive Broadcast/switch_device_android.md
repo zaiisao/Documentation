@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: Android
-updatedAt: Wed Dec 26 2018 09:48:58 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 09:48:58 GMT+0800 (CST)
 ---
 # 音视频设备测试与切换
 ## 功能描述

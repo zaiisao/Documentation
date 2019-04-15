@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Windows
-updatedAt: Tue Nov 27 2018 05:27:32 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:27:32 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍

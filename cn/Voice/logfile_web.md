@@ -3,7 +3,7 @@
 title: 设置日志信息
 description: 
 platform: Web
-updatedAt: Wed Feb 20 2019 07:05:09 GMT+0000 (UTC)
+updatedAt: Wed Feb 20 2019 07:05:09 GMT+0800 (CST)
 ---
 # 设置日志信息
 ## 功能描述

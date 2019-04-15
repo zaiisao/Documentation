@@ -3,7 +3,7 @@
 title: 改善弱网环境下的用户体验
 description: 
 platform: Windows
-updatedAt: Wed Dec 26 2018 09:53:23 GMT+0000 (UTC)
+updatedAt: Wed Dec 26 2018 09:53:23 GMT+0800 (CST)
 ---
 # 改善弱网环境下的用户体验
 ## 功能描述

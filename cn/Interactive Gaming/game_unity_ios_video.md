@@ -3,7 +3,7 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(iOS)
-updatedAt: Thu Mar 28 2019 09:59:53 GMT+0000 (UTC)
+updatedAt: Thu Mar 28 2019 09:59:53 GMT+0800 (CST)
 ---
 # 实现游戏视频功能
 ## 步骤 1: 准备环境

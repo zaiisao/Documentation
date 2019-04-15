@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: unity
-updatedAt: Tue Feb 12 2019 03:50:59 GMT+0000 (UTC)
+updatedAt: Tue Feb 12 2019 03:50:59 GMT+0800 (CST)
 ---
 # 游戏 API
 本文涵盖了 Agora AMG SDK for Unity 的 API 使用参考，适用于 Unity for iOS, Android, 和 Windows 三个平台。

@@ -3,7 +3,7 @@
 title: 耳返
 description: How to enable ear-monitoring and adjust the volume
 platform: iOS
-updatedAt: Fri Nov 23 2018 07:14:01 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:14:01 GMT+0800 (CST)
 ---
 # 耳返
 ## 功能描述

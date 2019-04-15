@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: 微信小程序
-updatedAt: Tue Dec 25 2018 08:36:51 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 08:36:51 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Miniapp SDK for WeChat 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。

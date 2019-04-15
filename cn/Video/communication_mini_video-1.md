@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: 微信小程序
-updatedAt: Fri Nov 02 2018 04:00:07 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:00:07 GMT+0800 (CST)
 ---
 # 实现视频通话
 在本页你可以了解如何使用 Agora Miniapp SDK 实现视频通话。点击 [声网小程序 Demo 体验](../../cn/Quickstart%20Guide/miniapp_demo.md) 进行 Demo 体验。

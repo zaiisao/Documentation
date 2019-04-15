@@ -3,7 +3,7 @@
 title: IM 返回值说明
 description: 
 platform: unity
-updatedAt: Fri Nov 02 2018 04:13:06 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:13:06 GMT+0800 (CST)
 ---
 # IM 返回值说明
 Agora SDK 在调用 IM Restful 接口时，可能会返回一下状态码或业务返回码。相关描述及解析见下文。

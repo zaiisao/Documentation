@@ -3,7 +3,7 @@
 title: 实现语音直播
 description: 
 platform: 微信小程序
-updatedAt: Mon Oct 08 2018 03:07:25 GMT+0000 (UTC)
+updatedAt: Mon Oct 08 2018 03:07:25 GMT+0800 (CST)
 ---
 # 实现语音直播
 # 实现语音直播

@@ -3,7 +3,7 @@
 title: 错误代码和警告代码
 description: 
 platform: 微信小程序
-updatedAt: Tue Dec 25 2018 08:22:58 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 08:22:58 GMT+0800 (CST)
 ---
 # 错误代码和警告代码
 Agora Miniapp SDK for WeChat 在调用 API 或运行时，可能会返回一个错误码对象，也可能会返回一个错误码：

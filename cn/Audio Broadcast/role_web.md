@@ -3,7 +3,7 @@
 title: 切换用户角色
 description: web平台上设置或切换用户角色
 platform: Web
-updatedAt: Tue Feb 19 2019 10:55:32 GMT+0000 (UTC)
+updatedAt: Tue Feb 19 2019 10:55:32 GMT+0800 (CST)
 ---
 # 切换用户角色
 

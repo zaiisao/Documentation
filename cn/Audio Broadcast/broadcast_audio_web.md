@@ -3,7 +3,7 @@
 title: 实现语音直播
 description: 
 platform: Web
-updatedAt: Tue Dec 25 2018 10:10:37 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:10:37 GMT+0800 (CST)
 ---
 # 实现语音直播
 # 实现语音直播

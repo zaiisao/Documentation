@@ -3,7 +3,7 @@
 title: 视频采集旋转
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 11 2018 09:55:36 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 09:55:36 GMT+0800 (CST)
 ---
 # 视频采集旋转
 本文指导用户如何选择与场景适配的视频旋转模式。

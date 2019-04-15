@@ -3,7 +3,7 @@
 title: 加入频道
 description: windows平台加入频道
 platform: Windows
-updatedAt: Wed Dec 12 2018 07:23:24 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 07:23:24 GMT+0800 (CST)
 ---
 # 加入频道
 在加入频道前，请确保你已完成准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/windows_video.md)。

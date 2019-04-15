@@ -3,7 +3,7 @@
 title: 变声与混响
 description: How to set voice effects for macOS
 platform: macOS
-updatedAt: Mon Apr 01 2019 11:01:09 GMT+0000 (UTC)
+updatedAt: Mon Apr 01 2019 11:01:09 GMT+0800 (CST)
 ---
 # 变声与混响
 ## 功能描述

@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Tue Apr 09 2019 08:53:16 GMT+0000 (UTC)
+updatedAt: Tue Apr 09 2019 08:53:16 GMT+0800 (CST)
 ---
 # 发版说明
 

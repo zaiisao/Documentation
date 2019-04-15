@@ -3,7 +3,7 @@
 title: 加入频道
 description: ios平台加入直播频道
 platform: iOS
-updatedAt: Wed Dec 12 2018 09:54:50 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 09:54:50 GMT+0800 (CST)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Interactive%20Broadcast/ios_video.md)。

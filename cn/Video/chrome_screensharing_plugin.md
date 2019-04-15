@@ -3,7 +3,7 @@
 title: Chrome 屏幕共享插件
 description: 
 platform: Web
-updatedAt: Wed Mar 27 2019 09:06:10 GMT+0000 (UTC)
+updatedAt: Wed Mar 27 2019 01:06:10 GMT+0800 (CST)
 ---
 # Chrome 屏幕共享插件
 在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的屏幕共享插件。

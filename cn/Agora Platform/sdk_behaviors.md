@@ -3,7 +3,7 @@
 title: SDK 对断网、杀进程的处理
 description: 
 platform: SDK 对断网、杀进程的处理
-updatedAt: Fri Jan 11 2019 08:36:16 GMT+0000 (UTC)
+updatedAt: Fri Jan 11 2019 08:36:16 GMT+0800 (CST)
 ---
 # SDK 对断网、杀进程的处理
 ### 声网 SDK 有断线重连机制吗？

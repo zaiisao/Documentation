@@ -3,7 +3,7 @@
 title: 使用双声道/高音质
 description: How to set the audio profile on Android
 platform: Android
-updatedAt: Fri Nov 23 2018 06:47:31 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 06:47:31 GMT+0800 (CST)
 ---
 # 使用双声道/高音质
 ## 功能描述

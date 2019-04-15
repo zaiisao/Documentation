@@ -3,7 +3,7 @@
 title: 企业部署代理服务器
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Fri Nov 02 2018 04:04:24 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:04:24 GMT+0800 (CST)
 ---
 # 企业部署代理服务器
 本页为设有防火墙的企业用户展示如何使用 Agora 提供的代理服务器安装包，部署代理服务器来使用 Agora 的服务。

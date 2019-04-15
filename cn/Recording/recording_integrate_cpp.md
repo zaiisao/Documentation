@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: CPP
-updatedAt: Thu Apr 11 2019 06:55:46 GMT+0000 (UTC)
+updatedAt: Thu Apr 11 2019 08:28:55 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
@@ -181,7 +181,7 @@ updatedAt: Thu Apr 11 2019 06:55:46 GMT+0000 (UTC)
    > - 如果不指定参数 `lowUdpPort` 和 `highUdpPort` ，录制进程所使用的端口为随机端口，会有端口冲突的风险。
    > - 使用`iptables -L`命令查看 UDP 端口。
 
-4. 将域名 .agora.io、vocs.agora.io、qoslbs.agora.io、qos.agora.io 设为白名单。
+4. 将域名 .agora.io 和 .agoralab.co 设为白名单。
 
 7. 为调试方便，Agora 建议你打开系统的 core dump 功能以记录可能产生的程序崩溃信息。
 

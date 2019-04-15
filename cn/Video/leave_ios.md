@@ -3,7 +3,7 @@
 title: 离开频道
 description: ios平台离开频道
 platform: iOS
-updatedAt: Thu Dec 13 2018 08:35:36 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 08:35:36 GMT+0800 (CST)
 ---
 # 离开频道
 通话或直播结束时，你可以使用 Agora SDK 离开频道。

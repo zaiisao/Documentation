@@ -3,7 +3,7 @@
 title: 在 Java 平台服务器上发送点对点文本消息和频道文本消息
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:07:35 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:07:35 GMT+0800 (CST)
 ---
 # 在 Java 平台服务器上发送点对点文本消息和频道文本消息
 ## 第一节：快速集成

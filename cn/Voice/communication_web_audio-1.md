@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Tue Dec 25 2018 10:10:39 GMT+0000 (UTC)
+updatedAt: Tue Dec 25 2018 10:10:39 GMT+0800 (CST)
 ---
 # 实现语音通话
 本页介绍如何使用 Agora Web SDK 快速实现网页端语音通话。

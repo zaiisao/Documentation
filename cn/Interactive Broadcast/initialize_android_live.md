@@ -3,7 +3,7 @@
 title: 创建实例
 description: 安卓平台初始化引擎
 platform: Android
-updatedAt: Wed Dec 12 2018 09:38:44 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 09:38:44 GMT+0800 (CST)
 ---
 # 创建实例
 在创建实例前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/android_video.md)。

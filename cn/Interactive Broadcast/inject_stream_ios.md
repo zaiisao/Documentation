@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 05:48:48 GMT+0000 (UTC)
+updatedAt: Tue Nov 27 2018 05:48:48 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 简介

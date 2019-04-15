@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: 微信小程序
-updatedAt: Mon Oct 08 2018 03:13:37 GMT+0000 (UTC)
+updatedAt: Mon Oct 08 2018 03:13:37 GMT+0800 (CST)
 ---
 # 实现视频直播
 # 实现视频直播

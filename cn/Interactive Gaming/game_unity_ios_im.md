@@ -3,7 +3,7 @@
 title: 实现游戏 IM 功能
 description: 
 platform: Unity_(iOS)
-updatedAt: Fri Nov 02 2018 04:11:57 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:11:57 GMT+0800 (CST)
 ---
 # 实现游戏 IM 功能
 使用 Agora 的 `Hello-IM-Unity-Agora` 代码示例可以实现以下功能:

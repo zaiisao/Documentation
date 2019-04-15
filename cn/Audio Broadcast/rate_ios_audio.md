@@ -3,7 +3,7 @@
 title: 给通话评分
 description: How to enable the rating function on iOS
 platform: iOS
-updatedAt: Thu Dec 27 2018 07:33:32 GMT+0000 (UTC)
+updatedAt: Thu Dec 27 2018 07:33:32 GMT+0800 (CST)
 ---
 # 给通话评分
 ## 功能描述

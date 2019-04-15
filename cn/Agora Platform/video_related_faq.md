@@ -3,7 +3,7 @@
 title: 视频相关
 description: 
 platform: 视频相关
-updatedAt: Thu Nov 29 2018 06:55:01 GMT+0000 (UTC)
+updatedAt: Thu Nov 29 2018 06:55:01 GMT+0800 (CST)
 ---
 # 视频相关
 ## 卡顿

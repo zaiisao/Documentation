@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Android
-updatedAt: Wed Mar 13 2019 09:22:58 GMT+0000 (UTC)
+updatedAt: Wed Mar 13 2019 09:22:58 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供游戏 SDK 的 **C++ 接口**，使应用程序实现音视频功能。

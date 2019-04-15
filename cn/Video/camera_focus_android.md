@@ -3,7 +3,7 @@
 title: 摄像头对焦
 description: 
 platform: Android
-updatedAt: Mon Jan 14 2019 07:20:18 GMT+0000 (UTC)
+updatedAt: Mon Jan 14 2019 07:20:18 GMT+0800 (CST)
 ---
 # 摄像头对焦
 ## 功能简介

@@ -3,7 +3,7 @@
 title: 使用双声道/高音质
 description: How to set audio profile for Web
 platform: Web
-updatedAt: Fri Nov 23 2018 07:08:16 GMT+0000 (UTC)
+updatedAt: Fri Nov 23 2018 07:08:16 GMT+0800 (CST)
 ---
 # 使用双声道/高音质
 ## 功能描述

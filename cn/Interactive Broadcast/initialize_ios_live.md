@@ -3,7 +3,7 @@
 title: 初始化 AgoraRtcEngineKit
 description: iOS平台初始化
 platform: iOS
-updatedAt: Thu Dec 13 2018 07:50:12 GMT+0000 (UTC)
+updatedAt: Thu Dec 13 2018 07:50:12 GMT+0800 (CST)
 ---
 # 初始化 AgoraRtcEngineKit
 在初始化 AgoraRtcEngineKit 前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/ios_video.md)。

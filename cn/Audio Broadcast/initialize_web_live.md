@@ -3,7 +3,7 @@
 title: 创建并初始化 Client 对象
 description: Web SDK 初始化客户端对象
 platform: Web
-updatedAt: Thu Jan 24 2019 05:26:25 GMT+0000 (UTC)
+updatedAt: Thu Jan 24 2019 05:26:25 GMT+0800 (CST)
 ---
 # 创建并初始化 Client 对象
 在创建并初始化 Client 对象前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/web_prepare.md)。

@@ -3,7 +3,7 @@
 title: 动态秘钥升级说明
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:02:37 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:37 GMT+0800 (CST)
 ---
 # 动态秘钥升级说明
 本文帮助需要从老版 SDK 升级高版本的用户升级到最新的动态秘钥 Token。

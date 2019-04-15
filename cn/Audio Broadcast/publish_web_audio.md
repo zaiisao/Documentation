@@ -3,7 +3,7 @@
 title: 发布和订阅音频流
 description: 
 platform: Web
-updatedAt: Tue Dec 11 2018 07:27:46 GMT+0000 (UTC)
+updatedAt: Tue Dec 11 2018 07:27:46 GMT+0800 (CST)
 ---
 # 发布和订阅音频流
 在发布或订阅音频流前，请确保你已完成环境准备、安装包获取等步骤，并成功加入频道，详见[客户端集成](../../cn/Voice/web_prepare.md)。

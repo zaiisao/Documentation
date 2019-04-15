@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Windows
-updatedAt: Thu Nov 01 2018 08:19:56 GMT+0000 (UTC)
+updatedAt: Thu Nov 01 2018 08:19:56 GMT+0800 (CST)
 ---
 # 实现语音通话
 # 实现语音通话

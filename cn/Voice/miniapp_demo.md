@@ -3,7 +3,7 @@
 title: 声网小程序 Demo 体验
 description: 
 platform: Wechat
-updatedAt: Fri Nov 02 2018 04:00:25 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:00:25 GMT+0800 (CST)
 ---
 # 声网小程序 Demo 体验
 ## 体验小程序 App

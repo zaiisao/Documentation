@@ -3,7 +3,7 @@
 title: 离开频道
 description: 
 platform: 微信小程序
-updatedAt: Mon Mar 18 2019 08:00:34 GMT+0000 (UTC)
+updatedAt: Mon Mar 18 2019 08:00:34 GMT+0800 (CST)
 ---
 # 离开频道
 通话或直播结束时，你可以使用 Agora SDK 离开频道。

@@ -3,7 +3,7 @@
 title: 其它常见问题
 description: 
 platform: 其它常见问题
-updatedAt: Tue Apr 09 2019 08:16:09 GMT+0000 (UTC)
+updatedAt: Tue Apr 09 2019 08:16:09 GMT+0800 (CST)
 ---
 # 其它常见问题
 ## Android 平台常见问题

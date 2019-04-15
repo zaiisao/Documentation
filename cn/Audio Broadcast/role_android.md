@@ -3,7 +3,7 @@
 title: 切换用户角色
 description: android平台上切换用户角色
 platform: Android
-updatedAt: Wed Dec 12 2018 09:09:28 GMT+0000 (UTC)
+updatedAt: Wed Dec 12 2018 09:09:28 GMT+0800 (CST)
 ---
 # 切换用户角色
 在切换用户角色前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Interactive%20Broadcast/android_video.md)。

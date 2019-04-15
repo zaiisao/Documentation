@@ -3,7 +3,7 @@
 title: Channel Key 密钥说明
 description: Guide on how to use channel keys
 platform: All Platform
-updatedAt: Fri Nov 02 2018 04:02:44 GMT+0000 (UTC)
+updatedAt: Fri Nov 02 2018 04:02:44 GMT+0800 (CST)
 ---
 # Channel Key 密钥说明
 本文主要介绍在使用 Agora SDK 过程中使用 Channel Key 的方法。
