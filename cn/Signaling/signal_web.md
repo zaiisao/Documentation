@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Web
-updatedAt: Thu Mar 14 2019 03:28:56 GMT+0800 (CST)
+updatedAt: Tue Apr 16 2019 06:56:10 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
@@ -220,9 +220,6 @@ getSDKVersion() : String
 </tr>
 <tr><td><a href="#onloginsuccess-web"><span>onLoginSuccess</span></a></td>
 <td>登录成功回调</td>
-</tr>
-<tr><td><a href="#onerror-web"><span>onError</span></a></td>
-<td>出错回调</td>
 </tr>
 <tr><td><a href="#onloginfailed-web"><span>onLoginFailed</span></a></td>
 <td>登录失败回调</td>
@@ -528,30 +525,6 @@ onLoginSuccess(uid)
 </tbody>
 </table>
 
-
-
-#### <a name="onerror-web"></a>登录出错回调 \(onError\)
-
-```
-onError(evt)
-```
-
-登录出错时会触发本回调。
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td><code>evt</code></td>
-<td>登录事件</td>
-</tr>
-</tbody>
-</table>
 
 
 
