@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: How to integrate recording SDK for Java
 platform: Java
-updatedAt: Thu Apr 11 2019 08:31:32 GMT+0800 (CST)
+updatedAt: Wed Apr 17 2019 03:50:46 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora Recording SDK.
@@ -31,7 +31,7 @@ The following table lists the basic requirements for installing the Recording SD
 <td>Physical or virtual.</td>
 </tr>
 <tr><td>System</td>
-<td>Ubuntu Linux 14.04+ LTS 64-bit or CentOS 7+ x64.</td>
+<td>Ubuntu Linux 14.04+ LTS 64-bit or CentOS 6.5+ x64.</td>
 </tr>
 <tr><td>Network</td>
 <td>The Linux server needs Internet access.</td>
