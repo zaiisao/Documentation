@@ -3,7 +3,7 @@
 title: Agora Recording Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 12 2019 10:26:14 GMT+0800 (CST)
+updatedAt: Wed Apr 17 2019 03:50:18 GMT+0800 (CST)
 ---
 # Agora Recording Overview
 The Agora Recording SDK is an add-on to record and save voice calls, video calls, and interactive broadcasts on your server. The Agora Recording SDK is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0 +.
@@ -40,7 +40,7 @@ The Agora Recording SDK consists of the following features:
 | ---------------- | ------------------------------------------------------------ |
 | High Reliability | The Agora Recording SDK supports cluster deployment, dynamic capacity expansion, and high availability services. |
 | High Security    | Provides end-to-end security mechanisms for video calls, data transmission, data storage, and so on. For details, see [Information Security Policy](../../en/Agora%20Platform/security.md). |
-| Compatibility    | Supports CentOS 7+ x64 and Ubuntu 14.04+ x64 operating systems. |
+| Compatibility    | Supports CentOS 6.5+ x64 and Ubuntu 14.04+ x64 operating systems. |
 | Ease of Use      | Simple implementation and easy to learn. You can get started quickly, flexibly deploy recording services, and easily record on mobile and web pages. |
 | Flexibility      | By flexibly combining various functions of the Agora Recording SDK, you can seamlessly apply the SDK to multiple scenarios to achieve better service. |
 
