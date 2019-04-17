@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Apr 11 2019 10:15:01 GMT+0800 (CST)
+updatedAt: Wed Apr 17 2019 02:57:07 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -160,6 +160,16 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 #### 修改
 
 - [`Stream.startAudioMixing`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#startaudiomixing) 增加 `cacheResource` 参数
+
+## 2.5.2 版
+
+该版本于 2019 年 2 月 28 日发布。修复问题见下文。
+
+
+### 问题修复
+
+- 修复了在 Chrome 72 及以上调用 `Stream.switchDevice` 无法切换音频的问题。
+- 修复了如果未设置 `Client.subscribe` 的可选参数会报错的问题。
 
 ## 2.5.1 版
 
