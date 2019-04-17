@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 11 2019 07:01:16 GMT+0800 (CST)
+updatedAt: Wed Apr 17 2019 08:49:04 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
@@ -47,7 +47,7 @@ updatedAt: Thu Apr 11 2019 07:01:16 GMT+0800 (CST)
 
 在调用 `joinChannel` 方法时，必须传入鉴权密钥作为参数。针对用户的项目开发需求，Agora SDK 提供了两种鉴权机制：[App ID](#APPID) 和 [Token](#Token) 。下图描述这两种鉴权机制的关系以及适用场景：
 
-<img alt="../_images/key_relation_native.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_native.jpg" style="width: 840px; "/>
+![](https://web-cdn.agora.io/docs-files/1555490926595)
 
 
 其中：
