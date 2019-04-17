@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Apr 09 2019 08:48:42 GMT+0800 (CST)
+updatedAt: Wed Apr 17 2019 09:57:06 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -126,16 +126,16 @@ To improve your experience, we made the following changes to the APIs:
 - [`setScreenCaptureContentHint`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)
 - [`setLocalVoiceChanger`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a70175273dade14bcf8d74e71f8de7eda)
 - [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#add46038703f2f82dad83c0319d43433b)
-- [`enableSoundPositionIndication`](https://docs.agora.io/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d)
+- [`enableSoundPositionIndication`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d)
 - [`setRemoteVoicePosition`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20)
 - [`startLastmileProbeTest`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#adb3ab7a20afca02f5a5ab6fafe026f2b)
 - [`stopLastmileProbeTest`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a94f3494035429684a750e1dee7ef1593)
-- [`setRemoteUserPriority`](https://docs.agora.io/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710)
+- [`setRemoteUserPriority`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710)
 - [`startEchoTest`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a842ed126b6e21a39059adaa4caa6d021)
 - [`startAudioDeviceLoopbackTest`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac78c08f3212dc3efa000e197207dec53)
 - [`stopAudioDeviceLoopbackTest`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#aad01da1e0bacd3f2fd355483f9e3befb)
-- [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Voice/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)
-- [`setLogFileSize`](https://docs.agora.io/en/Voice/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1)
+- [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)
+- [`setLogFileSize`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1)
 - [`onAudioMixingStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a298389513bfaa50af4277fc3296e3f22)
 - [`onLastmileProbeResult`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a44134dfda5d412831fa8e44fa533fca5) 
 
