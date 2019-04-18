@@ -1,11 +1,11 @@
 
 ---
-title: RTM iOS 平台快速开始
+title: RTM 快速开始
 description: 
 platform: iOS,macOS
-updatedAt: Thu Apr 18 2019 02:13:07 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 02:14:40 GMT+0800 (CST)
 ---
-# RTM iOS 平台快速开始
+# RTM 快速开始
 ## <a name = "create"></a>初始化
 
 在创建实例前，请确保你已完成环境准备、安装包获取等步骤。
