@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 18 2019 07:40:34 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 07:40:42 GMT+0800 (CST)
 ---
 # 产品概述
 Agora RTM SDK 提供了稳定可靠的消息通道，帮助你快速构建实时消息场景。
@@ -30,7 +30,7 @@ Agora RTM SDK 应用丰富，适用于以下实时场景：
   </tr>
   <tr>
     <td>直播</td>
-    <td><li>弹幕<br><li>聊天室<br><li>礼物、点赞<br><li>直播间状态维护（频道内人数）<br><li>频道列表<br><li>权限管理(踢人、禁言、禁麦)<br></td>
+    <td><li>弹幕<br><li>聊天室<br><li>礼物、点赞<br><li>直播间状态维护（频道内人数）<br><li>频道列表<br><li>权限管理（踢人、禁言、禁麦）<br></td>
   </tr>
   <tr>
     <td>社交</td>
