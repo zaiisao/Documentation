@@ -3,7 +3,7 @@
 title: Agora Signaling Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 03 2019 04:11:49 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 06:21:33 GMT+0800 (CST)
 ---
 # Agora Signaling Overview
 The Agora Signaling SDK is based on the TCP protocol and provides a stable messaging channel for you to implement real-time communication scenarios.
@@ -50,32 +50,7 @@ The Agora Signaling SDK can be used in the following scenarios:
   </tr>
 </table>
 
-## Features
 
-The Agora Signaling SDK provides the following features:
-
-<table border="1" width="100%">
-  <tr>
-    <th width="20%">Feature </th>
-    <th width="50%">Description</th>
-  </tr>
-  <tr>
-    <td>High concurrency</td>
-    <td>Supports concurrently sending a single channel a million times<br></td>
-  </tr>
-  <tr>
-    <td>High reliability</td>
-    <td>Service availability at 99.999%</td>
-  </tr>
-  <tr>
-    <td>Low latency</td>
-    <td>Average delay of 100 ms-</td>
-  </tr>
-  <tr>
-    <td>Compatibility</td>
-    <td><li>Supports multiple platforms such as iOS, Android, macOS, windows, Linux, applets, and web browsers.<br><li>Supports Java, C++ on the server side.</td>
-  </tr>
-</table>
 
 ## References
 
