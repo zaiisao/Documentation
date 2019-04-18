@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: iOS
-updatedAt: Thu Apr 18 2019 08:32:39 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 08:32:44 GMT+0800 (CST)
 ---
 # Signaling API
 > Version: v1.4.4
@@ -61,6 +61,7 @@ Return: An AgoraAPI instance.
 </tr>
 </tbody>
 </table>
+
 
 
 #### Destroys the AgoraAPIOnlySignal Instance (destroy)
@@ -156,7 +157,7 @@ Use this method to log into Agora’s signaling system. Users must always log in
 <td>The maximum time allowed to re-login, 30 seconds by default.</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>The maximum times allowed to re-login, 15 times by default.</td>
+<td>The maximum times allowed to re-login, 3 times by default.</td>
 </tr>
 </tbody>
 </table>
@@ -1067,6 +1068,7 @@ This method sends a channel message without joining a channel. Agora does not re
 
 ```
 - (void) messageChannelSendForce:(NSString*)channelID msg:(NSString*)msg msgID:(NSString*)msgID ;
+
 ```
 
 <table>
@@ -1136,6 +1138,7 @@ This callback function is triggered when the connection with Agora’s signaling
 ```
 @property (copy) void(^onReconnecting)(uint32_t nretry) ;
 
+
 ```
 
 <table>
@@ -1161,6 +1164,7 @@ This callback function returns a detailed description of the error.
 
 ```
 @property (copy) void(^onError)(NSString* name,AgoraEcode ecode,NSString* desc) ;
+
 
 ```
 
@@ -1203,6 +1207,7 @@ This callback function returns the query result of the user status and is trigge
 ```
 @property (copy) void(^onQueryUserStatusResult)(NSString* name,NSString* status) ;
 
+
 ```
 
 <table>
@@ -1237,6 +1242,7 @@ This callback function is triggered when the application is reconnected to Agora
 ```
 @property (copy) void(^onReconnected)(int fd) ;
 
+
 ```
 
 <table>
@@ -1262,6 +1268,7 @@ This callback function is triggered when a user has logged into Agora’s signal
 
 ```
 @property (copy) void(^onLoginSuccess)(uint32_t uid,int fd) ;
+
 
 ```
 
@@ -1289,6 +1296,7 @@ This callback function is triggered when a user has logged out of Agora’s sign
 ```
 @property (copy) void(^onLogout)(AgoraEcode ecode) ;
 
+
 ```
 
 <table>
@@ -1314,6 +1322,7 @@ This callback function is triggered when the remote calling process has succeede
 
 ```
 @property (copy) void(^onInvokeRet)(NSString* callID,NSString* err,NSString* resp) ;
+
 
 ```
 
@@ -1347,6 +1356,7 @@ This callback function is triggered when a user has failed to log into Agora’s
 ```
 @property (copy) void(^onLoginFailed)(AgoraEcode ecode) ;
 
+
 ```
 
 <table>
@@ -1373,6 +1383,7 @@ This callback function is triggered when a user has joined a channel.
 ```
 @property (copy) void(^onChannelJoined)(NSString* channelID) ;
 
+
 ```
 
 <table>
@@ -1398,6 +1409,7 @@ This callback function is triggered when a user has failed to join a channel.
 
 ```
 @property (copy) void(^onChannelJoinFailed)(NSString* channelID,AgoraEcode ecode) ;
+
 
 ```
 
@@ -1428,6 +1440,7 @@ This callback function is triggered when a user has left a channel.
 ```
 @property (copy) void(^onChannelLeaved)(NSString* channelID,AgoraEcode ecode) ;
 
+
 ```
 
 <table>
@@ -1457,6 +1470,7 @@ This callback function is triggered when another user has joined the channel.
 ```
 @property (copy) void(^onChannelUserJoined)(NSString* account,uint32_t uid) ;
 
+
 ```
 
 <table>
@@ -1485,6 +1499,7 @@ This callback function is triggered when another user has left the channel.
 
 ```
 @property (copy) void(^onChannelUserLeaved)(NSString* account,uint32_t uid) ;
+
 
 ```
 
@@ -1519,6 +1534,7 @@ A user will receive this callback function after joining a channel.
 ```
 @property (copy) void(^onChannelUserList)(NSMutableArray* accounts, NSMutableArray* uids);
 
+
 ```
 
 <table>
@@ -1547,6 +1563,7 @@ This callback function is triggered when a user has queried the number of users 
 
 ```
 @property (copy) void(^onChannelQueryUserNumResult)(NSString* channelID,AgoraEcode ecode,int num) ;
+
 
 ```
 
@@ -1579,6 +1596,7 @@ This callback function is triggered when a user has queried whether he/she is in
 
 ```
 public virtual void onChannelQueryUserIsIn(std::string channelID, std::string account, int isIn){}
+
 
 ```
 
@@ -1619,6 +1637,7 @@ This callback function is triggered when the channel attribute has changed.
 
 ```
 @property (copy) void(^onChannelAttrUpdated)(NSString* channelID,NSString* name,NSString* value,NSString* type) ;
+
 
 ```
 
@@ -1663,6 +1682,7 @@ This callback function is received by the callee when the callee has received a 
 ```
 @property (copy) void(^onInviteReceived)(NSString* channelID,NSString* account,uint32_t uid, NSString* extra) ;
 
+
 ```
 
 <table>
@@ -1700,6 +1720,7 @@ This callback function is received by the caller when the callee has received th
 
 ```
 @property (copy) void(^onInviteAcceptedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
+
 
 ```
 
@@ -1739,6 +1760,7 @@ This callback function is received by the caller when the callee has accepted th
 ```
 @property (copy) void(^onInviteRefusedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
 
+
 ```
 
 <table>
@@ -1777,6 +1799,7 @@ This callback function is received by the caller when the callee rejects the cal
 ```
 @property (copy) void(^onInviteRefusedByPeer)(NSString* channelID,NSString* account,uint32_t uid) ;
 
+
 ```
 
 <table>
@@ -1808,6 +1831,7 @@ This callback function is triggered when a call has failed.
 
 ```
 @property (copy) void(^onInviteFailed)(NSString* channelID,NSString* account,uint32_t uid,AgoraEcode ecode,NSString* extra) ;
+
 
 ```
 
@@ -1847,6 +1871,7 @@ This callback function is triggered when the callee has ended the call.
 ```
 @property (copy) void(^onInviteEndByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
 
+
 ```
 
 <table>
@@ -1885,6 +1910,7 @@ This callback function is triggered when the caller ends the call.
 ```
 @property (copy) void(^onInviteEndByMyself)(NSString* channelID,NSString* account,uint32_t uid) ;
 
+
 ```
 
 <table>
@@ -1916,6 +1942,7 @@ This callback function is triggered when the caller has received the DTMF messag
 
 ```
 @property (copy) void(^onInviteMsg)(NSString* channelID,NSString* account,uint32_t uid,NSString* msgType,NSString* msgData,NSString* extra) ;
+
 
 ```
 
@@ -1958,6 +1985,7 @@ This callback function is triggered when the user has failed to send a message.
 ```
 @property (copy) void(^onMessageSendError)(NSString* messageID,AgoraEcode ecode) ;
 
+
 ```
 
 <table>
@@ -1987,6 +2015,7 @@ This callback function is triggered when the user has successfully sent a messag
 ```
 @property (copy) void(^onMessageSendSuccess)(NSString* messageID) ;
 
+
 ```
 
 <table>
@@ -2012,6 +2041,7 @@ This callback function notifies a user that a message has been received.
 
 ```
 @property (copy) void(^onMessageInstantReceive)(NSString* account,uint32_t uid,NSString* msg) ;
+
 
 ```
 
@@ -2044,6 +2074,7 @@ This callback function is triggered when a channel message has been received.
 
 ```
 @property (copy) void(^onMessageChannelReceive)(NSString* channelID,NSString* account,uint32_t uid,NSString* msg) ;
+
 
 ```
 
@@ -2080,6 +2111,7 @@ This callback function is triggered when a line has been created in a log file.
 ```
 @property (copy) void(^onLog)(NSString* txt) ;
 
+
 ```
 
 <table>
@@ -2105,6 +2137,7 @@ This callback function is triggered when the user has queried an attribute of a 
 
 ```
 @property (copy) void(^onUserAttrResult)(NSString* account,NSString* name,NSString* value) ;
+
 
 ```
 
@@ -2137,6 +2170,7 @@ This callback function is triggered when the user has queried all attributes of 
 
 ```
 @property (copy) void(^onUserAttrAllResult)(NSString* account, NSString* value) ;
+
 
 ```
 
