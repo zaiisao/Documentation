@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux
-updatedAt: Thu Apr 18 2019 02:16:36 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 02:16:48 GMT+0800 (CST)
 ---
 # RTM 快速开始
 # 01 集成客户端
@@ -15,10 +15,6 @@ updatedAt: Thu Apr 18 2019 02:16:36 GMT+0800 (CST)
 请确保满足一下开发环境要求：
 
 - 物理或虚拟, Ubuntu Linux 14.04 LTS 64 位 及以上
-
-需要下载的文件：
-
-(Update the java sdk release link here)
 
 下载的文件包括 libs 文件和 sample 文件，其中 libs 文件包括：
 
