@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Linux
-updatedAt: Thu Apr 18 2019 08:34:22 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 08:34:30 GMT+0800 (CST)
 ---
 # Signaling API
 > Version: v1.4.0 BETA
@@ -183,7 +183,7 @@ public virtual void login2 (char const * appId, size_t appId_size,char const * a
 <td>The maximum time allowed to re-login, 30 seconds by default.</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>The maximum times allowed to re-login, 15 times by default.</td>
+<td>The maximum times allowed to re-login, 3 times by default.</td>
 </tr>
 </tbody>
 </table>
@@ -1128,6 +1128,7 @@ This callback function is triggered when the connection to Agora’s signaling s
 ```
 public virtual void onReconnecting(uint32_t nretry) {}
 
+
 ```
 
 <table>
@@ -1153,6 +1154,7 @@ This callback function returns a detailed description of the error.
 
 ```
 public virtual void onError(char const * name, size_t name_size,int ecode,char const * desc, size_t desc_size) {}
+
 
 ```
 
@@ -1195,6 +1197,7 @@ This callback function returns the result of the user status query and is trigge
 ```
 public virtual void onQueryUserStatusResult(char const * name, size_t name_size,char const * status, size_t status_size) {}
 
+
 ```
 
 <table>
@@ -1229,6 +1232,7 @@ This callback function is triggered when the application is reconnected to Agora
 ```
 public virtual void onReconnected(int fd) {}
 
+
 ```
 
 <table>
@@ -1254,6 +1258,7 @@ This callback function is triggered when a user has logged into Agora’s signal
 
 ```
 public virtual void onLoginSuccess(uint32_t uid,int fd) {}
+
 
 ```
 
@@ -1281,6 +1286,7 @@ This callback function is triggered when a user has logged out of Agora’s sign
 ```
 public virtual void onLogout(int ecode) {}
 
+
 ```
 
 <table>
@@ -1306,6 +1312,7 @@ This callback function is triggered when the remote calling process has succeede
 
 ```
 public virtual void onInvokeRet(char const * callID, size_t callID_size,char const * err, size_t err_size,char const * resp, size_t resp_size) {}
+
 
 ```
 
@@ -1339,6 +1346,7 @@ This callback function is triggered when a user has failed to login Agora’s si
 ```
 public virtual void onLoginFailed(int ecode) {}
 
+
 ```
 
 <table>
@@ -1365,6 +1373,7 @@ This callback function is triggered when a user has joined a channel.
 ```
 public virtual void onChannelJoined(char const * channelID, size_t channelID_size) {}
 
+
 ```
 
 <table>
@@ -1390,6 +1399,7 @@ This callback function is triggered when a user has failed to join a channel.
 
 ```
 public virtual void onChannelJoinFailed(char const * channelID, size_t channelID_size,int ecode) {}
+
 
 ```
 
@@ -1420,6 +1430,7 @@ This callback function is triggered when a user has left a channel.
 ```
 public virtual void onChannelLeaved(char const * channelID, size_t channelID_size,int ecode) {}
 
+
 ```
 
 <table>
@@ -1449,6 +1460,7 @@ This callback function is triggered when another user has joined the channel.
 ```
 public virtual void onChannelUserJoined(char const * account, size_t account_size,uint32_t uid) {}
 
+
 ```
 
 <table>
@@ -1477,6 +1489,7 @@ This callback function is triggered when another user has left the channel.
 
 ```
 public virtual void onChannelUserLeaved(char const * account, size_t account_size,uint32_t uid) {}
+
 
 ```
 
@@ -1508,6 +1521,7 @@ A user will receive this callback function after joining a channel.
 
 ```
 public virtual void onChannelUserList(int n,char** accounts,uint32_t* uids) {}
+
 
 ```
 
@@ -1541,6 +1555,7 @@ This callback function is triggered when a user has queried the number of users 
 ```
 public virtual void onChannelQueryUserNumResult(char const * channelID, size_t channelID_size,int ecode,int num) {}
 
+
 ```
 
 <table>
@@ -1572,6 +1587,7 @@ This callback is triggered when a user has queried whether he/she is in the chan
 
 ```
 public virtual void onChannelQueryUserIsIn(char const * channelID, size_t channelID_size,char const * account, size_t account_size,int isIn) {}
+
 
 ```
 
@@ -1610,6 +1626,7 @@ This callback function is triggered when the channel attribute has changed.
 
 ```
 public virtual void onChannelAttrUpdated(char const * channelID, size_t channelID_size,char const * name, size_t name_size,char const * value, size_t value_size,char const * type, size_t type_size) {}
+
 
 ```
 
@@ -1654,6 +1671,7 @@ This callback function is received by the callee when the callee has received a 
 ```
 virtual void onInviteReceived(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
 
+
 ```
 
 <table>
@@ -1689,6 +1707,7 @@ This callback function is received by the caller when the callee has received th
 ```
 public virtual void onInviteReceivedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid) {}
 
+
 ```
 
 <table>
@@ -1720,6 +1739,7 @@ This callback function is received by the caller when the callee has accepted th
 
 ```
 virtual void onInviteAcceptedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 
 ```
 
@@ -1756,6 +1776,7 @@ This callback function is received by the caller when the callee rejects the cal
 ```
 virtual void onInviteRefusedByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
 
+
 ```
 
 <table>
@@ -1790,6 +1811,7 @@ This callback function is triggered when a call has failed.
 
 ```
 virtual void onInviteFailed(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,int ecode,char const * extra, size_t extra_size) {}
+
 
 ```
 
@@ -1829,6 +1851,7 @@ This callback function is triggered when the caller has ended the call.
 ```
 public virtual void onInviteEndByMyself(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid) {}
 
+
 ```
 
 <table>
@@ -1860,6 +1883,7 @@ This callback function is triggered when the callee has ended the call.
 
 ```
 public virtual void onInviteEndByPeer(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * extra, size_t extra_size) {}
+
 
 ```
 
@@ -1895,6 +1919,7 @@ This callback function is triggered when the caller has received a DTMF message 
 
 ```
 public virtual void onInviteMsg(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * msgType, size_t msgType_size,char const * msgData, size_t msgData_size,char const * extra, size_t extra_size) {}
+
 
 ```
 
@@ -1937,6 +1962,7 @@ This callback function is triggered when the user has failed to send a message.
 ```
 public virtual void onMessageSendError(char const * messageID, size_t messageID_size,int ecode) {}
 
+
 ```
 
 <table>
@@ -1966,6 +1992,7 @@ This callback function is triggered when the user has successfully sent a messag
 ```
 public virtual void onMessageSendSuccess(char const * messageID, size_t messageID_size) {}
 
+
 ```
 
 <table>
@@ -1991,6 +2018,7 @@ This callback function notifies a user that a message has been received.
 
 ```
 public virtual void onMessageInstantReceive(char const * account, size_t account_size,uint32_t uid,char const * msg, size_t msg_size) {}
+
 
 ```
 
@@ -2023,6 +2051,7 @@ This callback function is triggered when a channel message has been received.
 
 ```
 public virtual void onMessageChannelReceive(char const * channelID, size_t channelID_size,char const * account, size_t account_size,uint32_t uid,char const * msg, size_t msg_size) {}
+
 
 ```
 
@@ -2059,6 +2088,7 @@ This callback function is triggered when a line has been created in a log file.
 ```
 public virtual void onLog(char const * txt, size_t txt_size) {}
 
+
 ```
 
 <table>
@@ -2084,6 +2114,7 @@ This callback function is triggered when the user has queried an attribute of a 
 
 ```
 public virtual void onUserAttrResult(char const * account, size_t account_size,char const * name, size_t name_size,char const * value, size_t value_size) {}
+
 
 ```
 
@@ -2116,6 +2147,7 @@ This callback function is triggered when the user has queried all attributes of 
 
 ```
 public virtual void onUserAttrAllResult(char const * account, size_t account_size,char const * value, size_t value_size) {}
+
 
 ```
 
