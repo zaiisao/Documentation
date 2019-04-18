@@ -3,7 +3,7 @@
 title: Agora RTM Overview
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 18 2019 07:08:29 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 07:08:42 GMT+0800 (CST)
 ---
 # Agora RTM Overview
 The Agora RTM SDK provides a stable messaging mechanism for you to implement real-time messaging scenarios.
@@ -12,9 +12,9 @@ The Agora RTM SDK provides a stable messaging mechanism for you to implement rea
 
 The Agora RTM SDK enables the following functions:
 
--   peer-to-peer messages.
--   Channel messages.
--   Gets the user list of the channel
+-   Send and receive peer-to-peer messages.
+-   Send and receive channel messages.
+-   Get the member list of the channel.
 
 
 ## Applications
@@ -28,7 +28,7 @@ The Agora RTM SDK can be used in the following scenarios:
   </tr>
   <tr>
     <td>Live Broadcast</td>
-    <td><li>Comment streams<br><li>Chatroom<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the live room status<br></td>
+    <td><li>Commentaries<br><li>Chatrooms<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the live room status<br></td>
   </tr>
   <tr>
     <td>Social Network</td>
@@ -36,7 +36,7 @@ The Agora RTM SDK can be used in the following scenarios:
   </tr>
   <tr>
     <td>Education</td>
-    <td><li>Class group message<br><li>Private chat message<br></td>
+    <td><li>Class group messages<br><li>Private chat messages<br></td>
   </tr>
   <tr>
     <td>IoT</td>
