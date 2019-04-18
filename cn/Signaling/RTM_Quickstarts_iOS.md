@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: iOS,macOS
-updatedAt: Thu Apr 18 2019 02:14:40 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 02:14:51 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## <a name = "create"></a>初始化
