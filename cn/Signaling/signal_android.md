@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Android
-updatedAt: Tue Feb 19 2019 09:30:52 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 08:42:21 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -379,7 +379,7 @@ public void login2(String appId,String account,String token,int uid,String devic
 <td>登录重试时间，默认为 30 秒</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>登录重试次数，默认为 15 次</td>
+<td>登录重试次数，默认为 3 次</td>
 </tr>
 </tbody>
 </table>
