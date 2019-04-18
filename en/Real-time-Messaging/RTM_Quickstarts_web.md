@@ -1,11 +1,11 @@
 
 ---
-title: RTM Quickstart
+title: RTM Quickstart Guide
 description: v0.9.0web quickstart 
 platform: Web
-updatedAt: Thu Apr 18 2019 02:30:05 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 02:30:25 GMT+0800 (CST)
 ---
-# RTM Quickstart
+# RTM Quickstart Guide
 ## Integrate the SDK
 
 ### `npm link` local installation
