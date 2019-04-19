@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Web
-updatedAt: Thu Apr 18 2019 02:27:02 GMT+0800 (CST)
+updatedAt: Fri Apr 19 2019 15:02:49 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成 SDK
