@@ -3,7 +3,7 @@
 title: 其它常见问题
 description: 
 platform: 其它常见问题
-updatedAt: Tue Apr 09 2019 08:16:09 GMT+0800 (CST)
+updatedAt: Sun Apr 21 2019 08:02:02 GMT+0800 (CST)
 ---
 # 其它常见问题
 ## Android 平台常见问题
@@ -214,7 +214,7 @@ LONG styleValue = ::GetWindowLong(parentWindow.GetSafeWnd(), GWL_STYLE);
 
 ### 为什么 HLS 延时比 RTMP 要高很多？
 
-HLS 分为 m3u8 索引文件和 ts 媒体切片文件，Apple 的文档中，ts 最短是 2s 一个切片，m3u8 至少 3 个切片文件的索引，所以最短需要 6s 的延时。
+HLS 分为 M3U8 索引文件和 ts 媒体切片文件，Apple 的文档中，ts 最短是 2s 一个切片，M3U8 至少 3 个切片文件的索引，所以最短需要 6s 的延时。
 
 而 RTMP 一般都是直接透传，只需要短暂的缓冲即可，所以延时相对而言要比 HLS 低很多。
 
