@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 18 2019 07:41:59 GMT+0800 (CST)
+updatedAt: Mon Apr 22 2019 03:41:32 GMT+0800 (CST)
 ---
 # 产品概述
 Agora RTM SDK 提供了稳定可靠的消息通道，帮助你快速构建实时消息场景。
