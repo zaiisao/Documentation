@@ -3,7 +3,7 @@
 title: RTM Quickstart Guide
 description: v0.9.0web quickstart 
 platform: Web
-updatedAt: Sun Apr 21 2019 15:05:33 GMT+0800 (CST)
+updatedAt: Mon Apr 22 2019 15:08:02 GMT+0800 (CST)
 ---
 # RTM Quickstart Guide
 This page describes how to integrate the Agora RTM Web SDK v0.9.0 and call the basic functionalities provided in the release of v0.9.0.
