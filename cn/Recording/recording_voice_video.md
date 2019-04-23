@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 09 2019 08:16:20 GMT+0800 (CST)
+updatedAt: Tue Apr 23 2019 07:47:08 GMT+0800 (CST)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -20,7 +20,7 @@ updatedAt: Tue Apr 09 2019 08:16:20 GMT+0800 (CST)
 录制支持两种模式：
 
 - 单流模式：分别录制每个 UID 的音频流和视频流。
-- 合流模式：对同一个频道的多个用户可以进行混音和合图录制。
+- 合流模式：对同一个频道的多个用户可以进行合流录制。
 
 <a name ="individualrecording"></a>
 
