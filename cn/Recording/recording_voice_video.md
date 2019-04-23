@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 23 2019 07:47:08 GMT+0800 (CST)
+updatedAt: Tue Apr 23 2019 07:58:10 GMT+0800 (CST)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -94,7 +94,7 @@ updatedAt: Tue Apr 23 2019 07:47:08 GMT+0800 (CST)
 
 ### 合流 + 不实时转码模式录制
 
-设置参数 <code>isMixingEnabled</code> = 1，<code>mixedVideoAudio</code>= 0，即启动合流 + 不实时转码录制。 该模式可实现音频混音录制和视频合图录制，且音视频文件分开。 你还可以调用 setVideoMixingLayout 接口来设置视频合图布局。
+设置参数 <code>isMixingEnabled</code> = 1，<code>mixedVideoAudio</code>= 0，即启动合流 + 不实时转码录制。 该模式可实现音频混音录制和视频合流录制，且音视频文件分开。 你还可以调用 setVideoMixingLayout 接口来设置视频合流布局。
 
 你可以根据需要生成的文件类型，设置其他参数以选择不同的录制模式：
 
@@ -132,7 +132,7 @@ updatedAt: Tue Apr 23 2019 07:47:08 GMT+0800 (CST)
 
 <td><code>isAudioOnly = 0</code>, <code>isVideoOnly = 1</code></td>
 
-<td>一个 mp4 合图文件</td>
+<td>一个 mp4 合流文件</td>
 
 </tr>
 
@@ -140,7 +140,7 @@ updatedAt: Tue Apr 23 2019 07:47:08 GMT+0800 (CST)
 
 <td><code>isAudioOnly = 0</code>, <code>isVideoOnly = 0</code></td>
 
-<td>一个 aac 混音文件，一个 mp4 合图文件，且音频和视频文件分开</td>
+<td>一个 aac 混音文件，一个 mp4 合流文件，且音频和视频文件分开</td>
 
 </tr>
 
@@ -300,7 +300,7 @@ Agora 录制 SDK 目前仅支持多个音频流混音后的原始音频数据，
 
 </table>
 
-原始数据录制不支持多个视频流合图，请勿设置 isMixingEnabled 参数。
+原始数据录制不支持多个视频流合流，请勿设置 isMixingEnabled 参数。
 
 ## 截屏
 
@@ -554,7 +554,7 @@ Agora 录制 SDK 目前仅支持单流的录制文件 + 单流的截屏，截屏
 
 <tr><td><code>-p</code></td>
 
-<td>帧率设置参数，支持合图模式和单流模式，默认为 15 fps <sup>[3]</sup></td>
+<td>帧率设置参数，支持合流模式和单流模式，默认为 15 fps <sup>[3]</sup></td>
 
 </tr>
 
