@@ -70,7 +70,7 @@ Usage:java RecordingSample --appId STRING --uid UINTEGER32 --channel STRING --ap
 | channelProfile              | 用于设置频道模式。<li>0：通信模式 (默认)，即常见的 1 对 1 单聊或群聊，频道内任何用户可以自由说话 <li>1：直播模式，有两种用户角色，主播和观众，只有主播可以自由发言。<br/>**频道模式必须与 Agora Native/Web SDK 一致，否则可能导致问题。** |
 | isAudioOnly                 | <li>0（默认）：音视频同时录制<li>1：仅启用音频录制功能，关闭视频录制<br />**`isAudioOnly` 和 `isVideoOnly` 不能同时设置为 1。** |
 | isVideoOnly                 | <li>0（默认）：音视频同时录制<li>1：仅启用视频录制功能，关闭音频录制<br />**`isAudioOnly` 和 `isVideoOnly` 不能同时设置为 1。** |
-| isMixingEnabled             | 是否启用合流（混音或合图）模式，合流是指将频道内所有用户的音频流和视频流分别混合录制到一个文件内。<li>0（默认）：启用单流模式录制。录制文件的声道数和码率与原始音频流的声道数和码率保持一致。<li> 1：启用合流模式录制。录制文件的采样率，码率和声道数与录制前各音视频流的最高值保持一致。 |
+| isMixingEnabled             | 是否启用合流undefined模式，合流是指将频道内所有用户的音频流和视频流分别混合录制到一个文件内。<li>0（默认）：启用单流模式录制。录制文件的声道数和码率与原始音频流的声道数和码率保持一致。<li> 1：启用合流模式录制。录制文件的采样率，码率和声道数与录制前各音视频流的最高值保持一致。 |
 | mixResolution | 如果 `isMixingEnabled` 设为 1，可以通过该参数设置合图视频的分辨率，格式为：width，high，fps，Kbps，从左至右分别对应合图的宽、高、帧率和码率。关于合图推荐设置的分辨率，详见 [mixResolution](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/structagora_1_1recording_1_1_recording_config.html#a522a74ca1a09cecf04c5e127cd70eddf)。 |
 | mixedVideoAudio             | 如果 `isMixingEnabled` 设为 1 ，该参数可以设置是否实时混合语音和视频:<li>0（默认）：不混合音频和视频。<li>1：音频和视频混合成一个文件，录制文件格式为 MP4，但播放器支持有限。<li>2：音频和视频混合成一个文件，录制文件格式为 MP4，支持更多播放器。<br>具体的播放器支持，详见 [MIXED_AV_CODEC_TYPE](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#af8f3a6529f57ccfa3621014808d1283a)。 |
 | decryptionMode              | 频道加密时，录制 SDK 可以启用内置的解密功能。解密方式必须与频道设置的加密方式一致。目前支持以下几种解密方式：<li>“aes-128-xts”：128 位 AES 加密，XTS 模式<li>“aes-128-ecb”：128 位 AES 加密，ECB 模式<li>“aes-256-xts”：256 位 AES 加密，XTS 模式 |

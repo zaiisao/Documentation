@@ -19,15 +19,10 @@ updatedAt: Thu Apr 04 2019 06:29:26 GMT+0800 (CST)
 
 ## <a name = "appid-ios"></a>创建 Agora 账号并获取 App ID
 
-1. 进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
-2. 登录 Dashboard 页面，点击 **添加新项目**。
-
-	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
-
-1. 填写 **项目名**，然后点击 **提交**。
+1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
+2. 点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) **项目管理**，进入**项目列表**页面。点击**创建**。
+1. 输入**项目名称**，然后点击**提交**。
 2. 在你创建的项目下，查看并获取该项目对应的 **App ID**。
-
-	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" />
 
 
 ## 添加 Agora SDK 到项目中

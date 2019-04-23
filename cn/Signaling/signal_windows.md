@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Windows
-updatedAt: Tue Apr 23 2019 02:49:09 GMT+0800 (CST)
+updatedAt: Tue Apr 23 2019 02:49:18 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.0
@@ -351,7 +351,7 @@ public virtual void login2(std::string appID, std::string account, std::string t
 <td>登录重试时间，默认为 30 秒</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>登录重试次数，默认为 15 次</td>
+<td>登录重试次数，默认为 3 次</td>
 </tr>
 </tbody>
 </table>
