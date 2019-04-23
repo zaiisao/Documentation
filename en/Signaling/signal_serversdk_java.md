@@ -3,7 +3,7 @@
 title: Server SDK API
 description: 
 platform: Java
-updatedAt: Fri Dec 21 2018 09:56:43 GMT+0800 (CST)
+updatedAt: Tue Apr 23 2019 06:06:28 GMT+0800 (CST)
 ---
 # Server SDK API
 > Version: v1.4.0 BETA
@@ -294,6 +294,9 @@ public int getStatus()
 </tr>
 <tr><td>3</td>
 <td>Login failed</td>
+</tr>
+<tr><td>4</td>
+<td>Initial state</td>
 </tr>
 </tbody>
 </table>
@@ -914,6 +917,7 @@ This callback notifies a user that he/she has received a message.
 ```
 public void onMessageInstantReceive(Signal.LoginSession session, String account, int uid, String msg)
 
+
 ```
 
 <table>
@@ -949,6 +953,7 @@ This callback is triggered when a user has received a call invitation/request.
 ```
 public void onInviteReceived(Signal.LoginSession session, Signal.LoginSession.Call call)
 
+
 ```
 
 <table>
@@ -977,6 +982,7 @@ This callback is triggered when an error is detected.
 
 ```
 public void onError(Signal.LoginSession session, int ecode, String reason)
+
 
 ```
 
@@ -1016,6 +1022,7 @@ This callback is triggered when a user has sent a message.
 ```
 public void onMessageSendSuccess(Signal.LoginSession session)
 
+
 ```
 
 <table>
@@ -1041,6 +1048,7 @@ This callback is triggered when a user fails to send a message.
 
 ```
 public void onMessageSendError(Signal.LoginSession session, int ecode)
+
 
 ```
 
@@ -1077,6 +1085,7 @@ This callback is triggered when a user has joined a channel.
 ```
 public void onChannelJoined(Signal.LoginSession session, Signal.LoginSession.Channel channelName)
 
+
 ```
 
 <table>
@@ -1105,6 +1114,7 @@ This callback is triggered when a user has failed to join a channel.
 
 ```
 public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
+
 
 ```
 
@@ -1138,6 +1148,7 @@ This callback is triggered when the user has left a channel.
 ```
 public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
 
+
 ```
 
 <table>
@@ -1169,6 +1180,7 @@ This callback is triggered when another user has joined the channel.
 
 ```
 public void onChannelUserJoined(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid);
+
 
 ```
 
@@ -1204,6 +1216,7 @@ This callback is triggered when a user has left the channel.
 
 ```
 public void onChannelUserLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)
+
 
 ```
 
@@ -1244,6 +1257,7 @@ The retrieved user list includes a maximum of 200 users latest in the channel.
 ```
 public void onChannelUserList(Signal.LoginSession session, Signal.LoginSession.Channel channel, List<String> users, List<Integer> uids)
 
+
 ```
 
 <table>
@@ -1278,6 +1292,7 @@ This callback is triggered when a channel attribute is changed.
 
 ```
 public void onChannelAttrUpdated(Signal.LoginSession session, Signal.LoginSession.Channel channel, String name, String value, String type)
+
 
 ```
 
@@ -1317,6 +1332,7 @@ This callback is triggered when the number of users in a channel is queried.
 ```
 public void onChannelQueryUserNum(Signal.LoginSession session, String err, int num)
 
+
 ```
 
 <table>
@@ -1354,6 +1370,7 @@ This callback is trigged upon receiving the channel message.
 
 ```
 public void onMessageChannelReceive(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid, String msg)
+
 
 ```
 
@@ -1399,6 +1416,7 @@ This callback is triggered when the callee has received a call invitation/reques
 ```
 public void onInviteReceivedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call)
 
+
 ```
 
 <table>
@@ -1427,6 +1445,7 @@ This callback is triggered when the callee has accepted a call invitation/reques
 
 ```
 public void onInviteAcceptedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 
 ```
 
@@ -1460,6 +1479,7 @@ This callback is triggered when the callee has rejected a call invitation/reques
 ```
 public void onInviteRefusedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
 
+
 ```
 
 <table>
@@ -1491,6 +1511,7 @@ This callback is triggered when a call fails.
 
 ```
 public void onInviteFailed(Signal.LoginSession session, Signal.LoginSession.Call call, int ecode)
+
 
 ```
 
@@ -1524,6 +1545,7 @@ This callback is triggered when the callee has ended the call.
 ```
 public void onInviteEndByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
 
+
 ```
 
 <table>
@@ -1556,6 +1578,7 @@ This callback is triggered when the user ended the call.
 ```
 public void onInviteEndByMyself(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
 
+
 ```
 
 <table>
@@ -1587,6 +1610,7 @@ This callback is triggered when the user has received a DTMF message from the ot
 
 ```
 public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 
 ```
 
