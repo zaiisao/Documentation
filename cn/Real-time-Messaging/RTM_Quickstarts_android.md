@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Tue Apr 23 2019 02:19:34 GMT+0800 (CST)
+updatedAt: Tue Apr 23 2019 02:19:39 GMT+0800 (CST)
 ---
 # RTM 快速开始
 # 01 初始化
@@ -84,9 +84,7 @@ class ChannelListener implements RtmChannelListener {
 ### 注意事项
 
 RTM 支持多实例， 每个实例独立工作互不干扰，多个实例创建时可以用相同的context，事件回调须是不同的实例。
-
-
-当实例不再使用的时，可以调用实例的release()方法释放资源。
+当实例不再使用时，可以调用实例的release()方法释放资源。
 
 # 02 登录
 
@@ -122,7 +120,7 @@ mRtmClient.logout(null);
 
 # 03 点对点消息
 
-pp 在成功登录 RTM 服务器之后，可以开始使用 RTM 的点对点消息功能。
+在成功登录 RTM 服务器之后，可以开始使用 RTM 的点对点消息功能。
 
 
 ### 实现方法
