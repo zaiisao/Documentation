@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 17 2019 03:49:22 GMT+0800 (CST)
+updatedAt: Tue Apr 23 2019 07:47:09 GMT+0800 (CST)
 ---
 # 产品概述
 Agora Recording SDK，是 Agora 针对音视频通话、直播研发的录制插件，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK \(1.12.0 或更高版本\) 兼容，通过简单的操作方法，帮助开发者快速、灵活地部署录制服务，来实现一对一、一对多的音视频通话或直播的录制。
@@ -16,7 +16,7 @@ Agora Recording SDK 支持如下功能：
 
 - 支持 Agora Native SDK 和 Agora Web SDK 的高清音视频通话的录制
 - 支持频道内每个用户的音视频分别录制
-- 支持频道内所有用户的音视频混音和合图录制
+- 支持频道内所有用户的音视频合流录制
 - 支持频道内每个用户的音视频的裸数据
 - 支持频道内每个用户的截图
 - 支持自定义合图布局
