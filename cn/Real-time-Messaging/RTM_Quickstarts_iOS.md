@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: iOS
-updatedAt: Thu Apr 18 2019 02:14:51 GMT+0800 (CST)
+updatedAt: Wed Apr 24 2019 02:17:46 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## <a name = "create"></a>初始化
@@ -35,10 +35,10 @@ updatedAt: Thu Apr 18 2019 02:14:51 GMT+0800 (CST)
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Create an AgoraRtmKit instance
+    // 创建一个 AgoraRtmKit 实例
     _kit = [[AgoraRtmKit alloc] initWithAppId:YOUR_APP_ID delegate:self];
 	// Note: The SDK does not trigger the callback if the AgoraRtmKit reference is not held and released.
-	// Token is mandatory if security options are enabled for your appId.
+	// 在生产环境下 RTM Token是必须的。
 }
 ```
 
@@ -65,7 +65,7 @@ App 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
 调用 `loginByToken` 方法[登录RTM服务器](#login)。在该方法中:
 
 - 传入能标识用户角色和权限的 `token`。如果安全要求不高，也可以将值设为 `“nil“`。`token` 需要在应用程序的服务器端生成。
-- 传入能标识每个用户账号的 ID。`usedId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 `“nil“`。
+- 传入能标识每个用户账号的 ID。`usedId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `nil`。
 - 传入结果回调，用于接收登录 RTM 服务器成功或者失败的结果回调。
 
 ```objective-c
@@ -108,6 +108,7 @@ App 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
 App 在成功[登录RTM服务器](#login)之后，可以开始使用 RTM 的点对点消息功能。
 
 ### 实现方法
+
 #### 发送点对点消息
 
 调用 `sendMessage` 方法发送点对点消息。在该方法中：
@@ -132,7 +133,9 @@ App 在成功[登录RTM服务器](#login)之后，可以开始使用 RTM 的点�
     NSLog(@"message received from %@: %@", message.text, peerId);
 }
 ```
+
 #### 接收点对点消息
+
 点对点消息的接收通过创建 `AgoraRtmMessage` 实例的时候传入的 `AgoraRtmSendPeerMessageBlock` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到消息文本内容和是消息发送方的用户账号 ID (`peerId`)。
 
 ### 注意事项
@@ -140,6 +143,7 @@ App 在成功[登录RTM服务器](#login)之后，可以开始使用 RTM 的点�
 接收到的 `AgoraRtmMessage` 消息对象不能重复利用再用于发送。
 
 ### 相关文档
+
 除了点对点消息，你还可以使用 Agora RTM SDK，实现[群聊](#sendchannel)功能。
 
 ## <a name = "sendchannel"></a>群聊
@@ -152,7 +156,7 @@ App 在成功[登录RTM服务器](#login)之后，可以开始使用 RTM 的群�
 
 1. 调用 `AgoraRtmChannel` 实例的 `createChannelWithId` 方法创建 `AgoraRtmChannel` 实例。在该方法中：
 
-  - 传入能标识每个频道的 ID。`channelId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 `“nil“`。
+  - 传入能标识每个频道的 ID。`channelId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 `nil`。
   - 指定一个事件回调。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
 
 2. 用户只有在加入频道之后，才能收发频道消息和获取频道成员列表等。调用 `AgoraRtmChannel` 实例的 `joinWithCompletion` 方法加入频道。在该方法中，指定回调用于判断是否成功加入该频道。
@@ -214,9 +218,11 @@ App 在成功[登录RTM服务器](#login)之后，可以开始使用 RTM 的群�
 ```
 
 #### 接收频道消息
+
 频道消息的接收通过创建频道消息的时候传入的 `AgoraRtmSendChannelMessageBlock` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到频道消息文本内容和频道消息的发送者的用户账号ID。
 
 #### 获取频道成员列表
+
 调用 `AgoraRtmChannel` 实例的 `getMembersWithCompletion` 方法可以获取到当前在该频道内的用户列表。 
 
 #### 退出频道
@@ -243,6 +249,7 @@ App 在成功[登录RTM服务器](#login)之后，可以开始使用 RTM 的群�
 - 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
 
 ### 相关文档
+
 你也可以使用 Agora RTM SDK，实现[点对点消息](#sendpeer)功能。
 
 ## 接受发送呼叫邀请
@@ -280,6 +287,7 @@ App 在成功[登录RTM服务器](#login)之后，可以开始使用 RTM 的群�
 ```
 
 ### 3.(邀请方)取消邀请
+
 ```swift
 	callKit?.cancel(invitation, completion: { (errorCode) in
    		print("errorCode: \(errorCode.rawValue)")
