@@ -3,7 +3,7 @@
 title: Agora RTM SDK Release Notes
 description: 
 platform: Android
-updatedAt: Wed Apr 24 2019 02:48:40 GMT+0800 (CST)
+updatedAt: Wed Apr 24 2019 02:48:44 GMT+0800 (CST)
 ---
 # Agora RTM SDK Release Notes
 ## Overview
@@ -18,18 +18,17 @@ Supports a maximum of 20 `RtmChannel` instances at the same time. If you call `c
 
 ### Call frequencies
 
-| Method                                                                                  | Call Frequency    |
-| ------------------------------------------------------------------------------------- | -------------------------- |
-| Logs in the Agora RTM system                                         | Two queries per second                  |
-| Sends messages (peer-to-peer and channel messages combined)                         | 60 queries per second              |
-| Retrieves a member list of the channel                           | Five queries every two seconds |
-
+| Method                                                      | Call Frequency                 |
+| ----------------------------------------------------------- | ------------------------------ |
+| Logs in the Agora RTM system                                | Two queries per second         |
+| Sends messages (peer-to-peer and channel messages combined) | 60 queries per second          |
+| Retrieves a member list of the channel                      | Five queries every two seconds |
 
 ### String Length
 
-- The maximum length of a peer-to-peer or channel message is 32 KB.
-- The maximum length of the content in a call invitation is 8 KB.
-- The maximum length of the response in a call invitation is 8 KB. 
+- The maximum length of a peer-to-peer or channel message is 32 KB. See [RtmMessage.setText()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_javaclassio_1_1agora_1_1rtm_1_1_rtm_message.html#a114bf5f4d728e1a5e31792491bf4a1d2).
+- The maximum length of the content in a call invitation is 8 KB. See [LocalInvitation.setContent()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_local_invitation.html#a4cec28ff6d356242329b1034c7531445)
+- The maximum length of the response in a call invitation is 8 KB. See [RemoteInvitation.setResponse()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_remote_invitation.html#a229b8cf773eaa0e79b0d67815fd6b6f1)
 
 ### Encoding 
 
@@ -53,14 +52,14 @@ v0.9.1 is released on April 4th, 2019.
 
 ### New Features
 
-This release adds the call invitation feature, allowing you to create, send, cancel, accept, and decline a call invitation in a one-to-one or one-to-many video call. 
+This release adds the call invitation feature, allowing you to create, send, cancel, accept, and decline a call invitation in a one-to-one or one-to-many voice/Video call. 
 
 ### Improvements
 
 - Optimizes the object relations to facilitate understanding.
 - Renames some interfaces to conform to Java naming conventions. 
 - Removes `ChannelMessageState` and `PeerMessageState` to simplify the process of sending a channel or peer-to-peer message. Uses `ChannelMessageError` and `PeerMessageError` instead. 
-
+- Removes `IStateListener` for listening to message states. Uses the generic `ResultCallback` instead.
 
 ### API Changes
 
@@ -103,7 +102,6 @@ This release adds the call invitation feature, allowing you to create, send, can
 - The `RtmClient.destroy()` method, which releases all resources used by the `RtmClient` instance, to: [RtmClient.release()](../../API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html.md).
 - The `IResultCallback` class to: [ResultCallback](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html)
 
-
 #### Deletes
 
 - Deletes `PEER_MESSAGE_RECEIVED_BY_SERVER` from [PeerMessageError](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_peer_message_error.html), uses `PEER_MESSAGE_ERR_OK` instead.
@@ -111,8 +109,8 @@ This release adds the call invitation feature, allowing you to create, send, can
 - Deletes the `PeerMessageState` interface, uses [PeerMessageError](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_peer_message_error.html) instead. 
 - Deletes the `ChannelMessageState` interface, uses [ChannelMessageError](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_channel_message_error.html) instead.
 - Deletes the `IStateListener` class for listening to message states, uses the [ResultCallback](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html) class instead for listening to the peer or channel message results.
- - Success: the SDK returns the [ResultCallback.onSuccess()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5) callback.
- - Failure: the SDK returns the [ResultCallback.onFailure()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) callback with the corresponding error codes.
+- Success: the SDK returns the [ResultCallback.onSuccess()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5) callback.
+- Failure: the SDK returns the [ResultCallback.onFailure()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) callback with the corresponding error codes.
 
 ## v0.9.0
 
@@ -125,8 +123,3 @@ Key features:
 - Sends or receives peer-to-peer messages.
 - Joins or leaves a channel.
 - Sends or receives channel messages.
-
-
-
-
-
