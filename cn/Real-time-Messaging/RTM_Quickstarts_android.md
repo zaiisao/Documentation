@@ -3,10 +3,10 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Wed Apr 24 2019 03:07:20 GMT+0800 (CST)
+updatedAt: Wed Apr 24 2019 03:07:24 GMT+0800 (CST)
 ---
 # RTM 快速开始
-# 01 初始化
+## 初始化
 
 在创建实例前，请确保你已完成环境准备，安装包获取等步骤。
 
@@ -50,7 +50,7 @@ class ChannelListener implements RtmChannelListener {
     @Override
     public void onMemberLeft(RtmChannelMember member) {
         String account = member.getUserId();
-        System.out.println("member " + account + " lefted the channel "
+        System.out.println("member " + account + " left the channel "
                          + channel_);
     }
 }
@@ -74,7 +74,7 @@ class ChannelListener implements RtmChannelListener {
             });
         } catch (Exception e) {
             System.out.println("Rtm sdk init fatal error!");
-            throw new RuntimeException("Need to check rtm sdk init process");
+            throw new RuntimeException("Need to check the RTM SDK init process.");
         }
     }
 ```
@@ -86,14 +86,14 @@ class ChannelListener implements RtmChannelListener {
 RTM 支持多实例， 每个实例独立工作互不干扰，多个实例创建时可以用相同的context，事件回调须是不同的实例。
 当实例不再使用时，可以调用实例的release()方法释放资源。
 
-# 02 登录
+## 登录
 
 APP 必须在登录RTM服务器之后，才可以使用RTM的点对点消息和群聊功能，在此之前，请确保RTM client初始化完成。
 
 登录实现方法
 
 - 传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 null。Token 需要在应用程序的服务器端生成，具体生成办法，详见密钥说明。
-- 传入能标识每个用户账号的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 “null“。
+- 传入能标识每个用户账号的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 null。
 - 传入结果回调，用于接收登录 RTM 服务器成功或者失败的结果回调。
 
 ```java
@@ -118,7 +118,7 @@ APP 必须在登录RTM服务器之后，才可以使用RTM的点对点消息和�
 mRtmClient.logout(null);
 ```
 
-# 03 点对点消息
+## 点对点消息
 
 在成功登录 RTM 服务器之后，可以开始使用 RTM 的点对点消息功能。
 
@@ -166,7 +166,7 @@ mRtmClient.logout(null);
 
 - 接收到的 RtmMessage 消息对象不能重复利用再用于发送。
 
-# 04 群聊
+## 群聊
 
 App 在成功登录RTM服务器 之后，可以开始使用 RTM 的群聊功能。
 
@@ -174,7 +174,7 @@ App 在成功登录RTM服务器 之后，可以开始使用 RTM 的群聊功能�
 
 ### 创建加入频道实例
 
-- 传入能标识每个频道的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 “null“。  
+- 传入能标识每个频道的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 null。  
 - 指定一个事件回调。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
 
 
@@ -254,56 +254,11 @@ App 在成功登录RTM服务器 之后，可以开始使用 RTM 的群聊功能�
 
 ## 注意事项
 
-- 每个客户端都需要首先调用创建channel方法创建频道实例才能使用群聊功能，该实例只是本地的一个类对象实例。
+- 每个客户端都需要首先调用创建 `RtmChannel` 方法创建频道实例才能使用群聊功能，该实例只是本地的一个类对象实例。
 - RTM 支持同时创建多个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的回调。
-- 如果频道 ID 非法，或者具有相同 ID 的频道实例已经在本地创建，createChannel 将返回 null。
-- 接收到的 RtmMessage 消息对象不能重复利用再用于发送。
-- 当离开了频道且不再加入该频道时，可以调用 RtmChannel 实例的 release 方法及时释放频道实例所占用的资源。
+- 如果频道 ID 非法，或者具有相同 ID 的频道实例已经在本地创建，`createChannel` 将返回 null。
+- 接收到的 `RtmMessage` 消息对象不能重复利用再用于发送。
+- 当离开了频道且不再加入该频道时，可以调用 `RtmChannel` 实例的 `release` 方法及时释放频道实例所占用的资源。
 - 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
 
-# 05 发送和接受呼叫邀请
-在登陆 Agora RTM 系统后可以发送和接收呼叫邀请
 
-## 获取 RtmCallManager
-
-每个 RtmClient 只有一个 RtmCallManager 对象。
-
-```
-   RtmCallManager rtmCallMgr = rtmClient.getRtmCallManager();
-```
-
-## 设置回调(呼叫接受的状态都可以通过这里的回调方法得到)
-
-```
-   rtmCallMgr.setEventListener(new RtmCallEventListener() { ... });
-```
-
-## 创建呼叫邀请
-
-```
-   LocalInvitation rtmLocalInvitation = rtmCallMgr.createLocalInvitation(calleeId);
-```
-
-## 发送呼叫邀请
-
-```
-   rtmCallMgr.sendLocalInvitation(rtmLocalInvitation, new MyResultCallback());
-```
-
-## 取消呼叫邀请
-
-```
-   rtmCallMgr.cancelLocalInvitation(rtmLocalInvitation, new MyResultCallback());
-```
-
-## 接受呼叫邀请
-
-```
-   rtmCallMgr.acceptRemoteInvitation(rtmRemoteInvitation, new MyResultCallback());
-```
-
-## 拒绝呼叫邀请
-
-```
-   rtmCallMgr.refuseRemoteInvitation(rtmRemoteInvitation, new MyResultCallback());
-```
