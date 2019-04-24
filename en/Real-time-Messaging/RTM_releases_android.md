@@ -3,7 +3,7 @@
 title: Agora RTM SDK Release Notes
 description: 
 platform: Android
-updatedAt: Wed Apr 24 2019 06:08:01 GMT+0800 (CST)
+updatedAt: Wed Apr 24 2019 06:43:49 GMT+0800 (CST)
 ---
 # Agora RTM SDK Release Notes
 ## Overview
