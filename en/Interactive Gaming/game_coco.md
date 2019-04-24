@@ -3,7 +3,7 @@
 title: Gaming API
 description: 
 platform: null
-updatedAt: Wed Apr 24 2019 09:44:15 GMT+0800 (CST)
+updatedAt: Wed Apr 24 2019 09:51:57 GMT+0800 (CST)
 ---
 # Gaming API
 Agora Cocos Creator js SDK contains the following APIs:
@@ -100,7 +100,7 @@ In the live broadcasr profile, this method allows you to set the user role as a 
 ### Join a Channel `agora.joinChannel(token, channelId, [info], [uid])`
 
 ```
-agora.joinChannel(''', "CHANNEL_ID");
+agora.joinChannel("", "CHANNEL_ID");
 ```
 
 | Param     | Type                | Description                                                  |
