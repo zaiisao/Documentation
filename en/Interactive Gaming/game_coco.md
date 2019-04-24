@@ -3,7 +3,7 @@
 title: Gaming API
 description: 
 platform: null
-updatedAt: Wed Apr 24 2019 09:44:10 GMT+0800 (CST)
+updatedAt: Wed Apr 24 2019 09:44:15 GMT+0800 (CST)
 ---
 # Gaming API
 Agora Cocos Creator js SDK contains the following APIs:
@@ -100,12 +100,12 @@ In the live broadcasr profile, this method allows you to set the user role as a 
 ### Join a Channel `agora.joinChannel(token, channelId, [info], [uid])`
 
 ```
-agora.joinChannel(null, "CHANNEL_ID");
+agora.joinChannel(''', "CHANNEL_ID");
 ```
 
 | Param     | Type                | Description                                                  |
 | --------- | ------------------- | ------------------------------------------------------------ |
-| token     | <code>String</code> | <li>If the user uses a static App ID, token is optional and can be set as null.<br><li>If the user uses a token, Agora issues an additional App Certificate for you to generate a token based on the algorithm and App Certificate for user authentication on the server. For more information about Token, see [Use Security Keys](https://docs.agora.io/en/Interactive%20Gaming/token?platform=All%20Platforms). |
+| token     | <code>String</code> | <li>If the user uses a static App ID, token is optional and can be set as an empty string.<br><li>If the user uses a token, Agora issues an additional App Certificate for you to generate a token based on the algorithm and App Certificate for user authentication on the server. For more information about Token, see [Use Security Keys](https://docs.agora.io/en/Interactive%20Gaming/token?platform=All%20Platforms). |
 | channelId | <code>String</code> | Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^\_,{ |
 | [info]    | <code>String</code> | (Optional) Additional information about the channel. This parameter can be set as null or contain channel related information. Other users in the channel do not receive this message. |
 | [uid]     | <code>number</code> | (Optional) User ID. A 32-bit unsigned integer with a value ranging from 1 to (2<sup>32</sup>-1). Uid must be unique. If Uid is not assigned (or set to 0), the SDK assigns and returns uid in the <code>onJoinChannelSuccess</code> callback. Your app must record and maintain the returned uid since the SDK does not do so. |
