@@ -3,7 +3,7 @@
 title: Agora RTM SDK Release Notes
 description: 
 platform: Android
-updatedAt: Wed Apr 24 2019 04:12:16 GMT+0800 (CST)
+updatedAt: Wed Apr 24 2019 04:14:45 GMT+0800 (CST)
 ---
 # Agora RTM SDK Release Notes
 ## Overview
@@ -21,7 +21,7 @@ Supports a maximum of 20 `RtmChannel` instances at the same time. If you call `c
 | Function                                                      | Method(s)     |   Call Frequency         |
 | ----------------------------------------------------------- | ------------------------------ |-------------|
 | Logs in the Agora RTM system|[RtmClient.login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a)                                | Two queries per second         |
-| Sends messages (peer-to-peer and channel messages combined)|[RtmClient.sendMessageToPeer()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a25ab5c0126e1dc51c78b2b705de68b7a) or [RtmChannel.SendMessage()](https://docs.agora.io/en/Real-time-Messaging/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a57087adf4227a17c774ea292840148a0) | 60 queries per second          |
+| Sends messages (peer-to-peer and channel messages combined)|[RtmClient.sendMessageToPeer()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a25ab5c0126e1dc51c78b2b705de68b7a) and [RtmChannel.SendMessage()](https://docs.agora.io/en/Real-time-Messaging/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a57087adf4227a17c774ea292840148a0) combined | 60 queries per second          |
 | Retrieves a member list of the channel|[RtmChannel.getMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a567aca5f866cf71c3b679ae09b4bf626)                      | Five queries every two seconds |
 
 ### String Length
