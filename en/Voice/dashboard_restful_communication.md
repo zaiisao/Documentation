@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Apr 24 2019 03:04:03 GMT+0800 (CST)
+updatedAt: Wed Apr 24 2019 03:04:41 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
@@ -747,7 +747,7 @@ Example: /channel/user/<appid\>/<channelName\>
 
 	
 
-### Get the Project List (GET)
+### Get the Channel List (GET)
 
 This method gets the channel list of a specified vendor.
 
