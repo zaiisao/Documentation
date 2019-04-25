@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 23 2018 06:29:19 GMT+0800 (CST)
+updatedAt: Thu Apr 25 2019 06:13:18 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -38,9 +38,9 @@ Agora 提供 App Certificate 用以生成 [动态密钥](#key)。
 
 基于 SDK 版本，动态密钥可以是 Channel Key 或 Token，详细信息请查看 [校验用户权限](../../cn/Voice/token.md)。
 
-### SD-RTN
+### SD-RTN™
 
-Agora 的音视频传输依赖于自建的 SD-RTN (Software Defined Real-time Network)，这是一种虚拟的、基于 UDP (User Datagram Protocol) 的网络架构，专为实时通信而设计。通过在互联网上不同的数据中心部署彼此协同工作的软件网络单元，Agora 添加了一个虚拟层。为确保传输的稳定性和低延迟，特别是在弱网环境下，SD-RTN 根据以下节点条件实时自动分配最优路径：
+Agora 的音视频传输依赖于自建的 SD-RTN™ (Software Defined Real-time Network)，这是一种虚拟的、基于 UDP (User Datagram Protocol) 的网络架构，专为实时通信而设计。通过在互联网上不同的数据中心部署彼此协同工作的软件网络单元，Agora 添加了一个虚拟层。为确保传输的稳定性和低延迟，特别是在弱网环境下，SD-RTN™ 根据以下节点条件实时自动分配最优路径：
 
 - 传输状态
 - 负载条件
@@ -146,7 +146,7 @@ Agora 产品可在任何应用程序上轻松实现直播功能：
 
 在推流到 CDN 过程中，当频道中有多个主播时，通常会涉及到转码。
 
-在推流到 CDN 过程中，发送到 SD-RTN 的音视频流被转换成 RTMP（Real-Time Messaging Protocol）流，然后被推送到 CDN。如果有多个主播，则需要通过转码将多个直播流组合成单个流。
+在推流到 CDN 过程中，发送到 SD-RTN™ 的音视频流被转换成 RTMP（Real-Time Messaging Protocol）流，然后被推送到 CDN。如果有多个主播，则需要通过转码将多个直播流组合成单个流。
 
 转码为将要推送到 CDN 的直播流设置音视频属性和合图布局。
 
