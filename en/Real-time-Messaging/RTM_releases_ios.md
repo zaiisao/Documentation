@@ -3,7 +3,7 @@
 title: Agora RTM Release Notes
 description: migration information
 platform: iOS
-updatedAt: Thu Apr 25 2019 03:40:04 GMT+0800 (CST)
+updatedAt: Thu Apr 25 2019 03:59:41 GMT+0800 (CST)
 ---
 # Agora RTM Release Notes
 ## Overview
