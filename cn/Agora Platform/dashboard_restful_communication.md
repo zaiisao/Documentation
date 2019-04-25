@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 18 2019 09:34:47 GMT+0800 (CST)
+updatedAt: Thu Apr 25 2019 06:00:53 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -17,7 +17,7 @@ RESTful API 仅支持 HTTPS。用户必须通过 basic HTTP 认证:
 
 与 Agora SDK 所使用的 App ID 和 App Certificate 不同，Customer ID 和 Customer Certificate 仅用于访问 Restful API。
 
-> 你可以登录 [Dashboard](https://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTFUL API 页面获取 Customer ID 和 Customer Certificate。Vender Key 和 Sign Key 在 Dashboard 里已分别改名为 App ID 和 App Certificate，但本文代码里仍沿用 vendor_key 和 sign_key。
+> 你可以登录 [Dashboard](https://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTFUL API 页面获取 Customer ID 和 Customer Certificate。Vender Key 和 Sign Key 在 Dashboard 里已分别改名为 App ID 和 App Certificate，但代码里仍沿用 vendor_key 和 sign_key。
 
 ## 2. 接入点
 
