@@ -1,11 +1,11 @@
 
 ---
-title: Agora RTM SDK v0.9.1版本更新信息
+title: 发版说明
 description: 
-platform: iOS,macOS
-updatedAt: Thu Apr 18 2019 02:20:18 GMT+0800 (CST)
+platform: iOS
+updatedAt: Thu Apr 25 2019 08:36:57 GMT+0800 (CST)
 ---
-# Agora RTM SDK v0.9.1版本更新信息
+# 发版说明
 ## v0.9.1 发版说明
 
 本文列举Agora RTM iOS SDK v0.9.1 版本较 v0.9.0 版本的差异
