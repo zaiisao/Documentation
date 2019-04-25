@@ -3,11 +3,9 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Thu Apr 25 2019 08:36:57 GMT+0800 (CST)
+updatedAt: Thu Apr 25 2019 08:37:02 GMT+0800 (CST)
 ---
 # 发版说明
-## v0.9.1 发版说明
-
 本文列举Agora RTM iOS SDK v0.9.1 版本较 v0.9.0 版本的差异
 
 > macOS 平台暂不支持呼叫邀请功能
