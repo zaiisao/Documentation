@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Sat Jan 26 2019 08:47:48 GMT+0800 (CST)
+updatedAt: Thu Apr 25 2019 06:13:49 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -20,7 +20,7 @@ Things you need to know before using the Agora SDK.
 
 App IDs are issued to app developers by Agora to identify the projects and organizations. After signing up at [Agora Dashboard](https://dashboard.agora.io/), you can create multiple projects, and each project will have a unique App ID. See [Getting an App ID](../../en/Agora%20Platform/token.md).
 
-All communication sessions created across the Agora SD-RTN (Software Defined Real-time Network) with one App ID are isolated from all other sessions with different App IDs. Communication sessions with different App IDs are not connected or related. Statistics, management, and billing are separately associated based on each App ID. If an organization develops independently different apps by different teams, the apps should use different App IDs.  However, if the apps need to communicate with each other, a single App ID should be used.
+All communication sessions created across the Agora SD-RTN™ (Software Defined Real-time Network) with one App ID are isolated from all other sessions with different App IDs. Communication sessions with different App IDs are not connected or related. Statistics, management, and billing are separately associated based on each App ID. If an organization develops independently different apps by different teams, the apps should use different App IDs.  However, if the apps need to communicate with each other, a single App ID should be used.
 
 ### App Certificate
 
@@ -36,9 +36,9 @@ Dynamic Keys have expiry dates and contain client permissions, such as different
 
 Based on the SDK version, the Dynamic Key can be a Channel Key or a Token, see [Security Keys](../../en/Agora%20Platform/token.md) for details.
 
-### SD-RTN
+### SD-RTN™
 
-Agora’s audio and video transmissions rely on Agora's self-built SD-RTN (Software Defined Real-time Network), a virtual and UDP (User Datagram Protocol)-based network architecture designed specifically for real-time communications. By deploying software networking units, which work in synergy with one another, at different data centers across the Internet, Agora managed to add a virtual layer. To ensure stable transmission and low latency, particularly on weak networks, the SD-RTN automatically assigns an optimal path according to the following node conditions in real-time:
+Agora’s audio and video transmissions rely on Agora's self-built SD-RTN™ (Software Defined Real-time Network), a virtual and UDP (User Datagram Protocol)-based network architecture designed specifically for real-time communications. By deploying software networking units, which work in synergy with one another, at different data centers across the Internet, Agora managed to add a virtual layer. To ensure stable transmission and low latency, particularly on weak networks, the SD-RTN™ automatically assigns an optimal path according to the following node conditions in real-time:
 
 - Transmission status
 - Load conditions
@@ -142,7 +142,7 @@ The process of publishing streams into the CDN (Content Delivery Network) is cal
 
 Transcoding is used in CDN live streaming when multiple hosts are in the channel.
 
-In CDN live streaming, the audio and video streams sent to the SD-RTN are transferred into an RTMP (Real-Time Messaging Protocol) stream and pushed to the CDN. If there are multiple hosts, their streams need to be combined into a single stream by transcoding. 
+In CDN live streaming, the audio and video streams sent to the SD-RTN™ are transferred into an RTMP (Real-Time Messaging Protocol) stream and pushed to the CDN. If there are multiple hosts, their streams need to be combined into a single stream by transcoding. 
 
 Transcoding sets the audio/video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
 
