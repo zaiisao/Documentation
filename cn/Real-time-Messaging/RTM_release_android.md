@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Apr 25 2019 08:36:07 GMT+0800 (CST)
+updatedAt: Thu Apr 25 2019 09:58:19 GMT+0800 (CST)
 ---
 # 发版说明
 本文列举Agora RTM Android SDK v0.9.1 版本较 v0.9.0 版本的差异
