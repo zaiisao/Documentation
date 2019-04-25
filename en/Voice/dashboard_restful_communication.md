@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Apr 24 2019 03:04:41 GMT+0800 (CST)
+updatedAt: Thu Apr 25 2019 08:20:48 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
@@ -17,7 +17,7 @@ The RESTful API only supports HTTPS, and the user must pass the basic HTTP authe
 Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and Customer Certificate are only used for RESTful API access.
 
 > You can login [https://dashboard.agora.io](https://dashboard.agora.io), click the account name on the top right of the dashboard, and enter the **Restful API** page from the drop-down list to get the **Customer ID** and **Customer Certificate**.
-> Currently, the Vendor Key and Sign Key are renamed to the App ID and App Certificate respectively on the Dashboard, but *vendor\_key* and *sign\_key* are still used in this document.
+> Currently, the Vendor Key and Sign Key are renamed to the App ID and App Certificate respectively on the Dashboard, but *vendor\_key* and *sign\_key* are still used in the code.
 
 ## 2. EndPoint
 
