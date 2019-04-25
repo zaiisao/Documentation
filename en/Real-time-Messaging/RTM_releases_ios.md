@@ -3,7 +3,7 @@
 title: Agora RTM Release Notes
 description: migration information
 platform: iOS
-updatedAt: Thu Apr 25 2019 04:00:08 GMT+0800 (CST)
+updatedAt: Thu Apr 25 2019 06:08:25 GMT+0800 (CST)
 ---
 # Agora RTM Release Notes
 ## Overview
@@ -24,6 +24,8 @@ v0.9.1 is released on April 4th, 2019.
 ### New Features
 
 This release adds the call invitation feature, allowing you to create, send, cancel, accept, and decline a call invitation in a one-to-one or one-to-many voice/video call. 
+
+> This version does not come with the `setLogFile` or `setLogFilter` method. All log information is kept at **~/Library/caches/agorasdk.log** by default. 
 
 ### Improvements
 
@@ -46,7 +48,7 @@ This release adds the call invitation feature, allowing you to create, send, can
 - [remoteInvitationRefused](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmCallDelegate.html#//api/name/rtmCallKit:remoteInvitationRefused:): occurs when the callee declines a call invitation.
 - [remoteInvitationCanceled](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmCallDelegate.html#//api/name/rtmCallKit:remoteInvitationCanceled:): occurs when the caller cancels the call invitation.
 - [remoteInvitationFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmCallDelegate.html#//api/name/rtmCallKit:remoteInvitationFailure:errorCode:): occurs when the incoming call invitation fails.
-- [AgoraRtmCallDelegate](../../en/Real-time-Messaging/RTM_releases_ios.md): enables Agora RTM call callback event notifications to your app.
+- [AgoraRtmCallDelegate](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmCallDelegate.html): enables Agora RTM call callback event notifications to your app.
 - [sendLocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmCallKit.html#//api/name/sendLocalInvitation:completion:): sends a call invitation to a specified user.
 - [acceptRemoteInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmCallKit.html#//api/name/acceptRemoteInvitation:completion:): accepts an incoming call invitation.
 - [refuseRemoteInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmCallKit.html#//api/name/refuseRemoteInvitation:completion:): declines an incoming call invitation.
@@ -71,8 +73,7 @@ This release adds the call invitation feature, allowing you to create, send, can
 
 - Sets `channelDelegate` as a property so that developers can freely update it. 
 - Removes rtmKit from the callbacks under `AgoraRtmChannelDelegate`.
-- [setParameters](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setParameters:), which configures the SDK with JSON options. 
-- Deletes PEER_MESSAGE_RECEIVED_BY_SERVER from PeerMessageError, uses PEER_MESSAGE_ERR_OK instead.
+- Changes the parameter of the [setParameters](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setParameters:) method, which configures the SDK with JSON options. 
 - Deletes AgoraRtmSendChannelMessageStateReceivedByServer from [AgoraRtmSendChannelMessageErrorCode](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmSendChannelMessageErrorCode.html).
 - Deletes the AgoraRtmSendPeerMessageState interface, uses [AgoraRtmSendPeerMessageErrorCode](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmSendPeerMessageErrorCode.html) instead.
 - Deletes the AgoraRtmSendChannelMessageState interface, uses [AgoraRtmSendChannelMessageErrorCode](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmSendChannelMessageErrorCode.html) instead.
