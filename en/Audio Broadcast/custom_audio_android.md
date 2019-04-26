@@ -3,7 +3,7 @@
 title: Customize the Audio Source and Renderer
 description: 
 platform: Android
-updatedAt: Fri Apr 26 2019 07:40:50 GMT+0800 (CST)
+updatedAt: Fri Apr 26 2019 07:52:37 GMT+0800 (CST)
 ---
 # Customize the Audio Source and Renderer
 ## Introduction
@@ -22,10 +22,9 @@ Ensure that you prepared the development environment. See [Integrate the SDK](..
 
 ### Customize the Audio Source
 
-Use the push method to customize the audio source, where the SDK conducts no data processing to the audio frame, such as noise reduction.
+Use the push method to customize the audio source, where by default the SDK conducts no data processing to the audio frame, such as noise reduction.  Implement noise reduction on your own if you have such requirements.
 
 ```java
-// java
 // Enable the external audio source mode.
 rtcEngine.setExternalAudioSource(
 	true,      // Enable the external audio source.
