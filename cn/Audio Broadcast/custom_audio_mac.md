@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Wed Feb 20 2019 07:38:00 GMT+0800 (CST)
+updatedAt: Fri Apr 26 2019 07:31:32 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -21,7 +21,7 @@ updatedAt: Wed Feb 20 2019 07:38:00 GMT+0800 (CST)
 
 ### 自定义音频源
 
-你可以使用 Push 方法自定义音频源。该方法下，SDK 不会对采用传入的音频数据做消噪等处理。
+你可以使用 Push 方法自定义音频源。该方法下，SDK 默认不会对采集传入的音频数据做消噪等处理。如有音频消噪需求，需要开发者自行实现。
 
 ```swift
 // swift
