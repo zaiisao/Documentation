@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Thu Dec 27 2018 02:54:39 GMT+0800 (CST)
+updatedAt: Fri Apr 26 2019 07:59:30 GMT+0800 (CST)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -23,10 +23,9 @@ Ensure that you prepared the development environment. See [Integrate the SDK](..
 
 ### Customize the Audio Source
 
-Use the push method to customize the audio source, where the SDK conducts no data processing to the audio frame, such as noise reduction.
+Use the push method to customize the audio source, where by default the SDK conducts no data processing to the audio frame, such as noise reduction. Implement noise reduction on your own if you have such requirements.
 
 ```java
-// java
 // Enable the external audio source mode.
 rtcEngine.setExternalAudioSource(
 	true,      // Enable the external audio source.
@@ -49,15 +48,14 @@ rtcEngine.pushExternalAudioFrame(
 
 The Agora SDK provides two methods to customize the video source:
 
-- MediaIO method (Recommended).
-- Push method. This method skips processing the video frame and works best for clients with frame optimization capacity.
+- The IVideoSource interface of MediaI. You can use this interface with the IVideoSink interface for more varied scenarios
+- Push method. This method is easy to use and works best for clients with frame optimization capacity.
 
 #### MediaIO Method
 
 Use the IVideoSource interface in MediaIO to customize the video source. This method sends the external video frame to the server, and you need to implement local rendering if the local preview is enabled.
 
 ```java
-// java
 IVideoFrameConsumer mConsumer;
 boolean mHasStarted;
 
@@ -119,12 +117,11 @@ if (mHasStarted && mConsumer != null) {
 Compared to the MediaIO method, the push method uses less code but lacks any optimization of the captured video frame. This method requires you to do the processing.
 
 ```java
-// java
 // Notify the SDK that the external video source is used.
 rtcEngine.setExternalVideoSource(
     true，      // Whether to use an external video source.
-    false,      // Whether to use texture as the output format.
-    true        // Whether to use the push mode. True means yes. False means to use the pull mode, which is not supported.
+    false,       // Whether to use texture as the output format.
+    true         // Whether to use the push mode. True means yes. False means to use the pull mode, which is not supported.
     );
 
 // Use the push method to send the video frame data once it is received.
@@ -143,7 +140,6 @@ The video source and renderer can be customized by switching on/off the video fr
 Use the IVideoSink Interface of MediaIO to customize the video renderer.
 
 ```java
-// java
 IVideoSink sink = new IVideoSink() {
     @Override
     public boolean onInitialize () {
