@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Tue Nov 27 2018 05:45:00 GMT+0800 (CST)
+updatedAt: Fri Apr 26 2019 07:09:22 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -23,7 +23,7 @@ updatedAt: Tue Nov 27 2018 05:45:00 GMT+0800 (CST)
 
 ### 自定义音频源
 
-你可以使用 Push 方法自定义音频源。该方法下，SDK 不会对采用传入的音频数据做消噪等处理。
+你可以使用 Push 方法自定义音频源。该方法下，SDK 默认不会对采集传入的音频数据做消噪等处理。如有音频消噪需求，需要开发者自行实现。
 
 ```swift
 // swift
@@ -53,8 +53,8 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 
 Agora SDK 目前提供两种自定义视频源的方法：
 
-* 通过 MediaIO 接口实现（推荐）。
-* 通过 Push 方法实现。和自定义音频源一样，该方法略过了 SDK 对视频帧的优化处理，因此适合客户端有能力对帧进行优化的用户。
+* 通过 MediaIO 中的 AgoraVideoSourceProtocol 协议实现。该类接口可以搭配自定义渲染器使用，实现更为丰富的场景
+* 通过 Push 方法实现。该方法使用简单，功能也比较单一
 
 #### 使用 MediaIO 接口自定义视频源
 
@@ -66,12 +66,12 @@ Agora SDK 目前提供两种自定义视频源的方法：
 	// swift
 	// 协议中的变量
 		 var consumer: AgoraVideoFrameConsumer?
-	// 调用 consumer 的方法，将视频数据推入Agora SDK:
+	// 调用 Consumer 的方法，将视频数据推入 Agora SDK
 
-		 // 推入rawData类型
+		 // 推入r awData 类型
 		 consumer.consumeRawData("your rawData", withTimestamp: CMTimeMake(1, 15), format: "your data format", size: size, rotation: rotation)
 
-		 // 推入CVPixelBuffer
+		 // 推入 CVPixelBuffer
 		 consumer.consumePixelBuffer("your pixelBuffer", withTimestamp: CMTimeMake(1, 15), rotation: rotation)
 
 	// 协议中的方法
@@ -80,11 +80,11 @@ Agora SDK 目前提供两种自定义视频源的方法：
 				return bufferType
 		}
 
-	2. 在初始化视频源 (shouldInitialize) 中, 初始化自定义的 Video Source
+	2. 在初始化视频源（shouldInitialize）中, 初始化自定义的 Video Source
 		func shouldInitialize() -> Bool {
 		}
 
-	3. 自定义视频源开始采集视频数据，并通过 consumer 推入视频数据
+	3. 自定义视频源开始采集视频数据，并通过 Consumer 推入视频数据
 		func shouldStart() {
 		}
 
@@ -101,12 +101,12 @@ Agora SDK 目前提供两种自定义视频源的方法：
 	// objective-c
 	// 协议中的变量
 	@synthesize consumer;
-	// 调用 consumer 的方法，将视频数据推入Agora SDK:
+	// 调用 Consumer 的方法，将视频数据推入 Agora SDK
 
-		// 推入rawData类型
+		// 推入 rawData 类型
 		[consumer consumeRawData: "your rawData" withTimestamp: CMTimeMake(1, 15) format: "your data format" size: size rotation: rotation];
 
-		// 推入CVPixelBuffer
+		// 推入 CVPixelBuffer
 		[consumer consumePixelBuffer: "your pixelBuffer" withTimestamp: CMTimeMake(1, 15) rotation: rotation];
 
 	// 协议中的方法
@@ -115,12 +115,12 @@ Agora SDK 目前提供两种自定义视频源的方法：
 				return AgoraVideoBufferTypePixelBuffer;
 		}
 
-	2. 在初始化视频源 (shouldInitialize) 中, 初始化自定义的 Video Source
+	2. 在初始化视频源（shouldInitialize）中, 初始化自定义的 Video Source
 		- (BOOL)shouldInitialize {
 				return YES;
 		}
 
-	3. 自定义视频源开始采集视频数据，并通过 consumer 推入视频数据
+	3. 自定义视频源开始采集视频数据，并通过 Consumer 推入视频数据
 		- (void)shouldStart {
 		}
 
