@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Windows
-updatedAt: Fri Apr 26 2019 07:22:06 GMT+0800 (CST)
+updatedAt: Fri Apr 26 2019 07:23:17 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -23,12 +23,11 @@ updatedAt: Fri Apr 26 2019 07:22:06 GMT+0800 (CST)
 ### 使用外部音频数据源
 
 ```cpp
-// cpp
 // 初始化参数对象
 RtcEngineParameters rep(*lpAgoraEngine);
 AParameter apm(*lpAgoraEngine);
 
-// 准备工作，需要实现音频采集模块，以及音频数据队列(用来存放采集出来的数据/或者将要播放的数据)
+// 准备工作，需要实现音频采集模块，以及音频数据队列（用来存放采集出来的数据/或者将要播放的数据）
 CAudioPlayPackageQueue	*CAudioPlayPackageQueue::m_lpAudioPackageQueue = NULL;
 
 CAudioPlayPackageQueue::CAudioPlayPackageQueue()
@@ -198,8 +197,7 @@ mediaEngine->registerAudioFrameObserver(NULL);
 在 Windows 平台上实现外部视频源，需要使用私有接口 [`setParameters`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_parameter.html#adde9cb68e2ef2216d7fd1976fd5f1d75) 。具体的用法和实现详见示例代码。
 
 ```cpp
-// cpp
-// 准备工作，需要实现视频采集模块，以及视频数据队列(用来存放采集出来的数据/或者将要渲染的数据)
+// 准备工作，需要实现视频采集模块，以及视频数据队列（用来存放采集出来的数据/或者将要渲染的数据）
 CVideoPackageQueue *CVideoPackageQueue::m_lpVideoPackageQueue = NULL;
 
 CVideoPackageQueue::CVideoPackageQueue()
