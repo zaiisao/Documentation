@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: iOS
-updatedAt: Fri Apr 26 2019 08:12:20 GMT+0800 (CST)
+updatedAt: Fri Apr 26 2019 08:12:48 GMT+0800 (CST)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -23,7 +23,7 @@ Ensure that you prepared the development environment. See [Integrate the SDK](..
 
 ### Customize the Audio Source
 
-Use the push method to customize the audio source, where the SDK conducts no data processing to the audio frame, such as noise reduction.
+Use the push method to customize the audio source, where by default the SDK conducts no data processing to the audio frame, such as noise reduction. Implement noise reduction on your own if you have such requirements.
 
 ```swift
 // swift
@@ -52,14 +52,14 @@ agoraKit.pushExternalAudioFrameSampleBuffer("your CMSampleBuffer")
 
 Agora SDK provides two methods to customize the video source:
 
-- MediaIO method (Recommended).
-- Push method. This method skips processing the video frame and works best for clients with frame optimization capacity.
+- The AgoraVideoSourceProtocol of MediaIO. You can use this protocol with AgoraVideoSinkProtocol for more varied scenarios. 
+- Push method. This method is easy to use and works best for clients with frame optimization capacity.
 
 #### MediaIO Method
 
-Use the IVideoSource interface in MediaIO to customize the video source. This method sends the external video frame to the server, and you need to implement local rendering if the local preview is enabled.
+Use the AgoraVideoSourceProtocol in MediaIO to customize the video source. This method sends the external video frame to the server, and you need to implement local rendering if the local preview is enabled.
 
-1. Implement the AgoraVideoSourceProtocal to create a video source class.
+1. Implement the AgoraVideoSourceProtocol to create a video source class.
 
 	```swift
 	//swift
