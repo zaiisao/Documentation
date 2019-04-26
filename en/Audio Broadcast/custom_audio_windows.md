@@ -3,7 +3,7 @@
 title: Customize the Audio Source and Renderer
 description: 
 platform: Windows
-updatedAt: Fri Apr 26 2019 08:20:56 GMT+0800 (CST)
+updatedAt: Fri Apr 26 2019 08:21:03 GMT+0800 (CST)
 ---
 # Customize the Audio Source and Renderer
 ## Introduction
@@ -21,7 +21,6 @@ Ensure that you prepared the development environment. See [Integrate the SDK](..
 ### Customize the Audio Source
 
 ```cpp
-// cpp
 // Initialize the RtcEngine parameters.
 RtcEngineParameters rep(*lpAgoraEngine);
 AParameter apm(*lpAgoraEngine);
