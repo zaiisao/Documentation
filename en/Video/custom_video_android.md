@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Fri Apr 26 2019 08:13:11 GMT+0800 (CST)
+updatedAt: Fri Apr 26 2019 08:13:26 GMT+0800 (CST)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -48,7 +48,7 @@ rtcEngine.pushExternalAudioFrame(
 
 The Agora SDK provides two methods to customize the video source:
 
-- The IVideoSource interface of MediaI. You can use this interface with the IVideoSink interface for more varied scenarios
+- The IVideoSource interface of MediaI. You can use this interface with the IVideoSink interface for more varied scenarios.
 - Push method. This method is easy to use and works best for clients with frame optimization capacity.
 
 #### MediaIO Method
