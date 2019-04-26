@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Fri Apr 26 2019 03:05:24 GMT+0800 (CST)
+updatedAt: Fri Apr 26 2019 04:01:05 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -24,10 +24,9 @@ updatedAt: Fri Apr 26 2019 03:05:24 GMT+0800 (CST)
 
 ### 自定义音频源
 
-你可以使用 Push 方法自定义音频源。该方法下，SDK 不会对采用传入的音频数据做消噪等处理。
+你可以使用 Push 方法自定义音频源。该方法下，SDK 默认不会对采集传入的音频数据做消噪等处理。如有音频消噪需求，需要开发者自行实现。
 
 ```java
-// java
 // 首先开启外部音频源模式
 rtcEngine.setExternalAudioSource(
 	true,      // 开启外部音频源
@@ -49,25 +48,23 @@ rtcEngine.pushExternalAudioFrame(
 
 Agora SDK 目前提供两种自定义视频源的方法：
 
-* 通过 MediaIO 接口实现（推荐）。
-* 通过 Push 方法实现。和自定义音频源一样，该方法略过了 SDK 对视频帧的优化处理，因此适合客户端有能力对帧进行优化的用户。
+* 通过 MediaIO 中的 IVideoSource 接口实现。该类接口可以搭配自定义渲染器使用，实现更为丰富的场景
+* 通过 Push 方法实现。该方法使用简单，功能也较为单一
 
 #### 使用 MediaIO 接口自定义视频源
 
 你可以使用 MediaIO 中的 IVideoSource 接口实现自定义视频源。该方法将视频帧数据传输到服务器，如需本地预览，还需要应用开发者自己处理本地渲染逻辑。示例代码如下：
 
 ```java
-// java
 IVideoFrameConsumer mConsumer;
 boolean mHasStarted;
 
-// 先创建一个实现VideoSource接口的实例
+// 先创建一个实现 VideoSource 接口的实例
 VideoSource source = new VideoSource() {
 	@Override
 	public int getBufferType() {
-		// 返回当前帧数据的类型，每种数据类型在SDK内部会经过不同的处理，
-		// 所以必须与帧数据的类型保持一致。
-		// 若切换VideoSource的类型，必须重新创建另一个实例
+		// 返回当前帧数据的类型，每种数据类型在 SDK 内部会经过不同的处理，所以必须与帧数据的类型保持一致
+		// 若切换 VideoSource 的类型，必须重新创建另一个实例
 		// 有三种类型
 		return BufferType.BYTE_ARRAY;
 		// return BufferType.TEXTURE
@@ -76,8 +73,7 @@ VideoSource source = new VideoSource() {
 
 	@Override
  	public boolean onInitialize(IVideoFrameConsumer consumer) {
-		// consumer是由SDK创建的，在video source生命
-		// 周期中注意保存它的引用。
+		// Consumer 是由 SDK 创建的，在 VideoSource 生命周期中注意保存它的引用
 		mConsumer = consumer;
 	}
 
@@ -93,18 +89,17 @@ VideoSource source = new VideoSource() {
 
 	@Override
  	public void onDispose() {
-		// 释放对consumer的引用
+		// 释放对 Consumer 的引用
 		mConsumer = null;
 	}
 };
 
-// 将输出流切换到刚创建的VideoSource实例
+// 将输出流切换到刚创建的 VideoSource 实例
 rtcEngine.setVideoSource(source);
 
-// 在得到视频帧数据之后，可以调用consumer类的方法传送数据
-// 必须根据帧数据的类型来选择用不同的方法。
-// 假设从视频源中得到的视频为data, 从Android相机中获取的帧类型
-// 可能是NV21和TEXTURE_OES，假设当前类型为byte array，即NV21
+// 在得到视频帧数据之后，可以调用 Consumer 类的方法传送数据
+// 必须根据帧数据的类型来选择用不同的方法
+// 假设从视频源中得到的视频为 Data, 从 Android 相机中获取的帧类型可能是 NV21 和 TEXTURE_OES，假设当前类型为 byte array，即 NV21
 if (mHasStarted && mConsumer != null) {
 	mConsumer.consumeByteArrayFrame(data, AgoraVideoFrame.NV21, width, height, rotation, timestamp);
 }
@@ -112,10 +107,11 @@ if (mHasStarted && mConsumer != null) {
 
 ##### API 参考
 
-* [`setlVideoSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa240e991d12b5240fc5fd362cbc0d521)
+* [`setVideoSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa240e991d12b5240fc5fd362cbc0d521)
 * [`IVideoSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_source.html)
 
 #### 使用 Push 方法自定义视频源
+
 相对于 MedioIO 接口，Push 方法代码较少，但缺少 SDK 对帧的优化过程，需要用户对自己采集到的视频数据进行处理。
 
 ```java
@@ -123,14 +119,14 @@ if (mHasStarted && mConsumer != null) {
 // 首先通知SDK现在开始使用外部视频源
 rtcEngine.setExternalVideoSource(
 	true，      // 是否使用外部视频源
-	false,      // 是否使用texture作为输出
-	true        // true为使用推送模式；false为拉取模式，但目前不支持
+	false,       // 是否使用 Texture作为输出
+	true         // true 为使用推送模式，false 为拉取模式，但目前不支持
 );
 
-// 在获得视频数据的时候调用push方法将数据传送出去
+// 在获得视频数据的时候调用 Push 方法将数据传送出去
 rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
 	// 在构造方法传入帧数据的参数，比如格式，宽高等
-	// 具体的请查看AgoraVideoFrame类的说明
+	// 具体的请查看 AgoraVideoFrame 类的说明
 ));
 ```
 
@@ -144,7 +140,6 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
 你可以使用 MediaIO 中的 IVideoSink 接口来自定义渲染器。示例代码如下：
 
 ```java
-// java
 IVideoSink sink = new IVideoSink() {
 	@Override
 	public boolean onInitialize () {
@@ -168,8 +163,8 @@ IVideoSink sink = new IVideoSink() {
  
 	@Override
 	public long getEGLContextHandle() {
-		// 构造你的egl context
-		// 返回0代表渲染器中并没有创建egl context
+		// 构造你的 Egl context
+		// 返回 0 代表渲染器中并没有创建 Egl context
 		return 0;
 	}
  
@@ -193,7 +188,7 @@ rtcEngine.setLocalVideoRenderer(sink);
 * [`IVideoSink`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_sink.html)
 
 
-为了方便开发者集成和创建自定义的视频渲染器，Agora 也提供了一些辅助类和示例 demo；开发者也可以直接使用这些组件，或者利用这些组件构建自定义的渲染器，详见下文的 [使用 Agora SDK 提供的组件自定义渲染器](../../cn/Interactive%20Broadcast/custom_advanced_android.md) 。
+为了方便开发者集成和创建自定义的视频渲染器，Agora 也提供了一些辅助类和示例代码；开发者也可以直接使用这些组件，或者利用这些组件构建自定义的渲染器，详见下文的 [使用 Agora SDK 提供的组件自定义渲染器](../../cn/Interactive%20Broadcast/custom_advanced_android.md) 。
 
 Agora 目前提供自定义视频源及渲染器的示例程序，请前往 Github 下载 [Agora Custom Media Device](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) 并体验。
 
