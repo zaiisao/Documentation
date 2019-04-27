@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Sat Apr 27 2019 06:36:47 GMT+0800 (CST)
+updatedAt: Sat Apr 27 2019 06:38:02 GMT+0800 (CST)
 ---
 # 限制条件
 本页介绍 Agora RTM Objective-C SDK for iOS/macOS 的使用限制条件。
@@ -14,6 +14,8 @@ updatedAt: Sat Apr 27 2019 06:36:47 GMT+0800 (CST)
 最多支持同时创建 20 个 `AgoraRtmChannel` 实例。若在 `AgoraRtmChannel` 实例达到20 个上限时再调用 `createChannelWithId:delegate` 方法创建频道，SDK 会返回 `nil` 。
 
 ## 调用频率限制
+
+<style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
 
 | 功能                                                  | 函数                                                      | 调用频率                |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
