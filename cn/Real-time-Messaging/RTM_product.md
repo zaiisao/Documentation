@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Sat Apr 27 2019 07:29:07 GMT+0800 (CST)
+updatedAt: Sat Apr 27 2019 07:29:12 GMT+0800 (CST)
 ---
 # 产品概述
 ## 产品概述
@@ -68,7 +68,7 @@ Agora RTM SDK 主要有以下特性：
   </tr>
   <tr>
     <td>兼容性</td>
-    <td><li>支持 iOS、Android（arm64、armv7、x86）、macOS、windows（即将上线）、Linux、小程序、浏览器（即将上线）等多个平台<br><li>支持 java、C++ server 端</td>
+    <td><li>支持 iOS、Android（arm64、armv7、x86）、macOS、windows（即将上线）、Linux、小程序、浏览器等多个平台<br><li>支持 java、C++ server 端</td>
   </tr>
 </table>	
 
