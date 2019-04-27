@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Thu Apr 25 2019 10:30:14 GMT+0800 (CST)
+updatedAt: Sat Apr 27 2019 06:38:35 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM SDK 的限制条件信息。
