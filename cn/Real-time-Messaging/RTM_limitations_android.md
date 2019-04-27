@@ -3,16 +3,18 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Sat Apr 27 2019 06:38:35 GMT+0800 (CST)
+updatedAt: Sat Apr 27 2019 07:23:00 GMT+0800 (CST)
 ---
 # 限制条件
-本页面提供 Agora RTM SDK 的限制条件信息。
+本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
 
 ## 多实例限制
 
 最多支持同时创建 20 个 `RtmChannel` 实例。若在 `RtmChannel` 实例达到20 个上限时再调用 `createChannel()` 方法创建频道，SDK 会抛出异常。我们强烈推荐你在不用某个 `RtmChannel` 实例时调用  `RtmChannel.release()` 方法彻底释放其资源。.
 
 ## 调用频率限制
+
+<style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
 
 | 功能                                                  | 函数                                                      | 调用频率                |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
