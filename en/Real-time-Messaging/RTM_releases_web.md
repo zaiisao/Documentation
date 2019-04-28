@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Sun Apr 28 2019 07:27:34 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:41:42 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
