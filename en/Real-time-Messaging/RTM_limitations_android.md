@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Android
-updatedAt: Sun Apr 28 2019 07:45:43 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:45:47 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM Java SDK for Android v0.9.1
@@ -12,7 +12,7 @@ This page provides information about the limitations of the Agora RTM Java SDK f
 
 Supports a maximum of 20 `RtmChannel` instances at the same time. If you call `createChannel()` after the number of `RtmChannel` instances reaches 20, the SDK throws exceptions. As a good practice, we recommend calling the `RtmChannel.release()` method to release all resources of unused `RtmChannel` instances.
 
-## Call frequencies
+## Call Frequencies
 
 | Function                                                    | Method                                                       | Call Frequency                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
@@ -28,7 +28,7 @@ Supports a maximum of 20 `RtmChannel` instances at the same time. If you call `c
 
 ## Encoding 
 
-Supports channel and peer-to-peer messages in UTF-8 only. 
+Supports channel and peer-to-peer messages, invitation content, and invitation response in UTF-8 only. 
 
 
 ## Miscellaneous 
