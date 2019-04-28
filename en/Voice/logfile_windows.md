@@ -3,7 +3,7 @@
 title: Set the Log File
 description: 
 platform: Windows
-updatedAt: Mon Apr 15 2019 10:03:24 GMT+0800 (CST)
+updatedAt: Mon Apr 15 2019 10:03:32 GMT+0800 (CST)
 ---
 # Set the Log File
 ## Introduction
@@ -41,7 +41,11 @@ if (PathFileExists(szAppFolder)){
 }
 ```
 
-### API Reference
+## API Reference
 
 - [`setLogFile`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html?transId=534dd520-0344-11e9-bbd0-251679929d6b#a0e11f89f5b900279ed82a9d4fa9eb18a)
 - [`setLogFilter`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html?transId=534dd520-0344-11e9-bbd0-251679929d6b#a169cd86502290529b02eaf6748a63f2a)
+
+## Considerations
+
+We recommend calling the `setLogFile` method before calling the rest of the methods, otherwise the log file that the SDK records may not be complete. 
