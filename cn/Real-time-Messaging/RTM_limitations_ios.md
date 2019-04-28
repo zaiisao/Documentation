@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Sun Apr 28 2019 07:48:11 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:48:15 GMT+0800 (CST)
 ---
 # 限制条件
 本页介绍 Agora RTM Objective-C SDK for iOS/macOS 的使用限制条件。
@@ -31,7 +31,7 @@ updatedAt: Sun Apr 28 2019 07:48:11 GMT+0800 (CST)
 
 ## 编码格式
 
-仅支持发送 UTF-8 编码格式的频道消息和点对点消息。
+仅支持发送 UTF-8 编码格式的频道消息和点对点消息、呼叫邀请 content 和呼叫邀请 response。
 
 
 ## 其他 
