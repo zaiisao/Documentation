@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 18 2019 02:17:34 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:53:36 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -31,12 +31,9 @@ Agora RTM SDK 提供两种鉴权机制：App ID 和 Token 。这两种鉴权机�
 2.  登录 Dashboard，在首页点击**创建**按钮，填写**项目名称**后创建一个新项目。
 3.  项目创建完成后，Dashboard 会自动跳转至**项目管理**页面，在这里，你可以查看该项目对应的 App ID。
 
-你需要在下列场景中使用 App ID：
+你需要在初始化客户端时，需要填写 `appId` 参数。
 
--   初始化客户端时，需要填写 `appId` 参数。
--   调用 `login` 方法登录 Agora RTM 系统时，需要使用 RTM Token。但在某些安全要求不高的场景中，你可以直接填入 App ID 作为 `token` 。
-
-> 更换 App ID，需要先调用 `destroy` 方法销毁当前实例。
+> 更换 App ID，需要先调用 `release` 方法销毁当前实例。
 
 ## 获取和使用 RTM Token
 
