@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: iOS,macOS
-updatedAt: Sat Apr 27 2019 07:33:15 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:46:18 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM Java SDK for Android v0.9.1
@@ -28,7 +28,7 @@ Supports a maximum of 20 `AgoraRtmChannel` instances at the same time. If you ca
 
 ## Encoding 
 
-Supports channel and peer-to-peer messages in UTF-8 only. 
+Supports channel and peer-to-peer messages, invitation content, and invitation response in UTF-8 only. 
 
 ## Miscellaneous 
 
