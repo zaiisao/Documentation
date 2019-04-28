@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Sun Apr 28 2019 07:41:42 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:41:47 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -15,6 +15,8 @@ Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-Time
 - Supports sending peer-to-peer or channel messages.
 - Supports multiple instances so that you can call multiple RTM services in one process. 
 - Categorizes the error codes so that you can quickly identify the problem.
+
+> Fore more information about the SDK features and applications, see [Product Overview](../../cn/Real-time-Messaging/RTM_releases_android.md).
 
 
 ## v0.9.0
