@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Web
-updatedAt: Fri Apr 19 2019 15:02:53 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 06:21:35 GMT+0800 (CST)
 ---
 # RTM 快速开始
 
@@ -55,7 +55,7 @@ client.on('ConnectionStateChange', (newState, reason) => {
 });
 ```
 
-## 登陆
+## 登录
 
 Web 应用必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息和群聊功能。
 
