@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Sun Apr 28 2019 07:27:20 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:27:34 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -29,7 +29,3 @@ Key features:
 - Joins or leaves a channel.
 - Sends or receives channel messages.
 
-> This release uploads the log to the server by default. To disable log upload, you have to set `enableLogUpload` as `false` when calling the `createInstance` method. 
-> ```JavaScript
-> AgoraRTM.createInstance('demoAppId', { enableLogUpload: false });
-> ```
