@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Web
-updatedAt: Tue Apr 16 2019 06:59:33 GMT+0800 (CST)
+updatedAt: Tue Apr 16 2019 06:59:38 GMT+0800 (CST)
 ---
 # Signaling API
 > Version: v1.4.0 BETA
@@ -429,31 +429,6 @@ onLoginSuccess(uid)
 </tr>
 <tr><td><code>uid</code></td>
 <td>Set as O.</td>
-</tr>
-</tbody>
-</table>
-
-
-
-#### An Error has Occurred During SDK Runtime (onError)
-
-This callback function is triggered when an error is detected.
-
-```
-onError(evt)
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><th>Parameter</th>
-<th>Description</th>
-</tr>
-<tr><td><code>evt</code></td>
-<td>Login event.</td>
 </tr>
 </tbody>
 </table>

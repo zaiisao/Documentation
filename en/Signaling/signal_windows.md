@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Windows
-updatedAt: Wed Jan 30 2019 07:27:27 GMT+0800 (CST)
+updatedAt: Thu Apr 18 2019 08:39:11 GMT+0800 (CST)
 ---
 # Signaling API
 > Version: v1.4.0

@@ -90,7 +90,7 @@ Usage:java RecordingSample --appId STRING --uid UINTEGER32 --channel STRING --ap
 | audioIndicationInterval     | 说话者监测的时间间隔。默认禁用。<br /><li>0（默认）：禁用说话者监测的功能。<li> \> 0：说话者监测的时间间隔，单位为 ms 。建议设置时间间隔大于 200 ms。一旦检测到频道内有人说话，命令行中会打印出说话者的 uid。 |
 | defaultVideoBg              | 默认画布背景图片的路径。                                     |
 | defaultUserBg               | 默认用户背景图片的路径。                                     |
-| logLevel                    | 设置日志过滤等级，只有等级不高于所设等级的日志才会被生成。默认为 6，即生成所有等级的日志。<li>1：日志等级为 Fatal。<li>2：日志等级为 Error。<li>3：日志等级为 Warn。<li>4：日志等级为 Notice。<li>5：日志等级为 Info。<li>6：日志等级为 Debug。 |
+| logLevel                    | 设置日志过滤等级，只有等级不高于所设等级的日志才会被生成。默认为 5。<li>1：日志等级为 Fatal。<li>2：日志等级为 Error。<li>3：日志等级为 Warn。<li>4：日志等级为 Notice。<li>5：日志等级为 Info。<li>6：日志等级为 Debug。 |
 | layoutMode                  | 设置合图布局。<li>0：默认布局<li>1：自适应布局。根据录制画面的数量自动调整每个画面的大小，每个画面大小一致，最多支持 17 个录制画面。<li>2：垂直布局。指定一个 uid 在屏幕左侧显示大流画面，其他用户的小流画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。 |
 | maxResolutionUid            | 如果 `layoutMode` 设为 2（垂直布局），用该参数设置显示大流画面的用户 uid。 |
 
