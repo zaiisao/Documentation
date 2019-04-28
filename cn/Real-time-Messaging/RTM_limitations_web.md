@@ -1,0 +1,36 @@
+
+---
+title: 限制条件
+description: RTM Web Limitations
+platform: Web
+updatedAt: Sun Apr 28 2019 05:55:19 GMT+0800 (CST)
+---
+# 限制条件
+本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
+
+## 多实例限制
+
+最多支持同时创建 20 个 `RtmChannel` 实例。若在 `RtmChannel` 实例达到20 个上限时再调用 `createChannel()` 方法创建频道，SDK 会抛出异常。我们强烈推荐你在不用某个 `RtmChannel` 实例时调用  `RtmChannel.release()` 方法彻底释放其资源。
+
+## 调用频率限制
+
+<style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
+
+| 功能                                                  | 函数                                                      | 调用频率                |
+| ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
+| 登录到 Agora RTM 系统                              | [RtmClient.login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | 2 次／秒         |
+| 发送消息 (点对点和频道消息一并计算在内) | [RtmClient.sendMessageToPeer()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) 和 [RtmChannel.SendMessage()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 60 次／秒          |
+| 获取频道成员列表                    | [RtmChannel.getMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#getmembers) | 每 2 秒 5 次 |
+
+## 字符串长度限制
+
+- 点对点或频道消息的字符串最大长度为 32 KB。详见： [RtmMessage.text](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmmessage.html#text) 。
+
+## 编码格式
+
+仅支持发送 UTF-8 编码格式的频道消息和点对点消息。
+
+
+## 其他 
+
+当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请请拨打 400 632 6626 或邮件 sales@agora.io。
