@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Sun Apr 28 2019 07:47:23 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:47:28 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
@@ -30,7 +30,7 @@ updatedAt: Sun Apr 28 2019 07:47:23 GMT+0800 (CST)
 
 ## 编码格式
 
-仅支持发送 UTF-8 编码格式的频道消息和点对点消息。
+仅支持发送 UTF-8 编码格式的频道消息和点对点消息、呼叫邀请 content、呼叫邀请 response。
 
 
 ## 其他 
