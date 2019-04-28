@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Sun Apr 28 2019 06:02:48 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:24:35 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -30,7 +30,3 @@ updatedAt: Sun Apr 28 2019 06:02:48 GMT+0800 (CST)
 - 加入或离开频道。
 - 发送或接收频道消息。
 
-> 本版本默认上传日志到服务端。如需禁用服务器上传，请在调用 `createInstance` 方法时将 `enableLogUpload` 设为 `false` 。
-> ```JavaScript
-> AgoraRTM.createInstance('demoAppId', { enableLogUpload: false });
-> ```
