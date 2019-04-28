@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Sun Apr 28 2019 06:01:09 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 06:01:25 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -16,6 +16,8 @@ updatedAt: Sun Apr 28 2019 06:01:09 GMT+0800 (CST)
 - 支持一对一或一对多音视频通话的呼叫邀请。 
 - 支持多实例，允许在一个线程中调用多个 RTM 服务。 
 - 对错误码进行分类方便快速定位问题。
+
+更多产品功能及性能介绍，详见： [产品概述](../../cn/Real-time-Messaging/RTM_product.md)
 
 ## 0.9.1 版
 
