@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Fri Apr 26 2019 10:12:50 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 07:41:22 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -16,6 +16,8 @@ Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-Time
 - Supports call invitation required in most one-to-one or one-to-many voice/video chats. 
 - Supports multiple instances so that you can call multiple RTM services in one process. 
 - Categorizes the error codes so that you can quickly identify the problem.
+
+> Fore more information about the SDK features and applications, see [Product Overview](../../cn/Real-time-Messaging/RTM_releases_android.md).
 
 ## v0.9.1
 
