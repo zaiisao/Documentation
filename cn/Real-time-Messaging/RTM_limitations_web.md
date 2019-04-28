@@ -3,14 +3,14 @@
 title: 限制条件
 description: RTM Web Limitations
 platform: Web
-updatedAt: Sun Apr 28 2019 05:55:19 GMT+0800 (CST)
+updatedAt: Sun Apr 28 2019 05:56:56 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
 
 ## 多实例限制
 
-最多支持同时创建 20 个 `RtmChannel` 实例。若在 `RtmChannel` 实例达到20 个上限时再调用 `createChannel()` 方法创建频道，SDK 会抛出异常。我们强烈推荐你在不用某个 `RtmChannel` 实例时调用  `RtmChannel.release()` 方法彻底释放其资源。
+最多支持同时加入 20 个 `RtmChannel` 频道。如果你同时加入的 `RtmChannel` 频道达到20 个上限时建议在调用 [RtmChannel.leave()](https://docs.agora.io/cn/Real-time-Messaging/RTM_web/API%20Reference/RTM_web/classes/rtmchannel.html#leave) 方法离开频道后再调用 `RtmChannel.removeAllListeners()` 方法彻底释放该频道占用资源。
 
 ## 调用频率限制
 
