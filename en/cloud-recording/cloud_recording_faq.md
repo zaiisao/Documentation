@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: Linux
-updatedAt: Mon Apr 29 2019 04:17:15 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 04:18:39 GMT+0800 (CST)
 ---
 # FAQ
 ##  Java SDK integration error
