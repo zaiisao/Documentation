@@ -3,7 +3,7 @@
 title: 云端录制发版说明
 description: 
 platform: Linux
-updatedAt: Mon Apr 29 2019 03:00:16 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 08:19:35 GMT+0800 (CST)
 ---
 # 云端录制发版说明
 ## 简介
@@ -21,7 +21,7 @@ Agora 云端录制与以下 Agora SDK 兼容:
 
 ##  1.0.0 版
 
-该版本于 2019 年 4 月 30 日发布。本次发版为云端录制的第一次发版，主要包括以下功能:
+该版本于 2019 年 4 月 29 日发布。本次发版为云端录制的第一次发版，主要包括以下功能:
 
 - Agora Native SDK 和 Agora Web SDK 的高清音视频通话的录制
 - 频道内所有用户的音视频合流录制
