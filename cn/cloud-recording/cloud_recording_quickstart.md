@@ -3,7 +3,7 @@
 title: 云端录制快速开始
 description: Draft
 platform: CPP
-updatedAt: Mon Apr 29 2019 02:59:41 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 03:08:19 GMT+0800 (CST)
 ---
 # 云端录制快速开始
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
@@ -25,8 +25,9 @@ updatedAt: Mon Apr 29 2019 02:59:41 GMT+0800 (CST)
 
 ## 集成
 
-1. 将云端录制 SDK 包中的 `libagora-cloud-recording-client.so` 和 `IAgoraCloudRecording.h` 文件添加到你的项目里，并确保与项目有连接。
-2. Include 云端录制 SDK 包中的 `IAgoraCloudRecording.h` 头文件。
+1. 下载[云端录制 SDK](http://download.agora.io/acrsdk/release/Agora_Cloud_Recording_SDK_for_Linux_v1_0_0_FULL.tar.gz)。
+2. 将云端录制 SDK 包中的 `libagora-cloud-recording-client.so` 和 `IAgoraCloudRecording.h` 文件添加到你的项目里，并确保与项目有连接。
+3. Include 云端录制 SDK 包中的 `IAgoraCloudRecording.h` 头文件。
 
 完成集成后，你可以参照下文进行云端录制。
 
