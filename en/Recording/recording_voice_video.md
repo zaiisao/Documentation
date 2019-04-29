@@ -3,10 +3,10 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Wed Apr 10 2019 02:41:59 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 03:52:26 GMT+0800 (CST)
 ---
 # Recording Voice and Video
-This page shows how to use the Agora Recording SDK to enable voice and video recording and use the transcoding scripts.
+This page shows how to use the Agora On-premise Recording SDK to enable voice and video recording and use the transcoding scripts.
 
 -   During voice recording, if a user leaves the channel and rejoins it after 15 seconds, a new recording session will be created, and two separate recorded files will be generated.
 -   During video recording, if a user leaves the channel and rejoins (regardless of the time interval), changes the resolution, mutes or unmutes the video, the recorded video file can be split.
@@ -14,7 +14,7 @@ This page shows how to use the Agora Recording SDK to enable voice and video rec
 
 ## Recording Files
 
-The Agora Recording SDK supports recording in two modes:
+The Agora On-premise Recording SDK supports recording in two modes:
 
 -   Individual recording: To record the voice and video stream respectively for each user ID.
 -   Composite recording: To mix the voice and video recordings for different users in the same channel; the video mixing layout is also supported.
@@ -128,7 +128,7 @@ Set <code>isMixingEnabled</code> = 1 and <code>mixedVideoAudio</code> = 1 to sta
 
 ## Raw Data
 
-The Agora Recording SDK supports raw data in individual recording, and mixed voice in composite recording.
+The Agora On-premise Recording SDK supports raw data in individual recording, and mixed voice in composite recording.
 
 ### Individual Recording
 
@@ -177,7 +177,7 @@ Choose the recording mode by setting the parameters according to the following t
 
 ### Composite Recording
 
-The Agora Recording SDK supports raw data for mixed voice, and generates a PCM file.
+The Agora On-premise Recording SDK supports raw data for mixed voice, and generates a PCM file.
 
 <table>
 <colgroup>
@@ -203,7 +203,7 @@ The Agora Recording SDK supports raw data for mixed voice, and generates a PCM f
 
 ## Screen Capture
 
-The Agora Recording SDK supports screen capture in individual recording only, and no subsequent transcoding is needed.
+The Agora On-premise Recording SDK supports screen capture in individual recording only, and no subsequent transcoding is needed.
 
 <table>
 <colgroup>
@@ -235,7 +235,7 @@ The Agora Recording SDK supports screen capture in individual recording only, an
 
 ## Screen Capture + Recording
 
-The Agora Recording SDK supports screen capture and recording in individual recording only. Transcoding is not necessary for screen capture. For transcoding the recorded file, see [Individual Recording](#individualrecording).
+The Agora On-premise Recording SDK supports screen capture and recording in individual recording only. Transcoding is not necessary for screen capture. For transcoding the recorded file, see [Individual Recording](#individualrecording).
 
 <table>
 <colgroup>
@@ -333,13 +333,13 @@ Once recording is finished, use` video_convert.py` and `ffmpeg` to merge the rec
 
 -   If multiple voice files are generated after the recording, transcoding merges them into one M4A file in the format of `UIDHHMMSSMS.m4a`.
 -   If multiple voice and video files are generated after the recording, transcoding merges them into one MPEG-4 file in the format of `UID_HHMMSSMS_av.mp4`. To merge the voice and video files by the session:
-    -   If a uid leaves a channel and rejoins it within 15 seconds, the Agora Recording SDK considers this session as one. A new voice file is not generated but a new video file is generated and merged into the voice and video file, and a `UIDHHMMSSMSav.mp4` file is generated.
-    -   If a uid leaves a channel and rejoins it after 15 seconds, the Agora Recording SDK considers this as two separate sessions. A new voice and video file is generated creating a new `UIDHHMMSSMSav.mp4` file for the new session.
+    -   If a uid leaves a channel and rejoins it within 15 seconds, the Agora On-premise Recording SDK considers this session as one. A new voice file is not generated but a new video file is generated and merged into the voice and video file, and a `UIDHHMMSSMSav.mp4` file is generated.
+    -   If a uid leaves a channel and rejoins it after 15 seconds, the Agora On-premise Recording SDK considers this as two separate sessions. A new voice and video file is generated creating a new `UIDHHMMSSMSav.mp4` file for the new session.
 -   If multiple voice and video files are generated after the recording, and you wish to merge the MPEG-4 files of different sessions by the uid, transcoding merges them into different MPEG-4 files such as `UID_0_merge_av.mp4`, `UID_1_merge_av.mp4`, and `UID_2_merge_av.mp4`.
     -   In the automatically record mode, the <code>-m</code> parameter merges all voice and video files of one uid and generates a single `UID_0_merge_av.mp4` file.
     -   In the manually record mode, the <code>startService</code> and <code>stopService</code> parameters manage and divide the recorded files. Each start/stop makes one service, and the <code>-m</code> parameter generates multiple `UID_XX_merge_av.mp4` files.
 
-The transcoding tool includes `video_convert.py` and `ffmpeg`. The Python script can merge the separated voice and video recorded files into one MPEG-4 file and the script relies on `ffmpeg`. You can get the transcoding tool `ffmpeg` and `video_convert.py` in the **tools** folder in [Recording SDK](https://docs-preview.agoralab.co/en/Recording/downloads). Decompress `ffmpeg`, and make sure it is in the same directory as `video_convert.py.` Execute the following command to run the transcoding tool:
+The transcoding tool includes `video_convert.py` and `ffmpeg`. The Python script can merge the separated voice and video recorded files into one MPEG-4 file and the script relies on `ffmpeg`. You can get the transcoding tool `ffmpeg` and `video_convert.py` in the **tools** folder in [On-premise Recording SDK](https://docs-preview.agoralab.co/en/Recording/downloads). Decompress `ffmpeg`, and make sure it is in the same directory as `video_convert.py.` Execute the following command to run the transcoding tool:
 
 Execute `python video_convert.py` with the following usage:
 
