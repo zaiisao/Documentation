@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: How to integrate recording SDK for Java
 platform: Java
-updatedAt: Mon Apr 29 2019 03:53:00 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 23:35:57 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
