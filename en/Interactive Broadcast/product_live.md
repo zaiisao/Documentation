@@ -56,4 +56,4 @@ The Agora Native SDK for Interactive Broadcast is supported on platforms such as
 | Windows              | XP SP3+                                                      |
 | macOS                | 10.0+                                                        |
 | WeChat Mini-Programs | Support                                                      |
-| Web                  | <li>Chrome 58+<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
+| Web                  | <li>Chrome 58+<li>Chrome 49 on Windows XP<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
