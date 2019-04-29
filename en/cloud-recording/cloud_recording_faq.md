@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: Linux
-updatedAt: Mon Apr 29 2019 04:18:39 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 04:18:46 GMT+0800 (CST)
 ---
 # FAQ
 ##  Java SDK integration error
@@ -49,8 +49,9 @@ Check if your cloud storage settings are correct:
 
 The URL of the M3U8 file consists of the domain of your cloud storage and the file name. You can copy the URL in your cloud storage.
 
+![](https://web-cdn.agora.io/docs-files/1556174270602)
 
-The following callbacks provide the file name of the M3U8 file:
+The following callbacks contain the file name of the M3U8 file:
 
 - C++
   - [`OnRecordingUploadingProgress`](https://docs.agora.io/en/cloud-recording/cloud-recording/cloud_recording_api#OnRecordingUploadingProgress)
