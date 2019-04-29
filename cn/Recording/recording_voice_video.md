@@ -3,10 +3,10 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 23 2019 07:58:10 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 03:50:14 GMT+0800 (CST)
 ---
 # 录制音视频
-本文介绍如何使用 Agora 录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
+本文介绍如何使用 Agora 本地服务端录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
 
 无论你选择何种录制模式，如果：
 
@@ -184,7 +184,7 @@ updatedAt: Tue Apr 23 2019 07:58:10 GMT+0800 (CST)
 
 ## 原始音视频数据
 
-Agora 录制 SDK 目前支持单流模式下的原始音视频数据，以及合流模式下音频混音后的原始音频数据。
+Agora 本地服务端录制 SDK 目前支持单流模式下的原始音视频数据，以及合流模式下音频混音后的原始音频数据。
 
 ### 单流模式
 
@@ -264,7 +264,7 @@ Web 端不支持 H264 的原始音视频数据，支持 YUV 的原始音视频�
 
 ### 合流模式
 
-Agora 录制 SDK 目前仅支持多个音频流混音后的原始音频数据，并生成 PCM 文件。
+Agora 本地服务端录制 SDK 目前仅支持多个音频流混音后的原始音频数据，并生成 PCM 文件。
 
 <table>
 
@@ -304,7 +304,7 @@ Agora 录制 SDK 目前仅支持多个音频流混音后的原始音频数据，
 
 ## 截屏
 
-Agora 录制 SDK 目前仅支持单流模式下截屏，无需转码。
+Agora 本地服务端录制 SDK 目前仅支持单流模式下截屏，无需转码。
 
 <table>
 
@@ -354,7 +354,7 @@ Agora 录制 SDK 目前仅支持单流模式下截屏，无需转码。
 
 ## 边录制边截屏
 
-Agora 录制 SDK 目前仅支持单流的录制文件 + 单流的截屏，截屏无需转码，录制文件转码与 单流模式录制 相同。
+Agora 本地服务端录制 SDK 目前仅支持单流的录制文件 + 单流的截屏，截屏无需转码，录制文件转码与 单流模式录制 相同。
 
 <table>
 
@@ -490,7 +490,7 @@ Agora 录制 SDK 目前仅支持单流的录制文件 + 单流的截屏，截屏
   - automatically mode下使用-m参数，会把同一个 uid 的所有音视频文件合并，并生成唯一的一个UID_0_merge_av.mp4 文件。
   - manually mode 下，由于是根据 startService和 stopService 来划分文件管理的，每一个 start/stop 为一次 service。因此如果有多次 start 和 stop，就会产生多个 service，因此使用-m参数就会生成多个 UID_XX_merge_av.mp4文件。
   
-> Agora 在 [录制 SDK](https://docs-preview.agoralab.co/cn/Recording/downloads) 的 tools 文件夹下提供转码工具 ffmpeg 和 video_convert.py，解压 ffmpeg，并确保和 video_convert.py 在同一目录下。
+> Agora 在 [本地服务端录制 SDK](https://docs-preview.agoralab.co/cn/Recording/downloads) 的 tools 文件夹下提供转码工具 ffmpeg 和 video_convert.py，解压 ffmpeg，并确保和 video_convert.py 在同一目录下。
 
 执行 python video_convert.py，即可看到相关用法：
 
