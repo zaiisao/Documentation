@@ -3,22 +3,22 @@
 title: Integrate the SDK
 description: 
 platform: CPP
-updatedAt: Wed Apr 17 2019 03:55:32 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 03:52:55 GMT+0800 (CST)
 ---
 # Integrate the SDK
-This page shows how to set up the environment to integrate the Agora Recording SDK.
+This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
 
-The Agora Recording SDK for Linux is integrated on your Linux server instead of in your app.
+The Agora On-premise Recording SDK for Linux is integrated on your Linux server instead of in your app.
 
 ![](https://web-cdn.agora.io/docs-files/1545296935254)
 
-Recording audio and video within a channel is like a special audience joining the channel. The audience gets the audio and video from the channel, transcodes it, and stores it on a Linux server. Therefore, you must integrate the Recording SDK on your Linux server. The same App ID is used in the Recording SDK and the Agora SDK for audio and video calls.
+Recording audio and video within a channel is like a special audience joining the channel. The audience gets the audio and video from the channel, transcodes it, and stores it on a Linux server. Therefore, you must integrate the On-premise Recording SDK on your Linux server. The same App ID is used in the On-premise Recording SDK and the Agora SDK for audio and video calls.
 
 ## Prerequisites
 
 ### Hardware and network requirements
 
-The following table lists the basic requirements for installing the Recording SDK:
+The following table lists the basic requirements for installing the On-premise Recording SDK:
 
 <table>
 <thead>
@@ -103,7 +103,7 @@ The recording SDK supports:
 - Recording communication that uses the Web SDK.
 - Recording communication that uses both the Native SDK and the Web SDK.
 
-The Recording SDK is compatible with the following Agora SDK versions:
+The On-premise Recording SDK is compatible with the following Agora SDK versions:
 
 <table>
 <thead>
@@ -121,13 +121,13 @@ The Recording SDK is compatible with the following Agora SDK versions:
 </tbody>
 </table>
 
-> If any user in the channel uses an Agora SDK which is not compatible with the Agora Recording SDK, recording fails for the whole channel.
+> If any user in the channel uses an Agora SDK which is not compatible with the Agora On-premise Recording SDK, recording fails for the whole channel.
 
 ## Set up the Environment
 
 Set up the environment on your Linux server:
 
-1. [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Agora Recording SDK for Linux package. The package structure is listed as follows:
+1. [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the Agora On-premise Recording SDK for Linux package. The package structure is listed as follows:
 
    <table>
    <thead>
@@ -187,7 +187,7 @@ Set up the environment on your Linux server:
 
    > - Use the `iptables -L` command line to check the UDP port.
    > - To record the content in channels, you need one recording process for each of the channels. One recording process requires four simplex downlink ports. There must be no port conflict among the processes, including the system processes and all recording processes.
-   > - Agora recommends that you specify the range of ports used by the recording processes. Configure a large range for all recording processes \(Agora recommends 40000 to 41000 or larger\). If so, the Recording SDK assigns ports to each recording process within the specified range and avoids port conflicts automatically. To set the port range, you need to configure the `lowUdpPort` and `highUdpPort` parameters.
+   > - Agora recommends that you specify the range of ports used by the recording processes. Configure a large range for all recording processes \(Agora recommends 40000 to 41000 or larger\). If so, the On-premise Recording SDK assigns ports to each recording process within the specified range and avoids port conflicts automatically. To set the port range, you need to configure the `lowUdpPort` and `highUdpPort` parameters.
    > - If the `lowUdpPort` and `highUdpPort` parameters are not specified, the ports used by the recording processes are at random, which may cause port conflicts.
 
 4. Set whitelist domains:
@@ -210,7 +210,7 @@ After the compilation, a **record_local** executable file is generated in this d
 
 ![](https://web-cdn.agora.io/docs-files/1544522109941)
 
-The Agora Recording SDK is integrated.
+The Agora On-premise Recording SDK is integrated.
 
 ## Next Steps
 
