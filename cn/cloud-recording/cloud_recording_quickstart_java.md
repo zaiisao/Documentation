@@ -3,7 +3,7 @@
 title: 云端录制快速开始
 description: 
 platform: Java
-updatedAt: Mon Apr 29 2019 03:12:07 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 03:13:33 GMT+0800 (CST)
 ---
 # 云端录制快速开始
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
@@ -25,8 +25,9 @@ updatedAt: Mon Apr 29 2019 03:12:07 GMT+0800 (CST)
 
 ## 集成
 
-1. 将云端录制 SDK 包中 `lib` 文件夹下的 `agora-cloud-recording-sdk.jar` 文件和 `libagora-cloud-recording-java.so` 文件添加到你的项目里，并确保与项目有连接。
-2. Import `agora-cloud-recording-sdk.jar` 文件：
+1. 下载[云端录制 SDK](http://download.agora.io/acrsdk/release/Agora_Cloud_Recording_JAVA_SDK_for_Linux_FULL_v1_0_0.tar.gz)。 
+2. 将云端录制 SDK 包中 `lib` 文件夹下的 `agora-cloud-recording-sdk.jar` 文件和 `libagora-cloud-recording-java.so` 文件添加到你的项目里，并确保与项目有连接。
+3. Import `agora-cloud-recording-sdk.jar` 文件：
 
   ```bash
  import io.agora.cloud_recording.<class name>
