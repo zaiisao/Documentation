@@ -54,7 +54,7 @@ Agora 音频互动直播提供丰富的功能，你可以根据自己的场景�
 | Windows    | XP SP3+                                                      |
 | macOS      | 10.0+                                                        |
 | 微信小程序 | 支持                                                         |
-| Web        | <li>Chrome 58+ <li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |
+| Web        | <li>Chrome 58+ <li>Chrome 49（仅 Windows XP）<li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |
 
 ## Demo 体验
 

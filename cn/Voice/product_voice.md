@@ -40,7 +40,7 @@ updatedAt: Wed Apr 03 2019 06:35:55 GMT+0800 (CST)
 | Windows    | XP SP3+                                                      |
 | macOS      | 10.0+                                                        |
 | 微信小程序 | 支持                                                         |
-| Web        | <li>Chrome 58+ <li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |
+| Web        | <li>Chrome 58+ <li>Chrome 49（仅 Windows XP）<li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |
 
 ## Demo 体验
 
