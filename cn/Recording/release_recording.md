@@ -3,16 +3,16 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Tue Apr 23 2019 07:58:27 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 03:50:25 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
 
-Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。点击[录制产品概述](../../cn/Recording/product_recording.md)了解关键特性。
+Agora Recording SDK for Linux (简称本地服务端录制 SDK) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。点击[录制产品概述](../../cn/Recording/product_recording.md)了解关键特性。
 
 ### 兼容性
 
-录制 SDK 与以下 SDK 兼容:
+本地服务端录制 SDK 与以下 SDK 兼容:
 
 <table>
 <colgroup>
@@ -24,10 +24,10 @@ Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Ag
 <th>描述</th>
 </tr>
 <tr><td>Agora Native SDK</td>
-<td>录制 SDK 与全平台 Agora Native SDK (1.7.0 或更高版本) 兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。</td>
+<td>本地服务端录制 SDK 与全平台 Agora Native SDK (1.7.0 或更高版本) 兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。</td>
 </tr>
 <tr><td>Agora Web SDK</td>
-<td>录制 SDK 与 Agora Web SDK (1.12.0 或更高版本兼容)。</td>
+<td>本地服务端录制 SDK 与 Agora Web SDK (1.12.0 或更高版本兼容)。</td>
 </tr>
 </tbody>
 </table>
@@ -48,21 +48,21 @@ Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Ag
 
 #### 1. 支持监控网络连接状态
 
-为及时获取录制 SDK 与服务器的连接状态，该版本新增如下回调，用于监控录制 SDK 的网络连接丢失、中断状态。
+为及时获取本地服务端录制 SDK 与服务器的连接状态，该版本新增如下回调，用于监控本地服务端录制 SDK 的网络连接丢失、中断状态。
 
 - `onConnectionLost`：网络连接丢失回调。
 - `onConnectionInterrupted`：网络连接中断回调。
 
 #### 2. 提示首帧出图
 
-为及时获取本地对远端音视频流的接收情况，该版本新增如下回调，通知录制 SDK 成功接收远端音视频首帧。
+为及时获取本地对远端音视频流的接收情况，该版本新增如下回调，通知本地服务端录制 SDK 成功接收远端音视频首帧。
 
 - `onFirstRemoteAudioFrame`：已接收远端音频首帧回调。
 - `onFirstRemoteVideoDecoded`：已完成远端视频首帧解码回调。
 
 #### 3. 获取流状态
 
-为监控录制 SDK 接收音视频流的状态，该版本新增 `onReceivingStreamStatusChanged` 回调，提示录制 SDK 接收音频流或视频流的状态发生了变化。
+为监控本地服务端录制 SDK 接收音视频流的状态，该版本新增 `onReceivingStreamStatusChanged` 回调，提示本地服务端录制 SDK 接收音频流或视频流的状态发生了变化。
 
 #### 4. 获取说话者音量
 
@@ -71,7 +71,7 @@ Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Ag
 
 ### 问题修复
 
-- 修复了手动模式下，录制 SDK 退出频道后再次进入频道时，转码脚本失败的问题。
+- 修复了手动模式下，本地服务端录制 SDK 退出频道后再次进入频道时，转码脚本失败的问题。
 - 修复了调用 `mixedVideoAudio` 时非法参数导致程序崩溃的问题。
 - 修复了在录制高清视频时出现卡顿的问题。
 - 修复了录制视频帧率设置无效的问题。
@@ -150,7 +150,7 @@ Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Ag
 
 #### 4. 示例代码中增加预置的合流布局模版
 
-为提高录制 SDK 自带的示例代码的易用性，增加两种预置的合流布局模版：
+为提高本地服务端录制 SDK 自带的示例代码的易用性，增加两种预置的合流布局模版：
 
 ##### **自适应布局 （bestFit**）
 
@@ -179,7 +179,7 @@ Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Ag
 - 改善了单流模式下的音画同步问题。
 - 支持单流模式非实时转码下的录像视频自动旋转。
 - 修改手动模式录制的 idle 行为：
-  - 2.3.0 以前的版本，手动模式录制时，idle 一进入频道就开始生效。如果一开始频道内只有一个录制 SDK，进程挂起，会导致录制退出频道，idle 不能发挥真正的作用。
+  - 2.3.0 以前的版本，手动模式录制时，idle 一进入频道就开始生效。如果一开始频道内只有一个本地服务端录制 SDK，进程挂起，会导致录制退出频道，idle 不能发挥真正的作用。
   - 2.3.0 版本，`startService`之后，idle 才生效。
 - 优化日志信息级别，把一些重要的信息从 INFO 中分拆到 NOTICE，WARN，以及 ERROR 中。
 - 优化录制目录命名，确保目录名称的唯一性。
@@ -340,7 +340,7 @@ Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Ag
 - 新增功能获取音视频裸数据
 - 新增功能支持鉴黄截图
 - 新增日志文件 `recording\sys.log` 便于用户查找问题原因
-- 新增功能支持录制 SDK 时间戳
+- 新增功能支持本地服务端录制 SDK 时间戳
 
 ## **1.1 版**
 
@@ -370,7 +370,7 @@ Agora Recording SDK for Linux (简称录制 SDK) 在 Agora Native SDK 或/和 Ag
 
 ## **1.0.0 版**
 
-该版本于 2017 年 6 月 15 日发布。本次发版为录制 SDK 的第一次发版，主要包括以下功能:
+该版本于 2017 年 6 月 15 日发布。本次发版为本地服务端录制 SDK 的第一次发版，主要包括以下功能:
 
 - 录制通信或直播模式
 - 录制一个频道内所有参与者的语音和视频内容
