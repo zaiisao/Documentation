@@ -3,25 +3,25 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Java
-updatedAt: Wed Apr 17 2019 03:57:50 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 03:51:20 GMT+0800 (CST)
 ---
 # 集成录制 SDK
-本页介绍如何设置环境以及集成 Agora 录制 SDK。
+本页介绍如何设置环境以及集成 Agora 本地服务端录制 SDK。
 
-你需要将 Agora 录制 SDK 集成在你的 Linux 服务器上而不是你的 App 上。
+你需要将 Agora 本地服务端录制 SDK 集成在你的 Linux 服务器上而不是你的 App 上。
 
 <img alt="../_images/recording_linux_cn.png" src="https://web-cdn.agora.io/docs-files/cn/recording_linux_cn.png" style="width: 640.0px;"/>
 
 录制某频道内的音视频信息相当于将一个特殊的观众加入该频道。该观众获取频道内的音视频信息，将获取到的信息转码并储存在 Linux 服务器上。 因此，你必须：
 
-- 将录制 SDK 集成在你的 Linux 服务器上；
-- 在录制 SDK 中和进行音视频通话的 Agora SDK 使用同一个 App ID 。
+- 将本地服务端录制 SDK 集成在你的 Linux 服务器上；
+- 在本地服务端录制 SDK 中和进行音视频通话的 Agora SDK 使用同一个 App ID 。
 
 ## 前提条件
 
 ### 硬件和网络要求
 
-下表列出了安装 Agora 录制 SDK 的基本要求：
+下表列出了安装 Agora 本地服务端录制 SDK 的基本要求：
 
 <table>
 <colgroup>
@@ -102,13 +102,13 @@ updatedAt: Wed Apr 17 2019 03:57:50 GMT+0800 (CST)
 
 ### SDK 兼容性
 
-录制 SDK 支持：
+本地服务端录制 SDK 支持：
 
 - 纯 Native 端录制；
 - 纯 Web 端录制
 - Web 与 Native 互通时录制。
 
-录制 SDK 与以下 Agora SDK 兼容:
+本地服务端录制 SDK 与以下 Agora SDK 兼容:
 
 | Agora SDK        | 兼容版本 |
 | ---------------- | -------- |
@@ -121,7 +121,7 @@ updatedAt: Wed Apr 17 2019 03:57:50 GMT+0800 (CST)
 
 在你的 Linux 服务器上进行以下操作：
 
-1. [下载](https://docs.agora.io/cn/Agora%20Platform/downloads)最新的 Agora 录制 SDK 软件包。软件包内容如下:
+1. [下载](https://docs.agora.io/cn/Agora%20Platform/downloads)最新的 Agora 本地服务端录制 SDK 软件包。软件包内容如下:
 
    <table>
    <colgroup>
@@ -184,7 +184,7 @@ updatedAt: Wed Apr 17 2019 03:57:50 GMT+0800 (CST)
 3. 打开 UDP 端口：双向 1080、4000-4030、8000、9700、25000 和 所有的录制进程所使用的单向下行端口。
 
    > - 录制一个频道的内容需要开启一个对应的录制进程；单个录制进程需要使用 4 个单向下行端口。进程（包括各个录制进程和系统进程）之间不得有端口冲突。
-   > - Agora 建议指定录制进程使用端口的范围。你可以为多个录制进程统一配置较大的端口范围（Agora 建议 40000 ~ 41000 或更大）。此时，录制 SDK 会在指定范围内为每个录制进程分配端口，并避免端口的冲突。要设置端口范围，你需要配置参数 `lowUdpPort` 和`highUdpPort`。
+   > - Agora 建议指定录制进程使用端口的范围。你可以为多个录制进程统一配置较大的端口范围（Agora 建议 40000 ~ 41000 或更大）。此时，本地服务端录制 SDK 会在指定范围内为每个录制进程分配端口，并避免端口的冲突。要设置端口范围，你需要配置参数 `lowUdpPort` 和`highUdpPort`。
    > - 如果不指定参数 `lowUdpPort` 和 `highUdpPort` ，录制进程所使用的端口为随机端口，会有端口冲突的风险。
    > - 使用`iptables -L`命令查看 UDP 端口。
 
@@ -211,7 +211,7 @@ updatedAt: Wed Apr 17 2019 03:57:50 GMT+0800 (CST)
 ![](https://web-cdn.agora.io/docs-files/1544522310646)
 
 
-你已经集成了录制 SDK。
+你已经集成了本地服务端录制 SDK。
 
 ## 相关文档
 
