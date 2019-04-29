@@ -3,7 +3,7 @@
 title: RTM Quickstart Guide
 description: 
 platform: Android
-updatedAt: Thu Apr 18 2019 02:11:33 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 20:49:32 GMT+0800 (CST)
 ---
 # RTM Quickstart Guide
 ## <a name = "create"></a>Create and Initialize an Agora RtmClient Instance
