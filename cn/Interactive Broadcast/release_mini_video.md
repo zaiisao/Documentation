@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Mon Apr 29 2019 09:21:30 GMT+0800 (CST)
+updatedAt: Tue Apr 30 2019 01:56:08 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -40,6 +40,19 @@ updatedAt: Mon Apr 29 2019 09:21:30 GMT+0800 (CST)
 
 点击 [声网小程序 Demo 体验](../../cn/Interactive%20Broadcast/miniapp_demo.md) 了解小程序通话、互通等功能。
 下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
+
+
+## **2.4.0 版**
+
+该版本于 2019 年 4 月 30 日发布。新增特性和性能改进详见下文。
+
+**新增功能**
+
+为方便用户控制本地是否发流，该版本新增 [`Client.muteLocal`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/wechat/interfaces/client.html#muteLocal) 和 [`Client.unmuteLocal`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/wechat/interfaces/client.html#unmuteLocal) 方法。用户可以使用该方法在小程序中实现不发送本地音视频流等功能。
+
+**性能改进**
+
+该版本针对直播下主播切换为观众的场景，对图像和声音的延迟进行了优化。声网实验室测试结果显示，延迟从大约 3 秒降低到 600 毫秒。
 
 ## **2.3.2 版**
 
