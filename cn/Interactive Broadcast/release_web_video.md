@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed May 01 2019 06:21:43 GMT+0800 (CST)
+updatedAt: Wed May 01 2019 06:22:29 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -106,11 +106,11 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 #### 1. 音效文件播放和管理
 
-新增一组方法支持在人声中同时播放效果音，支持同时播放多个音效文件，且支持对音效文件的管理，包括调节音量、暂停/停止播放、预加载音效文件等功能，详见[播放音效/音乐混音](https://docs.agora.io/cn/Interactive%20Broadcast/effect_mixing_web?platform=Web)。
+新增一组方法支持在人声中同时播放效果音，支持同时播放多个音效文件，且支持对音效文件的管理，包括调节音量、暂停/停止播放、预加载音效文件等功能，详见[播放音效/音乐混音](../../cn/Interactive%20Broadcast/effect_mixing_web.md)。
 
 #### 2. Chrome 浏览器无插件屏幕共享
 
-Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进行屏幕共享](https://docs-preview.agoralab.co/cn/Video/screensharing_web?platform=Web&versionId=ca60b350-43d9-11e9-96ec-3f1aa1aa7938#a-name-chrome-a-chrome)。
+Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进行屏幕共享](../../cn/Interactive%20Broadcast/screensharing_web.md)。
 
 #### 3. 其他新增功能
 
