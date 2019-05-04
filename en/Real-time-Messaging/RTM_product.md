@@ -3,7 +3,7 @@
 title: Agora RTM Overview
 description: 
 platform: All Platforms
-updatedAt: Sat May 04 2019 03:46:08 GMT+0800 (CST)
+updatedAt: Sat May 04 2019 03:49:13 GMT+0800 (CST)
 ---
 # Agora RTM Overview
 The Agora RTM SDK provides a stable messaging mechanism for you to build real-time messaging scenarios with low latency and high concurrency at a global level. 
@@ -56,7 +56,7 @@ The Agora RTM SDK provides the following features:
   </tr>
   <tr>
     <td>High concurrency</td>
-    <td>Supports concurrently sending a single channel a million times<br></td>
+    <td>Supports sending up to a million  channel messages at the same time. Can cope with the high concurrency situations typical in an online quizzing scenario. <br></td>
   </tr>
   <tr>
     <td>High reliability</td>
@@ -64,7 +64,7 @@ The Agora RTM SDK provides the following features:
   </tr>
 	  <tr>
     <td>Low latency</td>
-    <td>Our data centers are deployed globally. Ensures the average latency is:<li>Less than 200 ms at a global level;<br><li>Less than 100 ms in mainland China<br></td>
+    <td>Our data centers are deployed globally. Ensures the average latency is:<li>Less than 200 ms at a global level;<br><li>Less than 100 ms in mainland China.<br></td>
   </tr>
 	  <tr>
     <td>Compatibility</td>
