@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Sun May 05 2019 05:33:56 GMT+0800 (CST)
+updatedAt: Sun May 05 2019 06:09:49 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -18,6 +18,40 @@ updatedAt: Sun May 05 2019 05:33:56 GMT+0800 (CST)
 - 对错误码进行分类方便快速定位问题。
 
 更多产品功能及性能介绍，详见： [产品概述](../../cn/Real-time-Messaging/RTM_product.md)
+
+## 0.9.2 版
+
+该版本于 2019 年 5 月 5 日发布。
+
+### 新增功能
+
+#### 查询用户在线状态
+
+本版本引入了新的概念：在线和离线。一般情况下：
+
+- 在线：用户已登录到 Agora RTM 系统。
+- 离线：用户已登出 Agora RTM 系统或因其他原因，比如权限或网络原因，与 Agora RTM 系统断开连接。
+
+本版本增加了查询用户在线状态功能。你可以在登录 Agora RTM 系统后查询最多 256 个指定用户的在线状态。详见： [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3) 接口。
+
+> - 服务端不会对返回的 Map 重新排序。返回的 Map 的 Use ID 的顺序以输入顺序为准。
+> - 返回的 Map 中与每个 User ID 对应的 BOOLEAN 值表示用户在线与否。
+> - 该方法的调用频率限制为每 5 秒 10 次。详见 [限制条件](../../cn/Real-time-Messaging/RTM_limitations_ios.md) 。
+> - 由于 Agora RTM 系统服务器设置了 30 秒保活机制，所以可能出现当某个用户已由于网络原因掉线但是服务器仍然返回用户在线的情况。
+
+
+#### 更新 Token
+
+在安全性要求较高的情况下，你需要输入 Token [登录](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) Agora RTM 系统。 每个 Token 都会在生成 24 小时后过期，本版本提供了 [更新 Token](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) 的功能。
+
+- 在登录 Agora RTM 系统时，如果你的 Token 已过期，SDK 会返回 [LOGIN_ERR_INVALID_TOKEN](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_login_error.html#a4a15940de40fe029ba9821e406f3d875) 错误码
+- 在已登录 Agora RTM 系统的情况下，Token 过期不会导致用户立即被踢出，但当用户重新登录 Agora RTM 系统时需要调用。所以，我们建议你在收到 [onTokenExpired](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e) 回调后尽快更新 Token。
+
+
+> - [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) 方法必须在 [创建 RtmClient 实例](../../cn/Real-time-Messaging/RTM_releases_android.md) 后才能调用。
+> - Agora RTM Token 的生成方式、输入参数与 Agora 媒体 SDK 不同，详情请见： [校验用户权限](../../cn/Real-time-Messaging/RTM_key.md) 。
+> - RTM Token Builder 实例代码中的 `expireTimestamp` 指的是 Token `privilege` 的过期时间，与更新 Token 无关。目前固定填 0。
+
 
 ## 0.9.1 版
 
