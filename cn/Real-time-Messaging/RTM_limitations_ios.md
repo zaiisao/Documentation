@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Sun May 05 2019 05:01:27 GMT+0800 (CST)
+updatedAt: Sun May 05 2019 05:01:32 GMT+0800 (CST)
 ---
 # 限制条件
 本页介绍 Agora RTM Objective-C SDK for iOS/macOS 的使用限制条件。
@@ -22,7 +22,7 @@ updatedAt: Sun May 05 2019 05:01:27 GMT+0800 (CST)
 | 登录到 Agora RTM 系统                              | [loginByToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) | 2 次／秒         |
 | 发送消息 (点对点和频道消息一并计算在内) | [sendMessage:toPeer:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:completion:) 和 [sendMessage:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/sendMessage:completion:)  | 60 次／秒          |
 | 获取频道成员列表                    | [getMembersWithCompletion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/getMembersWithCompletion:) | 每 2 秒 5 次 |
-| 更新 token | [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/renewToken:completion:) | 2 次/秒 |
+| 更新 token | [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/renewToken:completion:) | 2 次 / 秒 |
 | 查询指定用户在线状态 | [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersOnlineStatus:completion:) | 每 5 秒 10 次 |
 
 ## 字符串长度限制
