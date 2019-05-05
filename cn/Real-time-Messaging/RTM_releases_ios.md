@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Sun May 05 2019 06:39:58 GMT+0800 (CST)
+updatedAt: Sun May 05 2019 06:47:42 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -51,6 +51,7 @@ updatedAt: Sun May 05 2019 06:39:58 GMT+0800 (CST)
 > - [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) 方法必须在 [创建 RtmClient 实例](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:) 后才能调用。
 > - Agora RTM Token 的生成方式、输入参数与 Agora 媒体 SDK 不同，详情请见： [校验用户权限](../../cn/Real-time-Messaging/RTM_key.md) 。
 > - RTM Token Builder 实例代码中的 `expireTimestamp` 指的是 Token `privilege` 的过期时间，与更新 Token 无关。目前固定填 0。
+> - `renewToken:completion:` 方法的调用频率为 2 次 / 秒。详见 [限制条件](../../cn/Real-time-Messaging/RTM_limitations_ios.md) 。
 
 
 
