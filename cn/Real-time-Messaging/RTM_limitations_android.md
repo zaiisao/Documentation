@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Sun May 05 2019 05:00:50 GMT+0800 (CST)
+updatedAt: Sun May 05 2019 05:00:53 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
@@ -37,4 +37,5 @@ updatedAt: Sun May 05 2019 05:00:50 GMT+0800 (CST)
 
 ## 其他 
 
-当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请请拨打 400 632 6626 或邮件 sales@agora.io。
+- 当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请请拨打 400 632 6626 或邮件 sales@agora.io。
+- v0.9.2 仅支持查询最多 256 个用户的在线状态。
