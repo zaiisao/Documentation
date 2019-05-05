@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Sun May 05 2019 06:09:49 GMT+0800 (CST)
+updatedAt: Sun May 05 2019 06:22:56 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -51,6 +51,29 @@ updatedAt: Sun May 05 2019 06:09:49 GMT+0800 (CST)
 > - [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) 方法必须在 [创建 RtmClient 实例](../../cn/Real-time-Messaging/RTM_releases_android.md) 后才能调用。
 > - Agora RTM Token 的生成方式、输入参数与 Agora 媒体 SDK 不同，详情请见： [校验用户权限](../../cn/Real-time-Messaging/RTM_key.md) 。
 > - RTM Token Builder 实例代码中的 `expireTimestamp` 指的是 Token `privilege` 的过期时间，与更新 Token 无关。目前固定填 0。
+
+
+
+
+### API 变更
+
+#### 查询用户在线状态相关
+
+- 新增方法： [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3)
+- 新增查询用户在线状态错误码：[QueryPeersOnlineStatusError](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_query_peers_online_status_error.html)
+
+#### 更新 Token 相关
+
+- 新增方法： [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353)
+- 新增回调： [onTokenExpired](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e)
+- 新增更新 Token 相关错误码： [RenewTokenError](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_renew_token_error.html)
+- 登录错误码： [LOGIN_ERR_TOKEN_EXPIRED](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_login_error.html#a4a15940de40fe029ba9821e406f3d875)
+
+#### 呼叫邀请相关
+
+新增以下错误码覆盖用户在没有登录 Agora RTM 系统的情况下创建呼叫邀请的错误情况：
+
+- [LOCAL_INVITATION_ERR_NOT_LOGGEDIN](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_local_invitation_error.html#aa717afb5d4809544e6d66e1c0538f2eb)
 
 
 ## 0.9.1 版
