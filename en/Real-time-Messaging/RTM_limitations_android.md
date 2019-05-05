@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Android
-updatedAt: Sun May 05 2019 05:04:38 GMT+0800 (CST)
+updatedAt: Sun May 05 2019 05:04:42 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM Java SDK for Android v0.9.1
@@ -35,4 +35,5 @@ Supports channel and peer-to-peer messages, invitation content, and invitation r
 
 ## Miscellaneous 
 
-Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. If you have special requirements, contact sales-us@agora.io.
+- Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. If you have special requirements, contact sales-us@agora.io.
+- v0.9.2 supports querying the online status of a maximum of 256 users.
