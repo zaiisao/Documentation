@@ -3,7 +3,7 @@
 title: 实现语音直播
 description: 
 platform: 微信小程序
-updatedAt: Mon Oct 08 2018 03:07:25 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 08:23:04 GMT+0800 (CST)
 ---
 # 实现语音直播
 # 实现语音直播
@@ -150,7 +150,7 @@ let client = new AgoraMiniappSDK.Client();
     client.init(APPID, () => {
       console.log(`client init success`);
       //加入频道
-      client.join(undefined, channel, uid, () => {
+      client.join(, channel, uid, () => {
         console.log(`client join channel success`);
         //注册流事件
         this.subscribeEvents(client);
@@ -196,7 +196,7 @@ client.on("stream-added", e => {
 ```
 client.init(APPID, () => {
   // uids 为频道中已有的用户 UID 列表
-  client.rejoin(undefined, channel, uid, uids, () => {
+  client.rejoin(, channel, uid, uids, () => {
     Utils.log(`client join channel success`);
     // 获取本地推流 Url 地址
     client.publish(url => {
