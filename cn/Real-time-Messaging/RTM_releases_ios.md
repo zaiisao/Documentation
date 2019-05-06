@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Mon May 06 2019 06:20:56 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 07:05:29 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -63,7 +63,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 #### 呼叫邀请相关
 
-新增以下错误码覆盖用户在没有登录 Agora RTM 系统的情况下创建呼叫邀请的错误情况：
+新增以下错误码覆盖用户在没有登录 Agora RTM 系统的情况下发送呼叫邀请的错误情况：
 
 - [AgoraRtmLocalInvitationErrorNotLoggedIn](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmLocalInvitationErrorCode.html)
 
