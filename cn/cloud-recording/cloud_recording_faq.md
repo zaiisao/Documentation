@@ -3,7 +3,7 @@
 title: 集成常见问题
 description: 
 platform: Linux
-updatedAt: Mon May 06 2019 10:54:15 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 10:54:55 GMT+0800 (CST)
 ---
 # 集成常见问题
 ## Java 集成报错
@@ -71,3 +71,7 @@ System.out.println("类所在的路径：" + System.getProperty("java.class.path
 - Token 过期
 - Native/Web SDK 使用了 Token，云端录制未使用
 - 云端录制使用了 Token，Native/Web SDK 未使用
+
+## 录制异常退出
+
+录制异常退出意味着集成云端录制 SDK 的 App 崩溃，但是只要通话或直播还在继续，Agora 云端录制服务仍会继续保持录制和上传。这时使用和之前录制相同的 App ID、频道名以及 UID 重新开始录制，就可以继续控制原来的录制实例。
