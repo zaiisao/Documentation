@@ -3,21 +3,12 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Mon May 06 2019 06:20:51 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 06:20:56 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
-作为声网信令 SDK 的升级换代产品，Agora RTM SDK 提供了更为简洁的逻辑实现和更为稳定的消息传送机制，帮助开发者快速搭建实时消息应用场景。
-
-### 优势
-
-- 支持发送点对点消息和频道消息。
-- 支持一对一或一对多音视频通话的呼叫邀请。 
-- 支持多实例，允许在一个线程中调用多个 RTM 服务。 
-- 对错误码进行分类方便快速定位问题。
-
-更多产品功能及性能介绍，详见： [产品概述](../../cn/Real-time-Messaging/RTM_product.md) 。
+Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时信息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 。
 
 ## 0.9.2 版
 
@@ -34,10 +25,8 @@ updatedAt: Mon May 06 2019 06:20:51 GMT+0800 (CST)
 
 本版本增加了查询用户在线状态功能。你可以在登录 Agora RTM 系统后查询最多 256 个指定用户的在线状态。详见： [queryPeersOnlineStatus:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersOnlineStatus:completion:) 接口。
 
-> - 服务端不会对返回的 Map 重新排序。返回的 Map 的 Use ID 的顺序以输入顺序为准。
-> - 返回的 Map 中与每个 User ID 对应的 BOOLEAN 值表示用户在线与否。
+> - 返回的阵列中的 Use ID 的顺序以输入顺序为准。
 > - 该方法的调用频率限制为每 5 秒 10 次。详见 [限制条件](../../cn/Real-time-Messaging/RTM_limitations_ios.md) 。
-> - 由于 Agora RTM 系统服务器设置了 30 秒保活机制，所以可能出现当某个用户已由于网络原因掉线但是服务器仍然返回用户在线的情况。
 
 
 #### 更新 Token
@@ -50,7 +39,6 @@ updatedAt: Mon May 06 2019 06:20:51 GMT+0800 (CST)
 
 > - [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) 方法必须在 [创建 RtmClient 实例](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:) 后才能调用。
 > - Agora RTM Token 的生成方式、输入参数与 Agora 媒体 SDK 不同，详情请见： [校验用户权限](../../cn/Real-time-Messaging/RTM_key.md) 。
-> - RTM Token Builder 实例代码中的 `expireTimestamp` 指的是 Token `privilege` 的过期时间，与更新 Token 无关。目前固定填 0。
 > - `renewToken:completion:` 方法的调用频率为 2 次 / 秒。详见 [限制条件](../../cn/Real-time-Messaging/RTM_limitations_ios.md) 。
 
 
@@ -60,15 +48,18 @@ updatedAt: Mon May 06 2019 06:20:51 GMT+0800 (CST)
 
 #### 查询用户在线状态相关
 
-- 新增方法： [queryPeersOnlineStatus:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersOnlineStatus:completion:)
-- 新增查询用户在线状态错误码：[AgoraRtmQueryPeersOnlineErrorCode](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmQueryPeersOnlineErrorCode.html)
+##### 新增
+
+- 方法： [queryPeersOnlineStatus:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersOnlineStatus:completion:)
+- 错误码：[AgoraRtmQueryPeersOnlineErrorCode](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmQueryPeersOnlineErrorCode.html)
 
 #### 更新 Token 相关
 
-- 新增方法： [renewToken:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/renewToken:completion:)
-- 新增回调： [rtmKitTokenDidExpire:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKitTokenDidExpire:)
-- 新增更新 Token 相关错误码： [AgoraRtmRenewTokenErrorCode](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmRenewTokenErrorCode.html)
-- 登录错误码： [ AgoraRtmLoginErrorTokenExpired](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmLoginErrorCode.html)
+##### 新增
+
+- 方法： [renewToken:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/renewToken:completion:)
+- 回调： [rtmKitTokenDidExpire:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKitTokenDidExpire:)
+- 错误码： [AgoraRtmRenewTokenErrorCode](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmRenewTokenErrorCode.html)
 
 #### 呼叫邀请相关
 
