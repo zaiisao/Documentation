@@ -3,21 +3,12 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon May 06 2019 03:45:33 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 03:45:38 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
-作为声网信令 SDK 的升级换代产品，Agora RTM SDK 提供了更为简洁的逻辑实现和更为稳定的消息传送机制，帮助开发者快速搭建实时消息应用场景。
-
-### 优势
-
-- 支持发送点对点消息和频道消息。
-- 支持一对一或一对多音视频通话的呼叫邀请。 
-- 支持多实例，允许在一个线程中调用多个 RTM 服务。 
-- 对错误码进行分类方便快速定位问题。
-
-更多产品功能及性能介绍，详见： [产品概述](../../cn/Real-time-Messaging/RTM_product.md)
+Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时信息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 。
 
 ## 0.9.2 版
 
@@ -37,38 +28,43 @@ updatedAt: Mon May 06 2019 03:45:33 GMT+0800 (CST)
 > - 服务端不会对返回的 Map 重新排序。返回的 Map 的 Use ID 的顺序以输入顺序为准。
 > - 返回的 Map 中与每个 User ID 对应的 BOOLEAN 值表示用户在线与否。
 > - 该方法的调用频率限制为每 5 秒 10 次。详见 [限制条件](../../cn/Real-time-Messaging/RTM_limitations_ios.md) 。
-> - 由于 Agora RTM 系统服务器设置了 30 秒保活机制，所以可能出现当某个用户已由于网络原因掉线但是服务器仍然返回用户在线的情况。
 
 
 #### 更新 Token
 
 在安全性要求较高的情况下，你需要输入 Token [登录](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) Agora RTM 系统。 每个 Token 都会在生成 24 小时后过期，本版本提供了 [更新 Token](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) 的功能。
 
-- 在登录 Agora RTM 系统时，如果你的 Token 已过期，SDK 会返回 [LOGIN_ERR_INVALID_TOKEN](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_login_error.html#a4a15940de40fe029ba9821e406f3d875) 错误码
+- 在登录 Agora RTM 系统时，如果你的 Token 已过期，SDK 会返回 [LOGIN_ERR_TOKEN_EXPIRED](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_login_error.html#a4a15940de40fe029ba9821e406f3d875) 错误码
 - 在已登录 Agora RTM 系统的情况下，Token 过期不会导致用户立即被踢出，但当用户重新登录 Agora RTM 系统时需要调用。所以，我们建议你在收到 [onTokenExpired](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e) 回调后尽快更新 Token。
 
 
 > - [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) 方法必须在 [创建 RtmClient 实例](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6411640143c4d0d0cd9481937b754dbf) 后才能调用。
 > - Agora RTM Token 的生成方式、输入参数与 Agora 媒体 SDK 不同，详情请见： [校验用户权限](../../cn/Real-time-Messaging/RTM_key.md) 。
-> - RTM Token Builder 实例代码中的 `expireTimestamp` 指的是 Token `privilege` 的过期时间，与更新 Token 无关。目前固定填 0。
 > - `RenewToken` 方法的调用频率限制为 2 次 / 秒。详见 [限制条件](../../cn/Real-time-Messaging/RTM_limitations_ios.md) 。
 
+### 性能改进
 
+- 支持以空格开头的 `userId` 参数。
 
 
 ### API 变更
 
 #### 查询用户在线状态相关
 
-- 新增方法： [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3)
-- 新增查询用户在线状态错误码：[QueryPeersOnlineStatusError](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_query_peers_online_status_error.html)
+##### 新增
+
+- 方法： [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3)
+- 错误码：[QueryPeersOnlineStatusError](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_query_peers_online_status_error.html)
 
 #### 更新 Token 相关
 
-- 新增方法： [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353)
-- 新增回调： [onTokenExpired](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e)
-- 新增更新 Token 相关错误码： [RenewTokenError](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_renew_token_error.html)
-- 登录错误码： [LOGIN_ERR_TOKEN_EXPIRED](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_login_error.html#a4a15940de40fe029ba9821e406f3d875)
+##### 新增
+
+- 方法： [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353)
+- 回调： [onTokenExpired](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e)
+- 错误码： [RenewTokenError](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_renew_token_error.html)
+- 连接状态改变原因错误码： [CONNECTION_CHANGE_REASON_TOKEN_EXPIRED
+](/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_connection_change_reason.html#a0e1fb03e58b71446446cfb70a6610423) 。
 
 #### 呼叫邀请相关
 
