@@ -3,21 +3,12 @@
 title: 发版说明
 description: 
 platform: Linux Java
-updatedAt: Mon May 06 2019 06:21:41 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 07:06:00 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
-作为声网信令 SDK 的升级换代产品，Agora RTM SDK 提供了更为简洁的逻辑实现和更为稳定的消息传送机制，帮助开发者快速搭建实时消息应用场景。
-
-### 优势
-
-- 支持发送点对点消息和频道消息。
-- 支持一对一或一对多音视频通话的呼叫邀请。 
-- 支持多实例，允许在一个线程中调用多个 RTM 服务。 
-- 对错误码进行分类方便快速定位问题。
-
-更多产品功能及性能介绍，详见： [产品概述](../../cn/Real-time-Messaging/RTM_product.md) 。
+Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时信息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 。
 
 ## 0.9.2 版
 
