@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: 微信小程序
-updatedAt: Fri Nov 02 2018 04:00:07 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 08:23:07 GMT+0800 (CST)
 ---
 # 实现视频通话
 在本页你可以了解如何使用 Agora Miniapp SDK 实现视频通话。点击 [声网小程序 Demo 体验](../../cn/Quickstart%20Guide/miniapp_demo.md) 进行 Demo 体验。
@@ -147,7 +147,7 @@ let client = new AgoraMiniappSDK.Client();
     client.init(APPID, () => {
       console.log(`client init success`);
       //加入频道
-      client.join(undefined, channel, uid, () => {
+      client.join(, channel, uid, () => {
         console.log(`client join channel success`);
         //注册流事件
         this.subscribeEvents(client);
@@ -193,7 +193,7 @@ client.on("stream-added", e => {
 ```
 client.init(APPID, () => {
   // uids 为频道中已有的用户 UID 列表
-  client.rejoin(undefined, channel, uid, uids, () => {
+  client.rejoin(, channel, uid, uids, () => {
     Utils.log(`client join channel success`);
     // 获取本地推流 Url 地址
     client.publish(url => {
