@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux Java
-updatedAt: Mon May 06 2019 07:06:00 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 07:06:15 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -66,7 +66,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 #### 呼叫邀请相关
 
-新增以下错误码覆盖用户在没有登录 Agora RTM 系统的情况下创建呼叫邀请的错误情况：
+新增以下错误码覆盖用户在没有登录 Agora RTM 系统的情况下发送呼叫邀请的错误情况：
 
 - [LOCAL_INVITATION_ERR_NOT_LOGGEDIN](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_local_invitation_error.html#aa717afb5d4809544e6d66e1c0538f2eb)
 
