@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Sun Apr 28 2019 07:41:22 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 06:55:17 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
