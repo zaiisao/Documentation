@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon May 06 2019 06:45:07 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 06:45:47 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -64,7 +64,7 @@ In the production environment, you need to put a token to [login](https://docs.a
 - Callback: [onTokenExpired](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e)
 - Error Codes:  [RenewTokenError](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_renew_token_error.html)
 - [CONNECTION_CHANGE_REASON_TOKEN_EXPIRED
-](/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_connection_change_reason.html#a0e1fb03e58b71446446cfb70a6610423) 。
+](/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_connection_change_reason.html#a0e1fb03e58b71446446cfb70a6610423) 
 
 #### Call Invitation
 
