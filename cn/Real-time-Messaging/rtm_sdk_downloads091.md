@@ -3,23 +3,27 @@
 title: Agora RTM SDK 下载链接
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 22 2019 03:13:24 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 10:16:06 GMT+0800 (CST)
 ---
 # Agora RTM SDK 下载链接
-## Android v0.9.1
+## Android v0.9.2
 
-- [SDK 下载](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Android_v0_9_1.zip)
+- [SDK 下载](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Android_v0_9_2.zip)
 
-## iOS v0.9.1
+## iOS v0.9.2
 
-- [SDK 下载](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_iOS_v0_9_1.zip)
+- [SDK 下载](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_iOS_v0_9_2.zip)
 
-## Java (Linux) v0.9.1
+## macOS v0.9.2
+
+- [SDK 下载](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Mac_v0_9_2.zip)
+
+## Java (Linux) v0.9.2
 
 > **重要：** Agora RTM Server Java SDK 只能在 Linux 运行，不能在 Windows 平台运行。 
 
-- [SDK 下载](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_Java_v0_9_1.zip) 
+- [SDK 下载](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_Java_v0_9_2.zip) 
 
-## C++ (Linux) v0.9.1
+## C++ (Linux) v0.9.2
 
-- [SDK 下载](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_Java_v0_9_1.zip)
+- [SDK 下载](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_v0_9_2.zip)
