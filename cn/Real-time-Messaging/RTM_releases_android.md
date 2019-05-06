@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon May 06 2019 06:02:36 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 06:02:40 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -25,7 +25,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 本版本增加了查询用户在线状态功能。你可以在登录 Agora RTM 系统后查询最多 256 个指定用户的在线状态。详见： [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3) 接口。
 
-> - 服务端不会对返回的 Map 重新排序。返回的 Map 的 Use ID 的顺序以输入顺序为准。
+> - 返回的 Map 的 Use ID 的顺序以输入顺序为准。
 > - 返回的 Map 中与每个 User ID 对应的 BOOLEAN 值表示用户在线与否。
 > - 该方法的调用频率限制为每 5 秒 10 次。详见 [限制条件](../../cn/Real-time-Messaging/RTM_limitations_ios.md) 。
 
