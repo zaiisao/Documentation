@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Tue May 07 2019 08:37:13 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 09:47:34 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 初始化
