@@ -3,12 +3,12 @@
 title: RTM 快速开始
 description: 
 platform: Linux
-updatedAt: Tue May 07 2019 11:53:48 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 12:19:02 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
 
-本文介绍在正式使用 Agora RTM Java SDK for Linux 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+本章介绍在正式使用 Agora RTM Java SDK for Linux 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
 
 ### 前提条件
 
@@ -42,7 +42,7 @@ public static final String APP_ID = "<#YOUR APP ID#>";
 
 4. 使用 maven 编译打包, 在 `pom.xml` 所在目录运行 `mvn package`。
 
-### 初始化
+## 初始化
 
 在创建实例前，请确保你已完成环境准备，安装包获取等步骤。
 
