@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Tue May 07 2019 11:52:45 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 12:17:12 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -85,7 +85,7 @@ mvn install:install-file -Dfile=lib/agora_rtm.jar -DgroupId=io.agora.rtm -Dartif
 
 5. 使用 maven 编译打包, 在 `pom.xml` 所在目录运行 `mvn package`。
 
-### 初始化
+## 初始化
 
 在创建实例前，请确保你已完成环境准备，安装包获取等步骤。
 
