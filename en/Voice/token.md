@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Tue May 07 2019 10:50:49 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 10:50:55 GMT+0800 (CST)
 ---
 # Use Security Keys
 This page describes the token (Agora’s authentication mechanism). Before you start, check if your SDK version supports token:
@@ -50,7 +50,7 @@ The `joinChannel` method requires a security key as an essential parameter. The 
 1. For low-security requirements, such as for testing: [App ID](#APPID).
 2. For high-security requirements, such as for production: App ID + App Certificate + [Token](#Token). Note that an App Certificate is enabled solely for the purposes of generating a Channel Key and cannot be used alone.
 
-![](https://web-cdn.agora.io/docs-files/1555491048103)
+<img alt="../_images/key_relation_web.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_web.jpg" style="width: 840px;" />
 
 
 <a name = "APPID"></a>
@@ -146,7 +146,7 @@ The application client needs to send the following parameters to the server to g
 <td>ID of the user who wants to join a channel.</td>
 </tr>
 <tr><td><code>expireTimestamp</code> <sup>[2]</sup></a></td>
-<td>The token expiration time. The default value is 0, where the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
+<td>The privilege expiration time. The default value is 0, where the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
 </tr>
 </tbody>
 </table>
