@@ -3,7 +3,7 @@
 title: Agora RTM Overview
 description: 
 platform: All Platforms
-updatedAt: Sat May 04 2019 03:49:13 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 04:20:08 GMT+0800 (CST)
 ---
 # Agora RTM Overview
 The Agora RTM SDK provides a stable messaging mechanism for you to build real-time messaging scenarios with low latency and high concurrency at a global level. 
@@ -72,4 +72,13 @@ The Agora RTM SDK provides the following features:
   </tr>
 </table>
 
+## Real-time Messaging vs. Signaling
+
+The Agora Real-time Messaging system (RTM) is designed to replace the legacy Signaling system. We are dedicated to lauching an real-time messaging with features way beyond the above-mentioned ones. 
+
+Our plan: 
+
+- Features including user property, channel property, offline peer-to-peer message, and history messages are coming by the end of May, 2019. 
+- Interoperability between the Agora RTM system and the Agora Signaling system will be implemented by the end of June, 2019. 
+- Maintenance to the legacy Signaling system will cease by the end of 2019. 
 
