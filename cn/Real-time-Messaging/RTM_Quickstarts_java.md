@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux
-updatedAt: Tue May 07 2019 08:30:27 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 08:30:32 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -16,7 +16,7 @@ updatedAt: Tue May 07 2019 08:30:27 GMT+0800 (CST)
 
 - 物理或虚拟, Ubuntu Linux 14.04 LTS 64 位 及以上
 
-下载的文件包括 libs 文件和 sample 文件，其中 libs 文件包括：
+下载的文件包括 libs 文件和 sample 文件。
 
 
 ### 创建 Agora 账号并获取 App ID
