@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: iOS
-updatedAt: Tue May 07 2019 13:33:31 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 13:33:44 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -12,10 +12,8 @@ updatedAt: Tue May 07 2019 13:33:31 GMT+0800 (CST)
 
 - Xcode 9.0+。
 - iOS 8.0+ 真机（iPhone 或 iPad）。
-- 一个有效的 Agora 开发者账号（[免费注册](https://sso.agora.io/cn/signup)）。
+- 一个有效的 Agora 开发者账号。
 - 请确保你的项目已设置有效的开发者签名。
-
-> 建议使用真机运行示例代码。模拟机可能会因为功能缺失而无法运行示例代码。
 
 ### 创建项目
 
