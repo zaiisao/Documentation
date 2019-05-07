@@ -3,16 +3,18 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue May 07 2019 10:53:49 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 10:54:04 GMT+0800 (CST)
 ---
 # 产品概述
-## 产品概述
+
 
 Agora Real-time Messaging (RTM) SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时场景。
 
 ## 功能概述
 
-Agora RTM SDK 能够实现以下功能: 点对点消息
+Agora RTM SDK 能够实现以下功能: 
+
+ - 点对点消息
  - 频道消息
  - 获取频道内用户列表
  - 呼叫邀请
