@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux
-updatedAt: Wed Apr 24 2019 02:00:39 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 08:30:11 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -12,7 +12,7 @@ updatedAt: Wed Apr 24 2019 02:00:39 GMT+0800 (CST)
 
 ### 前提条件
 
-请确保满足一下开发环境要求：
+请确保满足以下开发环境要求：
 
 - 物理或虚拟, Ubuntu Linux 14.04 LTS 64 位 及以上
 
