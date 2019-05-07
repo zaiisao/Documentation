@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux
-updatedAt: Tue May 07 2019 09:10:42 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 09:10:48 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -22,7 +22,7 @@ updatedAt: Tue May 07 2019 09:10:42 GMT+0800 (CST)
 1. 进入 <https://dashboard.agora.io/> ，按照屏幕提示创建一个开发者账号。
 2. 登录 Dashboard 页面，点击添加新项目。
 3. 填写项目名， 然后点击提交 。
-4. 在你创建的项目下，查看并获取该项目对应的App ID。
+4. 在你创建的项目下，查看并获取该项目对应的 App ID。
 
 ### 添加 SDK
 
@@ -32,11 +32,11 @@ updatedAt: Tue May 07 2019 09:10:42 GMT+0800 (CST)
 public static final String APP_ID = "<#YOUR APP ID#>";
 ```
 
-1. 在 Agora.io SDK 下载 RTM SDK，解压后将其中的 libs 文件夹下的 `*.jar`, `*.so` 复制到本项目的 /lib 文件夹下。
+1. 将下载的 SDK 解压并将其中的 libs 文件夹下的 `*.jar`, `*.so` 复制到本项目的 /lib 文件夹下。
 
-1. 如果没有maven环境，需要安装 `apache-maven-3.6.0`。
+1. 如果没有 maven 环境，需要安装 `apache-maven-3.6.0`。
 
-1. 将demo依赖的jar包安装到本地maven仓库：
+1. 将 demo 依赖的 jar 包安装到本地 maven 仓库：
 
 `mvn install:install-file -Dfile=lib/agora_rtm.jar -DgroupId=io.agora.rtm -DartifactId=agora-rtm-sdk -Dversion=1.0 -Dpackaging=jar`
 
@@ -46,7 +46,7 @@ public static final String APP_ID = "<#YOUR APP ID#>";
 
 在创建实例前，请确保你已完成环境准备，安装包获取等步骤。
 
-创建实例需要填入准备好的App ID, 只有 App ID 相同的应用才能互通。
+创建实例需要填入准备好的 App ID, 只有 App ID 相同的应用才能互通。
 
 指定一个事件回调，SDK 通过回调通知应用程序 SDK 的状态变化和运行事件等，如连接状态变化，消息接收等。
 
@@ -146,7 +146,7 @@ APP 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
 
 ```
 
-如果需要退出登录，可以调用 `logout` 方法，退出登录之后可以调用 `login` 重新登录或者切换账号。
+如果需要退出登录，可以调用 `logout()` 方法，退出登录之后可以调用 `login()` 重新登录或者切换账号。
 
 ```java
 mRtmClient.logout(null);
@@ -161,7 +161,7 @@ mRtmClient.logout(null);
 调用 `sendMessageToPeer` 方法发送点对点消息。在该方法中：
 
 - 传入目标消息接收方的用户 ID。
-- 传入 `RtmMessage` 对象实例。该消息对象由 RtmClient 类的的 createMessage 实例方法创建，并使用消息实例的 setText 方法设置消息内容。
+- 传入 `RtmMessage` 对象实例。该消息对象由 `RtmClient` 类的的 `createMessage()` 实例方法创建，并使用消息实例的 `setText()` 方法设置消息内容。
 - 传入消息发送结果监听器，用于接收消息发送结果回调，如：服务器已接收，发送超时，对方不可达等。
 
 ```java
@@ -187,7 +187,7 @@ mRtmClient.logout(null);
 
 ### 接收点对点消息
 
-点对点消息的接收通过创建 `RtmClient` 实例的时候传入的 `RtmClientListener` 回调接口进行监听。在该回调接口的 onMessageReceived(RtmMessage message, String peerId) 回调方法中：
+点对点消息的接收通过创建 `RtmClient` 实例的时候传入的 `RtmClientListener` 回调接口进行监听。在该回调接口的 `onMessageReceived(RtmMessage message, String peerId)` 回调方法中：
 
 - 通过 `message.getText()` 方法可以获取到消息文本内容。
 - `peerId` 是消息发送方的用户 ID。
@@ -202,7 +202,7 @@ App 在成功登录 RTM 服务器 之后，可以开始使用 RTM 的频道消�
 
 ### 创建加入频道实例
 
-- 传入能标识每个频道的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 "null"。  
+- 传入能标识每个频道的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 "null"。  
 - 指定一个事件回调。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
 
 ```java
@@ -230,9 +230,9 @@ App 在成功登录 RTM 服务器 之后，可以开始使用 RTM 的频道消�
 
 在成功加入频道之后，用户可以开始向该频道发送消息。
 
-调用 实例的 发送 方法向该频道发送消息。在该方法中：
+调用频道实例的 `sendChannelMessage()` 方法向该频道发送消息。在该方法中：
 
-- 传入 RtmMessage 对象实例。该消息对象由 RtmClient 类的 createMessage 实例方法创建，并使用消息实例的 setText 方法设置消息内容。
+- 传入 `RtmMessage` 对象实例。该消息对象由 `RtmClient` 类的 `createMessage()` 实例方法创建，并使用消息实例的 `setText()` 方法设置消息内容。
 - 传入消息发送结果监听器，用于接收消息发送结果回调，如：服务器已接收，发送超时等。
 
 ```java
@@ -254,11 +254,11 @@ App 在成功登录 RTM 服务器 之后，可以开始使用 RTM 的频道消�
 
 ### 接收频道消息
 
-频道消息的接收通过创建频道消息的时候传入的 回调接口进行监听（参考“创建频道实例”当中的代码）。
+频道消息的接收通过创建频道消息的时候传入的回调接口进行监听。
 
 ### 获取频道成员列表
 
-调用实例的 getMembers 方法可以获取到当前在该频道内的用户列表。 
+调用实例的 `getMembers()` 方法可以获取到当前在该频道内的用户列表。 
 
 ```java
     public void getChannelMemberList() {
@@ -275,13 +275,13 @@ App 在成功登录 RTM 服务器 之后，可以开始使用 RTM 的频道消�
 
 ### 退出频道
 
-调用实例的 leave 方法可以退出该频道。退出频道之后可以调用 join 方法再重新加入频道。
+调用实例的 `leave()` 方法可以退出该频道。退出频道之后可以调用 `join()` 方法再重新加入频道。
 
 ### 注意事项
 
-- 每个客户端都需要首先调用创建channel方法创建频道实例才能使用群聊功能，该实例只是本地的一个类对象实例。
+- 每个客户端都需要首先调用 `createChannel` 方法创建频道实例才能使用群聊功能，该实例只是本地的一个类对象实例。
 - RTM 支持同时创建多个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的回调。
-- 如果频道 ID 非法，或者具有相同 ID 的频道实例已经在本地创建，createChannel 将返回 null。
-- 接收到的 RtmMessage 消息对象不能重复利用再用于发送。
-- 当离开了频道且不再加入该频道时，可以调用 RtmChannel 实例的 release 方法及时释放频道实例所占用的资源。
+- 如果频道 ID 非法，或者具有相同 ID 的频道实例已经在本地创建，`createChannel` 将返回 null。
+- 接收到的 `RtmMessage` 消息对象不能重复利用再用于发送。
+- 当离开了频道且不再加入该频道时，可以调用 `RtmChannel` 实例的 `release()` 方法及时释放频道实例所占用的资源。
 - 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
