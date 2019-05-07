@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux
-updatedAt: Tue May 07 2019 08:38:14 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 08:38:32 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -28,7 +28,7 @@ updatedAt: Tue May 07 2019 08:38:14 GMT+0800 (CST)
 
 ### 添加 SDK
 
-将 AppID 填写进 RtmJavaDemo.java 中的 APPID.APP_ID
+将 AppID 填写进 RtmJavaDemo.java 中的 APP ID
 
 ```java
 public static final String APP_ID = "<#YOUR APP ID#>";
