@@ -35,7 +35,7 @@ client.rejoin(channelKey, channel, uid, uids, onSuccess, onFailure);
 ```
 client.init(APPID, () => {
   // uids 为频道中已有的用户 UID 列表
-  client.rejoin(undefined, channel, uid, uids, () => {
+  client.rejoin(, channel, uid, uids, () => {
     Utils.log(`client join channel success`);
     // 获取本地推流 Url 地址
     client.publish(url => {

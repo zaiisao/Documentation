@@ -43,7 +43,7 @@ let client = new AgoraMiniappSDK.Client();
     client.init(APPID, () => {
       console.log(`client init success`);
       //加入频道
-      client.join(undefined, channel, uid, () => {
+      client.join(, channel, uid, () => {
         console.log(`client join channel success`);
         //注册流事件
         this.subscribeEvents(client);

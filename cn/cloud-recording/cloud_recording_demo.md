@@ -3,7 +3,7 @@
 title: Demo 使用指南
 description: 
 platform: CPP
-updatedAt: Mon Apr 29 2019 03:10:33 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 03:10:40 GMT+0800 (CST)
 ---
 # Demo 使用指南
 本文介绍如何通过命令行运行 C++ demo 进行录制。 你也可以通过调用 API 实现录制，详见[调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart.md)。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
@@ -23,9 +23,10 @@ updatedAt: Mon Apr 29 2019 03:10:33 GMT+0800 (CST)
 
 ## 运行 Demo
 
-打开命令行工具，进入 **cloud_recording_demo.bin** 所在目录，执行 `./cloud_recording_demo.bin` 命令，即可看到录制相关的参数和选项，如下所示：
+1. 下载[云端录制 SDK](http://download.agora.io/acrsdk/release/Agora_Cloud_Recording_SDK_for_Linux_v1_0_0_FULL.tar.gz) 并解压缩。
+2. 打开命令行工具，进入 SDK 包中 **cloud_recording_demo.bin** 所在目录，执行 `./cloud_recording_demo.bin` 命令，即可看到录制相关的参数和选项，如下所示：
 
-```bash
+ ```bash
 Usage: 
   ./cloud_recording_demo.bin --appId STRING --channelName STRING --uid UINTEGER32 --token STRING --recordingStreamType UINTEGER32 --videoStreamType UINTEGER32 --decryption_mode UINTEGER32 --secret STRING --channelType UINTEGER32 --audioProfile UINTEGER32 --mixWidth UINTEGER32 --mixHeight UINTEGER32 --fps UINTEGER32 --bitrate UINTEGER32 --maxResolutionUid UINTEGER32 --mixedVideoLayoutType UINTEGER32 --maxIdleTime UINTEGER32 --vendor UINTEGER32 --region UINTEGER32 --bucket STRING --accessKey STRING --secretKey STRING 
                              --appId     (app id)

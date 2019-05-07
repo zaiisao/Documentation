@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Mon May 06 2019 03:46:57 GMT+0800 (CST)
+updatedAt: Mon May 06 2019 03:47:05 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -34,7 +34,7 @@ Windows 视频 SDK 支持两种主要场景:
 - 根据屏幕共享的内容类型设置运动优先或细节优先（[`setScreenCaptureContentHint`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)）
 - 单独设置屏幕共享的分辨率、帧率和码率（[`updateScreenCaptureParameters`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#ad680e114ba3b8a0012454af6867c7498)）
 
-该版本废弃了原有的 startScreenCapture 接口。Agora 推荐你使用新接口实现屏幕共享。新接口下，用户需要在代码中设计获取 `screenRect` 和 `windowId` 的代码逻辑，详情请参考[开始屏幕共享](../../cn/Video/screensharing_window.md)。
+该版本废弃了原有的 startScreenCapture 接口。Agora 推荐你使用新接口实现屏幕共享。新接口下，用户需要在代码中设计获取 `screenRect` 和 `windowId` 的代码逻辑，详情请参考[开始屏幕共享](../../cn/Video/screensharing_windows.md)。
 
 #### 2. 变声和混响
 

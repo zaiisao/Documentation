@@ -3,12 +3,12 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Mon Apr 29 2019 03:50:25 GMT+0800 (CST)
+updatedAt: Mon Apr 29 2019 03:54:33 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
 
-Agora Recording SDK for Linux (简称本地服务端录制 SDK) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。点击[录制产品概述](../../cn/Recording/product_recording.md)了解关键特性。
+Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 Agora Native SDK 或/和 Agora Web SDK 的基础上提供通信和直播录制功能。点击[录制产品概述](../../cn/Recording/product_recording.md)了解关键特性。
 
 ### 兼容性
 
@@ -84,7 +84,7 @@ Agora Recording SDK for Linux (简称本地服务端录制 SDK) 在 Agora Native
 
 该版本于 2019 年 1 月 15 日发布。新增特性与改进问题详见下文。
 
-> Recording SDK 从 2.3.0 版本起，可支持费用独立计算，录制的用量和费用不与语音通话/语音直播 SDK、视频通话/视频直播 SDK混合在一起。具体可咨询商务。
+> 本地服务端录制 SDK 从 2.3.0 版本起，可支持费用独立计算，录制的用量和费用不与语音通话/语音直播 SDK、视频通话/视频直播 SDK混合在一起。具体可咨询商务。
 
 ### 新增功能
 
