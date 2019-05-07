@@ -3,19 +3,19 @@
 title: RTM 快速开始
 description: 
 platform: Linux
-updatedAt: Tue May 07 2019 09:30:57 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 09:31:01 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
 
-本文介绍在正式使用 Agora RTM SDK for Java 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+本文介绍在正式使用 Agora RTM Java SDK for Linux 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
 
 ### 前提条件
 
 请确保满足以下开发环境要求：
 
 - 物理或虚拟, Ubuntu Linux 14.04 LTS 64 位 及以上。
-- 下载的文件包括 libs 文件和 sample 文件。
+- 下载 [Agora RTM Java SDK for Linux](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_Java_v0_9_2.zip)。SDK 文件应包括 libs 文件和 sample 文件。
 
 ### 创建 Agora 账号并获取 App ID
 
@@ -26,7 +26,7 @@ updatedAt: Tue May 07 2019 09:30:57 GMT+0800 (CST)
 
 ### 添加 SDK
 
-1. 将 AppID 填写进 RtmJavaDemo.java 中的 APP ID
+1. 将 AppID 填写进 RtmJavaDemo.java 中的 `APP ID`。
 
 ```java
 public static final String APP_ID = "<#YOUR APP ID#>";
@@ -46,7 +46,7 @@ public static final String APP_ID = "<#YOUR APP ID#>";
 
 在创建实例前，请确保你已完成环境准备，安装包获取等步骤。
 
-创建实例需要填入准备好的 App ID, 只有 App ID 相同的应用才能互通。
+创建实例需要填入准备好的 `App ID`, 只有 `App ID` 相同的应用才能互通。
 
 指定一个事件回调，SDK 通过回调通知应用程序 SDK 的状态变化和运行事件等，如连接状态变化，消息接收等。
 
@@ -71,21 +71,21 @@ class ChannelListener implements RtmChannelListener {
             final RtmMessage message, final RtmChannelMember fromMember) {
         String account = fromMember.getUserId();
         String msg = message.getText();
-        System.out.println("Receive message from channel: " + mChannel +
+        Log.d(TAG, "Message received from channel: " + mChannel +
         " member: " + account + " message: " + msg);
     }
 
     @Override
     public void onMemberJoined(RtmChannelMember member) {
         String account = member.getUserId();
-        System.out.println("member " + account + " joined the channel "
+        Log.d(TAG, "member " + account + " joins the channel "
                           + mChannel);
     }
 
     @Override
     public void onMemberLeft(RtmChannelMember member) {
         String account = member.getUserId();
-        System.out.println("member " + account + " lefted the channel "
+        Log.d(TAG, "member " + account + " lefted the channel "
                          + mChannel);
     }
 }
@@ -96,19 +96,19 @@ class ChannelListener implements RtmChannelListener {
                             new RtmClientListener() {
                 @Override
                 public void onConnectionStateChanged(int state, int reason) {
-                    System.out.println("on connection state changed to "
+                    Log.d(TAG, "on connection state changed to "
                         + state + " reason: " + reason);
                 }
 
                 @Override
                 public void onMessageReceived(RtmMessage rtmMessage, String peerId) {
                     String msg = rtmMessage.getText();
-                    System.out.println("Receive message: " + msg 
+                    Log.d(TAG, "Receives message: " + msg 
                                 + " from " + peerId);
                 }
             });
         } catch (Exception e) {
-            System.out.println("RTM SDK init fatal error!");
+            Log.d(TAG, "RTM SDK init fatal error!");
             throw new RuntimeException("You need to check the RTM init process.");
         }
     }
@@ -120,14 +120,14 @@ class ChannelListener implements RtmChannelListener {
 
 RTM 支持多实例，事件回调须是不同的实例。
 
-当实例不再使用的时，可以调用实例的 `release`方法释放资源。
+当实例不再使用的时，可以调用实例的 `release()`方法释放资源。
 
 ## 登录
 
 APP 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息和群聊功能。在此之前，请确保 `RtmClient` 初始化完成。
 
-- 传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 "null"。Token 需要在应用程序的服务器端生成，具体生成办法，详见密钥说明。
-- 传入能标识每个用户的 ID。用户 ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 "null"。
+- 传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 `"null"`。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [校验用户权限](../../cn/Real-time-Messaging/RTM_key.md)。
+- 传入能标识每个用户的 ID。用户 ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"null"`。
 - 传入结果回调，用于接收登录 RTM 服务器成功或者失败的结果回调。
 
 ```java
@@ -135,12 +135,12 @@ APP 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
             @Override
             public void onSuccess(Void responseInfo) {
                 loginStatus = true;
-                System.out.println("login success!");
+                Log.d(TAG, "login success!");
             }
             @Override
             public void onFailure(ErrorInfo errorInfo) {
                 loginStatus = false;
-                System.out.println("login failure!");
+                Log.d(TAG, "login failure!");
             }
         });
 
@@ -177,7 +177,7 @@ mRtmClient.logout(null);
             @Override
             public void onFailure(ErrorInfo errorInfo) {
                 final int errorCode = errorInfo.getErrorCode();
-                System.out.println("Send Message to peer failed, errorCode = "
+                Log.d(TAG, "Fails to send the message to the peer, errorCode = "
                                 + errorCode);
             }
         });
@@ -202,25 +202,25 @@ App 在成功登录 RTM 服务器 之后，可以开始使用 RTM 的频道消�
 
 ### 创建加入频道实例
 
-- 传入能标识每个频道的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 "null"。  
+- 传入能标识每个频道的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"null"`。  
 - 指定一个事件回调。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
 
 ```java
         mRtmChannel = mRtmClient.createChannel(channel,
                             new ChannelListener(channel));
         if (mRtmChannel == null) {
-            System.out.println("channel created failed!");
+            Log.d(TAG, "Fails to create the channel!");
             return;
         }
         mRtmChannel.join(new ResultCallback<Void>() {
             @Override
             public void onSuccess(Void responseInfo) {
-                System.out.println("join channel success!");
+                Log.d(TAG, "Successfully joins the channel!");
             }
 
             @Override
             public void onFailure(ErrorInfo errorInfo) {
-                System.out.println("join channel failure! errorCode = "
+                Log.d(TAG, "join channel failure! errorCode = "
                                     + errorInfo.getErrorCode());
             }
         });
@@ -279,9 +279,9 @@ App 在成功登录 RTM 服务器 之后，可以开始使用 RTM 的频道消�
 
 ### 注意事项
 
-- 每个客户端都需要首先调用 `createChannel` 方法创建频道实例才能使用群聊功能，该实例只是本地的一个类对象实例。
-- RTM 支持同时创建多个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的回调。
-- 如果频道 ID 非法，或者具有相同 ID 的频道实例已经在本地创建，`createChannel` 将返回 null。
+- 每个客户端都需要首先调用 `createChannel` 方法创建频道实例才能使用频道消息功能，该实例只是本地的一个类对象实例。
+- RTM 支持同时创建最多 20 个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的回调。
+- 如果频道 ID 非法，或者具有相同 ID 的频道实例已经在本地创建，`createChannel` 时将返回 `null`。
 - 接收到的 `RtmMessage` 消息对象不能重复利用再用于发送。
 - 当离开了频道且不再加入该频道时，可以调用 `RtmChannel` 实例的 `release()` 方法及时释放频道实例所占用的资源。
 - 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
