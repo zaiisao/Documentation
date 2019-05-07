@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Tue May 07 2019 12:17:12 GMT+0800 (CST)
+updatedAt: Tue May 07 2019 13:34:54 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -102,36 +102,6 @@ import io.agora.rtm.RtmChannelMember;
 import io.agora.rtm.RtmClient;
 import io.agora.rtm.RtmClientListener;
 import io.agora.rtm.RtmMessage;
-
-    
-class ChannelListener implements RtmChannelListener {
-    private String mChannel;
-    public ChannelListener(String channel) {
-            mChannel = channel;
-    }
-    @Override
-    public void onMessageReceived(
-            final RtmMessage message, final RtmChannelMember fromMember) {
-        String account = fromMember.getUserId();
-        String msg = message.getText();
-        Log.d(TAG, "Message received from channel: " + mChannel +
-        " member: " + account + " message: " + msg);
-    }
-
-    @Override
-    public void onMemberJoined(RtmChannelMember member) {
-        String account = member.getUserId();
-        Log.d(TAG, "member " + account + " joins the channel "
-                          + mChannel);
-    }
-
-    @Override
-    public void onMemberLeft(RtmChannelMember member) {
-        String account = member.getUserId();
-        Log.d(TAG, "member " + account + " lefted the channel "
-                         + mChannel);
-    }
-}
 
     public void init() {
         try {
