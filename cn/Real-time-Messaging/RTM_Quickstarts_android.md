@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Tue May 07 2019 13:34:54 GMT+0800 (CST)
+updatedAt: Wed May 08 2019 07:20:44 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -24,7 +24,7 @@ updatedAt: Tue May 07 2019 13:34:54 GMT+0800 (CST)
 
 需要下载的文件：
 
-[Agora RTM Java SDK for Linux](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_Java_v0_9_2.zip)
+[Agora RTM Java SDK for Android](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Android_v0_9_2.zip)
 
 下载的文件包括 libs 文件和 sample 文件，其中 libs 文件包括：
 
