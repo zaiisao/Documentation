@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux Java
-updatedAt: Wed May 08 2019 03:14:09 GMT+0800 (CST)
+updatedAt: Wed May 08 2019 03:14:13 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -60,9 +60,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 - 方法： [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353)
 - 回调： [onTokenExpired](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e)
 - 错误码： [RenewTokenError](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_renew_token_error.html)
-- 连接状态改变原因错误码： [CONNECTION_CHANGE_REASON_TOKEN_EXPIRED
-
-  ](/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_connection_change_reason.html#a0e1fb03e58b71446446cfb70a6610423) 。
+- 连接状态改变原因错误码： [CONNECTION_CHANGE_REASON_TOKEN_EXPIRED](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_connection_change_reason.html#a0e1fb03e58b71446446cfb70a6610423) 。
 
 #### 呼叫邀请相关
 
