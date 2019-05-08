@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed May 08 2019 02:19:58 GMT+0800 (CST)
+updatedAt: Wed May 08 2019 02:20:04 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -16,7 +16,7 @@ updatedAt: Wed May 08 2019 02:19:58 GMT+0800 (CST)
 - 支持多实例，允许在一个线程中调用多个 RTM 服务。 
 - 对错误码进行分类方便快速定位问题。
 
-更多产品功能及性能介绍，详见： [产品概述](../../cn/Real-time-Messaging/RTM_product.md) 。
+更多产品功能及性能介绍，详见： [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 。
 
 ## 0.9.0 版
 
