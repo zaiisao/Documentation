@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux Java
-updatedAt: Tue May 07 2019 13:35:54 GMT+0800 (CST)
+updatedAt: Wed May 08 2019 06:23:45 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -15,7 +15,40 @@ updatedAt: Tue May 07 2019 13:35:54 GMT+0800 (CST)
 请确保满足以下开发环境要求：
 
 - 物理或虚拟, Ubuntu Linux 14.04 LTS 64 位 及以上。
-- 下载 [Agora RTM Java SDK for Linux](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_Java_v0_9_2.zip)。SDK 文件应包括 libs 文件和 sample 文件。
+- 下载 [Agora RTM Java SDK for Linux](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_Java_v0_9_2.zip)。
+
+
+SDK 文件应包括 libs 文件和 sample 文件，其中 libs 文件包括：
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>文件/文件夹名称</strong></td>
+<td><strong>文件类型</strong></td>
+</tr>
+<tr><td>agora-rtm-sdk.jar</td>
+<td>Java JAR 文件</td>
+</tr>
+<tr><td>arm64-v8a</td>
+<td>文件夹</td>
+</tr>
+<tr><td>armeabi-v7a</td>
+<td>文件夹</td>
+</tr>
+<tr><td>include</td>
+<td>文件夹</td>
+</tr>
+<tr><td>x86</td>
+<td>文件夹</td>
+</tr>
+</tbody>
+</table>
+
+
+> 在正式使用 SDK 前，你可以尝试先在 sample 文件上集成 SDK。
 
 ### 创建 Agora 账号并获取 App ID
 
