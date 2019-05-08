@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed May 08 2019 02:17:42 GMT+0800 (CST)
+updatedAt: Wed May 08 2019 02:17:46 GMT+0800 (CST)
 ---
 # 产品概述
 
@@ -79,7 +79,7 @@ Agora RTM SDK 主要有以下特性：
 实时消息系统将逐步替代信令。除上述高可靠、高并发、全球化部署等优势之外，Agora RTM SDK 将会持续更新，不断推出更多更丰富的功能和场景应用。
 
 > - Agora RTM SDK 目前与 Agora Signaling SDK 暂未实现互通。互通功能将于近期实现。
-> - 对已有 Agora RTM SDK 的维护将于 2019 年第四季度停止。
+> - 对已有 Agora Signaling SDK 的维护将于 2019 年第四季度停止。
 
 
 
