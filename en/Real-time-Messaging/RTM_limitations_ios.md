@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: iOS,macOS
-updatedAt: Thu May 09 2019 08:35:19 GMT+0800 (CST)
+updatedAt: Thu May 09 2019 08:35:30 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM Java SDK for Android v0.9.1
@@ -33,7 +33,8 @@ Supports a maximum of 20 `AgoraRtmChannel` instances at the same time. If you ca
 
 Supports channel and peer-to-peer messages, invitation content, and invitation response in UTF-8 only. 
 
+
 ## Miscellaneous 
 
 - Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. If you have special requirements, contact sales-us@agora.io.
-- v0.9.2 supports querying the online status of a maximum of 256 users. 
+- v0.9.2 supports querying the online status of a maximum of 256 users.
