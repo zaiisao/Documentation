@@ -60,9 +60,9 @@ Usage:java RecordingSample --appId STRING --uid UINTEGER32 --channel STRING --ap
 
 > `appID`，`uid`，`channel` 和 `appliteDir` 这几个参数必须设置，如不设置则无法录制，其他参数可根据需要自行选择是否设置。
 
-| **参数**                    | 描述                                                         |
+| 参数                      | 描述                                                         |
 | --------------------------- | ------------------------------------------------------------ |
-| appID                       | App ID，必须和 Agora Native/Web SDK 的 App ID 一致，详见[获取 App ID](../../cn/Recording/token.md)。 |
+| appId                       | App ID，必须和 Agora Native/Web SDK 的 App ID 一致，详见[获取 App ID](../../cn/Recording/token.md)。 |
 | uid                         | 用户 ID，32 位无符号整数。建议设置范围：1 到（2<sup>32</sup>-1），并保证唯一性。<br/>有两种设置方式：<li>设置为 0，系统将自动分配一个用户 ID <li>设置一个唯一的用户 ID（不能与频道内的任何 uid 重复） |
 | channel                     | 希望录制的通话或直播的频道名                                 |
 | appliteDir                  | 必须设置为 `AgoraCoreServices` 存放的目录，SDK 包内该文件默认路径为：**Agora_Recording_SDK_for_Linux_FULL/bin/** |
