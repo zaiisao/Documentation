@@ -3,7 +3,7 @@
 title: 限制条件
 description: RTM Linux Java SDK limitations.
 platform: Linux Java
-updatedAt: Thu May 09 2019 02:37:59 GMT+0800 (CST)
+updatedAt: Thu May 09 2019 02:38:03 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
@@ -30,8 +30,10 @@ updatedAt: Thu May 09 2019 02:37:59 GMT+0800 (CST)
 
 ## 编码格式
 
-仅支持发送 UTF-8 编码格式的频道消息和点对点消息。
+仅支持发送 UTF-8 编码格式的频道消息和点对点消息、呼叫邀请 content、呼叫邀请 response。
 
 ## 其他 
 
-当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请请拨打 400 632 6626 或邮件 sales@agora.io。
+- Agora RTM SDK 目前与 Agora Signaling SDK 暂未实现互通。互通功能将于近期实现。
+- 当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请请拨打 400 632 6626 或邮件 sales@agora.io。
+- 当前版本仅支持查询最多 256 个用户的在线状态。
