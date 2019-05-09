@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Thu May 09 2019 02:27:14 GMT+0800 (CST)
+updatedAt: Thu May 09 2019 07:40:09 GMT+0800 (CST)
 ---
 # 限制条件
 本页介绍 Agora RTM Objective-C SDK for iOS/macOS 的使用限制条件。
@@ -39,4 +39,4 @@ updatedAt: Thu May 09 2019 02:27:14 GMT+0800 (CST)
 
 - Agora RTM SDK 目前与 Agora Signaling SDK 暂未实现互通。互通功能将于近期实现。
 - 当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请请拨打 400 632 6626 或邮件 sales@agora.io。
-- v0.9.2 仅支持查询最多 256 个用户的在线状态。
+- 当前版本仅支持查询最多 256 个用户的在线状态。
