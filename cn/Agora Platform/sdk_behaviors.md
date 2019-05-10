@@ -1,11 +1,11 @@
 
 ---
-title: SDK 对断网、杀进程的处理
+title: SDK 断线重连机制
 description: 
 platform: SDK 对断网、杀进程的处理
-updatedAt: Fri May 10 2019 09:31:51 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 09:55:38 GMT+0800 (CST)
 ---
-# SDK 对断网、杀进程的处理
+# SDK 断线重连机制
 ### 声网 SDK 有断线重连机制吗？
 
 断线一般分两种情况：断网、进程被杀。
