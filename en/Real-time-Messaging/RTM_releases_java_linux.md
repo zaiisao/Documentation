@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux
-updatedAt: Fri May 10 2019 04:12:58 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 04:13:05 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -61,7 +61,6 @@ In the production environment, you need to use a token to [log in](https://docs.
 - Callback: [onTokenExpired](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e)
 - Error Codes: 
   - [RenewTokenError](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_renew_token_error.html)
-  - [CONNECTION_CHANGE_REASON_TOKEN_EXPIRED](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_connection_change_reason.html#a0e1fb03e58b71446446cfb70a6610423) 
 
 #### Call Invitation
 
