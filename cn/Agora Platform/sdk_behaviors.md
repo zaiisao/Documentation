@@ -3,64 +3,48 @@
 title: SDK 断线重连机制
 description: 
 platform: SDK 对断网、杀进程的处理
-updatedAt: Fri May 10 2019 09:55:38 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 09:56:38 GMT+0800 (CST)
 ---
 # SDK 断线重连机制
-### 声网 SDK 有断线重连机制吗？
+本文展示弱网下 Agora SDK 连接状态的处理逻辑。
 
-断线一般分两种情况：断网、进程被杀。
+Agora SDK 在 v2.3.2 新增了 `onConnectionStateChanged`/`connectionChangedToState` 回调，用以报告当前的网络连接状态，及引起连接状态改变的原因。因此本文内容会分 v2.3.2 之前及 v2.3.3 之后两个版本来介绍。
 
-#### 断网
+ ### v2.3.2 之前
+ 
+下图展示从用户 UID 1 加入频道，到连接中断，再到重新加入频道过程中，本地及远端用户 UID 2 的应用层会收到的回调：
 
-假设有 A， B 两个用户处于同一个频道内进行音视频直播 / 通话，通话过程中 A 用户失去了网络连接。
+![](https://web-cdn.agora.io/docs-files/1557479717335)
 
-1.  A 失去网络连接（A 用户在 4 秒内没有收到服务器数据）：
-    -   如果 A 是 Android， Windows，或 Linux 平台，A 有回调： `onConnectionInterrupted`
-    -   如果 A 是 iOS 或 mac 平台： `rtcEngineConnectionDidInterrupted`
-    -   如果 A 是 Web 平台，A 没有回调。
-2.  失去连接后， A 尝试重连其他服务器,直到重连成功：
-    -   如果 A 在 10 秒内未连接成功，会有回调：
-		* 		如果 A 是 Android， Windows，或 Linux 平台： `onConnectionLost`
-		*     如果 A 是 iOS 或 mac 平台： `rtcEngineConnectionDidLost`
-		*     如果 A 是 Web 平台，A 没有回调。
-    -   如果 B 在一定时间内没有收到 A 的包，B 有回调：
-        -   如果 B 是 Android， Windows，或 Linux 平台，20 秒内没有收到 A 的包： `onUserOffline`
-        -   如果 B 是 iOS 或 mac 平台，20 秒内没有收到 A 的包： `didOfflineOfUid`
-        -   如果 B 是 Web 平台，10 秒内没有收到 A 的包：`client.on('stream-removed')`
-    -   如果 A 重连成功：
-        -   如果 A 是 Android， Windows，或 Linux 平台，A 有回调： `didRejoinChannel`
-        -   如果 A 是 iOS 或 mac 平台，A 有回调： `didRejoinChannel`
-        -   如果 A 是 Web 平台，A 没有回调。
+其中：
 
-        如果此前 B 未收到 A 重连失败的回调，B 不会因为 A 重连成功而收到回调；如果此前 B 已经收到 A 重连失败的回调，则此时 B 有回调：
-        -   如果 B 是 Android， Windows，或 Linux 平台：`onUserJoined`
-        -   如果 B 是 iOS 或 mac 平台： `didJoinedOfUid`
-        -   如果 B 是 Web 平台： `client.on('stream-added')`
+- T0 = 0 s：SDK 接收到应用层发起的 `joinChannel`/`joinChannelByToken` 请求
+- T1 ≈ T0 + 200 ms：通常在调用 `joinChannel`/`joinChannelByToken` 200 毫秒后，应用层可以加入频道。加入频道后 UID 1 的应用层收到 `onJoinChannelSuccess`/`didJoinChannel` 回调
+- T2 ≈ T1 + 100 ms：因网间传输延迟，UID 2 感知 UID 1 加入频道约有 100 毫秒的延迟，此时 UID 2 的应用层收到 `onUserJoined`/`didJoinedOfUid` 回调
+- T3：某个时间点 UID 1 客户端因断网等原因导致上行网络变差。SDK 会尝试重新加入频道
+- T4 = T3 + 4 s：如果 UID 1 连续 4 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionInterrupted`/`rtcEngineConnectionDidInterrupted` 回调；同时 SDK 继续尝试重新加入频道
+- T5 = T3 + 15 s：如果 UID 1 连续 15 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionLost`/`rtcEngineConnectionDidLost` 回调；同时 SDK 继续尝试重新加入频道
+- T6 = T3 + 20 s：如果 UID 2 连续 20 秒没有收到 UID 1 的任何数据，SDK 判断远端用户掉线，UID 2 的应用层会收到 onUserOffline/didOfflineOfUid 回调
+- T7：如果 UID 1 重新加入频道成功，UID 1 的应用层会收到 `onRejoinChannelSuccess`/`didRejoinChannel` 回调
+- T8 ≈ T7 + 100 ms：大约 100 毫秒的延迟后，UID 2 的应用层再次收到 `onUserJoined`/`didJoinOfUid` 回调，表示远端用户重新上线
 
-#### 进程被杀
 
-进程被杀包括以下各种情况：
+### v2.3.2 及之后
 
--   通信模式/直播模式
--   打开/关闭 voip 模式
--   前台/后台运行时进程被杀
--   网页关闭（Web 端）
+下图展示从用户 UID 1 加入频道，到连接中断，再到连接完全失败过程中，本地及远端用户 UID 2 的应用层会收到的回调：
 
-假设有 A， B 两个用户处于同一个频道内进行音视频直播/通话。
-当 A 进程被杀：
+![](https://web-cdn.agora.io/docs-files/1557480056385)
 
--   如果 A 是 iOS 或 mac 平台：A 自动触发 `leaveChannel`，B 有回调：
-    -   如果 B 是 Android， Windows，或 Linux 平台：` onUserOffline`
-    -   如果 B 是 iOS 或 mac 平台： `didOfflineOfUid`
-    -   如果 B 是 Web 平台： `client.on('peer-leave')`
 
--   如果 A 是 Android， Windows，或 Linux 平台，且 B 使用的是 Native SDK：
-    -   如果 20 秒内， A 没有重启 app 并加入原频道，B 有回调：
-        -   如果 B 是 Android， Windows，或 Linux 平台： `onUserOffline`
-        -   如果 B 是 iOS 或 mac 平台：` didOfflineOfUid`
-    -   如果 20 秒内， A 重启 app 并加入原频道，B 不会收到回调。
-- 如果 A 是 Android， Windows，或 Linux 平台，且 B 使用的是 Web SDK：
-     - 如果 10 秒内， A 没有重启 app 并加入原频道，B 有回调：`client.on('stream-removed')`
-     - 如果 10 秒内， A 重启 app 并加入原频道，B 不会收到回调。
-- 如果 A 使用的是 Web SDK，进程被杀与掉线的行为是一样的。
--  如果 A 是频道内最后一个用户，服务端会在 10s 后销毁频道
+其中：
+
+- T0 = 0 s：SDK 接收到应用层发起的 `joinChannel`/`joinChannelByToken` 请求
+- T1 ≈ T0 + 200 ms：通常在调用 `joinChannel`/`joinChannelByToken` 200 毫秒后，应用层可以加入频道。加入频道过程中，UID 1 的应用层会收到 `onConnectionStateChanged(CONNECTION_STATE_CONNECTING, CONNECTION_CHANGED_CONNECTING)`/`connectionChangedToState(AgoraConnectionStateConnecting, AgoraConnectionChangedConnecting`)；加入后收到 `onConnectionStateChanged(CONNECTION_STATE_CONNECTED, CONNECTION_CHANGED_JOIN_SUCCESS)`/`connectionChangedToState(AgoraConnectionStateConnected, AgoraConnectionChangedJoinSuccess)` 和 `onJoinChannelSuccess`/`didJoinChannel` 回调
+- T2 ≈ T1 + 100 ms：因网间传输延迟，UID 2 感知 UID 1 加入频道约有 100 毫秒的延迟，此时 UID 2 的应用层收到 `onUserJoined`/`didJoinedOfUid` 回调，
+- T3：某个时间点 UID 1 客户端因断网等原因导致上行网络变差。SDK 会尝试重新加入频道
+- T4 = T3 + 4 s：如果 UID 1 连续 4 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionStateChanged(CONNECTION_STATE_RECONNECTING, CONNECTION_CHANGED_INTERRUPTED)`/`connectionChangedToState(AgoraConnectionStateReconnecting, AgoraConnectionChangedInterrupted)` 回调；同时 SDK 继续尝试重新加入频道
+- T5 = T3 + 15 s：如果 UID 1 连续 15 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionLost`/`rtcEngineConnectionDidLost` 回调；同时 SDK 继续尝试重新加入频道
+- T6 = T3 + 20 s：如果 UID 2 连续 20 秒没有收到 UID 1 的任何数据，SDK 判断远端用户掉线，UID 2 的应用层会收到 `onUserOffline`/`didOfflineOfUid` 回调
+- T7 = T6 + 20 min：如果 UID 1 连续 20 分钟无法重新加入频道，SDK 不再继续尝试。UID 1 的应用层收到 `onConnectionStateChanged(CONNECTION_STATE_FAILED, CONNECTION_CHANGED_JOIN_FAILED)`/`connectionChangedToState(AgoraConnectionStateFailed, AgoraConnectionChangedJoinFailed)` 回调；用户需要退出当前频道，然后重新加入频道
+
+> 如果 UID 2 是 Web 客户端，则 Web 端在 UID 1 加入和重新接入频道时，会收到 `client.on('stream-added')` 回调；如果 10 秒内未收到 UID 1 的任何数据，会收到 `client.on('stream-removed')` 回调。
