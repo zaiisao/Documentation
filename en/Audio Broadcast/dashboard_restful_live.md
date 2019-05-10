@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Mar 06 2019 03:54:31 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 06:20:16 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
@@ -54,8 +54,8 @@ The following chart shows how you can use Project APIs.
 
 									"id": 'xxxx',
 									"name": 'project1',
-									"vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-									"sign_key": '4855898a22ae4102a29b81ba76f2eae2',
+									"vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+									"sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
 									"recording_server": '10.2.2.8:8080',
 									"status": 1,
 									"created": 1464165672
@@ -95,8 +95,8 @@ The following chart shows how you can use Project APIs.
 
 									"id": 'xxxx',
 									"name": 'project1',
-									"vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-									"sign_key": '4855898a22ae4102a29b81ba76f2eae2',
+									"vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+									"sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
 									"recording_server": '10.2.2.8:8080',
 									"status": 1,
 									"created": 1464165672
@@ -135,8 +135,8 @@ The following chart shows how you can use Project APIs.
 
 							 "id": 'xxxx',
 							 "name": 'project1',
-							 "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-							 "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
+							 "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+							 "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
 							 "status": 1,
 							 "created": 1464165672
 
@@ -168,8 +168,8 @@ The following chart shows how you can use Project APIs.
 
 								 "id": 'xxxx',
 								 "name": 'project1',
-								 "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-								 "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
+								 "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+								 "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
 								 "status": 0,
 								 "created": 1464165672
 
