@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri May 10 2019 04:07:41 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 04:07:54 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -76,8 +76,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
     
                     "id": 'xxxx',
                     "name": 'project1',
-                    "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-                    "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
+                    "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+                    "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
                     "recording_server": '10.2.2.8:8080',
                     "status": 1,
                     "created": 1464165672
@@ -117,8 +117,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
     
                     "id": 'xxxx',
                     "name": 'project1',
-                    "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-                    "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
+                    "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+                    "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
                     "recording_server": '10.2.2.8:8080',
                     "status": 1,
                     "created": 1464165672
@@ -157,8 +157,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
     
                  "id": 'xxxx',
                  "name": 'project1',
-                 "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-                 "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
+                 "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+                 "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
                  "status": 1,
                  "created": 1464165672
     
@@ -191,8 +191,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
         
                    "id": 'xxxx',
                    "name": 'project1',
-                   "vendor_key": '4855898a22ae4102a29b81ba76f2eae2',
-                   "sign_key": '4855898a22ae4102a29b81ba76f2eae2',
+                   "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+                   "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
                    "status": 0,
                    "created": 1464165672
         
