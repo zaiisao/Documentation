@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux Java
-updatedAt: Fri May 10 2019 11:23:10 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 11:23:14 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -65,15 +65,15 @@ SDK 文件应包括 libs 文件和 sample 文件，其中 libs 文件包括：
 public static final String APP_ID = "<#YOUR APP ID#>";
 ```
 
-1. 将下载的 SDK 解压并将其中的 libs 文件夹下的 `*.jar`, `*.so` 复制到本项目的 /lib 文件夹下。
+2. 将下载的 SDK 解压并将其中的 libs 文件夹下的 `*.jar`, `*.so` 复制到本项目的 /lib 文件夹下。
 
-2. 如果没有 maven 环境，需要安装 `apache-maven-3.6.0`。
+3. 如果没有 maven 环境，需要安装 `apache-maven-3.6.0`。
 
-3. 将 demo 依赖的 jar 包安装到本地 maven 仓库：
+4. 将 demo 依赖的 jar 包安装到本地 maven 仓库：
 
 `mvn install:install-file -Dfile=lib/agora_rtm.jar -DgroupId=io.agora.rtm -DartifactId=agora-rtm-sdk -Dversion=1.0 -Dpackaging=jar`
 
-4. 使用 maven 编译打包, 在 `pom.xml` 所在目录运行 `mvn package`。
+5. 使用 maven 编译打包, 在 `pom.xml` 所在目录运行 `mvn package`。
 
 ## 初始化
 
