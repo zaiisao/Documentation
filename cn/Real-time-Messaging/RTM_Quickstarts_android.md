@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Wed May 08 2019 07:20:44 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 11:19:05 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -133,7 +133,7 @@ import io.agora.rtm.RtmMessage;
 
 RTM 支持多实例，事件回调须是不同的实例。
 
-当实例不再使用的时，可以调用实例的 `release()`方法释放资源。
+当实例不再使用时，可以调用实例的 `release()`方法释放资源。
 
 ## 登录
 
