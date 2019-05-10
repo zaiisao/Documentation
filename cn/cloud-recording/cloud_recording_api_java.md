@@ -3,7 +3,7 @@
 title: 云端录制 Java API
 description: For java
 platform: Java
-updatedAt: Mon Apr 29 2019 02:59:24 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 09:19:09 GMT+0800 (CST)
 ---
 # 云端录制 Java API
 | **接口类**                                                   | **描述**                   |
@@ -312,7 +312,7 @@ public void onRecordingBackedUp(String recording_id, String file_name)
 
 该回调方法表示录制文件成功上传到 Agora 云备份。
 	
-如果在录制过程中有录制文件未能成功上传至第三方云存储，Agora 服务器会自动将这部分录制文件上传至 Agora 云备份，在录制结束后触发该回调。
+如果在录制过程中有录制文件未能成功上传至第三方云存储，Agora 服务器会自动将这部分录制文件上传至 Agora 云备份，在录制结束后触发该回调。Agora 云备份会继续尝试将这部分文件上传至设定的第三方云存储。如果等待五分钟后仍然不能正常[播放录制文件](../../cn/cloud-recording/cloud_recording_onlineplay.md)，请联系 Agora 技术支持。
 
 
 | 参数           | 描述                            |
