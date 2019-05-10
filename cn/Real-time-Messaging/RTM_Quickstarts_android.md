@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Fri May 10 2019 11:19:05 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 11:36:24 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -20,7 +20,7 @@ updatedAt: Fri May 10 2019 11:19:05 GMT+0800 (CST)
 
 - App 要求 Android 4.1 或以上设备
 
-- 如果你的 App 以 Android 9 及以上为目标平台，请关注[Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+- 如果你的 App 以 Android 9 及以上为目标平台，请关注 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
 
 需要下载的文件：
 
