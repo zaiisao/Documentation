@@ -3,12 +3,12 @@
 title: SDK 断线重连机制
 description: 
 platform: SDK 对断网、杀进程的处理
-updatedAt: Fri May 10 2019 09:56:38 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 10:12:02 GMT+0800 (CST)
 ---
 # SDK 断线重连机制
 本文展示弱网下 Agora SDK 连接状态的处理逻辑。
 
-Agora SDK 在 v2.3.2 新增了 `onConnectionStateChanged`/`connectionChangedToState` 回调，用以报告当前的网络连接状态，及引起连接状态改变的原因。因此本文内容会分 v2.3.2 之前及 v2.3.3 之后两个版本来介绍。
+Agora SDK 在 v2.3.2 新增了 [`onConnectionStateChanged`](https://docs.agora.io/cn/Agora%20Platform/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4)/[`connectionStateChangedToState`](https://docs.agora.io/cn/Agora%20Platform/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)  回调，用以报告当前的网络连接状态，及引起连接状态改变的原因。因此本文内容会分 v2.3.2 之前及 v2.3.3 之后两个版本来介绍。
 
  ### v2.3.2 之前
  
