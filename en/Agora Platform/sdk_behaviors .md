@@ -3,65 +3,47 @@
 title: SDK Reconnection Mechanism
 description: 
 platform: All Platforms
-updatedAt: Fri May 10 2019 10:09:48 GMT+0800 (CST)
+updatedAt: Fri May 10 2019 10:11:56 GMT+0800 (CST)
 ---
 # SDK Reconnection Mechanism
-### Does the Agora SDK reconnect when a user drops offline or a process gets killed?
+This page shows the connection state mechanism of the Agora SDK.
 
-#### User Drops Offline
+The Agora SDK adds the [`onConnectionStateChanged`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4)/[`connectionStateChangedToState`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback in v2.3.2. This callback reports the current network connection state and reasons to any state change.
 
-User A and user B are in the same channel and user A loses network connection:
+### Before v2.3.2
 
-1.  User A loses connection with the server (no data is received from the server within four seconds):
-    -   Android, Windows, or Linux: User A receives the `onConnectionInterrupted` callback.
-    -   iOS or macOS: User A receives the `rtcEngineConnectionDidInterrupted` callback. 
-    -   The Web: User A does not receive any callback. 
-2.  After being disconnected, user A tries to reconnect to other servers until connection. 
- - If User A does not reconnect to a server within 10 seconds: 
-        -   Android, Windows, or Linux: User A receives the `onConnectionLost` callback. 
-        -   iOS or macOS: User A receives the `rtcEngineConnectionDidLost` callback. 
-        -   The Web: User A does not receive any callback. 
-	-   User B receives a callback if no packet is received from user A within a specific time frame: 
-        -   Android, Windows, or Linux: If user B does not receive any packet from user A within 20 seconds, user B receives the `onUserOffline` callback. 
-        -   iOS or macOS: If user B does not receive any packet from user A within 20 seconds, user B receives the `didOfflineOfUid` callback. 
-        -   The Web: If user B does not receive any packet from user A within 10 seconds, user B receives the `client.on('stream-removed')` callback. 
-    -   If user A reconnects to the server: 
-        -   Android, Windows, or Linux: User A receives the `didRejoinChannel` callback. 
-        -  iOS or macOS: User A receives the `didRejoinChannel` callback. 
-        -   The Web: User A does not receive any callback. 
+The following diagram shows the callbacks received by the apps of UID 1 and UID 2 during which UID 1 joins the channel, experiences a network exception, loses connection, and rejoins the channel.
 
-If user B does not receive any callback indicating that user A fails to reconnect, then user B does not receive any callback even if user A reconnects to the server.
+![](https://web-cdn.agora.io/docs-files/1557482391248)
 
-If user B previously receives a callback indicating that user A fails to reconnect to the server, then: 
--   Android, Windows, or Linux: User B receives the `onUserJoined` callback.  
--   iOS or macOS: User B receives the `didJoinedOfUid` callback. 
--   The Web: User B receives the `client.on('stream-added')` callback. 
+Where:
 
-#### Process Gets Killed
+- T0 = 0 s: The SDK receives the `joinChannel`/`joinChannelByToken` request from the app of UID 1.
+- T1 ≈ T0 + 200 ms: 200 ms after calling the `joinChannel`/`joinChannelByToken` method, the app of UID 1 joins the channel and receives the `onJoinChannelSuccess`/`didJoinChannel` callback.
+- T2 ≈ T1 + 100 ms: Due to network latency, the app of UID 2 detects UID 1 100 ms after the latter joins the channel. UID 2 receives the `onUserJoined`/`didJoinedOfUid` callback.
+- T3: The uplink network condition of UID 1 deteriorates. The SDK automatically tries rejoining the channel.
+- T4 = T3 + 4 s: If the app of UID 1 fails to receive any data from the server in 4 seconds, it receives the `onConnectionInterrupted`/`rtcEngineConnectionDidInterrupted` callback; meanwhile the SDK continues to try rejoining the channel.
+- T5 = T3 + 15 s: If the app of UID 1 fails to receive any data from the server in 15 seconds, it receives the `onConnectionLost`/`rtcEngineConnectionDidLost` callback; meanwhile the SDK continue to try rejoining the channel.
+- T6 = T3 + 20 s: If the app of UID 2 fails to receive any data from UID 1 in 20 seconds, the SDK decides that UID 1 is offline. The app of UID 2 receives the `onUserOffline`/`didOfflineOfUid` callback.
+- T7: If the app of UID 1 successfully rejoins the channel, it receives the `onRejoinChannelSuccess`/`didRejoinChannel` callback.
+- T8 ≈ T7 + 100ms: 100 ms after the app of UID 1 successfully rejoins the channel, the app of UID 2 receives the `onUserJoined`/`didJoinOfUid callback`, which means that UID 1 is online again.
 
-This scenario involves the following situations: 
+### v2.3.2 and Later
 
-- Enables or disables VoIP mode.
-- The process gets killed.
-- Closes a web page.
+The following diagram shows the callbacks received by the apps of UID 1 and UID 2 during which UID 1 joins the channel, experiences a network exception, loses connection, and eventually fails to rejoin the channel.
 
-User A and user B are in the same channel. 
+![](https://web-cdn.agora.io/docs-files/1557482418517)
 
-When the process of user A gets killed: 
+Where:
 
--   iOS or macOS: User A calls the `leaveChannel` method and user B receives a callback: 
-    -   Android, Windows, or Linux: User B receives the ` onUserOffline` callback. 
-    -   iOS or macOS: User B receives the `didOfflineOfUid` callback. 
-    -   The Web: User B receives the `client.on('peer-leave')` callback. 
+- T0 = 0 s: The SDK receives the `joinChannel`/`joinChannelByToken` request from the app of UID 1.
+- T1 ≈ T0 + 200 ms: 200 ms after calling the `joinChannel`/`joinChannelByToken` method, the app of UID 1 joins the channel.  During the process, the app of UID 1 also receives the `onConnectionStateChanged(CONNECTION_STATE_CONNECTING, CONNECTION_CHANGED_CONNECTING)`/`connectionChangedToState(AgoraConnectionStateConnecting, AgoraConnectionChangedConnecting)` callback. When successfully joining the channel, app of UID 1 receives the `onConnectionStateChanged(CONNECTION_STATE_CONNECTED, CONNECTION_CHANGED_JOIN_SUCCESS)`/`connectionChangedToState(AgoraConnectionStateConnected, AgoraConnectionChangedJoinSuccess)` and `onJoinChannelSuccess`/`didJoinChannel` callbacks. 
+- T2 ≈ T1 + 100 ms: Due to network latency, the app of UID 2 detects UID 1 100 ms after the latter joins the channel. UID 2 receives the `onUserJoined`/`didJoinedOfUid` callback.
+- T3: The uplink network condition of UID 1 deteriorates. The SDK automatically tries rejoining the channel.
+- T4 = T3 + 4 s: If the app of UID 1 fails to receive any data from the server in 4 seconds, it receives the `onConnectionStateChanged(CONNECTION_STATE_RECONNECTING, CONNECTION_CHANGED_INTERRUPTED)`/`connectionChangedToState(AgoraConnectionStateReconnecting, AgoraConnectionChangedInterrupted)` callback; meanwhile the SDK continues to try rejoining the channel.
+- T5 = T3 + 15 s: If the app of UID 1 fails to receive any data from the server in 15 seconds, it receives the `onConnectionLost`/`rtcEngineConnectionDidLost` callback; meanwhile the SDK continue to try rejoining the channel.
+- T6 = T3 + 20 s: If the app of UID 2 fails to receive any data from UID 1 in 20 seconds, the SDK decides that UID 1 is offline. The app of UID 2 receives the `onUserOffline`/`didOfflineOfUid` callback.
+- T7: If the app of UID 1 fails to rejoin the channel in 20 minutes, the SDK stops trying. The app of UID 1 receives the `onConnectionStateChanged(CONNECTION_STATE_FAILED, CONNECTION_CHANGED_JOIN_FAILED)`/`connectionChangedToState(AgoraConnectionStateFailed, AgoraConnectionChangedJoinFailed)` callback. UID 1 needs to leave the channel and call the `joinChannel`/`joinChannelByToken` method to join the channel.
 
--   If user A is in Android, Windows, or Linux and user B uses the Native SDK:
-    -   If user A does not restart the application and rejoin the original channel within 20 seconds, user B receives a callback:
-        -   Android, Windows, or Linux: User B receives the `onUserOffline` callback. 
-        -   iOS or macOS: User B receives the ` didOfflineOfUid` callback. 
-    -   If user A restarts the application and rejoins the original channel within 20 seconds, user B does not receive any callback function. 
--  If user A is in Android, Windows, or Linux and user B uses the Web SDK: 
-     - If user A does not restart the application and rejoin the original channel within 10 seconds, user B receives the `client.on('stream-removed')` callback. 
-     - If user A restarts the application and rejoins the original channel, user B does not receive any callback. 
-- For the Web SDK, killing a process is equivalent to a user dropping offline. 
--  If user A is the last user in the channel, the server destroys the channel in 10 seconds. 
+> If UID 2 is a Web client, the Web app receives the  `client.on('stream-added')` callback when UID 1 joins and rejoins the channel. It receives the `client.on('stream-removed')` callback if it fails to receive any data from the app of UID 2 in 10 seconds.
 
