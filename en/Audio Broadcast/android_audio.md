@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Tue May 14 2019 02:16:05 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 02:16:15 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -131,7 +131,7 @@ To call the plug-ins in the include files under the libs folder, you need to con
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="io.agora.tutorials1v1acall">
       
-  <uses-permission android:name="android.permission.READ_PHONE_STATE” />	
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />	
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
   <uses-permission android:name="android.permission.CAMERA" />

@@ -3,17 +3,17 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue May 14 2019 06:50:27 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 06:50:35 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. 认证
 
+> 在使用本文 RESTful API 提供的功能前，请确认你的账号已在 Dashboard 开通指定项目的相关权限。Agora 支持自定义用户角色和相应的项目权限，详见 [Dashboard 权限说明](../../cn/Video/dashboard.md)。
+
 RESTful API 仅支持 HTTPS。用户必须通过 basic HTTP 认证:
 
 -   用户名: Customer ID
-
 -   密钥: Customer Certificate
-
 
 与 Agora SDK 所使用的 App ID 和 App Certificate 不同，Customer ID 和 Customer Certificate 仅用于访问 Restful API。
 

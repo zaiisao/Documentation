@@ -3,7 +3,7 @@
 title: SDK Reconnection Mechanism
 description: 
 platform: All Platforms
-updatedAt: Tue May 14 2019 08:34:28 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 08:34:36 GMT+0800 (CST)
 ---
 # SDK Reconnection Mechanism
 This page shows the connection state mechanism of the Agora SDK.
@@ -45,5 +45,8 @@ Where:
 - T6 = T3 + 20 s: If the app of UID 2 fails to receive any data from UID 1 in 20 seconds, the SDK decides that UID 1 is offline. The app of UID 2 receives the `onUserOffline`/`didOfflineOfUid` callback.
 - T7: If the app of UID 1 fails to rejoin the channel in 20 minutes, the SDK stops trying. The app of UID 1 receives the `onConnectionStateChanged(CONNECTION_STATE_FAILED, CONNECTION_CHANGED_JOIN_FAILED)`/`connectionChangedToState(AgoraConnectionStateFailed, AgoraConnectionChangedJoinFailed)` callback. UID 1 needs to leave the channel and call the `joinChannel`/`joinChannelByToken` method to join the channel.
 
-> If UID 2 is a Web client, the Web app receives the  `client.on('stream-added')` callback when UID 1 joins and rejoins the channel. It receives the `client.on('stream-removed')` callback if it fails to receive any data from the app of UID 2 in 10 seconds.
+> If UID 2 is a Web client, the behaviors of the Web app are as follows:
+> - When UID 1 joins and rejoins the channel, UID 2 receives the `client.on('stream-added')` callback. 
+> - If UID 2 does not receive any data from UID 1 in 10 seconds, UID 2 receives the `client.on('stream-removed')` callback.
+> - If the server does not receive any data from UID 1 in 30 seconds, UID 2 receives the `client.on('peer-leave')` callback.
 
