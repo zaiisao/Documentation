@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: iOS
-updatedAt: Tue May 14 2019 08:56:58 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 08:57:03 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -44,7 +44,6 @@ updatedAt: Tue May 14 2019 08:56:58 GMT+0800 (CST)
 3. 打开 **Build Phases** 页面，展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加
 
    - **AgoraRtmKit.framework**
-   - **CoreWLAN.framework**
    - **libc++.tbd**
    - **libresolv.tbd**
    - **SystemConfiguration.framework**
