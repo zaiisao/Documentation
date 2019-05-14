@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: Android
-updatedAt: Tue May 14 2019 12:16:03 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 12:25:40 GMT+0800 (CST)
 ---
 # 选择加密方案
 本文介绍如何选择加密方案。
