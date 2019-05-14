@@ -3,7 +3,7 @@
 title: 集成客户端 
 description: 
 platform: Android
-updatedAt: Tue May 14 2019 02:14:23 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 02:14:48 GMT+0800 (CST)
 ---
 # 集成客户端 
 本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -135,7 +135,7 @@ Android [视频通话/视频直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
   <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="io.agora.tutorials1v1acall">
       
-  <uses-permission android:name="android.permission.READ_PHONE_STATE” />	
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />	
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.RECORD_AUDIO" />
   <uses-permission android:name="android.permission.CAMERA" />
