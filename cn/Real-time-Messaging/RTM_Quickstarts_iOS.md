@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: iOS
-updatedAt: Fri May 10 2019 11:20:40 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 08:56:58 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
