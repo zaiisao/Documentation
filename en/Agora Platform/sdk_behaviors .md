@@ -3,7 +3,7 @@
 title: SDK Reconnection Mechanism
 description: 
 platform: All Platforms
-updatedAt: Fri May 10 2019 10:11:56 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 08:34:28 GMT+0800 (CST)
 ---
 # SDK Reconnection Mechanism
 This page shows the connection state mechanism of the Agora SDK.
