@@ -3,7 +3,7 @@
 title: SDK 断线重连机制
 description: 
 platform: SDK 对断网、杀进程的处理
-updatedAt: Tue May 14 2019 08:24:27 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 08:24:35 GMT+0800 (CST)
 ---
 # SDK 断线重连机制
 本文展示弱网下 Agora SDK 连接状态的处理逻辑。
@@ -47,4 +47,7 @@ Agora SDK 在 v2.3.2 新增了 [`onConnectionStateChanged`](https://docs.agora.i
 - T6 = T3 + 20 s：如果 UID 2 连续 20 秒没有收到 UID 1 的任何数据，SDK 判断远端用户掉线，UID 2 的应用层会收到 `onUserOffline`/`didOfflineOfUid` 回调
 - T7 = T6 + 20 min：如果 UID 1 连续 20 分钟无法重新加入频道，SDK 不再继续尝试。UID 1 的应用层收到 `onConnectionStateChanged(CONNECTION_STATE_FAILED, CONNECTION_CHANGED_JOIN_FAILED)`/`connectionChangedToState(AgoraConnectionStateFailed, AgoraConnectionChangedJoinFailed)` 回调；用户需要退出当前频道，然后重新加入频道
 
-> 如果 UID 2 是 Web 客户端，则 Web 端在 UID 1 加入和重新接入频道时，会收到 `client.on('stream-added')` 回调；如果 10 秒内未收到 UID 1 的任何数据，会收到 `client.on('stream-removed')` 回调。
+> 如果 UID 2 是 Web 客户端，则 Web 端行为如下：
+> -  UID 1 加入和重新加入频道时，UID 2 会收到 `client.on('stream-added')` 回调
+> -  UID 2 10 秒内未收到 UID 1 的任何数据，UID 2 会收到 `client.on('stream-removed')` 回调
+> -  服务器在 30 秒内未收到 UID 1 的任何数据，UID 2 会收到 `client.on('peer-leave')` 回调 

@@ -3,10 +3,12 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue May 14 2019 07:04:43 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 07:04:54 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
+
+> Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Dashboard. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Video/dashboard.md).
 
 The RESTful API only supports HTTPS, and the user must pass the basic HTTP authentication with the following information:
 
