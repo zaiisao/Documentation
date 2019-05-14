@@ -3,7 +3,7 @@
 title: Implement Encryption
 description: 
 platform: Windows
-updatedAt: Tue May 14 2019 12:19:21 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 12:24:06 GMT+0800 (CST)
 ---
 # Implement Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
@@ -120,7 +120,7 @@ class AgoraPacketObserver : public agora::IPacketObserver
                      const unsigned char* pe = packet.buffer+packet.size;
 
 
-                              for (i = 0; p < pe && i < m_txAudioBuffer.size(); ++p, ++i)
+                     for (i = 0; p < pe && i < m_txAudioBuffer.size(); ++p, ++i)
                      {
                          m_txAudioBuffer[i] = *p ^ 0x55;
                      }
