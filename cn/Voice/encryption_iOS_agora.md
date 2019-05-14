@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: iOS,macOS
-updatedAt: Tue May 14 2019 12:16:41 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 12:26:13 GMT+0800 (CST)
 ---
 # 选择加密方案
 本文介绍如何选择加密方案。
@@ -163,7 +163,7 @@ class AgoraPacketObserver : public agora::IPacketObserver
          const unsigned char* pe = packet.buffer+packet.size;
 
 
-                  for (i = 0; p < pe && i < m_txAudioBuffer.size(); ++p, ++i)
+          for (i = 0; p < pe && i < m_txAudioBuffer.size(); ++p, ++i)
          {
              m_txAudioBuffer[i] = *p ^ 0x55;
          }
