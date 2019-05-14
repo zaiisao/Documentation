@@ -3,7 +3,7 @@
 title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Tue May 14 2019 07:15:55 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 13:42:06 GMT+0800 (CST)
 ---
 # Dashboard
 Agora Dashboard allows you to check your usage and the QoE, check your balance, manage your projects and team members, and connect with Agora customer support.
