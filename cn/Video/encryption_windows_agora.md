@@ -3,7 +3,7 @@
 title: 选择加密方案
 description: 
 platform: Windows
-updatedAt: Fri Nov 30 2018 03:54:45 GMT+0800 (CST)
+updatedAt: Tue May 14 2019 12:17:17 GMT+0800 (CST)
 ---
 # 选择加密方案
 本文描述如何使用 Agora 内置的加密方案。
@@ -166,7 +166,7 @@ class AgoraPacketObserver : public agora::IPacketObserver
          const unsigned char* pe = packet.buffer+packet.size;
 
 
-                 for (i = 0; p < pe && i < m_rxVideoBuffer.size(); ++p, ++i)
+         for (i = 0; p < pe && i < m_rxVideoBuffer.size(); ++p, ++i)
          {
              m_rxVideoBuffer[i] = *p ^ 0x55;
          }
