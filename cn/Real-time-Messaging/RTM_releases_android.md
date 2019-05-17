@@ -3,12 +3,12 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri May 10 2019 03:15:42 GMT+0800 (CST)
+updatedAt: Fri May 17 2019 05:27:05 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
-Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 。
+Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 了解更多详情。
 
 ## 0.9.2 版
 
