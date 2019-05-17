@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Fri May 17 2019 06:56:39 GMT+0800 (CST)
+updatedAt: Fri May 17 2019 06:59:27 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora SDK for iOS.
@@ -11,7 +11,7 @@ This page contains information on how to prepare the development environment bef
 ## Prerequisites
 
 Development environment:
-- Xcode 9.0+.
+- Xcode 10.0+.
 - Physical iOS device 8.0+ \(iPhone or iPad\).
 - Ensure that your project has a validated provisioning profile certificate.
 - Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
