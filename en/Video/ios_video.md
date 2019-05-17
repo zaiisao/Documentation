@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Fri May 17 2019 06:55:22 GMT+0800 (CST)
+updatedAt: Fri May 17 2019 06:55:39 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for iOS.
@@ -11,7 +11,7 @@ This page contains information on how to prepare the development environment bef
 ## Prerequisites
 
 Development environment:
-- Xcode 9.0+.
+- Xcode 10.0+.
 - Physical iOS device 8.0+ \(iPhone or iPad\).
 - Ensure that your project has a validated provisioning profile certificate.
 - Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
@@ -112,6 +112,8 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
  `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
 
    <img alt="../_images/ios_video_5.jpg" src="https://web-cdn.agora.io/docs-files/en/ios_video_5.jpg" />
+	
+> Set the dependency of `CoreML.framework` as **Optional** in **Xcode** if your device runs **iOS 9** or before.
 
 ## Authorize the Use of the Agora SDK
 
