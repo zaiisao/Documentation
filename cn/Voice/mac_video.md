@@ -3,14 +3,14 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Tue Jan 29 2019 02:59:49 GMT+0800 (CST)
+updatedAt: Fri May 17 2019 07:02:16 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for macOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
 
 ## 前提条件
 
-- Xcode 9.0+。
+- Xcode 10.0+。
 - OS X 10.0+ 真机（MacBook）。
 - 请确保你的项目已设置有效的开发者签名。
 - 请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
