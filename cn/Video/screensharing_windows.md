@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Windows
-updatedAt: Mon Apr 01 2019 09:34:17 GMT+0800 (CST)
+updatedAt: Fri May 17 2019 07:51:23 GMT+0800 (CST)
 ---
 # 进行屏幕共享
 ## 功能简介
