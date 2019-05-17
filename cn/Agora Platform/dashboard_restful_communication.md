@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue May 14 2019 06:50:35 GMT+0800 (CST)
+updatedAt: Fri May 17 2019 06:28:02 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -539,7 +539,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
 ## 6. 查询在线频道信息 API
 
-BaseUrl：**http://api.agora.io/dev/v1/**
+BaseUrl：**https://api.agora.io/dev/v1/**
 
 下图展示了查询频道信息相关 API 的使用逻辑。
 
