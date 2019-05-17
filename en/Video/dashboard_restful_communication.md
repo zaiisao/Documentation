@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue May 14 2019 07:04:54 GMT+0800 (CST)
+updatedAt: Fri May 17 2019 06:28:34 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
@@ -510,7 +510,7 @@ The following chart shows how you can use related APIs.
 
 ## 6. Online Statistics Query API
 
-BaseUrl：**http://api.agora.io/dev/v1/**.
+BaseUrl：**https://api.agora.io/dev/v1/**.
 
 The following chart shows how you can use Online Statistics Query APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990190974)
