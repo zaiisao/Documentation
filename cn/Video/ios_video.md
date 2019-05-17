@@ -3,14 +3,14 @@
 title: 集成客户端
 description: 
 platform: iOS
-updatedAt: Fri May 17 2019 07:01:42 GMT+0800 (CST)
+updatedAt: Fri May 17 2019 07:01:55 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for iOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
 
 ## 前提条件
 
-- Xcode 9.0+。
+- Xcode 10.0+。
 - iOS 8.0+ 真机（iPhone 或 iPad）。
 - 请确保你的项目已设置有效的开发者签名。
 - 请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
@@ -104,6 +104,8 @@ updatedAt: Fri May 17 2019 07:01:42 GMT+0800 (CST)
  其中，`AgoraRtcEngineKit.framework` 位于下载下来的 SDK 包 **libs** 文件夹下。因此点击 + 后，还需要点击 **Add Other…** ，然后进入到 SDK 的 **libs** 路径下，点击并添加 `AgoraRtcEngineKit.framework`。
 
 	<img alt="../_images/ios_video_5.jpg" src="https://web-cdn.agora.io/docs-files/cn/ios_video_5.jpg" />
+
+> 如需支持 **iOS 9** 或更低版本的设备，请在 **XCode** 中将对 `CoreML.framework` 的依赖设为 **Optional**。
 
 ## 授权使用 Agora SDK
 
