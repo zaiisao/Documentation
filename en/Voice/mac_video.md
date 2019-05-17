@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Tue Jan 29 2019 02:59:43 GMT+0800 (CST)
+updatedAt: Fri May 17 2019 06:56:07 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for macOS.
@@ -123,6 +123,8 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
 
    <img alt="../_images/mac_video_5.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_5.jpg" />
+
+> Set the dependency of `CoreML.framework` as **Optional** in **Xcode** if your device runs **iOS 9** or before.
 
 ## Authorize the Use of the Agora SDK
 
