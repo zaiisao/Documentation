@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Mon May 20 2019 07:57:34 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:57:37 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -98,8 +98,8 @@ rtcEngine.removePublishStreamUrl(url);
 
 ```
 Canvas:
-     width: 360
-     height: 640
+     width: 640
+     height: 360
      backgroundColor: #FFFFFF
 
 User0:
