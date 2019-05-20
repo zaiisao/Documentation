@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Android
-updatedAt: Wed Mar 13 2019 09:35:07 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 08:14:55 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This page provides the **C++ Interface**, with which you can integrate the voice and video function into your app. 
