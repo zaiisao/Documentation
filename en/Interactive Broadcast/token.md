@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Tue May 07 2019 10:56:40 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 08:57:07 GMT+0800 (CST)
 ---
 # Use Security Keys
 This page describes the token (Agora’s authentication mechanism). Before you start, check if your SDK version supports token:
@@ -42,7 +42,7 @@ To get the SDK version, call the following API methods:
 >-   For the Agora Signaling SDK, see [Signaling Security Keys](../../en/Agora%20Platform/key_signaling.md).
 -   If you are using Agora SDKs that do not support the token, see [Channel Keys](../../en/null/channel_key.md).
 
-
+<a name = “authentication-mechanism” ></a>
 ## Agora’s Authentication Mechanisms
 
 The `joinChannel` method requires a security key as an essential parameter. The Agora SDK provides two different security key mechanisms based on your security requirements: 
