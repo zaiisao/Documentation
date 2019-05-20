@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Cocos
-updatedAt: Wed Mar 13 2019 09:39:17 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 08:16:28 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This page provides the **C++ Interface**, with which you can integrate the voice and video function into your app. 
