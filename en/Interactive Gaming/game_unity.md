@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Mon May 20 2019 08:18:36 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 08:18:40 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -2891,7 +2891,17 @@ This function was previously provided when the callback reported `onError`: ERR_
 public delegate void OnFirstRemoteVideoDecodedHandler (uint uid, int width, int height, int elapsed);
 ```
 
-This callback is triggered upon receiving and successfully decoding the first frame of the remote video. The application can configure the user view settings in this callback.
+Occurs when the first remote video frame is received and decoded.
+
+This callback is triggered in either of the following scenarios:
+
+- The remote user joins the channel and sends the video stream.
+- The remote user stops sending the video stream and re-sends it after 15 seconds. Possible reasons include:
+
+	- The remote user leaves channel.
+	- The remote user drops offline.
+	- The remote user calls the `muteLocalVideoStream` method.
+	- The remote user calls the `disableVideo` method.
 
 <table>
 <colgroup>
@@ -2912,7 +2922,7 @@ This callback is triggered upon receiving and successfully decoding the first fr
 <td>Height (in pixels) of the video stream.</td>
 </tr>
 <tr><td><code>elapsed</code></td>
-<td>Time elapsed (ms) from calling <code>joinChannel</code> until this callback is triggered.</td>
+<td>Time elapsed (ms) from the local user calling <code>joinChannel</code> until this callback is triggered.</td>
 </tr>
 </tbody>
 </table>
