@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: CPP
-updatedAt: Wed Mar 13 2019 09:25:33 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 08:22:35 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供游戏 SDK 的 **C++ 接口**，使应用程序实现音视频功能。
@@ -3543,7 +3543,19 @@ virtual void onFirstLocalVideoFrame(int width, int height, int elapsed);
 virtual void onFirstRemoteVideoDecoded(uid_t uid, int width, int height, int elapsed);
 ```
 
-收到第一帧远程视频流并解码成功时，触发此调用。应用程序可在此回调中设置该用户的 view。
+已完成远端视频首帧解码回调。
+
+本地收到远端第一个视频帧并解码成功后，会触发该回调。有两种情况：
+
+- 远端用户首次上线后发送视频
+- 远端用户视频离线再上线后发送视频
+
+其中，视频离线与用户离线不同。视频离线指本地在 15 秒内没有收到视频包，可能有如下原因：
+
+- 远端用户离开频道
+- 远端用户掉线
+- 远端用户停止发送本地视频流（调用了 `muteLocalVideoStream` 方法）
+- 远端用户关闭本地视频模块（调用了 `disableVideo` 方法）
 
 <table>
 <colgroup>
@@ -3564,7 +3576,7 @@ virtual void onFirstRemoteVideoDecoded(uid_t uid, int width, int height, int ela
 <td>视频流高（像素）</td>
 </tr>
 <tr><td>elapsed</td>
-<td>joinChannel 开始到该回调触发的延迟（毫秒)</td>
+<td>从本地用户调用 joinChannel 开始到该回调触发的延迟（毫秒)</td>
 </tr>
 </tbody>
 </table>
