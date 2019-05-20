@@ -3,7 +3,7 @@
 title: 修改音视频原始数据
 description: 
 platform: Android
-updatedAt: Tue Feb 19 2019 11:56:45 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:51:47 GMT+0800 (CST)
 ---
 # 修改音视频原始数据
 Agora 原始数据接口是 SDK 库提供的高级功能，便于你（开发者）获取媒体引擎的原始语音或视频数据。开发者可以修改语音或视频数据，创建特效来更好地满足自己应用程序的特殊需求。
@@ -56,7 +56,7 @@ Agora 原始数据接口是一个 C++ 接口。你需要在 Android 上使用 SD
 				int channels; // number of channels (data are interleaved if stereo)
 				int samplesPerSec; //sampling rate
 				void* buffer; //data buffer
-				int64_t renderTimeMs;
+				int64_t renderTimeMs; //timestamp of the audio frame
 			 };
 		public:
 				virtual bool onRecordAudioFrame(AudioFrame& audioFrame) = 0;
