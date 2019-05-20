@@ -3,7 +3,7 @@
 title: 修改音视频原始数据
 description: 
 platform: Windows
-updatedAt: Fri Nov 02 2018 04:03:55 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:49:33 GMT+0800 (CST)
 ---
 # 修改音视频原始数据
 Agora 原始数据接口是 SDK 库提供的高级功能，便于你（开发者）获取媒体引擎的原始语音或视频数据。开发者可以修改语音或视频数据，创建特效来更好地满足自己应用程序的特殊需求。
@@ -57,7 +57,7 @@ class IAudioFrameObserver
       int channels; // number of channels (data are interleaved if stereo)
       int samplesPerSec; //sampling rate
       void* buffer; //data buffer
-      int64_t renderTimeMs;
+      int64_t renderTimeMs; //timestamp of the audio frame
      };
   public:
       virtual bool onRecordAudioFrame(AudioFrame& audioFrame) = 0;
@@ -122,7 +122,7 @@ class IVideoFrameObserver
     void* uBuffer;  //U data buffer
     void* vBuffer;  //V data buffer
     int rotation; // rotation of this frame (0, 90, 180, 270)
-    int64_t renderTimeMs;
+    int64_t renderTimeMs; //timestamp of the audio frame
     };
   public:
     virtual bool onCaptureVideoFrame(VideoFrame& videoFrame) = 0;
