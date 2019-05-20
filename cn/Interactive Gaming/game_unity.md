@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Mon May 20 2019 08:19:58 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 08:21:32 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -2681,7 +2681,7 @@ public delegate void OnFirstRemoteVideoDecodedHandler (uint uid, int width, int 
 <td>视频流高（像素）</td>
 </tr>
 <tr><td><code>elapsed</code></td>
-<td><code>JoinChannel</code> 开始到该回调触发的延迟（毫秒）</td>
+<td>从本地用户调用 <code>JoinChannel</code> 加入频道开始到该回调触发的延迟（毫秒）</td>
 </tr>
 </tbody>
 </table>
