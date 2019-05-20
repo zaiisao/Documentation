@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Mon May 20 2019 06:27:30 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 06:35:02 GMT+0800 (CST)
 ---
 # 音频相关
 ### iOS 端集成 H5 游戏音量低
@@ -63,7 +63,7 @@ Agora 建议你选择如下一种方法解决该问题：
 - 全局只维护一个 WorkerThread 线程
 - 退出频道时，还需要调用 `destroy` 方法销毁 RtcEngine
 
-### Android 设备上第三方录音应用使用时，用户加入频道后无法发送本地音频流
+### Android 设备使用第三方录音 App 时，用户加入频道后无法发送本地音频流，也未收到 SDK 的错误或警告信息
 
 **问题现象**：第三方录音应用使用时，用户加入频道后，无法发送本地音频，也没有收到 SDK 的任何错误信息
 
