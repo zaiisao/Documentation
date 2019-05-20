@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Mon May 20 2019 07:40:11 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:40:32 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for all Agora SDKs. Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in this article.
@@ -19,7 +19,9 @@ This page describes the firewall requirements for all Agora SDKs. Before accessi
 
 -   Open TCP ports: 80, 443, 3433, 5668, 5669, 5866 to 5890, 6080, 6443, 8667, and 9667.
 -   Open UDP ports: 3478 and 10000 to 65535.
--   Whitelist domain: `.agora.io`.
+-   Whitelist domain: `.agora.io` and `.agoraio.cn`.
+
+> If you use the proxy server, ensure that you open TCP port 3433.
 
 
 ## Agora Signaling SDK
