@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Mon May 20 2019 07:25:36 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:25:39 GMT+0800 (CST)
 ---
 # 音频相关
 ### iOS 端集成 H5 游戏音量低
@@ -69,4 +69,4 @@ Agora 建议你选择如下一种方法解决该问题：
 
 **问题原因**：第三方录音应用占用音频设备
 
-**解决方案**：请参考以下逻辑部署代码：在用户进入频道前，先使用 Android 原生方法判断 Audio Recorder 的状态，当状态为 Available 时，如果用户加入频道 6 秒内连续收到 WARN_ADM_RECORD_AUDIO_LOWLEVEL 1031 警告码，或者 ERR_ADM_RECORD_AUDIO_IS_ACTIVE 1033 错误码，则判定录音设备已被占用。请提示用户关闭第三方录音应用。
+**解决方案**：请参考以下逻辑部署代码：在用户进入频道前，先使用 Android 原生方法判断 Audio Recorder 的状态，当状态为 Available 时，如果用户加入频道 6 秒内连续收到警告码 WARN_ADM_RECORD_AUDIO_LOWLEVEL(1031)，或者错误码 ERR_ADM_RECORD_AUDIO_IS_ACTIVE(1033)，则判定录音设备已被占用。请提示用户关闭第三方录音应用。
