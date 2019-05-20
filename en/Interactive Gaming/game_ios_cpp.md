@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: iOS
-updatedAt: Wed Mar 13 2019 09:37:00 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 08:15:49 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This page provides the **C++ Interface**, with which you can integrate the voice and video function into your app. 
@@ -4019,7 +4019,17 @@ The SDK triggers this callback when the engine renders the first local video fra
 virtual void onFirstRemoteVideoDecoded(uid_t uid, int width, int height, int elapsed);
 ```
 
-The SDK triggers this callback when the engine receives and decodes the first video frame from the specified remote user. The app can configure the user view settings in this callback.
+Occurs when the first remote video frame is received and decoded.
+
+This callback is triggered in either of the following scenarios:
+
+- The remote user joins the channel and sends the video stream.
+- The remote user stops sending the video stream and re-sends it after 15 seconds. Possible reasons include:
+
+	- The remote user leaves channel.
+	- The remote user drops offline.
+	- The remote user calls the `muteLocalVideoStream` method.
+	- The remote user calls the `disableVideo` method.
 
 <table>
 <colgroup>
@@ -4042,7 +4052,7 @@ The SDK triggers this callback when the engine receives and decodes the first vi
 <td>Height (pixels) of the video stream.</td>
 </tr>
 <tr><td>elapsed</td>
-<td>Time elapsed (ms) from calling the <code>joinChannel</code> method until the SDK triggers this callback.</td>
+<td>Time elapsed (ms) from the local user calling the <code>joinChannel</code> method until the SDK triggers this callback.</td>
 </tr>
 </tbody>
 </table>
