@@ -3,7 +3,7 @@
 title: 防火墙说明
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 12 2019 13:31:19 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:36:35 GMT+0800 (CST)
 ---
 # 防火墙说明
 在使用 Agora.io 提供的相关服务之前，您需要接入到某些特定的端口。本页提供使用 Agora 各 SDK 前必须要打开的端口及设置的域名白名单。
