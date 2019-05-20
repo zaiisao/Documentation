@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Windows
-updatedAt: Wed Apr 03 2019 03:56:43 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:59:43 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -101,8 +101,8 @@ Set the parameters as follows:
 
 ```
 Canvas:
-     width: 360
-     height: 640
+     width: 640
+     height: 360
      backgroundColor: #FFFFFF
 
 User0:
