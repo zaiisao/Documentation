@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Mon May 20 2019 07:32:15 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:32:20 GMT+0800 (CST)
 ---
 # Audio-related Issues
 ### My H5 game integrates the Agora SDK v2.2.0 for iOS. When the host uses WKWebview with Layabox and joins the channel, why is the game volume very low?
@@ -44,3 +44,14 @@ Agora recommends using one of the following solutions to solve this problem:
 
 * Maintain one WorkerThreader.
 * Call `destroy` to release the RtcEngine instance when exiting the channel.
+
+### When a third-party recording app is being used on the Android device, the local user cannot send the local audio stream. Why is there no warning or error message from the SDK?
+
+We recommed referring to the following logic when implementing your code:
+
+Before the user joins the channel, use the Android native methods to get the status of the audio recorder. When the audio recorder is available, if, within 6 seconds after the user joins the channel, the app receives the following codes, the SDK  decides that the recording device is occupied:
+
+- The warning code WARN_ADM_RECORD_AUDIO_LOWLEVEL(1031), triggered multiple times.
+-  The error code ERR_ADM_RECORD_AUDIO_IS_ACTIVE(1033).
+
+You can remind your user to quit the third-party recording app before using yours.
