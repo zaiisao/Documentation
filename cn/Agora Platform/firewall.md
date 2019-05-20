@@ -3,7 +3,7 @@
 title: 防火墙说明
 description: 
 platform: All Platforms
-updatedAt: Mon May 20 2019 07:36:35 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:40:37 GMT+0800 (CST)
 ---
 # 防火墙说明
 在使用 Agora.io 提供的相关服务之前，您需要接入到某些特定的端口。本页提供使用 Agora 各 SDK 前必须要打开的端口及设置的域名白名单。
@@ -23,18 +23,17 @@ updatedAt: Mon May 20 2019 07:36:35 GMT+0800 (CST)
 
 -   打开 UDP 端口 3478、10000-65535
 
--   将域名 `*.agora.io` 和 `*.agoraio.cn` 设为白名单
-
+-   将域名 `.agora.io` 和 `.agoraio.cn` 设为白名单
 
 > 如果你使用了代理服务器，则需打开端口 3433；如果未使用代理服务器，则无需打开端口 3433。
 
 ## Agora Signaling SDK
 
--   打开 TCP 端口 443、8001-8199
+-   打开 TCP 端口 1080、8001-8199
 
 -   打开 UDP 端口 8180-8199
 
--   将域名 .agora.io、vocs.agora.io、qoslbs.agora.io 以及 qos.agora.io 设为白名单
+-   将域名 `.agora.io`、`vocs.agora.io`、`qoslbs.agora.io` 以及 `qos.agora.io` 设为白名单
 
 
 ## Agora Recording SDK
@@ -56,10 +55,8 @@ updatedAt: Mon May 20 2019 07:36:35 GMT+0800 (CST)
 ## Agora Gaming SDK
 
 -   打开 TCP 端口：1080、8000
-
 -   打开 UDP 端口：1080、4000-4030、8000、9700、25000
-
--   将域名 .agora.io 设为白名单
+-   将域名 `.agora.io`、`vocs.agora.io`、`qoslbs.agora.io` 和 `qos.agora.io` 设为白名单
 
 
 为获得优质的音视频通话体验，Agora 建议你使用 UDP 端口。与 TCP 相比，UDP 更注重通话的时效性，因此能在填补丢包的同时同时将通话延迟降到最低。
