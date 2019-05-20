@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Wed Mar 13 2019 03:44:46 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 08:19:58 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -2648,7 +2648,19 @@ public delegate void RequestTokenHandler ();
 public delegate void OnFirstRemoteVideoDecodedHandler (uint uid, int width, int height, int elapsed);
 ```
 
-收到第一帧远程视频流并解码成功时，触发此调用。应用程序可在此回调中设置该用户的视图。
+已完成远端视频首帧解码回调。
+
+本地收到远端第一个视频帧并解码成功后，会触发该回调。有两种情况：
+
+- 远端用户首次上线后发送视频
+- 远端用户视频离线再上线后发送视频
+
+其中，视频离线与用户离线不同。视频离线指本地在 15 秒内没有收到视频包，可能有如下原因：
+
+- 远端用户离开频道
+- 远端用户掉线
+- 远端用户停止发送本地视频流（调用了 `muteLocalVideoStream` 方法）
+- 远端用户关闭本地视频模块（调用了 `disableVideo` 方法）
 
 <table>
 <colgroup>
