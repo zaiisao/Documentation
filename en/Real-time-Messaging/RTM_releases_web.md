@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Tue May 21 2019 09:42:37 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 09:42:41 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -29,13 +29,13 @@ This release adds the call invitation feature, allowing you to create, send, can
 - [createLocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createlocalinvitation): Creates a call invitation. 
 - [LocalInvitation.send](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#send): Allows the caller to send a call invitation to a specified user (callee). 
 - [LocalInvitation.cancel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#send)Allows the caller to cancel a sent call invitation. 
-- [LocalInvitationState](../../en/Real-time-Messaging/RTM_releases_web.md): **RETURNED TO THE CALLER** Call invitation status codes. 
-- [LocalInvitationFailureReason](../../en/Real-time-Messaging/RTM_releases_web.md): **RETURNED TO THE CALLER** Reason for failure of the outgoing call invitation. 
+- [LocalInvitationState](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/enums/localinvitationstate.html): **RETURNED TO THE CALLER** Call invitation status codes. 
+- [LocalInvitationFailureReason](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/enums/localinvitationfailurereason.html): **RETURNED TO THE CALLER** Reason for failure of the outgoing call invitation. 
 - [RemoteInvitationReceived](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmclientevents.html#remoteinvitationreceived): Occurs when the callee receives a call invitation. 
 - [RemoteInvitation.accept](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#accept): Allows the callee to accept an incoming call invitation. 
 - [RemoteInvitation.refuse](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#refuse): Allows the callee to declien an incoming call invitation. 
 - [RemoteInvitationState](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/enums/remoteinvitationstate.html): **RETURNED TO THE CALLEE**: Call invitation status codes. 
-- [RemoteInvitationFailureReason](../../en/Real-time-Messaging/RTM_releases_web.md): **RETURNED TO THE CALLEE**: Reason for the failure of the incoming call invitation.
+- [RemoteInvitationFailureReason](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/enums/remoteinvitationfailurereason.html): **RETURNED TO THE CALLEE**: Reason for the failure of the incoming call invitation.
 
 #### Renames
 
