@@ -3,7 +3,7 @@
 title: SDK 断线重连机制
 description: 
 platform: SDK 对断网、杀进程的处理
-updatedAt: Tue May 14 2019 08:24:35 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 10:23:18 GMT+0800 (CST)
 ---
 # SDK 断线重连机制
 本文展示弱网下 Agora SDK 连接状态的处理逻辑。
