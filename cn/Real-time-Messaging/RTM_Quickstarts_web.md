@@ -3,22 +3,22 @@
 title: RTM 快速开始
 description: 
 platform: Web
-updatedAt: Sun Apr 28 2019 06:21:35 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 03:56:45 GMT+0800 (CST)
 ---
 # RTM 快速开始
 
-## 集成 SDK
+## 集成客户端
 
 ### 直接用 `<script>` 引入
 
 使用该方法引入的 SDK 会在 `window` 上生成名为 `AgoraRTM` 的全局变量。
 
 1. 从 Agora 官方网站下载最新版 Agora RTM SDK for Web 压缩包。
-2. 将下载下来的压缩包中路径为 `libs/AgoraRTM-production.js` 的文件保存到你所操作的项目下。
-3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/AgoraRTM-production.js` 替换为可访问的 SDK 公开网址）：
+2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-0.9.1.js` 的文件保存到你所操作的项目下。
+3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/agora-rtm-sdk-0.9.1.js` 替换为可访问的 SDK 公开网址）：
 
     ```html
-    <script src="/path/to/AgoraRTM-production.js"></script>
+    <script src="/path/to/agora-rtm-sdk-0.9.1.js"></script>
     ```
 
 #### 开启智能提示和类型检查（可选）
@@ -27,11 +27,11 @@ updatedAt: Sun Apr 28 2019 06:21:35 GMT+0800 (CST)
 
 可以通过下面的步骤开启上述功能：
 
-1. 将压缩包中路径为 `libs/AgoraRTM-global.d.ts` 的文件保存到你所操作的项目下。
-2. 在 JavaScript/TypeScript 文件开头加入下面的注释（其中 `path/to/AgoraRTM-global.d.ts` 替换为 `AgoraRTM-global.d.ts` 所在本地路径）：
+1. 将压缩包中路径为 `libs/agora-rtm-sdk.d.ts` 的文件保存到你所操作的项目下。
+2. 在 JavaScript/TypeScript 文件开头加入下面的注释（其中 `path/to/agora-rtm-sdk.d.ts` 替换为 `agora-rtm-sdk.d.ts` 所在本地路径）：
 
 ```JavaScript
-/// <reference path="path/to/AgoraRTM-global.d.ts" />
+/// <reference path="path/to/agora-rtm-sdk.d.ts" />
 ```
 
 ## 初始化
@@ -47,10 +47,10 @@ const client = AgoraRTM.createInstance('<APPID>');
 
 ### 监听连接状态改变
 
-通过监听 `RtmClient` 上的 `ConnectionStateChange` 事件可以获得 SDK 连接状态改变的通知。
+通过监听 `RtmClient` 上的 `ConnectionStateChanged` 事件可以获得 SDK 连接状态改变的通知。
 
 ```JavaScript
-client.on('ConnectionStateChange', (newState, reason) => {
+client.on('ConnectionStateChanged', (newState, reason) => {
   console.log('on connection state changed to ' + state + ' reason: ' + reason);
 });
 ```
@@ -62,7 +62,7 @@ Web 应用必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点
 在 `client.login` 方法中传入一个有如下属性的对象：
 
 * `token`: 如果安全要求不高，不填或将参数值设为 null；如果安全要求高，传入从你的服务端获得的 token 值。
-* `uid`: User ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，不能以空格开头，也不能是字符串 “null”。
+* `uid`: User ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 “null”。
 
 该方法的返回值为 Promise。使用该 Promise 上的 `then` 方法传入回调；使用 `catch` 方法捕获异常并处理。也可以使用 ES7 的 `async/await` 语法来进行 SDK 异步方法的调用，这样就可以使用同步 `try/catch` 块来捕获异常（其他返回 Promise 的异步 API 也均如此）。
 
@@ -122,7 +122,7 @@ client.on('MessageFromPeer', { text }, peerId) => { // text 为消息文本，pe
 });
 ```
 
-## 群聊
+## 频道消息
 
 ### 创建并加入频道
 
