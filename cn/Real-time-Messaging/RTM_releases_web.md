@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue May 21 2019 08:12:52 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 08:12:57 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -45,7 +45,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 #### 删除
 
--   `RtmChannel`  `getId` 方法，改用 [channelId(/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#channelid) 代替。
+-   `RtmChannel`  `getId` 方法，改用 [channelId](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#channelid) 代替。
 
 
 ## 0.9.0 版
