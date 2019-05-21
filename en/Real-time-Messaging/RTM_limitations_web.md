@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Android
-updatedAt: Tue May 21 2019 12:21:45 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 12:21:49 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM Web SDK. 
@@ -14,8 +14,6 @@ This page provides information about the limitations of the Agora RTM Web SDK.
 ## Multiple Instances
 
 Supports joining a maximum of 20 `RtmChannel` instances at the same time. When the number of channels you join reaches 20, we recommend calling the [RtmChannel.leave](https://docs.agora.io/cn/Real-time-Messaging/RTM_web/API%20Reference/RTM_web/classes/rtmchannel.html#leave) method  to leave channel and then calling the `RtmChannel.removeAllListeners()` method to release all the resources used by that channel. 
-
-If you call `createChannel()` after the number of `RtmChannel` instances reaches 20, the SDK throws exceptions. As a good practice, we recommend calling the [RtmChannel.leave](../../en/Real-time-Messaging/RTM_limitations_web.md) method to release all resources of unused `RtmChannel` instances.
 
 ## Call Frequencies
 
