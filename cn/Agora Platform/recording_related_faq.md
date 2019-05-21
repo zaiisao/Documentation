@@ -3,7 +3,7 @@
 title: 录制相关
 description: 
 platform: 录制相关
-updatedAt: Tue Apr 02 2019 09:07:48 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 09:35:53 GMT+0800 (CST)
 ---
 # 录制相关
 ## 录制 SDK
@@ -51,11 +51,11 @@ updatedAt: Tue Apr 02 2019 09:07:48 GMT+0800 (CST)
 
 ### 如何保证同时录制的频道数没有超过服务器容量(CPU/内存)?
 
-请参考文档[设置开发环境](../../cn/Recording/recording_env.md)。
+请参考文档[集成录制 SDK](../../cn/Recording/recording_integrate_cpp.md)。
 
 ### 为什么客户端可以加入频道，而录制端无法加入频道（录制端可以发包，但是却收不到来自 Agora 服务器的包）？
 
-请检查防火墙配置，详见[设置开发环境](../../cn/Recording/recording_env.md)。
+请检查防火墙配置，详见[集成录制 SDK](../../cn/Recording/recording_integrate_cpp.md)。
 
 ### 可以指定只录某个用户的音视频么?
 
