@@ -3,10 +3,12 @@
 title: SDK Reconnection Mechanism
 description: 
 platform: All Platforms
-updatedAt: Tue May 21 2019 10:14:08 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 10:14:18 GMT+0800 (CST)
 ---
 # SDK Reconnection Mechanism
 This page shows the connection state mechanism of the Agora SDK.
+
+## User drops offline
 
 The Agora SDK adds the [`onConnectionStateChanged`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4)/[`connectionStateChangedToState`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback in v2.3.2. This callback reports the current network connection state and reasons to any state change.
 
@@ -50,3 +52,34 @@ Where:
 > - If UID 2 does not receive any data from UID 1 in 10 seconds, UID 2 receives the `client.on('stream-removed')` callback.
 > - If the server does not receive any data from UID 1 in 30 seconds, UID 2 receives the `client.on('peer-leave')` callback.
 
+## Process Gets Killed
+This scenario involves the following situations:
+
+- Enables or disables VoIP mode.
+- The process gets killed.
+- Closes a web page.
+
+Suppose UID 1 and UID 2 are in the same channel. When the process of user A gets killed:
+
+- If UID 1 is in iOS or macOS: UID 1 calls the `leaveChannel` method and UID 2 receives a callback:
+
+	- Android, Windows, or Linux: UID 2 receives the `onUserOffline` callback.
+	- iOS or macOS: UID 2 receives the `didOfflineOfUid` callback.
+	- The Web: UID 2 receives the `client.on('peer-leave')` callback.
+
+- If UID 1 is in Android, Windows, or Linux and user B uses the Native SDK:
+
+	- If UID 1 does not restart the app and rejoin the original channel within 20 seconds (you can set the timeout value. For more information, contact support@agora.io), UID 2 receives a callback:
+
+   - Android, Windows, or Linux: UID 2 receives the `onUserOffline` callback.
+   - iOS or macOS: UID 2 receives the `didOfflineOfUid` callback.
+
+	- If UID 1 restarts the app and rejoins the original channel within 20 seconds, UID 2 does not receive any callback function.
+
+- If UID 1 is in Android, Windows, or Linux and UID 2 uses the Web SDK:
+
+	- If UID 1 does not restart the app and rejoin the original channel within 10 seconds, UID 2 receives the` client.on('stream-removed')` callback.
+	- If UID 1 restarts the app and rejoins the original channel, UID 2 does not receive any callback.
+
+- For the Web SDK, killing a process is equivalent to a user dropping offline.
+- If UID 1 is the last user in the channel, the server destroys the channel in 10 seconds.
