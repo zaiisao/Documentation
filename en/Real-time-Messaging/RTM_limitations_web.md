@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Android
-updatedAt: Tue May 21 2019 12:20:34 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 12:20:38 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM Web SDK. 
@@ -31,3 +31,11 @@ If you call `createChannel()` after the number of `RtmChannel` instances reaches
 - The maximum length of the content in a call invitation is 8 KB. See [LocalInvitation.content](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#content)
 - The maximum length of the response in a call invitation is 8 KB. See [RemoteInvitation.response](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#response)
 
+## Encoding 
+
+Supports channel and peer-to-peer messages, invitation content, and invitation response in UTF-8 only. 
+
+
+## Miscellaneous 
+
+- Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. If you have special requirements, contact sales-us@agora.io.
