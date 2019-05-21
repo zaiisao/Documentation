@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Tue Apr 02 2019 09:16:31 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 09:35:14 GMT+0800 (CST)
 ---
 # Recording-related Issues
 ## Agora Recording SDK
@@ -46,12 +46,12 @@ You can configure the root directory of the recording file, but not the name. Se
 
 ### How do I ensure that the number of channels recorded at the same time does not exceed the server capacity?
 
-See [Set Up Your Environment](../../en/Recording/recording_env.md).
+See [Integrate the SDK](../../en/Recording/recording_integrate_cpp.md).
 
 
 ### Why can't the recording application log in while the client can, and why can the recording application send but not receive packets from the Agora servers?
 
-Check the firewall configuration. See [Set Up Your Environment](../../en/Recording/recording_env.md). 
+Check the firewall configuration. See [Integrate the SDK](../../en/Recording/recording_integrate_cpp.md). 
 
 ### Can I record the voice and video of a specified user?
 
