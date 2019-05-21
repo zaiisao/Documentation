@@ -3,7 +3,7 @@
 title: 限制条件
 description: RTM Web Limitations
 platform: Web
-updatedAt: Tue May 21 2019 08:21:42 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 08:21:48 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
@@ -27,8 +27,8 @@ updatedAt: Tue May 21 2019 08:21:42 GMT+0800 (CST)
 ## 字符串长度限制
 
 - 点对点或频道消息的字符串最大长度为 32 KB。详见： [RtmMessage.text](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmmessage.html#text) 。
-- 呼叫邀请内容的字符串最大长度为 8 KB。
-- 呼叫邀请响应的字符串最大长度为 8 KB。
+- 呼叫邀请内容的字符串最大长度为 8 KB。详见： [LocalInvitation.content](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#content) 。
+- 呼叫邀请响应的字符串最大长度为 8 KB。详见： [RemoteInvitation.response](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#response) 。
 
 ## 编码格式
 
