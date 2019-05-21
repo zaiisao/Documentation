@@ -3,7 +3,7 @@
 title: 云端录制 Java API
 description: For java
 platform: Java
-updatedAt: Tue May 21 2019 10:04:16 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 10:04:20 GMT+0800 (CST)
 ---
 # 云端录制 Java API
 | **接口类**                                                   | **描述**                   |
@@ -292,7 +292,7 @@ public void onRecordingStopped(String recording_id)
 ### 成功上传至第三方云存储回调 (onRecordingUploaded)
 
 ```java
-public void onRecordingBackedUp(String recording_id, String file_name)
+public void onRecordingUploaded(String recording_id, String file_name)
 ```
 
 该回调方法表示所有录制文件已成功上传到预设的第三方云存储，可根据需求播放或下载使用。
