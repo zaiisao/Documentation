@@ -3,7 +3,7 @@
 title: 限制条件
 description: RTM Web Limitations
 platform: Web
-updatedAt: Tue May 21 2019 03:09:56 GMT+0800 (CST)
+updatedAt: Tue May 21 2019 03:10:00 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
@@ -37,4 +37,4 @@ updatedAt: Tue May 21 2019 03:09:56 GMT+0800 (CST)
 
 ## 其他 
 
-当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请请拨打 400 632 6626 或邮件 sales@agora.io。
+当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请拨打 400 632 6626 或发送邮件至 sales@agora.io。
