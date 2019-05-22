@@ -14,7 +14,7 @@ Once the client initialization is complete, call the `client.join`  method in th
 
 Pass the channel key, channel name, and user ID to the method parameters:
 
-- `tokenOrKey`: For low-security requirements, pass null as the parameter value. For high-security requirements, pass the string of the token or Channel Key as the parameter value. See [Security Keys](../../en/Interactive%20Broadcast/token.md).
+- `tokenOrKey`: For low-security requirements, pass null as the parameter value. For high-security requirements, pass the string of the token or Channel Key as the parameter value. We recommend using a token in the production environment. See [Security Keys](../../en/Interactive%20Broadcast/token.md).
 - `channel`: Channel name.
 - `uid`: The user ID is an integer and should be unique. If you set the user ID to null, the Agora server assigns a user ID and returns it in the `onSuccess` callback.
 

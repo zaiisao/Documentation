@@ -30,7 +30,7 @@ Call the `joinChannel` method to join a channel.
 
 In the `joinChannel` method:
 
--   Pass a token that identifies the role and privilege of the user. Set token as null for low-security requirements. A token is generated at the server of the app. For how to generate a token, see [Security Keys](../../en/Voice/token.md).
+-   Pass a token that identifies the role and privilege of the user. Set token as null for low-security requirements. We recommend usting a token in the production environment. A token is generated at the server of the app. For how to generate a token, see [Security Keys](../../en/Voice/token.md).
 -   Pass a channel ID that identifies the channel. Users that input the same channel ID enter into the same channel.
 -   Pass a uid that identifies the user. Each user in a channel requires a unique uid. If you want to join the same channel on different devices, ensure that different uids are used for each device.
 
@@ -38,7 +38,7 @@ In the `joinChannel` method:
 
 ```
  private void joinChannel() {
-    mRtcEngine.joinChannel(null, "demoChannel1", "Extra Optional Data", 0); // If you do not specify the uid, Agora will assign one.
+    mRtcEngine.joinChannel("token", "demoChannel1", "Extra Optional Data", 0); // If you do not specify the uid, Agora will assign one.
 }
 ```
 
