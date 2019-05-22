@@ -29,17 +29,15 @@ nRet = m_lpAgoraEngine->setChannelProfile(CHANNEL_PROFILE_COMMUNICATION);
 
 在该方法中：
 
--   传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 null。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [密钥说明](../../cn/Voice/token.md)。
-
+-   传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 null。正式生产环境下，我们推荐你使用 Token。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [密钥说明](../../cn/Voice/token.md)。
 -   传入能标识频道的频道 ID。输入相同频道 ID 的用户会进入同一个频道。
-
 -   传入能标识用户身份的用户 UID。请确保频道内每个用户的 UID 必须是独一无二的。
 
 > 如果已在通话中，则必须调用 <code>leaveChannel</code> 方法退出当前通话，才能进入下一个频道。
 
 ```
 LPCSTR lpStreamInfo = "{\"owner\":true,\"width\":640,\"height\":480,\"bitrate\":500}";
-nRet = m_lpAgoraEngine->joinChannel(lpDynamicKey, lpChannelName, lpStreamInfo, nUID);
+nRet = m_lpAgoraEngine->joinChannel(lpToken, lpChannelName, lpStreamInfo, nUID);
 ```
 
 
