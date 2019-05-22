@@ -19,7 +19,7 @@ updatedAt: Mon Mar 25 2019 09:53:19 GMT+0800 (CST)
 - `uid`：用户的 ID， **整数，需保证唯一性**。 如果不指定，即用户 ID 设置为 null，回调会返回一个服务器分配的 uid。
 
 ```javascript
-client.join(<TOKEN>, <CHANNEL_NAME>, <UID>, function(uid) {
+client.join(<TOKEN_OR_KEY>, <CHANNEL_NAME>, <UID>, function(uid) {
   console.log("User " + uid + " join channel successfully");
 
 }, function(err) {
