@@ -11,15 +11,13 @@ updatedAt: Thu Dec 13 2018 08:59:29 GMT+0800 (CST)
 ## 实现方法
 初始化客户端对象后，在成功的回调中调用  加入频道 `join` 方法，并在该方法中填入以下参数值：
 
--   `tokenOrKey`：在用户服务器端生成的动态密钥（Channel Key 或 Token）。详细生成办法见 [密钥说明](../../cn/Interactive%20Broadcast/token.md) 。如果没有开启动态密钥，设置为 null。
-
+-   `tokenOrKey`：在用户服务器端生成的动态密钥（Channel Key 或 Token）。详细生成办法见 [密钥说明](../../cn/Interactive%20Broadcast/token.md) 。如果没有开启动态密钥，设置为 null。正式生产环境下，我们推荐你使用 Token。
 -   `channel`：能标识频道的频道名。
-
 -   `uid`：用户的 ID，整数，需保证唯一性。如果不指定，即用户 ID 设置为 null，回调会返回一个服务器分配的 `uid`。
 
 
 ```
-client.join(tokenOrKey, channel, uid, onSuccess, onFailure);
+client.join(token, channel, uid, onSuccess, onFailure);
 ```
 
 如果你的小程序中有切后台的场景需求，还需要调用 `rejoin` 方法做好重连机制。
