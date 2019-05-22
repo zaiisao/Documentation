@@ -39,7 +39,7 @@ Call the `joinChannelByToken` method to join a channel.
 
 In the `joinChannelByToken` method:
 
-- Pass a token that identifies the role and privilege of the user. Set the token as null for low-security requirements. A token is generated at the server of the application. For how to generate a token, see [Security Keys](../../en/Video/token.md).
+- Pass a token that identifies the role and privilege of the user. Set the token as null for low-security requirements. We recommend using a token in the production environment. A token is generated at the server of the application. For how to generate a token, see [Security Keys](../../en/Video/token.md).
 - Pass a channel ID that identifies the channel. Users with the same channel ID enter into the same channel.
 - Pass a uid that identifies the user. Each user in a channel requires a unique uid. If you want to join the same channel on different devices, ensure that different uids are used for each device.
 
@@ -48,7 +48,7 @@ In the `joinChannelByToken` method:
 ```objective-c
 //Objective-C
 - (void)joinChannel {
-  [self.agoraKit joinChannelByToken:nil channelId:@"demoChannel1" info:nil uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
+  [self.agoraKit joinChannelByToken:"token" channelId:@"demoChannel1" info:nil uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
     // Join channel "demoChannel1"
   }];
 }
@@ -57,7 +57,7 @@ In the `joinChannelByToken` method:
 ```swift
 //Swift
 func joinChannel() {
-  agoraKit.joinChannel(by Token: nil, channelId: "demoChannel1", info:nil, uid:0){[weak self] (sid, uid, elapsed) -> Void in
+  agoraKit.joinChannel(by Token: "token", channelId: "demoChannel1", info:nil, uid:0){[weak self] (sid, uid, elapsed) -> Void in
       // Join channel "demoChannel1"
   }
 }
