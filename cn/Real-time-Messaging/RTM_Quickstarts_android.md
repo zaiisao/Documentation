@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Wed May 22 2019 07:43:25 GMT+0800 (CST)
+updatedAt: Wed May 22 2019 08:10:08 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -67,23 +67,46 @@ updatedAt: Wed May 22 2019 07:43:25 GMT+0800 (CST)
 
 ### 添加 SDK
 
-1. 将 AppID 填写进 RtmJavaDemo.java 中的 `APP ID`。
+1. 设置 libs 存放路径。使用 Android Studio 打开你想要运行的项目（本文以 sample 文件为例），选择 app/src/main/build.gradle 文件，将预设的 libs 路径添加到 fileTree 代码行中。
 
 ```java
-public static final String APPID = "<#YOUR APP ID#>";
+dependencies {
+    implementation fileTree(dir: '../../../libs', include: ['*.jar'])
+    ...
+}
 ```
 
-2. 将下载的 SDK 解压并将其中的 libs 文件夹下的 `*.jar`, `*.so` 复制到本项目的 /lib 文件夹下。
+> 确保路径名称不包含中文字符。如果路径包含中文字符，则代码无法编译成功且会显示包含随机 ASCII 字符的错误信息。
 
-3. 如果没有 maven 环境，需要安装 `apache-maven-3.6.0`。
+2. 添加 libs 文件包。根据步骤 1 中预设的路径添加 libs 文件包。
 
-4. 将 demo 依赖的 jar 包安装到本地 maven 仓库：
+3. 添加 sourceSets。在 build.gradle 文件里, 设置 sourceSets 的存放路径，该路径必须与 libs 路径一致。
 
+```java
+android {
+ ...
+ sourceSets {
+        main {
+            jniLibs.srcDirs = ['../../../libs']
+        }
+    }
+}
 ```
-mvn install:install-file -Dfile=lib/agora_rtm.jar -DgroupId=io.agora.rtm -DartifactId=agora-rtm-sdk -Dversion=1.0 -Dpackaging=jar
+
+4. 添加 App ID。选择 app/src/main/res/values/strings_config.xml 文件，在下列代码中填写 App ID。
+
+```java
+<resources>
+    <string translatable="false" name="agora_app_id"><#YOUR APP ID#></string>
+</resources>
 ```
 
-5. 使用 maven 编译打包, 在 `pom.xml` 所在目录运行 `mvn package`。
+5. 同步项目文件。点击 **Sync Project With Gradle Files** 按钮，直到同步完成。
+
+6. 防止混淆代码: 在 proguard-rules.pro 文件中，为 Agora SDK 添加 -keep 类的配置，这样可以防止混淆 Agora SDK 公共类名称:
+
+`-keep class io.agora.**{*;}`
+
 
 ## 初始化
 
@@ -103,28 +126,28 @@ import io.agora.rtm.RtmClient;
 import io.agora.rtm.RtmClientListener;
 import io.agora.rtm.RtmMessage;
 
-    public void init() {
-        try {
-            mRtmClient = RtmClient.createInstance(APPID,
-                            new RtmClientListener() {
-                @Override
-                public void onConnectionStateChanged(int state, int reason) {
-                    Log.d(TAG, "on connection state changed to "
-                        + state + " reason: " + reason);
-                }
+public void init() {
+		try {
+				mRtmClient = RtmClient.createInstance(APPID,
+												new RtmClientListener() {
+						@Override
+						public void onConnectionStateChanged(int state, int reason) {
+								Log.d(TAG, "on connection state changed to "
+										+ state + " reason: " + reason);
+						}
 
-                @Override
-                public void onMessageReceived(RtmMessage rtmMessage, String peerId) {
-                    String msg = rtmMessage.getText();
-                    Log.d(TAG, "Receives message: " + msg 
-                                + " from " + peerId);
-                }
-            });
-        } catch (Exception e) {
-            Log.d(TAG, "RTM SDK init fatal error!");
-            throw new RuntimeException("You need to check the RTM init process.");
-        }
-    }
+						@Override
+						public void onMessageReceived(RtmMessage rtmMessage, String peerId) {
+								String msg = rtmMessage.getText();
+								Log.d(TAG, "Receives message: " + msg 
+														+ " from " + peerId);
+						}
+				});
+		} catch (Exception e) {
+				Log.d(TAG, "RTM SDK init fatal error!");
+				throw new RuntimeException("You need to check the RTM init process.");
+		}
+}
 ```
 
 
@@ -144,18 +167,18 @@ APP 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
 - 传入结果回调，用于接收登录 RTM 服务器成功或者失败的结果回调。
 
 ```java
-        mRtmClient.login(null, userId, new ResultCallback<Void>() {
-            @Override
-            public void onSuccess(Void responseInfo) {
-                loginStatus = true;
-                Log.d(TAG, "login success!");
-            }
-            @Override
-            public void onFailure(ErrorInfo errorInfo) {
-                loginStatus = false;
-                Log.d(TAG, "login failure!");
-            }
-        });
+mRtmClient.login(null, userId, new ResultCallback<Void>() {
+		@Override
+		public void onSuccess(Void responseInfo) {
+				loginStatus = true;
+				Log.d(TAG, "login success!");
+		}
+		@Override
+		public void onFailure(ErrorInfo errorInfo) {
+				loginStatus = false;
+				Log.d(TAG, "login failure!");
+		}
+});
 
 ```
 
@@ -178,23 +201,23 @@ mRtmClient.logout(null);
 - 传入消息发送结果监听器，用于接收消息发送结果回调，如：服务器已接收，发送超时，对方不可达等。
 
 ```java
-    public void sendPeerMessage(String dst, String message) {
-        RtmMessage msg = mRtmClient.createMessage();
-        msg.setText(message);
+public void sendPeerMessage(String dst, String message) {
+		RtmMessage msg = mRtmClient.createMessage();
+		msg.setText(message);
 
-        mRtmClient.sendMessageToPeer(dst, msg, new ResultCallback<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-            }
+		mRtmClient.sendMessageToPeer(dst, msg, new ResultCallback<Void>() {
+				@Override
+				public void onSuccess(Void aVoid) {
+				}
 
-            @Override
-            public void onFailure(ErrorInfo errorInfo) {
-                final int errorCode = errorInfo.getErrorCode();
-                Log.d(TAG, "Fails to send the message to the peer, errorCode = "
-                                + errorCode);
-            }
-        });
-    }
+				@Override
+				public void onFailure(ErrorInfo errorInfo) {
+						final int errorCode = errorInfo.getErrorCode();
+						Log.d(TAG, "Fails to send the message to the peer, errorCode = "
+														+ errorCode);
+				}
+		});
+}
 
 ```
 
@@ -239,25 +262,25 @@ private RtmChannelListener mRtmChannelListener = new RtmChannelListener() {
 ```
 
 ```java
-    try {
-        mRtmChannel = mRtmClient.createChannel("demoChannelId", mRtmChannelListener);
-    } catch (RuntimeException e) {
-        Log.e(TAG, "Fails to create channel. Maybe the channel ID is invalid," +
-                " or already in use. See the API reference for more information.");
-    }
-		
-        mRtmChannel.join(new ResultCallback<Void>() {
-            @Override
-            public void onSuccess(Void responseInfo) {
-                Log.d(TAG, "Successfully joins the channel!");
-            }
+try {
+		mRtmChannel = mRtmClient.createChannel("demoChannelId", mRtmChannelListener);
+} catch (RuntimeException e) {
+		Log.e(TAG, "Fails to create channel. Maybe the channel ID is invalid," +
+						" or already in use. See the API reference for more information.");
+}
 
-            @Override
-            public void onFailure(ErrorInfo errorInfo) {
-                Log.d(TAG, "join channel failure! errorCode = "
-                                    + errorInfo.getErrorCode());
-            }
-        });
+		mRtmChannel.join(new ResultCallback<Void>() {
+				@Override
+				public void onSuccess(Void responseInfo) {
+						Log.d(TAG, "Successfully joins the channel!");
+				}
+
+				@Override
+				public void onFailure(ErrorInfo errorInfo) {
+						Log.d(TAG, "join channel failure! errorCode = "
+																+ errorInfo.getErrorCode());
+				}
+		});
 ```
 
 ### 发送频道消息
@@ -270,20 +293,20 @@ private RtmChannelListener mRtmChannelListener = new RtmChannelListener() {
 - 传入消息发送结果监听器，用于接收消息发送结果回调，如：服务器已接收，发送超时等。
 
 ```java
-    public void sendChannelMessage(String msg) {
-        RtmMessage message = mRtmClient.createMessage();
-        message.setText(msg);
+public void sendChannelMessage(String msg) {
+		RtmMessage message = mRtmClient.createMessage();
+		message.setText(msg);
 
-        mRtmChannel.sendMessage(message, new ResultCallback<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-            }
+		mRtmChannel.sendMessage(message, new ResultCallback<Void>() {
+				@Override
+				public void onSuccess(Void aVoid) {
+				}
 
-            @Override
-            public void onFailure(ErrorInfo errorInfo) {
-            }
-        });
-    }
+				@Override
+				public void onFailure(ErrorInfo errorInfo) {
+				}
+		});
+}
 ```
 
 ### 接收频道消息
@@ -295,16 +318,16 @@ private RtmChannelListener mRtmChannelListener = new RtmChannelListener() {
 调用实例的 `getMembers()` 方法可以获取到当前在该频道内的用户列表。 
 
 ```java
-    public void getChannelMemberList() {
-        mRtmChannel.getMembers(new ResultCallback<List<RtmChannelMember>>() {
-            @Override
-            public void onSuccess(final List<RtmChannelMember> responseInfo) {
-            }
-            @Override
-            public void onFailure(ErrorInfo errorInfo) {
-            }
-        });
-    }
+public void getChannelMemberList() {
+		mRtmChannel.getMembers(new ResultCallback<List<RtmChannelMember>>() {
+				@Override
+				public void onSuccess(final List<RtmChannelMember> responseInfo) {
+				}
+				@Override
+				public void onFailure(ErrorInfo errorInfo) {
+				}
+		});
+}
 ```
 
 ### 退出频道
