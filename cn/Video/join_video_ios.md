@@ -38,7 +38,7 @@ func setChannelProfile() {
 
 在该方法中：
 
-- 传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 nil。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [密钥说明](../../cn/Video/token.md)。
+- 传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 nil。正式生产环境下，我们推荐你使用 Token。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [密钥说明](../../cn/Video/token.md)。
 - 传入能标识频道的频道 ID。输入相同频道 ID 的用户会进入同一个频道。
 - 传入能标识用户身份的用户 UID。请确保频道内每个用户的 UID 必须是独一无二的。如果想要从不同的设备同时接入同一个频道，请确保每个设备上使用的 UID 是不同的。
 
@@ -47,7 +47,7 @@ func setChannelProfile() {
 ```objective-c
 //Objective-C
 - (void)joinChannel {
-  [self.agoraKit joinChannelByToken:nil channelId:@"demoChannel1" info:nil uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
+  [self.agoraKit joinChannelByToken: "token" channelId:@"demoChannel1" info:nil uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
     // Join channel "demoChannel1"
   }];
 }
@@ -56,7 +56,7 @@ func setChannelProfile() {
 ```swift
 //Swift
 func joinChannel() {
-  agoraKit.joinChannel(by Token: nil, channelId: "demoChannel1", info:nil, uid:0){[weak self] (sid, uid, elapsed) -> Void in
+  agoraKit.joinChannel(by Token: "token", channelId: "demoChannel1", info:nil, uid:0){[weak self] (sid, uid, elapsed) -> Void in
       // Join channel "demoChannel1"
   }
 }
