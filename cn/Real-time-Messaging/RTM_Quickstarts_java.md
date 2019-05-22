@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux Java
-updatedAt: Wed May 22 2019 07:44:32 GMT+0800 (CST)
+updatedAt: Wed May 22 2019 07:44:36 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -206,15 +206,36 @@ App 在成功登录 RTM 服务器 之后，可以开始使用 RTM 的频道消�
 ### 创建加入频道实例
 
 - 传入能标识每个频道的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"null"`。  
-- 指定一个事件回调。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
+- 指定一个频道监听器。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
 
 ```java
-        mRtmChannel = mRtmClient.createChannel(channel,
-                            new ChannelListener(channel));
-        if (mRtmChannel == null) {
-            Log.d(TAG, "Fails to create the channel!");
-            return;
-        }
+private RtmChannelListener mRtmChannelListener = new RtmChannelListener() {
+    @Override
+    public void onMessageReceived(RtmMessage message, RtmChannelMember fromMember) {
+        String text = message.getText();
+        String fromUser = fromMember.getUserId();
+    }
+ 
+    @Override
+    public void onMemberJoined(RtmChannelMember member) {
+ 
+    }
+ 
+    @Override
+    public void onMemberLeft(RtmChannelMember member) {
+ 
+    }
+};
+```
+
+```java
+    try {
+        mRtmChannel = mRtmClient.createChannel("demoChannelId", mRtmChannelListener);
+    } catch (RuntimeException e) {
+        Log.e(TAG, "Fails to create channel. Maybe the channel ID is invalid," +
+                " or already in use. See the API reference for more information.");
+    }
+		
         mRtmChannel.join(new ResultCallback<Void>() {
             @Override
             public void onSuccess(Void responseInfo) {
