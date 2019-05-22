@@ -3,7 +3,7 @@
 title: 修改音视频原始数据
 description: 
 platform: Android
-updatedAt: Mon May 20 2019 07:50:28 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:51:47 GMT+0800 (CST)
 ---
 # 修改音视频原始数据
 Agora 原始数据接口是 SDK 库提供的高级功能，便于你（开发者）获取媒体引擎的原始语音或视频数据。开发者可以修改语音或视频数据，创建特效来更好地满足自己应用程序的特殊需求。
@@ -81,70 +81,7 @@ Agora 原始数据接口是一个 C++ 接口。你需要在 Android 上使用 SD
 
 > 这里的 `engine` 可以通过 [创建插件](#create_plugin) 里的 `loadAgoraRtcEnginePlugin` 传入。
 
-## 修改视频数据
 
-1.  定义 `AgoraVideoFrameObserver` 继承 `IVideoFrameObserver` \(接口类 `IVideoFrameObserver` 在 `IAgoraMediaEngine.h` 定义\) 。需要实现以下虚拟接口:
-
-    ```
-    class AgoraVideoFrameObserver : public agora::media::IVideoFrameObserver
-    {
-      public:
-        virtual bool onCaptureVideoFrame(VideoFrame& videoFrame) override
-        {
-          return true;
-        }
-        virtual bool onRenderVideoFrame(unsigned int uid, VideoFrame& videoFrame) override
-        {
-          return true;
-        }
-    };
-    ```
-
-	上述例子仅需保证语音前后处理的返回值为 true。如有需要，可参考 API 修改语音帧的样本数量、频道数量、采样率等:
-
-	```
-		class IVideoFrameObserver
-		{
-			public:
-				enum VIDEO_FRAME_TYPE {
-				FRAME_TYPE_YUV420 = 0,  //YUV 420 format
-				};
-			struct VideoFrame {
-				VIDEO_FRAME_TYPE type;
-				int width;  //width of video frame
-				int height;  //height of video frame
-				int yStride;  //stride of Y data buffer
-				int uStride;  //stride of U data buffer
-				int vStride;  // stride of V data buffer
-				void* yBuffer;  //Y data buffer
-				void* uBuffer;  //U data buffer
-				void* vBuffer;  //V data buffer
-				int rotation; // rotation of this frame (0, 90, 180, 270)
-				int64_t renderTimeMs; //timestamp of the audio frame
-				};
-			public:
-				virtual bool onCaptureVideoFrame(VideoFrame& videoFrame) = 0;
-				virtual bool onRenderVideoFrame(unsigned int uid, VideoFrame& videoFrame) = 0;
-		};
-	```
-
-2.  向媒体引擎注册视频帧观测器。在创建了 `IRtcEngine` 对象后、开启视频模式后、加入频道前，你可以注册观测器对象。
-
-	```
-	AgoraVideoFrameObserver s_videoFrameObserver;
-
-	agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
-		mediaEngine.queryInterface(engine,agora::AGORA_IID_MEDIA_ENGINE);
-		if (mediaEngine)
-		{
-			 mediaEngine->registerVideoFrameObserver(&s_videoFrameObserver);
-		}
-	```
-
-> 这里的 `engine` 可以通过 [创建插件](#create_plugin) 里的 `loadAgoraRtcEnginePlugin` 传入。
-
-
-<a name = "create_plugin"></a>
 ## 创建插件
 
 ### 具体用法

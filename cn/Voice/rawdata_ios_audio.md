@@ -3,7 +3,7 @@
 title: 修改音视频原始数据
 description: 
 platform: iOS,macOS
-updatedAt: Mon May 20 2019 07:50:41 GMT+0800 (CST)
+updatedAt: Mon May 20 2019 07:52:31 GMT+0800 (CST)
 ---
 # 修改音视频原始数据
 Agora 原始数据接口是 SDK 库提供的高级功能，便于你（开发者）获取媒体引擎的原始语音或视频数据。开发者可以修改语音或视频数据，创建特效来更好地满足自己应用程序的特殊需求。
@@ -56,7 +56,7 @@ Agora 原始数据接口是一个 C++ 接口。
 				int channels; // number of channels (data are interleaved if stereo)
 				int samplesPerSec; //sampling rate
 				void* buffer; //data buffer
-				int64_t renderTimeMs; // timestamp of the audio frame
+				int64_t renderTimeMs;
 			 };
 		public:
 				virtual bool onRecordAudioFrame(AudioFrame& audioFrame) = 0;
@@ -87,70 +87,4 @@ Agora 原始数据接口是一个 C++ 接口。
 > mediaEngine.queryInterface(rtc_engine, agora::AGORA_IID_MEDIA_ENGINE);
 > ```
 
-## 修改视频数据
 
-1. 定义 `AgoraVideoFrameObserver` 继承 `IVideoFrameObserver`\(接口类 `IVideoFrameObserver` 在 `IAgoraMediaEngine.h` 定义\) 。需要实现以下虚拟接口:
-
-   ```c++
-   class AgoraVideoFrameObserver : public agora::media::IVideoFrameObserver
-   {
-     public:
-       virtual bool onCaptureVideoFrame(VideoFrame& videoFrame) override
-       {
-         return true;
-       }
-       virtual bool onRenderVideoFrame(unsigned int uid, VideoFrame& videoFrame) override
-       {
-         return true;
-       }
-   };
-   ```
-
-	上述例子仅需保证语音前后处理的返回值为 true。如有需要，可参考 API 修改语音帧的样本数量、频道数量、采样率等:
-
-	```c++
-	class IVideoFrameObserver
-	{
-		public:
-			enum VIDEO_FRAME_TYPE {
-			FRAME_TYPE_YUV420 = 0,  //YUV 420 format
-			};
-		struct VideoFrame {
-			VIDEO_FRAME_TYPE type;
-			int width;  //width of video frame
-			int height;  //height of video frame
-			int yStride;  //stride of Y data buffer
-			int uStride;  //stride of U data buffer
-			int vStride;  // stride of V data buffer
-			void* yBuffer;  //Y data buffer
-			void* uBuffer;  //U data buffer
-			void* vBuffer;  //V data buffer
-			int rotation; // rotation of this frame (0, 90, 180, 270)
-			int64_t renderTimeMs; //timestamp of the audio frame
-			};
-		public:
-			virtual bool onCaptureVideoFrame(VideoFrame& videoFrame) = 0;
-			virtual bool onRenderVideoFrame(unsigned int uid, VideoFrame& videoFrame) = 0;
-	};
-	```
-
-2. 上述例子仅需保证视频前后处理的返回值为返回为 true。如有需要，可参考 API 修改视频帧的视频像素、行跨度等:
-
-	```c++
-	AgoraVideoFrameObserver s_videoFrameObserver;
-
-	agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
-		mediaEngine.queryInterface(*engine,agora::AGORA_IID_MEDIA_ENGINE);
-		if (mediaEngine)
-		{
-			 mediaEngine->registerVideoFrameObserver(&s_videoFrameObserver);
-		}
-	```
-
-> 可以通过以下方法获得 `engine`。其中 kit 指的是 `AgoraRtcEngineKit`。
->
-> ```c++
-> agora::IRtcEngine* rtc_engine = (agora::IRtcEngine*)kit.getNativeHandle;
-> agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
-> mediaEngine.queryInterface(*rtc_engine, agora::AGORA_IID_MEDIA_ENGINE);
-> ```
