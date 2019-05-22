@@ -29,7 +29,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
 
 在该方法中：
 
--   传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 null。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [密钥说明](../../cn/Voice/token.md)。
+-   传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 null。正式生产环境下，我们推荐你使用 Token。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [密钥说明](../../cn/Voice/token.md)。
 -   传入能标识频道的频道 ID。输入相同频道 ID 的用户会进入同一个频道。
 -   频道内每个用户的 UID 必须是唯一的。如果将 UID 设为 0，系统将自动分配一个 UID。
 
@@ -37,7 +37,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
 
 ```
  private void joinChannel() {
-    mRtcEngine.joinChannel(null, "demoChannel1", "Extra Optional Data", 0); // if you do not specify the uid, Agora will assign one.
+    mRtcEngine.joinChannel("token", "demoChannel1", "Extra Optional Data", 0); // if you do not specify the uid, Agora will assign one.
 }
 ```
 
