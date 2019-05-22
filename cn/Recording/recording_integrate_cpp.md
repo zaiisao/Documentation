@@ -3,12 +3,13 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: CPP
-updatedAt: Wed May 22 2019 02:17:59 GMT+0800 (CST)
+updatedAt: Wed May 22 2019 02:18:49 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
 
-你需要将 Agora 录制 SDK 集成在你的 Linux 服务器上而不是你的 App 上。如果你不想自行部署 Linux 服务器，可尝试 [Agora 云端录制](../../cn/cloud-recording/product_cloud_recording.md)。
+你需要将 Agora 录制 SDK 集成在你的 Linux 服务器上而不是你的 App 上。
+>如果你不想自行部署 Linux 服务器，可尝试 [Agora 云端录制](../../cn/cloud-recording/product_cloud_recording.md)。
 
 <img alt="../_images/recording_linux_cn.png" src="https://web-cdn.agora.io/docs-files/cn/recording_linux_cn.png" style="width: 640.0px;"/>
 
