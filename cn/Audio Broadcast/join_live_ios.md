@@ -47,7 +47,7 @@ func setChannelProfile() {
 ```objective-c
 //Objective-C
 - (void)joinChannel {
-  [self.agoraKit joinChannelByToken: "token" channelId:@"demoChannel1" info:nil uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
+  [self.agoraKit joinChannelByToken:"token" channelId:@"demoChannel1" info:nil uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
     // Join channel "demoChannel1"
   }];
 }
