@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Wed May 22 2019 15:09:39 GMT+0800 (CST)
+updatedAt: Wed May 22 2019 15:09:42 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -78,7 +78,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 本版本增加了呼叫邀请功能。结合音视频一对一或一对多通话场景，你可以创建、发送、取消、接受或拒绝一个呼叫邀请。
 
-> 本版本不包含 `setLogFile` 和 `setLogFilter` 方法。所有的日志信息默认保存在 **~/Library/caches/agorasdk.log** 。
+> 本版本不包含 `setLogFile` 和 `setLogFilter` 方法。所有的日志信息默认保存在 **~/Library/caches/agorartm.log** 。
 
 ### 性能改进
 
