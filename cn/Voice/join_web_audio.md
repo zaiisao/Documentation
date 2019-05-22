@@ -14,12 +14,12 @@ updatedAt: Thu Dec 13 2018 07:24:56 GMT+0800 (CST)
 
 在  `client.join` 方法中填入以下参数值：
 
-- `tokenOrKey`：如果安全要求不高，将参数值设为 null；如果安全要求高，传入从你的服务端获得的 token 或 Channel Key 值。详情参考 [校验用户权限](../../cn/Voice/token.md)。
+- `tokenOrKey`：如果安全要求不高，将参数值设为 null；如果安全要求高，传入从你的服务端获得的 Token。正式生产环境下，我们推荐你使用 Token。详情参考 [校验用户权限](../../cn/Voice/token.md)。
 - `channel`：频道名称。
 - `uid`：用户的 ID， **整数，需保证唯一性**。 如果不指定，即用户 ID 设置为 null，回调会返回一个服务器分配的 uid。
 
 ```javascript
-client.join(<TOKEN_OR_KEY>, <CHANNEL_NAME>, <UID>, function(uid) {
+client.join(<TOKEN>, <CHANNEL_NAME>, <UID>, function(uid) {
   console.log("User " + uid + " join channel successfully");
 
 }, function(err) {
