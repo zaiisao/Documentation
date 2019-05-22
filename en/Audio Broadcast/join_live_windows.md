@@ -35,10 +35,8 @@ Call the <code>joinChannel</code> method to join a channel.
 
 In the <code>joinChannel</code> method:
 
--   Pass a token that identifies the role and privilege of the user. Set token as null for low-security requirements. A token is generated at the server of the application. For how to generate a token, see [Security Keys](../../en/Audio%20Broadcast/token.md).
-
+-   Pass a token that identifies the role and privilege of the user. Set token as null for low-security requirements. We recommend using a token in the production environment. A token is generated at the server of the application. For how to generate a token, see [Security Keys](../../en/Audio%20Broadcast/token.md).
 -   Pass a channel ID that identifies the channel. Users that input the same channel ID enter into the same channel.
-
 -   Pass a uid that identifies the user. Each user in a channel requires a unique uid. If you want to join the same channel on different devices, ensure that different uids are used for each device.
 
 
@@ -46,7 +44,7 @@ In the <code>joinChannel</code> method:
 
 ```
 LPCSTR lpStreamInfo = "{\"owner\":true,\"width\":640,\"height\":480,\"bitrate\":500}";
-nRet = m_lpAgoraEngine->joinChannel(lpDynamicKey, lpChannelName, lpStreamInfo, nUID);
+nRet = m_lpAgoraEngine->joinChannel(lpToken, lpChannelName, lpStreamInfo, nUID);
 ```
 
 ## Next Steps
