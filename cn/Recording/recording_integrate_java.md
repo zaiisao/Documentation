@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Java
-updatedAt: Wed May 22 2019 03:13:18 GMT+0800 (CST)
+updatedAt: Wed May 22 2019 03:13:24 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 本地服务端录制 SDK。
@@ -20,8 +20,6 @@ updatedAt: Wed May 22 2019 03:13:18 GMT+0800 (CST)
 - 在本地服务端录制 SDK 中和进行音视频通话的 Agora SDK 使用同一个 App ID 。
 
 ## 前提条件
-
-### 硬件和网络要求
 
 下表列出了安装 Agora 本地服务端录制 SDK 的基本要求：
 
@@ -101,23 +99,6 @@ updatedAt: Wed May 22 2019 03:13:18 GMT+0800 (CST)
 - 每个频道占用约 25 M 内存；总共占用约 2.5 G 内存。内存占用率约为 31%；
 - 每个频道写入磁盘的速度约为 60 KB/s ；总写入速度约为 6.0 MB/s ，远低于磁盘的最大写入速度；
 - 每个频道下行网络流量约为 500 Kbps &times; 2 = 1 Mbps ，总下行流量约为 100 Mbps ，上行流量可以忽略不计。
-
-### SDK 兼容性
-
-本地服务端录制 SDK 支持：
-
-- 纯 Native 端录制；
-- 纯 Web 端录制
-- Web 与 Native 互通时录制。
-
-本地服务端录制 SDK 与以下 Agora SDK 兼容:
-
-| Agora SDK        | 兼容版本 |
-| ---------------- | -------- |
-| Agora Native SDK | 1.7.0+   |
-| Agora Web SDK    | 1.12.0+  |
-
-> 如果频道内有任何用户使用了不兼容版本的 SDK，则整个频道无法录制。
 
 ## 准备环境
 
