@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Thu May 23 2019 03:18:25 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 03:18:29 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -74,7 +74,9 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 该版本于 2019 年 4 月 4 日发布。
 
-> 本版本不包含 `setLogFile` 和 `setLogFilter` 方法。所有的日志信息默认保存在 **~/Library/caches/agorartm.log** 。
+> 本版本不包含 `setLogFile` 和 `setLogFilter` 方法。所有的日志信息默认保存在：
+> - iOS 平台： **/Library/Caches/agorartm.log** 。
+> -macOS 平台： **~/Library/Logs/agorartm.log**
 
 ### 新增功能
 
