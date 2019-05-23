@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu May 23 2019 03:14:11 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 03:14:15 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -75,7 +75,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 该版本于 2019 年 4 月 4 日发布。
 
-> 本版本不包含 `setLogFile` 和 `setLogFilter` 方法。所有的日志信息默认保存在 **~/sdcard/\<AppName\>/agorartm.log** 。
+> 本版本不包含 `setLogFile` 和 `setLogFilter` 方法。所有的日志信息默认保存在 **/sdcard/\<AppName\>/agorartm.log** 。
 
 ### 新增功能
 
