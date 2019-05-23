@@ -3,63 +3,47 @@
 title: 命令行录制
 description: How to start recording using cmd
 platform: CPP
-updatedAt: Thu May 23 2019 08:26:50 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 08:28:34 GMT+0800 (CST)
 ---
 # 命令行录制
-本文介绍如何通过命令行进行录制。 你也可以通过调用 API 实现录制，详见 [C++](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html) API 参考。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
+本文介绍如何通过命令行进行录制。 
+
+Agora 录制 SDK 提供一个演示用途的 recorder demo，直接在命令行中输入命令运行 demo 就可以开始录制。
 
 开始前请确保你已经完成录制 SDK 的环境准备和集成工作，详见[集成客户端](../../cn/Recording/recording_integrate_cpp.md)。
 
 > 当录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道模式。
 
-## 查看录制选项
+## 编译代码示例
 
-打开命令行工具，在 **samples/cpp** 目录下执行 `./recorder_local` 命令，即可看到录制相关的参数和选项，如下所示:
-
-```
-Usage: 
-  ./recorder_local --appId STRING --uid UINTEGER32 --channel STRING --appliteDir STRING --channelKey STRING --channelProfile UINTEGER32 --isAudioOnly --isVideoOnly --isMixingEnabled --mixResolution STRING --mixedVideoAudio UINTEGER32 --decryptionMode STRING --secret STRING --idle INTEGER32 --recordFileRootDir STRING --lowUdpPort INTEGER32 --highUdpPort INTEGER32 --getAudioFrame UINTEGER32 --getVideoFrame UINTEGER32 --captureInterval INTEGER32 --cfgFilePath STRING --streamType UINTEGER32 --triggerMode INTEGER32 --proxyServer STRING --audioProfile UINTEGER32 --audioIndicationInterval INTEGER32 --defaultVideoBg STRING --defaultUserBg STRING --logLevel INTEGER32 --layoutMode INTEGER32 --maxResolutionUid INTEGER32 
-                   --appId     (App Id/must)
-                   --uid     (User Id default is 0/must)
-                   --channel     (Channel Id/must)
-                   --appliteDir     (directory of app lite 'AgoraCoreService', Must pointer to 'Agora_Recording_SDK_for_Linux_FULL/bin/' folder/must)
-                   --channelKey     (channelKey/option)
-                   --channelProfile     (channel_profile:(0:COMMUNICATION),(1:broadcast) default is 0/option)
-                   --isAudioOnly     (Default 0:A/V, 1:AudioOnly (0:1)/option)
-                   --isVideoOnly     (Default 0:A/V, 1:VideoOnly (0:1)/option)
-                   --isMixingEnabled     (Mixing Enable? (0:1)/option)
-                   --mixResolution     (change default resolution for vdieo mix mode/option)
-                   --mixedVideoAudio     (mixVideoAudio:(0:seperated Audio,Video) (1:mixed Audio & Video with legacy codec) (2:mixed Audio & Video with new codec), default is 0 /option)
-                   --decryptionMode     (decryption Mode, default is NULL/option)
-                   --secret     (input secret when enable decryptionMode/option)
-                   --idle     (Default 300s, should be above 3s/option)
-                   --recordFileRootDir     (recording file root dir/option)
-                   --lowUdpPort     (default is random value/option)
-                   --highUdpPort     (default is random value/option)
-                   --getAudioFrame     (default 0 (0:save as file, 1:aac frame, 2:pcm frame, 3:mixed pcm frame) (Can't combine with isMixingEnabled) /option)
-                   --getVideoFrame     (default 0 (0:save as file, 1:h.264, 2:yuv, 3:jpg buffer, 4:jpg file, 5:jpg file and video file) (Can't combine with isMixingEnabled) /option)
-                   --captureInterval     (default 5 (Video snapshot interval (second)))
-                   --cfgFilePath     (config file path / option)
-                   --streamType     (remote video stream type(0:STREAM_HIGH,1:STREAM_LOW), default is 0/option)
-                   --triggerMode     (triggerMode:(0: automatically mode, 1: manually mode) default is 0/option)
-                   --proxyServer     (proxyServer:format ip:port, eg,"127.0.0.1:1080"/option)
-                   --audioProfile     (audio quality: (0: single channelstandard 1: single channel high quality 2:multiple channel high quality)
-                   --audioIndicationInterval     (audioIndicationInterval:(0: no indication, audio indication interval(ms)) default is 0/option)
-                   --defaultVideoBg     (default video background/option)
-                   --defaultUserBg     (default user background/option)
-                   --logLevel     (log level default INFO/option)
-                   --layoutMode     (layoutMode:(0: default layout, 1:bestFit Layout mode, 2:vertical presentation Layout mode) default is 0/option)
-                   --maxResolutionUid     (uid with maxest resolution under vertical presentation Layout mode  ( default is -1 /option)
+打开命令行工具，到 SDK 包的 **samples/cpp** 的目录下执行以下命令进行编译。
 
 ```
+make
+```
 
+编译成功后，在该目录下会生成一个 `recorder_local` 可执行程序，如图所示。
 
+![img](https://web-cdn.agora.io/docs-files/1544522109941)
+
+## 开始录制
+
+在命令行中输入 `./recorder_local` 加上必要的参数设置，即可快速开始录制，例如：
+
+```bash
+./recorder_local --appId <你的 App ID> --channel <频道名> --uid 0 --channelProfile <0 通信模式，1 直播模式> --appliteDir Agora_Recording_SDK_for_Linux_FULL/bin
+```
+
+其中：
+
+- `appId`，`channel` 和 `channelProfile` 的设置必须与 Agora Native/Web SDK 一致。
+- `appliteDir` 必须设置为 `AgoraCoreServices` 存放的路径，SDK 包内该文件位于 **bin** 文件夹下。
 
 ## 设置录制选项
 
-按照你的需要在命令行中输入以下参数的设置并执行，即可开始使用录制服务。
+除上面示例中的参数外，录制 demo 还提供很多参数设置选项，在 **samples/cpp** 目录下执行 `./recorder_local` 命令，即可看到录制 demo 全部的参数和选项，你可以参考下表根据需要自行设置。
 
-> `appID`，`uid`，`channel` 和 `appliteDir` 这几个参数必须设置，如不设置则无法录制，其他参数可根据需要自行选择是否设置。
+> `appID`，`uid`，`channel` 和 `appliteDir` 这几个参数必须设置，如不设置则无法录制。
 
 | 参数                      | 描述                                                         |
 | --------------------------- | ------------------------------------------------------------ |
