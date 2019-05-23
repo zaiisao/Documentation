@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu May 23 2019 07:10:33 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 07:10:38 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -71,6 +71,7 @@ Agora 的 Token 方案基于请求—响应机制，流程如下：
 -   [RTM Token Builder for C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/sample/rtm_builder.cpp)
 -   [RTM Token Builder for Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/sample/io/agora/media/sample/RtmTokenBuilderSample.java)
 -   [RTM Token Builder for Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/sample/sample_rtm_builder.py)
+-   [RTM Token Builder for PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/sample/RtmTokenBuilderSample.php )
 
 Agora 提供的示例代码包含下列内容：
 
