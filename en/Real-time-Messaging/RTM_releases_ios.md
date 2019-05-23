@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Thu May 23 2019 03:49:35 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 03:49:39 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -78,7 +78,9 @@ v0.9.1 is released on April 4th, 2019.
 
 This release adds the call invitation feature, allowing you to create, send, cancel, accept, and decline a call invitation in a one-to-one or one-to-many voice/video call. 
 
-> This version does not come with the `setLogFile` or `setLogFilter` method. All log information is kept at **~/Library/caches/agorasdk.log** by default. 
+> This version does not come with the `setLogFile` or `setLogFilter` method. 
+> - For iOS platforms, all log information is kept at **/Library/Caches/agorartm.log** by default. 
+> - For macOS platforms, all log information is kept at **~/Library/Logs/agorartm.log** by default. 
 
 ### Improvements
 
