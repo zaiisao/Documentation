@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu May 23 2019 03:41:24 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 03:41:28 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -74,6 +74,8 @@ Adds the following error code for when a user sends a call invitation without lo
 ## v0.9.1
 
 v0.9.1 is released on April 4th, 2019.
+
+> This version does not come with the `setLogFile` and `setLogFilter` method. The default log file location is at **/sdcard/\<AppName\>/agorartm.log**.
 
 ### New Features
 
