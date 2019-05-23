@@ -3,14 +3,14 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri May 10 2019 03:29:56 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 03:41:24 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
 
-Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-Time-Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
+Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
 
-> Fore more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_releases_android.md).
+> For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_releases_android.md).
 
 ## v0.9.2 
 
@@ -18,29 +18,29 @@ v0.9.2 is released on May 5th, 2019.
 
 ### New Features
 
-#### Queries the Online Status of the Specified User(s)
+#### Queries the Online Status of the Specified Users
 
 This release introduces a new concept: online and offline. 
 
 - Online: The user has logged in the Agora RTM system. 
 - Offline: The user has logged out of the Agora RTM system. 
 
-This release adds the function of querying the online status of the specified users. After logging in the Agora RTM system you can get the online status of a maximum of 256 specified users.  See: [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3) .
+This release adds the function of querying the online status of the specified users. After logging in the Agora RTM system, you can get the online status of a maximum of 256 specified users. See [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3).
 
 > - The sequence of the returned user IDs is identical to the input sequence. 
-> - The call frequency of this method is 10 queries every 5 seconds.  See: [Limitations](../../en/Real-time-Messaging/RTM_limitations_ios.md) .
+> - The call frequency of this method is 10 times every five seconds. See [Limitations](../../en/Real-time-Messaging/RTM_limitations_ios.md).
 
 
 #### Renews the Token
 
-In the production environment, you need to put a token to [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) the Agora RTM system. Each token expires 24 hours after it is created. This release allows you to [renew token](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) .
+In the production environment, you need to use a token to [log in](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) the Agora RTM system. Each token expires 24 hours after it is created. This release allows you to [renew a token](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353).
 
 - If you are logging in the Agora RTM system and if your token has expired, the SDK returns the [LOGIN_ERR_TOKEN_EXPIRED](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_login_error.html#a4a15940de40fe029ba9821e406f3d875) error code. 
-- if you has logged in the Agora RTM system, you will not be kicked immediately when your token expires. But you need to renew your token the next time you log in the Agora RTM system. Therefore, we still recommend that you renew your token when you receive the [onTokenExpired](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e) callback.
+- if you are logged in the Agora RTM system, you will not be kicked out immediately when your token expires. But you need to renew your token the next time you log in the Agora RTM system. Therefore, we still recommend that you renew your token when you receive the [onTokenExpired](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e) callback.
 
 
-> - [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) must be called before [creating an RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6411640143c4d0d0cd9481937b754dbf) .
-> - The call frequency of the `RenewToken` method  is 2 queries every second. See: [Limitations](../../en/Real-time-Messaging/RTM_limitations_ios.md) .
+> - The [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) method must be called before [creating an RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6411640143c4d0d0cd9481937b754dbf).
+> - The call frequency of the [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) method is two times every second. See [Limitations](../../en/Real-time-Messaging/RTM_limitations_ios.md).
 
 ### Improvements
 
@@ -49,26 +49,25 @@ In the production environment, you need to put a token to [login](https://docs.a
 
 ### API Changes
 
-#### Queries the Online Status of the Specified User(s)
+#### Queries the Online Status of the Specified Users
 
 ##### Adds
 
-- Method:  [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3)
-- Error Codes: [QueryPeersOnlineStatusError](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_query_peers_online_status_error.html)
+- Method: [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3)
+- Error Code: [QueryPeersOnlineStatusError](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_query_peers_online_status_error.html)
 
 #### Renews the Token
 
 ##### Adds
 
-- Method:  [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353)
+- Method: [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353)
 - Callback: [onTokenExpired](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e)
-- Error Codes:  [RenewTokenError](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_renew_token_error.html)
-- [CONNECTION_CHANGE_REASON_TOKEN_EXPIRED
-](/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_connection_change_reason.html#a0e1fb03e58b71446446cfb70a6610423) 
+- Error Codes: 
+  - [RenewTokenError](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_renew_token_error.html)
 
 #### Call Invitation
 
-Adds the following the error code to cover the situation where a user sends a call invitation without logging in the Agora RTM system. 
+Adds the following error code for when a user sends a call invitation without logging in the Agora RTM system. 
 
 - [LOCAL_INVITATION_ERR_NOT_LOGGEDIN](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_local_invitation_error.html#aa717afb5d4809544e6d66e1c0538f2eb)
 
