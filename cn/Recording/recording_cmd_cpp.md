@@ -3,12 +3,12 @@
 title: 命令行录制
 description: How to start recording using cmd
 platform: CPP
-updatedAt: Thu May 23 2019 08:28:34 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 08:32:24 GMT+0800 (CST)
 ---
 # 命令行录制
 本文介绍如何通过命令行进行录制。 
 
-Agora 录制 SDK 提供一个演示用途的 recorder demo，直接在命令行中输入命令运行 demo 就可以开始录制。
+Agora 录制 SDK 提供一个 recorder demo，直接在命令行中输入命令运行 demo 就可以开始录制。
 
 开始前请确保你已经完成录制 SDK 的环境准备和集成工作，详见[集成客户端](../../cn/Recording/recording_integrate_cpp.md)。
 
