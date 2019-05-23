@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: CPP
-updatedAt: Thu May 23 2019 08:20:16 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 08:28:48 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
@@ -167,18 +167,6 @@ updatedAt: Thu May 23 2019 08:20:16 GMT+0800 (CST)
 4. 将域名 .agora.io 和 .agoralab.co 设为白名单。
 
 7. 为调试方便，Agora 建议你打开系统的 core dump 功能以记录可能产生的程序崩溃信息。
-
-## 编译代码示例
-
-打开命令行工具，到 **samples/cpp** 的目录下执行以下命令进行编译。
-
-```
-make
-```
-
-编译成功后，在该目录下会生成一个 `recorder_local` 可执行程序，如图所示。
-
-![](https://web-cdn.agora.io/docs-files/1544522109941)
 
 
 你已经集成了录制 SDK。
