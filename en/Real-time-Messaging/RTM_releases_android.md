@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu May 23 2019 06:57:15 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 06:58:06 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -15,6 +15,8 @@ Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time
 ## v0.9.2 
 
 v0.9.2 is released on May 5th, 2019.
+
+> This release does not support [creating an RtmChannel instance](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) before [logging in](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) the Agora RTM system
 
 ### New Features
 
