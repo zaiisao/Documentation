@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Thu May 23 2019 07:07:41 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 07:07:45 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -15,6 +15,8 @@ Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time
 ## v0.9.2 
 
 v0.9.2 is released on May 5th, 2019.
+
+> This release does not support [creating an RtmChannel instance](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) before [logging in](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:) the Agora RTM system
 
 ### New Features
 
