@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux Java
-updatedAt: Thu May 23 2019 06:47:57 GMT+0800 (CST)
+updatedAt: Thu May 23 2019 06:48:02 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -13,6 +13,8 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 ## 0.9.2 版
 
 该版本于 2019 年 5 月 8 日发布。
+
+> 当前版本不支持在 [登录](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) RTM 系统前 [创建频道实例](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) 。
 
 ### 新增功能
 
