@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Web
-updatedAt: Fri May 24 2019 03:23:31 GMT+0800 (CST)
+updatedAt: Fri May 24 2019 03:23:35 GMT+0800 (CST)
 ---
 # RTM 快速开始
 
@@ -99,8 +99,8 @@ App 在成功登录 RTM 服务器之后，可以开始使用 RTM 的点对点消
 
 ```JavaScript
 client.sendMessageToPeer(
-		{ text: 'test peer message' }, // 符合 RtmMessage 接口的参数对象
-		'<PEER_ID>', // 远端用户 ID
+	{ text: 'test peer message' }, // 符合 RtmMessage 接口的参数对象
+	'<PEER_ID>', // 远端用户 ID
 ).then(sendResult => {
   if (sendResult.hasPeerReceived) {
     /* 远端用户收到消息的处理逻辑 */
