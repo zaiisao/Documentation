@@ -3,7 +3,7 @@
 title: RTM Quickstart Guide
 description: v0.9.0web quickstart 
 platform: Web
-updatedAt: Fri May 24 2019 03:16:23 GMT+0800 (CST)
+updatedAt: Fri May 24 2019 03:16:27 GMT+0800 (CST)
 ---
 # RTM Quickstart Guide
 This page describes how to integrate the Agora RTM Web SDK and call the basic functionalities.
@@ -109,8 +109,8 @@ This method returns a Promise:
 
 ```JavaScript
 client.sendMessageToPeer(
-'demoPeerId', // The user ID of the remote user.
 { text: 'test peer message' }, // An RtmMessage object.
+'demoPeerId', // The user ID of the remote user.
 ).then(sendResult => {
 if (sendResult.hasPeerReceived) {
 /* Your code for handling the event that the remote user receives the message. */
