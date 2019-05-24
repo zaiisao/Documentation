@@ -3,7 +3,7 @@
 title: RTM Quickstart Guide
 description: v0.9.0web quickstart 
 platform: Web
-updatedAt: Fri May 24 2019 08:57:10 GMT+0800 (CST)
+updatedAt: Fri May 24 2019 08:57:20 GMT+0800 (CST)
 ---
 # RTM Quickstart Guide
 This page describes how to integrate the Agora RTM Web SDK and call the basic functionalities.
@@ -186,6 +186,23 @@ channel.on('MemberJoined', memberId => { // memberId: user ID of the user joinin
 channel.on('MemberLeft', memberId => { // memberId: user ID of the user joining the channel.
 /* Your code for handling events, such as when a member leaves the channel. */
 })
+```
+### Get the member list of the current channel
+
+You can get the member list of the channel after joining it. Use the `getMembers` method. 
+
+```JavaScript
+channel.getMembers().then(membersList => { // membersList: The member list.
+    /* You code for handling events, such as a getMembers success. */
+}).catch(error => {
+  /* Your code for handling events such as a getMembers failure. */
+});
+```
+
+### Leave the channel
+
+```JavaScript
+channel.leave();
 ```
 
 
