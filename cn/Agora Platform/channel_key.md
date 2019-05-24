@@ -55,16 +55,11 @@ updatedAt: Fri Nov 02 2018 04:02:44 GMT+0800 (CST)
 
 1. 在你的项目的末尾点击 **编辑** 按钮：
 
-![](https://web-cdn.agora.io/docs-files/1558691683779)
-
-<img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" />
-
+![](https://web-cdn.agora.io/docs-files/1558693164833)
 
 2. 点击 App 证书右方的 **启用** 按钮。仔细阅读 关于 App 证书介绍后，根据屏幕提示，点击 **启用** 。
 
 ![](https://web-cdn.agora.io/docs-files/1558691819508)
-
-<img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" />
 
 3. 启用App 证书后，系统会向你的账户邮箱发送确认邮件。请根据提示启用 App 证书。
 
@@ -72,8 +67,6 @@ updatedAt: Fri Nov 02 2018 04:02:44 GMT+0800 (CST)
 4. App 证书开启成功后，在 **项目管理** 页面点击对应项目上的“眼睛”图标，显示并复制完整的 App 证书。如需隐藏 App 证书，再次点击“眼睛”图标。
 
 ![](https://web-cdn.agora.io/docs-files/1558692946948)
-
-<img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 
 
 > -   将你的 App 证书保存在服务器端，且对任何客户端均不可见。
