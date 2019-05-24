@@ -3,7 +3,7 @@
 title: 防火墙说明
 description: 
 platform: All Platforms
-updatedAt: Fri May 24 2019 08:18:54 GMT+0800 (CST)
+updatedAt: Fri May 24 2019 08:19:00 GMT+0800 (CST)
 ---
 # 防火墙说明
 在使用 Agora.io 提供的相关服务之前，您需要接入到某些特定的端口。本页提供使用 Agora 各 SDK 前必须要打开的端口及设置的域名白名单。
@@ -26,6 +26,16 @@ updatedAt: Fri May 24 2019 08:18:54 GMT+0800 (CST)
 -   将域名 `.agora.io` 和 `.agoraio.cn` 设为白名单
 
 > 如果你使用了代理服务器，则需打开端口 3433；如果未使用代理服务器，则无需打开端口 3433。
+
+## Agora RTM SDK
+
+- Agora RTM Web SDK:
+  - 打开 TCP 端口: 443
+  - 将域名`.agora.io` 设为白名单
+- 其他平台 Agora RTM SDK:
+  - 打开 TCP 端口 9130, 9131
+  - 打开 UDP 端口 8000, 1080, 25000
+  - 将域名 `.agora.io`、`qoslbs.agora.io` 以及 `qos.agora.io` 设为白名单
 
 ## Agora Signaling SDK
 
