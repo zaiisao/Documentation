@@ -55,7 +55,7 @@ updatedAt: Fri Nov 02 2018 04:02:44 GMT+0800 (CST)
 
 1. 在你的项目的末尾点击 **编辑** 按钮：
 
-![](https://web-cdn.agora.io/docs-files/1558693164833)
+![](https://web-cdn.agora.io/docs-files/1558693714333)
 
 2. 点击 App 证书右方的 **启用** 按钮。仔细阅读 关于 App 证书介绍后，根据屏幕提示，点击 **启用** 。
 
