@@ -17,7 +17,7 @@ updatedAt: Thu Dec 13 2018 08:59:29 GMT+0800 (CST)
 
 
 ```
-client.join(tokenOrKey, channel, uid, onSuccess, onFailure);
+client.join(token, channel, uid, onSuccess, onFailure);
 ```
 
 如果你的小程序中有切后台的场景需求，还需要调用 `rejoin` 方法做好重连机制。
