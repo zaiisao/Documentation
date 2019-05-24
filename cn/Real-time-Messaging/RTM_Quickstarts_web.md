@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Web
-updatedAt: Fri May 24 2019 03:21:09 GMT+0800 (CST)
+updatedAt: Fri May 24 2019 03:23:31 GMT+0800 (CST)
 ---
 # RTM 快速开始
 
