@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Web
-updatedAt: Fri May 24 2019 03:23:35 GMT+0800 (CST)
+updatedAt: Fri May 24 2019 08:46:07 GMT+0800 (CST)
 ---
 # RTM 快速开始
 
@@ -117,7 +117,7 @@ client.sendMessageToPeer(
 监听 `client` 上的事件 `MessageFromPeer` 接收点对点消息。
 
 ```JavaScript
-client.on('MessageFromPeer', { text }, peerId) => { // text 为消息文本，peerId 是消息发送方 User ID
+client.on('MessageFromPeer', ({ text }, peerId) => { // text 为消息文本，peerId 是消息发送方 User ID
   /* 收到点对点消息的处理逻辑 */
 });
 ```
@@ -182,7 +182,7 @@ channel.on('MemberLeft', memberId => { // memberId 为离开频道的用户 ID
 
 ### 获取频道成员列表
 
-加入频道后可获取频道成员列表。调用实例的 getMembers 方法可以获取到当前在该频道内的用户列表。
+加入频道后可获取频道成员列表。调用实例的 `getMembers` 方法可以获取到当前在该频道内的用户列表。
 
 ```JavaScript
 channel.getMembers().then(membersList => { // membersList 为获取到的频道成员列表
@@ -195,4 +195,8 @@ channel.getMembers().then(membersList => { // membersList 为获取到的频道�
 ### 退出频道
 
 调用实例的 leave 方法可以退出该频道。退出频道之后可以调用 join 方法再重新加入频道。
+
+```JavaScript
+channel.leave();
+```
 
