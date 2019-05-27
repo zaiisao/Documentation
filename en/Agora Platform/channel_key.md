@@ -111,7 +111,7 @@ To get an App Certificate:
 
 > -   Keep the App Certificate on the server, never on any client machine.
 > 
-> -   The App Certificate takes about an hour to take effect after it is enabled.
+> -   The App Certificate takes about five minutes to take effect after it is enabled.
 > 
 > -   Once the App Certificate is enabled for a project, a token must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a token or a Channel Key must be used to join a channel.
 
