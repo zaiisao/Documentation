@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: iOS
-updatedAt: Mon May 27 2019 02:40:28 GMT+0800 (CST)
+updatedAt: Mon May 27 2019 02:40:32 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -38,16 +38,13 @@ updatedAt: Mon May 27 2019 02:40:28 GMT+0800 (CST)
 ### 手动添加 SDK 到项目中
 
 1. 下载 [Agora RTM Objective-C SDK for iOS](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_iOS_v0_9_2.zip) ，解压后将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到你的项目文件夹内。
-
 2. 使用 Xcode 打开你的项目，然后选中当前 Target。
-
 3. 打开 **Build Phases** 页面，展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加
-
    - **AgoraRtmKit.framework**
    - **libc++.tbd**
    - **libresolv.tbd**
    - **SystemConfiguration.framework**
-   -  **CoreTelephony.framework**
+   - **CoreTelephony.framework**
 
 其中，**AgoraRtmKit.framework** 位于你的项目文件夹下。因此点击 **+** 后，还需要点击 **Add Other…** ，然后进入你的项目所在目录，选中这个文件并点击 **Open**。
 
@@ -71,8 +68,8 @@ import AgoraRtmKit
 
 调用 `initWithAppId` 方法创建一个实例。在该方法中:
 
- - 填入获取到的 App ID。只有 App ID 相同的应用程序才能互通。
- - 指定一个事件回调。SDK 通过回调通知应用程序 SDK 的状态变化和运行事件等，如: 连接状态发生变化，接收到点对点消息等。
+- 填入获取到的 App ID。只有 App ID 相同的应用程序才能互通。
+- 指定一个事件回调。SDK 通过回调通知应用程序 SDK 的状态变化和运行事件等，如: 连接状态发生变化，接收到点对点消息等。
 
 ```objective-c
 @interface ViewController ()<AgoraRtmChannelDelegate, AgoraRtmDelegate>
@@ -121,14 +118,15 @@ App 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
     NSLog(@"Connection state changed to %@", @(reason));
 }
 ```
+
 如果需要退出登录，可以调用 `logoutWithCompletion` 方法。
 
 ```objective-c
 [_kit logoutWithCompletion:^(AgoraRtmLogoutErrorCode errorCode) {
     if (errorCode != AgoraRtmLogoutErrorOk) {
-        NSLog(@"login failed %@", @(errorCode));
+        NSLog(@"logout failed %@", @(errorCode));
     } else {
-        NSLog(@"login success");
+        NSLog(@"logout success");
     }
 }];
 ```
@@ -139,13 +137,12 @@ App 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
 
 App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的点对点消息功能。
 
-
 ### 发送点对点消息
 
 调用 `sendMessage` 方法发送点对点消息。在该方法中：
 
 - 传入目标消息接收方的用户账号 ID。
-- 传入 `AgoraRtmMessage` 对象实例。该消息对象由 `AgoraRtmMessage` 类的 `initWithText` 静态方法创建和设置消息内容。
+- 传入 `AgoraRtmMessage` 对象实例。该消息对象由 `AgoraRtmMessage` 类的 `initWithText` 初始化方法创建和设置消息内容。
 - 传入消息发送状态监听器，用于接收消息发送结果回调，如：服务器已接收，发送超时，对方不可达等。
 
 ```objective-c
@@ -167,7 +164,16 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 ### 接收点对点消息
 
-点对点消息的接收通过创建 `AgoraRtmMessage` 实例的时候传入的 `AgoraRtmSendPeerMessageBlock` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到消息文本内容和是消息发送方的用户 ID (`peerId`)。
+点对点消息的接收通过创建 `AgoraRtmMessage` 实例的时候传入的 `AgoraRtmDelegate` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到消息文本内容和是消息发送方的用户 ID (`peerId`)。
+
+```objective-c
+- (void)rtmKit:(AgoraRtmKit *)kit messageReceived:(AgoraRtmMessage *)message fromPeer:(NSString *)peerId
+{
+    NSLog(@"Message received from %@: %@", message.text, peerId);
+}
+```
+
+
 
 ### 注意事项
 
@@ -177,14 +183,11 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的频道消息功能。
 
-
 ### 创建频道实例和加入频道
 
 1. 调用 `AgoraRtmChannel` 实例的 `createChannelWithId` 方法创建 `AgoraRtmChannel` 实例。在该方法中：
-
-  - 传入能标识每个频道的 ID。`channelId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"nil"`。
-  - 指定一个事件回调。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
-
+   - 传入能标识每个频道的 ID。`channelId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"nil"`。
+   - 指定一个事件回调。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
 2. 用户只有在加入频道之后，才能收发频道消息和获取频道成员列表等。调用 `AgoraRtmChannel` 实例的 `joinWithCompletion` 方法加入频道。在该方法中，指定回调用于判断是否成功加入该频道。
 
 ```objective-c
@@ -222,7 +225,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 调用 `AgoraRtmChannel` 实例的 `sendMessage` 方法向该频道发送消息。在该方法中：
 
-- 传入 `AgoraRtmMessage`` 对象实例。该消息对象由 `AgoraRtmMessage` 类的 `initWithText` 静态方法创建和设置消息内容。
+- 传入 `AgoraRtmMessage` 对象实例。该消息对象由 `AgoraRtmMessage` 类的 `initWithText` 初始化方法创建和设置消息内容。
 - 传入消息发送状态监听器，用于接收消息发送结果回调，如：服务器已接收，发送超时等。
 
 ```objective-c
@@ -244,13 +247,23 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 ### 接收频道消息
 
-频道消息的接收通过创建频道消息的时候传入的 `AgoraRtmSendChannelMessageBlock` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到频道消息文本内容和频道消息的发送者的用户 ID。
+频道消息的接收通过创建频道消息的时候传入的 `AgoraRtmChannelDelegate` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到频道消息文本内容和频道消息的发送者的用户 ID。
+
+```objective-c
+- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
+{
+    NSLog(@"message received from %@ in channel %@: %@", message.text, member.channelId, member.userId);
+}
+```
+
+
 
 ### 获取频道成员列表
 
 调用 `AgoraRtmChannel` 实例的 `getMembersWithCompletion` 方法可以获取到当前在该频道内的用户列表。 
 
 ### 退出频道
+
 调用 `AgoraRtmChannel` 实例的 `leaveWithCompletion` 方法可以退出该频道。
 
 ```objective-c
@@ -262,6 +275,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
     }
 }];
 ```
+
 退出频道之后可以调用 `joinWithCompletion` 方法再重新加入频道。
 
 ### 注意事项
