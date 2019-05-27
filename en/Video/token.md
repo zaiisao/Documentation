@@ -172,23 +172,21 @@ To get an App Certificate:
 
 1.  Login to [https://dashboard.agora.io](https://dashboard.agora.io).
 
-2.  Click **Add New Project** on the **Projects** page of  [Dashboard](https://dashboard.agora.io).
+2.  Click the **Edit** button of the corresponding project on the **Project Management** page.
 
-3.  Fill in the **Project Name** and click **Submit**. Find the App ID under the created project.
+![](https://web-cdn.agora.io/docs-files/1558943085209)
 
-    <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" />
+3. Click the **Enable** button next to the **App Certificate**. 
 
-4.  Enable the App Certificate for the project.
+4. Read the pop-up description of the App Certificate and click **Save** as promped. 
 
-    - Click **Edit** on the top-right of the project.
+![](https://web-cdn.agora.io/docs-files/1558943467945)
 
-    - Click **Enable** to the right of the App Certificate. Read **About App Certificate** before confirming the operation.
+5.  The system sends your mail account a confirmation Email. Please follow the instruction to enable the App Certificate. 
 
-      <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/en/enable_app_cert.png" />
+6. On the **Project Management** page, click the 'eye' icon to view and copy the App Certificate. You can re-click this icon to hide the App Certificate. 
 
-    - Click the ‘eye’ icon to view the App Certificate. You can re-click this icon to hide the App Certificate.
-    
-      <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/en/view_app_certificate.png" />
+![](https://web-cdn.agora.io/docs-files/1558943748601)
 
 
 > -   Keep the App Certificate on the server, never on any client machine.
