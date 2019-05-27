@@ -3,10 +3,19 @@
 title: Agora Audio Broadcasting Overview
 description: 
 platform: All_Platforms
-updatedAt: Mon May 27 2019 10:07:56 GMT+0800 (CST)
+updatedAt: Mon May 27 2019 10:08:00 GMT+0800 (CST)
 ---
 # Agora Audio Broadcasting Overview
-The Agora Native SDK for Audio Broadcasting enables one-to-many and many-to-many audio live streaming. Different from the traditional CDN live broadcast, which only allows one-way communication from the hosts to the audience, the Agora SDK for Interactive Broadcast empowers the audience to interact with the hosts through [hosting-in](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#hosting-in), like a viewer jumping onto the stage in the middle of a play to perform. The Agora Native SDK for Interactive Broadcast is applicable to scenarios that encourage active engagement, such as game-playing, online classes for students in small groups, and Q&A sessions during E-commerce live streaming.
+The Agora Native SDK for Audio Broadcasting enables one-to-many and many-to-many audio live streaming. 
+
+The difference between an [Agora Voice Call](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and Agora Voice Interactive Broadcast is:
+
+- An Agora Voice Call prioritizes smoothness and low latency. All users are the same role and can talk to each other freely. A typical scenario of an Agora Voice Call is a voice conference call for many persons.
+- An Agora Voice Interactive Broadcast prioritizes high voice quality. Users can be the host or audience, where only the host can talk. A user who wants to talk must change the role to a host. A typical scenario of the Agora Voice Interactive Broadcast is an online trivia game.
+
+Different from the traditional CDN live broadcast, which only allows one-way communication from the hosts to the audience, the Agora SDK for Interactive Broadcast empowers the audience to interact with the hosts through [hosting-in](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#hosting-in), like a viewer jumping onto the stage in the middle of a play to perform.
+
+The Agora Native SDK for Interactive Broadcast is applicable to scenarios that encourage active engagement, such as game-playing, online classes for students in small groups, and Q&A sessions during E-commerce live streaming.
 
 ## Functions and Scenarios
 
