@@ -3,12 +3,12 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Mon May 27 2019 03:25:11 GMT+0800 (CST)
+updatedAt: Mon May 27 2019 03:25:16 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
 
-本章介绍在正式使用 Agora RTM Java SDK for Linux 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+本章介绍在正式使用 Agora RTM Java SDK for Android 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
 
 ### 前提条件
 
@@ -128,7 +128,7 @@ import io.agora.rtm.RtmMessage;
 
 public void init() {
 		try {
-				mRtmClient = RtmClient.createInstance(APPID,
+				mRtmClient = RtmClient.createInstance(mContext, APPID,
 												new RtmClientListener() {
 						@Override
 						public void onConnectionStateChanged(int state, int reason) {
