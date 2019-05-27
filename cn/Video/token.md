@@ -179,7 +179,7 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 
 4. App 证书开启成功后，在 **项目管理** 页面点击对应项目上的“眼睛”图标，显示并复制完整的 App 证书。如需隐藏 App 证书，再次点击“眼睛”图标。
 
-![](https://web-cdn.agora.io/docs-files/1558692946948)
+![](https://web-cdn.agora.io/docs-files/1558959584424)
 
 
 > -   将你的 App 证书保存在服务器端，且对任何客户端均不可见。
