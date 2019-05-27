@@ -76,11 +76,19 @@ This page contains information on how to prepare the development environment bef
 
 1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/).
 
-2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu and click **Create**.
+2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation panel.
 
-3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
+3. Click **Create**. 
 
-4. Find the **App ID** under the created project.
+4. Fill in the **Project Name** in the pop-up window. 
+
+5. Choose the Authentication mode:
+  - For high-security scenarios, choose: **APP ID + APP Certificate + Token (Recommended).
+  - Fow low-security scenarios, choose **APP ID**. 
+ 
+6. Click **Submit** to create your project.
+
+7. Find the corresponding **App ID** under the created project.
 
 
 ## Import the Agora Web SDK to Your Project
