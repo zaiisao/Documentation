@@ -3,7 +3,7 @@
 title: RTM Quickstart Guide
 description: v0.9.1
 platform: iOS
-updatedAt: Mon Apr 29 2019 21:18:50 GMT+0800 (CST)
+updatedAt: Mon May 27 2019 04:23:54 GMT+0800 (CST)
 ---
 # RTM Quickstart Guide
 ## <a name = "create"></a>Create and Initialize an AgoraRtmKit Instance
