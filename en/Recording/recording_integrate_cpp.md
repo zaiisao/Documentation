@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: CPP
-updatedAt: Tue May 28 2019 07:12:11 GMT+0800 (CST)
+updatedAt: Tue May 28 2019 07:13:44 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
