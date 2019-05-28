@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Java
-updatedAt: Tue May 28 2019 07:04:34 GMT+0800 (CST)
+updatedAt: Tue May 28 2019 07:26:55 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 本地服务端录制 SDK。
@@ -155,10 +155,6 @@ updatedAt: Tue May 28 2019 07:04:34 GMT+0800 (CST)
    </tbody>
    </table>
 
-6. 为你的项目准备所需库：
-   - 将 **include** 文件夹添加到你的项目里。
-   - 将 **lib** 文件夹添加到你的项目里，并确保 `libRecordingEngine.a` 与项目有连接。
-
 5. 安装编译器: gcc 4.4+ 。
 8. 配置好 jdk 环境，并确保包含 jni.h。
 9. 配置好 Java 的 `CLASSPATH` 和 Linux 的 `LD_LIBRARY_PATH` 环境变量。
@@ -193,9 +189,19 @@ updatedAt: Tue May 28 2019 07:04:34 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1544522310646)
 
+完成编译后你就可以使用 demo 在命令行中进行录制了，详见[命令行录制](../../cn/Recording/recording_cmd_java.md)。如果你需要在自己的项目中调用 API 进行录制，还需要将 SDK 相关文件[导入项目](#import)。
 
-你已经集成了本地服务端录制 SDK。
+## <a name="import"></a>导入项目
 
-## 相关文档
+将以下文件导入你的项目：
 
-了解如何使用 Java 命令行进行录制：[开始录制](../../cn/Recording/recording_cmd_java.md)。
+- 编译生成的  `librecording.so` 文件
+- SDK 包中的 `AgoraCoreService` 文件（位于 **bin** 文件夹）
+- SDK 包中的 Java 文件（位于 **samples/java/src/io/agora/recording** 目录下）
+	- `RecordingEventHandler.java`
+	- `RecordingSDK.java`
+	- `/common/Common.java`
+	- `/common/RecordingConfig.java`
+	- `/common/RecordingEngineProperties.java`
+
+你已经集成了本地服务端录制 SDK，可以调用 API 进行录制了。详见 [Agora Recording Java API Reference](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/index.html)。
