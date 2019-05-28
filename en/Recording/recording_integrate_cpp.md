@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: CPP
-updatedAt: Tue May 28 2019 07:13:44 GMT+0800 (CST)
+updatedAt: Tue May 28 2019 07:14:09 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
@@ -50,7 +50,7 @@ The following table lists the basic requirements for installing the On-premise R
 </tbody>
 </table>
 
-Agora recommends the following hardware requirements:
+We recommend the following hardware requirements:
 
 <table>
 <thead>
@@ -87,13 +87,13 @@ Intel® Xeon® E5-2600 Series Processor</td>
 
 
 
-Assuming two users are in a channel in a video call \(communication mode\), with a resolution of 640 x 360, frame rate of 15 fps, and bitrate of one video stream of 500 Kbps, using single-stream recording:
+Assuming two users are in a channel in a video call \(Communication profile\), with a resolution of 640 x 360, a frame rate of 15 fps, and a bitrate of one video stream of 500 Kbps, using single-stream recording:
 
 The CPU with 12 cores and 24 threads is fully loaded and 100 channels are recorded simultaneously:
 
-- Each channel writes to the disk at a speed of 60 kB/s. The total write-in speed is 6.0 MB/s, which is much lower than the maximum write-in speed of the disk.
+- Each channel writes to the disk at a speed of 60 Kbps. The total write-in speed is 6.0 Mbps, which is much lower than the maximum write-in speed of the disk.
 - Each channel uses 25 MB of memory. Thus, 2.5 GB of memory, which is 31% of the total memory, is used.
-- The downlink Internet bandwidth for each channel is 500 kbps x 2 = 1 Mbps. The total downlink stream is 100 Mbps. The uplink stream is neglected.
+- The downlink Internet bandwidth for each channel is 500 Kbps x 2 = 1 Mbps. The total downlink bandwidth is 100 Mbps. The uplink bandwidth is neglected.
 
 ### Compatibility with the Agora SDKs
 
@@ -159,10 +159,10 @@ Set up the environment on your Linux server:
    <li>release/bin/recorder: Parent process that can be run.</li>
    </ul>
    </li>
-   <li>java: Java sample code<ul>
-   <li>native: Native code</li>
-   <li>native/jni: JNI delegate</li>
-   <li>src: java code</li>
+   <li>java: Java sample code.<ul>
+   <li>native: Native code.</li>
+   <li>native/jni: JNI delegate.</li>
+   <li>src: Java code.</li>
    <li>src/io/agora/recording/RecordingEventHandler.java: Callback interface class.</li>
    <li>src/io/agora/recording/RecordingSDK.java: Recording interface class.</li>
    </ul>
@@ -171,44 +171,32 @@ Set up the environment on your Linux server:
    </td>
    </tr>
    <tr><td>Tools</td>
-   <td>Transcoding tools</td>
+   <td>Transcoding tools.</td>
    </tr>
    </tbody>
    </table>
 
 6. Prepare the required libraries:
-      - Add the include folder to your project.
-      - Add the lib folder to your project and make sure the libRecordingEngine.a file is connected to the project.
-5. Ensure that your compiler is gcc 4.4+.
+      - Add the **include** folder to your project.
+      - Add the **lib** folder to your project and make sure the `libRecordingEngine.a` file is connected to the project.
+5. Ensure that your compiler is GCC 4.4+.
 2. Open the following TCP ports: 1080 and 8000.
 3. Open the following UDP ports:
    - Duplex ports: 1080, 4000 to 4030, 8000, 9700, and 25000.
    - Simplex downlink ports used by the recording processes.
 
    > - Use the `iptables -L` command line to check the UDP port.
-   > - To record the content in channels, you need one recording process for each of the channels. One recording process requires four simplex downlink ports. There must be no port conflict among the processes, including the system processes and all recording processes.
-   > - Agora recommends that you specify the range of ports used by the recording processes. Configure a large range for all recording processes \(Agora recommends 40000 to 41000 or larger\). If so, the On-premise Recording SDK assigns ports to each recording process within the specified range and avoids port conflicts automatically. To set the port range, you need to configure the `lowUdpPort` and `highUdpPort` parameters.
+   > - To record the content in the channels, you need one recording process for each of the channels. One recording process requires four simplex downlink ports. There must be no port conflict among the processes, including the system processes and all recording processes.
+   > - We recommend that you specify the range of ports used by the recording processes. Configure a large range for all recording processes \(Agora recommends 40000 to 41000 or larger\). If so, the On-premise Recording SDK assigns ports to each recording process within the specified range and avoids port conflicts automatically. To set the port range, you need to configure the `lowUdpPort` and `highUdpPort` parameters.
    > - If the `lowUdpPort` and `highUdpPort` parameters are not specified, the ports used by the recording processes are at random, which may cause port conflicts.
 
-4. Set whitelist domains:
+4. Whitelist the following domains:
 
    - .agora.io
    - .agoralab.co
 
-7. For debug purposes, Agora recommends you enable core dump on your Linux system.
+7. For debugging purposes, we recommend that you enable core dump on your Linux system.
 
-
-## Compile the Sample Code
-
-Open a command-line tool and run the following command to compile the sample code under the **samples/cpp** directory.
-
-```
-make
-```
-
-After the compilation, a **record_local** executable file is generated in this directory, as shown in the figure.
-
-![](https://web-cdn.agora.io/docs-files/1544522109941)
 
 The Agora On-premise Recording SDK is integrated.
 
