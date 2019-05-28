@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: CPP
-updatedAt: Tue May 28 2019 06:49:49 GMT+0800 (CST)
+updatedAt: Tue May 28 2019 06:49:55 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
@@ -152,7 +152,7 @@ updatedAt: Tue May 28 2019 06:49:49 GMT+0800 (CST)
 
 6. 为你的项目准备所需库：
    - 将 **include** 文件夹添加到你的项目里。
-   - 将 **lib** 文件夹添加到你的项目里，并确保 `libRecordingEngine.a` 与项目有连接。
+   - 将包含 lib 库的目录链接到 **libs** 文件夹下的 `libRecordingEngine.a` 库文件。
 
 5. 安装编译器: gcc 4.4+ 。
 2. 打开 TCP 端口：1080、8000。
