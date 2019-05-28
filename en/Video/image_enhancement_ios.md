@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: iOS
-updatedAt: Tue May 28 2019 07:12:08 GMT+0800 (CST)
+updatedAt: Tue May 28 2019 07:12:14 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -48,4 +48,5 @@ options.lighteningContrastLevel = 0;
 Agora provides an open source sample code that implements image enhancement. You can go to the [OpenLive-iOS Github Repo](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) to download it.
 
 ## Considerations
-This API method has return values. If the method call fails, the return value is < 0.
+- This API method has return values. If the method call fails, the return value is < 0.
+- For low-end phones, enabling image enhancement affects the system performance. When the video resolution is set as 360P, 720P or higher, and the frame rate is set as 30 fps or 15fps, do not enable image enhancement.
