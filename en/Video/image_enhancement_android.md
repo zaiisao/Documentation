@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Android
-updatedAt: Tue May 28 2019 07:11:35 GMT+0800 (CST)
+updatedAt: Tue May 28 2019 07:11:44 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -31,4 +31,4 @@ Agora provides an open source sample code that implements image enhancement. You
 
 ## Considerations
 - This API method has return values. If the method call fails, the return value is < 0.
-- For low-end phones, enabling image enhancement affects the system performance. When the video resolution is set as 360P, 720P or higher, and the frame rate is set as  30 fps or 15fps, do not enable image enhancement.
+- For low-end phones, enabling image enhancement affects the system performance. When the video resolution is set as 360P, 720P or higher, and the frame rate is set as  30 fps or 15 fps, do not enable image enhancement.
