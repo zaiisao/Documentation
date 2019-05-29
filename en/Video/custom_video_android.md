@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Wed May 29 2019 07:59:06 GMT+0800 (CST)
+updatedAt: Wed May 29 2019 07:59:12 GMT+0800 (CST)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -66,10 +66,8 @@ VideoSource source = new VideoSource() {
 		// Get the current frame type. 
 		// The SDK uses different methods to process different frame types.
 		// If you want to switch to another VideoSource type, create another instance.
-		// There are three video frame types.
+		// There are three video frame types: BYTE_BUFFER(1); BYTE_ARRAY(2); TEXTURE(3)
 		return BufferType.BYTE_ARRAY;
-		// return BufferType.TEXTURE
-		// return BufferType.BYTE_BUFFER;
 	}
 
 	@Override
