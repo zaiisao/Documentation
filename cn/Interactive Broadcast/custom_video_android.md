@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Wed May 29 2019 07:42:22 GMT+0800 (CST)
+updatedAt: Wed May 29 2019 07:42:29 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -63,7 +63,7 @@ boolean mHasStarted;
 VideoSource source = new VideoSource() {
 	@Override
 	public int getBufferType() {
-		// 返回当前帧数据的类型，每种数据类型在 SDK 内部会经过不同的处理，所以必须与帧数据的类型保持一致
+		// 返回当前帧数据的 Buffer 类型，每种数据类型在 SDK 内部会经过不同的处理，所以必须与帧数据的类型保持一致
 		// 若切换 VideoSource 的类型，必须重新创建另一个实例
 		// 有三种类型
 		return BufferType.BYTE_ARRAY;
