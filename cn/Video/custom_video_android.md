@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Wed May 29 2019 07:56:43 GMT+0800 (CST)
+updatedAt: Wed May 29 2019 07:56:47 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -65,10 +65,8 @@ VideoSource source = new VideoSource() {
 	public int getBufferType() {
 		// 返回当前帧数据的 Buffer 类型，每种数据类型在 SDK 内部会经过不同的处理，所以必须与帧数据的类型保持一致
 		// 若切换 VideoSource 的类型，必须重新创建另一个实例
-		// 有三种类型
+		// 有三种类型：BYTE_BUFFER(1)；BYTE_ARRAY(2)；TEXTURE(3)
 		return BufferType.BYTE_ARRAY;
-		// return BufferType.TEXTURE
-		// return BufferType.BYTE_BUFFER;
 	}
 
 	@Override
