@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 25 2019 06:13:18 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 10:34:06 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -146,8 +146,6 @@ Agora 产品可在任何应用程序上轻松实现直播功能：
 
 在推流到 CDN 过程中，当频道中有多个主播时，通常会涉及到转码。
 
-在推流到 CDN 过程中，发送到 SD-RTN™ 的音视频流被转换成 RTMP（Real-Time Messaging Protocol）流，然后被推送到 CDN。如果有多个主播，则需要通过转码将多个直播流组合成单个流。
+在推流到 CDN 过程中，发送到 SD-RTN™ 的音视频流从 UDP 协议被转换成 RTMP（Real-Time Messaging Protocol）协议。如果有多个主播，就需要通过转码在协议转换之前将多个直播流组合成单个流，并设置这个流的音视频属性和合图布局。
 
-转码为将要推送到 CDN 的直播流设置音视频属性和合图布局。
-
-> Agora 建议不要在单主播的情况下使用转码。
+> 我们建议不要在单主播的情况下使用转码。
