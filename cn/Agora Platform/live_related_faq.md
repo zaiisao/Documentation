@@ -3,7 +3,7 @@
 title: 直播相关
 description: 
 platform: 直播相关
-updatedAt: Thu May 30 2019 08:47:44 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 08:47:54 GMT+0800 (CST)
 ---
 # 直播相关
 ### 为什么旁路直播和旁路直播的录制内容里只听得到声音，却看不到视频?
@@ -29,7 +29,7 @@ updatedAt: Thu May 30 2019 08:47:44 GMT+0800 (CST)
 
 在默认情况下，声网进行服务端转码推流时，会在转码后的 H264/H265 的 SEI 帧中，增加当前视频的编码信息。该信息为 Json 格式的字符串，具体示例如下：
 
-```
+```json
 
 {
     "canvas": {
@@ -70,7 +70,7 @@ updatedAt: Thu May 30 2019 08:47:44 GMT+0800 (CST)
    * bgnd：画布的背景颜色，RGB 格式，为 16 进制代码表示的字符串。主播在 APP 设置的 LiveTranscoding 中的 backgroundColor 信息；
 * regions：主播信息及主播布局信息，为 region 的列表。主播在 APP 设置的 LiveTranscoding 中的 transcodingUsers 信息。region 的参数信息如下；
    * uid：该区域对应主播的 ID。主播在 APP 设置的 TranscodingUser 中的 uid 信息；
-   * alpha：该区域的透明度，取值范围 [0, 255]。主播在 APP 设置的 TranscodingUser 中的 alpha 信息；
+   * alpha：该区域的透明度，取值范围 [0.0, 1.0]。主播在 APP 设置的 TranscodingUser 中的 alpha 信息；
    * zorder：该区域的层级，取值范围 [1, 100]。主播在 APP 设置的 TranscodingUser 中的 zOrder 信息；
    * volume：该区域对应主播的音量大小，取值范围 [0, 255]；
    * x：该区域在画布中对应的 x 坐标。主播在 APP 设置的 TranscodingUser 中的 x 信息；
