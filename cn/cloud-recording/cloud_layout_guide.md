@@ -3,7 +3,7 @@
 title: 设置合流布局
 description: 
 platform: Linux
-updatedAt: Thu May 30 2019 09:01:16 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 09:18:18 GMT+0800 (CST)
 ---
 # 设置合流布局
 Agora 云端录制服务提供三种预设的视频布局：
