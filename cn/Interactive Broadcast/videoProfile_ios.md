@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: iOS
-updatedAt: Thu May 30 2019 07:27:17 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 07:27:26 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
@@ -17,7 +17,7 @@ updatedAt: Thu May 30 2019 07:27:17 GMT+0800 (CST)
 
 Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的属性，比如分辨率、码率、帧率等。参数均为理想情况下的最大值。当视频引擎因网络环境等原因无法达到设置的分辨率、帧率或码率的最大值时，会取最接近最大值的那个值。
 
-我们建议参考下面的视频属性参考表设置该方法中的各参数。
+我们建议参考下面的[视频属性参考表](#video_profile)设置该方法中的各参数。
 
 ```swift
 // swift
@@ -35,6 +35,7 @@ AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc]
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
+<a id = "video_profile"></a>
 ### 视频属性参考表
 
 | 分辨率<br>(宽 x 高) | 帧率<br>(fps) | 基准帧率<br>(Kbps，适用于通信) | 直播帧率<br>(Kbps，适用于直播) |
