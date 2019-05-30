@@ -3,7 +3,7 @@
 title: Channel Key 密钥说明
 description: Guide on how to use channel keys
 platform: All Platform
-updatedAt: Thu May 30 2019 06:26:55 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 06:27:05 GMT+0800 (CST)
 ---
 # Channel Key 密钥说明
 本文主要介绍在使用 Agora SDK 过程中使用 Channel Key 的方法。
@@ -79,7 +79,7 @@ updatedAt: Thu May 30 2019 06:26:55 GMT+0800 (CST)
 
 你可以通过 `generateMediaChannelKey` 方法，以及 Agora 提供的示例代码来获取 Channel Key。 Agora 的示例代码涵盖 C++, Java, Python，node.js 等语言，你可以直接将相应的代码应用在你的程序中。
 
-首先，请访问 <https://github.com/AgoraIO/AgoraDynamicKey>，下载相应编程语言的代码，并将代码部署到您的服务器上。
+首先，请访问 <https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey>，下载相应编程语言的代码，并将代码部署到您的服务器上。
 
 然后，在你所开发的程序中，输入如下字段的值。不同的编程语言，必须字段名称不完全相同:
 
