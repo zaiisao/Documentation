@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Thu May 30 2019 10:27:57 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 10:28:01 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -77,11 +77,11 @@ The SDK applies different optimization methods according to the channel profile.
 > The gaming profile applies to the Agora Gaming SDK only.
 
 
-### uid
+### UID
 
-A user ID (uid) identifies a user in the channel. Each user in the same channel should have a unique uid.
+A user ID (UID) identifies a user in the channel. Each user in the same channel should have a unique uid.
 
-If you leave the uid empty or set it as 0, the SDK will automatically assign a uid for you.
+If you leave the uid empty or set it as 0, the SDK will automatically assign a UID for you.
 
 ### Stream
 
@@ -142,7 +142,7 @@ The process of publishing streams into the CDN (Content Delivery Network) is cal
 
 Transcoding is used in CDN live streaming when multiple hosts are in the channel.
 
-In CDN live streaming, the audio and video streams sent to the SD-RTN™ are transferred into an RTMP (Real-Time Messaging Protocol) stream and pushed to the CDN. If there are multiple hosts, their streams need to be combined into a single stream by transcoding. 
+In CDN live streaming, the audio and video streams sent to the SD-RTN™ are transferred into RTMP (Real-Time Messaging Protocol) protocol and pushed to the CDN. If there are multiple hosts, their streams need to be combined into a single stream by transcoding. 
 
 Transcoding sets the audio/video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
 
