@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS
-updatedAt: Mon Apr 01 2019 09:33:30 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 07:43:53 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -17,6 +17,8 @@ Ensure that you prepared the development environment. See [Integrate the SDK](..
 The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video profile. Each video profile corresponds to a set of video parameters, including the resolution, frame rate, bitrate, and video orientation.
 
 The parameters specified in the `setVideoEncoderConfiguration` method are ideal values under ideal network conditions. If the video engine cannot render the video with the specified parameters due to poor network conditions, the parameters further down the list are considered.
+
+We recommend setting the parameters according to the [video profile table](#video_profile) below.
 
 ```swift
 // swift
@@ -34,8 +36,39 @@ AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc]
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
+<a id="video_profile"></a>
+### Video Profile Table
+
+| Resolution<br>(width x height) | Frame rate<br>(fps) | Base bitrate<br>(Kbps, for Communication) | Live bitrate<br>(Kbps, for Live Broadcast) |
+| ------------------------------ | ------------------- | ----------------------------------------- | ------------------------------------------ |
+| 160 x 120                      | 15                  | 65                                        | 130                                        |
+| 120 x 120                      | 15                  | 50                                        | 100                                        |
+| 320 x 180                      | 15                  | 140                                       | 280                                        |
+| 180 x 180                      | 15                  | 100                                       | 200                                        |
+| 240 x 180                      | 15                  | 120                                       | 240                                        |
+| 320 x 240                      | 15                  | 200                                       | 400                                        |
+| 240 x 240                      | 15                  | 140                                       | 280                                        |
+| 424 x 240                      | 15                  | 220                                       | 440                                        |
+| 640 x 360                      | 15                  | 400                                       | 800                                        |
+| 360 x 360                      | 15                  | 260                                       | 520                                        |
+| 640 x 360                      | 30                  | 600                                       | 1200                                       |
+| 360 x 360                      | 30                  | 400                                       | 800                                        |
+| 480 x 360                      | 15                  | 320                                       | 640                                        |
+| 480 x 360                      | 30                  | 490                                       | 980                                        |
+| 640 x 480                      | 15                  | 500                                       | 1000                                       |
+| 480 x 480                      | 15                  | 400                                       | 800                                        |
+| 640 x 480                      | 30                  | 750                                       | 1500                                       |
+| 480 x 480                      | 30                  | 600                                       | 1200                                       |
+| 848 x 480                      | 15                  | 610                                       | 1220                                       |
+| 848 x 480                      | 30                  | 930                                       | 1860                                       |
+| 640 x 480                      | 10                  | 400                                       | 800                                        |
+| 1280 x 720                     | 15                  | 1130                                      | 2260                                       |
+| 1280 x 720                     | 30                  | 1710                                      | 3420                                       |
+| 960 x 720                      | 15                  | 910                                       | 1820                                       |
+| 960 x 720                      | 30                  | 1380                                      | 2760                                       |
+
 ### API Reference
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
 * For more information on the video orientation mode, see [Rotate the Video](../../en/Video/rotation_guide_ios.md).
 
 ## Considerations
