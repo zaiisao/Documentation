@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Thu May 30 2019 10:55:32 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 10:55:36 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -45,7 +45,7 @@ Agora’s audio and video transmissions rely on Agora's self-built SD-RTN™ (So
 - Distance to the users
 - Response time
 
-## SDK Core Concepts
+## SDK core concepts
 
 The Agora SDKs are a set of API methods (engine interfaces) and callbacks (events).
 
@@ -63,7 +63,7 @@ For details on specific methods and callbacks, see the Agora API Reference:
 
 As an analogy, if we imagine an app being a building, a channel will be a room in the building. A channel is created when the first user joins the channel and is automatically destroyed when the last user leaves the channel. When entering a room in a building, you need a key to open the door. Similarly, when joining a channel, you need an [App ID](#appid) or [Dynamic Key](#key) for authentication.
 
-### Channel Profile
+### Channel profile
 
 The SDK applies different optimization methods according to the channel profile. Users in the same channel must use the same channel profile. Agora supports the following channel  profiles:
 
@@ -97,7 +97,7 @@ In a live broadcast channel, only hosts can publish streams.
 
 Subscribing to the streams describes the action of the user receiving the audio/video streams published (sent) by other users in the channel after joining a channel.
 
-### <a name ="dual"></a>Dual-stream Mode
+### <a name ="dual"></a>Dual-stream mode
 
 Dual streams are a hybrid of a high-video stream and a low-video stream. The publisher can choose to enable the dual-stream mode to send both video streams at the same time.
 
@@ -109,11 +109,11 @@ High video and low video are relative concepts. A low-video stream consumes less
 | Low-video     | Low bitrate, and low-resolution video stream.      | 
 
 
-### Stream Fallback
+### Stream fallback
 
 The publisher/subscriber can enable stream fallback to send/receive the low-video stream or audio-only stream in poor network conditions. Stream fallback only works when the [dual-stream mode](#dual) is enabled.
 
-## Live Broadcast Core Concepts
+## Live broadcast core concepts
 
 A live broadcast is an Internet broadcast of a live performance through an app, where the viewers are called the audience and the performer is called the host.
 
@@ -134,7 +134,7 @@ In a live broadcast channel, an audience is a group of users who can only subscr
 
 An audience can apply to become a host to interact directly with the existing hosts, namely hosting-in.
 
-### CDN Live Streaming
+### CDN live streaming
 
 The process of publishing streams into the CDN (Content Delivery Network) is called CDN live streaming, where users can view the live broadcast through a web browser.
 
