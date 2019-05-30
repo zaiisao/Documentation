@@ -3,7 +3,7 @@
 title: Channel Keys
 description: Guide on how to use channel key
 platform: All Platform
-updatedAt: Thu May 30 2019 06:28:12 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 06:28:17 GMT+0800 (CST)
 ---
 # Channel Keys
 ## Introduction
@@ -119,7 +119,7 @@ To get an App Certificate:
 
 Use the `generateMediaChannelKey` method and sample code provided by Agora to acquire the Channel Key. Agora provides server-side sample code in programming languages, such as Java, C++, Python, and Node.js.
 
-Go to <https://github.com/AgoraIO/AgoraDynamicKey> to download the corresponding code and integrate it directly into your application.
+Go to <https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey> to download the corresponding code and integrate it directly into your application.
 
 Enter the following parameters into your application. The field names vary according to different programming languages:
 
