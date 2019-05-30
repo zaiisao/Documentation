@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Thu May 30 2019 10:28:01 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 10:55:32 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
