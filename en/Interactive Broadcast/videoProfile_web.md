@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Web
-updatedAt: Thu May 30 2019 07:01:07 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 07:02:14 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
