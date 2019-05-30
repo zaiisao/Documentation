@@ -3,7 +3,7 @@
 title: 直播相关
 description: 
 platform: 直播相关
-updatedAt: Wed Nov 21 2018 09:29:15 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 06:03:07 GMT+0800 (CST)
 ---
 # 直播相关
 ### 为什么旁路直播和旁路直播的录制内容里只听得到声音，却看不到视频?
