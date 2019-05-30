@@ -3,7 +3,7 @@
 title: 设置合流布局
 description: 
 platform: Linux
-updatedAt: Thu May 30 2019 08:54:42 GMT+0800 (CST)
+updatedAt: Thu May 30 2019 09:01:16 GMT+0800 (CST)
 ---
 # 设置合流布局
 Agora 云端录制服务提供三种预设的视频布局：
@@ -16,8 +16,8 @@ Agora 云端录制服务提供三种预设的视频布局：
 
 在开始云端录制时，通过设置合流布局参数选择一种预设的布局。
 
-- 如果你使用云端录制 SDK [调用 API 录制](https://docs.agora.io/cn/cloud-recording/cloud-recording/cloud_recording_quickstart?platform=CPP)，在开始云端录制时设置 [`TranscodingConfig`](https://docs.agora.io/cn/cloud-recording/cloud-recording/cloud_recording_api#TranscodingConfig) 中的 `layout` 参数
-- 如果你使用 demo 通过[命令行录制](https://docs.agora.io/cn/cloud-recording/cloud-recording/cloud_recording_demo?platform=CPP)，在开始云端录制时设置 `—mixedVideoLayoutType` 参数
+- 如果你使用云端录制 SDK [调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart.md)，在开始云端录制时设置 [`TranscodingConfig`](../../cn/cloud-recording/cloud_recording_api.md) 中的 `layout` 参数
+- 如果你使用 demo 通过[命令行录制](../../cn/cloud-recording/cloud_recording_demo.md)，在开始云端录制时设置 `—mixedVideoLayoutType` 参数
 
 ## 工作原理
 
@@ -98,7 +98,7 @@ Agora 云端录制服务提供三种预设的视频布局：
 
 ### <a name="vertical"></a>垂直布局
 
-如果你选择了垂直布局，需要在开始录制的时候指定一个 uid 作为大视窗画面。
+如果你选择了垂直布局，需要在开始录制的时候指定一个 uid 作为大视窗画面。如果你使用云端录制 SDK [调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart.md)，在开始云端录制时设置 [`TranscodingConfig`](../../cn/cloud-recording/cloud_recording_api.md) 中的 `max_resolution_uid` 参数指定；如果你使用 demo 通过[命令行录制](../../cn/cloud-recording/cloud_recording_demo.md)，在开始云端录制时设置 `—maxResolutionUid` 参数指定。
 
 - Large 表示大视窗画面，显示指定的 UID 用户的视频流；如果未指定或者指定用户未进入频道，Large 区域显示背景色。
 - 小视窗画面的排列顺序，是按照加入频道的时间先后顺序。如果某用户退出频道，在其后加入频道的用户会补上，以此类推。
@@ -108,7 +108,7 @@ Agora 云端录制服务提供三种预设的视频布局：
 
 #### 1 - 5 人
 
-small 1- small 4 依次显示在画布右侧, 且不会覆盖 Large 画面。小视窗画面宽度是总宽的 1/5，画面高度是总高的 1/4。
+small 1 - small 4 依次显示在画布右侧, 且不会覆盖 Large 画面。小视窗画面宽度是总宽的 1/5，画面高度是总高的 1/4。
 
 ![](https://web-cdn.agora.io/docs-files/1558060680455)
 
