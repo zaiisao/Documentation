@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Thu May 30 2019 10:34:06 GMT+0800 (CST)
+updatedAt: Fri May 31 2019 05:52:36 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
