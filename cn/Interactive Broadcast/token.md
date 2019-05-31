@@ -3,10 +3,10 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri May 24 2019 10:29:37 GMT+0800 (CST)
+updatedAt: Fri May 31 2019 08:48:22 GMT+0800 (CST)
 ---
 # 校验用户权限
-本文介绍 Agora SDK 最新的鉴权机制 Token，阅读前请对照下表确认你使用的产品支持 Token：
+本文介绍 Agora SDK 最新的鉴权机制 token，阅读前请对照下表确认你使用的产品支持 token：
 
 <table>
 <colgroup>
@@ -32,18 +32,17 @@ updatedAt: Fri May 24 2019 10:29:37 GMT+0800 (CST)
 </table>
 
 
+
 调用以下方法查看你使用的 SDK 版本信息：
 
 - Native SDK: `getSdkVersion`
 - Web SDK: `AgoraRTC.VERSION`
 - Gaming SDK: `getSdkVersion`
 
+> - 如果你使用的是 Agora Signaling SDK，请参考[信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
+> - 如果你使用的产品版本不支持 token，需使用密钥功能请参考 [Channel Key 密钥说明](../../cn/null/channel_key.md)。
 
-> -   如果你使用的是 Agora Signaling SDK，请参考[信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
-> -   如果你使用的产品版本不支持 Token，需使用密钥功能请参考 [Channel Key 密钥说明](../../cn/null/channel_key.md)。
-
-
-<a name = “authentication_mechanism” ></a>
+<a name = “authentication_mechanism" ></a>
 
 ## 鉴权机制简介
 
@@ -51,14 +50,13 @@ updatedAt: Fri May 24 2019 10:29:37 GMT+0800 (CST)
 
 <img alt="../_images/key_relation_native.jpg" src="https://web-cdn.agora.io/docs-files/cn/key_relation_native.jpg" style="width: 840px; "/>
 
-
 其中：
 
--   App ID 易于获取，适用于对安全要求不高的场景。
-
--   Token 安全性高，更适用于对安全要求较高的生产环境。
-
--   App Certificate 仅用于生成 Token，不可单独使用。一旦启用了 App Certificate，则必须使用 Token。
+- App ID 易于获取，适用于对安全要求不高的场景。
+- Token 安全性高，更适用于对安全要求较高的生产环境。
+- APP 证书 仅用于生成 token，不可单独使用。一旦启用了 APP 证书，则必须使用 token。
+  - 在项目测试阶段，启用 App 证书后可以直接在 Dashboard 通过输入 `Channel Name` 由 Dashboard 代为生成一个临时 token 用于测试。
+  - 项目准备正式上线时，你需要在服务端自行部署一个 Token Generator 来生成 token。
 
 <a name = "-App-ID"></a>
 
@@ -66,8 +64,7 @@ updatedAt: Fri May 24 2019 10:29:37 GMT+0800 (CST)
 
 在 Agora 官网注册后，你就可以创建项目，而每个项目都有一个唯一标识，叫做 App ID。App ID 可以明确你的项目及组织身份。 不同的 App ID 在 Agora 实时网络中的通话是完全隔离的；Agora 提供的频道信息、计费、管理服务也都是基于 App ID。
 
-App ID 提供了一个简单的方式，方便开发者使用 Agora 的服务，但你需要确保 App ID 的保密性。一旦有人非法获取了你的 App ID，他就可以在 Agora 提供的 SDK 中使用你的 App ID。因此如果你需要更高级别的安全方案，或者增加用户权限设置，Agora 建议你使用 [Token](#Token) 机制。
-
+App ID 提供了一个简单的方式，方便开发者使用 Agora 的服务，但你需要确保 App ID 的保密性。一旦有人非法获取了你的 App ID，他就可以在 Agora 提供的 SDK 中使用你的 App ID。因此如果你需要更高级别的安全方案，或者增加用户权限设置，那么我们建议你使用 [Token](#Token) 机制。
 
 ### 获取 App ID
 
@@ -92,20 +89,13 @@ App ID 提供了一个简单的方式，方便开发者使用 Agora 的服务，
 
 使用 Token 的流程如下：
 
-1.  在你的 Server 端部署一个 Token Generator
-
-2.  App Client 端向 Server 端发送获取 Token 的请求
-
-3.  Server 端收到请求后 Token Generator 生成一个 Token
-
-4.  Server 端将生成的 Token 发送给 App Client 端
-
-5.  App Client 端调用加入频道的 API 时传入 Token 参数
-
-6.  Token 即将过期或过期时，重复以上步骤 2-4
-
-7.  App Client 端调用`renewToken` 更新 token
-
+1. 在你的 Server 端部署一个 Token Generator
+2. App Client 端向 Server 端发送获取 Token 的请求
+3. Server 端收到请求后 Token Generator 生成一个 Token
+4. Server 端将生成的 Token 发送给 App Client 端
+5. App Client 端调用加入频道的 API 时传入 Token 参数
+6. Token 即将过期或过期时，重复以上步骤 2-4
+7. App Client 端调用`renewToken` 更新 token
 
 ### 部署 Token Generator
 
@@ -113,22 +103,17 @@ App ID 提供了一个简单的方式，方便开发者使用 Agora 的服务，
 
 Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey)供你参考：
 
--   C++
-
--   Go
-
--   Java
-
--   Node.js
-
--   Python
-
--   PHP
-
+- C++
+- Go
+- Java
+- Node.js
+- Python
+- PHP
 
 你可以直接使用相应的示例代码，也可以使用其他语言实现生成 Token 的功能。 Agora 欢迎开发者将自己实现的动态密钥生成方式在 [GitHub](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 上提交 Pull request 贡献出来。
 
 <a name = "Generate_Token"></a>
+
 ### 生成 Token
 
 生成 Token 时需要向 Server 端传入以下参数：
@@ -157,12 +142,13 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 </table>
 
 
+
 > [1] 声网目前暂不支持用非 0 的 string 型 uid 生成 token。
 > [2] `expireTimestamp` 指 1970 年 1 月 1 日开始到 Token 服务到期的秒数。如果想设置 10 分钟的服务有效时间，则输入当前时间戳 + 600（秒）即可。每个服务的有效时间是独立的，可以通过 `setPrivilege` 接口进行单独设置。
 
 <a id = "-App-Certificate"></a>
 
-#### 获取 App Certificate
+#### 获取 APP 证书
 
 每个 Agora 账户下可创建多个项目，且每个项目有独立的 App ID 和 App 证书。
 
@@ -192,32 +178,26 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 
 
 
-
 ### 使用 Token
 
 每一次 Client 端的用户加入频道前:
 
-1.  Client 端向企业自己的 Server 端申请 Token。
-
-2.  Server 端收到请求后，通过 Agora 提供的算法生成 Token，返回给 Client 端应用程序。
-
-3.  Client 端应用程序调用加入频道的 API 时，第一个参数要求为 Token。
-
-4.  Agora 的服务器接收到 Token 信息，验证该通话是来自于合法用户，并允许访问 Agora SD-RTN。
+1. Client 端向企业自己的 Server 端申请 Token。
+2. Server 端收到请求后，通过 Agora 提供的算法生成 Token，返回给 Client 端应用程序。
+3. Client 端应用程序调用加入频道的 API 时，第一个参数要求为 Token。
+4. Agora 的服务器接收到 Token 信息，验证该通话是来自于合法用户，并允许访问 Agora SD-RTN。
 
 
 
-> -   出于安全考虑，请在 Token 生成后 24 小时内加入频道。超过 24 小时需要重新生成 Token。
-> -   Token 在一段时间后会失效。当 Client 端收到回调提醒 Token 即将失效，或当获知密钥已失效时，需调用 `renewToken` 方法进行更新。
-> -   Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js, Java, Python, C++ 等绝大多数通用的服务器端开发平台上均可获得所需库。具体加密方案可参看以下网页：[http://en.wikipedia.org/wiki/Hash-based\_message\_authentication\_code](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)
-
+> - 出于安全考虑，请在 Token 生成后 24 小时内加入频道。超过 24 小时需要重新生成 Token。
+> - Token 在一段时间后会失效。当 Client 端收到回调提醒 Token 即将失效，或当获知密钥已失效时，需调用 `renewToken` 方法进行更新。
+> - Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js, Java, Python, C++ 等绝大多数通用的服务器端开发平台上均可获得所需库。具体加密方案可参看以下网页：[http://en.wikipedia.org/wiki/Hash-based\_message\_authentication\_code](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)
 
 ## 参考
 
 如果你需要从老版本升级到支持 Token 的版本，请参考[动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
 了解在 Server 端如何实现生成密钥的功能，请查看[在服务端生成密钥](../../cn/null/token_server.md)。
-
 
 下表列出与 Token 相关的 SDK API 接口：
 
@@ -252,7 +232,3 @@ Agora 提供以下平台生成 Token 的[示例代码](https://github.com/AgoraI
 </tr>
 </tbody>
 </table>
-
-
-
-
