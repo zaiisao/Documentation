@@ -3,16 +3,16 @@
 title: 使用 Dashboard
 description: 
 platform: All Platforms
-updatedAt: Tue May 21 2019 08:26:20 GMT+0800 (CST)
+updatedAt: Fri May 31 2019 08:46:34 GMT+0800 (CST)
 ---
 # 使用 Dashboard
 欢迎使用 Agora Dashboard。在这里，你可以查看频道用量，追踪通话质量，进行账户充值，管理项目和权限，以及获取 Agora 技术支持。
 
-使用 Agora Dashboard 前，你需要创建 Agora 账号，详见[注册与登录](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。如需找回账号密码，详见[找回密码](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。
+使用 Agora Dashboard 前，你需要创建一个 Agora 账号，详见[注册与登录](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。请务必保存好你的账号和密码。如果不小心遗失密码，也不必担心，参照[找回密码](../../cn/Agora%20Platform/sign_in_and_sign_up.md)中的步骤即可轻松找回密码。
 
-> 本页介绍 Dashboard 所有的功能，但是不一定每个账户都能使用所有的功能。具体账户所能看到的页面视该账户的角色权限而定。
+> 本页介绍 Dashboard 的所有功能，但是不一定每个账户都能使用所有的功能。具体账户所能看到的页面视该账户的角色权限而定。
 
-## 功能简介
+## Dashboard 功能概览
 
 <table>
 <tr>
@@ -25,7 +25,7 @@ updatedAt: Tue May 21 2019 08:26:20 GMT+0800 (CST)
 </tr>
 <tr>
 <td>追踪质量</td>
-<td>通过图表全方位监控、分析并诊断各种实时网络产品的用户使用指标及设备性能，自助定位问题。</td>
+<td>通过图表全方位监控、分析并诊断产品的用户使用指标及设备性能，自助定位问题。</td>
 </tr>
 <tr>
 <td>线上充值</td>
@@ -56,14 +56,14 @@ updatedAt: Tue May 21 2019 08:26:20 GMT+0800 (CST)
 ## 总览页
 ![](https://web-cdn.agora.io/docs-files/1557741022778)
 
-总览页提供 Dashboard 常用功能的入口。在该页面，你可以：
+登录 Dashboard 后，你会看到一个总览页。该页提供 Dashboard 常用功能的入口。在该页面，你可以：
 
-- 快速查看项目及其用量
-- 实时掌握账户余额与收支明细，进行充值
-- 及时查看最新消息
-- 深入了解 Agora 产品、SDK、示例代码和 API 方法等
-- 快速学习如何集成 Agora 产品
-- 试用水晶球（Agora Analytics），查看通话质量
+- 快速查看项目及其用量。
+- 实时掌握账户余额与收支明细，进行充值。
+- 及时查看最新消息。
+- 深入了解 Agora 产品、SDK、示例代码和 API 方法等。
+- 快速学习如何集成 Agora 产品。
+- 试用水晶球（Agora Analytics），查看通话质量。
 
 ## 查看项目用量
 
@@ -84,38 +84,26 @@ updatedAt: Tue May 21 2019 08:26:20 GMT+0800 (CST)
 >
 > [2] 视频清晰度分类标准：
 >
-> | 标清 | 视频分辨率小于 360p              |
+> | 类别 | 分辨率              |
 > | ---- | -------------------------------- |
 > | 高清 | 视频分辨率介于 360p 和 720p 之间 |
 > | 超清 | 视频分辨率大于 720p              |
 
 #### 查看录制用量
 
-点击左侧次级导航栏**录制**下方的按钮查看特定时间段内分别使用本地服务端录制和云端录制的音频、高清视频和超清视频的**录制**时长。
+点击左侧次级导航栏**录制**下方的**录制 SDK**和**云录制**按钮查看特定时间段内分别使用本地服务端录制和云端录制的语音、高清视频和超清视频的**录制**时长。
 
 ## 追踪通话质量
 
-点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1557740763927) 按钮进入**水晶球**页面。
+点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1557740763927) 按钮进入**水晶球**页面。水晶球是 Agora 为开发者提供的实时质量监控工具。
 
-选择**项目**和**时间段**、输入**频道名称**或 **UID** 后查看通话质量，详见[水晶球介绍文档](../../cn/Agora%20Platform/aa_guide.md)。
+选择**项目**和**时间段**、输入**频道名称**或 **UID** 后查看通话质量。
+
+我们提供专门的文档介绍水晶球提供的数据和具体含义，知道你使用水晶球来识别通话质量问题。详见[水晶球](../../cn/Agora%20Platform/aa_guide.md)。
 
 ## 线上充值
 
 点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1557740933898) 按钮进入**财务消费**页面，查看账户余额，使用支付宝线上充值，并查询充值记录。详见[线上充值文档](../../cn/Agora%20Platform/online_payment.md)。
-
-## 管理项目
-
-点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) **项目管理**，进入**项目列表**页面。
-
-![](https://web-cdn.agora.io/docs-files/1551255094137)
-
-你可在本页面进行以下操作：
-
-- 点击**创建**，创建新项目，获取 App ID，启用 App 证书。App ID 和 App 证书的使用，详见[校验用户权限](../../cn/Interactive%20Broadcast/token.md)。
-- 输入项目名称或 App ID，点击 ![](https://web-cdn.agora.io/docs-files/1551255111208) 搜索项目。
-- 点击![](https://web-cdn.agora.io/docs-files/1551255135678)，编辑项目信息。
-- 点击![](https://web-cdn.agora.io/docs-files/1551255151708)，查看项目用量。
-- 根据![](https://web-cdn.agora.io/docs-files/1551255188685)和![](https://web-cdn.agora.io/docs-files/1551258332165)判断项目禁用或开启。
 
 ## 管理成员和角色
 
@@ -143,6 +131,29 @@ updatedAt: Tue May 21 2019 08:26:20 GMT+0800 (CST)
 - 工程师：仅能管理项目和查看水晶球。
 
 你也可以点击**添加角色**按钮，根据需要创建自定义角色并设置相关权限。
+
+## 管理项目
+
+点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) 按钮进入**项目管理**页面。
+
+![](https://web-cdn.agora.io/docs-files/1558344557924)
+
+**创建新项目**
+
+点击**创建**按钮，会弹出一个对话框，要求你输入**项目名称**，选择一种**鉴权机制**（Token 或 App ID）。
+
+> Agora 提供两种鉴权机制：App ID 和 Token。鉴权机制的介绍详见[校验用户权限](../../cn/Interactive%20Broadcast/token.md)。我们推荐使用安全性更高的 Token 机制：
+> - 在项目测试阶段，启用 App 证书后可以直接在 Dashboard 生成一个临时 token 进行测试。
+> - 项目准备正式上线时，你需要在 Server 端部署一个 Token Generator 来生成 token。
+
+上图中，项目 A 是鉴权机制为 Token 的项目，App 证书已开启，点击 ![](https://web-cdn.agora.io/docs-files/1558344584474) 可以生成**临时 Token**，用于项目测试阶段。项目 B 是鉴权机制为 App ID 的项目，App 证书未启用。
+
+此外，你还可以：
+
+- 输入项目名称或 App ID，点击 ![](https://web-cdn.agora.io/docs-files/1551255111208) 搜索项目。
+- 点击![](https://web-cdn.agora.io/docs-files/1551255135678)，查看 App ID，编辑项目信息。
+- 点击![](https://web-cdn.agora.io/docs-files/1551255151708)，查看项目用量。
+- 根据![](https://web-cdn.agora.io/docs-files/1551255188685)和![](https://web-cdn.agora.io/docs-files/1551258332165)判断项目状态为禁用还是开启。
 
 ## 提交与查看工单
 
