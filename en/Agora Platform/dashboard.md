@@ -3,7 +3,7 @@
 title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Tue May 21 2019 08:36:42 GMT+0800 (CST)
+updatedAt: Fri May 31 2019 08:47:14 GMT+0800 (CST)
 ---
 # Dashboard
 Agora Dashboard allows you to check your usage and the Quality of Experience (QoE), check your account balance, manage your projects and members, and connect with Agora customer support.
@@ -11,6 +11,7 @@ Agora Dashboard allows you to check your usage and the Quality of Experience (Qo
 Before using Agora Dashboard, [create an Agora account](../../en/Agora%20Platform/sign_in_and_sign_up.md) at [www.agora.io](https://www.agora.io/en/).
 
 > This page introduces all the functions of Dashboard. What functions a member can access depend on the role and permissions.
+
 ## Introduction
 
 <table>
@@ -82,7 +83,7 @@ Click the following icons to check the usage of your voice and video calls durin
 >
 > [2] Video Quality Types
 >
-> | SD | Resolution < 360p              |
+> | Type | Resolution              |
 > |------|----------------------------------|
 > | HD | 360p ≤ Resolution ≤ 720p |
 > | HDP | Resolution > 720p             |
@@ -100,20 +101,6 @@ Select a **Project** and **Time Frame**, and enter a **Channel Name** or **UID**
 ## Check your account balance
 
 Click ![](https://web-cdn.agora.io/docs-files/1551350477096) to go to the **Finance** page. Here, you can check your account balance and transactions.
-
-## Manage projects
-
-Click ![](https://web-cdn.agora.io/docs-files/1551254998344) **Project** in the left navigation menu to manage projects.
-
-![](https://web-cdn.agora.io/docs-files/1551257409179)
-
-You can: 
-
-- Click **Create** to create a new project, get an App ID, and enable the App Certificate. For details, see [User Security Keys](../../en/Interactive%20Broadcast/token.md).
-- Enter a project name or App ID in the input box and click ![](https://web-cdn.agora.io/docs-files/1551255111208) to search for the project.
-- Click ![](https://web-cdn.agora.io/docs-files/1551255135678) to edit the project information.
-- Click ![](https://web-cdn.agora.io/docs-files/1551255151708) to view the project usage.
-- View the project states according to the ![](https://web-cdn.agora.io/docs-files/1551255188685) and ![](https://web-cdn.agora.io/docs-files/1551255166718) icons.
 
 ## Manage members and roles
 
@@ -141,6 +128,29 @@ The default roles are as follows:
 - **Engineer** can manage projects and view Agora Analytics.
 
 You can also create custom roles and set their permissions under **Customized**.
+
+## Manage projects
+
+Click ![](https://web-cdn.agora.io/docs-files/1551254998344) **Project** in the left navigation menu to manage projects.
+
+![](https://web-cdn.agora.io/docs-files/1558345346386)
+
+**Create a New Project**
+
+Click **Create**. A dialog box pops up for you to enter your project name and select your authentication mechanism (App ID or Token). 
+
+> Agora provides two authentication mechanisms, App ID and Token. For details, see [User Security Keys](../../en/Interactive%20Broadcast/token.md). We recommend that you use a token for higher security:
+> - In the testing stage, you can generate a temporary token on the Dashboard after enabling the App Certificate.
+> - When you are preparing for releasing your project, you need to deploy a Token Generator on your server.
+
+In the figure above, Project A uses an App ID for authentication and the App Certificate of this project is not enabled. Project B uses a token for authentication and the App Certificate of this project is enabled. For Project B, you can click ![](https://web-cdn.agora.io/docs-files/1558345848047) to generate a temporary token in the testing stage.
+
+On this page, you can also: 
+
+- Enter a project name or App ID in the input box and click ![](https://web-cdn.agora.io/docs-files/1551255111208) to search for the project.
+- Click ![](https://web-cdn.agora.io/docs-files/1551255135678) to edit the project information and see the App ID.
+- Click ![](https://web-cdn.agora.io/docs-files/1551255151708) to view the project usage.
+- Check the project states according to the ![](https://web-cdn.agora.io/docs-files/1551255188685) and ![](https://web-cdn.agora.io/docs-files/1551255166718) icons.
 
 ## Submit and track tickets
 
