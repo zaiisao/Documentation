@@ -3,7 +3,7 @@
 title: Live-related Issues
 description: 
 platform: Live-related Issues
-updatedAt: Fri May 31 2019 03:05:23 GMT+0800 (CST)
+updatedAt: Fri May 31 2019 03:05:36 GMT+0800 (CST)
 ---
 # Live-related Issues
 This page provides common troubleshooting strategies for Agora's interactive broadcast products and services.
@@ -20,7 +20,7 @@ Check the following:
 ### I set the resolution as 640 x 360. Why is the actual resolution of the screen 640 x 352?
 On some Android systems, the video widths must be multiples of 16. Hence, if you set the video width as 360 pixels, the actual width is 352 pixels.
 
-### SEI-related questions
+### SEI
 
 #### The Agora SEI
 
