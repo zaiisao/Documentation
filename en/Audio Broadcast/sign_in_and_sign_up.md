@@ -3,7 +3,7 @@
 title: Sign in and Sign up
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 13 2019 03:43:55 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 07:45:55 GMT+0800 (CST)
 ---
 # Sign in and Sign up
 An Agora account gives you access to the Agora Dashboard, which is your home for using Agora products. 
