@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Tue Jun 04 2019 09:24:36 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:24:40 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora SDK for iOS.
@@ -18,7 +18,7 @@ Development environment:
 
 > Use a physical device to run the sample. Emulators may lack the functionality or performance needed to run the sample.
 
-## Create an Agora Account and Get an App ID
+## Create an Agora Project and Get an App ID
 
 1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/) and follow the on-screen instructions to create a project.
 2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation panel.
