@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Android
-updatedAt: Tue Jun 04 2019 09:24:21 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:24:25 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora Voice SDK.
@@ -55,17 +55,11 @@ Downloaded files include the libs folder and the sample folder. The following ta
 
 
 
-## Create an Agora Account and Get an App ID
+## Create an Agora Project and Get an App ID
 
-1. Sign up for a developer account at <https://dashboard.agora.io/>.
-
-2.  Click **Add New Project** on the **Projects** page in [Dashboard](https://dashboard.agora.io/).
-
-3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
-
-4.  Find the **App ID** under the created project.
-
-    ![](https://web-cdn.agora.io/docs-files/1543388532968)
+1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/) and follow the on-screen instructions to create a project.
+2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation panel.
+3. Find the corresponding **App ID** under the created project.
 
 ## Add the Agora SDK to Your Project
 
