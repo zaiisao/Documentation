@@ -39,6 +39,8 @@ func initializeAgoraEngine() {
 }
 ```
 
+> 请确认在调用其他 API 前已调用 `initializeEngineWithAppId` 初始化 AgoraRtcEngine。
+
 ## 相关文档
 完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行互动直播：
 * [加入频道](../../cn/Interactive%20Broadcast/join_live_ios.md)
