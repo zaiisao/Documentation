@@ -40,6 +40,7 @@ private void initializeAgoraEngine() {
 }
 ```
 
+> 请确保在调用其他方法前已调用 `create` 方法初始化 AgoraRtcEngine。
 
 ## 相关文档
 
