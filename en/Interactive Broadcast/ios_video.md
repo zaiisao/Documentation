@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Tue Jun 04 2019 09:21:03 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:21:21 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for iOS.
@@ -18,19 +18,11 @@ Development environment:
 
 > Use a physical device to run the sample. Emulators may lack the functionality or the performance needed to run the sample.
 
-## Create an Agora Account and Get an App ID
+## Create an Agora Project and Get an App ID
 
-1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
-
-2. Click **Add New Project** on the **Projects** page in Dashboard.
-
-   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
-
-3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
-
-4. Find the **App ID** under the created project.
-
-   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
+1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/) and follow the on-screen instructions to create a project.
+2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation panel.
+3. Find the corresponding **App ID** under the created project.
 
 ## Add the Agora SDK to Your Project
 
