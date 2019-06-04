@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Mon Apr 15 2019 09:26:49 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:23:32 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
