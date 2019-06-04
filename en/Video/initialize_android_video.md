@@ -39,6 +39,8 @@ private void initializeAgoraEngine() {
 }
 ```
 
+> Ensure that you call the `create` method to intiialize the AgoraRtcEngine before calling any other API. 
+
 ## Next Steps
 You have created the RtcEngine instance and can start a video call with the following steps:
 * [Join a Channel](../../en/Video/join_video_android.md)

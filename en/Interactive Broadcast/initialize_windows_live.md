@@ -25,6 +25,7 @@ ctx.appId = lpVendorKey;
 m_lpAgoraEngine->initialize(ctx);
 ```
 
+> Ensure that you call the `create` and `initialize` methods to intiialize the AgoraRtcEngine before calling any other API. 
 
 ## Next Steps
 You have created the AgoraRtcEngine instance and can start a live broadcast with the following steps:

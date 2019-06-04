@@ -29,6 +29,8 @@ client.init(<APPID>, function () {
 });
 ```
 
+> Ensure that you call the `create.init` method to intiialize the AgoraRtcEngine before calling any other API. 
+
 ## Next Steps
 You hava created the Client and can start a voice call with the following steps:
 - [Join a Channel](../../en/Video/join_video_web.md)

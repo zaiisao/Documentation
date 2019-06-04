@@ -39,6 +39,8 @@ private void initializeAgoraEngine() {
 }
 ```
 
+> Ensure that you call the `create` method to intiialize the AgoraRtcEngine before calling any other API. 
+
 ## Next Steps
 You have created the RtcEngine instance and can start a live broadcast with the following steps:
 * [Join a Channel](../../en/Interactive%20Broadcast/join_live_android.md)
