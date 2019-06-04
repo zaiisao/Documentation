@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 04 2019 07:29:02 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 07:31:00 GMT+0800 (CST)
 ---
 # 注册与登录
 ## 创建新账号
