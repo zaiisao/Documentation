@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Windows
-updatedAt: Tue Jun 04 2019 09:23:47 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:23:52 GMT+0800 (CST)
 ---
 # Integrate the SDK
 ## Prerequisites
@@ -17,7 +17,7 @@ updatedAt: Tue Jun 04 2019 09:23:47 GMT+0800 (CST)
 
 > If you use Microsoft Visual Studio 2013+, you may encounter compatibility issues.
 
-## Create an Agora Account and Get an App ID
+## Create an Agora Project and Get an App ID
 
 1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/) and follow the on-screen instructions to create a project.
 2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation panel.
