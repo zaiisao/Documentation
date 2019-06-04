@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: 微信小程序
-updatedAt: Tue Dec 25 2018 08:36:51 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:28:39 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Miniapp SDK for WeChat 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -33,21 +33,11 @@ updatedAt: Tue Dec 25 2018 08:36:51 GMT+0800 (CST)
 
 > 在集成微信小程序组件之前，Agora 建议你先阅读 [微信小程序开发官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/)。
 
-## 创建 Agora 账号并获取 App ID
+## 创建项目并获取 App ID
 
-1.  进入 [https://dashboard.agora.io/](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
-
-2.  登录 Dashboard 页面，点击 **添加新项目**。
-
-	<img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_1.jpg" />
-
-3.  填写 **项目名**，然后点击 **提交**。
-
-4.  在你创建的项目下，查看并获取该项目对应的 **App ID**。
-
-	<img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/cn/appid_2.jpg" />
-
-5.  联系 [sales@agora.io](mailto:sales@agora.io) 为该 App ID 开通小程序权限。
+1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号、创建项目。
+2. 点击 **Dashboard** 左侧的**项目管理** ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标，查看你所创建的项目详情。
+3. 在项目详情页，你可以查看你的 **App ID**。
 
 
 ## 创建微信小程序组件
