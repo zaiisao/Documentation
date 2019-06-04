@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Fri May 17 2019 07:02:16 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:28:07 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for macOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -15,7 +15,7 @@ updatedAt: Fri May 17 2019 07:02:16 GMT+0800 (CST)
 - 请确保你的项目已设置有效的开发者签名。
 - 请确保在使用 Agora 相关功能及服务前，已打开特定端口，详见 [防火墙说明](../../cn/Agora%20Platform/firewall.md)。
 
-## <a name = "appid-mac"></a>创建 Agora 账号并获取 App ID
+## <a name = "appid-mac"></a>创建项目并获取 App ID
 1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号、创建项目。
 2. 点击 **Dashboard** 左侧的**项目管理** ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标，查看你所创建的项目详情。
 3. 在项目详情页，你可以查看你的 **App ID**。
