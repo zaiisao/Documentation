@@ -66,15 +66,9 @@ App ID 提供了一个简单的方式，方便开发者使用 Agora 的服务，
 
 ### 获取 App ID
 
-1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，按照屏幕提示创建一个开发者账号。
-2. 点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) **项目管理**进入**项目列表**页面。
-3. 点击**创建**。
-4. 输入**项目名称**。
-5. 选择鉴权机制：
-  - 对于安全要求高的场景，选择：<b>APP ID + APP 证书 + Token （推荐）</b>；
-  - 对于安全要求不高的场景，选择：<b>APP ID</b>。
-6. 点击**提交**。
-7. 在你创建的项目下，查看并获取该项目对应的 **App ID**。
+1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号、创建项目。
+2. 点击 **Dashboard** 左侧的**项目管理**页，查看你所创建的项目详情。
+3. 在项目详情页，你可以查看你的 **App ID**。
 
 
 ### 使用 App ID
