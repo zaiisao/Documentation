@@ -29,7 +29,7 @@ client.init(<APPID>, function () {
 });
 ```
 
-> Ensure that you call the `create.init` method to intiialize the AgoraRtcEngine before calling any other API. 
+> Ensure that you call the `create` and `client.init` methods to intiialize the AgoraRtcEngine before calling any other API. 
 
 ## Next Steps
 You have created the AgoraRtcEngine instance and can start a video call with the following steps:
