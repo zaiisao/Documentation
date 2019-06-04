@@ -19,7 +19,7 @@ updatedAt: Fri May 17 2019 07:00:48 GMT+0800 (CST)
 
 ## <a name = "appid-ios"></a>创建 Agora 账号并获取 App ID
 1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号、创建项目。
-2. 点击 **Dashboard** 左侧的**项目管理**页，查看你所创建的项目详情。
+2. 点击 **Dashboard** 左侧的**项目管理** ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标，查看你所创建的项目详情。
 3. 在项目详情页，你可以查看你的 **App ID**。
 
 
