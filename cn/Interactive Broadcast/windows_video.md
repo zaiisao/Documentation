@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Windows
-updatedAt: Mon Dec 10 2018 09:59:16 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:28:53 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Windows 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -21,7 +21,7 @@ updatedAt: Mon Dec 10 2018 09:59:16 GMT+0800 (CST)
 
 > 使用版本号高于 Microsoft Visual Studio 2013 的开发环境时，可能会有兼容性问题。
 
-## 创建 Agora 账号并获取 App ID
+## 创建项目并获取 App ID
 
 1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号、创建项目。
 2. 点击 **Dashboard** 左侧的**项目管理** ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标，查看你所创建的项目详情。
