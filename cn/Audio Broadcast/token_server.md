@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: 服务端
-updatedAt: Tue Jun 04 2019 10:00:14 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 10:00:50 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
@@ -25,6 +25,8 @@ public boolean initTokenBuilder(String originToken);
 该方法利用已经存在的 Token，来重新初始化 Token Builder。初始化后，Token Builder 内会包含原来 Token 内的 App ID、App Certificate、 Channel Name、UID 以及 Privilege 信息。
 
 该方法可以结合 [设置用户权限 \(setPrivilege\)](#setPrivilegeJava) 和 [删除用户权限 \(removePrivilege\)](#removePrivilegeJava) ，用于为已经存在的 `originToken` 添加、删除权限。
+
+> 如果原先未使用 Token，则无需调用该方法。
 
 <table>
 <colgroup>
@@ -252,6 +254,8 @@ bool initTokenBuilder(const std::string& originToken);
 该方法利用已经存在的 Token，来重新初始化 Token Builder。初始化后，Token Builder 内会包含原来 Token 内的 App ID、App Certificate、 Channel Name、UID 以及 Privilege 信息。
 
 该方法可以结合 [设置用户权限 \(setPrivilege\)](#setPrivilegeCpp) 和 [删除用户权限 \(removePrivilege\)](#removePrivilegeCpp) ，用于为已经存在的 `originToken` 添加、删除权限。
+
+> 如果原先未使用 Token，则无需调用该方法。
 
 <table>
 <colgroup>
@@ -486,6 +490,8 @@ def initTokenBuilder(self, originToken);
 
 该方法可以结合 [设置用户权限 \(setPrivilege\)](#setPrivilegePython) 和 [删除用户权限 \(removePrivilege\)](#removePrivilegePython) ，用于为已经存在的 originToken 添加、删除权限。
 
+> 如果原先未使用 Token，则无需调用该方法。
+
 <table>
 <colgroup>
 <col/>
@@ -507,8 +513,6 @@ def initTokenBuilder(self, originToken);
 </tr>
 </tbody>
 </table>
-
-
 
 Token Builder 的结构体如下所示：
 
@@ -714,6 +718,8 @@ func (builder SimpleTokenBuilder) InitTokenBuilder(originToken string);
 该方法利用已经存在的 Token，来重新初始化 Token Builder。初始化后，Token Builder 内会包含原来 Token 内的 App ID、App Certificate、 Channel Name、UID 以及 Privilege 信息。
 
 该方法可以结合 [设置用户权限 \(setPrivilege\)](#setPrivilegeGo) 和 [删除用户权限 \(removePrivilege\)](#removePrivilegeGo) ，用于为已经存在的 `originToken` 添加、删除权限。
+
+> 如果原先未使用 Token，则无需调用该方法。
 
 <table>
 <colgroup>
@@ -943,6 +949,8 @@ function initTokenBuilder($originToken);
 该方法利用已经存在的 Token，来重新初始化 Token Builder。初始化后，Token Builder 内会包含原来 Token 内的 App ID、App Certificate、 Channel Name、UID 以及 Privilege 信息。
 
 该方法可以结合 [设置用户权限 \(setPrivilege\)](#setPrivilegePHP) 和 [删除用户权限 \(removePrivilege\)](#removePrivilegePHP) ，用于为已经存在的 `originToken` 添加、删除权限。
+
+> 如果原先未使用 Token，则无需调用该方法。
 
 <table>
 <colgroup>
@@ -1174,6 +1182,8 @@ initTokenBuilder = function (originToken);
 该方法利用已经存在的 Token，来重新初始化 Token Builder。初始化后，Token Builder 内会包含原来 Token 内的 App ID、App Certificate、 Channel Name、UID 以及 Privilege 信息。
 
 该方法可以结合 [设置用户权限 \(setPrivilege\)](#setPrivilegeNode) 和 [删除用户权限 \(removePrivilege\)](#removePrivilegeNode) ，用于为已经存在的 `originToken` 添加、删除权限。
+
+> 如果原先未使用 Token，则无需调用该方法。
 
 <table>
 <colgroup>
