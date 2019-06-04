@@ -24,6 +24,8 @@ ctx.appId = lpVendorKey;
 m_lpAgoraEngine->initialize(ctx);
 ```
 
+> 请确认在调用其他 API 前已调用 `create` 和 `initialize` 方法初始化 AgoraRtcEngine。
+
 ## 相关文档
 完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行互动直播：
 * [加入频道](../../cn/Interactive%20Broadcast/join_live_windows.md)
