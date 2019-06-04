@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: iOS
-updatedAt: Tue Jun 04 2019 09:26:21 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:26:45 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for iOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -17,7 +17,7 @@ updatedAt: Tue Jun 04 2019 09:26:21 GMT+0800 (CST)
 
 > 请使用真机运行示例代码。模拟机可能会因为功能缺失而无法运行示例代码。
 
-## <a name = "appid-ios"></a>创建 Agora 账号并获取 App ID
+## <a name = "appid-ios"></a>创建项目并获取 App ID
 1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号、创建项目。
 2. 点击 **Dashboard** 左侧的**项目管理** ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标，查看你所创建的项目详情。
 3. 在项目详情页，你可以查看你的 **App ID**。
