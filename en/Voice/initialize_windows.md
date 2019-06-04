@@ -25,6 +25,7 @@ ctx.appId = lpVendorKey;
 m_lpAgoraEngine->initialize(ctx);
 ```
 
+> Ensure that you call the `create` and `initialize` methods to intiialize the AgoraRtcEngine before calling any other API. 
 
 ## Next Steps
 You have created the client and can start a voice call with the following steps:
