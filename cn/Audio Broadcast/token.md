@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 04 2019 03:33:34 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 03:33:39 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 token，阅读前请对照下表确认你使用的产品支持 token：
@@ -41,8 +41,6 @@ updatedAt: Tue Jun 04 2019 03:33:34 GMT+0800 (CST)
 
 > - 如果你使用的是 Agora Signaling SDK，请参考[信令密钥说明](../../cn/Agora%20Platform/key_signaling.md)。
 > - 如果你使用的产品版本不支持 token，需使用密钥功能请参考 [Channel Key 密钥说明](../../cn/null/channel_key.md)。
-
-<a name = “authentication_mechanism" ></a>
 
 ## 鉴权机制简介
 
