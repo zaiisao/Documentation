@@ -28,7 +28,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_LIVE_BROADCASTING);
 
 在该方法中：
 
--   传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 null。正式生产环境下，我们推荐你使用 Token。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [密钥说明](../../cn/Interactive%20Broadcast/token.md)。
+-   传入能标识用户角色和权限的 Token。Token 需要在你的服务器端生成，详细生成办法见[密钥说明](../../cn/Interactive%20Broadcast/token.md)。在 [Dashboard](https://dashboard.agora.io/) 注册项目后，你可以通过输入 Channel Name 获取一个临时 Token 用于测试。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。
 -   传入能标识频道的频道 ID。输入相同频道 ID 的用户会进入同一个频道。
 -   频道内每个用户的 UID 必须是唯一的。如果将 UID 设为 0，系统将自动分配一个 UID。
 
