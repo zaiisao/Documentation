@@ -39,6 +39,8 @@ func initializeAgoraEngine() {
 }
 ```
 
+> Ensure that you call the `sharedEngineWithAppId` method to intiialize the AgoraRtcEngine before calling any other API. 
+
 ## Next Steps
 You have created the AgoraRtcEngine instance and can start a voice call with the following steps:
 * [Join a Channel](../../cn/Voice/join_communication_ios.md)
