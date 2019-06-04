@@ -14,7 +14,9 @@ updatedAt: Mon Mar 25 2019 09:53:19 GMT+0800 (CST)
 
 在  `client.join` 方法中填入以下参数值：
 
-- `tokenOrKey`：传入能标识用户角色和权限的 Token。Token 需要在你的服务器端生成，详细生成办法见[密钥说明](../../cn/Video/token.md)。在 [Dashboard](https://dashboard.agora.io/) 注册项目后，你可以通过输入 Channel Name 获取一个临时 Token 用于测试。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。
+- `tokenOrKey`：传入能标识用户角色和权限的 Token。Token 需要在你的服务器端生成，详细生成办法见[密钥说明](../../cn/Video/token.md)。
+
+> 在 [Dashboard](https://dashboard.agora.io/) 注册项目后，你可以通过获取一个临时 Token 用于测试。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。
 - `channel`：频道名称。
 - `uid`：用户的 ID， **整数，需保证唯一性**。 如果不指定，即用户 ID 设置为 null，回调会返回一个服务器分配的 uid。
 
