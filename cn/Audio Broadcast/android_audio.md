@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Android
-updatedAt: Tue Jun 04 2019 09:25:45 GMT+0800 (CST)
+updatedAt: Tue Jun 04 2019 09:26:04 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Android 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -60,17 +60,12 @@ Android [语音通话/语音直播 SDK](https://docs.agora.io/cn/Agora%20Platfor
 
 
 
-## 创建 Agora 账号并获取 App ID
+## 创建项目并获取 App ID
 
-1. 进入 https://dashboard.agora.io/ ，按照屏幕提示创建一个开发者账号。
+1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号、创建项目。
+2. 点击 **Dashboard** 左侧的**项目管理** ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标，查看你所创建的项目详情。
+3. 在项目详情页，你可以查看你的 **App ID**。
 
-2. 登录 Dashboard 页面，点击**添加新项目**。
-
-3. 填写**项目名**， 然后点击**提交** 。
-
-4. 在你创建的项目下，查看并获取该项目对应的**App ID**。
-   
-	 ![](https://web-cdn.agora.io/docs-files/1543308678009)
 	 
 ## 添加 SDK
 
