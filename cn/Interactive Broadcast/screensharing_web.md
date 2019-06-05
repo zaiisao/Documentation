@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Wed Jun 05 2019 09:28:55 GMT+0800 (CST)
+updatedAt: Wed Jun 05 2019 09:29:00 GMT+0800 (CST)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -48,7 +48,7 @@ screenStream = AgoraRTC.createStream({
 
 #### 无插件屏幕共享
 
-Chrome 72 及以上版本也可以不安装插件直接共享屏幕，在 `createStream` 时不填写 `extensionId` 参数即可。
+Agora Web SDK 从 2.6.0 版本起，支持在 Chrome 72 及以上版本不安装插件直接共享屏幕，在 `createStream` 时不填写 `extensionId` 参数即可。
 
 ```javascript
 screenStream = AgoraRTC.createStream({
