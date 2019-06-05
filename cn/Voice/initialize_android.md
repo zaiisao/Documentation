@@ -40,7 +40,7 @@ private void initializeAgoraEngine() {
 }
 ```
 
-> 请确保在调用其他方法前已调用 `create` 方法初始化 AgoraRtcEngine。
+> 请确保在调用其他方法前先调用 `create` 方法创建并初始化 RtcEngine。
 
 ## 相关文档
 完成创建实例后，你可以使用 Agora SDK，依次实现如下功能进行语音通话：
