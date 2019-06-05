@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 04 2019 10:11:33 GMT+0800 (CST)
+updatedAt: Wed Jun 05 2019 04:23:02 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍 Agora SDK 最新的鉴权机制 token，阅读前请对照下表确认你使用的产品支持 token：
