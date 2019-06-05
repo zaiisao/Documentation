@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 29 2019 03:50:14 GMT+0800 (CST)
+updatedAt: Wed Jun 05 2019 09:34:54 GMT+0800 (CST)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 本地服务端录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -640,5 +640,5 @@ Agora 本地服务端录制 SDK 目前仅支持单流的录制文件 + 单流的
 
 录制文件仅保存在您的服务器上，Agora 无法访问，所以如何保护录制文件取决于部署录制服务的您自己采取保护措施或者咨询安全专家。 处理这些录制文件的方法跟在您的服务器上处理一般文件的方法一样。
 
-在 ChannelName_HHMMSS目录下，每个录制文件都有一个 recording.log和 recording_sys.log 文件。如果在录制过程中出现故障，可以在这两个文件下查看导致问题出现的原因，
+在保存录制文件的目录下，每个录制文件都有一个 recording.log和 recording_sys.log 文件。如果在录制过程中出现故障，可以在这两个文件下查看导致问题出现的原因，
 
