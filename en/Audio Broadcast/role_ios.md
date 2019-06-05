@@ -27,7 +27,7 @@ You can call the `setClientRole` method to set the user role.
 ```swift
  //Swift
  func setClientRole() {
- agoraKit.setClientRole(.clientRole_Broadcaster)
+ agoraKit.setClientRole(.broadcaster)
 }
 ```
 
@@ -59,7 +59,7 @@ If two users join a live broadcast channel as hosts:
    //Swift
    //Set the user role as the host.
    func setClientRole() {
-     agoraKit.setClientRole(.clientRole_Broadcaster)
+     agoraKit.setClientRole(.broadcaster)
    }
    
    //Create and join a channel.
@@ -91,7 +91,7 @@ If two users join a live broadcast channel as hosts:
    //Swift
    //Set the user role as the host.
    func setClientRole() {
-     agoraKit.setClientRole(.clientRole_Broadcaster)
+     agoraKit.setClientRole(.broadcaster)
    }
    
    //Create and join a channel.
@@ -125,7 +125,7 @@ User A joins the channel as a host and user B joins as an audience. If user B wa
    //Swift
    //Set the user role as the host.
    func setClientRole() {
-     agoraKit.setClientRole(.clientRole_Broadcaster)
+     agoraKit.setClientRole(.broadcaster)
    }
    
    //Create and join a channel.
@@ -163,7 +163,7 @@ User A joins the channel as a host and user B joins as an audience. If user B wa
 	 
    //Set the client role as the host.
    func setClientRole() {
-     agoraKit.setClientRole(.clientRole_Broadcaster)
+     agoraKit.setClientRole(.broadcaster)
    }
    ```
 
