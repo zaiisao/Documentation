@@ -28,7 +28,7 @@ client.init(<APPID>, function () {
 });
 ```
 
-> 请确认在调用其他 API 前已调用 `create` 和 `client.init` 方法初始化 AgoraRtcEngine。
+> 请确保在调用其他 API 前先调用 `create` 和 `client.init` 方法创建并初始化 AgoraRtcEngine。
 
 ## 相关文档
 初始化 Client 对象后，你可以使用 Agora SDK，依次实现如下功能进行通话/直播：
