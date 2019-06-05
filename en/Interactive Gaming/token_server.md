@@ -3,7 +3,7 @@
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
 platform: All Platforms
-updatedAt: Tue Jun 04 2019 10:09:35 GMT+0800 (CST)
+updatedAt: Wed Jun 05 2019 07:50:28 GMT+0800 (CST)
 ---
 # Generate a Token
 This page shows how to generate a token on your server for Agora SDK versions 2.1.0+. The token is used for joining a channel.
@@ -28,6 +28,8 @@ public boolean initTokenBuilder(String originToken);
 ```
 
 This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
+
+> Do not call this method if you do not have an original token.
 
 <table>
 <colgroup>
@@ -104,6 +106,7 @@ bool initTokenBuilder(const std::string& originToken);
 
 This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and privilege of the original token.
 
+> Do not call this method if you do not have an original token.
 
 <table>
 <colgroup>
@@ -181,6 +184,7 @@ def initTokenBuilder(self, originToken);
 
 This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
 
+> Do not call this method if you do not have an original token.
 
 <table>
 <colgroup>
@@ -255,6 +259,8 @@ func (builder SimpleTokenBuilder) InitTokenBuilder(originToken string);
 ```
 
 This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
+
+> Do not call this method if you do not have an original token.
 
 <table>
 <colgroup>
@@ -332,6 +338,8 @@ function initTokenBuilder($originToken);
 
 This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
 
+> Do not call this method if you do not have an original token.
+
 <table>
 <colgroup>
 <col/>
@@ -406,6 +414,7 @@ initTokenBuilder = function (originToken);
 
 This method uses the original token to reinitialize the token builder. Once called, this method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
 
+> Do not call this method if you do not have an original token.
 
 <table>
 <colgroup>
@@ -428,7 +437,6 @@ This method uses the original token to reinitialize the token builder. Once call
 </tr>
 </tbody>
 </table>
-
 
 
 **Struct of the TokenBuilder**
@@ -462,6 +470,7 @@ This method is the struct of SimpleTokenBuilder.
 </tr>
 </tbody>
 </table>
+
 
 ### Generates a Token \(buildToken\)
 
