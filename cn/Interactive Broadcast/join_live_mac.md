@@ -29,7 +29,7 @@ App 在加入频道前，需要先设置频道模式，再加入频道。
 ```swift
 //Swift
 func setChannelProfile() {
-  agoraKit.setChannelProfile(.channelProfile_LiveBroadcasting)
+  agoraKit.setChannelProfile(.liveBroadcasting)
 }
 ```
 

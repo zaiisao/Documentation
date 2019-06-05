@@ -25,7 +25,7 @@ updatedAt: Wed Dec 12 2018 09:58:16 GMT+0800 (CST)
 ```swift
 //Swift
 func setClientRole() {
-  agoraKit.setClientRole(.clientRole_Broadcaster)
+  agoraKit.setClientRole(.broadcaster)
 }
 ```
 
@@ -56,7 +56,7 @@ func setClientRole() {
    //Swift
    //设置用户角色为主播
    func setClientRole() {
-     agoraKit.setClientRole(.clientRole_Broadcaster)
+     agoraKit.setClientRole(.broadcaster)
    }
    
    //创建并加入频道
@@ -88,7 +88,7 @@ func setClientRole() {
    //Swift
    //设置用户角色为主播
    func setClientRole() {
-     agoraKit.setClientRole(.clientRole_Broadcaster)
+     agoraKit.setClientRole(.broadcaster)
    }
    
    //创建并加入频道
@@ -122,7 +122,7 @@ func setClientRole() {
    //Swift
    //设置用户角色为主播
    func setClientRole() {
-     agoraKit.setClientRole(.clientRole_Broadcaster)
+     agoraKit.setClientRole(.broadcaster)
    }
    
    //创建并加入频道
@@ -160,7 +160,7 @@ func setClientRole() {
 	 
    //设置用户角色为主播
    func setClientRole() {
-     agoraKit.setClientRole(.clientRole_Broadcaster)
+     agoraKit.setClientRole(.broadcaster)
    }
    ```
 
