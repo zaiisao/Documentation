@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: All Platforms
-updatedAt: Tue Jun 04 2019 10:00:50 GMT+0800 (CST)
+updatedAt: Wed Jun 05 2019 07:45:27 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
