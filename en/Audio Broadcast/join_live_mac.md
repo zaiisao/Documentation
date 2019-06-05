@@ -33,7 +33,7 @@ In the `setChannelProfile` method, set the channel profile as Live Broadcast. Th
 ```swift
 //Swift
 func setChannelProfile() {
-  agoraKit.setChannelProfile(.channelProfile_LiveBroadcasting)
+  agoraKit.setChannelProfile(.liveBroadcasting)
 }
 ```
 
