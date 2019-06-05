@@ -3,12 +3,12 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Wed Jun 05 2019 07:51:41 GMT+0800 (CST)
+updatedAt: Wed Jun 05 2019 09:58:32 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
 
-Agora SDK 提供两种校验机制：App ID 和动态密钥；在调用 `joinChannel` 加入频道时，你需要选择一种机制进行鉴权。这两种鉴权机制的关系如下：
+Agora SDK 提供两种校验机制：App ID 和动态密钥。在调用 `joinChannel` 加入频道时，你需要选择一种机制进行鉴权。这两种鉴权机制的关系如下：
 
 - App ID：易于获取，适用于对安全要求不高的场景
 - 动态密钥：安全性高，适用于对安全要求较高的生产环境
@@ -25,11 +25,9 @@ Agora 动态密钥分为 Channel Key 和 Token 两种。本文的动态密钥指
 | Web SDK    | v2.4.0 及以上     | v2.4.0 之前             | `AgoraRtc.VERSION` |
 | Gaming SDK | v2.2.0 及以上     | v2.2.0 之前             | `getSdkVersion`    |
 
-**Note:**
-
-- 如果你使用的 SDK 支持的动态密钥为 Channel Key，请参考 [Channel Key 密钥说明](https://docs.agora.io/cn/Agora%20Platform/channel_key?platform=All%20Platform)。
-- 如果你使用的是 Agora Signaling SDK 或 Agora RTM SDK，请参考[信令密钥说明 ](https://docs.agora.io/cn/Agora%20Platform/key_signaling)。
-- 如果你需要从老版本升级到支持 Token 的版本，请参考[动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
+> - 如果你使用的 SDK 支持的动态密钥为 Channel Key，请参考 [Channel Key 密钥说明](https://docs.agora.io/cn/Agora%20Platform/channel_key?platform=All%20Platform)。
+> - 如果你使用的是 Agora Signaling SDK 或 Agora RTM SDK，请参考[信令密钥说明 ](https://docs.agora.io/cn/Agora%20Platform/key_signaling)。
+> - 如果你需要从老版本升级到支持 Token 的版本，请参考[动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
 ## 前提条件
 
@@ -75,7 +73,7 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 ### 获取正式 Token
 
-正式的 Token 需要在你的 Server 端部署并生成。具体的流程如下：
+正式的 Token 需要在你的服务端部署并生成。具体的流程如下：
 
 **1. 部署 Token Generator**
 
@@ -103,7 +101,7 @@ Agora 提供支持 C++、Go、Java、Node.js、Python 和 PHP 语言生成 Token
 > - 请确保你在加入频道时填入的频道名与用户名和用于生成 Token 时填入的频道名、用户名一致。
 > - 出于安全考虑，请在 Token 生成后 24 小时内加入频道。超过 24 小时需要重新生成 Token。
 > - Token 在一段时间后会失效。当客户端收到回调提醒 Token 即将失效，或当获知 Token 已失效时，需在服务端重新生成 Token，然后调用 `renewToken` 方法进行更新。
-> - Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js, Java, Python, C++ 等绝大多数通用的服务器端开发平台上均可获得所需库。具体加密方案可参看 [Authentication code](http://en.wikipedia.org/wiki/Hash-based\_message\_authentication\_code](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)。
+> - Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js, Java, Python, C++ 等绝大多数通用的服务器端开发平台上均可获得所需库。具体加密方案可参看 [Authentication code](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)。
 
 ## 参考
 
