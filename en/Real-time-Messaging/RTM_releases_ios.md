@@ -3,14 +3,14 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Thu Jun 06 2019 12:49:50 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 12:56:12 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
 
 Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
 
-> For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_releases_android.md).
+> For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_product.md).
 
 ## v0.9.3
 
