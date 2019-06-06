@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Jun 06 2019 10:00:51 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 10:00:55 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -56,13 +56,11 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 - [getUserAttributesByKeys()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3b927c35cca5ebd31afb976d60e99193): 获取指定用户的指定属性
 - [	AttributeOperationError](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_attribute_operation_error.html)：属性操作相关错误码
 
-### 性能优化
+### 性能改进
 
 - 支持在登录 Agora RTM 系统之前创建频道实例。
 - 取消创建 RTM 频道最多 20 个的限制，但是同一用户只能同时加入 20 个频道，超限后会收到错误码 `JOIN_CHANNEL_ERR_FAILURE ` 。
-- 调用 `setParameters` 方法时：
-  - 如果输入的参数不符合 JSON 格式时，返回值 < 0 表示。
-  - 如果输入参数合法，返回值 = 0。
+
 
 ### 问题修复
 
