@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Jun 06 2019 09:36:00 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 09:36:13 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -26,8 +26,9 @@ Agora 动态密钥分为 Channel Key 和 Token 两种。本文的动态密钥指
 | Gaming SDK | v2.2.0 及以上     | v2.2.0 之前             | `getSdkVersion`    |
 
 > - 如果你使用的 SDK 支持的动态密钥为 Channel Key，请参考 [Channel Key 密钥说明](https://docs.agora.io/cn/Agora%20Platform/channel_key?platform=All%20Platform)。
-> - 如果你使用的是 Agora Signaling SDK 或 Agora RTM SDK，请参考[信令密钥说明 ](https://docs.agora.io/cn/Agora%20Platform/key_signaling)。
 > - 如果你需要从老版本升级到支持 Token 的版本，请参考[动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
+> - 如果你使用的是 Agora Signaling SDK，请参考[信令密钥说明 ](https://docs.agora.io/cn/Agora%20Platform/key_signaling)。
+> - 如果你使用的是 Agora RTM SDK，请参考 [RTM 密钥说明](https://docs.agora.io/cn/Real-time-Messaging/RTM_key?platform=All%20Platforms)。
 
 ## 前提条件
 
@@ -77,7 +78,7 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 **1. 部署 Token Generator**
 
-在使用 Token 之前，你需要先在你的 Server 端部署一个 Token Generator 用来生成 Token。
+在使用 Token 之前，你需要先在你的服务端部署一个 Token Generator 用来生成 Token。
 
 Agora 提供支持 C++、Go、Java、Node.js、Python 和 PHP 语言生成 Token 的[示例代码](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey)供参考。
 
