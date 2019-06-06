@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Thu Jun 06 2019 12:49:45 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 12:49:50 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -46,7 +46,7 @@ This version allows you to set or update a user's attributes. You can:
 ### Issues Fixed
 
 - Occasional system crashes.
-- A user who has logged out of the Agora RTM system appears online to the other users until 30 seconds after. 
+- A user who has logged out of the Agora RTM system appears online to the other users until 30 seconds later. 
 
 ## v0.9.2 
 
