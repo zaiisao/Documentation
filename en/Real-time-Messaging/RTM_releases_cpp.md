@@ -2,8 +2,8 @@
 ---
 title: Release Notes
 description: 
-platform: Android
-updatedAt: Thu Jun 06 2019 12:43:49 GMT+0800 (CST)
+platform: Linux C++
+updatedAt: Thu Jun 06 2019 12:50:55 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
