@@ -3,7 +3,7 @@
 title: 云端录制 C++ API
 description: 
 platform: CPP
-updatedAt: Thu Jun 06 2019 10:51:19 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 10:52:00 GMT+0800 (CST)
 ---
 # 云端录制 C++ API
 | **接口类**                                                   | **描述**                   |
@@ -241,9 +241,9 @@ virtual void Release(bool cancelCloudRecording = false) = 0;
 - [上传组件异常回调 (OnUploaderFailure)](#OnUploaderFailure)
 - [录制失败回调 (OnRecordingFatalError)](#OnRecordingFatalError)
 
-<a name = "OnRecordingConnecting"></a>
 
-### 正在连接云端录制服务器回调 (OnRecordingConnecting)
+
+### <a name = "OnRecordingConnecting"></a>正在连接云端录制服务器回调 (OnRecordingConnecting)
 
 ```c++
 virtual void OnRecordingConnecting(RecordingId recording_id) = 0;
@@ -255,9 +255,8 @@ virtual void OnRecordingConnecting(RecordingId recording_id) = 0;
 | -------------- | ------------------------------- |
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
 
-<a name = "OnRecordingStarted"></a>
 
-### 开始云端录制回调 (OnRecordingStarted)
+### <a name = "OnRecordingStarted"></a>开始云端录制回调 (OnRecordingStarted)
 
 ```c++
 virtual void OnRecordingStarted(RecordingId recording_id) = 0;
@@ -269,9 +268,8 @@ virtual void OnRecordingStarted(RecordingId recording_id) = 0;
 | -------------- | ------------------------------- |
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
 
-<a name = "OnRecordingStopped"></a>
 
-### 结束云端录制回调 (OnRecordingStopped)
+### <a name = "OnRecordingStopped"></a>结束云端录制回调 (OnRecordingStopped)
 
 ```c++
 virtual void OnRecordingStopped(RecordingId recording_id) = 0;
@@ -284,9 +282,7 @@ virtual void OnRecordingStopped(RecordingId recording_id) = 0;
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
 
 
-<a name = "OnRecordingUploaded"></a>
-
-### 成功上传至第三方云存储回调 (OnRecordingUploaded)
+### <a name = "OnRecordingUploaded"></a>成功上传至第三方云存储回调 (OnRecordingUploaded)
 
 ```c++
 virtual void OnRecordingUploaded(RecordingId recording_id,
@@ -300,9 +296,7 @@ virtual void OnRecordingUploaded(RecordingId recording_id,
 | `recording_id` | 录制 ID，是当前录制的唯一标识。                              |
 | `file_name`    | 录制产生的 M3U8 文件的文件名。每个录制实例均会生成一个 M3U8 文件，用于索引所有的录制切片 TS 文件。 |
 
-<a name = "OnRecordingBackedUp"></a>
-
-### 成功上传至云备份回调 (OnRecordingBackedUp)
+### <a name = "OnRecordingBackedUp"></a>成功上传至云备份回调 (OnRecordingBackedUp)
 
 ```c++
 virtual void OnRecordingBackedUp(RecordingId recording_id, 
@@ -318,9 +312,8 @@ virtual void OnRecordingBackedUp(RecordingId recording_id,
 | `recording_id` | 录制 ID，是当前录制的唯一标识。                              |
 | `file_name`    | 录制产生的 M3U8 文件的文件名。每个录制实例均会生成一个 M3U8 文件，用于索引所有的录制切片 TS 文件。 |
 
-<a name = "OnRecordingUploadingProgress"></a>
 
-### 上传进度回调 (OnRecordingUploadingProgress) 
+### <a name = "OnRecordingUploadingProgress"></a>上传进度回调 (OnRecordingUploadingProgress) 
 
 ```c++
 virtual void OnRecordingUploadingProgress(RecordingId recording_id,
@@ -335,9 +328,7 @@ virtual void OnRecordingUploadingProgress(RecordingId recording_id,
 | `progress`                    | 上传进度。显示当前上传占当前录制的百分比。                   |
 | `recording_playlist_filename` | 录制产生的 M3U8 文件的文件名。每个录制实例均会生成一个 M3U8 文件，用于索引所有的录制切片 TS 文件。 |
 
-<a name = "OnRecorderFailure"></a>
-
-### 录制组件异常回调 (OnRecorderFailure)
+### <a name = "OnRecorderFailure"></a>录制组件异常回调 (OnRecorderFailure)
 
 ```c++
 virtual void OnRecorderFailure(RecordingId recording_id,
@@ -353,9 +344,7 @@ virtual void OnRecorderFailure(RecordingId recording_id,
 | `msg`          | 错误消息。                      |
 
 
-<a name = "OnUploaderFailure"></a>
-
-### 上传组件异常回调 (OnUploaderFailure)
+### <a name = "OnUploaderFailure"></a>上传组件异常回调 (OnUploaderFailure)
 
 ```c++
 virtual void OnUploaderFailure(RecordingId recording_id,
@@ -370,9 +359,7 @@ virtual void OnUploaderFailure(RecordingId recording_id,
 | `code`         | [错误代码](#ErrorCode)。        |
 | `msg`          | 错误消息。                      |
 
-<a name = "OnRecordingFatalError"></a>
-
-### 录制 SDK 异常回调 (OnRecordingFatalError)
+### <a name = "OnRecordingFatalError"></a>录制 SDK 异常回调 (OnRecordingFatalError)
 
 ```c++
 virtual void OnRecordingFatalError(RecordingId recording_id,
@@ -386,9 +373,8 @@ virtual void OnRecordingFatalError(RecordingId recording_id,
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
 | `code`         | [错误代码](#ErrorCode)。        |
 
-<a name = "ErrorCode"></a>
 
-## 错误代码
+## <a name = "ErrorCode"></a>错误代码
 
 Agora Cloud Recording SDK 在调用 API 或运行时，可能会返回如下错误代码:
 
