@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux C++
-updatedAt: Thu Jun 06 2019 08:37:42 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 08:37:46 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -66,12 +66,12 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 - 支持在登录 Agora RTM 系统之前创建频道实例。
 - 取消创建 RTM 频道最多 20 个的限制，但是同一用户只能同时加入 20 个频道，超限后会收到错误码 `JOIN_CHANNEL_ERR_FAILURE ` 。
 - 调用 `setParameters` 方法时：
-  - 如果输入的参数不符合 JSON 格式时，返回值 < 0 表示 `ERR_INVALID_ARGUMENT` 。
+  - 如果输入的参数不符合 JSON 格式时，返回值 < 0。
   - 如果输入参数合法，返回值 = 0。
 
 ### 问题修复
 
-- 压测时偶现的系统崩溃。
+- 偶现的系统崩溃。
 - 用户登出后，其它用户查询该用户仍然显示在线，30 秒后查询不在线。
 
 ## 0.9.2 版
