@@ -3,7 +3,7 @@
 title: 集成常见问题
 description: 
 platform: Linux
-updatedAt: Thu Jun 06 2019 10:54:58 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 10:55:04 GMT+0800 (CST)
 ---
 # 集成常见问题
 ## Java 集成报错
@@ -54,14 +54,14 @@ System.out.println("类所在的路径：" + System.getProperty("java.class.path
 以下回调中均包含 M3U8 文件名信息：
 
 - C++
-  - [`OnRecordingUploadingProgress`](https://docs.agora.io/cn/cloud-recording/cloud-recording/cloud_recording_api#OnRecordingUploadingProgress)
-  - [`OnRecordingUploaded`](https://docs.agora.io/cn/cloud-recording/cloud-recording/cloud_recording_api#OnRecordingUploaded)
-  - [`OnRecordingBackedUp`](https://docs.agora.io/cn/cloud-recording/cloud-recording/cloud_recording_api/#OnRecordingBackedUp)
+  - [`OnRecordingUploadingProgress`](../../cn/cloud-recording/cloud_recording_api.md)
+  - [`OnRecordingUploaded`](../../cn/cloud-recording/cloud_recording_api.md)
+  - [`OnRecordingBackedUp`](../../cn/cloud-recording/cloud_recording_api.md)
 
 - Java
-  - [`onRecordingUploadingProgress`](https://docs.agora.io/cn/cloud-recording/cloud-recording/cloud_recording_api_java#onRecordingUploadingProgress)
-  - [`onRecordingUploaded`](https://docs.agora.io/cn/cloud-recording/cloud-recording/cloud_recording_api_java#onRecordingUploaded)
-  - [`onRecordingBackedUp`](https://docs.agora.io/cn/cloud-recording/cloud-recording/cloud_recording_api_java/#onRecordingBackedUp)
+  - [`onRecordingUploadingProgress`](../../cn/cloud-recording/cloud_recording_api_java.md)
+  - [`onRecordingUploaded`](../../cn/cloud-recording/cloud_recording_api_java.md)
+  - [`onRecordingBackedUp`](../../cn/cloud-recording/cloud_recording_api_java.md)
 
 ## 101 错误
 
