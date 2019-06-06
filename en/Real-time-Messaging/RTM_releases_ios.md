@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Thu Jun 06 2019 12:47:46 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 12:48:30 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -11,6 +11,42 @@ updatedAt: Thu Jun 06 2019 12:47:46 GMT+0800 (CST)
 Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
 
 > For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_releases_android.md).
+
+## v0.9.3
+
+v0.9.3 is released on June 7th, 2019.
+
+### New Features
+
+#### Sends an (offline) peer-to-peer message to a specified user (receiver)
+
+This version allows you to send a message to a specified user when he/she is offline. If you set a message as an offline message and the specified user is offline when you send it, the RTM server caches it. Please note that for now we only cache 200 offline messages for up to seven days for each receiver. When the number of the cached messages reaches this limit, the newest message overrides the oldest one.
+
+
+#### User attribute-related operations
+
+This version allows you to set or update a user's attributes. You can:
+
+- Substitutes the local user's attributes with new ones.
+- Adds or updates the local user's attribute(s).
+- Deletes the local user's attributes using attribute keys.
+- Clears all attributes of the local user.
+- Gets all attributes of a specified user.
+- Gets the attributes of a specified user using attribute keys.
+
+> - Only after you successfully loggin in the Agora RTM system can you execute user attribute-related operations. Otherwise, the SDK triggers the `AgoraRtmAttributeOperationErrorNotReady` error code.
+> - The attributes you set will be clears when you log out of the RTM system.
+> - You can only set a maximum of 16 KB attributes in a single method call. Otherwise, the SDK triggers the `AgoraRtmAttributeOperationErrorSizeOverflow` error code. 
+
+### Improvements
+
+- Supports creating an RTM channel before logging in the Agora RTM system. 
+- Supports creating multiple RTM channels. But a user can only join a maximum of 20 RTM channels at the same time. When the number of the joined channels exceeds 20, the SDK triggers the `AgoraRtmJoinChannelErrorFailure` error code. 
+
+### Issues Fixed
+
+- Occasional system crashes.
+- A user who has logged out of the Agora RTM system appears online to the other users until 30 seconds after. 
 
 ## v0.9.2 
 
