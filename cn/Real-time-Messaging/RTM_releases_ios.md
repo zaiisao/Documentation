@@ -3,12 +3,70 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Thu Jun 06 2019 10:17:27 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 10:17:32 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 了解更多详情。
+
+## 0.9.3 版
+
+该版本于 2019 年 6 月 7 日发布。
+
+### 新增功能
+
+#### 发送（离线）点对点消息
+
+本版本支持发送离线消息。在开通离线消息后，用户不必等到接收端上线才能发送点对点消息。如果对端离线，消息服务器会为每个接收端存储 200 条离线消息长达七天。消息以队列形式存储。当离线消息超限时，最新存储的消息会导致最老的消息丢失。当发送端设置了离线消息，而此时消息接收端不在线，发送端会收到错误码：[AgoraRtmSendPeerMessageErrorCachedByServer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmProcessAttributeErrorCode.html)
+
+> 该方法的调用频率限制为每秒 60 条（点对点消息和频道消息一并计算在内）。
+
+#### 设置本地用户属性、查询指定用户属性
+
+本版本支持设置和查询用户属性。每个用户属性为 key 和 value 的键值对。每个属性的 key 为 32 字节可见字符，每个属性的 value 的字符串长度不得超过 8 KB。单个用户的全部属性长度不得超过 16 KB。以下为本版本支持内容：
+
+   - 全量设置本地用户属性
+   - 增加或更新本地用户属性
+   - 删除本地用户指定属性
+   - 清空本地用户属性
+   - 全量获取指定用户属性
+   - 获取指定用户指定属性。
+
+
+> - 用户属性的相关操作必须在登录 Agora RTM 系统成功后才能进行，否则 SDK 会返回错误码：`AgoraRtmAttributeOperationErrorNotReady`
+> - 设置的用户属性会在用户登出 Agora RTM 系统后自动失效。
+> - 单次用户属性设置操作不得超过 16 KB，否则 SDK 会返回错误码：`AgoraRtmAttributeOperationErrorSizeOverflow` 。
+> - 用户属性设置相关操作的调用频率限制为每 5 秒 10 条，超限则 SDK 会返回错误码：`AgoraRtmAttributeOperationErrorTooOften`。
+> - 获取用户属性相关操作的调用频率为每 5 秒 40 条，超限则 SDK 会返回错误码：`AgoraRtmAttributeOperationErrorTooOften` 。
+
+### API 变更
+
+#### 新增：
+
+- [sendMessageToPeer()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:sendMessageOptions:completion:):  发送（离线）点对点消息给指定用户。
+- [serverReceivedTs](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html#//api/name/serverReceivedTs)： 消息接收者查询服务器的接收消息时间。
+- [isOfflineMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html#//api/name/isOfflineMessage)：消息接收者查询消息是否为离线消息。
+- [AgoraRtmSendPeerMessageErrorCachedByServer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmProcessAttributeErrorCode.html)：对端用户不在线，离线消息会被消息服务器存储。
+- [setLocalUserAttributes:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setLocalUserAttributes:completion:)：全量设置本地用户属性
+- [addOrUpdateLocalUserAttributes:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/addOrUpdateLocalUserAttributes:completion:)：增加本地用户属性或更新本地用户属性
+- [deleteLocalUserAttributesByKeys:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/deleteLocalUserAttributesByKeys:completion:)：删除本地用户指定属性
+- [clearLocalUserAttributesWithCompletion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/clearLocalUserAttributesWithCompletion:)：清空本地用户全部属性
+- [getUserAllAttributes:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getUserAllAttributes:completion:)：获取指定用户的全部属性
+- [getUserAttributes:ByKeys:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getUserAttributes:ByKeys:completion:): 获取指定用户的指定属性
+- [	AgoraRtmProcessAttributeErrorCode](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmProcessAttributeErrorCode.html)：属性操作相关错误码
+
+### 性能改进
+
+- 支持在登录 Agora RTM 系统之前创建频道实例。
+- 取消创建 RTM 频道最多 20 个的限制，但是同一用户只能同时加入 20 个频道，超限后会收到错误码 `AgoraRtmJoinChannelErrorFailure ` 。
+
+
+### 问题修复
+
+- 偶现的系统崩溃。
+- 用户登出后，其它用户查询该用户仍然显示在线，30 秒后查询不在线。
+
 
 ## 0.9.2 版
 
