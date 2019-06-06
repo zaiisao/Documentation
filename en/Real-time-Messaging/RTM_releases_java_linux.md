@@ -2,8 +2,8 @@
 ---
 title: Release Notes
 description: 
-platform: Linux
-updatedAt: Fri May 10 2019 04:13:05 GMT+0800 (CST)
+platform: Linux Java
+updatedAt: Thu Jun 06 2019 12:46:14 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
