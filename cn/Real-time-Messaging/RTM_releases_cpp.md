@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux C++
-updatedAt: Thu Jun 06 2019 12:03:25 GMT+0800 (CST)
+updatedAt: Thu Jun 06 2019 12:03:29 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -61,13 +61,10 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 - [onGetUserAttributesResult()](https://docs.agora.io/cn/Video/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a76058e05b9a623645ba05ea1d1796007)：获取指定用户属性的执行回调
 - [ATTRIBUTE_OPERATION_ERR](https://docs.agora.io/cn/Video/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a9413a8cce9bbd88d8d4baade13c2ccce)：属性操作相关错误码
 
-### 性能优化
+### 性能改进
 
 - 支持在登录 Agora RTM 系统之前创建频道实例。
 - 取消创建 RTM 频道最多 20 个的限制，但是同一用户只能同时加入 20 个频道，超限后会收到错误码 `JOIN_CHANNEL_ERR_FAILURE ` 。
-- 调用 `setParameters` 方法时：
-  - 如果输入的参数不符合 JSON 格式时，返回值 < 0。
-  - 如果输入参数合法，返回值 = 0。
 
 ### 问题修复
 
