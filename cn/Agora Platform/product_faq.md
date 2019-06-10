@@ -3,7 +3,7 @@
 title: 产品
 description: 
 platform: 产品
-updatedAt: Mon Jun 10 2019 05:19:32 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 08:08:23 GMT+0800 (CST)
 ---
 # 产品
 本页包含 Agora 产品的相关问题。
@@ -19,7 +19,7 @@ updatedAt: Mon Jun 10 2019 05:19:32 GMT+0800 (CST)
 * iOS：8.0+
 * Windows：XP SP3+
 * macOS：10.0+
-* 微信小程序：支持
+* 微信小程序：最新版本
 * Web：Chrome 58+；Firefox 56+；Safari 11+；Opera 45+；QQ 10+
 
 ### 我能通过使用声网 Agora 的实时云服务在我的程序中实现哪些通讯功能？
