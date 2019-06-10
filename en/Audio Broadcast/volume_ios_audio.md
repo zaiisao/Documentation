@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Mon Jun 10 2019 02:39:07 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 02:49:42 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -163,7 +163,7 @@ agoraKit.setInEarMonitoringVolume(50)
 
 In audio recording, mixing and playing, you can use the following APIs to get the data of the loudest speaker in the channel.
 
-- The speaker with the highest instant volume
+- The speakers with the highest instant volume
 
 ```swift
 // swift
