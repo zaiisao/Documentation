@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Mon Jun 10 2019 06:23:43 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 06:29:09 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -71,13 +71,14 @@ m_rtcEngine->addPublishStreamUrl(url, true);
    }
 ```
 
-## 开发注意事项
-
-使用该功能需要联系 sales@agora.io 开通旁路推流。
 
 ```C++
 // 删除推流地址
 m_rtcEngine->removePublishStreamUrl(url);
 ```
+
+## 开发注意事项
+
+使用该功能需要联系 sales@agora.io 开通旁路推流。
 
 
