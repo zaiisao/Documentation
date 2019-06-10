@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: macOS
-updatedAt: Mon Jun 10 2019 08:42:05 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 08:44:51 GMT+0800 (CST)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -157,7 +157,8 @@ Compared to the MediaIO method, the push method uses less code but lacks any opt
 // Push the video frame in the CVPixelBufferRef format.
 let videoFrame = AgoraVideoFrame()
 videoFrame.format = 12
-videoFrame.time = CMTimeMake(1, 15)
+// [NSDate date].timeIntervalSince1970 indicates the current timestamp, and 1000 indicates 1000 frames per second.
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
 videoFrame.textureBuf = "Your CVPixelBufferRef"
 videoFrame.ratation = 0
 
@@ -180,7 +181,8 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 // Push the video frame in the CVPixelBufferRef format.
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = 12;
-videoFrame.time = CMTimeMake(1, 15);
+// [NSDate date].timeIntervalSince1970 indicates the current timestamp, and 1000 indicates 1000 frames per second.
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
 videoFrame.textureBuf = "Your CVPixelBufferRef";
 videoFrame.ratation = 0;
 
