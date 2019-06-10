@@ -3,7 +3,7 @@
 title: 产品
 description: 
 platform: 产品
-updatedAt: Mon Jun 10 2019 05:18:49 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 05:19:32 GMT+0800 (CST)
 ---
 # 产品
 本页包含 Agora 产品的相关问题。
@@ -33,7 +33,9 @@ updatedAt: Mon Jun 10 2019 05:18:49 GMT+0800 (CST)
 
 不提供。声网目前只提供音视频通信和全互动直播和连麦服务。
 
-声网提供人脸识别、美颜和滤镜贴纸服务吗？提供的。可以通过 400 632 6626 或 sales@agora.io 联系我们。
+### 声网提供人脸识别、美颜和滤镜贴纸服务吗？
+
+提供的。可以通过 400 632 6626 或 sales@agora.io 联系我们。
 
 ### 声网 Agora 提供鉴黄服务吗？
 
