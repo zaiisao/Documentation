@@ -24,7 +24,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_LIVE_BROADCASTING);
 
 
 ### 加入直播频道
-调用 `joinChannel` 方法加入频道。在该方法中:
+调用 `joinChannel` 方法加入频道。
 
 在该方法中：
 

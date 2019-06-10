@@ -25,7 +25,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
 ```
 
 ### 加入通信频道
-调用 `joinChannel` 方法加入频道。在该方法中:
+调用 `joinChannel` 方法加入频道。
 
 在该方法中：
 
