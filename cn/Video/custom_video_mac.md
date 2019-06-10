@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: macOS
-updatedAt: Mon Jun 10 2019 08:43:57 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 08:44:18 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -158,15 +158,17 @@ Agora SDK 目前提供两种自定义视频源的方法：
 // 推入数据类型为 CVPixelBufferRef
 let videoFrame = AgoraVideoFrame()
 videoFrame.format = 12
-videoFrame.time = CMTimeMake(1, 15)
+// [NSDate date].timeIntervalSince1970 为当前时间戳；1000 表示每秒钟 1000 帧
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
 videoFrame.textureBuf = "Your CVPixelBufferRef"
 videoFrame.ratation = 0
 
 // 推入数据类型为 rawData
 let videoFrame = AgoraVideoFrame()
 videoFrame.format = "your data fromat"
-videoFrame.time = CMTimeMake(1, 15)
-videoFrame.data = "your CVPixelBufferRef"
+// [NSDate date].timeIntervalSince1970 为当前时间戳；1000 表示每秒钟 1000 帧
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
+videoFrame.data = "your rawData"
 videoFrame.strideInPixels = "your stride"
 videoFrame.height = "your height"
 videoFrame.dataBuf = "your rawData"
@@ -180,14 +182,16 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 // 推入数据类型为 CVPixelBufferRef
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = 12;
-videoFrame.time = CMTimeMake(1, 15);
+// [NSDate date].timeIntervalSince1970 为当前时间戳；1000 表示每秒钟 1000 帧
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000);
 videoFrame.textureBuf = "Your CVPixelBufferRef";
 videoFrame.ratation = 0;
 
 // 推入数据类型为 rawData
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = "your data fromat";
-videoFrame.time = CMTimeMake(1, 15);
+// [NSDate date].timeIntervalSince1970 为当前时间戳；1000 表示每秒钟 1000 帧
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000);
 videoFrame.data = "your rawData";
 videoFrame.strideInPixels = "your stride";
 videoFrame.height = "your height";
