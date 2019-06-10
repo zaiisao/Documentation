@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Web
-updatedAt: Mon Jun 10 2019 02:56:49 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 03:42:43 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -26,6 +26,10 @@ localStream.init(function(){
 	// init successful
 });
 ```
+
+### API Reference
+
+* [`setVideoProfile`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setvideoprofile)
 
 ## Considerations
 * Resolution support varies from browser to browser. See [Video Profile Definition](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setvideoprofile) for details.
