@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Mon Jun 10 2019 02:40:40 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 02:48:31 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -183,7 +183,7 @@ agoraKit.setVolumeOfEffect(soundId:"1", 50.0)
 
 In audio recording, mixing and playing, you can use the following APIs to get the data of the loudest speaker in the channel.
 
-- The speaker with the highest instant volume
+- The speakers with the highest instant volume
 
 ```swift
 // swift
