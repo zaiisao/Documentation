@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Android
-updatedAt: Mon Jun 10 2019 06:58:00 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 06:58:07 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -16,7 +16,7 @@ The following figure shows a typical CDN-pushing scenario.
 
 ![](https://web-cdn.agora.io/docs-files/1550737160039)
 
-## Prerequisits
+## Prerequisites
 
 Ensure that you contact sales@agora.io to enable Agora's transcoding service before using this function.
 
