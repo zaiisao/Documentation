@@ -2,7 +2,7 @@
 ---
 title: Modify Raw Data
 description: 
-platform: iOS
+platform: iOS,macOS
 updatedAt: Mon Jun 10 2019 09:24:19 GMT+0800 (CST)
 ---
 # Modify Raw Data
