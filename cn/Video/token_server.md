@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: 服务端
-updatedAt: Wed Jun 05 2019 07:47:23 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 09:48:35 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
@@ -40,8 +40,8 @@ public boolean initTokenBuilder(String originToken);
 </tr>
 <tr><td>返回值</td>
 <td><ul>
-<li>0：方法调用成功</li>
-<li>&lt; 0：方法调用不成功</li>
+<li>true：方法调用成功</li>
+<li>false：方法调用不成功</li>
 </ul>
 </td>
 </tr>
@@ -117,8 +117,8 @@ bool initTokenBuilder(const std::string& originToken);
 </tr>
 <tr><td>返回值</td>
 <td><ul>
-<li>0：方法调用成功</li>
-<li>&lt;0：方法调用不成功</li>
+<li>True：方法调用成功</li>
+<li>False：方法调用不成功</li>
 </ul>
 </td>
 </tr>

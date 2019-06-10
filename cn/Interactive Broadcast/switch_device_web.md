@@ -47,16 +47,11 @@ AgoraRTC.getDevices(function(devices){
 	// init stream
 	stream.init(function(){
 		// not needed if preview is not needed
-		stream.play("mic-test")
-		// the "volume-indicator" callback will be triggered per 2 seconds
-		client.enableAudioVolumeIndicator();
-		
-		// indicate volume if needed for local stream
-		client.on("volume-indicator", function(evt){
-			evt.attr.forEach(function(volume, index){
-				console.log(#{index} UID ${volume.uid} Level ${volume.level});
-			});
-		});
+		stream.play("mic-test");
+		setInterval(function(){
+		    // should be greater than 0
+		    console.log(`Local Stream Audio Level ${stream.getAudioLevel()}`);
+		}, 1000);
 	})
 });
 ```
