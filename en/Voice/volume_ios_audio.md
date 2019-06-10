@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Mon Jun 10 2019 01:47:37 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 01:58:17 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -184,8 +184,7 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeaker
 }
 ```
 
-- The speaker with the highest accumulative volume during a certain period.
-
+- The speaker with the highest accumulative volume during a certain period
 
 ```swift
 // swift
