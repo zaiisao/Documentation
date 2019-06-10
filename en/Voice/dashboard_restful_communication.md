@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Mon Jun 10 2019 05:27:06 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 05:28:41 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authorization
@@ -388,9 +388,9 @@ The following chart shows how you can use related APIs.
 
 > The banned user receives the corresponding callback as follows:
 - Android: [`onConnectionStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e)(CONNECTION_CHANGED_BANNED_BY_SERVER)
-- iOS/macOS:[`connectionChangedToState`](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)(AgoraConnectionChangedBannedByServer)
-- Web:[`onclient-banned`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#on)
-- Windows:[`onConnectionStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4)(CONNECTION_CHANGED_BANNED_BY_SERVER)
+- iOS/macOS: [`connectionChangedToState`](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)(AgoraConnectionChangedBannedByServer)
+- Web: [`onclient-banned`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#on)
+- Windows: [`onConnectionStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4)(CONNECTION_CHANGED_BANNED_BY_SERVER)
 
 ### Create a Rule (POST)
 
