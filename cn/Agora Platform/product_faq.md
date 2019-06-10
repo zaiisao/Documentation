@@ -3,7 +3,7 @@
 title: 产品
 description: 
 platform: 产品
-updatedAt: Mon Jun 10 2019 05:18:37 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 05:18:49 GMT+0800 (CST)
 ---
 # 产品
 本页包含 Agora 产品的相关问题。
@@ -47,7 +47,7 @@ updatedAt: Mon Jun 10 2019 05:18:37 GMT+0800 (CST)
 
 我们在通话和音频处理上有很多的独特算法，希望用户通话时能真的有”声临其境”的体验。这些特点主要包括主动混音、自动增益控制、话音检测、舒适背景噪声和抗啸叫等。
 
-想亲耳试听，了解我们在声音上的独特优势，可参考 https://www.agora.io/cn/audiocall/ 。
+想亲耳试听，了解我们在声音上的独特优势，可参考 https://www.agora.io/cn/voicecall/ 。
 
 ### Agora Cloud 与一般的 CDN RTMP 有何不同?
 
