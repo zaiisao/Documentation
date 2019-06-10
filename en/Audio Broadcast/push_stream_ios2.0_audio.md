@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: iOS,macOS
-updatedAt: Wed Apr 03 2019 03:53:03 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 07:05:45 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -12,32 +12,25 @@ The process of publishing streams into the CDN (Content Delivery Network) is cal
 
 When multiple hosts are in the channel in the CDN live streaming, [transcoding](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#transcoding) is used to combine the streams of all the hosts into a single stream. Transcoding sets the audio/video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
 
-Agora's CDN publishing solution is based on the following API methods to publish streams to the CDN, inject external audio streams, transcode, and set the output layout.
-
--   [`addPublishStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)
--   [`removePublishStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
--   [`setLiveTranscoding`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLiveTranscoding:)
-
-This solution is flexible and allows:
-
--   Starting or stopping publishing to the CDN.
--   Adding or removing a streaming URL without interrupting the ongoing publishing.
--   Adding extra controls to the ongoing streams.
--   Using callbacks to monitor the status of the publishing.
--   Quick migration from the legacy approach to the new approach.
-
-## Pushing Streams to the CDN
-
-Contact [sales@agora.io](mailto:sales@agora.io) to enable this function.
-
-> You can enable this function in Dashboard in future releases.
-> -  A host can dynamically add or remove a URL after joining the channel.
-> -  A host can set transcoding and the layout, for example, the canvas settings, only after joining a channel. The host still needs to set a 16 &times; 16 view when only publishing an audio stream to CDN.
-
 The following figure shows a typical CDN-pushing scenario.
 
 ![](https://web-cdn.agora.io/docs-files/1550737392049)
 
+## Prerequisites
+Ensure that you contact sales@agora.io to enable Agora's transcoding service before using this function.
+
+## Implementation
+
+Agora's CDN publishing solution is based on the following API methods to publish streams to the CDN, inject external audio streams, transcode, and set the output layout.
+
+-   [`setLiveTranscoding`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLiveTranscoding:): Sets the live transcoding configuration.
+-   [`addPublishStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:): Adds a stream to the CDN.
+-   [`removePublishStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:): Removes a stream from the CDN.
+
+In which:
+
+-  The host calls the `setLiveTranscoding` method to set the transcoding parameters, for example, the canvas settings, after joining a channel. The host still needs to set a 16 &times; 16 view when only publishing an audio stream to CDN.
+-  The host adds or removes a URL with the `addPublishStreamUrl` and `removePublishStreamUrl` methods after joining the channel.
 
 ### Sample Code
 
@@ -61,12 +54,16 @@ transcoding.transcodingUsers = @[user];
 ```
 
 ```objective-c
-// Add a URL to which the host pushes a stream.
-// transcodingEnabled: Whether to enable transcoding. Once enabled, use the setLiveTranscoding method to set the transcoding parameters.
-[rtcEngine addPublishStreamUrl:streamUrl transcodingEnabled:NO];
+// Adds a URL to which the host pushes a stream.
+// Set the transcodingEnabled parameter as YES to enable the transcoding service. Once transcoding is enabled, you nee to set the live transcoding configurations by calling the setLiveTranscoding method. We do not recommend transcoding in the case of a single host.
+[rtcEngine addPublishStreamUrl:streamUrl transcodingEnabled:YES];
 ```
 
 ```objective-c
-// Remove a URL to which the host pushes a stream.
+// Removes a URL to which the host pushes a stream.
 [rtcEngine removePublishStreamUrl:streamUrl];
 ```
+
+## Considerations
+
+Ensure that you contact sales@agora.io to enable Agora's transcoding service before using this function.
