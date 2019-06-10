@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Mon Jun 10 2019 08:33:31 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 08:42:31 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -184,7 +184,7 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = 12;
 // [NSDate date].timeIntervalSince1970 为当前时间戳；1000 表示每秒钟 1000 帧
-videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000);
 videoFrame.textureBuf = "Your CVPixelBufferRef";
 videoFrame.ratation = 0;
 
@@ -192,7 +192,7 @@ videoFrame.ratation = 0;
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = "your data fromat";
 // [NSDate date].timeIntervalSince1970 为当前时间戳；1000 表示每秒钟 1000 帧
-videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000);
 videoFrame.data = "your rawData";
 videoFrame.strideInPixels = "your stride";
 videoFrame.height = "your height";
