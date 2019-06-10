@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Android
-updatedAt: Mon Jun 10 2019 07:17:21 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 07:23:52 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -33,7 +33,7 @@ In which:
 -  The host calls the `setLiveTranscoding` method to set the transcoding parameters, for example, the canvas settings, after joining a channel. The host still needs to set a 16 &times; 16 view when only publishing an audio stream to CDN.
 -  The host adds or removes a URL with the `addPublishStreamUrl` and `removePublishStreamUrl` methods after joining the channel.
 
-### Sample Code:
+### Sample Code
 
 ```java
 // CDN transcoding settings.
