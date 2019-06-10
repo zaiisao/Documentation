@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: iOS
-updatedAt: Mon Jun 10 2019 08:35:52 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 08:36:22 GMT+0800 (CST)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -158,14 +158,16 @@ Compared to the MediaIO method, the push method uses less code but lacks any opt
 // Push the video frame in the VPixelBufferRef format.
 let videoFrame = AgoraVideoFrame()
 videoFrame.format = 12
-videoFrame.time = CMTimeMake(1, 15)
+// [NSDate date].timeIntervalSince1970 indicates the current timestamp, and 1000 indicates 1000 frames per second.
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
 videoFrame.textureBuf = "Your CVPixelBufferRef"
 videoFrame.ratation = 0
 
 // Push the video frame in the rawData format.
 let videoFrame = AgoraVideoFrame()
 videoFrame.format = "your data fromat"
-videoFrame.time = CMTimeMake(1, 15)
+// [NSDate date].timeIntervalSince1970 indicates the current timestamp, and 1000 indicates 1000 frames per second.
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
 videoFrame.data = "your rawData"
 videoFrame.strideInPixels = "your stride"
 videoFrame.height = "your height"
@@ -180,15 +182,17 @@ agoraKit.pushExternalVideoFrame(videoFrame)
 // Push the video frame in the CVPixelBufferRef format.
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = 12;
-videoFrame.time = CMTimeMake(1, 15);
+// [NSDate date].timeIntervalSince1970 indicates the current timestamp, and 1000 indicates 1000 frames per second.
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000);
 videoFrame.textureBuf = "Your CVPixelBufferRef";
 videoFrame.ratation = 0;
 
 // Push the video frame in the rawData format.
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = "your data fromat";
-videoFrame.time = CMTimeMake(1, 15);
-videoFrame.data = "your CVPixelBufferRef";
+// [NSDate date].timeIntervalSince1970 indicates the current timestamp, and 1000 indicates 1000 frames per second.
+videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000);
+videoFrame.data = "your rawData";
 videoFrame.strideInPixels = "your stride";
 videoFrame.height = "your height";
 videoFrame.dataBuf = "your rawData";
