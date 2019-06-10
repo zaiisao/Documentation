@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: macOS,iOS
-updatedAt: Wed Apr 03 2019 03:46:06 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 06:17:19 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
