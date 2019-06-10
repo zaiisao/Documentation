@@ -3,7 +3,7 @@
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
 platform: All Platforms
-updatedAt: Wed Jun 05 2019 07:50:28 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 09:49:03 GMT+0800 (CST)
 ---
 # Generate a Token
 This page shows how to generate a token on your server for Agora SDK versions 2.1.0+. The token is used for joining a channel.
@@ -45,8 +45,8 @@ This method uses the original token to reinitialize the token builder. This meth
 </tr>
 <tr><td>Return value</td>
 <td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
+<li>true: Method call succeeded.</li>
+<li>false: Method call failed.</li>
 </ul>
 </td>
 </tr>
@@ -122,8 +122,8 @@ This method uses the original token to reinitialize the token builder. This meth
 </tr>
 <tr><td>Return value</td>
 <td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
+<li>True: Method call succeeded.</li>
+<li>False: Method call failed.</li>
 </ul>
 </td>
 </tr>
