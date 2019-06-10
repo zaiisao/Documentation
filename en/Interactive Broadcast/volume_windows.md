@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Tue Jan 29 2019 02:33:59 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 02:48:07 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -142,26 +142,23 @@ int ret = rep.setVolumeOfEffect(soundId, 50);
 
 In audio recording, mixing and playing, you can use the following APIs to get the data of the loudest speaker in the channel.
 
-- The loudest speaker at an instant
-
-  This callback gets the ID and volume value of the loudest speaker at an instant. A user ID of 0 indicates it is a local user.
+- The speakers with the highest instant volume
 
 ```cpp
 void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speakerNumber, int totalVolume)  {
-// Gets the ID of the loudest speakers at an instant.
+// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is the local user.
 // speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
 // speakerNumber shows the size of the speakers array.
 // totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
 }
 ```
 
-- The loudest speaker during a period
+- The speaker with the highest accumulative volume during a certain period
 
-  This callback gets the ID of the loudest speaker for a certain period. A user ID of 0 indicates it is a local user.
 
 ```cpp
 void onActiveSpeaker(uid_t uid) {
-// Gets the ID of the loudest speaker for a period.
+// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is the local user.
 }
 ```
 
