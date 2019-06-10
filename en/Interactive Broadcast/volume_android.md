@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Mon Jun 10 2019 02:39:42 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 02:48:58 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -123,7 +123,7 @@ rtcEngine.setInEarMonitoringVolume(volume);
 
 In audio recording, mixing and playing, you can use the following APIs to get the data of the loudest speaker in the channel.
 
-- The speaker with the highest instant volume
+- The speakers with the highest instant volume
 
 ```java
 /**
