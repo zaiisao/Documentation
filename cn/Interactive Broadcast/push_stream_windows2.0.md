@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Mon May 20 2019 07:58:26 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 06:36:21 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -14,57 +14,43 @@ updatedAt: Mon May 20 2019 07:58:26 GMT+0800 (CST)
 
 
 
-声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
-
--   <code>addPublishStreamUrl</code>
--   <code>removePublishStreamUrl</code>
--   <code>setLiveTranscoding</code>
-
-
-声网的 CDN 旁路推流方案具有以下优点：
-
--   能够随时启动或停止推流
-
--   增加了控制信息
-
--   能够在不间断推流的同时增减推流地址
-
--   通过回调接口掌握推流成功与否
-
--   较少的接口便于客户快速升级。
-
-## 推流到 CDN
-
-您需要联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
-
-> 声网今后将在 Dashboard 提供自助服务。
-
-> -   主播需要通过 <code>addPublishStreamUrl</code> 接口指定推流地址。推流地址可以在开始推流后动态增删。
-
-> -   主播需要在 <code>joinChannel</code> 成功后通过 <code>setLiveTranscoding</code> 接口定义转码参数和设置（RTMP 画布大小、多人混流布局等信息）。
-
-
-推流架构图如下：
+推流实现原理如下：
 
 <img alt="../_images/live_ios_publishing_stream_cn.png" src="https://web-cdn.agora.io/docs-files/cn/live_ios_publishing_stream_cn.png"/>
 
+## 前提条件
+
+请确保在使用该功能前已联系 [sales@agora.io](mailto:sales@agora.io) 开通旁路推流功能。
+
+## 实现方法
+
+声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、转码和布局设置：
+
+-   [`setLiveTranscoding`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde)：设置直播转码参数
+-   [`addPublishStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)：添加推流地址
+-   [`removePublishStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)：删除推流地址
+
+其中：
+
+- 主播在 `joinChannel` 成功后通过 `setLiveTranscoding` 接口定义转码参数和设置（RTMP 画布大小等信息）。CDN 音频推流时仍需设置一个 16 &times; 16 的最小视窗。
+- 主播通过 `addPublishStreamUrl`接口指定推流地址。推流地址可以在开始推流后动态增删。
 
 
 ### 示例代码：
 
-```
-//CDN 转码设置
+```C++
+// CDN 转码设置
 LiveTranscoding config;
 config.audioSampleRate = TYPE_44100;
 config.audioChannels = 2;
-//config.audioBitrate
+config.audioBitrate = 48;
 config.width = 640;
 config.height = 720;
 config.videoFramerate = 30;
 config.userCount = 1;  //如果 userCount > 1，则需要为每个 transcodingUsers 分别设置布局
 config.videoCodecProfile = HIGH;
 
-//分配用户视窗的合图布局
+// 分配用户视窗的合图布局
 config.transcodingUser = new TranscodingUser[config.userCount];
 config.transcodingUser[0].uid = 123456; //uid 应和 joinChannel() 输入的 uid 保持一致
 config.transcodingUser[0].x = 0;
@@ -74,7 +60,11 @@ config.transcodingUser[0].width = 640;
 config.transcodingUser[0].height = 720;
 
 m_rtcEngine->setLiveTranscoding(config);
+```
+
+```C++
 // 添加推流地址
+// transcodingEnabled 设置为 true，表示开启转码。如开启，则必须通过 setLiveTranscoding 接口配置 LiveTranscoding 类。单主播模式下，我们不建议使用转码。
 m_rtcEngine->addPublishStreamUrl(url, true);
 
  if (config.transcodingUsers)
@@ -83,23 +73,18 @@ m_rtcEngine->addPublishStreamUrl(url, true);
    }
 ```
 
-```
-// 添加推流地址
-m_rtcEngine->addPublishStreamUrl(url, false);
-```
-
-```
+```C++
 // 删除推流地址
 m_rtcEngine->removePublishStreamUrl(url);
 ```
 
-## 调整合图布局
+### 调整合图布局
 
 频道内有多个主播时，需要通过设置 <code>transcodingUser</code> 调整合图布局。
 
 > 主播需要在<code> joinChannel</code> 后通过 <code>setLiveTranscoding</code> 接口定义转码参数和设置（RTMP 画布大小、多人混流布局等信息）。
 
-### 示例 1: 两人横向平铺
+**示例 1: 两人横向平铺**
 
 如果你想显示以下布局:
 
@@ -133,7 +118,7 @@ User1:
       alpha: 1.0
 ```
 
-### 示例 2: 三人纵向平铺
+**示例 2: 三人纵向平铺**
 
 如果你想显示以下布局:
 
@@ -176,7 +161,7 @@ Canvas:
        alpha: 1.0
 ```
 
-### 示例 3: 1 人全屏 + 多人任意悬浮小窗
+**示例 3: 1 人全屏 + 多人任意悬浮小窗**
 
 如果你想显示以下布局:
 
@@ -219,5 +204,6 @@ User2:
     alpha: 1.0
 ```
 
+## 开发注意事项
 
-
+使用该功能需要联系 sales@agora.io 开通旁路推流。
