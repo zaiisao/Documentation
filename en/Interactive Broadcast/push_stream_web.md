@@ -8,9 +8,9 @@ updatedAt: Mon Dec 10 2018 21:40:31 GMT+0800 (CST)
 # Push Streams to the CDN
 ## Introduction
 
-The CDN live streaming feature enables a host (broadcaster) to transform the uplink stream into RTMP and distribute it through different channels such as the Web browser or streaming media player. 
+The process of publishing streams into the CDN (Content Delivery Network) is called CDN live streaming, where users can view the live broadcast through a web browser.
 
-> Contact sales@agora.io to enable Agora's CDN live streaming feature. 
+When multiple hosts are in the channel in the CDN live streaming, [transcoding](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#transcoding) is used to combine the streams of all the hosts into a single stream. Transcoding sets the audio/video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
 
 ## Implementation
 
