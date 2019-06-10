@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Mon Jun 10 2019 06:28:24 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 07:24:24 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -36,7 +36,7 @@ updatedAt: Mon Jun 10 2019 06:28:24 GMT+0800 (CST)
 - 主播通过 `addPublishStreamUrl`接口指定推流地址。推流地址可以在开始推流后动态增删。
 
 
-### 示例代码：
+### 示例代码
 
 ```java
 //CDN 转码设置
