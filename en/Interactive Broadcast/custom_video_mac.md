@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: macOS
-updatedAt: Fri Apr 26 2019 08:20:12 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 04:11:19 GMT+0800 (CST)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -165,7 +165,7 @@ videoFrame.ratation = 0
 let videoFrame = AgoraVideoFrame()
 videoFrame.format = "your data fromat"
 videoFrame.time = CMTimeMake(1, 15)
-videoFrame.data = "your CVPixelBufferRef"
+videoFrame.data = "your rawData"
 videoFrame.strideInPixels = "your stride"
 videoFrame.height = "your height"
 videoFrame.dataBuf = "your rawData"
