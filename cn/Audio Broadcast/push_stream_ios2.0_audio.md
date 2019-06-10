@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: macOS,iOS
-updatedAt: Mon Jun 10 2019 06:18:53 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 06:33:39 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -23,7 +23,7 @@ updatedAt: Mon Jun 10 2019 06:18:53 GMT+0800 (CST)
 
 ## 实现方法
 
-声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入音频源、转码设置：
+声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、转码设置：
 
 - [`setLiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLiveTranscoding:)：配置直播转码参数
 - [`addPublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)：添加推流地址
@@ -59,8 +59,8 @@ transcoding.transcodingUsers = @[user];
 
 ```objective-c
 // 添加推流地址
-// transcodingEnabled 设置为 TRUE，表示开启转码。如开启，则必须通过 setLiveTranscoding 接口配置 AgoraLiveTranscoding 类。单主播模式下，我们不建议使用转码
-[rtcEngine addPublishStreamUrl:streamUrl transcodingEnabled:TRUE];
+// transcodingEnabled 设置为 YES，表示开启转码。如开启，则必须通过 setLiveTranscoding 接口配置 AgoraLiveTranscoding 类。单主播模式下，我们不建议使用转码
+[rtcEngine addPublishStreamUrl:streamUrl transcodingEnabled:YES];
 ```
 
 ```objective-c
