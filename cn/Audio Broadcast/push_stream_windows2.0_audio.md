@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Mon Jun 10 2019 06:29:09 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 06:36:25 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -24,7 +24,7 @@ updatedAt: Mon Jun 10 2019 06:29:09 GMT+0800 (CST)
 
 ## 实现方法
 
-声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入音频源、转码和布局设置：
+声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、转码设置：
 
 -   [`setLiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde)：设置直播转码参数
 -   [`addPublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)：添加推流地址
@@ -32,7 +32,7 @@ updatedAt: Mon Jun 10 2019 06:29:09 GMT+0800 (CST)
 
 其中：
 
-- 主播在 `joinChannelByToken` 成功后通过 `setLiveTranscoding` 接口定义转码参数和设置（RTMP 画布大小等信息）。CDN 音频推流时仍需设置一个 16 &times; 16 的最小视窗。
+- 主播在 `joinChannel` 成功后通过 `setLiveTranscoding` 接口定义转码参数和设置（RTMP 画布大小等信息）。CDN 音频推流时仍需设置一个 16 &times; 16 的最小视窗。
 - 主播通过 `addPublishStreamUrl`接口指定推流地址。推流地址可以在开始推流后动态增删。
 
 ### 示例代码：
