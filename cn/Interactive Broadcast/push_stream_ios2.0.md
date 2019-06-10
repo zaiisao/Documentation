@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: iOS,macOS
-updatedAt: Mon May 20 2019 07:58:04 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 06:33:24 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -14,34 +14,31 @@ updatedAt: Mon May 20 2019 07:58:04 GMT+0800 (CST)
 
 
 
-声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、外部输入视频源、转码和布局设置：
+推流实现原理如下：
 
-- `addPublishStreamUrl`
-- `removePublishStreamUrl`
-- `setLiveTranscoding`
+<img alt="../_images/live_ios_publishing_stream_cn.png" src="https://web-cdn.agora.io/docs-files/cn/live_ios_publishing_stream_cn.png"/>
 
-声网的 CDN 推流方案具有以下优点：
+## 前提条件
 
-- 能够随时启动或停止推流
-- 增加了控制信息
-- 能够在不间断推流的同时增减推流地址
-- 通过回调接口掌握推流成功与否
-- 较少的接口便于客户快速升级。
+请确保在使用该功能前已联系 [sales@agora.io](mailto:sales@agora.io) 开通旁路推流功能。
 
+## 实现方法
 
-## 推流到 CDN
+声网提供的 CDN 旁路推流方案主要基于以下 API 进行推流、转码设置：
 
-你需要联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
+- [`setLiveTranscoding`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLiveTranscoding:)：配置直播转码参数
+- [`addPublishStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)：添加推流地址
+- [`removePublishStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)：删除推流地址
 
-> 声网今后将在 Dashboard 提供自助服务。
+其中：
 
-- 主播需要通过 `addPublishStreamUrl` 接口指定推流地址。推流地址可以在开始推流后动态增删。
-- 主播需要在 `joinChannel` 成功后通过 `setLiveTranscoding` 接口定义转码参数和设置（RTMP 画布大小、多人混流布局等信息）。
+- 主播在 `joinChannelByToken` 成功后通过 `setLiveTranscoding` 接口定义转码参数和设置（RTMP 画布大小等信息）。CDN 音频推流时仍需设置一个 16 &times; 16 的最小视窗。
+- 主播通过 `addPublishStreamUrl`接口指定推流地址。推流地址可以在开始推流后动态增删。
 
-### Objective-C 示例代码：
+### 示例代码：
 
 ```objective-c
-//CDN 转码设置
+// CDN 转码设置
 AgoraLiveTranscodingUser *user = [[AgoraLiveTranscodingUser alloc] init];
 user.uid = 12345;
 user.rect = CGRectMake(0, 0, 640, 720);
@@ -51,7 +48,7 @@ AgoraRtcEngineKit *rtcEngine = [AgoraRtcEngineKit sharedEngineWithAppId:@"" dele
 AgoraLiveTranscoding *transcoding = [[AgoraLiveTranscoding alloc] init];
 transcoding.audioSampleRate = AgoraAudioSampleRateType44100;
 transcoding.audioChannels = 2;
-//config.audioBitrate
+transcoding.audioBitrate = 48;
 transcoding.size = CGSizeMake(640, 720);
 transcoding.videoFramerate = 30;
 transcoding.videoCodecProfile = AgoraVideoCodecProfileTypeHigh;
@@ -62,8 +59,8 @@ transcoding.transcodingUsers = @[user];
 
 ```objective-c
 // 添加推流地址
-// transcodingEnabled: 是否启用转码功能。如启用，需要先通过 setLiveTranscoding 接口设置转码参数
-[rtcEngine addPublishStreamUrl:streamUrl transcodingEnabled:NO];
+// transcodingEnabled设置为 YES，表示开启转码。如开启，则必须通过 setLiveTranscoding 接口配置 AgoraLiveTranscoding 类。单主播模式下，我们不建议使用转码
+[rtcEngine addPublishStreamUrl:streamUrl transcodingEnabled:YES];
 ```
 
 ```objective-c
@@ -71,13 +68,13 @@ transcoding.transcodingUsers = @[user];
 [rtcEngine removePublishStreamUrl:streamUrl];
 ```
 
-## 调整合图布局
+### 调整合图布局
 
 频道内有多个主播时，需要通过设置 `transcodingUser` 调整合图布局。
 
-主播需要在 `joinChannel` 后通过 `setLiveTranscoding` 接口定义转码参数和设置（RTMP 画布大小、多人混流布局等信息）。
+主播需要在 `joinChannelByTranscoding` 后通过 `setLiveTranscoding` 接口定义转码参数和设置（RTMP 画布大小、多人混流布局等信息）。
 
-### 示例 1: 两人横向平铺
+**示例 1: 两人横向平铺**
 
 如果你想显示以下布局:
 
@@ -110,7 +107,7 @@ User1:
       alpha: 1.0
 ```
 
-### 示例 2: 三人纵向平铺
+**示例 2: 三人纵向平铺**
 
 如果你想显示以下布局:
 
@@ -152,7 +149,7 @@ Canvas:
        alpha: 1.0
 ```
 
-### 示例 3: 1 人全屏 + 多人任意悬浮小窗
+**示例 3: 1 人全屏 + 多人任意悬浮小窗**
 
 如果你想显示以下布局:
 
@@ -193,3 +190,7 @@ User2:
     zOrder: 2
     alpha: 1.0
 ```
+
+## 开发注意事项
+
+使用该功能需要联系 sales@agora.io 开通旁路推流。
