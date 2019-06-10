@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Mon Jun 10 2019 01:58:17 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 02:39:07 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -169,7 +169,7 @@ In audio recording, mixing and playing, you can use the following APIs to get th
 // swift
 func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeakers speakers:
 [AgoraRtcAudioVolumeInfo], totalVolume: Int) {
-// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is a local user.
+// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is the local user.
 // speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
 // totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
 }
@@ -178,7 +178,7 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeaker
 ```objective-c
 // objective-c
 - (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine reportAudioVolumeIndicationOfSpeakers:(NSArray<AgoraRtcAudioVolumeInfo*> *_Nonnull)speakers totalVolume:(NSInteger)totalVolume {
-// Gets the ID of the speakers with the highest instant volume.  A user ID of 0 indicates it is a local user.
+// Gets the ID of the speakers with the highest instant volume.  A user ID of 0 indicates it is the local user.
 // speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
 // totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
 }
@@ -189,7 +189,7 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeaker
 ```swift
 // swift
 func rtcEngine(_ engine: AgoraRtcEngineKit, activeSpeaker speakerUid: UInt) {
-// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is a local user.
+// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is the local user.
 }
 ```
 
