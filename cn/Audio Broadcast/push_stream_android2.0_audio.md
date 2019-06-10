@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Mon Jun 10 2019 06:00:50 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 06:18:48 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -40,7 +40,7 @@ updatedAt: Mon Jun 10 2019 06:00:50 GMT+0800 (CST)
 ### 示例代码：
 
 ```java
-//CDN 转码设置
+// CDN 转码设置
 LiveTranscoding config;
 config.audioSampleRate = TYPE_44100;
 config.audioChannels = 2;
@@ -50,7 +50,7 @@ config.height = 16;
 config.videoFramerate = 15;
 config.videoCodecProfile = HIGH;
 
-//分配用户视窗的合图布局
+// 分配用户视窗的合图布局
 LiveTranscoding transcoding = new LiveTranscoding();
 LiveTranscoding.TranscodingUser user = new LiveTranscoding.TranscodingUser();
 user.uid = 123456;
@@ -66,7 +66,7 @@ rtcEngine.setLiveTranscoding(transcoding);
 
 ```
 // 添加推流地址
-// transcodingEnabled 设置为 true，表示开启转码。如开启，则必须进行配置 LiveTranscoding 类；单主播模式下，我们不建议使用转码。
+// transcodingEnabled 设置为 true，表示开启转码。如开启，则必须通过 setLiveTranscoding 接口配置 LiveTranscoding 类。单主播模式下，我们不建议使用转码。
 rtcEngine.addPublishStreamUrl(url, true);
 ```
 
