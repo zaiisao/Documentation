@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Mon Jun 10 2019 01:39:35 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 01:39:47 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -129,7 +129,7 @@ In audio recording, mixing and playing, you can use the following APIs to get th
 
 ```java
 /**
- * Gets the ID of the loudest speakers at an instant.
+ * Gets the ID of the speakers with the highest instant volume.
  * @param speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
  * @param totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
  */
@@ -142,7 +142,7 @@ public void onAudioVolumeIndication(AudioVolumeInfo[] speakers, int totalVolume)
   This callback gets the ID of the loudest speaker for a certain period. A user ID of 0 indicates it is a local user.
 	
 ```java
-// Gets the ID of the loudest speaker for a period.
+// Gets the ID the speaker with the highest accumulative volume during a certain period.
 public void onActiveSpeaker(int uid) {
 }
 ```
