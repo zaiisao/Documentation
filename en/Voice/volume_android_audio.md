@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Mon Jun 10 2019 01:39:47 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 01:49:02 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -123,13 +123,11 @@ rtcEngine.setInEarMonitoringVolume(volume);
 
 In audio recording, mixing and playing, you can use the following APIs to get the data of the loudest speaker in the channel.
 
-- The loudest speaker at an instant
-
-  This callback gets the ID and volume value of the loudest speaker at an instant. A user ID of 0 indicates it is a local user.
+- The speaker with the highest instant volume
 
 ```java
 /**
- * Gets the ID of the speakers with the highest instant volume.
+ * Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is a local user.
  * @param speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
  * @param totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
  */
@@ -137,12 +135,10 @@ public void onAudioVolumeIndication(AudioVolumeInfo[] speakers, int totalVolume)
 }
 ```
 
-- The loudest speaker during a period
-
-  This callback gets the ID of the loudest speaker for a certain period. A user ID of 0 indicates it is a local user.
+- The speaker with the highest accumulative volume during a certain period of time
 	
 ```java
-// Gets the ID the speaker with the highest accumulative volume during a certain period.
+// Gets the ID the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is a local user.
 public void onActiveSpeaker(int uid) {
 }
 ```
