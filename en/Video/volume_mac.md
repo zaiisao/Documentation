@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Mon Jun 10 2019 02:29:06 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 02:40:40 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -187,7 +187,7 @@ In audio recording, mixing and playing, you can use the following APIs to get th
 
 ```swift
 // swift
-// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is a local user.
+// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is the local user.
 // speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
 // totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
 func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeakers speakers:
@@ -197,7 +197,7 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeaker
 
 ```objective-c
 // objective-c
-// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is a local user.
+// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is the local user.
 // speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
 // totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
 - (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine reportAudioVolumeIndicationOfSpeakers:(NSArray<AgoraRtcAudioVolumeInfo*> *_Nonnull)speakers totalVolume:(NSInteger)totalVolume {
@@ -208,14 +208,14 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeaker
 
 ```swift
 // swift
-// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is a local user.
+// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is the local user.
 func rtcEngine(_ engine: AgoraRtcEngineKit, activeSpeaker speakerUid: UInt) {
 }
 ```
 
 ```objective-c
 // objective-c
-// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is a local user.
+// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is the local user.
 - (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine activeSpeaker:(NSUInteger)speakerUid {
 }
 ```
