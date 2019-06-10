@@ -3,7 +3,7 @@
 title: Modify Raw Data
 description: 
 platform: iOS,macOS
-updatedAt: Fri Nov 09 2018 18:05:41 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 09:24:19 GMT+0800 (CST)
 ---
 # Modify Raw Data
 The Agora Raw Data interface is an advanced feature provided in the SDK library for users to obtain the raw voice or video data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
@@ -22,18 +22,22 @@ The Agora Raw Data interface is a C++ interface.
    class AgoraAudioFrameObserver : public agora::media::IAudioFrameObserver
    {
      public:
+	   // Occurs when the recorded audio frame is received.
        virtual bool onRecordAudioFrame(AudioFrame& audioFrame) override
        {
          return true;
        }
+	   // Occurs when the audio playback frame is received.
        virtual bool onPlaybackAudioFrame(AudioFrame& audioFrame) override
        {
          return true;
         }
+	   // Occurs when the audio playback frame of a specified user is received.
        virtual bool onPlaybackAudioFrameBeforeMixing(unsigned int uid, AudioFrame& audioFrame) override
         {
          return true;
         }
+	   // Occurs when the mixed recorded and playback audio frame is received.
        virtual bool onMixedAudioFrame(AudioFrame& audioFrame) override
         {
         return true;
@@ -99,10 +103,12 @@ The Agora Raw Data interface is a C++ interface.
    class AgoraVideoFrameObserver : public agora::media::IVideoFrameObserver
    {
      public:
+	   // Occurs when the camera captured image is received.
        virtual bool onCaptureVideoFrame(VideoFrame& videoFrame) override
        {
          return true;
        }
+	   // Processes the received image of the specified user.
        virtual bool onRenderVideoFrame(unsigned int uid, VideoFrame& videoFrame) override
        {
          return true;
