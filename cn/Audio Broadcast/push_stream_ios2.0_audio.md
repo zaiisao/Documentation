@@ -3,14 +3,15 @@
 title: 推流到 CDN
 description: 
 platform: macOS,iOS
-updatedAt: Mon Jun 10 2019 06:33:39 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 06:40:10 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
 
-旁路推流功能用于将主播的上行音频流转化为 RTMP 流分发，供 Web 端或流媒体播放器端收听。
+将直播流发布到 CDN（Content Delivery Network）的过程称为 CDN 直播推流，用户无需安装 App，可以通过 Web 浏览器观看直播。
 
-> 请联系 [sales@agora.io](mailto:sales@agora.io) 开通推流功能。
+在推流到 CDN 过程中，当频道中有多个主播时，通常会涉及到[转码](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#转码)，将多个直播流组合成单个流，并设置这个流的音视频属性和合图布局。
+
 
 
 推流实现原理如下：
