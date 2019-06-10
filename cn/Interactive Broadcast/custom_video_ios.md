@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: iOS
-updatedAt: Fri Apr 26 2019 07:09:22 GMT+0800 (CST)
+updatedAt: Mon Jun 10 2019 04:10:35 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -189,7 +189,7 @@ videoFrame.ratation = 0;
 AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = "your data fromat";
 videoFrame.time = CMTimeMake(1, 15);
-videoFrame.data = "your CVPixelBufferRef";
+videoFrame.data = "your rawData";
 videoFrame.strideInPixels = "your stride";
 videoFrame.height = "your height";
 videoFrame.dataBuf = "your rawData";
