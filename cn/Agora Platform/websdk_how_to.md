@@ -3,7 +3,7 @@
 title: Web SDK 相关
 description: 
 platform: Web SDK 相关
-updatedAt: Mon Jun 10 2019 08:25:31 GMT+0800 (CST)
+updatedAt: Tue Jun 11 2019 01:55:53 GMT+0800 (CST)
 ---
 # Web SDK 相关
 ### 视频过程中，如何更换音视频输入设备？
