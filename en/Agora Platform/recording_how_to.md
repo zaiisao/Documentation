@@ -3,7 +3,7 @@
 title: Recording-related Issues
 description: 
 platform: Recording-related Issues
-updatedAt: Fri Feb 22 2019 02:58:06 GMT+0800 (CST)
+updatedAt: Tue Jun 11 2019 02:50:08 GMT+0800 (CST)
 ---
 # Recording-related Issues
 ### How do you check the recording permissions?
@@ -30,12 +30,6 @@ The server decides when to join a channel (start recording) or leave a channel (
 
 ### How do I know when the recording is complete?
 Automatic recording mode: If no one is in the channel when the idle time is up, the Agora Recording SDK stops recording and leaves the channel. The application monitoring the `leaveChannel` callback indicates that the recording is complete and moves to the next step, such as uploads the recording file to another server.
-
-### How do I customize the recording file and set the directory of the recording file?
-
-To customize the recording file, you need to configure the CFG file. The SDK package has a hidden .cfg.json file under Agora_Recording_SDK_for_Linux_FULL/samples/cpp. You can refer to the method of setting the output file path and filename. See [Recording API](../../en/Recording/recording_cpp.md).
-
-For example, the recording file needs to be saved as "root directory/dates/uid.aac" where /home/Agora_Recording_SDK_for_Linux_FULL/samples/recording_output is the root directory.
 
 ### Can I record the voice or video of a specific user?
 This function is not supported. You record the audio or video of all users.
