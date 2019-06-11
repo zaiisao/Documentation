@@ -3,7 +3,7 @@
 title: Web SDK-related Issues
 description: 
 platform: Web SDK-related Issues
-updatedAt: Tue Dec 25 2018 18:06:21 GMT+0800 (CST)
+updatedAt: Tue Jun 11 2019 01:54:26 GMT+0800 (CST)
 ---
 # Web SDK-related Issues
 ### How do you change the audio and video input devices during a video call?
