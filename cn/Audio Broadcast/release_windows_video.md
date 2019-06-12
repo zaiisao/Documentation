@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jun 12 2019 08:43:05 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 08:53:14 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -115,11 +115,11 @@ Windows 视频 SDK 支持两种主要场景:
 
 - 修复了同时播放多个本地音效文件失败的问题
 
-### 视频
+#### 视频
 
 - 修复了特殊场景下发送端发小流的问题
 
-### 其他
+#### 其他
 
 - 修复了用户退出频道后仍然收到 `onNetworkQuality` 回调的问题
 - 修复了偶现的崩溃问题，提升了系统稳定性
@@ -149,7 +149,7 @@ Windows 视频 SDK 支持两种主要场景:
 - `LocalVideoStats` 类新增参数 [encoderOutputFrameRate](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#ab5df1607ac79acbc51941797189b8dba) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#aa91d7d73f3d2c2933658a9dced6ec3ed)
 - `RemoteVideoStats` 类新增参数 [decoderOutputFrameRate](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a21776c26b256d836a90944c1051c9322) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a500d2a8457bf877794c219d194ec09b0)（替换 receivedFrameRate）
 
-### 废弃
+#### 废弃
 
 - `enableAudioQualityIndication`
 - `onCameraReady`
