@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jun 12 2019 08:40:11 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 08:43:05 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -143,7 +143,7 @@ Windows 视频 SDK 支持两种主要场景:
 - [onRtmpStreamingStateChanged](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4)
 - [registerMediaMetadataObserver](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a84dbf06de1d769b63200d7ec0289cca0)
 - [IMetadataObserver](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_metadata_observer.html) 类
-- `LiveTranscodin`g 类新增参数 [audioCodecProfile](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a76987efee0f6d507ef648083507bd935)
+- `LiveTranscoding` 类新增参数 [audioCodecProfile](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a76987efee0f6d507ef648083507bd935)
 - `ScreenCaptureParameters` 类新增参数 [captureMouseCursor](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#aa68157203616423bad85f852f3816c1f)
 - `RtcStats` 类新增参数 [txPacketLossRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a52232c2b3af1573b3783f74f7ca75c1c) 和 [rxPacketLossRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a1882c369c5d1bc04b85fb9dcb15700b6)
 - `LocalVideoStats` 类新增参数 [encoderOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#ab5df1607ac79acbc51941797189b8dba) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#aa91d7d73f3d2c2933658a9dced6ec3ed)
