@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 08:52:49 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 08:53:54 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -159,7 +159,7 @@ Android 视频 SDK 支持两种主要场景:
 - `LocalVideoStats` 类新增参数 [encoderOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html#af6350acef5578bf0501a234fc36d86a3) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html#aa754035a384b502a45c6fed6f17038da) 
 - `RemoteVideoStats` 类新增参数 [decoderOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html#aafc03c6a890c36dc9810537c47ce0cd9) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html#aa09441cb1b9a0f4318cd59b0ca5b3ffb)（替换 `receivedFrameRate`）
 
-### 废弃
+#### 废弃
 
 - `enableAudioQualityIndication`
 - `onCameraReady`
