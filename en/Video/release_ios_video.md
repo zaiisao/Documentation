@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Wed Jun 12 2019 10:15:14 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 10:15:43 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -153,8 +153,8 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 #### Deprecated
 
 - `enableAudioQualityIndication`
-- `onCameraReady`
-- `onVideoStopped`
+- `rtcEngineCameraDidReady`
+- `rtcEngineVideoDidStop`
 - The `AgoraWarningCodeLookupChannelRejected(105)` warning code
 - The `AgoraErrorCodeTokenExpired(109)` error code
 - The `AgoraErrorCodeInvalidToken(110)` error code
