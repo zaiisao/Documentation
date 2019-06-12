@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed Jun 12 2019 07:57:15 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 09:04:25 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -11,7 +11,7 @@ updatedAt: Wed Jun 12 2019 07:57:15 GMT+0800 (CST)
 
 ## **简介**
 
-Windows 语音 SDK 支持两种主要场景:
+macOS 语音 SDK 支持两种主要场景:
 
 -   音视频通话
 -   音视频直播
