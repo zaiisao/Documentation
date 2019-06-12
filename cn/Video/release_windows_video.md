@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jun 12 2019 07:37:35 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 07:38:11 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -17,6 +17,149 @@ Windows 视频 SDK 支持两种主要场景:
 -   音视频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及[视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
+
+## **2.4.1 版**
+
+该版本于 2019 年 6 月 12 日发布。新增特性、功能改进与修复问题列表详见下文。
+
+### **升级必看**
+
+如下内容涉及 SDK 的行为变更。如果你是有之前版本的 SDK 升级至该版本，升级前请务必阅读。
+
+#### 1. CDN 推流
+
+为提高推流服务的易用性，该版本对推流接口的参数设置进行了如下限制：
+
+| 类/接口                | 参数限制                                                     |
+| -------------------------- | ------------------------------------------------------------ |
+| [LiveTranscoding](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html) 类     | <li>[videoFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a8086eda68ed5b9d106cf830fd4e24f9c)：设置转码推流的帧率，单位为 fps，默认值为 15，建议不要超过 30<li>[videoBitrate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ab5ff17deab2e3149f149987cc0d83433)：设置转码推流的码率，单位为 Kbps，默认值为 400。用户可以根据 [Video Profile 参考表](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69)中的码率值进行设置。如果设置的码率超出合理范围，服务端会在合理区间内对码率值进行自适应<li>[videoCodecProfile](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a72fbfdd2c0d4f0cc438d5ca052aa7531)：设置转码推流的视频编码规格，可设为 **BASELINE**、**MAIN** 或 **HIGH**。若设为其他值，服务端会改为默认值 **HIGH **<li>[width](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ad0a505490500917dd246510471ef88be) 和 [height](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a340ee10a10bf0137fb996ca77729002e)：设置转码推流的视频分辨率。width x height 的最小值不低于 16 x 16</li> |
+| [RtcImage](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_image.html) 类          | `url`：字符长度不得超过 **1024** 字节                        |
+| [addPublishStreamUrl](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)    | `url`：字符长度不得超过 **1024** 字节                        |
+| [removePublishStreamUrl](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7) | `url`：字符长度不得超过 **1024** 字节                        |
+
+同时，该版本在 `LiveTranscoding` 类中新增 [audioCodecProfile](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a76987efee0f6d507ef648083507bd935) 参数，支持设置音频编码的规格。默认规格为 LC-AAC。
+
+此外，该版本还对 [onStreamPublished](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a85cc73e9f53766b8a0a7fa8c96f2ea98) 方法的 `error` 参数新增了五个错误码，方便快速定位与排查问题。
+
+#### 2、RemoteVideoStats 类参数更名
+
+为更精准地表达远端视频流的统计信息，该版本将 [RemoteVideoStats](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html) 类中的 `receivedFrameRate` 参数更名为 [rendererOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a500d2a8457bf877794c219d194ec09b0)。
+
+### **新增特性**
+
+#### 1、添加媒体附属信息
+
+常见的直播场景中，主播给观众分发商品链接、优惠券、在线答题等，能构建更为丰富的直播互动方式。为满足该部分社交类直播 App 开发者的需求，该版本新增 [registerMediaMetadataObserver](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a84dbf06de1d769b63200d7ec0289cca0) 接口以及 [IMediaMetadataObserver](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_metadata_observer.html) 类，目前允许主播在发出的视频帧中添加 Metadata，发送媒体附属信息。
+
+#### 2、优化屏幕共享
+
+为确保屏幕共享画面完整性，保持共享屏幕的宽高比，避免画面裁剪和拉伸，该版本对屏幕共享的编码策略进行了优化。当共享屏幕的分辨率宽高比与你在 [ScreenCaptureParameters](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html) 中设置的 [dimensions](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#a9ee8c96bbfe031e8c614d7b2e49ddbb8) 的宽高比不一致时，Agora 按如下策略进行编码。假设 `dimensions` 值为 1920 x 1080，即 2073600 像素：
+
+- 如果屏幕分辨率小于 `dimensions`，如 1000 x 1000，SDK 直接按 1000 x 1000 进行编码
+- 如果屏幕分辨率大于 `dimensions`，如 2000 x 1500，SDK 按屏幕分辨率的宽高比 4：3，取 `dimensions` 以内的最大分辨率，即 1440 x 1080， 进行编码
+
+屏幕共享按用户在 [ScreenCaptureParameters](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html) 类下设置的 [dimensions](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#a9ee8c96bbfe031e8c614d7b2e49ddbb8) 值进行计费。如果用户没有设置 `dimensions` 的值，SDK 会按 1920 x 1080 计费。
+
+同时，为方便用户选择屏幕共享时是否采集鼠标，该版本在 `ScreenCaptureParameters` 类中新增 [captureMouseCursor](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#aa68157203616423bad85f852f3816c1f) 参数。该参数默认采集鼠标。
+
+#### 3、本地视频状态回调
+
+为方便开发者了解本地视频状态，该版本新增 [onLocalVideoStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6) 回调。该回调下，本地视频有 `STOPPED`、`CAPTURING`、`ENCODING` 和 `FAILED` 四种状态。当本地视频状态为 `FAILED` 时，用户可以参考该回调 `error` 参数返回的错误码进行问题排查。该回调能帮助开发者辨别本地视频故障是由采集还是编码引起的。原有的 `onCameraReady` 和 `onVideoStopped` 回调在该版本废弃，我们不再推荐。
+
+#### 4、推流状态回调
+
+为方便推流用户了解当前的推流状态，并在推流出错时了解原因排查问题，该版本新增 [onRtmpStreamingStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d) 回调。该回调下，推流有 `IDLE`、`CONNECTING`、`RUNNING`、`RECOVERING` 和 `FAILURE` 五种状态。当推流状态为 FAILURE 时，用户可以参考该回调 `errCode` 参数返回的错误码进行问题排查。原有的 `onStreamPublished` 和 `onStreamUnpublished` 回调仍可以使用，但我们不再推荐。
+
+#### 5、网络连接失败原因梳理
+
+为方便开发者更好地排查网络连接相关故障，该版本梳理并整合了网络连接相关的错误码，在原有 [onConnectionStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) 回调的 `reason` 参数中新增八个导致网络连接失败的原因。新增后，只要网络连接发生错误，SDK 都会返回该回调。同时该版本废弃了原有的警告码 `WARN_APM_HOWLING(105)` 和错误码 `ERR_TOKEN_EXPIRED(109)`、`ERR_INVALID_TOKEN(110)`。
+
+#### 6、本地网络连接类型回调
+
+为方便用户了解本地网络的连接类型，该版本新增 [onNetworkTypeChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4) 回调。该回调下，本地网络连接有 `UNKNOWN`、`DISCONNECTED`、`LAN`、`WIFI`、`2G`、`3G`、`4G` 六种类型。当网络连接短暂中断时，该回调能帮助开发者辨别引起中断的原因是网络切换还是网络条件不好。
+
+#### 7、获取播放伴奏音量
+
+为方便开发者获取伴奏的播放音量，排查音量相关问题，该版本新增 [getAudioMixingPlayoutVolume](../../API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html.md) 和 [getAudioMixingPublishVolume](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9fafbaaf39578810ec9c11360fc7f027) 方法，用以分别获取音乐文件在本地和远端的播放音量。
+
+#### 8、精确回调远端音频首帧解码
+
+为更精准地获取远端用户的出声时间，该版本新增 [onFirstRemoteAudioDecoded](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7d375e7467bd099ad2d4c9cfc0a6c242) 回调，用以向 App 层报告 SDK 已完成远端音频首帧解码。在远端用户加入频道后首次发送音频，或远端用户 15 秒不发音频后再次发送时，该回调均会被触发。该回调与 `onFirstRemoteAudioFrame` 的区别在于，`onFirstRemoteAudioFrame` 在收到首个音频包时触发，先于 `onFirstRemoteAudioDecoded`。
+
+#### 9、其他新增特性
+
+- 该版本新增支持 64 位系统。
+
+### **改进**
+
+#### 1、质量透明
+
+- 该版本在通话相关的统计信息 [RtcStats](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html) 类中，新增和 [txPacketLossRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a52232c2b3af1573b3783f74f7ca75c1c) 和  [rxPacketLossRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a1882c369c5d1bc04b85fb9dcb15700b6) 参数，分别返回本地客户端到服务器和服务器到本地客户端的丢包率。
+- 该版本对 LocalVideoStats 和 RemoteVideoStats 类作了如下变动，方便用户更精准地获取本地和远端视频流的统计信息：
+  - [LocalVideoStats](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html)：新增 [encoderOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#ab5df1607ac79acbc51941797189b8dba) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#aa91d7d73f3d2c2933658a9dced6ec3ed) 参数
+  - [RemoteVideoStats](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html)：新增 [decoderOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a21776c26b256d836a90944c1051c9322) 参数，并将原有的 receivedFrameRate 参数更名为 [rendererOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a500d2a8457bf877794c219d194ec09b0)
+
+#### 2、其他改进
+
+- 优化了[AUDIO_SCENARIO_TYPE](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#a2c5708461a9e1568bbda636d95055533) 为 GAME_STREAMING 时的音质效果
+- 优化了部分场景下语音和视频的延时
+- SDK 包大小降低约 0.5 M
+- 提高了用户修改视频属性的码率后，网络质量打分的准确性
+- 默认启用音频质量通知回调。开发者无需调用 enableAudioQualityIndication 方法，也可以收到 [onRemoteAudioStats](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a) 回调
+- 提升了视频服务的稳定性
+- 提升了视频设备的兼容性
+
+### **问题修复**
+
+#### 音频
+
+- 修复了同时播放多个本地音效文件失败的问题
+
+### 视频
+
+- 修复了特殊场景下发送端发小流的问题
+
+### 其他
+
+- 修复了用户退出频道后仍然收到 `onNetworkQuality` 回调的问题
+- 修复了偶现的崩溃问题，提升了系统稳定性
+- 修复了个别手机上出现的调用 `joinChannel` 后 app 闪退的问题
+
+### **API 变更**
+
+为提升用户体验，Agora 在 v2.4.1 版本中对 API 进行了如下变动：
+
+#### 全平台 C++ 接口行为一致
+
+从该版本起，Native SDK 保证了各平台 C++ 接口的行为一致性，方便用户通过统一的 C++ 接口，在各平台保持业务逻辑一致。同时在 C++ 头文件的 `IRtcEngine` 类中实现了 `RtcEngineParameters` 类下的所有方法。各接口的适用范围及使用注意事项详见 [Agora C++ API Reference for All Platforms 首页](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/index.html)。
+
+#### 新增
+
+- [getAudioMixingPlayoutVolume](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aed9dda5a7b2683776f41f6ba0e1f281c)
+- [getAudioMixingPublishVolume](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9fafbaaf39578810ec9c11360fc7f027)
+- [onFirstRemoteAudioDecoded](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7d375e7467bd099ad2d4c9cfc0a6c242)
+- [onLocalVideoStateChanged](../../API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html.md)
+- [onNetworkTypeChanged](../../cn/Video/release_windows_video.md)
+- [onRtmpStreamingStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4)
+- [registerMediaMetadataObserver](../../API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html.md)
+- [IMetadataObserver](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_metadata_observer.html) 类
+- `LiveTranscodin`g 类新增参数 [audioCodecProfile](https://docs.agora.io/cn/Video/.API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a76987efee0f6d507ef648083507bd935)
+- `ScreenCaptureParameters` 类新增参数 [captureMouseCursor](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#aa68157203616423bad85f852f3816c1f)
+- `RtcStats` 类新增参数 [txPacketLossRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a52232c2b3af1573b3783f74f7ca75c1c) 和 [rxPacketLossRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a1882c369c5d1bc04b85fb9dcb15700b6)
+- `LocalVideoStats` 类新增参数 [encoderOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#ab5df1607ac79acbc51941797189b8dba) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#aa91d7d73f3d2c2933658a9dced6ec3ed)
+- `RemoteVideoStats` 类新增参数 [decoderOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a21776c26b256d836a90944c1051c9322) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a500d2a8457bf877794c219d194ec09b0)（替换 receivedFrameRate）
+
+### 废弃
+
+- `enableAudioQualityIndication`
+- `onCameraReady`
+- `onVideoStopped`
+- 警告码 `WARN_LOOKUP_CHANNEL_REJECTED(105)`
+- 错误码 `ERR_TOKEN_EXPIRED(109)`
+- 错误码 `ERR_TOKEN_EXPIRED(110)`
+- 错误码 `ERR_START_CAMERA(1003)`
+- 错误码 `ERR_VDM_WIM_DEVICE_IN_USE(1502)`
+
 
 ## 2.4.0 版
 
