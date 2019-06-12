@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Wed Jun 12 2019 10:10:45 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 10:11:19 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -16,6 +16,125 @@ The Voice SDK supports the following scenarios:
 -   Live voice broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+
+
+## v2.4.1
+
+V2.4.1 is released on Jun 12th, 2019.
+
+### Before getting started
+
+Ensure that you read the following SDK behavior changes if you migrate from an earlier SDK version.
+
+#### Publishing streams to the CDN
+
+To improve the usability of the CDN streaming service, v2.4.1 defines the following parameter limits:
+
+| Class **/** Interface  | Parameter Limit                                              |
+| ---------------------- | ------------------------------------------------------------ |
+| [AgoraLiveTranscoding](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraLiveTranscoding.html)        | <li>[videoFrameRate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoFramerate): Frame rate (fps) of the CDN live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>[videoBitrate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoBitrate): Bitrate (Kbps) of the CDN live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/bitrate). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>[videoCodecProfile](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoCodecProfile): The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>[size](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/size): Pixel of the video. The minimum value of size is **16 x 16**.</li> |
+| [AgoraImage](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraImage.html)             | url: The maximum length of this parameter is **1024** bytes. |
+| [addPublishStreamUrl](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)     | url: The maximum length of this parameter is **1024** bytes. |
+| [removePublishStreamUrl](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:) | url: The maximum length of this parameter is **1024** bytes. |
+
+This release also adds the  [audioCodecProfile](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/audioCodecProfile) parameter in the `LiveTranscoding` class to set the audio codec profile type. The default type is LC-AAC, which means the low-complexity audio codec profile.
+
+v2.4.1 also adds five error codes to the error parameter in the [streamPublishedWithUrl](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:) method for quick troubleshooting.
+
+
+### New features
+
+#### 1. State of the RTMP streaming
+
+v2.4.1 adds the [rtmpStreamingChangedToState](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:) callback to indicate the state of the RTMP streaming and help you troubleshoot issues when exceptions occur. In this callback, the SDK returns the `Idle`, `Connecting`, `Runing`, `Recovering`, or `Failure` state. When the state is `Failure`, you can use the error code for troubleshooting. You can still use the `streamPublishedWithUrl` and `streamUnpublishedWithUrl` callbacks, but we do not recommend using them.
+
+#### 2. More reasons for a network connection state change
+
+In the onConnectionStateChanged callback, v2.4.1 adds error codes to the reason parameter to help you troubleshoot issues when exceptions occur. The SDK returns the [connectionChangedToState](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback whenever the connection state changes. This release also deprecates `AgoraWarningCodeLookupChannelRejected(105)`, `AgoraErrorCodeTokenExpired(109)`, and `AgoraErrorCodeInvalidToken(110)`.
+
+#### 3. State of the local network type 
+
+v2.4.1 adds the [networkTypeChangedToType](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkTypeChangedToType:) callback to indicate the local network type. In this callback, the SDK returns the `Unknown`, `Disconnected`, `Lan`, `Wifi`, `2G`, `3G`, or `4G` type. When the network connection is interrupted, this callback indicates whether or not the interruption is caused by a network type change or poor network conditions.
+
+#### 4. Getting the audio mixing volume
+
+v2.4.1 adds the  [getAudioMixingPlayoutVolume](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:) and [getAudioMixingPublishVolume](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:) methods, which respectively gets the audio mixing volume for local playback and remote playback, to help you troubleshoot audio volume related issues.
+
+#### 5. Reporting when the first remote audio frame is received and decoded
+
+To get the more accurate time of the first audio frame from a specified remote user, v2.4.1 adds the [firstRemoteAudioDecodedOfUid](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteAudioFrameDecodedOfUid:elapsed:) callback to report to the app that the SDK decodes first remote audio. This callback is triggered in either of the following scenarios:
+
+- The remote user joins the channel and sends the audio stream.
+- The remote user stops sending the audio stream and re-sends it after 15 seconds.
+
+The difference between the onFirstRemoteAudioDecoded and `onFirstRemoteAudioFrame` callbacks is that the `onFirstRemoteAudioFram`e callback occurs when the SDK receives the first audio packet. It occurs before the `onFirstRemoteAudioDecoded` callback.
+
+
+### Improvements
+
+#### 1. Playing multiple online audio effect files simultaneously
+
+v2.4.1 adds the support for playing multiple online audio effect files simultaneously by allowing you to call the [playEffect](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/playEffect:filePath:loopCount:pitch:pan:gain:publish:) method multiple times with the URLs of the online audio effect files.
+
+#### 2. Reporting more statistics
+
+- v2.4.1 adds the [txPacketLossRate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/txPacketLossRate) and  [rxPacketLossRate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/rxPacketLossRate) parameters in the  [AgoraChannelStats](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraChannelStats.html) class. These parameters return the packet loss rate from the local client to the server and vice versa.
+
+- To provide more accurate statistics of the local and remote video, v2.4.1 makes the following changes to the following classes:
+  - [AgoraRtcLocalVideoStats](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html): Adds the  [encoderOutputFrameRate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/encoderOutputFrameRate) and [rendererOutputFrameRate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/rendererOutputFrameRate) parameters
+  - [AgoraRtcRemoteVideoStats](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html): Adds the [decoderOutputFrameRate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/decoderOutputFrameRate) parameter, and renames the receivedFrameRate parameter to the [rendererOutputFrameRate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/rendererOutputFrameRate) parameter
+
+#### 3. Miscellaneous
+
+- Improved the sound quality of the GameStreaming audio scenario.
+- Reduced the audio latency.
+- Reduced the SDK package size by 0.5 M.
+- Improved the accuracy of the network quality after users change the video bitrate.
+- Enabled the audio quality notification callback by default, that is, enabled the [remoteAudioStats](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:) callback without calling the `enableAudioVolumeIndication` method.
+- Improved the stability of CDN streaming.
+
+### Issues fixed
+
+#### Audio
+
+- The audio stream is interrupted by Siri and does not resume. 
+
+#### Miscellaneous
+
+- Users still receive the `onNetworkQuality` callback after leaving the channel.
+- Occasional crashes.
+
+### API changes
+
+To improve your experience, we made the following changes to the APIs:
+
+#### Unified the C++ interface for all platforms
+
+v2.4.1 unifies the behavior of the C++ interfaces across different platforms so that you can apply the same code logic on different platforms. v2.4.1 implements the methods of the `RtcEngineParameters` class in the `IRtcEngine` class. Refer to [Agora C++ API Reference for All Platforms home page](https://docs.agora.io/en/Voice/API%20Reference/cpp/index.html) for the applicable platforms and considerations of each interface.
+
+#### Added
+
+- [getAudioMixingPlayoutVolume](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingPlayoutVolume)
+- [getAudioMixingPublishVolume](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingPublishVolume)
+- [firstRemoteAudioDecodedOfUid](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteAudioFrameDecodedOfUid:elapsed:)
+- [networkTypeChangedToType](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkTypeChangedToType:)
+- [rtmpStreamingChangedToStats](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
+- [setMediaMetadataSource](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setMediaMetadataDataSource:withType:) 
+- [setMediaMetadataDelegate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setMediaMetadataDelegate:withType:) 
+-  [AgoraMediaMetadataSource](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraMediaMetadataDataSource.html) 
+- [AgoraMediaMetadataDelegate](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraMediaMetadataDelegate.html)
+- The [audioCodecProfile](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/audioCodecProfile) parameter in the `LiveTranscoding` class
+- The [txPacketLossRate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/txPacketLossRate) and [rxPacketLossRate](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/rxPacketLossRate) parameters in the `AgoraChannelStats` class
+
+#### Deprecated
+
+- `enableAudioQualityIndication`
+- `onCameraReady`
+- `onVideoStopped`
+- The `AgoraWarningCodeLookupChannelRejected(105)` warning code
+- The `AgoraErrorCodeTokenExpired(109)` error code
+- The `AgoraErrorCodeInvalidToken(110)` error code
+- The `AgoraErrorCodeStartCamera(1003)` error code
 
 ## v2.4.0
 
