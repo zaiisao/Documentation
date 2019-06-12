@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 08:53:34 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 10:33:21 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -96,6 +96,7 @@ Android 语音 SDK 支持两种主要场景:
 - 优化了部分场景下的语音延时
 - SDK 包大小降低约 0.5 M
 - 默认启用音频质量通知回调。开发者无需调用 `enableAudioQualityIndication` 方法，也可以收到 [onRemoteAudioStats](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54) 回调
+- 提升了推流服务的稳定性
 
 
 ### **问题修复**
