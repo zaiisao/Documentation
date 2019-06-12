@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Wed Jun 12 2019 06:19:23 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 06:21:51 GMT+0800 (CST)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora On-premise Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -19,7 +19,7 @@ The Agora On-premise Recording SDK supports recording in two modes:
 -   Individual recording: To record the voice and video stream respectively for each user ID.
 -   Composite recording: To mix the voice and video recordings for different users in the same channel; the video mixing layout is also supported.
 
-> The Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
+> The On-premise Recording SDK must use the same channel profile as the Agora Native/Web SDK, otherwise issues may occur.
 ### <a name ="individualrecording"></a>Individual Recording
 
 Individual recording enables the SDK to record the voice and video respectively for each user ID in the channel.
@@ -320,12 +320,6 @@ Set the `Recording_Dir` parameter in the configuration file to customize the dir
 </tbody>
 </table>
 
-The recorded files are stored on your server only, and Agora has no access to them. You are responsible for the protection and security of the recorded files. Consult a security expert if necessary.
-
-The `recording.log` and `recording_sys.log` files under the `ChannelName_HHMMSS_MSUSNS` directory list any exception or problem that occurred during recording.
-
-
-
 
 ## <a name="using-transcoding-script"></a>Using the Transcoding Script
 
@@ -438,9 +432,6 @@ The transcoded MPEG-4 file supports the following players:
 
 The recorded files are stored on your server only, and Agora has no access to them. You are responsible for the protection and security of the recorded files. Consult a security expert if necessary.
 
-> The `recording.log` and `recording_sys.log` files under the `ChannelName_HHMMSS` directory list any exception or problem occurred during recording.
-
-
-
+> The `recording_sys.log` files under the same directory of the recorded files list any exception or problem that occurred during recording.
 
 
