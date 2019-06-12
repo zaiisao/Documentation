@@ -3,7 +3,7 @@
 title: Share the screen
 description: 
 platform: macOS
-updatedAt: Mon Jun 10 2019 03:27:37 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 09:05:50 GMT+0800 (CST)
 ---
 # Share the screen
 ## Introduction
@@ -30,16 +30,16 @@ macOS assigns a unique display identifier (displayId) for each screen or display
 
 1. Get the display ID for screen sharing.
 
-   ```objective-c
-   // Gets the screen array.
-   NSArray *screens = [NSScreen screens];
-   for (NSUInteger i = 0; i < [screens count]; ++i) {
-   // Gets the screen description.
-   NSDictionary* device_description = [[screen objectAtIndex: i] deviceDescription];
-   // Gets displayId.
-   CGDirectDisplayID displayId = ([[device_description  objectForKey:@"NSScreenNumber"] intValue]);
-   }
-   ```
+	```swift
+	// Gets the screen list
+	let screens = [NSScreen screens];
+	for (index, screen) in screens.enumerated() {
+		// Gets the displayId.
+		guard let displayId = screen.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? CGDirectDisplayID else {
+			continue
+		}
+	}
+	```
 
    > For more information on displayId, see [App NSScreen](https://developer.apple.com/documentation/appkit/nsscreen).
 
@@ -201,4 +201,4 @@ macOS assigns a unique window identifier (windowId) for each window. `windowId` 
 ## Considerations
 
 - v2.4.0 deprecates the `startScreenCapture` method. You can still use it, but we no longer recommend it.
-- Changing `AgoraScreenCaptureParameters` may affect your communication chargers. For more information, see [Pricing and Billing](../../en/Agora%20Platform/billing_faq.md).
+- Changing `AgoraScreenCaptureParameters` may affect your communication chargers. As of v2.4.1, if you set the `dimendions` parameter as default, Agora uses 1920 x 1080 to calculate the charges.
