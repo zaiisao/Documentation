@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 08:39:28 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 08:53:34 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -106,7 +106,7 @@ Android 语音 SDK 支持两种主要场景:
 - 修复了单主播模式下调用 `startAudioMixing` 播放伴奏时，音频无法通过蓝牙播放的问题
 - 修复了直播场景下偶现的播放伴奏异常的问题
 
-### 其他
+#### 其他
 
 - 修复了用户退出频道后仍然收到 `onNetworkQuality` 回调的问题
 - 修复了偶现的崩溃问题，提升了系统稳定性
@@ -130,7 +130,7 @@ Android 语音 SDK 支持两种主要场景:
 - `RtcStats` 类新增参数 [txPacketLossRate](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html#a6b0c3798427c6bf07b829896e29ace5e) 和 [rxPacketLossRate](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html#a72df02822bfcc37dfcdb543fd2ba46af)
 
 
-### 废弃
+#### 废弃
 
 - `enableAudioQualityIndication`
 - 警告码 `WARN_LOOKUP_CHANNEL_REJECTED(105)`
