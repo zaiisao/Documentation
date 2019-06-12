@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 09:27:50 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 09:27:54 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -37,6 +37,8 @@ For more information about privacy changes, see [Android Privacy Changes](https:
 v2.4.1 is released on Jun 12, 2019.
 
 ### Before getting started
+
+Ensure that you read the following SDK behavior changes if you migrate from an earlier SDK version.
 
 #### 1. Publishing streams to the CDN
 
@@ -167,7 +169,6 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 - The `ERR_TOKEN_EXPIRED(109)` error code
 - The `ERR_INVALID_TOKEN(110)` error code
 - The `ERR_START_CAMERA(1003)` error code
-- The `ERR_VDM_WIM_DEVICE_IN_USE(1502)` error code (Windows）
 
 
 ## v2.4.0
