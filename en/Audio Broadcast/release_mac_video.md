@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Jun 12 2019 10:05:30 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 10:08:34 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -109,7 +109,7 @@ The difference between the onFirstRemoteAudioDecoded and `onFirstRemoteAudioFram
 
 #### 2. Miscellaneous
 
-- Improved the sound quality of the GAME_STREAMING audio scenario.
+- Improved the sound quality of the GameStreaming audio scenario.
 - Reduced the audio and video latency.
 - Reduced the SDK package size by 0.5 M.
 - Improved the accuracy of the network quality after users change the video bitrate.
@@ -150,7 +150,7 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 -  [AgoraMediaMetadataSource](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraMediaMetadataDataSource.html) 
 - [AgoraMediaMetadataDelegate](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraMediaMetadataDelegate.html)
 - The [audioCodecProfile](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/audioCodecProfile) parameter in the `LiveTranscoding` class
-- The  [captureMouseCursor](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html#//api/name/captureMouseCursor) parameter in the `AgoraScreenCaptureParameters` class (macOS/Windows)
+- The  [captureMouseCursor](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html#//api/name/captureMouseCursor) parameter in the `AgoraScreenCaptureParameters` class
 - The [txPacketLossRate](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/txPacketLossRate) and [rxPacketLossRate](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/rxPacketLossRate) parameters in the `RtcStats` class
 - The [encoderOutputFrameRate](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/encoderOutputFrameRate) and [rendererOutputFrameRate](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/rendererOutputFrameRate) parameters in the `AgoraRtcLocalVideoStats` class
 - The [decoderOutputFrameRate](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/decoderOutputFrameRate) and [rendererOutputFrameRate](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/rendererOutputFrameRate) (to replace `receivedRemoteRate`) parameters in the `AgoraRtcRemoteVideoStats` class
