@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Wed Jun 12 2019 09:43:15 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 10:33:41 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -81,6 +81,7 @@ iOS 语音 SDK 支持两种主要场景:
 - 优化了部分场景下的语音延时
 - SDK 包大小降低约 0.5 M
 - 默认启用音频质量通知回调。开发者无需调用 enableAudioQualityIndication 方法，也可以收到 [remoteAudioStats](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:) 回调
+- 提升了推流服务的稳定性
 
 ### **问题修复**
 
