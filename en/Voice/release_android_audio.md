@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 09:27:18 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 09:34:54 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -125,7 +125,7 @@ v2.4.1 adds the support for playing multiple online audio effect files simultane
 
 To improve your experience, we made the following changes to the APIs:
 
-#### Unified **the C++ interface for all platforms**
+#### Unified the C++ interface for all platforms
 
 v2.4.1 unifies the behavior of the C++ interfaces across different platforms so that you can apply the same code logic on different platforms. v2.4.1 implements the methods of the `RtcEngineParameters` class in the `IRtcEngine` class. Refer to Agora C++ API Reference for All Platforms home page for the applicable platforms and considerations of each interface.
 
@@ -137,7 +137,7 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 - onNetworkTypeChanged
 - onRtmpStreamingStateChanged
 - The audioCodecProfile parameter in the `LiveTranscoding` class
-- The txPacketLossRate and rxPacketLossRate parameters in the `RtcStat`s class
+- The txPacketLossRate and rxPacketLossRate parameters in the `RtcStats` class
 
 #### Deprecated
 
