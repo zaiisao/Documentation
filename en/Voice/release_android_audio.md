@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 09:26:58 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 09:27:18 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -33,6 +33,119 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v2.4.1
+v2.4.1 is released on Jun 12, 2019.
+
+### Before getting started
+
+Ensure that you read the following SDK behavior changes if you migrate from an earlier SDK version.
+
+#### Publishing streams to the CDN
+
+To improve the usability of the CDN streaming service, v2.4.1 defines the following parameter limits:
+
+| Class **/** Interface  | Parameter Limit                                              |
+| ---------------------- | ------------------------------------------------------------ |
+| LiveTranscoding        | <li>videoFrameRate: Frame rate (fps) of the CDN live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>videoBitrate: Bitrate (Kbps) of the CDN live output video stream. The default value is 400. Set this parameter according to the Video Bitrate Table. If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>videoCodecProfile: The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>width and height: Pixel of the video. The minimum value of **width x height** is **16 x 16**.</li> |
+| AgoraImage             | url: The maximum length of this parameter is **1024** bytes. |
+| addPublishStreamUrl    | url: The maximum length of this parameter is **1024** bytes. |
+| removePublishStreamUrl | url: The maximum length of this parameter is **1024** bytes. |
+
+This release also adds the audioCodecProfile parameter in the `LiveTranscoding` class to set the audio codec profile type. The default type is LC-AAC, which means the low-complexity audio codec profile.
+
+v2.4.1 also adds five error codes to the error parameter in the onStreamPublished method for quick troubleshooting.
+
+### New features
+
+#### 1. State of the RTMP streaming
+
+v2.4.1 adds the onRtmpStreamingStateChanged callback to indicate the state of the RTMP streaming and help you troubleshoot issues when exceptions occur. In this callback, the SDK returns the IDLE, `CONNECTING`, `RUNNING`, `RECOVERING`, or `FAILURE` state. When the state is `FAILURE`, you can use the error code for troubleshooting. You can still use the onStreamPublished and onStreamUnpublished callbacks, but we do not recommend using them.
+
+#### 2. More reasons for a network connection state change
+
+In the onConnectionStateChanged callback, v2.4.1 adds error codes to the reason parameter to help you troubleshoot issues when exceptions occur. The SDK returns the onConnectionStateChanged callback whenever the connection state changes. This release also deprecates `WARN_LOOK_UP_CHANNEL_REJECTED(105)`, `ERR_TOKEN_EXPIRED(109)`, and `ERR_INVALID_TOKEN(110)`.
+
+#### 3. State of the local network type 
+
+v2.4.1 adds the onNetworkTypeChanged callback to indicate the local network type. In this callback, the SDK returns the `UNKNOWN`, `DISCONNECTED`, `LAN`, `WIFI`, `2G`, `3G`, or `4G` type. When the network connection is interrupted, this callback indicates whether or not the interruption is caused by a network type change or poor network conditions.
+
+#### 4. Getting the audio mixing volume
+
+v2.4.1 adds the getAudioMixingPlayoutVolume and getAudioMixingPublishVolume methods, which respectively gets the audio mixing volume for local playback and remote playback, to help you troubleshoot audio volume related issues.
+
+#### 5. Reporting when the first remote audio frame is received and decoded
+
+To get the more accurate time of the first audio frame from a specified remote user, v2.4.1 adds the onFirstRemoteAudioDecoded callback to report to the app that the SDK decodes first remote audio. This callback is triggered in either of the following scenarios:
+
+- The remote user joins the channel and sends the audio stream.
+- The remote user stops sending the audio stream and re-sends it after 15 seconds.
+
+The difference between the onFirstRemoteAudioDecoded and `onFirstRemoteAudioFrame` callbacks is that the `onFirstRemoteAudioFram`e callback occurs when the SDK receives the first audio packet. It occurs before the `onFirstRemoteAudioDecoded` callback.
+
+### Improvements
+
+#### 1. Playing multiple online audio effect files simultaneously
+
+v2.4.1 adds the support for playing multiple online audio effect files simultaneously by allowing you to call the playEffect method multiple times with the URLs of the online audio effect files.
+
+#### 2. Reporting more statistics
+
+- v2.4.1 adds the txPacketLossRate and rxPacketLossRate parameters in the RtcStats class. These parameters return the packet loss rate from the local client to the server and vice versa.
+
+- To provide more accurate statistics of the local and remote video, v2.4.1 makes the following changes to the following classes:
+  - LocalVideoStats: Adds the encoderOutputFrameRate and rendererOutputFrameRate parameters
+  - RemoteVideoStats: Adds the decoderOutputFrame parameter, and renames the receivedFrameRate parameter to the endererOutputFrameRate parameter
+
+#### 3. Miscellaneous
+
+- Improved the sound quality of the GAME_STREAMING audio scenario.
+- Reduced the audio latency.
+- Reduced the SDK package size by 0.5 M.
+- Improved the accuracy of the network quality after users change the video bitrate.
+- Enabled the audio quality notification callback by default, that is, enabled the onRemoteAudioStats callback without calling the `enableAudioVolumeIndication` method.
+
+### Issues fixed
+
+#### Audio
+
+- The audio stream is played through the loudspeaker even after the user plugs in the earphone. 
+- The user cannot hear the audio mixing file through Bluetooth in the single-broadcaster scenario.
+- Exceptions occur when playing the audio mixing file in the Live Broadcast profile.
+
+#### Video
+
+- In the Live Broadcast profile, the view of the broadcaster is a black screen.
+
+#### Miscellaneous
+
+- The app quits after calling joinChannel.
+
+### API changes
+
+To improve your experience, we made the following changes to the APIs:
+
+#### Unified **the C++ interface for all platforms**
+
+v2.4.1 unifies the behavior of the C++ interfaces across different platforms so that you can apply the same code logic on different platforms. v2.4.1 implements the methods of the `RtcEngineParameters` class in the `IRtcEngine` class. Refer to Agora C++ API Reference for All Platforms home page for the applicable platforms and considerations of each interface.
+
+#### Added
+
+- getAudioMixingPlayoutVolume
+- getAudioMixingPublishVolume
+- onFirstRemoteAudioDecoded
+- onNetworkTypeChanged
+- onRtmpStreamingStateChanged
+- The audioCodecProfile parameter in the `LiveTranscoding` class
+- The txPacketLossRate and rxPacketLossRate parameters in the `RtcStat`s class
+
+#### Deprecated
+
+- `enableAudioQualityIndication`
+- The `WARN_LOOKUP_CHANNEL_REJECTED(105)` warning code
+- The `ERR_TOKEN_EXPIRED(109)` error code
+- The `ERR_INVALID_TOKEN(110)` error code
+
 
 ## v2.4.0
 
