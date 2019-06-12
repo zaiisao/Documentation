@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Wed Jun 12 2019 08:54:14 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 08:57:07 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -137,7 +137,6 @@ iOS 视频 SDK 支持两种主要场景:
 -  [AgoraMediaMetadataSource](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraMediaMetadataDataSource.html) 
 - [AgoraMediaMetadataDelegate](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraMediaMetadataDelegate.html)
 - `AgoraLiveTranscoding` 类新增参数 [audioCodecProfile](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/audioCodecProfile)
-- `AgoraScreenCaptureParameters` 类新增参数 [captureMouseCursor](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html#//api/name/captureMouseCursor)（macOS/Windows）
 - `AgoraChannelStats` 类新增参数 [txPacketLossRate](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/txPacketLossRate) 和 [rxPacketLossRate](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/rxPacketLossRate)
 - `AgoraRtcLocalVideoStats` 类新增参数 [encoderOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/encoderOutputFrameRate) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/rendererOutputFrameRate)
 - `AgoraRtcRemoteVideoStats` 类新增参数 [decoderOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/decoderOutputFrameRate) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/rendererOutputFrameRate)（替换 receivedFrameRate）
