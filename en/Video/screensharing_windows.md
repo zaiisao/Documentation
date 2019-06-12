@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Fri May 17 2019 07:49:32 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 09:05:58 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -161,5 +161,5 @@ Windows assigns a unique window identifier (windowId) for each window with a dat
 
 ## Considerations
 - v2.4.0 deprecates the `startScreenCapture` method. You can still use it, but we no longer recommend it.
-- Changing `AgoraScreenCaptureParameters` may affect your communication chargers. For more information, see [Pricing and Billing](../../en/Agora%20Platform/billing_faq.md).
+- Changing `AgoraScreenCaptureParameters` may affect your communication chargers. As of v2.4.1, if you set the `dimendions` parameter as default, Agora uses 1920 x 1080 to calculate the charges.
 - Sharing the window of a QQ chat on Windows causes the black screen.
