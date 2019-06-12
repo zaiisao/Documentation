@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed Jun 12 2019 08:49:58 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 08:52:32 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -111,11 +111,11 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 
 ### **问题修复**
 
-### 视频
+#### 视频
 
 - 修复了特殊场景下无法自由切换屏幕共享流和摄像头流的问题
 
-### 其他
+#### 其他
 
 - 修复了用户退出频道后仍然收到 `networkQuality` 回调的问题
 - 修复了偶现的崩溃问题，提升了系统稳定性
