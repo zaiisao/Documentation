@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: macOS
-updatedAt: Mon Jun 10 2019 03:28:24 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 09:05:39 GMT+0800 (CST)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -26,17 +26,19 @@ Agora 在 v2.4.0 对屏幕共享相关接口进行梳理，目前在 macOS 平�
 macOS 系统为每个屏幕分配一个 displayId，数据类型为 CGDirectDisplayID，32 位无符号整型。该 ID 对应唯一的 macOS 屏幕。通过获取该 displayId，我们可以按如下步骤在 macOS 平台上实现屏幕共享：
 
 1. 获取想要共享屏幕的 Display ID
-```
-// 获取屏幕列表
-NSArray *screens = [NSScreen screens];
-for (NSUInteger i = 0; i < [screens count]; ++i) {
-// 获取屏幕详情
-NSDictionary* device_description = [[screen objectAtIndex: i] deviceDescription];
-// 获取 displayId
-CGDirectDisplayID displayId = ([[device_description  objectForKey:@"NSScreenNumber"] intValue]);
-}
-```
-> 更多关于 displayId 的详情，请参考 [Apple NSScreen](https://developer.apple.com/documentation/appkit/nsscreen) 说明。
+
+	```swift
+	// 获取屏幕列表
+	let screens = [NSScreen screens];
+	for (index, screen) in screens.enumerated() {
+		// 获取 displayId
+		guard let displayId = screen.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? CGDirectDisplayID else {
+			continue
+		}
+	}
+	```
+	
+	> 更多关于 displayId 的详情，请参考 [Apple NSScreen](https://developer.apple.com/documentation/appkit/nsscreen) 说明。
 
 2. 通过 Display ID 共享屏幕
 
@@ -193,4 +195,4 @@ if (window_list) {
 ## 开发注意事项
 
 - SDK 在 v2.4.0 版本中废弃了原有的屏幕共享接口 `startScreenCapture`，你仍然可以使用，但 Agora 不再推荐。
-- 视频共享编码属性 `AgoraScreenCaptureParameters` 类中各参数的设置可能会影响计费，详细请参考[计费](../../cn/Agora%20Platform/billing_faq.md)。
+- 视频共享编码属性 `AgoraScreenCaptureParameters` 类中各参数的设置可能会影响计费。从 v2.4.1 版本起，如果你将 `dimensions` 参数设为默认值，则 Agora 使用 1920 x 1080 进行计费。
