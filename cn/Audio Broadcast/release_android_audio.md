@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 08:09:00 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 08:22:19 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -135,8 +135,7 @@ Android 语音 SDK 支持两种主要场景:
 - `enableAudioQualityIndication`
 - 警告码 `WARN_LOOKUP_CHANNEL_REJECTED(105)`
 - 错误码 `ERR_TOKEN_EXPIRED(109)`
-- 错误码 `ERR_TOKEN_EXPIRED(110)`
-- 错误码 `ERR_START_CAMERA(1003)`
+- 错误码 `ERR_INVALID_TOKEN(110)`
 
 
 ## **2.4.0 版**
