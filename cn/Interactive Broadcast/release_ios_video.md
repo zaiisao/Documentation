@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Wed Jun 12 2019 08:51:22 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 08:52:11 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -16,6 +16,143 @@ iOS 视频 SDK 支持两种主要场景:
 -   音视频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及 [视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms) 了解关键特性。
+
+## **2.4.1 版**
+
+该版本于 2019 年 6 月 12 日发布。新增特性、功能改进与修复问题列表详见下文。
+
+### **升级必看**
+
+如下内容涉及 SDK 的行为变更。如果你是有之前版本的 SDK 升级至该版本，升级前请务必阅读。
+
+#### 1. CDN 推流
+
+为提高推流服务的易用性，该版本对推流接口的参数设置进行了如下限制：
+
+| 类**/**接口                 | 参数限制                                                     |
+| --------------------------- | ------------------------------------------------------------ |
+| [AgoraLiveTranscoding](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveTranscoding.html) 类 | <li>[videoFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoFramerate)：设置转码推流的帧率，单位为 fps，默认值为 15，建议不要超过 30<li>[videoBitrate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoBitrate)：设置转码推流的码率，单位为 Kbps，默认值为 400。用户可以根据 [Video Profile 参考表](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/bitrate)中的码率值进行设置。如果设置的码率超出合理范围，服务端会在合理区间内对码率值进行自适应<li>[videoCodecProfile](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoCodecProfile)：设置转码推流的视频编码规格，可设为 **BASELINE**、**MAIN** 或 **HIGH**。若设为其他值，服务端会改为默认值 **HIGH **<li>[size](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/size)：设置转码推流的视频分辨率。size 的最小值不低于 16 x 16</li> |
+| [AgoraImage](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraImage.html) 类           | `url`：字符长度不得超过 **1024** 字节                        |
+| [addPublishStreamUrl](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)     | `url`：字符长度不得超过 **1024** 字节                        |
+| [removePublishStreamUrl](../../cn/Interactive%20Broadcast/release_ios_video.md)  | `url`：字符长度不得超过 **1024** 字节                        |
+
+同时，该版本在 `LiveTranscoding` 类中新增 [audioCodecProfile](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/audioCodecProfile) 参数，支持设置音频编码的规格。默认规格为 LC-AAC。
+
+此外，该版本还对 [streamPublishedWithUrl](https://docs.agora.io/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:) 方法的 `errorCode` 参数新增了五个错误码，方便快速定位与排查问题。
+
+#### 2、RemoteVideoStats 类参数更名
+
+为更精准地表达远端视频流的统计信息，该版本将 [AgoraRtcRemoteVideoStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html) 类中的 `receivedFrameRate` 参数更名为 [rendererOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/rendererOutputFrameRate)。
+
+### **新增特性**
+
+#### 1、添加媒体附属信息
+
+常见的直播场景中，主播给观众分发商品链接、优惠券、在线答题等，能构建更为丰富的直播互动方式。为满足该部分社交类直播 App 开发者的需求，该版本新增 [setMediaMetadataSource](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setMediaMetadataDataSource:withType:) 和 [setMediaMetadataDelegate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setMediaMetadataDelegate:withType:) 接口以及 [AgoraMediaMetadataSource](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraMediaMetadataDataSource.html) 和 [AgoraMediaMetadataDelegate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraMediaMetadataDelegate.html) 协议，目前允许主播在发出的视频帧中添加 Metadata，发送媒体附属信息。
+
+#### 2、本地视频状态回调
+
+为方便开发者了解本地视频状态，该版本新增 [rtcEngineLocalVideoStateChange](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineLocalVideoStateChange:localVideoState:error:) 回调。该回调下，本地视频有 `Stopped`、`Capturing`、`Encoding` 和 `Failed` 四种状态。当本地视频状态为 `Failed` 时，用户可以参考该回调 `error` 参数返回的错误码进行问题排查。该回调能帮助开发者辨别本地视频故障是由采集还是编码引起的。原有的 `rtcEngineCameraDidReady` 和 `rtcEngineVideoDidStop` 回调在该版本废弃，我们不再推荐。
+
+#### 3、推流状态回调
+
+为方便推流用户了解当前的推流状态，并在推流出错时了解原因排查问题，该版本新增 [rtmpStreamingChangedToState](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:) 回调。该回调下，推流有 `Idle`、`Connecting`、`Running`、`Recovering` 和 `Failure` 五种状态。当推流状态为 FAILURE 时，用户可以参考该回调 `errCode` 参数返回的错误码进行问题排查。原有的 `streamPublishedWithUrl` 和 `streamUnpublishedWithUrl` 回调仍可以使用，但我们不再推荐。
+
+#### 4、网络连接失败原因梳理
+
+为方便开发者更好地排查网络连接相关故障，该版本梳理并整合了网络连接相关的错误码，在原有 [connectionChangedToState](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调的 `reason` 参数中新增八个导致网络连接失败的原因。新增后，只要网络连接发生错误，SDK 都会返回该回调。同时该版本废弃了原有的警告码 `AgoraWarningCodeLookupChannelRejected(105)` 和错误码 `AgoraErrorCodeTokenExpired(109)`、`AgoraErrorCodeInvalidToken(110)`。
+
+#### 5、本地网络连接类型回调
+
+为方便用户了解本地网络的连接类型，该版本新增 [networkTypeChangedToType](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkTypeChangedToType:) 回调。该回调下，本地网络连接有 `Unknown`、`Disconnected`、`Lan` `Wifi`、`2G`、`3G`、`4G` 六种类型。当网络连接短暂中断时，该回调能帮助开发者辨别引起中断的原因是网络切换还是网络条件不好。
+
+#### 6、获取播放伴奏音量
+
+为方便开发者获取伴奏的播放音量，排查音量相关问题，该版本新增 [getAudioMixingPlayoutVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:) 和 [getAudioMixingPublishVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:) 方法，用以分别获取音乐文件在本地和远端的播放音量。
+
+#### 7、精确回调远端音频首帧解码
+
+为更精准地获取远端用户的出声时间，该版本新增 [firstRemoteAudioDecodedOfUid](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteAudioFrameDecodedOfUid:elapsed:) 回调，用以向 App 层报告 SDK 已完成远端音频首帧解码。在远端用户加入频道后首次发送音频，或远端用户 15 秒不发音频后再次发送时，该回调均会被触发。该回调与 `firstRemoteAudioFrameOfUid` 的区别在于，`firstRemoteAudioFrameOfUid` 在收到首个音频包时触发，先于 `firstRemoteAudioDecodedOfUid`。
+
+### **改进**
+
+#### 1、在线音效叠加
+
+为提高用户体验，构造丰富有趣的实时音视频场景，该版本新增支持同时播放多个**在线**音效文件。开发者可以通过多次调用 [playEffect](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/playEffect:filePath:loopCount:pitch:pan:gain:publish:) 方法，传入不同的在线音效文件的 URL，实现音效叠加。
+
+#### 2、质量透明
+
+- 该版本在通话相关的统计信息 [AgoraChannelStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html) 类中，新增和 [txPacketLossRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/txPacketLossRate) 和  [rxPacketLossRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/rxPacketLossRate) 参数，分别返回本地客户端到服务器和服务器到本地客户端的丢包率。
+- 该版本对 AgoraLocalVideoStats 和 AgoraRemoteVideoStats 类作了如下变动，方便用户更精准地获取本地和远端视频流的统计信息：
+  - [AgoraRtcLocalVideoStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html)：新增 [encoderOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/encoderOutputFrameRate) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/rendererOutputFrameRate) 参数
+  - [AgoraRtcRemoteVideoStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html)：新增 [decoderOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/decoderOutputFrameRate) 参数，并将原有的 receivedFrameRate 参数更名为 [rendererOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/rendererOutputFrameRate)
+
+#### 3、美颜优化
+
+为提升美颜效果，该版本结合主观测试的结果，对美颜选项 [AgoraBeautyOptions](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraBeautyOptions.html) 类中的各参数添加了默认值；同时，该版本优化了美颜算法的性能。声网实验室报告显示，优化后的算法下，GPU 消耗、CPU 消耗和功耗均有不同程度的下降。
+
+#### 4、其他改进
+
+- 优化了[AgoraAudioScenario](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Constants/AgoraAudioScenario.html) 为 `GameStreaming` 时的音质效果
+- 优化了部分场景下语音和视频的延时
+- SDK 包大小降低约 0.5 M
+- 提高了用户修改视频属性的码率后，网络质量打分的准确性
+- 默认启用音频质量通知回调。开发者无需调用 enableAudioQualityIndication 方法，也可以收到 [remoteAudioStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:) 回调
+- 提升了视频服务的稳定性
+
+### **问题修复**
+
+#### 音频
+
+- 修复了音频被 Siri 打断且无法恢复的问题
+
+#### 视频
+
+- 修复了相机采集曝光的问题
+- 修复了智能手表上不显示远端画面的问题
+
+#### 其他
+
+- 修复了用户退出频道后仍然收到 `networkQuality` 回调的问题
+- 修复了偶现的崩溃问题，提升了系统稳定性
+
+### **API 变更**
+
+为提升用户体验，Agora 在 v2.4.1 版本中对 API 进行了如下变动：
+
+#### 全平台 C++ 接口行为一致
+
+从该版本起，Native SDK 保证了各平台 C++ 接口的行为一致性，方便用户通过统一的 C++ 接口，在各平台保持业务逻辑一致。同时在 C++ 头文件的 `IRtcEngine` 类中实现了 `RtcEngineParameters` 类下的所有方法。各接口的适用范围及使用注意事项详见 [Agora C++ API Reference for All Platforms 首页](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/index.html)。
+
+#### 新增
+
+- [getAudioMixingPlayoutVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingPlayoutVolume)
+- [getAudioMixingPublishVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingPublishVolume)
+- [firstRemoteAudioDecodedOfUid](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteAudioFrameDecodedOfUid:elapsed:)
+- [rtcEngineLocalVideoStateChange](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineLocalVideoStateChange:localVideoState:error:)
+- [networkTypeChangedToType](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkTypeChangedToType:)
+- [rtmpStreamingChangedToStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
+- [setMediaMetadataSource](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setMediaMetadataDataSource:withType:) 
+- [setMediaMetadataDelegate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setMediaMetadataDelegate:withType:) 
+-  [AgoraMediaMetadataSource](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraMediaMetadataDataSource.html) 
+- [AgoraMediaMetadataDelegate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraMediaMetadataDelegate.html)
+- `AgoraLiveTranscoding` 类新增参数 [audioCodecProfile](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/audioCodecProfile)
+- `AgoraScreenCaptureParameters` 类新增参数 [captureMouseCursor](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html#//api/name/captureMouseCursor)（macOS/Windows）
+- `AgoraChannelStats` 类新增参数 [txPacketLossRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/txPacketLossRate) 和 [rxPacketLossRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/rxPacketLossRate)
+- `AgoraRtcLocalVideoStats` 类新增参数 [encoderOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/encoderOutputFrameRate) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/rendererOutputFrameRate)
+- `AgoraRtcRemoteVideoStats` 类新增参数 [decoderOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/decoderOutputFrameRate) 和 [rendererOutputFrameRate](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/rendererOutputFrameRate)（替换 receivedFrameRate）
+
+### 废弃
+
+- `enableAudioQualityIndication`
+- `rtcEngineCameraDidReady`
+- `rtcEngineVideoDidStop`
+- 警告码 `AgoraWarningCodeLookupChannelRejected(105)`
+- 错误码 `AgoraErrorCodeTokenExpired(109)`
+- 错误码 `AgoraErrorCodeInvalidToken(110)`
+- 错误码 `AgoraErrorCodeStartCamera(1003)`
+
+
 
 ## **2.4.0 版**
 
