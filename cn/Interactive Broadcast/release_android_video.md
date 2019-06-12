@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 08:39:51 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 08:52:49 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -127,11 +127,11 @@ Android 视频 SDK 支持两种主要场景:
 - 修复了单主播模式下调用 `startAudioMixing` 播放伴奏时，音频无法通过蓝牙播放的问题
 - 修复了直播场景下偶现的播放伴奏异常的问题
 
-### 视频
+#### 视频
 
 - 修复了特殊场景下观众看到主播画面为黑屏的问题
 
-### 其他
+#### 其他
 
 - 修复了用户退出频道后仍然收到 `onNetworkQuality` 回调的问题
 - 修复了偶现的崩溃问题，提升了系统稳定性
