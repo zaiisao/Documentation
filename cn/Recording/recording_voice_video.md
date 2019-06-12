@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: All Platforms
-updatedAt: Wed Jun 12 2019 06:05:35 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 06:07:43 GMT+0800 (CST)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 本地服务端录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -428,7 +428,10 @@ Agora 本地服务端录制 SDK 目前仅支持单流的录制文件 + 单流的
 
 ### 生成的录制文件
 
-录制相关的单个文件:
+录制的音视频文件以用户的 UID 和时间戳（由年、月、日、小时、分钟、秒和毫秒组成）命名，时间戳为服务器开始录制的时间，时区为 UTC+0。例如 **23_20190611073246073.aac** 表示在 UTC 2019 年 6 月 11 日 7 点 32 分 46 秒 73 毫秒时开始录制的一个 UID 为 23 的用户的音频文件。
+> 合流模式下的录制文件名中 UID 为 0。
+
+单流模式录制相关的单个文件:
 
 <table>
 
@@ -440,19 +443,19 @@ Agora 本地服务端录制 SDK 目前仅支持单流的录制文件 + 单流的
 
 </tr>
 
-<tr><td><code>UID_HHMMSSMS.aac</code></td>
+<tr><td><code>UID_timestamp.aac</code></td>
 
 <td>无论在移动端、PC 端还是网页端录制，每个 UID 均会对应生成一个 aac 文件。该文件仅包含该用户相关的音频内容</td>
 
 </tr>
 
-<tr><td><code>UID_HHMMSSMS.mp4</code></td>
+<tr><td><code>UID_timestamp.mp4</code></td>
 
 <td>如果在移动或 PC 端录制，每个 UID 均会对应生成一个 mp4 文件。如一个用户多次进入退出频道，该用户会有多个视频 mp4 文件，该文件仅包含该用户相关的视频内容</td>
 
 </tr>
 
-<tr><td><code>UID_HHMMSSMS.webm</code></td>
+<tr><td><code>UID_timestamp.webm</code></td>
 
 <td>如果在网页端录制，每个 UID 均会对应生成一个 webm 文件。如一个用户多次进入退出频道，该用户会有多个视频 webm 文件，该文件仅包含该用户相关的视频内容</td>
 
@@ -464,7 +467,7 @@ Agora 本地服务端录制 SDK 目前仅支持单流的录制文件 + 单流的
 
 </tr>
 
-<tr><td><code>UID_HHMMSSMS.txt</code></td>
+<tr><td><code>UID_timestamp.txt</code></td>
 
 <td>记录每个音视频文件开始和结束的时间，视频文件的信息，例如宽高，旋转信息等</td>
 
