@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Wed Jun 12 2019 10:12:10 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 10:12:15 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -146,7 +146,7 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 -  [AgoraMediaMetadataSource](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraMediaMetadataDataSource.html) 
 - [AgoraMediaMetadataDelegate](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraMediaMetadataDelegate.html)
 - The [audioCodecProfile](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/audioCodecProfile) parameter in the `LiveTranscoding` class
-- The [txPacketLossRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/txPacketLossRate) and [rxPacketLossRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/rxPacketLossRate) parameters in the `RtcStats` class
+- The [txPacketLossRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/txPacketLossRate) and [rxPacketLossRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/rxPacketLossRate) parameters in the `AgoraChannelStats` class
 - The [encoderOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/encoderOutputFrameRate) and [rendererOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html#//api/name/rendererOutputFrameRate) parameters in the `AgoraRtcLocalVideoStats` class
 - The [decoderOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/decoderOutputFrameRate) and [rendererOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/rendererOutputFrameRate) (to replace `receivedRemoteRate`) parameters in the `AgoraRtcRemoteVideoStats` class
 
