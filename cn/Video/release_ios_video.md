@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Wed Jun 12 2019 09:50:31 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 10:34:35 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -99,6 +99,7 @@ iOS 视频 SDK 支持两种主要场景:
 - 提高了用户修改视频属性的码率后，网络质量打分的准确性
 - 默认启用音频质量通知回调。开发者无需调用 enableAudioQualityIndication 方法，也可以收到 [remoteAudioStats](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:) 回调
 - 提升了视频服务的稳定性
+- 提升了推流服务的稳定性
 
 ### **问题修复**
 
