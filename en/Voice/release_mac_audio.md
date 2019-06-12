@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Jun 12 2019 10:49:33 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 10:49:36 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -28,6 +28,6 @@ This is the first release of the Agora Voice SDK for Windows. Refer to the follo
 - [Play audio effects/audio mixing](../../en/Voice/effect_mixing_mac.md)
 - [Set the voice changer and reverberation effects](../../en/Voice/voice_effect_mac.md)
 - [Push Streams to the CDN](../../en/Voice/push_stream_ios2.0_audio.md)
-- [Test or select a media device](../../en/Voice/switch_audio_device_ios.md)
+- [Test or select a media device](../../en/Voice/switch_audio_device_mac.md)
 
-If you migrate to this Voice SDK from the Windows Video SDK, refer to the [Release notes for Windows video SDK](../../en/Voice/release_mac_video.md) for audio improvements.
+If you migrate to this SDK from the Windows Video SDK, refer to the [Release notes for Windows video SDK](../../en/Voice/release_mac_video.md) for audio improvements.
