@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jun 12 2019 10:35:09 GMT+0800 (CST)
+updatedAt: Wed Jun 12 2019 10:35:13 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -107,6 +107,7 @@ Windows 视频 SDK 支持两种主要场景:
 - 提高了用户修改视频属性的码率后，网络质量打分的准确性
 - 默认启用音频质量通知回调。开发者无需调用 enableAudioQualityIndication 方法，也可以收到 [onRemoteAudioStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a) 回调
 - 提升了视频服务的稳定性
+- 提升了推流服务的稳定性
 - 提升了视频设备的兼容性
 
 ### **问题修复**
