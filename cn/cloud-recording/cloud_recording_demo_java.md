@@ -3,7 +3,7 @@
 title: Demo 使用指南
 description: 
 platform: Java
-updatedAt: Thu Jun 13 2019 07:07:07 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 07:14:16 GMT+0800 (CST)
 ---
 # Demo 使用指南
 本文介绍如何通过命令行运行 Java demo 进行云端录制。 你也可以通过调用 API 实现录制，详见[调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart_java.md)。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
@@ -112,7 +112,7 @@ java -Xbootclasspath/a:../lib/agora-cloud-recording-sdk.jar: -jar -Dsun.boot.lib
 | bitrate              | 视频码率，单位 Kbps，默认值为 500。详细设置请参考<a href="../../cn/cloud-recording/cloud_recording_api_java.md">分辨率、帧率、码率对照表</a>。 |
 | maxResolutionUid     | 如果 `mixedVideoLayoutType` 设为垂直布局，用该参数设置显示大流画面的用户 ID。 |
 | mixedVideoLayoutType | 视频合流布局，详见[设置合流布局](../../cn/cloud-recording/cloud_layout_guide.md)。<li>0：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个录制画面。</li><li>1：自适应布局。根据录制画面的数量自动调整每个画面的大小，每个画面大小一致，最多支持 17 个录制画面。</li><li>2：垂直布局。指定一个 uid 在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。</li> |
-| maxIdleTime          | 最长空闲频道时间。默认值为 30 秒，如果频道内无用户的状态持续超过该时间，录制程序会自动退出。若设置为 0，则使用默认值。 |
+| maxIdleTime          | 最长空闲频道时间。默认值为 30 秒，该值需大于等于 5。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。 |
 
 
 ## 停止云端录制
