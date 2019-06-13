@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Jun 13 2019 02:30:31 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 02:30:58 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -46,48 +46,48 @@ To improve the usability of the CDN streaming service, v2.4.1 defines the follow
 
 | Class **/** Interface  | Parameter Limit                                              |
 | ---------------------- | ------------------------------------------------------------ |
-| LiveTranscoding        | <li>videoFrameRate: Frame rate (fps) of the CDN live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>videoBitrate: Bitrate (Kbps) of the CDN live output video stream. The default value is 400. Set this parameter according to the Video Bitrate Table. If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>videoCodecProfile: The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>width and height: Pixel of the video. The minimum value of **width x height** is **16 x 16**.</li> |
-| AgoraImage             | url: The maximum length of this parameter is **1024** bytes. |
-| addPublishStreamUrl    | url: The maximum length of this parameter is **1024** bytes. |
-| removePublishStreamUrl | url: The maximum length of this parameter is **1024** bytes. |
+| [LiveTranscoding](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html)        | <li>[videoFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html#a514340a98a537fdc4f91003aed2068a6): Frame rate (fps) of the CDN live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>[videoBitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html#a514340a98a537fdc4f91003aed2068a6): Bitrate (Kbps) of the CDN live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>[videoCodecProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html#a514340a98a537fdc4f91003aed2068a6): The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>[width](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html#a514340a98a537fdc4f91003aed2068a6) and [height](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html#a80960c1a972e9b3851fd16d921f8a75c): Pixel of the video. The minimum value of width x height is 16 x 16.</li> |
+| [AgoraImage](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_agora_image.html)             | `url`: The maximum length of this parameter is **1024** bytes. |
+| [addPublishStreamUrl](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4445b4ca9509cc4e2966b6d308a8f08f)    | `url`: The maximum length of this parameter is **1024** bytes. |
+| [removePublishStreamUrl](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4445b4ca9509cc4e2966b6d308a8f08f) | `url`: The maximum length of this parameter is **1024** bytes. |
 
-This release also adds the audioCodecProfile parameter in the `LiveTranscoding` class to set the audio codec profile type. The default type is LC-AAC, which means the low-complexity audio codec profile.
+This release also adds the [audioCodecProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html#ac7d4a839af2994e68d8f14544d323ae9) parameter in the `LiveTranscoding` class to set the audio codec profile type. The default type is LC-AAC, which means the low-complexity audio codec profile.
 
-v2.4.1 also adds five error codes to the error parameter in the onStreamPublished method for quick troubleshooting.
+v2.4.1 also adds five error codes to the `error` parameter in the [onStreamPublished](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94) method for quick troubleshooting.
 
 #### 2. Renaming the receivedFrameRate parameter in the RemoteVideoStats class
 
-v2.4.1 renames the `receivedFrameRate` parameter to rendererOutputFrameRate in the RemoteVideoStats class to more accurately describe the statistics of the remote video stream.
+v2.4.1 renames the `receivedFrameRate` parameter to [rendererOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html#aa09441cb1b9a0f4318cd59b0ca5b3ffb) in the  [RemoteVideoStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html) class to more accurately describe the statistics of the remote video stream.
 
 ### New features
 
 #### 1. Adding media metadata
 
-In live broadcast scenarios, the host can send shopping links, digital coupons, and online quizzes to the audience for more diversified live broadcast interactions. v2.4.1 adds the registerMediaMetadataObserver interface and the IMediaMetadataObserver class, allowing the host to add metadata to the output video and to send media attached information.
+In live broadcast scenarios, the host can send shopping links, digital coupons, and online quizzes to the audience for more diversified live broadcast interactions. v2.4.1 adds the  [registerMediaMetadataObserver](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aeb1a5691094a10cb047d106d6c6c32b7) interface and the [IMediaMetadataObserver](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_metadata_observer.html) class, allowing the host to add metadata to the output video and to send media attached information.
 
 #### 2. State of the local video
 
-v2.4.1 adds the onLocalVideoStateChanged callback to indicate the local video state. In this callback, the SDK returns the `STOPPED`,` CAPTURING`, `ENCODING`, or `FAILED` state. When the state is `FAILED`, you can use the error code for troubleshooting. This callback indicates whether or not the interruption is caused by capturing or encoding. This release deprecates the `onCameraReady` and `onVideoStopped` callbacks.
+v2.4.1 adds the [onLocalVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aface271c0606ab99bb08a0d00267306c) callback to indicate the local video state. In this callback, the SDK returns the `STOPPED`,` CAPTURING`, `ENCODING`, or `FAILED` state. When the state is `FAILED`, you can use the error code for troubleshooting. This callback indicates whether or not the interruption is caused by capturing or encoding. This release deprecates the `onCameraReady` and `onVideoStopped` callbacks.
 
 #### 3. State of the RTMP streaming
 
-v2.4.1 adds the onRtmpStreamingStateChanged callback to indicate the state of the RTMP streaming and help you troubleshoot issues when exceptions occur. In this callback, the SDK returns the IDLE, `CONNECTING`, `RUNNING`, `RECOVERING`, or `FAILURE` state. When the state is `FAILURE`, you can use the error code for troubleshooting. You can still use the onStreamPublished and onStreamUnpublished callbacks, but we do not recommend using them.
+v2.4.1 adds the [onRtmpStreamingStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94) callback to indicate the state of the RTMP streaming and help you troubleshoot issues when exceptions occur. In this callback, the SDK returns the IDLE, `CONNECTING`, `RUNNING`, `RECOVERING`, or `FAILURE` state. When the state is `FAILURE`, you can use the error code for troubleshooting. You can still use the `onStreamPublished` and `onStreamUnpublished` callbacks, but we do not recommend using them.
 
 #### 4. More reasons for a network connection state change
 
-In the onConnectionStateChanged callback, v2.4.1 adds error codes to the reason parameter to help you troubleshoot issues when exceptions occur. The SDK returns the onConnectionStateChanged callback whenever the connection state changes. This release also deprecates `WARN_LOOK_UP_CHANNEL_REJECTED(105)`, `ERR_TOKEN_EXPIRED(109)`, and `ERR_INVALID_TOKEN(110)`.
+In the [onConnectionStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) callback, v2.4.1 adds error codes to the `reason` parameter to help you troubleshoot issues when exceptions occur. The SDK returns the `onConnectionStateChanged` callback whenever the connection state changes. This release also deprecates `WARN_LOOK_UP_CHANNEL_REJECTED(105)`, `ERR_TOKEN_EXPIRED(109)`, and `ERR_INVALID_TOKEN(110)`.
 
 #### 5. State of the local network type 
 
-v2.4.1 adds the onNetworkTypeChanged callback to indicate the local network type. In this callback, the SDK returns the `UNKNOWN`, `DISCONNECTED`, `LAN`, `WIFI`, `2G`, `3G`, or `4G` type. When the network connection is interrupted, this callback indicates whether or not the interruption is caused by a network type change or poor network conditions.
+v2.4.1 adds the  [onNetworkTypeChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a75b014a87d0ead6cd4fa519a630f6f90) callback to indicate the local network type. In this callback, the SDK returns the `UNKNOWN`, `DISCONNECTED`, `LAN`, `WIFI`, `2G`, `3G`, or `4G` type. When the network connection is interrupted, this callback indicates whether or not the interruption is caused by a network type change or poor network conditions.
 
 #### 6. Getting the audio mixing volume
 
-v2.4.1 adds the getAudioMixingPlayoutVolume and getAudioMixingPublishVolume methods, which respectively gets the audio mixing volume for local playback and remote playback, to help you troubleshoot audio volume related issues.
+v2.4.1 adds the [getAudioMixingPlayoutVolume](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9) and [getAudioMixingPublishVolume](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9) methods, which respectively gets the audio mixing volume for local playback and remote playback, to help you troubleshoot audio volume related issues.
 
 #### 7. Reporting when the first remote audio frame is received and decoded
 
-To get the more accurate time of the first audio frame from a specified remote user, v2.4.1 adds the onFirstRemoteAudioDecoded callback to report to the app that the SDK decodes first remote audio. This callback is triggered in either of the following scenarios:
+To get the more accurate time of the first audio frame from a specified remote user, v2.4.1 adds the  [onFirstRemoteAudioDecoded](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0fcac6cafae63e4ef453ddd041e80f8a) callback to report to the app that the SDK decodes first remote audio. This callback is triggered in either of the following scenarios:
 
 - The remote user joins the channel and sends the audio stream.
 - The remote user stops sending the audio stream and re-sends it after 15 seconds.
@@ -98,27 +98,27 @@ The difference between the onFirstRemoteAudioDecoded and `onFirstRemoteAudioFram
 
 #### 1. Playing multiple online audio effect files simultaneously
 
-v2.4.1 adds the support for playing multiple online audio effect files simultaneously by allowing you to call the playEffect method multiple times with the URLs of the online audio effect files.
+v2.4.1 adds the support for playing multiple online audio effect files simultaneously by allowing you to call the [playEffect](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#a6fd330db3e3e5735f7f8d5c36bc3fea1) method multiple times with the URLs of the online audio effect files.
 
 #### 2. Reporting more statistics
 
-- v2.4.1 adds the txPacketLossRate and rxPacketLossRate parameters in the RtcStats class. These parameters return the packet loss rate from the local client to the server and vice versa.
+- v2.4.1 adds the[txPacketLossRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html#a6b0c3798427c6bf07b829896e29ace5e) and [rxPacketLossRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html#a72df02822bfcc37dfcdb543fd2ba46af) parameters in the [RtcStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html) class. These parameters return the packet loss rate from the local client to the server and vice versa.
 
 - To provide more accurate statistics of the local and remote video, v2.4.1 makes the following changes to the following classes:
-  - LocalVideoStats: Adds the encoderOutputFrameRate and rendererOutputFrameRate parameters
-  - RemoteVideoStats: Adds the decoderOutputFrame parameter, and renames the receivedFrameRate parameter to the endererOutputFrameRate parameter
+  - [LocalVideoStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html): Adds the  [encoderOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html#af6350acef5578bf0501a234fc36d86a3) and [rendererOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html#aa754035a384b502a45c6fed6f17038da) parameters.
+  - [RemoteVideoStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html): Adds the[decoderOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html#aafc03c6a890c36dc9810537c47ce0cd9) parameter, and renames the `receivedFrameRate` parameter to the [rendererOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html#aa09441cb1b9a0f4318cd59b0ca5b3ffb) parameter.
 
 #### 3. Image enhancement
 
-v2.4.1 assigns default values to various parameters in the BeautyOptions class to improve the image enhancement experience. This release also optimizes the image enhancement algorithm. Test results from Agora Lab suggest that the updated algorithm leads to lower GPU, CPU and power consumption.
+v2.4.1 assigns default values to various parameters in the [BeautyOptions](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_beauty_options.html) class to improve the image enhancement experience. This release also optimizes the image enhancement algorithm. Test results from Agora Lab suggest that the updated algorithm leads to lower GPU, CPU and power consumption.
 
 #### 4. Miscellaneous
 
-- Improved the sound quality of the GAME_STREAMING audio scenario.
+- Improved the sound quality of the [GAME_STREAMING](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/enumio_1_1agora_1_1rtc_1_1_constants_1_1_audio_scenario.html#aedcb78447298f4794ba8df7a72d71909) audio scenario.
 - Reduced the audio and video latency.
 - Reduced the SDK package size by 0.5 M.
 - Improved the accuracy of the network quality after users change the video bitrate.
-- Enabled the audio quality notification callback by default, that is, enabled the onRemoteAudioStats callback without calling the `enableAudioVolumeIndication` method.
+- Enabled the audio quality notification callback by default, that is, enabled the [onRemoteAudioStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54) callback without calling the `enableAudioVolumeIndication` method.
 - Improved the stability of video services.
 
 ### Issues fixed
@@ -135,7 +135,9 @@ v2.4.1 assigns default values to various parameters in the BeautyOptions class t
 
 #### Miscellaneous
 
-- The app quits after calling joinChannel.
+- Users still receive the `onNetworkQuality` callback after leaving the channel.
+- Occasional crashes.
+- The app quits after calling `joinChannel`.
 
 ### API changes
 
@@ -143,22 +145,22 @@ To improve your experience, we made the following changes to the APIs:
 
 #### Unified the C++ interface for all platforms
 
-v2.4.1 unifies the behavior of the C++ interfaces across different platforms so that you can apply the same code logic on different platforms. v2.4.1 implements the methods of the `RtcEngineParameters` class in the `IRtcEngine` class. Refer to Agora C++ API Reference for All Platforms home page for the applicable platforms and considerations of each interface.
+v2.4.1 unifies the behavior of the C++ interfaces across different platforms so that you can apply the same code logic on different platforms. v2.4.1 implements the methods of the `RtcEngineParameters` class in the `IRtcEngine` class. Refer to [Agora C++ API Reference for All Platforms home page](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/index.html) for the applicable platforms and considerations of each interface.
 
 #### Added
 
-- getAudioMixingPlayoutVolume
-- getAudioMixingPublishVolume
-- onFirstRemoteAudioDecoded
-- onLocalVideoStateChanged
-- onNetworkTypeChanged
-- onRtmpStreamingStateChanged
-- registerMediaMetadataObserver
-- The IMetadataObserver class
-- The audioCodecProfile parameter in the `LiveTranscoding` class
-- The txPacketLossRate and rxPacketLossRate parameters in the `RtcStats` class
-- The encoderOutputFrameRate and rendererOutputFramerate parameters in the `LocalVideoStats` class
-- The decoderOutputFrameRate and renderOutputFrameRate (to replace `receivedRemoteRate`) parameters in the `RemoteVideoStats` class
+- [getAudioMixingPlayoutVolume](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
+- [getAudioMixingPublishVolume](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a962819abd0e5458b89cefb756bb9e631)
+-  [onFirstRemoteAudioDecoded](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0fcac6cafae63e4ef453ddd041e80f8a)
+- [onLocalVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aface271c0606ab99bb08a0d00267306c)
+- [onNetworkTypeChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a75b014a87d0ead6cd4fa519a630f6f90)
+- [onRtmpStreamingStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
+- [registerMediaMetadataObserver](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aeb1a5691094a10cb047d106d6c6c32b7)
+- The [IMetadataObserver](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_metadata_observer.html) class
+- The  [audioCodecProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html#ac7d4a839af2994e68d8f14544d323ae9) parameter in the `LiveTranscoding` class
+- The [txPacketLossRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html#a6b0c3798427c6bf07b829896e29ace5e) and [rxPacketLossRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html#a72df02822bfcc37dfcdb543fd2ba46af) parameters in the `RtcStats` class
+- The [encoderOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html#af6350acef5578bf0501a234fc36d86a3) and [rendererOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html#aa754035a384b502a45c6fed6f17038da) parameters in the `LocalVideoStats` class
+- The [decoderOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html#aafc03c6a890c36dc9810537c47ce0cd9) and [rendererOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html#aa09441cb1b9a0f4318cd59b0ca5b3ffb) parameters in the `RemoteVideoStats` class
 
 #### Deprecated
 
