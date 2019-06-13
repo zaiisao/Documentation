@@ -3,7 +3,7 @@
 title: 云端录制 C++ API
 description: 
 platform: CPP
-updatedAt: Thu Jun 13 2019 07:15:15 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 07:15:19 GMT+0800 (CST)
 ---
 # 云端录制 C++ API
 | **接口类**                                                   | **描述**                   |
@@ -109,7 +109,7 @@ RecordingConfig() :
 | `channel_type`           | 频道模式。<li>`kChannelTypeCommunication`：通信模式（默认），即常见的 1 对 1 单聊或群聊，频道内任何用户可以自由说话。 <li>`kChannelTypeLive`：直播模式，有两种用户角色，主播和观众，只有主播可以自由发言。 <p>**频道模式必须与 Agora Native/Web SDK 一致，否则可能导致问题。** |
 | `audio_profile`          | 设置音频采样率，码率，编码模式和声道数。<li>`kAudioProfileMusicStandard`：指定 48 KHz采样率，音乐编码, 单声道，编码码率约 48 Kbps（默认）。 <li>`kAudioProfileMusicHighQuality`：指定 48 KHz 采样率，音乐编码, 单声道，编码码率约 128 Kbps。<li>`kAudioProfileMusicHighQualityStereo`：指定 48 KHz 采样率，音乐编码, 双声道，编码码率约 192 Kbps。 |
 | `video_stream_type`      | 视频流类型。<li>`kVideoStreamTypeHigh`：视频大流（默认），即高分辨率高码率的视频流。<li>`kVideoStreamTypeLow`：视频小流，即低分辨率低码率的视频流。 |
-| `max_idle_time`          | 最长空闲频道时间。默认值为 30 秒，如果频道内无用户的状态持续超过该时间，录制程序会自动退出。若设置为 0，则使用默认值。 |
+| `max_idle_time`          | 最长空闲频道时间。默认值为 30 秒，该值需大于等于 5。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。 |
 | `transcoding_config`     | 视频转码的详细设置，详见 <a href="#TranscodingConfig">TranscodingConfig</a>。 |
 
 <a name = "TranscodingConfig"></a>
