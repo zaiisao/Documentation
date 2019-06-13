@@ -3,7 +3,7 @@
 title: 云端录制快速开始
 description: Draft
 platform: CPP
-updatedAt: Thu Jun 13 2019 09:08:15 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 09:08:56 GMT+0800 (CST)
 ---
 # 云端录制快速开始
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
@@ -31,7 +31,22 @@ updatedAt: Thu Jun 13 2019 09:08:15 GMT+0800 (CST)
 
 完成集成后，你可以参照下文进行云端录制。
 
-## 创建实例
+## 实现云端录制
+一个完整的云端录制过程主要包括以下步骤：
+
+1. [创建实例](#create)
+
+2. [开始录制](#start)（加入频道）
+
+3. [结束录制](#stop)（离开频道）
+
+4. [释放资源](#release)
+
+目前云端录制仅支持自动录制模式，也就是加入频道即自动开始录制，离开频道即自动结束录制。对于一个录制实例来说，离开频道后录制就结束了，如果需要再次录制必须创建一个新的实例。
+
+你可以对同一个频道多次执行这个录制过程，录制你需要的内容。
+
+### <a name="create"></a>创建实例
 
 ```c++
 ICloudRecorder* CreateCloudRecorderInstance(ICloudRecorderObserver *observer);
@@ -41,7 +56,7 @@ ICloudRecorder* CreateCloudRecorderInstance(ICloudRecorderObserver *observer);
 
 录制完成后，如不再需要该实例，可以通过调用 [`Release`](../../cn/cloud-recording/cloud_recording_api.md) 方法销毁实例，释放资源。
 
-## 开始云端录制
+### <a name="start"></a>开始云端录制
 
 ```c++
 virtual int StartCloudRecording(
@@ -66,7 +81,7 @@ virtual int StartCloudRecording(
 
 调用 [`StartCloudRecording`](../../cn/cloud-recording/cloud_recording_api.md) 方法后，监测到频道内有用户即开始录制，并触发 [`OnRecordingStarted`](../../cn/cloud-recording/cloud_recording_api.md) 回调，通知应用程序成功开始录制。
 
-## 结束云端录制
+### <a name="stop"></a>结束云端录制
 
 ```c++
 virtual int StopCloudRecording() = 0;
@@ -80,7 +95,7 @@ virtual int StopCloudRecording() = 0;
 
 若未调用 [`StopCloudRecording`](../../cn/cloud-recording/cloud_recording_api.md) 方法，当频道空闲（无用户）超过预设时间（默认为 30 秒） 后，Cloud Recording SDK 会自动退出频道停止录制，并触发 [`OnRecorderFailure`](../../cn/cloud-recording/cloud_recording_api.md) 回调，错误码为 `RecordingErrorNoUsers`，通知应用程序录制退出异常。
 
-## 释放资源
+### <a name="release"></a>释放资源
 
 ```c++
 virtual void Release(bool cancelCloudRecording = false) = 0;
