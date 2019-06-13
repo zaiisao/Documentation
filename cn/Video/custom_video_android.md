@@ -3,7 +3,7 @@
 title: 客户端自定义采集和渲染
 description: 
 platform: Android
-updatedAt: Thu Jun 13 2019 08:43:34 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 08:43:49 GMT+0800 (CST)
 ---
 # 客户端自定义采集和渲染
 ## 功能介绍
@@ -53,7 +53,7 @@ Agora SDK 目前提供两种自定义视频源的方法：
 
 #### 使用 MediaIO 接口自定义视频源
 
-你可以使用 MediaIO 中的 IVideoSource 接口实现自定义视频源。该方法将视频帧数据传输到服务器，如需本地预览，还需要应用开发者自己处理本地渲染逻辑。示例代码如下：
+你可以使用 MediaIO 中的 IVideoSource 接口实现自定义视频源。该方法将视频帧数据传输到 SDK，如需本地预览，还需要应用开发者自己处理本地渲染逻辑。示例代码如下：
 
 ```java
 IVideoFrameConsumer mConsumer;
@@ -166,15 +166,27 @@ IVideoSink sink = new IVideoSink() {
 		return 0;
 	}
  
+    // 返回当前渲染器需要的数据 Buffer 类型
+	// 若切换 VideoSink 的类型，必须重新创建另一个实例
+	// 有三种类型：BYTE_BUFFER(1)；BYTE_ARRAY(2)；TEXTURE(3)
 	@Override
 	public int getBufferType() {
 		return BufferType.BYTE_ARRAY;
 	}
  
+    // 返回当前渲染器需要的 Pixel 格式
 	@Override
 	public int getPixelFormat() {
 		return PixelFormat.NV21;
 	}
+	
+	// SDK 调用该方法将获取到的视频帧传给渲染器
+	@Override
+	public void consumeByteArrayFrame(byte[] data, int format, int width, int height, int rotation, long timestamp) {
+  
+	// 渲染器在此进行渲染
+	}
+
 }
 
 rtcEngine.setLocalVideoRenderer(sink);
