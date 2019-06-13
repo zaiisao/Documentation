@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Thu Jun 13 2019 10:43:48 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 10:43:52 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -311,7 +311,7 @@ v2.1.0 is released on March 7, 2018.
 -   Occasional abnormal audio during recording.
 
 
-## v2.0
+## v2.0.0
 
 v2.0 is released on November 21, 2017. 
 
@@ -324,7 +324,7 @@ v2.0 is released on November 21, 2017.
 -   The transcoding scripts, once used, generate a convert.log file under the same path as the voice/video file. 
 -   Adds the video rotating information in `UID_HHMMSSMS.txt`. 
 
-## v1.3 
+## v1.3.0
 
 v1.3 is released on October 20, 2017.
 
@@ -336,7 +336,7 @@ v1.3 is released on October 20, 2017.
 -   Modifies the <code>onError</code> and <code>onLeaveChannel</code> callbacks.
 
 
-## v1.2
+## v1.2.0
 
 v1.2 is released on August 21, 2017. 
 
@@ -348,7 +348,7 @@ v1.2 is released on August 21, 2017.
 -   Supports the recording channel timestamp, that is, the first user who starts recording in the channel.
 
 
-## v1.1
+## v1.1.0
 
 v1.1 is released on July 25, 2017. 
 
