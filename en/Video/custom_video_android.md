@@ -3,7 +3,7 @@
 title: Customize the Audio/Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Thu Jun 13 2019 08:56:34 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 08:56:46 GMT+0800 (CST)
 ---
 # Customize the Audio/Video Source and Renderer
 ## Introduction
@@ -53,7 +53,7 @@ The Agora SDK provides two methods to customize the video source:
 
 #### MediaIO Method
 
-Use the IVideoSource interface in MediaIO to customize the video source. This method sends the external video frame to the server, and you need to implement local rendering if the local preview is enabled.
+Use the IVideoSource interface in MediaIO to customize the video source. This method sends the external video frame to the SDK, and you need to implement local rendering if the local preview is enabled.
 
 ```java
 IVideoFrameConsumer mConsumer;
@@ -139,42 +139,41 @@ Use the IVideoSink Interface of MediaIO to customize the video renderer.
 
 ```java
 IVideoSink sink = new IVideoSink() {
-    @Override
-    public boolean onInitialize () {
-        return true;
-    }
+	@Override
+	public boolean onInitialize () {
+		return true;
+	}
 
-    @Override
-    public boolean onStart() {
-        return true;
-    }
-
-    @Override
-    public void onStop() {
-
-    }
-
-    @Override
-    public void onDispose() {
-
-    }
-
-    @Override
-    public long getEGLContextHandle() {
-        // Create your egl context.
-        // A return value of 0 means no egl context is created in the renderer.
-        return 0;
-    }
-
-    @Override
-    public int getBufferType() {
-        return BufferType.BYTE_ARRAY;
-    }
-
-    @Override
-    public int getPixelFormat() {
-        return PixelFormat.NV21;
-    }
+	@Override
+	public boolean onStart() {
+		return true;
+	}
+ 
+	@Override
+	public void onStop() {
+	}
+ 
+	@Override
+	public void onDispose() {
+	}
+ 
+	@Override
+	public long getEGLContextHandle() {
+	}
+ 
+	@Override
+	public int getBufferType() {
+		return BufferType.BYTE_ARRAY;
+	}
+ 
+	@Override
+	public int getPixelFormat() {
+		return PixelFormat.NV21;
+	}
+	
+	@Override
+	public void consumeByteArrayFrame(byte[] data, int format, int width, int height, int rotation, long timestamp) {
+	}
 }
 
 rtcEngine.setLocalVideoRenderer(sink);
