@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Jun 13 2019 02:58:28 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 02:58:57 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -31,68 +31,68 @@ Ensure that you read the following SDK behavior changes if you migrate from an e
 
 To improve the usability of the CDN streaming service, v2.4.1 defines the following parameter limits:
 
-| Class **/** Interface  | Parameter Limit                                              |
+| Class / Interface  | Parameter Limit                                              |
 | ---------------------- | ------------------------------------------------------------ |
-| LiveTranscoding        | <li>videoFrameRate: Frame rate (fps) of the CDN live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>videoBitrate: Bitrate (Kbps) of the CDN live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](../../en/Video/release_windows_video.md). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>videoCodecProfile: The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>width and height: Pixel of the video. The minimum value of **width x height** is **16 x 16**.</li> |
-| AgoraImage             | url: The maximum length of this parameter is **1024** bytes. |
-| addPublishStreamUrl    | url: The maximum length of this parameter is **1024** bytes. |
-| removePublishStreamUrl | url: The maximum length of this parameter is **1024** bytes. |
+| [LiveTranscoding](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html)        | <li>[videoFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a8086eda68ed5b9d106cf830fd4e24f9c): Frame rate (fps) of the CDN live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>[videoBitrate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ab5ff17deab2e3149f149987cc0d83433): Bitrate (Kbps) of the CDN live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>[videoCodecProfile](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a72fbfdd2c0d4f0cc438d5ca052aa7531): The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>[width](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ad0a505490500917dd246510471ef88be) and [height](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a340ee10a10bf0137fb996ca77729002e): Pixel of the video. The minimum value of width x height is 16 x 16.</li> |
+| [RtcImage](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_image.html)             | url: The maximum length of this parameter is **1024** bytes. |
+| [addPublishStreamUrl](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)    | `url`: The maximum length of this parameter is **1024** bytes. |
+| [removePublishStreamUrl](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7) | `url`: The maximum length of this parameter is **1024** bytes. |
 
-This release also adds the audioCodecProfile parameter in the `LiveTranscoding` class to set the audio codec profile type. The default type is LC-AAC, which means the low-complexity audio codec profile.
+This release also adds the [audioCodecProfile](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a76987efee0f6d507ef648083507bd935) parameter in the `LiveTranscoding` class to set the audio codec profile type. The default type is LC-AAC, which means the low-complexity audio codec profile.
 
-v2.4.1 also adds five error codes to the error parameter in the onStreamPublished method for quick troubleshooting.
+v2.4.1 also adds five error codes to the `error` parameter in the  [onStreamPublished](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a85cc73e9f53766b8a0a7fa8c96f2ea98) method for quick troubleshooting.
 
 #### 2. Renaming the receivedFrameRate parameter in the RemoteVideoStats class
 
-v2.4.1 renames the `receivedFrameRate` parameter to rendererOutputFrameRate in the RemoteVideoStats class to more accurately describe the statistics of the remote video stream.
+v2.4.1 renames the `receivedFrameRate` parameter to [rendererOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a500d2a8457bf877794c219d194ec09b0) in the  [RemoteVideoStats](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html) class to more accurately describe the statistics of the remote video stream.
 
 ### New features
 
 #### 1. Adding media metadata
 
-In live broadcast scenarios, the host can send shopping links, digital coupons, and online quizzes to the audience for more diversified live broadcast interactions. v2.4.1 adds the registerMediaMetadataObserver interface and the IMediaMetadataObserver class, allowing the host to add metadata to the output video and to send media attached information.
+In live broadcast scenarios, the host can send shopping links, digital coupons, and online quizzes to the audience for more diversified live broadcast interactions. v2.4.1 adds the [registerMediaMetadataObserver](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a84dbf06de1d769b63200d7ec0289cca0) interface and the [IMediaMetadataObserver](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_metadata_observer.html) class, allowing the host to add metadata to the output video and to send media attached information.
 
 #### 2. Optimized screen sharing
 
-To avoid image cropping and distortion in screen sharing, v2.4.1 optimizes the encoding algorithms. If the aspect ratios are different between the encoding `dimensions` that you set in the `ScreenCaptureParameters` class and the original screen dimensions, Agora applies the following encoding algorithms:
+To avoid image cropping and distortion in screen sharing, v2.4.1 optimizes the encoding algorithms. If the aspect ratios are different between the encoding [dimensions](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#a9ee8c96bbfe031e8c614d7b2e49ddbb8) that you set in the [ScreenCaptureParameters](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html) class and the original screen dimensions, Agora applies the following encoding algorithms:
 
 Suppose the value of **dimensions** is 1920 x 1080 pixels, that is, 2073600 pixels:
 
-- If the value of the screen dimensions is lower than that of the encoding dimensions, for example, 1000 x 1000 pixels, the SDK uses 1000 x 1000 pixels for encoding.
-- If the value of the screen dimensions is higher than that of the encoding dimensions, for example, 2000 x 1500 pixels, the SDK uses the maximum value under 1920 x 1080 pixels with the aspect ratio of the screen dimension (4:3) for encoding, that is, 1440 x 1080 pixels.
+- If the value of the screen `dimensions` is lower than that of the encoding dimensions, for example, 1000 x 1000 pixels, the SDK uses 1000 x 1000 pixels for encoding.
+- If the value of the screen `dimensions` is higher than that of the encoding dimensions, for example, 2000 x 1500 pixels, the SDK uses the maximum value under 1920 x 1080 pixels with the aspect ratio of the screen dimension (4:3) for encoding, that is, 1440 x 1080 pixels.
 
-Agora uses the `dimensions` value in the ScreenCaptureParameters class to calculate the charges. If you do not set the value of **dimensions**, the SDK uses the default value of 1920 x 1080 to calculate the charges.
+Agora uses the [dimensions](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#a9ee8c96bbfe031e8c614d7b2e49ddbb8) value in the[ScreenCaptureParameters](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html) class to calculate the charges. If you do not set the value of **dimensions**, the SDK uses the default value of 1920 x 1080 to calculate the charges.
 
-You can also choose whether or not to capture the mouse cursor when sharing the screen. v2.4.1 adds the captureMouseCursor parameter in the `ScreenCaptureParameter`s class and captures the mouse by default.
+You can also choose whether or not to capture the mouse cursor when sharing the screen. v2.4.1 adds the [captureMouseCursor](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#aa68157203616423bad85f852f3816c1f) parameter in the `ScreenCaptureParameters` class and captures the mouse by default.
 
 #### 3. State of the local video
 
-v2.4.1 adds the onLocalVideoStateChanged callback to indicate the local video state. In this callback, the SDK returns the `STOPPED`,` CAPTURING`, `ENCODING`, or `FAILED` state. When the state is `FAILED`, you can use the error code for troubleshooting. This callback indicates whether or not the interruption is caused by capturing or encoding. This release deprecates the `onCameraReady` and `onVideoStopped` callbacks.
+v2.4.1 adds the [onLocalVideoStateChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6) callback to indicate the local video state. In this callback, the SDK returns the `STOPPED`,` CAPTURING`, `ENCODING`, or `FAILED` state. When the state is `FAILED`, you can use the error code for troubleshooting. This callback indicates whether or not the interruption is caused by capturing or encoding. This release deprecates the `onCameraReady` and `onVideoStopped` callbacks.
 
 #### 4. State of the RTMP streaming
 
-v2.4.1 adds the onRtmpStreamingStateChanged callback to indicate the state of the RTMP streaming and help you troubleshoot issues when exceptions occur. In this callback, the SDK returns the IDLE, `CONNECTING`, `RUNNING`, `RECOVERING`, or `FAILURE` state. When the state is `FAILURE`, you can use the error code for troubleshooting. You can still use the onStreamPublished and onStreamUnpublished callbacks, but we do not recommend using them.
+v2.4.1 adds the [onRtmpStreamingStateChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d) callback to indicate the state of the RTMP streaming and help you troubleshoot issues when exceptions occur. In this callback, the SDK returns the IDLE, `CONNECTING`, `RUNNING`, `RECOVERING`, or `FAILURE` state. When the state is `FAILURE`, you can use the error code for troubleshooting. You can still use the `onStreamPublished` and `onStreamUnpublished` callbacks, but we do not recommend using them.
 
 #### 5. More reasons for a network connection state change
 
-In the onConnectionStateChanged callback, v2.4.1 adds error codes to the reason parameter to help you troubleshoot issues when exceptions occur. The SDK returns the onConnectionStateChanged callback whenever the connection state changes. This release also deprecates `WARN_LOOK_UP_CHANNEL_REJECTED(105)`, `ERR_TOKEN_EXPIRED(109)`, and `ERR_INVALID_TOKEN(110)`.
+In the [onConnectionStateChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) callback, v2.4.1 adds error codes to the `reason` parameter to help you troubleshoot issues when exceptions occur. The SDK returns the `onConnectionStateChanged` callback whenever the connection state changes. This release also deprecates `WARN_LOOK_UP_CHANNEL_REJECTED(105)`, `ERR_TOKEN_EXPIRED(109)`, and `ERR_INVALID_TOKEN(110)`.
 
 #### 6. State of the local network type 
 
-v2.4.1 adds the onNetworkTypeChanged callback to indicate the local network type. In this callback, the SDK returns the `UNKNOWN`, `DISCONNECTED`, `LAN`, `WIFI`, `2G`, `3G`, or `4G` type. When the network connection is interrupted, this callback indicates whether or not the interruption is caused by a network type change or poor network conditions.
+v2.4.1 adds the [onNetworkTypeChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4) callback to indicate the local network type. In this callback, the SDK returns the `UNKNOWN`, `DISCONNECTED`, `LAN`, `WIFI`, `2G`, `3G`, or `4G` type. When the network connection is interrupted, this callback indicates whether or not the interruption is caused by a network type change or poor network conditions.
 
 #### 7. Getting the audio mixing volume
 
-v2.4.1 adds the getAudioMixingPlayoutVolume and getAudioMixingPublishVolume methods, which respectively gets the audio mixing volume for local playback and remote playback, to help you troubleshoot audio volume related issues.
+v2.4.1 adds the [getAudioMixingPlayoutVolume](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aed9dda5a7b2683776f41f6ba0e1f281c) and [getAudioMixingPublishVolume](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9fafbaaf39578810ec9c11360fc7f027) methods, which respectively gets the audio mixing volume for local playback and remote playback, to help you troubleshoot audio volume related issues.
 
 #### 8. Reporting when the first remote audio frame is received and decoded
 
-To get the more accurate time of the first audio frame from a specified remote user, v2.4.1 adds the onFirstRemoteAudioDecoded callback to report to the app that the SDK decodes first remote audio. This callback is triggered in either of the following scenarios:
+To get the more accurate time of the first audio frame from a specified remote user, v2.4.1 adds the [onFirstRemoteAudioDecoded](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7d375e7467bd099ad2d4c9cfc0a6c242) callback to report to the app that the SDK decodes first remote audio. This callback is triggered in either of the following scenarios:
 
 - The remote user joins the channel and sends the audio stream.
 - The remote user stops sending the audio stream and re-sends it after 15 seconds.
 
-The difference between the onFirstRemoteAudioDecoded and `onFirstRemoteAudioFrame` callbacks is that the `onFirstRemoteAudioFram`e callback occurs when the SDK receives the first audio packet. It occurs before the `onFirstRemoteAudioDecoded` callback.
+The difference between the `onFirstRemoteAudioDecoded` and `onFirstRemoteAudioFrame` callbacks is that the `onFirstRemoteAudioFrame` callback occurs when the SDK receives the first audio packet. It occurs before the `onFirstRemoteAudioDecoded` callback.
 
 #### 9. Miscellaneous
 
@@ -102,11 +102,11 @@ The difference between the onFirstRemoteAudioDecoded and `onFirstRemoteAudioFram
 
 #### 1. Reporting more statistics
 
-- v2.4.1 adds the txPacketLossRate and rxPacketLossRate parameters in the RtcStats class. These parameters return the packet loss rate from the local client to the server and vice versa.
+- v2.4.1 adds the [txPacketLossRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a52232c2b3af1573b3783f74f7ca75c1c) and [rxPacketLossRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a1882c369c5d1bc04b85fb9dcb15700b6) parameters in the [RtcStats](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html) class. These parameters return the packet loss rate from the local client to the server and vice versa.
 
 - To provide more accurate statistics of the local and remote video, v2.4.1 makes the following changes to the following classes:
-  - LocalVideoStats: Adds the encoderOutputFrameRate and rendererOutputFrameRate parameters
-  - RemoteVideoStats: Adds the decoderOutputFrame parameter, and renames the receivedFrameRate parameter to the endererOutputFrameRate parameter
+  - [LocalVideoStats](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html): Adds the [encoderOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#ab5df1607ac79acbc51941797189b8dba) and [rendererOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#aa91d7d73f3d2c2933658a9dced6ec3ed) parameters
+  - [RemoteVideoStats](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html): Adds the [decoderOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a21776c26b256d836a90944c1051c9322) parameter, and renames the receivedFrameRate parameter to the [rendererOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a500d2a8457bf877794c219d194ec09b0) parameter
 
 #### 2. Miscellaneous
 
@@ -114,8 +114,9 @@ The difference between the onFirstRemoteAudioDecoded and `onFirstRemoteAudioFram
 - Reduced the audio and video latency.
 - Reduced the SDK package size by 0.5 M.
 - Improved the accuracy of the network quality after users change the video bitrate.
-- Enabled the audio quality notification callback by default, that is, enabled the onRemoteAudioStats callback without calling the `enableAudioVolumeIndication` method.
+- Enabled the audio quality notification callback by default, that is, enabled the [onRemoteAudioStats](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a) callback without calling the `enableAudioQualityIndication` method.
 - Improved the stability of video services.
+- Improved the stability of CDN streaming services.
 - Improved the compatibility of the SDK with video devices.
 
 ### Issues fixed
@@ -140,23 +141,23 @@ To improve your experience, we made the following changes to the APIs:
 
 #### Unified the C++ interface for all platforms
 
-v2.4.1 unifies the behavior of the C++ interfaces across different platforms so that you can apply the same code logic on different platforms. v2.4.1 implements the methods of the `RtcEngineParameters` class in the `IRtcEngine` class. Refer to Agora C++ API Reference for All Platforms home page for the applicable platforms and considerations of each interface.
+v2.4.1 unifies the behavior of the C++ interfaces across different platforms so that you can apply the same code logic on different platforms. v2.4.1 implements the methods of the `RtcEngineParameters` class in the `IRtcEngine` class. Refer to [Agora C++ API Reference for All Platforms home page](https://docs.agora.io/en/Video/API%20Reference/cpp/index.html) for the applicable platforms and considerations of each interface.
 
 #### Added
 
-- getAudioMixingPlayoutVolume
-- getAudioMixingPublishVolume
-- onFirstRemoteAudioDecoded
-- onLocalVideoStateChanged
-- onNetworkTypeChanged
-- onRtmpStreamingStateChanged
-- registerMediaMetadataObserver
-- The IMetadataObserver class
-- The audioCodecProfile parameter in the `LiveTranscoding` class
-- The captureMouseCursor parameter in the `ScreenCaptureParameters` class
-- The txPacketLossRate and rxPacketLossRate parameters in the `RtcStats` class
-- The encoderOutputFrameRate and rendererOutputFramerate parameters in the `LocalVideoStats` class
-- The decoderOutputFrameRate and renderOutputFrameRate (to replace `receivedRemoteRate`) parameters in the `RemoteVideoStats` class
+- [getAudioMixingPlayoutVolume](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aed9dda5a7b2683776f41f6ba0e1f281c)
+- [getAudioMixingPublishVolume](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9fafbaaf39578810ec9c11360fc7f027)
+- [onFirstRemoteAudioDecoded](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7d375e7467bd099ad2d4c9cfc0a6c242)
+- [onLocalVideoStateChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6)
+- [onNetworkTypeChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4)
+- [onRtmpStreamingStateChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4)
+- [registerMediaMetadataObserver](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a84dbf06de1d769b63200d7ec0289cca0)
+- The [IMetadataObserver](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_metadata_observer.html) class
+- The [audioCodecProfile](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a76987efee0f6d507ef648083507bd935) parameter in the `LiveTranscoding` class
+- The [captureMouseCursor](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#aa68157203616423bad85f852f3816c1f) parameter in the `ScreenCaptureParameters` class
+- The [txPacketLossRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a52232c2b3af1573b3783f74f7ca75c1c) and [rxPacketLossRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a1882c369c5d1bc04b85fb9dcb15700b6) parameters in the `RtcStats` class
+- The [encoderOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#ab5df1607ac79acbc51941797189b8dba) and [rendererOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#aa91d7d73f3d2c2933658a9dced6ec3ed) parameters in the `LocalVideoStats` class
+- The [decoderOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a21776c26b256d836a90944c1051c9322) and [rendererOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a500d2a8457bf877794c219d194ec09b0) (to replace `receivedRemoteRate`) parameters in the `RemoteVideoStats` class
 
 #### Deprecated
 
