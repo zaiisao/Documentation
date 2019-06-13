@@ -3,7 +3,7 @@
 title: 云端录制 Java API
 description: For java
 platform: Java
-updatedAt: Thu Jun 13 2019 07:16:05 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 07:16:09 GMT+0800 (CST)
 ---
 # 云端录制 Java API
 | **接口类**                                                   | **描述**                   |
@@ -117,7 +117,7 @@ public member functions:
 | `channelType`         | 频道模式。<li>`ChannelType.ChannelTypeCommunication`：通信模式（默认），即常见的 1 对 1 单聊或群聊，频道内任何用户可以自由说话。 <li>`ChannelType.ChannelTypeLive`：直播模式，有两种用户角色，主播和观众，只有主播可以自由发言。 <p>**频道模式必须与 Agora Native/Web SDK 一致，否则可能导致问题。** |
 | `audioProfile`        | 设置音频采样率，码率，编码模式和声道数。<li>`AudioProfile.AudioProfileMusicStandard`：指定 48 KHz采样率，音乐编码, 单声道，编码码率约 48 Kbps（默认）。 <li>`AudioProfile.AudioProfileMusicHighQuality`：指定 48 KHz 采样率，音乐编码, 单声道，编码码率约 128 Kbps。<li>`AudioProfile.AudioProfileMusicHighQualityStereo`：指定 48 KHz 采样率，音乐编码, 双声道，编码码率约 192 Kbps。 |
 | `videoStreamType`     | 视频流类型。<li>`VideoStreamType.VideoStreamTypeHigh`：视频大流（默认），即高分辨率高码率的视频流。<li>`VideoStreamType.VideoStreamTypeLow`：视频小流，即低分辨率低码率的视频流。 |
-| `maxIdleTime`         | 最长空闲频道时间。默认值为 30 秒，如果频道内无用户的状态持续超过该时间，录制程序会自动退出。若设置为 0，则使用默认值。 |
+| `maxIdleTime`         | 最长空闲频道时间。默认值为 30 秒，该值需大于等于 5。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。 |
 | `transcodingConfig`   | 视频转码的详细设置，详见 <a href="#TranscodingConfig">TranscodingConfig</a>。 |
 
 <a name = "TranscodingConfig"></a>
@@ -142,7 +142,7 @@ public attributes:
 | `fps`              | 视频帧率，单位 fps，默认值为 15。                            |
 | `bitrate`          | 视频码率，单位 Kbps，默认值为 500。                          |
 | `maxResolutionUid` | 如果 `layout` 设为垂直布局，用该参数设置显示大流画面的用户 ID。 |
-| `layout`           | 视频合流布局。<li>`MixedVideoLayoutType.MixedVideoLayoutTypeFloat`：默认布局。第一个加入频道的用户在屏幕上方显示大流画面，其他用户的小流画面在下方水平排列，最多两行，一行 8 个画面，最多支持共 17 个录制画面。<p>![](https://web-cdn.agora.io/docs-files/1550656826359)<li>`MixedVideoLayoutType.MixedVideoLayoutTypeBestFit`：自适应布局。根据录制画面的数量自动调整每个画面的大小，每个画面大小一致，最多支持 17 个录制画面。<p>![](https://web-cdn.agora.io/docs-files/1547544528138)<li>`MixedVideoLayoutType.MixedVideoLayoutTypeVertical`：垂直布局。指定一个 uid 在屏幕左侧显示大流画面，其他用户的小流画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。<p>![](https://web-cdn.agora.io/docs-files/1547544539933) |
+| `layout`           | 视频合流布局，详见[设置合流布局](../../cn/cloud-recording/cloud_layout_guide.md)。<li>`MixedVideoLayoutType.MixedVideoLayoutTypeFloat`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个录制画面。</li><li>`MixedVideoLayoutType.MixedVideoLayoutTypeBestFit`：自适应布局。根据录制画面的数量自动调整每个画面的大小，每个画面大小一致，最多支持 17 个录制画面。</li><li>`MixedVideoLayoutType.MixedVideoLayoutTypeVertical`：垂直布局。指定一个 uid 在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。</li> |
 
 <a name = "resolution_table"></a>
 
