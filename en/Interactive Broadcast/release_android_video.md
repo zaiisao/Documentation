@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Jun 13 2019 02:37:40 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 02:37:45 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -120,6 +120,7 @@ v2.4.1 assigns default values to various parameters in the [BeautyOptions](https
 - Improved the accuracy of the network quality after users change the video bitrate.
 - Enabled the audio quality notification callback by default, that is, enabled the [onRemoteAudioStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54) callback without calling the `enableAudioVolumeIndication` method.
 - Improved the stability of video services.
+- Improved the stability of CDN streaming services.
 
 ### Issues fixed
 
