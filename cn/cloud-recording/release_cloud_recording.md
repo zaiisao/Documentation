@@ -3,7 +3,7 @@
 title: 云端录制发版说明
 description: 
 platform: Linux
-updatedAt: Thu Jun 13 2019 02:17:59 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 07:47:19 GMT+0800 (CST)
 ---
 # 云端录制发版说明
 ## 简介
@@ -18,6 +18,18 @@ Agora 云端录制与以下 Agora SDK 兼容:
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制 与 Agora Web SDK 1.12.0 或更高版本兼容。            |
+
+## 1.1 版
+
+该版本于 2019 年 6 月 13 日发布。
+
+该版本主要新增了对 RESTful API 的支持，无需集成 SDK，直接通过网络请求来控制云端录制。
+
+你可以参考下面的文档使用 RESTful API：
+
+- [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)：使用 RESTful API 进行录制
+- [云端录制 RESTful API](../../cn/cloud-recording/cloud_recording_api_rest.md)：RESTful API 参考
+- [云端录制 RESTful API 回调服务](../../cn/cloud-recording/cloud_recording_callback_rest.md)：开通回调服务接收云端录制事件通知
 
 ##  1.0.0 版
 
