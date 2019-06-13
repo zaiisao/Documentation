@@ -3,7 +3,7 @@
 title: 云端录制快速开始
 description: Draft
 platform: CPP
-updatedAt: Wed May 15 2019 10:12:18 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 09:08:15 GMT+0800 (CST)
 ---
 # 云端录制快速开始
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
