@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jun 12 2019 10:35:13 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 02:59:09 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -80,7 +80,7 @@ Windows 视频 SDK 支持两种主要场景:
 
 #### 7、获取播放伴奏音量
 
-为方便开发者获取伴奏的播放音量，排查音量相关问题，该版本新增 [getAudioMixingPlayoutVolume](../../API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html.md) 和 [getAudioMixingPublishVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9fafbaaf39578810ec9c11360fc7f027) 方法，用以分别获取音乐文件在本地和远端的播放音量。
+为方便开发者获取伴奏的播放音量，排查音量相关问题，该版本新增 [getAudioMixingPlayoutVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aed9dda5a7b2683776f41f6ba0e1f281c) 和 [getAudioMixingPublishVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9fafbaaf39578810ec9c11360fc7f027) 方法，用以分别获取音乐文件在本地和远端的播放音量。
 
 #### 8、精确回调远端音频首帧解码
 
@@ -124,7 +124,6 @@ Windows 视频 SDK 支持两种主要场景:
 
 - 修复了用户退出频道后仍然收到 `onNetworkQuality` 回调的问题
 - 修复了偶现的崩溃问题，提升了系统稳定性
-- 修复了个别手机上出现的调用 `joinChannel` 后 app 闪退的问题
 
 ### **API 变更**
 
@@ -140,7 +139,7 @@ Windows 视频 SDK 支持两种主要场景:
 - [getAudioMixingPublishVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9fafbaaf39578810ec9c11360fc7f027)
 - [onFirstRemoteAudioDecoded](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7d375e7467bd099ad2d4c9cfc0a6c242)
 - [onLocalVideoStateChanged](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6)
-- [onNetworkTypeChanged](../../cn/Interactive%20Broadcast/release_windows_video.md)
+- [onNetworkTypeChanged](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4)
 - [onRtmpStreamingStateChanged](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4)
 - [registerMediaMetadataObserver](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a84dbf06de1d769b63200d7ec0289cca0)
 - [IMetadataObserver](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_metadata_observer.html) 类
