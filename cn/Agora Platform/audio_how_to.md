@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Fri Jun 14 2019 01:41:51 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 01:56:58 GMT+0800 (CST)
 ---
 # 音频相关
 ### iOS 端集成 H5 游戏音量低
@@ -71,7 +71,7 @@ Agora 建议你选择如下一种方法解决该问题：
 
 **解决方案**：请参考以下逻辑部署代码：在用户进入频道前，先使用 Android 原生方法判断 Audio Recorder 的状态，当状态为 Available 时，如果用户加入频道 6 秒内连续收到警告码 WARN_ADM_RECORD_AUDIO_LOWLEVEL(1031)，或者错误码 ERR_ADM_RECORD_AUDIO_IS_ACTIVE(1033)，则判定录音设备已被占用。请提示用户关闭第三方录音应用。
 
-<a id="audioScenario"></a>
+<a id="audioscenario"></a>
 ### 音量无法调节至 0
 
 **背景信息**：通话音量无法调节至 0，媒体音量可以。因此需要区分系统音量走的是通话音量还是媒体音量
