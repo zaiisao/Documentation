@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Fri Jun 14 2019 06:28:31 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 06:28:37 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -19,7 +19,7 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 
 V2.4.1 is released on Jun 12th, 2019.
 
-This is the first release of the Agora Voice SDK for Windows. Refer to the following guides to quickly integrate the SDK and enable real-time voice and video communication in your project.
+This is the first release of the Agora Voice SDK for macOS. Refer to the following guides to quickly integrate the SDK and enable real-time voice and video communication in your project.
 
 - [Quick start](../../en/Voice/mac_video.md)
 - [Use security keys](../../en/Voice/token.md)
@@ -30,4 +30,4 @@ This is the first release of the Agora Voice SDK for Windows. Refer to the follo
 - [Push Streams to the CDN](../../en/Voice/push_stream_ios2.0_audio.md)
 - [Test or select a media device](../../en/Voice/switch_audio_device_mac.md)
 
-If you migrate to this SDK from the macOS Video SDK, refer to the [Release notes for Windows video SDK](../../en/Voice/release_mac_video.md) for audio improvements.
+If you migrate to this SDK from the macOS Video SDK, refer to the [Release notes for the macOS video SDK](../../en/Voice/release_mac_video.md) for audio improvements.
