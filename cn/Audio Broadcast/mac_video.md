@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Fri Jun 14 2019 06:10:42 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 06:10:48 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for macOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -76,7 +76,7 @@ updatedAt: Fri Jun 14 2019 06:10:42 GMT+0800 (CST)
 
 ### <a name = "man-add"></a>手动添加库
 
-1. 下载 [Agora Video SDK for macOS](https://docs.agora.io/cn/Agora%20Platform/downloads)，并解压。
+1. 下载 [Agora SDK for macOS](https://docs.agora.io/cn/Agora%20Platform/downloads)，并解压。
 2. 使用 Xcode 打开你想要运行的项目，然后选中当前 Target。
 
 	<img alt="../_images/mac_video_1.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_1.jpg" />
