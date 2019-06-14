@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed Jun 12 2019 10:49:54 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 01:23:17 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -33,4 +33,4 @@ macOS 语音 SDK 支持两种主要场景:
 - [推流到 CDN](../../cn/Audio%20Broadcast/push_stream_ios2.0_audio.md)
 - [音频设备测试与切换](../../cn/Audio%20Broadcast/switch_audio_device_mac.md)
 
-如果你是由之前版本的 Windows 完整包升级到当前的纯音频包，可参考 [macOS 完整包发版说明](../../cn/Audio%20Broadcast/release_mac_video.md)了解音频的相关改进。
+如果你是由之前版本的 macOS 完整包升级到当前的纯音频包，可参考 [macOS 完整包发版说明](../../cn/Audio%20Broadcast/release_mac_video.md)了解音频的相关改进。
