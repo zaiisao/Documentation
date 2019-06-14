@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Mon May 20 2019 08:57:07 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 09:24:23 GMT+0800 (CST)
 ---
 # Use Security Keys
 This page describes the token (Agora’s authentication mechanism). Before you start, check if your SDK version supports token:
