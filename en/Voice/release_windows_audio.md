@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Jun 14 2019 06:30:29 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 06:30:34 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -19,7 +19,7 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 
 V2.4.1 is released on Jun 12th, 2019.
 
-This is the first release of the Agora Voice SDK for Windows. Refer to the following guides to quickly integrate the SDK and enable real-time voice and video communication in your project.
+This is the first release of the Agora Voice SDK for Windows. Refer to the following guides to quickly integrate the SDK and enable real-time voice communication in your project.
 
 - [Quick start](../../en/Voice/windows_video.md)
 - [Use security keys](../../en/Voice/token.md)
