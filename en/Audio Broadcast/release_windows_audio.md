@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Jun 14 2019 09:27:51 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 09:28:07 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -14,6 +14,8 @@ The Voice SDK supports the following scenarios:
 - Live voice broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+
+The Windows Voice SDK supports the X86 and  X64 architecture.
 
 ## v2.4.1
 
