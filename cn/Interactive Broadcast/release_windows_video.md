@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Fri Jun 14 2019 09:29:45 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 09:29:51 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -17,6 +17,8 @@ Windows 视频 SDK 支持两种主要场景:
 -   音视频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及[视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
+
+Windows 视频 SDK 支持 X86 和 X64 架构。
 
 ## **2.4.1 版**
 
