@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Tue Jun 04 2019 09:24:58 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 05:45:20 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for macOS.
