@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Fri Jun 14 2019 01:52:22 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 01:56:44 GMT+0800 (CST)
 ---
 # Audio-related Issues
 ### My H5 game integrates the Agora SDK v2.2.0 for iOS. When the host uses WKWebview with Layabox and joins the channel, why is the game volume very low?
@@ -56,7 +56,7 @@ Before the user joins the channel, use the Android native methods to get the sta
 
 You can remind your user to quit the third-party recording app before using yours.
 
-<a id="audioScenario"></a>
+<a id="audioscenario"></a>
 ### Wht can't I set the volume to 0?
 
 When you set the volume of a device, you set either the in-call volume or the media volume.
