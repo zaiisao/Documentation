@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: All_Platforms
-updatedAt: Wed Jun 12 2019 06:21:51 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 08:49:05 GMT+0800 (CST)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora On-premise Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -291,6 +291,11 @@ Set the `Recording_Dir` parameter in the configuration file to customize the dir
 
 ### The recorded files
 
+The recorded file naming convention uses a UID and a timestamp (year, month, day, hour, minute, second, and millisecond). The timestamp is the time when the server starts recording, and the time zone is UTC+0. For example, **23_20190611073246073.aac** is a recorded audio file of the user with a UID of 23 whose recording starts at 07:32:46.073 on June 11, 2019 UTC time.
+
+> In the composite recording mode, the UID is 0.
+
+The recorded files in the individual recording mode:
 <table>
 <colgroup>
 <col/>
@@ -302,19 +307,19 @@ Set the `Recording_Dir` parameter in the configuration file to customize the dir
 </tr>
 </thead>
 <tbody>
-<tr><td>UID_HHMMSSMS.aac</td>
+<tr><td>UID_timestamp.aac</td>
 <td>If you record on the Agora Native SDK, PC, or the Web, each uid has an AAC file containing the voice content.</td>
 </tr>
-<tr><td>UID_HHMMSSMS.mp4</td>
+<tr><td>UID_timestamp.mp4</td>
 <td>If you record on the Agora Native SDK or PC, each uid has an MPEG-4 file. If the user joins and leaves the channel multiple times, this uid can have multiple MPEG-4 files containing the video content.</td>
 </tr>
-<tr><td>UID_HHMMSSMS.webm</td>
+<tr><td>UID_timestamp.webm</td>
 <td>If you record on the Web, each uid has a WebM file. If the user joins and leaves the channel multiple times, this uid can have multiple WebM files containing the video content.</td>
 </tr>
 <tr><td>recording2-done.txt</td>
 <td>This text file indicates that the recording in this channel has finished.</td>
 </tr>
-<tr><td>UID_HHMMSSMS.txt</td>
+<tr><td>UID_timestamp.txt</td>
 <td>This text file indicates the start and end time of each voice or video file and the related information, such as the video width and rotation.</td>
 </tr>
 </tbody>
