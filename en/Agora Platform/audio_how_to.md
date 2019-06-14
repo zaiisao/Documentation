@@ -3,7 +3,7 @@
 title: Audio-related Issues
 description: 
 platform: Audio-related Issues
-updatedAt: Mon May 20 2019 07:32:20 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 01:52:22 GMT+0800 (CST)
 ---
 # Audio-related Issues
 ### My H5 game integrates the Agora SDK v2.2.0 for iOS. When the host uses WKWebview with Layabox and joins the channel, why is the game volume very low?
@@ -55,3 +55,25 @@ Before the user joins the channel, use the Android native methods to get the sta
 -  The error code ERR_ADM_RECORD_AUDIO_IS_ACTIVE(1033).
 
 You can remind your user to quit the third-party recording app before using yours.
+
+<a id="audioScenario"></a>
+### Wht can't I set the volume to 0?
+
+When you set the volume of a device, you set either the in-call volume or the media volume.
+
+- In-call volume: During a audio or video call, you set the in-call volume.
+- Media volume: When you play background music, video or games, you set the media volume.
+
+The differences between the two are as follows:
+
+- In-call volume features acoustic echo cancelling, and should always be above 0.
+- Media volume features quality sound performance, and can be set 0.
+
+The SDK provides six audio scenarios with the `setAudioProfile` method: `CHATROOM_ENTERTAINMENT`, `EDUCATION`, `GAME_STREAMING`, `SHOWROOM`, `CHATROOM_GAMING` and `DEFAULT`.
+
+- If you set `scenario` to `GAME_STREAMING`, all users use the media volume.
+- If you set `scenario` to `EDUCATION`, `SHOWROOM` or `DEFAULT`, audience users in the Live-broadcast profile use the media volume, while host users in the Live-broadcast profile and all users in the Communication profile use the in-call volume.
+- If you set `scenario` to `CHATROOM_ENTERTAINMENT` and `CHATROOM_GAMING`, all users use the in-call volume.
+
+Given the system restrictions, the media volume can be set to 0, but the in-call volume cannot. If you want to adjust the volume to 0, ensure that you set an audio scenario where the system uses the media volume.
+
