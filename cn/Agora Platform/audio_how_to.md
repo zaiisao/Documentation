@@ -3,7 +3,7 @@
 title: 音频相关
 description: 
 platform: 音频相关
-updatedAt: Fri Jun 14 2019 01:41:37 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 01:41:51 GMT+0800 (CST)
 ---
 # 音频相关
 ### iOS 端集成 H5 游戏音量低
@@ -70,3 +70,26 @@ Agora 建议你选择如下一种方法解决该问题：
 **问题原因**：第三方录音应用占用音频设备
 
 **解决方案**：请参考以下逻辑部署代码：在用户进入频道前，先使用 Android 原生方法判断 Audio Recorder 的状态，当状态为 Available 时，如果用户加入频道 6 秒内连续收到警告码 WARN_ADM_RECORD_AUDIO_LOWLEVEL(1031)，或者错误码 ERR_ADM_RECORD_AUDIO_IS_ACTIVE(1033)，则判定录音设备已被占用。请提示用户关闭第三方录音应用。
+
+<a id="audioScenario"></a>
+### 音量无法调节至 0
+
+**背景信息**：通话音量无法调节至 0，媒体音量可以。因此需要区分系统音量走的是通话音量还是媒体音量
+
+**问题现象**：使用 SDK 后，音量无法调节至 0
+
+**问题原因**：由于系统限制，媒体音量可以调整到 0，而通话音量不可以。
+
+**解决方案**：
+
+一般而言，通话音量指的是进行语音、视频通话时的音量；媒体音量指的是播放音乐、视频或游戏的音效、背景音的音量。在实际使用中，两者的差异在于，通话音量有较好的回声消除，媒体音量有较好的声音表现力。
+
+系统音量走通话音量，是指当你在设备上调整音量时，调整的是通话音量。媒体音量同理。
+
+SDK 在 `setAudioProfile` 中提供 6 种不同的 Audio Scenario，包括：`DEFAULT`、`CHATROOM_ENTERTAINMENT`、`EDUCATION`、`GAME_STREAMING`、`SHOWROOM` 和 `CHATROOM_GAMING`。其中：
+
+- `GAME_STREAMING` 场景下，通信时使用媒体音量；直播时无论观众还是主播也都使用媒体音量
+- `DEFAULT`、`EDUCATION` 和 `SHOWROOM` 场景下，通信时使用通话音量；直播时观众使用媒体音量，连麦后使用通话音量
+- `CHATROOM_ENTERTAINMENT` 和 `CHATROOM_GAMING` 场景下，通信时使用通话音量；直播时无论观众还是主播也都使用通话音量
+
+由于系统限制，媒体音量可以调整到 0，而通话音量不可以。如果需要将音量调整到 0，建议尝试使用媒体音量控制的 Audio Scenario。
