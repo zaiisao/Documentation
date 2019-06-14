@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Fri Jun 14 2019 06:08:21 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 06:08:28 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for macOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -136,13 +136,13 @@ updatedAt: Fri Jun 14 2019 06:08:21 GMT+0800 (CST)
 
 ### <a name = "oc"></a>Objective-C
 
-在项目需要使用 Agora Video SDK API 的文件里，填入 `#import <AgoraAudioKit/AgoraRtcEngineKit.h>`。
+在项目需要使用 Agora Video SDK API 的文件里，填入 `#import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>`。
 
 > Agora Native SDK 默认使用 libc++ \(LLVM\)，如需使用 libstdc++ \(GNU\)，请联系 [sales@agora.io](mailto:sales@agora.io)。SDK 提供的库是 Fat Image，包含 32/64 位模拟器、32/64 位真机版本。
 
 ### <a name = "swift"></a>Swift
 
-在项目需要使用 Agora Video SDK API 的文件里，填入  `import AgoraAudioKit`。
+在项目需要使用 Agora Video SDK API 的文件里，填入  `import AgoraRtcEngineKit`。
 
 <img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/cn/mac_video_8.jpg" />
 
