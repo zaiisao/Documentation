@@ -57,7 +57,7 @@ Agora 音频互动直播提供丰富的功能，你可以根据自己的场景�
 | ---------- | ------------------------------------------------------------ |
 	| Android    | <p>4.1+</p><p>Android SDK 支持如下架构：</p><ul><li>ARMv7<li>ARM64<li>X86                                                         |
 | iOS        | 8.0+                                                         |
-| Windows    | XP SP3+                                                      |
+	| Windows    | <p>XP SP3+</p><p>Windiws SDK 支持如下架构：<p><ul><li>X86<li>x64                                                      |
 | macOS      | 10.0+                                                        |
 | 微信小程序 | 支持                                                         |
 | Web        | <li>Chrome 58+ <li>Chrome 49（仅 Windows XP）<li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |

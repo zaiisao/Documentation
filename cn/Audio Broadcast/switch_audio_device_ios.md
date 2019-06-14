@@ -2,7 +2,7 @@
 ---
 title: 音频设备测试与切换
 description: 音频设备测试与切换
-platform: iOS,macOS
+platform: macOS
 updatedAt: Tue Jun 11 2019 09:13:56 GMT+0800 (CST)
 ---
 # 音频设备测试与切换

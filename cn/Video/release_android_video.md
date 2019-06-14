@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 10:34:02 GMT+0800 (CST)
+updatedAt: Thu Jun 13 2019 02:38:14 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -136,6 +136,7 @@ Android 视频 SDK 支持两种主要场景:
 
 - 修复了用户退出频道后仍然收到 `onNetworkQuality` 回调的问题
 - 修复了偶现的崩溃问题，提升了系统稳定性
+- 修复了个别手机上出现的调用 `joinChannel` 后 App 闪退的问题
 
 ### **API 变更**
 
