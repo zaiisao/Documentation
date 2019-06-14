@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Jun 14 2019 06:29:41 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 06:29:47 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -30,4 +30,4 @@ This is the first release of the Agora Voice SDK for Windows. Refer to the follo
 - [Push Streams to the CDN](../../en/Voice/push_stream_windows2.0_audio.md)
 - [Test or select a media device](../../en/Voice/switch_audio_device_windows.md)
 
-If you migrate to this SDK from the Windows Video SDK, refer to the [Release notes for Windows video SDK](../../en/Voice/release_windows_video.md) for audio improvements.
+If you migrate to this SDK from the Windows Video SDK, refer to the [Release notes for the Windows video SDK](../../en/Voice/release_windows_video.md) for audio improvements.
