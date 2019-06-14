@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Fri Jun 14 2019 05:45:20 GMT+0800 (CST)
+updatedAt: Fri Jun 14 2019 05:45:26 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for macOS.
@@ -79,7 +79,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 ### <a name = "man-add"></a>Add the Libraries Manually
 
-1. Download the [Agora Video SDK for macOS](https://docs.agora.io/en/Agora%20Platform/downloads) and unzip the downloaded SDK package.
+1. Download the [Agora SDK for macOS](https://docs.agora.io/en/Agora%20Platform/downloads) and unzip the downloaded SDK package.
 
 2. Open your project with Xcode and select the current Target.
 
