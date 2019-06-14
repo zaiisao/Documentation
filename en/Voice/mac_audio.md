@@ -3,33 +3,26 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Tue Dec 11 2018 20:58:06 GMT+0000 (UTC)
+updatedAt: Fri Jun 14 2019 05:43:07 GMT+0800 (CST)
 ---
 # Integrate the SDK
-This page contains information on how to prepare the development environment before enabling a video call with the Agora SDK for macOS.
+This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for macOS.
 
 ## Prerequisites
 
-- Xcode 9.0+.
+Development environment:
+- Xcode 10.0+.
 - Physical OS X 10.0+.
 - Ensure that your project has a validated provisioning profile certificate.
-- Before accessing Agora’s services, ensure that you have opened the ports and whitelisted the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
+- Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
-> Use a physical device to run the sample. Simulators may lack the functionality or the performance needed to run the sample.
+> Use a physical device to run the sample. Emulators may lack the functionality or the performance needed to run the sample.
 
-## Create an Agora Account and Get an App ID
+## Create an Agora Project and Get an App ID
 
-1. Sign up for a developer account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
-
-2. Click **Add New Project** on the **Projects** page of  [Dashboard](https://dashboard.agora.io/).
-
-   <img alt="../_images/appid_1.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_1.jpg" />
-
-3. Fill in the **Project Name** and click **Submit**. You have created your first project at Agora.
-
-4. Find the **App ID** under the created project.
-
-   <img alt="../_images/appid_2.jpg" src="https://web-cdn.agora.io/docs-files/en/appid_2.jpg" />
+1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/) and follow the on-screen instructions to create a project.
+2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation panel.
+3. Find the corresponding **App ID** under the created project.
 
 ## Add the Agora SDK to Your Project
 
@@ -47,7 +40,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    ```
 
  > - Skip this step if you have preconfigured **CocoaPods** and **Homebrew** on your system.
- > - If Terminal says `-bash: brew: command not found`, install Homebrew before running the command. See [Homebrew Installation Method](http://brew.sh/index.html).
+ > - If you see `-bash: brew: command not found` in Terminal, install Homebrew before running the command. See [Homebrew Installation Method](http://brew.sh/index.html).
 
 1. Create a Podfile in your project. In the root directory of your project, run the following command in Terminal. This creates a Podfile in the same directory.
 
@@ -78,7 +71,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    pod install
    ```
 
-   If Terminal says `Pod installation complete!`, you have successfully added the libraries. Click to open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
+   If you see `Pod installation complete!` in Terminal, you have successfully added the libraries. Click to open the `YourApp.xcworkspace` file, or run the following command to open it. Fill **“YourApp”** with the name of your Target.
 
    ```
    open YourApp.xcworkspace
@@ -86,7 +79,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 ### <a name = "man-add"></a>Add the Libraries Manually
 
-1. Download the [Agora Video SDK for macOS](https://docs.agora.io/en/Agora%20Platform/downloads) and unzip the downloaded SDK package.
+1. Download the [Agora Voice SDK for macOS](https://docs.agora.io/en/Agora%20Platform/downloads) and unzip the downloaded SDK package.
 
 2. Open your project with Xcode and select the current Target.
 
@@ -98,6 +91,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
 
 4. Expand the **Link Binary with Libraries** section to add the following libraries. To begin adding the new libraries, click the **+** button.
 
+   - `AgoraAudioKit.framework`
    - `libresolv.tbd`
    - `libc++.1.dylib`
    - `Accelerate.framework`
@@ -107,36 +101,17 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    - `CoreAudio.framework`
    - `CoreMedia.framework`
    - `AVFoudation.framework`
-   - `VideoToolbox.framework`
    - `AudioToolbox.framework`
-   - `AgoraRtcEngineKit.framework`
+   - `CFNetwork.framework`
+   - `CoreGraphics.framework`
 
-   **Before:**
-
-   <img alt="../_images/mac_video_3.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_3.jpg" />
-
-   **After:**
-
-   <img alt="../_images/mac_video_4.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_4.jpg" />
-
-   `AgoraRtcEngineKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraRtcEngineKit.framework`.
-
-   <img alt="../_images/mac_video_5.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_5.jpg" />
+   `AgoraAudioKit.framework` is in the **libs** folder of the downloaded SDK. Click **+** \> **Add Other…**, go to the downloaded SDK, and add `AgoraAudioKit.framework`.
 
 ## Authorize the Use of the Agora SDK
 
 Before enabling a video call, you need to enable camera and microphone access to the SDK on your device. Open `info.plist` and click **+** to add:
 
 - **Privacy - Microphone Usage Description**, and add a note in the **Value** column.
-- **Privacy - Camera Usage Description**, and add a note in the **Value** column.
-
-**Before:**
-
-<img alt="../_images/mac_video_6.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_6.jpg" />
-
-**After:**
-
-<img alt="../_images/mac_video_7.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_7.jpg" />
 
 ## Access the Library
 
@@ -144,18 +119,18 @@ You can access the added library using [Objective-C](#oc) or [Swift](#swift).
 
 ### <a name = "oc"></a>Objective-C
 
-In the main file that uses the Agora APIs, add `#import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>`.
+In the main file that uses the Agora APIs, add `#import <AgoraAudioKit/AgoraRtcEngineKit.h>`.
 
 > The SDK provides FAT image libraries with multi-architecture support for both 32/64-bit audio emulators and 32/64-bit audio/video real devices.
 
 ### <a name = "swift"></a>Swift
 
-In the main file that uses the Agora APIs, add `import AgoraRtcEngineKit`.
-
-<img alt="../_images/mac_video_8.jpg" src="https://web-cdn.agora.io/docs-files/en/mac_video_8.jpg" />
+In the main file that uses the Agora APIs, add `import AgoraAudioKit`.
 
 ## Next Steps
-You have now set up the macOS environment and can start a call/live broadcast with the following steps:
-* Initialize the SDK
-* Join a Channel
-* Publish and Subscrbe to Streams
+
+You have set up the macOS environment and can start a call/live broadcast following the steps under **Quickstart Guide**:
+
+- Initialize the SDK
+- Join a Channel
+- Publish and Subscribe to Streams
