@@ -3,7 +3,7 @@
 title: 云端录制 C++ API
 description: 
 platform: CPP
-updatedAt: Mon Jun 17 2019 03:21:59 GMT+0800 (CST)
+updatedAt: Mon Jun 17 2019 03:22:57 GMT+0800 (CST)
 ---
 # 云端录制 C++ API
 | **接口类**                                                   | **描述**                   |
@@ -76,7 +76,7 @@ virtual int StartCloudRecording(
 | `appId`            | 待录制频道的 App ID，详见<a href="../../cn/cloud-recording/token.md">获取 App ID</a>。 |
 | `channel_name`     | 待录制频道的频道名。                                         |
 | `token`            | 待录制的频道中使用的 token，详见<a href="../../cn/cloud-recording/token.md">校验用户权限</a>。 |
-| `uid`              | 录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，需保证唯一性。 |
+| `uid`              | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。 |
 | `recording_config` | 录制的详细设置，详见 <a href="#RecordingConfig">RecordingConfig</a>。 |
 | `storage_config`   | 第三方云存储的详细设置，详见下表 <a href="#CloudStorageConfig">CloudStorageConfig</a>。 |
 
