@@ -3,7 +3,7 @@
 title: 云端录制 Java API
 description: For java
 platform: Java
-updatedAt: Mon Jun 17 2019 03:22:52 GMT+0800 (CST)
+updatedAt: Mon Jun 17 2019 04:13:01 GMT+0800 (CST)
 ---
 # 云端录制 Java API
 | **接口类**                                                   | **描述**                   |
@@ -142,7 +142,7 @@ public attributes:
 | `fps`              | 视频帧率，单位 fps，默认值为 15。                            |
 | `bitrate`          | 视频码率，单位 Kbps，默认值为 500。                          |
 | `maxResolutionUid` | 如果 `layout` 设为垂直布局，用该参数设置显示大流画面的用户 ID。 |
-| `layout`           | 视频合流布局，详见[设置合流布局](../../cn/cloud-recording/cloud_layout_guide.md)。<li>`MixedVideoLayoutType.MixedVideoLayoutTypeFloat`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个录制画面。</li><li>`MixedVideoLayoutType.MixedVideoLayoutTypeBestFit`：自适应布局。根据录制画面的数量自动调整每个画面的大小，每个画面大小一致，最多支持 17 个录制画面。</li><li>`MixedVideoLayoutType.MixedVideoLayoutTypeVertical`：垂直布局。指定一个 uid 在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。</li> |
+| `layout`           | 视频合流布局，详见[设置合流布局](../../cn/cloud-recording/cloud_layout_guide.md)。<li>`MixedVideoLayoutType.MixedVideoLayoutTypeFloat`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个录制画面。</li><li>`MixedVideoLayoutType.MixedVideoLayoutTypeBestFit`：自适应布局。根据用户的数量自动调整每个画面的大小，每个用户的画面大小一致，最多支持 17 个录制画面。</li><li>`MixedVideoLayoutType.MixedVideoLayoutTypeVertical`：垂直布局。指定一个用户在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。</li> |
 
 <a name = "resolution_table"></a>
 
