@@ -3,7 +3,7 @@
 title: Demo 使用指南
 description: 
 platform: CPP
-updatedAt: Mon Jun 17 2019 01:59:35 GMT+0800 (CST)
+updatedAt: Mon Jun 17 2019 03:30:04 GMT+0800 (CST)
 ---
 # Demo 使用指南
 本文介绍如何通过命令行运行 C++ demo 进行录制。 你也可以通过调用 API 实现录制，详见[调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart.md)。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
@@ -62,7 +62,7 @@ Usage:
 $ ./cloud_recording_demo.bin --appId <你的app ID> --channelName <频道名> --uid <录制uid> --vendor 0 --region 0 --bucket <云空间名称> --accessKey <accesskey> --secretKey <secretKey> --channelType <0 通信模式，1 直播模式>
 ```
 
->  - `uid` 不可以设为 0。
+> - `uid` 不可以设为 0。
 > - `appId`，`uid`，`channelName` ，`vendor`， `region`，`bucket`，`accessKey` 和 `secretKey` 这几个参数必须设置，若不设置则无法录制，其他参数可根据需要自行选择是否设置，若不设置则使用默认值。
 > - 如果 Agora Native/Web SDK 使用了 Token，必须设置 `token` 参数。
 > - 当云端录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道模式。
