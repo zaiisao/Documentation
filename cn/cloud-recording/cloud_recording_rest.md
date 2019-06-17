@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Jun 17 2019 06:55:22 GMT+0800 (CST)
+updatedAt: Mon Jun 17 2019 06:59:48 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -33,22 +33,6 @@ Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网�
 
 - 联系 [sales@agora.io](mailto:sales@agora.io) 开通云端录制服务。
 - 开通第三方云存储服务，目前支持七牛云、阿里云（推荐）和 Amazon S3。
-
-## 认证
-
-云端录制 RESTful API 仅支持 HTTPS 协议。发送请求时，你需要提供 `api_key:api_secret` 通过 Basic HTTP 认证：
-
-- `api_key`: Customer ID
-- `api_secret`: Customer Certificate
-
-你可以在 Dashboard 的 [RESTful API](https://dashboard.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。
-
-## 数据格式
-
-所有的请求都发送给域名：`api.agora.io`。
-
-- 请求：请求的格式详见 [云端录制 RESTful API](../../cn/cloud-recording/cloud_recording_api_rest.md) 中的示例
-- 响应：响应内容的格式为 JSON
 
 ## 调用步骤
 
