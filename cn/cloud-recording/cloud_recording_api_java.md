@@ -3,7 +3,7 @@
 title: 云端录制 Java API
 description: For java
 platform: Java
-updatedAt: Thu Jun 13 2019 07:16:09 GMT+0800 (CST)
+updatedAt: Mon Jun 17 2019 03:22:44 GMT+0800 (CST)
 ---
 # 云端录制 Java API
 | **接口类**                                                   | **描述**                   |
