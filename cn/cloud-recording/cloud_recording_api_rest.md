@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Jun 17 2019 06:46:12 GMT+0800 (CST)
+updatedAt: Mon Jun 17 2019 06:46:16 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -184,8 +184,8 @@ Body:
     - `18`：EU_East_1
   
   - `bucket`：String 类型，第三方云存储的 bucket。
-  - `access_key`：String 类型，第三方云存储的 access key。
-  - `secret_key`：String 类型，第三方云存储的 secret key。
+  - `accessKey`：String 类型，第三方云存储的 access key。
+  - `secretKey`：String 类型，第三方云存储的 secret key。
 
 ### HTTP 请求示例
 
