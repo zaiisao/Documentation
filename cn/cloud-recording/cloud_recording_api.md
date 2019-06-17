@@ -3,7 +3,7 @@
 title: 云端录制 C++ API
 description: 
 platform: CPP
-updatedAt: Thu Jun 13 2019 07:15:19 GMT+0800 (CST)
+updatedAt: Mon Jun 17 2019 03:21:59 GMT+0800 (CST)
 ---
 # 云端录制 C++ API
 | **接口类**                                                   | **描述**                   |
