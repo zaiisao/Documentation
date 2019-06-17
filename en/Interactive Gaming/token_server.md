@@ -2,7 +2,7 @@
 ---
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
-platform: All Platforms
+platform: Server
 updatedAt: Mon Jun 10 2019 09:49:03 GMT+0800 (CST)
 ---
 # Generate a Token
