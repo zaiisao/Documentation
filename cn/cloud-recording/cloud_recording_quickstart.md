@@ -3,7 +3,7 @@
 title: 云端录制快速开始
 description: Draft
 platform: CPP
-updatedAt: Mon Jun 17 2019 03:24:50 GMT+0800 (CST)
+updatedAt: Mon Jun 17 2019 03:25:24 GMT+0800 (CST)
 ---
 # 云端录制快速开始
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
@@ -73,11 +73,12 @@ virtual int StartCloudRecording(
 - `appId`：待录制频道的 App ID，必填。
 - `channel_name`：待录制频道的频道名，必填。
 - `token`：待录制的频道中使用的 token，选填。详见[校验用户权限](../../cn/cloud-recording/token.md)。
-- `uid`：录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，需保证唯一性，必填。
+- `uid`：云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。
 - `recording_config`：配置录制参数，选填，如不填则使用默认配置。详见[`RecordingConfig`](../../cn/cloud-recording/cloud_recording_api.md)。
 - `storage_config`：配置第三方云存储，必填。详见 [`CloudStorageConfig`](../../cn/cloud-recording/cloud_recording_api.md)。
 
-> App ID，频道名，token 的设置必须与待录制频道的 Agora Native/Web SDK 设置完全一致。
+> - App ID 和频道名的设置必须与待录制频道的 Agora Native/Web SDK 设置完全一致。
+> - 如果待录制频道使用了 Token，`token` 参数必须设置。
 
 调用 [`StartCloudRecording`](../../cn/cloud-recording/cloud_recording_api.md) 方法后，监测到频道内有用户即开始录制，并触发 [`OnRecordingStarted`](../../cn/cloud-recording/cloud_recording_api.md) 回调，通知应用程序成功开始录制。
 
