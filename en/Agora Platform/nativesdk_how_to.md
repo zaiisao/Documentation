@@ -3,12 +3,16 @@
 title: Native SDK-related Issues
 description: 
 platform: Native SDK-related Issues
-updatedAt: Tue Jun 18 2019 10:17:03 GMT+0800 (CST)
+updatedAt: Tue Jun 18 2019 10:17:09 GMT+0800 (CST)
 ---
 # Native SDK-related Issues
 ## RESTful API authentication
 
 Before using the Agora RESTful API, you need to fill in the `Authorization` parameter in the HTTP request header for authentication. Refer to the following code samples to get the `Authorization` parameter.
+
+You need to fill in the **Customer ID** and **Customer Certificate** in the code.  Login https://dashboard.agora.io, click the account name on the top right of the dashboard, and enter the **RESTful API** page from the drop-down list to get the **Customer ID** and **Customer Certificate**.
+
+> The Customer ID and Customer Certificate are used for RESTful API access only.
 
 ```java
 // Java
