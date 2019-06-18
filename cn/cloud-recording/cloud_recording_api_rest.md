@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Jun 18 2019 10:16:39 GMT+0800 (CST)
+updatedAt: Tue Jun 18 2019 10:16:48 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -15,7 +15,7 @@ updatedAt: Tue Jun 18 2019 10:16:39 GMT+0800 (CST)
 - `api_key`: Customer ID
 - `api_secret`: Customer Certificate
 
-你可以在 Dashboard 的 [RESTful API](https://dashboard.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。
+你可以在 Dashboard 的 [RESTful API](https://dashboard.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
 
 ## 数据格式
 
@@ -59,7 +59,7 @@ updatedAt: Tue Jun 18 2019 10:16:39 GMT+0800 (CST)
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 [Basic authorization](#auth)
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
 - 请求包体内容：
 
  ```json
@@ -209,7 +209,7 @@ updatedAt: Tue Jun 18 2019 10:16:39 GMT+0800 (CST)
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/mode/mix/start`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 [Basic authorization](#auth)
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
 - 请求包体内容：
 
  ```json
@@ -282,7 +282,7 @@ updatedAt: Tue Jun 18 2019 10:16:39 GMT+0800 (CST)
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/query`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 [Basic authorization](#auth)
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
 
 ### 响应示例
 
@@ -343,7 +343,7 @@ updatedAt: Tue Jun 18 2019 10:16:39 GMT+0800 (CST)
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/stop`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 [Basic authorization](#auth)
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
 - 请求包体为一个空的 JSON，不可省略。
 
 ### 响应示例
@@ -384,3 +384,22 @@ updatedAt: Tue Jun 18 2019 10:16:39 GMT+0800 (CST)
 | 404    | 服务器无法根据请求找到资源（网页）。         |
 | 500    | 服务器内部错误，无法完成请求。 |
 | 504    | 充当网关或代理的服务器未及时从远端服务器获取请求。      |
+
+## 常见错误
+
+下面仅列出使用云端录制 RESTful API 过程中常见的错误码或错误信息，如果遇到其他错误，请联系 Agora 技术支持。
+
+- `2`：参数不合法，请确保参数类型正确、大小写正确、必填的参数均已填写。
+- `433`：resource ID 过期。获得 resource ID 后必须在 5 分钟内开始云端录制。请重新调用 [acquire](#acquire) 获取新的 resource ID。
+- `1001`：resource ID 解密失败。请重新调用 [acquire](#acquire) 获取新的 resource ID。
+- `1003`：App ID 或者录制 ID（sid）与 resource ID 不匹配。请确保在一个录制周期内 resource ID、App ID 和录制 ID 一一对应。
+- `1004`：录制已经在进行中，请勿重复 [start](#start) 请求。
+- `1005`：resource ID 已被使用。一个 resource ID 只能用于一次云端录制。
+- `1013`：频道名不合法。频道名必须为长度在 64 字节以内的字符串。以下为支持的字符集范围（共 89 个字符）：
+  - 26 个小写英文字母 a-z
+  - 26 个大写英文字母 A-Z
+  - 10 个数字 0-9
+  - 空格
+  - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
+
+- `"invalid appid"`：无效的 App ID。请确保 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) 填写正确。如果检查了 App ID 没有问题仍遇到此错误，请联系 Agora 技术支持。
