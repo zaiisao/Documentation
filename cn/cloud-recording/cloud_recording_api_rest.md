@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Jun 18 2019 04:21:15 GMT+0800 (CST)
+updatedAt: Tue Jun 18 2019 04:21:19 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -24,6 +24,7 @@ updatedAt: Tue Jun 18 2019 04:21:15 GMT+0800 (CST)
 - 请求：请求的格式详见下面各个 API 中的示例
 - 响应：响应内容的格式为 JSON
 
+> 所有的请求 URL 和请求包体内容都是区分大小写的。
 
 ## <a name="acquire"></a>获取云端录制资源的 API
 
