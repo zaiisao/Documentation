@@ -3,9 +3,95 @@
 title: Native SDK 相关
 description: 
 platform: Native SDK 相关
-updatedAt: Tue Jun 18 2019 09:48:03 GMT+0800 (CST)
+updatedAt: Tue Jun 18 2019 09:48:19 GMT+0800 (CST)
 ---
 # Native SDK 相关
+## RESTful API  认证
+
+在使用 RESTful API 前，你需要在 HTTP 请求头部中填入 Authorization 字段，进行认证。本文提供 Java 和 Swift 语言生成 Authorization 字段的示例代码。
+
+```java
+// Java
+package com.credithc.rc.kg.utils;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import org.apache.commons.codec.binary.Base64;
+
+import java.io.*;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class GetAPIResultUtil {
+
+    /**
+     *
+     * @param url
+     * @param param
+     * @return
+     */
+    public static String getAPIResult(String url, String param) {
+        PrintWriter out = null;
+        BufferedReader in = null;
+        String result = "";
+        try {
+            URL realUrl = new URL(url);
+            URLConnection conn = realUrl.openConnection();
+            //conn.setConnectTimeout(5000);
+			// 填入你获取到的 Customer ID 和 Customer Certificate
+            String plainCredentials = "customerId: customerCertificate";
+            String base64Credentials = new String(Base64.encodeBase64(plainCredentials.getBytes()));
+            conn.setRequestProperty("Authorization", "Basic " + base64Credentials);
+            conn.setRequestProperty("accept", "*/*");
+            conn.setRequestProperty("Content-type", "application/json");
+            conn.setRequestProperty("connection", "Keep-Alive");
+            conn.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
+            conn.setDoOutput(true);
+            conn.setDoInput(true);
+            out = new PrintWriter(conn.getOutputStream());
+            out.print(param);
+            out.flush();
+            in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line;
+            while ((line = in.readLine()) != null) {
+                result += line;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                out.close();
+                in.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+        return result;
+    }
+}
+
+```
+
+```swift
+// Swift
+let username = "customerId"
+let password = "customerCertificate"
+let loginString = String(format: "%@:%@", username, password)
+let loginData = loginString.data(using: String.Encoding.utf8)!
+let base64LoginString = loginData.base64EncodedString()
+
+// create the request
+let url = URL(string: "http://www.example.com/")!
+var request = URLRequest(url: url)
+request.httpMethod = "POST"
+request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+
+// fire off the request
+// make sure your class conforms to NSURLConnectionDelegate
+let urlConnection = NSURLConnection(request: request, delegate: self)
+```
+
 ## 踢人API
 
 ### 功能介绍
