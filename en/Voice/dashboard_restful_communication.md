@@ -3,23 +3,22 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue Jun 18 2019 10:24:29 GMT+0800 (CST)
+updatedAt: Tue Jun 18 2019 10:24:38 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
-## 1. Authorization
+## 1. Authentication
 
 > Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Dashboard. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Voice/dashboard.md).
 
-The RESTful API only supports HTTPS, and the user must pass the basic HTTP authentication with the following information:
+The RESTful API only supports HTTPS, and the user must pass the `Authorization` parameter in the Basic HTTP request header for authentication. You need to pass the Customer ID and Customer Cerficate in the code.
 
--   **User Name**: Customer ID
--   **Password**: Customer Certificate
+Login https://dashboard.agora.io, click the account name on the top right of the dashboard, and enter the Restful API page from the drop-down list to get the Customer ID and Customer Certificate. 
+
+> Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and Customer Certificate are only used for RESTful API access.
 
 
-Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and Customer Certificate are only used for RESTful API access.
+For how to generate the `Authorization` parameter, see [RESTful API authentication](https://docs.agora.io/en/Agora%20Platform/nativesdk_how_to#restful-api-authentication).
 
-> You can login [https://dashboard.agora.io](https://dashboard.agora.io), click the account name on the top right of the dashboard, and enter the **Restful API** page from the drop-down list to get the **Customer ID** and **Customer Certificate**.
-> Currently, the Vendor Key and Sign Key are renamed to the App ID and App Certificate respectively on the Dashboard, but *vendor\_key* and *sign\_key* are still used in the code.
 
 ## 2. EndPoint
 
