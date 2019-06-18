@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: General Questions
-updatedAt: Tue Jun 18 2019 10:29:33 GMT+0800 (CST)
+updatedAt: Tue Jun 18 2019 10:29:39 GMT+0800 (CST)
 ---
 # FAQ
 ## General Questions
@@ -29,6 +29,8 @@ This category contains questions and answers for integrating and using Agora SDK
 [Recording](../../en/Agora%20Platform/recording_how_to.md)
 
 [Web SDK](../../en/Agora%20Platform/websdk_how_to.md)
+
+[Native SDK](../../en/Agora%20Platform/nativesdk_how_to.md)
 
 [SDK Behavior when a User Drops Offline or a Process Gets Kill](../../en/Agora%20Platform/sdk_behaviors.md)
 
