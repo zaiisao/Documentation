@@ -3,7 +3,7 @@
 title: 设置合流布局
 description: 
 platform: Linux
-updatedAt: Tue Jun 11 2019 07:43:09 GMT+0800 (CST)
+updatedAt: Tue Jun 18 2019 02:19:39 GMT+0800 (CST)
 ---
 # 设置合流布局
 Agora 云端录制服务提供三种预设的视频布局：
@@ -41,23 +41,23 @@ Agora 云端录制服务提供三种预设的视频布局：
 
 #### 1 人
 
-![img](https://confluence.agora.io/download/thumbnails/321323097/image2019-5-16_15-10-7.png?version=1&modificationDate=1557990615369&api=v2)
+![](https://web-cdn.agora.io/docs-files/1560823829265)
 
 #### 2 - 5 人
 
-![img](https://confluence.agora.io/download/thumbnails/321323097/image2019-5-16_15-10-37.png?version=1&modificationDate=1557990645667&api=v2)
+![](https://web-cdn.agora.io/docs-files/1560823855095)
 
 #### 6 - 9 人
 
-![img](https://confluence.agora.io/download/thumbnails/321323097/image2019-5-16_15-11-1.png?version=1&modificationDate=1557990670140&api=v2)
+![](https://web-cdn.agora.io/docs-files/1560823875104)
 
 #### 10 - 13 人
 
-![img](https://confluence.agora.io/download/thumbnails/321323097/image2019-5-16_15-11-22.png?version=1&modificationDate=1557990690258&api=v2)
+![](https://web-cdn.agora.io/docs-files/1560823889282)
 
 #### 14 - 17 人
 
-![img](https://confluence.agora.io/download/thumbnails/321323097/image2019-5-16_15-8-44.png?version=1&modificationDate=1557990532458&api=v2)
+![](https://web-cdn.agora.io/docs-files/1560823910236)
 
 ### <a name="bestfit"></a>自适应布局
 
@@ -75,17 +75,17 @@ Agora 云端录制服务提供三种预设的视频布局：
 
 ![](https://web-cdn.agora.io/docs-files/1558063212804)
 
-![img](https://confluence.agora.io/download/thumbnails/321323097/image2018-3-2_15-13-11.png?version=1&modificationDate=1519974797896&api=v2)
+![](https://web-cdn.agora.io/docs-files/1560824305413)
 
 ![](https://web-cdn.agora.io/docs-files/1558063229612)
 
 #### 5 - 9 人
 
-![img](https://confluence.agora.io/download/thumbnails/321323097/image2018-3-2_15-17-58.png?version=1&modificationDate=1519975084235&api=v2)
+![](https://web-cdn.agora.io/docs-files/1560824329767)
 
 #### 10 - 16 人
 
-![img](https://confluence.agora.io/download/thumbnails/321323097/image2018-3-2_15-22-34.png?version=1&modificationDate=1519975360819&api=v2)
+![](https://web-cdn.agora.io/docs-files/1560824340228)
 
 #### 17 人
 
@@ -93,8 +93,7 @@ Agora 云端录制服务提供三种预设的视频布局：
 
 每个用户画面的宽和高分别为总宽度和总高度的 0.2，前四行每行四个用户，画布左右边距均为总宽度的 0.1。第五行居中显示第 17 个用户画面。
 
-
-![img](https://confluence.agora.io/download/thumbnails/321323097/image2018-3-2_16-56-35.png?version=1&modificationDate=1519981001505&api=v2)
+![](https://web-cdn.agora.io/docs-files/1560824353055)
 
 ### <a name="vertical"></a>垂直布局
 
