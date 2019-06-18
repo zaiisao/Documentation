@@ -3,12 +3,12 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Jun 18 2019 02:49:39 GMT+0800 (CST)
+updatedAt: Tue Jun 18 2019 02:54:30 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
 
-## 认证
+## <a name="auth"></a>认证
 
 云端录制 RESTful API 仅支持 HTTPS 协议。发送请求时，你需要提供 `api_key:api_secret` 通过 Basic HTTP 认证并填入 HTTP 请求头部的 `Authorization` 字段：
 
@@ -51,17 +51,17 @@ updatedAt: Tue Jun 18 2019 02:49:39 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
 ### HTTP 请求示例
 
-```http
-POST /v1/apps/<yourappid>/cloud_recording/acquire
-Host: api.agora.io
-Content-type: application/json;charset=utf-8
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
-Body:
+- 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire`
+- `Content-type` 为 `application/json;charset=utf-8`
+- `Authorization` 为 [Basic authorization](#auth)
+- 请求包体内容：
+
+ ```json
 {
     "cname": "httpClient463224",
     "uid": "527841",
@@ -72,7 +72,7 @@ Body:
 
 ### 响应示例
 
-```http
+```json
 {
 "Code": 200,
 "Body":
@@ -109,7 +109,7 @@ Body:
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该请求请参考下面的列表设置。         |
 
 `clientRequest` 中需要填写的内容如下：
@@ -206,12 +206,12 @@ Body:
 
 ### HTTP 请求示例
 
-```http
-POST /v1/apps/<yourappid>/cloud_recording/resourceid/JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG/mode/mix/start
-Host: api.agora.io
-Content-type: application/json;charset=utf-8
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
-Body:
+- 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/mode/mix/start`
+- `Content-type` 为 `application/json;charset=utf-8`
+- `Authorization` 为 [Basic authorization](#auth)
+- 请求包体内容：
+
+ ```json
 {
     "uid": "527841",
     "cname": "httpClient463224",
@@ -244,7 +244,7 @@ Body:
 
 ### 响应示例
 
-```http
+```json
 {
 "Code": 200,
 "Body":
@@ -279,16 +279,13 @@ Body:
 
 ### HTTP 请求示例
 
-```http
-GET /v1/apps/<yourappid>/cloud_recording/resourceid/JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG/sid/38f8e3cfdc474cd56fc1ceba380d7e1a/mode/mix/query
-Host: api.agora.io
-Content-type: application/json;charset=utf-8
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
-```
+- 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/query`
+- `Content-type` 为 `application/json;charset=utf-8`
+- `Authorization` 为 [Basic authorization](#auth)
 
 ### 响应示例
 
-```http
+```json
 {
 "Code": 200,
 "Body":
@@ -343,16 +340,14 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 
 ### HTTP 请求示例
 
-```http
-POST /v1/apps/<yourappid>/cloud_recording/resourceid/JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG/sid/38f8e3cfdc474cd56fc1ceba380d7e1a/mode/mix/stop
-Host: api.agora.io
-Content-type: application/json;charset=utf-8
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
-```
+- 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/stop`
+- `Content-type` 为 `application/json;charset=utf-8`
+- `Authorization` 为 [Basic authorization](#auth)
+- 请求包体为一个空的 JSON，不可省略。
 
 ### 响应示例
 
-```http
+```json
 {
 "Code": 200,
 "Body":
