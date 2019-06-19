@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jun 19 2019 07:34:35 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 07:34:40 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -55,10 +55,10 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 #### 2、优化屏幕共享
 
-为确保屏幕共享画面完整性，保持共享屏幕的宽高比，避免画面裁剪和拉伸，该版本对屏幕共享的编码策略进行了优化。当共享屏幕的分辨率宽高比与你在 [ScreenCaptureParameters](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html) 中设置的 [dimensions](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#a9ee8c96bbfe031e8c614d7b2e49ddbb8) 的宽高比不一致时，Agora 按如下策略进行编码。假设 `dimensions` 值为 1920 x 1080，即 2073600 像素：
+为确保屏幕共享画面完整性，保持共享屏幕的宽高比，避免画面裁剪和拉伸，该版本对屏幕共享的编码策略进行了优化。新版本下 Agora 按如下策略进行编码。假设 `dimensions` 值为 1920 x 1080，即 2073600 像素：
 
 - 如果屏幕分辨率小于 `dimensions`，如 1000 x 1000，SDK 直接按 1000 x 1000 进行编码
-- 如果屏幕分辨率大于 `dimensions`，如 2000 x 1500，SDK 按屏幕分辨率的宽高比 4：3，取 `dimensions` 以内的最大分辨率，即 1440 x 1080， 进行编码
+- 如果屏幕分辨率大于 `dimensions`，如 2000 x 2000，SDK 将保持屏幕分辨率的宽高比 1：1，取 `dimensions` 以内的最大分辨率，即 1440 x 1440， 进行编码
 
 屏幕共享按用户在 [ScreenCaptureParameters](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html) 类下设置的 [dimensions](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html#a9ee8c96bbfe031e8c614d7b2e49ddbb8) 值进行计费。如果用户没有设置 `dimensions` 的值，SDK 会按 1920 x 1080 计费。
 
