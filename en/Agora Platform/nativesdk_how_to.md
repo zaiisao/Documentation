@@ -3,7 +3,7 @@
 title: Native SDK-related Issues
 description: 
 platform: Native SDK-related Issues
-updatedAt: Wed Jun 19 2019 10:37:32 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 10:37:35 GMT+0800 (CST)
 ---
 # Native SDK-related Issues
 ## RESTful API authentication
@@ -17,7 +17,7 @@ You need to fill in the **Customer ID** and **Customer Certificate** in the code
 ```java
 // Java
 // Fill in your Customer ID and Customer Certificate.
-String plainCredentials = "customerId: customerCertificate";
+String plainCredentials = "customerId:customerCertificate";
 // The base64Credentials here is the Authotization parameter you want.
 String base64Credentials = new String(Base64.encodeBase64(plainCredentials.getBytes()));
 ```
