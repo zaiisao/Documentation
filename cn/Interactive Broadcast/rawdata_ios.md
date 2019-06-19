@@ -3,7 +3,7 @@
 title: 修改音视频原始数据
 description: 
 platform: iOS,macOS
-updatedAt: Mon Jun 10 2019 09:17:57 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 05:49:54 GMT+0800 (CST)
 ---
 # 修改音视频原始数据
 Agora 原始数据接口是 SDK 库提供的高级功能，便于你（开发者）获取媒体引擎的原始语音或视频数据。开发者可以修改语音或视频数据，创建特效来更好地满足自己应用程序的特殊需求。
