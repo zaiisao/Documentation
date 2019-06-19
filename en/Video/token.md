@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Wed Jun 19 2019 02:53:43 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 02:53:48 GMT+0800 (CST)
 ---
 # Use Security Keys
 Agora knows that security is a vital consideration when you integrate real time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
@@ -91,6 +91,41 @@ The process of generating a token is as follows:
 
 1.  The client sends a request for a token to your server.
 2.  The server uses the token generator you deploy to create a token and sends it back to the client.
+
+The application client needs to send the following parameters to the server to generate a token:
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr><th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+	<tr><td><code>appID</code> <sup>[1]</sup></td>
+<td>The App ID of the user’s project in the Agora Dashboard.</td>
+</tr>
+	<tr><td><code>appCertificate</code></td>
+<td>The App Certificate of the user’s project in the Agora Dashboard.</td>
+</tr>
+<tr><td><code>channelName</code></td>
+<td>Name of the channel that the user wants to join.</td>
+</tr>
+<tr><td><code>uid</code></td>
+<td>ID of the user who wants to join a channel.</td>
+</tr>
+<tr><td><code>expireTimestamp</code> <sup>[2]</sup></a></td>
+<td>The privilege expiration time. The default value is 0, where the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
+</tr>
+</tbody>
+</table>
+
+>[1] Agora does not support signing Token with a non-zero string uid for the time being.
+>[2] `expireTimestamp` is represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set `expireTimestamp` as the current timestamp + 600 \(seconds\). The expiration time for each token is independent, and you can set it through the `setPrivilege` method.
+
 
 For the methods and parameters involved, see [Generat a Token on Your Server](../../en/null/token_server.md).
 
