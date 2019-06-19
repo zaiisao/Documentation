@@ -3,7 +3,7 @@
 title: 修改音视频原始数据
 description: 
 platform: Windows
-updatedAt: Wed Jun 19 2019 05:50:57 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 05:51:27 GMT+0800 (CST)
 ---
 # 修改音视频原始数据
 Agora 原始数据接口是 SDK 库提供的高级功能，便于你（开发者）获取媒体引擎的原始语音或视频数据。开发者可以修改语音或视频数据，创建特效来更好地满足自己应用程序的特殊需求。
@@ -21,22 +21,22 @@ Agora 原始数据接口是一个 C++ 接口。
 class AgoraAudioFrameObserver : public agora::media::IAudioFrameObserver
 {
   public:
-	// 10 秒自动回调：获取录制的声音
+	// 10 毫秒自动回调：获取录制的声音
     virtual bool onRecordAudioFrame(AudioFrame& audioFrame) override
     {
       return true;
     }
-	// 10 秒自动回调：获取播放的声音
+	// 10 毫秒自动回调：获取播放的声音
     virtual bool onPlaybackAudioFrame(AudioFrame& audioFrame) override
     {
       return true;
      }
-	// 10 秒自动回调：获取混音前的指定用户的声音
+	// 10 毫秒自动回调：获取混音前的指定用户的声音
     virtual bool onPlaybackAudioFrameBeforeMixing(unsigned int uid, AudioFrame& audioFrame) override
      {
       return true;
      }
-	// 10 秒自动回调：获取录制和播放语音混音后的数据
+	// 10 毫秒自动回调：获取录制和播放语音混音后的数据
     virtual bool onMixedAudioFrame(AudioFrame& audioFrame) override
      {
      return true;
