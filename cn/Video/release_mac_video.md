@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed Jun 19 2019 07:33:17 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 07:33:21 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -57,10 +57,10 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 
 #### 2、优化屏幕共享
 
-为确保屏幕共享画面完整性，保持共享屏幕的宽高比，避免画面裁剪和拉伸，该版本对屏幕共享的编码策略进行了优化。当共享屏幕的分辨率宽高比与你在 [AgoraScreenCaptureParameters](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html) 中设置的 [dimensions](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html#//api/name/dimensions) 的宽高比不一致时，Agora 按如下策略进行编码。假设 `dimensions` 值为 1920 x 1080，即 2073600 像素：
+为确保屏幕共享画面完整性，保持共享屏幕的宽高比，避免画面裁剪和拉伸，该版本对屏幕共享的编码策略进行了优化。该版本下 Agora 按如下策略进行编码。假设 `dimensions` 值为 1920 x 1080，即 2073600 像素：
 
 - 如果屏幕分辨率小于 `dimensions`，如 1000 x 1000，SDK 直接按 1000 x 1000 进行编码
-- 如果屏幕分辨率大于 `dimensions`，如 2000 x 1500，SDK 按屏幕分辨率的宽高比 4：3，取 `dimensions` 以内的最大分辨率，即 1440 x 1080， 进行编码
+- 如果屏幕分辨率大于 `dimensions`，如 2000 x 2000，SDK 将保持屏幕分辨率的宽高比 1：1，取 `dimensions` 以内的最大分辨率，即 1440 x 1440， 进行编码
 
 屏幕共享按用户在 [AgoraScreenCaptureParameters](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html) 类下设置的 [dimensions](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html#//api/name/dimensions) 值进行计费。如果用户没有设置 `dimensions` 的值，SDK 会按 1920 x 1080 计费。
 
