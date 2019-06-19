@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Wed Jun 19 2019 02:55:32 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 02:55:36 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -106,6 +106,12 @@ Agora 提供支持 C++、Go、Java、Node.js、Python 和 PHP 语言生成 Token
 </tr>
 </thead>
 <tbody>
+<tr><td><code>appId</code></td>
+<td>你的项目的 App ID</td>
+</tr>
+<tr><td><code>appCertificate</code></td>
+<td>你的项目的 App Certificate</td>
+</tr>
 <tr><td><code>channelName</code></td>
 <td>用户申请进入的频道名</td>
 </tr>
