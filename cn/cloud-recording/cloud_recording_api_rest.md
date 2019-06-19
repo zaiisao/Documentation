@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Jun 19 2019 02:13:35 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 02:16:43 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -339,12 +339,28 @@ updatedAt: Wed Jun 19 2019 02:13:35 GMT+0800 (CST)
 | `sid`        | String | 通过 [`start`](#start) 请求获取的录制 ID。                   |
 | `mode`       | String | 录制模式，目前只支持合流模式 `mix`。                         |
 
+该 API 需要在请求包体中传入以下参数。
+
+| 参数            | 类型   | 描述                                                         |
+| :-------------- | :----- | :----------------------------------------------------------- |
+| `cname`         | String | 待录制的频道名。                                             |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。 |
+| `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
+
 ### HTTP 请求示例
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/stop`
 - `Content-type` 为 `application/json;charset=utf-8`
 - `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
-- 请求包体为一个空的 JSON，不可省略。
+- 请求包体内容：
+ ```json
+{
+    "cname": "httpClient463224",
+    "uid": "527841",  
+    "clientRequest":{
+    }
+}
+```
 
 ### 响应示例
 
