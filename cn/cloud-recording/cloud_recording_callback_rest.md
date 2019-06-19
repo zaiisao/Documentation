@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Wed Jun 19 2019 02:20:48 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 02:20:53 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 云端录制 RESTful API 提供回调服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -22,7 +22,7 @@ updatedAt: Wed Jun 19 2019 02:20:48 GMT+0800 (CST)
 
 通知消息以 HTTP/HTTPS POST 请求发送给你的服务器，请求包体为 JSON 格式。
 
-POST 请求中 `ContentType` 为 `application/json`。
+POST 请求头部的 `Content-type` 为 `application/json`。
 
 ### 响应格式
 
