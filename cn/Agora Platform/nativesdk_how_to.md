@@ -3,7 +3,7 @@
 title: Native SDK 相关
 description: 
 platform: Native SDK 相关
-updatedAt: Tue Jun 18 2019 10:14:17 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 10:37:48 GMT+0800 (CST)
 ---
 # Native SDK 相关
 ## RESTful API  认证
@@ -17,7 +17,7 @@ updatedAt: Tue Jun 18 2019 10:14:17 GMT+0800 (CST)
 ```java
 // Java
 // 填入你获取到的 Customer ID 和 Customer Certificate
-String plainCredentials = "customerId: customerCertificate";
+String plainCredentials = "customerId:customerCertificate";
 // 这里的 base64Credentials 就是你要的 Authorization 值
 String base64Credentials = new String(Base64.encodeBase64(plainCredentials.getBytes()));
 ```
