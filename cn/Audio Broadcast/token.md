@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Wed Jun 19 2019 02:51:26 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 02:51:31 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -92,6 +92,37 @@ Agora 提供支持 C++、Go、Java、Node.js、Python 和 PHP 语言生成 Token
 
 1. App 客户端向服务端发送获取 Token 的请求
 2. 服务端收到请求后 Token Generator 生成一个 Token，然后将生成的 Token 发送给 App 客户端
+
+生成 Token 时需要向 Server 端传入以下参数：
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr><th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr><td><code>channelName</code></td>
+<td>用户申请进入的频道名</td>
+</tr>
+<tr><td><code>uid</code> <sup>[1]</sup></td>
+<td>申请加入频道的用户 ID</td>
+</tr>
+<tr><td><code>expireTimestamp</code>  <sup>[2]</sup></td>
+<td>Token 服务有效时间，默认为 0，表示 Token 一旦生成，永不失效。有效时间内用户可以无限次加入频道，超过有效时间用户将被踢出频道。</td>
+</tr>
+</tbody>
+</table>
+
+
+
+> [1] 声网目前暂不支持用非 0 的 string 型 uid 生成 token。
+> [2] `expireTimestamp` 指 1970 年 1 月 1 日开始到 Token 服务到期的秒数。如果想设置 10 分钟的服务有效时间，则输入当前时间戳 + 600（秒）即可。每个服务的有效时间是独立的，可以通过 `setPrivilege` 接口进行单独设置。
+
 
 具体生成方法和参数设置，请参考[在服务端生成 Token](../../cn/null/token_server.md)。
 
