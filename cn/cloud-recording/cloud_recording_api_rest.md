@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Jun 19 2019 04:00:34 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -406,6 +406,10 @@ updatedAt: Wed Jun 19 2019 04:00:34 GMT+0800 (CST)
 下面仅列出使用云端录制 RESTful API 过程中常见的错误码或错误信息，如果遇到其他错误，请联系 Agora 技术支持。
 
 - `2`：参数不合法，请确保参数类型正确、大小写正确、必填的参数均已填写。
+- `8`：HTTP 请求头部字段错误，有以下几种情况：
+	- `Content-type` 错误，请确保 `Content-type` 为 `application/json;charset=utf-8`。
+	- 请求 URL 中缺少 `cloud_recording` 字段。
+	- 使用了错误的 HTTP 方法。
 - `433`：resource ID 过期。获得 resource ID 后必须在 5 分钟内开始云端录制。请重新调用 [acquire](#acquire) 获取新的 resource ID。
 - `1001`：resource ID 解密失败。请重新调用 [acquire](#acquire) 获取新的 resource ID。
 - `1003`：App ID 或者录制 ID（sid）与 resource ID 不匹配。请确保在一个录制周期内 resource ID、App ID 和录制 ID 一一对应。
