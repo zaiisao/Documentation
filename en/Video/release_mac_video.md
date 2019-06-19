@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Jun 19 2019 07:38:34 GMT+0800 (CST)
+updatedAt: Wed Jun 19 2019 07:38:42 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -56,12 +56,12 @@ In live broadcast scenarios, the host can send shopping links, digital coupons, 
 
 #### 2. Optimized screen sharing
 
-To avoid image cropping and distortion in screen sharing, v2.4.1 optimizes the encoding algorithms. If the aspect ratios are different between the encoding [dimensions](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html#//api/name/dimensions) that you set in the [AgoraScreenCaptureParameters](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html) class and the original screen dimensions, Agora applies the following encoding algorithms:
+To avoid image cropping and distortion in screen sharing, v2.4.1 optimizes the encoding algorithms. In this release Agora applies the following encoding algorithms:
 
 Suppose the value of **dimensions** is 1920 x 1080 pixels, that is, 2073600 pixels:
 
 - If the value of the screen `dimensions` is lower than that of the encoding dimensions, for example, 1000 x 1000 pixels, the SDK uses 1000 x 1000 pixels for encoding.
-- If the value of the screen `dimensions` is higher than that of the encoding dimensions, for example, 2000 x 1500 pixels, the SDK uses the maximum value under 1920 x 1080 pixels with the aspect ratio of the screen dimension (4:3) for encoding, that is, 1440 x 1080 pixels.
+- If the value of the screen `dimensions` is higher than that of the encoding dimensions, for example, 2000 x 2000 pixels, the SDK uses the maximum value under 1920 x 1080 pixels with the aspect ratio of the screen dimension (1:1) for encoding, that is, 1440 x 1440 pixels.
 
 Agora uses the [dimensions](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html#//api/name/dimensions) value in the  [AgoraScreenCaptureParameters](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html)  class to calculate the charges. If you do not set the value of **dimensions**, the SDK uses the default value of 1920 x 1080 to calculate the charges.
 
