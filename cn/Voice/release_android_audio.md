@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Jun 12 2019 10:33:21 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 04:20:48 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -134,9 +134,9 @@ Android 语音 SDK 支持两种主要场景:
 #### 废弃
 
 - `enableAudioQualityIndication`
-- 警告码 `WARN_LOOKUP_CHANNEL_REJECTED(105)`
-- 错误码 `ERR_TOKEN_EXPIRED(109)`
-- 错误码 `ERR_INVALID_TOKEN(110)`
+- 警告码 `WARN_LOOKUP_CHANNEL_REJECTED(105)`，请改用 [onConnectionStateChanged](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) 回调中的 CONNECTION_CHANGED_REJECTED_BY_SERVER(10)
+- 错误码 `ERR_TOKEN_EXPIRED(109)`，请改用 [onConnectionStateChanged](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) 回调中的 CONNECTION_CHANGED_TOKEN_EXPIRED(9)
+- 错误码 `ERR_INVALID_TOKEN(110)`，请改用 [onConnectionStateChanged](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) 回调中的 CONNECTION_CHANGED_INVALID_TOKEN(8)
 
 
 ## **2.4.0 版**
