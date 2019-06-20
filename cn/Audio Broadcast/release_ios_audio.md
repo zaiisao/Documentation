@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Wed Jun 12 2019 10:33:41 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 05:23:31 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -115,12 +115,10 @@ iOS 语音 SDK 支持两种主要场景:
 #### 废弃
 
 - `enableAudioQualityIndication`
-- `rtcEngineCameraDidReady`
-- `rtcEngineVideoDidStop`
-- 警告码 `AgoraWarningCodeLookupChannelRejected(105)`
-- 错误码 `AgoraErrorCodeTokenExpired(109)`
-- 错误码 `AgoraErrorCodeInvalidToken(110)`
-- 错误码 `AgoraErrorCodeStartCamera(1003)`
+- 警告码 `AgoraWarningCodeLookupChannelRejected(105)`，请改用 [connectionChangedToState](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调中的 AgoraConnectionChangedRejectedByServer(10)
+- 错误码 `AgoraErrorCodeTokenExpired(109)`，请改用 [connectionChangedToState](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调中的 AgoraConnectionChangedTokenExpired(9)
+- 错误码 `AgoraErrorCodeInvalidToken(110)`，请改用 [connectionChangedToState](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调中的 AgoraConnectionChangedInvalidToken(8)
+
 
 ## **2.4.0 版**
 
