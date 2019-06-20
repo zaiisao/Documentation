@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed Jun 19 2019 07:33:21 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 05:24:18 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -68,7 +68,7 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 
 #### 3、本地视频状态回调
 
-为方便开发者了解本地视频状态，该版本新增 [rtcEngineLocalVideoStateChange](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineLocalVideoStateChange:localVideoState:error:) 回调。该回调下，本地视频有 `Stopped`、`Capturing`、`Encoding` 和 `Failed` 四种状态。当本地视频状态为 `Failed` 时，用户可以参考该回调 `error` 参数返回的错误码进行问题排查。该回调能帮助开发者辨别本地视频故障是由采集还是编码引起的。原有的 `rtcEngineCameraDidReady` 和 `rtcEngineVideoDidStop` 回调在该版本废弃，我们不再推荐。
+为方便开发者了解本地视频状态，该版本新增 [localVideoStateChange](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:) 回调。该回调下，本地视频有 `Stopped`、`Capturing`、`Encoding` 和 `Failed` 四种状态。当本地视频状态为 `Failed` 时，用户可以参考该回调 `error` 参数返回的错误码进行问题排查。该回调能帮助开发者辨别本地视频故障是由采集还是编码引起的。原有的 `rtcEngineCameraDidReady` 和 `rtcEngineVideoDidStop` 回调在该版本废弃，我们不再推荐。
 
 #### 4、推流状态回调
 
@@ -134,7 +134,7 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 - [getAudioMixingPlayoutVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingPlayoutVolume)
 - [getAudioMixingPublishVolume](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingPublishVolume)
 - [firstRemoteAudioDecodedOfUid](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteAudioFrameDecodedOfUid:elapsed:)
-- [rtcEngineLocalVideoStateChange](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineLocalVideoStateChange:localVideoState:error:)
+- [localVideoStateChange](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:)
 - [networkTypeChangedToType](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkTypeChangedToType:)
 - [rtmpStreamingChangedToStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 - [setMediaMetadataSource](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setMediaMetadataDataSource:withType:) 
@@ -150,12 +150,12 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 #### 废弃
 
 - `enableAudioQualityIndication`
-- `rtcEngineCameraDidReady`
-- `rtcEngineVideoDidStop`
-- 警告码 `AgoraWarningCodeLookupChannelRejected(105)`
-- 错误码 `AgoraErrorCodeTokenExpired(109)`
-- 错误码 `AgoraErrorCodeInvalidToken(110)`
-- 错误码 `AgoraErrorCodeStartCamera(1003)`
+- `rtcEngineCameraDidReady`，请改用 [localVideoStateChange](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:) 回调中的 AgoraLocalVideoStreamStateCapturing(1)
+- `rtcEngineVideoDidStop`，请改用 [localVideoStateChange](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:) 回调中的 AgoraLocalVideoStreamStateStopped(0)
+- 警告码 `AgoraWarningCodeLookupChannelRejected(105)`，请改用 [connectionChangedToState](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调中的 AgoraConnectionChangedRejectedByServer(10)
+- 错误码 `AgoraErrorCodeTokenExpired(109)`，请改用 [connectionChangedToState](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调中的 AgoraConnectionChangedTokenExpired(9)
+- 错误码 `AgoraErrorCodeInvalidToken(110)`，请改用 [connectionChangedToState](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调中的 AgoraConnectionChangedInvalidToken(8)
+- 错误码 `AgoraErrorCodeStartCamera(1003)`，请改用 [localVideoStateChange](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:) 回调中的 AgoraLocalVideoStreamErrorCaptureFailure(4)
 
 ## **2.4.0 版**
 
