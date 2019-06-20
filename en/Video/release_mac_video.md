@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Jun 19 2019 07:38:42 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 05:33:36 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -69,7 +69,7 @@ You can also choose whether or not to capture the mouse cursor when sharing the 
 
 #### 3. State of the local video
 
-v2.4.1 adds the [rtcEngineLocalVideoStateChange](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineLocalVideoStateChange:localVideoState:error:) callback to indicate the local video state. In this callback, the SDK returns the `Stopped`,` Capturing`, `Encoding`, or `Failed` state. When the state is `Failed`, you can use the error code for troubleshooting. This callback indicates whether or not the interruption is caused by capturing or encoding. This release deprecates the `rtcEngineCameraDidReady` and `rtcEngineVideoDidStop` callbacks.
+v2.4.1 adds the [localVideoStateChange](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:) callback to indicate the local video state. In this callback, the SDK returns the `Stopped`,` Capturing`, `Encoding`, or `Failed` state. When the state is `Failed`, you can use the error code for troubleshooting. This callback indicates whether or not the interruption is caused by capturing or encoding. This release deprecates the `rtcEngineCameraDidReady` and `rtcEngineVideoDidStop` callbacks.
 
 #### 4. State of the RTMP streaming
 
@@ -142,7 +142,7 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 - [getAudioMixingPlayoutVolume](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingPlayoutVolume)
 - [getAudioMixingPublishVolume](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingPublishVolume)
 - [firstRemoteAudioDecodedOfUid](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteAudioFrameDecodedOfUid:elapsed:)
-- [rtcEngineLocalVideoStateChange](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineLocalVideoStateChange:localVideoState:error:)
+- [localVideoStateChange](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:)
 - [networkTypeChangedToType](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkTypeChangedToType:)
 - [rtmpStreamingChangedToStats](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 - [setMediaMetadataSource](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setMediaMetadataDataSource:withType:) 
@@ -158,12 +158,12 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 #### Deprecated
 
 - `enableAudioQualityIndication`
-- `rtcEngineCameradidReady`
-- `rtcEngineVideoDidStop`
-- The `AgoraWarningCodeLookupChannelRejected(105)` warning code
-- The `AgoraErrorCodeTokenExpired(109)` error code
-- The `AgoraErrorCodeInvalidToken(110)` error code
-- The `AgoraErrorCodeStartCamera(1003)` error code
+- `rtcEngineCameraDidReady`. Use  AgoraLocalVideoStreamStateCapturing(1) in the [localVideoStateChange](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:) callback instead.
+- `rtcEngineVideoDidStop`. Use AgoraLocalVideoStreamStateStopped(0) in the [localVideoStateChange](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:) callback instead.
+- The `AgoraWarningCodeLookupChannelRejected(105)` warning code. Use AgoraConnectionChangedRejectedByServer(10) in the [connectionChangedToState](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback instead.
+- The `AgoraErrorCodeTokenExpired(109)` error code. Use AgoraConnectionChangedTokenExpired(9) in the [connectionChangedToState](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback instead.
+- The `AgoraErrorCodeInvalidToken(110)` error code. Use  AgoraConnectionChangedInvalidToken(8) in the [connectionChangedToState](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback instead.
+- The `AgoraErrorCodeStartCamera(1003)` error code. Use AgoraLocalVideoStreamErrorCaptureFailure(4) in the [localVideoStateChange](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:) callback instead.
 
 ## v2.4.0
 
