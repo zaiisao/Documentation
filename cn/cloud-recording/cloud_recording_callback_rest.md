@@ -3,10 +3,10 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Thu Jun 20 2019 02:22:46 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 08:49:32 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
-云端录制 RESTful API 提供回调服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
+云端录制 RESTful API 提供回调服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
 
 ## 开通回调服务
 
@@ -26,14 +26,14 @@ POST 请求头部的 `Content-type` 为 `application/json`。
 
 ### 响应格式
 
-你的服务器接收到事件通知后，需要通过响应告知 Agora 服务器，响应内容格式为 `application/json`。
+你的服务器接收到事件通知后，需要通过响应告知 Agora 消息通知服务器，响应内容格式为 `application/json`。
 
 以下情况 Agora 服务器会认为通知发送失败：
 
 - 超过 20 秒未响应
 - 响应的 HTTP 状态码不为 200
 
-通知发送失败后 Agora 服务器会立即重新发送，最多尝试发送 5 次。
+通知发送失败后 Agora 消息通知服务器会立即重新发送，最多尝试发送 5 次。
 
 ## 公共的回调信息
 
@@ -41,14 +41,14 @@ POST 请求头部的 `Content-type` 为 `application/json`。
 
 - `notificationId`：String 类型，通知 ID，是通知的唯一标识。
 - `eventType`：Number 类型，事件类型，详见[回调事件](#event)。
-- `eventMs`：Number 类型，Agora 云端录制触发事件的时间（Unix 时间戳），单位 ms。
-- `notifyMs`：Number 类型，Agora 服务器通知你的服务器的时间（Unix 时间戳），单位 ms，重新发送通知时该字段会更新。
+- `eventMs`：Number 类型，云端录制服务将事件消息发送给 Agora 消息通知服务器的时间（Unix 时间戳），单位 ms。
+- `notifyMs`：Number 类型，Agora 消息通知服务器发出 HTTP/HTTPS 请求的时间（Unix 时间戳），单位 ms，重新发送请求时该字段会更新。
 - `payload`：JSON 类型，事件具体内容。每种类型的事件通知中 `payload` 都会包含以下字段：
   - `cname`：String 类型，录制的频道名称。
   - `uid`：String 类型，录制使用的 UID。
   - `sid`：String 类型，录制 ID，一次云端录制的唯一标识。
   - `sequence`：Number 类型，消息序列号，从 0 开始计数。消息可能乱序到达或者丢失重发，可以通过该参数标识消息。
-  - `sendts`：Number 类型， Agora 服务器开始发送消息的时间 （UTC 时间）。
+  - `sendts`：Number 类型， 事件发生的时间 （UTC 时间）。
   - `serviceType`：Number 类型，Agora 回调服务的类型，0 代表云端录制。
   - `noticeLevel`：Number 类型，消息级别，数字越大代表需要关注的程度越高。
     - `1`：debug 级别
