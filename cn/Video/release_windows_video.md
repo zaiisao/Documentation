@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jun 19 2019 07:34:40 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 04:23:16 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -154,13 +154,13 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 #### 废弃
 
 - `enableAudioQualityIndication`
-- `onCameraReady`
-- `onVideoStopped`
-- 警告码 `WARN_LOOKUP_CHANNEL_REJECTED(105)`
-- 错误码 `ERR_TOKEN_EXPIRED(109)`
-- 错误码 `ERR_INVALID_TOKEN(110)`
-- 错误码 `ERR_START_CAMERA(1003)`
-- 错误码 `ERR_VDM_WIM_DEVICE_IN_USE(1502)`
+- `onCameraReady`，请改用[onLocalVideoStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6) 回调中的 LOCAL_VIDEO_STREAM_STATE_CAPTURING(1)
+- `onVideoStopped`，请改用 [onLocalVideoStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6) 回调中的 LOCAL_VIDEO_STREAM_STATE_STOPPED(0)
+- 警告码 `WARN_LOOKUP_CHANNEL_REJECTED(105)`，请改用 [onConnectionStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) 回调中的 CONNECTION_CHANGED_REJECTED_BY_SERVER(10)
+- 错误码 `ERR_TOKEN_EXPIRED(109)`，请改用 [onConnectionStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) 回调中的 CONNECTION_CHANGED_TOKEN_EXPIRED(9)
+- 错误码 `ERR_INVALID_TOKEN(110)`，请改用 [onConnectionStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) 回调中的 CONNECTION_CHANGED_INVALID_TOKEN(8)
+- 错误码 `ERR_START_CAMERA(1003)`，请改用 [onLocalVideoStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6) 回调中的 LOCAL_VIDEO_STREAM_ERROR_CAPTURE_FAILURE(4)
+- 错误码 `ERR_VDM_WIM_DEVICE_IN_USE(1502)`，请改用 [onConnectionStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) 回调中的 LOCAL_VIDEO_STREAM_ERROR_DEVICE_BUSY(3)
 
 
 ## 2.4.0 版
