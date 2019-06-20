@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Jun 13 2019 02:37:45 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 05:28:04 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -166,12 +166,12 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 #### Deprecated
 
 - `enableAudioQualityIndication`
-- `onCameraReady`
-- `onVideoStopped`
-- The `WARN_LOOKUP_CHANNEL_REJECTED(105)` warning code
-- The `ERR_TOKEN_EXPIRED(109)` error code
-- The `ERR_INVALID_TOKEN(110)` error code
-- The `ERR_START_CAMERA(1003)` error code
+- `onCameraReady`. Use LOCAL_VIDEO_STREAM_STATE_CAPTURING(1) in the [onLocalVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aface271c0606ab99bb08a0d00267306c) callback instead.
+- `onVideoStopped`. Use in LOCAL_VIDEO_STREAM_STATE_STOPPED(0) the [onLocalVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aface271c0606ab99bb08a0d00267306c)  callback instead.
+- The `WARN_LOOKUP_CHANNEL_REJECTED(105)` warning code. Use CONNECTION_CHANGED_REJECTED_BY_SERVER(10) in the [onConnectionStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) callback instead.
+- The `ERR_TOKEN_EXPIRED(109)` error code. Use CONNECTION_CHANGED_TOKEN_EXPIRED(9) in the [onConnectionStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) callback instead.
+- The `ERR_INVALID_TOKEN(110)` error code. Use CONNECTION_CHANGED_INVALID_TOKEN(8) in the [onConnectionStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) callback instead.
+- The `ERR_START_CAMERA(1003)` error code. Use LOCAL_VIDEO_STREAM_ERROR_CAPTURE_FAILURE(4) in the [onLocalVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aface271c0606ab99bb08a0d00267306c)  callback instead.
 
 
 ## v2.4.0
