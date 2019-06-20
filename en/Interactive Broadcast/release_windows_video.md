@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed Jun 19 2019 07:36:24 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 05:36:23 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -162,13 +162,13 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 #### Deprecated
 
 - `enableAudioQualityIndication`
-- `onCameraReady`
-- `onVideoStopped`
-- The `WARN_LOOKUP_CHANNEL_REJECTED(105)` warning code
-- The `ERR_TOKEN_EXPIRED(109)` error code
-- The `ERR_INVALID_TOKEN(110)` error code
-- The `ERR_START_CAMERA(1003)` error code
-- The `ERR_VDM_WIM_DEVICE_IN_USE(1502)` error code
+- `onCameraReady`. Use LOCAL_VIDEO_STREAM_STATE_CAPTURING(1) in the [onLocalVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6) callback instead.
+- `onVideoStopped`. Use LOCAL_VIDEO_STREAM_STATE_STOPPED(0) in the [onLocalVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6) callback instead.
+- The `WARN_LOOKUP_CHANNEL_REJECTED(105)` warning code. Use CONNECTION_CHANGED_REJECTED_BY_SERVER(10) in the [onConnectionStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) callback instead.
+- The `ERR_TOKEN_EXPIRED(109)` error code. Use CONNECTION_CHANGED_TOKEN_EXPIRED(9) in the [onConnectionStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) callback instead.
+- The `ERR_INVALID_TOKEN(110)` error code. Use CONNECTION_CHANGED_INVALID_TOKEN(8) in the [onConnectionStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) callback instead.
+- The `ERR_START_CAMERA(1003)` error code. Use LOCAL_VIDEO_STREAM_ERROR_CAPTURE_FAILURE(4) in the [onLocalVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6) callback instead.
+- The `ERR_VDM_WIM_DEVICE_IN_USE(1502)` error code. Use LOCAL_VIDEO_STREAM_ERROR_DEVICE_BUSY(3) in the  in the [onLocalVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a5a8bfdc3a7c4ba054f90365ed00781d6) callback instead.
 
 ## v2.4.0
 
