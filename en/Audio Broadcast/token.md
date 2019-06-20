@@ -3,10 +3,10 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Thu Jun 20 2019 02:37:14 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 02:37:24 GMT+0800 (CST)
 ---
 # Use Security Keys
-Agora knows that security is a vital consideration when you integrate real time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
+We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
 
 * For low security requirements, use an App ID for authentication.
 * For high security requirements, use a dynamic key for authentication (recommended).
@@ -118,7 +118,7 @@ The application client needs to send the following parameters to the server to g
 <td>ID of the user who wants to join a channel.</td>
 </tr>
 <tr><td><code>expireTimestamp</code> <sup>[1]</sup></a></td>
-<td>The privilege expiration time. The default value is 0, where the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
+<td>The privilege expiration time. The default value is 0 and by default the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
 </tr>
 </tbody>
 </table>
@@ -126,7 +126,7 @@ The application client needs to send the following parameters to the server to g
 >[1] `expireTimestamp` is represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set `expireTimestamp` as the current timestamp + 600 \(seconds\). The expiration time for each token is independent, and you can set it through the `setPrivilege` method.
 
 
-For the methods and parameters involved, see [Generat a Token on Your Server](../../en/null/token_server.md).
+For the methods and parameters involved, see [Generate a Token on Your Server](../../en/null/token_server.md).
 
 ### Apply your token or temporary token
 
