@@ -3,7 +3,7 @@
 title: Pricing and Billing
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 04 2019 03:55:45 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 05:51:06 GMT+0800 (CST)
 ---
 # Pricing and Billing
 This page describes how to calculate Agora's real-time communications and recording charges. For live broadcast and billing questions, contact sales-us@agora.io.
@@ -34,6 +34,8 @@ The service is free of charge if the monthly voice and video usage is less than 
     <td><li>If voice minutes + video minutes (≤ 720p) &gt; 10,000 minutes, deduct the remaining minutes from ≤ 720p video.</li><li>If voice minutes + video minutes (≤ 720p) &lt; 10,000 minutes, deduct the remaining minutes from &gt; 720p video.</li></td>
   </tr>
 </table>
+
+> The free of charge policy for the first 10,000 minutes applies to the Native SDK, Web SDK, Recording SDK and Cloud Recording services.
 
 ## Frequently Asked Questions
 
