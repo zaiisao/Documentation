@@ -3,7 +3,7 @@
 title: 计费
 description: 
 platform: All Platforms
-updatedAt: Thu Jun 20 2019 05:48:44 GMT+0800 (CST)
+updatedAt: Thu Jun 20 2019 05:48:53 GMT+0800 (CST)
 ---
 # 计费
 本页提供声网 Agora 实时音视频通话产品及服务相关的计费说明，以及常见问题和回答。关于直播、游戏等收费，请联系 sales@agora.io。
@@ -35,6 +35,7 @@ updatedAt: Thu Jun 20 2019 05:48:44 GMT+0800 (CST)
   </tr>
 </table>
 
+> 前一万分钟不收取任何费用适用于 Agora Native SDK、Agora Web SDK、小程序 SDK、录制 SDK 和 云端录制服务。
 
 
 ## 语音通话计费说明
