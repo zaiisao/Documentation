@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Jun 21 2019 02:28:35 GMT+0800 (CST)
+updatedAt: Fri Jun 21 2019 10:34:21 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -97,7 +97,7 @@ v2.4.1 adds the support for playing multiple online audio effect files simultane
 
 #### 3. Image enhancement
 
-v2.4.1 assigns default values to various parameters in the  [AgoraBeautyOptions](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraBeautyOptions.html) class to improve the image enhancement experience. This release also optimizes the image enhancement algorithm. Test results from Agora Lab suggest that the updated algorithm leads to lower GPU, CPU and power consumption.
+v2.4.1 assigns default values to various parameters in the  [AgoraBeautyOptions](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraBeautyOptions.html) class to improve the image enhancement experience. This release also optimizes the image enhancement algorithm. Test results from Agora Lab suggest that the updated algorithm leads to lower GPU and CPU consumption. The power consumption is optimized by 40% - 50%.
 
 #### 4. Miscellaneous
 
