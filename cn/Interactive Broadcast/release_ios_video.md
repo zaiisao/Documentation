@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Fri Jun 21 2019 02:29:55 GMT+0800 (CST)
+updatedAt: Fri Jun 21 2019 10:24:05 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -89,7 +89,7 @@ iOS 视频 SDK 支持两种主要场景:
 
 #### 3、美颜优化
 
-为提升美颜效果，该版本结合主观测试的结果，对美颜选项 [AgoraBeautyOptions](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraBeautyOptions.html) 类中的各参数添加了默认值；同时，该版本优化了美颜算法的性能。声网实验室报告显示，优化后的算法下，GPU 消耗、CPU 消耗和功耗均有不同程度的下降。
+为提升美颜效果，该版本结合主观测试的结果，对美颜选项 [AgoraBeautyOptions](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraBeautyOptions.html) 类中的各参数添加了默认值；同时，该版本优化了美颜算法的性能。声网实验室报告显示，优化后的算法下，GPU 消耗和 CPU 消耗均有不同程度的下降，功耗优化约 40% - 50%。
 
 #### 4、其他改进
 
