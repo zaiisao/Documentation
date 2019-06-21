@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 18 2019 10:27:49 GMT+0800 (CST)
+updatedAt: Fri Jun 21 2019 06:59:21 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -16,7 +16,7 @@ RESTful API 仅支持 HTTPS。用户必须在 Basic HTTP 请求头部填入 `Aut
 
 > Customer ID 和 Customer Certificate 仅用于访问 Restful API。
 
-关于如何生成 `Authorization` 字段，详见 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
+关于如何生成 `Authorization` 字段，详见 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
 
 ## 2. 接入点
 
