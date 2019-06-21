@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Jun 20 2019 06:40:42 GMT+0800 (CST)
+updatedAt: Fri Jun 21 2019 04:22:20 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -73,10 +73,11 @@ See the table below for the web browser support of the Agora Web SDK:
 >   - Safari on iOS 12.1.4 or later.
 >   - Safari 12.1 or later on macOS.
 > - The Agora Web SDK v2.5 or later also supports Chrome 49 on Windows XP.
+> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/Agora%20Platform/websdk_how_to#edge) for details.
 
 > To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
 
-### Known Issues and Limitations
+### Known issues and limitations
 
 - Due to web browser autoplay policy changes, the `Stream.play`, `Stream.startAudioMixing`, and `Stream.getAudioLevel` methods need to be triggered by the user's gesture on Chrome 70 or later and on Safari. See [Autoplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes).
 - The Agora Web SDK supports video profiles of up to 1080p resolutions if the client has a true HD camera installed. However, the maximum resolution is limited by camera device capabilities.
@@ -84,6 +85,68 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](../../en/Voice/websdk_related_faq.md).
+
+## v2.7.0
+
+v2.7.0 is released on June 21, 2019.
+
+### New features
+
+#### 1. Customizing the video encoder configuration
+
+Adds the `Stream.setVideoEncoderConfiguration` method to customize the video encoder configuration. Compared with the`Stream.setVideoProfile` method, this method is more flexible and supports customizing the video resolution, frame rate, and bitrate. See [Set the Video Profile](../../en/Voice/videoProfile_web.md) for details.
+
+#### 2. Reporting the status of the stream playback
+
+For easier management of the stream playback status, v2.7.0 adds the following functions:
+
+- Adds the `callback` parameter in the `Stream.play` method to report the result of playing a stream. If the playback fails, this parameter provides the error details.
+- Adds the `"player-status-change"` callback in `Stream.on`. When the stream playback status changes, this callback is triggered to report the playback status and the reason why the status changes.
+- Adds the `Stream.resume` method to resume the playback when the `Stream.play` method fails.
+
+#### 3. Reporting when the first remote audio/video frame is decoded
+
+Adds the `"first-audio-frame-decode"` and `"first-video-frame-decode"` callbacks in `Client.on`  to notify the app when the first remote audio/video is decoded after subscribing to the remote stream.
+
+#### 4. Reporting changes to the media device
+
+Adds the `"audioTrackEnded"` and `"videoTrackEnded"` callbacks in `Stream.on` to notify the app when the audio/video track no longer provides data to the stream, for example when the device is removed or deauthorized.
+
+#### 5. Supporting Microsoft Edge
+
+Supports audio/video calls and live broadcasts on the Microsoft Edge browser. For details, see [Agora Web SDK FAQ](https://docs.agora.io/en/Agora%20Platform/websdk_how_to#edge).
+
+### Improvement
+
+This version allows updating the video encoder configuration dynamically. You can call `setVideoProfile` or `setVideoEncoderConfiguration` before or after `Stream.init`.
+
+> Do not set the video encoder configuration when publishing a stream.
+
+### Issues fixed
+
+- Some of the statistics returned by calling `Stream.getStats` are incorrect.
+- Calling `Client.leave` does not take effect when the network connection is lost.
+- Some of the statistics on the call quality are incorrect when String UIDs are used.
+- The return value of `Stream.getAudioMixingPosition` is inaccurate when the audio mixing file is playing.
+- Calling Stream.unmuteVideo immediately after subscribing to an audio-only stream causes an audio playback failure.
+
+### API changes
+
+#### New APIs
+
+- [`Stream.setVideoEncoderConfiguration`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#setvideoencoderconfiguration)
+- [`Stream.resume`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#resume)
+- New callbacks added in the [`Client.on`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#on)  method:
+  - `"first-audio-frame-decode"`
+  - `"first-video-frame-decode"`
+- New callbacks added in the [`Stream.on`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#on) method:
+  - `"audioTrackEnded"`
+  - `"videoTrackEnded"`
+  - `"player-status-change"`
+
+#### API update
+
+[`Stream.play`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#play): Adds the `callback` parameter.
 
 ## v2.6.1
 
@@ -93,7 +156,7 @@ v2.6.1 is released on April 11, 2019.
 
 This version supports using empty strings for the `cameraId` and `microphoneId` properties in the `createStream` method.
 
-### Issues Fixed
+### Issues fixed
 
 - Only two video streams at most can be played on Safari on iOS at the same time.
 - Errors occur when calling the `enableDualStream` method before publishing a stream.
@@ -103,7 +166,7 @@ This version supports using empty strings for the `cameraId` and `microphoneId` 
 
 v2.6.0 is released on April 3, 2019.
 
-### New Features
+### New features
 
 #### 1. Audio effect file playback and management
 
@@ -126,7 +189,7 @@ Supports screen sharing on Chrome 72 and later without using the Chrome extensio
 - Improves the user experience in unreliable network conditions.
 - Adds the `stream-fallback` callback in the `Client.on` method to notify the user when the remote video stream falls back to audio-only when the network conditions worsen or switches back to video when the network conditions improve.
 
-### Issues Fixed
+### Issues fixed
 
 - The `switchDevice` method fails to switch between microphones on Chrome 72.
 - Muting audio/video does not take effect after calling the `addTrack` method.
@@ -135,37 +198,37 @@ Supports screen sharing on Chrome 72 and later without using the Chrome extensio
 - Calling the `muteAudio` and  `muteVideo` methods immediately after subscribing to the remote stream might not take effect.
 - After calling the `replaceTrack` method to switch the video track on Windows, if you call the `startAudioMixing` method, the remote user cannot hear the audio mixing.
 
-### API Changes
+### API changes
 
 #### New APIs
 
-- [`AgoraRTC.getSupportedCodec`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/globals.html?transId=2.6#getsupportedcodec)
-- [`Stream.playEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#playeffect)
-- [`Stream.stopEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#stopeffect)
-- [`Stream.pauseEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#pauseeffect)
-- [`Stream.resumeEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#resumeeffect)
-- [`Stream.setVolumeOfEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#setvolumeofeffect)
-- [`Stream.preloadEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#preloadeffect)
-- [`Stream.unloadEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#unloadeffect)
-- [`Stream.getEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#geteffectsvolume)
-- [`Stream.setEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#seteffectsvolume)
-- [`Stream.stopAllEffects`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#stopalleffects)
-- [`Stream.pauseAllEffects`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#pausealleffects)
-- [`Stream.resumeAllEffects`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#resumealleffects)
-- New callbacks added in the [`Client.on`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.client.html?transId=2.6#on) method: 
+- [`AgoraRTC.getSupportedCodec`](https://docs.agora.io/en/Voice/API%20Reference/web/globals.html#getsupportedcodec)
+- [`Stream.playEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#playeffect)
+- [`Stream.stopEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#stopeffect)
+- [`Stream.pauseEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#pauseeffect)
+- [`Stream.resumeEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#resumeeffect)
+- [`Stream.setVolumeOfEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#setvolumeofeffect)
+- [`Stream.preloadEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#preloadeffect)
+- [`Stream.unloadEffect`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#unloadeffect)
+- [`Stream.getEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#geteffectsvolume)
+- [`Stream.setEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#seteffectsvolume)
+- [`Stream.stopAllEffects`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#stopalleffects)
+- [`Stream.pauseAllEffects`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#pausealleffects)
+- [`Stream.resumeAllEffects`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#resumealleffects)
+- New callbacks added in the [`Client.on`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#on) method: 
   - `stream-fallback`
   - `stream-updated`
 
 #### API updates
 
-- Adds the `cacheResource` parameter in the [`Stream.startAudioMixing`](https://docs.agora.io/en/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#startaudiomixing) method.
+- Adds the `cacheResource` parameter in the [`Stream.startAudioMixing`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing) method.
 
 
 ## v2.5.2
 
 v2.5.2 is released on February 28, 2019. 
 
-### Issues Fixed
+### Issues fixed
 
 - The `Stream.switchDevice` method fails to switch audio devices on Chrome 72 or later.
 - Errors occur when none of the optional parameters are set for the `Client.subscribe` method.
@@ -174,9 +237,9 @@ v2.5.2 is released on February 28, 2019.
 
 v2.5.1 is released on February 19, 2019. 
 
-### New Features
+### New features
 
-#### 1. More Call Quality Statistics
+#### 1. More call quality statistics
 
 Adds more statistics on the call quality. 
 
@@ -200,30 +263,30 @@ Adds more statistics on the call quality.
   - The estimated uplink bandwidth.
   - The network type.
 
-#### 2. Support for Receiving the Audio/Video Data Independently
+#### 2. Support for receiving the audio/video data independently
 
 Adds the `options` parameter to the `Client.subscribe` method to set whether or not to receive the audio and/or video data. 
 
 This method can be called multiple times and enables users to switch between receiving and not receiving the audio and/or video data flexibly.
 
-#### 3. Support for Injecting Online Media Streams to Live Broadcasts
+#### 3. Support for injecting online media streams to live broadcasts
 
 Adds the `Client.addInjectStreamUrl` method to pull a voice or video stream and inject it into a live channel. This is applicable to scenarios where all of the audience members in the channel can watch a live show and interact with each other.
 
 Adds the `streamInjectedStatus` callback to inform the app of changes to the injection status.
 
-#### 4. Support for Setting the User Role
+#### 4. Support for setting the user role
 
 Adds the `Client.setClientRole` method to set the user role as a host or an audience in a live broadcast. A host can both send and receive streams while an audience can only receive streams.
 
 Adds the `client-role-changed` callback to inform the app of changes to the user role.
 
-#### 5. Connection Status
+#### 5. Connection status
 
 - Adds the `Client.getConnectionState` method to retrieve the connection status between the SDK and Agora's edge server.
 - Adds the `connection-state-change` callback to inform the app of changes to the connection status. 
 
-#### 6. Other New Features
+#### 6. Other new features
 
 - Adds the `Stream.isPlaying` method to detect whether or not a stream is playing.
 - Adds the following callbacks in the `Client.on` method:
@@ -241,7 +304,7 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
 - Adds the `callback` parameter to the `Stream.setAudioMixingPosition` method to return error messages when the method call fails.
 - Modifies the names of some callbacks in the `Client.on` method to be consistent in style.
 
-### Issues Fixed
+### Issues fixed
 
 - The video resolution of the remote video returned by the `getStats` method is 0 on Safari for macOS.
 - The user cannot hear the microphone when the `enableAudio` method is called after disabling audio and then starting audio mixing.
@@ -250,7 +313,7 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
 - Users hear their own voice after calling the `replaceTrack` method.
 - Users cannot switch devices twice on iOS when calling the `switchDevice` method.
 
-### API Changes
+### API changes
 
 #### New APIs
 
@@ -274,11 +337,11 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
   - `stream-reconnect-start`
   - `stream-reconnect-end`
   - `exception`
-- New callbacks added in the [`Stream.on`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html?transId=883bbba0-1968-11e9-aeca-4be8cfc1d3d0#on) method:
+- New callbacks added in the [`Stream.on`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.stream.html#on) method:
   - `audioMixingPlayed`
   - `audioMixingFinished`
 
-#### API Updates
+#### API updates
 
 - [`Client.subscribe`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#subscribe): Adds the `options` parameter.
 
@@ -310,11 +373,11 @@ v2.5.0 is released on October 30, 2018.
 
 > <font color="red">If you set the domain firewall, ensure that `*.agoraio.cn` and `*.agora.io` are added to your whitelist before using this version.</font>
 
-### New Features
+### New features
 
 To enable better interoperability between the Agora Web SDK and other Agora SDKs, this version adds the following features. For detailed descriptions of the APIs, see [Agora Web SDK API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/index.html).
 
-#### 1. Quality Transparency
+#### 1. Quality transparency
 
 Adds the following API methods on call statistics to give users a better idea of the call quality:
 
@@ -326,11 +389,11 @@ Adds the following API methods on call statistics to give users a better idea of
 - `Client.getLocalVideoStats`: Retrieves the video statistics of the local stream.
 - `Client.getTransportStats`: Retrieves the statistics of network transport.
 
-#### 2. Device Management
+#### 2. Device management
 
 Provides flexible device management and device status notification.
 
-- **Device Enumeration**
+- **Device enumeration**
 
 Adds the following API methods:
 
@@ -344,14 +407,14 @@ Adds the following callbacks to inform the app on relevant device changes:
   - `playoutDeviceChanged`: The audio output device is changed.
   - `cameraChanged`: The video input device is changed.
 
-- **Device Switching**
+- **Device switching**
 
 Adds the following API methods:
 
   - `Stream.switchDevice`: Switches the media input devices in the channel. For example, the microphone and camera.
   - `Stream.setAudioOutput`: Sets the audio output device. You can use this method to switch between the microphone and the speaker.
 
-#### 3. Audio Mixing
+#### 3. Audio mixing
 
 Supports audio mixing, namely mixing the original sound (the audio captured by the microphone) with the audio playback (an audio file).
 
@@ -366,7 +429,7 @@ Adds the following API methods:
 - `Stream.getAudioMixingCurrentPosition`: Retrieves the current position of the audio mixing.
 - `Stream.setAudioMixingPosition`: Sets the playback position of the audio mixing.
 
-#### 4. Audio/Video Track Management
+#### 4. Audio/Video track management
 
 Provides flexible management of the audio and video tracks.
 
@@ -378,7 +441,7 @@ Adds the following API methods:
 - `Stream.addTrack`: Adds an audio/video track.
 - `Stream.removeTrack`: Removes an audio/video track.
 
-#### 5. Other New Features
+#### 5. Other new features
 
 - Support for two video display modes. You can set the display mode in the `Stream.play` method.
 - Adds the `Client.enableAudioVolumeIndicator` method to enable the SDK to regularly report on the active speakers and their volumes.
@@ -389,7 +452,7 @@ Adds the following API methods:
 - Supports 360 Secure Browser 9.1.0.432 and later.
 - Supports Chrome 49 on Windows XP.
 
-### Issues Fixed
+### Issues fixed
 
 - The dependency on the video codec in audio-only calls when a user joins a channel from Safari or Chrome on mobile devices.
 - A failure to receive the `stream-removed` callback 10 seconds after another user calls the `Stream.close` method to stop streaming from the Safari browser.
