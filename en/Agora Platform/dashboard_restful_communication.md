@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 18 2019 10:24:38 GMT+0800 (CST)
+updatedAt: Fri Jun 21 2019 06:57:55 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -17,7 +17,7 @@ Login https://dashboard.agora.io, click the account name on the top right of the
 > Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and Customer Certificate are only used for RESTful API access.
 
 
-For how to generate the `Authorization` parameter, see [RESTful API authentication](https://docs.agora.io/en/Agora%20Platform/nativesdk_how_to#restful-api-authentication).
+For how to generate the `Authorization` parameter, see [RESTful API authentication](https://docs.agora.io/en/Agora%20Platform/other_questions_how_to#restful-api-authentication).
 
 
 ## 2. EndPoint
