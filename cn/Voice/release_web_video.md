@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Jun 20 2019 06:26:01 GMT+0800 (CST)
+updatedAt: Fri Jun 21 2019 04:22:29 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -70,6 +70,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 </table>
 
 > - Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
+> - Agora Web SDK 2.7 及以上版本还支持 Windows 10 平台的 Edge 浏览器，详见 [Edge 浏览器支持](https://docs.agora.io/cn/Agora%20Platform/websdk_how_to#edge)。
 > - 以下场景中请务必将 Web SDK 升级至 2.6:
 >   - iOS 12.1.4 及以上版本使用 Safari 浏览器
 >   - macOS 上使用 Safari 12.1 及以上版本
@@ -84,6 +85,69 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](../../cn/Voice/websdk_related_faq.md)。
+
+## 2.7.0 版
+该版本于 2019 年 6 月 21 日发布。新增功能、改进及修复问题详见下文。
+
+### 新增功能
+
+#### 1. 自定义视频编码配置
+
+新增 `Stream.setVideoEncoderConfiguration` 方法，与原有的 `Stream.setVideoProfile` 方法相比，该方法可以自定义视频分辨率、帧率及码率，更加灵活。更多信息请参考[设置视频属性](../../cn/Voice/videoProfile_web.md)。
+
+#### 2. 通知音视频流播放状态
+
+为方便开发者管理音视频流播放状态，该版本新增以下功能：
+
+- `Stream.play` 方法中新增 `callback` 参数，用于通知音视频流的播放结果。如果播放失败，该参数会返回具体的失败原因。
+- `Stream.on` 中新增 `"player-status-change"` 回调，当音视频流的播放状态发生变化时可以通过该回调了解具体的播放状态以及状态变化的原因。
+- 新增 `Stream.resume` 方法，用于在播放失败时恢复播放。
+
+#### 3. 通知远端音视频首帧解码
+
+`Client.on` 中新增 `"first-audio-frame-decode"` 和 `"first-video-frame-decode"` 事件，在订阅远端流成功后完成第一帧远端音频和视频解码时通知 App。
+
+#### 4. 监控媒体设备状态
+
+`Stream.on` 中新增 `"audioTrackEnded"` 和 `"videoTrackEnded"` 回调，当音视频轨道停止时（如设备拔出、取消授权、计算机休眠）会通知 app，方便监控设备状态。
+
+#### 5. 支持 Edge 浏览器
+
+该版本支持在 Edge 浏览器上实现音视频基本互通，具体支持的功能请参考 [Edge 浏览器支持](https://docs.agora.io/cn/Agora%20Platform/websdk_how_to#edge)。
+
+### 改进
+
+该版本支持动态修改视频编码配置，即 `Stream.init` 之前或之后都可以调用 `setVideoProfile` 或 `setVideoEncoderConfiguration` 设置视频编码配置。
+
+> 请勿在发布流时修改视频编码配置。
+
+### 修复问题
+
+- 修复 Firefox 上调用 `Stream.getStats` 获取的部分数据异常的问题。
+- 修复断网后调用 `Client.leave` 不生效的问题。
+- 修复使用 String UID 时获取的部分通话质量数据异常的问题。
+- 修复在混音音乐文件播放时调用 `Stream.getAudioMixingPosition` 获取的结果不准确的问题。
+- 修复订阅纯音频流后立即调用 `Stream.unmuteVideo` 导致音频无法播放的问题。
+
+### API 整理
+
+本次发版 API 变动如下。
+
+#### 新增
+
+- [`Stream.setVideoEncoderConfiguration`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#setvideoencoderconfiguration)
+- [`Stream.resume`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#resume)
+- [`Client.on`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#on) 新增以下事件：
+  - `"first-audio-frame-decode"`
+  - `"first-video-frame-decode"`
+- [`Stream.on`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#on) 新增以下事件：
+  - `"audioTrackEnded"`
+  - `"videoTrackEnded"`
+  - `"player-status-change"`
+
+#### 修改
+
+[`Stream.play`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#play) 新增 `callback` 参数。
 
 ## 2.6.1 版
 
@@ -141,26 +205,26 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 #### 新增
 
-- [`AgoraRTC.getSupportedCodec`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/globals.html?transId=2.6#getsupportedcodec)
-- [`Stream.playEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#playeffect)
-- [`Stream.stopEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#stopeffect)
-- [`Stream.pauseEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#pauseeffect)
-- [`Stream.resumeEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#resumeeffect)
-- [`Stream.setVolumeOfEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#setvolumeofeffect)
-- [`Stream.preloadEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#preloadeffect)
-- [`Stream.unloadEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#unloadeffect)
-- [`Stream.getEffectsVolume`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#geteffectsvolume)
-- [`Stream.setEffectsVolume`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#seteffectsvolume)
-- [`Stream.stopAllEffects`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#stopalleffects)
-- [`Stream.pauseAllEffects`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#pausealleffects)
-- [`Stream.resumeAllEffects`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#resumealleffects)
-- [`Client.on`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.client.html?transId=2.6#on) 新增以下事件：
+- [`AgoraRTC.getSupportedCodec`](https://docs.agora.io/cn/Voice/API%20Reference/web/globals.html#getsupportedcodec)
+- [`Stream.playEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#playeffect)
+- [`Stream.stopEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#stopeffect)
+- [`Stream.pauseEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#pauseeffect)
+- [`Stream.resumeEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#resumeeffect)
+- [`Stream.setVolumeOfEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#setvolumeofeffect)
+- [`Stream.preloadEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#preloadeffect)
+- [`Stream.unloadEffect`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#unloadeffect)
+- [`Stream.getEffectsVolume`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#geteffectsvolume)
+- [`Stream.setEffectsVolume`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#seteffectsvolume)
+- [`Stream.stopAllEffects`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#stopalleffects)
+- [`Stream.pauseAllEffects`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#pausealleffects)
+- [`Stream.resumeAllEffects`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#resumealleffects)
+- [`Client.on`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#on) 新增以下事件：
   - `stream-fallback`
   - `stream-updated`
 
 #### 修改
 
-- [`Stream.startAudioMixing`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.6/interfaces/agorartc.stream.html?transId=2.6#startaudiomixing) 增加 `cacheResource` 参数
+- [`Stream.startAudioMixing`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#startaudiomixing) 增加 `cacheResource` 参数
 
 ## 2.5.2 版
 
