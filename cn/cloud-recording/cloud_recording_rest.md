@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Jun 24 2019 06:08:49 GMT+0800 (CST)
+updatedAt: Mon Jun 24 2019 06:08:54 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -35,19 +35,39 @@ Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网�
 - 联系 [sales@agora.io](mailto:sales@agora.io) 开通云端录制服务。
 - 开通第三方云存储服务，目前支持七牛云、阿里云（推荐）和 Amazon S3。
 
-## 调用步骤
+## 通过 Basic HTTP 认证
 
-一般进行云端录制的步骤如下：
+Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都必须在请求头部填入 `Authorization`  字段。关于如何生成该字段的值，请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
 
-1. 通过 [`acquire`](../../cn/cloud-recording/cloud_recording_api_rest.md) 请求获取一个 resource ID 用于开启云端录制。
-2. 获取 resource ID 后在 5 分钟内调用 [`start`](../../cn/cloud-recording/cloud_recording_api_rest.md) 开始云端录制。
-3. 录制完成后调用 [`stop`](../../cn/cloud-recording/cloud_recording_api_rest.md) 停止录制。
+## 获取 resource ID
 
-在整个过程中可以通过 [`query`](../../cn/cloud-recording/cloud_recording_api_rest.md) 请求查询云端录制的状态。
+调用 [`acquire`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法请求一个用于云端录制的 resource ID。
 
-![](https://web-cdn.agora.io/docs-files/1559640254333)
+调用该方法成功后，你可以从 HTTP 响应包体中的 `resourceId` 字段得到一个 resource ID。这个 resource ID 的时效为 5 分钟，你需要在 5 分钟内用这个 resource ID 开始录制。
 
-具体的请求和响应内容请参考 [云端录制 RESTful API](https://docs.agora.io/cloud_recording_api_rest?platform=All%20Platforms)。
+> 一个 resource ID 仅可用于一次录制。
+
+该方法的请求和响应示例详见 [`acquire` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#acquire-请求示例)。
+
+## 开始录制
+
+获取 resource ID 后，在五分钟內调用 [`start`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法开始录制。 
+
+该方法的请求和响应示例详见 [`start` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#start-请求示例)。
+
+## 查询录制状态
+
+录制过程中，你可以多次调用 [`query`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法查询录制的状态。
+
+调用该方法成功后，你可以从 HTTP 响应包体中获得录制生成的[索引文件](#m3u8)和当前录制的状态。
+
+该方法的请求和响应示例详见 [`query` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#query-请求示例)。
+
+## 停止录制
+
+调用  [`stop`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法停止录制。
+
+该方法的请求和响应示例详见 [`stop` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#stop-请求示例)。
 
 ## 上传和管理录制文件
 
@@ -59,7 +79,7 @@ Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网�
 
 通过 [`start`](../../cn/cloud-recording/cloud_recording_api_rest.md) 请求成功开始录制后，你可以在响应中获取录制 ID（`sid`），所有的回调中也都包含录制 ID。
 
-### 录制文件索引
+### <a name="m3u8">录制文件索引
 
 每次录制均会生成一个 M3U8 文件，用于索引该次录制所有的 TS 文件。你可以通过 M3U8 文件播放和管理录制文件。
 
