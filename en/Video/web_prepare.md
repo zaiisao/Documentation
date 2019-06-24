@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Tue Jun 04 2019 09:23:35 GMT+0800 (CST)
+updatedAt: Mon Jun 24 2019 05:21:14 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
@@ -68,6 +68,7 @@ This page contains information on how to prepare the development environment bef
 >   - Safari on iOS 12.1.4 or later.
 >   - Safari 12.1 or later on macOS.
 > - The Agora Web SDK v2.5 or later also supports Chrome 49 on Windows XP.
+> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/Agora%20Platform/websdk_how_to#edge) for details.
 
 2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 3. Understand the limitations in [Known Issues](../../en/Video/release_web_video.md) and [FAQ](../../en/Video/websdk_related_faq.md).
