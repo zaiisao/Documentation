@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
+updatedAt: Mon Jun 24 2019 05:52:00 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -15,7 +15,7 @@ updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
 - `api_key`: Customer ID
 - `api_secret`: Customer Certificate
 
-你可以在 Dashboard 的 [RESTful API](https://dashboard.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
+你可以在 Dashboard 的 [RESTful API](https://dashboard.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
 
 ## 数据格式
 
@@ -25,6 +25,18 @@ updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
 - 响应：响应内容的格式为 JSON
 
 > 所有的请求 URL 和请求包体内容都是区分大小写的。
+
+## 调用步骤
+
+一般进行云端录制的步骤如下：
+
+1. 通过 [`acquire`](#acquire) 请求获取一个 resource ID 用于开启云端录制。
+2. 获取 resource ID 后在 5 分钟内调用 [`start`](#start) 开始云端录制。
+3. 录制完成后调用 [`stop`](#stop) 停止录制。
+
+在整个过程中可以通过 [`query`](#query) 请求查询云端录制的状态。
+
+![](https://web-cdn.agora.io/docs-files/1559640254333)
 
 ## <a name="acquire"></a>获取云端录制资源的 API
 
@@ -55,11 +67,11 @@ updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
 | `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
-### HTTP 请求示例
+### `acquire` 请求示例
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
 - 请求包体内容：
 
  ```json
@@ -71,7 +83,7 @@ updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
 }
 ```
 
-### 响应示例
+### `acquire` 响应示例
 
 ```json
 {
@@ -205,11 +217,11 @@ updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
   - `accessKey`：String 类型，第三方云存储的 access key。
   - `secretKey`：String 类型，第三方云存储的 secret key。
 
-### HTTP 请求示例
+### `start` 请求示例
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/mode/mix/start`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
 - 请求包体内容：
 
  ```json
@@ -243,7 +255,7 @@ updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
 }
 ```
 
-### 响应示例
+### `start` 响应示例
 
 ```json
 {
@@ -278,13 +290,13 @@ updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
 | sid        | String | 通过 [`start`](#start) 请求获取的录制 ID。                   |
 | mode       | String | 录制模式，目前只支持合流模式 `mix`。                         |
 
-### HTTP 请求示例
+### `query` 请求示例
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/query`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
 
-### 响应示例
+### `query` 响应示例
 
 ```json
 {
@@ -347,11 +359,11 @@ updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
 | `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
-### HTTP 请求示例
+### `stop` 请求示例
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/stop`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/nativesdk_how_to#restful-api--认证)。
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
 - 请求包体内容：
  ```json
 {
@@ -362,7 +374,7 @@ updatedAt: Wed Jun 19 2019 04:01:36 GMT+0800 (CST)
 }
 ```
 
-### 响应示例
+### `stop` 响应示例
 
 ```json
 {
