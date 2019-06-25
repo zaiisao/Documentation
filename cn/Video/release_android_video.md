@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Jun 21 2019 10:23:29 GMT+0800 (CST)
+updatedAt: Tue Jun 25 2019 02:16:35 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -85,7 +85,7 @@ Android 视频 SDK 支持两种主要场景:
 
 #### 6、获取播放伴奏音量
 
-为方便开发者获取伴奏的播放音量，排查音量相关问题，该版本新增 [getAudioMixingPlayoutVolume](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9) 和 [getAudioMixingPublishVolume](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9) 方法，用以分别获取音乐文件在本地和远端的播放音量。
+为方便开发者获取伴奏的播放音量，排查音量相关问题，该版本新增 [getAudioMixingPlayoutVolume](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6eef6e4d3d148c25993376f93ebbb8e9) 和 [getAudioMixingPublishVolume](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a962819abd0e5458b89cefb756bb9e631) 方法，用以分别获取音乐文件在本地和远端的播放音量。
 
 #### 7、精确回调远端音频首帧解码
 
@@ -107,7 +107,7 @@ Android 视频 SDK 支持两种主要场景:
 
 #### 3、美颜优化
 
-为提升美颜效果，该版本结合主观测试的结果，对美颜选项 [BeautyOptions](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_beauty_options.html) 类中的各参数添加了默认值；同时，该版本优化了美颜算法的性能。声网实验室报告显示，优化后的算法下，GPU 消耗、CPU 消耗和功耗均有不同程度的下降。
+为提升美颜效果，该版本结合主观测试的结果，对美颜选项 [BeautyOptions](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_beauty_options.html) 类中的各参数添加了默认值；同时，该版本优化了美颜算法的性能。声网实验室报告显示，优化后的算法下，GPU 消耗 和 CPU 消耗均有不同程度的下降，功耗优化约 30%。
 
 #### 4、其他改进
 
@@ -148,7 +148,7 @@ Android 视频 SDK 支持两种主要场景:
 
 #### 新增
 
--  [getAudioMixingPlayoutVolume](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
+- [getAudioMixingPlayoutVolume](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6eef6e4d3d148c25993376f93ebbb8e9)
 - [getAudioMixingPublishVolume](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a962819abd0e5458b89cefb756bb9e631)
 - [onFirstRemoteAudioDecoded](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0fcac6cafae63e4ef453ddd041e80f8a)
 - [onLocalVideoStateChanged](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aface271c0606ab99bb08a0d00267306c)
