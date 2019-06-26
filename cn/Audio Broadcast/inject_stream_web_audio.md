@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Web
-updatedAt: Wed Jun 26 2019 09:40:02 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 10:08:24 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 简介
@@ -37,7 +37,7 @@ Agora Web SDK 从 v2.5.1 版本开始，新增 `Client.addInjectStreamUrl` 接�
 
 ## 实现方法
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Audio%20Broadcast/android_audio.md)。
+实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Audio%20Broadcast/web_prepare.md)。
 
 - 输入在线媒体流：
 
@@ -61,13 +61,13 @@ Agora Web SDK 从 v2.5.1 版本开始，新增 `Client.addInjectStreamUrl` 接�
 	
 - 移除在线媒体流
 
-	频道内的主播可以使用 `removeInjectStreamUrl` 接口，移除一个已经接入的在线媒体流。
+	频道内的主播可以使用 `Client.removeInjectStreamUrl` 接口，移除一个已经接入的在线媒体流。
 	
 	```javascript
 	Client.removeInjectStreamUrl(url);
 	```
 
-	> 主播退出频道后，无需再调用 `removeInjectStreamUrl` 接口。
+	> 主播退出频道后，无需再调用 `Client.removeInjectStreamUrl` 接口。
 
 
 ## 工作原理
