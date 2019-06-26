@@ -3,7 +3,7 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: Windows
-updatedAt: Wed Jun 26 2019 06:25:09 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 06:26:06 GMT+0800 (CST)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 Before creating and initializing the AgoraRtcEngine instance, ensure that you  prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
@@ -66,7 +66,6 @@ Media Foundation and DirectShow are two video-capture architectures for Microsof
 <li>0: DirectShow</li>
 <li>1: VFW (Video for Windows)</li>
 <li>2: Media Foundation</li>
-<li>3: DirectShow</li>
 </ul>
 </td>
 </tr>
