@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: Windows
-updatedAt: Mon Feb 18 2019 08:08:01 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 06:03:14 GMT+0800 (CST)
 ---
 # 检测通话质量
 通话质量检测功能是在 SDK 加入频道后通过每 2 秒触发一次的回调实现。
@@ -47,6 +47,7 @@ updatedAt: Mon Feb 18 2019 08:08:01 GMT+0800 (CST)
 > | 3        | POOR：用户主观感受有瑕疵但不影响沟通。                       |
 > | 4        | BAD：勉强能沟通但不顺畅。                                    |
 > | 5        | VBAD：网络质量非常差，基本不能沟通。                         |
+> | 6        | DOWN：网络连接断开，完全无法沟通。                         |
 
 ### API 参考
 
