@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Web
-updatedAt: Fri May 24 2019 08:46:07 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 03:19:53 GMT+0800 (CST)
 ---
 # RTM 快速开始
 
@@ -51,7 +51,7 @@ const client = AgoraRTM.createInstance('<APPID>');
 
 ```JavaScript
 client.on('ConnectionStateChanged', (newState, reason) => {
-  console.log('on connection state changed to ' + state + ' reason: ' + reason);
+  console.log('on connection state changed to ' + newState + ' reason: ' + reason);
 });
 ```
 
