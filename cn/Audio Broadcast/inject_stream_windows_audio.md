@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Windows
-updatedAt: Wed Feb 20 2019 07:34:38 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 10:21:06 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 简介
@@ -28,7 +28,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 - 只有主播可以输入和移除在线媒体流，连麦主播和普通用户不可以。
 - 主播在直播过程中启用输入在线媒体流。观众需要订阅主播才能收听外部视频。
 - 支持的媒体流格式包括：RTMP、HLS、FLV。
-- 如果媒体流输入成功，该媒体流会出现在频道中，并收到 `onUserJoined` 和 `onFirstRemoteVideoDecoded` 回调，其中 `uid` 为 666。
+- 如果媒体流输入成功，该媒体流会出现在频道中，并收到 `onUserJoined` 和 `onFirstRemoteAudioFrame` 回调，其中 `uid` 为 666。
 - 如果媒体流输入失败，会返回错误码。可能会出现的错误码及处理方法如下：
 
   - `ERR_INVALID_ARGUMENT(2)`：输入的 URL 为空。请重新调用该方法，并确认输入的媒体流的 URL 是有效的
@@ -38,7 +38,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 
 ## 实现方法
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Audio%20Broadcast/windows_video.md)。
+实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Audio%20Broadcast/windows_audio.md)。
 
 - 输入在线媒体流：
 
