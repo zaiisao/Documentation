@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: 
 platform: iOS
-updatedAt: Mon Feb 18 2019 08:52:29 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 05:59:36 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 The in-call audio statistics reflect the overall quality of a call after the SDK joins a channel and are reported once every two seconds.
@@ -46,6 +46,7 @@ The `networkQuality` callback uses the `uid` parameter. If a channel has multipl
 > | 3      | POOR: Users can feel the communication slightly impaired.    |
 > | 4      | BAD: Users cannot communicate smoothly.                      |
 > | 5      | VBAD: The network is so bad that users can barely communicate. |
+> | 6      | DOWN: The network is disconnected and users cannot communicate at all.|
 
 ### API Reference
 
