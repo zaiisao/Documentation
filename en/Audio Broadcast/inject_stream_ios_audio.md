@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: iOS,macOS
-updatedAt: Thu Feb 21 2019 07:54:51 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 10:21:59 GMT+0800 (CST)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -28,7 +28,7 @@ Injecting an online media stream can be applied to the following scenarios:
 - Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
 - To inject a media stream, the host needs to be in the channel. To receive the injected media stream, the audience needs to subscribe to the host.
 - Supported media stream formats include: RTMP, HLS, and FLV. 
-- If the media stream is injected successfully, the media stream will appear in the channel, and the `didJoinChannel` and `firstRemoteVideoDecodedOfUid` callbacks will be triggered, in which the `uid` is 666.
+- If the media stream is injected successfully, the media stream will appear in the channel, and the `didJoinChannel` and `firstRemoteAudioFrameOfUid` callbacks will be triggered, in which the `uid` is 666.
 - If the media stream is not injected successfully, the SDK may return the following error codes:
 
   - `AgoraErrorCodeInvalidArgument(2)`: The injected URL does not exist. Call this method again to inject the stream and make sure that the URL is valid.
@@ -37,7 +37,7 @@ Injecting an online media stream can be applied to the following scenarios:
   - `AgoraErrorCodeNotReady(3)`: The app is not in the channel. Ensure that the app has joined the channel.
 ## Implementation
 
-To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Audio%20Broadcast/iOS_audio.md).
+To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Audio%20Broadcast/ios_audio.md).
 
 - To inject an online media stream:
 
