@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Web
-updatedAt: Wed Jun 26 2019 10:01:26 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 10:04:54 GMT+0800 (CST)
 ---
 # Inject an Online Media Stream
 ## Introduction
