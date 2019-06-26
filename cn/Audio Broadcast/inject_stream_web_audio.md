@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Web
-updatedAt: Wed Jun 26 2019 09:39:57 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 09:40:02 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 简介
@@ -32,7 +32,7 @@ Agora Web SDK 从 v2.5.1 版本开始，新增 `Client.addInjectStreamUrl` 接�
 - 如果媒体流输入失败，会返回错误码。可能会出现的错误码及处理方法如下：
 
   - 2：输入的 URL 为空。请重新调用该方法，并确认输入的媒体流的 URL 是有效的
-  - 7：引擎没有初始化。请确认调用该方法前已创建 `RtcEngine` 对象并完成初始化
+  - 7：引擎没有初始化。请确认调用该方法前已创建对象并完成初始化
   - 3：没有加入频道。请确认 App 在频道内
 
 ## 实现方法
