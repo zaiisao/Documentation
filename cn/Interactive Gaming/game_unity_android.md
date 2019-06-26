@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Unity
-updatedAt: Wed Jan 30 2019 12:32:30 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 07:02:36 GMT+0800 (CST)
 ---
 # 实现游戏语音功能
 使用 Agora 的 `Hello-Unity3D-Agora` 代码示例可以演示以下功能:
@@ -23,7 +23,7 @@ updatedAt: Wed Jan 30 2019 12:32:30 GMT+0800 (CST)
 
     ![](https://web-cdn.agora.io/docs-files/1548830935872)
 
-> `Hello-Unity3D-Agora` 即为本文需要使用的代码示例。你也可以直接从 [Github](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming/tree/master/Basic-Voice-Call-for-Gaming/Hello-Unity3D-Agora)下载。
+> `Hello-Unity3D-Agora` 即为本文需要使用的代码示例。
 
 2.  请确保已满足以下环境要求:
 
