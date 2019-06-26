@@ -2,8 +2,8 @@
 ---
 title: 游戏 API
 description: 
-platform: CPP
-updatedAt: Mon May 20 2019 08:22:35 GMT+0800 (CST)
+platform: iOS
+updatedAt: Wed Jun 26 2019 06:12:47 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供游戏 SDK 的 **C++ 接口**，使应用程序实现音视频功能。
@@ -308,7 +308,7 @@ uid 在 SDK 内部用 32 位无符号整数表示，由于 Java 不支持无符�
 
 
 
-> 在 `joinChannel()` 时，SDK 调用 `setCategoryAVAudioSessionCategoryPlayAndRecord` 将 `AVAudioSession` 设置到 `PlayAndRecord` 模式，应用程序不应将其设置到其他模式。设置该模式时，正在播放的声音会被打断（比如正在播放的响铃声）。
+> 在 `joinChannel()` 时，SDK 调用 `setCategory(AVAudioSessionCategoryPlayAndRecord)` 将 `AVAudioSession` 设置到 `PlayAndRecord` 模式，应用程序不应将其设置到其他模式。设置该模式时，正在播放的声音会被打断（比如正在播放的响铃声）。
 
 #### 离开频道 (leaveChannel)
 
