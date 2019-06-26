@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Web
-updatedAt: Wed Jun 26 2019 10:03:10 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 10:07:45 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 简介
@@ -70,7 +70,7 @@ Agora Web SDK 从 v2.5.1 版本开始，新增 `Client.addInjectStreamUrl` 接�
 	Client.removeInjectStreamUrl(url);
 	```
 
-	> 主播退出频道后，无需再调用 `removeInjectStreamUrl` 接口。
+	> 主播退出频道后，无需再调用 `Client.removeInjectStreamUrl` 接口。
 
 
 ## 工作原理
