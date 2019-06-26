@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Windows
-updatedAt: Wed Feb 20 2019 07:45:01 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 10:22:25 GMT+0800 (CST)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -29,7 +29,7 @@ Injecting an online media stream can be applied to the following scenarios:
 - Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
 - To inject a media stream, the host needs to be in the channel. To receive the injected media stream, the audience needs to subscribe to the host.
 - Supported media stream formats include: RTMP, HLS and FLV. 
-- If the media stream is injected successfully, the media stream will appear in the channel, and the `onUserJoined` and `onFirstRemoteVideoDecoded` callbacks will be triggered, in which the `uid` is 666.
+- If the media stream is injected successfully, the media stream will appear in the channel, and the `onUserJoined` and `onFirstRemoteAudioFrame` callbacks will be triggered, in which the `uid` is 666.
 - If the media stream is not injected successfully, the SDK may return the following error codes:
 
   - `ERR_INVALID_ARGUMENT(2)`: The injected URL does not exist. Call this method again to inject the stream and ensure that the URL is valid.
@@ -40,7 +40,7 @@ Injecting an online media stream can be applied to the following scenarios:
 
 ## Implementation
 
-To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Audio%20Broadcast/windows_video.md).
+To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Audio%20Broadcast/windows_audio.md).
 
 - To inject an online media stream:
 
