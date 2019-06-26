@@ -3,7 +3,7 @@
 title: Inject an Online Media Stream
 description: 
 platform: Web
-updatedAt: Wed Jun 26 2019 10:06:15 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 10:07:37 GMT+0800 (CST)
 ---
 # Inject an Online Media Stream
 ## Introduction
@@ -34,17 +34,17 @@ Injecting an online media stream can be applied to the following scenarios:
 - If the media stream is not injected successfully, the SDK may return the following error codes:
 
   - 2: The injected URL does not exist. Call this method again to inject the stream and ensure that the URL is valid.
-  - 7: The SDK is not initialized. Ensure that the `RtcEngine` object is initialized before using this method.
+  - 7: The SDK is not initialized. Ensure that the Client object is initialized before using this method.
   - 3: The app is not in the channel. Ensure that the app has joined the channel.
 
 
 ## Implementation
 
-To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](https://docs.agora.io/en/Interactive%20Broadcast/android_video?platform=Android).
+To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Interactive%20Broadcast/web_prepare.md).
 
 - To inject an online media stream:
 
-	The broadcaster (host) in the live broadcast channel can call the `addInjectStreamUrl` method to specify an online media stream and inject it into the channel.
+	The broadcaster (host) in the live broadcast channel can call the `Client.addInjectStreamUrl` method to specify an online media stream and inject it into the channel.
 
 	```javascript
 	var InjectStreamConfig = {
@@ -60,11 +60,11 @@ To inject an online media stream, the user first joins a live broadcast channel 
 	Client.addInjectStreamUrl(url, config);
 	```
 
-	You can modify the parameter values of `config` to set the resolution, bitrate, frame rate, and audio sampling rate of the injected stream. For more information, see [Agora Live Inject Stream Config](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_inject_stream_config.html).
+	You can modify the parameter values of `config` to set the resolution, bitrate, frame rate, and audio sampling rate of the injected stream. For more information, see [InjectStreamConfig](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.injectstreamconfig.html).
 	
 - To remove an injected media stream:
 
-	The broadcaster (host) in the live broadcast channel can call the `removeInjectStreamUrl` method to remove a previously injected media stream.
+	The broadcaster (host) in the live broadcast channel can call the `Client.removeInjectStreamUrl` method to remove a previously injected media stream.
 
 	```javascript
 	Client.removeInjectStreamUrl(url);
