@@ -2,8 +2,8 @@
 ---
 title: 其它常见问题
 description: 
-platform: 其它常见问题
-updatedAt: Fri Jun 21 2019 06:54:05 GMT+0800 (CST)
+platform: All Platforms
+updatedAt: Wed Jun 26 2019 06:30:48 GMT+0800 (CST)
 ---
 # 其它常见问题
 ## RESTful API  认证
@@ -62,8 +62,6 @@ let base64LoginString = loginData.base64EncodedString()
    Agora Native SDK 目前只提供 32 位 native 库（armeabi-v7a），在 64 位设备上，Android 支持以 32 位进程模式启动 App，因此 Agora Native SDK 也可以在 64 位 Android 设备上使用，但必须保证 App 的 arm64 目录为空。否则 Android 系统将以 64 位进程模式加载 App，由于 Agora Native SDK 没有提供 64 位库，App 启动会失败。
 
 由于目前 Android 的主流还是 32 位设备，一般各厂商都会提供 32 位库，因此一般来说，在 64 位 Android 设备以 32 位进程模式启动一般不会有问题。但是如果在某些 64 位平台上出现了这样的错误: java.lang.UnsatisfiedLinkError: dlopen failed: ”libHDACEngine.so”
-
-但是如果 64 位平台上出现以下报错: java.lang.UnsatisfiedLinkError: dlopen failed: "libHDACEngine.so"
 
 可能的原因：
 
