@@ -3,7 +3,7 @@
 title: Implement Voice for Gaming
 description: 
 platform: Cocos
-updatedAt: Fri Nov 30 2018 09:06:56 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 07:01:00 GMT+0800 (CST)
 ---
 # Implement Voice for Gaming
 With the `Hello-Cocos2D-Agora` Sample App provided by Agora, you can:
@@ -107,7 +107,7 @@ Add the following line to obfuscate the code:
 
 ### Step 6: Call the APIs
 
-Call the APIs in [Interactive Gaming API](../../en/Interactive%20Gaming/game_cocos.md) to implement the required functions. Voice for gaming includes two modes:
+Call the APIs in [Interactive Gaming API](../../en/Interactive%20Gaming/game_cocos_cpp.md) to implement the required functions. Voice for gaming includes two modes:
 
 -   Free talk mode
 
