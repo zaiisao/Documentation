@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: iOS,macOS
-updatedAt: Wed Feb 20 2019 06:31:30 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 10:20:19 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 简介
@@ -28,7 +28,7 @@ Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过�
 - 只有主播可以输入和移除在线媒体流，连麦主播和普通用户不可以。
 - 主播在直播过程中启用输入在线媒体流。观众需要订阅主播才能收听外部音频。
 - 支持的媒体流格式包括：RTMP、HLS、FLV。
-- 如果媒体流输入成功，该媒体流会出现在频道中，并收到 `didJoinChannel` 和 `firstRemoteVideoDecodedOfUid` 回调，其中 `uid` 为 666。
+- 如果媒体流输入成功，该媒体流会出现在频道中，并收到 `didJoinChannel` 和 `firstRemoteAudioFrameOfUid` 回调，其中 `uid` 为 666。
 - 如果媒体流输入失败，会返回错误码。可能会出现的错误码及处理方法如下：
 
   - `AgoraErrorCodeInvalidArgument(2)`：输入的 URL 为空。请重新调用该方法，并确认输入的媒体流的 URL 是有效的
