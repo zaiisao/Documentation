@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Web
-updatedAt: Wed Jun 26 2019 09:39:21 GMT+0800 (CST)
+updatedAt: Wed Jun 26 2019 10:03:10 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 简介
@@ -40,7 +40,7 @@ Agora Web SDK 从 v2.5.1 版本开始，新增 `Client.addInjectStreamUrl` 接�
 
 ## 实现方法
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Interactive%20Broadcast/android_audio.md)。
+实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Interactive%20Broadcast/web_prepare.md)。
 
 - 输入在线媒体流：
 
