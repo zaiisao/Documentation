@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Android
-updatedAt: Thu Jun 27 2019 10:19:24 GMT+0800 (CST)
+updatedAt: Thu Jun 27 2019 10:19:29 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM Java SDK for Android. 
@@ -27,7 +27,7 @@ Supports a maximum of 20 `RtmChannel` instances at the same time. If you call `c
 
 ## String Length
 
-- The maximum length of a peer-to-peer or channel message is 32 KB. See [RtmMessage.setText()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_javaclassio_1_1agora_1_1rtm_1_1_rtm_message.html#a114bf5f4d728e1a5e31792491bf4a1d2).
+- The maximum length of a peer-to-peer or channel message is 32 KB. See [RtmMessage.setText()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a114bf5f4d728e1a5e31792491bf4a1d2).
 - The maximum length of the content in a call invitation is 8 KB. See [LocalInvitation.setContent()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_local_invitation.html#a4cec28ff6d356242329b1034c7531445)
 - The maximum length of the response in a call invitation is 8 KB. See [RemoteInvitation.setResponse()](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_remote_invitation.html#a229b8cf773eaa0e79b0d67815fd6b6f1)
 
