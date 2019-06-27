@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: iOS
-updatedAt: Mon May 27 2019 02:40:32 GMT+0800 (CST)
+updatedAt: Thu Jun 27 2019 10:32:46 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -37,7 +37,7 @@ updatedAt: Mon May 27 2019 02:40:32 GMT+0800 (CST)
 
 ### 手动添加 SDK 到项目中
 
-1. 下载 [Agora RTM Objective-C SDK for iOS](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_iOS_v0_9_2.zip) ，解压后将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到你的项目文件夹内。
+1. 下载 [Agora RTM Objective-C SDK for iOS](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_iOS_v0_9_3.zip) ，解压后将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到你的项目文件夹内。
 2. 使用 Xcode 打开你的项目，然后选中当前 Target。
 3. 打开 **Build Phases** 页面，展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加
    - **AgoraRtmKit.framework**
