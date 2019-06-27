@@ -3,12 +3,12 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Thu May 09 2019 07:39:39 GMT+0800 (CST)
+updatedAt: Thu Jun 27 2019 10:18:56 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
 
-> 目前版本不支持老信令和RTM SDK互通
+> Agora RTM SDK 目前与 Agora Signaling SDK 暂未实现互通，互通功能将于近期实现。
 
 ## 多实例限制
 
@@ -28,7 +28,7 @@ updatedAt: Thu May 09 2019 07:39:39 GMT+0800 (CST)
 
 ## 字符串长度限制
 
-- 点对点或频道消息的字符串最大长度为 32 KB。详见： [RtmMessage.setText()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_javaclassio_1_1agora_1_1rtm_1_1_rtm_message.html#a114bf5f4d728e1a5e31792491bf4a1d2) 。
+- 点对点或频道消息的字符串最大长度为 32 KB。详见： [RtmMessage.setText()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a114bf5f4d728e1a5e31792491bf4a1d2) 。
 - 呼叫邀请内容的字符串最大长度为 8 KB. 详见： [LocalInvitation.setContent()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_local_invitation.html#a4cec28ff6d356242329b1034c7531445) 。
 - 呼叫邀请响应的字符串最大长度为 8 KB. 详见： [RemoteInvitation.setResponse()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_remote_invitation.html#a229b8cf773eaa0e79b0d67815fd6b6f1) 。
 
@@ -39,7 +39,7 @@ updatedAt: Thu May 09 2019 07:39:39 GMT+0800 (CST)
 
 ## 其他 
 
-- Agora RTM SDK 目前与 Agora Signaling SDK 暂未实现互通。互通功能将于近期实现。
+
 - 当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请请拨打 400 632 6626 或邮件 sales@agora.io。
 - 当前版本仅支持查询最多 256 个用户的在线状态。
 
