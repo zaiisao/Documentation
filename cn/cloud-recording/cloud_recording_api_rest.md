@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Jun 28 2019 02:03:45 GMT+0800 (CST)
+updatedAt: Fri Jun 28 2019 02:03:50 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -127,6 +127,7 @@ updatedAt: Fri Jun 28 2019 02:03:45 GMT+0800 (CST)
 
 `clientRequest` 中需要填写的内容如下：
 
+- `token`：（选填） String 类型，用于鉴权的动态密钥。如果待录制的频道使用了 Token，请务必设置该参数。
 - `recordingConfig`：（选填）JSON 类型，录制的详细设置。
   - `streamTypes`：（选填）Number 类型，录制的媒体流类型。
     - `0`：仅录制音频
@@ -229,6 +230,7 @@ updatedAt: Fri Jun 28 2019 02:03:45 GMT+0800 (CST)
     "uid": "527841",
     "cname": "httpClient463224",
     "clientRequest": {
+		"token": "<token if any>",
         "recordingConfig": {
             "maxIdleTime": 30,
             "streamTypes": 2,
