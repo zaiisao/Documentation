@@ -3,11 +3,9 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Thu Dec 27 2018 08:19:01 GMT+0800 (CST)
+updatedAt: Fri Jun 28 2019 11:12:54 GMT+0800 (CST)
 ---
 # Agora Analytics
-## Overview
-
 [Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks the QoE (Quality of Experience) of calls. The **Call Search** function allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
  
 - The device status, including the system CPU usage and the app's CPU usage.
