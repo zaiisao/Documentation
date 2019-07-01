@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 02:15:15 GMT+0800 (CST)
+updatedAt: Mon Jul 01 2019 02:18:54 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -104,7 +104,7 @@ import requests
 import time
 TIMEOUT=60
 
-#TODO: please fill in AppId, Basic Auth string, Cname (channel name), and cloud storage information
+#TODO: Fill in AppId, Basic Auth string, Cname (channel name), and cloud storage information
 APPID=""
 Auth=""
 Cname=""
