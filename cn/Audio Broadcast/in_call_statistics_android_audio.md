@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: Android
-updatedAt: Wed Jun 26 2019 06:02:42 GMT+0800 (CST)
+updatedAt: Mon Jul 01 2019 07:41:31 GMT+0800 (CST)
 ---
 # 检测通话质量
 通话质量检测功能是在 SDK 加入频道后通过每 2 秒触发一次的回调实现。
@@ -81,7 +81,7 @@ void onNetworkQuality(int uid, int txQuality, int rxQuality) {
 - `onRemoteAudioTransportStats` 2 秒自动回调：侧重反映通话中远端音频流的传输层网络状态，数据更为客观。主要返回信息：
   - `delay`：网络传输层延时（毫秒），delay = Delay 2 + Delay 3 + Delay 4。
   - `lost`：传输层音频丢包率（%），lost = (packetLoss 2 + packetLoss 3 + packetLoss 4)/totalPacketsSent。
-  - `rxKBitRate`：音频接收码率（kbps）。
+  - `rxKBitRate`：音频接收码率（Kbps）。
 
 > [2] 参见上文[质量打分对照表](#table)。
 
