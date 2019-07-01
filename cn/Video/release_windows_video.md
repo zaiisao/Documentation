@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jun 26 2019 06:28:04 GMT+0800 (CST)
+updatedAt: Mon Jul 01 2019 07:34:16 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -78,7 +78,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 #### 6、本地网络连接类型回调
 
-为方便用户了解本地网络的连接类型，该版本新增 [onNetworkTypeChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4) 回调。该回调下，本地网络连接有 `UNKNOWN`、`DISCONNECTED`、`LAN`、`WIFI`、`2G`、`3G`、`4G` 六种类型。当网络连接短暂中断时，该回调能帮助开发者辨别引起中断的原因是网络切换还是网络条件不好。
+为方便用户了解本地网络的连接类型，该版本新增 [onNetworkTypeChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af71617b59ba8564963dfdd642f4e36a4) 回调。该回调下，本地网络连接有 `UNKNOWN`、`DISCONNECTED`、`LAN`、`WIFI`、`2G`、`3G`、`4G` 七种类型。当网络连接短暂中断时，该回调能帮助开发者辨别引起中断的原因是网络切换还是网络条件不好。
 
 #### 7、获取播放伴奏音量
 
