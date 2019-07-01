@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 02:14:05 GMT+0800 (CST)
+updatedAt: Mon Jul 01 2019 02:15:15 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -94,3 +94,122 @@ M3U8 文件名由录制 ID 和频道名组成，如 `sid_cname.M3U8`。
 - 停止录制后，根据上传情况，SDK 会触发以下回调之一：
   - [`uploaded`](../../cn/cloud-recording/cloud_recording_callback_rest.md)：如果录制文件全部成功上传至预先设定的云存储，最后一个录制切片文件上传完成时触发该回调，通知上传完成。
   - [`backuped`](../../cn/cloud-recording/cloud_recording_callback_rest.md)：如果有录制文件未能成功上传至第三方云存储，Agora 服务器会将这部分文件自动上传至 Agora 云备份，当录制结束后会触发该回调。Agora 云备份会继续尝试将这部分文件上传至设定的第三方云存储。如果等待五分钟后仍然不能正常[播放录制文件](../../cn/cloud-recording/cloud_recording_onlineplay.md)，请联系 Agora 技术支持。
+  
+## <a name="demo-rest"></a>示例代码
+
+以下为使用 RESTful API 进行云端录制的示例代码（Python），供你参考。
+
+```python
+import requests
+import time
+TIMEOUT=60
+
+#TODO: please fill in AppId, Basic Auth string, Cname (channel name), and cloud storage information
+APPID=""
+Auth=""
+Cname=""
+ACCESS_KEY=""
+SECRET_KEY=""
+VENDOR = 0
+REGION = 0
+BUCKET = ""
+
+url="https://api.agora.io/v1/apps/%s/cloud_recording/" % APPID
+
+acquire_body={
+    "uid": "957947",
+    "cname": Cname,
+    "clientRequest": {}
+}
+
+start_body={
+    "uid": "957947",
+    "cname": Cname,
+    "clientRequest": {
+        "storageConfig": {
+            "secretKey": SECRET_KEY,
+            "region": REGION,
+            "accessKey": ACCESS_KEY,
+            "bucket": BUCKET,
+            "vendor": VENDOR
+        },
+        "recordingConfig": {
+            "audioProfile": 0,
+            "channelType": 0,
+            "maxIdleTime": 30,
+            "transcodingConfig": {
+                    "width": 640,
+                    "height": 360,
+                    "fps": 15,
+                    "bitrate": 500
+            }
+        }
+    }
+}
+
+stop_body={
+    "uid": "957947",
+    "cname": Cname,
+    "clientRequest": {}
+}
+
+
+def cloud_post(url, data=None,timeout=TIMEOUT):
+    headers = {'Content-type': "application/json", "Authorization": Auth}
+
+    try:
+        response = requests.post(url, json=data, headers=headers, timeout=timeout, verify=False)
+        print("url: %s, request body:%s response: %s" %(url, response.request.body,response.json()))
+        return response
+    except requests.exceptions.ConnectTimeout:
+        raise Exception("CONNECTION_TIMEOUT")
+    except requests.exceptions.ConnectionError:
+        raise Exception("CONNECTION_ERROR")
+
+def cloud_get(url, timeout=TIMEOUT):
+    headers = {'Content-type':"application/json", "Authorization":Auth}
+    try:
+        response = requests.get(url, headers=headers, timeout=timeout, verify=False)
+        print("url: %s,request:%s response: %s" %(url,response.request.body, response.json()))
+        return response
+    except requests.exceptions.ConnectTimeout:
+        raise Exception("CONNECTION_TIMEOUT")
+    except requests.exceptions.ConnectionError:
+        raise Exception("CONNECTION_ERROR")
+
+def start_record():
+    acquire_url = url+"acquire"
+    r_acquire = cloud_post(acquire_url, acquire_body)
+    if r_acquire.status_code == 200:
+        resourceId = r_acquire.json()["resourceId"]
+    else:
+        print("Acquire error! Code: %s Info: %s" %(r_acquire.status_code, r_acquire.json()))
+        return False
+
+    start_url = url+ "resourceid/%s/mode/mix/start" % resourceId
+    r_start = cloud_post(start_url, start_body)
+    if r_start.status_code == 200:
+        sid = r_start.json()["sid"]
+    else:
+        print("Start error! Code:%s Info:%s" %(r_start.status_code, r_start.json()))
+        return False
+
+    time.sleep(10)
+    query_url = url + "resourceid/%s/sid/%s/mode/mix/query" %(resourceId, sid)
+    r_query = cloud_get(query_url)
+    if r_query.status_code == 200:
+        print("The recording status: %s" % r_query.json())
+    else:
+        print("Query failed. Code %s, info: %s" % (r_query.status_code, r_query.json()))
+
+    time.sleep(30)
+    stop_url = url+"resourceid/%s/sid/%s/mode/mix/stop" % (resourceId, sid)
+    r_stop = cloud_post(stop_url, stop_body)
+    if r_stop.status_code == 200:
+        print("Stop cloud recording success. FileList : %s, uploading status: %s"
+              %(r_stop.json()["serverResponse"]["fileList"], r_stop.json()["serverResponse"]["uploadingStatus"]))
+    else:
+        print("Stop failed! Code: %s Info: %s" % r_stop.status_code, r_stop.json())
+
+start_record()
+```
