@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Mon Jul 01 2019 07:34:03 GMT+0800 (CST)
+updatedAt: Mon Jul 01 2019 07:36:38 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -28,7 +28,7 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 
 ### **升级必看**
 
-如下内容涉及 SDK 的行为变更。如果你是有之前版本的 SDK 升级至该版本，升级前请务必阅读。
+如下内容涉及 SDK 的行为变更。如果你是由之前版本的 SDK 升级至该版本，升级前请务必阅读。
 
 #### 1. CDN 推流
 
