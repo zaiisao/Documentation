@@ -2,8 +2,8 @@
 ---
 title: Live-related Issues
 description: 
-platform: Live-related Issues
-updatedAt: Fri May 31 2019 03:05:36 GMT+0800 (CST)
+platform: All Platforms
+updatedAt: Mon Jul 01 2019 07:59:21 GMT+0800 (CST)
 ---
 # Live-related Issues
 This page provides common troubleshooting strategies for Agora's interactive broadcast products and services.
@@ -35,7 +35,7 @@ By default, Agora adds the encoding information of the current video to the tran
   },
   "regions": [{
     "uid": 1,
-    "alpha": 255,
+    "alpha": 1.0,
     "zorder": 1,
     "volume": 50,
     "x": 0,
