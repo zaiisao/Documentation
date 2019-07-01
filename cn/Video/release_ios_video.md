@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Mon Jul 01 2019 07:33:48 GMT+0800 (CST)
+updatedAt: Mon Jul 01 2019 07:36:24 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -23,7 +23,7 @@ iOS 视频 SDK 支持两种主要场景:
 
 ### **升级必看**
 
-如下内容涉及 SDK 的行为变更。如果你是有之前版本的 SDK 升级至该版本，升级前请务必阅读。
+如下内容涉及 SDK 的行为变更。如果你是由之前版本的 SDK 升级至该版本，升级前请务必阅读。
 
 #### 1. CDN 推流
 
