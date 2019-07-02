@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Web
-updatedAt: Mon Jun 24 2019 04:23:56 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 06:30:18 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Web SDK 进行音视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -73,7 +73,7 @@ updatedAt: Mon Jun 24 2019 04:23:56 GMT+0800 (CST)
 >   - macOS 上使用 Safari 12.1 及以上版本
 
 2. 请确保已打开特定端口，详见[防火墙说明](../../cn/Agora%20Platform/firewall.md) 。
-3. 请确保你已知悉发版说明中列出的问题，详见[已知问题和局限](../../cn/Audio%20Broadcast/release_web_video.md) 及[常见问题回答](../../cn/Audio%20Broadcast/websdk_related_faq.md)。
+3. 请确保你已知悉发版说明中列出的问题，详见[已知问题和局限](../../cn/Audio%20Broadcast/release_web_video.md) 及[常见问题回答](https://docs.agora.io/cn/search?type=faq&platform=Web)。
 
 ## 创建项目并获取 App ID
 
