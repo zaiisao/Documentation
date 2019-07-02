@@ -2,7 +2,7 @@
 ---
 title: Video-related Issues
 description: 
-platform: Video-related Issues
+platform: All Platforms
 updatedAt: Tue Dec 25 2018 16:24:05 GMT+0800 (CST)
 ---
 # Video-related Issues

@@ -2,8 +2,8 @@
 ---
 title: Rotate the Video
 description: 
-platform: Android
-updatedAt: Tue Dec 11 2018 17:41:17 GMT+0800 (CST)
+platform: Windows
+updatedAt: Wed Jun 26 2019 06:56:43 GMT+0800 (CST)
 ---
 # Rotate the Video
 The Agora SDK v2.3.0+ provides a `setVideoEncoderConfiguration` method for users to set the video profile. This method includes an `orientationMode` parameter for users to set the video orientation mode.
@@ -36,8 +36,8 @@ The video player renders the received video information.
 
 After you have joined the Agora channel, use the `setVideoEncoderConfiguration` method to set your preferred video profile.
 
-```
-public abstract int setVideoEncoderConfiguration(VideoEncoderConfiguration config);
+```cpp
+virtual int setVideoEncoderConfiguration(const VideoEncoderConfiguration& config) = 0;
 ```
 
 The `VideoEncoderConfiguration` class includes an `orientationMode` parameter to set the rotational mode of your video. Agora recommends using the following flowchart to select your video orientation mode \(applicable to both Communication and Live Broadcast scenarios\).
@@ -119,4 +119,4 @@ The following figures show the video orientations at the video capturer and the 
     <img alt="../_images/rotation_fixed_portrait_cut.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_fixed_portrait_cut.jpg" />
 
 
-See the description of the `setVideoEncoderConfiguration` method in [Video Call API](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/index.html) for more information.
+See the description of the `setVideoEncoderConfiguration` method in [Video Call API](https://docs.agora.io/en/Video/API%20Reference/java/index.html) for more information.

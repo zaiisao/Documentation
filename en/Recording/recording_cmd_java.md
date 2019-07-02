@@ -2,7 +2,7 @@
 ---
 title: Record a Call
 description: 
-platform: Java
+platform: Linux Java
 updatedAt: Tue Mar 05 2019 07:58:00 GMT+0800 (CST)
 ---
 # Record a Call

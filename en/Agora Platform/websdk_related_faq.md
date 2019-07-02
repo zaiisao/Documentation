@@ -2,7 +2,7 @@
 ---
 title: Web SDK-related Issues
 description: 
-platform: Web SDK-related Issues
+platform: All Platforms
 updatedAt: Mon Mar 04 2019 02:45:27 GMT+0800 (CST)
 ---
 # Web SDK-related Issues

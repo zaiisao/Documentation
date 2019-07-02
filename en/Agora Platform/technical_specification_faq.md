@@ -2,7 +2,7 @@
 ---
 title: Technical Specification
 description: 
-platform: Technical Specification
+platform: All Platforms
 updatedAt: Mon Feb 11 2019 02:55:05 GMT+0800 (CST)
 ---
 # Technical Specification

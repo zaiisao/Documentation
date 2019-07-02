@@ -2,7 +2,7 @@
 ---
 title: Integrate the SDK
 description: How to integrate recording SDK for Java
-platform: Java
+platform: Linux Java
 updatedAt: Tue May 28 2019 07:33:42 GMT+0800 (CST)
 ---
 # Integrate the SDK

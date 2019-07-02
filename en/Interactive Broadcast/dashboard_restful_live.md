@@ -2,7 +2,7 @@
 ---
 title: Dashboard RESTful API
 description: 
-platform: All_Platforms
+platform: All Platforms
 updatedAt: Fri May 10 2019 06:20:16 GMT+0800 (CST)
 ---
 # Dashboard RESTful API

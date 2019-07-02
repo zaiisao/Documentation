@@ -2,7 +2,7 @@
 ---
 title: Recording Voice and Video
 description: 
-platform: All_Platforms
+platform: Linux
 updatedAt: Fri Jun 14 2019 08:49:05 GMT+0800 (CST)
 ---
 # Recording Voice and Video

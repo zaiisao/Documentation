@@ -2,7 +2,7 @@
 ---
 title: Integrate the SDK
 description: 
-platform: CPP
+platform: Linux CPP
 updatedAt: Tue May 28 2019 07:14:09 GMT+0800 (CST)
 ---
 # Integrate the SDK

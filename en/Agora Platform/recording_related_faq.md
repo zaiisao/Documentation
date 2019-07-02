@@ -2,7 +2,7 @@
 ---
 title: Recording-related Issues
 description: 
-platform: Recording-related Issues
+platform: All Platforms
 updatedAt: Tue May 21 2019 09:35:14 GMT+0800 (CST)
 ---
 # Recording-related Issues

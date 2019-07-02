@@ -2,7 +2,7 @@
 ---
 title: Agora Recording Overview
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Wed May 22 2019 02:40:33 GMT+0800 (CST)
 ---
 # Agora Recording Overview

@@ -2,7 +2,7 @@
 ---
 title: Interactive Gaming API
 description: 
-platform: unity
+platform: Unity
 updatedAt: Fri Nov 02 2018 04:23:52 GMT+0800 (CST)
 ---
 # Interactive Gaming API

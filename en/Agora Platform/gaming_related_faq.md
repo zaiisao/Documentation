@@ -2,7 +2,7 @@
 ---
 title: Gaming-related Issues
 description: 
-platform: Gaming-related Issues
+platform: All Platforms
 updatedAt: Tue Dec 25 2018 16:42:30 GMT+0800 (CST)
 ---
 # Gaming-related Issues

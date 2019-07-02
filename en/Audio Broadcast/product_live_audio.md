@@ -2,7 +2,7 @@
 ---
 title: Agora Audio Broadcasting Overview
 description: 
-platform: All_Platforms
+platform: All Platforms
 updatedAt: Mon May 27 2019 10:08:00 GMT+0800 (CST)
 ---
 # Agora Audio Broadcasting Overview

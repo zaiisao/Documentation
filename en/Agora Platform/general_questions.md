@@ -2,7 +2,7 @@
 ---
 title: FAQ
 description: 
-platform: General Questions
+platform: All Platforms
 updatedAt: Tue Jun 18 2019 10:29:39 GMT+0800 (CST)
 ---
 # FAQ

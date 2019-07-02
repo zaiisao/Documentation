@@ -2,7 +2,7 @@
 ---
 title: Gaming API
 description: 
-platform: null
+platform: Cocos Creator
 updatedAt: Wed Apr 24 2019 09:51:57 GMT+0800 (CST)
 ---
 # Gaming API

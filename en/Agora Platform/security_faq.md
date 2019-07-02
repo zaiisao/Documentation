@@ -2,7 +2,7 @@
 ---
 title: Security
 description: 
-platform: Security
+platform: All Platforms
 updatedAt: Tue Dec 25 2018 15:10:42 GMT+0800 (CST)
 ---
 # Security

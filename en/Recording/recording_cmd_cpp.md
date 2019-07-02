@@ -2,7 +2,7 @@
 ---
 title: Record a Call
 description: 
-platform: CPP
+platform: Linux CPP
 updatedAt: Tue May 28 2019 07:24:38 GMT+0800 (CST)
 ---
 # Record a Call

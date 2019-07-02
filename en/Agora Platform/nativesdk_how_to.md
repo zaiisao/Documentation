@@ -2,7 +2,7 @@
 ---
 title: Native SDK-related Issues
 description: 
-platform: Native SDK-related Issues
+platform: All Platforms
 updatedAt: Wed Jun 19 2019 10:37:35 GMT+0800 (CST)
 ---
 # Native SDK-related Issues

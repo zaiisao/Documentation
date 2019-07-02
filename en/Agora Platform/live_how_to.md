@@ -2,7 +2,7 @@
 ---
 title: Interactive Broadcast-related Issues
 description: 
-platform: Live Broadcast-related Issues
+platform: All Platforms
 updatedAt: Fri Nov 23 2018 03:24:01 GMT+0800 (CST)
 ---
 # Interactive Broadcast-related Issues
