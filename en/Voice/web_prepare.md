@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Mon Jun 24 2019 05:21:19 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 06:31:44 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
@@ -73,7 +73,7 @@ This page contains information on how to prepare the development environment bef
 > - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/Agora%20Platform/websdk_how_to#edge) for details.
 
 2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
-3. Understand the limitations in [Known Issues](../../en/Voice/release_web_video.md) and [FAQ](../../en/Voice/websdk_related_faq.md).
+3. Understand the limitations in [Known Issues](../../en/Voice/release_web_video.md) and [FAQ](https://docs.agora.io/en/search?type=faq&platform=Web).
 
 ## Create an Agora Project and Get an App ID
 
