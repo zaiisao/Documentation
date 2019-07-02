@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Jun 21 2019 04:22:29 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 06:27:10 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -70,7 +70,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 </table>
 
 > - Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
-> - Agora Web SDK 2.7 及以上版本还支持 Windows 10 平台的 Edge 浏览器，详见 [Edge 浏览器支持](https://docs.agora.io/cn/Agora%20Platform/websdk_how_to#edge)。
+> - Agora Web SDK 2.7 及以上版本还支持 Windows 10 平台的 Edge 浏览器，详见 [Edge 浏览器支持](https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge)。
 > - 以下场景中请务必将 Web SDK 升级至 2.6:
 >   - iOS 12.1.4 及以上版本使用 Safari 浏览器
 >   - macOS 上使用 Safari 12.1 及以上版本
@@ -113,7 +113,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 #### 5. 支持 Edge 浏览器
 
-该版本支持在 Edge 浏览器上实现音视频基本互通，具体支持的功能请参考 [Edge 浏览器支持](https://docs.agora.io/cn/Agora%20Platform/websdk_how_to#edge)。
+该版本支持在 Edge 浏览器上实现音视频基本互通，具体支持的功能请参考 [Edge 浏览器支持](https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge)。
 
 ### 改进
 
