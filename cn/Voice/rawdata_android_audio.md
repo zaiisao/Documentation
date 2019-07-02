@@ -3,7 +3,7 @@
 title: 修改音视频原始数据
 description: 
 platform: Android
-updatedAt: Thu Jun 20 2019 03:10:10 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 08:19:19 GMT+0800 (CST)
 ---
 # 修改音视频原始数据
 Agora 原始数据接口是 SDK 库提供的高级功能，便于你（开发者）获取媒体引擎的原始语音或视频数据。开发者可以修改语音或视频数据，创建特效来更好地满足自己应用程序的特殊需求。
