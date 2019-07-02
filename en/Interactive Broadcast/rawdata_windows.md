@@ -3,7 +3,7 @@
 title: Modify Raw Data
 description: 
 platform: Windows
-updatedAt: Mon Jun 10 2019 09:29:45 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 08:31:06 GMT+0800 (CST)
 ---
 # Modify Raw Data
 The Agora Raw Data interface is an advanced feature provided in the SDK library for users to obtain the raw voice or video data of the SDK engine. Developers can modify the voice or video data and create special effects to meet their needs.
@@ -88,6 +88,19 @@ if (mediaEngine)
 ```
 
 > <code>engine</code> can be passed in by <code>loadAgoraRtcEnginePlugin</code> in [Create the Agora Native SDK Plugin](#create_plugin).
+
+### API Reference
+
+- [onRecordAudioFrame](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ac6ab0c792420daf929fed78f9d39f728)
+- [onPlaybackAudioFrame](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#aefc7f9cb0d1fcbc787775588bc849bac)
+- [onPlaybackAudioFrameBeforeMixing](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ae04d85a65eefec5e7c1e0477bcaa067c)
+- [onMixedAudioFrame](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a78d095cbd0b8ee04f657430bb6de8100)
+
+Call the following methods to modify the audio sample rate in the above callbacks:
+
+- [setRecordingAudioFrameParameters](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2c4717760b5fbf1bb8c1a3c16ca67fe5)
+- [setPlaybackAudioFrameParameters](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aa5f2f6eb3db5acaaf8c40818d90694f1)
+- [setMixedAudioFrameParameters](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a520ebcda51b5eb488339f3a12dfb8013)
 
 ## Modify the Raw Video Data
 
