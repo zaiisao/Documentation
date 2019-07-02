@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 02:17:38 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 06:25:02 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -15,7 +15,7 @@ updatedAt: Mon Jul 01 2019 02:17:38 GMT+0800 (CST)
 - `api_key`: Customer ID
 - `api_secret`: Customer Certificate
 
-你可以在 Dashboard 的 [RESTful API](https://dashboard.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
+你可以在 Dashboard 的 [RESTful API](https://dashboard.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ## 数据格式
 
@@ -71,7 +71,7 @@ updatedAt: Mon Jul 01 2019 02:17:38 GMT+0800 (CST)
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 - 请求包体内容：
 
  ```json
@@ -222,7 +222,7 @@ updatedAt: Mon Jul 01 2019 02:17:38 GMT+0800 (CST)
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/mode/mix/start`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 - 请求包体内容：
 
  ```json
@@ -296,7 +296,7 @@ updatedAt: Mon Jul 01 2019 02:17:38 GMT+0800 (CST)
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/query`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ### `query` 响应示例
 
@@ -365,7 +365,7 @@ updatedAt: Mon Jul 01 2019 02:17:38 GMT+0800 (CST)
 
 - 请求 URL：`https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/stop`
 - `Content-type` 为 `application/json;charset=utf-8`
-- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 - 请求包体内容：
  ```json
 {
