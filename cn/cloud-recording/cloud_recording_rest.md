@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 02:18:54 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 06:25:03 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -37,7 +37,7 @@ Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网�
 
 ## 通过 Basic HTTP 认证
 
-Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都必须在请求头部填入 `Authorization`  字段。关于如何生成该字段的值，请参考 [RESTful API 认证](https://docs.agora.io/cn/Agora%20Platform/other_questions_how_to#restful-api--认证)。
+Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都必须在请求头部填入 `Authorization`  字段。关于如何生成该字段的值，请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ## 获取 resource ID
 
