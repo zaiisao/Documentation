@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Tue Jul 02 2019 10:36:38 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 10:36:41 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 云端录制 RESTful API 提供回调服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -12,9 +12,11 @@ updatedAt: Tue Jul 02 2019 10:36:38 GMT+0800 (CST)
 
 你需要联系 sales@agora.io 开通回调服务，并提供以下信息：
 
-- 用于接收回调的 HTTP/HTTPS 服务器地址
+- 用于接收回调的 HTTP/HTTPS URL
 - 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id)
 - 需要接收通知的事件类型
+
+> 一个 App ID 只能配置一个接收回调的 URL。
 
 ## 数据格式
 
