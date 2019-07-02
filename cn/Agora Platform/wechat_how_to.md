@@ -2,7 +2,7 @@
 ---
 title: 小程序 SDK 相关
 description: 
-platform: 小程序 SDK 相关
+platform: 微信小程序
 updatedAt: Wed Feb 20 2019 07:57:20 GMT+0800 (CST)
 ---
 # 小程序 SDK 相关

@@ -2,7 +2,7 @@
 ---
 title: Web SDK 相关
 description: 
-platform: Web SDK 相关
+platform: Web
 updatedAt: Mon Mar 04 2019 02:47:29 GMT+0800 (CST)
 ---
 # Web SDK 相关

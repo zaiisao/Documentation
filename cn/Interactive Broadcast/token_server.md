@@ -2,7 +2,7 @@
 ---
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
-platform: 服务端
+platform: Server
 updatedAt: Wed Jun 19 2019 03:20:01 GMT+0800 (CST)
 ---
 # 在服务端生成 Token

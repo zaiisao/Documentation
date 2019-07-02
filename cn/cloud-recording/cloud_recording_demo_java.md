@@ -2,7 +2,7 @@
 ---
 title: Demo 使用指南
 description: 
-platform: Java
+platform: Linux Java
 updatedAt: Mon Jun 17 2019 04:10:07 GMT+0800 (CST)
 ---
 # Demo 使用指南

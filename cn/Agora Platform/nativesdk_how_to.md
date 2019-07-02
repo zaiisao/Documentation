@@ -2,7 +2,7 @@
 ---
 title: Native SDK 相关
 description: 
-platform: Native SDK 相关
+platform: All Platforms
 updatedAt: Wed Jun 19 2019 10:37:48 GMT+0800 (CST)
 ---
 # Native SDK 相关

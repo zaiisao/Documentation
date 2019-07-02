@@ -2,7 +2,7 @@
 ---
 title: 集成录制 SDK
 description: How to integrate recording SDK
-platform: CPP
+platform: Linux CPP
 updatedAt: Tue May 28 2019 06:49:55 GMT+0800 (CST)
 ---
 # 集成录制 SDK

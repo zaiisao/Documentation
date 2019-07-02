@@ -2,7 +2,7 @@
 ---
 title: 集成录制 SDK
 description: How to integrate recording SDK
-platform: Java
+platform: Linux Java
 updatedAt: Tue May 28 2019 07:26:55 GMT+0800 (CST)
 ---
 # 集成录制 SDK

@@ -2,7 +2,7 @@
 ---
 title: 游戏相关
 description: 
-platform: 游戏相关
+platform: All Platforms
 updatedAt: Tue Nov 20 2018 09:13:45 GMT+0800 (CST)
 ---
 # 游戏相关

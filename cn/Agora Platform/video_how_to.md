@@ -2,7 +2,7 @@
 ---
 title: 视频相关
 description: 
-platform: 视频相关
+platform: All Platforms
 updatedAt: Wed Nov 28 2018 09:33:10 GMT+0800 (CST)
 ---
 # 视频相关

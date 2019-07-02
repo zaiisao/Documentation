@@ -2,7 +2,7 @@
 ---
 title: IM 返回值说明
 description: 
-platform: unity
+platform: Unity
 updatedAt: Fri Nov 02 2018 04:13:06 GMT+0800 (CST)
 ---
 # IM 返回值说明

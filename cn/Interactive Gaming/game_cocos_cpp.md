@@ -2,7 +2,7 @@
 ---
 title: 游戏 API
 description: 
-platform: CPP
+platform: Cocos
 updatedAt: Mon May 20 2019 08:20:39 GMT+0800 (CST)
 ---
 # 游戏 API

@@ -2,7 +2,7 @@
 ---
 title: 开始录制
 description: How to start recording using cmd for Java
-platform: Java
+platform: Linux Java
 updatedAt: Tue Mar 05 2019 07:52:30 GMT+0800 (CST)
 ---
 # 开始录制

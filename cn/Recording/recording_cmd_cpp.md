@@ -2,7 +2,7 @@
 ---
 title: 命令行录制
 description: How to start recording using cmd
-platform: CPP
+platform: Linux CPP
 updatedAt: Thu May 23 2019 08:32:24 GMT+0800 (CST)
 ---
 # 命令行录制

@@ -2,7 +2,7 @@
 ---
 title: SDK 断线重连机制
 description: 
-platform: SDK 对断网、杀进程的处理
+platform: All Platforms
 updatedAt: Tue May 21 2019 10:23:27 GMT+0800 (CST)
 ---
 # SDK 断线重连机制

@@ -2,7 +2,7 @@
 ---
 title: 产品概述
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Wed May 22 2019 03:09:07 GMT+0800 (CST)
 ---
 # 产品概述

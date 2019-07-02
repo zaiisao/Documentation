@@ -2,7 +2,7 @@
 ---
 title: 云端录制快速开始
 description: 
-platform: Java
+platform: Linux Java
 updatedAt: Mon Jun 17 2019 03:28:26 GMT+0800 (CST)
 ---
 # 云端录制快速开始

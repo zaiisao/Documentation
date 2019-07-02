@@ -2,7 +2,7 @@
 ---
 title: 直播相关
 description: 
-platform: 直播相关
+platform: All Platforms
 updatedAt: Wed Nov 28 2018 10:03:31 GMT+0800 (CST)
 ---
 # 直播相关

@@ -2,7 +2,7 @@
 ---
 title: 视频采集旋转
 description: 
-platform: Android,Windows
+platform: Android
 updatedAt: Tue Dec 11 2018 09:56:32 GMT+0800 (CST)
 ---
 # 视频采集旋转

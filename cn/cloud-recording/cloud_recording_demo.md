@@ -2,7 +2,7 @@
 ---
 title: Demo 使用指南
 description: 
-platform: CPP
+platform: Linux CPP
 updatedAt: Mon Jun 17 2019 04:08:46 GMT+0800 (CST)
 ---
 # Demo 使用指南

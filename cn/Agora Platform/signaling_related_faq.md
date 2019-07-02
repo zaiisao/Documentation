@@ -2,7 +2,7 @@
 ---
 title: 信令相关
 description: 
-platform: 信令相关
+platform: All Platforms
 updatedAt: Fri Nov 23 2018 10:47:04 GMT+0800 (CST)
 ---
 # 信令相关

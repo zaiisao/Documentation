@@ -2,7 +2,7 @@
 ---
 title: 录制相关
 description: 
-platform: 录制相关
+platform: All Platforms
 updatedAt: Tue Jun 11 2019 02:49:39 GMT+0800 (CST)
 ---
 # 录制相关

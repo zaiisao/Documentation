@@ -2,7 +2,7 @@
 ---
 title: 云端录制快速开始
 description: Draft
-platform: CPP
+platform: Linux CPP
 updatedAt: Mon Jun 17 2019 03:25:24 GMT+0800 (CST)
 ---
 # 云端录制快速开始

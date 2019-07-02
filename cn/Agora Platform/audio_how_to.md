@@ -2,7 +2,7 @@
 ---
 title: 音频相关
 description: 
-platform: 音频相关
+platform: All Platforms
 updatedAt: Fri Jun 14 2019 01:56:58 GMT+0800 (CST)
 ---
 # 音频相关

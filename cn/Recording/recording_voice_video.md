@@ -2,7 +2,7 @@
 ---
 title: 录制音视频
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Wed Jun 12 2019 06:07:43 GMT+0800 (CST)
 ---
 # 录制音视频
