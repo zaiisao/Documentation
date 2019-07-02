@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Tue Jul 02 2019 06:31:51 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 06:36:59 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -73,7 +73,7 @@ See the table below for the web browser support of the Agora Web SDK:
 >   - Safari on iOS 12.1.4 or later.
 >   - Safari 12.1 or later on macOS.
 > - The Agora Web SDK v2.5 or later also supports Chrome 49 on Windows XP.
-> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/Agora%20Platform/websdk_how_to#edge) for details.
+> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/faq/browser_support#edge) for details.
 
 > To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
 
@@ -114,7 +114,7 @@ Adds the `"audioTrackEnded"` and `"videoTrackEnded"` callbacks in `Stream.on` to
 
 #### 5. Supporting Microsoft Edge
 
-Supports audio/video calls and live broadcasts on the Microsoft Edge browser. For details, see [Agora Web SDK FAQ](https://docs.agora.io/en/Agora%20Platform/websdk_how_to#edge).
+Supports audio/video calls and live broadcasts on the Microsoft Edge browser. For details, see [Agora Web SDK FAQ](https://docs.agora.io/en/faq/browser_support#edge).
 
 ### Improvement
 
