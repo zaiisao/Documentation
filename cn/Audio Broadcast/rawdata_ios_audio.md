@@ -3,7 +3,7 @@
 title: 修改音视频原始数据
 description: 
 platform: iOS,macOS
-updatedAt: Thu Jun 20 2019 03:10:20 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 08:22:44 GMT+0800 (CST)
 ---
 # 修改音视频原始数据
 Agora 原始数据接口是 SDK 库提供的高级功能，便于你（开发者）获取媒体引擎的原始语音或视频数据。开发者可以修改语音或视频数据，创建特效来更好地满足自己应用程序的特殊需求。
@@ -91,4 +91,16 @@ Agora 原始数据接口是一个 C++ 接口。
 > mediaEngine.queryInterface(rtc_engine, agora::AGORA_IID_MEDIA_ENGINE);
 > ```
 
+### API 参考
+
+- [onRecordAudioFrame](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ac6ab0c792420daf929fed78f9d39f728)
+- [onPlaybackAudioFrame](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#aefc7f9cb0d1fcbc787775588bc849bac)
+- [onPlaybackAudioFrameBeforeMixing](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ae04d85a65eefec5e7c1e0477bcaa067c)
+- [onMixedAudioFrame](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a78d095cbd0b8ee04f657430bb6de8100)
+
+如果你想要修改如上回调中的音频采样率，可以调用如下方法：
+
+- [setRecordingAudioFrameParameters](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2c4717760b5fbf1bb8c1a3c16ca67fe5)
+- [setPlaybackAudioFrameParameters](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aa5f2f6eb3db5acaaf8c40818d90694f1)
+- [setMixedAudioFrameParameters](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a520ebcda51b5eb488339f3a12dfb8013)
 
