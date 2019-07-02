@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Jun 24 2019 08:28:48 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 06:31:51 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -84,7 +84,7 @@ See the table below for the web browser support of the Agora Web SDK:
 - On some iOS devices, when you switch the Safari browser to the background and back during a call, black bars might appear around your video.
 - The Agora Web SDK does not support code obfuscation.
 
-For more issues, see [Web FAQs](../../en/Video/websdk_related_faq.md).
+For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
 
 ## v2.7.0
 
