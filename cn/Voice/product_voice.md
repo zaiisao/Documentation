@@ -3,12 +3,12 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 03 2019 02:28:08 GMT+0800 (CST)
+updatedAt: Wed Jul 03 2019 02:28:12 GMT+0800 (CST)
 ---
 # 产品概述
 语音通话可以实现纯语音的一对一单聊和多人群聊，不具备视频通话功能，包体积更小，适用于各种语音社交、语音会议等场景。
 
-语音通话不同于[语音互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)。语音通话，不区分主播和观众，所有用户都可发言，默认流畅和低延时优先，典型场景如多人语音会议；语音直播，用户分为主播和观众，只有主播可以自由发言，默认高音质优先，典型场景如在线音乐直播。
+语音通话不同于[语音互动直播](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)。语音通话，不区分主播和观众，所有用户都可发言，默认流畅和低延时优先，典型场景如多人语音会议；语音直播，用户分为主播和观众，只有主播可以自由发言，默认高音质优先，典型场景如在线音乐直播。
 
 ## 功能和场景
 
