@@ -3,7 +3,7 @@
 title: Agora Video Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Mon May 27 2019 10:03:15 GMT+0800 (CST)
+updatedAt: Wed Jul 03 2019 04:18:48 GMT+0800 (CST)
 ---
 # Agora Video Broadcasting Overview
 The Agora Native SDK for Video Broadcasting enables one-to-many and many-to-many audio or video live streaming. 
