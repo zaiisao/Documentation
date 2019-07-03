@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Jul 03 2019 04:17:04 GMT+0800 (CST)
+updatedAt: Wed Jul 03 2019 10:49:29 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -85,6 +85,14 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
+
+## 2.7.1 版
+
+该版本于 2019 年 7 月 3 日发布。
+
+### 问题修复
+
+修复了调用 `Stream.setScreenProfile` 方法设置屏幕共享的视频属性不生效的问题。
 
 ## 2.7.0 版
 该版本于 2019 年 6 月 21 日发布。新增功能、改进及修复问题详见下文。
