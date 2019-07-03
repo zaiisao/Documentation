@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon May 27 2019 10:16:14 GMT+0800 (CST)
+updatedAt: Wed Jul 03 2019 04:19:21 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 音频互动直播（Audio Broadcasting）可以实现一对多，多对多的纯音频互动直播。
