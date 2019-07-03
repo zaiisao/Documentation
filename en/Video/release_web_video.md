@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Wed Jul 03 2019 05:25:25 GMT+0800 (CST)
+updatedAt: Wed Jul 03 2019 10:49:43 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -85,6 +85,14 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+## v2.7.1
+
+v2.7.1 is released on July 3, 2019. 
+
+### Fixed issues
+
+Setting the video profile of the sharing screen by the `Stream.setScreenProfile` method does not take effect.
 
 ## v2.7.0
 
