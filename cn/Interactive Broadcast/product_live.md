@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 03 2019 05:44:13 GMT+0800 (CST)
+updatedAt: Wed Jul 03 2019 05:44:21 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 视频互动直播（Video Broadcasting）可以实现一对多，多对多的音视频互动直播。
