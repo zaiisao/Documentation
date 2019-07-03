@@ -3,7 +3,7 @@
 title: Agora Audio Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Mon May 27 2019 10:08:00 GMT+0800 (CST)
+updatedAt: Wed Jul 03 2019 04:20:28 GMT+0800 (CST)
 ---
 # Agora Audio Broadcasting Overview
 The Agora Native SDK for Audio Broadcasting enables one-to-many and many-to-many audio live streaming. 
