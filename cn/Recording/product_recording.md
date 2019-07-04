@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: Linux
-updatedAt: Wed May 22 2019 03:09:07 GMT+0800 (CST)
+updatedAt: Thu Jul 04 2019 06:00:45 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 本地服务端录制 SDK，是 Agora 针对音视频通话、直播研发的录制插件，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK \(1.12.0 或更高版本\) 兼容，通过简单的操作方法，帮助开发者快速、灵活地部署录制服务，来实现一对一、一对多的音视频通话或直播的录制。
@@ -16,7 +16,7 @@ Agora 本地服务端录制 SDK，是 Agora 针对音视频通话、直播研发
 
 Agora 本地服务端录制 SDK 支持如下功能：
 
-- 支持 Agora Native SDK 和 Agora Web SDK 的高清音视频通话的录制
+- 支持 Agora Native SDK、 Agora Web SDK 和微信小程序 SDK 的高清音视频通话的录制
 - 支持频道内每个用户的音视频分别录制
 - 支持频道内所有用户的音视频合流录制
 - 支持频道内每个用户的音视频的裸数据
