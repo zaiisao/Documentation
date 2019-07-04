@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Jul 02 2019 10:51:04 GMT+0800 (CST)
+updatedAt: Thu Jul 04 2019 06:21:27 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -86,12 +86,10 @@ updatedAt: Tue Jul 02 2019 10:51:04 GMT+0800 (CST)
 ### `acquire` 响应示例
 
 ```json
-{
 "Code": 200,
 "Body":
 {
  "resourceId": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
-}
 }
 ```
 
@@ -260,13 +258,11 @@ updatedAt: Tue Jul 02 2019 10:51:04 GMT+0800 (CST)
 ### `start` 响应示例
 
 ```json
-{
 "Code": 200,
 "Body":
 {
   "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a", 
   "resourceId": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
-}
 }
 ```
 
@@ -301,7 +297,6 @@ updatedAt: Tue Jul 02 2019 10:51:04 GMT+0800 (CST)
 ### `query` 响应示例
 
 ```json
-{
 "Code": 200,
 "Body":
 {
@@ -311,7 +306,6 @@ updatedAt: Tue Jul 02 2019 10:51:04 GMT+0800 (CST)
     "fileList": "xxxxx.m3u8",
     "status": "5"
     }    
-}
 }
 ```
 
@@ -379,7 +373,6 @@ updatedAt: Tue Jul 02 2019 10:51:04 GMT+0800 (CST)
 ### `stop` 响应示例
 
 ```json
-{
 "Code": 200,
 "Body":
 {
@@ -389,7 +382,6 @@ updatedAt: Tue Jul 02 2019 10:51:04 GMT+0800 (CST)
     "fileList": "xxxxx.m3u8",
     "uploadingStatus": "uploaded"
   }
-}
 }
 ```
 
