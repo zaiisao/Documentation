@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Jul 04 2019 06:21:27 GMT+0800 (CST)
+updatedAt: Thu Jul 04 2019 08:26:56 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -125,7 +125,7 @@ updatedAt: Thu Jul 04 2019 06:21:27 GMT+0800 (CST)
 
 `clientRequest` 中需要填写的内容如下：
 
-- `token`：（选填） String 类型，用于鉴权的动态密钥。如果待录制的频道使用了 Token，请务必设置该参数。
+- `token`：（选填） String 类型，用于鉴权的动态密钥。如果待录制的频道使用了动态密钥，请务必在该参数中传入一个动态密钥，详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。
 - `recordingConfig`：（选填）JSON 类型，录制的详细设置。
   - `streamTypes`：（选填）Number 类型，录制的媒体流类型。
     - `0`：仅录制音频
