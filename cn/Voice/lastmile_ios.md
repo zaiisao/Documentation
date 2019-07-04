@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测
 platform: iOS,macOS
-updatedAt: Thu Jul 04 2019 10:51:48 GMT+0800 (CST)
+updatedAt: Thu Jul 04 2019 10:51:57 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -16,7 +16,7 @@ updatedAt: Thu Jul 04 2019 10:51:48 GMT+0800 (CST)
 
 ```swift
 //Swift:
-// 在合适的时机启动lastmile测试，启用网络测试的情景请参考方法文档
+// 在合适的时机启动lastmile测试, 启用网络测试的情景请参考方法文档
 agoraKit.enableLastmileTest()
 
 // 注册回调
@@ -31,15 +31,14 @@ agoraKit.disableLastmileTest()
 
 ```oc
 //Objective-C
-// 在合适的时机启动lastmile测试，启用网络测试的情景请参考方法文档
+// 在合适的时机启动lastmile测试, 启用网络测试的情景请参考方法文档
 [agoraKit enableLastmileTest];
 
 // 注册回调
 - (void)rtcEngine:(AgoraRtcEngineKit * _Nonnull)engine lastmileQuality:(AgoraNetworkQuality)quality {
 }
 
-// ⑵ 也可以选择其它时候结束测试, 结束测试之前
-调可能会被调用多次
+// ⑵ 也可以选择其它时候结束测试, 结束测试之前调可能会被调用多次
 [agoraKit disableLastmileTest];
 ```
 
