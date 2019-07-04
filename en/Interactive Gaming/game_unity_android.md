@@ -3,7 +3,7 @@
 title: Implement Voice for Gaming
 description: 
 platform: Unity
-updatedAt: Wed Jan 30 2019 12:32:25 GMT+0800 (CST)
+updatedAt: Thu Jul 04 2019 01:56:04 GMT+0800 (CST)
 ---
 # Implement Voice for Gaming
 With the `Hello-Unity-Agora` Sample App provided by Agora, you can:
@@ -74,7 +74,6 @@ Add the following permissions to the `Assets/Plugins/Android/AgoraAudioKit.plugi
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
 ```
 
 ### Step 5: Prevent Code Obfuscation
