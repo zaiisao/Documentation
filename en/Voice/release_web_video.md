@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Wed Jul 03 2019 10:49:43 GMT+0800 (CST)
+updatedAt: Thu Jul 04 2019 02:16:21 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -92,7 +92,7 @@ v2.7.1 is released on July 3, 2019.
 
 ### Fixed issues
 
-Setting the video profile of the sharing screen by the `Stream.setScreenProfile` method does not take effect.
+Setting the video profile of the shared screen by the `Stream.setScreenProfile` method does not take effect.
 
 ## v2.7.0
 
