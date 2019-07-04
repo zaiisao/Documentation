@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Unity
-updatedAt: Wed Jun 26 2019 07:02:36 GMT+0800 (CST)
+updatedAt: Thu Jul 04 2019 01:55:47 GMT+0800 (CST)
 ---
 # 实现游戏语音功能
 使用 Agora 的 `Hello-Unity3D-Agora` 代码示例可以演示以下功能:
@@ -67,7 +67,6 @@ updatedAt: Wed Jun 26 2019 07:02:36 GMT+0800 (CST)
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
 ```
 
 ### 步骤 5：防止混淆代码
