@@ -3,7 +3,7 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Thu Mar 28 2019 10:01:20 GMT+0800 (CST)
+updatedAt: Thu Jul 04 2019 01:56:18 GMT+0800 (CST)
 ---
 # Implement Video for Gaming
 ## Step 1: Prepare the Environment
@@ -66,7 +66,6 @@ Add the following permissions to the `Assets/Plugins/Android/AgoraRtcEngineKit.p
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
 ```
 
 ## Step 5: Prevent Code Obfuscation
