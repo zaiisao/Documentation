@@ -3,7 +3,7 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(Android)
-updatedAt: Thu Mar 28 2019 09:57:56 GMT+0800 (CST)
+updatedAt: Thu Jul 04 2019 01:56:33 GMT+0800 (CST)
 ---
 # 实现游戏视频功能
 使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
@@ -74,7 +74,6 @@ updatedAt: Thu Mar 28 2019 09:57:56 GMT+0800 (CST)
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
 ```
 
 ## 步骤 5：防止混淆代码
