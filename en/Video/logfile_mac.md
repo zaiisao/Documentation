@@ -3,7 +3,7 @@
 title: Set the Log File
 description: 
 platform: macOS
-updatedAt: Mon Apr 15 2019 09:59:11 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 07:17:49 GMT+0800 (CST)
 ---
 # Set the Log File
 ## Introduction
