@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Jul 05 2019 07:49:29 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 07:49:35 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -55,12 +55,18 @@ screenStream = AgoraRTC.createStream({
 From v2.6.0, Agora Web SDK supports screen sharing without an extension on Chrome 72 or later, and you do not need to set the `extensionId` parameter.
 
 ```javascript
-screenStream = AgoraRTC.createStream({
-  streamID: uid,
-  audio: false,
-  video: false,
-  screen: true,
-});
+// Check if the browser supports screen sharing without an extension
+Number.tem = ua.match(/(Chrome(?=\/))\/?(\d+)/i);
+if(parseInt(tem[2]) >= 72  && navigator.mediaDevices.getDisplayMedia ) {
+ // Create the stream for screensharing
+	screenStream = AgoraRTC.createStream({
+		streamID: uid,
+		audio: false,
+		video: false,
+		screen: true,
+	});
+}
+
 ```
 
 > - Do not set the `video` and `screen` attributes as `true` at the same time.
