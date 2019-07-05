@@ -3,7 +3,7 @@
 title: 设置日志文件
 description: 设置日志文件
 platform: macOS
-updatedAt: Fri Jul 05 2019 07:06:45 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 07:06:53 GMT+0800 (CST)
 ---
 # 设置日志文件
 ## 功能描述
@@ -35,3 +35,10 @@ NSString *logFilePath = [NSString stringWithFormat:@"%@/%@.log", [paths objectAt
 ### API 参考
 - [`setLogFile`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html?transId=9fa366f0-01e7-11e9-a659-33e4b5b761ac#//api/name/setLogFile:)
 - [`setLogFilter`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html?transId=9fa366f0-01e7-11e9-a659-33e4b5b761ac#//api/name/setLogFilter:)
+
+## 开发注意事项
+
+- macOS 平台日志文件的默认地址为：
+	- 开启沙盒：App Sandbox/Library/Logs/agorasdk.log，例如 /Users/&lt;username&gt;/Library/Containers/&lt;App Bundle Identifier&gt;/Data/Library/Logs/agorasdk.log
+	- 关闭沙盒：～/Library/Logs/agorasdk.log
+- 如需调用本方法，请在调用 [sharedEngineWithAppId](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithAppId:delegate:) 方法初始化 AgoraRtcEngineKit 对象后立即调用，否则可能造成输出日志不完整。
