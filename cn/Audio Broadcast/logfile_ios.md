@@ -2,8 +2,8 @@
 ---
 title: 设置日志文件
 description: 设置日志文件
-platform: iOS
-updatedAt: Wed Feb 20 2019 07:04:38 GMT+0000 (UTC)
+platform: iOS,macOS
+updatedAt: Fri Jul 05 2019 06:59:44 GMT+0800 (CST)
 ---
 # 设置日志文件
 ## 功能描述
@@ -34,3 +34,7 @@ NSString *logFilePath = [NSString stringWithFormat:@"%@/%@.log", [paths objectAt
 ### API 参考
 - [`setLogFile`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html?transId=9fa366f0-01e7-11e9-a659-33e4b5b761ac#//api/name/setLogFile:)
 - [`setLogFilter`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html?transId=9fa366f0-01e7-11e9-a659-33e4b5b761ac#//api/name/setLogFilter:)
+
+## 开发注意事项
+如需调用本方法，请在调用 [sharedEngineWithAppId](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithAppId:delegate:) 方法初始化 AgoraRtcEngineKit 对象后立即调用，否则可能造成输出日志不完整。
+

@@ -3,7 +3,7 @@
 title: 设置日志文件
 description: 设置日志文件
 platform: iOS
-updatedAt: Fri Jul 05 2019 04:11:08 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 06:59:44 GMT+0800 (CST)
 ---
 # 设置日志文件
 ## 功能描述
