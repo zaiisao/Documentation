@@ -3,66 +3,77 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Fri Jul 05 2019 03:41:46 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 05:50:37 GMT+0800 (CST)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
 
 Development environment:
 
-- Cocos Creator v2.0.9
-- A certified Cocos Creator account (After the sign-up, it takes 1 to 3 days for Cocos Creator to certify your account.)
-- An Android or iOS device for mobile end
-- No VPN connection
-- Ensure the browser for Web end meet the [requirements](https://docs.agora.io/en/Audio%20Broadcast/web_prepare?platform=Web).
+- Cocos Creator v2.0.9 or later.
+- A certified Cocos Creator account.
+- An Android or iOS device for the mobile end.
+- No VPN connection.
+- Ensure that the browser for the Web end meets the [requirements](https://docs.agora.io/en/Audio%20Broadcast/web_prepare?platform=Web).
 
+## Integrate the Agora Service
 
-## Create a new project
-
-If you already have a project, skip this step.
-
-1. Open Cocos Creator and choose **New Project**。
-   ![](https://web-cdn.agora.io/docs-files/1552018036690)
-   
-
-2. On the **New Project** tab, choose **Empty Project**, select the path file for your project and choose **Create**.
-   ![](https://web-cdn.agora.io/docs-files/1552018176389)
-
-
-Now you have created your project as follows:
-![](https://web-cdn.agora.io/docs-files/1552018232037)
-
-## Enable the Agora Service
+Create a Cocos Creator project and enable the Agora Service in your project with the following steps:
 
 1. Open your project with Cocos Creator. Choose **Panel** and **Service** in the drop-down menu. The **Service** panel appears on the right.
 
-	 ![](https://web-cdn.agora.io/docs-files/1552018316864)
-   
-
 2. On the **Service** panel, select the game your just created and click **Association**.
 
-	 ![](https://web-cdn.agora.io/docs-files/1555038788749)
+	 ![](https://web-cdn.agora.io/docs-files/1562229233008)
 
 	When the association completes, the **Agora Service** panel appears in the **Service** panel.
 	 
-   ![](https://web-cdn.agora.io/docs-files/1555041482406)
+   ![](https://web-cdn.agora.io/docs-files/1562229358413)
 
 3. Enable the **Agora Service** panel, and click **OK** in the pop-up window.
 
-   ![](https://web-cdn.agora.io/docs-files/1555039396375)
+   ![](https://web-cdn.agora.io/docs-files/1562297897751)
 	 
 4. Follow the on-screen instructions and click **open service**.
 
-   ![](https://web-cdn.agora.io/docs-files/1555039476153)
+   ![](https://web-cdn.agora.io/docs-files/1562229434363)
 	 
-5. Upon opening the service, the following window appears. Click **console** to go to Agora **Dashboard**. The Dashboard automatically creates an Agora project. Click open the project and get your Agora App ID.
+5. Upon opening the service, the following window appears. Click **console** to go to Agora **Dashboard**. 
 
-   ![](https://web-cdn.agora.io/docs-files/1555039933767)
+	![](https://web-cdn.agora.io/docs-files/1562229467151)
+
+	The Dashboard automatically creates an Agora project. Click open the project and get your Agora App ID. You need to pass the App ID when initializing the RtcEngine.
+
+  ![](https://web-cdn.agora.io/docs-files/1562297985211)
 	 
-   Now you successfully enable the **Agora Service** for your Cocos Creator project and get the Agora App ID. You need the App ID to build and run the sample code. Cocos Creator automatically downloads and configures all the Agora's depenencies.
+   Now you successfully enable the **Agora Service** for your Cocos Creator project and get the Agora App ID. Cocos Creator automatically downloads and configures all the Agora's depenencies.
 
+## Call the APIs to enable the audio function
 
-6. In your project, call the APIs for voice call in gaming. For detailed information on the core API methods see the [`HelloAgora` Demo](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming/tree/master/Basic-Voice-Call-for-Gaming/Hello-Cocos-Creator-Voice-Agora)。
-   ![](https://web-cdn.agora.io/docs-files/1551929077432)
+You can now call the APIs to enable the audio function in your Cocos Creator project:
+
+![](https://web-cdn.agora.io/docs-files/1562229938896)
+
+### API call sequence
+
+Enable the audio function with the following APIs:
+
+1. Initialize the RtcEngine: [agora && agora.init(appid);](../../en/Interactive%20Gaming/game_coco.md)
+2. Join the channel: [agora && agora.joinChannel("", channel, "", 0);](../../en/Interactive%20Gaming/game_coco.md)
+3. Leave the channel:  [agora && agora.leaveChannel();](../../en/Interactive%20Gaming/game_coco.md)
+
+Register the following callback events in the `agora.on` method:
+
+* `agora.on('join-channel-success', this.onJoinChannelSuccess, this);`: Occurs when the user joins the channel.
+* `agora.on('leave-channel', this.onLeaveChannel, this);`: Occurs when the user leaves the channel.
+* `agora.on('rejoin-channel-success', this.onRejoinChannelSuccess, this);`: Occurs when the user rejoins the channel.
+
+For more callback events, see the API reference for [agora.on](../../en/Interactive%20Gaming/game_coco.md).
+
+### Sample Code
+
+Agora provides an open-souce [Cocos Creator Voice Demo](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming/tree/master/Basic-Voice-Call-for-Gaming/Hello-CocosCreator-Voice-Agora). You can download and refer to the code logic in the sample code.
+
+### API reference
 	 
-	 > The [JavaScript APIs](../../en/Interactive%20Gaming/game_coco.md) provided by Cocos Creator only covers major functions. For more advanced functions, see the full API reference documents on other platforms.
+The [JavaScript APIs](../../en/Interactive%20Gaming/game_coco.md) provided by Cocos Creator only covers major functions. For more advanced functions, see the full API reference documents on other platforms.
