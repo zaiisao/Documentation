@@ -3,7 +3,7 @@
 title: Set the Log File
 description: 
 platform: macOS
-updatedAt: Thu Jan 17 2019 09:47:00 GMT+0000 (UTC)
+updatedAt: Fri Jul 05 2019 07:48:17 GMT+0800 (CST)
 ---
 # Set the Log File
 ## Introduction
@@ -33,3 +33,9 @@ NSString *logFilePath = [NSString stringWithFormat:@"%@/%@.log", [paths objectAt
 
 - [`setLogFile`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html?transId=8d992290-01c1-11e9-a659-33e4b5b761ac#//api/name/setLogFile:)
 - [`setLogFilter`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html?transId=8d992290-01c1-11e9-a659-33e4b5b761ac#//api/name/setLogFilter:)
+
+## Considerations
+- On macOS, the default log file location is as follows:
+	- Sandbox enabled: App Sandbox/Library/Logs/agorasdk.log, for example /Users/&lt;username&gt;/Library/Containers/&lt;App Bundle Identifier&gt;/Data/Library/Logs/agorasdk.log
+	- Sandbox disabled: ～/Library/Logs/agorasdk.log
+- Ensure that you call this method immediately after calling the [sharedEngineWithAppId](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithAppId:delegate:) method, otherwise the output log might not be complete.
