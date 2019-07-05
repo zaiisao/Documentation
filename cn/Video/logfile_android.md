@@ -3,7 +3,7 @@
 title: 设置日志文件
 description: 设置日志文件
 platform: Android
-updatedAt: Fri Jul 05 2019 04:07:46 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 04:07:53 GMT+0800 (CST)
 ---
 # 设置日志文件
 ## 功能描述
@@ -26,7 +26,7 @@ File file = new File(filepath);
 engine.setLogFile(filepath);
 ```
 
-## API 参考
+### API 参考
 
 - [`setLogFile`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html?transId=ea42f050-0759-11e9-aad5-0347068be2f5#ab25d55c7f95903ff09280e308a977c08)
 - [`setLogFilter`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html?transId=ea42f050-0759-11e9-aad5-0347068be2f5#abb16ab61cebb6c676e1aab61030c3181)
