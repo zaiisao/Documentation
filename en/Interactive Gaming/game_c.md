@@ -3,7 +3,7 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Fri Jul 05 2019 05:50:37 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 10:30:01 GMT+0800 (CST)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
@@ -52,7 +52,7 @@ Create a Cocos Creator project and enable the Agora Service in your project with
 
 You can now call the APIs to enable the audio function in your Cocos Creator project:
 
-![](https://web-cdn.agora.io/docs-files/1562229938896)
+![](https://web-cdn.agora.io/docs-files/1562322588460)
 
 ### API call sequence
 
