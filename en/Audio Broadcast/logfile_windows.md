@@ -3,7 +3,7 @@
 title: Set the Log File
 description: 
 platform: Windows
-updatedAt: Fri Jul 05 2019 07:45:55 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 07:46:02 GMT+0800 (CST)
 ---
 # Set the Log File
 ## Introduction
@@ -48,4 +48,4 @@ if (PathFileExists(szAppFolder)){
 
 ## Considerations
 
-Ensure that you call this method immediately after calling the [create](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35466f690d0a9332f24ea8280021d5ed) method, otherwise the output log may not be complete.
+Ensure that you call this method immediately after calling the [create](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac71db65e66942e4e0a0550e95c16890f) method, otherwise the output log may not be complete.
