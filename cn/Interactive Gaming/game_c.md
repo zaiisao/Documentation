@@ -3,7 +3,7 @@
 title: Cocos Creator 快速开始
 description: 
 platform: Cocos Creator
-updatedAt: Wed Jul 03 2019 10:05:18 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 10:30:25 GMT+0800 (CST)
 ---
 # Cocos Creator 快速开始
 ## 前提条件
@@ -52,7 +52,7 @@ updatedAt: Wed Jul 03 2019 10:05:18 GMT+0800 (CST)
 
 现在你可以在项目中，调用声网 API 实现游戏通话。
 
-![](https://web-cdn.agora.io/docs-files/1562141460372)
+![](https://web-cdn.agora.io/docs-files/1562322616769)
 
 ### 关键 API 调用时序
 
