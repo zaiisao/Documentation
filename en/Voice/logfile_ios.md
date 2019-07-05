@@ -3,7 +3,7 @@
 title: Set the Log File
 description: 
 platform: iOS
-updatedAt: Fri Jul 05 2019 07:14:59 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 07:32:56 GMT+0800 (CST)
 ---
 # Set the Log File
 ## Introduction
