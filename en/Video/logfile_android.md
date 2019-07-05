@@ -3,7 +3,7 @@
 title: Set the Log File
 description: 
 platform: Android
-updatedAt: Fri Jul 05 2019 04:28:59 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 07:12:18 GMT+0800 (CST)
 ---
 # Set the Log File
 ## Introduction
@@ -30,5 +30,4 @@ engine.setLogFile(filepath);
 - [`setLogFilter`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#abb16ab61cebb6c676e1aab61030c3181)
 
 ## Considerations
-
-We recommend calling the `setLogFile` method before calling the rest of the methods, otherwise the log file that the SDK records may not be complete. 
+Ensure that you call this method immediately after calling the [create](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35466f690d0a9332f24ea8280021d5ed) method, otherwise the output log may not be complete.
