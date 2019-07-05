@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Jul 05 2019 07:49:35 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 07:49:52 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -66,7 +66,6 @@ if(parseInt(tem[2]) >= 72  && navigator.mediaDevices.getDisplayMedia ) {
 		screen: true,
 	});
 }
-
 ```
 
 > - Do not set the `video` and `screen` attributes as `true` at the same time.
