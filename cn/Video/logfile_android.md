@@ -3,7 +3,7 @@
 title: 设置日志文件
 description: 设置日志文件
 platform: Android
-updatedAt: Fri Jul 05 2019 04:05:29 GMT+0800 (CST)
+updatedAt: Fri Jul 05 2019 04:05:44 GMT+0800 (CST)
 ---
 # 设置日志文件
 ## 功能描述
@@ -26,7 +26,11 @@ File file = new File(filepath);
 engine.setLogFile(filepath);
 ```
 
-### API 参考
+## API 参考
 
 - [`setLogFile`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html?transId=ea42f050-0759-11e9-aad5-0347068be2f5#ab25d55c7f95903ff09280e308a977c08)
 - [`setLogFilter`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html?transId=ea42f050-0759-11e9-aad5-0347068be2f5#abb16ab61cebb6c676e1aab61030c3181)
+
+## 注意事项
+
+如需调用本方法，请在调用 [`create`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35466f690d0a9332f24ea8280021d5ed) 方法初始化 RtcEngine 对象后立即调用，否则可能造成输出日志不完整。
