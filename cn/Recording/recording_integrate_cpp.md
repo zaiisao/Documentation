@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Linux CPP
-updatedAt: Mon Jul 08 2019 02:53:54 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 03:34:28 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
@@ -96,7 +96,7 @@ updatedAt: Mon Jul 08 2019 02:53:54 GMT+0800 (CST)
   </tr>
 </table>
 
-你可参考上述云主机配置和对应的录制性能，根据自己的录制需要选择和配置云主机。
+你可参考上述云主机配置和对应的录制性能，根据自己的录制需要选择和配置云主机，详见[使用云容器部署录制 SDK](../../cn/Recording/recording_docker.md)。
 
 
 ## 准备环境
