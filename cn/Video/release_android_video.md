@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Jul 08 2019 01:08:41 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:56:47 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -33,6 +33,77 @@ Android 视频 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **2.8.0 版**
+
+该版本于 2019 年 7 月 8 日发布。新增特性与修复问题列表详见下文。
+
+### **新增特性**
+
+#### 1. 全平台支持 String 型的用户名
+
+很多 App 使用 String 类型的用户名。为降低开发成本，Agora 新增支持 String 型的 User account，方便用户通过如下接口直接使用 App 账号加入 Agora 频道：
+
+- [registerLocalUserAccount](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa37ea6307e4d1513c0031084c16c9acb)
+- [joinChannelWithUserAccount](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a310dbe072dcaec3892c4817cafd0dd88)
+
+对于其他接口，Agora 沿用 Int 型的 UID。Agora Engine 会维护 UID 和 User account 映射表，你可以随时通过 String user account 获取 UID，或者通过 UID 获取 String user account，无需自己维护映射表。
+
+为保证通信质量，频道内所有用户需使用同一数据类型的用户名，即频道内的所有用户名应同为 Int 型或同为 String 型。详见[使用 String 型的用户名](../../cn/Video/string_android.md)。
+
+**Note**：
+
+- 同一频道内，Int 型的 User ID 和 String 型的 User account 不可混用。目前支持 String 型 User account 的 SDK 如下：
+
+	- Native SDK：v2.8.0 及之后版本
+	- Web SDK：v2.5.0 及之后版本
+
+ 如果你的频道内有不支持 String 型 User account 的用户，则只能使用 Int 型的 User ID。
+- 如果你使用该版本的 Native SDK 将用户名切换至 String 型 User account，请确保所有终端用户同步升级。
+- 如果使用 String 型的 User account，请确保你的服务端用户生成 Token 的脚本已升级至最新版本。
+
+#### 2. 音视频卡顿回调
+
+为监控通话过程中的音视频传输质量，方便开发者客观体验通信质量，该版本在远端音频统计数据 [RemoteAudioStats](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) 类和远端视频统计数据 [RemoteVideoStats](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html) 类中新增 `totalFrozenTime` 和 `frozenRate` 成员，报告远端用户在加入频道后发生音视频的卡顿时长及卡顿率。
+
+同时，该版本在 [RemoteAudioStats](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) 类中还新增 `numChannels`、`receivedSampleRate` 和 `receivedBitrate` 成员。
+
+### **改进**
+
+为方便开发者统计掉线率，该版本在 [onConnectionStateChanged](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) 回调的 `reason` 参数中添加 `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` 成员，表示 SDK 与服务器连接保活超时，引起 SDK 连接状态发生改变。
+
+### **修复问题**
+
+#### 音频
+
+- 修复了特定场景下偶现的音频卡顿的问题。
+
+#### 视频
+
+- 修复了停止接收视频流后再恢复接收，视频流变为小流，且恢复为大流时间过慢的问题。
+
+#### 其他
+
+- 修复了指定的 Log 输出文件夹不存在时，没有生成日志文件，且默认日志文件中断的问题。
+
+### **API 变更**
+
+为提升用户体验，Agora 在 v2.8.0 版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [registerLocalUserAccount](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa37ea6307e4d1513c0031084c16c9acb)
+- [joinChannelWithUserAccount](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a310dbe072dcaec3892c4817cafd0dd88)
+- [getUserInfoByUid](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9a787b8d0784e196b08f6d0ae26ea19c)
+- [getUserInfoByUserAccount](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#afd4119e2d9cc360a2b99eef56f74ae22)
+- [onLocalUserRegistered](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aca1987909703d84c912e2f1e7f64fb0b)
+- [onUserInfoUpdated](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa3e9ead25f7999272d5700c427b2cb3d)
+- [RemoteAudioStats](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) 类中新增 `numChannels`，`receivedSampleRate`，`receivedBitrate`，`totalFrozenTime` 和 `frozenRate` 成员
+- [RemoteVideoStats](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html) 类中新增 `totalFrozenTime` 和 `frozenRate` 成员
+
+#### 废弃
+
+- [LiveTranscoding](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html) 类中的 `lowLatency` 成员
 
 ## **2.4.1 版**
 
