@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Linux CPP
-updatedAt: Tue May 28 2019 07:14:09 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 03:00:20 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
@@ -50,50 +50,52 @@ The following table lists the basic requirements for installing the On-premise R
 </tbody>
 </table>
 
-We recommend the following hardware requirements:
+### Cloud Hosting Configuration
+
+We conduct tests on the recording concurrency based on the following cloud hosting configuration:
+
+* AWS: Intel(R) Xeon(R) Platinum 8124M CPU @ 3.00 GHz
+* 16 Virtual Core CPU, 32 GB RAM
+* Disk I/O: 412 MB/s
+
+Test conditions:
+
+* Each channel has two users/hosts. The resolution and frame rate of each channel are set as 320 × 240 and 15 fps respectively.
+* The resolution, frame rate, and bitrate of the recorded files in composite recording mode are set as 640 × 480, 15 fps, and 500 Kbps respectively; and the audio bitrate of the recorded files in composite recording mode is set as 48 Kbps.
+
+Test results:
 
 <table>
-<thead>
-<tr><th>Product</th>
-<th>Description</th>
-<th>Number</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>SUPERMICRO SYS-6017R-TDF</td>
-<td>1U rack-mounted SYS-6017R-TDF
-Intel® Xeon® E5-2600 Series Processor</td>
-<td>1</td>
-</tr>
-<tr><td>Case</td>
-<td>1U Rackmountable
-(440-W high-efficiency redundant power supply w/ PMBus)</td>
-<td>1</td>
-</tr>
-<tr><td>Processor</td>
-<td>Intel Xeon E5-2620V2 2.1 G, L3:15M, 6C (P4X-DPE52620V2-SR1AN)</td>
-<td>2</td>
-</tr>
-<tr><td>Memory</td>
-<td>MEM-DR380L-HL06-ER16 (8-GB DDR3-1600 2Rx8 1.35-V ECC REG RoHS)</td>
-<td>1</td>
-</tr>
-<tr><td>Hard Disk</td>
-<td>250-G 3.5 SATA Enterprise (HDD-T0250-WD2503ABYZ)</td>
-<td>2</td>
-</tr>
-</tbody>
+  <tr>
+    <th>Channel Profile</th>
+    <th>Recording Mode</th>
+    <th>Performance</th>
+  </tr>
+  <tr>
+    <td rowspan="3">Live Broadcast</td>
+    <td>Audio + Video<br>Individual recording</td>
+    <td>When recording 215 channels simultaneously, the CPU usage is about 75%.<br>We recommend recording 200 channels simultaneously.</td>
+  </tr>
+  <tr>
+    <td>Audio + Video<br>Composite recording</td>
+    <td>When recording 70 channels simultaneously, the CPU usage is about 75%.<br>We recommend recording 60 channels simultaneously.</td>
+  </tr>
+  <tr>
+    <td>Audio only<br>Composite recording</td>
+    <td>When recording 300 channels simultaneously, the CPU usage is about 75%.</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Communication</td>
+    <td>Audio + Video<br>Individual recording</td>
+    <td>When recording 210 channels simultaneously, the CPU usage is about 75%.<br>We recommend recording 200 channels simultaneously.</td>
+  </tr>
+  <tr>
+    <td>Audio + Video<br>Composite recording</td>
+    <td>When recording 60 channels simultaneously, the CPU usage is about 75%.</td>
+  </tr>
 </table>
 
-
-
-Assuming two users are in a channel in a video call \(Communication profile\), with a resolution of 640 x 360, a frame rate of 15 fps, and a bitrate of one video stream of 500 Kbps, using single-stream recording:
-
-The CPU with 12 cores and 24 threads is fully loaded and 100 channels are recorded simultaneously:
-
-- Each channel writes to the disk at a speed of 60 Kbps. The total write-in speed is 6.0 Mbps, which is much lower than the maximum write-in speed of the disk.
-- Each channel uses 25 MB of memory. Thus, 2.5 GB of memory, which is 31% of the total memory, is used.
-- The downlink Internet bandwidth for each channel is 500 Kbps x 2 = 1 Mbps. The total downlink bandwidth is 100 Mbps. The uplink bandwidth is neglected.
+The test results are for reference purposes only. Set up your own cloud hosting according to your recording requirement.
 
 ### Compatibility with the Agora SDKs
 
