@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon Jul 08 2019 01:51:56 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:52:50 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -14,6 +14,66 @@ The Voice SDK supports the following scenarios:
 - Live voice broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+
+## v2.8.0
+
+v2.8.0 is released on Jul. 8, 2019.
+
+### New features
+
+#### 1. Supporting string usernames
+
+Many apps use string usernames. This release adds the following methods to enable apps to join an Agora channel directly with string usernames as user accounts:
+
+- [registerLocalUserAccount](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
+- [joinChannelByUserAccount](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
+
+For other methods, Agora uses the integer uid parameter. The Agora Engine maintains a mapping table that contains the user ID and string user account, and you can get the corresponding user account or ID by calling the getUserInfoByUid or getUserInfoByUserAccount method.
+
+To ensure smooth communication, use the same parameter type to identify all users within a channel, that is, all users should use either the integer user ID or the string user account to join a channel. For details, see [Use String User Accounts](../../en/Audio%20Broadcast/string_mac.md).
+
+**Note**:
+- Do not mix parameter types within the same channel. The following Agora SDKs support string user accounts:
+	- The Native SDK: v2.8.0 and later.
+	- The Web SDK: v2.5.0 and later.
+
+ If you use SDKs that do not support string user accounts, only integer user IDs can be used in the channel.
+- If you change your usernames into string user accounts, ensure that all app clients are upgraded to the latest version.
+- If you use string user accounts, ensure that the token generation script on your server is updated to the latest version.
+
+#### 2. Adding remote statistics
+
+To monitor the audio transmission quality during a call or live broadcast, this release adds the `totalFrozenTime` and `frozenRate` members in the [AgoraRtcRemoteAudioStats](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class, to report the audio freeze time and freeze rate of the remote user.
+
+This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBitrate` members in the [AgoraRtcRemoteAudioStats](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class.
+
+### Improvements
+
+This release adds a `AgoraConnectionChangedKeepAliveTimeout(14)` member to the `AgoraConnectionChangedReason` parameter of the [connectionChangedToState](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback. This member indicates a connection state change caused by the timeout of the connection keep-alive between the SDK and Agora's edge server.
+
+
+### Issues Fixed
+
+- Occasional crashes.
+
+### API Changes
+
+To improve your experience, we made the following changes to the APIs:
+
+#### Added
+
+- [registerLocalUserAccount](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
+- [joinChannelByUserAccount](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
+- [getUserInfoByUid](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUid:withError:)
+- [getUserInfoByUserAccount](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUserAccount:withError:)
+- [didRegisteredLocalUser](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didRegisteredLocalUser:withUid:)
+- [didUpdatedUserInfo](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
+- The `numChannels`, `receivedSampleRate`, `receivedBitrate`, `totalFrozenTime`, and `frozenRate` members in the [AgoraRtcRemoteAudioStats](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class
+
+#### Deprecated
+
+- The `lowLatency` member in the [AgoraLiveTranscoding](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraLiveTranscoding.html) class
+
 
 ## v2.4.1
 
