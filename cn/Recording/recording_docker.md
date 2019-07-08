@@ -3,7 +3,7 @@
 title: 使用云容器部署录制 SDK
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 03:31:22 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 03:31:57 GMT+0800 (CST)
 ---
 # 使用云容器部署录制 SDK
 我们推荐使用云容器（云主机 + Docker）的方式部署录制 SDK。使用这种方式，你无需管理底层服务器，只要提供打包好的镜像，即可运行容器，并仅为容器实际运行消耗的资源付费，可以节约成本。本文以阿里云[弹性容器实例](https://help.aliyun.com/product/87486.html)（Elastic Container Instance）为例介绍具体的部署方法，你也可以选择其他的云容器实例服务。
@@ -54,7 +54,7 @@ updatedAt: Mon Jul 08 2019 03:31:22 GMT+0800 (CST)
 - 交换机所在可用区：华东 2 可用区 G
 - 交换机网段：192.168.1.0/24
 
-关于如何创建专有网络 VPC 和交换机，详见[管理专有网络](https://help.aliyun.com/document_detail/65398.html?spm=a2c4g.11186623.2.26.6b91650dufPjGx)和[管理交换机](https://help.aliyun.com/document_detail/65387.html?spm=a2c4g.11186623.2.27.6b91650dufPjGx)。
+关于如何创建专有网络 VPC 和交换机，详见[管理专有网络](https://help.aliyun.com/document_detail/65398.html)和[管理交换机](https://help.aliyun.com/document_detail/65387.html)。
 
 ### 安全组
 
@@ -88,7 +88,7 @@ NFS Volume
 
 - 启动命令：/usr/src/recording/recorder
 
-- 启动参数：录制的具体设置，可以参考[设置录制选项](https://docs.agora.io/cn/Recording/recording_cmd_cpp?platform=Linux CPP#设置录制选项)。
+- 启动参数：录制的具体设置，可以参考[设置录制选项](https://docs.agora.io/cn/Recording/recording_cmd_cpp?platform=Linux%20CPP#设置录制选项)。
 
   ```bash
   --appId <yourAppId> --channelKey <token> --channelProfile 1 --recordFileRootDir /data/recorder --channel demo --uid 666 --appliteDir /usr/src/recording --idle 30 --lowUdpPort 40000 --highUdpPort 41004 --isMixingEnabled 1 --mixedVideoAudio 2
