@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 03 2019 04:19:21 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:48:37 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 音频互动直播（Audio Broadcasting）可以实现一对多，多对多的纯音频互动直播。
@@ -51,7 +51,7 @@ Agora 音频互动直播提供丰富的功能，你可以根据自己的场景�
 
 ### 平台兼容
 
-音频互动直播支持 iOS、Android、Windows、macOS、Linux、Web、小程序，并支持平台间互通，具体的兼容性要求见下表。
+音频互动直播支持 iOS、Android、Windows、macOS、Electron、Linux、Web、小程序，并支持平台间互通，具体的兼容性要求见下表。
 
 | 平台       | 支持版本                                                     |
 | ---------- | ------------------------------------------------------------ |
