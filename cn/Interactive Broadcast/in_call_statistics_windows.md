@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: Windows
-updatedAt: Mon Jul 01 2019 07:42:55 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:33:43 GMT+0800 (CST)
 ---
 # 检测通话质量
 通话质量检测功能是在 SDK **加入频道后**通过每 2 秒触发一次的回调实现。
@@ -60,10 +60,10 @@ updatedAt: Mon Jul 01 2019 07:42:55 GMT+0800 (CST)
 
 ```cpp
 virtual void onNetworkQuality(uid_t uid, int txQuality, int rxQuality) {
-        (void)uid;
-        (void)txQuality;
-        (void)rxQuality;
-    }
+    (void)uid;
+    (void)txQuality;
+    (void)rxQuality;
+}
 ```
 
 ### 注意事项
@@ -93,9 +93,9 @@ virtual void onNetworkQuality(uid_t uid, int txQuality, int rxQuality) {
 [`onLocalVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ab611030063161c594cd7c4cc0dfe0681)
 
 ```cpp
-    virtual void onLocalVideoStats(const LocalVideoStats& stats) {
-        (void)stats;
-    }
+virtual void onLocalVideoStats(const LocalVideoStats& stats) {
+    (void)stats;
+}
 ```
 
 ## 远端用户音频质量统计
@@ -123,20 +123,18 @@ virtual void onNetworkQuality(uid_t uid, int txQuality, int rxQuality) {
 
 - [`onRemoteAudioStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a)
 ```cpp
-    virtual void onRemoteAudioStats(const RemoteAudioStats& stats) {
-        (void)stats;
-    }
+virtual void onRemoteAudioStats(const RemoteAudioStats& stats) {
+    (void)stats;
+}
 ```
 - [`onRemoteAudioTransportStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad79bcd56075fa9c9f907bb4a7462352d)
 ```cpp
-    virtual void onRemoteAudioTransportStats(
-        uid_t uid, unsigned short delay, unsigned short lost,
-        unsigned short rxKBitRate) {
-        (void)uid;
-        (void)delay;
-        (void)lost;
-        (void)rxKBitRate;
-    }
+virtual void onRemoteAudioTransportStats(uid_t uid, unsigned short delay, unsigned short lost, unsigned short rxKBitRate) {
+    (void)uid;
+    (void)delay;
+    (void)lost;
+    (void)rxKBitRate;
+}
 ```
 
 ### 注意事项
@@ -167,20 +165,18 @@ virtual void onNetworkQuality(uid_t uid, int txQuality, int rxQuality) {
 ### API 参考
 - [`onRemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7163ffb650852be270ba0215b596d968)
 ```cpp
-    virtual void onRemoteVideoStats(const RemoteVideoStats& stats) {
-        (void)stats;
-    }
+virtual void onRemoteVideoStats(const RemoteVideoStats& stats) {
+    (void)stats;
+}
 ```
 - [`onRemoteVideoTransportStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a3b8fd883a31d4a504ac3cbd50b1c5d0f)
 ```cpp
-    virtual void onRemoteVideoTransportStats(
-        uid_t uid, unsigned short delay, unsigned short lost,
-        unsigned short rxKBitRate) {
-        (void)uid;
-        (void)delay;
-        (void)lost;
-        (void)rxKBitRate;
-    }
+virtual void onRemoteVideoTransportStats(uid_t uid, unsigned short delay, unsigned short lost, unsigned short rxKBitRate) {
+    (void)uid;
+    (void)delay;
+    (void)lost;
+    (void)rxKBitRate;
+}
 ```
 
 ### 注意事项
