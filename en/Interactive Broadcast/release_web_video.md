@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Fri Jul 05 2019 09:00:25 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 09:56:34 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -85,6 +85,13 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+## v2.8.0
+v2.8.0 is released on July 8, 2019.
+
+This version optimizes the support for string UIDs.
+
+All users in the same channel should have the same type (number or string) of user ID. If you use string UIDs to interoperate with the Agora Native SDK, ensure that the Native SDK uses the string user account to join the channel. See [Use String User Accounts](../../en/Interactive%20Broadcast/string_web.md) for details.
 
 ## v2.7.1
 
