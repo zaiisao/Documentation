@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Linux CPP
-updatedAt: Mon Jul 08 2019 03:00:20 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 03:06:07 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
@@ -96,34 +96,6 @@ Test results:
 </table>
 
 The test results are for reference purposes only. Set up your own cloud hosting according to your recording requirement.
-
-### Compatibility with the Agora SDKs
-
-The recording SDK supports:
-
-- Recording communication that uses the Native SDK.
-- Recording communication that uses the Web SDK.
-- Recording communication that uses both the Native SDK and the Web SDK.
-
-The On-premise Recording SDK is compatible with the following Agora SDK versions:
-
-<table>
-<thead>
-<tr><th>Agora SDK</th>
-<th>Compatible versions</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Agora Native SDK</td>
-<td>v1.7.0+</td>
-</tr>
-<tr><td>Agora Web SDK</td>
-<td>v1.12.0+</td>
-</tr>
-</tbody>
-</table>
-
-> If any user in the channel uses an Agora SDK which is not compatible with the Agora On-premise Recording SDK, recording fails for the whole channel.
 
 ## Set up the Environment
 
