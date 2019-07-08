@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Web
-updatedAt: Mon Jul 08 2019 02:45:41 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:52:59 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
