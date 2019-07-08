@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Jul 05 2019 08:58:29 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 09:56:42 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -86,6 +86,12 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
 
+## 2.8.0 版
+该版本于 2019 年 7 月 8 日发布。
+
+2.8.0 版本主要优化了对 String 类型的用户名的支持。
+
+一个频道内的所有用户必须使用同样类型的用户名，即必须都为整数或都为字符串。使用字符串类型的用户名与 Agora Native SDK 互通时，请确保 Native SDK 也使用字符串类型的用户名，即 User Account 加入频道，详见[使用 String 型的用户名](../../cn/Audio%20Broadcast/string_web.md)。
 ## 2.7.1 版
 
 该版本于 2019 年 7 月 3 日发布。
