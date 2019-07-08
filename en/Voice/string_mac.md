@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: macOS
-updatedAt: Mon Jul 08 2019 02:45:35 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:58:07 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -50,7 +50,7 @@ The following diagram shows how to join a channel with a string user account:
 
 - After a remote user joins the channel, the SDK gets the integer user ID and string user account of the remote user, caches them in a mapping table object (`UserInfo`) and triggers the `didUpdatedUserInfo` callback on the local client. 
 
-- For other APIs, Agora uses the integer user ID for identification. You can call the  `getUserInfoByUID` or `getUserInfoByUserAccount` method to get the corresponding user ID or user account without maintaining the map.
+- For other APIs, Agora uses the integer user ID for identification. You can call the  `getUserInfoByUid` or `getUserInfoByUserAccount` method to get the corresponding user ID or user account without maintaining the map.
 
 ## API Reference
 
