@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Fri Jul 05 2019 10:01:50 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 01:42:45 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
