@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Electron
-updatedAt: Mon Jul 08 2019 02:46:34 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 03:11:56 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Electron 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
