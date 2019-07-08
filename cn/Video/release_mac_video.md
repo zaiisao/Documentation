@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Mon Jul 08 2019 01:50:01 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:57:13 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -21,6 +21,73 @@ macOS 视频 SDK 支持两种主要场景:
 #### 已知问题和局限性
 
 macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异常等问题，通常为 USB 设备驱动的问题，macOS 上对普通的 USB 支持都不是很友好，建议购买更优质的 USB 耳麦。
+
+## **2.8.0 版**
+
+该版本于 2019 年 7 月 8 日发布。新增特性与修复问题列表详见下文。
+
+### **新增特性**
+
+#### 1. 全平台支持 String 型的用户名
+
+很多 App 使用 String 类型的用户名。为降低开发成本，Agora 新增支持 String 型的 User account，方便用户通过如下接口直接使用 App 账号加入 Agora 频道：
+
+- [registerLocalUserAccount](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
+- [joinChannelByUserAccount](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
+
+对于其他接口，Agora 沿用 Int 型的 UID。Agora Engine 会维护 UID 和 User account 映射表，你可以随时通过 String user account 获取 UID，或者通过 UID 获取 String user account，无需自己维护映射表。
+
+为保证通信质量，频道内所有用户需使用同一数据类型的用户名，即频道内的所有用户名应同为 Int 型或同为 String 型。详见[使用 String 型的用户名](../../cn/Video/string_mac.md)。
+
+**Note**：
+
+- 同一频道内，Int 型的 User ID 和 String 型的 User account 不可混用。目前支持 String 型 User account 的 SDK 如下：
+
+	- Native SDK：v2.8.0 及之后版本
+	- Web SDK：v2.5.0 及之后版本
+
+ 如果你的频道内有不支持 String 型 User account 的用户，则只能使用 Int 型的 User ID。
+- 如果你使用该版本的 Native SDK 将用户名升级至 String 型 User account，请确保所有终端用户同步升级。
+- 如果使用 String 型的 User account，请确保你的服务端用户生成 Token 的脚本已升级至最新版本。
+
+#### 2. 音视频卡顿回调
+
+为监控通话过程中的音视频传输质量，方便开发者客观体验通信质量，该版本在远端音频统计数据 [AgoraRtcRemoteAudioStats](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) 类和远端视频统计数据 [AgoraRtcRemoteVideoStats](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html) 类中新增 `totalFrozenTime` 和 `frozenRate` 成员，报告远端用户在加入频道后发生音视频的卡顿时长及卡顿率。
+
+同时，该版本在 [AgoraRtcRemoteAudioStats](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) 类中还新增 `numChannels`、`receivedSampleRate` 和 `receivedBitrate` 成员。
+
+### **改进**
+
+为方便开发者统计掉线率，该版本在 [connectionChangedToState](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调的 `AgoraConnectionChangedReason` 参数中添加 `AgoraConnectionChangedKeepAliveTimeout(14)` 成员，表示 SDK 与服务器连接保活超时，引起 SDK 连接状态发生改变。
+
+### **修复问题**
+
+#### 视频
+
+- 修复了调用 `MediaIO` 类下方法时偶现的死循环问题。
+
+#### 其他
+
+- 特定场景下偶现的崩溃问题。
+
+### **API 变更**
+
+为提升用户体验，Agora 在 v2.8.0 版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [registerLocalUserAccount](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
+- [joinChannelByUserAccount](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
+- [getUserInfoByUid](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUid:withError:)
+- [getUserInfoByUserAccount](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUserAccount:withError:)
+- [didRegisteredLocalUser](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didRegisteredLocalUser:withUid:)
+- [didUpdatedUserInfo](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
+- [AgoraRtcRemoteAudioStats](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) 类中新增 `numChannels`，`receivedSampleRate`，`receivedBitrate`，`totalFrozenTime` 和 `frozenRate` 成员
+- [AgoraRtcRemoteVideoStats](./API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html 类中新增 `totalFrozenTime` 和 `frozenRate` 成员
+
+#### 废弃
+
+- [AgoraLiveTranscoding](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html) 类中的 `lowLatency` 成员
 
 ## **2.4.1 版**
 
