@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Jul 08 2019 01:16:47 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:51:56 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -33,6 +33,73 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+
+## v2.8.0
+
+v2.8.0 is released on Jul. 8, 2019.
+
+### New features
+
+#### 1. Supporting string usernames
+
+Many apps use string usernames. This release adds the following methods to enable apps to join an Agora channel directly with string usernames as user accounts:
+
+- [registerLocalUserAccount](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa37ea6307e4d1513c0031084c16c9acb)
+- [joinChannelWithUserAccount](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a310dbe072dcaec3892c4817cafd0dd88)
+
+For other methods, Agora uses the integer uid parameter. The Agora Engine maintains a mapping table that contains the user ID and string user account, and you can get the corresponding user account or ID by calling the getUserInfoByUid or getUserInfoByUserAccount method.
+
+To ensure smooth communication, use the same parameter type to identify all users within a channel, that is, all users should use either the integer user ID or the string user account to join a channel. For details, see [Use String User Accounts](../../en/Voice/string_android.md).
+
+**Note**:
+- Do not mix parameter types within the same channel. The following Agora SDKs support string user accounts:
+	- The Native SDK: v2.8.0 and later.
+	- The Web SDK: v2.5.0 and later.
+
+ If you use SDKs that do not support string user accounts, only integer user IDs can be used in the channel.
+- If you change your usernames into string user accounts, ensure that all app clients are upgraded to the latest version.
+- If you use string user accounts, ensure that the token generation script on your server is updated to the latest version.
+
+#### 2. Adding remote audio statistics
+
+To monitor the audio transmission quality during a call or live broadcast, this release adds the `totalFrozenTime` and `frozenRate` members in the [RemoteAudioStats](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) class, to report the audio freeze time and freeze rate of the remote user.
+
+This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBitrate` members in the [RemoteAudioStats](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) class.
+
+### Improvements
+
+This release adds a `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` member to the `reason` parameter of the [onConnectionStateChanged](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) callback. This member indicates a connection state change caused by the timeout of the connection keep-alive between the SDK and Agora's edge server.
+
+
+### Issues Fixed
+
+#### Audio
+
+- Occasional audio freezes. 
+
+
+#### Miscellaneous
+
+- When the log file path specified in the `setLogFile` method does not exist, no log file is generated and the default log file is incomplete.
+
+### API Changes
+
+To improve your experience, we made the following changes to the APIs:
+
+#### Added
+
+- [registerLocalUserAccount](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa37ea6307e4d1513c0031084c16c9acb)
+- [joinChannelWithUserAccount](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a310dbe072dcaec3892c4817cafd0dd88)
+- [getUserInfoByUid](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9a787b8d0784e196b08f6d0ae26ea19c)
+- [getUserInfoByUserAccount](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#afd4119e2d9cc360a2b99eef56f74ae22)
+- [onLocalUserRegistered](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aca1987909703d84c912e2f1e7f64fb0b)
+- [onUserInfoUpdated](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa3e9ead25f7999272d5700c427b2cb3d)
+- The `numChannels`, `receivedSampleRate`, `receivedBitrate`, `totalFrozenTime`, and `frozenRate` members in the [RemoteAudioStats](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) class
+
+#### Deprecated
+
+- The lowLatency member in the [LiveTranscoding](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_transcoding.html) class
 
 ## v2.4.1
 v2.4.1 is released on Jun 12, 2019.
