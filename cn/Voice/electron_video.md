@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Electron
-updatedAt: Mon Jul 08 2019 03:20:24 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 03:20:53 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Electron 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -27,15 +27,27 @@ updatedAt: Mon Jul 08 2019 03:20:24 GMT+0800 (CST)
 
 ### 集成 SDK
 
-你可以通过 npm 直接安装 SDK。
+你可以通过 npm 直接安装并导入 SDK，也可以前往官网下载 SDK 后再进行导入：
+
+**通过 npm 直接安装 SDK**
 
 1. 在你的项目文件路径，运行如下命令行安装最新版的 Agora SDK for Electron：
 
 	`nmp install agora-electron-sdk`
 
-2. 然后运行如下命令行将 SDK 导入至你的项目中
+2. 然后通过如下代码将 SDK 引入至你的项目中
 
 	`import AgoraRtcEngine from 'agora-electron-sdk'`
+	
+**官网下载 SDK 并引入**
+
+1. 前往官网 [SDK Downloads](https://docs.agora.io/cn/Agora%20Platform/downloads) 页面下载 Agora SDK for Electron
+2. 将下载下来的 SDK 拷贝至你的项目根目录下
+3. 通过如下代码将 SDK 引入至你的项目中
+
+	`import AgoraRtcEngine from 'agora-electron-sdk'`
+
+> 如果你选择官网下载并引入的方式，请务必使用 Eletron 3.0.6。
 
 ### 修改 .npmrc 文件切换预编译版本
 
