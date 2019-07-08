@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Linux Java
-updatedAt: Tue May 28 2019 07:26:55 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:55:11 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 本地服务端录制 SDK。
@@ -52,53 +52,52 @@ updatedAt: Tue May 28 2019 07:26:55 GMT+0800 (CST)
 </tbody>
 </table>
 
+### 参考配置
 
+我们测试了以下云主机配置下的录制并发性能：
 
-参考硬件配置：
+- AWS：Intel(R) Xeon(R) Platinum 8124M CPU @ 3.00 GHz
+- 16 虚拟核 CPU，32 GB 内存
+- 磁盘 I/O: 412 MB/s
+
+测试条件：
+
+- 每个频道内有两个人，视频分辨率设为 320 × 240 ，帧率设为 15 fps 。
+- 对于合流录制文件，视频分辨率设为 640 × 480，视频帧率设为 15 fps，视频码率设为 500 Kbps ；音频码率设为 48 Kbps。
+
+不同频道模式和录制模式下，录制并发性能如下：
 
 <table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>产品</strong></td>
-<td><strong>描述</strong></td>
-<td><strong>数量</strong></td>
-</tr>
-<tr><td>SUPERMICRO SYS-6017R-TDF</td>
-<td>1U rack-mounted SYS-6017R-TDF, 双路 Intel® Xeon® E5-2600 系列处理器</td>
-<td>1</td>
-</tr>
-<tr><td>机箱</td>
-<td>1U Rackmountable(440W high-efficiency redundant power supply w/ PMBus)</td>
-<td>1</td>
-</tr>
-<tr><td>处理器</td>
-<td>Intel Xeon E5-2620V2 2.1G, L3:15M, 6C((P4X-DPE52620V2-SR1AN)</td>
-<td>2</td>
-</tr>
-<tr><td>内存</td>
-<td>MEM-DR380L-HL06-ER16(8GB DDR3-1600 2Rx8 1.35v ECC REG RoHS)</td>
-<td>1</td>
-</tr>
-<tr><td>硬盘</td>
-<td>250G 3.5 SATA Enterprise (HDD-T0250-WD2503ABYZ)</td>
-<td>2</td>
-</tr>
-</tbody>
+  <tr>
+    <th>频道模式</th>
+    <th>录制模式</th>
+    <th>测试结果</th>
+  </tr>
+  <tr>
+    <td rowspan="3">直播模式</td>
+    <td>视频单流录制</td>
+    <td>215 个频道并发时，CPU 占用为 75% 左右<br>建议并发 200 个频道</td>
+  </tr>
+  <tr>
+    <td>视频合流录制</td>
+    <td>70 个频道并发时，CPU 占用 75% 左右<br>建议并发 60 个频道</td>
+  </tr>
+  <tr>
+    <td>纯音频合流录制</td>
+    <td>300 个频道并发时，CPU 占用为 75% 左右</td>
+  </tr>
+  <tr>
+    <td rowspan="2">通信模式</td>
+    <td>视频单流录制</td>
+    <td>210 个频道并发时，CPU 占用为 75% 左右<br>建议并发 200 个频道</td>
+  </tr>
+  <tr>
+    <td>视频合流录制</td>
+    <td>60 个频道并发时，CPU 占用为 75% 左右</td>
+  </tr>
 </table>
 
-
-
-假设每个频道内有两个人进行视频通话（通信模式），单流模式录制，分辨率是 640 &times; 480 ，帧率为 15 fps ，单流码率为 500 Kbps ：
-
-实测在参考硬件配置下， 12 核 24 线程的 CPU 满载并发 100 个频道，此时：
-
-- 每个频道占用约 25 M 内存；总共占用约 2.5 G 内存。内存占用率约为 31%；
-- 每个频道写入磁盘的速度约为 60 KB/s ；总写入速度约为 6.0 MB/s ，远低于磁盘的最大写入速度；
-- 每个频道下行网络流量约为 500 Kbps &times; 2 = 1 Mbps ，总下行流量约为 100 Mbps ，上行流量可以忽略不计。
+你可参考上述云主机配置和对应的录制性能，根据自己的录制需要选择和配置云主机。
 
 ## 准备环境
 
