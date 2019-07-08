@@ -3,7 +3,7 @@
 title: Agora Audio Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 03 2019 04:20:28 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:49:30 GMT+0800 (CST)
 ---
 # Agora Audio Broadcasting Overview
 The Agora Native SDK for Audio Broadcasting enables one-to-many and many-to-many audio live streaming. 
@@ -52,7 +52,7 @@ See the following sample code for application scenarios:
 
 ## Compatibility
 
-The Agora Native SDK for Interactive Broadcast is supported on platforms such as iOS, Android, Windows, macOS, Linux, Web, and WeChat Mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
+The Agora Native SDK for Interactive Broadcast is supported on platforms such as iOS, Android, Windows, macOS, Electron, Linux, Web, and WeChat Mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
 
 | Platform             | Supported Version                                            |
 | -------------------- | ------------------------------------------------------------ |
