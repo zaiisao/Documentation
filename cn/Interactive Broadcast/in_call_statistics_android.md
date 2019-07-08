@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: Android
-updatedAt: Mon Jul 01 2019 07:42:24 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:25:02 GMT+0800 (CST)
 ---
 # 检测通话质量
 通话质量检测功能是在 SDK **加入频道后**通过每 2 秒触发一次的回调实现。
@@ -123,7 +123,8 @@ void onRemoteAudioStats(RemoteAudioStats stats) {
     }
 ```
 - [`onRemoteAudioTransportStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a826009699e73d5225d4ce9e3a29b91f4)
-```void onRemoteAudioTransportStats(int uid, int delay, int lost, int rxKBitRate) {
+```java
+void onRemoteAudioTransportStats(int uid, int delay, int lost, int rxKBitRate) {
     }
 ```
 
