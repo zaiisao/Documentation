@@ -3,7 +3,7 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 03 2019 04:17:20 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:49:07 GMT+0800 (CST)
 ---
 # Agora Video Overview
 The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
@@ -36,7 +36,7 @@ The Agora Native SDK for Video Call boasts a flexible combination of functions f
 
 ## Compatibility
 
-The Agora Native SDK for Video Call is supported on platforms such as iOS, Android, Windows, macOS, Linux, Web, and WeChat Mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
+The Agora Native SDK for Video Call is supported on platforms such as iOS, Android, Windows, macOS, Electron, Linux, Web, and WeChat Mini-programs, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
 
 | Platform             | Supported Version                                            |
 | -------------------- | ------------------------------------------------------------ |
