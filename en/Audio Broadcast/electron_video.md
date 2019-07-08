@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Electron
-updatedAt: Mon Jul 08 2019 02:46:42 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 03:29:03 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/video broadcast with the Agora SDK for Electron.
@@ -25,15 +25,27 @@ Development environment:
 
 ## Add the Agora SDK to Your Project
 
-You can directly install the SDK through npm.
+You can directly install the SDK through npm or download it from Agora's developer portal.
+
+**Install the SDK through npm**
 
 1. Go to the project path, and run the following command line to install the latest version of the Electron SDK:
 
 	`nmp install agora-electron-sdk`
 	
-2. Run the following command to import the SDK into your project:
+2. Import the SDK into your project with the following code:
 
 	`import AgoraRtcEngine from 'agora-electron-sdk'`
+
+**Download the SDK from the developer portal**
+
+1. Go to [SDK downloads](https://docs.agora.io/en/Agora%20Platform/downloads) to download the Agora SDK for Electron.
+2. Save the downloaded SDk package into the root directory of your project file.
+3. Import the SDK into your project with the following code:
+
+	`import AgoraRtcEngine from 'agora-electron-sdk'`
+	
+> Ensure that you use Electron 3.0.6 if you want to get the SDK by downloading it from the developer portal.
 
 ## Switch the Prebuilt add-on version
 
