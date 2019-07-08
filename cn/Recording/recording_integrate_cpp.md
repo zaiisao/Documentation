@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Linux CPP
-updatedAt: Mon Jul 08 2019 02:53:05 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 02:53:54 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
@@ -62,7 +62,7 @@ updatedAt: Mon Jul 08 2019 02:53:05 GMT+0800 (CST)
 测试条件：
 
 - 每个频道内有两个人，视频分辨率设为 320 × 240 ，帧率设为 15 fps 。
-- 对于合流录制文件，视频分辨率设为 640 × 480，视频帧率设为 15 fps，视频码率设为 500 kbps ；音频码率设为 48 kbps。
+- 对于合流录制文件，视频分辨率设为 640 × 480，视频帧率设为 15 fps，视频码率设为 500 Kbps ；音频码率设为 48 Kbps。
 
 不同频道模式和录制模式下，录制并发性能如下：
 
