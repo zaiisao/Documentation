@@ -3,7 +3,7 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 04:18:48 GMT+0800 (CST)
+updatedAt: Tue Jul 09 2019 08:20:53 GMT+0800 (CST)
 ---
 # 申请发票
 角色为管理员/财务的账户可在 [Agora Dashboard](https://dashboard.agora.io/) 申请开具发票。
