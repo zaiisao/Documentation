@@ -3,14 +3,12 @@
 title: Agora Recording Overview
 description: 
 platform: Linux
-updatedAt: Mon Jul 08 2019 03:11:45 GMT+0800 (CST)
+updatedAt: Tue Jul 09 2019 01:25:01 GMT+0800 (CST)
 ---
 # Agora Recording Overview
 The Agora On-premise Recording SDK is an add-on to record and save voice calls, video calls, and interactive broadcasts on your server. The Agora On-premise Recording SDK is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+.
 
 For example, a user can either attend an online course at the time of the course or watch the recorded course later; made possible by the Agora On-premise Recording SDK being deployed at the server by the online course provider.
-
-> If you don't want to set up a Linux server, try [Agora Cloud Recording](../../en/cloud-recording/product_cloud_recording.md).
 
 ## Functions
 
