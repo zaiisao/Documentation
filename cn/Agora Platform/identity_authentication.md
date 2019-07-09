@@ -3,7 +3,7 @@
 title: 实名认证
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 09 2019 08:21:11 GMT+0800 (CST)
+updatedAt: Tue Jul 09 2019 08:28:01 GMT+0800 (CST)
 ---
 # 实名认证
 根据《中华人民共和国网络安全法》及相关法律的规定，以及按工信部、通信管理局、公安等有关监管单位要求，用户需要提供真实身份信息，否则网络运营者停止对其提供相关服务。
