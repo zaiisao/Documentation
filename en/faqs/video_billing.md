@@ -3,7 +3,7 @@
 title: Billing for the video call
 description: 视频通话计费说明
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:13:48 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 17:03:22 GMT+0800 (CST)
 ---
 # Billing for the video call
 ## Cost
@@ -23,10 +23,6 @@ After deducting the monthly 10,000 minutes, Agora charges:
   <tr>
     <td>Recording enabled</td>
     <td><li>Users in the same video format: Communication Fee + Recording Fee = Unit Price for the Video Format x Total Communication Minutes + Unit Price for the Video Format x Total Recording Minutes</li><li>Users in different video formats: Communication Fee + Recording Fee = Σ(Unit Price for Each Video Format x Total Communication Minutes for Each Video Format + Σ(Unit Price for Each Video Format x Total Recording Minutes for Each Video Format)</li></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
   </tr>
 </table>
 

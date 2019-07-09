@@ -3,18 +3,18 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Mon Jul 01 2019 17:09:58 GMT+0800 (CST)
+updatedAt: Tue Jul 02 2019 14:35:23 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
 The Agora Web SDK supports all mainstream browsers, see [Compatibility](https://docs.agora.io/en/Interactive%20Broadcast/release_web_video?platform=Web#compatibility) for details. Due to the various browser engine implementations, support for some features may vary by browser and platform. The following are known issues and limitations.
 
-### Chrome
+## Chrome
 
 The Agora Web SDK is based on WebRTC and works best on Chrome.
 - The Agora Web SDK supports Chrome 58 or later.
 - Some APIs require later versions of Chrome, see the API Reference for details.
 
-### Safari
+## Safari
 
 - Safari only supports the H.264 codec.
 - Safari does not support changing the frame rate (30 fps by default).
@@ -24,14 +24,14 @@ The Agora Web SDK is based on WebRTC and works best on Chrome.
 - Safari does not support the `addTrack` and `removeTrack` methods.
 - Safari does not support the `getAudioLevel` method on iOS.
 
-### Firefox
+## Firefox
 
 - When the Firefox browser interoperates with the Native SDK for iOS, the video in the Firefox browser is rotated.
 - Setting the video profile on Firefox does not take effect on the following devices:
   - MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)
   - Windows 10 (MI)
 
-### Edge
+## Edge
 
 The Agora Web SDK v2.7 or later supports the Microsoft Edge browser. Due to browser limitations, the Agora Web SDK supports the following functions:
 

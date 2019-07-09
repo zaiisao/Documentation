@@ -1,11 +1,11 @@
 
 ---
-title: Errors occur when calling the Stream.init method.
+title: Why do errors occur when calling the Stream.init method?
 description: 
 platform: Web
-updatedAt: Mon Jul 01 2019 17:12:26 GMT+0800 (CST)
+updatedAt: Wed Jul 03 2019 10:27:05 GMT+0800 (CST)
 ---
-# Errors occur when calling the Stream.init method.
+# Why do errors occur when calling the Stream.init method?
 The following are common errors when initializing the stream:
 
 - NotAllowedError: The user refuses to grant access to the video or audio resource.

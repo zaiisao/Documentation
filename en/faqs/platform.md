@@ -3,7 +3,7 @@
 title: What platforms does the Agora SDK support?
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:12:50 GMT+0800 (CST)
+updatedAt: Mon Jul 08 2019 15:45:37 GMT+0800 (CST)
 ---
 # What platforms does the Agora SDK support?
 Different Agora products support different platforms.
@@ -18,6 +18,7 @@ The Agora Native SDK for Voice/Video Call and the Agora Native SDK for Audio/Vid
 | iOS        | 8.0 or later                                                |
 | Windows    | XP SP3 or later                                             |
 | macOS      | 10.0 or later                                               |
+| Electron      | 1.8.3 or later                                              |
 | WeChat Mini-program | N/A                                                     |
 | Web        | See [Compatibility of the Agora Web SDK ](https://docs.agora.io/en/Interactive%20Broadcast/release_web_video?platform=Web#compatibility)。 |
 
