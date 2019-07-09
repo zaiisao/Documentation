@@ -3,7 +3,7 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 09 2019 08:26:02 GMT+0800 (CST)
+updatedAt: Tue Jul 09 2019 09:18:46 GMT+0800 (CST)
 ---
 # 申请发票
 角色为管理员/财务的账户可在 [Agora Dashboard](https://dashboard.agora.io/) 申请开具发票。
@@ -41,7 +41,7 @@ updatedAt: Tue Jul 09 2019 08:26:02 GMT+0800 (CST)
 
 2. 设置发票详情
 
-![](https://web-cdn.agora.io/docs-files/1562660265813)
+![](https://web-cdn.agora.io/docs-files/1562663854968)
 
 1) 选择发票类型。
    
@@ -52,7 +52,7 @@ updatedAt: Tue Jul 09 2019 08:26:02 GMT+0800 (CST)
 * 企业专用发票：填写发票抬头、基本开户行信息和收件地址，上传一般纳税人证明照片。
 	
 > 填写企业发票的开票信息时，请注意：
-> - 发票抬头包括企业全称、社会统一信用代码、注册场所地址和注册固定电话，请按照贵公司营业执照上的信息填写。
+> - 发票抬头包括企业全称、社会统一信用代码、企业注册地址和固定电话，请按照贵公司营业执照上的信息填写。
 > - 基本开户行信息包括银行名称、开户行和银行账号，请按照贵公司开户许可证上的信息填写。
 > - 图片大小不可超过 20 MB。
 
