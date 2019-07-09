@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: iOS
-updatedAt: Mon Jul 08 2019 02:46:11 GMT+0800 (CST)
+updatedAt: Tue Jul 09 2019 03:39:15 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -41,7 +41,6 @@ Agora Native SDK 和 Web SDK 通过不同方法支持 String 型的用户名：
 
 - 在 `registerLocalUserAccount` 和 `joinChannelByUserAccount` 方法中，`userAccount` 参数均为必填，不可为 null。
 - `registerLocalUserAccount` 为选调。你可以注册后再调用 `joinChannelByUserAccount` 方法加入频道，也可以不注册直接调用 `joinChannelByUserAccount` 加入频道。我们建议你调用。提前调用 `registerLocalUserAccount` 可以减少调用 `joinChannelByUserAccount` 加入频道的时间。
-- 远端用户成功调用 `joinChannelByUserAccount` 加入频道后，SDK 会获取该远端用户的 UID（Int 型）和 User account（String 型），然后生成账号映射表，并在本地触发 `didUpdatedUserInfo` 回调。
 - 对于其他接口，Agora SDK 仍沿用 Int 型的 UID 参数标识用户身份。你可以使用 `getUserInfoByUid` 或 `getUserInfoByUserAccount` 获取对应的 User Account 或 UID，无需自己维护映射表。
 
 ### API 参考
