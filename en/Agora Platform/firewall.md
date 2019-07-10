@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 25 2019 02:56:22 GMT+0800 (CST)
+updatedAt: Wed Jul 10 2019 09:19:57 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -12,7 +12,7 @@ This page describes the firewall requirements for different Agora SDKs. Before a
 
 -   Open TCP ports: 1080, 8000, 9700, 25000, and 30000.
 -   Open UDP ports: 1080, 4000 to 4030, 7000, 8000, 8913, 9700, and 25000.
--   Whitelist domains: `.agora.io`, `vocs1.agora.io`, `vocs2.agora.io`, `vocs3.agora.io`, `vocs4.agora.io`, `vocs5.agora.io`, `qoslbs.agoralab.co`, `qos.agoralab.co` , `ap1.agora.io`, `ap2.agora.io`, `ap3.agora.io`, `ap4.agora.io`, and `ap5.agora.io`.
+-   Whitelist domains: `qoslbs.agoralab.co`, `qos.agoralab.co` , `ap1.agora.io`, `ap2.agora.io`, `ap3.agora.io`, `ap4.agora.io`, and `ap5.agora.io`.
 
 
 ## Agora Web SDK
@@ -31,14 +31,14 @@ This page describes the firewall requirements for different Agora SDKs. Before a
 - Agora RTM Native SDK (Android, Linux Java, iOS/macOS, C++):
   - Open TCP ports: 9130 and 9131.
   - Open UDP ports: 8000, 1080, 25000. 
-  - Whitelist domains: `.agora.io`, `qoslbs.agora.io`, and `qos.agora.io`. 
+  - Whitelist domains: `.agora.io`, `qoslbs.agoralab.co`, and `qos.agoralab.co`. 
 
 
 ## Agora Signaling SDK
 
 -   Open TCP ports: 1080 and 8001 to 8199.
 -   Open UDP ports: 8180 to 8199.
--   Whitelist domain: `.agora.io`, `vocs.agora.io`, `qoslbs.agora.io`, and `qos.agora.io`.
+-   Whitelist domain: `.agora.io`, `vocs.agora.io`, `qoslbs.agoralab.co`, and `qos.agoralab.co`.
 
 
 ## Agora Recording SDK
@@ -47,7 +47,7 @@ This page describes the firewall requirements for different Agora SDKs. Before a
 -   Open UDP ports:
     -   Duplex ports: 1080, 4000 to 4030, 8000, 9700 and 25000;
     -   Simplex downstream ports used by recording processes.
--   Whitelist domains: `.agora.io`, `vocs.agora.io`, `qoslbs.agoralab.io`, and `qos.agoralab.io`.
+-   Whitelist domains: `.agora.io`, `qoslbs.agoralab.co`, and `qos.agoralab.co`.
 
 > To record the content in channels, you need one recording process for each of the channels. One recording thread requires four simplex downstream ports. There must be no port conflict among processes, including system processes and all recording processes.
 > 
@@ -60,7 +60,7 @@ This page describes the firewall requirements for different Agora SDKs. Before a
 
 -   Open TCP ports: 1080 and 8000.
 -   Open UDP ports: 1080, 4000 to 4030, 8000, 9700 and 25000.
--   Whitelist domains: `.agora.io`, `vocs.agora.io`, `qoslbs.agora.io`, and `qos.agora.io`.
+-   Whitelist domains: `.agora.io`, `qoslbs.agoralab.co`, and `qos.agoralab.co`.
 
 You must use UDP ports rather than TCP ports for superior voice and video quality since UDP prioritizes timeliness over reliability.
 
