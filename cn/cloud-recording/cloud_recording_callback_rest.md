@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Wed Jul 10 2019 08:05:20 GMT+0800 (CST)
+updatedAt: Wed Jul 10 2019 09:16:38 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 云端录制 RESTful API 提供回调服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -17,6 +17,8 @@ updatedAt: Wed Jul 10 2019 08:05:20 GMT+0800 (CST)
 - 需要接收通知的事件类型
 
 > 一个 App ID 只能配置一个接收回调的 URL。
+
+配置消息通知服务后，系统将自动生成一个鉴权用的密钥。密钥为字符串类型，可以用来生成签名。计算出的签名作为 `“Agora-Signature”` 字段放在回调消息的头部。你可以用密钥自己生成签名和回调消息中的签名进行验证，详见[验证签名](#signature)。验签不是必须的。
 
 ## 数据格式
 
@@ -207,3 +209,40 @@ POST 请求头部的 `Content-type` 为 `application/json`。
 | 7    | 云端录制服务全部停止     |
 | 8    | 云端录制准备退出         |
 | 20   | 云端录制异常退出           |
+
+### <a name="signature"></a> 验证签名
+
+我们系统直接生成了密钥，通过 HMAC/SHA1 算法最终生成 `Agora-Signature` 签名。
+你可以使用已经保存了的这个密钥来验证签名，验证签名时你可以参考以下代码：
+
+- 如果你使用 Python
+
+```python
+# !-*- coding: utf-8 -*-
+import hashlib
+import hmac
+
+# 拿到事件通知的 request body，注意这是一个字符串，不是 JSON object
+request_body = '{"eventMs":1560408533119,"eventType":10,"noticeId":"4eb720f0-8da7-11e9-a43e-53f411c2761f","notifyMs":1560408533119,"payload":{"a":"1","b":2},"productId":1}'
+
+secret = 'secret'
+
+signature = hmac.new(secret, request_body, hashlib.sha1).hexdigest()
+
+print(signature) # 033c62f40f687675f17f0f41f91a40c71c0f134c
+```
+
+- 如果你使用 Node.js
+
+```javascript
+const crypto = require('crypto')
+
+// 拿到事件通知的 request body, 注意这是一个字符串，不是 JSON object
+const requestBody = '{"eventMs":1560408533119,"eventType":10,"noticeId":"4eb720f0-8da7-11e9-a43e-53f411c2761f","notifyMs":1560408533119,"payload":{"a":"1","b":2},"productId":1}'
+
+const secret = 'secret'
+
+const signature = crypto.createHmac('sha1', secret).update(requestBody, 'utf8').digest('hex')
+
+console.log(signature) // 033c62f40f687675f17f0f41f91a40c71c0f134c
+```
