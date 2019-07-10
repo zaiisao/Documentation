@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Wed Jul 10 2019 09:16:47 GMT+0800 (CST)
+updatedAt: Wed Jul 10 2019 09:24:44 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 云端录制 RESTful API 提供回调服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -18,7 +18,7 @@ updatedAt: Wed Jul 10 2019 09:16:47 GMT+0800 (CST)
 
 > 一个 App ID 只能配置一个接收回调的 URL。
 
-配置消息通知服务后，系统将自动生成一个鉴权用的密钥。密钥为字符串类型，可以用来生成签名。计算出的签名作为 `“Agora-Signature”` 字段放在回调消息的头部。你可以用密钥自己生成签名和回调消息中的签名进行验证，详见[验证签名](#signature)。验签不是必须的。
+配置消息通知服务后，系统将自动生成一个鉴权用的密钥。密钥为字符串类型，可以用来生成签名。计算出的签名作为 `"Agora-Signature"` 字段放在回调消息的头部。你可以用密钥自己生成签名和回调消息中的签名进行验证，详见[验证签名](#signature)。验签不是必须的。
 
 ## 数据格式
 
