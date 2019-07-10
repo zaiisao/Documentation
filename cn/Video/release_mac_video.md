@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Mon Jul 08 2019 02:57:13 GMT+0800 (CST)
+updatedAt: Wed Jul 10 2019 06:47:50 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -48,7 +48,7 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 
  如果你的频道内有不支持 String 型 User account 的用户，则只能使用 Int 型的 User ID。
 - 如果你使用该版本的 Native SDK 将用户名升级至 String 型 User account，请确保所有终端用户同步升级。
-- 如果使用 String 型的 User account，请确保你的服务端用户生成 Token 的脚本已升级至最新版本。
+- 如果使用 String 型的 User account，请确保你的服务端用户生成 Token 的脚本已升级至最新版本。你可以使用 String 型或 Int 型的用户名生成 Token。如果使用 String 型 User account 加入频道，请确保也使用该 User account 来生成 Token。你也可以使用 User account 对应的 Int 型 UID 来生成 Token。你可以调用 `getUserInfoByUserAccount` 来获取 User account 所对应的 UID。
 
 #### 2. 音视频卡顿回调
 

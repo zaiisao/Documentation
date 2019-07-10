@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Windows
-updatedAt: Wed Jun 12 2019 09:05:45 GMT+0800 (CST)
+updatedAt: Wed Jul 10 2019 06:55:06 GMT+0800 (CST)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -153,4 +153,4 @@ EnumWindows(&EnumProc, NULL);
 ## 开发注意事项
 - SDK 在 v2.4.0 版本中废弃了原有的 `startScreenCapture` 接口。你可以继续使用，但 Agora 不再推荐。
 - 视频共享编码属性 `ScreenCaptureParameters` 类中各参数的设置可能会影响计费。从 v2.4.1 版本起，如果你将 `dimensions` 参数设为默认值，则 Agora 使用 1920 x 1080 进行计费。
-- 在 Windows 平台上进行屏幕共享时，如果共享的是 QQ 聊天窗口会导致黑屏。
+- 在 Windows 平台上进行屏幕共享时，如果共享的是 QQ 聊天窗口会导致共享窗口黑屏。
