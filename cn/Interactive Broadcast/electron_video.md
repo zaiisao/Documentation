@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Electron
-updatedAt: Wed Jul 10 2019 09:52:01 GMT+0800 (CST)
+updatedAt: Wed Jul 10 2019 09:52:52 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Electron 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -17,7 +17,7 @@ updatedAt: Wed Jul 10 2019 09:52:01 GMT+0800 (CST)
 
 > 使用 Windows 平台进行开发时，请运行 `npm install -D —arch = ia32 electron` 安装 32 位的 Electron。
 
-### 创建项目并获取 App ID
+## 创建项目并获取 App ID
 
 参考以下步骤，在 Dashboard 创建项目并获取项目的 App ID：
 
@@ -25,7 +25,7 @@ updatedAt: Wed Jul 10 2019 09:52:01 GMT+0800 (CST)
 2. 点击 Dashboard 左侧的项目管理图标，查看你所创建的项目详情。
 3. 在项目详情页，你可以查看你的 App ID。
 
-### 集成 SDK
+## 集成 SDK
 
 你可以通过 npm 直接安装并导入 SDK，也可以前往官网下载 SDK 后再进行导入：
 
@@ -49,7 +49,7 @@ updatedAt: Wed Jul 10 2019 09:52:01 GMT+0800 (CST)
 
 > 如果你选择官网下载并引入的方式，请务必使用 Eletron 3.0.6。
 
-### 修改 .npmrc 文件切换预编译版本
+## 修改 .npmrc 文件切换预编译版本
 
 Agora 默认使用 1.8.3 版本的 Electron 进行编译。请根据你的 Electron 版本修改 .npmrc 文件，切换预编译版本：
 
@@ -62,9 +62,13 @@ AGORA_ELECTRON_DEPENDENT = 3.0.6
 AGORA_ELECTRON_DEPENDENT = 4.0.0
 ```
 
-### 安装依赖项
+## 安装依赖项
 
 在你的项目文件夹下运行 `nmp install` 安装依赖项。安装会自动触发 `npm run download`，你也可以到对应路径下手动安装。
 如果你想用 Xcode 或 Visual Studio 调试，可以执行 `npm run debug` 命令行生成项目文件及带符号表的 SDK 文件。
 
 至此，你已经将 Agora SDK for Electron 集成到你的项目中了。请参考 [Agora Electron Github Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 在你的项目中实现相关的实时音视频功能。
+
+## SDK 开源
+
+[Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) 在 Github 上开源，你可以前往参考或查阅源代码。Agora 也欢迎开发者贡献代码，以提高 Electron SDK 的易用性。
