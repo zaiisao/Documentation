@@ -3,7 +3,7 @@
 title: 防火墙说明
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 25 2019 02:52:38 GMT+0800 (CST)
+updatedAt: Wed Jul 10 2019 09:09:12 GMT+0800 (CST)
 ---
 # 防火墙说明
 使用 Agora.io 相关服务之前，你需要打开本地防火墙的特定端口并将部分域名添加为白名单。本页提供使用 Agora 各 SDK 前必须要打开的端口及设置的域名白名单。
@@ -14,7 +14,7 @@ updatedAt: Tue Jun 25 2019 02:52:38 GMT+0800 (CST)
 
 -   打开 UDP 端口：1080、4000-4030、7000、8000、8913、9700、25000。
 
--   将域名 `.agora.io` 、 `vocs1.agora.io` 、 `vocs2.agora.io` 、 `vocs3.agora.io` 、 `vocs4.agora.io` 、 `vocs5.agora.io` 、 `qoslbs.agoralab.co` 、 `qos.agoralab.co` 、 `ap1.agora.io` 、 `ap2.agora.io` 、 `ap3.agora.io` 、 `ap4.agora.io` 、 `ap5.agora.io` 设为白名单
+-   将域名 `qoslbs.agoralab.co` 、 `qos.agoralab.co` 、 `ap1.agora.io` 、 `ap2.agora.io` 、 `ap3.agora.io` 、 `ap4.agora.io` 、 `ap5.agora.io` 设为白名单
 
 
 ## Agora Web SDK
@@ -52,7 +52,7 @@ updatedAt: Tue Jun 25 2019 02:52:38 GMT+0800 (CST)
 
 -   打开 UDP 端口：双向 1080、4000-4030、8000、9700、25000 和 所有的录制进程所使用的单向下行端口
 
--   将域名 .agora.io、vocs.agora.io、qoslbs.agoralab.io、qos.agoralab.io 设为白名单
+-   将域名 .agora.io、qoslbs.agoralab.co、qos.agoralab.co 设为白名单。
 
 
 
@@ -66,7 +66,7 @@ updatedAt: Tue Jun 25 2019 02:52:38 GMT+0800 (CST)
 
 -   打开 TCP 端口：1080、8000
 -   打开 UDP 端口：1080、4000-4030、8000、9700、25000
--   将域名 `.agora.io`、`vocs.agora.io`、`qoslbs.agora.io` 和 `qos.agora.io` 设为白名单
+-   将域名 `.agora.io`、`qoslbs.agora.io` 和 `qos.agora.io` 设为白名单
 
 
 为获得优质的音视频通话体验，Agora 建议你使用 UDP 端口。与 TCP 相比，UDP 更注重通话的时效性，因此能在填补丢包的同时同时将通话延迟降到最低。
