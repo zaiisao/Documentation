@@ -3,7 +3,7 @@
 title: 调用 API 录制
 description: How to start recording using API
 platform: Linux CPP
-updatedAt: Thu Jul 11 2019 09:54:21 GMT+0800 (CST)
+updatedAt: Thu Jul 11 2019 09:57:31 GMT+0800 (CST)
 ---
 # 调用 API 录制
 本文介绍如何调用 API 进行通话或直播录制。
