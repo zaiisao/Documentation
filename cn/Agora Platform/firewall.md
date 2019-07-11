@@ -3,7 +3,7 @@
 title: 防火墙说明
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 10 2019 09:51:32 GMT+0800 (CST)
+updatedAt: Thu Jul 11 2019 10:13:41 GMT+0800 (CST)
 ---
 # 防火墙说明
 使用 Agora.io 相关服务之前，你需要打开本地防火墙的特定端口并将部分域名添加为白名单。本页提供使用 Agora 各 SDK 前必须要打开的端口及设置的域名白名单。
@@ -43,7 +43,7 @@ updatedAt: Wed Jul 10 2019 09:51:32 GMT+0800 (CST)
 
 -   打开 UDP 端口 8180-8199
 
--   将域名 `.agora.io`、`vocs.agora.io`、`qoslbs.agoralab.co` 以及 `qos.agoralab.co` 设为白名单
+-   将域名 `.agora.io`、`qoslbs.agoralab.co` 以及 `qos.agoralab.co` 设为白名单
 
 
 ## Agora Recording SDK
