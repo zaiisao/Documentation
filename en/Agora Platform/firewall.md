@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 10 2019 09:19:57 GMT+0800 (CST)
+updatedAt: Thu Jul 11 2019 10:12:55 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -38,7 +38,7 @@ This page describes the firewall requirements for different Agora SDKs. Before a
 
 -   Open TCP ports: 1080 and 8001 to 8199.
 -   Open UDP ports: 8180 to 8199.
--   Whitelist domain: `.agora.io`, `vocs.agora.io`, `qoslbs.agoralab.co`, and `qos.agoralab.co`.
+-   Whitelist domain: `.agora.io`,  `qoslbs.agoralab.co`, and `qos.agoralab.co`.
 
 
 ## Agora Recording SDK
