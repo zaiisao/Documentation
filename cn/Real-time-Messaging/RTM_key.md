@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 12 2019 08:25:45 GMT+0800 (CST)
+updatedAt: Fri Jul 12 2019 08:27:55 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -69,7 +69,7 @@ Agora 的 Token 方案基于请求—响应机制，流程如下：
 因此，在使用 Token 之前，你需要先在你的 Server 端部署一个 Token Generator 用来生成 Token。Agora 提供以下平台 Token Generator 的示例代码。
 
 -   [RTM Token Builder for C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/sample/rtm_builder.cpp)
--   [RTM Token Builder for Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/sample/io/agora/media/sample/RtmTokenBuilderSample.java)
+-   [RTM Token Builder for Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/sample/io/agora/rtm/sample/RtmTokenBuilderSample.java)
 -   [RTM Token Builder for Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/sample/sample_rtm_builder.py)
 -   [RTM Token Builder for PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/sample/RtmTokenBuilderSample.php )
 
