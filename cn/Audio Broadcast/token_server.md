@@ -3,14 +3,14 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: 服务端
-updatedAt: Fri Jul 12 2019 03:14:16 GMT+0800 (CST)
+updatedAt: Fri Jul 12 2019 03:25:37 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
 
 Agora 的鉴权 API 涵盖 Java、Python、CPP、Ruby、Node.js、PHP、Go 语言，你可以根据实际需要，选择相应的语言。
 
-> 服务端鉴权 API 既支持 int 型 uid 也支持 string 型 userAccount。请根据选择你的用户类型选择相应的生成方式
+> 服务端鉴权 API 既支持 int 型 uid 也支持 string 型 userAccount。请根据你的用户类型选择相应的生成方式。
 
 ## Java
 
