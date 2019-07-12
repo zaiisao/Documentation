@@ -3,7 +3,7 @@
 title: 调用 API 录制
 description: How to start recording using API
 platform: Linux CPP
-updatedAt: Thu Jul 11 2019 09:57:31 GMT+0800 (CST)
+updatedAt: Thu Jul 11 2019 09:57:37 GMT+0800 (CST)
 ---
 # 调用 API 录制
 本文介绍如何调用 API 进行通话或直播录制。
@@ -55,6 +55,8 @@ RecordingEngineProperites ps = engine->getProperties()
 
 加入频道后可以调用 [`getProperties`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine.html#abf1bcd2dd5a38262ca26e50b3b182f4b) 方法获取录制文件的存放路径。
 
+> 当有用户加入频道时触发的 [onUserJoined](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a2ca947993a8c8d9ae23fc0545ae1a05d) 回调中也包含录制文件的存放路径。
+
 ## 结束录制
 
 ```c++
@@ -75,13 +77,3 @@ engine->release()
 
 待录制完成后，你需要调用 [`release`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine.html#af4d33159ed8ed249991470e6833d0fd5) 方法销毁录制实例，释放 SDK 使用的资源，释放资源后将无法再次使用和回调 SDK 内的其它方法。如需再次使用本地服务端录制，必须重新创建实例。
 > `release` 方法不能在回调线程中调用。
-
-## 相关文档
-
-本文仅介绍了实现录制最基本的方法，你可以参考下面的文档实现更多的功能和设置：
-
-- 选择录制模式：你可以选择分别录制每个用户的音频和视频或者将所有用户的音视频混合录制。
-- 自定义合流布局：在合流模式录制视频时，你需要设置合流布局。
-- 视频截图：录制时对每个用户的画面进行截图。
-- 管理录制文件：查看和管理录制生成的文件。
-- 使用转码脚本：使用我们提供的脚本将录制得到的多个音视频文件合成为一个文件。
