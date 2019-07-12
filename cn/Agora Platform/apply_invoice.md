@@ -3,14 +3,14 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 12 2019 03:03:12 GMT+0800 (CST)
+updatedAt: Fri Jul 12 2019 03:03:20 GMT+0800 (CST)
 ---
 # 申请发票
 角色为管理员/财务的账户可在 [Agora Dashboard](https://dashboard.agora.io/) 申请开具发票。
 
 如想申请发票，需满足下列条件：
 
-- 账户完成实名认证
+- 账户完成[实名认证](../../cn/Agora%20Platform/identity_authentication.md)
 - 账单需扣费
 - 账期为 2019 年 5 月之后
 - 账户余额不为负
@@ -33,7 +33,7 @@ updatedAt: Fri Jul 12 2019 03:03:12 GMT+0800 (CST)
 
 申请发票前，请确保已完成下列任务：
 
-1. 进行实名认证：按照屏幕指引完成个人认证或企业认证。详见[实名认证指引](../../cn/Agora%20Platform/identity_authentication.md)。
+1. 进行实名认证：点击**去认证**，按照屏幕指引完成个人认证或企业认证。详见[实名认证指引](../../cn/Agora%20Platform/identity_authentication.md)。
 	
 	个人实名认证可申请个人普通发票或企业普通发票；企业实名认证可申请企业普通发票或企业专用发票。
 	
