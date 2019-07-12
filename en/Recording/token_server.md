@@ -3,7 +3,7 @@
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
 platform: Server
-updatedAt: Fri Jul 12 2019 04:06:46 GMT+0800 (CST)
+updatedAt: Fri Jul 12 2019 04:17:50 GMT+0800 (CST)
 ---
 # Generate a Token
 This page shows how to generate a token on your server for Agora SDK versions 2.1.0+. The token is used for joining a channel.
@@ -16,6 +16,8 @@ The following programming languages are covered. Choose the one that applies to 
 - Go
 - PHP
 - Node.js
+
+> The Token Builder we provide supports both int uid and string userAccount. 
 
 
 ## Java
@@ -60,8 +62,6 @@ This method uses the original token to reinitialize the token builder. This meth
 public SimpleTokenBuilder(String appId, String appCertificate, String channelName, String uid);
 ```
 
-This method is the struct of SimpleTokenBuilder.
-
 <table>
 <colgroup>
 <col/>
@@ -82,6 +82,34 @@ This method is the struct of SimpleTokenBuilder.
 </tr>
 <tr><td><code>uid</code></td>
 <td>ID of the user who wants to join a channel.</td>
+</tr>
+</tbody>
+</table>
+
+```java
+public SimpleTokenBuilder(String appId, String appCertificate, String channelName, String userAccount);
+```
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><td>App ID</td>
+<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
+</tr>
+<tr><td>App Certificate</td>
+<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
+</tr>
+<tr><td><code>channelName</code></td>
+<td>Name of the channel that the user wants to join.</td>
+</tr>
+<tr><td><code>userAccount</code></td>
+<td>User Account of the user who wants to join a channel.</td>
 </tr>
 </tbody>
 </table>
@@ -135,8 +163,6 @@ This method uses the original token to reinitialize the token builder. This meth
 SimpleTokenBuilder();
 SimpleTokenBuilder(const std::string& appId, const std::string& appCertificate,
                    const std::string& channelName, uint32_t uid = 0);
-SimpleTokenBuilder(const std::string& appId, const std::string& appCertificate,
-                   const std::string& channelName, const std::string& uid = "");
 ```
 
 This method is the struct of SimpleTokenBuilder.
@@ -161,6 +187,35 @@ This method is the struct of SimpleTokenBuilder.
 </tr>
 	<tr><td><code>uid</code></td>
 <td>ID of the user who wants to join a channel.</td>
+</tr>
+</tbody>
+</table>
+
+```
+SimpleTokenBuilder(const std::string& appId, const std::string& appCertificate,
+                   const std::string& channelName, const std::string& userAccount = "");
+```
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><td>App ID</td>
+<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
+</tr>
+<tr><td>App Certificate</td>
+<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
+</tr>
+<tr><td><code>channelName</code></td>
+<td>Name of the channel that the user wants to join.</td>
+</tr>
+	<tr><td><code>userAccount</code></td>
+<td>User Account of the user who wants to join a channel.</td>
 </tr>
 </tbody>
 </table>
@@ -236,7 +291,7 @@ This method is the struct of SimpleTokenBuilder.
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>ID of the user who wants to join a channel.</td>
+<td><li>ID of the user who wants to join a channel.<li>User Account of the user who wants to join a channel.</td>
 </tr>
 </tbody>
 </table>
@@ -288,10 +343,8 @@ This method uses the original token to reinitialize the token builder. This meth
 **Struct of the TokenBuilder**
 
 ```go
-func CreateSimpleTokenBuilder(appID, appCertificate, channelName string, uid uint32) SimpleTokenBuilder;
+func CreateSimpleTokenBuilder(appID, appCertificate, channelName string, uid uint32) SimpleTokenBuilder
 ```
-
-This method is the struct of SimpleTokenBuilder.
 
 <table>
 <colgroup>
@@ -313,6 +366,34 @@ This method is the struct of SimpleTokenBuilder.
 </tr>
 <tr><td><code>uid</code></td>
 <td>ID of the user who wants to join a channel.</td>
+</tr>
+</tbody>
+</table>
+
+```go
+func CreateSimpleTokenBuilder2(appID, appCertificate, channelName string, userAccount string) SimpleTokenBuilder
+```
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>Name</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr><td>App ID</td>
+<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
+</tr>
+<tr><td>App Certificate</td>
+<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
+</tr>
+<tr><td><code>channelName</code></td>
+<td>Name of the channel that the user wants to join.</td>
+</tr>
+<tr><td><code>userAccount</code></td>
+<td>User Account of the user who wants to join a channel.</td>
 </tr>
 </tbody>
 </table>
@@ -390,7 +471,7 @@ This method is the struct of SimpleTokenBuilder.
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>ID of the user who wants to join a channel.</td>
+<td><li>ID of the user who wants to join a channel.<li>User Account of the user who wants to join a channel.</td>
 </tr>
 </tbody>
 </table>
@@ -465,7 +546,7 @@ This method is the struct of SimpleTokenBuilder.
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>ID of the user who wants to join a channel.</td>
+<td><li>ID of the user who wants to join a channel.<li>User Account of the user who wants to join a channel. </td>
 </tr>
 </tbody>
 </table>
