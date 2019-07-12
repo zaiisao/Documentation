@@ -3,7 +3,7 @@
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
 platform: Server
-updatedAt: Fri Jul 12 2019 04:17:50 GMT+0800 (CST)
+updatedAt: Fri Jul 12 2019 07:28:51 GMT+0800 (CST)
 ---
 # Generate a Token
 This page shows how to generate a token on your server for Agora SDK versions 2.1.0+. The token is used for joining a channel.
@@ -17,7 +17,7 @@ The following programming languages are covered. Choose the one that applies to 
 - PHP
 - Node.js
 
-> The Token Builder we provide supports both int uid and string userAccount. 
+> The Token Builder that we provide supports both int uid and string userAccount. 
 
 
 ## Java
@@ -81,7 +81,7 @@ public SimpleTokenBuilder(String appId, String appCertificate, String channelNam
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>ID of the user who wants to join a channel.</td>
+<td>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.</td>
 </tr>
 </tbody>
 </table>
@@ -109,7 +109,7 @@ public SimpleTokenBuilder(String appId, String appCertificate, String channelNam
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>userAccount</code></td>
-<td>User Account of the user who wants to join a channel.</td>
+<td>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <p><li>The 26 lowercase English letters: a to z. <li> The 26 uppercase English letters: A to Z. <li> The 10 numbers: 0 to 9. <li> The space. <li> "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
 </tr>
 </tbody>
 </table>
@@ -186,7 +186,7 @@ This method is the struct of SimpleTokenBuilder.
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 	<tr><td><code>uid</code></td>
-<td>ID of the user who wants to join a channel.</td>
+<td>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.</td>
 </tr>
 </tbody>
 </table>
@@ -215,7 +215,7 @@ SimpleTokenBuilder(const std::string& appId, const std::string& appCertificate,
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 	<tr><td><code>userAccount</code></td>
-<td>User Account of the user who wants to join a channel.</td>
+<td>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <p><li>The 26 lowercase English letters: a to z. <li> The 26 uppercase English letters: A to Z. <li> The 10 numbers: 0 to 9. <li> The space. <li> "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
 </tr>
 </tbody>
 </table>
@@ -291,7 +291,7 @@ This method is the struct of SimpleTokenBuilder.
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td><li>ID of the user who wants to join a channel.<li>User Account of the user who wants to join a channel.</td>
+<td><li>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so. <li>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: The 26 lowercase English letters: a to z. The 26 uppercase English letters: A to Z. The 10 numbers: 0 to 9. The space. "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
 </tr>
 </tbody>
 </table>
@@ -365,7 +365,7 @@ func CreateSimpleTokenBuilder(appID, appCertificate, channelName string, uid uin
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td>ID of the user who wants to join a channel.</td>
+<td>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.</td>
 </tr>
 </tbody>
 </table>
@@ -393,7 +393,7 @@ func CreateSimpleTokenBuilder2(appID, appCertificate, channelName string, userAc
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>userAccount</code></td>
-<td>User Account of the user who wants to join a channel.</td>
+<td>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <p><li>The 26 lowercase English letters: a to z. <li> The 26 uppercase English letters: A to Z. <li> The 10 numbers: 0 to 9. <li> The space. <li> "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
 </tr>
 </tbody>
 </table>
@@ -471,7 +471,7 @@ This method is the struct of SimpleTokenBuilder.
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td><li>ID of the user who wants to join a channel.<li>User Account of the user who wants to join a channel.</td>
+<td><li>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.<li>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: The 26 lowercase English letters: a to z. The 26 uppercase English letters: A to Z. The 10 numbers: 0 to 9. The space. "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
 </tr>
 </tbody>
 </table>
@@ -546,7 +546,7 @@ This method is the struct of SimpleTokenBuilder.
 <td>Name of the channel that the user wants to join.</td>
 </tr>
 <tr><td><code>uid</code></td>
-<td><li>ID of the user who wants to join a channel.<li>User Account of the user who wants to join a channel. </td>
+<td><li>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.<li>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: The 26 lowercase English letters: a to z. The 26 uppercase English letters: A to Z. The 10 numbers: 0 to 9. The space. "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
 </tr>
 </tbody>
 </table>
