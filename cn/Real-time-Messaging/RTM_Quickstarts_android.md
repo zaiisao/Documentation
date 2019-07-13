@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Mon Jul 08 2019 09:12:52 GMT+0800 (CST)
+updatedAt: Sat Jul 13 2019 13:34:09 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -40,16 +40,7 @@ updatedAt: Mon Jul 08 2019 09:12:52 GMT+0800 (CST)
 <tr><td>agora-rtm-sdk.jar</td>
 <td>Java JAR 文件</td>
 </tr>
-<tr><td>arm64-v8a</td>
-<td>文件夹</td>
-</tr>
-<tr><td>armeabi-v7a</td>
-<td>文件夹</td>
-</tr>
 <tr><td>include</td>
-<td>文件夹</td>
-</tr>
-<tr><td>x86</td>
 <td>文件夹</td>
 </tr>
 </tbody>
