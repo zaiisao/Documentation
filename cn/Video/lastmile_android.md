@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Android
-updatedAt: Mon Jul 15 2019 10:30:51 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 10:34:32 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -16,27 +16,43 @@ updatedAt: Mon Jul 15 2019 10:30:51 GMT+0800 (CST)
 
 注：所有示例代码均假设rtcEngine已经初始化完毕。
 
-```Java
-// 在合适的时机启动 lastmile 测试，启用网络测试的情景请参考方法文档
-rtcEngine.enableLastmileTest();
+```java
+// 配置一个 LastmileProbeConfig 实例。参数可参考 API 文档
+LastmileProbeConfig config = new LastmileProbeConfig(
+  // 确认探测上行网络质量
+	probeUplink(true),
+  // 确认探测下行网络质量
+  probeDownlink(true),
+  // 期望的最高发送码率，单位为 Kbps，范围为 [100, 5000]
+	expectedUplinkBitrate.1000,
+  // 期望的最高接收码率，单位为 Kbps，范围为 [100, 5000]
+  expectedDownlinkBitrate.1000,
+);
 
-// 位于全局 IRtcEngineEventHandler 中会发生回调
-public void onLastmileQuality(int quality) {
-// 若启动了 lastmile 测试，在还未获得此回调之前不要调用其它方法
-// quality 即为当前检测到的 quality 类型，可以根据此参数执行相关逻辑。
-// ⑴ 可以选择在回调内部结束测试
-rtcEngine.disableLastmileTest();
+// 加入频道前开始 Last-mile 网络探测
+rtcEngine.startLastmileProbeConfig(config);
+
+// 位于全局 IRtcEngineEventHandler 中
+// 开始 Last-mile 网络探测后，约 2 秒后会发生该回调
+public void onLastmileQuality(int quality)
+
+// 位于全局 IRtcEngineEventHandler 中
+// 开始 Last-mile 网络探测后，约 30 秒后会发生该回调
+public void onLastmileProbeResult(LastmileProbeResult) {
+	// (1)可以选择在回调内部结束测试。在测试结束前，Agora 建议不要调用其他 API 方法
+	rtcEngine.stopLastmileProbeTest();
 }
 
-// ⑵ 也可以选择其它时候结束测试, 结束测试之前 onLastmileQuality() 回调可能会被调用多次
-rtcEngine.disableLastmileTest();
+// (2)也可以选择其他时候结束测试。在测试结束前，Agora 建议不要调用其他 API 方法
+rtcEngine.stopLastmileProbeTest();
 ```
 
 ### API参考
 
-- [`RtcEngine.enableLastmileTest()`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
-- [`RtcEngine.disableLastmileTest()`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
-- [`IRtcEngineEventHandler.onLastmileQuality()`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
+- [`startLastmileProbeTest`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a81c6541685b1c4437d9779a095a0f871)
+- [`stopLastmileProbeTest`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae21243b8da8bda9ee5f3a00621cbf959)
+- [`onLastmileQuality`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
+- [`onLastmileProbeResult`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad74a9120325bfeccdec4af4611110281)
 
 ## 开发注意事项
 
