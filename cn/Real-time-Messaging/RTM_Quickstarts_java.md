@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux Java
-updatedAt: Sat Jul 13 2019 13:34:42 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 04:07:52 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -15,7 +15,7 @@ updatedAt: Sat Jul 13 2019 13:34:42 GMT+0800 (CST)
 请确保满足以下开发环境要求（物理或虚拟）：
 
 - Ubuntu Linux 14.04 LTS 64 位。
-- CentOS 6.5+ （推荐 7.0） 64 位。
+- CentOS 7.0+ 64 位。
 - 下载 [Agora RTM Java SDK for Linux](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_Java_v0.9.3.zip)。
 
 
