@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Jul 15 2019 06:27:30 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 07:04:03 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -148,7 +148,7 @@ updatedAt: Mon Jul 15 2019 06:27:30 GMT+0800 (CST)
     - `0`：视频大流（默认），即高分辨率高码率的视频流
     - `1`：视频小流，即低分辨率低码率的视频流
   - `maxIdleTime`：（选填）Number 类型，最长空闲频道时间。默认值为 30 秒，该值需大于等于 5。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。
-  - `transcodingConfig`：（选填）JSON 类型，视频转码的详细设置。
+  - `transcodingConfig`：（选填）JSON 类型，视频转码的详细设置。如果不设置将使用默认值。如果设置该参数，请务必填入 `width`、`height`、`fps` 和 `bitrate` 字段。
     - `width`：（必填）Number 类型，录制视频的宽度，单位为像素，默认值 360。支持的最大分辨率为 1080p，超过该分辨率会报错。
     - `height`：（必填）Number 类型，录制视频的高度，单位为像素，默认值 640。支持的最大分辨率为 1080p，超过该分辨率会报错。
     - `fps`：（必填）Number 类型，录制视频的帧率，单位 fps，默认值 15。
