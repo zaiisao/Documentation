@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Sun Jul 14 2019 13:28:47 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 01:56:13 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -42,7 +42,11 @@ Agora 动态密钥分为 Channel Key 和 Token 两种。本文的动态密钥指
 ### 获取 App ID
 
 1. 点击 **Dashboard** 左侧的**项目管理**页，查看你所创建的项目详情。
+
+![](https://web-cdn.agora.io/docs-files/1562926227232)
 2. 在项目详情页，你可以查看你的 **App ID**。
+
+![](https://web-cdn.agora.io/docs-files/1562926236498)
 
 ### 使用 App ID
 
@@ -59,16 +63,35 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 如果你是首次创建的项目，参考如下步骤启用 App 证书：
 
-1. 在**项目管理**页，找到刚创建的项目，点击**编辑**按钮，然后点击 **App 证书**后面的**启用**按钮。
-2. 根据屏幕提示，在注册邮箱中确认启用 App 证书。
-3. 回到**项目管理**页，会看到 **App 证书**显示已启用。
+1. 在**项目管理**页，找到刚创建的项目，点击**编辑**按钮。
+
+![](https://web-cdn.agora.io/docs-files/1562926250060)
+2. 然后点击 **App 证书**后面的**启用**按钮。
+
+![](https://web-cdn.agora.io/docs-files/1562926258836)
+3. 根据屏幕提示，在注册邮箱中确认启用 App 证书。
+
+![](https://web-cdn.agora.io/docs-files/1562923340671)
+4. 回到**项目管理**页，会看到 **App 证书**显示已启用。
+
+![](https://web-cdn.agora.io/docs-files/1562926274649)
+
+**Note:** 若收件箱中没有确认邮件，请至订阅邮件或垃圾邮件中查找。
 
 ### 获取临时 Token
 
 为方便体验，Agora 支持在 Dashboard 的项目详情页，生成一个试用的临时 Token。使用如下一种方式获取临时 Token：
 
 * 在项目详情处，点击**生成临时 Token**，输入任一频道名，你就会在 **Token** 页面获取一个临时 Token。
+
+![](https://web-cdn.agora.io/docs-files/1562926292439)
+
+![](https://web-cdn.agora.io/docs-files/1562926298402)
+
+![](https://web-cdn.agora.io/docs-files/1562926303571)
 * 在创建项目时，直接勾选 **APP ID + APP 证书+ Token（推荐）**。Dashboard 会自动开启 **App 证书**。点击**生成临时 Token** 获取即可。
+
+![](https://web-cdn.agora.io/docs-files/1562925509805)
 
 临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。
 
