@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Jul 10 2019 02:37:22 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 06:27:30 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -149,10 +149,10 @@ updatedAt: Wed Jul 10 2019 02:37:22 GMT+0800 (CST)
     - `1`：视频小流，即低分辨率低码率的视频流
   - `maxIdleTime`：（选填）Number 类型，最长空闲频道时间。默认值为 30 秒，该值需大于等于 5。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。
   - `transcodingConfig`：（选填）JSON 类型，视频转码的详细设置。
-    - `width`：（选填）Number 类型，录制视频的宽度，单位为像素，默认值 360。支持的最大分辨率为 1080p，超过该分辨率会报错。
-    - `height`：（选填）Number 类型，录制视频的高度，单位为像素，默认值 640。支持的最大分辨率为 1080p，超过该分辨率会报错。
-    - `fps`：（选填）Number 类型，录制视频的帧率，单位 fps，默认值 15。
-    - `bitrate`：（选填）Number 类型，录制视频的码率，单位 Kbps，默认值 500。
+    - `width`：（必填）Number 类型，录制视频的宽度，单位为像素，默认值 360。支持的最大分辨率为 1080p，超过该分辨率会报错。
+    - `height`：（必填）Number 类型，录制视频的高度，单位为像素，默认值 640。支持的最大分辨率为 1080p，超过该分辨率会报错。
+    - `fps`：（必填）Number 类型，录制视频的帧率，单位 fps，默认值 15。
+    - `bitrate`：（必填）Number 类型，录制视频的码率，单位 Kbps，默认值 500。
     - `maxResolutionUid`：（选填）String 类型，如果视频合流布局设为垂直布局，用该参数指定显示大视窗画面的用户 ID。
     - `mixedVideoLayout`：（选填）Number 类型，视频合流布局，详见[设置合流布局](../../cn/cloud-recording/cloud_layout_guide.md)。
       - `0`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个录制画面。
