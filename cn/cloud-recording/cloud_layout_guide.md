@@ -3,7 +3,7 @@
 title: 设置合流布局
 description: 
 platform: Linux
-updatedAt: Mon Jul 15 2019 03:35:35 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 03:36:03 GMT+0800 (CST)
 ---
 # 设置合流布局
 Agora 云端录制服务提供三种预设的视频布局：
@@ -17,7 +17,7 @@ Agora 云端录制服务提供三种预设的视频布局：
 在开始云端录制时，通过设置合流布局参数选择一种预设的布局。
 
 - 如果你使用云端录制 SDK [调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart.md)，在开始云端录制时设置 [`TranscodingConfig`](../../cn/cloud-recording/cloud_recording_api.md) 中的 `layout` 参数
-- 如果你使用 demo 通过[命令行录制](../../cn/cloud-recording/cloud_recording_demo.md)，在开始云端录制时设置 `—mixedVideoLayoutType` 参数
+- 如果你使用 demo 通过[命令行录制](../../cn/cloud-recording/cloud_recording_demo.md)，在开始云端录制时设置 `--mixedVideoLayoutType` 参数
 
 ## 工作原理
 
