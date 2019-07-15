@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 15 2019 02:13:35 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 02:13:46 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
@@ -70,6 +70,8 @@ For your first Agora project, take the following steps to enable the App Certifi
 3. Agora sends your account a confirmation Email. Follow the instruction to enable the App Certificate. 
 
 ![](https://web-cdn.agora.io/docs-files/1563114028700)
+
+![](https://web-cdn.agora.io/docs-files/1563156803226)
 4. Go back to the  **Project Management** page, your can see App Certificate appears enabled. 
 
 ![](https://web-cdn.agora.io/docs-files/1563113154996)
