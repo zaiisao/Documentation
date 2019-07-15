@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Thu Jun 20 2019 02:37:24 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 02:13:35 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
@@ -41,8 +41,11 @@ Each project you create at the [Agora Dashboard](http://dashboard.agora.io) has 
 To get an App ID, follow these steps:
 
 1. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+
+![](https://web-cdn.agora.io/docs-files/1563112115436)
 2. Find the **App ID** that corresponds to your project.
 
+![](https://web-cdn.agora.io/docs-files/1563112146752)
 
 ### Apply your App ID
 
@@ -60,18 +63,33 @@ For your first Agora project, take the following steps to enable the App Certifi
 
 1. Find your project on the **Project Management** page at the [Agora Dashboard](https://dashboard.agora.io/) and click the **Edit** button.
 
+![](https://web-cdn.agora.io/docs-files/1563112238811)
 2. On the **Edit Project** page, click **Enable** to switch on the App Certificate and click **Save** to confirm your setting. 
 
+![](https://web-cdn.agora.io/docs-files/1563112280018)
 3. Agora sends your account a confirmation Email. Follow the instruction to enable the App Certificate. 
 
->Your App Certificate appears enabled on the **Project Management** page. 
+![](https://web-cdn.agora.io/docs-files/1563114028700)
+4. Go back to the  **Project Management** page, your can see App Certificate appears enabled. 
+
+![](https://web-cdn.agora.io/docs-files/1563113154996)
+
+**Note**: Check the Spam Email or Junk Email, if there's no confirmation Email in your inbox.
 
 ### Get a temporary token
 
 When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/). Use either of the following ways to generate a temporary token:
 
 - On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
+
+![](https://web-cdn.agora.io/docs-files/1563113619615)
+
+![](https://web-cdn.agora.io/docs-files/1563113630952)
+
+![](https://web-cdn.agora.io/docs-files/1563113643411)
 - When creating a project, choose **APP ID + APP certificate + Token (recommended)** to have the Dashboard enable the App Certificate for you, and click **Generate a Temp Token** to get your temporary token. 
+
+![](https://web-cdn.agora.io/docs-files/1563114012279)
 
 ### Get a token
 
@@ -83,7 +101,7 @@ First, use one of the Agora [sample codes](https://github.com/AgoraIO/Tools/tree
 
 Or you can write your own code in a programming language that is not mentioned above to deploy a token generator. 
 
-If you implement a token generator in a different language, you can file propose a pull request on [GitHub](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey). We will merge any implementation that proves valid.
+If you implement a token generator in a different language, you can propose a pull request on [GitHub](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey). We will merge any implementation that proves valid.
 
 #### 2. Generate a token
 
