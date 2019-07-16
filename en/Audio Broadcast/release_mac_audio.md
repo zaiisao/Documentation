@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Jul 10 2019 06:54:21 GMT+0800 (CST)
+updatedAt: Thu Jul 11 2019 03:30:11 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -39,7 +39,7 @@ To ensure smooth communication, use the same parameter type to identify all user
 
  If you use SDKs that do not support string user accounts, only integer user IDs can be used in the channel.
 - If you change your usernames into string user accounts, ensure that all app clients are upgraded to the latest version.
-- If you use string user accounts, ensure that the token generation script on your server is updated to the latest version. You can use either a string user account or an integer user ID to generate a token. If you join the channel with a user account, ensure that you use the same user account to generate a token. You can also use the integer user ID that corresponds to the string user account to generate a token. Call the `getUserInfoByUserAccount` method to get the corresponding user ID.
+- If you use string user accounts, ensure that the token generation script on your server is updated to the latest version. If you join the channel with a user account, ensure that you use the same user account or its corresponding integer user ID to generate a token. Call the `getUserInfoByUserAccount` method to get the user ID that corresponds to the user account.
 
 #### 2. Adding remote statistics
 
