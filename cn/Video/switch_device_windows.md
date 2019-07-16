@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: Windows
-updatedAt: Fri Jul 12 2019 10:12:35 GMT+0800 (CST)
+updatedAt: Tue Jul 16 2019 09:25:12 GMT+0800 (CST)
 ---
 # 音视频设备测试与切换
 ## 功能描述
