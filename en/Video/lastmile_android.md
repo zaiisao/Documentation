@@ -43,5 +43,5 @@ Initialize rtcEngine before running the following sample code.
 
 ## Considerations
 
-- You can conduct a last mile test only before joining a channel.
+- You can conduct a last mile test only before joining a channel. Before the test ends, Agora recommends not calling any other API methods.
 - The `onLastmileQuality` callback may return UNKNOWN the first time it is triggered. Subsequent callbacks will return the test results. 
