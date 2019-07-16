@@ -3,7 +3,7 @@
 title: Conduct a Last-mile Test
 description: 
 platform: Android
-updatedAt: Tue Jul 16 2019 07:42:10 GMT+0800 (CST)
+updatedAt: Tue Jul 16 2019 07:42:42 GMT+0800 (CST)
 ---
 # Conduct a Last-mile Test
 ## Introduction
@@ -18,28 +18,50 @@ This function particularly applies to scenarios which have high requirements on 
 
 ## Implementation 
 
-Initialize rtcEngine before running the following sample code.
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
 
-```Java
-	// Call the enableLastmileTest function before joining a channel. 
-	rtcEngine.enableLastmileTest();
+Call the `startLastmileProbeTest` method before joining a channel to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
 
-	// The onLastmileQuality callback is in the global IRtcEngineEventHandler.
-	public void onLastmileQuality(int quality) {
- 		// quality means the detected network quality type. You can use it for related logic. 
-		// ⑴ You can choose to end the last mile test in the callback. 
-		rtcEngine.disableLastmileTest();
-	}
+Once this method is enabled, the SDK triggers the following callbacks:
 
-	// ⑵ You can also choose to end the last mile test at any time. Before the test ends, the onLastmileQuality callback can be returned multiple times. 
-	rtcEngine.disableLastmileTest();
+- `onLastmileQuality`: Triggered two seconds after the `startLastmileProbeTest` method is called. This callback rates the network conditions with a score and is more closely linked to the user experience.
+- `onLastmileProbeResult`: Triggered 30 seconds after the `startLastmileProbeTest` method is called. This callback returns the real-time statistics of the network conditions and is more objective.
+
+```java
+// Configure a LastmileProbeConfig instance.
+LastmileProbeConfig config = new LastmileProbeConfig(){};
+// Probe the uplink network quality.
+config.probeUplink =  true;
+// Probe the downlink network quality.
+config.probeDownlink = true;
+// The expected uplink bitrate (Kbps). The value range is [100, 5000].
+config.expectedUplinkBitrate = 1000;
+// The expected downlink bitrate (Kbps). The value range is [100, 5000].
+config.expectedDownlinkBitrate = 1000;
+// Start the last-mile network test before joining the channel.
+rtcEngine.startLastmileProbeConfig(config);
+
+// Implemented in the global IRtcEngineEventHandler class.
+// Triggered 2 seconds after starting the last-mile test.
+public void onLastmileQuality(int quality)
+
+// Implemented in the global IRtcEngineEventHandler class.
+// Triggered 30 seconds after starting the last-mile test.
+public void onLastmileProbeResult(LastmileProbeResult) {
+	// (1) Stop the test. Agora recommends not calling any other API method before the test ends.
+	rtcEngine.stopLastmileProbeTest();
+}
+
+// (2) Stop the test. Agora recommends not calling any other API method before the test ends.
+rtcEngine.stopLastmileProbeTest();
 ```
 
 ### API Reference
 
-- [`RtcEngine.enableLastmileTest()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
-- [`RtcEngine.disableLastmileTest()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35d045b585649ca89377ed82e9cf0662)
-- [`IRtcEngineEventHandler.onLastmileQuality()`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
+- [`startLastmileProbeTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a81c6541685b1c4437d9779a095a0f871)
+- [`stopLastmileProbeTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae21243b8da8bda9ee5f3a00621cbf959)
+- [`onLastmileQuality`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
+- [`onLastmileProbeResult`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad74a9120325bfeccdec4af4611110281)
 
 ## Considerations
 
