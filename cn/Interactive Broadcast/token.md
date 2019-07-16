@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 15 2019 02:14:39 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 02:14:47 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -72,6 +72,8 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 3. 根据屏幕提示，在注册邮箱中确认启用 App 证书。
 
 ![](https://web-cdn.agora.io/docs-files/1562923340671)
+
+![](https://web-cdn.agora.io/docs-files/1563156866765)
 4. 回到**项目管理**页，会看到 **App 证书**显示已启用。
 
 ![](https://web-cdn.agora.io/docs-files/1562926274649)
