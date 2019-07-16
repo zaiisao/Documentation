@@ -3,32 +3,38 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Android
-updatedAt: Tue Jul 16 2019 06:43:12 GMT+0800 (CST)
+updatedAt: Tue Jul 16 2019 06:50:31 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
 
-通话前的网络质量检测用于在加入频道前检查用户当前网络状况是否满足音频码率或者当前选定的 Video Profile 的目标码率。检测结果通过每两秒钟一个回调通知用户, 结果是一个通过丢包率和网络 jitter 计算出来的网络质量打分，主要反映用户的上行网络状况。
+在加入频道或切换角色为主播前，进行网络质量探测，可以判断或预测用户当前的网络状况是否良好，可以满足音频码率或者当前选定的视频属性的目标码率。
 
-> 纯语音产品使用 48 kbps 的固定探测码率；视频产品会根据当前选定的 Video Profile 调整探测码率。
+在对网络质量要求高的场景下，Agora 建议在加入频道前进行探测，保证通信顺畅。
+
+> 纯语音产品使用 48 Kbps 的固定探测码率；视频产品会根据当前选定的视频属性调整探测码率。
 
 ## 实现方法
 
-注：所有示例代码均假设rtcEngine已经初始化完毕。
+请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/android_video.md)。
+
+在用户加入频道或上麦前，调用 `startLastmileProbeTest` 进行网络质量探测，向用户反馈上下行网络的带宽、丢包、网络抖动和往返时延。
+
+启用该方法后，SDK 会依次返回如下 2 个回调：
+- `onLastmileQuality`：约 2 秒内返回。该回调通过打分反馈上下行网络质量，更贴近主观感受
+- `onLastmileProbeResult`：约 30 秒内返回。该回调通过客观数据反馈上下行网络质量，更客观
 
 ```java
 // 配置一个 LastmileProbeConfig 实例。参数可参考 API 文档
-LastmileProbeConfig config = new LastmileProbeConfig(
-  // 确认探测上行网络质量
-	probeUplink(true),
-  // 确认探测下行网络质量
-  probeDownlink(true),
-  // 期望的最高发送码率，单位为 Kbps，范围为 [100, 5000]
-	expectedUplinkBitrate.1000,
-  // 期望的最高接收码率，单位为 Kbps，范围为 [100, 5000]
-  expectedDownlinkBitrate.1000,
-);
-
+LastmileProbeConfig config = new LastmileProbeConfig(){};
+// 确认探测上行网络质量
+config.probeUplink =  true;
+// 确认探测下行网络质量
+config.probeDownlink = true;
+// 期望的最高发送码率，单位为 Kbps，范围为 [100, 5000]
+config.expectedUplinkBitrate = 1000;
+// 期望的最高接收码率，单位为 Kbps，范围为 [100, 5000]
+config.expectedDownlinkBitrate = 1000;
 // 加入频道前开始 Last-mile 网络探测
 rtcEngine.startLastmileProbeConfig(config);
 
@@ -47,6 +53,8 @@ public void onLastmileProbeResult(LastmileProbeResult) {
 rtcEngine.stopLastmileProbeTest();
 ```
 
+> 所有示例代码均假设 `rtcEngine` 已经初始化完毕。
+
 ### API参考
 
 - [`startLastmileProbeTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a81c6541685b1c4437d9779a095a0f871)
@@ -56,5 +64,5 @@ rtcEngine.stopLastmileProbeTest();
 
 ## 开发注意事项
 
-- last-mile 测试必须在加入通话频道之前。
-- 第一次回调的结果有一定概率是 unknown。如果回调第一次返回时结果是 unknown, 可通过之后的几次回调获得结果。
+- Last-mile 测试必须在加入通话频道之前。在结束测试之前，Agora 不建议调用其他 API 方法。
+- `onLastmileQuality` 回调第一次报告的结果有一定概率是 unknown, 可通过之后的几次回调获得结果。
