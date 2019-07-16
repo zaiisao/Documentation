@@ -3,7 +3,7 @@
 title: Conduct a Last-mile Test
 description: 
 platform: Android
-updatedAt: Tue Feb 19 2019 09:48:11 GMT+0800 (CST)
+updatedAt: Tue Jul 16 2019 07:06:31 GMT+0800 (CST)
 ---
 # Conduct a Last-mile Test
 ## Introduction
