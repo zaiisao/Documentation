@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Linux Java
-updatedAt: Mon Jul 08 2019 03:35:38 GMT+0800 (CST)
+updatedAt: Tue Jul 16 2019 09:53:57 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 本地服务端录制 SDK。
@@ -192,15 +192,19 @@ updatedAt: Mon Jul 08 2019 03:35:38 GMT+0800 (CST)
 
 ## <a name="import"></a>导入项目
 
-将以下文件导入你的项目：
+将以下文件复制到你的项目：
 
 - 编译生成的  `librecording.so` 文件
-- SDK 包中的 `AgoraCoreService` 文件（位于 **bin** 文件夹）
-- SDK 包中的 Java 文件（位于 **samples/java/src/io/agora/recording** 目录下）
+- SDK 包中的 `AgoraCoreService` 文件（位于 `bin` 文件夹）
+- SDK 包中的 Java 文件（位于 `samples/java/src/io/agora/recording` 目录下）
 	- `RecordingEventHandler.java`
 	- `RecordingSDK.java`
 	- `/common/Common.java`
 	- `/common/RecordingConfig.java`
 	- `/common/RecordingEngineProperties.java`
+
+举例来说，假设项目顶层目录为 `ROOT_DIR`，将  `librecording.so` 文件复制到 `ROOT_DIR/lib` 目录下，将 `AgoraCoreService` 文件复制到 `ROOT_DIR/bin` 目录下，将上述 Java 文件复制到 `ROOT_DIR/src/io/agora/recording` 目录下。
+
+运行 Java 程序时，设置 `-Djava.library.path=ROOT_DIR/lib` 参数来指定动态库的目录地址。此外你需要在开始录制时设置 `RecordingConfig` 中的 `appliteDir` 参数为 `ROOT_DIR/bin`。
 
 你已经集成了本地服务端录制 SDK，可以调用 API 进行录制了。详见 [Agora Recording Java API Reference](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/index.html)。
