@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Android
-updatedAt: Tue Jul 16 2019 06:50:31 GMT+0800 (CST)
+updatedAt: Tue Jul 16 2019 07:06:39 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -52,8 +52,6 @@ public void onLastmileProbeResult(LastmileProbeResult) {
 // (2)也可以选择其他时候结束测试。在测试结束前，Agora 建议不要调用其他 API 方法
 rtcEngine.stopLastmileProbeTest();
 ```
-
-> 所有示例代码均假设 `rtcEngine` 已经初始化完毕。
 
 ### API参考
 
