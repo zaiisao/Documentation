@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Android
-updatedAt: Mon Jul 15 2019 10:34:32 GMT+0800 (CST)
+updatedAt: Tue Jul 16 2019 03:07:21 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
