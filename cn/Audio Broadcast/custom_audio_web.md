@@ -17,11 +17,11 @@ updatedAt: Wed Jul 17 2019 09:31:07 GMT+0800 (CST)
 
 ## 实现方法
 
-在开始自定义采集前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/web_prepare.md)。
+在开始自定义采集前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Audio%20Broadcast/web_prepare.md)。
 
 ### 自定义音源
 
-在创建音频流时，通过  [`audioSource`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) 指定自定义的音频源。例如，你可以通过 `mediaStream` 方法从 `MediaStreamTrack` 获得音频 track，然后指定 `audioSource`，如下所示：
+在创建音频流时，通过  [`audioSource`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) 指定自定义的音频源。例如，你可以通过 `mediaStream` 方法从 `MediaStreamTrack` 获得音频 track，然后指定 `audioSource`，如下所示：
 
 ```javascript
 navigator.mediaDevices.getUserMedia(
