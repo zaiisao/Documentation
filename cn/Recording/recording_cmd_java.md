@@ -3,7 +3,7 @@
 title: 开始录制
 description: How to start recording using cmd for Java
 platform: Linux Java
-updatedAt: Wed Jul 17 2019 03:36:16 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 03:37:41 GMT+0800 (CST)
 ---
 # 开始录制
 本文介绍如何通过命令行进行录制。你也可以通过调用 API 实现录制，详见 [Java](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/index.html) API 参考。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
@@ -32,7 +32,7 @@ java RecordingSample --appId <你的 App ID> --channel <频道名> --uid 0 --cha
 
 ## 设置录制选项
 
-按照你的需要在命令行中输入以下参数的设置并执行，即可开始使用录制服务。
+除上面示例中的参数外，录制 demo 还提供很多参数设置选项，在 **/samples/java/bin** 目录下执行 `java RecordingSample` 命令，即可看到录制 demo 全部的参数和选项，你可以参考下表根据需要自行设置。
 
 > `appID`，`uid`，`channel` 和 `appliteDir` 这几个参数必须设置，如不设置则无法录制，其他参数可根据需要自行选择是否设置。
 
