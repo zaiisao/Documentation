@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: 服务端
-updatedAt: Fri Jul 12 2019 07:34:50 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 09:40:24 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
@@ -67,7 +67,7 @@ public SimpleTokenBuilder(String appId, String appCertificate, String channelNam
 <td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。当启用 App Certificate 后，原有的 App ID 会失效，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a>。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a>。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -95,7 +95,7 @@ public SimpleTokenBuilder(String appId, String appCertificate, String channelNam
 <td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。当启用 App Certificate 后，原有的 App ID 会失效，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a>。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a>。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -176,7 +176,7 @@ SimpleTokenBuilder(const std::string& appId, const std::string& appCertificate,
 <td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App ID</span></a>     。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。当启用 App Certificate 后，原有的 App ID 会失效，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -205,7 +205,7 @@ SimpleTokenBuilder(const std::string& appId, const std::string& appCertificate,
 <td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App ID</span></a>     。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。当启用 App Certificate 后，原有的 App ID 会失效，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -282,7 +282,7 @@ def __init__(self, appID, appCertificate, channelName, uid);
 <td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。当启用 App Certificate 后，原有的 App ID 会失效，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -360,7 +360,7 @@ func CreateSimpleTokenBuilder(appID, appCertificate, channelName string, uid uin
 <td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。当启用 App Certificate 后，原有的 App ID 会失效，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -388,7 +388,7 @@ func CreateSimpleTokenBuilder2(appID, appCertificate, channelName string, userAc
 <td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。当启用 App Certificate 后，原有的 App ID 会失效，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -467,7 +467,7 @@ public function __construct($appID, $appCertificate, $channelName, $uid);
 <td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。当启用 App Certificate 后，原有的 App ID 会失效，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -546,7 +546,7 @@ var SimpleTokenBuilder = function (appID, appCertificate, channelName, uid);
 <td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。当启用 App Certificate 后，原有的 App ID 会失效，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Audio%20Broadcast/token.md"><span>获取 App Certificate</span></a> 。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
