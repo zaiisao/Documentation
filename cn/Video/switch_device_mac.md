@@ -41,19 +41,19 @@ agoraKit.stopRecordingDeviceTest()
 
 ```swift
 // swift
-// Starts a playback device test.
+// 开始播放设备测试
 agoraKit.startPlaybackDeviceTest("audio file path")
 	
-// Stops the playback device test.
+// 停止播放设备测试
 agoraKit.stopPlaybackDeviceTest()
 ```
 
 ```oc
 // objective-c
-// Starts a playback device test.
+// 开始播放设备测试
 [agoraKit startPlaybackDeviceTest: @"audio file path"];
 
-// Stops the playback device test.
+// 停止播放设备测试
 [agoraKit stopPlaybackDeviceTest];
 ```
 
