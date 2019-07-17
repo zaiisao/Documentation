@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: How to integrate recording SDK for Java
 platform: Linux Java
-updatedAt: Mon Jul 08 2019 03:07:47 GMT+0800 (CST)
+updatedAt: Tue Jul 16 2019 09:54:29 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
@@ -201,6 +201,10 @@ Import the following files to your project:
   - `/common/Common.java`
   - `/common/RecordingConfig.java`
   - `/common/RecordingEngineProperties.java`
+
+For example, if the project root directory is  `ROOT_DIR`, you need to copy the `librecording.so` file to  `ROOT_DIR/lib`, copy the `AgoraCoreService` file to `ROOT_DIR/bin`, and copy the Java files to `ROOT_DIR/src/io/agora/recording`.
+
+When running the Java project, set `-Djava.library.path=ROOT_DIR/lib`to specify the path to the dynamic library. Note that you need to set the `appliteDir` parameter as `ROOT_DIR/bin` in `RecordingConfig` when starting a recording.
 
 The Agora On-premise Recording SDK is integrated. You can start recording by calling APIs, see [Agora Recording Java API Reference](../../API%20Reference/recording_java/index.html.md).
 

@@ -20,19 +20,19 @@ updatedAt: Wed Jul 17 2019 06:25:56 GMT+0800 (CST)
 
 ```swift	
 // swift
-// starts the microphone test
+// Starts the microphone test.
 agoraKit.startRecordingDeviceTest(1000)
 	
-// stops the microphone test
+// Stops the microphone test.
 agoraKit.stopRecordingDeviceTest()
 ```
 
 ```oc
 // objective-c
-// starts the microphone test
+// Starts the microphone test.
 [agoraKit startRecordingDeviceTest: 1000];
 
-// stops the microphone test
+// Stops the microphone test.
 [agoraKit stopRecordingDeviceTest];
 ```
 
@@ -41,19 +41,19 @@ agoraKit.stopRecordingDeviceTest()
 
 ```swift
 // swift
-// starts a playback device test
+// Starts a playback device test.
 agoraKit.startPlaybackDeviceTest("audio file path")
 	
-// stops a playback device test
+// Stops the playback device test.
 agoraKit.stopPlaybackDeviceTest()
 ```
 
 ```oc
 // objective-c
-// starts a playback device test
+// Starts a playback device test.
 [agoraKit startPlaybackDeviceTest: @"audio file path"];
 
-// stops a playback device test
+// Stops the playback device test.
 [agoraKit stopPlaybackDeviceTest];
 ```
 
