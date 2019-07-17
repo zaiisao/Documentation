@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 09 2019 12:46:07 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 12:31:33 GMT+0800 (CST)
 ---
 # 产品概述
 
@@ -26,8 +26,8 @@ Agora RTM SDK 应用丰富，适用于以下实时场景：
 
 <table>
   <tr>
-    <th>行业</th>
-    <th>适用场景</th>
+    <th>场景</th>
+    <th>适用功能</th>
   </tr>
   <tr>
     <td>直播</td>
@@ -57,6 +57,10 @@ Agora RTM SDK 主要有以下特性：
     <th>描述</th>
   </tr>
   <tr>
+    <td>全球部署低延时</td>
+    <td>全球部署数据中心，全球平均延时 &lt; 200ms，国内平均延时 &lt; 100ms</td>
+  </tr>
+  <tr>
     <td>高并发</td>
     <td>弹性可伸缩架构，支持单频道百万并发，轻松应对直播答题场景</td>
   </tr>
@@ -65,15 +69,11 @@ Agora RTM SDK 主要有以下特性：
     <td>分布式架构，多机房多路保活</td>
   </tr>
   <tr>
-    <td>全球部署低延时</td>
-    <td>全球部署数据中心，全球平均延时 &lt; 200ms，国内平均延时 &lt; 100ms</td>
-  </tr>
-  <tr>
     <td>兼容性</td>
     <td><li>支持 iOS、Android（arm64、armv7、x86）、macOS、Linux、浏览器等多个平台<br><li> Web 平台支持 Chrome 58+、Firefox 56+、Safari 11+<br><li>支持 java、C++ server 端</td>
   </tr>
 </table>	
-<
+
 ## 实时消息 vs. 信令
 
 实时消息系统将逐步替代信令。除上述高可靠、高并发、全球化部署等优势之外，Agora RTM SDK 将会持续更新，不断推出更多更丰富的功能和场景应用。
