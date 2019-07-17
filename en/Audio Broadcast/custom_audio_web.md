@@ -3,7 +3,7 @@
 title: Customize the Audio Source
 description: How to use external audio sources for Web SDK
 platform: Web
-updatedAt: Wed Jul 17 2019 09:27:26 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 09:27:45 GMT+0800 (CST)
 ---
 # Customize the Audio Source
 ## Introduction
