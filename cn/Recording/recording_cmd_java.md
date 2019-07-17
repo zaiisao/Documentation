@@ -3,7 +3,7 @@
 title: 开始录制
 description: How to start recording using cmd for Java
 platform: Linux Java
-updatedAt: Tue Mar 05 2019 07:52:30 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 03:30:06 GMT+0800 (CST)
 ---
 # 开始录制
 本文介绍如何通过命令行进行录制。你也可以通过调用 API 实现录制，详见 [Java](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/index.html) API 参考。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
@@ -13,46 +13,22 @@ updatedAt: Tue Mar 05 2019 07:52:30 GMT+0800 (CST)
 > 当录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道模式。
 
 
-## 查看录制选项
+## 开始录制
 
-打开命令行工具，在 **/samples/java/bin** 目录下执行 `java RecordingSample` 命令, 即可看到录制相关的参数和选项，如下所示:
+打开命令行工具，在 **/samples/java/bin** 目录下执行 `java RecordingSample` 加上必要的参数设置, 即可快速开始录制，例如：
 
-```
-Usage:java RecordingSample --appId STRING --uid UINTEGER32 --channel STRING --appliteDir STRING --channelKey STRING --channelProfile UINTEGER32 --isAudioOnly --isVideoOnly --isMixingEnabled --mixResolution STRING --mixedVideoAudio --decryptionMode STRING --secret STRING --idle INTEGER32 --recordFileRootDir STRING --lowUdpPort INTEGER32 --highUdpPort INTEGER32 --getAudioFrame UINTEGER32 --getVideoFrame UINTEGER32 --captureInterval INTEGER32 --cfgFilePath STRING --streamType UINTEGER32 --triggerMode INTEGER32 
- --appId     (App Id/must) 
- --uid     (User Id default is 0/must)  
- --channel     (Channel Id/must) 
- --appliteDir     (directory of app lite 'AgoraCoreService', Must pointer to 'Agora_Server_SDK_for_Linux_FULL/bin/' folder/must) 
- --channelKey     (channelKey/option)
- --channelProfile     (channel_profile:(0:COMMUNICATION),(1:broadcast) default is 0/option)  
- --isAudioOnly     (Default 0:A/V, 1:AudioOnly (0:1)/option) 
- --isVideoOnly     (Default 0:A/V, 1:VideoOnly (0:1)/option)
- --isMixingEnabled     (Mixing Enable? (0:1)/option)
- --mixResolution     (change default resolution for vdieo mix mode/option)                 
- --mixedVideoAudio     (mixVideoAudio:(0:seperated Audio,Video) (1:mixed Audio & Video with legacy codec) (2:mixed Audio & Video with new codec) default is 0 /option)                 
- --decryptionMode     (decryption Mode, default is NULL/option)                 
- --secret     (input secret when enable decryptionMode/option)                 
- --idle     (Default 300s, should be above 3s/option)                 
- --recordFileRootDir     (recording file root dir/option)                 
- --lowUdpPort     (default is random value/option)                 
- --highUdpPort     (default is random value/option)                 
- --getAudioFrame     (default 0 (0:save as file, 1:aac frame, 2:pcm frame, 3:mixed pcm frame) (Can't combine with isMixingEnabled) /option)                 
- --getVideoFrame     (default 0 (0:save as file, 1:h.264, 2:yuv, 3:jpg buffer, 4:jpg file, 5:jpg file and video file) (Can't combine with isMixingEnabled) /option)              
- --captureInterval     (default 5 (Video snapshot interval (second)))                 
- --cfgFilePath     (config file path / option)                 
- --streamType     (remote video stream type(0:STREAM_HIGH,1:STREAM_LOW), default is 0/option)  
- --triggerMode     (triggerMode:(0: automatically mode, 1: manually mode) default is 0/option) 
- --proxyServer     proxyServer:format ip:port, eg,"127.0.0.1:1080"/option 
- --defaultVideoBg    (default user background image path/option) 
- --defaultUserBg (default user background image path/option))  
- --audioProfile (audio profile(0: standard single channel, 1: high quality single channel, 2: high quality two channels) defualt is 0/option)   
- --logLevel (log level default INFO/option) 
- --audioIndicationInterval(0: no indication, audio indication interval(ms) default is 0/option) 
- --layoutMode    (mix video layout mode:(0: default layout, 1:bestFit Layout mode, 2:vertical presentation Layout mode, default is 0/option)(combine with isMixingEnabled)) 
- --maxResolutionUid    (max resolution uid (uid with maxest resolution under vertical presentation Layout mode  ( default is -1 /option))
+```bash
+java RecordingSample --appId <你的 App ID> --channel <频道名> --uid 0 --channelProfile <0 通信模式，1 直播模式> --appliteDir Agora_Recording_SDK_for_Linux_FULL/bin
 ```
 
+其中：
 
+- `appId`，`channel` 和 `channelProfile` 的设置必须与 Agora Native/Web SDK 一致。
+- `appliteDir` 必须设置为 `AgoraCoreServices` 存放的路径，SDK 包内该文件位于 **bin** 文件夹下。
+
+在默认情况下，录制实例加入频道后，监测到频道内有用户即开始录制。
+
+如果你在开始录制时设置了 `--triggerMode 1`，即将录制启动模式设为手动，需要通过控制录制进程手动开始和暂停录制，详见[如何控制录制进程](https://docs.agora.io/cn/faqs/cmd_control_session)。
 
 ## 设置录制选项
 
