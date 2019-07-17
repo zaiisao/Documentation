@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: Windows
-updatedAt: Tue Jul 16 2019 09:30:12 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 08:19:50 GMT+0800 (CST)
 ---
 # 音视频设备测试与切换
 ## 功能描述
@@ -14,9 +14,8 @@ updatedAt: Tue Jul 16 2019 09:30:12 GMT+0800 (CST)
 
 ### 音频录制设备测试
 
-用途：测试本地音频录制设备，如麦克风，是否正常工作。
-
-测试方法及原理：调用 `startRecordingDeviceTest`；用户说话，如果录制设备正常工作，SDK 会触发 `onAudioVolumeIndication` 回调并报告音量信息。UID 为 0 表示本地音量。完成测试后，需调用 `stopRecordingDeviceTest` 停止录制设备测试。
+- 用途：测试本地音频录制设备，如麦克风，是否正常工作。
+- 测试方法及原理：调用 `startRecordingDeviceTest`；用户说话，如果录制设备正常工作，SDK 会触发 `onAudioVolumeIndication` 回调并报告音量信息。UID 为 0 表示本地音量。完成测试后，需调用 `stopRecordingDeviceTest` 停止录制设备测试。
 
 ```C++
 // 初始化参数对象
@@ -62,9 +61,8 @@ rep.enableAudioVolumeIndication(1000, // 回调间隔，以毫秒为单位
 
 ### 音频播放设备测试
 
-用途：测试本地音频播放设备，如外放设备，是否正常工作。
-
-测试方法及原理：调用 `startPlaybackDeviceTest`，并指定播放的音频文件。如果能听到声音，则说明播放设备正常工作。完成测试后，需调用 `stopPlaybackDeviceTest` 停止播放设备测试。
+- 用途：测试本地音频播放设备，如外放设备，是否正常工作。
+- 测试方法及原理：调用 `startPlaybackDeviceTest`，并指定播放的音频文件。如果能听到声音，则说明播放设备正常工作。完成测试后，需调用 `stopPlaybackDeviceTest` 停止播放设备测试。
 
 ```C++
 // 初始化参数对象
@@ -101,9 +99,8 @@ lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
 
 ### 视频设备测试
 
-用途：测试本地视频设备，如摄像头和显示器，是否正常功能。
-
-测试方法及原理：调用 `enableVideo` 开启视频模块后，调用 `startDeviceTest`，并指定显示图像的窗口句柄，如果能看到本地采集的图像，则说明视频设备正常工作。完成测试后，需调用 `stopDeviceTest` 停止视频设备测试。
+- 用途：测试本地视频设备，如摄像头和显示器，是否正常功能。
+- 测试方法及原理：调用 `enableVideo` 开启视频模块后，调用 `startDeviceTest`，并指定显示图像的窗口句柄，如果能看到本地采集的图像，则说明视频设备正常工作。完成测试后，需调用 `stopDeviceTest` 停止视频设备测试。
 
 ```C++
 // 初始化参数对象
