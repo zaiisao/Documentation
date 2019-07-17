@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: iOS
-updatedAt: Wed Jul 17 2019 03:14:44 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 03:15:56 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
@@ -38,7 +38,7 @@ AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc]
 <a id = "video_profile"></a>
 ### 视频属性参考表
 
-| 分辨率<br>(宽 x 高) | 帧率<br>(fps) | 基准码率<br>(Kbps，适用于通信) | 直播帧率<br>(Kbps，适用于直播) |
+| 分辨率<br>(宽 x 高) | 帧率<br>(fps) | 基准码率<br>(Kbps，适用于通信) | 直播码率<br>(Kbps，适用于直播) |
 | ------------------- | ------------- | ------------------------------ | ------------------------------ |
 | 160 x 120           | 15            | 65                             | 130                            |
 | 120 x 120           | 15            | 50                             | 100                            |

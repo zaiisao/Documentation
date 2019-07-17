@@ -36,6 +36,7 @@ agoraKit.stopRecordingDeviceTest()
 ### 外放测试
 
 ```swift
+// swift
 // starts a playback device test
 agoraKit.startPlaybackDeviceTest("audio file path")
 	
@@ -44,8 +45,11 @@ agoraKit.stopPlaybackDeviceTest()
 ```
 
 ```oc
+// objective-c
+// starts a playback device test
 [agoraKit startPlaybackDeviceTest: @"audio file path"];
 
+// stops a playback device test
 [agoraKit stopPlaybackDeviceTest];
 ```
 
