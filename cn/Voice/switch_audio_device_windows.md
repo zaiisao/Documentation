@@ -3,18 +3,19 @@
 title: 音频设备测试与切换
 description: 
 platform: Windows
-updatedAt: Wed Jul 17 2019 04:30:09 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 04:30:25 GMT+0800 (CST)
 ---
 # 音频设备测试与切换
 ## 功能描述
 
-很多开发者在 App 上线后会收到用户反馈听不到对方说话。这些问题部分是因为客户的本地麦克风或者喇叭不可用。声网提供的音频测试功能可以帮助开发者进行一些设备测试，检测音频设备是否可以正常录音及播放。在测试过程中，用户先说一段话，在 10 秒后，声音会回放出来。如果 10 秒后用户能正常听到自己刚才说的话，就表示系统音频设备和网络连接都是正常的。
-
-你可以在以下情况使用该功能：
-* 直播场景下，在开播前请主播自测。
-* 线上用户进行自我排查纠错。
+为保证通话或直播质量，我们推荐在进入频道前进行音视频设备测试，检测麦克风、摄像头等音视频设备能否正常工作。该功能对于有高质量要求的 App 及场景，如在线教育等，尤为适用。
 
 ## 实现方法
+
+### 录制设备测试
+
+- 用途：测试本地音频录制设备，如麦克风，是否正常工作。
+- 测试方法和原理：调用 `startRecordingDeviceTest`；用户说话，SDK 在 `onAudioVolumeIndication` 回调中报告音量信息。UID 为 0 表示本地音量。完成测试后，需调用 `stopRecordingDeviceTest` 停止录制设备测试。
 
 ```C++
 // 初始化参数对象
@@ -58,7 +59,10 @@ rep.enableAudioVolumeIndication(1000, // 回调间隔，以毫秒为单位
 
 
 
-### 外放测试
+### 播放设备测试
+
+- 用途：测试本地音频播放设备，如外放设备，是否正常工作。
+- 测试方法和原理：调用 `startPlaybackDeviceTest`；用户指定播放的音频文件，能听到声音，则说明播放设备正常工作。完成测试后，需调用 `stopPlaybackDeviceTest` 停止播放设备测试。
 
 ```C++
 // 初始化参数对象
@@ -93,9 +97,17 @@ lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
 (*lpDeviceManager)->stopPlaybackDeviceTest();
 ```
 
+### API 参考
 
-
+* [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a59ae67333fbc61a7002a46c809e2ec4f)
+* [`enumerateRecordingDevices`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a1ea4f53d60dc91ea83960885f9ab77ee)
+* [`setRecordingDevice`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a723941355030636cd7d183d53cc7ace7)
+* [`enumeratePlaybackDevices`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#aa13c99d575d89e7ceeeb139be723b18a)
+* [`setPlaybackDevice`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a1ee23eae83165a27bcbd88d80158b4f1)
+* [`startRecordingDeviceTest`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a9e732d31f179a90d388998f5b86ebf06)
+* [`stopRecordingDeviceTest`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a796e7b8a58eb303f18f04e1e9d12a94b)
 
 ## 开发注意事项
 
-音视频采集设备在很多设备和系统上都是独占的，需要确保做测试的时候没有被其他程序占用。另外这些测试也不要和加入频道一起工作
+- 请确保进行测试时，相应的音视频设备没有被其他应用程序占用。
+- 测试结束后，请务必调用相应的 stop 方法停止测试，然后再调用 `joinChannel` 加入频道。
