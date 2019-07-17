@@ -18,19 +18,19 @@ updatedAt: Wed Jun 12 2019 10:49:04 GMT+0800 (CST)
 
 ```swift	
 // swift
-// starts the microphone test
+// Starts the microphone test.
 agoraKit.startRecordingDeviceTest(1000)
 	
-// stops the microphone test
+// Stops the microphone test.
 agoraKit.stopRecordingDeviceTest()
 ```
 
 ```oc
 // objective-c
-// starts the microphone test
+// Starts the microphone test.
 [agoraKit startRecordingDeviceTest: 1000];
 
-// stops the microphone test
+// Stops the microphone test.
 [agoraKit stopRecordingDeviceTest];
 ```
 
