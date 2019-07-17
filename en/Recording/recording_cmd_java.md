@@ -3,7 +3,7 @@
 title: Record a Call
 description: 
 platform: Linux Java
-updatedAt: Tue Mar 05 2019 07:58:00 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 03:42:53 GMT+0800 (CST)
 ---
 # Record a Call
 This page demonstrates how to record a call by using the command line. You can also record calls by calling the API methods. For the detailed API reference, see [Recording API](https://docs.agora.io/en/Recording/API%20Reference/recording_java/index.html). The command line and API methods implement the same functions. 
@@ -12,50 +12,20 @@ Ensure you integrate the recording SDK before proceeding, see [Integrate the SDK
 
 > When the recording SDK joins the channel, it is equivalent to a dumb client. So the On-premise Recording SDK needs to join the same channel and use the same App ID and channel profile as the Agora Native/Web SDK.
 
-## View the Recording Parameters
+## Start recording
 
-Open a command-line tool and run the `java RecordingSample` command under the **/samples/java/bin** directory. You can see the recording parameters and options as follows:
+Open a command-line tool and run the following command under the **/samples/java/bin** directory. 
 
-```
-Usage:java RecordingSample --appId STRING --uid UINTEGER32 --channel STRING --appliteDir STRING --channelKey STRING --channelProfile UINTEGER32 --isAudioOnly --isVideoOnly --isMixingEnabled --mixResolution STRING --mixedVideoAudio --decryptionMode STRING --secret STRING --idle INTEGER32 --recordFileRootDir STRING --lowUdpPort INTEGER32 --highUdpPort INTEGER32 --getAudioFrame UINTEGER32 --getVideoFrame UINTEGER32 --captureInterval INTEGER32 --cfgFilePath STRING --streamType UINTEGER32 --triggerMode INTEGER32 
- --appId     (App Id / mandatory) 
- --uid     (User Id / default is 0 / mandatory)  
- --channel     (Channel Id / mandatory) 
- --appliteDir     (directory of app lite 'AgoraCoreService', must point to 'Agora_Server_SDK_for_Linux_FULL/bin/' folder / mandatory) 
- --channelKey     (channelKey / optional)
- --channelProfile     (channel_profile: (0:COMMUNICATION),(1:broadcast) / default is 0 / optional)  
- --isAudioOnly     (Default 0:A/V, 1:AudioOnly (0:1) / optional) 
- --isVideoOnly     (Default 0:A/V, 1:VideoOnly (0:1) / optional)
- --isMixingEnabled     (Mixing Enable? (0:1) / optional)
- --mixResolution     (change the default resolution for the video mixing mode / optional)                 
- --mixedVideoAudio     (mixVideoAudio: (0:seperated Audio,Video) (1:mixed Audio & Video with legacy codec) (2:mixed Audio & Video with new codec) default is 0 / optional)                 
- --decryptionMode     (decryption Mode, default is NULL / optional)                 
- --secret     (input password when enable decryptionMode / optional)                 
- --idle     (Default 300 s, should be above 3 s / optional)                 
- --recordFileRootDir     (recording file root dir / optional)                 
- --lowUdpPort     (default is random value / optional)                 
- --highUdpPort     (default is random value / optional)                 
- --getAudioFrame     (default 0 (0:save as file, 1:aac frame, 2:pcm frame, 3:mixed pcm frame) (Can't combine with isMixingEnabled) /optional)                 
- --getVideoFrame     (default 0 (0:save as file, 1:h.264, 2:yuv, 3:jpg buffer, 4:jpg file, 5:jpg file and video file) (Can't combine with isMixingEnabled) /optional)              
- --captureInterval     (default 5 (Video snapshot interval (second)))                 
- --cfgFilePath     (config file path / optional)                 
- --streamType     (remote video stream type (0:STREAM_HIGH,1:STREAM_LOW), default is 0 / optional)  
- --triggerMode     (triggerMode: (0: automatically mode, 1: manually mode) default is 0 / optional) 
- --proxyServer     proxyServer:format ip:port, eg,"127.0.0.1:1080" / optional 
- --defaultVideoBg    (default user background image path / optional) 
- --defaultUserBg (default user background image path / optional)  
- --audioProfile (audio profile (0: standard single channel, 1: high quality single channel, 2: high quality two channels) defualt is 0 / optional)   
- --logLevel (log level default INFO / optional) 
- --audioIndicationInterval (0: no indication, audio indication interval (ms) default is 0 / optional) 
- --layoutMode  (mix video layout mode: (0: default layout, 1:bestFit Layout mode, 2:vertical presentation Layout mode, default is 0 / optional) (combine with isMixingEnabled)) 
- --maxResolutionUid    (maximum resolution uid (uid with maximum resolution under vertical presentation layout mode / default is -1 / optional))
+```bash
+java RecordingSample --appId <your App ID> --channel <channel name> --uid 0 --channelProfile <0 Communication, 1 Live broadcast> --appliteDir Agora_Recording_SDK_for_Linux_FULL/bin
 ```
 
+- `appId`, `channel,` and `channelProfile` must be the same as the Agora Native/Web SDK.
+- `appliteDir` must be the path to the `AgoraCoreService` file.
 
+## Set recording options
 
-## Set the Recording Parameters
-
-Set the following parameters to start recording.
+Apart from the parameters in the above example, the demo provides other parameters and options. Run `java RecordingSample`  under the **/samples/java/bin** directory to view all the parameters and options.
 
 > The `appId`, `uid`, `channel`, and `appliteDir` parameters are mandatory to start a recording. Other parameters can be set as needed.
 
