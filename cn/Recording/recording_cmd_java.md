@@ -1,11 +1,11 @@
 
 ---
-title: 开始录制
+title: 命令行录制
 description: How to start recording using cmd for Java
 platform: Linux Java
-updatedAt: Wed Jul 17 2019 03:37:41 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 03:37:55 GMT+0800 (CST)
 ---
-# 开始录制
+# 命令行录制
 本文介绍如何通过命令行进行录制。你也可以通过调用 API 实现录制，详见 [Java](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/index.html) API 参考。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
 
 开始前请确保你已经完成录制 SDK 的环境准备和集成工作，详见[集成客户端](../../cn/Recording/recording_integrate_java.md)。
