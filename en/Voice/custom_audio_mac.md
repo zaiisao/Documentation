@@ -1,11 +1,11 @@
 
 ---
-title: Customize the Audio Source and Renderer
+title: Customize the Audio Source
 description: 
 platform: macOS
-updatedAt: Fri Apr 26 2019 08:20:27 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 09:25:56 GMT+0800 (CST)
 ---
-# Customize the Audio Source and Renderer
+# Customize the Audio Source
 ## Introduction
 
 By default, an app uses the internal audio modules for capturing and rendering during real-time communication. You can use an external audio source and renderer. This page shows how to use the methods provided by Agora SDK to customize the audio source and renderer.
