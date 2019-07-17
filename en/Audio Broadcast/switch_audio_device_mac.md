@@ -3,58 +3,73 @@
 title: Test or Select a Media Device
 description: 
 platform: macOS
-updatedAt: Thu Feb 21 2019 09:06:41 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 07:53:34 GMT+0800 (CST)
 ---
 # Test or Select a Media Device
 ## Introduction
 
-Agora supports the media device test and selection feature, allowing you to check if an audio device (a headset, microphone, or speaker) works or connects properly to the SD-RTN. For example, in an audio device test, if a user's recorded voice is replayed in 10 seconds, then the system's audio device works and is connected properly to the SD-RTN.
-
-You can use the media device test and selection feature in the following scenarios:
-
-- A host self-checks before starting a live broadcast.
-- An online user checks if the media device works.
+To ensure smooth communication, we recommend conducting a media device test before joining a channel to check whether the microphone or camera works properly. This function applies to scenarios that have high-quality requirements, such as online education.
 
 ## Implementation
-### Microphone Test
+
+### Reording device test
+
+Call the `startRecordingDeviceTest` method to test whether the local audio recording device, such as the microphone, is working properly.
+
+To conduct the test, the user speaks, and the SDK reports the audio volume information in the `reportAudioVolumeIndication` callback. A UID of 0 indicates the local user.
+
+When the test finishes, call the `stopRecordingDeviceTest` method to stop the current test.
 
 ```swift	
-// Starts the microphone test.
+// swift
+// Starts the recording device test.
 agoraKit.startRecordingDeviceTest(1000)
 	
-// Stops the microphone test.
+// Stops the recording device test.
 agoraKit.stopRecordingDeviceTest()
 ```
 
 ```oc
+// objective-c
+// Starts the recording device test.
 [agoraKit startRecordingDeviceTest: 1000];
 
+// Stops the recording device test.
 [agoraKit stopRecordingDeviceTest];
 ```
 
+### Playback device test
 
+Call the `startPlaybackDeviceTest` method to test whether the local audio playback device, such as the speaker, is working properly.
 
-### External Playback Device Test
+To conduct the test, specify an audio file for playback. If you can hear the audio file, the audio playback device works properly.
+
+When the test finishes, call the `stopPlaybackDeviceTest` method to stop the current test.
+
 ```swift
-// Starts a playback device test.
+// swift
+// Starts the playback device test.
 agoraKit.startPlaybackDeviceTest("audio file path")
 	
-// Stops a playback device test.
+// Stops the playback device test.
 agoraKit.stopPlaybackDeviceTest()
 ```
 
 ```oc
+// objective-c
+// Starts the playback device test.
 [agoraKit startPlaybackDeviceTest: @"audio file path"];
 
+// Stops the playback device test.
 [agoraKit stopPlaybackDeviceTest];
 ```
 
 ### API Reference
-* [`startRecordingDeviceTest`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
-* [`stopRecordingDeviceTest`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
-* [`startPlaybackDeviceTest`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
-* [`stopPlaybackDeviceTest`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopPlaybackDeviceTest)
+* [`startRecordingDeviceTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
+* [`stopRecordingDeviceTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
+* [`startPlaybackDeviceTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
+* [`stopPlaybackDeviceTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopPlaybackDeviceTest)
 
 ## Considerations
 
-If the input device fails to initialize, check the error message in [Developer Center](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#Init).
+If the input device fails to initialize, check the error message in [Developer Center](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Constants/AgoraErrorCode.html).
