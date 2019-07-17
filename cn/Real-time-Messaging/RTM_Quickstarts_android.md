@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Mon Jul 15 2019 03:59:27 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 12:41:06 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -14,7 +14,7 @@ updatedAt: Mon Jul 15 2019 03:59:27 GMT+0800 (CST)
 
 请确保满足以下开发环境要求：
 
-- Android SDK API Level Level ≥ 16
+- Android SDK API Level ≥ 16
 
 - Android Studio 3.0 或以上版本
 
