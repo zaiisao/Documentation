@@ -3,21 +3,22 @@
 title: Test or Select a Media Device
 description: 
 platform: Windows
-updatedAt: Wed Jul 17 2019 04:26:37 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 04:26:57 GMT+0800 (CST)
 ---
 # Test or Select a Media Device
 ## Introduction
 
-Agora supports the media device test and selection feature, allowing you to check if an audio device (a headset, microphone, or speaker) works or connects properly to the SD-RTN. For example, in an audio device test, if a user's recorded voice is replayed in 10 seconds, then the system's audio device works and is connected properly to the SD-RTN.
-
-You can use the media device test and selection feature in the following scenarios:
-
-- A host self-checks before starting a live broadcast.
-- An online user checks if the media device works.
+To ensure smooth communication, we recommend conducting a media device test before joining a channel to check whether the microphone or camera works properly. This function applies to scenarios that have high-quality requirements, such as online education.
 
 ## Implementation
 
-### Microphone Test
+### Recording device test
+
+Call the `startRecordingDeviceTest` method to test whether the local audio recording device, such as the microphone, is working properly.
+
+To conduct the test, the user speaks, and the SDK reports the audio volume information in the `onAudioVolumeIndication` callback. A UID of 0 indicates the local user.
+
+When the test finishes, call the `stopRecordingDeviceTest` method to stop the current test.
 
 ```C++
 // Initialize the parameter object.
@@ -59,7 +60,13 @@ rep.enableAudioVolumeIndication(1000, // Callback interval (ms)
 (*lpDeviceManager)->stopRecordingDeviceTest();
 ```
 
-### External Playback Device Test
+### Playback Device Test
+
+Call the `startPlaybackDeviceTest` method to test whether the local audio playback device, such as the speaker, is working properly.
+
+To conduct the test, specify an audio file for playback. If you can hear the audio file, the audio playback device works properly.
+
+When the test finishes, call the `stopPlaybackDeviceTest` method to stop the current test.
 
 ```C++
 // Initialize the parameter object.
@@ -83,10 +90,17 @@ lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
 
 // Start the audio capture device test, and you will hear the audio from the external device.
 // You do not need to call `enableAudioVolumeIndication`, because you can directly hear the audio.
-(*lpDeviceManager)->startRecordingDeviceTest(1000);
+
+#ifdef UNICODE
+	CHAR wdFilePath[MAX_PATH];
+	::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
+	(*lpDeviceManager)->startPlaybackDeviceTest(wdFilePath);
+#else
+	(*lpDeviceManager)->startPlaybackDeviceTest(filePath);
+#endif
 
 // Stop the audio capture device test.
-(*lpDeviceManager)->stopRecordingDeviceTest();
+(*lpDeviceManager)->stopPlaybackDeviceTest();
 ```
 
 ### API Reference
@@ -100,5 +114,5 @@ lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
 * [`stopRecordingDeviceTest`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a796e7b8a58eb303f18f04e1e9d12a94b)
 
 ## Considerations
-- You need to ensure that the audio devices are not used by other applications when testing. 
-- Do not call these tests with the `joinChannel` method.
+- Ensure that your audio or video device is not being used by any third-party app when you conduct the test.
+- After the test finishes, ensure that you call the corresponding stop method to stop the current test before calling the `joinChannel` method.
