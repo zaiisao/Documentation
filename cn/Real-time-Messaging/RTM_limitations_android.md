@@ -33,14 +33,14 @@ updatedAt: Wed Jul 17 2019 12:34:18 GMT+0800 (CST)
 - 呼叫邀请响应的字符串最大长度为 8 KB. 详见： [RemoteInvitation.setResponse()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_remote_invitation.html#a229b8cf773eaa0e79b0d67815fd6b6f1) 。
 
 
-## 编码格式
+## 编码格式限制
 
 仅支持发送 UTF-8 编码格式的频道消息和点对点消息、呼叫邀请 content、呼叫邀请 response。
 
 ## 其他 
 
 
-- 当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请请拨打 400 632 6626 或邮件 sales@agora.io。
+- 当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请拨打 400 632 6626 或邮件 sales@agora.io。
 - 当前版本仅支持查询最多 256 个用户的在线状态。
 
 

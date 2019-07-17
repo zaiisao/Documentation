@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: macOS
-updatedAt: Wed Jul 17 2019 07:57:19 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 07:57:25 GMT+0800 (CST)
 ---
 # 音视频设备测试与切换
 ## 功能描述
@@ -15,7 +15,7 @@ updatedAt: Wed Jul 17 2019 07:57:19 GMT+0800 (CST)
 ### 录音设备测试
 
 - 用途：测试本地音频录制设备，如麦克风，是否正常工作。
-0 测试方法和原理：调用 `startRecordingDeviceTest`；用户说话，SDK 在 `reportAudioVolumeIndication` 回调中报告音量信息。UID 为 0 表示本地音量。完成测试后，需调用 `stopRecordingDeviceTest` 停止录制设备测试。
+- 测试方法和原理：调用 `startRecordingDeviceTest`；用户说话，SDK 在 `reportAudioVolumeIndication` 回调中报告音量信息。UID 为 0 表示本地音量。完成测试后，需调用 `stopRecordingDeviceTest` 停止录制设备测试。
 
 ```swift	
 // swift
