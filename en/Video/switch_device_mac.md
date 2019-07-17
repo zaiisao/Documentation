@@ -88,6 +88,7 @@ agoraKit.stopCaptureDeviceTest
 
 // Stops the video capture device test.
 [agoraKit stopCaptureDeviceTest];
+```
 
 ### API Reference
 
