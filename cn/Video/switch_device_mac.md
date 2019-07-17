@@ -19,6 +19,7 @@ updatedAt: Wed Jul 17 2019 06:25:56 GMT+0800 (CST)
 ### 麦克风测试
 
 ```swift	
+// swift
 // starts the microphone test
 agoraKit.startRecordingDeviceTest(1000)
 	
@@ -27,8 +28,11 @@ agoraKit.stopRecordingDeviceTest()
 ```
 
 ```oc
+// objective-c
+// starts the microphone test
 [agoraKit startRecordingDeviceTest: 1000];
 
+// stops the microphone test
 [agoraKit stopRecordingDeviceTest];
 ```
 

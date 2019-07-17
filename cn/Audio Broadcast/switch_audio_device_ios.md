@@ -17,6 +17,7 @@ updatedAt: Tue Jun 11 2019 09:13:56 GMT+0800 (CST)
 ## 实现方法
 
 ```swift	
+// swift
 // starts the microphone test
 agoraKit.startRecordingDeviceTest(1000)
 	
@@ -25,8 +26,11 @@ agoraKit.stopRecordingDeviceTest()
 ```
 
 ```oc
+// objective-c
+// starts the microphone test
 [agoraKit startRecordingDeviceTest: 1000];
 
+// stops the microphone test
 [agoraKit stopRecordingDeviceTest];
 ```
 
