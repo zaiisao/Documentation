@@ -3,7 +3,7 @@
 title: 限制条件
 description: RTM Web Limitations
 platform: Web
-updatedAt: Tue May 21 2019 08:21:48 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 12:37:00 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
@@ -12,13 +12,13 @@ updatedAt: Tue May 21 2019 08:21:48 GMT+0800 (CST)
 
 ## 多实例限制
 
-最多支持同时加入 20 个 `RtmChannel` 频道。如果你同时加入的 `RtmChannel` 频道达到20 个上限时建议在调用 [RtmChannel.leave()](https://docs.agora.io/cn/Real-time-Messaging/RTM_web/API%20Reference/RTM_web/classes/rtmchannel.html#leave) 方法离开频道后再调用 `RtmChannel.removeAllListeners()` 方法彻底释放该频道占用资源。
+最多同时支持加入 20 个 `RtmChannel` 频道。如果你同时加入的 `RtmChannel` 频道达到20 个上限时建议在调用 [RtmChannel.leave()](https://docs.agora.io/cn/Real-time-Messaging/RTM_web/API%20Reference/RTM_web/classes/rtmchannel.html#leave) 方法离开频道后再调用 `RtmChannel.removeAllListeners()` 方法彻底释放该频道占用资源。
 
 ## 调用频率限制
 
 <style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
 
-| 功能                                                  | 函数                                                      | 调用频率                |
+| 功能                                                  | 方法                                                      | 调用频率上限                |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
 | 登录到 Agora RTM 系统                              | [RtmClient.login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | 2 次／秒         |
 | 发送消息 (点对点和频道消息一并计算在内) | [RtmClient.sendMessageToPeer()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) 和 [RtmChannel.SendMessage()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 60 次／秒          |
@@ -30,7 +30,7 @@ updatedAt: Tue May 21 2019 08:21:48 GMT+0800 (CST)
 - 呼叫邀请内容的字符串最大长度为 8 KB。详见： [LocalInvitation.content](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#content) 。
 - 呼叫邀请响应的字符串最大长度为 8 KB。详见： [RemoteInvitation.response](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#response) 。
 
-## 编码格式
+## 编码格式限制
 
 仅支持发送 UTF-8 编码格式的频道消息和点对点消息。
 
