@@ -3,14 +3,14 @@
 title: Customize the Audio Source
 description: 
 platform: Android
-updatedAt: Wed Jul 17 2019 09:25:31 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 09:26:53 GMT+0800 (CST)
 ---
 # Customize the Audio Source
 ## Introduction
 
 By default, an app uses the internal audio modules for capturing and rendering during real-time communication. You can use an external audio source and renderer. This page shows how to use the methods provided by Agora SDK to customize the audio source and renderer.
 
-**Customizing the audio source and renderer** mainly applies to the following scenarios:
+**Customizing the audio source** mainly applies to the following scenarios:
 
 * When the audio source captured by the internal modules do not meet your needs. 
 * When an app has its own audio module and uses a customized source for code reuse.
