@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Thu May 09 2019 07:40:13 GMT+0800 (CST)
+updatedAt: Wed Jul 17 2019 12:35:11 GMT+0800 (CST)
 ---
 # 限制条件
 本页介绍 Agora RTM Objective-C SDK for iOS/macOS 的使用限制条件。
@@ -13,13 +13,13 @@ updatedAt: Thu May 09 2019 07:40:13 GMT+0800 (CST)
 
 ## 多实例限制
 
-最多支持同时创建 20 个 `AgoraRtmChannel` 实例。若在 `AgoraRtmChannel` 实例达到20 个上限时再调用 `createChannelWithId:delegate` 方法创建频道，SDK 会返回 `nil` 。
+最多同时支持创建 20 个 `AgoraRtmChannel` 实例。若在 `AgoraRtmChannel` 实例达到20 个上限时再调用 `createChannelWithId:delegate` 方法创建频道，SDK 会返回 `nil` 。
 
 ## 调用频率限制
 
 <style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
 
-| 功能                                                  | 函数                                                      | 调用频率                |
+| 功能                                                  | 方法                                                      | 调用频率上限                |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
 | 登录到 Agora RTM 系统                              | [loginByToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) | 2 次／秒         |
 | 发送消息 (点对点和频道消息一并计算在内) | [sendMessage:toPeer:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:completion:) 和 [sendMessage:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/sendMessage:completion:)  | 60 次／秒          |
