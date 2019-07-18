@@ -3,10 +3,22 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Thu Dec 13 2018 22:34:50 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 11:47:25 GMT+0800 (CST)
 ---
 # Join a Channel
+## Prerequisites
+
 Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
+
+When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/) to join a channel. Follow the steps to generate a temporary token:
+
+1. Enable the [App Certificate](../../en/Audio%20Broadcast/token.md). 
+
+2. On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
+
+	![](https://web-cdn.agora.io/docs-files/1563113619615)
+
+	![](https://web-cdn.agora.io/docs-files/1563113643411)
 
 ## Implementation
 You need to set the channel profile before the app joins a channel.
