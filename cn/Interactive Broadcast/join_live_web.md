@@ -3,10 +3,47 @@
 title: 加入频道
 description: web平台加入频道
 platform: Web
-updatedAt: Thu Dec 13 2018 07:58:39 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 10:43:10 GMT+0800 (CST)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Interactive%20Broadcast/web_prepare.md)。
+
+## 前提条件
+
+该步骤中，你需要获取一个 Token，用于在加入频道时校验用户权限。
+
+在 Dashboard 注册项目后，你可以获取一个临时 Token 用于测试。参考如下步骤获取临时 Token。
+
+<a id="appcert"></a>
+
+### 开启 App 证书
+
+方法一：如果创建项目时，你直接勾选了 **APP ID + APP 证书+ Token（推荐）**。Dashboard 会自动开启 **App 证书**。
+
+![](https://web-cdn.agora.io/docs-files/1562925509805)
+
+方法二：如果创建项目时，你没有勾选  **APP ID + APP 证书+ Token（推荐）**，则参考如下步骤开启 App 证书。
+
+1. 在**项目管理**页，找到刚创建的项目，点击**编辑**按钮。
+
+![](https://web-cdn.agora.io/docs-files/1562926250060)
+2. 然后点击 **App 证书**后面的**启用**按钮。
+
+![](https://web-cdn.agora.io/docs-files/1562926258836)
+3. 根据屏幕提示，在注册邮箱中确认启用 App 证书。
+4. 回到**项目管理**页，会看到 **App 证书**显示已启用。
+
+![](https://web-cdn.agora.io/docs-files/1562926274649)
+
+**Note:** 若收件箱中没有确认邮件，请至订阅邮件或垃圾邮件中查找
+
+### 获取临时 Token
+
+在项目详情处，点击**生成临时 Token**，输入频道名，你就会在 **Token** 页面获取一个临时 Token。
+
+![](https://web-cdn.agora.io/docs-files/1562926292439)
+
+![](https://web-cdn.agora.io/docs-files/1562926303571)
 
 ## 实现方法
 
@@ -14,9 +51,7 @@ updatedAt: Thu Dec 13 2018 07:58:39 GMT+0800 (CST)
 
 在  `client.join` 方法中填入以下参数值：
 
-- `tokenOrKey`：传入能标识用户角色和权限的 Token。Token 需要在你的服务器端生成，详细生成办法见[密钥说明](../../cn/Interactive%20Broadcast/token.md)。
-
-> 在 [Dashboard](https://dashboard.agora.io/) 注册项目后，你可以获取一个临时 Token 用于测试。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。
+- `tokenOrKey`：能标识用户角色和权限的 Token。测试环境下，你可以使用获取到的临时 Token。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。
 - `channel`：频道名称。
 - `uid`：用户的 ID， **整数，需保证唯一性**。 如果不指定，即用户 ID 设置为 null，回调会返回一个服务器分配的 uid。
 
