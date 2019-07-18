@@ -3,9 +3,11 @@
 title: 加入频道
 description: android平台加入通信频道
 platform: Android
-updatedAt: Thu Jul 18 2019 10:40:14 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 11:16:42 GMT+0800 (CST)
 ---
 # 加入频道
+## 前提条件
+
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Video/android_video.md)。
 
 加入频道时，你需要传入 Token。在 Dashboard 注册项目后，你可以获取一个临时 Token 用于测试。参考如下步骤获取临时 Token。
@@ -16,6 +18,8 @@ updatedAt: Thu Jul 18 2019 10:40:14 GMT+0800 (CST)
 	![](https://web-cdn.agora.io/docs-files/1562926292439)
 
 	![](https://web-cdn.agora.io/docs-files/1562926303571)
+
+
 
 ## 实现方法
 
@@ -38,7 +42,7 @@ mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
 
 在该方法中：
 
--   传入能标识用户角色和权限的 Token。测试环境下，你可以使用获取到的临时 Token。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。
+-   传入能标识用户角色和权限的 Token。测试环境下，你可以使用获取到的临时 Token。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。关于如何生成正式 Token，详见[校验用户权限](../../cn/Video/token.md)。
 -   传入能标识频道的频道 ID。输入相同频道 ID 的用户会进入同一个频道。
 -   频道内每个用户的 UID 必须是唯一的。如果将 UID 设为 0，系统将自动分配一个 UID。
 

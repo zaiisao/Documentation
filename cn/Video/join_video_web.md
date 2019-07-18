@@ -3,9 +3,11 @@
 title: 加入频道
 description: web平台加入频道
 platform: Web
-updatedAt: Thu Jul 18 2019 10:41:23 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 11:16:08 GMT+0800 (CST)
 ---
 # 加入频道
+## 前提条件
+
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Video/web_prepare.md)。
 
 加入频道时，你需要传入 Token。在 Dashboard 注册项目后，你可以获取一个临时 Token 用于测试。参考如下步骤获取临时 Token。
@@ -23,7 +25,7 @@ updatedAt: Thu Jul 18 2019 10:41:23 GMT+0800 (CST)
 
 在  `client.join` 方法中填入以下参数值：
 
-- `tokenOrKey`：能标识用户角色和权限的 Token。测试环境下，你可以使用获取到的临时 Token。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。
+- `tokenOrKey`：能标识用户角色和权限的 Token。测试环境下，你可以使用获取到的临时 Token。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。关于如何生成正式 Token，详见[校验用户权限](../../cn/Video/token.md)。
 - `channel`：频道名称。
 - `uid`：用户的 ID， **整数，需保证唯一性**。 如果不指定，即用户 ID 设置为 null，回调会返回一个服务器分配的 uid。
 
