@@ -24,8 +24,13 @@ updatedAt: Tue Jun 04 2019 09:28:53 GMT+0800 (CST)
 ## 创建项目并获取 App ID
 
 1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号、创建项目。
-2. 点击 **Dashboard** 左侧的**项目管理** ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标，查看你所创建的项目详情。
+2. 点击 **Dashboard** 左侧的**项目管理**页，查看你所创建的项目详情。
+
+	![](https://web-cdn.agora.io/docs-files/1562926227232)
+
 3. 在项目详情页，你可以查看你的 **App ID**。
+
+	![](https://web-cdn.agora.io/docs-files/1562926236498)
 
 
 
