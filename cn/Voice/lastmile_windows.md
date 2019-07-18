@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测
 platform: Windows
-updatedAt: Thu Jul 18 2019 03:28:24 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 03:31:42 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -16,26 +16,42 @@ updatedAt: Thu Jul 18 2019 03:28:24 GMT+0800 (CST)
 
 ## 实现方法
 
-```C++
-// 实现 lastmile 回调接口
+```cpp
+// 注册回调接口
+// 开始 Last-mile 网络探测后，约 2 秒后发生该回调
 void onLastmileQuality(int quality) {
-        // quality 即为当前检测到的 quality 类型，可以
-        // 根据此参数执行相关逻辑。
-        // ⑴ 可以选择在回调内部结束测试
 }
 
-// 在合适的时机启动 last-mile 测试，启用网络测试的情景请参考方法文档
-int ret = lpAgoraEngine->enableLastmileTest();
+// 开始 Last-mile 网络探测后，约 30 秒后发生该回调
+void onLastmileProbeResult(const LastmileProbeResult& result) {
+  // (1)可以选择在回调内部结束测试。在测试结束前，Agora 建议不要调用其他 API 方法
+  lpAgoraEngine->stopLastmileProbeTest();
+}
 
-// ⑵ 也可以选择其它时候结束测试, 结束测试之前调可能会被调用多次
-int ret = lpAgoraEngine->disableLastmileTest();
+// 配置一个 LastmileProbeConfig 实例
+LastmileProbeConfig config;
+// 确认探测上行网络质量
+config.probeUplink = true;
+// 确认探测下行网络质量
+config.probeDownlink = true;
+// 期望的最高发送码率，单位为 Kbps，范围为 [100, 5000]
+config.expectedUplinkBitrate = 1000;
+// 期望的最高接收码率，单位为 Kbps，范围为 [100, 5000]
+config.expectedDownlinkBitrate = 1000;
+// 加入频道前开始 Last-mile 网络探测
+lpAgoraEngine->startLastmileProbeTest(config);
 
+// (2)也可以选择在其他时候结束测试。在测试结束前，Agora 建议不要调用其他 API 方法
+lpAgoraEngine->stopLastmileProbeTest();
 ```
 
+
+
 ### API 参考
-* [`enableLastmileTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2803623f129eeb92503a7a4e5a09a46d)
-* [`disableLastmileTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a544fb9fda664578b80bbd7dbfffafd53)
-* [`onLastmileQuality`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7e14d1a26eb35ef236a0662d28d2b33)
+* [`startLastmileProbeTest`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adb3ab7a20afca02f5a5ab6fafe026f2b)
+* [`stopLastmileProbeTest`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a94f3494035429684a750e1dee7ef1593)
+* [`onLastmileQuality`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7e14d1a26eb35ef236a0662d28d2b33)
+* [`onLastmileProbeResult`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a44134dfda5d412831fa8e44fa533fca5)
 
 ## 开发注意事项
 
