@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测
 platform: Windows
-updatedAt: Thu Jul 18 2019 03:31:42 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 03:37:25 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -23,7 +23,7 @@ void onLastmileQuality(int quality) {
 }
 
 // 开始 Last-mile 网络探测后，约 30 秒后发生该回调
-void onLastmileProbeResult(const LastmileProbeResult& result) {
+void onLastmileProbeResult(LastmileProbeResult) {
   // (1)可以选择在回调内部结束测试。在测试结束前，Agora 建议不要调用其他 API 方法
   lpAgoraEngine->stopLastmileProbeTest();
 }
