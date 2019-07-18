@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Jul 11 2019 06:54:19 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 06:24:08 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -33,7 +33,7 @@ Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网�
 请确保满足以下要求：
 
 - 联系 [sales@agora.io](mailto:sales@agora.io) 开通云端录制服务。
-- 开通第三方云存储服务，目前支持七牛云、阿里云（推荐）和 Amazon S3。
+- 开通第三方云存储服务，目前支持[七牛云](https://www.qiniu.com/products/kodo)、阿里云（推荐）和 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。
 
 ## 通过 Basic HTTP 认证
 
