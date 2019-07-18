@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 08:46:01 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 11:42:16 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
@@ -56,6 +56,8 @@ When initializing the client, set the `appId` parameter as the App ID you get to
 ## Use a token for authentication
 
 The Token is a securer and more sophisticated authentication mechanism than the App ID.  You need to use an App ID and an App Certificate to generate a token for authentication. 
+
+<a id="appcertificate"></a>
 
 ### Enable the App Certificate
 
