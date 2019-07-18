@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 08:45:43 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 08:46:01 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
@@ -20,7 +20,7 @@ We have two types of dynamic keys: Channel Key and Token. Different versions of 
 | Agora SDK | Versions supporting Token | Versions supporting Channel Key | How to check SDK version |
 | --------- | -------------------- | ------------------------- | ------------------------ |
 | Native SDK   | 2.1.0 or later               | Earlier than 2.1.0        | `getSdkVersion`          |
-| Web SDK      | 2.4.0 or later              | Earlier than 2.4.0        | `AgoraRtc.VERSION`       |
+| Web SDK      | 2.4.0 or later              | Earlier than 2.4.0        | `AgoraRTC.VERSION`       |
 | Gaming SDK   | 2.2.0 or later               | Earlier than 2.2.0        | `getSdkVersion`          |
 
 >-   If you use an Agora SDK that supports the Channel Key, see [Channel Keys](../../en/null/channel_key.md).
