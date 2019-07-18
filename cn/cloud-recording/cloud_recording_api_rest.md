@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 05:45:57 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 06:23:50 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -161,17 +161,17 @@ updatedAt: Thu Jul 18 2019 05:45:57 GMT+0800 (CST)
   
 - `storageConfig`：JSON 类型，第三方云存储的详细设置。
   - `vendor`：Number 类型，第三方云存储供应商。    
-    - `0`：七牛云
-    - `1`：Amazon S3
+    - `0`：[七牛云](https://www.qiniu.com/products/kodo)
+    - `1`：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)
     - `2`：阿里云
   - `region`：Number 类型，第三方云存储指定的地区信息。
-    当 `vendor` = 0，即第三方云存储为七牛云时：  
+    当 `vendor` = 0，即第三方云存储为[七牛云](https://www.qiniu.com/products/kodo)时：  
     - `0`：Huadong 
     - `1`：Huabei 
     - `2`：Huanan 
     - `3`：Beimei  
 
-    当 `vendor` = 1，即第三方云存储为 Amazon S3 时：
+    当 `vendor` = 1，即第三方云存储为 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1) 时：
     - `0`：US_EAST_1 
     - `1`：US_EAST_2 
     - `2`：US_WEST_1 
