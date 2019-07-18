@@ -40,9 +40,7 @@ Call the <code>joinChannel</code> method to join a channel.
 
 In the <code>joinChannel</code> method:
 
--   Pass a token that identifies the role and privilege of the user. A token is generated at the server of the app. For how to generate a token, see [Security Keys](../../en/Voice/token.md). 
-
-	> When creating a project at [Dashboard](https://dashboard.agora.io/), You can generate a Temp Token. A Temp Token can be used at the testing stage. For the production environment, we recommend using a Token generated at your server.
+-  Pass a token that identifies the role and privilege of the user. A Temp Token can be used at the testing stage. For the production environment, we recommend using a Token generated at your server. For how to generate a token, see [Security Keys](../../en/Voice/token.md). 
 -   Pass a channel ID that identifies the channel. Users that input the same channel ID enter into the same channel.
 -   Pass a uid that identifies the user. Each user in a channel requires a unique uid. If you want to join the same channel on different devices, ensure that different uids are used for each device.
 
