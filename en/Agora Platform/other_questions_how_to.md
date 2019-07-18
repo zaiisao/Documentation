@@ -3,35 +3,9 @@
 title: Other Questions
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 21 2019 06:54:30 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 05:51:38 GMT+0800 (CST)
 ---
 # Other Questions
-## RESTful API authentication
-
-Before using the Agora RESTful API, you need to fill in the `Authorization` parameter in the HTTP request header for authentication. Refer to the following code samples to get the `Authorization` parameter.
-
-You need to fill in the **Customer ID** and **Customer Certificate** in the code.  Login https://dashboard.agora.io, click the account name on the top right of the dashboard, and enter the **RESTful API** page from the drop-down list to get the **Customer ID** and **Customer Certificate**.
-
-> The Customer ID and Customer Certificate are used for RESTful API access only.
-
-```java
-// Java
-// Fill in your Customer ID and Customer Certificate.
-String plainCredentials = "customerId:customerCertificate";
-// The base64Credentials here is the Authotization parameter you want.
-String base64Credentials = new String(Base64.encodeBase64(plainCredentials.getBytes()));
-```
-
-```swift
-// Swift
-let username = "customerId"
-let password = "customerCertificate"
-let loginString = String(format: "%@:%@", username, password)
-let loginData = loginString.data(using: String.Encoding.utf8)!
-// The base64LoginString here is the Authorization parameter you want.
-let base64LoginString = loginData.base64EncodedString()
-```
-
 ## Android
 
 ### Building the sample code in the SDK crashes, and the error says that no `.so` file is found?
