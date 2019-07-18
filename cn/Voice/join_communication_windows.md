@@ -3,9 +3,11 @@
 title: 加入频道
 description: windows平台加入频道
 platform: Windows
-updatedAt: Thu Jul 18 2019 10:38:41 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 11:31:24 GMT+0800 (CST)
 ---
 # 加入频道
+## 前提条件
+
 在加入频道前，请确保你已完成准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/windows_video.md)。
 
 加入频道时，你需要传入 Token。在 Dashboard 注册项目后，你可以获取一个临时 Token 用于测试。参考如下步骤获取临时 Token。
