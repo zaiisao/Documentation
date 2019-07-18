@@ -19,8 +19,14 @@ After signing up at [Dashboard](http://dashboard.agora.io/), multiple projects c
 ### Step 1: Get an App ID
 
 1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/) and follow the on-screen instructions to create a project.
-2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation panel.
-3. Find the corresponding **App ID** under the created project.
+
+2. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+
+ ![](https://web-cdn.agora.io/docs-files/1563112115436)
+
+3. Find the **App ID** that corresponds to your project.
+
+ ![](https://web-cdn.agora.io/docs-files/1563112146752)
 
 #### Use an App ID
 
