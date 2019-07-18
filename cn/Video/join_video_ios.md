@@ -38,9 +38,7 @@ func setChannelProfile() {
 
 在该方法中：
 
-- 传入能标识用户角色和权限的 Token。Token 需要在你的服务器端生成，详细生成办法见[密钥说明](../../cn/Video/token.md)。
-
-	> 在 [Dashboard](https://dashboard.agora.io/) 注册项目后，你可以获取一个临时 Token 用于测试。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。
+- 传入能标识用户角色和权限的 Token。测试环境下，你可以使用获取到的临时 Token。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。
 - 传入能标识频道的频道 ID。输入相同频道 ID 的用户会进入同一个频道。
 - 传入能标识用户身份的用户 UID。请确保频道内每个用户的 UID 必须是独一无二的。如果想要从不同的设备同时接入同一个频道，请确保每个设备上使用的 UID 是不同的。
 
@@ -49,7 +47,7 @@ func setChannelProfile() {
 ```objective-c
 //Objective-C
 - (void)joinChannel {
-  [self.agoraKit joinChannelByToken:"token" channelId:@"demoChannel1" info:nil uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
+  [self.agoraKit joinChannelByToken:"token" channelId:@"channel1" info:nil uid:0 joinSuccess:^(NSString *channel, NSUInteger uid, NSInteger elapsed) {
     // Join channel "demoChannel1"
   }];
 }
