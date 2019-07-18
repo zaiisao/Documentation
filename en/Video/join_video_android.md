@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Android
-updatedAt: Thu Jul 18 2019 11:40:09 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 11:43:19 GMT+0800 (CST)
 ---
 # Join a Channel
 Before joining a channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/android_video.md).
