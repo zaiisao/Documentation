@@ -50,7 +50,6 @@ updatedAt: Thu May 30 2019 06:27:05 GMT+0800 (CST)
 
 ### 步骤 2: 获取 App Certificate
 
-参考如下步骤，启用 App 证书。
 
 方法一：如果创建项目时，你直接勾选了 **APP ID + APP 证书+ Token（推荐）**。Dashboard 会自动开启 **App 证书**。
 
