@@ -3,7 +3,7 @@
 title: 云端录制快速开始
 description: 
 platform: Linux Java
-updatedAt: Thu Jul 18 2019 06:23:31 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 06:39:42 GMT+0800 (CST)
 ---
 # 云端录制快速开始
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
