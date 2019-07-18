@@ -3,7 +3,7 @@
 title: Conduct a Last-mile Test
 description: 
 platform: Windows
-updatedAt: Thu Jul 18 2019 03:38:35 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 03:38:45 GMT+0800 (CST)
 ---
 # Conduct a Last-mile Test
 ## Introduction
@@ -18,25 +18,51 @@ This function particularly applies to scenarios which have high requirements on 
 
 ## Implementation 
 
-```C++
-// Implement the onLastmileQuality callback. 
+Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
+
+Call the `startLastmileProbeTest` method before joining a channel to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
+
+Once this method is enabled, the SDK triggers the following callbacks:
+
+- `onLastmileQuality`: Triggered two seconds after the `startLastmileProbeTest` method is called. This callback rates the network conditions with a score and is more closely linked to the user experience.
+- `onLastmileProbeResult`: Triggered 30 seconds after the `startLastmileProbeTest` method is called. This callback returns the real-time statistics of the network conditions and is more objective.
+
+
+```cpp
+// Register the callback events.
+// Triggered 2 seconds after starting the last-mile test.
 void onLastmileQuality(int quality) {
- 		// quality means the detected network quality type. You can use it for the related logic. 
-		// ⑴ You can choose to end the last mile test in the callback. 
 }
 
-// Enable the last mile test at an appropriate time and before joining a channel. 
-int ret = lpAgoraEngine->enableLastmileTest();
+// Triggered 30 seconds after starting the last-mile test.
+void onLastmileProbeResult(LastmileProbeResult) {
+  // (1) Stop the test. Agora recommends not calling any other API method before the test ends.
+  lpAgoraEngine->stopLastmileProbeTest();
+}
 
-	// ⑵ You can also choose to end the last mile test at any time. Before the test ends, the onLastmileQuality callback can be returned multiple times. 
-int ret = lpAgoraEngine->disableLastmileTest();
+// Configure a LastmileProbeConfig instance.
+LastmileProbeConfig config;
+// Probe the uplink network quality.
+config.probeUplink = true;
+// Probe the downlink network quality.
+config.probeDownlink = true;
+// The expected uplink bitrate (Kbps). The value range is [100, 5000].
+config.expectedUplinkBitrate = 1000;
+// The expected downlink bitrate (Kbps). The value range is [100, 5000].
+config.expectedDownlinkBitrate = 1000;
+// Start the last-mile network test before joining the channel.
+lpAgoraEngine->startLastmileProbeTest(config);
 
+// (2) Stop the test. Agora recommends not calling any other API method before the test ends.
+lpAgoraEngine->stopLastmileProbeTest();
 ```
 
 ### API Reference
-* [`enableLastmileTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2803623f129eeb92503a7a4e5a09a46d)
-* [`disableLastmileTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a544fb9fda664578b80bbd7dbfffafd53)
+
+* [`startLastmileProbeTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adb3ab7a20afca02f5a5ab6fafe026f2b)
+* [`stopLastmileProbeTest`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a94f3494035429684a750e1dee7ef1593)
 * [`onLastmileQuality`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7e14d1a26eb35ef236a0662d28d2b33)
+* [`onLastmileProbeResult`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a44134dfda5d412831fa8e44fa533fca5)
 
 ## Considerations
 
