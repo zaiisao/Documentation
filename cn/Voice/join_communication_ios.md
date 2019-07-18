@@ -3,10 +3,21 @@
 title: 加入频道
 description: ios平台加入通信频道
 platform: iOS
-updatedAt: Thu Jul 18 2019 10:34:07 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 11:30:21 GMT+0800 (CST)
 ---
 # 加入频道
+## 前提条件
+
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/ios_audio.md)。
+
+加入频道时，你需要传入 Token。在 Dashboard 注册项目后，你可以获取一个临时 Token 用于测试。参考如下步骤获取临时 Token。
+
+1. 开启 App Certificate，详见[启用 App 证书](../../cn/Voice/token.md)。
+2. 在项目详情处，点击**生成临时 Token**，输入频道名，你就会在 **Token** 页面获取一个临时 Token。
+
+	![](https://web-cdn.agora.io/docs-files/1562926292439)
+
+	![](https://web-cdn.agora.io/docs-files/1562926303571)
 
 ## 实现方法
 App 在加入频道前，需要先设置频道模式，再加入频道。
