@@ -3,7 +3,7 @@
 title: 云端录制快速开始
 description: 
 platform: Linux Java
-updatedAt: Mon Jun 17 2019 03:28:26 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 06:23:31 GMT+0800 (CST)
 ---
 # 云端录制快速开始
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
@@ -21,7 +21,7 @@ updatedAt: Mon Jun 17 2019 03:28:26 GMT+0800 (CST)
   - CentOS 6.5+（推荐 7.0）64 位
 - 安装 Java 环境，建议安装 OpenJDK 1.6 或以上版本。
 - 联系 [sales@agora.io](mailto:sales@agora.io) 开通云端录制服务。
-- 开通第三方云存储服务，目前支持七牛云、阿里云（推荐）和 Amazon S3。
+- 开通第三方云存储服务，目前支持[七牛云](https://www.qiniu.com/products/kodo)、[阿里云](https://aws.amazon.com/cn/s3/?nc2=h_m1)（推荐）和 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。
 
 ## 集成
 
