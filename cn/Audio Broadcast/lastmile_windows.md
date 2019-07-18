@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测
 platform: Windows
-updatedAt: Thu Jul 18 2019 03:37:25 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 03:42:38 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -15,6 +15,15 @@ updatedAt: Thu Jul 18 2019 03:37:25 GMT+0800 (CST)
 > 纯语音产品使用 48 Kbps 的固定探测码率；视频产品会根据当前选定的视频属性调整探测码率。
 
 ## 实现方法
+
+请确保你已完成环境准备、安装包获取等步骤，详见集成客户端。
+
+在用户加入频道或上麦前，调用 `startLastmileProbeTest` 进行网络质量探测，向用户反馈上下行网络的带宽、丢包、网络抖动和往返时延。
+
+启用该方法后，SDK 会依次返回如下 2 个回调：
+
+- `onLastmileQuality`：约 2 秒内返回。该回调通过打分反馈上下行网络质量，更贴近主观感受
+- `onLastmileProbeResult`：约 30 秒内返回。该回调通过客观数据反馈上下行网络质量，更客观
 
 ```cpp
 // 注册回调接口
