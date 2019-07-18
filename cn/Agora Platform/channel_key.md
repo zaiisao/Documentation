@@ -50,29 +50,26 @@ updatedAt: Thu May 30 2019 06:27:05 GMT+0800 (CST)
 
 ### 步骤 2: 获取 App Certificate
 
-每个 Agora 账户下可创建多个项目，且每个项目有独立的 App ID 和 App 证书。
+参考如下步骤，启用 App 证书。
 
-1. 在你的项目的末尾点击 **编辑** 按钮：
+方法一：如果创建项目时，你直接勾选了 **APP ID + APP 证书+ Token（推荐）**。Dashboard 会自动开启 **App 证书**。
 
-![](https://web-cdn.agora.io/docs-files/1558693714333)
+![](https://web-cdn.agora.io/docs-files/1562925509805)
 
-2. 点击 App 证书右方的 **启用** 按钮。仔细阅读 关于 App 证书介绍后，根据屏幕提示，点击 **启用** 。
+方法二：如果创建项目时，你没有勾选  **APP ID + APP 证书+ Token（推荐）**，则参考如下步骤开启 App 证书。
 
-![](https://web-cdn.agora.io/docs-files/1558691819508)
+1. 在**项目管理**页，找到刚创建的项目，点击**编辑**按钮。
 
-3. 启用App 证书后，系统会向你的账户邮箱发送确认邮件。请根据提示启用 App 证书。
+![](https://web-cdn.agora.io/docs-files/1562926250060)
+2. 然后点击 **App 证书**后面的**启用**按钮。
 
+![](https://web-cdn.agora.io/docs-files/1562926258836)
+3. 根据屏幕提示，在注册邮箱中确认启用 App 证书。
+4. 回到**项目管理**页，会看到 **App 证书**显示已启用。
 
-4. App 证书开启成功后，在 **项目管理** 页面点击对应项目上的“眼睛”图标，显示并复制完整的 App 证书。如需隐藏 App 证书，再次点击“眼睛”图标。
+![](https://web-cdn.agora.io/docs-files/1562926274649)
 
-![](https://web-cdn.agora.io/docs-files/1558959584424)
-
-
-> -   将你的 App 证书保存在服务器端，且对任何客户端均不可见。
->
-> -   通常 App 证书在启用 5 分钟后生效。
->
-> -   当项目的 App 证书被启用后，你必须使用 Token。例如: 在启用 App 证书前，你可以使用 App ID 加入频道。但启用了 App 证书后，你就必须使用 Token 或 Channel Key 加入频道。
+**Note:** 若收件箱中没有确认邮件，请至订阅邮件或垃圾邮件中查找
 
 ### 步骤 3: 输入字段值以获取 Channel Key
 
