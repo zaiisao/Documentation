@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 06:58:37 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 07:06:12 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -16,8 +16,8 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | ---------- | ------------------------------------------------ |
-| TCP ports   | 1080；8000；9700；25000；30000                   |
-| UDP ports   | 1080；4000 - 4030；7000；8000；8913；9700；25000 |
+| TCP ports   | 1080; 8000; 9700; 25000; 30000                   |
+| UDP ports   | 1080; 4000 to 4030; 7000; 8000; 8913; 9700; 25000 |
 
 Whitelist domains:
 
@@ -37,8 +37,8 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | -------- | ------------------------------------------------------------ |
-| TCP ports | 80；443；3433；5668；5669；5866 - 5890；6080；6443；8667；9667 |
-| UDP ports | 3478；10000 - 65535                                          |
+| TCP ports | 80; 443; 3433; 5668; 5669; 5866 to 5890; 6080; 6443; 8667; 9667 |
+| UDP ports | 3478; 10000 to 65535                                          |
 
 
 > If you use the proxy server, ensure that you open TCP port 3433.
@@ -58,8 +58,8 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | -------------- | ----------------- |
-| TCP ports       | 9130；9131        |
-| UDP ports       | 8000；1080；25000 |
+| TCP ports       | 9130; 9131        |
+| UDP ports       | 8000; 1080; 25000 |
 
 Whitelist domains:
 
@@ -89,8 +89,8 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | -------- | ----------------- |
-| TCP ports | 1080；8001 - 8199 |
-| UDP ports | 8180 - 8199       |
+| TCP ports | 1080; 8001 to 8199 |
+| UDP ports | 8180 to 8199       |
 
 Whitelist domains:
 
@@ -106,8 +106,8 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | -------- | ------------------------------------------------------------ |
-| TCP ports | 1080；8000                                                   |
-| UDP ports | Duplex ports 1080, 4000 to 4030, 8000, 9700 and 25000, and simplex downstream ports used by recording processes. |
+| TCP ports | 1080; 8000                                                   |
+| UDP ports | Duplex ports 1080, 4000 to 4030; 8000; 9700; 25000; and simplex downstream ports used by recording processes. |
 
 Whitelist domains:
 
@@ -134,8 +134,8 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | -------- | ------------------------------------ |
-| TCP ports | 1080；8000                           |
-| UDP ports | 1080；4000 - 4030；8000；9700；25000 |
+| TCP ports | 1080; 8000                           |
+| UDP ports | 1080; 4000 to 4030; 8000; 9700; 25000 |
 
 Whitelist domains:
 
