@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测
 platform: iOS,macOS
-updatedAt: Wed Jul 17 2019 09:16:43 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 02:47:18 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
