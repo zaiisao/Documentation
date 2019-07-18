@@ -3,7 +3,7 @@
 title: 加入频道
 description: 小程序加入频道
 platform: 微信小程序
-updatedAt: Thu Dec 13 2018 08:59:29 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 10:36:17 GMT+0800 (CST)
 ---
 # 加入频道
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/miniapp_video.md)。
