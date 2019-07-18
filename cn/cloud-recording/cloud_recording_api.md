@@ -3,7 +3,7 @@
 title: 云端录制 C++ API
 description: 
 platform: CPP
-updatedAt: Thu Jul 18 2019 06:39:38 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 06:52:44 GMT+0800 (CST)
 ---
 # 云端录制 C++ API
 | **接口类**                                                   | **描述**                   |
@@ -76,7 +76,7 @@ virtual int StartCloudRecording(
 | `appId`            | 待录制频道的 App ID，详见<a href="../../cn/cloud-recording/token.md">获取 App ID</a>。 |
 | `channel_name`     | 待录制频道的频道名。                                         |
 | `token`            | 待录制的频道中使用的 token，详见<a href="../../cn/cloud-recording/token.md">校验用户权限</a>。 |
-| `uid`              | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。 |
+| `uid`              | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。** |
 | `recording_config` | 录制的详细设置，详见 <a href="#RecordingConfig">RecordingConfig</a>。 |
 | `storage_config`   | 第三方云存储的详细设置，详见下表 <a href="#CloudStorageConfig">CloudStorageConfig</a>。 |
 
@@ -186,8 +186,8 @@ struct CloudStorageConfig {
 
 | 参数         | 描述                                                         |
 | ------------ | ------------------------------------------------------------ |
-| `vendor`     | 第三方云存储：<li>0：[七牛云](https://www.qiniu.com/products/kodo)。<li>1：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。<li>2：[阿里云](https://aws.amazon.com/cn/s3/?nc2=h_m1)。 |
-| `region`     | 第三方云存储指定的地区信息。<br>当 `vendor` = 0，即第三方云存储为[七牛云](https://www.qiniu.com/products/kodo)时：<li>0：Huadong <li>1：Huabei <li>2：Huanan <li>3：Beimei  <br>当 `vendor` = 1，即第三方云存储为 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1) 时：<li>0：US_EAST_1 <li>1：US_EAST_2 <li>2：US_WEST_1 <li>3：US_WEST_2  <li>4：EU_WEST_1 <li> 5：EU_WEST_2  <li>6：EU_WEST_3 <li>7：EU_CENTRAL_1 <li>8：AP_SOUTHEAST_1 <li>9：AP_SOUTHEAST_2 <li>10：AP_NORTHEAST_1 <li>11：AP_NORTHEAST_2 <li>12：SA_EAST_1 <li>13：CA_CENTRAL_1 <li>14：AP_SOUTH_1 <li>15：CN_NORTH_1 <li>16：CN_NORTHWEST_1 <li>17：US_GOV_WEST_1 <br>当 `vendor` = 2，即第三方云存储为[阿里云](https://aws.amazon.com/cn/s3/?nc2=h_m1)时：<li>0：CN_Hangzhou <li>1：CN_Shanghai <li>2：CN_Qingdao <li>3：CN_Beijin  <li>4：CN_Zhangjiakou <li> 5：CN_Huhehaote  <li>6：CN_Shenzhen <li>7：CN_Hongkong <li>8：US_West_1 <li>9：US_East_1 <li>10：AP_Southeast_1 <li>11：AP_Southeast_2 <li>12：AP_Southeast_3 <li>13：AP_Southeast_5 <li>14：AP_Northeast_1 <li>15：AP_South_1 <li>16：EU_Central_1 <li>17：EU_West_1 <li>18：EU_East_1 |
+| `vendor`     | 第三方云存储：<li>0：[七牛云](https://www.qiniu.com/products/kodo)。<li>1：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。<li>2：[阿里云](https://www.aliyun.com/product/oss)。 |
+| `region`     | 第三方云存储指定的地区信息。<br>当 `vendor` = 0，即第三方云存储为[七牛云](https://www.qiniu.com/products/kodo)时：<li>0：Huadong <li>1：Huabei <li>2：Huanan <li>3：Beimei  <br>当 `vendor` = 1，即第三方云存储为 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1) 时：<li>0：US_EAST_1 <li>1：US_EAST_2 <li>2：US_WEST_1 <li>3：US_WEST_2  <li>4：EU_WEST_1 <li> 5：EU_WEST_2  <li>6：EU_WEST_3 <li>7：EU_CENTRAL_1 <li>8：AP_SOUTHEAST_1 <li>9：AP_SOUTHEAST_2 <li>10：AP_NORTHEAST_1 <li>11：AP_NORTHEAST_2 <li>12：SA_EAST_1 <li>13：CA_CENTRAL_1 <li>14：AP_SOUTH_1 <li>15：CN_NORTH_1 <li>16：CN_NORTHWEST_1 <li>17：US_GOV_WEST_1 <br>当 `vendor` = 2，即第三方云存储为[阿里云](https://www.aliyun.com/product/oss)时：<li>0：CN_Hangzhou <li>1：CN_Shanghai <li>2：CN_Qingdao <li>3：CN_Beijin  <li>4：CN_Zhangjiakou <li> 5：CN_Huhehaote  <li>6：CN_Shenzhen <li>7：CN_Hongkong <li>8：US_West_1 <li>9：US_East_1 <li>10：AP_Southeast_1 <li>11：AP_Southeast_2 <li>12：AP_Southeast_3 <li>13：AP_Southeast_5 <li>14：AP_Northeast_1 <li>15：AP_South_1 <li>16：EU_Central_1 <li>17：EU_West_1 <li>18：EU_East_1 |
 | `bucket`     | 第三方云存储 bucket。                                        |
 | `access_key` | 第三方云存储 access key。                                    |
 | `secret_key` | 第三方云存储 secret key。                                    |

@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 06:23:50 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -64,7 +64,7 @@ updatedAt: Thu Jul 18 2019 06:23:50 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。**例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
 ### `acquire` 请求示例
@@ -120,7 +120,7 @@ updatedAt: Thu Jul 18 2019 06:23:50 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。**例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该请求请参考下面的列表设置。         |
 
 `clientRequest` 中需要填写的内容如下：
@@ -163,7 +163,7 @@ updatedAt: Thu Jul 18 2019 06:23:50 GMT+0800 (CST)
   - `vendor`：Number 类型，第三方云存储供应商。    
     - `0`：[七牛云](https://www.qiniu.com/products/kodo)
     - `1`：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)
-    - `2`：阿里云
+    - `2`：[阿里云](https://www.aliyun.com/product/oss)
   - `region`：Number 类型，第三方云存储指定的地区信息。
     当 `vendor` = 0，即第三方云存储为[七牛云](https://www.qiniu.com/products/kodo)时：  
     - `0`：Huadong 
@@ -191,7 +191,7 @@ updatedAt: Thu Jul 18 2019 06:23:50 GMT+0800 (CST)
     - `16`：CN_NORTHWEST_1 
     - `17`：US_GOV_WEST_1 
 
-    当 `vendor` = 2，即第三方云存储为阿里云时： 
+    当 `vendor` = 2，即第三方云存储为[阿里云](https://www.aliyun.com/product/oss)时： 
     - `0`：CN_Hangzhou 
     - `1`：CN_Shanghai 
     - `2`：CN_Qingdao 
@@ -352,7 +352,7 @@ updatedAt: Thu Jul 18 2019 06:23:50 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。**例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
 ### `stop` 请求示例
