@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 15 2019 02:14:47 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 07:38:36 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -22,7 +22,7 @@ Agora 动态密钥分为 Channel Key 和 Token 两种。本文的动态密钥指
 | Agora SDK  | 支持 Token 的版本 | 支持 Channel Key 的版本 | 查看版本信息       |
 | ---------- | ----------------- | ----------------------- | ------------------ |
 | Native SDK | v2.1.0 及以上     | v2.1.0 之前             | `getSdkVersion`    |
-| Web SDK    | v2.4.0 及以上     | v2.4.0 之前             | `AgoraRtc.VERSION` |
+| Web SDK    | v2.4.0 及以上     | v2.4.0 之前             | `AgoraRTC.VERSION` |
 | Gaming SDK | v2.2.0 及以上     | v2.2.0 之前             | `getSdkVersion`    |
 
 > - 如果你使用的 SDK 支持的动态密钥为 Channel Key，请参考 [Channel Key 密钥说明](https://docs.agora.io/cn/Agora%20Platform/channel_key?platform=All%20Platform)。
