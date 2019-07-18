@@ -3,7 +3,7 @@
 title: 云端录制 Java API
 description: For java
 platform: Java
-updatedAt: Mon Jun 17 2019 04:13:01 GMT+0800 (CST)
+updatedAt: Thu Jul 18 2019 06:23:04 GMT+0800 (CST)
 ---
 # 云端录制 Java API
 | **接口类**                                                   | **描述**                   |
@@ -192,8 +192,8 @@ public attributes:
 
 | 参数        | 描述                                                         |
 | ----------- | ------------------------------------------------------------ |
-| `vendor`    | 第三方云存储：<li>CloudStorageVendor.CloudStorageVendorQiniu：七牛云。<li>CloudStorageVendor.CloudStorageVendorAws：Amazon S3。<li>CloudStorageVendor.CloudStorageVendorAliyun：阿里云。 |
-| `region`    | 第三方云存储指定的地区信息。<br>当 `vendor` = CloudStorageVendor.CloudStorageVendorQiniu，即第三方云存储为七牛云时：<li>0：Huadong <li>1：Huabei <li>2：Huanan <li>3：Beimei  <br>当 `vendor` = CloudStorageVendor.CloudStorageVendorAws，即第三方云存储为 Amazon S3 时：<li>0：US_EAST_1 <li>1：US_EAST_2 <li>2：US_WEST_1 <li>3：US_WEST_2  <li>4：EU_WEST_1 <li> 5：EU_WEST_2  <li>6：EU_WEST_3 <li>7：EU_CENTRAL_1 <li>8：AP_SOUTHEAST_1 <li>9：AP_SOUTHEAST_2 <li>10：AP_NORTHEAST_1 <li>11：AP_NORTHEAST_2 <li>12：SA_EAST_1 <li>13：CA_CENTRAL_1 <li>14：AP_SOUTH_1 <li>15：CN_NORTH_1 <li>16：CN_NORTHWEST_1 <li>17：US_GOV_WEST_1 <br>当 `vendor` = CloudStorageVendor.CloudStorageVendorAliyun，即第三方云存储为阿里云时：<li>0：CN_Hangzhou <li>1：CN_Shanghai <li>2：CN_Qingdao <li>3：CN_Beijin  <li>4：CN_Zhangjiakou <li> 5：CN_Huhehaote  <li>6：CN_Shenzhen <li>7：CN_Hongkong <li>8：US_West_1 <li>9：US_East_1 <li>10：AP_Southeast_1 <li>11：AP_Southeast_2 <li>12：AP_Southeast_3 <li>13：AP_Southeast_5 <li>14：AP_Northeast_1 <li>15：AP_South_1 <li>16：EU_Central_1 <li>17：EU_West_1 <li>18：EU_East_1 |
+| `vendor`    | 第三方云存储：<li>CloudStorageVendor.CloudStorageVendorQiniu：[七牛云](https://www.qiniu.com/products/kodo)。<li>CloudStorageVendor.CloudStorageVendorAws：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。<li>CloudStorageVendor.CloudStorageVendorAliyun：[阿里云](https://aws.amazon.com/cn/s3/?nc2=h_m1)。 |
+| `region`    | 第三方云存储指定的地区信息。<br>当 `vendor` = CloudStorageVendor.CloudStorageVendorQiniu，即第三方云存储为[七牛云](https://www.qiniu.com/products/kodo)时：<li>0：Huadong <li>1：Huabei <li>2：Huanan <li>3：Beimei  <br>当 `vendor` = CloudStorageVendor.CloudStorageVendorAws，即第三方云存储为 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1) 时：<li>0：US_EAST_1 <li>1：US_EAST_2 <li>2：US_WEST_1 <li>3：US_WEST_2  <li>4：EU_WEST_1 <li> 5：EU_WEST_2  <li>6：EU_WEST_3 <li>7：EU_CENTRAL_1 <li>8：AP_SOUTHEAST_1 <li>9：AP_SOUTHEAST_2 <li>10：AP_NORTHEAST_1 <li>11：AP_NORTHEAST_2 <li>12：SA_EAST_1 <li>13：CA_CENTRAL_1 <li>14：AP_SOUTH_1 <li>15：CN_NORTH_1 <li>16：CN_NORTHWEST_1 <li>17：US_GOV_WEST_1 <br>当 `vendor` = CloudStorageVendor.CloudStorageVendorAliyun，即第三方云存储为[阿里云](https://aws.amazon.com/cn/s3/?nc2=h_m1)时：<li>0：CN_Hangzhou <li>1：CN_Shanghai <li>2：CN_Qingdao <li>3：CN_Beijin  <li>4：CN_Zhangjiakou <li> 5：CN_Huhehaote  <li>6：CN_Shenzhen <li>7：CN_Hongkong <li>8：US_West_1 <li>9：US_East_1 <li>10：AP_Southeast_1 <li>11：AP_Southeast_2 <li>12：AP_Southeast_3 <li>13：AP_Southeast_5 <li>14：AP_Northeast_1 <li>15：AP_South_1 <li>16：EU_Central_1 <li>17：EU_West_1 <li>18：EU_East_1 |
 | `bucket`    | 第三方云存储 bucket。                                        |
 | `accessKey` | 第三方云存储 access key。                                    |
 | `secretKey` | 第三方云存储 secret key。                                    |
