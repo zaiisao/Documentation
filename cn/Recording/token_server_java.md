@@ -64,10 +64,10 @@ public SimpleTokenBuilder(String appId, String appCertificate, String channelNam
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>appID</code></td>
-<td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Interactive%20Broadcast/token.md"><span>获取 App ID</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Recording/token.md"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Interactive%20Broadcast/token.md"><span>获取 App Certificate</span></a>。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Recording/token.md"><span>获取 App Certificate</span></a>。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -92,10 +92,10 @@ public SimpleTokenBuilder(String appId, String appCertificate, String channelNam
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>appID</code></td>
-<td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Interactive%20Broadcast/token.md"><span>获取 App ID</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Recording/token.md"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Interactive%20Broadcast/token.md"><span>获取 App Certificate</span></a>。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Recording/token.md"><span>获取 App Certificate</span></a>。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
