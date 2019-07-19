@@ -1,11 +1,11 @@
 
 ---
-title: Generate a Token
+title: Generate a Token from the server
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Fri Jul 19 2019 08:39:38 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 09:05:40 GMT+0800 (CST)
 ---
-# Generate a Token
+# Generate a Token from the server
 This page shows how to generate a token on your server for Agora SDK versions 2.1.0+. The token is used for joining a channel.
 
 The following programming languages are covered. Choose the one that applies to you:
