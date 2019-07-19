@@ -3,15 +3,14 @@
 title: 创建实例
 description: 安卓平台初始化引擎
 platform: Android
-updatedAt: Fri Jul 19 2019 08:19:52 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 08:23:01 GMT+0800 (CST)
 ---
 # 创建实例
-在创建实例前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/android_audio.md)。
-
 ## 前提条件
 
-初始化过程中，你需要传入一个的 App ID。因此需要现在 Agora Dashboard 注册项目并获取 App ID。
+在创建实例前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/android_audio.md)。
 
+初始化过程中，你需要传入一个的 App ID。因此需要现在 Agora Dashboard 注册项目并获取 App ID。
 
 1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录 Dashboard。详见[创建新账号](../../cn/Voice/sign_in_and_sign_up.md)。
 2. 点击 **项目列表** 处的**新手指引**。
