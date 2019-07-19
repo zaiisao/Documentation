@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Electron
-updatedAt: Wed Jul 10 2019 10:01:10 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 08:34:40 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/video broadcast with the Agora SDK for Electron.
@@ -18,10 +18,23 @@ Development environment:
 > If you use Windows for development, ensure that you run npm install -D —arch = ia32 electron to install  a 32-bit Electron.
 
 ## Create an Agora Project and Get an App ID
+1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
 
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io) and follow the on-screen instructions to create a project.
-2. Click the Project Management icon in the left navigation panel.
-3. Find the corresponding App ID under the created project.
+2. Click **Get Started** under **Projects**.
+
+	![](https://web-cdn.agora.io/docs-files/1563523371446)
+
+3. Input your project name in the pop-up window and click **Create**. Follow the on-screen instructions to get to know the basic steps to start a video call. Once the project is created, you can find it under **Projects**.
+
+	![](https://web-cdn.agora.io/docs-files/1563523478084)
+	
+4. Click the **Edit** button behind the new project, or the **Project Management** button ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+
+ ![](https://web-cdn.agora.io/docs-files/1563523678240)
+
+5. On the **Project Management** panel, find the **App ID** of your project.
+
+ ![](https://web-cdn.agora.io/docs-files/1563523737158)
 
 ## Add the Agora SDK to Your Project
 
