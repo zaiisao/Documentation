@@ -15,7 +15,9 @@ updatedAt: Fri Jul 19 2019 09:03:54 GMT+0800 (CST)
 
 在  `client.join` 方法中填入以下参数值：
 
-- `tokenOrKey`：能标识用户角色和权限的 Token。测试环境下，你可以使用获取到的临时 Token。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。关于如何生成正式 Token，详见[校验用户权限](../../cn/Audio%20Broadcast/token.md)。
+- `tokenOrKey`：能标识用户角色和权限的 Token。
+	-   测试环境下，你可以使用临时 Token，详见[获取临时 Token](../../cn/Audio%20Broadcast/token.md)。
+	-   生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。关于如何生成正式 Token，详见[服务端生成 Token](../../cn/Audio%20Broadcast/token_server.md)。
 - `channel`：频道名称。
 - `uid`：用户的 ID， **整数，需保证唯一性**。 如果不指定，即用户 ID 设置为 null，回调会返回一个服务器分配的 uid。
 
