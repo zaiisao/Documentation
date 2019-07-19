@@ -2,8 +2,8 @@
 ---
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
-platform: 服务端
-updatedAt: Fri Jul 19 2019 02:20:35 GMT+0800 (CST)
+platform: C++
+updatedAt: Fri Jul 19 2019 02:20:39 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 ## Token 代码仓库说明
@@ -25,11 +25,11 @@ updatedAt: Fri Jul 19 2019 02:20:35 GMT+0800 (CST)
 
 我们推荐使用 **SimpleTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**SimpleTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
 
-开源仓库的 **./\<language\>/sample** 文件夹下包含用门用于演示 Token 生成的示例代码。其中， **Sample_builder**: 是我们基于 **SimpleTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
+开源仓库的 **./\<language\>/sample** 文件夹下包含用门用于演示 Token 生成的示例代码。其中， **Sample_builder** 是我们基于 **SimpleTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
 本页为 Agora RTC SDK v2.1+、Agora Web SDK v2.4+ 以及 Agora Recording SDK v2.1+  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 C++ API 参考。
 
-## 快速演示 Token 生成
+## 快速生成 Token
 
 下面我们以 **sample_builder.cpp** 为例演示 Token 生成的过程：
 
