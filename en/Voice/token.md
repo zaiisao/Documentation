@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 11:42:16 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 08:42:47 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
@@ -28,9 +28,6 @@ We have two types of dynamic keys: Channel Key and Token. Different versions of 
 >-   For the Agora Signaling SDK, see [Signaling Security Keys](../../en/Agora%20Platform/key_signaling.md).
 >-   For the Agora RTM SDK, see [Use Security Keys](https://docs.agora.io/en/Voice/%3Chttps://docs-preview.agoralab.co/en/Real-time-Messaging/RTM_key?platform=All%20Platforms%3E).
 
-## Prerequisites
-
-Ensure that you have signed up for a developer account at the [Agora Dashboard](https://dashboard.agora.io/) and follow the on-screen instructions to create your first project.
 
 ## Use an App ID only for authentication
 
@@ -38,14 +35,23 @@ Each project you create at the [Agora Dashboard](http://dashboard.agora.io) has 
 
 ### Get an App ID
 
-To get an App ID, follow these steps:
+1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Voice/sign_in_and_sign_up.md).
 
-1. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+2. Click **Get Started** under **Projects**.
 
-![](https://web-cdn.agora.io/docs-files/1563112115436)
-2. Find the **App ID** that corresponds to your project.
+	![](https://web-cdn.agora.io/docs-files/1563523371446)
 
-![](https://web-cdn.agora.io/docs-files/1563112146752)
+3. Input your project name in the pop-up window and click **Create**. Follow the on-screen instructions to get to know the basic steps to start a video call. Once the project is created, you can find it under **Projects**.
+
+	![](https://web-cdn.agora.io/docs-files/1563523478084)
+	
+4. Click the **Edit** button behind the new project, or the **Project Management** button ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+
+ ![](https://web-cdn.agora.io/docs-files/1563523678240)
+
+5. On the **Project Management** panel, find the **App ID** of your project.
+
+ ![](https://web-cdn.agora.io/docs-files/1563523737158)
 
 ### Apply your App ID
 
@@ -61,39 +67,48 @@ The Token is a securer and more sophisticated authentication mechanism than the 
 
 ### Enable the App Certificate
 
-For your first Agora project, take the following steps to enable the App Certificate:
+Each Agora account can create multiple projects, and each project has a unique App ID and App Certificate.
 
-1. Find your project on the **Project Management** page at the [Agora Dashboard](https://dashboard.agora.io/) and click the **Edit** button.
+To get an App Certificate:
 
-![](https://web-cdn.agora.io/docs-files/1563112238811)
-2. On the **Edit Project** page, click **Enable** to switch on the App Certificate and click **Save** to confirm your setting. 
+1.  Login to [https://dashboard.agora.io](https://dashboard.agora.io).
 
-![](https://web-cdn.agora.io/docs-files/1563112280018)
-3. Agora sends your account a confirmation Email. Follow the instruction to enable the App Certificate. 
+2.  Click the **Edit** button of the corresponding project on the **Project Management** page.
 
-![](https://web-cdn.agora.io/docs-files/1563114028700)
+![](https://web-cdn.agora.io/docs-files/1558943085209)
 
-![](https://web-cdn.agora.io/docs-files/1563156803226)
-4. Go back to the  **Project Management** page, your can see App Certificate appears enabled. 
+3. Click the **Enable** button next to the **App Certificate**. 
 
-![](https://web-cdn.agora.io/docs-files/1563113154996)
+4. Read the pop-up description of the App Certificate and click **Save** as promped. 
 
-**Note**: Check the Spam Email or Junk Email, if there's no confirmation Email in your inbox.
+![](https://web-cdn.agora.io/docs-files/1558943467945)
+
+5.  The system sends your mail account a confirmation Email. Please follow the instruction to enable the App Certificate. 
+
+6. On the **Project Management** page, click the 'eye' icon to view and copy the App Certificate. You can re-click this icon to hide the App Certificate. 
+
+![](https://web-cdn.agora.io/docs-files/1558943748601)
+
+
+> -   Keep the App Certificate on the server, never on any client machine.
+> 
+> -   The App Certificate takes about five minutes to take effect after it is enabled.
+> 
+> -   Once the App Certificate is enabled for a project, a token must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a token or a Channel Key must be used to join a channel.
 
 ### Get a temporary token
 
 When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/). Use either of the following ways to generate a temporary token:
 
-- On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
+When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/) to join a channel. Follow the steps to generate a temporary token:
 
-![](https://web-cdn.agora.io/docs-files/1563113619615)
+1. Enable the [App Certificate](../../en/Voice/token.md). 
 
-![](https://web-cdn.agora.io/docs-files/1563113630952)
+2. On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
 
-![](https://web-cdn.agora.io/docs-files/1563113643411)
-- When creating a project, choose **APP ID + APP certificate + Token (recommended)** to have the Dashboard enable the App Certificate for you, and click **Generate a Temp Token** to get your temporary token. 
+	![](https://web-cdn.agora.io/docs-files/1563113619615)
 
-![](https://web-cdn.agora.io/docs-files/1563114012279)
+	![](https://web-cdn.agora.io/docs-files/1563113643411)
 
 ### Get a token
 
@@ -114,41 +129,7 @@ The process of generating a token is as follows:
 1.  The client sends a request for a token to your server.
 2.  The server uses the token generator you deploy to create a token and sends it back to the client.
 
-The application client needs to send the following parameters to the server to generate a token:
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-	<tr><td><code>appID</code></td>
-<td>The App ID of the user’s project in the Agora Dashboard.</td>
-</tr>
-	<tr><td><code>appCertificate</code></td>
-<td>The App Certificate of the user’s project in the Agora Dashboard.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>uid</code></td>
-<td>ID of the user who wants to join a channel.</td>
-</tr>
-<tr><td><code>expireTimestamp</code> <sup>[1]</sup></a></td>
-<td>The privilege expiration time. The default value is 0 and by default the token never expires. A user can join a channel indefinitely within the designated expiration time and will be removed from the channel after the expiration time.</td>
-</tr>
-</tbody>
-</table>
-
->[1] `expireTimestamp` is represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set `expireTimestamp` as the current timestamp + 600 \(seconds\). The expiration time for each token is independent, and you can set it through the `setPrivilege` method.
-
-
-For the methods and parameters involved, see [Generate a Token on Your Server](../../en/null/token_server.md).
+The application client needs to send the following parameters to the server to generate a token. See [Generate a Token on Your Server](../../en/Voice/token_server.md).
 
 ### Apply your token or temporary token
 

@@ -26,7 +26,7 @@ We have two types of dynamic keys: Channel Key and Token. Different versions of 
 >-   If you use an Agora SDK that supports the Channel Key, see [Channel Keys](../../en/null/channel_key.md).
 >-   If your wish to upgrade your SDK to a version that supports Token, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 >-   For the Agora Signaling SDK, see [Signaling Security Keys](../../en/Agora%20Platform/key_signaling.md).
->-   For the Agora RTM SDK, see [Use Security Keys](https://docs.agora.io/en/Interactive%20Broadcast/%3Chttps://docs-preview.agoralab.co/en/Real-time-Messaging/RTM_key?platform=All%20Platforms%3E).
+>-   For the Agora RTM SDK, see [Use Security Keys](https://docs.agora.io/en/Agora%20Platform/%3Chttps://docs-preview.agoralab.co/en/Real-time-Messaging/RTM_key?platform=All%20Platforms%3E).
 
 
 ## Use an App ID only for authentication
@@ -35,7 +35,7 @@ Each project you create at the [Agora Dashboard](http://dashboard.agora.io) has 
 
 ### Get an App ID
 
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Interactive%20Broadcast/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Agora%20Platform/sign_in_and_sign_up.md).
 
 2. Click **Get Started** under **Projects**.
 
@@ -102,7 +102,7 @@ When working on a test version of your application, you can generate a temporary
 
 When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/) to join a channel. Follow the steps to generate a temporary token:
 
-1. Enable the [App Certificate](../../en/Interactive%20Broadcast/token.md). 
+1. Enable the [App Certificate](../../en/Agora%20Platform/token.md). 
 
 2. On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
 
@@ -129,7 +129,7 @@ The process of generating a token is as follows:
 1.  The client sends a request for a token to your server.
 2.  The server uses the token generator you deploy to create a token and sends it back to the client.
 
-The application client needs to send the following parameters to the server to generate a token. See [Generate a Token on Your Server](../../en/Interactive%20Broadcast/token_server.md).
+The application client needs to send the following parameters to the server to generate a token. See [Generate a Token on Your Server](../../en/Agora%20Platform/token_server.md).
 
 ### Apply your token or temporary token
 
@@ -158,20 +158,20 @@ The following table lists the API methods that require a token as a parameter:
 </thead>
 <tbody>
 <tr><td>Android</td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c"><span>Join a Channel (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af1428905e5778a9ca209f64592b5bf80"><span>Renew the Token (renewToken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Agora%20Platform/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c"><span>Join a Channel (joinChannel)</span></a></td>
+<td><a href="https://docs.agora.io/en/Agora%20Platform/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af1428905e5778a9ca209f64592b5bf80"><span>Renew the Token (renewToken)</span></a></td>
 </tr>
 <tr><td>iOS/macOS</td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:"><span>Join a Channel (joinChannelByToken)</span></a></td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/renewToken:"><span>Renew the Token (renewToken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Agora%20Platform/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:"><span>Join a Channel (joinChannelByToken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Agora%20Platform/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/renewToken:"><span>Renew the Token (renewToken)</span></a></td>
 </tr>
 <tr><td>Windows</td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c"><span>Join a Channel (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8f25b5ff97e2a070a69102e379295739"><span>Renew the Token (renewtoken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c"><span>Join a Channel (joinChannel)</span></a></td>
+<td><a href="https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8f25b5ff97e2a070a69102e379295739"><span>Renew the Token (renewtoken)</span></a></td>
 </tr>
 <tr><td>Web</td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join"><span>Join an AgoraRTC Channel (join)</span></a></td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#renewtoken"><span>Renew the Token (renewToken)</span></a></td>
+<td><a href="https://docs.agora.io/en/Agora%20Platform/API%20Reference/web/interfaces/agorartc.client.html#join"><span>Join an AgoraRTC Channel (join)</span></a></td>
+<td><a href="https://docs.agora.io/en/Agora%20Platform/API%20Reference/web/interfaces/agorartc.client.html#renewtoken"><span>Renew the Token (renewToken)</span></a></td>
 </tr>
 </tbody>
 </table>
