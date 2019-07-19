@@ -3,10 +3,33 @@
 title: Create and Initialize an Agora Instance
 description: 
 platform: Android
-updatedAt: Thu Dec 13 2018 22:42:09 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 08:36:23 GMT+0800 (CST)
 ---
 # Create and Initialize an Agora Instance
+## Prerequisites
+
 Before creating an RtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/android_video.md).
+
+Create a project in Agora Dashboard and get the App ID of the project. You need to pass in the App ID during initialization.
+
+1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
+
+2. Click **Get Started** under **Projects**.
+
+	![](https://web-cdn.agora.io/docs-files/1563523371446)
+
+3. Input your project name in the pop-up window and click **Create**. Follow the on-screen instructions to get to know the basic steps to start a video call. Once the project is created, you can find it under **Projects**.
+
+	![](https://web-cdn.agora.io/docs-files/1563523478084)
+	
+4. Click the **Edit** button behind the new project, or the **Project Management** button ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+
+ ![](https://web-cdn.agora.io/docs-files/1563523678240)
+
+5. On the **Project Management** panel, find the **App ID** of your project.
+
+ ![](https://web-cdn.agora.io/docs-files/1563523737158)
+
 
 ## Implementation
 The following imports define the interface of the Agora API that provides  communication functionality:
