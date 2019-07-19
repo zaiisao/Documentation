@@ -16,15 +16,23 @@ updatedAt: Fri Jun 14 2019 05:35:43 GMT+0800 (CST)
 
 ## Create an Agora Project and Get an App ID
 
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/) and follow the on-screen instructions to create a project.
+1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Voice/sign_in_and_sign_up.md).
 
-2. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+2. Click **Get Started** under **Projects**.
 
- ![](https://web-cdn.agora.io/docs-files/1563112115436)
+	![](https://web-cdn.agora.io/docs-files/1563523371446)
 
-3. Find the **App ID** that corresponds to your project.
+3. Input your project name in the pop-up window and click **Create**. Follow the on-screen instructions to get to know the basic steps to start a video call. Once the project is created, you can find it under **Projects**.
 
- ![](https://web-cdn.agora.io/docs-files/1563112146752)
+	![](https://web-cdn.agora.io/docs-files/1563523478084)
+	
+4. Click the **Edit** button behind the new project, or the **Project Management** button ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+
+ ![](https://web-cdn.agora.io/docs-files/1563523678240)
+
+5. On the **Project Management** panel, find the **App ID** of your project.
+
+ ![](https://web-cdn.agora.io/docs-files/1563523737158)
 
 
 ## Add the Agora SDK to Your Project
