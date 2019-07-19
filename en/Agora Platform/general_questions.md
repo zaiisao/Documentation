@@ -3,7 +3,7 @@
 title: FAQ
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 19 2019 10:33:08 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 10:33:23 GMT+0800 (CST)
 ---
 # FAQ
 ## General Questions
@@ -20,10 +20,6 @@ This category contains questions and answers about Agora products, services, par
 
 This category contains questions and answers for integrating and using Agora SDK.
 
-[Audio](../../en/Agora%20Platform/audio_how_to.md)
-
-[Video](../../en/Agora%20Platform/video_how_to.md)
-
 [Interactive Broadcast](../../en/Agora%20Platform/live_how_to.md)
 
 [Recording](../../en/Agora%20Platform/recording_how_to.md)
@@ -32,17 +28,11 @@ This category contains questions and answers for integrating and using Agora SDK
 
 [Native SDK](../../en/Agora%20Platform/nativesdk_how_to.md)
 
-[SDK Behavior when a User Drops Offline or a Process Gets Kill](../../en/Agora%20Platform/sdk_behaviors.md)
-
 [Other Questions](../../en/Agora%20Platform/other_questions_how_to.md)
 
 ## Troubleshooting
 
 This category contains practical issues and troubleshooting for using Agora SDK.
-
- [Audio](../../en/Agora%20Platform/audio_related_faq.md)
-
- [Video](../../en/Agora%20Platform/video_related_faq.md)
 
  [Interactive Broadcast](../../en/Agora%20Platform/live_related_faq.md)
 
