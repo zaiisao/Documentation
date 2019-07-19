@@ -3,9 +3,11 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Fri Jul 19 2019 03:02:12 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 06:41:32 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
+本页为 Agora RTC SDK v2.1+、Agora Web SDK v2.4+ 以及 Agora Recording SDK v2.1+  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 C++ API 参考。
+
 ## Token 代码仓库说明
 
 你需要在业务服务器自行部署 Token 生成器生成 Token。我们的 [Github 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 为你提供了 Token 生成源码以及使用这些源码生成 Token 的简单示例。我们目前支持以下几种语言：
@@ -26,8 +28,6 @@ updatedAt: Fri Jul 19 2019 03:02:12 GMT+0800 (CST)
 我们推荐使用 **SimpleTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**SimpleTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
 
 开源仓库的 **./\<language\>/sample** 文件夹下包含用门用于演示 Token 生成的示例代码。其中， **Sample_builder** 是我们基于 **SimpleTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
-
-本页为 Agora RTC SDK v2.1+、Agora Web SDK v2.4+ 以及 Agora Recording SDK v2.1+  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 C++ API 参考。
 
 ## 快速生成 Token
 
@@ -114,6 +114,6 @@ updatedAt: Fri Jul 19 2019 03:02:12 GMT+0800 (CST)
 | `appID`          | Agora 为应用程序开发者签发的 App ID。详见 [获取 App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id). |
 | `appCertificate` | Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 [获取 App Certificate](https://docs.agora.io/cn/Agora%20Platform/token/#app-certificate). |
 | `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~ |
-|* `userAccount`* | 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：26 个小写英文字母 a-z；26 个大写英文字母 A-Z；10 个数字 0-9；空格；"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
+|`userAccount` | 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：26 个小写英文字母 a-z；26 个大写英文字母 A-Z；10 个数字 0-9；空格；"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
 | `role`           | <li>`Role_Attendee = 0`: 已废弃。通信模式的通话方。享有权限与角色 `Role_Publisher` 相同。<li> `Role_Publisher = 1` ：直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`: (默认) 直播模式下的观众（AUDIENCE）。<li>`Role_Admin = 101` ：已废弃。享有权限与角色 `Role_Publisher` 相同。 |
 | `privilegeExpiredTs`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilegeExpiredTs 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。|
