@@ -8,7 +8,7 @@ updatedAt: Fri Jul 19 2019 11:24:23 GMT+0800 (CST)
 # Generate a Token from Your Server
 The token is used for joining a channel. This page shows how to generate a token on your server for the following SDKs
 
-- Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
+- Agora Native SDK (Java, Objective-C, C++, Electron) v2.1+
 - Agora Web SDK v2.4+
 - Agora Recording SDK v2.1+ 
 
