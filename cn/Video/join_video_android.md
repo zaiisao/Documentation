@@ -3,7 +3,7 @@
 title: 加入频道
 description: android平台加入通信频道
 platform: Android
-updatedAt: Thu Jul 18 2019 11:16:42 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 09:00:26 GMT+0800 (CST)
 ---
 # 加入频道
 ## 前提条件
