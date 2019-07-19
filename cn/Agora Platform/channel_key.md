@@ -59,14 +59,14 @@ updatedAt: Thu May 30 2019 06:27:05 GMT+0800 (CST)
 
 1. 在**项目管理**页，找到刚创建的项目，点击**编辑**按钮。
 
-![](https://web-cdn.agora.io/docs-files/1562926250060)
+	![](https://web-cdn.agora.io/docs-files/1562926250060)
 2. 然后点击 **App 证书**后面的**启用**按钮。
 
-![](https://web-cdn.agora.io/docs-files/1562926258836)
+	![](https://web-cdn.agora.io/docs-files/1562926258836)
 3. 根据屏幕提示，在注册邮箱中确认启用 App 证书。
 4. 回到**项目管理**页，会看到 **App 证书**显示已启用。
 
-![](https://web-cdn.agora.io/docs-files/1562926274649)
+	![](https://web-cdn.agora.io/docs-files/1562926274649)
 
 **Note:** 若收件箱中没有确认邮件，请至订阅邮件或垃圾邮件中查找
 
