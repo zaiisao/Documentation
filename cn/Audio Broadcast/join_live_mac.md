@@ -39,7 +39,9 @@ func setChannelProfile() {
 
 在该方法中：
 
-- 传入能标识用户角色和权限的 Token。测试环境下，你可以使用获取到的临时 Token。生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。关于如何生成正式 Token，详见[校验用户权限](../../cn/Audio%20Broadcast/token.md)。
+-  传入能标识用户角色和权限的 Token。
+	-   测试环境下，你可以使用临时 Token，详见[获取临时 Token](../../cn/Audio%20Broadcast/token.md)。
+	-   生产环境下，我们推荐你使用在自己的服务端生成的正式 Token。关于如何生成正式 Token，详见[服务端生成 Token](../../cn/Audio%20Broadcast/token_server.md)。
 - 传入能标识频道的频道 ID。输入相同频道 ID 的用户会进入同一个频道。
 - 传入能标识用户身份的用户 UID。请确保频道内每个用户的 UID 必须是独一无二的。如果想要从不同的设备同时接入同一个频道，请确保每个设备上使用的 UID 是不同的。
 
