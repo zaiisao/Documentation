@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Tue Jul 02 2019 06:31:44 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 08:34:07 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
@@ -70,16 +70,10 @@ This page contains information on how to prepare the development environment bef
 >   - Safari on iOS 12.1.4 or later.
 >   - Safari 12.1 or later on macOS.
 > - The Agora Web SDK v2.5 or later also supports Chrome 49 on Windows XP.
-> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/Agora%20Platform/websdk_how_to#edge) for details.
+> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/faq/browser_support#edge) for details.
 
 2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 3. Understand the limitations in [Known Issues](../../en/Interactive%20Broadcast/release_web_video.md) and [FAQ](https://docs.agora.io/en/search?type=faq&platform=Web).
-
-## Create an Agora Project and Get an App ID
-
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/) and follow the on-screen instructions to create a project.
-2. Click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation panel.
-3. Find the corresponding **App ID** under the created project.
 
 
 ## Import the Agora Web SDK to Your Project
