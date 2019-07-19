@@ -6,7 +6,13 @@ platform: Node.js
 updatedAt: Fri Jul 19 2019 02:47:04 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
-本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
+本文适用于以下版本的 Agora SDK。
+
+- Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
+- Agora Web SDK v2.4+
+- Agora Recording SDK v2.1+ 
+
+通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
 
 Agora 的鉴权 API 涵盖 Java、Python、CPP、Ruby、Node.js、PHP、Go 语言，你可以根据实际需要，选择相应的语言。
 
