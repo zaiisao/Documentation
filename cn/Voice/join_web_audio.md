@@ -10,7 +10,7 @@ updatedAt: Thu Jul 18 2019 11:31:07 GMT+0800 (CST)
 
 在加入频道前，请确保你已完成环境准备、安装包获取等步骤，详见[客户端集成](../../cn/Voice/web_prepare.md)。
 
-为方便体验，Agora 支持在 Dashboard 的项目详情页，生成一个试用的临时 Token。在项目详情处，点击**生成临时 Token**，输入频道名，你就会在 **Token** 页面获取一个临时 Token。
+为方便体验，Agora 支持在 Dashboard 的项目详情页，生成一个试用的临时 Token，用于加入频道。在项目详情处，点击**生成临时 Token**，输入频道名，你就会在 **Token** 页面获取一个临时 Token。
 
 > 点击**生成临时 Token** 前，请确保你已开启项目 App 证书。详见[启用 App 证书](#appcertificate)。
 
