@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Fri Jul 19 2019 06:41:32 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 10:19:01 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora RTC SDK v2.1+、Agora Web SDK v2.4+ 以及 Agora Recording SDK v2.1+  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 C++ API 参考。
