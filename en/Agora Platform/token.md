@@ -92,15 +92,15 @@ If you did not choose  **APP ID + APP certificate + Token (recommended)**, follo
 
 When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/). Use either of the following ways to generate a temporary token:
 
-When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/) to join a channel. Follow the steps to generate a temporary token:
+When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/) to join a channel. 
 
-1. Enable the [App Certificate](../../en/Agora%20Platform/token.md). 
+On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
 
-2. On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
+> Ensure that you have enabled the App Certificate of the project before clicking **nerate a Temp Token** . See [Enablet the App Certificate](#appcertificate).
 
-	![](https://web-cdn.agora.io/docs-files/1563113619615)
+![](https://web-cdn.agora.io/docs-files/1563113619615)
 
-	![](https://web-cdn.agora.io/docs-files/1563113643411)
+![](https://web-cdn.agora.io/docs-files/1563113643411)
 
 ### Get a token
 

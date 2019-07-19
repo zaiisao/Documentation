@@ -12,9 +12,12 @@ updatedAt: Thu Jul 18 2019 11:32:18 GMT+0800 (CST)
 
 为方便体验，Agora 支持在 Dashboard 的项目详情页，生成一个试用的临时 Token。在项目详情处，点击**生成临时 Token**，输入频道名，你就会在 **Token** 页面获取一个临时 Token。
 
+> 点击**生成临时 Token** 前，请确保你已开启项目 App 证书。详见[启用 App 证书](#appcertificate)。
+
 ![](https://web-cdn.agora.io/docs-files/1562926292439)
 
 ![](https://web-cdn.agora.io/docs-files/1562926303571)
+
 
 ## 实现方法
 App 在加入频道前，需要先设置频道模式，再加入频道。
