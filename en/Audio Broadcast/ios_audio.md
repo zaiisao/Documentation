@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: iOS
-updatedAt: Tue Jun 04 2019 09:24:40 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 08:33:41 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a voice call with the Agora SDK for iOS.
@@ -17,26 +17,6 @@ Development environment:
 - Before accessing Agora’s services, ensure that you open the ports and whitelist the domains specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 
 > Use a physical device to run the sample. Emulators may lack the functionality or performance needed to run the sample.
-
-## Create an Agora Project and Get an App ID
-
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Audio%20Broadcast/sign_in_and_sign_up.md).
-
-2. Click **Get Started** under **Projects**.
-
-	![](https://web-cdn.agora.io/docs-files/1563523371446)
-
-3. Input your project name in the pop-up window and click **Create**. Follow the on-screen instructions to get to know the basic steps to start a video call. Once the project is created, you can find it under **Projects**.
-
-	![](https://web-cdn.agora.io/docs-files/1563523478084)
-	
-4. Click the **Edit** button behind the new project, or the **Project Management** button ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
-
- ![](https://web-cdn.agora.io/docs-files/1563523678240)
-
-5. On the **Project Management** panel, find the **App ID** of your project.
-
- ![](https://web-cdn.agora.io/docs-files/1563523737158)
 
 ## Add the Agora SDK to Your Project
 
