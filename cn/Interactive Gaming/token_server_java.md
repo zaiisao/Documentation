@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Java
-updatedAt: Fri Jul 19 2019 02:42:56 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 02:43:12 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本文适用于 2.1 及之后版本的 Agora SDK。通过简单的 API 调用，在服务端生成 Token，在加入频道时使用。
@@ -64,10 +64,10 @@ public SimpleTokenBuilder(String appId, String appCertificate, String channelNam
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>appID</code></td>
-<td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Interactive%20Gaming/token.md"><span>获取 App ID</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App ID。详见 <a href="https://docs.agora.io/cn/Agora%20Platform/token/#app-id"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Interactive%20Gaming/token.md"><span>获取 App Certificate</span></a>。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="https://docs.agora.io/cn/Agora%20Platform/token/#app-certificate"><span>获取 App Certificate</span></a>。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
@@ -92,10 +92,10 @@ public SimpleTokenBuilder(String appId, String appCertificate, String channelNam
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>appID</code></td>
-<td>Agora 为应用程序开发者签发的 App ID。详见 <a href="../../cn/Interactive%20Gaming/token.md"><span>获取 App ID</span></a> 。</td>
+<td>Agora 为应用程序开发者签发的 App ID。详见 <a href="https://docs.agora.io/cn/Agora%20Platform/token/#app-id"><span>获取 App ID</span></a> 。</td>
 </tr>
 <tr><td><code>appCertificate</code></td>
-<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="../../cn/Interactive%20Gaming/token.md"><span>获取 App Certificate</span></a>。</td>
+<td>Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 <a href="https://docs.agora.io/cn/Agora%20Platform/token/#app-certificate"><span>获取 App Certificate</span></a>。</td>
 </tr>
 <tr><td><code>channelName</code></td>
 <td>标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~</td>
