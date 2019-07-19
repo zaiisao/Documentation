@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 19 2019 08:42:47 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 09:11:29 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
@@ -90,8 +90,6 @@ If you did not choose  **APP ID + APP certificate + Token (recommended)**, follo
 
 ### Get a temporary token
 
-When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/). Use either of the following ways to generate a temporary token:
-
 When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/) to join a channel. 
 
 On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
@@ -105,24 +103,7 @@ On the **Project Details** page, click **Generate a Temp Token**, enter a channe
 
 ### Get a token
 
-When building the final production version of your application, you should generate a token on your server.
-
-#### 1. Deploy a token generator on your server
-
-First, use one of the Agora [sample codes](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) (C++, Go, Java, Node.js, Python, PHP, and Perl) to deploy a token generator on your server.
-
-Or you can write your own code in a programming language that is not mentioned above to deploy a token generator. 
-
-If you implement a token generator in a different language, you can propose a pull request on [GitHub](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey). We will merge any implementation that proves valid.
-
-#### 2. Generate a token
-
-The process of generating a token is as follows: 
-
-1.  The client sends a request for a token to your server.
-2.  The server uses the token generator you deploy to create a token and sends it back to the client.
-
-The application client needs to send the following parameters to the server to generate a token. See [Generate a Token on Your Server](../../en/Interactive%20Gaming/token_server.md).
+When building the final production version of your application, you should generate a token on your server. See [Generate a Token on Your Server](../../en/Interactive%20Gaming/token_server.md).
 
 ### Apply your token or temporary token
 
