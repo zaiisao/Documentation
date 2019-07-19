@@ -27,7 +27,7 @@ updatedAt: Fri Jul 19 2019 06:41:32 GMT+0800 (CST)
 
 我们推荐使用 **SimpleTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**SimpleTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
 
-开源仓库的 **./\<language\>/sample** 文件夹下包含用门用于演示 Token 生成的示例代码。其中， **Sample_builder** 是我们基于 **SimpleTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
+开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **Sample_builder** 是我们基于 **SimpleTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
 ## 快速生成 Token
 
