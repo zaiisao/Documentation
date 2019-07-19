@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Fri Jul 19 2019 09:17:31 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 09:18:34 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, and Agora Recording SDK v2.1+ users with  a quick guide on generating a pseudo-token using the **sample_builder** demos we provide, as well as token-generating API references in C++. 
