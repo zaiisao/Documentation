@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Fri Jul 19 2019 03:01:39 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 03:02:12 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 ## Token 代码仓库说明
@@ -114,6 +114,6 @@ updatedAt: Fri Jul 19 2019 03:01:39 GMT+0800 (CST)
 | `appID`          | Agora 为应用程序开发者签发的 App ID。详见 [获取 App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id). |
 | `appCertificate` | Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 [获取 App Certificate](https://docs.agora.io/cn/Agora%20Platform/token/#app-certificate). |
 | `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^_,{|},~ |
-*|* `userAccount`    *| 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：26 个小写英文字母 a-z；26 个大写英文字母 A-Z；10 个数字 0-9；空格；"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
+|* `userAccount`* | 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：26 个小写英文字母 a-z；26 个大写英文字母 A-Z；10 个数字 0-9；空格；"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
 | `role`           | <li>`Role_Attendee = 0`: 已废弃。通信模式的通话方。享有权限与角色 `Role_Publisher` 相同。<li> `Role_Publisher = 1` ：直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`: (默认) 直播模式下的观众（AUDIENCE）。<li>`Role_Admin = 101` ：已废弃。享有权限与角色 `Role_Publisher` 相同。 |
 | `privilegeExpiredTs`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilegeExpiredTs 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。|
