@@ -88,34 +88,26 @@ Access the Agora services by using your unique App ID:
 
 ### Step 2: Get an App Certificate
 
-Each Agora account can create multiple projects, and each project has a unique App ID and App Certificate.
+If you choose **APP ID + APP certificate + Token (recommended)**  when you create a project in the Dashboard,  the App Certificate is enabled by default.
 
-To get an App Certificate:
+![](https://web-cdn.agora.io/docs-files/1563114012279)
 
-1.  Login to [https://dashboard.agora.io](https://dashboard.agora.io).
+If you did not choose  **APP ID + APP certificate + Token (recommended)**, follow the steps to enable the certificate.
 
-2.  Click the **Edit** button of the corresponding project on the **Project Management** page.
+1. Find your project on the **Project Management** page at the [Agora Dashboard](https://dashboard.agora.io/) and click the **Edit** button.
 
-![](https://web-cdn.agora.io/docs-files/1558943085209)
+	![](https://web-cdn.agora.io/docs-files/1563112238811)
+	
+2. On the **Edit Project** page, click **Enable** to switch on the App Certificate and click **Save** to confirm your setting. 
 
-3. Click the **Enable** button next to the **App Certificate**. 
+	![](https://web-cdn.agora.io/docs-files/1563112280018)
+	
+3. Agora sends your account a confirmation Email. Follow the instruction to enable the App Certificate. 
+4. Go back to the  **Project Management** page, your can see App Certificate appears enabled. 
 
-4. Read the pop-up description of the App Certificate and click **Save** as promped. 
+	![](https://web-cdn.agora.io/docs-files/1563113154996)
 
-![](https://web-cdn.agora.io/docs-files/1558943467945)
-
-5.  The system sends your mail account a confirmation Email. Please follow the instruction to enable the App Certificate. 
-
-6. On the **Project Management** page, click the 'eye' icon to view and copy the App Certificate. You can re-click this icon to hide the App Certificate. 
-
-![](https://web-cdn.agora.io/docs-files/1558943748601)
-
-
-> -   Keep the App Certificate on the server, never on any client machine.
-> 
-> -   The App Certificate takes about five minutes to take effect after it is enabled.
-> 
-> -   Once the App Certificate is enabled for a project, a token must be used. For example, before enabling the App Certificate, an App ID can be used to join a channel; but once an App Certificate is enabled, a token or a Channel Key must be used to join a channel.
+**Note**: Check the Spam Email or Junk Email, if there's no confirmation Email in your inbox.
 
 ### Step 3: Integrate the Schema
 
