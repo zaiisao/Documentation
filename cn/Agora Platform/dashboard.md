@@ -3,7 +3,7 @@
 title: 使用 Dashboard
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 04 2019 07:58:56 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 10:36:22 GMT+0800 (CST)
 ---
 # 使用 Dashboard
 欢迎使用 Agora Dashboard。在这里，你可以查看频道用量，追踪通话质量，进行账户充值，管理项目和权限，以及获取 Agora 技术支持。
@@ -101,9 +101,9 @@ updatedAt: Thu Jul 04 2019 07:58:56 GMT+0800 (CST)
 
 我们提供专门的文档介绍水晶球提供的数据和具体含义，知道你使用水晶球来识别通话质量问题。详见[水晶球](../../cn/Agora%20Platform/aa_guide.md)。
 
-## 线上充值
+## 财务管理
 
-点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1557740933898) 按钮进入**财务消费**页面，查看账户余额，使用支付宝线上充值，并查询充值记录。详见[线上充值文档](../../cn/Agora%20Platform/online_payment.md)。
+点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1557740933898) 按钮进入**财务消费**页面，查看账户余额，使用支付宝线上充值，查询充值记录和账单，以及申请发票。详见[线上充值](../../cn/Agora%20Platform/online_payment.md)和[申请发票](../../cn/Agora%20Platform/apply_voice.md)。
 
 ## 管理成员和角色
 
