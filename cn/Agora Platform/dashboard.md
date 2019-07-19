@@ -1,11 +1,11 @@
 
 ---
-title: 使用 Dashboard
+title: Dashboard 概览
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 19 2019 10:38:02 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 10:38:53 GMT+0800 (CST)
 ---
-# 使用 Dashboard
+# Dashboard 概览
 欢迎使用 Agora Dashboard。在这里，你可以查看频道用量，追踪通话质量，进行账户充值，管理项目和权限，以及获取 Agora 技术支持。
 
 使用 Agora Dashboard 前，你需要创建一个 Agora 账号，详见[注册与登录](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。请务必保存好你的账号和密码。如果不小心遗失密码，也不必担心，参照[找回密码](../../cn/Agora%20Platform/sign_in_and_sign_up.md)中的步骤即可轻松找回密码。
