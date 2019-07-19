@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Web
-updatedAt: Tue Jul 02 2019 06:30:18 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 08:26:13 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Web SDK 进行音视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -74,13 +74,6 @@ updatedAt: Tue Jul 02 2019 06:30:18 GMT+0800 (CST)
 
 2. 请确保已打开特定端口，详见[防火墙说明](../../cn/Agora%20Platform/firewall.md) 。
 3. 请确保你已知悉发版说明中列出的问题，详见[已知问题和局限](../../cn/Audio%20Broadcast/release_web_video.md) 及[常见问题回答](https://docs.agora.io/cn/search?type=faq&platform=Web)。
-
-## 创建项目并获取 App ID
-
-1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号、创建项目。
-2. 点击 **Dashboard** 左侧的**项目管理** ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标，查看你所创建的项目详情。
-3. 在项目详情页，你可以查看你的 **App ID**。
-
 
 
 ## 获取 Agora Web SDK 安装包并保存到项目下
