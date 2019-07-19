@@ -3,561 +3,66 @@
 title: Generate a Token from the server
 description: Guide on how to generate tokens on the server side
 platform: Server
-updatedAt: Fri Jul 19 2019 09:05:40 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 09:05:48 GMT+0800 (CST)
 ---
 # Generate a Token from the server
-This page shows how to generate a token on your server for Agora SDK versions 2.1.0+. The token is used for joining a channel.
+This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, and Agora Recording SDK v2.1+ users with  a quick guide on generating a pseudo-token using the **sample_builder** demos we provide, as well as token-generating API references in C++. 
 
-The following programming languages are covered. Choose the one that applies to you:
+## An introduction to Agora's token repository
 
+Your token needs to be generated on your own server, hence you are required to first deploy a token generator on the server. In our [GitHub Repository](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey), we provide source codes and token generator demos in the following programming languages:
+
+- CPP
 - Java
-- C++
 - Python
-- Go
-- PHP
+- Ruby
 - Node.js
+- Go
 
-> The Token Builder that we provide supports both int uid and string userAccount. 
+The **./\<language\>/src** folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both AccessToken and SimpleTokenBuilder can generate a token for the following SDKs:
 
+- Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
+- Agora Web SDK v2.4+
+- Agora Recording SDK v2.1+ 
 
-## Java
+However, we recommend using **SimpleTokenBuilder** instead of **AccessToken**.  **AccessToken** implements all the core algorithms for generating a token, whilst **SimpleTokenBuilder** is a wrapper of **AccessToken** and provides much more simplified Interfaces. 
 
-### Initializes the Token Builder
+The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes.  Built upon **SimpleTokenBuilder**, **Sample_builder** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, or Agora Recording SDK. You can customize it based on your real business needs. 
 
-```java
-public boolean initTokenBuilder(String originToken);
+## Generate a token using **sample_builder**
+
+We take **sample_builder.cpp** as an example:
+
+1. Ensure that you have installed **openssl**. If you are using macOS, try the following command:
+    `brew install openssl`
+2. Synchronize the GitHub repository to your local drive.
+3. Navigate to the **/cpp/sample/** folder and open **sample_builder.cpp**. 
+> Our demo provides pseudo-App ID, appCertificate, channelName, uid, and userAccount for demonstration purposes.
+4. Replace the pseudo-App ID, appCertificate, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
+    - If you use an int uid to join a channel, comment out the following code block:
+```C++
+  result = SimpleTokenBuilder::buildTokenWithUserAccount(
+      appID, appCertificate, channelName, userAccount, UserRole::Role_Attendee,
+      privilegeExpiredTs);
+ std::cout << "Token With UserAccount:" << result << std::endl;
+```    
+    - If you use a string userAccount to join a channel, comment out the following code block:
+```C++
+  result = SimpleTokenBuilder::buildTokenWithUid(
+      appID, appCertificate, channelName, uid, UserRole::Role_Attendee,
+      privilegeExpiredTs);
+ std::cout << "Token With Int Uid:" << result << std::endl;
 ```
-
-This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
-
-> Do not call this method if you do not have an original token.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td><code>originToken</code></td>
-<td>The original token.</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>true: Method call succeeded.</li>
-<li>false: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-**Struct of the TokenBuilder**
-
-```java
-public SimpleTokenBuilder(String appId, String appCertificate, String channelName, String uid);
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>uid</code></td>
-<td>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.</td>
-</tr>
-</tbody>
-</table>
-
-```java
-public SimpleTokenBuilder(String appId, String appCertificate, String channelName, String userAccount);
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>userAccount</code></td>
-<td>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <p><li>The 26 lowercase English letters: a to z. <li> The 26 uppercase English letters: A to Z. <li> The 10 numbers: 0 to 9. <li> The space. <li> "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
-</tr>
-</tbody>
-</table>
-
-
-### Generates a Token \(buildToken\)
-
-```java
-public String buildToken();
-```
-
-This method generates a token in the string format.
-
-## C++
-
-### Initializes the Token Builder
-
-```c++
-bool initTokenBuilder(const std::string& originToken);
-```
-
-This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and privilege of the original token.
-
-> Do not call this method if you do not have an original token.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td><code>originToken</code></td>
-<td>The original token.</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>True: Method call succeeded.</li>
-<li>False: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-**Struct of the TokenBuilder**
-
-```c++
-SimpleTokenBuilder();
-SimpleTokenBuilder(const std::string& appId, const std::string& appCertificate,
-                   const std::string& channelName, uint32_t uid = 0);
-```
-
-This method is the struct of SimpleTokenBuilder.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-	<tr><td><code>uid</code></td>
-<td>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.</td>
-</tr>
-</tbody>
-</table>
-
-```
-SimpleTokenBuilder(const std::string& appId, const std::string& appCertificate,
-                   const std::string& channelName, const std::string& userAccount = "");
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-	<tr><td><code>userAccount</code></td>
-<td>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <p><li>The 26 lowercase English letters: a to z. <li> The 26 uppercase English letters: A to Z. <li> The 10 numbers: 0 to 9. <li> The space. <li> "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
-</tr>
-</tbody>
-</table>
-
-### Generates a Token \(buildToken\)
-
-```c++
-std::string buildToken();
-```
-
-This method generates a token in the string format.
-
-## Python
-
-### Initializes the Token Builder
-
-```python
-def initTokenBuilder(self, originToken);
-```
-
-This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
-
-> Do not call this method if you do not have an original token.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong</td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td><code>originToken</code></td>
-<td>The original token.</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-**Struct of the TokenBuilder**
-
-```python
-def __init__(self, appID, appCertificate, channelName, uid);
-```
-
-This method is the struct of SimpleTokenBuilder.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-	<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>uid</code></td>
-<td><li>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so. <li>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: The 26 lowercase English letters: a to z. The 26 uppercase English letters: A to Z. The 10 numbers: 0 to 9. The space. "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
-</tr>
-</tbody>
-</table>
-
-### Generates a Token \(buildToken\)
-
-```python
-def buildToken(self);
-```
-
-This method generates a token in the string format.
-
-## Go
-
-### Initializes the Token Builder
-
-```go
-func (builder SimpleTokenBuilder) InitTokenBuilder(originToken string);
-```
-
-This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
-
-> Do not call this method if you do not have an original token.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td><code>originToken</code></td>
-<td>The original token.</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-**Struct of the TokenBuilder**
-
-```go
-func CreateSimpleTokenBuilder(appID, appCertificate, channelName string, uid uint32) SimpleTokenBuilder
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>uid</code></td>
-<td>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.</td>
-</tr>
-</tbody>
-</table>
-
-```go
-func CreateSimpleTokenBuilder2(appID, appCertificate, channelName string, userAccount string) SimpleTokenBuilder
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>userAccount</code></td>
-<td>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <p><li>The 26 lowercase English letters: a to z. <li> The 26 uppercase English letters: A to Z. <li> The 10 numbers: 0 to 9. <li> The space. <li> "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
-</tr>
-</tbody>
-</table>
-
-<a name = "initPrivilegesGo"></a>
-
-### Generates a Token \(buildToken\)
-
-```go
-func (builder SimpleTokenBuilder) BuildToken() (string,error);
-```
-
-This method generates a token in the string format.
-
-## PHP
-
-### Initializes the Token Builder
-
-```php
-function initTokenBuilder($originToken);
-```
-
-This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
-
-> Do not call this method if you do not have an original token.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-	<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td><code>originToken</code></td>
-<td>The original token.</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-**Struct of the TokenBuilder**
-
-```php
-public function __construct($appID, $appCertificate, $channelName, $uid);
-```
-
-This method is the struct of SimpleTokenBuilder.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>uid</code></td>
-<td><li>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.<li>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: The 26 lowercase English letters: a to z. The 26 uppercase English letters: A to Z. The 10 numbers: 0 to 9. The space. "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
-</tr>
-</tbody>
-</table>
-
-### Generates a Token \(buildToken\)
-
-```php
-public function buildToken();
-```
-
-This method generates a token in the string format.
-
-## Node.js
-
-### Initializes the Token Builder
-
-```javascript
-initTokenBuilder = function (originToken);
-```
-
-This method uses the original token to reinitialize the token builder. Once called, this method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
-
-> Do not call this method if you do not have an original token.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td><code>originToken</code></td>
-<td>The original token.</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-
-
-**Struct of the TokenBuilder**
-
-```javascript
-var SimpleTokenBuilder = function (appID, appCertificate, channelName, uid);
-```
-
-This method is the struct of SimpleTokenBuilder.
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Interactive%20Gaming/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-	<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>uid</code></td>
-<td><li>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.<li>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: The 26 lowercase English letters: a to z. The 26 uppercase English letters: A to Z. The 10 numbers: 0 to 9. The space. "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
-</tr>
-</tbody>
-</table>
-
-
-### Generates a Token \(buildToken\)
-
-```javascript
-this.buildToken = function ();
-```
-
-This method generates a token in the string format.
-
-
+> Skip this step if you just want to take a quick look at how a token is generated.
+5. Open your terminal and navigate to the local folder holding **sample_builder.cpp**.
+6. Run the following command:
+    `g++ -std=c++0x -O0 -I../../ sample_builder.cpp -lz -lcrypto -o sample_builder`
+		*An executable file <b>sample_builder</b> appears in the folder.*
+7. In your terminal, run `./sample_builder` to generate a Token. 
+    *Your token is printed in your terminal window.*
+		
+> Ensure that you have correctly set the environment variant of **openssl**. Suppose you are using macOS and if `fatal error: 'openssl/hmac.h' file not found` appears, try the following command to debug:
+> 1. Run the `which openssl` command in your terminal
+>     *The terminal prints: `/usr/bin/openssl`*
+>  2. `cd /usr/local/include`
+>  3. `ln -s ../opt/openssl/include/openssl .`   
