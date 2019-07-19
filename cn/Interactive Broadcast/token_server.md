@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Fri Jul 19 2019 02:20:39 GMT+0800 (CST)
+updatedAt: Fri Jul 19 2019 03:01:39 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 ## Token 代码仓库说明
