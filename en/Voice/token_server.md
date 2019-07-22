@@ -25,9 +25,9 @@ The **./\<language\>/src** folder of each language holds source codes for genera
 - Agora Web SDK v2.4+
 - Agora Recording SDK v2.1+ 
 
-However, we recommend using **SimpleTokenBuilder** instead of **AccessToken**.  **AccessToken** implements all the core algorithms for generating a token, whilst **SimpleTokenBuilder** is a wrapper of **AccessToken** and provides much more simplified Interfaces. 
+However, we recommend using **RtcTokenBuilder** instead of **AccessToken**.  **AccessToken** implements all the core algorithms for generating a token, whilst **RtcTokenBuilder** is a wrapper of **AccessToken** and provides much more simplified Interfaces. 
 
-The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes.  Built upon **SimpleTokenBuilder**, **Sample_builder** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, or Agora Recording SDK. You can customize it based on your real business needs. 
+The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes.  Built upon **RtcTokenBuilder**, **RtcTokenBuilderSample** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, or Agora Recording SDK. You can customize it based on your real business needs. 
 
 ## Generate a token using **sample_builder**
 
