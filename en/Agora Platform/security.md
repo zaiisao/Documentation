@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 10:07:36 GMT+0800 (CST)
+updatedAt: Mon Jul 22 2019 10:08:50 GMT+0800 (CST)
 ---
 # Information Security Policy
 ## Introduction
@@ -135,7 +135,7 @@ Agora applies the following data retention policies:
 
 #### Session Recordings
 
-Customer recordings are only stored on the customer servers. Customers have the option of encrypting each file for each recording.
+Agora provides recording services that enable customers to record part or all of a call session. Customers can implement various recording scenarios provided that the users' personal information is under strict protection. Customer recordings are only stored on the customer servers. Customers have the option of encrypting each file for each recording.
 
 #### Operational Metrics and Customer Account Data
 
@@ -213,6 +213,8 @@ When evaluating the Agora Cloud, it is important for customers to understand and
 
 
 Customers retain control on the security they choose to implement to protect their own content, platform, applications, systems, and networks. For example, the security of the customer’s end-customer or end-user data collected by the customer, such as application logins, identities, passwords, payment information, names, and addresses are the responsibility of customer. This data is not shared with Agora.
+
+Agora recommends adding obvious prompts before accessing the users' personal information. An Enable/Disable button, with which the user can agree or disagree sharing the personal information, suffices.
 
 ## Security Training
 
