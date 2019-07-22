@@ -3,7 +3,7 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 03 2019 04:14:27 GMT+0800 (CST)
+updatedAt: Mon Jul 22 2019 08:05:44 GMT+0800 (CST)
 ---
 # Agora 平台概述
 声网 Agora 为开发者提供实时音视频 API，只需集成 Agora SDK，即可快速在应用内构建多种实时互动场景。
@@ -14,13 +14,11 @@ updatedAt: Wed Jul 03 2019 04:14:27 GMT+0800 (CST)
 
 | Agora SDK      | 实现功能             | 描述                                                         |
 | -------- | -------------------- | ------------------------------------------------------------ |
-| 语音 SDK  | [语音通话](../../cn/Voice/product_voice.md)<br>[互动直播](../../cn/Interactive%20Broadcast/product_live.md) | SDK 包体积较小，只针对纯音频场景。<sup> [1]</sup>            |
+| 语音 SDK  | [语音通话](../../cn/Voice/product_voice.md)<br>[互动直播](../../cn/Interactive%20Broadcast/product_live.md) | SDK 包体积较小，只针对纯音频场景。            |
 | 视频 SDK  | [视频通话](../../cn/Video/product_video.md)<br>[互动直播](../../cn/Interactive%20Broadcast/product_live.md) | 同时包含语音和视频功能。                                     |
 | 游戏 SDK  | [互动游戏](../../cn/Interactive%20Gaming/product_gaming.md)            | 专门针对游戏开发者提供，包体积最小 1 M 左右。                |
 | 录制插件 | [录制](../../cn/Recording/product_recording.md)             | 可以将语音聊天、视频聊天或直播的内容储存下来，提供给更多人在方便的时间观看。 |
 | 信令插件 | [信令](../../cn/Signaling/product_signaling.md)             | 基于 TCP 协议，提供了稳定可靠的消息通道，帮助你快速构建实时场景。 |
-
-> [1] 目前仅支持 Android 和 iOS 平台。
 
 ## 自建基础设施
 SD-RTN™（Software Defined Real-time Network）软件定义实时网，这是声网自建的底层实时传输网络，实际上，所有通过声网 SDK 接入的实时音视频数据都是通过 SD-RTN™ 传输和调度。这也是全球唯一一个专门针对实时传输设计的基础设施。目前，声网在全球部署近 200 个数据中心，通过智能动态路由算法，确保全球范围内的毫秒级超低延迟传输，保证技术服务高可用。
