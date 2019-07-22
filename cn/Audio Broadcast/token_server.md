@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Mon Jul 22 2019 04:28:38 GMT+0800 (CST)
+updatedAt: Mon Jul 22 2019 04:28:42 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+ 以及 Agora Recording SDK v2.1+  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 C++ API 参考。
@@ -36,7 +36,7 @@ updatedAt: Mon Jul 22 2019 04:28:38 GMT+0800 (CST)
 1. 由于我们的示例代码依赖 **openssl**, 请确保已安装 **openssl** 库。macOS 平台可通过以下命令安装：
      `brew install openssl` 
 3. 将 GitHub 仓库同步到本地。
-4. 打开 **/cpp/sample/sample_builder.cpp** 。
+4. 打开 **/cpp/sample/RtcTokenBuilderSample.cpp** 。
 5. 用你自己的 App ID、App Certificate 以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App Certificate，详见 [校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)
     - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
 ```C++
@@ -52,10 +52,11 @@ updatedAt: Mon Jul 22 2019 04:28:38 GMT+0800 (CST)
       privilegeExpiredTs);
  std::cout << "Token With Int Uid:" << result << std::endl;
 ```
-5. 打开你的本地终端，cd 进入到 **sample_builder.cpp** 所在文件夹。
-6. 运行指令 `g++ -std=c++0x -O0 -I../../ sample_builder.cpp -lz -lcrypto -o sample_builder` 。
-    *相同文件夹下会生成一个可执行文件 <b>sample_builder</b>* 。
-7. 在你的本地终端运行 **./sample_builder** 生成 Token。
+5. 打开你的本地终端，cd 进入到 **RtcTokenBuilderSample.cpp** 所在文件夹。
+6. 运行指令： 
+    `g++ -std=c++0x -O0 -I../../ RtcTokenBuilderSample.cpp -lz -lcrypto -o RtcTokenBuilderSample` 
+    *相同文件夹下会生成一个可执行文件 <b>RtcTokenBuilderSample</b>* 。
+7. 在你的本地终端运行 `./RtcTokenBuilderSample` 生成 Token。
      *新生成的伪 Token 会在你的本地终端显示。*
 		 
 > 假设你用的是 macOS 系统并遇到以下提示：fatal error: 'openssl/hmac.h' file not found ，你的 **openssl** 相关环境变量可能设置有误。可以在你的终端通过以下命令行排查问题：
@@ -69,7 +70,7 @@ updatedAt: Mon Jul 22 2019 04:28:38 GMT+0800 (CST)
 
 源码： [../cpp/src/SimpleTokenBuilder.h](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/SimpleTokenBuilder.h)
 
-你可以通过调用 **SimpleTokenBuilder.h** 提供的公开方法创建自己的 Token 生成器。请注意，**SimpleTokenBuilder.h** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
+你可以通过调用 **RtcTokenBuilder.h** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.h** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
 
 
 ### buildTokenWithUid

@@ -38,7 +38,7 @@ Agora 动态密钥分为 Channel Key 和 Token 两种。本文的动态密钥指
 ### 获取 App ID
 
 1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录 Dashboard。详见[创建新账号](../../cn/cloud-recording/sign_in_and_sign_up.md)。
-2. 点击 **项目列表** 处的**新手指引**。
+2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)
 
