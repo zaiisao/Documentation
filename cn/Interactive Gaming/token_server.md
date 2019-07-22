@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Sat Jul 20 2019 03:16:35 GMT+0800 (CST)
+updatedAt: Sat Jul 20 2019 03:16:39 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+ 以及 Agora Recording SDK v2.1+  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 C++ API 参考。
@@ -19,21 +19,21 @@ updatedAt: Sat Jul 20 2019 03:16:35 GMT+0800 (CST)
 - Node.js
 - Go
 
-[GitHub 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 的 **./\<language\>/src** 文件夹下包含生成各种版本的 Dynamic key 和 Token 的源码。其中：**AccessToken** 和 **SimpleTokenBuilder** 用于为以下 SDK 生成 Token：
+[GitHub 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 的 **./\<language\>/src** 文件夹下包含生成各种版本的 Dynamic key 和 Token 的源码。其中：**AccessToken** 和 **RtcTokenBuilder** 用于为以下 SDK 生成 Token：
 
 - Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
 - Agora Web SDK v2.4+
 - Agora Recording SDK v2.1+ 
 
-我们推荐使用 **SimpleTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**SimpleTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
+我们推荐使用 **RtcTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**RtcTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
 
-开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **Sample_builder** 是我们基于 **SimpleTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
+开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
 ## 快速生成 Token
 
 下面我们以 **sample_builder.cpp** 为例演示 Token 生成的过程：
 
-1. 由于我们的示例代码依赖 openssl, 请确保已安装 **openssl** 库。macOS 平台可通过以下命令安装：
+1. 由于我们的示例代码依赖 **openssl**, 请确保已安装 **openssl** 库。macOS 平台可通过以下命令安装：
      `brew install openssl` 
 3. 将 GitHub 仓库同步到本地。
 4. 打开 **/cpp/sample/sample_builder.cpp** 。
@@ -58,9 +58,9 @@ updatedAt: Sat Jul 20 2019 03:16:35 GMT+0800 (CST)
 7. 在你的本地终端运行 **./sample_builder** 生成 Token。
      *新生成的伪 Token 会在你的本地终端显示。*
 		 
-> 假设你用的是 macOS 系统并遇到以下提示：fatal error: 'openssl/hmac.h' file not found ，你的 openssl 相关环境变量可能设置有误。可以在你的终端通过以下命令行排查问题：
+> 假设你用的是 macOS 系统并遇到以下提示：fatal error: 'openssl/hmac.h' file not found ，你的 **openssl** 相关环境变量可能设置有误。可以在你的终端通过以下命令行排查问题：
 >  `which openssl`
->  `/usr/bin/openssl` 。
+>  `/usr/bin/openssl`
 >  `cd /usr/local/include`
 >  `ln -s ../opt/openssl/include/openssl`
 
@@ -69,7 +69,7 @@ updatedAt: Sat Jul 20 2019 03:16:35 GMT+0800 (CST)
 
 源码： [../cpp/src/SimpleTokenBuilder.h](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/SimpleTokenBuilder.h)
 
-你可以通过调用 `SimpleTokenBuilder.h` 提供的公开方法创建自己的 Token 生成器。请注意，`SimpleTokenBuilder.h` 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
+你可以通过调用 **SimpleTokenBuilder.h** 提供的公开方法创建自己的 Token 生成器。请注意，**SimpleTokenBuilder.h** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
 
 
 ### buildTokenWithUid
