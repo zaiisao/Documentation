@@ -3,7 +3,7 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 08:05:44 GMT+0800 (CST)
+updatedAt: Mon Jul 22 2019 08:06:19 GMT+0800 (CST)
 ---
 # Agora 平台概述
 声网 Agora 为开发者提供实时音视频 API，只需集成 Agora SDK，即可快速在应用内构建多种实时互动场景。
@@ -31,7 +31,7 @@ SD-RTN™（Software Defined Real-time Network）软件定义实时网，这是�
 | 基于 QoS 的动态路由 | <li>网络资源综合评估<li>QoS 最优路径保证                     |
 | 技术服务 SLA 保障   | <li>7 &times; 24 服务支持保障，包含工单/IM/论坛<li>一对一 VIP 客户服务支撑 |
 | 全球网络可靠性   | <li>99.999% 高可用<li>隐藏核心业务，如防 DDOS |
-| 全平台互通          | <li>支持 6000+ 终端设备适配<li>支持 Chrome、Safari、Firefox 等主流浏览器<li>支持 iOS、Android、Web、Windows、MacOS、Linux、CoCos、Unity、小程序等平台 |
+| 全平台互通          | <li>支持 6000+ 终端设备适配<li>支持 Chrome、Safari、Firefox 等主流浏览器<li>支持 iOS、Android、Web、Windows、MacOS、Electron、Linux、CoCos、Unity、小程序等平台 |
 | 底层协议            | 基于 UDP 协议优化多个私有协议                                |
 | 抗丢包优化          | 独创弱网优化抗丢包机制算法，音频 70% 丢包可用                |
 
