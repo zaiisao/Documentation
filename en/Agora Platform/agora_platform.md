@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 03 2019 04:13:40 GMT+0800 (CST)
+updatedAt: Mon Jul 22 2019 08:07:06 GMT+0800 (CST)
 ---
 # Agora Platform Overview
 Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications in your own application quickly.
@@ -14,13 +14,11 @@ After integrating the Agora SDK, you can call different sets of APIs to implemen
 
 | Agora SDK  | Functions                   | Description                                                  |
 | ---------- | ------------------------------------ | ------------------------------------------------------------ |
-| Voice SDK  | [Voice Call](../../en/Voice/product_voice.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only live broadcasts. <sup>[1]</sup> |
+| Voice SDK  | [Voice Call](../../en/Voice/product_voice.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only live broadcasts.  |
 | Video SDK  | [Video Call](../../en/Video/product_video.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | Provides both voice and video functions. |
 | Gaming SDK | [Interactive Gaming](../../cn/Interactive%20Gaming/product_gaming.md)                   | Optimized for gaming applications. The package size is about 1 MB. |
 | Recording Add-on  | [Recording](../../en/Recording/product_recording.md)                     | Records and saves voice/video calls and live broadcasts on your server. |
 | Signalling Add-on | [Signalling](../../en/Signaling/product_signaling.md)                    | Based on the TCP and provides a stable messaging channel for real-time communication scenarios. |
-
-> [1] Only supports Android and iOS for now.
 
 ## Self-built Infrastructure
 
@@ -36,7 +34,7 @@ Agora deploys about 200 data centers worldwide that use intelligent dynamic rout
 | QoS-based dynamic routing                       | <li>Comprehensive assessment of network resources<li>QoS optimal path guarantee |
 | SLA (Service Level Agreement) guarantee         | <li>7 &times; 24 support, including ticketing system/IM/community<li>One-to-one VIP service |
 | Global network reliability                      | <li>Global network availability at 99.999%<li>Invisible core business, such as anti-DDoS |
-| Compatibility and Interoperability              | <li>Support for 6000+ devices <li> Support for mainstream web browsers, including Google Chrome, Safari, and Firefox<li>Support for iOS, Android, the Web, Windows, macOS, Linux, CoCos, Unity, and so on |
+| Compatibility and Interoperability              | <li>Support for 6000+ devices <li> Support for mainstream web browsers, including Google Chrome, Safari, and Firefox<li>Support for iOS, Android, the Web, Windows, macOS, Electron, Linux, CoCos, Unity, and so on |
 | UDP (User Datagram Protocol) optimization       | Optimizes multiple private protocols based on the UDP        |
 | Self-developed audio and video codecs           | <li>Efficient use of network resources<li>Self-developed SOLO and NOVA codecs |
 | Anti-packet-loss optimization                   | <li>Algorithm for optimizing anti-packet-loss mechanism under weak network conditions<li>Audio anti-packet-loss rate of 70% |
