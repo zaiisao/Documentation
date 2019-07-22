@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 04 2019 04:04:19 GMT+0800 (CST)
+updatedAt: Mon Jul 22 2019 10:03:06 GMT+0800 (CST)
 ---
 # Information Security Policy
 ## Introduction
