@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Sat Jul 20 2019 08:04:20 GMT+0800 (CST)
+updatedAt: Sat Jul 20 2019 08:04:25 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, and Agora Recording SDK v2.1+ users with  a quick guide on generating a pseudo-token using the **sample_builder** demos we provide, as well as token-generating API references in C++. 
@@ -57,9 +57,9 @@ We take **sample_builder.cpp** as an example:
 5. Open your terminal and navigate to the local folder holding **sample_builder.cpp**.
 6. Run the following command:
     `g++ -std=c++0x -O0 -I../../ sample_builder.cpp -lz -lcrypto -o sample_builder`
-		*An executable file <b>sample_builder</b> appears in the folder.*
+ *An executable file <b>sample_builder</b> appears in the folder.*
 7. In your terminal, run `./sample_builder` to generate a Token. 
-    *Your token is printed in your terminal window.*
+ *Your token is printed in your terminal window.*
 		
 > Ensure that you have correctly set the environment variant of **openssl**. Suppose you are using macOS and if `fatal error: 'openssl/hmac.h' file not found` appears, try the followling command to debug:
 >1. Run the `which openssl` command in your terminal.

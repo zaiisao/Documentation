@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Jul 11 2019 03:30:09 GMT+0800 (CST)
+updatedAt: Mon Jul 22 2019 01:58:28 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -34,6 +34,14 @@ Apps targeting Android 9 should honor the private DNS APIs. In particular, apps 
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
 
+## v2.8.1
+
+v2.8.1 is released on Jul. 20, 2019.
+
+### New features
+
+- Support for the x86-64 architecture.
+- Supoort for Android Q.
 
 ## v2.8.0
 

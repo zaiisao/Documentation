@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Jul 11 2019 03:30:06 GMT+0800 (CST)
+updatedAt: Mon Jul 22 2019 01:58:07 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -32,6 +32,15 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v2.8.1
+
+v2.8.1 is released on Jul. 20, 2019.
+
+### New features
+
+- Support for the x86-64 architecture.
+- Supoort for Android Q.
 
 ## v2.8.0
 
