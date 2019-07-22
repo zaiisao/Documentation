@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 17 2019 15:05:46 GMT+0800 (CST)
+updatedAt: Mon Jul 22 2019 04:27:59 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -11,6 +11,12 @@ Learn about the key terms of the Agora platform.
 ## Basics
 
 Things you need to know before using the Agora SDK.
+
+### RTC SDK
+We refer to all the Agora SDKs that enable real-time communication as the RTC SDK. You can use the RTC SDK to enable a  [Voice Call](https://docs.agora.io/en/Voice/product_voice), [Video Call](https://docs.agora.io/en/Video/product_video), [Audio Broadcast](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio), and [Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live). We categorize the RTC SDKs by the supported platforms:
+
+- The Agora Native SDK, including the Android, iOS, macOS, Windows, and Electron SDK.
+- The Agora Web SDK
 
 ### Agora Dashboard
 
