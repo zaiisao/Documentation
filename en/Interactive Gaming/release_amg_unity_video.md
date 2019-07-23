@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Tue Jul 23 2019 05:40:21 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 05:51:28 GMT+0800 (CST)
 ---
 # Release Notes
 ## Introduction
