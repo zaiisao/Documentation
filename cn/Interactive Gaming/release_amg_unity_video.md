@@ -3,13 +3,19 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Tue Jul 23 2019 05:50:56 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 05:52:54 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Unity 互动游戏 SDK，支持使用 C# 语言在 Unity 平台上实现游戏语音和视频功能。
 点击 [游戏产品概述](https://docs.agora.io/cn/Interactive%20Gaming/product_gaming?platform=All%20Platforms) 了解关键特性。
+
+## 2.2.1 版
+
+该版本于 2019 年 7 月 23 日发布。
+
+该版本新增对 Android 平台 arm64-v8a 架构的支持。
 
 ## 2.2 版
 
