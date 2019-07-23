@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Tue Jul 23 2019 16:12:06 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 16:12:13 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -27,19 +27,19 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 #### 设置日志文件地址
 
-支持通过调用 `setLogFile` 方法变更本地日志的默认地址。该方法无需在 `login` 成功之后调用，我们建议在初始化 Agora RTM 服务后即调用该方法，否则会造成日志文件显示不完整。
+支持通过调用 `setLogFile` 方法变更本地日志的默认地址。该方法无需在 `loginByToken` 成功之后调用，我们建议在初始化 Agora RTM 服务后即调用该方法，否则会造成日志文件显示不完整。
 
 #### 设置日志输出等级
 
 支持通过调用 `setLogFilter` 方法将日志内容按照 OFF、CRITICAL、ERROR、WARNING 和 INFO 不同等级输出。详见 [AgoraRtmLogFilter](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmLogFilter.html) 。
 
-> 该方法无需在 `login` 成功之后调用。
+> 该方法无需在 `loginByToken` 成功之后调用。
 
 #### 设置日志文件大小
 
 支持通过 `setLogFileSize` 方法设置日志文件大小。日志的默认大小为 512 KB。低于该默认大小的设置无效。
 
-> 该方法无需在 `login` 成功之后调用。
+> 该方法无需在 `loginByToken` 成功之后调用。
 
 #### 查询 SDK 版本信息
 
@@ -51,7 +51,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 - Agora RTM 服务未初始化
 - 调用频率超过上限
-- 未调用 `login` 方法或 `login` 方法未调用成功
+- 未调用 `loginByToken` 方法或 `loginByToken` 方法未调用成功
 
 ### 问题修复
 
