@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Tue Jul 23 2019 04:18:32 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 04:19:17 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -90,8 +90,8 @@ public int SetChannelProfile(CHANNEL_PROFILE profile);
 <tr><td><code>profile</code></td>
 <td><p>频道模式:</p>
 <ul>
-<li>CHANNEL_PROFILE_GAME_FREE_MODE = 0: 自由发言模式</li>
-<li>CHANNEL_PROFILE_GAME_COMMAND_MODE = 1: 指挥模式</li>
+<li>CHANNEL_PROFILE_GAME_FREE_MODE = 0: 自由发言模式。频道中的所有用户都可以自由发言</li>
+<li>CHANNEL_PROFILE_GAME_COMMAND_MODE = 1: 指挥模式。频道中有指挥和观众两种用户角色。指挥相当于主播，可以发送和接收音视频流；观众只能接收音视频流</li>
 </ul>
 </td>
 </tr>
