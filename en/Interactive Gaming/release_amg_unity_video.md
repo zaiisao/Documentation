@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Tue Jul 23 2019 05:51:28 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 05:51:41 GMT+0800 (CST)
 ---
 # Release Notes
 ## Introduction
@@ -11,6 +11,12 @@ updatedAt: Tue Jul 23 2019 05:51:28 GMT+0800 (CST)
 The Agora Unity SDK for Interactive Gaming provides C# interfaces to implement the voice and video functions for gaming on the Unity platform. 
 
 For key features, see [Interactive Gaming Overview](https://docs.agora.io/en/Interactive%20Gaming/product_gaming?platform=All%20Platforms).
+
+## v2.2.1
+
+v2.2.1 was released on Jul 23, 2019.
+
+This release adds support for the arm64-v8a architecture on Android.
 
 ## v2.2.0 
 
