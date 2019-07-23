@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Tue Jul 23 2019 04:24:50 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 04:27:22 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -77,8 +77,8 @@ This method configures the channel profile. The Agora RtcEngine needs to know wh
 <tr><td><code>profile</code></td>
 <td><p>The channel profile. Choose from the following:</p>
 <ul>
-<li><code>CHANNEL_PROFILE _GAME_FREEMODE</code> = 0: Free Mode</li>
-<li><code>CHANNEL_PROFILE _GAME_COMMANDMODE</code> = 1: Command Mode</li>
+<li><code>CHANNEL_PROFILE_GAME_FREE_MODE</code> = 0: The Free mode. All users in the channel can talk freely.</li>
+<li><code>CHANNEL_PROFILE_GAME_COMMAND_MODE</code> = 1: The Command Mode. In this mode, there are two user roles, that is, the boradcaster and the audience in a channel. The broadcaster sends and receives streams while the audience only receive them.</li>
 </ul>
 </td>
 </tr>
@@ -121,7 +121,7 @@ This method sets the user role before joining a channel, and allows you to switc
 <tr><td><code>role</code></td>
 <td><p>User role in a command-mode channel:</p>
 <ul>
-<li><code>CLIENT_ROLE_BROADCASTER</code> = 1: Host</li>
+<li><code>CLIENT_ROLE_BROADCASTER</code> = 1: Broadacster</li>
 <li><code>CLIENT_ROLE_AUDIENCE</code> = 2: Audience( default)</li>
 </ul>
 <p>Once set, only the host in the channel can talk, not the audience.</p>
