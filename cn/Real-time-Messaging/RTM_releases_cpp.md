@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux C++
-updatedAt: Tue Jul 23 2019 15:46:47 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 15:47:09 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -20,7 +20,10 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 支持与 Agora Signaling SDK 互通。
 
-本版本在 `LocalInvitation` 类中实现了 `setChannelId` 和 `getChannelId` 方法。请注意，如需与 Agora Signaling SDK 互通，则必须调用 `setChannelId` 方法设置频道 ID。不过即使被叫成功接受呼叫邀请，Agora RTM SDK 也不会将主叫或被叫加入指定频道。
+本版本在 `ILocalCallInvitation` 类中实现了 `setChannelId` 和 `getChannelId` 方法。
+
+> - 如需与 Agora Signaling SDK 互通，则必须调用 `setChannelId` 方法设置频道 ID。不过即使被叫成功接受呼叫邀请，Agora RTM SDK 也不会将主叫或被叫加入指定频道。
+> - 如果你的应用不涉及 Agora Signaling SDK，我们推荐使用 `ILocalCallInvitation::setContent` 或者 `IRemoteCallInvitation::setResponse` 方法设置自定义内容。
 
 #### 设置日志文件地址
 
