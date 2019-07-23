@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Tue Jul 23 2019 16:18:43 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 16:30:43 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -27,7 +27,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 #### 设置日志文件地址
 
-支持通过调用 `setLogFile` 方法变更本地日志的默认地址。该方法无需在 `login` 成功之后调用，我们建议在初始化 Agora RTM 服务后即调用该方法，否则会造成日志文件显示不完整。
+支持通过调用 `setLogFile` 方法变更本地日志的默认地址。该方法无需在 `login` 成功之后调用，我们建议在创建 `RtmClient` 后即调用该方法，否则会造成日志文件显示不完整。
 
 #### 设置日志输出等级
 
