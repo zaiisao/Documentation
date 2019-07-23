@@ -3,12 +3,63 @@
 title: 发版说明
 description: 
 platform: Linux Java
-updatedAt: Tue Jul 23 2019 16:20:26 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 16:20:34 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 。
+
+## 1.0 版
+
+该版本于 2019 年 7 月 24 日发布。
+
+### 新增功能
+
+### 新老互通
+
+支持与 Agora Signaling SDK 互通。
+
+本版本在 `LocalInvitation` 类中实现了 `setChannelId` 和 `getChannelId` 方法。
+
+> - 如需与 Agora Signaling SDK 互通，则必须调用 `setChannelId` 方法设置频道 ID。不过即使被叫成功接受呼叫邀请，Agora RTM SDK 也不会将主叫或被叫加入指定频道。
+> - 如果你的应用不涉及 Agora Signaling SDK，我们推荐使用 `LocalInvitation.setContent` 或者 `RemoteInvitation.setResponse` 方法设置自定义内容。
+
+#### 设置日志文件地址
+
+支持通过调用 `setLogFile` 方法变更本地日志的默认地址。该方法无需在 `login` 成功之后调用，我们建议在初始化 Agora RTM 服务后即调用该方法，否则会造成日志文件显示不完整。
+
+#### 设置日志输出等级
+
+支持通过调用 `setLogFilter` 方法将日志内容按照 OFF、CRITICAL、ERROR、WARNING 和 INFO 不同等级输出 。
+
+> 该方法无需在 `login` 成功之后调用。
+
+#### 设置日志文件大小
+
+支持通过 `setLogFileSize` 方法设置日志文件大小。日志的默认大小为 512 KB。低于该默认大小的设置无效。
+
+> 该方法无需在 `login` 成功之后调用。
+
+###  功能改进
+
+针对以下不同错误情况细化了错误代码
+
+- Agora RTM 服务未初始化
+- 调用频率超过上限
+- 未调用 `login` 方法或 `login` 方法未调用成功
+
+### 问题修复
+
+- 修复了一个可以用静态 App ID 和一个通过动态 App ID 生成的 Token 登录Agora RTM 系统的问题。
+
+
+### API 变更
+
+- [setLogFile](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad44bd79d005d25c68712cc35d16d934b)：设定日志文件的默认地址。
+- [setLogFilter](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6726b3a3eafee4528280d3b0d1c6316f)：设置日志输出等级。
+- [setLogFileSize](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a85a6365227adc43f8c3e07042dec6723)：设置日志文件大小。
+- [getSdkVersion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#af3cc54b4d456a67d912786f61619c065)：获取 Agora RTM SDK 的版本信息。
 
 ## 0.9.3 版
 
