@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Thu Jun 06 2019 10:17:32 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 15:57:40 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
