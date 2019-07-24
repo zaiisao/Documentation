@@ -3,7 +3,7 @@
 title: Agora RTM Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 24 2019 12:02:47 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 12:08:16 GMT+0800 (CST)
 ---
 # Agora RTM Overview
 The Agora RTM SDK provides a stable messaging mechanism for you to build real-time messaging scenarios with low latency and high concurrency at a global level. 
@@ -12,10 +12,12 @@ The Agora RTM SDK provides a stable messaging mechanism for you to build real-ti
 
 The Agora RTM SDK enables the following functions:
 
--   Send and receive peer-to-peer messages.
+-   Send and receive (offline) peer-to-peer messages.
 -   Send and receive channel messages.
 -   Get the member list of the channel.
 -   Create, send, cancel, accept, or decline a call invitation. 
+-   Set, update, or get a user's attributes. 
+-   Interconnect with the legacy Agora Signaling SDK
 
 
 ## Applications
