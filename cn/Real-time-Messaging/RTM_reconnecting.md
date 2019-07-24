@@ -1,11 +1,11 @@
 
 ---
-title: 连接状态转化机制说明
+title: 连接状态转移说明
 description: 
 platform: Linux C++
-updatedAt: Wed Jul 24 2019 01:00:05 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 01:36:53 GMT+0800 (CST)
 ---
-# 连接状态转化机制说明
+# 连接状态转移说明
 ## 状态定义
 
 Agora RTM SDK 与 Agora RTM 系统的连接状态共有一下五种定义
