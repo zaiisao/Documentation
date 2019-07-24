@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux Java
-updatedAt: Tue Jul 23 2019 09:33:29 GMT+0800 (CST)
+updatedAt: Tue Jul 23 2019 09:33:33 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -30,7 +30,12 @@ SDK 文件应包括 libs 文件和 sample 文件，其中 libs 文件包括：
 <tr><td><strong>文件/文件夹名称</strong></td>
 <td><strong>文件类型</strong></td>
 </tr>
-<tr><td>agora-rtm-sdk.jar</td>
+	<tr>
+<td>libagora_rtm_sdk.so</td>
+<td>数据库文件</td>
+</tr>
+<tr>
+<td>agora_rtm.jar</td>
 <td>Java JAR 文件</td>
 </tr>
 <tr><td>include</td>

@@ -3,7 +3,7 @@
 title: Dashboard 概览
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 24 2019 02:51:12 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 02:51:18 GMT+0800 (CST)
 ---
 # Dashboard 概览
 欢迎使用 Agora Dashboard。在这里，你可以查看频道用量，追踪通话质量，进行账户充值，管理项目和权限，以及获取 Agora 技术支持。
@@ -99,7 +99,7 @@ updatedAt: Wed Jul 24 2019 02:51:12 GMT+0800 (CST)
 
 选择**项目**和**时间段**、输入**频道名称**或 **UID** 后查看通话质量。
 
-我们提供专门的文档介绍水晶球提供的数据和具体含义，知道你使用水晶球来识别通话质量问题。详见[水晶球](../../cn/Agora%20Platform/aa_guide.md)。
+我们提供专门的文档介绍水晶球提供的数据和具体含义，指导你使用水晶球来识别通话质量问题。详见[水晶球](../../cn/Agora%20Platform/aa_guide.md)。
 
 ## 财务管理
 
