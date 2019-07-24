@@ -3,7 +3,7 @@
 title: Agora RTM Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 24 2019 12:08:16 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 12:09:35 GMT+0800 (CST)
 ---
 # Agora RTM Overview
 The Agora RTM SDK provides a stable messaging mechanism for you to build real-time messaging scenarios with low latency and high concurrency at a global level. 
