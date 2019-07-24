@@ -3,7 +3,7 @@
 title: 连接状态转移说明
 description: 
 platform: Linux C++
-updatedAt: Wed Jul 24 2019 02:20:30 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 04:15:35 GMT+0800 (CST)
 ---
 # 连接状态转移说明
 ## 状态定义
