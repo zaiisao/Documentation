@@ -3,12 +3,64 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Jul 24 2019 12:59:18 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 12:59:32 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 了解更多详情。
+
+## 0.9.3 版
+
+该版本于 2019 年 7 月 24 日发布。
+
+### 新增功能
+
+#### 发送（离线）点对点消息
+
+本版本支持发送离线消息。在开通离线消息后，用户不必等到接收端上线才能发送点对点消息。如果对端离线，消息服务器会为每个接收端存储 200 条离线消息长达七天。消息以队列形式存储。当离线消息超限时，最新存储的消息会导致最老的消息丢失。
+
+> 该方法的调用频率限制为每秒 60 条（点对点消息和频道消息一并计算在内）。
+
+#### 设置本地用户属性、查询指定用户属性
+
+本版本支持设置和查询用户属性。每个用户属性为 key 和 value 的键值对。每个属性的 key 为 32 字节可见字符，每个属性的 value 的字符串长度不得超过 8 KB。单个用户的全部属性长度不得超过 16 KB。以下为本版本支持内容：
+
+   - 全量设置本地用户属性
+   - 增加或更新本地用户属性
+   - 删除本地用户指定属性
+   - 清空本地用户属性
+   - 全量获取指定用户属性
+   - 获取指定用户指定属性。
+
+> - 设置的用户属性会在用户登出 Agora RTM 系统后自动失效。
+
+#### 查询用户在线状态
+
+本版本引入了新的概念：在线和离线。一般情况下：
+
+- 在线：用户已登录到 Agora RTM 系统。
+- 离线：用户已登出 Agora RTM 系统或因其他原因，比如权限或网络原因，与 Agora RTM 系统断开连接。
+
+本版本增加了查询用户在线状态功能。你可以在登录 Agora RTM 系统后查询最多 256 个指定用户的在线状态。
+
+#### 更新 Token
+
+本版本提供了更新 Token 的功能
+
+### API 变更
+
+#### 新增：
+
+- [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer)
+- [setLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setlocaluserattributes)
+- [addOrUpdateLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatelocaluserattributes)
+- [deleteLocalUserAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#deletelocaluserattributesbykeys)
+- [clearLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#clearlocaluserattributes)
+- [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributes)
+- [getUserAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributesbykeys)
+- [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus)
+- [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#renewtoken)
 
 ## 0.9.1 版
 
