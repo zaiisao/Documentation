@@ -3,12 +3,12 @@
 title: 连接状态转移说明
 description: 
 platform: iOS,macOS
-updatedAt: Wed Jul 24 2019 01:42:36 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 02:18:44 GMT+0800 (CST)
 ---
 # 连接状态转移说明
 ## 状态定义
 
-Agora RTM SDK 与 Agora RTM 系统的连接状态共有一下五种定义
+Agora RTM SDK 与 Agora RTM 系统的连接状态共有以下五种定义：
 
 - AgoraRtmConnectionStateDisconnected
 - AgoraRtmConnectionStateConnecting
@@ -57,7 +57,7 @@ Agora RTM SDK 与 Agora RTM 系统的连接状态共有一下五种定义
     - 连接状态改变原因： `AgoraRtmConnectionChangeReasonRemoteLogin` 。
 - 若 App 显式调用 `logoutWithCompletion:` 方法主动登出 Agora RTM 系统成功：
   - 本端收到回调 `rtmKit:connectionStateChanged:reason:` ，显示：
-    - 链接状态变为： `AgoraRtmConnectionStateDisconnected` ;
+    - 连接状态变为： `AgoraRtmConnectionStateDisconnected` ;
     - 连接状态改变原因：`AgoraRtmConnectionChangeReasonlogoutWithCompletion:` 。
 
 ### AgoraRtmConnectionStateReconnecting
