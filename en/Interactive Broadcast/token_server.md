@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: Guide on how to generate tokens on the server side
 platform: C++
-updatedAt: Wed Jul 24 2019 01:52:07 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 01:52:11 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, and Agora Recording SDK v2.1+ users with  a quick guide on generating a pseudo-token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in C++. 
@@ -70,9 +70,9 @@ We take **RtcTokenBuilderSample.cpp** as an example:
 
 ## API Reference
 
-Source code:  [../cpp/src/SimpleTokenBuilder.h](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/SimpleTokenBuilder.h)
+Source code:  [../cpp/src/RtcTokenBuilder.h](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/RtcTokenBuilder.h)
 
-You can create your own token generator using the public methods that **RtcTokenBuilder.h** provides. Note that **RtcTokenBuilder.h** supports both int uid and string userAccount. Ensure that you chose the right method. 
+You can create your own token generator using the public methods that **RtcTokenBuilder.h** provides. Note that **RtcTokenBuilder.h** supports both int uid and string userAccount. Ensure that you choose the right method. 
 
 ### buildTokenWithUid
 
