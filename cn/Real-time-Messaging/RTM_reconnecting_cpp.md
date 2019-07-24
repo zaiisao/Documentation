@@ -3,7 +3,7 @@
 title: 连接状态转移说明
 description: 
 platform: Linux C++
-updatedAt: Wed Jul 24 2019 04:15:35 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 06:27:32 GMT+0800 (CST)
 ---
 # 连接状态转移说明
 ## 状态定义
@@ -90,58 +90,22 @@ Agora RTM SDK 与 Agora RTM 系统的连接状态共有以下五种定义：
 
 ## 问答
 
-<a name="reconnecting"></a>
-
-### 连接状态变为 RECONNECTING 时我需要做什么吗？
-
-[查看答案](#a1)
-
-<a name="onLoginSuccess"></a>
-
-### 在重连状态下自动登录成功会收到 `onLoginSuccess` 回调吗？
-
-[查看答案](#a2)
-
-<a name="keepalive"></a>
-
-### 网络中断之后多久 Agora RTM 系统才会认为用户下线？
-
-[查看答案](#a3)
-
-<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-
-## 答案
-<a name="a1"></a>
-
-###  Q：连接状态变为 RECONNECTING 时我需要做什么吗？
-
-A：连接中断后，SDK 会自动重连 Agora RTM 系统直至登录成功，无需人为干预。
-
-[查看其他问题](#reconnecting)
-
-<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+<details>
+  <summary>连接状态变为 RECONNECTING 时我需要做什么吗？</summary>
+  <i>连接中断后，SDK 会自动重连 Agora RTM 系统直至登录成功，无需人为干预。</i>
+</details>
 
 
+<details>
+  <summary>在重连状态下自动登录成功会收到 onLoginSuccess 回调吗？</summary>
+    <i>onLoginSuccess 回调只有在你主动调用 login 方法成功时才会返回。重连状态下，SDK 会自动登录 Agora RTM 系统，所以重连成功时不会返回该回调。</i>
+</details>
 
+<details>
+  <summary>网络中断之后多久 Agora RTM 系统才会认为用户下线？</summary>
+   <i>当 Agora RTM 系统检测到 SDK 断开连接 30 秒时会将对应用户从在线用户列表移除。</i>
+</details>
 
-<a name="a2"></a>
-### Q：在重连状态下自动登录成功会收到 `onLoginSuccess` 回调吗？
-
-A：`onLoginSuccess`回调只有在你主动调用 `login`方法成功时才会返回。重连状态下，SDK 会自动登录 Agora RTM 系统，所以重连成功时不会返回该回调。
-
-[查看其他问题](#onLoginSuccess)
-
-<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-
-
-
-
-<a name="a3"></a>
-### Q：网络中断之后多久 Agora RTM 系统才会认为用户下线？
-
-A：当 Agora RTM 系统检测到 SDK 断开连接 30 秒时会将对应用户从在线用户列表移除。
-
-[查看其他问题](#keepalive)
 
 
 
