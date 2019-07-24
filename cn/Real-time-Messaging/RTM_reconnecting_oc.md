@@ -3,7 +3,7 @@
 title: 连接状态转移说明
 description: 
 platform: iOS,macOS
-updatedAt: Wed Jul 24 2019 02:21:14 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 03:03:29 GMT+0800 (CST)
 ---
 # 连接状态转移说明
 ## 状态定义
