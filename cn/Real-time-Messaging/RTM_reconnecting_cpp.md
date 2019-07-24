@@ -3,12 +3,12 @@
 title: 连接状态转移说明
 description: 
 platform: Linux C++
-updatedAt: Wed Jul 24 2019 01:44:52 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 02:20:30 GMT+0800 (CST)
 ---
 # 连接状态转移说明
 ## 状态定义
 
-Agora RTM SDK 与 Agora RTM 系统的连接状态共有一下五种定义
+Agora RTM SDK 与 Agora RTM 系统的连接状态共有以下五种定义：
 
 - CONNECTION_STATE_DISCONNECTED
 - CONNECTION_STATE_CONNECTING
@@ -30,7 +30,7 @@ Agora RTM SDK 与 Agora RTM 系统的连接状态共有一下五种定义
 
 该状态表示 App 已经调用 `login` 方法正在登录 Agora RTM 系统：
 
-- 若 SDK 成功登录 Agora RTM 系统成功
+- 若 SDK 登录 Agora RTM 系统成功：
   - 本端收到回调 `onLoginSuccess`
   - 本端收到回调 `onConnectionStateChanged` ，显示：
     - 连接状态变为： `CONNECTION_STATE_CONNECTED ` ； 
@@ -57,7 +57,7 @@ Agora RTM SDK 与 Agora RTM 系统的连接状态共有一下五种定义
     - 连接状态改变原因： `CONNECTION_CHANGE_REASON_REMOTE_LOGIN ` 。
 - 若 App 显式调用 `logout` 方法主动登出 Agora RTM 系统成功：
   - 本端收到回调 `onConnectionStateChanged` ，显示：
-    - 链接状态变为： `CONNECTION_STATE_DISCONNECTED` ;
+    - 连接状态变为： `CONNECTION_STATE_DISCONNECTED` ;
     - 连接状态改变原因：`CONNECTION_CHANGE_REASON_LOGOUT ` 。
 
 ### CONNECTION_STATE_RECONNECTING
