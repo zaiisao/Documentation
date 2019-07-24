@@ -70,7 +70,7 @@ java RecordingSample --appId <你的 App ID> --channel <频道名> --uid 0 --cha
 
 - `triggerMode`：选择录制启动模式。
   - 0：（默认）自动模式，加入频道自动开始录制，离开频道自动停止录制。
-  - 1：手动模式，手动输入命令开始和结束录制。
+  - 1：手动模式，手动输入命令开始和结束录制。详见 [FAQ](https://docs.agora.io/cn/faq/cmd_control_record)。
 - `idle`：设置空闲频道超时退出时间，单位为秒，最小值为 3 秒，默认值为 300 秒。如果频道空闲的状态持续超过该时间，录制程序会自动退出。idle 的时间也会纳入计费。频道空闲包括以下情况：
   - 通信模式下频道内没有 Native SDK 的用户，并且没有 Web SDK 的用户发布流。
   - 直播模式下频道内没有主播。
