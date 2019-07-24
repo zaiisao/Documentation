@@ -3,7 +3,7 @@
 title: 连接状态转移说明
 description: 
 platform: iOS,macOS
-updatedAt: Wed Jul 24 2019 04:08:44 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 04:10:13 GMT+0800 (CST)
 ---
 # 连接状态转移说明
 ## 状态定义
@@ -30,7 +30,7 @@ Agora RTM SDK 与 Agora RTM 系统的连接状态共有以下五种定义：
 
 该状态表示 App 已经调用 `loginByToken` 方法正在登录 Agora RTM 系统：
 
-- 若 SDK 成功登录 Agora RTM 系统成功
+- 若 SDK 登录 Agora RTM 系统成功：
   - 本端收到错误码 `AgoraRtmLoginErrorOk`
   - 本端收到回调 `rtmKit:connectionStateChanged:reason:` ，显示：
     - 连接状态变为： `AgoraRtmConnectionStateConnected ` ； 
@@ -88,58 +88,23 @@ Agora RTM SDK 与 Agora RTM 系统的连接状态共有以下五种定义：
 
 当有相同的 uid 从另一个实例登录 Agora RTM 系统，后登录的实例会导致当前的实例被 Agora RTM 系统踢出。被踢出的实例处于该状态。此时请调用 `logoutWithCompletion:` 先登出系统再根据实际业务情况调用 `loginByToken` 方法重新登录 Agora RTM 系统。
 
-## 问题
-
-<a name="reconnecting"></a>
-
-### 连接状态变为 RECONNECTING 时我需要做什么吗？
-
-[查看答案](#a1)
-
-<a name="onLoginSuccess"></a>
-
-### 在重连状态下自动登录成功会收到 `AgoraRtmLoginErrorOk` 错误码吗？
-
-[查看答案](#a2)
-
-<a name="keepalive"></a>
-
-### 网络中断之后多久 Agora RTM 系统才会认为用户下线？
-
-[查看答案](#a3)
-
-<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-
-## 答案
-<a name="a1"></a>
-
-###  Q：连接状态变为 AgoraRtmConnectionStateReconnecting 时我需要做什么吗？
-
-A：连接中断后，SDK 会自动重连 Agora RTM 系统直至登录成功，无需人为干预。
-
-[查看其他问题](#reconnecting)
-
-<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+## 问答
 
 
+<details>
+  <summary>连接状态变为 RECONNECTING 时我需要做什么吗？</summary>
+  连接中断后，SDK 会自动重连 Agora RTM 系统直至登录成功，无需人为干预。
+</details>
 
 
-<a name="a2"></a>
-### Q：在重连状态下自动登录成功会收到 `AgoraRtmLoginErrorOk` 错误码吗？
+<details>
+  <summary>在重连状态下自动登录成功会收到 `AgoraRtmLoginErrorOk` 错误码吗？</summary>
+  `AgoraRtmLoginErrorOk` 错误码只有在你主动调用 `loginByToken`方法成功时才会返回。重连状态下，SDK 会自动登录 Agora RTM 系统，所以重连成功时不会返回该回调。
+</details>
 
-A：`AgoraRtmLoginErrorOk` 错误码只有在你主动调用 `loginByToken`方法成功时才会返回。重连状态下，SDK 会自动登录 Agora RTM 系统，所以重连成功时不会返回该回调。
+<details>
+  <summary>网络中断之后多久 Agora RTM 系统才会认为用户下线？</summary>
+ 当 Agora RTM 系统检测到 SDK 断开连接 30 秒时会将对应用户从在线用户列表移除。
+</details>
 
-[查看其他问题](#onLoginSuccess)
-
-<br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-
-
-
-
-<a name="a3"></a>
-### Q：网络中断之后多久 Agora RTM 系统才会认为用户下线？
-
-A：当 Agora RTM 系统检测到 SDK 断开连接 30 秒时会将对应用户从在线用户列表移除。
-
-[查看其他问题](#keepalive)
 
