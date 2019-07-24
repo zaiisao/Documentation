@@ -3,7 +3,7 @@
 title: Agora RTM Overview
 description: 
 platform: All Platforms
-updatedAt: Mon May 20 2019 06:20:26 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 12:02:47 GMT+0800 (CST)
 ---
 # Agora RTM Overview
 The Agora RTM SDK provides a stable messaging mechanism for you to build real-time messaging scenarios with low latency and high concurrency at a global level. 
@@ -68,7 +68,7 @@ The Agora RTM SDK provides the following features:
   </tr>
 	  <tr>
     <td>Compatibility</td>
-    <td>Supports the following platforms:<li>iOS, Android (arm64, armv7, x86), macOS, Windows (coming soon), Linux, and Web;<br><li>Java server and C++ server<br></td>
+    <td>Supports the following platforms:<li>iOS, Android (arm64, armv7, x86), macOS, Windows (coming soon), and Linux<br><li> Web: Chrome 58+, Firefox 56+, Safari 11+<br><li>Java server and C++ server<br></td>
   </tr>
 </table>
 
