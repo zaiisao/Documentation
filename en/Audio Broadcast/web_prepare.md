@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Fri Jul 19 2019 08:34:07 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 07:18:29 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
@@ -99,20 +99,18 @@ This method requires npm, see [Install npm](https://www.npmjs.com/get-npm) for d
 Add the following code to the line above `</body>` in your project.
 
  ```javascript
-	<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.7.0.js"></script>
+	<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.8.0.js"></script>
 ```
 
 ### Method 3: Get the SDK from the official Agora website
 
 1. [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Agora Web SDK.
 
-   <img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/en/web_sdk_download.png" style="width: 840px;"/>
+2. Copy the `AgoraRTCSDK-2.8.0.js` file to your project.
 
-2. Copy the `AgoraRTCSDK-2.6.1.js` file to your project.
+3. Reference the `AgoraRTCSDK-2.8.0.js` file in your project.
 
-3. Reference the `AgoraRTCSDK-2.6.1.js` file in your project.
-
-   <img alt="../_images/web_sdk_reference.jpeg" src="https://web-cdn.agora.io/docs-files/en/web_sdk_reference.jpeg" />
+   ![](https://web-cdn.agora.io/docs-files/1563952664617)
 
 > The screenshots are for reference only, please use the latest version of the SDK.
 
