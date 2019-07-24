@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 24 2019 09:30:25 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 09:32:22 GMT+0800 (CST)
 ---
 # 注册与登录
 本页介绍如何创建 Agora 开发者账号和修改账号设置。
