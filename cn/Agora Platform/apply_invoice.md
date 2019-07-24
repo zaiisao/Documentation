@@ -3,17 +3,10 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 24 2019 10:10:10 GMT+0800 (CST)
+updatedAt: Wed Jul 24 2019 10:11:00 GMT+0800 (CST)
 ---
 # 申请发票
-角色为管理员/财务的账户可在 [Agora Dashboard](https://dashboard.agora.io/) 申请开具发票。
-
-如想申请发票，需满足下列条件：
-
-- 账户完成[实名认证](../../cn/Agora%20Platform/identity_authentication.md)
-- 账单需扣费
-- 账期为 2019 年 5 月之后
-- 账户余额不为负
+本文介绍如何在Agora Dashboard 申请开具发票。
 
 声网支持开具增值税电子普通发票与增值税纸质普通发票。电子发票支持财务入账，其法律效力、基本用途、基本使用规定等与纸质发票相同。
 
@@ -25,6 +18,15 @@ updatedAt: Wed Jul 24 2019 10:10:10 GMT+0800 (CST)
 | 企业普通 | 个人/企业 | 账单总金额不少于 ¥ 100 | 直接在 Dashboard 申请                                        | 电子邮件 |
 | 企业专用 | 企业      | 无                     | 联系声网销售 [sales@agora.io](mailto:sales@agora.io) 后在 Dashboard 申请 | 纸质快递 |
 
+如想申请发票，需满足下列条件：
+
+- 账户完成[实名认证](../../cn/Agora%20Platform/identity_authentication.md)
+- 账单需扣费
+- 账期为 2019 年 5 月之后
+- 账户余额不为负
+
+> 角色为管理员/财务的账户拥有进入财务消费页面的权限。
+
 ## 申请指引
 
 登录 [Agora Dashboard](https://dashboard.agora.io/)，点击左侧导航栏**财务消费 > 账单 > 发票**按钮进入**发票**页面，在**可申请**标签下申请发票。
@@ -33,7 +35,7 @@ updatedAt: Wed Jul 24 2019 10:10:10 GMT+0800 (CST)
 
 申请发票前，请确保已完成下列任务：
 
-1. 进行实名认证：点击**去认证**，按照屏幕指引完成个人认证或企业认证。详见[实名认证指引](../../cn/Agora%20Platform/identity_authentication.md)。
+1. 进行实名认证：点击**去认证**，按照屏幕指引完成个人认证或企业认证。详见[实名认证](../../cn/Agora%20Platform/identity_authentication.md)。
 	
 	个人实名认证可申请个人普通发票或企业普通发票；企业实名认证可申请企业普通发票或企业专用发票。
 	
