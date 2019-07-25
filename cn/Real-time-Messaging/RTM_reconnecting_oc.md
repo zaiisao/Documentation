@@ -1,11 +1,11 @@
 
 ---
-title: 连接状态转移说明
+title: 连接状态管理
 description: 
 platform: iOS,macOS
-updatedAt: Wed Jul 24 2019 04:10:13 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 03:59:12 GMT+0800 (CST)
 ---
-# 连接状态转移说明
+# 连接状态管理
 ## 状态定义
 
 Agora RTM SDK 与 Agora RTM 系统的连接状态共有以下五种定义：
@@ -98,8 +98,8 @@ Agora RTM SDK 与 Agora RTM 系统的连接状态共有以下五种定义：
 
 
 <details>
-  <summary>在重连状态下自动登录成功会收到 `AgoraRtmLoginErrorOk` 错误码吗？</summary>
-  `AgoraRtmLoginErrorOk` 错误码只有在你主动调用 `loginByToken`方法成功时才会返回。重连状态下，SDK 会自动登录 Agora RTM 系统，所以重连成功时不会返回该回调。
+  <summary>在重连状态下自动登录成功会收到 AgoraRtmLoginErrorOk 错误码吗？</summary>
+  AgoraRtmLoginErrorOk 错误码只有在你主动调用 loginByToken方法成功时才会返回。重连状态下，SDK 会自动登录 Agora RTM 系统，所以重连成功时不会返回该回调。
 </details>
 
 <details>
