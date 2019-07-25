@@ -3,7 +3,7 @@
 title: Recording Voice and Video
 description: 
 platform: Linux
-updatedAt: Fri Jun 14 2019 08:49:05 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 02:55:09 GMT+0800 (CST)
 ---
 # Recording Voice and Video
 This page shows how to use the Agora On-premise Recording SDK to enable voice and video recording and use the transcoding scripts.
@@ -338,7 +338,8 @@ Once recording is finished, use` video_convert.py` and `ffmpeg` to merge the rec
     -   In the automatically record mode, the <code>-m</code> parameter merges all voice and video files of one uid and generates a single `UID_0_merge_av.mp4` file.
     -   In the manually record mode, the <code>startService</code> and <code>stopService</code> parameters manage and divide the recorded files. Each start/stop makes one service, and the <code>-m</code> parameter generates multiple `UID_XX_merge_av.mp4` files.
 
-The transcoding tool includes `video_convert.py` and `ffmpeg`. The Python script can merge the separated voice and video recorded files into one MPEG-4 file and the script relies on `ffmpeg`. You can get the transcoding tool `ffmpeg` and `video_convert.py` in the **tools** folder in [On-premise Recording SDK](https://docs-preview.agoralab.co/en/Recording/downloads). Decompress `ffmpeg`, and make sure it is in the same directory as `video_convert.py.` Execute the following command to run the transcoding tool:
+The transcoding tool includes `video_convert.py` and `ffmpeg`. The Python script can merge the separated voice and video recorded files into one MPEG-4 file and the script relies on `ffmpeg`. You can get the transcoding tool `ffmpeg` and `video_convert.py` in the **tools** folder in [On-premise Recording SDK](https://docs-preview.agoralab.co/en/Recording/downloads). Decompress `ffmpeg`, and make sure it is in the same directory as `video_convert.py.` 
+> The transcoding script requires Python 2.7 or later.
 
 Execute `python video_convert.py` with the following usage:
 
