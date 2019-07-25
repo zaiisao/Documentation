@@ -3,7 +3,7 @@
 title: 云端录制发版说明
 description: 
 platform: Linux
-updatedAt: Thu Jul 18 2019 06:20:47 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 09:28:23 GMT+0800 (CST)
 ---
 # 云端录制发版说明
 ## 简介
@@ -18,6 +18,34 @@ Agora 云端录制与以下 Agora SDK 兼容:
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制 与 Agora Web SDK 1.12.0 或更高版本兼容。            |
+
+## 1.2.0 版
+
+该版本于 2019 年 7 月 19 日发布，新增特性、改进及修复问题如下。
+
+### 新增特性
+
+#### 自定义合流布局
+
+RESTful API 新增自定义的合流布局。使用方法详见[自定义合流布局](../../cn/cloud-recording/cloud_layout_guide.md)。
+
+你可以在开始录制时将 `mixedVideoLayout` 设为 3，并在 `layoutConfig` 中设置每个用户的画面大小和位置。你也可以在录制过程中调用 `updateLayout` 方法随时更新合流布局。
+
+#### 自定义背景色
+
+RESTful API 新增 `backgroundColor` 参数，支持自定义合流的画布背景色。无论使用何种合流布局，都可以通过该参数设置画布的背景色。
+
+#### 录制的时间戳
+
+为方便开发者获得精准的录制开始时间，RESTful API 提供录制开始第一片切片的 Unix 时间戳 `sliceStartTime`，可以通过 `query` 方法查询获得。同时在 RESTful API 的回调通知中新增事件 `recorder_slice_start`，提供第一片录制切片开始的时间和上一次录制失败的时间。
+
+### 改进
+
+RESTful API 优化了对 `resourceId` 和 `cname` 以及 `uid` 是否对应的检查。
+
+### 修复问题
+
+修复了默认的合流布局中存在的一些小问题。
 
 ## 1.1.1 版
 
