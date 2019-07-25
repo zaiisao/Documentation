@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux C++
-updatedAt: Thu Jul 25 2019 02:51:11 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 02:51:22 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -12,15 +12,15 @@ Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time
 
 > For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_product.md).
 
-## v1.0
+## v1.0.0
 
-v1.0 is released on July 24th, 2019.
+v1.0.0 is released on July 24th, 2019.
 
 ### New Features
 
 ### Interconnects with the legacy Agora Signaling SDK
 
-v1.0 implements the `ILocalCallinvitation::setChannelId` and `ILocalCallinvitation::getChannelId` methods. 
+v1.0.0 implements the `ILocalCallinvitation::setChannelId` and `ILocalCallinvitation::getChannelId` methods. 
 
 > - To intercommunicate with the legacy Agora Signaling SDK, you MUST set the channel ID. However, even if the callee successfully accepts the call invitation, the Agora RTM SDK does not join the channel of the specified channel ID.
 > - If your App does not involve the legacy Agora Signaling SDK, we recommend using the `ILocalCallInvitation::setContent` method or the `IRemoteCallInvitation::setResponse` method to set customized contents. 
