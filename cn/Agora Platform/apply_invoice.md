@@ -3,7 +3,7 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 24 2019 10:11:00 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 07:58:37 GMT+0800 (CST)
 ---
 # 申请发票
 本文介绍如何在Agora Dashboard 申请开具发票。
@@ -16,7 +16,7 @@ updatedAt: Wed Jul 24 2019 10:11:00 GMT+0800 (CST)
 | :------- | :-------- | :--------------------- | :----------------------------------------------------------- | :------- |
 | 个人普通 | 个人      | 账单总金额不少于 ¥ 100 | 直接在 Dashboard 申请                                        | 电子邮件 |
 | 企业普通 | 个人/企业 | 账单总金额不少于 ¥ 100 | 直接在 Dashboard 申请                                        | 电子邮件 |
-| 企业专用 | 企业      | 无                     | 联系声网销售 [sales@agora.io](mailto:sales@agora.io) 后在 Dashboard 申请 | 纸质快递 |
+| 企业专用 | 企业      | 无                     | 联系声网销售 [sales@agora.io](mailto:sales@agora.io) 后<br>在 Dashboard 申请 | 纸质快递 |
 
 如想申请发票，需满足下列条件：
 
