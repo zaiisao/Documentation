@@ -3,12 +3,12 @@
 title: 实名认证
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 25 2019 04:28:28 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 10:30:13 GMT+0800 (CST)
 ---
 # 实名认证
 依据中国法律规定，你需要对账号所属的个人或者企业信息主体进行认证，否则网络运营者停止提供相关服务。
 
-本文介绍如何在 Agora Dashboard 进行实名认证。
+本页介绍如何在 Agora Dashboard 进行实名认证。
 
 声网的实名认证分为**个人实名认证**和**企业实名认证**两种。个人实名认证可升级为企业实名认证。
 
