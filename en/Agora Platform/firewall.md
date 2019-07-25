@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 25 2019 02:54:58 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 06:13:52 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -89,7 +89,7 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | -------- | ----------------- |
-| TCP ports | 1080; 8001 to 8199 |
+| TCP ports | 1080; 8001 to 8199; 10000 to 10010; 10100 to 10110 |
 | UDP ports | 8180 to 8199       |
 
 Whitelist domains:
