@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 09:29:28 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -64,7 +64,7 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。**例如`"527841"`。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云端录制不支持 String 用户名，请确保频道内所有用户均使用整型的 UID。**例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
 ### `acquire` 请求示例
@@ -81,7 +81,7 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
     "clientRequest":{
     }
 }
-```
+ ```
 
 ### `acquire` 响应示例
 
@@ -120,7 +120,7 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。**例如`"527841"`。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云端录制不支持 String 用户名，请确保频道内所有用户均使用整型的 UID。**例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该请求请参考下面的列表设置。         |
 
 `clientRequest` 中需要填写的内容如下：
@@ -154,24 +154,36 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
     - `fps`：（必填）Number 类型，录制视频的帧率，单位 fps，默认值 15。
     - `bitrate`：（必填）Number 类型，录制视频的码率，单位 Kbps，默认值 500。
     - `maxResolutionUid`：（选填）String 类型，如果视频合流布局设为垂直布局，用该参数指定显示大视窗画面的用户 ID。
-    - `mixedVideoLayout`：（选填）Number 类型，视频合流布局，详见[设置合流布局](../../cn/cloud-recording/cloud_layout_guide.md)。
+    - `mixedVideoLayout`：（选填）Number 类型，设置视频合流布局，0、1、2 为[预设的合流布局](https://docs.agora.io/cn/cloud-recording/cloud_layout_guide?platform=Linux)，3 为自定义合流布局。该参数设为 3 时必须设置 `layoutConfig` 参数。
       - `0`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个录制画面。
       - `1`：自适应布局。根据用户的数量自动调整每个画面的大小，每个用户的画面大小一致，最多支持 17 个录制画面。
       - `2`：垂直布局。指定一个用户在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。
-  
+      - `3`：自定义布局。设置 `layoutConfig` 参数自定义合流布局。
+    - `backgroundColor`：（选填）String 类型。屏幕（画布）的背景颜色。支持 RGB 颜色表，字符串格式为 # 号后 6 个十六进制数。默认值 `"#000000"` 黑色。
+    - `layoutConfig`：（选填）JSONArray 类型。由每个用户对应的布局画面设置组成的数组，支持最多 17 个用户画面。当 mixedVideoLayout 设为 3 时，可以通过该参数自定义合流布局。一个用户画面设置包括以下参数：
+      - `uid`：（选填）String 类型。字符串内容为待显示在该区域的用户的 UID，32 位无符号整数。如果不指定 UID，会按照用户加入频道的顺序自动匹配 `layoutConfig` 中的画面设置。
+      - `x_axis`：（必填）Float 类型。屏幕里该画面左上角的横坐标的相对值，范围是  [0.0,1.0]。从左到右布局，0.0 在最左端，1.0 在最右端。
+      - `y_axis`：（必填）Float 类型。屏幕里该画面左上角的纵坐标的相对值，范围是  [0.0,1.0]。从上到下布局，0.0 在最上端，1.0 在最下端。
+      - `width`：（必填）Float 类型。该画面宽度的相对值，取值范围是 [0.0,1.0]。
+      - `height`：（必填）Float 类型。该画面高度的相对值，取值范围是 [0.0,1.0]。
+      - `alpha`：（选填）Float 类型。图像的透明度。取值范围是 [0.0,1.0] 。默认值 1.0。0.0 表示图像为透明的，1.0 表示图像为完全不透明的。
+      - `render_mode`：（选填）Number 类型。画面显示模式：
+        - `0`：（默认）裁剪模式。优先保证画面被填满。视频尺寸等比缩放，直至整个画面被视频填满。如果视频长宽与显示窗口不同，则视频流会按照画面设置的比例进行周边裁剪或图像拉伸后填满画面。
+        - `1`：缩放模式。优先保证视频内容全部显示。视频尺寸等比缩放，直至视频窗口的一边与画面边框对齐。如果视频尺寸与画面尺寸不一致，在保持长宽比的前提下，将视频进行缩放后填满画面，缩放后的视频四周会有一圈黑边。
 - `storageConfig`：JSON 类型，第三方云存储的详细设置。
+  
   - `vendor`：Number 类型，第三方云存储供应商。    
-    - `0`：[七牛云](https://www.qiniu.com/products/kodo)
-    - `1`：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)
-    - `2`：[阿里云](https://www.aliyun.com/product/oss)
+    - `0`：七牛云
+    - `1`：Amazon S3
+    - `2`：阿里云
   - `region`：Number 类型，第三方云存储指定的地区信息。
-    当 `vendor` = 0，即第三方云存储为[七牛云](https://www.qiniu.com/products/kodo)时：  
+    当 `vendor` = 0，即第三方云存储为七牛云时：  
     - `0`：Huadong 
     - `1`：Huabei 
     - `2`：Huanan 
-    - `3`：Beimei  
-
-    当 `vendor` = 1，即第三方云存储为 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1) 时：
+  - `3`：Beimei  
+  
+    当 `vendor` = 1，即第三方云存储为 Amazon S3 时：
     - `0`：US_EAST_1 
     - `1`：US_EAST_2 
     - `2`：US_WEST_1 
@@ -189,9 +201,9 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
     - `14`：AP_SOUTH_1 
     - `15`：CN_NORTH_1 
     - `16`：CN_NORTHWEST_1 
-    - `17`：US_GOV_WEST_1 
-
-    当 `vendor` = 2，即第三方云存储为[阿里云](https://www.aliyun.com/product/oss)时： 
+  - `17`：US_GOV_WEST_1 
+  
+    当 `vendor` = 2，即第三方云存储为阿里云时： 
     - `0`：CN_Hangzhou 
     - `1`：CN_Shanghai 
     - `2`：CN_Qingdao 
@@ -237,11 +249,11 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
             "videoStreamType": 1, 
             "transcodingConfig": {
                 "height": 640, 
+                "width": 360,
                 "bitrate": 500, 
                 "fps": 15, 
                 "mixedVideoLayout": 1,
-                "maxResolutionUid": "1",
-                "width": 360
+                "backgroudColor": "#FF0000"            
             }
         }, 
         "storageConfig": {
@@ -253,7 +265,7 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
         }
     }
 }
-```
+ ```
 
 ### `start` 响应示例
 
@@ -267,6 +279,109 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
 ```
 
 - `code`: Number 类型，[响应状态码](#status)。
+- `resourceId`: String 类型，云端录制使用的 resource ID。
+- `sid`: String 类型，录制 ID。成功开始云端录制后，你会得到一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
+
+## <a name="update"></a>更新合流布局的 API
+
+在录制过程中，可以随时调用该方法更新合流布局的设置。
+
+每次调用该方法都会覆盖原来的布局设置，例如在开始录制时设置了 `backgroundColor` 为 `"#FF0000"`（红色），调用该方法更新合流布局时如果不设置 `backgroundColor` 参数，背景色会变为默认值黑色。
+
+- 方法：POST
+- 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/updateLayout
+
+> 请求数限制为每秒钟 10 次。
+
+### 参数
+
+该 API 需要在 URL 中传入以下参数。
+
+| 参数       | 类型   | 描述                                                         |
+| :--------- | :----- | :----------------------------------------------------------- |
+| appid      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) |
+| resourceid | String | 通过 [`acquire`](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#acquire) 请求获取的 resource ID。 |
+| sid        | String | 通过 [`start`](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#start) 请求获取的录制 ID。 |
+| mode       | String | 录制模式，目前只支持合流模式 `mix`。                         |
+
+该 API 需要在请求包体中传入以下参数。
+
+| 参数            | 类型   | 描述                                                         |
+| :-------------- | :----- | :----------------------------------------------------------- |
+| `cname`         | String | 待录制的频道名。                                             |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如 `"527841"`。 |
+| `clientRequest` | JSON   | 特定的客户请求参数，对于该请求请参考下面的列表设置。         |
+
+clientRequest 中需要填写的内容如下：
+
+- `maxResolutionUid`：（选填）String 类型，如果 `layoutType` 设为 2（垂直布局），用该参数指定显示大视窗画面的用户 ID。
+- `mixedVideoLayout`：（选填）Number 类型，设置视频合流布局，0、1、2 为[预设的合流布局](https://docs.agora.io/cn/cloud-recording/cloud_layout_guide?platform=Linux)，3 为自定义合流布局。该参数设为 3 时必须设置 `layoutConfig` 参数。
+  - `0`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个录制画面。
+  - `1`：自适应布局。根据用户的数量自动调整每个画面的大小，每个用户的画面大小一致，最多支持 17 个录制画面。
+  - `2`：垂直布局。指定一个用户在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。
+  - `3`：自定义布局。设置 `layoutConfig` 参数自定义合流布局。
+- `backgroundColor`：（选填）String 类型。屏幕（画布）的背景颜色。支持 RGB 颜色表，字符串格式为 # 号后 6 个十六进制数。默认值 `"#000000"` 黑色。
+- `layoutConfig`：（选填）JSONArray 类型。由每个用户对应的布局画面设置组成的数组，支持最多 17 个用户画面。当 `layoutType` 设为 3 时，可以通过该参数自定义合流布局。一个用户画面设置包括以下参数：
+  - `uid`：（选填）String 类型。字符串内容为待显示在该画面的用户的 UID，32 位无符号整数。如果不指定 UID，会按照用户加入频道的顺序自动匹配 `layoutConfig` 中的画面设置。
+  - `x_axis`：（必填）Float 类型。屏幕里该画面左上角的横坐标的相对值，范围是  [0.0,1.0]。从左到右布局，0.0 在最左端，1.0 在最右端。
+  - `y_axis`：（必填）Float 类型。屏幕里该画面左上角的纵坐标的相对值，范围是  [0.0,1.0]。从上到下布局，0.0 在最上端，1.0 在最下端。
+  - `width`：（必填）Float 类型。该画面宽度的相对值，取值范围是 [0.0,1.0]。
+  - `height`：（必填）Float 类型。该画面高度的相对值，取值范围是 [0.0,1.0]。
+  - `alpha`：（选填）Float 类型。图像的透明度。取值范围是 [0.0,1.0] 。默认值 1.0。0.0 表示图像为透明的，1.0 表示图像为完全不透明的。
+  - `render_mode`：（选填）Number 类型。画面显示模式：
+    - 0：（默认）裁剪模式。优先保证画面被填满。视频尺寸等比缩放，直至整个画面被视频填满。如果视频长宽与显示窗口不同，则视频流会按照画面设置的比例进行周边裁剪或图像拉伸后填满画面。
+    - 1：缩放模式。优先保证视频内容全部显示。视频尺寸等比缩放，直至视频窗口的一边与画面边框对齐。如果视频尺寸与画面尺寸不一致，在保持长宽比的前提下，将视频进行缩放后填满画面，缩放后的视频四周会有一圈黑边。
+
+### updateLayout 请求示例
+
+- 请求 URL：`https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/<mode>/updateLayout`
+- `Content-type` 为 `application/json;charset=utf-8`
+- `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
+- 请求包体内容：
+
+```json
+{
+    "uid": "527841",
+    "cname": "httpClient463224",
+    "clientRequest": {
+        "layoutType": 3,
+        "backgroundColor": "#FF0000",
+        "layoutConfig": [
+        {
+            "uid": "1",
+             "x_axis": 0.1,
+             "y_axis": 0.1,
+             "width": 0.1,
+             "height": 0.1,
+             "alpha": 1.0,
+            "render_mode": 1
+         },
+        {
+            "uid": "2",
+             "x_axis": 0.2,
+            "y_axis": 0.2,
+             "width": 0.1,
+             "height": 0.1,
+             "alpha": 1.0,
+             "render_mode": 1
+         }
+         ]
+     }
+}
+```
+
+### updateLayout 响应示例
+
+```json
+"Code": 200,
+"Body":
+{
+  "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a", 
+  "resourceId": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+}
+```
+
+- `code`: Number 类型，[响应状态码](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#status)。
 - `resourceId`: String 类型，云端录制使用的 resource ID。
 - `sid`: String 类型，录制 ID。成功开始云端录制后，你会得到一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
 
@@ -304,7 +419,8 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
   "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
   "serverResponse":{
     "fileList": "xxxxx.m3u8",
-    "status": "5"
+    "status": "5",
+    "sliceStartTime": "1562724971626"
     }    
 }
 ```
@@ -325,6 +441,7 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
     - `7`：云端录制服务全部停止。
     - `8`：云端录制准备退出。
     - `20`：云端录制异常退出。
+  - `sliceStartTime`: String 类型，录制开始的时间，Unix 时间戳，单位为毫秒。
 
 ## <a name="stop"></a>停止云端录制的 API
 
@@ -352,7 +469,7 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。**例如`"527841"`。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云端录制不支持 String 用户名，请确保频道内所有用户均使用整型的 UID。**例如`"527841"`。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
 ### `stop` 请求示例
@@ -368,7 +485,7 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
     "clientRequest":{
     }
 }
-```
+ ```
 
 ### `stop` 响应示例
 
@@ -397,15 +514,15 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
 
 ## <a name="status"></a>响应状态码
 
-| 状态码 | 描述        |
-| :----- | :-------------------- |
-| 200    | 请求成功。            |
-| 201    | 成功请求并创建了新的资源。              |
-| 206    | 服务器成功处理了部分 GET 请求。      |
-| 400    | 请求的语法错误（如参数错误），服务器无法理解。            |
-| 404    | 服务器无法根据请求找到资源（网页）。         |
-| 500    | 服务器内部错误，无法完成请求。 |
-| 504    | 充当网关或代理的服务器未及时从远端服务器获取请求。      |
+| 状态码 | 描述                                               |
+| :----- | :------------------------------------------------- |
+| 200    | 请求成功。                                         |
+| 201    | 成功请求并创建了新的资源。                         |
+| 206    | 服务器成功处理了部分 GET 请求。                    |
+| 400    | 请求的语法错误（如参数错误），服务器无法理解。     |
+| 404    | 服务器无法根据请求找到资源（网页）。               |
+| 500    | 服务器内部错误，无法完成请求。                     |
+| 504    | 充当网关或代理的服务器未及时从远端服务器获取请求。 |
 
 ## 常见错误
 
@@ -416,11 +533,11 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
 	- `Content-type` 错误，请确保 `Content-type` 为 `application/json;charset=utf-8`。
 	- 请求 URL 中缺少 `cloud_recording` 字段。
 	- 使用了错误的 HTTP 方法。
-- `433`：resource ID 过期。获得 resource ID 后必须在 5 分钟内开始云端录制。请重新调用 [acquire](#acquire) 获取新的 resource ID。
-- `501`：录制服务正在退出。该错误可能在调用了 [stop](#stop) 方法后再调用 [query](#query) 时发生。
-- `1001`：resource ID 解密失败。请重新调用 [acquire](#acquire) 获取新的 resource ID。
+- `433`：resource ID 过期。获得 resource ID 后必须在 5 分钟内开始云端录制。请重新调用 [`acquire`](#acquire) 获取新的 resource ID。
+- `501`：录制服务正在退出。该错误可能在调用了 [`stop`](#stop) 方法后再调用 [`query`](#query) 时发生。
+- `1001`：resource ID 解密失败。请重新调用 [`acquire`](#acquire) 获取新的 resource ID。
 - `1003`：App ID 或者录制 ID（sid）与 resource ID 不匹配。请确保在一个录制周期内 resource ID、App ID 和录制 ID 一一对应。
-- `1004`：录制已经在进行中，请勿重复 [start](#start) 请求。
+- `1004`：录制已经在进行中，请勿重复 [`start`](#start) 请求。
 - `1005`：resource ID 已被使用。一个 resource ID 只能用于一次云端录制。
 - `1013`：频道名不合法。频道名必须为长度在 64 字节以内的字符串。以下为支持的字符集范围（共 89 个字符）：
   - 26 个小写英文字母 a-z
@@ -429,4 +546,5 @@ updatedAt: Thu Jul 18 2019 07:06:56 GMT+0800 (CST)
   - 空格
   - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
 
+- `1028`：[`updateLayout`](#update) 方法的请求包体中参数错误。
 - `"invalid appid"`：无效的 App ID。请确保 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) 填写正确。如果检查了 App ID 没有问题仍遇到此错误，请联系 Agora 技术支持。
