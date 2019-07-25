@@ -3,12 +3,12 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 25 2019 07:58:37 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 10:31:56 GMT+0800 (CST)
 ---
 # 申请发票
-本文介绍如何在Agora Dashboard 申请开具发票。
+本页介绍如何在Agora Dashboard 申请开具发票。
 
-声网支持开具增值税电子普通发票与增值税纸质普通发票。电子发票支持财务入账，其法律效力、基本用途、基本使用规定等与纸质发票相同。
+声网支持开具增值税电子发票与增值税纸质发票。电子发票支持财务入账，其法律效力、基本用途、基本使用规定等与纸质发票相同。
 
 声网支持的发票类型见下表：
 
@@ -21,7 +21,7 @@ updatedAt: Thu Jul 25 2019 07:58:37 GMT+0800 (CST)
 如想申请发票，需满足下列条件：
 
 - 账户完成[实名认证](../../cn/Agora%20Platform/identity_authentication.md)
-- 账单需扣费
+- 账单需付费
 - 账期为 2019 年 5 月之后
 - 账户余额不为负
 
