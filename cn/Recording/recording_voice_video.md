@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: Linux
-updatedAt: Wed Jun 12 2019 06:07:43 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 02:53:20 GMT+0800 (CST)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 本地服务端录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
