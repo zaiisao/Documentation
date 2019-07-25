@@ -3,7 +3,7 @@
 title: 防火墙说明
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 06:59:24 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 02:53:53 GMT+0800 (CST)
 ---
 # 防火墙说明
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。相关规则如下：
