@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 24 2019 12:10:40 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 10:19:08 GMT+0800 (CST)
 ---
 # 产品概述
 
@@ -61,7 +61,7 @@ Agora RTM SDK 主要有以下特性：
   </tr>
   <tr>
     <td>全球部署低延时</td>
-    <td>全球部署数据中心，全球平均延时 &lt; 200ms，国内平均延时 &lt; 100ms</td>
+    <td>全球部署数据中心，全球平均延时 &lt; 200ms，同区平均延时 &lt; 100ms</td>
   </tr>
   <tr>
     <td>高并发</td>
