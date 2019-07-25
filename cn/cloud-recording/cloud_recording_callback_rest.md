@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Jul 12 2019 07:57:37 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 09:29:58 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 云端录制 RESTful API 提供回调服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -76,6 +76,7 @@ POST 请求头部的 `Content-type` 为 `application/json`。
 - [`33`](#33)：当前上传的进度
 - [`40`](#40)：录制服务已启动
 - [`41`](#41)：录制服务已退出
+- [`42`](#42)：云端录制服务开始第一片录制文件切片
 
 ### <a name="1"></a>cloud_recording_error
 
@@ -170,6 +171,14 @@ POST 请求头部的 `Content-type` 为 `application/json`。
   - 2：频道内除录制 App 外，没有其他用户
   - 4：捕获到信号错误
   - 8：wrapper 层主动退出
+
+### <a name="42"></a>recorder_slice_start
+
+`eventType` 为 42 表示录制服务开始切片第一片录制文件， `details` 中包含以下字段：
+
+- `msgName`：String 类型，消息名称，即 `recorder_slice_start`。
+- `discontinueUtcMs`：Number 类型，上一次录制失败的结束时间，UTC 时间，精确到毫秒。如果与 `startUtcMs` 一致表示上一次录制没有失败。
+- `startUtcMs`：Number 类型，第一片录制切片开始的时间，UTC 时间，精确到毫秒。
 
 ## 参考
 
