@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 24 2019 09:32:22 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 10:18:05 GMT+0800 (CST)
 ---
 # 注册与登录
 本页介绍如何创建 Agora 开发者账号和修改账号设置。
@@ -11,7 +11,7 @@ updatedAt: Wed Jul 24 2019 09:32:22 GMT+0800 (CST)
 ## 创建新账号
 按照下列步骤创建 Agora 账号：
 
-1. 进入 [Agora 官网](http://www.agora.io/cn/)，点击顶部导航栏**注册**按钮，即可进入注册页面。
+1. 进入[注册页面](https://sso.agora.io/cn/signup)。
 
 2. 填写你的**邮箱**和**密码**，单击**注册**按钮。
  
@@ -29,14 +29,14 @@ updatedAt: Wed Jul 24 2019 09:32:22 GMT+0800 (CST)
 
 2. 如下图所示，你可以修改界面语言、偏好设置、账号密码等。Agora 会根据你的偏好设置为你提供个性化的服务。
 
-![](https://web-cdn.agora.io/docs-files/1563960335599)
+![](https://web-cdn.agora.io/docs-files/1563960733631)
 
 
 ## 找回密码
 
 如果你忘记了密码，可通过以下方式找回密码：
 
-1. 进入 [Agora 官网](http://www.agora.io/cn/)，点击顶部导航栏的**登录**按钮，进入登录页面。
+1. 进入[登录页面](https://sso.agora.io/cn/signup)。
 
 2. 点击**忘记密码**。
 
