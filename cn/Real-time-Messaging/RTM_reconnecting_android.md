@@ -1,11 +1,11 @@
 
 ---
-title: 连接状态转移说明
+title: 连接状态管理
 description: 
 platform: Android
-updatedAt: Wed Jul 24 2019 06:12:24 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 03:58:46 GMT+0800 (CST)
 ---
-# 连接状态转移说明
+# 连接状态管理
 ## 状态定义
 
 Agora RTM SDK 与 Agora RTM 系统的连接状态共有以下五种定义：
