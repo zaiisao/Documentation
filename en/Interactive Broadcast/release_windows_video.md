@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Jul 11 2019 03:30:05 GMT+0800 (CST)
+updatedAt: Fri Jul 26 2019 04:28:29 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -661,7 +661,7 @@ In an Interactive Broadcast scenario, the host can enhance the local audio effec
 
 #### 3. Online statistics query
 
-Adds Restful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host. See:
+Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host. See:
 
 - Voice or Video Call scenario: [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_communication.md)
 - Interactive Broadcast scenario: [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_live.md)

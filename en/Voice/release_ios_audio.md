@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Thu Jul 11 2019 03:30:08 GMT+0800 (CST)
+updatedAt: Fri Jul 26 2019 04:28:33 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -608,7 +608,7 @@ In an interactive broadcast, the host can enhance the local audio effects from t
 
 #### 3. Online statistics query
 
-Adds Restful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host:
+Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host:
 
 -  Voice or video calls: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_communication.md).
 -  Interactive broadcasts: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_live.md).

@@ -1,11 +1,11 @@
 
 ---
-title: Sign in and Sign up
+title: Create an Agora account
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 04 2019 07:45:59 GMT+0800 (CST)
+updatedAt: Wed Jul 31 2019 06:33:07 GMT+0800 (CST)
 ---
-# Sign in and Sign up
+# Create an Agora account
 An Agora account gives you access to the Agora Dashboard, which is your home for using Agora products. 
 
 ## Create an Agora account

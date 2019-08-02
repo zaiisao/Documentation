@@ -3,10 +3,10 @@
 title: Record a Call
 description: 
 platform: Linux CPP
-updatedAt: Thu Jul 25 2019 08:19:30 GMT+0800 (CST)
+updatedAt: Thu Aug 01 2019 09:45:51 GMT+0800 (CST)
 ---
 # Record a Call
-This page demonstrates how to record a call by using the command line. You can also record calls by calling the API methods. For the detailed API reference, see [Recording API](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/index.html). The command line and API methods implement the same recording functions. 
+This page demonstrates how to record a call by using the command line. You can also record calls by calling the API methods, see [Record by API](../../en/Recording/recording_api_cpp.md). The command line and API methods implement the same recording functions. 
 
 Ensure that you integrate the On-premise Recording SDK before proceeding, see [Integrate the SDK](../../en/Recording/recording_integrate_cpp.md).
 

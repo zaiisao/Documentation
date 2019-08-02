@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Linux CPP
-updatedAt: Mon Jul 08 2019 03:06:07 GMT+0800 (CST)
+updatedAt: Thu Aug 01 2019 09:44:38 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
@@ -172,9 +172,8 @@ Set up the environment on your Linux server:
 7. For debugging purposes, we recommend that you enable core dump on your Linux system.
 
 
-The Agora On-premise Recording SDK is integrated.
+The Agora On-premise Recording SDK is integrated. You can choose either of the following ways to start recording:
+- [Record by command line](../../en/Recording/recording_cmd_cpp.md): Record a call by using the command line with Agora's demo.
+- [Record by API](../../en/Recording/recording_api_cpp.md): Record a call by calling the APIs.
 
-## Next Steps
-
-Learn how to record by using the command line: [Record a Call](../../en/Recording/recording_cmd_cpp.md).
-
+The command line and API methods implement the same recording functions.

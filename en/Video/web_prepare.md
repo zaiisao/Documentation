@@ -66,7 +66,7 @@ This page contains information on how to prepare the development environment bef
   </tr>
 </table>
 
-> - Upgrade to Agora Web SDK v2.6 in the following scenarios:
+> - Upgrade to Agora Web SDK v2.6 or later in the following scenarios:
 >   - Safari on iOS 12.1.4 or later.
 >   - Safari 12.1 or later on macOS.
 > - The Agora Web SDK v2.5 or later also supports Chrome 49 on Windows XP.

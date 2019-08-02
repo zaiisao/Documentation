@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Windows
-updatedAt: Thu Apr 18 2019 08:39:11 GMT+0800 (CST)
+updatedAt: Wed Jul 31 2019 12:48:10 GMT+0800 (CST)
 ---
 # Signaling API
 > Version: v1.4.0
@@ -209,7 +209,7 @@ public virtual void login2 (char const * appId, size_t appId_size,char const * a
 <td>The maximum time allowed to re-login, 30 seconds by default.</td>
 </tr>
 <tr><td><code>retry_count</code></td>
-<td>The maximum times allowed to re-login, 15 times by default.</td>
+<td>The maximum times allowed to re-login, 3 times by default.</td>
 </tr>
 </tbody>
 </table>
@@ -269,7 +269,7 @@ public virtual void setAttr (char const * name, size_t name_size,char const * va
 <th>Description</th>
 </tr>
 <tr><td><code>name</code></td>
-<td>The attribute name, which can be up to 128 visible characters. For example, <code>_conn_timeout</code> is the built-in attribute, which refers to the offline timeout in seconds. It is set to 120 s by default and ranges between 20 s and 120 s. The SDK automatically readjusts any setting below 20 s to be 20 s and any setting exceeding 120 s to be 120 s.</td>
+<td>The attribute name, which can be up to 128 visible characters. </td>
 </tr>
 <tr><td><code>value</code></td>
 <td>The attribute value, which can be up to 1024 visible characters.</td>
@@ -441,7 +441,7 @@ public virtual void invoke (char const * name, size_t name_size,char const * req
 </ul>
 </td>
 </tr>
-<tr><td>Retrieves a list of the latest users in a channel.</td>
+<tr><td><b>Deprecated</b> Retrieves a list of the latest users in a channel.</td>
 <td><ul>
 <li>name: io.agora.signal.channel_query_userlist_all</li>
 <li>req: {“name”:channel name,”num”:number (by default 1000*1000)}</li>
@@ -536,7 +536,7 @@ public virtual void channelJoin (char const * channelID, size_t channelID_size) 
 <th>Description</th>
 </tr>
 <tr><td><code>channelID</code></td>
-<td><p>Channel name. It can be up to 128 visible characters and include the following special channel names and attributes:</p>
+<td><p>Channel name. It can be up to 128 visible characters and include the following special channel names and attributes <b>Deprecated and NOT recommended</b>:</p>
 <ul>
 <li><code>_agora_user_online</code>: All user-online or user-offline events within the current appID will be sent to this channel.</li>
 <li><code>_agora_channel_event</code>: All events about a user joining or leaving a channel within the current appID will be sent to this channel.</li>
@@ -674,7 +674,7 @@ The following table shows the built-in attributes of the parameter, <code>name</
 <tr><th>Attributes</th>
 <th>Description</th>
 </tr>
-<tr><td><code>_userNotification</code></td>
+<tr><td><b>Deprecated</b><code>_userNotification</code></td>
 <td><ul>
 <li>1: (Default) The channel sends a callback function that a user has joined or left the channel.</li>
 <li>0: The channel does not send a callback function that a user has joined or left the channel.</li>
@@ -695,10 +695,10 @@ The following table shows the built-in attributes of the parameter, <code>name</
 </ul>
 </td>
 </tr>
-<tr><td><code>_total_member_num</code></td>
+<tr><td><b>Deprecated</b> <code>_total_member_num</code></td>
 <td>Automatically indicates the accumulated number of the users in the channel. Similar to <code>_member_num</code> , <code>_auto_update_num</code> and <code>_auto_update_total_num</code> both need to be set to none zero.</td>
 </tr>
-<tr><td><code>_auto_update_total_num</code></td>
+<tr><td><b>Deprecated</b> <code>_auto_update_total_num</code></td>
 <td><p>Indicates whether to automatically refresh the number of the users currently in the channel.</p>
 <ul>
 <li>0: (Default) Disabled</li>

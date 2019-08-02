@@ -3,7 +3,7 @@
 title: Server SDK API
 description: 
 platform: Java
-updatedAt: Tue Apr 23 2019 06:06:28 GMT+0800 (CST)
+updatedAt: Wed Jul 31 2019 12:51:22 GMT+0800 (CST)
 ---
 # Server SDK API
 > Version: v1.4.0 BETA
@@ -442,7 +442,7 @@ public Signal.LoginSession.Channel channelJoin(String name, Signal.ChannelCallba
 <td><strong>Description</strong></td>
 </tr>
 <tr><td><code>name</code></td>
-<td><p>Channel name. It can be up to 128 visible characters and include the following special channel names and attributes:</p>
+<td><p>Channel name. It can be up to 128 visible characters and include the following special channel names and attributes <b>Deprecated and NOT recommended</b>:</p>
 <ul>
 <li><code>_agora_user_online</code>: All user-online or user-offline events within the current appID will be sent to this channel.</li>
 <li><code>_agora_channel_event</code>: All events about a user joining or leaving a channel within the current appID will be sent to this channel.</li>
@@ -510,7 +510,7 @@ The following table shows the built-in attributes of the parameter, name:
 <tr><td><strong>Attributes</strong></td>
 <td><strong>Description</strong></td>
 </tr>
-<tr><td><code>_userNotification</code></td>
+<tr><td><b>Deprecated</b> <code>_userNotification</code></td>
 <td><ul>
 <li>1: Default value. The channel sends callbacks that a user has joined or left the channel.</li>
 <li>0: The channel does not send callbacks that a user has joined or left the channel.</li>
@@ -520,10 +520,10 @@ The following table shows the built-in attributes of the parameter, name:
 <tr><td><code>_channel_ttl</code></td>
 <td>Time (s) between the last user leaving a channel and the system destroying the channel. The default value is 7200. A special channel will never be destroyed.</td>
 </tr>
-<tr><td><code>_member_num</code></td>
+<tr><td><b>Deprecated</b> <code>_member_num</code></td>
 <td>Number of the users currently in the channel. It is automatically updated by the system.</td>
 </tr>
-<tr><td><code>_auto_update_num</code></td>
+<tr><td><b>Deprecated</b> <code>_auto_update_num</code></td>
 <td><p>Indicates whether to automatically refresh the number of the users currently in the channel.</p>
 <ul>
 <li>0: Disabled (default)</li>
