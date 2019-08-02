@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux C++
-updatedAt: Thu Jul 25 2019 02:51:22 GMT+0800 (CST)
+updatedAt: Fri Aug 02 2019 08:17:32 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
