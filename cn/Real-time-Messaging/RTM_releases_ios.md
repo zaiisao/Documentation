@@ -3,14 +3,14 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Wed Jul 24 2019 12:37:10 GMT+0800 (CST)
+updatedAt: Fri Aug 02 2019 08:01:57 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 了解更多详情。
 
-## 1.0 版
+## 1.0.0 版
 
 该版本于 2019 年 7 月 24 日发布。
 
