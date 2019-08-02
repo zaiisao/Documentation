@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Fri Aug 02 2019 08:23:08 GMT+0800 (CST)
+updatedAt: Fri Aug 02 2019 08:23:22 GMT+0800 (CST)
 ---
 # 产品概述
 Agora Interactive Gaming SDK，是 Agora 针对游戏开发者 （Unity，Cocos）提供的音视频通话软件开发包。其主要目的是帮助游戏开发者在游戏中快速集成音视频通话的功能。
@@ -13,13 +13,13 @@ Agora Interactive Gaming SDK，是 Agora 针对游戏开发者 （Unity，Cocos�
 
 ## 功能和场景
 
-Agora Interactive Gaming SDK 应用丰富，主要适用于使用 Unity 和 Cocos 游戏引擎需要实时音视频功能的应用，也可以用 native SDK 在 iOS 和 Android 上进行原生开发。
+Agora Interactive Gaming SDK 应用丰富，主要适用于使用 Unity 和 Cocos 游戏引擎需要实时音视频功能的应用，也可以用 Native SDK 在 iOS 和 Android 上进行原生开发。
 
 | 主要功能   | 功能描述                                                     | 典型适用场景           |
 | ---------- | ------------------------------------------------------------ | ---------------------- |
 | 音视频互通 | 实现游戏中的实时音视频互通，可以在游戏中实现开黑语音，实时视频传输的功能 | 开黑工具               |
 | 电台语音   | 可在游戏中加入语音电台功能，支持 44.1k 采样率超高音质，也支持观众与主播连麦，实现电台双向互通 | <li>MMO<li>RPG         |
-| 听声辨位   | 支持游戏音效 180° 听声辩位，增加游戏角色的方位感，还原真实场景 | FPS                    |
+| 听声辨位   | 支持游戏音效 180° 听声辨位，增加游戏角色的方位感，还原真实场景 | FPS                    |
 | 趣味变声   | 支持性别变声，迷惑对手，增加游戏互动趣味性                   | <li>MOBA<li>二次元游戏 |
 
 更多的玩法 ，点击查看示例代码：
