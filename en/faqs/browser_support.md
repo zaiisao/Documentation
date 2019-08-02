@@ -3,10 +3,71 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Tue Jul 02 2019 14:35:23 GMT+0800 (CST)
+updatedAt: Fri Aug 02 2019 15:49:16 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
-The Agora Web SDK supports all mainstream browsers, see [Compatibility](https://docs.agora.io/en/Interactive%20Broadcast/release_web_video?platform=Web#compatibility) for details. Due to the various browser engine implementations, support for some features may vary by browser and platform. The following are known issues and limitations.
+The Agora Web SDK supports all mainstream browsers. 
+
+<table>
+  <tr>
+    <th>Platform</th>
+    <th>Chrome 58 or later</th>
+    <th>Firefox 56 or later</th>
+    <th>Safari 11 or later</th>
+    <th>Opera 45 or later</th>
+    <th>QQ Browser</th>
+    <th>360 Secure Browser</th>
+    <th>WeChat Built-in Browser</th>
+  </tr>
+   <tr>
+    <td>Android 4.1 or later</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+		<td><b>N/A</b></td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+  </tr>
+  <tr>
+    <td>iOS 11 or later</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+  </tr>
+  <tr>
+    <td>macOS 10 or later</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+  </tr>
+  <tr>
+    <td>Windows 7 or later</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+		<td><b>N/A</b></td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+  </tr>
+</table>
+
+> - Upgrade to Agora Web SDK v2.6 or later in the following scenarios:
+>   - Safari on iOS 12.1.4 or later.
+>   - Safari 12.1 or later on macOS.
+> - The Agora Web SDK v2.5 or later also supports Chrome 49 on Windows XP.
+> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/faq/browser_support#edge) for details.
+
+Due to the various browser engine implementations, support for some features may vary by browser and platform. The following are known issues and limitations.
 
 ## Chrome
 
