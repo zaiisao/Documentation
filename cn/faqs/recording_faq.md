@@ -3,7 +3,7 @@
 title: 录制集成常见问题集
 description: 
 platform: Linux
-updatedAt: Mon Jul 01 2019 15:15:28 GMT+0800 (CST)
+updatedAt: Mon Jul 15 2019 11:25:08 GMT+0800 (CST)
 ---
 # 录制集成常见问题集
 ### Java SDK 集成时报错 java.land.UnsatisfiedLinkError: no recording in java.library.path
@@ -22,5 +22,5 @@ LD_LIBRARY_PATH=/home/user/Desktop/tool/Agora_Recording/samples/java/bin/io/agor
 
 ### 如何知道录制程序是正常退出频道，还是异常退出频道?
 
-如果是正常退出频道，首先 SDK 会触发 `onLeaveChannel`，并会返回错误码 ERR_INTERNAL_FAILED = 3。
-如果是异常退出频道，SDK 不会触发 `onLeaveChannel`，而是触发 `onError` 并返回错误码 ERR_INTERNAL_FAILED = 3 。
+如果是正常退出频道，首先 SDK 会触发 `onLeaveChannel`，并会返回错误码 `ERR_OK = 1`。
+如果是异常退出频道，SDK 不会触发 `onLeaveChannel`，而是触发 `onError` 并返回错误码 `ERR_INTERNAL_FAILED = 3`。
