@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Mon Aug 05 2019 02:46:44 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:48:32 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -90,7 +90,7 @@ private void joinChannel() {
     token = null;
   }
   // Joins the channel with the registered user account.
-  mRtcEngine.joinChannelWithUserAccount(userAccount, token, "stringifiedChannel1", mLocal.userAccount);
+  mRtcEngine.joinChannelWithUserAccount(token, "stringifiedChannel1", mLocal.userAccount);
 }
 ```
 
