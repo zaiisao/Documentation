@@ -3,12 +3,40 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Aug 05 2019 12:53:18 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 12:54:10 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 了解更多详情。
+
+
+## 1.0.0 版
+
+该版本于 2019 年 8 月 5 日发布。
+
+### 新增功能
+
+#### 新老互通
+
+支持与 Agora Signaling SDK 互通。
+
+本版本在 `LocalInvitation` 类中实现了 `channelId` 属性。
+
+> - 如需与 Agora Signaling SDK 互通，则必须调用 `channelId` 属性设置频道 ID。不过即使被叫成功接受呼叫邀请，Agora RTM SDK 也不会将主叫或被叫加入指定频道。
+> - 如果你的应用不涉及 Agora Signaling SDK，我们推荐使用 `LocalInvitation.content` 或者 `RemoteInvitation.response` 属性设置自定义内容。
+
+#### 设置日志输出等级
+
+支持通过设置 `logFilter` 参数将日志内容按照 OFF、ERROR、WARNING 和 INFO 不同等级输出 。
+
+> 该设置在调用 `createInstance` 方法成功创建实例后即可进行。
+
+### API 变更
+
+### 新增
+
+- [logFilter](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmparameters.html#logfilter)
 
 ## 0.9.3 版
 
