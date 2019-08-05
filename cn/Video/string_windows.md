@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Windows
-updatedAt: Mon Aug 05 2019 02:52:39 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:53:25 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -55,9 +55,20 @@ Agora Native SDK 和 Web SDK 通过不同方法支持 String 型的用户名：
 - [`getUserInfoByUserAccount`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4f75984d3c5de5f6e3e4d8bd81e3b409)
 - [`onLocalUserRegistered`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a919404869f86412e1945c730e5219b20)
 - [`onUserInfoUpdated`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad086cc4d8e5555cc75a0ab264c16d5ff)
+
 ## 示例代码
 
 Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的 Github 示例代码，你可以前往下载和体验。
+
+你也可以参考如下代码片段，在项目中实现使用 String 型的 User account 加入频道：
+
+```C++
+// 加入频道前注册用户名
+lpAgoraObject->RegisterLocalUserAccount(APP_ID, m_dlgEnterChannel.GetStringUid());
+// 使用注册的用户名加入频道
+lpAgoraObject->JoinChannelWithUserAccount(TOKEN, strChannelName, m_dlgEnterChannel.GetStringUid());
+```
+
 
 ## 开发注意事项
 
