@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Mon Aug 05 2019 02:47:08 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:48:18 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -83,7 +83,7 @@ private void joinChannel() {
     token = null;
   }
   // 使用注册的用户名加入频道
-  mRtcEngine.joinChannelWithUserAccount(userAccount, token, "stringifiedChannel1", mLocal.userAccount);
+  mRtcEngine.joinChannelWithUserAccount(token, "stringifiedChannel1", mLocal.userAccount);
 }
 ```
 
