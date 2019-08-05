@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Aug 05 2019 12:54:53 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 12:56:07 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -30,13 +30,13 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 支持通过设置 `logFilter` 参数将日志内容按照 OFF、ERROR、WARNING 和 INFO 不同等级输出 。
 
-> 该设置在调用 `createInstance` 方法成功创建实例后即可进行。
 
 ### API 变更
 
 ### 新增
 
 - [logFilter](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmparameters.html#logfilter)
+- [setParameters](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setparameters)
 
 ## 0.9.3 版
 
