@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: iOS
-updatedAt: Mon Aug 05 2019 02:34:18 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:39:54 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -61,7 +61,7 @@ Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanc
 ```swift
 func joinChannel() {
   // 加入频道前注册用户名
-  agoraKit.registerLocalUserAccount(userAccount: randomString(length: 8), token: Token)
+  agoraKit.registerLocalUserAccount(userAccount: randomString(length: 8), appId: Your App ID)
   // 使用注册的用户名加入频道
   agoraKit.joinChannel(byUserAccount: userAccount, token: Token, channelId: "demoChannel1") {(sid, uid, elapsed) in
   }
