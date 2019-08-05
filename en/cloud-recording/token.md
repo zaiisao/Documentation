@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 05 2019 02:16:20 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:16:34 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
