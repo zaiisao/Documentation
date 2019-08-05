@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Mon Aug 05 2019 02:01:07 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:01:19 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -66,8 +66,7 @@ private void initializeAgoraEngine() {
   try {
     String appId = getString(R.string.agora_app_id);
     mRtcEngine = RtcEngine.create(getBaseContext(), appId, mRtcEventHandler);
-    // 在初始化中注册用户名
-    // 加入频道前先注册用户名，可以缩短加入频道的时间
+    // 初始化后、加入频道前先注册用户名，可以缩短加入频道的时间
     mRtcEngine.registerLocalUserAccount(appId, mLocal.userAccount);
   } catch (Exception e) {
     Log.e(LOG_TAG, Log.getStackTraceString(e));
