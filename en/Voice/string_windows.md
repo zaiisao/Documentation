@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Windows
-updatedAt: Mon Aug 05 2019 02:54:26 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:54:37 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -61,6 +61,18 @@ The following diagram shows how to join a channel with a string user account:
 
 ## Sample Code
 Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) sample code in the Github. You can download it and refer to the code logic in the sample code.
+
+
+
+You can also refer to the following code snippets and implement string usernames in your peoject:
+
+```C++
+// Registers the local user account before joining the channel.
+lpAgoraObject->RegisterLocalUserAccount(APP_ID, m_dlgEnterChannel.GetStringUid());
+// Joins the channel with the registered user account.
+lpAgoraObject->JoinChannelWithUserAccount(TOKEN, strChannelName, m_dlgEnterChannel.GetStringUid());
+```
+
 
 
 ## Considerations
