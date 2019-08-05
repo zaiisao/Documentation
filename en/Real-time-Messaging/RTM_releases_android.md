@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Aug 05 2019 03:53:45 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 03:53:51 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -13,7 +13,7 @@ Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time
 > For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_product.md).
 
 
-## 1.0.1
+## v1.0.1
 
 v1.0.1 is released on August 1st, 2019. 
 
