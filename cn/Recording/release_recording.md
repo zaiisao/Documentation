@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Mon Aug 05 2019 03:54:55 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 06:37:08 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -39,6 +39,25 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 - 在用移动客户端 \(仅 Android 系统\) 录像的过程中，从前置摄像头切换到后置摄像头后，画面将被倒置。
 - 如果在频道内调用 `leaveChannel`, 录制会停止, 但默认录制文件最后会包含一段空白片段，这个时间段由调用 `joinChannel` 时在 `config` 里设定的 `idleLimitSec` 字段值决定。详见 [录制 API](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html)。
 - 由于录制的音视频文件是没有加密的，如果要满足 HIPPA 要求，需使用磁盘加密工具对硬盘进行加密，例如 cryptsetup。
+
+## 2.3.4 版
+
+该版本于 2019 年 8 月 5 日发布。改进和修复问题详见下文。
+
+### 改进
+
+- Java API 以下方法由 private 变为 public：
+  - `setUserBackground` 方法，支持设置指定 UID 用户的背景图片。当该用户在线且没有发送视频流时，会显示该背景图片。
+  - `setLogLevel` 方法，支持设置 log 过滤等级。设置后，SDK 只会生成等于和低于所设等级的 log。
+- 增强 Java API 健壮性。
+- 增强异常崩溃信息收集能力。
+
+### 修复问题
+
+- 修复合流录制时切换频道模式会切片的问题。
+- 修复直播模式下合流录制时不能只录制音频的问题。
+- 修复 libyuv 崩溃的问题。
+- 修复 Java 调用 `leaveChannel` 方法离开频道崩溃的问题。
 
 ## 2.3.3 版
 
