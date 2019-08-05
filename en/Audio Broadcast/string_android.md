@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Mon Aug 05 2019 02:00:37 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:00:58 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -63,6 +63,36 @@ The following diagram shows how to join a channel with a string user account:
 ## Sample Code
 Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) sample code in the Github. You can download it and refer to the code logic in the sample code.
 
+
+
+You can also refer to the following code snippets and implement string usernames in your peoject:
+
+```java
+// Java
+private void initializeAgoraEngine() {
+  try {
+    String appId = getString(R.string.agora_app_id);
+    mRtcEngine = RtcEngine.create(getBaseContext(), appId, mRtcEventHandler);
+    // Registers the local user account after initializing the Agora engine and before joining the channel.
+    mRtcEngine.registerLocalUserAccount(appId, mLocal.userAccount);
+  } catch (Exception e) {
+    Log.e(LOG_TAG, Log.getStackTraceString(e));
+    
+    throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
+  }
+}
+
+...
+  
+private void joinChannel() {
+  String token = getString(R.string.agora_access_token);
+  if (token.isEmpty()) {
+    token = null;
+  }
+  // Joins the channel with the registered user account.
+  mRtcEngine.joinChannelWithUserAccount(token, "stringifiedChannel1", mLocal.userAccount);
+}
+```
 
 
 ## Considerations
