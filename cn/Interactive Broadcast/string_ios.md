@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: iOS,macOS
-updatedAt: Tue Jul 09 2019 03:38:36 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:34:18 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -55,6 +55,19 @@ Agora Native SDK 和 Web SDK 通过不同方法支持 String 型的用户名：
 ## 示例代码
 
 Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的 Github 示例代码，你可以前往下载和体验。
+
+你也可以参考如下代码片段，在项目中实现使用 String 型的 User account 加入频道：
+
+```swift
+func joinChannel() {
+  // 加入频道前注册用户名
+  agoraKit.registerLocalUserAccount(userAccount: randomString(length: 8), token: Token)
+  // 使用注册的用户名加入频道
+  agoraKit.joinChannel(byUserAccount: userAccount, token: Token, channelId: "demoChannel1") {(sid, uid, elapsed) in
+  }
+}
+```
+
 
 ## 开发注意事项
 
