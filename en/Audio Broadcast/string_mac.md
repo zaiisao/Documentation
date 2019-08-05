@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: macOS
-updatedAt: Tue Jul 09 2019 03:41:36 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:42:29 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -62,6 +62,19 @@ The following diagram shows how to join a channel with a string user account:
 ## Sample Code
 Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) sample code in the Github. You can download it and refer to the code logic in the sample code.
 
+
+
+You can also refer to the following code snippets and implement string usernames in your peoject:
+
+```swift
+func joinChannel() {
+  // Registers the local user account.
+  agoraKit.registerLocalUserAccount(userAccount: randomString(length: 8), appId: Your App ID)
+  // Joins the channel with the registered user account.
+  agoraKit.joinChannel(byUserAccount: userAccount, token: Token, channelId: "demoChannel1") {(sid, uid, elapsed) in
+  }
+}
+```
 
 ## Considerations
 - Do not mix parameter types within the same channel. If you use SDKs that do not support string usernames, only integer user IDs can be used in the channel.
