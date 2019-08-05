@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: iOS
-updatedAt: Mon Aug 05 2019 02:35:03 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:39:32 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -69,7 +69,7 @@ You can also refer to the following code snippets and implement string usernames
 ```swift
 func joinChannel() {
   // Registers the local user account before joining the channel.
-  agoraKit.registerLocalUserAccount(userAccount: randomString(length: 8), token: Token)
+  agoraKit.registerLocalUserAccount(userAccount: randomString(length: 8), appId: Your App ID)
   // Joins the channel with the registered user account.
   agoraKit.joinChannel(byUserAccount: userAccount, token: Token, channelId: "demoChannel1") {(sid, uid, elapsed) in
   }
