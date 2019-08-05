@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Mon Aug 05 2019 04:00:00 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 06:36:58 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -42,6 +42,25 @@ This component package is compatible with the following SDKs:
 
 
 > The Agora On-premise Recording SDK supports both Java and C++ from v2.2.0.
+
+## v2.3.4
+
+v2.3.4 is released on August 5, 2019.
+
+### Improvements
+
+- The following private Java API methods are now public:
+  - The setUserBackground method which sets the background image of a specified user. When the user is online but does not send any video stream, the background image is displayed.
+  - The setLogLevel method which sets the logging level. The SDK generates logs in the selected level and in the levels preceding the selected level.
+- Improves the robustness of Java API methods.
+- Enhances the SDK's ability to collect the information of abnormal crashes.
+
+### Issues Fixed
+
+- File splitting in composite recording mode caused by channel profile switch.
+- Failure to only record audio in composite recording mode in the Live Broadcast profile.
+- The libyuv crashes.
+- The crash when calling the leaveChannel method to leave a channel.
 
 ## v2.3.3
 
