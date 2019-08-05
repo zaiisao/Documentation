@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Fri Aug 02 2019 12:47:11 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 03:54:06 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -12,7 +12,7 @@ Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time
 
 > For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_product.md).
 
-## 1.0.1
+## v1.0.1
 
 v1.0.1 is released on August 1st, 2019. 
 
