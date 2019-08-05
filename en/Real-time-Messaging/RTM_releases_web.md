@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Aug 05 2019 10:06:53 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 12:59:03 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -11,6 +11,34 @@ updatedAt: Mon Aug 05 2019 10:06:53 GMT+0800 (CST)
 Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
 
 > For more information about the SDK features and applications, see [Agora RTM Overview](../../en/Real-time-Messaging/RTM_product.md).
+
+
+## v1.0.0
+
+v1.0.0 is released on August 5th, 2019.
+
+### New Features
+
+#### Interconnects with the legacy Agora Signaling SDK
+
+v1.0.0 implements the `LocalInvitation.channelId` and `LocalInvitation.channelId` property. 
+
+> - To intercommunicate with the legacy Agora Signaling SDK, you MUST set the channel ID. However, even if the callee successfully accepts the call invitation, the Agora RTM SDK does not join the channel of the specified channel ID.
+> - If your App does not involve the legacy Agora Signaling SDK, we recommend using the `LocalInvitation.content` or the `RemoteInvitation.response` property to set customized contents. 
+
+
+#### Sets the output log level of the SDK
+
+Supports setting the output log level of the SDK using the `logFilter` parameter.  The log level follows the sequence of OFF, ERROR, WARNING, and INFO. Choose a level to see the logs preceding that level. If, for example, you set the log level to WARNING, you see the logs within levels ERROR and WARNING. 
+
+
+### API Changes
+
+#### Adds
+
+- [logFilter](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmparameters.html#logfilter)
+- [setParameters](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setparameters)
+
 
 
 ## v0.9.3
