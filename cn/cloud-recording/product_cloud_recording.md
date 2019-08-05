@@ -3,7 +3,7 @@
 title: 云端录制
 description: 
 platform: Linux
-updatedAt: Thu Jul 18 2019 06:52:42 GMT+0800 (CST)
+updatedAt: Wed Jul 31 2019 06:11:21 GMT+0800 (CST)
 ---
 # 云端录制
 Agora 云端录制，是 Agora 针对音视频通话、直播研发的录制服务，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK (1.12.0 或更高版本) 兼容，通过简单的操作方法，帮助开发者快速、灵活地实现录制服务，实现一对一、一对多的音视频通话或直播的录制。同 Agora 本地服务端录制相比，Agora 云端录制无需部署 Linux 服务器，减轻了研发和运维的压力，更轻量便捷。
@@ -46,9 +46,11 @@ Agora 云端录制主要有以下特性：
 
 ## 计费
 
-使用云端录制 SDK 时，相当于一个“哑客户端”加入频道，订阅需要录制的音视频流。录制的音视频流的[集合分辨率](../../cn/Agora%20Platform/billing_faq.md)分为 Audio、HD、HD+ 三档，根据每档对应的单价，按分钟数计费。具体价格请咨询 sales@agora.io。
+使用云端录制 SDK 时，相当于一个“哑客户端”加入频道，订阅需要录制的音视频流。录制的音视频流的[集合分辨率](https://docs.agora.io/cn/faq/video_billing#the-Recording-Aggregate-Resolution)分为 Audio、HD、HD+ 三档，根据每档对应的单价，按分钟数计费。具体价格请咨询 support@agora.io。
 	
 每个录制任务单独计费。例如，基于同一个频道创建两个录制任务，则会分别计费。
+
+> 每月通话（包含录制）总时长不超过一万分钟时，Agora 不收取任何费用，详见[前一万分钟免费说明](https://docs.agora.io/cn/faq/billing_free)。
 
 ## 相关文档和示例代码
 

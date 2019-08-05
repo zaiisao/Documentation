@@ -3,20 +3,23 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 07:07:04 GMT+0800 (CST)
+updatedAt: Mon Jul 29 2019 08:30:44 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
-Agora 云端录制服务提供 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
-
-> - 你需要通过自己的 app server 发送网络请求。
-> - 云端录制 RESTful API 仅支持 HTTPS 协议。
-
-![img](https://web-cdn.agora.io/docs-files/1559295245761)
+Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
+> 如果你使用的是 1.1.0 之前的版本，可以通过以下方式进行云端录制：
+> - [集成 SDK 录制](../../cn/cloud-recording/cloud_recording_quickstart.md)：集成云端录制 SDK，调用 API 实现录制。
+> - [使用 Demo 录制](../../cn/cloud-recording/cloud_recording_demo.md)：使用 Agora 提供的 demo，用命令行实现录制。
 
 通过 RESTful API，你可以发送网络请求控制云端录制：
 
 - 开始/结束云端录制
 - 查询当前的录制状态
+
+![img](https://web-cdn.agora.io/docs-files/1559295245761)
+
+> - 你需要通过自己的 app server 发送网络请求。
+> - 云端录制 RESTful API 仅支持 HTTPS 协议。
 
 同时云端录制 RESTful API 还提供回调服务，开通后你可以收到云端录制的事件通知，下表列出回调服务和使用 RESTful API 查询录制状态的区别，你可以根据自己的需要选择是否开通回调服务。
 

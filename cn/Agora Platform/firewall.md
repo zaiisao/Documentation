@@ -1,12 +1,18 @@
 
 ---
-title: 防火墙说明
+title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 25 2019 06:13:07 GMT+0800 (CST)
+updatedAt: Thu Aug 01 2019 10:06:22 GMT+0800 (CST)
 ---
-# 防火墙说明
-对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。相关规则如下：
+# 应用企业防火墙限制
+对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
+
+如果你的防火墙不允许打开本文端口和白名单，可以使用 Agora 云代理功能连接到 Agora 服务。各产品云代理文档如下：
+
+- [RTC Native SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)
+- [RTC Web SDK 使用云代理](../../cn/Agora%20Platform/cloud_proxy_web.md)
+- [录制 SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)
 
 ## Agora RTC SDK
 
@@ -90,7 +96,7 @@ qos.agoralab.co
 
 | 端口     | 白名单项目 |
 | -------- | ---------- |
-| TCP 端口 | 443        |
+| TCP 端口 | 443；6151；6153        |
 
 域名白名单：
 

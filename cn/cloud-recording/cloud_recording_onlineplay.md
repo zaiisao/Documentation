@@ -3,7 +3,7 @@
 title: 在线播放录制文件
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 06:20:48 GMT+0800 (CST)
+updatedAt: Mon Jul 29 2019 08:36:57 GMT+0800 (CST)
 ---
 # 在线播放录制文件
 ## 功能描述
@@ -12,7 +12,7 @@ updatedAt: Thu Jul 18 2019 06:20:48 GMT+0800 (CST)
 
 ## 实现方法
 
-在开始前，请确保录制文件已全部上传完成（`OnRecordingUploaded` 回调）。下面分别介绍[阿里云](https://www.aliyun.com/product/ossJ)、[七牛云](https://www.qiniu.com/)和 [AWS S3](https://aws.amazon.com/cn/s3/?nc=sn&loc=0) 如何在线播放录制文件。
+在开始前，请确保录制文件已全部上传完成。下面分别介绍[阿里云](https://www.aliyun.com/product/ossJ)、[七牛云](https://www.qiniu.com/)和 [AWS S3](https://aws.amazon.com/cn/s3/?nc=sn&loc=0) 如何在线播放录制文件。
 
 ### 阿里云
 1. 登录阿里云控制台，进入你设定的录制存储空间（bucket），在**文件管理**页面可以看到 M3U8 和 TS 文件。
@@ -80,4 +80,4 @@ updatedAt: Thu Jul 18 2019 06:20:48 GMT+0800 (CST)
 
 - Safari 浏览器可以直接播放 M3U8 文件，其他浏览器可能需要安装 HLS 播放插件。
 - 支持 HLS 协议的播放器也可以播放 M3U8 文件，如 VLC media player。
-- 如果录制结束后收到的回调是 `OnRecordingBackedUp`，说明有部分录制内容上传到了备份云，必须等备份云将这部分文件上传到云存储之后才可以播放 M3U8 文件。
+- 如果录制结束后收到的响应中 `uploadingStatus` 为 `"backuped"`，说明有部分录制内容上传到了备份云，必须等备份云将这部分文件上传到云存储之后才可以播放 M3U8 文件。
