@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Android
-updatedAt: Thu Apr 18 2019 08:42:21 GMT+0800 (CST)
+updatedAt: Wed Jul 31 2019 04:04:21 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -469,7 +469,7 @@ public void invoke(String name, String req, String callID);
 </td>
 </tr>
 <tr><td>查询频道最近用户列表</td>
-<td><ul>
+<td><b>已废弃</b><ul>
 <li>name: io.agora.signal.channel_query_userlist_all</li>
 <li>req: {“name”:频道名,”num”:数量(默认 1000*1000)}</li>
 <li>返回值：{“num”:总人数,”list”:最近成员}</li>
@@ -546,7 +546,7 @@ public void setAttr(String name,String value);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>name</code></td>
-<td>属性名称。最大 128 字节可见字符，例如：<code>_conn_timeout</code> 为内置属性，表示掉线超时秒数。默认设置为 120 秒，可设置范围为 20 秒至 120 秒。若设置成低于 20 秒，系统将自动设成 20 秒；若设置成高于 120 秒，系统将自动设成 120 秒。</td>
+<td>属性名称。最大 128 字节可见字符，</td>
 </tr>
 <tr><td><code>value</code></td>
 <td>属性值。最大 8096 字节可见字符</td>
@@ -701,7 +701,7 @@ public void channelJoin(String channelID);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>channelID</code></td>
-<td><p>频道名。最大为 128 字节可见字符。包含以下特殊频道名：</p>
+<td><p>频道名。最大为 128 字节可见字符。包含以下特殊频道名（已废弃，不建议使用）：</p>
 <div><ul>
 <li><code>__agora_user_online</code> ：当前 <code>appId</code> 中所有用户登录或离线事件将发送至该频道。</li>
 <li><code>__agora_channel_event</code> : 当前 <code>appId</code> 中用户加入或离开频道的所有事件将发送至该频道。</li>
@@ -799,12 +799,12 @@ public void channelSetAttr(String channelID,String name,String value);
 
 > 以下是 参数 name 的内置属性： 
 >
-> - `_userNotification` 1: 默认值，频道发送用户加入或离开频道的事件；0: 频道不发送用户加入或离开频道的事件。 
+> - `_userNotification` <b>该属性已废弃</b> 1: 默认值，频道发送用户加入或离开频道的事件；0: 频道不发送用户加入或离开频道的事件。 
 > - `_channel_ttl` ：频道最后一个用户离开后，多久销毁，单位为秒，默认为7200 。特殊频道永不销毁。 
 > - `_member_num` ： 表示当前频道人数，由系统自动更新；更新频次由 `_auto_update_num` 确定。如果  `_auto_update_num` 时间内没有用户进出频道，不会收到人数更新回调  <code>onChannelAttrUpdated</code>；如果 `_auto_update_num` 内有用户频繁进出频道，只会按固定时间收到一次回调。
 > - `_auto_update_num` ：表示是否由系统自动更新频道人数。0：关闭（默认）；1-n：（每多少秒更新一次）
-> - `_total_member_num` ：表示当前频道累计登录人次，由系统自动更新。`_auto_update_num` 与 `_auto_update_total_num` 需要同时设置为非0。更新原则类似 `_member_num`
-> - `_auto_update_total_num` : 表示是否由系统自动更新频道人数，0：关闭（默认）；非0：每多少秒后台更新一次（与 `_auto_update_num` 相同）。
+> - `_total_member_num` ：<b>该属性已废弃</b> 表示当前频道累计登录人次，由系统自动更新。`_auto_update_num` 与 `_auto_update_total_num` 需要同时设置为非0。更新原则类似 `_member_num`
+> - `_auto_update_total_num` : <b>该属性已废弃</b> 表示是否由系统自动更新频道人数，0：关闭（默认）；非0：每多少秒后台更新一次（与 `_auto_update_num` 相同）。
 > - `_sendmsg_limit` : 整个频道每秒能发送的消息数
 > - `_setattr_limit` : 频道每个属性每秒能修改的次数
 

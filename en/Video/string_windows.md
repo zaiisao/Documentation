@@ -60,7 +60,7 @@ The following diagram shows how to join a channel with a string user account:
 - [`onUserInfoUpdated`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad086cc4d8e5555cc75a0ab264c16d5ff)
 
 ## Sample Code
-Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Video/tree/dev/stringified-account/String-Account) sample code in the Github. You can download it and refer to the code logic in the sample code.
+Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) sample code in the Github. You can download it and refer to the code logic in the sample code.
 
 
 ## Considerations

@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Tue Jul 09 2019 03:38:25 GMT+0800 (CST)
+updatedAt: Wed Jul 31 2019 10:04:09 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -55,7 +55,38 @@ Agora Native SDK 和 Web SDK 通过不同方法支持 String 型的用户名：
 - [`onUserInfoUpdated`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa3e9ead25f7999272d5700c427b2cb3d)
 
 ## 示例代码
-Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/dev/stringified-account/String-Account)的 Github 示例代码，你可以前往下载和体验。
+
+Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的 Github 示例代码，你可以前往下载和体验。
+
+你也可以参考如下代码片段，在项目中实现使用 String 型的 User account 加入频道：
+
+```java
+// Java
+private void initializeAgoraEngine() {
+  try {
+    String appId = getString(R.string.agora_app_id);
+    mRtcEngine = RtcEngine.create(getBaseContext(), appId, mRtcEventHandler);
+    // 在初始化中注册用户名
+    // 加入频道前先注册用户名，可以缩短加入频道的时间
+    mRtcEngine.registerLocalUserAccount(appId, mLocal.userAccount);
+  } catch (Exception e) {
+    Log.e(LOG_TAG, Log.getStackTraceString(e));
+    
+    throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
+  }
+}
+
+...
+  
+private void joinChannel() {
+  String token = getString(R.string.agora_access_token);
+  if (token.isEmpty()) {
+    token = null;
+  }
+  // 使用注册的用户名加入频道
+  mRtcEngine.joinChannelWithUserAccount(token, "stringifiedChannel1", mLocal.userAccount);
+}
+```
 
 ## 开发注意事项
 

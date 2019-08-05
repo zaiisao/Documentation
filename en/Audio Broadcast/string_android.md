@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Tue Jul 09 2019 03:40:14 GMT+0800 (CST)
+updatedAt: Wed Jul 31 2019 10:32:03 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -61,7 +61,7 @@ The following diagram shows how to join a channel with a string user account:
 - [`onUserInfoUpdated`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa3e9ead25f7999272d5700c427b2cb3d)
 
 ## Sample Code
-Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Video/tree/dev/stringified-account/String-Account) sample code in the Github. You can download it and refer to the code logic in the sample code.
+Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) sample code in the Github. You can download it and refer to the code logic in the sample code.
 
 
 

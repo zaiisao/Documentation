@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Jul 22 2019 01:58:28 GMT+0800 (CST)
+updatedAt: Thu Aug 01 2019 10:02:54 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -33,6 +33,12 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v2.8.2
+
+v2.8.2 is released on Aug 1, 2019. 
+
+This release fixed the interoperating problem with the Agora Web SDK.
 
 ## v2.8.1
 
@@ -646,7 +652,7 @@ In an interactive broadcast scenario, the host can enhance the local audio effec
 
 #### 3. Online statistics query
 
-Adds Restful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host:
+Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host:
 
 -   Voice or video calls: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_communication.md).
 -   Interactive broadcasts: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_live.md).

@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Jul 22 2019 01:56:27 GMT+0800 (CST)
+updatedAt: Thu Aug 01 2019 10:02:42 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -33,6 +33,10 @@ Android 视频 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **2.8.2 版**
+
+该版本于 2019 年 8 月 1 日发布。修复了与 Web SDK 的互通问题。
 
 ## **2.8.1 版**
 
@@ -885,7 +889,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 #### 3. 在线频道信息查询
 
-新增 Restful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见:
+新增 RESTful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见:
 
 -   通话场景, 详见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_communication.md)
 

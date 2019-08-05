@@ -3,7 +3,7 @@
 title: 录制音视频
 description: 
 platform: Linux
-updatedAt: Thu Jul 25 2019 02:53:20 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 02:53:24 GMT+0800 (CST)
 ---
 # 录制音视频
 本文介绍如何使用 Agora 本地服务端录制 SDK 来实现不同的录制模式、各模式下生成何种文件以及录制后如何调用转码脚本将文件进行转换。
@@ -493,7 +493,8 @@ Agora 本地服务端录制 SDK 目前仅支持单流的录制文件 + 单流的
   - automatically mode下使用-m参数，会把同一个 uid 的所有音视频文件合并，并生成唯一的一个UID_0_merge_av.mp4 文件。
   - manually mode 下，由于是根据 startService和 stopService 来划分文件管理的，每一个 start/stop 为一次 service。因此如果有多次 start 和 stop，就会产生多个 service，因此使用-m参数就会生成多个 UID_XX_merge_av.mp4文件。
   
-> Agora 在 [本地服务端录制 SDK](https://docs-preview.agoralab.co/cn/Recording/downloads) 的 tools 文件夹下提供转码工具 ffmpeg 和 video_convert.py，解压 ffmpeg，并确保和 video_convert.py 在同一目录下。
+> - Agora 在 [本地服务端录制 SDK](../../cn/Recording/downloads.md) 的 tools 文件夹下提供转码工具 ffmpeg 和 video_convert.py，解压 ffmpeg，并确保和 video_convert.py 在同一目录下。
+> - 转码脚本支持 Python 2.7 及以上版本。
 
 执行 python video_convert.py，即可看到相关用法：
 

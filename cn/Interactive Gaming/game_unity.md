@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Tue Jul 23 2019 04:19:17 GMT+0800 (CST)
+updatedAt: Wed Jul 31 2019 03:30:40 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -691,7 +691,7 @@ public int SetDefaultMuteAllRemoteAudioStreams(bool mute);
 public static string GetSdkVersion ();
 ```
 
-该犯法返回 SDK 版本号的字符串 (char 格式)。
+该方法返回 SDK 版本号的字符串 (char 格式)。
 
 #### 获取错误描述 (GetErrorDescription)
 
@@ -1695,7 +1695,7 @@ Agora SDK 默认收到视频大流。如需使用视频小流，调用本方法�
 public int SetVideoQualityParameters(bool preferFrameRateOverImageQuality);
 ```
 
-设置 SDK 输出的日志文件。SDK 运行时产生的所有日志将写入该文件。应用程序必须保证指定的目录存在而且可写。
+设置视频优化选项。
 
 <table>
 <colgroup>

@@ -3,7 +3,7 @@
 title: 连接状态管理
 description: 
 platform: Linux Java
-updatedAt: Thu Jul 25 2019 04:01:06 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 04:01:10 GMT+0800 (CST)
 ---
 # 连接状态管理
 ## 状态定义

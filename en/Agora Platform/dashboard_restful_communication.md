@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 03 2019 06:54:34 GMT+0800 (CST)
+updatedAt: Fri Jul 26 2019 04:28:32 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -12,7 +12,7 @@ updatedAt: Wed Jul 03 2019 06:54:34 GMT+0800 (CST)
 
 The RESTful API only supports HTTPS, and the user must pass the `Authorization` parameter in the Basic HTTP request header for authentication. You need to pass the Customer ID and Customer Cerficate in the code.
 
-Login https://dashboard.agora.io, click the account name on the top right of the dashboard, and enter the Restful API page from the drop-down list to get the Customer ID and Customer Certificate. 
+Login https://dashboard.agora.io, click the account name on the top right of the dashboard, and enter the RESTful API page from the drop-down list to get the Customer ID and Customer Certificate. 
 
 > Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and Customer Certificate are only used for RESTful API access.
 
@@ -32,7 +32,7 @@ All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
   -   Status 401: Unauthorized \(incorrect App ID/Customer Certificate\).
   -   Status 404: Wrong API invoked.
   -   Status 429: Too frequent API calls.
-  -   Status 500: Internal error of the Agora RestfulAPI service.
+  -   Status 500: Internal error of the Agora RESTfulAPI service.
 
 ## 3. Project API
 

@@ -2,7 +2,7 @@
 ---
 title: 使用云容器部署录制 SDK
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Mon Jul 08 2019 03:31:57 GMT+0800 (CST)
 ---
 # 使用云容器部署录制 SDK

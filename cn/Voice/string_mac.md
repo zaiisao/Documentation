@@ -53,7 +53,7 @@ Agora Native SDK 和 Web SDK 通过不同方法支持 String 型的用户名：
 - [`didUpdatedUserInfo`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
 ## 示例代码
 
-Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/dev/stringified-account/String-Account)的 Github 示例代码，你可以前往下载和体验。
+Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的 Github 示例代码，你可以前往下载和体验。
 
 ## 开发注意事项
 

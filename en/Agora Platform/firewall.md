@@ -3,10 +3,15 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 25 2019 06:13:52 GMT+0800 (CST)
+updatedAt: Thu Aug 01 2019 10:08:27 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
+
+If you cannot add these ports and whitelist domains on your firewall, refer to the following guides to use the cloud proxy service to access Agora's service:
+- [Cloud Proxy for the RTC Native SDK](../../en/Agora%20Platform/cloudproxy_native.md)
+- [Cloud Proxy for the RTC Web SDK](../../en/Agora%20Platform/cloud_proxy_web.md)
+- [Cloud Proxy for the Recording SDK](../../en/Agora%20Platform/cloudproxy_recording.md)
 
 ## Agora RTC SDK
 
@@ -75,7 +80,7 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | -------- | ---------- |
-| TCP ports | 443        |
+| TCP ports | 443; 6151; 6153        |
 
 Whitelist domains:
 

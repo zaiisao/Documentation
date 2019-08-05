@@ -2,7 +2,7 @@
 ---
 title: Use String User Accounts
 description: 
-platform: electron
+platform: Electron
 updatedAt: Tue Jul 09 2019 03:42:06 GMT+0800 (CST)
 ---
 # Use String User Accounts

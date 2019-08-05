@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Thu Jul 11 2019 03:27:09 GMT+0800 (CST)
+updatedAt: Fri Jul 26 2019 04:28:58 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -647,7 +647,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 #### 3. 在线频道信息查询
 
-新增 Restful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见:
+新增 RESTful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见:
 
 - 通话场景，详见 [Dashboard RESTful API](../../cn/Video/dashboard_restful_communication.md)
 - 互动直播场景，详见 [Dashboard RESTful API](../../cn/Interactive%20Braodcast/dashboard_restful_live.md)

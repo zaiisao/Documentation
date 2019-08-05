@@ -3,7 +3,7 @@
 title: 连接状态管理
 description: 
 platform: iOS,macOS
-updatedAt: Thu Jul 25 2019 03:59:12 GMT+0800 (CST)
+updatedAt: Sun Jul 28 2019 12:39:11 GMT+0800 (CST)
 ---
 # 连接状态管理
 ## 状态定义
@@ -58,7 +58,7 @@ Agora RTM SDK 与 Agora RTM 系统的连接状态共有以下五种定义：
 - 若 App 显式调用 `logoutWithCompletion:` 方法主动登出 Agora RTM 系统成功：
   - 本端收到回调 `rtmKit:connectionStateChanged:reason:` ，显示：
     - 连接状态变为： `AgoraRtmConnectionStateDisconnected` ;
-    - 连接状态改变原因：`AgoraRtmConnectionChangeReasonlogoutWithCompletion:` 。
+    - 连接状态改变原因：`AgoraRtmConnectionChangeReasonlogout` 。
 
 ### AgoraRtmConnectionStateReconnecting
 

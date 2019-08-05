@@ -2,8 +2,8 @@
 ---
 title: 连接状态管理
 description: 
-platform: Linux C++
-updatedAt: Thu Jul 25 2019 04:01:26 GMT+0800 (CST)
+platform: Linux CPP
+updatedAt: Thu Jul 25 2019 04:01:30 GMT+0800 (CST)
 ---
 # 连接状态管理
 ## 状态定义

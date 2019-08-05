@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 10:08:50 GMT+0800 (CST)
+updatedAt: Fri Jul 26 2019 04:28:35 GMT+0800 (CST)
 ---
 # Information Security Policy
 ## Introduction
@@ -125,7 +125,7 @@ There is no interaction between the App Server Infrastructure and the Agora Clou
 
 ### Access Dashboard
 
-Customers can access the customer dashboard through the Web or Restful API to check the Media Server Logs and Analytics Data.
+Customers can access the customer dashboard through the Web or RESTful API to check the Media Server Logs and Analytics Data.
 
 > The dashboard identity is linked to an email address provided by the customer.
 
