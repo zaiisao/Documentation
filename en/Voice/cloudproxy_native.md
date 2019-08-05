@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Tue Jul 30 2019 09:36:46 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:51:24 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -18,7 +18,7 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 
 1. Download [the latest version of the Agora Native SDK](https://docs.agora.io/en/Agora%20Platform/downloads).
 2. Integrate the SDK and prepare the development environment. For details, see the **Integrate the SDK** guide.
-3. Contact support@agora.io and provide the information on the regions using the cloud proxy, the concurrent scale, and network operators.
+3. Contact support@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
 4. Add the following test IP addresses and ports to your whitelist.
 
 	The sources are the clients that integrate the Agora Native or Recording SDK.
