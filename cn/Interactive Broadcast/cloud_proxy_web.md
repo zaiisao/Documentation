@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: How to enable cloud proxy on Web SDK
 platform: Web
-updatedAt: Tue Jul 30 2019 06:54:40 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:49:56 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能简介
@@ -18,7 +18,7 @@ updatedAt: Tue Jul 30 2019 06:54:40 GMT+0800 (CST)
 
 Agora Web SDK v2.5.1 及以上版本支持云代理服务。开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Interactive%20Broadcast/web_prepare.md)。
 
-1. 联系 support@agora.io 申请开通云代理服务，并提供代理服务使用区域、并发规模、网络运营商等信息。
+1. 联系 support@agora.io，提供 App ID，并提供代理服务使用区域、并发规模、网络运营商等信息，申请开通云代理服务。
 
 2. 将以下测试 IP 及端口添加到企业防火墙的白名单。
    

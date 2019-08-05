@@ -16,7 +16,7 @@ updatedAt: Mon Aug 05 2019 02:49:56 GMT+0800 (CST)
 
 ## 操作步骤
 
-Agora Web SDK v2.5.1 及以上版本支持云代理服务。开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Audio%20Broadcast/web_prepare.md)。
+Agora Web SDK v2.5.1 及以上版本支持云代理服务。开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Agora%20Platform/web_prepare.md)。
 
 1. 联系 support@agora.io，提供 App ID，并提供代理服务使用区域、并发规模、网络运营商等信息，申请开通云代理服务。
 
@@ -109,5 +109,5 @@ Agora 云代理的工作原理如下：
 ## 开发注意事项
 
 -  `startProxyServer` 和 `stopProxyServer` 必须在加入频道前或离开频道后调用。
-- Agora Web SDK 还提供 `setProxyServer` 和 `setTurnServer` 两个方法给用户[自行部署代理服务器](../../cn/Audio%20Broadcast/proxy_web.md)。这两个方法与 `startProxyServer` 不可同时调用，调用了其中任一个方法，再调用 `startProxyServer` 会报错，反之亦然。
+- Agora Web SDK 还提供 `setProxyServer` 和 `setTurnServer` 两个方法给用户[自行部署代理服务器](../../cn/Agora%20Platform/proxy_web.md)。这两个方法与 `startProxyServer` 不可同时调用，调用了其中任一个方法，再调用 `startProxyServer` 会报错，反之亦然。
 -  `stopProxyServer` 会关闭所有代理服务，包括通过 `setProxyServer` 和 `setTurnServer` 设置的代理。
