@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Mon Aug 05 2019 08:39:10 GMT+0800 (CST)
+updatedAt: Tue Aug 06 2019 02:32:14 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -57,10 +57,10 @@ v2.3.4 is released on August 5, 2019.
 
 ### Issues Fixed
 
-- File splitting in composite recording mode caused by channel profile switch.
+- File splitting in composite recording mode caused by switching channel profiles.
 - Failure to only record audio in composite recording mode in the Live Broadcast profile.
-- The libyuv crashes.
-- The crash when calling the `leaveChannel` method to leave a channel.
+- Libyuv crashes.
+- Crashes when calling the `leaveChannel` method to leave a channel.
 
 ## v2.3.3
 
