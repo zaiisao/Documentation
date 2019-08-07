@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Web
-updatedAt: Wed Aug 07 2019 02:00:54 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 02:01:45 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -28,9 +28,11 @@ Agora 的其他接口仍使用 UID 作为参数。Agora Engine 在 SDK 内部维
 
 使用 String 型的 uid 加入频道的示例代码如下：
 
+使用 String 型的 uid 加入频道的示例代码如下：
+
 ```javascript
 // Set uid as agora and join channel 1024
-client.join(<token>, "1024", "agora", function(uid) {
+client.join("<token>", "1024", "agora", function(uid) {
   console.log("client" + uid + "joined channel");
   // Create a local stream
   // ...
