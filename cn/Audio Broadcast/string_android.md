@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Wed Aug 07 2019 01:26:14 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 01:26:27 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -17,9 +17,14 @@ Agora 的其他接口仍使用 UID 作为参数。Agora Engine 在 SDK 内部维
 ## 实现方法
 请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Audio%20Broadcast/android_video.md)。
 
-从 v2.8.0 起，Native SDK 新增如下接口支持使用 User Account 来标识用户在频道中的身份
+Agora Native SDK 和 Web SDK 通过不同方法支持 String 型的用户名：
+
+- Native SDK：从 v2.8.0 起，新增使用 User Account 来标识用户在频道中的身份
+
  - `registerLocalUserAccount`：注册本地用户 User Account
  - `joinChannelWithUserAccount`：使用 User Account 加入频道
+
+- Web SDK：从 v2.5.0 起支持将 join 方法中的 `uid` 设为 Number 或 String 型
 
 其中，String 型的用户名最大不可超过 255 字节，且需要确保其在频道内的唯一性。支持的字符集范围如下：
 
@@ -55,7 +60,34 @@ Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanc
 
 你也可以参考如下代码片段，在项目中实现使用 String 型的 User account 加入频道：
 
-undefined## 开发注意事项
+```java
+// Java
+private void initializeAgoraEngine() {
+  try {
+    String appId = getString(R.string.agora_app_id);
+    mRtcEngine = RtcEngine.create(getBaseContext(), appId, mRtcEventHandler);
+    // 初始化后、加入频道前先注册用户名，可以缩短加入频道的时间
+    mRtcEngine.registerLocalUserAccount(appId, mLocal.userAccount);
+  } catch (Exception e) {
+    Log.e(LOG_TAG, Log.getStackTraceString(e));
+    
+    throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
+  }
+}
+
+...
+  
+private void joinChannel() {
+  String token = getString(R.string.agora_access_token);
+  if (token.isEmpty()) {
+    token = null;
+  }
+  // 使用注册的用户名加入频道
+  mRtcEngine.joinChannelWithUserAccount(token, "stringifiedChannel1", mLocal.userAccount);
+}
+```
+
+## 开发注意事项
 
 - 同一频道内，Int 型的 User ID 和 String 型的 User account 不可混用。如果你的频道内有不支持 String 型 User account 的 SDK，则只能使用 Int 型的 User ID。
 - 如果你将用户名切换至 String 型 User account，请确保所有终端用户同步升级。
