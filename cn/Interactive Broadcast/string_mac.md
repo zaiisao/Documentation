@@ -2,8 +2,8 @@
 ---
 title: 使用 String 型的用户名
 description: 
-platform: iOS
-updatedAt: Tue Jul 09 2019 03:39:15 GMT+0800 (CST)
+platform: macOS
+updatedAt: Wed Aug 07 2019 01:47:42 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -51,13 +51,26 @@ Agora Native SDK 和 Web SDK 通过不同方法支持 String 型的用户名：
 - [`getUserInfoByUserAccount`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUserAccount:withError:)
 - [`didRegisteredLocalUser`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didRegisteredLocalUser:withUid:)
 - [`didUpdatedUserInfo`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
+
 ## 示例代码
 
-Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/dev/stringified-account/String-Account)的 Github 示例代码，你可以前往下载和体验。
+Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的 Github 示例代码，你可以前往下载和体验。
+
+你也可以参考如下代码片段，在项目中实现使用 String 型的 User account 加入频道：
+
+```swift
+func joinChannel() {
+  // 加入频道前注册用户名
+  agoraKit.registerLocalUserAccount(userAccount: randomString(length: 8), appId: Your App ID)
+  // 使用注册的用户名加入频道
+  agoraKit.joinChannel(byUserAccount: userAccount, token: Token, channelId: "demoChannel1") {(sid, uid, elapsed) in
+  }
+}
+```
 
 ## 开发注意事项
 
 - 同一频道内，Int 型的 User ID 和 String 型的 User account 不可混用。如果你的频道内有不支持 String 型 User account 的 SDK，则只能使用 Int 型的 User ID。
 - 如果你将用户名切换至 String 型 User account，请确保所有终端用户同步升级。
 - 如果使用 String 型的 User account，请确保你的服务端用户生成 Token 的脚本已升级至最新版本。如果使用 String 型 User account 加入频道，请确保使用该 User account 或其对应的 Int 型 UID 来生成 Token。你可以调用 `getUserInfoByUserAccount` 来获取 User account 所对应的 UID。
-- 如果频道中 Native SDK 和 Web SDK 互通，请确保该两者使用的用户名的类型一致。其中，Web SDK 中的 `uid` 可以设为 String 型或 Number 型，
+- 如果频道中 Native SDK 和 Web SDK 互通，请确保该两者使用的用户名的类型一致。其中，Web SDK 中的 `uid` 可以设为 String 型或 Number 型。
