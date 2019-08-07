@@ -3,7 +3,7 @@
 title: 信令维护计划及兼容性说明
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 07 2019 09:15:43 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 09:15:49 GMT+0800 (CST)
 ---
 # 信令维护计划及兼容性说明
 ## 信令 SDK 维护计划
@@ -28,7 +28,7 @@ Agora RTM SDK v1.0 支持与信令 SDK 互通，但仍不支持以下不兼容�
 
 声网会持续推动兼容性问题的解决，如遇到兼容性相关问题或其他需要请联系支持团队或 support@agora.io。
 	
-> 如果你在已有的项目中使用了信令，可以参考<链接>，帮助你更快速的迁移到 Agora RTM SDK。
+> 如果你在已有的项目中使用了信令，可以参考[升级到 RTM](../../cn/Real-time-Messaging/RTM_vs_signaling_android.md)，帮助你更快速的迁移到 Agora RTM SDK。
 
 
 
