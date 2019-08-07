@@ -3,7 +3,7 @@
 title: 信令维护计划及兼容性说明
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 07 2019 09:00:47 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 09:15:43 GMT+0800 (CST)
 ---
 # 信令维护计划及兼容性说明
 ## 信令 SDK 维护计划
