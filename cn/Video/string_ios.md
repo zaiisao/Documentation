@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: iOS
-updatedAt: Wed Aug 07 2019 01:44:49 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 01:45:04 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -18,12 +18,9 @@ Agora 的其他接口仍使用 UID 作为参数。Agora Engine 在 SDK 内部维
 
 请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/mac_video.md)。
 
-Agora Native SDK 和 Web SDK 通过不同方法支持 String 型的用户名：
-
-- Native SDK：从 v2.8.0 起，新增使用 User Account 来标识用户在频道中的身份
+从 v2.8.0 起，Native SDK 新增如下方法，支持使用 User Account 来标识用户在频道中的身份
 - `registerLocalUserAccount`：注册本地用户 User Account
 - `joinChannelByUserAccount`：使用 User Account 加入频道
-- Web SDK：从 v2.5.0 起支持将 join 方法中的 `uid` 设为 Number 或 String 型
 
 其中，String 型的用户名最大不可超过 255 字节，且需要确保其在频道内的唯一性。支持的字符集范围如下：
 
@@ -61,9 +58,11 @@ Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanc
 ```swift
 func joinChannel() {
   // 加入频道前注册用户名
-  agoraKit.registerLocalUserAccount(userAccount: randomString(length: 8), appId: Your App ID)
+  let myStringId = "someStringId"
+  agoraKit.registerLocalUserAccount(userAccount: myStringId, appId: myAppId)
   // 使用注册的用户名加入频道
-  agoraKit.joinChannel(byUserAccount: userAccount, token: Token, channelId: "demoChannel1") {(sid, uid, elapsed) in
+  agoraKit.joinChannel(byUserAccount: myStringId, token: Token, channelId: "demoChannel1") {
+    sid, uid, elapsed) in
   }
 }
 ```
