@@ -3,7 +3,7 @@
 title: Report Call Statistics
 description: 
 platform: Web
-updatedAt: Wed Aug 07 2019 03:51:49 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 03:51:54 GMT+0800 (CST)
 ---
 # Report Call Statistics
 ## Introduction
@@ -222,8 +222,8 @@ client.getRemoteVideoStats((remoteVideoStatsMap) => {
 ### Reports on the uplink and downlink network conditions of the local user
 
 The [`network-quality`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) callback in  `Client.on` reports on the uplink and downlink network conditions of the local user once every two seconds.
-- `downlinkNetworkQuality`: The uplink network quality.
-- `uplinkNetworkQuality`: The downlink network quality.
+- `downlinkNetworkQuality`: The downlink network quality.
+- `uplinkNetworkQuality`: The uplink network quality.
 
 Quality Rating Table:
 
