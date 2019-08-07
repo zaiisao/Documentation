@@ -3,7 +3,7 @@
 title: Report Call Statistics
 description: 
 platform: Web
-updatedAt: Tue Feb 19 2019 06:56:16 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 03:39:31 GMT+0800 (CST)
 ---
 # Report Call Statistics
 ## Introduction
@@ -156,8 +156,8 @@ client.getRemoteAudioStats((remoteAudioStatsMap) => {
 ### Reports on the uplink and downlink network conditions of the local user
 
 The [`network-quality`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) callback in  `Client.on` reports on the uplink and downlink network conditions of the local user once every two seconds.
-- `downlinkNetworkQuality`: The uplink network quality.
-- `uplinkNetworkQuality`: The downlink network quality.
+- `downlinkNetworkQuality`: The downlink network quality.
+- `uplinkNetworkQuality`: The uplink network quality.
 
 Quality Rating Table:
 
