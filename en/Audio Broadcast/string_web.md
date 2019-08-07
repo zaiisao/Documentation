@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Web
-updatedAt: Mon Jul 08 2019 02:58:13 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 02:08:26 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -18,12 +18,7 @@ To ensure smooth communication, all the users in a channel should use the same t
 
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/web_prepare.md).
 
-The Agora Native SDK and Web SDK support using string user accounts in different ways:
-
-- The Native SDK: Starting with v2.8.0, you can use user accounts to identify the user.
-  - `registerLocalUserAccount`: Registers a user account.
-  - `joinChannelByUserAccount`/`joinChannelByUserAccount`: Joins the channel with the registered user account.
-- The Web SDK: Starting with v2.5.0, you can set the `uid` parameter in the `Client.join` method as either a number or a string.
+Starting with v2.5.0, you can set the `uid` parameter in the `Client.join` method as either a number or a string.
 
 The maximum string length of the user account is 255 bytes. Each user account should be unique in the channel. Supported character scopes are:
 
