@@ -3,7 +3,7 @@
 title: 通话质量检测
 description: 
 platform: Web
-updatedAt: Tue Feb 19 2019 06:51:45 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 03:40:38 GMT+0800 (CST)
 ---
 # 通话质量检测
 ## 功能描述
@@ -149,8 +149,8 @@ client.getRemoteAudioStats((remoteAudioStatsMap) => {
 ### 获取本地用户的上下行网络质量相关的统计数据
 
 Agora Web SDK 通过 `Client.on` 中的 [`network-quality`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#on) 回调向 App 报告本地用户的上下行网络质量。该回调每 2 秒触发，返回的参数包括：
-- `downlinkNetworkQuality`：上行网络质量打分。
-- `uplinkNetworkQuality`：下行网络质量打分。
+- `downlinkNetworkQuality`：下行网络质量打分。
+- `uplinkNetworkQuality`：上行网络质量打分。
 
 质量打分对照表如下：
 
