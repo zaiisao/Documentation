@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Electron
-updatedAt: Tue Jul 09 2019 03:39:47 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 02:09:53 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
