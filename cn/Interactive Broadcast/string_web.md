@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Web
-updatedAt: Wed Aug 07 2019 01:28:23 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 01:44:25 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -16,14 +16,7 @@ Agora 的其他接口仍使用 UID 作为参数。Agora Engine 在 SDK 内部维
 
 ## 实现方法
 
-Agora Native SDK 和 Web SDK 通过不同方法支持 String 型的用户名：
-
-- Native SDK：从 v2.8.0 起，新增使用 User Account 来标识用户在频道中的身份
-
- - `registerLocalUserAccount`：注册本地用户 User Account
- - `joinChannelWithUserAccount`/`joinChannelByUserAccount`：使用 User Account 加入频道
-
-- Web SDK：从 v2.5.0 起支持将 join 方法中的 `uid` 设为 Number 或 String 型
+从 v2.5.0 起，Web SDK 支持将 join 方法中的 `uid` 设为 Number 或 String 型
 
 其中，String 型的用户名最大不可超过 255 字节，且需要确保其在频道内的唯一性。支持的字符集范围如下：
 
