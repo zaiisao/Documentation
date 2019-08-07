@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Wed Aug 07 2019 01:58:36 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 01:58:47 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -19,12 +19,9 @@ To ensure smooth communication, all the users in a channel should use the same t
 
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/android_video.md).
 
-The Agora Native SDK and Web SDK support using string user accounts in different ways:
-
-- The Native SDK: Starting with v2.8.0, you can use user accounts to identify the user.
+Starting with v2.8.0, you can use user accounts to identify the user.
   - `registerLocalUserAccount`: Registers a user account.
   - `joinChannelWithUserAccount`: Joins the channel with the registered user account.
-- The Web SDK: Starting with v2.5.0, you can set the `uid` parameter in the `Client.join` method as either a number or a string.
 
 The maximum string length of the user account is 255 bytes. Each user account should be unique in the channel. Supported character scopes are:
 
@@ -68,7 +65,6 @@ Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Vid
 You can also refer to the following code snippets and implement string usernames in your peoject:
 
 ```java
-// Java
 private void initializeAgoraEngine() {
   try {
     String appId = getString(R.string.agora_app_id);
