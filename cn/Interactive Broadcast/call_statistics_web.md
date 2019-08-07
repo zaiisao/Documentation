@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: Web
-updatedAt: Wed Aug 07 2019 03:51:12 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 03:51:18 GMT+0800 (CST)
 ---
 # 检测通话质量
 ## 功能描述
@@ -219,8 +219,8 @@ client.getRemoteVideoStats((remoteVideoStatsMap) => {
 ### 获取本地用户的上下行网络质量相关的统计数据
 
 Agora Web SDK 通过 `Client.on` 中的 [`network-quality`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) 回调向 App 报告本地用户的上下行网络质量。该回调每 2 秒触发，返回的参数包括：
-- `downlinkNetworkQuality`：上行网络质量打分。
-- `uplinkNetworkQuality`：下行网络质量打分。
+- `downlinkNetworkQuality`：下行网络质量打分。
+- `uplinkNetworkQuality`：上行网络质量打分。
 
 质量打分对照表如下：
 
