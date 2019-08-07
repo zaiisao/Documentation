@@ -3,7 +3,7 @@
 title: 游戏相关
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 05 2019 03:50:51 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 08:58:35 GMT+0800 (CST)
 ---
 # 游戏相关
 ## 游戏音效问题
@@ -40,9 +40,12 @@ AMG SDK v2.2 及之后的版本，以及 2019 年之后发布的 SDK，会自动
 
 在 `joinChannel` 之前，调用：`setParameters("{\"che.audio.keep.audiosession\":true}")`;
 
-### 在播放背景音乐的情况下，join channel 后，听到的背景音乐声音会变小。
+### 播放背景音效的情况下，通信模式加入频道或者直播模式连麦后，听到的背景音效声音会变小。
 
-在 `joinChannel` 之后背景游戏音乐播放仍留在耳机，没有切到正确设备（扬声器），造成声音听起来较小。可以调用 `setEnableSpeakerphone` 方法设置语音路由，并确保背景音乐和通话音的输出路由一致。
+你可以选择如下一种方法解决该问题：
+
+* 确保声音都走外放。你可以调用 `setEnableSpeakerohone` 方法设置语音路由为外放。
+* 在语音连麦过程中，手机系统会开启回声消除以保证人声体验，因此会压低声音，也会压低背景音效，因此 Agora 建议调用 startAudioMixing 或 playEffect 方法来播放音效文件。
 
 ### onAudioVolumeIndication 获得的音量是 0~255, 有没有什么合适的经验阈值界定说话和没说话?
 
