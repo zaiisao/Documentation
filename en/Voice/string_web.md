@@ -36,7 +36,7 @@ The sample code for joining a channel with a string user ID is as follows:
 
 ```javascript
 // Set uid as agora and join channel 1024
-client.join(<token>, "1024", "agora", function(uid) {
+client.join("<token>", "1024", "agora", function(uid) {
   console.log("client" + uid + "joined channel");
   // Create a local stream
   // ...
