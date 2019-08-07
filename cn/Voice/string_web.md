@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Web
-updatedAt: Wed Aug 07 2019 01:44:25 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 01:52:54 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
