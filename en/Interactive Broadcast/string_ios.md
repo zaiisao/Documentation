@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: iOS
-updatedAt: Wed Aug 07 2019 02:04:48 GMT+0800 (CST)
+updatedAt: Wed Aug 07 2019 02:05:05 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -21,7 +21,6 @@ Ensure that you prepare the development environment. See [Integrate the SDK](../
 Starting with v2.8.0, you can use user accounts to identify the user.
   - `registerLocalUserAccount`: Registers a user account.
   - `joinChannelByUserAccount`: Joins the channel with the registered user account.
-
 
 The maximum string length of the user account is 255 bytes. Each user account should be unique in the channel. Supported character scopes are:
 
@@ -67,10 +66,11 @@ You can also refer to the following code snippets and implement string usernames
 ```swift
 func joinChannel() {
   // Registers the local user account before joining the channel.
-	let myStringId = "someStringId"
+  let myStringId = "someStringId"
   agoraKit.registerLocalUserAccount(userAccount: myStringId, appId: myAppId)
   // Joins the channel with the registered user account.
-  agoraKit.joinChannel(byUserAccount: myStringId, token: Token, channelId: "demoChannel1") {(sid, uid, elapsed) in
+  agoraKit.joinChannel(byUserAccount: myStringId, token: Token, channelId: "demoChannel1") {
+    sid, uid, elapsed) in
   }
 }
 ```
