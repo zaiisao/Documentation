@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Jul 29 2019 08:30:44 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 02:18:31 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -69,6 +69,8 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 ## 停止录制
 
 调用  [`stop`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法停止录制。
+
+> 当频道空闲（无用户）超过预设时间（默认为 30 秒） 后，云端录制也会自动退出频道停止录制。
 
 该方法的请求和响应示例详见 [`stop` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#stop-请求示例)。
 
