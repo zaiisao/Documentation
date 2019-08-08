@@ -3,14 +3,14 @@
 title: 查看用量
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 29 2019 08:14:05 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 07:45:49 GMT+0800 (CST)
 ---
 # 查看用量
 本页介绍如何在 Agora Dashboard 查看项目用量。
 
 > 角色为管理员/财务的账户拥有查看用量统计页面的权限。
 
-## 步骤
+查看项目用量的步骤如下：
 
 1. 登录 [Agora Dashboard](https://dashboard.agora.io/)，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**用量统计**页面。
 
