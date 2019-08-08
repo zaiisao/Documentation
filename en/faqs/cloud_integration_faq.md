@@ -3,7 +3,7 @@
 title: Cloud recording FAQ
 description: Cloud recording faq
 platform: Linux Java,Linux,Linux C++
-updatedAt: Mon Jul 01 2019 15:08:31 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 11:15:53 GMT+0800 (CST)
 ---
 # Cloud recording FAQ
 ##  Java SDK integration errors
@@ -12,12 +12,7 @@ updatedAt: Mon Jul 01 2019 15:08:31 GMT+0800 (CST)
 
 #### java.land.UnsatisfiedLinkError: no agora-cloud-recording-java in java.library.path
 
-##### **Reason**
-The system cannot find the `libagora-cloud-recording-java.so` file.
-
-##### **Solution**
-
-1. Print `java.library.path`, and check if the `LD_LIBRARY_PATH` environment variable includes the .so file.
+#####undefined1. Print `java.library.path`, and check if the `LD_LIBRARY_PATH` environment variable includes the .so file.
   ```bash
 System.out.println(System.getProperty("java.library.path"))
   ```
@@ -25,12 +20,7 @@ System.out.println(System.getProperty("java.library.path"))
 
 #### java.land.NoClassDefFoundError: Could not initialize class io.agora.cloud_recording.CloudRecorder
 
-##### **Reason**
-`agora-cloud-recording-sdk.jar` is not in the `classpath` variable. When you integrate the Java SDK, you need to load the `agora-cloud-recording-sdk.jar` and `libagora-cloud-recording-java.so` files. The .jar file should be included in the `classpath` variable and the .so file should be included in the `LD_LIBRARY_PATH` variable.
-
-##### **Solution**
-
-1. Print `classpath`, and check if it includes `agora-cloud-recording-sdk.jar`.
+#####undefined1. Print `classpath`, and check if it includes `agora-cloud-recording-sdk.jar`.
 ```bash
 System.out.println("<Path to the class>：" + System.getProperty("java.class.path"));
 ```
@@ -51,17 +41,11 @@ The URL of the M3U8 file consists of the domain of your cloud storage and the fi
 
 ![](https://web-cdn.agora.io/docs-files/1556174270602)
 
-The following callbacks contain the filename of the M3U8 file:
+You can get the filename of the M3U8 file from the following fileds:
+- The `fileList` field in the responses of [`query`](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest#query) and [`stop`](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest#stop) 
+- The `fileList` field in the [`cloud_recording_file_infos`](https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest#a-name4acloud_recording_file_infos) callback event
 
-- C++
-  - [`OnRecordingUploadingProgress`](../../en/cloud-recording/cloud_recording_api.md)
-  - [`OnRecordingUploaded`](../../en/cloud-recording/cloud_recording_api.md)
-  - [`OnRecordingBackedUp`](../../en/cloud-recording/cloud_recording_api.md)
 
-- Java
-  - [`onRecordingUploadingProgress`](../../en/cloud-recording/cloud_recording_api_java.md)
-  - [`onRecordingUploaded`](../../en/cloud-recording/cloud_recording_api_java.md)
-  - [`onRecordingBackedUp`](../../en/cloud-recording/cloud_recording_api_java.md)
 
 ## 101 error
 
