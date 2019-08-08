@@ -3,31 +3,10 @@
 title: Cloud recording FAQ
 description: Cloud recording faq
 platform: Linux Java,Linux,Linux C++
-updatedAt: Thu Aug 08 2019 11:15:53 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 11:31:12 GMT+0800 (CST)
 ---
 # Cloud recording FAQ
-##  Java SDK integration errors
-
-### Common errors in integrating the Java SDK
-
-#### java.land.UnsatisfiedLinkError: no agora-cloud-recording-java in java.library.path
-
-#####undefined1. Print `java.library.path`, and check if the `LD_LIBRARY_PATH` environment variable includes the .so file.
-  ```bash
-System.out.println(System.getProperty("java.library.path"))
-  ```
-2. We recommend adding `java.library.path` to `LD_LIBRARY_PATH`. You can add `LD_LIBRARY_PATH` to **/etc/profile** or put the `libagora-cloud-recording-java.so` file in the **/usr/lib** system directory.
-
-#### java.land.NoClassDefFoundError: Could not initialize class io.agora.cloud_recording.CloudRecorder
-
-#####undefined1. Print `classpath`, and check if it includes `agora-cloud-recording-sdk.jar`.
-```bash
-System.out.println("<Path to the class>：" + System.getProperty("java.class.path"));
-```
-2.  If not, add the path to the .jar file in `classpath`.
-
-
-## Fails to upload to the cloud storage
+ ## Fails to upload to the cloud storage
 
 Check if your cloud storage settings are correct:
 
@@ -45,7 +24,10 @@ You can get the filename of the M3U8 file from the following fileds:
 - The `fileList` field in the responses of [`query`](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest#query) and [`stop`](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest#stop) 
 - The `fileList` field in the [`cloud_recording_file_infos`](https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest#a-name4acloud_recording_file_infos) callback event
 
+## How to stop cloud recording?
+You can call the [`stop`](https://docs.agora.io/en/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#stop) method to leave the channel and stop recording.
 
+Agora Cloud Recording automatically stops recording and leaves the channel when there is no user in the recording channel after a time period (30 seconds by default). You can set this timeout interval by the `maxIdleTime` parameter when you start the recording.
 
 ## 101 error
 
