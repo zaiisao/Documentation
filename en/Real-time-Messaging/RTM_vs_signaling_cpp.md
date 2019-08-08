@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux CPP
-updatedAt: Thu Aug 08 2019 10:09:12 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 10:17:19 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -203,10 +203,10 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 | Returns to the caller: the call invite successfully cancelled. | `onInviteEndByMyself`    | `onLocalInvitationCanceled`                                  |
 | Returns to the caller: call invite accepted.                 | `onInviteAcceptedByPeer` | `onLocalInvitationAccepted`                                  |
 | Returns to the caller: call invite declined.                 | `onInviteRefusedByPeer`  | `onLocalInvitationRefused`                                   |
-| Returns to the caller: the outgoing call invite ends in failure. | `onInviteFailed`         | `onLocalInvitationFailure`. See `LOCAL_INVITATION_ERR_CODE` for the error codes. <sup>6</sup> |
+| Returns to the caller: the outgoing call invite ends in failure. | `onInviteFailed`         | `onLocalInvitationFailure`. See `LOCAL_INVITATION_ERR_CODE` for the error codes. <sup>5</sup> |
 |                                                              |                          |                                                              |
 
-> <sup>6</sup>: The SDK returns the `onLocalInvitationFailure` to the caller if the call invitation process has started but ends in failure. Scenarios include: the callee is offline, the `ILocalInvitation` object times out, the `ILocalInvitation` object expires, and the callee receives the call invitation but fails to respond in time. 
+> <sup>5</sup>: The SDK returns the `onLocalInvitationFailure` to the caller if the call invitation process has started but ends in failure. Scenarios include: the callee is offline, the `ILocalInvitation` object times out, the `ILocalInvitation` object expires, and the callee receives the call invitation but fails to respond in time. 
 
 | Event                                                   | Signaling           | Real-time Messaging                                          |
 | ------------------------------------------------------- | ------------------- | ------------------------------------------------------------ |
@@ -215,10 +215,10 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 | Returns to the callee: the caller cancels the invite.   | `onInviteEndByPeer` | `onRemoteInvitationCanceled`                                 |
 | Returns to the callee: call invite accepted.            | N/A                 | `onRemoteInvitationAccepted`                                 |
 | Returns to the callee: call invite declined.            | N/A                 | `onRemoteInvitationRefused`                                  |
-| Returns to the callee: the call invite ends in failure. | N/A                 | `onRemoteInvitationFailure`. See `REMOTE_INVITATION_ERR_CODE` for the error codes. <sup>7</sup> |
+| Returns to the callee: the call invite ends in failure. | N/A                 | `onRemoteInvitationFailure`. See `REMOTE_INVITATION_ERR_CODE` for the error codes. <sup>6</sup> |
 |                                                         |                     |                                                              |
 
-> <sup>7</sup> The SDK returns the `onRemoteInvitationFailure` to the callee if the call invitation process has started but ends in failure. Scenarios include: the caller is offline, the `IRemoteInvitation` object times out, and the `IRemoteInvitation` ojbect expires. 
+> <sup>6</sup> The SDK returns the `onRemoteInvitationFailure` to the callee if the call invitation process has started but ends in failure. Scenarios include: the caller is offline, the `IRemoteInvitation` object times out, and the `IRemoteInvitation` ojbect expires. 
 
 ## Renewing a Token
 
