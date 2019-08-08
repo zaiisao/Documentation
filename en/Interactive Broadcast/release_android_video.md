@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Aug 08 2019 12:13:37 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 12:13:49 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -22,14 +22,7 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 ##### Privacy changes
 If your app targets Android 9, you should keep the following behavior changes in mind. These updates to device serial and DNS information enhance user privacy.
 
-**Build serial number deprecation**
-
-In Android 9, `Build.SERIAL` is always set to "UNKNOWN" to protect users' privacy.
-If your app needs to access a device's hardware serial number, you should instead request the READ_PHONE_STATE permission, then call `getSerial()`.
-
-**DNS privacy**
-
-Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
+**Build serial number deprecationundefinedApps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
 
@@ -46,7 +39,7 @@ v2.8.1 is released on Jul. 20, 2019.
 ### New features
 
 - Support for the x86-64 architecture.
-- Supoort for Android Q.
+- Support for Android Q.
 
 ## v2.8.0
 
