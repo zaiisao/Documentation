@@ -3,7 +3,7 @@
 title: Create an Agora account
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 31 2019 06:33:07 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 06:03:51 GMT+0800 (CST)
 ---
 # Create an Agora account
 An Agora account gives you access to the Agora Dashboard, which is your home for using Agora products. 
