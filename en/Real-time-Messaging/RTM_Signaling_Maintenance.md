@@ -3,7 +3,7 @@
 title: Agora Signaling Maintenance Plan
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 08 2019 02:50:55 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 02:52:12 GMT+0800 (CST)
 ---
 # Agora Signaling Maintenance Plan
 ## Agora Signaling Maintenance Plan
@@ -26,7 +26,7 @@ Agora RTM SDK v1.0 can intercommunicate with the legacy Agora Signling SDK, but 
 	
 We will continue to drive solutions for incompatibility issues. Should you come across any compatibility issue or have special requirements, please contact our support team or send a note to sales@agora.io.
 	
-> See the [Agor RTM SDK vs. Signaling](../../en/Real-time-Messaging/RTM_Signaling_Maintenance.md), if you want to switch from the legacy Signaling SDK to the Agora RTM SDK. 
+> See the [Agor RTM SDK vs. Signaling](../../en/Real-time-Messaging/RTM_vs_signaling_android.md), if you want to switch from the legacy Signaling SDK to the Agora RTM SDK. 
 
 
 
