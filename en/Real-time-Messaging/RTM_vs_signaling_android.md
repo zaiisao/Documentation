@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Android
-updatedAt: Thu Aug 08 2019 02:49:20 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 04:15:12 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -105,8 +105,7 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 > - <sup>1</sup> The Agora RTM SDK requires you to create a channel instance before joining it. 
 > - <sup>2</sup> The Agora RTM SDK allows you to join a maximum of 20 channels at the same time. 
-> - <sup>3</sup> The Agora RTM SDK does not return to the user a member list of the channel when he/she successfully joins it.
-> - The Agora RTM SDK does not support a special channel as the Agora Signaling SDK does. 
+> - <sup>3</sup> The Agora RTM SDK does not return to the user a member list of the channel when he/she successfully joins it. 
 
 ## Sending a channel message
 
@@ -174,7 +173,7 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 | --------------------------------------------------- | ----------------------------- | ------------------- |
 | Returns the number of users in a specified channel. | `onChannelQueryUserNumResult` | N/A                 |
 
-> The Agora RTM SDK will support this feature soon. 
+> The Agora RTM SDK v1.1 will support this feature. 
 
 ## Call Invitation
 
@@ -235,7 +234,7 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                    | Signaling | Real-time Messaging |
 | ------------------------- | --------- | ------------------- |
-| Renews the current Token. | N/A       | `onSuccess`         |
+| Renews the current Token. | N/A       | `renewToken`         |
 
 
 
