@@ -3,10 +3,10 @@
 title: Agora Signaling Maintenance Plan
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 08 2019 02:52:12 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 03:22:42 GMT+0800 (CST)
 ---
 # Agora Signaling Maintenance Plan
-## Agora Signaling Maintenance Plan
+## Agora Signaling Sunset Plan
 
 -  As of August 1st, 2019, the Agora Signaling system will enter the sunset phase. We will not add new features during this period, but only fix reported bugs. As of August 12, 2019, all related documents will be moved [here](https://docs.agora.io/en/Signaling/product_signaling?platform=All%20Platforms).
 - As of December 31st, we will stop updating the Agora Signaling system, and only ensure that the Agora Signaling SDK can function in the interim. 
