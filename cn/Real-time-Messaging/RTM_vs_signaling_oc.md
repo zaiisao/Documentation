@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Wed Aug 07 2019 08:57:30 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 02:04:27 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -222,10 +222,10 @@ updatedAt: Wed Aug 07 2019 08:57:30 GMT+0800 (CST)
 | 返回给被叫：主叫已取消呼叫邀请     | `onInviteEndByPeer` | `remoteInvitationCanceled`                                   |
 | 返回给被叫：已成功接受呼叫邀请     | N/A                 | `remoteInvitationAccepted`                                   |
 | 返回给被叫：已拒绝呼叫邀请         | N/A                 | `remoteInvitationRefused`                                    |
-| 返回给被叫：呼叫邀请过程失败       | N/A                 | `remoteInvitationFailure`。错误码详见 `AgoraRtmRemoteInvitationError`。<sup>5</sup> |
+| 返回给被叫：呼叫邀请过程失败       | N/A                 | `remoteInvitationFailure`。错误码详见 `AgoraRtmRemoteInvitationError`。<sup>7</sup> |
 |                                    |                     |                                                              |
 
-> <sup>5</sup> 如果呼叫邀请进程已经开始但以失败告终，Agora RTM SDK 会返回 `remoteInvitationFailure` 回调给被叫。通用场景包括：`AgoraRtmRemoteInvitation` 发送超时或 `AgoraRtmRemoteInvitation`  过期。 
+> <sup>7</sup> 如果呼叫邀请进程已经开始但以失败告终，Agora RTM SDK 会返回 `remoteInvitationFailure` 回调给被叫。通用场景包括：`AgoraRtmRemoteInvitation` 发送超时或 `AgoraRtmRemoteInvitation`  过期。 
 
 ## 更新 Token
 
