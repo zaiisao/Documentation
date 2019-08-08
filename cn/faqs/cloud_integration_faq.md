@@ -3,7 +3,7 @@
 title: 云端录制集成常见问题
 description: Cloud recording faq
 platform: Linux Java,Linux,Linux C++
-updatedAt: Mon Jul 01 2019 17:18:48 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 11:09:29 GMT+0800 (CST)
 ---
 # 云端录制集成常见问题
 ## Java 集成报错
@@ -12,21 +12,11 @@ updatedAt: Mon Jul 01 2019 17:18:48 GMT+0800 (CST)
 
 #### java.land.UnsatisfiedLinkError: no agora-cloud-recording-java in java.library.path
 
-##### **报错原因**
-系统找不到库文件 `libagora-cloud-recording-java.so`。
-
-##### **解决方法**
-
-1. 打印  `java.library.path`，查看 Linux 环境变量 `LD_LIBRARY_PATH` 是否配置了该库文件：
+#####undefined1. 打印  `java.library.path`，查看 Linux 环境变量 `LD_LIBRARY_PATH` 是否配置了该库文件：
   ```bash
 System.out.println(System.getProperty("java.library.path"))
   ```
-2. 建议在 Linux 系统变量 `LD_LIBRARY_PATH` 中添加 `java.library.path`，可以在 **/etc/profile** 里面添加 `LD_LIBRARY_PATH` 或者把 `libagora-cloud-recording-java.so` 直接放在Linux 系统目录 **/usr/lib** 下面。
-
-#### java.land.NoClassDefFoundError: Could not initialize class io.agora.cloud_recording.CloudRecorder
-
-##### **报错原因**
-`classpath` 里面没有加载 `agora-cloud-recording-sdk.jar`。集成 Java SDK 时，需要加载 `agora-cloud-recording-sdk.jar` 和  `libagora-cloud-recording-java.so` ，jar 文件放在 Linux 环境变量 `classpath` 下，库文件放在 Linux 环境变量 `LD_LIBRARY_PATH` 下。
+2. 建议在 Linux 系统变量 `LD_LIBRARY_PATH` 中添加 `java.library.path`，可以在 **/etc/profile** 里面添加 `LD_LIBRARY_PATH` 或者把 `libagora-cloud-recording-java.so` 直接放在Linux 系统目录 **/usr/libundefined`classpath` 里面没有加载 `agora-cloud-recording-sdk.jar`。集成 Java SDK 时，需要加载 `agora-cloud-recording-sdk.jar` 和  `libagora-cloud-recording-java.so` ，jar 文件放在 Linux 环境变量 `classpath` 下，库文件放在 Linux 环境变量 `LD_LIBRARY_PATH` 下。
 
 ##### **解决方法**
 
@@ -51,17 +41,21 @@ System.out.println("类所在的路径：" + System.getProperty("java.class.path
 
 ![](https://web-cdn.agora.io/docs-files/1561621201492)
 
-以下回调中均包含 M3U8 文件名信息：
+你可以通过以下方式获得 M3U8 文件名信息：
+
+- RESTful API
+	-  [`query`](../../cn/cloud-recording/cloud_recording_api_rest.md) 和 [`stop`](../../cn/cloud-recording/cloud_recording_api_rest.md) 的响应中 `fileList` 字段
+	-  回调事件 [`cloud_recording_file_infos`](../../cn/cloud-recording/cloud_recording_callback_rest.md) 的 `fileList` 字段
 
 - C++
-  - [`OnRecordingUploadingProgress`](../../cn/cloud-recording/cloud_recording_api.md)
-  - [`OnRecordingUploaded`](../../cn/cloud-recording/cloud_recording_api.md)
-  - [`OnRecordingBackedUp`](../../cn/cloud-recording/cloud_recording_api.md)
+  - [`OnRecordingUploadingProgress`](../../cn/cloud-recording/cloud_recording_api.md) 中的 `recording_playlist_filename` 参数
+  - [`OnRecordingUploaded`](../../cn/cloud-recording/cloud_recording_api.md) 中的 `file_name` 参数
+  - [`OnRecordingBackedUp`](../../cn/cloud-recording/cloud_recording_api.md) 中的 `file_name` 参数
 
 - Java
-  - [`onRecordingUploadingProgress`](../../cn/cloud-recording/cloud_recording_api_java.md)
-  - [`onRecordingUploaded`](../../cn/cloud-recording/cloud_recording_api_java.md)
-  - [`onRecordingBackedUp`](../../cn/cloud-recording/cloud_recording_api_java.md)
+  - [`onRecordingUploadingProgress`](../../cn/cloud-recording/cloud_recording_api_java.md) 中的 `recording_playlist_filename` 参数
+  - [`onRecordingUploaded`](../../cn/cloud-recording/cloud_recording_api_java.md) 中的 `file_name` 参数
+  - [`onRecordingBackedUp`](../../cn/cloud-recording/cloud_recording_api_java.md) 中的 `file_name` 参数
 
 ## 101 错误
 
