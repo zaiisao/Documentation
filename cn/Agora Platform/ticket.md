@@ -3,12 +3,12 @@
 title: 提交工单
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 29 2019 08:14:23 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 07:46:11 GMT+0800 (CST)
 ---
 # 提交工单
 产品介绍看不懂？集成 bug 修不掉？通话中总是有回声？新手上路，难免磕磕绊绊。别担心，你在使用声网产品过程中遇到的任何问题，都可以在 Agora Dashboard 中提交工单，寻求声网老司机们的帮助。
 
-## 提工单的正确姿势
+提工单的正确姿势如下：
 
 1. 登录 [Agora Dashboard](https://dashboard.agora.io)，点击顶部导航栏**工单**按钮，进入工单系统。
 
