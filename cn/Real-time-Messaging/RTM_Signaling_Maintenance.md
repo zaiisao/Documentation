@@ -3,16 +3,15 @@
 title: 信令维护计划及兼容性说明
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 07 2019 09:15:49 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 07:34:51 GMT+0800 (CST)
 ---
 # 信令维护计划及兼容性说明
 ## 信令 SDK 维护计划
 
-- 2019 年 8 月 1 日起： 信令进入维护状态，只进行故障修复，不会增添新功能。信令文档和下载链接将于 2019 年 8 月 12 日被迁移到这里。
+- 2019 年 8 月 1 日起： 信令进入维护状态，只进行故障修复，不会增添新功能。信令文档和下载链接将于 2019 年 8 月 12 日被迁移到[这里](https://docs.agora.io/cn/Signaling/product_signaling?platform=All%20Platforms)。
 - 2019 年 12 月 31 日起：信令停止维护， 不再修复SDK 故障, 服务端只提供日常最低限度维护以保障信令 SDK 仍然可用。
 - 2020 年 6 月 30 日起：信令停止服务，关停信令服务器。
 
-> 老信令 SDK 的文档及下载入口见[这里](https://docs.agora.io/cn/Signaling/product_signaling?platform=All%20Platforms)。
 
 ## RTM 与信令互通兼容
 
