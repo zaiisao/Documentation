@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 06:23:08 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 02:51:54 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides a RESTful API for you to control cloud recording through HTTP requests.
@@ -69,6 +69,8 @@ See the [`query` examples](../../en/cloud-recording/cloud_recording_api_rest.md)
 
 Call the [`stop`](../../en/cloud-recording/cloud_recording_api_rest.md) method to stop the recording.
 
+> Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default.
+
 See the [`stop` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
 ## Upload and manage the recorded files
@@ -99,6 +101,10 @@ After the recording stops, the SDK triggers one of the following callbacks:
 
 - [`uploaded`](../../en/cloud-recording/cloud_recording_callback_rest.md): Occurs when all the recorded files are uploaded to the third-party cloud storage.
 - [`backuped`](../../en/cloud-recording/cloud_recording_callback_rest.md): Occurs when some of the recorded files fail to upload to the third-party cloud storage and upload to Agora Cloud Backup instead. Agora Cloud Backup automatically uploads these files to your cloud storage. If you cannot [play the recorded files](https://docs.agora.io/en/cloud-recording/cloud-recording/cloud_recording_onlineplay) after five minutes, contact Agora technical support.
+
+## FAQ
+
+See [Cloud Recording Integration FAQ](https://docs.agora.io/en/faqs/cloud_integration_faq) and [Errors](../../en/cloud-recording/cloud_recording_api_rest.md) if you have problems using Agora Cloud Recording.
 
 ## <a name="demo-rest"></a>Sample code
 
