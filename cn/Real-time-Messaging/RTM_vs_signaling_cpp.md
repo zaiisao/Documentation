@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux CPP
-updatedAt: Thu Aug 08 2019 02:03:42 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 10:16:36 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -47,7 +47,7 @@ updatedAt: Thu Aug 08 2019 02:03:42 GMT+0800 (CST)
 
 > <sup>1</sup> 使用 Agora RTM SDK 发送消息之前你必须创建一个消息实例。消息实例既适用于点对点消息也适用于频道消息。Agora RTM SDK 自版本 v0.9.3 起支持通过设置 `SendMessageOptions` 发送点对点的离线消息。
 >
-> <sup>2</sup> Agora Signaling SDK 会在服务端收到点对点消息时返回 `onMessageSendSuccess` 回调而 Agora RTM SDK 会在指定用户收到点对点消息后返回 `onSuccess` 回调。
+> <sup>2</sup> Agora Signaling SDK 会在服务端收到点对点消息时返回 `onMessageSendSuccess` 回调而 Agora RTM SDK 会在指定用户收到点对点消息后返回 `onSendMessageResult` 回调。
 
 ## 查询指定用户的在线状态
 
@@ -182,7 +182,7 @@ updatedAt: Thu Aug 08 2019 02:03:42 GMT+0800 (CST)
 | --------------------------------------------- | ---------------------------------------- | --------------------------------------- |
 | 创建 RTM 呼叫管理器                           | N/A                                      | `getRtmCallManager`<sup>1</sup>         |
 | 供主叫创建并管理一个 `LocalInvitation` 实例。 | N/A                                      | `createLocalCallInvitation`<sup>2</sup> |
-| 供主叫向指定用户（被叫）发送呼叫邀请          | `channelInviteUser`/`channelInviteUser2` | `sendLocalCallInvitation`<sup>3</sup>   |
+| 供主叫向指定用户（被叫）发送呼叫邀请          | `channelInviteUser`/`channelInviteUser2` | `sendLocalInvitation`<sup>3</sup>   |
 | 供主叫发送 DTMF 呼叫邀请。                    | `channelInviteDTMF`                      | N/A                                     |
 | 供主叫取消一个发出的呼叫邀请                  | `channelInviteEnd`                       | `cancelLocalInvitation`<sup>4</sup>     |
 | 供被叫接收一个呼叫邀请                        | `channelInviteAccept`                    | `acceptRemoteInvitation`                |
@@ -193,8 +193,7 @@ updatedAt: Thu Aug 08 2019 02:03:42 GMT+0800 (CST)
 > - <sup>3</sup> `sendLocalInvitation` 函数不带 `channelInviteUser2` 函数中的 `extra` 参数。 
 > - <sup>4</sup> `channelInviteEnd` 方法可以在任意时间取消一个呼叫邀请，而 `cancelLocalInvitation` 方法只能取消一个已发送的正在进行的呼叫邀请。
 > - 为了和 Agora Signaling SDK 互通，你必须把你的 Agora RTM SDK 版本升级到 v1.0 以上并设置 channel ID。请注意即使被叫接收了呼叫邀请，Agora RTM SDK 也不会将主叫或被叫加入指定频道。
-
-> <sup>5</sup> 如果用户在 `LocalInvitation` 生命周期开始之前或生命周期结束之后调用了 `sendLocalInvitation`、 `cancelLocalInvitation`、 `acceptRemoteInvitation` 或 `refuseRemoteInvitation` ，Agora RTM SDK 会返回 `onFailure` 回调以及 `INVITATION_API_CALL_ERR_CODE` 错误码。
+> 如果用户在 `LocalInvitation` 生命周期开始之前或生命周期结束之后调用了 `sendLocalInvitation`、 `cancelLocalInvitation`、 `acceptRemoteInvitation` 或 `refuseRemoteInvitation` ，Agora RTM SDK 会返回 `INVITATION_API_CALL_ERR_CODE` 错误码。
 
 
 
@@ -204,10 +203,9 @@ updatedAt: Thu Aug 08 2019 02:03:42 GMT+0800 (CST)
 | 返回给主叫：呼叫邀请已被取消   | `onInviteEndByMyself`    | `onLocalInvitationCanceled`                                  |
 | 返回给主叫：被叫已接收呼叫邀请 | `onInviteAcceptedByPeer` | `onLocalInvitationAccepted`                                  |
 | 返回给主叫：被叫已拒绝呼叫邀请 | `onInviteRefusedByPeer`  | `onLocalInvitationRefused`                                   |
-| 返回给主叫：呼叫邀请过程失败   | `onInviteFailed`         | `onLocalInvitationFailure`。错误码详见 `LOCAL_INVITATION_ERR_CODE`。<sup>6</sup> |
-|                                |                          |                                                              |
+| 返回给主叫：呼叫邀请过程失败   | `onInviteFailed`         | `onLocalInvitationFailure`。错误码详见 `LOCAL_INVITATION_ERR_CODE`。<sup>5</sup> |
 
-> <sup>6</sup>: 如果呼叫邀请过程已经开始但以失败告终，Agora RTM SDK 会返回 `onLocalInvitationFailure` 。场景包括：被叫离线，`ILocalCallInvitation` 对象发送超时 `ILocalCallInvitation`过期，或者被叫收到了呼叫邀请但未能在指定时间内响应呼叫邀请。
+> <sup>5</sup>: 如果呼叫邀请过程已经开始但以失败告终，Agora RTM SDK 会返回 `onLocalInvitationFailure` 。场景包括：被叫离线，`ILocalCallInvitation` 对象发送超时 `ILocalCallInvitation`过期，或者被叫收到了呼叫邀请但未能在指定时间内响应呼叫邀请。
 
 | 事件                               | 信令                | RTM 实时消息                                                 |
 | ---------------------------------- | ------------------- | ------------------------------------------------------------ |
@@ -216,10 +214,9 @@ updatedAt: Thu Aug 08 2019 02:03:42 GMT+0800 (CST)
 | 返回给被叫：主叫已取消呼叫邀请     | `onInviteEndByPeer` | `onRemoteInvitationCanceled`                                 |
 | 返回给被叫：已成功接受呼叫邀请     | N/A                 | `onRemoteInvitationAccepted`                                 |
 | 返回给被叫：已拒绝呼叫邀请         | N/A                 | `onRemoteInvitationRefused`                                  |
-| 返回给被叫：呼叫邀请过程失败       | N/A                 | `onRemoteInvitationFailure`。错误码详见 `REMOTE_INVITATION_ERR_CODE`。<sup>7</sup> |
-|                                    |                     |                                                              |
+| 返回给被叫：呼叫邀请过程失败       | N/A                 | `onRemoteInvitationFailure`。错误码详见 `REMOTE_INVITATION_ERR_CODE`。<sup>6</sup> |
 
-> <sup>7</sup> 如果呼叫邀请进程已经开始但以失败告终，Agora RTM SDK 会返回 `onRemoteInvitationFailure` 回调给被叫。通用场景包括：`IRemoteCallInvitation` 发送超时或 `IRemoteCallInvitation`  过期。 
+> <sup>6</sup> 如果呼叫邀请进程已经开始但以失败告终，Agora RTM SDK 会返回 `onRemoteInvitationFailure` 回调给被叫。通用场景包括：`IRemoteCallInvitation` 发送超时或 `IRemoteCallInvitation`  过期。 
 
 ## 更新 Token
 
