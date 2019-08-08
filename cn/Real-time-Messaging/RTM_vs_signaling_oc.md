@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Thu Aug 08 2019 04:17:17 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 04:21:11 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -187,7 +187,7 @@ updatedAt: Thu Aug 08 2019 04:17:17 GMT+0800 (CST)
 | 供主叫取消一个发出的呼叫邀请                  | `channelInviteEnd`                       | `cancelLocalInvitation`<sup>4</sup> |
 | 供被叫接收一个呼叫邀请                        | `channelInviteAccept`                    | `acceptRemoteInvitation`            |
 | 供被叫拒绝一个呼叫邀请                        | `channelInviteRefuse`                    | `refuseRemoteInvitation`            |
-|                                               |                                          |                                     |
+
 
 > - <sup>1</sup> Agora RTM SDK 要求主叫或被叫在发送、取消、接收或拒绝一个呼叫邀请前必须创建一个 `AgoraRtmCallKit` 实例。
 > - <sup>2</sup> Agora RTM SDK 引入了 `AgoraRtmLocalInvitation` 和 `AgoraRtmRemoteInvitation` 对象。前者由主叫通过调用 `initWithCalleeId` 方法创建，后者在被叫收到呼叫邀请时由 SDK 自动创建。你可以将这两个对象理解为同一个呼叫邀请的两种不同形式。主叫通过 `AgoraRtmLocalInvitation` 对象指定被叫，设置自定义内容或检查 `AgoraRtmLocalInvitationState` 状态，被叫通过 `AgoraRtmRemoteInvitation` 对象设置响应内容，检查主叫 ID，或者检查 `AgoraRtmRemoteInvitationState` 状态。
@@ -197,10 +197,10 @@ updatedAt: Thu Aug 08 2019 04:17:17 GMT+0800 (CST)
 
 | 同步回调     | 信令 | RTM 实时消息                                                 |
 | ------------ | ---- | ------------------------------------------------------------ |
-| 方法调用成功 | N/A  | `onSuccess`                                                  |
-| 方法调用失败 | N/A  | `onFailure`。错误码详见 `InvitationApiCallError`<sup>5</sup> |
+| 方法调用成功 | N/A  | <li> `AgoraRtmLocalinvitationSendBlock` <li> `AgoraRtmLocalInvitationCancelBlock` <li> `AgoraRtmRemoteInvitationAcceptBlock` <li> `AgoraRtmRemoteinvitationRefuseBlock`                                                  |
+| 方法调用失败 | N/A  | <li> `AgoraRtmLocalinvitationSendBlock` <li> `AgoraRtmLocalInvitationCancelBlock` <li> `AgoraRtmRemoteInvitationAcceptBlock` <li> `AgoraRtmRemoteinvitationRefuseBlock`。错误码详见 `InvitationApiCallError`<sup>5</sup> |
 
-> <sup>5</sup> 如果用户在 `LocalInvitation` 生命周期开始之前或生命周期结束之后调用了 `sendLocalInvitation`、 `cancelLocalInvitation`、 `acceptRemoteInvitation` 或 `refuseRemoteInvitation` ，Agora RTM SDK 会返回 `AgoraRtmLocalInvitationSendBlock`、`AgoraRtmLocalInvitationCancelBlock`、`AgoraRtmRemoteInvitationAcceptBlock` 或 `AgoraRtmRemoteInvitationRefuseBlock` 回调以及 `AgoraRtmInvitationApiCallError` 错误码。
+> <sup>5</sup> 如果用户在 `AgoraRtmLocalInvitation` 生命周期开始之前或生命周期结束之后调用了 `sendLocalInvitation`、 `cancelLocalInvitation`、 `acceptRemoteInvitation` 或 `refuseRemoteInvitation` ，Agora RTM SDK 会返回 `AgoraRtmLocalInvitationSendBlock`、`AgoraRtmLocalInvitationCancelBlock`、`AgoraRtmRemoteInvitationAcceptBlock` 或 `AgoraRtmRemoteInvitationRefuseBlock` 回调以及 `AgoraRtmInvitationApiCallError` 错误码。
 
 
 
