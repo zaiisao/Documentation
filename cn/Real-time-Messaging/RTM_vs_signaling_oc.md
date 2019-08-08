@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Thu Aug 08 2019 02:04:27 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 04:17:17 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -239,7 +239,7 @@ updatedAt: Thu Aug 08 2019 02:04:27 GMT+0800 (CST)
 
 | 事件             | 信令 | RTM 实时消息            |
 | ---------------- | ---- | ----------------------- |
-| 返回方法调用结果 | N/A  | `onSuccess`/`onFailure` |
+| 返回方法调用结果 | N/A  | `AgoraRtmRenewTokenBlock` |
 | Token 已过期     | N/A  | `rtmKitTokenDidExpire`  |
 
 
