@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Aug 08 2019 02:18:31 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 02:47:38 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -99,7 +99,11 @@ M3U8 文件名由录制 ID 和频道名组成，如 `sid_cname.M3U8`。
 - 停止录制后，根据上传情况，SDK 会触发以下回调之一：
   - [`uploaded`](../../cn/cloud-recording/cloud_recording_callback_rest.md)：如果录制文件全部成功上传至预先设定的云存储，最后一个录制切片文件上传完成时触发该回调，通知上传完成。
   - [`backuped`](../../cn/cloud-recording/cloud_recording_callback_rest.md)：如果有录制文件未能成功上传至第三方云存储，Agora 服务器会将这部分文件自动上传至 Agora 云备份，当录制结束后会触发该回调。Agora 云备份会继续尝试将这部分文件上传至设定的第三方云存储。如果等待五分钟后仍然不能正常[播放录制文件](../../cn/cloud-recording/cloud_recording_onlineplay.md)，请联系 Agora 技术支持。
-  
+ 
+ ## 常见问题
+ 
+如果你在集成和使用中遇到问题，可以参考[云端录制集成常见问题](https://docs.agora.io/cn/faqs/cloud_integration_faq)以及[常见错误](../../cn/cloud-recording/cloud_recording_api_rest.md)。
+ 
 ## <a name="demo-rest"></a>示例代码
 
 以下为使用 RESTful API 进行云端录制的示例代码（Python），供你参考。
