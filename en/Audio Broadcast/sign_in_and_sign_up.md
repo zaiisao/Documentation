@@ -3,25 +3,41 @@
 title: Create an Agora account
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 08 2019 06:03:51 GMT+0800 (CST)
+updatedAt: Thu Aug 08 2019 06:04:33 GMT+0800 (CST)
 ---
 # Create an Agora account
-An Agora account gives you access to the Agora Dashboard, which is your home for using Agora products. 
+This page introduces how to create an Agora account and change the account settings.
 
 ## Create an Agora account
-Follow the steps to create an Agora account:
+To create an Agora account, follow these steps:
 
-1. Click the **Sign up** button in the upper right corner of [www.agora.io/en/](https://www.agora.io/en/) to begin your signup process.
+1. Go to https://sso.agora.io/en/signup.
 
- ![](https://web-cdn.agora.io/docs-files/1552448166731)
+2. Fill in your **E-mail** and **Password**. We also ask for some personal infomation, including your name, company, product interest, platform and industry, which help make our services more customized.
 
-2. Fill in your **E-mail** and **Password** to create an Agora account. We also ask for some personal infomation, including your name, company, product interest, platform and industry, which help make our services more useful.
+4. Verify your **phone number** to secure your account.
 
-3. Verify your phone number.
+Congratulations! You've created an Agora acount. Now, you can sign in to the Agora Dashboard, create your first Agora project and try real-time communication immediately.
 
-Congratulations! You've created an Agora acount. Now, you can log into the Agora Dashboard, create your first Agora project and try real-time communication immediately.
+## Change your settings & password
 
-<a name = "Reset_Your_Password"></a > 
-## Reset Your Password
+1. Sign in to [Agora Dashboard](https://dashboard.agora.io), click  **Account Name < Setting** in the top navigation menu.
 
-If you forget your password, click [here](https://dashboard.agora.io/forgetPassword?lang=en) and follow the steps to recover your account.
+![](https://web-cdn.agora.io/docs-files/1565244190495)
+
+2. Add, edit, or delete personal info and change your password in this page. 
+
+![](https://web-cdn.agora.io/docs-files/1565244202054)
+
+
+## Reset your password
+
+If you forget your password, take the following steps to recover your password:
+
+1. Go to https://sso.agora.io/en/signup.
+2. Click **Forget password**.
+
+![](https://web-cdn.agora.io/docs-files/1565244215288)
+
+3. Fill in your **E-mail address** and Agora will send an E-mail to you.
+4. Sign in to your email and following the steps in the email to recover your password.
