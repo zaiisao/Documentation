@@ -2,7 +2,7 @@
 ---
 title: 使用 String 型的用户名
 description: 
-platform: iOS,macOS
+platform: iOS
 updatedAt: Wed Aug 07 2019 01:45:04 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
