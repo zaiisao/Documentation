@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Aug 09 2019 02:16:15 GMT+0800 (CST)
+updatedAt: Fri Aug 09 2019 02:16:21 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -344,7 +344,7 @@ clientRequest 中需要填写的内容如下：
     "uid": "527841",
     "cname": "httpClient463224",
     "clientRequest": {
-        "layoutType": 3,
+        "mixedVideoLayout": 3,
         "backgroundColor": "#FF0000",
         "layoutConfig": [
         {
