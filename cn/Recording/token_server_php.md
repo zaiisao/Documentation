@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: PHP
-updatedAt: Fri Jul 19 2019 02:45:44 GMT+0800 (CST)
+updatedAt: Sun Aug 11 2019 03:44:59 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本文适用于以下版本的 Agora SDK。
