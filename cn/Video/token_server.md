@@ -8,26 +8,7 @@ updatedAt: Mon Jul 22 2019 04:28:42 GMT+0800 (CST)
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+ 以及 Agora Recording SDK v2.1+  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 C++ API 参考。
 
-## Token 代码仓库说明
-
-你需要在业务服务器自行部署 Token 生成器生成 Token。我们的 [Github 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 为你提供了 Token 生成源码以及使用这些源码生成 Token 的简单示例。我们目前支持以下几种语言：
-
-- CPP
-- Java
-- Python
-- Ruby
-- Node.js
-- Go
-
-[GitHub 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 的 **./\<language\>/src** 文件夹下包含生成各种版本的 Dynamic key 和 Token 的源码。其中：**AccessToken** 和 **RtcTokenBuilder** 用于为以下 SDK 生成 Token：
-
-- Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
-- Agora Web SDK v2.4+
-- Agora Recording SDK v2.1+ 
-
-我们推荐使用 **RtcTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**RtcTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
-
-开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
+~ef963130-a956-11e9-9e5e-256c0a74561a~
 
 ## 快速生成 Token
 
