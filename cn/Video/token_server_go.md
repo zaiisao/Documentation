@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Go
-updatedAt: Fri Jul 19 2019 02:48:07 GMT+0800 (CST)
+updatedAt: Sun Aug 11 2019 13:42:37 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本文适用于以下版本的 Agora SDK。
