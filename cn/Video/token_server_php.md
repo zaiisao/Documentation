@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: PHP
-updatedAt: Sun Aug 11 2019 03:49:18 GMT+0800 (CST)
+updatedAt: Sun Aug 11 2019 03:55:09 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 PHP API 参考。
@@ -35,7 +35,7 @@ updatedAt: Sun Aug 11 2019 03:49:18 GMT+0800 (CST)
 
 ## API 参考
 
-源码： [../cpp/src/SimpleTokenBuilder.h](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/SimpleTokenBuilder.h)
+源码： [../php/src/RtcTokenBuilder.php](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/RtcTokenBuilder.php)
 
 你可以通过调用 **RtcTokenBuilder.h** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.h** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
 
