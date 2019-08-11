@@ -2,7 +2,7 @@
 ---
 title: Signaling vs. Agora RTM SDK
 description: 
-platform: Android
+platform: Linux Java
 updatedAt: Thu Aug 08 2019 02:55:12 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
