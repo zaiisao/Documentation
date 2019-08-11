@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Java
-updatedAt: Fri Jul 19 2019 11:24:23 GMT+0800 (CST)
+updatedAt: Sun Aug 11 2019 15:09:34 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 The token is used for joining a channel. This page shows how to generate a token on your server for the following SDKs

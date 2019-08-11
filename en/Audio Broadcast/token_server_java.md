@@ -3,129 +3,82 @@
 title: Generate a Token from Your Server
 description: 
 platform: Java
-updatedAt: Fri Jul 19 2019 11:24:23 GMT+0800 (CST)
+updatedAt: Sun Aug 11 2019 15:09:39 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
-The token is used for joining a channel. This page shows how to generate a token on your server for the following SDKs
+This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, and Agora Recording SDK v2.1+ users with  a quick guide on generating a pseudo-token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Java. 
 
-- Agora Native SDK (Java, Objective-C, C++, Electron) v2.1+
+## An introduction to Agora's token repository
+
+Your token needs to be generated on your own server, hence you are required to first deploy a token generator on the server. In our [GitHub Repository](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey), we provide source codes and token generator demos in the following programming languages:
+
+- CPP
+- Java
+- Python
+- Ruby
+- Node.js
+- Go
+
+The **./\<language\>/src** folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both AccessToken and SimpleTokenBuilder can generate a token for the following SDKs:
+
+- Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
 - Agora Web SDK v2.4+
 - Agora Recording SDK v2.1+ 
 
-The following programming languages are covered. Choose the one that applies to you:
+However, we recommend using **RtcTokenBuilder** instead of **AccessToken**.  **AccessToken** implements all the core algorithms for generating a token, whilst **RtcTokenBuilder** is a wrapper of **AccessToken** and provides much more simplified Interfaces. 
 
-- Java
-- C++
-- Python
-- Go
-- PHP
-- Node.js
-
-> The Token Builder that we provide supports both int uid and string userAccount.
+The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes.  Built upon **RtcTokenBuilder**, **RtcTokenBuilderSample** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, or Agora Recording SDK. You can customize it based on your real business needs. 
 
 
+## API Reference
 
-## Java
+Source code:  [../java/src/io/agora/media/RtcTokenBuilder.java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/io/agora/media/RtcTokenBuilder.java)
 
-### Initializes the Token Builder
+You can create your own token generator using the public methods that **RtcTokenBuilder.h** provides. Note that **RtcTokenBuilder.h** supports both int uid and string userAccount. Ensure that you choose the right method. 
 
-```java
-public boolean initTokenBuilder(String originToken);
+### buildTokenWithUid
+
+
+
+```Java
+   public String buildTokenWithUid(String appId, String appCertificate, 
+    		String channelName, int uid, Role role, int privilegeTs)
 ```
 
-This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
+This method build a token with your int uid.
 
-> Do not call this method if you do not have an original token.
+| **Parameter**    | **Description**                                              |
+| ---------------- | ------------------------------------------------------------ |
+| `appID`          | The App ID issued to you by Agora. Apply for a new App ID from Agora Dashboard if it is missing from your kit. See [Get an App ID](https://docs.agora.io/en/Agora%20Platform/token/#app-id). |
+| `appCertificate` | Certificate of the application that you registered in the Agora Dashboard. See [Get an App Certificate](https://docs.agora.io/en/Agora%20Platform/token/#app-certificate). |
+| `channelName`    | Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
+| `uid`            | User ID. A 32-bit unsigned integer with a value ranging from 1 to (2<sup>32</sup>-1). optionalUid must be unique. |
+| `role`           | <li> `Role_Publisher = 1`: (Recommended) A broadcaster (host) in a live-broadcast profile.<li>`Role_Subscriber = 2`: An audience in a live-broadcast profile. |
+| `privilegeExpiredTs`      | Time represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set expireTimestamp as the current timestamp + 600 (seconds). |
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td><code>originToken</code></td>
-<td>The original token.</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>true: Method call succeeded.</li>
-<li>false: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+
+### buildTokenWithUserAccount
 
 
 
-**Struct of the TokenBuilder**
-
-```java
-public SimpleTokenBuilder(String appId, String appCertificate, String channelName, String uid);
+```Java
+  public String buildTokenWithUserAccount(String appId, String appCertificate, 
+    		String channelName, String account, Role role, int privilegeTs) 
 ```
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Audio%20Broadcast/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Audio%20Broadcast/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>uid</code></td>
-<td>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.</td>
-</tr>
-</tbody>
-</table>
+This method build a token with your string userAccount.
 
-```java
-public SimpleTokenBuilder(String appId, String appCertificate, String channelName, String userAccount);
-```
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Audio%20Broadcast/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Audio%20Broadcast/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>userAccount</code></td>
-<td>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <p><li>The 26 lowercase English letters: a to z. <li> The 26 uppercase English letters: A to Z. <li> The 10 numbers: 0 to 9. <li> The space. <li> "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
-</tr>
-</tbody>
-</table>
+| **Parameter**    | **Description**                                              |
+| ---------------- | ------------------------------------------------------------ |
+| `appID`          | The App ID issued to you by Agora. Apply for a new App ID from Agora Dashboard if it is missing from your kit. See [Get an App ID](https://docs.agora.io/en/Agora%20Platform/token/#app-id). |
+| `appCertificate` | Certificate of the application that you registered in the Agora Dashboard. See [Get an App Certificate](https://docs.agora.io/en/Agora%20Platform/token/#app-certificate). |
+| `channelName`    | Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
+| `userAccount`    | The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
+| `role`           | <li> `Role_Publisher = 1`: (Recommended) A broadcaster (host) in a live-broadcast profile.<li>`Role_Subscriber = 2`: An audience in a live-broadcast profile.  |
+| `privilegeExpiredTs`      | Time represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set expireTimestamp as the current timestamp + 600 (seconds). |
 
 
-### Generates a Token \(buildToken\)
 
-```java
-public String buildToken();
-```
 
-This method generates a token in the string format.
 
 
