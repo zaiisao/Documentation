@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Mon Aug 12 2019 10:09:00 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 10:09:11 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -62,8 +62,8 @@ createStream(spec)
 
 ```javascript
 var LiveTranscoding = {
-  width: 640, //用于旁路直播的输出视频的总宽度，默认值为 360。取值范围为 [16,10000]。
-  height: 360, //用于旁路直播的输出视频的总高度，默认值为 640。取值范围为 [16,10000]。
+  width: 640, //用于旁路直播的输出视频的总宽度，默认值为 640。取值范围为 [16,10000]。
+  height: 360, //用于旁路直播的输出视频的总高度，默认值为 360。取值范围为 [16,10000]。
   videoBitrate: 400, //设置转码推流的码率，单位为 Kbps，默认值为 400。你可以参考视频分辨率表格进行设置。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
   videoFramerate: 15, //用于旁路直播的输出视频的帧率，单位为帧每秒，默认值为 15。取值范围为 [1,30]。服务器会将高于 30 的帧率设置改为 30。
   lowLatency: false,
