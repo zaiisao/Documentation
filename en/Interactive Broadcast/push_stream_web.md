@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Web
-updatedAt: Mon Aug 12 2019 10:31:25 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 10:31:29 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -50,7 +50,6 @@ createStream(spec)
 var LiveTranscoding = {
   width: 640, // Width of the video. Positive integer, the default value is 640. The value range is [16, 10000].
   height: 360, // Height of the video. Positive integer, the default value is 360. The value range is [16, 10000].
-
   videoBitrate: 400, // Bitrate of the CDN live output video stream. Positive integer. The default value is 400 Kbps. 
   videoFramerate: 15, // Frame rate (fps) of the CDN live output video stream. The default value is 15. Agora adjusts all values over 30 to 30.
   lowLatency: false,
@@ -65,6 +64,7 @@ var LiveTranscoding = {
   transcodingUsers: [],
 };
 ```
+> Set `videoBitrate` according to the [Video Bitrate Table](https://docs.agora.io/en/Interactive%20Broadcast/en/Video/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate).If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.
 
 ### 7. Start a Live Streaming
 
