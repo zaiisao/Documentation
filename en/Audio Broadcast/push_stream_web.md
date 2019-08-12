@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Web
-updatedAt: Mon Aug 12 2019 10:23:39 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 10:24:05 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -48,16 +48,17 @@ createStream(spec)
 
 ```javascript
 var LiveTranscoding = {
-  width: 640,
-  height: 360,
-  videoBitrate: 400,
-  videoFramerate: 15,
+  width: 640, // Width of the video. Positive integer, the default value is 640. The value range is [16, 10000].
+  height: 360, // Height of the video. Positive integer, the default value is 360. The value range is [16, 10000].
+
+  videoBitrate: 400, // Bitrate of the CDN live output video stream. Positive integer. The default value is 400 Kbps. 
+  videoFramerate: 15, // Frame rate (fps) of the CDN live output video stream. The default value is 15. Agora adjusts all values over 30 to 30.
   lowLatency: false,
   audioSampleRate: 48000,
   audioBitrate: 48,
   audioChannels: 1,
   videoGop: 30,
-  videoCodecProfile: 100,
+  videoCodecProfile: 100, // Video codec profile type: 66, 77, 100. If you set this parameter to other values, Agora adjusts it to the default value 100.
   userCount: 0,
   userConfigExtraInfo: {},
   backgroundColor: 0x000000,
@@ -65,12 +66,11 @@ var LiveTranscoding = {
 };
 ```
 
-### 7. Start a Live Stream
+### 7. Start a Live Streaming
 
 ```javascript
 client.setLiveTranscoding(coding);
-//If enableTranscoding is set to true, setLiveTranscoding must be called before _startLiveStreaming.
-client.startLiveStreaming(url, true)
+client.startLiveStreaming(url, true) //If enableTranscoding is set to true, setLiveTranscoding must be called before _startLiveStreaming.
 ```
 
 ### 8. Stop Live Streaming
