@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Android
-updatedAt: Sun Jul 28 2019 14:52:21 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 03:15:54 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM Java SDK for Android. 
