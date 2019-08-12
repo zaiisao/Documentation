@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: Android
-updatedAt: Mon Aug 12 2019 08:17:54 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 08:21:17 GMT+0800 (CST)
 ---
 # 检测通话质量
 通话质量检测功能是在 SDK **加入频道后**通过每 2 秒触发一次的回调实现。
