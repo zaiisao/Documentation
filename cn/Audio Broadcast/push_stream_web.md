@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Mon Aug 12 2019 10:26:37 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 10:26:42 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -64,7 +64,7 @@ createStream(spec)
 var LiveTranscoding = {
   width: 640, //用于旁路直播的输出视频的总宽度，默认值为 640。取值范围为 [16,10000]。
   height: 360, //用于旁路直播的输出视频的总高度，默认值为 360。取值范围为 [16,10000]。
-  videoBitrate: 400, //设置转码推流的码率，单位为 Kbps，默认值为 400。你可以参考视频分辨率表格进行设置。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
+  videoBitrate: 400, //设置转码推流的码率，单位为 Kbps，默认值为 400。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
   videoFramerate: 15, //用于旁路直播的输出视频的帧率，单位为帧每秒，默认值为 15。取值范围为 [1,30]。服务器会将高于 30 的帧率设置改为 30。
   lowLatency: false,
   audioSampleRate: 48000,
@@ -82,6 +82,7 @@ var LiveTranscoding = {
 > - 在 `AgoraRTC.createClient({mode:'nterop'})` 模式下，如果使用单 Web 主播进行推流，需要将 Web 单主播的码流进行转码后再进行推流，否则会出现没有视频的现象。
 > - 若要对 Web 单主播直接进行推流，请使用 `AgoraRTC.createClient({mode:'h264_interop'})` 模式。
 > - Agora 转码需要收取转码费用。
+> - 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Audio%20Broadcast/cn/Video/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate)设置 `videoBitrate` 的值。
 
 ### 7. 新建直播流
 
