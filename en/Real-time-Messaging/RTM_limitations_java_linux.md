@@ -3,10 +3,10 @@
 title: RTM Limitations
 description: 
 platform: Linux Java
-updatedAt: Mon Jul 29 2019 03:02:22 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 03:17:51 GMT+0800 (CST)
 ---
 # RTM Limitations
-This page provides information about the limitations of the Agora RTM Java SDK for Android. 
+This page provides information about the limitations of the Agora RTM Java SDK for Linux. 
 
 
 ## Call Frequencies
