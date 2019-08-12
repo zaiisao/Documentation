@@ -3,7 +3,7 @@
 title: 当使用命令行进行录制时，如何控制录制进程
 description: How to stop recording in cmd line
 platform: Linux
-updatedAt: Mon Aug 12 2019 10:51:18 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 10:51:37 GMT+0800 (CST)
 ---
 # 当使用命令行进行录制时，如何控制录制进程
 ### 开始和暂停录制
