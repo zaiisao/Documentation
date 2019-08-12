@@ -3,10 +3,10 @@
 title: 限制条件
 description: RTM Linux Java SDK limitations.
 platform: Linux Java
-updatedAt: Sun Jul 28 2019 13:08:29 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 03:12:01 GMT+0800 (CST)
 ---
 # 限制条件
-本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
+本页面提供 Agora RTM Java SDK for Linux 的使用限制条件。
 
 ## 调用频率限制
 
