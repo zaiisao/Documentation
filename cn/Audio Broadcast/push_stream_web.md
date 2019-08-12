@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Mon Aug 12 2019 10:00:21 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 10:00:48 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -62,16 +62,16 @@ createStream(spec)
 
 ```javascript
 var LiveTranscoding = {
-  width: 640,
-  height: 360,
-  videoBitrate: 400,
-  videoFramerate: 15,
+  width: 640, //用于旁路直播的输出视频的总宽度，默认值为 360。取值范围为 [16,10000]。
+  height: 360, //用于旁路直播的输出视频的总高度，默认值为 640。取值范围为 [16,10000]。
+  videoBitrate: 400, //设置转码推流的码率，单位为 Kbps，默认值为 400。你可以参考视频分辨率表格进行设置。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
+  videoFramerate: 15, //用于旁路直播的输出视频的帧率，单位为帧每秒，默认值为 15。取值范围为 [1,30]。服务器会将高于 30 的帧率设置改为 30。
   lowLatency: false,
   audioSampleRate: 48000,
   audioBitrate: 48,
   audioChannels: 1,
   videoGop: 30,
-  videoCodecProfile: 100,
+  videoCodecProfile: 100, //用于旁路直播的输出视频的编码规格。可以设置为 66、77 或 100。如果设置其他值，Agora 会统一设为默认值 100。
   userCount: 0,
   userConfigExtraInfo: {},
   backgroundColor: 0x000000,
@@ -79,19 +79,17 @@ var LiveTranscoding = {
 };
 ```
 
-> 在 `AgoraRTC.createClient({mode: ‘interop’})` 模式下，如果使用单 Web 主播进行推流，需要将 Web 单主播的码流进行转码后再进行推流，否则会出现没有视频的现象。
->
-> 若要对 Web 单主播直接进行推流，请使用 `AgoraRTC.createClient({mode: ‘h264_interop’})` 模式。
->
-> 影响：Agora 转码需要收取转码费用。
-> 
+> - 在 `AgoraRTC.createClient({mode:'nterop'})` 模式下，如果使用单 Web 主播进行推流，需要将 Web 单主播的码流进行转码后再进行推流，否则会出现没有视频的现象。
+> - 若要对 Web 单主播直接进行推流，请使用 `AgoraRTC.createClient({mode:'h264_interop'})` 模式。
+> - Agora 转码需要收取转码费用。
+
 ### 7. 新建直播流
 
-新建直播流 \(`startLiveStream`\)
+新建直播流 \(`startLiveStreaming`\)
 
 ```javascript
 client.setLiveTranscoding(coding);
-//if enableTranscoding is set to true, setLiveTranscoding must be called before _startLiveStreaming
+// 如果在 enableTranscoding 里设置为 true，那么必须在调用 setLiveTranscoding 之后再调用 startLiveStreaming。
 client.startLiveStreaming(url, true)
 ```
 
