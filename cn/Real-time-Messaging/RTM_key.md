@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 12 2019 07:09:24 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 07:14:09 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -74,10 +74,7 @@ Agora 的 Token 方案基于请求—响应机制，流程如下：
 -   [RTM Token Builder for PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/sample/RtmTokenBuilderSample.php )
 -   [RTM Token Builder for Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/sample/RtmTokenBuilderSample.js)
 
-Agora 提供的示例代码包含下列内容：
 
--    生成 RTM Token
--    设置 RTM Client 角色
 
 
 ### 发送获取 RTM Token 的请求
