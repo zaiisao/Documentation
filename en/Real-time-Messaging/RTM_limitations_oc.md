@@ -3,10 +3,10 @@
 title: RTM Limitations
 description: 
 platform: iOS,macOS
-updatedAt: Sun Jul 28 2019 14:48:22 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 03:17:29 GMT+0800 (CST)
 ---
 # RTM Limitations
-This page provides information about the limitations of the Agora RTM SDK. 
+This page provides information about the limitations of the Agora RTM Objective-C SDK for iOS/macOS. 
 
 
 
