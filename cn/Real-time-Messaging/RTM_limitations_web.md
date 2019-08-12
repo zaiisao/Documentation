@@ -3,7 +3,7 @@
 title: 限制条件
 description: RTM Web Limitations
 platform: Web
-updatedAt: Mon Jul 29 2019 03:00:56 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 03:14:29 GMT+0800 (CST)
 ---
 # 限制条件
 本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
