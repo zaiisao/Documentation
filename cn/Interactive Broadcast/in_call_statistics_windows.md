@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: Windows
-updatedAt: Mon Aug 12 2019 09:01:16 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 09:05:12 GMT+0800 (CST)
 ---
 # 检测通话质量
 通话质量检测功能是在 SDK **加入频道后**通过每 2 秒触发一次的回调实现。
