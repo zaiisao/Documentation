@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Thu Dec 06 2018 06:58:46 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 10:00:21 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
