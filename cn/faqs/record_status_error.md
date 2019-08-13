@@ -3,7 +3,7 @@
 title: 录制状态异常
 description: 
 platform: Linux
-updatedAt: Mon Jul 01 2019 15:18:53 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 16:43:40 GMT+0800 (CST)
 ---
 # 录制状态异常
 ### 录制退出报错
