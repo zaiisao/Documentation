@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Tue Aug 13 2019 06:14:57 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 06:41:51 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -108,10 +108,14 @@ agoraKit.adjustPlaybackSignalVolume(50)
 [agoraKit adjustPlaybackSignalVolume: 50];
 ```
 
+**Note**: 
+从 v2.3.2 开始，该接口仅支持调整人声的播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 `adjustPlaybackSignalVolume(0)` 和 `adjustAudioMixingPlayoutVolume(0)`。
+
 #### API 参考
 
 - [`setDeviceVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setDeviceVolume:volume:)
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
 
 ### 设置混音音量
 
