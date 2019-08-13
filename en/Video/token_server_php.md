@@ -3,12 +3,32 @@
 title: Generate a Token from Your Server
 description: 
 platform: PHP
-updatedAt: Tue Aug 13 2019 09:31:11 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 09:31:16 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in PHP. 
 
-~35ce7bc0-a9da-11e9-9e5e-256c0a74561a~
+## An introduction to Agora's token repository
+
+Your token needs to be generated on your own server, hence you are required to first deploy a token generator on the server. In our [GitHub Repository](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey), we provide source codes and token generator demos in the following programming languages:
+
+- CPP
+- Java
+- Python
+- Node.js
+- Go
+- Ruby
+
+The **./\<language\>/src** folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both AccessToken and SimpleTokenBuilder can generate a token for the following SDKs:
+
+- Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
+- Agora Web SDK v2.4+
+- Agora Recording SDK v2.1+ 
+- Agora RTSA SDK
+
+However, we recommend using **RtcTokenBuilder** instead of **AccessToken**.  **AccessToken** implements all the core algorithms for generating a token, while **RtcTokenBuilder** is a wrapper of **AccessToken** and provides much more simplified Interfaces. 
+
+The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes. **RtcTokenBuilderSample** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, Agora Recording SDK or Agora RTSA SDK. You can customize it based on your real business needs. 
 
 
 ## API Reference
