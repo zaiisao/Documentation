@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Java
-updatedAt: Tue Aug 13 2019 12:50:44 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 12:50:48 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Java. 
@@ -30,12 +30,38 @@ However, we recommend using **RtcTokenBuilder** instead of **AccessToken**.  **A
 
 The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes. **RtcTokenBuilderSample** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, Agora Recording SDK or Agora RTSA SDK. You can customize it based on your real business needs. 
 
+## Generate a token using **RtcTokenBuilderSample**
+
+We take **RtcTokenBuilderSample.java** as an example:
+
+1. Synchronize the GitHub repository to your local drive.
+2. Import **/DynamicKey/AgoraDynamicKey/java** to your Eclipse IDE as a project.
+3. In your IDE, navigate to the **/java/src/io/agora/sample/** folder and open **RtcTokenBuilderSample.java**. 
+> Our demo provides sample-App ID, appCertificate, channelName, uid, and userAccount for demonstration purposes.
+4. Replace the sample-App ID, appCertificate, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
+    - If you use an int uid to join a channel, comment out the following code block:
+```Java
+        String result = token.buildTokenWithUserAccount(appId, appCertificate,  
+        		 channelName, userAccount, Role.Role_Publisher, timestamp);
+        System.out.println(result);
+```    
+    - If you use a string userAccount to join a channel, comment out the following code block:
+```Java
+        result = token.buildTokenWithUid(appId, appCertificate,  
+       		 channelName, uid, Role.Role_Publisher, timestamp);
+        System.out.println(result);
+```
+> Skip this step if you just want to take a quick look at how a token is generated.
+5. Right click **/java/src/io/agora/sample/RtcTokenBuilderSample.java** and choose **Run as a Java application**. 
+  *Your token is printed in your terminal window.*
+
+
 
 ## API Reference
 
 Source code:  [../java/src/io/agora/media/RtcTokenBuilder.java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/io/agora/media/RtcTokenBuilder.java)
 
-You can create your own token generator using the public methods that **RtcTokenBuilder.h** provides. Note that **RtcTokenBuilder.h** supports both int uid and string userAccount. Ensure that you choose the right method. 
+You can create your own token generator using the public methods that **RtcTokenBuilder.java** provides. Note that **RtcTokenBuilder.java** supports both int uid and string userAccount. Ensure that you choose the right method. 
 
 ### buildTokenWithUid
 
