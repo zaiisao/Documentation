@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Node.js
-updatedAt: Sun Aug 11 2019 14:47:53 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 11:03:26 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Node.js API 参考。
