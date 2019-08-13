@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Tue Aug 13 2019 06:11:33 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 06:42:44 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -80,10 +80,14 @@ RtcEngineParameters rep(*lpAgoraEngine);
 int ret = rep.adjustPlaybackSignalVolume(200);
 ```
 
+**Note**: 
+Since v2.3.2, this method adjusts only the playback volume of the voice. If you use the Naive SDK v2.3.2 or later, call both the `adjustPlaybackSignalVolume(0)` and `adjustAudioMixingVolume(0)` methods to mute the local audio playback.
+
 #### API Reference
 
 - [`setPlaybackDeviceVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a20b66e126ff710afc0e9258f96be8e7a)
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a8bed09e12b8e2d9934aafad50b77d364)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a5e117be71d38d813208198f4064aa964)
 
 ### Set the Audio Mixing Volume
 
