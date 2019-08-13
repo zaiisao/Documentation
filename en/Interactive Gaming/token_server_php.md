@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: PHP
-updatedAt: Tue Aug 13 2019 12:21:11 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 12:21:15 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in PHP. 
@@ -30,12 +30,39 @@ However, we recommend using **RtcTokenBuilder** instead of **AccessToken**.  **A
 
 The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes. **RtcTokenBuilderSample** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, Agora Recording SDK or Agora RTSA SDK. You can customize it based on your real business needs. 
 
+## Generate a token using **RtcTokenBuilderSample**
+
+We take **RtcTokenBuilderSample.php** as an example:
+
+1. Log onto the PHP official site to download the latest Stable version of PHP.
+2. Synchronize the GitHub repository to your local drive.
+3. Navigate to the **/go/sample/** folder and open **RtcTokenBuilderSample.php**. 
+> Our demo provides sample-App ID, appCertificate, channelName, uid, and userAccount for demonstration purposes.
+4. Replace the sample-App ID, appCertificate, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
+    - If you use an int uid to join a channel, comment out the following code block:
+```PHP
+$token = RtcTokenBuilder::buildTokenWithUserAccount($appID, $appCertificate, $channelName, $uidStr, $role, $privilegeExpiredTs);
+echo 'Token with user account: ' . $token . PHP_EOL;
+```    
+    - If you use a string userAccount to join a channel, comment out the following code block:
+```PHP
+$token = RtcTokenBuilder::buildTokenWithUid($appID, $appCertificate, $channelName, $uid, $role, $privilegeExpiredTs);
+echo 'Token with int uid: ' . $token . PHP_EOL;
+```
+> Skip this step if you just want to take a quick look at how a token is generated.
+5. Open your terminal and navigate to the local folder holding **RtcTokenBuilderSample.php**.
+6. Run the following command:
+    `php RtcTokenBuilderSample.php`
+  *Your token is printed in your terminal window.*
+
+
+
 
 ## API Reference
 
 Source code:  [../php/src/RtcTokenBuilder.php](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/RtcTokenBuilder.php)
 
-You can create your own token generator using the public methods that **RtcTokenBuilder.h** provides. Note that **RtcTokenBuilder.h** supports both int uid and string userAccount. Ensure that you choose the right method. 
+You can create your own token generator using the public methods that **RtcTokenBuilder.php** provides. Note that **RtcTokenBuilder.php** supports both int uid and string userAccount. Ensure that you choose the right method. 
 
 ### buildTokenWithUid
 
