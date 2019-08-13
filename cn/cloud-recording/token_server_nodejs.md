@@ -2,11 +2,11 @@
 ---
 title: 在服务端生成 Token
 description: 
-platform: Ruby
-updatedAt: Sun Aug 11 2019 15:24:07 GMT+0800 (CST)
+platform: Node.js
+updatedAt: Sun Aug 11 2019 14:47:53 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
-本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Ruby API 参考。
+本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Node.js API 参考。
 
 ## Token 代码仓库说明
 
@@ -33,22 +33,17 @@ updatedAt: Sun Aug 11 2019 15:24:07 GMT+0800 (CST)
 开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
 
-
-
 ## API 参考
 
-源码： [../ruby/lib/dynamic_key/rtc_token_builder.rb](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/ruby/lib/dynamic_key/rtc_token_builder.rb)
+源码： [../nodejs/src/RtcTokenBuilder.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/src/RtcTokenBuilder.js)
 
 你可以通过调用 **RtcTokenBuilder.h** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.h** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
 
 
-### build_token_with_uid
+### buildTokenWithUid
 
-```Ruby
-   def build_token_with_uid payload
-        check! payload, %i[app_id app_certificate channel_name role uid privilege_expired_ts]
-        build_token_with_account @params.merge(:account => @params[:uid])
-      end
+```Node.js
+   static buildTokenWithAccount(appID, appCertificate, channelName, account, role, privilegeExpiredTs)
 ```
 
 该方法支持用 int 型 uid 生成 Token。
@@ -57,19 +52,15 @@ updatedAt: Sun Aug 11 2019 15:24:07 GMT+0800 (CST)
 | ---------------- | ------------------------------------------------------------ |
 | `appID`          | Agora 为应用程序开发者签发的 App ID。详见 [获取 App ID](https://docs.agora.io/cn/Agora%20Platform/token/#app-id). | 
 | `appCertificate` | Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 [开启 App Certificate](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-certificate). |
-| `channel_name`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>a-z,<li>A-Z,<li>0-9,<li>空格,<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
+| `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>a-z,<li>A-Z,<li>0-9,<li>空格,<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
 | `uid`            | 用户ID，32位无符号整数。建议设置范围：1到 (2<sup>32</sup>-1)，并保证唯一性。 |
 | `role`           | <li> `Role_Publisher = 1` ：（推荐）直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`：直播模式下的观众（AUDIENCE）。 |
-| `privilege_expired_ts`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilege_expired_ts 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。 |
+| `privilegeExpiredTs`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilegeExpiredTs 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。 |
 
-### build_token_with_account
+### buildTokenWithUserAccount
 
-```Ruby
-  def build_token_with_account payload
-        check! payload, %i[app_id app_certificate channel_name role account privilege_expired_ts]
-        @params.merge!(:uid => @params[:account])
-        generate_access_token!
-      end
+```Node.js
+  static buildTokenWithAccount(appID, appCertificate, channelName, account, role, privilegeExpiredTs)
 ```
 
 该方法支持用 string 型 userAccount 生成 Token。
@@ -78,7 +69,10 @@ updatedAt: Sun Aug 11 2019 15:24:07 GMT+0800 (CST)
 | ---------------- | ------------------------------------------------------------ |
 | `appID`          | Agora 为应用程序开发者签发的 App ID。详见 [获取 App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id). |
 | `appCertificate` | Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 [开启 App Certificate](https://docs.agora.io/cn/Agora%20Platform/token/#app-certificate). |
-| `channel_name`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>a-z,<li>A-Z,<li>0-9,<li>空格,<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
+| `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>a-z,<li>A-Z,<li>0-9,<li>空格,<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
 |`userAccount` | 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：<li>26 个小写英文字母 a-z；<li>26 个大写英文字母 A-Z；<li>10 个数字 0-9；<li>空格；<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
-| `role`           | <li> `Role_Publisher = 1` ：（推荐）直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`: 直播模式下的观众（AUDIENCE）。 |
-| `privilege_expired_ts`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilege_expired_ts 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。|
+| `role`           | <li> `Role_Publisher = 1` ：（推荐）直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`: 直播模式下的观众（AUDIENCE）。|
+| `privilegeExpiredTs`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilegeExpiredTs 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。|
+
+
+

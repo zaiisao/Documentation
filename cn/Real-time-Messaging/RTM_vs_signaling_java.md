@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux Java
-updatedAt: Thu Aug 08 2019 10:12:53 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 03:32:53 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -12,22 +12,22 @@ updatedAt: Thu Aug 08 2019 10:12:53 GMT+0800 (CST)
 
 | 方法         | 信令                                   | RTM 实时消息                          |
 | ------------ | -------------------------------------- | ------------------------------------- |
-| 创建实例     | `getInstance`/`createAgoraSDKInstance` | `createInstance`<sup>1</sup>          |
+| 创建实例     | `getInstance`/`createAgoraSDKInstance` | [createInstance](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a0bd5585641a955cbb54f279a1dae55df)<sup>1</sup>          |
 | 设置回调对象 | `callbackSet`                          | N/A                                   |
-| 登录         | `login`/`login2`                       | `login`<sup>2</sup>                   |
-| 登出         | `logout`                               | `logout`                              |
-| 获取登录状态 | `getStatus`                            | N/A。详见 `onConnectionStateChanged` |
-| 销毁实例     | `destroy`                              | `release`                             |
+| 登录         | `login`/`login2`                       | [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a)<sup>2</sup>                   |
+| 登出         | `logout`                               | [logout](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6f5695854e251ddd4ba05547ab47b317)                              |
+| 获取登录状态 | `getStatus`                            | N/A。详见 [onConnectionStateChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a9b6f86cb2d7d5ec4adf0b6d645c16bf9) |
+| 销毁实例     | `destroy`                              | [release](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a5147d00d14afeebf0926b0d2f01079f5)                             |
 
 | 事件         | 信令                   | RTM 实时消息               |
 | ------------ | ---------------------- | -------------------------- |
-| 登录成功     | `onLoginSuccess`       | `onSuccess`                |
-| 登录失败     | `onLoginFailed`        | `onFailure`                |
-| 登出结果     | `onLogout`             | `onSuccess` 或 `onFailure` |
-| 连接状态改变 | N/A。详见 `getStatus` | `onConnectionStateChanged` |
+| 登录成功     | `onLoginSuccess`       | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)                |
+| 登录失败     | `onLoginFailed`        | [onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)                |
+| 登出结果     | `onLogout`             | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5) 或 [onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
+| 连接状态改变 | N/A。详见 `getStatus` | [onConnectionStateChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a9b6f86cb2d7d5ec4adf0b6d645c16bf9) |
 
-> - 若无特别说明，Agora RTM Android SDK 的所有核心 API 都应在调用 `login` 方法成功并收到 `onSuccess` 回调后调用。Agora Signaling SDK 只允许你每次进入一个频道。
-> - <sup>1</sup> 你可以通过调用 `createInstance` 方法创建多个 RtmClient 实例。Agora RTM SDK 不会限制你创建 RtmClient 实例的个数，但某个 RtmClient 最多只能同时加入 20 个 RtmChannel 频道。
+> - 若无特别说明，Agora RTM Android SDK 的所有核心 API 都应在调用 [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) 方法成功并收到 [onSuccess](../../cn/Real-time-Messaging/RTM_vs_signaling_java.md) 回调后调用。Agora Signaling SDK 只允许你每次进入一个频道。
+> - <sup>1</sup> 你可以通过调用 [createInstance](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a0bd5585641a955cbb54f279a1dae55df) 方法创建多个 RtmClient 实例。Agora RTM SDK 不会限制你创建 RtmClient 实例的个数，但某个 RtmClient 最多只能同时加入 20 个 RtmChannel 频道。
 > - <sup>2</sup> RTM 的 Token 生成方式与老信令的 Token 生成方式完全不同。详见[校验用户权限](../../cn/Real-time-Messaging/RTM_key.md)。
 > - <sup>2</sup> 信令 Token 采用的 "\_no\_need\_token" 机制不适用于 RTM Token。 
 > - <sup>2</sup> Agora RTM SDK 连接或重连 Agora RTM 系统的方式也完全不同。详情请见[连接状态管理](../../cn/Real-time-Messaging/RTM_reconnecting_android.md)。 

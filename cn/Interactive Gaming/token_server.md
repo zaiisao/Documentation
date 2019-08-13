@@ -2,7 +2,7 @@
 ---
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
-platform: C++
+platform: CPP
 updatedAt: Sun Aug 11 2019 03:46:57 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
