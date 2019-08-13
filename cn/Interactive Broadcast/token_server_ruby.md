@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Ruby
-updatedAt: Tue Aug 13 2019 10:07:58 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 10:08:02 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Ruby API 参考。
@@ -32,14 +32,37 @@ updatedAt: Tue Aug 13 2019 10:07:58 GMT+0800 (CST)
 
 开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
+## 快速生成 Token
 
+下面我们以 **rtc_token_builder_sample.rb** 为例演示 Token 生成的过程：
+
+1. 请确保已安装 **Ruby** 且版本号大于 1.9。
+     `ruby --version` 
+3. 将 GitHub 仓库同步到本地。
+4. 打开 **/ruby/sample/rtc_token_builder_sample.rb** 。
+5. 用你自己的 App ID、App Certificate 以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App Certificate，详见 [校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)
+    - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
+```Ruby
+   result = AgoraDynamicKey::RtcTokenBuilder.build_token_with_account params_with_account
+   puts "Token With UserAccount: #{result}"
+```
+    - 如果你使用 string 型 userAccount 加入频道，请注释掉以下代码段：
+```Ruby
+  result = AgoraDynamicKey::RtcTokenBuilder.build_token_with_uid params
+  puts "Token With Int Uid: #{result}"
+```
+5. 打开你的本地终端，cd 进入到 **rtc_token_builder_sample.rb** 所在文件夹。
+6. 运行指令： 
+    `ruby rtc_token_builder_sample.rb` 
+     *新生成的伪 Token 会在你的本地终端显示。*
+		 
 
 
 ## API 参考
 
 源码： [../ruby/lib/dynamic_key/rtc_token_builder.rb](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/ruby/lib/dynamic_key/rtc_token_builder.rb)
 
-你可以通过调用 **RtcTokenBuilder.h** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.h** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
+你可以通过调用 **Rrtc_token_builder.rb** 提供的公开方法创建自己的 Token 生成器。请注意，**rtc_token_builder.rb** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
 
 
 ### build_token_with_uid
