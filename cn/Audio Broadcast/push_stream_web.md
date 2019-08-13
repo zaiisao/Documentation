@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Mon Aug 12 2019 10:33:33 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 07:12:35 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -79,7 +79,7 @@ var LiveTranscoding = {
 };
 ```
 
-> - 在 `AgoraRTC.createClient({mode:'nterop'})` 模式下，如果使用单 Web 主播进行推流，需要将 Web 单主播的码流进行转码后再进行推流，否则会出现没有视频的现象。
+> - 在 `AgoraRTC.createClient({mode:'interop'})` 模式下，如果使用单 Web 主播进行推流，需要将 Web 单主播的码流进行转码后再进行推流，否则会出现没有视频的现象。
 > - 若要对 Web 单主播直接进行推流，请使用 `AgoraRTC.createClient({mode:'h264_interop'})` 模式。
 > - Agora 转码需要收取转码费用。
 > - 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Audio%20Broadcast/cn/Video/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
