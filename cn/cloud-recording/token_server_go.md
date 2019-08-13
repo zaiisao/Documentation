@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Go
-updatedAt: Tue Aug 13 2019 11:59:21 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 11:59:27 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Go API 参考。
@@ -33,13 +33,45 @@ updatedAt: Tue Aug 13 2019 11:59:21 GMT+0800 (CST)
 开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
 
+## 快速生成 Token
+
+下面我们以 **Sample.py** 为例演示 Token 生成的过程：
+
+1. 从 Golang 官网下载最新的 Stable 版本的 Golang。
+3. 将 GitHub 仓库同步到本地。
+4. 打开 **/go/sample/RtcTokenBuilder/sample.go** 。
+5. 用你自己的 App ID、App Certificate 以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App Certificate，详见 [校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)
+    - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
+```Go
+	result, err = rtctokenbuilder.BuildTokenWithUserAccount(appID, appCertificate, channelName, uidStr, rtctokenbuilder.RoleAttendee, expireTimestamp)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Printf("Token with userAccount: %s\n", result)
+	}
+```
+    - 如果你使用 string 型 userAccount 加入频道，请注释掉以下代码段：
+```Go
+	result, err := rtctokenbuilder.BuildTokenWithUID(appID, appCertificate, channelName, uid, rtctokenbuilder.RoleAttendee, expireTimestamp)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Printf("Token with uid: %s\n", result)
+	}
+```
+5. 打开你的本地终端，cd 进入到 **sample.go** 所在文件夹。
+6. 运行指令： 
+    `go build` 
+     *新生成的伪 Token 会在你的本地终端显示。*
+
+
 
 
 ## API 参考
 
 源码： [../go/src/RtcTokenBuilder/RtcTokenBuilder.go](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/go/src/RtcTokenBuilder/RtcTokenBuilder.go)
 
-你可以通过调用 **RtcTokenBuilder.h** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.h** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
+你可以通过调用 **RtcTokenBuilder.go** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.go** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
 
 
 ### buildTokenWithUid
