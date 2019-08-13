@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: PHP
-updatedAt: Tue Aug 13 2019 12:18:26 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 12:18:30 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 PHP API 参考。
@@ -33,11 +33,37 @@ updatedAt: Tue Aug 13 2019 12:18:26 GMT+0800 (CST)
 开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
 
+
+## 快速生成 Token
+
+下面我们以 **RtcTokenBuilderSample.php** 为例演示 Token 生成的过程：
+
+1. 从 PHP 官网下载最新的 Stable 版本的 PHP。
+3. 将 GitHub 仓库同步到本地。
+4. 打开 **/php/sample/RtcTokenBuilderSample.php** 。
+5. 用你自己的 App ID、App Certificate 以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App Certificate，详见 [校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)
+    - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
+```PHP
+$token = RtcTokenBuilder::buildTokenWithUserAccount($appID, $appCertificate, $channelName, $uidStr, $role, $privilegeExpiredTs);
+echo 'Token with user account: ' . $token . PHP_EOL;
+```
+    - 如果你使用 string 型 userAccount 加入频道，请注释掉以下代码段：
+```PHP
+$token = RtcTokenBuilder::buildTokenWithUid($appID, $appCertificate, $channelName, $uid, $role, $privilegeExpiredTs);
+echo 'Token with int uid: ' . $token . PHP_EOL;
+```
+5. 打开你的本地终端，cd 进入到 **RtcTokenBuilderSample.php** 所在文件夹。
+6. 运行指令： 
+    `php RtcTokenbuilderSample.php` 
+     *新生成的伪 Token 会在你的本地终端显示。*
+
+
+
 ## API 参考
 
 源码： [../php/src/RtcTokenBuilder.php](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/RtcTokenBuilder.php)
 
-你可以通过调用 **RtcTokenBuilder.h** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.h** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
+你可以通过调用 **RtcTokenBuilder.php** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.php** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
 
 
 ### buildTokenWithUid
