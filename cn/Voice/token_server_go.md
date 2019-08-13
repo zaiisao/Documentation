@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Go
-updatedAt: Tue Aug 13 2019 12:00:28 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 12:00:32 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Go API 参考。
@@ -35,7 +35,7 @@ updatedAt: Tue Aug 13 2019 12:00:28 GMT+0800 (CST)
 
 ## 快速生成 Token
 
-下面我们以 **Sample.py** 为例演示 Token 生成的过程：
+下面我们以 **sample.go** 为例演示 Token 生成的过程：
 
 1. 从 Golang 官网下载最新的 Stable 版本的 Golang。
 3. 将 GitHub 仓库同步到本地。
