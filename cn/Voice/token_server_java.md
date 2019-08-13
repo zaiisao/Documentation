@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Java
-updatedAt: Tue Aug 13 2019 12:56:44 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 12:56:49 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Java API 参考。
@@ -32,14 +32,35 @@ updatedAt: Tue Aug 13 2019 12:56:44 GMT+0800 (CST)
 
 开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
+## 快速生成 Token
 
+下面我们以 **RtcTokenBuilderSample.java** 为例演示 Token 生成的过程：
+
+1. 将 GitHub 仓库同步到本地。
+2.  将 **/DynamicKey/AgoraDynamicKey/java** 作为项目导入到你的 Eclipse IDE 中。
+3. 打开 **/python/sample/RtcTokenBuilderSample.java** 。
+4. 用你自己的 App ID、App Certificate 以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App Certificate，详见 [校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)
+    - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
+```Java
+        String result = token.buildTokenWithUserAccount(appId, appCertificate,  
+        		 channelName, userAccount, Role.Role_Publisher, timestamp);
+        System.out.println(result);
+```
+    - 如果你使用 string 型 userAccount 加入频道，请注释掉以下代码段：
+```Java
+        result = token.buildTokenWithUid(appId, appCertificate,  
+       		 channelName, uid, Role.Role_Publisher, timestamp);
+        System.out.println(result);
+```
+5. 　鼠标右击 **/java/src/io/agora/sample/RtcTokenBuilderSample.java** 并选择 **Run as a Java application**。
+     *新生成的伪 Token 会在你的本地终端显示。*
 
 
 ## API 参考
 
 源码： [../java/src/io/agora/media/RtcTokenBuilder.java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/io/agora/media/RtcTokenBuilder.java)
 
-你可以通过调用 **RtcTokenBuilder.h** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.h** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
+你可以通过调用 **RtcTokenBuilder.java** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.java** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
 
 
 ### buildTokenWithUid
