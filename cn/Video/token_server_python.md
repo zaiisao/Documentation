@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Python
-updatedAt: Tue Aug 13 2019 09:07:04 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 09:08:05 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Python API 参考。
@@ -31,6 +31,32 @@ updatedAt: Tue Aug 13 2019 09:07:04 GMT+0800 (CST)
 我们推荐使用 **RtcTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**RtcTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
 
 开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
+
+## 快速生成 Token
+
+下面我们以 **RtcTokenBuilderSample.py** 为例演示 Token 生成的过程：
+
+1. 请确保已安装 **Python**。macOS 平台可通过以下命令安装：
+     `brew install python` 
+3. 将 GitHub 仓库同步到本地。
+4. 打开 **/python/sample/RtcTokenBuilderSample.py** 。
+5. 用你自己的 App ID、App Certificate 以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App Certificate，详见 [校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)
+    - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
+```Python
+  token = RtcTokenBuilder.buildTokenWithAccount(appID, appCertificate, channelName, userAccount, Role_Attendee, privilegeExpiredTs)
+    print("Token with user account: {}".format(token))
+```
+    - 如果你使用 string 型 userAccount 加入频道，请注释掉以下代码段：
+```Python
+  token = RtcTokenBuilder.buildTokenWithUid(appID, appCertificate, channelName, uid, Role_Attendee, privilegeExpiredTs)
+    print("Token with int uid: {}".format(token))
+ std::cout << "Token With Int Uid:" << result << std::endl;
+```
+5. 打开你的本地终端，cd 进入到 **RtcTokenBuilderSample.py** 所在文件夹。
+6. 运行指令： 
+    `python RtcTokenBuilderSample.py` 
+     *新生成的伪 Token 会在你的本地终端显示。*
+
 
 ## API 参考
 
