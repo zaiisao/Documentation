@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Android
-updatedAt: Thu Aug 08 2019 10:12:32 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 02:43:23 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
