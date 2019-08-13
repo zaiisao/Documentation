@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Python
-updatedAt: Tue Aug 13 2019 10:10:16 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 10:10:20 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a pseudo-token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Python. 
@@ -32,7 +32,7 @@ The **./\<language\>/sample** folder of each language holds token generator demo
 
 ## Generate a token using **RtcTokenBuilderSample**
 
-We take **RtcTokenBuilderSample.cpp** as an example:
+We take **RtcTokenBuilderSample.py** as an example:
 
 1. Ensure that you have installed **Python**. If you are using macOS, try the following command:
     `brew install Python`
@@ -61,7 +61,7 @@ We take **RtcTokenBuilderSample.cpp** as an example:
 
 Source code:  [../python/src/RtcTokenBuilder.py](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/src/RtcTokenBuilder.py)
 
-You can create your own token generator using the public methods that **RtcTokenBuilder.h** provides. Note that **RtcTokenBuilder.h** supports both int uid and string userAccount. Ensure that you choose the right method. 
+You can create your own token generator using the public methods that **RtcTokenBuilder.py** provides. Note that **RtcTokenBuilder.py** supports both int uid and string userAccount. Ensure that you choose the right method. 
 
 ### buildTokenWithUid
 
