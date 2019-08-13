@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: CPP
-updatedAt: Tue Aug 13 2019 08:32:53 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 08:32:57 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 C++ API 参考。
@@ -34,7 +34,7 @@ updatedAt: Tue Aug 13 2019 08:32:53 GMT+0800 (CST)
 
 ## 快速生成 Token
 
-下面我们以 **sample_builder.cpp** 为例演示 Token 生成的过程：
+下面我们以 **RtcTokenBuilderSample.cpp** 为例演示 Token 生成的过程：
 
 1. 由于我们的示例代码依赖 **openssl**, 请确保已安装 **openssl** 库。macOS 平台可通过以下命令安装：
      `brew install openssl` 
