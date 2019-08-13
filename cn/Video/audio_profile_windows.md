@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set the audio profile on Windows
 platform: Windows
-updatedAt: Tue Aug 13 2019 10:11:02 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 10:12:16 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
