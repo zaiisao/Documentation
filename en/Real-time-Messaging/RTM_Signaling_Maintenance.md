@@ -3,7 +3,7 @@
 title: Agora Signaling Sunset Plan
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 13 2019 02:27:26 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 02:27:30 GMT+0800 (CST)
 ---
 # Agora Signaling Sunset Plan
 ## Agora Signaling Sunset Plan
@@ -14,7 +14,7 @@ updatedAt: Tue Aug 13 2019 02:27:26 GMT+0800 (CST)
 
 ## Compatibility between the Signaling SDK and the Agora RTM SDK
 
-Agora RTM SDK v1.0 can intercommunicate with the legacy Agora Signling SDK, but does not support the following features.  Our dashboard will soon send you a note about it if you are using features that the Agora RTM SDK does not support. Please keep tuned. 
+Agora RTM SDK v1.0 is compatible with the legacy Agora Signling SDK except for the following features or versions.  Our Dashboard will soon send you a note about this if you are using features that the Agora RTM SDK does not support. Please keep tuned. 
 
 |  Signaling Features or Versions          | Description                                                         | Our recommendation or comments      |
 | ---------------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------- |
