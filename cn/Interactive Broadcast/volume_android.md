@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Android
 platform: Android
-updatedAt: Tue Aug 13 2019 06:41:22 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 07:17:33 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -45,7 +45,7 @@ rtcEngine.adjustPlaybackSignalVolume(volume);
 ```
 
 **Note**: 
-从 v2.3.2 开始，该接口仅支持调整人声的播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 `adjustPlaybackSignalVolume(0)` 和 `adjustAudioMixingPlayoutVolume(0)`。
+从 v2.3.2 开始，[`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b) 接口仅支持调整人声的播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 `adjustPlaybackSignalVolume(0)` 和 `adjustAudioMixingPlayoutVolume(0)`。
 
 #### API 参考
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
