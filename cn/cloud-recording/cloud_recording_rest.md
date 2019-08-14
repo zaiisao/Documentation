@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 09:52:47 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:19:22 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -44,7 +44,9 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 ## 实现云端录制
 
-下图为实现云端录制需要调用的 API 时序图。其中查询状态和更新合流布局都是可选的，但是必须在开始录制后结束录制前操作。
+下图为实现云端录制需要调用的 API 时序图。
+
+> 查询状态和更新合流布局都是可选的，但是必须在录制过程中（开始录制后到结束录制前）操作。
 
 ![](https://web-cdn.agora.io/docs-files/1565775542161)
 
@@ -78,7 +80,7 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 ### 更新合流布局
 
-录制过程中，你可以多次调用 [`updateLayout`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法设置或更新合流布局。
+录制过程中，你可以多次调用 [`updateLayout`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法设置或更新合流布局。详见[设置合流布局](https://docs.agora.io/cn/cloud-recording/cloud_layout_guide?platform=Linux)。
 
 该方法的请求和响应示例详见 [`updateLayout` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#updatelayout-请求示例)。
 
