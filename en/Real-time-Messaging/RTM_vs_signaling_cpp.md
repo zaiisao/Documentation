@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux CPP
-updatedAt: Thu Aug 08 2019 10:17:19 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:24:10 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -12,23 +12,23 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                 | Signaling                              | Real-time Messaging                  |
 | ---------------------- | -------------------------------------- | ------------------------------------ |
-| Creates an instance.   | `getInstance`/`createAgoraSDKInstance` | `createRtmService`<sup>1</sup>       |
+| Creates an instance.   | `getInstance`/`createAgoraSDKInstance` | [createRtmService](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1base_1_1_i_agora_service.html#ae3dae3b461aed1b826e5162479530ff1)<sup>1</sup>       |
 | Sets a callback.       | `callbackSet`                          | N/A                                  |
-| Login                  | `login`/`login2`                       | `login`<sup>2</sup>                  |
-| Logout                 | `logout`                               | `logout`                             |
-| Gets the login status. | `getStatus`                            | N/A. See `onConnectionStateChanged`. |
-| Destroys the instance. | `destroy`                              | `release`                            |
+| Login                  | `login`/`login2`                       | [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2433a0babbed76ab87084d131227346b)<sup>2</sup>                  |
+| Logout                 | `logout`                               | [logout](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a24feb518a0bd4c22133f6d42f5a84d03)                             |
+| Gets the login status. | `getStatus`                            | N/A. See [onConnectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#aa2e25e87c6f06cfd71b3538786d23743). |
+| Destroys the instance. | `destroy`                              | [release](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a6c1cf5a9f13640a4bbaaa4fdd2545200)                            |
 
 | Event                     | Signaling             | Real-time Messaging        |
 | ------------------------- | --------------------- | -------------------------- |
-| Login succeeds.           | `onLoginSuccess`      | `onLoginSuccess`           |
-| Login Fails.              | `onLoginFailed`       | `onLoginFailure`           |
-| Logout results.           | `onLogout`            | `onLogout`                 |
-| Connection state changes. | N/A. See `getStatus`. | `onConnectionStateChanged` |
+| Login succeeds.           | `onLoginSuccess`      | [onLoginSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a8cf1b2be30172004f595484e0a194d76)           |
+| Login Fails.              | `onLoginFailed`       | [onLoginFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a4070957075f00a9a54ed60290838fec4)           |
+| Logout results.           | `onLogout`            | [onLogout](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a63250f876c60b52d278b43b8b2f0b1de)                 |
+| Connection state changes. | N/A. See `getStatus`. | [onConnectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#aa2e25e87c6f06cfd71b3538786d23743) |
 
-> - Unless otherwise specified, most of the core APIs of the Agora RTM Android SDK should only be called after the `login` method call succeeds and after you receive the `onSuccess` callback.
-> - <sup>1</sup> You can create multiple RtmClient instances with the `createRtmService` method. The Agora RTM SDK does not put a limit to the number of IRtmService instances you can create, but it only allows you to join a maximum of 20 channels at the same time. 
-> - <sup>2</sup> The generation of the token you use to log in the Agora RTM system differs from the generation of the signalingToken you use to log in the Agora Signaling system. Make sure you use the right token. See [Token Security](../../en/Real-time-Messaging/RTM_key.md) for more information.
+> - Unless otherwise specified, most of the core APIs of the Agora RTM Android SDK should only be called after the [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2433a0babbed76ab87084d131227346b) method call succeeds and after you receive the [onLoginSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a8cf1b2be30172004f595484e0a194d76) callback.
+> - <sup>1</sup> You can create multiple RtmClient instances with the [createRtmService](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1base_1_1_i_agora_service.html#ae3dae3b461aed1b826e5162479530ff1) method. The Agora RTM SDK does not put a limit to the number of IRtmService instances you can create, but it only allows you to join a maximum of 20 channels at the same time. 
+> - <sup>2</sup> The generation of the token you use to log in the Agora RTM system differs from the generation of the signalingToken you use to log in the Agora Signaling system. Ensure that you use the right token. See [Token Security](../../en/Real-time-Messaging/RTM_key.md) for more information.
 > - <sup>2</sup> The token debugging mechanism, "\_no\_need\_token" for example, of the Agora Signaling SDK does not apply to the Agora RTM SDK. 
 > - <sup>2</sup> The way that the Agora RTM SDK connects or reconnects to the Agora RTM system is completely different either. For more information, see [Manage Connection States](../../en/Real-time-Messaging/RTM_reconnecting_android.md) for more information. 
 
