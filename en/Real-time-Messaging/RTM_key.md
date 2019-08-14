@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 12 2019 07:31:06 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:26:02 GMT+0800 (CST)
 ---
 # Use Security Keys
 ## Introduction
@@ -41,7 +41,6 @@ You may need an App ID in the following situations:
 -   Setting the `appId` parameter as the App ID when initializing the client.
 -   You are required to use an RTM token when calling the `login` method to log in the Agora RTM system, but under low-security requirements, you can pass your App ID as `token`.
 
-> To switch your App ID, you must first call the `destroy` method to destroy the current instance.
 
 ## Get and Use an RTM Token
 
