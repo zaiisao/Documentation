@@ -3,7 +3,7 @@
 title: How do I set the video profile of the recorded video?
 description: 
 platform: Linux
-updatedAt: Wed Aug 14 2019 13:58:38 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 17:30:55 GMT+0800 (CST)
 ---
 # How do I set the video profile of the recorded video?
 In the individual recording mode, the recorded video keeps the original video profile.
