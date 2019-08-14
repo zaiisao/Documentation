@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 09:55:59 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 09:56:04 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -265,7 +265,7 @@ The following parameters are required in the request body.
                 "bitrate": 500, 
                 "fps": 15, 
                 "mixedVideoLayout": 1,
-                "backgroudColor": "#FF0000"
+                "backgroundColor": "#FF0000"
             }
         }, 
         "storageConfig": {
