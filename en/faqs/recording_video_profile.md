@@ -3,7 +3,7 @@
 title: How do I set the video profile of the recorded video?
 description: 
 platform: Linux
-updatedAt: Wed Aug 14 2019 17:30:55 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 17:31:00 GMT+0800 (CST)
 ---
 # How do I set the video profile of the recorded video?
 In the individual recording mode, the recorded video keeps the original video profile.
@@ -11,6 +11,7 @@ In the individual recording mode, the recorded video keeps the original video pr
 In the composite recording mode, you can set the video profile (resolution, frame rate, and bitrate) by the `mixResolution` parameter. We recommend setting the video profile according to the table below.
 
 > We recommend setting the recording resolution lower than the aggregate reoslution of the video streams, otherwise the recorded video might be blurry.
+> Agora only supports the following frame rates: 1 fps, 7 fps, 10 fps, 15 fps, 24 fps, 30 fps, and 60 fps. The default value is 15 fps. If you set other frame rates, the SDK uses the default value.
 
 | Resolution (width x height) | Frame rate (fps) | Base bitrate (Kbps, for Communication) | Live bitrate (Kbps, for Live Broadcast) |
 | --------------------------- | ---------------- | -------------------------------------- | --------------------------------------- |
