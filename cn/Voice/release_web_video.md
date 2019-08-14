@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Aug 14 2019 10:33:18 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:33:44 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -135,7 +135,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 > 请勿在发布流时修改视频编码配置。
 
-### 修复问题
+**问题修复**
 
 - 修复 Firefox 上调用 `Stream.getStats` 获取的部分数据异常的问题。
 - 修复断网后调用 `Client.leave` 不生效的问题。
@@ -171,7 +171,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 创建流（`AgoraRTC.createStream`）时支持 `cameraId` 和 `microphoneId` 使用空字符串。
 
-### 修复问题
+**问题修复**
 
 - 修复在最新版 iOS Safari 上最多只能同时播放两个视频流的问题。
 - 修复在发布流（`Client.publish`）之前调用 `enableDualStream` 方法报错的问题。
@@ -204,7 +204,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 该版本优化了弱网下的音视频流回退体验，同时在 `Client.on` 中新增 `stream-fallback` 回调，在开启音视频流回退（`setStreamFallbackOption`）的情况下，当订阅的流从音视频流回退为音频流或者从音频流恢复为音视频流时可以收到回调通知。
 
 
-### 修复问题
+**问题修复**
 
 - 修复在 Chrome 72 上使用 `switchDevice` 无法切换麦克风的问题
 - 修复调用 `addTrack` 后 mute 操作不生效的问题
