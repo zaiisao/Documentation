@@ -3,7 +3,7 @@
 title: 合流录制
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 10:24:42 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:46:55 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
@@ -13,7 +13,7 @@ updatedAt: Wed Aug 14 2019 10:24:42 GMT+0800 (CST)
 - 单流录制：分别录制每个 UID 的音频流和视频流。一个 UID 对应一个音频文件和一个视频文件。
 - 合流录制：频道内所有用户的音频混合录制为一个纯音频文件，所有用户的视频混合录制为一个纯视频文件。
 
-本文介绍如何通过命令行的方式进行合流录制。
+本文介绍如何通过命令行的方式进行**合流录制**。
 
 所有命令行参数的设置都是在开始录制的时候完成，请确保你已经完成录制 SDK 的环境准备和集成工作并且了解如何使用命令行开始录制，详见[集成客户端](https://docs-preview.agoralab.co/cn/Recording/recording_integrate_cpp)和[命令行录制](https://docs-preview.agoralab.co/cn/Recording/recording_cmd_cpp)。
 
