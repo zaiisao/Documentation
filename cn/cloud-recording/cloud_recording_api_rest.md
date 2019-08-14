@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 09:56:23 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 09:56:27 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -253,7 +253,7 @@ updatedAt: Wed Aug 14 2019 09:56:23 GMT+0800 (CST)
                 "bitrate": 500, 
                 "fps": 15, 
                 "mixedVideoLayout": 1,
-                "backgroudColor": "#FF0000"            
+                "backgroundColor": "#FF0000"            
             }
         }, 
         "storageConfig": {
