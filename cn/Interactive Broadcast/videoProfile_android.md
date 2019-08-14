@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Android
-updatedAt: Wed Aug 14 2019 07:05:22 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 07:05:37 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
@@ -86,9 +86,9 @@ rtcEngine.setVideoEncoderConfiguration(config);
 - Agora SDK 会根据实时网络环境，对设置的参数作自适应调整，通常会下调参数。
 - 通常的，直播场景下需要较大码率来提升视频质量。因此 Agora 建议将直播码率值设为通信值的 2 倍。详情请参考[设置码率](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8)。 
 - 直播模式通常需要更大的码率来支持清晰度，因此建议主播使用较稳定的网络。
-- 本文中各参数的设置可能会影响计费，详情请参考[计费](../../cn/Agora%20Platform/billing_faq.md)。
+- 本文中各参数的设置可能会影响计费，详情请参考[计费](https://docs.agora.io/cn/faq/video_billing)。
 
-## 常用分辨率、码率和帧率
+## 常用分辨率、帧率和码率
 
 通常来讲，视频参数的选择要根据产品实际情况和场景来确定，比如，如果是1对1 ，老师和学生的窗口比较大，要求分辨率会高一点，随之帧率和码率也要高一点；如果是 1 对 4， 老师和学生的窗口都比较小，分辨率可以低一点，对应的码率帧率也会低一点，以减少编解码的资源消耗和缓解下行带宽压力。一般可按下列场景中的推荐值进行设置。
 
