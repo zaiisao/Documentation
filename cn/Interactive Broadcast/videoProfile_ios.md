@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: iOS
-updatedAt: Wed Aug 14 2019 07:04:10 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 07:04:17 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
@@ -85,9 +85,7 @@ AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc]
 - 本文中各参数的设置可能会影响计费，详情请参考[计费](../../cn/Agora%20Platform/billing_faq.md)。
 
 
-## 用户常见问题
-
-### 能否推荐一些常用推荐视频分辨率、帧率、码率？
+## 常用分辨率、帧率和码率
 
 通常来讲，视频参数的选择要根据产品实际情况来确定，比如，如果是1对1 ，老师和学生的窗口比较大，要求分辨率会高一点，随之帧率和码率也要高一点；如果是 1 对 4， 老师和学生的窗口都比较小，分辨率可以低一点，对应的码率帧率也会低一点，以减少编解码的资源消耗和缓解下行带宽压力。一般可按下列场景中的推荐值进行设置。
 
