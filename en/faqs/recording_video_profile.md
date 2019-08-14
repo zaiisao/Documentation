@@ -3,12 +3,14 @@
 title: How do I set the video profile of the recorded video?
 description: 
 platform: Linux
-updatedAt: Wed Jul 17 2019 11:17:48 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 13:58:38 GMT+0800 (CST)
 ---
 # How do I set the video profile of the recorded video?
 In the individual recording mode, the recorded video keeps the original video profile.
 
 In the composite recording mode, you can set the video profile (resolution, frame rate, and bitrate) by the `mixResolution` parameter. We recommend setting the video profile according to the table below.
+
+> We recommend setting the recording resolution lower than the aggregate reoslution of the video streams, otherwise the recorded video might be blurry.
 
 | Resolution (width x height) | Frame rate (fps) | Base bitrate (Kbps, for Communication) | Live bitrate (Kbps, for Live Broadcast) |
 | --------------------------- | ---------------- | -------------------------------------- | --------------------------------------- |
