@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Aug 14 2019 10:33:44 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:34:28 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -129,7 +129,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 该版本支持在 Edge 浏览器上实现音视频基本互通，具体支持的功能请参考 [Edge 浏览器支持](https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge)。
 
-### 改进
+**改进**
 
 该版本支持动态修改视频编码配置，即 `Stream.init` 之前或之后都可以调用 `setVideoProfile` 或 `setVideoEncoderConfiguration` 设置视频编码配置。
 
@@ -167,7 +167,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 该版本于 2019 年 4 月 11 日发布。改进及修复问题详见下文。
 
-### 改进
+**改进**
 
 创建流（`AgoraRTC.createStream`）时支持 `cameraId` 和 `microphoneId` 使用空字符串。
 
@@ -199,7 +199,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - `Client.on` 新增 `stream-updated` 回调，当远端用户的音视频流进行 `addTrack` 或 `removeTrack` 操作时会触发该回调。
 - 混音功能（`startAudioMixing`）支持使用包含中文字符的 URL 作为音乐文件的地址
 
-### 改进
+**改进**
 
 该版本优化了弱网下的音视频流回退体验，同时在 `Client.on` 中新增 `stream-fallback` 回调，在开启音视频流回退（`setStreamFallbackOption`）的情况下，当订阅的流从音视频流回退为音频流或者从音频流恢复为音视频流时可以收到回调通知。
 
@@ -315,7 +315,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
   - `audioMixingPlayed` ：通知应用程序混音开始播放。
   - `audioMixingFinished` ：通知应用程序混音结束播放。
 
-### 改进
+**改进**
 
 - `Stream.play` 方法中新增 `muted` 参数，用于规避浏览器自动播放策略。
 - `Stream.setAudioMixingPosition` 方法中新增 `callback` 参数，可用于返回方法调用失败的错误信息。
