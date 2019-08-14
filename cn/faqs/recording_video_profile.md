@@ -3,12 +3,14 @@
 title: 如何设置录制视频的分辨率
 description: 
 platform: Linux
-updatedAt: Wed Jul 17 2019 15:41:38 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 13:55:24 GMT+0800 (CST)
 ---
 # 如何设置录制视频的分辨率
 单流模式录制时，录制的视频属性与用户的原始视频属性一致，无法自行设置。
 
 合流模式录制时可以通过 `mixResolution` 参数设置录制视频的分辨率（宽和高）、帧率和码率。我们建议参考下表进行设置。
+
+> 录制文件输出分辨率并不是越高越好，建议不要高于录制视频流的[集合分辨率](https://docs.agora.io/cn/faq/video_billing#the-Recording-Aggregate-Resolution)，否则最终录制文件可能会变模糊。
 
 | 分辨率 (宽 x 高) | 帧率 (fps) | 基准码率 (Kbps，适用于通信) | 直播码率 (Kbps，适用于直播) |
 | ---------------- | ---------- | --------------------------- | --------------------------- |
