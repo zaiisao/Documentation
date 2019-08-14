@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Aug 14 2019 10:36:16 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:36:24 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -24,7 +24,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 该版本于 2019 年 7 月 8 日发布。新增特性详见下文。
 
-### **新增特性**
+**新增特性**
 
 #### 1. 全平台支持 String 型的用户名
 
@@ -54,11 +54,11 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 同时，该版本在 [RemoteAudioStats](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) 类中还新增 `numChannels`、`receivedSampleRate` 和 `receivedBitrate` 成员。
 
-### **改进**
+**改进**
 
 为方便开发者统计掉线率，该版本在 [onConnectionStateChanged](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) 回调的 `reason` 参数中添加 `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` 成员，表示 SDK 与服务器连接保活超时，引起 SDK 连接状态发生改变。
 
-### **API 变更**
+**API 变更**
 
 为提升用户体验，Agora 在 v2.8.0 版本中对 API 进行了如下变动：
 
@@ -104,7 +104,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 为更精准地表达远端视频流的统计信息，该版本将 [RemoteVideoStats](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html) 类中的 `receivedFrameRate` 参数更名为 [rendererOutputFrameRate](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a500d2a8457bf877794c219d194ec09b0)。
 
-### **新增特性**
+**新增特性**
 
 #### 1、添加媒体附属信息
 
@@ -149,7 +149,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 - 该版本新增支持 64 位系统。
 
-### **改进**
+**改进**
 
 #### 1、质量透明
 
@@ -169,7 +169,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 - 提升了推流服务的稳定性
 - 提升了视频设备的兼容性
 
-### **问题修复**
+**问题修复**
 
 #### 音频
 
@@ -184,7 +184,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 - 修复了用户退出频道后仍然收到 `onNetworkQuality` 回调的问题
 - 修复了偶现的崩溃问题，提升了系统稳定性
 
-### **API 变更**
+**API 变更**
 
 为提升用户体验，Agora 在 v2.4.1 版本中对 API 进行了如下变动：
 
@@ -224,7 +224,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 该版本于 2019 年 4 月 1 日发布。新增特性、功能改进与修复问题列表详见下文。
 
-### 新增功能
+**新增功能**
 
 
 #### 1. 高级屏幕共享
@@ -256,7 +256,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 #### 6. 设置用户媒体流优先级
 
-该版本新增接口 [`setRemoteUserPriority`](https://docs.agora.io/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710) 用于设置远端用户的优先级。该方法可以与 [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a50e727c34b662de64c03b0479a7fe8e7) 搭配使用。如果开启了订阅流回退选项，弱网下 SDK 会优先保证高优先级用户收到的流的质量。
+该版本新增接口 [`setRemoteUserPriority`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710) 用于设置远端用户的优先级。该方法可以与 [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a50e727c34b662de64c03b0479a7fe8e7) 搭配使用。如果开启了订阅流回退选项，弱网下 SDK 会优先保证高优先级用户收到的流的质量。
 
 #### 7. 音乐文件播放状态
 
@@ -264,13 +264,13 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 #### 8. 设置日志文件大小
 
-Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决该大小无法满足部分用户需求的问题，该版本新增接口 [`setLogFileSize`](https://docs.agora.io/cn/Video/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1)，用于设置 SDK 输出的日志文件大小。
+Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决该大小无法满足部分用户需求的问题，该版本新增接口 [`setLogFileSize`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1)，用于设置 SDK 输出的日志文件大小。
 
 #### 9. 直播转码支持设置背景图片
 
-该版本在设置直播转码的 [`LiveTranscoding`](https://docs.agora.io/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_live_transcoding.html) 类中，新增 [`backgroundImage`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_live_transcoding.html#a729037c7cf31b57efd1e8c9fadeab6eb) 参数，支持设置直播转码合图的背景图片。
+该版本在设置直播转码的 [`LiveTranscoding`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html) 类中，新增 [`backgroundImage`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a729037c7cf31b57efd1e8c9fadeab6eb) 参数，支持设置直播转码合图的背景图片。
 
-### 功能改进
+**功能改进**
 
 #### 1. 质量测试与透明
 
@@ -291,7 +291,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 - 缩短了远端视频的出图时间
 - 改善了屏幕共享直播弱⽹下视频流畅性和延迟
 
-### 问题修复
+**问题修复**
 
 #### 音频相关
 
@@ -350,11 +350,11 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 该版本于 2019 年 1 月 24 日发布。功能改进与修复问题详见下文。
 
-### **改进**
+**改进**
 
 为提升用户体验，屏幕共享做了大量算法优化。针对不同的共享场景提供不同的屏幕共享策略，尤其针对 PPT 翻页和网页浏览场景，提升了屏幕共享过程中的流畅度和清晰度。同时改善了通信模式下屏幕共享开启阶段画面模糊的现象。
 
-### **问题修复**
+**问题修复**
 
 修复了 `onNetworkQuality` 回调不准确的问题。
 
@@ -363,7 +363,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 该版本于 2019 年 1 月 16 日发布。新增特性与修复问题详见下文。
 
-#**升级必看**
+**升级必看**
 
 2.3.2 除了下文提到的功能和改进外，整体提升直播模式下视频弱网下抗丢包能力，提高流畅度，降低卡顿率。升级前，请了解版本兼容性:
 
@@ -372,7 +372,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 如果你的 Native SDK 是由 v2.0.8 升级至 v2.3.2，Agora 建议你另外参考[升级指南](../../cn/Video/migration_windows.md)了解主要 API 的变动。
 
-### **新增功能**
+**新增功能**
 
 #### 1. 视频自采集 (Push 模式）
 
@@ -422,7 +422,7 @@ Agora SDK 会根据网络条件进行码率自适应。为满足用户在直播�
 为提升声卡采集易用性，该版本在 [`enableLoopbackRecording`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a065f485fd23b8c24a593680a47d754aa) 接口中新增参数 deviceName，支持用户使用虚拟声卡进行采集。该参数 NULL 时默认使用当前声卡采集。如需使用虚拟声卡，直接使用虚拟声卡的产品名传参即可。
 
 
-### **改进**
+**改进**
 
 #### 1. 提供更透明的质量数据统计
 
@@ -468,7 +468,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 - 降低了音频延时
 - 优化了屏幕共享的性能
 
-### **问题修复**
+**问题修复**
 
 #### SDK 相关：
 
@@ -495,7 +495,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 - 修复了使用高分辨率视频屏幕共享时出现的卡糊的问题
 
 
-### **API 整理**
+**API 整理**
 
 为提升用户体验，Agora 在 v2.3.2 版本中对 API 进行了如下变动：
 
@@ -529,7 +529,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 该版本于 2018 年 6 月 21 日发布。修复问题列表详见下文。
 
-### **修复问题**
+**修复问题**
 
 - 修复了偶发的线上统计崩溃的问题
 - 修复了特定场景下偶发的视频窗口尺寸变化后，视频卡住的问题
@@ -547,7 +547,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 为更好地提升用户体验，Agora SDK 在 2.1 版本中对动态秘钥进行了升级。 如果你当前使用的 SDK 是 2.1 之前的版本，并希望升级到 2.1 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
-### **新增功能**
+**新增功能**
 
 本次发版新增如下功能：
 
@@ -559,7 +559,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 #### 2. 服务端部署代理服务器
 
-通过 Agora 部署的代理服务器，方便有企业防火墙的用户设置代理服务器，以使用 Agora 的服务。详见 [企业部署代理服务器](../../cn/Quickstart%20Guide/proxy.md) 中的描述。
+通过 Agora 部署的代理服务器，方便有企业防火墙的用户设置代理服务器，以使用 Agora 的服务。
 
 修复了连麦后退出频道后再进入频道连麦对端看不到自己的问题。
 
@@ -571,7 +571,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 > 在本地直播及旁路直播中增加水印功能，允许用户将一张 PNG 图片作为水印添加到正在进行的本地直播或旁路直播中。新增 `addVideoWatermark` 和 `clearVideoWatermarks` 接口，以添加或删除本地直播水印；`LiveTranscoding` 接口中新增 `watermark` 参数，用于控制旁路直播中水印的添加。
 
-### **改进功能**
+**改进功能**
 
 本次发版改进如下功能：
 
@@ -591,7 +591,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 提升了用户在播放音乐等场景下的音乐音质。
 
-### **修复问题**
+**修复问题**
 
 -   修复了大量用户同时直播连麦时，偶发的抖屏现象
 
@@ -606,11 +606,11 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 该版本的 SDK 修改了 `setVideoProfile` 方法在直播模式下的码率值，修改后的码率值与 2.0 版本一致。
 
-### **问题修复**
+**问题修复**
 
 修复了部分手机上，用户离开频道后，开启自带的录音设备时，偶现录音出错的问题。
 
-### **改进**
+**改进**
 
 改进了通信和直播模式下屏幕共享的效果，缩短了用户从屏幕共享模式切换回普通模式需要的时间间隔。
 
@@ -622,7 +622,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，但带宽也会变大。
 
-### **问题修复**
+**问题修复**
 
 -   修复了连麦后退出频道后再进入频道连麦对端看不到自己的问题。
 
@@ -639,7 +639,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 该版本于 2018 年 3 月 7 日发布。新增特性与修复问题列表详见下文。
 
-### **新增功能**
+**新增功能**
 
 本次发版新增如下功能：
 
@@ -680,7 +680,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 新增 API `enableLoopbackRecording` 开启视声卡采集，开启后 SDK 可以采集到本地播放的所有声音。
 
-### **改进**
+**改进**
 
 本次发版改进如下功能：
 
@@ -710,7 +710,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 
 
-### **问题修复**
+**问题修复**
 
 -   修复了摄像头采集失败问题;
 
@@ -721,11 +721,12 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 
 ## **2.0 版及之前**
-### **2.0 版**
+
+**2.0 版**
 
 该版本于 2017 年 12 月 6 日发布。新增特性与修复问题列表详见下文。
 
-#**升级必看**
+#### **升级必看**
 
 致各位开发者:
 
@@ -829,13 +830,11 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 </table>
 
 
-
-
 #### **问题修复**
 
 修复了加入频道后出现的崩溃。
 
-### **1.14 版**
+**1.14 版**
 
 该版本于 2017 年 10 月 20 日发布。新增特性与修复问题列表详见下文。
 
@@ -874,7 +873,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 -   修复了部分 Windows 机器上的摄像头问题。
 
 
-### **1.13.1 版**
+**1.13.1 版**
 
 该版本于 2017 年 9 月 28 日发布。新增特性与修复问题列表详见下文。
 
@@ -882,7 +881,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 优化了特定场景下出现的回声问题。
 
-### **1.13 版**
+**1.13 版**
 
 该版本于 2017 年 9 月 4 日发布。新增特性与修复问题列表详见下文。
 
@@ -912,7 +911,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 修复了部分机型上偶现的崩溃。
 
-### **1.12 版**
+**1.12 版**
 
 该版本于 2017 年 7 月 25 日发布。新增特性与修复问题列表详见下文。
 
