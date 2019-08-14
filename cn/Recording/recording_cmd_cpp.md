@@ -96,6 +96,8 @@ make
   - 0：（默认）录制视频大流。
   - 1：录制视频小流。
 
+> `isAudioOnly` 和 `isVideoOnly` 不能同时设置为 1。
+
 ### 设置录制格式
 
 - `getAudioFrame`：录制音频格式。该参数设为 1，2 或 3 （即录制原始音频数据）时，不可将 `isMixingEnabled` 设为 1。
