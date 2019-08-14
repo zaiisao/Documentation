@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Tue Jul 23 2019 05:52:54 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:23:18 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -47,7 +47,7 @@ Unity 互动游戏 SDK，支持使用 C# 语言在 Unity 平台上实现游戏�
 
 为方便用户确定是否成功调用某个 API 方法，该版本新增 `OnApiExecutedHandler` 回调提示用户已成功执行 API 方法。
 
-### API 整理
+**API 整理**
 
 本次发版 API 变动如下。
 
