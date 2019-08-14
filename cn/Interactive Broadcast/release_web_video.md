@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Aug 14 2019 10:34:28 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:35:12 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -103,7 +103,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 ## 2.7.0 版
 该版本于 2019 年 6 月 21 日发布。新增功能、改进及修复问题详见下文。
 
-### 新增功能
+**新增功能**
 
 #### 1. 自定义视频编码配置
 
@@ -181,7 +181,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 该版本于 2019 年 4 月 3 日发布。新增功能及修复问题详见下文。
 
-### 新增功能
+**新增功能**
 
 #### 1. 音效文件播放和管理
 
@@ -254,7 +254,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 该版本于 2019 年 2 月 11 日发布。新增功能、改进及修复问题详见下文。
 
-### 新增功能
+**新增功能**
 
 #### 1. 质量透明
 
@@ -389,7 +389,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 > <font color="red">如果设置了域名防火墙，使用此版本时需将 `*.agoraio.cn` 和 `*.agora.io` 添加到白名单。</font>
 
-### 新增功能
+**新增功能**
 
 为更好地与 Agora 其他 SDK 互通，实现更多功能，Web SDK 在本版本中新增了如下功能。详细的方法说明，请参考 [Agora Web SDK API Reference](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html)。
 
