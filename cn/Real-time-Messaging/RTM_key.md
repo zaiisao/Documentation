@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 10:25:29 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:25:33 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -33,7 +33,6 @@ Agora RTM SDK 提供两种鉴权机制：App ID 和 Token 。这两种鉴权机�
 
 你需要在初始化客户端时，需要填写 `appId` 参数。
 
-> 更换 App ID，需要先调用 `release` 方法销毁当前实例。
 
 ## 获取和使用 RTM Token
 
