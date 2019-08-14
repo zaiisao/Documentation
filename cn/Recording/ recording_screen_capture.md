@@ -3,13 +3,13 @@
 title: 截屏
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 10:43:34 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:54:03 GMT+0800 (CST)
 ---
 # 截屏
 
 Agora 本地服务端录制 SDK 目前仅支持单流模式下截屏，无需转码。
 
-录制模式与录制内容的设置，详见[使用录制模式](../../cn/Recording/recording_mode.md)。
+录制模式与录制内容的设置，详见[单流录制](../../cn/Recording/individual_recording.md)和[合流录制](../../cn/Recording/composite_recording.md)。
 
 | **录制内容** | **参数设置**                              | **生成文件**                                                 |
 | ------------ | ----------------------------------------- | ------------------------------------------------------------ |
