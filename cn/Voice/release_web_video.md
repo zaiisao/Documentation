@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Aug 14 2019 10:23:15 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:33:18 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -96,7 +96,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 该版本于 2019 年 7 月 3 日发布。
 
-### 问题修复
+**问题修复**
 
 修复了调用 `Stream.setScreenProfile` 方法设置屏幕共享的视频属性不生效的问题。
 
@@ -245,7 +245,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 该版本于 2019 年 2 月 28 日发布。修复问题见下文。
 
 
-### 问题修复
+**问题修复**
 
 - 修复了在 Chrome 72 及以上调用 `Stream.switchDevice` 无法切换音频的问题。
 - 修复了如果未设置 `Client.subscribe` 的可选参数会报错的问题。
@@ -321,7 +321,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - `Stream.setAudioMixingPosition` 方法中新增 `callback` 参数，可用于返回方法调用失败的错误信息。
 - 修改了部分 `Client.on` 回调事件的名称，以保持风格统一。
 
-### 问题修复
+**问题修复**
 
 - 修复了 macOS 使用 Safari 浏览器互通时，调用 `getStats` 方法返回的对端视频分辨率为 0 的问题。
 - 修复了调用 `disableAudio` 方法后开启混音功能，再调用 `enableAudio` 方法，无法听到麦克风声音的问题。
@@ -464,7 +464,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - 支持 360 安全浏览器 9.1.0.432 及以上版本。
 - 支持 Windows XP 平台的 Chrome 49 浏览器。
 
-### 问题修复 
+**问题修复** 
 
 - 修复了手机端使用 Safari 或 Chrome 浏览器进入频道后，在仅有音频通话的情况下对 video codec 的依赖。
 - 修复了使用 Safari 浏览器推流后调用 `Stream.close` 关闭流，对端 10 秒后无法收到 `stream-removed` 回调的问题。
