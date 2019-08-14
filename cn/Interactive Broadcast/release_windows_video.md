@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Aug 14 2019 10:18:35 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:23:14 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -314,7 +314,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 - 修复了偶现的的回声问题
 - 修复了转码推流场景下，SEI 信息与媒体流不同步的问题
 
-### API 整理
+**API 整理**
 
 为提升用户体验，Agora 在 v2.4.0 版本中对 API 进行了如下变动：
 
