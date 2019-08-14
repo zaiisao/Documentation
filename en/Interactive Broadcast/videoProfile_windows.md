@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Thu May 30 2019 07:56:03 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 07:08:47 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -92,7 +92,7 @@ Do not set the `minFrameRate` parameter to a value greater than `frameRate`. The
 - The Agora SDK may adjust the parameters under poor network conditions. 
 -  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69).
 - For better video quality during a live broadcast, a stable network connection is recommended.
-- Setting parameters in the `setVideoEncoderConfiguration` method may affect your bill. For more information, see [Pricing and Billing](../../en/Agora%20Platform/billing_faq.md).
+- Setting parameters in the `setVideoEncoderConfiguration` method may affect your bill. For more information, see [Pricing and Billing](https://docs.agora.io/en/faq/video_billing).
 
 ## Frequently Asked Questions
 
