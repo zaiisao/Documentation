@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Aug 08 2019 02:51:54 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:16:39 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides a RESTful API for you to control cloud recording through HTTP requests.
@@ -37,11 +37,21 @@ Ensure that you meet the following requirements:
 - Deploy a third-party cloud storage. Agora Cloud Recording supports [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls), [Alibaba Cloud](https://www.alibabacloud.com/product/oss), and [Qiniu Cloud](https://www.qiniu.com/en/products/kodo).
 
 > Agora Cloud Recording does not support string user accounts. Ensure that the recording channel uses integer UIDs.
+
 ## Pass basic authentication
 
 The RESTful API requires the basic HTTP authentication. You need to set the `Authorization` parameter in every HTTP request header. For how to get the value for `Authorization`, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
 
-## Get a resource ID
+## Implement cloud recording
+
+The following figure shows the API call sequence of a cloud recording. 
+> The `query` and `updateLayout` methods are not mandatory, and can be called multiple times during the recording (after starting recording and before stopping recording).
+
+![](https://web-cdn.agora.io/docs-files/1565777201501)
+
+### Start recording
+
+**Get a resource ID**
 
 Call the [`acquire`](../../en/cloud-recording/cloud_recording_api_rest.md) method to request a resource ID for cloud recording. 
 
@@ -51,13 +61,15 @@ If this method call succeeds, you get a resource ID (`resourceId`) from the HTTP
 
 See the [`acquire` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
-## Start recording
+**Join a channel**
 
-Call the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) method within five minutes after getting the resource ID to start the recording. 
+Call the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) method within five minutes after getting the resource ID to join a channel and start the recording. 
+
+If this method call succeeds, you get a recording ID (`sid`) from the HTTP response body.
 
 See the [`start` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
-## Query recording status
+### Query recording status
 
 During the recording, you can call the [`query`](../../en/cloud-recording/cloud_recording_api_rest.md) method to check the recording status multiple times.
 
@@ -65,11 +77,19 @@ If this method call succeeds, you get the M3U8 filename and the current recordin
 
 See the [`query` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
-## Stop recording
+### Update video layout
+
+During the recording, you can call the [`updateLayout`](../../en/cloud-recording/cloud_recording_api_rest.md)  method to set or update the video layout. See [Set Video Layout](https://docs.agora.io/en/cloud-recording/cloud_layout_guide?platform=Linux) for details.
+
+See the [`updateLayout` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
+
+### Stop recording
 
 Call the [`stop`](../../en/cloud-recording/cloud_recording_api_rest.md) method to stop the recording.
 
 > Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default.
+
+If this method call succeeds, you get the M3U8 filename and the current uploading status from the HTTP response body.
 
 See the [`stop` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
