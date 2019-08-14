@@ -3,12 +3,12 @@
 title: 获取原始音视频数据
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 11:39:29 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 11:39:34 GMT+0800 (CST)
 ---
 # 获取原始音视频数据
 Agora 本地服务端录制 SDK 目前支持单流模式下的原始音视频数据，以及合流模式下音频混音后的原始音频数据。
 
-录制模式与录制内容的设置，详见[使用录制模式](../../cn/Recording/recording_profile.md)。
+录制模式与录制内容的设置，详见[单流录制](../../cn/Recording/individual_recording.md)和[合流录制](../../cn/Recording/composite_recording.md)。
 
 ## 单流模式下录制原始音视频数据
 
