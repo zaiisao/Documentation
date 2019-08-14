@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux CPP
-updatedAt: Thu Aug 08 2019 10:16:36 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 09:44:08 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -12,22 +12,22 @@ updatedAt: Thu Aug 08 2019 10:16:36 GMT+0800 (CST)
 
 | 方法         | 信令                                   | RTM 实时消息                         |
 | ------------ | -------------------------------------- | ------------------------------------ |
-| 创建实例     | `getInstance`/`createAgoraSDKInstance` | `createRtmService`<sup>1</sup>       |
+| 创建实例     | `getInstance`/`createAgoraSDKInstance` | [createRtmService](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1base_1_1_i_agora_service.html#ae3dae3b461aed1b826e5162479530ff1)<sup>1</sup>       |
 | 设置回调对象 | `callbackSet`                          | N/A                                  |
-| 登录         | `login`/`login2`                       | `login`<sup>2</sup>                  |
-| 登出         | `logout`                               | `logout`                             |
-| 获取登录状态 | `getStatus`                            | N/A。详见 `onConnectionStateChanged` |
-| 销毁实例     | `destroy`                              | `release`                            |
+| 登录         | `login`/`login2`                       | [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2433a0babbed76ab87084d131227346b)<sup>2</sup>                  |
+| 登出         | `logout`                               | [logout](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a24feb518a0bd4c22133f6d42f5a84d03)                             |
+| 获取登录状态 | `getStatus`                            | N/A。详见 [onConnectionStateChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#aa2e25e87c6f06cfd71b3538786d23743) |
+| 销毁实例     | `destroy`                              | [release](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a6c1cf5a9f13640a4bbaaa4fdd2545200)                            |
 
 | 事件         | 信令                  | RTM 实时消息               |
 | ------------ | --------------------- | -------------------------- |
-| 登录成功     | `onLoginSuccess`      | `onLoginSuccess`           |
-| 登录失败     | `onLoginFailed`       | `onLoginFailure`           |
-| 登出结果     | `onLogout`            | `onLogout`                 |
-| 连接状态改变 | N/A。详见 `getStatus` | `onConnectionStateChanged` |
+| 登录成功     | `onLoginSuccess`      | [onLoginSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a8cf1b2be30172004f595484e0a194d76)           |
+| 登录失败     | `onLoginFailed`       | [onLoginFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a4070957075f00a9a54ed60290838fec4)           |
+| 登出结果     | `onLogout`            | [onLogout](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a63250f876c60b52d278b43b8b2f0b1de)                 |
+| 连接状态改变 | N/A。详见 `getStatus` | [onConnectionStateChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#aa2e25e87c6f06cfd71b3538786d23743) |
 
-> - 若无特别说明，Agora RTM Android SDK 的所有核心 API 都应在调用 `login` 方法成功并收到 `onSuccess` 回调后调用。Agora Signaling SDK 只允许你每次进入一个频道。
-> - <sup>1</sup> 你可以通过调用 `createRtmService` 方法创建多个 IRtmService 实例。Agora RTM SDK 不会限制你创建 IRtmService 实例的个数，但某个 IRtmService 实例最多只能同时加入 20 个 IChannel 频道。
+> - 若无特别说明，Agora RTM Android SDK 的所有核心 API 都应在调用 [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2433a0babbed76ab87084d131227346b) 方法成功并收到 [onLoginSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a8cf1b2be30172004f595484e0a194d76) 回调后调用。Agora Signaling SDK 只允许你每次进入一个频道。
+> - <sup>1</sup> 你可以通过调用 [createRtmService](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1base_1_1_i_agora_service.html#ae3dae3b461aed1b826e5162479530ff1) 方法创建多个 IRtmService 实例。Agora RTM SDK 不会限制你创建 IRtmService 实例的个数，但某个 IRtmService 实例最多只能同时加入 20 个 IChannel 频道。
 > - <sup>2</sup> RTM 的 Token 生成方式与老信令的 Token 生成方式完全不同。详见[校验用户权限](../../cn/Real-time-Messaging/RTM_key.md)。
 > - <sup>2</sup> 信令 Token 采用的 "\_no\_need\_token" 机制不适用于 RTM Token。 
 > - <sup>2</sup> Agora RTM SDK 连接或重连 Agora RTM 系统的方式也完全不同。详情请见[连接状态管理](../../cn/Real-time-Messaging/RTM_reconnecting_cpp.md)。 
