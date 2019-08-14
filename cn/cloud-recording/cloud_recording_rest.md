@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 09:52:41 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 09:52:47 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -42,9 +42,17 @@ Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，
 
 Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都必须在请求头部填入 `Authorization`  字段。关于如何生成该字段的值，请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
-## 获取 resource ID
+## 实现云端录制
 
-调用 [`acquire`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法请求一个用于云端录制的 resource ID。
+下图为实现云端录制需要调用的 API 时序图。其中查询状态和更新合流布局都是可选的，但是必须在开始录制后结束录制前操作。
+
+![](https://web-cdn.agora.io/docs-files/1565775542161)
+
+### 开始录制
+
+**获取 resource ID**
+
+在开始录制前，必须调用 [`acquire`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法请求一个用于云端录制的 resource ID。
 
 调用该方法成功后，你可以从 HTTP 响应包体中的 `resourceId` 字段得到一个 resource ID。这个 resource ID 的时效为 5 分钟，你需要在 5 分钟内用这个 resource ID 开始录制。
 
@@ -52,13 +60,15 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 该方法的请求和响应示例详见 [`acquire` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#acquire-请求示例)。
 
-## 开始录制
+**加入频道**
 
-获取 resource ID 后，在五分钟內调用 [`start`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法开始录制。 
+获得 resource ID 后，在五分钟內调用 [`start`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法加入频道开始录制。 
+
+调用该方法成功后，你可以从 HTTP 响应包体中获得一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
 
 该方法的请求和响应示例详见 [`start` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#start-请求示例)。
 
-## 查询录制状态
+### 查询录制状态
 
 录制过程中，你可以多次调用 [`query`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法查询录制的状态。
 
@@ -66,11 +76,19 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 该方法的请求和响应示例详见 [`query` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#query-请求示例)。
 
-## 停止录制
+### 更新合流布局
+
+录制过程中，你可以多次调用 [`updateLayout`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法设置或更新合流布局。
+
+该方法的请求和响应示例详见 [`updateLayout` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#updatelayout-请求示例)。
+
+### 停止录制
 
 调用  [`stop`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法停止录制。
 
 > 当频道空闲（无用户）超过预设时间（默认为 30 秒） 后，云端录制也会自动退出频道停止录制。
+
+调用该方法成功后，你可以从 HTTP 响应包体中获得录制生成的[索引文件](#m3u8)和当前录制上传的状态。
 
 该方法的请求和响应示例详见 [`stop` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#stop-请求示例)。
 
@@ -100,7 +118,7 @@ M3U8 文件名由录制 ID 和频道名组成，如 `sid_cname.M3U8`。
   - [`uploaded`](../../cn/cloud-recording/cloud_recording_callback_rest.md)：如果录制文件全部成功上传至预先设定的云存储，最后一个录制切片文件上传完成时触发该回调，通知上传完成。
   - [`backuped`](../../cn/cloud-recording/cloud_recording_callback_rest.md)：如果有录制文件未能成功上传至第三方云存储，Agora 服务器会将这部分文件自动上传至 Agora 云备份，当录制结束后会触发该回调。Agora 云备份会继续尝试将这部分文件上传至设定的第三方云存储。如果等待五分钟后仍然不能正常[播放录制文件](../../cn/cloud-recording/cloud_recording_onlineplay.md)，请联系 Agora 技术支持。
  
- ## 常见问题
+## 常见问题
  
 如果你在集成和使用中遇到问题，可以参考[云端录制集成常见问题](https://docs.agora.io/cn/faqs/cloud_integration_faq)以及[常见错误](../../cn/cloud-recording/cloud_recording_api_rest.md)。
  
