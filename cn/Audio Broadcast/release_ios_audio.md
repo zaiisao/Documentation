@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Wed Aug 14 2019 10:18:13 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:23:17 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -236,7 +236,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 - 统一了 Android 和 iOS 平台上 SDK 判断远端用户掉线的时间
 - 修复了转码推流场景下，SEI 信息与媒体流不同步的问题
 
-### API 整理
+**API 整理**
 
 为提升用户体验，Agora 在 v2.4.0 版本中对 API 进行了如下变动：
 
