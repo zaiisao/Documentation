@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: iOS,macOS
-updatedAt: Thu Aug 08 2019 04:13:29 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 09:18:03 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -12,21 +12,21 @@ rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging A
 
 | Method                 | Signaling                              | Real-time Messaging                |
 | ---------------------- | -------------------------------------- | ---------------------------------- |
-| Creates an instance.   | `getInstance`/`createAgoraSDKInstance` | `initWithAppId`<sup>1</sup>        |
-| Login                  | `login`/`login2`                       | `login`<sup>2</sup>                |
-| Logout                 | `logout`                               | `logout`                           |
-| Gets the login status. | `getStatus`                            | N/A. See `connectionStateChanged`. |
+| Creates an instance.   | `getInstance`/`createAgoraSDKInstance` | [initWithAppId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:)<sup>1</sup>        |
+| Login                  | `login`/`login2`                       | [loginByToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:)<sup>2</sup>                |
+| Logout                 | `logout`                               | [logoutWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/logoutWithCompletion:)                           |
+| Gets the login status. | `getStatus`                            | N/A. See [connectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:connectionStateChanged:reason:). |
 | Destroys the instance. | `destroy`                              | N/A                                |
 
 | Event                     | Signaling             | Real-time Messaging      |
 | ------------------------- | --------------------- | ------------------------ |
-| Login succeeds.           | `onLoginSuccess`      | `AgoraRtmLoginBlock`     |
-| Login Fails.              | `onLoginFailed`       | `AgoraRtmLoginBlock`     |
-| Logout results.           | `onLogout`            | `AgoraRtmLogoutBlock`    |
-| Connection state changes. | N/A. See `getStatus`. | `connectionStateChanged` |
+| Login succeeds.           | `onLoginSuccess`      | [AgoraRtmLoginBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmLoginBlock.html)     |
+| Login Fails.              | `onLoginFailed`       | [AgoraRtmLoginBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmLoginBlock.html)     |
+| Logout results.           | `onLogout`            | [AgoraRtmLogoutBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmLogoutBlock.html)    |
+| Connection state changes. | N/A. See `getStatus`. | [connectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:connectionStateChanged:reason:) |
 
-> - Unless otherwise specified, most of the core APIs of the Agora RTM Android SDK should only be called after the `login` method call succeeds and after you receive the `AgoraRtmLoginErrorOk` error code.
-> - <sup>1</sup> You can create multiple RtmClient instances with the `initWithAppId` method. The Agora RTM SDK does not put a limit to the number of AgoraRtmKit instances you can create, but it only allows you to join a maximum of 20 AgoraRtmChannels at the same time. 
+> - Unless otherwise specified, most of the core APIs of the Agora RTM Android SDK should only be called after the [loginByToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:) method call succeeds and after you receive the `AgoraRtmLoginErrorOk` error code.
+> - <sup>1</sup> You can create multiple AgoraRtmKit instances with the [initWithAppId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:) method. The Agora RTM SDK does not put a limit to the number of AgoraRtmKit instances you can create, but it only allows you to join a maximum of 20 AgoraRtmChannels at the same time. 
 > - <sup>2</sup> The generation of the token you use to log in the Agora RTM system differs from the generation of the signalingToken you use to log in the Agora Signaling system. Make sure you use the right token. See [Token Security](../../en/Real-time-Messaging/RTM_key.md) for more information.
 > - <sup>2</sup> The token debugging mechanism, "\_no\_need\_token" for example, of the Agora Signaling SDK does not apply to the Agora RTM SDK. 
 > - <sup>2</sup> The way that the Agora RTM SDK connects or reconnects to the Agora RTM system is completely different either. For more information, see [Manage Connection States](../../en/Real-time-Messaging/RTM_reconnecting_oc.md) for more information. 
