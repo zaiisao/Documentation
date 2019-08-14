@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Jul 08 2019 09:56:42 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 10:23:15 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -143,7 +143,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 修复在混音音乐文件播放时调用 `Stream.getAudioMixingPosition` 获取的结果不准确的问题。
 - 修复订阅纯音频流后立即调用 `Stream.unmuteVideo` 导致音频无法播放的问题。
 
-### API 整理
+**API 整理**
 
 本次发版 API 变动如下。
 
@@ -213,7 +213,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - 修复订阅远端流后立即调用 `muteAudio` 或 `muteVideo` 可能不生效的问题
 - 修复在 Windows 平台调用 `replaceTrack` 切换视频轨道后调用 `startAudioMixing` 远端无法听到混音音乐的问题
 
-### API 整理
+**API 整理**
 
 本次发版 API 变动如下。
 
@@ -330,7 +330,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - 修复了调用 `replaceTrack` 方法后，在本地听到自己声音的问题。
 - 修复了 iOS 端调用 `switchDevice` 方法无法二次切换的问题。
 
-### API 整理
+**API 整理**
 
 本次发版 API 变动如下。
 
