@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Wed Aug 14 2019 08:57:56 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 08:58:03 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -12,21 +12,21 @@ updatedAt: Wed Aug 14 2019 08:57:56 GMT+0800 (CST)
 
 | 方法         | 信令                                          | RTM 实时消息                       |
 | ------------ | --------------------------------------------- | ---------------------------------- |
-| 创建实例     | `getInstanceWithoutMedia`/`createSigInstance` | `initWithAppId`<sup>1</sup>        |
-| 登录         | `login`/`login2`                              | `login`<sup>2</sup>                |
-| 登出         | `logout`                                      | `logout`                           |
-| 获取登录状态 | `getStatus`                                   | N/A。详见 `connectionStateChanged` |
+| 创建实例     | `getInstanceWithoutMedia`/`createSigInstance` | [initWithAppId](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:)<sup>1</sup>        |
+| 登录         | `login`/`login2`                              | [loginByToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:)<sup>2</sup>                |
+| 登出         | `logout`                                      | [logoutWithCompletion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/logoutWithCompletion:)                           |
+| 获取登录状态 | `getStatus`                                   | N/A。详见 [connectionStateChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:connectionStateChanged:reason:) |
 | 销毁实例     | `destroy`                                     | N/A                                |
 
 | 事件         | 信令                  | RTM 实时消息             |
 | ------------ | --------------------- | ------------------------ |
-| 登录成功     | `onLoginSuccess`      | `AgoraRtmLoginBlock`     |
-| 登录失败     | `onLoginFailed`       | `AgoraRtmLoginBlock`     |
-| 登出结果     | `onLogout`            | `AgoraRtmLogoutBlock`    |
-| 连接状态改变 | N/A。详见 `getStatus` | `connectionStateChanged` |
+| 登录成功     | `onLoginSuccess`      | [AgoraRtmLoginBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmLoginBlock.html)     |
+| 登录失败     | `onLoginFailed`       | [AgoraRtmLoginBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmLoginBlock.html)     |
+| 登出结果     | `onLogout`            | [AgoraRtmLogoutBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmLogoutBlock.html)    |
+| 连接状态改变 | N/A。详见 `getStatus` | [connectionStateChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:connectionStateChanged:reason:) |
 
-> - 若无特别说明，Unless otherwise specified, most of the core APIs of the Agora RTM Android SDK 的所有核心 API 都应在调用 login 方法成功并收到 `AgoraRtmLoginErrorOk` 错误码后调用。Agora Signaling SDK 只允许你每次进入一个频道。
-> - 1 你可以通过调用 `initWithAppId` 方法创建多个 AgoraRtmKit 实例。Agora RTM SDK 不会限制你创建 AgoraRtmKit 实例的个数，但某个 AgoraRtmKit 实例最多只能同时加入 20 个 AgoraRtmChannel 频道。
+> - 若无特别说明，Agora RTM Objective-C SDK for iOS/macOS 的所有核心 API 都应在调用 [loginByToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:) 方法成功并收到 `AgoraRtmLoginErrorOk` 错误码后调用。Agora Signaling SDK 只允许你每次进入一个频道。
+> - 1 你可以通过调用 [initWithAppId](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:) 方法创建多个 AgoraRtmKit 实例。Agora RTM SDK 不会限制你创建 AgoraRtmKit 实例的个数，但某个 AgoraRtmKit 实例最多只能同时加入 20 个 AgoraRtmChannel 频道。
 > - <sup>2</sup> RTM 的 Token 生成方式与老信令的 Token 生成方式完全不同。详见[校验用户权限](../../cn/Real-time-Messaging/RTM_key.md)。
 > - <sup>2</sup> 信令 Token 采用的 "\_no\_need\_token" 机制不适用于 RTM Token。 
 > - <sup>2</sup> Agora RTM SDK 连接或重连 Agora RTM 系统的方式也完全不同。详情请见[连接状态管理](../../cn/Real-time-Messaging/RTM_reconnecting_android.md)。 
