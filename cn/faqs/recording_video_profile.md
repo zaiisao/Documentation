@@ -1,9 +1,9 @@
 
 ---
 title: 如何设置录制视频的分辨率
-description: add a note
+description: 
 platform: Linux
-updatedAt: Wed Aug 14 2019 17:29:25 GMT+0800 (CST)
+updatedAt: Wed Aug 14 2019 17:29:36 GMT+0800 (CST)
 ---
 # 如何设置录制视频的分辨率
 单流模式录制时，录制的视频属性与用户的原始视频属性一致，无法自行设置。
