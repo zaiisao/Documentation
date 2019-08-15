@@ -99,7 +99,7 @@ On the **Project Details** page, click **Generate a Temp Token**, enter a channe
 
 ![](https://web-cdn.agora.io/docs-files/1563113643411)
 
-> - Ensure that you have enabled the App Certificate of the project before clicking **nerate a Temp Token** . See [Enablet the App Certificate](#appcertificate).
+> - Ensure that you have enabled the App Certificate of the project before clicking **Generate a Temp Token** . See [Enable the App Certificate](#appcertificate).
 > - A temp token applies to scenarios with low security requirements. For the production environment, we recommend using a token generated at your server.
 
 ### Get a token
