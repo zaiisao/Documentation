@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Tue Aug 06 2019 02:32:14 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 05:56:14 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -66,7 +66,7 @@ v2.3.4 is released on August 5, 2019.
 
 v2.3.3 is released on April 1, 2019. 
 
-### New Features
+**New features**
 
 #### 1. Supports monitoring the network connection status
 
@@ -106,7 +106,7 @@ v2.3.0 is released on January 14, 2019.
 
 > The calculation of the usage of the On-premise Recording SDK v2.3.0 or later is separated from that of the Agora Voice Call/Voice Interactive Broadcast SDK and the Agora Video Call/Video Interactive Broadcast SDK. Contact [sales@agora.io](mailto:sales@agora.io) for details.
 
-### New Features
+**New features**
 
 #### 1. Supports Stereo Audio in Composite Recording Mode
 
@@ -258,7 +258,7 @@ Port conflicts when the search for the port takes too long and exceeds the idle 
 
 v2.2.0 is released on May 4, 2018.
 
-### New Features
+**New features**
 
 > Support for both Java and C++.
 
@@ -276,7 +276,7 @@ v2.2.0 is released on May 4, 2018.
 v2.1.0 is released on March 7, 2018. 
 
 
-### New Features
+**New features**
 
 <table>
 <colgroup>
@@ -347,7 +347,7 @@ v2.0 is released on November 21, 2017.
 
 v1.3 is released on October 20, 2017.
 
-### New Features:
+**New features**:
 
 -   Adds mixing the audio and video recording functions by adding the <code>mixedVideoAudio</code> and <code>cfgFilePath</code> parameters in the <code>joinChannel</code> method.
 -   Adds the function of merging the audio and video file of the same uid as one, see [Play the Recording Files](https://docs.agora.io/en/1.14/addons/Recording/tutorial/recording?platform=All%20Platforms).
@@ -359,7 +359,7 @@ v1.3 is released on October 20, 2017.
 
 v1.2 is released on August 21, 2017. 
 
-### New Features:
+**New features**:
 
 -   Supports getting the audio and video raw data.
 -   Supports detecting sexually explicit content.
@@ -371,7 +371,7 @@ v1.2 is released on August 21, 2017.
 
 v1.1 is released on July 25, 2017. 
 
-### New Features:
+**New features**:
 
 - Adds recording at the web client.
 - Adds the real-time video mixing function.
