@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Electron
-updatedAt: Fri Jul 19 2019 08:34:40 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 08:07:24 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/video broadcast with the Agora SDK for Electron.
