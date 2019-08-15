@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Electron
-updatedAt: Thu Aug 15 2019 08:07:24 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 08:07:30 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/video broadcast with the Agora SDK for Electron.
@@ -44,7 +44,7 @@ You can directly install the SDK through npm or download it from Agora's develop
 
 1. Go to the project path, and run the following command line to install the latest version of the Electron SDK:
 
-	`nmp install agora-electron-sdk`
+	`npm install agora-electron-sdk`
 	
 2. Import the SDK into your project with the following code:
 
