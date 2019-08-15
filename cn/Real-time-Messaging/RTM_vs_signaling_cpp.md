@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux CPP
-updatedAt: Wed Aug 14 2019 09:44:08 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 10:09:52 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
