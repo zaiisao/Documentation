@@ -3,7 +3,7 @@
 title: Make Payments
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 15 2019 13:53:25 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 13:55:32 GMT+0800 (CST)
 ---
 # Make Payments
 This page shows how to make payments in Agora Dashboard.
@@ -20,7 +20,7 @@ Follow these steps to make payments with a credit card:
 
 1. Log in to [Agora Dashboard](https://dashboard.agora.io/) and click **Make Payment** in the **Overview** page to enter the Billing Center. You can also click ![](https://web-cdn.agora.io/docs-files/1562666103550) in the left navigation menu to enter the Billing Center.
 
-![](https://web-cdn.agora.io/docs-files/1565876582863)
+![](https://web-cdn.agora.io/docs-files/1565877324211)
 
 2. Click **Add a card** to add a credit card.
 
