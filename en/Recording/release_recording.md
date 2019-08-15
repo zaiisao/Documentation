@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Thu Aug 15 2019 05:56:14 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 05:57:02 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -47,7 +47,7 @@ This component package is compatible with the following SDKs:
 
 v2.3.4 is released on August 5, 2019.
 
-### Improvements
+**Improvements**
 
 - The following private Java API methods are now public:
   - The `setUserBackground` method which sets the background image of a specified user. When the user is online but does not send any video stream, the background image is displayed.
@@ -197,7 +197,7 @@ v2.3.0 adds the `onActiveSpeaker` callback to return the UID of the active speak
 
 This function is disabled by default and can be enabled by setting the `audioIndicationInterval` parameter in `RecordingConfig`. The On-premise Recording SDK returns the `onActiveSpeaker` callback at set intervals.
 
-### Improvements
+**Improvements**
 
 - Improves audio and video synchronization in Individual Recording Mode.
 - Supports automatic rotation of recorded video streams that are not transcoded in real time in Individual Recording Mode.
@@ -223,7 +223,7 @@ v2.2.3 is released on October 18, 2018.
 
 v2.2.2 is released on August 1, 2018. 
 
-### Improvements
+**Improvements**
 
 -   The screenshots are named `uidYmdHMSms.jpg` instead of `uidYmdHMS.jpg`.
 -   The transcoding script supports autorotation.
@@ -243,7 +243,7 @@ v2.2.2 is released on August 1, 2018.
 
 v2.2.1 is released on June 5, 2018. 
 
-### Improvements
+**Improvements**
 
 -   Improves the performance of the Communication profile. The number of recording channels that a system supports with the same performance increases by 150%.
 -   Improves the efficiency to find the port. The time to find the port is no longer part of the idle time.
@@ -304,7 +304,7 @@ v2.1.0 is released on March 7, 2018.
 
 
 
-### Improvements
+**Improvements**
 
 <table>
 <colgroup>
