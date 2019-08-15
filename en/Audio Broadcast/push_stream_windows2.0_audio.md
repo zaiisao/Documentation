@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Windows
-updatedAt: Mon Jun 10 2019 07:10:56 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 10:25:03 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -19,7 +19,7 @@ The following figure shows a typical CDN-pushing scenario.
 
 ## Prerequisites
 
-Ensure that you contact sales@agora.io to enable Agora's transcoding service before using this function.
+Ensure that you contact sales-us@agora.io to enable Agora's transcoding service before using this function.
 
 
 ## Implementation
@@ -80,7 +80,7 @@ m_rtcEngine->removePublishStreamUrl(url);
 
 ## Considerations
 
-Ensure that you contact sales@agora.io to enable Agora's transcoding service before using this function.
+Ensure that you contact sales-us@agora.io to enable Agora's transcoding service before using this function.
 
 
 
