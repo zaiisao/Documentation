@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Aug 15 2019 05:56:22 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 05:57:37 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -199,7 +199,7 @@ Supports screen sharing on Chrome 72 and later without using the Chrome extensio
 - Adds the `stream-updated` callback in the `Client.on` method to notify users when the remote stream adds or removes a track.
 - Supports using URLs with Chinese characters in the `startAudioMixing` method.
 
-### Improvements
+**Improvements**
 
 - Improves the user experience in unreliable network conditions.
 - Adds the `stream-fallback` callback in the `Client.on` method to notify the user when the remote video stream falls back to audio-only when the network conditions worsen or switches back to video when the network conditions improve.
@@ -313,7 +313,7 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
   - `audioMixingPlayed`: Informs the app that the audio mixing stream starts or resumes playing.
   - `audioMixingFinished`: Informs the app that the audio mixing stream finishes playing. 
 
-### Improvements
+**Improvements**
 
 - Adds the `muted` parameter to the `Stream.play` method to work around the web browser's autoplay policy.
 - Adds the `callback` parameter to the `Stream.setAudioMixingPosition` method to return error messages when the method call fails.
@@ -632,7 +632,7 @@ v2.1.0 is released on March 7, 2018.
 
 
 
-### Improvements
+**Improvements**
 
 <table>
 <colgroup>
