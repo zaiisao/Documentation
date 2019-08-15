@@ -3,13 +3,13 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 05 2019 02:16:34 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 06:00:41 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
 
-* For low security requirements, use an App ID for authentication.
-* For high security requirements, use a dynamic key for authentication (recommended).
+* For low-security requirements, use an App ID for authentication.
+* For high-security requirements, use a dynamic key for authentication (recommended).
 
 This page introduces Agora's two authentication mechanisms in details.
 
@@ -24,14 +24,14 @@ We have two types of dynamic keys: Channel Key and Token. Different versions of 
 | Gaming SDK   | 2.2.0 or later               | Earlier than 2.2.0        | `getSdkVersion`          |
 
 >-   If you use an Agora SDK that supports the Channel Key, see [Channel Keys](../../en/null/channel_key.md).
->-   If your wish to upgrade your SDK to a version that supports Token, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
+>-   If you wish to upgrade your SDK to a version that supports Token, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 >-   For the Agora Signaling SDK, see [Signaling Security Keys](../../en/Agora%20Platform/key_signaling.md).
->-   For the Agora RTM SDK, see [Use Security Keys](https://docs.agora.io/en/Agora%20Platform/%3Chttps://docs-preview.agoralab.co/en/Real-time-Messaging/RTM_key?platform=All%20Platforms%3E).
+>-   For the Agora RTM SDK, see [Use Security Keys](https://docs.agora.io/en/Real-time-Messaging/RTM_key?platform=All%20Platforms).
 
 
 ## Use an App ID only for authentication
 
-Each project you create at the [Agora Dashboard](http://dashboard.agora.io) has a unique App ID.
+Each project you create in [Agora Dashboard](http://dashboard.agora.io) has a unique App ID.
 
 ### Get an App ID
 
@@ -55,13 +55,13 @@ Each project you create at the [Agora Dashboard](http://dashboard.agora.io) has 
 
 ### Apply your App ID
 
-When initializing the client, set the `appId` parameter as the App ID you get to authenticate your application.
+When initializing the client, set the `appId` parameter as the App ID that you get to authenticate your application.
 
 >  When joining a channel, set the `token` parameter as NULL.
 
 ## Use a token for authentication
 
-The Token is a securer and more sophisticated authentication mechanism than the App ID.  You need to use an App ID and an App Certificate to generate a token for authentication. 
+The Token is a more secure and sophisticated authentication mechanism than the App ID.  You need to use an App ID and an App Certificate to generate a token for authentication. 
 
 <a id="appcertificate"></a>
 
