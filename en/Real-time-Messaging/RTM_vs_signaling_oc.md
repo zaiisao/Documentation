@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: iOS,macOS
-updatedAt: Wed Aug 14 2019 09:18:03 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 10:29:49 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
