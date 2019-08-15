@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Aug 15 2019 05:55:42 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 05:56:22 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -486,7 +486,7 @@ v2.4.1 is released on September 19, 2018.
 
 v2.4.0 is released on August 24, 2018. 
 
-### New Features
+**New features**
 
 #### 1. Support for Token Authentication
 
@@ -538,7 +538,7 @@ v2.3.1 is released on June 7, 2018.
 
 v2.3.0 is released on June 4, 2018.
 
-### New Features
+**New features**
 
 #### 1. New Session Mode
 
@@ -564,7 +564,7 @@ In the case of p2plost, the SDK stops reconnecting to the server after one or se
 
 v2.2 is released on April 16, 2018. 
 
-### New Features
+**New features**
 
 #### 1. Gets the version information.
 
@@ -596,7 +596,7 @@ Fixes the issue of unable to view the remote video when using the Web SDK on the
 
 v2.1.0 is released on March 7, 2018. 
 
-### New Features
+**New features**
 
 <table>
 <colgroup>
@@ -667,7 +667,7 @@ v2.1.0 is released on March 7, 2018.
 
 v2.0 is released on November 21, 2017. 
 
-#### New Features
+#**New features**
 
 - Adds the check web-browser compatibility function before calling the `CreateClient` method, to check the compatibility between the system and the web browser.
 - Adds the callback to notify the app that a user has granted or denied access to the camera or microphone.
@@ -692,7 +692,7 @@ Adds the screen-sharing function by modifying the `screen` property and adding t
 
 v1.13 is released on September 4, 2017.
 
-#### New Features
+#**New features**
 
 - Supports CDN Live with the `configPublisher` method.
 - Supports Chrome for Android.
