@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Aug 15 2019 05:55:15 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 05:55:42 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -477,7 +477,7 @@ Adds the following API methods:
 
 v2.4.1 is released on September 19, 2018. 
 
-### Issues Fixed
+**Issues fixed**
 
 - The local publisher may not automatically publish after an IP address change, so the remote subscriber cannot receive the video stream.
 - Unsubscribing from the remote stream triggers the `stream-removed` callback.
@@ -516,7 +516,7 @@ Adds delay-related statistics in the `stream.getStats` callback, including the d
 
 Adds the `AgoraRTC.Logger.enableLogUplaod` method, which supports uploading the SDK’s log to Agora’s server. 
 
-### Issues Fixed
+**Issues fixed**
 
 - The `cameraId` and `microphoneId` settings do not take effect unless the `stream.setVideoProfile` method is called.
 - Calling the `setScreenProfile` method does not take effect on the Firefox browser.
@@ -529,7 +529,7 @@ Adds the `AgoraRTC.Logger.enableLogUplaod` method, which supports uploading the 
 
 v2.3.1 is released on June 7, 2018. 
 
-### Issues Fixed
+**Issues fixed**
 
 - Occasional publishing failures on web browsers that installed the Adblock Plus extension.
 - Invalid IP jumps.
@@ -556,7 +556,7 @@ To enable enterprises with a company firewall to access Agora’s services, the 
 
 Encryption is supported to enhance security for communications or live broadcasts. Users need to set the encryption mode and password before joining a channel to use this function. 
 
-### Issues Fixed
+**Issues fixed**
 
 In the case of p2plost, the SDK stops reconnecting to the server after one or several reconnections.
 
@@ -582,7 +582,7 @@ Adds the support for the Firefox browser to share the screen by adding the <code
 
 Adds the support for the QQ browser.
 
-### Issues Fixed
+**Issues fixed**
 
 No voice in the voice-only mode when an iOS device joins a session using the Safari browser.
 
@@ -656,7 +656,7 @@ v2.1.0 is released on March 7, 2018.
 
 
 
-### Issues Fixed
+**Issues fixed**
 
 - 90-degree video rotation on Safari
 - Not seeing the remote video when using the Web SDK on Firefox v59.01 on macOS
@@ -673,7 +673,7 @@ v2.0 is released on November 21, 2017.
 - Adds the callback to notify the app that a user has granted or denied access to the camera or microphone.
 - Adds the video self-adjustment function, by automatically lowering the resolution or frame rate until the video profile matches the input hardware’s capability.
 
-#### Issues Fixed
+#**Issues fixed**
 
 - Volume issues with iOS SDK interop.
 - Disconnections on Chrome caused by prolonged communication.
