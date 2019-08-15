@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Android
-updatedAt: Tue Aug 13 2019 03:50:01 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 10:23:42 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
