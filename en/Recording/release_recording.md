@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Thu Aug 15 2019 05:57:02 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 05:58:25 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -55,7 +55,7 @@ v2.3.4 is released on August 5, 2019.
 - Improves the robustness of Java API methods.
 - Enhances the SDK's ability to collect the information of abnormal crashes.
 
-### Issues Fixed
+**Issues fixed**
 
 - File splitting in composite recording mode caused by switching channel profiles.
 - Failure to only record audio in composite recording mode in the Live Broadcast profile.
@@ -90,7 +90,7 @@ v2.3.3 adds the `onReceivingStreamStatusChanged` callback to get status changes 
 
 v2.3.3 adds the `onAudioVolumeIndication` callback to get the list of users who are speaking and their volumes. 
 
-### Issues Fixed
+**Issues fixed**
 
 - Fails to run the transcoding script when the recording SDK exits the channel and then enters the channel again in manual mode.
 - Occasional crashes when using invalid parameters in the `mixedVideoAudio` method.
@@ -211,7 +211,7 @@ This function is disabled by default and can be enabled by setting the `audioInd
 
 v2.2.3 is released on October 18, 2018. 
 
-### Issues Fixed
+**Issues fixed**
 
 -   Coredump loss caused by .backtrace.
 -   System crashes caused by Java jni. and optimize stability.
@@ -230,7 +230,7 @@ v2.2.2 is released on August 1, 2018.
 -   The structure of the Java folder is modified.
 
 
-### Issues Fixed
+**Issues fixed**
 
 -   Abnormal webm recording times.
 -   Memory leaks.
@@ -249,7 +249,7 @@ v2.2.1 is released on June 5, 2018.
 -   Improves the efficiency to find the port. The time to find the port is no longer part of the idle time.
 
 
-### Issues Fixed
+**Issues fixed**
 
 Port conflicts when the search for the port takes too long and exceeds the idle time. As a result, the port is not connected.
 
@@ -262,7 +262,7 @@ v2.2.0 is released on May 4, 2018.
 
 > Support for both Java and C++.
 
-### Issues Fixed
+**Issues fixed**
 
 -   Issues of oversized logs.
 -   Abnormal issues when recording fast-forward videos.
@@ -323,7 +323,7 @@ v2.1.0 is released on March 7, 2018.
 
 
 
-### Issues Fixed
+**Issues fixed**
 
 -   Occasional recording file transcoding failures.
 -   The video screen occasionally turns upside down.
@@ -379,7 +379,7 @@ v1.1 is released on July 25, 2017.
 - Modifies the file format after transcoding.
 - Enables configuring the UDP port.
 - 
-### Issues Fixed:
+**Issues fixed**:
 
 - Wrong timestamps.
 - Transcoding failures.
