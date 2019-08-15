@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Aug 15 2019 04:14:10 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 06:24:11 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -35,7 +35,7 @@ Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，
 
 请确保满足以下要求：
 
-- 联系 [sales@agora.io](mailto:sales@agora.io) 开通云端录制服务。
+- 联系 [support@agora.io](mailto:support@agora.io) 开通云端录制服务。
 - 开通第三方云存储服务，目前支持[七牛云](https://www.qiniu.com/products/kodo)、[阿里云](https://www.aliyun.com/product/oss)（推荐）和 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。
 
 ## 通过 Basic HTTP 认证
@@ -46,7 +46,7 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 下图为实现云端录制需要调用的 API 时序图。
 
-> 查询状态和更新合流布局都是可选的，但是必须在录制过程中（开始录制后到结束录制前）操作。
+> 查询状态和更新合流布局都是可选的，且可以多次调用，但是必须在录制过程中（开始录制后到结束录制前）调用。
 
 ![](https://web-cdn.agora.io/docs-files/1565775542161)
 
@@ -113,17 +113,46 @@ M3U8 文件名由录制 ID 和频道名组成，如 `sid_cname.M3U8`。
 ### 上传录制文件
 
 录制文件的上传由 Agora 服务器自动完成，你需要关注下面的回调。
+> RESTful API 回调服务需单独开通，详见[云端录制 RESTful API 回调服务](https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest?platform=All%20Platforms)。
 
 - 录制过程中
   - [`uploading_progress`](../../cn/cloud-recording/cloud_recording_callback_rest.md)：录制开始后约每分钟触发一次，该回调中的 `progress` 参数表示已上传文件占已录制文件的百分比。
 - 停止录制后，根据上传情况，SDK 会触发以下回调之一：
   - [`uploaded`](../../cn/cloud-recording/cloud_recording_callback_rest.md)：如果录制文件全部成功上传至预先设定的云存储，最后一个录制切片文件上传完成时触发该回调，通知上传完成。
   - [`backuped`](../../cn/cloud-recording/cloud_recording_callback_rest.md)：如果有录制文件未能成功上传至第三方云存储，Agora 服务器会将这部分文件自动上传至 Agora 云备份，当录制结束后会触发该回调。Agora 云备份会继续尝试将这部分文件上传至设定的第三方云存储。如果等待五分钟后仍然不能正常[播放录制文件](../../cn/cloud-recording/cloud_recording_onlineplay.md)，请联系 Agora 技术支持。
+
+如果上传比较耗时，会在 `stop` 的响应中收到 HTTP 状态码 206，表示录制已经停止，但是上传状态未知，需要结合回调事件了解上传状态。
  
-## 常见问题
- 
-如果你在集成和使用中遇到问题，可以参考[云端录制集成常见问题](https://docs.agora.io/cn/faqs/cloud_integration_faq)以及[常见错误](../../cn/cloud-recording/cloud_recording_api_rest.md)。
- 
+## 开发注意事项
+
+- 调用 `start` 之前必须调用 `acquire` 获取一个 resource ID。
+- 一个 resource ID 只可用于一次 `start` 请求。
+- 调用 `stop` 之后不要再调用 `query`。
+
+下面列出一些常见的调用错误：
+
+- `acquire` ➡ `start` ➡ `start`
+
+  用同一个 resource ID 重复调用 `start`，会收到 HTTP 状态码 201，错误码 7。
+
+- `acquire` ➡ `start` ➡ `acquire` ➡ `start`
+
+  用相同的参数重复调用 `acquire` 和 `start`，会收到 HTTP 状态码 400，错误码 53。
+
+- `acquire` ➡ `start` ➡ 停止录制 ➡ `query`
+
+  停止录制后再去调用 `query`，会收到 HTTP 状态码 404，错误码 404。停止录制有以下几种情况：
+
+  - 主动调用 `stop`。
+  - 频道内没有用户超过设定的时间自动停止录制。
+  - 异步检查参数错误导致录制停止，包括 `start` 请求的 `transcodingConfig` 和 `storageConfig` 中的参数错误。
+
+- `acquire` ➡ `start` ➡ `stop` & `query`
+
+  调用 `stop` 的过程中调用 `query`，会影响 `stop` 的响应内容：响应的 HTTP 状态码为 206，并且响应中没有 `fileList` 字段。
+
+如果你在集成和使用中遇到其他问题，可以参考[云端录制集成常见问题](https://docs.agora.io/cn/faqs/cloud_integration_faq)以及[常见错误](../../cn/cloud-recording/cloud_recording_api_rest.md)。
+
 ## <a name="demo-rest"></a>示例代码
 
 以下为使用 RESTful API 进行云端录制的示例代码（Python），供你参考。
