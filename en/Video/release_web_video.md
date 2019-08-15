@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Aug 15 2019 05:53:35 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 05:55:15 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -137,7 +137,7 @@ This version allows updating the video encoder configuration dynamically. You ca
 
 > Do not set the video encoder configuration when publishing a stream.
 
-### Issues fixed
+**Issues fixed**
 
 - Some of the statistics returned by calling `Stream.getStats` are incorrect.
 - Calling `Client.leave` does not take effect when the network connection is lost.
@@ -171,7 +171,7 @@ v2.6.1 is released on April 11, 2019.
 
 This version supports using empty strings for the `cameraId` and `microphoneId` properties in the `createStream` method.
 
-### Issues fixed
+**Issues fixed**
 
 - Only two video streams at most can be played on Safari on iOS at the same time.
 - Errors occur when calling the `enableDualStream` method before publishing a stream.
@@ -204,7 +204,7 @@ Supports screen sharing on Chrome 72 and later without using the Chrome extensio
 - Improves the user experience in unreliable network conditions.
 - Adds the `stream-fallback` callback in the `Client.on` method to notify the user when the remote video stream falls back to audio-only when the network conditions worsen or switches back to video when the network conditions improve.
 
-### Issues fixed
+**Issues fixed**
 
 - The `switchDevice` method fails to switch between microphones on Chrome 72.
 - Muting audio/video does not take effect after calling the `addTrack` method.
@@ -243,7 +243,7 @@ Supports screen sharing on Chrome 72 and later without using the Chrome extensio
 
 v2.5.2 is released on February 28, 2019. 
 
-### Issues fixed
+**Issues fixed**
 
 - The `Stream.switchDevice` method fails to switch audio devices on Chrome 72 or later.
 - Errors occur when none of the optional parameters are set for the `Client.subscribe` method.
@@ -319,7 +319,7 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
 - Adds the `callback` parameter to the `Stream.setAudioMixingPosition` method to return error messages when the method call fails.
 - Modifies the names of some callbacks in the `Client.on` method to be consistent in style.
 
-### Issues fixed
+**Issues fixed**
 
 - The video resolution of the remote video returned by the `getStats` method is 0 on Safari for macOS.
 - The user cannot hear the microphone when the `enableAudio` method is called after disabling audio and then starting audio mixing.
@@ -467,7 +467,7 @@ Adds the following API methods:
 - Supports 360 Secure Browser 9.1.0.432 and later.
 - Supports Chrome 49 on Windows XP.
 
-### Issues fixed
+**Issues fixed**
 
 - The dependency on the video codec in audio-only calls when a user joins a channel from Safari or Chrome on mobile devices.
 - A failure to receive the `stream-removed` callback 10 seconds after another user calls the `Stream.close` method to stop streaming from the Safari browser.
