@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux Java
-updatedAt: Thu Aug 15 2019 09:38:49 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 09:38:54 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -36,30 +36,30 @@ updatedAt: Thu Aug 15 2019 09:38:49 GMT+0800 (CST)
 
 | 方法           | 信令                 | RTM 实时消息                |
 | -------------- | -------------------- | --------------------------- |
-| 创建消息实例   | N/A                  | `createMessage`<sup>1</sup> |
-| 发送点对点消息 | `messageInstantSend` | `sendMessageToPeer`         |
+| 创建消息实例   | N/A                  | [createMessage(/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a77dbd15cb6c9db3844fb313bd5dceac3)<sup>1</sup> |
+| 发送点对点消息 | `messageInstantSend` | [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9)         |
 
 | 事件               | 信令                      | RTM 实时消息            |
 | ------------------ | ------------------------- | ----------------------- |
-| 点对点消息发送成功 | `onMessageSendSuccess`    | `onSuccess`<sup>2</sup> |
-| 点对点消息发送失败 | `onMessageSendError`      | `onFailure`             |
-| 收到一条点对点消息 | `onMessageInstantReceive` | `onMessageReceived`     |
+| 点对点消息发送成功 | `onMessageSendSuccess`    | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)<sup>2</sup> |
+| 点对点消息发送失败 | `onMessageSendError`      | [onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)             |
+| 收到一条点对点消息 | `onMessageInstantReceive` | [onMessageReceived](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#af760814981718fb31d88acb8251d19b6)     |
 
-> <sup>1</sup> 使用 Agora RTM SDK 发送消息之前你必须创建一个消息实例。消息实例既适用于点对点消息也适用于频道消息。Agora RTM SDK 自版本 v0.9.3 起支持通过设置 `sendMessageOptions` 发送点对点的离线消息。
+> <sup>1</sup> 使用 Agora RTM SDK 发送消息之前你必须创建一个消息实例。消息实例既适用于点对点消息也适用于频道消息。Agora RTM SDK 自版本 v0.9.3 起支持通过设置 [sendMessageOptions](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_send_message_options.html) 发送点对点的离线消息。
 >
-> <sup>2</sup> Agora Signaling SDK 会在服务端收到点对点消息时返回 `onMessageSendSuccess` 回调而 Agora RTM SDK 会在指定用户收到点对点消息后返回 `onSuccess` 回调。
+> <sup>2</sup> Agora Signaling SDK 会在服务端收到点对点消息时返回 `onMessageSendSuccess` 回调而 Agora RTM SDK 会在指定用户收到点对点消息后返回 [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5) 回调。
 
 ## 查询指定用户的在线状态
 
 | 方法                   | 信令              | RTM 实时消息             |
 | ---------------------- | ----------------- | ------------------------ |
-| 查询指定用户的在线状态 | `queryuserStatus` | `queryPeersOnlineStatus` |
+| 查询指定用户的在线状态 | `queryuserStatus` | [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3) |
 
 
 
 | 事件         | 信令                      | RTM 实时消息 |
 | ------------ | ------------------------- | ------------ |
-| 返回查询结果 | `OnQueryUserStatusResult` | `onSuccess`  |
+| 返回查询结果 | `OnQueryUserStatusResult` | [onSuccess(/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)  |
 
 > Agora RTM SDK 允许你查询一组用户的在线状态，而不只一个用户的在线状态。
 
