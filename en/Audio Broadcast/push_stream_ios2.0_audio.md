@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: iOS,macOS
-updatedAt: Mon Jun 10 2019 07:05:45 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 10:25:02 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -17,7 +17,7 @@ The following figure shows a typical CDN-pushing scenario.
 ![](https://web-cdn.agora.io/docs-files/1550737392049)
 
 ## Prerequisites
-Ensure that you contact sales@agora.io to enable Agora's transcoding service before using this function.
+Ensure that you contact sales-us@agora.io to enable Agora's transcoding service before using this function.
 
 ## Implementation
 
@@ -66,4 +66,4 @@ transcoding.transcodingUsers = @[user];
 
 ## Considerations
 
-Ensure that you contact sales@agora.io to enable Agora's transcoding service before using this function.
+Ensure that you contact sales-us@agora.io to enable Agora's transcoding service before using this function.
