@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Jul 08 2019 09:56:34 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 05:53:30 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -97,7 +97,7 @@ All users in the same channel should have the same type (number or string) of us
 
 v2.7.1 is released on July 3, 2019. 
 
-### Fixed issues
+**Issues fixed**
 
 Setting the video profile of the shared screen by the `Stream.setScreenProfile` method does not take effect.
 
