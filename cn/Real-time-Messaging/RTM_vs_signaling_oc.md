@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Thu Aug 15 2019 09:28:38 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 09:28:42 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -35,16 +35,16 @@ updatedAt: Thu Aug 15 2019 09:28:38 GMT+0800 (CST)
 
 | 方法           | 信令                 | RTM 实时消息                                        |
 | -------------- | -------------------- | --------------------------------------------------- |
-| 创建消息实例   | N/A                  | `initWithText`<sup>1</sup>                          |
-| 发送点对点消息 | `messageInstantSend` | `sendMessage:toPeer:sendMessageOptions:completion:` |
+| 创建消息实例   | N/A                  | [initWithText](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html#//api/name/initWithText:)<sup>1</sup>                          |
+| 发送点对点消息 | `messageInstantSend` | [sendMessage:toPeer:sendMessageOptions:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:sendMessageOptions:completion:) |
 
 | 事件               | 信令                      | RTM 实时消息                               |
 | ------------------ | ------------------------- | ------------------------------------------ |
-| 点对点消息发送成功 | `onMessageSendSuccess`    | `AgoraRtmSendPeerMessageBlock`<sup>2</sup> |
-| 点对点消息发送失败 | `onMessageSendError`      | `AgoraRtmSendPeerMessageBlock`             |
-| 收到一条点对点消息 | `onMessageInstantReceive` | `rtmKit:messageReceived:fromPeer:`         |
+| 点对点消息发送成功 | `onMessageSendSuccess`    | [AgoraRtmSendPeerMessageBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmSendPeerMessageBlock.html)<sup>2</sup> |
+| 点对点消息发送失败 | `onMessageSendError`      | [AgoraRtmSendPeerMessageBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmSendPeerMessageBlock.html)             |
+| 收到一条点对点消息 | `onMessageInstantReceive` | [rtmKit:messageReceived:fromPeer:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:messageReceived:fromPeer:)         |
 
-> <sup>1</sup> 使用 Agora RTM SDK 发送消息之前你必须创建一个消息实例。消息实例既适用于点对点消息也适用于频道消息。Agora RTM SDK 自版本 v0.9.3 起支持通过设置 `sendMessageOptions` 发送点对点的离线消息。
+> <sup>1</sup> 使用 Agora RTM SDK 发送消息之前你必须创建一个消息实例。消息实例既适用于点对点消息也适用于频道消息。Agora RTM SDK 自版本 v0.9.3 起支持通过设置 [sendMessageOptions](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmSendMessageOptions.html) 发送点对点的离线消息。
 >
 > 2 Agora Signaling SDK 会在服务端收到点对点消息时返回 `onMessageSendSuccess` 回调而 Agora RTM SDK 会在指定用户收到点对点消息后返回 `AgoraRtmSendPeerMessageErrorOk` 错误码。
 
@@ -52,14 +52,14 @@ updatedAt: Thu Aug 15 2019 09:28:38 GMT+0800 (CST)
 
 | 方法                   | 信令              | RTM 实时消息             |
 | ---------------------- | ----------------- | ------------------------ |
-| 查询指定用户的在线状态 | `queryuserStatus` | `queryPeersOnlineStatus` |
+| 查询指定用户的在线状态 | `queryuserStatus` | [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersOnlineStatus:completion:) |
 |                        |                   |                          |
 
 
 
 | 事件         | 信令                      | RTM 实时消息                    |
 | ------------ | ------------------------- | ------------------------------- |
-| 返回查询结果 | `OnQueryUserStatusResult` | `AgoraRtmQueryPeersOnlineBlock` |
+| 返回查询结果 | `OnQueryUserStatusResult` | [AgoraRtmQueryPeersOnlineBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmQueryPeersOnlineBlock.html) |
 
 > Agora RTM SDK 允许你查询一组用户的在线状态，而不只一个用户的在线状态。
 
