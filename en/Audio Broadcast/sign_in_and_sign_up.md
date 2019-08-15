@@ -3,7 +3,7 @@
 title: Create an Agora account
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 12 2019 01:45:44 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 05:58:38 GMT+0800 (CST)
 ---
 # Create an Agora account
 This page introduces how to create an Agora account and change the account settings.
@@ -21,7 +21,7 @@ Congratulations! You've created an Agora acount. Now, you can sign in to the Ago
 
 ## Change your settings & password
 
-1. Sign in to [Agora Dashboard](https://dashboard.agora.io), click  **Account Name < Setting** in the top navigation menu.
+1. Sign in to [Agora Dashboard](https://dashboard.agora.io), click  **Account Name > Setting** in the top navigation menu.
 
 ![](https://web-cdn.agora.io/docs-files/1565244190495)
 
