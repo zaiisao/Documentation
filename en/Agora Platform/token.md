@@ -77,16 +77,16 @@ If you did not choose  **APP ID + APP certificate + Token (recommended)**, follo
 
 	![](https://web-cdn.agora.io/docs-files/1563112238811)
 	
-2. On the **Edit Project** page, click **Enable** to switch on the App Certificate and click **Save** to confirm your setting. 
+2. On the **Edit Project** page, click **Enable** to enable the App Certificate and click **Save** to confirm your setting. 
 
 	![](https://web-cdn.agora.io/docs-files/1563112280018)
 	
-3. Agora sends your account a confirmation Email. Follow the instruction to enable the App Certificate. 
-4. Go back to the  **Project Management** page, your can see App Certificate appears enabled. 
+3. We send you a confirmation Email. Follow the instruction to enable the App Certificate. 
+4. Go back to the  **Project Management** page to check that the App Certificate is enabled.
 
 	![](https://web-cdn.agora.io/docs-files/1563113154996)
 
-**Note**: Check the Spam Email or Junk Email, if there's no confirmation Email in your inbox.
+**Note**: If you do not find the confirmation email in your inbox, check your spam or junk email folder.
 
 <a id = "temptoken"></a>
 ### Get a temporary token
