@@ -3,7 +3,7 @@
 title: Agora Signaling Sunset Plan
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 13 2019 02:27:30 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 10:25:06 GMT+0800 (CST)
 ---
 # Agora Signaling Sunset Plan
 ## Agora Signaling Sunset Plan
@@ -24,7 +24,7 @@ Agora RTM SDK v1.0 is compatible with the legacy Agora Signling SDK except for t
 | Sends a non-string message (Signaling Web) | Puts a non-string as `msg` in the `messageInstantSend(peer, msg, cb)` or `messageChannelSend(msg, cb)` method. | Update your integration code and have us enable intercommunication with the RTM SDK. |
 | PSTN                      |                                                                 | No plan to support. |
 	
-We will continue to drive solutions for incompatibility issues. Should you come across any compatibility issue or have special requirements, please contact our support team or send a note to sales@agora.io.
+We will continue to drive solutions for incompatibility issues. Should you come across any compatibility issue or have special requirements, please contact our support team or send a note to sales-us@agora.io.
 	
 > See the [Agor RTM SDK vs. Signaling](../../en/Real-time-Messaging/RTM_vs_signaling_android.md), if you want to switch from the legacy Signaling SDK to the Agora RTM SDK. 
 
