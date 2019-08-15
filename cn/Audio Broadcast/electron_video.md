@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Electron
-updatedAt: Thu Aug 15 2019 08:35:38 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 08:35:43 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Electron 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -45,7 +45,7 @@ updatedAt: Thu Aug 15 2019 08:35:38 GMT+0800 (CST)
 
 1. 在你的项目文件路径，运行如下命令行安装最新版的 Agora SDK for Electron：
 
-	`nmp install agora-electron-sdk`
+	`npm install agora-electron-sdk`
 
 2. 然后通过如下代码将 SDK 引入至你的项目中
 
