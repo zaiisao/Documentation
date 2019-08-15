@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 15 2019 06:00:41 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 06:15:08 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
@@ -108,9 +108,9 @@ When building the final production version of your application, you should gener
 
 ### Apply your token or temporary token
 
-When calling the `join` method to join a channel, you pass your token (or temporary token).
+When calling the `join` method to join a channel, you pass in your token (or temporary token).
 
-> - Ensure that the channel ID and user name you use to join a channel are the same as the channel ID and user name you use to create a token (or a temporary token).
+> - Ensure that the channel ID and user name that you use to join a channel are the same as the channel ID and user name that you use to create a token (or a temporary token).
 > - After a token (or a temporary token) is generated, the client should use the token to join a channel within 24 hours. Otherwise, you need to generate a new token (or temporary token).
 > - A token (or a temporary token) expires after a certain period of time. When the SDK notifies the client that the token is about to expire or has expired by the `onTokenPrivilegeWillExpire` or `onTokenExpired` callbacks, you need to generate a new token and call the `renewToken` method.
 > - The token encoding uses the standard HMAC/SHA1 approach and the libraries are available on common server-side development platforms, such as Node.js, Java, PHP, Python, and C++. For more information, see  [Authentication code](http://en.wikipedia.org/wiki/Hash-based\_message\_authentication\_code).
