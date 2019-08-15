@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux Java
-updatedAt: Thu Aug 15 2019 12:12:07 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 12:20:25 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -36,31 +36,30 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                        | Signaling            | Real-time Messaging         |
 | ----------------------------- | -------------------- | --------------------------- |
-| Creates a message instance.   | N/A                  | `createMessage`<sup>1</sup> |
-| Sends a peer-to-peer message. | `messageInstantSend` | `sendMessageToPeer`         |
+| Creates a message instance.   | N/A                  | [createMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#acbbfe84bc22fd161ec5dc4fe098a59ce)<sup>1</sup> |
+| Sends a peer-to-peer message. | `messageInstantSend` | [sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a08c1b3d444af5a2778ede48e4c677a52)         |
 
 | Event                                  | Signaling                 | Real-time Messaging     |
 | -------------------------------------- | ------------------------- | ----------------------- |
-| Peer-to-peer message sending succeeds. | `onMessageSendSuccess`    | `onSuccess`<sup>2</sup> |
-| Peer-to-peer message sending fails.    | `onMessageSendError`      | `onFailure`             |
-| Receives a peer-to-peer message        | `onMessageInstantReceive` | `onMessageReceived`     |
+| Peer-to-peer message sending succeeds. | `onMessageSendSuccess`    | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)<sup>2</sup> |
+| Peer-to-peer message sending fails.    | `onMessageSendError`      | [onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)             |
+| Receives a peer-to-peer message        | `onMessageInstantReceive` | [onMessageReceivedFromPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#afaf1e899bc3d39dbe33f7fa769897c9a)     |
 
-> <sup>1</sup> With the Agora RTM SDK, you must create a message instance before sending it. A message instance can be used either for a peer-to-peer or for a channel message. As of v0.9.3, the Agora RTM SDK allows you to send an offline message by configuring `sendMessageOptions`.
+> <sup>1</sup> With the Agora RTM SDK, you must create a message instance before sending it. A message instance can be used either for a peer-to-peer or for a channel message. As of v0.9.3, the Agora RTM SDK allows you to send an offline message by configuring [sendMessageOptions](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_send_message_options.html).
 >
-> <sup>2</sup> The Agora Signaling SDK returns the `onMessageSendSuccess` callback when the server receives the peer-to-peer message; the Agora RTM SDK returns the `onSuccess` callback when the specified user receives the message. 
+> <sup>2</sup> The Agora Signaling SDK returns the `onMessageSendSuccess` callback when the server receives the peer-to-peer message; the Agora RTM SDK returns the [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5) callback when the specified user receives the message. 
 
 ## Querying the online status of specified user(s)
 
 | Method                                         | Signaling            | Real-time Messaging      |
 | ---------------------------------------------- | -------------------- | ------------------------ |
-| Queries the online status of a specified user. | `queryuserStatus`    | `queryPeersOnlineStatus` |
-| Sends a peer-to-peer message.                  | `messageInstantSend` | `sendMessageToPeer`      |
+| Queries the online status of a specified user. | `queryuserStatus`    | [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3add0055c4455dc8d04bfc37edfd8e94) |
 
 
 
 | Event                            | Signaling                 | Real-time Messaging |
 | -------------------------------- | ------------------------- | ------------------- |
-| Returns the result of the query. | `OnQueryUserStatusResult` | `onSuccess`         |
+| Returns the result of the query. | `OnQueryUserStatusResult` | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)         |
 
 > With the Agora RTM SDK,  you can query the online status of a list of peer users, not of just one peer user.
 
