@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Android
-updatedAt: Mon Jun 10 2019 07:11:06 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 10:25:02 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -18,7 +18,7 @@ The following figure shows a typical CDN-pushing scenario.
 
 ## Prerequisites
 
-Ensure that you contact sales@agora.io to enable Agora's transcoding service before using this function.
+Ensure that you contact sales-us@agora.io to enable Agora's transcoding service before using this function.
 
 ## Implementation
 
@@ -74,5 +74,5 @@ rtcEngine.removePublishStreamUrl(url);
 
 ## Considerations
 
-Ensure that you contact sales@agora.io to enable Agora's transcoding service before using this function.
+Ensure that you contact sales-us@agora.io to enable Agora's transcoding service before using this function.
 
