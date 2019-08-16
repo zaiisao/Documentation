@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Aug 16 2019 09:33:48 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 09:33:59 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -19,11 +19,169 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 
 The Windows Video SDK supports the X86 and X64 architecture.
 
+## v2.9.0
+
+v2.9.0 is released on Aug 16, 2019.
+
+**Before getting started**
+
+#### 1. CDN Streaming
+
+In this release, we deleted the following methods:
+
+- `configPublisher`
+- `setVideoCompositingLayout`
+- `clearVideoCompositingLayout`
+
+If your app implements CDN streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
+
+- [`setLiveTranscoding`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde)
+- [`addPublishStreamUrl`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)
+- [`removePublishStreamUrl`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
+- [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
+
+#### 2. Reporting the state of the remote video
+
+This release extends the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) with more states of the remote video: STOPPED(0), STARTING(1), DECODING(2), FROZEN(3), and FAILED(4). It adds a reason parameter to the callback to indicate why the remote video state changes. The original `onRemoteVideoStateChanged` callback is deleted. If you upgrade your Native SDK to the latest version, ensure that you re-implement the `onRemoteVideoStateChanged` callback.
+
+The new callback reports most of the remote video states, and therefore deprecates the following callbacks. You can still use them, but we do not recommend doing so.
+
+- [`onUserMuteVideo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8279591a761a5c2c1c4c1c4e677cbe0e)
+- [`onUserEnableVideo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a91bef59a3659b6e6bcbe43eb203d0732)
+- [`onUserEnableLocalVideo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a23189a2a10fb8b06b774543ac6bb322b)
+- [`onFirstRemoteVideoDecoded`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a345a8441861b9dbdc7ffc36a6c6ba186)
+
+**New features**
+
+#### 1. Faster switching to another channel
+
+This release adds the [`switchChannel`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab) method to enable the audience in a Live Broadcast channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `onLeaveChannel` and `onJoinChannelSuccess` callbacks to indicate that the audience has left the original channel and joined a new one. 
+
+#### 2. Channel media stream relay
+
+This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different Live Broadcast channels interact with each other.
+
+- [`startChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acb72f911830a6fdb77e0816d7b41dd5c)
+- [`updateChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#afad0d3f3861c770200a884b855276663)
+- [`stopChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab4a1c52a83a08f7dacab6de36f4681b8)
+
+During the media stream relay, the SDK reports the states and events of the relay with the [`onChannelMediaRelayStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8f22b85194d4b771bbab0e1c3b505b22) and [`onChannelMediaRelayEvent`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89a4085f36c25eeed75c129c82ca9429) callbacks.
+
+For more information on the implementation, API call sequence, sample code, and considerations, see [Co-host across Channels](../../en/Interactive%20Broadcast/media_relay_windows.md).
+
+#### 3. Reporting the local and remote audio state
+
+This release adds the [`onLocalAudioStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) and [`onRemoteAudioStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612) callbacks to report the local and remote audio states. With these callbacks, the SDK reports the following states for the local and remote audio:
+
+- The local audio: STOPPED(0), RECORDING(1), ENCODING(2), or FAILED(3). When the state is FAILED(3), see the `error` parameter for troubleshooting.
+- The remote audio: STOPPED(0), STARTING(1), DECODING(2), FROZEN(3), or FAILED(4). See the `reason` parameter for why the remote audio state changes.
+
+#### 4. Reporting the local audio statistics
+
+This release adds the [`onLocalAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0cb47df6a8ef7acee229eb307d6f32c3) callback to report the statistics of the local audio during a call, including the number of channels, the sending sample rate, and the average sending bitrate of the local audio.
+
+**Improvements**
+
+#### 1. Reporting more statistics of the in-call quality
+
+This release adds the following statistics in the `RtcStats`, `LocalVideoStats`, and `RemoteVideoStats` classes:
+
+- [`rtcStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html): The total number of the sent audio bytes, sent video bytes,  received audio bytes, and received video bytes during a session.
+- [`LocalVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html): The encoding bitrate, the width and height of the encoding frame, the number of frames, and the codec type of the local video.
+- [`RemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html): The packet loss rate of the remote video.
+
+#### 2. Improving the live broadcast video quality
+
+This release minimizes the video freeze rate under poor network conditions, improves the video sharpness, and optimizes the video smoothness when the packet loss rate is high.
+
+#### 3. Improving the screen sharing quality
+
+This release improves the sharpness of text during screen sharing in the Communication profile, particularly when the network condition is poor. Note that this improvement takes effect only when you set ContentHint as Details(2).
+
+#### 4. Supporting hot-swappable devices
+
+To improve the experience in using video devices on Windows, this release adds support for hot-swappable devices with the `context` member in the [`RtcEngineContext`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_engine_context.html) class. Setting this member also achieves the following functions:
+
+- Supports plugging or unplugging video devices before or after joining the channel.
+- Supports plugging or unplugging video devices when the app uses the external video renderer.
+- Fixes crashes caused by plugging or unplugging the camera when the device is powered on.
+- Minimizes the time to join a channel.
+
+#### 5. Other Improvements
+
+- Improves the audio quality when the audio scenario is set to Game Streaming.
+- Improves the audio quality after the user disables the microphone in the Communication profile.
+
+**Issues fixed**
+
+#### Audio
+
+- When interoperating with a Web app, voice distortion occurs after the native app enables the remote sound position indication.
+- Invalid call of the `muteRemoteAudioStream` method.
+- Occasionally no audio. 
+
+#### Video
+
+- The `onRemoteVideoStateChanged` callback behaves unexpectedly. 
+
+#### Miscellaneous
+
+- Occasionally mixed streams in CDN streaming. 
+- Occasional crashes occur.
+- Failure to join the channel.
+
+**API Changes**
+
+To improve the user experience, we made the following changes in v2.9.0:
+
+#### Added
+
+- [onLocalAudioStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a)
+- [onRemoteAudioStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612)
+- [onRemoteVideoStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e)
+- [onLocalAudioStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0cb47df6a8ef7acee229eb307d6f32c3)
+- [switchChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab)
+- [`startChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acb72f911830a6fdb77e0816d7b41dd5c)
+- [`updateChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#afad0d3f3861c770200a884b855276663)
+- [`stopChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab4a1c52a83a08f7dacab6de36f4681b8)
+- [`onChannelMediaRelayStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8f22b85194d4b771bbab0e1c3b505b22)
+- [`onChannelMediaRelayEvent`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89a4085f36c25eeed75c129c82ca9429)
+- [`RtcEngineContext`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_engine_context.html)::context
+- [`RtcStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html)::`txAudioBytes`, `txVideoBytes`, `rxAudioBytes`, and `rxVideoBytes`
+- [`LocalVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html)::`encodedBitrate`, `encodedFrameWidth`, `encodedFrameHeight`, `encodedFrameCount`, and `codedType`
+- [`RemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html)::`packetLossRate`
+
+#### Deprecated
+
+- `onMicrophoneEnabled`. Use LOCAL_AUDIO_STREAM_STATE_CHANGED(0) or LOCAL_AUDIO_STREAM_STATE_RECORDING(1) in the [`onLocalAudioStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) callback instead. 
+- `onRemoteAudioTransportStats`. Use the [`onRemoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a) callback instead.
+- `onRemoteVideoTransportStats`. Use the [`onRemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7163ffb650852be270ba0215b596d968) callback instead.
+- `onUserMuteVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) callback with the following parameters instead:
+	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
+	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTE(6).
+
+- `onUserEnableVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) callback with the following parameters instead:
+	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
+	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6).
+
+- `onUserEnableLocalVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) callback with the following parameters instead:
+	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
+	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6).
+
+- `onFirstRemoteVideoDecoded`. Use REMOTE_VIDEO_STATE_STARTING(1) or REMOTE_VIDEO_STATE_DECODING(2) in the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) callback instead.
+
+#### Deleted
+
+- `configPublisher`
+- `setVideoCompositingLayout`
+- `clearVideoCompositingLayout`
+- `onRemoteVideoStateChanged`
+
 ## v2.8.0
 
 v2.8.0 is released on Jul. 8, 2019.
 
-### New features
+**New features**
 
 #### 1. Supporting string usernames
 
@@ -51,11 +209,11 @@ To monitor the audio and video transmission quality during a call or live broadc
 
 This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBitrate` members in the [RemoteAudioStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) class.
 
-### Improvements
+**Improvements**
 
 This release adds a `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` member to the `reason` parameter of the [onConnectionStateChanged](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) callback. This member indicates a connection state change caused by the timeout of the connection keep-alive between the SDK and Agora's edge server.
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -79,7 +237,7 @@ To improve your experience, we made the following changes to the APIs:
 
 V2.4.1 is released on Jun 12th, 2019.
 
-### Before getting started
+**Before getting started**
 
 Ensure that you read the following SDK behavior changes if you migrate from an earlier SDK version.
 
@@ -102,7 +260,7 @@ v2.4.1 also adds five error codes to the `error` parameter in the  [onStreamPubl
 
 v2.4.1 renames the `receivedFrameRate` parameter to [rendererOutputFrameRate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html#a500d2a8457bf877794c219d194ec09b0) in the  [RemoteVideoStats](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html) class to more accurately describe the statistics of the remote video stream.
 
-### New features
+**New features**
 
 #### 1. Adding media metadata
 
@@ -154,7 +312,7 @@ The difference between the `onFirstRemoteAudioDecoded` and `onFirstRemoteAudioFr
 
 - v2.4.1 supports 64-bit operation systems.
 
-### Improvements
+**Improvements**
 
 #### 1. Reporting more statistics
 
@@ -175,7 +333,7 @@ The difference between the `onFirstRemoteAudioDecoded` and `onFirstRemoteAudioFr
 - Improved the stability of CDN streaming services.
 - Improved the compatibility of the SDK with video devices.
 
-### Issues fixed
+**Issues fixed**
 
 #### Audio
 
@@ -191,7 +349,7 @@ The difference between the `onFirstRemoteAudioDecoded` and `onFirstRemoteAudioFr
 - Users still receive the `onNetworkQuality` callback after leaving the channel.
 - Occasional crashes. 
 
-### API changes
+**API changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -230,7 +388,7 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 
 v2.4.0 is released on April 1, 2019.
 
-### New Features
+**New features**
 
 #### 1. Advanced screen sharing
 
@@ -261,7 +419,7 @@ v2.4.0 adds the [`startAudioDeviceLoopbackTest`](https://docs.agora.io/en/Intera
 
 #### 6. Setting the priority of a remote user's stream
 
-v2.4.0 adds the [`setRemoteUserPriority`](https://docs.agora.io/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710) method for setting the priority of a remote user. You can use this method with the [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a50e727c34b662de64c03b0479a7fe8e7) method. If the fallback function is enabled for a remote stream, the SDK ensures the high-priority user gets the best possible stream quality.
+v2.4.0 adds the [`setRemoteUserPriority`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710) method for setting the priority of a remote user. You can use this method with the [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a50e727c34b662de64c03b0479a7fe8e7) method. If the fallback function is enabled for a remote stream, the SDK ensures the high-priority user gets the best possible stream quality.
 
 #### 7. State of an audio mixing file 
 
@@ -269,13 +427,13 @@ v2.4.0 adds the [`onAudioMixingStateChanged`](https://docs.agora.io/en/Interacti
 
 #### 8. Setting the log file size
 
-The SDK has two log files, each with a default size of 512 KB. In case some customers require more than the default size, v2.4.0 adds the [`setLogFileSize`](https://docs.agora.io/en/Interactive%20Broadcast/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1) method for setting the log file size (KB).
+The SDK has two log files, each with a default size of 512 KB. In case some customers require more than the default size, v2.4.0 adds the [`setLogFileSize`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1) method for setting the log file size (KB).
 
 #### 9. Setting the background image for LiveTranscoding
 
 v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_live_transcoding.html#a729037c7cf31b57efd1e8c9fadeab6eb) parameter in the [`LiveTranscoding`](https://docs.agora.io/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_live_transcoding.html) Class in Windows to set the background image in the combined video of a live broadcast.
 
-### Improvements
+**Improvements**
 
 #### 1. Accuracy of call quality statistics
 
@@ -287,7 +445,7 @@ v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Interactive%20Broad
 v2.4.0 provides the following options for setting video encoder preferences:
 
 - Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_video_encoder_configuration.html) class: minFrameRate and degradationPrefer. You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Interactive%20Broadcast/videoProfile_windows.md).
-- Setting the camera capture preference. v2.4.0 adds the [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Interactive%20Broadcast/(./API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)).
+- Setting the camera capture preference. v2.4.0 adds the [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af).
 
 #### 3. Core quality improvements
 
@@ -296,7 +454,7 @@ v2.4.0 provides the following options for setting video encoder preferences:
 - Shortens the time to render the first remote video frame. 
 - Improves the video smoothness and reduces the time delay when sharing a screen under poor network conditions. 
 
-### Issues Fixed
+**Issues Fixed**
 
 #### Audio
 
@@ -319,7 +477,7 @@ v2.4.0 provides the following options for setting video encoder preferences:
 - Occasional echoes.
 - The SEI information does not synchronize with the media stream when publishing transcoded streams to the CDN.
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -355,11 +513,11 @@ To improve your experience, we made the following changes to the APIs:
 
 v2.3.3 is released on January 24, 2019. 
 
-### Improvements
+**Improvements**
 
 v2.3.3 optimizes the screen-sharing algorithm for different scenarios. The video smoothness and quality are enhanced when a user presents slides or browses websites. v2.3.3 also improves the initial image quality in the Communication profile.
 
-### Issues Fixed
+**Issues Fixed**
 
 Occasional inaccurate statistics returned in the `onNetworkQuality` callback.
 
@@ -367,7 +525,7 @@ Occasional inaccurate statistics returned in the `onNetworkQuality` callback.
 
 v2.3.2 is released on January 16, 2019. 
 
-### Before Getting Started
+**Before Getting Started**
 
 Besides the new features and improvements mentioned below, it is worth noting that v2.3.2:
 
@@ -382,7 +540,7 @@ Before upgrading your SDK, ensure that your version is:
 
 If you using an Agora SDK version v2.0.8 and wish to migrate the v2.3.2, refer to the [Migration Guide](../../en/Interactive%20Broadcast/migration_windows.md) for major API changes.
 
-### New Features
+**New Features**
 
 #### 1. External video data (Push Mode)
 
@@ -452,7 +610,7 @@ v2.3.2 adds the `deviceName` parameter in the [`enableLoopbackRecording`](https:
 - To use the current sound card, set deviceName as NULL.
 - To use a virtual card, set `deviceName` as the name of the virtual card.
 
-### Improvements
+**Improvements**
 
 #### 1. Improves the accuracy of the call quality statistics
 
@@ -497,7 +655,7 @@ v2.3.2 optimizes the audio device selection to fix the no audio issue when a use
 - Reduces the audio delay.
 - Optimizes the screen-sharing function.
 
-### Issues Fixed
+**Issues Fixed**
 
 The following issues are fixed in v2.3.2:
 
@@ -525,7 +683,7 @@ The following issues are fixed in v2.3.2:
 - Blurry video when sharing a high-resolution screen.
 - The cursor on the remote side is not in the same position as the local side when sharing the desktop.
 
-### API Changes
+**API Changes**
 
 To improve the user experience, Agora has made the following changes to the APIs:
 
@@ -559,7 +717,7 @@ To improve the user experience, Agora has made the following changes to the APIs
 
 v2.2.2 is released on June 21, 2018.
 
-### Issues Fixed
+**Issues Fixed**
 
 - Fixed occasional online statistics crashes.
 - Fixed the issue of failing to report the uid and volume of the speaker in a channel.
@@ -573,7 +731,7 @@ v2.2.0 is released on May 30, 2018 and improves the internal code implementation
 
 v2.2.0 is released on May 4, 2018. 
 
-### New Features
+**New features**
 
 #### 1. Play the audio effect in the channel
 
@@ -593,7 +751,7 @@ Adds the <code>remoteVideoStateChangedOfUid</code> method to get the state of th
 
 Adds the watermark function for users to add a PNG file to the local or CDN broadcast as a watermark. Adds the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> methods to add and delete watermarks in a local live-broadcast. Adds the <code>watermark</code> parameter in the <code>LiveTranscording</code> interface to add watermarks in CDN broadcasts. 
 
-### Improvements
+**Improvements**
 
 #### 1. Audio volume indication
 
@@ -611,7 +769,7 @@ To test if the network condition can support audio or video calls before joining
 
 Improves the audio quality in scenarios that involve music playback.
 
-### Issues Fixed
+**Issues Fixed**
 
 -   Occasional screen display abnormalities when a large number of audience members join as the host in a live-broadcast channel.
 -   Occasional audio issues during a live broadcast.
@@ -623,11 +781,11 @@ v2.1.3 is released on April 19, 2018.
 
 In v2.1.3, Agora updates the bitrate values of the <code>setVideoProfile</code> method in the live-broadcast profile. The bitrate values in v2.1.3 stay consistent with those in v2.0. 
 
-### Issues Fixed
+**Issues Fixed**
 
 Occasional recording failures on some phones when a user leaves a channel and turns on the built-in recording device.
 
-### Improvements
+**Improvements**
 
 Improves the performance of screen sharing by shortening the time interval between which users switch from screen sharing to a normal communication or live-broadcast profile.
 
@@ -637,7 +795,7 @@ v2.1.2 is released on April 2, 2018.
 
 >  If you upgrade the SDK to v2.1.2 from a previous version, the live-broadcast video quality will be better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth.
 
-### Issues Fixed
+**Issues Fixed**
 
 -   The co-host is not seen by his/her counterpart after leaving and rejoining the channel.
 -   The video resolution of the shared screen is worse in the communication profile than in the live broadcast profile.
@@ -653,7 +811,7 @@ Agora has identified a critical bug in SDK v2.1. Upgrade to v2.1.1 if you are us
 
 v2.1.0 is released on March 7, 2018. 
 
-### New Features
+**New Features**
 
 #### 1. Voice Optimization
 
@@ -694,7 +852,7 @@ Adds the function of injecting an external video stream to an ongoing Live Broad
 
 Adds the <code>enableLoopbackRecording</code> method to collect all local sounds.
 
-### Improvements
+**Improvements**
 
 <table>
 <colgroup>
@@ -730,7 +888,7 @@ Adds the <code>enableLoopbackRecording</code> method to collect all local sounds
 
 ## v2.0 and Earlier
 
-### v2.0
+**v2.0**
 
 v2.0 is released on November 21, 2017. 
 
@@ -831,7 +989,7 @@ Due to the upgrade of Agora products, Windows SDK 2.0 no longer supports the Ago
 
 
 
-### v1.14
+**v1.14**
 
 v1.14 is released on October 20, 2017. 
 
@@ -861,11 +1019,11 @@ v1.14 is released on October 20, 2017.
 -   Camera-related issues on certain Windows systems.
 
 
-### v1.13.1
+**v1.13.1**
 
 v1.13.1 is released on September 28, 2017 and optimizes the echo issue under certain circumstances.
 
-### v1.13
+**v1.13**
 
 v1.13 is released on September 4, 2017. 
 
@@ -889,7 +1047,7 @@ v1.13 is released on September 4, 2017.
 
 Occasional crashes.
 
-### v1.12
+**v1.12**
 
 v1.12 is released on July 25, 2017. 
 
