@@ -3,7 +3,7 @@
 title: Set the Stereo/High-fidelity Audio Profile
 description: How to set the high-quality audio for iOS and macOS
 platform: iOS
-updatedAt: Fri Aug 16 2019 03:54:37 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 04:04:56 GMT+0800 (CST)
 ---
 # Set the Stereo/High-fidelity Audio Profile
 ## Introduction 
