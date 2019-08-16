@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Aug 16 2019 07:37:40 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 08:28:32 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -34,6 +34,129 @@ Android 语音 SDK 支持两种主要场景:
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
 
+## **2.9.0 版**
+
+该版本于 2019 年 8 月 16 日发布。新增特性与修复问题详见下文。
+
+**升级必看**
+
+#### 推流
+
+该版本起，Agora 删除如下接口：
+
+- `configPublisher`
+- `setVideoCompositingLayout`
+- `clearVideoCompositingLayout`
+
+如果你的 App 使用上述接口实现 CDN 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
+
+- [`setLiveTranscoding`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a3cb9804ae71819038022d7575834b88c)
+- [`addPublishStreamUrl`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4445b4ca9509cc4e2966b6d308a8f08f)
+- [`removePublishStreamUrl`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a87b3f2f17bce8f4cc42b3ee6312d30d4)
+- [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
+
+**新增特性**
+
+#### 1. 快速切换频道
+
+为方便直播频道中的观众用户快速切换到其他频道，该版本新增 [`switchChannel`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a72f13225defc1b14dfb29820a0495da2) 方法。和先调 `leaveChannel`，再调 `joinChannel` 相比，该方法能实现更快的频道切换。调用 `switchChannel` 方法切换到其他直播频道后，本地会先收到离开原频道的回调 `onLeaveChannel`，再收到成功加入新频道的回调 `onJoinChannelSuccess`。
+
+#### 2. 跨频道媒体流转发
+
+跨频道媒体流转发，指将主播的媒体流转发至其他直播频道，实现主播跨频道与其他主播实时互动的场景。该版本新增如下接口，通过将源频道中的媒体流转发至目标频道，实现跨直播间连麦功能：
+
+- [`startChannelMediaRelay`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6f09ba685f8ab01d7dc06173286950f6)
+- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#abd40d706379d27cf617376a504f394bd)
+- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0f9f19e48c21190dd4e697dec632c328)
+
+在跨频道媒体流转发过程中，SDK 会通过[`onChannelMediaRelayStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89fd95b3536e8e6afd5f001926162f66) 和 [`onChannelMediaRelayEvent`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a6fe2367e9ea61e48a4cc3b373d198b54) 回调报告媒体流转发的状态和事件。
+
+该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考[跨直播间连麦](../../cn/Voice/media_relay_android.md)。
+
+#### 3. 本地及远端音频状态
+
+为方便用户了解本地及远端的音频状态，该版本新增 [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a59946a989f87c737899e2284539adf09) 和 [`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a24fd6b0d12214f6bc6fa7a9b6235aeff) 回调。新的回调下，本地及远端音频有如下状态：
+
+- 本地音频：STOPPED(0)、RECORDING(1)、ENCODING(2) 和 FAILED(3)。状态为 FAILED(3) 时，你可以通过 `error` 参数中返回的错误码定位及排查问题。
+- 远端音频：STOPED(0)、STARTING(1)、DECODING(2)、FROZEN(3) 和 FAILED(3)。你可以在 `reason` 参数中了解引起远端音频状态发生改变的原因。
+
+#### 4. 本地音频数据
+
+为方便更好地了解通话质量，获取更多质量相关数据，该版本新增 [`onLocalAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aeba2aa3fc29404fc6f25bff5c00bfdf9) 回调，通过 `numChannels`、`sentSampleRate`、`sentBitrate` 参数报告本地音频统计信息。
+
+#### 5. 远端音频帧拉取
+
+为提升音频播放体验，该版本新增如下接口，支持使用拉取的方式获取远端音频数据。App 可以对拉取到的原始音频数据进行处理后再渲染，获取想要的音频效果。
+
+- [`setExternalAudioSink`](https://docs.agora.io/cn/Voice/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a270c0607d443790e92cdbd0d45ba1732)
+- [`pullPlaybackAudioFrame`](https://docs.agora.io/cn/Voice/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae15064944870692e9a0a59fdc87654c4)
+
+该方法和 [`onPlaybackFrame`](https://docs.agora.io/cn/Voice/API%20Reference/java/v2.9.0/interfaceio_1_1agora_1_1rtc_1_1_i_audio_frame_observer.html#a3781dd30d34a0634140872a9dd131488) 回调相比，区别在于：
+
+- `onPlaybackFrame`：SDK 每 10 毫秒通过回调将音频数据传输给 App。如果 App 处理延时，可能会导致音频播放抖动。
+- `pullPlaybackAudioFrame`：App 主动拉取音频数据。通过设置音频数据，SDK 可以调整缓存，帮助 App 处理延时，从而有效避免音频播放抖动。
+
+**改进**
+
+#### 1. 通话中质量透明
+
+该版本进一步扩充了 `RtcStats` 类的成员：
+
+- [`RtcStats`](https://docs.agora.io/cn/Voice/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html) 类：累计发送音频字节数及累计接收音频字节数
+
+#### 2. 其他改进
+
+- 优化了耳返延迟。
+- 优化了 Game Streaming 模式下的音频质量。
+- 优化了通信模式下用户关闭麦克风后听到的音质。
+
+**问题修复**
+
+#### 音频
+
+- 修复了与 Web 互通时听声辨位过程中出现的声音失真的问题。
+- 修复了主播下主播将耳返音量设置为 0 后，远端听不到主播声音的问题。
+- 修复了特殊场景下调用 `startAudioMixing` 播放音乐文件失败的问题。
+- 修复了特殊机型上语音路由无法切换到蓝牙的问题。
+- 修复了使用音频裸数据功能时的崩溃问题。
+- 修复了断开蓝牙设备后，语音路由与默认设置不符的问题。
+
+#### 其他
+
+- 修复了偶现的旁路推流串流的问题。
+- 修复了特殊机型上偶现的加入频道后崩溃的问题。
+
+**API 变更**
+
+为提升用户体验，Agora SDK 在该版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [`setExternalAudioSink`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a270c0607d443790e92cdbd0d45ba1732)
+- [`pullPlaybackAudioFrame`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae15064944870692e9a0a59fdc87654c4)
+- [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a59946a989f87c737899e2284539adf09)
+- [`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a24fd6b0d12214f6bc6fa7a9b6235aeff)
+- [`onLocalAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aeba2aa3fc29404fc6f25bff5c00bfdf9)
+- [`switchChannel`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a72f13225defc1b14dfb29820a0495da2)
+- [`startChannelMediaRelay`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6f09ba685f8ab01d7dc06173286950f6)
+- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#abd40d706379d27cf617376a504f394bd)
+- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0f9f19e48c21190dd4e697dec632c328)
+- [`onChannelMediaRelayStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89fd95b3536e8e6afd5f001926162f66)
+- [`onChannelMediaRelayEvent`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a6fe2367e9ea61e48a4cc3b373d198b54)
+- [`RtcStats`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html) 类新增 `txAudioBytes` 和 `rxAudioBytes` 成员
+
+
+#### 废弃
+
+- `onMicrophoneEnabled`，请改用 [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aeba2aa3fc29404fc6f25bff5c00bfdf9) 的 LOCAL_AUDIO_STREAM_STATE_CHANGED(0) 或 LOCAL_AUDIO_STREAM_STATE_RECORDING(1)。
+- `onRemoteAudioTransportStats`，请改用 [`onRemoteAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54)。
+
+#### 删除
+
+- `configPublisher`
+- `setVideoCompositingLayout`
+- `clearVideoCompositingLayout`
+
 ## **2.8.2 版**
 
 该版本于 2019 年 8 月 1 日发布。修复了与 Web SDK 的互通问题。
@@ -43,7 +166,7 @@ Android 语音 SDK 支持两种主要场景:
 
 该版本于 2019 年 7 月 20 日发布。新增特性详见下文。
 
-### **新增特性**
+**新增特性**
 
 - 支持 x86-64 位系统。
 - 支持 Android Q 系统。
@@ -52,7 +175,7 @@ Android 语音 SDK 支持两种主要场景:
 
 该版本于 2019 年 7 月 8 日发布。新增特性与修复问题列表详见下文。
 
-### **新增特性**
+**新增特性**
 
 #### 1. 全平台支持 String 型的用户名
 
@@ -82,11 +205,11 @@ Android 语音 SDK 支持两种主要场景:
 
 同时，该版本在 [RemoteAudioStats](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) 类中还新增 `numChannels`、`receivedSampleRate` 和 `receivedBitrate` 成员。
 
-### **改进**
+**改进**
 
 为方便开发者统计掉线率，该版本在 [onConnectionStateChanged](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) 回调的 `reason` 参数中添加 `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` 成员，表示 SDK 与服务器连接保活超时，引起 SDK 连接状态发生改变。
 
-### **修复问题**
+**修复问题**
 
 #### 音频
 
@@ -96,7 +219,7 @@ Android 语音 SDK 支持两种主要场景:
 
 - 修复了指定的 Log 输出文件夹不存在时，没有生成日志文件，且默认日志文件中断的问题。
 
-### **API 变更**
+**API 变更**
 
 为提升用户体验，Agora 在 v2.8.0 版本中对 API 进行了如下变动：
 
@@ -139,7 +262,7 @@ Android 语音 SDK 支持两种主要场景:
 此外，该版本还对 [onStreamPublished](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94) 方法的 `error` 参数新增了五个错误码，方便快速定位与排查问题。
 
 
-### **新增特性**
+**新增特性**
 
 #### 1、推流状态回调
 
@@ -161,7 +284,7 @@ Android 语音 SDK 支持两种主要场景:
 
 为更精准地获取远端用户的出声时间，该版本新增 [onFirstRemoteAudioDecoded](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0fcac6cafae63e4ef453ddd041e80f8a) 回调，用以向 App 层报告 SDK 已完成远端音频首帧解码。在远端用户加入频道后首次发送音频，或远端用户 15 秒不发音频后再次发送时，该回调均会被触发。该回调与 `onFirstRemoteAudioFrame` 的区别在于，`onFirstRemoteAudioFrame` 在收到首个音频包时触发，先于 `onFirstRemoteAudioDecoded`。
 
-### **改进**
+**改进**
 
 #### 1、在线音效叠加
 
@@ -180,7 +303,7 @@ Android 语音 SDK 支持两种主要场景:
 - 提升了推流服务的稳定性
 
 
-### **问题修复**
+**问题修复**
 
 #### 音频
 
@@ -193,7 +316,7 @@ Android 语音 SDK 支持两种主要场景:
 - 修复了用户退出频道后仍然收到 `onNetworkQuality` 回调的问题
 - 修复了偶现的崩溃问题，提升了系统稳定性
 
-### **API 变更**
+**API 变更**
 
 为提升用户体验，Agora 在 v2.4.1 版本中对 API 进行了如下变动：
 
@@ -224,7 +347,7 @@ Android 语音 SDK 支持两种主要场景:
 
 该版本于 2019 年 4 月 1 日发布。新增特性、功能改进与修复问题列表详见下文。
 
-### **新增特性**
+**新增特性**
 
 #### 1. 变声和混响
 
@@ -247,7 +370,7 @@ Android 语音 SDK 支持两种主要场景:
 
 Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决该大小无法满足部分用户需求的问题，该版本新增接口 [`setLogFileSize`](https://docs.agora.io/cn/Voice/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a50fd37c6f5b8fc144b18ed4620aee6fc)，用于设置 SDK 输出的日志文件大小。
 
-### **功能改进**
+**功能改进**
 
 #### 1. 质量测试与透明
 
@@ -261,7 +384,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 - 缩短了远端视频出图时间
 - 优化了耳返延迟和回声抑制
 
-### **问题修复**
+**问题修复**
 
 #### 音频相关
 
@@ -276,7 +399,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 - 统一了 Android 和 iOS 平台上 SDK 判断远端用户掉线的时间
 - 修复了转码推流场景下，SEI 信息与媒体流不同步的问题
 
-### **API 整理**
+**API 整理**
 
 为提升用户体验，Agora 在 v2.4.0 版本中对 API 进行了如下变动：
 
@@ -302,7 +425,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 该版本于 2019 年 1 月 24 日发布。修复问题详见下文。
 
-### **问题修复**
+**问题修复**
 
 - 修复了 `onNetworkQuality` 回调不准确的问题。
 - 修复了特定场景下华为 P9 上偶发的崩溃问题。
@@ -311,14 +434,14 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 该版本于 2019 年 1 月 16 日发布。新增特性与修复问题列表详见下文。
 
-### **升级前必看**
+**升级前必看**
 
 2.3.2 整体提升直播模式下视频弱网抗丢包能力，提高流畅度，降低卡顿率。升级前，请了解以下版本兼容性:
 
 * Native SDK 版本不能低于 1.11.0
 * Web SDK（若互通）版本不能低于 2.1.0
 
-### **新增功能**
+**新增功能**
 
 #### 控制音乐文件的播放音量 
 
@@ -329,7 +452,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 该版本梳理了用户在音频采集到播放过程中可能会需要调整音量的场景，及各场景对应的 API，供用户参考使用。详见官网文档[调整通话音量](../../cn/Voice/volume_android_audio.md)。
 
 
-### **改进**
+**改进**
 
 #### 1. 提供更透明的质量数据统计
 
@@ -370,7 +493,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 - 降低了音频延时
 
 
-### **问题修复**
+**问题修复**
 
 #### SDK 相关：
 
@@ -388,8 +511,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 - 修复了应用从后台切回前台时，出现的出声音慢的问题
 
 
-
-### **API 整理**
+**API 整理**
 
 为提升用户体验，Agora 在 v2.3.2 版本中对 API 进行了如下变动。
 
@@ -411,7 +533,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 该版本于 2018 年 10 月 12 日发布。新增特性与修复问题列表详见下文。
 
-### **新增功能**
+**新增功能**
 
 ####  关闭/重新开启本地语音功能
 
@@ -420,7 +542,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 该功能与 `muteLocalAudioStream` 的区别在于前者不采集不发送，而后者是采集但不发送。
 
 
-### **问题修复**
+**问题修复**
 
 * 修复了直播模式下，多次上下麦后某些 Android 设备上偶现的崩溃问题。
 * 修复了直播模式下，观众端因统计有误出现的延迟的问题。
@@ -452,7 +574,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
 
-### **新增功能**
+**新增功能**
 
 本次发版新增如下功能：
 
@@ -464,14 +586,14 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 为方便统计每个用户的音频上下行码率、帧率及丢包率，该版本新增 `onRemoteAudioTransportStats` 回调。 通话或直播过程中，当用户收到远端用户发送的音视频数据包后，会周期性地发生该回调上报，频率约为 2 秒 1 次。 回调中包含用户的 UID、音频接收码率、丢包率、以及延迟时间（毫秒）。 并在统计频道内通话相关数据的 Rtcstats 类中增加 `lastmileDelay` 参数，返回客户端到 vos 服务器的延迟。
 
-### **改进功能**
+**改进功能**
 
 -   优化了一对一音视频的质量，在降低延时、防止卡顿方面提升明显。优化效果重点覆盖东南亚、南美、非洲和中东等地区
 -   直播场景下，改善了音频编码器的效率，保证通话质量的同时节省用户流量
 -   采用深度学习算法，改进了通话及直播中的音频质量
 
 
-### **问题修复**
+**问题修复**
 
 -   修复了某些 Android 设备上偶现的崩溃的问题
 -   修复了多平台互通时，一段时间后某些 Andorid 设备上偶现的崩溃问题。
@@ -490,7 +612,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   修复了偶现的频繁切换 Token 时，某些 Android 设备上偶现的崩溃的问题
 
 
-### **API 整理**
+**API 整理**
 
 为提升用户体验，Agora 在 v2.3.0 版本中对 API 进行了梳理，并针对部分接口进行了如下处理：
 
@@ -524,7 +646,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
-### **问题修复**
+**问题修复**
 
 -   修复了特定场景下偶发的线上统计崩溃的问题。
 -   修复了直播时部分设备上主播声音变音的问题。
@@ -539,7 +661,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 6 月 21 日发布。修复问题列表详见下文。
 
-### **问题修复**
+**问题修复**
 
 - 修复了特定场景下偶发的线上统计崩溃的问题
 - 修复了部分安卓设备上偶发的音频崩溃的问题
@@ -552,7 +674,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 5 月 30 日发布。新增特性与修复问题列表详见下文。
 
-### **问题修复**
+**问题修复**
 
 -   修复了部分设备上偶现的游戏过程中 Crash 的问题
 -   修复了部分设备上无法获取声道指针的问题
@@ -564,7 +686,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 5 月 4 日发布。新增特性与修复问题列表详见下文。
 
-### **新增功能**
+**新增功能**
 
 本次发版新增如下功能：
 
@@ -579,7 +701,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 通过部署 Agora 提供的代理服务器安装包，设有企业防火墙的用户可以设置代理服务器，使用 Agora 的服务。详见 [企业部署代理服务器](../../cn/Quickstart%20Guide/proxy.md) 中的描述。
 
 
-### **改进功能**
+**改进功能**
 
 本次发版改进如下功能：
 
@@ -604,7 +726,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 4 月 19 日发布。新增特性与修复问题列表详见下文。
 
-### **问题修复**
+**问题修复**
 
 修复了部分手机上，用户离开频道后，开启自带的录音设备时，偶现录音出错的问题。
 
@@ -612,7 +734,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 4 月 2 日发布。新增特性与修复问题列表详见下文。
 
-### **问题修复**
+**问题修复**
 
 修复了之前版本 SDK 在 dtx + aac 模式下会视频卡顿的问题。
 
@@ -626,7 +748,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 3 月 7 日发布。新增特性与修复问题列表详见下文。
 
-### **新增功能**
+**新增功能**
 
 本次发版新增如下功能：
 
@@ -651,7 +773,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 提供一套全新的 API，直播场景优化 API，将原来 API 封装在底层，更快集成，更多功能扩展性。升级到 SDK 2.1 的用户可以选择使用新 API 或者老 API，两套方案均可以使用。
 
 
-### **改进**
+**改进**
 
 本次发版改进如下功能：
 
@@ -677,7 +799,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 </table>
 
 
-### **问题修复**
+**问题修复**
 
 -   修复了华为 Nexus 6p 播放杂音的问题。
 -   修复了一加手机上的破音问题。
@@ -695,7 +817,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 ## **2.0 版及之前**
 
-### **2.0 版**
+**2.0 版**
 
 该版本于 2017 年 12 月 6 日发布。新增特性与修复问题列表详见下文。
 
@@ -733,7 +855,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   优化了音量均衡控制。
 
 
-### **1.14 版**
+**1.14 版**
 
 该版本于 2017 年 10 月 20 日发布。新增特性与修复问题列表详见下文。
 
@@ -767,7 +889,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 优化了特定场景下出现的回声问题。
 
-### **1.13 版**
+**1.13 版**
 
 该版本于 2017 年 9 月 4 日发布。新增特性与修复问题列表详见下文。
 
@@ -786,7 +908,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 修复了部分机型上偶现的崩溃
 
-### **1.12 版**
+**1.12 版**
 
 该版本于 2017 年 7 月 25 日发布。新增特性与修复问题列表详见下文。
 
