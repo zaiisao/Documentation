@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Aug 16 2019 08:27:23 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 08:28:08 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -33,6 +33,169 @@ Apps targeting Android 9 should honor the private DNS APIs. In particular, apps 
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
 
+## v2.9.0
+
+v2.9.0 is released on Aug 16, 2019.
+
+**Before getting started**
+
+#### 1. CDN Streaming
+
+In this release, we deleted the following methods:
+
+- `configPublisher`
+- `setVideoCompositingLayout`
+- `clearVideoCompositingLayout`
+
+If your app implements CDN streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
+
+- [`setLiveTranscoding`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a3cb9804ae71819038022d7575834b88c)
+- [`addPublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4445b4ca9509cc4e2966b6d308a8f08f)
+- [`removePublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a87b3f2f17bce8f4cc42b3ee6312d30d4)
+- [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
+
+#### 2. Reporting the state of the remote video
+
+This release extends the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131) with more states of the remote video: STOPPED(0), STARTING(1), DECODING(2), FROZEN(3), and FAILED(4). It adds a reason parameter to the callback to indicate why the remote video state changes. The original `onRemoteVideoStateChanged` callback is deleted. If you upgrade your Native SDK to the latest version, ensure that you re-implement the `onRemoteVideoStateChanged` callback.
+
+The new callback reports most of the remote video states, and therefore deprecates the following callbacks. You can still use them, but we do not recommend doing so.
+
+- [`onUserMuteVideo`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a6d406dc427f047d4000a8ae2801b4e51)
+- [`onUserEnableVideo`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af87247218ec1ef398a9478672ad4dd49)
+- [`onUserEnableLocalVideo`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2640b0eef8b7f1b105c485b4f1c9d8b5)
+- [`onFirstRemoteVideoDecoded`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7144e0124c3d8f75e0366b0246fbe3b)
+
+**New features**
+
+#### 1. Faster switching to another channel
+
+This release adds the  [`switchChannel`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a72f13225defc1b14dfb29820a0495da2) method to enable the audience in a Live Broadcast channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `onLeaveChannel` and `onJoinChannelSuccess` callbacks to indicate that the audience has left the original channel and joined a new one. 
+
+#### 2. Channel media stream relay
+
+This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different Live Broadcast channels interact with each other.
+
+- [`startChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6f09ba685f8ab01d7dc06173286950f6)
+- [`updateChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#abd40d706379d27cf617376a504f394bd)
+- [`stopChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0f9f19e48c21190dd4e697dec632c328)
+
+During the media stream relay, the SDK reports the states and events of the relay with the [`onChannelMediaRelayStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89fd95b3536e8e6afd5f001926162f66) and [`onChannelMediaRelayEvent`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a6fe2367e9ea61e48a4cc3b373d198b54) callbacks.
+
+For more information on the implementation, API call sequence, sample code, and considerations, see [Co-host across Channels](../../en/Video/media_relay_android.md).
+
+#### 3. Reporting the local and remote audio state
+
+This release adds the [`onLocalAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a59946a989f87c737899e2284539adf09) and [`onRemoteAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a24fd6b0d12214f6bc6fa7a9b6235aeff) callbacks to report the local and remote audio states. With these callbacks, the SDK reports the following states for the local and remote audio:
+
+- The local audio: STOPPED(0), RECORDING(1), ENCODING(2), or FAILED(3). When the state is FAILED(3), see the `error` parameter for troubleshooting.
+- The remote audio: STOPPED(0), STARTING(1), DECODING(2), FROZEN(3), or FAILED(4). See the `reason` parameter for why the remote audio state changes.
+
+#### 4. Reporting the local audio statistics
+
+This release adds the [`onLocalAudioStats`](https://docs.agora.io/en/Video/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aeba2aa3fc29404fc6f25bff5c00bfdf9) callback to report the statistics of the local audio during a call, including the number of channels, the sending sample rate, and the average sending bitrate of the local audio.
+
+#### 5. Pulling the remote audio data
+
+To improve the experience in audio playback, this release adds the following methods to pull the remote audio data. After getting the audio data, you can process it and play it with the audio effects that you want.
+
+- [`setExternalAudioSink`](https://docs.agora.io/en/Video/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a270c0607d443790e92cdbd0d45ba1732)
+- [`pullPlaybackAudioFrame`](https://docs.agora.io/en/Video/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae15064944870692e9a0a59fdc87654c4)
+
+The difference between the [`onPlaybackFrame`](https://docs.agora.io/en/Video/API%20Reference/java/v2.9.0/interfaceio_1_1agora_1_1rtc_1_1_i_audio_frame_observer.html#a3781dd30d34a0634140872a9dd131488) callback and the `pullPlaybackAudioFrame` method is as follows:
+
+- `onPlaybackFrame`: The SDK sends the audio data to the app once every 10 ms. Any delay in processing the audio frames may result in an audio delay.
+- `pullPlaybackAudioFrame`: The app pulls the remote audio data. After setting the audio data parameters, the SDK adjusts the frame buffer and avoids problems caused by jitter in external audio playback.
+
+**Improvements**
+
+#### 1. Reporting more statistics of the in-call quality
+
+This release adds the following statistics in the `RtcStats`, `LocalVideoStats`, and `RemoteVideoStats` classes:
+
+- [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html): The total number of the sent audio bytes, sent video bytes,  received audio bytes, and received video bytes during a session.
+- [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html): The encoding bitrate, the width and height of the encoding frame, the number of frames, and the codec type of the local video.
+- [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html): The packet loss rate of the remote video.
+
+#### 2. Improving the live broadcast video quality
+
+This release minimizes the video freeze rate under poor network conditions, improves the video sharpness, and optimizes the video smoothness when the packet loss rate is high.
+
+#### 3. Other Improvements
+
+- Reduces the earpiece delay.
+- Improves the audio quality when the audio scenario is set to Game Streaming.
+- Improves the audio quality after the user disables the microphone in the Communication profile.
+
+**Issues fixed**
+
+#### Audio
+
+- When interoperating with a Web app, voice distortion occurs after the native app enables the remote sound position indication.
+- The audience cannot hear the host after the host sets the in-ear monitoring volume to 0.
+- Failure to play the audio file by calling the `startAudioMixing` method. 
+- The audio route cannot be set to Bluetooth on some devices.
+- Crashes occur when using the raw audio data.
+- The audio route does not conform to the default settings after the device disconnects from Bluetooth.
+
+#### Video
+
+- Occasional crashes occur when using the external video source.
+- The audience sees a black screen for the host's view.
+
+#### Miscellaneous
+
+- Occasionally mixed streams in CDN streaming. 
+- Occasional crashes occur after joining the channel on some devices.
+
+**API Changes**
+
+To improve the user experience, we made the following changes in v2.9.0:
+
+#### Added
+
+- [`setExternalAudioSink`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a270c0607d443790e92cdbd0d45ba1732)
+- [`pullPlaybackAudioFrame`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae15064944870692e9a0a59fdc87654c4)
+- [`onLocalAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a59946a989f87c737899e2284539adf09)
+- [`onRemoteAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a24fd6b0d12214f6bc6fa7a9b6235aeff)
+- [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131)
+- [`onLocalAudioStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aeba2aa3fc29404fc6f25bff5c00bfdf9)
+- [`switchChannel`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a72f13225defc1b14dfb29820a0495da2)
+- [`startChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6f09ba685f8ab01d7dc06173286950f6)
+- [`updateChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#abd40d706379d27cf617376a504f394bd)
+- [`stopChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0f9f19e48c21190dd4e697dec632c328)
+- [`onChannelMediaRelayStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89fd95b3536e8e6afd5f001926162f66)
+- [`onChannelMediaRelayEvent`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a6fe2367e9ea61e48a4cc3b373d198b54)
+- [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html)::`txAudioBytes`, `txVideoBytes`, `rxAudioBytes`, and `rxVideoBytes`
+- [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html)::`encodedBitrate`, `encodedFrameWidth`, `encodedFrameHeight`, `encodedFrameCount`, and `codedType`
+- [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html)::`packetLossRate`
+
+#### Deprecated
+
+- `onMicrophoneEnabled`. Use LOCAL_AUDIO_STREAM_STATE_CHANGED(0) or LOCAL_AUDIO_STREAM_STATE_RECORDING(1) in the [`onLocalAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aeba2aa3fc29404fc6f25bff5c00bfdf9) callback instead. 
+- `onRemoteAudioTransportStats`. Use the [`onRemoteAudioStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54) callback instead.
+- `onRemoteVideoTransportStats`. Use the [`onRemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#abb7af6e2827bbd03c6ab8338a0f616ca) callback instead.
+- `onUserMuteVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131) callback with the following parameters instead:
+	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
+	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTE(6).
+
+- `onUserEnableVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131) callback with the following parameters instead:
+	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
+	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6).
+
+- `onUserEnableLocalVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131) callback with the following parameters instead:
+	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
+	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6).
+
+- `onFirstRemoteVideoDecoded`. Use REMOTE_VIDEO_STATE_STARTING(1) or REMOTE_VIDEO_STATE_DECODING(2) in the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131) callback instead.
+
+#### Deleted
+
+- `configPublisher`
+- `setVideoCompositingLayout`
+- `clearVideoCompositingLayout`
+- `onRemoteVideoStateChanged`
+
+
 ## v2.8.2
 
 v2.8.2 is released on Aug 1, 2019. 
@@ -43,7 +206,7 @@ This release fixed the interoperating problem with the Agora Web SDK.
 
 v2.8.1 is released on Jul. 20, 2019.
 
-### New features
+**New features**
 
 - Support for the x86-64 architecture.
 - Support for Android Q.
@@ -52,7 +215,7 @@ v2.8.1 is released on Jul. 20, 2019.
 
 v2.8.0 is released on Jul. 8, 2019.
 
-### New features
+**New features**
 
 #### 1. Supporting string usernames
 
@@ -80,12 +243,12 @@ To monitor the audio and video transmission quality during a call or live broadc
 
 This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBitrate` members in the [RemoteAudioStats](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) class.
 
-### Improvements
+**Improvements**
 
 This release adds a `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` member to the `reason` parameter of the [onConnectionStateChanged](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) callback. This member indicates a connection state change caused by the timeout of the connection keep-alive between the SDK and Agora's edge server.
 
 
-### Issues Fixed
+**Issues Fixed**
 
 #### Audio
 
@@ -99,7 +262,7 @@ This release adds a `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` member to the `r
 
 - When the log file path specified in the `setLogFile` method does not exist, no log file is generated and the default log file is incomplete.
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -122,7 +285,7 @@ To improve your experience, we made the following changes to the APIs:
 ## v2.4.1
 v2.4.1 is released on Jun 12, 2019.
 
-### Before getting started
+**Before getting started**
 
 Ensure that you read the following SDK behavior changes if you migrate from an earlier SDK version.
 
@@ -145,7 +308,7 @@ v2.4.1 also adds five error codes to the `error` parameter in the [onStreamPubli
 
 v2.4.1 renames the `receivedFrameRate` parameter to [rendererOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html#aa09441cb1b9a0f4318cd59b0ca5b3ffb) in the  [RemoteVideoStats](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html) class to more accurately describe the statistics of the remote video stream.
 
-### New features
+**New features**
 
 #### 1. Adding media metadata
 
@@ -180,7 +343,7 @@ To get the more accurate time of the first audio frame from a specified remote u
 
 The difference between the onFirstRemoteAudioDecoded and `onFirstRemoteAudioFrame` callbacks is that the `onFirstRemoteAudioFram`e callback occurs when the SDK receives the first audio packet. It occurs before the `onFirstRemoteAudioDecoded` callback.
 
-### Improvements
+**Improvements**
 
 #### 1. Playing multiple online audio effect files simultaneously
 
@@ -208,7 +371,7 @@ v2.4.1 assigns default values to various parameters in the [BeautyOptions](https
 - Improved the stability of video services.
 - Improved the stability of CDN streaming services.
 
-### Issues fixed
+**Issues fixed**
 
 #### Audio
 
@@ -226,7 +389,7 @@ v2.4.1 assigns default values to various parameters in the [BeautyOptions](https
 - Occasional crashes.
 - The app quits after calling `joinChannel`.
 
-### API changes
+**API changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -264,7 +427,7 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 
 v2.4.0 is released on April 1, 2019.
 
-### New Features
+**New Features**
 
 #### 1. Image enhancement
 
@@ -294,7 +457,7 @@ v2.4.0 adds the [`onAudioMixingStateChanged`](https://docs.agora.io/en/Video/API
 
 The SDK has two log files, each with a default size of 512 KB. In case some customers require more than the default size, v2.4.0 adds the [`setLogFileSize`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a50fd37c6f5b8fc144b18ed4620aee6fc) method for setting the log file size (KB).
 
-### Improvements
+**Improvements**
 
 #### 1. Accuracy of call quality statistics
 
@@ -316,7 +479,7 @@ v2.4.0 provides the following options for setting video encoder preferences:
 - Shortens the time to render the first remote video frame. 
 - Reduces the time delay when playing through the earpiece and minimizes the echo.
 
-### Issues Fixed
+**Issues Fixed**
 
 #### Audio
 
@@ -337,7 +500,7 @@ v2.4.0 provides the following options for setting video encoder preferences:
 - The user drop-offline time between Android and iOS is not unified.
 - The SEI information does not synchronize with the media stream when publishing transcoded streams to the CDN.
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -370,7 +533,7 @@ v2.4.0 changes the type of the [`frameRate`](https://docs.agora.io/en/Video/API%
 ## v2.3.3
 v2.3.3 is released on January 24, 2019. 
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional inaccurate statistics returned in the `onNetworkQuality` callback.
 - Occasional crashes on Huawei P9.
@@ -378,7 +541,7 @@ v2.3.3 is released on January 24, 2019.
 ## v2.3.2
 v2.3.2 is released on January 16, 2019.
 
-### Before Getting Started
+**Before Getting Started**
 
 Besides the new features and improvements mentioned below, it is worth noting that v2.3.2:
 
@@ -391,7 +554,7 @@ Before upgrading your SDK, ensure that the version is:
 - Native SDK v1.11 or later.
 - Web SDK v2.1 or later.
 
-### New Features
+**New Features**
 
 #### 1. Automatic exposure at a point of interest
 
@@ -415,7 +578,7 @@ This release also changes the behavior of the [adjustPlaybackSignalVolume](https
 
 See [Adjust the Volume](../../en/Video/volume_android.md) for the scenarios and corresponding APIs.
 
-### Improvements
+**Improvements**
 
 #### 1. Improves the accuracy of the call quality statistics
 
@@ -456,7 +619,7 @@ v2.3.2 changes the rating parameter in the [`rate`](https://docs.agora.io/en/Vid
 - Reduces the audio delay.
 - Supports Smartisan camera.
 
-### Issues Fixed
+**Issues Fixed**
 
 The following issues are fixed in v2.3.2:
 
@@ -480,7 +643,7 @@ The following issues are fixed in v2.3.2:
 - Occasional issues when using an external video source.
 - The cursor on the remote side is not in the same position as the local side when sharing the desktop.
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -506,7 +669,7 @@ To improve your experience, we made the following changes to the APIs:
 
 v2.3.1 is released on October 12, 2018. 
 
-### New features
+**New features**
 
 #### Disables/Re-enables the Local Audio Function
 
@@ -518,11 +681,11 @@ This method does not affect receiving or playing the remote audio streams.
 The difference between this method and the `muteLocalAudioStream` method is that the `enableLocalAudio` method does not capture or send any audio stream, while the `muteLocalAudioStream` method captures but does not send audio streams.
 
 
-### Improvements
+**Improvements**
 
 - Improves the SDK's adaptiveness to the Android video encoder.
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional crashes when switching between front and rear cameras.
 - Occasionally, failing to render the video on some Android devices.
@@ -537,7 +700,7 @@ The difference between this method and the `muteLocalAudioStream` method is that
 
 v2.3.0 is released on August 31, 2018.
 
-### Before Reading
+**Before Reading**
 
 -   To support video rotation and enable better quality for the custom video source, this version deprecates the `setVideoProfile` method and uses the `setVideoEncoderConfiguration` method instead to set the video encoding configurations. You can still use the `setVideoProfile` method, but Agora recommends using the `setVideoEncoderConfiguration` method to set the video profile because:
     -   During a live broadcast, users can set the video orientation mode as adaptive, under which the SDK can transfer rotated video frames without cropping them, thus avoiding the “big headshot” or blurry images at the player.
@@ -559,7 +722,7 @@ v2.3.0 is released on August 31, 2018.
 -   The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version below v2.1.0 and wish to migrate to the latest version, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 
 
-### New Features
+**New Features**
 
 #### 1. Fallback options for a live broadcast under unreliable network conditions
 
@@ -588,14 +751,14 @@ The <code>VideoEncoderConfiguration</code> class provides a set of configurable 
 
 The `backgroundImage` parameter is added to the `setLiveTranscoding` method allowing you to set the background image in the combined video of a live broadcast.
 
-### Improvements
+**Improvements**
 
 -   Improves the quality for one-on-one voice/video scenarios with optimized latency and smoothness, especially for areas like Southeast Asia, South America, Africa, and the Middle East.
 -   Improves the audio encoder efficiency in a live broadcast to reduce user traffic while ensuring the call quality.
 -   Improves the audio quality during a call or a live broadcast using the deep-learning algorithm.
 
 
-### Issues Fixed
+**Issues Fixed**
 
 - The users on the Web client cannot see the video sent from the Native client due to codec bugs.
 - Excessive increase in memory usage when multiple delegated hosts broadcast in the channel.
@@ -650,7 +813,7 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 - Occasional crashes on some Android devices when transmitting the video streams.
 
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -675,24 +838,15 @@ The following deprecated API methods are deleted and no longer supported from v2
 -   <code>switchView</code>
 -   <code>setSpeakerphoneVolume</code>
 
-
-### Backward Compatibility Issues
-
-None.
-
-### Known Issues
-
-None.
-
 ## v2.2.3 
 
 v2.2.3 is released on July 5, 2018. 
 
-### Read This First
+**Read This First**
 
 The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version below v2.1.0 and wish to migrate to the latest version, see `Token Migration Guide`.
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional online statistics crashes.
 - The broadcaster’s voice distorts occasionally on some Android devices.
@@ -709,7 +863,7 @@ The security keys are improved and updated in v2.1.0. If you are using an Agora 
 
 v2.2.2 is released on June 21, 2018.
 
-### Issues Fixed
+**Issues Fixed**
 
 - Fixed occasional online statistics crashes.
 - Fixed occasional audio crashes on some Android devices.
@@ -723,7 +877,7 @@ v2.2.2 is released on June 21, 2018.
 
 v2.2.1 is released on May 30, 2018.
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional crashes during gaming on some Android devices.
 - The soundtrack pointer cannot be retrieved on some Android devices.
@@ -735,7 +889,7 @@ v2.2.1 is released on May 30, 2018.
 
 v2.2.0 is released on May 4, 2018. 
 
-### New Features
+**New Features**
 
 #### 1. Play the audio effect in the channel
 
@@ -755,7 +909,7 @@ Adds the <code>remoteVideoStateChangedOfUid</code> method to get the state of th
 
 Adds the watermark function for users to add a PNG file to the local or CDN broadcast as a watermark. Adds the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> methods to add and delete watermarks in a local live-broadcast. Adds the <code>watermark</code> parameter in the <code>LiveTranscording</code> interface to add watermarks in CDN broadcasts.
 
-### Improvements
+**Improvements**
 
 #### 1. Audio volume indication
 
@@ -773,7 +927,7 @@ To test if the customers’ network condition can support voice or video calls b
 
 Improves the audio quality in scenarios that involve music playback.
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional screen display abnormalities when a large number of audience members join as the host in a live-broadcast channel.
 - Fixes occasional CDN streaming abnormalities when some app switches to run in the background during a live broadcast.
@@ -785,11 +939,11 @@ v2.1.3 is released on April 19, 2018.
 
 In v2.1.3, Agora updates the bitrate values of the <code>setVideoProfile</code> method in the Live-broadcast profile. The bitrate values in v2.1.3 stay consistent with those in v2.0. 
 
-### Issues Fixed
+**Issues Fixed**
 
 Occasional recording failures on some phones when a user leaves a channel and turns on the built-in recording device.
 
-### Improvements
+**Improvements**
 
 Improves the performance of screen sharing by shortening the time interval between which users switch from screen sharing to the normal Communication or Live-broadcast profile.
 
@@ -799,11 +953,11 @@ v2.1.2 is released on April 2, 2018.
 
 >  If you upgrade the SDK to v2.1.2 from a previous version, the live-broadcast video quality is better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth.
 
-### New Features
+**New Features**
 
 Extends the <code>setVideoProfile</code> method to enable users to manually set the resolution, frame rate, and bitrate of the video. 
 
-### Issues Fixed
+**Issues Fixed**
 
 Video freeze in DTX + AAC mode.
 
@@ -817,7 +971,7 @@ Agora has identified a critical issue in SDK v2.1. Upgrade to v2.1.1 if you are 
 
 v2.1.0 is released on March 7, 2018.
 
-### New Features
+**New Features**
 
 #### 1. Voice Optimization
 
@@ -859,7 +1013,7 @@ Adds the function of injecting an external video stream to an ongoing live broad
 
 Adds an <code>onCameraFocusAreaChanged</code> callback to report to the app when the camera focus area changes.
 
-### Improvements
+**Improvements**
 
 <table>
 <colgroup>
@@ -892,7 +1046,7 @@ Adds an <code>onCameraFocusAreaChanged</code> callback to report to the app when
 
 
 
-### Issues Fixed
+**Issues Fixed**
 
 -   Occasional playback noise on specific devices.
 -   Occasional crackling voice playback on specific devices.
@@ -905,7 +1059,7 @@ v2.0.2 is released on December 15, 2017, and fixes occasional audio routing issu
 
 ## v2.0 and Earlier
 
-### v2.0
+**v2.0**
 
 v2.0 is released on December 6, 2017. 
 
@@ -995,7 +1149,7 @@ Optimizes the hardware encoder by supporting encoding resolutions as low as 64 x
 -   Optimizes the volume balance control.
 
 
-### v1.14
+**v1.14**
 
 v1.14 is released on October 20, 2017. 
 
@@ -1022,11 +1176,11 @@ v1.14 is released on October 20, 2017.
 
 Camera related issues on Android devices.
 
-### v1.13.1
+**v1.13.1**
 
 v1.13.1 is released on September 28, 2017, and optimizes the echo issue under certain circumstances.
 
-### v1.13
+**v1.13**
 
 v1.13 is released on September 4, 2017. 
 
@@ -1047,7 +1201,7 @@ The video profile is controllable by the software codec.
 
 Occasional crashes on some devices
 
-### v1.12
+**v1.12**
 
 v1.12 is released on July 25, 2017.
 
