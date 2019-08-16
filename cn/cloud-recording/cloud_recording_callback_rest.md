@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Aug 16 2019 06:59:48 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 07:01:11 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 云端录制 RESTful API 提供回调服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -177,8 +177,12 @@ POST 请求头部的 `Content-type` 为 `application/json`。
 `eventType` 为 42 表示录制服务开始切片第一片录制文件， `details` 中包含以下字段：
 
 - `msgName`：String 类型，消息名称，即 `recorder_slice_start`。
-- `discontinueUtcMs`：Number 类型，上一次录制失败的结束时间，UTC 时间，精确到毫秒。如果与 `startUtcMs` 一致表示上一次录制没有失败。
-- `startUtcMs`：Number 类型，第一片录制切片开始的时间，UTC 时间，精确到毫秒。
+- `startUtcMs`：Number 类型，开始录制后第一片切片开始的时间，UTC 时间，精确到毫秒。
+- `discontinueUtcMs`：Number 类型，UTC 时间，精确到毫秒，正常情况下该字段值与 `startUtcMs` 一致。当录制发生异常中断时， Agora 云端录制会自动恢复录制，此时也会收到该事件通知，且该字段表示录制异常中断前最后一个正常的录制切片结束的时间。
+
+
+举例来说，某次录制生成第一个切片文件时，会收到回调通知该事件，其中`startUtcMS` 为第一个切片文件开始的时间。假设第 2 个 到第 N 个切片文件都是正常的，不会收到该事件通知，到第 N + 1 个切片时发生故障，导致该切片文件丢失且录制中断，此时重新开始录制后生成第 N + 2 个切片，会再次收到回调通知该事件，其中 `startUtcMs` 为第 N + 2 个切片开始的时间， `discontinueUtcMs` 为第 N 个切片结束的时间。
+
 
 ## 参考
 
