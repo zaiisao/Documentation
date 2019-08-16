@@ -3,7 +3,7 @@
 title: 如何通过 HTTP 认证
 description: 
 platform: All Platforms
-updatedAt: Fri Aug 16 2019 11:37:37 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 12:10:58 GMT+0800 (CST)
 ---
 # 如何通过 HTTP 认证
 在使用 RESTful API 前，你需要在 HTTP 请求头部中填入 `Authorization` 字段，进行认证。本文提供 Java 和 Swift 语言生成 Authorization 字段的示例代码，请参考代码获取相应的 `Authorization` 值。
