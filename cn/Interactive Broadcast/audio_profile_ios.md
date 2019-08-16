@@ -1,11 +1,11 @@
 
 ---
-title: 使用双声道/高音质
+title: 设置音频属性
 description: How to set audio profile for iOS
 platform: iOS
-updatedAt: Wed Dec 26 2018 09:43:51 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 06:30:42 GMT+0800 (CST)
 ---
-# 使用双声道/高音质
+# 设置音频属性
 ## 功能描述
  在一些比较专业的场景里，用户对声音的效果尤为敏感，比如语音电台，此时就需要对双声道和高音质的支持。
  所谓的高音质指的是我们提供采样率为 48 Khz、码率 192 Kbps 的能力，帮助用户实现高逼真的音乐场景，这种能力在语音电台、唱歌比赛类直播场景中应用较多。
