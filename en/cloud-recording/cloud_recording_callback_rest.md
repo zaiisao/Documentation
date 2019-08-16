@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Aug 16 2019 07:47:11 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 07:47:15 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 The Agora Cloud Recording RESTful API provides the callback service. You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -185,8 +185,10 @@ The types (`eventType`) of the Agora Cloud Recording callback events are listed 
 `eventType` 42 indicates that the recording service starts slicing the first recording file, and `details` contains the following fields:
 
 - `msgName`: String. The message name, `recorder_slice_start`.
-- `discontinueUtcMs`：Number. The UTC time when the last recording fails. If the last recording succeeds, this value is the same as `startUtcMs`.
-- `startUtcMs`：Number. The UTC time when the first slicing starts.
+- `startUtcMs`：Number. The UTC time (ms) when the recording starts (the starting time of the first slice file).
+- `discontinueUtcMs`：Number. In most cases this field is the same as `startUtcMs`. When the recording exits abnormally, Agora Cloud Recording service automatically resumes the recording, and  triggers this event. In this case, the value of this field is the UTC time (ms) when the last slice file stops.
+
+For example, imagine that you start a recording session and get this event notification in which the `startUtcMs` is the starting time of slice file 1. Then the recording session goes on and records slice file 2 to slice file N. When recording slice file N+1, an error occurs, slice file N+1 is lost, and the recording session stops. Agora Cloud Recording automatically resumes the recording and triggers this event again. In the event notification, `startUtcMs` is the time when slice file N+2 starts, and `discontinueUtcMs` is the time when slice file N stops.
 
 
 ## Reference
