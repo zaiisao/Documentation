@@ -1,11 +1,11 @@
 
 ---
-title: Set the Stereo/High-fidelity Audio Profile
-description: How to set high-quality audio
+title: Set the Audio Profile
+description: How to set high-quality audio on Android
 platform: Android
-updatedAt: Tue Dec 18 2018 02:58:32 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 06:05:29 GMT+0800 (CST)
 ---
-# Set the Stereo/High-fidelity Audio Profile
+# Set the Audio Profile
 ## Introduction 
 High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a 48-KHz sampling rate and a 192-Kbps bitrate. 
 
