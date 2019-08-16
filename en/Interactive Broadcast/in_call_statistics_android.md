@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: 
 platform: Android
-updatedAt: Fri Aug 16 2019 09:32:15 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 09:36:09 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 The in-call audio-and-video statistics reflect the overall quality of a call after the SDK joins a channel and are reported once every two seconds.
