@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 10:16:39 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 02:49:33 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides a RESTful API for you to control cloud recording through HTTP requests.
@@ -122,9 +122,37 @@ After the recording stops, the SDK triggers one of the following callbacks:
 - [`uploaded`](../../en/cloud-recording/cloud_recording_callback_rest.md): Occurs when all the recorded files are uploaded to the third-party cloud storage.
 - [`backuped`](../../en/cloud-recording/cloud_recording_callback_rest.md): Occurs when some of the recorded files fail to upload to the third-party cloud storage and upload to Agora Cloud Backup instead. Agora Cloud Backup automatically uploads these files to your cloud storage. If you cannot [play the recorded files](https://docs.agora.io/en/cloud-recording/cloud-recording/cloud_recording_onlineplay) after five minutes, contact Agora technical support.
 
-## FAQ
+If uploading takes a long time, the `stop` response returns the HTTP 206 status code, indicating that the recording stops but the uploading status is unknown. You need to get the uploading status from the callback events.
 
-See [Cloud Recording Integration FAQ](https://docs.agora.io/en/faqs/cloud_integration_faq) and [Errors](../../en/cloud-recording/cloud_recording_api_rest.md) if you have problems using Agora Cloud Recording.
+## Considerations
+
+- Call `acquire` to get a resource ID before calling `start.`
+- Use one resource ID for only one `start` request.
+- Do not call `query` after calling `stop.`
+
+The following are some common errors:
+
+- `acquire` ➡ `start` ➡ `start`
+
+  Repeating the `start` request with the same resource ID returns the HTTP 201 status code and error code 7.
+
+- `acquire` ➡ `start` ➡ `acquire` ➡ `start`
+
+  Repeating the acquire and start requests with the same parameters returns the HTTP 400 status code and error code 53.
+
+- `acquire` ➡ `start` ➡ Recording stops ➡ `query`
+
+  Calling `query` after the recording stops returns the HTTP 404 status code and error code 404. The recording stops in the following situations:
+
+  - When you call `stop`.
+  - When no user is in the channel for the idle time (30 seconds by default).
+  - When the asynchronous parameter check finds errors. This means that some parameters of `transcodingConfig` or `storageConfig` in the `start` request are invalid.
+
+- `acquire` ➡ `start` ➡ `stop` & `query`
+
+  Calling `stop` together with `query` affects the response of `stop`: The HTTP status code is 206 and the response does not have the `fileList` field.
+
+See [Cloud Recording Integration FAQ](https://docs.agora.io/en/faqs/cloud_integration_faq) and [Errors](../../en/cloud-recording/cloud_recording_api_rest.md) if you have other issues using Agora Cloud Recording.
 
 ## <a name="demo-rest"></a>Sample code
 
