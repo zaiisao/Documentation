@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Aug 16 2019 09:33:59 GMT+0800 (CST)
+updatedAt: Mon Aug 19 2019 01:45:39 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -42,7 +42,7 @@ If your app implements CDN streaming with the methods above, ensure that you upg
 
 #### 2. Reporting the state of the remote video
 
-This release extends the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) with more states of the remote video: STOPPED(0), STARTING(1), DECODING(2), FROZEN(3), and FAILED(4). It adds a reason parameter to the callback to indicate why the remote video state changes. The original `onRemoteVideoStateChanged` callback is deleted. If you upgrade your Native SDK to the latest version, ensure that you re-implement the `onRemoteVideoStateChanged` callback.
+This release extends the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) callback with more states of the remote video: STOPPED(0), STARTING(1), DECODING(2), FROZEN(3), and FAILED(4). It adds a reason parameter to the callback to indicate why the remote video state changes. The original `onRemoteVideoStateChanged` callback is deleted. If you upgrade your Native SDK to the latest version, ensure that you re-implement the `onRemoteVideoStateChanged` callback.
 
 The new callback reports most of the remote video states, and therefore deprecates the following callbacks. You can still use them, but we do not recommend doing so.
 
@@ -86,7 +86,7 @@ This release adds the [`onLocalAudioStats`](https://docs.agora.io/en/Video/API%2
 
 This release adds the following statistics in the `RtcStats`, `LocalVideoStats`, and `RemoteVideoStats` classes:
 
-- [`rtcStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html): The total number of the sent audio bytes, sent video bytes,  received audio bytes, and received video bytes during a session.
+- [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html): The total number of the sent audio bytes, sent video bytes,  received audio bytes, and received video bytes during a session.
 - [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html): The encoding bitrate, the width and height of the encoding frame, the number of frames, and the codec type of the local video.
 - [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html): The packet loss rate of the remote video.
 
@@ -136,20 +136,20 @@ To improve the user experience, we made the following changes in v2.9.0:
 
 #### Added
 
-- [onLocalAudioStateChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a)
-- [onRemoteAudioStateChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612)
-- [onRemoteVideoStateChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e)
-- [onLocalAudioStats](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0cb47df6a8ef7acee229eb307d6f32c3)
-- [switchChannel](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab)
+- [`onLocalAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a)
+- [`onRemoteAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612)
+- [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e)
+- [`onLocalAudioStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0cb47df6a8ef7acee229eb307d6f32c3)
+- [`switchChannel`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab)
 - [`startChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acb72f911830a6fdb77e0816d7b41dd5c)
 - [`updateChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#afad0d3f3861c770200a884b855276663)
 - [`stopChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab4a1c52a83a08f7dacab6de36f4681b8)
 - [`onChannelMediaRelayStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8f22b85194d4b771bbab0e1c3b505b22)
 - [`onChannelMediaRelayEvent`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89a4085f36c25eeed75c129c82ca9429)
-- [`RtcEngineContext`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_engine_context.html)::context
-- [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html)::`txAudioBytes`, `txVideoBytes`, `rxAudioBytes`, and `rxVideoBytes`
-- [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html)::`encodedBitrate`, `encodedFrameWidth`, `encodedFrameHeight`, `encodedFrameCount`, and `codedType`
-- [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html)::`packetLossRate`
+- [`RtcEngineContext`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_engine_context.html): context
+- [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html): `txAudioBytes`, `txVideoBytes`, `rxAudioBytes`, and `rxVideoBytes`
+- [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html): `encodedBitrate`, `encodedFrameWidth`, `encodedFrameHeight`, `encodedFrameCount`, and `codedType`
+- [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html): `packetLossRate`
 
 #### Deprecated
 

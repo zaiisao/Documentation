@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Aug 16 2019 08:28:08 GMT+0800 (CST)
+updatedAt: Mon Aug 19 2019 01:45:07 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -56,7 +56,7 @@ If your app implements CDN streaming with the methods above, ensure that you upg
 
 #### 2. Reporting the state of the remote video
 
-This release extends the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131) with more states of the remote video: STOPPED(0), STARTING(1), DECODING(2), FROZEN(3), and FAILED(4). It adds a reason parameter to the callback to indicate why the remote video state changes. The original `onRemoteVideoStateChanged` callback is deleted. If you upgrade your Native SDK to the latest version, ensure that you re-implement the `onRemoteVideoStateChanged` callback.
+This release extends the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131) callback with more states of the remote video: STOPPED(0), STARTING(1), DECODING(2), FROZEN(3), and FAILED(4). It adds a reason parameter to the callback to indicate why the remote video state changes. The original `onRemoteVideoStateChanged` callback is deleted. If you upgrade your Native SDK to the latest version, ensure that you re-implement the `onRemoteVideoStateChanged` callback.
 
 The new callback reports most of the remote video states, and therefore deprecates the following callbacks. You can still use them, but we do not recommend doing so.
 
@@ -165,9 +165,9 @@ To improve the user experience, we made the following changes in v2.9.0:
 - [`stopChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0f9f19e48c21190dd4e697dec632c328)
 - [`onChannelMediaRelayStateChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89fd95b3536e8e6afd5f001926162f66)
 - [`onChannelMediaRelayEvent`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a6fe2367e9ea61e48a4cc3b373d198b54)
-- [`RtcStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html)::`txAudioBytes`, `txVideoBytes`, `rxAudioBytes`, and `rxVideoBytes`
-- [`LocalVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html)::`encodedBitrate`, `encodedFrameWidth`, `encodedFrameHeight`, `encodedFrameCount`, and `codedType`
-- [`RemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html)::`packetLossRate`
+- [`RtcStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html): `txAudioBytes`, `txVideoBytes`, `rxAudioBytes`, and `rxVideoBytes`
+- [`LocalVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html): `encodedBitrate`, `encodedFrameWidth`, `encodedFrameHeight`, `encodedFrameCount`, and `codedType`
+- [`RemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html): `packetLossRate`
 
 #### Deprecated
 

@@ -3,7 +3,7 @@
 title: Make Payments
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 15 2019 13:55:32 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 23:09:29 GMT+0800 (CST)
 ---
 # Make Payments
 This page shows how to make payments in Agora Dashboard.

@@ -3,7 +3,7 @@
 title: Chrome Extension for Screen Sharing
 description: 
 platform: Web
-updatedAt: Wed Mar 27 2019 01:18:40 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 13:46:36 GMT+0800 (CST)
 ---
 # Chrome Extension for Screen Sharing
 To enable screen sharing on Google Chrome, you need to add the Google Chrome extension provided by Agora for screen sharing.
@@ -38,13 +38,11 @@ Implement and check the extension ID in Google Chrome. You need the `extensionId
 
 ### 3. Change the domain name
 
-Open the `manifest.json` file in the extension package, and change the domain name in the line beginning with **matches**.
+Open the `manifest.json` file in the extension package, and change the domain name to the one of your web app in the line beginning with **matches**.
 
 <img alt="../_images/chrome_extension_url.png" src="https://web-cdn.agora.io/docs-files/en/chrome_extension_url.png" />
 
 <a name = "Uploading-the-Chrome-Screen-sharing-Extension"></a>
-
-> If you run the extension on localhost, you do not need to set `matches`.
 
 ## Uploading the Google Chrome Screen-sharing Extension
 

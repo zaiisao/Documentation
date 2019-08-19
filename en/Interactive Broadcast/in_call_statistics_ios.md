@@ -3,178 +3,154 @@
 title: Report In-call Statistics
 description: 
 platform: iOS
-updatedAt: Fri Aug 16 2019 09:13:24 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 10:33:39 GMT+0800 (CST)
 ---
 # Report In-call Statistics
-The in-call audio-and-video statistics reflect the overall quality of a call after the SDK joins a channel and are reported once every two seconds.
+## Introduction
 
-The statistics include the:
-- Uplink and downlink ratings of each user in the channel.
-- Video statistics of the **local** user.
-  - Sent frame rate and bitrate.
-- Audio statistics of the **remote** users:
-  - End-to-end audio statistics.
-  - Transport-layer audio statistics.
-- Video statistics of the **remote** users:
-  - End-to-end video statistics.
-  - Transport-layer video statistics.
+**After joining the channel**, the SDK triggers the following callbacks related to the call quality **once every two seconds**. You can see the last mile network quality, local statistics, audio quality, and video quality of the current call.
 
-## Uplink and Downlink Ratings of Each User in the Channel
+## Network Quality Report
 
-![](https://web-cdn.agora.io/docs-files/1546918262333)
+The `networkQuality` callback reports the uplink and downlink last mile network quality of each user/host in the current call, see [Quality Rating](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/namespaceagora_1_1rtc.html#aeaf419fcafaa4d58da8b6d8718e31891) for details. Last mile refers to the network from your device to Agora’s edge server. The uplink last mile quality rating is based on the actual transmission bitrate, the uplink network packet loss rate, the average round-trip delay, and the uplink network jitter; while the downlink last mile quality rating is based on the downlink network packet loss rate, the average round-trip delay, and the downlink network jitter.
 
-### Feature Description
+>- In the communication profile, you receive network quality reports of all the users (including yours) in the channel once every two seconds.
+- In the live broadcast profile, if you are the host, you receive network quality reports of all hosts (including yours) in the channel once every two seconds; if you are the audience, you receive the report of all hosts and yourself once every two seconds.
+<a name="RTT"></a>
+- The higher the ratio of the actual transmission bitrate to the target transmission bitrate, the better the call quality and the higher the network quality.
+- **The average round-trip delay** refers to the average value of multiple round-trip delays in the reported interval.
 
-After joining a channel, you can get the ratings of the uplink or downlink last-mile network quality of each user/host in a channel through the `networkQuality` callback.  
+## Statistics report
 
-The `networkQuality` callback uses the `uid` parameter. If a channel has multiple users/hosts, the SDK triggers the callback as many times. The ratings include: 
+The `reportRtcStats` callback reports call statistics. You can see the duration, the number of users in the channel, the system CPU usage, the application CPU usage, and the following parameters of the current call.
 
-- `txQuality`: The uplink last-mile (from the device to the Agora edge server) network quality rating (EXCELLENT~VBAD) <sup>[1]</sup> in terms of:
-  - The ratio of the sent uplink video bitrate to the target uplink bitrate. The higher the ratio, the higher the quality. 
-  - The uplink packet loss rate.
-  - The average round-trip time (RTT).
-  - The uplink jitter.
-- `rxQuality`: The downlink last-mile network quality rating (EXCELLENT~VBAD) <sup>[1]</sup> in terms of:
-  - The downlink packet loss rate. 
-  - The average round-trip time (RTT).
-  - The downlink jitter.
+| Parameter                           | Description                                                  | Comment                                                      |
+| :---------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| `txBytes`/`rxBytes`                 | The total number of bytes sent/received.                     | The number of bytes accumulated since joining the channel.   |
+| `txAudioBytes`/`rxAudioByte`        | The total number of audio bytes sent/received.               | The number of bytes accumulated since joining the channel.   |
+| `txVideoBytes`/`rxVideoBytes`       | The total number of video bytes sent/received.               | The number of bytes accumulated since joining the channel.   |
+| `txKBitRate`/`rxKBitRate`           | The bitrate sent/received.                                   | The actual bitrate sent/received in the reported interval.   |
+| `txAudioKBitRate`/`rxAudioKBitRate` | The bitrate sent/received of the audio packet.               | The actual bitrate sent/received in the reported interval.   |
+| `txVideoKBitRate`/`rxVideoKBitRate` | The bitrate sent/received of the video packet.               | The actual bitrate sent/received in the reported interval.   |
+| `lastmileDelay`                     | The network delay from the local client to Agora’s edge server. | <li>This refers to half of [the average round-trip delay](#RTT), and not the **one-way** network delay from the client to Agora’s edge server or vice versa. <li>The network delay here does not distinguish between the audio and video delay, and is the data obtained by the UDP packet. |
+| `txPacketLossRate`                  | The packet loss rate from the local client to Agora’s edge server. | <li>The larger value between audio’s and video’s uplink packet loss rate. <li>The packet loss rate before using the **anti-packet-loss** method. |
+| `rxPacketLossRate`                  | The packet loss rate from Agora’s edge server to the local client. | <li>The larger value between audio’s and video’s downlink packet loss rate.  <li>The packet loss rate before using the **anti-packet-loss** method. |
 
-<a name ="table"></a>
-> [1] Quality Rating Table:
->
-> | Rating | Description                                                  |
-> | ------ | :----------------------------------------------------------- |
-> | 0      | UNKNOWN: The network quality is unknown.                     |
-> | 1      | EXCELLENT: The network quality is excellent.                 |
-> | 2      | GOOD: The network quality is quite good, but the bitrate may be slightly lower than excellent. |
-> | 3      | POOR: Users can feel the communication slightly impaired.    |
-> | 4      | BAD: Users cannot communicate smoothly.                      |
-> | 5      | VBAD: The network is so bad that users can barely communicate. |
-> | 6      | DOWN: The network is disconnected and users cannot communicate at all.|
+## Audio Quality Report
 
-### API Reference
+### Statistics of local audio streams
+
+The `localAudioStats` callback reports the statistics of the audio streams sent. You can see the number of channels (mono or dual), the sample rate, and the **average** sending bitrate in the reported interval.
+
+>The SDK triggers this callback once every two seconds. The sample rate refers to the actual sample rate of the audio streams sent in the reported interval. 
+	
+<a name="32"></a>
+### State changes of local audio streams
+
+When the state of the local audio stream changes (including the state of the audio recording and encoding), the SDK triggers the `localAudioStateChange` callback to report the current state. You can troubleshoot with the error code when exceptions occur.
+
+### Statistics of remote audio streams
+
+![](https://web-cdn.agora.io/docs-files/1565945275984)
+
+The `remoteAudioStats` callback reports the audio statistics of each remote user/host in the current call. You can see the quality of the audio stream sent by each remote user/host (see [Quality Rating](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/namespaceagora_1_1rtc.html#aeaf419fcafaa4d58da8b6d8718e31891)), the number of channels (mono or dual), and the following parameters.
+
+| Parameter               | Description                                                  | Comment                                                      |
+| :---------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| `networkTransportDelay` | The network delay from the sender to the receiver.           | Stages 2 + 3 + 4 in the figure above                         |
+| `jitterBufferDelay`     | The network delay from the receiver to the network jitter buffer. | Stage 5 in the figure above                                  |
+| `audioLossRate`         | The frame loss rate of the received remote audio streams in the reported interval. | <li>Stages 2 + 3 + 4 + 5 in the figure above<li>In a reported interval, audio **freeze** occurs when the audio frame loss rate reaches 4%. |
+| `receivedSampleRate`    | The sample rate of the received remote audio streams in the reported interval. |                                                              |
+| `receivedBitrate`       | The **average** bitrate of the received remote audio streams in the reported interval. |                                                              |
+| `totalFrozenTime`       | The total **freeze** time (ms) of the remote audio streams after the remote user joins the channel. | <li>Agora defines `totalFrozenTime` = The number of times the audio freezes × two × 1000 (ms).<li>The total time is the cumulative duration after the remote user joins the channel. |
+| `frozenRate`            | The total audio freeze time as a percentage of the total time when the audio is available. | When the remote user/host neither stops sending the audio stream nordisables the audio module after joining the channel, the audio is **available**. |
+
+The `remoteAudioStats` callback reports statistics more closely linked to the real-user experience of the audio transmission quality. Even if network packet loss occurs, users may find the overall audio quality acceptable because the audio frame loss rate of the received audio streams may not be high due to the **anti-packet-loss** and congestion control methods, such as forward error correction (FEC), retransmissions and bandwidth estimation.
+
+
+> - In the communication profile, you receive the audio stream statistics of all the remote users (excluding yours) in the channel once every two seconds.
+- In the live broadcast profile, if you are the host, you receive the audio stream statistics of all remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, you receive the statistics of all hosts in the channel once every two seconds.
+- Agora's **audio module** refers to the audio processing process, and not the actual module in the SDK. When sending audio streams, the audio module refers to the processes of audio sampling, pre-processing, and encoding; when receiving audio streams, the audio module refers to the processes of audio decoding, post-processing, and playback.
+- Users can only turn on/off their own audio modules.
+- By default, the audio freezes at most once in each reported interval.
+
+<a name="34"></a>	
+### State changes of remote audio streams 
+
+When the state of **remote** audio stream changes, the SDK triggers the `remoteAudioStateChangedOfUid` callback to report the current state and the reason for the state change.
+
+> - In the communication profile, this callback reports to you the audio stream state information of all the remote users (excluding yours) in the channel once every two seconds.
+- In the live broadcast profile, if you are the host, this callback reports to you the audio stream state information of all the remote hosts(excluding yours) in the channel once every two seconds; if you are the audience, this callback reports to you the audio stream state information of all the remote hosts in the channel once every two seconds.
+
+## Video Quality Report
+
+### Statistics of local video streams
+
+The `localVideoStats` callback reports the statistics of the video streams sent. You can see the dimensions of the encoding frame and the following parameters.
+
+> If you have called the `enableDualStreamMode` method to enable [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode), this callback reports the statistics of the high-video streams sent.
+
+| Parameter                 | Description                                                  | Comment                                                      |
+| :------------------------ | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| `rendererOutputFrameRate` | The output frame rate of the local video renderer.           |                                                              |
+| `encoderOutputFrameRate`  | The output frame rate of the local video encoder.            |                                                              |
+| `targetBitrate`           | The target bitrate of the current encoder.                   | This value is estimated by the SDK based on current network conditions. |
+| targetFrameRate           | The target frame rate of the current encoder.                |                                                              |
+| `encodedBitrate`          | The bitrate of the encoding video.                           | Does not include the bitrate of the retransmission videos.   |
+| `sentBitrate`             | The bitrate of the video sent in the reported interval.      | Does not include the bitrate of the retransmission videos.   |
+| `sentFrameRate`           | The frame rate of the video sent in the reported interval.   | Does not include the frame rate of the retransmission videos. |
+| `encodedFrameCount`       | The total frames of the video sent.                          | The number of frames accumulated since joining the channel.  |
+| `codecType`               | The codec type of the local video.                           | <li>`VIDEO_CODEC_VP8 = 1`: VP8<li>`VIDEO_CODEC_H264 = 2`: (Default) H.264 |
+| `qualityAdaptIndication`  | The local video quality change in terms of `targetBitrate` and `targetFrameRate` in thisreported interval. | Compared to the video quality in the last statistics (two seconds ago), the video quality change in this reported interval:<li>The quality stays the same.<li>The quality improves.<li>The quality deteriorates. |
+
+<a name="42"></a>
+### State changes of local video streams
+
+When the state of the local video changes, the SDK triggers the `localVideoStateChange` callback to report the current state. You can troubleshoot with the error code when exceptions occur.
+
+### Statistics of remote video streams
+
+![](https://web-cdn.agora.io/docs-files/1565945292345)
+
+The `remoteVideoStats` callback reports the video statistics of each remote user/host in the current call. You can see their video dimensions and the following parameters.
+
+| Parameter                 | Description                                                  | Comment                                                      |
+| :------------------------ | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| `rxStreamType`            | The type of video streams.                                   | High-video streams or low-video streams, see [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode). |
+| `receivedBitrate`         | The bitrate of the video received in the reported interval.  |                                                              |
+| `packetLossRate`          | The packet loss rate of the video received in the reported interval. | <li>Stages two + 3 + 4 in the figure above<li>The packet loss rate after using the **anti-packet-loss** method, which is lower than before. |
+| `decoderOutputFrameRate`  | The output frame rate of the remote video decoder.           |                                                              |
+| `rendererOutputFrameRate` | The output frame rate of the remote video renderer.          |                                                              |
+| `totalFrozenTime`         | The total **freeze** time (ms) of the remote video stream after the remote user joins the channel. | In a video call or video broadcasting session where the frame rate is set to no less than 5 fps, video **freeze** occurs when the time interval between two adjacent renderable video frames is more than 500 ms. |
+| `frozenRate`              | The total video freeze time as a percentage of the total time when the video is available. | When the remote user/host neither stops sending the video stream nor disables the video module after joining the channel, the video is **available**. |
+
+> - In the communication profile, you receive video stream statistics of all the remote users (excluding yours) in the channel once every two seconds.
+- In the live broadcast profile, if you are the host, you receive video stream statistics of all the remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, you receive the statistics for all the hosts in the channel once every two seconds.
+- Agora’s **video module** refers to the video processing process, and not the actual module in the SDK. When sending video streams, the video module refers to the processes of video capturing, pre-processing, and encoding; when receiving video streams, the video module refers to the processes of video decoding, post-processing, and rendering/playing.
+- Users can only turn on/off their own video modules.
+
+<a name="44"></a>
+### State changes of remote video streams
+
+When the state of remote video streams changes, the SDK triggers the `remoteVideoStateChangedOfUid` callback to report the current state and the reason for the state change.
+
+> - In the communication profile, this callback reports to you the video stream state information of all the remote users (excluding yours) in the channel once every two seconds.
+- In the live broadcast profile, if you are the host, this callback reports to you the video stream state information of all the remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, this callback reports to you the video stream state information of all the remote hosts in the channel once every two seconds.
+
+## API reference
 
 [`networkQuality`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkQuality:txQuality:rxQuality:)
-
-```objective-c
-- (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine networkQuality:(NSUInteger)uid txQuality:(AgoraNetworkQuality)txQuality rxQuality:(AgoraNetworkQuality)rxQuality
-```
-
-### Considerations
-
-Here are the differences between the `networkQuality` and `lastmileQuality` callbacks:
-
-`networkQuality`: 
-- The SDK triggers the `networkQuality` callback after a user joins a channel. 
-- The `networkQuality` callback reports the uplink and downlink last-mile quality between the device of each user/host in a channel.
-- If a channel has multiple channels, the SDK triggers the `networkQuality` callback as many times. 
-
-`lastmileQuality`:
-- The SDK triggers the `lastmileQuality` callback when a user calls the `enableLastmileTest` method before joining a channel.
-- The `lastmileQuality` callback reports the uplink and downlink last-mile quality between the local device and Agora's edge server.
-
-## Video Statistics of the Local User
-
-### Feature Description
-
-This feature reports the video quality of the local video stream.
-
-- `onLocalVideoStats`: The SDK triggers this callback once every two seconds to report the video quality of the local video stream. This callback returns the following information: 
-  - `sentBitrate`: The average sending bitrate (Kbps) since the last count.
-  - `sentFrameRate`: The average sending frame rate (fps).
-  - `targetBitrate`: The target bitrate (Kbps) of the current encoder. This value is estimated by the SDK based on the current network conditions.
-  - `targetFrameRate`: The target frame rate (fps) of the current encoder.
-  - `qualityAdaptIndication`: The adaptation of the local video (mainly the bitrate or the frame rate) compared with the statistics of the last count:
-	- `ADAPT_NONE` = 0: No adaptation for the local video bitrate and frame rate.
-	- `ADAPT_UP_BANDWIDTH` = 1: The local video bitrate or frame rate increases due to a bandwidth increase.
-	- `ADAPT_DOWN_BANDWIDTH` = 2: The local video bitrate or frame rate decreases due to a bandwidth decrease.
-
-### API Reference
-
+[`reportRtcStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportRtcStats:)
+[`localAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/v2.9.0/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioStats:)
+[`localAudioStateChange`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/v2.9.0/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioStateChange:error:)
+[`remoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:)
+[`remoteAudioStateChangedOfUid`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/v2.9.0/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStateChangedOfUid:state:reason:elapsed:)
 [`localVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStats:)
+[`localVideoStateChange`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:)
+[`remoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteVideoStats:)
+[`remoteVideoStateChangedOfUid`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteVideoStateChangedOfUid:state:)
 
-```objective-c
-- (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine localVideoStats:(AgoraRtcLocalVideoStats *_Nonnull)stats
-```
+## Considerations
 
-## Audio Statistics of the Remote Users
-
-![](https://web-cdn.agora.io/docs-files/1546918273775)
-
-### Feature Description
-
-As shown in the figure above, this feature reports the end-to-end audio quality   and of the transport layer.
-
-- `remoteAudioStats`: The SDK triggers this callback once every two seconds to report the end-to-end quality of a remote audio stream that is closely linked to the real-user experience. This callback returns the following information: 
-  - `quality`: Audio quality rating at the receiver's end (EXCELLENT～VBAD) <sup>[2]</sup>.
-  - `networkTransportDelay`: Network delay in the transport layer (ms); `networkTransportDelay` = Delay 2 + Delay 3 + Delay 4.
-  - `jitterBufferDelay`: Jitter buffer delay at the receiver's end (ms); `jitterBufferDelay` = Delay 5.
-  - `audioLossRate`: Audio packet loss rate (%).
-- `audioTransportStatsOfUid`: The SDK triggers this callback once every two seconds to report the transport layer quality of a remote audio stream. This callback returns the following information: 
-  - `delay`: Network delay in the transport layer (ms); `delay` = Delay 2 + Delay 3 + Delay 4.
-  - `lost`: Audio packet loss rate in the transport layer (%); `lost` = (packetLoss 2 + packetLoss 3 + packetLoss 4) / totalPacketsSent.
-  - `rxKBitRate`: Received audio bitrate (Kbps).
-
-> [2] See the [quality rating table](#table) above. 
-
-### API Reference
-
-- [`remoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:)
-
-```objective-c
-- (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine remoteAudioStats:(AgoraRtcRemoteAudioStats *_Nonnull)stats
-```
-
-- [`audioTransportStatsOfUid`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:audioTransportStatsOfUid:delay:lost:rxKBitRate:)
-
-```objective-c
-- (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine audioTransportStatsOfUid:(NSUInteger)uid delay:(NSUInteger)delay lost:(NSUInteger)lost rxKBitRate:(NSUInteger)rxKBitRate
-```
-
-### Considerations
-
-Here is the difference between the `remoteAudioStats` and `audioTransportStatsOfUid` callbacks:
-
-- The `remoteAudioStats` callback reports the overall audio quality from end to end that is closely linked to the real-user experience. Schemes such as FEC (Forward Error Correction) or retransmission counter the frame loss rate. Hence, users may find the overall audio quality acceptable even when the packet loss rate is high. 
-- `audioTransportStatsOfUid` callback reports the network quality between the edge servers at the two ends with objective audio statistics, such as the packet loss rate and network delay. 
-
-
-## Video Statistics of the Remote Users
-
-![](https://web-cdn.agora.io/docs-files/1546918285262)
-
-### Feature Description
-
-As shown in the figure above, this feature reports the video quality of the end-to-end and transport layer.
-
-- `remoteVideoStats`: The SDK triggers this callback once every two seconds to report the end-to-end quality of a remote video stream that is closely linked to the real-user experience. This callback returns the following information:
-  - `receivedBitrate`: Received bitrate (Kbps).
-  - `receivedFrameRate`: Received frame rate (fps).
-  - `rxStreamType`: Received stream type.
-- `videoTransportStatsOfUid`: The SDK triggers this callback once every two seconds to report the transport layer quality of a remote video stream. This callback returns the following information: 
-  - `delay`: Network delay on the transport layer (ms); `delay` = Delay 2 + Delay 3 + Delay 4.
-  - `lost`: Video packet loss rate on the transport layer (%); `lost` = (packetLoss 2 + packetLoss 3 + packetLoss 4) / totalPacketsSent.
-  - `rxKBitRate`: Received video bitrate (Kbps).
-
-### API Reference
-
-- [`remoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteVideoStats:)
-
-```objective-c
-- (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine remoteVideoStats:(AgoraRtcRemoteVideoStats *_Nonnull)stats
-```
-
-- [`videoTransportStatsOfUid`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:videoTransportStatsOfUid:delay:lost:rxKBitRate:)
-
-```objective-c
-- (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine videoTransportStatsOfUid:(NSUInteger)uid delay:(NSUInteger)delay lost:(NSUInteger)lost rxKBitRate:(NSUInteger)rxKBitRate
-```
-
-### Considerations
-
-Here is the difference between the `videoTransportStatsOfUid` and `remoteVideoStats` callbacks:
-
-- The `videoTransportStatsOfUid` callback reports the network quality between the Agora edge servers at the two ends with objective video statistics, such as the packet loss rate and network delay. 
-- The `remoteVideoStatss` callback reports the overall video quality from end to end that is closely linked to the real-user experience. 
-
+The SDK does not trigger the [`localAudioStateChange`](#32), [`remoteAudioStateChangedOfUid`](#34), [`localVideoStateChange`](#42), and [`remoteVideoStateChangedOfUid`](#44) callbacks once every two seconds. See their respective trigger conditions on this page.
 

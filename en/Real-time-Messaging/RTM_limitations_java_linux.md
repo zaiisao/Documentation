@@ -36,3 +36,4 @@ Supports channel and peer-to-peer messages, invitation content, and invitation r
 
 - Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. If you have special requirements, contact sales-us@agora.io.
 - The current version supports querying the online status of a maximum of 256 users.
+- Attribute settings in one attribute operation should not exceed 32 KB in size, and the number of key/value pairs you set in one attribute operation should not exceed 32. 
