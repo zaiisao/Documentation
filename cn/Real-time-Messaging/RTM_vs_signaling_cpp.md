@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux CPP
-updatedAt: Mon Aug 19 2019 09:45:09 GMT+0800 (CST)
+updatedAt: Mon Aug 19 2019 09:45:13 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -67,21 +67,21 @@ updatedAt: Mon Aug 19 2019 09:45:09 GMT+0800 (CST)
 
 | 方法                       | 信令             | RTM 实时消息                          |
 | -------------------------- | ---------------- | ------------------------------------- |
-| 设置本地用户属性           | `setAttr`        | `addOrUpdateLocalUserAttributes`      |
-| 获取本地用户的某个属性     | `getAttr`        | `getUserAttributesBykeys`<sup>1</sup> |
-| 获取本地用户的全部属性     | `getAttrAll`     | `getUserAttributes`<sup>2</sup>       |
-| 获取指定用户的某个属性     | `getUserAttrAll` | `getUserAttributes`                   |
-| 全量替换本地用户的全部属性 | N/A              | `setLocalUserAttributes`              |
-| 删除本地用户的指定属性     | N/A              | `deleteLocaluserAttributeByKeys`      |
-| 清空本地用户全部属性       | N/A              | `clearLocalUserAttributes`            |
+| 设置本地用户属性           | `setAttr`        | [addOrUpdateLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a0a63923bd1e81e60d6ca54213a329747)      |
+| 获取本地用户的某个属性     | `getAttr`        | [getUserAttributesBykeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#af011235917c291df5581f92afa35532f)<sup>1</sup> |
+| 获取本地用户的全部属性     | `getAttrAll`     | [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a14cac887f9adb390621dd0427092a65b)<sup>2</sup>       |
+| 获取指定用户的某个属性     | `getUserAttrAll` | [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a14cac887f9adb390621dd0427092a65b)                   |
+| 全量替换本地用户的全部属性 | N/A              | [setLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a86dcbfc38c665be8565f06c534338d33)              |
+| 删除本地用户的指定属性     | N/A              | [deleteLocaluserAttributeByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#acb669f6c4c28e08cdf889df11e1ddeb3)      |
+| 清空本地用户全部属性       | N/A              | [clearLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#acc5eee875f4166fe455cde7aff1ad738)            |
 |                            |                  |                                       |
 
 | 事件                   | 信令                    | RTM 实时消息                                                 |
 | ---------------------- | ----------------------- | ------------------------------------------------------------ |
-| 返回用户属性相关的结果 | `onUserAttributeResult` | <li>`onSetLocalUserAttributesResult` <li> `onAddorUpdateLocalUserAttributesResult` <li> `onDeleteLocalUserAttributesResult` <li> `onClearLocalUserAttributesResult` <li> `onGetUserAttributesResult` |
+| 返回用户属性相关的结果 | `onUserAttributeResult` | <li>[onSetLocalUserAttributesResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#ac01ea1ff17082bbf3c8cfbaccef4dfe8) <li> [onAddOrUpdateLocalUserAttributesResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#ab21ea7e02361debe4ebbf558cc80f268) <li> [onDeleteLocalUserAttributesResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a2b98a102d2bb9664552e30d257679887) <li> [onClearLocalUserAttributesResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a94bbff8cdfee2ee306d66f73c1a29aa3) <li> [onGetUserAttributesResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a76058e05b9a623645ba05ea1d1796007) |
 
-> - <sup>1</sup> `getuserAttributesBykeys` 方法允许你获取本地用户的一系列属性。
-> - <sup>2</sup> `getUserAttributes` 方法允许你获取本地用户或指定远端用户的用户属性。
+> - <sup>1</sup> [getuserAttributesBykeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#af011235917c291df5581f92afa35532f) 方法允许你获取本地用户的一系列属性。
+> - <sup>2</sup> [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a14cac887f9adb390621dd0427092a65b) 方法允许你获取本地用户或指定远端用户的用户属性。
 
 ## 加入离开频道相关
 
