@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Thu Aug 15 2019 09:28:42 GMT+0800 (CST)
+updatedAt: Mon Aug 19 2019 09:16:23 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -67,21 +67,21 @@ updatedAt: Thu Aug 15 2019 09:28:42 GMT+0800 (CST)
 
 | 方法                       | 信令             | RTM 实时消息                          |
 | -------------------------- | ---------------- | ------------------------------------- |
-| 设置本地用户属性           | `setAttr`        | `addOrUpdateLocalUserAttributes`      |
-| 获取本地用户的某个属性     | `getAttr`        | `getUserAttributesBykeys`<sup>1</sup> |
-| 获取本地用户的全部属性     | `getAttrAll`     | `getUserAttributes`<sup>2</sup>       |
-| 获取指定用户的某个属性     | `getUserAttrAll` | `getUserAttributes`                   |
-| 全量替换本地用户的全部属性 | N/A              | `setLocalUserAttributes`              |
-| 删除本地用户的指定属性     | N/A              | `deleteLocaluserAttributeByKeys`      |
-| 清空本地用户全部属性       | N/A              | `clearLocalUserAttributes`            |
+| 设置本地用户属性           | `setAttr`        | [addOrUpdateLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/addOrUpdateLocalUserAttributes:completion:)      |
+| 获取本地用户的某个属性     | `getAttr`        | [getUserAttributesBykeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getUserAttributes:ByKeys:completion:)<sup>1</sup> |
+| 获取本地用户的全部属性     | `getAttrAll`     | [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getUserAllAttributes:completion:)<sup>2</sup>       |
+| 获取指定用户的某个属性     | `getUserAttrAll` | [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getUserAllAttributes:completion:)                   |
+| 全量替换本地用户的全部属性 | N/A              | [setLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setLocalUserAttributes:completion:)              |
+| 删除本地用户的指定属性     | N/A              | [deleteLocaluserAttributeByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/deleteLocalUserAttributesByKeys:completion:)      |
+| 清空本地用户全部属性       | N/A              | [clearLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/clearLocalUserAttributesWithCompletion:)            |
 |                            |                  |                                       |
 
 | 事件                   | 信令                    | RTM 实时消息                                                 |
 | ---------------------- | ----------------------- | ------------------------------------------------------------ |
-| 返回用户属性相关的结果 | `onUserAttributeResult` | <li>AgoraRtmSetLocalUserAttributesBlock <li>AgoraRtmAddOrUpdateLocalUserAttributesBlock <li>AgoraRtmDeleteLocalUserAttributesBlock <li> AgoraRtmClearLocalUserAttributesBlock <li> AgoraRtmGetuserAttributesBlock |
+| 返回用户属性相关的结果 | `onUserAttributeResult` | <li>[AgoraRtmSetLocalUserAttributesBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmSetLocalUserAttributesBlock.html) <li>[AgoraRtmAddOrUpdateLocalUserAttributesBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmAddOrUpdateLocalUserAttributesBlock.html) <li>[AgoraRtmDeleteLocalUserAttributesBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmDeleteLocalUserAttributesBlock.html) <li> [AgoraRtmClearLocalUserAttributesBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/clearLocalUserAttributesWithCompletion:) <li> [AgoraRtmGetUserAttributesBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmGetUserAttributesBlock.html) |
 
-> - <sup>1</sup> `getuserAttributesBykeys` 方法允许你获取本地用户的一系列属性。
-> - <sup>2</sup> `getUserAttributes` 方法允许你获取本地用户或指定远端用户的用户属性。
+> - <sup>1</sup> [getUserAttributesBykeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getUserAttributes:ByKeys:completion:) 方法允许你获取本地用户的一系列属性。
+> - <sup>2</sup> [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getUserAllAttributes:completion:) 方法允许你获取本地用户或指定远端用户的用户属性。
 
 ## 加入离开频道相关
 
