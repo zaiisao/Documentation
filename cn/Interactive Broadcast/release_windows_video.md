@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Fri Aug 16 2019 09:28:34 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 09:58:55 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -43,7 +43,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 #### 2. 远端视频状态
 
-为方便用户了解远端视频状态，该版本删除了原有的 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 接口，并使用一个新的同名接口进行取代。新接口下， state 参数扩展为 STOPPED(0)、STARTING(1)、DECODING(2)、FROZEN(3) 和 FAILED(4)。同时，新接口还增加了 reason 参数，用以报告远端视频状态发生改变的原因。因此，如果你将 Native SDK 升级至该版本，请确保重新实现 onRemoteVideoStateChanged 接口。
+为方便用户了解远端视频状态，该版本删除了原有的 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 接口，并使用一个新的同名接口进行取代。新接口下， `state` 参数扩展为 STOPPED(0)、STARTING(1)、DECODING(2)、FROZEN(3) 和 FAILED(4)。同时，新接口还增加了 `reason` 参数，用以报告远端视频状态发生改变的原因。因此，如果你将 Native SDK 升级至该版本，请确保重新实现 `onRemoteVideoStateChanged` 接口。
 
 同时，扩展后的 state 参数和新增的 reason 参数搭配使用，可以涵盖大部分远端视频状态，因此该版本废弃了如下接口。你可以继续使用这些接口，但我们不再推荐。详细的取代方案，请参考 API 文档：
 
@@ -68,7 +68,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 在跨频道媒体流转发过程中，SDK 会通过 [`onChannelMediaRelayStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8f22b85194d4b771bbab0e1c3b505b22) 和 [`onChannelMediaRelayEvent`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89a4085f36c25eeed75c129c82ca9429) 回调报告媒体流转发的状态和事件。
 
-该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考[《跨直播间连麦》](../../cn/Interactive%20Broadcast/media_relay_windows.md)。
+该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考[跨直播间连麦](../../cn/Interactive%20Broadcast/media_relay_windows.md)。
 
 #### 3. 本地及远端音频状态
 
@@ -87,7 +87,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 该版本进一步扩充了 `RtcStats`、`LocalVideoStats` 和 `RemoteVideoStats` 类的成员。各类新增成员如下：
 
-- [`rtcStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html) 类：累计发送音频/视频字节数及累计接收音频/视频字节数
+- [`RtcStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html) 类：累计发送音频/视频字节数及累计接收音频/视频字节数
 - [`LocalVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html) 类：本地视频的编码码率、宽高、发送帧数及编码类型
 - [`RemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html) 类：远端视频在网络对抗后的丢包率
 
@@ -137,11 +137,11 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 #### 新增
 
-- [onLocalAudioStateChanged](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a)
-- [onRemoteAudioStateChanged](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612)
-- [onRemoteVideoStateChanged](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e)
-- [onLocalAudioStats](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0cb47df6a8ef7acee229eb307d6f32c3)
-- [switchChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab)
+- [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a)
+- [`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612)
+- [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e)
+- [`onLocalAudioStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0cb47df6a8ef7acee229eb307d6f32c3)
+- [`switchChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab)
 - [`startChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acb72f911830a6fdb77e0816d7b41dd5c)
 - [`updateChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#afad0d3f3861c770200a884b855276663)
 - [`stopChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab4a1c52a83a08f7dacab6de36f4681b8)
@@ -154,22 +154,22 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 #### 废弃
 
-- `onMicrophoneEnabled`，请改用 [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) 的 LOCAL_AUDIO_STREAM_STATE_CHANGED(0) 或 LOCAL_AUDIO_STREAM_STATE_RECORDING(1)
-- `onRemoteAudioTransportStats`，请改用 [`onRemoteAudioStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a)
-- `onRemoteVideoTransportStats`，请改用 [`onRemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7163ffb650852be270ba0215b596d968)
+- `onMicrophoneEnabled`，请改用 [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) 的 LOCAL_AUDIO_STREAM_STATE_CHANGED(0) 或 LOCAL_AUDIO_STREAM_STATE_RECORDING(1)。
+- `onRemoteAudioTransportStats`，请改用 [`onRemoteAudioStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a)。
+- `onRemoteVideoTransportStats`，请改用 [`onRemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7163ffb650852be270ba0215b596d968)。
 - `onUserMuteVideo`，请改用 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 的如下参数搭配：
-	- REMOTE_VIDEO_STATE_STOPPED(0) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5)
-	- REMOTE_VIDEO_STATE_DECODING(2) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTE(6)
+	- REMOTE_VIDEO_STATE_STOPPED(0) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5)。
+	- REMOTE_VIDEO_STATE_DECODING(2) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTE(6)。
 
 - `onUserEnableVideo`，请改用 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 的如下参数搭配：
-	- REMOTE_VIDEO_STATE_STOPPED(0) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5)
-	- REMOTE_VIDEO_STATE_DECODING(2) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6)
+	- REMOTE_VIDEO_STATE_STOPPED(0) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5)。
+	- REMOTE_VIDEO_STATE_DECODING(2) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6)。
 
 - `onUserEnableLocalVideo`，请改用 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 的如下参数搭配：
-	- REMOTE_VIDEO_STATE_STOPPED(0) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5)
-	- REMOTE_VIDEO_STATE_DECODING(2) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6)
+	- REMOTE_VIDEO_STATE_STOPPED(0) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5)。
+	- REMOTE_VIDEO_STATE_DECODING(2) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6)。
 
-- `onFirstRemoteVideoDecoded`，请改用 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 的 REMOTE_VIDEO_STATE_STARTING(1) 或 REMOTE_VIDEO_STATE_DECODING(2)
+- `onFirstRemoteVideoDecoded`，请改用 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 的 REMOTE_VIDEO_STATE_STARTING(1) 或 REMOTE_VIDEO_STATE_DECODING(2)。
 
 #### 删除
 

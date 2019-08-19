@@ -1,0 +1,100 @@
+
+---
+title: 跨直播间连麦
+description: 
+platform: Windows
+updatedAt: Fri Aug 16 2019 09:49:48 GMT+0800 (CST)
+---
+# 跨直播间连麦
+## 场景描述
+跨直播间连麦，指主播的媒体流可以同时转发进多个直播频道，实现主播跨频道与其他主播实时互动的场景。其中：
+
+- 频道中的所有主播可以看见彼此，并听到彼此的声音。
+- 频道中的观众可以看到所有主播，并听到主播的声音。
+
+该功能因其实时性和互动性，尤其适用于连麦 PK、在线合唱等直播场景，在增加直播趣味的同时，有效吸粉。
+
+## 实现方法
+
+请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/windows_video.md)。
+
+Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支持将源频道中的媒体流转发至最多 4 个目标频道，实现跨直播间连麦功能：
+
+- startChannelMediaRelay
+- updateChannelMediaRelay
+- stopChannelMediaRelay
+
+在跨频道媒体流转发过程中，SDK 会通过 onChannelMediaRelayStateChanged 和 onChannelMediaRelayEvent 回调报告媒体流转发的状态和事件，你可以参考如下状态码或事件码的含义实现相关的业务逻辑：
+
+
+| 状态码 | 事件码 | 媒体流转发状态 |
+| ---------------- | ---------------- | ---------------- |
+| RELAY_STATE_RUNNING(2) 和 RELAY_OK(0)     | RELAY_EVENT_PACKET_SENT_TO_DEST_CHANNEL(4)      | 源频道开始向目标频道传输数据      |
+| RELAY_STATE_FAILURE(3)     | /      | 跨频道媒体流转发出现异常。可以参考 error 参数中报告的出错原因进行问题排查      |
+| RELAY_STATE_IDLE(0) 和 RELAY_OK(0)     | /      | 已停止媒体流转发      |
+
+**Note**：
+- 一个频道内可以有多个主播转发媒体流。哪个主播调用 startChannelMediaRelay 方法，SDK 就转发哪个主播的流。
+- 跨频道连麦中，如果目标频道的主播掉线或离开频道，源频道的主播会收到 onUserOffline 回调。
+
+### API 调用时序
+
+参考如下 API 时序图实现相关代码逻辑：
+
+![](https://web-cdn.agora.io/docs-files/1565771343016)
+
+### 示例代码片段
+
+```C++
+ChannelMediaInfo *lpSrcinfo = new ChannelMediaInfo;
+lpSrcinfo->channelName = nullptr;
+lpSrcinfo->token = nullptr;
+lpSrcinfo->uid = 0;
+ChannelMediaInfo  *lpDestInfos = NULL;
+int nDestCount = arrayDestInfos.size();	
+for(int nIndex = 0; nIndex < nDestCount; nIndex++) {
+		std::string strChannelName = arrayDestInfos[nIndex]["channelName"].asString();
+		std::string strtoken  = arrayDestInfos[nIndex]["token"].asString();
+		uid_t uid = arrayDestInfos[nIndex]["uid"].asUInt();
+
+		lpDestInfos[nIndex].channelName = new char[strChannelName.length() + 1];
+		lpDestInfos[nIndex].token = new char[strtoken.length() + 1];
+		strcpy_s((char*)lpDestInfos[nIndex].channelName,strChannelName.length() + 1,strChannelName.c_str());
+		strcpy_s((char*)lpDestInfos[nIndex].token,strtoken.length() + 1,strtoken.c_str());
+		lpDestInfos[nIndex].uid = uid;
+}
+ChannelMediaRelayConfiguration cmrc;
+cmrc.srcInfo = lpSrcinfo;
+cmrc.destInfos = lpDestInfos;
+cmrc.destCount = nDestCount;
+int ret = 0;
+// 设置要加入的远端频道信息
+ret = m_lpAgoraEngine->startChannelMediaRelay(cmrc);
+
+
+ChannelMediaInfo *lpUpdateDestInfos = new ChannelMediaInfo;
+lpUpdateDestInfos->channelName = "test";
+lpUpdateDestInfos->token = nullptr;
+lpUpdateDestInfos->uid = 0;
+cmrc.destInfos = lpUpdateDestInfos;
+cmrc.destCount = 1;
+// 设置要更新的远端频道信息
+ret = m_lpAgoraEngine->startChannelMediaRelay(cmrc);	
+```
+
+**Note**：
+`updateChannelMediaRelay` 方法需在 `startChannelMediaRelay` 后调用。
+
+### API 参考
+
+- [`startChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acb72f911830a6fdb77e0816d7b41dd5c)
+- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#afad0d3f3861c770200a884b855276663)
+- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab4a1c52a83a08f7dacab6de36f4681b8)
+- [`onChannelMediaRelayStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8f22b85194d4b771bbab0e1c3b505b22)
+- [`onChannelMediaRelayEvent`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89a4085f36c25eeed75c129c82ca9429)
+
+## 开发注意事项
+
+- 该功能最多支持将媒体流转发至 4 个目标频道。转发过程中，如果想添加或删除目标频道，可以调用 `updateChannelMediaRelay` 方法。
+- 该功能不支持 String 型用户名。
+- 在成功调用 `startChannelMediaRelay` 方法后，如果想再次调用该方法，必须先调用 `stopChannelMediaRelay` 方法退出当前的转发状态。

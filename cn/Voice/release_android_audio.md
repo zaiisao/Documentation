@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Aug 16 2019 08:28:32 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 09:42:25 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -40,13 +40,9 @@ Android 语音 SDK 支持两种主要场景:
 
 **升级必看**
 
-#### 推流
-
 该版本起，Agora 删除如下接口：
 
 - `configPublisher`
-- `setVideoCompositingLayout`
-- `clearVideoCompositingLayout`
 
 如果你的 App 使用上述接口实现 CDN 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
 
@@ -154,8 +150,6 @@ Android 语音 SDK 支持两种主要场景:
 #### 删除
 
 - `configPublisher`
-- `setVideoCompositingLayout`
-- `clearVideoCompositingLayout`
 
 ## **2.8.2 版**
 

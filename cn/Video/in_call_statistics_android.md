@@ -3,173 +3,135 @@
 title: 检测通话质量
 description: 
 platform: Android
-updatedAt: Fri Aug 16 2019 07:47:59 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 10:32:57 GMT+0800 (CST)
 ---
 # 检测通话质量
-通话质量检测功能是在 SDK **加入频道后**通过每 2 秒触发一次的回调实现。
 
-通话质量检测包括：
+## 功能描述
+**加入频道后**，SDK 会每隔 **2 秒**自动触发通话质量相关的下述回调，你可以了解当前通话的网络质量、本地统计信息、音频质量和视频质量。
 
-- 用户上下行网络质量打分
-- 本地用户视频质量统计
-  - 发送质量统计
-- 远端用户音频质量统计
-  - 端到端质量统计
-  - 网络传输层质量统计
-- 远端用户视频质量统计
-  - 端到端质量统计
-  - 网络传输层质量统计
+<a name="1"></a>
+## 上下行网络质量报告
+`onNetworkQuality` 回调向你报告当前通话中每个用户/主播的上下行 last mile 网络质量，详见[质量打分](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#aeaf419fcafaa4d58da8b6d8718e31891)。其中，last mile 是指你的设备到 Agora 边缘服务器的网络。上行 last mile 网络质量打分基于实际发送码率、上行网络丢包率、平均往返时延和上行网络抖动计算；下行 last mile 网络质量打分基于下行网络丢包率、平均往返时延和下行网络抖动计算。
+> - 在通信模式下，每隔 2 秒你会收到频道内所有用户（包括你自己）的网络质量报告。
+> - 在直播模式下，如果你是主播，每隔 2 秒你会收到频道内所有主播（包括你自己）的网络质量报告；如果你是观众，每隔 2 秒你会收到所有主播和你自己的网络质量报告。
+> - 实际发送码率与目标发送码率的比值越高，该网络下的通话质量越好，该网络质量打分越高。
+> <a name="RTT"></a>
+> - **平均往返时延**指的是多次往返时延的平均值。
+<a name="2"></a>
+## 统计信息报告
+`onRtcStats` 回调向你报告本地通话统计信息。你可以了解到通话时长、当前通话频道中的人数、当前系统的 CPU 使用率、当前 App 的 CPU 使用率和以下重要参数。
 
-## 用户上下行网络质量打分
+| 参数 | 描述| 备注 |
+| ---------------- | ---------------- | ---------------- |
+| `txBytes`/`rxBytes` | 累计发送/接收字节数。    | 自加入频道后累计的字节数。    |
+|`txAudioBytes`/`rxAudioByte` |累计发送/接收音频字节数。 |自加入频道后累计的字节数。|
+|`txVideoBytes`/`rxVideoBytes`|累计发送/接收视频字节数。|自加入频道后累计的字节数。|
+|`txKBitRate`/`rxKBitRate`|发送/接收码率。|统计周期内实际发送/接收的码率。
+|`txAudioKBitRate`/`rxAudioKBitRate`|音频发送/接收码率。|统计周期内实际发送/接收的码率。|
+|`txVideoKBitRate`/`rxVideoKBitRate`|视频发送/接收码率。|统计周期内实际发送/接收的码率。|
+|`lastmileDelay`|本地客户端到 Agora 边缘服务器的网络延迟。|<li>此处指的是[平均往返时延](#RTT)的一半，不是客户端到 Agora 边缘服务器的单向时延。<li>此处的网络延迟不区分音频和视频，是 UDP 包得到的数据。|
+|`txPacketLossRate`|本地客户端到 Agora 边缘服务器的丢包率。|<li>音频和视频上行丢包率中的较大值。<li>使用**抗丢包**技术前的丢包率。|
+|`rxPacketLossRate`|Agora 边缘服务器到本地客户端的丢包率。|<li>音频和视频下行丢包率中的较大值。<li>使用**抗丢包**技术前的丢包率。|
 
-![](https://web-cdn.agora.io/docs-files/1546917962318)
+<a name="3"></a>
+## 音频质量报告
+	
+<a name="31"></a>
+### 本地音频流统计信息报告
+`onLocalAudioStats` 回调向你报告本地设备发送音频流的统计信息。你可以了解到当前通话声道数（单声道或双声道）、发送音频的采样率和发送音频的码率。
+> SDK 会每隔 2 秒自动触发本回调，发送音频的采样率指统计周期内发送音频的实际采样率，发送音频的码率指统计周期内发送音频码率的**平均**值。
+<a name="32"></a>
+### 本地音频流状态监控
+本地音频的状态发生改变时（包括本地麦克风录制状态和音频编码状态），SDK 会触发 `onLocalAudioStateChanged` 回调向你报告当前本地音频状态。当本地音频出现故障时，你可以通过错误码排查问题。
+<a name="33"></a>
+### 远端音频流统计信息报告
+![](https://web-cdn.agora.io/docs-files/1565595137741)
+`onRemoteAudioStats` 回调向你报告当前通话中每个远端用户/主播音频流的统计信息。你可以了解到每个远端用户/主播发送的音频流质量（详见[质量打分](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#aeaf419fcafaa4d58da8b6d8718e31891)）、声道数（单声道或双声道）和以下重要参数信息。
 
-### 功能描述
+| 参数 |描述| 备注 |
+| ---------------- | ---------------- | ---------------- |
+| `networkTransportDelay`     | 音频发送端到接收端的网络延迟。     | 图中阶段 2 + 3 + 4    |
+| `jitterBufferDelay` | 接收端到网络抖动缓冲端的网络延迟。| 图中阶段 5|
+| `audioLossRate`| 统计周期内，实际接收到的远端音频流丢帧率。|<li>图中阶段 2 + 3 + 4 + 5<li>一个统计周期内，音频丢帧率达到 4% 计为一次音频**卡顿**。|
+| `receivedSampleRate`| 统计周期内，接收到的远端音频流的采样率。||
+| `receivedBitrate`| 统计周期内，接收到的远端音频流的**平均**码率。| |
+| `totalFrozenTime`| 远端用户/主播在加入频道后发生音频**卡顿**的累计时长。|<li>Agora 定义`totalFrozenTime` = 音频**卡顿**次数 &times; 2 &times; 1000 （毫秒）。<li>累计时长是**自加入频道后**累计的时长。|
+| `frozenRate`| 远端用户/主播音频卡顿累计时长占音频**总有效时长**的百分比。| 音频**总有效时长**指的是远端用户/主播加入频道后，既没有停止发送音频流，也没有禁用音频模块的通话时长。|
 
-加入频道后，如果想检测通话中每个用户／主播的网络上下行 last mile 质量报告，则可以通过回调 `onNetworkQuality` 得到。
+`onRemoteAudioStats` 侧重报告远端音频流的全链路音频质量，更贴近你的主观感受。即使网络发生丢包，因为 FEC（Forward Error Correction）、重传恢复和带宽估计等**抗丢包**和拥塞控制技术，最终在接收端的音频丢帧率也可能不高，所以你感知到的音频质量也可能较好。
+>- 在通信模式下，每隔 2 秒你会收到频道内所有远端用户（不包括你自己）的音频流统计信息。
+>- 在直播模式下，如果你是主播，每隔 2 秒你会收到频道内所有远端主播（不包括你自己）的音频流统计信息；如果你是观众，每隔 2 秒你会收到频道内所有远端主播的音频流统计信息。
+>- Agora **音频模块**指音频处理过程，而不是 SDK 中的模块实物。发送音频流时，音频模块指音频采样、前处理、编码等处理过程；接收音频流时，音频模块指音频解码、后处理、播放等处理过程。
+>- 用户只能开启/禁用自己的音频模块。
+>- Agora 默认一个统计周期内的的音频**卡顿**不会多于 1 次。
+<a name="34"></a>
+### 远端音频流状态监控
+远端用户/主播音频状态发生改变时，SDK 会触发 `onRemoteAudioStateChanged` 回调向你报告远端音频流当前状态和状态改变的原因。
+>- 在通信模式下，本回调向你报告频道内所有远端用户（不包括你自己）的音频流状态信息。
+>- 在直播模式下，如果你是主播，本回调向你报告频道内所有远端主播（不包括你自己）的音频流状态信息；如果你是观众，本回调向你报告频道内所有远端主播的音频流状态信息。
 
-`onNetworkQuality` 携带 `uid` 信息，如果频道内有多个用户或主播，SDK 会多次触发该回调。打分包括：
+<a name="4"></a>
+## 视频质量报告
 
-- `txQuality`：基于当前设备到边缘服务器的上行网络质量打分（EXCELLENT～VBAD）<sup>[1]</sup>。打分依赖项：
-  - 上行视频实际发送码率与目标发送码率的比率，比率越高，通话质量越高；
-  - 上行丢包率；
-  - 平均往返延时（RTT）；
-  - 上行网络抖动（Jitter）。
+<a name="41"></a>
+### 本地视频流统计信息报告
+`onLocalVideoStats` 回调向你报告本地设备发送视频流的统计信息。你可以了解视频编码宽/高和以下重要参数信息。
 
-- `rxQuality`：基于边缘服务器到当前设备的下行网络质量打分（EXCELLENT～VBAD）<sup>[1]</sup>。打分依赖项：
-  - 下行丢包率；
-  - 平均往返延时（RTT）；
-  - 下行网络抖动（Jitter）。
+> 如果你此前调用 `enableDualStreamMode` 方法开启[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-duala双流模式)，则本回调描述本地设备发送的视频大流的统计信息。
+> 
+|参数 |描述 | 备注|
+| ---------------- | ---------------- | ---------------- |
+| `rendererOutputFrameRate`     | 本地视频渲染器的输出帧率。    |   |
+| `encoderOutputFrameRate`|本地视频编码器的输出帧率。||
+| `targetBitrate` | 当前编码器的目标编码码率。|该码率为 SDK 根据当前网络状况预估的一个值。|
+| `targetFrameRate`| 当前编码器的目标编码帧率。||
+| `encodedBitrate`|视频编码码率。|不包含丢包后**重传**视频等的视频码率。|
+| `sentBitrate`| 统计周期内，实际发送视频码率。| 不包含丢包后**重传**视频等的视频码率。|
+| `sentFrameRate`| 统计周期内，实际发送视频帧率。| 不包含丢包后**重传**视频等的视频帧率。|
+| `encodedFrameCount`| 视频发送的累计帧数。|自加入频道后的累计值。|
+| `codecType`| 视频的编码类型。|<li>`VIDEO_CODEC_VP8 = 1`: VP8<li>`VIDEO_CODEC_H264 = 2`: （默认值）H.264|
+|`qualityAdaptIndication`|本次统计的视频质量自适应情况。|相比上次统计（2 秒前）视频质量（基于目标码率/`targetBitrate` 和目标帧率/`targetFrameRate`），本次视频质量的情况：<li>本地视频质量不变。<li>本地视频质量改善。<li>本地视频质量变差。|
 
-<a name ="table"></a>
-> [1] 质量打分对照表如下：
->
-> | 质量打分  | 说明                                                         |
-> | -------- | :----------------------------------------------------------- |
-> | 0        | UNKNOWN：网络质量未知。                                        |
-> | 1        | EXCELLENT：网络质量极好。                                      |
-> | 2        | GOOD：用户主观感觉和 EXCELLENT 差不多，但码率可能略低于 EXCELLENT。 |
-> | 3        | POOR：用户主观感受有瑕疵但不影响沟通。                       |
-> | 4        | BAD：勉强能沟通但不顺畅。                                    |
-> | 5        | VBAD：网络质量非常差，基本不能沟通。                         |
-> | 6        | DOWN：网络连接断开，完全无法沟通。                         |
+<a name="42"></a>
+### 本地视频流状态监控
+本地视频的状态发生改变时，SDK 会触发 `onLocalVideoStateChanged` 回调向你报告当前本地视频状态。当本地视频出现故障时，你可以通过错误码排查问题。
+<a name="43"></a>
+### 远端视频流统计信息报告
+![](https://web-cdn.agora.io/docs-files/1565596347727)
+`onRemoteVideoStats` 回调向你报告当前通话中每个远端用户/主播的视频流的统计信息。你可以了解到每个远端用户/主播的视频宽/高和以下重要参数信息。
 
-### API 参考
+| 参数| 描述| 备注 |
+| ---------------- | ---------------- | ---------------- |
+| `rxStreamType`     | 视频流类型。  | 视频大流或小流，详见[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-duala双流模式)。   |
+| `receivedBitrate`      | 统计周期内，实际接收到的远端视频码率。    |     |
+| `packetLossRate`     | 统计周期内，实际接收到的远端视频流丢包率。     | <li>图中阶段 2 + 3 + 4 <li>此处指经过**网络对抗**之后的丢包率，比使用**网络对抗**技术前的丢包率更低。   |
+| `decoderOutputFrameRate`    | 远端视频解码器的输出帧率。     |    |
+| `rendererOutputFrameRate`     | 远端视频渲染器的输出帧率。     |  |
+| `totalFrozenTime`     | 远端用户/主播在加入频道后发送视频**卡顿**的累计时长。      | 通话过程中，视频帧率设置不低于 5 fps 时，连续渲染的两帧视频之间间隔超过 500 ms，则计为一次视频**卡顿**。      |
+| `frozenRate`    | 远端用户/主播卡顿累计时长占视频有效时长的百分比。    | 视频**有效时长**指远端用户/主播加入频道后，既没有停止发送视频流，也没有禁用视频模块的通话时长。     |
 
+>- 在通信模式下，每隔 2 秒你会收到频道内所有远端用户（不包括你自己）的视频流统计信息。
+>- 在直播模式下，如果你是主播，每隔 2 秒你会收到频道内所有远端主播（不包括你自己）的视频流统计信息；如果你是观众，每隔 2 秒你会收到频道内所有远端主播的视频流统计信息。
+>- Agora **视频模块**指视频处理过程，而不是 SDK 中的模块实物。发送视频流时，视频模块指视频采集、前处理、编码等处理过程；接收视频流时，视频模块指视频解码、后处理、渲染/播放等处理过程。
+>- 用户只能开启/禁用自己的视频模块。
+<a name="44"></a>
+### 远端视频流状态监控
+远端用户/主播的视频流状态改变时，SDK 会触发 `onRemoteVideoStateChanged` 回调向你报告远端视频流当前状态和状态改变的原因。
+>- 在通信模式下，本回调向你报告频道内所有远端用户（不包括你自己）的视频流状态信息。
+>- 在直播模式下，如果你是主播，本回调向你报告频道内所有远端主播（不包括你自己）的视频流状态信息；如果你是观众，本回调向你报告频道内所有远端主播的视频流状态信息。
+
+## API 参考
 [`onNetworkQuality`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a76be982389183c5fe3f6e4b03eaa3bd4)
-
-```java
-void onNetworkQuality(int uid, int txQuality, int rxQuality) {
-    }
-```
-
-### 注意事项
-
-用户上下行网络质量打分 `onNetworkQuality` 不同于通话前的网络质量检测 `onLastmileQuality`：
-- `onLastmileQuality` 在用户加入频道前通过主动调用 `enableLastmileTest` 方法后才会触发；`onNetworkQuality` 在用户加入频道后自动触发。
-- `onLastmileQuality` 反映的是本地用户设备到边缘服务器的网络上下行质量；`onNetworkQuality` 反映的是所有用户或主播的设备到边缘服务器的网络上下行质量（如果频道内有多个用户或主播，该回调会相应多次触发）。
-
-## 本地用户视频质量统计
-
-### 功能描述
-
-本地用户的视频质量统计反映的是本地视频流的实际发送帧率和实际发送码率。涉及回调：
-
-- `onLocalVideoStats` 2 秒自动回调：反映的是当前设备发送视频流的状态。主要返回信息：
-  - `sentBitrate`：实际发送码率（Kbps）。
-  - `sentFrameRate`：实际发送帧率（fps）。
-  - `targetBitrate`：当前编码器的目标编码码率（Kbps），该码率为 SDK 根据当前网络状况预估的一个值。
-  - `targetFrameRate`：当前编码器的目标编码帧率（fps）。
-  - `qualityAdaptIndication`：和上次返回的本地视频流统计信息相比，本地视频质量（主要是码率和帧率）的自适应情况：
-	- `ADAPT_NONE` = 0：未进行自适应
-	- `ADAPT_UP_BANDWIDTH` = 1：由于带宽增加，视频的码率和帧率向上自适应
-	- `ADAPT_DOWN_BANDWIDTH` = 2：由于带宽减少，视频的码率和帧率向下自适应
-
-### API 参考
-
+[`onRtcStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ada7aa10b092a6de23b598a9f77d4deee)
+[`onLocalAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aeba2aa3fc29404fc6f25bff5c00bfdf9)
+[`onLocalAudioStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a59946a989f87c737899e2284539adf09)
+[`onRemoteAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54)
+[`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a24fd6b0d12214f6bc6fa7a9b6235aeff)
 [`onLocalVideoStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a79fb5d32bb694d24b54a523d924dc7ef)
+[`onLocalVideoStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aface271c0606ab99bb08a0d00267306c)
+[`onRemoteVideoStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#abb7af6e2827bbd03c6ab8338a0f616ca)
+[`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aaa721f00a7409aa091c9763c3385332e)
 
-```java
-void onLocalVideoStats(LocalVideoStats stats) {
-    }
-```
-
-## 远端用户音频质量统计
-
-![](https://web-cdn.agora.io/docs-files/1546917989079)
-
-### 功能描述
-
-如上图所示，本功能反映远端音频流全链路的音频质量以及传输层网络状态。涉及回调：
-
-- `onRemoteAudioStats` 2 秒自动回调：侧重反映通话中远端音频流的全链路音频质量，更贴近用户主观感受。主要返回信息：
-  - `quality`：音频接收质量打分（Excellent～VeryBad）<sup>[2]</sup>。
-  - `networkTransportDelay`：网络传输层延时（毫秒），networkTransportDelay = Delay 2 + Delay 3 + Delay 4。
-  - `jitterBufferDelay`：接收端网络抖动延时（毫秒），jitterBufferDelay = Delay 5。
-  - `audioLossRate`：音频丢帧率。
-
-- `onRemoteAudioTransportStats` 2 秒自动回调：侧重反映通话中远端音频流的传输层网络状态，数据更为客观。主要返回信息：
-  - `delay`：网络传输层延时（毫秒），delay = Delay 2 + Delay 3 + Delay 4。
-  - `lost`：传输层音频丢包率（%），lost = (packetLoss 2 + packetLoss 3 + packetLoss 4)/totalPacketsSent。
-  - `rxKBitRate`：音频接收码率（kbps）。
-
-> [2] 参见上文[质量打分对照表](#table)。
-
-### API 参考
-
-- [`onRemoteAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54)
-```java
-void onRemoteAudioStats(RemoteAudioStats stats) {
-    }
-```
-- [`onRemoteAudioTransportStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a826009699e73d5225d4ce9e3a29b91f4)
-```java
-void onRemoteAudioTransportStats(int uid, int delay, int lost, int rxKBitRate) {
-    }
-```
-
-### 注意事项
-
-`onRemoteAudioStats` 与 `onRemoteAudioTransportStats` 回调的区别在于：
-
-- `onRemoteAudioTransportStats` 用于描述用户通话中从边缘服务器到边缘服务器的网络状态，通过音频包计算，展示当前网络状态，体现真实网络客观数据，比如丢包、网络延迟。
-- `onRemoteAudioStats` 反映的是全链路的音频质量，更贴近用户的主观感受。比如，当网络发生丢包时，由于 FEC（Forward Error Correction，向前纠错码）或重传恢复的应用，最终的音频丢帧率不高，则可以认为整个质量较好。 
-
-## 远端用户视频质量统计
-
-![](https://web-cdn.agora.io/docs-files/1546918006108)
-
-### 功能描述
-
-如上图所示，远端用户的视频质量统计反映远端视频流全链路的视频质量以及传输层网络状态。涉及回调：
-
-- `onRemoteVideoStats` 2 秒自动回调：侧重反映通话中远端视频流的全链路音频质量，更贴近用户主观感受。主要返回信息：
-  - `receivedBitrate`：接收到的码率（kbps）。
-  - `receivedFrameRate`：接收到的帧率（fps）。
-  - `rxStreamType`：视频大小流类型。
-
-- `onRemoteVideoTransportStats` 2 秒自动回调：侧重反映通话中远端视频流的传输层网络状态，数据更为客观。主要返回信息：
-  - `delay`：网络传输层延时（毫秒），delay = Delay 2 + Delay 3 + Delay 4。
-  - `lost`：传输层视频包丢包率（%），lost = (packetLoss 2 + packetLoss 3 + packetLoss 4)/totalPacketsSent。
-  - `rxKBitRate`：远端视频包的实际接收码率（Kbps）。 
-
-### API 参考
-- [`onRemoteVideoStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#abb7af6e2827bbd03c6ab8338a0f616ca)
-```java
-void onRemoteVideoStats(RemoteVideoStats stats) {
-    }
-```
-- [`onRemoteVideoTransportStats`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8e8bea20663388c250b299641b25ade9)
-```java
-void onRemoteVideoTransportStats(int uid, int delay, int lost, int rxKBitRate) {
-    }
-```
-
-### 注意事项
-
-`onRemoteVideoTransportStats` 与 `onRemoteVideoStats` 回调的区别在于：
-
-- `onRemoteVideoTransportStats` 用于描述用户通话中从边缘服务器到边缘服务器的网络状态，通过视频包计算，展示当前网络状态，体现真实网络客观数据，比如丢包、网络延迟。
-- `onRemoteVideoStats` 反映的是全链路的视频质量，更贴近用户的主观感受。
-
-
+## 注意事项
+[`onLocalAudioStateChanged`](#32)、[`onRemoteAudioStateChanged`](#34)、[`onLocalVideoStateChanged`](#42) 和 [`onRemoteVideoStateChanged`](#44) 状态监控回调不会每 **2 秒**被 SDK 自动触发，各自触发条件详见正文。

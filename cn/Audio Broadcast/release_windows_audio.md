@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Thu Jul 11 2019 03:27:12 GMT+0800 (CST)
+updatedAt: Fri Aug 16 2019 10:00:19 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -20,11 +20,114 @@ Windows 语音 SDK 支持两种主要场景:
 
 Windows 语音 SDK 支持 X86 和 X64 架构。
 
+## **2.9.0 版**
+
+该版本于 2019 年 8 月 16 日发布。新增特性与修复问题详见下文。
+
+**升级必看**
+
+该版本起，Agora 删除如下接口：
+
+- `configPublisher`
+
+如果你的 App 使用上述接口实现 CDN 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
+
+- [`setLiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde)
+- [`addPublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)
+- [`removePublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
+- [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
+
+
+**新增特性**
+
+#### 1. 快速切换频道
+
+为方便直播频道中的观众用户快速切换到其他频道，该版本新增 [`switchChannel`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab) 方法。和先调 `leaveChannel`，再调 `joinChannel` 相比，该方法能实现更快的频道切换。调用 `switchChannel` 方法切换到其他直播频道后，本地会先收到离开原频道的回调 `onLeaveChannel`，再收到成功加入新频道的回调 `onJoinChannelSuccess`。
+
+#### 2. 跨频道媒体流转发
+
+跨频道媒体流转发，指将主播的媒体流转发至其他直播频道，实现主播跨频道与其他主播实时互动的场景。该版本新增如下接口，通过将源频道中的媒体流转发至目标频道，实现跨直播间连麦功能：
+
+- [`startChannelMediaRelay`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acb72f911830a6fdb77e0816d7b41dd5c)
+- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#afad0d3f3861c770200a884b855276663)
+- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab4a1c52a83a08f7dacab6de36f4681b8)
+
+在跨频道媒体流转发过程中，SDK 会通过 [`onChannelMediaRelayStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8f22b85194d4b771bbab0e1c3b505b22) 和 [`onChannelMediaRelayEvent`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89a4085f36c25eeed75c129c82ca9429) 回调报告媒体流转发的状态和事件。
+
+该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考[跨直播间连麦](../../cn/Audio%20Broadcast/media_relay_windows.md)。
+
+#### 3. 本地及远端音频状态
+
+为方便用户了解本地及远端的音频状态，该版本新增 [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) 和 [`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612) 回调。新的回调下，本地及远端音频有如下状态：
+
+- 本地音频：STOPPED(0)、RECORDING(1)、ENCODING(2) 和 FAILED(3)。状态为 FAILED(3) 时，你可以通过 `error` 参数中返回的错误码定位及排查问题。
+- 远端音频：STOPED(0)、STARTING(1)、DECODING(2)、FROZEN(3) 和 FAILED(3)。你可以在 `reason` 参数中了解引起远端音频状态发生改变的原因。
+
+#### 4. 本地音频数据
+
+为方便更好地了解通话质量，获取更多质量相关数据，该版本新增 [`onLocalAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0cb47df6a8ef7acee229eb307d6f32c3) 回调，通过 `numChannels`、`sentSampleRate`、`sentBitrate` 参数报告本地音频统计信息。
+
+**改进**
+
+#### 1. 通话中质量透明
+
+该版本进一步扩充了 `RtcStats` 类的成员。新增成员如下：
+
+- [`RtcStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html) 类：累计发送音频字节数及累计接收音频字节数
+
+
+#### 2. 其他改进
+
+- 优化了 Game Streaming 模式下的音频质量。
+- 优化了通信模式下用户关闭麦克风后听到的音质。
+
+**问题修复**
+
+#### 音频
+
+- 修复了与 Web 互通时听声辨位过程中出现的声音失真的问题。
+- 修复了 `muteRemoteAudioStream` 方法调用无效的问题。
+- 修复了特殊场景下偶现的音频无声的问题。
+
+#### 其他
+
+- 修复了偶现的旁路推流串流的问题。
+- 修复了偶现的崩溃问题。
+- 修复了特定场景下加入频道失败的问题。
+
+**API 变更**
+
+为提升用户体验，Agora SDK 在该版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a)
+- [`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612)
+- [`onLocalAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0cb47df6a8ef7acee229eb307d6f32c3)
+- [`switchChannel`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab)
+- [`startChannelMediaRelay`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acb72f911830a6fdb77e0816d7b41dd5c)
+- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#afad0d3f3861c770200a884b855276663)
+- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab4a1c52a83a08f7dacab6de36f4681b8)
+- [`onChannelMediaRelayStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8f22b85194d4b771bbab0e1c3b505b22)
+- [`onChannelMediaRelayEvent`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89a4085f36c25eeed75c129c82ca9429)
+- [`RtcStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html) 类新增 `txAudioBytes` 和 `rxAudioBytes` 成员
+
+#### 废弃
+
+- `onMicrophoneEnabled`，请改用 [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) 的 LOCAL_AUDIO_STREAM_STATE_CHANGED(0) 或 LOCAL_AUDIO_STREAM_STATE_RECORDING(1)。
+- `onRemoteAudioTransportStats`，请改用 [`onRemoteAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a)。
+
+
+#### 删除
+
+- `configPublisher`
+
+
 ## **2.8.0 版**
 
 该版本于 2019 年 7 月 8 日发布。新增特性详见下文。
 
-### **新增特性**
+**新增特性**
 
 #### 1. 全平台支持 String 型的用户名
 
@@ -54,11 +157,11 @@ Windows 语音 SDK 支持 X86 和 X64 架构。
 
 同时，该版本在 [RemoteAudioStats](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) 类中还新增 `numChannels`、`receivedSampleRate` 和 `receivedBitrate` 成员。
 
-### **改进**
+**改进**
 
 为方便开发者统计掉线率，该版本在 [onConnectionStateChanged](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) 回调的 `reason` 参数中添加 `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` 成员，表示 SDK 与服务器连接保活超时，引起 SDK 连接状态发生改变。
 
-### **API 变更**
+**API 变更**
 
 为提升用户体验，Agora 在 v2.8.0 版本中对 API 进行了如下变动：
 
