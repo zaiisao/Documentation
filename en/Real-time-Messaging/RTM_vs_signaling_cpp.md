@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux CPP
-updatedAt: Thu Aug 15 2019 12:34:08 GMT+0800 (CST)
+updatedAt: Mon Aug 19 2019 11:26:18 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
