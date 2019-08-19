@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux Java
-updatedAt: Mon Aug 19 2019 09:27:52 GMT+0800 (CST)
+updatedAt: Mon Aug 19 2019 09:27:56 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -67,21 +67,21 @@ updatedAt: Mon Aug 19 2019 09:27:52 GMT+0800 (CST)
 
 | 方法                       | 信令             | RTM 实时消息                          |
 | -------------------------- | ---------------- | ------------------------------------- |
-| 设置本地用户属性           | `setAttr`        | `addOrUpdateLocalUserAttributes`      |
-| 获取本地用户的某个属性     | `getAttr`        | `getUserAttributesBykeys`<sup>1</sup> |
-| 获取本地用户的全部属性     | `getAttrAll`     | `getUserAttributes`<sup>2</sup>       |
-| 获取指定用户的某个属性     | `getUserAttrAll` | `getUserAttributes`                   |
-| 全量替换本地用户的全部属性 | N/A              | `setLocalUserAttributes`              |
-| 删除本地用户的指定属性     | N/A              | `deleteLocaluserAttributeByKeys`      |
-| 清空本地用户全部属性       | N/A              | `clearLocalUserAttributes`            |
+| 设置本地用户属性           | `setAttr`        | [addOrUpdateLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a765b186d62ed3ef6d67a5e875b040875)      |
+| 获取本地用户的某个属性     | `getAttr`        | [getUserAttributesBykeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3b927c35cca5ebd31afb976d60e99193)<sup>1</sup> |
+| 获取本地用户的全部属性     | `getAttrAll`     | [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aee9a6c027f35b652781f654a89433755)<sup>2</sup>       |
+| 获取指定用户的某个属性     | `getUserAttrAll` | [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aee9a6c027f35b652781f654a89433755)                   |
+| 全量替换本地用户的全部属性 | N/A              | [setLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a339b7b2371ff2b86137b6db6c1c66294)              |
+| 删除本地用户的指定属性     | N/A              | [deleteLocaluserAttributeByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a2477533989c1bb9ced831af210f1dba4)     |
+| 清空本地用户全部属性       | N/A              | [clearLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ae0c6c5c5bae6020e69009441d8a41785)            |
 |                            |                  |                                       |
 
 | 事件                   | 信令                    | RTM 实时消息            |
 | ---------------------- | ----------------------- | ----------------------- |
-| 返回用户属性相关的结果 | `onUserAttributeResult` | `onSuccess`/`onFailure` |
+| 返回用户属性相关的结果 | `onUserAttributeResult` | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
 
-> - <sup>1</sup> `getuserAttributesBykeys` 方法允许你获取本地用户的一系列属性。
-> - <sup>2</sup> `getUserAttributes` 方法允许你获取本地用户或指定远端用户的用户属性。
+> - <sup>1</sup> [getuserAttributesBykeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3b927c35cca5ebd31afb976d60e99193) 方法允许你获取本地用户的一系列属性。
+> - <sup>2</sup> [getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aee9a6c027f35b652781f654a89433755) 方法允许你获取本地用户或指定远端用户的用户属性。
 
 ## 加入离开频道相关
 
@@ -93,10 +93,10 @@ updatedAt: Mon Aug 19 2019 09:27:52 GMT+0800 (CST)
 
 | 事件                       | 信令                  | RTM 实时消息     |
 | -------------------------- | --------------------- | ---------------- |
-| 成功加入指定频道           | `onChannelJoined`     | `onSuccess`      |
-| 加入指定频道失败           | `onChannelJoinFailed` | `onFailure`      |
+| 成功加入指定频道           | `onChannelJoined`     | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)      |
+| 加入指定频道失败           | `onChannelJoinFailed` | [onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)      |
 | 远端用户加入当前频道       | `onChannelUserJoined` | `onMemberJoined` |
-| 成功离开当前频道           | `onChannelLeaved`     | `onSuccess`      |
+| 成功离开当前频道           | `onChannelLeaved`     | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)      |
 | 远端频道成员离开当前频道   | `onChannelUserLeaved` | `onMemberLeft`   |
 | 加入频道时返回频道成员列表 | `onChannelUserList`   | N/A<sup>3</sup>  |
 |                            |                       |                  |
@@ -118,8 +118,8 @@ updatedAt: Mon Aug 19 2019 09:27:52 GMT+0800 (CST)
 
 | 事件             | 信令                      | RTM 实时消息                    |
 | ---------------- | ------------------------- | ------------------------------- |
-| 频道消息发送成功 | `onMessageSendSuccess`    | `onSuccess`                     |
-| 频道消息         | `onMessageSendError`      | `onFailure`                     |
+| 频道消息发送成功 | `onMessageSendSuccess`    | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)                     |
+| 频道消息         | `onMessageSendError`      | [onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)                     |
 | 收到一条频道消息 | `onMessageChannelReceive` | `onMessageReceived`<sup>3</sup> |
 
 
@@ -154,7 +154,7 @@ updatedAt: Mon Aug 19 2019 09:27:52 GMT+0800 (CST)
 
 | 事件                   | 信令          | RTM 实时消息            |
 | ---------------------- | ------------- | ----------------------- |
-| 返回指定频道的成员列表 | `onInvokeRet` | `onSuccess`/`onFailure` |
+| 返回指定频道的成员列表 | `onInvokeRet` | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
 
 > <sup>1</sup> 你必须加入一个 RtmChannel 频道后才能获取该频道的成员列表。当频道人员超过 512 人上限，Agora RTM SDK 会随机返回频道内的 512 个当前频道成员。 
 
@@ -197,10 +197,10 @@ updatedAt: Mon Aug 19 2019 09:27:52 GMT+0800 (CST)
 
 | 同步回调     | 信令 | RTM 实时消息                                                 |
 | ------------ | ---- | ------------------------------------------------------------ |
-| 方法调用成功 | N/A  | `onSuccess`                                                  |
-| 方法调用失败 | N/A  | `onFailure`。错误码详见 `InvitationApiCallError`<sup>5</sup> |
+| 方法调用成功 | N/A  | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)                                                  |
+| 方法调用失败 | N/A  | [onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)。错误码详见 `InvitationApiCallError`<sup>5</sup> |
 
-> <sup>5</sup> 如果用户在 `LocalInvitation` 生命周期开始之前或生命周期结束之后调用了 `sendLocalInvitation`、 `cancelLocalInvitation`、 `acceptRemoteInvitation` 或 `refuseRemoteInvitation` ，Agora RTM SDK 会返回 `onFailure` 回调以及 `InvitationApiCallError` 错误码。
+> <sup>5</sup> 如果用户在 `LocalInvitation` 生命周期开始之前或生命周期结束之后调用了 `sendLocalInvitation`、 `cancelLocalInvitation`、 `acceptRemoteInvitation` 或 `refuseRemoteInvitation` ，Agora RTM SDK 会返回 [onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) 回调以及 `InvitationApiCallError` 错误码。
 
 
 
@@ -239,5 +239,5 @@ updatedAt: Mon Aug 19 2019 09:27:52 GMT+0800 (CST)
 
 | 事件             | 信令 | RTM 实时消息            |
 | ---------------- | ---- | ----------------------- |
-| 返回方法调用结果 | N/A  | `onSuccess`/`onFailure` |
+| 返回方法调用结果 | N/A  | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
 | Token 已过期     | N/A  | `onTokenExpired`        |
