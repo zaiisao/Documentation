@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux CPP
-updatedAt: Mon Aug 19 2019 11:26:18 GMT+0800 (CST)
+updatedAt: Mon Aug 19 2019 11:26:22 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -67,21 +67,21 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                                              | Signaling        | Real-time Messaging                   |
 | --------------------------------------------------- | ---------------- | ------------------------------------- |
-| Sets the local user's attribute                     | `setAttr`        | `addOrUpdateLocalUserAttributes`      |
-| Gets an attribute of the local user.                | `getAttr`        | `getUserAttributesBykeys`<sup>1</sup> |
-| Gets all attributes of the local user.              | `getAttrAll`     | `getUserAttributes`<sup>2</sup>       |
-| Gets all attributes of the specified user.          | `getUserAttrAll` | `getUserAttributes`                   |
-| Replaces the local user's attributes with new ones. | N/A              | `setLocalUserAttributes`              |
-| Deletes the specified attributes of the local user. | N/A              | `deleteLocaluserAttributeByKeys`      |
-| Clears the local user's attributes                  | N/A              | `clearLocalUserAttributes`            |
+| Sets the local user's attribute                     | `setAttr`        | [addOrUpdateLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a0a63923bd1e81e60d6ca54213a329747)      |
+| Gets an attribute of the local user.                | `getAttr`        | [getUserAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#af011235917c291df5581f92afa35532f)<sup>1</sup> |
+| Gets all attributes of the local user.              | `getAttrAll`     | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a14cac887f9adb390621dd0427092a65b)<sup>2</sup>       |
+| Gets all attributes of the specified user.          | `getUserAttrAll` | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a14cac887f9adb390621dd0427092a65b)                   |
+| Replaces the local user's attributes with new ones. | N/A              | [setLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a86dcbfc38c665be8565f06c534338d33)              |
+| Deletes the specified attributes of the local user. | N/A              | [deleteLocaluserAttributeByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#acb669f6c4c28e08cdf889df11e1ddeb3)      |
+| Clears the local user's attributes                  | N/A              | [clearLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#acc5eee875f4166fe455cde7aff1ad738)            |
 |                                                     |                  |                                       |
 
 | Event                                                 | Signaling               | Real-time Messaging                                          |
 | ----------------------------------------------------- | ----------------------- | ------------------------------------------------------------ |
-| Returns the result of the user-attribute method call. | `onUserAttributeResult` | <li>`onSetLocalUserAttributesResult` <li> `onAddorUpdateLocalUserAttributesResult` <li> `onDeleteLocalUserAttributesResult` <li> `onClearLocalUserAttributesResult` <li> `onGetUserAttributesResult` |
+| Returns the result of the user-attribute method call. | `onUserAttributeResult` | <li>[onSetLocalUserAttributesResult](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#ac01ea1ff17082bbf3c8cfbaccef4dfe8) <li> [onAddOrUpdateLocalUserAttributesResult](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#ab21ea7e02361debe4ebbf558cc80f268) <li> [onDeleteLocalUserAttributesResult](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a2b98a102d2bb9664552e30d257679887) <li> [onClearLocalUserAttributesResult](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a94bbff8cdfee2ee306d66f73c1a29aa3) <li> [onGetUserAttributesResult](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a76058e05b9a623645ba05ea1d1796007) |
 
-> - <sup>1</sup> The `getuserAttributesBykeys` method allows you to retrieve a list of attributes from the local user.
-> - <sup>2</sup> The `getUserAttributes` method allows you to retrieve the attributes from either the local user or a specified peer user. 
+> - <sup>1</sup> The [getuserAttributesBykeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#af011235917c291df5581f92afa35532f) method allows you to retrieve a list of attributes from the local user.
+> - <sup>2</sup> The [getUserAttributes(/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a14cac887f9adb390621dd0427092a65b) method allows you to retrieve the attributes from either the local user or a specified peer user. 
 
 ## Joining or Leaving a Channel
 
