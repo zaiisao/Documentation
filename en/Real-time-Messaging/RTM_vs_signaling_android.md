@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Android
-updatedAt: Thu Aug 15 2019 10:23:46 GMT+0800 (CST)
+updatedAt: Mon Aug 19 2019 10:24:14 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -67,21 +67,21 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                                              | Signaling        | Real-time Messaging                   |
 | --------------------------------------------------- | ---------------- | ------------------------------------- |
-| Sets the local user's attribute                     | `setAttr`        | `addOrUpdateLocalUserAttributes`      |
-| Gets an attribute of the local user.                | `getAttr`        | `getUserAttributesBykeys`<sup>1</sup> |
-| Gets all attributes of the local user.              | `getAttrAll`     | `getUserAttributes`<sup>2</sup>       |
-| Gets all attributes of the specified user.          | `getUserAttrAll` | `getUserAttributes`                   |
-| Replaces the local user's attributes with new ones. | N/A              | `setLocalUserAttributes`              |
-| Deletes the specified attributes of the local user. | N/A              | `deleteLocaluserAttributeByKeys`      |
-| Clears the local user's attributes                  | N/A              | `clearLocalUserAttributes`            |
+| Sets the local user's attribute                     | `setAttr`        | [addOrUpdateLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a765b186d62ed3ef6d67a5e875b040875)      |
+| Gets an attribute of the local user.                | `getAttr`        | [getUserAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3b927c35cca5ebd31afb976d60e99193)<sup>1</sup> |
+| Gets all attributes of the local user.              | `getAttrAll`     | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aee9a6c027f35b652781f654a89433755)<sup>2</sup>       |
+| Gets all attributes of the specified user.          | `getUserAttrAll` | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aee9a6c027f35b652781f654a89433755)                   |
+| Replaces the local user's attributes with new ones. | N/A              | [setLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a339b7b2371ff2b86137b6db6c1c66294)              |
+| Deletes the specified attributes of the local user. | N/A              | [deleteLocaluserAttributeByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a2477533989c1bb9ced831af210f1dba4)      |
+| Clears the local user's attributes                  | N/A              | [clearLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ae0c6c5c5bae6020e69009441d8a41785)            |
 |                                                     |                  |                                       |
 
 | Event                                                 | Signaling               | Real-time Messaging     |
 | ----------------------------------------------------- | ----------------------- | ----------------------- |
-| Returns the result of the user-attribute method call. | `onUserAttributeResult` | `onSuccess`/`onFailure` |
+| Returns the result of the user-attribute method call. | `onUserAttributeResult` | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
 
-> - <sup>1</sup> The `getuserAttributesBykeys` method allows you to retrieve a list of attributes from the local user.
-> - <sup>2</sup> The `getUserAttributes` method allows you to retrieve the attributes from either the local user or a specified peer user. 
+> - <sup>1</sup> The [getuserAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3b927c35cca5ebd31afb976d60e99193) method allows you to retrieve a list of attributes from the local user.
+> - <sup>2</sup> The [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aee9a6c027f35b652781f654a89433755) method allows you to retrieve the attributes from either the local user or a specified peer user. 
 > - The Agora RTM SDK does not support special attributes for now. 
 
 ## Joining or Leaving a Channel
@@ -94,10 +94,10 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Event                                                   | Signaling             | Real-time Messaging |
 | ------------------------------------------------------- | --------------------- | ------------------- |
-| Successfully joins the specified channel.               | `onChannelJoined`     | `onSuccess`         |
-| Fails to join the specified channel                     | `onChannelJoinFailed` | `onFailure`         |
+| Successfully joins the specified channel.               | `onChannelJoined`     | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)         |
+| Fails to join the specified channel                     | `onChannelJoinFailed` | [onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)         |
 | A remote user joins the current channel.                | `onChannelUserJoined` | `onMemberJoined`    |
-| Successfully leaves the current channel.                | `onChannelLeaved`     | `onSuccess`         |
+| Successfully leaves the current channel.                | `onChannelLeaved`     | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)         |
 | A remote channel member leaves the current channel.     | `onChannelUserLeaved` | `onMemberLeft`      |
 | Returns a channel member list when joining the channel. | `onChannelUserList`   | N/A<sup>3</sup>     |
 |                                                         |                       |                     |
@@ -118,8 +118,8 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Event                                     | Signaling                 | Real-time Messaging             |
 | ----------------------------------------- | ------------------------- | ------------------------------- |
-| Successfully sends out a channel message. | `onMessageSendSuccess`    | `onSuccess`                     |
-| Fails to send out a channel message.      | `onMessageSendError`      | `onFailure`                     |
+| Successfully sends out a channel message. | `onMessageSendSuccess`    | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)                     |
+| Fails to send out a channel message.      | `onMessageSendError`      | [onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)                     |
 | Receives a channel message.               | `onMessageChannelReceive` | `onMessageReceived`<sup>3</sup> |
 
 
@@ -154,7 +154,7 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Event                                         | Signaling     | Real-time Messaging     |
 | --------------------------------------------- | ------------- | ----------------------- |
-| Returns the user list in a specified channel. | `onInvokeRet` | `onSuccess`/`onFailure` |
+| Returns the user list in a specified channel. | `onInvokeRet` | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
 
 > <sup>1</sup> You must join an RtmChannel before retrieving a member list of it. When the number of the channel members exceeds 512, the Agora RTM SDK only returns a list of randomly selected 512 channel members. 
 
@@ -197,10 +197,10 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Synchronous Callback      | Signaling | Real-time Messaging                                          |
 | ------------------------- | --------- | ------------------------------------------------------------ |
-| The method call succeeds. | N/A       | `onSuccess`                                                  |
-| The method call fails.    | N/A       | `onFailure`. See `InvitationApiCallError` for the error codes.<sup>5</sup> |
+| The method call succeeds. | N/A       | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)                                                  |
+| The method call fails.    | N/A       | [onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396). See `InvitationApiCallError` for the error codes.<sup>5</sup> |
 
-> <sup>5</sup> If a user calls `sendLocalInvitation`, `cancelLocalInvitation`, `acceptRemoteInvitation` or `refuseRemoteInvitation` before the life cycle of a `LocalInvitation` starts or after the life cycle of a `RemoteInvitation` ends (either in failure or in success), the SDK returns the `onFailure` callback with the `InvitationApiCallError` error code. 
+> <sup>5</sup> If a user calls `sendLocalInvitation`, `cancelLocalInvitation`, `acceptRemoteInvitation` or `refuseRemoteInvitation` before the life cycle of a `LocalInvitation` starts or after the life cycle of a `RemoteInvitation` ends (either in failure or in success), the SDK returns the [onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) callback with the `InvitationApiCallError` error code. 
 
 
 
@@ -239,5 +239,5 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Event                                  | Signaling | Real-time Messaging     |
 | -------------------------------------- | --------- | ----------------------- |
-| Returns the result of the method call. | N/A       | `onSuccess`/`onFailure` |
+| Returns the result of the method call. | N/A       | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
 | The token has expired.                 | N/A       | `onTokenExpired`        |
