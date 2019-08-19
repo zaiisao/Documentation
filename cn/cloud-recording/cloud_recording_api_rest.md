@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 09:56:37 GMT+0800 (CST)
+updatedAt: Mon Aug 19 2019 08:47:02 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -510,7 +510,7 @@ clientRequest 中需要填写的内容如下：
   - `uploadingStatus`：String 类型，当前录制上传的状态。
     - `"uploaded"`：本次录制的文件已经全部上传至客户指定的第三方云存储。
     - `"backuped"`：本次录制的文件已经全部上传完成，但是至少有一个 TS 文件上传到了 Agora 云备份。Agora 服务器会自动将这部分文件继续上传至指定的第三方云存储。
-    - `"unknown"`：未知状态，请尝试调用 [`query`](#query) 方法查询状态。
+    - `"unknown"`：未知状态。
 
 ## <a name="status"></a>响应状态码
 
