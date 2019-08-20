@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Jul 05 2019 07:49:52 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 02:23:55 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -15,7 +15,7 @@ You can use screen sharing in the following scenarios:
 - Video conference: the speaker can share an image of a local file, web page, or presentation with other users in the channel.
 - Online class: the teacher can share slides or notes with students.
 
-## Working Principles
+## Working principles
 
 Screen sharing on the web client is enabled by creating a screen-sharing stream.
 
@@ -31,9 +31,9 @@ Ensure that you prepare the development environment. See [Integrate the SDK](../
 
 To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser asks you to select which screens to share. The attribute settings are different in Google Chrome and Firefox.
 
-### <a name = "chrome"></a>Screen Sharing on Google Chrome
+### <a name = "chrome"></a>Screen sharing on Google Chrome
 
-#### Screen Sharing with the Google Chrome Extension
+#### Screen sharing with the Google Chrome extension
 
 Ensure that you add the [Google Chrome Extension for Screen Sharing](../../en/Quickstart%20Guide/chrome_screensharing_plugin.md) provided by Agora.
 
@@ -50,7 +50,7 @@ screenStream = AgoraRTC.createStream({
 });
 ```
 
-#### Screen Sharing Without an Extension
+#### Screen sharing without an extension
 
 From v2.6.0, Agora Web SDK supports screen sharing without an extension on Chrome 72 or later, and you do not need to set the `extensionId` parameter.
 
@@ -71,7 +71,7 @@ if(parseInt(tem[2]) >= 72  && navigator.mediaDevices.getDisplayMedia ) {
 > - Do not set the `video` and `screen` attributes as `true` at the same time.
 > - Agora recommends that you set the `audio` attribute as `false` to avoid any echo during the call.
 
-### <a name = "electron"></a>Screen Sharing on Electron
+### <a name = "electron"></a>Screen sharing on Electron
 
 Screen sharing on Electron does not require any plugin, but you need to draw the UI for screen-source selection. Electron only provides interfaces for sharing the screen. 
 
@@ -121,7 +121,7 @@ Follow these steps to implement screen sharing on Electron:
 > - The `getScreenSources` method is a wrapper of the `desktopCapturer.getSources` method provided by Electron. See [desktopCapturer](https://electronjs.org/docs/api/desktop-capturer).
 > - The `sourceId` parameter only takes effect on Electron.
 
-### <a name = "ff"></a>Screen Sharing on Firefox
+### <a name = "ff"></a>Screen sharing on Firefox
 
 Set the `mediaSource` attribute to specify the screen-sharing mode:
 
@@ -143,7 +143,7 @@ screenStream = AgoraRTC.createStream({
 > - Agora recommends that you set the `audio` attribute as `false` to avoid echo during the call.
 > - Firefox on Windows does not support the application mode.
 
-### <a name = "both"></a>Enabling Both Screen Sharing and Video
+### <a name = "both"></a>Enable both screen sharing and video
 
 One client only sends one stream. If you want to enable both screen sharing and video on one host, you need to create two clients: 
 
