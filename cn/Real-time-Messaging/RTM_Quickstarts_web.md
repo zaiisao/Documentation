@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Web
-updatedAt: Tue Aug 20 2019 07:28:25 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 07:28:30 GMT+0800 (CST)
 ---
 # RTM 快速开始
 
@@ -13,12 +13,12 @@ updatedAt: Tue Aug 20 2019 07:28:25 GMT+0800 (CST)
 
 使用该方法引入的 SDK 会在 `window` 上生成名为 `AgoraRTM` 的全局变量。
 
-1. 从 Agora 官方网站下载最新版 Agora RTM SDK for Web 压缩包。
-2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-0.9.3.js` 的文件保存到你所操作的项目下。
-3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/agora-rtm-sdk-0.9.3.js` 替换为可访问的 SDK 公开网址）：
+1. 从 Agora 官方网站下载最新版 [Agora RTM SDK for Web](../../cn/Real-time-Messaging/downloads.md) 压缩包。
+2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-1.0.0.js` 的文件保存到你所操作的项目下。
+3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/agora-rtm-sdk-1.0.0.js` 替换为可访问的 SDK 公开网址）：
 
     ```html
-    <script src="/path/to/agora-rtm-sdk-0.9.1.js"></script>
+    <script src="/path/to/agora-rtm-sdk-1.0.0.js"></script>
     ```
 
 #### 开启智能提示和类型检查（可选）
