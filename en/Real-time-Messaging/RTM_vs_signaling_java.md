@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux Java
-updatedAt: Tue Aug 20 2019 11:11:50 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 11:12:00 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -88,17 +88,17 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                      | Signaling      | Real-time Messaging         |
 | --------------------------- | -------------- | --------------------------- |
-| Creates a channel instance. | N/A            | `createChannel`<sup>1</sup> |
-| Joins a specified channel.  | `channelJoin`  | `join`<sup>2</sup>          |
-| Leaves a channel.           | `channelLeave` | `leave`                     |
+| Creates a channel instance. | N/A            | [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a)<sup>1</sup> |
+| Joins a specified channel.  | `channelJoin`  | [join](../../en/Real-time-Messaging/RTM_vs_signaling_java.md)<sup>2</sup>          |
+| Leaves a channel.           | `channelLeave` | [leave](../../en/Real-time-Messaging/RTM_vs_signaling_java.md)                     |
 
 | Event                                                   | Signaling             | Real-time Messaging |
 | ------------------------------------------------------- | --------------------- | ------------------- |
 | Successfully joins the specified channel.               | `onChannelJoined`     | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)         |
 | Fails to join the specified channel                     | `onChannelJoinFailed` | [onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)         |
-| A remote user joins the current channel.                | `onChannelUserJoined` | `onMemberJoined`    |
+| A remote user joins the current channel.                | `onChannelUserJoined` | [onMemberJoined](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a9d39a66a0a17ebbb6c8e5c5e520100dc)    |
 | Successfully leaves the current channel.                | `onChannelLeaved`     | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)         |
-| A remote channel member leaves the current channel.     | `onChannelUserLeaved` | `onMemberLeft`      |
+| A remote channel member leaves the current channel.     | `onChannelUserLeaved` | [onMemberLeft](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#acc14e332fefe76d16571c14665c2cb1c)      |
 | Returns a channel member list when joining the channel. | `onChannelUserList`   | N/A<sup>3</sup>     |
 |                                                         |                       |                     |
 
@@ -111,8 +111,8 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                                          | Signaling                 | Real-time Messaging         |
 | ----------------------------------------------- | ------------------------- | --------------------------- |
-| Creates a message instance.                     | N/A                       | `createMessage`<sup>1</sup> |
-| Sends a channel message from within a channel.  | `messageChannelSend`      | `sendMessage`<sup>2</sup>   |
+| Creates a message instance.                     | N/A                       | [createMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a77dbd15cb6c9db3844fb313bd5dceac3)<sup>1</sup> |
+| Sends a channel message from within a channel.  | `messageChannelSend`      | [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a57087adf4227a17c774ea292840148a0)<sup>2</sup>   |
 | Sends a channel message from outside a channel. | `messageChannelSendForce` | N/A                         |
 
 
@@ -121,13 +121,13 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 | ----------------------------------------- | ------------------------- | ------------------------------- |
 | Successfully sends out a channel message. | `onMessageSendSuccess`    | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)                     |
 | Fails to send out a channel message.      | `onMessageSendError`      | [onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)                     |
-| Receives a channel message.               | `onMessageChannelReceive` | `onMessageReceived`<sup>3</sup> |
+| Receives a channel message.               | `onMessageChannelReceive` | [onMessageReceived](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2d527e4040bcabf038533810adbd296c)<sup>3</sup> |
 
 
 
 > - <sup>1</sup> With the Agora RTM SDK, you must create a message instance before sending out a peer-to-peer or channel message. 
 > - <sup>2</sup> The Agora RTM SDK does not support sending channel messages from outside a channel. That said, you must join a channel before being able to send out a channel message. 
-> - <sup>3</sup> The `onMessageReceived` callback is returned to the remote channel members, not to the message sender. 
+> - <sup>3</sup> The [onMessageReceived](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2d527e4040bcabf038533810adbd296c) callback is returned to the remote channel members, not to the message sender. 
 
 ## CHANNEL-ATTRIBUTE OPERATIONS
 
@@ -149,7 +149,7 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                                                 | Signaling | Real-time Messaging      |
 | ------------------------------------------------------ | --------- | ------------------------ |
-| Retrieves the latest user list of a specified channel. | `invoke`  | `getMembers`<sup>1</sup> |
+| Retrieves the latest user list of a specified channel. | `invoke`  | [getMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a567aca5f866cf71c3b679ae09b4bf626)<sup>1</sup> |
 
 
 
