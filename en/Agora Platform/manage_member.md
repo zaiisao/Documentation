@@ -3,7 +3,7 @@
 title: Manage Members & Roles
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 20 2019 09:41:04 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 13:59:08 GMT+0800 (CST)
 ---
 # Manage Members & Roles
 You can add members to your account and set these members as difference roles with specified permissions, so as to improve teamwork.
