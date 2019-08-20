@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux CPP
-updatedAt: Tue Aug 20 2019 11:26:13 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 11:29:53 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -147,13 +147,13 @@ updatedAt: Tue Aug 20 2019 11:26:13 GMT+0800 (CST)
 
 | 方法                   | 信令     | RTM 实时消息             |
 | ---------------------- | -------- | ------------------------ |
-| 获取指定频道的成员列表 | `invoke` | [getMembers](../../cn/Real-time-Messaging/RTM_vs_signaling_cpp.md)<sup>1</sup> |
+| 获取指定频道的成员列表 | `invoke` | [getMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a3f9c943059ac48a568c81798da38c3cb)<sup>1</sup> |
 
 
 
 | 事件                   | 信令          | RTM 实时消息   |
 | ---------------------- | ------------- | -------------- |
-| 返回指定频道的成员列表 | `onInvokeRet` | [onGetMembers](../../cn/Real-time-Messaging/RTM_vs_signaling_cpp.md) |
+| 返回指定频道的成员列表 | `onInvokeRet` | [onGetMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a5e3f5a5ae0b3861de2f0310841ad0b37) |
 
 > <sup>1</sup> 你必须加入一个 RtmChannel 频道后才能获取该频道的成员列表。当频道人员超过 512 人上限，Agora RTM SDK 会随机返回频道内的 512 个当前频道成员。 
 
