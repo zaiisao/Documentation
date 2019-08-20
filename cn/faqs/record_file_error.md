@@ -3,7 +3,7 @@
 title: 录制文件异常
 description: 
 platform: Linux
-updatedAt: Mon Jul 01 2019 15:18:46 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 10:26:14 GMT+0800 (CST)
 ---
 # 录制文件异常
 ### 录制文件夹下没有生成录制文件
