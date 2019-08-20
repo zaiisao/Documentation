@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Linux Java
-updatedAt: Tue Jul 23 2019 09:33:33 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 07:25:30 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
