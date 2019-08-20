@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Tue Aug 20 2019 08:28:58 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 08:29:02 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -87,17 +87,17 @@ updatedAt: Tue Aug 20 2019 08:28:58 GMT+0800 (CST)
 
 | 方法         | 信令           | RTM 实时消息                      |
 | ------------ | -------------- | --------------------------------- |
-| 创建频道实例 | N/A            | `createChannelWithId`<sup>1</sup> |
-| 加入指定频道 | `channelJoin`  | `joinWithCompletion`<sup>2</sup>  |
-| 离开频道     | `channelLeave` | `leaveWithCompletion`             |
+| 创建频道实例 | N/A            | [createChannelWithId](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:)<sup>1</sup> |
+| 加入指定频道 | `channelJoin`  | [joinWithCompletion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/joinWithCompletion:)<sup>2</sup>  |
+| 离开频道     | `channelLeave` | [leaveWithCompletion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/leaveWithCompletion:)             |
 
 | 事件                       | 信令                  | RTM 实时消息                |
 | -------------------------- | --------------------- | --------------------------- |
-| 成功加入指定频道           | `onChannelJoined`     | `AgoraRtmJoinChannelBlock`  |
-| 加入指定频道失败           | `onChannelJoinFailed` | `AgoraRtmJoinChannelBlock`  |
-| 远端用户加入当前频道       | `onChannelUserJoined` | `memberJoined`              |
-| 成功离开当前频道           | `onChannelLeaved`     | `AgoraRtmLeaveChannelBlock` |
-| 远端频道成员离开当前频道   | `onChannelUserLeaved` | `memberLeft`                |
+| 成功加入指定频道           | `onChannelJoined`     | [AgoraRtmJoinChannelBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmJoinChannelBlock.html)  |
+| 加入指定频道失败           | `onChannelJoinFailed` | [AgoraRtmJoinChannelBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmJoinChannelBlock.html)  |
+| 远端用户加入当前频道       | `onChannelUserJoined` | [memberJoined](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:memberJoined:)              |
+| 成功离开当前频道           | `onChannelLeaved`     | [AgoraRtmLeaveChannelBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmLeaveChannelBlock.html) |
+| 远端频道成员离开当前频道   | `onChannelUserLeaved` | [memberLeft](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:memberLeft:)                |
 | 加入频道时返回频道成员列表 | `onChannelUserList`   | N/A<sup>3</sup>             |
 |                            |                       |                             |
 
@@ -110,23 +110,23 @@ updatedAt: Tue Aug 20 2019 08:28:58 GMT+0800 (CST)
 
 | 方法                 | 信令                      | RTM 实时消息                          |
 | -------------------- | ------------------------- | ------------------------------------- |
-| 创建消息实例         | N/A                       | `initWithText`<sup>1</sup>            |
-| 从频道内发送频道消息 | `messageChannelSend`      | `sendMessage:completion:`<sup>2</sup> |
+| 创建消息实例         | N/A                       | [initWithText](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html#//api/name/initWithText:)<sup>1</sup>            |
+| 从频道内发送频道消息 | `messageChannelSend`      | [sendMessage:completion:](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/sendMessage:completion:)<sup>2</sup> |
 | 从频道外发送频道消息 | `messageChannelSendForce` | N/A                                   |
 
 
 
 | 事件             | 信令                      | RTM 实时消息                      |
 | ---------------- | ------------------------- | --------------------------------- |
-| 频道消息发送成功 | `onMessageSendSuccess`    | `AgoraRtmSendChannelMessageBlock` |
-| 频道消息         | `onMessageSendError`      | `AgoraRtmSendChannelMessageBlock` |
-| 收到一条频道消息 | `onMessageChannelReceive` | `messageReceived`<sup>3</sup>     |
+| 频道消息发送成功 | `onMessageSendSuccess`    | [AgoraRtmSendChannelMessageBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmSendChannelMessageBlock.html) |
+| 频道消息         | `onMessageSendError`      | [AgoraRtmSendChannelMessageBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmSendChannelMessageBlock.html) |
+| 收到一条频道消息 | `onMessageChannelReceive` | [messageReceived](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:messageReceived:fromMember:)<sup>3</sup>     |
 
 
 
 > - <sup>1</sup> Agora RTM SDK 要求你在发送频道消息或点对点消息之前必须创建一个消息实例。
 > - <sup>2</sup> Agora RTM SDK 暂不支持从频道外发送频道消息。也就是说，你必须加入频道才能向其他频道成员发送频道消息。
-> - <sup>3</sup> 与 Agora Signaling SDK 的行为不同，`messageReceived` 回调返回给频道内的其他频道成员，而非返回给发送人。
+> - <sup>3</sup> 与 Agora Signaling SDK 的行为不同，[messageReceived](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:messageReceived:fromMember:) 回调返回给频道内的其他频道成员，而非返回给发送人。
 
 ## 频道属性相关
 
@@ -148,13 +148,13 @@ updatedAt: Tue Aug 20 2019 08:28:58 GMT+0800 (CST)
 
 | 方法                   | 信令     | RTM 实时消息             |
 | ---------------------- | -------- | ------------------------ |
-| 获取指定频道的成员列表 | `invoke` | `getMembers`<sup>1</sup> |
+| 获取指定频道的成员列表 | `invoke` | [getMembersWithCompletion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/getMembersWithCompletion:)<sup>1</sup> |
 
 
 
 | 事件                   | 信令          | RTM 实时消息              |
 | ---------------------- | ------------- | ------------------------- |
-| 返回指定频道的成员列表 | `onInvokeRet` | `AgoraRtmGetMembersBlock` |
+| 返回指定频道的成员列表 | `onInvokeRet` | [AgoraRtmGetMembersBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmGetMembersBlock.html) |
 
 > <sup>1</sup> 你必须加入一个 RtmChannel 频道后才能获取该频道的成员列表。当频道人员超过 512 人上限，Agora RTM SDK 会随机返回频道内的 512 个当前频道成员。 
 
