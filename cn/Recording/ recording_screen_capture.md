@@ -3,17 +3,67 @@
 title: 视频截图
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 20 2019 09:14:20 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 09:24:00 GMT+0800 (CST)
 ---
 # 视频截图
+## 功能描述
 
-Agora 本地服务端录制 SDK 目前仅支持单流模式下截屏，无需转码。
+Agora 本地服务端录制 SDK 支持视频截图功能，方便开发者分析视频内容，例如对直播内容进行鉴黄以确保合法合规。
 
-录制模式与录制内容的设置，详见[单流录制](../../cn/Recording/individual_recording.md)和[合流录制](../../cn/Recording/composite_recording.md)。
+本文介绍如何使用 Agora Recorder Demo 以命令行的方式进行视频截图。
 
-| **录制内容** | **参数设置**                              | **生成文件**                                                 |
-| ------------ | ----------------------------------------- | ------------------------------------------------------------ |
-| 仅录制视频   | decodeVideo = 3 或 4，captureInterval = 1 | <li>jpg 文件<li>jpg 缓存                                     |
-| 边录制边截屏 | decodeVideo = 5，captureInterval = 1      | <li>Native 端每个 UID 生成一个 mp4 文件（转码前）<li>Web 端每个 UID 生成一个 webm 文件（转码前）<li>jpg 文件 |
+> 所有命令行参数的设置都是在开始录制的时候完成，请确保你已经完成 Agora Recorder Demo 的编译并且了解如何使用命令行开始录制，详见[命令行录制](../../cn/Recording/recording_cmd_cpp.md)。
 
-`captureInterval` 参数可以设置截屏的时间间隔，最小值为 1 秒，默认值为 5 秒。
+## 实现方法
+
+Agora 本地服务端录制主要通过 `getVideoFrame` 参数设置录制文件格式来获得截图。此外，你还可以通过 `captureInterval` 参数设置截图时间间隔。
+
+需要注意的是，如想进行截图，在选择录制内容时，需设置为仅录制视频（`isAudioOnly` 设为 0，`isVideoOnly` 设为 1）。
+
+### 设置录制文件格式
+
+通过 `getVideoFrame` 参数设置录制文件的格式。录制模式不同，`getVideoFrame` 的设置要求不同，如下所示。
+
+- **单流录制模式**
+
+单流录制模式（`isMixingEnabled` 为 0）下，`getVideoFrame` 参数可设为 3，4，5。
+
+<table>
+  <tr>
+    <th>参数设置</th>
+    <th>录制方式</th>
+    <th>录制文件格式</th>
+  </tr>
+  <tr>
+    <td>--getVideoFrame 3</td>
+    <td rowspan="2">只截图</td>
+    <td>原始视频数据 JPG 帧格式。</td>
+  </tr>
+  <tr>
+    <td>--getVideoFrame 4</td>
+    <td>JPG 文件格式。</td>
+  </tr>
+  <tr>
+    <td>--getVideoFrame 5</td>
+    <td>边录制边截图</td>
+    <td><li>Native 端每个 UID 生成一个 MP4 视频文件和多个 JPG 文件。<br><li>Web 端每个 UID 生成一个 WebM/MP4 视频文件和多个 JPG 文件。</td>
+  </tr>
+</table>
+
+- **合流录制模式**
+
+合流录制模式（`isMixingEnabled` 为 1）下，如想进行截图，`getVideoFrame` 只能设为 5，会得到一个 MP4 视频文件，并对各单流截图，获得多个 JPG 文件。
+
+### 设置截图时间间隔
+
+通过 `captureInterval` 参数设置截图时间间隔。默认值为 5 秒，最小值为 1 秒。
+
+## 命令行示例
+
+以下命令为单流模式下只录制视频时获取 JPG 截图。
+
+```
+./recorder_local --appId <你的 App ID> --channel <待录制的频道名> --uid 0 --appliteDir ~/Agora_Recording_SDK_for_Linux_FULL/bin --isVideoOnly 1 --getVideoFrame 4
+```
+
+成功开始录制后，会在 samples/cpp 目录下会生成一个以录制日期 yyyymmdd 为名的文件夹。
