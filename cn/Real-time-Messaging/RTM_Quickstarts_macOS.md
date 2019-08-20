@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: macOS
-updatedAt: Mon Jul 08 2019 09:13:40 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 07:25:03 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
