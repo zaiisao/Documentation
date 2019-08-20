@@ -3,7 +3,7 @@
 title: Chrome 屏幕共享插件
 description: 
 platform: Web
-updatedAt: Tue Aug 20 2019 02:44:13 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 02:51:16 GMT+0800 (CST)
 ---
 # Chrome 屏幕共享插件
 在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的屏幕共享插件。
@@ -33,9 +33,9 @@ updatedAt: Tue Aug 20 2019 02:44:13 GMT+0800 (CST)
 <img alt="../_images/chrome_extension_install_1.png" src="https://web-cdn.agora.io/docs-files/cn/chrome_extension_install_1.png" />
 
 在扩展程序页面右上角打开**开发者模式**开关。
-![](https://web-cdn.agora.io/docs-files/1566268889384)
+![](https://web-cdn.agora.io/docs-files/1566269435008)
 
-扩展程序菜单栏下方会出现三个按钮。
+启用开发者模式后扩展程序菜单栏下方会出现三个按钮。
 
 然后点击**加载已解压的扩展程序** ，点击你刚刚获取并解压的 **chrome-extension** 文件夹，点击**选择** 。
 
