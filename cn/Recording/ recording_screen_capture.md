@@ -1,11 +1,11 @@
 
 ---
-title: 截屏
+title: 视频截图
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 10:54:03 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 09:14:20 GMT+0800 (CST)
 ---
-# 截屏
+# 视频截图
 
 Agora 本地服务端录制 SDK 目前仅支持单流模式下截屏，无需转码。
 
