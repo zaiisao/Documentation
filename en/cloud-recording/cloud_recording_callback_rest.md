@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Aug 16 2019 07:47:15 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 02:01:42 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 The Agora Cloud Recording RESTful API provides the callback service. You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -52,7 +52,7 @@ Each type of event notification contains the following properties:
   - `cname`: String. The name of the channel to be recorded.
   - `uid`: String. The UID of the recording client.
   - `sid`: String. The recording ID. The unique identifier of each recording.
-  - `sequence`: Number. The serial number of the notifications, starting from 0. You can use this parameter to identify notifications that are random, lost, or resent.
+  - `sequence`: String. The serial number of the notifications, starting from 0. You can use this parameter to identify notifications that are random, lost, or resent.
   - `sendts`: Number. The time (UTC) when the event happens.
   - `serviceType`: Number. The type of the Agora callback service. 0 indicates cloud recording.
   - `noticeLevel`: Number. The notification level. The higher the number, the higher the level of attention.
@@ -185,10 +185,10 @@ The types (`eventType`) of the Agora Cloud Recording callback events are listed 
 `eventType` 42 indicates that the recording service starts slicing the first recording file, and `details` contains the following fields:
 
 - `msgName`: String. The message name, `recorder_slice_start`.
-- `startUtcMs`：Number. The UTC time (ms) when the recording starts (the starting time of the first slice file).
-- `discontinueUtcMs`：Number. In most cases this field is the same as `startUtcMs`. When the recording exits abnormally, Agora Cloud Recording service automatically resumes the recording, and  triggers this event. In this case, the value of this field is the UTC time (ms) when the last slice file stops.
+- `startUtcMs`：Number. The time (ms) in UTC when the recording starts (the starting time of the first slice file).
+- `discontinueUtcMs`：Number. In most cases, this field is the same as `startUtcMs`. When the recording is interrupted, the Agora Cloud Recording service automatically resumes the recording and  triggers this event. In this case, the value of this field is the time (ms) in UTC when the last slice file stops.
 
-For example, imagine that you start a recording session and get this event notification in which the `startUtcMs` is the starting time of slice file 1. Then the recording session goes on and records slice file 2 to slice file N. When recording slice file N+1, an error occurs, slice file N+1 is lost, and the recording session stops. Agora Cloud Recording automatically resumes the recording and triggers this event again. In the event notification, `startUtcMs` is the time when slice file N+2 starts, and `discontinueUtcMs` is the time when slice file N stops.
+For example, you start a recording session and get this event notification in which `startUtcMs` is the starting time of slice file 1. Then, the recording session continues and records slice file 2 to slice file N. If an error occurs when recording slice file N + 1, you lose this file and the recording session stops. Agora Cloud Recording automatically resumes the recording and triggers this event again. In the event notification, `startUtcMs` is the time when slice file N + 2 starts, and `discontinueUtcMs` is the time when slice file N stops.
 
 
 ## Reference
