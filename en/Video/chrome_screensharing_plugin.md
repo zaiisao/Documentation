@@ -3,7 +3,7 @@
 title: Chrome Extension for Screen Sharing
 description: 
 platform: Web
-updatedAt: Tue Aug 20 2019 02:18:53 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 13:44:22 GMT+0800 (CST)
 ---
 # Chrome Extension for Screen Sharing
 To enable screen sharing on Google Chrome, you need to add the Google Chrome extension provided by Agora for screen sharing.
