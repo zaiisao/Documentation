@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux CPP
-updatedAt: Tue Aug 20 2019 09:45:30 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 09:45:34 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -87,19 +87,18 @@ updatedAt: Tue Aug 20 2019 09:45:30 GMT+0800 (CST)
 
 | 方法         | 信令           | RTM 实时消息                |
 | ------------ | -------------- | --------------------------- |
-| 创建频道实例 | N/A            | `createChannel`<sup>1</sup> |
-| 加入指定频道 | `channelJoin`  | `join`<sup>2</sup>          |
-| 离开频道     | `channelLeave` | `leave`                     |
+| 创建频道实例 | N/A            | [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a0196e60ee165f6c97f561cf71499d377)<sup>1</sup> |
+| 加入指定频道 | `channelJoin`  | [join](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a6a54cdd8e5db526514e0ca84aa9cba4c)<sup>2</sup>          |
+| 离开频道     | `channelLeave` | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#ae7eb3e8d0bb5d547fc8b705446a92f91)                     |
 
 | 事件                       | 信令                  | RTM 实时消息     |
 | -------------------------- | --------------------- | ---------------- |
-| 成功加入指定频道           | `onChannelJoined`     | `onJoinSuccess`  |
-| 加入指定频道失败           | `onChannelJoinFailed` | `onJoinFailure`  |
-| 远端用户加入当前频道       | `onChannelUserJoined` | `onMemberJoined` |
-| 成功离开当前频道           | `onChannelLeaved`     | `onLeave`        |
-| 远端频道成员离开当前频道   | `onChannelUserLeaved` | `onMemberLeft`   |
+| 成功加入指定频道           | `onChannelJoined`     | [onJoinSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a361966f42e09627268734e43b1f7edb2)  |
+| 加入指定频道失败           | `onChannelJoinFailed` | [onJoinFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a4070957075f00a9a54ed60290838fec4)  |
+| 远端用户加入当前频道       | `onChannelUserJoined` | [onMemberJoined](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a57a5d0e1a084c75e3c0ace3a99090fbd) |
+| 成功离开当前频道           | `onChannelLeaved`     | [onLeave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#acd127e2282aaf719241f3527c8252070)        |
+| 远端频道成员离开当前频道   | `onChannelUserLeaved` | [onMemberLeft](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#ae657b3507830a8162dc3a046dae2e60b)   |
 | 加入频道时返回频道成员列表 | `onChannelUserList`   | N/A<sup>3</sup>  |
-|                            |                       |                  |
 
 > - <sup>1</sup> Agora RTM SDK 要求你在加入频道前先创建频道实例。
 > - <sup>2</sup> Agora RTM SDK 允许你最多同时加入 20 个频道。 
@@ -110,23 +109,23 @@ updatedAt: Tue Aug 20 2019 09:45:30 GMT+0800 (CST)
 
 | 方法                 | 信令                      | RTM 实时消息                |
 | -------------------- | ------------------------- | --------------------------- |
-| 创建消息实例         | N/A                       | `createMessage`<sup>1</sup> |
-| 从频道内发送频道消息 | `messageChannelSend`      | `sendMessage`<sup>2</sup>   |
+| 创建消息实例         | N/A                       | [createMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#acbbfe84bc22fd161ec5dc4fe098a59ce)<sup>1</sup> |
+| 从频道内发送频道消息 | `messageChannelSend`      | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a4ae01f44d49f334f7c2950d95f327d30)<sup>2</sup>   |
 | 从频道外发送频道消息 | `messageChannelSendForce` | N/A                         |
 
 
 
 | 事件             | 信令                      | RTM 实时消息                    |
 | ---------------- | ------------------------- | ------------------------------- |
-| 频道消息发送成功 | `onMessageSendSuccess`    | `onSendMessageResult`           |
-| 频道消息         | `onMessageSendError`      | `onSendMessageResult`           |
-| 收到一条频道消息 | `onMessageChannelReceive` | `onMessageReceived`<sup>3</sup> |
+| 频道消息发送成功 | `onMessageSendSuccess`    | [onSendMessageResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a4ba5dd414b2164d5a3693032b64c64e3)           |
+| 频道消息         | `onMessageSendError`      | [onSendMessageResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a4ba5dd414b2164d5a3693032b64c64e3)           |
+| 收到一条频道消息 | `onMessageChannelReceive` | [onMessageReceived](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#aabe8e78b46553645640479b862f2cae2)<sup>3</sup> |
 
 
 
 > - <sup>1</sup> Agora RTM SDK 要求你在发送频道消息或点对点消息之前必须创建一个消息实例。
 > - <sup>2</sup> Agora RTM SDK 暂不支持从频道外发送频道消息。也就是说，你必须加入频道才能向其他频道成员发送频道消息。
-> - <sup>3</sup> 与 Agora Signaling SDK 的行为不同，`onMessageReceived` 回调返回给频道内的其他频道成员，而非返回给发送人。
+> - <sup>3</sup> 与 Agora Signaling SDK 的行为不同，[onMessageReceived](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#aabe8e78b46553645640479b862f2cae2) 回调返回给频道内的其他频道成员，而非返回给发送人。
 
 ## 频道属性相关
 
@@ -148,13 +147,13 @@ updatedAt: Tue Aug 20 2019 09:45:30 GMT+0800 (CST)
 
 | 方法                   | 信令     | RTM 实时消息             |
 | ---------------------- | -------- | ------------------------ |
-| 获取指定频道的成员列表 | `invoke` | `getMembers`<sup>1</sup> |
+| 获取指定频道的成员列表 | `invoke` | [getMembers](../../cn/Real-time-Messaging/RTM_vs_signaling_cpp.md)<sup>1</sup> |
 
 
 
 | 事件                   | 信令          | RTM 实时消息   |
 | ---------------------- | ------------- | -------------- |
-| 返回指定频道的成员列表 | `onInvokeRet` | `onGetMembers` |
+| 返回指定频道的成员列表 | `onInvokeRet` | [onGetMembers](../../cn/Real-time-Messaging/RTM_vs_signaling_cpp.md) |
 
 > <sup>1</sup> 你必须加入一个 RtmChannel 频道后才能获取该频道的成员列表。当频道人员超过 512 人上限，Agora RTM SDK 会随机返回频道内的 512 个当前频道成员。 
 
