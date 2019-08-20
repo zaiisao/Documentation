@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: iOS,macOS
-updatedAt: Tue Aug 20 2019 10:25:37 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 10:25:42 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -86,17 +86,17 @@ rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging A
 
 | Method                      | Signaling      | Real-time Messaging               |
 | --------------------------- | -------------- | --------------------------------- |
-| Creates a channel instance. | N/A            | `createChannelWithId`<sup>1</sup> |
-| Joins a specified channel.  | `channelJoin`  | `joinWithCompletion`<sup>2</sup>  |
-| Leaves a channel.           | `channelLeave` | `leaveWithCompletion`             |
+| Creates a channel instance. | N/A            | [createChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:)<sup>1</sup> |
+| Joins a specified channel.  | `channelJoin`  | [joinWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/joinWithCompletion:)<sup>2</sup>  |
+| Leaves a channel.           | `channelLeave` | [leaveWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/leaveWithCompletion:)             |
 
 | Event                                                   | Signaling             | Real-time Messaging         |
 | ------------------------------------------------------- | --------------------- | --------------------------- |
-| Successfully joins the specified channel.               | `onChannelJoined`     | `AgoraRtmJoinChannelBlock`  |
-| Fails to join the specified channel                     | `onChannelJoinFailed` | `AgoraRtmJoinChannelBlock`  |
-| A remote user joins the current channel.                | `onChannelUserJoined` | memberJoined`               |
-| Successfully leaves the current channel.                | `onChannelLeaved`     | `AgoraRtmLeaveChannelBlock` |
-| A remote channel member leaves the current channel.     | `onChannelUserLeaved` | `memberLeft`                |
+| Successfully joins the specified channel.               | `onChannelJoined`     | [AgoraRtmJoinChannelBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmJoinChannelBlock.html)  |
+| Fails to join the specified channel                     | `onChannelJoinFailed` | [AgoraRtmJoinChannelBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmJoinChannelBlock.html)  |
+| A remote user joins the current channel.                | `onChannelUserJoined` | [memberJoined](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:memberJoined:)               |
+| Successfully leaves the current channel.                | `onChannelLeaved`     | [AgoraRtmLeaveChannelBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmLeaveChannelBlock.html) |
+| A remote channel member leaves the current channel.     | `onChannelUserLeaved` | [memberLeft](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:memberLeft:)                |
 | Returns a channel member list when joining the channel. | `onChannelUserList`   | N/A<sup>3</sup>             |
 |                                                         |                       |                             |
 
@@ -109,23 +109,23 @@ rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging A
 
 | Method                                          | Signaling                 | Real-time Messaging                   |
 | ----------------------------------------------- | ------------------------- | ------------------------------------- |
-| Creates a message instance.                     | N/A                       | `initWithText`<sup>1</sup>            |
-| Sends a channel message from within a channel.  | `messageChannelSend`      | `sendMessage:completion:`<sup>2</sup> |
+| Creates a message instance.                     | N/A                       | [initWithText](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html#//api/name/initWithText:)<sup>1</sup>            |
+| Sends a channel message from within a channel.  | `messageChannelSend`      | [sendMessage:completion:](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/sendMessage:completion:)<sup>2</sup> |
 | Sends a channel message from outside a channel. | `messageChannelSendForce` | N/A                                   |
 
 
 
 | Event                                     | Signaling                 | Real-time Messaging               |
 | ----------------------------------------- | ------------------------- | --------------------------------- |
-| Successfully sends out a channel message. | `onMessageSendSuccess`    | `AgoraRtmSendChannelMessageBlock` |
-| Fails to send out a channel message.      | `onMessageSendError`      | `AgoraRtmSendChannelMessageBlock` |
-| Receives a channel message.               | `onMessageChannelReceive` | `messageReceived`<sup>3</sup>     |
+| Successfully sends out a channel message. | `onMessageSendSuccess`    | [AgoraRtmSendChannelMessageBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmSendChannelMessageBlock.html) |
+| Fails to send out a channel message.      | `onMessageSendError`      | [AgoraRtmSendChannelMessageBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmSendChannelMessageBlock.html) |
+| Receives a channel message.               | `onMessageChannelReceive` | [messageReceived](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:messageReceived:fromMember:)<sup>3</sup>     |
 
 
 
 > - <sup>1</sup> With the Agora RTM SDK, you must create a message instance before sending out a peer-to-peer or channel message. 
 > - <sup>2</sup> The Agora RTM SDK does not support sending channel messages from outside a channel. That said, you must join a channel before being able to send out a channel message. 
-> - <sup>3</sup> The `messageReceived` callback is returned to the remote channel members, not to the message sender. 
+> - <sup>3</sup> The [messageReceived](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:messageReceived:fromMember:) callback is returned to the remote channel members, not to the message sender. 
 
 ## CHANNEL-ATTRIBUTE OPERATIONS
 
@@ -147,13 +147,13 @@ rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging A
 
 | Method                                                 | Signaling | Real-time Messaging      |
 | ------------------------------------------------------ | --------- | ------------------------ |
-| Retrieves the latest user list of a specified channel. | `invoke`  | `getMembers`<sup>1</sup> |
+| Retrieves the latest user list of a specified channel. | `invoke`  | [getMembersWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/getMembersWithCompletion:)<sup>1</sup> |
 
 
 
 | Event                                         | Signaling     | Real-time Messaging       |
 | --------------------------------------------- | ------------- | ------------------------- |
-| Returns the user list in a specified channel. | `onInvokeRet` | `AgoraRtmGetMembersBlock` |
+| Returns the user list in a specified channel. | `onInvokeRet` | [AgoraRtmGetMembersBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmGetMembersBlock.html) |
 
 > <sup>1</sup> You must join an RtmChannel before retrieving a member list of it. When the number of the channel members exceeds 512, the Agora RTM SDK only returns a list of randomly selected 512 channel members. 
 
