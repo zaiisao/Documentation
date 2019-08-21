@@ -3,7 +3,7 @@
 title: 单流录制
 description: 
 platform: Linux
-updatedAt: Wed Aug 14 2019 10:24:36 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 07:32:10 GMT+0800 (CST)
 ---
 # 单流录制
 ## 功能描述
@@ -15,9 +15,9 @@ updatedAt: Wed Aug 14 2019 10:24:36 GMT+0800 (CST)
 
 本文介绍如何通过命令行的方式进行**单流录制**。
 
-所有命令行参数的设置都是在开始录制的时候完成，请确保你已经完成录制 SDK 的环境准备和集成工作并且了解如何使用命令行开始录制，详见[集成客户端](../../cn/Recording/recording_integrate_cpp.md)和[命令行录制](../../cn/Recording/recording_cmd_cpp.md)。
+阅读本文前，请确保你已经完成录制 SDK 的环境准备和集成工作并且了解如何使用命令行开始录制，详见[集成客户端](../../cn/Recording/recording_integrate_cpp.md)和[命令行录制](../../cn/Recording/recording_cmd_cpp.md)。所有命令行参数的设置都是在开始录制的时候完成。
 
-> 为方便起见，本文我们假设频道内所有用户都发送音频和视频。如果某个用户没有发送音频或视频，例如直播频道中的观众，一般不会生成该用户的音频或视频录制文件（Web 端例外）。
+> 为方便起见，本文我们假设频道内每个用户都发送音频和视频。如果有用户没有发送音频或视频（例如直播频道中的观众），一般不会生成该用户的音频或视频录制文件（Web 端例外）。
 
 ## 实现方法
 
@@ -25,8 +25,8 @@ updatedAt: Wed Aug 14 2019 10:24:36 GMT+0800 (CST)
 
 该模式下录制文件的音视频编码配置如下：
 
-- 音频：采样率固定为 48 KHz，声道数和码率与原始音频流一致。
-- 视频：与原始视频流一致。
+- 音频编码配置：采样率固定为 48 KHz，声道数和码率与原始音频流一致。
+- 视频编码配置：与原始视频流一致。
 
 根据录制内容的不同，录制生成的文件如下表所示：
 
@@ -40,6 +40,13 @@ updatedAt: Wed Aug 14 2019 10:24:36 GMT+0800 (CST)
 
 - `codec` 为 `"vp8"`， 视频文件格式为 WebM
 - `codec` 为 `"h264"`，视频文件格式为 MP4
+
+## 命令行示例
+以下命令行为单流录制模式下只录制视频。
+
+```
+./recorder_local --appId <你的 App ID> --channel <待录制的频道名> --uid 0 --appliteDir ~/Agora_Recording_SDK_for_Linux_FULL/bin --isVideoOnly 1
+```
 
 ## 开发注意事项
 
