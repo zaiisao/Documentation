@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux CPP
-updatedAt: Tue Aug 20 2019 11:25:08 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 03:04:39 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -226,11 +226,11 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                    | Signaling | Real-time Messaging |
 | ------------------------- | --------- | ------------------- |
-| Renews the current Token. | N/A       | `renewToken`        |
+| Renews the current Token. | N/A       | [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2c33be67bfec02d69041f1e8978f4559)        |
 
 
 
 | Event                                  | Signaling | Real-time Messaging  |
 | -------------------------------------- | --------- | -------------------- |
-| Returns the result of the method call. | N/A       | `onRenewTokenResult` |
-| The token has expired.                 | N/A       | `onTokenExpired`     |
+| Returns the result of the method call. | N/A       | [onRenewTokenResult](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a9745d741bb077d7c6938b42da045cfe5) |
+| The token has expired.                 | N/A       | [onTokenExpired](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a779fdd499d4322eef743f4eda2cc7fee)     |
