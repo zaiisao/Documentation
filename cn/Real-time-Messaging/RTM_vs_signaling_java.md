@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux Java
-updatedAt: Wed Aug 21 2019 02:48:26 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 02:48:30 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -233,11 +233,11 @@ updatedAt: Wed Aug 21 2019 02:48:26 GMT+0800 (CST)
 
 | 方法           | 信令 | RTM 实时消息 |
 | -------------- | ---- | ------------ |
-| 更新当前 Token | N/A  | `renewToken`  |
+| 更新当前 Token | N/A  | [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353)  |
 
 
 
 | 事件             | 信令 | RTM 实时消息            |
 | ---------------- | ---- | ----------------------- |
 | 返回方法调用结果 | N/A  | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
-| Token 已过期     | N/A  | `onTokenExpired`        |
+| Token 已过期     | N/A  | [onTokenExpired](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e)        |
