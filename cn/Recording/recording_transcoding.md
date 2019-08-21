@@ -2,7 +2,7 @@
 ---
 title: 使用转码脚本
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Wed Aug 14 2019 10:43:52 GMT+0800 (CST)
 ---
 # 使用转码脚本

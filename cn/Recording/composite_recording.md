@@ -2,7 +2,7 @@
 ---
 title: 合流录制
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Wed Aug 14 2019 10:46:55 GMT+0800 (CST)
 ---
 # 合流录制

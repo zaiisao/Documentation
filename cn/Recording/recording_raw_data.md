@@ -2,7 +2,7 @@
 ---
 title: 获取原始音视频数据
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Wed Aug 14 2019 11:39:34 GMT+0800 (CST)
 ---
 # 获取原始音视频数据

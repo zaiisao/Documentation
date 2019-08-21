@@ -2,7 +2,7 @@
 ---
 title: 单流录制
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Wed Aug 14 2019 10:24:36 GMT+0800 (CST)
 ---
 # 单流录制

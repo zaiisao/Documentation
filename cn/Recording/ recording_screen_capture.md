@@ -2,7 +2,7 @@
 ---
 title: 视频截图
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Tue Aug 20 2019 09:24:00 GMT+0800 (CST)
 ---
 # 视频截图

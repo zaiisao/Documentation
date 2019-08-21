@@ -2,7 +2,7 @@
 ---
 title: 管理录制文件
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Wed Aug 14 2019 10:43:48 GMT+0800 (CST)
 ---
 # 管理录制文件
