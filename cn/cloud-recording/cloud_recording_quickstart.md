@@ -3,7 +3,7 @@
 title: 云端录制快速开始
 description: Draft
 platform: Linux CPP
-updatedAt: Thu Jul 18 2019 06:52:45 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 04:10:22 GMT+0800 (CST)
 ---
 # 云端录制快速开始
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
@@ -73,7 +73,7 @@ virtual int StartCloudRecording(
 - `appId`：待录制频道的 App ID，必填。
 - `channel_name`：待录制频道的频道名，必填。
 - `token`：待录制的频道中使用的 token，选填。详见[校验用户权限](../../cn/cloud-recording/token.md)。
-- `uid`：云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。**
+- `uid`：云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。
 - `recording_config`：配置录制参数，选填，如不填则使用默认配置。详见[`RecordingConfig`](../../cn/cloud-recording/cloud_recording_api.md)。
 - `storage_config`：配置第三方云存储，必填。详见 [`CloudStorageConfig`](../../cn/cloud-recording/cloud_recording_api.md)。
 

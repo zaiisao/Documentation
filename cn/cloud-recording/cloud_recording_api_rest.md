@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Aug 20 2019 10:27:12 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 04:07:02 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -120,7 +120,7 @@ updatedAt: Tue Aug 20 2019 10:27:12 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。云端录制不支持 String 用户名（User Account），请确保该字段引号内为整型 UID，且频道内所有用户均使用整型 UID。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该请求请参考下面的列表设置。         |
 
 `clientRequest` 中需要填写的内容如下：
