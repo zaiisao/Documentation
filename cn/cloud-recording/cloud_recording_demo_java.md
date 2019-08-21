@@ -3,7 +3,7 @@
 title: Demo 使用指南
 description: 
 platform: Linux Java
-updatedAt: Wed Aug 21 2019 06:47:32 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 06:56:45 GMT+0800 (CST)
 ---
 # Demo 使用指南
 本文介绍如何通过命令行运行 Java demo 进行云端录制。 你也可以通过调用 API 实现录制，详见[调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart_java.md)。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
