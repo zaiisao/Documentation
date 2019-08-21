@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Wed Aug 21 2019 02:46:24 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 02:46:30 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -233,13 +233,13 @@ updatedAt: Wed Aug 21 2019 02:46:24 GMT+0800 (CST)
 
 | 方法           | 信令 | RTM 实时消息 |
 | -------------- | ---- | ------------ |
-| 更新当前 Token | N/A  | `renewToken` |
+| 更新当前 Token | N/A  | [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/renewToken:completion:) |
 
 
 
 | 事件             | 信令 | RTM 实时消息            |
 | ---------------- | ---- | ----------------------- |
-| 返回方法调用结果 | N/A  | `AgoraRtmRenewTokenBlock` |
-| Token 已过期     | N/A  | `rtmKitTokenDidExpire`  |
+| 返回方法调用结果 | N/A  | [AgoraRtmRenewTokenBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmRenewTokenBlock.html) |
+| Token 已过期     | N/A  | [rtmKitTokenDidExpire](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKitTokenDidExpire:)  |
 
 
