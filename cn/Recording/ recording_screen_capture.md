@@ -3,16 +3,16 @@
 title: 视频截图
 description: 
 platform: Linux
-updatedAt: Tue Aug 20 2019 09:24:00 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 08:26:01 GMT+0800 (CST)
 ---
 # 视频截图
 ## 功能描述
 
 Agora 本地服务端录制 SDK 支持视频截图功能，方便开发者分析视频内容，例如对直播内容进行鉴黄以确保合法合规。
 
-本文介绍如何使用 Agora Recorder Demo 以命令行的方式进行视频截图。
+本文介绍如何通过命令行的方式进行视频截图。
 
-> 所有命令行参数的设置都是在开始录制的时候完成，请确保你已经完成 Agora Recorder Demo 的编译并且了解如何使用命令行开始录制，详见[命令行录制](../../cn/Recording/recording_cmd_cpp.md)。
+阅读本文前，请确保你已经完成录制 SDK 的环境准备和集成工作并且了解如何使用命令行开始录制，详见[集成客户端](../../cn/Recording/recording_integrate_cpp.md)和[命令行录制](../../cn/Recording/recording_cmd_cpp.md)。
 
 ## 实现方法
 
