@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux Java
-updatedAt: Tue Aug 20 2019 11:12:00 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 03:02:37 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -234,11 +234,11 @@ This page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs
 
 | Method                    | Signaling | Real-time Messaging |
 | ------------------------- | --------- | ------------------- |
-| Renews the current Token. | N/A       | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)         |
+| Renews the current Token. | N/A       | [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353)         |
 
 
 
 | Event                                  | Signaling | Real-time Messaging     |
 | -------------------------------------- | --------- | ----------------------- |
 | Returns the result of the method call. | N/A       | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
-| The token has expired.                 | N/A       | `onTokenExpired`        |
+| The token has expired.                 | N/A       | [onTokenExpired](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e)        |
