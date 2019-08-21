@@ -3,7 +3,7 @@
 title: 单流录制
 description: 
 platform: Linux
-updatedAt: Wed Aug 21 2019 07:32:10 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 07:43:11 GMT+0800 (CST)
 ---
 # 单流录制
 ## 功能描述
@@ -42,7 +42,7 @@ updatedAt: Wed Aug 21 2019 07:32:10 GMT+0800 (CST)
 - `codec` 为 `"h264"`，视频文件格式为 MP4
 
 ## 命令行示例
-以下命令行为单流录制模式下只录制视频。
+以下命令行为单流录制模式下录制一个通信频道内的视频。
 
 ```
 ./recorder_local --appId <你的 App ID> --channel <待录制的频道名> --uid 0 --appliteDir ~/Agora_Recording_SDK_for_Linux_FULL/bin --isVideoOnly 1
