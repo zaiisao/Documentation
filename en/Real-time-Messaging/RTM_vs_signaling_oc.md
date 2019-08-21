@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: iOS,macOS
-updatedAt: Wed Aug 21 2019 03:00:37 GMT+0800 (CST)
+updatedAt: Wed Aug 21 2019 03:00:41 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
@@ -232,12 +232,12 @@ rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging A
 
 | Method                    | Signaling | Real-time Messaging |
 | ------------------------- | --------- | ------------------- |
-| Renews the current Token. | N/A       | `renewToken`         |
+| Renews the current Token. | N/A       | [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/renewToken:completion:)         |
 
 
 
 | Event                                  | Signaling | Real-time Messaging       |
 | -------------------------------------- | --------- | ------------------------- |
-| Returns the result of the method call. | N/A       | `AgoraRtmRenewTokenBlock` |
-| The token has expired.                 | N/A       | `rtmTokenDidExpire:`      |
+| Returns the result of the method call. | N/A       | [AgoraRtmRenewTokenBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmRenewTokenBlock.html) |
+| The token has expired.                 | N/A       | [rtmTokenDidExpire:](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKitTokenDidExpire:)      |
 
