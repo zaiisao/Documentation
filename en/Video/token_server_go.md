@@ -15,6 +15,7 @@ Your token needs to be generated on your own server, hence you are required to f
 - CPP
 - Java
 - Python
+- PHP
 - Node.js
 - Go
 - Ruby
