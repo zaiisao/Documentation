@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Aug 19 2019 01:45:56 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 03:52:38 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -38,7 +38,7 @@ For more information about privacy changes, see [Android Privacy Changes](https:
 
 v2.9.0 is released on Aug 16, 2019.
 
-**Before getting started**
+**Compatibility changes**
 
 In this release, we deleted the following methods:
 
@@ -51,6 +51,7 @@ If your app implements CDN streaming with the methods above, ensure that you upg
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a87b3f2f17bce8f4cc42b3ee6312d30d4)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
 
+For how to implement the new methods, see [Push Streams to the CDN](../../en/Voice/push_stream_android2.0_audio.md).
 
 **New features**
 
@@ -237,7 +238,7 @@ To improve your experience, we made the following changes to the APIs:
 ## v2.4.1
 v2.4.1 is released on Jun 12, 2019.
 
-**Before getting started**
+**Compatibility changes**
 
 Ensure that you read the following SDK behavior changes if you migrate from an earlier SDK version.
 
@@ -436,7 +437,7 @@ v2.3.3 is released on January 24, 2019.
 ## v2.3.2
 v2.3.2 is released on January 16, 2019.
 
-**Before Getting Started**
+**Compatibility changes**
 
 Besides the new features and improvements mentioned below, it is worth noting that v2.3.2:
 
@@ -564,7 +565,7 @@ The difference between this method and the `muteLocalAudioStream` method is that
 
 v2.3.0 is released on August 31, 2018.
 
-**Before Reading**
+**Compatibility changes**
 
 -   From v2.3.0, the `LiveTranscoding` class is moved from the *io.agora.live* package to the `io.agora.rtc.live` package.
 -   Fixed a typo in the constants.java API in v2.3.0.
@@ -651,7 +652,7 @@ The following deprecated API methods are deleted and no longer supported from v2
 
 v2.2.3 is released on July 5, 2018. 
 
-**Read This First**
+**Compatibility changes**
 
 The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version below v2.1.0 and wish to migrate to the latest version, see `Token Migration Guide`.
 
@@ -703,7 +704,7 @@ Adds a <code>publish</code> parameter in the <code>playEffect</code> method for 
 
 #### 2. Deploy the proxy at the server
 
-We provide a proxy package for enterprise users with corporate firewalls to deploy before accessing our services. See [Deploying the Enterprise Proxy](../../en/Quickstart%20Guide/proxy.md).
+We provide a proxy package for enterprise users with corporate firewalls to deploy before accessing our services. 
 
 
 **Improvements**
