@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Aug 22 2019 03:48:34 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 03:48:51 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -37,9 +37,9 @@ For more information about privacy changes, see [Android Privacy Changes](https:
 
 v2.9.0 is released on Aug 16, 2019.
 
-**Before getting started**
+**Compatibility changes**
 
-#### 1. CDN Streaming
+#### 1. RTMP streaming
 
 In this release, we deleted the following methods:
 
@@ -47,12 +47,14 @@ In this release, we deleted the following methods:
 - `setVideoCompositingLayout`
 - `clearVideoCompositingLayout`
 
-If your app implements CDN streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
+If your app implements RTMP streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
 
 - [`setLiveTranscoding`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a3cb9804ae71819038022d7575834b88c)
 - [`addPublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4445b4ca9509cc4e2966b6d308a8f08f)
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a87b3f2f17bce8f4cc42b3ee6312d30d4)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
+
+For how to implement the new methods, see [Push Streams to the CDN](../../en/Video/push_stream_android2.0.md).
 
 #### 2. Reporting the state of the remote video
 
@@ -60,7 +62,6 @@ This release extends the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/
 
 The new callback reports most of the remote video states, and therefore deprecates the following callbacks. You can still use them, but we do not recommend doing so.
 
-- [`onUserMuteVideo`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a6d406dc427f047d4000a8ae2801b4e51)
 - [`onUserEnableVideo`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af87247218ec1ef398a9478672ad4dd49)
 - [`onUserEnableLocalVideo`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2640b0eef8b7f1b105c485b4f1c9d8b5)
 - [`onFirstRemoteVideoDecoded`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7144e0124c3d8f75e0366b0246fbe3b)
@@ -174,10 +175,6 @@ To improve the user experience, we made the following changes in v2.9.0:
 - `onMicrophoneEnabled`. Use LOCAL_AUDIO_STREAM_STATE_CHANGED(0) or LOCAL_AUDIO_STREAM_STATE_RECORDING(1) in the [`onLocalAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aeba2aa3fc29404fc6f25bff5c00bfdf9) callback instead. 
 - `onRemoteAudioTransportStats`. Use the [`onRemoteAudioStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54) callback instead.
 - `onRemoteVideoTransportStats`. Use the [`onRemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#abb7af6e2827bbd03c6ab8338a0f616ca) callback instead.
-- `onUserMuteVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131) callback with the following parameters instead:
-	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
-	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTE(6).
-
 - `onUserEnableVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a93ebe88d2544253bf4b13faf34873131) callback with the following parameters instead:
 	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
 	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6).
@@ -285,7 +282,7 @@ To improve your experience, we made the following changes to the APIs:
 ## v2.4.1
 v2.4.1 is released on Jun 12, 2019.
 
-**Before getting started**
+**Compatibility changes**
 
 Ensure that you read the following SDK behavior changes if you migrate from an earlier SDK version.
 
@@ -541,7 +538,7 @@ v2.3.3 is released on January 24, 2019.
 ## v2.3.2
 v2.3.2 is released on January 16, 2019.
 
-**Before Getting Started**
+**Compatibility changes**
 
 Besides the new features and improvements mentioned below, it is worth noting that v2.3.2:
 
@@ -700,7 +697,7 @@ The difference between this method and the `muteLocalAudioStream` method is that
 
 v2.3.0 is released on August 31, 2018.
 
-**Before Reading**
+**Compatibility changes**
 
 -   To support video rotation and enable better quality for the custom video source, this version deprecates the `setVideoProfile` method and uses the `setVideoEncoderConfiguration` method instead to set the video encoding configurations. You can still use the `setVideoProfile` method, but Agora recommends using the `setVideoEncoderConfiguration` method to set the video profile because:
     -   During a live broadcast, users can set the video orientation mode as adaptive, under which the SDK can transfer rotated video frames without cropping them, thus avoiding the “big headshot” or blurry images at the player.
@@ -842,7 +839,7 @@ The following deprecated API methods are deleted and no longer supported from v2
 
 v2.2.3 is released on July 5, 2018. 
 
-**Read This First**
+**Compatiblity changes**
 
 The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version below v2.1.0 and wish to migrate to the latest version, see `Token Migration Guide`.
 
@@ -899,7 +896,7 @@ Adds a <code>publish</code> parameter in the <code>playEffect</code> method for 
 
 #### 2. Deploy the proxy at the server
 
-We provide a proxy package for enterprise users with corporate firewalls to deploy before accessing our services. See [Deploying the Enterprise Proxy](../../en/Quickstart%20Guide/proxy.md).
+We provide a proxy package for enterprise users with corporate firewalls to deploy before accessing our services.
 
 #### 3. Get the remote video state
 
