@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Fri Aug 16 2019 10:00:19 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 07:40:17 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -30,13 +30,14 @@ Windows 语音 SDK 支持 X86 和 X64 架构。
 
 - `configPublisher`
 
-如果你的 App 使用上述接口实现 CDN 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
+如果你的 App 使用上述接口实现 RTMP 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
 
 - [`setLiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde)
 - [`addPublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
 
+新的推流实现方法，详见[推流到 RTMP](../../cn/Audio%20Broadcast/push_stream_android2.0.md)。
 
 **新增特性**
 
@@ -191,7 +192,7 @@ Windows 语音 SDK 支持 X86 和 X64 架构。
 - [调整通话音量](../../cn/Audio%20Broadcast/volume_windows.md)
 - [播放音效/音乐混音](../../cn/Audio%20Broadcast/effect_mixing_windows.md)
 - [变声与混响](../../cn/Audio%20Broadcast/voice_effect_windows.md)
-- [推流到 CDN](../../cn/Audio%20Broadcast/push_stream_windows2.0_audio.md)
+- [推流到 RTMP](../../cn/Audio%20Broadcast/push_stream_windows2.0_audio.md)
 - [音频设备测试与切换](../../cn/Audio%20Broadcast/switch_audio_device_windows.md)
 
 如果你是由之前版本的 Windows 完整包升级到当前的纯音频包，可参考 [Windows 完整包发版说明](../../cn/Audio%20Broadcast/release_windows_video.md)了解音频相关改进。

@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Mon Aug 19 2019 02:12:47 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 07:39:18 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -27,12 +27,14 @@ macOS 语音 SDK 支持两种主要场景:
 
 - `configPublisher`
 
-如果你的 App 使用上述接口实现 CDN 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
+如果你的 App 使用上述接口实现 RTMP 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
 
 - [`setLiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLiveTranscoding:)
 - [`addPublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
+
+新的推流实现方法，详见[推流到 RTMP](../../cn/Audio%20Broadcast/push_stream_android2.0.md)。
 
 **新增特性**
 
@@ -133,7 +135,7 @@ macOS 语音 SDK 支持两种主要场景:
 
 该版本于 2019 年 7 月 8 日发布。新增特性与修复问题列表详见下文。
 
-### **新增特性**
+**新增特性**
 
 #### 1. 全平台支持 String 型的用户名
 
@@ -163,15 +165,15 @@ macOS 语音 SDK 支持两种主要场景:
 
 同时，该版本在 [AgoraRtcRemoteAudioStats](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) 类中还新增 `numChannels`、`receivedSampleRate` 和 `receivedBitrate` 成员。
 
-### **改进**
+**改进**
 
 为方便开发者统计掉线率，该版本在 [connectionChangedToState](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调的 `AgoraConnectionChangedReason` 参数中添加 `AgoraConnectionChangedKeepAliveTimeout(14)` 成员，表示 SDK 与服务器连接保活超时，引起 SDK 连接状态发生改变。
 
-### **修复问题**
+**修复问题**
 
 - 特定场景下偶现的崩溃问题。
 
-### **API 变更**
+**API 变更**
 
 为提升用户体验，Agora 在 v2.8.0 版本中对 API 进行了如下变动：
 
@@ -202,7 +204,7 @@ macOS 语音 SDK 支持两种主要场景:
 - [调整通话音量](../../cn/Audio%20Broadcast/volume_mac.md)
 - [播放音效/音乐混音](../../cn/Audio%20Broadcast/effect_mixing_mac.md)
 - [变声与混响](../../cn/Audio%20Broadcast/voice_effect_mac.md)
-- [推流到 CDN](../../cn/Audio%20Broadcast/push_stream_ios2.0_audio.md)
+- [推流到 RTMP](../../cn/Audio%20Broadcast/push_stream_ios2.0_audio.md)
 - [音频设备测试与切换](../../cn/Audio%20Broadcast/switch_audio_device_mac.md)
 
 如果你是由之前版本的 macOS 完整包升级到当前的纯音频包，可参考 [macOS 完整包发版说明](../../cn/Audio%20Broadcast/release_mac_video.md)了解音频的相关改进。

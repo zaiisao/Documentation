@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Thu Aug 22 2019 07:33:27 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 07:37:22 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -26,12 +26,14 @@ iOS 语音 SDK 支持两种主要场景:
 
 - `configPublisher`
 
-如果你的 App 使用上述接口实现 CDN 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
+如果你的 App 使用上述接口实现 RTMP 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
 
 - [`setLiveTranscoding`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLiveTranscoding:)
 - [`addPublishStreamUrl`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
+
+新的推流实现方法，详见[推流到 RTMP](../../cn/Voice/push_stream_android2.0.md)。
 
 **新增特性**
 
@@ -135,7 +137,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 该版本于 2019 年 7 月 8 日发布。新增特性详见下文。
 
-### **新增特性**
+**新增特性**
 
 #### 1. 全平台支持 String 型的用户名
 
@@ -165,12 +167,12 @@ iOS 语音 SDK 支持两种主要场景:
 
 同时，该版本在 [AgoraRtcRemoteAudioStats](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) 类中还新增 `numChannels`、`receivedSampleRate` 和 `receivedBitrate` 成员。
 
-### **改进**
+**改进**
 
 为方便开发者统计掉线率，该版本在 [connectionChangedToState](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调的 `AgoraConnectionChangedReason` 参数中添加 `AgoraConnectionChangedKeepAliveTimeout(14)` 成员，表示 SDK 与服务器连接保活超时，引起 SDK 连接状态发生改变。
 
 
-### **API 变更**
+**API 变更**
 
 为提升用户体验，Agora 在 v2.8.0 版本中对 API 进行了如下变动：
 
@@ -196,7 +198,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 如下内容涉及 SDK 的行为变更。如果你是由之前版本的 SDK 升级至该版本，升级前请务必阅读。
 
-#### CDN 推流
+#### RTMP 推流
 
 为提高推流服务的易用性，该版本对推流接口的参数设置进行了如下限制：
 
@@ -211,7 +213,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 此外，该版本还对 [streamPublishedWithUrl](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:) 方法的 `errorCode` 参数新增了五个错误码，方便快速定位与排查问题。
 
-### **新增特性**
+**新增特性**
 
 #### 1、推流状态回调
 
@@ -233,7 +235,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 为更精准地获取远端用户的出声时间，该版本新增 [firstRemoteAudioFrameDecodedOfUid](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteAudioFrameDecodedOfUid:elapsed:) 回调，用以向 App 层报告 SDK 已完成远端音频首帧解码。在远端用户加入频道后首次发送音频，或远端用户 15 秒不发音频后再次发送时，该回调均会被触发。该回调与 `firstRemoteAudioFrameOfUid` 的区别在于，`firstRemoteAudioFrameOfUid` 在收到首个音频包时触发，先于 `firstRemoteAudioDecodedOfUid`。
 
-### **改进**
+**改进**
 
 #### 1、在线音效叠加
 
@@ -254,7 +256,7 @@ iOS 语音 SDK 支持两种主要场景:
 - 默认启用音频质量通知回调。开发者无需调用 enableAudioQualityIndication 方法，也可以收到 [remoteAudioStats](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:) 回调
 - 提升了推流服务的稳定性
 
-### **问题修复**
+**问题修复**
 
 #### 音频
 
@@ -265,7 +267,7 @@ iOS 语音 SDK 支持两种主要场景:
 - 修复了用户退出频道后仍然收到 `networkQuality` 回调的问题
 - 修复了偶现的崩溃问题，提升了系统稳定性
 
-### **API 变更**
+**API 变更**
 
 为提升用户体验，Agora 在 v2.4.1 版本中对 API 进行了如下变动：
 
@@ -300,7 +302,7 @@ iOS 语音 SDK 支持两种主要场景:
 - Agora Voice SDK for iOS 在 2.4.0 版本新增 `CoreML.framework` 库依赖。请确保在集成时添加该库，详见[集成客户端](../../cn/Voice/ios_audio.md)。
 - 如果你希望通过 CocoaPods 自动导入库，请确保在运行 `pod install` 前，先运行 `pop update` 更新本地 CocoaPods 库。如果你希望通过指定 SDK 版本号获取最新版，请在 Podfile 中将版本号指定为 `'AgoraRtcEngnine_iOS', '2.4.0.1'`。
 
-### **新增特性**
+**新增特性**
 
 #### 1. 变声和混响
 
@@ -322,7 +324,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决该大小无法满足部分用户需求的问题，该版本新增接口 [`setLogFileSize`](https://docs.agora.io/cn/Voice/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLogFileSize:)，用于设置 SDK 输出的日志文件大小。
 
-### **功能改进**
+**功能改进**
 
 #### 1. 质量测试与透明
 
@@ -335,7 +337,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 - 提升了视频质量和稳定性
 - 缩短了远端视频的出图时间
 
-### 问题修复
+**问题修复**
 
 #### 音频相关
 
@@ -377,7 +379,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 该版本于 2019 年 1 月 24 日发布。修复问题详见下文。
 
-### **问题修复**
+**问题修复**
 
 修复了 `networkQuality` 回调不准确的问题。
 
@@ -391,7 +393,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 - Native SDK 版本号须大于等于 1.11 版本
 - Web SDK 版本号须大于等于 2.1 版本
 
-### **新增功能**
+**新增功能**
 
 #### 1. 控制音乐文件的播放音量
 
@@ -401,7 +403,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 该版本梳理了用户在音频采集到播放过程中可能会需要调整音量的场景，及各场景对应的 API，供用户参考使用。详见官网文档[调整通话音量](../../cn/Voice/volume_ios_audio.md)。
 
-### **改进**
+**改进**
 
 #### 1. 提供更透明的质量数据统计
 
@@ -444,7 +446,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 - 降低了音频延时
 
 
-### **问题修复**
+**问题修复**
 
 #### 音频相关：
 
@@ -456,7 +458,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 
 
-### **API 整理**
+**API 整理**
 
 为提升用户体验，Agora 在 v2.3.2 版本中对 API 进行了如下变动：
 
@@ -478,7 +480,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 该版本于 2018 年 9 月 28 日发布。新增特性与修复问题列表详见下文。
 
-### **新增功能**
+**新增功能**
 
 ####  关闭/重新开启本地语音功能
 
@@ -486,11 +488,11 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 该功能与 `muteLocalAudioStream` 的区别在于前者不采集不发送，而后者是采集但不发送。
 
-### **改进**
+**改进**
 
 - 优化了 iOS 低端设备在纯音频通信模式下的 CPU 消耗
 
-### **问题修复**
+**问题修复**
 
 - 修复了某些 iOS 设备上偶现的崩溃问题
 - 修复了直播模式下，观众端因统计有误出现的延迟的问题
@@ -507,7 +509,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
 
-### **新增功能**
+**新增功能**
 
 本次发版新增如下功能：
 
@@ -524,14 +526,14 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 在默认情况下，SDK 和 App 对 Audio Session 都有控制权，但某些场景下，App 会希望限制 Agora SDK 对 Audio Session 的控制权限， 而使用其他应用或第三方组件对 Audio Session 进行操控。为满足该需求，本版本新增 `setAudioSessionOperationRestriction` 接口。 用户可以选择相应的 Restriction，来实现 SDK 不同程度的管理限制。该方法可动态使用，在加入频道前，或频道中均能调用。
 
 
-### **改进功能**
+**改进功能**
 
 -   优化了一对一音视频的质量，在降低延时、防止卡顿方面提升明显。优化效果重点覆盖东南亚、南美、非洲和中东等地区
 -   直播场景下，改善了音频编码器的效率，保证通话质量的同时节省用户流量
 -   采用深度学习算法，改进了通话及直播中的音频质量
 
 
-### **问题修复**
+**问题修复**
 
 -   修复了某些 iOS 设备上 App 偶发的闪退的问题
 -   修复了特定场景下某些 iOS 设备上推流后出现的崩溃问题
@@ -554,7 +556,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   修复了特定场景下，某些 iOS 设备上无法调节音量的问题
 
 
-### **API 整理**
+**API 整理**
 
 为提升用户体验，Agora 在 v2.3.0 版本中对 API 进行了梳理，并针对部分接口进行了如下处理：
 
@@ -584,7 +586,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 
-### **问题修复**
+**问题修复**
 
 -   修复了特定场景下偶发的线上统计崩溃的问题。
 -   修复了直播时特定场景下偶发的崩溃的问题。
@@ -597,7 +599,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 6 月 21 日发布。修复问题列表详见下文。
 
-### **问题修复**
+**问题修复**
 
 - 修复了特定场景下偶发的线上统计崩溃的问题
 - 修复了 iOS 设备无法同时使用媒体和信令服务的问题
@@ -607,7 +609,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 5 月 30 日发布。新增特性与修复问题列表详见下文。
 
-### **问题修复**
+**问题修复**
 
 -   修复了部分设备上偶现的 Crash 问题。
 -   修复了部分设备上内存泄漏的问题。
@@ -618,7 +620,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 5 月 4 日发布。新增特性与修复问题列表详见下文。
 
-### **新增功能**
+**新增功能**
 
 本次发版新增如下功能：
 
@@ -633,7 +635,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 通过部署 Agora 提供的代理服务器安装包，设有企业防火墙的用户可以设置代理服务器，使用 Agora 的服务。详见 [企业部署代理服务器](../../cn/Quickstart%20Guide/proxy.md) 中的描述。
 
 
-### **改进功能**
+**改进功能**
 
 本次发版改进如下功能：
 
@@ -657,7 +659,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 新增支持 Bitcode 功能。支持 Bitcode 的 SDK 包大小约为普通包的 2.5 倍；使用 Bitcode 开发的 App 在上传 App Store 后，App Store 会对其进行优化及瘦身，瘦身程度视 App 的代码量而定，代码量越大，瘦身程度越高。
 
-### **问题修复**
+**问题修复**
 
 -   修复了某些 iOS 设备导致频道内其他端的回音问题。
 
@@ -670,7 +672,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本的 SDK 修改了 `setVideoProfile` 方法在直播模式下的码率值，修改后的码率值与 2.0 版本一致。
 
-### **问题修复**
+**问题修复**
 
 -   修复了 SDK 没有设置 Delegate 时，偶尔收不到 Block 回调的问题。
 
@@ -688,7 +690,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 该版本于 2018 年 4 月 2 日发布。新增特性与修复问题列表详见下文。
 
 
-### **问题修复**
+**问题修复**
 
 -   修复了之前版本 SDK 在 iOS 11 平台上崩溃的问题。
 
@@ -705,7 +707,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2018 年 3 月 7 日发布。新增特性与修复问题列表详见下文。
 
-### **新增功能**
+**新增功能**
 
 本次发版新增如下功能：
 
@@ -726,7 +728,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   互动直播场景, 详见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)
 
 
-### **改进**
+**改进**
 
 本次发版改进如下功能：
 
@@ -753,7 +755,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 
 
-### **问题修复**
+**问题修复**
 
 -   修复了自采集方案退出频道后 app 录不到声音的问题;
 
@@ -766,13 +768,13 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2017 年 12 月 15 日发布。新增特性与修复问题列表详见下文。
 
-### **问题修复**
+**问题修复**
 
 修复了 ffmpeg 符号冲突问题;
 
 ## **2.0 版及之前**
 
-### **2.0 版**
+**2.0 版**
 
 该版本于 2017 年 12 月 6 日发布。新增特性与修复问题列表详见下文。
 
@@ -837,7 +839,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 修复了音频路由和蓝牙相关的若干问题。
 
-### **1.14 版**
+**1.14 版**
 
 该版本于 2017 年 10 月 20 日发布。新增特性与修复问题列表详见下文。
 
@@ -869,7 +871,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 修复了部分 iOS 机器上偶现的崩溃。
 
 
-### **1.13.1 版**
+**1.13.1 版**
 
 该版本于 2017 年 9 月 28 日发布。新增特性与修复问题列表详见下文。
 
@@ -880,7 +882,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   优化了特定场景下出现的回声问题。
 
 
-### **1.13 版**
+**1.13 版**
 
 该版本于 2017 年 9 月 4 日发布。新增特性与修复问题列表详见下文。
 
@@ -904,7 +906,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 修复了部分机型上偶现的崩溃。
 
-### **1.12 版**
+**1.12 版**
 
 该版本于 2017 年 7 月 25 日发布。新增特性与修复问题列表详见下文。
 
