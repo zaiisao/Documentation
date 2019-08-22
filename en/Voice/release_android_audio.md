@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Aug 22 2019 03:52:38 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 06:46:10 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -874,7 +874,7 @@ Camera related issues on Android devices.
 
 v1.13.1 is released on September 28, 2017, and optimizes the echo issue under certain circumstances.
 
-### v1.13
+**v1.13**
 
 v1.13 is released on September 4, 2017. 
 
@@ -889,7 +889,7 @@ v1.13 is released on September 4, 2017.
 
 Occasional crashes on some devices.
 
-### v1.12
+**v1.12**
 
 v1.12 is released on July 25, 2017.
 
