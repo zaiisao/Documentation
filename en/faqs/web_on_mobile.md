@@ -1,11 +1,11 @@
 
 ---
-title: Use Web SDK on Mobile Devices
+title: Use Agora Web SDK on Mobile Devices
 description: Support for mobile webpages
 platform: Web
-updatedAt: Thu Aug 22 2019 14:17:57 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 14:27:24 GMT+0800 (CST)
 ---
-# Use Web SDK on Mobile Devices
+# Use Agora Web SDK on Mobile Devices
 The Agora Web SDK is based on WebRTC and relies on the browser's support for WebRTC. However, some apps on some mobile devices may not support WebRTC depending on their WebView implementation. This page introduces the support for sending and receiving audio/video streams on mobile webpages.
 
 ## Audio streams
