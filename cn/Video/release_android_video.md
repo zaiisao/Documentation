@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Aug 22 2019 03:44:11 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 03:44:14 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -40,7 +40,7 @@ Android 视频 SDK 支持两种主要场景:
 
 **升级必看**
 
-#### 1. 推流
+#### 1. RTMP 推流
 
 该版本起，Agora 删除如下接口：
 
@@ -48,7 +48,7 @@ Android 视频 SDK 支持两种主要场景:
 - `setVideoCompositingLayout`
 - `clearVideoCompositingLayout`
 
-如果你的 App 使用上述接口实现 CDN 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
+如果你的 App 使用上述接口实现 RTMP 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
 
 - [`setLiveTranscoding`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a3cb9804ae71819038022d7575834b88c)
 - [`addPublishStreamUrl`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4445b4ca9509cc4e2966b6d308a8f08f)
@@ -287,7 +287,7 @@ Android 视频 SDK 支持两种主要场景:
 
 如下内容涉及 SDK 的行为变更。如果你是由之前版本的 SDK 升级至该版本，升级前请务必阅读。
 
-#### 1. CDN 推流
+#### 1. RTMP 推流
 
 为提高推流服务的易用性，该版本对推流接口的参数设置进行了如下限制：
 
