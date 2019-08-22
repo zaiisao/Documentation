@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Aug 19 2019 01:45:39 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 07:16:48 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -23,9 +23,9 @@ The Windows Video SDK supports the X86 and X64 architecture.
 
 v2.9.0 is released on Aug 16, 2019.
 
-**Before getting started**
+**Compatibility changes**
 
-#### 1. CDN Streaming
+#### 1. RTMP streaming
 
 In this release, we deleted the following methods:
 
@@ -33,12 +33,14 @@ In this release, we deleted the following methods:
 - `setVideoCompositingLayout`
 - `clearVideoCompositingLayout`
 
-If your app implements CDN streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
+If your app implements RTMP streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
 
 - [`setLiveTranscoding`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde)
 - [`addPublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
+
+For how to implement the new methods, see [Push Streams to the RTMP](../../en/Video/push_stream_android2.0.md).
 
 #### 2. Reporting the state of the remote video
 
@@ -46,7 +48,6 @@ This release extends the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/
 
 The new callback reports most of the remote video states, and therefore deprecates the following callbacks. You can still use them, but we do not recommend doing so.
 
-- [`onUserMuteVideo`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8279591a761a5c2c1c4c1c4e677cbe0e)
 - [`onUserEnableVideo`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a91bef59a3659b6e6bcbe43eb203d0732)
 - [`onUserEnableLocalVideo`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a23189a2a10fb8b06b774543ac6bb322b)
 - [`onFirstRemoteVideoDecoded`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a345a8441861b9dbdc7ffc36a6c6ba186)
@@ -126,11 +127,11 @@ To improve the experience in using video devices on Windows, this release adds s
 
 #### Miscellaneous
 
-- Occasionally mixed streams in CDN streaming. 
+- Occasionally mixed streams in RTMP streaming. 
 - Occasional crashes occur.
 - Failure to join the channel.
 
-**API Changes**
+**API changes**
 
 To improve the user experience, we made the following changes in v2.9.0:
 
@@ -156,10 +157,6 @@ To improve the user experience, we made the following changes in v2.9.0:
 - `onMicrophoneEnabled`. Use LOCAL_AUDIO_STREAM_STATE_CHANGED(0) or LOCAL_AUDIO_STREAM_STATE_RECORDING(1) in the [`onLocalAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) callback instead. 
 - `onRemoteAudioTransportStats`. Use the [`onRemoteAudioStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a) callback instead.
 - `onRemoteVideoTransportStats`. Use the [`onRemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7163ffb650852be270ba0215b596d968) callback instead.
-- `onUserMuteVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) callback with the following parameters instead:
-	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
-	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTE(6).
-
 - `onUserEnableVideo`. Use the [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) callback with the following parameters instead:
 	- REMOTE_VIDEO_STATE_STOPPED(0) and REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5).
 	- REMOTE_VIDEO_STATE_DECODING(2) and REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6).
@@ -213,7 +210,7 @@ This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBit
 
 This release adds a `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` member to the `reason` parameter of the [onConnectionStateChanged](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) callback. This member indicates a connection state change caused by the timeout of the connection keep-alive between the SDK and Agora's edge server.
 
-**API Changes**
+**API changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -237,17 +234,17 @@ To improve your experience, we made the following changes to the APIs:
 
 V2.4.1 is released on Jun 12th, 2019.
 
-**Before getting started**
+**Compatibility changes**
 
 Ensure that you read the following SDK behavior changes if you migrate from an earlier SDK version.
 
-#### 1. Publishing streams to the CDN
+#### 1. Publishing streams to the RTMP
 
-To improve the usability of the CDN streaming service, v2.4.1 defines the following parameter limits:
+To improve the usability of the RTMP streaming service, v2.4.1 defines the following parameter limits:
 
 | Class / Interface  | Parameter Limit                                              |
 | ---------------------- | ------------------------------------------------------------ |
-| [LiveTranscoding](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html)        | <li>[videoFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a8086eda68ed5b9d106cf830fd4e24f9c): Frame rate (fps) of the CDN live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>[videoBitrate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ab5ff17deab2e3149f149987cc0d83433): Bitrate (Kbps) of the CDN live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>[videoCodecProfile](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a72fbfdd2c0d4f0cc438d5ca052aa7531): The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>[width](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ad0a505490500917dd246510471ef88be) and [height](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a340ee10a10bf0137fb996ca77729002e): Pixel of the video. The minimum value of width x height is 16 x 16.</li> |
+| [LiveTranscoding](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html)        | <li>[videoFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a8086eda68ed5b9d106cf830fd4e24f9c): Frame rate (fps) of the RTMP live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>[videoBitrate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ab5ff17deab2e3149f149987cc0d83433): Bitrate (Kbps) of the RTMP live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>[videoCodecProfile](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a72fbfdd2c0d4f0cc438d5ca052aa7531): The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>[width](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ad0a505490500917dd246510471ef88be) and [height](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a340ee10a10bf0137fb996ca77729002e): Pixel of the video. The minimum value of width x height is 16 x 16.</li> |
 | [RtcImage](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_image.html)             | url: The maximum length of this parameter is **1024** bytes. |
 | [addPublishStreamUrl](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)    | `url`: The maximum length of this parameter is **1024** bytes. |
 | [removePublishStreamUrl](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7) | `url`: The maximum length of this parameter is **1024** bytes. |
@@ -330,7 +327,7 @@ The difference between the `onFirstRemoteAudioDecoded` and `onFirstRemoteAudioFr
 - Improved the accuracy of the network quality after users change the video bitrate.
 - Enabled the audio quality notification callback by default, that is, enabled the [onRemoteAudioStats](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a) callback without calling the `enableAudioQualityIndication` method.
 - Improved the stability of video services.
-- Improved the stability of CDN streaming services.
+- Improved the stability of RTMP streaming services.
 - Improved the compatibility of the SDK with video devices.
 
 **Issues fixed**
@@ -475,9 +472,9 @@ v2.4.0 provides the following options for setting video encoder preferences:
 - The stream for screen sharing is cropped when lowering the screen resolution. We highly recommend using the new methods in v2.4.0 for screen sharing. With the new screen sharing parameters, these methods separate the stream for screen sharing from the camera-captured stream. See [Share the Screen](../../en/Video/screensharing_windows.md) for more information.
 - A region cannot be shared if one of its coordinates is negative.
 - Occasional echoes.
-- The SEI information does not synchronize with the media stream when publishing transcoded streams to the CDN.
+- The SEI information does not synchronize with the media stream when publishing transcoded streams to the RTMP.
 
-**API Changes**
+**API changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -517,7 +514,7 @@ v2.3.3 is released on January 24, 2019.
 
 v2.3.3 optimizes the screen-sharing algorithm for different scenarios. The video smoothness and quality are enhanced when a user presents slides or browses websites. v2.3.3 also improves the initial image quality in the Communication profile.
 
-**Issues Fixed**
+**Issues fixed**
 
 Occasional inaccurate statistics returned in the `onNetworkQuality` callback.
 
@@ -525,7 +522,7 @@ Occasional inaccurate statistics returned in the `onNetworkQuality` callback.
 
 v2.3.2 is released on January 16, 2019. 
 
-**Before Getting Started**
+**Compatibility changes**
 
 Besides the new features and improvements mentioned below, it is worth noting that v2.3.2:
 
@@ -540,7 +537,7 @@ Before upgrading your SDK, ensure that your version is:
 
 If you using an Agora SDK version v2.0.8 and wish to migrate the v2.3.2, refer to the [Migration Guide](../../en/Video/migration_windows.md) for major API changes.
 
-**New Features**
+**New features**
 
 #### 1. External video data (Push Mode)
 
@@ -655,7 +652,7 @@ v2.3.2 optimizes the audio device selection to fix the no audio issue when a use
 - Reduces the audio delay.
 - Optimizes the screen-sharing function.
 
-**Issues Fixed**
+**Issues fixed**
 
 The following issues are fixed in v2.3.2:
 
@@ -683,7 +680,7 @@ The following issues are fixed in v2.3.2:
 - Blurry video when sharing a high-resolution screen.
 - The cursor on the remote side is not in the same position as the local side when sharing the desktop.
 
-**API Changes**
+**API changes**
 
 To improve the user experience, Agora has made the following changes to the APIs:
 
@@ -717,7 +714,7 @@ To improve the user experience, Agora has made the following changes to the APIs
 
 v2.2.2 is released on June 21, 2018.
 
-**Issues Fixed**
+**Issues fixed**
 
 - Fixed occasional online statistics crashes.
 - Fixed the issue of failing to report the uid and volume of the speaker in a channel.
@@ -749,7 +746,7 @@ Adds the <code>remoteVideoStateChangedOfUid</code> method to get the state of th
 
 #### 4. Add watermarks on the broadcasting video
 
-Adds the watermark function for users to add a PNG file to the local or CDN broadcast as a watermark. Adds the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> methods to add and delete watermarks in a local live-broadcast. Adds the <code>watermark</code> parameter in the <code>LiveTranscording</code> interface to add watermarks in CDN broadcasts. 
+Adds the watermark function for users to add a PNG file to the local or RTMP broadcast as a watermark. Adds the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> methods to add and delete watermarks in a local live-broadcast. Adds the <code>watermark</code> parameter in the <code>LiveTranscording</code> interface to add watermarks in RTMP broadcasts. 
 
 **Improvements**
 
@@ -769,7 +766,7 @@ To test if the network condition can support audio or video calls before joining
 
 Improves the audio quality in scenarios that involve music playback.
 
-**Issues Fixed**
+**Issues fixed**
 
 -   Occasional screen display abnormalities when a large number of audience members join as the host in a live-broadcast channel.
 -   Occasional audio issues during a live broadcast.
@@ -795,7 +792,7 @@ v2.1.2 is released on April 2, 2018.
 
 >  If you upgrade the SDK to v2.1.2 from a previous version, the live-broadcast video quality will be better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth.
 
-**Issues Fixed**
+**Issues fixed**
 
 -   The co-host is not seen by his/her counterpart after leaving and rejoining the channel.
 -   The video resolution of the shared screen is worse in the communication profile than in the live broadcast profile.
@@ -811,7 +808,7 @@ Agora has identified a critical bug in SDK v2.1. Upgrade to v2.1.1 if you are us
 
 v2.1.0 is released on March 7, 2018. 
 
-**New Features**
+**New features**
 
 #### 1. Voice Optimization
 
@@ -879,7 +876,7 @@ Adds the <code>enableLoopbackRecording</code> method to collect all local sounds
 
 
 
-### Issues Fixed
+**Issues fixed**
 
 -   Occasional issues of the camera unable to capture the video source.
 -   Occasional video freeze issues.
@@ -892,7 +889,7 @@ Adds the <code>enableLoopbackRecording</code> method to collect all local sounds
 
 v2.0 is released on November 21, 2017. 
 
-#### Before Getting Started
+#### Compatibility changes
 
 Developers,
 
@@ -914,7 +911,7 @@ Due to the upgrade of Agora products, Windows SDK 2.0 no longer supports the Ago
 2.  If you want to continue using the Agora Recording Server, you can use your current Windows SDK version (v1.14 and before). Contact Technical Support for any questions.
 
 
-#### New Features
+#### New features
 
 -   Adds the <code>setRemoteVideoStreamType</code> and <code>enableDualStreamMode</code> methods in the communication profile to support dual streams.
 -   Supports the external audio source in the communication and live broadcast profiles by adding the following API methods:
@@ -993,7 +990,7 @@ Due to the upgrade of Agora products, Windows SDK 2.0 no longer supports the Ago
 
 v1.14 is released on October 20, 2017. 
 
-#### New Features
+#### New features
 
 -   Adds the <code>setAudioProfile</code> method to set the audio parameters and scenarios.
 -   Adds the <code>setLocalVoicePitch</code> method to set the local voice pitch.
@@ -1013,7 +1010,7 @@ v1.14 is released on October 20, 2017.
     -   Starting from v1.14: Accurate control over the bitrate prevents huge fluctuations avoiding network congestion and shortening the transmission latency.
 
 
-#### Issues Fixed:
+#### Issues fixed:
 
 -   Unable to hear any audio on certain Windows systems.
 -   Camera-related issues on certain Windows systems.
@@ -1027,7 +1024,7 @@ v1.13.1 is released on September 28, 2017 and optimizes the echo issue under cer
 
 v1.13 is released on September 4, 2017. 
 
-#### New Features:
+#### New features:
 
 -   Adds the function to dynamically enable and disable acquiring the sound card in a live broadcast.
 -   Adds the function to disable the audio playback.
@@ -1051,7 +1048,7 @@ Occasional crashes.
 
 v1.12 is released on July 25, 2017. 
 
-#### New Features:
+#### New features:
 
 -   Adds the <code>injectStream</code> method to inject an RTMP stream into the current channel in the Live-broadcast profile.
 -   Adds the <code>aes-128-ecb</code> encryption mode in the <code>setEncryptionMode</code> method.
@@ -1074,7 +1071,7 @@ Android/iOS/macOS/Windows: In the Communication profile, an improvement for the 
 
 
 
-#### Issues Fixed:
+#### Issues fixed:
 
 - Android: Bluetooth issues related to audio routing.
 - Android/iOS/macOS/Windows: Occasional crashes.

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Thu Aug 22 2019 06:49:09 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 07:16:23 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -20,9 +20,9 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 ## v2.9.0
 v2.9.0 is released on Aug. 16, 2019.
 
-### Before getting started
+**Compatibility changes**
 
-#### 1. CDN Streaming
+#### 1. RTMP streaming
 
 In this release, we deleted the following methods:
 
@@ -30,12 +30,14 @@ In this release, we deleted the following methods:
 - `setVideoCompositingLayout`
 - `clearVideoCompositingLayout`
 
-If your app implements CDN streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
+If your app implements RTMP streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
 
 - [`setLiveTranscoding`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLiveTranscoding:)
 - [`addPublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
+
+For how to implement the new methods, see [Push Streams to the RTMP](../../en/Video/push_stream_android2.0.md).
 
 #### 2. Reporting the state of the remote video
 
@@ -43,12 +45,11 @@ This release extends the [`remoteVideoStateChangedOfUid`](https://docs.agora.io/
 
 The new callback reports most of the remote video states, and therefore deprecates the following callbacks. You can still use them, but we do not recommend doing so.
 
-- [`didVideoMuted`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didVideoMuted:byUid:)
 - [`didVideoEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didVideoEnabled:byUid:)
 - [`didLocalVideoEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didLocalVideoEnabled:byUid:)
 - [`firstRemoteVideoDecodedOfUid`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteVideoDecodedOfUid:size:elapsed:)
 
-### New features
+**New features**
 
 #### 1. Faster switching to another channel
 
@@ -91,7 +92,7 @@ The difference between the `onPlaybackAudioFrame` callback and the `pullPlayback
 - `onPlaybackAudioFrame`: The SDK sends the audio data to the app once every 10 ms. Any delay in processing the audio frames may result in an audio delay.
 - `pullPlaybackAudioFrameRawData` / `pullPlaybackAudioFrameSampleBufferByLengthInByte`: The app pulls the remote audio data. After setting the audio data parameters, the SDK adjusts the frame buffer and avoids problems caused by jitter in external audio playback.
 
-### Improvements
+**Improvements**
 
 #### 1. Reporting more statistics of the in-call quality
 
@@ -110,7 +111,7 @@ This release minimizes the video freeze rate under poor network conditions, impr
 - Improves the audio quality when the audio scenario is set to `GameStreaming`.
 - Improves the audio quality after the user disables the microphone in the Communication profile.
 
-### Issues fixed
+**Issues fixed**
 
 #### Audio
 
@@ -125,10 +126,10 @@ This release minimizes the video freeze rate under poor network conditions, impr
 
 #### Miscellaneous
 
-- Occasionally mixed streams in CDN streaming. 
+- Occasionally mixed streams in RTMP streaming. 
 - Crashes occur after calling the [`leaveChannel`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/leaveChannel:) method.
 
-### API Changes
+**API Changes**
 
 To improve the user experience, we made the following changes in v2.9.0:
 
@@ -156,9 +157,6 @@ To improve the user experience, we made the following changes in v2.9.0:
 - [`didMicrophoneEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didMicrophoneEnabled:). Use AgoraAudioLocalStateStopped(0) or AgoraAudioLocalStateRecording(1) in the [`localAudioStateChange`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioStateChange:error:) callback instead.
 - [`audioTransportStatsOfUid`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:audioTransportStatsOfUid:delay:lost:rxKBitRate:). Use the [`remoteAudioStats`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:) callback instead.
 - [`videoTransportStatsOfUid`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:videoTransportStatsOfUid:delay:lost:rxKBitRate:). Use the [`remoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteVideoStats:) callback instead.
-- [`didVideoMuted`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didVideoMuted:byUid:). Use the [`remoteVideoStateChangedOfUid`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:) callback with the following parameters instead:
-	- AgoraVideoRemoteStateStopped(0) and AgoraVideoRemoteStateReasonRemoteMuted(5).
-	- AgoraVideoRemoteStateDecoding(2) and AgoraVideoRemoteStateReasonRemoteUnmuted(6).
 - [`didVideoEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didVideoEnabled:byUid:). Use the [`remoteVideoStateChangedOfUid`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteVideoStateChangedOfUid:state:reason:elapsed:) callback with the following parameters instead:
 	- AgoraVideoRemoteStateStopped(0) and AgoraVideoRemoteStateReasonRemoteMuted(5).
 	- AgoraVideoRemoteStateDecoding(2) and AgoraVideoRemoteStateReasonRemoteUnmuted(6).
@@ -178,7 +176,7 @@ To improve the user experience, we made the following changes in v2.9.0:
 
 v2.8.0 is released on Jul. 8, 2019.
 
-### New features
+**New features**
 
 #### 1. Supporting string usernames
 
@@ -206,16 +204,16 @@ To monitor the audio and video transmission quality during a call or live broadc
 
 This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBitrate` members in the [AgoraRtcRemoteAudioStats](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class.
 
-### Improvements
+**Improvements**
 
 This release adds a `AgoraConnectionChangedKeepAliveTimeout(14)` member to the `AgoraConnectionChangedReason` parameter of the [connectionChangedToState](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback. This member indicates a connection state change caused by the timeout of the connection keep-alive between the SDK and Agora's edge server.
 
-### Issues Fixed
+**Issues Fixed**
 
 - Unexpected behaviors when calling the `setRemoteSubscribeFallbackOption` method.
 - Occasional deadlocks when calling the `MediaIO` methods.
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -239,17 +237,17 @@ To improve your experience, we made the following changes to the APIs:
 
 V2.4.1 is released on Jun 12th, 2019.
 
-### Before getting started
+**Compatibility changes**
 
 Ensure that you read the following SDK behavior changes if you migrate from an earlier SDK version.
 
-#### 1. Publishing streams to the CDN
+#### 1. Publishing streams to the RTMP
 
-To improve the usability of the CDN streaming service, v2.4.1 defines the following parameter limits:
+To improve the usability of the RTMP streaming service, v2.4.1 defines the following parameter limits:
 
 | Class **/** Interface  | Parameter Limit                                              |
 | ---------------------- | ------------------------------------------------------------ |
-| [AgoraLiveTranscoding](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html)        | <li>[videoFrameRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoFramerate): Frame rate (fps) of the CDN live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>[videoBitrate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoBitrate): Bitrate (Kbps) of the CDN live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/bitrate). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>[videoCodecProfile](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoCodecProfile): The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>[size](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/size): Pixel of the video. The minimum value of size is **16 x 16**.</li> |
+| [AgoraLiveTranscoding](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html)        | <li>[videoFrameRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoFramerate): Frame rate (fps) of the RTMP live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>[videoBitrate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoBitrate): Bitrate (Kbps) of the RTMP live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/bitrate). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>[videoCodecProfile](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/videoCodecProfile): The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>[size](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraLiveTranscoding.html#//api/name/size): Pixel of the video. The minimum value of size is **16 x 16**.</li> |
 | [AgoraImage](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraImage.html)             | url: The maximum length of this parameter is **1024** bytes. |
 | [addPublishStreamUrl](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)     | url: The maximum length of this parameter is **1024** bytes. |
 | [removePublishStreamUrl](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:) | url: The maximum length of this parameter is **1024** bytes. |
@@ -263,7 +261,7 @@ n the RemoteVideoStats class
 
 v2.4.1 renames the `receivedFrameRate` parameter to [rendererOutputFrameRate](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html#//api/name/rendererOutputFrameRate) in the [AgoraRtcRemoteVideoStats](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html) class to more accurately describe the statistics of the remote video stream.
 
-### New features
+**New features**
 
 #### 1. Adding media metadata
 
@@ -299,7 +297,7 @@ To get the more accurate time of the first audio frame from a specified remote u
 The difference between the onFirstRemoteAudioDecoded and `onFirstRemoteAudioFrame` callbacks is that the `onFirstRemoteAudioFram`e callback occurs when the SDK receives the first audio packet. It occurs before the `onFirstRemoteAudioDecoded` callback.
 
 
-### Improvements
+**Improvements**
 
 #### 1. Playing multiple online audio effect files simultaneously
 
@@ -325,9 +323,9 @@ v2.4.1 assigns default values to various parameters in the  [AgoraBeautyOptions]
 - Improved the accuracy of the network quality after users change the video bitrate.
 - Enabled the audio quality notification callback by default, that is, enabled the [remoteAudioStats](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:) callback without calling the `enableAudioVolumeIndication` method.
 - Improved the stability of video services.
-- Improved the stability of CDN streaming.
+- Improved the stability of RTMP streaming.
 
-### Issues fixed
+**Issues fixed**
 
 #### Audio
 
@@ -344,7 +342,7 @@ v2.4.1 assigns default values to various parameters in the  [AgoraBeautyOptions]
 - Occasional crashes.
 
 
-### API changes
+**API changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -384,12 +382,12 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 
 v2.4.0 is released on April 1, 2019.
 
-### Before Getting Started
+**Compatibility changes**
 
 - Agora Video SDK for iOS adds a library dependency on `CoreML.framework` in v2.4.0. Ensure that you add this library when integrating the SDK. For details, see [Integrate the SDK](../../en/Video/ios_video.md).
 - If you integrate the SDK by using CocoaPods，ensure that you run `pod update` in your Terminal before `pod install`. If you prefer to specify the SDK version to obtain the latest release, ensure that you specify it as `'AgoraRtcEngine_iOS', '2.4.0.1'` in the Podfile.
 
-### New Features
+**New Features**
 
 #### 1. Image enhancement
 
@@ -420,7 +418,7 @@ v2.4.0 adds the [`localAudioMixingStateDidChanged`](https://docs.agora.io/en/Vid
 The SDK has two log files, each with a default size of 512 KB. In case some customers require more than the default size, v2.4.0 adds the [`setLogFileSize`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLogFileSize:) method for setting the log file size (KB).
 
 
-### Improvements
+**Improvements**
 
 #### 1. Accuracy of call quality statistics
 
@@ -440,7 +438,7 @@ v2.4.0 provides the following options for setting video encoder preferences:
 - Improves the video quality and stability. 
 - Shortens the time to render the first remote video frame. 
 
-### Issues Fixed
+**Issues Fixed**
 
 #### Audio
 
@@ -459,9 +457,9 @@ v2.4.0 provides the following options for setting video encoder preferences:
 #### Miscellaneous
 
 - The user drop-offline time between Android and iOS is not unified.
-- The SEI information does not synchronize with the media stream when publishing transcoded streams to the CDN.
+- The SEI information does not synchronize with the media stream when publishing transcoded streams to the RTMP.
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -493,7 +491,7 @@ v2.4.0 changes the type of the [`frameRate`](https://docs.agora.io/en/Video/API%
 ## v2.3.3
 v2.3.3 is released on January 24, 2019. 
 
-### Issues Fixed
+**Issues Fixed**
 
 Occasional inaccurate statistics returned in the `networkQuality` callback.
 
@@ -501,7 +499,7 @@ Occasional inaccurate statistics returned in the `networkQuality` callback.
 
 v2.3.2 is released on January 16, 2019. 
 
-### Before Getting Started
+**Compatibility changes**
 
 Besides the new features and improvements mentioned below, it is worth noting that v2.3.2:
 
@@ -514,7 +512,7 @@ Before upgrading your SDK, ensure that the version is:
 - Native SDK v1.11 or later.
 - Web SDK v2.1 or later.
 
-### New Features
+**New Features**
 
 #### 1. Automatic exposure at a point of interest
 v2.3.2 adds the following methods and callback to support camera exposure and improve the captured video quality:
@@ -536,7 +534,7 @@ This release also changes the behavior of the [adjustPlaybackSignalVolume](https
 
 See [Adjust the Volume](../../en/Video/volume_ios.md) for the scenarios and corresponding APIs.
 
-### Improvements
+**Improvements**
 
 #### 1. Improves the accuracy of the call quality statistics
 
@@ -580,7 +578,7 @@ v2.3.2 adds high-quality audio in scenarios such as music education. In the [`se
 - Checks the headset and Bluetooth device connection.
 - Reduces the audio delay.
 
-### Issues Fixed
+**Issues Fixed**
 
 The following issues are fixed in v2.3.2.
 
@@ -597,7 +595,7 @@ The following issues are fixed in v2.3.2.
 - Occasional issues when using an external video source.
 - The cursor on the remote side is not in the same position as the local side when sharing the desktop.
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -622,7 +620,7 @@ To improve your experience, we made the following changes to the APIs:
 
 v2.3.1 is released on September 28, 2018. 
 
-### New Features
+**New Features**
 
 #### Disables/Re-enables the Local Audio Function
 
@@ -634,12 +632,12 @@ This method does not affect receiving or playing the remote audio streams.
 The difference between this method and `muteLocalAudioStream` is that `enableLocalAudio` does not capture or send any audio stream, while `muteLocalAudioStream` captures but does not send audio streams.
 
 
-### Improvements
+**Improvements**
 
 - Reduces the CPU consumption in the audio communication profile on some low-end iOS devices.
 
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional crashes on some iOS devices when using customized video source functions.
 - Occasional crashes on some iOS devices when using customized remote renderer functions.
@@ -654,7 +652,7 @@ The difference between this method and `muteLocalAudioStream` is that `enableLoc
 
 v2.3.0 is released on August 31, 2018.
 
-### Before Reading
+**Compatibility changes**
 
 -   To support video rotation and enable better quality for the custom video source, this version deprecates the `setVideoProfile` method and uses the `setVideoEncoderConfiguration` method instead to set the video encoding configurations. You can still use the `setVideoProfile` method but we recommend using the `setVideoEncoderConfiguration` method to set the video profile because:
     -   During a live broadcast, users can set the video orientation mode as adaptive, under which the SDK can transfer rotated video frames without cropping them, thus avoiding the “big headshot” or blurry images at the player.
@@ -663,7 +661,7 @@ v2.3.0 is released on August 31, 2018.
 -   The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version below v2.1.0 and wish to migrate to the latest version, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 
 
-### New Features
+**New Features**
 
 #### 1. Fallback options for a live broadcast under unreliable network conditions.
 
@@ -694,14 +692,14 @@ The <code>AgoraVideoEncoderConfiguration</code> class provides a set of configur
 
 The `backgroundImage` parameter is added to the `setLiveTranscoding` method allowing you to set the background image in the combined video of a live broadcast.
 
-### Improvements
+**Improvements**
 
 -   Improves the quality for one-on-one voice/video scenarios with optimized latency and smoothness, especially for areas like Southeast Asia, South America, Africa, and the Middle East.
 -   Improves the audio encoder efficiency in a live broadcast to reduce user traffic while ensuring the call quality.
 -   Improves the audio quality during a call or a live broadcast using the deep-learning algorithm.
 
 
-### Issues Fixed
+**Issues Fixed**
 
 - The users on the Web client cannot see the video sent from the Native client due to codec bugs.
 - Excessive increase in the memory usage when multiple delegated hosts broadcast in the channel.
@@ -751,11 +749,11 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 - Failure to adjust the volume on some iOS devices.
 
 
-### API Changes
+**API Changes**
 
 To improve your experience, we made the following changes to the APIs:
 
-To avoid adding too many users with the same uid into the CDN publishing channel, the following API methods are added in v2.3.0:
+To avoid adding too many users with the same uid into the RTMP publishing channel, the following API methods are added in v2.3.0:
 
 -   `addUser`
 -   `removeUser`
@@ -773,24 +771,15 @@ The following deprecated API methods are deleted and no longer supported from v2
 -   <code>switchView</code>
 -   <code>setSpeakerphoneVolume</code>
 
-
-### Backward Compatibility Issues
-
-None.
-
-### Known Issues
-
-None.
-
 ## v2.2.3
 
 v2.2.3 is released on July 5, 2018.
 
-### Read This First
+**Compatibility changes**
 
 The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version below v2.1.0 and wish to migrate to the latest version, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional online statistics crashes.
 - Occasional crashes during a live broadcast.
@@ -803,7 +792,7 @@ The security keys are improved and updated in v2.1.0. If you are using an Agora 
 
 v2.2.2 is released on June 21, 2018.
 
-### Issues Fixed
+**Issues Fixed**
 
 - Fixed occasional online statistics crashes.
 - Fixed the issue that the media and the signaling services cannot be accessed at the same time on some iOS devices.
@@ -814,7 +803,7 @@ v2.2.2 is released on June 21, 2018.
 
 v2.2.1 is released on May 30, 2018. 
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional crashes on some iOS devices.
 - Occasional memory leak on some iOS devices.
@@ -826,7 +815,7 @@ v2.2.1 is released on May 30, 2018.
 v2.2.0 is released on May 4, 2018. 
 
 
-### New Features
+**New Features**
 
 #### 1. Play the audio effect in the channel
 
@@ -842,9 +831,9 @@ Adds the <code>remoteVideoStateChangedOfUid</code> method to get the state of th
 
 #### 4. Add watermarks on the broadcasting video
 
-Adds the watermark function for users to add a PNG file to the local or CDN broadcast as a watermark. Adds the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> methods to add and delete watermarks in a local live-broadcast. Adds the <code>watermark</code> parameter in the <code>LiveTranscording</code> interface to add watermarks in CDN broadcasts. 
+Adds the watermark function for users to add a PNG file to the local or RTMP broadcast as a watermark. Adds the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> methods to add and delete watermarks in a local live-broadcast. Adds the <code>watermark</code> parameter in the <code>LiveTranscording</code> interface to add watermarks in RTMP broadcasts. 
 
-### Improvements
+**Improvements**
 
 #### 1. Audio volume indication
 
@@ -866,7 +855,7 @@ Improves the audio quality in scenarios that involve music playback. To achieve 
 
 Adds support for Bitcode, which enables App optimization and thinning by the App Store. The package size of the Bitcode SDK is 2.5 times that of the normal one.
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional screen display abnormalities when the iOS device sets its video in the landscape mode.
 - Occasional screen display abnormalities when a large number of audience members join as the host in the live-broadcast channel.
@@ -879,7 +868,7 @@ v2.1.3 is released on April 19, 2018.
 
 In v2.1.3, Agora updates the bitrate values of the <code>setVideoProfile</code> method in the Live-broadcast profile. The bitrate values in v2.1.3 stay consistent with those in v2.0. 
 
-### Issues Fixed
+**Issues Fixed**
 
 -   Block callbacks are occasionally not received if the delegate is not set.
 -   NSAssertionHandler appears in external links to the SDK.
@@ -889,7 +878,7 @@ In v2.1.3, Agora updates the bitrate values of the <code>setVideoProfile</code> 
 -   Occasional crashes during a communication or live-broadcast session.
 
 
-### Improvements
+**Improvements**
 
 Improves the performance of screen sharing by shortening the time interval between which users switch from screen sharing to the normal Communication or Live-broadcast profile.
 
@@ -899,11 +888,11 @@ v2.1.2 is released on April 2, 2018.
 
 >  If you upgrade the SDK to v2.1.2 from a previous version, the live-broadcast video quality is better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth. 
 
-### New Features
+**New Features**
 
 Extends the <code>setVideoProfile</code> method to enable users to manually set the resolution, frame rate, and bitrate of the video. 
 
-### Issues Fixed
+**Issues Fixed**
 
 -   Occasional crashes on iOS 11.
 -   Video freeze in DTX + AAC mode.
@@ -919,7 +908,7 @@ Agora has identified a critical issue in SDK v2.1. Upgrade to v2.1.1 if you are 
 
 v2.1.0 is released on March 7, 2018. 
 
-### New Features
+**New Features**
 
 #### 1. Voice Optimization
 
@@ -961,7 +950,7 @@ Adds the function of injecting an external video stream to an ongoing live broad
 
 Adds a <code>cameraFocusDidChanged</code> callback to report to the app when the camera focus area changes.
 
-### Improvement
+**Improvement**
 
 <table>
 <colgroup>
@@ -989,7 +978,7 @@ Adds a <code>cameraFocusDidChanged</code> callback to report to the app when the
 
 
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional crashes.
 - Occasional blank screens.
@@ -1002,7 +991,7 @@ v2.0.2 was released on December 15, 2017, and fixes the FFmpeg symbol conflict.
 
 ## v2.0 and Earlier
 
-### v2.0
+**v2.0**
 
 v2.0 is released on December 6, 2017. 
 
@@ -1109,7 +1098,7 @@ v2.0 is released on December 6, 2017.
 
 Audio routing and Bluetooth issues.
 
-### v1.14 
+**v1.14**
 
 v1.14 is released on October 20, 2017. 
 
@@ -1136,7 +1125,7 @@ v1.14 is released on October 20, 2017.
 
 Occasional crashes on iOS devices.
 
-### v1.13.1
+**v1.13.1**
 
 v1.13.1 is released on September 28, 2017. 
 
@@ -1144,7 +1133,7 @@ v1.13.1 is released on September 28, 2017.
 -   Optimizes the echo issue under certain circumstances.
 
 
-### v1.13
+**v1.13**
 
 v1.13 is released on September 4, 2017. 
 
@@ -1166,7 +1155,7 @@ The video profile is controllable by the software codec.
 
 Occasional crashes.
 
-### v1.12
+**v1.12**
 
 v1.12 is released on July 25, 2017.
 

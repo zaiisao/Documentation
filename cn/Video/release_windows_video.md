@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Fri Aug 16 2019 09:58:55 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 07:28:07 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -26,7 +26,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 **升级必看**
 
-#### 1. 推流
+#### 1. RTMP 推流
 
 该版本起，Agora 删除如下接口：
 
@@ -34,12 +34,14 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 - `setVideoCompositingLayout`
 - `clearVideoCompositingLayout`
 
-如果你的 App 使用上述接口实现 CDN 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
+如果你的 App 使用上述接口实现 RTMP 推流功能，请确保将 Native SDK 升级至最新版本，并改用如下接口实现推流：
 
 - [`setLiveTranscoding`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde)
 - [`addPublishStreamUrl`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
+
+新的推流实现方法，详见[推流到 RTMP](../../cn/Video/push_stream_android2.0.md)。
 
 #### 2. 远端视频状态
 
@@ -47,7 +49,6 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 同时，扩展后的 state 参数和新增的 reason 参数搭配使用，可以涵盖大部分远端视频状态，因此该版本废弃了如下接口。你可以继续使用这些接口，但我们不再推荐。详细的取代方案，请参考 API 文档：
 
-- [`onUserMuteVideo`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8279591a761a5c2c1c4c1c4e677cbe0e)
 - [`onUserEnableVideo`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a91bef59a3659b6e6bcbe43eb203d0732)
 - [`onUserEnableLocalVideo`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a23189a2a10fb8b06b774543ac6bb322b)
 - [`onFirstRemoteVideoDecoded`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a345a8441861b9dbdc7ffc36a6c6ba186)
@@ -157,10 +158,6 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 - `onMicrophoneEnabled`，请改用 [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) 的 LOCAL_AUDIO_STREAM_STATE_CHANGED(0) 或 LOCAL_AUDIO_STREAM_STATE_RECORDING(1)。
 - `onRemoteAudioTransportStats`，请改用 [`onRemoteAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a)。
 - `onRemoteVideoTransportStats`，请改用 [`onRemoteVideoStats`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7163ffb650852be270ba0215b596d968)。
-- `onUserMuteVideo`，请改用 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 的如下参数搭配：
-	- REMOTE_VIDEO_STATE_STOPPED(0) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5)。
-	- REMOTE_VIDEO_STATE_DECODING(2) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTE(6)。
-
 - `onUserEnableVideo`，请改用 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 的如下参数搭配：
 	- REMOTE_VIDEO_STATE_STOPPED(0) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_MUTED(5)。
 	- REMOTE_VIDEO_STATE_DECODING(2) 和 REMOTE_VIDEO_STATE_REASON_REMOTE_UNMUTED(6)。
@@ -243,7 +240,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 如下内容涉及 SDK 的行为变更。如果你是由之前版本的 SDK 升级至该版本，升级前请务必阅读。
 
-#### 1. CDN 推流
+#### 1. RTMP 推流
 
 为提高推流服务的易用性，该版本对推流接口的参数设置进行了如下限制：
 
