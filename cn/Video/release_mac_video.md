@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Thu Aug 22 2019 07:25:08 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 08:48:58 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -42,7 +42,7 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 
-新的推流实现方法，详见[推流到 RTMP](../../cn/Video/push_stream_android2.0.md)。
+新的推流实现方法，详见[推流到 CDN](../../cn/Video/push_stream_android2.0.md)。
 
 #### 2. 远端视频状态
 

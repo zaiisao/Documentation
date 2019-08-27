@@ -3,13 +3,13 @@
 title: RTM 快速开始
 description: 
 platform: Web
-updatedAt: Tue Aug 20 2019 07:28:30 GMT+0800 (CST)
+updatedAt: Tue Aug 27 2019 03:13:15 GMT+0800 (CST)
 ---
 # RTM 快速开始
 
 ## 集成客户端
 
-### 直接用 `<script>` 引入
+### 方法 1：直接用 \<script\> 引入
 
 使用该方法引入的 SDK 会在 `window` 上生成名为 `AgoraRTM` 的全局变量。
 
@@ -33,6 +33,15 @@ updatedAt: Tue Aug 20 2019 07:28:30 GMT+0800 (CST)
 ```JavaScript
 /// <reference path="path/to/agora-rtm-sdk.d.ts" />
 ```
+
+### 方法 2：通过 npm 引入
+
+该方法需要安装 npm。详见 [Install npm](https://www.npmjs.com/get-npm)。
+
+1. 安装最新版的 SDK：
+`npm i agora-rtm-sdk`
+2. 导出 AgoraRTM 模块：
+`import AgoraRTM from 'agora-rtm-sdk'`
 
 ## 初始化
 

@@ -3,7 +3,7 @@
 title: 设置视频编码
 description: 
 platform: Windows
-updatedAt: Wed Aug 14 2019 07:07:10 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 08:46:57 GMT+0800 (CST)
 ---
 # 设置视频编码
 ## 功能简介
@@ -89,7 +89,7 @@ lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 - Agora SDK 会根据实时网络环境，对设置的参数作自适应调整，通常会下调参数。
 - 通常的，直播场景下需要较大码率来提升视频质量。因此 Agora 建议将直播码率值设为通信值的 2 倍。详情请参考[设置码率](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69)。 
 - 直播模式通常需要更大的码率来支持清晰度，因此建议主播使用较稳定的网络。
-- 本文中各参数的设置可能会影响计费，详情请参考[计费](../../cn/Agora%20Platform/billing_faq.md)。
+- 本文中各参数的设置可能会影响计费，详情请参考[计费](https://docs.agora.io/cn/faq/video_billing)。
 
 ## 常用分辨率、帧率和码率
 

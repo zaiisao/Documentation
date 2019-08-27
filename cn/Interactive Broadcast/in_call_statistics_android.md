@@ -3,7 +3,7 @@
 title: 检测通话质量
 description: 
 platform: Android
-updatedAt: Fri Aug 16 2019 10:32:57 GMT+0800 (CST)
+updatedAt: Fri Aug 23 2019 12:42:16 GMT+0800 (CST)
 ---
 # 检测通话质量
 
@@ -105,7 +105,7 @@ updatedAt: Fri Aug 16 2019 10:32:57 GMT+0800 (CST)
 | ---------------- | ---------------- | ---------------- |
 | `rxStreamType`     | 视频流类型。  | 视频大流或小流，详见[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-duala双流模式)。   |
 | `receivedBitrate`      | 统计周期内，实际接收到的远端视频码率。    |     |
-| `packetLossRate`     | 统计周期内，实际接收到的远端视频流丢包率。     | <li>图中阶段 2 + 3 + 4 <li>此处指经过**网络对抗**之后的丢包率，比使用**网络对抗**技术前的丢包率更低。   |
+| `packetLossRate`     | 统计周期内，实际接收到的远端视频流丢包率。     | <li>图中阶段 2 + 3 + 4 <li>此处指使用**抗丢包**技术之后的丢包率，比使用**抗丢包**技术前的丢包率更低。   |
 | `decoderOutputFrameRate`    | 远端视频解码器的输出帧率。     |    |
 | `rendererOutputFrameRate`     | 远端视频渲染器的输出帧率。     |  |
 | `totalFrozenTime`     | 远端用户/主播在加入频道后发送视频**卡顿**的累计时长。      | 通话过程中，视频帧率设置不低于 5 fps 时，连续渲染的两帧视频之间间隔超过 500 ms，则计为一次视频**卡顿**。      |

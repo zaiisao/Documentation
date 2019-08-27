@@ -3,20 +3,18 @@
 title: 视频截图
 description: 
 platform: Linux
-updatedAt: Wed Aug 21 2019 08:26:01 GMT+0800 (CST)
+updatedAt: Tue Aug 27 2019 03:52:25 GMT+0800 (CST)
 ---
 # 视频截图
 ## 功能描述
 
-Agora 本地服务端录制 SDK 支持视频截图功能，方便开发者分析视频内容，例如对直播内容进行鉴黄以确保合法合规。
+本文介绍如何通过命令行的方式获取视频截图，以便分析视频内容，例如对直播内容进行鉴黄以确保合法合规。
 
-本文介绍如何通过命令行的方式进行视频截图。
-
-阅读本文前，请确保你已经完成录制 SDK 的环境准备和集成工作并且了解如何使用命令行开始录制，详见[集成客户端](../../cn/Recording/recording_integrate_cpp.md)和[命令行录制](../../cn/Recording/recording_cmd_cpp.md)。
+阅读本文前，请确保你已经完成本地服务端录制 SDK 的环境准备和集成工作并且了解如何使用命令行开始录制，详见[集成客户端](../../cn/Recording/recording_integrate_cpp.md)和[命令行录制](../../cn/Recording/recording_cmd_cpp.md)。
 
 ## 实现方法
 
-Agora 本地服务端录制主要通过 `getVideoFrame` 参数设置录制文件格式来获得截图。此外，你还可以通过 `captureInterval` 参数设置截图时间间隔。
+你可通过 `getVideoFrame` 参数设置录制文件格式来获得截图。此外，你还可以通过 `captureInterval` 参数设置截图时间间隔。
 
 需要注意的是，如想进行截图，在选择录制内容时，需设置为仅录制视频（`isAudioOnly` 设为 0，`isVideoOnly` 设为 1）。
 
@@ -65,5 +63,3 @@ Agora 本地服务端录制主要通过 `getVideoFrame` 参数设置录制文件
 ```
 ./recorder_local --appId <你的 App ID> --channel <待录制的频道名> --uid 0 --appliteDir ~/Agora_Recording_SDK_for_Linux_FULL/bin --isVideoOnly 1 --getVideoFrame 4
 ```
-
-成功开始录制后，会在 samples/cpp 目录下会生成一个以录制日期 yyyymmdd 为名的文件夹。

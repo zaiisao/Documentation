@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Thu Aug 22 2019 07:28:07 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 08:54:13 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -41,7 +41,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
 
-新的推流实现方法，详见[推流到 RTMP](../../cn/Interactive%20Broadcast/push_stream_android2.0.md)。
+新的推流实现方法，详见[推流到 CDN](../../cn/Interactive%20Broadcast/push_stream_android2.0.md)。
 
 #### 2. 远端视频状态
 

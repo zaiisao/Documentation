@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Tue Aug 20 2019 07:24:26 GMT+0800 (CST)
+updatedAt: Tue Aug 27 2019 03:11:47 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -22,41 +22,7 @@ updatedAt: Tue Aug 20 2019 07:24:26 GMT+0800 (CST)
 
 - 如果你的 App 以 Android 9 及以上为目标平台，请关注 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
 
-需要下载的文件：
 
-[Agora RTM Java SDK for Android](../../cn/Real-time-Messaging/downloads.md)
-
-下载的文件包括 libs 文件和 sample 文件，其中 libs 文件包括：
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>文件/文件夹名称</strong></td>
-<td><strong>文件类型</strong></td>
-</tr>
-<tr><td>agora-rtm-sdk.jar</td>
-<td>Java JAR 文件</td>
-</tr>
-<tr><td>arm64-v8a</td>
-<td>文件夹</td>
-</tr>
-<tr><td>armeabi-v7a</td>
-<td>文件夹</td>
-</tr>
-<tr><td>include</td>
-<td>文件夹</td>
-</tr>
-<tr><td>x86</td>
-<td>文件夹</td>
-</tr>
-</tbody>
-</table>
-
-
-> 在正式使用 SDK 前，你可以尝试先在 sample 文件上集成 SDK。
 
 ### 创建 Agora 账号并获取 App ID
 
@@ -65,45 +31,41 @@ updatedAt: Tue Aug 20 2019 07:24:26 GMT+0800 (CST)
 3. 填写项目名， 然后点击提交 。
 4. 在你创建的项目下，查看并获取该项目对应的 App ID。
 
-### 添加 SDK
+### 安装 SDK
 
-1. 设置 libs 存放路径。使用 Android Studio 打开你想要运行的项目（本文以 sample 文件为例），选择 app/src/main/build.gradle 文件，将预设的 libs 路径添加到 fileTree 代码行中。
+#### 方法 1：通过 JCenter 自动导入
+
+1. 使用 **Android Studio** 在 **app/build.gradle** 文件内添加以下代码（1.0.1 为当前最新版本号）
 
 ```java
 dependencies {
-    implementation fileTree(dir: '../../../libs', include: ['*.jar'])
     ...
+    implementation 'io.agora.rtm:rtm-sdk:1.0.1'
+
 }
 ```
 
-> 确保路径名称不包含中文字符。如果路径包含中文字符，则代码无法编译成功且会显示包含随机 ASCII 字符的错误信息。
+2. 同步项目文件。点击 **Sync Project With Gradle Files** 按钮，直到同步完成。
 
-2. 添加 libs 文件包。根据步骤 1 中预设的路径添加 libs 文件包。
+#### 方法 2：手动导入 SDK 文件
 
-3. 添加 sourceSets。在 build.gradle 文件里, 设置 sourceSets 的存放路径，该路径必须与 libs 路径一致。
+1. 在[SDK 下载](https://docs.agora.io/cn/Real-time-Messaging/downloads)下载最新版的 Agora RTM Java SDK for Android 并解压。
+2. 将 SDK 解压文件包 **libs** 文件夹下的以下文件拷贝到你项目的对应文件夹下：
 
-```java
-android {
- ...
- sourceSets {
-        main {
-            jniLibs.srcDirs = ['../../../libs']
-        }
-    }
-}
-```
+| 文件                                     | 对应项目文件夹                                     |
+| ---------------------------------------- | -------------------------------------------------- |
+| **agora-rtm_sdk.jar**                    | **~/app/libs/**                                    |
+| **/arm64-v8a/libagora-rtm-sdk-jni.so**   | **~/app/libs/arm64-v8a/libagora-rtm-sdk-jni.so**   |
+| **/armeabi-v7a/libagora-rtm-sdk-jni.so** | **~/app/libs/armeabi-v7a/libagora-rtm-sdk-jni.so** |
+| **/x86/libagora-rtm-jni.so**             | **~/app/libs/x86/libagora-rtm-jni.so**             |
+| **/x86_64/libagora-rtm-sdk-jni.so**      | **~/app/x86_64/libagora-rtm-sdk-jni.so**           |
 
-4. 添加 App ID。选择 app/src/main/res/values/strings_config.xml 文件，在下列代码中填写 App ID。
 
-```java
-<resources>
-    <string translatable="false" name="agora_app_id"><#YOUR APP ID#></string>
-</resources>
-```
 
-5. 同步项目文件。点击 **Sync Project With Gradle Files** 按钮，直到同步完成。
 
-6. 防止混淆代码: 在 proguard-rules.pro 文件中，为 Agora SDK 添加 -keep 类的配置，这样可以防止混淆 Agora SDK 公共类名称:
+### 防止混淆代码
+
+在 proguard-rules.pro 文件中，为 Agora SDK 添加 -keep 类的配置，这样可以防止混淆 Agora SDK 公共类名称:
 
 `-keep class io.agora.**{*;}`
 

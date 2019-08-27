@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Thu Aug 22 2019 07:39:18 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 08:45:24 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -34,7 +34,7 @@ macOS 语音 SDK 支持两种主要场景:
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 
-新的推流实现方法，详见[推流到 RTMP](../../cn/Audio%20Broadcast/push_stream_android2.0.md)。
+新的推流实现方法，详见[推流到 CDN](../../cn/Audio%20Broadcast/push_stream_android2.0.md)。
 
 **新增特性**
 
@@ -204,7 +204,7 @@ macOS 语音 SDK 支持两种主要场景:
 - [调整通话音量](../../cn/Audio%20Broadcast/volume_mac.md)
 - [播放音效/音乐混音](../../cn/Audio%20Broadcast/effect_mixing_mac.md)
 - [变声与混响](../../cn/Audio%20Broadcast/voice_effect_mac.md)
-- [推流到 RTMP](../../cn/Audio%20Broadcast/push_stream_ios2.0_audio.md)
+- [推流到 CDN](../../cn/Audio%20Broadcast/push_stream_ios2.0_audio.md)
 - [音频设备测试与切换](../../cn/Audio%20Broadcast/switch_audio_device_mac.md)
 
 如果你是由之前版本的 macOS 完整包升级到当前的纯音频包，可参考 [macOS 完整包发版说明](../../cn/Audio%20Broadcast/release_mac_video.md)了解音频的相关改进。

@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux CPP
-updatedAt: Wed Aug 21 2019 02:51:22 GMT+0800 (CST)
+updatedAt: Sun Aug 25 2019 15:30:19 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -179,43 +179,43 @@ updatedAt: Wed Aug 21 2019 02:51:22 GMT+0800 (CST)
 
 | 方法                                          | 信令                                     | RTM 实时消息                            |
 | --------------------------------------------- | ---------------------------------------- | --------------------------------------- |
-| 创建 RTM 呼叫管理器                           | N/A                                      | `getRtmCallManager`<sup>1</sup>         |
-| 供主叫创建并管理一个 `LocalInvitation` 实例。 | N/A                                      | `createLocalCallInvitation`<sup>2</sup> |
-| 供主叫向指定用户（被叫）发送呼叫邀请          | `channelInviteUser`/`channelInviteUser2` | `sendLocalInvitation`<sup>3</sup>   |
+| 创建 RTM 呼叫管理器                           | N/A                                      | [getRtmCallManager](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ab59de9a4c6b31f97ced87a7c5a708007)<sup>1</sup>         |
+| 供主叫创建并管理一个 `LocalInvitation` 实例。 | N/A                                      | [createLocalCallInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#a71f1d4f359e62f0a2ed83d19a69dd095)<sup>2</sup> |
+| 供主叫向指定用户（被叫）发送呼叫邀请          | `channelInviteUser`/`channelInviteUser2` | [sendLocalInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#a5d1ea87573a3e65ded0886f42aefd445)<sup>3</sup>   |
 | 供主叫发送 DTMF 呼叫邀请。                    | `channelInviteDTMF`                      | N/A                                     |
-| 供主叫取消一个发出的呼叫邀请                  | `channelInviteEnd`                       | `cancelLocalInvitation`<sup>4</sup>     |
-| 供被叫接收一个呼叫邀请                        | `channelInviteAccept`                    | `acceptRemoteInvitation`                |
-| 供被叫拒绝一个呼叫邀请                        | `channelInviteRefuse`                    | `refuseRemoteInvitation`                |
+| 供主叫取消一个发出的呼叫邀请                  | `channelInviteEnd`                       | [cancelLocalInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#ab92d7383de69eff8d8dbcc19114751bc)<sup>4</sup>     |
+| 供被叫接收一个呼叫邀请                        | `channelInviteAccept`                    | [acceptRemoteInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#ac97ae6e4f8f7f3add980fdd15f9c47ba)                |
+| 供被叫拒绝一个呼叫邀请                        | `channelInviteRefuse`                    | [refuseRemoteInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#ab6ca977d3075800ec014fa536622f2ff)                |
 
-> - <sup>1</sup> Agora RTM SDK 要求主叫或被叫在发送、取消、接收或拒绝一个呼叫邀请前必须创建一个 `IRtmCallManager` 实例。
-> - <sup>2</sup> Agora RTM SDK 引入了 `ILocalInvitation` 和 `IRemoteInvitation` 对象。前者由主叫通过调用 `createLocalCallInvitation` 方法创建，后者在被叫收到呼叫邀请时由 SDK 自动创建。你可以将这两个对象理解为同一个呼叫邀请的两种不同形式。主叫通过 `ILocalInvitation` 对象指定被叫，设置自定义内容或检查 `ILocalInvitationState` 状态，被叫通过 `IRemoteInvitation` 对象设置响应内容，检查主叫 ID，或者检查 `IRemoteInvitationState` 状态。
-> - <sup>3</sup> `sendLocalInvitation` 函数不带 `channelInviteUser2` 函数中的 `extra` 参数。 
-> - <sup>4</sup> `channelInviteEnd` 方法可以在任意时间取消一个呼叫邀请，而 `cancelLocalInvitation` 方法只能取消一个已发送的正在进行的呼叫邀请。
+> - <sup>1</sup> Agora RTM SDK 要求主叫或被叫在发送、取消、接收或拒绝一个呼叫邀请前必须创建一个 [IRtmCallManager](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ab59de9a4c6b31f97ced87a7c5a708007) 实例。
+> - <sup>2</sup> Agora RTM SDK 引入了 [ILocalInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_local_call_invitation.html) 和 [IRemoteInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_remote_call_invitation.html) 对象。前者由主叫通过调用 [createLocalCallInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#a71f1d4f359e62f0a2ed83d19a69dd095) 方法创建，后者在被叫收到呼叫邀请时由 SDK 自动创建。你可以将这两个对象理解为同一个呼叫邀请的两种不同形式。主叫通过 [ILocalInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_local_call_invitation.html) 对象指定被叫，设置自定义内容或检查 [LOCAL_INVITATION_STATE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a52b3ccc8e0807be99aed9a309f4a6bf6) 状态，被叫通过 [IRemoteInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_remote_call_invitation.html) 对象设置响应内容，检查主叫 ID，或者检查 [REMOTE_INVITATION_STATE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a8dcc0f37c3d22418ba75133999820af6) 状态。
+> - <sup>3</sup> [sendLocalInvitation(/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#a5d1ea87573a3e65ded0886f42aefd445) 函数不带 `channelInviteUser2` 函数中的 `extra` 参数。 
+> - <sup>4</sup> `channelInviteEnd` 方法可以在任意时间取消一个呼叫邀请，而 [cancelLocalInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#ab92d7383de69eff8d8dbcc19114751bc) 方法只能取消一个已发送的正在进行的呼叫邀请。
 > - 为了和 Agora Signaling SDK 互通，你必须把你的 Agora RTM SDK 版本升级到 v1.0 以上并设置 channel ID。请注意即使被叫接收了呼叫邀请，Agora RTM SDK 也不会将主叫或被叫加入指定频道。
-> 如果用户在 `LocalInvitation` 生命周期开始之前或生命周期结束之后调用了 `sendLocalInvitation`、 `cancelLocalInvitation`、 `acceptRemoteInvitation` 或 `refuseRemoteInvitation` ，Agora RTM SDK 会返回 `INVITATION_API_CALL_ERR_CODE` 错误码。
+> 如果用户在 [ILocalInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_local_call_invitation.html) 生命周期开始之前或生命周期结束之后调用了 [sendLocalInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#a5d1ea87573a3e65ded0886f42aefd445)、 [cancelLocalInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#ab92d7383de69eff8d8dbcc19114751bc)、 [acceptRemoteInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#ac97ae6e4f8f7f3add980fdd15f9c47ba) 或 [refuseRemoteInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_manager.html#ab6ca977d3075800ec014fa536622f2ff) ，Agora RTM SDK 会返回 [INVITATION_API_CALL_ERR_CODE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a699db038c2078a6cc2d80bd3b0a39acb) 错误码。
 
 
 
 | 事件                           | 信令                     | RTM 实时消息                                                 |
 | ------------------------------ | ------------------------ | ------------------------------------------------------------ |
-| 返回给主叫：被叫已收到呼叫邀请 | `oninviteReceivedByPeer` | `onLocalInvitationReceivedByPeer`                            |
-| 返回给主叫：呼叫邀请已被取消   | `onInviteEndByMyself`    | `onLocalInvitationCanceled`                                  |
-| 返回给主叫：被叫已接收呼叫邀请 | `onInviteAcceptedByPeer` | `onLocalInvitationAccepted`                                  |
-| 返回给主叫：被叫已拒绝呼叫邀请 | `onInviteRefusedByPeer`  | `onLocalInvitationRefused`                                   |
-| 返回给主叫：呼叫邀请过程失败   | `onInviteFailed`         | `onLocalInvitationFailure`。错误码详见 `LOCAL_INVITATION_ERR_CODE`。<sup>5</sup> |
+| 返回给主叫：被叫已收到呼叫邀请 | `oninviteReceivedByPeer` | [onLocalInvitationReceivedByPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#a0bce0b48810aea30bb057f2722c555ca)                            |
+| 返回给主叫：呼叫邀请已被取消   | `onInviteEndByMyself`    | [onLocalInvitationCanceled](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#ac97269b4f483946456a3d0f9aabaf1e1)                                  |
+| 返回给主叫：被叫已接收呼叫邀请 | `onInviteAcceptedByPeer` | [onLocalInvitationAccepted](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#a55e4dcc83699c4d2a17521e0c0dfdf30)                                  |
+| 返回给主叫：被叫已拒绝呼叫邀请 | `onInviteRefusedByPeer`  | [onLocalInvitationRefused](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#a5c87e054ec1c004fd11e721033a2359c)                                   |
+| 返回给主叫：呼叫邀请过程失败   | `onInviteFailed`         | [onLocalInvitationFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#a34e366966b97603289288f229c83e2af)。错误码详见 [LOCAL_INVITATION_ERR_CODE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#aa83fb27d8066fb5aa6e591e5964edadc)。<sup>5</sup> |
 
-> <sup>5</sup>: 如果呼叫邀请过程已经开始但以失败告终，Agora RTM SDK 会返回 `onLocalInvitationFailure` 。场景包括：被叫离线，`ILocalCallInvitation` 对象发送超时 `ILocalCallInvitation`过期，或者被叫收到了呼叫邀请但未能在指定时间内响应呼叫邀请。
+> <sup>5</sup>: 如果呼叫邀请过程已经开始但以失败告终，Agora RTM SDK 会返回 [onLocalInvitationFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#a34e366966b97603289288f229c83e2af) 。场景包括：被叫离线，[ILocalCallInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_local_call_invitation.html) 对象发送超时 [ILocalCallInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_local_call_invitation.html) 过期，或者被叫收到了呼叫邀请但未能在指定时间内响应呼叫邀请。
 
 | 事件                               | 信令                | RTM 实时消息                                                 |
 | ---------------------------------- | ------------------- | ------------------------------------------------------------ |
 | 返回给 DTMF 用户：收到一个呼叫邀请 | `onInviteMsg`       | N/A                                                          |
-| 返回给被叫：收到一个呼叫邀请       | `oninviteReceived`  | `onRemoteInvitationReceived`                                 |
-| 返回给被叫：主叫已取消呼叫邀请     | `onInviteEndByPeer` | `onRemoteInvitationCanceled`                                 |
-| 返回给被叫：已成功接受呼叫邀请     | N/A                 | `onRemoteInvitationAccepted`                                 |
-| 返回给被叫：已拒绝呼叫邀请         | N/A                 | `onRemoteInvitationRefused`                                  |
-| 返回给被叫：呼叫邀请过程失败       | N/A                 | `onRemoteInvitationFailure`。错误码详见 `REMOTE_INVITATION_ERR_CODE`。<sup>6</sup> |
+| 返回给被叫：收到一个呼叫邀请       | `oninviteReceived`  | [onRemoteInvitationReceived](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#ad206023cad15b8a4b15d6465a6425a89)                                 |
+| 返回给被叫：主叫已取消呼叫邀请     | `onInviteEndByPeer` | [onRemoteInvitationCanceled](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#a094f89aaa7d7eeb928fe90f537a6680b)                                 |
+| 返回给被叫：已成功接受呼叫邀请     | N/A                 | [onRemoteInvitationAccepted](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#a3edc69d558bead97f882de0147df449e)                                 |
+| 返回给被叫：已拒绝呼叫邀请         | N/A                 | [onRemoteInvitationRefused](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#aaf8ce8c0810625efd29e61bad19a98ad)                                  |
+| 返回给被叫：呼叫邀请过程失败       | N/A                 | [onRemoteInvitationFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#a25af8d459354093f18580a41c64bbbf4)。错误码详见 [REMOTE_INVITATION_ERR_CODE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#aedb89e7145338eb7a1b05df69f31e26f)。<sup>6</sup> |
 
-> <sup>6</sup> 如果呼叫邀请进程已经开始但以失败告终，Agora RTM SDK 会返回 `onRemoteInvitationFailure` 回调给被叫。通用场景包括：`IRemoteCallInvitation` 发送超时或 `IRemoteCallInvitation`  过期。 
+> <sup>6</sup> 如果呼叫邀请进程已经开始但以失败告终，Agora RTM SDK 会返回 [onRemoteInvitationFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_call_event_handler.html#a25af8d459354093f18580a41c64bbbf4) 回调给被叫。通用场景包括：[IRemoteCallInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_remote_call_invitation.html) 发送超时或 [IRemoteCallInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_remote_call_invitation.html)  过期。 
 
 ## 更新 Token
 

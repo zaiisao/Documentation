@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Thu Aug 22 2019 07:40:17 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 08:46:24 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -37,7 +37,7 @@ Windows 语音 SDK 支持 X86 和 X64 架构。
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
 
-新的推流实现方法，详见[推流到 RTMP](../../cn/Voice/push_stream_android2.0.md)。
+新的推流实现方法，详见[推流到 CDN](../../cn/Voice/push_stream_android2.0.md)。
 
 **新增特性**
 
@@ -192,7 +192,7 @@ Windows 语音 SDK 支持 X86 和 X64 架构。
 - [调整通话音量](../../cn/Voice/volume_windows.md)
 - [播放音效/音乐混音](../../cn/Voice/effect_mixing_windows.md)
 - [变声与混响](../../cn/Voice/voice_effect_windows.md)
-- [推流到 RTMP](../../cn/Voice/push_stream_windows2.0_audio.md)
+- [推流到 CDN](../../cn/Voice/push_stream_windows2.0_audio.md)
 - [音频设备测试与切换](../../cn/Voice/switch_audio_device_windows.md)
 
 如果你是由之前版本的 Windows 完整包升级到当前的纯音频包，可参考 [Windows 完整包发版说明](../../cn/Voice/release_windows_video.md)了解音频相关改进。
