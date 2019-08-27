@@ -3,7 +3,7 @@
 title: RTM 快速开始
 description: 
 platform: Android
-updatedAt: Tue Aug 27 2019 03:11:47 GMT+0800 (CST)
+updatedAt: Tue Aug 27 2019 11:00:22 GMT+0800 (CST)
 ---
 # RTM 快速开始
 ## 集成客户端
@@ -35,7 +35,7 @@ updatedAt: Tue Aug 27 2019 03:11:47 GMT+0800 (CST)
 
 #### 方法 1：通过 JCenter 自动导入
 
-1. 使用 **Android Studio** 在 **app/build.gradle** 文件内添加以下代码（1.0.1 为当前最新版本号）
+使用 **Android Studio** 在 **app/build.gradle** 文件内添加以下代码（1.0.1 为当前最新版本号）
 
 ```java
 dependencies {
@@ -45,7 +45,6 @@ dependencies {
 }
 ```
 
-2. 同步项目文件。点击 **Sync Project With Gradle Files** 按钮，直到同步完成。
 
 #### 方法 2：手动导入 SDK 文件
 
@@ -55,10 +54,10 @@ dependencies {
 | 文件                                     | 对应项目文件夹                                     |
 | ---------------------------------------- | -------------------------------------------------- |
 | **agora-rtm_sdk.jar**                    | **~/app/libs/**                                    |
-| **/arm64-v8a/libagora-rtm-sdk-jni.so**   | **~/app/libs/arm64-v8a/libagora-rtm-sdk-jni.so**   |
-| **/armeabi-v7a/libagora-rtm-sdk-jni.so** | **~/app/libs/armeabi-v7a/libagora-rtm-sdk-jni.so** |
-| **/x86/libagora-rtm-jni.so**             | **~/app/libs/x86/libagora-rtm-jni.so**             |
-| **/x86_64/libagora-rtm-sdk-jni.so**      | **~/app/x86_64/libagora-rtm-sdk-jni.so**           |
+| **/arm64-v8a/libagora-rtm-sdk-jni.so**   | **~/app/src/main/jniLibs/libs/arm64-v8a/**   |
+| **/armeabi-v7a/libagora-rtm-sdk-jni.so** | **~/app/src/main/jniLibs/libs/armeabi-v7a/** |
+| **/x86/libagora-rtm-jni.so**             | **~/app/src/main/jniLibs/libs/x86/**             |
+| **/x86_64/libagora-rtm-sdk-jni.so**      | **~/appsrc/main/jniLibs//x86_64/**           |
 
 
 
