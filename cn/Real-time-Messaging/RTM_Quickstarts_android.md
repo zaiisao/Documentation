@@ -3,7 +3,7 @@
 title: 消息与基本频道操作
 description: 
 platform: Android
-updatedAt: Wed Aug 28 2019 03:22:45 GMT+0800 (CST)
+updatedAt: Wed Aug 28 2019 03:22:59 GMT+0800 (CST)
 ---
 # 消息与基本频道操作
 ## 集成客户端
