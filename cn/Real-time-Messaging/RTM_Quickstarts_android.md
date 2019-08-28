@@ -1,11 +1,11 @@
 
 ---
-title: RTM 快速开始
+title: 消息与基本频道操作
 description: 
 platform: Android
-updatedAt: Tue Aug 27 2019 11:00:22 GMT+0800 (CST)
+updatedAt: Wed Aug 28 2019 03:22:45 GMT+0800 (CST)
 ---
-# RTM 快速开始
+# 消息与基本频道操作
 ## 集成客户端
 
 本章介绍在正式使用 Agora RTM Java SDK for Android 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
