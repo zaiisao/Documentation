@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Aug 14 2019 09:56:04 GMT+0800 (CST)
+updatedAt: Wed Aug 28 2019 02:07:45 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -527,7 +527,7 @@ The following parameters are required in the request body.
   - `uploadingStatus`: String. The upload status.
     - `"uploaded"`: All the recorded files are uploaded to the third-party cloud storage.
     - `"backuped"`:  Some of the recorded files fail to upload to the third-party cloud storage and upload to Agora Cloud Backup instead. Agora Cloud Backup automatically uploads these files to your cloud storage. 
-    - `"unknown"`: Unknown status. Call the [`query`](#query) method to check the status.
+    - `"unknown"`: Unknown status. 
 
 ## <a name="status"></a>Status code
 
