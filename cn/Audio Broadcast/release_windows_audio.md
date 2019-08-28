@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Aug 28 2019 07:35:35 GMT+0800 (CST)
+updatedAt: Wed Aug 28 2019 07:35:41 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -62,7 +62,7 @@ Windows 语音 SDK 支持 X86 和 X64 架构。
 为方便用户了解本地及远端的音频状态，该版本新增 [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) 和 [`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612) 回调。新的回调下，本地及远端音频有如下状态：
 
 - 本地音频：STOPPED(0)、RECORDING(1)、ENCODING(2) 和 FAILED(3)。状态为 FAILED(3) 时，你可以通过 `error` 参数中返回的错误码定位及排查问题。
-- 远端音频：STOPED(0)、STARTING(1)、DECODING(2)、FROZEN(3) 和 FAILED(3)。你可以在 `reason` 参数中了解引起远端音频状态发生改变的原因。
+- 远端音频：STOPED(0)、STARTING(1)、DECODING(2)、FROZEN(3) 和 FAILED(4)。你可以在 `reason` 参数中了解引起远端音频状态发生改变的原因。
 
 #### 4. 本地音频数据
 
