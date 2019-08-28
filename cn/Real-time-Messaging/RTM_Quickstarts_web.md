@@ -3,7 +3,7 @@
 title: 消息与基本频道操作
 description: 
 platform: Web
-updatedAt: Wed Aug 28 2019 03:23:57 GMT+0800 (CST)
+updatedAt: Wed Aug 28 2019 03:24:01 GMT+0800 (CST)
 ---
 # 消息与基本频道操作
 
