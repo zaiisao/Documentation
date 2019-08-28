@@ -1,11 +1,11 @@
 
 ---
-title: RTM 快速开始
+title: 消息与基本频道操作
 description: 
 platform: Web
-updatedAt: Tue Aug 27 2019 03:13:15 GMT+0800 (CST)
+updatedAt: Wed Aug 28 2019 03:23:57 GMT+0800 (CST)
 ---
-# RTM 快速开始
+# 消息与基本频道操作
 
 ## 集成客户端
 
