@@ -1,11 +1,11 @@
 
 ---
-title: RTM 快速开始
+title: 消息与基本频道操作
 description: 
 platform: macOS
-updatedAt: Tue Aug 20 2019 07:25:07 GMT+0800 (CST)
+updatedAt: Wed Aug 28 2019 03:23:31 GMT+0800 (CST)
 ---
-# RTM 快速开始
+# 消息与基本频道操作
 ## 集成客户端
 
 ### 前提条件
@@ -35,7 +35,27 @@ updatedAt: Tue Aug 20 2019 07:25:07 GMT+0800 (CST)
 
 至此，你已经完成了项目的创建。接下来，让我们把 Agora SDK 包添加到这个项目中。
 
-### 手动添加 SDK 到项目中
+### 安装 SDK
+
+#### 方法 1：通过 Cocoapods 导入 SDK
+
+1. 请确保已在本机安装 Cocoapods。具体方法详见 [Getting Started with Cocoapods](https://guides.cocoapods.org/using/getting-started.html#getting-started)。
+2. 在你的电脑 Terminal 终端 cd 进入你的项目所在目录，利用 vim 创建 Podfile：
+`vim Podfile`
+3. 在 Podfile 文件中输入以下内容：
+```
+target '<YOUR APP>' do
+    pod 'AgoraRtm_macOS'
+end
+```
+> 请以你的项目名称替换 \<YOUR APP\> 。
+4. 保存 Podfile 并退出：
+`:wq`
+6. 导入 Agora RTM SDK：
+`pod install`
+7. 在 Xcode 中打开生成的 **.xcworkspace** 文件。
+
+### 方法 2：手动添加 SDK 到项目中
 
 1. 下载 [Agora RTM Objective-C SDK for macOS](../../cn/Real-time-Messaging/downloads.md) ，解压后将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到你的项目文件夹内。
 2. 使用 Xcode 打开你的项目，然后选中当前 Target。
