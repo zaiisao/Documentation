@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Jul 26 2019 04:28:53 GMT+0800 (CST)
+updatedAt: Thu Aug 29 2019 03:44:46 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -405,7 +405,9 @@ BaseUrl: **https://api.agora.io/dev/v1**
 下图展示了服务器踢人相关 API 的使用逻辑。
 ![](https://web-cdn.agora.io/docs-files/1545985590584)
 
-> 用户被踢出频道后，会收到网络连接已被服务器禁止回调：
+<div class="alert note">本组 API 调用频率上限为每秒 10 次。</div>
+
+用户被踢出频道后，会收到网络连接已被服务器禁止回调：
 - Android: [`onConnectionStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e)(CONNECTION_CHANGED_BANNED_BY_SERVER)
 - iOS/macOS: [`connectionChangedToState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)(AgoraConnectionChangedBannedByServer)
 - Web: [`onclient-banned`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#on)
@@ -543,6 +545,8 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 下图展示了查询频道信息相关 API 的使用逻辑。
 
 ![](https://web-cdn.agora.io/docs-files/1545985608224)
+
+<div class="alert note">本组 API 调用频率上限为每秒 20 次。</div>
 
 
 ### 查询某个用户在指定频道中的状态 (GET)
@@ -806,7 +810,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 
 如: /channel/<appid\>
 
-带参数: /channel/<appid\>/?page\_no=0&page\_size=100
+带参数: /channel/<appid\>?page\_no=0&page\_size=100
 
 -   响应:
 
