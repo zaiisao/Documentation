@@ -3,7 +3,7 @@
 title: 消息与基本频道操作
 description: 
 platform: Android
-updatedAt: Fri Aug 30 2019 09:52:59 GMT+0800 (CST)
+updatedAt: Fri Aug 30 2019 09:53:04 GMT+0800 (CST)
 ---
 # 消息与基本频道操作
 
@@ -130,7 +130,7 @@ dependencies {
 
 - SDK 与 RTM 系统的连接状态变化；
 - 接收点对点消息；
-- 其他相关时间
+- 其他相关事件。
 
 ```java
 import io.agora.rtm.ErrorInfo;
