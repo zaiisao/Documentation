@@ -3,39 +3,47 @@
 title: 消息与基本频道操作
 description: 
 platform: Android
-updatedAt: Wed Aug 28 2019 04:17:07 GMT+0800 (CST)
+updatedAt: Fri Aug 30 2019 09:51:44 GMT+0800 (CST)
 ---
 # 消息与基本频道操作
-## 集成客户端
 
-本章介绍在正式使用 Agora RTM Java SDK for Android 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
 
-### 前提条件
+本章介绍在正式使用 Agora RTM Java SDK for Android 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
-请确保满足以下开发环境要求：
+## 开发环境要求
 
 - Android SDK API Level ≥ 16
-
 - Android Studio 3.0 或以上版本
-
 - App 要求 Android 4.1 或以上设备
-
 - 如果你的 App 以 Android 9 及以上为目标平台，请关注 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
 
+## 准备开发环境
 
+开发环境的准备包含以下内容：
 
-### 创建 Agora 账号并获取 App ID
+- [获取 App ID](#appid)
+- [快速集成 SDK](#sdk)
+- [添加权限](#permission)
+- [防止混淆代码](#obfuscated)
+
+<a name="appid"></a>
+
+### 获取 App ID
 
 1. 进入 <https://dashboard.agora.io/> ，按照屏幕提示创建一个开发者账号。
 2. 登录 Dashboard 页面，点击添加新项目。
 3. 填写项目名， 然后点击提交 。
 4. 在你创建的项目下，查看并获取该项目对应的 App ID。
 
-### 安装 SDK
+<a name="sdk"></a>
 
-#### 方法 1：通过 JCenter 自动导入
+### 快速集成 SDK
 
-使用 **Android Studio** 在 **app/build.gradle** 文件内添加以下代码（1.0.1 为当前最新版本号）
+你可以通过以下任一种方式快速集成 Agora RTM SDK for Android。
+
+#### 通过 JCenter 自动导入
+
+1. 在 **app/build.gradle** 文件内添加以下代码（1.0.1 为当前最新版本号）
 
 ```java
 dependencies {
@@ -45,37 +53,84 @@ dependencies {
 }
 ```
 
+1. 同步项目文件。点击 **Sync Project With Gradle Files** 按钮，直到同步完成。
 
-#### 方法 2：手动导入 SDK 文件
+#### 手动导入 SDK 文件
 
 1. 在[SDK 下载](https://docs.agora.io/cn/Real-time-Messaging/downloads)下载最新版的 Agora RTM Java SDK for Android 并解压。
-2. 将 SDK 解压文件包 **libs** 文件夹下的以下文件拷贝到你项目的对应文件夹下：
+2. 将 SDK 解压文件包 **libs** 文件夹下 **.jar** 包 和 **.so** 库文件拷贝到你项目的对应文件夹下：
 
-| 文件                                     | 对应项目文件夹                                     |
-| ---------------------------------------- | -------------------------------------------------- |
-| **agora-rtm_sdk.jar**                    | **~/app/libs/**                                    |
-| **/arm64-v8a/libagora-rtm-sdk-jni.so**   | **~/app/src/main/jniLibs/libs/arm64-v8a/**   |
-| **/armeabi-v7a/libagora-rtm-sdk-jni.so** | **~/app/src/main/jniLibs/libs/armeabi-v7a/** |
-| **/x86/libagora-rtm-jni.so**             | **~/app/src/main/jniLibs/libs/x86/**             |
-| **/x86_64/libagora-rtm-sdk-jni.so**      | **~/appsrc/main/jniLibs//x86_64/**           |
+| 文件                                     | 对应项目文件夹                          |
+| ---------------------------------------- | --------------------------------------- |
+| **agora-rtm_sdk.jar**                    | **~/app/libs/**                         |
+| **/arm64-v8a/libagora-rtm-sdk-jni.so**   | **~/app/src/main/jniLibs/arm64-v8a/**   |
+| **/armeabi-v7a/libagora-rtm-sdk-jni.so** | **~/app/src/main/jniLibs/armeabi-v7a/** |
+| **/x86/libagora-rtm-jni.so**             | **~/app/src/main/jniLibs/x86/**         |
+| **/x86_64/libagora-rtm-sdk-jni.so**      | **~/app/src/main/jniLibs/x86_64/**      |
 
+<a name="permission"></a>
 
+### 添加权限
 
+打开 **app/src/main/AndroidManifest.xml** 文件，添加必要的设备权限。比如：
+
+```
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.agora.rtmtutorial">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+...
+</manifest>
+```
+
+<a name="obfuscated"></a>
 
 ### 防止混淆代码
 
 在 proguard-rules.pro 文件中，为 Agora SDK 添加 -keep 类的配置，这样可以防止混淆 Agora SDK 公共类名称:
 
-`-keep class io.agora.**{*;}`
+```
+   -keep class io.agora.**{*;}
+```
+
+## 实现实时消息和基本频道操作
+
+本节主要提供实现实时消息和基本频道操作的 API 调用时序图、示例代码，以及相关注意事项。
+
+### API 调用时序图
+
+#### 登录登出 Agora RTM 系统
+
+![](https://web-cdn.agora.io/docs-files/1562566527083)
+
+#### 收发点对点消息
+
+![](https://web-cdn.agora.io/docs-files/1562566549404)
+
+#### 加入离开频道
+
+![](https://web-cdn.agora.io/docs-files/1562566630113)
+
+#### 收发频道消息
+
+### ![](https://web-cdn.agora.io/docs-files/1562566639888)
 
 
-## 初始化
+
+### 初始化
 
 在创建实例前，请确保你已完成环境准备，安装包获取等步骤。
 
 创建实例需要填入准备好的 `App ID`, 只有 `App ID` 相同的应用才能互通。
 
-指定一个事件回调，SDK 通过回调通知应用程序 SDK 的状态变化和运行事件等，如连接状态变化，消息接收等。
+指定事件回调 `RtmClientListener`，SDK 通过该回调通知应用程序：
+
+- SDK 与 RTM 系统的连接状态变化；
+- 接收点对点消息；
+- 其他相关时间
 
 ```java
 import io.agora.rtm.ErrorInfo;
@@ -93,15 +148,15 @@ public void init() {
 												new RtmClientListener() {
 						@Override
 						public void onConnectionStateChanged(int state, int reason) {
-								Log.d(TAG, "on connection state changed to "
+								Log.d(TAG, "Connection state changes to "
 										+ state + " reason: " + reason);
 						}
 
 						@Override
 						public void onMessageReceived(RtmMessage rtmMessage, String peerId) {
 								String msg = rtmMessage.getText();
-								Log.d(TAG, "Receives message: " + msg 
-														+ " from " + peerId);
+								Log.d(TAG, "Message received " + " from " + peerId + msg 
+														);
 						}
 				});
 		} catch (Exception e) {
@@ -119,7 +174,7 @@ RTM 支持多实例，事件回调须是不同的实例。
 
 当实例不再使用时，可以调用实例的 `release()`方法释放资源。
 
-## 登录
+### 登录
 
 APP 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息和群聊功能。在此之前，请确保 `RtmClient` 初始化完成。
 
@@ -149,11 +204,11 @@ mRtmClient.login(null, userId, new ResultCallback<Void>() {
 mRtmClient.logout(null);
 ```
 
-## 点对点消息
+### 点对点消息
 
 在成功登录 RTM 服务器之后，可以开始使用 RTM 的点对点消息功能。
 
-### 发送点对点消息
+#### 发送点对点消息
 
 调用 `sendMessageToPeer` 方法发送点对点消息。在该方法中：
 
@@ -182,22 +237,22 @@ public void sendPeerMessage(String dst, String message) {
 
 ```
 
-### 接收点对点消息
+#### 接收点对点消息
 
 点对点消息的接收通过创建 `RtmClient` 实例的时候传入的 `RtmClientListener` 回调接口进行监听。在该回调接口的 `onMessageReceived(RtmMessage message, String peerId)` 回调方法中：
 
 - 通过 `message.getText()` 方法可以获取到消息文本内容。
 - `peerId` 是消息发送方的用户 ID。
 
-### 注意事项
+#### 注意事项
 
 - 接收到的 `RtmMessage` 消息对象不能重复利用再用于发送。
 
-## 频道消息
+### 频道消息
 
 App 在成功登录 RTM 服务器 之后，可以开始使用 RTM 的频道消息功能。
 
-### 创建 、加入频道实例
+#### 创建 、加入频道实例
 
 - 传入能标识每个频道的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"null"`。  
 - 指定一个频道监听器。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
@@ -244,7 +299,7 @@ try {
 		});
 ```
 
-### 发送频道消息
+#### 发送频道消息
 
 在成功加入频道之后，用户可以开始向该频道发送消息。
 
@@ -270,11 +325,11 @@ public void sendChannelMessage(String msg) {
 }
 ```
 
-### 接收频道消息
+#### 接收频道消息
 
 频道消息的接收通过创建频道消息的时候传入的回调接口进行监听。
 
-### 获取频道成员列表
+#### 获取频道成员列表
 
 调用实例的 `getMembers()` 方法可以获取到当前在该频道内的用户列表。 
 
@@ -291,11 +346,11 @@ public void getChannelMemberList() {
 }
 ```
 
-### 退出频道
+#### 退出频道
 
 调用实例的 `leave()` 方法可以退出该频道。退出频道之后可以调用 `join()` 方法再重新加入频道。
 
-### 注意事项
+#### 注意事项
 
 - 每个客户端都需要首先调用 `createChannel` 方法创建频道实例才能使用频道消息功能，该实例只是本地的一个类对象实例。
 - RTM 支持同时创建最多 20 个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的回调。
