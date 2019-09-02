@@ -3,7 +3,7 @@
 title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 02 2019 10:39:15 GMT+0800 (CST)
+updatedAt: Mon Sep 02 2019 10:43:03 GMT+0800 (CST)
 ---
 # Dashboard
 Agora Dashboard provides interactive interfaces where you can configure, pay for and monitor your Agora products. 
