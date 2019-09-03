@@ -3,7 +3,7 @@
 title: 本地服务端录制和云端录制有什么区别
 description: 
 platform: All Platforms,Linux
-updatedAt: Mon Jul 01 2019 15:19:41 GMT+0800 (CST)
+updatedAt: Tue Sep 03 2019 16:18:49 GMT+0800 (CST)
 ---
 # 本地服务端录制和云端录制有什么区别
 Agora 本地服务端录制 SDK 需要部署在 Linux 服务器上，Agora 云端录制无需部署 Linux 服务器，减轻了研发和运维的压力，更轻量便捷。下表列出这两种方案的区别：
