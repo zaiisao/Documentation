@@ -3,7 +3,7 @@
 title: 线上充值
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 03 2019 03:33:52 GMT+0800 (CST)
+updatedAt: Tue Sep 03 2019 03:33:56 GMT+0800 (CST)
 ---
 # 线上充值
 本页介绍如何在 Agora Dashboard 查看账户余额，通过**支付宝**进行线上充值，并查看交易列表。
@@ -51,9 +51,11 @@ updatedAt: Tue Sep 03 2019 03:33:52 GMT+0800 (CST)
 1. 在财务中心，点击左侧导航栏**提现**按钮，进入提现页面。
  
 2. 点击**申请提现**按钮。
+
 ![](https://web-cdn.agora.io/docs-files/1567481453021)
 
 3. 输入您要提现的金额，点击确认。
+
 ![](https://web-cdn.agora.io/docs-files/1567481564978)
 
 提交申请后，你可以在提现页面查看申请记录，追踪申请状态。
