@@ -3,7 +3,7 @@
 title: Make Payments
 description: 
 platform: All Platforms
-updatedAt: Fri Aug 30 2019 13:54:33 GMT+0800 (CST)
+updatedAt: Tue Sep 03 2019 04:01:13 GMT+0800 (CST)
 ---
 # Make Payments
 This page shows how to make payments in Dashboard.
