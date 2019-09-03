@@ -3,10 +3,10 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 25 2019 10:31:56 GMT+0800 (CST)
+updatedAt: Tue Sep 03 2019 03:34:50 GMT+0800 (CST)
 ---
 # 申请发票
-本页介绍如何在Agora Dashboard 申请开具发票。
+本页介绍如何在 Agora Dashboard 申请开具发票。
 
 声网支持开具增值税电子发票与增值税纸质发票。电子发票支持财务入账，其法律效力、基本用途、基本使用规定等与纸质发票相同。
 
