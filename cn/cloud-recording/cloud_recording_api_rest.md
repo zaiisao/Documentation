@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Aug 26 2019 06:29:17 GMT+0800 (CST)
+updatedAt: Tue Sep 03 2019 07:08:59 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -181,7 +181,7 @@ updatedAt: Mon Aug 26 2019 06:29:17 GMT+0800 (CST)
     - `0`：Huadong 
     - `1`：Huabei 
     - `2`：Huanan 
-  - `3`：Beimei  
+   - `3`：Beimei  
   
     当 `vendor` = 1，即第三方云存储为 Amazon S3 时：
     - `0`：US_EAST_1 
@@ -201,7 +201,7 @@ updatedAt: Mon Aug 26 2019 06:29:17 GMT+0800 (CST)
     - `14`：AP_SOUTH_1 
     - `15`：CN_NORTH_1 
     - `16`：CN_NORTHWEST_1 
-  - `17`：US_GOV_WEST_1 
+   - `17`：US_GOV_WEST_1 
   
     当 `vendor` = 2，即第三方云存储为阿里云时： 
     - `0`：CN_Hangzhou 
