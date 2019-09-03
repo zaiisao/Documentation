@@ -3,7 +3,7 @@
 title: Make Payments
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 03 2019 04:01:13 GMT+0800 (CST)
+updatedAt: Tue Sep 03 2019 04:01:17 GMT+0800 (CST)
 ---
 # Make Payments
 This page shows how to make payments in Dashboard.
@@ -53,3 +53,29 @@ Click **Bank Transfer** in the left navigation menu to get our bank account info
 Click **Transactions** in the left navigation menu to see all the transactions in your account. You can also export them into a CSV file.
 
 ![](https://web-cdn.agora.io/docs-files/1565876980898)
+
+## Make a withdrawal
+
+You can withdrawal funds from your Agora account balance to your credit card for free. 
+
+<div class="alert note">Tips:<li>Currently, you can only withdraw money that was paid with your credit cards within 90 days.</li><li>Before making a withdrawal request, ensure that your account balance is greater than 0, you do not have any pending usage charges in your account this month, and there is no withdrawal request in the "Submitted" status.</li></div>
+
+Follow these steps to make a withdrawal:
+
+1. Click **Withdraw** in the left navigation menu.
+
+2. Click **Request Withdrawal** in the top-right corner.
+
+![](https://web-cdn.agora.io/docs-files/1567482300788)
+
+3. Specify the amount you want to withdraw and click **OK**.
+
+![](https://web-cdn.agora.io/docs-files/1567482408124)
+
+After submitting a withdrawal request, you can check the status of this request in the **Withdraw** page.
+
+We will process your withdrawal request within 10 business days. However, if you have used over 10,000 minutes in the current month, your request will be processed after the next billing day. Please ensure that you have enough balance to cover any pending usage charges.
+
+After your request is approved, your money will be returned to your credit card.
+
+
