@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Tue Sep 03 2019 07:44:05 GMT+0800 (CST)
+updatedAt: Tue Sep 03 2019 08:01:26 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -12,20 +12,6 @@ Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time
 
 > For more information about the SDK features and applications, see [Agora RTM Overview](../../en/Real-time-Messaging/RTM_product.md).
 
-
-## v1.0.1
-
-v1.0.1 is released on September 3, 2019. 
-
-### Issues Fixed
-
-- Peer-to-peer messages have a chance to become offline messages even if [enableOfflineMessaging](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/sendmessageoptions.html) is not set. 
-- The local user has a chance of not being able to retrieve the latest user attributes of a remote user, if the remote user updates his/her attributes immediately after logging in the Agora RTM system. 
-
-### Improvements
-
-- Caches up to six seconds of peer-to-peer messages sent when the network is interrupted, and resends the cached messages immediately after the SDK reconnects to the Agora RTM system. 
-- Timeout for sending a peer-to-peer message is reset to 10 seconds. 
 
 ## v1.0.0
 
