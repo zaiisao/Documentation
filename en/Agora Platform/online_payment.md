@@ -3,7 +3,7 @@
 title: Make Payments
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 03 2019 04:15:48 GMT+0800 (CST)
+updatedAt: Tue Sep 03 2019 04:15:55 GMT+0800 (CST)
 ---
 # Make Payments
 This page shows how to make payments in Dashboard.
@@ -24,7 +24,7 @@ Follow these steps to make payments with a credit card:
 
 2. Click **Add a card** to add a credit card.
 
-![](https://web-cdn.agora.io/docs-files/1566207609286)
+![](https://web-cdn.agora.io/docs-files/1567483739192)
 
 3. Enter the card number, month, year, and CVC. Choose whether or not to set this card as the default card. Click **Save** to add this card to your account.
 
@@ -32,7 +32,7 @@ Follow these steps to make payments with a credit card:
 
 4. After adding a card, enter the **Payment Amount**, which should not be less than 1 U.S. dollar, and then click **Pay**.
 
-![](https://web-cdn.agora.io/docs-files/1566207624379)
+![](https://web-cdn.agora.io/docs-files/1567483858734)
 
 5. After successful payment, you will see the following page.
 
@@ -46,13 +46,13 @@ Follow these steps to make payments with a credit card:
 
 Click **Bank Transfer** in the left navigation menu to get our bank account information for your bank transfer.
 
-![](https://web-cdn.agora.io/docs-files/1565876948601)
+![](https://web-cdn.agora.io/docs-files/1567484031671)
 
 ## View transaction list
 
 Click **Transactions** in the left navigation menu to see all the transactions in your account. You can also export them into a CSV file.
 
-![](https://web-cdn.agora.io/docs-files/1565876980898)
+![](https://web-cdn.agora.io/docs-files/1567484136274)
 
 ## Make a withdrawal
 
