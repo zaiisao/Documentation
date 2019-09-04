@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Wed Sep 04 2019 07:19:38 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 07:19:42 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
@@ -24,7 +24,7 @@ Using MediaPlayer Kit, you can start/pause the playback video, adjust the playba
 
 - If you want to join the channel for a video call and publish the playback video to the remote user, that is, let the remote user see two video windows at the same time, then you need to join the channel with a dual process. In a process, you can capture and publish the call video; while in another process, you can publish the playback video stream. If you join the channel with only a process, the remote user can only see the video window corresponding to that process.
 
-<div class="alert note"> Because the AgoraRTCEngine is a single instance, so you need to use a dual process. In a process, you create a AgoraRtcEngine to capture and publish the call video; while in another process, you create a AgoraRtcEngine and a MediaPlayerKit to publish the separate video stream. In this documentation, we only discuss the usage of the latter process.</div>
+<div class="alert note"> Because the AgoraRtcEngine is a single instance, so you need to use a dual process. In a process, you create a AgoraRtcEngine to capture and publish the call video; while in another process, you create a AgoraRtcEngine and a MediaPlayerKit to publish the separate video stream. In this documentation, we only discuss the usage of the latter process.</div>
 
 - If you do not need to publish the playback video to the remote user, you can use MediaPlayer Kit as your local media player. We will not discuss this scenario here.
 
