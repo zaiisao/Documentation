@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 15 2019 03:54:20 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 03:41:08 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
