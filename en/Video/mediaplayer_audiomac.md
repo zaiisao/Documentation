@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Wed Sep 04 2019 07:19:57 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 11:36:02 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
