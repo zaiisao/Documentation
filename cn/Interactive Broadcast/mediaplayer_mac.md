@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Wed Sep 04 2019 10:34:52 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 10:44:44 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
