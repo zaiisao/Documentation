@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Wed Sep 04 2019 06:47:41 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 06:47:55 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -23,7 +23,7 @@ updatedAt: Wed Sep 04 2019 06:47:41 GMT+0800 (CST)
 使用媒体播放器组件时，你可以开始/暂停播放视频，调节播放进度，调节播放音量，选择是否将播放的视频发布给远端用户观看：
 
 - 你可以以主播身份进入频道并将媒体播放器组件播放的视频也一同分发给远端用户，让远端用户同时看到两个视频窗口。在这种场景下，你需要使用双进程。一个进程里采集并发送你作为主播的直播视频，另一个进程里采集并发送播放器播放的视频。如果你只以一个进程加入频道，那么远端用户只能看到与这个进程对应的一个视频窗口。
-> 因为 AgoraRtcEngine 是单实例，所以在这种场景下，你需要使用双进程。在一个进程里，创建 AgoraRtcEngine，采集并发布主播的直播视频；在另一个进程里，创建 AgoraRtcEngine 和 MediaPlayerKit，发布媒体播放器组件播放的视频流。本文仅介绍后一个进程的使用。
+<div class="alert note"> 因为 AgoraRtcEngine 是单实例，所以在这种场景下，你需要使用双进程。在一个进程里，创建 AgoraRtcEngine，采集并发布主播的直播视频；在另一个进程里，创建 AgoraRtcEngine 和 MediaPlayerKit，发布媒体播放器组件播放的视频流。本文仅介绍后一个进程的使用。</div>
 
 - 你也可以将媒体播放器组件作为你的本地播放器使用，本文对这种情况不多加讨论。
 
@@ -70,8 +70,8 @@ MediaPlayerKitQuickstart 只支持从本地导入视频，不能通过 URL 地�
 - 下载并解压 MediaPlayerKit 文件。
 
 **2. 创建项目**
-> 在此步，你应该基于已有的集成了 Agora Native SDK 的项目的继续集成 MediaPlayerKit 的项目，而不是从头创建一个新项目。此处仅是展现一个新建项目的步骤，如果你不需要参考，可以略过此步。
-> 
+<div class="alert warning">在此步，你应该基于已有的集成了 Agora Native SDK 的项目的继续集成 MediaPlayerKit 的项目，而不是从头创建一个新项目。此处仅是展现一个新建项目的步骤，如果你不需要参考，可以略过此步。</div>
+
 - 打开 Xcode，**Create a new Xcode project**。
 - 在**Choose a template for your new project** 页面上选择 **macOS** 和 Application 下的 **cocoa App**，点击 **Next**。
 - 填入你的 **Prduct Name**，比如 “MediaPlayer”，选择 **Language** 为 Objective-C，点击 **Next**。
