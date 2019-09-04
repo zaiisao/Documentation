@@ -3,12 +3,14 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Wed Sep 04 2019 11:36:02 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 11:36:06 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
 
-During a video call, you can publish a separate video stream to the remote user through Agora’s SD-RTN™ by using MediaPlayer Kit. The remote user will see two video windows; one for the video call and one for the separate video stream. You can adjust the playback of the separate video stream in real time by using MediaPlayer Kit.
+## Description
+
+During a video call, you can publish a separate video stream to the remote user through Agora’s SD-RTN™ and adjust the playback of the separate video stream in real time by using MediaPlayer Kit.
 
 <a name="format"></a>
 ### Supported formats
@@ -16,15 +18,13 @@ During a video call, you can publish a separate video stream to the remote user 
 - Local video: AVI, MP4, MKV, and FLV file formats.
 - Online video: RTMP and RTSP streams.
 
-<div class="alert note"> Whether it is local video or online video, only single/dual video with a sampling rate of 32 kHz, 44100 Hz or 48 kHz can be played normally in MediaPlayer Kit.</div>
+<div class="alert note"> Only supports the single/dual video with a sampling rate of 32 kHz, 44100 Hz or 48 kHz.</div>
 
 ### Usage
 
 Using MediaPlayer Kit, you can start/pause the playback video, adjust the playback progress, adjust the playback volume, and publish the playback video to the remote user:
 
-- If you want to join the channel for a video call and publish the playback video to the remote user, that is, let the remote user see two video windows at the same time, then you need to join the channel with a dual process. In a process, you can capture and publish the call video; while in another process, you can publish the playback video stream. If you join the channel with only a process, the remote user can only see the video window corresponding to that process.
-
-<div class="alert note"> Because the AgoraRtcEngine is a single instance, so you need to use a dual process. In a process, you create a AgoraRtcEngine to capture and publish the call video; while in another process, you create a AgoraRtcEngine and a MediaPlayerKit to publish the separate video stream. In this documentation, we only discuss the usage of the latter process.</div>
+- If you want to publish the playback video to the remote user, you may need to use a dual process. In a process, you can capture and publish the call video; while in another process, you can publish the playback video stream. If you join the channel with only a process, the remote user can only see the video window corresponding to that process.
 
 - If you do not need to publish the playback video to the remote user, you can use MediaPlayer Kit as your local media player. We will not discuss this scenario here.
 
