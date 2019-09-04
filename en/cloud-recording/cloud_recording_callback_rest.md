@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Wed Sep 04 2019 09:42:49 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 09:59:24 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 The Agora Cloud Recording RESTful API provides the callback service. You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -53,7 +53,7 @@ Each type of event notification contains the following properties:
   - `uid`: String. The UID of the recording client.
   - `sid`: String. The recording ID. The unique identifier of each recording.
   - `sequence`: String. The serial number of the notifications, starting from 0. You can use this parameter to identify notifications that are random, lost, or resent.
-  - `sendts`: Number. The time (UTC) when the event happens.
+  - `sendts`: Number. The time (UTC) when the event happens. Unix timestamp in ms.
   - `serviceType`: Number. The type of the Agora callback service. 0 indicates cloud recording.
   - `noticeLevel`: Number. The notification level. The higher the number, the higher the level of attention.
     - `1`: Debug 
