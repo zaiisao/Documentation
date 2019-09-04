@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Wed Sep 04 2019 07:04:38 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 07:04:52 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -18,7 +18,7 @@ updatedAt: Wed Sep 04 2019 07:04:38 GMT+0800 (CST)
 - 本地视频：文件格式为 AVI、MP4、MKV 和 FLV。
 - 在线视频：RTMP 流和 RTSP 流。
 
-不管是本地视频还是在线视频，只有采样率为 32 kHz、44100 Hz 或 48 kHz 的单/双声道视频才能在媒体播放器中正常播放。
+<div class="alert note"> 不管是本地视频还是在线视频，只有采样率为 32 kHz、44100 Hz 或 48 kHz 的单/双声道视频才能在媒体播放器中正常播放。</div>
 
 ### 使用指南
 
@@ -75,7 +75,7 @@ MediaPlayerKitQuickstart 只支持从本地导入视频，不能通过 URL 地�
 
 **2. 创建项目**
 
-> 在此步，你应该基于已有的集成了 Agora Native SDK 的项目的继续集成 MediaPlayerKit 的项目，而不是从头创建一个新项目。此处仅是展现一个新建项目的步骤，如果你不需要参考，可以略过此步。
+<div class="alert warning">在此步，你应该基于已有的集成了 Agora Native SDK 的项目的继续集成 MediaPlayerKit 的项目，而不是从头创建一个新项目。此处仅是展现一个新建项目的步骤，如果你不需要参考，可以略过此步。</div>
 
 - 打开 Xcode，**Create a new Xcode project**。
 - 在**Choose a template for your new project** 页面上选择 **macOS** 和 Application 下的 **cocoa App**，点击 **Next**。
