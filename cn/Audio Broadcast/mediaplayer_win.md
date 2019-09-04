@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Windows
-updatedAt: Wed Sep 04 2019 06:44:13 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 06:49:51 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
