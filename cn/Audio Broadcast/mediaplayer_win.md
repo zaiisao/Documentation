@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Windows
-updatedAt: Wed Sep 04 2019 07:00:08 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 07:00:13 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -17,7 +17,7 @@ updatedAt: Wed Sep 04 2019 07:00:08 GMT+0800 (CST)
 - 本地视频：文件格式为 AVI、MP4、MKV 和 FLV。
 - 在线视频：RTMP 流和 RTSP 流。
 
-不管是本地视频还是在线视频，只有采样率为 32 kHz、44100 Hz 或 48 kHz 的单/双声道视频才能在媒体播放器中正常播放。
+<div class="alert note">不管是本地视频还是在线视频，只有采样率为 32 kHz、44100 Hz 或 48 kHz 的单/双声道视频才能在媒体播放器中正常播放。</div>
 
 ### 使用指南
 
