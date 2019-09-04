@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Wed Sep 04 2019 07:08:14 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 07:08:20 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
@@ -16,7 +16,7 @@ During an interactive broadcast, the host can broadcast a separate video stream 
 - Local video: AVI, MP4, MKV, and FLV file formats.
 - Online video: RTMP and RTSP streams.
 
-> Whether it is local video or online video, only single/dual video with a sampling rate of 32 kHz, 44100 Hz or 48 kHz can be played normally in MediaPlayer Kit.
+<div class="alert note"> Whether it is local video or online video, only single/dual video with a sampling rate of 32 kHz, 44100 Hz or 48 kHz can be played normally in MediaPlayer Kit.</div>
 
 ### Usage
 
