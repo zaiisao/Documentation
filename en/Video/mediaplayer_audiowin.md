@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Wed Sep 04 2019 07:19:42 GMT+0800 (CST)
+updatedAt: Wed Sep 04 2019 11:35:32 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
