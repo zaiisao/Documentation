@@ -3,7 +3,7 @@
 title: Make Payments
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 03 2019 20:28:10 GMT+0800 (CST)
+updatedAt: Thu Sep 05 2019 02:21:14 GMT+0800 (CST)
 ---
 # Make Payments
 This page shows how to make payments in Dashboard.
@@ -56,7 +56,7 @@ Click **Transactions** in the left navigation menu to see all the transactions i
 
 ## Make a withdrawal
 
-You can withdrawal funds from your Agora account balance to your credit card for free. 
+You can withdraw funds from your Agora account balance to your credit card for free. 
 
 <div class="alert note">Tips:<li>Currently, you can only withdraw money that was paid with your credit cards within 90 days.</li><li>Before making a withdrawal request, ensure that your account balance is greater than 0, you do not have any pending usage charges in your account this month, and there is no withdrawal request in the "Submitted" status.</li></div>
 
