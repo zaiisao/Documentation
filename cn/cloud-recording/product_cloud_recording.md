@@ -3,7 +3,7 @@
 title: 云端录制
 description: 
 platform: Linux
-updatedAt: Thu Sep 05 2019 02:17:32 GMT+0800 (CST)
+updatedAt: Thu Sep 05 2019 02:17:37 GMT+0800 (CST)
 ---
 # 云端录制
 Agora 云端录制，是 Agora 针对音视频通话、直播研发的录制服务，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK (1.12.0 或更高版本) 兼容，通过简单的操作方法，帮助开发者快速、灵活地实现录制服务，实现一对一、一对多的音视频通话或直播的录制。同 Agora 本地服务端录制相比，Agora 云端录制无需部署 Linux 服务器，减轻了研发和运维的压力，更轻量便捷。
@@ -38,7 +38,7 @@ Agora 云端录制主要有以下特性：
 
 | 特性     | 描述                                                         |
 | -------- | ------------------------------------------------------------ |
-| 高可靠性 | 全球分布式集群部署，提供高可用性服务。                   |
+| 高可靠性 | <li>全球分布式集群部署，提供高可用性服务。</li><li>当第三方云存储故障，提供自动存储灾备和延迟上传功能。</li>                   |
 | 高安全性 | 提供视频通话、数据传输、数据存储等端到端安全保障机制，详情可参考[信息安全说明](https://docs.agora.io/cn/Agora%20Platform/security)。 |
 | 兼容性   | 支持第三方云存储：[七牛云](https://www.qiniu.com/products/kodo)、[阿里云](https://www.aliyun.com/product/oss)和[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。  |
 | 稳定易用 | 操作方法简单易学，能帮助开发者快速集成上线录制服务。 |
