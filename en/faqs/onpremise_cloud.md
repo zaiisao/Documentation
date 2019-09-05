@@ -3,7 +3,7 @@
 title: What's the difference between on-premise recording and cloud recording?
 description: 
 platform: All Platforms,Linux
-updatedAt: Tue Sep 03 2019 16:16:28 GMT+0800 (CST)
+updatedAt: Thu Sep 05 2019 10:21:47 GMT+0800 (CST)
 ---
 # What's the difference between on-premise recording and cloud recording?
 **Agora On-premise Recording** and **Agora Cloud Recording** are add-ons to record and save voice calls, video calls, and interactive broadcasts on your **Linux server** and your **cloud storage**.
@@ -17,5 +17,5 @@ See the following table for details.
 | Deployment method         | Deployed on your Linux server.                  | Deployed on Agora's cloud server.                                      |
 | Usability                 | You have to prepare the server resources and deploy the SDK on your Linux server.  | You do not need to deploy the SDK on the Linux server and can directly use RESTful APIs to start recording. |
 | Operation and maintenance | You need to maintain the recording service.                     | Agora maintains the recording service for you.                           |
-| Scalability               | You need to scale to a more powerful server depending upon the concurrent usage/recording sessions.      | Agora scales up the recording service in real time at your request.  |
+| Scalability               | You need to scale to a more powerful server depending upon the concurrent usage/recording sessions.      | At your request, Agora scales up the recording service in real time.  |
 | Reliability               | The reliability of Agora On-premise Recording depends on your implementation.          | Agora Cloud Recording automatically saves files on Agora's cloud server for backup and automatically resumes recording after a system failure or other issues. |
