@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Aug 14 2019 10:35:12 GMT+0800 (CST)
+updatedAt: Thu Sep 05 2019 09:57:17 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -85,6 +85,56 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
+
+## 2.9.0 版
+该版本于 2019 年 9 月 5 日发布。
+
+**升级必看**
+
+该版本优化了推流服务的性能和稳定性，对管理推流转码的接口 [`LiveTranscoding`](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.9.0/interfaces/agorartc.livetranscoding.html?transId=2.9.0) 的参数设置进行了如下限制：
+
+- `videoFramerate`：设置转码推流的帧率，单位为 fps。如果设置的帧率超过 30，Agora 服务端会自动调整为 30。
+- `videoBitrate`：设置转码推流的码率，单位为 Kbps。你可以根据[视频分辨率表格](https://docs.agora.io/cn/Voice/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html#bitrate)中的码率值进行设置。如果设置的码率超出合理范围，Agora 服务端会在合理区间内对码率值进行自适应。
+- `videoCodecProfile`：设置转码推流的视频编码规格，可以设置为 66、77 或 100。如果设置其他值，Agora 会统一设为默认值 100。
+- `width` 和 `height`：设置转码推流的视频分辨率。**width x height** 的最小值不低于 **16 x 16**。
+
+**新增功能**
+
+#### 支持 NAT64 网络
+
+该版本新增对 NAT64 的支持，在 NAT64 的网络环境下可以正常使用 Agora Web SDK。
+
+#### 选择前置/后置摄像头
+
+`createStream` 方法新增 `facingMode` 参数，支持在移动端创建本地流时选择使用前置或后置摄像头采集视频。
+
+#### 取消事件绑定
+
+新增 `Client.off` 方法，支持移除通过 `Client.on()` 绑定的事件。
+
+**改进**
+
+- 大规模减少了端口的使用，防火墙内的用户不再需要打开 10000-65535 的 UDP 端口，详见 [Web SDK 防火墙端口](https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms#web-sdk)。
+- 减少加入频道的时间以及首帧出图时间。
+- 网络传输控制优化，提升下行网络拥塞情况下的音视频体验。
+- 进一步完善 NAT 类型支持的兼容性，提升了媒体流连接能力。
+
+- 明确了部分 API 的失败回调中的错误码。
+- 每次发布流成功时强制同步 mute 的状态。
+- 仅在加入频道后才会触发 `volume-indicator` 回调。
+- 优化 SDK 参数检查。
+
+**修复问题**
+
+- 修复连接断开重连后，订阅选项（`Client.subscribe` 中的 `options` 参数）会被重置的问题。
+- 修复 `Stream.init` 执行过程中调用 `Stream.close` 导致的异常问题。
+- 修复 `Stream.startAudioMixing` 中 `cacheResource` 设为 `false` 不生效的问题。
+- 修复断开网络连接后部分行为异常的问题。
+
+**API 变更**
+
+- 新增 `Client.off` 方法
+- `AgoraRTC.createStream` 方法新增 `facingMode` 参数
 
 ## 2.8.0 版
 该版本于 2019 年 7 月 8 日发布。

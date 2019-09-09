@@ -3,16 +3,9 @@
 title: Web SDK 相关
 description: 
 platform: Web
-updatedAt: Mon Mar 04 2019 02:47:29 GMT+0800 (CST)
+updatedAt: Thu Aug 29 2019 10:06:42 GMT+0800 (CST)
 ---
 # Web SDK 相关
-### 用户在安卓设备上使用 Chrome 浏览器发起通话，无法与使用 Native 及 Safari 浏览器的用户互通?
-由于 Safari 浏览器通过使用 H.264 视频编码来运行，因此所有 Safari 浏览器上的通话都需要支持该编码。然而当前安卓设备上的 Chrome 浏览器 61 之后的版本有个 bug ，会阻止设备给其他通话方发送 H.264 编码，因此远端的通话方在屏幕上看不到直播的视频，而只能看到一个黑色窗口。安卓设备上的 Chrome 浏览器可以解码来自其他通话方发来的 H.264 编码。
-
-该问题会在 Chrome 浏览器后续版本中解决，我们会持续关注该问题的进展。详见：https://bugs.chromium.org/p/chromium/issues/detail?id=761336
-
-另外，安卓设备的 Chrome 浏览器上也可能会出现通话者只听到声音，但看不到图像的情况。安卓 Chrome 浏览器会在 57 版本中支持解码 H.264。目前安卓手机中只有高通（Kitkat 及以后版本）和三星猎户座（Lollipop 及以后版本）的芯片支持解码 H.264。详见：https://groups.google.com/forum/#!msg/discuss-webrtc/xXjeKbW_JYI/LIXzVrKWCwAJ
-
 ### H.264 模式下，用户在 macOS 上用 Firefox 浏览器加入通话，打开小流时，获取的分辨率与大流一致？
 H.264模式下，在 macOS 设备上使用 Firefox 打开小流时，获取的分辨率与大流相同；如果是 VP8 模式，则没有此问题。Agora 会持续关注并更新在该问题上的进展。
 
