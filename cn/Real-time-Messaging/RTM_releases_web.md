@@ -3,13 +3,26 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue Sep 03 2019 08:01:34 GMT+0800 (CST)
+updatedAt: Thu Sep 05 2019 04:01:54 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 了解更多详情。
 
+## 1.0.1 版
+
+该版本于 2019 年 9 月 5 日发布。
+
+### 问题修复
+
+- 在未设置 [enableOfflineMessaging](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/sendmessageoptions.html) 的情况下，发送的点对点消息有一定几率成为离线消息。
+- 对端用户成功登陆后立即设置的用户属性有一定几率无法被获取。
+
+### 功能改进
+
+- 改进断线重连时的点对点消息发送机制：缓存默认 6 秒时长的点对点消息，在用户重连成功后立即投递。
+- 点对点消息超时时间改为 10 秒。
 
 ## 1.0.0 版
 

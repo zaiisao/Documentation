@@ -3,7 +3,7 @@
 title: 连接状态管理
 description: 
 platform: Android
-updatedAt: Thu Jul 25 2019 03:58:51 GMT+0800 (CST)
+updatedAt: Tue Aug 27 2019 09:31:48 GMT+0800 (CST)
 ---
 # 连接状态管理
 ## 状态定义

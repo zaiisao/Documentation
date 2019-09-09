@@ -1,11 +1,11 @@
 
 ---
-title: 消息与基本频道操作
+title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Wed Aug 28 2019 03:23:45 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 03:46:58 GMT+0800 (CST)
 ---
-# 消息与基本频道操作
+# 收发点对点消息和频道消息
 ## 集成客户端
 
 本章介绍在正式使用 Agora RTM Java SDK for Linux 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。

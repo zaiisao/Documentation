@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux CPP
-updatedAt: Sun Aug 25 2019 15:30:19 GMT+0800 (CST)
+updatedAt: Tue Aug 27 2019 09:43:44 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比老信令与 Agora RTM SDK v1.0 的区别。
@@ -159,7 +159,7 @@ updatedAt: Sun Aug 25 2019 15:30:19 GMT+0800 (CST)
 
 
 
-## 获取制定频道用户人数
+## 获取指定频道用户人数
 
 | 方法                 | 信令                  | RTM 实时消息 |
 | -------------------- | --------------------- | ------------ |

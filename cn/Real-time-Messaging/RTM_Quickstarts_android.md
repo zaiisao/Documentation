@@ -1,14 +1,14 @@
 
 ---
-title: 消息与基本频道操作
+title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Fri Aug 30 2019 09:53:04 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 03:56:24 GMT+0800 (CST)
 ---
-# 消息与基本频道操作
+# 收发点对点消息和频道消息
 
 
-本章介绍在正式使用 Agora RTM Java SDK for Android 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
+本章介绍在正式使用 Agora RTM Java SDK for Android 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。你也可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android) 查看相关功能的具体实现。
 
 ## 开发环境要求
 
@@ -43,7 +43,7 @@ updatedAt: Fri Aug 30 2019 09:53:04 GMT+0800 (CST)
 
 #### 通过 JCenter 自动导入
 
-1. 在 **app/build.gradle** 文件内添加以下代码（1.0.1 为当前最新版本号）
+1. 在 **app/build.gradle** 文件内添加以下代码（1.0.1 为当前版本号）
 
 ```java
 dependencies {
@@ -168,7 +168,7 @@ public void init() {
 
 
 
-### 注意事项
+#### 注意事项
 
 RTM 支持多实例，事件回调须是不同的实例。
 
@@ -329,22 +329,7 @@ public void sendChannelMessage(String msg) {
 
 频道消息的接收通过创建频道消息的时候传入的回调接口进行监听。
 
-#### 获取频道成员列表
 
-调用实例的 `getMembers()` 方法可以获取到当前在该频道内的用户列表。 
-
-```java
-public void getChannelMemberList() {
-		mRtmChannel.getMembers(new ResultCallback<List<RtmChannelMember>>() {
-				@Override
-				public void onSuccess(final List<RtmChannelMember> responseInfo) {
-				}
-				@Override
-				public void onFailure(ErrorInfo errorInfo) {
-				}
-		});
-}
-```
 
 #### 退出频道
 

@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Wed Sep 04 2019 11:13:17 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 11:40:53 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -74,7 +74,7 @@ MediaPlayerKitQuickstart 只支持从本地导入视频，不能通过 URL 地�
 
 - 打开 Xcode，**Create a new Xcode project**。
 - 在**Choose a template for your new project** 页面上选择 **macOS** 和 Application 下的 **cocoa App**，点击 **Next**。
-- 填入你的 **Prduct Name**，比如 “MediaPlayer”，选择 **Language** 为 Objective-C，点击 **Next**。
+- 填入你的 **Product Name**，比如 “MediaPlayer”，选择 **Language** 为 Objective-C，点击 **Next**。
 - 选择存放项目文件的本地路径，比如 `/Users/xxx/Desktop`，点击 **Create**，随后你可以看到你的项目页面。
 
 <a name="import"></a>

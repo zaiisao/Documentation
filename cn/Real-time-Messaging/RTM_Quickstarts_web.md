@@ -1,11 +1,11 @@
 
 ---
-title: 消息与基本频道操作
+title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Wed Aug 28 2019 03:24:01 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 03:47:16 GMT+0800 (CST)
 ---
-# 消息与基本频道操作
+# 收发点对点消息和频道消息
 
 ## 集成客户端
 
