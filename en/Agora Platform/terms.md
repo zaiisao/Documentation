@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 27 2019 02:50:40 GMT+0800 (CST)
+updatedAt: Tue Sep 10 2019 08:42:12 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -40,7 +40,7 @@ Dynamic Keys are generated within the server-side code using an App Certificate.
 
 Dynamic Keys have expiry dates and contain client permissions, such as different role privileges (host and audience).
 
-Based on the SDK version, the Dynamic Key can be a Channel Key or a Token, see [Security Keys](../../en/Agora%20Platform/token.md) for details.
+Based on the SDK version, the Dynamic Key can be a Channel Key or a Token, see [Set up Authentication](../../en/Agora%20Platform/token.md) for details.
 
 ### SD-RTN™
 
@@ -83,11 +83,11 @@ The SDK applies different optimization methods according to the channel profile.
 > The gaming profile applies to the Agora Gaming SDK only.
 
 
-### UID
+### <a name="username"></a>Username
 
-A user ID (UID) identifies a user in the channel. Each user in the same channel should have a unique uid.
+A username identifies a user in the channel. Each user in the same channel should have a unique username.
 
-If you leave the uid empty or set it as 0, the SDK will automatically assign a UID for you.
+Agora supports two types of usernames, integer (UID) and string (User Account). You can choose one type to identify the users. Ensure that all the users in a channel use the same type of username.
 
 ### Stream
 
