@@ -3,7 +3,7 @@
 title: 水晶球
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Tue Sep 10 2019 08:26:17 GMT+0800 (CST)
+updatedAt: Tue Sep 10 2019 08:44:43 GMT+0800 (CST)
 ---
 # 水晶球
 [水晶球](https://dashboard.agora.io/analytics/call/search)（Agora Analytics）是 Agora 为开发者提供的实时质量监控工具。
