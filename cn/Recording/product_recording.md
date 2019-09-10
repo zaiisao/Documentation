@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: Linux
-updatedAt: Mon Sep 09 2019 11:12:46 GMT+0800 (CST)
+updatedAt: Tue Sep 10 2019 04:01:15 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 本地服务端录制 SDK，是 Agora 针对音视频通话、直播研发的录制插件，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK \(1.12.0 或更高版本\) 兼容，通过简单的操作方法，帮助开发者快速、灵活地部署录制服务，来实现一对一、一对多的音视频通话或直播的录制。
@@ -14,14 +14,17 @@ Agora 本地服务端录制 SDK，是 Agora 针对音视频通话、直播研发
 
 ## 功能描述
 
-Agora 本地服务端录制 SDK 支持如下功能：
+Agora 本地服务端录制 SDK 支持录制 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk) 的高清音视频通话，具体如下：
 
-- 支持 Agora Native SDK、 Agora Web SDK 和微信小程序 SDK 的高清音视频通话的录制
-- 支持频道内每个用户的音视频分别录制
-- 支持频道内所有用户的音视频合流录制
-- 支持频道内每个用户的音视频的裸数据
-- 支持频道内每个用户的截图
-- 支持自定义合图布局
+| 功能               | 描述                                                         | 
+| :----------------- | :----------------------------------------------------------- |
+| 选择录制内容       | 可选择：<li>仅录制音频<li>仅录制视频<li>同时录制音视频                   | -                                                            |
+| 选择录制模式       | 可选择：<li>[单流录制](../../cn/Recording/individual_recording.md)模式：分开录制频道内每个 UID 的音频流和视频流。每个 UID 均有其对应的音频文件和视频文件。<li>[合流录制](../../cn/Recording/composite_recording.md)模式：频道内所有 UID 的音频混合录制为一个纯音频文件，所有 UID 的视频混合录制为一个纯视频文件。可指定合流音频属性和视频属性。 | 
+| [设置合流布局](../../cn/Recording/recording_layout_guide.md)       | 合流录制模式下，支持设置合流布局，指定发流用户画面的大小及其在视频画布上的位置，设置用户和画面的背景图。 | 
+| [获取原始音视频数据](../../cn/Recording/recording_raw_data.md) | 支持获取：<Li>AAC 和 PCM 格式的原始音频数据<li>H.264 和 YUV 格式的原始视频数据 | 
+| [视频截图](../../cn/Recording/recording_screen_capture.md)           | 单流录制模式下，支持：<li>仅截图，获取 JPG 图片。<li>边录制边截图，获取多个视频文件和 JPG 图片。<br>合流录制模式下，支持边录制边对各单流截图，获取一个视频文件和多个 JPG 图片。 | 
+| 支持代理     | 支持配置代理服务器或[使用云代理服务](../../cn/Recording/cloudproxy_recording.md)，实现内网访问 Agora 服务，进行录制。                          | 
+| 录制大流或小流     | Agora RTC SDK 开启[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-duala%E5%8F%8C%E6%B5%81%E6%A8%A1%E5%BC%8F)时，可选择：<li>仅录制大流<li>仅录制小流 | 
 
 ## 适用场景
 
