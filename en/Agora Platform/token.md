@@ -1,11 +1,11 @@
 
 ---
-title: Use Security Keys
+title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 15 2019 06:15:08 GMT+0800 (CST)
+updatedAt: Tue Sep 10 2019 08:57:58 GMT+0800 (CST)
 ---
-# Use Security Keys
+# Set up Authentication
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
 
 * For low-security requirements, use an App ID for authentication.
