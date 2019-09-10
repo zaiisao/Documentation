@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Thu Aug 22 2019 04:33:09 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 08:55:56 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -122,9 +122,9 @@ This method sets the user role before joining a channel, and allows you to switc
 <td><p>User role in a command-mode channel:</p>
 <ul>
 <li><code>CLIENT_ROLE_BROADCASTER</code> = 1: Broadcaster</li>
-<li><code>CLIENT_ROLE_AUDIENCE</code> = 2: Audience( default)</li>
+<li><code>CLIENT_ROLE_AUDIENCE</code> = 2: Audience (default)</li>
 </ul>
-<p>Once set, only the host in the channel can talk, not the audience.</p>
+<p>Once set, only the broadcaster in the channel can talk, not the audience.</p>
 </td>
 </tr>
 <tr/>

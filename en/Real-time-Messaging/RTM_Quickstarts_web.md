@@ -1,11 +1,11 @@
 
 ---
-title: RTM Quickstart Guide
+title: Peer-to-peer or Channel Messaging
 description: v0.9.3 web quickstart 
 platform: Web
-updatedAt: Wed Jun 26 2019 03:21:01 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 04:09:45 GMT+0800 (CST)
 ---
-# RTM Quickstart Guide
+# Peer-to-peer or Channel Messaging
 This page describes how to integrate the Agora RTM Web SDK and call the basic functionalities.
 
 ## Integrate the SDK

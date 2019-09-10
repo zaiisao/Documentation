@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon Aug 19 2019 02:02:41 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 08:40:47 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -18,20 +18,22 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 ## v2.9.0
 v2.9.0 is released on Aug. 16, 2019.
 
-### Before getting started
+**Compatibility changes**
 
 In this release, we deleted the following methods:
 
 - `configPublisher`
 
-If your app implements CDN streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
+If your app implements RTMP streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
 
 - [`setLiveTranscoding`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLiveTranscoding:)
 - [`addPublishStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addPublishStreamUrl:transcodingEnabled:)
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 
-### New features
+For how to implement the new methods, see [Push Streams to the CDN](../../en/Audio%20Broadcast/push_stream_android2.0.md).
+
+**New features**
 
 #### 1. Faster switching to another channel
 
@@ -74,7 +76,7 @@ The difference between the `onPlaybackAudioFrame` callback and the `pullPlayback
 - `onPlaybackAudioFrame`: The SDK sends the audio data to the app once every 10 ms. Any delay in processing the audio frames may result in an audio delay.
 - `pullPlaybackAudioFrameRawData` / `pullPlaybackAudioFrameSampleBufferByLengthInByte`: The app pulls the remote audio data. After setting the audio data parameters, the SDK adjusts the frame buffer and avoids problems caused by jitter in external audio playback.
 
-### Improvements
+**Improvements**
 
 #### 1. Reporting more statistics of the in-call quality
 
@@ -87,7 +89,7 @@ This release adds the following statistics in the [`AgoraChannelStats`](https://
 - Improves the audio quality when the audio scenario is set to `GameStreaming`.
 - Improves the audio quality after the user disables the microphone in the Communication profile.
 
-### Issues fixed
+**Issues fixed**
 
 #### Audio
 
@@ -96,9 +98,9 @@ This release adds the following statistics in the [`AgoraChannelStats`](https://
 
 #### Miscellaneous
 
-- Occasionally mixed streams in CDN streaming. 
+- Occasionally mixed streams in RTMP streaming. 
 
-### API Changes
+**API changes**
 
 To improve the user experience, we made the following changes in v2.9.0:
 
@@ -131,7 +133,7 @@ To improve the user experience, we made the following changes in v2.9.0:
 
 v2.8.0 is released on Jul. 8, 2019.
 
-### New features
+**New features**
 
 #### 1. Supporting string usernames
 
@@ -159,16 +161,16 @@ To monitor the audio transmission quality during a call or live broadcast, this 
 
 This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBitrate` members in the [AgoraRtcRemoteAudioStats](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class.
 
-### Improvements
+**Improvements**
 
 This release adds a `AgoraConnectionChangedKeepAliveTimeout(14)` member to the `AgoraConnectionChangedReason` parameter of the [connectionChangedToState](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback. This member indicates a connection state change caused by the timeout of the connection keep-alive between the SDK and Agora's edge server.
 
 
-### Issues Fixed
+**Issues fixed**
 
 - Occasional crashes.
 
-### API Changes
+**API changes**
 
 To improve your experience, we made the following changes to the APIs:
 

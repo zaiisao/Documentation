@@ -3,7 +3,7 @@
 title: Create an Agora account
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 15 2019 05:58:38 GMT+0800 (CST)
+updatedAt: Thu Sep 05 2019 17:41:25 GMT+0800 (CST)
 ---
 # Create an Agora account
 This page introduces how to create an Agora account and change the account settings.

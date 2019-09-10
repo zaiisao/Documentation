@@ -1,11 +1,11 @@
 
 ---
-title: RTM Quickstart Guide
+title: Peer-to-peer or Channel Messaging
 description: v0.9.1
 platform: iOS
-updatedAt: Mon May 27 2019 04:23:58 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 04:10:45 GMT+0800 (CST)
 ---
-# RTM Quickstart Guide
+# Peer-to-peer or Channel Messaging
 ## <a name = "create"></a>Create and Initialize an AgoraRtmKit Instance
 
 Before creating an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance, ensure that you prepare the development environment.

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Aug 22 2019 07:16:48 GMT+0800 (CST)
+updatedAt: Thu Aug 29 2019 06:55:56 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -40,7 +40,7 @@ If your app implements RTMP streaming with the methods above, ensure that you up
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
 
-For how to implement the new methods, see [Push Streams to the RTMP](../../en/Video/push_stream_android2.0.md).
+For how to implement the new methods, see [Push Streams to the CDN](../../en/Video/push_stream_android2.0.md).
 
 #### 2. Reporting the state of the remote video
 
@@ -244,7 +244,7 @@ To improve the usability of the RTMP streaming service, v2.4.1 defines the follo
 
 | Class / Interface  | Parameter Limit                                              |
 | ---------------------- | ------------------------------------------------------------ |
-| [LiveTranscoding](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html)        | <li>[videoFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a8086eda68ed5b9d106cf830fd4e24f9c): Frame rate (fps) of the RTMP live output video stream. The default value is 15. We recommend not setting it to a value higher than 30.<li>[videoBitrate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ab5ff17deab2e3149f149987cc0d83433): Bitrate (Kbps) of the RTMP live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>[videoCodecProfile](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a72fbfdd2c0d4f0cc438d5ca052aa7531): The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>[width](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ad0a505490500917dd246510471ef88be) and [height](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a340ee10a10bf0137fb996ca77729002e): Pixel of the video. The minimum value of width x height is 16 x 16.</li> |
+| [LiveTranscoding](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html)        | <li>[videoFrameRate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a8086eda68ed5b9d106cf830fd4e24f9c): Frame rate (fps) of the CDN live output video stream. The value range is [0, 30], and the default value is 15. Agora adjusts all values over 30 to 30.<li>[videoBitrate](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ab5ff17deab2e3149f149987cc0d83433): Bitrate (Kbps) of the RTMP live output video stream. The default value is 400. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.<li>[videoCodecProfile](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a72fbfdd2c0d4f0cc438d5ca052aa7531): The video codec profile. Set it as **BASELINE**, **MAIN**, or **HIGH** (default). If you set this parameter to other values, Agora adjusts it to the default value of **HIGH**.<li>[width](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#ad0a505490500917dd246510471ef88be) and [height](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a340ee10a10bf0137fb996ca77729002e): Pixel of the video. The minimum value of width x height is 16 x 16.</li> |
 | [RtcImage](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_image.html)             | url: The maximum length of this parameter is **1024** bytes. |
 | [addPublishStreamUrl](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)    | `url`: The maximum length of this parameter is **1024** bytes. |
 | [removePublishStreamUrl](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7) | `url`: The maximum length of this parameter is **1024** bytes. |
@@ -472,7 +472,7 @@ v2.4.0 provides the following options for setting video encoder preferences:
 - The stream for screen sharing is cropped when lowering the screen resolution. We highly recommend using the new methods in v2.4.0 for screen sharing. With the new screen sharing parameters, these methods separate the stream for screen sharing from the camera-captured stream. See [Share the Screen](../../en/Video/screensharing_windows.md) for more information.
 - A region cannot be shared if one of its coordinates is negative.
 - Occasional echoes.
-- The SEI information does not synchronize with the media stream when publishing transcoded streams to the RTMP.
+- The SEI information does not synchronize with the media stream when publishing transcoded streams to the CDN.
 
 **API changes**
 

@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 26 2019 04:28:32 GMT+0800 (CST)
+updatedAt: Tue Aug 27 2019 06:20:41 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -385,7 +385,9 @@ BaseUrl: **https://api.agora.io/dev/v1**.
 The following chart shows how you can use related APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990162139)
 
-> The banned user receives the corresponding callback as follows:
+<div class="alert note">The call frequency of this group of API is no more than ten queries per second.</div>
+
+The banned user receives the corresponding callback as follows:
 - Android: [`onConnectionStateChanged`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e)(CONNECTION_CHANGED_BANNED_BY_SERVER)
 - iOS/macOS: [`connectionChangedToState`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)(AgoraConnectionChangedBannedByServer)
 - Web: [`onclient-banned`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/web/interfaces/agorartc.client.html#on)
@@ -513,6 +515,8 @@ BaseUrl：**https://api.agora.io/dev/v1/**.
 
 The following chart shows how you can use Online Statistics Query APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990190974)
+
+<div class="alert note">The call frequency of this group of API is no more than twenty queries per second.</div>
 
 ### Get a User Role in the Channel (GET)
 
@@ -775,7 +779,7 @@ This method gets the channel list of a specified vendor.
 	</table>
 
 Example: /channel/<appid\>
-Example with parameters: /channel/<appid\>/page\_no=0&page\_size=100
+Example with parameters: /channel/<appid\>page\_no=0&page\_size=100
 
 -  Response:
 

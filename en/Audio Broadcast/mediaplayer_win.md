@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Wed Sep 04 2019 11:41:42 GMT+0800 (CST)
+updatedAt: Thu Sep 05 2019 06:53:21 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
@@ -37,7 +37,7 @@ Using MediaPlayer Kit, you can start/pause the playback video, adjust the playba
 
 1. Download and unzip the [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/master/MediaPlayer/Mediaplayer-Windows) folder.
 2. Open the `MediaPlayerKitQuickstart.sln` file with Microsoft Visual Studio.
-3. Click **Generate** > **Generate Solution**.
+3. Click **Build** > **Build Solution**.
 4. After a successful compilation, click **Debug** > **Start Debugging**.
 5. After a successful debugging, you can see a window that plays the video.
 
@@ -70,28 +70,28 @@ Std::string path = "F://1080.mp4";
 <div class="alert warning"> <li> In this step, you should continue to integrate MediaPlayerKit projects based on existing project that has integrated the Agora Native SDK, rather than creating a new project from scratch. 
 <li> This step shows you how to create a new project, you can skip it if you don't need this reference.</div>
 
-- Create a new **Windows desktop application** based on **Visual C++**, and click **OK**.
-- Click **Generate** > **Generate Solution** for this empty project.
-- After a successful compilation, click **Debug** > **Start Debug**.
+- Create a new **Windows Desktop Application** based on **Visual C++**, and click **OK**.
+- Click **Build** > **Build Solution** for this empty project.
+- After a successful compilation, click **Debug** > **Start Debugging**.
 -  After a successful debugging, go to the next step.
 
 **3. Import files**
 - Copy the `MediaPlayerKit` and `sdk` (under the Agora Native SDK folder) folders to your project file.
-- Click on **Source File**, right click **Add** > **Existing Project**, and import the `MediaPlayerKit/videokit` file.
+- Click on **Source Files**, right click **Add** > **Existing Item**, and import the `MediaPlayerKit/videokit` file.
 
 **4. Import paths**
 Click on your project file and right click on **Properties**.
 
-- Click **C/C++** > **General**, and fill in the following paths in the **Additional include directory**:
+- Click **C/C++** > **General**, and fill in the following paths in the **Additional Include Directories**:
     - `./sdk/include;`
     - `./MediaPlayerKit/include;`
     - `./MediaPlayerKit/videokit;`
     
-- Click **Linker** > **General**, and fill in the following paths in the **Additional Library Directory**:
+- Click **Linker** > **General**, and fill in the following paths in the **Additional Library Directories**:
     - `./MediaPlayerKit/lib;`
     - `./sdk/lib;`
     
-- Click **Linker** > **Enter**, and fill in the following paths in **Additional Dependencies**:
+- Click **Linker** > **Input**, and fill in the following paths in **Additional Dependencies**:
     - `./MediaPlayerKit/lib/re_sampler.lib;`
     - `./MediaPlayerKit/lib/VideoPlayerKit.lib;`
     - `./sdk/lib/agora_rtc_sdk.lib;`
@@ -99,8 +99,8 @@ Click on your project file and right click on **Properties**.
 
 **5. Compile the project**
 
-- Click on your project file, right click on **Properties**, click **C/C++** > **Precompiled header**, and select **Do not use precompiled header**.
-- Click **Generate** > **Generate Solution**.
+- Click on your project file, right click on **Properties**, click **C/C++** > **Precompiled Headers**, and select **Not Using Precompiled Headers**.
+- Click **Build** > **Build Solution**.
 
 After a successful compilation, you can refer to [Call the interfaces](#1) or [API documentation](#2) to complete your project.
 

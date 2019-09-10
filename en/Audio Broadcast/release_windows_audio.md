@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Aug 19 2019 01:46:23 GMT+0800 (CST)
+updatedAt: Thu Aug 22 2019 08:43:26 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -21,18 +21,20 @@ The Windows Voice SDK supports the X86 and  X64 architecture.
 
 v2.9.0 is released on Aug 16, 2019.
 
-**Before getting started**
+**Compatibility changes**
 
 In this release, we deleted the following methods:
 
 - `configPublisher`
 
-If your app implements CDN streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
+If your app implements RTMP streaming with the methods above, ensure that you upgrade the SDK to the latest version and use the following methods for the same function:
 
 - [`setLiveTranscoding`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde)
 - [`addPublishStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5d62a13bd8391af83fb4ce123450f839)
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
+
+For how to implement the new methods, see [Push Streams to the CDN](../../en/Audio%20Broadcast/push_stream_android2.0.md).
 
 **New features**
 
@@ -86,11 +88,11 @@ This release adds the following statistics in the `RtcStats` class:
 
 #### Miscellaneous
 
-- Occasionally mixed streams in CDN streaming. 
+- Occasionally mixed streams in RTMP streaming. 
 - Occasional crashes occur.
 - Failure to join the channel.
 
-**API Changes**
+**API changes**
 
 To improve the user experience, we made the following changes in v2.9.0:
 
@@ -154,7 +156,7 @@ This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBit
 
 This release adds a `CONNECTION_CHANGED_KEEP_ALIVE_TIMEOUT(14)` member to the `reason` parameter of the [onConnectionStateChanged](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) callback. This member indicates a connection state change caused by the timeout of the connection keep-alive between the SDK and Agora's edge server.
 
-**API Changes**
+**API changes**
 
 To improve your experience, we made the following changes to the APIs:
 

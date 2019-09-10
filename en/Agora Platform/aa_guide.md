@@ -3,7 +3,7 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Fri Jun 28 2019 11:12:54 GMT+0800 (CST)
+updatedAt: Mon Sep 09 2019 10:54:57 GMT+0800 (CST)
 ---
 # Agora Analytics
 [Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks the QoE (Quality of Experience) of calls. The **Call Search** function allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
@@ -18,7 +18,7 @@ updatedAt: Fri Jun 28 2019 11:12:54 GMT+0800 (CST)
 
 See the use case [tutorials](../../en/Agora%20Platform/aa_tutorial.md) to learn how to analyze your calls.
 
-## Search Calls
+## Search calls
 
 Log in [Agora Dashboard](https://dashboard.agora.io/) and click **Call Search** under **Agora Analytics** on the left of the navigation bar.
 
@@ -39,7 +39,7 @@ You can go to the QoE page by clicking **View the call** on the search results p
 
 The QoE page shows each user's quality of experience as the receiver in the call. You can see whether any user experiences audio/video freeze, blurry video, or no audio or video.
 
-### Basic Information
+### Basic information
 
 ![](https://web-cdn.agora.io/docs-files/1545382838358)
 
@@ -47,7 +47,7 @@ The top of the QoE page shows the basic information of the call, such as the pro
 
 > The QoE page shows three hours of a call at maximum. If a call lasts more than 3 hours, the QoE page shows the last 3 hours by defualt. You can use the timeline to select the time frame you wish to view.
 
-### User List
+### User list
 
 ![](https://web-cdn.agora.io/docs-files/1545382846535)
 
@@ -65,7 +65,7 @@ The **Quality of Experience Overview** section displays each user's QoE diagram.
 
 The user's basic information is shown above the QoE diagram, including the UID, platform, SDK version, and the user's rating of the call (when the rating function is enabled).
 
-> See how to enable the rating function on [Android](../../en/Agora%20Platform/rate_android.md), [iOS](../../en/Agora%20Platform/rate_ios.md), [macOS](../../en/Agora%20Platform/rate_mac.md), and in [Windows](../../en/Agora%20Platform/rate_windows.md).
+> See how to enable the rating function on [Android](../../en/Agora%20Platform/rate_android.md), [iOS](../../en/Agora%20Platform/rate_ios.md), [macOS](../../en/Agora%20Platform/rate_mac.md), and [Windows](../../en/Agora%20Platform/rate_windows.md).
 
 ![](https://web-cdn.agora.io/docs-files/1545382892984)
 
@@ -81,19 +81,19 @@ The QoE section displays data from all senders by default. You can select which 
 
 If you find quality issues of a specific sender, click the **End-to-End Details** button to go to the E2E (End-to-End) page.
 
-## Analyze Quality Issues
+## Analyze quality issues
 
 ![](https://web-cdn.agora.io/docs-files/1545804650508)
 
 The **End-to-End Details** page shows the audio and video statistics of a specific sender and receiver. These statistics affect the user's quality of experience and help you understand the quality issues. Here is a brief explanation of these statistics:
 
-### Device Status
+### Device status
 
 The CPU usage of the system and the SDK, indicating how busy the system is. If the system is busy (the CPU usage is high), the audio/video may freeze.
 
 > Changes in Android 8.0 make it difficult to get accurate CPU usage statistics. Agora provides a **Task Scheduling Delay** indicator to represent how busy the system is.
 
-### User Events
+### User events
 
 User events directly affect the user experience. If a sender stops sending the video data, the receiver cannot see any image.
 
@@ -103,7 +103,7 @@ The bitrate is the amount of data (bits) sent or received per second.
 
 A higher audio/video bitrate means a higher audio/video quality. A low bitrate does not necessarily cause quality issues, but a very low bitrate often means poor audio/video quality.
 
-### Packet Loss
+### Packet loss
 
 Data is transmitted in units called packets. In data transmission, some of the packets are lost. The packet loss rate is the percentage of the lost packets, which reflects the network quality:
 
@@ -112,7 +112,7 @@ Data is transmitted in units called packets. In data transmission, some of the p
 
 A low packet loss rate usually does not cause any quality issue. A high packet loss rate (5% or higher) means the network quality is poor and may cause audio/video freeze and blurry video.
 
-### Frame Rate
+### Frame rate
 
 The frame rate is the frequency (rate) at which consecutive images (frames) appear on a display. 
 
@@ -124,7 +124,7 @@ The resolution is the number of pixels in the width and height of an image. A hi
 
 > The **End-to-End Details** page shows only the resolution of the rendered video for the receiver.
 
-## Key Terms
+## Key terms
 
 This section describes the key terms used in **Call Search**. See [Agora Key Terms](../../en/Agora%20Platform/terms.md) for more key terms.
 

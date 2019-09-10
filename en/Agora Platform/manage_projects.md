@@ -3,7 +3,7 @@
 title: Manage Projects
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 12 2019 01:45:55 GMT+0800 (CST)
+updatedAt: Thu Sep 05 2019 17:34:31 GMT+0800 (CST)
 ---
 # Manage Projects
 This page shows how to create and manage projects in Agora Dashboard.

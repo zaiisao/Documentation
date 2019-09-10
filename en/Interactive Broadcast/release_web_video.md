@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Aug 15 2019 05:57:37 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 06:33:24 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -86,6 +86,55 @@ See the table below for the web browser support of the Agora Web SDK:
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
 
+## v2.9.0
+v2.9.0 is released on September 5, 2019.
+
+**Compatibility changes**
+
+To improve the usability of the RTMP streaming service, v2.9.0 defines the following parameter limits in [`LiveTranscoding`:](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.livetranscoding.html?transId=2.9.0)
+
+- `videoFramerate`: Frame rate (fps) of the CDN live output video stream.  Agora adjusts all values over 30 to 30.
+- `videoBitrate`: Bitrate (Kbps) of the CDN live output video stream. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html#bitrate). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.
+- `videoCodecProfile`: The video codec profile. Set it as 66, 77, or 100. If you set this parameter to other values, Agora adjusts it to the default value of 100.
+- `width` and `height`: Pixel dimensions of the video. The minimum value of width x height is 16 x 16.
+
+**New features**
+
+#### Support for NAT64
+
+Supports using the Agora Web SDK in NAT64 networks.
+
+#### Using the front or rear camera
+
+Adds the `facingMode` parameter in the `createStream` method to set using the front or rear camera on mobile devices.
+
+#### Unbinding events
+
+Adds the `Client.off` method to support removing the events attached by the `Client.on()` method.
+
+**Improvements**
+
+- Reduces the number of required firewall ports. Users with firewalls do not need to open UDP ports 10000 to 65535. See [Web SDK firewall ports](https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms#web-sdk-1).
+- Further improves the NAT type compatibility and the media stream connection.
+- Shortens the time to join the channel and the time to render the first remote video frame.
+- Optimizes the experience in poor downlink network conditions.
+- Specifies error messages in the failure callback function of some API methods.
+- Syncs the mute status every time a stream is successfully published.
+- Only triggers the volume-indicator after joining a channel.
+- Optimizes the verification of parameters.
+
+**Issues fixed**
+
+- The subscribing options are reset after reconnection.
+- Calling `Stream.close` when initializing the stream causes abnormal behaviors.
+- Setting `cacheResource` in `Stream.startAudioMixing` does not take effect.
+- Abnormal behaviors after network disconnection.
+
+**API changes**
+
+- Adds the `Client.off` method.
+- Adds the `facingMode` parameter in`AgoraRTC.createStream`.
+
 ## v2.8.0
 v2.8.0 is released on July 8, 2019.
 
@@ -105,7 +154,7 @@ Setting the video profile of the shared screen by the `Stream.setScreenProfile` 
 
 v2.7.0 is released on June 21, 2019.
 
-### New features
+**New features**
 
 #### 1. Customizing the video encoder configuration
 
@@ -131,7 +180,7 @@ Adds the `"audioTrackEnded"` and `"videoTrackEnded"` callbacks in `Stream.on` to
 
 Supports audio/video calls and live broadcasts on the Microsoft Edge browser. For details, see [Agora Web SDK FAQ](https://docs.agora.io/en/faq/browser_support#edge).
 
-### Improvement
+**Improvement**
 
 This version allows updating the video encoder configuration dynamically. You can call `setVideoProfile` or `setVideoEncoderConfiguration` before or after `Stream.init`.
 
@@ -145,7 +194,7 @@ This version allows updating the video encoder configuration dynamically. You ca
 - The return value of `Stream.getAudioMixingPosition` is inaccurate when the audio mixing file is playing.
 - Calling Stream.unmuteVideo immediately after subscribing to an audio-only stream causes an audio playback failure.
 
-### API changes
+**API changes**
 
 #### New APIs
 
@@ -167,7 +216,7 @@ This version allows updating the video encoder configuration dynamically. You ca
 
 v2.6.1 is released on April 11, 2019.
 
-### Improvement
+**Improvement**
 
 This version supports using empty strings for the `cameraId` and `microphoneId` properties in the `createStream` method.
 
@@ -181,7 +230,7 @@ This version supports using empty strings for the `cameraId` and `microphoneId` 
 
 v2.6.0 is released on April 3, 2019.
 
-### New features
+**New features**
 
 #### 1. Audio effect file playback and management
 
@@ -213,7 +262,7 @@ Supports screen sharing on Chrome 72 and later without using the Chrome extensio
 - Calling the `muteAudio` and  `muteVideo` methods immediately after subscribing to the remote stream might not take effect.
 - After calling the `replaceTrack` method to switch the video track on Windows, if you call the `startAudioMixing` method, the remote user cannot hear the audio mixing.
 
-### API changes
+**API changes**
 
 #### New APIs
 
@@ -252,7 +301,7 @@ v2.5.2 is released on February 28, 2019.
 
 v2.5.1 is released on February 19, 2019. 
 
-### New features
+**New features**
 
 #### 1. More call quality statistics
 
@@ -328,7 +377,7 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
 - Users hear their own voice after calling the `replaceTrack` method.
 - Users cannot switch devices twice on iOS when calling the `switchDevice` method.
 
-### API changes
+**API changes**
 
 #### New APIs
 
@@ -388,7 +437,7 @@ v2.5.0 is released on October 30, 2018.
 
 > <font color="red">If you set the domain firewall, ensure that `*.agoraio.cn` and `*.agora.io` are added to your whitelist before using this version.</font>
 
-### New features
+**New features**
 
 To enable better interoperability between the Agora Web SDK and other Agora SDKs, this version adds the following features. For detailed descriptions of the APIs, see [Agora Web SDK API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/index.html).
 

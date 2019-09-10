@@ -3,12 +3,12 @@
 title: Chrome Extension for Screen Sharing
 description: 
 platform: Web
-updatedAt: Tue Aug 20 2019 13:48:45 GMT+0800 (CST)
+updatedAt: Fri Aug 23 2019 01:22:44 GMT+0800 (CST)
 ---
 # Chrome Extension for Screen Sharing
-To enable screen sharing on Google Chrome, you need to add the Google Chrome extension provided by Agora for screen sharing.
+To enable screen sharing on Chrome, you need to add our Chrome extension for screen sharing.
 
-> Agora Web SDK supports screen sharing on Chrome 72 or later without an extension, see [Screen sharing without an extension](../../en/Video/screensharing_web.md).
+> The Agora Web SDK supports screen sharing on Chrome 72 or later without an extension, see [Screen sharing without an extension](../../en/Video/screensharing_web.md).
 
 <a name = "Add-the-Chrome-Screen-sharing-Extension"></a>
 
@@ -16,7 +16,7 @@ To enable screen sharing on Google Chrome, you need to add the Google Chrome ext
 
 Follow these steps to add the screen-sharing extension.
 
-### 1. Acquire the screen-sharing extension
+### 1. Get the screen-sharing extension
 
 [Download](http://download.agora.io/sdk/release/chrome-extension.zip) the screen-sharing extension and unzip the package. The package includes the following files.
 
@@ -36,12 +36,12 @@ For example, if you are running your web app on localhost, add `"://localhost/"`
 
 1. Open your Chrome browser and click **More Tools** > **Extensions** in the settings menu of Chrome to open the Extensions page.
  ![](https://web-cdn.agora.io/docs-files/1566267251936)
-3. Switch on the **Developer mode** in the upper-right corner on the Extensions page.
+3. Enable **Developer mode** in the upper-right corner on the Extensions page.
  ![](https://web-cdn.agora.io/docs-files/1566267300318)
  Three buttons appear under the Extensions menu.
 5. Click **Load unpacked** and select the **chrome-extension** folder.
 
-Now, you can see the extension ID in Google Chrome. You need the `extensionId` to enable screen sharing,  see [Screen sharing with the Chrome extension](../../en/Quickstart%20Guide/screensharing_web.md).
+Now, you can see the extension ID in Chrome. You need the `extensionId` to enable screen sharing,  see [Screen sharing with the Chrome extension](../../en/Quickstart%20Guide/screensharing_web.md).
 
 <img alt="../_images/chrome_extension_id.png" src="https://web-cdn.agora.io/docs-files/en/chrome_extension_id.png" style="width: 420px;"/>
 
@@ -83,7 +83,7 @@ Now, you can see the extension ID in Google Chrome. You need the `extensionId` t
    }
    ```
 
-2. Package the modified Google Chrome screen-sharing extension and register it in the Google App Store so that your user can download and use it. 
+2. Package the modified Chrome screen-sharing extension and register it in the Google App Store so that your user can download and use it. 
 
    On how to publish your extension on the Chrome Web Store, see [Publish in the Chrome Web Store](https://developer.chrome.com/webstore/publish).
 

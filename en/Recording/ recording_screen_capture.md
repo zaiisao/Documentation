@@ -1,11 +1,11 @@
 
 ---
-title: Capture Screen
+title: Capture Screenshots
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 05 2019 02:46:05 GMT+0800 (CST)
+updatedAt: Thu Sep 05 2019 03:04:38 GMT+0800 (CST)
 ---
-# Capture Screen
+# Capture Screenshots
 
 ## Overview
 

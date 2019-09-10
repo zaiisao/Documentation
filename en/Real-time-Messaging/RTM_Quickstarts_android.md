@@ -1,11 +1,11 @@
 
 ---
-title: RTM Quickstart Guide
+title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Mon May 27 2019 04:21:57 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 04:04:52 GMT+0800 (CST)
 ---
-# RTM Quickstart Guide
+# Peer-to-peer or Channel Messaging
 ## <a name = "create"></a>Create and Initialize an Agora RtmClient Instance
 
 Before creating an Agora [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance, ensure that you prepare the development environment.
@@ -263,50 +263,4 @@ Call the [leave](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RT
 You can [send a peer-to-peer message.](#sendpeer)
 
 
-## Send and receive a call invitation
 
-After logging in the Agora RTM system, you can call the call invitation methods. 
-
-### Get an RtmCallManager instance
-
-```
-   RtmCallManager rtmCallMgr = rtmClient.getRtmCallManager();
-```
-
-### Set the event listener for the call manager
-
-```
-   rtmCallMgr.setEventListener(new RtmCallEventListener() { ... });
-```
-
-### Create a call invitation
-
-```
-   LocalInvitation rtmLocalInvitation = rtmCallMgr.createLocalInvitation(calleeId);
-```
-
-### Send a call invitation
-
-```
-   rtmCallMgr.sendLocalInvitation(rtmLocalInvitation, new MyResultCallback());
-```
-
-### Cancel a call invitation
-
-```
-   rtmCallMgr.cancelLocalInvitation(rtmLocalInvitation, new MyResultCallback());
-```
-
-
-### Accept a call invitation
-
-```
-   rtmCallMgr.acceptRemoteInvitation(rtmRemoteInvitation, new MyResultCallback());
-```
-
-
-### Decline a call invitation
-
-```
-   rtmCallMgr.refuseRemoteInvitation(rtmRemoteInvitation, new MyResultCallback());
-```

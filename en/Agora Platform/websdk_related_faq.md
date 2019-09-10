@@ -3,16 +3,9 @@
 title: Web SDK-related Issues
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 04 2019 02:45:27 GMT+0800 (CST)
+updatedAt: Thu Aug 29 2019 10:05:43 GMT+0800 (CST)
 ---
 # Web SDK-related Issues
-### When I use Google Chrome on Android, why can't I connect with people who use the Safari browser or Native SDK?
-Safari uses the H.264 video codec for video streaming and all calls made with the Safari browser must support this codec. Google Chrome for Android v61+ has an issue that prevents devices from streaming H.264 video to other users, causing a black screen on remote Safari browsers. For more information, see 
-https://bugs.chromium.org/p/chromium/issues/detail?id=761336.
-
-You may encounter another issue on Google Chrome for Android, where you receive only voice, but no image. Google Chrome for Android v57 supports the H.264 codec. Only Qualcomm (KitKat and later) and Samsung Exynos (Lollipop and later) chipsets support the H.264 video codec. See 
-https://groups.google.com/forum/#!msg/discuss-webrtc/xXjeKbW_JYI/LIXzVrKWCwAJ.
-
 ### In the H.264 mode, when I join a channel using the Firefox browser on macOS and enable the low-stream video, why do I get the high stream?
 If you join a channel in the H.264 mode using the Firefox browser on macOS, you cannot set the low-stream parameter and the resolution is the same as that of the high stream. This does not occur in the VP8 mode.
 
