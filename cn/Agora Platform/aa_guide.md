@@ -3,7 +3,7 @@
 title: 水晶球
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Tue Sep 10 2019 08:26:12 GMT+0800 (CST)
+updatedAt: Tue Sep 10 2019 08:26:17 GMT+0800 (CST)
 ---
 # 水晶球
 [水晶球](https://dashboard.agora.io/analytics/call/search)（Agora Analytics）是 Agora 为开发者提供的实时质量监控工具。
@@ -115,7 +115,7 @@ App 和系统的 CPU 占用率。如果用户使用的设备性能较差，CPU �
 
 - **正常事件**不会影响通话体验。这些事件包括用户成功加入频道、打开摄像头采集和收到音视频首帧等。
 
-<div class="alert note">如果用户在短时间（一分钟）内高频重复相同的某行为，显示该行为的箭头会更高。</div>
+<div class="alert note">如果用户在一分钟内高频重复相同的某行为，显示该行为的箭头会更高。</div>
 
 ### 码率
 
