@@ -3,7 +3,7 @@
 title: 水晶球
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Tue Sep 10 2019 08:24:53 GMT+0800 (CST)
+updatedAt: Tue Sep 10 2019 08:24:58 GMT+0800 (CST)
 ---
 # 水晶球
 [水晶球](https://dashboard.agora.io/analytics/call/search)（Agora Analytics）是 Agora 为开发者提供的实时质量监控工具。
@@ -12,7 +12,7 @@ updatedAt: Tue Sep 10 2019 08:24:53 GMT+0800 (CST)
 
 **通话调查**中提供的数据包括：
 - 设备状态，包括系统 CPU 的使用率，以及 App 的 CPU 使用率
-- 本地采集/远端播放音量
+- 本地采集和远端播放音量
 - 音视频发送/接收码率
 - 视频发送/接收帧率
 - 视频接收分辨率
