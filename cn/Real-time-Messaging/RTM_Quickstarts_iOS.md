@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Wed Sep 11 2019 12:11:13 GMT+0800 (CST)
+updatedAt: Wed Sep 11 2019 12:11:18 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 ## 集成客户端
@@ -228,12 +228,12 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
     }];
 }
 #pragma AgoraRtmChannelDelegate
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel memberLeft:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel memberLeft:(AgoraRtmMember *)member
 {
     NSLog(@"%@ left channel %@", member.userId, member.channelId);
 }
 
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel memberJoined:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel memberJoined:(AgoraRtmMember *)member
 {
     NSLog(@"%@ joined channel %@", member.userId, member.channelId);
 }
@@ -259,7 +259,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 #pragma AgoraRtmDelegate
 
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
 {
     NSLog(@"message received from %@ in channel %@: %@", message.text, member.channelId, member.userId);
 }
@@ -270,17 +270,13 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 频道消息的接收通过创建频道消息的时候传入的 `AgoraRtmChannelDelegate` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到频道消息文本内容和频道消息的发送者的用户 ID。
 
 ```objective-c
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
 {
     NSLog(@"message received from %@ in channel %@: %@", message.text, member.channelId, member.userId);
 }
 ```
 
 
-
-### 获取频道成员列表
-
-调用 `AgoraRtmChannel` 实例的 `getMembersWithCompletion` 方法可以获取到当前在该频道内的用户列表。 
 
 ### 退出频道
 
