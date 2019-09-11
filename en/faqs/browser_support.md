@@ -3,7 +3,7 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Wed Sep 11 2019 11:03:33 GMT+0800 (CST)
+updatedAt: Wed Sep 11 2019 11:03:36 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
 The Agora Web SDK supports all mainstream browsers. 
@@ -77,7 +77,7 @@ The Agora Web SDK is based on WebRTC and works best on Chrome.
 
 ## Safari
 
-- Safari only supports the H.264 codec.
+- Safari 12.1 or earlier only supports the H.264 codec.
 - Safari does not support changing the frame rate (30 fps by default).
 - Device permissions
   - Safari does not support getting the output device information, so it does not support the `getPlayoutDevices` and `setAudioOutput` methods.
