@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 17 2019 08:18:03 GMT+0800 (CST)
+updatedAt: Tue Sep 10 2019 07:09:45 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -73,7 +73,6 @@ Agora SDK 通过 API 方法和事件回调实现音视频通话/[直播](#live)�
 加入频道时，用户需要提供 [App ID](#appid) 或者[动态密钥](#key)作为进入凭证，类似于进入房间需要正确的钥匙或者门卡。
 
 
-
 ### 频道模式
 
 Agora SDK 将根据频道模式应用不同的优化方法。同一频道中的用户必须使用相同的频道模式。
@@ -90,11 +89,11 @@ Agora SDK 将根据频道模式应用不同的优化方法。同一频道中的�
 
 > 游戏模式仅可用于 Agora Gaming SDK 。
 
-### UID
+### <a name="username"></a>用户名
 
-用户 ID，在加入频道时需要传入 UID 用于标识频道中的用户。 同一频道中的每个用户都应具有唯一的 UID。
+在加入频道时需要传入用户名用于标识频道中的用户。同一频道中的每个用户都应具有唯一的用户名。
 
-如果你没有设置 UID 或者设置为 0，SDK 会自动为你分配一个 UID。
+Agora 支持两种数据类型的用户名，整型（UID）和字符串类型（User Account）。你可以根据需要选择一种类型，确保频道中所有用户使用相同类型的用户名即可。
 
 ### 流
 

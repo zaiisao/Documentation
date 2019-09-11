@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: Linux
-updatedAt: Tue Sep 10 2019 04:01:15 GMT+0800 (CST)
+updatedAt: Tue Sep 10 2019 04:07:32 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 本地服务端录制 SDK，是 Agora 针对音视频通话、直播研发的录制插件，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK \(1.12.0 或更高版本\) 兼容，通过简单的操作方法，帮助开发者快速、灵活地部署录制服务，来实现一对一、一对多的音视频通话或直播的录制。
@@ -32,7 +32,7 @@ Agora 本地服务端录制 SDK 应用广泛，主要可以在以下场景中发
 
 | 行业     | 适用场景                                                     |
 | -------- | ------------------------------------------------------------ |
-| 在线教育 | 在 1v1 、1v多 的小班线上课堂中，提供高质量的音视频录制：<br/><li>方便用户在课程结束后，反复观看、收听录制下来的课堂视频或音频，来巩固及复习学习成果；<li>因时间冲突错过上课的用户也可以观看课堂视频或音频进行学习。 |
+| 在线教育 | 在 1v1 、1v多的小班线上课堂中，提供高质量的音视频录制：<br/><li>方便用户在课程结束后，反复观看、收听录制下来的课堂视频或音频，来巩固及复习学习成果；<li>因时间冲突错过上课的用户也可以观看课堂视频或音频进行学习。 |
 | 社交直播 | <li>精彩瞬间录制<li>直播回放<li>截图鉴黄                     |
 | 金融行业 | 在开展在线理财、开户、面签等业务时，应国家监管要求，必须提供录音录像服务，形成交易记录的视频，存档备查。 |
 | 客服中心 | <li>方便后期用户调研<li>获取相关用户信息<li>客服质量评估     |
@@ -52,13 +52,13 @@ Agora 本地服务端录制 SDK 主要有以下特性：
 	
 ## SDK 兼容性
 
-录制 SDK 支持：
+Agora 本地服务端录制 SDK 支持：
 
 - 纯 Native 端录制；
 - 纯 Web 端录制
 - Web 与 Native 互通时录制。
 
-录制 SDK 与以下 Agora SDK 兼容:
+Agora 本地服务端录制 SDK 与以下 Agora SDK 兼容:
 
 | Agora SDK        | 兼容版本 |
 | ---------------- | -------- |
@@ -71,4 +71,4 @@ Agora 本地服务端录制 SDK 主要有以下特性：
 
 - [集成本地服务端录制 SDK](../../cn/Quickstart%20Guide/recording_integrate_cpp.md) 和[开始录制](../../cn/Quickstart%20Guide/recording_cmd_cpp.md)展示了如何从零开始完成 Agora 本地服务端录制 SDK 的部署及使用，包括环境搭建、集成方法、编译代码、演示录制等内容。
 - [录制 API](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html) 展示了使用 Agora 本地服务端录制 SDK 过程中你可以调用的各 API，以及调用这些 API 能实现的功能、以及会收到的回调等内容。
-- [服务端录制示例代码](https://github.com/AgoraIO/Basic-Recording/blob/master/Agora-LinuxServer-Recording/README_zh.md)演示了如何录制音视频, 例如: 纯音频录制，混音，合图，加解密，设置 UDP 端口等。
+- [服务端录制示例代码](https://github.com/AgoraIO/Basic-Recording/)演示了如何录制音视频, 例如: 纯音频录制，混音，合图，加解密，设置 UDP 端口等。
