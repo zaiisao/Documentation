@@ -3,7 +3,7 @@
 title: Agora Web SDK 支持哪些浏览器
 description: 
 platform: Web
-updatedAt: Wed Sep 11 2019 11:01:51 GMT+0800 (CST)
+updatedAt: Wed Sep 11 2019 11:03:54 GMT+0800 (CST)
 ---
 # Agora Web SDK 支持哪些浏览器
 Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
@@ -78,7 +78,7 @@ Agora Web SDK 是基于 WebRTC 实现的采集和编解码，而 Chrome 又是�
 
 ## Safari
 
-- 编解码格式仅支持 H.264。
+- Safari 12.1 及之前版本仅支持 H.264 编解码格式。
 - Safari 只支持视频帧率设为 30 fps。
 - 设备权限
   - Safari 无法获取输出设备信息，因此不支持 `getPlayoutDevices` 和 `setAudioOutput` 这两个方法。
