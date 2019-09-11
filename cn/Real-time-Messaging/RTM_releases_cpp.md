@@ -2,8 +2,8 @@
 ---
 title: 发版说明
 description: 
-platform: Linux C++
-updatedAt: Wed Sep 11 2019 10:00:17 GMT+0800 (CST)
+platform: Linux CPP
+updatedAt: Wed Sep 11 2019 12:05:44 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
