@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Fri Sep 06 2019 03:46:29 GMT+0800 (CST)
+updatedAt: Wed Sep 11 2019 12:11:13 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 ## 集成客户端
