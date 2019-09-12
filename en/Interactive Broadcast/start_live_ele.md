@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Electron
-updatedAt: Thu Sep 12 2019 04:09:09 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 05:42:02 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start a basic broadcast call with the Agora SDK for Electron.
@@ -20,7 +20,7 @@ We provide an open-source demo project that implements [Agora Electron Quickstar
 <div class="alert note">If you use Windows for development, ensure that you run npm install -D —arch = ia32 electron to install a 32-bit Electron.</div>
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
-## Prepare the development environment
+## Set up the development environment
 
 In this section, we will create an Electron project, integrate the SDK into the project, and install the dependency to prepare the development environment.
 
