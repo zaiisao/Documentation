@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Sep 12 2019 09:52:13 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 09:52:19 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -114,7 +114,7 @@ Adds the `Client.off` method to support removing the events attached by the `Cli
 
 **Improvements**
 
-- Reduces the number of required firewall ports. Users with firewalls do not need to open UDP ports 10000 to 65535. See [Web SDK firewall ports](https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms#web-sdk-1).
+- Reduces the number of required firewall ports. Users with firewalls do not need to open UDP ports 10000 to 65535. See [Web SDK firewall ports](https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms#web-sdk).
 - Further improves the NAT type compatibility and the media stream connection.
 - Shortens the time to join the channel and the time to render the first remote video frame.
 - Optimizes the experience in poor downlink network conditions.
