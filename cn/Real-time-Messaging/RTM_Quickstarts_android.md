@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Thu Sep 12 2019 08:46:42 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 08:46:47 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -54,7 +54,7 @@ updatedAt: Thu Sep 12 2019 08:46:42 GMT+0800 (CST)
 
 你可以通过以下任一种方式快速集成 Agora RTM SDK for Android。
 
-#### 通过 JCenter 自动导入
+#### 方法 1：通过 JCenter 自动导入
 
 1. 在 **app/build.gradle** 文件内添加以下代码（1.0.1 为当前版本号）
 
@@ -68,7 +68,7 @@ dependencies {
 
 1. 同步项目文件。点击 **Sync Project With Gradle Files** 按钮，直到同步完成。
 
-#### 手动导入 SDK 文件
+#### 方法 2：手动导入 SDK 文件
 
 1. 在[SDK 下载](https://docs.agora.io/cn/Real-time-Messaging/downloads)下载最新版的 Agora RTM Java SDK for Android 并解压。
 2. 将 SDK 解压文件包 **libs** 文件夹下 **.jar** 包 和 **.so** 库文件拷贝到你项目的对应文件夹下：
@@ -230,24 +230,27 @@ mRtmClient.logout(null);
 - 传入消息发送结果监听器，用于接收消息发送结果回调，如：服务器已接收，发送超时，对方不可达等。
 
 ```java
-public void sendPeerMessage(String dst, String message) {
-		RtmMessage msg = mRtmClient.createMessage();
-		msg.setText(message);
+public void sendPeerMessage(String dst, String content) {
+        
+        final RtmMessage message = mRtmClient.createMessage();
+        message.setText(content);
 
-		mRtmClient.sendMessageToPeer(dst, msg, new ResultCallback<Void>() {
-				@Override
-				public void onSuccess(Void aVoid) {
-				}
+        SendMessageOptions option = new SendMessageOptions();
+        option.enableOfflineMessaging = true;
 
-				@Override
-				public void onFailure(ErrorInfo errorInfo) {
-						final int errorCode = errorInfo.getErrorCode();
-						Log.d(TAG, "Fails to send the message to the peer, errorCode = "
-														+ errorCode);
-				}
-		});
-}
+        mRtmClient.sendMessageToPeer(dst, message, option, new ResultCallback<Void>() {
 
+            @Override
+            public void onSuccess(Void aVoid) {
+
+            }
+
+            @Override
+            public void onFailure(ErrorInfo errorInfo) {
+
+            }
+        });
+    }
 ```
 
 #### 接收点对点消息
