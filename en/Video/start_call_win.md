@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Windows
-updatedAt: Thu Sep 12 2019 04:19:15 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 05:43:34 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call with the Agora SDK for Windows.
@@ -50,7 +50,7 @@ Right-click the project name in the **Solution Explorer** window, click **Proper
 - Go to the **Linker > General > Additional Library Directories** menu, click **Edit**, and input **$(SolutionDir)** in the pop-up window.
 - Go to the **Linker > Input > Additional Dependencies** menu, click **Edit**, and input **agora_rtc_sdk.lib** in the pop-up window.
 
-## Implement the basic video call
+## Implement the basic call
 This section introduces how to use the Agora SDK to make a video call. The following figure shows the API call sequence of a basic one-to-one video call.
 
 ![](https://web-cdn.agora.io/docs-files/1568261927105)
