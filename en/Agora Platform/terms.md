@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 12 2019 02:29:20 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 02:29:24 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -87,7 +87,7 @@ The SDK applies different optimization methods according to the channel profile.
 
 A username identifies a user in the channel. Each user in the same channel should have a unique username.
 
-Agora supports two types of usernames, integer (UID) and string (User Account). You can choose one type to identify the users. Ensure that all the users in a channel use the same type of username.
+Agora supports two types of usernames, integer (UID) and string (User Account). You can choose either type to identify the users. Ensure that all the users in a channel use the same type of username.
 
 ### Stream
 
@@ -128,9 +128,9 @@ Agora’s products allow you to implement the live broadcast feature on an app:
 - To give a live broadcast, create a channel and join the channel as the host role.
 - To view a live broadcast, join the channel created by the host as the audience role.
 
-### <a name = "host"></a>Host
+### <a name = "host"></a>Broadcaster/Host
 
-In a live broadcast channel, the hosts are users who can publish and subscribe to streams.
+In a live broadcast channel, the broadcasters or hosts are users who can publish and subscribe to streams.
 
 ### <a name = "audience"></a>Audience
 
