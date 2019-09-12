@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Thu Sep 12 2019 08:46:47 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 08:56:19 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
