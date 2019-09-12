@@ -2,7 +2,7 @@
 ---
 title: Release Notes
 description: 
-platform: Linux C++
+platform: Linux CPP
 updatedAt: Mon Aug 05 2019 03:55:10 GMT+0800 (CST)
 ---
 # Release Notes
