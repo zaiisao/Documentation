@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: iOS
-updatedAt: Thu Sep 12 2019 04:49:12 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 05:43:06 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for iOS.
@@ -85,7 +85,7 @@ Add the following permissions in the **info.plist** file for device access accor
 | Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video call.      |
 | Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
 
-## Implement the basic video call
+## Implement the basic call
 
 This section introduces how to use the Agora SDK to make a video call. The following figure shows the API call sequence of a basic one-to-one video call.
 
