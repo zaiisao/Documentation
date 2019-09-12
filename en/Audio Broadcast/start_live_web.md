@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Web
-updatedAt: Thu Sep 12 2019 04:10:19 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 04:11:08 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
@@ -413,13 +413,13 @@ We recommend running your web app through a local web server. Here, we use the n
 
 1. Install live-server.
    ```bash
-	 npm i live-server -g
+npm i live-server -g
 	 ```
 
 2. Change the directory to your project by the cd command. 
 3. Run the app.
    ```bash
-	 live-server .
+live-server .
 	 ```
    This should automatically load the web app in your browser.
 
