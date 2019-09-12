@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Thu Sep 12 2019 08:56:19 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 08:56:24 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -154,6 +154,7 @@ import io.agora.rtm.RtmChannelMember;
 import io.agora.rtm.RtmClient;
 import io.agora.rtm.RtmClientListener;
 import io.agora.rtm.RtmMessage;
+import io.agora.rtm.SendMessageOptions;
 
 public void init() {
 		try {
