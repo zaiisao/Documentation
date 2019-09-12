@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Web
-updatedAt: Thu Sep 12 2019 04:04:45 GMT+0800 (CST)
+updatedAt: Thu Sep 12 2019 04:10:19 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
