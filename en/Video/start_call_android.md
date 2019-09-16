@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Android
-updatedAt: Mon Sep 16 2019 02:57:34 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 02:57:45 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic call with the Agora SDK for Android.
@@ -249,15 +249,17 @@ private static final String[] REQUESTED_PERMISSIONS = {
         Manifest.permission.WRITE_EXTERNAL_STORAGE
 };
  
-...
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_video_chat_view);
  
     // If all the permissions are granted, initialize the RtcEngine object and join a channel.
     if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }
-  
-...
+}
   
 private boolean checkSelfPermission(String permission, int requestCode) {
     if (ContextCompat.checkSelfPermission(this, permission) !=
