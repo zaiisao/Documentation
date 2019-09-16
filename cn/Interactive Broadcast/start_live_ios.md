@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: iOS
-updatedAt: Mon Sep 16 2019 08:22:57 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 08:29:46 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -106,6 +106,85 @@ end
 - 主播视频窗口
 - 退出频道按钮
 
+<details>
+	<summary><font color="#3ab7f8">创建 UI 示例 (Objective-C)</font></summary>
+	
+你也可以参考 OpenLive-iOS-Objective-C 示例项目的 [LiveRoomViewController.m](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-iOS-Objective-C/OpenLive/LiveRoomViewController.m) 文件中的代码。
+
+```objective-c
+// Objective-C
+- (IBAction)doSwitchCameraPressed:(UIButton *)sender {
+    [self.rtcEngine switchCamera];
+}
+
+- (IBAction)doMutePressed:(UIButton *)sender {
+    self.isMuted = !self.isMuted;
+}
+
+- (IBAction)doBroadcastPressed:(UIButton *)sender {
+    if (self.isBroadcaster) {
+        self.clientRole = AgoraClientRoleAudience;
+        if (self.fullSession.uid == 0) {
+            self.fullSession = nil;
+        }
+    } else {
+        self.clientRole = AgoraClientRoleBroadcaster;
+    }    
+    [self.rtcEngine setClientRole:self.clientRole];
+    [self updateInterfaceWithAnimation:YES];
+}
+
+- (IBAction)doSuperResolutionPressed:(UIButton *)sender {
+    self.isEnableSuperResolution = !self.isEnableSuperResolution;
+    self.highPriorityRemoteUid = [self highPriorityRemoteUidInSessions:self.videoSessions fullSession:self.fullSession];
+}
+
+- (IBAction)doDoubleTapped:(UITapGestureRecognizer *)sender {
+    if (!self.fullSession) {
+        VideoSession *tappedSession = [self.viewLayouter responseSessionOfGesture:sender inSessions:self.videoSessions inContainerView:self.remoteContainerView];
+        if (tappedSession) {
+            self.fullSession = tappedSession;
+        }
+    } else {
+        self.fullSession = nil;
+    }
+}
+
+- (IBAction)doLeavePressed:(UIButton *)sender {
+    [self leaveChannel];
+}
+```
+</details>
+
+<details>
+	<summary><font color="#3ab7f8">创建 UI 示例 (Swift)</font></summary>
+	
+你也可以参考 OpenLive-iOS-Swift 示例项目的 [LiveRoomViewController.swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-iOS/OpenLive/LiveRoomViewController.swift) 文件中的代码。
+
+```swift
+// Swift
+    @IBAction func doSwitchCameraPressed(_ sender: UIButton) {
+        isSwitchCamera.toggle()
+    }
+    
+    @IBAction func doBeautyPressed(_ sender: UIButton) {
+        isBeautyOn.toggle()
+    }
+    
+    @IBAction func doMuteVideoPressed(_ sender: UIButton) {
+        isMutedVideo.toggle()
+    }
+    
+    @IBAction func doMuteAudioPressed(_ sender: UIButton) {
+        isMutedAudio.toggle()
+    }
+    
+    @IBAction func doLeavePressed(_ sender: UIButton) {
+        leaveChannel()
+    }
+```
+	
+</details>
 	
 ### <a name="ImportClass"></a>2. 导入类
 
