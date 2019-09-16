@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Android
-updatedAt: Thu Sep 12 2019 04:06:13 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 02:59:18 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast with the Agora SDK for Android.
