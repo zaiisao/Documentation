@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: iOS
-updatedAt: Mon Sep 16 2019 08:22:13 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 08:22:57 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
