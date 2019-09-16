@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: iOS
-updatedAt: Mon Sep 16 2019 08:31:17 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 09:09:03 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
@@ -104,69 +104,6 @@ end
 - 本地视频窗口
 - 远端视频窗口
 - 结束通话按钮
-
-<details>
-	<summary><font color="#3ab7f8">创建 UI 示例 (Objective-C)</font></summary>
-	
-你也可以参考 Agora-iOS-Tutorial-Objective-C-1to1 示例项目的 [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora%20iOS%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m) 文件中的代码。
-
-```objective-c
-// Objective-C
-- (IBAction)hangUpButton:(UIButton *)sender {
-    [self leaveChannel];
-}
-
-- (IBAction)didClickMuteButton:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    [self.agoraKit muteLocalAudioStream:sender.selected];
-    [self resetHideButtonsTimer];
-}
-
-- (IBAction)didClickVideoMuteButton:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    [self.agoraKit muteLocalVideoStream:sender.selected];
-    self.localVideo.hidden = sender.selected;
-    self.localVideoMutedBg.hidden = !sender.selected;
-    self.localVideoMutedIndicator.hidden = !sender.selected;
-    [self resetHideButtonsTimer];
-}
-
-- (IBAction)didClickSwitchCameraButton:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    [self.agoraKit switchCamera];
-    [self resetHideButtonsTimer];
-}
-```
-</details>
-
-<details>
-	<summary><font color="#3ab7f8">创建 UI 示例 (Swift)</font></summary>
-	
-你也可以参考 Agora-iOS-Tutorial-Swift-1to1 示例项目的 [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora%20iOS%20Tutorial/VideoChatViewController.swift) 文件中的代码。
-
-```swift
-// Swift
-    @IBAction func didClickHangUpButton(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        if sender.isSelected {
-            leaveChannel()
-        } else {
-            joinChannel()
-        }
-    }
-
-    @IBAction func didClickMuteButton(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        agoraKit.muteLocalAudioStream(sender.isSelected)
-    }
-    
-    @IBAction func didClickSwitchCameraButton(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        agoraKit.switchCamera()
-    }
-```
-	
-</details>
 	
 ### <a name="ImportClass"></a>2. 导入类
 
