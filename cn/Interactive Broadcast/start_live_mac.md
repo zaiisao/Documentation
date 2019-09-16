@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: macOS
-updatedAt: Mon Sep 16 2019 08:28:10 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 08:29:13 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -105,6 +105,68 @@ platform :macOS, '10.11' use_frameworks!
 
 - 主播视频窗口
 - 退出频道按钮
+
+<details>
+	<summary><font color="#3ab7f8">创建 UI 示例 (Objective-C)</font></summary>
+	
+你也可以参考 OpenLive-macOS-Objective-C 示例项目的 [LiveRoomViewController.m](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-macOS-Objective-C/OpenLive/LiveRoomViewController.m) 文件中的代码。
+
+```objective-c
+// Objective-C
+- (IBAction)doMuteClicked:(NSButton *)sender {
+    self.isMuted = !self.isMuted;
+}
+
+- (IBAction)doBroadcastClicked:(NSButton *)sender {
+    if (self.isBroadcaster) {
+        self.clientRole = AgoraClientRoleAudience;
+        if (self.fullSession.uid == 0) {
+            self.fullSession = nil;
+        }
+    } else {
+        self.clientRole = AgoraClientRoleBroadcaster;
+    }
+    [self.rtcEngine setClientRole:self.clientRole];
+    [self updateInterface];
+}
+
+- (IBAction)doLeaveClicked:(NSButton *)sender {
+    [self leaveChannel];
+}
+```
+</details>
+
+<details>
+	<summary><font color="#3ab7f8">创建 UI 示例 (Swift)</font></summary>
+	
+你也可以参考 OpenLive-macOS-Swift 示例项目的 [LiveRoomViewController.swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-macOS/OpenLive/LiveRoomViewController.swift) 文件中的代码。
+
+```swift
+// Swift
+    @IBAction func doMuteClicked(_ sender: NSButton) {
+        isMuted = !isMuted
+    }
+    
+    @IBAction func doBroadcastClicked(_ sender: NSButton) {
+        if isBroadcaster {
+            clientRole = .audience
+            if fullSession?.uid == 0 {
+                fullSession = nil
+            }
+        } else {
+            clientRole = .broadcaster
+        }
+        
+        rtcEngine.setClientRole(clientRole)
+        updateInterface()
+    }
+
+    @IBAction func doLeaveClicked(_ sender: NSButton) {
+        leaveChannel()
+    }
+```
+	
+</details>
 	
 ### <a name="ImportClass"></a>2. 导入类
 
