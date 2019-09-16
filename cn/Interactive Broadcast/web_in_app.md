@@ -3,7 +3,7 @@
 title: H5 实时直播
 description: 
 platform: Web
-updatedAt: Mon Sep 16 2019 08:06:37 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 09:05:08 GMT+0800 (CST)
 ---
 # H5 实时直播
 ## 功能简介
