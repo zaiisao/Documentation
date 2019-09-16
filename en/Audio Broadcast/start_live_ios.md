@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: iOS
-updatedAt: Mon Sep 16 2019 08:30:15 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 09:08:12 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for iOS.
@@ -100,86 +100,6 @@ For a video broadcast, we recommend adding the following elements into the UI:
 
 - The view of the broadcaster
 - The exit button
-
-<details>
-	<summary><font color="#3ab7f8">Example for creating the UI (Objective-C)</font></summary>
-	
-You can also refer to the [LiveRoomViewController.m](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-iOS-Objective-C/OpenLive/LiveRoomViewController.m) file in the OpenLive-iOS-Objective-C demo project.
-
-```objective-c
-// Objective-C
-- (IBAction)doSwitchCameraPressed:(UIButton *)sender {
-    [self.rtcEngine switchCamera];
-}
-
-- (IBAction)doMutePressed:(UIButton *)sender {
-    self.isMuted = !self.isMuted;
-}
-
-- (IBAction)doBroadcastPressed:(UIButton *)sender {
-    if (self.isBroadcaster) {
-        self.clientRole = AgoraClientRoleAudience;
-        if (self.fullSession.uid == 0) {
-            self.fullSession = nil;
-        }
-    } else {
-        self.clientRole = AgoraClientRoleBroadcaster;
-    }    
-    [self.rtcEngine setClientRole:self.clientRole];
-    [self updateInterfaceWithAnimation:YES];
-}
-
-- (IBAction)doSuperResolutionPressed:(UIButton *)sender {
-    self.isEnableSuperResolution = !self.isEnableSuperResolution;
-    self.highPriorityRemoteUid = [self highPriorityRemoteUidInSessions:self.videoSessions fullSession:self.fullSession];
-}
-
-- (IBAction)doDoubleTapped:(UITapGestureRecognizer *)sender {
-    if (!self.fullSession) {
-        VideoSession *tappedSession = [self.viewLayouter responseSessionOfGesture:sender inSessions:self.videoSessions inContainerView:self.remoteContainerView];
-        if (tappedSession) {
-            self.fullSession = tappedSession;
-        }
-    } else {
-        self.fullSession = nil;
-    }
-}
-
-- (IBAction)doLeavePressed:(UIButton *)sender {
-    [self leaveChannel];
-}
-```
-</details>
-
-<details>
-	<summary><font color="#3ab7f8">Example for creating the UI (Swift)</font></summary>
-	
-You can also refer to the [LiveRoomViewController.swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-iOS/OpenLive/LiveRoomViewController.swift) file in the OpenLive-iOS-Swift demo project.
-
-```swift
-// Swift
-    @IBAction func doSwitchCameraPressed(_ sender: UIButton) {
-        isSwitchCamera.toggle()
-    }
-    
-    @IBAction func doBeautyPressed(_ sender: UIButton) {
-        isBeautyOn.toggle()
-    }
-    
-    @IBAction func doMuteVideoPressed(_ sender: UIButton) {
-        isMutedVideo.toggle()
-    }
-    
-    @IBAction func doMuteAudioPressed(_ sender: UIButton) {
-        isMutedAudio.toggle()
-    }
-    
-    @IBAction func doLeavePressed(_ sender: UIButton) {
-        leaveChannel()
-    }
-```
-	
-</details>
 	
 ### <a name="ImportClass"></a>2. Import the class
 
