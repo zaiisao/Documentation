@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: macOS
-updatedAt: Mon Sep 16 2019 08:04:24 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 08:31:02 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for macOS.
@@ -99,6 +99,121 @@ For a video call, we recommend adding the following elements into the UI:
 - The remote video view
 - The end-call button
 
+<details>
+	<summary><font color="#3ab7f8">Example for creating the UI (Objective-C)</font></summary>
+	
+You can also refer to the [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora%20Mac%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m) file in the Agora-macOS-Tutorial-Objective-C-1to1 demo project.
+
+```objective-c
+// Objective-C
+- (IBAction)didClickHangUpButton:(NSButton *)sender {
+    [self leaveChannel];
+}
+
+- (IBAction)didClickMuteButton:(NSButton *)sender {
+    self.muteAudio = !self.muteAudio;
+    [self.agoraKit muteLocalAudioStream:self.muteAudio];
+    if (self.muteAudio) {
+        [sender setImage:[NSImage imageNamed:@"muteButtonSelected"]];
+    } else {
+        [sender setImage:[NSImage imageNamed:@"muteButton"]];
+    }
+}
+
+- (IBAction)didClickVideoMuteButton:(NSButton *)sender {
+    self.muteVideo = !self.muteVideo;
+    [self.agoraKit muteLocalVideoStream:self.muteVideo];    
+    if (self.muteVideo) {
+        [sender setImage:[NSImage imageNamed:@"videoMuteButtonSelected"]];
+    } else {
+        [sender setImage:[NSImage imageNamed:@"videoMuteButton"]];
+    }
+    self.localVideo.hidden = self.muteVideo;
+    self.localVideoMutedBg.hidden = !(self.muteVideo);
+    self.localVideoMutedIndicator.hidden = !(self.muteVideo);
+}
+	
+- (IBAction)didClickDeviceSelectionButton:(NSButton *)sender {
+    DeviceSelectionViewController *deviceSelectionViewController = [self.storyboard instantiateControllerWithIdentifier:@"DeviceSelectionViewController"];
+    deviceSelectionViewController.agoraKit = self.agoraKit;
+    // Pass in AgoraRtcEngineKit
+    [self presentViewControllerAsSheet:deviceSelectionViewController];
+    // Segue to sheet view controller DeviceSelectionViewController
+}
+
+- (IBAction)didClickScreenShareButton:(NSButton *)sender {
+    self.screenShare = !self.screenShare;
+    if (self.screenShare) {
+        [sender setImage:[NSImage imageNamed:@"screenShareButtonSelected"]];
+        [self.agoraKit startScreenCaptureByDisplayId:CGMainDisplayID()
+                                           rectangle:CGRectZero
+                                          parameters:[[AgoraScreenCaptureParameters alloc] init]];
+    } else {
+        [sender setImage:[NSImage imageNamed:@"screenShareButton"]];
+        [self.agoraKit stopScreenCapture];
+    }
+}
+```
+</details>
+
+<details>
+	<summary><font color="#3ab7f8">Example for creating the UI (Swift)</font></summary>
+	
+You can also refer to the [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora%20Mac%20Tutorial%20Swift/VideoChat/VideoChatViewController.swift) file in the Agora-macOS-Tutorial-Swift-1to1 demo project.
+
+```swift
+// Swift
+    @IBAction func didClickHangUpButton(_ sender: NSButton) {
+        leaveChannel()
+    }
+
+    @IBAction func didClickMuteButton(_ sender: NSButton) {
+        muteAudio = !muteAudio
+        AgoraKit.muteLocalAudioStream(muteAudio)    
+        if (muteAudio) {
+            sender.image = NSImage(named:"muteButtonSelected")
+        } else {
+            sender.image = NSImage(named:"muteButton")
+        }
+    }
+    
+    @IBAction func didClickVideoMuteButton(_ sender: NSButton) {
+        muteVideo = !muteVideo
+        AgoraKit.muteLocalVideoStream(muteVideo)
+        if (muteVideo) {
+            sender.image = NSImage(named:"videoMuteButtonSelected")
+        } else {
+            sender.image = NSImage(named:"videoMuteButton")
+        }
+        localVideo.isHidden = muteVideo
+        localVideoMutedBg.isHidden = !(muteVideo)
+        localVideoMutedIndicator.isHidden = !(muteVideo)
+    }
+	
+	  @IBAction func didClickDeviceSelectionButton(_ sender: NSButton) {
+        let deviceSelectionViewController: NSViewController = {
+            return self.storyboard!.instantiateController(withIdentifier: "DeviceSelectionViewController")
+                as! NSViewController
+        }()
+        self.presentAsSheet(deviceSelectionViewController)
+        // Segue to sheet view controller DeviceSelectionViewController
+    }
+    
+    @IBAction func didClickScreenShareButton(_ sender: NSButton) {
+        screenShare = !screenShare
+        if (screenShare) {
+            sender.image = NSImage(named:"screenShareButtonSelected")
+            AgoraKit.startScreenCapture(byDisplayId: UInt(CGMainDisplayID()),
+                                        rectangle: CGRect.zero,
+                                        parameters: AgoraScreenCaptureParameters())
+        } else {
+            sender.image = NSImage(named:"screenShareButton")
+            AgoraKit.stopScreenCapture()
+        }
+    }
+```
+	
+</details>
 
 ### <a name="ImportClass"></a> 2. Import the class
 
