@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: iOS
-updatedAt: Mon Sep 16 2019 08:31:11 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 09:08:37 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for iOS.
@@ -100,70 +100,6 @@ For a video call, we recommend adding the following elements into the UI:
 - The local video view
 - The remote video view
 - The end-call button
-
-<details>
-	<summary><font color="#3ab7f8">Example for creating the UI (Objective-C)</font></summary>
-	
-You can also refer to the [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora%20iOS%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m) file in the Agora-iOS-Tutorial-Objective-C-1to1 demo project.
-
-```objective-c
-// Objective-C
-- (IBAction)hangUpButton:(UIButton *)sender {
-    [self leaveChannel];
-}
-
-- (IBAction)didClickMuteButton:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    [self.agoraKit muteLocalAudioStream:sender.selected];
-    [self resetHideButtonsTimer];
-}
-
-- (IBAction)didClickVideoMuteButton:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    [self.agoraKit muteLocalVideoStream:sender.selected];
-    self.localVideo.hidden = sender.selected;
-    self.localVideoMutedBg.hidden = !sender.selected;
-    self.localVideoMutedIndicator.hidden = !sender.selected;
-    [self resetHideButtonsTimer];
-}
-
-- (IBAction)didClickSwitchCameraButton:(UIButton *)sender {
-    sender.selected = !sender.selected;
-    [self.agoraKit switchCamera];
-    [self resetHideButtonsTimer];
-}
-```
-</details>
-
-<details>
-	<summary><font color="#3ab7f8">Example for creating the UI (Swift)</font></summary>
-	
-You can also refer to the [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora%20iOS%20Tutorial/VideoChatViewController.swift) file in the Agora-iOS-Tutorial-Swift-1to1 demo project.
-
-```swift
-// Swift
-    @IBAction func didClickHangUpButton(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        if sender.isSelected {
-            leaveChannel()
-        } else {
-            joinChannel()
-        }
-    }
-
-    @IBAction func didClickMuteButton(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        agoraKit.muteLocalAudioStream(sender.isSelected)
-    }
-    
-    @IBAction func didClickSwitchCameraButton(_ sender: UIButton) {
-        sender.isSelected.toggle()
-        agoraKit.switchCamera()
-    }
-```
-	
-</details>
-
 
 ### <a name="ImportClass"></a> 2. Import the class
 
