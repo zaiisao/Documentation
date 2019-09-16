@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: macOS
-updatedAt: Thu Sep 12 2019 05:43:18 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 08:04:24 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for macOS.
