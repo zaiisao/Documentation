@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Android
-updatedAt: Mon Sep 16 2019 02:56:34 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 02:57:00 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -152,15 +152,17 @@ private static final String[] REQUESTED_PERMISSIONS = {
         Manifest.permission.WRITE_EXTERNAL_STORAGE
 };
   
-...
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_video_chat_view);
   
     // 获取权限后，初始化 RtcEngine，并加入频道。
     if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }
-  
-...
+}
   
 private boolean checkSelfPermission(String permission, int requestCode) {
     if (ContextCompat.checkSelfPermission(this, permission) !=
