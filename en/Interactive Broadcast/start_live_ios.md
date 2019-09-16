@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: iOS
-updatedAt: Thu Sep 12 2019 04:49:41 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 08:17:51 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for iOS.
