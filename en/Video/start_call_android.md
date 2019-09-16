@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Android
-updatedAt: Thu Sep 12 2019 04:16:04 GMT+0800 (CST)
+updatedAt: Mon Sep 16 2019 02:57:34 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic call with the Agora SDK for Android.
