@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 07:05:50 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 07:06:45 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -533,7 +533,9 @@ clientRequest 中需要填写的内容如下：
 	- `Content-type` 错误，请确保 `Content-type` 为 `application/json;charset=utf-8`。
 	- 请求 URL 中缺少 `cloud_recording` 字段。
 	- 使用了错误的 HTTP 方法。
+- `432`：请求参数错误。请求参数不合法，或请求中的 App ID，频道名或用户 ID 与 resource ID 不匹配。
 - `433`：resource ID 过期。获得 resource ID 后必须在 5 分钟内开始云端录制。请重新调用 [`acquire`](#acquire) 获取新的 resource ID。
+- `435`：没有录制文件产生。频道内没有用户加入，无录制对象。
 - `501`：录制服务正在退出。该错误可能在调用了 [`stop`](#stop) 方法后再调用 [`query`](#query) 时发生。
 - `1001`：resource ID 解密失败。请重新调用 [`acquire`](#acquire) 获取新的 resource ID。
 - `1003`：App ID 或者录制 ID（sid）与 resource ID 不匹配。请确保在一个录制周期内 resource ID、App ID 和录制 ID 一一对应。
