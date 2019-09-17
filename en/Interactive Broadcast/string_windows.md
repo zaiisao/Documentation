@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Windows
-updatedAt: Tue Sep 17 2019 10:54:49 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 10:55:02 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -16,11 +16,13 @@ To ensure smooth communication, all the users in a channel should use the same t
 
 ## Implementation
 
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
+Ensure that you understand the steps and code logic for implmenting the basic real-time communication functions. For details, see Start a Call or Start a live broadcast.
 
-Starting with v2.8.0, you can use user accounts to identify the user.
-  - `registerLocalUserAccount`: Registers a user account.
-  - `joinChannelWithUserAccount`: Joins the channel with the registered user account.
+Follow the steps to join an Agora channel with a string user account:
+
+1. After initializing the IRtcEngine instance, call the `registerLocalUserAccount` method to register a loca user account.
+2. Call the `joinChannelWithUserAccount` method to join a channel with the registered user account.
+3. Call the `leaveChannel` method when you want to leave the channel.
 
 The maximum string length of the user account is 255 bytes. Each user account should be unique in the channel. Supported character scopes are:
 
@@ -30,9 +32,12 @@ The maximum string length of the user account is 255 bytes. Each user account sh
 - The space.
 - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",".
 
+
+### API call sequence
+
 The following diagram shows how to join a channel with a string user account:
 
-![](https://web-cdn.agora.io/docs-files/1562139189320)
+![](https://web-cdn.agora.io/docs-files/1568717548874)
 
 **Note**:
 
@@ -47,7 +52,28 @@ The following diagram shows how to join a channel with a string user account:
 
 - For other APIs, Agora uses the integer user ID for identification. You can call the  `getUserInfoByUid` or `getUserInfoByUserAccount` method to get the corresponding user ID or user account without maintaining the map.
 
-## API Reference
+### Sample Code
+
+You can also refer to the following code snippets and implement string usernames in your peoject:
+
+```C++
+
+LRESULT COpenLiveDlg::OnJoinChannel(WPARAM wParam, LPARAM lParam)
+{
+	IRtcEngine		*lpRtcEngine = CAgoraObject::GetEngine();
+	CAgoraObject	*lpAgoraObject = CAgoraObject::GetAgoraObject();
+	
+	// Registers the local user account before joining the channel.
+	lpAgoraObject->RegisterLocalUserAccount(APP_ID, m_dlgEnterChannel.GetStringUid());
+	// Joins the channel with the registered user account.
+	lpAgoraObject->JoinChannelWithUserAccount(TOKEN, strChannelName, m_dlgEnterChannel.GetStringUid());
+
+}
+```
+
+We provide an open-source [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) demo project that implements string user accounts on Github. You can try the demo and view the source code of the `OnJoinChannel` methods in the [OpenLiveDlg.cpp](https://github.com/AgoraIO/Advanced-Video/blob/master/String-Account/Agora-String-Account-Windows/OpenLive/OpenLiveDlg.cpp) file.
+
+### API Reference
 
 - [`registerLocalUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0d44b74ced4005ee86353c13186f870d)
 - [`joinChannelWithUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a14f8c308c6c57c55653552b939a8527a)
@@ -55,22 +81,6 @@ The following diagram shows how to join a channel with a string user account:
 - [`getUserInfoByUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4f75984d3c5de5f6e3e4d8bd81e3b409)
 - [`onLocalUserRegistered`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a919404869f86412e1945c730e5219b20)
 - [`onUserInfoUpdated`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad086cc4d8e5555cc75a0ab264c16d5ff)
-
-## Sample Code
-Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) sample code in the Github. You can download it and refer to the code logic in the sample code.
-
-
-
-You can also refer to the following code snippets and implement string usernames in your peoject:
-
-```C++
-// Registers the local user account before joining the channel.
-lpAgoraObject->RegisterLocalUserAccount(APP_ID, m_dlgEnterChannel.GetStringUid());
-// Joins the channel with the registered user account.
-lpAgoraObject->JoinChannelWithUserAccount(TOKEN, strChannelName, m_dlgEnterChannel.GetStringUid());
-```
-
-
 
 ## Considerations
 - Do not mix parameter types within the same channel. If you use SDKs that do not support string usernames, only integer user IDs can be used in the channel. The following Agora SDKs support string user accounts:
