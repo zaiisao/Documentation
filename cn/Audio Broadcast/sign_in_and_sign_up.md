@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 25 2019 10:18:05 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 06:09:08 GMT+0800 (CST)
 ---
 # 注册与登录
 本页介绍如何创建 Agora 开发者账号和修改账号设置。
@@ -23,7 +23,7 @@ updatedAt: Thu Jul 25 2019 10:18:05 GMT+0800 (CST)
 
 ## 修改账号设置和密码
 
-1. 登录 [Agora Dashboard](https://dashboard.agora.io)，点击顶部导航栏右侧账号名下拉菜单中**设置**按钮，进入账号设置页面。
+1. 登录 [Agora Dashboard](https://dashboard.agora.io)，点击顶部导航栏右侧账号名下拉菜单中**设置**按钮，进入[账号设置](https://dashboard.agora.io/settings)页面。
 
 ![](https://web-cdn.agora.io/docs-files/1563960156644)
 
