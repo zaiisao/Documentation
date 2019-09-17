@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 08:39:04 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 08:39:10 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -61,8 +61,6 @@ private void initializeAgoraEngine() {
     throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
   }
 }
-
-...
   
 private void joinChannel() {
   String token = getString(R.string.agora_access_token);
