@@ -3,7 +3,7 @@
 title: 摄像头对焦
 description: 
 platform: iOS
-updatedAt: Tue Sep 17 2019 10:26:26 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 10:26:53 GMT+0800 (CST)
 ---
 # 摄像头对焦
 ## 功能简介
@@ -21,7 +21,7 @@ Agora SDK 在 iOS 平台提供整套的摄像头管理方法，方便用户切�
 
 ```swift
 // swift
-// 检测当前设备是否支持自动曝光并设置
+// 测当前设备是否支持曝光并手动设置曝光区域
 let isSupported = agoraKit.isCameraExposurePositionSupported()
 
 if isSupported {
