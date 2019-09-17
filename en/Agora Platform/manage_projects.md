@@ -3,7 +3,7 @@
 title: Manage Projects
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 07:58:05 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 07:59:36 GMT+0800 (CST)
 ---
 # Manage Projects
 This page shows how to create and manage projects in Dashboard.
@@ -14,7 +14,7 @@ This page shows how to create and manage projects in Dashboard.
 
 Follow these steps to create a new project:
 
-1. Log in [Dashboard](https://dashboard.agora.io/), click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the **Project Management** page.
+1. Log in Dashboard, click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [**Project Management**](https://dashboard.agora.io/projects) page.
 
 2. Click **Create**. 
 
