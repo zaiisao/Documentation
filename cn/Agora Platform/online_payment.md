@@ -3,22 +3,22 @@
 title: 线上充值
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 06:24:31 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 06:24:36 GMT+0800 (CST)
 ---
 # 线上充值
 本页介绍如何在 Agora Dashboard 查看账户余额，通过**支付宝**进行线上充值，并查看交易列表。
 
-> 角色为管理员/财务的账户拥有进入**财务中心**的权限。
+> 角色为管理员/财务的账户拥有进入**费用中心**的权限。
 
 ## 查看账户余额
 
-登录  [Agora Dashboard](https://dashboard.agora.io/)  后，你可以在总览页看到账户余额。
+登录 [Agora Dashboard](https://dashboard.agora.io/) 后，你可以在总览页看到账户余额。
   
 ![](https://web-cdn.agora.io/docs-files/1562665959826)
 
 ## 使用支付宝充值
 
-1. 点击总览页的**充值**按钮进入**财务中心**。你也可以点击左侧导航栏的 ![](https://web-cdn.agora.io/docs-files/1562666103550) **财务中心 > 支付充值 > 支付宝**按钮进入。
+1. 点击总览页的**充值**按钮进入[**费用中心**](https://dashboard.agora.io/finance)。你也可以点击左侧导航栏的 ![](https://web-cdn.agora.io/docs-files/1562666103550) **财务中心 > 支付充值 > 支付宝**按钮进入。
 
 ![](https://web-cdn.agora.io/docs-files/1562666275283)
 
@@ -36,7 +36,7 @@ updatedAt: Tue Sep 17 2019 06:24:31 GMT+0800 (CST)
 
 ## 查看交易列表
 
-在**财务中心**点击**交易列表**，你会看到所有充值记录。你可以设置起止日期筛选充值记录，或者将充值记录导出为 CSV 文件。
+在**费用中心**点击**交易列表**，你会看到所有充值记录。你可以设置起止日期筛选充值记录，或者将充值记录导出为 CSV 文件。
 
 ![](https://web-cdn.agora.io/docs-files/1562666802803)
 
@@ -48,7 +48,7 @@ updatedAt: Tue Sep 17 2019 06:24:31 GMT+0800 (CST)
 
 申请提现的步骤如下：
 
-1. 在财务中心，点击左侧导航栏**提现**按钮，进入提现页面。
+1. 在财务中心，点击左侧导航栏**提现**按钮，进入[提现页面](https://dashboard.agora.io/finance/withdraw)。
  
 2. 点击**申请提现**按钮。
 
