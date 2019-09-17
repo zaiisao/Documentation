@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Web
-updatedAt: Tue Sep 17 2019 04:19:47 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 04:20:00 GMT+0800 (CST)
 ---
 # 实现音视频通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
@@ -240,7 +240,7 @@ var option = {
 	- `channel`: 频道名，长度在 64 字节以内的字符串。
 	- `uid`: 用户 ID，频道内每个用户的 UID 必须是唯一的。如果你将 `uid` 设为 `null`，Agora 会自动分配一个 UID 并在 `onSuccess` 回调中返回。
 
-更多的参数设置注意事项请参考 [`Client.join`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#join) 接口中的参数描述。
+  更多的参数设置注意事项请参考 [`Client.join`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#join) 接口中的参数描述。
 
 ### 发布本地流
 
