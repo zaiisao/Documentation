@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 08:42:37 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 08:44:11 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
