@@ -3,7 +3,7 @@
 title: Dashboard 概览
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 29 2019 08:13:36 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 04:28:43 GMT+0800 (CST)
 ---
 # Dashboard 概览
 欢迎使用 Agora Dashboard。Agora Dashboard 提供直观的界面，方便你在使用 Agora 各产品时进行充值、查看、管理等操作。本指南简要介绍如何使用 Agora Dashboard。
