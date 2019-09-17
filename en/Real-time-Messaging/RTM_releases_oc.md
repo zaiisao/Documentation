@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Tue Sep 17 2019 12:46:24 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 13:01:40 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -11,6 +11,113 @@ updatedAt: Tue Sep 17 2019 12:46:24 GMT+0800 (CST)
 Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
 
 > For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_product.md).
+
+## v1.1.0
+
+v1.1.0 is released on September 17, 2019. It adds the following features: 
+
+- [Gets the member count of specified channel(s).](#getcount)
+- [Automatically returns the latest numer of members in the current channel](#oncount)
+- [Channel attribute operations](#channelattributes)
+
+
+
+### Compatibility Changes
+
+1. Deprecates the [sendMessage:toPeer:completion:](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:completion:) method, and uses [sendMessage:toPeer:sendMessageOptions:completion:](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:sendMessageOptions:completion:) instead
+2. The [serverReceivedTs](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html#//api/name/serverReceivedTs) property of the [AgoraRtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html) instance supports both peer-to-peer and channel messages.
+3. Timeout for sending a peer-to-peer message is 10 seconds from this release, compared to 5 seconds in previous versions. See [AgoraRtmSendPeerMessageErrorTimeout](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmSendPeerMessageErrorCode.html)
+4. Puts a limit on the frequency of [joinWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/joinWithCompletion:) the same channel:  [Two times every five seconds](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmJoinChannelErrorCode.html). 
+
+### New Features
+
+<a name="getcount"></a>
+#### 1. Gets the member count of specified channel(s).
+
+You can now get the member count of specified channel(s) without the need to join, by calling the [getChannelMemberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelMemberCount:completion:) method. You can get the member counts of a maximum of 32 channels in one method call. 
+
+<a name="oncount"></a>
+#### 2. Automatically returns the latest numer of members in the current channel 
+
+If you are already in a channel, you do not have to call the `getChannelMemberCount` method to get the member count of the current channel. We also do not recommend using `onMemberJoined` and `onMemberLeft` to keep track of the member counts. As of this release, the SDK returns to the channel members [memberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:memberCount:) the latest channel member count when the number of channel members changes. Note that: 
+
+- When the number of channel members ≤ 512, the SDK returns this callback when the number changes and at a MAXIMUM speed of once per second.
+- When the number of channel members exceeds 512, the SDK returns this callback when the number changes and at a MAXIMUM speed of once every three seconds.
+
+> Please treat this callback and the [AgoraRtmGetMembersBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmGetMembersBlock.html) callback separately: 
+> - The former is an automatic callback. It returns the current numer of channel members;
+> - The latter is triggered by the [getMembersWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/getMembersWithCompletion:) method. It returns a member list of the current channel. If the number of channel members exceeds 512, the SDK only returns a list of 512 randomly-selected channel members. 
+
+<a name="channelattributes"></a>
+#### 3. Channel attribute operations
+
+Supports setting or getting the attribute(s) of a specified channel. You can use this feature to create group anouncement.
+
+Each channel attribute comes as a key-value pair. See [AgoraRtmChannelAttribute](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannelAttribute.html). Where: 
+
+- The key of each channel attribute must be visible characters and not exceed 8 KB.
+- Each channel attribute must not exceed 8 KB in length. 
+- The overall size of the attributes of a channel must not exceed 32 KB. 
+- The number of attributes of a channel must not exceed 32. 
+
+Specific features: 
+
+- Sets the attributes of a specified channel with new ones.
+- Adds or updates the attribute(s) of a specified channel.
+- Deletes the attributes of a specified channel by attribute keys.
+- Clears all attributes of a specified channel.
+- Gets all attributes of a specified channel.
+- Gets the attributes of a specified channel by attribute keys.
+
+When updating attributes of a channel, you can use the [enableNotificationToChannelMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannelAttributeOptions.html#//api/name/enableNotificationToChannelMembers) flag to decide whether or not to notify all members of the channel about this attribute change.
+
+> The SDK caches the channel attributes. If multiple users have the privilege to update the channel attributes, then we recommend calling the [getChannelAllAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAllAttributes:completion:) to update the cache before updating the channel attributes. 
+
+### Improvements
+
+#### Resends peer-to-peer messages
+
+This release improves the resending mechanism of peer-to-peer messages, and extends the timeout for sending a peer-to-peer message from five to 10 seconds, greatly improving the success rate of peer-to-peer message sending under weak network conditions. 
+
+#### Caches channel messages
+
+The Agora RTM system will resend a maximum of 32 channel messages of up to 30 seconds to channel members, when they manage to reconnect to the system from poor network conditions. This greatly improves the overall arrival rate of channel messages under weak network conditions. 
+
+
+### API Changes
+
+#### Added Methods
+
+- [setChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setChannel:Attributes:Options:completion:)：Substitutes the attributes of a specified channel with new ones.
+- [addOrUpdaeChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/addOrUpdateChannel:Attributes:Options:completion:)：Adds or updates the attribute(s) of a specified channel.
+- [deleteChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/deleteChannel:AttributesByKeys:Options:completion:)：Deletes the attributes of a specified channel by attribute keys.
+- [clearChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/clearChannel:Options:AttributesWithCompletion:)：Clears all attributes of a specified channel.
+- [getChannelAllAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAllAttributes:completion:): Gets all attributes of a specified channel.
+- [getChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAllAttributes:completion:): Gets the attributes of a specified channel by attribute keys.
+- [getChannelMemberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAttributes:ByKeys:completion:): Gets the member count of specified channel(s).
+
+#### Added Callbacks
+
+- [attributesUpdate](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:attributeUpdate:): Returns all attributes of the channel when the channel attributes are updated. 
+- [memberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:memberCount:): Occurs when the number of the channel members changes, and returns the new number.
+
+#### Added Error Codes 
+
+- [AgoraRtmChannelMemberCountErrorCode](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmChannelMemberCountErrorCode.html): Error codes related to retrieving the channel member count of specified channel(s).
+- [AgoraRtmJoinSameChannelErrorTooOften](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmJoinChannelErrorCode.html): The frequency of joining the same channel exceeds two times every five seconds.
+
+#### Deprecated Methods
+
+- [sendMessage:toPeer:completion:](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:completion:): Replaced by the [sendMessage:toPeer:sendMessageOptions:completion:](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:sendMessageOptions:completion:) method.
+
+#### Deprecated Error Codes
+
+- [AgoraRtmAttributeOperationErrorNotReady](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmProcessAttributeErrorCode.html): Replaced by [AgoraRtmAttributeOperationErrorNotLoggedIn](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmProcessAttributeErrorCode.html).
+
+
+
+
+
 
 ## v1.0.1
 
