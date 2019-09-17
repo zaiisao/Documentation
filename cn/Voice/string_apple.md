@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: iOS,macOS
-updatedAt: Tue Sep 17 2019 09:09:32 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 09:09:36 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -46,15 +46,6 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String user
 - `registerLocalUserAccount` 为选调。你可以注册后再调用 `joinChannelByUserAccount` 方法加入频道，也可以不注册直接调用 `joinChannelByUserAccount` 加入频道。我们建议你调用。提前调用 `registerLocalUserAccount` 可以减少调用 `joinChannelByUserAccount` 加入频道的时间。
 - 对于其他接口，Agora SDK 仍沿用 Int 型的 UID 参数标识用户身份。你可以使用 `getUserInfoByUid` 或 `getUserInfoByUserAccount` 获取对应的 User Account 或 UID，无需自己维护映射表。
 
-### API 参考
-
-- [`registerLocalUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
-- [`joinChannelByUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
-- [`getUserInfoByUid`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUid:withError:)
-- [`getUserInfoByUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUserAccount:withError:)
-- [`didRegisteredLocalUser`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didRegisteredLocalUser:withUid:)
-- [`didUpdatedUserInfo`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
-
 ### 示例代码
 
 你可以对照 API 时序图，参考下面的示例代码片段，在项目中实现使用 String 型用户名：
@@ -72,6 +63,15 @@ func joinChannel() {
 ```
 
 同时，我们在 Github 提供一个开源的 [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) 的示例项目。你可以前往下载，或参考 [VideoChatViewController.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/String-Account/Agora-String-Account-iOS-Swift/Agora%20iOS%20Tutorial/VideoChat/VideoChatViewController.swift) 文件中 `joinChannel` 方法的源代码。
+
+### API 参考
+
+- [`registerLocalUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
+- [`joinChannelByUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
+- [`getUserInfoByUid`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUid:withError:)
+- [`getUserInfoByUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUserAccount:withError:)
+- [`didRegisteredLocalUser`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didRegisteredLocalUser:withUid:)
+- [`didUpdatedUserInfo`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
 
 
 ## 开发注意事项
