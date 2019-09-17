@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 08:18:38 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 08:26:24 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -36,7 +36,7 @@ Agora 的其他接口仍使用 UID 作为参数。Agora Engine 在 SDK 内部维
 
 下图展示使用 User Account 加入频道的 API 调用时序图：
 
-![](https://web-cdn.agora.io/docs-files/1568707798526)
+![](https://web-cdn.agora.io/docs-files/1568708771646)
 
 其中：
 
