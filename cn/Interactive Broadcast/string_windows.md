@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Windows
-updatedAt: Tue Sep 17 2019 10:44:59 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 10:45:42 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -15,12 +15,13 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 为保证通信质量，频道内所有用户需使用同一数据类型的用户名，即频道内的所有用户名应同为 Int 型或同为 String 型。
 
 ## 实现方法
-请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/windows_video.md)。
+请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_win.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_win.md)。
 
-从 v2.8.0 起，Native SDK 新增使用 User Account 来标识用户在频道中的身份
- - `registerLocalUserAccount`：注册本地用户 User Account
- - `joinChannelWithUserAccount`：使用 User Account 加入频道
+参考如下步骤，在你的项目中实现使用 String 型用户名加入频道：
 
+- 完成初始化 RtcEngine 后，调用 `registerLocalUserAccount` 方法，注册本地用户的 User account。
+- 调用 `joinChannelWithUserAccount` 方法，使用注册的 User account 加入频道。
+- 离开频道时，调用 `leaveChannel` 方法。
 
 其中，String 型的用户名最大不可超过 255 字节，且需要确保其在频道内的唯一性。支持的字符集范围如下：
 
@@ -30,11 +31,11 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 - 空格
 - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
 
-使用 User Account 加入频道的 API 调用时序图如下所示：
+### API 时序图
 
+下图展示使用 User Account 加入频道的 API 调用时序图：
 
-![](https://web-cdn.agora.io/docs-files/1562145670727)
-
+![](https://web-cdn.agora.io/docs-files/1568716429057)
 
 其中：
 
@@ -42,6 +43,25 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 - `registerLocalUserAccount` 为选调。你可以注册后再调用 `joinChannelWithUserAccount` 方法加入频道，也可以不注册直接调用 `joinChannelWithUserAccount` 加入频道。我们建议你调用。提前调用 `registerLocalUserAccount` 可以减少调用 `joinChannelWithUserAccount` 加入频道的时间。
 - 对于其他接口，Agora SDK 仍沿用 Int 型的 UID 参数标识用户身份。你可以使用 `getUserInfoByUid` 或 `getUserInfoByUserAccount` 获取对应的 User Account 或 UID，无需自己维护映射表。
 
+### 示例代码
+
+你可以对照 API 时序图，参考下面的示例代码片段，在项目中实现使用 String 型用户名：
+
+```C++
+LRESULT COpenLiveDlg::OnJoinChannel(WPARAM wParam, LPARAM lParam)
+{
+	IRtcEngine		*lpRtcEngine = CAgoraObject::GetEngine();
+	CAgoraObject	*lpAgoraObject = CAgoraObject::GetAgoraObject();
+
+	// 注册本地用户名
+	lpAgoraObject->RegisterLocalUserAccount(APP_ID, m_dlgEnterChannel.GetStringUid());
+	// 使用用户名加入频道
+	lpAgoraObject->JoinChannelWithUserAccount(strChannelName, m_dlgEnterChannel.GetStringUid());
+	
+}
+```
+
+同时，我们在 Github 提供一个开源的 [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) 的示例项目。你可以前往下载，或参考 [OpenLiveDlg.cpp](https://github.com/AgoraIO/Advanced-Video/blob/master/String-Account/Agora-String-Account-Windows/OpenLive/OpenLiveDlg.cpp) 文件中 `OnJoinChannel` 方法的源代码。
 
 ### API 参考
 
@@ -51,20 +71,6 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 - [`getUserInfoByUserAccount`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4f75984d3c5de5f6e3e4d8bd81e3b409)
 - [`onLocalUserRegistered`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a919404869f86412e1945c730e5219b20)
 - [`onUserInfoUpdated`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad086cc4d8e5555cc75a0ab264c16d5ff)
-
-## 示例代码
-
-Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的 Github 示例代码，你可以前往下载和体验。
-
-你也可以参考如下代码片段，在项目中实现使用 String 型的 User account 加入频道：
-
-```C++
-// 加入频道前注册用户名
-lpAgoraObject->RegisterLocalUserAccount(APP_ID, m_dlgEnterChannel.GetStringUid());
-// 使用注册的用户名加入频道
-lpAgoraObject->JoinChannelWithUserAccount(TOKEN, strChannelName, m_dlgEnterChannel.GetStringUid());
-```
-
 
 ## 开发注意事项
 
