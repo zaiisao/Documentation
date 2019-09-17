@@ -8,9 +8,9 @@ updatedAt: Wed Aug 07 2019 02:02:17 GMT+0800 (CST)
 # 使用 String 型的用户名
 ## 场景描述
 
-很多 App 使用 String 类型的 User account。为降低开发成本，Agora 新增支持 String 型的 User account，方便用户使用 App 账号直接加入 Agora 频道。
+很多 App 使用 String 类型的用户账号。为降低开发成本，Agora 新增支持 String 型的用户名，方便用户使用 App 账号直接加入 Agora 频道。
 
-Agora 的其他接口仍使用 UID 作为参数。Agora Engine 在 SDK 内部维护一个 String user account 和 UID 的映射表，方便随时通过 String user account 获取 UID 或者通过 UID 获取 String user account。
+Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 User account 和 Int 型 UID 的映射表，方便随时通过 User account 获取 UID 或者通过 UID 获取 User account。
 
 为保证通信质量，频道内所有用户需使用同一数据类型的用户名，即频道内的所有用户名应同为 Int 型或同为 String 型。
 
