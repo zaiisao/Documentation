@@ -3,7 +3,7 @@
 title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 02 2019 10:43:03 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 07:57:12 GMT+0800 (CST)
 ---
 # Dashboard
 Agora Dashboard provides interactive interfaces where you can configure, pay for and monitor your Agora products. 
@@ -14,9 +14,9 @@ This page introduces how to use Agora Dashboard.
 
 ## Create an Agora account
 
-Before using Agora Dashboard, follow the steps to [create an Agora account](../../en/Agora%20Platform/sign_in_and_sign_up.md). 
+Before using Agora Dashboard, follow the steps to [create an Agora account](https://sso.agora.io/cn/signup). 
 
-If you forget your password, you can reset your password.
+If you forget your password, you can reset your password. For more information, click [here](../../en/Agora%20Platform/sign_in_and_sign_up.md).
 
 ## Overview
 
@@ -45,11 +45,11 @@ Check the duration of audio, video or recording of your projects. [Learn more](.
 
 ### Track the quality of every call
 
-Use [**Agora Analytics**](../../en/Agora%20Platform/aa_guide.md) to track the quality of the calls made through your app and identify issues. 
+Use **Agora Analytics** to track the quality of the calls made through your app and identify issues. [Learn more](../../en/Agora%20Platform/aa_guide.md)
 
 ### Payments & Transactions
 
-Add money to your account, view your transactions, and make  withdrawal requests. [Learn more](../../en/Agora%20Platform/online_payment.md)
+Add money to your account, view your transactions, and make withdrawal requests. [Learn more](../../en/Agora%20Platform/online_payment.md)
 
 ### Manage members and roles
 
@@ -57,7 +57,7 @@ Add members to your account and set these members as difference roles with speci
 
 ### Submit a ticket
 
-If you have any questions about Agora's products, you can [submit a ticket](../../en/Agora%20Platform/ticket.md) to seek help.
+If you have any questions about Agora's products, you can submit a ticket to seek help. [Learn more](../../en/Agora%20Platform/ticket.md)
 
 ### Use RESTful API
 
