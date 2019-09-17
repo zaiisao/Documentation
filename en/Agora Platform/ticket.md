@@ -3,14 +3,14 @@
 title: Submit a Ticket
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 02 2019 10:30:10 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 08:04:43 GMT+0800 (CST)
 ---
 # Submit a Ticket
 This page introduces how to submit a ticket in Agora Dashboard.
 
 Follow these steps:
 
-1. Log in [Agora Dashboard](https://dashboard.agora.io/), click **Support** in the top navigation menu to go to **Agora Support Center**.
+1. Log in Agora Dashboard, click **Support** in the top navigation menu to go to [**Agora Support Center**](https://dashboard.agora.io/support).
 
 ![](https://web-cdn.agora.io/docs-files/1567420060722)
 
