@@ -3,7 +3,7 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 03 2019 03:34:50 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 06:30:05 GMT+0800 (CST)
 ---
 # 申请发票
 本页介绍如何在 Agora Dashboard 申请开具发票。
