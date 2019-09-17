@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 08:39:10 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 08:39:39 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -72,7 +72,7 @@ private void joinChannel() {
 }
 ```
 
-同时，我们在 Github 提供一个开源的 [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的示例项目。你可以前往下载，或参考 [CallActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/String-Account/Agora-String-Account-Android/app/src/main/java/io/agora/tutorials.stringified.account/CallActivity.java) 文件中 `initializeAgoraEngine` 和 `joinChannel` 方法的源代码。
+同时，我们在 Github 提供一个开源的 [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) 的示例项目。你可以前往下载，或参考 [CallActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/String-Account/Agora-String-Account-Android/app/src/main/java/io/agora/tutorials.stringified.account/CallActivity.java) 文件中 `initializeAgoraEngine` 和 `joinChannel` 方法的源代码。
 
 ### API 参考
 
