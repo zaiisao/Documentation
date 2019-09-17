@@ -3,7 +3,7 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 06:30:05 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 06:30:12 GMT+0800 (CST)
 ---
 # 申请发票
 本页介绍如何在 Agora Dashboard 申请开具发票。
@@ -29,7 +29,7 @@ updatedAt: Tue Sep 17 2019 06:30:05 GMT+0800 (CST)
 
 ## 申请指引
 
-登录 [Agora Dashboard](https://dashboard.agora.io/)，点击左侧导航栏**财务消费 > 账单 > 发票**按钮进入**发票**页面，在**可申请**标签下申请发票。
+登录 [Agora Dashboard](https://dashboard.agora.io/)，点击左侧导航栏**费用中心 > 账单 > 发票**按钮进入[**发票**页面](https://dashboard.agora.io/finance/receipt)，在**可申请**标签下申请发票。
 
 ![](https://web-cdn.agora.io/docs-files/1562660018660)
 
