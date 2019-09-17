@@ -3,13 +3,13 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 08:44:11 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 08:44:34 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
 Many apps use string usernames. To reduce development costs, Agora adds support for string user accounts. Users can now directly use their string usernames as user accounts to join the Agora channel.
 
-For other APIs, Agora uses the integer user ID for identification. The Agora engine maintains a mapping table object that contains the string user account and integer user ID. You can get the user ID by passing in the user account, and vice versa.
+For other APIs, Agora uses the integer user ID for identification. Agora maintains a mapping table object that contains the string user account and integer user ID. You can get the user ID by passing in the user account, and vice versa.
 
 To ensure smooth communication, all the users in a channel should use the same type of user account, that is, either the integer user ID, or the string user account.
 
@@ -52,7 +52,7 @@ The following diagram shows how to join a channel with a string user account:
 
 - For other APIs, Agora uses the integer user ID for identification. You can call the  `getUserInfoByUid` or `getUserInfoByUserAccount` method to get the corresponding user ID or user account without maintaining the map.
 
-## Sample Code
+### Sample Code
 
 You can also refer to the following code snippets and implement string user accounts in your peoject:
 
