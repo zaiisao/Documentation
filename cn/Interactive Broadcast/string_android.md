@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 08:39:39 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 08:48:35 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -16,7 +16,7 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String user
 
 ## 实现方法
 
-请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_android.md) 或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_android.md)。
+请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_android.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_android.md)。
 
 参考如下步骤，在你的项目中实现使用 String 型用户名加入频道：
 
