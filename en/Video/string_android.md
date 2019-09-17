@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 09:14:02 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 09:17:59 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -37,7 +37,7 @@ The maximum string length of the user account is 255 bytes. Each user account sh
 
 The following diagram shows how to join a channel with a string user account:
 
-![](https://web-cdn.agora.io/docs-files/1568709435568)
+![](https://web-cdn.agora.io/docs-files/1568711868522)
 
 **Note**:
 
