@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Web
-updatedAt: Wed Aug 07 2019 02:02:17 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 10:03:19 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -48,7 +48,9 @@ client.join("<token>", "1024", "agora", function(uid) {
 
 ## 开发注意事项
 
-- 同一频道内，Int 型的 User ID 和 String 型的 User account 不可混用。如果你的频道内有不支持 String 型 User account 的 SDK，则只能使用 Int 型的 User ID。
-- 如果你将用户名切换至 String 型 User account，请确保所有终端用户同步升级。
-- 如果使用 String 型的 User account，请确保你的服务端用户生成 Token 的脚本已升级至最新版本。如果使用 String 型 User account 加入频道，请确保使用该 User account 或其对应的 Int 型 UID 来生成 Token。你可以调用 `getUserInfoByUserAccount` 来获取 User account 所对应的 UID。
+- 同一频道内，Int 型和 String 型的用户名不可混用。如果你的频道内有不支持 String 型 User account 的 SDK，则只能使用 Int 型的 User ID。目前支持 String 型 User account 的 SDK 如下：
+  - Native SDK：v2.8.0 及之后版本
+  - Web SDK：v2.5.0 及之后版本
+- 如果你将用户名切换至 String 型，请确保所有终端用户同步升级。
+- 如果使用 String 型的 User account 加入频道，请确保你的服务端用户生成 Token 的脚本已升级至最新版本，并使用该 User account 或其对应的 Int 型 UID 来生成 Token。
 - 如果频道中 Native SDK 和 Web SDK 互通，请确保该两者使用的用户名的类型一致。其中，Web SDK 中的 `uid` 可以设为 String 型或 Number 型。
