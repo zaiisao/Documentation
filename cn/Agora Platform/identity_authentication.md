@@ -3,7 +3,7 @@
 title: 实名认证
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 25 2019 10:30:13 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 06:11:55 GMT+0800 (CST)
 ---
 # 实名认证
 依据中国法律规定，你需要对账号所属的个人或者企业信息主体进行认证，否则网络运营者停止提供相关服务。
@@ -19,7 +19,7 @@ updatedAt: Thu Jul 25 2019 10:30:13 GMT+0800 (CST)
 ## 认证步骤
 实名认证的步骤如下：
 
-1. 登录 [Agora Dashboard](https://dashboard.agora.io/)，点击页面右上角账户名下的**实名认证**按钮，进入**实名认证**页面。
+1. 登录 [Agora Dashboard](https://dashboard.agora.io/)，点击页面右上角账户名下的**实名认证**按钮，进入[**实名认证**](https://dashboard.agora.io/authentication)页面。
 
 ![](https://web-cdn.agora.io/docs-files/1562659486803)
 
@@ -40,4 +40,4 @@ updatedAt: Thu Jul 25 2019 10:30:13 GMT+0800 (CST)
 > - 认证信息提交后不可修改，请谨慎填写，仔细核对。
 > - 图片大小不能超过 20 MB。
 
-4. 点击**提交**，完成实名认证。
+4. 点击**提交**即可完成实名认证。
