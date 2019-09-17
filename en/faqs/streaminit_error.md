@@ -3,7 +3,7 @@
 title: Why do errors occur when calling the Stream.init method?
 description: 
 platform: Web
-updatedAt: Wed Jul 03 2019 10:27:05 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 10:28:48 GMT+0800 (CST)
 ---
 # Why do errors occur when calling the Stream.init method?
 The following are common errors when initializing the stream:
