@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Web
-updatedAt: Tue Sep 17 2019 05:55:24 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 06:12:44 GMT+0800 (CST)
 ---
 # 实现互动直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音视频互动直播。
@@ -34,9 +34,9 @@ updatedAt: Tue Sep 17 2019 05:55:24 GMT+0800 (CST)
 
 你需要准备一个自己的项目并且将 Agora Web SDK 集成到其中。
 
-### 创建项目
+### 创建 Web 项目
 
-如果你已经有一个项目了，跳过该节，直接阅读**集成 SDK**。
+如果你已经有一个 Web 项目了，跳过该节，直接阅读**集成 SDK**。
 
 <details>
 	<summary><font color="#3ab7f8">点击查看示例代码</font></summary>
@@ -213,7 +213,6 @@ var option = {
    - `mode` 用于设置[频道模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#频道模式)。一对一或多人通话中，建议设为 `"rtc"` ，使用通信模式；[互动直播](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#a-name-livea直播核心概念)中，建议设为 `"live"`，使用直播模式。
    - `codec` 用于设置浏览器使用的编解码格式。如果你需要使用 Safari 12.1 及之前版本，将该参数设为 `"h264"`；如果你需要在手机上使用 Agora Web SDK，请参考[移动端使用 Web SDK](https://docs.agora.io/cn/faq/web_on_mobile)。
 
-在初始化客户端对象时，你需要传入你的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id)。参考下文创建一个 Agora 项目并获取 App ID。
 你需要在该步骤中填入项目的 App ID。请参考如下步骤在 Dashboard 创建项目并获取 App ID。
 
 1. 登录 [Dashboard](https://dashboard.agora.io/)，点击左侧导航栏的**项目管理**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
@@ -252,8 +251,10 @@ rtc.client.setClientRole(role);
 - `token`: 该参数为可选。如果你的 Agora 项目开启了 App 证书，你需要在该参数中传入一个 Token，详见 [使用 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#使用-token)。
 	- 在测试环境，我们推荐使用 Dashboard 生成临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms%23get-a-temporary-token#获取临时-token)。
 	- 在生产环境，我们推荐你在自己的服务端生成 Token，详见 [生成 Token](../../cn/Audio%20Broadcast/token_server.md).
-- `channel`: 频道名。
+- `channel`: 频道名，长度在 64 字节以内的字符串。
 - `uid`: 用户 ID，频道内每个用户的 UID 必须是唯一的。如果你将 `uid` 设为 `null`，Agora 会自动分配一个 UID 并在 `onSuccess` 回调中返回。
+
+更多的参数设置注意事项请参考 [`Client.join`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) 接口中的参数描述。
 
 ### 发布本地流
 
@@ -427,6 +428,11 @@ live-server .
 
 5. 在浏览器中打开另一个页面，输入相同的 URL 地址。点击 **JOIN** 按钮。现在你应该可以看到两个视频画面。
 
-如果页面没有正常工作，可以打开浏览器的控制台查看错误信息进行排查。
+如果页面没有正常工作，可以打开浏览器的控制台查看错误信息进行排查。常见的错误信息包括：
+
+- `INVALID_VENDOR_KEY`：App ID 错误，检查你填写的 App ID。
+- `ERR_DYNAMIC_USE_STATIC_KE`：你的 Agora 项目启用了 App 证书，需要在加入频道时填写 Token。
+- `Media access:NotFoundError`：检查你的摄像头和麦克风是否正常工作。
+- `MEDIA_NOT_SUPPORT`：请使用 HTTPS 协议 或者 localhost。
 
 <div class="alert warning">Agora Web SDK 不支持在浏览器上模拟移动设备调试。</div>
