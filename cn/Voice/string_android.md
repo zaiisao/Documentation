@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 08:18:09 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 08:18:38 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -15,11 +15,14 @@ Agora 的其他接口仍使用 UID 作为参数。Agora Engine 在 SDK 内部维
 为保证通信质量，频道内所有用户需使用同一数据类型的用户名，即频道内的所有用户名应同为 Int 型或同为 String 型。
 
 ## 实现方法
-请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/android_video.md)。
 
-从 v2.8.0 起，Native SDK 新增如下接口支持使用 User Account 来标识用户在频道中的身份
- - `registerLocalUserAccount`：注册本地用户 User Account
- - `joinChannelWithUserAccount`：使用 User Account 加入频道
+请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。详见[开始音视频通话](../../cn/Voice/start_call_android.md) 或[开始互动直播](../../cn/Voice/start_live_android.md)。
+
+参考如下步骤，在你的项目中实现使用 String 型用户名加入频道：
+
+1. 完成初始化 RtcEngine 后，调用 `registerLocalUserAccount` 方法，注册本地用户的 User account。
+2. 调用 `joinChannelWithUserAccount` 方法，使用注册的 User account 加入频道。
+3. 离开频道时，调用 `leaveChannel` 方法。
 
 其中，String 型的用户名最大不可超过 255 字节，且需要确保其在频道内的唯一性。支持的字符集范围如下：
 
@@ -29,9 +32,11 @@ Agora 的其他接口仍使用 UID 作为参数。Agora Engine 在 SDK 内部维
 - 空格
 - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
 
-使用 User Account 加入频道的 API 调用时序图如下所示：
+### API 时序图
 
-![](https://web-cdn.agora.io/docs-files/1562139189320)
+下图展示使用 User Account 加入频道的 API 调用时序图：
+
+![](https://web-cdn.agora.io/docs-files/1568707798526)
 
 其中：
 
@@ -39,21 +44,9 @@ Agora 的其他接口仍使用 UID 作为参数。Agora Engine 在 SDK 内部维
 - `registerLocalUserAccount` 为选调。你可以注册后再调用 `joinChannelWithUserAccount` 方法加入频道，也可以不注册直接调用 `joinChannelWithUserAccount` 加入频道。我们建议你调用。提前调用 `registerLocalUserAccount` 可以减少调用 `joinChannelWithUserAccount` 加入频道的时间。
 - 对于其他接口，Agora SDK 仍沿用 Int 型的 UID 参数标识用户身份。你可以使用 `getUserInfoByUid` 或 `getUserInfoByUserAccount` 获取对应的 User Account 或 UID，无需自己维护映射表。
 
+### 示例代码
 
-### API 参考
-
-- [`registerLocalUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa37ea6307e4d1513c0031084c16c9acb)
-- [`joinChannelWithUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a310dbe072dcaec3892c4817cafd0dd88)
-- [`getUserInfoByUid`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9a787b8d0784e196b08f6d0ae26ea19c)
-- [`getUserInfoByUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#afd4119e2d9cc360a2b99eef56f74ae22)
-- [`onLocalUserRegistered`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aca1987909703d84c912e2f1e7f64fb0b)
-- [`onUserInfoUpdated`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa3e9ead25f7999272d5700c427b2cb3d)
-
-## 示例代码
-
-Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的 Github 示例代码，你可以前往下载和体验。
-
-你也可以参考如下代码片段，在项目中实现使用 String 型的 User account 加入频道：
+你可以对照 API 时序图，参考下面的示例代码片段，在项目中实现使用 String 型用户名：
 
 ```java
 private void initializeAgoraEngine() {
@@ -80,6 +73,18 @@ private void joinChannel() {
   mRtcEngine.joinChannelWithUserAccount(token, "stringifiedChannel1", mLocal.userAccount);
 }
 ```
+
+同时，我们在 Github 提供一个开源的 [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的示例项目。你可以前往下载，或参考 [CallActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/String-Account/Agora-String-Account-Android/app/src/main/java/io/agora/tutorials.stringified.account/CallActivity.java) 文件中 `initializeAgoraEngine` 和 `joinChannel` 方法的源代码。
+
+### API 参考
+
+- [`registerLocalUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa37ea6307e4d1513c0031084c16c9acb)
+- [`joinChannelWithUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a310dbe072dcaec3892c4817cafd0dd88)
+- [`getUserInfoByUid`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9a787b8d0784e196b08f6d0ae26ea19c)
+- [`getUserInfoByUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#afd4119e2d9cc360a2b99eef56f74ae22)
+- [`onLocalUserRegistered`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aca1987909703d84c912e2f1e7f64fb0b)
+- [`onUserInfoUpdated`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa3e9ead25f7999272d5700c427b2cb3d)
+
 
 ## 开发注意事项
 
