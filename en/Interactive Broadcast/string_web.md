@@ -27,7 +27,7 @@ The maximum string length of the user account is 255 bytes. Each user account sh
 - The 10 numbers: 0 to 9.
 - The space.
 - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",".
-The sample code for joining a channel with a string user ID is as follows:
+You can also refer to the following code snippets and implement string user accounts in your peoject:
 
 ```javascript
 // Set uid as agora and join channel 1024
