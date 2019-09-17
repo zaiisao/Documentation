@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Windows
-updatedAt: Tue Sep 17 2019 10:45:42 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 10:48:44 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -19,7 +19,7 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 
 参考如下步骤，在你的项目中实现使用 String 型用户名加入频道：
 
-- 完成初始化 RtcEngine 后，调用 `registerLocalUserAccount` 方法，注册本地用户的 User account。
+- 完成初始化 IRtcEngine 后，调用 `registerLocalUserAccount` 方法，注册本地用户的 User account。
 - 调用 `joinChannelWithUserAccount` 方法，使用注册的 User account 加入频道。
 - 离开频道时，调用 `leaveChannel` 方法。
 
