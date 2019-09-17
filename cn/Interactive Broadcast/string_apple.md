@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: iOS,macOS
-updatedAt: Tue Sep 17 2019 09:08:43 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 09:09:32 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
