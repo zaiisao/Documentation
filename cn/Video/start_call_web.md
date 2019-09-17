@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Web
-updatedAt: Tue Sep 17 2019 04:22:58 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 04:23:46 GMT+0800 (CST)
 ---
 # 实现音视频通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
