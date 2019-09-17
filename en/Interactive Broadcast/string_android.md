@@ -3,13 +3,13 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Wed Aug 07 2019 01:58:47 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 08:42:37 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
 Many apps use string usernames. To reduce development costs, Agora adds support for string user accounts. Users can now directly use their string usernames as user accounts to join the Agora channel.
 
-For other APIs, Agora uses the integer user ID for identification. Agora maintains a mapping table object that contains the string user account and integer user ID. You can get the user ID by passing in the user account, and vice versa.
+For other APIs, Agora uses the integer user ID for identification. The Agora engine maintains a mapping table object that contains the string user account and integer user ID. You can get the user ID by passing in the user account, and vice versa.
 
 To ensure smooth communication, all the users in a channel should use the same type of user account, that is, either the integer user ID, or the string user account.
 
@@ -17,11 +17,13 @@ To ensure smooth communication, all the users in a channel should use the same t
 
 ## Implementation
 
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
+Ensure that you understand the steps and code logic for implmenting the basic real-time communication functions. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_android.md) or [Start a live broadcast](../../en/Interactive%20Broadcast/start_live_android.md).
 
-Starting with v2.8.0, you can use user accounts to identify the user.
-  - `registerLocalUserAccount`: Registers a user account.
-  - `joinChannelWithUserAccount`: Joins the channel with the registered user account.
+Follow the steps to join an Agora channel with a string user account:
+
+1. After intializing the RtcEngine instance, call the `registerLocalUserAccount` method to register a loca user account.
+2. Call the `joinChannelWithUserAccount` method to join a channel with the registered user account.
+3. Call the `leaveChannel` method when you want to leave the channel.
 
 The maximum string length of the user account is 255 bytes. Each user account should be unique in the channel. Supported character scopes are:
 
@@ -31,9 +33,11 @@ The maximum string length of the user account is 255 bytes. Each user account sh
 - The space.
 - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",".
 
+### API call sequence
+
 The following diagram shows how to join a channel with a string user account:
 
-![](https://web-cdn.agora.io/docs-files/1562139189320)
+![](https://web-cdn.agora.io/docs-files/1568709435568)
 
 **Note**:
 
@@ -48,21 +52,9 @@ The following diagram shows how to join a channel with a string user account:
 
 - For other APIs, Agora uses the integer user ID for identification. You can call the  `getUserInfoByUid` or `getUserInfoByUserAccount` method to get the corresponding user ID or user account without maintaining the map.
 
-## API Reference
-
-- [`registerLocalUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa37ea6307e4d1513c0031084c16c9acb)
-- [`joinChannelWithUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a310dbe072dcaec3892c4817cafd0dd88)
-- [`getUserInfoByUid`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9a787b8d0784e196b08f6d0ae26ea19c)
-- [`getUserInfoByUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#afd4119e2d9cc360a2b99eef56f74ae22)
-- [`onLocalUserRegistered`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aca1987909703d84c912e2f1e7f64fb0b)
-- [`onUserInfoUpdated`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa3e9ead25f7999272d5700c427b2cb3d)
-
 ## Sample Code
-Agora provides an [Agora String Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) sample code in the Github. You can download it and refer to the code logic in the sample code.
 
-
-
-You can also refer to the following code snippets and implement string usernames in your peoject:
+You can also refer to the following code snippets and implement string user accounts in your peoject:
 
 ```java
 private void initializeAgoraEngine() {
@@ -77,8 +69,6 @@ private void initializeAgoraEngine() {
     throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
   }
 }
-
-...
   
 private void joinChannel() {
   String token = getString(R.string.agora_access_token);
@@ -89,6 +79,18 @@ private void joinChannel() {
   mRtcEngine.joinChannelWithUserAccount(token, "stringifiedChannel1", mLocal.userAccount);
 }
 ```
+
+We provide an open-source [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) demo project that implements string user accounts on Github. You can try the demo and view the source code of the `initializeAgoraEngine` and `joinChannel` methods in the [CallActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/String-Account/Agora-String-Account-Android/app/src/main/java/io/agora/tutorials.stringified.account/CallActivity.java) file.
+
+
+### API Reference
+
+- [`registerLocalUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa37ea6307e4d1513c0031084c16c9acb)
+- [`joinChannelWithUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a310dbe072dcaec3892c4817cafd0dd88)
+- [`getUserInfoByUid`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9a787b8d0784e196b08f6d0ae26ea19c)
+- [`getUserInfoByUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#afd4119e2d9cc360a2b99eef56f74ae22)
+- [`onLocalUserRegistered`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aca1987909703d84c912e2f1e7f64fb0b)
+- [`onUserInfoUpdated`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa3e9ead25f7999272d5700c427b2cb3d)
 
 
 ## Considerations
