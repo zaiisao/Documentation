@@ -9,7 +9,7 @@ updatedAt: Wed Aug 07 2019 02:09:03 GMT+0800 (CST)
 ## Introduction
 Many apps use string usernames. To reduce development costs, Agora adds support for string user accounts. Users can now directly use their string usernames as user accounts to join the Agora channel.
 
-For other APIs, Agora uses the integer user ID for identification. The Agora engine maintains a mapping table object that contains the string user account and integer user ID. You can get the user ID by passing in the user account, and vice versa.
+For other APIs, Agora uses the integer user ID for identification. Agora maintains a mapping table object that contains the string user account and integer user ID. You can get the user ID by passing in the user account, and vice versa.
 
 To ensure smooth communication, all the users in a channel should use the same type of user account, that is, either the integer user ID, or the string user account.
 
