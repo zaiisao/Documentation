@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Web
-updatedAt: Tue Sep 17 2019 10:09:17 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 10:09:20 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -16,7 +16,7 @@ updatedAt: Tue Sep 17 2019 10:09:17 GMT+0800 (CST)
 
 请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_web.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_web.md)。
 
-Web SDK 支持将 join 方法中的 `uid` 设为 Number 或 String 型。因此，你可以直接在调用该方法时，传入 String 型的用户名即可。
+Web SDK 支持将 `Client.join` 方法中的 `uid` 设为 Number 或 String 型。因此，你可以直接在调用该方法时，传入 String 型的用户名即可。
 
 其中，String 型的用户名最大不可超过 255 字节，且需要确保其在频道内的唯一性。支持的字符集范围如下：
 
