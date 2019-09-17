@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 08:44:34 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 09:14:02 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -21,7 +21,7 @@ Ensure that you understand the steps and code logic for implmenting the basic re
 
 Follow the steps to join an Agora channel with a string user account:
 
-1. After intializing the RtcEngine instance, call the `registerLocalUserAccount` method to register a loca user account.
+1. After initializing the RtcEngine instance, call the `registerLocalUserAccount` method to register a loca user account.
 2. Call the `joinChannelWithUserAccount` method to join a channel with the registered user account.
 3. Call the `leaveChannel` method when you want to leave the channel.
 
