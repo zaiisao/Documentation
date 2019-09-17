@@ -3,16 +3,16 @@
 title: Dashboard 概览
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 04:28:43 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 04:28:47 GMT+0800 (CST)
 ---
 # Dashboard 概览
 欢迎使用 Agora Dashboard。Agora Dashboard 提供直观的界面，方便你在使用 Agora 各产品时进行充值、查看、管理等操作。本指南简要介绍如何使用 Agora Dashboard。
 
-> 本指南介绍 Agora Dashboard 的所有功能，但是不一定每个团队成员都能使用所有的功能。具体成员所能看到的页面视该成员的[角色权限](../../cn/Agora%20Platform/manage_member.md)而定。
+> 本指南介绍 Agora Dashboard 的所有功能，但是不一定每个团队成员都能使用所有的功能。具体成员所能看到的页面视该成员的角色权限而定，详见[管理成员和角色中的权限说明](../../cn/Agora%20Platform/manage_member.md)。
 
 ## 注册与登录
 
-使用 Agora Dashboard 前，你需要[创建一个 Agora 开发者账号](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。请务必保存好你的账号和密码。如不小心遗失密码，参照[找回密码](../../cn/Agora%20Platform/sign_in_and_sign_up.md)中的步骤即可轻松找回密码。
+使用 Agora Dashboard 前，你需要[创建一个 Agora 开发者账号](https://sso.agora.io/cn/signup)。请务必保存好你的账号和密码。如不小心遗失密码，参照[找回密码](../../cn/Agora%20Platform/sign_in_and_sign_up.md)中的步骤即可轻松找回密码。
 
 ## 总览页
 
@@ -41,11 +41,11 @@ Agora Dashboard 的主要功能包括：
 
 ### 追踪通话质量
 
-使用 Agora 为开发者提供的实时通话质量监控工具[**水晶球**](../../cn/Agora%20Platform/aa_guide.md)，查看通话数据，调查通话质量问题。
+使用 Agora 为开发者提供的实时通话质量监控工具，查看通话数据，调查通话质量问题。详见[水晶球文档](../../cn/Agora%20Platform/aa_guide.md)。
 
 ### 财务消费管理
 
-进行[线上充值](../../cn/Agora%20Platform/online_payment.md)、查看账单、[申请发票](../../cn/Agora%20Platform/apply_invoice.md)等操作。
+进行财务相关的操作，包括线上充值、提现、查看账单、申请发票等操作。详见[线上充值](../../cn/Agora%20Platform/online_payment.md)和[申请发票](../../cn/Agora%20Platform/apply_invoice.md)。
 
 ### 管理成员和角色
 
@@ -53,7 +53,7 @@ Agora Dashboard 的主要功能包括：
 
 ### 提交工单
 
-你在使用产品过程中如有任何疑问，都可以[提交工单](../../cn/Agora%20Platform/ticket.md)寻求解答。
+你在使用产品过程中如有任何疑问，都可以在 Dashboard 寻求解答。详见[提交工单指南](../../cn/Agora%20Platform/ticket.md)。
 
 ### 使用 RESTful API
 
