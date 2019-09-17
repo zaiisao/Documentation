@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 07:24:57 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 07:26:11 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -553,7 +553,9 @@ This section lists the common errors in using the Agora Cloud Recording RESTful 
   - Content-type is wrong. Ensure that the `Content-type` field is `application/json;charset=utf-8`.
   - `cloud_recording` is missing in the request URL.
   - The HTTP method is wrong.
+- `432`: The parameter in the request is incorrect. Either the parameter is invalid, or the App ID, channel name, or UID does not match the resource ID.
 - `433`: The resource ID has expired. You need to start recording within five minutes after getting a resource ID. Call [acquire](#acquire) to get a new resource ID.
+- `435`: No recorded files created. There is nothing to record because no user is in the channel.
 - `501`: The recording service is exiting. This error might occur when you call [query](#query) after [stop](#stop).
 - `1001`: Fails to parse the resource ID. Call [acquire](#acquire) to get a new resource ID.
 - `1003`: The App ID or recording ID (sid) does not match the resource ID. Ensure that the App ID or recording ID matches the resource ID in each recording session.
