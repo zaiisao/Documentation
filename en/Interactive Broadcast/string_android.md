@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Wed Sep 18 2019 01:41:50 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:25:48 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -24,14 +24,6 @@ Follow the steps to join an Agora channel with a string user account:
 1. After initializing the RtcEngine instance, call the `registerLocalUserAccount` method to register a loca user account.
 2. Call the `joinChannelWithUserAccount` method to join a channel with the registered user account.
 3. Call the `leaveChannel` method when you want to leave the channel.
-
-The maximum string length of the user account is 255 bytes. Each user account should be unique in the channel. Supported character scopes are:
-
-- The 26 lowercase English letters: a to z.
-- The 26 uppercase English letters: A to Z.
-- The 10 numbers: 0 to 9.
-- The space.
-- "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",".
 
 ### API call sequence
 
