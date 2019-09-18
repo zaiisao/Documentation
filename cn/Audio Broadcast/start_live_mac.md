@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: macOS
-updatedAt: Wed Sep 18 2019 10:27:20 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 10:27:24 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -116,6 +116,10 @@ platform :macOS, '10.11' use_frameworks!
 - 主播视频窗口
 - 退出频道按钮
 	
+当你使用示例项目中的 UI 设计时，你将会看到如下界面：
+
+![](https://web-cdn.agora.io/docs-files/1568802427977)
+
 ### <a name="ImportClass"></a>2. 导入类
 
 在项目中导入 AgoraRtcEngineKit 类：
