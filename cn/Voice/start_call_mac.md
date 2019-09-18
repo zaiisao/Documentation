@@ -39,7 +39,7 @@ Agora 在 Github 上提供开源的实时音视频通话示例项目 [Agora-macO
 4. 选择项目存储路径，并点击 **Create**。
 5. 进入 **TARGETS > Project Name > General > Signing** 菜单，选择 **Automatically manage signing**，并在弹出菜单中点击 **Enable Automatic**。
 	
-	![](https://web-cdn.agora.io/docs-files/1568799272888)
+	![](https://web-cdn.agora.io/docs-files/1568800944605)
 </details>
 	
 ### <a name="IntegrateSDK"></a>集成 SDK
@@ -74,13 +74,13 @@ platform :macOS, '10.11' use_frameworks!
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
 
- 添加前：
+ **添加前**：
  
- ![](https://web-cdn.agora.io/docs-files/1568799349165)
+ ![](https://web-cdn.agora.io/docs-files/1568800969337)
  
- 添加后：
+ **添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1568799362745)
+ ![](https://web-cdn.agora.io/docs-files/1568800978769)
 
 ### 添加媒体设备权限
 
@@ -91,13 +91,13 @@ platform :macOS, '10.11' use_frameworks!
 | Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
 | Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
 
- 添加前：
+**添加前**：
  
- ![](https://web-cdn.agora.io/docs-files/1568799381533)
+![](https://web-cdn.agora.io/docs-files/1568800996491)
  
- 添加后：
+**添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1568799392403)
+![](https://web-cdn.agora.io/docs-files/1568801004827)
 
 ## 实现音视频通话
 
