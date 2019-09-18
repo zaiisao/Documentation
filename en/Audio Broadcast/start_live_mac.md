@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: macOS
-updatedAt: Thu Sep 12 2019 04:50:05 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 10:24:03 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for macOS.
