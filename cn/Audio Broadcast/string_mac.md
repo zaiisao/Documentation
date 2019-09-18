@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: macOS
-updatedAt: Wed Aug 07 2019 01:47:51 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:24:53 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -21,14 +21,6 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 从 v2.8.0 起，Native SDK 新增如下接口，支持使用 User Account 来标识用户在频道中的身份
 - `registerLocalUserAccount`：注册本地用户 User Account
 - `joinChannelByUserAccount`：使用 User Account 加入频道
-
-其中，String 型的用户名最大不可超过 255 字节，且需要确保其在频道内的唯一性。支持的字符集范围如下：
-
-- 26 个小写英文字母 a-z
-- 26 个大写英文字母 A-Z
-- 10 个数字 0-9
-- 空格
-- "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
 
 使用 User Account 加入频道的 API 调用时序图如下所示：
 
