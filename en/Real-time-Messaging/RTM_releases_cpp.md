@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux CPP
-updatedAt: Wed Sep 18 2019 02:34:52 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 02:34:57 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -14,7 +14,7 @@ Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time
 
 ## v1.1.0
 
-v1.1.0 is released on September 17, 2019. It adds the following features: 
+v1.1.0 is released on September 18, 2019. It adds the following features: 
 
 - [Gets the member count of specified channel(s).](#getcount)
 - [Automatically returns the latest numer of members in the current channel](#oncount)
