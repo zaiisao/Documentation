@@ -36,6 +36,8 @@ Now, let's build a project from scratch. Skip to [Integrate the SDK](#IntegrateS
 	 <div class="alert note">If you haven't added any team information, you will see an <b>Add account...</b> button. Click it, input your Apple ID, and click <b>Next</b> to add your team.</div>
 4. Choose the storage path of the project and click **Create**.
 5. Go to the **TARGETS > Project Name > General > Signing** menu, choose **Automatically manage signing**, and then click **Enable Automatic** on the pop-up window.
+	
+ ![](https://web-cdn.agora.io/docs-files/1568798647561)
 </details>
 
 ### <a name="IntegrateSDK"></a>Integrate the SDK
@@ -63,19 +65,19 @@ platform :macOS, '10.11' use_frameworks!
 3. In **Xcode**, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the **AgoraRtcEngineKit.framework** file, remember to click **Add Other...** after clicking **+**.
 	- AgoraRtcEngineKit.framework
 	- Accelerate.framework
-	- AudioToolbox.framework
-	- AVFoundation.framework
-	- CFNetwork.framework
-	- CoreAudio.framework
-	- CoreGraphics.framework
-	- CoreMedia.framework
-	- CoreVideo.framework
 	- CoreWLAN.framework
-	- Foundation.framework
-	- libc++.1.dylib
-	- libresolv.tbd
+	- libc++.dylib
+	- libresolv.9.tbd
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
+
+**Before**:
+
+![](https://web-cdn.agora.io/docs-files/1568798678227)
+
+**After**:
+
+![](https://web-cdn.agora.io/docs-files/1568798690438)
 
 ### Add project permissions
 Add the following permissions in the **info.plist** file for device access according to your needs:
@@ -84,6 +86,15 @@ Add the following permissions in the **info.plist** file for device access accor
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video call.      |
 | Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
+
+**Before**:
+
+![](https://web-cdn.agora.io/docs-files/1568798787100)
+
+**After**:
+
+![](https://web-cdn.agora.io/docs-files/1568798793421)
+
 
 ## Implement the basic call
 
