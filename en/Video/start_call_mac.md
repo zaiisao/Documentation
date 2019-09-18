@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: macOS
-updatedAt: Wed Sep 18 2019 10:15:15 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 10:15:20 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for macOS.
@@ -110,6 +110,9 @@ For a video call, we recommend adding the following elements into the UI:
 - The remote video view
 - The end-call button
 
+When you use the UI setting of the demo project, you can see the following interface:
+
+![](https://web-cdn.agora.io/docs-files/1568801689092)
 
 ### <a name="ImportClass"></a> 2. Import the class
 
