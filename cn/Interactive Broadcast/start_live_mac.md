@@ -41,7 +41,7 @@ Agora 在 Github 上提供开源的互动直播示例项目 [OpenLive-macOS-Obje
 4. 选择项目存储路径，并点击 **Create**。
 5. 进入 **TARGETS > Project Name > General > Signing** 菜单，选择 **Automatically manage signing**，并在弹出菜单中点击 **Enable Automatic**。
 	
-	![](https://web-cdn.agora.io/docs-files/1568800944605)
+	![](https://web-cdn.agora.io/docs-files/1568803584472)
 </details>
 	
 ### <a name="IntegrateSDK"></a>集成 SDK
