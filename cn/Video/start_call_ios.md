@@ -79,11 +79,11 @@ end
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
 
- 添加前：
+ **添加前**：
  
  ![](https://web-cdn.agora.io/docs-files/1568800190639)
  
- 添加后：
+ **添加后**：
  
  ![](https://web-cdn.agora.io/docs-files/1568800223316)
  
@@ -100,13 +100,13 @@ end
 | Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
 | Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
 
- 添加前：
+**添加前**：
  
- ![](https://web-cdn.agora.io/docs-files/1568800234558)
+![](https://web-cdn.agora.io/docs-files/1568800234558)
  
- 添加后：
+**添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1568800240596)
+![](https://web-cdn.agora.io/docs-files/1568800240596)
 
 ## 实现音视频通话
 
