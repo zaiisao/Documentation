@@ -40,7 +40,7 @@ Now, let's build a project from scratch. Skip to [Integrate the SDK](#IntegrateS
 5. Connect your iOS device to your computer.
 6. Go to the **TARGETS > Project Name > General > Signing** menu, choose **Automatically manage signing**, and then click **Enable Automatic** on the pop-up window.
 	
-	![](https://web-cdn.agora.io/docs-files/1568801074136)
+	![](https://web-cdn.agora.io/docs-files/1568803558097)
 </details>
 
 ### <a name="IntegrateSDK"></a>Integrate the SDK
