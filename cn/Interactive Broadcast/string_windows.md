@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Windows
-updatedAt: Wed Sep 18 2019 03:35:13 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:35:18 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -15,7 +15,7 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 为保证通信质量，频道内所有用户需使用同一数据类型的用户名，即频道内的所有用户名应同为 Int 型或同为 String 型。
 
 ## 实现方法
-请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_win.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_win.md)。
+请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_windows.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_windows.md)。
 
 参考如下步骤，在你的项目中实现使用 String 型用户名加入频道：
 
