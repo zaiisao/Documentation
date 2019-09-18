@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Windows
-updatedAt: Wed Sep 18 2019 07:37:48 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 07:38:30 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call with the Agora SDK for Windows.
