@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Windows
-updatedAt: Wed Sep 18 2019 07:45:35 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 07:45:41 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for Windows. 
@@ -66,6 +66,10 @@ Create the user interface (UI) for the interactive broadcast in your project. Sk
 For a video broadcast, we recommend adding the following elements into the UI:
 - The view of the broadcaster
 - The exit button
+
+When you use the UI setting of the demo project, you can see the following interface:
+
+![](https://web-cdn.agora.io/docs-files/1568792708592)
 
 <a name="ini"></a>
 ### 2. Initialize IRtcEngine
