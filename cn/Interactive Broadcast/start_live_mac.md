@@ -40,6 +40,8 @@ Agora 在 Github 上提供开源的互动直播示例项目 [OpenLive-macOS-Obje
 	
 4. 选择项目存储路径，并点击 **Create**。
 5. 进入 **TARGETS > Project Name > General > Signing** 菜单，选择 **Automatically manage signing**，并在弹出菜单中点击 **Enable Automatic**。
+	
+	![](https://web-cdn.agora.io/docs-files/1568799272888)
 </details>
 	
 ### <a name="IntegrateSDK"></a>集成 SDK
@@ -68,19 +70,19 @@ platform :macOS, '10.11' use_frameworks!
 3. 打开 **Xcode**，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。在添加 **AgoraRtcEngineKit.framework** 文件时，还需在点击 **+** 后点击 **Add Other…**，找到本地文件并打开。
 	- AgoraRtcEngineKit.framework
 	- Accelerate.framework
-	- AudioToolbox.framework
-	- AVFoundation.framework
-	- CFNetwork.framework
-	- CoreAudio.framework
-	- CoreGraphics.framework
-	- CoreMedia.framework
-	- CoreVideo.framework
 	- CoreWLAN.framework
-	- Foundation.framework
-	- libc++.1.dylib
-	- libresolv.tbd
+	- libc++.dylib
+	- libresolv.9.tbd
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
+
+ 添加前：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568799349165)
+ 
+ 添加后：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568799362745)
 
 ### 添加媒体设备权限
 
@@ -90,6 +92,14 @@ platform :macOS, '10.11' use_frameworks!
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
 | Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
+
+ 添加前：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568799381533)
+ 
+ 添加后：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568799392403)
 
 ## 实现互动直播
 
