@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: iOS
-updatedAt: Mon Sep 16 2019 09:08:37 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 10:11:43 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for iOS.
