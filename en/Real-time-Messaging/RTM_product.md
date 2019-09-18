@@ -3,7 +3,7 @@
 title: Agora RTM Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 18 2019 12:03:12 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 12:03:17 GMT+0800 (CST)
 ---
 # Agora RTM Overview
 The Agora RTM SDK provides a stable messaging mechanism for you to build real-time messaging scenarios with low latency and high concurrency at a global level. 
@@ -17,6 +17,8 @@ The Agora RTM SDK enables the following functions:
 -   Get the member list of the channel.
 -   Create, send, cancel, accept, or decline a call invitation. 
 -   Set, update, or get a user's attributes. 
+-   Set, update, or get attributes of a specified channel.
+-   Get the latest member count of specified channel(s). 
 -   Interconnect with the legacy Agora Signaling SDK
 
 
