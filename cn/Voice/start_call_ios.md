@@ -38,6 +38,8 @@ Agora 在 Github 上提供开源的实时音视频通话示例项目 [Agora-iOS-
 4. 选择项目存储路径，并点击 **Create**。
 5. 将你的 iOS 设备连接至电脑。
 6. 进入 **TARGETS > Project Name > General > Signing** 菜单，选择 **Automatically manage signing**，并在弹出菜单中点击 **Enable Automatic**。
+	
+	![](https://web-cdn.agora.io/docs-files/1568799428433)
 </details>
 	
 <a name="IntegrateSDK"></a>
@@ -77,7 +79,16 @@ end
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
 
+ 添加前：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568800190639)
+ 
+ 添加后：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568800223316)
+ 
 <div class="alert note">如需支持 iOS 9.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
+
 
 
 ### 添加媒体设备权限
@@ -88,6 +99,14 @@ end
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
 | Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
+
+ 添加前：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568800234558)
+ 
+ 添加后：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568800240596)
 
 ## 实现音视频通话
 
