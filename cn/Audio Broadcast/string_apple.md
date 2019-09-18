@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 18 2019 03:25:32 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:25:29 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -17,14 +17,22 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 ## 实现方法
 
 请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。详见如下文档：
-- iOS 平台：[开始音视频通话](../../cn/Voice/start_call_ios.md)或[开始互动直播](../../cn/Voice/start_live_ios.md)
-- macOS 平台：[开始音视频通话](../../cn/Voice/start_call_mac.md)或[开始互动直播](../../cn/Voice/start_live_mac.md)
+- iOS 平台：[开始音视频通话](../../cn/Audio%20Broadcast/start_call_ios.md)或[开始互动直播](../../cn/Audio%20Broadcast/start_live_ios.md)
+- macOS 平台：[开始音视频通话](../../cn/Audio%20Broadcast/start_call_mac.md)或[开始互动直播](../../cn/Audio%20Broadcast/start_live_mac.md)
 
 参考如下步骤，在你的项目中实现使用 String 型用户名加入频道：
 
 - 完成初始化 AgoraRtcEngine 后，调用 `registerLocalUserAccount` 方法，注册本地用户的 User account。
 - 调用 `joinChannelByUserAccount` 方法，使用注册的 User account 加入频道。
 - 离开频道时，调用 `leaveChannel` 方法。
+
+其中，String 型的用户名最大不可超过 255 字节，且需要确保其在频道内的唯一性。支持的字符集范围如下：
+
+- 26 个小写英文字母 a-z
+- 26 个大写英文字母 A-Z
+- 10 个数字 0-9
+- 空格
+- "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
 
 ### API 时序图
 
@@ -58,12 +66,12 @@ func joinChannel() {
 
 ### API 参考
 
-- [`registerLocalUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
-- [`joinChannelByUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
-- [`getUserInfoByUid`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUid:withError:)
-- [`getUserInfoByUserAccount`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUserAccount:withError:)
-- [`didRegisteredLocalUser`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didRegisteredLocalUser:withUid:)
-- [`didUpdatedUserInfo`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
+- [`registerLocalUserAccount`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
+- [`joinChannelByUserAccount`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
+- [`getUserInfoByUid`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUid:withError:)
+- [`getUserInfoByUserAccount`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUserAccount:withError:)
+- [`didRegisteredLocalUser`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didRegisteredLocalUser:withUid:)
+- [`didUpdatedUserInfo`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
 
 
 ## 开发注意事项
