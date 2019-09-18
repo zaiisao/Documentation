@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Wed Sep 18 2019 01:41:45 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 01:41:50 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -17,7 +17,7 @@ To ensure smooth communication, all the users in a channel should use the same t
 
 ## Implementation
 
-Ensure that you understand the steps and code logic for implmenting the basic real-time communication functions. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_android.md) or [Start a live broadcast](../../en/Audio%20Broadcast/start_live_android.md).
+Ensure that you understand the steps and code logic for implmenting the basic real-time communication functions. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_android.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_android.md).
 
 Follow the steps to join an Agora channel with a string user account:
 
