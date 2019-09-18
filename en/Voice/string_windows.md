@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Windows
-updatedAt: Wed Sep 18 2019 03:27:40 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:27:45 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -16,7 +16,7 @@ To ensure smooth communication, all the users in a channel should use the same t
 
 ## Implementation
 
-Ensure that you understand the steps and code logic for implmenting the basic real-time communication functions. For details, see [Start a Call](../../en/Voice/start_call_windows.md) or [Start a Live Broadcast](../../en/Voice/start_live_windows.md).
+Ensure that you understand the steps and code logic for implmenting the basic real-time communication functions. For details, see [Start a Call](../../en/Voice/start_call_win.md) or [Start a Live Broadcast](../../en/Voice/start_live_win.md).
 
 Follow the steps to join an Agora channel with a string user account:
 
