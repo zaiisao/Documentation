@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Android
-updatedAt: Wed Sep 18 2019 03:24:07 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:24:19 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -24,13 +24,6 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 2. 调用 `joinChannelWithUserAccount` 方法，使用注册的 User account 加入频道。
 3. 离开频道时，调用 `leaveChannel` 方法。
 
-其中，String 型的用户名最大不可超过 255 字节，且需要确保其在频道内的唯一性。支持的字符集范围如下：
-
-- 26 个小写英文字母 a-z
-- 26 个大写英文字母 A-Z
-- 10 个数字 0-9
-- 空格
-- "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
 
 ### API 时序图
 
