@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Web
-updatedAt: Tue Sep 17 2019 10:20:34 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:26:21 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -19,13 +19,6 @@ Ensure that you understand the steps and code logic for implmenting the basic re
 
 The `uid` parameter in the `Client.join` method can be set as either a number or a string. You can join a channel by calling the `Client.join` method and passing in a string `uid`.
 
-The maximum string length of the string `uid` is 255 bytes. Each user account should be unique in the channel. Supported character scopes are:
-
-- The 26 lowercase English letters: a to z.
-- The 26 uppercase English letters: A to Z.
-- The 10 numbers: 0 to 9.
-- The space.
-- "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",".
 
 ### API call sequence
 
@@ -35,7 +28,7 @@ The following diagram shows how to join a channel with a string user account:
 
 ### Sample code
 
-The sample code for joining a channel with a string user ID is as follows:
+You can also refer to the following code snippets and implement string user accounts in your peoject:
 
 ```javascript
 // Set uid as agora and join channel 1024
