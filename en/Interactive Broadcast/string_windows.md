@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Windows
-updatedAt: Wed Sep 18 2019 03:26:38 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:27:40 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
