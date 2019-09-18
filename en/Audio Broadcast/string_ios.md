@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: iOS
-updatedAt: Wed Aug 07 2019 02:05:05 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:26:01 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -21,14 +21,6 @@ Ensure that you prepare the development environment. See [Integrate the SDK](../
 Starting with v2.8.0, you can use user accounts to identify the user.
   - `registerLocalUserAccount`: Registers a user account.
   - `joinChannelByUserAccount`: Joins the channel with the registered user account.
-
-The maximum string length of the user account is 255 bytes. Each user account should be unique in the channel. Supported character scopes are:
-
-- The 26 lowercase English letters: a to z.
-- The 26 uppercase English letters: A to Z.
-- The 10 numbers: 0 to 9.
-- The space.
-- "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",".
 
 The following diagram shows how to join a channel with a string user account:
 
@@ -76,7 +68,9 @@ func joinChannel() {
 ```
 
 ## Considerations
-- Do not mix parameter types within the same channel. If you use SDKs that do not support string usernames, only integer user IDs can be used in the channel.
+- Do not mix parameter types within the same channel. If you use SDKs that do not support string usernames, only integer user IDs can be used in the channel. The following Agora SDKs support string user accounts:
+  - The Native SDK: v2.8.0 and later.
+  - The Web SDK: v2.5.0 and later.
 - If you change your app usernames into string user accounts, ensure that all app clients are upgraded to the latest version.
-- If you use string user accounts, ensure that the token generation script on your server is updated to the latest version. If you join the channel with a user account, ensure that you use the same user account or its corresponding integer user ID to generate a token. Call the `getUserInfoByUserAccount` method to get the user ID that corresponds to the user account.
+- If you use string user accounts to join the channel, ensure that the token generation script on your server is updated to the latest version, and that you use the same user account or its corresponding integer user ID to generate a token. Call the `getUserInfoByUserAccount` method to get the user ID that corresponds to the user account.
 - If the Native SDK and Web SDK join the same channel, ensure that the user identification types are the same. For the Web SDK, the `uid` parameter can be set either as a number or as a string.
