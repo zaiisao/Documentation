@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: iOS,macOS
-updatedAt: Tue Sep 17 2019 10:24:38 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 03:28:27 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction

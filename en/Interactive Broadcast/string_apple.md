@@ -19,8 +19,8 @@ To ensure smooth communication, all the users in a channel should use the same t
 
 Ensure that you understand the steps and code logic for implmenting the basic real-time communication functions. For details, see the following documents:
 
-- iOS: [Start a Call](../../en/Voice/start_call_ios.md) or [Start a Live Broadcast](../../en/Voice/start_live_ios.md).
-- macOS: [Start a Call](../../en/Voice/start_call_mac.md) or [Start a Live Broadcast](../../en/Voice/start_live_mac.md).
+- iOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md).
+- macOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_mac.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_mac.md).
 
 Follow the steps to join an Agora channel with a string user account:
 
@@ -75,12 +75,12 @@ We provide an open-source [String-Account](https://github.com/AgoraIO/Advanced-V
 
 ### API Reference
 
-- [`registerLocalUserAccount`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
-- [`joinChannelByUserAccount`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
-- [`getUserInfoByUid`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUid:withError:)
-- [`getUserInfoByUserAccount`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUserAccount:withError:)
-- [`didRegisteredLocalUser`](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didRegisteredLocalUser:withUid:)
-- [`didUpdatedUserInfo`](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
+- [`registerLocalUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
+- [`joinChannelByUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
+- [`getUserInfoByUid`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUid:withError:)
+- [`getUserInfoByUserAccount`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getUserInfoByUserAccount:withError:)
+- [`didRegisteredLocalUser`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didRegisteredLocalUser:withUid:)
+- [`didUpdatedUserInfo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:)
 
 ## Considerations
 - Do not mix parameter types within the same channel. If you use SDKs that do not support string usernames, only integer user IDs can be used in the channel. The following Agora SDKs support string user accounts:
