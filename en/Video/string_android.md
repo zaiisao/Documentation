@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 09:17:59 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 01:41:45 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -94,8 +94,10 @@ We provide an open-source [String-Account](https://github.com/AgoraIO/Advanced-V
 
 
 ## Considerations
-- Do not mix parameter types within the same channel. If you use SDKs that do not support string usernames, only integer user IDs can be used in the channel.
+- Do not mix parameter types within the same channel. If you use SDKs that do not support string usernames, only integer user IDs can be used in the channel. The following Agora SDKs support string user accounts:
+  - The Native SDK: v2.8.0 and later.
+  - The Web SDK: v2.5.0 and later.
 - If you change your app usernames into string user accounts, ensure that all app clients are upgraded to the latest version.
-- If you use string user accounts, ensure that the token generation script on your server is updated to the latest version. If you join the channel with a user account, ensure that you use the same user account or its corresponding integer user ID to generate a token. Call the `getUserInfoByUserAccount` method to get the user ID that corresponds to the user account.
+- If you use string user accounts to join the channel, ensure that the token generation script on your server is updated to the latest version, and that you use the same user account or its corresponding integer user ID to generate a token. Call the `getUserInfoByUserAccount` method to get the user ID that corresponds to the user account.
 - If the Native SDK and Web SDK join the same channel, ensure that the user identification types are the same. For the Web SDK, the `uid` parameter can be set either as a number or as a string.
 
