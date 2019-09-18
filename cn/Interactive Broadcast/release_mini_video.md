@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Wed Sep 18 2019 10:26:47 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 10:26:51 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -41,6 +41,9 @@ updatedAt: Wed Sep 18 2019 10:26:47 GMT+0800 (CST)
 点击 [声网小程序 Demo 体验](../../cn/Interactive%20Broadcast/miniapp_demo.md) 了解小程序通话、互通等功能。
 下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
 
+## **2.4.1 版**
+
+该版本于 2019 年 9 月 18 日发布。进行了一些内部优化。
 
 ## **2.4.0 版**
 
