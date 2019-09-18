@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Windows
-updatedAt: Wed Sep 18 2019 07:38:30 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 07:38:52 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call with the Agora SDK for Windows.
@@ -63,6 +63,10 @@ For a video call, we recommend adding the following elements into the UI:
 - The local video view
 - The remote video view
 - The end-call button
+
+When you finish adding these elements, your UI should look like the following picture:
+
+![](https://web-cdn.agora.io/docs-files/1568792157006)
 
 <a name="ini"></a>
 ### 2. Initialize IRtcEngine
