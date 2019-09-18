@@ -73,13 +73,13 @@ platform :macOS, '10.11' use_frameworks!
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
 
-**Before**:
+ **Before**:
 
-![](https://web-cdn.agora.io/docs-files/1568798678227)
+ ![](https://web-cdn.agora.io/docs-files/1568800867369)
 
-**After**:
+ **After**:
 
-![](https://web-cdn.agora.io/docs-files/1568798690438)
+ ![](https://web-cdn.agora.io/docs-files/1568800879077)
 
 ### Add project permissions
 Add the following permissions in the **info.plist** file for device access according to your needs:
@@ -91,11 +91,11 @@ Add the following permissions in the **info.plist** file for device access accor
 
 **Before**:
 
-![](https://web-cdn.agora.io/docs-files/1568799222638)
+![](https://web-cdn.agora.io/docs-files/1568800889445)
 
 **After**:
 
-![](https://web-cdn.agora.io/docs-files/1568799232574)
+![](https://web-cdn.agora.io/docs-files/1568800897225)
 
 
 ## Implement the basic broadcast
