@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 18 2019 12:04:58 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 12:05:03 GMT+0800 (CST)
 ---
 # 产品概述
 
@@ -19,6 +19,8 @@ Agora RTM SDK 能够实现以下功能:
  - 获取频道内用户列表
  - 呼叫邀请
  - 增删改查用户属性
+ - 增删改查频道属性
+ - 获取单个或多个指定频道的当前成员人数
  - 与 Agora Signaling SDK 互通
  
 
@@ -82,10 +84,6 @@ Agora RTM SDK 主要有以下特性：
 实时消息系统将逐步替代信令。除上述高可靠、高并发、全球化部署等优势之外，Agora RTM SDK 将会持续更新，不断推出更多更丰富的功能和场景应用。
 
 > 对已有 Agora Signaling SDK 的维护将于 2019 年第四季度停止。
-
-
-
-
 
 
 
