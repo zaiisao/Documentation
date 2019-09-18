@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Tue Apr 30 2019 02:58:33 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 10:26:47 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
