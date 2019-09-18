@@ -41,7 +41,7 @@ Agora 在 Github 上提供开源的互动直播示例项目 [OpenLive-iOS-Object
 5. 将你的 iOS 设备连接至电脑。
 6. 进入 **TARGETS > Project Name > General > Signing** 菜单，选择 **Automatically manage signing**，并在弹出菜单中点击 **Enable Automatic**。
 	
-	![](https://web-cdn.agora.io/docs-files/1568800372550)
+	![](https://web-cdn.agora.io/docs-files/1568803609379)
 </details>
 	
 <a name="IntegrateSDK"></a>
