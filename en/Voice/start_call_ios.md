@@ -37,6 +37,8 @@ Now, let's build a project from scratch. Skip to [Integrate the SDK](#IntegrateS
 4. Choose the storage path of the project and click **Create**.
 5. Connect your iOS device to your computer.
 6. Go to the **TARGETS > Project Name > General > Signing** menu, choose **Automatically manage signing**, and then click **Enable Automatic** on the pop-up window.
+	
+	![](https://web-cdn.agora.io/docs-files/1568801074136)
 </details>
 
 ### <a name="IntegrateSDK"></a>Integrate the SDK
@@ -74,6 +76,14 @@ end
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
 
+ **Before**:
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568801101072)
+ 
+ **After**:
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568801108276)
+ 
 <div class="alert note">If your device runs <b>iOS 9.0</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
 
 
@@ -84,6 +94,14 @@ Add the following permissions in the **info.plist** file for device access accor
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video call.      |
 | Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
+
+**Before**:
+ 
+![](https://web-cdn.agora.io/docs-files/1568801138074)
+ 
+**After**:
+
+![](https://web-cdn.agora.io/docs-files/1568801129112)
 
 ## Implement the basic call
 
