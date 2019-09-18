@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: macOS
-updatedAt: Wed Sep 18 2019 10:16:45 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 10:16:51 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
@@ -113,6 +113,10 @@ platform :macOS, '10.11' use_frameworks!
 - 远端视频窗口
 - 结束通话按钮
 	
+当你使用示例项目中的 UI 设计时，你将会看到如下界面：
+
+![](https://web-cdn.agora.io/docs-files/1568801785611)
+
 ### <a name="ImportClass"></a>2. 导入类
 
 在项目中导入 `AgoraRtcEngineKit` 类：
