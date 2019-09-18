@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: macOS
-updatedAt: Wed Sep 18 2019 10:24:03 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 10:34:07 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for macOS.
@@ -113,7 +113,10 @@ For a video broadcast, we recommend adding the following elements into the UI:
 - The view of the broadcaster
 - The exit button
 
-	
+When you use the UI setting of the demo project, you can see the following interface:
+
+![](https://web-cdn.agora.io/docs-files/1568802207185)
+
 ### <a name="ImportClass"></a>2. Import the class
 
 Import the `AgoraRtcEngineKit` class in your project.
