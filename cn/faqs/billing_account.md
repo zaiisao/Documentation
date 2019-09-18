@@ -3,7 +3,7 @@
 title: 账单、扣费与账户冻结
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 18 2019 19:55:16 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 19:55:40 GMT+0800 (CST)
 ---
 # 账单、扣费与账户冻结
 Agora Dashboard 为开发者提供发布账单与扣费功能。账单发布与扣费时间点如下：
@@ -20,7 +20,7 @@ Agora Dashboard 为开发者提供发布账单与扣费功能。账单发布与�
 
 进入 [Agora Dashboard](https://dashboard.agora.io/)，点击左侧导航栏的**财务消费**图标 ![](https://web-cdn.agora.io/docs-files/1562666103550)进入财务界面。点击**账单列表**，界面上会出现账单详情。你可以在账单详情处查看各账单的**发布时间**、**金额**、**支付状态**等内容。
 
-![](https://web-cdn.agora.io/docs-files/1564453287275)
+![](https://web-cdn.agora.io/docs-files/1568807577137)
 
 ## 扣费
 
