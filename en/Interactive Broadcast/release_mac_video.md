@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Thu Aug 29 2019 06:55:32 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:40:20 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -20,6 +20,63 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 #### Known Issues and Limitations
 
 A USB device driver issue occurs when you do not hear any audio or the audio is corrupted with a USB headset. USB is not user-friendly on macOS, and we recommend using higher quality headsets.
+
+## v2.9.1
+v2.9.1 is released on Sep 19, 2019.
+
+**New features**
+
+#### 1. Detecting local voice activity
+
+This release adds the `report_vad(bool)` parameter to the [`enableAudioVolumeIndication`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:) method to enable local voice activity detection. Once it is enabled, you can check the [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) struct of the [`reportAudioVolumeIndicationOfSpeakers`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:) callback for the voice activity status of the local user.
+
+#### 2. Supporting RGBA raw video data
+
+This release supports RGBA raw video data. Use the C++ method [`getVideoFormatPreference`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a440e2a33140c25dfd047d1b8f7239369) to set the format of the raw video data format.
+
+You can also rotate or mirror the RGBA raw data using the C++ methods [`getRotationApplied`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afd5bb439a9951a83f08d8c0a81468dcb) or [`getMirrorApplied`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afc5cce81bf1c008e9335a0423ca45991) respectively.
+
+**Improvements**
+
+#### 1. Improving the watermark function in Live Broadcasts
+
+This release adds a new [`addVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addVideoWatermark:options:) method with the following settings:
+
+- The `visibleInPreview` member sets whether the watermark is visible in the local preview.
+- The `positionInLandscapeMode`/`positionInPortraitMode` member sets the watermark position when the encoding video is in landscape/portrait mode.
+
+The performance of watermark function is optimized with CPU usage reduced by 5% - 20% compared to the previous version.
+
+The original `addVideoWatermark` method is deprecated.
+
+#### 2. Supporting more audio sample rates for recording
+
+To enable more audio sample rate options for recording, this release adds a new [`startAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz. The original method supports only a fixed sample rate of 32 kHz and is deprecated.
+
+**Fixed issues**
+
+#### Video
+
+The return value of the [`getDeviceInfo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getDeviceInfo:) method did not match the actual available device.
+
+**API changes**
+
+To improve the user experience, we made the following changes in v2.9.1:
+
+#### Added
+
+- [`startAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:)
+- [`addVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/addVideoWatermark:options:)
+- [`getVideoFormatPreference`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a440e2a33140c25dfd047d1b8f7239369)
+- [`getRotationApplied`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afd5bb439a9951a83f08d8c0a81468dcb)
+- [`getMirrorApplied`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afc5cce81bf1c008e9335a0423ca45991)
+- [`enableAudioVolumeIndication`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:), add the `report_vad` parameter
+- The `vad` member in the [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) class
+
+#### Deprecated
+
+- `startAudioRecording`
+- `addVideoWatermark`
 
 ## v2.9.0
 v2.9.0 is released on Aug. 16, 2019.
