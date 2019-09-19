@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Aug 29 2019 06:47:14 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:38:28 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -33,6 +33,71 @@ Android 语音 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **2.9.1 版**
+
+该版本于 2019 年 9 月 19 日发布。新增特性与修复问题详见下文。
+
+**新增特性**
+
+#### 1. 人声检测
+
+为判断本地用户是否说话，该版本在启用说话者音量提示 [enableAudioVolumeIndication](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaec0b8db9458b45d14cdcb3003f76fbe) 方法中新增 bool 型的 `report_vad` 参数。启用该参数后，你会在 `onAudioVolumeIndication` 回调报告的 [AudioVolumeInfo](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_audio_volume_info.html) 结构体中获取本地用户的人声状态。
+
+#### 2. 删除指定事件句柄
+在特定场景下，开发者不想再接收某些事件的回调。该版本新增 [removeHandler](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e807ee4302756e6912a4fd1ed7a0db3) 方法，你可以调用该方法删除不再需要的事件句柄。
+
+**改进**
+
+#### 1. 设置客户端录音采样率
+为方便用户设置客户端录音的采样率，该版本废弃了原有的 `startAudioRecording` 方法，并使用新的同名方法进行取代。新的方法下，录音采样率可设为 16、32、44.1 或 48 kHz。原方法仅支持固定的 32 kHz 采样率，该版本继续保留原方法但我们不推荐使用。
+
+#### 2. 错误码梳理
+为提高用户体验，该版本对各平台的错误码 Error Code 进行了梳理。其中 Java 平台的 ErrorCode 类中，补齐如下错误码：
+
+- `ERR_ALREADY_IN_USE(19)`
+- `ERR_WATERMARK_PATH(125)`
+- `ERR_INVALID_USER_ACCOUNT(134)`
+- `ERR_AUDIO_BT_SCO_FAILED(1030)`
+- `ERR_ADM_NO_RECORDING_DEVICE(1359)`
+- `ERR_VCM_UNKNOWN_ERROR(1600)`
+- `ERR_VCM_ENCODER_INIT_ERROR(1601)`
+- `ERR_VCM_ENCODER_ENCODE_ERROR(1602)`
+- `ERR_VCM_ENCODER_SET_ERROR(1603)`
+
+各错误码的详细描述及排查办法，详见 [Error Codes](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_error_code.html)。
+
+**问题修复**
+
+#### 音频
+
+- 通信模式下，设备连接蓝牙后进行通话。退出通话后使用 YouTube 蓝牙无声。
+- 通信模式下，设备连接蓝牙时，调用 `setEnableSpeakerphone` 方法后行为与预期不符。
+- 加入频道后，语音路由异常。
+- 使用 Push 方式实现视频自采集时，app 崩溃。
+- 偶现音频卡顿。
+- 关掉蓝牙耳机后，音频不走外放，而走听筒。
+- 进入频道后偶现回声。
+- 直播模式下，特定场景偶现杂音。
+
+#### 其他
+
+- OpenSSL 版本过低。
+
+**API 变更**
+
+#### 新增
+
+- [startAudioRecording](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac2ad403a7a75617316673f251615ef92)
+- [removeHandler](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e807ee4302756e6912a4fd1ed7a0db3)
+- [enableAudioVolumeIndication](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaec0b8db9458b45d14cdcb3003f76fbe)，新增 `report_vad` 参数
+- [AudioVolumeInfo](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_audio_volume_info.html) 类，新增 `vad` 成员
+
+#### 废弃
+
+- `startAudioRecording`
+
+
 
 ## **2.9.0 版**
 
