@@ -3,7 +3,7 @@
 title: 技术参数
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 19 2019 01:40:47 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 01:40:52 GMT+0800 (CST)
 ---
 # 技术参数
 ## 平台与规模
@@ -122,56 +122,3 @@ updatedAt: Thu Sep 19 2019 01:40:47 GMT+0800 (CST)
 
 对最新的中高端手机来说，可能会占用 20%+ 的 CPU（与 Skype 在手机上的占用率相近）。但我们可以根据您的需求进行优化。
 
-### 音视频质量的打分依据是什么?
-
-Agora 目前主要从如下维度对音视频质量进行检测：
-
-#### 远端用户音频质量统计
-
-反映远端音频流全链路的音频质量以及传输层网络状态。涉及如下 2 个回调：
-
-1. `onRemoteAudioStats`：侧重反映通话中远端音频流的全链路音频质量，更贴近用户主观感受。主要返回信息：
-
-	- `quality`：音频接收质量打分，主要反映用户的主观感受
-	
-		- 0：网络质量未知
-		- 1：网络质量极好
-		- 2：用户主观感受接近极好，但码率略低
-		- 3：用户主观感受有瑕疵，但不影响沟通
-		- 4：勉强能沟通，但不顺畅
-		- 5：网络质量非常差，基本不能沟通
-
-	- `networkTransportDelay`：网络传输层延时（毫秒）
-	- `jitterBufferDelay`：接收端网络抖动延时（毫秒）
-	- `audioLossRate`：音频丢帧率
-
-2. `onRemoteAudioTransportStats`：侧重反映通话中远端音频流的传输层网络状态，数据更为客观。主要返回信息：
-
-	- `delay`：网络传输层延时（毫秒）
-	- `lost`：传输层音频丢包率（%）
-	- `rxKBitRate`：音频接收码率（Kbps）
-
-#### 远端用户视频质量统计
-
-反映远端视频流全链路的视频质量以及传输层网络状态。涉及如下 2 个回调：
-
-1. `onRemoteVideoStats`：侧重反映通话中远端视频流的全链路音频质量，更贴近用户主观感受。主要返回信息：
-
-	- `receivedBitrate`：接收到的码率（kbps）
-	- `receivedFrameRate`：接收到的帧率（fps）
-	- `rxStreamType`：视频大小流类型
-
-2. `onRemoteVideoTransportStats`：侧重反映通话中远端视频流的传输层网络状态，数据更为客观。主要返回信息：
-
-	- `delay`：网络传输层延时（毫秒）
-	- `lost`：传输层视频包丢包率（%）
-	- `rxKBitRate`：远端视频包的实际接收码率（kbps）
-
-#### 本地用户视频质量统计
-
-反映的是本地视频流的实际发送帧率和实际发送码率。涉及如下回调：
-
-`onLocalVideoStats`：反映当前设备发送视频流的状态。主要返回信息：
-
-- `sentBitrate`：实际发送码率（kbps）
-- `sentFrameRate`：实际发送帧率（fps）
