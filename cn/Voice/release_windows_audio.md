@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Aug 28 2019 07:35:41 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:39:39 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,41 @@ Windows 语音 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
 
 Windows 语音 SDK 支持 X86 和 X64 架构。
+
+## **2.9.1 版**
+该版本于 2019 年 9 月 19 日发布。新增特性与修复问题列表详见下文。
+
+**新增特性**
+
+#### 人声检测
+
+为判断本地用户是否说话，该版本在启用说话者音量提示 [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb) 方法中新增 bool 型的 `report_vad` 参数。启用该参数后，你会在 [`onAudioVolumeIndication`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aab1184a2b276f509870c055a9ff8fac4) 回调报告的 [`AudioVolumeInfo`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) 结构体中获取本地用户的人声状态。
+
+**改进**
+
+#### 设置客户端录音采样率
+
+为方便用户设置客户端录音的采样率，该版本废弃了原有的 `startAudioRecording` 方法，并使用新的同名方法进行取代。新的方法下，录音采样率可设为 16、32、44.1 或 48 kHz。原方法仅支持固定的 32 kHz 采样率，该版本继续保留原方法但我们不推荐使用。
+
+**问题修复**
+
+#### 其他
+
+IAgoraRtcEngine.h 头文件中的拼写错误。
+
+**API 变更**
+
+为提升用户体验，Agora SDK 在该版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [`startAudioRecording`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3c05d82c97a9d63ebda116b9a1e5ca3f)
+- [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb)，新增 `report_vad` 参数
+- [`AudioVolumeInfo`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) 类，新增 `vad` 成员
+
+#### 废弃
+
+- `startAudioRecording`
 
 ## **2.9.0 版**
 
