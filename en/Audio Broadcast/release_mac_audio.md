@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Thu Aug 22 2019 08:40:47 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:36:33 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -14,6 +14,35 @@ The Voice SDK supports the following scenarios:
 - Live voice broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+
+## v2.9.1
+v2.9.1 is released on Sep 19, 2019.
+
+**New features**
+
+#### Detecting local voice activity
+
+This release adds the `report_vad(bool)` parameter to the [`enableAudioVolumeIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:) method to enable local voice activity detection. Once it is enabled, you can check the [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) struct of the [`reportAudioVolumeIndicationOfSpeakers`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:) callback for the voice activity status of the local user.
+
+**Improvements**
+
+#### Supporting more audio sample rates for recording
+
+To enable more audio sample rate options for recording, this release adds a new [`startAudioRecording`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz. The original method supports only a fixed sample rate of 32 kHz and is deprecated.
+
+**API changes**
+
+To improve the user experience, we made the following changes in v2.9.1:
+
+#### Added
+
+- [`startAudioRecording`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:)
+- [`enableAudioVolumeIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:), add the `report_vad` parameter
+- The `vad` member in the [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) class
+
+#### Deprecated
+
+- `startAudioRecording`
 
 ## v2.9.0
 v2.9.0 is released on Aug. 16, 2019.
