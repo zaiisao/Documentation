@@ -3,7 +3,7 @@
 title: Share the screen
 description: 
 platform: macOS
-updatedAt: Wed Jun 12 2019 09:05:50 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 14:17:20 GMT+0800 (CST)
 ---
 # Share the screen
 ## Introduction
@@ -17,7 +17,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/mac_video.md).
+Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_mac.md) or [Start an Interactive Broadcast](../../en/Interactive%20Broadcast/start_live_mac.md).
 
 From v2.4.0, Agora supports the following screen sharing functions on macOS:
 
