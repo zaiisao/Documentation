@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Windows
-updatedAt: Wed Jul 10 2019 06:55:06 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 10:56:49 GMT+0800 (CST)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -15,18 +15,18 @@ updatedAt: Wed Jul 10 2019 06:55:06 GMT+0800 (CST)
 - 在线课堂场景中，屏幕共享可以将老师的课件、笔记、讲课内容等画面展示给学生观看。
 
 ## 实现方法
-在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Video/windows_video.md)。
+在实现屏幕共享前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始音视频通话](../../cn/Video/start_call_windows.md)或[开始互动直播](../../cn/Video/start_live_windows.md)。
 
 Agora 在 v2.4.0 对屏幕共享相关接口进行梳理，目前在 Windows 平台上支持：
-- 通过 screenRect 共享指定屏幕，或指定屏幕的部分区域
-- 通过 windowId 共享指定窗口，或指定窗口的部分区域
+- 通过 `screenRect` 共享指定屏幕，或指定屏幕的部分区域
+- 通过 `windowId` 共享指定窗口，或指定窗口的部分区域
 
 ### 共享指定屏幕
 
-Windows 系统的所有屏幕（display）都画在一整张 virtual screen 上。对用户来说，只有拿到该屏幕在整张 virtual screen 上的相对位置，才能获得该屏幕的画面。通过获取该画面的 screenRect，我们可以按如下步骤在 Windows 平台上实现屏幕共享：
+Windows 系统的所有屏幕（display）都画在一整张 virtual screen 上。对用户来说，只有拿到该屏幕在整张 virtual screen 上的相对位置，才能获得该屏幕的画面。通过获取该画面的 `screenRect`，我们可以按如下步骤在 Windows 平台上实现屏幕共享：
 
-1. 获取想要共享窗口的 screenRect
-```
+1. 获取想要共享窗口的 `screenRect`
+```c++
 bool result = true;
 int index;
 for (index = 0;; index++) {
@@ -52,9 +52,9 @@ for (index = 0;; index++) {
 ```
 > 更多关于 screenRect 的详情，请参考 [Microsoft EnumDisplayDevicesA 说明](https://docs.microsoft.com/en-us/windows/desktop/api/winuser/nf-winuser-enumdisplaydevicesa)。
 
-2. 通过 screenRect 共享屏幕
+2. 通过 `screenRect` 共享屏幕
 
-	```cpp
+	```c++
 	// 指定共享的屏幕或窗口
 	RECT rc;
 	agora::rtc::Rectangle rcCap;
