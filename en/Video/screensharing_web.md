@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Thu Sep 19 2019 10:27:21 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 10:27:25 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -15,7 +15,7 @@ You can use screen sharing in the following scenarios:
 - Video conference: the speaker can share an image of a local file, web page, or presentation with other users in the channel.
 - Online class: the teacher can share slides or notes with students.
 
-## Working principles
+### Working principles
 
 Screen sharing on the web client is enabled by creating a screen-sharing stream.
 
@@ -27,7 +27,7 @@ Screen sharing on the web client is enabled by creating a screen-sharing stream.
 
 ## Implementation
 
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
+Ensure that you [set up the development environment](https://docs.agora.io/en/Video/start_call_web?platform=Web#set-up-the-development-environment).
 
 To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser asks you to select which screens to share. The attribute settings are different in Google Chrome and Firefox.
 
@@ -200,101 +200,116 @@ screenClient.on('stream-added', function(evt) {
 })
 ```
 
-### Sample Code
+### Sample code
+
+The following sample code implements screen sharing and publishing the local video stream. Meanwhile, we provide an open-source GitHub [demo project](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Web-Webpack). You can [try it online](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web) and refer to the code in  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) and [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/index.js) .
+
+<div class="alert note">The following code uses <code>isFirefox</code> and <code>isCompatibleChrome</code> to determine the browser type, and you need to define the functions. See the code in <a href="https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/common.js#L28">common.js</a> for an example.</div>
 
 ```javascript
-var key = “********************************”;
-var channel = “screen_video”;
+//TODO: Fill in your App ID
+var appID = "<yourAppID>";
+var channel = "screen_video";
 var channelKey = null;
 
 AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.INFO);
 
 var localStreams = [];
 
-var screenClient = AgoraRTC.createClient({mode: 'rtc', codec: 'vp8'});
-screenClient.init(key, function() {
-screenClient.join(channelKey, channel, null, function(uid) {
-// Save the uid of the local stream.
-localStreams.push(uid);
-// Create the stream for screen sharing.
-screenStream = AgoraRTC.createStream({
-streamID: uid,
-audio: false, // Set the audio attribute as false to avoid any echo during the call.
-video: false,
-screen: true,
-// Google Chrome:
-extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg',
-// Firefox:
-mediaSource: 'window' // 'screen', 'application', 'window'
+var screenClient = AgoraRTC.createClient({
+    mode: 'rtc',
+    codec: 'vp8'
 });
-// Initialize the stream.
-screenStream.init(function() {
-// Play the stream.
-screenStream.play('Screen');
-// Publish the stream.
-screenClient.publish(screenStream);
+screenClient.init(appID, function() {
+    screenClient.join(channelKey, channel, null, function(uid) {
+        // Save the uid of the local stream.
+        localStreams.push(uid);
+        // Create the stream for screen sharing.
+        const streamSpec = {
+            streamID: uid,
+            audio: false,
+            video: false,
+            screen: true
+          }
+          // Set relevant attributes according to the browser
+          // Note you need to implement isFirefox and isCompatibleChrome
+          if (isFirefox()) {
+            streamSpec.mediaSource = 'window';
+          } else if (!isCompatibleChrome()) {
+            streamSpec.extensionId = 'minllpmhdgpndnkomcoccfekfegnlikg';
+          }
+        screenStream = AgoraRTC.createStream(streamSpec);
+        // Initialize the stream.
+        screenStream.init(function() {
+            // Play the stream.
+            screenStream.play('Screen');
+            // Publish the stream.
+            screenClient.publish(screenStream);
 
-// Listen to the 'stream-added' event.
-screenClient.on('stream-added', function(evt) {
-var stream = evt.stream;
-var uid = stream.getId()
+            // Listen to the 'stream-added' event.
+            screenClient.on('stream-added', function(evt) {
+                var stream = evt.stream;
+                var uid = stream.getId()
 
-// Check if the stream is a local uid.
-if(!localStreams.includes(uid)) {
-  console.log('subscribe stream:' + uid);
-  // Subscribe to the stream.
-  screenClient.subscribe(stream);
-  }
-  })
+                // Check if the stream is a local uid.
+                if (!localStreams.includes(uid)) {
+                    console.log('subscribe stream:' + uid);
+                    // Subscribe to the stream.
+                    screenClient.subscribe(stream);
+                }
+            })
 
-}, function (err) {
-  console.log(err);
+        }, function(err) {
+            console.log(err);
+        });
+
+    }, function(err) {
+        console.log(err);
+    })
 });
 
-}, function (err) {
-  console.log(err);
-})
+var videoClient = AgoraRTC.createClient({
+    mode: 'rtc',
+    codec: 'vp8'
 });
+videoClient.init(appID, function() {
+    videoClient.join(channelKey, channel, null, function(uid) {
+        // Save the uid of the local stream.
+        localStreams.push(uid);
 
-var videoClient = AgoraRTC.createClient({mode: 'rtc', codec: 'vp8'});
-videoClient.init(key, function() {
-videoClient.join(channelKey, channel, null, function(uid) {
-// Save the uid of the local stream.
-localStreams.push(uid);
+        // Create the video stream.
+        videoStream = AgoraRTC.createStream({
+            streamID: uid,
+            audio: true,
+            video: true,
+            screen: false
+        });
+        return;
 
-// Create the video stream.
-videoStream = AgoraRTC.createStream({
-streamID: uid,
-audio: true,
-video: true,
-screen: false
-});
-return;
+        // Initialize the stream.
+        videoStream.init(function() {
+            // Play the stream.
+            videoStream.play('Video');
+            // Publish the stream.
+            videoClient.publish(videoStream);
+            // Listen to the 'stream-added' event.
+            videoClient.on('stream-added', function(evt) {
+                var stream = evt.stream;
+                var uid = stream.getId();
+                // Check if the stream is a local uid.
+                if (!localStreams.includes(uid)) {
+                    console.log('subscribe stream:' + uid);
+                    // Subscribe to the stream.
+                    screenClient.subscribe(stream);
+                }
+            })
+        }, function(err) {
+            console.log(err);
+        });
 
-// Initialize the stream.
-videoStream.init(function() {
-// Play the stream.
-videoStream.play('Video');
-// Publish the stream.
-videoClient.publish(videoStream);
-// Listen to the 'stream-added' event.
-videoClient.on('stream-added', function(evt){
-var stream = evt.stream;
-var uid = stream.getId();
-// Check if the stream is a local uid.
-if(!localStreams.includes(uid)) {
-console.log('subscribe stream:' + uid);
-// Subscribe to the stream.
-screenClient.subscribe(stream);
-}
-})
-}, function (err) {
-  console.log(err);
-  });
-
-  }, function (err) {
-  console.log(err);
-  })
+    }, function(err) {
+        console.log(err);
+    })
 });
 ```
 
@@ -304,4 +319,3 @@ screenClient.subscribe(stream);
 - **Do not subscribe to a locally published screen-sharing stream**, else additional charges incur.
 - Ensure that `video`/`audio` is set as `false` when creating the screen-sharing stream.
 - Sharing the window of a QQ chat on Windows causes the black screen.
-
