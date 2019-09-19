@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Sep 19 2019 03:30:31 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:36:51 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -33,6 +33,92 @@ Android 视频 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **2.9.1 版**
+
+该版本于 2019 年 9 月 19 日发布。新增特性与修复问题详见下文。
+
+**新增特性**
+
+#### 1. 人声检测
+
+为判断本地用户是否说话，该版本在启用说话者音量提示 [enableAudioVolumeIndication](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaec0b8db9458b45d14cdcb3003f76fbe) 方法中新增 bool 型的 `report_vad` 参数。启用该参数后，你会在 `onAudioVolumeIndication` 回调报告的 [AudioVolumeInfo](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_audio_volume_info.html) 结构体中获取本地用户的人声状态。
+
+#### 2. 摄像头采集方向
+为方便用户在加入频道前选择使用前置或后置摄像头进行采集，该版本在 [CameraCapturerConfiguration](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_camera_capturer_configuration.html) 类中新增 [cameraDirection](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_camera_capturer_configuration.html#a9d3182d0003faf617125a4f9b1a12d54) 成员变量。你可以通过 `CAMERA_FRONT(1)` 或 `CAMERA_REAR(0)` 选择使用前置或后置摄像头。
+
+#### 3. RGBA 视频原始数据
+该版本新增支持 RGBA 格式的视频原始数据。你可以通过新增的 C++ 接口 [getVideoFormatPreference](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a440e2a33140c25dfd047d1b8f7239369)，设置想要获取的视频原始数据的格式。
+
+同时为提高开发体验，Agora 支持对 RGBA 格式的视频原始数据分别通过 C++ 接口 [getRotationApplied](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afd5bb439a9951a83f08d8c0a81468dcb) 和 [getMirrorApplied](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afc5cce81bf1c008e9335a0423ca45991) 接口进行旋转和镜像处理。
+
+#### 4. 删除指定事件句柄
+在特定场景下，开发者不想再接收某些事件的回调。该版本新增 [removeHandler](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e807ee4302756e6912a4fd1ed7a0db3) 方法，你可以调用该方法删除不再需要的事件句柄。
+
+**改进**
+
+#### 1. 直播水印
+为提高直播水印的用户体验，解决视频方向模式为 ADAPTIVE 时，水印位置和方向可能和预期不符的问题，该版本废弃了原有的 `addVideoWatermark` 接口，并使用一个新的同名接口进行取代。同名接口下，Agora 使用 [WatermarkOptions](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_watermark_options.html) 类对水印进行设置，其中：
+
+- `visibleInPreview` 成员设置本地预览是否能看见水印。
+- `positionInLandscapeMode`/`positionInPortraitMode` 成员设置视频编码横屏/竖屏模式时的水印坐标。
+
+同时，该版本对水印功能的性能进行了优化。和之前版本相比，该功能的 CPU 占用降低了 5% - 20%。
+
+#### 2. 设置客户端录音采样率
+为方便用户设置客户端录音的采样率，该版本废弃了原有的 `startAudioRecording` 方法，并使用新的同名方法进行取代。新的方法下，录音采样率可设为 16、32、44.1 或 48 kHz。原方法仅支持固定的 32 kHz 采样率，该版本继续保留原方法但我们不推荐使用。
+
+#### 3. 错误码梳理
+为提高用户体验，该版本对各平台的错误码 Error Code 进行了梳理。其中 Java 平台的 ErrorCode 类中，补齐如下错误码：
+
+- `ERR_ALREADY_IN_USE(19)`
+- `ERR_WATERMARK_PATH(125)`
+- `ERR_INVALID_USER_ACCOUNT(134)`
+- `ERR_AUDIO_BT_SCO_FAILED(1030)`
+- `ERR_ADM_NO_RECORDING_DEVICE(1359)`
+- `ERR_VCM_UNKNOWN_ERROR(1600)`
+- `ERR_VCM_ENCODER_INIT_ERROR(1601)`
+- `ERR_VCM_ENCODER_ENCODE_ERROR(1602)`
+- `ERR_VCM_ENCODER_SET_ERROR(1603)`
+
+各错误码的详细描述及排查办法，详见 [Error Codes](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_error_code.html)。
+
+**问题修复**
+
+#### 音频
+
+- 通信模式下，设备连接蓝牙后进行通话。退出通话后使用 YouTube 蓝牙无声。
+- 通信模式下，设备连接蓝牙时，调用 `setEnableSpeakerphone` 方法后行为与预期不符。
+- 加入频道后，语音路由异常。
+- 使用 Push 方式实现视频自采集时，app 崩溃。
+- 偶现音频卡顿。
+- 关掉蓝牙耳机后，音频不走外放，而走听筒。
+- 进入频道后偶现回声。
+- 直播模式下，特定场景偶现杂音。
+
+#### 其他
+
+- OpenSSL 版本过低。
+
+**API 变更**
+
+#### 新增
+
+- [startAudioRecording](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac2ad403a7a75617316673f251615ef92)
+- [addVideoWatermark](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a63d94cda85b76e77b9016bbdac04a32d)
+- [getVideoFormatPreference](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a440e2a33140c25dfd047d1b8f7239369)
+- [getRotationApplied](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afd5bb439a9951a83f08d8c0a81468dcb)
+- [getMirrorApplied](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afc5cce81bf1c008e9335a0423ca45991)
+- [removeHandler](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e807ee4302756e6912a4fd1ed7a0db3)
+- [enableAudioVolumeIndication](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaec0b8db9458b45d14cdcb3003f76fbe)，新增 `report_vad` 参数
+- [AudioVolumeInfo](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_audio_volume_info.html) 类，新增 `vad` 成员
+- [CameraCapturerConfiguration](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_camera_capturer_configuration.html) 类，新增 `cameraDirection` 成员
+
+#### 废弃
+
+- `startAudioRecording`
+- `addVideoWatermark`
+
 
 ## **2.9.0 版**
 
