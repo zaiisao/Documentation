@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Thu Aug 22 2019 08:45:24 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:39:29 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -17,6 +17,41 @@ macOS 语音 SDK 支持两种主要场景:
 -   音频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
+
+## **2.9.1 版**
+该版本于 2019 年 9 月 19 日发布。新增特性与修复问题列表详见下文。
+
+**新增特性**
+
+#### 人声检测
+
+为判断本地用户是否说话，该版本在启用说话者音量提示 [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:) 方法中新增 bool 型的 `report_vad` 参数。启用该参数后，你会在 [`reportAudioVolumeIndicationOfSpeakers`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:) 回调报告的 [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) 结构体中获取本地用户的人声状态。
+
+**改进**
+
+#### 设置客户端录音采样率
+
+为方便用户设置客户端录音的采样率，该版本废弃了原有的 `startAudioRecording` 方法，并使用新的同名方法进行取代。新的方法下，录音采样率可设为 16、32、44.1 或 48 kHz。原方法仅支持固定的 32 kHz 采样率，该版本继续保留原方法但我们不推荐使用。
+
+**问题修复**
+
+#### 视频
+
+修复了 [`getDeviceInfo`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getDeviceInfo:) 返回值与实际可用设备不符的问题。
+
+**API 变更**
+
+为提升用户体验，Agora SDK 在该版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [`startAudioRecording`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:)
+- [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:)，新增 `report_vad` 参数
+- [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) 类，新增 `vad` 成员
+
+#### 废弃
+
+- `startAudioRecording`
 
 ## **2.9.0 版**
 该版本于 2019 年 8 月 16 日发布。新增特性与修复问题列表详见下文。
