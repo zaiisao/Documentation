@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Thu Sep 19 2019 10:11:03 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 10:11:07 GMT+0800 (CST)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -214,7 +214,7 @@ var screenClient = AgoraRTC.createClient({
     mode: 'rtc',
     codec: 'vp8'
 });
-screenClient.init(key, function() {
+screenClient.init(appID, function() {
     screenClient.join(channelKey, channel, null, function(uid) {
         // 保存本地流的uid
         localStreams.push(uid);
@@ -266,7 +266,7 @@ var videoClient = AgoraRTC.createClient({
     mode: 'rtc',
     codec: 'vp8'
 });
-videoClient.init(key, function() {
+videoClient.init(appID, function() {
     videoClient.join(channelKey, channel, null, function(uid) {
         // 保存本地流的uid
         localStreams.push(uid);
