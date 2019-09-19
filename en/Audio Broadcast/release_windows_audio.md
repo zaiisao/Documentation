@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Aug 22 2019 08:43:26 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:36:38 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -16,6 +16,41 @@ The Voice SDK supports the following scenarios:
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
 
 The Windows Voice SDK supports the X86 and  X64 architecture.
+
+## v2.9.1
+v2.9.1 is released on Sep 19, 2019.
+
+**New features**
+
+#### Detecting local voice activity
+
+This release adds the `report_vad(bool)` parameter to the [`enableAudioVolumeIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb) method to enable local voice activity detection. Once it is enabled, you can check the [`AudioVolumeInfo`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) struct of the [`onAudioVolumeIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aab1184a2b276f509870c055a9ff8fac4) callback for the voice activity status of the local user.
+
+**Improvements**
+
+#### Supporting more audio sample rates for recording
+
+To enable more audio sample rate options for recording, this release adds a new [`startAudioRecording`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3c05d82c97a9d63ebda116b9a1e5ca3f) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz. The original method supports only a fixed sample rate of 32 kHz and is deprecated.
+
+**Fixed issues**
+
+#### Miscellaneous
+
+A misspell in the IAgoraRtcEngine.h file.
+
+**API changes**
+
+To improve the user experience, we made the following changes in v2.9.1:
+
+#### Added
+
+- [`startAudioRecording`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3c05d82c97a9d63ebda116b9a1e5ca3f)
+- [`enableAudioVolumeIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb), add the `report_vad` parameter
+- The `vad` member in the [`AudioVolumeInfo`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) class
+
+#### Deprecated
+
+- `startAudioRecording`
 
 ## v2.9.0
 
