@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Thu Aug 29 2019 06:49:39 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:39:21 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -16,6 +16,48 @@ iOS 语音 SDK 支持两种主要场景:
 -   语音直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms) 了解关键特性。
+
+## **2.9.1 版**
+该版本于 2019 年 9 月 19 日发布。新增特性与修复问题列表详见下文。
+
+**新增特性**
+
+#### 人声检测
+
+为判断本地用户是否说话，该版本在启用说话者音量提示 [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:) 方法中新增 bool 型的 `report_vad` 参数。启用该参数后，你会在 [`reportAudioVolumeIndicationOfSpeakers`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:) 回调报告的 [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) 结构体中获取本地用户的人声状态。
+
+**改进**
+
+#### 设置客户端录音采样率
+
+为方便用户设置客户端录音的采样率，该版本废弃了原有的 `startAudioRecording` 方法，并使用新的同名方法进行取代。新的方法下，录音采样率可设为 16、32、44.1 或 48 kHz。原方法仅支持固定的 32 kHz 采样率，该版本继续保留原方法但我们不推荐使用。
+
+**问题修复**
+
+#### 音频
+
+- 偶现音频卡顿。
+- 通话被第三方应用打断后，用户再回到频道时，音频异常。
+- 进入频道后偶现回声。
+
+#### 其他
+
+- 修复了用户调用 [`joinChannelByUserAccount`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:) 接口，在未成功加入频道前，进行切换网络操作，导致此后无法正常正常收到 [`didUpdatedUserInfo`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:) 回调。
+- 旁路推流串流。
+
+**API 变更**
+
+为提升用户体验，Agora SDK 在该版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [`startAudioRecording`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:)
+- [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:)，新增 `report_vad` 参数
+- [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) 类，新增 `vad` 成员
+
+#### 废弃
+
+- `startAudioRecording`
 
 ## **2.9.0 版**
 该版本于 2019 年 8 月 16 日发布。新增特性与修复问题列表详见下文。
