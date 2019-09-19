@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Thu Aug 29 2019 06:46:31 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:40:04 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,61 @@ Windows 视频 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及[视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 Windows 视频 SDK 支持 X86 和 X64 架构。
+
+## **2.9.1 版**
+该版本于 2019 年 9 月 19 日发布。新增特性与修复问题列表详见下文。
+
+**新增特性**
+
+#### 1. 人声检测
+
+为判断本地用户是否说话，该版本在启用说话者音量提示 [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb) 方法中新增 bool 型的 `report_vad` 参数。启用该参数后，你会在 [`onAudioVolumeIndication`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aab1184a2b276f509870c055a9ff8fac4) 回调报告的 [`AudioVolumeInfo`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) 结构体中获取本地用户的人声状态。
+
+#### 2. RGBA 视频原始数据
+
+该版本新增支持 RGBA 格式的视频原始数据。你可以通过新增的 C++ 接口 [`getVideoFormatPreference`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a440e2a33140c25dfd047d1b8f7239369)，设置想要获取的视频原始数据的格式。
+
+同时为提高开发体验，Agora 支持对 RGBA 格式的视频原始数据分别通过 C++ 接口 [`getRotationApplied`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afd5bb439a9951a83f08d8c0a81468dcb) 和 [`getMirrorApplied`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afc5cce81bf1c008e9335a0423ca45991) 进行旋转和镜像处理。
+
+**改进**
+
+#### 1. 直播水印
+
+为提高直播水印的用户体验，解决视频方向模式为 `Adaptive` 时，水印位置和方向可能和预期不符的问题，该版本废弃了原有的 `addVideoWatermark` 接口，并使用一个新的同名接口进行取代。同名接口下，Agora 使用 [`WatermarkOptions`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_watermark_options.html) 类对水印进行设置，其中：
+
+- `visibleInPreview` 成员设置本地预览是否能看见水印。
+- `positionInLandscapeMode`/`positionInPortraitMode` 成员设置视频编码横屏/竖屏模式时的水印坐标。
+
+同时，该版本对水印功能的性能进行了优化。和之前版本相比，该功能的 CPU 占用降低了 5% - 20%。
+
+#### 2. 设置客户端录音采样率
+
+为方便用户设置客户端录音的采样率，该版本废弃了原有的 `startAudioRecording` 方法，并使用新的同名方法进行取代。新的方法下，录音采样率可设为 16、32、44.1 或 48 kHz。原方法仅支持固定的 32 kHz 采样率，该版本继续保留原方法但我们不推荐使用。
+
+**问题修复**
+
+#### 其他
+
+IAgoraRtcEngine.h 头文件中的拼写错误。
+
+**API 变更**
+
+为提升用户体验，Agora SDK 在该版本中对 API 进行了如下变动：
+
+#### 新增
+
+- [`startAudioRecording`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3c05d82c97a9d63ebda116b9a1e5ca3f)
+- [`addVideoWatermark`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a36e51346ec3bd5a7370d7c70d58d9394)
+- [`getVideoFormatPreference`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a440e2a33140c25dfd047d1b8f7239369)
+- [`getRotationApplied`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afd5bb439a9951a83f08d8c0a81468dcb)
+- [`getMirrorApplied`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afc5cce81bf1c008e9335a0423ca45991)
+- [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb)，新增 `report_vad` 参数
+- [`AudioVolumeInfo`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) 类，新增 `vad` 成员
+
+#### 废弃
+
+- `startAudioRecording`
+- `addVideoWatermark`
 
 ## **2.9.0 版**
 
