@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Wed Jul 10 2019 06:55:25 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 10:58:37 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -17,7 +17,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md).
+Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Video/start_call_windows.md) or [Start an Interactive Broadcast](../../en/Video/start_live_windows.md).
 
 From v2.4.0, Agora supports the following screen sharing functions on Windows:
 
@@ -30,7 +30,7 @@ Windows lays all its displays on a virtual screen. Developers need to get the re
 
 1. Get the screen rect for screen sharing.
 
-	```
+	```c++
 	bool result = true;
 	int index;
 	for (index = 0;; index++) {
@@ -59,7 +59,7 @@ Windows lays all its displays on a virtual screen. Developers need to get the re
 
 2. Share the screen by specifying the screen rect.
 
-	```cpp
+	```c++
 	// Specifies the screen or window.
 	RECT rc;
 	agora::rtc::Rectangle rcCap;
@@ -91,14 +91,13 @@ Windows lays all its displays on a virtual screen. Developers need to get the re
 	m_lpAgoraEngine->stopScreenCapture();
 	```
 
-
 ### Share the whole or part of a window by specifying windowId
 
 Windows assigns a unique window identifier (windowId) for each window with a data type of HWND. To achieve compatibility with the x86 and x64 operating systems, it is in the format of view_t. With this window ID, we can implement window sharing on Windows with the following steps:
 
 1. Get the window ID for window sharing.
 
-	```
+	```c++
 	BOOL CALLBACK EnumProc(HWND hWnd, LPARAM IParam)
 	{
 			// Gets the windowId of the visible window. Popup and menu window is excludes.
@@ -116,7 +115,7 @@ Windows assigns a unique window identifier (windowId) for each window with a dat
 
 2. Share the window by specifying the window ID.
 
-	```cpp
+	```c++
 	// Specifies the screen or window.
 	RECT rc;
 	agora::rtc::Rectangle rcCap;
