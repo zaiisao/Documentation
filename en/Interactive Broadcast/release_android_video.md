@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Aug 29 2019 06:54:29 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 09:38:45 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -32,6 +32,93 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v2.9.1
+
+v2.9.1 is released on Sep 19, 2019.
+
+**New features**
+
+#### 1. Detecting local voice activity
+This release adds the `report_vad`(bool) parameter to the [enableAudioVolumeIndication](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaec0b8db9458b45d14cdcb3003f76fbe) method to enable local voice activity detection. Once it is enabled, you can check the [AudioVolumeInfo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_audio_volume_info.html) struct of the `onAudioVolumeIndication` callback for the voice activity status of the local user.
+
+#### 2. Choosing front and rear cameras
+Users can select the front or rear camera before joining a channel. This release adds the [cameraDirection](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_camera_capturer_configuration.html#a9d3182d0003faf617125a4f9b1a12d54) member variable to the [CameraCapturerConfiguration](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_camera_capturer_configuration.html) class to accomplish this. Choose the front or rear camera by selecting `CAMERA_FRONT (1)` or `CAMERA_REAR (0)` respectively.
+
+#### 3. Supporting RGBA raw video data
+This release supports RGBA raw video data. Use the C++ method [getVideoFormatPreference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a440e2a33140c25dfd047d1b8f7239369) to set the format of the raw video data format.
+
+You can also rotate or mirror the RGBA raw data using the C++ methods [getRotationApplied](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afd5bb439a9951a83f08d8c0a81468dcb) or [getMirrorApplied](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afc5cce81bf1c008e9335a0423ca45991) methods respectively.
+
+#### 4. Removing the event handler
+This release adds the [removeHandler](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e807ee4302756e6912a4fd1ed7a0db3) method to remove specified IRtcEngineEventHandler objects when you want to stop listening for specific events.
+
+**Improvements**
+
+#### 1. Improving the watermark function in Live Broadcasts
+This release adds a new [addVideoWatermark](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a63d94cda85b76e77b9016bbdac04a32d) method with the following settings:
+
+- The `visiblePreview` member sets whether the watermark is visible in the local preview.
+- The `positionInLandscapeMode`/`positionInPortraitMode` member sets the watermark position when the encoding video is in landscape/portrait mode.
+
+The performance of watermark function is optimized with CPU usage reduced by 5% - 20% compared to the previous version.
+
+The original `addVideoWatermark` method is deprecated.
+
+#### 2. Supporting more audio sample rates for recording
+To enable more audio sample rate options for recording, this release adds a new [startAudioRecording](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac2ad403a7a75617316673f251615ef92) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz. The original method supports only a fixed sample rate of 32 kHz and is deprecated.
+
+#### 3. Adding error codes
+
+This release adds the following error codes in the ErrorCode class:
+
+- `ERR_ALREADY_IN_USE(19)`
+- `ERR_WATERMARK_PATH(125)`
+- `ERR_INVALID_USER_ACCOUNT(134)`
+- `ERR_AUDIO_BT_SCO_FAILED(1030)`
+- `ERR_ADM_NO_RECORDING_DEVICE(1359)`
+- `ERR_VCM_UNKNOWN_ERROR(1600)`
+- `ERR_VCM_ENCODER_INIT_ERROR(1601)`
+- `ERR_VCM_ENCODER_ENCODE_ERROR(1602)`
+- `ERR_VCM_ENCODER_SET_ERROR(1603)`
+
+For detailed descriptions for each error, see [Error Codes](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_error_code.html).
+
+**Fixed issues**
+
+#### Audio
+- A user made a call after connecting to a Bluetooth device. After the call ended, the user watched YouTube and could not hear any sound.
+- The audio route was different from the settings in the `setEnableSpeakerphone` method when Bluetooth was connected in the Communication profile.
+- Exceptions occurred in the audio route when the user was in the channel.
+- The app crashed when using external audio sources in the push mode. 
+- Audio froze.
+- After turning off the Bluetooth headset, the audio route became the earpiece instead of the loudspeaker.
+- Echos occurred when the user was in the channel.
+- Occasional noise occurred in the Live Broadcast profile.
+
+#### Miscellaneous
+
+- The OpenSSL version was outdated.
+
+**API Changes**
+
+#### Added
+
+- [startAudioRecording](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac2ad403a7a75617316673f251615ef92)
+- [addVideoWatermark](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a63d94cda85b76e77b9016bbdac04a32d)
+- [getVideoFormatPreference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a440e2a33140c25dfd047d1b8f7239369)
+- [getRotationApplied](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afd5bb439a9951a83f08d8c0a81468dcb)
+- [getMirrorApplied](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#afc5cce81bf1c008e9335a0423ca45991)
+- [removeHandler](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e807ee4302756e6912a4fd1ed7a0db3)
+- The `report_vad` parameter in [enableAudioVolumeIndication](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaec0b8db9458b45d14cdcb3003f76fbe)
+- The `vad` member in [AudioVolumeInfo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_audio_volume_info.html) 
+- The `cameraDirection` member in [CameraCapturerConfiguration](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_camera_capturer_configuration.html) 
+
+#### Deprecated
+
+- `startAudioRecording`
+- `addVideoWatermark`
+
 
 ## v2.9.0
 
