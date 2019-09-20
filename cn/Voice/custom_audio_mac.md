@@ -1,11 +1,11 @@
 
 ---
-title: 客户端自定义采集
+title: 自定义音频采集和渲染
 description: 
 platform: macOS
-updatedAt: Wed Jul 17 2019 09:31:56 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:31:45 GMT+0800 (CST)
 ---
-# 客户端自定义采集
+# 自定义音频采集和渲染
 ## 功能介绍
 
 实时通信过程中，Agora SDK 通常会启动默认的音频模块进行采集和渲染。如果想要在客户端实现自定义音频采集和渲染，则可以使用自定义的音频源或渲染器，来进行实现。
