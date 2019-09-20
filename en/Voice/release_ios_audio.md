@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Sep 20 2019 02:19:35 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 02:19:39 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -32,7 +32,7 @@ This release adds the `report_vad(bool)` parameter to the [`enableAudioVolumeInd
 
 To enable more audio sample rate options for recording, this release adds a new [`startAudioRecording`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz. The original method supports only a fixed sample rate of 32 kHz and is deprecated.
 
-**Issues fixed **
+**Issues fixed**
 
 #### Audio
 
