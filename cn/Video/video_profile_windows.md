@@ -3,7 +3,7 @@
 title: 设置视频编码
 description: 
 platform: Windows
-updatedAt: Fri Sep 20 2019 04:08:12 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 06:56:47 GMT+0800 (CST)
 ---
 # 设置视频编码
 ## 功能简介
@@ -22,7 +22,7 @@ Agora SDK 通过 `setVideoEncoderConfiguration` 方法来设置视频相关的�
 
 参考下图在你的项目中设置视频属性：
 
-![](https://web-cdn.agora.io/docs-files/1568872936953)
+![](https://web-cdn.agora.io/docs-files/1568962602173)
 
 你也可以根据实际场景需要，在合适的时机调用 `setVideoEncoderConfiguration` 方法：
 
