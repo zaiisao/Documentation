@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set the high-quality audio for iOS and macOS
 platform: iOS
-updatedAt: Fri Aug 16 2019 08:11:28 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:56:07 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
