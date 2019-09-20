@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 07:09:26 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 07:09:30 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -89,7 +89,7 @@ Follow the API call sequence to implent your code logic:
 
 We provide an open-source Cross-Channel-OpenLive-Android demo project that implements string user accounts on Github. You can try the demo and view the source code in the [CrossChannelDialog.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Cross-Channel/Cross-Channel-OpenLive-Android/app/src/main/java/io/agora/openlive/ui/CrossChannelDialog.java) file.
 
-### API Reference
+### API reference
 
 - [`startChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6f09ba685f8ab01d7dc06173286950f6)
 - [`updateChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#abd40d706379d27cf617376a504f394bd)
