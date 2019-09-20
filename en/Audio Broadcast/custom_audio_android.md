@@ -1,11 +1,11 @@
 
 ---
-title: Customize the Audio Source
+title: Custom Audio Source and Sink
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 08:36:26 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:29:38 GMT+0800 (CST)
 ---
-# Customize the Audio Source
+# Custom Audio Source and Sink
 ## Introduction
 
 By default, the Agora SDK uses default audio and video modules for capturing and rendering in real-time communications. 
@@ -17,7 +17,7 @@ However, the default modules might not meet your development requirements, such 
 - You need to process the captured video with a pre-processing library for functions such as image enhancement.
 - You need flexible device resource allocation to avoid conflicts with other services.
 
-The Agora SDK supports customizing the audio and video source and sink.
+This article tells you how to use the Agora SDK to customize the audio source and sink.
 
 ## Implementation
 
