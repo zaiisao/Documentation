@@ -3,10 +3,10 @@
 title: 跨直播间连麦
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 06:35:42 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 06:36:34 GMT+0800 (CST)
 ---
 # 跨直播间连麦
-## 场景描述
+## 功能描述
 跨直播间连麦，指主播的媒体流可以同时转发进多个直播频道，实现主播跨频道与其他主播实时互动的场景。其中：
 
 - 频道中的所有主播可以看见彼此，并听到彼此的声音。
@@ -16,7 +16,7 @@ updatedAt: Fri Sep 20 2019 06:35:42 GMT+0800 (CST)
 
 ## 实现方法
 
-请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Audio%20Broadcast/android_video.md)。
+实现跨频道连麦功能前，请确保你已在项目中实现基本的实时音视频功能，详见[开始互动直播](../../cn/Audio%20Broadcast/start_live_android.md)。
 
 Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支持将源频道中的媒体流转发至最多 4 个目标频道，实现跨直播间连麦功能：
 
@@ -41,9 +41,9 @@ Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支�
 
 参考如下 API 时序图实现相关代码逻辑：
 
-![](https://web-cdn.agora.io/docs-files/1565771343016)
+![](https://web-cdn.agora.io/docs-files/1568961337521)
 
-### 示例代码片段
+### 示例代码
 
 - 开始跨频道媒体流转发
 
@@ -84,7 +84,9 @@ Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支�
 	```
 
 **Note**：
-`updateChannelMediaRelay` 方法需在 `startChannelMediaRelay` 后调用。
+<div class="alert note"><code>updateChannelMediaRelay</code> 方法需在 <code>startChannelMediaRelay</code> 后调用。</div>
+
+同时，我们在 Github 提供一个开源的 Cross-Channel-OpenLive-Android 示例项目，你可以前往下载，或参考 [CrossChannelDialog.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Cross-Channel/Cross-Channel-OpenLive-Android/app/src/main/java/io/agora/openlive/ui/CrossChannelDialog.java) 文件中的源代码。
 
 ### API 参考
 
