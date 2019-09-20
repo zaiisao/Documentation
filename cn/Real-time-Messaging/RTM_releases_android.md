@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 07:34:50 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 07:34:54 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -65,9 +65,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 - 查询某指定频道的全部属性。
 - 查询某指定频道指定属性名的属性。
 
-在进行频道属性的更新或删除操作时，你可以通过设置标志位 [setEnableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_channel_attribute_options.html#a2f240727791b3ad1af97f4a399ce1579) 决定是否通知对应频道所有成员本次频道属性变更。
 
-> SDK 会缓存频道属性。如果存在多个用户有修改频道属性的权限，那么我们建议在修改频道属性前先通过调用 [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6) 方法更新本地频道属性缓存。
 
 ### 性能改进
 
