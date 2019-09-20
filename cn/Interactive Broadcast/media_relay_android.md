@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 06:36:34 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 07:07:18 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -83,7 +83,6 @@ Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支�
 	int result = worker().getRtcEngine().updateChannelMediaRelay(mediaRelayConfiguration);
 	```
 
-**Note**：
 <div class="alert note"><code>updateChannelMediaRelay</code> 方法需在 <code>startChannelMediaRelay</code> 后调用。</div>
 
 同时，我们在 Github 提供一个开源的 Cross-Channel-OpenLive-Android 示例项目，你可以前往下载，或参考 [CrossChannelDialog.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Cross-Channel/Cross-Channel-OpenLive-Android/app/src/main/java/io/agora/openlive/ui/CrossChannelDialog.java) 文件中的源代码。
