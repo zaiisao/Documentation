@@ -3,7 +3,7 @@
 title: 代理商控制台概览
 description: 
 platform: All Platforms
-updatedAt: Fri Sep 20 2019 09:17:17 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:23:35 GMT+0800 (CST)
 ---
 # 代理商控制台概览
 欢迎使用 Agora Reseller Console。Agora Reseller Console 提供直观的界面，方便你对公司进行查看、管理等操作。本指南简要介绍如何使用 Agora Reseller Console。
@@ -12,24 +12,24 @@ updatedAt: Fri Sep 20 2019 09:17:17 GMT+0800 (CST)
 
 ### 创建新账号
 
-使用 Agora Reseller Console 前，你需要联系 Agora 销售 sales@agora.io 或通过[提交工单](https://confluence.agoralab.co/pages/createpage.action?spaceKey=TEKP&title=提交工单&linkCreation=true&fromPageId=647374502)(https://dashboard.agora.io/support)申请一个 Agora Reseller Console 账号。请务必保存好你的账号和密码。
+使用 Agora Reseller Console 前，你需要联系 Agora 销售 sales@agora.io 或通过[提交工单](https://dashboard.agora.io/support)申请一个 Agora Reseller Console 账号。请务必保存好你的账号和密码。
 
-成功创建账号后，你可以登录 [Agora Reseller Console](https://confluence.agoralab.co/pages/createpage.action?spaceKey=TEKP&title=Agora+Reseller+Console&linkCreation=true&fromPageId=647374502)([https://reseller.agora.io](https://reseller.agora.io/))，创建公司并查看其用量。
+成功创建账号后，你可以登录 [Agora Reseller Console](https://reseller.agora.io/)，创建公司并查看其用量。
 
 ### 修改账户设置和密码
 
-1. 登录 [Agora Reseller Console](https://confluence.agoralab.co/pages/createpage.action?spaceKey=TEKP&title=Agora+Reseller+Console&linkCreation=true&fromPageId=647374502)([https://reseller.agora.io](https://reseller.agora.io/))，点击顶部导航栏右侧账号名，在其下拉菜单中点击**设置**，进入账号设置页面。
-   ![Tech pubs > Reseller 使用说明 > 设置.png](https://confluence.agoralab.co/download/attachments/647374502/%E8%AE%BE%E7%BD%AE.png?version=1&modificationDate=1568698285759&api=v2)
+1. 登录 [Agora Reseller Console](https://reseller.agora.io/)，点击顶部导航栏右侧账号名，在其下拉菜单中点击**设置**，进入账号设置页面。
+ 
 2. 你可以查看用户信息、修改界面语言和密码。
-   ![Tech pubs > Reseller 使用说明 > 设置-2.png](https://confluence.agoralab.co/download/attachments/647374502/%E8%AE%BE%E7%BD%AE-2.png?version=1&modificationDate=1568698312906&api=v2)
+
 
 ### 找回密码
 
 如果你忘记了密码，可通过以下方式找回密码：
 
-1. 进入[登录页面](https://docs.agora.io/cn/Agora%20Platform/[https://reseller.agora.io](https://reseller.agora.io/))。
+1. 进入[登录页面](https://reseller.agora.io/)。
 2. 点击**忘记密码**。（需中文的忘记密码截图）
-   ![Tech pubs > Reseller 使用说明 > 找回密码.png](https://confluence.agoralab.co/download/attachments/647374502/%E6%89%BE%E5%9B%9E%E5%AF%86%E7%A0%81.png?version=1&modificationDate=1568698584950&api=v2)
+
 3. 填写注册时使用的邮箱地址。Agora 会向你的邮箱发送一封密码重置邮件。
 4. 登录你的邮箱，根据邮件中的指引重置密码。
 
@@ -39,7 +39,7 @@ updatedAt: Fri Sep 20 2019 09:17:17 GMT+0800 (CST)
 
 创建公司的步骤如下：
 
-1. 登录 [Agora Reseller Console](https://confluence.agoralab.co/pages/createpage.action?spaceKey=TEKP&title=Agora+Reseller+Console&linkCreation=true&fromPageId=647374502)([https://reseller.agora.io](https://reseller.agora.io/))，在左侧导航栏中点击**账号>公司，**找到**注册链接**，复制并打开该链接。通过该链接创建的公司会自动归属于该代理商账号。
+1. 登录 [Agora Reseller Console](https://reseller.agora.io/)，在左侧导航栏中点击**账号>公司，**找到**注册链接**，复制并打开该链接。通过该链接创建的公司会自动归属于该代理商账号。
 
 2. 根据界面提示创建公司，即[创建新 Dashboard 账号](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up?platform=All%20Platforms#创建新账号)。若你需创建的公司已有 Dashboard 账号，联系 Agora 销售 sales@agora.io 创建并提供该公司名称。
 3. 成功创建公司后，你可以对该公司进行管理。
@@ -85,7 +85,7 @@ updatedAt: Fri Sep 20 2019 09:17:17 GMT+0800 (CST)
 
 ### 查看用量
 
-登录 [Agora Reseller Console](https://confluence.agoralab.co/pages/createpage.action?spaceKey=TEKP&title=Agora+Reseller+Console&linkCreation=true&fromPageId=647374502)([https://reseller.agora.io](https://reseller.agora.io/))，在左侧导航栏中点击**用量>图表**，你可以进行以下操作：
+登录 [Agora Reseller Console](https://reseller.agora.io/)，在左侧导航栏中点击**用量>图表**，你可以进行以下操作：
 
 - 选择图表横坐标间隔（每日或每月）及查询时段。
 - 输入公司名查询目标公司的用量。若不输入公司名，则用量图表中显示的是所有公司的用量总和。
@@ -99,7 +99,7 @@ updatedAt: Fri Sep 20 2019 09:17:17 GMT+0800 (CST)
 
 ### 下载用量
 
-1. 登录 [Agora Reseller Console](https://confluence.agoralab.co/pages/createpage.action?spaceKey=TEKP&title=Agora+Reseller+Console&linkCreation=true&fromPageId=647374502)([https://reseller.agora.io](https://reseller.agora.io/))，在左侧导航栏中点击**用量>****下载**。
+1. 登录 [Agora Reseller Console](https://reseller.agora.io/)，在左侧导航栏中点击**用量>****下载**。
 
 2. 选择按日或按月下载，及下载时段。
 
