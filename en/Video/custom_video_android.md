@@ -3,23 +3,25 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 09:54:20 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:54:33 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
 
-By default, an app uses the internal audio and video modules for capturing and rendering during real-time communication. You can use an external audio or video source and renderer. This page shows how to use the methods provided by Agora SDK to customize the audio and video source and renderer.
+By default, the Agora SDK uses default audio and video modules for capturing and rendering in real-time communications. 
 
-**Customizing the audio and video source and renderer** mainly applies to the following scenarios:
+However, the default modules might not meet your development requirements, such as in the following scenarios:
 
-* When the audio or video source captured by the internal modules do not meet your needs. For example, you need to process the captured video frame with a preprocessing library for image enhancement.
-* When an app has its own audio or video module and uses a customized source for code reuse.
-* When you want to use a non-camera source, such as recorded screen data.
-* When you need flexible device resource allocation to avoid conflicts with other services.
+- Your app has its own audio or video module.
+- You want to use a non-camera source, such as recorded screen data.
+- You need to process the captured video with a pre-processing library for functions such as image enhancement.
+- You need flexible device resource allocation to avoid conflicts with other services.
+
+This article tells you how to use the Agora SDK to customize the video source and renderer.
 
 ## Implementation
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/android_video.md).
+Before customizing the video source or renderer, ensure that you hava implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Video/start_call_android.md) or [Start a Live Broadcast](../../en/Video/start_live_android.md).
 
 ### Customize the Audio Source
 
