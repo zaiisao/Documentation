@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 06:51:04 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 07:09:26 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
