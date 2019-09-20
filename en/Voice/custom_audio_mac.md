@@ -3,7 +3,7 @@
 title: Custom Audio Source and Sink
 description: 
 platform: macOS
-updatedAt: Fri Sep 20 2019 09:33:15 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:33:19 GMT+0800 (CST)
 ---
 # Custom Audio Source and Sink
 ## Introduction
