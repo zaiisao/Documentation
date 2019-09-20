@@ -3,57 +3,97 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 09:27:31 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:27:35 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
 
-实时通信过程中，Agora SDK 通常会启动默认的音视频模块进行采集和渲染。如果想要在客户端实现自定义音视频采集和渲染，则可以使用自定义的音视频源或渲染器，来进行实现。
+实时音视频传输过程中，Agora SDK 通常会启动默认的音视频模块进行采集和渲染。在以下场景中，你可能会发现默认的音视频模块无法满足开发需求：
 
-**自定义采集和渲染**主要适用于以下场景：
+- app 中已有自己的音频或视频模块
+- 希望使用非 Camera 采集的视频源，如录屏数据
+- 需要使用自定义的美颜库有或前处理库
+- 某些视频采集设备被系统独占。为避免与其它业务产生冲突，需要灵活的设备管理策略
 
-* 当 SDK 内置的音视频源不能满足开发者需求时，比如需要使用自定义的美颜库或前处理库
-* 开发者的 App 中已有自己的音频或视频模块，为了复用代码，也可以自定义音视频源
-* 开发者希望使用非 Camera 采集的视频源，如录屏数据
-* 有些系统独占的视频采集设备，为避免与其他业务产生冲突，需要灵活的设备管理策略
-
+基于此，Agora SDK 支持使用自定义的音视频源或渲染器，实现相关场景。本文介绍如何实现自定义视频采集和渲染。
 
 ## 实现方法
 
-在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Video/android_video.md)。
+开始自定义采集和渲染前，请确保你已在项目中实现基本的通话或者直播功能，详见[一对一通话](../../cn/Video/start_call_android.md)或[互动直播](../../cn/Video/start_live_android.md)。
 
-### 自定义音频源
+### 自定义视频采集
 
-你可以使用 Push 方法自定义音频源。该方法下，SDK 默认不会对采集传入的音频数据做消噪等处理。如有音频消噪需求，需要开发者自行实现。
+Agora SDK 目前提供 Push 方式和 MediaIO 两种方式实现自定义的视频源。其中：
+
+- Push 方式下，SDK 默认不会对采集传入的音频数据做消噪等处理。如有音频消噪需求，需要开发者自行实现。
+- MediaIO 方式下，自定义视频源可以搭配自定义渲染器使用，实现更为丰富的场景。
+
+#### Push 方式
+
+参考如下步骤，在你的项目中使用 Push 方式实现自定义视频源功能：
+
+1. 在 `joinChannel` 前通过调用 `setExternalVideoSource` 指定外部视频采集设备
+2. 指定外部采集设备后，开发者自行管理视频数据采集和处理
+3. 完成视频数据处理后，再通过 `pushExternalVideoFrame` 发送给 SDK 进行后续操作。
+
+**API 时序图**
+
+参考下图时序在你的项目中自定义视频采集。
+
+![](https://web-cdn.agora.io/docs-files/1568970076015)
+
+**示例代码**
+
+参考下文代码在你的项目中自定义视频采集。
 
 ```java
-// 首先开启外部音频源模式
-rtcEngine.setExternalAudioSource(
-	true,      // 开启外部音频源
-	44100,     // 采样率，可以有8k，16k，32k，44.1k和48kHz等模式
-	1          // 外部音源的通道数，最多2个
+// 首先通知 SDK 现在开始使用外部视频源
+rtcEngine.setExternalVideoSource(
+    true，      // 是否使用外部视频源
+    false,       // 是否使用 Texture作为输出
+    true         // true 为使用推送模式，false 为拉取模式，但目前不支持
 );
-
-// 持续的输出音频数据
-rtcEngine.pushExternalAudioFrame(
-	data,             // byte[] 类型的音频数据
-	timestamp         // 时间戳
-);
+ 
+// 在获得视频数据的时候调用 Push 方法将数据传送出去
+rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
+    // 在构造方法传入帧数据的参数，比如格式，宽高等
+    // 具体的请查看 AgoraVideoFrame 类的说明
+));
 ```
 
-#### API 参考
-* [`pushExternalAudioFrame`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e219a679d066cfc2544b5e8f9d4d69f)
+同时，我们在 Github 提供一个开源的 [Agora-Video-Source-Android](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-Android) 示例项目。你可以前往下载，或参考 [VideoChatViewActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-Android/app/src/main/java/io/agora/tutorials/customizedvideosource/VideoChatViewActivity.java) 文件中的源代码。
 
-### 自定义视频源
+**API 参考**
 
-Agora SDK 目前提供两种自定义视频源的方法：
+- [`isTextureEncodeSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a60c16364ab588a38f5155d9c94eaf800)
+- [`setExternalVideoSource`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2d9966c52798ab62ed941fa865e926cd)
+- [`pushExternalVideoFrame`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6e7327f4449800a2c2ddc200eb2c0386)
 
-* 通过 MediaIO 中的 IVideoSource 接口实现。该类接口可以搭配自定义渲染器使用，实现更为丰富的场景
-* 通过 Push 方法实现。该方法使用简单，功能也较为单一
+#### MediaIO 方式
 
-#### 使用 MediaIO 接口自定义视频源
+Agora 通过 MediaIO 提供 `IVideoSource` 接口和 `IVideoFrameConsumer` 类，你可以通过该类设置采集的视频数据格式，并控制外部视频的采集过程。
 
-你可以使用 MediaIO 中的 IVideoSource 接口实现自定义视频源。该方法将视频帧数据传输到 SDK，如需本地预览，还需要应用开发者自己处理本地渲染逻辑。示例代码如下：
+参考如下步骤，在你的项目中使用 MediaIO 方式实现自定义视频源功能：
+
+1. 实现 `IVideoSource` 类。Agora 通过 `IVideoSource` 类下的各回调设置视频数据格式，并控制采集过程：
+	- 收到 `getBufferType` 回调后，在该回调的返回值中指定想要采集的视频数据格式
+	- 收到 `onInitialize` 回调后，保存该回调中的 `IVideoFrameConsumer` 对象。Agora 通过 `IVideoFrameConsumer` 对象发送和接收自定义的视频数据。
+	- 收到 `onStart` 回调后，通过 `IVideoFrameConsumer` 对象向 SDK 发送视频帧
+	- 收到 `onStop` 回调后，停止使用 `IVideoFrameConsumer` 对象向 SDK 发送视频帧
+	- 收到 `onDispose` 回调后，释放 `IVideoFrameConsumer` 对象
+2. 继承实现的 `IVideoSource` 类，构建一个自定义的视频源对象
+3. 调用 `setVideoSource` 方法，将自定义的视频源对象设置给 RtcEngine。
+4. 根据场景需要，调用 `startPreview`、`joinChannel` 等方法预览或发送自定义采集的视频数据
+
+**API 时序图**
+
+参考下图时序使用 MediaIO 在你的项目中实现自定义视频采集。
+
+![](https://web-cdn.agora.io/docs-files/1568970684954)
+
+**示例代码**
+
+参考下文代码使用 MediaIO 在你的项目中实现自定义视频采集。
 
 ```java
 IVideoFrameConsumer mConsumer;
@@ -103,39 +143,42 @@ if (mHasStarted && mConsumer != null) {
 }
 ```
 
-##### API 参考
+同时，我们在 Github 提供一个开源的 [Custom-Media-Device-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) 示例项目。你可以前往下载，或参考 [ViewSharingCapturer.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-Android/app/src/main/java/io/agora/rtc/mediaio/app/shareScreen/source/ViewSharingCapturer.java) 文件中的源代码。
+
+
+**API 参考**
 
 * [`setVideoSource`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa240e991d12b5240fc5fd362cbc0d521)
-* [`IVideoSource`](https://docs.agora.io/cn/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_source.html)
+* [`IVideoSource`](https://docs.agora.io/cn/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_source.html) 类
+* [`IVideoFrameConsumer`](https://docs.agora.io/cn/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_frame_consumer.html) 类
 
-#### 使用 Push 方法自定义视频源
+**相关文档**
 
-相对于 MedioIO 接口，Push 方法代码较少，但缺少 SDK 对帧的优化过程，需要用户对自己采集到的视频数据进行处理。
+你也可以选择自己管理视频设备的生命周期，只是根据 Media Engine 的回调来打开和关闭视频帧的输入开关。对于开发者 App 之前已有自己的采集模块，需要集成 Agora SDK 以获得实时通信能力的使用场景下，这种方式更简单。详见 [使用 Agora SDK 提供的组件自定义视频源](../../cn/Video/custom_advanced_android.md) 中的描述。
 
-```java
-// java
-// 首先通知SDK现在开始使用外部视频源
-rtcEngine.setExternalVideoSource(
-	true，      // 是否使用外部视频源
-	false,       // 是否使用 Texture作为输出
-	true         // true 为使用推送模式，false 为拉取模式，但目前不支持
-);
+### 自定义视频渲染器
 
-// 在获得视频数据的时候调用 Push 方法将数据传送出去
-rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
-	// 在构造方法传入帧数据的参数，比如格式，宽高等
-	// 具体的请查看 AgoraVideoFrame 类的说明
-));
-```
+通过 MediaIO 采集到的视频数据，还可以搭配 Agora 的 `IVideoSink` 接口使用，实现自定义渲染功能。
 
-##### API 参考
-* [`pushExternalVideoFrame`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6e7327f4449800a2c2ddc200eb2c0386)
+参考如下步骤，在你的项目中使用 MediaIO 方式实现自定义渲染器功能：
 
-开发者也可以选择自己管理视频设备的生命周期，只是根据 Media Engine 的回调来打开和关闭视频帧的输入开关。对于开发者 App 之前已有自己的采集模块，需要集成 Agora SDK 以获得实时通信能力的使用场景下，这种方式更简单。详见 [使用 Agora SDK 提供的组件自定义视频源](../../cn/Video/custom_advanced_android.md) 中的描述。
+1. 实现 `IVideoSink` 类。Agora 通过 `IVideoSink` 类下的各回调设置视频数据格式，并控制渲染过程：
+	- 收到 `getBufferType` 和 `getPixelFormat` 回调后，在对应回调的返回值中设置你想要渲染的数据类型
+	- 根据收到的 `onInitialize`、`onStart`、`onStop`、`onDispose`、`getEglContextHandle` 回调，控制视频数据的渲染过程
+	- 实现一个对应渲染数据类型的 `IVideoFrameConsumer` 对象，以获取视频数据
+2. 继承实现的 `IVideoSink 类`，构建一个自定义的渲染器
+3. 调用 `setLocalVideoRenderer` 或 `setRemoteVideoRenderer`，用于本地渲染或远端渲染
+4. 根据场景需要，调用 `startPreview`、`joinChannel` 等方法预览或发送自定义渲染的视频数据
 
-### 自定义渲染器
+**API 调用时序**
 
-你可以使用 MediaIO 中的 IVideoSink 接口来自定义渲染器。示例代码如下：
+参考下图时序使用 MediaIO 在你的项目中实现自定义视频渲染。
+
+![](https://web-cdn.agora.io/docs-files/1568971321212)
+
+**示例代码**
+
+参考下文代码使用 MediaIO 在你的项目中实现自定义视频渲染。
 
 ```java
 IVideoSink sink = new IVideoSink() {
@@ -180,30 +223,50 @@ IVideoSink sink = new IVideoSink() {
 		return PixelFormat.NV21;
 	}
 	
-	// SDK 调用该方法将获取到的视频帧传给渲染器
-	@Override
-	public void consumeByteArrayFrame(byte[] data, int format, int width, int height, int rotation, long timestamp) {
-  
-	// 渲染器在此进行渲染
-	}
+   // SDK 调用该方法将获取到的视频帧传给渲染器
+   // 根据获取到的视频帧的格式，选择相应的回调
+   @Override
+   public void consumeByteArrayFrame(byte[] data, int format, int width, int height, int rotation, long timestamp) {
+     
+   // 渲染器在此渲染
+   }
+   public void consumeByteBufferFrame(ByteBuffer buffer, int format, int width, int height, int rotation, long timestamp) {
+ 
+ 
+   // 渲染器在此渲染
+   }
+   public void consumeTextureFrame(int textureId, int format, int width, int height, int rotation, long timestamp, float[] matrix) {
+     
+   // 渲染器在此渲染
+   }
 
 }
 
 rtcEngine.setLocalVideoRenderer(sink);
 ```
 
-####  API 参考
+同时，我们在 Github 提供一个开源的 [Custom-Media-Device-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) 示例项目。你可以前往下载，或参考 [PrivateTextureHelper.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-Android/app/src/main/java/io/agora/rtc/mediaio/app/videoSource/source/PrivateTextureHelper.java) 文件中的源代码。
+
+**API 参考**
+
 * [`setLocalVideoRenderer`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab10fd6d8dd89a5bca09b115ecd9e3416)
 * [`setRemoteVideoRenderer`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0da32c040cb9d987df2950b83459ba56)
-* [`IVideoSink`](https://docs.agora.io/cn/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_sink.html)
+* [`IVideoSink`](https://docs.agora.io/cn/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_sink.html) 类
+* [`IVideoFrameConsumer`](https://docs.agora.io/cn/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_frame_consumer.html) 类
 
+**相关文档**
 
 为了方便开发者集成和创建自定义的视频渲染器，Agora 也提供了一些辅助类和示例代码；开发者也可以直接使用这些组件，或者利用这些组件构建自定义的渲染器，详见下文的 [使用 Agora SDK 提供的组件自定义渲染器](../../cn/Video/custom_advanced_android.md) 。
-
-Agora 目前提供自定义视频源及渲染器的示例程序，请前往 Github 下载 [Agora Custom Media Device](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) 并体验。
 
 
 ## 开发注意事项
 
-客户端自定义采集和渲染属于较复杂的功能，开发者自身需要具备音视频相关知识，能够自己独立开发完成采集与渲染。
+自定义视频采集和渲染场景中，需要开发者具有采集或渲染视频的能力：
+
+- 自定义视频采集场景中，你需要自行管理视频数据的采集和处理。
+- 自定义视频渲染场景中，你需要自定管理视频数据的处理和显示。
+
+## 相关文档
+
+如果你还想在项目中实现自定义的音频采集和渲染功能，请参考文档[自定义音频采集和渲染](../../cn/Video/custom_audio_android.md)。
 
