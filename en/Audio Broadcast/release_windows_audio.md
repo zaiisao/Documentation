@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Sep 19 2019 09:36:38 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 02:18:47 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
