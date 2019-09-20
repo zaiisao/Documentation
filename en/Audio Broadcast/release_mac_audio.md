@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Fri Sep 20 2019 02:17:44 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 02:17:48 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -37,7 +37,7 @@ To improve the user experience, we made the following changes in v2.9.1:
 #### Added
 
 - [`startAudioRecording`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:)
-- [`enableAudioVolumeIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:), add the `report_vad` parameter
+- The `report_vad` parameter in the [`enableAudioVolumeIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:) method
 - The `vad` member in the [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) class
 
 #### Deprecated
