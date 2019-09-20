@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 02:07:34 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 02:07:37 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -72,11 +72,11 @@ For detailed descriptions for each error, see [Error Codes](https://docs.agora.i
 #### Audio
 - A user makes a call after connecting to a Bluetooth device. After the call ends, the user watches YouTube and cannot hear any sound.
 - The audio route is different from the settings in the `setEnableSpeakerphone` method when Bluetooth is connected in the Communication profile.
-- Exceptions occur in the audio route when the user is in the channel.
+- Exceptions occur in the audio route when a user is in the channel.
 - The app crashes when using external audio sources in the push mode. 
 - Audio freezes.
 - After turning off the Bluetooth headset, the audio route becomes the earpiece instead of the loudspeaker.
-- Echos occur when the user is in the channel.
+- Echos occur when a user is in the channel.
 - Occasional noise occurs in the Live Broadcast profile.
 
 #### Miscellaneous
