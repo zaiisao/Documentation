@@ -3,7 +3,7 @@
 title: 自定义音频采集和渲染
 description: 
 platform: macOS
-updatedAt: Fri Sep 20 2019 09:31:45 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:31:50 GMT+0800 (CST)
 ---
 # 自定义音频采集和渲染
 ## 功能介绍
