@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Sep 19 2019 09:38:45 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 02:07:06 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -61,7 +61,7 @@ This release adds a new [addVideoWatermark](https://docs.agora.io/en/Interactive
 - The `visiblePreview` member sets whether the watermark is visible in the local preview.
 - The `positionInLandscapeMode`/`positionInPortraitMode` member sets the watermark position when the encoding video is in landscape/portrait mode.
 
-The performance of watermark function is optimized with CPU usage reduced by 5% - 20% compared to the previous version.
+This release optimizes the watermark function, reducing the CPU usage by 5% to 20%.
 
 The original `addVideoWatermark` method is deprecated.
 
@@ -84,21 +84,21 @@ This release adds the following error codes in the ErrorCode class:
 
 For detailed descriptions for each error, see [Error Codes](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_error_code.html).
 
-**Fixed issues**
+**Issues fixed**
 
 #### Audio
-- A user made a call after connecting to a Bluetooth device. After the call ended, the user watched YouTube and could not hear any sound.
-- The audio route was different from the settings in the `setEnableSpeakerphone` method when Bluetooth was connected in the Communication profile.
-- Exceptions occurred in the audio route when the user was in the channel.
-- The app crashed when using external audio sources in the push mode. 
-- Audio froze.
-- After turning off the Bluetooth headset, the audio route became the earpiece instead of the loudspeaker.
-- Echos occurred when the user was in the channel.
-- Occasional noise occurred in the Live Broadcast profile.
+- A user makes a call after connecting to a Bluetooth device. After the call ends, the user watches YouTube and cannot hear any sound.
+- The audio route is different from the settings in the `setEnableSpeakerphone` method when Bluetooth is connected in the Communication profile.
+- Exceptions occur in the audio route when a user is in the channel.
+- The app crashes when using external audio sources in the push mode. 
+- Audio freezes.
+- After turning off the Bluetooth headset, the audio route becomes the earpiece instead of the loudspeaker.
+- Echos occur when a user is in the channel.
+- Occasional noise occurs in the Live Broadcast profile.
 
 #### Miscellaneous
 
-- The OpenSSL version was outdated.
+- The OpenSSL version is outdated.
 
 **API Changes**
 
