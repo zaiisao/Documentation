@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set the audio profile on Android
 platform: Android
-updatedAt: Fri Aug 16 2019 08:11:42 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 04:33:34 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
