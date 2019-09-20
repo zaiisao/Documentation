@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 18 2019 02:33:25 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 07:35:28 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -67,7 +67,6 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 在进行频道属性的更新或删除操作时，你可以通过设置标志位 [enableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannelAttributeOptions.html#//api/name/enableNotificationToChannelMembers) 决定是否通知对应频道所有成员本次频道属性变更。
 
-> SDK 会缓存频道属性。如果存在多个用户有修改频道属性的权限，那么我们建议在修改频道属性前先通过调用 [getChannelAllAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAllAttributes:completion:) 方法更新本地频道属性缓存。
 
 ### 性能改进
 
