@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Windows
-updatedAt: Fri Sep 20 2019 07:08:47 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 07:09:02 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -16,7 +16,7 @@ Co-hosting across channels applies to scenarios such as online singing contests,
 
 ## Implementation
 
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
+Before relaying media streams across channels, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
 
 The Agora Native SDK and later support co-hosting across channels with the following methods:
 
@@ -42,9 +42,9 @@ During the relay, the SDK reports the states and events of the channel media rel
 
 Follow the API call sequence to implent your code logic:
 
-![](https://web-cdn.agora.io/docs-files/1565771343016)
+![](https://web-cdn.agora.io/docs-files/1568963288150)
 
-### Code snippets
+### Sample code
 
 ```C++
 ChannelMediaInfo *lpSrcinfo = new ChannelMediaInfo;
@@ -83,10 +83,9 @@ cmrc.destCount = 1;
 ret = m_lpAgoraEngine->startChannelMediaRelay(cmrc);	
 ```
 
-**Note**:
-After calling the `startChannelMediaRelay` method, you can call the `updateChannelMediaRelay` method to add or delete the relay channels.
+<div class="alert note">After calling the `startChannelMediaRelay` method, you can call the `updateChannelMediaRelay` method to add or delete the relay channels.</div>
 
-### API Reference
+### API reference
 
 - [`startChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acb72f911830a6fdb77e0816d7b41dd5c)
 - [`updateChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#afad0d3f3861c770200a884b855276663)
