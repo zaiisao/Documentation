@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Sep 20 2019 02:18:47 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 02:18:53 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -32,11 +32,11 @@ This release adds the `report_vad(bool)` parameter to the [`enableAudioVolumeInd
 
 To enable more audio sample rate options for recording, this release adds a new [`startAudioRecording`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3c05d82c97a9d63ebda116b9a1e5ca3f) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz. The original method supports only a fixed sample rate of 32 kHz and is deprecated.
 
-**Fixed issues**
+**Issues fixed**
 
 #### Miscellaneous
 
-A misspell in the IAgoraRtcEngine.h file.
+A typo in the IAgoraRtcEngine.h file.
 
 **API changes**
 
@@ -45,7 +45,7 @@ To improve the user experience, we made the following changes in v2.9.1:
 #### Added
 
 - [`startAudioRecording`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3c05d82c97a9d63ebda116b9a1e5ca3f)
-- [`enableAudioVolumeIndication`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb), add the `report_vad` parameter
+- The `report_vad` parameter in the [`enableAudioVolumeIndication`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb) method
 - The `vad` member in the [`AudioVolumeInfo`](https://docs.agora.io/en/Voice/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) class
 
 #### Deprecated
