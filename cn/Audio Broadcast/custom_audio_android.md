@@ -1,11 +1,11 @@
 
 ---
-title: 客户端自定义采集
+title: 自定义音频采集和渲染
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 08:40:16 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:30:42 GMT+0800 (CST)
 ---
-# 客户端自定义采集
+# 自定义音频采集和渲染
 ## 功能介绍
 
 实时音视频传输过程中，Agora SDK 通常会启动默认的音视频模块进行采集和渲染。在以下场景中，你可能会发现默认的音视频模块无法满足开发需求：
