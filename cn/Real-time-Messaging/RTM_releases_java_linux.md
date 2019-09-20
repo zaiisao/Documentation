@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux Java
-updatedAt: Tue Sep 17 2019 12:34:16 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 12:25:03 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
