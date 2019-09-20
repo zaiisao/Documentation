@@ -3,7 +3,7 @@
 title: 客户端自定义采集
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 08:13:12 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 08:40:16 GMT+0800 (CST)
 ---
 # 客户端自定义采集
 ## 功能介绍
