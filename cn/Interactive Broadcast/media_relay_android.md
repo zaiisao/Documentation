@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Android
-updatedAt: Fri Aug 16 2019 09:44:47 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 06:33:38 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 场景描述
