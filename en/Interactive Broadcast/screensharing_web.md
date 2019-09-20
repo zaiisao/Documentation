@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Sep 20 2019 02:51:04 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 02:51:08 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -27,7 +27,7 @@ Screen sharing on the web client is enabled by creating a screen-sharing stream.
 
 ## Implementation
 
-Ensure that you [set up the development environment](https://docs.agora.io/en/Video/start_call_web?platform=Web#set-up-the-development-environment).
+Ensure that you understand how to [start a call](../../en/Interactive%20Broadcast/start_call_web.md) or [start a live broadcast](../../en/Interactive%20Broadcast/start_live_web.md).
 
 To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser asks you to select which screens to share. The attribute settings are different in Google Chrome and Firefox.
 
