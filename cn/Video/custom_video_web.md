@@ -1,11 +1,11 @@
 
 ---
-title: 客户端自定义采集和渲染
+title: 自定义视频采集和渲染
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Wed Jul 17 2019 09:09:58 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:35:39 GMT+0800 (CST)
 ---
-# 客户端自定义采集和渲染
+# 自定义视频采集和渲染
 ## 功能介绍
 
 实时通信过程中，Agora Web SDK 通常会启动浏览器默认的音视频模块进行采集和渲染。如果想要实现自定义音视频采集和渲染，则可以使用自定义的音视频源或渲染器，来进行实现。
