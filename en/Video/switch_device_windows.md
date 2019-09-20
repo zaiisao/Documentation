@@ -8,7 +8,7 @@ updatedAt: Wed Jul 17 2019 04:23:09 GMT+0800 (CST)
 # Test or Select a Media Device
 ## Introduction
 
-To ensure smooth communication, we recommend conducting a media device test before joining a channel to check whether the microphone or camera works properly. This function applies to scenarios that have high-quality requirements, such as online education.
+To ensure smooth communications, we recommend conducting a media device test before joining a channel to check whether the microphone or camera works properly. This function applies to scenarios that have high-quality requirements, such as online education.
 
 ## Implementation
 

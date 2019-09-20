@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: iOS
-updatedAt: Fri Dec 07 2018 19:58:30 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 08:59:36 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -16,7 +16,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md).
+Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start an Interactive Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md).
 
 Screen sharing on iOS is implemented with the following steps:
 
@@ -24,7 +24,7 @@ Screen sharing on iOS is implemented with the following steps:
 - Record the screen with Apple ReplayKit.
 - Use the Agora SDK to transfer the video stream.
 
-```
+```swift
 // swift
 override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBufferType: RPSampleBufferType) {
         DispatchQueue.main.async {
@@ -64,4 +64,4 @@ override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBuf
 }
 ```
 
-You can refer to the [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-iOS) sample code to implement screen sharing on iOS.
+We also provide an open-source demo project that implements [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-iOS) on Github. You can try the demo and view the source code.

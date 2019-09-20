@@ -3,7 +3,7 @@
 title: Use String User Accounts
 description: 
 platform: Web
-updatedAt: Wed Sep 18 2019 03:26:21 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 06:44:07 GMT+0800 (CST)
 ---
 # Use String User Accounts
 ## Introduction
@@ -24,7 +24,7 @@ The `uid` parameter in the `Client.join` method can be set as either a number or
 
 The following diagram shows how to join a channel with a string user account:
 
-![](https://web-cdn.agora.io/docs-files/1568715365070)
+![](https://web-cdn.agora.io/docs-files/1568875442230)
 
 ### Sample code
 
