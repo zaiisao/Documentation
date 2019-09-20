@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set audio profile for mac
 platform: macOS
-updatedAt: Fri Sep 20 2019 06:13:44 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 08:26:50 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
