@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 06:50:45 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 06:51:04 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -17,7 +17,7 @@ Co-hosting across channels applies to scenarios such as online singing contests,
 
 ## Implementation
 
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
+Before relaying media streams across channels, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_android.md).
 
 The Agora Native SDK and later support co-hosting across channels with the following methods:
 
@@ -43,9 +43,9 @@ During the relay, the SDK reports the states and events of the channel media rel
 
 Follow the API call sequence to implent your code logic:
 
-![](https://web-cdn.agora.io/docs-files/1565771343016)
+![](https://web-cdn.agora.io/docs-files/1568962085119)
 
-### Code snippets
+### Sample code
 
 - Starts the channel media relay:
 
@@ -85,8 +85,9 @@ Follow the API call sequence to implent your code logic:
 	int result = worker().getRtcEngine().updateChannelMediaRelay(mediaRelayConfiguration);
 	```
 
-**Note**:
-After calling the `startChannelMediaRelay` method, you can call the `updateChannelMediaRelay` method to add or delete the relay channels.
+<div class="alert note">After calling the <code>startChannelMediaRelay</code> method, you can call the <code>updateChannelMediaRelay</code> method to add or delete the relay channels.</div>
+
+We provide an open-source Cross-Channel-OpenLive-Android demo project that implements string user accounts on Github. You can try the demo and view the source code in the [CrossChannelDialog.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Cross-Channel/Cross-Channel-OpenLive-Android/app/src/main/java/io/agora/openlive/ui/CrossChannelDialog.java) file.
 
 ### API Reference
 
