@@ -3,7 +3,7 @@
 title: 自定义音频采集和渲染
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 09:30:42 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:30:46 GMT+0800 (CST)
 ---
 # 自定义音频采集和渲染
 ## 功能介绍
