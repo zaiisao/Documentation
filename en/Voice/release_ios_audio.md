@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Sep 20 2019 02:17:01 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 02:17:09 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -32,18 +32,18 @@ This release adds the `report_vad(bool)` parameter to the [`enableAudioVolumeInd
 
 To enable more audio sample rate options for recording, this release adds a new [`startAudioRecording`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz. The original method supports only a fixed sample rate of 32 kHz and is deprecated.
 
-**Fixed issues**
+**Issues fixed **
 
 #### Audio
 
-- Audio froze.
-- Abnormal audio when a user went back to the channel after a third-party app interrupted the call.
-- Echos occurred when the user was in the channel.
+- Audio freezes.
+- Abnormal audio when a user rejoins the channel after a third-party app interrupts the call.
+- Echoes occur when a user is in a channel.
 
 #### Miscellaneous
 
-- A user called the [`joinChannelByUserAccount`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:) method, and switched the network connection before joining the channel. After the user joined the channel, the remote user could not receive the [`didUpdatedUserInfo`](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:) callback.
-- Mixing streams occurred in RTMP streaming.
+- The remote users do not receive the [`didUpdatedUserInfo`](https://docs.agora.io/en/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didUpdatedUserInfo:withUid:) callback when the local user switches the network connection before joining the channel and calls the [`joinChannelByUserAccount`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:) method.
+- Mixing streams occur in RTMP streaming.
 
 **API changes**
 
@@ -52,7 +52,7 @@ To improve the user experience, we made the following changes in v2.9.1:
 #### Added
 
 - [`startAudioRecording`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioRecording:sampleRate:quality:)
-- [`enableAudioVolumeIndication`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:), add the `report_vad` parameter
+- The `report_vad` parameter in the [`enableAudioVolumeIndication`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableAudioVolumeIndication:smooth:report_vad:) method
 - The `vad` member in the [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) class
 
 #### Deprecated
