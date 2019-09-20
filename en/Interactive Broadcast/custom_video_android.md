@@ -1,11 +1,11 @@
 
 ---
-title: Customize the Audio/Video Source and Renderer
+title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Thu Jun 13 2019 08:56:46 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:36:29 GMT+0800 (CST)
 ---
-# Customize the Audio/Video Source and Renderer
+# Custom Video Source and Renderer
 ## Introduction
 
 By default, an app uses the internal audio and video modules for capturing and rendering during real-time communication. You can use an external audio or video source and renderer. This page shows how to use the methods provided by Agora SDK to customize the audio and video source and renderer.
