@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on web
 platform: Web
-updatedAt: Sat Dec 29 2018 07:29:04 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 03:30:43 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
