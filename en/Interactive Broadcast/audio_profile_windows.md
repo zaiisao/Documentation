@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Windows
 platform: Windows
-updatedAt: Fri Aug 16 2019 08:11:04 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 10:27:17 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
