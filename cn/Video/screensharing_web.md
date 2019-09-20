@@ -3,7 +3,7 @@
 title: 进行屏幕共享
 description: 
 platform: Web
-updatedAt: Fri Sep 20 2019 02:49:28 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 02:49:32 GMT+0800 (CST)
 ---
 # 进行屏幕共享
 ## 功能简介
@@ -25,7 +25,7 @@ Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现�
 
 ## 实现方法
 
-在开始屏幕共享前，请确保你已完成[设置开发环境](https://docs.agora.io/cn/Video/start_call_web?platform=Web#设置开发环境)。
+在开始屏幕共享前，请确保你已了解如何[实现音视频通话](../../cn/Video/start_call_web.md)或[实现互动直播](../../cn/Video/start_live_web.md)。
 
 开始屏幕共享前，你需要在创建流的时候配置某些属性。Chrome 和 Firefox 浏览器在创建流的时候，相关的属性是不同的。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕信息。
 
