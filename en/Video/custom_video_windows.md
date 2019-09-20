@@ -1,11 +1,11 @@
 
 ---
-title: Customize Audio/Video Source and Renderer
+title: Custom Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Fri Apr 26 2019 08:21:21 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 09:37:29 GMT+0800 (CST)
 ---
-# Customize Audio/Video Source and Renderer
+# Custom Video Source and Renderer
 ## Introduction
 By default, an application uses the internal audio and video modules for capturing and rendering during real-time communication. You can use an external audio or video source and renderer. This page shows how to use the methods provided by the Agora SDK to customize the audio and video source and renderer.
 
