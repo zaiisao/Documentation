@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 01:51:21 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 01:51:52 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -33,6 +33,68 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v2.9.1
+
+v2.9.1 is released on Sep 19, 2019.
+
+**New features**
+
+#### 1. Detecting local voice activity
+This release adds the `report_vad`(bool) parameter to the [enableAudioVolumeIndication](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaec0b8db9458b45d14cdcb3003f76fbe) method to enable local voice activity detection. Once it is enabled, you can check the [AudioVolumeInfo](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_audio_volume_info.html) struct of the `onAudioVolumeIndication` callback for the voice activity status of the local user.
+
+#### 2. Removing the event handler
+This release adds the [removeHandler](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e807ee4302756e6912a4fd1ed7a0db3) method to remove specified IRtcEngineEventHandler objects when you want to stop listening for specific events.
+
+**Improvements**
+
+#### 1. Supporting more audio sample rates for recording
+To enable more audio sample rate options for recording, this release adds a new [startAudioRecording](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac2ad403a7a75617316673f251615ef92) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz. The original method supports only a fixed sample rate of 32 kHz and is deprecated.
+
+#### 2. Adding error codes
+
+This release adds the following error codes in the ErrorCode class:
+
+- `ERR_ALREADY_IN_USE(19)`
+- `ERR_WATERMARK_PATH(125)`
+- `ERR_INVALID_USER_ACCOUNT(134)`
+- `ERR_AUDIO_BT_SCO_FAILED(1030)`
+- `ERR_ADM_NO_RECORDING_DEVICE(1359)`
+- `ERR_VCM_UNKNOWN_ERROR(1600)`
+- `ERR_VCM_ENCODER_INIT_ERROR(1601)`
+- `ERR_VCM_ENCODER_ENCODE_ERROR(1602)`
+- `ERR_VCM_ENCODER_SET_ERROR(1603)`
+
+For detailed descriptions for each error, see [Error Codes](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_error_code.html).
+
+**Issues fixed**
+
+#### Audio
+- A user makes a call after connecting to a Bluetooth device. After the call ends, the user watches YouTube and cannot hear any sound.
+- The audio route is different from the settings in the `setEnableSpeakerphone` method when Bluetooth is connected in the Communication profile.
+- Exceptions occur in the audio route when the user is in the channel.
+- The app crashes when using external audio sources in the push mode. 
+- Audio freezes.
+- After turning off the Bluetooth headset, the audio route becomes the earpiece instead of the loudspeaker.
+- Echos occur when the user is in the channel.
+- Occasional noise occurs in the Live Broadcast profile.
+
+#### Miscellaneous
+
+- The OpenSSL version is outdated.
+
+**API Changes**
+
+#### Added
+
+- [startAudioRecording](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac2ad403a7a75617316673f251615ef92)
+- [removeHandler](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e807ee4302756e6912a4fd1ed7a0db3)
+- The `report_vad` parameter in [enableAudioVolumeIndication](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaec0b8db9458b45d14cdcb3003f76fbe)
+- The `vad` member in [AudioVolumeInfo](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_audio_volume_info.html) 
+
+#### Deprecated
+
+- `startAudioRecording`
 
 ## v2.9.0
 
