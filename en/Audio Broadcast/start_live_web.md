@@ -3,14 +3,14 @@
 title: Start a Live Broadcast
 description: 
 platform: Web
-updatedAt: Mon Sep 23 2019 07:47:34 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 07:49:02 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either host or audience. The host sends and receives streams while the audience receives streams only.
 
-<div class="alert warning">Due to security limits of the web browser, Agora Web SDK only supports HTTPS or localhost (http://127.0.0.1). Do not deploy your project over HTTP.</div>
+<div class="alert warning">Due to security limits of the web browser, Agora Web SDK only supports HTTPS or http://localhost (http://127.0.0.1). Do not deploy your project over HTTP.</div>
 
 ## Try the demo
 
