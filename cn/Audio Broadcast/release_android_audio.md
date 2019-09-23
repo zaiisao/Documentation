@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Sep 19 2019 09:38:28 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 06:34:01 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -141,7 +141,7 @@ Android 语音 SDK 支持两种主要场景:
 为方便用户了解本地及远端的音频状态，该版本新增 [`onLocalAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a59946a989f87c737899e2284539adf09) 和 [`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/v2.9.0/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a24fd6b0d12214f6bc6fa7a9b6235aeff) 回调。新的回调下，本地及远端音频有如下状态：
 
 - 本地音频：STOPPED(0)、RECORDING(1)、ENCODING(2) 和 FAILED(3)。状态为 FAILED(3) 时，你可以通过 `error` 参数中返回的错误码定位及排查问题。
-- 远端音频：STOPED(0)、STARTING(1)、DECODING(2)、FROZEN(3) 和 FAILED(4)。你可以在 `reason` 参数中了解引起远端音频状态发生改变的原因。
+- 远端音频：STOPPED(0)、STARTING(1)、DECODING(2)、FROZEN(3) 和 FAILED(4)。你可以在 `reason` 参数中了解引起远端音频状态发生改变的原因。
 
 #### 4. 本地音频数据
 
