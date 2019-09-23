@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Windows
-updatedAt: Wed Sep 18 2019 07:43:52 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 07:44:59 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
