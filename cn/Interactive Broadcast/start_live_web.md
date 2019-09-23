@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Web
-updatedAt: Tue Sep 17 2019 06:12:44 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 07:16:31 GMT+0800 (CST)
 ---
 # 实现互动直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音视频互动直播。
