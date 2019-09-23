@@ -92,7 +92,7 @@ Agora 原始数据接口是一个 C++ 接口。你需要在 Android 上使用 SD
 - [onPlaybackAudioFrameBeforeMixing](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ae04d85a65eefec5e7c1e0477bcaa067c)
 - [onMixedAudioFrame](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a78d095cbd0b8ee04f657430bb6de8100)
 
-如果你想要修改如上回调中的音频采样率，可以调用如下方法：
+Call the following methods to modify the audio sample rate in the above callbacks:
 
 - [setRecordingAudioFrameParameters](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2c4717760b5fbf1bb8c1a3c16ca67fe5)
 - [setPlaybackAudioFrameParameters](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aa5f2f6eb3db5acaaf8c40818d90694f1)
