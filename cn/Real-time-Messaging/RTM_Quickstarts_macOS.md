@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: macOS
-updatedAt: Fri Sep 06 2019 03:46:44 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 09:30:01 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 ## 集成客户端
