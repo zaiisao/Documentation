@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Go
-updatedAt: Tue Aug 13 2019 12:07:13 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 08:13:22 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Go. 
@@ -15,11 +15,12 @@ Your token needs to be generated on your own server, hence you are required to f
 - CPP
 - Java
 - Python
+- PHP
 - Node.js
 - Go
 - Ruby
 
-The **./\<language\>/src** folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both AccessToken and SimpleTokenBuilder can generate a token for the following SDKs:
+The **./\<language\>/src** folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both **AccessToken** and **SimpleTokenBuilder** can generate a token for the following SDKs:
 
 - Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
 - Agora Web SDK v2.4+
