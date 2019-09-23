@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Ruby
-updatedAt: Tue Aug 13 2019 10:08:02 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 07:25:13 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Ruby API 参考。
