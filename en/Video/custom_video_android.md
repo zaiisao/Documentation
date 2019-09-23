@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 09:54:33 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 01:34:23 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
