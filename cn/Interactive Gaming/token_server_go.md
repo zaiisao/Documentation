@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Go
-updatedAt: Mon Sep 23 2019 07:23:10 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 07:26:19 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Go API 参考。
@@ -89,8 +89,10 @@ updatedAt: Mon Sep 23 2019 07:23:10 GMT+0800 (CST)
 | `appCertificate` | Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 [开启 App Certificate](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-certificate). |
 | `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>a-z,<li>A-Z,<li>0-9,<li>空格,<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
 | `uid`            | 用户ID，32位无符号整数。建议设置范围：1到 (2<sup>32</sup>-1)，并保证唯一性。 |
-| `role`           | <li> `Role_Publisher = 1` ：（推荐）直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`：直播模式下的观众（AUDIENCE）。 |
+| `role` <sup>1</sup>          | <li> `Role_Publisher = 1` ：（推荐）直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`：直播模式下的观众（AUDIENCE）。 |
 | `privilegeExpiredTs`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilegeExpiredTs 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。 |
+
+<div class="alert warning"><sup>1</sup>：所有 <code>role</code> 的权限完全一致。如需做权限校验，特别是限制观众的上行流权限，必须联系 sales@agora.io 开通相应服务。</div>
 
 ### buildTokenWithUserAccount
 
@@ -106,5 +108,7 @@ updatedAt: Mon Sep 23 2019 07:23:10 GMT+0800 (CST)
 | `appCertificate` | Agora 为应用程序开发者签发的 App Certificate。启用 App Certificate 后你必须使用 Token 才能加入频道，详见 [开启 App Certificate](https://docs.agora.io/cn/Agora%20Platform/token/#app-certificate). |
 | `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>a-z,<li>A-Z,<li>0-9,<li>空格,<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
 |`userAccount` | 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：<li>26 个小写英文字母 a-z；<li>26 个大写英文字母 A-Z；<li>10 个数字 0-9；<li>空格；<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
-| `role`           | <li> `Role_Publisher = 1` ：（推荐）直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`: 直播模式下的观众（AUDIENCE）。 |
+| `role` <sup>2</sup>          | <li> `Role_Publisher = 1` ：（推荐）直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`: 直播模式下的观众（AUDIENCE）。 |
 | `privilegeExpiredTs`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilegeExpiredTs 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。|
+
+<div class="alert warning"><sup>2</sup>：所有 <code>role</code> 的权限完全一致。如需做权限校验，特别是限制观众的上行流权限，必须联系 sales@agora.io 开通相应服务。</div>
