@@ -3,7 +3,7 @@
 title: Watch Live Video on Mobile Phones
 description: 
 platform: Web
-updatedAt: Mon Sep 23 2019 06:44:54 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 06:44:59 GMT+0800 (CST)
 ---
 # Watch Live Video on Mobile Phones
 ## Introduction
@@ -107,6 +107,8 @@ This method call returns `true` if the system supports the RTS plugin.
 ### Import the HTML5 plugin
 
 To import the HTML5 plugin, call  `AgoraRTS.init` and `AgoraRTS.proxy` after creating the client. 
+
+<div class="alert info">We recommend calling the <code>AgoraRTS.init</code> method immediately after loading the webpage to reduce the render time of the first video frame.</div>
 
 ```javascript
 var client = AgoraRTC.createClient({ mode: "live", codec: "h264"});
