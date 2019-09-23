@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Mon Sep 23 2019 09:26:14 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 09:29:33 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 ## 集成客户端
@@ -14,6 +14,8 @@ updatedAt: Mon Sep 23 2019 09:26:14 GMT+0800 (CST)
 - iOS 8.0+ 真机（iPhone 或 iPad）。
 - 一个有效的 Agora 开发者账号。
 - 请确保你的项目已设置有效的开发者签名。
+
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
 ### 创建项目
 
