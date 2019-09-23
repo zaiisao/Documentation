@@ -3,7 +3,7 @@
 title: 原始音频数据
 description: 
 platform: Android
-updatedAt: Mon Sep 23 2019 07:21:20 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 07:28:28 GMT+0800 (CST)
 ---
 # 原始音频数据
 ## 功能描述
@@ -27,7 +27,7 @@ Native SDK 通过提供 `IAudioFrameObserver` 类，实现采集、修改原始�
 
 下图展示使用原始音频数据的 API 调用时序：
 
-![](https://web-cdn.agora.io/docs-files/1569205690234)
+![](https://web-cdn.agora.io/docs-files/1569223703579)
 
 ### 示例代码
 
