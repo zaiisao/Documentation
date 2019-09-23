@@ -3,7 +3,7 @@
 title: Watch Live Video on Mobile Phones
 description: 
 platform: Web
-updatedAt: Fri Sep 20 2019 02:53:18 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 05:55:21 GMT+0800 (CST)
 ---
 # Watch Live Video on Mobile Phones
 ## Introduction
