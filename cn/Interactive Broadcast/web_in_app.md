@@ -3,7 +3,7 @@
 title: H5 实时直播
 description: 
 platform: Web
-updatedAt: Mon Sep 23 2019 06:14:48 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 06:14:53 GMT+0800 (CST)
 ---
 # H5 实时直播
 ## 功能简介
@@ -112,6 +112,8 @@ AgoraRTS.checkSystemRequirements()
 
 - `AgoraRTS.init` 方法用于初始化 H5 实时直播插件，你需要在该方法中设置解码库文件的线上访问地址。
 - `AgoraRTS.proxy` 方法通过代理 Client 中订阅相关的方法，实现对订阅的流软件解码。
+
+<div class="alert info">我们建议在页面加载后立即调用 <code>AgoraRTS.init</code> 方法，调用后 SDK 会立刻开始预加载解码器和解码线程，可以加快首开速度。</div>
 
 ```javascript
 var client = AgoraRTC.createClient({ mode: "live", codec: "h264"});
