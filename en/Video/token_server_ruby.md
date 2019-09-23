@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Ruby
-updatedAt: Mon Sep 23 2019 08:15:28 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 08:16:26 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Ruby. 
