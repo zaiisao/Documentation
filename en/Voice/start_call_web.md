@@ -3,12 +3,14 @@
 title: Start a Call
 description: 
 platform: Web
-updatedAt: Tue Sep 17 2019 06:07:51 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 07:47:54 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
 
 This guide shows you how to build a similar web app with the Agora Web SDK. We recommend going through it to familiarize yourself with the core methods.
+
+<div class="alert warning">Due to security limits of the web browser, Agora Web SDK only supports HTTPS or localhost (http://127.0.0.1). Do not deploy your project over HTTP.</div>
 
 ## Try the demo
 
