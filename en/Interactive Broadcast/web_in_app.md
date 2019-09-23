@@ -3,7 +3,7 @@
 title: Watch Live Video on Mobile Phones
 description: 
 platform: Web
-updatedAt: Mon Sep 23 2019 05:55:57 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 05:56:01 GMT+0800 (CST)
 ---
 # Watch Live Video on Mobile Phones
 ## Introduction
@@ -80,7 +80,7 @@ We recommend using the HTML5 plugin on platforms that do not directly support th
 ### Integrate the SDK
 Download the [SDK containing the HTML5 plugin](https://download.agora.io/sdk/release/rts-v2.8.0.400.zip) and integrate the SDK on the audience's side. See [Start a Live Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_web?platform=Web) for details.
 
-<div class="alert info">We provide a demo project in the SDK package. You can load the <code>index.html</code> file through a local web server to try the demo. <br/>Note that directly opening the HTML file in a browser does not work. For instructions on how to run the web app through a local server, see <a href="https://docs.agora.io/en/Interactive%20Broadcast/start_live_web?platform=Web#run-your-app">Run your app<a>.</div>
+<div class="alert info">We provide a demo project in the SDK package. You can load the <code>index.html</code> file through a local web server to try the demo. <br/>Note that directly opening the HTML file in a browser does not work. For instructions on how to run the web app through a local server, see <a href="https://docs.agora.io/en/Interactive%20Broadcast/start_live_web?platform=Web#run-your-app">Run your app</a>.</div>
 
 The SDK package includes the following files:
 
