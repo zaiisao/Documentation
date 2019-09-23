@@ -3,7 +3,7 @@
 title: Custom Audio Source and Sink
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 09:29:38 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 01:34:52 GMT+0800 (CST)
 ---
 # Custom Audio Source and Sink
 ## Introduction
@@ -103,4 +103,4 @@ rtcEngine.pullPlaybackAudioFrame(
 Customizing the audio source and sink requires you to manage audio data recording and playback on your own.
 
 - When customizing the audio source, you need to record and process the audio data on your own.
-- When customizing the audio sink, you need to process and play the audio data on your own.
+- When customizing the audio sink, you need to process and play back the audio data on your own.
