@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Mon Sep 23 2019 09:55:06 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 09:55:14 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 ## 集成客户端
@@ -17,6 +17,8 @@ updatedAt: Mon Sep 23 2019 09:55:06 GMT+0800 (CST)
 - Ubuntu Linux 14.04 LTS 64 位。
 - CentOS 7.0+ 64 位。
 - 下载 [Agora RTM Java SDK for Linux](../../cn/Real-time-Messaging/downloads.md)。
+
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
 
 SDK 文件应包括 libs 文件和 sample 文件，其中 libs 文件包括：
