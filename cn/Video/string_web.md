@@ -3,7 +3,7 @@
 title: 使用 String 型的用户名
 description: 
 platform: Web
-updatedAt: Wed Sep 18 2019 03:25:05 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 06:38:18 GMT+0800 (CST)
 ---
 # 使用 String 型的用户名
 ## 场景描述
@@ -18,12 +18,12 @@ updatedAt: Wed Sep 18 2019 03:25:05 GMT+0800 (CST)
 
 Web SDK 支持将 `Client.join` 方法中的 `uid` 设为 Number 或 String 型。因此，你可以直接在调用该方法时，传入 String 型的用户名即可。
 
-
 ### API 调用时序
 
-下图展示使用 User Account 加入频道的 API 调用时序图：
+下图展示使用 String 型用户名加入频道的 API 调用时序：
 
-![](https://web-cdn.agora.io/docs-files/1568713872144)
+![](https://web-cdn.agora.io/docs-files/1568875087634)
+
 
 ### 示例代码
 
