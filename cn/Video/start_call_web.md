@@ -3,12 +3,14 @@
 title: 实现音视频通话
 description: 
 platform: Web
-updatedAt: Mon Sep 23 2019 07:19:44 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 07:19:48 GMT+0800 (CST)
 ---
 # 实现音视频通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
 
 本文会详细介绍如何建立一个简单的项目并使用 Agora Web SDK 实现基础的一对一视频通话。我们建议你阅读本文以快速了解 Agora 的核心方法。
+
+<div class="alert warning">由于浏览器的安全策略限制，Agora Web SDK 仅支持 HTTPS 协议或者 localhost，请不要使用 HTTP。</div>
 
 ## Demo 体验
 我们在 <a href="https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1">GitHub</a> 上提供一个开源的基础一对一视频通话示例项目，在开始开发之前你可以通过该示例项目体验音视频通话效果。
@@ -211,14 +213,14 @@ var option = {
 
    - `mode` 用于设置[频道模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#频道模式)。一对一或多人通话中，建议设为 `"rtc"` ，使用通信模式；[互动直播](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#a-name-livea直播核心概念)中，建议设为 `"live"`，使用直播模式。
    - `codec` 用于设置浏览器使用的编解码格式。如果你需要使用 Safari 12.1 及之前版本，将该参数设为 `"h264"`；如果你需要在手机上使用 Agora Web SDK，请参考[移动端使用 Web SDK](https://docs.agora.io/cn/faq/web_on_mobile)。
-
+   
 你需要在该步骤中填入项目的 App ID。请参考如下步骤在 Dashboard 创建项目并获取 App ID。
 
 1. 登录 [Dashboard](https://dashboard.agora.io/)，点击左侧导航栏的**项目管理**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
 2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
 3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
-
-   <div class="alert note">为方便演示，我们的示例项目在网页上设置了一个文本框用于输入 App ID。在实际的应用中，App ID 应该是在代码中填写的。</div> 
+	 
+<div class="alert note">为方便演示，我们的示例项目在网页上设置了一个文本框用于输入 App ID。在实际的应用中，App ID 应该是在代码中填写的。</div> 
 
 2. 在 `Client.init` 的 `onSuccess` 回调中调用 `Client.join` 加入频道。
 
