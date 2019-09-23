@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: Android
-updatedAt: Mon Sep 23 2019 07:28:02 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 07:28:07 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
@@ -28,7 +28,8 @@ Native SDK 通过提供 `IVideoFrameObserver` 类，实现采集、修改原始�
 
 下图展示使用原始视频数据的 API 调用时序：
 
-![](https://web-cdn.agora.io/docs-files/1569223574424)
+![](https://web-cdn.agora.io/docs-files/1569217439148)
+
 
 ### 示例代码
 
