@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Fri Sep 06 2019 04:04:52 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 07:35:36 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 ## <a name = "create"></a>Create and Initialize an Agora RtmClient Instance
