@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 07:11:58 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 07:13:05 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -23,7 +23,7 @@ This method has two parameters:
 - `enabled`: sets whether or not to enable image enhancement.
 - `options`: sets the image enhancement options, including `lighteningContrastLevel` for adjusting the contrast level, `lightening` for adjusting the brightness level, `smoothness` for adjusting the sharpness level, and `redness` for adjusting the red saturation level.
 
-### Sample Code
+### Sample code
 
 ```java
 mRtcEngine.setBeautyEffectOptions(true, new BeautyOptions(LIGHTENING_CONTRAST_NORMAL, 0.5F, 0.5F, 0.5F));
