@@ -3,7 +3,7 @@
 title: Manage Connection States
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 10:57:51 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 10:57:54 GMT+0800 (CST)
 ---
 # Manage Connection States
 ## Connection State Definitions
@@ -90,6 +90,6 @@ When another instance of the same `uid` logs in the Agora RTM system,  the curre
 
 ## Considerations
 
-- When the connection is interrupted, the SDK starts to reconnect to the Agora RTM system. This is a automatic reaction and does not need human intervention. 
+- When the connection is interrupted, the SDK starts to reconnect to the Agora RTM system. This is an automatic reaction and does not need human intervention. 
 - You will not receive an `onSuccess` callback when the SDK manages to reconnect to the Agora RTM system. The callback only returns when the `login` method call succeeds. 
 - If the SDK does not manage to reconnect to the Agora RTM system 30 seconds after the connection is interrupted, the Agora RTM system removes the corresponding user from the online-user list it maintains. 
