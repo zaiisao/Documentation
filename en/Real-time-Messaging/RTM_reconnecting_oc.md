@@ -3,7 +3,7 @@
 title: Manage Connection States
 description: 
 platform: iOS,macOS
-updatedAt: Sun Jul 28 2019 12:28:46 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 10:54:42 GMT+0800 (CST)
 ---
 # Manage Connection States
 ## Connection State Definitions
