@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 24 2019 05:25:27 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 05:27:14 GMT+0800 (CST)
 ---
 # 注册与登录
 在开始使用 Agora 服务之前，你需要注册一个 Agora 开发者账号。注册后，您可以登录 Agora Dashboard，使用 Agora 提供的各种产品和服务。
@@ -44,7 +44,7 @@ updatedAt: Tue Sep 24 2019 05:25:27 GMT+0800 (CST)
 
 ## 登录 Agora Dashboard
 
-你可以用注册时填写的邮箱或手机号码或者以 Github、微信或 Cocos 第三方账号登录 [Agora Dashboard](https://dashboard.agora.io)，根据新手指引，创建你的第一个项目，快速体验音视频通话。你也可以对账号所属的个人或企业信息主体进行认证，详见[实名认证](../../cn/Agora%20Platform/identity_authentication.md)。
+你可以用注册时填写的邮箱或手机号码或者注册过的 Github、Google、微信或 Cocos 等第三方账号登录 [Agora Dashboard](https://dashboard.agora.io)，根据新手指引，创建你的第一个项目，快速体验音视频通话。你也可以对账号所属的个人或企业信息主体进行认证，详见[实名认证](../../cn/Agora%20Platform/identity_authentication.md)。
 
 ## 修改账号设置和密码
 
