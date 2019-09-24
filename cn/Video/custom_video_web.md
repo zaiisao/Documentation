@@ -3,27 +3,27 @@
 title: 自定义视频采集和渲染
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Tue Sep 24 2019 08:35:16 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 08:36:01 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
 
-实时通信过程中，Agora Web SDK 通常会启动浏览器默认的音视频模块进行采集和渲染。如果想要实现自定义音视频采集和渲染，则可以使用自定义的音视频源或渲染器，来进行实现。
+实时音视频传输过程中，Agora SDK 通常会启动默认的音视频模块进行采集和渲染。在以下场景中，你可能会发现默认的音视频模块无法满足开发需求：
 
-**自定义采集和渲染**主要适用于以下场景：
+- app 中已有自己的音频或视频模块
+- 希望使用非 Camera 采集的视频源，如录屏数据
+- 需要使用自定义的美颜库有或前处理库
+- 某些视频采集设备被系统独占。为避免与其它业务产生冲突，需要灵活的设备管理策略
 
-- 当 SDK 内置的音视频源不能满足开发者需求时，比如需要使用自定义的美颜库或前处理库。
-- 开发者的 app 中已有自己的音频或视频模块，为了复用代码，也可以自定义音视频源。
-- 开发者希望使用非 Camera 采集的视频源，如录屏数据。
-- 有些系统独占的视频采集设备，为避免与其他业务产生冲突，需要灵活的设备管理策略。
+本文介绍如何使用 Agora Web SDK 在项目中实现自定义的视频源。
 
 ## 实现方法
 
-在开始自定义采集和渲染前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Video/web_prepare.md)。
+在开始自定义音频采集前，请确保你已在项目中实现了基本的音视频通话或直播功能，详见[开始音视频通话](../../cn/Video/start_call_web.md)或[开始互动直播](../../cn/Video/start_live_web.md)。
 
 ### 自定义音视频源
 
-在创建音视频流时，通过  [`audioSource`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) 和  [`videoSource`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#videosource) 指定自定义的音视频源。例如，你可以通过 `mediaStream` 方法从 `MediaStreamTrack` 获得音视频 track，然后指定 `audioSource` 和 `videoSource`，如下所示：
+在创建音视频流 `createStream`  时，通过  [`audioSource`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) 和  [`videoSource`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#videosource) 指定自定义的音视频源。例如，你可以通过 `mediaStream` 方法从 `MediaStreamTrack` 获得音视频 track，然后指定 `audioSource` 和 `videoSource`，如下所示：
 
 ```javascript
 navigator.mediaDevices.getUserMedia(
@@ -46,11 +46,17 @@ navigator.mediaDevices.getUserMedia(
 });
 ```
 
-> - `MediaStreamTrack` 对象是指浏览器原生支持的 `MediaStreamTrack` 对象，具体用法和浏览器支持状况请参考 [MediaStreamTrack API 说明](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack)。
-> - 目前该功能仅支持 Chrome 浏览器。
+<div class="alert info"><code>MediaStreamTrack</code> 对象是指浏览器原生支持的 <code>MediaStreamTrack</code> 对象，具体用法和浏览器支持状况请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack">MediaStreamTrack API 说明</a>。</div>
+
 
 ### 自定义渲染器
 
 你可以调用 [`Stream.getVideoTrack`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#getvideotrack)  方法，然后将视频 track 导到 canvas 里自己渲染。
 
-我们提供自定义音视频采集和渲染的示例 demo，详见  [Agora Custom Media Device](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-VideoSource-Web)。
+### 示例代码
+
+我们在 Github 提供一个开源的 [Agora-Custom-VideoSource-Web-Webpack](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack) 示例项目。你可以下载体验，或查看 [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack/src/rtc-client.js) 文件中的源代码。
+
+## 开发注意事项
+
+自定义音视频采集功能目前仅支持 Chrome 浏览器。
