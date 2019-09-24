@@ -3,7 +3,7 @@
 title: 音视频设备测试与切换
 description: 
 platform: Web
-updatedAt: Wed Nov 21 2018 10:34:55 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 05:40:10 GMT+0800 (CST)
 ---
 # 音视频设备测试与切换
 ## 功能描述
