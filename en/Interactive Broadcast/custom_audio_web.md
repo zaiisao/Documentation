@@ -21,9 +21,9 @@ This page explains how to customize the audio source with the Agora Web SDK.
 
 ## Implementation
 
-Before customizing the audio source, ensure that you have implemented the basic real-time communication functions. For details, see [Start a call](../../en/Video/start_call_web.md) or [Start a Live Broadcast](../../en/Video/start_live_web.md).
+Before customizing the audio source, ensure that you have implemented the basic real-time communication functions. For details, see [Start a call](../../en/Interactive%20Broadcast/start_call_web.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md).
 
-When creating a stream with the `createStream` method, you can specify the customized audio source by the [`audioSource`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) property when creating a stream.
+When creating a stream with the `createStream` method, you can specify the customized audio source by the [`audioSource`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) property when creating a stream.
 For example, you can use the `mediaStream` method to get the audio track from `MediaStreamTrack`, and then set `audioSource`:
 
 ```javascript
