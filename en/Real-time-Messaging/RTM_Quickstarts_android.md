@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 09:25:38 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 09:25:43 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM Java SDK for Android](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -349,3 +349,11 @@ You can call the `leave()` method to leave a channel.
 - If the channel ID you put is invalid, or if an `RtmChannel` with the same channel ID already exists, the SDK returns `null`. 
 - You cannot reuse a received `RtmMessage` instance. 
 - When you no longer need an `RtmChannel` instance after leaving it, you can call its `release()` method to release all resources it is using. 
+
+## Sample code
+
+See the following files in the [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android) demo project for the corresponding code implementation: 
+
+- [LoginActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/LoginActivity.java) 
+- [MessageActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/MessageActivity.java) 
+- [SelectionActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/SelectionActivity.java)
