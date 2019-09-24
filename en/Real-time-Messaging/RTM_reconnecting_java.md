@@ -3,7 +3,7 @@
 title: Manage Connection States
 description: 
 platform: Linux Java
-updatedAt: Sun Jul 28 2019 10:03:09 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 10:55:08 GMT+0800 (CST)
 ---
 # Manage Connection States
 ## Connection State Definitions
