@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 24 2019 04:09:08 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 05:25:27 GMT+0800 (CST)
 ---
 # 注册与登录
 在开始使用 Agora 服务之前，你需要注册一个 Agora 开发者账号。注册后，您可以登录 Agora Dashboard，使用 Agora 提供的各种产品和服务。
@@ -12,24 +12,28 @@ updatedAt: Tue Sep 24 2019 04:09:08 GMT+0800 (CST)
 
 ## 使用邮箱注册
 1. 进入 [Agora 注册页面](https://sso.agora.io/cn/signup)。
-
 2. 填写你的**邮箱**和**密码**，单击**注册**按钮。
-
 3. 根据屏幕提示完善账号信息，包括姓名、公司，选择产品兴趣点、开发平台和行业，以便我们为你提供个性化服务。
-
 4. 填写**手机号码**并验证，作为安全校验方式，完成注册。
 
 ## 使用 GitHub 账号注册
 
 1. 进入 [Agora 注册页面](https://sso.agora.io/cn/signup)，点击 ![](https://web-cdn.agora.io/docs-files/1569295926426) 图标选择使用 GitHub 账号注册。
-2. 跳转到 GitHub 授权页面，点击 **Authorize AgoraLab** 完成授权。
+2. 跳转到 GitHub 授权页面，点击 **Authorize AgoraLab** 确认授权。
 3. 根据屏幕提示完善账号信息，包括邮箱、姓名、公司，选择产品兴趣点、开发平台和行业，以便我们为你提供个性化服务。
+4. 填写**手机号码**并验证，作为安全校验方式，完成注册。
+
+## 使用 Google 账号注册
+
+1. 进入 [Agora 注册页面](https://sso.agora.io/cn/signup)，点击 ![](https://web-cdn.agora.io/docs-files/1569302689210) 图标选择使用 Google 账号注册。
+2. 跳转到 Google 授权页面，确认授权。
+3. 根据屏幕提示完善账号信息，包括姓名和公司，选择产品兴趣点、开发平台和行业，以便我们为你提供个性化服务。
 4. 填写**手机号码**并验证，作为安全校验方式，完成注册。
 
 ## 使用微信账号注册
 
 1. 进入 [Agora 注册页面](https://sso.agora.io/cn/signup)，点击 ![](https://web-cdn.agora.io/docs-files/1569295948148) 图标选择使用微信账号注册。
-2. 使用微信扫一扫，扫描弹出来的二维码，在微信客户端点击**同意**完成授权。 
+2. 使用微信扫一扫，扫描弹出来的二维码，在微信客户端点击**同意**确认授权。 
 3. 根据屏幕提示完善账号信息，包括邮箱、姓名、公司，选择产品兴趣点、开发平台和行业，以便我们为你提供个性化服务。
 4. 填写**手机号码**并验证，作为安全校验方式，完成注册。
 
@@ -58,11 +62,9 @@ updatedAt: Tue Sep 24 2019 04:09:08 GMT+0800 (CST)
 如果你忘记了密码，可通过以下方式找回密码：
 
 1. 进入[登录页面](https://sso.agora.io/cn/signup)。
-
 2. 点击**忘记密码**。
 
  ![](https://web-cdn.agora.io/docs-files/1552447886350)
 
 3. 填写注册时使用的**邮箱地址**。Agora 会向你的邮箱发送一封密码重置邮件。
-
 4. 登录你的邮箱，根据邮件中的指引重置密码。
