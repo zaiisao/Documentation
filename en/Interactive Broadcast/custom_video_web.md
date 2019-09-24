@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Tue Sep 24 2019 08:45:00 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 08:46:16 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
