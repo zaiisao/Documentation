@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Tue Sep 24 2019 08:36:58 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 08:39:49 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -19,7 +19,7 @@ updatedAt: Tue Sep 24 2019 08:36:58 GMT+0800 (CST)
 
 ## 实现方法
 
-在开始自定义音频采集前，请确保你已在项目中实现了基本的音视频通话或直播功能，详见[开始音视频通话](../../cn/Video/start_call_web.md)或[开始互动直播](../../cn/Video/start_live_web.md)。
+在开始自定义视频源和渲染器前，请确保你已在项目中实现了基本的音视频通话或直播功能，详见[开始音视频通话](../../cn/Video/start_call_web.md)或[开始互动直播](../../cn/Video/start_live_web.md)。
 
 ### 自定义音视频源
 
