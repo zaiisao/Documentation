@@ -3,41 +3,78 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Tue Sep 24 2019 12:24:39 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 12:53:11 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
-## 集成客户端
+本章介绍在正式使用 Agora RTM SDK for iOS 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
-### 前提条件
+## Demo 体验
+
+你也可以到 GitHub 下载最新版的示例项目查看相关功能的具体实现。
+
+- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C)
+- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS)
+
+## 开发环境要求
 
 - Xcode 9.0+。
 - iOS 8.0+ 真机（iPhone 或 iPad）。
 - 一个有效的 Agora 开发者账号。
-- 请确保你的项目已设置有效的开发者签名。
 
-<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
-### 创建项目
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口并设置域名白名单。</div>
 
-1. 打开 Xcode，新建一个项目。
+## 准备开发环境
 
-2. 选择 **Single View App** 模板，点击 **Next**。
+本节介绍如何获取 App ID、创建项目，并将 Agora RTM SDK for iOS 集成至你的项目中。
 
+### <a name="appid"></a> 获取 App ID
+
+
+参考以下步骤获取一个 App ID。若已有App ID，可以直接查看[创建项目](#create)。
+<details>
+	<summary><font color="#3ab7f8">获取 App ID</font></summary>
+
+1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录 Dashboard。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
+2. 点击**项目列表**处的**新手指引**。
+
+	![](https://web-cdn.agora.io/docs-files/1563521764570)
+
+3. 在弹出的窗口中输入你的第一个项目名称，然后点击**创建项目**。你可以参考屏幕提示，了解实现一个视频通话的基本步骤。
+
+	![](https://web-cdn.agora.io/docs-files/1563521821078)
+
+4. 项目创建成功后，你会在**项目列表**下看到刚刚创建的项目。点击项目名后的**编辑**按钮，进入项目页。你也可以直接点击左边栏的**项目管理**图标，进入项目页面。
+
+	![](https://web-cdn.agora.io/docs-files/1563522909895)
+
+5. 在**项目管理**页，你可以查看你的 **App ID**。
+
+	![](https://web-cdn.agora.io/docs-files/1563522556558)
+
+</details>
+
+### <a name="create"></a>创建项目
+
+参考以下步骤创建一个 iOS 项目。若已有 iOS 项目，可以直接查看[集成 SDK](#IntegrateSDK)。
+<details>
+	<summary><font color="#3ab7f8">创建 iOS 项目</font></summary>
+
+1. 打开 **Xcode** 并点击 **Create a new Xcode project**。
+2. 选择 **Single View App** 模板并点击 **Next**。
 3. 填入你的项目名称，公司名称等信息，选择开发团队与开发语言，点击 **Next**。
 
-   如果你没有添加过开发团队信息，会看到 **Add account…** 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。
+> 如果你没有添加过开发团队信息，会看到 **Add account…** 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。
 
-4. 选择你的项目所要存放的位置，点击 **Create**。
-
-#### 设置开发者签名
-
-如果你已经设置过开发者签名，可跳过该节。
+4. 选择你的项目的存储路径，点击 **Create**。
+5. 如果你已经设置过开发者签名，可跳过该节。
 
 将你的 iOS 设备连接至电脑。选中当前项目 **Target** ，在 **General** 标签页上找到 **Signing**，勾选 **Automatically manage signing**，在弹窗中点击 **Enable Automatic**。
 
-至此，你已经完成了项目的创建。接下来，让我们把 Agora SDK 包添加到这个项目中。
+![](https://web-cdn.agora.io/docs-files/1568803609379)
+</details>
 
-### 安装 SDK
+### <a name="IntegrateSDK"></a> 集成 SDK
 
 #### 方法 1：通过 Cocoapods 导入 SDK
 
@@ -205,7 +242,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的频道消息功能。
 
-### 创建频道实例和加入频道
+### 创建并加入频道
 
 1. 调用 `AgoraRtmChannel` 实例的 `createChannelWithId` 方法创建 `AgoraRtmChannel` 实例。在该方法中：
    - 传入能标识每个频道的 ID。`channelId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"nil"`。
