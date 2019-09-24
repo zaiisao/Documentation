@@ -3,7 +3,7 @@
 title: Set the Camera Focus
 description: 
 platform: Android
-updatedAt: Mon Jan 14 2019 07:16:50 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 01:29:23 GMT+0800 (CST)
 ---
 # Set the Camera Focus
 ## Introduction
@@ -39,7 +39,7 @@ if (shouldManualFocus) {
     // Set the camera focus at (50, 100)
     float positionX = 50.0f;
     float positionY = 100.0f;
-    rtcEgnine.setCameraFocusPositionInPreview(positionX, positionY);
+    rtcEngine.setCameraFocusPositionInPreview(positionX, positionY);
 }
 
 ```
