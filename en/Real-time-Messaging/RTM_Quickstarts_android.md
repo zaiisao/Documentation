@@ -3,173 +3,264 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 07:35:36 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 07:35:40 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
-## <a name = "create"></a>Create and Initialize an Agora RtmClient Instance
+You can use this guide to quickly start messaging with the [Agora RTM Java SDK for Android](https://docs.agora.io/en/Real-time-Messaging/downloads). 
 
-Before creating an Agora [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance, ensure that you prepare the development environment.
+## Try the demo
 
-### Implementation
+We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android), which implements an elementary messaging system. You can try out this demo and view our source code.
 
-1. Import the following packages of the Agora RTM SDK to enable real-time messaging:
+## Prerequisites
 
- - io.agora.rtm.RtmClient
- - io.agora.rtm.RtmClientListener
- - io.agora.rtm.RtmMessage
- - io.agora.rtm.RtmChannel
- - io.agora.rtm.RtmChannelListener
- - io.agora.rtm.RtmChannelMember
- - io.agora.rtm.ErrorInfo
- - io.agora.rtm.ResultCallback
- - io.agora.rtm.RtmStatusCode
+- Android SDK API Level 16 or higher
+- Android Studio 3.0 or later
+- A mobile device running on Android 4.1 or later
+- To run your app on Android 9, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p) for more information.
 
-2. Call the [createInstance](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6411640143c4d0d0cd9481937b754dbf) method to create an Agora [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance. You need to: 
 
- - Pass the App ID issued by Agora to you. Only apps with the same App ID can join the same channel.
- - Specify an event handler. The Agora RTM SDK uses event handlers to inform the app about RTM SDK runtime events, such as connection state changes and receiving peer-to-peer messages.
 
-```javascript
+<div class="alert note">Open the ports specified in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div> 
+
+
+
+<a name="setup"></a>
+
+## Set up the development environment
+
+We will walk you through the following steps in this section:
+
+- [Get an App ID](#appid)
+- [Integrate the SDK into your project](#sdk)
+- [Add Android device permissions](#permission)
+- [ Prevent Obfuscation of the Agora Classes](#obfuscated)
+
+<a name="appid"></a>
+
+### Get an App ID
+
+undefined
+
+<a name="sdk"></a>
+
+### Integrate the SDK into your project
+
+You can use either of the following ways to integrate the Agora RTM SDK for Android into your project. 
+
+- [Automatically integrate the SDK using JCenter](#jcenter)
+- [Manually integrate the SDK](#manual)
+
+<a name="jcenter"></a>
+
+#### Method 1: Automatically integrate the SDK using JCenter
+
+1. Add the following line in the **/app/build.gradle** file of your project (1.0.1 is the version number).
+
+```java
+dependencies {
+    ...
+    implementation 'io.agora.rtm:rtm-sdk:1.0.1'
+
+}
+```
+
+2. Click the **Sync Project With Gradle Files** to synchronize your project. 
+
+<a name="jcenter"></a>
+
+#### Method 2: Manually integrate the SDK
+
+1. Go to [SDK Downloads](https://docs.agora.io/cn/Real-time-Messaging/downloads), download the latest version of Agora RTM Java SDK for Android, and unzip. 
+2. Save the **.jar** package and **.so** files under the **libs** folder of the unzipped SDK package to the corresponding folder of your project. 
+
+| File                                     | Project Folder                          |
+| ---------------------------------------- | --------------------------------------- |
+| **agora-rtm_sdk.jar**                    | **~/app/libs/**                         |
+| **/arm64-v8a/libagora-rtm-sdk-jni.so**   | **~/app/src/main/jniLibs/arm64-v8a/**   |
+| **/armeabi-v7a/libagora-rtm-sdk-jni.so** | **~/app/src/main/jniLibs/armeabi-v7a/** |
+| **/x86/libagora-rtm-jni.so**             | **~/app/src/main/jniLibs/x86/**         |
+| **/x86_64/libagora-rtm-sdk-jni.so**      | **~/app/src/main/jniLibs/x86_64/**      |
+
+<a name="permission"></a>
+
+### Add project permissions
+
+Add the following permissions in the **/app/src/main/AndroidManifest.xml** file for device access according to your needs:
+
+```
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.agora.rtmtutorial">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+...
+</manifest>
+```
+
+<a name="obfuscated"></a>
+
+### Prevent Obfuscation of the Agora Classes
+
+Add the following line in the **app/proguard-rules.pro** file to prevent code obfuscation:
+
+```
+   -keep class io.agora.**{*;}
+```
+
+## Implement peer-to-peer and channel messaging
+
+This section provides API call sequence diagrams, sample codes, and considerations related to peer-to-peer messaging and channel messaging. 
+
+### API Call sequence diagrams
+
+#### Login and logout of the Agora RTM system
+
+![](https://web-cdn.agora.io/docs-files/1562566527083)
+
+#### Send or receive peer-to-peer messages
+
+![](https://web-cdn.agora.io/docs-files/1562566549404)
+
+#### Join and leave an Agora RTM channel 
+
+![](https://web-cdn.agora.io/docs-files/1562566630113)
+
+#### Send or receive channel messages
+
+### ![](https://web-cdn.agora.io/docs-files/1562566639888)
+
+### Create and Initialize an Agora RTM Client
+
+1. Before creating and initializing an Agora RTM client, ensure that you have completed all steps mentioned in the [Set up the development environment](#setup) section. 
+2. Put in the `App ID` you get from **Agora Dashboard** (see [Get an App ID](#appid)) when creating and initializing an Agora RTM client. 
+3. Implement an event callback `RtmClientListener`, the SDK uses its callbacks to notify the app of ongoing events, including:
+   - The connection between the SDK and the Agora RTM system changes. 
+   - A peer-to-peer message arrives. 
+   - Miscellaneous events. 
+
+```java
 import io.agora.rtm.ErrorInfo;
 import io.agora.rtm.ResultCallback;
+import io.agora.rtm.RtmChannel;
+import io.agora.rtm.RtmChannelListener;
+import io.agora.rtm.RtmChannelMember;
 import io.agora.rtm.RtmClient;
 import io.agora.rtm.RtmClientListener;
 import io.agora.rtm.RtmMessage;
-import io.agora.rtm.RtmStatusCode;
-...
- 
-private RtmClientListener mRtmClientListener = new RtmClientListener() {
-    @Override
-    public void onConnectionStateChanged(int state, int reason) {
-        // See the constants defined in RtmStatusCode.ConnectionState and RtmStatusCode.ConnectionChangeReason.
- 
-    }
- 
-    @Override
-    public void onMessageReceived(RtmClient message, String peerId) {
- 
-    }
-};
- 
-private void initializeAgoraRtmClient() {
-    try {
-        mRtmClient = RtmClient.createInstance(getBaseContext(), getString(R.string.agora_app_id), mRtmClientListener);
-    } catch (Exception e) {
-        Log.e(LOG_TAG, Log.getStackTraceString(e));
- 
-        throw new RuntimeException("NEED TO check rtm sdk init fatal error\n" + Log.getStackTraceString(e));
-    }
+import io.agora.rtm.SendMessageOptions;
+
+public void init() {
+		try {
+				mRtmClient = RtmClient.createInstance(mContext, APPID,
+												new RtmClientListener() {
+						@Override
+						public void onConnectionStateChanged(int state, int reason) {
+								Log.d(TAG, "Connection state changes to "
+										+ state + " reason: " + reason);
+						}
+
+						@Override
+						public void onMessageReceived(RtmMessage rtmMessage, String peerId) {
+								String msg = rtmMessage.getText();
+								Log.d(TAG, "Message received " + " from " + peerId + msg 
+														);
+						}
+				});
+		} catch (Exception e) {
+				Log.d(TAG, "RTM SDK initialization fatal error!");
+				throw new RuntimeException("You need to check the RTM initialization process.");
+		}
 }
 ```
 
-### Considerations
+### Log in and log out of the Agora RTM system
 
-- The Agora RTM SDK supports multiple Agora [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instances that are independent of each other. You can use the same context to create different Agora [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instances, but the [RtmClientListener](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html) interface of each Agora [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance must be different.
-- If you no longer use an Agora [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance, call the [release](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a5147d00d14afeebf0926b0d2f01079f5) method to release all resources used by that instance.
+Only when you successfully log in the Agora RTM system, can you use most of the core features provided by the Agora RTM SDK. When logging in the Agora RTM system, you need to:
 
-### Next steps
+- Pass in an RTM Token, which identifies a user and its privilege. If your development environment does not require high security, set `token` as null. You need to generate an RTM Token from your business server. For more information, see [Token Security](../../en/Real-time-Messaging/RTM_key.md).
+- An `userId` is the unique identifier of each user. You must not set it as empty, null, or "null". 
+- Pass a `ResultCallback` instance, which returns the `onSuccess` or `onFailure` callback. 
 
-You have created an Agora [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance and can start using the Agora RTM SDK:
-
-- [Log in Agora's RTM system](#login)
-- [Send a Peer-to-peer Message](#sendpeer)
-- [Send a Channel Message](#sendchannel)
-
-## <a name = "login"></a>Log in Agora's RTM System
-
-Before logging in Agora's RTM system, ensure that you [create an Agora RtmClient instance](#create).
-
-### Implementation
-
-Call the [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) method to log in Agora's RTM system. You need to: 
-
-- Pass a token that identifies the role and permission of the user. Set `token` as `"null"` for low-security requirements. A token is generated at the server of the app.
-- Pass a user ID that identifies the user. The `userId` parameter must not include non-printable characters, and can neither exceed 64 bytes in length nor start with a space. Do not set `userId` as `"null"`.
-- Pass the [ResultCallback](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html) callback, which indicates whether the login succeeds or fails.
-
-```javascript
-private void login() {
-    mRtmClient.login(null, "demoUserId", new ResultCallback<Void>() {
+```java
+mRtmClient.login(null, userId, new ResultCallback<Void>() {
         @Override
         public void onSuccess(Void responseInfo) {
-            // Login succeeds.
+                loginStatus = true;
+                Log.d(TAG, "login success!");
         }
- 
         @Override
         public void onFailure(ErrorInfo errorInfo) {
-            int errorCode = errorInfo.getErrorCode();
-            // Login fails. See the error codes defined in RtmStatusCode.LoginError.
+                loginStatus = false;
+                Log.d(TAG, "login failure!");
         }
-    });
-}
+});
 ```
-You can call the [logout](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6f5695854e251ddd4ba05547ab47b317) method to log out of Agora's RTM system and then call the [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) method again to switch to another account.
 
-### Next steps
-After [logging in Agora's RTM system](#login), you can:
+To log out of the system:
 
-- [Send a Peer-to-peer Message](#sendpeer)
-- [Send a Channel Message](#sendchannel)
-
-## <a name = "sendpeer"></a>Send a Peer-to-peer Message
-
-After [logging in Agora's RTM system](#login), you can send a peer-to-peer message.
-
-### Implementation
-#### Send a peer-to-peer message
-
-Call the [sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a25ab5c0126e1dc51c78b2b705de68b7a) method to send a peer-to-peer message to a specific user (peer).
-
-- Pass the `uid` of the receiver.
-- Pass the [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) instance. You can call the [createMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a77dbd15cb6c9db3844fb313bd5dceac3) method in the [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) interface to create an [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) instance and create the text message by calling the [setText](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a114bf5f4d728e1a5e31792491bf4a1d2) method in the [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) instance.
-- Pass the `message` to be sent.
-- Pass [ResultCallback](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html), which returns the state of sending the message, such as whether or not the peer-to-peer message is received by the peer.
-
-```javascript
-private void sendP2PMessage() {
-    RtmMessage message = RtmMessage.createMessage();
-    message.setText("demo message content");
-    mRtmClient.sendMessageToPeer("demoPeerId", message, new ResultCallback<void>() {
-
- 
-        }
-    });
-}
+```java
+mRtmClient.logout(null);
 ```
+
+### Peer-to-peer messaging
+
+#### Send an offline peer-to-peer message
+
+You need to call the `sendMessageToPeer(@NonNull String, @NonNull RtmMessage, @NonNull SendMessageOptions, @Nullable ResultCallback<void>)` method to send an peer-to-peer message to a specified user. You need to:
+
+- Pass a user ID of the specified message receiver.
+- Call the `createMessage` method to create an `RtmMessage`instance and pass it to
+
+```java
+public void sendPeerMessage(String dst, String content) {
+        
+        final RtmMessage message = mRtmClient.createMessage();
+        message.setText(content);
+
+        SendMessageOptions option = new SendMessageOptions();
+        option.enableOfflineMessaging = true;
+
+        mRtmClient.sendMessageToPeer(dst, message, option, new ResultCallback<Void>() {
+
+            @Override
+            public void onSuccess(Void aVoid) {
+
+            }
+
+            @Override
+            public void onFailure(ErrorInfo errorInfo) {
+
+            }
+        });
+    }
+```
+
 #### Receive a peer-to-peer message
-The [onMessageReceived](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#af760814981718fb31d88acb8251d19b6) callback in the [RtmClientListener](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html) interface returns the state of sending a peer-to-peer message. In this callback: 
 
-- The message is retrieved by calling the [getText](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a17a3465ab00b72a0581d70bf9d22035b) method.
-- The `peerId` parameter refers to the user ID of the sender.
+You can use the `RtmClientListener` instance that you passed in when creating an `RtmClient` instance to listen for events that a peer-to-peer message is received. The `onMessageReceived(RtmMessage message, String peerId)` callback of the listener takes an `RtmMessage` instance with it.
 
-### Consideration
+- You can use the `message.getText()` method to get the text content of the message.
+- `peerId` refers to the user ID of the message sender. 
 
-You cannot reuse an Agora [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) object that has been received by a user.
+> The received `RtmMessage` object cannot be reused.
 
-### Next steps
-You can [send a channel message.](#sendchannel)
+### Channel messaging
 
-## <a name = "sendchannel"></a>Send a Channel Message
+Ensure that you have logged in the Agora RTM system before being able to use the channel messaging function. 
 
-After [logging in Agora's RTM system](#login), you can send a channel message.
+#### Create and join a channel
 
-### Implementation
+When creating an RtmChannel, you need to pass a channel ID, a string that must not be empty, null, "null", or exceed 64 Bytes in length. You also need to specify a channel listener: 
 
-#### Create an Agora RtmChannel instance
-
-Call the [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) method in the [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance to create an Agora RTM channel.  You need to: 
-
-- Pass the channel ID. The `channelId` parameter must be in the string format, less than 64 bytes, and cannot be empty or set as `"null"`. 
-- Specify a reference to [RtmChannelListener](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html), through which the Agora RTM SDK informs the app about channel events, such as receiving channel messages and a user joining or leaving a channel.
-
-```javascript
-private RtmChannel mRtmChannel;
- 
- 
+```java
 private RtmChannelListener mRtmChannelListener = new RtmChannelListener() {
     @Override
     public void onMessageReceived(RtmMessage message, RtmChannelMember fromMember) {
- 
+        String text = message.getText();
+        String fromUser = fromMember.getUserId();
     }
  
     @Override
@@ -181,86 +272,64 @@ private RtmChannelListener mRtmChannelListener = new RtmChannelListener() {
     public void onMemberLeft(RtmChannelMember member) {
  
     }
- 
-    @Override
-    public void onAttributesUpdated(Map<String, String> attributes) {
- 
-    }
- 
-    @Override
-    public void onAttributesDeleted(Map<String, String> attributes) {
- 
-    }
 };
- 
- 
-private void createChannel() {
-    mRtmChannel = mRtmClient.createChannel("demoChannelId", mRtmChannelListener);
-}
 ```
 
-#### Join a channel
-
-Call the [join](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#ad7b321869aac2822b3f88f8c01ce0d40) method in the [RtmChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html) instance to join a channel and specify a reference to the [ResultCallback](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html) object to indicate whether this method call succeeds or fails.
-
-```javascript
-private void joinChannel() {
-    mRtmChannel.join(new IResultCallback<Void>() {
-        @Override
-        public void onSuccess(Void responseInfo) {
-	    // Join a channel succeeds.
-        }
- 
-        @Override
-        public void onFailure(ErrorInfo errorInfo) {
-            int errorCode = errorInfo.getErrorCode();
-            // Join a channel fails. See the error codes defined in RtmStatusCode.JoinChannelError.
-        }
-    });
+```java
+try {
+		mRtmChannel = mRtmClient.createChannel("demoChannelId", mRtmChannelListener);
+} catch (RuntimeException e) {
+		Log.e(TAG, "Fails to create channel. Maybe the channel ID is invalid," +
+						" or already in use. See the API Reference for more information.");
 }
+
+		mRtmChannel.join(new ResultCallback<Void>() {
+				@Override
+				public void onSuccess(Void responseInfo) {
+						Log.d(TAG, "Successfully joins the channel!");
+				}
+
+				@Override
+				public void onFailure(ErrorInfo errorInfo) {
+						Log.d(TAG, "join channel failure! errorCode = "
+																+ errorInfo.getErrorCode());
+				}
+		});
 ```
 
-#### Send a channel message
+#### Channel messaging
 
-Call the [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a57087adf4227a17c774ea292840148a0) method in the [RtmChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html) instance to send a channel message. You need to: 
+After successfully joining a channel, you can send messages to the channel. As we mentioned in the previous section, you need to set a channel listener for events such as a channel message is received. 
 
-- Pass the [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) instance. You can call the [createMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a77dbd15cb6c9db3844fb313bd5dceac3) method in the [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) interface to create an [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) instance and create the text message by calling the [setText](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a114bf5f4d728e1a5e31792491bf4a1d2) method in the [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) instance.
-- Pass [ResultCallback](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html), which returns the state of sending the message, such as whether or not the channel message is received by the server.
+When calling a `sendChannelMessage()`message method to send channel messages, you need to: 
 
-```javascript
-private void sendChannelMessage() {
-    RtmMessage message = RtmMessage.createMessage();
-    message.setText("demo message content");
-    mRtmChannel.sendMessage(message, new resultCallback<void>() {
+- Pass an `RtmMessage` object. You need to use the `createMessage()` method of the `RtmClient` class to create an `RtmMessage` object and use the `setText()` method to set the message content. 
+- When sending a channel message, pass a `ResultCallback` instance.
 
-        }
-    });
+```java
+public void sendChannelMessage(String msg) {
+		RtmMessage message = mRtmClient.createMessage();
+		message.setText(msg);
+
+		mRtmChannel.sendMessage(message, new ResultCallback<Void>() {
+				@Override
+				public void onSuccess(Void aVoid) {
+				}
+
+				@Override
+				public void onFailure(ErrorInfo errorInfo) {
+				}
+		});
 }
 ```
-
-#### Receive a channel message
-The [onMessageReceived](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#af760814981718fb31d88acb8251d19b6) callback in the [RtmChannelListener](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html) interface returns the state of sending a channel message. In this callback: 
-
-- The message is retrieved by calling the [getText](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a17a3465ab00b72a0581d70bf9d22035b) method.
-- The user ID of the sender is retrieved by calling the [getUserId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel_member.html#a39c0eeffeefdc5a186e8b64d2f352912) method.
-
-#### Retrieve the member list of a channel
-Call the [getMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a567aca5f866cf71c3b679ae09b4bf626) method in the [RtmChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html) instance to retrieve the member list of a channel.
 
 #### Leave a channel
-Call the [leave](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a9e0b6aad17bfceb3c9c939351a467d14) method in the [RtmChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html) instance to leave a channel. You can rejoin the channel by calling the [join](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#ad7b321869aac2822b3f88f8c01ce0d40) method again.
 
-### Considerations
+You can call the `leave()` method to leave a channel. 
 
-- To use the channel feature, each client must first call the [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) method in the [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance to create a channel instance. 
-- You can create multiple channel instances in an [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance and users can join multiple channels at the same time. The `channelId` parameter and the [RtmChannelListener](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html) interface of different channels must be different.
-- If you pass an illegal channel ID or if the channel ID is being used, the [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) method returns `"null"`.
-- You cannot reuse an [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) object that has been received by a user.
-- When you leave a channel and do not join it again, you can call the [release](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a725d008cb19f44496948ee8f1826deaf) method in the [RtmChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html) instance to release all resources used by the channel instance.
-- Except for the callback triggered by the failure of the basic parameter validity check, all other callbacks are called asynchronously, unless otherwise specified.
+#### Considerations
 
-### Next steps
-You can [send a peer-to-peer message.](#sendpeer)
-
-
-
+- You can create and join a maximum of 20 `RtmChannel` instances. But ensure that each channel has a differnt channel ID and a different listener. 
+- If the channel ID you put is invalid, or if an `RtmChannel` with the same channel ID already exists, the SDK returns `null`. 
+- You cannot reuse a received `RtmMessage` instance. 
+- When you no longer need an `RtmChannel` instance after leaving it, you can call its `release()` method to release all resources it is using. 
