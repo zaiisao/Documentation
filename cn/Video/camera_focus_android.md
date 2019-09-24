@@ -3,7 +3,7 @@
 title: 摄像头对焦
 description: 
 platform: Android
-updatedAt: Tue Sep 17 2019 10:26:04 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 01:29:03 GMT+0800 (CST)
 ---
 # 摄像头对焦
 ## 功能简介
@@ -40,7 +40,7 @@ if (shouldManualFocus) {
     // 假设在屏幕(50，100)的位置对焦
     float positionX = 50.0f;
     float positionY = 100.0f;
-    rtcEgnine.setCameraFocusPositionInPreview(positionX, positionY);
+    rtcEngine.setCameraFocusPositionInPreview(positionX, positionY);
 }
 	
 ```
