@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Fri Sep 20 2019 09:35:39 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 08:35:16 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
