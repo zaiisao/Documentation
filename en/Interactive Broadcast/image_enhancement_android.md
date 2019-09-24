@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 07:11:29 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 07:11:58 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -33,4 +33,4 @@ We also provide an open-source [OpenVideoCall-Android](https://github.com/AgoraI
 
 ## Considerations
 - This API method has return values. If the method call fails, the return value is < 0.
-- For low-end phones, enabling image enhancement affects the system performance. When the video resolution is set as 360P, 720P or higher, and the frame rate is set as  30 fps or 15 fps, do not enable image enhancement.
+- For low-end phones, enabling image enhancement affects the system performance. When the video resolution is set as 360p, 720p or higher, and the frame rate is set as 30 fps or 15 fps, do not enable image enhancement.
