@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 12:24:55 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 12:25:00 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -21,7 +21,7 @@ updatedAt: Tue Sep 24 2019 12:24:55 GMT+0800 (CST)
 - App 要求 Android 4.1 或以上设备
 - 如果你的 App 以 Android 9 及以上为目标平台，请关注 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
 
-<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口并设置域名白名单。</div>
 
 ## 准备开发环境
 
