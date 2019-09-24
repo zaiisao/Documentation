@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Windows
-updatedAt: Thu Aug 15 2019 10:25:03 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 05:38:44 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
