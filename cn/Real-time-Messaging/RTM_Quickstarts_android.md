@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 04:03:53 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 07:34:44 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -277,7 +277,7 @@ App 在成功登录 RTM 服务器 之后，可以开始使用 RTM 的频道消�
 
 #### 创建 、加入频道实例
 
-- 传入能标识每个频道的 ID。ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"null"`。  
+- 传入能标识每个频道的 ID。ID 为字符串，不能为空或者多于 64 个字符，也不能是字符串 `"null"`。  
 - 指定一个频道监听器。SDK 通过回调通知应用程序频道的状态变化和运行事件等，如: 接收到频道消息、用户加入和退出频道等。
 
 ```java
@@ -305,7 +305,7 @@ try {
 		mRtmChannel = mRtmClient.createChannel("demoChannelId", mRtmChannelListener);
 } catch (RuntimeException e) {
 		Log.e(TAG, "Fails to create channel. Maybe the channel ID is invalid," +
-						" or already in use. See the API reference for more information.");
+						" or already in use. See the API Reference for more information.");
 }
 
 		mRtmChannel.join(new ResultCallback<Void>() {
@@ -322,9 +322,9 @@ try {
 		});
 ```
 
-#### 发送频道消息
+#### 收发频道消息
 
-在成功加入频道之后，用户可以开始向该频道发送消息。
+在成功加入频道之后，用户可以开始向该频道发送消息。频道消息的接收通过创建频道消息的时候传入的回调接口进行监听。
 
 调用频道实例的 `sendChannelMessage()` 方法向该频道发送消息。在该方法中：
 
@@ -348,9 +348,7 @@ public void sendChannelMessage(String msg) {
 }
 ```
 
-#### 接收频道消息
 
-频道消息的接收通过创建频道消息的时候传入的回调接口进行监听。
 
 
 
