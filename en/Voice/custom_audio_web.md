@@ -1,11 +1,11 @@
 
 ---
-title: Custom Audio Source and Sink
+title: Custom Audio Source
 description: How to use external audio sources for Web SDK
 platform: Web
-updatedAt: Fri Sep 20 2019 09:33:38 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 08:17:56 GMT+0800 (CST)
 ---
-# Custom Audio Source and Sink
+# Custom Audio Source
 ## Introduction
 
 By default, a browser uses the internal audio modules for capturing and rendering during real-time communication. You can use an external audio source and renderer. This page shows how to use the methods provided by Agora SDK to customize the audio source and renderer.
