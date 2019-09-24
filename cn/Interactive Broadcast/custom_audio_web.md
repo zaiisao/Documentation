@@ -19,9 +19,9 @@ updatedAt: Tue Sep 24 2019 08:36:30 GMT+0800 (CST)
 
 ## 实现方法
 
-在开始自定义音频采集前，请确保你已在项目中实现了基本的音视频通话或直播功能，详见[开始音视频通话](../../cn/Voice/start_call_web.md)或[开始互动直播](../../cn/Voice/start_live_web.md)。
+在开始自定义音频采集前，请确保你已在项目中实现了基本的音视频通话或直播功能，详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_web.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_web.md)。
 
-在创建音频流 `createStream` 时，通过  [`audioSource`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) 指定自定义的音频源，就可以实现自定义音频采集。例如，你可以通过 `mediaStream` 方法从 `MediaStreamTrack` 获得音频 track，然后指定 `audioSource`：
+在创建音频流 `createStream` 时，通过  [`audioSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) 指定自定义的音频源，就可以实现自定义音频采集。例如，你可以通过 `mediaStream` 方法从 `MediaStreamTrack` 获得音频 track，然后指定 `audioSource`：
 
 ```javascript
 navigator.mediaDevices.getUserMedia(
