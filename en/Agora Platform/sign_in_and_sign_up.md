@@ -1,11 +1,11 @@
 
 ---
-title: Create an Agora account
+title: Sign up for an Agora account
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 24 2019 07:33:27 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 07:34:18 GMT+0800 (CST)
 ---
-# Create an Agora account
+# Sign up for an Agora account
 This page introduces how to sign up for an Agora account and change the account settings.
 
 ## Sign up with an E-mail address
