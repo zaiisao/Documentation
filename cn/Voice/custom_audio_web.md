@@ -3,7 +3,7 @@
 title: 自定义音频采集
 description: How to use external audio sources for Web SDK
 platform: Web
-updatedAt: Tue Sep 24 2019 07:52:20 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 08:17:03 GMT+0800 (CST)
 ---
 # 自定义音频采集
 ## 功能介绍
