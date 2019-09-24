@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 24 2019 03:35:30 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 04:09:04 GMT+0800 (CST)
 ---
 # 注册与登录
 在开始使用 Agora 服务之前，你需要注册一个 Agora 开发者账号。注册后，您可以登录 Agora Dashboard，使用 Agora 提供的各种产品和服务。
