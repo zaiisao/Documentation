@@ -8,7 +8,7 @@ updatedAt: Thu Feb 21 2019 09:04:57 GMT+0800 (CST)
 # Test or Select a Media Device
 ## Introduction
 
-Agora supports the media device test and selection feature, allowing you to check if a camera or an audio device (a headset, microphone, or speaker) works or connects properly to the SD-RTN.
+Agora supports the media device test and selection feature, allowing you to check if a camera or an audio device (a headset, microphone, or speaker) works.
 
 You can use the media device test and selection feature in the following scenarios:
 
