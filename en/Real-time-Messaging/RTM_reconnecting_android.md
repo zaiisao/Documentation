@@ -3,7 +3,7 @@
 title: Manage Connection States
 description: 
 platform: Android
-updatedAt: Sun Jul 28 2019 09:44:53 GMT+0800 (CST)
+updatedAt: Tue Sep 24 2019 10:52:41 GMT+0800 (CST)
 ---
 # Manage Connection States
 ## Connection State Definitions
