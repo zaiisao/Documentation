@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 12:25:02 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 12:25:07 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -41,6 +41,11 @@ updatedAt: Wed Sep 25 2019 12:25:02 GMT+0800 (CST)
 
 ### <a name="appid"></a> 获取 App ID
 
+
+参考以下步骤获取一个 App ID。若已有App ID，可以直接查看[快速集成 SDK](#sdk)。
+<details>
+	<summary><font color="#3ab7f8">获取 App ID</font></summary>
+
 1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录 Dashboard。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
@@ -58,6 +63,7 @@ updatedAt: Wed Sep 25 2019 12:25:02 GMT+0800 (CST)
 
 	![](https://web-cdn.agora.io/docs-files/1563522556558)
 
+</details>
 
 
 
