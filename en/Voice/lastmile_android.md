@@ -67,3 +67,4 @@ rtcEngine.stopLastmileProbeTest();
 
 - You can conduct a last mile test only before joining a channel. Before the test ends, Agora recommends not calling any other API methods.
 - The `onLastmileQuality` callback may return UNKNOWN the first time it is triggered. Subsequent callbacks will return the test results. 
+- The audio SDK uses a fixed bitrate of 48 Kbps. The video SDK adjusts the actual bitrate according to the chosen video profile.

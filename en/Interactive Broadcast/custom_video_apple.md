@@ -22,8 +22,8 @@ This article tells you how to use the Agora Native SDK to customize the video so
 ## Implementation
 
 Before customizing the video source or renderer, ensure that you hava implemented the basic real-time communication functions in your project. For details, see the following documents:
-- iOS: [Start a Call](../../en/Video/start_call_ios.md) or [Start a Live Broadcast](../../en/Video/start_live_ios.md).
-- macOS: [Start a Call](../../en/Video/start_call_mac.md) or [Start a Live Broadcast](../../en/Video/start_live_mac.md).
+- iOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md).
+- macOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_mac.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_mac.md).
 
 ### Customize video source
 
@@ -102,8 +102,8 @@ We provide an open-source [Agora-Video-Source-iOS](https://github.com/AgoraIO/Ad
 
 **API reference**
 
-- [`setExternalVideoSource`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setExternalVideoSource:useTexture:pushMode:)
-- [`pushExternalVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalVideoFrame:)
+- [`setExternalVideoSource`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setExternalVideoSource:useTexture:pushMode:)
+- [`pushExternalVideoFrame`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalVideoFrame:)
 
 #### MediaIO
 
@@ -220,9 +220,9 @@ We provide an open-source [Agora-Custom-Media-Device-iOS](https://github.com/Ago
 	
 **API Reference**
 
-* [`setVideoSource`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
-* [`AgoraVideoSourceProtocal`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
-* [`AgoraVideoFrameConsumer`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraVideoFrameConsumer.html)
+* [`setVideoSource`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
+* [`AgoraVideoSourceProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
+* [`AgoraVideoFrameConsumer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoFrameConsumer.html)
 	
 
 ### Customize video renderer
@@ -351,10 +351,10 @@ We provide an open-source [Agora-Custom-Media-Device-iOS](https://github.com/Ago
 
 **API Reference**
 
-* [`setLocalVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVideoRenderer:)
-* [`setRemoteVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoRenderer:forUserId:)
-* [`AgoraVideoSinkProtocal`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraVideoSinkProtocol.html)
-* [`AgoraVideoFrameConsumer`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraVideoFrameConsumer.html)
+* [`setLocalVideoRenderer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVideoRenderer:)
+* [`setRemoteVideoRenderer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoRenderer:forUserId:)
+* [`AgoraVideoSinkProtocal`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSinkProtocol.html)
+* [`AgoraVideoFrameConsumer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoFrameConsumer.html)
 
 
 ## Considerations
@@ -365,7 +365,7 @@ Customizing the video source and sink requires you to manage video data recordin
 
 ## Reference
 
-Refer to [Custom Audio Source and Sink](../../en/Video/custom_audio_apple.md) if you want to customize the audio source and sink in your project.
+Refer to [Custom Audio Source and Sink](../../en/Interactive%20Broadcast/custom_audio_apple.md) if you want to customize the audio source and sink in your project.
 
 
 	
