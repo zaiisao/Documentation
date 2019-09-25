@@ -12,8 +12,6 @@ To check if the uplink network condition is good enough to support the audio bit
 
 This function particularly applies to scenarios which have high requirements on the network quality.
 
-> The audio SDK uses a fixed bitrate of 48 Kbps. The video SDK adjusts the actual bitrate according to the chosen video profile.
-
 
 
 ## Implementation
