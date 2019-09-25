@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Windows
 platform: Windows
-updatedAt: Wed Sep 25 2019 03:08:02 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:08:56 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -14,7 +14,9 @@ To obtain high-fidelity audio during real-time communications, you can choose th
 
 ## Implementation
 
-The Agora SDK provides the [`setAudioProfile`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e) method to set the appropriate audio profile according to the scenario. This method has two parameters:
+Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Voice/start_call_windows.md) or [Start a Live Broadcast](../../en/Voice/start_live_windows.md).
+
+The Agora SDK provides the `setAudioProfile` method to set the appropriate audio profile according to the scenario. This method has two parameters:
 <table>
 <tr>
 <th>Parameters</th>
@@ -44,7 +46,13 @@ The Agora SDK provides the [`setAudioProfile`](https://docs.agora.io/en/Voice/AP
 </tr>
 </table>
 
-### Parameters and Applications
+### API call sequence
+
+The following diagram shows how to set the audio profile:
+
+![](https://web-cdn.agora.io/docs-files/1568975146425)
+
+### Parameters and applications
 
 You can set the profile and scenario parameters based on the requirements of different applications, such as the audio quality and the audio player.
 
@@ -111,7 +119,7 @@ You can also set the profile and scenario parameters based on different applicat
 | Music education | MUSIC_STANDARD_<br/>STEREO | GAME_STREAMING | Prioritizes audio quality. Suitable for transmitting live external audio effects. |
 | Collaborative teaching | MUSIC_STANDARD_<br/>STEREO | CHATROOM_<br/>ENTERTAINMENT | High-fidelity audio and effects. No volume or audio quality change when you mute/unmute the microphone. |
 
-### Sample Code
+### Sample code
 
 ```c++
 // FM high-fidelity
@@ -127,11 +135,13 @@ rtcEngine.setAudioProfile(Constants.AUDIO_PROFILE_MUSIC_STANDARD, Constants.AUDI
 rtcEngine.setAudioProfile(Constants.AUDIO_AUDIO_PROFILE_MUSIC_HIGH_QUALITY, Constants.AUDIO_SCENARIO_GAME_STREAMING);
 ```
 
-### API Reference
+### API reference
 
 - [`setAudioProfile`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e)
 
 ## Considerations
+
+Call this method before calling the [`joinChannel`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c) method.
 
 When you set the volume of a device, you can set either the in-call volume or the media volume.
 - You can set the in-call volume during an audio or video call.
@@ -141,7 +151,7 @@ The differences between the two types of volumes are as follows:
 - The in-call volume features acoustic echo cancellation, and should always be set above 0.
 - The media volume features a higher audio quality, and can be set as 0.
 
-The audio scenarios in the [`setAudioProfile`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e) method use different volume settings.
+The audio scenarios in the `setAudioProfile` method use different volume settings.
 
 <table>
 <tr>
