@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set the audio profile on Android
 platform: Android
-updatedAt: Fri Sep 20 2019 06:55:25 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:07:57 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
@@ -12,7 +12,9 @@ updatedAt: Fri Sep 20 2019 06:55:25 GMT+0800 (CST)
 
 本文指导开发者根据对音质、声道、场景等的不同需求，选择不同的音频属性，获得最佳实时互动效果。
 ## 实现方法
-Agora SDK 提供 [`setAudioProfile`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a34175b5e04c88d9dc6608b1f38c0275d) 方法给开发者根据场景需求灵活配置适合的音质属性。这个方法有 2 个参数：
+在设置音频属性前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Video/start_call_android.md)或[实现互动直播](../../cn/Video/start_live_android.md)。
+
+Agora SDK 提供 `setAudioProfile` 方法给开发者根据场景需求灵活配置适合的音质属性。这个方法有 2 个参数：
 
 <table>
 <tr>
@@ -42,6 +44,12 @@ Agora SDK 提供 [`setAudioProfile`](https://docs.agora.io/cn/Video/API%20Refere
 	</td>
 </tr>
 </table>
+
+### API 时序图
+
+下图展示使用设置音频属性的 API 调用时序：
+
+![](https://web-cdn.agora.io/docs-files/1568961676313)
 
 ### 参数搭配
 你可以参考下图，根据应用场景对音质、设备的不同需求，选择不同的参数搭配。
@@ -130,6 +138,9 @@ rtcEngine.setAudioProfile(Constants.AUDIO_AUDIO_PROFILE_MUSIC_HIGH_QUALITY, Cons
 - [`setAudioProfile`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a34175b5e04c88d9dc6608b1f38c0275d)
 
 ## 开发注意事项
+
+该方法需要在 [`joinChannel`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c) 之前调用。
+
 不同的 Audio scenario 下，设备的系统音量是不同的。
 
 系统音量分通话音量和媒体音量两种：
