@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 06:19:36 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 06:19:40 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -32,8 +32,8 @@ Agora Native SDK 目前提供 Push 方式和 MediaIO 两种方式实现自定义
 
 参考如下步骤，在你的项目中使用 Push 方式实现自定义视频源功能：
 
-1. 在 `joinChannel` 前通过调用 `setExternalVideoSource` 指定外部视频采集设备
-2. 指定外部采集设备后，开发者自行管理视频数据采集和处理
+1. 在 `joinChannel` 前通过调用 `setExternalVideoSource` 指定外部视频采集设备。
+2. 指定外部采集设备后，开发者自行管理视频数据采集和处理。
 3. 完成视频数据处理后，再通过 `pushExternalVideoFrame` 发送给 SDK 进行后续操作。
 
 **API 时序图**
