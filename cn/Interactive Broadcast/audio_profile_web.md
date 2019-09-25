@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set audio profile for Web
 platform: Web
-updatedAt: Fri Sep 20 2019 08:51:22 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 02:54:30 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
