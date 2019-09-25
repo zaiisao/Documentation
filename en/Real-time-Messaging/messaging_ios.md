@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Wed Sep 25 2019 11:23:40 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 11:23:43 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -13,13 +13,18 @@ You can use this guide to quickly start messaging with the [Agora RTM SDK for iO
 We provide an open-source demo projects on GitHub, which implement an elementary messaging system. You can try out the corresponding demo and view our source code. 
 
 - [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C)
+  - [MainViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/MainViewController.m)
+  - [ChatViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/ChatViewController.m)
 - [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS)
+  - [MainViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/MainViewController.swift)
+  - [ChatViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/ChatViewController.swift)
+
 
 ## Prerequisites
 
 - Xcode 9.0 or later
 - An iOS device running iOS 8.0 or later
-- A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
+- A valid [Agora account](https://sso.agora.io/login/).
 
 <div class="alert note">Open the ports and whitelist the domains specified in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div>
 
@@ -323,16 +328,6 @@ Call the [leaveWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%
 - You cannot reuse an [AgoraRtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html) object that has been received by a user.
 - When you leave a channel and do not join it again, you can call the [destroyChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/destroyChannelWithId:) method in the [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance to release all resources used by the channel instance.
 - Except for the callback triggered by the failure of the basic parameter validity check, all other callbacks are called asynchronously, unless otherwise specified.
-
-## Sample code
-
-- For the [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C) demo project, see the following files for the corresponding code implementation: 
-  - [MainViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/MainViewController.m)
-  - [ChatViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/ChatViewController.m)
-
-- For the [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS) demo project, see the following files for the corresponding code implementation: 
-  - [MainViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/MainViewController.swift)
-  - [ChatViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/ChatViewController.swift)
 
 
 
