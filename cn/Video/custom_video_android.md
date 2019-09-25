@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 07:35:52 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 07:45:38 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -174,7 +174,7 @@ if (mHasStarted && mConsumer != null) {
 
 参考下图时序使用 MediaIO 在你的项目中实现自定义视频渲染。
 
-![](https://web-cdn.agora.io/docs-files/1568971321212)
+![](https://web-cdn.agora.io/docs-files/1569397508507)
 
 **示例代码**
 
