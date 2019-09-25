@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Android
 platform: Android
-updatedAt: Fri Sep 20 2019 10:10:31 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 03:07:14 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
