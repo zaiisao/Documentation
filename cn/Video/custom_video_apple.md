@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 25 2019 08:07:39 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 08:07:44 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -125,7 +125,7 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 
 参考下图时序使用 MediaIO 在你的项目中实现自定义视频采集。
 
-![](https://web-cdn.agora.io/docs-files/1569396036691)
+![](https://web-cdn.agora.io/docs-files/1569398846255)
 
 **示例代码**
 
