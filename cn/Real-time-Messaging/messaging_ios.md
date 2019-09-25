@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Wed Sep 25 2019 10:51:38 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:51:42 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 本章介绍在正式使用 Agora RTM SDK for iOS 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
@@ -12,14 +12,19 @@ updatedAt: Wed Sep 25 2019 10:51:38 GMT+0800 (CST)
 
 你可以在 GitHub 下载最新版的示例项目查看相关功能的具体实现。
 
-- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C)
-- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS)
+- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C) 示例项目的主要代码逻辑可以在以下文件查看：
+  - [MainViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/MainViewController.m)
+  - [ChatViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/ChatViewController.m)
+
+- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS) 示例项目的主要代码逻辑可以在以下文件查看：
+  - [MainViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/MainViewController.swift)
+  - [ChatViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/ChatViewController.swift)
 
 ## 开发环境要求
 
 - Xcode 9.0+。
 - iOS 8.0+ 真机（iPhone 或 iPad）。
-- 一个有效的 Agora 开发者账号。
+- 一个有效的 [Agora 开发者账号](https://sso.agora.io/login/)。
 
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口并设置域名白名单。</div>
@@ -349,6 +354,11 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 }];
 ```
 
+
+
+
+
+
 ## 开发注意事项
 
 - 每个客户端都需要首先调用 `AgoraRtmKit` 的 `createChannelWithId` 方法创建频道实例才能使用群聊功能，该实例只是本地的一个 `AgoraRtmChannel` 类对象实例。
@@ -357,14 +367,3 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 - 接收到的 `AgoraRtmMessage` 消息对象不能重复利用再用于发送。
 - 当离开了频道且不再加入该频道时，可以调用 `AgoraRtmChannel` 实例的 `destroyChannelWithId` 方法及时释放频道实例所占用的资源。
 - 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
-
-
-## 示例代码
-
-- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C) 示例项目的主要代码逻辑可以在以下文件查看：
-  - [MainViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/MainViewController.m)
-  - [ChatViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/ChatViewController.m)
-
-- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS) 示例项目的主要代码逻辑可以在以下文件查看：
-  - [MainViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/MainViewController.swift)
-  - [ChatViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/ChatViewController.swift)
