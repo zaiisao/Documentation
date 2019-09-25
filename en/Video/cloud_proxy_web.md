@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy on Web
 platform: Web
-updatedAt: Wed Sep 25 2019 08:45:55 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:09:46 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -14,13 +14,14 @@ To ensure that enterprise users can connect to Agora's services through a firewa
 
 Compared with setting a single proxy server, the cloud proxy is more flexible and stable, thus widely implemented in organizations with high-security requirements, such as large-scale enterprises, hospitals, universities, and banks.
 
-## Prerequisites
+## Implementation
 
-Agora Web SDK v2.5.1 or later supports the cloud proxy. Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
+Agora Web SDK v2.5.1 or later supports the cloud proxy. 
 
-1. Contact support@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
-
-2. Add the following test IP addresses and ports to your whitelist.
+1. Download [the latest version of the Agora Native SDK](https://docs.agora.io/en/Agora%20Platform/downloads).
+2. Prepare the development environment. For details, see [Start a Call](../../en/Video/start_call_web.md) or [Start a Live Broadcast](../../en/Video/start_live_web.md).
+3. Contact support@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
+4. Add the following test IP addresses and ports to your whitelist.
 
   The sources are the clients that integrate the Agora Web SDK.
 
@@ -35,17 +36,15 @@ Agora Web SDK v2.5.1 or later supports the cloud proxy. Before proceeding, ensur
 	| UDP      | 23.236.115.138 | 3478 - 3500            | Media data exchange |
 	| UDP      | 148.153.66.218 | 3478 - 3500            | Media data exchange |
 
-   > These IPs are for testing only. You need to apply for exclusive IP resources for production environment.
+ <div class="alert note">These IPs are for testing only. You need to apply for exclusive IP resources for production environment.</div>
 
-3. Enable the cloud proxy according to the instructions in the **Implementation** section and see if the audio/video call works.
+5. Call the `startProxyServer` method to enable the cloud proxy and see if the audio/video call works.
+6. Agora will provide the IP addresses (domain name) and ports for you to use the cloud proxy in the production environment. Add the IP address and ports to your whitelist.
+7. If you want to disable the cloud proxy, call the  `stopProxyServer` method.
 
-4. Agora will provide the IP addresses (domain name) and ports for you to use the cloud proxy in the production environment. Add the IP address and ports to your whitelist.
+### Sample code
 
-## Implementation
-
-You can set up the cloud proxy by calling the `startProxyServer` method.
-
-### Enable the Cloud Proxy
+### Enable the cloud proxy
 
 ```javascript
 var client = AgoraRTC.createClient({mode: 'live',codec: 'vp8'});
@@ -60,13 +59,7 @@ client.init(key, function() {
 })
 ```
 
-### Disable the Cloud Proxy
-
-To turn off the cloud proxy service：
-
-1. Leave the channel.
-2. Call the `stopProxyServer` method.
-3. Join the channel.
+### Disable the cloud proxy
 
 ```javascript
 // After enabling the cloud proxy and joining the channel.
@@ -82,6 +75,25 @@ client.join(channelKey, channel, null, function(uid) {
 ...
 }
 ```
+
+### API reference
+
+- [startProxyServer](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#startproxyserver)
+- [stopProxyServer](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#stopproxyserver)
+- [setProxyServer](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#setproxyserver)
+- [setTurnServer](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#setturnserver)
+
+## Working principles
+
+The following diagram shows the working principles of the Agora cloud proxy.
+
+![](https://web-cdn.agora.io/docs-files/1569400862850)
+
+1. Before connecting to Agora SD-RTN, the Agora SDK sends the request to the cloud proxy;
+
+2. The cloud proxy sends back the proxy information;
+3. The Agora SDK sends the data to the cloud proxy, and the cloud proxy forwards the data to Agora SD-RTN;
+4. Agora SD-RTN sends the data to the cloud proxy, and the cloud proxy forwards the data to the Agora SDK.
 
 ## Considerations
 
