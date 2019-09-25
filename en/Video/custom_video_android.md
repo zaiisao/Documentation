@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 07:47:03 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 08:30:52 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -17,7 +17,7 @@ However, the default modules might not meet your development requirements, such 
 - You need to process the captured video with a pre-processing library for functions such as image enhancement.
 - You need flexible device resource allocation to avoid conflicts with other services.
 
-This article tells you how to use the Agora SDK to customize the video source and renderer.
+This article tells you how to use the Agora Native SDK to customize the video source and renderer.
 
 ## Implementation
 
