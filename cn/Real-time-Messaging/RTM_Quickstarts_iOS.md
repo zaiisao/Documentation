@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Wed Sep 25 2019 03:10:48 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 03:49:29 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 本章介绍在正式使用 Agora RTM SDK for iOS 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
