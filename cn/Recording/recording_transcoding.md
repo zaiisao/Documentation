@@ -3,7 +3,7 @@
 title: 使用转码脚本
 description: 
 platform: Linux
-updatedAt: Wed Aug 14 2019 10:43:52 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 07:48:56 GMT+0800 (CST)
 ---
 # 使用转码脚本
 本文中转码指将多个录制文件合成一个文件的过程， Agora 在[本地服务端录制 SDK](https://docs.agora.io/cn/Recording/downloads) 的 tools 文件夹下提供转码工具 `ffmpeg` 和 `video_convert.py`，通过命令行 `tar -xvf` 解压 `ffmpeg`，并确保和 `video_convert.py` 在同一目录下。
