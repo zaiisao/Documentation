@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set the high-quality audio for iOS and macOS
 platform: iOS
-updatedAt: Wed Sep 25 2019 03:03:56 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:08:29 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -14,7 +14,9 @@ To obtain high-fidelity audio during real-time communications, you can choose th
 
 ## Implementation
 
-The Agora SDK provides the [`setAudioProfile`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) method to set the appropriate audio profile according to the scenario. This method has two parameters:
+Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md).
+
+The Agora SDK provides the `setAudioProfile` method to set the appropriate audio profile according to the scenario. This method has two parameters:
 <table>
 <tr>
 <th>Parameters</th>
@@ -44,7 +46,13 @@ The Agora SDK provides the [`setAudioProfile`](https://docs.agora.io/en/Interact
 </tr>
 </table>
 
-### Parameters and Applications
+### API call sequence
+
+The following diagram shows how to set the audio profile:
+
+![](https://web-cdn.agora.io/docs-files/1568973263867)
+
+### Parameters and applications
 
 You can set the profile and scenario parameters based on the requirements of different applications, such as the audio quality and the audio player.
 
@@ -111,7 +119,7 @@ You can also set the profile and scenario parameters based on different applicat
 | Music education | MusicStandardStereo | GameStreaming | Prioritizes audio quality. Suitable for transmitting live external audio effects. |
 | Collaborative teaching | MusicStandardStereo | ChatRoomEntertainment | High-fidelity audio and effects. No volume or audio quality change when you mute/unmute the microphone. |
 
-### Sample Code
+### Sample code
 
 ```objective-c
 // swift
@@ -138,11 +146,13 @@ agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 ```
 
 
-### API Reference
+### API reference
 
 - [`setAudioProfile`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:)
 
 ## Considerations
+
+Call this method before calling the [`joinChannelByToken`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) method.
 
 When you set the volume of a device, you can set either the in-call volume or the media volume.
 - You can set the in-call volume during an audio or video call.
@@ -152,7 +162,7 @@ The differences between the two types of volumes are as follows:
 - The in-call volume features acoustic echo cancellation, and should always be set above 0.
 - The media volume features a higher audio quality, and can be set as 0.
 
-The audio scenarios in the [`setAudioProfile`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) method use different volume settings.
+The audio scenarios in the `setAudioProfile` method use different volume settings.
 
 <table>
 <tr>
