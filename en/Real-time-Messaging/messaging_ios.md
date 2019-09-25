@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Wed Sep 25 2019 10:04:04 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:04:09 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -63,7 +63,8 @@ Now, let's build a project from scratch. Skip to [Integrate the SDK](#Integrate)
 2. Choose **Single View App** as the template and click **Next**.
 3. Input the project information, such as the project name, team, organization name, and language, and click **Next**.
 	
-> If you haven't added any team information, you will see an **Add account...** button. Click it, input your Apple ID, and click **Next** to add your team.
+> If you have not added any team information, find and click the **Add account...** button, input your Apple ID, and click **Next** to add your team.
+
 4. Choose the storage path of the project and click **Create**.
 5. Connect your iOS device to your computer.
 6. Go to the **TARGETS > Project Name > General > Signing** menu, choose **Automatically manage signing**, and then click **Enable Automatic** on the pop-up window.
