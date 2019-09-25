@@ -12,8 +12,6 @@ updatedAt: Tue Jul 16 2019 07:06:39 GMT+0800 (CST)
 
 在对网络质量要求高的场景下，Agora 建议在加入频道前进行探测，保证通信顺畅。
 
-> 纯语音产品使用 48 Kbps 的固定探测码率；视频产品会根据当前选定的视频属性调整探测码率。
-
 ## 实现方法
 
 请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Audio%20Broadcast/android_video.md)。
@@ -64,3 +62,4 @@ rtcEngine.stopLastmileProbeTest();
 
 - Last-mile 测试必须在加入通话频道之前。在结束测试之前，Agora 不建议调用其他 API 方法。
 - `onLastmileQuality` 回调第一次报告的结果有一定概率是 unknown, 可通过之后的几次回调获得结果。
+- 纯语音产品使用 48 Kbps 的固定探测码率；视频产品会根据当前选定的视频属性调整探测码率。
