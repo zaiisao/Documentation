@@ -1,11 +1,11 @@
 
 ---
-title: Custom Video Source
+title: Custom Video Source and Sink
 description: 
 platform: Windows
-updatedAt: Wed Sep 25 2019 09:19:12 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 09:19:53 GMT+0800 (CST)
 ---
-# Custom Video Source
+# Custom Video Source and Sink
 ## Introduction
 
 By default, the Agora SDK uses default audio and video modules for capturing and rendering in real-time communications. 
