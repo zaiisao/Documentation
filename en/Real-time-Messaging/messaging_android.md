@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 11:20:41 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 12:29:38 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM Java SDK for Android](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -40,10 +40,13 @@ We will walk you through the following steps in this section:
 - [Add Android device permissions](#permission)
 - [ Prevent Obfuscation of the Agora Classes](#obfuscated)
 
-<a name="appid"></a>
+### <a name="appid"></a>Get an App ID
 
-### Get an App ID
+You can skip to [Integrate the SDK into your project](#sdk) if you already have an App ID. 
 
+<details>
+	<summary><font color="#3ab7f8">Get an App ID</font></summary>
+	
 1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Real-time-Messaging/sign_in_and_sign_up.md).
 
 2. Click **Get Started** under **Projects**.
@@ -61,10 +64,11 @@ We will walk you through the following steps in this section:
 5. On the **Project Management** panel, find the **App ID** of your project.
 
  ![](https://web-cdn.agora.io/docs-files/1563523737158)
+</details>
 
-<a name="sdk"></a>
 
-### Integrate the SDK into your project
+
+### <a name="sdk"></a> Integrate the SDK into your project
 
 You can use either of the following ways to integrate the Agora RTM SDK for Android into your project. 
 
