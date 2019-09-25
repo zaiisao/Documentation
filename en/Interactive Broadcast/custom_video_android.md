@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 08:35:02 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 08:36:23 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -34,9 +34,9 @@ The Agora SDK provides two methods to customize the video source: Push mode and 
 
 Refer to the following steps to customize the video source in Push mode:
 
-- Call the `setExternalVideoSource` method before `joinChannel` to enable the external video source.
-- Manage video data capturing and processing on your own.
-- Send the video data back to the SDK using the `pushExternalVideoFrame` method.
+1. Call the `setExternalVideoSource` method before `joinChannel` to enable the external video source.
+2. Manage video data capturing and processing on your own.
+3. Send the video data back to the SDK using the `pushExternalVideoFrame` method.
 
 **API call sequence**
 
