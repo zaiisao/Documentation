@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 06:28:12 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 07:47:03 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -177,7 +177,7 @@ Refer to the following steps to customize the video renderer with MediaIO in you
 
 Refer to the following diagram to customize the video sink in your project.
 
-![](https://web-cdn.agora.io/docs-files/1569202137806)
+![](https://web-cdn.agora.io/docs-files/1569397613198)
 
 **Sample code**
 
