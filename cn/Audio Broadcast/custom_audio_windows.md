@@ -3,7 +3,7 @@
 title: 自定义音频采集和渲染
 description: 
 platform: Windows
-updatedAt: Fri Sep 20 2019 09:32:22 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 03:39:50 GMT+0800 (CST)
 ---
 # 自定义音频采集和渲染
 ## 功能介绍
