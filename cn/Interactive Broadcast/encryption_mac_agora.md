@@ -3,11 +3,9 @@
 title: 选择加密方案
 description: 
 platform: macOS
-updatedAt: Wed Sep 25 2019 09:56:56 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 09:57:00 GMT+0800 (CST)
 ---
 # 选择加密方案
-# 选择加密方案
-
 本文介绍如何选择加密方案。
 
 > 通信和直播模式均支持加密功能，但是如果你在直播场景下使用 CDN 推流、录制或储存，声网不建议使用数据加密功能。
