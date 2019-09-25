@@ -3,7 +3,7 @@
 title: Custom Audio Source and Sink
 description: 
 platform: Android
-updatedAt: Mon Sep 23 2019 01:34:52 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 02:28:41 GMT+0800 (CST)
 ---
 # Custom Audio Source and Sink
 ## Introduction
@@ -72,7 +72,7 @@ Refer to the following steps to customize the audio sink in your project:
 
 Refer to the following diagram to customize the audio sink in your project.
 
-![](https://web-cdn.agora.io/docs-files/1568968340741)
+![](https://web-cdn.agora.io/docs-files/1569378513078)
 
 **Sample code**
 
