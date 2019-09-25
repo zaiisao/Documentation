@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Wed Sep 25 2019 10:06:11 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:06:15 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -125,16 +125,7 @@ This section provides API call sequence diagrams, sample codes, and consideratio
 
 ### <a name = "create"></a>Create and Initialize an AgoraRtmKit Instance
 
-Before creating an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance, ensure that you prepare the development environment.
-
-1. Import the following tbd files and frameworks:
-
-  - libc++.tbd
-  - SystemConfiguration.framework
-  - CoreTelephony.framework
-  - libresolv.9.tbd
-
-2. Call the [initWithAppId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:) method to create an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance. You need to: 
+Call the [initWithAppId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:) method to create an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance. You need to: 
 
    - Pass the App ID issued by Agora to you. Only apps with the same App ID can join the same channel.
    - Specify an event handler. The Agora RTM SDK process event handlers with the [AgoraRtmDelegate](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html) instance to inform the app about runtime events, such as connection state changes and receiving peer-to-peer messages.
