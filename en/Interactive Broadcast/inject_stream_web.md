@@ -1,11 +1,11 @@
 
 ---
-title: Inject an Online Media Stream
+title: Inject Online Media Stream
 description: 
 platform: Web
-updatedAt: Wed Jun 26 2019 10:07:37 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 06:38:41 GMT+0800 (CST)
 ---
-# Inject an Online Media Stream
+# Inject Online Media Stream
 ## Introduction
 
 **Injecting an online media stream** refers to injecting an external audio or video stream to an ongoing live broadcast channel, so that the hosts and audience in the channel can hear and see the stream while interacting with each other. 
