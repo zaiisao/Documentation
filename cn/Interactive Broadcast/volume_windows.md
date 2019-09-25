@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Windows
 platform: Windows
-updatedAt: Fri Sep 20 2019 04:08:40 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:07:51 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -17,7 +17,7 @@ updatedAt: Fri Sep 20 2019 04:08:40 GMT+0800 (CST)
 ![](https://web-cdn.agora.io/docs-files/1548729075138)
 
 ## 实现方法
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/windows_video.md)。
+在调整通话音量前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Interactive%20Broadcast/start_call_windows.md)或[实现互动直播](../../cn/Interactive%20Broadcast/start_live_windows.md)。
 
 ### 设置采集音量
 
@@ -26,6 +26,8 @@ updatedAt: Fri Sep 20 2019 04:08:40 GMT+0800 (CST)
 #### 调整录音设备音量
 
 录音设备音量的参数值范围是 0 - 255，0 代表设备静音，255 代表设备的最大音量。
+
+示例代码
 
 ```cpp
 // 设置录音设备音量
@@ -40,6 +42,8 @@ int setRecordingDeviceVolume(int volume);
 
 如果调整设备音量到极限值仍无法满足需求，Agora 提供另一套接口直接调整录制声音的信号幅度，由此实现调整录音和播放的音量。
 调节音量的参数值范围是 0 - 400，默认值 100 表示原始音量，即不对信号做缩放，400 表示原始音量的 4 倍（把信号放大到原始信号的 4 倍）。
+
+示例代码
 
 ```cpp
 // 初始化参数对象
@@ -62,6 +66,8 @@ int ret = rep.adjustRecordingSignalVolume(200);
 
 录音设备音量的参数值范围是 0 - 255，0 代表设备静音，255 代表设备的最大音量。
 
+示例代码
+
 ```cpp
 // 设置播放音量
 int setPlaybackDeviceVolume(int volume);
@@ -76,6 +82,11 @@ int setPlaybackDeviceVolume(int volume);
 如果调整设备音量到极限值仍无法满足需求，Agora SDK 提供一套接口直接调整播放声音的信号幅度，由此实现调整播放的音量。
 调节音量的参数值范围是 0 - 400，默认值 100 表示原始音量，即不对信号做缩放，400 表示原始音量的 4 倍（把信号放大到原始信号的 4 倍）。
 
+**Note**: 
+从 v2.3.2 开始，`adjustPlaybackSignalVolume` 接口仅支持调整人声的播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 `adjustPlaybackSignalVolume(0)` 和 `adjustAudioMixingPlayoutVolume(0)`。
+
+示例代码
+
 ```cpp
 // 初始化参数对象
 RtcEngineParameters rep(*lpAgoraEngine);
@@ -83,9 +94,6 @@ RtcEngineParameters rep(*lpAgoraEngine);
 // 将播放音量设置为 200
 int ret = rep.adjustPlaybackSignalVolume(200);
 ```
-
-**Note**: 
-从 v2.3.2 开始，[`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a8bed09e12b8e2d9934aafad50b77d364) 接口仅支持调整人声的播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 `adjustPlaybackSignalVolume(0)` 和 `adjustAudioMixingPlayoutVolume(0)`。
 
 #### API 参考
 
@@ -95,9 +103,11 @@ int ret = rep.adjustPlaybackSignalVolume(200);
 
 ### 设置混音音量
 
-**混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[音乐混音](../../cn/Interactive%20Broadcast/effect_mixing_windows.md)开启混音功能。
+**混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[播放音效/混音](../../cn/Interactive%20Broadcast/effect_mixing_windows.md)开启混音功能。
 
 调节混音音量的参数值范围是 0 - 100，默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音文件播放静音。
+
+示例代码
 
 ```cpp
 // 初始化参数对象
@@ -110,6 +120,8 @@ int ret = rep.adjustAudioMixingPlayoutVolume(50);
 ```
 
 你也可以直接调用 `adjustAudioMixingVolume` ，同时设置本地及远端用户听到的音乐文件音量。
+
+示例代码
 
 ```cpp
 // 初始化参数对象
@@ -127,9 +139,11 @@ int ret = rep.adjustAudioMixingVolume(50);
 
 ### 设置音效音量
 
-播放**音效**是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效](../../cn/Interactive%20Broadcast/effect_mixing_windows.md)开启音效播放。
+播放**音效**是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效/混音](../../cn/Interactive%20Broadcast/effect_mixing_windows.md)开启音效播放。
 
 调节音效音量的参数值范围是 0 - 100，默认值 100 表示原始音效音量，即不对信号做缩放。0 表示音效文件播放静音。
+
+#### 示例代码
 
 ```cpp
 // 初始化参数对象
@@ -150,7 +164,9 @@ int ret = rep.setVolumeOfEffect(soundId, 50);
 
 在音频采集、混音、播放的整个过程中，你都可以使用下面的接口获取用户音量。
 
-- 瞬时说话声音音量提示。如下回调获取瞬时说话音量最大的用户 ID，及音量大小。如果返回的用户 ID 为 0，则表示瞬时说话音量最大的是本地用户。
+- 瞬时说话声音音量提示。如下回调获取瞬时说话音量最大的用户 ID，及音量大小。如果返回的 `uid` 为 0，则表示瞬时说话音量最大的是本地用户。
+
+示例代码
 
 ```cpp
 void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speakerNumber, int totalVolume)  {
@@ -161,7 +177,9 @@ void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speak
 }
 ```
 
-- 当前时间内累积音量最大者。如下回调获取获取特定时间段内，累积音量最大的用户 ID。
+- 当前时间内累积音量最大者。如下回调获取获取特定时间段内，累积音量最大的用户 ID。如果返回的 `uid` 为 0，则默认为本地用户。
+
+示例代码
 
 ```cpp
 void onActiveSpeaker(uid_t uid) {
