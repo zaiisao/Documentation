@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 25 2019 09:23:48 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 09:24:01 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -111,7 +111,7 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 
 参考如下步骤，在你的项目中使用 MediaIO 方式实现自定义视频源功能：
 
-1. 实现`AgoraVideoSourceProtocol` 协议。Agora 通过 `AgoraVideoSourceProtocol` 协议下的各回调设置视频数据格式，并控制采集过程：
+1. 实现 `AgoraVideoSourceProtocol` 协议。Agora 通过 `AgoraVideoSourceProtocol` 协议下的各回调设置视频数据格式，并控制采集过程：
 	- 收到 `bufferType` 回调后，在该回调的返回值中指定想要采集的视频数据格式；
 	- 收到 `shouldInitialize` 回调后，保存该回调中的 `AgoraVideoFrameConsumer` 对象。Agora 通过 `AgoraVideoFrameConsumer` 对象发送和接收自定义的视频数据；
 	- 收到 `shouldStart` 回调后，通过 `AgoraVideoFrameConsumer` 对象向 SDK 发送视频帧；
