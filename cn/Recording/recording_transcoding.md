@@ -1,11 +1,11 @@
 
 ---
-title: 音视频文件合并
+title: 合并音视频文件
 description: 
 platform: Linux
-updatedAt: Wed Sep 25 2019 07:53:38 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 07:54:03 GMT+0800 (CST)
 ---
-# 音视频文件合并
+# 合并音视频文件
 本文中转码指将多个录制文件合成一个文件的过程， Agora 在[本地服务端录制 SDK](https://docs.agora.io/cn/Recording/downloads) 的 tools 文件夹下提供转码工具 `ffmpeg` 和 `video_convert.py`，通过命令行 `tar -xvf` 解压 `ffmpeg`，并确保和 `video_convert.py` 在同一目录下。
 
 执行 `python video_convert.py`，即可看到相关用法：
