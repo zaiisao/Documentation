@@ -3,9 +3,19 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Wed Sep 25 2019 06:50:50 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 07:54:59 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
+You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
+
+## Try the demo
+
+We provide an open-source demo projects on GitHub, which implement an elementary messaging system. You can try out the corresponding demo and view our source code. 
+
+- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C)
+- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS)
+
+
 ## <a name = "create"></a>Create and Initialize an AgoraRtmKit Instance
 
 Before creating an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance, ensure that you prepare the development environment.
@@ -248,8 +258,6 @@ You can rejoin the channel by calling the [joinWithCompletion](https://docs.agor
 - When you leave a channel and do not join it again, you can call the [destroyChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/destroyChannelWithId:) method in the [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance to release all resources used by the channel instance.
 - Except for the callback triggered by the failure of the basic parameter validity check, all other callbacks are called asynchronously, unless otherwise specified.
 
-### Next steps
-You can [send a peer-to-peer message.](#sendpeer)
 
 
 
