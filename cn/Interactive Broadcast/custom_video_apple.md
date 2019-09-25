@@ -20,8 +20,8 @@ updatedAt: Wed Sep 25 2019 08:07:39 GMT+0800 (CST)
 ## 实现方法
 
 在开始自定义视频源和渲染器前，请确保你已在项目中实现了基本的音视频通话或直播功能，详见如下文档：
-- iOS：[开始音视频通话](../../cn/Video/start_call_ios.md)或[开始互动直播](../../cn/Video/start_live_ios.md)
-- macOS：[开始音视频通话](../../cn/Video/start_call_mac.md)或[开始互动直播](../../cn/Video/start_live_mac.md)
+- iOS：[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_ios.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_ios.md)
+- macOS：[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_mac.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_mac.md)
 
 ### 自定义视频采集
 
@@ -101,8 +101,8 @@ videoFrame.ratation = 0;
 
 **API 参考**
 
-- [`setExternalVideoSource`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setExternalVideoSource:useTexture:pushMode:)
-- [`pushExternalVideoFrame`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalVideoFrame:)
+- [`setExternalVideoSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setExternalVideoSource:useTexture:pushMode:)
+- [`pushExternalVideoFrame`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pushExternalVideoFrame:)
 
 
 #### MediaIO 方式
@@ -219,9 +219,9 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 	
 **API 参考**
 
-* [`setVideoSource`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
-* [`AgoraVideoSourceProtocal`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
-* [`AgoraVideoFrameConsumer`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraVideoFrameConsumer.html)
+* [`setVideoSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:)
+* [`AgoraVideoSourceProtocal`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html)
+* [`AgoraVideoFrameConsumer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoFrameConsumer.html)
 
 ### 自定义渲染器
 
@@ -350,10 +350,10 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 	
 **API 参考**
 
-* [`setLocalVideoRenderer`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVideoRenderer:)
-* [`setRemoteVideoRenderer`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoRenderer:forUserId:)
-* [`AgoraVideoSinkProtocal`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraVideoSinkProtocol.html)
-* [`AgoraVideoFrameConsumer`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraVideoFrameConsumer.html)
+* [`setLocalVideoRenderer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVideoRenderer:)
+* [`setRemoteVideoRenderer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoRenderer:forUserId:)
+* [`AgoraVideoSinkProtocal`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoSinkProtocol.html)
+* [`AgoraVideoFrameConsumer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraVideoFrameConsumer.html)
 
 ## 开发注意事项
 
@@ -364,4 +364,4 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 
 ## 相关文档
 
-如果你还想在项目中实现自定义的音频采集和渲染功能，请参考文档[自定义音频采集和渲染](../../cn/Video/custom_audio_apple.md)。
+如果你还想在项目中实现自定义的音频采集和渲染功能，请参考文档[自定义音频采集和渲染](../../cn/Interactive%20Broadcast/custom_audio_apple.md)。
