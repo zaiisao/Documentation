@@ -3,14 +3,18 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 11:20:37 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 11:20:41 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM Java SDK for Android](https://docs.agora.io/en/Real-time-Messaging/downloads). 
 
 ## Try the demo
 
-We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android), which implements an elementary messaging system. You can try this demo out and view our source code.
+We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android), which implements an elementary messaging system. You can try this demo out and view our source code:
+
+- [LoginActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/LoginActivity.java) 
+- [MessageActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/MessageActivity.java) 
+- [SelectionActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/SelectionActivity.java)
 
 ## Prerequisites
 
@@ -18,7 +22,7 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Android](h
 - Android Studio 3.0 or later
 - A mobile device running on Android 4.1 or later
 - To run your app on Android 9, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p) for more information.
-
+- A valid [Agora developer account](https://sso.agora.io/login/).
 
 
 <div class="alert note">Open the ports specified in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div> 
@@ -350,10 +354,4 @@ You can call the `leave()` method to leave a channel.
 - You cannot reuse a received `RtmMessage` instance. 
 - When you no longer need an `RtmChannel` instance after leaving it, you can call its `release()` method to release all resources it is using. 
 
-## Sample code
 
-See the following files in the [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android) demo project for the corresponding code implementation: 
-
-- [LoginActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/LoginActivity.java) 
-- [MessageActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/MessageActivity.java) 
-- [SelectionActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/SelectionActivity.java)
