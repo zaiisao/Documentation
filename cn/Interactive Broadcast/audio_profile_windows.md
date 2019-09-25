@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set the audio profile on Windows
 platform: Windows
-updatedAt: Fri Sep 20 2019 09:38:29 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:08:17 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
@@ -11,7 +11,9 @@ updatedAt: Fri Sep 20 2019 09:38:29 GMT+0800 (CST)
  所谓的高音质指的是我们提供采样率为 48 Khz、码率 192 Kbps 的能力，帮助用户实现高逼真的音乐场景，这种能力在语音电台、唱歌比赛类直播场景中应用较多。
 本文指导开发者根据对音质、声道、场景等的不同需求，选择不同的音频属性，获得最佳实时互动效果。
 ## 实现方法
-Agora SDK 提供 [`setAudioProfile`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e) 方法给开发者根据场景需求灵活配置适合的音质属性。这个方法有 2 个参数：
+在设置音频属性前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Interactive%20Broadcast/start_call_windows.md)或[实现互动直播](../../cn/Interactive%20Broadcast/start_live_windows.md)。
+
+Agora SDK 提供 `setAudioProfile` 方法给开发者根据场景需求灵活配置适合的音质属性。这个方法有 2 个参数：
 <table>
 <tr>
 <th>参数</th>
@@ -40,6 +42,12 @@ Agora SDK 提供 [`setAudioProfile`](https://docs.agora.io/cn/Interactive%20Broa
 	</td>
 </tr>
 </table>
+
+### API 时序图
+
+下图展示使用设置音频属性的 API 调用时序：
+
+![](https://web-cdn.agora.io/docs-files/1568972293149)
 
 ### 参数搭配
 你可以参考下图，根据应用场景对音质、设备的不同需求，选择不同的参数搭配。
@@ -127,6 +135,9 @@ rtcEngine.setAudioProfile(Constants.AUDIO_AUDIO_PROFILE_MUSIC_HIGH_QUALITY, Cons
 - [`setAudioProfile`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e)
 
 ## 开发注意事项
+
+该方法需要在 [`joinChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c) 之前调用。
+
 不同的 Audio scenario 下，设备的系统音量是不同的。
 
 系统音量分通话音量和媒体音量两种：
@@ -135,7 +146,7 @@ rtcEngine.setAudioProfile(Constants.AUDIO_AUDIO_PROFILE_MUSIC_HIGH_QUALITY, Cons
 
 两者的差异在于媒体音量可以调整到 0，而通话音量不可以。
 
-SDK 在 [`setAudioProfile`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab0cb52e238b729a15525a5cc12543d9e) 中提供 6 种不同的 Audio scenario，其中不同的 Audio scenario 使用的音量不同。如果需要将音量调整到 0，建议使用媒体音量控制的 Audio scenario。
+SDK 在 `setAudioProfile` 中提供 6 种不同的 Audio scenario，其中不同的 Audio scenario 使用的音量不同。如果需要将音量调整到 0，建议使用媒体音量控制的 Audio scenario。
 <table>
 <tr>
 <th> Audio scenario</th>
