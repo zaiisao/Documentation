@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 10:11:49 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:11:53 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM Java SDK for Android](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -343,7 +343,7 @@ public void sendChannelMessage(String msg) {
 
 You can call the `leave()` method to leave a channel. 
 
-#### Considerations
+## Considerations
 
 - You can create and join a maximum of 20 `RtmChannel` instances. But ensure that each channel has a differnt channel ID and a different listener. 
 - If the channel ID you put is invalid, or if an `RtmChannel` with the same channel ID already exists, the SDK returns `null`. 
