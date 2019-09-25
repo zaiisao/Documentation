@@ -3,14 +3,14 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Wed Sep 25 2019 04:03:06 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 04:03:10 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 本章介绍在正式使用 Agora RTM SDK for iOS 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
 ## Demo 体验
 
-你也可以到 GitHub 下载最新版的示例项目查看相关功能的具体实现。
+你可以在 GitHub 下载最新版的示例项目查看相关功能的具体实现。
 
 - [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C)
 - [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS)
@@ -349,7 +349,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 }];
 ```
 
-### 注意事项
+## 开发注意事项
 
 - 每个客户端都需要首先调用 `AgoraRtmKit` 的 `createChannelWithId` 方法创建频道实例才能使用群聊功能，该实例只是本地的一个 `AgoraRtmChannel` 类对象实例。
 - RTM 支持同时创建最多 20 个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的 `AgoraRtmChannelDelegate` 回调。
