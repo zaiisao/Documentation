@@ -3,7 +3,7 @@
 title: 视频流回退机制
 description: 
 platform: Web
-updatedAt: Wed Sep 25 2019 03:53:44 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 08:15:19 GMT+0800 (CST)
 ---
 # 视频流回退机制
 ## 功能描述
