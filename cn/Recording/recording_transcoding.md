@@ -3,7 +3,7 @@
 title: 合并音视频文件
 description: 
 platform: Linux
-updatedAt: Wed Sep 25 2019 08:12:24 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 08:12:28 GMT+0800 (CST)
 ---
 # 合并音视频文件
 ## 概述
@@ -84,6 +84,8 @@ updatedAt: Wed Sep 25 2019 08:12:24 GMT+0800 (CST)
 **手动录制模式**
 
 手动录制模式（`triggerMode` 设为 1）下，你需要手动开始录制和暂停录制。每一次开始/暂停视为一次录制 session。请结合下图进行理解录制 segment 和录制 session。
+	
+![](https://web-cdn.agora.io/docs-files/1569399133151)
 
 在此模式下， `-m` 参数不同设置的行为如下：
 
