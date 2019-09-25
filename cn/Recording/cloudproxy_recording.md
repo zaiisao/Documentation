@@ -50,7 +50,8 @@ updatedAt: Tue Jul 30 2019 05:56:01 GMT+0800 (CST)
 Agora 云代理的工作原理如下：
 ![](https://web-cdn.agora.io/docs-files/1569400362511)
 
-* Agora SDK 在连接 Agora SD-RTN 之前，向云代理发起请求；
-* 云代理发送相应代理信息；
-* Agora SDK 向云代理发送数据，云代理将接收到的数据透传给 Agora SD-RTN；
-* Agora SD-RTN 向云代理返回数据，云代理再将接收到的数据发送给 Agora SDK。
+1. Agora SDK 在连接 Agora SD-RTN 之前，向云代理发起请求；
+
+3. 云代理发送相应代理信息；
+4. Agora SDK 向云代理发送数据，云代理将接收到的数据透传给 Agora SD-RTN；
+5. Agora SD-RTN 向云代理返回数据，云代理再将接收到的数据发送给 Agora SDK。
