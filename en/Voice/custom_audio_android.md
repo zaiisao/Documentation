@@ -3,7 +3,7 @@
 title: Custom Audio Source and Sink
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 02:28:41 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 03:11:46 GMT+0800 (CST)
 ---
 # Custom Audio Source and Sink
 ## Introduction
@@ -17,7 +17,7 @@ However, the default modules might not meet your development requirements, such 
 - You need to process the captured video with a pre-processing library for functions such as image enhancement.
 - You need flexible device resource allocation to avoid conflicts with other services.
 
-This article tells you how to use the Agora SDK to customize the audio source and sink.
+This article tells you how to use the Agora Native SDK to customize the audio source and sink.
 
 ## Implementation
 
