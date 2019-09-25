@@ -3,7 +3,7 @@
 title: Set the Stereo/High-fidelity Audio Profile
 description: How to set high-quality audio on Web
 platform: Web
-updatedAt: Fri Aug 16 2019 04:33:52 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 03:06:53 GMT+0800 (CST)
 ---
 # Set the Stereo/High-fidelity Audio Profile
 ## Introduction 
