@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set audio profile for mac
 platform: macOS
-updatedAt: Fri Sep 20 2019 08:26:50 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:08:08 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
@@ -12,7 +12,9 @@ updatedAt: Fri Sep 20 2019 08:26:50 GMT+0800 (CST)
 
 本文指导开发者根据对音质、声道、场景等的不同需求，选择不同的音频属性，获得最佳实时互动效果。
 ## 实现方法
-Agora SDK 提供 [`setAudioProfile`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) 方法给开发者根据场景需求灵活配置适合的音质属性。这个方法有 2 个参数：
+在设置音频属性前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Voice/start_call_mac.md)或[实现互动直播](../../cn/Voice/start_live_mac.md)。
+
+Agora SDK 提供 `setAudioProfile` 方法给开发者根据场景需求灵活配置适合的音质属性。这个方法有 2 个参数：
 <table>
 <tr>
 <th>参数</th>
@@ -41,6 +43,12 @@ Agora SDK 提供 [`setAudioProfile`](https://docs.agora.io/cn/Voice/API%20Refere
 	</td>
 </tr>
 </table>
+
+### API 时序图
+
+下图展示使用设置音频属性的 API 调用时序：
+
+![](https://web-cdn.agora.io/docs-files/1568967893900)
 
 ### 参数搭配
 你可以参考下图，根据应用场景对音质、设备的不同需求，选择不同的参数搭配。
@@ -138,6 +146,9 @@ agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 - [`setAudioProfile`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:)
 
 ## 开发注意事项
+
+该方法需要在 [`joinChannelByToken`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) 之前调用。
+
 不同的 Audio scenario 下，设备的系统音量是不同的。
 
 系统音量分通话音量和媒体音量两种：
@@ -146,7 +157,7 @@ agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 
 两者的差异在于媒体音量可以调整到 0，而通话音量不可以。
 
-SDK 在 [`setAudioProfile`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:) 中提供 6 种不同的 Audio scenario，其中不同的 Audio scenario 使用的音量不同。如果需要将音量调整到 0，建议使用媒体音量控制的 Audio scenario。
+SDK 在 `setAudioProfile` 中提供 6 种不同的 Audio scenario，其中不同的 Audio scenario 使用的音量不同。如果需要将音量调整到 0，建议使用媒体音量控制的 Audio scenario。
 <table>
 <tr>
 <th> Audio scenario</th>
