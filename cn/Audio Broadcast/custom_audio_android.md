@@ -3,7 +3,7 @@
 title: 自定义音频采集和渲染
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 09:30:46 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 02:40:37 GMT+0800 (CST)
 ---
 # 自定义音频采集和渲染
 ## 功能介绍
@@ -62,9 +62,9 @@ rtcEngine.pushExternalAudioFrame(
 
 参考如下步骤，在你的项目中实现自定义音频渲染功能：
 
-1. `joinChannel` 前，通过调用 `setExternalAudioSink` 开启并设置外部音频渲染
-2. 成功加入频道后，调用 `pullPlaybackAudioFrame` 拉取远端发送的音频数据
-3. 开发者自行渲染并播放拉取到的音频数据
+1. `joinChannel` 前，通过调用 `setExternalAudioSink` 开启并设置外部音频渲染。
+2. 成功加入频道后，调用 `pullPlaybackAudioFrame` 拉取远端发送的音频数据。
+3. 开发者自行渲染并播放拉取到的音频数据。
 
 **API 时序图**
 

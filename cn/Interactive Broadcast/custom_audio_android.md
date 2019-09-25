@@ -19,7 +19,7 @@ updatedAt: Wed Sep 25 2019 02:40:37 GMT+0800 (CST)
 
 ## 实现方法
 
-开始自定义采集和渲染前，请确保你已在项目中实现基本的通话或者直播功能，详见[一对一通话](../../cn/Voice/start_call_android.md)或[互动直播](../../cn/Voice/start_live_android.md)。
+开始自定义采集和渲染前，请确保你已在项目中实现基本的通话或者直播功能，详见[一对一通话](../../cn/Interactive%20Broadcast/start_call_android.md)或[互动直播](../../cn/Interactive%20Broadcast/start_live_android.md)。
 
 ### 自定义音频采集
 
@@ -55,8 +55,8 @@ rtcEngine.pushExternalAudioFrame(
 ```
 
 **API 参考**
-* [`setExternalAudioSource`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e5630afd7104ee7be8b246ae004efb3)
-* [`pushExternalAudioFrame`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e219a679d066cfc2544b5e8f9d4d69f)
+* [`setExternalAudioSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a5e5630afd7104ee7be8b246ae004efb3)
+* [`pushExternalAudioFrame`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e219a679d066cfc2544b5e8f9d4d69f)
 
 ### 自定义音频渲染
 
@@ -93,8 +93,8 @@ rtcEngine.pullPlaybackAudioFrame(
 
 **API 参考**
 
-- [`setExternalAudioSink`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a270c0607d443790e92cdbd0d45ba1732)
-- [`pullPlaybackAudioFrame`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae15064944870692e9a0a59fdc87654c4)
+- [`setExternalAudioSink`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a270c0607d443790e92cdbd0d45ba1732)
+- [`pullPlaybackAudioFrame`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae15064944870692e9a0a59fdc87654c4)
 
 
 ## 开发注意事项
