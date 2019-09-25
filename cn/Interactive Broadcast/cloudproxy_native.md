@@ -3,10 +3,10 @@
 title: 使用云代理服务
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Wed Sep 25 2019 09:23:19 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:09:51 GMT+0800 (CST)
 ---
 # 使用云代理服务
-## 功能简介
+## 功能描述
 对于安全需求较高的企业用户，设置防火墙可以限制员工访问非认可的网站，保护内部信息安全。
 
 为避免这些企业因防火墙无法使用 Agora 的服务，Agora 开发了云代理服务。用户只需要在防火墙上将特定的 IP 及端口列入白名单，就可以实现内网访问 Agora 服务。
@@ -17,7 +17,7 @@ updatedAt: Wed Sep 25 2019 09:23:19 GMT+0800 (CST)
 ## 实现方法
 
 1. 下载[最新版的 Agora Native SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)。
-2. 参考对应平台的**快速开始**文档完成开发环境准备和 SDK 包集成。
+2. 参考对应平台的**快速开始**文档完成开发环境准备。
 3. 联系 support@agora.io，提供 App ID，并提供代理服务使用区域、并发规模、网络运营商等信息，申请开通云代理服务。
 4. 将以下测试 IP 及端口添加到企业防火墙的白名单。
 
@@ -43,7 +43,6 @@ updatedAt: Wed Sep 25 2019 09:23:19 GMT+0800 (CST)
 5. 调用 SDK 包中的 `setParameters("{\"rtc.enable_proxy\"}:true");` 接口，将参数值设为 `true`，表示开启云代理服务，测试是否能正常实现音视频通话或直播。
 6. 测试完成后，Agora 会为你部署云代理服务正式环境，并提供相应的 IP（域名）和端口。将 Agora 提供的 IP 和端口添加到企业防火墙的白名单上。
 
-
 ## 工作原理
 
 Agora 云代理的工作原理如下：
@@ -54,3 +53,6 @@ Agora 云代理的工作原理如下：
 * Agora SDK 向云代理发送数据，云代理将接收到的数据透传给 Agora SD-RTN；
 * Agora SD-RTN 向云代理返回数据，云代理再将接收到的数据发送给 Agora SDK。
 
+## 开发注意事项
+
+`setParameters` 必须在加入频道前或离开频道后调用。
