@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Wed Sep 25 2019 09:14:12 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:09:38 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -41,3 +41,20 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 
 5. Enable the cloud proxy by calling the `setParameters("{\"rtc.enable_proxy\"}:true"); ` method and see if the audio/video call works.
 6. Agora will provide the IP addresses (domain name) and ports for you to use the cloud proxy in the production environment. Add the IP address and ports to your whitelist.
+
+## Working principles
+
+The following diagram shows the working principles of the Agora cloud proxy.
+
+![](https://web-cdn.agora.io/docs-files/1569400862850)
+
+1. Before connecting to Agora SD-RTN, the Agora SDK sends the request to the cloud proxy;
+
+2. The cloud proxy sends back the proxy information;
+3. The Agora SDK sends the data to the cloud proxy, and the cloud proxy forwards the data to Agora SD-RTN;
+4. Agora SD-RTN sends the data to the cloud proxy, and the cloud proxy forwards the data to the Agora SDK.
+
+
+## Considerations
+
+The `setParameters` method must be called before joining the channel or after leaving the channel.
