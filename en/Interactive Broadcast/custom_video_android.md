@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Mon Sep 23 2019 01:35:16 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 06:20:08 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -42,7 +42,7 @@ Refer to the following steps to customize the video source in Push mode:
 
 Refer to the following diagram to customize the video source in your project.
 
-![](https://web-cdn.agora.io/docs-files/1569201464124)
+![](https://web-cdn.agora.io/docs-files/1569392397129)
 
 **Sample code**
 
