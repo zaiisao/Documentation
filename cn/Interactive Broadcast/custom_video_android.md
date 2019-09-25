@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 04:09:52 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 06:17:37 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -40,7 +40,7 @@ Agora Native SDK 目前提供 Push 方式和 MediaIO 两种方式实现自定义
 
 参考下图时序在你的项目中自定义视频采集。
 
-![](https://web-cdn.agora.io/docs-files/1568970076015)
+![](https://web-cdn.agora.io/docs-files/1569392243075)
 
 **示例代码**
 
