@@ -1,11 +1,11 @@
 
 ---
-title: 改善弱网环境下的用户体验
+title: 视频流回退机制
 description: 
 platform: Web
-updatedAt: Wed Apr 03 2019 06:39:26 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 03:53:44 GMT+0800 (CST)
 ---
-# 改善弱网环境下的用户体验
+# 视频流回退机制
 ## 功能描述
 
 网络不理想的环境下，直播音视频的质量都会下降。为提升直播效率，在发送端通过 `enableDualStream` 开启双流模式的情况下，Agora 提供了两种优化方法：
