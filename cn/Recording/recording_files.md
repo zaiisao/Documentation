@@ -3,7 +3,7 @@
 title: 管理录制文件
 description: 
 platform: Linux
-updatedAt: Wed Aug 14 2019 10:43:48 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 08:05:00 GMT+0800 (CST)
 ---
 # 管理录制文件
 ### 设置录制文件的目录结构
