@@ -7,7 +7,7 @@ updatedAt: Wed Apr 03 2019 06:30:25 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
-In a call or live broadcast, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
+In a call or live broadcast, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
 
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/ios_audio.md).
 ## Play Audio Effect Files
