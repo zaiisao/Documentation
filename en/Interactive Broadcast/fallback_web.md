@@ -1,11 +1,11 @@
 
 ---
-title: Improve Experience Under Poor Network Conditions
+title: Stream Fallback
 description: 
 platform: Web
-updatedAt: Wed Apr 03 2019 06:39:42 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 07:02:04 GMT+0800 (CST)
 ---
-# Improve Experience Under Poor Network Conditions
+# Stream Fallback
 ## Introduction
 
 The audio and video quality of a live broadcast or a video call deteriorates under poor network conditions. To improve the user experience in poor network conditions,  Agora provides two optimization methods when the publisher enables the dual-stream mode:
