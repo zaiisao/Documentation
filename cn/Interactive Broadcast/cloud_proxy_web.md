@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: How to enable cloud proxy on Web SDK
 platform: Web
-updatedAt: Wed Sep 25 2019 07:13:35 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 07:13:51 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能简介
