@@ -3,15 +3,17 @@
 title: Adjust the Volume
 description: How to adjust volume on Web
 platform: Web
-updatedAt: Wed Sep 25 2019 03:32:59 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:07:17 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
 When using the Agora SDK, you can adjust the audio recording and playback volumes for customization. For example, you can mute the remote audio by setting the volume as 0.
 ## Implementation
-Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
+Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Video/start_call_web.md) or [Start a Live Broadcast](../../en/Video/start_live_web.md).
 
-### Adjust the Playout Volume
+### Sample code
+
+#### Adjust the playout volume
 
 ```
  client.on("stream-subscribed", function(evt){
@@ -21,7 +23,7 @@ Before proceeding, ensure that you prepare the development environment. See [Int
  });
 ```
 
-### Mute the Remote User
+#### Mute the remote user
 
 ```
  client.on("stream-subscribed", function(evt){
@@ -30,6 +32,10 @@ Before proceeding, ensure that you prepare the development environment. See [Int
   stream.setAudioVolume(0);
  });
 ```
+
+### API reference
+
+- [`setAudioVolume`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#setaudiovolume)
 
 ## Considerations
 
