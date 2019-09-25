@@ -3,7 +3,7 @@
 title: 耳返
 description: How to enable ear-monitoring and adjust the volume of ear-monitoring.
 platform: iOS
-updatedAt: Wed Sep 25 2019 06:11:16 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:09:18 GMT+0800 (CST)
 ---
 # 耳返
 ## 功能描述
@@ -11,7 +11,11 @@ updatedAt: Wed Sep 25 2019 06:11:16 GMT+0800 (CST)
 Agora SDK 支持耳返功能，同时支持调节耳返的音量。
 
 ## 实现方法
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Interactive%20Broadcast/ios_video.md)。
+在实现耳返功能前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Interactive%20Broadcast/start_call_ios.md)或[实现互动直播](../../cn/Interactive%20Broadcast/start_live_ios.md)。
+
+Agora SDK 提供 `enableInEarMonitoring` 和 `setInEarMonitoringVolume` 方法给开发者根据场景需求灵活配置耳返功能，该方法在 `joinChannelByToken` 前后均可调用。
+
+### 示例代码
 
 ```swift
 // swift
@@ -31,7 +35,13 @@ agoraKit.setInEarMonitoringVolume(50)
 [agoraKit setInEarMonitoringVolume: 50];
 ```
 
+### API 参考
+
+- [`enableInEarMonitoring`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableInEarMonitoring:)
+- [`setInEarMonitoringVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setInEarMonitoringVolume:)
+
 ## 开发注意事项
 
-以上方法都有返回值，返回值小于 0 表示方法调用失败。
+- 在 `enableInEarMonitoring` 后调用 `setInEarMonitoringVolume`。
+- 以上方法都有返回值，返回值小于 0 表示方法调用失败。
 
