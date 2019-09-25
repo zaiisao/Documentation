@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Fri Sep 20 2019 04:16:41 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:07:37 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -18,7 +18,7 @@ updatedAt: Fri Sep 20 2019 04:16:41 GMT+0800 (CST)
 
 ## 实现方法
 
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/mac_video.md)。
+在调整通话音量前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Voice/start_call_mac.md)或[实现互动直播](../../cn/Voice/start_live_mac.md)。
 
 ### 设置采集音量
 
@@ -27,6 +27,8 @@ updatedAt: Fri Sep 20 2019 04:16:41 GMT+0800 (CST)
 #### 调整录音设备音量
 
 录音设备音量的参数值范围是 0 - 255，0 代表设备静音，255 代表设备的最大音量。
+
+示例代码
 
 ```swift
 // swift
@@ -48,6 +50,8 @@ agoraKit.setDeviceVolume(.audioRecording, volume: 50)
 
 如果调整设备音量到极限值仍无法满足需求，Agora SDK 提供一套接口直接调整录制声音的信号幅度，由此实现调整录音音量。
 调节音量的参数值范围是 0 - 400，默认值 100 表示原始音量，即不对信号做缩放，400 表示原始音量的 4 倍（把信号放大到原始信号的 4 倍）。
+
+示例代码
 
 ```swift
 // swift
@@ -74,6 +78,8 @@ agoraKit.adjustRecordingSignalVolume(50)
 
 播放设备音量的参数值范围是 0 - 255，0 代表设备静音，255 代表设备的最大音量。
 
+示例代码
+
 ```swift
 // swift
 // 设置播放设备音量
@@ -96,6 +102,11 @@ agoraKit.setDeviceVolume(.audioPlayout, volume: 50)
 如果调整设备音量到极限值仍无法满足需求，Agora SDK 提供一套接口直接调整播放声音的信号幅度，由此实现调整播放的音量。
 调节音量的参数值范围是 0 - 400，默认值 100 表示原始音量，即不对信号做缩放，400 表示原始音量的 4 倍（把信号放大到原始信号的 4 倍）。
 
+**Note**: 
+从 v2.3.2 开始，`adjustPlaybackSignalVolume` 接口仅支持调整人声的播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 `adjustPlaybackSignalVolume(0)` 和 `adjustAudioMixingPlayoutVolume(0)`。
+
+示例代码
+
 ```swift
 // swift
 // 设置播放信号音量
@@ -108,9 +119,6 @@ agoraKit.adjustPlaybackSignalVolume(50)
 [agoraKit adjustPlaybackSignalVolume: 50];
 ```
 
-**Note**: 
-从 v2.3.2 开始，[`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:) 接口仅支持调整人声的播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 `adjustPlaybackSignalVolume(0)` 和 `adjustAudioMixingPlayoutVolume(0)`。
-
 #### API 参考
 
 - [`setDeviceVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setDeviceVolume:volume:)
@@ -119,9 +127,11 @@ agoraKit.adjustPlaybackSignalVolume(50)
 
 ### 设置混音音量
 
-混音是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[音乐混音](../../cn/Voice/effect_mixing_mac.md)开启混音功能。
+混音是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[播放音效/混音](../../cn/Voice/effect_mixing_mac.md)开启混音功能。
 
 调节混音音量的参数值范围是 0 - 100，默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音文件播放静音。
+
+示例代码
 
 ```swift
 // swift
@@ -140,6 +150,8 @@ agoraKit.adjustAudioMixingPlayoutVolume(50)
 ```
 
 你也可以直接调用 `adjustAudioMixingVolume`，同时设置本地及远端用户听到的音乐文件音量。
+
+示例代码
 
 ```swift
 // swift
@@ -161,9 +173,11 @@ agoraKit.adjustAudioMixingVolume(50)
 
 ### 设置音效音量
 
-播放音效是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效](../../cn/Voice/effect_mixing_mac.md)开启音效播放。
+播放音效是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效/混音](../../cn/Voice/effect_mixing_mac.md)开启音效播放。
 
 调节音效音量的参数值范围是 0.0 - 100.0，默认值 100.0 表示原始音效音量，即不对信号做缩放。0.0 表示音效文件播放静音。
+
+#### 示例代码
 
 ```swift
 // swift
@@ -192,7 +206,9 @@ agoraKit.setVolumeOfEffect(soundId:"1", 50.0)
 
 在音频采集、混音、播放的整个过程中，你都可以使用下面的接口获取用户音量。
 
-- 瞬时说话声音音量提示。如下回调获取瞬时说话音量最大的用户 ID，及音量大小。如果返回的用户 ID 为 0，则表示瞬时说话音量最大的是本地用户。
+- 瞬时说话声音音量提示。如下回调获取瞬时说话音量最大的用户 ID，及音量大小。如果返回的 `uid` 为 0，则表示瞬时说话音量最大的是本地用户。
+
+示例代码
 
 ```swift
 // swift
@@ -213,7 +229,9 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeaker
 }
 ```
 
-- 当前时间内累积音量最大者。如下回调获取获取特定时间段内，累积音量最大的用户 ID。如果返回的 uid 是 0，则表示当前时间段内累积音量最大的是本地用户。
+- 当前时间内累积音量最大者。如下回调获取获取特定时间段内，累积音量最大的用户 ID。如果返回的 `uid` 为 0，则表示当前时间段内累积音量最大的是本地用户。
+
+示例代码
 
 ```swift
 // swift
