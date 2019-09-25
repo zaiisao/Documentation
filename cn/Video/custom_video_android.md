@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 06:28:42 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 07:35:52 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -76,14 +76,14 @@ Agora 通过 MediaIO 提供 `IVideoSource` 接口和 `IVideoFrameConsumer` 类�
 参考如下步骤，在你的项目中使用 MediaIO 方式实现自定义视频源功能：
 
 1. 实现 `IVideoSource` 类。Agora 通过 `IVideoSource` 类下的各回调设置视频数据格式，并控制采集过程：
-	- 收到 `getBufferType` 回调后，在该回调的返回值中指定想要采集的视频数据格式
-	- 收到 `onInitialize` 回调后，保存该回调中的 `IVideoFrameConsumer` 对象。Agora 通过 `IVideoFrameConsumer` 对象发送和接收自定义的视频数据。
-	- 收到 `onStart` 回调后，通过 `IVideoFrameConsumer` 对象向 SDK 发送视频帧
-	- 收到 `onStop` 回调后，停止使用 `IVideoFrameConsumer` 对象向 SDK 发送视频帧
-	- 收到 `onDispose` 回调后，释放 `IVideoFrameConsumer` 对象
-2. 继承实现的 `IVideoSource` 类，构建一个自定义的视频源对象
+	- 收到 `getBufferType` 回调后，在该回调的返回值中指定想要采集的视频数据格式；
+	- 收到 `onInitialize` 回调后，保存该回调中的 `IVideoFrameConsumer` 对象。Agora 通过 `IVideoFrameConsumer` 对象发送和接收自定义的视频数据；
+	- 收到 `onStart` 回调后，通过 `IVideoFrameConsumer` 对象向 SDK 发送视频帧；
+	- 收到 `onStop` 回调后，停止使用 `IVideoFrameConsumer` 对象向 SDK 发送视频帧；
+	- 收到 `onDispose` 回调后，释放 `IVideoFrameConsumer` 对象。
+2. 继承实现的 `IVideoSource` 类，构建一个自定义的视频源对象。
 3. 调用 `setVideoSource` 方法，将自定义的视频源对象设置给 RtcEngine。
-4. 根据场景需要，调用 `startPreview`、`joinChannel` 等方法预览或发送自定义采集的视频数据
+4. 根据场景需要，调用 `startPreview`、`joinChannel` 等方法预览或发送自定义采集的视频数据。
 
 **API 时序图**
 
@@ -163,12 +163,12 @@ if (mHasStarted && mConsumer != null) {
 参考如下步骤，在你的项目中使用 MediaIO 方式实现自定义渲染器功能：
 
 1. 实现 `IVideoSink` 类。Agora 通过 `IVideoSink` 类下的各回调设置视频数据格式，并控制渲染过程：
-	- 收到 `getBufferType` 和 `getPixelFormat` 回调后，在对应回调的返回值中设置你想要渲染的数据类型
-	- 根据收到的 `onInitialize`、`onStart`、`onStop`、`onDispose`、`getEglContextHandle` 回调，控制视频数据的渲染过程
-	- 实现一个对应渲染数据类型的 `IVideoFrameConsumer` 对象，以获取视频数据
-2. 继承实现的 `IVideoSink 类`，构建一个自定义的渲染器
-3. 调用 `setLocalVideoRenderer` 或 `setRemoteVideoRenderer`，用于本地渲染或远端渲染
-4. 根据场景需要，调用 `startPreview`、`joinChannel` 等方法预览或发送自定义渲染的视频数据
+	- 收到 `getBufferType` 和 `getPixelFormat` 回调后，在对应回调的返回值中设置你想要渲染的数据类型；
+	- 根据收到的 `onInitialize`、`onStart`、`onStop`、`onDispose`、`getEglContextHandle` 回调，控制视频数据的渲染过程；
+	- 实现一个对应渲染数据类型的 `IVideoFrameConsumer` 对象，以获取视频数据。
+2. 继承实现的 `IVideoSink 类`，构建一个自定义的渲染器。
+3. 调用 `setLocalVideoRenderer` 或 `setRemoteVideoRenderer`，用于本地渲染或远端渲染。
+4. 根据场景需要，调用 `startPreview`、`joinChannel` 等方法预览或发送自定义渲染的视频数据。
 
 **API 调用时序**
 
