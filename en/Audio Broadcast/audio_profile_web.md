@@ -3,18 +3,27 @@
 title: Set the Stereo/High-fidelity Audio Profile
 description: How to set high-quality audio on Web
 platform: Web
-updatedAt: Wed Sep 25 2019 03:06:53 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:08:37 GMT+0800 (CST)
 ---
 # Set the Stereo/High-fidelity Audio Profile
 ## Introduction 
 
-High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a 48-KHz sampling rate and a 192-Kbps bitrate. 
+High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a sample rate of 48 Hz and a bitrate of 192 Kbps.
 
 
 ## Implementation
-Before proceeding, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/web_prepare.md).
 
-The Agora Web SDK provides the [setAudioProfile](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudioprofile) method for developers to set appropriate audio profiles according to the scenarios. The `profile` parameter sets the sampling rate, bitrate, and encoding mode.
+Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_web.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_web.md).
+
+The Agora Web SDK provides the `setAudioProfile` method for developers to set appropriate audio profiles according to the scenarios. The `profile` parameter sets the sampling rate, bitrate, and encoding mode.
+
+### API call sequence
+
+The following diagram shows how to set the audio profile:
+
+![](https://web-cdn.agora.io/docs-files/1569380760195)
+
+### Sample code
 
 ```javascript
   // Sets the audio profile with a 48-KHz sampling rate, stereo sound, and 192-Kbps bitrate.
@@ -24,8 +33,10 @@ The Agora Web SDK provides the [setAudioProfile](https://docs.agora.io/en/Audio%
   });
 ```
 
-> For more options, see [setAudioProfile](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudioprofile).
+### API reference
+
+- [setAudioProfile](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudioprofile).
 
 ## Considerations
 
-- Call the [setAudioProfile](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setaudioprofile) method before `Stream.init`.
+- Call the `setAudioProfile` method before `Stream.init`.
