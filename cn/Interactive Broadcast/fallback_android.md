@@ -3,7 +3,7 @@
 title: 视频流回退机制
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 09:01:09 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 09:03:57 GMT+0800 (CST)
 ---
 # 视频流回退机制
 ## 功能描述
