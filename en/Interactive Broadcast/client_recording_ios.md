@@ -8,9 +8,9 @@ updatedAt: Wed Feb 20 2019 06:49:05 GMT+0800 (CST)
 # Record the Audio from the Client
 ## Introduction
 
-You can record the audio of all users in a call and save it on the client, just like using the recording function on your cell phone to record a call and save it for future replays. 
+You can record the audio of all users in a call and save it on the client for future replays. 
 
-Agora's Native SDK supports audio recording at the client. You can record the audio of all users in a channel and generate one recording file with the following format: 
+Agora Native SDK supports recording the audio of all users in a channel and save the recording into one file in the following formats: 
 
 - WAV: Large file (lossless compression)
 - AAC: Smaller file (lossy compression)
@@ -46,5 +46,5 @@ agoraKit.stopAudioRecording()
 
 ## Considerations
 
-- Only after joining a channel can you start recording the audio.
-- Client audio recording is automatically stopped once you leave the channel. 
+- Start the recording after joining a channel.
+- The recording automatically stops if the local user leaves the channel. 
