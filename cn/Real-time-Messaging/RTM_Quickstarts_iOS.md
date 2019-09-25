@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Wed Sep 25 2019 03:10:44 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 03:10:48 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 本章介绍在正式使用 Agora RTM SDK for iOS 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
@@ -123,7 +123,29 @@ import AgoraRtmKit
 
 > 如果填入 import 代码后提示找不到文件，可以尝试在 **Build Settings** 页面 **Framework search paths** 设置中添加 `$(SRCROOT)`。
 
-## <a name = "create"></a>初始化
+## 实现实时消息和基本频道操作
+
+本节主要提供实现实时消息和基本频道操作的 API 调用时序图、示例代码，以及相关注意事项。
+
+### API 调用时序图
+
+#### 登录登出 Agora RTM 系统
+
+![](https://web-cdn.agora.io/docs-files/1562566652476)
+
+#### 收发点对点消息
+
+![](https://web-cdn.agora.io/docs-files/1562566668046)
+
+#### 加入离开频道
+
+![](https://web-cdn.agora.io/docs-files/1562566699241)
+
+#### 收发频道消息
+
+![](https://web-cdn.agora.io/docs-files/1562566713620)
+
+### <a name = "create"></a>初始化
 
 调用 `initWithAppId` 方法创建一个实例。在该方法中:
 
@@ -147,11 +169,10 @@ import AgoraRtmKit
 }
 ```
 
-### 注意事项
 
-- `AgoraRtmKit` 支持多实例，每个实例独立工作互不干扰，多个实例创建时可以用相同的 `context`，但是事件回调 `AgoraRtmDelegate` 必须是不同的实例。
+> `AgoraRtmKit` 支持多实例，每个实例独立工作互不干扰，多个实例创建时可以用相同的 `context`，但是事件回调 `AgoraRtmDelegate` 必须是不同的实例。
 
-## <a name = "login"></a>登录
+### <a name = "login"></a>登录
 
 App 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息和群聊功能，在此之前，请确保你已完成初始化。
 
@@ -192,11 +213,11 @@ App 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
 
 > 调用 `logoutWithCompletion` 方法之后可以调用 `loginByToken` 重新登录或者切换账号。
 
-## <a name = "sendpeer"></a>点对点消息
+### <a name = "sendpeer"></a>点对点消息
 
 App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的点对点消息功能。
 
-### 发送点对点消息
+#### 发送点对点消息
 
 调用 `sendMessage` 方法发送点对点消息。在该方法中：
 
@@ -221,7 +242,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 }
 ```
 
-### 接收点对点消息
+#### 接收点对点消息
 
 点对点消息的接收通过创建 `AgoraRtmMessage` 实例的时候传入的 `AgoraRtmDelegate` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到消息文本内容和是消息发送方的用户 ID (`peerId`)。
 
@@ -233,16 +254,13 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 ```
 
 
+> 接收到的 `AgoraRtmMessage` 消息对象不能重复利用再用于发送。
 
-### 注意事项
-
-接收到的 `AgoraRtmMessage` 消息对象不能重复利用再用于发送。
-
-## <a name = "sendchannel"></a>频道消息
+### <a name = "sendchannel"></a>频道消息
 
 App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的频道消息功能。
 
-### 创建并加入频道
+#### 创建并加入频道
 
 1. 调用 `AgoraRtmChannel` 实例的 `createChannelWithId` 方法创建 `AgoraRtmChannel` 实例。在该方法中：
    - 传入能标识每个频道的 ID。`channelId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"nil"`。
@@ -278,7 +296,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 }
 ```
 
-### 发送频道消息
+#### 发送频道消息
 
 在成功加入频道之后，用户可以开始向该频道发送消息。
 
@@ -304,7 +322,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 }
 ```
 
-### 接收频道消息
+#### 接收频道消息
 
 频道消息的接收通过创建频道消息的时候传入的 `AgoraRtmChannelDelegate` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到频道消息文本内容和频道消息的发送者的用户 ID。
 
@@ -317,7 +335,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 
 
-### 退出频道
+#### 退出频道
 
 调用 `AgoraRtmChannel` 实例的 `leaveWithCompletion` 方法可以退出该频道。
 
@@ -331,8 +349,6 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 }];
 ```
 
-退出频道之后可以调用 `joinWithCompletion` 方法再重新加入频道。
-
 ### 注意事项
 
 - 每个客户端都需要首先调用 `AgoraRtmKit` 的 `createChannelWithId` 方法创建频道实例才能使用群聊功能，该实例只是本地的一个 `AgoraRtmChannel` 类对象实例。
@@ -341,3 +357,6 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 - 接收到的 `AgoraRtmMessage` 消息对象不能重复利用再用于发送。
 - 当离开了频道且不再加入该频道时，可以调用 `AgoraRtmChannel` 实例的 `destroyChannelWithId` 方法及时释放频道实例所占用的资源。
 - 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
+
+
+## 示例代码
