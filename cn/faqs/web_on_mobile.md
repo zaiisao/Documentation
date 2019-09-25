@@ -3,7 +3,7 @@
 title: 移动端使用 Agora Web SDK 
 description: Support for mobile webpages
 platform: Web
-updatedAt: Thu Aug 22 2019 14:26:47 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 21:10:26 GMT+0800 (CST)
 ---
 # 移动端使用 Agora Web SDK 
 Agora Web SDK 是基于 WebRTC 实现音视频通信的，因此依赖于浏览器对 WebRTC 的支持。尽管移动端主流的浏览器都支持 WebRTC，但是由于平台和一些应用内置浏览器的实现各不相同，移动端对音视频编解码的支持情况比较复杂，本文详细介绍移动端各种应用场景下对发送和接收音视频流的支持。
@@ -20,7 +20,7 @@ iOS 应用只能使用系统 WebView，不支持发送音频流。因此在 iOS 
 | 内嵌 WebView 的应用（仅支持接收） | iOS 12.1.4 及以后版本 |
 | Safari 浏览器（支持发送和接收）   | iOS 11.0 及以后版本   |
 
-> 对于不支持接收音频流的 iOS 版本，可以通过[引入 RTS 插件](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/web_in_app?platform=Web)支持播放音频。
+> 对于不支持接收音频流的 iOS 版本，可以通过[引入 H5 实时直播组件](../../cn/Interactive%20Broadcast/web_in_app.md)支持播放音频。
 
 
 ### Android
@@ -30,7 +30,7 @@ iOS 应用只能使用系统 WebView，不支持发送音频流。因此在 iOS 
 | 浏览器      | 支持版本                                            |
 | :------------------ | :----------------------------------------------------------- |
 | 微信内置浏览器      | 是否支持发送和接收音频流与使用的域名有关。例如 .com 域名可以正常发送和接收音频流，但是 .io 域名无法发送和接收音频流。 |
-| 内嵌 WebView 的应用 | 大多数不支持发送和接收音频流。对于不支持接收音频流的应用，可以通过[引入 RTS 插件](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/web_in_app?platform=Web)支持播放音频。 |
+| 内嵌 WebView 的应用 | 大多数不支持发送和接收音频流。对于不支持接收音频流的应用，可以通过[引入 H5 实时直播组件](../../cn/Interactive%20Broadcast/web_in_app.md)支持播放音频。 |
 | Chrome 浏览器       | Chrome 58 及以上版本支持发送和接收音频流。                   |
 
 ## 视频流
@@ -45,7 +45,7 @@ iOS 平台上所有的应用内置浏览器只能使用系统提供的 WebView�
 | 内嵌 WebView 的应用（仅支持接收） | iOS 12.2 及以后版本 | iOS 12.1.4 及以后版本 |
 | Safari 浏览器（支持发送和接收）   | iOS 12.2 及以后版本 | iOS 11 及以后版本     |
 
-对于不支持 H.264 的 iOS 版本，可以通过[引入 RTS 插件](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/web_in_app?platform=Web)支持观看视频。
+对于不支持 H.264 的 iOS 版本，可以通过[引入 H5 实时直播组件](../../cn/Interactive%20Broadcast/web_in_app.md)支持观看视频。
 
 ### Android
 
@@ -59,10 +59,10 @@ iOS 平台上所有的应用内置浏览器只能使用系统提供的 WebView�
 
 > 内嵌 WebView 的应用对 VP8 和 H.264 的支持以及 Chrome 浏览器对 H.264 的支持都与使用的设备有关。
 
-对于不支持 H.264 的情况，可以通过[引入 RTS 插件](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/web_in_app?platform=Web)支持观看视频。
+对于不支持 H.264 的情况，可以通过[引入 H5 实时直播组件](../../cn/Interactive%20Broadcast/web_in_app.md)支持观看视频。
 
 ### 编解码格式选择
 
 如果所有用户都使用 Agora Web SDK，我们建议在调用 `createStream` 时将 `codec` 设为 `"vp8"`。VP8 对系统和应用版本的要求请参考上面的表格。
 
-如果频道中有发送端使用 Agora Native SDK ，由于 Agora Native SDK 发送的视频流均为 H.264 编解码，在不支持 H.264 的手机上 Web SDK 可以[引入 RTS 插件](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/web_in_app?platform=Web)支持观看视频，同时频道中使用 Web SDK 的发送端也需要将 `codec` 设为 `"h264"`。
+如果频道中有发送端使用 Agora Native SDK ，由于 Agora Native SDK 发送的视频流均为 H.264 编解码，在不支持 H.264 的手机上 Web SDK 可以[引入 H5 实时直播组件](../../cn/Interactive%20Broadcast/web_in_app.md)观看视频，同时频道中使用 Web SDK 的发送端也需要将 `codec` 设为 `"h264"`。
