@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 11:17:00 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 11:17:04 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -12,7 +12,11 @@ updatedAt: Wed Sep 25 2019 11:17:00 GMT+0800 (CST)
 
 ## Demo 体验
 
-你也可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android) 查看相关功能的具体实现。
+你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android) 查看完整的源码和代码逻辑：
+
+- [LoginActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/LoginActivity.java) 
+- [MessageActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/MessageActivity.java) 
+- [SelectionActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/SelectionActivity.java)
 
 ## 开发环境要求
 
@@ -20,6 +24,7 @@ updatedAt: Wed Sep 25 2019 11:17:00 GMT+0800 (CST)
 - Android Studio 3.0 或以上版本
 - App 要求 Android 4.1 或以上设备
 - 如果你的 App 以 Android 9 及以上为目标平台，请关注 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+- 一个有效的 [Agora 开发者账号](https://sso.agora.io/login/)。
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口并设置域名白名单。</div>
 
@@ -350,13 +355,6 @@ public void sendChannelMessage(String msg) {
 调用实例的 `leave()` 方法可以退出该频道。退出频道之后可以调用 `join()` 方法再重新加入频道。
 
 
-## 示例代码
-
-你可以在 Agora-RTM-Tutorial-Android 示例项目的以下文件中查看完整的源码和代码逻辑：
-
-- [LoginActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/LoginActivity.java) 
-- [MessageActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/MessageActivity.java) 
-- [SelectionActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/SelectionActivity.java)
 
 ## 注意事项
 
