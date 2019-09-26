@@ -1,11 +1,11 @@
 
 ---
-title: 进行屏幕共享
+title: 屏幕共享
 description: 
 platform: Android
-updatedAt: Tue Nov 27 2018 06:20:27 GMT+0800 (CST)
+updatedAt: Thu Sep 26 2019 04:16:04 GMT+0800 (CST)
 ---
-# 进行屏幕共享
+# 屏幕共享
 ## 功能简介
 
 在视频通话或互动直播中进行屏幕共享，可以将说话人或主播的屏幕内容，以视频的方式分享给其他说话人或观众观看，以提高沟通效率。
