@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Thu Sep 26 2019 13:05:20 GMT+0800 (CST)
+updatedAt: Thu Sep 26 2019 13:08:04 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
