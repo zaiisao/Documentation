@@ -1,11 +1,11 @@
 
 ---
-title: Conduct a Last-mile Test
+title: Last-mile Tests
 description: Conduct a Pre-call Lastmile Test
 platform: iOS,macOS
-updatedAt: Thu Sep 26 2019 02:40:04 GMT+0800 (CST)
+updatedAt: Thu Sep 26 2019 04:19:50 GMT+0800 (CST)
 ---
-# Conduct a Last-mile Test
+# Last-mile Tests
 ## Introduction
 
 To check if the uplink network condition is good enough to support the audio bitrate or target bitrate of the chosen video profile, you can conduct a last-mile network quality test before joining the channel.
