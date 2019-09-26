@@ -16,8 +16,8 @@ To obtain high-fidelity audio during real-time communications, you can choose th
 
 Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. See the Quickstart Guides for details:
 
-- iOS: [Start a Call](../../en/Video/start_call_ios.md)/[Start a Live Broadcast](../../en/Video/start_live_ios.md)
-- macOS: [Start a call](../../en/Video/start_call_mac.md)/[Start a Live Broadcast](../../en/Video/start_live_mac.md)
+- iOS: [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md)/[Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_ios.md)
+- macOS: [Start a call](../../en/Audio%20Broadcast/start_call_mac.md)/[Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_mac.md)
 
 The Agora SDK provides the `setAudioProfile` method to set the appropriate audio profile according to the scenario. This method has two parameters:
 <table>
@@ -151,11 +151,11 @@ agoraKit.setAudioProfile(.musicHighQuality, scenario: .gameStreaming)
 
 ### API reference
 
-- [`setAudioProfile`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:)
+- [`setAudioProfile`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioProfile:scenario:)
 
 ## Considerations
 
-Call this method before calling the [`joinChannelByToken`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) method.
+Call this method before calling the [`joinChannelByToken`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) method.
 
 When you set the volume of a device, you can set either the in-call volume or the media volume.
 - You can set the in-call volume during an audio or video call.
