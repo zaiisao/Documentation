@@ -3,7 +3,7 @@
 title: Check Usage
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 08:00:53 GMT+0800 (CST)
+updatedAt: Thu Sep 26 2019 07:38:10 GMT+0800 (CST)
 ---
 # Check Usage
 This page introduces how to check your usage in Dashboard.
@@ -24,5 +24,5 @@ Follow these steps to check your usage:
 >	
 >	| Type | Resolution               |
 >	| ---- | ------------------------ |
->	| HD   | 360p ≤ Resolution ≤ 720p |
->	| HDP  | Resolution > 720p        |
+>	| HD   | 0 < Resolution ≤ 1280p × 720p |
+>	| HDP  | Resolution > 1280p × 720p        |
