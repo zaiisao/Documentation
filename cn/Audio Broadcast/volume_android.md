@@ -16,7 +16,7 @@ updatedAt: Wed Sep 25 2019 10:07:28 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1548728949895)
 ## 实现方法
-在调整通话音量前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Voice/start_call_android.md)或[实现互动直播](../../cn/Voice/start_live_android.md)。
+在调整通话音量前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Audio%20Broadcast/start_call_android.md)或[实现互动直播](../../cn/Audio%20Broadcast/start_live_android.md)。
 
 ### 设置采集音量
 **采集**是指音频信号由录音设备采集后传输到发送端的过程。这个过程中你可以使用 SDK 的接口直接调整录制声音的信号幅度，以调整录音的音量。
@@ -33,7 +33,7 @@ rtcEngine.adjustRecordingSignalVolume(volume);
 
 #### API 参考
 
-- [`adjustRecordingSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af3747f72256eb683feadbca2b742bd05)
+- [`adjustRecordingSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af3747f72256eb683feadbca2b742bd05)
 
 ### 设置播放音量
 **播放**是指音频信号从发送端进入到接收端，然后使用播放设备进行播放的过程。这个过程中你可以使用 SDK 的接口直接调整播放声音的信号幅度，以调整播放的音量。
@@ -52,11 +52,11 @@ rtcEngine.adjustPlaybackSignalVolume(volume);
 ```
 
 #### API 参考
-- [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
+- [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
 
 ### 设置混音音量
-**混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[播放音效/混音](../../cn/Voice/effect_mixing_android.md)开启混音功能。
+**混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[播放音效/混音](../../cn/Audio%20Broadcast/effect_mixing_android.md)开启混音功能。
 
 调节混音音量的参数值范围是 0 - 100，默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音文件播放静音。
 
@@ -81,12 +81,12 @@ rtcEngine.adjustAudioMixingVolume(volume);
 ```
 
 #### API 参考
-- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a16c4dc66d9c43eef9bee7afc86762c00)
-- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a16c4dc66d9c43eef9bee7afc86762c00)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
 
 ### 设置音效音量
-播放**音效**是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效/混音](../../cn/Voice/effect_mixing_android.md)开启音效播放。
+播放**音效**是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效/混音](../../cn/Audio%20Broadcast/effect_mixing_android.md)开启音效播放。
 
 调节音效音量的参数值范围是 0.0 - 100.0，默认值 100.0 表示原始音效音量，即不对信号做缩放。0.0 表示音效文件播放静音。
 
@@ -106,8 +106,8 @@ manager.setVolumeOfEffect(soundId, volume);
 ```
 
 #### API 参考
-- [`setEffectsVolume`](https://docs.agora.io/cn/Voice/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#ab758558563b3dd70771e5d44ba1a96f3)
-- [`setVolumeOfEffect`](https://docs.agora.io/cn/Voice/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#afcd8cd6d733703c0ba153b8e1ac81ec0)
+- [`setEffectsVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#ab758558563b3dd70771e5d44ba1a96f3)
+- [`setVolumeOfEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_audio_effect_manager.html#afcd8cd6d733703c0ba153b8e1ac81ec0)
 
 ### 设置耳返音量
 在音频采集、混音、播放的整个过程中，你都可以使用 `setInEarMonitoringVolume` 调整耳返的音量。
@@ -125,7 +125,7 @@ rtcEngine.setInEarMonitoringVolume(volume);
 ```
 
 #### API 参考
-- [`setInEarMonitoringVolume`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af71afdf140660b10c4fb0c40029c432d)
+- [`setInEarMonitoringVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af71afdf140660b10c4fb0c40029c432d)
 
 ### 获取用户音量（回调方法）
 
@@ -156,8 +156,8 @@ public void onActiveSpeaker(int uid) {
 ```
 
 #### API 参考
-- [`onAudioVolumeIndication`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a4d37f2b4d569fa787bb8c0e3ae8cd424)
-- [`onActiveSpeaker`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a895e965178d808f9d33b387ab3e50300)
+- [`onAudioVolumeIndication`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a4d37f2b4d569fa787bb8c0e3ae8cd424)
+- [`onActiveSpeaker`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a895e965178d808f9d33b387ab3e50300)
 
 
 ## 开发注意事项

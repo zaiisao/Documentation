@@ -17,7 +17,7 @@ updatedAt: Wed Sep 25 2019 10:07:33 GMT+0800 (CST)
 ![](https://web-cdn.agora.io/docs-files/1548729013692)
 
 ## 实现方法
-在调整通话音量前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Voice/start_call_ios.md)或[实现互动直播](../../cn/Voice/start_live_ios.md)。
+在调整通话音量前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Audio%20Broadcast/start_call_ios.md)或[实现互动直播](../../cn/Audio%20Broadcast/start_live_ios.md)。
 
 ### 设置采集音量
 
@@ -41,7 +41,7 @@ agoraKit.adjustRecordingSignalVolume(50)
 
 #### API 参考
 
-- [`adjustRecordingSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustRecordingSignalVolume:)
+- [`adjustRecordingSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustRecordingSignalVolume:)
 
 ### 设置播放音量
 
@@ -68,12 +68,12 @@ agoraKit.adjustPlaybackSignalVolume(50)
 
 #### API 参考
 
-- [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
+- [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
 
 ### 设置混音音量
 
-混音是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[播放音效/混音](../../cn/Voice/effect_mixing_ios.md)开启混音功能。
+混音是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[播放音效/混音](../../cn/Audio%20Broadcast/effect_mixing_ios.md)开启混音功能。
 
 调节混音音量的参数值范围是 0 - 100，默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音文件播放静音。
 
@@ -113,13 +113,13 @@ agoraKit.adjustAudioMixingVolume(50)
 
 #### API 参考
 
-- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
-- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
 
 ### 设置音效音量
 
-播放音效是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效/混音](../../cn/Voice/effect_mixing_ios.md)开启音效播放。
+播放音效是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效/混音](../../cn/Audio%20Broadcast/effect_mixing_ios.md)开启音效播放。
 
 调节音效音量的参数值范围是 0.0 - 100.0，默认值 100.0 表示原始音效音量，即不对信号做缩放。0.0 表示音效文件播放静音。
 
@@ -145,8 +145,8 @@ agoraKit.setVolumeOfEffect(soundId:"1", 50.0)
 
 #### API 参考
 
-- [`setEffectsVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
-- [`setVolumeOfEffect`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVolumeOfEffect:withVolume:)
+- [`setEffectsVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
+- [`setVolumeOfEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVolumeOfEffect:withVolume:)
 
 ### 设置耳返音量
 
@@ -174,8 +174,8 @@ agoraKit.setInEarMonitoringVolume(50)
 
 #### API 参考
 
-- [`enableInEarMonitoring`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableInEarMonitoring:)
-- [`setInEarMonitoringVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setInEarMonitoringVolume:)
+- [`enableInEarMonitoring`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableInEarMonitoring:)
+- [`setInEarMonitoringVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setInEarMonitoringVolume:)
 
 ### 获取用户音量（回调方法）
 
@@ -223,8 +223,8 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, activeSpeaker speakerUid: UInt) {
 ```
 
 #### API 参考
-- [`reportAudioVolumeIndicationOfSpeakers`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:)
-- [`activeSpeaker`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:activeSpeaker:)
+- [`reportAudioVolumeIndicationOfSpeakers`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportAudioVolumeIndicationOfSpeakers:totalVolume:)
+- [`activeSpeaker`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:activeSpeaker:)
 
 ## 开发注意事项
 
