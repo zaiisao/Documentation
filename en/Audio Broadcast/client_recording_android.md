@@ -8,12 +8,12 @@ updatedAt: Wed Feb 20 2019 06:48:34 GMT+0800 (CST)
 # Record the Audio from the Client
 ## Introduction
 
-You can record the audio of all users in a call and save it on the client for future replays. 
+You can record the audio of all the users in a call and save it on the client for future replays. 
 
-Agora Native SDK supports recording the audio of all users in a channel and save the recording into one file in the following formats: 
+The Agora Native SDK supports recording the audio of all the users in a channel and saves the recording into one file in the following formats: 
 
 - WAV: Large file (lossless compression)
-- AAC: Smaller file (lossy compression)
+- AAC: Small file (lossy compression)
 
 ## Implementation
 
