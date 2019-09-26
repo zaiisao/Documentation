@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Web
-updatedAt: Thu Sep 26 2019 05:59:42 GMT+0800 (CST)
+updatedAt: Thu Sep 26 2019 05:59:54 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -24,7 +24,7 @@ updatedAt: Thu Sep 26 2019 05:59:42 GMT+0800 (CST)
 
 参考如下时序在你的项目中进行通话前网络质量探测。
 
-![](https://web-cdn.agora.io/docs-files/1569471817165)
+![](https://web-cdn.agora.io/docs-files/1569477203196)
 
 
 ### 示例代码
