@@ -15,8 +15,8 @@ updatedAt: Thu Sep 26 2019 02:34:03 GMT+0800 (CST)
 ## 实现方法
 
 开始检测网络质量前，请确保你已在项目中实现了基本的音视频通信或直播功能。详见如下文档：
-- iOS：[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_ios.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_ios.md)
-- macOS：[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_mac.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_mac.md)
+- iOS：[开始音视频通话](../../cn/Video/start_call_ios.md)或[开始互动直播](../../cn/Video/start_live_ios.md)
+- macOS：[开始音视频通话](../../cn/Video/start_call_mac.md)或[开始互动直播](../../cn/Video/start_live_mac.md)
 
 在用户加入频道或上麦前，调用 `startLastmileProbeTest` 进行网络质量探测，向用户反馈上下行网络的带宽、丢包、网络抖动和往返时延。
 
@@ -86,10 +86,10 @@ AgoraLastmileProbeConfig *config = [[AgoraLastmileProbeConfig alloc] probeUplink
 
 ### API参考
 
-- [`startLastmileProbeTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startLastmileProbeTest:)
-- [`stopLastmileProbeTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopLastmileProbeTest)
-- [`lastmileQuality`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileQuality:)
-- [`lastmileProbeResult`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileProbeTestResult:)
+- [`startLastmileProbeTest`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startLastmileProbeTest:)
+- [`stopLastmileProbeTest`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopLastmileProbeTest)
+- [`lastmileQuality`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileQuality:)
+- [`lastmileProbeResult`](https://docs.agora.io/cn/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileProbeTestResult:)
 
 ## 开发注意事项
 
