@@ -3,7 +3,7 @@
 title: 查看用量
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 26 2019 07:29:08 GMT+0800 (CST)
+updatedAt: Thu Sep 26 2019 08:18:04 GMT+0800 (CST)
 ---
 # 查看用量
 本页介绍如何在 Agora Dashboard 查看项目用量。
@@ -21,7 +21,7 @@ updatedAt: Thu Sep 26 2019 07:29:08 GMT+0800 (CST)
 > - 时间段范围不能超过 3 个月。
 >
 > - 视频清晰度分类标准：
-> 	- 高清：视频分辨率介于 0 到 1280p × 720p 之间
+> 	- 高清：视频分辨率范围为 (16p × 16p, 1280p × 720p]
 > 	- 超清：视频分辨率大于 1280p × 720p
 
 
