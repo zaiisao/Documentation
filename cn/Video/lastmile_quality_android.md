@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Android
-updatedAt: Thu Sep 26 2019 02:07:49 GMT+0800 (CST)
+updatedAt: Thu Sep 26 2019 02:07:52 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -14,7 +14,7 @@ updatedAt: Thu Sep 26 2019 02:07:49 GMT+0800 (CST)
 
 ## 实现方法
 
-开始检测网络质量前，请确保你已在项目中实现了基本的音视频通信或直播功能。详见[开始音视频通话](../../cn/Voice/start_call_android.md)或[开始互动直播](../../cn/Voice/start_live_android.md)。
+开始检测网络质量前，请确保你已在项目中实现了基本的音视频通信或直播功能。详见[开始音视频通话](../../cn/Video/start_call_android.md)或[开始互动直播](../../cn/Video/start_live_android.md)。
 
 在用户加入频道或上麦前，调用 `startLastmileProbeTest` 进行网络质量探测，向用户反馈上下行网络的带宽、丢包、网络抖动和往返时延。
 
@@ -22,7 +22,15 @@ updatedAt: Thu Sep 26 2019 02:07:49 GMT+0800 (CST)
 - `onLastmileQuality`：约 2 秒内返回。该回调通过打分反馈上下行网络质量，更贴近主观感受
 - `onLastmileProbeResult`：约 30 秒内返回。该回调通过客观数据反馈上下行网络质量，更客观
 
+### API 调用时序
+
+参考如下时序在你的项目中进行通话前网络质量探测。
+
+![](https://web-cdn.agora.io/docs-files/1569463642819)
+
 ### 示例代码
+
+参考下文示例代码在你的项目中进行通话前网络质量探测。
 
 ```java
 // 配置一个 LastmileProbeConfig 实例。参数可参考 API 文档
@@ -57,10 +65,10 @@ rtcEngine.stopLastmileProbeTest();
 
 ### API 参考
 
-- [`startLastmileProbeTest`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a81c6541685b1c4437d9779a095a0f871)
-- [`stopLastmileProbeTest`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae21243b8da8bda9ee5f3a00621cbf959)
-- [`onLastmileQuality`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
-- [`onLastmileProbeResult`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad74a9120325bfeccdec4af4611110281)
+- [`startLastmileProbeTest`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a81c6541685b1c4437d9779a095a0f871)
+- [`stopLastmileProbeTest`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae21243b8da8bda9ee5f3a00621cbf959)
+- [`onLastmileQuality`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)
+- [`onLastmileProbeResult`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad74a9120325bfeccdec4af4611110281)
 
 ## 开发注意事项
 
