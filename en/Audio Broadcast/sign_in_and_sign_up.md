@@ -3,7 +3,7 @@
 title: Sign up for an Agora account
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 25 2019 02:34:20 GMT+0800 (CST)
+updatedAt: Thu Sep 26 2019 06:28:20 GMT+0800 (CST)
 ---
 # Sign up for an Agora account
 This page shows how to sign up for an Agora account, and change your account settings.
@@ -40,15 +40,6 @@ To sign up for an Agora account with a Cocos account, follow these steps:
 
 1. Go to https://sso.agora.io/en/signup, and click the ![](https://web-cdn.agora.io/docs-files/1569295962944) button.
 2. You will be redirected to the Cocos' login page. Fill in your Cocos account name and password and click **Log in**. You will directly log in Dashboard.
-
-## Sign up with a WeChat account
-
-To sign up for an Agora account with a WeChat account, follow these steps:
-
-1. Go to https://sso.agora.io/en/signup, and click the ![](https://web-cdn.agora.io/docs-files/1569295948148) button.
-2. Open your WeChat, scan the QR code that pops up, and click **Agree**.
-3. Follow the on-screen instructions to provide your information, including your email, name, company, product interest, platform, and industry, which helps us customize our services.
-4. Verify your **phone number** to secure your account.
 
 ## Log in to Dashboard
 
