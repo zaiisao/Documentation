@@ -8,7 +8,7 @@ updatedAt: Thu Dec 27 2018 07:34:37 GMT+0800 (CST)
 # Rate the Call
 ## Introduction
 
-When a call or live broadcast ends, you can get feedback on the quality of experience to improve your product by asking your users to rate the call or live broadcast.
+When a call or live broadcast ends, you can gather feedback on the quality of experience to improve your product by asking your users to rate the call or live broadcast.
 
 The Agora SDK provides methods for you to collect your users' ratings and comments on the calls.
 
