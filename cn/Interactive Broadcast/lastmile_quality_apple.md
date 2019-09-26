@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测
 platform: iOS,macOS
-updatedAt: Thu Sep 26 2019 02:36:15 GMT+0800 (CST)
+updatedAt: Thu Sep 26 2019 02:36:28 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -24,7 +24,15 @@ updatedAt: Thu Sep 26 2019 02:36:15 GMT+0800 (CST)
 - `lastmileQuality`：约 2 秒内返回。该回调通过打分反馈上下行网络质量，更贴近主观感受
 - `lastmileProbeResult`：约 30 秒内返回。该回调通过客观数据反馈上下行网络质量，更客观
 
+### API 时序图
+
+参考下图时序在你的项目中实现通话前网络探测功能。
+
+![](https://web-cdn.agora.io/docs-files/1569465210614)
+
 ### 示例代码
+
+参考下文代码在你的项目中实现通话前网络探测功能。
 
 ```swift
 // Swift
