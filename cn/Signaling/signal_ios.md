@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: iOS
-updatedAt: Wed Jul 31 2019 06:16:10 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 13:19:00 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.4
