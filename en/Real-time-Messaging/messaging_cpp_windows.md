@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Mon Sep 30 2019 13:06:17 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 13:08:26 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM C++ SDK for Windows](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -209,27 +209,6 @@ void joinChannel(const std::string& channel) {
 }
 ```
 
-```java
-try {
-		mRtmChannel = mRtmClient.createChannel("demoChannelId", mRtmChannelListener);
-} catch (RuntimeException e) {
-		Log.e(TAG, "Fails to create channel. Maybe the channel ID is invalid," +
-						" or already in use. See the API Reference for more information.");
-}
-
-		mRtmChannel.join(new ResultCallback<Void>() {
-				@Override
-				public void onSuccess(Void responseInfo) {
-						Log.d(TAG, "Successfully joins the channel!");
-				}
-
-				@Override
-				public void onFailure(ErrorInfo errorInfo) {
-						Log.d(TAG, "join channel failure! errorCode = "
-																+ errorInfo.getErrorCode());
-				}
-		});
-```
 
 #### Channel messaging
 
@@ -248,9 +227,9 @@ You can call the `leave()` method to leave a channel.
 
 ## Considerations
 
-- You can create and join a maximum of 20 `RtmChannel` instances. But ensure that each channel has a differnt channel ID and a different listener. 
-- If the channel ID you put is invalid, or if an `RtmChannel` with the same channel ID already exists, the SDK returns `null`. 
-- You cannot reuse a received `RtmMessage` instance. 
-- When you no longer need an `RtmChannel` instance after leaving it, you can call its `release()` method to release all resources it is using. 
+- You can create and join a maximum of 20 `IChannel` instances. But ensure that each channel has a differnt channel ID and a different listener. 
+- If the channel ID you put is invalid, or if an `IChannel` with the same channel ID already exists, the SDK returns `null`. 
+- You cannot reuse a received `IMessage` instance. 
+- When you no longer need an `IChannel` instance after leaving it, you can call its `release()` method to release all resources it is using. 
 
 
