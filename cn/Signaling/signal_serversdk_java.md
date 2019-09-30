@@ -3,7 +3,7 @@
 title: 信令 Server SDK API - Java
 description: 
 platform: Java
-updatedAt: Mon Sep 30 2019 13:22:58 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 13:23:03 GMT+0800 (CST)
 ---
 # 信令 Server SDK API - Java
 > 版本：v1.4.0 BETA
@@ -384,6 +384,7 @@ Signal 类的内部类。在调用 Signal 类的 <code>login</code> 方法时创
 
 ```
 public void logout();
+
 ```
 
 成功退出 Agora 信令系统时会触发 <code>onLogout</code> 回调。
@@ -392,6 +393,7 @@ public void logout();
 
 ```
 public void messageInstantSend(String account, String msg, Signal.MessageCallback cb)
+
 ```
 
 该方法发送点对点消息到某个指定账号。
@@ -423,6 +425,7 @@ public void messageInstantSend(String account, String msg, Signal.MessageCallbac
 
 ```
 public void messageInstantSend(String account, String msg, int ttl, Signal.MessageCallback cb)
+
 ```
 
 该方法发送点对点消息到某个指定账号。
@@ -457,6 +460,7 @@ public void messageInstantSend(String account, String msg, int ttl, Signal.Messa
 
 ```
 public Signal.LoginSession.Call channelInviteUser2(String channel, String peer, String extra, final Signal.CallCallback cb)
+
 ```
 
 该方法用于发起呼叫，即邀请某用户加入某个频道。呼叫和加入频道，是两个独立的过程。
@@ -502,6 +506,7 @@ public Signal.LoginSession.Call channelInviteUser2(String channel, String peer, 
 
 ```
 public Signal.LoginSession.Channel channelJoin(String name, Signal.ChannelCallback cb)
+
 ```
 
 该方法让用户加入指定频道。用户一次只能加入一个频道。如加入指定频道时已在其他频道中，将自动从其他频道退出。
@@ -581,6 +586,7 @@ Signal 类的内部类。在调用 LoginSession 对象的 <code>channelJoin</cod
 
 ```
 public void channelLeave()
+
 ```
 
 该方法用于退出当前的频道。退出成功后，所有频道用户将收到回调 <code>onChannelUserLeaved</code> 。
@@ -589,6 +595,7 @@ public void channelLeave()
 
 ```
 public void channelSetAttr(String name, String value)
+
 ```
 
 该方法用于设置频道属性。当操作成功，所有频道用户都将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -626,6 +633,7 @@ public void channelSetAttr(String name, String value)
 
 ```
 public void channelDelAttr(String name)
+
 ```
 
 该方法删除当前频道的指定属性。
@@ -651,6 +659,7 @@ public void channelDelAttr(String name)
 
 ```
 public void channelClearAttr()
+
 ```
 
 该方法删除当前频道的所有属性。
@@ -659,6 +668,7 @@ public void channelClearAttr()
 
 ```
 public void messageChannelSend(String msg)
+
 ```
 
 该方法向同一频道的所有用户发送频道消息。
@@ -720,6 +730,7 @@ Signal 类的内部类。在调用 LoginSession 对象的 <code>channelInviteUse
 
 ```
 public void channelInviteAccept()
+
 ```
 
 该方法接受呼叫邀请。
@@ -775,7 +786,7 @@ public void channelInviteRefuse(String extra)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>extra</code></td>
-<td>主叫方想传递给呼叫方的更多信息，可以是任何信息。例如:该呼叫为语音通话或视频通话。必须为 JSON 格式。</td>
+<td>被叫想传递给主叫的更多信息，可以是任何信息。例如:该呼叫为语音通话或视频通话。必须为 JSON 格式。</td>
 </tr>
 </tbody>
 </table>
@@ -794,6 +805,7 @@ public void channelInviteEnd()
 
 ```
 public void channelInviteEnd(String extra)
+
 ```
 
 该方法用于当呼叫接通后，调用本接口关闭呼叫。本端会回调 <code>onInviteEndByMyself</code> ，对端会回调 <code>onInviteEndByPeer</code> 。
@@ -846,6 +858,7 @@ UserAttrCallback 的内部类。用于管理消息相关回调。
 
 ```
 public void onUserGetAttr(String err, JSONObject ret)
+
 ```
 
 当查询用户属性时触发。
@@ -878,6 +891,7 @@ public void onUserGetAttr(String err, JSONObject ret)
 
 ```
 public void onUserGetAttrAll(String err, JSONObject ret)
+
 ```
 
 当查询用户所有属性值时触发。
@@ -910,6 +924,7 @@ public void onUserGetAttrAll(String err, JSONObject ret)
 
 ```
 public void onUserSetAttr(String err, JSONObject ret)
+
 ```
 
 当设置用户属性时触发。
@@ -987,6 +1002,7 @@ Signal 类的内部类。用于管理登录相关回调。
 
 ```
 public void onLoginSuccess(Signal.LoginSession session, int uid)
+
 ```
 
 当登录成功后触发此回调。
@@ -1015,6 +1031,7 @@ public void onLoginSuccess(Signal.LoginSession session, int uid)
 
 ```
 public void onLogout(Signal.LoginSession session, int ecode)
+
 ```
 
 当退出登录时触发此回调。
@@ -1043,6 +1060,7 @@ public void onLogout(Signal.LoginSession session, int ecode)
 
 ```
 public void onLoginFailed(Signal.LoginSession session, int ecode)
+
 ```
 
 当登录失败时触发此回调。
@@ -1071,6 +1089,7 @@ public void onLoginFailed(Signal.LoginSession session, int ecode)
 
 ```
 public void onMessageInstantReceive(Signal.LoginSession session, String account, int uid, String msg)
+
 
 
 ```
@@ -1109,6 +1128,7 @@ public void onMessageInstantReceive(Signal.LoginSession session, String account,
 public void onInviteReceived(Signal.LoginSession session, Signal.LoginSession.Call call)
 
 
+
 ```
 
 当对方收到呼叫邀请触发该回调。
@@ -1137,6 +1157,7 @@ public void onInviteReceived(Signal.LoginSession session, Signal.LoginSession.Ca
 
 ```
 public void onError(Signal.LoginSession session, int ecode, String reason)
+
 
 
 ```
@@ -1214,6 +1235,7 @@ ChannelCallback 类是 Signal 类的内部类，用于管理频道相关回调�
 public void onChannelJoined(Signal.LoginSession session, Signal.LoginSession.Channel channelName)
 
 
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1242,6 +1264,7 @@ public void onChannelJoined(Signal.LoginSession session, Signal.LoginSession.Cha
 
 ```
 public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
+
 
 
 ```
@@ -1277,6 +1300,7 @@ public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession
 public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, int ecode)
 
 
+
 ```
 
 当离开频道成功触发此回调。
@@ -1308,6 +1332,7 @@ public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Cha
 
 ```
 public void onChannelUserJoined(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)
+
 
 
 ```
@@ -1346,6 +1371,7 @@ public void onChannelUserJoined(Signal.LoginSession session, Signal.LoginSession
 public void onChannelUserLeaved(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid)
 
 
+
 ```
 
 当有用户调用 <code>channelLeave</code> 成功时触发此回调。
@@ -1380,6 +1406,7 @@ public void onChannelUserLeaved(Signal.LoginSession session, Signal.LoginSession
 
 ```
 public void onChannelUserList(Signal.LoginSession session, Signal.LoginSession.Channel channel, List<String> users, List<Integer> uids)
+
 
 
 ```
@@ -1418,6 +1445,7 @@ public void onChannelUserList(Signal.LoginSession session, Signal.LoginSession.C
 
 ```
 public void onChannelAttrUpdated(Signal.LoginSession session, Signal.LoginSession.Channel channel, String name, String value, String type)
+
 
 
 ```
@@ -1459,6 +1487,7 @@ public void onChannelAttrUpdated(Signal.LoginSession session, Signal.LoginSessio
 public void onChannelQueryUserNum(Signal.LoginSession session, String err, int num)
 
 
+
 ```
 
 查询频道用户数量时触发此回调。
@@ -1490,6 +1519,7 @@ public void onChannelQueryUserNum(Signal.LoginSession session, String err, int n
 
 ```
 public void onMessageChannelReceive(Signal.LoginSession session, Signal.LoginSession.Channel channel, String account, int uid, String msg)
+
 
 
 ```
@@ -1555,6 +1585,7 @@ MessageCallback 的内部类。用于管理消息相关回调。
 public void onMessageSendSuccess(Signal.LoginSession session)
 
 
+
 ```
 
 当发送消息成功时触发。
@@ -1580,6 +1611,7 @@ public void onMessageSendSuccess(Signal.LoginSession session)
 
 ```
 public void onMessageSendError(Signal.LoginSession session, int ecode)
+
 
 
 ```
@@ -1651,6 +1683,7 @@ CallCallback 类是 Signal 类的内部类，用于管理呼叫相关回调。
 public void onInviteReceivedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call)
 
 
+
 ```
 
 当呼叫被对方收到时触发该回调。
@@ -1679,6 +1712,7 @@ public void onInviteReceivedByPeer(Signal.LoginSession session, Signal.LoginSess
 
 ```
 public void onInviteAcceptedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 
 
 ```
@@ -1714,6 +1748,7 @@ public void onInviteAcceptedByPeer(Signal.LoginSession session, Signal.LoginSess
 public void onInviteRefusedByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
 
 
+
 ```
 
 当呼叫被对方拒绝时触发该回调。
@@ -1745,6 +1780,7 @@ public void onInviteRefusedByPeer(Signal.LoginSession session, Signal.LoginSessi
 
 ```
 public void onInviteFailed(Signal.LoginSession session, Signal.LoginSession.Call call, int ecode)
+
 
 
 ```
@@ -1780,6 +1816,7 @@ public void onInviteFailed(Signal.LoginSession session, Signal.LoginSession.Call
 public void onInviteEndByPeer(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
 
 
+
 ```
 
 当呼叫被对方结束时触发该回调。
@@ -1811,6 +1848,7 @@ public void onInviteEndByPeer(Signal.LoginSession session, Signal.LoginSession.C
 
 ```
 public void onInviteEndByMyself(Signal.LoginSession session, Signal.LoginSession.Call call, String extra)
+
 
 
 ```
