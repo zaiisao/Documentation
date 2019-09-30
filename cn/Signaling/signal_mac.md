@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: macOS
-updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 13:20:30 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.0
@@ -456,6 +456,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) getAttr:(NSString*)name;
+
 ```
 
 该方法用于获取自己的用户属性。调用成功会回调 <code>onUserAttrResult</code>。
@@ -481,6 +482,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) getAttrAll;
+
 ```
 
 该方法用于获取某个用户的用户属性。调用成功会回调 <code>onUserAttrAllResult</code>。
@@ -489,6 +491,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) getUserAttr:(NSString*)account name:(NSString*)name;
+
 ```
 
 该方法用于获取某个用户的用户属性。调用成功会回调 <code>onUserAttrResult</code>。
@@ -517,6 +520,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) getUserAttrAll:(NSString*)account;
+
 ```
 
 该方法用于获取某个用户的所有用户属性。调用成功会回调 <code>onUserAttrAllResult</code>。
@@ -542,6 +546,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) messageInstantSend:(NSString*)account uid:(uint32_t)uid msg:(NSString*)msg msgID:(NSString*)msgID;
+
 ```
 
 该方法发送点对点消息到某个指定账号。
@@ -582,6 +587,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelJoin:(NSString*)channelID;
+
 ```
 
 该方法让用户加入指定频道。用户一次只能加入一个频道。如加入指定频道时已在其他频道中，将自动从其他频道退出。
@@ -617,6 +623,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelLeave:(NSString*)channelID;
+
 ```
 
 该方法用于退出当前的频道。退出成功后，所有频道用户将收到回调 <code>onChannelUserLeaved</code>。
@@ -642,6 +649,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelQueryUserNum:(NSString*)channelID;
+
 ```
 
 该方法用于查询指定频道的用户数量。调用成功后用户将收到 <code>onChannelQueryUserNumResult</code> 回调。
@@ -667,6 +675,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelSetAttr:(NSString*)channelID name:(NSString*)name value:(NSString*)value;
+
 ```
 
 该方法用于设置频道属性。当操作成功，所有频道用户都将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -709,6 +718,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelDelAttr:(NSString*)channelID name:(NSString*)name;
+
 ```
 
 该方法用于删除频道属性。当操作成功，所有频道用户将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -737,6 +747,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelClearAttr:(NSString*)channelID;
+
 ```
 
 该方法用于删除所有频道属性。
@@ -762,6 +773,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) messageChannelSend:(NSString*)channelID msg:(NSString*)msg msgID:(NSString*)msgID;
+
 ```
 
 该方法用于发送频道消息，频道内所有成员会收到 <code>onMessageChannelReceive</code> 回调。
@@ -795,6 +807,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) messageChannelSendForce:(NSString*)channelID msg:(NSString*)msg msgID:(NSString*)msgID ;
+
 ```
 
 该方法用于在不加入频道的情况下发送频道消息。建议不要在应用程序端使用该方法。
@@ -828,6 +841,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelInviteUser:(NSString*)channelID account:(NSString*)account uid:(uint32_t)uid ;
+
 ```
 
 该方法用于发起呼叫，即邀请某用户加入某个频道。
@@ -869,6 +883,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelInviteUser2:(NSString*)channelID account:(NSString*)account extra:(NSString*)extra ;
+
 ```
 
 与上述 API 意思相同，参数不同。
@@ -913,6 +928,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelInviteDTMF:(NSString*)channelID phoneNum:(NSString*)phoneNum dtmf:(NSString*)dtmf;
+
 ```
 
 该方法发送 DTMF 消息到对端，用于 SIP 网关的呼叫。对方会回调 <code>onInviteMsg</code> 。
@@ -944,6 +960,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (void) channelInviteAccept:(NSString*)channelID account:(NSString*)account uid:(uint32_t)uid extra:(NSString*)extra ;
+
 ```
 
 该方法用于当收到呼叫时，调用本接口接受收到的呼叫。主叫方会回调 <code>onInviteAcceptedByPeer</code> 。
@@ -1001,7 +1018,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 <td>废弃字段，填 0</td>
 </tr>
 <tr><td><code>extra</code></td>
-<td>主叫方想传递给呼叫方的更多信息，可以是任何信息。例如:该呼叫为语音通话还是视频通话。必须为 JSON 格式</td>
+<td>被叫想传递给主叫的更多信息，可以是任何信息。例如:该呼叫为语音通话还是视频通话。必须为 JSON 格式</td>
 </tr>
 </tbody>
 </table>
@@ -1045,6 +1062,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (int) getStatus;
+
 ```
 
 该方法用于获取用户状态信息。
@@ -1079,6 +1097,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 - (int) getSdkVersion;
+
 ```
 
 该方法用于获取 SDK 版本信息。
@@ -1213,6 +1232,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onReconnecting)(uint32_t nretry) ;
+
 ```
 
 登录成功后，与 Agora 的连接丢失将触发本回调。
@@ -1238,6 +1258,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onError)(NSString* name,AgoraEcode ecode,NSString* desc) ;
+
 
 
 
@@ -1284,6 +1305,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 该回调返回用户状态查询结果。调用 <code>queryUserStatus</code> 方法时触发此回调。
@@ -1320,6 +1342,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当重连成功会触发此回调。重连失败会触发 <code>onLogout</code> 回调。
@@ -1345,6 +1368,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onLoginSuccess)(uint32_t uid,int fd) ;
+
 
 
 
@@ -1379,6 +1403,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当退出登录时触发此回调。
@@ -1404,6 +1429,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onInvokeRet)(NSString* callID,NSString* err,NSString* resp) ;
+
 
 
 
@@ -1441,6 +1467,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当登录失败时触发此回调。
@@ -1469,6 +1496,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当加入频道成功时触发此回调。
@@ -1494,6 +1522,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onChannelJoinFailed)(NSString* channelID,AgoraEcode ecode) ;
+
 
 
 
@@ -1528,6 +1557,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当离开频道成功触发此回调。
@@ -1556,6 +1586,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onChannelUserJoined)(NSString* account,uint32_t uid) ;
+
 
 
 
@@ -1590,6 +1621,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当有用户离开频道触发此回调。
@@ -1618,6 +1650,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onChannelUserList)(NSMutableArray* accounts, NSMutableArray* uids);
+
 
 
 
@@ -1654,6 +1687,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 查询频道用户数量时触发。
@@ -1685,6 +1719,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onChannelAttrUpdated)(NSString* channelID,NSString* name,NSString* value,NSString* type) ;
+
 
 
 
@@ -1733,6 +1768,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当收到呼叫邀请时触发。
@@ -1767,6 +1803,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onInviteReceivedByPeer)(NSString* channelID,NSString* account,uint32_t uid) ;
+
 
 
 
@@ -1807,6 +1844,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当呼叫被对方接受时触发。
@@ -1844,6 +1882,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当呼叫被对方拒绝时触发。
@@ -1878,6 +1917,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onInviteFailed)(NSString* channelID,NSString* account,uint32_t uid,AgoraEcode ecode,NSString* extra) ;
+
 
 
 
@@ -1921,6 +1961,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当呼叫被对方结束时触发。
@@ -1958,6 +1999,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当呼叫被自己结束时触发。
@@ -1989,6 +2031,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onInviteMsg)(NSString* channelID,NSString* account,uint32_t uid,NSString* msgType,NSString* msgData,NSString* extra) ;
+
 
 
 
@@ -2035,6 +2078,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当发送消息失败时触发。
@@ -2066,6 +2110,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当发送消息成功时触发。
@@ -2091,6 +2136,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onMessageInstantReceive)(NSString* account,uint32_t uid,NSString* msg) ;
+
 
 
 
@@ -2125,6 +2171,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onMessageChannelReceive)(NSString* channelID,NSString* account,uint32_t uid,NSString* msg) ;
+
 
 
 
@@ -2165,6 +2212,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 
 
+
 ```
 
 当有日志打印时触发。
@@ -2190,6 +2238,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onUserAttrResult)(NSString* account,NSString* name,NSString* value) ;
+
 
 
 
@@ -2224,6 +2273,7 @@ updatedAt: Wed Jul 31 2019 09:35:27 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onUserAttrAllResult)(NSString* account, NSString* value) ;
+
 
 
 
