@@ -3,7 +3,7 @@
 title: Release Notes for Agora Cloud Recording
 description: 
 platform: Linux
-updatedAt: Tue Oct 01 2019 01:15:37 GMT+0800 (CST)
+updatedAt: Tue Oct 01 2019 01:17:34 GMT+0800 (CST)
 ---
 # Release Notes for Agora Cloud Recording
 ## Overview
