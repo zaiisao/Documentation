@@ -3,14 +3,14 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Wed Oct 02 2019 07:10:45 GMT+0800 (CST)
+updatedAt: Wed Oct 02 2019 07:10:50 GMT+0800 (CST)
 ---
 # Release Notes
-## Overview
+  ## Overview
 
-Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
+Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-time Messaging (RTM) SDK provides a more streamlined implementation and stable messaging mechanism for you to quickly implement real-time messaging under various scenarios.
 
-> For more information about the SDK features and applications, see [Agora RTM Overview](../../en/Real-time-Messaging/RTM_product.md).
+> For more information about the features and applications of the Agora RTM SDK, see [Product Overview](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms).
 
 ## v1.1.0
 
