@@ -3,12 +3,102 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Sep 25 2019 07:08:12 GMT+0800 (CST)
+updatedAt: Wed Oct 02 2019 09:59:20 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 了解更多详情。
+
+
+## 1.1.0 版
+
+该版本于 2019 年 9 月 30 日发布。新增如下功能：
+
+- [查询频道成员人数](#getcount)
+- [频道成员人数自动更新](#oncount)
+- [频道属性增删改查](#channelattributes)
+
+
+
+### 兼容性改动
+
+1. `RtmMessage` 对象的 `serverReceivedTs` 方法由仅支持点对点消息改为同时支持点对点消息和频道消息。
+2. 点对点消息的超时时间由 5 秒延长为 10 秒。
+
+### 新增功能
+
+<a name="getcount"></a>
+#### 1. 查询频道成员人数
+
+支持在不加入频道的情况下通过主动调用 `getChannelMemberCount` 接口查询单个或多个频道的频道人数。一次最多可查询 32 个频道的成员人数。
+
+<a name="oncount"></a>
+#### 2. 频道成员人数自动更新
+
+如果你已经加入某频道，你无需调用 `getChannelMemberCount` 接口查询当前频道人数。我们也不建议你通过监听 `MemberJoined` 和 `MemberLeft` 统计频道成员人数。从本版本开始，SDK 会在频道成员人数发生变化时通过 `MemberCountUpdated` 回调接口通知频道成员并返回当前频道成员人数：
+
+- 频道成员人数小于等于 512 时，最高触发频率为每秒 1 次。
+- 频道成员人数超过 512 时，最高触发频率为每 3 秒 1 次。
+
+<a name="channelattributes"></a>
+#### 3. 频道属性增删改查
+
+支持设置或查询某个指定频道的属性。你可以用频道属性实现群公告、上下麦同步等功能。
+
+每个频道属性为 key 和 value 的键值对。其中：
+- 每个属性的 key 为 32 字节可见字符，每个属性的 value 的字符串长度不得超过 8 KB。
+- 某个频道的全部属性长度不得超过 32 KB。
+- 某个频道属性的全部属性个数不得超过 32 个。
+
+支持功能包括：
+
+- 全量设置某指定频道的属性。
+- 添加或更新某指定频道的属性。
+- 删除某指定频道的指定属性。
+- 清空某指定频道的属性。
+- 查询某指定频道的全部属性。
+- 查询某指定频道指定属性名的属性。
+
+在进行频道属性的更新或删除操作时，你可以通过设置标志位 `enableNotificationToChannelMembers` 决定是否通知对应频道所有成员本次频道属性变更。
+
+
+### 性能改进
+
+#### 点对点消息重发
+
+本版本优化了点对点消息在弱网情况下的重发机制，并延长点对点消息超时时间为 10 秒，提高了在弱网情况下点对点消息的发送成功率。
+
+#### 频道消息缓存
+
+Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 秒最多 32 条的频道消息，提高了弱网情况下频道消息的到达率。
+
+
+### API 变更
+
+#### 新增方法
+
+- [setChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#setlocaluserattributes)：全量设置某指定频道的属性。
+- [addOrUpdaeChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#addorupdatechannelattributes)：添加或更新某指定频道的属性。
+- [deleteChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#deletechannelattributesbykeys)：删除某指定频道的指定属性。
+- [clearChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#clearchannelattributes)：清空某指定频道的属性。
+- [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#getchannelattributes)：查询某指定频道的全部属性。
+- [getChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#getchannelattributesbykeys)：查询某指定频道指定属性名的属性。
+- [getChannelMemberCount](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#getchannelmembercount)：查询单个或多个频道的成员人数。
+
+#### 新增回调
+
+- [AttributesUpdated](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/interfaces/rtmevents.rtmchannelevents.html#attributesupdated)：频道属性更新回调。返回所在频道的所有属性。
+- [MemberCountUpdated](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/interfaces/rtmevents.rtmchannelevents.html#membercountupdated)：频道成员人数更新回调。返回最新频道成员人数。
+
+#### 新增错误码 
+
+- [GetChannelMemberCountErrCode](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/enums/rtmerrorcode.getchannelmembercounterrcode.html)：获取指定频道成员人数的相关错误码。
+- [JOIN_CHANNEL_ERR_JOIN_SAME_CHANNEL_TOO_OFTEN](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/enums/rtmerrorcode.joinchannelerror.html#join_channel_err_join_same_channel_too_often)：加入相同频道的频率超过每 5 秒 2 次的上限。
+- [JOIN_CHANNEL_ERR_ALREADY_JOINED_CHANNEL_OF_SAME_ID](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/enums/rtmerrorcode.joinchannelerror.html#join_channel_err_already_joined_channel_of_same_id)：已加入另一同名频道。
+
+
+
 
 ## 1.0.1 版
 
