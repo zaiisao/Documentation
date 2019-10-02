@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Wed Sep 25 2019 07:10:00 GMT+0800 (CST)
+updatedAt: Wed Oct 02 2019 07:10:45 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -11,6 +11,98 @@ updatedAt: Wed Sep 25 2019 07:10:00 GMT+0800 (CST)
 Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
 
 > For more information about the SDK features and applications, see [Agora RTM Overview](../../en/Real-time-Messaging/RTM_product.md).
+
+## v1.1.0
+
+v1.1.0 is released on September 18, 2019. It adds the following features: 
+
+- [Gets the member count of specified channel(s).](#getcount)
+- [Automatically returns the latest numer of members in the current channel](#oncount)
+- [Channel attribute operations](#channelattributes)
+
+
+
+### Compatibility Changes
+
+1. The [getServerReceivedTs](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a7994de6da26269c3137e93ddf7a2c2be) method of the [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) object supports both peer-to-peer and channel messages. 
+2. Timeout for sending a peer-to-peer message is 10 seconds from this release, compared to 5 seconds in previous versions. See [PEER_MESSAGE_ERR_TIMEOUT ](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_peer_message_error.html#a9aaaa5b9fa46cc15327abd6c2825bc4d).
+
+### New Features
+
+<a name="getcount"></a>
+#### 1. Gets the member count of specified channel(s).
+
+You can now get the member count of specified channel(s) without the need to join, by calling the `getChannelMemberCount` method. You can get the member counts of a maximum of 32 channels in one method call. 
+
+<a name="oncount"></a>
+#### 2. Automatically returns the latest numer of members in the current channel 
+
+If you are already in a channel, you do not have to call the `getChannelMemberCount` method to get the member count of the current channel. We also do not recommend using `onMemberJoined` and `onMemberLeft` to keep track of the member counts. As of this release, the SDK returns to the channel members `MemberCountUpdated` the latest channel member count when the number of channel members changes. Note that:
+
+- When the number of channel members ≤ 512, the SDK returns this callback when the number changes and at a MAXIMUM speed of once per second.
+- When the number of channel members exceeds 512, the SDK returns this callback when the number changes and at a MAXIMUM speed of once every three seconds.
+
+<a name="channelattributes"></a>
+#### 3. Channel attribute operations
+
+Supports setting or getting the attribute(s) of a specified channel. You can use this feature to create group anouncement.
+
+Each channel attribute comes as a key-value pair. See [RtmChannelAttribute](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel_attribute.html) for more information. Where: 
+
+- The key of each channel attribute must be visible characters and not exceed 8 KB.
+- Each channel attribute must not exceed 8 KB in length. 
+- The overall size of the attributes of a channel must not exceed 32 KB. 
+- The number of attributes of a channel must not exceed 32. 
+
+Specific features: 
+
+- Sets the attributes of a specified channel with new ones.
+- Adds or updates the attribute(s) of a specified channel.
+- Deletes the attributes of a specified channel by attribute keys.
+- Clears all attributes of a specified channel.
+- Gets all attributes of a specified channel.
+- Gets the attributes of a specified channel by attribute keys.
+
+When updating attributes of a channel, you can use the  `enableNotificationToChannelMembers` flag to decide whether or not to notify all members of the channel about this attribute change.  
+
+### Improvements
+
+#### Resends peer-to-peer messages
+
+This release improves the resending mechanism of peer-to-peer messages, and extends the timeout for sending a peer-to-peer message from five to 10 seconds, greatly improving the success rate of peer-to-peer message sending under weak network conditions. 
+
+#### Caches channel messages
+
+The Agora RTM system will resend a maximum of 32 channel messages of up to 30 seconds to channel members, when they manage to reconnect to the system from poor network conditions. This greatly improves the overall arrival rate of channel messages under weak network conditions. 
+
+
+### API Changes
+
+#### Added Methods
+
+- [setChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setchannelattributes): Sets the attributes of a specified channel with new ones.
+- [addOrUpdaeChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#addorupdatechannelattributes): Adds or updates the attribute(s) of a specified channel.
+- [deleteChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#deletechannelattributesbykeys): Deletes the attributes of a specified channel by attribute keys.
+- [clearChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#clearchannelattributes): Clears all attributes of a specified channel.
+- [getChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#getchannelattributes): Gets all attributes of a specified channel.
+- [getChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#getchannelattributesbykeys): Gets the attributes of a specified channel by attribute keys.
+- [getChannelMemberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/classes/rtmclient.html#getchannelmembercount): Gets the member count of specified channel(s).
+
+#### Added Callbacks
+
+- [AttributesUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2904a1f1f78c497b9176fffb853be96f): Returns all attributes of the channel when the channel attributes are updated. 
+- [MemberCountUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#ad778e702e026a79460f45a992bb8576d): Occurs when the number of the channel members changes, and returns the new number.
+
+#### Added Error Codes 
+
+- [GetChannelMemberCountErrCode](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/enums/rtmerrorcode.getchannelmembercounterrcode.html): Error codes related to retrieving the channel member count of specified channel(s).
+- [JOIN_CHANNEL_ERR_JOIN_SAME_CHANNEL_TOO_OFTEN](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.1.0/enums/rtmerrorcode.joinchannelerror.html#join_channel_err_join_same_channel_too_often): The frequency of joining the same channel exceeds two times every five seconds.
+- [JOIN_CHANNEL_ERR_ALREADY_JOINED_CHANNEL_OF_SAME_ID](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/enums/rtmerrorcode.joinchannelerror.html#join_channel_err_already_joined_channel_of_same_id): You have already joined another channel instance of the same channel ID. 
+
+
+
+
+
 
 
 ## v1.0.1
