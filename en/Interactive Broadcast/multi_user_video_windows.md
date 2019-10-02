@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: Windows
-updatedAt: Thu Sep 26 2019 15:50:05 GMT+0800 (CST)
+updatedAt: Sun Sep 29 2019 09:33:38 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -11,21 +11,21 @@ A video conference with too many hosts may cause network latency and packet loss
 
 If we set the subscribing stream to the 1-N Mode (set one stream as high and the rest as low), then a maximum of 17 users can join as hosts in an interactive broadcast without any network latency.
 
-> A maximum of 17 users are supported on the PC platform, while a maximum of 7 users are supported on the mobile platform.
+> A maximum of 17 users is supported on the PC platform, while a maximum of 7 users is supported on the mobile platform.
 
 ## Implementation
 
 Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md) for details.
 
-Refer to the following steps to enable the video conference of 7+ Users:
+Refer to the following steps to enable the video conference of 7+ users:
 1. Before joining a channel, call  `setParameters("{"che.audio.live_for_comm":true}")` to enable multi-party live broadcast mode.
 
 > If the version of SDK is v2.3.1 or earlier, you need to call `setParameters("{\"che.video.moreFecSchemeEnable\":true}”)` to enable ULP FEC and improve the reliability of data transmission.  
 
 2. After joining a channel, the hosts call the `enableDualStreamMode` method to enable the [video dual stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode).
-	> After calling the method successfully, the SDK proportionate the parameters of the low-video stream to the parameters of the high-video stream.
+	> After calling the method successfully, the SDK automatically sets the parameters of the low-video stream according to the parameters of the high-video stream.
 	
-3. The hosts call the `setRemoteVideoStreamType` method to set one subscribed video stream as the high-video stream and other susbcribed streams as the low-video stream.
+3. The hosts call the `setRemoteVideoStreamType` method to set one subscribed video stream as the high-video stream and other susbcribed streams as the low-video streams.
 	> Agora does not recommend using video profiles that exceed either a resolution of 640 x 480 or a frame rate of 30 fps.
 	> <table>
 <colgroup>
@@ -53,7 +53,7 @@ Refer to the following steps to enable the video conference of 7+ Users:
 </tbody>
 </table>
 
-4. (Optional) Calls the `setParameters("{"che.video.lowBitRateStreamParameter":{"width":<width>,"height":<height>,"frameRate":<frameRate>,"bitRate":<bitRate>}")` to customize the default low-video stream parameters at the application level.
+4. (Optional) Call the `setParameters("{"che.video.lowBitRateStreamParameter":{"width":<width>,"height":<height>,"frameRate":<frameRate>,"bitRate":<bitRate>}")` to customize the default low-video stream parameters at the application level.
 ```c++
 // Sets the video profile to 320 x 180, 15 fps, and 140 Kbps.
 setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\":180,\"frameRate\":15,\"bitRate\":140}}"；
@@ -65,7 +65,7 @@ setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\
 
 We also provide an open-source [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) demo project on Github.
 
-### API Reference
+### API reference
 
 - [`enableDualStreamMode`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a72846f5bf13726e7a61497e2fef65972)
 - [`setRemoteVideoStreamType`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3929299ead74cf86ff54b182d0b9be23)

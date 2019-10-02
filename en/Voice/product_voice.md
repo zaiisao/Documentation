@@ -3,7 +3,7 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 02:46:56 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 03:03:51 GMT+0800 (CST)
 ---
 # Agora Voice Overview
 The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many **voice-only** calls. With a small SDK package size, the Agora Native SDK for Voice Call is applicable to a variety of recreational and business activities.
@@ -15,6 +15,8 @@ The difference between an Agora Voice Call and [Agora Voice Interactive Broadcas
 ## Functions and Scenarios
 
 The Agora Native SDK for Voice Call boasts a flexible combination of functions for different scenarios.
+
+<style> table th:first-of-type {     width: 150px; } th:third-of-type {     width: 170px; }</style>
 
 | Function                              | Description                                                  | Scenario                                                     |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------- |

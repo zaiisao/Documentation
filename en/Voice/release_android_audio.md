@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 02:07:37 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 08:39:53 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -102,6 +102,8 @@ v2.9.0 is released on Aug 16, 2019.
 
 **Compatibility changes**
 
+#### 1. RTMP streaming
+
 In this release, we deleted the following methods:
 
 - `configPublisher`
@@ -114,6 +116,11 @@ If your app implements CDN streaming with the methods above, ensure that you upg
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
 
 For how to implement the new methods, see [Push Streams to the CDN](../../en/Voice/push_stream_android2.0_audio.md).
+
+#### 2. Disabling/enabling the local audio
+
+To improve the audio quality in the Communication profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
+
 
 **New features**
 

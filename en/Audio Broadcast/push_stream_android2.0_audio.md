@@ -3,14 +3,14 @@
 title: Push Streams to the CDN
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 05:37:04 GMT+0800 (CST)
+updatedAt: Fri Sep 27 2019 04:14:08 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
 
-The process of publishing streams into the CDN (Content Delivery Network) is called CDN live streaming, where users can view the live broadcast through a web browser.
+CDN live streaming refers to the process of publishing streams to the CDN (Content Delivery Network), where users can view a live broadcast with a web browser.
 
-When multiple hosts are in the channel in the CDN live streaming, [transcoding](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#transcoding) is used to combine the streams of all the hosts into a single stream. Transcoding sets the audio/video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
+You can use [transcoding](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#transcoding) to combine the streams of all hosts in the channel into one stream, or set the audio/video profiles and picture-in-picture layout for the stream to be published to the CDN.
 
 The following figure shows a typical CDN-pushing scenario.
 
@@ -18,7 +18,18 @@ The following figure shows a typical CDN-pushing scenario.
 
 ## Prerequisites
 
-Ensure that you contact sales-us@agora.io to enable Agora's transcoding service before using this function.
+Ensure that you enable the RTMP Converter service before using this function.
+
+1. Log in [Dashboard](https://dashboard.agora.io/), and click ![img](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Products & Usage** page. 
+2. Select a project from the drop-down list in the upper-left corner, and click **Duration** under **RTMP Converter**. 
+![](https://web-cdn.agora.io/docs-files/1569302661254)
+3. Click **Enable RTMP Converter**.
+4. Click **Apply** to enable the RTMP Converter service and get 500 max concurrent channels.
+
+<div class="alert note"> The number of concurrent channels, N, means that users can push streams to the CDN with transcoding in N channels of media streams. </div>
+
+Now, you can use the function and see the usage statistics.
+
 
 ## Implementation
 
@@ -72,7 +83,4 @@ rtcEngine.addPublishStreamUrl(url, true);
 rtcEngine.removePublishStreamUrl(url);
 ```
 
-## Considerations
-
-Ensure that you contact sales-us@agora.io to enable Agora's transcoding service before using this function.
 

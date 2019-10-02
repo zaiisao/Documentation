@@ -1,11 +1,11 @@
 
 ---
-title: Improve Experience Under Poor Network Conditions
+title: Stream Fallback
 description: 
 platform: iOS,macOS
-updatedAt: Thu Sep 26 2019 07:00:59 GMT+0800 (CST)
+updatedAt: Sun Sep 29 2019 02:52:36 GMT+0800 (CST)
 ---
-# Improve Experience Under Poor Network Conditions
+# Stream Fallback
 ## Introduction
 
 The audio and video quality of a live broadcast or a video call deteriorates under poor network conditions. To improve the efficiency of a live broadcast or a video call, the `setLocalPublishFallbackOption` and `setRemoteSubscribeFallbackOption` methods are used for the SDK to automatically disable the video stream when the network conditions cannot support both audio and video, and re-enable the video when the network conditions improve. The `onLocalPublishFallbackToAudioOnly` or `onRemoteSubscribeFallbackToAudioOnly` callback is triggered when the stream falls back to audio-only or when the stream switches back to the video.

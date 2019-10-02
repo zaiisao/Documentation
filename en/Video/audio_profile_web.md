@@ -1,11 +1,11 @@
 
 ---
-title: Set the Stereo/High-fidelity Audio Profile
+title: Set the Audio Profile
 description: How to set high-quality audio on Web
 platform: Web
-updatedAt: Wed Sep 25 2019 10:08:37 GMT+0800 (CST)
+updatedAt: Fri Sep 27 2019 08:40:22 GMT+0800 (CST)
 ---
-# Set the Stereo/High-fidelity Audio Profile
+# Set the Audio Profile
 ## Introduction 
 
 High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a sample rate of 48 Hz and a bitrate of 192 Kbps.

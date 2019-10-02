@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Fri Sep 20 2019 02:14:29 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 08:38:26 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -109,6 +109,12 @@ The new callback reports most of the remote video states, and therefore deprecat
 - [`didVideoEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didVideoEnabled:byUid:)
 - [`didLocalVideoEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didLocalVideoEnabled:byUid:)
 - [`firstRemoteVideoDecodedOfUid`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteVideoDecodedOfUid:size:elapsed:)
+
+<div class="alert note">The triggering timing of the new callback is different from the old one. The new <code>remoteVideoStateChangedOfUid</code> callback is triggered only when the remote video state has changed.</div>
+
+#### 3. Disabling/enabling the local audio
+
+To improve the audio quality in the Communication profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
 
 **New features**
 

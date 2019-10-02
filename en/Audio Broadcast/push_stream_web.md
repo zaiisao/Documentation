@@ -3,7 +3,7 @@
 title: Push Streams to the CDN
 description: 
 platform: Web
-updatedAt: Tue Sep 24 2019 05:38:25 GMT+0800 (CST)
+updatedAt: Fri Sep 27 2019 03:43:39 GMT+0800 (CST)
 ---
 # Push Streams to the CDN
 ## Introduction
@@ -11,6 +11,21 @@ updatedAt: Tue Sep 24 2019 05:38:25 GMT+0800 (CST)
 CDN live streaming refers to the process of publishing streams to the CDN (Content Delivery Network), where users can view a live broadcast with a web browser.
 
 You can use [transcoding](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#transcoding) to combine the streams of all hosts in the channel into one stream, or set the audio/video profiles and picture-in-picture layout for the stream to be published to the CDN.
+
+## Prerequisites
+
+Ensure that you enable the RTMP Converter service before using this function.
+
+1. Log in [Dashboard](https://dashboard.agora.io/), and click ![img](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Products & Usage** page. 
+2. Select a project from the drop-down list in the upper-left corner, and click **Duration** under **RTMP Converter**. 
+![](https://web-cdn.agora.io/docs-files/1569302661254)
+3. Click **Enable RTMP Converter**.
+4. Click **Apply** to enable the RTMP Converter service and get 500 max concurrent channels.
+
+<div class="alert note"> The number of concurrent channels, N, means that users can push streams to the CDN with transcoding in N channels of media streams. </div>
+
+Now, you can use the function and see the usage statistics.
+
 
 ## Implementation
 

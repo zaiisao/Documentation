@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Sep 20 2019 02:19:39 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 08:40:16 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -64,6 +64,8 @@ v2.9.0 is released on Aug. 16, 2019.
 
 **Compatibility changes**
 
+#### 1. RTMP streaming
+
 In this release, we deleted the following methods:
 
 - `configPublisher`
@@ -76,6 +78,10 @@ If your app implements RTMP streaming with the methods above, ensure that you up
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 
 For how to implement the new methods, see [Push Streams to the CDN](../../en/Audio%20Broadcast/push_stream_android2.0.md). 
+
+#### 2. Disabling/enabling the local audio
+
+To improve the audio quality in the Communication profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
 
 **New features**
 

@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Web
-updatedAt: Thu Sep 26 2019 09:51:07 GMT+0800 (CST)
+updatedAt: Sun Sep 29 2019 09:52:15 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -16,7 +16,7 @@ The Agora Web SDK v2.5.1+ provides the `Client.addInjectStreamUrl` method for:
 - The host to set the video profile of the injected video stream.
 - Pushing the injected media stream to the CDN audience if the host enables CDN streaming.
 
-## Applicable Scenarios
+### Applicable scenarios
 
 Injecting an online media stream can be applied to the following scenarios:
 
@@ -24,55 +24,67 @@ Injecting an online media stream can be applied to the following scenarios:
 - During music shows, movies, and entertainment shows. The hosts and audience can have real-time discussions and exchange ideas while watching the show.
 - Video streams captured by drones or network cameras can be injected into a live broadcast and broadcasted to the audience in the channel.
 
-## Considerations
+###  Working principles
 
-- Only one online media stream can be injected into the same channel at the same time.
-- Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
-- To inject a media stream, the host needs to be in the channel. To receive the injected media stream, the audience needs to subscribe to the host.
-- Supported media stream formats include: RTMP, HLS, and FLV. Audio-only streams can also be injected.
-- If the media stream is injected successfully, the media stream will appear in the channel, and the `peer-online` and `first-video-frame-decode` callbacks will be triggered, in which the `uid` is 666.
-- If the media stream is not injected successfully, the SDK may return the following error codes:
+![](https://web-cdn.agora.io/docs-files/1569414380425)
 
-  - 2: The injected URL does not exist. Call this method again to inject the stream and ensure that the URL is valid.
-  - 7: The SDK is not initialized. Ensure that the Client object is initialized before using this method.
-  - 3: The app is not in the channel. Ensure that the app has joined the channel.
+
+- The host in a live broadcast channel pulls an online media stream and pushes it to the Agora SD-RTN and live broadcast channel through the Video Inject Server. The host and audience in the channel can hear/see the media stream.
+- If the host enabled CDN streaming, the injected media stream is also pushed to the CDN so that the CDN audience can hear/see the media stream.
+
+> Supported media stream formats include: RTMP, HLS and FLV. Audio-only streams can also be injected.
+> Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
+
 
 
 ## Implementation
 
-To inject an online media stream, the user first joins a live broadcast channel in the "broadcaster" role. For how to initialize the engine and join a live broadcast channel, see [Quickstart Guide](../../en/Interactive%20Broadcast/web_prepare.md).
+Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md) for details.
 
-- To inject an online media stream:
+Refer to the following steps to inject an online media stream:
 
-	The broadcaster (host) in the live broadcast channel can call the `Client.addInjectStreamUrl` method to specify an online media stream and inject it into the channel.
+1. The host in a channel calls the `addInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreanConfig](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.injectstreamconfig.html).
+	> Only one online media stream can be injected into the same channel at the same time.
 
-	```javascript
-	var InjectStreamConfig = {
-	 width: 0,
-	 height: 0,
-	 videoGop: 30,
-	 videoFramerate: 15,
-	 videoBitrate: 400,
-	 audioSampleRate: 44100,
-	 audioChannels: 1,
-	});
+	If the method call is successful, SDK triggers the `Client.on("stream-added"` and `Client.on("peer-online")` callbacks to all the users in the channel, and triggers the `Client.on("streamInjectedStatus")` callback to the local host.
+	> The local host can troubleshoot with [API Reference](#api) when exceptions occur.
 	
-	Client.addInjectStreamUrl(url, config);
-	```
+2. The host in a channel calls the `removeInjectStreamUrl` method to remove the injected media stream.
+	If the method call is successful, SDK triggers the `Client.on("peer-leave")` and `Client.on("stream-removed")`callbacks to all the users in the channel.
+	> Do not need to call the `removeInjectStreamUrl` method if the host has left the channel.
 
-	You can modify the parameter values of `config` to set the resolution, bitrate, frame rate, and audio sampling rate of the injected stream. For more information, see [InjectStreamConfig](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.injectstreamconfig.html).
-	
-- To remove an injected media stream:
 
-	The broadcaster (host) in the live broadcast channel can call the `Client.removeInjectStreamUrl` method to remove a previously injected media stream.
+### Sample code
 
-	```javascript
-	Client.removeInjectStreamUrl(url);
-	```
+```javascript
+// Javascript
+// Inject an online media stream.
+var InjectStreamConfig = {
+   width: 0,
+   height: 0,
+   videoGop: 30,
+   videoFramerate: 15,
+   videoBitrate: 400,
+   audioSampleRate: 44100,
+   audioChannels: 1,
+  });
 
-	> If the host has left the channel, you do not need to call the `removeInjectStreamUrl` method.
+  Client.addInjectStreamUrl(url, config);
 
-## Working Principles
+// Remove an online media stream.
+Client.removeInjectStreamUrl(url);
+```
 
-- The host in a live broadcast channel pulls an online media stream, pushes it to the Agora SD-RTN and live broadcast channel through the Video Inject Server. The host and the audience in the channel can hear/see the media stream.
-- If the host enabled CDN streaming, the injected media stream is also pushed to the CDN so that the CDN audience can hear/see the media stream.
+We also provide an open-source [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) demo project on Github.
+
+<a name="api"></a>
+### API reference
+
+- [`addInjectStreamUrl`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#addinjectstreamurl)
+- [`removeInjectStreamUrl`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#removeinjectstreamurl)
+- `streamInjectedStatus`
+
+## Considerations
+To inject a media stream, the host needs to be in the channel. To receive the injected media stream, the audience needs to subscribe to the host.
+
+

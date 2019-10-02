@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Android
-updatedAt: Mon Sep 16 2019 08:39:18 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 09:25:16 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast with the Agora SDK for Android.
@@ -450,6 +450,8 @@ After setting the client role and the local video view (for a video broadcast), 
 
 * channelName: Specify the channel name that you want to join.
 * uid: ID of the local user that is an integer and should be unique. If you set uid as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
+
+For more details on the parameter settings, see [`joinChanne`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c).
 
 If a live broadcast channel uses both the Native SDK and the Web SDK, ensure that you call the `enableWebSdkInteroperability` method before joining the channel.
 

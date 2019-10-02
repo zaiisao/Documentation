@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Android
-updatedAt: Mon Sep 16 2019 02:57:45 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 09:24:56 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic call with the Agora SDK for Android.
@@ -385,6 +385,8 @@ After initializing the RtcEngine object and setting the local video view (for a 
 
 * channelName: Specify the channel name that you want to join. Users that input the same channel name join the same channel.
 * uid: ID of the local user that is an integer and should be unique. If you set uid as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
+
+For more details on the parameter settings, see [`joinChanne`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c).
 
 ```java
 private void joinChannel() {

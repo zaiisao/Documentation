@@ -3,7 +3,7 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 02:49:07 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 03:04:17 GMT+0800 (CST)
 ---
 # Agora Video Overview
 The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
@@ -15,6 +15,8 @@ The difference between an Agora Video Call and [Agora Video Interactive Broadcas
 ## Functions and Scenarios
 
 The Agora Native SDK for Video Call boasts a flexible combination of functions for different scenarios.
+
+<style> table th:first-of-type {     width: 150px; } th:third-of-type {     width: 170px; }</style>
 
 | Function                              | Description                                                  | Scenario                                                     |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------- |

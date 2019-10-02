@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 02:07:06 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 08:44:22 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -152,6 +152,12 @@ The new callback reports most of the remote video states, and therefore deprecat
 - [`onUserEnableVideo`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af87247218ec1ef398a9478672ad4dd49)
 - [`onUserEnableLocalVideo`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2640b0eef8b7f1b105c485b4f1c9d8b5)
 - [`onFirstRemoteVideoDecoded`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7144e0124c3d8f75e0366b0246fbe3b)
+
+<div class="alert note">The triggering timing of the new callback is different from the old one. The new <code>onRemoteVideoStateChanged</code> callback is triggered only when the remote video state has changed.</div>
+
+#### 3. Disabling/enabling the local audio
+
+To improve the audio quality in the Communication profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
 
 **New features**
 
