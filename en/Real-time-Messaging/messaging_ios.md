@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Thu Oct 03 2019 14:15:08 GMT+0800 (CST)
+updatedAt: Thu Oct 03 2019 14:15:11 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -88,7 +88,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 ```
 platform :ios, '9.0' use_frameworks!
 target 'Your App' do
-    pod 'AgoraRtcEngine_iOS'
+    pod 'AgoraRtm_iOS'
 end
 ```
 4. Go back to **Terminal**, and run the `pod update` command to update the local libraries.
