@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Thu Oct 03 2019 14:18:00 GMT+0800 (CST)
+updatedAt: Thu Oct 03 2019 14:19:13 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -98,7 +98,7 @@ end
 **Method 2: Manually add the SDK files**
 
 1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for iOS, and unzip the downloaded SDK package.
-2. Copy the **AgoraRtcEngineKit.framework** file in the **libs** folder to the project folder.
+2. Copy the **AgoraRtmKit.framework** file in the **libs** folder to the project folder.
 3. In **Xcode**, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the **AgoraRtmKit.framework** file, remember to click **Add Other...** after clicking **+**.
 	- AgoraRtmKit.framework
 	- libc++.tbd
