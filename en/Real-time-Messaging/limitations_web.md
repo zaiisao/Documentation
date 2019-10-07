@@ -3,10 +3,11 @@
 title: RTM Limitations
 description: 
 platform: Web
-updatedAt: Mon Oct 07 2019 10:00:01 GMT+0800 (CST)
+updatedAt: Mon Oct 07 2019 10:00:05 GMT+0800 (CST)
 ---
 # RTM Limitations
-This page provides information about the limitations of the Agora RTM Web SDK. 
+
+This page provides a brief overview of the limitations of the Agora RTM Web SDK, including the maximum method call frequencies, maximum string length, unicode support and more.
 
 ## Call Frequency
 
