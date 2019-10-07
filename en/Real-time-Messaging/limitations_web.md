@@ -24,7 +24,7 @@ This page provides information about the limitations of the Agora RTM Web SDK.
 - The maximum length of the content in a call invitation is 8 KB. See [LocalInvitation.content](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#content)
 - The maximum length of the response in a call invitation is 8 KB. See [RemoteInvitation.response](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#response)
 
-## Encoding 
+## Unicode support 
 
 Supports channel and peer-to-peer messages, invitation content, and invitation response in UTF-8 only. 
 
@@ -33,4 +33,4 @@ Supports channel and peer-to-peer messages, invitation content, and invitation r
 
 - Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. If you have special requirements, contact sales-us@agora.io.
 - The current version supports querying the online status of a maximum of 256 users.
-- Attribute settings in one attribute operation should not exceed 32 KB in size, and the number of key/value pairs you set in one attribute operation should not exceed 32. 
+- Attribute settings in one attribute operation should not exceed 32 KB in size; the number of key/value pairs you set in one attribute operation should not exceed 32. 
