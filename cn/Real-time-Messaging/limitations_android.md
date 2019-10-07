@@ -3,10 +3,12 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Mon Oct 07 2019 13:03:58 GMT+0800 (CST)
+updatedAt: Mon Oct 07 2019 13:04:03 GMT+0800 (CST)
 ---
 # 限制条件
-本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
+
+A brief overview of the messaging limitations for Agora Real-time Messaging (TRM) Jaba SDK for Android, including the maximum for method call frequencies, maximum string length, encoding support and more
+本页提供 Agora RTM Java SDK for Android
 
 
 
