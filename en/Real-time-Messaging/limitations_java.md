@@ -3,10 +3,11 @@
 title: RTM Limitations
 description: 
 platform: Linux Java
-updatedAt: Mon Oct 07 2019 09:58:31 GMT+0800 (CST)
+updatedAt: Mon Oct 07 2019 09:58:35 GMT+0800 (CST)
 ---
 # RTM Limitations
-This page provides information about the limitations of the Agora RTM Java SDK for Linux. 
+
+This page provides a brief overview of the limitations of the Agora RTM Java SDK for Linux, including the maximum method call frequencies, maximum string length, unicode support and more.
 
 
 ## Call Frequencies
