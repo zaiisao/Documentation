@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 25 2019 07:04:25 GMT+0800 (CST)
+updatedAt: Mon Oct 07 2019 13:04:56 GMT+0800 (CST)
 ---
 # 限制条件
 本页介绍 Agora RTM Objective-C SDK for iOS/macOS 的使用限制条件。
