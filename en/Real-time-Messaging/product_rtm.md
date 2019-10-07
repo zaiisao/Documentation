@@ -3,10 +3,10 @@
 title: Agora Real-time Messaging SDK Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 07 2019 03:13:47 GMT+0800 (CST)
+updatedAt: Mon Oct 07 2019 03:13:58 GMT+0800 (CST)
 ---
 # Agora Real-time Messaging SDK Overview
-The Agora RTM SDK provides a stable messaging mechanism for you to build real-time messaging scenarios with low latency and high concurrency at a global level. 
+You can use the Agora RTM (Real-time Messaging) SDK to create a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency for a global audience. 
 
 ## Functions
 
@@ -19,12 +19,12 @@ The Agora RTM SDK enables the following functions:
 -   Set, update, or get a user's attributes. 
 -   Set, update, or get attributes of a specified channel.
 -   Get the latest member count of specified channel(s). 
--   Interconnect with the legacy Agora Signaling SDK
+-   Interconnect with the legacy Agora Signaling SDK.
 
 
 ## Applications
 
-The Agora RTM SDK can be used in the following scenarios:
+You can use the Agora RTM SDK for the following scenarios:
 
 <table>
   <tr>
@@ -33,7 +33,7 @@ The Agora RTM SDK can be used in the following scenarios:
   </tr>
   <tr>
     <td>Live Broadcast</td>
-    <td><li>Commentaries<br><li>Chatrooms<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the chat room status (e.g., number of the channel members)<br><li>Privilege management (remove or mute a specified user)<br></td>
+    <td><li>Commentaries<br><li>Chatrooms<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the chat room status (e.g., number of the channel members)<br><li>Privilege management (e.g., remove or mute a specified user)<br></td>
   </tr>
   <tr>
     <td>Social Network</td>
@@ -41,7 +41,7 @@ The Agora RTM SDK can be used in the following scenarios:
   </tr>
   <tr>
     <td>Education</td>
-    <td><li>Class group messages<br><li>Private chat messages<br><li>Whiteboard<br><li>Privilege management (awards, presenting, hands up or likes)<br></td>
+    <td><li>Class group messages<br><li>Private chat messages<br><li>Whiteboard<br><li>Privilege management (e.g., awards, presenting, hands up or likes)<br></td>
   </tr>
   <tr>
     <td>IoT</td>
@@ -60,7 +60,7 @@ The Agora RTM SDK provides the following features:
   </tr>
   <tr>
     <td>High concurrency</td>
-    <td>Supports sending up to a million  channel messages at the same time. Can cope with the high concurrency situations typical in an online quizzing scenario. <br></td>
+    <td>Supports sending up to a million  channel messages simultaneously. Can cope with the high concurrency scenarios, such as in an online quiz. <br></td>
   </tr>
   <tr>
     <td>High reliability</td>
@@ -68,7 +68,7 @@ The Agora RTM SDK provides the following features:
   </tr>
 	  <tr>
     <td>Low latency</td>
-    <td>Our data centers are deployed globally. <li>Average inter-regional latency: Less than 200 ms.<br><li>Average intra-regional latency: Less than 100 ms.<br></td>
+    <td>We have data centers distributed worldwide. <li>The average inter-continental latency is less than 200 ms.<br><li>The average intra-continental latency is less than 100 ms.<br></td>
   </tr>
 	  <tr>
     <td>Compatibility</td>
@@ -78,7 +78,7 @@ The Agora RTM SDK provides the following features:
 
 ## Real-time Messaging vs. Signaling
 
-The Agora Real-time Messaging SDK (RTM) is designed to replace the legacy Signaling SDK with much more exciting features. 
+The Agora Real-time Messaging SDK (RTM) is designed to replace the legacy Agora Signaling SDK with expanded capabilities. 
 
-> Maintenance to the legacy Signaling SDK will end in the fourth quarter of 2019. 
+> Maintenance of the legacy Agora Signaling SDK ends Q4 2019. 
 
