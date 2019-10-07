@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows CPP
-updatedAt: Mon Oct 07 2019 03:26:11 GMT+0800 (CST)
+updatedAt: Mon Oct 07 2019 03:26:16 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -14,7 +14,7 @@ Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-tim
 
 ## v1.1.0
 
-v1.1.0 was released on September 30, 2019. It adds the following features: 
+v1.1.0 was released on September 30, 2019. It added the following features: 
 
 ### Send an (offline) peer-to-peer message to a specified user
 
