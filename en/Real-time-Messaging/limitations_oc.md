@@ -3,10 +3,11 @@
 title: RTM Limitations
 description: 
 platform: iOS,macOS
-updatedAt: Mon Oct 07 2019 09:56:51 GMT+0800 (CST)
+updatedAt: Mon Oct 07 2019 09:56:55 GMT+0800 (CST)
 ---
 # RTM Limitations
-This page provides information about the limitations of the Agora RTM Objective-C SDK for iOS/macOS. 
+
+This page provides a brief overview of the limitations of the Agora RTM Objective-C SDK for iOS or Agora RTM Objective-C SDK for macOS , including the maximum method call frequencies, maximum string length, unicode support and more.
 
 
 
