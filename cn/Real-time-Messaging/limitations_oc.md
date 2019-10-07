@@ -3,10 +3,12 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Mon Oct 07 2019 13:04:56 GMT+0800 (CST)
+updatedAt: Mon Oct 07 2019 13:05:03 GMT+0800 (CST)
 ---
 # 限制条件
-本页介绍 Agora RTM Objective-C SDK for iOS/macOS 的使用限制条件。
+
+A brief overview of the messaging limitations for Agora Real-time Messaging (TRM) Jaba SDK for Android, including the maximum for method call frequencies, maximum string length, encoding support and more
+本页提供 Agora RTM Objective-C SDK for iOS 或 Agora RTM Objective-C SDK for macOS
 
 
 ## 调用频率限制
