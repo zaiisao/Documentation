@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Sun Sep 29 2019 09:34:28 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 07:49:55 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -33,7 +33,6 @@ Now, you can use the function and see the usage statistics.
 
 Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md) for details.
 
-> Currently, Agora only supports pushing H.264 streams to the CDN. Set createClient.codec as `h264` before using this function.
 
 Refer to the following steps to push streams to the CDN:
 
@@ -120,7 +119,7 @@ We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advan
 
 - In the case of a single host, we do not recommend transcoding. You can skip [Step1](#single), and call the `addPublishStreamUrl` method directly with `transcodingEnabled (false)`.
 
-  > Currently, Agora only supports pushing H.264 (default) streams to the CDN.
+  > Agora only supports pushing H.264 streams to the CDN in this case. Set createClient.codec as `h264` before using this function.
 
 - Set the value of `videoBitrate` by referring to [Video Bitrate Table](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate). If you set a bitrate beyond the proper range, the SDK automatically adjusts it to a value within the range. 
 

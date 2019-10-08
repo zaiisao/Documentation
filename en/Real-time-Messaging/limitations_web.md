@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Web
-updatedAt: Mon Oct 07 2019 10:00:05 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 06:54:16 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -34,4 +34,4 @@ Supports channel and peer-to-peer messages, invitation content, and invitation r
 
 - Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. If you have special requirements, contact sales-us@agora.io.
 - The current version supports querying the online status of a maximum of 256 users.
-- Attribute settings in one user attribute operation should not exceed 16 KB in size; attribute settings in one channel attribute operation should not exceed 32 KB in size; each attribute (key/value pair) should not excced 8 KB in size; the number of key/value pairs you set in one attribute operation should not exceed 32. 
+- Attribute settings in one attribute operation should not exceed 32 KB in size; the number of key/value pairs you set in one attribute operation should not exceed 32. 
