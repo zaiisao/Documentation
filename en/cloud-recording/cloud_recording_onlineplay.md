@@ -3,12 +3,14 @@
 title: Play Recorded Files Online
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 06:23:28 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 03:38:03 GMT+0800 (CST)
 ---
 # Play Recorded Files Online
 ## Introduction
 
 The Agora server automatically uploads the recorded files in TS format to the cloud storage that you set up, and generates an M3U8 file as a playlist pointing to all the recorded TS files. You can get the URL of the M3U8 file and play it online.
+
+>If Agora Cloud Recording generates WebM files instead of TS files, you cannot play the M3U8 file online.
 
 ## Implementation
 
