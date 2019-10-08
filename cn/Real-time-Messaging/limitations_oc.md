@@ -7,8 +7,7 @@ updatedAt: Mon Oct 07 2019 13:05:03 GMT+0800 (CST)
 ---
 # 限制条件
 
-A brief overview of the messaging limitations for Agora Real-time Messaging (TRM) Jaba SDK for Android, including the maximum for method call frequencies, maximum string length, encoding support and more
-本页提供 Agora RTM Objective-C SDK for iOS 或 Agora RTM Objective-C SDK for macOS
+本页简要介绍 Agora RTM Objective-C SDK for iOS 或 Agora RTM Objective-C SDK for macOS 的使用限制条件，包括最大调用频率、最大字符串长度、编码格式等。
 
 
 ## 调用频率限制
@@ -43,6 +42,6 @@ A brief overview of the messaging limitations for Agora Real-time Messaging (TRM
 ## 其他 
 
 
-- 当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请拨打 400 632 6626 或邮件 sales@agora.io。
+- 当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请拨打 400 632 6626 或邮件 sales-china@agora.io。
 - 当前版本仅支持查询最多 256 个用户的在线状态。
-- 单次属性设置的最大值为 16 KB，单次属性操作设置的属性条目不能超过 32 个。
+- 单次用户属性设置的最大值为 16 KB，单次频道属性设置的最大值为 32 KB，单条用户或频道属性的最大值为 8 KB，单次属性操作设置的属性条目不能超过 32 个。

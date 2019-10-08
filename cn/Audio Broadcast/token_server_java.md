@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Java
-updatedAt: Mon Sep 23 2019 07:12:33 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 03:51:01 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Java API 参考。
@@ -83,7 +83,7 @@ updatedAt: Mon Sep 23 2019 07:12:33 GMT+0800 (CST)
 | `role` <sup>1</sup>          | <li> `Role_Publisher = 1` ：（推荐）直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`：直播模式下的观众（AUDIENCE）。 |
 | `privilegeExpiredTs`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilegeExpiredTs 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。 |
 
-<div class="alert warning"><sup>1</sup>：所有 <code>role</code> 的权限完全一致。如需做权限校验，特别是限制观众的上行流权限，必须联系 sales@agora.io 开通相应服务。</div>
+<div class="alert warning"><sup>1</sup>：所有 <code>role</code> 的权限完全一致。如需做权限校验，特别是限制观众的上行流权限，必须联系 sales-china@agora.io 开通相应服务。</div>
 
 ### buildTokenWithUserAccount
 
@@ -103,4 +103,4 @@ updatedAt: Mon Sep 23 2019 07:12:33 GMT+0800 (CST)
 | `role` <sup>2</sup>          | <li> `Role_Publisher = 1` ：（推荐）直播模式下的主播（BROADCASTER）。<li>`Role_Subscriber = 2`: 直播模式下的观众（AUDIENCE）。 |
 | `privilegeExpiredTs`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilegeExpiredTs 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。|
 
-<div class="alert warning"><sup>2</sup>：所有 <code>role</code> 的权限完全一致。如需做权限校验，特别是限制观众的上行流权限，必须联系 sales@agora.io 开通相应服务。</div>
+<div class="alert warning"><sup>2</sup>：所有 <code>role</code> 的权限完全一致。如需做权限校验，特别是限制观众的上行流权限，必须联系 sales-china@agora.io 开通相应服务。</div>

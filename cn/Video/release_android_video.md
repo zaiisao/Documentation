@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Sep 23 2019 06:34:22 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 08:43:46 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -152,6 +152,12 @@ Android 视频 SDK 支持两种主要场景:
 - [`onUserEnableVideo`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af87247218ec1ef398a9478672ad4dd49)
 - [`onUserEnableLocalVideo`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2640b0eef8b7f1b105c485b4f1c9d8b5)
 - [`onFirstRemoteVideoDecoded`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7144e0124c3d8f75e0366b0246fbe3b)
+
+<div class="alert note">该回调的触发时机与老的 <code>onRemoteVideoStateChanged</code> 回调不同。新接口只有在远端视频流状态发生改变时，才会触发。</div>
+
+#### 3. 关闭/开启本地音频采集
+
+为提高通信模式下，本地用户关闭麦克风后听到的音质，该版本在 `enableLocalAudio`(true) 后，将系统音量修改为媒体音量。调用 `enableLocalAudio`(false) 后，系统音量自动切换为通话音量。
 
 **新增特性**
 

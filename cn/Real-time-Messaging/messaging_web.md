@@ -3,15 +3,61 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Thu Sep 26 2019 13:08:04 GMT+0800 (CST)
+updatedAt: Fri Sep 27 2019 07:41:02 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
+本章介绍在正式使用 Agora RTM SDK for Web 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
-## 集成客户端
+## Demo 体验
+你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Web](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Web) 查看完整的源码和代码逻辑
 
-### 方法 1：直接用 \<script\> 引入
+## 开发环境要求
 
-使用该方法引入的 SDK 会在 `window` 上生成名为 `AgoraRTM` 的全局变量。
+
+一个有效的 [Agora 开发者账号](https://sso.agora.io/login/)。
+
+
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口并设置域名白名单。</div>
+
+## 设置开发环境
+
+本节介绍如何获取 App ID 并将 Agora RTM SDK for Web 集成至你的项目中。
+
+### <a name="appid"></a> 获取 App ID
+
+
+参考以下步骤获取一个 App ID。若已有App ID，可以直接查看[集成客户端](#integrate)。
+
+<details>
+	<summary><font color="#3ab7f8">获取 App ID</font></summary>
+
+1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录 Dashboard。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
+2. 点击**项目列表**处的**新手指引**。
+
+	![](https://web-cdn.agora.io/docs-files/1563521764570)
+
+3. 在弹出的窗口中输入你的第一个项目名称，然后点击**创建项目**。你可以参考屏幕提示，了解实现一个视频通话的基本步骤。
+
+	![](https://web-cdn.agora.io/docs-files/1563521821078)
+
+4. 项目创建成功后，你会在**项目列表**下看到刚刚创建的项目。点击项目名后的**编辑**按钮，进入项目页。你也可以直接点击左边栏的**项目管理**图标，进入项目页面。
+
+	![](https://web-cdn.agora.io/docs-files/1563522909895)
+
+5. 在**项目管理**页，你可以查看你的 **App ID**。
+
+	![](https://web-cdn.agora.io/docs-files/1563522556558)
+
+
+</details>
+
+### <a name="integrate"></a>集成客户端
+
+#### 方法 1：从官网获取 SDK
+
+使用 \<script\> 方法引入的 SDK 会在 <code>window</code> 上生成名为 <code>AgoraRTM</code> 的全局变量。
+
+
 
 1. 从 Agora 官方网站下载最新版 [Agora RTM SDK for Web](../../cn/Real-time-Messaging/downloads.md) 压缩包。
 2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-1.0.0.js` 的文件保存到你所操作的项目下。
@@ -21,7 +67,8 @@ updatedAt: Thu Sep 26 2019 13:08:04 GMT+0800 (CST)
     <script src="/path/to/agora-rtm-sdk-1.0.0.js"></script>
     ```
 
-#### 开启智能提示和类型检查（可选）
+<details>
+	<summary><font color="#3ab7f8">（可选）开启智能提示和类型检查</font></summary>
 
 使用 `<script>` 标签引入后，可以在 JavaScript/TypeScript 代码中使用全局 `AgoraRTM` 变量，但无法开启智能提示和类型检查。
 
@@ -33,8 +80,9 @@ updatedAt: Thu Sep 26 2019 13:08:04 GMT+0800 (CST)
 ```JavaScript
 /// <reference path="path/to/agora-rtm-sdk.d.ts" />
 ```
-
-### 方法 2：通过 npm 引入
+</details>
+	
+#### 方法 2：通过 npm 引入
 
 该方法需要安装 npm。详见 [Install npm](https://www.npmjs.com/get-npm)。
 
@@ -43,7 +91,11 @@ updatedAt: Thu Sep 26 2019 13:08:04 GMT+0800 (CST)
 2. 导出 AgoraRTM 模块：
 `import AgoraRTM from 'agora-rtm-sdk'`
 
-## 初始化
+## 实现实时消息和基本频道操作
+
+本节主要提供实现实时消息和基本频道操作的示例代码以及相关注意事项。
+
+### 初始化
 
 登入 RTM 之前，调用 `AgoraRTM.createInstance` 方法创建一个 `RtmClient` 实例。
 
@@ -54,7 +106,7 @@ updatedAt: Thu Sep 26 2019 13:08:04 GMT+0800 (CST)
 const client = AgoraRTM.createInstance('<APPID>');
 ```
 
-### 监听连接状态改变
+#### 监听连接状态改变
 
 通过监听 `RtmClient` 上的 `ConnectionStateChanged` 事件可以获得 SDK 连接状态改变的通知。
 
@@ -64,7 +116,7 @@ client.on('ConnectionStateChanged', (newState, reason) => {
 });
 ```
 
-## 登录
+### 登录
 
 Web 应用必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息和群聊功能。
 
@@ -91,11 +143,11 @@ client.login({ token: '<TOKEN>', uid: '<UID>' }).then(() => {
 client.logout();
 ```
 
-## 点对点消息
+### 点对点消息
 
 App 在成功登录 RTM 服务器之后，可以开始使用 RTM 的点对点消息功能。
 
-### 发送点对点消息
+#### 发送点对点消息
 
 调用 `client` 上的 `sendMessageToPeer` 方法发送点对点消息。在该方法中：
 
@@ -121,7 +173,7 @@ client.sendMessageToPeer(
 });
 ```
 
-### 接收点对点消息
+#### 接收点对点消息
 
 监听 `client` 上的事件 `MessageFromPeer` 接收点对点消息。
 
@@ -131,9 +183,9 @@ client.on('MessageFromPeer', ({ text }, peerId) => { // text 为消息文本，p
 });
 ```
 
-## 频道消息
+### 频道消息
 
-### 创建并加入频道
+#### 创建并加入频道
 
 创建频道：
 
@@ -151,7 +203,7 @@ channel.join().then(() => {
 });
 ```
 
-### 发送频道消息
+#### 发送频道消息
 
 加入频道成功后可发送频道消息。
 
@@ -163,7 +215,7 @@ channel.sendMessage({ text: 'test channel message' }).then(() => {
 });
 ```
 
-### 接收频道消息
+#### 接收频道消息
 
 加入频道后可通过监听 `RtmChannel` 实例上的 `ChannelMessage` 事件接收到频道消息。
 
@@ -173,35 +225,8 @@ channel.on('ChannelMessage', ({ text }, senderId) => { // text 为收到的频�
 });
 ```
 
-### 监听频道成员加入/离开通知
 
-加入频道后可通过监听 `RtmChannel` 实例上的 `MemberJoined`/`MemberLeft` 事件获得频道成员加入/离开通知。
-
-```JavaScript
-channel.on('MemberJoined', memberId => { // memberId 为加入频道的用户 ID
-  /* 收到频道用户加入通知的处理逻辑 */
-})
-```
-
-```JavaScript
-channel.on('MemberLeft', memberId => { // memberId 为离开频道的用户 ID
-  /* 收到频道用户离开通知的处理逻辑 */
-})
-```
-
-### 获取频道成员列表
-
-加入频道后可获取频道成员列表。调用实例的 `getMembers` 方法可以获取到当前在该频道内的用户列表。
-
-```JavaScript
-channel.getMembers().then(membersList => { // membersList 为获取到的频道成员列表
-  /* 获取频道成员列表成功的处理逻辑 */
-}).catch(error => {
-  /* 频道消息发送失败的处理逻辑 */
-});
-```
-
-### 退出频道
+#### 退出频道
 
 调用实例的 leave 方法可以退出该频道。退出频道之后可以调用 join 方法再重新加入频道。
 

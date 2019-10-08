@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Android
-updatedAt: Mon Sep 16 2019 02:55:53 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 09:23:35 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
@@ -386,6 +386,8 @@ private void setupLocalVideo() {
 
 * channelName：传入能标识频道的频道 ID。App ID 相同、频道 ID 相同的用户会进入同一个频道。
 * uid: 本地用户的 ID。数据类型为整型，且频道内每个用户的 uid 必须是唯一的。若将 uid 设为 0，则 SDK 会自动分配一个 uid，并在 `onJoinChannelSuccess` 回调中报告。
+
+更多的参数设置注意事项请参考 [`joinChannel`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c) 接口中的参数描述。
 
 ```java
 private void joinChannel() {

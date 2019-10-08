@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Sep 23 2019 06:34:01 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 08:44:04 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -105,6 +105,8 @@ Android 语音 SDK 支持两种主要场景:
 
 **升级必看**
 
+#### 1. RTMP 推流
+
 该版本起，Agora 删除如下接口：
 
 - `configPublisher`
@@ -117,6 +119,10 @@ Android 语音 SDK 支持两种主要场景:
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
 
 新的推流实现方法，请参考[推流到 CDN](../../cn/Voice/push_stream_android2.0_audio.md)。
+
+#### 2. 关闭/开启本地音频采集
+
+为提高通信模式下，本地用户关闭麦克风后听到的音质，该版本在 `enableLocalAudio`(true) 后，将系统音量修改为媒体音量。调用 `enableLocalAudio`(false) 后，系统音量自动切换为通话音量。
 
 **新增特性**
 
@@ -872,7 +878,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 该版本于 2017 年 12 月 15 日发布。新增特性与修复问题列表详见下文。
 
-### **问题修复**
+**问题修复**
 
 修复了偶现的语音路由问题。
 
@@ -942,7 +948,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
     -   1.14 开始: 如果你选择不听或不看某人的流，则不会下发，从而节省带宽。
 
 
-### **1.13.1 版**
+**1.13.1 版**
 
 该版本于 2017 年 9 月 28 日发布。新增特性与修复问题列表详见下文。
 

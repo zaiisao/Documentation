@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Thu Sep 19 2019 09:39:39 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 08:44:09 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -61,6 +61,8 @@ IAgoraRtcEngine.h 头文件中的拼写错误。
 
 **升级必看**
 
+#### 1. RTMP 推流
+
 该版本起，Agora 删除如下接口：
 
 - `configPublisher`
@@ -73,6 +75,10 @@ IAgoraRtcEngine.h 头文件中的拼写错误。
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
 
 新的推流实现方法，详见[推流到 CDN](../../cn/Voice/push_stream_android2.0.md)。
+
+#### 2. 关闭/开启本地音频采集
+
+为提高通信模式下，本地用户关闭麦克风后听到的音质，该版本在 `enableLocalAudio`(true) 后，将系统音量修改为媒体音量。调用 `enableLocalAudio`(false) 后，系统音量自动切换为通话音量。
 
 **新增特性**
 

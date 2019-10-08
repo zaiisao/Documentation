@@ -3,77 +3,82 @@
 title: 输入在线媒体流
 description: 
 platform: Web
-updatedAt: Thu Sep 26 2019 09:56:37 GMT+0800 (CST)
+updatedAt: Sun Sep 29 2019 08:26:04 GMT+0800 (CST)
 ---
 # 输入在线媒体流
-## 简介
+## 功能描述
+输入在线媒体流功能可以将音视频流作为一个发送端导入正在进行的直播房间。通过将正在播放的音视频导入到直播频道中，主播和观众可以一起收听/观看该媒体流并实时互动。
 
-**输入在线媒体流**功能可以将媒体流作为一个发送端接入正在进行的直播房间。通过将正在播放的音频添加到直播中，主播和观众可以在一起收听媒体流的同时实时互动。
+### 常用场景
 
-Agora Web SDK 从 v2.5.1 版本开始，新增 `Client.addInjectStreamUrl` 接口，通过该接口：
+- 赛事直播中，主播直接拉比赛的音视频流，实现主播和观众边看比赛边点评的功能。
+- 同一直播间内，主播与观众一同欣赏电影、音乐、演出，并实时交流讨论。
+- 无人机或网络摄像头直接采集视频，该视频作为在线媒体流导入直播频道中。
 
-- 主播可以指定媒体流输入源，作为视频源输入给直播频道内的所有观众。
-- 支持主播对输入媒体流的 Video Profile 进行设置。
-- 如果主播开启并设置了旁路直播，输入的媒体流也可以直播给所有旁路观众。
+### 工作原理
 
-## 常见使用场景
+![](https://web-cdn.agora.io/docs-files/1569397540228)
 
-在线流媒体输入主要适用于如下场景：
+直播频道中的主播通过 Video Inject 服务器将在线媒体流拉到 Agora SD-RTN 中，导入到直播频道内。
 
-- 赛事直播中，主播直接拉流，实现主播与观众边看比赛边点评的功能。
-- 统一直播间内，主播与观众在关上电影、音乐、演出的同时，实时讨论或交流想法。
-- 同一直播间内，主播与观众在欣赏音乐的同时，实时讨论或交流想法。
+- 频道内的连麦主播、普通观众都可以听/看到该媒体流。
+- 如果主播开启了 CDN 旁路推流，该媒体流也会被推送到 CDN 上， CDN 观众就可以听/看到这路媒体流。
 
-## 注意事项
-
-- 在语音直播中，你只能输入纯音频流，而不能够将视频文件的音频作为在线媒体流输入。
-- 频道内同一时间只允许输入一个在线媒体流。
-- 只有主播可以输入和移除在线媒体流，连麦主播和普通用户不可以。
-- 主播在直播过程中启用输入在线媒体流。观众需要订阅主播才能收听外部音频。
-- 支持的媒体流格式包括：RTMP、HLS、FLV。
-- 如果媒体流输入成功，该媒体流会出现在频道中，并收到 `peer-online` 和 `first-video-frame-decode` 回调，其中 `uid` 为 666。
-- 如果媒体流输入失败，会返回错误码。可能会出现的错误码及处理方法如下：
-
-  - 2：输入的 URL 为空。请重新调用该方法，并确认输入的媒体流的 URL 是有效的
-  - 7：引擎没有初始化。请确认调用该方法前已创建对象并完成初始化
-  - 3：没有加入频道。请确认 App 在频道内
+> - 支持的媒体流格式：RTMP、HLS 和 FLV。纯音频流也可作为在线媒体流导入直播频道。
+> - 只有主播可以导入/删除在线媒体流，连麦主播、普通观众和 CDN 观众都不可以。
 
 ## 实现方法
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](../../cn/Interactive%20Broadcast/web_prepare.md)。
+在实现输入在线媒体流功能前，请确保你已在项目中完成基本的实时音视频功能。详见[开始互动直播](../../cn/Interactive%20Broadcast/start_live_web.md)。
 
-- 输入在线媒体流：
+参考如下步骤，在你的项目中实现输入在线媒体流功能：
 
-	直播频道的主播可以使用 `Client.addInjectStreamUrl` ，指定一个在线媒体流作为连麦端接入房间。
+1. 频道内主播调用 `addInjectStreamUrl` 方法向直播频道内导入指定在线媒体流。你也可以修改 config 的参数设置媒体流导入的分辨率、码率和帧率等参数，详见[`InjectStreamConfig`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.injectstreamconfig.html)。
 
-	```javascript
-	var InjectStreamConfig = {
-	 width: 0,
-	 height: 0,
-	 videoGop: 30,
-	 videoFramerate: 15,
-	 videoBitrate: 400,
-	 audioSampleRate: 44100,
-	 audioChannels: 1,
-	});
-	
-	Client.addInjectStreamUrl(url, config);
-	```
+   > 频道内同一时间只允许输入一个在线媒体流。
 
-	你可以通过修改 `config` 的参数值控制接入媒体流的音频采样率、音频码率和音频频道数。详见 [InjectStreamConfig 参数说明](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.injectstreamconfig.html) 。
-	
-- 移除在线媒体流
+   导入媒体流成功后，该媒体流会在直播频道内自动播放，频道内所有用户都会收到 `Client.on("stream-added")` 和 `Client.on("peer-online")` 回调，导入媒体流的主播同时还会收到 `Client.on("streamInjectedStatus")` 回调。
 
-	频道内的主播可以使用 `Client.removeInjectStreamUrl` 接口，移除一个已经接入的在线媒体流。
-	
-	```javascript
-	Client.removeInjectStreamUrl(url);
-	```
+   > 如果导入媒体流失败，查阅 [API 参考](#api)排查问题。
 
-	> 主播退出频道后，无需再调用 `Client.removeInjectStreamUrl` 接口。
+2. 频道内主播调用 `removeInjectStreamUrl` 方法从直播频道内删除指定的已导入在线媒体流。
+
+   删除媒体流成功后，频道内所有用户都会收到  `Client.on("peer-leave")` 和 `Client.on("stream-removed")` 回调。
+
+   > 主播退出频道后，无需再调用 `removeInjectStreamUrl` 接口。
 
 
-## 工作原理
-- 频道中的主播通过 Video Inject 服务器，将在线媒体流拉取到 Agora SD-RTN 上，推送到直播频道内，频道内的连麦主播、普通观众都可以接收到对应的媒体流。
-- 如果主播开启了 CDN 推流，对应的媒体流也会被推送到 CDN 上，CDN 观众就也可以听到这路媒体流。
 
+### 示例代码
+
+```javascript
+// Javascript
+// 导入在线媒体流
+var InjectStreamConfig = {
+   width: 0,
+   height: 0,
+   videoGop: 30,
+   videoFramerate: 15,
+   videoBitrate: 400,
+   audioSampleRate: 44100,
+   audioChannels: 1,
+  });
+
+  Client.addInjectStreamUrl(url, config);
+
+// 删除在线媒体流
+Client.removeInjectStreamUrl(url);
+```
+
+同时，我们在 Github 提供一个开源的 [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) 示例项目。
+
+<a name="api"></a>
+### API 参考
+
+- [`addInjectStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#addinjectstreamurl)
+- [`removeInjectStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#removeinjectstreamurl)
+- `streamInjectedStatus`
+
+## 开发注意事项
+
+主播在直播过程中启用输入在线媒体流，观众需要订阅主播才能观看外部视频。

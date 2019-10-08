@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 05:45:08 GMT+0800 (CST)
+updatedAt: Fri Sep 27 2019 04:09:56 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -84,6 +84,3 @@ rtcEngine.addPublishStreamUrl(url, true);
 rtcEngine.removePublishStreamUrl(url);
 ```
 
-## 开发注意事项
-
-使用该功能需要联系 sales@agora.io 开通旁路推流。

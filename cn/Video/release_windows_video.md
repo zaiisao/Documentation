@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Thu Sep 19 2019 09:40:04 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 08:43:42 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -107,6 +107,12 @@ IAgoraRtcEngine.h 头文件中的拼写错误。
 - [`onUserEnableVideo`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a91bef59a3659b6e6bcbe43eb203d0732)
 - [`onUserEnableLocalVideo`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a23189a2a10fb8b06b774543ac6bb322b)
 - [`onFirstRemoteVideoDecoded`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a345a8441861b9dbdc7ffc36a6c6ba186)
+
+<div class="alert note">该回调的触发时机与老的 <code>onRemoteVideoStateChanged</code> 回调不同。新接口只有在远端视频流状态发生改变时，才会触发。</div>
+
+#### 3. 关闭/开启本地音频采集
+
+为提高通信模式下，本地用户关闭麦克风后听到的音质，该版本在 `enableLocalAudio`(true) 后，将系统音量修改为媒体音量。调用 `enableLocalAudio`(false) 后，系统音量自动切换为通话音量。
 
 **新增特性**
 

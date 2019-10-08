@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Thu Sep 19 2019 09:39:57 GMT+0800 (CST)
+updatedAt: Mon Sep 30 2019 08:43:55 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -108,6 +108,12 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 - [`didVideoEnabled`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didVideoEnabled:byUid:)
 - [`didLocalVideoEnabled`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didLocalVideoEnabled:byUid:)
 - [`firstRemoteVideoDecodedOfUid`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteVideoDecodedOfUid:size:elapsed:)
+
+<div class="alert note">该回调的触发时机与老的 <code>remoteVideoStateChangedOfUid</code> 回调不同。新接口只有在远端视频流状态发生改变时，才会触发。</div>
+
+#### 3. 关闭/开启本地音频采集
+
+为提高通信模式下，本地用户关闭麦克风后听到的音质，该版本在 `enableLocalAudio`(true) 后，将系统音量修改为媒体音量。调用 `enableLocalAudio`(false) 后，系统音量自动切换为通话音量。
 
 **新增特性**
 

@@ -3,81 +3,84 @@
 title: 输入在线媒体流
 description: 
 platform: Android
-updatedAt: Thu Sep 26 2019 09:47:26 GMT+0800 (CST)
+updatedAt: Sun Sep 29 2019 08:26:19 GMT+0800 (CST)
 ---
 # 输入在线媒体流
-## 简介
+## 功能描述
+输入在线媒体流功能可以将音视频流作为一个发送端导入正在进行的直播房间。通过将正在播放的音视频导入到直播频道中，主播和观众可以一起收听/观看该媒体流并实时互动。
 
-**输入在线媒体流**功能可以将媒体流作为一个发送端接入正在进行的直播房间。通过将正在播放的视频添加到直播中，主播和观众可以在一起收听/观看媒体流的同时，实时互动。
+### 常用场景
 
-Agora SDK 从 v2.1.0 版本开始，新增 `addInjectStreamUrl` 接口，通过该接口：
+- 赛事直播中，主播直接拉比赛的音视频流，实现主播和观众边看比赛边点评的功能。
+- 同一直播间内，主播与观众一同欣赏电影、音乐、演出，并实时交流讨论。
+- 无人机或网络摄像头直接采集视频，该视频作为在线媒体流导入直播频道中。
 
-- 主播可以指定媒体流输入源，作为视频源输入给直播频道内的所有观众。
-- 支持主播对输入媒体流的 Video Profile 进行设置。
-- 如果主播开启并设置了旁路直播，输入的媒体流也可以直播给所有旁路观众。
+### 工作原理
 
-## 常见使用场景
+![](https://web-cdn.agora.io/docs-files/1569397540228)
 
-在线流媒体输入主要适用于如下场景：
+直播频道中的主播通过 Video Inject 服务器将在线媒体流拉到 Agora SD-RTN 中，导入到直播频道内。
 
-- 赛事直播中，主播直接拉流，实现主播与观众边看比赛边点评的功能。
-- 同一直播间内，主播与观众在欣赏电影、音乐、演出的同时，实时讨论或交流想法。
-- 无人机或网络摄像头直接把采集到的视频推流出去，作为在线媒体流导入直播。
+- 频道内的连麦主播、普通观众都可以听/看到该媒体流。
+- 如果主播开启了 CDN 旁路推流，该媒体流也会被推送到 CDN 上， CDN 观众就可以听/看到这路媒体流。
 
-## 注意事项
-
-- 频道内同一时间只允许输入一个在线媒体流。
-- 只有主播可以输入和移除在线媒体流，连麦主播和普通用户不可以。
-- 主播在直播过程中启用输入在线媒体流。观众需要订阅主播才能观看外部视频。
-- 支持的媒体流格式包括：RTMP、HLS、FLV。纯音频流也可以作为在线媒体流输入。
-- 如果媒体流输入成功，该媒体流会出现在频道中，并收到 `onUserJoined` 和 `onFirstRemoteVideoDecoded` 回调，其中 `uid` 为 666。
-- 如果媒体流输入失败，会返回错误码。可能会出现的错误码及处理方法如下：
-
-  - `ERR_INVALID_ARGUMENT(2)`：输入的 URL 为空。请重新调用该方法，并确认输入的媒体流的 URL 是有效的
-  - `ERR_NOT_INITIALIZED(7)`：引擎没有初始化。请确认调用该方法前已创建 `RtcEngine` 对象并完成初始化
-  - `ERR_NOT_SUPPORTED(4)`：频道非直播模式。请调用 `setChannelProfile` 并将频道设置为直播模式再调用该方法
-  - `ERR_NOT_READY(3)`：没有加入频道。请确认 App 在频道内
+> - 支持的媒体流格式：RTMP、HLS 和 FLV。纯音频流也可作为在线媒体流导入直播频道。
+> - 只有主播可以导入/删除在线媒体流，连麦主播、普通观众和 CDN 观众都不可以。
 
 ## 实现方法
 
-实现在线媒体流输入首先需要用户以主播身份加入一个直播频道。如果你对如何初始化引擎对象和加入直播频道不了解，请参考 [快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/android_video?platform=Android)。
+在实现输入在线媒体流功能前，请确保你已在项目中完成基本的实时音视频功能。详见[开始互动直播](../../cn/Interactive%20Broadcast/start_live_android.md)。
 
-- 输入在线媒体流：
+参考如下步骤，在你的项目中实现输入在线媒体流功能：
 
-	直播频道的主播可以使用 `addInjectStreamUrl` ，指定一个在线媒体流作为连麦端接入房间。
+1. 频道内主播调用 `addInjectStreamUrl` 方法向直播频道内导入指定在线媒体流。你也可以修改 config 的参数设置媒体流导入的分辨率、码率和帧率等参数，详见[`InjectStreamConfig`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_inject_stream_config.html)。
 
-	```java
-	// java
-	String urlPath = "Some online RTMP/HLS url path"
+   > 频道内同一时间只允许输入一个在线媒体流。
 
-	LiveInjectStreamConfig config = new LiveInjectStreamConfig();
-	config.width = 0;
-	config.height = 0;
-	config.videoGop = 30;
-	config.videoFramerate = 15;
-	config.videoBitrate = 400;
-	config.audioSampleRate = LiveInjectStreamConfig.AudioSampleRateType.TYPE_44100;        config.audioBitrate = 48;
-	config.audioChannels = 1;
+   导入媒体流成功后，该媒体流会在直播频道内自动播放，频道内所有用户都会收到 `onUserJoined` (`uid`: 666) 回调，导入媒体流的主播同时还会收到 `onStreamInjectedStatus` 回调。
 
-	rtcEngine.addInjectStreamUrl(urlPath, config);
-	```
+   > 如果导入媒体流失败，查阅 [API 参考](#api)排查问题。
 
-	你可以通过修改 `config` 的参数值控制接入媒体流的分辨率、码率、帧率、音频采样率等参数。详见 [AgoraLiveInjectStreamConfig 参数说明](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_inject_stream_config.html) 。
-	
-- 移除在线媒体流
+2. 频道内主播调用 `removeInjectStreamUrl` 方法从直播频道内删除指定的已导入在线媒体流。
 
-	频道内的主播可以使用 `removeInjectStreamUrl` 接口，移除一个已经接入的在线媒体流。
-	
-	```java
-	// java
-	String urlPath = "The same online RTMP/HLS url path added before"
-	rtcEngine.removeInjectStreamUrl(urlPath)
-	```
+   删除媒体流成功后，频道内所有用户都会收到  `onUserOffline` (`uid: 666`) 回调。
 
-	> 主播退出频道后，无需再调用 `removeInjectStreamUrl` 接口。
+   > 主播退出频道后，无需再调用 `removeInjectStreamUrl` 接口。
 
+### 示例代码
 
-## 工作原理
-- 频道中的主播通过 Video Inject 服务器，将在线媒体流拉取到 Agora SD-RTN 上，推送到直播频道内，频道内的连麦主播、普通观众都可以看到对应的媒体流。
-- 如果主播开启了 CDN 推流，对应的媒体流也会被推送到 CDN 上，CDN 观众就也可以听到或看到这路媒体流。
+```java
+// Java
+// 导入在线媒体流
+String urlPath = "Some online RTMP/HLS url path"
 
+  LiveInjectStreamConfig config = new LiveInjectStreamConfig();
+  config.width = 0;
+  config.height = 0;
+  config.videoGop = 30;
+  config.videoFramerate = 15;
+  config.videoBitrate = 400;
+  config.audioSampleRate = LiveInjectStreamConfig.AudioSampleRateType.TYPE_44100;        		   config.audioBitrate = 48;
+  config.audioChannels = 1;
+
+  rtcEngine.addInjectStreamUrl(urlPath, config);
+
+// 删除在线媒体流
+String urlPath = "The same online RTMP/HLS url path added before"
+  rtcEngine.removeInjectStreamUrl(urlPath)
+```
+
+同时，我们在 Github 提供一个开源的 [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) 示例项目。
+
+<a name="api"></a>
+### API 参考
+
+- [`addInjectStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a67547508dd8b98318b55d764eb0da311)
+- [`removeInjectStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1bd152dba2c28459ff5202bb8039fb42)
+- [`onStreamInjectedStatus`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a470bb5a47f90705fa3da3e3b6aebb28d)
+- [`onUserJoined`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa466d599b13768248ac5febd2978c2d3)
+- [`onUserOffline`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9fbb08177fbc8f74d64044a78aea0dda)
+
+## 开发注意事项
+
+主播在直播过程中启用输入在线媒体流，观众需要订阅主播才能观看外部视频。
