@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Oct 01 2019 01:29:05 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 03:39:45 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -24,7 +24,7 @@ All requests are sent to the host: `api.agora.io`.
 - Request: See the examples in the following APIs.
 - Response: The response content is in JSON format.
 
-> All the request URLs and request bodies are case sensitive.
+<div class="alert warning">All the request URLs and request bodies are case sensitive.</div>
 
 ## Call sequence
 
@@ -66,7 +66,7 @@ The following parameters are required in the request body.
 | Parameter       | Type   | Description                                                  |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | Name of the channel to be recorded.                          |
-| `uid`           | String | The UID of the recording client. A 32-bit unsigned integer ranging from 1 to (2<sup>32</sup>-1) that is unique in the channel, for example `"527841"`. Do not set it as `"0"`. |
+| `uid`           | String | The UID of the recording client, for example `"527841"`. A 32-bit unsigned integer ranging from 1 to (2<sup>32</sup>-1) that is unique in the channel. Do not set it as `"0"`. |
 | `clientRequest` | JSON   | A specific client request that is empty for this method.     |
 
 ### An HTTP request example of `acquire`
@@ -115,144 +115,168 @@ The following parameters are required in the URL.
 | :----------- | :----- | :----------------------------------------------------------- |
 | `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
-| `mode`       | String | The recording mode. Only `mix` (composite mode) is supported. |
+| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). Composite mode is the default mode. In individual mode, Agora Cloud Recording generates one audio and/or video file for each UID. In composite mode, Agora Cloud Recording combines the audio and video of all UIDs into a single file. |
 
 The following parameters are required in the request body.
 
 | Parameter       | Type   | Description                                                  |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | Name of the channel to be recorded.                          |
-| `uid`           | String | The UID of the recording client. A 32-bit unsigned integer ranging from 1 to (2<sup>32</sup>-1) that is unique in the channel, for example `"527841"`. Do not set it as `"0"`. |
-| `clientRequest` | JSON   | A specific client request. See the following list for details. |
+| `uid`           | String | The UID of the recording client, for example `"527841"`. A 32-bit unsigned integer ranging from 1 to (2<sup>32</sup>-1) that is unique in the channel. Do not set it as `"0"`. |
+| `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key) used in the channel to be recorded. Ensure that you set this parameter if the recording channel uses a token.</li><li>[`recordingConfig`](#recordingConfig): (Optional) JSON. The recording configuration.</li><li>[`storageConfig`](#storageConfig): JSON. The third-party cloud storage configuration.</li> |
 
-`clientRequest` requires the following parameters:
+### <a name="recordingConfig"></a>Recording configuration
 
-- `token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key) used in the channel to be recorded. Ensure you set this parameter if the recording channel uses a token.
+`recordingConfig` is a JSON object for recording configuration with the following fields. 
 
-- `recordingConfig`: (Optional) JSON. The recording configuration. 
+- `streamTypes`: (Optional) Number. The type of the recorded media stream.
+  - `0`: Records audio only.
+  - `1`: Records video only.
+  - `2`: (Default) Records audio and video.
+- `decryptionMode`: (Optional) Number. When the channel is encrypted, Agora Cloud Recording uses `decryptionMode` to enable the built-in decryption function. The decryption mode must be the same as the encryption mode set by the Agora Native/Web SDK. 
+  - `0`: (Default) None.
+  - `1`: AES-128, XTS mode.
+  - `2`: AES-128, ECB mode.
+  - `3`: AES-256, XTS mode.
+- `secret`: (Optional) String. The decryption password when decryption mode is enabled. 
+- `channelType`: (Optional) Number. Channel profile. Agora Cloud Recording must use the same channel profile as the Agora Native/Web SDK. Otherwise, issues may occur.
+  - `0`: (Default) Communication profile. 
+  - `1`: Live broadcast profile.
+- `audioProfile`: (Optional) Number. Sets the sample rate, bitrate, encoding mode, and the number of channels:
+  - `0`: (Default) Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 48 Kbps.
+  - `1`: Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.
+  - `2`: Sample rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.
+- `videoStreamType`: (Optional) Number. Sets the type of the video stream. 
+  - `0`: (Default) Records the high-stream video.
+  - `1`: Records the low-stream video.
+- `maxIdleTime`: (Optional) Number. Agora Cloud Recording automatically stops recording and leaves the channel when there is no user in the recording channel after a time period (30 seconds by default) set by this parameter. The value range is from 5 to 2<sup>23</sup>-1. 
+- `transcodingConfig`: (Optional) JSON. The transcoding configuration. If you omit this parameter, the recording uses the default values. If you set this parameter, ensure that you set `width`, `height`, `fps`, and `bitrate`.
+  - `width`: (Mandatory) Number. The width of the mixed video (pixels). The default value is 360. The maximum resolution is 1080p and an error occurs if the maximum resolution is exceeded.
+  - `height`: (Mandatory) Number. The height of the mixed video (pixels). The default value is 640. The maximum resolution is 1080p and an error occurs if the maximum resolution is exceeded.
+  - `fps`: (Mandatory) Number. The video frame rate (fps). The default value is 15.
+  - `bitrate`: (Mandatory) Number. The video bitrate (Kbps). The default value is 500.
+  - `maxResolutionUid`: (Optional) String. When `mixedVideoLayout` is set as `2` (vertical layout), you can specify the UID of the large video window by this parameter.
+  - `backgroundColor`: (Optional) String. The background color of the canvas (the display window or screen) in RGB hex value. The string starts with a "#". The default value is `"#000000"`, the black color.
+  - `mixedVideoLayout`: (Optional) Number. Sets the video mixing layout. 0, 1, and 2 are the [predefined layouts](../../en/cloud-recording/cloud_layout_guide.md). If you set this parameter as 3, you need to set the layout by the `layoutConfig` parameter.
+    - `0`: (Default) Floating layout. The first user in the channel occupies the full canvas. The other users occupy the small regions on top of the canvas, starting from the bottom left corner. The small regions are arranged in the order of the users joining the channel. This layout supports one full-size region and up to four rows of small regions on top with four regions per row, comprising 17 users.
+    - `1`: Best fit layout. This is a grid layout. The number of columns and rows and the grid size vary depending on the number of users in the channel. This layout supports up to 17 users.
+    - `2`: Vertical layout. One large region is displayed on the left edge of the canvas, and several smaller regions are displayed along the right edge of the canvas. The space on the right supports up to 2 columns of small regions with 8 regions per column. This layout supports up to 17 users.
+    - `3`: Customized layout. Set the `layoutConfig` parameter to customize the layout.
+  - `layoutConfig`: (Optional) JSONArray. An array of the configuration of each user's region. Supports 17 users at most. Each user's region configuration is a JSON object with the following parameters:
+    - `uid`: (Optional) String. The string contains the UID of the user displaying the video in the region. If this parameter is not specified, the configurations apply in the order of the users joining the channel.
+    - `x_axis`: (Mandatory) Float. Relative horizontal position of the top-left corner of the region. The value is between 0.0 (leftmost) and 1.0 (rightmost). 
+    - `y_axis`: (Mandatory) Float. Relative vertical position of the top-left corner of the region. The value is between 0.0 (top) and 1.0 (bottom).
+    - `width`: (Mandatory) Float. Relative width of the region. The value is between 0.0 and 1.0.
+    - `height`: (Mandatory) Float. Relative height of the region. The value is between 0.0 and 1.0.
+    - `alpha`: (Optional) Float. The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque). The default value is 1.0.
+    - `render_mode`: (Optional) Number. The video display mode:
+      - `0`: (Default) Cropped mode. Uniformly scales the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents.
+      - `1`: Fit mode. Uniformly scales the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
 
-  - `streamTypes`: (Optional) Number. The type of the recorded media stream.
-    - `0`: Records audio only.
-    - `1`: Records video only.
-    - `2`: (Default) Records audio and video.
-  - `decryptionMode`: (Optional) Number. When the channel is encrypted, Agora Cloud Recording uses `decryptionMode` to enable the built-in decryption function. The decryption mode must be the same as the encryption mode set by the Agora Native/Web SDK. 
-    - `0`: (Default) None.
-    - `1`: AES-128, XTS mode.
-    - `2`: AES-128, ECB mode.
-    - `3`: AES-256, XTS mode.
-  - `secret`: (Optional) String. The decryption password when decryption mode is enabled. 
-  - `channelType`: (Optional) Number. Channel profile. Agora Cloud Recording must use the same channel profile as the Agora Native/Web SDK. Otherwise, issues may occur.
-    - `0`: (Default) Communication profile. 
-    - `1`: Live broadcast profile.
-  - `audioProfile`: (Optional) Number. Sets the sample rate, bitrate, encoding mode, and the number of channels:
-    - `0`: (Default) Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 48 Kbps.
-    - `1`: Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.
-    - `2`: Sample rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.
-  - `videoStreamType`: (Optional) Number. Sets the type of the video stream. 
-    - `0`: (Default) Records the high-stream video.
-    - `1`: Records the low-stream video.
-  - `maxIdleTime`: (Optional) Number. Agora Cloud Recording automatically stops recording and leaves the channel when there is no user in the recording channel after a time period (30 seconds by default) set by this parameter. The minimum value is 5.
-  - `transcodingConfig`: (Optional) JSON. The transcoding configuration. If you omit this parameter, the recording uses the default values. If you set this parameter, ensure that you set `width`, `height`, `fps`, and `bitrate`.
-    - `width`: (Mandatory) Number. The width of the mixed video (pixels). The default value is 360. The maximum resolution is 1080p and an error occurs if the maximum resolution is exceeded.
-    - `height`: (Mandatory) Number. The height of the mixed video (pixels). The default value is 640. The maximum resolution is 1080p and an error occurs if the maximum resolution is exceeded.
-    - `fps`: (Mandatory) Number. The video frame rate (fps). The default value is 15.
-    - `bitrate`: (Mandatory) Number. The video bitrate (Kbps). The default value is 500.
-    - `maxResolutionUid`: (Optional) String. When `mixedVideoLayout` is set as `2` (vertical layout), you can specify the UID of the large video window by this parameter.
-    - `backgroundColor`: (Optional) String. The background color of the canvas (the display window or screen) in RGB hex value. The string starts with a "#". The default value is `"#000000"`, the black color.
-    - `mixedVideoLayout`: (Optional) Number. Sets the video mixing layout. 0, 1, and 2 are the [predefined layouts](../../en/cloud-recording/cloud_layout_guide.md). If you set this parameter as 3, you need to set the layout by the `layoutConfig` parameter.
-      - `0`: (Default) Floating layout. The first user in the channel occupies the full canvas. The other users occupy the small regions on top of the canvas, starting from the bottom left corner. The small regions are arranged in the order of the users joining the channel. This layout supports one full-size region and up to four rows of small regions on top with four regions per row, comprising 17 users.
-      - `1`: Best fit layout. This is a grid layout. The number of columns and rows and the grid size vary depending on the number of users in the channel. This layout supports up to 17 users.
-      - `2`: Vertical layout. One large region is displayed on the left edge of the canvas, and several smaller regions are displayed along the right edge of the canvas. The space on the right supports up to 2 columns of small regions with 8 regions per column. This layout supports up to 17 users.
-      - `3`: Customized layout. Set the `layoutConfig` parameter to customize the layout.
-    - `layoutConfig`: (Optional) JSONArray. An array of the configuration of each user's region. Supports 17 users at most. Each user's region configuration is a JSON object with the following parameters:
-      - `uid`: (Optional) String. The string contains the UID of the user displaying the video in the region. If this parameter is not specified, the configurations apply in the order of the users joining the channel.
-      - `x_axis`: (Mandatory) Float. Relative horizontal position of the top-left corner of the region. The value is between 0.0 (leftmost) and 1.0 (rightmost). 
-      - `y_axis`: (Mandatory) Float. Relative vertical position of the top-left corner of the region. The value is between 0.0 (top) and 1.0 (bottom).
-      - `width`: (Mandatory) Float. Relative width of the region. The value is between 0.0 and 1.0.
-      - `height`: (Mandatory) Float. Relative height of the region. The value is between 0.0 and 1.0.
-      - `alpha`: (Optional) Float. The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque). The default value is 1.0.
-      - `render_mode`: (Optional) Number. The video display mode:
-        - `0`: (Default) Cropped mode. Uniformly scales the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents.
-        - `1`: Fit mode. Uniformly scales the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
+- `subscribeVideoUids`: (Optional) JSONArray. An array of the string user IDs (UIDs) of the users whose video you want to record, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. 
 
-- `storageConfig`: JSON. The third-party cloud storage configuration.
+- `subscribeAudioUids`: (Optional) JSONArray. An array of the string user IDs (UIDs) of the users whose audio you want to record, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`.
 
-  - `vendor`: Number. The third-party cloud storage vendor.    
+> Once you set `subscribeVideoUids` or `subscribeAudioUids`, Agora Cloud Recording records the audio or video of the specified users only. For example, if `subscribeVideoUids` is set and `subscribeAudioUids` is not set or is an empty array, Agora Cloud Recording records only the video (no audio) of the specified users. If both parameters are empty or if neither is set, all the users' audio and video will be recorded.
 
-    - `0`: [Qiniu Cloud](https://www.qiniu.com/en/products/kodo)
-    - `1`: [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls)
-    - `2`: [Alibaba Cloud](https://www.alibabacloud.com/product/oss)
+- `subscribeUidGroup`: (Optional) Number. Estimated maximum number of users. You must set this parameter in individual mode.
 
-  - `region`: Number. The regional information specified by the third-party cloud storage:
-    When the third-party cloud storage is [Qiniu Cloud](https://www.qiniu.com/en/products/kodo) (`vendor` = 0):
+  - `0`: 1 to 2 UIDs
+  - `1`: 3 to 7 UIDs
+  - `2`: 8 to 12 UIDs
+  - `3`: 13 to 17 UIDs
 
-    - `0`: East China
-    - `1`: North China 
-    - `2`: South China
-    - `3`: North America  
 
-    When the third-party cloud storage is [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls) (`vendor` = 1):
+### <a name="storageConfig"></a>Cloud storage configuration
 
-    - `0`: US_EAST_1 
-    - `1`: US_EAST_2 
-    - `2`: US_WEST_1 
-    - `3`: US_WEST_2 
-    - `4`: EU_WEST_1 
-    - `5`: EU_WEST_2 
-    - `6`: EU_WEST_3 
-    - `7`: EU_CENTRAL_1 
-    - `8`: AP_SOUTHEAST_1 
-    - `9`: AP_SOUTHEAST_2 
-    - `10`: AP_NORTHEAST_1 
-    - `11`: AP_NORTHEAST_2 
-    - `12`: SA_EAST_1 
-    - `13`: CA_CENTRAL_1 
-    - `14`: AP_SOUTH_1 
-    - `15`: CN_NORTH_1 
-    - `16`: CN_NORTHWEST_1 
-    - `17`: US_GOV_WEST_1 
+`storageConfig` is a JSON object that configures the third-party cloud storage with the following fields.
 
-    When the third-party cloud storage is [Alibaba Cloud](https://www.alibabacloud.com/product/oss) (`vendor` = 2):
+- `vendor`: Number. The third-party cloud storage vendor.    
 
-    - `0`: CN_Hangzhou 
-    - `1`: CN_Shanghai 
-    - `2`: CN_Qingdao 
-    - `3`: CN_Beijing
-    - `4`: CN_Zhangjiakou 
-    - `5`: CN_Huhehaote 
-    - `6`: CN_Shenzhen 
-    - `7`: CN_Hongkong 
-    - `8`: US_West_1 
-    - `9`: US_East_1 
-    - `10`: AP_Southeast_1 
-    - `11`: AP_Southeast_2 
-    - `12`: AP_Southeast_3 
-    - `13`: AP_Southeast_5 
-    - `14`: AP_Northeast_1 
-    - `15`: AP_South_1 
-    - `16`: EU_Central_1 
-    - `17`: EU_West_1 
-    - `18`: EU_East_1
+  - `0`: [Qiniu Cloud](https://www.qiniu.com/en/products/kodo)
+  - `1`: [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls)
+  - `2`: [Alibaba Cloud](https://www.alibabacloud.com/product/oss)
 
-  - `bucket`: String. The bucket of the third-party cloud storage.
+- `region`: Number. The regional information specified by the third-party cloud storage:
+  When the third-party cloud storage is [Qiniu Cloud](https://www.qiniu.com/en/products/kodo) (`vendor` = 0):
 
-  - `accessKey`: String. The access key of the third-party cloud storage.
+  - `0`: East China
+  - `1`: North China 
+  - `2`: South China
+  - `3`: North America  
 
-  - `secretKey`: String. The secret key of the third-party cloud storage.
+  When the third-party cloud storage is [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls) (`vendor` = 1):
+
+  - `0`: US_EAST_1 
+  - `1`: US_EAST_2 
+  - `2`: US_WEST_1 
+  - `3`: US_WEST_2 
+  - `4`: EU_WEST_1 
+  - `5`: EU_WEST_2 
+  - `6`: EU_WEST_3 
+  - `7`: EU_CENTRAL_1 
+  - `8`: AP_SOUTHEAST_1 
+  - `9`: AP_SOUTHEAST_2 
+  - `10`: AP_NORTHEAST_1 
+  - `11`: AP_NORTHEAST_2 
+  - `12`: SA_EAST_1 
+  - `13`: CA_CENTRAL_1 
+  - `14`: AP_SOUTH_1 
+  - `15`: CN_NORTH_1 
+  - `16`: CN_NORTHWEST_1 
+  - `17`: US_GOV_WEST_1 
+
+  When the third-party cloud storage is [Alibaba Cloud](https://www.alibabacloud.com/product/oss) (`vendor` = 2):
+
+  - `0`: CN_Hangzhou 
+  - `1`: CN_Shanghai 
+  - `2`: CN_Qingdao 
+  - `3`: CN_Beijing
+  - `4`: CN_Zhangjiakou 
+  - `5`: CN_Huhehaote 
+  - `6`: CN_Shenzhen 
+  - `7`: CN_Hongkong 
+  - `8`: US_West_1 
+  - `9`: US_East_1 
+  - `10`: AP_Southeast_1 
+  - `11`: AP_Southeast_2 
+  - `12`: AP_Southeast_3 
+  - `13`: AP_Southeast_5 
+  - `14`: AP_Northeast_1 
+  - `15`: AP_South_1 
+  - `16`: EU_Central_1 
+  - `17`: EU_West_1 
+  - `18`: EU_East_1
+
+- `bucket`: String. The bucket of the third-party cloud storage.
+
+- `accessKey`: String. The access key of the third-party cloud storage.
+
+- `secretKey`: String. The secret key of the third-party cloud storage.
+
+- `fileNamePrefix`: JSONArray. An array of strings. Sets the path of the recorded files in the third-party cloud storage. For example, if `fileNamePrefix` = `["directory1","directory2"]`, Agora Cloud Recording will add the prefix "`directory1/directory2/`" before the name of the recorded file, that is, `directory1/directory2/xxx.m3u8`. The prefix's length, including the slashes, should not exceed 128 characters. The string itself should not contain any slash. The supported characters are as follows:
+  - The 26 lowercase English letters: a to z
+  - The 26 uppercase English letters: A to Z
+  - The 10 numbers: 0 to 9
+
 
 ### An HTTP request example of `start`
 
-- The request URL is `https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/mode/mix/start`.
+- The request URL is：
+
+```
+https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/mode/<mode>/start
+```
 - `Content-type` is `application/json;charset=utf-8`.
-- `Authorization` is the basic authentication, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
-- The request body:
+- `Authorization` is basic HTTP authentication, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
+- The request body
 
 ```json
-{
+  {
     "uid": "527841",
     "cname": "httpClient463224",
     "clientRequest": {
-		"token": "<token if any>",
+        "token": "<token if any>",
         "recordingConfig": {
             "maxIdleTime": 30,
             "streamTypes": 2,
@@ -265,17 +289,21 @@ The following parameters are required in the request body.
                 "bitrate": 500, 
                 "fps": 15, 
                 "mixedVideoLayout": 1,
-                "backgroundColor": "#FF0000"
-            }
-        }, 
+                "backgroundColor": "#FF0000",
+            "subscribeVideoUids": ["123","456"], 
+            "subscribeAudioUids": ["123","456"],
+            "subscribeUidGroup": 0
+           }
+       }, 
         "storageConfig": {
             "accessKey": "xxxxxxf",
             "region": 3,
             "bucket": "xxxxx",
             "secretKey": "xxxxx",
-            "vendor": 2
-        }
-    }
+            "vendor": 2,
+            "fileNamePrefix": ["directory1","directory2"]
+       }
+   }
 }
 ```
 
@@ -314,7 +342,7 @@ The following parameters are required in the URL.
 | `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
 | `sid`        | String | The recording ID created by the [`start`](#start) method.    |
-| `mode`       | String | The recording mode. Only `mix` (composite mode) is supported. |
+| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). |
 
 The following parameters are required in the request body.
 
@@ -335,10 +363,10 @@ The following parameters are required in the request body.
 - `backgroundColor`: (Optional) String. The background color of the canvas (the display window or screen) in RGB hex value. The string starts with a "#". The default value is `"#000000"`, the black color.
 - `layoutConfig`: (Optional) JSONArray. An array of the configuration of each user's region. Supports 17 users at most. Each user's region configuration is a JSON object with the following parameters:
   - `uid`: (Optional) String. The string contains the UID of the user displaying the video in the region. If this parameter is not specified, the configurations apply in the order of the users joining the channel.
-  - `x_axis`: (Mandatory) Float. Relative horizontal position of the top-left corner of the region. The value is between 0.0 (leftmost) and 1.0 (rightmost). 
-  - `y_axis`: (Mandatory) Float. Relative vertical position of the top-left corner of the region. The value is between 0.0 (top) and 1.0 (bottom).
-  - `width`: (Mandatory) Float. Relative width of the region. The value is between 0.0 and 1.0.
-  - `height`: (Mandatory) Float. Relative height of the region. The value is between 0.0 and 1.0.
+  - `x_axis`: (Mandatory) Float. Relative horizontal position of the top-left corner of the region. The value is between 0.0 (leftmost) and 1.0 (rightmost). `x_axis` can also be an integer 0 or 1.
+  - `y_axis`: (Mandatory) Float. Relative vertical position of the top-left corner of the region. The value is between 0.0 (top) and 1.0 (bottom). `y_axis` can also be an integer 0 or 1.
+  - `width`: (Mandatory) Float. Relative width of the region. The value is between 0.0 and 1.0. `width` can also be an integer 0 or 1.
+  - `height`: (Mandatory) Float. Relative height of the region. The value is between 0.0 and 1.0. `height` can also be an integer 0 or 1.
   - `alpha`: (Optional) Float. The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque). The default value is 1.0.
   - `render_mode`: (Optional) Number. The video display mode:
     - `0`: (Default) Cropped mode. Uniformly scales the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents.
@@ -346,12 +374,17 @@ The following parameters are required in the request body.
 
 ### A request example of `updateLayout `
 
-- The request URL is `https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/<mode>/updateLayout`.
+- The request URL is:
+
+```
+https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/<mode>/updateLayout
+```
+
 - `Content-type` is `application/json;charset=utf-8`.
 - `Authorization` is the basic authorization, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 - The request body:
 
- ```json
+```json
 {
     "uid": "527841",
     "cname": "httpClient463224",
@@ -380,7 +413,7 @@ The following parameters are required in the request body.
          ]
      }
 }
-```
+ ```
 
 ### A response example of `updateLayout`
 
@@ -413,11 +446,16 @@ The following parameters are required in the URL.
 | `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
 | `sid`        | String | The recording ID created by the [`start`](#start) method.    |
-| `mode`       | String | The recording mode. Only `mix` (composite mode) is supported. |
+| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). |
 
 ### An HTTP request example of `query`
 
-- The request URL is `https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/query`.
+- The request URL is：
+
+```
+https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/<mode>/query
+```
+
 - `Content-type` is `application/json;charset=utf-8`.
 - `Authorization` is the basic authentication, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 
@@ -430,18 +468,55 @@ The following parameters are required in the URL.
   "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
   "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
   "serverResponse":{
-    "fileList": "xxxxx.m3u8",
+    "filelistMode": "json",
+    "fileList": [
+   {
+      "filename": "xxx.m3u8",
+      "trackType": "audio_and_video",
+      "uid": "123",
+      "mixedAllUser": "true",
+      "isPlayable": "true",
+      "sliceStartTime": "1562724971626"
+   },    
+   {
+      "filename": "xxx.m3u8",
+      "trackType": "audio_and_video",
+      "uid": "456",
+      "mixedAllUser": "true",
+      "isPlayable": "true",
+      "sliceStartTime": "1562724971626"
+   }
+   ],
     "status": "5",
     "sliceStartTime": "1562724971626"
-    }    
+   }       
 }
 ```
 
 - `code`: Number. [Status code](#status).
+
 - `resourceId`: String. The resource ID for cloud recording. The resource ID is valid for five minutes.
+
 - `sid`: String. The recording ID. The unique identification of the current recording.
+
 - `serverResponse`: JSON. Recording status details.
-  - `fileList`: String. The filename of the M3U8 file. Each recording instance has an M3U8 file as the playlist pointing to all the recorded files.
+  - `filelistMode`: String. Data type of `fileList`.
+    - `"string"`: `fileList` is a string. In composite mode, `filelistMode` is `"string"`.
+    - `"json"`: `fileList` is a JSONArray. In individual mode, `filelistMode` is `"json"`.
+  - `fileList`: When `filelistMode` is `"string"`, `fileList` is a string that represents the filename of the M3U8 file. When `filelistMode` is `"json"`, `fileList` is a JSONArray that contains the details of each recorded file.
+    - `filename`: String. Name of the M3U8 file.
+    - `trackType`: String. Type of the recorded file.
+      - `"audio"`: Audio file.
+      - `"video"`: Video file (no audio).
+      - `"audio_and_video"`: Video file (with audio).
+    - `uid`: String. User ID. The user whose audio or video is recorded in the file.
+    - `mixedAllUser`: String. Whether the audio and video of all users are combined into a single file.
+      - `"true"`: All users are recorded in a single file.
+      - `"false"`: Each user is recorded separately.
+    - `isPlayable`: String. Whether the file can be played online.
+      - `"true"`: The file can be played online.
+      - `"false"`: The file cannot be played online.
+    - `sliceStartTime`: String. The Unix time (ms) when the recording starts.
   - `status`: Number. The recording status.
     - `0`: The recording has not started.
     - `1`: The initialization is complete.
@@ -453,7 +528,7 @@ The following parameters are required in the URL.
     - `7`: The Agora Cloud Recording service stops.
     - `8`: The recording is ready to exit.
     - `20`: The recording exits abnormally.
-  - `sliceStartTime`: String. The time when the recording starts. Unix timestamp in ms.
+  - `sliceStartTime`: String. The time when the recording starts. Unix timestamp (ms).
 
 ## <a name="stop"></a>Stops cloud recording
 
@@ -474,19 +549,23 @@ The following parameters are required in the URL.
 | `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
 | `sid`        | String | The recording ID created by the [`start`](#start) method.    |
-| `mode`       | String | The recording mode. Only `mix` (composite mode) is supported. |
+| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`).|
 
 The following parameters are required in the request body.
 
 | Parameter       | Type   | Description                                                  |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | Name of the channel to be recorded.                          |
-| `uid`           | String | The UID of the recording client. A 32-bit unsigned integer ranging from 1 to (2<sup>32</sup>-1) that is unique in the channel, for example `"527841"`. Do not set it as `"0"`. |
+| `uid`           | String | The UID of the recording client, for example `"527841"`. A 32-bit unsigned integer ranging from 1 to (2<sup>32</sup>-1) that is unique in the channel. Do not set it as `"0"`. |
 | `clientRequest` | JSON   | A specific client request that is empty for this method.     |
 
 ### An HTTP request example of `stop`
 
-- The request URL is `https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/mix/stop`.
+- The request URL is:
+
+```
+https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/<mode>/stop
+```
 
 - `Content-type` is `application/json;charset=utf-8`.
 
@@ -512,22 +591,58 @@ The following parameters are required in the request body.
   "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
   "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
   "serverResponse":{
-    "fileList": "xxxxx.m3u8",
+    "filelistMode": "json",
+    "fileList": [
+    {
+      "filename": "xxx.m3u8",
+      "trackType": "audio_and_video",
+      "uid": "123",
+      "mixedAllUser": "true",
+      "isPlayable": "true",
+      "sliceStartTime": "1562724971626"
+    },
+    {
+      "filename": "xxx.m3u8",
+      "trackType": "audio_and_video",
+      "uid": "456",
+      "mixedAllUser": "true",
+      "isPlayable": "true",
+      "sliceStartTime": "1562724971626"
+    }
+    ],
     "uploadingStatus": "uploaded"
   }
 }
-
 ```
 
 - `code`: Number. [Status code](#status).
+
 - `resourceId`: String. The resource ID for cloud recording. The resource ID is valid for five minutes.
+
 - `sid`: String. The recording ID. The unique identification of the current recording.
-- `serverResponse`: JSON. Recording details.
-  - `fileList`: String. The filename of the M3U8 file. Each recording instance has an M3U8 file as the playlist pointing to all the recorded files.
+
+- `serverResponse`: JSON. Recording status details.
+  - `filelistMode`: String. Data type of `fileList`.
+    - `"string"`: `fileList` is a string. In composite mode, `filelistMode` is `"string"`.
+    - `"json"`: `fileList` is a JSONArray. In individual mode, `filelistMode` is `"json"`.
+  - `fileList`: When `filelistMode` is `"string"`, `fileList` is a string that represents the filename of the M3U8 file. When `filelistMode` is `"json"`, `fileList` is a JSONArray that contains the details of each recorded file.
+    - `filename`: String. Name of the M3U8 file.
+    - `trackType`: String. Type of the recorded file.
+      - `"audio"`: Audio file.
+      - `"video"`: Video file (no audio).
+      - `"audio_and_video"`: Video file (with audio).
+    - `uid`: String. User ID. The user whose audio or video is recorded in the file.
+    - `mixedAllUser`: String. Whether the audio and video of all users are combined into a single file.
+      - `"true"`: All users are recorded in a single file.
+      - `"false"`: Each user is recorded separately.
+    - `isPlayable`: String. Whether the file can be played online.
+      - `"true"`: The file can be played online.
+      - `"false"`: The file cannot be played online.
+    - `sliceStartTime`: String. The Unix time (ms) when the recording starts.     
   - `uploadingStatus`: String. The upload status.
     - `"uploaded"`: All the recorded files are uploaded to the third-party cloud storage.
     - `"backuped"`:  Some of the recorded files fail to upload to the third-party cloud storage and upload to Agora Cloud Backup instead. Agora Cloud Backup automatically uploads these files to your cloud storage. 
-    - `"unknown"`: Unknown status. 
+    - `"unknown"`: Unknown status.
 
 ## <a name="status"></a>Status code
 
@@ -549,10 +664,12 @@ This section lists the common errors in using the Agora Cloud Recording RESTful 
   - The parameter type is wrong.
   - The parameter is spelt wrong. All the parameters are case sensitive.
   - The mandatory parameters are missing.
+- `7`: The recording is already running. Do not repeat the [`start`](#start) request with the same resource ID.
 - `8`: Errors in the HTTP request header fields. Possible reasons:
   - Content-type is wrong. Ensure that the `Content-type` field is `application/json;charset=utf-8`.
   - `cloud_recording` is missing in the request URL.
   - The HTTP method is wrong.
+- `53`: The recording is already running. This error occurs when you use the same parameters to call [`acquire`](#acquire) again and use the new resource ID in the [`start`](#start) request.
 - `432`: The parameter in the request is incorrect. Either the parameter is invalid, or the App ID, channel name, or UID does not match the resource ID.
 - `433`: The resource ID has expired. You need to start recording within five minutes after getting a resource ID. Call [acquire](#acquire) to get a new resource ID.
 - `435`: No recorded files created. There is nothing to record because no user is in the channel.
