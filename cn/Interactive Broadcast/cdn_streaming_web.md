@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Mon Sep 30 2019 08:49:08 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 07:45:16 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -30,8 +30,6 @@ updatedAt: Mon Sep 30 2019 08:49:08 GMT+0800 (CST)
 ## 实现方法
 
 在实现推流到 CDN 功能前，请确保你已在项目中完成基本的音视频功能。详见[开始互动直播](../../cn/Interactive%20Broadcast/start_live_web.md)。
-
-> CDN 直播暂只支持推 H.264 流，使用该功能前，你需要在开始互动直播中调用 `createClient` 时将 codec 设为 H.264。
 
 参考如下步骤，在你的项目中实现推流到 CDN：
 
@@ -113,7 +111,7 @@ client.stopLiveStreaming("your RTMP URL")
 
 - 如果你对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `startLiveStreaming` 方法并设置 `enableTranscoding (false)` 。
 
-  > 目前只支持向 CDN 推 H.264 流。你需要在 `createClient` 方法中设置 codec 为 H.264。
+  > 不转码情况下，只支持向 CDN 推 H.264 流。你需要在 `createClient` 方法中设置 codec 为 H.264。
 
 - 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
 

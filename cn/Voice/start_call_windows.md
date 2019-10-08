@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Windows
-updatedAt: Mon Sep 23 2019 07:45:03 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 08:10:06 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
@@ -21,7 +21,7 @@ Agora 在 Github 上提供开源的实时音视频通话示例项目 [Agora-Wind
 ## 设置开发环境
 本节介绍如何创建项目，并将 Agora SDK 集成至你的项目中。
 
-### 创建项目
+### 创建 Windows 项目
 参考以下步骤创建一个 Windows 项目。若已有 Windows 项目，直接查看[集成 SDK](#inte)。
 
 <details>
@@ -75,10 +75,11 @@ Agora 在 Github 上提供开源的实时音视频通话示例项目 [Agora-Wind
 ### 2. 初始化 IRtcEngine
 在调用其他 Agora API 前，需要创建并初始化 IRtcEngine 对象。
 
-该步骤中，你需要使用项目的 App ID。参考如下步骤，在 Dashboard 中创建一个项目并获取该项目的 App ID。
-- 进入 [Dashboard](https://dashboard.agora.io) 并点击左侧导航栏的项目管理 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
-- 进入**项目管理**界面后，点击**创建**，根据屏幕提示输入项目名称，选择一种鉴权机制，并点击**提交**。
-- 在**项目管理**页面，即可查看该项目的 **App ID**。
+你需要在该步骤中填入项目的 App ID。请参考如下步骤在 Dashboard [创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
+
+1. 登录 [Dashboard](https://dashboard.agora.io/)，点击左侧导航栏的**[项目管理](https://dashboard.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
+2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
+3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
 
 调用 `createAgoraRtcEngine` 和 `initialize` 方法，传入获取到的 App ID，即可初始化 `IRtcEngine`。
 
@@ -181,6 +182,8 @@ m_lpAgoraObject->GetEngine()->setupLocalVideo(vc);
  <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 
 - `uid`: 本地用户的 ID。数据类型为整型，且频道内每个用户的 `uid` 必须是唯一的。若将 `uid` 设为 0，则 SDK 会自动分配一个 `uid`，并在 `onJoinChannelSuccess` 回调中报告。
+
+更多的参数设置注意事项请参考 [`joinChannel`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c) 接口中的参数描述。
 
 ```C++
 // 加入频道。
