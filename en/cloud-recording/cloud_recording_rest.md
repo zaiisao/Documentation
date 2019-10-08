@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Tue Oct 01 2019 01:23:38 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 03:37:54 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides a RESTful API for you to control cloud recording through HTTP requests.
@@ -75,6 +75,8 @@ See the [`acquire` examples](../../en/cloud-recording/cloud_recording_api_rest.m
 
 Call the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) method within five minutes after getting the resource ID to join a channel and start the recording. 
 
+<div class="alert warning"> Agora Cloud Recording does not support string usernames (User Accounts). Ensure that every user in the channel has an integer UID. When you call the start method, ensure that the UID in the quotation marks is an integer UID, too.</div>
+
 If this method call succeeds, you get a recording ID (`sid`) from the HTTP response body.
 
 See the [`start` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
@@ -105,7 +107,7 @@ See the [`stop` examples](../../en/cloud-recording/cloud_recording_api_rest.md) 
 
 ## Upload and manage the recorded files
 
-After the recording starts, the Agora server automatically splits the recorded content into multiple TS files and keeps uploading them to the third-party cloud storage until the recording stops.
+After the recording starts, the Agora server automatically splits the recorded content into multiple TS/WebM files and keeps uploading them to the third-party cloud storage until the recording stops.
 
 ### Recording ID
 
@@ -115,9 +117,9 @@ After starting the recording with the [`start`](../../en/cloud-recording/cloud_r
 
 ### <a name="m3u8"></a>Playlist of the recorded files
 
-Each recording session has an M3U8 file, which is a playlist pointing to all the split TS files of the recording. You can use the M3U8 file to play and manage the recorded files.
+In individual recording mode, if you choose to record audio or video only, each recording session generates one M3U8 file; if you record both audio and video, each recording session generates two M3U8 files. The M3U8 file is a playlist pointing to all the split TS/WebM files of the recording. You can use the M3U8 file to play and manage the recorded files. For detailed information about the naming conventions of the M3U8 and TS/WebM files in individual recording mode, see [Manage Recorded Files](../../en/cloud-recording/cloud_recording_manage_files.md).
 
-The name of the M3U8 file consists of the recording ID and the channel name. For example`recording_id_channel_name.M3U8`.
+In composite recording mode, each recording session generates one M3U8 file. The name of the M3U8 file is `sid_cname.m3u8`, which consists of the recording ID and the channel name. For more information, see [Composite Recording](../../en/cloud-recording/cloud_recording_composite_mode.md).
 
 ### Upload the recorded files
 
