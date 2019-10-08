@@ -3,18 +3,18 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback NCS 2.0
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 04:09:04 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 04:10:12 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 云端录制 RESTful API 提供回调消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
 
-> 本文适用于使用云端录制 RESTful API 1.2.0 或之前版本时开通回调服务的用户。
+> 本文适用于在 2019 年 8 月 27 日前已经配置过消息通知服务的用户。
 
 ## 升级指南
 
-云端录制 RESTful API 1.3.0 版本升级了回调服务，对消息通知中的字段进行了优化并增加了内容识别相关的事件通知，我们推荐你进行升级。升级时你需要联系 Agora 重新配置消息通知服务。
+云端录制 RESTful API 升级了回调服务，对消息通知中的字段进行了优化，我们推荐你进行升级。升级时你需要联系 Agora 重新配置消息通知服务。
 
-本节介绍升级后的回调服务有哪些变化，完整的最新版服务回调文档请参考[云端录制 RESTful API 回调服务](https://docs-preview.agoralab.co/cn/cloud-recording/cloud_recording_callback_rest?platform=All%20Platforms&versionId=d83aa370-c4bf-11e9-8c9e-a373d911e85a)。
+本节介绍升级后的回调服务有哪些变化，完整的最新版服务回调文档请参考[云端录制 RESTful API 回调服务](../../cn/cloud-recording/cloud_recording_callback_rest.md)。
 
 ### 公共的回调信息更新
 
@@ -35,13 +35,6 @@ updatedAt: Tue Oct 08 2019 04:09:04 GMT+0800 (CST)
 - 细化不同事件所属的服务类型，`serviceType` 增加以下值：
   - `1`：录制模块
   - `2`：上传模块
-  - `3`：内容识别模块
-- 新增内容识别相关的事件，`eventType` 增加以下值：
-  - `50`：内容识别服务已启动
-  - `51`：第一个录制切片文件上传至第三方内容识别厂商
-  - `52`：所有录制文件上传至第三方内容识别厂商
-  - `53`：部分录制文件上传至第三方内容识别厂商
-  - `54`：录制文件上传到第三方内容识别厂商的进度
 
 ## 开通回调服务
 
