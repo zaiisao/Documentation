@@ -3,7 +3,7 @@
 title: 云端录制发版说明
 description: 
 platform: Linux
-updatedAt: Tue Oct 08 2019 03:03:40 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 03:30:50 GMT+0800 (CST)
 ---
 # 云端录制发版说明
 ## 简介
@@ -19,11 +19,49 @@ Agora 云端录制与以下 Agora SDK 兼容:
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制 与 Agora Web SDK 1.12.0 或更高版本兼容。            |
 
+## 1.3.0 版
+
+该版本于 2019 年 10 月 8 日发布，新增特性、改进及修复问题如下。
+
+**新增特性**
+
+#### 1. 单流录制
+
+RESTful API 新增单流录制模式，支持分开录制每个 UID 的音频流和视频流。使用方法详见[单流录制](../../cn/cloud-recording/cloud_recording_individual_mode.md)。同时，Agora 提供了音视频合并脚本，用于合并单流录制模式下生成的音视和视频文件。使用方法详见[音视频文件合并](../../cn/cloud-recording/cloud_recording_merge_files.md)。
+
+#### 2. 录制指定 UID 的音视频流
+
+RESTful API 新增 `subscribeAudioUids` 和 `subscribeVideoUids` 参数，支持录制指定 UID 的音视频流。
+
+#### 3. 自定义录制文件存储路径
+
+RESTful API 新增 `fileNamePrefix` 参数，支持指定录制文件在第三方云存储的存储位置。
+
+#### 4. 频道状态变化的时间戳
+
+RESTful API 回调通知中新增事件 `recorder_audio_stream_state_changed` 和 `recorder_video_stream_state_changed`，提供音频流和视频流状态变化的时间，和该路流对应的 UID。
+
+#### 5. 音视频格式转换脚本
+
+Agora 提供了音视频格式转换脚本，用于 TS、MP3、MP4 等文件格式之间的转换。使用方法详见[音视频格式转换](../../cn/cloud-recording/cloud_recording_convert_format.md)。
+
+#### 6. 同步回放
+
+通过 RESTful API 回调或解析 M3U8 文件，你可以获取录制开始时的时间戳，从而将录制的音视频和其他数据流文件（白板、课件、课堂聊天记录等）同步回放。详情见[同步回放](../../cn/cloud-recording/cloud_recording_playback.md)。
+
+**改进**
+
+在出现错误时，你会在 HTTP 响应包体内收到相应的错误信息，而不只是错误码。
+
+**问题修复**
+
+如果因为第三方云存储的 `bucket` 及 `key` 参数值错误导致上传失败，云端录制服务将会直接报错，而不再将切片文件上传至 Agora 云备份。
+
 ## 1.2.0 版
 
 该版本于 2019 年 7 月 19 日发布，新增特性、改进及修复问题如下。
 
-### 新增特性
+**新增特性**
 
 #### 自定义合流布局
 
@@ -39,11 +77,11 @@ RESTful API 新增 `backgroundColor` 参数，支持自定义合流的画布背�
 
 为方便开发者获得精准的录制开始时间，RESTful API 提供录制开始第一片切片的 Unix 时间戳 `sliceStartTime`，可以通过 `query` 方法查询获得。同时在 RESTful API 的回调通知中新增事件 `recorder_slice_start`，提供第一片录制切片开始的时间和上一次录制失败的时间。
 
-### 改进
+**改进**
 
 RESTful API 优化了对 `resourceId` 和 `cname` 以及 `uid` 是否对应的检查。
 
-### 修复问题
+**修复问题**
 
 修复了默认的合流布局中存在的一些小问题。
 
