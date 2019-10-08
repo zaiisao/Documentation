@@ -26,8 +26,8 @@ We provide an open-source [OpenLive-macOS-Objective-C](https://github.com/AgoraI
 
 In this section, we will create a macOS project, and integrate the SDK into the project.
 
-### Create a project
-Now, let's build a project from scratch. Skip to [Integrate the SDK](#IntegrateSDK) if a project already exists.
+### Create a macOS project
+Now, let's build a macOS project from scratch. Skip to [Integrate the SDK](#IntegrateSDK) if a macOS project already exists.
 <details>
 	<summary><font color="#3ab7f8">Create a macOS project</font></summary>
 
@@ -137,9 +137,9 @@ import AgoraRtcEngineKit
 
 Create and initialize the `AgoraRtcEngineKit` object before calling any other Agora APIs.
 
-In this step, you need to use the App ID of your project. Follow these steps to create an Agora project in Dashboard and get an App ID.
+In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Dashboard and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
 
-1. Go to [Dashboard](https://dashboard.agora.io/) and click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
+1. Go to [Dashboard](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
 2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
 3. On the **Project Management** page, find the **App ID** of your project. 
 
