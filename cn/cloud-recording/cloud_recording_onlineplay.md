@@ -3,12 +3,14 @@
 title: 在线播放录制文件
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 29 2019 08:36:57 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 03:31:21 GMT+0800 (CST)
 ---
 # 在线播放录制文件
 ## 功能描述
 
 使用 Agora 云端录制服务完成录制后，录制的内容会以 TS 文件形式上传到你设定的第三方云存储中，同时生成一个 M3U8 文件用于索引所有的 TS 文件。你可以在你的第三方云存储中获得该 M3U8 文件的链接，直接在线播放录制文件。
+
+>目前不支持在线播放云端录制生成的 WebM 文件。
 
 ## 实现方法
 
