@@ -3,83 +3,63 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Tue Sep 10 2019 08:54:04 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 03:39:56 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
-The Agora Cloud Recording RESTful API provides the callback service. You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
+You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
 
-## Enable the callback service
+<div class="alert note">If you have enabled the callback service before August 27, see the old <a href="../../en/cloud-recording/cloud_recording_callback_rest_old.md">RESTful API Callback Service</a>.</div>
 
-Contact [sales-us@agora.io](http://sales-us@agora.io/) to enable the callback service with the following information:
+## Agora message notification service
 
-- The URL address of your HTTP/HTTPS server used to receive the callbacks
-- Your App ID
-- The event types for which you need to receive notifications
+Contact us to configure and enable the callback service. See [Message Notification Service](../../en/Agora%20Platform/ncs.md) for details.
 
-> You can set one URL to receive the callbacks for one App ID.
+## Callback information
 
-After configuring the message notification service, we will automatically generate a `secret`. The `secret` is a string type key that can be used to generate a signature. You can save the `secret` to generate the signature and verify with the `"Agora-Signature"` parameter in the HTTP requests. See [Signature verification](#signature) for details. The signature verification is optional.
+After you enable the callback service, when a specified event occurs, the Agora notification center sends an HTTP/HTTPS request as a callback. The request body provides the main information of the callback in a JSON object. The JSON object contains different fields for different events.
 
-## Data format
+The following is an example that shows the fields in the request body.
+![](https://web-cdn.agora.io/docs-files/1567593635825)
+- The fields in the red rectangle are the common fields of all the callback events. For details, see [Notification callback format](../../en/Agora%20Platform/ncs.md).
+- The fields in the blue rectangle are the common fields in `payload` of all the cloud recording events. For details, see [Fileds in payload](#payload).
+- The values of `eventType`, `serviceType`, and `details` depend on the event. For details, see [Callback events](#event).
 
-### Notification format 
+### <a name="payload"></a>Fields in payload
 
-Notifications are sent to your server through HTTP/HTTPS POST requests in JSON format.
+`payload` is a JSON object, which is the main body of the notification. `payload` in each type of event notification contains the following fields:
 
-The Content-type header in the POST request is application/json.
+- `cname`: String. The name of the channel to be recorded.
+- `uid`: String. The UID of the recording client.
+- `sid`: String. The recording ID. The unique identifier of each recording.
+- `sequence`: Number. The serial number of the notifications, starting from 0. You can use this parameter to identify notifications that are random, lost, or resent.
+- `sendts`: Number. The time (UTC) when the event happens. Unix timestamp in ms.
+- `serviceType`: Number. The type of Agora service.
+  - `0`: The cloud recording service.
+  - `1`: The recorder module.
+  - `2`: The uploader module.
+- `details`: JSON. The details of the callback events are described as follows.
 
-### Response format
+## <a name="event"></a>Callback events
 
-After receiving an event notification, your server needs to respond to the Agora notification center in the application/json format.
+The event type and corresponding service type of the Agora Cloud Recording callback events are listed as follows:
 
-The Agora notification center assumes that sending an event notification fails in the following situations:
+| eventType | serviceType                   | Event description                                            |
+| :-------- | :---------------------------- | :----------------------------------------------------------- |
+| [1](#1)   | 0 (cloud recording service)   | An error occurs during the recording.                        |
+| [2](#2)   | 0 (cloud recording service)   | A warning occurs during the recording.                       |
+| [3](#3)   | 0 (cloud recording service)   | The status of the Agora Cloud Recording service changes.     |
+| [4](#4)   | 0 (cloud recording service)   | The M3U8 playlist file is generated.                         |
+| [30](#30) | 2 (uploader module)           | The upload service starts.                                   |
+| [31](#31) | 2 (uploader module)           | All the recorded files are uploaded to the specified third-party cloud storage. |
+| [32](#32) | 2 (uploader module)           | All the recorded files are uploaded, but at least one file is uploaded to Agora Cloud Backup. |
+| [33](#33) | 2 (uploader module)           | The progress of uploading the recorded files to the cloud storage. |
+| [40](#40) | 1 (recorder module)           | The recording starts.                                        |
+| [41](#41) | 1 (recorder module)           | The recording exits.                                         |
+| [42](#42) | 1 (recorder module)           | The recording service starts slicing the first recording file. |
+| [43](#43) | 1 (recorder module)           | The state of the audio stream changes. |
+| [44](#44) | 1 (recorder module)           | The state of the video stream changes. |
 
-- Your server does not respond within 20 seconds.
-- The HTTP response status code is not 200.
-
-In these situations, the Agora notification center resends the event notification up to four times.
-
-## Common callback information 
-
-Each type of event notification contains the following properties:
-
-- `notificationId`: String. The unique identifier of the notification.
-- `eventType`: Number. The event type. For details, see [callback event](../../en/cloud-recording/cloud_recording_callback_rest.md).
-- `eventMs`: Number. The time (ms) when Agora Cloud Recording notifies the Agora notification center (Unix timestamp).
-- `notifyMs`: Number. The time (ms) when the Agora notification center sends the HTTP/HTTPS request (Unix timestamp).  When the notification center resends the request, `notifyMs` is updated.
-
-- `payload`: JSON. The main body of the notification. `payload` in each type of event notification contains the following properties:
-  - `cname`: String. The name of the channel to be recorded.
-  - `uid`: String. The UID of the recording client.
-  - `sid`: String. The recording ID. The unique identifier of each recording.
-  - `sequence`: String. The serial number of the notifications, starting from 0. You can use this parameter to identify notifications that are random, lost, or resent.
-  - `sendts`: Number. The time (UTC) when the event happens. Unix timestamp in ms.
-  - `serviceType`: Number. The type of the Agora callback service. 0 indicates cloud recording.
-  - `noticeLevel`: Number. The notification level. The higher the number, the higher the level of attention.
-    - `1`: Debug 
-    - `2`: Info 
-    - `3`: Notice 
-    - `4`: Important 
-    - `5`: Critical 
-  - `details`: JSON. The details of the callback events are described as follows.
-
-## Callback events
-
-The types (`eventType`) of the Agora Cloud Recording callback events are listed as follows: 
-
-- [`1`](#1): An error occurs during the recording.
-- [`2`](#2): A warning occurs during the recording.
-- [`3`](#3): The status of the Agora Cloud Recording service changes.
--  [`4`](#4): The M3U8 playlist file is generated.
-- [`30`](#30): The upload service starts.
-- [`31`](#31): All the recorded files are uploaded to the specified third-party cloud storage.
-- [`32`](#32): All the recorded files are uploaded, but at least one file is uploaded to Agora Cloud Backup. 
-- [`33`](#33): The current upload progress.
-- [`40`](#40): The recording starts.
-- [`41`](#41): The recording exits.
-- [`42`](#42): The recording service starts slicing the first recording file.
-
-###  <a name="1"></a>cloud_recording_error
+###  <a name="1"></a>1 cloud_recording_error
 
 `eventType` 1 indicates that an error occurs during the recording. `details` contains the following fields:
 
@@ -103,7 +83,7 @@ The types (`eventType`) of the Agora Cloud Recording callback events are listed 
 - `stat`: Number. The event status. 0 indicates normal status; other values indicate abnormal status.
 - `errorMsg`: String. The detailed description of the error.
 
-###  <a name="2"></a>cloud_recording_warning
+###  <a name="2"></a>2 cloud_recording_warning
 
 `eventType` 2 indicates that a warning occurs during the recording. `details` contains the following fields:
 
@@ -115,7 +95,7 @@ The types (`eventType`) of the Agora Cloud Recording callback events are listed 
   - If the warning occurs in the recorder, see [error code and warning code](https://docs.agora.io/cn/Recording/the_error_native).
   - If the warning occurs in the uploader, see [upload warning code](#uploadwarn).
 
-###  <a name="3"></a>cloud_recording_status_update
+###  <a name="3"></a>3 cloud_recording_status_update
 
 `eventType` 3 indicates that the status of the Agora Cloud Recording service changes. `details` contains the following fields:
 
@@ -124,51 +104,51 @@ The types (`eventType`) of the Agora Cloud Recording callback events are listed 
 - `recordingMode`: Number. The recording mode. Only supports the composite recording mode. The value is 0.
 - `fileList`: String. The name of the M3U8 playlist file generated by the recording.
 
-###  <a name="4"></a>cloud_recording_file_infos
+###  <a name="4"></a>4 cloud_recording_file_infos
 
-`eventType` 4 indicates that an M3U8 playlist file is generated and uploaded. Each recording instance has an M3U8 file as the playlist pointing to all the recorded TS files. You can play and manage your recordings with the M3U8 file.
+`eventType` 4 indicates that an M3U8 playlist file is generated and uploaded. Each recording instance has an M3U8 file as the playlist pointing to all the recorded TS/WebM files. You can play and manage your recordings with the M3U8 file.
 
 `details` contains the following fields:
 
 - `msgName`: String. The message name, `cloud_recording_file_infos`.
 - `fileList`: String. The name of the M3U8 file.
 
-###  <a name="30"></a>uploader_started
+###  <a name="30"></a>30 uploader_started
 
 `eventType` 30 indicates that the upload service starts, and `details` contains the following fields:
 
 - `msgName`: String. The message name, `uploader_started`.
 - `status`: Number. The event status. 0 indicates normal status; other values indicate abnormal status.
 
-###  <a name="31"></a>uploaded
+###  <a name="31"></a>31 uploaded
 
 `eventType` 31 indicates that all the recorded files are uploaded to the specified third-party cloud storage, and `details` contains the following fields:
 
 - `msgName`: String. The message name, `uploaded`.
 - `status`: Number. The event status. 0 indicates normal status; other values indicate abnormal status.
 
-###  <a name="32"></a>backuped
+###  <a name="32"></a>32 backuped
 
 `eventType` 32 indicates that all the recorded files are uploaded, but at least one of them is uploaded to Agora Cloud Backup. Agora Cloud Backup automatically uploads the files to the specified third-party cloud storage. `details` contains the following fields:
 
 - `msgName`: String. The message name, `backuped`.
 - `status`: Number. The event status. 0 indicates normal status; other values indicate abnormal status.
 
-###  <a name="33"></a>uploading_progress
+###  <a name="33"></a>33 uploading_progress
 
 `eventType` 33 indicates the current upload progress. The Agora server notifies you of the upload progress once every minute after the recording starts. `details` contains the following fields:
 
 - `msgName`: String. The message name, `uploading_progress`.
 - `progress`: Number. A constantly changing number between 0 and 10000, which equals to the ratio of the uploaded file to the recorded file multiplied by 10000. After the recording exits, 10000 indicates that the upload is complete.
 
-###  <a name="40"></a>recorder_started
+###  <a name="40"></a>40 recorder_started
 
 `eventType` 40 indicates that the recording service starts, and `details` contains the following fields:
 
 - `msgName`: String. The message name, `recorder_started`.
 - `status`: Number. The event status. 0 indicates normal status; other values indicate abnormal status.
 
-###  <a name="41"></a>recorder_leave
+###  <a name="41"></a>41 recorder_leave
 
 `eventType` 41 indicates that the recording service leaves the channel, and `details` contains the following fields:
 
@@ -180,40 +160,70 @@ The types (`eventType`) of the Agora Cloud Recording callback events are listed 
   - `4`: The AgoraCoreService process receives the SIGTERM signal.
   - `8`: The recording application calls the stop cloud recording method to leave the channel.
 
-### <a name="42"></a>recorder_slice_start
+### <a name="42"></a>42 recorder_slice_start
 
 `eventType` 42 indicates that the recording service starts slicing the first recording file, and `details` contains the following fields:
 
 - `msgName`: String. The message name, `recorder_slice_start`.
 - `startUtcMs`：Number. The time (ms) in UTC when the recording starts (the starting time of the first slice file).
 - `discontinueUtcMs`：Number. In most cases, this field is the same as `startUtcMs`. When the recording is interrupted, the Agora Cloud Recording service automatically resumes the recording and  triggers this event. In this case, the value of this field is the time (ms) in UTC when the last slice file stops.
+- `mixedAllUser`:  String. Whether the audio and video of all users are mixed into a single file.
+  - `"true"`: All users are recorded in a single file.
+  - `"false"`: Each user is recorded separately.
+- `streamUid`: String. User ID. The user whose audio or video is recorded in the file. In composite mode, `streamUid` is `0`.
+- `trackType`: String. Type of the recorded file.
+  - `"audio"`: Audio file.
+  - `"video"`: Video file (no audio).
+  - `"audio_and_video"`: Video file (with audio).
 
 For example, you start a recording session and get this event notification in which `startUtcMs` is the starting time of slice file 1. Then, the recording session continues and records slice file 2 to slice file N. If an error occurs when recording slice file N + 1, you lose this file and the recording session stops. Agora Cloud Recording automatically resumes the recording and triggers this event again. In the event notification, `startUtcMs` is the time when slice file N + 2 starts, and `discontinueUtcMs` is the time when slice file N stops.
 
+
+### <a name="43"></a>43 recorder_audio_stream_state_changed
+
+eventType 43 indicates that the state of the audio stream changes, and `details` contains the following fields:
+
+- `streamUid`: String. User ID. The user whose audio is recorded in the file.
+- `state` : Number. Whether Agora Cloud Recording is receiving the audio stream.
+  - `0`: Agora Cloud Recording is receiving the audio stream.
+  - `1`: Agora Cloud Recording is not receiving the audio stream.
+- `UtcMs`: Number. The UTC time (ms) when the state of the audio stream changes.
+
+
+
+### <a name="44"></a>44 recorder_video_stream_state_changed
+
+eventType 44 indicates that the state of the video stream changes, and `details` contains the following fields:
+
+- `streamUid`: String. User ID. The user whose video is recorded in the file.
+- `state`: Number. Whether Agora Cloud Recording is receiving the video stream.
+  - `0`: Agora Cloud Recording is receiving the video stream.
+  - `1`: Agora Cloud Recording is not receiving the video stream.
+- `UtcMs`: Number. The UTC time (ms) when the state of the video stream changes.
 
 ## Reference
 
 ###  <a name="uploaderr"></a>Error codes for uploading
 
 | Error code | Description                                                  |
-| :----------- | :----------------------------------------------------------- |
-| 32           | An error occurs in the configuration of the third-party cloud storage. |
-| 47           | The recording file upload fails.                             |
-| 51           | An error occurs when the uploader processes the recorded files. |
+| :--------- | :----------------------------------------------------------- |
+| 32         | An error occurs in the configuration of the third-party cloud storage. |
+| 47         | The recording file upload fails.                             |
+| 51         | An error occurs when the uploader processes the recorded files. |
 
 ### <a name="uploadwarn"></a>Warning codes for uploading
 
-| Warning code | Description                                |
-| :----------- | :----------------------------------------- |
-| 31           | Re-uploads to the specified cloud storage. |
-| 32           | Re-uploads to Agora Cloud Backup.          |
+| Warning code | Description                                                  |
+| :----------- | :----------------------------------------------------------- |
+| 31           | Re-uploads to the specified cloud storage.                   |
+| 32           | Re-uploads to Agora Cloud Backup.                            |
 
 ### <a name="clouderr"></a>Error codes for the Agora Cloud Recording platform
 
 | Error code | Description                                               |
-| :----------- | :-------------------------------------------------------- |
-| 50           | A timeout occurs in uploading the recorded files.         |
-| 52           | A timeout occurs in starting the Cloud Recording Service. |
+| :--------- | :-------------------------------------------------------- |
+| 50         | A timeout occurs in uploading the recorded files.         |
+| 52         | A timeout occurs in starting the Cloud Recording Service. |
 
 ### <a name="state"></a>Status codes for the Agora Cloud Recording service
 
@@ -229,39 +239,3 @@ For example, you start a recording session and get this event notification in wh
 | 7           | The Agora Cloud Recording service stops.                     |
 | 8           | The recording is ready to exit.                              |
 | 20          | The recording exits abnormally.                              |
-
-### <a name="signature"></a>Signature verification
-
-We generate the `key` directly. After using the HMAC/SHA1 algorithm, we generate the `Agora-Signature`. You can use the saved `key` to verify the signature with the following code: 
-
-- If you use Python
-
-```python
-# !-*- coding: utf-8 -*-
-Import hashlib
-Import hmac
- 
-# Get the request body of the notification callback, note that this is a string, not a JSON object
-Request_body = '{"eventMs":1560408533119,"eventType":10,"noticeId":"4eb720f0-8da7-11e9-a43e-53f411c2761f","notifyMs":1560408533119,"payload":{"a":"1" , "b": 2}, "productId": 1}'
- 
-secret = 'secret'
- 
-Signature = hmac.new(secret, request_body, hashlib.sha1).hexdigest()
- 
-Print(signature) # 033c62f40f687675f17f0f41f91a40c71c0f134c
-```
-
-- If you use Node.js
-
-```javascript
-Const crypto = require('crypto')
- 
-// Get the request body of the notification callback, note that this is a string, not a JSON object
-Const requestBody = '{"eventMs":1560408533119,"eventType":10,"noticeId":"4eb720f0-8da7-11e9-a43e-53f411c2761f","notifyMs":1560408533119,"payload":{"a":"1 ","b":2},"productId":1}'
- 
-Const secret = 'secret'
- 
-Const signature = crypto.createHmac('sha1', secret).update(requestBody, 'utf8').digest('hex')
- 
-Console.log(signature) // 033c62f40f687675f17f0f41f91a40c71c0f134c
-```
