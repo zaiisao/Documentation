@@ -3,16 +3,16 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback (NCS2)
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 04:17:00 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 04:17:27 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 The Agora Cloud Recording RESTful API provides the callback service. You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
 
-> This document applies to users who have enabled the callback service in Agora Cloud Recording v1.2.0 or earlier.
+> This document applies to users who have enabled the callback service in Agora Cloud Recording before August 27, 2019.
 
 ## Migration guide
 
-The callback service in Agora Cloud Recording v1.3.0 updates some fields in the message notification and adds event notifications for content moderation. We recommend you contact Agora to upgrade to the latest version.
+The callback service in Agora Cloud Recording updates some fields in the message notification. We recommend you contact Agora to upgrade to the latest version.
 
 This section describes the changes in the latest version. For full documentation, see [Agora Cloud Recording Callback Service](../../en/cloud-recording/cloud_recording_callback_rest.md).
 
@@ -31,13 +31,6 @@ This section describes the changes in the latest version. For full documentation
 - Added the following values to `serviceType`:
   - `1`: The recorder module.
   - `2`: The uploader module.
-  - `3`: The content moderation module.
-- Added the following values to `eventType`:
-  - `50`: The content moderation service starts.
-  - `51`: The first slice file is uploaded to the content moderation vendor.
-  - `52`: All the recorded files are uploaded to the content moderation vendor.
-  - `53`: Some recorded files are uploaded to the content moderation vendor.
-  - `54`: The progress of uploading the recorded files to the content moderation vendor.
 
 ## Enable the callback service
 
