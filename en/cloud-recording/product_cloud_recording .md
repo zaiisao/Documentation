@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Overview
 description: 
 platform: Linux
-updatedAt: Tue Oct 08 2019 02:22:08 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 03:37:33 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Overview
 Agora Cloud Recording is an add-on service to record and save voice calls, video calls, and interactive broadcasts on your cloud storage. It is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+. 
@@ -17,9 +17,13 @@ With Agora Cloud Recording, you can record calls or live broadcasts for your use
 Agora Cloud Recording provides the following functions:
 
 - High-quality voice and video recordings.
-- Mixed-stream voice and video recordings of all users in the channel.
+- Individual recording, which generates one audio and/or video file for each user in the channel.
+- Composite recording, which combines the audio and video of all users in the channel into one file.
+- Record specified users.
 - Various composite video layouts.
 - Third-party cloud storage.
+- Customize the directory of the recorded files in the third-party cloud storage.
+
 
 ## Applications
 
