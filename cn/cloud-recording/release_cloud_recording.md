@@ -3,7 +3,7 @@
 title: 云端录制发版说明
 description: 
 platform: Linux
-updatedAt: Tue Oct 08 2019 01:39:21 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 03:03:40 GMT+0800 (CST)
 ---
 # 云端录制发版说明
 ## 简介
