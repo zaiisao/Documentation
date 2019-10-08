@@ -3,7 +3,7 @@
 title: Release Notes for Agora Cloud Recording
 description: 
 platform: Linux
-updatedAt: Tue Oct 08 2019 03:02:07 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 03:37:41 GMT+0800 (CST)
 ---
 # Release Notes for Agora Cloud Recording
 ## Overview
@@ -17,11 +17,50 @@ Agora Cloud Recording is compatible with the following SDKs:
 - Agora Native SDK v1.7.0 or later.
 - Agora Web SDK v1.12 or later.
 
+## v1.3.0
+
+v1.3.0 is released on October 8, 2019.
+
+**New features**
+
+#### 1. Individual recording
+
+The RESTful API adds individual recording mode, which supports recording the audio and video of each UID separately. See [Individual Recording](../../en/cloud_recording/cloud_recording_individual_mode.md) for details. Meanwhile, Agora provides the Audio & Video File Merging script, which you can use to merge the audio and video files generated in individual mode. See [Merge Audio and Video Files](../../en/cloud_recording/cloud_recording_merge_files.md) for details.
+
+#### 2. Record specified UIDs
+
+The RESTful API adds the `subscribeAudioUids` and `subscribeVideoUids` parameters, which allow you to record only specified UIDs.
+
+#### 3. Customize the directory of the recorded files
+
+The RESTful API adds the `fileNamePrefix` parameter, which allows you to specify the directory where you want to store the recorded files in the third-party cloud storage.
+
+#### 4. Timestamp when the stream state changes
+
+The RESTful API callback service adds the `recorder_audio_stream_state_changed` and `recorder_video_stream_state_changed` events to report the time when the state of the audio or video stream changes, as well as the corresponding UID.
+
+#### 5. Format Converter script
+
+Agora provides the Format Converter script, which you can use to convert between multiple file formats, such as TS, MP3, and MP4. See [Convert File Format](../../en/cloud_recording/cloud_recording_convert_format.md) for details.
+
+#### 6. Synchronized playback
+
+You can achieve synchronized playback between the recorded files and other stream files, such as online whiteboards, courseware, and messages, by using the timestamp when the recording starts. You can get the timestamp by using the RESTful API callback service, or by parsing the M3U8 file. See [Synchronized Playback](../../en/cloud_recording/cloud_recording_playback.md) for details.
+
+**Improvement**
+
+When an error occurs, you receive the error message in the HTTP response body, instead of just the error code.
+
+**Fixed issue**
+
+When uploading fails after you use the wrong `bucket` and `key` values of the third-party cloud storage, Agora Cloud Recording returns an error instead of uploading the recorded files to Agora Cloud Backup.
+
+
 ## v1.2.0
 
 v1.2.0 is released on July 22, 2019. 
 
-### New features
+**New features**
 
 #### Customized video layout
 
@@ -39,11 +78,11 @@ The RESTful API adds the `backgroundColor` parameter to support customized backg
 
 To get the accurate starting time of a recording, the RESTful API provides the Unix timestamp of when the first slicing starts in the response of the `query` method.  The RESTful API callback service adds the `recorder_slice_start` event to report the time when the first slicing starts and the time when the last recording fails.
 
-### Improvement
+**Improvement**
 
 Optimizes the verification of whether `resourceId` corresponds with `uid` and `cname` when calling the RESTful API.
 
-### Fixed issue
+**Fixed issue**
 
 Fixed minor issues in the default video layout (floating layout).
 
