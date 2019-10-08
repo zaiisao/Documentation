@@ -3,7 +3,7 @@
 title: 代理商控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 06:29:30 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 06:29:35 GMT+0800 (CST)
 ---
 # 代理商控制台 RESTful API
 ## 签名
@@ -806,7 +806,7 @@ Elements 结构
 | :---------- | :------ | :------------------------- |
 | `companyId` | number  | 公司 ID。                  |
 | `projectId` | string  | 项目 ID。                  |
-| `amount`    | decimal | 金额。                     |
+| `amount`    | decimal | 金额。<br>**Note:**<br>若返回数据为 0，有以下两种可能：<ul><li>该公司未消耗用量。请使用用量接口查看该公司用量情况。<br><li>该公司消耗的用量未超过免费额度，不计费。                    |
 | `currency`  | string  | 货币类型。<br><li>CNY：人民币<br><li>USD：美元 |
 
 **响应示例**
