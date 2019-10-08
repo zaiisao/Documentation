@@ -3,10 +3,11 @@
 title: 限制条件
 description: RTM Web Limitations
 platform: Web
-updatedAt: Tue Oct 08 2019 04:04:15 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 04:04:20 GMT+0800 (CST)
 ---
 # 限制条件
-本页面提供 Agora RTM Web SDK 的使用限制条件。
+
+本页简要介绍 Agora RTM Web SDK 的使用限制条件，包括最大调用频率、最大字符串长度、编码格式等。
 
 
 ## 调用频率限制
