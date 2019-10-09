@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Web
-updatedAt: Wed Oct 09 2019 09:19:22 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 09:19:26 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -26,14 +26,16 @@ Injecting an online media stream can be applied to the following scenarios:
 
 ###  Working principles
 
+The host in a live broadcast channel pulls an online media stream and pushes it to the Agora SD-RTN and live broadcast channel through the Video Inject Server. 
+
 ![](https://web-cdn.agora.io/docs-files/1569414380425)
 
 
-- The host in a live broadcast channel pulls an online media stream and pushes it to the Agora SD-RTN and live broadcast channel through the Video Inject Server. The host and audience in the channel can hear/see the media stream.
+- The host and audience in the channel can hear/see the media stream.
 - If the host enabled CDN streaming, the injected media stream is also pushed to the CDN so that the CDN audience can hear/see the media stream.
 
-> Supported media stream formats include: RTMP, HLS and FLV. Audio-only streams can also be injected.
-> Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
+> - Supported media stream formats include: RTMP, HLS and FLV. Audio-only streams can also be injected.
+> - Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
 
 
 
