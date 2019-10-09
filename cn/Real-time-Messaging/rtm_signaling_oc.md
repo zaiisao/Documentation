@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Wed Oct 09 2019 12:14:13 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 12:40:37 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK 的区别。
