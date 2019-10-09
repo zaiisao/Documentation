@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Windows CPP
-updatedAt: Wed Oct 09 2019 10:48:37 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 10:48:43 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK v1.1.0 的区别。
@@ -131,15 +131,21 @@ updatedAt: Wed Oct 09 2019 10:48:37 GMT+0800 (CST)
 
 | 方法                 | 信令               | RTM 实时消息 |
 | -------------------- | ------------------ | ------------ |
-| 设置一条频道属性     | `channelSetAttr`   | N/A          |
-| 删除一条频道属性     | `channelDelAttr`   | N/A          |
-| 删除频道的全部属性。 | `channelClearAttr` | N/A          |
+| 创建并返回一个 [IRtmChannelAttribute](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_channel_attribute.html) 实例。 | N/A | [createChannelAttribute](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#af153fe0c639a009bf35bad1da471d2be) |
+| 设置一条频道属性     | `channelSetAttr`   | [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ae4068ff21c8e20e8eeb45ba21959c368)<sup>1</sup>          |
+| 删除一条频道属性     | `channelDelAttr`   | [deleteChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a1a448f33be57b31f9952822426e5c4bd)<sup>1</sup>          |
+| 删除频道的全部属性 | `channelClearAttr` | [clearChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#aff6cff676e3fc3150ef5f27845c9a3d3)<sup>1</sup>           |
+| 全量设置某指定频道的属性 | N/A | [setChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad25f51a3671db50e348ec6c170044ec6)<sup>1</sup>   |
+| 获取某指定频道的全部属性 | N/A | [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3dc8409ed82d8f95a0839d5e9e7da564) |
+| 获取某指定频道指定属性名的属性 | N/A | [getChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ac97f24f9d78e885e494a22be95db8d33) |
 
-> Agora RTM SDK v1.1 将支持频道属性相关操作。
+<sup>1</sup> Agora RTM SDK 支持在不加入频道的情况下更新该频道的属性。
 
 | 事件           | 信令                   | RTM 实时消息 |
 | -------------- | ---------------------- | ------------ |
-| 频道属性已更新 | `onChannelAttrUpdated` | N/A          |
+| 频道属性已更新 | `onChannelAttrUpdated` | [onAttributesUpdated](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a7a9ae1b89fdf3f69242393955d0fd5c5) <sup>2</sup>         |
+
+<sup>2</sup>  该回调不会默认触发。只有当频道属性更新者将 [enableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_channel_attribute_options.html#a9a29721df90beca76974a5e348902530) 设为 true 后，该回调才会被触发。
 
 
 
@@ -163,15 +169,13 @@ updatedAt: Wed Oct 09 2019 10:48:37 GMT+0800 (CST)
 
 | 方法                 | 信令                  | RTM 实时消息 |
 | -------------------- | --------------------- | ------------ |
-| 获取指定频道成员人数 | `channelQueryUserNum` | N/A          |
+| 获取指定频道成员人数 | `channelQueryUserNum` | [getChannelMemberCount](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a41dee47c6201acb2f29371b6e30249a5)<sup>1</sup>          |
 
-
+> <sup>1</sup>  Agora RTM SDK 支持查询单个或多个频道的成员人数。
 
 | 事件                   | 信令                          | RTM 实时消息 |
 | ---------------------- | ----------------------------- | ------------ |
-| 返回指定频道的用户人数 | `onChannelQueryUserNumResult` | N/A          |
-
-> Agora RTM SDK v1.1 将支持该功能。 
+| 返回指定频道的用户人数 | `onChannelQueryUserNumResult` | [onGetChannelMemberCountResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a881a9953322b09dc17cd0dc98c11eb18)          |
 
 ## 呼叫邀请
 
