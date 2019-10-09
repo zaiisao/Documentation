@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Wed Oct 09 2019 09:08:49 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 09:08:55 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -92,7 +92,7 @@ client.startLiveStreaming("your RTMP URL", true)
 client.stopLiveStreaming("your RTMP URL")
 ```
 
-同时，我们在 Github 提供一个开源的 [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack) 示例项目。你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/)，或者参考 [index.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/index.js) 和 [rtc-clinet.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/rtc-client.js) 的源代码。
+同时，我们在 Github 提供一个开源的 [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack) 示例项目。你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/)，或者参考 [index.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/index.js) 和 [rtc-client.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/rtc-client.js) 的源代码。
 
 <a name="api"></a>
 ### API 参考
