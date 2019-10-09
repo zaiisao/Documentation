@@ -6,7 +6,7 @@ platform: Windows CPP
 updatedAt: Wed Oct 09 2019 12:16:21 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
-本页对比 Agora Signaling SDK 与 Agora RTM SDK v1.1.0 的区别。
+本页对比 Agora Signaling SDK 与 Agora RTM SDK 的区别。
 
 ## 登录登出
 

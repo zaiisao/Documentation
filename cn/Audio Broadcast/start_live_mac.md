@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: macOS
-updatedAt: Tue Oct 08 2019 08:17:21 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 07:04:57 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -105,7 +105,7 @@ platform :macOS, '10.11' use_frameworks!
 
 本节介绍如何实现互动直播。互动直播的 API 调用时序见下图：
 
-![](https://web-cdn.agora.io/docs-files/1568261614629)
+![](https://web-cdn.agora.io/docs-files/1570604677337)
 
 ### 1. 创建用户界面
 

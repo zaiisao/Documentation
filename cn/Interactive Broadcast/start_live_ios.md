@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: iOS
-updatedAt: Tue Oct 08 2019 08:16:43 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 07:04:15 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -114,7 +114,7 @@ end
 
 本节介绍如何实现互动直播。互动直播的 API 调用时序见下图：
 
-![](https://web-cdn.agora.io/docs-files/1568262263472)
+![](https://web-cdn.agora.io/docs-files/1570604641071)
 
 ### 1. 创建用户界面
 
