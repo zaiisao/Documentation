@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Android
-updatedAt: Wed Oct 09 2019 12:40:17 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 12:40:21 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK 的区别。
@@ -129,7 +129,7 @@ updatedAt: Wed Oct 09 2019 12:40:17 GMT+0800 (CST)
 > - <sup>2</sup> Agora RTM SDK 暂不支持从频道外发送频道消息。也就是说，你必须加入频道才能向其他频道成员发送频道消息。
 > - <sup>3</sup> 与 Agora Signaling SDK 的行为不同，[onMessageReceived](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2d527e4040bcabf038533810adbd296c) 回调返回给频道内的其他频道成员，而非返回给发送人。
 
-## 频道属性相关
+## 频道属性相关操作
 
 | 方法                 | 信令               | RTM 实时消息 |
 | -------------------- | ------------------ | ------------ |
