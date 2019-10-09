@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Android
-updatedAt: Wed Oct 09 2019 09:46:41 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 09:46:46 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK v1.1.0 的区别。
@@ -111,8 +111,8 @@ updatedAt: Wed Oct 09 2019 09:46:41 GMT+0800 (CST)
 
 | 方法                 | 信令                      | RTM 实时消息                |
 | -------------------- | ------------------------- | --------------------------- |
-| 创建消息实例         | N/A                       | [createMessage](../../cn/Real-time-Messaging/rtm_signaling_android.md)<sup>1</sup> |
-| 从频道内发送频道消息 | `messageChannelSend`      | [sendMessage](../../cn/Real-time-Messaging/rtm_signaling_android.md)<sup>2</sup>   |
+| 创建消息实例         | N/A                       | [createMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a77dbd15cb6c9db3844fb313bd5dceac3)<sup>1</sup> |
+| 从频道内发送频道消息 | `messageChannelSend`      | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a57087adf4227a17c774ea292840148a0)<sup>2</sup>   |
 | 从频道外发送频道消息 | `messageChannelSendForce` | N/A                         |
 
 
