@@ -3,10 +3,10 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 06:55:05 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 08:59:05 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
-本页对比老信令与 Agora RTM SDK v1.0 的区别。
+本页对比 Agora Signaling SDK 与 Agora RTM SDK v1.1.0 的区别。
 
 ## 登录登出
 
@@ -133,17 +133,20 @@ updatedAt: Wed Sep 25 2019 06:55:05 GMT+0800 (CST)
 
 | 方法                 | 信令               | RTM 实时消息 |
 | -------------------- | ------------------ | ------------ |
-| 设置一条频道属性     | `channelSetAttr`   | N/A          |
-| 删除一条频道属性     | `channelDelAttr`   | N/A          |
-| 删除频道的全部属性。 | `channelClearAttr` | N/A          |
+| 设置一条频道属性     | `channelSetAttr`   | [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a997a31e6bfe1edc9b6ef58a931ef3f23)<sup>1</sup>          |
+| 删除一条频道属性     | `channelDelAttr`   | [deleteChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a4cbf3329abda4940b73a75455cd1dc06)<sup>1</sup>          |
+| 删除频道的全部属性 | `channelClearAttr` | [clearChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6ed0ef4baacda8fa00eda5373d17f59f)<sup>1</sup>           |
+| 全量设置某指定频道的属性 | N/A | [setChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad25f51a3671db50e348ec6c170044ec6)<sup>1</sup>   |
+| 获取某指定频道的全部属性 | N/A | [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6) |
+| 获取某指定频道指定属性名的属性 | N/A | [getChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a358b47f4b42d678fafa76f3f30290e5e) |
 
-> Agora RTM SDK v1.1 将支持频道属性相关操作。
+<sup>1</sup> Agora RTM SDK 支持在不加入频道的情况下更新该频道的属性。
 
 | 事件           | 信令                   | RTM 实时消息 |
 | -------------- | ---------------------- | ------------ |
-| 频道属性已更新 | `onChannelAttrUpdated` | N/A          |
+| 频道属性已更新 | `onChannelAttrUpdated` | [onAttributesUpdated](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2904a1f1f78c497b9176fffb853be96f) <sup>2</sup>         |
 
-
+<sup>2</sup>  该回调不会默认触发。只有当频道属性更新者将 [enableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_channel_attribute_options.html#a2f240727791b3ad1af97f4a399ce1579) 设为 true 后，该回调才会被触发。
 
 ## 获取当前频道用户列表
 
