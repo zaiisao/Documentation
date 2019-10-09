@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Android
-updatedAt: Wed Oct 09 2019 10:02:05 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 10:02:09 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK v1.1.0 的区别。
@@ -168,15 +168,15 @@ updatedAt: Wed Oct 09 2019 10:02:05 GMT+0800 (CST)
 
 | 方法                 | 信令                  | RTM 实时消息 |
 | -------------------- | --------------------- | ------------ |
-| 获取指定频道成员人数 | `channelQueryUserNum` | N/A          |
+| 获取指定频道成员人数 | `channelQueryUserNum` | [getChannelMemberCount](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aff0384f2a004ed75498e20e1917352e4)<sup>1</sup>          |
 
-
+> <sup>1</sup>  Agora RTM SDK 支持查询单个或多个频道的成员人数。
 
 | 事件                   | 信令                          | RTM 实时消息 |
 | ---------------------- | ----------------------------- | ------------ |
-| 返回指定频道的用户人数 | `onChannelQueryUserNumResult` | N/A          |
+| 返回指定频道的用户人数 | `onChannelQueryUserNumResult` | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)          |
 
-> Agora RTM SDK v1.1 将支持该功能。 
+
 
 ## 呼叫邀请
 
