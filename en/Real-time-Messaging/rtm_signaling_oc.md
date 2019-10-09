@@ -3,10 +3,10 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 25 2019 06:54:09 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 10:50:33 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
-rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging APIs. 
+This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
 
 ## Login & Logout
 
@@ -127,7 +127,7 @@ rtmThis page juxtaposes the legacy Signaling APIs with the Real-time Messaging A
 > - <sup>2</sup> The Agora RTM SDK does not support sending channel messages from outside a channel. That said, you must join a channel before being able to send out a channel message. 
 > - <sup>3</sup> The [messageReceived](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:messageReceived:fromMember:) callback is returned to the remote channel members, not to the message sender. 
 
-## CHANNEL-ATTRIBUTE OPERATIONS
+## Channel attribute operations
 
 | Method                               | Signaling          | Real-time Messaging |
 | ------------------------------------ | ------------------ | ------------------- |
