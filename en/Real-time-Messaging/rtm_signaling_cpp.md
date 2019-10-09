@@ -2,8 +2,8 @@
 ---
 title: Signaling vs. Agora RTM SDK
 description: 
-platform: Linux CPP,Windows CPP
-updatedAt: Wed Oct 09 2019 10:23:31 GMT+0800 (CST)
+platform: Windows CPP
+updatedAt: Wed Oct 09 2019 12:37:49 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -63,7 +63,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 > With the Agora RTM SDK,  you can query the online status of a list of peer users, not of just one peer user.
 
-## user-Attribute Operations
+## User attribute operations
 
 | Method                                              | Signaling        | Real-time Messaging                   |
 | --------------------------------------------------- | ---------------- | ------------------------------------- |
@@ -127,19 +127,25 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 > - <sup>2</sup> The Agora RTM SDK does not support sending channel messages from outside a channel. That said, you must join a channel before being able to send out a channel message. 
 > - <sup>3</sup> The [onMessageReceived](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#aabe8e78b46553645640479b862f2cae2) callback is returned to the remote channel members, not to the message sender. 
 
-## CHANNEL-ATTRIBUTE OPERATIONS
+## Channel attribute operations
 
 | Method                               | Signaling          | Real-time Messaging |
 | ------------------------------------ | ------------------ | ------------------- |
-| Sets a channel attribute.            | `channelSetAttr`   | N/A                 |
-| Deletes a channel attribute.         | `channelDelAttr`   | N/A                 |
-| Deletes all attributes of a channel. | `channelClearAttr` | N/A                 |
+| Creates and returns an [IRtmChannelAttribute](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_channel_attribute.html) instance | N/A | [createChannelAttribute](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#af153fe0c639a009bf35bad1da471d2be) |
+| Sets a channel attribute.            | `channelSetAttr`   | [addOrUpdateChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ae4068ff21c8e20e8eeb45ba21959c368)<sup>1</sup>   |
+| Deletes a channel attribute.         | `channelDelAttr`   | [deleteChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a1a448f33be57b31f9952822426e5c4bd)<sup>1</sup>   |
+| Deletes all attributes of a channel. | `channelClearAttr` |  [clearChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#aff6cff676e3fc3150ef5f27845c9a3d3)<sup>1</sup>   |
+| Substitutes the attributes of a specified channel with new ones | N/A | [setChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad25f51a3671db50e348ec6c170044ec6)<sup>1</sup>   |
+| Gets all attributes of a specified channel | N/A | [getChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3dc8409ed82d8f95a0839d5e9e7da564) |
+| Gets the attributes of a specified channel by attribute keys | N/A | [getChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ac97f24f9d78e885e494a22be95db8d33) |
 
-> The Agora RTM SDK will support channel-attribute operations in release v1.1. 
+<sup>1</sup> With the Agora RTM SDK, you can update the attribute(s) of a channel without the need to join it. 
 
 | Event                           | Signaling              | Real-time Messaging |
 | ------------------------------- | ---------------------- | ------------------- |
-| A channel attribute is updated. | `onChannelAttrUpdated` | N/A                 |
+| A channel attribute is updated. | `onChannelAttrUpdated` | [onAttributesUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a7a9ae1b89fdf3f69242393955d0fd5c5)<sup>2</sup>  |
+
+<sup>2</sup>  This callback is disabled by default. It is enabled only when the user, who updates the attributes of the channel, sets [enableNotificationToChannelMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_channel_attribute_options.html#a9a29721df90beca76974a5e348902530) as true.
 
 
 
@@ -157,21 +163,17 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 > <sup>1</sup> You must join an IChannel before retrieving a member list of it. When the number of the channel members exceeds 512, the Agora RTM SDK only returns a list of randomly selected 512 channel members. 
 
-
-
-## Retrieving the Number of Users in a Specified Channel
+## Retrieving the Number of Users of a Specified Channel
 
 | Method                                                | Signaling             | Real-time Messaging |
 | ----------------------------------------------------- | --------------------- | ------------------- |
-| Retrieves the number of users in a specified channel. | `channelQueryUserNum` | N/A                 |
+| Retrieves the number of users in a specified channel. | `channelQueryUserNum` | [getChannelMemberCount](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a41dee47c6201acb2f29371b6e30249a5)<sup>1</sup>   |
 
-
+> <sup>1</sup>  The Agora RTM SDK supports retrieving the member count of up to 32 channels. 
 
 | Event                                               | Signaling                     | Real-time Messaging |
 | --------------------------------------------------- | ----------------------------- | ------------------- |
-| Returns the number of users in a specified channel. | `onChannelQueryUserNumResult` | N/A                 |
-
-> The Agora RTM SDK v1.1 will support this feature. 
+| Returns the number of users in a specified channel. | `onChannelQueryUserNumResult` | [onGetChannelMemberCountResult](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a881a9953322b09dc17cd0dc98c11eb18)   |
 
 ## Call Invitation
 
