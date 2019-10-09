@@ -2,8 +2,8 @@
 ---
 title: 信令 与 RTM 功能对照表
 description: 
-platform: Linux CPP,Windows CPP
-updatedAt: Wed Oct 09 2019 10:13:20 GMT+0800 (CST)
+platform: Windows CPP
+updatedAt: Wed Oct 09 2019 10:30:56 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK v1.1.0 的区别。
