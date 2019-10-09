@@ -66,11 +66,15 @@ updatedAt: Fri Sep 06 2019 06:13:11 GMT+0800 (CST)
   </tr>
 </table>
 
-> - Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
-> - Agora Web SDK 2.7 及以上版本还支持 Windows 10 平台的 Edge 浏览器，详见 [Edge 浏览器支持](https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge)。
-> - 以下场景中请务必将 Web SDK 升级至 2.6 或更高版本:
->   - iOS 12.1.4 及以上版本使用 Safari 浏览器
->   - macOS 上使用 Safari 12.1 及以上版本
+<div class="alert info">除上表浏览器外，还有以下支持：
+	<li>Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器。</li>
+	<li>Agora Web SDK 2.7 及以上版本支持 Windows 10 平台的 Edge 浏览器，详见 <a href="https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge">Edge 浏览器支持</a>。</li>
+	<li>Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。</li>
+</div>
+<div class="alert note">以下场景中请务必将 Agora Web SDK 升级至 2.6 或更高版本:
+	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器</li>
+	<li>macOS 上使用 Safari 12.1 及以上版本</li>
+	</div>
 
 2. 请确保已打开特定端口，详见[防火墙说明](../../cn/Agora%20Platform/firewall.md) 。
 3. 请确保你已知悉发版说明中列出的问题，详见[已知问题和局限](../../cn/Interactive%20Broadcast/release_web_video.md) 及[常见问题回答](https://docs.agora.io/cn/search?type=faq&platform=Web)。

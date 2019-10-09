@@ -2,7 +2,7 @@
 ---
 title: 信令 与 RTM 功能对照表
 description: 
-platform: Linux CPP
+platform: Linux CPP,Windows CPP
 updatedAt: Wed Sep 25 2019 06:55:53 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表

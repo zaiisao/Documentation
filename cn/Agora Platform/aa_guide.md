@@ -3,7 +3,7 @@
 title: 水晶球
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Tue Sep 10 2019 08:48:03 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 10:21:08 GMT+0800 (CST)
 ---
 # 水晶球
 [水晶球](https://dashboard.agora.io/analytics/call/search)（Agora Analytics）是 Agora 为开发者提供的实时质量监控工具。
@@ -41,7 +41,7 @@ updatedAt: Tue Sep 10 2019 08:48:03 GMT+0800 (CST)
 
 ## 查看通话质量
 
-**通话概览页面**显示一个通话中每个用户作为[接收端](#rec)的通话体验（在通话过程中是否卡顿、模糊、没有声音、没有画面），可以帮助你快速了解这个通话的体验质量。在此页面，从上到你可以看到**通话基本信息**、**用户列表**和**通话体验质量面板**。
+**通话概览页面**显示一个通话中每个用户作为[接收端](#rec)的通话体验（在通话过程中是否卡顿、模糊、没有声音、没有画面），可以帮助你快速了解这个通话的体验质量。在此页面，从上到下你可以看到**通话基本信息**、**用户列表**和**通话体验质量面板**。
 
 ### 通话基本信息
 

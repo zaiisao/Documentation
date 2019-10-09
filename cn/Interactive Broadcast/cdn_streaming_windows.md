@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Mon Sep 30 2019 08:48:47 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 09:29:05 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -57,9 +57,9 @@ LiveTranscoding config;
 config.audioSampleRate = TYPE_44100;
 config.audioChannels = 2;
 config.audioBitrate = 48;
-// 用于旁路推流的输出视频流的总宽度 (px)。360 为默认值。width × height 的最小值为 16 × 16。如果推纯音频流，请将 width × height 设为 16 × 16。
+// 用于旁路推流的输出视频流的总宽度 (px)。360 为默认值。
 config.width = 360;
-// 用于旁路推流的输出视频流的总高度 (px)。640 为默认值。width × height 的最小值为 16 × 16。如果推纯音频流，请将 width × height 设为 16 × 16。
+// 用于旁路推流的输出视频流的总高度 (px)。640 为默认值。
 config.height = 640;
 // 设置推流输出视频的码率 (Kbps)，默认值为 400。
 cofig.videoBitrate = 400;

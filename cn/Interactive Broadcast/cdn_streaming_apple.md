@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: iOS,macOS
-updatedAt: Mon Sep 30 2019 08:49:19 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 09:28:14 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -66,7 +66,7 @@ AgoraLiveTranscoding *transcoding = [[AgoraLiveTranscoding alloc] init];
 transcoding.audioSampleRate = AgoraAudioSampleRateType44100;
 transcoding.audioChannels = 2;
 transcoding.audioBitrate = 48;
-// 用于旁路推流的输出视频流的 width × height (px)。360 x 640 为默认值。width × height 的最小值为 16 × 16。如果推纯音频流，请将 width × height 设为 16 × 16。
+// 用于旁路推流的输出视频流的 width × height (px)。360 x 640 为默认值。
 transcoding.size = CGSizeMake(360, 640);
 // 设置推流输出视频的码率 (Kbps)，默认值为 400。
 transcoding.width = 400;

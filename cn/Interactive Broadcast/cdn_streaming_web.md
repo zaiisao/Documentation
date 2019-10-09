@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Tue Oct 08 2019 07:45:16 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 09:50:37 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -34,15 +34,15 @@ updatedAt: Tue Oct 08 2019 07:45:16 GMT+0800 (CST)
 参考如下步骤，在你的项目中实现推流到 CDN：
 
 <a name="single"></a>
-1. 调用 `Stream.init` 成功后，频道内主播可以调用 `setLiveTranscoding` 方法设置音视频流的直播参数 （`LiveTranscoding`），如分辨率、码率、帧率、水印和背景色位置。如果你需要转码合图，请在 `TranscodingUser` 类中设置每个用户的视频参数，详见[示例代码](#trans)。
+1. 调用 `Stream.init` 成功后，频道内主播可以调用 `Client.setLiveTranscoding` 方法设置音视频流的直播参数 （`LiveTranscoding`），如分辨率、码率、帧率、水印和背景色位置。如果你需要转码合图，请在 `TranscodingUser` 类中设置每个用户的视频参数，详见[示例代码](#trans)。
 
    > 如果直播参数（`LiveTranscoding`）有更新，`Client.on("liveTranscodingUpdated")` 回调会被触发并向主播报告更新信息。
 
-2. 频道内主播可以调用 `startLiveStreaming` 方法向 CDN 推流直播中增加指定的一路媒体流。推流地址可以在推流后动态增删。
+2. 频道内主播可以调用 `Client.startLiveStreaming` 方法向 CDN 推流直播中增加指定的一路媒体流。推流地址可以在推流后动态增删。
 
    > 请通过 `enableTranscoding` 设置是否转码推流。
 
-3. 频道内主播可以调用 `stopLiveStreaming` 方法向 CDN 推流直播中删除指定的一路媒体流。
+3. 频道内主播可以调用 `Client.stopLiveStreaming` 方法向 CDN 推流直播中删除指定的一路媒体流。
 
 增加/删除一路媒体流时，SDK 会触发  `Client.on` 下的回调向主播报告当前推流状态。详见 [API 参考](#api)。
 
@@ -92,7 +92,7 @@ client.startLiveStreaming("your RTMP URL", true)
 client.stopLiveStreaming("your RTMP URL")
 ```
 
-同时，我们在 Github 提供一个开源的 [Live-Straming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack) 示例项目。你可以前往下载，或者参考 [index.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/index.js) 和 [rtc-clinet.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/rtc-client.js) 的源代码。
+同时，我们在 Github 提供一个开源的 [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack) 示例项目。你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/)，或者参考 [index.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/index.js) 和 [rtc-clinet.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/rtc-client.js) 的源代码。
 
 <a name="api"></a>
 ### API 参考
@@ -109,9 +109,9 @@ client.stopLiveStreaming("your RTMP URL")
 
 - 同一频道内最多支持 17 位主播。
 
-- 如果你对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `startLiveStreaming` 方法并设置 `enableTranscoding (false)` 。
+- 如果你对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `Client.startLiveStreaming` 方法并将 `enableTranscoding` 参数设置为 `false`。
 
-  > 不转码情况下，只支持向 CDN 推 H.264 流。你需要在 `createClient` 方法中设置 codec 为 H.264。
+  > 不转码情况下，请使用 `AgoraRTC.createClient({mode: "live", codec: "h264"})` 模式。
 
 - 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
 
