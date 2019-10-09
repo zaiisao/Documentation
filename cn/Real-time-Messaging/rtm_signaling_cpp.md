@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Windows CPP
-updatedAt: Wed Oct 09 2019 10:48:43 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 12:16:21 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK v1.1.0 的区别。
@@ -139,13 +139,13 @@ updatedAt: Wed Oct 09 2019 10:48:43 GMT+0800 (CST)
 | 获取某指定频道的全部属性 | N/A | [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3dc8409ed82d8f95a0839d5e9e7da564) |
 | 获取某指定频道指定属性名的属性 | N/A | [getChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ac97f24f9d78e885e494a22be95db8d33) |
 
-<sup>1</sup> Agora RTM SDK 支持在不加入频道的情况下更新该频道的属性。
+> <sup>1</sup> Agora RTM SDK 支持在不加入频道的情况下更新该频道的属性。
 
 | 事件           | 信令                   | RTM 实时消息 |
 | -------------- | ---------------------- | ------------ |
 | 频道属性已更新 | `onChannelAttrUpdated` | [onAttributesUpdated](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a7a9ae1b89fdf3f69242393955d0fd5c5) <sup>2</sup>         |
 
-<sup>2</sup>  该回调不会默认触发。只有当频道属性更新者将 [enableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_channel_attribute_options.html#a9a29721df90beca76974a5e348902530) 设为 true 后，该回调才会被触发。
+> <sup>2</sup>  该回调不会默认触发。只有当频道属性更新者将 [enableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_channel_attribute_options.html#a9a29721df90beca76974a5e348902530) 设为 true 后，该回调才会被触发。
 
 
 
