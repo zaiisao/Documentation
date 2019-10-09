@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Wed Oct 09 2019 09:12:28 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 09:12:32 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK v1.1.0 的区别。
@@ -132,15 +132,20 @@ updatedAt: Wed Oct 09 2019 09:12:28 GMT+0800 (CST)
 
 | 方法                 | 信令               | RTM 实时消息 |
 | -------------------- | ------------------ | ------------ |
-| 设置一条频道属性     | `channelSetAttr`   | N/A          |
-| 删除一条频道属性     | `channelDelAttr`   | N/A          |
-| 删除频道的全部属性。 | `channelClearAttr` | N/A          |
+| 设置一条频道属性     | `channelSetAttr`   | [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/addOrUpdateChannel:Attributes:Options:completion:)<sup>1</sup>          |
+| 删除一条频道属性     | `channelDelAttr`   | [deleteChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/deleteChannel:AttributesByKeys:Options:completion:)<sup>1</sup>          |
+| 删除频道的全部属性 | `channelClearAttr` | [clearChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/clearChannel:Options:AttributesWithCompletion:)<sup>1</sup>           |
+| 全量设置某指定频道的属性 | N/A | [setChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setChannel:Attributes:Options:completion:)<sup>1</sup>   |
+| 获取某指定频道的全部属性 | N/A | [getChannelAllAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAllAttributes:completion:) |
+| 获取某指定频道指定属性名的属性 | N/A | [getChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAttributes:ByKeys:completion:) |
 
-> Agora RTM SDK v1.1 将支持频道属性相关操作。
+<sup>1</sup> Agora RTM SDK 支持在不加入频道的情况下更新该频道的属性。
 
 | 事件           | 信令                   | RTM 实时消息 |
 | -------------- | ---------------------- | ------------ |
-| 频道属性已更新 | `onChannelAttrUpdated` | N/A          |
+| 频道属性已更新 | `onChannelAttrUpdated` | [attributesUpdate](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:attributeUpdate:) <sup>2</sup>         |
+
+<sup>2</sup>  该回调不会默认触发。只有当频道属性更新者将 [enableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannelAttributeOptions.html#//api/name/enableNotificationToChannelMembers) 设为 YES 后，该回调才会被触发。
 
 
 
