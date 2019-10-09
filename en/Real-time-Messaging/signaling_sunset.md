@@ -3,14 +3,15 @@
 title: Agora Signaling Sunset Plan
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 25 2019 07:25:11 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 10:19:50 GMT+0800 (CST)
 ---
 # Agora Signaling Sunset Plan
 ## Agora Signaling Sunset Plan
 
--  As of August 1, 2019, the Agora Signaling system will be sunset. No new features will be added, and only bug fixes will be made. As of August 12, 2019, all related documents will be moved [here](https://docs.agora.io/en/Signaling/product_signaling?platform=All%20Platforms).
-- As of December 31, 2019, there will be no further updates to the Agora Signaling system. The Agora Signaling SDK will function in the interim. 
-- On June 30, 2020, the signaling servers will be shut down and the signaling service will end.
+-  As of August 1, 2019, the Agora Signaling system will be sunset. No new features will be added, and only bug fixes will be made. 
+-  As of August 12, 2019, all related documents will be moved [here](https://docs.agora.io/en/Signaling/product_signaling?platform=All%20Platforms).
+- As of December 31, 2019, we will stop updating the  legacy Agora Signaling system, but will maintain the system in operation mode. 
+- On June 30, 2020, we will shut down the signaling servers and the signaling service will end.
 
 ## Compatibility between the Signaling SDK and the Agora RTM SDK
 
