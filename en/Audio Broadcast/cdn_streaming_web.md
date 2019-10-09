@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Tue Oct 08 2019 07:49:55 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 09:49:09 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -37,15 +37,15 @@ Before proceeding, ensure that you implement a basic live broadcast in your proj
 Refer to the following steps to push streams to the CDN:
 
 <a name="single"></a>
-1. The host in a channel calls the `setLiveTranscoding` method to set the transcoding parameters of the media streams (`LiveTranscoding`), such as the resolution, bitrate, frame rate, and position of the watermark/background image. If you need a transcoded picture, set the picture-in-picture layout for each user in the `TranscodingUser` class, as described in [Sample Code](#sample).
+1. The host in a channel calls the `Client.setLiveTranscoding` method to set the transcoding parameters of the media streams (`LiveTranscoding`), such as the resolution, bitrate, frame rate, and position of the watermark/background image. If you need a transcoded picture, set the picture-in-picture layout for each user in the `TranscodingUser` class, as described in [Sample Code](#sample).
 
    > The `Client.on("liveTranscodingUpdated")` callback occurs when the `LiveTranscoding` class updates and reports the updated information to the local host.
 
-2. The host in a channel calls the `startLiveStreaming` method to add a media stream to the CDN. 
+2. The host in a channel calls the `Client.startLiveStreaming` method to add a media stream to the CDN. 
 
    > Use `enableTranscoding` to set whether or not to enable transcoding.
 
-3. The host in a channel can call the `stopLiveStreaming` method to remove a media stream from the CDN live broadcast.
+3. The host in a channel can call the `Client.stopLiveStreaming` method to remove a media stream from the CDN live broadcast.
 
 
 When adding/removing a media stream in the CDN live broadcast, the SDK triggers some callbacks in `Client.on` to report  the current state of pushing streams to the local host. See [API Reference](#api).
@@ -98,7 +98,7 @@ client.startLiveStreaming("your RTMP URL", true)
 client.stopLiveStreaming("your RTMP URL")
 ```
 
-We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack) demo project on Github. You can try the demo, or view the source code in the [index.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/index.js) and [rtc-clinet.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/rtc-client.js) files.
+We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack) demo project on Github. You can [try the demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/), or view the source code in the [index.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/index.js) and [rtc-clinet.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/rtc-client.js) files.
 
 
 <a name="api"></a>
@@ -117,9 +117,9 @@ We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advan
 
 - Up to 17 hosts can be supported in the same live broadcast channel.
 
-- In the case of a single host, we do not recommend transcoding. You can skip [Step1](#single), and call the `addPublishStreamUrl` method directly with `transcodingEnabled (false)`.
+- In the case of a single host, we do not recommend transcoding. You can skip [Step1](#single), and call the `Client.startLiveStreaming` method directly with `enableTranscoding ("url", false)`.
 
-  > Agora only supports pushing H.264 streams to the CDN in this case. Set createClient.codec as `h264` before using this function.
+  > Please use `AgoraRTC.createClient({mode: "live", codec: "h264"})` in this case.
 
 - Set the value of `videoBitrate` by referring to [Video Bitrate Table](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate). If you set a bitrate beyond the proper range, the SDK automatically adjusts it to a value within the range. 
 

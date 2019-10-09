@@ -3,7 +3,7 @@
 title: Channel Connection
 description: 
 platform: Web
-updatedAt: Tue Sep 24 2019 07:46:40 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 01:53:24 GMT+0800 (CST)
 ---
 # Channel Connection
 In real-time communications, a user can be in various channel connection states. This page shows how the SDK determines the connection state of a user and transitions between the states.
@@ -55,4 +55,4 @@ Where:
 
 ## Reference
 
-For how connection states change when the process gets killed, see [FAQ: Does Agora have reconnection mechanisms?](https://docs.agora.io/en/Video/(https://docs.agora.io/en/faq/sdk_behavior))
+For how connection states change when the process gets killed, see [FAQ: Does Agora have reconnection mechanisms?](https://docs.agora.io/en/Video/(https://docs.agora.io/en/faq/sdk_behavior)

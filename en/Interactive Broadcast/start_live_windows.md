@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Windows
-updatedAt: Wed Sep 18 2019 07:45:41 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 08:30:26 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for Windows. 
@@ -23,8 +23,8 @@ We provide an open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Vi
 ## Set up the development environment
 In this section, we will create a Windows project and integrate the SDK into the project.
 
-### Create a project
-Now, let's build a project from scratch. Skip to [Integrate the SDK](#inte) if a project already exists.
+### Create a Windows project
+Now, let's build a Windows project from scratch. Skip to [Integrate the SDK](#inte) if a Windows project already exists.
 
 <details>
 	<summary><font color="#3ab7f8">Create a Windows project</font></summary>
@@ -75,10 +75,10 @@ When you use the UI setting of the demo project, you can see the following inter
 ### 2. Initialize IRtcEngine
 Create and initialize the IRtcEngine object before calling any other Agora APIs.
 
-In this step, you need to use the App ID of your project. Follow these steps to create an Agora project in Dashboard and get an App ID.
+In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Dashboard and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
 
-1. Go to [Dashboard](https://dashboard.agora.io) and click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344)  on the left navigation panel. 
-2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and click **Submit**. 
+1. Go to [Dashboard](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
+2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
 3. On the **Project Management** page, find the **App ID** of your project. 
 
 Call the `createAgoraRtcEngine` method and the `initialize` method, and pass in the App ID to initialize the `IRtcEngine` object.
@@ -204,6 +204,8 @@ After setting the client role and the local video view (for a video broadcast), 
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
 - `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
+
+For more details on the parameter settings, see [joinChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c).
 
 ```C++
 // Call this method to enable interoperability between the Native SDK and the Web SDK if the Web SDK is in the channel.

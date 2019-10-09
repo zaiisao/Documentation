@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: macOS
-updatedAt: Wed Sep 18 2019 10:34:07 GMT+0800 (CST)
+updatedAt: Tue Oct 08 2019 08:26:27 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for macOS.
@@ -264,6 +264,8 @@ After initializing the `AgoraRtcEngineKit` object and setting the local video vi
 
 - `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as 0,  the SDK assigns a user ID for the local user and returns it in the `joinSuccessBlock` callback.
 - `joinSuccessBlock`: Returns that the user joins the specified channel. It is same as `didJoinChannel`. We recommend setting `joinSuccessBlock` as `nil`, so that the SDK can trigger the `didJoinChannel` callback.
+
+For more details on the parameter settings, see [joinChannelByToken](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:).
 
 ```objective-c
 // Objective-C
