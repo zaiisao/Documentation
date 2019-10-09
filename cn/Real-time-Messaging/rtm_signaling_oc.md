@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: iOS,macOS
-updatedAt: Wed Oct 09 2019 10:13:03 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 10:13:07 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK v1.1.0 的区别。
@@ -169,15 +169,13 @@ updatedAt: Wed Oct 09 2019 10:13:03 GMT+0800 (CST)
 
 | 方法                 | 信令                  | RTM 实时消息 |
 | -------------------- | --------------------- | ------------ |
-| 获取指定频道成员人数 | `channelQueryUserNum` | N/A          |
+| 获取指定频道成员人数 | `channelQueryUserNum` | [getChannelMemberCount](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelMemberCount:completion:)<sup>1</sup>          |
 
-
+> <sup>1</sup>  Agora RTM SDK 支持查询单个或多个频道的成员人数。
 
 | 事件                   | 信令                          | RTM 实时消息 |
 | ---------------------- | ----------------------------- | ------------ |
-| 返回指定频道的用户人数 | `onChannelQueryUserNumResult` | N/A          |
-
-> Agora RTM SDK v1.1 将支持该功能。 
+| 返回指定频道的用户人数 | `onChannelQueryUserNumResult` | [AgoraRtmChannelMemberCountBlock](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmChannelMemberCountBlock.html)          |
 
 ## 呼叫邀请
 
