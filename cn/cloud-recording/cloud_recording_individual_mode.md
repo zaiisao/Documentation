@@ -3,7 +3,7 @@
 title: 单流录制
 description: 解释如何实现在云端录制中实现单流录制
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 03:32:40 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 10:08:29 GMT+0800 (CST)
 ---
 # 单流录制
 ## 功能描述
