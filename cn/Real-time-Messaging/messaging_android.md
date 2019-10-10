@@ -3,12 +3,11 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Thu Oct 10 2019 10:41:50 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 10:41:53 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
-
-本章介绍在正式使用 Agora RTM Java SDK for Android 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
+本页介绍在正式使用 Agora RTM Java SDK for Android 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
 ## Demo 体验
 
