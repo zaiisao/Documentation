@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:30:17 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:30:56 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -179,11 +179,12 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - `subscribeVideoUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定录制哪几个用户的视频流。UID 为 string 类型。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 `0`。 
 - `subscribeAudioUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定录制哪几个用户的音频流。UID 为 string 类型。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 1。
 <div class="alert note">一旦设置 <code>subscribeVideoUids</code> 和 <code>subscribeAudioUids</code> 中的任一参数，则只录制参数指定的音视频。例如，<code>subscribeVideoUids</code> 不为空，<code>subscribeAudioUids</code> 为空，则只录制指定用户的视频，不录制音频。如果这两个参数均为空，则录制加入频道的所有用户。</div>
-- `subscribeUidGroup`: （选填）Number 类型，预估的频道人数峰值。在单流模式下，为必填参数。
+- `subscribeUidGroup`: （选填）Number 类型，预估的订阅人数峰值。在单流模式下，为必填参数。举例来说，如果 `subscribeVideoUids` 为 `["100","101","102"]`，`subscribeAudioUids` 为 `["101","102","103"]`，则订阅人数为 4 人。
   - `0`: 1 到 2 个 UID
   - `1`: 3 到 7 个 UID
   - `2`: 8 到 12 个 UID
   - `3`: 13 到 17 个 UID
+
 
 #### <a name="storageConfig"></a>**云存储设置**
 
