@@ -3,7 +3,7 @@
 title: Merge Audio and Video Files
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 03:39:16 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:43:31 GMT+0800 (CST)
 ---
 # Merge Audio and Video Files
 ## Overview
