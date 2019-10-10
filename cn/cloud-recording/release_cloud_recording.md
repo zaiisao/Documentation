@@ -3,7 +3,7 @@
 title: 云端录制发版说明
 description: 
 platform: Linux
-updatedAt: Thu Oct 10 2019 01:22:10 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:22:40 GMT+0800 (CST)
 ---
 # 云端录制发版说明
 ## 简介
@@ -51,7 +51,7 @@ Agora 提供了音视频格式转换脚本，用于 TS、MP3、MP4 等文件格�
 
 **改进**
 
-在出现错误时，你会在 HTTP 响应包体内收到相应的错误信息，而不只是错误码。
+在出现错误时，你会在 HTTP 响应包体内收到相应的错误信息，而不只是错误码。错误码详情见[云端录制 RESTful API](../../cn/cloud-recording/cloud_recording_api_rest.md)。
 
 **问题修复**
 
