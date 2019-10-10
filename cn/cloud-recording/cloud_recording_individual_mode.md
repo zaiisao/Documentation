@@ -3,7 +3,7 @@
 title: 单流录制
 description: 解释如何实现在云端录制中实现单流录制
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 12:20:25 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 12:20:46 GMT+0800 (CST)
 ---
 # 单流录制
 ## 功能描述
@@ -22,6 +22,11 @@ updatedAt: Thu Oct 10 2019 12:20:25 GMT+0800 (CST)
 ## 实现方法
 
 在调用 [`start`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法时，将 `mode` 参数设置为 `individual`，即可启用单流模式。
+
+该模式下录制文件的音视频编码配置如下：
+
+-  音频编码配置：采样率固定为 48 KHz，声道数和码率与原始音频流一致。
+-  视频编码配置：与原始视频流一致。
 
 根据录制内容的不同，录制生成的文件如下表所示：
 
