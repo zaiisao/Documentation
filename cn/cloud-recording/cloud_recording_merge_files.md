@@ -3,7 +3,7 @@
 title: 音视频文件合并
 description: 解释如何通过转码脚本将音频和视频合并，或转换文件格式
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 02:35:51 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 02:35:55 GMT+0800 (CST)
 ---
 # 音视频文件合并
 ## 功能描述
@@ -73,7 +73,7 @@ updatedAt: Thu Oct 10 2019 02:35:51 GMT+0800 (CST)
 
 - `0`：把同一个 UID 的音频和视频按照录制 segment 合并。一个 UID 的一个录制 segment 对应一个音视频文件，文件名为 `UID_timestamp_av.mp4`。其中 `timestamp` 为服务器开始录制的时间，如音频和视频的开始时间不一致，`timestamp` 为两个开始时间中较早的时间。`timestamp` 的时区为 UTC+0，由年、月、日、小时、分钟、秒和毫秒组成。例如 `100_20190611073246073_av.mp4` 表示在 UTC 2019 年 6 月 11 日 7 点 32 分 46 秒 73 毫秒时开始录制的一个 UID 为 `100` 的用户的音视频文件。
 - `1`：把同一个 UID 的音频和视频按时间顺序合成一个文件。一个 UID 对应一个音视频文件，文件名为 `UID_0_merge_av.mp4`。
-- `2`：把同一个 UID 的音频按时间顺序合成一个文件。一个 UID 对应一个音频文件，文件名为 `UID_0_merge.m4a`。
+- `2`：把同一个 UID 的音频按时间顺序合成一个文件。一个 UID 对应一个音频文件，文件名为 `UID_0_merge.m4a`。该 M4A 文件使用 AAC 编码。你可以通过 [Agora 音视频格式转换脚本](../../cn/cloud-recording/cloud_recording_convert_format.md)，将其转换成其他编码格式的文件，如 MP3 文件。
 - `3`：把同一个 UID 的视频按时间顺序合成一个文件。一个 UID 对应一个视频文件，文件名为 `UID_0_merge.mp4`。
 
 #### 转码参数设置示例
