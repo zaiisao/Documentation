@@ -3,7 +3,7 @@
 title: 音视频文件合并
 description: 解释如何通过转码脚本将音频和视频合并，或转换文件格式
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:44:50 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:44:53 GMT+0800 (CST)
 ---
 # 音视频文件合并
 ## 功能描述
@@ -30,8 +30,7 @@ updatedAt: Thu Oct 10 2019 01:44:50 GMT+0800 (CST)
 
 ### 1.获取音视频合并转码脚本
 
-下载 [Agora 云端录制转码脚本](https://download.agora.io/acrsdk/release/Agora_Cloud_Recording_Tools_v1.0.0.7_20191009-1570616811_830.tar.gz) 压缩包并解压。找到 `ffmpeg.tar.gz` 和 `convert.py` 文件。
-打开终端，通过 `tar -xf ffmpeg.tar.gz` 命令解压 `ffmpeg.tar.gz`，确保和 `convert.py` 在同一目录下。
+下载 [Agora 云端录制转码脚本](https://download.agora.io/acrsdk/release/Agora_Cloud_Recording_Tools_v1.0.0.7_20191009-1570616811_830.tar.gz) 压缩包并解压。找到 `ffmpeg.tar.gz` 和 `convert.py` 文件。解压 `ffmpeg.tar.gz`，确保和 `convert.py` 在同一目录下。
 
 ### 2.设置转码参数
 
