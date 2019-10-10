@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 10:11:34 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 10:11:50 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -146,7 +146,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - `channelType`：（选填）Number 类型，频道模式。频道模式必须与 Agora Native/Web SDK 的设置一致，否则可能导致问题。
   - `0`：通信模式（默认）
   - `1`：直播模式
-- `audioProfile`：（选填）设置录制文件的音频采样率，码率，编码模式和声道数。
+- `audioProfile`：（选填）设置录制文件的音频采样率，码率，编码模式和声道数。目前单流模式下不能设置该参数。
   - `0`：（默认）48 KHz 采样率，音乐编码，单声道，编码码率约 48 Kbps
   - `1`：48 KHz 采样率，音乐编码, 单声道，编码码率约 128 Kbps
   - `2`：48 KHz 采样率，音乐编码, 双声道，编码码率约 192 Kbps
