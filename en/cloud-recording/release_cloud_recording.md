@@ -3,7 +3,7 @@
 title: Release Notes for Agora Cloud Recording
 description: 
 platform: Linux
-updatedAt: Thu Oct 10 2019 01:53:17 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:53:34 GMT+0800 (CST)
 ---
 # Release Notes for Agora Cloud Recording
 ## Overview
@@ -49,7 +49,7 @@ You can achieve synchronized playback between the recorded files and other strea
 
 **Improvement**
 
-When an error occurs, you receive the error message in the HTTP response body, instead of just the error code.
+When an error occurs, you receive the error message in the HTTP response body, instead of just the error code. See [Agora Cloud Recording RESTful API](../../en/cloud-recording/cloud_recording_api_rest.md) for detailed information about the error codes.
 
 **Fixed issue**
 
