@@ -3,12 +3,18 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Thu Oct 10 2019 11:49:26 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 11:49:30 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
-## 集成客户端
 
-本章介绍在正式使用 Agora RTM Java SDK for Linux 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
+本页介绍在正式使用 Agora RTM Java SDK for Linux 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
+
+## Demo 体验
+
+
+你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Java](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Java) 查看完整的源码和代码逻辑：
+
+- [RtmJavaDemo.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Java/src/main/java/io/agora/RtmJavaDemo.java)
 
 ### 前提条件
 
