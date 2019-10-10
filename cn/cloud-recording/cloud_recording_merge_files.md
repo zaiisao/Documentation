@@ -3,7 +3,7 @@
 title: 音视频文件合并
 description: 解释如何通过转码脚本将音频和视频合并，或转换文件格式
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:36:33 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:36:44 GMT+0800 (CST)
 ---
 # 音视频文件合并
 ## 功能描述
@@ -23,7 +23,7 @@ updatedAt: Thu Oct 10 2019 01:36:33 GMT+0800 (CST)
 
 ### 录制文件准备
 
-- 确保你已经使用 Agora 云端录制 RESTful API 在单流录制模式下生成录制文件。
+- 确保你已经使用 Agora 云端录制 RESTful API 在单流录制模式下生成录制文件。任何一个录制文件的缺失都将导致转码失败。
 - 确保生成的录制文件的存储路径可访问。
 
 ## 转码步骤
