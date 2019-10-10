@@ -3,7 +3,7 @@
 title: 音视频格式转换
 description: 解释如何用脚本进行不同音频格式和视频格式的转换
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 03:33:23 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:20:37 GMT+0800 (CST)
 ---
 # 音视频格式转换
 ## 功能描述
