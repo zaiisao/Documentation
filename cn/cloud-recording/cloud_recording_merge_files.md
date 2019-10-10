@@ -3,7 +3,7 @@
 title: 音视频文件合并
 description: 解释如何通过转码脚本将音频和视频合并，或转换文件格式
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:19:09 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:19:43 GMT+0800 (CST)
 ---
 # 音视频文件合并
 ## 功能描述
@@ -14,23 +14,24 @@ updatedAt: Thu Oct 10 2019 01:19:09 GMT+0800 (CST)
 
 ### 环境准备
 
-以下物理或虚拟服务器：
+转码服务器推荐使用以下系统：
 
 - Ubuntu 14.04+ x64
 - CentOS 6.5+（推荐 7.0）x64
 
-安装 Python 2.7 及以上版本
+运行该脚本需要安装 Python 2，2.7 或以上版本。
 
 ### 录制文件准备
 
 - 确保你已经使用 Agora 云端录制 RESTful API 在单流录制模式下生成录制文件。
-- 确保你已经将生成的录制文件下载到本地。任何一个录制文件的缺失都将导致转码失败。
+- 确保生成的录制文件的存储路径可访问。
 
 ## 转码步骤
 
 ### 1.获取音视频合并转码脚本
 
-下载 [Agora 云端录制转码脚本](https://download.agora.io/acrsdk/release/Agora_Cloud_Recording_Tools_v1.0.0.7_20190929-1569690666_807.tar.gz) 压缩包并解压。在 `tools` 文件夹下找到 `convert.py` 文件。
+下载 [Agora 云端录制转码脚本](https://download.agora.io/acrsdk/release/Agora_Cloud_Recording_Tools_v1.0.0.7_20191009-1570616811_830.tar.gz) 压缩包并解压。找到 `ffmpeg.tar.gz` 和 `convert.py` 文件。
+打开终端，通过 `tar -xf ffmpeg.tar.gz` 命令解压 `ffmpeg.tar.gz`，确保和 `convert.py` 在同一目录下。
 
 ### 2.设置转码参数
 
