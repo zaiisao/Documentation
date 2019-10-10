@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Linux Java
-updatedAt: Tue Oct 08 2019 13:25:52 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 04:25:28 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -15,6 +15,7 @@ This page provides a brief overview of the limitations of the Agora RTM Java SDK
 | Function                                           | Method                                                       | Maximum Call Frequency                  |
 | -------------------------------------------------- | ------------------------------------------------------------ | ------------------------------- |
 | Log in the RTM system                             | [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) | Two queries per second          |
+| Join a channel<sup>1</sup> | [join](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#ad7b321869aac2822b3f88f8c01ce0d40) | 50 queries every three seconds |
 | Send messages                                     | <li>[sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a25ab5c0126e1dc51c78b2b705de68b7a)<li> [sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9) <li> And [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a57087adf4227a17c774ea292840148a0) taken together | 60 queries per second           |
 | Retrieve a member list of the channel             | [getMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a567aca5f866cf71c3b679ae09b4bf626) | Five queries every two seconds  |
 | Renew the token                                   | [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) | Two queries per second          |
