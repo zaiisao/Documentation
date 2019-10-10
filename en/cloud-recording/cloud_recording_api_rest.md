@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:57:49 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:58:34 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -179,7 +179,7 @@ The following parameters are required in the request body.
 
 > Once you set `subscribeVideoUids` or `subscribeAudioUids`, Agora Cloud Recording records the audio or video of the specified users only. For example, if `subscribeVideoUids` is set and `subscribeAudioUids` is not set or is an empty array, Agora Cloud Recording records only the video (no audio) of the specified users. If both parameters are empty or if neither is set, all the users' audio and video will be recorded.
 
-- `subscribeUidGroup`: (Optional) Number. Estimated maximum number of users. You must set this parameter in individual mode.
+- `subscribeUidGroup`: (Optional) Number. Estimated maximum number of subscribed users. You must set this parameter in individual mode. For example, if `subscribeVideoUids` is `["100","101","102"]` and `subscribeAudioUids` is `["101","102","103"]`, the number of subscribed users is 4.
 
   - `0`: 1 to 2 UIDs
   - `1`: 3 to 7 UIDs
