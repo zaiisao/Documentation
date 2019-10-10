@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Thu Oct 10 2019 11:49:30 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 12:11:43 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -16,44 +16,14 @@ updatedAt: Thu Oct 10 2019 11:49:30 GMT+0800 (CST)
 
 - [RtmJavaDemo.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Java/src/main/java/io/agora/RtmJavaDemo.java)
 
-### 前提条件
 
-请确保满足以下开发环境要求（物理或虚拟）：
+## 开发环境要求
 
 - Ubuntu Linux 14.04 LTS 64 位。
 - CentOS 7.0+ 64 位。
-- 下载 [Agora RTM Java SDK for Linux](../../cn/Real-time-Messaging/downloads.md)。
+- 一个有效的 [Agora 开发者账号](https://sso.agora.io/login/)。
 
-<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
-
-
-SDK 文件应包括 libs 文件和 sample 文件，其中 libs 文件包括：
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>文件/文件夹名称</strong></td>
-<td><strong>文件类型</strong></td>
-</tr>
-	<tr>
-<td>libagora_rtm_sdk.so</td>
-<td>数据库文件</td>
-</tr>
-<tr>
-<td>agora_rtm.jar</td>
-<td>Java JAR 文件</td>
-</tr>
-<tr><td>include</td>
-<td>文件夹</td>
-</tr>
-</tbody>
-</table>
-
-
-> 在正式使用 SDK 前，你可以尝试先在 sample 文件上集成 SDK。
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口并设置域名白名单。</div>
 
 ### 创建 Agora 账号并获取 App ID
 
