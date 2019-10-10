@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 12:22:32 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 12:23:04 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
@@ -22,6 +22,11 @@ Before proceeding, make sure that you know how to use Agora Cloud Recording by u
 ## Implementation
 
 To enable individual recording mode, set `mode` as `individual` when you call the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) method.
+
+In individual recording mode, the audio and video profiles of the recording file are as follows:
+
+-  Audio profile: The sample rate of the recording file is 48 KHz, and the bitrate and number of audio channels of the recording file are the same as those of the original audio stream.
+-  Video profile: The video profile of the recording file is the same as that of the original video stream.
 
 Based on the setting of `streamTypes`, the recorded files are as follows:
 
