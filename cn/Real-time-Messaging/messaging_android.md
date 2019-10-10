@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Thu Oct 10 2019 09:57:19 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 09:57:42 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -12,10 +12,11 @@ updatedAt: Thu Oct 10 2019 09:57:19 GMT+0800 (CST)
 
 ## Demo 体验
 
+
 你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android) 查看完整的源码和代码逻辑：
 
-- [LoginActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/LoginActivity.java) 
-- [MessageActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/MessageActivity.java) 
+- [LoginActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/LoginActivity.java)
+- [MessageActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/MessageActivity.java)
 - [SelectionActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/SelectionActivity.java)
 
 ## 开发环境要求
