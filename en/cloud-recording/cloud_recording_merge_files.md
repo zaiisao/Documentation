@@ -3,7 +3,7 @@
 title: Merge Audio and Video Files
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:43:31 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:43:35 GMT+0800 (CST)
 ---
 # Merge Audio and Video Files
 ## Overview
@@ -12,25 +12,23 @@ In individual recording mode, Agora Cloud Recording generates one audio and/or v
 
 ## Prerequisites
 
-Server: Physical or virtual
-
-System:
+Recommended systems for transcoding:
 
 - Ubuntu 14.04 and later x64
 - CentOS 6.5 and later (7.0 recommended) x64
 
-Programming language: Python 2.7 and later
+To run the script, you need to install Python 2, version 2.7 or later.
 
 ### File preparation
 
-- Use Agora Cloud Recording to generate the audio and/or video files.
-- Download the files to your local server. The transcoding will fail if any of the recorded files is missing.
+- Use Agora Cloud Recording to generate the audio and/or video files. The transcoding will fail if any of the recorded files is missing.
+- The recorded files are stored in an accessible directory.
 
 ## Transcoding steps
 
 ### 1. Get the merging script
 
-Download the [Agora Audio & Video File Merging](https://download.agora.io/acrsdk/release/Agora_Cloud_Recording_Tools_v1.0.0.7_20190929-1569690666_807.tar.gz) script and decompress it. Find `convert.py` in the `tools` folder.
+Download the [Agora Audio & Video File Merging](https://download.agora.io/acrsdk/release/Agora_Cloud_Recording_Tools_v1.0.0.7_20191009-1570616811_830.tar.gz) script and decompress it. Find `ffmpeg.tar.gz` and `convert.py`. Decompress `ffmpeg.tar.gz`, and make sure it is in the same directory as `convert.py.`
 
 ### 2. Execute the Audio & Video File Merging script
 
