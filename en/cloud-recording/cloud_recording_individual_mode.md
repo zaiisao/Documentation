@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 10:09:12 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 10:09:17 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
@@ -58,7 +58,6 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
         "recordingConfig": {
             "maxIdleTime": 30,
             "streamTypes": 2,
-            "audioProfile": 1,
             "channelType": 0, 
             "videoStreamType": 1, 
             "subscribeVideoUids": ["123","456"], 
