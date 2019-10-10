@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 10:09:17 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 12:22:32 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
