@@ -3,7 +3,7 @@
 title: Merge Audio and Video Files
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:50:26 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 02:40:50 GMT+0800 (CST)
 ---
 # Merge Audio and Video Files
 ## Overview
@@ -71,7 +71,7 @@ Now, let's see the behaviors of different `-m` options:
 
 - `0`: Merge the audio and video files of the same UID based on the recording segment. One recording segment of one UID corresponds to one merged file, named as `UID_timestamp_av.mp4`. In the filename, `timestamp` is the time when Agora Cloud Recording starts recording. If Agora Cloud Recording starts to record the audio and video at different times, `timestamp` is the earlier one of the two starting times. The time zone of `timestamp` is UTC+0. The `timestamp` parameter consists of the year, month, day, hour, minute, second, and millisecond. For example, `100_20190611073246073_av.mp4` is a merged file for UID 100 and the start time of the recording is 07:32:46.073 a.m., June 11, 2019.
 - `1`: Merge the audio and video files of the same UID into one file. One UID corresponds to one file, named as `UID_0_merge_av.mp4`.
-- `2`: Merge the audio files of the same UID into one audio file. One UID corresponds to one file, named as `UID_0_merge.m4a`.
+- `2`: Merge the audio files of the same UID into one audio file. One UID corresponds to one file, named as `UID_0_merge.m4a`. The file uses AAC encoding. You can use the [Agora Format Converter script](../../en/cloud-recording/cloud_recording_convert_format.md) to transcode the file to other formats, such as MP3.
 - `3`: Merge the video files of the same UID into one video file (no audio). One UID corresponds to one file, named as `UID_0_merge.mp4`.
 
 ### Example
