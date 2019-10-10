@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: macOS
-updatedAt: Thu Oct 10 2019 04:37:54 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 04:37:58 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 ## 集成客户端
@@ -57,7 +57,7 @@ end
 `pod install`
 7. 在 Xcode 中打开生成的 **.xcworkspace** 文件。
 
-### 方法 2：手动添加 SDK 到项目中
+#### 方法 2：手动添加 SDK 到项目中
 
 1. 下载 [Agora RTM Objective-C SDK for macOS](../../cn/Real-time-Messaging/downloads.md) ，解压后将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到你的项目文件夹内。
 2. 使用 Xcode 打开你的项目，然后选中当前 Target。
