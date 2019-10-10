@@ -3,7 +3,7 @@
 title: Merge Audio and Video Files
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:50:21 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:50:26 GMT+0800 (CST)
 ---
 # Merge Audio and Video Files
 ## Overview
@@ -22,7 +22,7 @@ To run the script, you need to install Python 2, version 2.7 or later.
 ### File preparation
 
 - Use Agora Cloud Recording to generate the audio and/or video files. The transcoding will fail if any of the recorded files is missing.
-- The recorded files are stored in an accessible directory.
+- Ensure that the recorded files are stored in an accessible directory.
 
 ## Transcoding steps
 
