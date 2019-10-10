@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 12:23:04 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 12:40:00 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
@@ -68,8 +68,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
             "subscribeVideoUids": ["123","456"], 
             "subscribeAudioUids": ["123","456"],
             "subscribeUidGroup": 0
-           }
-       }, 
+        }, 
         "storageConfig": {
             "accessKey": "xxxxxxf",
             "region": 3,
