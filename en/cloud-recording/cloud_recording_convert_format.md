@@ -3,7 +3,7 @@
 title: Convert File Format
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:48:49 GMT+0800 (CST)
+updatedAt: Thu Oct 10 2019 01:49:17 GMT+0800 (CST)
 ---
 # Convert File Format
 ## Overview
@@ -17,18 +17,16 @@ The script cannot convert an audio file into a video file and vice versa.
 
 ## Prerequisites
 
-Server: Physical or virtual
-
-System:
+Recommended systems for transcoding:
 
 - Ubuntu 14.04 and later x64
 - CentOS 6.5 and later (7.0 recommended) x64
 
-Programming language: Python 2.7 and later
+To run the script, you need to install Python 2, version 2.7 or later.
 
 ### File preparation
 
-Ensure that you have downloaded all the files to convert to your local server. The script does not support converting files on any third-party cloud storage.
+Ensure that the recorded files are stored in an accessible directory.
 
 ## Transcoding steps
 
