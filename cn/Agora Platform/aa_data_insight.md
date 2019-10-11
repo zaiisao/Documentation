@@ -3,7 +3,7 @@
 title: 数据洞察 Beta
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Fri Oct 11 2019 06:15:38 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 06:27:06 GMT+0800 (CST)
 ---
 # 数据洞察 Beta
 水晶球的**数据洞察**功能提供通话用量和质量数据的阶段性分析，帮助你了解用量和质量的总体趋势、不同维度的分布情况和每天的数据明细。
