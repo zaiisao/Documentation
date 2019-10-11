@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Windows
-updatedAt: Fri Oct 11 2019 06:21:31 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 06:22:33 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
@@ -76,4 +76,4 @@ const char* urlPath = "The same online RTMP/HLS url path added before";
 
 ## 开发注意事项
 
-主播在直播过程中启用输入在线媒体流，观众需要订阅主播才能观看外部视频。
+主播在直播过程中启用输入在线媒体流时，观众需要订阅主播才能观看外部视频。
