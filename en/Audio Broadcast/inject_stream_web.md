@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Web
-updatedAt: Fri Oct 11 2019 06:23:40 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 06:24:14 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -87,6 +87,6 @@ We also provide an open-source [Live-Streaming-Injection](https://github.com/Ago
 - `streamInjectedStatus`
 
 ## Considerations
-To receive the injected media stream, the audience needs to subscribe to the host.
+To receive the injected media stream, the audience need to subscribe to the host.
 
 
