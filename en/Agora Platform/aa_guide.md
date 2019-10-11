@@ -3,10 +3,10 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Tue Sep 10 2019 08:22:36 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 08:10:44 GMT+0800 (CST)
 ---
 # Agora Analytics
-[Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks the QoE (Quality of Experience) of calls. The **Call Research** function allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
+[Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks the QoE (Quality of Experience) of calls. The **Call Search** function allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
 
 - The device status, including the system CPU usage and the app's CPU usage.
 - The local captured volume and the remote playout volume.
@@ -22,7 +22,7 @@ See the use case [tutorials](../../en/Agora%20Platform/aa_tutorial.md) to learn 
 
 ## Search calls
 
-Log in [Agora Dashboard](https://dashboard.agora.io/) and click **Call Research** under **Agora Analytics** on the left of the navigation bar.
+Log in [Agora Dashboard](https://dashboard.agora.io/) and click **Call Search** under **Agora Analytics** on the left of the navigation bar.
 
 ![](https://web-cdn.agora.io/docs-files/1568025804525)
 
@@ -33,7 +33,7 @@ To search calls, fill in the search fields:
 4.  Filter the calls by the call states, and you can choose to search for calls that are ongoing or ended.
 5.  Enter a channel name or [username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername) and click **Search**.
 
-> By default, **Call Research** uses the UTC zone. To use your local time zone, click the clock icon ![](https://web-cdn.agora.io/docs-files/1545893874792) on the top menu bar.
+> By default, **Call Search** uses the UTC zone. To use your local time zone, click the clock icon ![](https://web-cdn.agora.io/docs-files/1545893874792) on the top menu bar.
 
 ## View Quality of Experience
 
@@ -141,7 +141,7 @@ The resolution is the number of pixels in the width and height of an image. A hi
 
 ## Key terms
 
-This section describes the key terms used in **Call Research**. See [Agora Key Terms](../../en/Agora%20Platform/terms.md) for more key terms.
+This section describes the key terms used in **Call Search**. See [Agora Key Terms](../../en/Agora%20Platform/terms.md) for more key terms.
 
 ### Channel
 
