@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Fri Oct 11 2019 03:18:57 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 03:19:01 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -75,7 +75,7 @@ var LiveTranscoding = {
                     y: 0,
                     width: 640,
                     height: 360,
-                    zorder: 0,
+                    zOrder: 0,
                     alpha: 1.0,
                    // 下面的 uid 应和 Client.join 输入的 uid 保持一致。
                     uid: 1232,
