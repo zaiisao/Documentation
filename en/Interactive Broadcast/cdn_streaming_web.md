@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Fri Oct 11 2019 03:19:29 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 03:19:33 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -81,7 +81,7 @@ var LiveTranscoding = {
                     y: 0,
                     width: 640,
                     height: 360,
-                    zorder: 0,
+                    zOrder: 0,
                     alpha: 1.0,
                    // The uid must be identical to the uid used in Client.join.
                     uid: 1232,
