@@ -3,7 +3,7 @@
 title: 数据洞察 Beta
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Fri Oct 11 2019 06:27:09 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 08:19:27 GMT+0800 (CST)
 ---
 # 数据洞察 Beta
 水晶球的**数据洞察**功能提供通话用量和质量数据的阶段性分析，帮助你了解用量和质量的总体趋势、不同维度的分布情况和每天的数据明细。
@@ -76,6 +76,7 @@ updatedAt: Fri Oct 11 2019 06:27:09 GMT+0800 (CST)
 |  频道同时在线人数   | 将频道按照在线人数峰值分类，用量最高的五类频道。 |
 |      SDK 版本       | 用量最高的十个 SDK 版本。  |
 
+<div class="alert note">如果某一条目没有用量，则不会在面板上显示。</div>
 
 ## <a name="quality"></a>质量概览
 
@@ -138,6 +139,7 @@ updatedAt: Fri Oct 11 2019 06:27:09 GMT+0800 (CST)
 | 频道同时在线人数 | 将频道以在线人数峰值分类，用量最高的五类频道。 |
 |     SDK 版本     | 用量最高的十个 SDK 版本。 |
 
+<div class="alert note">如果某一条目没有用量，则不会在面板上显示。</div>
 
 ## 重要概念
 
