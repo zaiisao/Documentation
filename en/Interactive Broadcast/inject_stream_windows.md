@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Windows
-updatedAt: Fri Oct 11 2019 06:23:54 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 06:23:58 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -82,5 +82,5 @@ We also provide an open-source [Live-Streaming-Injection](https://github.com/Ago
 - [`onUserOffline`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9602593c05a16eafa7c094aa330c0719)
 
 ## Considerations
-To inject a media stream, the host needs to be in the channel. To receive the injected media stream, the audience needs to subscribe to the host.
+To receive the injected media stream, the audience need to subscribe to the host.
 
