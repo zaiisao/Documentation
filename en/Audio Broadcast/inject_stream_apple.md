@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: iOS,macOS
-updatedAt: Fri Oct 11 2019 06:23:18 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 06:23:23 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -109,4 +109,4 @@ We also provide an open-source [Live-Streaming-Injection](https://github.com/Ago
 - [`didOfflineOfUid`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didOfflineOfUid:reason:)
 
 ## Considerations
-To inject a media stream, the host needs to be in the channel. To receive the injected media stream, the audience needs to subscribe to the host.
+To receive the injected media stream, the audience need to subscribe to the host.
