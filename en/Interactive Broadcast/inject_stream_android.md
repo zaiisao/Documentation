@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Android
-updatedAt: Fri Oct 11 2019 06:22:58 GMT+0800 (CST)
+updatedAt: Fri Oct 11 2019 06:23:02 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -91,4 +91,4 @@ We also provide an open-source [Live-Streaming-Injection](https://github.com/Ago
 - [`onUserOffline`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9fbb08177fbc8f74d64044a78aea0dda)
 
 ## Considerations
-To inject a media stream, the host needs to be in the channel. To receive the injected media stream, the audience needs to subscribe to the host.
+To receive the injected media stream, the audience need to subscribe to the host.
