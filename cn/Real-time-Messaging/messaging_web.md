@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Sat Oct 12 2019 06:56:59 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 06:57:16 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 本章介绍在正式使用 Agora RTM SDK for Web 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
@@ -122,7 +122,7 @@ Web 应用必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点
 
 在 `client.login` 方法中传入一个有如下属性的对象：
 
-* `token`: 如果安全要求不高，不填或将参数值设为 null；如果安全要求高，传入从你的服务端获得的 token 值。
+* `token`: 如果安全要求不高，不填或将参数值设为 null；如果安全要求高，传入从你的服务端获得的 token 值。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [校验用户权限](../../cn/Real-time-Messaging/rtm_token.md)。
 * `uid`: User ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于64个字符，也不能是字符串 “null”。
 
 该方法的返回值为 Promise。使用该 Promise 上的 `then` 方法传入回调；使用 `catch` 方法捕获异常并处理。也可以使用 ES7 的 `async/await` 语法来进行 SDK 异步方法的调用，这样就可以使用同步 `try/catch` 块来捕获异常（其他返回 Promise 的异步 API 也均如此）。
