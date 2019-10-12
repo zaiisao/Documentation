@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: macOS
-updatedAt: Sat Oct 12 2019 07:19:14 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:19:24 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -111,7 +111,7 @@ platform :macOS, '10.11' use_frameworks!
 
 根据场景需要，为你的项目创建互动直播的用户界面。若已有用户界面，可以直接查看[导入类](#ImportClass)。
 
-在互动直播场景中，我们推荐你添加如下 UI 元素：
+如果你想实现一个视频直播，我们推荐你添加如下 UI 元素：
 
 - 主播视频窗口
 - 退出频道按钮
@@ -216,7 +216,7 @@ agoraKit.setClientRole(.broadcaster)
 
 ### 6. 设置本地视图
 
-如果你想实现一个语音通话，可以直接查看[加入频道](#JoinChannel)。
+如果你想实现一个语音直播，可以直接查看[加入频道](#JoinChannel)。
 
 成功初始化 AgoraRtcEngineKit 对象后，需要在加入频道前设置本地视图，以便在通话中看到本地图像。参考以下步骤设置本地视图：
 
