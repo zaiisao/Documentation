@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Android
-updatedAt: Sat Oct 12 2019 07:25:14 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:25:18 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -118,7 +118,7 @@ dependencies {
 
 根据场景需要，为你的项目创建互动直播的用户界面。若已有界面，可以直接查看[导入类](#import_class)。
 
-在视频直播场景中，我们推荐你添加如下 UI 元素：
+如果你想实现一个视频直播，我们推荐你添加如下 UI 元素：
 
 * 主播视频窗口
 * 退出频道按钮
