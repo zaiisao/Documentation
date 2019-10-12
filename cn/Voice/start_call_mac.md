@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: macOS
-updatedAt: Sat Oct 12 2019 07:27:03 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:27:07 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
@@ -107,7 +107,8 @@ platform :macOS, '10.11' use_frameworks!
 ### 1. 创建用户界面
 
 根据场景需要，为你的项目创建音视频通话的用户界面。若已有用户界面，可以直接查看[导入类](#ImportClass)。
-在视频通话场景中，我们推荐你添加如下 UI 元素：
+
+如果你想实现一个视频通话，我们推荐你添加如下 UI 元素：
 
 - 本地视频窗口
 - 远端视频窗口
