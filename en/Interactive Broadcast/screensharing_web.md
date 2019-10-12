@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Sat Oct 12 2019 08:55:27 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 08:56:14 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -82,7 +82,7 @@ Follow these steps to implement screen sharing on Electron:
    ```javascript
    AgoraRTC.getScreenSources(function(err, sources) {
    	console.log(sources)
-   }
+   })
    ```
 
    The `sources` parameter is an array of the `source` objects. The  `source` object contains the following properties of the screen source:
