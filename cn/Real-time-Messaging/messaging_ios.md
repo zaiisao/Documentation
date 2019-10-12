@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Wed Sep 25 2019 10:51:42 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 06:28:57 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 本章介绍在正式使用 Agora RTM SDK for iOS 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
@@ -183,7 +183,7 @@ App 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
 
 调用 `loginByToken` 方法[登录RTM服务器](#login)。在该方法中:
 
-- 传入能标识用户角色和权限的 `token`。如果安全要求不高，也可以将值设为 `"nil"`。`token` 需要在应用程序的服务器端生成。详见：[校验用户权限](../../cn/Real-time-Messaging/RTM_key.md)。
+- 传入能标识用户角色和权限的 `token`。如果安全要求不高，也可以将值设为 `"nil"`。`token` 需要在应用程序的服务器端生成。详见：[校验用户权限](../../cn/Real-time-Messaging/rtm_token.md)。
 - 传入能标识每个用户 ID。`usedId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `nil`。
 - 传入结果回调，用于接收登录 RTM 服务器成功或者失败的结果回调。
 
