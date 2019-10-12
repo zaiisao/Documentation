@@ -30,8 +30,8 @@ updatedAt: Mon Sep 30 2019 03:54:33 GMT+0800 (CST)
 > Ruby 语言的源码在 **./ruby/lib** 文件夹下。
 
 <% 
-if (a != ruby) {%><b>./\<language\>/src</b><% } 
-else { %><b>./ruby/lib</b><% } 
+if (language = ruby) {%><b>./ruby/lib</b><% } 
+else { %><b>./\<language\>/src</b><% } 
 %>
 
 我们推荐使用 **RtcTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**RtcTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。

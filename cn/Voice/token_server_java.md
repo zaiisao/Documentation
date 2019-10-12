@@ -30,7 +30,7 @@ updatedAt: Mon Sep 30 2019 03:51:01 GMT+0800 (CST)
 > Ruby 语言的源码在 **./ruby/lib** 文件夹下。
 
 <% 
-if (a = ruby) {%><b>./ruby/lib</b><% } 
+if (language = ruby) {%><b>./ruby/lib</b><% } 
 else { %><b>./\<language\>/src</b><% } 
 %>
 
