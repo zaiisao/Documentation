@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Mon Sep 30 2019 13:08:26 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 08:02:10 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM C++ SDK for Windows](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -148,6 +148,8 @@ void Init() {
 ### Log in and log out of the Agora RTM system
 
 Only when you successfully log in the Agora RTM system, can you use most of the core features provided by the Agora RTM SDK. 
+
+> You need to generate an RTM Token from your business server. For more information, see [Token Security](../../en/Real-time-Messaging/rtm_token.md).
 
 ```cpp
 bool login(const std::string& token, const std::string& uid) {
