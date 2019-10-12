@@ -3,7 +3,7 @@
 title: 数据洞察 Beta
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Sat Oct 12 2019 07:19:41 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 08:27:00 GMT+0800 (CST)
 ---
 # 数据洞察 Beta
 水晶球的**数据洞察**功能提供通话用量和质量数据的阶段性分析，帮助你了解用量和质量的总体趋势、不同维度的分布情况和每天的数据明细。
@@ -18,7 +18,7 @@ updatedAt: Sat Oct 12 2019 07:19:41 GMT+0800 (CST)
 1. 联系 sales@agora.io 为你的项目开通数据洞察功能。
 2. 登录[控制台](https://dashboard.agora.io)，点击左侧菜单栏中的**水晶球**。
 3. 在页面左上方的下拉菜单中选择你要查看的项目。
-![](https://web-cdn.agora.io/docs-files/1570772355750)
+![](https://web-cdn.agora.io/docs-files/1570868796712)
 5. 点击数据洞察下的[**用量概览**](#usage)查看用量数据或[**质量概览**](#quality)查看质量数据。
 6. 在页面左上角指定需要查看数据的时间范围（UTC 时间），点击左上角的设置按钮选择页面展示的数据（默认全部显示）。
 ![](https://web-cdn.agora.io/docs-files/1570772710491)
