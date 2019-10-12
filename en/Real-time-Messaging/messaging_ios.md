@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Sat Oct 12 2019 07:44:28 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:44:32 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -159,7 +159,7 @@ Before logging in Agora's RTM system, ensure that you [create an AgoraRtmKit ins
 
 Call the [loginByToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:) method to log in Agora's RTM system. You need to: 
 
-- Pass a token that identifies the role and permission of the user. Set `token` as `"nil"` for low-security requirements. A token is generated at the server of the app.
+- Pass a token that identifies the role and permission of the user. Set `token` as `"nil"` for low-security requirements. A token is generated at the server of the app. For more information, see [Token Security](../../en/Real-time-Messaging/rtm_token.md).
 - Pass a user ID that identifies the user. The `userId` parameter must not include non-printable characters, and can neither exceed 64 bytes in length nor start with a space. Do not set `userId` as `"nil"`.
 - Pass the [AgoraRtmLoginBlock](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmLoginBlock.html) and [connectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:connectionStateChanged:reason:) callbacks, which indicate whether the login succeeds or fails.
 
