@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Windows
-updatedAt: Tue Oct 08 2019 08:10:45 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:20:24 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何通过 Agora SDK 快速实现互动直播。
@@ -63,7 +63,7 @@ Agora 在 Github 上提供一个开源的实时音视频通话示例项目 [Open
 
 为直观地体验音视频通话，需根据应用场景创建用户界面（UI)。若项目中已有用户界面，直接查看[初始化 IRtcEngine](#ini)。
 
-在视频通话场景中，推荐在 UI 上添加以下控件：
+如果你想实现一个视频直播，推荐在 UI 上添加以下控件：
 - 主播视频窗口
 - 离开频道按钮
 
