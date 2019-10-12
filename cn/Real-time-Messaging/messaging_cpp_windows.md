@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Windows CPP
-updatedAt: Mon Sep 30 2019 10:17:15 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 06:31:15 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 本文介绍在正式使用 Agora RTM C++ SDK for Windows 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
@@ -145,7 +145,7 @@ void Init() {
 
 APP 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息和群聊功能。在此之前，请确保 `rtmInstance_` 初始化完成。
 
-- 传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 `APPID`。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [校验用户权限](https://docs-preview.agoralab.co/cn/Real-time-Messaging/RTM_key)。
+- 传入能标识用户角色和权限的 Token。如果安全要求不高，也可以将值设为 `APPID`。Token 需要在应用程序的服务器端生成，具体生成办法，详见 [校验用户权限](../../cn/Real-time-Messaging/rtm_token.md)。
 - 传入能标识每个用户的 ID。用户 ID 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"null"`。
 - 传入结果回调，用于接收登录 RTM 服务器成功或者失败的结果回调
 
