@@ -101,6 +101,7 @@ On the **Project Details** page, click **Generate a Temp Token**, enter a channe
 
 > - Ensure that you have enabled the App Certificate of the project before clicking **Generate a Temp Token**. See [Enable the App Certificate](#appcertificate).
 > - A temp token applies to scenarios with low security requirements. For the production environment, we recommend using a token generated at your server.
+> - A temp token does not apply to the Agora RTM SDK. 
 
 ### Get a token
 

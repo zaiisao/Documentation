@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: macOS
-updatedAt: Tue Oct 08 2019 08:26:27 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 07:03:38 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for macOS.
@@ -102,7 +102,7 @@ Add the following permissions in the **info.plist** file for device access accor
 
 This section introduces how to use the Agora SDK to make an interactive broadcast. The following figure shows the API call sequence of a basic video broadcast.
 
-![](https://web-cdn.agora.io/docs-files/1568261593347)
+![](https://web-cdn.agora.io/docs-files/1570604601537)
 
 ### 1. Create the UI
 

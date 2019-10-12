@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: iOS
-updatedAt: Tue Oct 08 2019 08:25:46 GMT+0800 (CST)
+updatedAt: Wed Oct 09 2019 07:03:03 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for iOS.
@@ -108,7 +108,7 @@ Add the following permissions in the **info.plist** file for device access accor
 ## Implement the basic broadcast
 
 This section introduces how to use the Agora SDK to make an interactive broadcast. The following figure shows the API call sequence of a basic video broadcast.
-![](https://web-cdn.agora.io/docs-files/1568261729677)
+![](https://web-cdn.agora.io/docs-files/1570604527013)
 
 ### 1. Create the UI
 
