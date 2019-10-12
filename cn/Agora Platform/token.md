@@ -100,9 +100,10 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 ![](https://web-cdn.agora.io/docs-files/1562926303571)
 
-> - 点击**生成临时 Token** 前，请确保你已开启项目 App 证书。详见[启用 App 证书](#appcertificate)。
-> - 临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。
-> - 临时 Token 不适用于 Agora RTM SDK。
+
+<div class="alert warning"><li> 点击<b>生成临时 Token</b> 前，请确保你已开启项目 App 证书。详见[启用 App 证书](#appcertificate)。</li>
+<li> 临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。</li>
+<li> 临时 Token 不适用于 Agora RTM SDK。</li></div>
 
 ### 获取正式 Token
 
