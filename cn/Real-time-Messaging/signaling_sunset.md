@@ -3,7 +3,7 @@
 title: 信令维护计划及兼容性说明
 description: 
 platform: All Platforms
-updatedAt: Sat Oct 12 2019 08:17:07 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 08:17:10 GMT+0800 (CST)
 ---
 # 信令维护计划及兼容性说明
 ## 信令 SDK 维护计划
@@ -15,7 +15,7 @@ updatedAt: Sat Oct 12 2019 08:17:07 GMT+0800 (CST)
 
 ## RTM 与信令互通兼容
 
-Agora RTM SDK v1.0 支持与信令 SDK 互通，但仍不支持以下不兼容功能或版本，我们将在近期通过 Dashboard 站内邮件通知使用了不兼容信令版本或功能的项目，请留意你的 Dashboard。
+Agora RTM SDK v1.0 支持与信令 SDK 互通，但仍不支持以下不兼容功能或版本，我们将在近期通过 [Dashboard](https://sso.agora.io/cn/login) 站内邮件通知使用了不兼容信令版本或功能的项目，请留意你的 [Dashboard](https://sso.agora.io/cn/login)。
 
 | 不兼容内容                              | 说明                                                         | 修改建议                                                     |
 | -------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------- |
