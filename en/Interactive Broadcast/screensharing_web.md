@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Sep 20 2019 11:47:11 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 08:55:27 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -202,12 +202,12 @@ screenClient.on('stream-added', function(evt) {
 
 ### Sample code
 
-The following sample code implements screen sharing and publishing the local video stream. Meanwhile, we provide an open-source GitHub [demo project](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Web-Webpack). You can [try it online](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web) and refer to the code in  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) and [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/index.js) .
+The following sample code implements screen sharing and publishing the local video stream. Meanwhile, we provide an open-source GitHub [demo project](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Web-Webpack). You can [try it online](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web) and refer to the code in  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) and [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/index.js).
 
 <div class="alert note">The following code uses <code>isFirefox</code> and <code>isCompatibleChrome</code> to determine the browser type, and you need to define the functions. See the code in <a href="https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/common.js#L28"><code>common.js</code></a> for an example.</div>
 
 ```javascript
-//TODO: Fill in your App ID
+//TODO: Fill in your App ID.
 var appID = "<yourAppID>";
 var channel = "screen_video";
 var channelKey = null;
@@ -231,8 +231,8 @@ screenClient.init(appID, function() {
             video: false,
             screen: true
           }
-          // Set relevant attributes according to the browser
-          // Note you need to implement isFirefox and isCompatibleChrome
+          // Set relevant attributes according to the browser.
+          // Note that you need to implement isFirefox and isCompatibleChrome.
           if (isFirefox()) {
             streamSpec.mediaSource = 'window';
           } else if (!isCompatibleChrome()) {
@@ -316,6 +316,6 @@ videoClient.init(appID, function() {
 ## Considerations
 
 - Do not set the uid of the screen-sharing stream to a fixed value. Streams with the same uid can interfere with each other.
-- **Do not subscribe to a locally published screen-sharing stream**, else additional charges incur.
+- **Do not subscribe to a locally published screen-sharing stream**, else additional usage charges incur.
 - Ensure that `video`/`audio` is set as `false` when creating the screen-sharing stream.
-- Sharing the window of a QQ chat on Windows causes the black screen.
+- Sharing the window of a QQ chat on Windows causes a black screen.
