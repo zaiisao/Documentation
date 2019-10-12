@@ -3,7 +3,7 @@
 title: Agora Signaling Sunset Plan
 description: 
 platform: All Platforms
-updatedAt: Wed Oct 09 2019 10:19:50 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 08:24:37 GMT+0800 (CST)
 ---
 # Agora Signaling Sunset Plan
 ## Agora Signaling Sunset Plan
