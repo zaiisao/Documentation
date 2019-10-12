@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Sat Oct 12 2019 06:26:43 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 06:26:47 GMT+0800 (CST)
 ---
 # Set up Authentication
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two authentication mechanisms:
@@ -26,7 +26,7 @@ We have two types of dynamic keys: Channel Key and Token. Different versions of 
 >-   If you use an Agora SDK that supports the Channel Key, see [Channel Keys](../../en/null/channel_key.md).
 >-   If you wish to upgrade your SDK to a version that supports Token, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 >-   For the Agora Signaling SDK, see [Signaling Security Keys](../../en/Agora%20Platform/key_signaling.md).
->-   For the Agora RTM SDK, see [Use Security Keys](https://docs.agora.io/en/Real-time-Messaging/RTM_key?platform=All%20Platforms).
+>-   For the Agora RTM SDK, see [Use Security Keys](https://docs.agora.io/en/Real-time-Messaging/rtm_token?platform=All%20Platforms).
 
 
 ## Use an App ID only for authentication
