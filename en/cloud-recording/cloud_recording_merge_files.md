@@ -3,7 +3,7 @@
 title: Merge Audio and Video Files
 description: 
 platform: All Platforms
-updatedAt: Sat Oct 12 2019 14:37:56 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 14:38:08 GMT+0800 (CST)
 ---
 # Merge Audio and Video Files
 ## Overview
@@ -46,7 +46,7 @@ You can get the options with the `python convert.py` command.
 | :----- | :----------------------------------------------------------- |
 | `-f`   | Specify the directory of the recorded files to be transcoded. If the directory contains files generated during several recording instances, the transcoding script transcodes all the files by the order of the recording instances. |
 | `-m`   | Set the transcoding mode: See [-m Options](#-m) for details.<li>`0`: (Default) Merge the audio and video files of the same UID based on the recording segment.</li><li>`1`: Merge the audio and video files of the same UID into one file.</li><li>`2`: Merge the audio files of the same UID into one audio file.</li><li>`3`: Merge the video files of the same UID into one video file (no audio).</li> |
-| `-s`   | Set whether or not to include the period when a user is absent from a channel.<li>`0`: (Default) During recording, if a user leaves the channel and rejoins it later, the period when the user is absent is included and displayed as black. For example, if a user is in the channel for 2 minutes, then leaves the channel for 30 minutes, and rejoins the channel for another 2 minutes for a total recording time of 34 minutes, the recording will be black for 30 minutes.</li><li>`1`: During recording, if a user leaves the channel and rejoins it later, the recording will not include the period when the user is absent.</li>Do not set this parameter when `-m` is `0`. |
+| `-s`   | Set whether or not to include the period when a user is absent from a channel.<li>`0`: (Default) During recording, if a user leaves the channel and rejoins it later, the period when the user is absent is included and displayed as the last frame before the user leaves. For example, if a user is in the channel for 2 minutes, then leaves the channel for 30 minutes, and rejoins the channel for another 2 minutes for a total recording time of 34 minutes, the recording will display the last frame before the user leaves for 30 minutes.</li><li>`1`: During recording, if a user leaves the channel and rejoins it later, the recording will not include the period when the user is absent.</li>Do not set this parameter when `-m` is `0`. |
 | `-p`   | Set the frame rate of the transcoded video. The default rate is 15 fps. The value range is from 5 fps to 120 fps. If `-p` is less than 5 fps, the video will be transcoded with the frame rate of 5 fps. For more details, see [How do I set the video profile of the recorded video?](https://docs.agora.io/en/faq/recording_video_profile) |
 | `-r`   | Set the resolution of the transcoded video in the format of “width height”, for example, `-r 640 360`. For more details, see [How do I set the video profile of the recorded video?](https://docs.agora.io/en/faq/recording_video_profile) |
 
