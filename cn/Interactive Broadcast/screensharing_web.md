@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Thu Sep 26 2019 04:16:54 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 08:55:04 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -79,7 +79,7 @@ Electron 屏幕共享主要通过如下步骤实现：
    ```javascript
    AgoraRTC.getScreenSources(function(err, sources) {
    	console.log(sources)
-   }
+   })
    ```
 
     `sources` 是一个 `source` 对象的列表，`source` 里包含了分享源的信息和 `sourceId`，`source` 的属性如下：
