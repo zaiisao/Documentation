@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Windows
-updatedAt: Sat Oct 12 2019 07:27:56 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:28:01 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
@@ -62,7 +62,7 @@ Agora 在 Github 上提供开源的实时音视频通话示例项目 [Agora-Wind
 ### 1. 创建用户界面
 根据场景需要，为你的项目创建音视频通话的用户界面。若已有用户界面，可以直接查看[初始化 IRtcEngine](#ini)。
 
-在视频通话场景中，我们推荐你添加如下 UI 元素：
+如果你想实现一个视频通话，我们推荐你添加如下 UI 元素：
 - 本地视频窗口
 - 远端视频窗口
 - 结束通话按钮
