@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 05 2019 02:15:16 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 06:25:21 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -28,7 +28,7 @@ Agora 动态密钥分为 Channel Key 和 Token 两种。本文的动态密钥指
 > - 如果你使用的 SDK 支持的动态密钥为 Channel Key，请参考 [Channel Key 密钥说明](https://docs.agora.io/cn/Agora%20Platform/channel_key?platform=All%20Platform)。
 > - 如果你需要从老版本升级到支持 Token 的版本，请参考[动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
 > - 如果你使用的是 Agora Signaling SDK，请参考[信令密钥说明 ](https://docs.agora.io/cn/Agora%20Platform/key_signaling)。
-> - 如果你使用的是 Agora RTM SDK，请参考 [RTM 密钥说明](https://docs.agora.io/cn/Real-time-Messaging/RTM_key?platform=All%20Platforms)。
+> - 如果你使用的是 Agora RTM SDK，请参考 [RTM 密钥说明](https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms)。
 
 <a name = "appid"></a>
 ## App ID
