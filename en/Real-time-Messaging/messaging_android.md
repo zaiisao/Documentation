@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 12:29:38 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:18:38 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM Java SDK for Android](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -204,7 +204,7 @@ public void init() {
 
 Only when you successfully log in the Agora RTM system, can you use most of the core features provided by the Agora RTM SDK. When logging in the Agora RTM system, you need to:
 
-- Pass in an RTM Token, which identifies a user and its privilege. If your development environment does not require high security, set `token` as null. You need to generate an RTM Token from your business server. For more information, see [Token Security](../../en/Real-time-Messaging/RTM_key.md).
+- Pass in an RTM Token, which identifies a user and its privilege. If your development environment does not require high security, set `token` as null. You need to generate an RTM Token from your business server. For more information, see [Token Security](../../en/Real-time-Messaging/rtm_token.md).
 - An `userId` is the unique identifier of each user. You must not set it as empty, null, or "null". 
 - Pass a `ResultCallback` instance, which returns the `onSuccess` or `onFailure` callback. 
 
