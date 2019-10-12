@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: macOS
-updatedAt: Wed Oct 09 2019 07:04:57 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:19:14 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
