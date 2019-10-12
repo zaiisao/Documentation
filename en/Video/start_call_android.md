@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Android
-updatedAt: Mon Sep 30 2019 09:24:56 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:29:31 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic call with the Agora SDK for Android.
@@ -25,7 +25,7 @@ We provide an open-source [Agora-Android-Tutorial-1to1](https://github.com/Agora
 
 In this section, we will create an Android project, integrate the SDK into the project, and add the Android device permissions to prepare the development environment.
 
-### Create a project
+### Create an Android project
 
 Now, let's build a project from scratch. Skip to [Integrate the SDK](#integrate_sdk) if a project already exists.
 
@@ -115,7 +115,7 @@ This section introduces how to use the Agora SDK to make a call. The following f
 
 Create the user interface (UI) for the one-to-one call in the layout file of your project. Skip to [Import Classes](#import_class) if you already have a UI in your project.
 
-For a video call, we recommend adding the following elements into the UI:
+If you are implementing a video call, we recommend adding the following elements into the UI:
 
 * The local video view
 * The remote video view
@@ -276,9 +276,9 @@ private boolean checkSelfPermission(String permission, int requestCode) {
 
 Create and initialize the RtcEngine object before calling any other Agora APIs.
 
-In this step, you need to use the App ID of your project. Follow these steps to create an Agora project in Dashboard and get an App ID.
+In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Dashboard and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
 
-1. Go to [Dashboard](https://dashboard.agora.io/) and click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
+1. Go to [Dashboard](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
 2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
 3. On the **Project Management** page, find the **App ID** of your project. 
 
