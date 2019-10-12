@@ -3,7 +3,7 @@
 title: Synchronous Playback
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 03:39:30 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 14:41:36 GMT+0800 (CST)
 ---
 # Synchronous Playback
 ## Overview
