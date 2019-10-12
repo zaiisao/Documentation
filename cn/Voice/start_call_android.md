@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Android
-updatedAt: Sat Oct 12 2019 07:27:24 GMT+0800 (CST)
+updatedAt: Sat Oct 12 2019 07:27:28 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
@@ -117,7 +117,7 @@ dependencies {
 
 根据场景需要，为你的项目创建音视频通话的用户界面。若已有界面，可以直接查看[导入类](#import_class)。
 
-在视频通话场景中，我们推荐你添加如下 UI 元素：
+如果你想实现一个视频通话，我们推荐你添加如下 UI 元素：
 
 * 本地视频窗口
 * 远端视频窗口
