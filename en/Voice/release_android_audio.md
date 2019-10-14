@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Sep 30 2019 08:39:53 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 02:11:15 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -78,6 +78,7 @@ For detailed descriptions for each error, see [Error Codes](https://docs.agora.i
 - After turning off the Bluetooth headset, the audio route becomes the earpiece instead of the loudspeaker.
 - Echos occur when a user is in the channel.
 - Occasional noise occurs in the Live Broadcast profile.
+- The app fails to play online music files using the `startAudioMixing` method on devices running Android 10.
 
 #### Miscellaneous
 
