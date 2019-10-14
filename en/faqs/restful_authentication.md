@@ -3,7 +3,7 @@
 title: How to pass the basic HTTP authentication
 description: How to pass the HTTP authentication?
 platform: All Platforms
-updatedAt: Fri Aug 16 2019 12:26:50 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 11:25:09 GMT+0800 (CST)
 ---
 # How to pass the basic HTTP authentication
 ## Inrtoduction
@@ -32,7 +32,7 @@ You need to fill in the **Customer ID** and **Customer Certificate** in the code
 	Request request = new Request.Builder()
 	...
 		// Pass in the Authorization value in the HTTP request header.
-		.addHandler("Authorization", "Basic <base64Credentials>")
+		.addHandler("Authorization", "Basic base64Credentials")
 	...
 	```
 
@@ -52,9 +52,9 @@ You need to fill in the **Customer ID** and **Customer Certificate** in the code
 
 	```swift
 	// Pass in the Authorization value in the HTTP request header.
-	let headers = ["Authorization", "Basic <base64LoginString>"]
+	let headers = ["Authorization", "Basic base64LoginString"]
 	```
 
 ## Considerations
 
-When sending the HTTP request, ensure that the format of Authorization is `Basic <base64Credentials>` or `Basic <base64LoginString>`.
+When sending the HTTP request, ensure that the format of Authorization is `Basic base64Credentials` or `Basic base64LoginString`.
