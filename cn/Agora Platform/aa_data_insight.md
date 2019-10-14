@@ -3,7 +3,7 @@
 title: 数据洞察 Beta
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 04:05:46 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 04:05:50 GMT+0800 (CST)
 ---
 # 数据洞察 Beta
 水晶球的**数据洞察**功能提供通话用量和质量数据的阶段性分析，帮助你了解用量和质量的总体趋势、不同维度的分布情况和每天的数据明细。
@@ -149,6 +149,8 @@ updatedAt: Mon Oct 14 2019 04:05:46 GMT+0800 (CST)
 ### 频道
 
 使用 Agora SDK 进行的所有通话都是在频道内发生的。我们把一个 App 比作一栋大楼的话，频道就好比大楼里面的一个房间。
+
+数据洞察在统计频道数时，会将每一次从有用户加入一个频道到所有用户离开频道计为一个频道（即使频道名相同也会按次数统计）。
 
 ### 用户
 
