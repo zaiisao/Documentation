@@ -3,14 +3,16 @@
 title: 实现音视频通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Thu Sep 12 2019 04:12:22 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 03:56:01 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现音视频通话。
 
 ## Demo 体验
 
-Agora 提供一个微信小程序 Demo。在实现相关功能前，你可以使用 Android 或 iOS 手机上打开微信 App，扫描识别下面的二维码，快速体验 Agora 的小程序解决方案。
+Agora 在 Github 上提供一个开源的实时音视频示例项目 [Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial)。在实现相关功能前，你可以下载并查看源代码。
+
+同时，Agora 也提供一个微信小程序 Demo。你可以使用 Android 或 iOS 手机上打开微信 App，扫描识别下面的二维码，快速体验 Agora 的小程序解决方案。
 
 ![](https://web-cdn.agora.io/docs-files/1568009947551)
 
@@ -87,7 +89,7 @@ Agora 提供一个微信小程序 Demo。在实现相关功能前，你可以使
 
 	```javascript
 	// ../../lib/mini-app-sdk-production.js 为你的 js 文件本地路径
-	const AgoraMiniappSDK = require('../../lib/mini-app-sdk-production.js');
+	const AgoraMiniappSDK = require('../../lib/Agora_Miniapp_SDK_for_WeChat.js');
 	```
 
 ## 实现音视频通话
@@ -98,9 +100,9 @@ Agora 提供一个微信小程序 Demo。在实现相关功能前，你可以使
 
 ### 1. 初始化客户端对象
 
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在 Dashboard 创建项目并获取 App ID。
+你需要在该步骤中填入项目的 App ID。请参考如下步骤在 Dashboard [创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
 
-1. 登录 [Dashboard](https://dashboard.agora.io/)，点击左侧导航栏的**项目管理**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
+1. 登录 [Dashboard](https://dashboard.agora.io/)，点击左侧导航栏的**[项目管理](https://dashboard.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
 2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
 3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
 
@@ -115,7 +117,7 @@ client.init(appId, onSuccess, onFailure);
 初始化客户端后，在成功的回调中调用 `join` 方法加入频道。在该方法中填入以下参数：
 
 * token：传入能标识用户角色和权限的 Token。可设为如下一个值：
-   * NULL
+   * `NULL`
    * 临时 Token。临时 Token 服务有效期为 24 小时。你可以在 Dashboard 里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取临时-token)。
    * 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Voice/token_server.md)。
 
