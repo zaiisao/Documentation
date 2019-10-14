@@ -3,7 +3,7 @@
 title: Synchronous Playback
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 07:22:51 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 07:23:01 GMT+0800 (CST)
 ---
 # Synchronous Playback
 ## Overview
@@ -12,7 +12,7 @@ Many educational apps need to synchronize the playback of recorded files and oth
 
 ## Prerequisites
 
-In individual recording mode, Agora Cloud Recording records the audio and video of each UID separately. Before you start, you need to first merge the audio and video into one file with the Audio & Video Merging script. See [Merge Audio and Video Files](../../en/cloud-recording/cloud_recording_merge_files.md) for details. Ensure that you set `-m` as `1` and set `-s` as `0`, so that the period when a user is absent will be included and displayed as the last frame before the absence in the recorded files.
+In individual recording mode, Agora Cloud Recording records the audio and video of each UID separately. Before you start, you need to first merge the audio and video into one file with the Audio & Video Merging script. See [Merge Audio and Video Files](../../en/cloud-recording/cloud_recording_merge_files.md) for details. Ensure that you set `-m` as `1` and do not set `-s`, so that the period when a user is absent will be included and displayed as the last frame before the absence in the recorded files.
 
 ## Get the timestamp
 
