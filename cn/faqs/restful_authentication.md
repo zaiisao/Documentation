@@ -3,7 +3,7 @@
 title: HTTP 基本认证
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 11:19:48 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 11:21:43 GMT+0800 (CST)
 ---
 # HTTP 基本认证
 ## 场景描述
