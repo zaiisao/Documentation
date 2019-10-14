@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: wechat live
 platform: 微信小程序
-updatedAt: Thu Sep 12 2019 04:12:30 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 03:57:21 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现互动直播。
