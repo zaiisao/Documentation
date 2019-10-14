@@ -3,7 +3,7 @@
 title: How to pass the basic HTTP authentication
 description: How to pass the HTTP authentication?
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 11:25:17 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 11:26:42 GMT+0800 (CST)
 ---
 # How to pass the basic HTTP authentication
 ## Inrtoduction
