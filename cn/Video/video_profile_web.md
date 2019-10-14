@@ -3,13 +3,13 @@
 title: 设置视频属性
 description: 
 platform: Web
-updatedAt: Fri Sep 20 2019 04:08:08 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 01:58:23 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
 在视频通话或互动直播中设置视频属性，可以根据用户喜好，调整视频画面的清晰度和流畅度，获得较高的用户体验。
 
-Agora Web SDK 通过 `setVideProfile` 和 `setVideoEncoderConfiguration` 2 个接口支持设置视频属性。你可以根据实际场景需求，选择任一接口进行实现。这 2 个接口的区别在于：
+Agora Web SDK 通过 `setVideoProfile` 和 `setVideoEncoderConfiguration` 2 个接口支持设置视频属性。你可以根据实际场景需求，选择任一接口进行实现。这 2 个接口的区别在于：
 
 - `setVideoEncoderConfiguration`： 灵活设置视频属性的各参数值
 - `setVideoProfile`：指定一个 Profile，每个 Profile 对应一套固定的分辨率、码率和帧率
