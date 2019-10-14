@@ -3,7 +3,7 @@
 title: 同步回放
 description: 解释如何将录制的视频和其他流文件进行同步回放
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 07:21:33 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 07:21:52 GMT+0800 (CST)
 ---
 # 同步回放
 ## 功能描述
