@@ -3,7 +3,7 @@
 title: 数据洞察 Beta
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 03:58:23 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 03:58:26 GMT+0800 (CST)
 ---
 # 数据洞察 Beta
 水晶球的**数据洞察**功能提供通话用量和质量数据的阶段性分析，帮助你了解用量和质量的总体趋势、不同维度的分布情况和每天的数据明细。
@@ -27,6 +27,7 @@ updatedAt: Mon Oct 14 2019 03:58:23 GMT+0800 (CST)
   <li>提供 2019 年 8 月 1 日 起的数据。</li>
 <li>一次最多可以查看 30 天的数据。</li>
 <li>最多支持查看三个月内的数据。你可以在数据图表的右上角点击<b>更多</b>保存历史数据。</li>
+	<li>数据洞察会在每天上午 8 点（UTC 时间）完成前一天的数据统计，因此在该时间之前可能无法查询到前一天的数据。如果你需要更实时地查看数据，可以使用<a href="../../cn/Agora%20Platform/aa_live_data.md">实时数据</a>。</li>
 </div>
 
 ## <a name="usage"></a>用量概览
