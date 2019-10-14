@@ -3,7 +3,7 @@
 title: HTTP 基本认证
 description: 
 platform: All Platforms
-updatedAt: Fri Aug 16 2019 12:16:23 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 11:16:04 GMT+0800 (CST)
 ---
 # HTTP 基本认证
 ## 场景描述
@@ -33,7 +33,7 @@ updatedAt: Fri Aug 16 2019 12:16:23 GMT+0800 (CST)
 	Request request = new Request.Builder()
 	...
 		// 在 HTTP 请求头部填入获取到的 Authorization 字段
-		.addHeader("Authorization", "Basic <base64Credentials>")
+		.addHeader("Authorization", "Basic base64Credentials")
 	...
 	```
 
@@ -54,9 +54,9 @@ updatedAt: Fri Aug 16 2019 12:16:23 GMT+0800 (CST)
 
 	```swift
 	// 在 HTTP 请求头部填入获取到的 Authorization 字段
-	let headers = ["Authorization", "Basic <base64LoginString>"]
+	let headers = ["Authorization", "Basic base64LoginString"]
 	```
 
 ## 开发注意事项
 
-发送 HTTP 请求时，Authorization 字段的格式为：`Basic <base64Credentials>` 或 `Basic <base64LoginString>`。
+发送 HTTP 请求时，Authorization 字段的格式为：`Basic base64Credentials` 或 `Basic base64LoginString`。
