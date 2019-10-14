@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux Java
-updatedAt: Wed Oct 02 2019 07:09:13 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 09:15:45 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
