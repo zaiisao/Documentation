@@ -3,16 +3,19 @@
 title: HTTP 基本认证
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 11:16:04 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 11:16:24 GMT+0800 (CST)
 ---
 # HTTP 基本认证
 ## 场景描述
 
 在使用 RESTful API 前，你需要在 HTTP 请求头部中填入 `Authorization` 字段，进行认证。本文提供 Java 和 Swift 语言生成 Authorization 字段的示例代码，请参考代码获取相应的 `Authorization` 值。
 
-你需要在代码中填入 Customer ID 和  Customer Certificate。登录 [Dashboard](https://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取 Customer ID 和 Customer Certificate。
+你需要在请求代码中填入你的客户 ID 和客户证书。登录 [Console](https://console.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取**客户 ID** 和**客户证书**。
 
-> Customer ID 和 Customer Certificate 仅用于访问 Restful API。
+![](https://web-cdn.agora.io/docs-files/1571022863083)
+
+
+<div class="alert note">客户 ID 和 Customer Certificate 仅用于访问 Restful API。</div>
 
 ## 示例代码
 
