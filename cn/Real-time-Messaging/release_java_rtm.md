@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux Java
-updatedAt: Mon Oct 14 2019 09:12:45 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 09:12:52 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -13,7 +13,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 ## 1.1.0 版
 
-该版本于 2019 年 9 月 18 日发布。新增如下功能：
+该版本于 2019 年 10 月 14 日发布。新增如下功能：
 
 - [查询频道成员人数](#getcount)
 - [频道成员人数自动更新](#oncount)
