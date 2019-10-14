@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Sep 30 2019 08:43:46 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 02:09:46 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -95,6 +95,7 @@ Android 视频 SDK 支持两种主要场景:
 - 关掉蓝牙耳机后，音频不走外放，而走听筒。
 - 进入频道后偶现回声。
 - 直播模式下，特定场景偶现杂音。
+- Android 10 设备上调用 `startAudioMixing` 方法播放在线音乐 URL 失败。
 
 #### 其他
 
