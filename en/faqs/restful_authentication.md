@@ -3,16 +3,20 @@
 title: How to pass the basic HTTP authentication
 description: How to pass the HTTP authentication?
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 11:25:09 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 11:25:17 GMT+0800 (CST)
 ---
 # How to pass the basic HTTP authentication
 ## Inrtoduction
 
-Before using the Agora RESTful API, you need to fill in the `Authorization` parameter in the HTTP request header for authentication. Refer to the following code samples to get the `Authorization` parameter.
+Before using the Agora RESTful API, you need to fill in the `Authorization` parameter in the HTTP request header for authentication. You need your **Customer ID** and **Customer Certificate** within the authentication request.  
 
-You need to fill in the **Customer ID** and **Customer Certificate** in the code.  Login https://dashboard.agora.io, click the account name on the top right of the dashboard, and enter the **RESTful API** page from the drop-down list to get the **Customer ID** and **Customer Certificate**.
+Login to https://console.agora.io, click the account name on the top right of Console, and enter the **RESTful API** page from the drop-down list to get the **Customer ID** and **Customer Certificate**.
 
-> The Customer ID and Customer Certificate are used for RESTful API access only.
+![](https://web-cdn.agora.io/docs-files/1571023473774)
+
+<div class="alert note">The Customer ID and Customer Certificate are used for RESTful API access only.</div>
+ 
+Refer to the following code samples to get the `Authorization` parameter.
 
 ## Implementation
 
