@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Node.js
-updatedAt: Mon Sep 30 2019 03:54:33 GMT+0800 (CST)
+updatedAt: Tue Oct 15 2019 04:40:51 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Node.js API 参考。
@@ -51,7 +51,7 @@ else { %><b>./\<language\>/src</b><% }
 5. 用你自己的 App ID、App Certificate 以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App Certificate，详见 [校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)
     - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
 ```JavaScript
-   const tokenB = RtcTokenBuilder.buildTokenWithUid(appID, appCertificate, channelName, account, role, privilegeExpiredTs);
+   const tokenB = RtcTokenBuilder.buildTokenWithAccount(appID, appCertificate, channelName, account, role, privilegeExpiredTs);
    console.log("Token With UserAccount: "+tokenB);
 ```
     - 如果你使用 string 型 userAccount 加入频道，请注释掉以下代码段：
