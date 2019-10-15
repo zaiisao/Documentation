@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 15 2019 04:15:33 GMT+0800 (CST)
+updatedAt: Tue Oct 15 2019 04:15:38 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
@@ -102,7 +102,7 @@ qos.agoralab.co
 
 | 端口     | 白名单项目 |
 | -------- | ---------- |
-| TCP 端口 | 443；6151；6153        |
+| TCP 端口 | 443；9591；9593        |
 
 域名白名单：
 
