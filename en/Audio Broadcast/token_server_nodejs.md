@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Node.js
-updatedAt: Tue Oct 15 2019 04:40:12 GMT+0800 (CST)
+updatedAt: Tue Oct 15 2019 04:40:17 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Node.js. 
@@ -44,7 +44,7 @@ We take **RtcTokenBuilderSample.js** as an example:
 4. Replace the sample-App ID, appCertificate, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
     - If you use an int uid to join a channel, comment out the following code block:
 ```JavaScript
-   const tokenB = RtcTokenBuilder.buildTokenWithUid(appID, appCertificate, channelName, account, role, privilegeExpiredTs);
+   const tokenB = RtcTokenBuilder.buildTokenWithAccount(appID, appCertificate, channelName, account, role, privilegeExpiredTs);
    console.log("Token With UserAccount: "+tokenB);
 ```    
     - If you use a string userAccount to join a channel, comment out the following code block:
