@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 15 2019 04:14:38 GMT+0800 (CST)
+updatedAt: Tue Oct 15 2019 04:14:42 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -77,7 +77,7 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | -------- | ---------- |
-| TCP ports | 443; 6151; 6153        |
+| TCP ports | 443; 9591; 9593        |
 
 Whitelist domains:
 
