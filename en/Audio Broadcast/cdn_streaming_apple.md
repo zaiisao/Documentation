@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 09:34:12 GMT+0800 (CST)
+updatedAt: Wed Oct 16 2019 08:18:07 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -38,7 +38,7 @@ Refer to the following steps to push streams to the CDN:
 <a name="single"></a>
 1. The host in a channel calls the `setLiveTranscoding` method to set the transcoding parameters of media streams (`AgoraLiveTranscoding`), such as the resolution, bitrate, frame rate and position of watermark/background. If you need a transcoded picture, set the picture-in-picture layout for each user in the `transcodingUser` class, as described in [Sample Code](#sample).
 
-   > The `rtcEngineTranscodingUpdated` callback occurs when the `AgoraLiveTranscoding` calss updates, and reports update information to the local host.
+   > The `rtcEngineTranscodingUpdated` callback occurs when the `AgoraLiveTranscoding` class updates, and reports update information to the local host.
 
 2. The host in a channel calls the `addPublishStreamUrl` method to add a media stream to the CDN. 
 
