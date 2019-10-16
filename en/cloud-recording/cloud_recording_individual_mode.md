@@ -3,15 +3,15 @@
 title: Individual Recording
 description: 
 platform: All Platforms
-updatedAt: Wed Oct 16 2019 09:56:57 GMT+0800 (CST)
+updatedAt: Wed Oct 16 2019 10:13:13 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
 
 Agora Cloud Recording supports two recording modes:
 
-- Individual recording mode: Agora Cloud Recording generates one audio and/or video file for each UID.
-- Composite recording mode: This is the default recording mode. The audio and video of all UIDs in the channel are combined into one file.
+- Individual recording mode: Agora Cloud Recording generates one audio and/or video file for each UID or each specified UID in the channel.
+- Composite recording mode: This is the default recording mode. The audio and video of all or specified UIDs in the channel are combined into one file.
 
 This article explains how to record a call in individual recording mode by using the RESTful API.
 
