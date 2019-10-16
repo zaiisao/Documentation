@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Sep 27 2019 08:14:19 GMT+0800 (CST)
+updatedAt: Wed Oct 16 2019 10:16:12 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -20,7 +20,7 @@ RESTful API 仅支持 HTTPS。用户必须在 Basic HTTP 请求头部填入 `Aut
 
 ## 2. 接入点
 
-所有请求都发送给 BaseUrl：**https://api.agora.io/dev/v1**
+所有请求都发送给 BaseUrl：`https://api.agora.io/`
 
 -   请求：参数格式必须为 JSON ，内容类型: application/json
 -   响应：响应内容的格式为 JSON。以下为定义的响应状态：
@@ -55,15 +55,16 @@ RESTful API 仅支持 HTTPS。用户必须在 Basic HTTP 请求头部填入 `Aut
 
 ## 3. 项目相关的 API
 
-BaseUrl：**https://api.agora.io/dev/v1**
-
 下图展示了项目相关 API 的使用逻辑。
 ![](https://web-cdn.agora.io/docs-files/1545985558459)
 
 ### 获取所有项目 \(GET\)
 
 -   方法：GET
--   路径：BaseUrl/projects/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/projects/
+	```
 -   参数：None
 -   响应：
 
@@ -96,7 +97,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 获取单个项目（GET）
 
 -   方法：GET
--   路径：BaseUrl/project/
+-   路径：
+	```
+	http://api.agora.io/dev/v1/project/
+	```
 -   参数：
 
     ```
@@ -137,7 +141,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 创建项目（POST）
 
 -   方法：POST
--   路径：BaseUrl/project/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/project/
+	```
 -   参数：
 
     ```
@@ -169,7 +176,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 禁用或启用项目（POST）
 
 -   方法：POST
--   路径：BaseUrl/project\_status/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/project_status/
+	```
 -   参数：
 
     ```
@@ -216,7 +226,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 删除项目（DELETE）
 
 -   方法：DELETE
--   路径：BaseUrl/project/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/project/
+	```
 -   参数：
 
     ```
@@ -249,7 +262,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 设置项目的录制项目服务器 IP（POST）
 
 -   方法：POST
--   路径：BaseUrl/recording\_config/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/recording_config/
+	```
 -   参数：
 
     ```
@@ -260,7 +276,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
     ```
 
 >  - 如果您使用的 Recording SDK 版本 <= v1.9.0，请关注 `recording_server` 字段；
->  - 如果您使用的 Recording SDK 版本 \>= v1.11.0，请忽略 `recording_server` 字段。
+>  - 如果您使用的 Recording SDK 版本 >= v1.11.0，请忽略 `recording_server` 字段。
 
 -   响应：
 
@@ -286,7 +302,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 启用项目 App Certificate（POST）
 
 -   方法：POST
--   路径：BaseUrl/signkey/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/signkey/
+	```
 -   参数：
 
     ```
@@ -323,7 +342,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 重置项目的 App Certificate（POST）
 
 -   方法：POST
--   路径：BaseUrl/reset\_signkey/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/reset_signkey/
+	```
 -   参数：
 
     ```
@@ -353,7 +375,6 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 ## 4. 用量相关的 API
 
-BaseUrl：**https://api.agora.io/dev/v1**
 
 下图展示了用量相关 API 的使用逻辑。
 ![](https://web-cdn.agora.io/docs-files/1545985575734)
@@ -361,7 +382,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 获取用量数据（GET)
 
 -   方法：GET
--   路径：BaseUrl/usage/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/usage/
+	```
 -   参数 (格式为一个日期到另一个日期的YYYY-MM-DD)：
 
     ```
@@ -400,8 +424,6 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 ## 5. 服务端踢人 API
 
-BaseUrl: **https://api.agora.io/dev/v1**
-
 下图展示了服务器踢人相关 API 的使用逻辑。
 ![](https://web-cdn.agora.io/docs-files/1545985590584)
 
@@ -418,7 +440,10 @@ BaseUrl: **https://api.agora.io/dev/v1**
 该方法创建服务端踢人规则。
 
 -   方法：POST
--   路径：BaseUrl/kicking-rule/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/kicking-rule/
+	```
 -   参数:
 
     ```
@@ -453,7 +478,10 @@ BaseUrl: **https://api.agora.io/dev/v1**
 该方法获取服务端的踢人规则列表。
 
 -   方法：GET
--   路径：BaseUrl/kicking-rule/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/kicking-rule/
+	```
 -   参数：
 
     ```
@@ -489,7 +517,10 @@ BaseUrl: **https://api.agora.io/dev/v1**
 该方法更新服务端踢人的生效时间。
 
 -   方法：PUT
--   路径：BaseUrl/kicking-rule/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/kicking-rule/
+	```
 -   参数：
 
     ```
@@ -518,7 +549,10 @@ BaseUrl: **https://api.agora.io/dev/v1**
 该方法删除服务端踢人规则。
 
 -   方法：DELETE
--   路径：BaseUrl/kicking-rule/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/kicking-rule/
+	```
 -   参数：
 
     ```
@@ -540,8 +574,6 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
 ## 6. 查询在线频道信息 API
 
-BaseUrl：**https://api.agora.io/dev/v1/**
-
 下图展示了查询频道信息相关 API 的使用逻辑。
 
 ![](https://web-cdn.agora.io/docs-files/1545985608224)
@@ -549,12 +581,15 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 <div class="alert note">本组 API 调用频率上限为每秒 20 次。</div>
 
 
-### 查询某个用户在指定频道中的状态 (GET)
+### 使用 UID 查询某个用户在指定频道中的状态 (GET)
 
 该方法查询某个用户是否在指定频道中，如果是，则给出用户在该频道中的角色等状态。
 
 -   方法：GET
--   路径：BaseUrl/channel/user/property/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/channel/user/property/
+	```
 -   参数: appid, uid, cname
 
     <table>
@@ -578,7 +613,11 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </tbody>
 </table>
 
-如：/channel/user/property/<appid\>/<uid\>/<channelName\>
+如：
+```
+https://api.agora.io/dev/v1/channel/user/property/{appid}/{uid}/{cname}
+```
+
 
 -   响应:
 
@@ -588,7 +627,9 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 		"data": {
 			"join": 1549073054,
 			"in_channel": true,
-			"role": 2
+			"role": 2,
+			"uid": <uid>
+			"account": <string_uid>
 		}
 	}
 	```
@@ -631,17 +672,121 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </ul>
 </td>
 </tr>
+<tr><td>uid</td>
+<td><p>用户 ID，该 ID 为整型</p>
+</td></tr>
+<tr><td>account</td>
+<td><p>该用户 ID 所对应的字符串类型的用户 Account</p>
+</td></tr>
+</tbody>
+</table>
+
+
+### 使用 Account 查询某个用户在指定频道中的状态 (GET)
+
+该方法查询某个用户是否在指定频道中，如果是，则给出用户在该频道中的角色等状态。
+
+-   方法：GET
+-   路径：
+	```
+	https://api.agora.io/dev/v2/apps/{appid}/channels/{cname}/accounts/{account}/properties
+	```
+-   参数: appid, account, cname
+
+    <table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>appid</td>
+<td>必填，dashboard 中项目的 appID</td>
+</tr>
+<tr><td>account</td>
+<td>必填，用户 Account，可以通过 SDK 获取到</td>
+</tr>
+<tr><td>cname</td>
+<td>必填，channel name，频道名称</td>
+</tr>
+</tbody>
+</table>
+
+-   响应:
+
+	```
+	{
+		"success": true,
+		"data": {
+			"join": 1549073054,
+			"in_channel": true,
+			"role": 2,
+			"uid": <uid>
+			"account": <string_uid>
+		}
+	}
+	```
+	
+    <table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>join</td>
+<td><p>该用户加入频道的时间戳</p>
+</td></tr>
+<td>success</td>
+<td><p>查询请求状态</p>
+<ul>
+<li>true：请求成功</li>
+<li>false：请求不成功</li>
+</ul>
+</td>
+</tr>
+<tr><td>in_channel</td>
+<td><p>查询用户是否在频道内</p>
+<ul>
+<li>true：用户在频道内</li>
+<li>false：用户不在频道内</li>
+</ul>
+</td>
+</tr>
+<tr><td>role</td>
+<td><p>查询用户在频道内的角色</p>
+<ul>
+<li>0：未知</li>
+<li>1：用户角色为通信用户</li>
+<li>2：用户角色为直播模式视频主播</li>
+<li>3：用户角色为主播模式观众</li>
+</ul>
+</td>
+</tr>
+<tr><td>uid</td>
+<td><p>用户 ID，该 ID 为整型</p>
+</td></tr>
+<tr><td>account</td>
+<td><p>该用户 ID 所对应的字符串类型的用户 Account</p>
+</td></tr>
 </tbody>
 </table>
 
 
 
-### 查询频道内的分角色用户列表 (GET)
+### 查询频道内的分角色用户列表 (GET)<sup>1</sup>
 
 该方法查询指定频道内的分角色用户列表。
 
 -   方法：GET
--   路径：BaseUrl/channel/user/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/channel/users/
+	```
 -   参数: appid, cname
 
     <table>
@@ -662,7 +807,10 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </tbody>
 </table>
 
-如：/channel/user/<appid\>/<channelName\>
+如：
+```
+https://api.agora.io/dev/v1/channel/user/{appid}/{cname}
+```
 
 -   响应：不同的频道模式下，该方法返回的响应内容不同。
 
@@ -728,7 +876,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 			"data": {
 					"channel_exist": true,
 					"mode": 2,
-					"broadcaster": [<uid>],
+					"broadcasters": [<uid>],
 					"audience": [<uid>],
 					"audience_total": <count>
 			}
@@ -768,7 +916,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </ul>
 </td>
 </tr>
-<tr><td>broadcaster</td>
+<tr><td>broadcasters</td>
 <td>频道内所有主播的 uid 列表</td>
 </tr>
 <tr><td>audience</td>
@@ -779,7 +927,168 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </tr>
 </tbody>
 </table>
+	
+### 查询频道内的分角色用户列表 (GET)<sup>2</sup>
 
+该方法查询指定频道内的分角色用户列表。
+
+-   方法：GET
+-   路径：
+	```
+	https://api.agora.io/dev/v2/apps/{appid}/channels/{cname}/usersWithAccount
+	```
+-   参数: appid, cname
+
+    <table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>appid</td>
+<td>必填，dashboard 中项目的 appID</td>
+</tr>
+<tr><td>cname</td>
+<td>必填，channel name，频道名称</td>
+</tr>
+</tbody>
+</table>
+
+
+-   响应：不同的频道模式下，该方法返回的响应内容不同。
+
+	```json
+	// 如果是通信频道
+	{
+		"success": true,
+		"data": {
+			"channel_exist": true,
+			"mode": 1,
+			"users": [{uid: <uid>, account: <account>}],
+			"total": <count>
+		}
+	}
+	```
+
+	<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>success</td>
+<td><p>查询请求状态</p>
+<ul>
+<li>true：请求成功</li>
+<li>false：请求不成功</li>
+</ul>
+</td>
+</tr>
+<tr><td>channel_exsit</td>
+<td><p>查询频道是否存在：</p>
+<ul>
+<li>true：频道存在</li>
+<li>false：频道不存在</li>
+</ul>
+</td>
+</tr>
+<tr><td>mode</td>
+<td><p>查询频道模式：</p>
+<ul>
+<li>1：频道为通信模式</li>
+<li>2：频道为直播模式</li>
+</ul>
+</td>
+</tr>
+<tr><td>total</td>
+<td>频道内的用户总人数</td>
+</tr>
+<tr><td>users</td>
+<td>频道内所有用户信息，包含如下字段：
+<ul>
+<li>uid：用户 ID</li>
+<li>account：用户 ID 对应的用户 Account</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+
+	```json
+	// 如果是直播频道
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 2,
+					"broadcasters": [{uid: <uid>, account: <account>}],
+					"audience": [{uid: <uid>, account: <account>}],
+					"audience_total": <count>
+			}
+	}
+	```
+
+	<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr><td><strong>参数</strong></td>
+<td><strong>描述</strong></td>
+</tr>
+<tr><td>success</td>
+<td><p>查询请求状态</p>
+<ul>
+<li>true：请求成功</li>
+<li>false：请求不成功</li>
+</ul>
+</td>
+</tr>
+<tr><td>channel_exsit</td>
+<td><p>查询频道是否存在：</p>
+<ul>
+<li>true：频道存在</li>
+<li>false：频道不存在</li>
+</ul>
+</td>
+</tr>
+<tr><td>mode</td>
+<td><p>查询频道模式：</p>
+<ul>
+<li>1：频道为通信模式</li>
+<li>2：频道为直播模式</li>
+</ul>
+</td>
+</tr>
+<tr><td>broadcasters</td>
+<td>频道内所有主播的列表，包含如下字段：
+<ul>
+<li>uid：用户 ID</li>
+<li>account：用户 ID 对应的用户 Account</li>
+</ul>
+</td>
+</tr>
+<tr><td>audience</td>
+<td>频道内观众的列表，最多包含前 10000 名观众。包含如下字段：
+	<ul>
+<li>uid：用户 ID</li>
+<li>account：用户 ID 对应的用户 Account</li>
+</ul>
+	</td>
+</tr>
+<tr><td>audience_total</td>
+<td>频道内的观众总人数</td>
+</tr>
+</tbody>
+</table>
+	
 
 ### 分页查询厂商频道列表 (GET)
 
@@ -787,7 +1096,10 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 
 
 -   方法：GET
--   路径：BaseUrl/channel/appid/
+-   路径：
+	```
+	https://api.agora.io/dev/v1/channel/appid/
+	```
 -   参数：?page\_no=0&page\_size=100
 
     <table>
@@ -808,9 +1120,13 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </tbody>
 </table>
 
-如: /channel/<appid\>
-
-带参数: /channel/<appid\>?page\_no=0&page\_size=100
+如: 
+```
+// 不带参数
+https://api.agora.io/dev/v1/channel/<appid>
+// 带参数
+https://api.agora.io/dev/v1/channel/<appid>?page_no=0&page_size=100
+```
 
 -   响应:
 
