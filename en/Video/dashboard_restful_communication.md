@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Sep 27 2019 08:24:16 GMT+0800 (CST)
+updatedAt: Wed Oct 16 2019 10:15:52 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. Authentication
@@ -22,7 +22,7 @@ For how to generate the `Authorization` parameter, see [RESTful API authenticati
 
 ## 2. EndPoint
 
-All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
+All requests should be sent to BaseUrl: `https://api.agora.io/`.
 
 - Request: All parameters must be sent in JSON format, with content type: Content-Type: application/json.
 - Response: The response content is in JSON format. The response status is defined as follows:
@@ -36,15 +36,16 @@ All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
 
 ## 3. Project API
 
-BaseUrl: **https://api.agora.io/dev/v1**.
-
 The following chart shows how you can use Project APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990089418)
 
 ### Fetch all Projects (GET)
 
 -  Method: GET
--  Path: BaseUrl/projects/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/projects/
+	```
 -  Parameter: None
 -  Response:
 
@@ -77,7 +78,10 @@ The following chart shows how you can use Project APIs.
 ### Fetch a Single Project (GET)
 
 -  Method: GET
--  Path: BaseUrl/project/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/project/
+	```
 -  Parameter:
 
 	```
@@ -118,7 +122,10 @@ The following chart shows how you can use Project APIs.
 ### Create a Project (POST)
 
 -  Method: POST
--  Path: BaseUrl/project/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/project/
+	```
 -  Parameter:
 
 	```
@@ -149,7 +156,10 @@ The following chart shows how you can use Project APIs.
 ### Disable/Enable a Project (POST)
 
 -  Method: POST
--  Path: BaseUrl/project\_status/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/project_status/
+	```
 -  Parameter:
 
 	```
@@ -196,7 +206,10 @@ The following chart shows how you can use Project APIs.
 ### Delete a Project (DELETE)
 
 -  Method: DELETE
--  Path: BaseUrl/project/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/project/
+	```
 -  Parameter:
 
 	```
@@ -228,7 +241,10 @@ The following chart shows how you can use Project APIs.
 ### Set a Project’s Recording Server IP (POST)
 
 -  Method: POST
--  Path: BaseUrl/recording\_config/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/recording_config/
+	```
 -  Parameter:
 
 	```
@@ -265,7 +281,10 @@ The following chart shows how you can use Project APIs.
 ### Enable a Project’s App Certificate (POST)
 
 -  Method: POST
--  Path: BaseUrl/signkey/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/signkey/
+	```
 -  Parameter:
 
 	```
@@ -301,7 +320,10 @@ The following chart shows how you can use Project APIs.
 ### Reset a Project’s App Certificate (POST)
 
 -  Method: POST
--  Path: BaseUrl/reset_signkey/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/reset_signkey/
+	```
 -  Parameter:
 
 	```
@@ -331,15 +353,16 @@ The following chart shows how you can use Project APIs.
 
 ## 4. Usage API
 
-BaseUrl: **https://api.agora.io/dev/v1**.
-
 The following chart shows how you can use Usage APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990118195)
 
 ### Fetch Usages (GET)
 
 -  Method: GET
--  Path: BaseUrl/usage/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/usage/
+	```
 -  Parameter: (from date & to date pattern: YYYY-MM-DD)
 
 	```
@@ -380,8 +403,6 @@ The following chart shows how you can use Usage APIs.
 
 ## 5. Ban Users at the Server
 
-BaseUrl: **https://api.agora.io/dev/v1**.
-
 The following chart shows how you can use related APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990162139)
 
@@ -396,7 +417,10 @@ The banned user receives the corresponding callback as follows:
 ### Create a Rule (POST)
 
 -  Method: POST
--  Path: BaseUrl/kicking-rule/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/kicking-rule/
+	```
 -  Parameter:
 
     ```
@@ -429,7 +453,10 @@ The banned user receives the corresponding callback as follows:
 ### Get the Rule List (GET)
 
 -  Method: GET
--  Path: BaseUrl/kicking-rule/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/kicking-rule/
+	```
 -  Parameter:
 
     ```
@@ -463,7 +490,10 @@ The banned user receives the corresponding callback as follows:
 ### Update the Rule Period (PUT)
 
 -  Mrethod: PUT
--  Path: BaseUrl/kicking-rule/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/kicking-rule/
+	```
 -  Parameter :
 
     ```
@@ -489,7 +519,10 @@ The banned user receives the corresponding callback as follows:
 ### Delete a Rule (DELETE)
 
 -  Method: DELETE
--  Path: BaseUrl/kicking-rule/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/kicking-rule/
+	```
 -  Parameter:
 
     ```
@@ -511,19 +544,20 @@ The banned user receives the corresponding callback as follows:
 
 ## 6. Online Statistics Query API
 
-BaseUrl：**https://api.agora.io/dev/v1/**.
-
 The following chart shows how you can use Online Statistics Query APIs.
 ![](https://web-cdn.agora.io/docs-files/1545990190974)
 
 <div class="alert note">The call frequency of this group of API is no more than twenty queries per second.</div>
 
-### Get a User Role in the Channel (GET)
+### Get a User Role in the Channel with the UID(GET)
 
 This method checks if a specified user is in a specified channel, and if yes, checks the role of this user in the channel.
 
 -  Method: GET
--  Path: BaseUrl/channel/user/property/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/channel/user/property/
+	```
 -  Parameters: appid, uid, cname
 
 	<table>
@@ -547,7 +581,10 @@ This method checks if a specified user is in a specified channel, and if yes, ch
 	</tbody>
 	</table>
 
-Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
+Example: 
+```
+https://api.agora.io/dev/v1/channel/user/property/{appid}/{uid}/{cname}
+```
 
 -  Response:
 
@@ -557,7 +594,9 @@ Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
 		"data": {
 			"join": 1549073054,
 			"in_channel": true,
-			"role": 2
+			"role": 2,
+			"uid": <uid>
+			"account": <string_uid>
 		}
 	}
 	```
@@ -573,7 +612,7 @@ Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
 	</tr>
 	<tr><td>join</td>
 	<td><p>The timestamp when the user joins the channel</p>
-	</td>
+		</td></tr>
 	<tr><td>success</td>
 	<td><p>Checks the request state</p>
 	<ul>
@@ -600,17 +639,119 @@ Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
 	</ul>
 	</td>
 	</tr>
+	<tr><td>uid</td>
+	<td><p>The user ID, which is an integer</p>
+	</td></tr>
+	<tr><td>account</td>
+	<td><p>The user account, which is a string</p>
+	</td></tr>
 	</tbody>
 	</table>
 
+### Get a User Role in the Channel with the User Account(GET)
 
+This method checks if a specified user is in a specified channel, and if yes, checks the role of this user in the channel.
 
-### Get the User Role List in a Channel (GET)
+-  Method: GET
+-  Path: 
+	```
+	https://api.agora.io/dev/v2/apps/{appid}/channels/{cname}/accounts/{account}/properties
+	```
+-  Parameters: appid, account, cname
+
+	<table>
+	<colgroup>
+	<col/>
+	<col/>
+	</colgroup>
+	<tbody>
+	<tr><td><strong>Parameter</strong></td>
+	<td><strong>Description</strong></td>
+	</tr>
+	<tr><td>appid</td>
+	<td>Mandatory, App ID in the dashboard</td>
+	</tr>
+	<tr><td>account</td>
+	<td>Mandatory, user account which can be obtained by using the SDK</td>
+	</tr>
+	<tr><td>cname</td>
+	<td>Mandatory, channel name</td>
+	</tr>
+	</tbody>
+	</table>
+
+-  Response:
+
+	```
+	{
+		"success": true,
+		"data": {
+			"join": 1549073054,
+			"in_channel": true,
+			"role": 2,
+			"uid": <uid>
+			"account": <string_uid>
+		}
+	}
+	```
+
+	<table>
+	<colgroup>
+	<col/>
+	<col/>
+	</colgroup>
+	<tbody>
+	<tr><td><strong>Parameter</strong></td>
+	<td><strong>Description</strong></td>
+	</tr>
+	<tr><td>join</td>
+	<td><p>The timestamp when the user joins the channel</p>
+		</td></tr>
+	<tr><td>success</td>
+	<td><p>Checks the request state</p>
+	<ul>
+	<li>true: Request succeeded</li>
+	<li>false: Request failed</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>in_channel</td>
+	<td><p>Checks if the user is in the channel</p>
+	<ul>
+	<li>true: The user is in the channel</li>
+	<li>false: The user is not in the channel</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>role</td>
+	<td><p>Checks the role of the user in the channel</p>
+	<ul>
+	<li>0: Unknown role</li>
+	<li>1: Communication user</li>
+	<li>2: Video live broadcaster</li>
+	<li>3: Live broadcast audience</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>uid</td>
+	<td><p>The user ID, which is an integer</p>
+	</td></tr>
+	<tr><td>account</td>
+	<td><p>The user account, which is a string</p>
+	</td></tr>
+	</tbody>
+	</table>
+
+	
+### Get the User Role List in a Channel (GET)<sup>1</sup>
 
 This method checks the user role list in a specified channel.
 
 -  Method: GET
--  Path: BaseUrl/channel/user/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/channel/users/
+	```
 -  Parameters: appid, cname
 
 	<table>
@@ -631,8 +772,11 @@ This method checks the user role list in a specified channel.
 	</tbody>
 	</table>
 
-Example: /channel/user/<appid\>/<channelName\>
-
+Example:
+```
+https://api.agora.io/dev/v1/channel/user/{appid}/{cname}
+```
+	
 -  Response: the responses of difference channel profiles differ:
 
 	```
@@ -698,7 +842,7 @@ Example: /channel/user/<appid\>/<channelName\>
 		"data": {
 				"channel_exist": true,
 				"mode": 2,
-				"broadcaster": [<uid>],
+				"broadcasters": [<uid>],
 				"audience": [<uid>],
 				"audience_total": <count>
 		}
@@ -738,11 +882,170 @@ Example: /channel/user/<appid\>/<channelName\>
 	</ul>
 	</td>
 	</tr>
-	<tr><td>broadcaster</td>
+	<tr><td>broadcasters</td>
 	<td>The ID list of all the broadcasters in the channel</td>
 	</tr>
 	<tr><td>audience</td>
 	<td>The ID list of the first 10000 auience in the channel</td>
+	</tr>
+	<tr><td>audience_total</td>
+	<td>The total number of auience in the channel</td>
+	</tr>
+	</tbody>
+	</table>
+
+### Get the User Role List in a Channel (GET)<sup>2</sup>
+
+This method checks the user role list in a specified channel.
+
+-  Method: GET
+-  Path: 
+	```
+	https://api.agora.io/dev/v2/apps/{appid}/channels/{cname}/usersWithAccount
+	```
+-  Parameters: appid, cname
+
+	<table>
+	<colgroup>
+	<col/>
+	<col/>
+	</colgroup>
+	<tbody>
+	<tr><td><strong>Parameter</strong></td>
+	<td><strong>Description</strong></td>
+	</tr>
+	<tr><td>appid</td>
+	<td>Mandatory, App ID in the dashboard</td>
+	</tr>
+	<tr><td>cname</td>
+	<td>Mandatory, channel name</td>
+	</tr>
+	</tbody>
+	</table>
+
+-  Response: the responses of difference channel profiles differ:
+
+	```
+	// If it is a communication channel:
+	{
+			"success": true,
+			"data": {
+					"channel_exist": true,
+					"mode": 1,
+					"total": <count>,
+					"users": [{uid: <uid>, account: <account>}],
+			}
+	}
+	```
+	
+	<table>
+	<colgroup>
+	<col/>
+	<col/>
+	</colgroup>
+	<tbody>
+	<tr><td><strong>Parameter</strong></td>
+	<td><strong>Description</strong></td>
+	</tr>
+	<tr><td>success</td>
+	<td><p>Checks the request state:</p>
+	<ul>
+	<li>true: Request succeeded</li>
+	<li>false: Request failed</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>channel_exist</td>
+	<td><p>Checks if the channel exits:</p>
+	<ul>
+	<li>true: Channel exists</li>
+	<li>false: Channel does not exist</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>mode</td>
+	<td><p>Checks the channel mode:</p>
+	<ul>
+	<li>1: The communication mode</li>
+	<li>2: The live broadcast mode</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>total</td>
+	<td>Total number of the users in the channel</td>
+	</tr>
+	<tr><td>users</td>
+	<td>The list of all users in the channel, which includes the following arguments:
+		<ul>
+			<li>uid: The user ID</li>
+			<li>account: The user account</li>
+		</ul>
+			</td>
+	</tr>
+	</tbody>
+	</table>
+	<br>
+
+	```json
+// If it is a live broadcast channel.
+{
+		"success": true,
+		"data": {
+				"channel_exist": true,
+				"mode": 2,
+				"broadcasters": [{uid: <uid>, account: <account>}],
+				"audience": [{uid: <uid>, account: <account>}],
+				"audience_total": <count>
+		}
+}
+```
+	
+	<table>
+	<colgroup>
+	<col/>
+	<col/>
+	</colgroup>
+	<tbody>
+	<tr><td><strong>Parameter</strong></td>
+	<td><strong>Description</strong></td>
+	</tr>
+	<tr><td>success</td>
+	<td><p>Checks the request state:</p>
+	<ul>
+	<li>true: Request succeeded</li>
+	<li>false: Request failed</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>channel_exist</td>
+	<td><p>Checks if the channel exits:</p>
+	<ul>
+	<li>true: Channel exists</li>
+	<li>false: Channel does not exist</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>mode</td>
+	<td><p>Checks the channel mode:</p>
+	<ul>
+	<li>1: The communication mode</li>
+	<li>2: The live broadcast mode</li>
+	</ul>
+	</td>
+	</tr>
+	<tr><td>broadcasters</td>
+	<td>The list of all the broadcasters in the channel, which includes the following arguments:
+		<ul>
+			<li>uid: The user ID</li>
+			<li>account: The user account</li>
+		</ul></td>
+	</tr>
+	<tr><td>audience</td>
+	<td>The list of the first 10000 auience in the channel, which includes the following arguments:
+		<ul>
+			<li>uid: The user ID</li>
+			<li>account: The user account</li>
+		</ul></td>
 	</tr>
 	<tr><td>audience_total</td>
 	<td>The total number of auience in the channel</td>
@@ -757,7 +1060,10 @@ Example: /channel/user/<appid\>/<channelName\>
 This method gets the channel list of a specified vendor.
 
 -  Method: GET
--  Path: BaseUrl/channel/appid/
+-  Path: 
+	```
+	https://api.agora.io/dev/v1/channel/appid/
+	```
 -  Parameters: ?page\_no=0&page\_size=100 \(Optional\)
 
 	<table>
@@ -778,8 +1084,14 @@ This method gets the channel list of a specified vendor.
 	</tbody>
 	</table>
 
-Example: /channel/<appid\>
-Example with parameters: /channel/<appid\>page\_no=0&page\_size=100
+Example: 
+	
+```
+// With no parameter
+https://api.agora.io/dev/v1/channel/<appid>
+// With parameters
+https://api.agora.io/dev/v1/channel/<appid>?page_no=0&page_size=100
+```
 
 -  Response:
 
