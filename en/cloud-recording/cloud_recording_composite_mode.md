@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 03:38:59 GMT+0800 (CST)
+updatedAt: Wed Oct 16 2019 09:59:32 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
