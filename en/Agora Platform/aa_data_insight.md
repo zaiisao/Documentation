@@ -3,7 +3,7 @@
 title: Data Insight Beta
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Wed Oct 16 2019 07:27:02 GMT+0800 (CST)
+updatedAt: Wed Oct 16 2019 07:27:05 GMT+0800 (CST)
 ---
 # Data Insight Beta
 The **Data Insight** function of Agora Analytics provides periodic call usage and call quality statistics. It is designed to help you understand the trend of the usage and quality of your calls, their distribution in various dimensions, and daily data breakdown.
@@ -41,7 +41,7 @@ The following statistics are available on the **Usage Overview** page:
   - Number of channels
   - Maximum online users
   - Number of users
-- **Top**: View the top five or ten usage statistics by different dimensions, such as country, operation system, SDK versions and more.
+- **Distribution**: View the top five or ten usage statistics by different dimensions, such as country, operation system, SDK versions and more.
 
 ### Overview
 
@@ -74,9 +74,9 @@ The following tables list the metrics in the subsequent sections of the Overview
 |       Total users        | Total number of unique UIDs in each channel.                 |
 |    Total join counts     | Each time a user joins a channel is one count.               |
 
-### Top
+### Distribution
 
-The Top panel shows the top five or ten usage statistics in the following dimensions.
+The Distribution panel shows the top five or ten usage statistics in the following dimensions.
 
 |           Dimension           | Description                                                  |
 | :---------------------------: | :----------------------------------------------------------- |
@@ -84,7 +84,7 @@ The Top panel shows the top five or ten usage statistics in the following dimens
 |          Geo - China          | Top 10 provinces in China with the highest usage.            |
 |         Network type          | Top 5 network types with the highest usage.                  |
 |              OS               | Top 5 operating systems with the highest usage.              |
-| Ranked peak users in channels | Top 5 types of channels with the highest usage. This tracks and ranks groups of peak online users within channels. |
+| Peak user number in a channel | Top 5 types of channels with the highest usage. The channles are categorized by the peak user number. |
 |          SDK version          | Top 10 SDK versions with the highest usage.                  |
 
 <div class="alert note">Items with no usage are not displayed.</div>
@@ -98,7 +98,7 @@ The following statistics are available on the **Quality Overview** page:
   - First loading delay
   - Audio/video freeze rate
   - Network quality
-- **Top**: View the top five or ten quality statistics  by different dimensions, such as country, operation system, SDK versions and more.
+- **Distribution**: View the top five or ten quality statistics  by different dimensions, such as country, operation system, SDK versions and more.
 
 ### Overview
 
@@ -144,16 +144,16 @@ Click **More** in the top-right corner of the charts to view the data in a table
 | High-quality audio transmission rate | The percentage of audio transmission with a ≤ 5% packet loss rate. |
 | High-quality video transmission rate | The percentage of video transmission with a ≤ 5% packet loss rate. |
 
-### Top
+### Distribution
 
-The Top panel shows the top five or ten quality statistics in the following dimensions.
+The Distribution panel shows the top five or ten quality statistics in the following dimensions.
 
 |    Dimension     | Description                                                  |
 | :--------------: | :----------------------------------------------------------- |
 |   Geo - Globe    | Top 5 countries with the highest usage.                      |
 |   Network type   | Top 5 network types with highest usage.                      |
 |        OS        | Top 5 operating systems with highest usage.                  |
-| Peak user bucket | Top 5 types of channels with the highest usage. This tracks and ranks groups of peak online users within channels. |
+| Peak user number in a channel | Top 5 types of channels with the highest usage. The channles are categorized by the peak user number. |
 |   SDK version    | Top 10 SDK versions with highest usage.                      |
 
 <div class="alert note">Items with no usage are not displayed.</div>
