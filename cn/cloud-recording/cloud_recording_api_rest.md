@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Oct 16 2019 09:46:14 GMT+0800 (CST)
+updatedAt: Wed Oct 16 2019 10:14:16 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -118,7 +118,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 | :----------- | :----- | :----------------------------------------------------------- |
 | `appid`      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。必须使用和待录制的频道相同的 App ID。 |
 | `resourceid` | String | 通过 [`acquire`](#acquire) 请求获取的 resource ID。          |
-| `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。单流模式下，分开录制频道内每个 UID 的音频流和视频流，每个 ID 均有其对应的音频文件和视频文件。合流模式下，频道内所有 UID 的音视频混合录制为一个音视频文件。                       |
+| `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。单流模式下，分开录制频道内每个 UID（或指定 UID）的音频流和视频流，每个 UID 均有其对应的音频文件和视频文件。合流模式下，频道内所有（或指定）UID 的音视频混合录制为一个音视频文件。                       |
 
 该 API 需要在请求包体中传入以下参数。
 
