@@ -3,13 +3,14 @@
 title: 数据洞察 Beta
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 06:24:56 GMT+0800 (CST)
+updatedAt: Wed Oct 16 2019 02:19:42 GMT+0800 (CST)
 ---
 # 数据洞察 Beta
 水晶球的**数据洞察**功能提供通话用量和质量数据的阶段性分析，帮助你了解用量和质量的总体趋势、不同维度的分布情况和每天的数据明细。
 
 - 支持查看指定日期范围内的每日数据。
 - 数据每日更新。
+- 你也可以通过[水晶球 RESTful API](../../cn/Agora%20Platform/aa_api.md) 获取相关数据，具体可咨询商务。
 
 <div class="alert info">当前仅提供 Agora RTC SDK 的用量和质量数据。</div>
 
