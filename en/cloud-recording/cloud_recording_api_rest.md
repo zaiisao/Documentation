@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Oct 16 2019 10:01:32 GMT+0800 (CST)
+updatedAt: Wed Oct 16 2019 10:12:49 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -115,7 +115,7 @@ The following parameters are required in the URL.
 | :----------- | :----- | :----------------------------------------------------------- |
 | `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
-| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). Composite mode is the default mode. In individual mode, Agora Cloud Recording generates one audio and/or video file for each UID. In composite mode, Agora Cloud Recording combines the audio and video of all UIDs into a single file. |
+| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). Composite mode is the default mode. In individual mode, Agora Cloud Recording generates one audio and/or video file for each UID or each specfied UID in the channel. In composite mode, Agora Cloud Recording combines the audio and video of all or specified UIDs into a single file. |
 
 The following parameters are required in the request body.
 
