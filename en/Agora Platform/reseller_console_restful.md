@@ -3,7 +3,7 @@
 title: Agora Reseller Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 02:13:59 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 02:15:06 GMT+0800 (CST)
 ---
 # Agora Reseller Console RESTful API
 ## Signature
@@ -721,7 +721,7 @@ https://api.agora.io/v1/resellers/companies/daily-bills?period=20190901&pageNume
 | `amount`    | Decimal | Amount of money.<br>**Note**</br>When it returns 0 in the `amount` parameter, there are two reasons.<ul><li>The project doesn't consume usage.<br><li>The usage of the project is less than the free threshold.</br> |
 | `currency`  | String  | Currency.<br><li>CNY: Chinese Yuan<br><li>USD: United States Dollar </br>       |
 
-#### ** Response sample**
+**Response sample**
 
 ```
 {
