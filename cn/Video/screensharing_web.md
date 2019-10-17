@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Thu Oct 17 2019 03:20:09 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 03:20:13 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -15,40 +15,23 @@ updatedAt: Thu Oct 17 2019 03:20:09 GMT+0800 (CST)
 - 视频会议场景中，屏幕共享可以将讲话者本地的文件、数据、网页、PPT 等画面分享给其他与会人；
 - 在线课堂场景中，屏幕共享可以将老师的课件、笔记、讲课内容等画面展示给学生观看。
 
-### 工作原理
+## 工作原理
 
 Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现的。
 
 - 如果只使用屏幕共享，则在新建流的时候，把 `video` 字段设为 `false`， `screen` 字段设为 `true` 即可。
-- 如果在使用屏幕共享的同时，还开启本地视频，则需要创建两个 Client 对象，一路发送屏幕共享流，一路发送视频流。新建流的时候，屏幕共享流的 `video` 字段设为 false， `screen` 字段设为 `true`；本地视频流的 `video` 字段设为 `true`，`screen` 字段设为 `false`。由于共享流也是一路流，因此也会占用一个 UID。
+- 如果在使用屏幕共享的同时，还开启本地视频，则需要创建两个 Client 对象，一路发送屏幕共享流，一路发送视频流。新建流的时候，屏幕共享流的 `video` 字段设为 `false`， `screen` 字段设为 `true`；本地视频流的 `video` 字段设为 `true`，`screen` 字段设为 `false`。由于共享流也是一路流，因此也会占用一个 UID。
 
 
 ## 实现方法
 
 在开始屏幕共享前，请确保你已了解如何[实现音视频通话](../../cn/Video/start_call_web.md)或[实现互动直播](../../cn/Video/start_live_web.md)。
 
-开始屏幕共享前，你需要在创建流的时候配置某些属性。Chrome 和 Firefox 浏览器在创建流的时候，相关的属性是不同的。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕信息。
+开始屏幕共享前，你需要在创建流的时候配置某些属性。不同浏览器在创建流的时候，相关的属性是不同的。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕信息。
 
 ### <a name = "chrome"></a>Chrome 屏幕共享
 
-#### 使用插件进行屏幕共享
-
-在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Video/chrome_screensharing_plugin.md) ，并获取插件的 `extensionId`，在建流的时候填入 `extensionId`。
-
-```javascript
-screenStream = AgoraRTC.createStream({
-  streamID: uid,
-  audio: false,
-  video: false,
-  screen: true,
-  //chrome extension ID
-  extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'
-});
-```
-
-#### 无插件屏幕共享
-
-Agora Web SDK 从 2.6.0 版本起，支持在 Chrome 72 及以上版本不安装插件直接共享屏幕，在 `createStream` 时不填写 `extensionId` 参数即可。
+在 Chrome 上屏幕共享直接在 `createStream` 时把 `video` 字段设为 `false`， `screen` 字段设为 `true` 即可。
 
 ```javascript
 // Check if the browser supports screen sharing without an extension
@@ -64,15 +47,48 @@ if(parseInt(tem[2]) >= 72  && navigator.mediaDevices.getDisplayMedia ) {
 }
 ```
 
+<div class="alert note">该功能要求 Agora Web SDK 2.6.0 或以上版本，Chrome 72 或以上版本。如果你使用的软件版本不满足此要求，请使用屏幕共享插件实现在 Chrome 上共享屏幕。</div>
+
+#### 使用屏幕共享插件
+
+安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Video/chrome_screensharing_plugin.md) ，并获取插件的 `extensionId`，在建流的时候填入 `extensionId`。
+
+```javascript
+screenStream = AgoraRTC.createStream({
+  streamID: uid,
+  audio: false,
+  video: false,
+  screen: true,
+  //chrome extension ID
+  extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'
+});
+```
+
 > - 因为一个 Stream 只能有一路视频流，所以 `video` 和 `screen` 属性不能同时为 `true`。
 > - `audio` 属性建议设置为 `false`，避免订阅端收到的两路流中都有音频，导致回声。
 
 
 ### Electron 屏幕共享
 
-Electron 屏幕共享不需要安装插件，但选择界面需要你自行绘制, Electron 仅提供用于获取共享源的接口。
+Electron 屏幕共享的选择界面需要你自行绘制，为方便快速集成，我们提供一个默认的选择界面。
 
-Electron 屏幕共享主要通过如下步骤实现：
+1. 调用 `AgoraRTC.createStream`， 将 `screen` 设置为 `true` 创建屏幕共享流。
+
+  ```javascript
+  localStream = AgoraRTC.createStream({
+    streamID: UID,
+    audio: false,
+    video: false,
+    screen: true
+  });
+  localStream.init(function(stream) {})
+  ```
+
+2. 调用 `localStream.init` ，SDK 会提供自带的默认界面让用户选择要共享的屏幕或窗口，如下图所示：
+
+![](https://web-cdn.agora.io/docs-files/1547455511311)
+
+如果你需要自定义选择界面，参考以下步骤：
 
 1. 调用 SDK 提供的  `AgoraRTC.getScreenSources` 方法获取可共享的屏幕信息。
 
@@ -90,9 +106,9 @@ Electron 屏幕共享主要通过如下步骤实现：
    - `name`：屏幕源的名字
    - `thumbnail`：屏幕源的快照
 
-2. 根据 `source` 的属性，（用 html 和 css）绘制选择界面，让用户选择要共享的屏幕源。为方便快速集成，Agora 提供默认的选择界面。
+2. 根据 `source` 的属性，（用 html 和 css）绘制选择界面，让用户选择要共享的屏幕源。
 
-   `source` 的属性与 Chrome 屏幕共享的选择界面对应关系如下：
+   `source` 的属性与屏幕共享的选择界面对应关系如下：
 
    ![](https://web-cdn.agora.io/docs-files/1547456888707)
 
@@ -111,16 +127,13 @@ Electron 屏幕共享主要通过如下步骤实现：
    localStream.init(function(stream) {})
    ```
 
-   如果未填写 `sourceId`，在调用 `localStream.init` 时，SDK 会提供自带的默认界面。默认的选择界面与 Chrome 的选择界面类似，如下图所示：
-
-   ![](https://web-cdn.agora.io/docs-files/1547455511311)
 
 > - `getScreenSources` 方法是对 Electron 提供的 `desktopCapturer.getSources` 进行的封装，详情可参考 [desktopCapturer](https://electronjs.org/docs/api/desktop-capturer)。
 > - 在非 Electron 下传入 `sourceId` 会被忽略。
 
-### <a name = "ff"></a>Firefox 屏幕共享
+### <a name="ff"></a>Firefox 屏幕共享
 
-Firefox 屏幕共享不需要安装插件，但是需要通过设置 `mediaSource` 指定分享屏幕的类型，`mediaSource` 的选择如下：
+Firefox 屏幕共享需要通过设置 `mediaSource` 指定分享屏幕的类型，`mediaSource` 的选择如下：
 
 - `screen`：分享整个显示器屏幕
 - `application`：分享某个应用的所有窗口
@@ -140,7 +153,7 @@ screenStream = AgoraRTC.createStream({
 > - `audio` 属性建议设置为 false，避免订阅端收到的两路流中都有音频，导致回声。
 > - Firefox 在 Windows 平台不支持 application 模式。
 
-### <a name = "both"></a>同时共享屏幕和开启视频
+### <a name="both"></a>同时共享屏幕和开启视频
 
 因为每个 Client 对象只能发送一路 Stream 流，所以如果要在一个发送端同时分享屏幕和开启视频，需要创建两个 Client，一路发送屏幕共享流，一路发送视频流。
 
@@ -199,7 +212,6 @@ screenClient.on('stream-added', function(evt) {
 下面的示例代码实现了同时共享屏幕和发送本地视频流，同时，我们在 GitHub 提供一个开源的[示例项目](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Web-Webpack)，你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web/)或者下载参考  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) 和 [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/index.js) 文件的源代码。
 
 <div class="alert note">下面的代码用了 <code>isFirefox</code> 和 <code>isCompatibleChrome</code> 来判断浏览器类型，你需要自己实现，也可以参考 <a href="https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/common.js#L28"><code>common.js</code></a> 中的代码。</div>
-
 ```javascript
 //TODO: 填入你的项目的 App ID
 var appID = "<yourAppID>";
@@ -313,5 +325,3 @@ videoClient.init(appID, function() {
 - 在本地共享的时候，本地流的 Client **不要订阅本地的分享流**，否则会增加计费。
 - 创建屏幕共享流的时候，`video`/`audio` 必须设置为 `false`。
 - 在 Windows 平台上进行屏幕共享时，如果共享的是 QQ 聊天窗口会导致黑屏。
-
-
