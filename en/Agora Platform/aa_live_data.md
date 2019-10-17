@@ -3,7 +3,7 @@
 title: Live Data (Beta)
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 08:40:00 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 09:33:23 GMT+0800 (CST)
 ---
 # Live Data (Beta)
 Use the Live Data function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
@@ -20,7 +20,7 @@ Use the Live Data function of Agora Analytics to monitor the live status of your
 1. Contact sales-us@agora.io to enable the Live Data function for your project.
 2. Login to [Agora Console](https://console.agora.io/) and click **Agora Analytics** on the left navigation bar.
 3. Select a project in the top-left corner.
-4. Click [**Live Beat**](#livebeat) under **Live Data** to view the live status of your project. Click [**Live Scale**](#livescale), [**Live Experience**](#livexp), or [**Live Network**](#livenet) to view detailed live statistics and analytic diagrams.
+4. Click [**Live Beat**](#livebeat) under **Live Data** to view the live status of your project. Click [**Scale Overview**](#livescale), [**Live Experience**](#livexp), or [**Live Network**](#livenet) to view detailed live statistics and analytic diagrams.
 
 ## <a name="livebeat"></a>Live Beat
 
@@ -30,9 +30,9 @@ Note: Only displays with a resolution of 1800 (px) or higher fully support the f
 
 ![](https://web-cdn.agora.io/docs-files/1571296191678)
 
-### Live Scale
+### Scale Overview
 
-**Live Scale** displays minute-by-minute changes to the current channel number and current user number. 
+**Scale Overview** displays minute-by-minute changes to the current channel number and current user number. 
 
 | Metric                 | Description                                                  |
 | :--------------------- | :----------------------------------------------------------- |
@@ -41,7 +41,7 @@ Note: Only displays with a resolution of 1800 (px) or higher fully support the f
 
 ### Live Quality
 
-**Live Scale** displays a minute-by-minute update of the quality statistics of your project.
+**Scale Overview** displays a minute-by-minute update of the quality statistics of your project.
 
 | Metric           | Description                                                  |
 | :--------------- | :----------------------------------------------------------- |
@@ -79,9 +79,9 @@ When the users of a project are concentrated in one country, this section displa
 
 ![](https://web-cdn.agora.io/docs-files/1571296396737)
 
-## <a name="livescale"></a>Live Scale
+## <a name="livescale"></a>Scale Overview
 
-**Live Scale** shows the live scale statistics and distribution for a specified period. The live scale statistics include the user number and the channel number.
+**Scale Overview** shows the live scale statistics and distribution for a specified period. The live scale statistics include the user number and the channel number.
 
 Use the timeline at the top of the page to adjust the range of time you want to view or specify whether the page should update the statistics automatically.
 
