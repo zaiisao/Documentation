@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 02:26:47 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 05:10:16 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
