@@ -3,7 +3,7 @@
 title: Live Data (Beta)
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 08:39:47 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 08:40:00 GMT+0800 (CST)
 ---
 # Live Data (Beta)
 Use the Live Data function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
@@ -26,7 +26,7 @@ Use the Live Data function of Agora Analytics to monitor the live status of your
 
 **Live Beat** displays the real-time status of your project via the **LIVE BEAT** dashboard. Click the expand button at the top of the page to switch to the fullscreen view. 
 
-Note: Only displays with a resolution of 1990 (px) or higher fully support the fullscreen view. Certain statistics may not be visible when not in fullscreen mode.
+Note: Only displays with a resolution of 1800 (px) or higher fully support the fullscreen view. Certain statistics may not be visible when not in fullscreen mode.
 
 ![](https://web-cdn.agora.io/docs-files/1571296191678)
 
