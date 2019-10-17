@@ -3,7 +3,7 @@
 title: Agora Reseller Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 02:19:16 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 02:19:21 GMT+0800 (CST)
 ---
 # Agora Reseller Console RESTful API
 ## Signature
@@ -709,7 +709,7 @@ https://api.agora.io/v1/resellers/companies/daily-bills?period=20190901&pageNume
 | `totalSize`  | Number     | Total record number.                                         |
 | `pageSize`   | Number     | Record number of current page, with the value less than 1000. |
 | `pageNumber` | Number     | Page number.                                                 |
-| `hasMore`    | Boolean    | Whether there is more pages or not. <br><li>true: There is<br><li>false: There is not</br> |
+| `hasMore`    | Boolean    | Whether there is more pages or not. <br><li>True: There is<br><li>False: There is not</br> |
 | `elements`   | JSONArray | Elements structure.                                                   |
 
 #### Elements structure
