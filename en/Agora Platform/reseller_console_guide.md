@@ -3,7 +3,7 @@
 title: Reseller Console Overview
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 07:52:49 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 07:52:52 GMT+0800 (CST)
 ---
 # Reseller Console Overview
 Agora Reseller Console is a tool for Agora's resellers to manage their companies and projects. Agora Reseller Console provides a set of tools to check usage and manage the company.
@@ -121,7 +121,7 @@ Choose **Video & Audio** to check the usage of the video and the audio products.
 
 - Chart description: It shows the total audio duration and the total video duration by default. Click the legend below the chart to see the usage chart of SD video, HD video and HDP video.
    
-	<div class="alert note"> The total video duration is the sum of the SD video duration, HD video duration and HDP video duration.<br><li>SD: Standard definition, with the value range: 16p × 16p, 640p × 360p.<br><li>HD: High definition, with the value range: 640p × 360p, 1280p × 720p.<br><li>HDP: Ultra high-definition, with the value more than 1280p × 720p.</li></br></div>
+	<div class="alert note"> The total video duration is the sum of the SD video duration, HD video duration and HDP video duration.<ul><li>SD: Standard definition, with the value range: 16p × 16p, 640p × 360p.<br><li>HD: High definition, with the value range: 640p × 360p, 1280p × 720p.<br><li>HDP: Ultra high-definition, with the value more than 1280p × 720p.</ul></div>
  
 
   
@@ -175,7 +175,7 @@ Choose **Transcoding** to check the usage of the transcoding product.
 
   Click the legend below the chart to see the usage chart of H265 audio and video hosting-in duration.
 
-  <div class="alert note">Key terms:- Transcoding: Transcoding is used in CDN live streaming when multiple hosts are in the channel. In CDN live streaming, the audio and video streams sent to the SD-RTN™ are transferred into RTMP (Real-Time Messaging Protocol) protocol and pushed to the CDN.- Hosting-in: An audience can apply to become a host to interact directly with the existing hosts.- H264: H.264, also referred to as MPEG-4 Part 10 or Advanced Video Coding (MPEG-4 AVC), is a block-oriented motion-compensation-based video compression standard.- H265: H.265, also referred to as MPEG-H Part 2 or High Efficiency Video Coding (HEVC), is a video compression standard.</div>
+  <div class="alert note">Key terms:<ul><li>Transcoding: Transcoding is used in CDN live streaming when multiple hosts are in the channel. In CDN live streaming, the audio and video streams sent to the SD-RTN™ are transferred into RTMP (Real-Time Messaging Protocol) protocol and pushed to the CDN.<br><li>Hosting-in: An audience can apply to become a host to interact directly with the existing hosts.<br><li>H264: H.264, also referred to as MPEG-4 Part 10 or Advanced Video Coding (MPEG-4 AVC), is a block-oriented motion-compensation-based video compression standard.<br><li>H265: H.265, also referred to as MPEG-H Part 2 or High Efficiency Video Coding (HEVC), is a video compression standard.</ul></div>
   
 
 #### Concurrent channel
