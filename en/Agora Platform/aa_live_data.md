@@ -3,7 +3,7 @@
 title: Live Data (Beta)
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 09:36:10 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 09:37:10 GMT+0800 (CST)
 ---
 # Live Data (Beta)
 Use the Live Data function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
@@ -20,7 +20,7 @@ Use the Live Data function of Agora Analytics to monitor the live status of your
 1. Contact sales-us@agora.io to enable the Live Data function for your project.
 2. Login to [Agora Console](https://console.agora.io/) and click **Agora Analytics** on the left navigation bar.
 3. Select a project in the top-left corner.
-4. Click [**Live Beat**](#livebeat) under **Live Data** to view the live status of your project. Click [**Live Scale**](#livescale), [**Live Experience**](#livexp), or [**Live Network**](#livenet) to view detailed live statistics and analytic diagrams.
+4. Click [**Live Beat**](#livebeat) under **Live Data** to view the live status of your project. Click [**Scale Overview**](#livescale), [**Experience Overview**](#livexp), or [**Network Overview**](#livenet) to view detailed live statistics and analytic diagrams.
 
 ## <a name="livebeat"></a>Live Beat
 
@@ -41,7 +41,7 @@ Note: Only displays with a resolution of 1800 (px) or higher fully support the f
 
 ### Live Quality
 
-**Live Scale** displays a minute-by-minute update of the quality statistics of your project.
+**Live Quality** displays a minute-by-minute update of the quality statistics of your project.
 
 | Metric           | Description                                                  |
 | :--------------- | :----------------------------------------------------------- |
@@ -79,9 +79,9 @@ When the users of a project are concentrated in one country, this section displa
 
 ![](https://web-cdn.agora.io/docs-files/1571296396737)
 
-## <a name="livescale"></a>Live Scale
+## <a name="livescale"></a>Scale Overview
 
-**Live Scale** shows the live scale statistics and distribution for a specified period. The live scale statistics include the user number and the channel number.
+**Scale Overview** shows the live scale statistics and distribution for a specified period. The live scale statistics include the user number and the channel number.
 
 Use the timeline at the top of the page to adjust the range of time you want to view or specify whether the page should update the statistics automatically.
 
@@ -123,9 +123,9 @@ Use the timeline at the top of the page to adjust the range of time you want to 
 | Peak User Number in a Channel | Categorizes the channels by peak user number, and ranks the types of channels by user number. Shows the channel number and the percentage of the overall channels each type of channel has. |
 | SDK Version                   | Ranks the SDK version by user number, and shows each SDK version's user number and the percentage of the overall users it contains. |
 
-## <a name="livexp"></a>Live Experience
+## <a name="livexp"></a>Experience Overview
 
-**Live Experience** shows the real-time experience statistics and distribution in a specified period of time. The real-time experience statistics include the join-channel success in 5 seconds rate, the audio freeze rate, and the video freeze rate.
+**Experience Overview** shows the real-time experience statistics and distribution in a specified period of time. The real-time experience statistics include the join-channel success in 5 seconds rate, the audio freeze rate, and the video freeze rate.
 
 Use the timeline at the top of the page to adjust the period to view, or specify whether the page should automatically update the statistics.
 
@@ -150,9 +150,9 @@ Use the timeline at the top of the page to adjust the period to view, or specify
 | OS           | Ranks the operating systems by user number, and shows each operating system's join success in 5 sec rate along with audio and video freeze rates. |
 | SDK Version  | Ranks the SDK version by user number, and shows each SDK version's join success in 5 sec rate and audio along with video freeze rates. |
 
-## <a name="livenet"></a>Live Network
+## <a name="livenet"></a>Network Overview
 
-**Live Network** shows real-time network statistics and distribution in a specified period. The real-time network statistics include the upstream high-quality audio and video transmission rates along with the end-to-end high-quality audio and video transmission rates.
+**Network Overview** shows real-time network statistics and distribution in a specified period. The real-time network statistics include the upstream high-quality audio and video transmission rates along with the end-to-end high-quality audio and video transmission rates.
 
 Use the [timeline](#timeline) at the top of the page to adjust the period to view or specify whether the page should update the statistics automatically.
 
