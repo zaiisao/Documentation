@@ -3,7 +3,7 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Wed Oct 16 2019 02:20:26 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 02:23:56 GMT+0800 (CST)
 ---
 # Agora Analytics
 [Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience.
@@ -27,3 +27,14 @@ updatedAt: Wed Oct 16 2019 02:20:26 GMT+0800 (CST)
 > Before using Data Insight, contact sales-us@agora.io to enable this function.
 
 ![](https://web-cdn.agora.io/docs-files/1571120894658)
+
+## Live Data
+
+**Live Data** helps you understand the real-time status of your project. See Live Data for details.
+
+- View the real-time scale, quality, and any abnormalities of your project.
+- Focus on the current quality issues in various dimensions, including region, SDK version, network type, and more.
+
+> Before using Data Insight, contact sales-us@agora.io to enable this function.
+
+![](https://web-cdn.agora.io/docs-files/1571122479296)
