@@ -3,7 +3,7 @@
 title: 实时数据 (Beta)
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 08:39:36 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 08:40:03 GMT+0800 (CST)
 ---
 # 实时数据 (Beta)
 水晶球的**实时数据**功能，帮助你实时掌握项目整体动态，及时识别异常通话体验和异常根因。
@@ -28,7 +28,7 @@ updatedAt: Thu Oct 17 2019 08:39:36 GMT+0800 (CST)
 ## <a name="实时大屏"></a>实时大屏
 
 实时大屏以动态屏幕的形式展现项目的整体状态。你可以点击页面上方的最大化图标，开启全屏展示。
-> 全屏展示只支持尺寸为 1990 (px) 及以上的屏幕。非全屏展示会隐藏部分信息。
+> 全屏展示只支持尺寸为 1800 (px) 及以上的屏幕。非全屏展示会隐藏部分信息。
 
 ![](https://web-cdn.agora.io/docs-files/1571199605994)
 
