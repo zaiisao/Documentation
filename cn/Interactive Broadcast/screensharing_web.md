@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Thu Oct 17 2019 03:23:04 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 03:23:31 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -86,7 +86,7 @@ Electron 屏幕共享的选择界面需要你自行绘制，为方便快速集�
 
 2. 调用 `localStream.init` ，SDK 会提供自带的默认界面让用户选择要共享的屏幕或窗口，如下图所示：
 
-![](https://web-cdn.agora.io/docs-files/1547455511311)
+ ![](https://web-cdn.agora.io/docs-files/1547455511311)
 
 如果你需要自定义选择界面，参考以下步骤：
 
@@ -212,6 +212,7 @@ screenClient.on('stream-added', function(evt) {
 下面的示例代码实现了同时共享屏幕和发送本地视频流，同时，我们在 GitHub 提供一个开源的[示例项目](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Web-Webpack)，你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web/)或者下载参考  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) 和 [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/index.js) 文件的源代码。
 
 <div class="alert note">下面的代码用了 <code>isFirefox</code> 和 <code>isCompatibleChrome</code> 来判断浏览器类型，你需要自己实现，也可以参考 <a href="https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/common.js#L28"><code>common.js</code></a> 中的代码。</div>
+
 ```javascript
 //TODO: 填入你的项目的 App ID
 var appID = "<yourAppID>";
