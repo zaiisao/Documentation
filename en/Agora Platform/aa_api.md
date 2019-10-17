@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 05:10:16 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 07:14:52 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
@@ -597,10 +597,6 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 | 1       | Two same UIDs interfere with each other.                     |
 | 2       | The user is banned by the administrator.                     |
 | 3       | Connection failure                                           |
-| 4       | Video freeze                                                 |
-| 5       | Audio freeze                                                 |
-| 6       | Join-channel delay                                           |
-| 7       | Join-channel failure                                         |
 | 8       | Downstream network latency in video transmission             |
 | 9       | Downstream network latency in audio transmission             |
 | 10      | High CPU usage                                               |
@@ -616,9 +612,6 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 | 23      | Downstream packet loss in video transmission                 |
 | 24      | Downstream packet loss in audio transmission                 |
 | 25      | Electron integration                                         |
-| 26      | Low volume                                                   |
-| 27      | No sound                                                     |
-| 28      | Black screen                                                 |
 | 29      | Weak Wi-Fi signal (including hotspots)                       |
 | 30      | The user is banned from the channel.                         |
 | 31      | Join-channel failure because of an invalid APP ID.           |
