@@ -3,7 +3,7 @@
 title: Agora Reseller Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 01:58:05 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 02:13:59 GMT+0800 (CST)
 ---
 # Agora Reseller Console RESTful API
 ## Signature
@@ -282,7 +282,7 @@ https://api.agora.io/v1/resellers/companies?limit=20&offset=0
 
 | Parameter | Type      | Description          |
 | :-------- | :-------- | :------------------- |
-| rows      | JSONArray] | Company information. |
+| rows      | JSONArray | Company structure. |
 | count     | Number    | Company number.      |
 
 #### Company structure
@@ -295,9 +295,9 @@ https://api.agora.io/v1/resellers/companies?limit=20&offset=0
 | area        | String | Region. <br><li>CN: China<br><li>Non-CN: Outside of China</br>                    |
 | appLimit    | Number | The limit of the application number.                         |
 | memberLimit | Number | The limit of the member account number.                      |
-| industry    | String | Industry. See details in the Response parameter of [Create a company](#CreateCompanyReturn). |
-| interest    | String | Interested product. See details in the Response parameter of [Create a company](#CreateCompanyReturn). |
-| environment | String | Platform. See details in the Response parameter of [Create a company](#CreateCompanyReturn). |
+| industry    | String | Industry. See details in the **Response parameter** of [Create a company](#CreateCompanyReturn). |
+| interest    | String | Interested product. See details in the **Response parameter** of [Create a company](#CreateCompanyReturn). |
+| environment | String | Platform. See details in the **Response parameter** of [Create a company](#CreateCompanyReturn). |
 | status      | Number | Company status. <br><li>0: Normal<br><li>1: Insufficient balance<br><li>2: Automatically suspended<br><li>3: Manually suspended</br> |
 
 **Response sample**
@@ -523,8 +523,8 @@ https://api.agora.io/v1/resellers/companies/1/projects?limit=20&offset=0
 
 | Parameter | Type   | Description                                                  |
 | :-------- | :----- | :----------------------------------------------------------- |
-| model     | String | (Mandatory) Measurement model. <br><li>duration<br><li>transcoding<br><li>counter <br>Refer to [Business model and measurement model comparison table](#Model).</br> |
-| business  | String | (Mandatory) Business model. <br><li>default: [RTC](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk)<br><li>recording: On-premise recording<br><li>cloudRecording: Cloud recording<br><li>miniapp: Mini app<br><li>rtm: Real-time messaging (RTM)  <br>Refer to [Business model and measurement model comparison table](#Model).</br> |
+| model     | String | (Mandatory) Measurement model. <br><li>duration<br><li>transcoding<br><li>counter <br>See details in [Business model and measurement model comparison table](#Model).</br> |
+| business  | String | (Mandatory) Business model. <br><li>default: [RTC](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk)<br><li>recording: On-premise recording<br><li>cloudRecording: Cloud recording<br><li>miniapp: Mini app<br><li>rtm: Real-time messaging (RTM)  <br>See details in [Business model and measurement model comparison table](#Model).</br> |
 | fromTs    | Number | (Mandatory) Start time (sec), using UTC time and Unix timestamp. For example: 1569196800. |
 | endTs     | Number | (Mandatory) End time (sec), using UTC time and Unix timestamp. For example: 1569801599. |
 | interval  | String | (Mandatory) Time interval. <br><li>daily<br><li>monthly</br>                      |
@@ -609,8 +609,8 @@ https://api.agora.io/v1/resellers/companies/1/projects/1/usage?model=duration&bu
 
 | Parameter | Type   | Description                                                  |
 | :-------- | :----- | :----------------------------------------------------------- |
-| model     | String | (Mandatory) Measurement model. <br><li>duration<br><li>transcoding<br><li>counter <br>Refer to [Business model and measurement model comparison table](#Model2).</br> |
-| business  | String | (Mandatory) Business model. <br><li>default: [RTC](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk)<br><li>recording: On-premise recording<br><li>cloudRecording: Cloud recording<br><li>miniapp: Mini app<br><li>rtm: Real-time messaging (RTM) Refer to [Business model and measurement model comparison table](#Model2).</br> |
+| model     | String | (Mandatory) Measurement model. <br><li>duration<br><li>transcoding<br><li>counter <br>See details in [Business model and measurement model comparison table](#Model2).</br> |
+| business  | String | (Mandatory) Business model. <br><li>default: [RTC](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk)<br><li>recording: On-premise recording<br><li>cloudRecording: Cloud recording<br><li>miniapp: Mini app<br><li>rtm: Real-time messaging (RTM) <br>See details in [Business model and measurement model comparison table](#Model2).</br> |
 | fromTs    | Number | (Mandatory) Start time (sec), using UTC time and Unix timestamp. For example: 1569196800. |
 | endTs     | Number | (Mandatory) End time (sec), using UTC time and Unix timestamp. For example: 1569801599. |
 | interval  | String | (Mandatory) Time interval. <br><li>daily<br><li>monthly </br>                     |
@@ -653,8 +653,8 @@ https://api.agora.io/v1/resellers/companies/1/projects/1/usage?model=duration&bu
 
 | Parameter   | Type   | Description                                                  |
 | :---------- | :----- | :----------------------------------------------------------- |
-| duration    | String | The duration of each product.<br><li>default: RTC<br><li>miniapp: Mini app<br><li>recording: On-premise recording<br><li>cloudRecording: Cloud recording <br>Refer to [Fetch the company usage](#CompanyUsage).</br> |
-| transcoding | String | The usage of transcoding in RTC.<br><li>transcodeDuration: Transcoding<br><li>concurrentChannel: Concurrent channel<br><li>counter: Daily activate user <br>Refer to [Fetch the company usage](#CompanyUsage).</br> |
+| duration    | String | The duration of each product.<br><li>default: RTC<br><li>miniapp: Mini app<br><li>recording: On-premise recording<br><li>cloudRecording: Cloud recording <br>See details in the **Response parameter** of [Fetch the company usage](#CompanyUsage).</br> |
+| transcoding | String | The usage of transcoding in RTC.<br><li>transcodeDuration: Transcoding<br><li>concurrentChannel: Concurrent channel<br><li>counter: Daily activate user <br>See details in the **Response parameter** of [Fetch the company usage](#CompanyUsage).</br> |
 
 
 **Response sample**
@@ -709,7 +709,7 @@ https://api.agora.io/v1/resellers/companies/daily-bills?period=20190901&pageNume
 | `totalSize`  | Number     | Total record number.                                         |
 | `pageSize`   | Number     | Record number of current page, with the value less than 1000. |
 | `pageNumber` | Number     | Page number.                                                 |
-| `hasMore`    | Boolean    | Whether there is more pages or not. <br><li>ttrue: There is<br><li>tfalse: There is not</br> |
+| `hasMore`    | Boolean    | Whether there is more pages or not. <br><li>true: There is<br><li>false: There is not</br> |
 | `elements`   | JSONArray | Elements structure.                                                   |
 
 #### Elements structure
@@ -748,4 +748,4 @@ https://api.agora.io/v1/resellers/companies/daily-bills?period=20190901&pageNume
 
 ## Related documentation
 
-About how to manage company and check the usage in Agora Reseller Console, see [Reseller Console Overview](http://link/) for details.
+About how to manage company and check the usage in Agora Reseller Console, see [Reseller Console Overview](https://docs.agora.io/en/Agora%20Platform/reseller_console_guide?platform=All%20Platforms) for details.
