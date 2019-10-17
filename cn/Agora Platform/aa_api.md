@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 05:04:52 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 07:15:15 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
@@ -650,10 +650,6 @@ Cache-Control: no-cache
 | 1     | 相同 UID 互踢                    |
 | 2     | 管理员踢出                       |
 | 3     | 连接异常                         |
-| 4     | 视频卡顿                         |
-| 5   | 音频卡顿                         |
-| 6   | 进频道慢                         |
-| 7     | 进频道失败                       |
 | 8     | 视频下行网络延时                 |
 | 9     | 音频下行网络延时                 |
 | 10    | CPU 占用高                       |
@@ -669,9 +665,6 @@ Cache-Control: no-cache
 | 23    | 视频下行网络丢包                 |
 | 24    | 音频下行网络丢包                 |
 | 25    | Electron 集成                    |
-| 26    | 音频音量小                       |
-| 27    | 无声音                           |
-| 28    | 视频黑屏                         |
 | 29    | Wi-Fi（包含热点）信号差          |
 | 30    | 用户被踢出频道                   |
 | 31    | APP ID 无效，导致加频道失败      |
