@@ -3,7 +3,7 @@
 title: Agora Reseller Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 17 2019 02:15:06 GMT+0800 (CST)
+updatedAt: Thu Oct 17 2019 02:19:16 GMT+0800 (CST)
 ---
 # Agora Reseller Console RESTful API
 ## Signature
