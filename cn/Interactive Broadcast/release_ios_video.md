@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Mon Sep 30 2019 08:43:25 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 04:14:05 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -105,7 +105,7 @@ iOS 视频 SDK 支持两种主要场景:
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 
-新的推流实现方法，详见[推流到 CDN](../../cn/Interactive%20Broadcast/push_stream_android2.0.md)。
+新的推流实现方法，详见[推流到 CDN](../../cn/Interactive%20Broadcast/cdn_streaming_apple.md)。
 
 #### 2. 远端视频状态
 
