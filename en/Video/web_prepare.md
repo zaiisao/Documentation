@@ -67,7 +67,7 @@ This page contains information on how to prepare the development environment bef
 </table>
 
 <div class="alert info">Other browser support:
-	<li>The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP.</li>
+	<li>The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).</li>
 	<li>The Agora Web SDK v2.7 or later supports Edge on Windows 10, see <a href="https://docs.agora.io/en/faq/browser_support#edge">Edge support</a> for details.</li>
 	<li>The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.</li>
 </div>
