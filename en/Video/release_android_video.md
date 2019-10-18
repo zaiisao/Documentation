@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Oct 18 2019 04:04:10 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 04:04:15 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -95,6 +95,7 @@ For detailed descriptions for each error, see [Error Codes](https://docs.agora.i
 - After turning off the Bluetooth headset, the audio route becomes the earpiece instead of the loudspeaker.
 - Echos occur when a user is in the channel.
 - Occasional noise occurs in the Live Broadcast profile.
+- The app fails to play online music files using the `startAudioMixing` method on devices running Android 10.
 
 #### Miscellaneous
 
@@ -141,7 +142,7 @@ If your app implements RTMP streaming with the methods above, ensure that you up
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a87b3f2f17bce8f4cc42b3ee6312d30d4)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
 
-For how to implement the new methods, see [Push Streams to the CDN](../../en/Video/push_stream_android2.0.md).
+For how to implement the new methods, see [Push Streams to the CDN](../../en/Video/cdn_streaming_android.md).
 
 #### 2. Reporting the state of the remote video
 
