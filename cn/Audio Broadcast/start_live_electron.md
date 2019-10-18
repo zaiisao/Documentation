@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Electron
-updatedAt: Wed Sep 18 2019 05:21:23 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 07:22:18 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora Electron SDK 快速实现互动直播。
@@ -68,7 +68,7 @@ AGORA_ELECTRON_DEPENDENT = 4.0.0
 
 ### 安装依赖项
 
-在你的项目文件夹下运行 `nmp install` 安装依赖项。安装会自动触发 `npm run download`，你也可以到对应路径下手动安装。
+在你的项目文件夹下运行 `npm install` 安装依赖项。安装会自动触发 `npm run download`，你也可以到对应路径下手动安装。
 
 如果你想用 Xcode 或 Visual Studio 调试，可以执行 `npm run debug` 命令行生成项目文件及带符号表的 SDK 文件。
 
