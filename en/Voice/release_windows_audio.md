@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Sep 30 2019 08:41:06 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 04:09:21 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -71,7 +71,7 @@ If your app implements RTMP streaming with the methods above, ensure that you up
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
 
-For how to implement the new methods, see [Push Streams to the CDN](../../en/Voice/push_stream_android2.0.md).
+For how to implement the new methods, see [Push Streams to the CDN](../../en/Voice/cdn_streaming_windows.md).
 
 #### 2. Disabling/enabling the local audio
 
