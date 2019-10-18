@@ -3,7 +3,7 @@
 title: Data Insight (Beta)
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 08:13:59 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 08:15:21 GMT+0800 (CST)
 ---
 # Data Insight (Beta)
 The **Data Insight** function of Agora Analytics provides periodic call usage and call quality statistics. It is designed to help you understand the trend of the usage and quality of your calls, their distribution in various dimensions, and daily data breakdown.
@@ -119,7 +119,7 @@ Click **More** in the top-right corner of the charts to view the data in a table
 
 **First Loading**
 
-|         Metric         | Description                                                  |
+| <span style="white-space:nowrap;">&emsp;&emsp;Metric&emsp;&emsp;</span>         | Description                                                  |
 | :--------------------: | :----------------------------------------------------------- |
 | Audio first show delay | The elapsed time from when a user first joins a channel to when audio playback begins. The daily value is the median of all the users' elapsed time on that day. If a channel does not have an ongoing audio stream when a user joins it, this metric excludes that user. |
 | Video first show delay | The elapsed time between a user first joining a channel to when video playback begins. The daily value is the median of all the users' elapsed time on that day. If a channel does not have an ongoing video stream when a user joins it, this metric excludes that user. |
