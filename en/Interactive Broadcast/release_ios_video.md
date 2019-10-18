@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Fri Oct 18 2019 04:04:53 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 04:05:20 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -106,7 +106,7 @@ If your app implements RTMP streaming with the methods above, ensure that you up
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 
-For how to implement the new methods, see [Push Streams to the CDN](../../en/Interactive%20Broadcast/cdn_streaming_android.md).
+For how to implement the new methods, see [Push Streams to the CDN](../../en/Interactive%20Broadcast/cdn_streaming_apple.md).
 
 #### 2. Reporting the state of the remote video
 
