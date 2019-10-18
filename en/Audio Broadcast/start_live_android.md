@@ -59,8 +59,8 @@ Add the following line in the **/app/build.gradle** file of your project:
 ...
 dependencies {
     ...
-    // 2.8.1 is the version of the Agora SDK. You can set it to other versions.
-    implementation 'io.agora.rtc:full-sdk:2.8.1'
+    // 2.9.1 is the latest version of the Agora SDK. You can set it to other versions.
+    implementation 'io.agora.rtc:full-sdk:2.9.1'
 }
 ```
 
@@ -256,7 +256,8 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
  
     // If all the permissions are granted, initialize the RtcEngine object and join a channel.
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
+            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }

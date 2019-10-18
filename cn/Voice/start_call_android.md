@@ -58,8 +58,8 @@ Agora 在 Github 上提供一个开源的实时音视频通话示例项目 [Agor
 ...
 dependencies {
     ...
-    // 其中 2.8.1 表示 Agora SDK 的版本号。你也可以填写其他版本
-    implementation 'io.agora.rtc:full-sdk:2.8.1'
+    // 其中 2.9.1 是最新的 Agora SDK 的版本号。你也可以填写其他版本
+    implementation 'io.agora.rtc:full-sdk:2.9.1'
 }
 ```
 
@@ -257,7 +257,8 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
   
     // 获取权限后，初始化 RtcEngine，并加入频道。
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
+            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }
