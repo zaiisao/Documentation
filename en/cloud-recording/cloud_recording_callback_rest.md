@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 08:48:52 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 08:49:07 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -55,7 +55,7 @@ The event type and corresponding service type of the Agora Cloud Recording callb
 | [33](#33) | 2 (uploader module)           | The progress of uploading the recorded files to the cloud storage. |
 | [40](#40) | 1 (recorder module)           | The recording starts.                                        |
 | [41](#41) | 1 (recorder module)           | The recording exits.                                         |
-| [42](#42) | 1 (recorder module)           | The recording service syncs the information of the recorded files |
+| [42](#42) | 1 (recorder module)           | The recording service syncs the information of the recorded files. |
 | [43](#43) | 1 (recorder module)           | The state of the audio stream changes. |
 | [44](#44) | 1 (recorder module)           | The state of the video stream changes. |
 
