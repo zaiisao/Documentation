@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Oct 14 2019 02:09:46 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 04:13:36 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -142,7 +142,7 @@ Android 视频 SDK 支持两种主要场景:
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a87b3f2f17bce8f4cc42b3ee6312d30d4)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
 
-新的推流实现方法，请参考[推流到 CDN](../../cn/Video/push_stream_android2.0.md)。
+新的推流实现方法，请参考[推流到 CDN](../../cn/Video/cdn_streaming_android.md)。
 
 #### 2. 远端视频状态
 
