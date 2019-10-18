@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 08:42:52 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 08:43:10 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -155,7 +155,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 
 ### <a name="42"></a>42 recorder_slice_start
 
-`eventType` 为 42 表示录制服务生成第一个录制文件切片， `details` 中包含以下字段：
+`eventType` 为 42 表示同步录制文件信息， `details` 中包含以下字段：
 
 - `msgName`：String 类型，消息名称，即 `recorder_slice_start`。
 - `startUtcMs`：Number 类型，录制开始时间（即第一个录制切片的开始时间），UTC 时间，精确到毫秒。
