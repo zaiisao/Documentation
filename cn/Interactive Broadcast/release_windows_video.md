@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Mon Sep 30 2019 08:43:42 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 04:16:56 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -96,7 +96,7 @@ IAgoraRtcEngine.h 头文件中的拼写错误。
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
 
-新的推流实现方法，详见[推流到 CDN](../../cn/Interactive%20Broadcast/push_stream_android2.0.md)。
+新的推流实现方法，详见[推流到 CDN](../../cn/Interactive%20Broadcast/cdn_streaming_windows.md)。
 
 #### 2. 远端视频状态
 
