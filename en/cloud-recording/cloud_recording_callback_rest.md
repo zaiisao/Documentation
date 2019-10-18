@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 08:45:35 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 08:45:54 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -162,7 +162,7 @@ The event type and corresponding service type of the Agora Cloud Recording callb
 
 ### <a name="42"></a>42 recorder_slice_start
 
-`eventType` 42 indicates that the recording service starts slicing the first recording file, and `details` contains the following fields:
+`eventType` 42 indicates that the recording service syncs the information of the recorded files, and `details` contains the following fields:
 
 - `msgName`: String. The message name, `recorder_slice_start`.
 - `startUtcMs`：Number. The time (ms) in UTC when the recording starts (the starting time of the first slice file).
