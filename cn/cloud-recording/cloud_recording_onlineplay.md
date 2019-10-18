@@ -3,7 +3,7 @@
 title: 在线播放录制文件
 description: 
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 02:25:56 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 03:40:17 GMT+0800 (CST)
 ---
 # 在线播放录制文件
 ## 功能描述
