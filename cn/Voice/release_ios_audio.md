@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Mon Sep 30 2019 08:44:00 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 04:11:49 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -77,7 +77,7 @@ iOS 语音 SDK 支持两种主要场景:
 - [`removePublishStreamUrl`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/removePublishStreamUrl:)
 - [`rtmpStreamingChangedToState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 
-新的推流实现方法，详见[推流到 RTMP](../../cn/Voice/push_stream_android2.0.md)。
+新的推流实现方法，详见[推流到 RTMP](../../cn/Voice/cdn_streaming_apple.md)。
 
 #### 2. 关闭/开启本地音频采集
 
