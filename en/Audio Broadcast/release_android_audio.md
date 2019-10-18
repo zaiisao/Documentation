@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Oct 14 2019 02:11:15 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 04:08:04 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -116,7 +116,7 @@ If your app implements CDN streaming with the methods above, ensure that you upg
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a87b3f2f17bce8f4cc42b3ee6312d30d4)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
 
-For how to implement the new methods, see [Push Streams to the CDN](../../en/Audio%20Broadcast/push_stream_android2.0_audio.md).
+For how to implement the new methods, see [Push Streams to the CDN](../../en/Audio%20Broadcast/cdn_streaming_android.md).
 
 #### 2. Disabling/enabling the local audio
 
