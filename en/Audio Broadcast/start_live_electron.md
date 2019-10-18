@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Electron
-updatedAt: Wed Sep 18 2019 05:20:15 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 07:23:06 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start a basic broadcast call with the Agora SDK for Electron.
