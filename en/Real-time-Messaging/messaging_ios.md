@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Fri Oct 18 2019 09:51:54 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 09:52:09 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -22,11 +22,12 @@ We provide open-source demo projects on GitHub, which implement an elementary me
 
 ## Prerequisites
 
-- Xcode 9.0 or later
-- An iOS device running iOS 8.0 or later
-- A valid [Agora account](https://sso.agora.io/login/).
 
-<div class="alert note">Open the ports and whitelist the domains specified in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div>
+- Xcode 9.0 or later
+- An iOS device running iOS iOS 8.0 or later
+- A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
+
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div>
 
 ## Set up the development environment
 
@@ -61,6 +62,7 @@ You can skip to [Create an iOS project](#create) if you already have an App ID.
 ### <a name="create"></a> Create an iOS project
 
 Now, let's build a project from scratch. Skip to [Integrate the SDK](#Integrate) if you have already created a project.
+
 <details>
 	<summary><font color="#3ab7f8">Create an iOS project</font></summary>
 
@@ -68,16 +70,17 @@ Now, let's build a project from scratch. Skip to [Integrate the SDK](#Integrate)
 2. Choose **Single View App** as the template and click **Next**.
 3. Input the project information, such as the project name, team, organization name, and language, and click **Next**.
 	
-> If you have not added any team information, find and click the **Add account...** button, input your Apple ID, and click **Next** to add your team.
-
+  **Note**: If you haven't added any team information, you will see an **Add account...** button. Click it, input your Apple ID, and click **Next** to add your team.
 4. Choose the storage path of the project and click **Create**.
 5. Connect your iOS device to your computer.
 6. Go to the **TARGETS > Project Name > General > Signing** menu, choose **Automatically manage signing**, and then click **Enable Automatic** on the pop-up window.
 	
-![](https://web-cdn.agora.io/docs-files/1568803558097)
+	![](https://web-cdn.agora.io/docs-files/1568803558097)
 </details>
 
 ### <a name="Integrate"></a>Integrate the SDK
+
+
 Choose either of the following methods to integrate the Agora SDK into your project.
 
 **Method 1: Automatically integrate the SDK with CocoaPods**
@@ -155,7 +158,6 @@ Call the [initWithAppId](https://docs.agora.io/en/Real-time-Messaging/API%20Refe
 
 ### <a name = "login"></a>Log in Agora's RTM System
 
-Before logging in Agora's RTM system, ensure that you [create an AgoraRtmKit instance](#create).
 
 Call the [loginByToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:) method to log in Agora's RTM system. You need to: 
 
@@ -317,6 +319,7 @@ Call the [leaveWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%
     }
 }];
 ```
+
 
 ## Considerations
 
