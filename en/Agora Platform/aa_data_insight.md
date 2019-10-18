@@ -3,7 +3,7 @@
 title: Data Insight (Beta)
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 08:13:28 GMT+0800 (CST)
+updatedAt: Fri Oct 18 2019 08:13:59 GMT+0800 (CST)
 ---
 # Data Insight (Beta)
 The **Data Insight** function of Agora Analytics provides periodic call usage and call quality statistics. It is designed to help you understand the trend of the usage and quality of your calls, their distribution in various dimensions, and daily data breakdown.
