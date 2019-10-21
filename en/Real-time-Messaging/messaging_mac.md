@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.1
 platform: macOS
-updatedAt: Mon Oct 21 2019 08:13:01 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:25:51 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for macOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
