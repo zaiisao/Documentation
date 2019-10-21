@@ -3,7 +3,7 @@
 title: 云端录制 C++ API (Deprecated)
 description: 
 platform: CPP
-updatedAt: Mon Oct 21 2019 10:32:04 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 10:32:21 GMT+0800 (CST)
 ---
 # 云端录制 C++ API (Deprecated)
 | **接口类**                                                   | **描述**                   |
