@@ -3,9 +3,12 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: macOS
-updatedAt: Thu Oct 10 2019 04:37:58 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 12:14:47 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
+
+本页介绍在正式使用 [Agora RTM macOS SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
+
 ## 集成客户端
 
 ### 前提条件
