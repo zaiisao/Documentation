@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Mon Oct 21 2019 08:23:50 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:24:22 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
