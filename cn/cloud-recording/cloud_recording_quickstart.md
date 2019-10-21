@@ -3,7 +3,7 @@
 title: 云端录制快速开始 (Deprecated)
 description: Draft
 platform: Linux CPP
-updatedAt: Mon Oct 21 2019 12:14:43 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 12:15:14 GMT+0800 (CST)
 ---
 # 云端录制快速开始 (Deprecated)
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
