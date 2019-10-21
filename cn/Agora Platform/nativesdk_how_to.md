@@ -3,7 +3,7 @@
 title: Native SDK 相关
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:06:34 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:34:16 GMT+0800 (CST)
 ---
 # Native SDK 相关
 ## RESTful API  认证
