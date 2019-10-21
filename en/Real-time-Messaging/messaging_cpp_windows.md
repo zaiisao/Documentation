@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Mon Oct 21 2019 07:19:53 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 07:19:56 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM C++ SDK for Windows](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -230,12 +230,12 @@ You can call the `leave()` method to leave a channel.
 ## Considerations
 
 
-- The Agora RTM SDK supports creating multiple <%=RtmClient %> instances that are independent of each other. 
-- To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., have received <%=onLoginSuccess %>).
-- To use any of the channel features, you must first call the <%=createChannel %> method to create a channel instance. 
-- You can create a maximum of 20 channel instances for each <%=RtmClient %> instance and a user can join multiple channels at the same time. The `channelId` parameter must be channel-specific.
-- You cannot reuse an <%=RtmClient %> object that has been received by a user.
-- When you leave a channel and do not join it again, you can call the <%=destroyChannel %> method to release all resources used by the channel instance.
-- You cannot reuse a received <%=RtmMessage %> instance.
+- The Agora RTM SDK supports creating multiple [IRtmService](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html) instances that are independent of each other. 
+- To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., have received [onLoginSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a8cf1b2be30172004f595484e0a194d76)).
+- To use any of the channel features, you must first call the [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a0196e60ee165f6c97f561cf71499d377) method to create a channel instance. 
+- You can create a maximum of 20 channel instances for each [IRtmService](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html) instance and a user can join multiple channels at the same time. The `channelId` parameter must be channel-specific.
+- You cannot reuse an [IRtmService](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html) object that has been received by a user.
+- When you leave a channel and do not join it again, you can call the [release](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#af1c6a2e044136c3a25fb8a663cf5e90b) method to release all resources used by the channel instance.
+- You cannot reuse a received [IMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html) instance.
 
 
