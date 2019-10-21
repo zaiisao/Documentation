@@ -3,7 +3,7 @@
 title: 跨频道连麦
 description: 
 platform: iOS,macOS
-updatedAt: Mon Oct 21 2019 05:59:16 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 06:00:51 GMT+0800 (CST)
 ---
 # 跨频道连麦
 ## 功能描述
@@ -32,7 +32,7 @@ Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支�
 
 | 状态码 | 事件码 | 媒体流转发状态 |
 | ---------------- | ---------------- | ---------------- |
-| AgoraChannelMediaRelayStateRunning(2) 和 AgoraChannelMediaRelayErrorNone(0)     | AgoraChannelMediaRelayEventSentToDestinationChannel(4)      | 源频道开始向目标频道传输数据      |
+| AgoraChannelMediaRelayStateRunning(2) 和 AgoraChannelMediaRelayErrorNone(0)     | AgoraChannelMediaRelayEventSentTo-DestinationChannel(4)      | 源频道开始向目标频道传输数据      |
 | AgoraChannelMediaRelayStateFailure(3)     | /      | 跨频道媒体流转发出现异常。可以参考 error 参数中报告的出错原因进行问题排查      |
 | AgoraChannelMediaRelayStateIdle(0) 和 AgoraChannelMediaRelayErrorNone(0)     | /      | 已停止媒体流转发      |
 
