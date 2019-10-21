@@ -3,10 +3,12 @@
 title: Echo occurs in a call.
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 18:46:35 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 18:47:04 GMT+0800 (CST)
 ---
 # Echo occurs in a call.
-Echo is commonly caused by the device of the user who hears the echo. This problem can be fixed by using a headset in most cases, and ensure that the headset does not cause an echo. The Agora SDK supports echo cancellation.
+The Agora SDK supports echo cancellation. In most cases, this problem can be fixed by using a headset, and ensure that the headset does not cause an echo. 
+
+In a channel joined by multiple users, if a device does not work properly, chances are that all other users in the channel can hear echoes. Therefore, beware that the user hearing the echo may not necessarily be the one having the problem.
 
 ## Step 1: Self-check
 
