@@ -3,7 +3,7 @@
 title: 信息安全说明
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:06:33 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:19:27 GMT+0800 (CST)
 ---
 # 信息安全说明
 ## 简介
@@ -76,7 +76,7 @@ Agora 将客户数据进行以下分类:
 
 -   [访问授权](#AccessAuthorization)
 
--   [访问 Dashboard](#AccessDashboard)
+-   [访问控制台](#AccessDashboard)
 
 -   [数据储存](#DataRetention)
 
@@ -129,7 +129,7 @@ SDK 在接入传输服务时，第一步先要经过系统调度，选择合适�
 
 <a name = "AccessDashboard"></a>
 
-### 访问 Dashboard
+### 访问控制台
 
 客户可通过 Web 或 RESTful API 访问后台 dashboard，查看媒体服务器日志（Media Server Logs）和访问分析数据。 **控制台账号与客户提供的电子邮箱地址关联。**
 
