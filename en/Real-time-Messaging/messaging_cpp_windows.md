@@ -3,10 +3,12 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Mon Oct 21 2019 08:36:33 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:36:40 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
-You can use this guide to quickly start messaging with the [Agora RTM C++ SDK for Windows](https://docs.agora.io/en/Real-time-Messaging/downloads). 
+
+You can use this guide to quickly start messaging with the [Agora RTM Windows C++ SDK](https://docs.agora.io/en/Real-time-Messaging/downloads). 
+
 
 ## Try the demo
 
@@ -15,7 +17,7 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Windows](h
 ## Prerequisites
 
 - Microsoft Visual Studio 2017 or later
-- A Windows device running Windows 7 or later
+- A Windows device running on Windows 7 or later
 - A valid [Agora developer account](https://sso.agora.io/login/).
 
 
