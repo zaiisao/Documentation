@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Mon Oct 21 2019 07:00:16 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 07:00:20 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM Java SDK for Android](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -361,5 +361,6 @@ You can call the `leave()` method to leave a channel.
 - You cannot reuse an <%=RtmClient %> object that has been received by a user.
 - When you leave a channel and do not join it again, you can call the <%=destroyChannel %> method to release all resources used by the channel instance.
 - You cannot reuse a received <%=RtmMessage %> instance.
+
 
 
