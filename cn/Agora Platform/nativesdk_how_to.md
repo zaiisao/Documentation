@@ -3,7 +3,7 @@
 title: Native SDK 相关
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 26 2019 04:29:03 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:06:34 GMT+0800 (CST)
 ---
 # Native SDK 相关
 ## RESTful API  认证
@@ -36,7 +36,7 @@ let base64LoginString = loginData.base64EncodedString()
 
 ### 功能介绍
 
-RESTful 踢人 API：`https://api.agora.io/dev/v1/kicking-rule `，具体使用方法请参见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
+RESTful 踢人 API：`https://api.agora.io/dev/v1/kicking-rule `，具体使用方法请参见 [控制台RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
 
 ### 适用场景
 
