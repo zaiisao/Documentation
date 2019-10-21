@@ -1,11 +1,11 @@
 
 ---
-title: 云端录制快速开始
+title: 云端录制快速开始 (Deprecated)
 description: Draft
 platform: Linux CPP
-updatedAt: Thu Oct 17 2019 02:35:45 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 10:19:01 GMT+0800 (CST)
 ---
-# 云端录制快速开始
+# 云端录制快速开始 (Deprecated)
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
 
 > 当云端录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道模式。
