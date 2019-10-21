@@ -3,13 +3,10 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 10:14:29 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 10:16:18 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
-> 如果你使用的是 1.1.0 之前的版本，可以通过以下方式进行云端录制：
-> - [集成 SDK 录制](../../cn/cloud-recording/cloud_recording_quickstart.md)：集成云端录制 SDK，调用 API 实现录制。
-> - [使用 Demo 录制](../../cn/cloud-recording/cloud_recording_demo.md)：使用 Agora 提供的 demo，用命令行实现录制。
 
 通过 RESTful API，你可以发送网络请求控制云端录制：
 
