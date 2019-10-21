@@ -3,10 +3,10 @@
 title: Dashboard 概览
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 07:50:44 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:00:35 GMT+0800 (CST)
 ---
 # Dashboard 概览
-欢迎使用 Agora Dashboard。Agora Dashboard 提供直观的界面，方便你在使用 Agora 各产品时进行充值、查看、管理等操作。本指南简要介绍如何使用 Agora Dashboard。
+欢迎使用 Agora Dashboard。控制台提供直观的界面，方便你在使用 Agora 各产品时进行充值、查看、管理等操作。本指南简要介绍如何使用 Agora Dashboard。
 
 > 本指南介绍 Agora 控制台的所有功能，但是不一定每个团队成员都能使用所有的功能。具体成员所能看到的页面视该成员的角色权限而定，详见[管理成员和角色中的权限说明](../../cn/Agora%20Platform/manage_member.md)。
 
@@ -29,7 +29,7 @@ updatedAt: Mon Oct 21 2019 07:50:44 GMT+0800 (CST)
 
 ## 主要功能
 
-Agora Dashboard 的主要功能包括：
+控制台的主要功能包括：
 
 ### 管理项目
 
