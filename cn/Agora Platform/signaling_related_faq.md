@@ -3,7 +3,7 @@
 title: 信令相关
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 23 2018 10:47:04 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:03:32 GMT+0800 (CST)
 ---
 # 信令相关
 ### 怎么获取用户在线列表？
@@ -79,7 +79,7 @@ Agora 不提供完整的 PSTN 解决方案，但提供从 VoIP 到 PSTN 的对�
 该错误是由于使用的 Signaling Key 无效引起的，主要原因如下：
 
 * 请检查 App ID 是否正确。
-* 请检查 App Certificate 是否正确，是否在 Dashboard 已启用。App Certificate 在 Dashboard 上启用 1 小时后，方能生效。
+* 请检查 App Certificate 是否正确，是否在控制台已启用。App Certificate 在控制台上启用 1 小时后，方能生效。
 * 请检查生成 token (Signaling Key) 的算法是否正确。
 
 关于如何获取正确的 App ID 和 App Certificate, 以及如何使用正确的算法生成 Signaling Key, 详见 [校验用户权限](../../cn/Agora%20Platform/key_signaling.md)。
