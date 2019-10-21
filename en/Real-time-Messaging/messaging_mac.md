@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.1
 platform: macOS
-updatedAt: Mon Oct 21 2019 09:30:20 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:31:39 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -25,7 +25,7 @@ We provide open-source demo projects on GitHub, which implement an elementary me
 ## Prerequisites
 
 
-- <%=IDE_version %> or later
+- <%=IDE %> <%=IDE_version %> or later
 - An <%=platform %> device running <%=platform %> <%=platform_version %> or later
 - A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
 
