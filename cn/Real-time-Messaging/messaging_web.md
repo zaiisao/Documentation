@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Mon Oct 21 2019 09:24:58 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:25:01 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 本章介绍在正式使用 Agora RTM SDK for Web 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
@@ -13,8 +13,17 @@ updatedAt: Mon Oct 21 2019 09:24:58 GMT+0800 (CST)
 
 ## 开发环境要求
 
+1. 安装一款 Agora RTM Web SDK 支持的浏览器，如下表所示：
 
-一个有效的 [Agora 开发者账号](https://sso.agora.io/login/)。
+| 平台             | 兼容性 |
+| :------------------- | :----------------- |
+| Chrome 49+ | ✔                  |
+| Android Browser 4.4.3+ | ✔     |
+| Safari 9+   | ✔                  |
+| Internet Explorer 11+  | ✔                  |
+| Firefox 52+ |  ✔                  |
+
+2. 一个有效的 [Agora 开发者账号](https://sso.agora.io/login/)。
 
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口并设置域名白名单。</div>
