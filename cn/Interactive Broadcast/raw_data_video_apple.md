@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: iOS,macOS
-updatedAt: Mon Sep 23 2019 07:21:03 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 07:58:10 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
@@ -94,7 +94,7 @@ class IVideoFrameObserver
 
 ## 开发注意事项
 
-本文中使用的原始数据接口为 C++ 接口。如果你在 Android 平台开发，请参考如下步骤视频数据观测器。
+本文中使用的原始数据接口为 C++ 接口。如果你在 iOS 或 macOS 平台开发，请参考如下步骤视频数据观测器。
 
 ```objective-c
 static AgoraVideoFrameObserver* s_videoFrameObserver;
