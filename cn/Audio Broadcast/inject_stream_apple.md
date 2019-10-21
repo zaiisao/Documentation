@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: iOS,macOS
-updatedAt: Mon Oct 21 2019 06:04:27 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 06:05:56 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
@@ -30,6 +30,8 @@ updatedAt: Mon Oct 21 2019 06:04:27 GMT+0800 (CST)
 ## 实现方法
 
 在实现输入在线媒体流功能前，请确保你已在项目中完成基本的实时音视频功能。详见[开始互动直播](../../cn/Audio%20Broadcast/start_live_ios.md)。
+
+> 请确保已开通旁路推流的功能，详见[前提条件](../../cn/Audio%20Broadcast/cdn_streaming_apple.md)。
 
 参考如下步骤，在你的项目中实现输入在线媒体流功能：
 
