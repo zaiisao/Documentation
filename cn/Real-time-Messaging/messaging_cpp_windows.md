@@ -3,10 +3,11 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Windows CPP
-updatedAt: Sat Oct 12 2019 06:31:15 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 12:20:39 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
-本文介绍在正式使用 Agora RTM C++ SDK for Windows 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
+
+本页介绍在正式使用 [Agora RTM Windows C++ SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
 ## Demo 体验
 
