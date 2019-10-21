@@ -3,7 +3,7 @@
 title: Dashboard RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Mon Oct 21 2019 08:29:06 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:29:13 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. 认证
@@ -12,7 +12,7 @@ updatedAt: Mon Oct 21 2019 08:29:06 GMT+0800 (CST)
 
 RESTful API 仅支持 HTTPS。用户必须在 Basic HTTP 请求头部填入 `Authorization` 字段进行认证。你需要在代码中传入 Customer ID 和 Customer Certificate。
 
-登录 [Dashboard](http://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取 Customer ID 和 Customer Certificate。
+登录 [Agora 控制台](http://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取 Customer ID 和 Customer Certificate。
 
 > Customer ID 和 Customer Certificate 仅用于访问 RESTful API。
 
@@ -423,7 +423,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-				"appid":"",   // dashboard中项目的 App ID，必填
+				"appid":"",   // 控制台中项目的 App ID，必填
 				"cname":"",   // channel name 频道名称，非必填，可以不传，但不能传 cname:""
 				"uid":"",     // uid，SDK 可以获取到，非必填，可以不传，但不能传 uid:0
 				"ip":"",      // IP地址需要封的用户 IP，非必填，可以不传，但不能传 ip:0
@@ -458,7 +458,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-       "appid":""    // dashboard中项目的 App ID，必填
+       "appid":""    // 控制台中项目的 App ID，必填
      }
     ```
 
@@ -470,7 +470,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
         "rules": [
             {
                 "id": 1953,                                     // 规则id，如：更新规则是需要带上此id
-                "appid": ""                                     // 对应dashboard中项目的appID
+                "appid": ""                                     // 对应控制台中项目的appID
                 "uid": 1,                                       // uid，客户端中看到
                 "opid": 1406,                                   // 操作id，用于核对操作记录（查问题时使用）
                 "cname": "11",                                  // 频道名
@@ -567,7 +567,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 <td><strong>描述</strong></td>
 </tr>
 <tr><td>appid</td>
-<td>必填，dashboard 中项目的 appID</td>
+<td>必填，控制台中项目的 appID</td>
 </tr>
 <tr><td>uid</td>
 <td>必填，用户 ID，可以通过 SDK 获取到</td>
@@ -654,7 +654,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 <td><strong>描述</strong></td>
 </tr>
 <tr><td>appid</td>
-<td>必填，dashboard 中项目的 appID</td>
+<td>必填，控制台中项目的 appID</td>
 </tr>
 <tr><td>cname</td>
 <td>必填，channel name，频道名称</td>
