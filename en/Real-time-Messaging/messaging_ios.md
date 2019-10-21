@@ -333,7 +333,7 @@ Call the [leaveWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%
 - To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., ensure that you have received `AgoraRtmLoginErrorOk`).
 - To use any of the channel features, you must first call the [createChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) method to create a channel instance. 
 - You can create a maximum of 20 channel instances for each [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance and a user can join multiple channels at the same time. The `channelId` parameter must be channel-specific.
-- You cannot reuse an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) object that has been received by a user.
-- When you leave a channel and do not join it again, you can call the [destroyChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/destroyChannelWithId:) method to release all resources used by the channel instance.
 - You cannot reuse a received [AgoraRtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html) instance.
+- When you leave a channel and do not join it again, you can call the [destroyChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/destroyChannelWithId:) method to release all resources used by the channel instance.
+
 
