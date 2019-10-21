@@ -1,11 +1,11 @@
 
 ---
-title: Dashboard RESTful API
+title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:29:13 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:29:32 GMT+0800 (CST)
 ---
-# Dashboard RESTful API
+# 控制台 RESTful API
 ## 1. 认证
 
 > 在使用本文 RESTful API 提供的功能前，请确认你的账号已在控制台开通指定项目的相关权限。Agora 支持自定义用户角色和相应的项目权限，详见 [控制台角色权限说明](../../cn/Agora%20Platform/manage_member.md)。
