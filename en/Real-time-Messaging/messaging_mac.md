@@ -25,8 +25,8 @@ We provide open-source demo projects on GitHub, which implement an elementary me
 ## Prerequisites
 
 
-- Xcode 9.0 or later
-- An macOS device running macOS 10.10 or later
+- <%=IDE_version %> or later
+- An <%=platform %> device running <%=platform %> <%=platform_version %> or later
 - A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div>
