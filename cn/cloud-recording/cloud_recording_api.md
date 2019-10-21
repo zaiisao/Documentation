@@ -1,11 +1,11 @@
 
 ---
-title: 云端录制 C++ API
+title: 云端录制 C++ API (Deprecated)
 description: 
 platform: CPP
-updatedAt: Wed Aug 21 2019 06:56:41 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 10:30:30 GMT+0800 (CST)
 ---
-# 云端录制 C++ API
+# 云端录制 C++ API (Deprecated)
 | **接口类**                                                   | **描述**                   |
 | ------------------------------------------------------------ | -------------------------- |
 | <a href="#ICloudRecorder">ICloudRecorder</a> 类              | 应用程序调用的主要方法。   |
