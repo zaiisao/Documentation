@@ -3,12 +3,12 @@
 title: Dashboard RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 03:04:50 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:03:31 GMT+0800 (CST)
 ---
 # Dashboard RESTful API
 ## 1. 认证
 
-> 在使用本文 RESTful API 提供的功能前，请确认你的账号已在 Dashboard 开通指定项目的相关权限。Agora 支持自定义用户角色和相应的项目权限，详见 [Dashboard 角色权限说明](../../cn/Agora%20Platform/manage_member.md)。
+> 在使用本文 RESTful API 提供的功能前，请确认你的账号已在控制台开通指定项目的相关权限。Agora 支持自定义用户角色和相应的项目权限，详见 [Dashboard 角色权限说明](../../cn/Agora%20Platform/manage_member.md)。
 
 RESTful API 仅支持 HTTPS。用户必须在 Basic HTTP 请求头部填入 `Authorization` 字段进行认证。你需要在代码中传入 Customer ID 和 Customer Certificate。
 
@@ -494,7 +494,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-             "appid":"",   // Dashboard 中项目的 App ID，必填
+             "appid":"",   //控制台中项目的 App ID，必填
              "id":"",      // 获取规则列表的规则 ID，必填
              "time":""     // 需要更新的封人的时间，必填
     }
@@ -523,7 +523,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
     ```
     {
-        "appid":"",   // Dashboard 中项目的 App ID，必填
+        "appid":"",   //控制台中项目的 App ID，必填
         "id":""       // 获取规则列表的规则 ID，必填
     }
     ```
