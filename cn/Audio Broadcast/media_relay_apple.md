@@ -3,7 +3,7 @@
 title: 跨频道连麦
 description: 
 platform: iOS,macOS
-updatedAt: Fri Sep 20 2019 07:33:32 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 05:59:16 GMT+0800 (CST)
 ---
 # 跨频道连麦
 ## 功能描述
