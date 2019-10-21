@@ -3,10 +3,10 @@
 title: 创建和管理项目
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 06:13:50 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 07:50:49 GMT+0800 (CST)
 ---
 # 创建和管理项目
-本页介绍如何在 Agora Dashboard 创建和管理项目。
+本页介绍如何在 Agora 控制台创建和管理项目。
 
 > 角色为管理员/工程师的账户拥有查看项目管理页面的权限。
 
