@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Windows
-updatedAt: Mon Oct 21 2019 06:07:49 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 06:07:54 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -42,6 +42,8 @@ The host in a live broadcast channel pulls an online media stream and pushes it 
 ## Implementation
 
 Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_windows.md) for details.
+
+> Ensure that you enable the RTMP Converter service before using this function. See [Prerequisites](../../en/Audio%20Broadcast/cdn_streaming_windows.md).
 
 Refer to the following steps to inject an online media stream:
 
