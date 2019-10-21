@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Mon Oct 21 2019 03:56:39 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 04:19:08 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -30,9 +30,13 @@ Ensure that you understand how to [start a call](../../en/Video/start_call_web.m
 
 To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser asks you to select which screens to share. The attribute settings are different in different browsers.
 
-### <a name = "chrome"></a>Screen sharing on Google Chrome
+### <a name="chrome"></a>Screen sharing on Google Chrome
+
+#### Screen sharing without the Google Chrome extension
 
 To share the screen on Chrome, simply set `video` as `false`, and `screen` as `true` when creating a stream.
+
+<div class="alert note">This function requires the Agora Web SDK v2.6 or later, and Chrome 72 or later. Otherwise, use the <a href="#ext">Google Chrome extension</a> to share the screen.</div>
 
 ```javascript
 // Check if the browser supports screen sharing without an extension
@@ -47,12 +51,12 @@ if(parseInt(tem[2]) >= 72  && navigator.mediaDevices.getDisplayMedia ) {
 	});
 }
 ```
-<div class="alert note">This function requires the Agora Web SDK v2.6 or later, and Chrome 72 or later. If your software versions do not meet this requirement, use the Google Chrome extension to share the screen.</div>
-#### Screen sharing with the Google Chrome extension
+
+#### <a name="ext"></a>Screen sharing with the Google Chrome extension
 
 1. Add the [Google Chrome Extension for Screen Sharing](../../en/Video/chrome_screensharing_plugin.md) provided by Agora.
 
-2. Fill in the `extensionId` attribute when you create the stream.
+2. Set the `extensionId` attribute when you create a stream.
   ```javascript
 screenStream = AgoraRTC.createStream({
   streamID: uid,
@@ -65,11 +69,11 @@ screenStream = AgoraRTC.createStream({
   ```
 
 > - Do not set the `video` and `screen` attributes as `true` at the same time.
-> - Agora recommends that you set the `audio` attribute as `false` to avoid any echo during the call.
+> - Agora recommends setting the `audio` attribute as `false` to prevent echos during the call.
 
 ### <a name = "electron"></a>Screen sharing on Electron
 
-To share the screen on Electron, you need to draw the UI for screen-source selection. For quick integration, Agora provides a default UI.
+To share the screen on Electron, you need to draw the UI for your users to select which screen or window to share. For quick integration, Agora provides a default UI.
 
 1. Call `AgoraRTC.createStream`, and set `screen` as `true` to create a screen-sharing stream.
 
@@ -90,11 +94,11 @@ To share the screen on Electron, you need to draw the UI for screen-source selec
 
    The SDK provides a default UI for screen source selection, as the following figure shows:
 
-   ![img](https://web-cdn.agora.io/docs-files/1547455511311)
+   ![](https://web-cdn.agora.io/docs-files/1571629977600)
 
-If you need to customize the UI, follow these steps:
+To customize the UI, do the following:
 
-1. Call the `AgoraRTC.getScreenSources` method to get sources of the screens to share. 
+1. Call `AgoraRTC.getScreenSources` to get sources of the screens to share. 
 
    ```javascript
    AgoraRTC.getScreenSources(function(err, sources) {
@@ -102,15 +106,15 @@ If you need to customize the UI, follow these steps:
    })
    ```
 
-   The `sources` parameter is an array of the `source` objects. The  `source` object contains the following properties of the screen source:
+   The `sources` parameter is an array of the `source` object. A  `source` object contains the following properties of the screen source:
 
    ![img](https://web-cdn.agora.io/docs-files/1547455349613)
 
-   - `id`: `sourceId`.
-   - `name`: name of the screen source.
-   - `thumbnail`: thumbnail of the screen source.
+   - `id`: The `sourceId`.
+   - `name`: The name of the screen source.
+   - `thumbnail`: The thumbnail of the screen source.
 
-2. Based on the properties of `source`, draw the UI (by HTML and CSS) for selecting the screen source to be shared. 
+2. Based on the properties of `source`, draw the UI (by HTML and CSS) for selecting the screen source to share. 
 
    The following figure shows the properties' corresponding elements on the UI for screen source selection:
 
@@ -118,7 +122,7 @@ If you need to customize the UI, follow these steps:
 
 3. Get the `sourceId` of the source selected by the user.
 
-4. Fill in `sourceId` when creating the screen-sharing stream.
+4. Set `sourceId` when creating the screen-sharing stream.
 
    ```javascript
    localStream = AgoraRTC.createStream({
@@ -132,8 +136,8 @@ If you need to customize the UI, follow these steps:
    ```
 
 
-> - The `getScreenSources` method is a wrapper of the `desktopCapturer.getSources` method provided by Electron. See [desktopCapturer](https://electronjs.org/docs/api/desktop-capturer).
-> - The `sourceId` parameter only takes effect on Electron.
+> - The `getScreenSources` method is a wrapper of `desktopCapturer.getSources` provided by Electron. See [desktopCapturer](https://electronjs.org/docs/api/desktop-capturer).
+> - Only Electron requires the `sourceId` parameter.
 
 ### <a name = "ff"></a>Screen sharing on Firefox
 
