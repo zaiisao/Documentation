@@ -3,10 +3,12 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Mon Oct 21 2019 08:44:19 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:44:23 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
-You can use this guide to quickly start messaging with the [Agora RTM SDK for Web](https://docs.agora.io/en/Real-time-Messaging/downloads). 
+
+You can use this guide to quickly start messaging with the [Agora RTM Web SDK](https://docs.agora.io/en/Real-time-Messaging/downloads). 
+
 
 ## Try the demo
 
