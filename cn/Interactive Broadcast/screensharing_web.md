@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Thu Oct 17 2019 03:23:31 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 03:58:41 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -31,7 +31,11 @@ Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现�
 
 ### <a name = "chrome"></a>Chrome 屏幕共享
 
+#### 无插件屏幕共享
+
 在 Chrome 上屏幕共享直接在 `createStream` 时把 `video` 字段设为 `false`， `screen` 字段设为 `true` 即可。
+
+<div class="alert note">该功能要求 Agora Web SDK 2.6.0 或以上版本，Chrome 72 或以上版本。如果你使用的软件版本不满足此要求，请<a href="#ext">使用屏幕共享插件</a>实现在 Chrome 上共享屏幕。</div>
 
 ```javascript
 // Check if the browser supports screen sharing without an extension
@@ -47,9 +51,7 @@ if(parseInt(tem[2]) >= 72  && navigator.mediaDevices.getDisplayMedia ) {
 }
 ```
 
-<div class="alert note">该功能要求 Agora Web SDK 2.6.0 或以上版本，Chrome 72 或以上版本。如果你使用的软件版本不满足此要求，请使用屏幕共享插件实现在 Chrome 上共享屏幕。</div>
-
-#### 使用屏幕共享插件
+#### <a name="ext"></a>使用屏幕共享插件
 
 安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Interactive%20Broadcast/chrome_screensharing_plugin.md) ，并获取插件的 `extensionId`，在建流的时候填入 `extensionId`。
 
@@ -86,7 +88,7 @@ Electron 屏幕共享的选择界面需要你自行绘制，为方便快速集�
 
 2. 调用 `localStream.init` ，SDK 会提供自带的默认界面让用户选择要共享的屏幕或窗口，如下图所示：
 
- ![](https://web-cdn.agora.io/docs-files/1547455511311)
+ ![](https://web-cdn.agora.io/docs-files/1571629977600)
 
 如果你需要自定义选择界面，参考以下步骤：
 
