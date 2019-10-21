@@ -3,10 +3,10 @@
 title: 线上充值
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 06:24:36 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 07:50:45 GMT+0800 (CST)
 ---
 # 线上充值
-本页介绍如何在 Agora Dashboard 查看账户余额，通过**支付宝**进行线上充值，并查看交易列表。
+本页介绍如何在 Agora 控制台查看账户余额，通过**支付宝**进行线上充值，并查看交易列表。
 
 > 角色为管理员/财务的账户拥有进入**费用中心**的权限。
 
