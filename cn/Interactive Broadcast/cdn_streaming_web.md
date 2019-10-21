@@ -17,7 +17,7 @@ updatedAt: Fri Oct 11 2019 03:19:01 GMT+0800 (CST)
 ### 前提条件
 
 请确保已开通 CDN 旁路推流功能，步骤如下：
-1. 登录 [Agora Dashboard](https://dashboard.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。
+1. 登录 [控制台](https://dashboard.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。
 2. 在页面左上角展开下拉列表选择需要开通 CDN 旁路推流的项目，然后点击旁路推流下的**分钟数**。
 ![](https://web-cdn.agora.io/docs-files/1569297956098)
 3. 点击**开启旁路推流服务**。
