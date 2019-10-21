@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Mon Oct 21 2019 08:36:40 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:35:23 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
