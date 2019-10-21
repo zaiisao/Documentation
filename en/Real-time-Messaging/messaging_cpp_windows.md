@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Mon Oct 21 2019 09:35:23 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:35:27 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -16,12 +16,12 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Windows](h
 
 ## Prerequisites
 
+
 - Microsoft Visual Studio 2017 or later
-- A Windows device running on Windows 7 or later
-- A valid [Agora developer account](https://sso.agora.io/login/).
+- An Windows device running Windows 7 or later
+- A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
 
-
-<div class="alert note">Open the ports specified in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div> 
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div>
 
 
 
