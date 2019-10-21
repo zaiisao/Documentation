@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Mon Oct 21 2019 07:19:17 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:22:57 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM Java SDK for Android](https://docs.agora.io/en/Real-time-Messaging/downloads). 
