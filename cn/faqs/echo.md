@@ -3,7 +3,7 @@
 title: 音频回声
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 18:35:14 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 18:39:02 GMT+0800 (CST)
 ---
 # 音频回声
 回声问题是本地麦克风收录播放设备播放的对方声音，又被对方感知造成的。所以可能一台设备出现问题，频道内其他用户都能听到。因此排查问题时还需注意，听到回声的一方，一般并不是出现问题的一方。
