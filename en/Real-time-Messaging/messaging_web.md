@@ -262,7 +262,7 @@ channel.leave();
 - To use any of the channel features, you must first call the [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) method to create a channel instance. 
 - You can create multiple channel instances for each [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html) instance, but you can only join a maximum of 20 channels at the same time. The `channelId` parameter needs to be channel-specific.
 
-- When you do not want to use a specific instance any more, you can use the `RemoveAllListeners` method to remove all its listeners. 
+- When you do not want to use a specific instance any more, you can use the `removeAllListeners` method to remove all its listeners. 
 
 - You cannot reuse a received [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmmessage.html) instance.
 
