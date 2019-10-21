@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: Windows
-updatedAt: Mon Oct 21 2019 07:59:55 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:00:34 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
