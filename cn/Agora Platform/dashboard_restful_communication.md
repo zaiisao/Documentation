@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:29:32 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:29:37 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
