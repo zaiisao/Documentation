@@ -3,10 +3,10 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 24 2019 08:10:31 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:18:00 GMT+0800 (CST)
 ---
 # 注册与登录
-在开始使用 Agora 服务之前，你需要注册一个 Agora 开发者账号。注册后，您可以登录 Agora Dashboard，使用 Agora 提供的各种产品和服务。
+在开始使用 Agora 服务之前，你需要注册一个 Agora 开发者账号。注册后，您可以登录控制台，使用 Agora 提供的各种产品和服务。
 
 本页介绍如何注册 Agora 开发者账号和相关账号设置。
 
@@ -33,7 +33,7 @@ updatedAt: Tue Sep 24 2019 08:10:31 GMT+0800 (CST)
 ## 使用 Cocos 账号注册
 
 1. 进入 [Agora 注册页面](https://sso.agora.io/cn/signup)，点击 ![](https://web-cdn.agora.io/docs-files/1569295962944) 图标选择使用 Cocos 账号注册。
-2. 跳转至 Cocos 登录页面，填写你的 Cocos 账户名和密码，点击**登录**，就能直接进入 Agora Dashboard。
+2. 跳转至 Cocos 登录页面，填写你的 Cocos 账户名和密码，点击**登录**，就能直接进入控制台。
 
 ## 使用微信账号注册
 
@@ -42,7 +42,7 @@ updatedAt: Tue Sep 24 2019 08:10:31 GMT+0800 (CST)
 3. 根据屏幕提示完善账号信息，包括邮箱、姓名、公司，选择产品兴趣点、开发平台和行业，以便我们为你提供个性化服务。
 4. 填写**手机号码**并验证，作为安全校验方式，完成注册。
 
-## 登录 Agora Dashboard
+## 登录控制台
 
 你可以用注册时填写的邮箱或手机号码或者注册过的 Github、Google、微信或 Cocos 等第三方账号登录 [Agora Dashboard](https://dashboard.agora.io)，根据新手指引，创建你的第一个项目，快速体验音视频通话。你也可以对账号所属的个人或企业信息主体进行认证，详见[实名认证](../../cn/Agora%20Platform/identity_authentication.md)。
 
