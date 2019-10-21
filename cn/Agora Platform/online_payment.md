@@ -3,7 +3,7 @@
 title: 线上充值
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 07:50:45 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:03:34 GMT+0800 (CST)
 ---
 # 线上充值
 本页介绍如何在 Agora 控制台查看账户余额，通过**支付宝**进行线上充值，并查看交易列表。
@@ -32,7 +32,7 @@ updatedAt: Mon Oct 21 2019 07:50:45 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1562666593903)
 
-4. 付款成功后会跳转回到 Dashboard 的**财务**页面，出现**支付成功**的提示。
+4. 付款成功后会跳转回到控制台的**财务**页面，出现**支付成功**的提示。
 
 ## 查看交易列表
 
