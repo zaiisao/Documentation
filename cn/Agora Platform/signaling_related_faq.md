@@ -3,7 +3,7 @@
 title: 信令相关
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:03:32 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:41:12 GMT+0800 (CST)
 ---
 # 信令相关
 ### 怎么获取用户在线列表？
@@ -100,7 +100,7 @@ Error 206
 
 token 错误
 
-* 确认 token 参数，如果是 no need token，确认 dashboard 里 token 调试开关已经打开。
+* 确认 token 参数，如果是 no need token，确认控制台中 token 调试开关已经打开。
 
 ![](https://web-cdn.agora.io/docs-files/1540453296247)
 
