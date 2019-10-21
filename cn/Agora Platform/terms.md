@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 10 2019 07:09:45 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:17:59 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -20,7 +20,7 @@ updatedAt: Tue Sep 10 2019 07:09:45 GMT+0800 (CST)
 - Agora Web SDK
 - Agora 微信小程序 SDK
 
-### Agora Dashboard
+###控制台
 
 [Agora Dashboard](https://dashboard.agora.io/) 是 Agora 提供给用户创建和管理项目的平台。[注册账号](https://dashboard.agora.io/cn/signup)之后，你可以通过 [Dashboard](https://dashboard.agora.io/) 创建项目、获得 [App ID](#appid)、查看通话用量、分析通话质量以及查看账单。
 
