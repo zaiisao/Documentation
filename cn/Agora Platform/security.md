@@ -3,7 +3,7 @@
 title: 信息安全说明
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 26 2019 04:29:03 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:03:31 GMT+0800 (CST)
 ---
 # 信息安全说明
 ## 简介
@@ -44,7 +44,7 @@ Agora 将客户数据进行以下分类:
 <td><strong>描述</strong></td>
 </tr>
 <tr><td>客户账户信息</td>
-<td>客户使用 Agora 服务时所需的账户信息，包括账户管理员的 email 地址、公司名称、公司 URL 和后台 Dashboard 访问记录等。</td>
+<td>客户使用 Agora 服务时所需的账户信息，包括账户管理员的 email 地址、公司名称、公司 URL 和后台控制台访问记录等。</td>
 </tr>
 <tr><td>终端用户数据</td>
 <td>所有经客户收集的终端用户级别数据，包括用户登录、身份识别、支付信息等等。此类数据不会与 Agora 分享，因此不在本文讨论之列。</td>
