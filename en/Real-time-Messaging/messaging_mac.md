@@ -330,7 +330,7 @@ Call the [leaveWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%
 
 
 - The Agora RTM SDK supports creating multiple <%=RtmClient %> instances that are independent of each other. 
-<%  if (platform == "Web") { %>
+<%  if (platform == "Web") {%>
 - To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., ensure that you have received <%=onLoginSuccess %>).
 <% } 
 else { %>
