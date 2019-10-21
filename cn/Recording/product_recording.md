@@ -3,10 +3,10 @@
 title: 产品概述
 description: 
 platform: Linux
-updatedAt: Mon Oct 21 2019 10:37:54 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 10:38:10 GMT+0800 (CST)
 ---
 # 产品概述
-<div class="alert note">Agora 本地服务端录制 SDK 需要部署在 Linux 服务器上，并需要你自行运维。如果你不想部署 Linux 服务器，而是想要通过 RESTful API 以更加便捷的方式实现录制功能，推荐使用 <a href="https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=Linux">Agora 云端录制</a></li>。  </div> 
+<div class="alert note">提示：<br>Agora 本地服务端录制 SDK 需要部署在 Linux 服务器上，并需要你自行运维。如果你不想部署 Linux 服务器，而是想要通过 RESTful API 以更加便捷的方式实现录制功能，推荐使用 <a href="https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=Linux">Agora 云端录制</a></li>。  </div> 
 
 Agora 本地服务端录制 SDK，是 Agora 针对音视频通话、直播研发的录制插件，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK \(1.12.0 或更高版本\) 兼容，通过简单的操作方法，帮助开发者快速、灵活地部署录制服务，来实现一对一、一对多的音视频通话或直播的录制。
 
