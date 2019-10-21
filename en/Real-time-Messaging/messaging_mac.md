@@ -25,11 +25,17 @@ We provide open-source demo projects on GitHub, which implement an elementary me
 ## Prerequisites
 
 
+
+- Android SDK API Level 16 or higher
+- To run your app on Android 9, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p) for more information.
+
 - Xcode 9.0 or later
-- An macOS device running on macOS 10.10 or later
+- An Android device running on Android 10.10 or later
 - A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
 
-<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div>
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div> 
+
+
 
 ## Set up the development environment
 
