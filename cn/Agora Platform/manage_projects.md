@@ -3,7 +3,7 @@
 title: 创建和管理项目
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:03:35 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:18:02 GMT+0800 (CST)
 ---
 # 创建和管理项目
 本页介绍如何在 Agora 控制台创建和管理项目。
@@ -14,7 +14,7 @@ updatedAt: Mon Oct 21 2019 08:03:35 GMT+0800 (CST)
 
 创建新项目的步骤如下：
 
-1. 登录 Agora Dashboard，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) **项目管理**按钮进入[**项目管理**页面](https://dashboard.agora.io/projects)。
+1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) **项目管理**按钮进入[**项目管理**页面](https://dashboard.agora.io/projects)。
 
 2. 在**项目管理**页面，点击**创建**按钮。
 
