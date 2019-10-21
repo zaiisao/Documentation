@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Mon Oct 21 2019 06:55:24 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 06:55:28 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM C++ SDK for Windows](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -229,9 +229,13 @@ You can call the `leave()` method to leave a channel.
 
 ## Considerations
 
-- You can create and join a maximum of 20 `IChannel` instances. But ensure that each channel has a differnt channel ID and a different listener. 
-- If the channel ID you put is invalid, or if an `IChannel` with the same channel ID already exists, the SDK returns `null`. 
-- You cannot reuse a received `IMessage` instance. 
-- When you no longer need an `IChannel` instance after leaving it, you can call its `release()` method to release all resources it is using. 
+
+- The Agora RTM SDK supports creating multiple <%=RtmClient %> instances that are independent of each other. 
+- To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., have received <%=onLoginSuccess %>).
+- To use any of the channel features, you must first call the <%=createChannel %> method to create a channel instance. 
+- You can create a maximum of 20 channel instances for each <%=RtmClient %> instance and a user can join multiple channels at the same time. The `channelId` parameter must be channel-specific.
+- You cannot reuse an <%=RtmClient %> object that has been received by a user.
+- When you leave a channel and do not join it again, you can call the <%=destroyChannel %> method to release all resources used by the channel instance.
+- You cannot reuse a received <%=RtmMessage %> instance.
 
 
