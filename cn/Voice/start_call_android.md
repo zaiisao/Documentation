@@ -279,7 +279,7 @@ private boolean checkSelfPermission(String permission, int requestCode) {
 
 在调用其他 Agora API 前，需要创建并初始化 RtcEngine 对象。
 
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在 Dashboard [创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
+你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
 
 1. 登录 [Dashboard](https://dashboard.agora.io/)，点击左侧导航栏的**[项目管理](https://dashboard.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
 2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
@@ -380,7 +380,7 @@ private void setupLocalVideo() {
 
 * token：传入能标识用户角色和权限的 Token。可设为如下一个值：
    * `NULL`
-   * 临时 Token。临时 Token 服务有效期为 24 小时。你可以在 Dashboard 里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取临时-token)。
+   * 临时 Token。临时 Token 服务有效期为 24 小时。你可以在控制台里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取临时-token)。
    * 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Voice/token_server.md)。
 
  <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
