@@ -3,7 +3,7 @@
 title: Dashboard 概览
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:00:35 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:03:33 GMT+0800 (CST)
 ---
 # Dashboard 概览
 欢迎使用 Agora Dashboard。控制台提供直观的界面，方便你在使用 Agora 各产品时进行充值、查看、管理等操作。本指南简要介绍如何使用 Agora Dashboard。
@@ -16,7 +16,7 @@ updatedAt: Mon Oct 21 2019 08:00:35 GMT+0800 (CST)
 
 ## 总览页
 
-登录 Agora 控制台后，你会看到一个总览页。该页提供 Dashboard 常用功能的入口。在该页面，你可以：
+登录 Agora 控制台后，你会看到一个总览页。该页提供控制台常用功能的入口。在该页面，你可以：
 
 - 快速查看项目及其用量。
 - 实时掌握账户余额与收支明细，进行充值。
@@ -53,7 +53,7 @@ updatedAt: Mon Oct 21 2019 08:00:35 GMT+0800 (CST)
 
 ### 提交工单
 
-你在使用产品过程中如有任何疑问，都可以在 Dashboard 寻求解答。详见[提交工单指南](../../cn/Agora%20Platform/ticket.md)。
+你在使用产品过程中如有任何疑问，都可以在控制台寻求解答。详见[提交工单指南](../../cn/Agora%20Platform/ticket.md)。
 
 ### 使用 RESTful API
 
