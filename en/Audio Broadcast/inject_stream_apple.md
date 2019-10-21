@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: iOS,macOS
-updatedAt: Mon Oct 21 2019 06:09:38 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 06:09:46 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -42,6 +42,8 @@ The host in a live broadcast channel pulls an online media stream and pushes it 
 ## Implementation
 
 Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_ios.md) for details.
+
+> Ensure that you enable the RTMP Converter service before using this function. See [Prerequisites](../../en/Audio%20Broadcast/cdn_streaming_apple.md).
 
 Refer to the following steps to inject an online media stream:
 
