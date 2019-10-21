@@ -3,7 +3,7 @@
 title: 通话调查
 description: Introduction to Call Research in AA
 platform: All Platforms
-updatedAt: Fri Oct 11 2019 08:09:43 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:18:52 GMT+0800 (CST)
 ---
 # 通话调查
 水晶球的[**通话调查**](https://dashboard.agora.io/analytics/call/search)功能以图表的形式展示每一通通话全链路质量数据，可以极大提高解决通话问题的效率。
@@ -23,7 +23,7 @@ updatedAt: Fri Oct 11 2019 08:09:43 GMT+0800 (CST)
 
 ## 搜索通话
 
-登录 [Agora Dashboard](https://dashboard.agora.io/)，点击左侧菜单栏**水晶球**下的**通话调查**，进入通话搜索页面。
+登录 [控制台](https://dashboard.agora.io/)，点击左侧菜单栏**水晶球**下的**通话调查**，进入通话搜索页面。
 
 ![](https://web-cdn.agora.io/docs-files/1568025171366)
 
