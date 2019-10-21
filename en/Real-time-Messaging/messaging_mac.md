@@ -333,9 +333,9 @@ Call the [leaveWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%
 <%  if (platform == "Web") {%>
 - To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., ensure that you have received <%=onLoginSuccess %>).
 <% } 
-else { %>
+else {%>
 -  To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., ensure that you have received <%=onLoginSuccess %>). 
-<% } %>
+<%} %>
 - To use any of the channel features, you must first call the <%=createChannel %> method to create a channel instance. 
 - You can create multiple channel instances for each <%=RtmClient %> instance, but you can only join a maximum of 20 channels at the same time. The `channelId` parameter must be channel-specific.
 - When you leave a channel and do not want to join it again, you can call the <%=destroyChannel %> method to release all resources used by the channel instance.
