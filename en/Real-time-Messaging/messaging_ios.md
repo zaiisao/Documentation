@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Mon Oct 21 2019 04:07:03 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 04:07:07 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 You can use this guide to quickly start messaging with the [Agora RTM SDK for iOS](https://docs.agora.io/en/Real-time-Messaging/downloads). 
@@ -323,14 +323,13 @@ Call the [leaveWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%
 
 ## Considerations
 
-- The Agora RTM SDK supports multiple [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instances that are independent of each other. You can use the same context to create different [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instances, but the [AgoraRtmDelegate](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html) interface of each [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance must be different.
-- If you no longer use an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance, call the [destroyChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/destroyChannelWithId:) method to release all resources used by that instance.
-- To use the channel feature, each client must first call the [createChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) method in the [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance to create a channel instance. 
-- You can create multiple channel instances in an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance and users can join multiple channels at the same time. The `channelId` parameter and [AgoraRtmChannelDelegate](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html) interface of different channels must be different.
-- If you pass an illegal channel ID or if the channel ID is being used, the [createChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) method returns `"nil"`.
-- You cannot reuse an [AgoraRtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html) object that has been received by a user.
-- When you leave a channel and do not join it again, you can call the [destroyChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/destroyChannelWithId:) method in the [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance to release all resources used by the channel instance.
-- Except for the callback triggered by the failure of the basic parameter validity check, all other callbacks are called asynchronously, unless otherwise specified.
+
+- The Agora RTM SDK supports creating multiple [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instances that are independent of each other. 
+- To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., have received `AgoraRtmLoginErrorOk` 
+- To use any of the channel features, you must first call the [createChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) method to create a channel instance. 
+- You can create a maximum of 20 channel instances for each [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance and a user can join multiple channels at the same time. The `channelId` parameter must be channel-specific.
+- You cannot reuse an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) object that has been received by a user.
+- When you leave a channel and do not join it again, you can call the [destroyChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/destroyChannelWithId:) method to release all resources used by the channel instance.
 
 
 
