@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.1
 platform: macOS
-updatedAt: Mon Oct 21 2019 08:25:55 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:30:20 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
