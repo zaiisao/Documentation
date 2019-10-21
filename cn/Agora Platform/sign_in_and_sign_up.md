@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:18:00 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:18:49 GMT+0800 (CST)
 ---
 # 注册与登录
 在开始使用 Agora 服务之前，你需要注册一个 Agora 开发者账号。注册后，您可以登录控制台，使用 Agora 提供的各种产品和服务。
@@ -44,11 +44,11 @@ updatedAt: Mon Oct 21 2019 08:18:00 GMT+0800 (CST)
 
 ## 登录控制台
 
-你可以用注册时填写的邮箱或手机号码或者注册过的 Github、Google、微信或 Cocos 等第三方账号登录 [Agora Dashboard](https://dashboard.agora.io)，根据新手指引，创建你的第一个项目，快速体验音视频通话。你也可以对账号所属的个人或企业信息主体进行认证，详见[实名认证](../../cn/Agora%20Platform/identity_authentication.md)。
+你可以用注册时填写的邮箱或手机号码或者注册过的 Github、Google、微信或 Cocos 等第三方账号登录 [控制台](https://dashboard.agora.io)，根据新手指引，创建你的第一个项目，快速体验音视频通话。你也可以对账号所属的个人或企业信息主体进行认证，详见[实名认证](../../cn/Agora%20Platform/identity_authentication.md)。
 
 ## 修改账号设置和密码
 
-1. 登录 [Agora Dashboard](https://dashboard.agora.io)，点击顶部导航栏右侧账号名下拉菜单中**设置**按钮，进入[账号设置](https://dashboard.agora.io/settings)页面。
+1. 登录 [控制台](https://dashboard.agora.io)，点击顶部导航栏右侧账号名下拉菜单中**设置**按钮，进入[账号设置](https://dashboard.agora.io/settings)页面。
 
 ![](https://web-cdn.agora.io/docs-files/1563960156644)
 
