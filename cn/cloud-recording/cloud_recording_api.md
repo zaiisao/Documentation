@@ -3,10 +3,10 @@
 title: 云端录制 C++ API (Deprecated)
 description: 
 platform: CPP
-updatedAt: Mon Oct 21 2019 10:33:24 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 12:24:56 GMT+0800 (CST)
 ---
 # 云端录制 C++ API (Deprecated)
-<div class="alert note">云端录制 SDK 停服计划：<li>从 11月15 日起，云端录制 SDK 进入停止维护阶段，但你仍可使用云端录制 SDK。</li><li>从 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法使用云端录制 SDK。</li></div>
+<div class="alert note">云端录制 SDK 停服计划：<li>从 11月 15 日起，云端录制 SDK 进入停止维护阶段，但你仍可使用云端录制 SDK。</li><li>从 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法使用云端录制 SDK。</li></div>
 
 
 | **接口类**                                                   | **描述**                   |
