@@ -3,10 +3,10 @@
 title: 查看用量
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 26 2019 08:18:04 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 07:50:50 GMT+0800 (CST)
 ---
 # 查看用量
-本页介绍如何在 Agora Dashboard 查看项目用量。
+本页介绍如何在 Agora 控制台查看项目用量。
 
 > 角色为管理员/财务的账户拥有查看用量统计页面的权限。
 
