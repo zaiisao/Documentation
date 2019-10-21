@@ -38,7 +38,7 @@ updatedAt: Thu May 30 2019 06:27:05 GMT+0800 (CST)
 
 ### 步骤 1: 获取 App ID
 
-1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录 Dashboard。详见[创建新账号](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。
+1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)
@@ -59,7 +59,7 @@ updatedAt: Thu May 30 2019 06:27:05 GMT+0800 (CST)
 ### 步骤 2: 获取 App Certificate
 
 
-方法一：如果创建项目时，你直接勾选了 **APP ID + APP 证书+ Token（推荐）**。Dashboard 会自动开启 **App 证书**。
+方法一：如果创建项目时，你直接勾选了 **APP ID + APP 证书+ Token（推荐）**。控制台会自动开启 **App 证书**。
 
 ![](https://web-cdn.agora.io/docs-files/1562925509805)
 

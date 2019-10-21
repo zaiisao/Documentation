@@ -37,7 +37,7 @@ Agora 动态密钥分为 Channel Key 和 Token 两种。本文的动态密钥指
 
 ### 获取 App ID
 
-1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录 Dashboard。详见[创建新账号](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。
+1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)
@@ -69,7 +69,7 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 ### 启用 App 证书
 
 
-方法一：如果创建项目时，你直接勾选了 **APP ID + APP 证书+ Token（推荐）**。Dashboard 会自动开启 **App 证书**。
+方法一：如果创建项目时，你直接勾选了 **APP ID + APP 证书+ Token（推荐）**。控制台会自动开启 **App 证书**。
 
 ![](https://web-cdn.agora.io/docs-files/1562925509805)
 
@@ -92,7 +92,7 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 ### 获取临时 Token
 
-为方便体验，Agora 支持在 Dashboard 的项目详情页，生成一个试用的临时 Token，用于加入频道。
+为方便体验，Agora 支持在控制台的项目详情页，生成一个试用的临时 Token，用于加入频道。
 
 在项目详情处，点击**生成临时 Token**，输入频道名，你就会在 **Token** 页面获取一个临时 Token。
 

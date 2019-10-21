@@ -19,7 +19,7 @@ updatedAt: Thu Aug 15 2019 08:35:43 GMT+0800 (CST)
 
 ## 创建项目并获取 App ID
 
-1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录 Dashboard。详见[创建新账号](../../cn/Audio%20Broadcast/sign_in_and_sign_up.md)。
+1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Audio%20Broadcast/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)
