@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Mon Oct 21 2019 09:28:34 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:29:08 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
