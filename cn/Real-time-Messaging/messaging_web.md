@@ -3,10 +3,11 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Mon Oct 21 2019 09:25:01 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 12:21:39 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
-本章介绍在正式使用 Agora RTM SDK for Web 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
+
+本页介绍在正式使用 [Agora RTM Web SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
 ## Demo 体验
 你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Web](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Web) 查看完整的源码和代码逻辑
