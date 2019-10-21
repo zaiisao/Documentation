@@ -3,16 +3,16 @@
 title: 管理成员和角色
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 08:02:20 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:18:03 GMT+0800 (CST)
 ---
 # 管理成员和角色
-你创建了一个 Agora 开发者账号后，该账号的角色为**管理员**。在 Agora Dashboard，你可以为你的账号添加新的成员，不同的成员拥有不同的权限，从而实现分工协作。
+你创建了一个 Agora 开发者账号后，该账号的角色为**管理员**。在控制台，你可以为你的账号添加新的成员，不同的成员拥有不同的权限，从而实现分工协作。
 
 ## 添加新成员
 
 添加新成员的步骤如下：
 
-1. 登录 Agora Dashboard，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551255228096) 按钮进入[**成员管理**](https://dashboard.agora.io/member)页面，点击**添加**按钮。
+1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551255228096) 按钮进入[**成员管理**](https://dashboard.agora.io/member)页面，点击**添加**按钮。
 
 ![](https://web-cdn.agora.io/docs-files/1563791106478)
 
