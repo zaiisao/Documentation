@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Mon Oct 21 2019 09:05:41 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:06:05 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -17,7 +17,17 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Web](https
 
 ## Prerequisites
 
-A valid [Agora developer account](https://sso.agora.io/login/).
+1. ‭Install a browser supported by the Agora RTM Web SDK, as the following figure shows: 
+
+| Platform             | Compatibility |
+| :------------------- | :----------------- |
+| Chrome 49 or later | ✔                  |
+| Android Browser 4.4.3 or later | ✔     |
+| Safari 9 or later    | ✔                  |
+| Internet Explorer 11  | ✔                  |
+| Firefox 52 or later |  ✔                  |
+	 
+2. A valid [Agora developer account](https://sso.agora.io/login/).
 
 
 <div class="alert note">Open the ports and whitelist the domains specified in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your intranet has a firewall.</div> 
