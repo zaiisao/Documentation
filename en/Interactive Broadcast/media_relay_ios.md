@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: iOS
-updatedAt: Fri Aug 16 2019 09:50:40 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 06:01:55 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -31,7 +31,7 @@ During the relay, the SDK reports the states and events of the channel media rel
 
 | State codes | Event codes | The media stream relay state |
 | ---------------- | ---------------- | ---------------- |
-| AgoraChannelMediaRelayStateRunning(2) and AgoraChannelMediaRelayErrorNone(0)      | AgoraChannelMediaRelayEventSentToDestinationChannel(4)     | The channel media relay starts.      |
+| AgoraChannelMediaRelayStateRunning(2) and AgoraChannelMediaRelayErrorNone(0)      | AgoraChannelMediaRelayEventSentTo-DestinationChannel(4)     | The channel media relay starts.      |
 | AgoraChannelMediaRelayStateFailure(3)      | /     | Exceptions occur for the media stream relay. Refer to the error parameter for troubleshooting.      |
 | AgoraChannelMediaRelayStateIdle(0) and AgoraChannelMediaRelayErrorNone(0)      | /     | The channel media relay stops.      |
 
