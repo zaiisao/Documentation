@@ -3,7 +3,7 @@
 title: 音频回声
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:16:11 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 18:35:01 GMT+0800 (CST)
 ---
 # 音频回声
 回声问题通常是由听到回声的用户设备引起的。SDK 支持对多数设备进行回声消除。如果遇到回声问题，可以佩戴耳机进行规避，并确认耳机本身不会引起回声。
