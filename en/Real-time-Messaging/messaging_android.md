@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Mon Oct 21 2019 09:44:35 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:44:39 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -20,14 +20,20 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Android](h
 
 ## Prerequisites
 
+
+
 - Android SDK API Level 16 or higher
-- Android Studio 3.0 or later
-- A mobile device running on Android 4.1 or later
 - To run your app on Android 9, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p) for more information.
-- A valid [Agora developer account](https://sso.agora.io/login/).
+
+- Android Studio 3.0 or later
+- An Android device running on Android 4.1 or later
+- A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
+
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div> 
 
 
-<div class="alert note">Open the ports specified in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div> 
+
+
 
 
 
