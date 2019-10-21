@@ -58,8 +58,8 @@ Agora 在 Github 上提供一个开源的实时音视频通话示例项目 [Agor
 ...
 dependencies {
     ...
-    // 其中 2.9.1 是最新的 Agora SDK 的版本号。你也可以填写其他版本
-    implementation 'io.agora.rtc:full-sdk:2.9.1'
+    // 其中 2.9.2 是最新的 Agora SDK 的版本号。你也可以填写其他版本
+    implementation 'io.agora.rtc:full-sdk:2.9.2'
 }
 ```
 
