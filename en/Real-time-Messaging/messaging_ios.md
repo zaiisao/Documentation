@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Mon Oct 21 2019 09:29:08 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:29:28 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -25,8 +25,8 @@ We provide open-source demo projects on GitHub, which implement an elementary me
 ## Prerequisites
 
 
-- <%=IDE_version %> or later
-- An <%=platform %> device running <%=platform %> <%=platform_version %> or later
+- Xcode 9.0 or later
+- An iOS device running iOS 8.0 or later
 - A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div>
