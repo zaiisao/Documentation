@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Mon Oct 21 2019 08:23:01 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:44:35 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
