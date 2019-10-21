@@ -3,7 +3,7 @@
 title: 创建和管理项目
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 07:50:49 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:03:35 GMT+0800 (CST)
 ---
 # 创建和管理项目
 本页介绍如何在 Agora 控制台创建和管理项目。
@@ -26,7 +26,7 @@ updatedAt: Mon Oct 21 2019 07:50:49 GMT+0800 (CST)
 
 > Agora 提供两种鉴权机制：App ID 和 App ID + App 证书 + Token。鉴权机制的介绍详见[校验用户权限](../../cn/Agora%20Platform/token.md)。我们推荐使用安全性更高的 Token 机制：
 >
-> - 在项目测试阶段，启用 App 证书后可以直接在 Dashboard 生成一个临时 token 进行测试。
+> - 在项目测试阶段，启用 App 证书后可以直接在控制台生成一个临时 token 进行测试。
 > - 项目准备正式上线时，你需要在 Server 端部署一个 Token Generator 来生成正式 token。
 
 4. 点击**提交**后，新建的项目就会显示在**项目管理**页中。
