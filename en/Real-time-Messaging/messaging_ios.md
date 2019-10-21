@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Mon Oct 21 2019 09:32:50 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 11:40:14 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -337,7 +337,12 @@ else { %>
 -  To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., ensure that you have received <%=onLoginSuccess %>). 
 <% } %>
 - To use any of the channel features, you must first call the <%=createChannel %> method to create a channel instance. 
-- You can create multiple channel instances for each <%=RtmClient %> instance, but you can only join a maximum of 20 channels at the same time. The `channelId` parameter must be channel-specific.
+- You can create multiple channel instances for each <%=RtmClient %> instance, but you can only join a maximum of 20 channels at the same time. The `channelId` parameter needs to be channel-specific.
+<%  if (platform == "Web") { %>
+- When you do not want to use a specific instance any more, you can use the `RemoveAllListeners` method to remove all its listeners. 
+<% } 
+else { %>
 - When you leave a channel and do not want to join it again, you can call the <%=destroyChannel %> method to release all resources used by the channel instance.
+<% } %>
 - You cannot reuse a received <%=RtmMessage %> instance.
 
