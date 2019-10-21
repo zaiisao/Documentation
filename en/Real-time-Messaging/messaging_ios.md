@@ -325,7 +325,7 @@ Call the [leaveWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%
 
 
 - The Agora RTM SDK supports creating multiple [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instances that are independent of each other. 
-- To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., have received `AgoraRtmLoginErrorOk` 
+- To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., have received `AgoraRtmLoginErrorOk`).
 - To use any of the channel features, you must first call the [createChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) method to create a channel instance. 
 - You can create a maximum of 20 channel instances for each [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance and a user can join multiple channels at the same time. The `channelId` parameter must be channel-specific.
 - You cannot reuse an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) object that has been received by a user.
