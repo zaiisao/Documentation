@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Mon Oct 21 2019 08:44:23 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 09:05:41 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
