@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Sat Oct 12 2019 06:26:47 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:17:44 GMT+0800 (CST)
 ---
 # Set up Authentication
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two authentication mechanisms:
@@ -31,11 +31,11 @@ We have two types of dynamic keys: Channel Key and Token. Different versions of 
 
 ## Use an App ID only for authentication
 
-Each project you create in [Agora Dashboard](http://dashboard.agora.io) has a unique App ID.
+Each project you create in [Agora Console](http://dashboard.agora.io) has a unique App ID.
 
 ### Get an App ID
 
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Agora%20Platform/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Agora%20Platform/sign_in_and_sign_up.md).
 
 2. Click **Get Started** under **Projects**.
 
@@ -67,13 +67,13 @@ The Token is a more secure and sophisticated authentication mechanism than the A
 
 ### Enable the App Certificate
 
-If you choose **APP ID + APP certificate + Token (recommended)**  when you create a project in the Dashboard,  the App Certificate is enabled by default.
+If you choose **APP ID + APP certificate + Token (recommended)**  when you create a project in the Console,  the App Certificate is enabled by default.
 
 ![](https://web-cdn.agora.io/docs-files/1563114012279)
 
 If you did not choose  **APP ID + APP certificate + Token (recommended)**, follow the steps to enable the certificate.
 
-1. Find your project on the **Project Management** page at the [Agora Dashboard](https://dashboard.agora.io/) and click the **Edit** button.
+1. Find your project on the **Project Management** page at the [Agora Console](https://dashboard.agora.io/) and click the **Edit** button.
 
 	![](https://web-cdn.agora.io/docs-files/1563112238811)
 	
@@ -91,7 +91,7 @@ If you did not choose  **APP ID + APP certificate + Token (recommended)**, follo
 <a id = "temptoken"></a>
 ### Get a temporary token
 
-When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/) to join a channel. 
+When working on a test version of your application, you can generate a temporary token at the [Agora Console](https://dashboard.agora.io/) to join a channel. 
 
 On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
 
