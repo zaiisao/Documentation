@@ -12,7 +12,7 @@ Before creating and initializing the client, ensure that you prepared the develo
 
 Create a project in Agora Dashboard and get the App ID of the project. You need to pass in the App ID during initialization.
 
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
 
 2. Click **Get Started** under **Projects**.
 
