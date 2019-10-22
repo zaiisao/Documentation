@@ -3,7 +3,7 @@
 title: 音频回声
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 11:57:45 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 11:57:48 GMT+0800 (CST)
 ---
 # 音频回声
 Agora SDK 支持对多数设备进行回声消除。如果遇到回声问题，可以佩戴耳机进行规避，并确认耳机本身不会引起回声。
@@ -61,5 +61,5 @@ Agora SDK 支持对多数设备进行回声消除。如果遇到回声问题，�
 
 ## 步骤 3：水晶球监控通话质量
 
-你可以使用 Agora Dashboard 的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+你可以使用 Agora 控制台中的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
 
