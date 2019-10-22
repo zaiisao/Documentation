@@ -3,7 +3,7 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Fri Jul 05 2019 10:30:01 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:15 GMT+0800 (CST)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
@@ -38,11 +38,11 @@ Create a Cocos Creator project and enable the Agora Service in your project with
 
    ![](https://web-cdn.agora.io/docs-files/1562229434363)
 	 
-5. Upon opening the service, the following window appears. Click **console** to go to Agora **Dashboard**. 
+5. Upon opening the service, the following window appears. Click **console** to go to Agora **Console**. 
 
 	![](https://web-cdn.agora.io/docs-files/1562229467151)
 
-	The Dashboard automatically creates an Agora project. Click open the project and get your Agora App ID. You need to pass the App ID when initializing the RtcEngine.
+	The Console automatically creates an Agora project. Click open the project and get your Agora App ID. You need to pass the App ID when initializing the RtcEngine.
 
   ![](https://web-cdn.agora.io/docs-files/1562297985211)
 	 
@@ -58,8 +58,7 @@ You can now call the APIs to enable the audio function in your Cocos Creator pro
 
 Enable the audio function with the following APIs:
 
-1. Initialize the RtcEngine: [agora && agora.init(appid);](../../en/Interactive%20Gaming/game_coco.md)
-2. Join the channel: [agora && agora.joinChannel("", channel, "", 0);](../../en/Interactive%20Gaming/game_coco.md)
+1. Initialize the RtcEngine: [agora undefined agora.joinChannel("", channel, "", 0);](../../en/Interactive%20Gaming/game_coco.md)
 3. Leave the channel:  [agora && agora.leaveChannel();](../../en/Interactive%20Gaming/game_coco.md)
 
 Register the following callback events in the `agora.on` method:
