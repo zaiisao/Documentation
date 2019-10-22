@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: macOS
-updatedAt: Tue Oct 22 2019 06:19:59 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 09:54:09 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for macOS.
@@ -324,15 +324,12 @@ Call the `leaveChannel` method to leave the current call according to your scena
 
 ```objective-c
 // Objective-C
-- (void)leaveChannel {
+[self.rtcEngine setupLocalVideo:nil];
     // Leave the channel.
-    [self.agoraKit leaveChannel:^(AgoraChannelStats *stat) {
-        [self.agoraKit leaveChannel:^(AgoraChannelStats *stat) {
-        [self hideControlButtons];
-        [self.remoteVideo removeFromSuperview];
-        [self.localVideo removeFromSuperview];
-    }];
-}
+    [self.rtcEngine leaveChannel:nil];
+    if (self.isBroadcaster) {
+        [self.rtcEngine stopPreview];
+    }
 ```
 
 ```swift
