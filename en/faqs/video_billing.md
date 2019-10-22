@@ -3,7 +3,7 @@
 title: Billing for the video call
 description: 视频通话计费说明
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 15:40:04 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:40:08 GMT+0800 (CST)
 ---
 # Billing for the video call
 ## Cost
@@ -344,7 +344,7 @@ Recording is not enabled so no recording fee is charged.
 
 ## FAQ
 
-### Why does Dashboard display minutes used for voice communication even though my project is for video communication?
+### Why does Console display minutes used for voice communication even though my project is for video communication?
 
 If you see voice minutes used in a video communication or live broadcast, it may not be a billing error but may be caused by the following reasons:
 
