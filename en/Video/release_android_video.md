@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Oct 18 2019 08:28:58 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:16:12 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -887,7 +887,7 @@ The `backgroundImage` parameter is added to the `setLiveTranscoding` method allo
 - A user cannot join a communication channel after frequently changing the video encoder profiles.
 - Occasional crashes on some devices when preloading the sound effects.
 - Failure to render videos of lower resolutions on some Android devices.
-- Occasionally, an Android client still interoperates in a communication channel when removed from Dashboard.
+- Occasionally, an Android client still interoperates in a communication channel when removed from Console.
 - Video resolution inconsistencies between the encoder and the decoder in the Live-broadcast profile.
 - Failure to enable the hardware encoder on some Android devices.
 - Occasional video freezes in the Communication or Live-broadcast profile.
