@@ -3,7 +3,7 @@
 title: 音频噪声
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:16:28 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 12:01:38 GMT+0800 (CST)
 ---
 # 音频噪声
 噪声的问题一般是外部环境或者录放音设备导致的，SDK 本身一般是不会主动产生噪声。
@@ -54,4 +54,4 @@ updatedAt: Mon Jul 01 2019 15:16:28 GMT+0800 (CST)
 
 ## 步骤 3：水晶球监控通话质量
 
-你可以使用 Agora Dashboard 的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+你可以使用 Agora 控制台中的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
