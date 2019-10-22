@@ -373,12 +373,12 @@ public void sendChannelMessage(String msg) {
 
 - RTM 支持多个相互独立的 [RtmClient](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) 实例。
 
--  在收发点对点消息或进行其他频道操作前，请确保你已成功登陆 Agora RTM 系统 (即确保已经收到 [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5))。
+- 在收发点对点消息或进行其他频道操作前，请确保你已成功登陆 Agora RTM 系统 (即确保已经收到 [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5))。
 
 - 使用频道核心功能前必须通过调用 [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) 方法创建频道实例。
 - 你可以创建多个 [RtmClient](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) 客户端实例，但是每个客户端实例最多只能同时加入 20 个频道。每个频道都应有不同的 `channelId` 参数。
 
--当离开了频道且不再加入该频道时，可以调用 [release](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a725d008cb19f44496948ee8f1826deaf) 方法及时释放频道实例所占用的资源。
+- 当离开了频道且不再加入该频道时，可以调用 [release](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a725d008cb19f44496948ee8f1826deaf) 方法及时释放频道实例所占用的资源。
 
 - 接收到的 [RtmMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) 消息对象不能重复利用再用于发送。
 
