@@ -3,7 +3,7 @@
 title: 视频通话计费说明
 description: 视频通话计费说明
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 11:56:23 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 11:56:27 GMT+0800 (CST)
 ---
 # 视频通话计费说明
 ## 收费标准
@@ -347,7 +347,7 @@ updatedAt: Tue Oct 22 2019 11:56:23 GMT+0800 (CST)
 
 ## 常见问题
 
-### 我的项目是视频直播，但是为什么 Dashboard 用量中有音频分钟数？
+### 我的项目是视频直播，但是为什么在控制台看到的用量中有音频分钟数？
 
 视频通话和视频直播项目中出现了音频分钟数并非是计费错误，通常有几种情况：
 
