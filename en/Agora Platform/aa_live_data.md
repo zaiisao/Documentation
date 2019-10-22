@@ -3,28 +3,28 @@
 title: Realtime (Beta)
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 02:59:07 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 03:05:40 GMT+0800 (CST)
 ---
 # Realtime (Beta)
-Use the Live Data function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
+Use the Realtime function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
 
 - The Live Beat page displays the live scale, quality, and any abnormalities that may occur in your project.
 - Analytic diagrams display the scale, experience, and network statistics over a specified range of time.
 - You can query the statistics of the past 24 hours at a maximum. The statistics are updated every minute.
 
 > - You can also get these statistics by using [Agora Analytics RESTful API](../../en/Agora%20Platform/aa_api.md). Contact sales-us@agora.io for details.
-> - Live Data only covers statistics relating to the [Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk).
+> - Realtime only covers statistics relating to the [Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk).
 
 ## Getting started
 
-1. Contact sales-us@agora.io to enable the Live Data function for your project.
+1. Contact sales-us@agora.io to enable the Realtime function for your project.
 2. Login to [Agora Console](https://console.agora.io/) and click **Agora Analytics** on the left navigation bar.
 3. Select a project in the top-left corner.
-4. Click [**Live Beat**](#livebeat) under **Live Data** to view the live status of your project. Click [**Scale Overview**](#livescale), [**Experience Overview**](#livexp), or [**Network Overview**](#livenet) to view detailed live statistics and analytic diagrams.
+4. Click [**Live Beat**](#livebeat) under **Realtime** to view the live status of your project. Click [**Scale Overview**](#livescale), [**Experience Overview**](#livexp), or [**Network Overview**](#livenet) to view detailed live statistics and analytic diagrams.
 
 ## <a name="livebeat"></a>Live Beat
 
-**Live Beat** displays the real-time status of your project via the **LIVE BEAT** dashboard. Click the expand button at the top of the page to switch to the fullscreen view. 
+**Live Beat** displays the real-time status of your project via the **LIVE BEAT** dashboard. Click the expand button ![](https://web-cdn.agora.io/docs-files/1571712244221) at the top of the page to switch to the fullscreen view. 
 
 Note: Only displays with a resolution of 1800 (px) or higher fully support the fullscreen view. Certain statistics may not be visible when not in fullscreen mode.
 
@@ -81,7 +81,9 @@ When the users of a project are concentrated in one country, this section displa
 
 ## <a name="livescale"></a>Scale Overview
 
-**Scale Overview** shows the live scale statistics and distribution for a specified period. The live scale statistics include the user number and the channel number.
+Click [**Scale Overview**](#livebeat) under **Realtime** to view the live scale statistics and distribution for a specified period. The live scale statistics include the user number and the channel number.
+
+![](https://web-cdn.agora.io/docs-files/1571712168039)
 
 Use the timeline at the top of the page to adjust the range of time you want to view or specify whether the page should update the statistics automatically.
 
@@ -135,9 +137,9 @@ Use the timeline at the top of the page to adjust the period to view, or specify
 
 | Metric                     | Description                                                  |
 | :------------------------- | :----------------------------------------------------------- |
-| Join success in 5 sec rate | Number of users who have joined a channel successfully within 5 seconds / Number of users who have tried to join. |
-| Audio freeze rate          | Total audio freeze time / Total audio playback duration. Audio freeze time counts all audio freezes at least 200 ms in length. |
-| Video freeze rate          | Total video freeze time / Total video playback duration. Video freeze time counts all video freezes at least 200 ms in length. |
+| Join Success in 5 sec Rate | Number of users who have joined a channel successfully within 5 seconds / Number of users who have tried to join. |
+| Audio Freeze Rate          | Total audio freeze time / Total audio playback duration. Audio freeze time counts all audio freezes at least 200 ms in length. |
+| Video Freeze Rate          | Total video freeze time / Total video playback duration. Video freeze time counts all video freezes at least 200 ms in length. |
 
 ### Distribution
 
@@ -164,10 +166,11 @@ Use the [timeline](#timeline) at the top of the page to adjust the period to vie
 
 | Metric                                          | Description                                                  |
 | :---------------------------------------------- | :----------------------------------------------------------- |
-| Upstream high-quality video transmission rate   | The high-quality video transmission rate from the host to the Agora SD-RTN. High-quality video transmission rate means the percentage of video transmission with a ≤ 5% packet loss rate. |
-| Upstream high-quality audio transmission rate   | The high-quality audio transmission rate from the host to the Agora SD-RTN. High-quality audio transmission rate means the percentage of audio transmission with a ≤ 5% packet loss rate. |
-| End-to-end high-quality video transmission rate | The high-quality video transmission rate from the host to the audience. |
-| End-to-end high-quality audio transmission rate | The high-quality audio transmission rate from the host to the audience. |
+| High-Quality Audio Transmission Rate (Sender to Agora SD-RTN)  | The high-quality audio transmission rate from the sender to the Agora SD-RTN. High-quality audio transmission rate means the percentage of audio transmission with a ≤ 5% packet loss rate. |
+| High-Quality Video Transmission Rate (Sender to Agora SD-RTN)   | The high-quality video transmission rate from the sender to the Agora SD-RTN. High-quality video transmission rate means the percentage of video transmission with a ≤ 5% packet loss rate. |
+| High-Quality Audio Transmission Rate (End-to-End) | The high-quality audio transmission rate from the sender to the receiver. |
+| High-Quality Video Transmission Rate (End-to-End) | The high-quality video transmission rate from the sender to the receiver. |
+
 
 ### Distribution
 
@@ -181,19 +184,19 @@ The second diagram shows the end-to-end high-quality transmission rate between r
 
 ## Key terms
 
-This section describes the key terms used in Live Data. See [Agora Key Terms](https://docs.agora.io/en/Agora%20Platform/terms) for more information.
+This section describes the key terms used in Realtime. See [Agora Key Terms](https://docs.agora.io/en/Agora%20Platform/terms) for more information.
 
 ### Channel
 
 Every call or live broadcast happens in a channel. If we imagine an app being a building, a channel will be a room in the building.
 
-**Live Data** does not count a channel by name, but by lifecycle. It counts each time from when the first users joins the channel to when the last user leaves it.
+**Realtime** does not count a channel by name, but by lifecycle. It counts each time from when the first users joins the channel to when the last user leaves it.
 
 ### User
 
 Each user in the channel has a unique [username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%%20Platforms#a-nameusernameausername).
 
-**Live Data** counts a unique username in a unique channel as one user. If a real-life user joins one channel with multiple, different usernames, or joins different channels with one username, **Live Data** counts users in both situations as multiple users.
+**Realtime** counts a unique username in a unique channel as one user. If a real-life user joins one channel with multiple, different usernames, or joins different channels with one username, **Realtime** counts users in both situations as multiple users.
 
 ### <a name="high-quality-transmission-rate"></a>High-Quality Transmission Rate
 
