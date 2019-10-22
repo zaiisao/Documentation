@@ -3,10 +3,10 @@
 title: Manage Projects
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 07:59:36 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:23 GMT+0800 (CST)
 ---
 # Manage Projects
-This page shows how to create and manage projects in Dashboard.
+This page shows how to create and manage projects in Console.
 
 > The administrator and engineers have access to the **Project Management** page.
 
@@ -14,7 +14,7 @@ This page shows how to create and manage projects in Dashboard.
 
 Follow these steps to create a new project:
 
-1. Log in Dashboard, click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [**Project Management**](https://dashboard.agora.io/projects) page.
+1. Log in Console, click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [**Project Management**](https://dashboard.agora.io/projects) page.
 
 2. Click **Create**. 
 
@@ -28,7 +28,7 @@ Follow these steps to create a new project:
 >
 > We recommend that you use a token for more security:
 >
-> - In the testing stage, you can generate a temporary token in Dashboard after enabling the App Certificate.
+> - In the testing stage, you can generate a temporary token in Console after enabling the App Certificate.
 > - In the production stage, you need to deploy a Token Generator on your server. See [Generate a Token](https://docs.agora.io/en/Interactive&20Broadcast/token_server?platform=C++).
 
 4. Click **Submit** and you can see the project on the **Project Management** page.
