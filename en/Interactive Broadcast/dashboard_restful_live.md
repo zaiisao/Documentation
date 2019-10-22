@@ -1,11 +1,11 @@
 
 ---
-title: Dashboard RESTful API
+title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 06:27:39 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:36:21 GMT+0800 (CST)
 ---
-# Dashboard RESTful API
+# Console RESTful API
 ## 1. Authorization
 
 The RESTful API only supports HTTPS, and the user must pass the basic HTTP authentication with the following information:
