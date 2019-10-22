@@ -6,7 +6,7 @@ platform: CPP
 updatedAt: Tue Oct 22 2019 01:18:55 GMT+0800 (CST)
 ---
 # 云端录制 C++ API (Deprecated)
-<div class="alert note">云端录制 SDK 停服计划：<li>从 11月 15 日起，云端录制 SDK 进入停止维护阶段，但你仍可使用云端录制 SDK。</li><li>从 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法使用云端录制 SDK。</li></div>
+<div class="alert note">云端录制 SDK 停服计划（建议你及时升级到功能丰富、调用更方便的云端录制 Restful API）：<li>从 11 月 15 日起，云端录制 SDK 将停止维护。已经下载的 SDK 可继续使用。</li><li>从 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法继续使用云端录制 SDK。</li></div>
 
 
 | **接口类**                                                   | **描述**                   |
