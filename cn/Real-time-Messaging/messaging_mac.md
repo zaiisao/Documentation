@@ -3,22 +3,26 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: macOS
-updatedAt: Tue Oct 22 2019 03:26:50 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 03:26:54 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
 本页介绍在正式使用 [Agora RTM macOS SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
-## 集成客户端
+## 开发环境要求
 
-### 前提条件
 
-- Xcode 9.0+。
-- OS X 10.0+ 真机（MacBook）
-- 一个有效的 Agora 开发者账号。
-- 请确保你的项目已设置有效的开发者签名。
 
-<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
+- Xcode 9.0+ 或以上版本
+
+- macOS 10.0+ 真机（MacBook）。
+
+- 一个有效的 [Agora 开发者账号](https://sso.agora.io/en/signup)。
+
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a >打开相关端口并设置域名白名单。</div> 
+
+
+
 
 ### 创建项目
 
