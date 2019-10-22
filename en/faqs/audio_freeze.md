@@ -3,7 +3,7 @@
 title: Audio freeze occurs in a call.
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:10:02 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:08:28 GMT+0800 (CST)
 ---
 # Audio freeze occurs in a call.
 Jitter may be caused by slow Internet connections, bad device performances, or the physical environment.
