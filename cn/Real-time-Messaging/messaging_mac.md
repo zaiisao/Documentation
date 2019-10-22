@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: macOS
-updatedAt: Tue Oct 22 2019 09:16:42 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 09:35:52 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -22,75 +22,90 @@ updatedAt: Tue Oct 22 2019 09:16:42 GMT+0800 (CST)
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a >打开相关端口并设置域名白名单。</div> 
 
 
+## 准备开发环境 
+
+本节介绍如何获取 App ID、创建项目，并将 Agora RTM macOS SDK 集成至你的项目中。
+
+### <a name="appid"></a> 获取 App ID
 
 
-### 创建项目
+参考以下步骤获取一个 App ID。若已有App ID，可以直接查看[创建项目](#create)。
+<details>
+	<summary><font color="#3ab7f8">获取 App ID</font></summary>
 
-1. 打开 Xcode，新建一个项目。
+1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
+2. 点击**项目列表**处的**新手指引**。
 
-2. 选择 **Single View App** 模板，点击 **Next**。
+	![](https://web-cdn.agora.io/docs-files/1563521764570)
 
-3. 填入你的项目名称，公司名称等信息，选择开发团队与开发语言，点击 **Next**。
+3. 在弹出的窗口中输入你的第一个项目名称，然后点击**创建项目**。你可以参考屏幕提示，了解实现一个视频通话的基本步骤。
 
-   如果你没有添加过开发团队信息，会看到 **Add account…** 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。
+	![](https://web-cdn.agora.io/docs-files/1563521821078)
 
-4. 选择你的项目所要存放的位置，点击 **Create**。
+4. 项目创建成功后，你会在**项目列表**下看到刚刚创建的项目。点击项目名后的**编辑**按钮，进入项目页。你也可以直接点击左边栏的**项目管理**图标，进入项目页面。
 
-#### 设置开发者签名
+	![](https://web-cdn.agora.io/docs-files/1563522909895)
 
-如果你已经设置过开发者签名，可跳过该节。
+5. 在**项目管理**页，你可以查看你的 **App ID**。
 
-将你的 iOS 设备连接至电脑。选中当前项目 **Target** ，在 **General** 标签页上找到 **Signing**，勾选 **Automatically manage signing**，在弹窗中点击 **Enable Automatic**。
+	![](https://web-cdn.agora.io/docs-files/1563522556558)
 
-至此，你已经完成了项目的创建。接下来，让我们把 Agora SDK 包添加到这个项目中。
+</details>
 
-### 安装 SDK
+### <a name="create"></a>创建项目
 
-#### 方法 1：通过 Cocoapods 导入 SDK
+参考以下步骤创建一个 macOS 项目。若已有 macOS 项目，可以直接查看[集成 SDK](#IntegrateSDK)。
 
-1. 请确保已在本机安装 Cocoapods。具体方法详见 [Getting Started with Cocoapods](https://guides.cocoapods.org/using/getting-started.html#getting-started)。
-2. 在你的电脑 Terminal 终端 cd 进入你的项目所在目录，利用 vim 创建 Podfile：
-`vim Podfile`
-3. 在 Podfile 文件中输入以下内容：
+
+<details>
+	<summary><font color="#3ab7f8">创建 macOS 项目</font></summary>
+<ol>	
+<li> 打开 <b>Xcode</b> 并点击 <b>Create a new Xcode project</b>。</li>
+<li> 选择项目类型为 <b>Cocoa App</b>，并点击<b>Next</b>。</li>
+<li> 输入项目信息，如项目名称、开发团队信息、组织名称和语言，并点击 <b>Next</b>。</li>
+ <div class="alert note">如果你没有添加过开发团队信息，会看到 <b>Add account…</b> 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。</div>
+<li> 选择项目存储路径，并点击 <b>Create</b>。</li>
+
+<li> 进入 <b>TARGETS > Project Name > General > Signing</b> 菜单，选择 <b>Automatically manage signing</b>，并在弹出菜单中点击 <b>Enable Automatic</b>。</li>
+</ol>	
+<img src="https://web-cdn.agora.io/docs-files/1568803584472"/>
+		
+</details>
+
+### <a name="IntegrateSDK"></a>集成 SDK
+
+
+选择如下任意一种方式将 Agora RTM macOS SDK 集成到你的项目中。
+
+**方法 1：通过 Cocoapods 导入 SDK**
+
+1. 开始前确保你已安装 **Cocoapods**。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
+2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
+3. 打开 **Podfile** 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
 ```
-target '<YOUR APP>' do
+platform :macOS, '10.10' use_frameworks!
+target 'Your App' do
     pod 'AgoraRtm_macOS'
 end
 ```
-> 请以你的项目名称替换 \<YOUR APP\> 。
-4. 保存 Podfile 并退出：
-`:wq`
-6. 导入 Agora RTM SDK：
-`pod install`
-7. 在 Xcode 中打开生成的 **.xcworkspace** 文件。
+4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
+5. 运行 `pod install` 命令安装 Agora SDK。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 **xcworkspace** 文件。
+6. 打开新生成的 **xcworkspace** 文件。
 
-#### 方法 2：手动添加 SDK 到项目中
+**方法 2：手动添加 SDK 到项目中**
 
-1. 下载 [Agora RTM Objective-C SDK for macOS](../../cn/Real-time-Messaging/downloads.md) ，解压后将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到你的项目文件夹内。
-2. 使用 Xcode 打开你的项目，然后选中当前 Target。
-3. 打开 **Build Phases** 页面，展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加
-   - **AgoraRtmKit.framework**
-   - **CoreWLAN.framework**
-   - **libc++.tbd**
-   - **libresolv.tbd**
-   - **SystemConfiguration.framework**
-   - **CoreTelephony.framework**
+1. 下载最新版的 [Agora RTM macOS SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 并解压。
+2. 将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到项目文件夹下。
+3. 打开 **Xcode**，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。在添加 **AgoraRtmKit.framework** 文件时，还需在点击 **+** 后点击 **Add Other…**，找到本地文件并打开。
 
-其中，**AgoraRtmKit.framework** 位于你的项目文件夹下。因此点击 **+** 后，还需要点击 **Add Other…** ，然后进入你的项目所在目录，选中这个文件并点击 **Open**。
+ - AgoraRtmKit.framework 
+ - libc++.tbd
+ - libresolv.tbd
+ - SystemConfiguration.framework
+ - CoreTelephony.framework
 
-### 访问库
 
-根据你的项目使用的编程语言，在项目需要使用 Agora SDK 的文件里，填入下面的代码。
 
-```objective-c
-// Objective-C
- #import <AgoraRtmKit/AgoraRtmKit.h>
-```
-
-```swift
-// Swift
-import AgoraRtmKit
-```
 
 > 如果填入 import 代码后提示找不到文件，可以尝试在 **Build Settings** 页面 **Framework search paths** 设置中添加 `$(SRCROOT)`。
 
