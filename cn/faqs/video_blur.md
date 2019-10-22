@@ -3,7 +3,7 @@
 title: 视频模糊
 description: 视频模糊
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:17:36 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 12:00:33 GMT+0800 (CST)
 ---
 # 视频模糊
 视频模糊一般是由视频码率或分辨率过低导致。
@@ -27,4 +27,4 @@ updatedAt: Mon Jul 01 2019 15:17:36 GMT+0800 (CST)
 
 ## 步骤 3：水晶球监控通话质量
 
-你可以使用 Agora Dashboard 的[水晶球](http://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+你可以使用 Agora 控制台中的[水晶球](http://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
