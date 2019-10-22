@@ -18,7 +18,7 @@ Development environment:
 > If you use Windows for development, ensure that you run npm install -D —arch = ia32 electron to install  a 32-bit Electron.
 
 ## Create an Agora Project and Get an App ID
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Interactive%20Broadcast/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Interactive%20Broadcast/sign_in_and_sign_up.md).
 
 2. Click **Get Started** under **Projects**.
 

@@ -46,7 +46,7 @@ You can skip to [Create a project](#create) if you already have an App ID.
 <details>
 	<summary><font color="#3ab7f8">Get an App ID</font></summary>
 	
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Real-time-Messaging/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Real-time-Messaging/sign_in_and_sign_up.md).
 
 2. Click **Get Started** under **Projects**.
 

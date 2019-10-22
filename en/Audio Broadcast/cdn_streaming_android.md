@@ -18,7 +18,7 @@ When multiple hosts are in a channel in CDN live streaming, [transcoding](https:
 
 Ensure that you enable the RTMP Converter service before using this function.
 
-1. Log in [Dashboard](https://dashboard.agora.io/), and click ![img](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Products & Usage** page. 
+1. Log in [Console](https://dashboard.agora.io/), and click ![img](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Products & Usage** page. 
 2. Select a project from the drop-down list in the upper-left corner, and click **Duration** under **RTMP Converter**. 
 ![](https://web-cdn.agora.io/docs-files/1569302661254)
 3. Click **Enable RTMP Converter**.

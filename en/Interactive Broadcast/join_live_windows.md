@@ -36,7 +36,7 @@ Call the <code>joinChannel</code> method to join a channel.
 In the <code>joinChannel</code> method:
 
 -  Pass a token that identifies the role and privilege of the user. 
-	- For the testing environment, we recommend usign a Temp Token generated on Dashboard. See [Get a Temp Token](../../en/Interactive%20Broadcast/token.md).
+	- For the testing environment, we recommend usign a Temp Token generated on Console. See [Get a Temp Token](../../en/Interactive%20Broadcast/token.md).
 	- For the production environment, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](../../en/Interactive%20Broadcast/token_server.md). 
 -   Pass a channel ID that identifies the channel. Users that input the same channel ID enter into the same channel.
 -   Pass a uid that identifies the user. Each user in a channel requires a unique uid. If you want to join the same channel on different devices, ensure that different uids are used for each device.

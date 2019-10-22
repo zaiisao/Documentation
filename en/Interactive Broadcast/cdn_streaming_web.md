@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Fri Oct 11 2019 03:19:33 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 07:55:31 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -18,7 +18,7 @@ When multiple hosts are in a channel in CDN live streaming, [transcoding](https:
 
 Ensure that you enable the RTMP Converter service before using this function.
 
-1. Log in [Dashboard](https://dashboard.agora.io/), and click ![img](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Products & Usage** page. 
+1. Log in [Console](https://dashboard.agora.io/), and click ![img](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Products & Usage** page. 
 2. Select a project from the drop-down list in the upper-left corner, and click **Duration** under **RTMP Converter**. 
 ![](https://web-cdn.agora.io/docs-files/1569302661254)
 3. Click **Enable RTMP Converter**.
@@ -37,7 +37,7 @@ Before proceeding, ensure that you implement a basic live broadcast in your proj
 Refer to the following steps to push streams to the CDN:
 
 <a name="single"></a>
-1. The host in a channel calls the `Client.setLiveTranscoding` method to set the transcoding parameters of the media streams (`LiveTranscoding`), such as the resolution, bitrate, frame rate, and position of the watermark/background image. If you need a transcoded picture, set the picture-in-picture layout for each user in the `TranscodingUser` class, as described in [Sample Code](#sample).
+1. The host in a channel calls the `Client.setLiveTranscoding` method to set the transcoding parameters of the media streams (`LiveTranscoding`), such as the resolution, bitrate and frame rate. If you need a transcoded picture, set the picture-in-picture layout for each user in the `TranscodingUser` class, as described in [Sample Code](#sample).
 
    > The `Client.on("liveTranscodingUpdated")` callback occurs when the `LiveTranscoding` class updates and reports the updated information to the local host.
 

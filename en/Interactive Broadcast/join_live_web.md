@@ -15,7 +15,7 @@ Once the client initialization is complete, call the `client.join`  method in th
 Pass the channel key, channel name, and user ID to the method parameters:
 
 - `tokenOrKey`: Pass a token that identifies the role and privilege of the user. 
-	- For the testing environment, we recommend usign a Temp Token generated on Dashboard. See [Get a Temp Token](../../en/Interactive%20Broadcast/token.md).
+	- For the testing environment, we recommend usign a Temp Token generated on Console. See [Get a Temp Token](../../en/Interactive%20Broadcast/token.md).
 	- For the production environment, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](../../en/Interactive%20Broadcast/token_server.md). 
 - `channel`: Channel name.
 - `uid`: The user ID is an integer and should be unique. If you set the user ID to null, the Agora server assigns a user ID and returns it in the `onSuccess` callback.

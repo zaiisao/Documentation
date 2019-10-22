@@ -94,9 +94,9 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 2. In **Terminal**, go to the project path and run the `pod init` command to create a **Podfile** in the project folder.
 3. Open the **Podfile**, delete all contents and input the following contents. Remember to change **Your App** to the target name of your project.
 ```
-platform :ios, '9.0' use_frameworks!
+platform :<%=platform %>, '<%=platform_version %>' use_frameworks!
 target 'Your App' do
-    pod 'AgoraRtm_macOS'
+    pod '<%=sdk_pod %>'
 end
 ```
 4. Go back to **Terminal**, and run the `pod update` command to update the local libraries.
@@ -105,14 +105,39 @@ end
 
 **Method 2: Manually add the SDK files**
 
-1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for iOS, and unzip the downloaded SDK package.
-2. Copy the **AgoraRtmKit.framework** file in the **libs** folder to the project folder.
-3. In **Xcode**, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the **AgoraRtmKit.framework** file, remember to click **Add Other...** after clicking **+**.
-	- AgoraRtmKit.framework
+1. Download the latest version of the [Agora <%=product %> <%=platform %> SDK](https://docs.agora.io/cn/Agora%20Platform/downloads), and unzip.
+2. Copy the **<%=AgoraKitFramework %>.framework** file in the **libs** folder to the project folder.
+3. In **Xcode**, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the **<%=AgoraKitFramework %>.framework** file, remember to click **Add Other...** after clicking **+**.
+<% if (product != "RTM") { %>
+	- AgoraRtcEngineKit.framework
+	- Accelerate.framework
+	- AudioToolbox.framework
+	- AVFoundation.framework
+	- CoreMedia.framework
+	- CoreML.framework
+	- CoreTelephony.framework
+	- libc++.tbd
+	- libresolv.tbd
+	- SystemConfiguration.framework
+	- VideoToolbox.framework
+
+ **Before**:
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568801101072)
+ 
+ **After**:
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568801108276)
+ 
+<div class="alert note">If your device runs <b>iOS 9.0</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
+<% }
+else { %>
+	- <%=AgoraKitFramework %>.framework
 	- libc++.tbd
 	- libresolv.tbd
 	- SystemConfiguration.framework
 	- CoreTelephony.framework
+<% } %>
 
 ## Implement peer-to-peer and channel messaging
 
