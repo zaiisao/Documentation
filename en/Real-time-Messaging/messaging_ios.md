@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Mon Oct 21 2019 11:40:18 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 09:52:07 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -107,7 +107,7 @@ end
 
 1. Download the latest version of the [Agora <%=product %> <%=platform %> SDK](https://docs.agora.io/cn/Agora%20Platform/downloads), and unzip.
 2. Copy the **<%=AgoraKitFramework %>.framework** file in the **libs** folder to the project folder.
-3. In **Xcode**, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the **<%=AgoraKitFramework %>.framework** file, remember to click **Add Other...** after clicking **+**.
+3. In **Xcode**, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click <b>+</b> to add the following frameworks and libraries. To add the **<%=AgoraKitFramework %>.framework** file, remember to click **Add Other...** after clicking **+**.
 <% if (product != "RTM") { %>
 	- AgoraRtcEngineKit.framework
 	- Accelerate.framework
