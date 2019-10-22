@@ -3,7 +3,7 @@
 title: Noise occurs in a call.
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:09:54 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:08:04 GMT+0800 (CST)
 ---
 # Noise occurs in a call.
 Noise may be caused by the physical environment or recording and playback devices rather than the SDK.
@@ -35,6 +35,6 @@ If the issue persists, contact Agora customer support and submit the issue with 
   </tr>
 </table>
 
-## Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard
+## Step 3: Monitor the Quality of Experience in Agora Analytics in Console
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Console. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
