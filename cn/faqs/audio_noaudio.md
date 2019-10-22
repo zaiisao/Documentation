@@ -3,7 +3,7 @@
 title: 听不到声音
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:17:06 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 11:58:22 GMT+0800 (CST)
 ---
 # 听不到声音
 用户在通话过程无法听到对方的声音，或者其他人听不到该用户的声音，或者双方都听不到声音。
@@ -44,4 +44,4 @@ updatedAt: Mon Jul 01 2019 15:17:06 GMT+0800 (CST)
 
 ## 步骤 3：水晶球监控通话质量
 
-你可以使用 Agora Dashboard 的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+你可以使用 Agora 控制台中的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
