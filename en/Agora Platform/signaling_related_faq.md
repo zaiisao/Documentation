@@ -3,7 +3,7 @@
 title: Signaling-related Issues
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:17:49 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:18:44 GMT+0800 (CST)
 ---
 # Signaling-related Issues
 ### Signaling Login Failure
@@ -18,9 +18,9 @@ The Signaling Key is invalid:
 
 1. Check the App ID.
 
-2. Check the App Certificate, and whether it is enabled on the Dashboard.
+2. Check the App Certificate, and whether it is enabled on the Console.
 
-3. It takes about an hour for the App Certificate to take effect after it is enabled on the Dashboard.
+3. It takes about an hour for the App Certificate to take effect after it is enabled on the Console.
 
 4. Check the algorithm to generate the Signaling Key.
 
