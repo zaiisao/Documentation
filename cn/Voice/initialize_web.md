@@ -3,14 +3,14 @@
 title: 创建并初始化 Client 对象
 description: Web SDK 初始化客户端对象
 platform: Web
-updatedAt: Fri Jul 19 2019 08:26:47 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 04:08:19 GMT+0800 (CST)
 ---
 # 创建并初始化 Client 对象
 ## 前提条件
 
 在创建并初始化 Client 对象前，请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端](../../cn/Voice/web_prepare.md)。
 
-初始化过程中，你需要传入一个的 App ID。因此需要现在 Agora Dashboard 注册项目并获取 App ID。
+初始化过程中，你需要传入一个的 App ID。因此需要现在控制台注册项目并获取 App ID。
 
 1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Voice/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
