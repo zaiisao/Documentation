@@ -3,12 +3,12 @@
 title: Manage Members & Roles
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 08:02:47 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:50 GMT+0800 (CST)
 ---
 # Manage Members & Roles
 You can add members to your account and set these members as different roles with specified permissions.
 
-This page shows how to add new members and manage members in Dashboard.
+This page shows how to add new members and manage members in Console.
 
 > Only the administrator has access to the **Member & Role** page.
 
@@ -16,7 +16,7 @@ This page shows how to add new members and manage members in Dashboard.
 
 Follow these steps to add a member to your account:
 
-1. Log in Dashboard and click ![](https://web-cdn.agora.io/docs-files/1551255228096) in the left navigation menu to enter the [**Member & Role**](https://dashboard.agora.io/member) page. Click **Add** in the **Member & Role** page.
+1. Log in Console and click ![](https://web-cdn.agora.io/docs-files/1551255228096) in the left navigation menu to enter the [**Member & Role**](https://dashboard.agora.io/member) page. Click **Add** in the **Member & Role** page.
 
 ![](https://web-cdn.agora.io/docs-files/1566285546411)
 
