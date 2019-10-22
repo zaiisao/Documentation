@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Web
-updatedAt: Sun Sep 29 2019 02:40:55 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:55 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
@@ -218,9 +218,9 @@ var option = {
    - `mode` determines the [channel profile](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#channel-profile). We use the `rtc` mode for one-to-one or group calls and the `live` mode for [live broadcasts](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#live-broadcast-core-concepts).
    - `codec` sets the codec that the web browser uses for encoding and decoding. Set it as `h264` as long as Safari 12.1 or earlier is involved in the call. If you need to use the web app on mobile phones, see [Use Web SDK on Mobile Devices](https://docs.agora.io/en/faq/web_on_mobile) for details.
 
-  In this step, you need to use the App ID of your project. Follow these steps to create an Agora project in Dashboard and get an App ID.
+  In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Console and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
 
-1. Go to [Dashboard](https://dashboard.agora.io/) and click the **Project Management** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
+1. Go to [Console](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
 2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
 3. On the **Project Management** page, find the **App ID** of your project. 
 
@@ -241,7 +241,7 @@ var option = {
 	Pay attention to the following settings when joining the channel.
 
 	- `token`: This is optional. Pass a token that identifies the role and privilege of the user if your project enables an app certificate. See [Use a token for authentication](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#use-a-token-for-authentication) for details.
-		- For testing, we recommend using a Temp Token generated in Dashboard. See [Get a Temp Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
+		- For testing, we recommend using a Temp Token generated in Console. See [Get a Temp Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
 		- For production, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](https://docs.agora.io/en/Video/token_server).
 	- `channel`: Channel name. A string within 64 bytes.
 	- `uid`: The user ID should be unique in a channel. If you set the user ID as `null`, the Agora server assigns a user ID and returns it in the `onSuccess` callback.
