@@ -3,16 +3,16 @@
 title: Create and Initialize an AgoraRtcEngine Instance
 description: 
 platform: iOS
-updatedAt: Fri Jul 19 2019 08:36:47 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:08 GMT+0800 (CST)
 ---
 # Create and Initialize an AgoraRtcEngine Instance
 ## Prerequisites
 
 Before creating an AgoraRtcEngine instance, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
 
-Create a project in Agora Dashboard and get the App ID of the project. You need to pass in the App ID during initialization.
+Create a project in Agora Console and get the App ID of the project. You need to pass in the App ID during initialization.
 
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
 
 2. Click **Get Started** under **Projects**.
 
