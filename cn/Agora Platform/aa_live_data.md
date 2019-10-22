@@ -3,7 +3,7 @@
 title: 实时数据 (Beta)
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 02:21:09 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 02:26:08 GMT+0800 (CST)
 ---
 # 实时数据 (Beta)
 水晶球的**实时数据**功能，帮助你实时掌握项目整体动态，及时识别异常通话体验和异常根因。
