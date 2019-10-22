@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 25 2019 06:52:58 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 04:14:50 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -46,7 +46,7 @@ Agora RTM SDK 提供两种鉴权机制：App ID 和 Token 。这两种鉴权机�
 
 获取 App Certificate 的步骤如下：
 
-1.  登录 [Agora Dashboard](https://dashboard.agora.io)。
+1.  登录 [控制台](https://dashboard.agora.io)。
 2.  先点击左侧导航栏**项目管理**按钮进入**项目管理**页面，再点击目标项目下方**编辑**按钮，进入**项目编辑**页面。
 3.  点击 App Certificate 右方的**启用**按钮。仔细阅读关于 App Certificate 介绍后，根据屏幕提示，确认启用 App Certificate。
 4.  点击 App Certificate 右方的 ![](https://web-cdn.agora.io/docs-files/1551773294761) 图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击 ![](https://web-cdn.agora.io/docs-files/1551773306258) 图标。
