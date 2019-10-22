@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 12 2019 02:29:24 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:17:47 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -18,19 +18,19 @@ We refer to all the Agora SDKs that enable real-time communication as the RTC SD
 - The Agora Native SDK, including the Android, iOS, macOS, Windows, and Electron SDK.
 - The Agora Web SDK
 
-### Agora Dashboard
+### Agora Console
 
-[Agora Dashboard](https://dashboard.agora.io/) is a platform provided by Agora for you to create and manage your projects. After signing up at [Agora Dashboard](https://dashboard.agora.io/), you can create projects, get [App IDs](#appid), view your usage statistics, analyze the quality of your calls, and check your bills.
+[Agora Console](https://dashboard.agora.io/) is a platform provided by Agora for you to create and manage your projects. After signing up at [Agora Console](https://dashboard.agora.io/), you can create projects, get [App IDs](#appid), view your usage statistics, analyze the quality of your calls, and check your bills.
 
 ### <a name="appid"></a>App ID
 
-App IDs are issued to app developers by Agora to identify the projects and organizations. After signing up at [Agora Dashboard](https://dashboard.agora.io/), you can create multiple projects, and each project will have a unique App ID. See [Getting an App ID](../../en/Agora%20Platform/token.md).
+App IDs are issued to app developers by Agora to identify the projects and organizations. After signing up at [Agora Console](https://dashboard.agora.io/), you can create multiple projects, and each project will have a unique App ID. See [Getting an App ID](../../en/Agora%20Platform/token.md).
 
 All communication sessions created across the Agora SD-RTN™ (Software Defined Real-time Network) with one App ID are isolated from all other sessions with different App IDs. Communication sessions with different App IDs are not connected or related. Statistics, management, and billing are separately associated based on each App ID. If an organization develops independently different apps by different teams, the apps should use different App IDs.  However, if the apps need to communicate with each other, a single App ID should be used.
 
 ### App Certificate
 
-Agora provides an App Certificate for generating [dynamic keys](#key). You can enable the App Certificate in the [Agora Dashboard](https://dashboard.agora.io). See [Getting an App Certificate](../../en/Agora%20Platform/token.md).
+Agora provides an App Certificate for generating [dynamic keys](#key). You can enable the App Certificate in the [Agora Console](https://dashboard.agora.io). See [Getting an App Certificate](../../en/Agora%20Platform/token.md).
 
 ### <a name="key"></a>Dynamic Key
 
