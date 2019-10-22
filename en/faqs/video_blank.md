@@ -3,7 +3,7 @@
 title: Black screen occurs in a call.
 description: 视频黑屏
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 15:12:55 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:13:00 GMT+0800 (CST)
 ---
 # Black screen occurs in a call.
 Common reasons for black screens:
@@ -51,6 +51,6 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The time frame during which the black screen appears.
 * SDK logs and screen recording files of the user.
 
-## Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard
+## Step 3: Monitor the Quality of Experience in Agora Analytics in Console
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Console. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
