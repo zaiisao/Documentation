@@ -3,7 +3,7 @@
 title: Live Data (Beta)
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 02:44:32 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 02:57:32 GMT+0800 (CST)
 ---
 # Live Data (Beta)
 Use the Live Data function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
