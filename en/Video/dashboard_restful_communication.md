@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue Oct 22 2019 06:37:57 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:38:05 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## 1. Authentication
@@ -12,7 +12,7 @@ updatedAt: Tue Oct 22 2019 06:37:57 GMT+0800 (CST)
 
 The RESTful API only supports HTTPS, and the user must pass the `Authorization` parameter in the Basic HTTP request header for authentication. You need to pass the Customer ID and Customer Cerficate in the code.
 
-Login https://dashboard.agora.io, click the account name on the top right of the dashboard, and enter the RESTful API page from the drop-down list to get the Customer ID and Customer Certificate. 
+Login https://console.agora.io, click the account name on the top right of the Console, and enter the RESTful API page from the drop-down list to get the Customer ID and Customer Certificate. 
 
 > Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and Customer Certificate are only used for RESTful API access.
 
@@ -536,7 +536,7 @@ This method checks if a specified user is in a specified channel, and if yes, ch
 	<td><strong>Description</strong></td>
 	</tr>
 	<tr><td>appid</td>
-	<td>Mandatory, App ID in the dashboard</td>
+	<td>Mandatory, App ID in the Console</td>
 	</tr>
 	<tr><td>uid</td>
 	<td>Mandatory, user ID which can be obtained by using the SDK</td>
@@ -623,7 +623,7 @@ This method checks the user role list in a specified channel.
 	<td><strong>Description</strong></td>
 	</tr>
 	<tr><td>appid</td>
-	<td>Mandatory, App ID in the dashboard</td>
+	<td>Mandatory, App ID in the Console</td>
 	</tr>
 	<tr><td>cname</td>
 	<td>Mandatory, channel name</td>
