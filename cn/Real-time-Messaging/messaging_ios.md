@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Tue Oct 22 2019 08:56:48 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 10:06:54 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -85,7 +85,7 @@ updatedAt: Tue Oct 22 2019 08:56:48 GMT+0800 (CST)
 ### <a name="IntegrateSDK"></a> 集成 SDK
 
 
-选择如下任意一种方式将 Agora <%=product %> <%=platform %> SDK 集成到你的项目中。
+选择如下任意一种方式将 Agora RTM iOS SDK 集成到你的项目中。
 
 **方法 1：通过 Cocoapods 导入 SDK**
 
@@ -93,9 +93,9 @@ updatedAt: Tue Oct 22 2019 08:56:48 GMT+0800 (CST)
 2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
 3. 打开 **Podfile** 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
 ```
-platform :<%=platform %>, '<%=platform_version %>' use_frameworks!
+platform :iOS, '9.0' use_frameworks!
 target 'Your App' do
-    pod '<%=sdk_pod %>'
+    pod 'AgoraRtm_iOS'
 end
 ```
 4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
@@ -104,59 +104,20 @@ end
 
 **方法 2：手动添加 SDK 到项目中**
 
-1. 下载最新版的 [Agora <%=product %> <%=platform %> SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 并解压。
-2. 将 **libs** 文件夹内的 **<%=AgoraKitFramework %>.framework** 文件复制到项目文件夹下。
-3. 打开 **Xcode**，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。在添加 **<%=AgoraKitFramework %>.framework** 文件时，还需在点击 **+** 后点击 **Add Other…**，找到本地文件并打开。
-<% if (product != "RTM") { %>
- - AgoraRtcEngineKit.framework
- - Accelerate.framework
- - AudioToolbox.framework
- - AVFoundation.framework
- - CoreMedia.framework
- - CoreML.framework
- - CoreTelephony.framework
- - libc++.tbd
- - libresolv.tbd
- - SystemConfiguration.framework
- - VideoToolbox.framework
+1. 下载最新版的 [Agora RTM iOS SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 并解压。
+2. 将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到项目文件夹下。
+3. 打开 **Xcode**，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。在添加 **AgoraRtmKit.framework** 文件时，还需在点击 **+** 后点击 **Add Other…**，找到本地文件并打开。
 
- **添加前**：
- 
- ![](https://web-cdn.agora.io/docs-files/1568800190639)
- 
- **添加后**：
- 
- ![](https://web-cdn.agora.io/docs-files/1568800223316)
- 
-<div class="alert note">如需支持 iOS 9.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
-<% }
-else { %>
  - AgoraRtmKit.framework 
  - libc++.tbd
  - libresolv.tbd
  - SystemConfiguration.framework
  - CoreTelephony.framework
-<% } %>
 
-### 访问库
-
-根据你的项目使用的编程语言，在项目需要使用 Agora SDK 的文件里，填入下面的代码。
-
-```objective-c
-// Objective-C
- #import <AgoraRtmKit/AgoraRtmKit.h>
-```
-
-```swift
-// Swift
-import AgoraRtmKit
-```
-
-> 如果填入 import 代码后提示找不到文件，可以尝试在 **Build Settings** 页面 **Framework search paths** 设置中添加 `$(SRCROOT)`。
 
 ## 实现实时消息和基本频道操作
 
-本节主要提供实现实时消息和基本频道操作的 API 调用时序图、示例代码，以及相关注意事项。
+本节主要提供实现实时消息和基本频道操作的 API 调用时序图以及相关示例代码。
 
 ### API 调用时序图
 
@@ -379,10 +340,6 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
     }
 }];
 ```
-
-
-
-
 
 
 ## 开发注意事项

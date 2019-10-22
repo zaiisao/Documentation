@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: iOS
-updatedAt: Tue Oct 22 2019 05:56:24 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 10:11:07 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
@@ -297,12 +297,7 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid:UIn
 // Objective-C
 - (void)leaveChannel {
     // 离开频道。
-    [self.agoraKit leaveChannel:^(AgoraChannelStats *stat) {
-        [self.agoraKit leaveChannel:^(AgoraChannelStats *stat) {
-        [self hideControlButtons];
-        [self.remoteVideo removeFromSuperview];
-        [self.localVideo removeFromSuperview];
-    }];
+    [self.agoraKit leaveChannel:^(AgoraChannelStats *stat)
 }
 ```
 
