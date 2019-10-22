@@ -1,11 +1,11 @@
 
 ---
-title: Dashboard RESTful API
+title: Console RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue Oct 22 2019 06:16:16 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:37:57 GMT+0800 (CST)
 ---
-# Dashboard RESTful API
+# Console RESTful API
 ## 1. Authentication
 
 > Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Video/dashboard.md).
