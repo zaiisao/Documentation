@@ -3,7 +3,7 @@
 title: 音量太小
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 11:58:55 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 11:59:02 GMT+0800 (CST)
 ---
 # 音量太小
 ## 步骤 1：自检操作
@@ -24,4 +24,4 @@ updatedAt: Tue Oct 22 2019 11:58:55 GMT+0800 (CST)
 
 ## 步骤 3：水晶球监控通话质量
 
-你可以使用 Agora Dashboard 的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+你可以使用 Agora 控制台中的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
