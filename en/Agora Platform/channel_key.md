@@ -3,7 +3,7 @@
 title: Channel Keys
 description: Guide on how to use channel key
 platform: All Platforms
-updatedAt: Thu May 30 2019 06:28:17 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:17:46 GMT+0800 (CST)
 ---
 # Channel Keys
 ## Introduction
@@ -12,13 +12,13 @@ This page describes how to use channel keys with the Agora SDK.
 
 ### App ID
 
-After signing up at [Dashboard](http://dashboard.agora.io/), multiple projects can be created. Each project will be assigned a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to safeguard the App IDs.
+After signing up at [Console](http://dashboard.agora.io/), multiple projects can be created. Each project will be assigned a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to safeguard the App IDs.
 
 ## Get a Channel Key
 
 ### Step 1: Get an App ID
 
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Agora%20Platform/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Agora%20Platform/sign_in_and_sign_up.md).
 
 2. Click **Get Started** under **Projects**.
 
@@ -88,13 +88,13 @@ Access the Agora services by using your unique App ID:
 
 ### Step 2: Get an App Certificate
 
-If you choose **APP ID + APP certificate + Token (recommended)**  when you create a project in the Dashboard,  the App Certificate is enabled by default.
+If you choose **APP ID + APP certificate + Token (recommended)**  when you create a project in the Console,  the App Certificate is enabled by default.
 
 ![](https://web-cdn.agora.io/docs-files/1563114012279)
 
 If you did not choose  **APP ID + APP certificate + Token (recommended)**, follow the steps to enable the certificate.
 
-1. Find your project on the **Project Management** page at the [Agora Dashboard](https://dashboard.agora.io/) and click the **Edit** button.
+1. Find your project on the **Project Management** page at the [Agora Console](https://dashboard.agora.io/) and click the **Edit** button.
 
 	![](https://web-cdn.agora.io/docs-files/1563112238811)
 	
