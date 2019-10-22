@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Tue Oct 22 2019 08:51:47 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 08:56:48 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -84,36 +84,59 @@ updatedAt: Tue Oct 22 2019 08:51:47 GMT+0800 (CST)
 
 ### <a name="IntegrateSDK"></a> 集成 SDK
 
-#### 方法 1：通过 Cocoapods 导入 SDK
 
-1. 请确保已在本机安装 Cocoapods。具体方法详见 [Getting Started with Cocoapods](https://guides.cocoapods.org/using/getting-started.html#getting-started)。
-2. 在你的电脑 Terminal 终端 cd 进入你的项目所在目录，利用 vim 创建 Podfile：
-`vim Podfile`
-3. 在 Podfile 文件中输入以下内容：
+选择如下任意一种方式将 Agora <%=product %> <%=platform %> SDK 集成到你的项目中。
+
+**方法 1：通过 Cocoapods 导入 SDK**
+
+1. 开始前确保你已安装 **Cocoapods**。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
+2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
+3. 打开 **Podfile** 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
 ```
-target '<YOUR APP>' do
-    pod 'AgoraRtm_iOS'
+platform :<%=platform %>, '<%=platform_version %>' use_frameworks!
+target 'Your App' do
+    pod '<%=sdk_pod %>'
 end
 ```
-> 请以你的项目名称替换 \<YOUR APP\> 。
-4. 保存 Podfile 并退出：
-`:wq`
-6. 导入 Agora RTM SDK：
-`pod install`
-7. 在 Xcode 中打开生成的 **.xcworkspace** 文件。
+4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
+5. 运行 `pod install` 命令安装 Agora SDK。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 **xcworkspace** 文件。
+6. 打开新生成的 **xcworkspace** 文件。
 
-#### 方法 2：手动添加 SDK 到项目中
+**方法 2：手动添加 SDK 到项目中**
 
-1. 下载 [Agora RTM Objective-C SDK for iOS](../../cn/Real-time-Messaging/downloads.md) ，解压后将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到你的项目文件夹内。
-2. 使用 Xcode 打开你的项目，然后选中当前 Target。
-3. 打开 **Build Phases** 页面，展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加
-   - **AgoraRtmKit.framework**
-   - **libc++.tbd**
-   - **libresolv.tbd**
-   - **SystemConfiguration.framework**
-   - **CoreTelephony.framework**
+1. 下载最新版的 [Agora <%=product %> <%=platform %> SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 并解压。
+2. 将 **libs** 文件夹内的 **<%=AgoraKitFramework %>.framework** 文件复制到项目文件夹下。
+3. 打开 **Xcode**，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。在添加 **<%=AgoraKitFramework %>.framework** 文件时，还需在点击 **+** 后点击 **Add Other…**，找到本地文件并打开。
+<% if (product != "RTM") { %>
+ - AgoraRtcEngineKit.framework
+ - Accelerate.framework
+ - AudioToolbox.framework
+ - AVFoundation.framework
+ - CoreMedia.framework
+ - CoreML.framework
+ - CoreTelephony.framework
+ - libc++.tbd
+ - libresolv.tbd
+ - SystemConfiguration.framework
+ - VideoToolbox.framework
 
-其中，**AgoraRtmKit.framework** 位于你的项目文件夹下。因此点击 **+** 后，还需要点击 **Add Other…** ，然后进入你的项目所在目录，选中这个文件并点击 **Open**。
+ **添加前**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568800190639)
+ 
+ **添加后**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1568800223316)
+ 
+<div class="alert note">如需支持 iOS 9.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
+<% }
+else { %>
+ - AgoraRtmKit.framework 
+ - libc++.tbd
+ - libresolv.tbd
+ - SystemConfiguration.framework
+ - CoreTelephony.framework
+<% } %>
 
 ### 访问库
 
