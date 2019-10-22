@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Web
-updatedAt: Mon Sep 23 2019 08:22:51 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 05:56:26 GMT+0800 (CST)
 ---
 # 实现音视频通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
@@ -237,7 +237,7 @@ var option = {
 	在 `Client.join` 中注意以下参数的设置：
 
 	- `token`: 该参数为可选。如果你的 Agora 项目开启了 App 证书，你需要在该参数中传入一个 Token，详见 [使用 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#使用-token)。
-		- 在测试环境，我们推荐使用 Dashboard 生成临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms%23get-a-temporary-token#获取临时-token)。
+		- 在测试环境，我们推荐使用控制台生成临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms%23get-a-temporary-token#获取临时-token)。
 		- 在生产环境，我们推荐你在自己的服务端生成 Token，详见 [生成 Token](../../cn/Video/token_server.md).
 	- `channel`: 频道名，长度在 64 字节以内的字符串。
 	- `uid`: 用户 ID，频道内每个用户的 UID 必须是唯一的。如果你将 `uid` 设为 `null`，Agora 会自动分配一个 UID 并在 `onSuccess` 回调中返回。
