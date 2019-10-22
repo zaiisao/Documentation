@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 08:07:06 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:17:42 GMT+0800 (CST)
 ---
 # Agora Platform Overview
 Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications in your own application quickly.
@@ -63,10 +63,10 @@ Agora is the only RTC service provider in the world using self-developed audio a
 ## Developer Tools and Support
 
 - The [Developer Center](https://docs.agora.io/en) provides documentation for developers to integrate and use Agora SDKs, and for SDK and sample code downloads.
-- [Agora Dashboard](https://dashboard.agora.io/) is a self-service system that enables developers to monitor usage statistics, track the QoE, manage projects, manage account privileges, and submit tickets.
+- [Agora Console](https://dashboard.agora.io/) is a self-service system that enables developers to monitor usage statistics, track the QoE, manage projects, manage account privileges, and submit tickets.
 - [Agora Github](https://github.com/AgoraIO) and [GitHub Community](https://github.com/AgoraIO-Community) provide demos and use cases, which can also be found at the [Developer Center](https://docs.agora.io/en/Agora%20Platform/sampleapps).
 - 5 &times; 8 technical support. Developers can ask questions about integration on [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io), and [submit tickets](https://dashboard.agora.io/show-ticket-submission) for quality issues.
-- [Agora Dashboard](https://dashboard.agora.io/) provides [Agora Analytics](https://dashboard.agora.io/analytics/call/search) to track the QoE. Agora Analytics displays data of the call process in diagrams. For example:
+- [Agora Console](https://dashboard.agora.io/) provides [Agora Analytics](https://dashboard.agora.io/analytics/call/search) to track the QoE. Agora Analytics displays data of the call process in diagrams. For example:
 
   - Device status, including the system CPU usage and the app's CPU usage
   - User events. For example, stop sending audio or start receiving video
