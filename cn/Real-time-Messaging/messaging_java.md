@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Mon Oct 21 2019 12:18:44 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 05:56:23 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -28,7 +28,7 @@ updatedAt: Mon Oct 21 2019 12:18:44 GMT+0800 (CST)
 ### 创建 Agora 账号并获取 App ID
 
 1. 进入 <https://dashboard.agora.io/> ，按照屏幕提示创建一个开发者账号。
-2. 登录 Dashboard 页面，点击添加新项目。
+2. 登录控制台页面，点击添加新项目。
 3. 填写项目名， 然后点击提交 。
 4. 在你创建的项目下，查看并获取该项目对应的 App ID。
 
