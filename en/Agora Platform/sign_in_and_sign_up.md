@@ -3,7 +3,7 @@
 title: Sign up for an Agora account
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 26 2019 06:28:20 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:06 GMT+0800 (CST)
 ---
 # Sign up for an Agora account
 This page shows how to sign up for an Agora account, and change your account settings.
@@ -39,15 +39,15 @@ To sign up for an Agora account with a Google account, follow these steps:
 To sign up for an Agora account with a Cocos account, follow these steps:
 
 1. Go to https://sso.agora.io/en/signup, and click the ![](https://web-cdn.agora.io/docs-files/1569295962944) button.
-2. You will be redirected to the Cocos' login page. Fill in your Cocos account name and password and click **Log in**. You will directly log in Dashboard.
+2. You will be redirected to the Cocos' login page. Fill in your Cocos account name and password and click **Log in**. You will directly log in Console.
 
-## Log in to Dashboard
+## Log in to Console
 
-After creating an Agora account, you can log in with your email, phone number, or any other registered third-party account to start your adventure in [Dashboard](https://dashboard.agora.io).  You can create your first Agora project and try real-time communications immediately.
+After creating an Agora account, you can log in with your email, phone number, or any other registered third-party account to start your adventure in [Console](https://dashboard.agora.io).  You can create your first Agora project and try real-time communications immediately.
 
 ## Change your account settings & password
 
-1. Log in to [Dashboard](https://dashboard.agora.io), and click  **Account Name > Setting** in the top navigation menu.
+1. Log in to [Console](https://dashboard.agora.io), and click  **Account Name > Setting** in the top navigation menu.
 
 ![](https://web-cdn.agora.io/docs-files/1565244190495)
 
