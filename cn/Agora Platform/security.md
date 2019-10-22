@@ -3,7 +3,7 @@
 title: 信息安全说明
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:40:24 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:03:08 GMT+0800 (CST)
 ---
 # 信息安全说明
 ## 简介
@@ -76,7 +76,7 @@ Agora 将客户数据进行以下分类:
 
 -   [访问授权](#AccessAuthorization)
 
--   [访问控制台](#AccessDashboard)
+-   [访问控制台](#Access控制台)
 
 -   [数据储存](#DataRetention)
 
@@ -127,7 +127,7 @@ SDK 在接入传输服务时，第一步先要经过系统调度，选择合适�
 
 每次终端用户访问 Agora 全球实时虚拟通信网\( SD-RTN \)时，必须通过 Dynamic Key 进行认证。 详见 [密钥说明](../../cn/Voice/token.md) 。 在整个授权和认证过程中，App Server Infrastructure 和 Agora 虚拟网 没有任何交互，因此无需担心被拦截或攻击。
 
-<a name = "AccessDashboard"></a>
+<a name = "Access控制台"></a>
 
 ### 访问控制台
 
