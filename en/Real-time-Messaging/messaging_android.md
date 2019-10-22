@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Mon Oct 21 2019 11:39:27 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:13 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -55,7 +55,7 @@ You can skip to [Integrate the SDK into your project](#sdk) if you already have 
 <details>
 	<summary><font color="#3ab7f8">Get an App ID</font></summary>
 	
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Real-time-Messaging/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Real-time-Messaging/sign_in_and_sign_up.md).
 
 2. Click **Get Started** under **Projects**.
 
@@ -167,7 +167,7 @@ This section provides API call sequence diagrams, sample codes, and consideratio
 ### Create and Initialize an Agora RTM Client
 
 1. Before creating and initializing an Agora RTM client, ensure that you have completed all steps mentioned in the [Set up the development environment](#setup) section. 
-2. Put in the `App ID` you get from **Agora Dashboard** (see [Get an App ID](#appid)) when creating and initializing an Agora RTM client. 
+2. Put in the `App ID` you get from **Agora Console** (see [Get an App ID](#appid)) when creating and initializing an Agora RTM client. 
 3. Implement an event callback `RtmClientListener`, the SDK uses its callbacks to notify the app of ongoing events, including:
    - The connection between the SDK and the Agora RTM system changes. 
    - A peer-to-peer message arrives. 
