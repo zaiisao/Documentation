@@ -3,7 +3,7 @@
 title: 错误代码和警告代码
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:06:26 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 05:56:17 GMT+0800 (CST)
 ---
 # 错误代码和警告代码
 Agora SDK 在调用 API 或运行时，可能会返回错误或警告代码:
@@ -149,7 +149,7 @@ Agora SDK 在调用 API 或运行时，可能会返回错误或警告代码:
 <td>110</td>
 <td><p>生成的 Token 无效，一般有以下原因：</p>
 <div><ul>
-<li>用户在 Dashboard 上启用了 App Certificate，但仍旧在代码里仅使用了 App ID。当启用了 App Certificate，必须使用 Token</li>
+<li>用户在控制台上启用了 App Certificate，但仍旧在代码里仅使用了 App ID。当启用了 App Certificate，必须使用 Token</li>
 <li>字段 uid为生成 Token 的必须字段，用户在调用<code>joinChannel</code> 加入频道时必须设置相同的 uid</li>
 </ul>
 </div>
