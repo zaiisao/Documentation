@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Mon Oct 14 2019 03:56:01 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 04:14:54 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现音视频通话。
@@ -43,7 +43,7 @@ Agora 在 Github 上提供一个开源的实时音视频示例项目 [Agora-Mini
 
 第一次使用微信小程序支持需要先开通服务，步骤如下：
 
-1. 登录 [Agora Dashboard](https://dashboard.agora.io/)，点击左侧导航栏的**用量** 图标 ![](https://web-cdn.agora.io/docs-files/1551250582235) 进入产品用量页面。
+1. 登录 [控制台](https://dashboard.agora.io/)，点击左侧导航栏的**用量** 图标 ![](https://web-cdn.agora.io/docs-files/1551250582235) 进入产品用量页面。
 2. 在页面左上角展开下拉列表选择需要开通小程序支持的项目，然后点击**小程序**下的**分钟数**。
 
 	![](https://web-cdn.agora.io/docs-files/1568008419655)
