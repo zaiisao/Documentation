@@ -3,7 +3,7 @@
 title: Audio freeze occurs in a call.
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 15:08:28 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:08:36 GMT+0800 (CST)
 ---
 # Audio freeze occurs in a call.
 Jitter may be caused by slow Internet connections, bad device performances, or the physical environment.
@@ -31,6 +31,6 @@ If the issue persists, contact Agora customer support and submit the issue with 
   </tr>
 </table>
 
-## Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard
+## Step 3: Monitor the Quality of Experience in Agora Analytics in Console
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Console. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
