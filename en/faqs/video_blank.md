@@ -3,7 +3,7 @@
 title: Black screen occurs in a call.
 description: 视频黑屏
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:11:59 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:12:55 GMT+0800 (CST)
 ---
 # Black screen occurs in a call.
 Common reasons for black screens:
