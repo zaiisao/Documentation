@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 29 2019 11:50:10 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:16:32 GMT+0800 (CST)
 ---
 # Use Security Keys
 ## Introduction
@@ -24,7 +24,7 @@ Where:
 
 ### App ID
 
-After signing up at [Dashboard](http://dashboard.agora.io), multiple projects can be created. Each project will be assigned a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to safeguard the App IDs.
+After signing up at [Console](http://dashboard.agora.io), multiple projects can be created. Each project will be assigned a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to safeguard the App IDs.
 
 > To switch your App ID, you must first call the `destroy` method to destroy the current instance.
 
@@ -43,7 +43,7 @@ Agora recommends using a SignalingToken for added security.
 Each Agora account can create multiple projects, and each project has a unique App ID.
 
 1.  Sign up for a new account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
-2.  Click **Add New Project** on the **Projects** page in Dashboard.
+2.  Click **Add New Project** on the **Projects** page in Console.
 3.  Fill in the **Project Name** and click **Submit**.
     <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
 4.  Find the App ID under the created project.
@@ -69,7 +69,7 @@ Each Agora account can create multiple projects, and each project has a unique A
 ### Step 2: Get an App Certificate
 
 1.  Login to [https://dashboard.agora.io](https://dashboard.agora.io).
-2.  Click **Add New Project** on the **Projects** page in Dashboard.
+2.  Click **Add New Project** on the **Projects** page in Console.
 3.  Fill in the **Project Name** and click **Submit**. Find the App ID under the created project.
      <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
 4.  Enable the App Certificate for the project.
