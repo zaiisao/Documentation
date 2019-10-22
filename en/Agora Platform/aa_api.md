@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API (Beta)
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 03:16:51 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 03:17:04 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API (Beta)
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
@@ -17,7 +17,7 @@ You can use the Agora Analytics RESTful APIs to request the following data.
   - Detailed quality metrics of a call.
 - [Data Insight](#insight)
   - Usage statistics within a specified time frame.
-- [Live Data](#live)
+- [Realtime](#live)
   - Statistics of specified metrics updated per minute.
   - Detailed diagnostic data.
 
@@ -231,7 +231,7 @@ The Data Insight RESTful API has the following limitations:
 | :-------------------------- | :------------ | :----------------- |
 | /beta/insight/usage/by_time | 1/min, 10/day | In the past 7 days |
 
-<div class="alert note"><b>Data Insight</b> finishes calculating data for the previous day, closing at 08:00 UTC. You may find that there is no data available prior to this time. To view real-time data, use <a href="#live">Live Data</a> RESTful APIs.</div>
+<div class="alert note"><b>Data Insight</b> finishes calculating data for the previous day, closing at 08:00 UTC. You may find that there is no data available prior to this time. To view real-time data, use <a href="#live">Realtime</a> RESTful APIs.</div>
 
 ### Get number of channels & users
 
@@ -284,13 +284,13 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
   - `ts`: Number. Unix timestamp (sec).
   - `userCount`: Number. Number of users.
 
-## Live Data APIs
+## Realtime APIs
 
-Using Live Data APIs, you can obtain the statistics of a given metric within a certain period of time, along with detailed diagnostic data.
+Using Realtime APIs, you can obtain the statistics of a given metric within a certain period of time, along with detailed diagnostic data.
 
 ### API limitations
 
-The Live Data RESTful APIs have the following limitations:
+The Realtime RESTful APIs have the following limitations:
 
 | Endpoint                      | Request times | Maximum data delay | Response content                    | Available calls     |
 | :---------------------------- | :------------ | :----------------- | :---------------------------------- | :------------------ |
