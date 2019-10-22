@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 01:38:06 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:16 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides a RESTful API for you to control cloud recording through HTTP requests.
@@ -39,7 +39,7 @@ Deploy a third-party cloud storage. Agora Cloud Recording supports [Amazon S3](h
 
 Enable the cloud recording service before using Agora Cloud Recording for the first time.
 
-1. Login to [Dashboard](https://dashboard.agora.io/), and click ![img](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Products & Usage** page. 
+1. Login to [Console](https://dashboard.agora.io/), and click ![img](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Products & Usage** page. 
 2. Select a project from the drop-down list in the upper-left corner, and click **Duration** under **Cloud Recording**. 
 ![](https://web-cdn.agora.io/docs-files/1566444271323)
 1. Click **Enable Cloud Recording**.
