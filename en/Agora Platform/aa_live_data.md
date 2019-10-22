@@ -3,7 +3,7 @@
 title: Realtime (Beta)
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 07:23:11 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 07:23:33 GMT+0800 (CST)
 ---
 # Realtime (Beta)
 Use the Realtime function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
@@ -28,7 +28,7 @@ Use the Realtime function of Agora Analytics to monitor the live status of your 
 
 Note: Only displays with a resolution of 1800 (px) or higher fully support the fullscreen view. Certain statistics may not be visible when not in fullscreen mode.
 
-![](https://web-cdn.agora.io/docs-files/1571296191678)
+![](https://web-cdn.agora.io/docs-files/1571728976379)
 
 ### Live Scale
 
