@@ -3,7 +3,7 @@
 title: Cocos Creator 快速开始
 description: 
 platform: Cocos Creator
-updatedAt: Fri Jul 05 2019 10:30:25 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:01:07 GMT+0800 (CST)
 ---
 # Cocos Creator 快速开始
 ## 前提条件
@@ -38,7 +38,7 @@ updatedAt: Fri Jul 05 2019 10:30:25 GMT+0800 (CST)
 
    ![](https://web-cdn.agora.io/docs-files/1554980416623)
 	 
-5. 开通后，你会在屏幕上看到如下界面。点击**前往控制台**，进入声网 Dashboard。
+5. 开通后，你会在屏幕上看到如下界面。点击**前往控制台**，进入声网控制台。
 
    ![](https://web-cdn.agora.io/docs-files/1554980505910)
 	 
@@ -58,8 +58,7 @@ updatedAt: Fri Jul 05 2019 10:30:25 GMT+0800 (CST)
 
 我们建议按照如下时序调用声网 API：
 
-1. 初始化引擎：[agora && agora.init(appid);](../../cn/Interactive%20Gaming/game_coco.md)
-2. 加入频道：[agora && agora.joinChannel("", channel, "", 0);](../../cn/Interactive%20Gaming/game_coco.md)
+1. 初始化引擎：[agora undefined agora.joinChannel("", channel, "", 0);](../../cn/Interactive%20Gaming/game_coco.md)
 3. 退出频道：[agora && agora.leaveChannel();](../../cn/Interactive%20Gaming/game_coco.md)
 
 你还可以在 agora.on 方法中注册如下事件回调：
