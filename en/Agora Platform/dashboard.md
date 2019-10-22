@@ -3,24 +3,24 @@
 title: Dashboard
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 17 2019 07:57:12 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:05 GMT+0800 (CST)
 ---
 # Dashboard
-Agora Dashboard provides interactive interfaces where you can configure, pay for and monitor your Agora products. 
+Agora Console provides interactive interfaces where you can configure, pay for and monitor your Agora products. 
 
-This page introduces how to use Agora Dashboard.
+This page introduces how to use Agora Console.
 
-> This page covers all the functions of Agora Dashboard. However, an account may include multiple team members and what functions a member can access depend on this member's [role and permissions](#permission).
+> This page covers all the functions of Agora Console. However, an account may include multiple team members and what functions a member can access depend on this member's [role and permissions](#permission).
 
 ## Create an Agora account
 
-Before using Agora Dashboard, follow the steps to [create an Agora account](https://sso.agora.io/cn/signup). 
+Before using Agora Console, follow the steps to [create an Agora account](https://sso.agora.io/cn/signup). 
 
 If you forget your password, you can reset your password. For more information, click [here](../../en/Agora%20Platform/sign_in_and_sign_up.md).
 
 ## Overview
 
-After logging in Agora Dashboard, you see an overview page, which provides entry points to commonly-used Dashboard features. On this page, you can:
+After logging in Agora Console, you see an overview page, which provides entry points to commonly-used Console features. On this page, you can:
 
 - View your projects and usage.
 - View your account balance and transactions, and add money to your account.
@@ -33,7 +33,7 @@ After logging in Agora Dashboard, you see an overview page, which provides entry
 
 ## Functions
 
-The functions of Agora Dashboard include:
+The functions of Agora Console include:
 
 ### Manage projects
 
@@ -61,4 +61,4 @@ If you have any questions about Agora's products, you can submit a ticket to see
 
 ### Use RESTful API
 
-Agora provides RESTful APIs for you to ban users, check your usage, and inquire about online statistics at the server. You can get the Customer ID and Customer Certificate for the RESTful API in Agora Dashboard. [Learn more](../../en/Agora%20Platform/dashboard_restful_communication.md)
+Agora provides RESTful APIs for you to ban users, check your usage, and inquire about online statistics at the server. You can get the Customer ID and Customer Certificate for the RESTful API in Agora Console. [Learn more](../../en/Agora%20Platform/dashboard_restful_communication.md)
