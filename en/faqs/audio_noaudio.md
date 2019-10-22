@@ -3,7 +3,7 @@
 title: I cannot hear any voice in a call.
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:11:43 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:10:16 GMT+0800 (CST)
 ---
 # I cannot hear any voice in a call.
 The issue of no voice may occur in the following scenarios:
@@ -44,6 +44,6 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The uids of the users who cannot hear any voice in the channel.
 * The time frame during which the users cannot hear any voice.
 
-## Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard
+## Step 3: Monitor the Quality of Experience in Agora Analytics in Console
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Console. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
