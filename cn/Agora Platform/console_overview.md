@@ -3,7 +3,7 @@
 title: 控制台概览
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 07:35:58 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 07:36:05 GMT+0800 (CST)
 ---
 # 控制台概览
 欢迎使用控制台。控制台提供直观的界面，方便你在使用 Agora 各产品时进行充值、查看、管理等操作。本指南简要介绍如何使用控制台。
