@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: iOS
-updatedAt: Tue Oct 22 2019 09:42:47 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 09:42:52 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -336,15 +336,12 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid: UI
 
 ```objective-c
 // Objective-C
-- (void)leaveChannel {
+[self.rtcEngine setupLocalVideo:nil];
     // 离开频道。
-    [self.agoraKit leaveChannel:^(AgoraChannelStats *stat) {
-        [self.agoraKit leaveChannel:^(AgoraChannelStats *stat) {
-        [self hideControlButtons];
-        [self.remoteVideo removeFromSuperview];
-        [self.localVideo removeFromSuperview];
-    }];
-}
+    [self.rtcEngine leaveChannel:nil];
+    if (self.isBroadcaster) {
+        [self.rtcEngine stopPreview];
+    }
 ```
 
 ```swift
