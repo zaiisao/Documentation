@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 25 2019 06:53:24 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:14 GMT+0800 (CST)
 ---
 # Use Security Keys
 ## Introduction
@@ -32,7 +32,7 @@ Where:
 Each Agora account can create multiple projects, and each project has a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, please keep your App IDs safe.
 
 1.  Sign up for a new account at [https://sso.agora.io/en/login](https://sso.agora.io/en/login).
-2.  Click the **Create** button on the **Overview** page in Dashboard.
+2.  Click the **Create** button on the **Overview** page in Console.
 3.  Fill in the **Project Name** and click **Submit**.
 4.  Find the App ID under the created project.
 
@@ -52,8 +52,8 @@ See [Get an App ID](#Get-an-App-ID).
 
 ### Step 2: Get an App Certificate
 
-1.  Log in [Agora Dashboard](https://dashboard.agora.io).
-2.  Click **Project** in the left navigation menu to go to the **Projects** page in Dashboard.
+1.  Log in [Agora Console](https://dashboard.agora.io).
+2.  Click **Project** in the left navigation menu to go to the **Projects** page in Console.
 3.  Enable the App Certificate for the project.
 	-   Click **Edit** under the created project.
 	-   Click **Enable** to the right of the App Certificate. Read **About App Certificate** before confirming the operation.
