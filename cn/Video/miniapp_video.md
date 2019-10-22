@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: 微信小程序
-updatedAt: Thu Aug 22 2019 07:56:15 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 04:14:43 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Miniapp SDK for WeChat 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -37,7 +37,7 @@ updatedAt: Thu Aug 22 2019 07:56:15 GMT+0800 (CST)
 
 第一次使用微信小程序支持需要先开通服务，步骤如下：
 
-1. 登录 [Agora Dashboard](https://dashboard.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。
+1. 登录 [控制台](https://dashboard.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。
 2. 在页面左上角展开下拉列表选择需要开通小程序支持的项目，然后点击**小程序**下的**分钟数**。
  ![](https://web-cdn.agora.io/docs-files/1566460437574)
 4. 点击**开启小程序支持**。
