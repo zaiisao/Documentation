@@ -3,7 +3,7 @@
 title: The audio volume of other users is too low. 
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:10:09 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:09:03 GMT+0800 (CST)
 ---
 # The audio volume of other users is too low. 
 ## Step 1: Self-check
@@ -22,6 +22,6 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The uids of the users whose volume is too low.
 * The time frame during which the volume is too low.
 
-## Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard
+## Step 3: Monitor the Quality of Experience in Agora Analytics in Console
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Console. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
