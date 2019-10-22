@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Oct 18 2019 08:29:46 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:02:54 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -1153,9 +1153,9 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 新增 RESTful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见:
 
--   通话场景, 详见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_communication.md)
+-   通话场景, 详见 [控制台 RESTful API](../../cn/API%20Reference/dashboard_restful_communication.md)
 
--   互动直播场景, 详见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)
+-   互动直播场景, 详见 [控制台 RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)
 
 
 #### 4. 17 人视频
