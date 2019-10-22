@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Tue Oct 22 2019 05:56:23 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 12:24:55 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -46,7 +46,9 @@ public static final String APP_ID = "<#YOUR APP ID#>";
 
 4. 将 demo 依赖的 jar 包安装到本地 maven 仓库：
 
-`mvn install:install-file -Dfile=lib/agora_rtm.jar -DgroupId=io.agora.rtm -DartifactId=agora-rtm-sdk -Dversion=1.0 -Dpackaging=jar`
+```
+mvn install:install-file -Dfile=lib/agora_rtm.jar -DgroupId=io.agora.rtm -DartifactId=agora-rtm-sdk -Dversion=1.0 -Dpackaging=jar
+```
 
 5. 使用 maven 编译打包, 在 `pom.xml` 所在目录运行 `mvn package`。
 
@@ -276,11 +278,19 @@ public void getChannelMemberList() {
 
 调用实例的 `leave()` 方法可以退出该频道。退出频道之后可以调用 `join()` 方法再重新加入频道。
 
-### 注意事项
+## 开发注意事项
 
-- 每个客户端都需要首先调用 `createChannel` 方法创建频道实例才能使用频道消息功能，该实例只是本地的一个类对象实例。
-- RTM 支持同时创建最多 20 个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的回调。
-- 如果频道 ID 非法，或者具有相同 ID 的频道实例已经在本地创建，`createChannel` 时将返回 `null`。
-- 接收到的 `RtmMessage` 消息对象不能重复利用再用于发送。
-- 当离开了频道且不再加入该频道时，可以调用 `RtmChannel` 实例的 `release()` 方法及时释放频道实例所占用的资源。
-- 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
+
+- RTM 支持多个相互独立的 [RtmClient](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html) 实例。
+
+- 在收发点对点消息或进行其他频道操作前，请确保你已成功登陆 Agora RTM 系统（即确保已经收到 [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)）。
+
+- 使用频道核心功能前必须通过调用 [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) 方法创建频道实例。
+- 你可以创建多个 [RtmClient](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html) 客户端实例，但是每个客户端实例最多只能同时加入 20 个频道。每个频道都应有不同的 `channelId` 参数。
+
+- 当离开了频道且不再加入该频道时，可以调用 [release](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a725d008cb19f44496948ee8f1826deaf) 方法及时释放频道实例所占用的资源。
+
+- 接收到的 [RtmMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_message.html) 消息对象不能重复利用再用于发送。
+
+
+

@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Windows CPP
-updatedAt: Mon Oct 21 2019 12:20:39 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 12:15:25 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -262,15 +262,19 @@ void getMembers() {
 
 调用实例的 `leave()` 方法可以退出该频道。退出频道之后可以调用 `join()` 方法再重新加入频道。
 
-## 注意事项
+## 开发注意事项
 
-- RTM 支持多实例，事件回调须是不同的实例。
-- 当实例不再使用的时，可以调用实例的 `release()`方法释放资源。
-- 接收到的 `IMessage` 消息对象不能重复利用再用于发送。
-- 每个客户端都需要首先调用 `createChannel` 方法创建频道实例才能使用频道消息功能，该实例只是本地的一个类对象实例。
-- RTM 支持同时创建最多 20 个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的回调。
-- 如果频道 ID 非法，或者具有相同 ID 的频道实例已经在本地创建，`createChannel` 时将返回 `null`。
-- 接收到的 `RtmMessage` 消息对象不能重复利用再用于发送。
-- 当离开了频道且不再加入该频道时，可以调用 `RtmChannel` 实例的 `release()` 方法及时释放频道实例所占用的资源。
-- 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
+
+- RTM 支持多个相互独立的 [IRtmService](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html) 实例。
+
+- 在收发点对点消息或进行其他频道操作前，请确保你已成功登陆 Agora RTM 系统（即确保已经收到 [onLoginSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a8cf1b2be30172004f595484e0a194d76)）。
+
+- 使用频道核心功能前必须通过调用 [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a0196e60ee165f6c97f561cf71499d377) 方法创建频道实例。
+- 你可以创建多个 [IRtmService](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html) 客户端实例，但是每个客户端实例最多只能同时加入 20 个频道。每个频道都应有不同的 `channelId` 参数。
+
+- 当离开了频道且不再加入该频道时，可以调用 [release](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#af1c6a2e044136c3a25fb8a663cf5e90b) 方法及时释放频道实例所占用的资源。
+
+- 接收到的 [IMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html) 消息对象不能重复利用再用于发送。
+
+
 

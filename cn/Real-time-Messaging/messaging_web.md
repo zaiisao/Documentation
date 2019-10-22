@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Mon Oct 21 2019 12:21:39 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 12:17:12 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -243,4 +243,20 @@ channel.on('ChannelMessage', ({ text }, senderId) => { // text 为收到的频�
 ```JavaScript
 channel.leave();
 ```
+## 开发注意事项
+	
 
+- RTM 支持多个相互独立的 [RtmClient](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html) 实例。
+
+- 在收发点对点消息或进行其他频道操作前，请确保你已成功登陆 Agora RTM 系统。
+
+- 使用频道核心功能前必须通过调用 [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) 方法创建频道实例。
+- 你可以创建多个 [RtmClient](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html) 客户端实例，但是每个客户端实例最多只能同时加入 20 个频道。每个频道都应有不同的 `channelId` 参数。
+
+- 当你不再使用某个实例时，可以通过调用继承的 `removeAllListeners` 方法删除它的所有监听实例。 
+
+- 接收到的 [RtmMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmmessage.html) 消息对象不能重复利用再用于发送。
+
+
+	
+	

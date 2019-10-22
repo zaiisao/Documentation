@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Tue Oct 22 2019 10:06:54 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 12:03:43 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -344,9 +344,17 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 ## 开发注意事项
 
-- 每个客户端都需要首先调用 `AgoraRtmKit` 的 `createChannelWithId` 方法创建频道实例才能使用群聊功能，该实例只是本地的一个 `AgoraRtmChannel` 类对象实例。
-- RTM 支持同时创建最多 20 个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的 `AgoraRtmChannelDelegate` 回调。
-- 如果频道 ID 非法，或者具有相同 ID 的频道实例已经在本地创建，`createChannelWithId` 将返回 `"nil"`。
-- 接收到的 `AgoraRtmMessage` 消息对象不能重复利用再用于发送。
-- 当离开了频道且不再加入该频道时，可以调用 `AgoraRtmChannel` 实例的 `destroyChannelWithId` 方法及时释放频道实例所占用的资源。
-- 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
+
+- RTM 支持多个相互独立的 [AgoraRtmKit](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) 实例。
+
+- 在收发点对点消息或进行其他频道操作前，请确保你已成功登陆 Agora RTM 系统（即确保已经收到 `AgoraRtmLoginErrorOk`）。
+
+- 使用频道核心功能前必须通过调用 [createChannelWithId](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) 方法创建频道实例。
+- 你可以创建多个 [AgoraRtmKit](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) 客户端实例，但是每个客户端实例最多只能同时加入 20 个频道。每个频道都应有不同的 `channelId` 参数。
+
+- 当离开了频道且不再加入该频道时，可以调用 [destroyChannelWithId](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/destroyChannelWithId:) 方法及时释放频道实例所占用的资源。
+
+- 接收到的 [AgoraRtmMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html) 消息对象不能重复利用再用于发送。
+
+
+
