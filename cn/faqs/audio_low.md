@@ -1,9 +1,9 @@
 
 ---
 title: 音量太小
-description: replace dashboard with 控制台
+description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 11:58:43 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 11:58:55 GMT+0800 (CST)
 ---
 # 音量太小
 ## 步骤 1：自检操作
