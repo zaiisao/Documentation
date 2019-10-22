@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Tue Oct 22 2019 07:49:21 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 08:17:37 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -66,18 +66,16 @@ updatedAt: Tue Oct 22 2019 07:49:21 GMT+0800 (CST)
 
 
 <details>
-	<summary><font color="#3ab7f8">创建 <%=platform %> 项目</font></summary>
+	<summary><font color="#3ab7f8">创建 iOS 项目</font></summary>
 <ol>	
 <li> 打开 <b>Xcode</b> 并点击 <b>Create a new Xcode project</b>。</li>
-<li> 选择项目类型为 <%=template %>，并点击<b>Next</b>。</li>
+<li> 选择项目类型为 <b>Single View App</b>，并点击<b>Next</b>。</li>
 <li> 输入项目信息，如项目名称、开发团队信息、组织名称和语言，并点击 <b>Next</b>。</li>
- 
-	<div class="alert note">如果你没有添加过开发团队信息，会看到 <b>Add account…</b> 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。</div>
-	
+ <div class="alert note">如果你没有添加过开发团队信息，会看到 <b>Add account…</b> 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。</div>
 <li> 选择项目存储路径，并点击 <b>Create</b>。</li>
-<%  if (platform == "iOS") { %>
-<li> 将你的 <%=platform %> 设备连接至电脑。</li>
-<% } %>
+
+<li> 将你的 iOS 设备连接至电脑。</li>
+
 <li> 进入 <b>TARGETS > Project Name > General > Signing</b> 菜单，选择 <b>Automatically manage signing</b>，并在弹出菜单中点击 <b>Enable Automatic</b>。</li>
 </ol>	
 <img src="https://web-cdn.agora.io/docs-files/1568803584472"/>
