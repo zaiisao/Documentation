@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 04:14:50 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:01:06 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -28,7 +28,7 @@ Agora RTM SDK 提供两种鉴权机制：App ID 和 Token 。这两种鉴权机�
 获取 App ID 的步骤如下：
 
 1.  进入 [Agora 注册页面](https://sso.agora.io/cn/login) ，按照屏幕提示创建一个开发者账号。
-2.  登录 Dashboard，在首页点击**创建**按钮，填写**项目名称**后创建一个新项目。
+2.  登录控制台，在首页点击**创建**按钮，填写**项目名称**后创建一个新项目。
 3.  项目创建完成后，Dashboard 会自动跳转至**项目管理**页面，在这里，你可以查看该项目对应的 App ID。
 
 你需要在初始化客户端时，需要填写 `appId` 参数。
