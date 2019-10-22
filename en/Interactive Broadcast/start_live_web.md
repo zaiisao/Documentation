@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Web
-updatedAt: Mon Sep 23 2019 08:27:02 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:20:00 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
@@ -251,7 +251,7 @@ rtc.client.join(option.token ? option.token : null, option.channel, option.uid ?
 Pay attention to the following settings when joining the channel.
 
 - `token`: This is optional. Pass a token that identifies the role and privilege of the user if your project enables an app certificate. See [Use a token for authentication](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#use-a-token-for-authentication) for details.
-  - For testing, we recommend using a Temp Token generated in Dashboard. See [Get a Temp Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
+  - For testing, we recommend using a Temp Token generated in Console. See [Get a Temp Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
   - For production, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](https://docs.agora.io/en/Video/token_server).
 - `channel`: Channel name. A string within 64 bytes.
 - `uid`: The user ID should be unique in a channel. If you set the user ID as `null`, the Agora server assigns a user ID and returns it in the `onSuccess` callback.
