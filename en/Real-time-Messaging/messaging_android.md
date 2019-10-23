@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Wed Oct 23 2019 09:35:23 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 09:58:00 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -33,13 +33,7 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Android](h
 
 
 
-
-
-
-
-<a name="setup"></a>
-
-## Set up the development environment
+## <a name="setup"></a>Set up the development environment
 
 We will walk you through the following steps in this section:
 
@@ -126,17 +120,18 @@ Add the following permissions in the **/app/src/main/AndroidManifest.xml** file 
 
 
 
-### <a name="obfuscated"></a>Prevent Obfuscation of the Agora Classes
+### <a name="obfuscated"></a>Prevent code obfuscation
 
 Add the following line in the **app/proguard-rules.pro** file to prevent code obfuscation:
 
-```
-   -keep class io.agora.**{*;}
+```java
+-keep class io.agora.**{*;}
 ```
 
 ## Implement peer-to-peer and channel messaging
 
-This section provides API call sequence diagrams, sample codes, and considerations related to peer-to-peer messaging and channel messaging. 
+
+This section provides API call sequence diagrams and sample codes related to peer-to-peer messaging and channel messaging. 
 
 ### API Call sequence diagrams
 
@@ -154,13 +149,13 @@ This section provides API call sequence diagrams, sample codes, and consideratio
 
 #### Send or receive channel messages
 
-### ![](https://web-cdn.agora.io/docs-files/1562566639888)
+![](https://web-cdn.agora.io/docs-files/1562566639888)
 
 ### Create and Initialize an Agora RTM Client
 
-1. Before creating and initializing an Agora RTM client, ensure that you have completed all steps mentioned in the [Set up the development environment](#setup) section. 
-2. Put in the `App ID` you get from **Agora Dashboard** (see [Get an App ID](#appid)) when creating and initializing an Agora RTM client. 
-3. Implement an event callback `RtmClientListener`, the SDK uses its callbacks to notify the app of ongoing events, including:
+
+1. Put in the `App ID` you get from **Console** when creating and initializing an Agora RTM client. 
+2. Implement an event callback `RtmClientListener`, the SDK uses its callbacks to notify the app of ongoing events, including:
    - The connection between the SDK and the Agora RTM system changes. 
    - A peer-to-peer message arrives. 
    - Miscellaneous events. 
@@ -350,6 +345,7 @@ public void sendChannelMessage(String msg) {
 #### Leave a channel
 
 You can call the `leave()` method to leave a channel. 
+
 
 ## Considerations
 
