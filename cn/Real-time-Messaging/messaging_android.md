@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Wed Oct 23 2019 04:01:34 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 04:27:30 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -73,7 +73,7 @@ updatedAt: Wed Oct 23 2019 04:01:34 GMT+0800 (CST)
 
 
 
-### <a name="sdk"></a> 快速导入 SDK
+### <a name="sdk"></a> 快速集成 SDK
 
 
 选择以下任意一种方式将 Agora RTM Android SDK 集成到你的项目中。
@@ -129,7 +129,7 @@ dependencies {
 
 ### 防止混淆代码
 
-在 proguard-rules.pro 文件中，为 Agora SDK 添加 -keep 类的配置，这样可以防止混淆 Agora SDK 公共类名称:
+在 **app/proguard-rules.pro** 文件文件中添加如下行，防止代码混淆：
 
 ```
    -keep class io.agora.**{*;}
