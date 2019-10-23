@@ -3,7 +3,7 @@
 title: 七人以上视频场景
 description: 
 platform: Web
-updatedAt: Sun Sep 29 2019 08:24:43 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 04:39:02 GMT+0800 (CST)
 ---
 # 七人以上视频场景
 ## 功能描述
@@ -72,7 +72,7 @@ client.setLowStreamParameter({
 Agora 建议你在界面布局里采用一大多小的窗口布局：大窗口申请大流；小窗口申请小流。
 
 <a name="corr"></a>
-### 大小流对应关系表
+## 大小流对应关系表
 
 > 由于各浏览器对小流的适配存在差异，部分浏览器的部分分辨率大小流对应关系可能存在一些偏差。
 
