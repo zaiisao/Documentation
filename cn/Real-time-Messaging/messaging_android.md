@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Wed Oct 23 2019 07:05:20 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 07:07:20 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -109,9 +109,10 @@ dependencies {
 
 
 
-### <a name="permission"></a>添加权限
+### <a name="permission"></a>添加设备权限
 
 打开 **app/src/main/AndroidManifest.xml** 文件，添加必要的设备权限。比如：
+
 
 ```
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -125,9 +126,10 @@ dependencies {
 </manifest>
 ```
 
-<a name="obfuscated"></a>
 
-### 防止混淆代码
+
+
+### <a name="obfuscated"></a> 防止混淆代码
 
 在 **app/proguard-rules.pro** 文件文件中添加如下行，防止代码混淆：
 
