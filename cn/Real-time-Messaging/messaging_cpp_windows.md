@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Windows CPP
-updatedAt: Wed Oct 23 2019 12:25:23 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 12:43:01 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -14,11 +14,15 @@ updatedAt: Wed Oct 23 2019 12:25:23 GMT+0800 (CST)
 你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Windows](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Windows) 查看完整的源码和代码逻辑：
 
 ## 开发环境要求
-- Microsoft Visual Studio 2017 或以上版本
-- 支持 Windows 7 或以上版本的 Windows 设备
-- 一个有效的 [Agora 开发者账号](https://sso.agora.io/login/)。
 
-<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
+
+ 
+- Windows Visual Studio 2017 或以上版本
+- 运行在 Windows 7 及以上版本的 Windows 设备。
+
+- 一个有效的 [Agora 开发者账号](https://sso.agora.io/en/signup)。
+
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a >打开相关端口并设置域名白名单。</div> 
 
 
 ## 准备开发环境
@@ -89,7 +93,7 @@ updatedAt: Wed Oct 23 2019 12:25:23 GMT+0800 (CST)
 
 - 进入**链接器 > 输入 > 附加依赖项**菜单，点击**编辑**，并在弹出窗口中输入 **agora_rtc_sdk.lib**。
 
-## 实现实时消息和基本频道操作
+## 实现消息和基本频道操作
 
 本节主要提供实现实时消息和基本频道操作的 API 调用时序图及相关示例代码。
 
