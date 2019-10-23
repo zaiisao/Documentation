@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Wed Oct 23 2019 10:23:35 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 12:18:50 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -29,14 +29,41 @@ updatedAt: Wed Oct 23 2019 10:23:35 GMT+0800 (CST)
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a >打开相关端口并设置域名白名单。</div> 
 
 
-### 创建 Agora 账号并获取 App ID
 
-1. 进入 <https://dashboard.agora.io/> ，按照屏幕提示创建一个开发者账号。
-2. 登录控制台页面，点击添加新项目。
-3. 填写项目名， 然后点击提交 。
-4. 在你创建的项目下，查看并获取该项目对应的 App ID。
+## 准备开发环境
 
-### 添加 SDK
+开发环境的准备包含以下内容：
+
+- [获取 App ID](#appid)
+- [快速集成 SDK](#sdk)
+
+### <a name="appid"></a> 获取 App ID
+
+
+参考以下步骤获取一个 App ID。若已有App ID，可以直接查看[快速集成 SDK](#sdk)。
+<details>
+	<summary><font color="#3ab7f8">获取 App ID</font></summary>
+
+1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
+2. 点击**项目列表**处的**新手指引**。
+
+	![](https://web-cdn.agora.io/docs-files/1563521764570)
+
+3. 在弹出的窗口中输入你的第一个项目名称，然后点击**创建项目**。你可以参考屏幕提示，了解实现一个视频通话的基本步骤。
+
+	![](https://web-cdn.agora.io/docs-files/1563521821078)
+
+4. 项目创建成功后，你会在**项目列表**下看到刚刚创建的项目。点击项目名后的**编辑**按钮，进入项目页。你也可以直接点击左边栏的**项目管理**图标，进入项目页面。
+
+	![](https://web-cdn.agora.io/docs-files/1563522909895)
+
+5. 在**项目管理**页，你可以查看你的 **App ID**。
+
+	![](https://web-cdn.agora.io/docs-files/1563522556558)
+
+</details>
+
+### <a name="sdk"></a> 快速集成 SDK
 
 1. 将 AppID 填写进 RtmJavaDemo.java 中的 `APP ID`。
 
