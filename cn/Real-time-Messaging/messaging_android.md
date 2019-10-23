@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Wed Oct 23 2019 02:53:08 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 03:06:38 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -96,7 +96,7 @@ dependencies {
 1. 在[SDK 下载](https://docs.agora.io/cn/Real-time-Messaging/downloads)下载最新版的 Agora RTM Java SDK for Android 并解压。
 2. 将 SDK 解压文件包 **libs** 文件夹下 **.jar** 包 和 **.so** 库文件拷贝到你项目的对应文件夹下：
 
-| 文件                                     | 对应项目文件夹                          |
+| 文件                                     | 对应项目文件夹                             |
 | ---------------------------------------- | --------------------------------------- |
 | **agora-rtm_sdk.jar**                    | **~/app/libs/**                         |
 | **/arm64-v8a/libagora-rtm-sdk-jni.so**   | **~/app/src/main/jniLibs/arm64-v8a/**   |
