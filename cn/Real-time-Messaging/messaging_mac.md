@@ -25,7 +25,7 @@ updatedAt: Tue Oct 22 2019 12:13:07 GMT+0800 (CST)
 
 
 - macOS 10.0+ 真机（MacBook）。
-- Xcode 9.0+ 或以上版本
+- Xcode 9.0+ 或以上版本。
  
 - Xcode 9.0+ 或以上版本
 - 运行在 macOS 10.0 及以上版本的 macOS 设备。

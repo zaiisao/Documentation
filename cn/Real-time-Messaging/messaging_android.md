@@ -24,7 +24,7 @@ updatedAt: Wed Oct 23 2019 07:23:28 GMT+0800 (CST)
 
 - Android SDK API Level ≥ 16
 - 如果你的 App 以 Android 9 及以上为目标平台，请关注 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p)。
-- Android Studio 3.0 或以上版本
+- Android Studio 3.0 或以上版本。
  
 - Android Studio 3.0 或以上版本
 - 运行在 Android 4.1 及以上版本的 Android 设备。

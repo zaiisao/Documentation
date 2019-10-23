@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Wed Oct 23 2019 10:19:58 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 10:23:35 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -19,11 +19,15 @@ updatedAt: Wed Oct 23 2019 10:19:58 GMT+0800 (CST)
 
 ## 开发环境要求
 
+
+
 - Ubuntu Linux 14.04 LTS 64 位。
 - CentOS 7.0+ 64 位。
-- 一个有效的 [Agora 开发者账号](https://sso.agora.io/login/)。
 
-<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口并设置域名白名单。</div>
+- 一个有效的 [Agora 开发者账号](https://sso.agora.io/en/signup)。
+
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a >打开相关端口并设置域名白名单。</div> 
+
 
 ### 创建 Agora 账号并获取 App ID
 
