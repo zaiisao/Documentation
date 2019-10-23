@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Tue Oct 22 2019 06:19:13 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 02:54:13 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -85,7 +85,7 @@ You can use either of the following ways to integrate the Agora RTM SDK for Andr
 
 <a name="jcenter"></a>
 
-#### Method 1: Automatically integrate the SDK using JCenter
+**Method 1: Automatically integrate the SDK using JCenter**
 
 1. Add the following line in the **/app/build.gradle** file of your project (1.0.1 is the version number).
 
@@ -101,7 +101,7 @@ dependencies {
 
 <a name="jcenter"></a>
 
-#### Method 2: Manually integrate the SDK
+**Method 2: Manually integrate the SDK**
 
 1. Go to [SDK Downloads](https://docs.agora.io/cn/Real-time-Messaging/downloads), download the latest version of Agora RTM Java SDK for Android, and unzip. 
 2. Save the **.jar** package and **.so** files under the **libs** folder of the unzipped SDK package to the corresponding folder of your project. 
@@ -167,7 +167,7 @@ This section provides API call sequence diagrams, sample codes, and consideratio
 ### Create and Initialize an Agora RTM Client
 
 1. Before creating and initializing an Agora RTM client, ensure that you have completed all steps mentioned in the [Set up the development environment](#setup) section. 
-2. Put in the `App ID` you get from **Agora Console** (see [Get an App ID](#appid)) when creating and initializing an Agora RTM client. 
+2. Put in the `App ID` you get from **Agora Dashboard** (see [Get an App ID](#appid)) when creating and initializing an Agora RTM client. 
 3. Implement an event callback `RtmClientListener`, the SDK uses its callbacks to notify the app of ongoing events, including:
    - The connection between the SDK and the Agora RTM system changes. 
    - A peer-to-peer message arrives. 

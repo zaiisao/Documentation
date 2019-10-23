@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: Web
-updatedAt: Sun Sep 29 2019 09:33:24 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 04:40:28 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -68,9 +68,9 @@ We also provide an open-source [17-Multistream](https://github.com/AgoraIO/Advan
 Agora recommends using a layout with one big window and multiple small windows: Use a high-stream layout for the big window; Use a low-stream layout for small windows.
 
 <a name="corr"></a>
-### Correlation Table
+## Correlation Table
 
-**See the following table for the correlation between the high stream and low stream**
+**See the following table for the correlation between the high stream and low stream.**
 
 > Since web browsers use an internal algorithm to adjust the stream, the actual low stream may be slightly different from that shown in the table.
 

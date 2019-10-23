@@ -2,7 +2,7 @@
 ---
 title: Signaling vs. Agora RTM SDK
 description: 
-platform: Windows CPP
+platform: Windows CPP,Linux CPP
 updatedAt: Wed Oct 09 2019 12:37:49 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK

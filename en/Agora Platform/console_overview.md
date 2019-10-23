@@ -3,7 +3,7 @@
 title: Console Overview
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 06:22:49 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 03:24:14 GMT+0800 (CST)
 ---
 # Console Overview
 Agora Console provides interactive interfaces where you can configure, pay for and monitor your Agora products. 
@@ -43,9 +43,9 @@ Create a project at Console to begin building your app. Agora will issue an App 
 
 Check the duration of audio, video or recording of your projects. [Learn more](../../en/Agora%20Platform/check_usage.md)
 
-### Track the quality of every call
+### Use Agora Analytics
 
-Use **Agora Analytics** to track the quality of the calls made through your app and identify issues. [Learn more](../../en/Agora%20Platform/aa_guide.md)
+Use **Agora Analytics**,  a tool that tracks and analyzes the usage and quality of calls, to locate quality issues and find root causes. Agora Analytics includes three functions, Call Search, Data Insight, and Realtime. [Learn more](../../en/Agora%20Platform/aa_guide.md)
 
 ### Payments & Transactions
 

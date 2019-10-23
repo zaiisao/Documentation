@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Fri Oct 18 2019 09:41:48 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 07:20:22 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -2197,6 +2197,8 @@ public int SetEncryptionSecret(string secret)；
 ```
 
 Call `setEncryptionSecret` to specify an encryption password to enable built-in encryption before joining a channel, otherwise the communication will be unencrypted. All users in a channel must set the same encryption password. The encryption password is automatically cleared once the user has left the channel. If the encryption password is not specified or set to empty, the encryption function will be disabled.
+
+<div class="alert note">Unity SDK does not have an encryption library by default.</div>
 
 <table>
 <colgroup>

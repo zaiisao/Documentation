@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.1
 platform: macOS
-updatedAt: Tue Oct 22 2019 09:55:45 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 11:25:08 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -17,7 +17,7 @@ We provide open-source demo projects on GitHub, which implement an elementary me
 - [Agora-RTM-Tutorial-macOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-macOS-Objective-C)
   - [MainViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-macOS-Objective-C/Agora-RTM-Tutorial/MainViewController.m)
   - [ChatViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-macOS-Objective-C/Agora-RTM-Tutorial/ChatViewController.m)
-- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-macOS)
+- [Agora-RTM-Tutorial-macOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-macOS)
   - [MainViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-macOS/Agora-RTM-Tutorial/MainViewController.swift)
   - [ChatViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-macOS/Agora-RTM-Tutorial/ChatViewController.swift)
 

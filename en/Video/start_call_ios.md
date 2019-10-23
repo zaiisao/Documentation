@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: iOS
-updatedAt: Tue Oct 22 2019 06:19:52 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 10:12:54 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for iOS.
@@ -282,12 +282,7 @@ Call the `leaveChannel` method to leave the current call according to your scena
 // Objective-C
 - (void)leaveChannel {
     // Leave the channel.
-    [self.agoraKit leaveChannel:^(AgoraChannelStats *stat) {
-        [self.agoraKit leaveChannel:^(AgoraChannelStats *stat) {
-        [self hideControlButtons];
-        [self.remoteVideo removeFromSuperview];
-        [self.localVideo removeFromSuperview];
-    }];
+    [self.agoraKit leaveChannel:^(AgoraChannelStats *stat)
 }
 ```
 

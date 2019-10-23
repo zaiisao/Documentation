@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 09:33:06 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 08:11:59 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -54,10 +54,10 @@ Refer to the following steps to enable the video conference of 7+ users:
 </tbody>
 </table>
 
-4. (Optional) Call the `setParameters("{"che.video.lowBitRateStreamParameter":{"width":<width>,"height":<height>,"frameRate":<frameRate>,"bitRate":<bitRate>}")` to customize the default low-video stream parameters at the application level.
+4. (Optional) Customize the default low-video stream parameters at the application level.
 ```c++
 // Sets the video profile to 320 x 180, 15 fps, and 140 Kbps.
-setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\":180,\"frameRate\":15,\"bitRate\":140}}"；
+setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\":180,\"frameRate\":15,\"bitRate\":140}}");
 ```
 > The aspect ratio of the low-stream video profile (width x height) should be identical to that of the preset video profile. 
 
