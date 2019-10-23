@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Wed Oct 23 2019 07:43:04 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 10:19:58 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 

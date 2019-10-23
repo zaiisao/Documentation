@@ -27,7 +27,7 @@ updatedAt: Tue Oct 22 2019 12:13:07 GMT+0800 (CST)
 - Android SDK API Level ≥ 16
 - 如果你的 App 以 Android 9 及以上为目标平台，请关注 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p)。
 - <%=IDE %> <%=IDE_version %> 或以上版本
-<% } %>
+<% }
 <%  if (platform == "iOS") { %>
 - <%=platform %> 8.0+ 真机（iPhone 或 iPad）。
 - <%=IDE %> <%=IDE_version %> 或以上版本
@@ -36,7 +36,6 @@ if (platform == "macOS") { %>
 - <%=platform %> 10.0+ 真机（MacBook）。
 - <%=IDE %> <%=IDE_version %> 或以上版本
 <% } 
-<% }
 if (platform == "Linux Java") { %>
 - Ubuntu Linux 14.04 LTS 64 位。
 - CentOS 7.0+ 64 位。
