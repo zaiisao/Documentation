@@ -78,7 +78,7 @@ updatedAt: Wed Oct 23 2019 04:01:34 GMT+0800 (CST)
 
 选择以下任意一种方式将 Agora RTM Android SDK 集成到你的项目中。
 
-**方法 1：使用 JCenter 自动导入**
+**方法 1：使用 JCenter 自动集成**
 
 在项目的 **/app/build.gradle** 文件添加以下代码（1.1.0 为当前版本号）：
 
@@ -91,7 +91,7 @@ dependencies {
 }
 ```
 
-**方法 2：手动导入 SDK 文件**
+**方法 2：手动复制 SDK 文件**
 
 1. 下载最新版的 [Agora RTM Android SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 并解压。
 2. 将 SDK 包内 **libs** 路径下的如下文件，拷贝到你的项目路径下：
