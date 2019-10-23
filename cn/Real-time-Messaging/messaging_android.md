@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Wed Oct 23 2019 07:07:20 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 07:23:28 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -139,7 +139,8 @@ dependencies {
 
 ## 实现实时消息和基本频道操作
 
-本节主要提供实现实时消息和基本频道操作的 API 调用时序图、示例代码，以及相关注意事项。
+
+本节主要提供实现实时消息和基本频道操作的 API 调用时序图及相关示例代码。
 
 ### API 调用时序图
 
@@ -157,7 +158,7 @@ dependencies {
 
 #### 收发频道消息
 
-### ![](https://web-cdn.agora.io/docs-files/1562566639888)
+![](https://web-cdn.agora.io/docs-files/1562566639888)
 
 
 

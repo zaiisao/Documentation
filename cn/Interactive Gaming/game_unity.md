@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Fri Oct 18 2019 03:19:27 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 07:19:21 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -2049,6 +2049,8 @@ public int SetEncryptionSecret(string secret);
 ```
 
 在加入频道之前，您的应用程序需调用 `SetEncryptionSecret` 指定 secret 来启用内置的加密功能，否则该通话未加密。 同一频道内的所有用户应设置相同的 secret。 当用户离开频道时，该频道的 secret 会自动清除。如果未指定 secret 或将 secret 设置为空，则无法激活加密功能。
+
+<div class="alert note">Unity SDK 内默认无加密库。</div>
 
 <table>
 <colgroup>
