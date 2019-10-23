@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Android
-updatedAt: Wed Oct 23 2019 03:06:38 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 04:01:34 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -73,28 +73,29 @@ updatedAt: Wed Oct 23 2019 03:06:38 GMT+0800 (CST)
 
 
 
-### <a name="sdk"></a> 快速集成 SDK
+### <a name="sdk"></a> 快速导入 SDK
 
-你可以通过以下任一种方式快速集成 Agora RTM SDK for Android。
 
-#### 方法 1：通过 JCenter 自动导入
+选择以下任意一种方式将 Agora RTM Android SDK 集成到你的项目中。
 
-1. 在 **app/build.gradle** 文件内添加以下代码（1.0.1 为当前版本号）
+**方法一：使用 JCenter 自动导入**
+
+在项目的 **/app/build.gradle** 文件添加以下代码（1.1.0 为当前版本号）：
 
 ```java
+
+...
 dependencies {
     ...
-    implementation 'io.agora.rtm:rtm-sdk:1.0.1'
-
+    implementation 'io.agora.rtm:rtm-sdk:1.1.0'
 }
 ```
 
-1. 同步项目文件。点击 **Sync Project With Gradle Files** 按钮，直到同步完成。
+**方法二：手动导入 SDK 文件**
 
-#### 方法 2：手动导入 SDK 文件
+1. 下载最新版的 [Agora RTM Android SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 并解压。
+2. 将 SDK 包内 **libs** 路径下的如下文件，拷贝到你的项目路径下：
 
-1. 在[SDK 下载](https://docs.agora.io/cn/Real-time-Messaging/downloads)下载最新版的 Agora RTM Java SDK for Android 并解压。
-2. 将 SDK 解压文件包 **libs** 文件夹下 **.jar** 包 和 **.so** 库文件拷贝到你项目的对应文件夹下：
 
 | 文件                                     | 对应项目文件夹                             |
 | ---------------------------------------- | --------------------------------------- |
@@ -104,9 +105,11 @@ dependencies {
 | **/x86/libagora-rtm-jni.so**             | **~/app/src/main/jniLibs/x86/**         |
 | **/x86_64/libagora-rtm-sdk-jni.so**      | **~/app/src/main/jniLibs/x86_64/**      |
 
-<a name="permission"></a>
 
-### 添加权限
+
+
+
+### <a name="permission"></a>添加权限
 
 打开 **app/src/main/AndroidManifest.xml** 文件，添加必要的设备权限。比如：
 
