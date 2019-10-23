@@ -70,13 +70,7 @@ dependencies {
 2. 将 SDK 包内 libs 路径下的如下文件，拷贝到你的项目路径下：
 
 
-| 文件或文件夹 | 项目路径 | 
-| ---------------- | ---------------- | 
-| **agora-rtc-sdk.jar** 文件      | **/app/libs/**     | 
-| **arm-v8a** 文件夹      | **/app/src/main/jniLibs/**     | 
-| **armeabi-v7a** 文件夹      | **/app/src/main/jniLibs/**     | 
-| **x86** 文件夹      | **/app/src/main/jniLibs/**     | 
-| **x86_64** 文件夹      | **/app/src/main/jniLibs/**     | 
+~81dd63c0-f541-11e9-a58c-9b9f524ba294~
 
 ### 添加项目权限
 
@@ -257,7 +251,8 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
   
     // 获取权限后，初始化 RtcEngine，并加入频道。
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
+            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }

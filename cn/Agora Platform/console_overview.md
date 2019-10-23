@@ -3,7 +3,7 @@
 title: 控制台概览
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 07:36:05 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 03:05:22 GMT+0800 (CST)
 ---
 # 控制台概览
 欢迎使用控制台。控制台提供直观的界面，方便你在使用 Agora 各产品时进行充值、查看、管理等操作。本指南简要介绍如何使用控制台。
@@ -41,7 +41,7 @@ updatedAt: Tue Oct 22 2019 07:36:05 GMT+0800 (CST)
 
 ### 追踪通话质量
 
-使用 Agora 为开发者提供的实时通话质量监控工具，查看通话数据，调查通话质量问题。详见[水晶球文档](../../cn/Agora%20Platform/aa_guide.md)。
+使用 Agora 提供的全周期通话质量监控工具**水晶球**（Agora Analytics），实时查看通话数据，及时发现问题、定位原因。水晶球包含通话调查、数据洞察和实时数据三个部分，详见[水晶球概览](../../cn/Agora%20Platform/aa_guide.md)。
 
 ### 财务消费管理
 
