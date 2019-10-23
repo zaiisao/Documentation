@@ -3,7 +3,7 @@
 title: 七人以上视频场景
 description: 
 platform: Windows
-updatedAt: Wed Oct 23 2019 03:44:48 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 08:10:26 GMT+0800 (CST)
 ---
 # 七人以上视频场景
 ## 功能描述
@@ -60,7 +60,7 @@ updatedAt: Wed Oct 23 2019 03:44:48 GMT+0800 (CST)
 
    ```c++
    // 定制视频小流参数设置。设置 Video Profile 为 320 (px) × 180 (px), 15 fps, 140 Kbps。
-   setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\":180,\"frameRate\":15,\"bitRate\":140}}"；
+   setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\":180,\"frameRate\":15,\"bitRate\":140}}");
    ```
 
    > 小流的分辨率（宽高）比例需要和大流的分辨率（宽高）比例相同。
