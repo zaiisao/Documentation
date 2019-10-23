@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Wed Oct 23 2019 02:54:13 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 09:35:23 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -74,37 +74,28 @@ You can skip to [Integrate the SDK into your project](#sdk) if you already have 
  ![](https://web-cdn.agora.io/docs-files/1563523737158)
 </details>
 
-
-
 ### <a name="sdk"></a> Integrate the SDK into your project
 
-You can use either of the following ways to integrate the Agora RTM SDK for Android into your project. 
-
-- [Automatically integrate the SDK using JCenter](#jcenter)
-- [Manually integrate the SDK](#manual)
-
-<a name="jcenter"></a>
+Choose either of the following methods to integrate the Agora SDK into your project.
 
 **Method 1: Automatically integrate the SDK using JCenter**
 
-1. Add the following line in the **/app/build.gradle** file of your project (1.0.1 is the version number).
+Add the following line in the **/app/build.gradle** file of your project (1.1.0 is the version number):
 
 ```java
+...
 dependencies {
     ...
-    implementation 'io.agora.rtm:rtm-sdk:1.0.1'
-
+    implementation 'io.agora.rtm:rtm-sdk:1.1.0'
 }
 ```
 
-2. Click the **Sync Project With Gradle Files** to synchronize your project. 
+**Method 2: Manually copy the SDK files**
 
-<a name="jcenter"></a>
+<ol>
+<li>Download the latest version of the <a href="https://docs.agora.io/en/Agora%20Platform/downloads">Agora RTM Android SDK</a> and unzip.</li>
 
-**Method 2: Manually integrate the SDK**
-
-1. Go to [SDK Downloads](https://docs.agora.io/cn/Real-time-Messaging/downloads), download the latest version of Agora RTM Java SDK for Android, and unzip. 
-2. Save the **.jar** package and **.so** files under the **libs** folder of the unzipped SDK package to the corresponding folder of your project. 
+<li>Save the <b>.jar</b> package and <b>.so</b> files under the <b>libs</b> folder of the unzipped SDK package to the corresponding folders of your project. </li>
 
 | File                                     | Project Folder                          |
 | ---------------------------------------- | --------------------------------------- |
@@ -114,11 +105,11 @@ dependencies {
 | **/x86/libagora-rtm-jni.so**             | **~/app/src/main/jniLibs/x86/**         |
 | **/x86_64/libagora-rtm-sdk-jni.so**      | **~/app/src/main/jniLibs/x86_64/**      |
 
-<a name="permission"></a>
 
-### Add project permissions
+### <a name="permission"></a>Add project permissions
 
 Add the following permissions in the **/app/src/main/AndroidManifest.xml** file for device access according to your needs:
+
 
 ```
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -132,9 +123,10 @@ Add the following permissions in the **/app/src/main/AndroidManifest.xml** file 
 </manifest>
 ```
 
-<a name="obfuscated"></a>
 
-### Prevent Obfuscation of the Agora Classes
+
+
+### <a name="obfuscated"></a>Prevent Obfuscation of the Agora Classes
 
 Add the following line in the **app/proguard-rules.pro** file to prevent code obfuscation:
 
