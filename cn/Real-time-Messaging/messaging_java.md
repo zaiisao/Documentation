@@ -223,9 +223,6 @@ public void sendPeerMessage(String dst, String content) {
 - 通过 `message.getText()` 方法可以获取到消息文本内容。
 - `peerId` 是消息发送方的用户 ID。
 
-#### 注意事项
-
-- 接收到的 `RtmMessage` 消息对象不能重复利用再用于发送。
 
 ### 频道消息
 
