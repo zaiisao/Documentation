@@ -41,6 +41,27 @@ if (platform == "Windows") { %>
 if (platform == "Web") { %> 
 - 安装一款 Agora <%=product %> <%=platform %> SDK 支持的浏览器，如下表所示：
 
+<% if (product == "RTM") { %>
+
+| 平台             | 兼容性 |
+| :------------------- | :----------------- |
+| Chrome 49+ | ✔                  |
+| Android Browser 4.4.3+ | ✔     |
+| Safari 9+   | ✔                  |
+| Internet Explorer 11+  | ✔                  |
+| Firefox 52+ |  ✔                  |
+
+<% } if (product == "RTC") { %>
+
+| 平台         | Chrome 58+ | Firefox 56+ | Safari 11+ | Opera 45+ | QQ 浏览器最新版 | 360 安全浏览器 | 微信浏览器 |
+| ------------ | ---------- | ----------- | ---------- | --------- | --------------- | -------------- | ---------- |
+| Android 4.1+ | ✔          | ✘           | **N/A**    | ✘         | ✘               | ✘              | ✘          |
+| iOS 11+      | ✘          | ✘           | ✔          | ✘         | ✘               | ✘              | ✘          |
+| macOS 10+    | ✔          | ✔           | ✔          | ✔         | ✔               | ✘              | ✘          |
+| Windows 7+   | ✔          | ✔           | **N/A**    | ✔         | ✔               | ✔              | ✘          |
+
+<% } %>
+
 <% } %>
 - 一个有效的 [Agora 开发者账号](https://sso.agora.io/en/signup)。
 
