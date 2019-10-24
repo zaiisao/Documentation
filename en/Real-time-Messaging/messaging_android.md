@@ -232,7 +232,7 @@ mRtmClient.logout(null);
 You need to call the following method to send an peer-to-peer message to a specified user. 
 
 ```java
-`sendMessageToPeer(@NonNull String, @NonNull RtmMessage, @NonNull SendMessageOptions, @Nullable ResultCallback<void>)`
+sendMessageToPeer(@NonNull String, @NonNull RtmMessage, @NonNull SendMessageOptions, @Nullable ResultCallback<void>)
 ```
 
 You need to:
