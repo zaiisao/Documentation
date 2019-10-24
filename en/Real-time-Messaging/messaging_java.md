@@ -2,29 +2,28 @@
 ---
 title: Peer-to-peer or Channel Messaging
 description: 
-platform: Android
-updatedAt: Thu Oct 24 2019 07:31:26 GMT+0800 (CST)
+platform: Linux Java
+updatedAt: Thu Oct 24 2019 10:08:55 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
-You can use this guide to quickly start messaging with the [Agora RTM Android SDK](https://docs.agora.io/en/Real-time-Messaging/downloads). 
+You can use this guide to quickly start messaging with the [Agora RTM Linux Java SDK](https://docs.agora.io/en/Real-time-Messaging/downloads). 
 
 
 ## Try the demo
 
-We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android), which implements an elementary messaging system. You can try this demo out and view our source code:
+We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Linux-Server](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Linux-Server), which implements an elementary messaging system. You can try this demo out and view our source code:
 
-- [LoginActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/LoginActivity.java) 
-- [MessageActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/MessageActivity.java) 
-- [SelectionActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/SelectionActivity.java)
+- [RtmJavaDemo.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Java/src/main/java/io/agora/RtmJavaDemo.java)
 
 ## Prerequisites
 
 
 
-- Android SDK API Level 16 or higher
-- To run your app on Android 9, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p) for more information.
-- Android Studio 3.0 or later
+- Ubuntu Linux 14.04 LTS 64 bit. 
+- CentOS 7.0+ 64 bit. 
+- glibc 2.14 or later.
+- Integrated Development Environment: Eclipse.
 
 - A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
 
@@ -37,13 +36,11 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Android](h
 We will walk you through the following steps in this section:
 
 - [Get an App ID](#appid)
-- [Integrate the SDK into your project](#sdk)
-- [Add Android device permissions](#permission)
-- [ Prevent Obfuscation of the Agora Classes](#obfuscated)
+- [Integrate the SDK](#sdk)
 
 ### <a name="appid"></a>Get an App ID
 
-You can skip to [Integrate the SDK into your project](#sdk) if you already have an App ID. 
+You can skip to [Integrate the SDK](#sdk) if you already have an App ID. 
 
 <details>
 	<summary><font color="#3ab7f8">Get an App ID</font></summary>
@@ -67,67 +64,15 @@ You can skip to [Integrate the SDK into your project](#sdk) if you already have 
  ![](https://web-cdn.agora.io/docs-files/1563523737158)
 </details>
 
-### <a name="sdk"></a> Integrate the SDK into your project
+### <a name="sdk"></a> Integrate the SDK
 
 
-Choose either of the following methods to integrate the Agora RTM Android SDK into your project.
+- Download the latest version of the <a href="https://docs.agora.io/en/Real-time-Messaging/downloads">Agora RTM Linux Java SDK</a> and unzip.
+- Save the **.so** file under the **libs** folder of the unzipped SDK package to the default library search directory of the Linux system, usually **/usr/lib**. 
+- Save the **.jar** file under the **libs** folder of the unzipped SDK package to the *lib* folder of your own project. 
+- Right click the **.jar** file: **Build Path > Add to Build Path** to add the **.jar** package to your project directory. 
+<i> You can now see a reference to this <b>.jar</b> package under <b>Referenced Libraries</b> folder. </i>
 
-**Method 1: Automatically integrate the SDK using JCenter**
-
-Add the following line in the **/app/build.gradle** file of your project (1.1.0 is the version number):
-
-```java
-...
-dependencies {
-    ...
-    implementation 'io.agora.rtm:rtm-sdk:1.1.0'
-}
-```
-
-**Method 2: Manually copy the SDK files**
-
-<ol>
-
-<li>Download the latest version of the <a href="https://docs.agora.io/en/Real-time-Messaging/downloads">Agora RTM Android SDK</a> and unzip.</li>
-<li>Save the <b>.jar</b> package and <b>.so</b> files under the <b>libs</b> folder of the unzipped SDK package to the corresponding folders of your project. </li>
-
-| File                                     | Project Folder                          |
-| ---------------------------------------- | --------------------------------------- |
-| **agora-rtm_sdk.jar**                    | **~/app/libs/**                         |
-| **/arm64-v8a/libagora-rtm-sdk-jni.so**   | **~/app/src/main/jniLibs/arm64-v8a/**   |
-| **/armeabi-v7a/libagora-rtm-sdk-jni.so** | **~/app/src/main/jniLibs/armeabi-v7a/** |
-| **/x86/libagora-rtm-jni.so**             | **~/app/src/main/jniLibs/x86/**         |
-| **/x86_64/libagora-rtm-sdk-jni.so**      | **~/app/src/main/jniLibs/x86_64/**      |
-
-
-
-### <a name="permission"></a>Add project permissions
-
-Add the following permissions in the **/app/src/main/AndroidManifest.xml** file for device access according to your needs:
-
-
-```
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.agora.rtmtutorial">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-...
-</manifest>
-```
-
-
-
-
-### <a name="obfuscated"></a>Prevent code obfuscation
-
-Add the following line in the **app/proguard-rules.pro** file to prevent code obfuscation:
-
-```java
--keep class io.agora.**{*;}
-```
 
 ## Implement peer-to-peer and channel messaging
 
@@ -174,7 +119,7 @@ import io.agora.rtm.SendMessageOptions;
 
 public void init() {
 		try {
-				mRtmClient = RtmClient.createInstance(mContext, APPID,
+				mRtmClient = RtmClient.createInstance(APPID,
 												new RtmClientListener() {
 						@Override
 						public void onConnectionStateChanged(int state, int reason) {
@@ -357,16 +302,16 @@ You can call the `leave()` method to leave a channel.
 ## Considerations
 
 
-- The Agora RTM SDK supports creating multiple [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instances that are independent of each other. 
+- The Agora RTM SDK supports creating multiple [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instances that are independent of each other. 
 
--  To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., ensure that you have received [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)). 
+-  To send and receive peer-to-peer or channel messages, ensure that you have successfully logged in the Agora RTM system (i.e., ensure that you have received [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)). 
 
-- To use any of the channel features, you must first call the [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) method to create a channel instance. 
-- You can create multiple channel instances for each [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance, but you can only join a maximum of 20 channels at the same time. The `channelId` parameter needs to be channel-specific.
+- To use any of the channel features, you must first call the [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) method to create a channel instance. 
+- You can create multiple channel instances for each [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html) instance, but you can only join a maximum of 20 channels at the same time. The `channelId` parameter needs to be channel-specific.
 
-- When you leave a channel and do not want to join it again, you can call the [release](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a725d008cb19f44496948ee8f1826deaf) method to release all resources used by the channel instance.
+- When you leave a channel and do not want to join it again, you can call the [release](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a725d008cb19f44496948ee8f1826deaf) method to release all resources used by the channel instance.
 
-- You cannot reuse a received [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) instance.
+- You cannot reuse a received [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_message.html) instance.
 
 
 
