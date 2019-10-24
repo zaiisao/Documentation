@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Thu Oct 24 2019 04:09:17 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 08:25:10 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -67,23 +67,15 @@ updatedAt: Thu Oct 24 2019 04:09:17 GMT+0800 (CST)
 
 ### <a name="sdk"></a> 快速集成 SDK
 
-1. 将 AppID 填写进 RtmJavaDemo.java 中的 `APP ID`。
 
-```java
-public static final String APP_ID = "<#YOUR APP ID#>";
-```
 
-2. 将下载的 SDK 解压并将其中的 libs 文件夹下的 `*.jar`, `*.so` 复制到本项目的 /lib 文件夹下。
+- 下载最新版的 <a href="https://docs.agora.io/cn/Real-time-Messaging/downloads">Agora RTM Linux Java SDK</a> 并解压。
+- 将解压后的 SDK 包的 **libs** 文件夹下的 **.so** 库文件复制到系统的默认库搜索路径，通常是 **/usr/lib**。
+- 将解压后的 SDK 包的 **libs** 文件夹下的 **.jar** 复制到你自己项目的 *lib* 文件夹。
+- 选中 **.jar** 包点击鼠标右键： **Build Path > Add to Build Path** 把 **.jar** 添加到项目路径。
+	<i> 你可以在 <b>Referenced Libraries</b> 文件夹下看到对该 **.jar** 包的引用。</i>
 
-3. 如果没有 maven 环境，需要安装 `apache-maven-3.6.0`。
 
-4. 将 demo 依赖的 jar 包安装到本地 maven 仓库：
-
-```
-mvn install:install-file -Dfile=lib/agora_rtm.jar -DgroupId=io.agora.rtm -DartifactId=agora-rtm-sdk -Dversion=1.0 -Dpackaging=jar
-```
-
-5. 使用 maven 编译打包, 在 `pom.xml` 所在目录运行 `mvn package`。
 
 ## 实时消息和基本频道操作
 
