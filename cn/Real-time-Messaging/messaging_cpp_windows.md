@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Windows CPP
-updatedAt: Wed Oct 23 2019 12:46:05 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 11:50:46 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -61,7 +61,7 @@ updatedAt: Wed Oct 23 2019 12:46:05 GMT+0800 (CST)
 </details>
 
 ### <a name="create"></a> 创建项目
-参考以下步骤创建一个 Windows 项目。若已有 Windows 项目，直接查看[集成 SDK](#inte)。
+参考以下步骤创建一个 Windows 项目。若已有 Windows 项目，直接查看[集成 SDK](#sdk)。
 
 <details>
 	<summary><font color="#3ab7f8">创建 Windows 项目</font></summary>
