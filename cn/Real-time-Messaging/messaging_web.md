@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Tue Oct 22 2019 12:17:12 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 12:46:32 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -101,7 +101,7 @@ updatedAt: Tue Oct 22 2019 12:17:12 GMT+0800 (CST)
 2. 导出 AgoraRTM 模块：
 `import AgoraRTM from 'agora-rtm-sdk'`
 
-## 实现实时消息和基本频道操作
+## 实时消息和基本频道操作
 
 本节主要提供实现实时消息和基本频道操作的示例代码以及相关注意事项。
 

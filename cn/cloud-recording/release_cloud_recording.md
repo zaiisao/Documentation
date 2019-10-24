@@ -3,7 +3,7 @@
 title: 云端录制发版说明
 description: 
 platform: Linux
-updatedAt: Tue Oct 22 2019 08:43:18 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 04:03:19 GMT+0800 (CST)
 ---
 # 云端录制发版说明
 ## 简介
@@ -18,6 +18,11 @@ Agora 云端录制与以下 Agora SDK 兼容:
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制 与 Agora Web SDK 1.12.0 或更高版本兼容。            |
+
+## 1.4.0 版
+
+该版本于 2019 年 10 月 24 日发布，新增了对腾讯云存储的支持。
+
 
 ## 1.3.0 版
 

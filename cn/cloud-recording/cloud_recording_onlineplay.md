@@ -3,7 +3,7 @@
 title: 在线播放录制文件
 description: 
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 03:46:32 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 04:05:14 GMT+0800 (CST)
 ---
 # 在线播放录制文件
 ## 功能描述
@@ -14,7 +14,9 @@ updatedAt: Fri Oct 18 2019 03:46:32 GMT+0800 (CST)
 
 ## 实现方法
 
-在开始前，请确保录制文件已全部上传完成。下面分别介绍[阿里云](https://www.aliyun.com/product/ossJ)、[七牛云](https://www.qiniu.com/)和 [AWS S3](https://aws.amazon.com/cn/s3/?nc=sn&loc=0) 如何在线播放录制文件。
+在开始前，请确保录制文件已全部上传完成。下面分别介绍[阿里云](https://www.aliyun.com/product/ossJ)、[七牛云](https://www.qiniu.com/)、[腾讯云](https://cloud.tencent.com/product/cos) 和 [AWS S3](https://aws.amazon.com/cn/s3/?nc=sn&loc=0) 如何在线播放录制文件。
+
+>以下方法中，读写权限设置均以存储桶（bucket）为单位。为提高安全性，你也可以选择以单个录制文件为单位设置读写权限。
 
 ### 阿里云
 1. 登录阿里云控制台，进入你设定的录制存储空间（bucket），在**文件管理**页面可以看到 M3U8 和 TS 文件。
@@ -41,6 +43,20 @@ updatedAt: Fri Oct 18 2019 03:46:32 GMT+0800 (CST)
 4. 在浏览器上输入复制的外链地址即可开始在线播放。
 
 更多信息请参考[在七牛云存储上播放 HLS](https://docs.agora.io/cn/cloud-recording/%3Chttps://developer.qiniu.com/kodo/kb/1339/in-seven-niuyun-stored-in-hls%3E)。
+
+### 腾讯云
+1. 登录腾讯云控制台，点击**存储桶列表**。
+2. 选择你要播放的存储桶（bucket），点击**配置管理**，进入**存储桶访问权限**页面。
+3. 将**公共权限**设置为**公有读私有写**或**公有读写**，点击**保存**。
+
+![](https://web-cdn.agora.io/docs-files/1571369998043)
+	
+4. 回到**存储桶列表**页面，点击你要播放的存储桶，选择**详情**，进入**对象属性**标签页。在**基本信息**一栏，复制**对象地址**:
+
+![](https://web-cdn.agora.io/docs-files/1571369926906)
+
+5. 在浏览器上输入复制的外链地址即可开始在线播放。
+
 
 ### AWS S3
 

@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Wed Oct 23 2019 03:43:33 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 04:04:44 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -30,7 +30,7 @@ Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，
 
 ## 前提条件
 
-请确保开通第三方云存储服务，目前支持[七牛云](https://www.qiniu.com/products/kodo)、[阿里云](https://www.aliyun.com/product/oss)（推荐）和 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。
+请确保开通第三方云存储服务，目前支持[七牛云](https://www.qiniu.com/products/kodo)、[阿里云](https://www.aliyun.com/product/oss)（推荐）、[腾讯云](https://cloud.tencent.com/product/cos) 和 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。
 
 ## 开通云端录制服务
 

@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Wed Oct 23 2019 12:18:50 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 12:45:48 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -23,6 +23,8 @@ updatedAt: Wed Oct 23 2019 12:18:50 GMT+0800 (CST)
 
 - Ubuntu Linux 14.04 LTS 64 位。
 - CentOS 7.0+ 64 位。
+- glibc 2.14 及以上
+- IDE 工具 。
 
 - 一个有效的 [Agora 开发者账号](https://sso.agora.io/en/signup)。
 
@@ -83,7 +85,7 @@ mvn install:install-file -Dfile=lib/agora_rtm.jar -DgroupId=io.agora.rtm -Dartif
 
 5. 使用 maven 编译打包, 在 `pom.xml` 所在目录运行 `mvn package`。
 
-## 实现实时消息和基本频道操作
+## 实时消息和基本频道操作
 
 
 本节主要提供实现实时消息和基本频道操作的 API 调用时序图及相关示例代码。

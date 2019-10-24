@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: macOS
-updatedAt: Tue Oct 22 2019 12:13:07 GMT+0800 (CST)
+updatedAt: Wed Oct 23 2019 12:47:05 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -115,7 +115,7 @@ end
  - CoreTelephony.framework
 
 
-## 实现实时消息和基本频道操作
+## 实时消息和基本频道操作
 
 本节主要提供实现实时消息和基本频道操作的 API 调用时序图以及相关示例代码。
 

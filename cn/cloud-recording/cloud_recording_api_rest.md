@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Oct 23 2019 10:20:32 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 04:05:45 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -64,7 +64,7 @@ updatedAt: Wed Oct 23 2019 10:20:32 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。例如`"527841"`。云端录制不支持 String 用户名（User Account），请确保该字段引号内为整型 UID，且频道内所有用户均使用整型 UID。 |
+| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，例如`"527841"`。需满足以下条件：<li>取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0</li><li>需保证唯一性，不能与当前频道内的任何 UID 重复。</li><li>云端录制不支持 String 用户名（User Account），请确保该字段引号内为整型 UID，且频道内所有用户均使用整型 UID。</li> |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
 ### `acquire` 请求示例
@@ -153,7 +153,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - `videoStreamType`：（选填）Number 类型，设置录制的视频流类型。如果频道中有用户开启了双流模式，你可以选择录制视频大流或者小流。
   - `0`：视频大流（默认），即高分辨率高码率的视频流
   - `1`：视频小流，即低分辨率低码率的视频流
-- `maxIdleTime`：（选填）Number 类型，最长空闲频道时间。默认值为 30 秒，该值需大于等于 5，且小于等于 (2<sup>32</sup>-1)。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。
+- `maxIdleTime`：（选填）Number 类型，最长空闲频道时间。默认值为 30 秒，该值需大于等于 5，且小于等于 (2<sup>32</sup>-1)。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。如果频道内有用户，但用户没有发流，不算作无用户状态。
 - `transcodingConfig`：（选填）JSON 类型，视频转码的详细设置。仅适用于合流模式，单流模式下不能设置该参数。如果不设置将使用默认值。如果设置该参数，请务必填入 `width`、`height`、`fps` 和 `bitrate` 字段。
   - `width`：（必填）Number 类型，录制视频的宽度，单位为像素，默认值 360。支持的最大分辨率为 1080p，超过该分辨率会报错。
   - `height`：（必填）Number 类型，录制视频的高度，单位为像素，默认值 640。支持的最大分辨率为 1080p，超过该分辨率会报错。
@@ -195,6 +195,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `0`：七牛云
   - `1`：Amazon S3
   - `2`：阿里云
+  - `3`：腾讯云
 
 - `region`：Number 类型，第三方云存储指定的地区信息。
   当 `vendor` = 0，即第三方云存储为七牛云时：  
@@ -246,6 +247,30 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `16`：EU_Central_1 
   - `17`：EU_West_1 
   - `18`：EU_East_1
+
+ 当 `vendor` = 3，即第三方云存储为腾讯云时： 
+
+  - `0`：AP_Beijing_1
+  - `1`：AP_Beijing
+  - `2`：AP_Shanghai
+  - `3`：AP_Guangzhou
+  - `4`：AP_Chengdu 
+  - `5`：AP_Chongqing 
+  - `6`：AP_Shenzhen_FSI 
+  - `7`：AP_Shanghai_FSI 
+  - `8`：AP_Beijing_FSI 
+  - `9`：AP_Hongkong 
+  - `10`：AP_Singapore 
+  - `11`：AP_Mumbai 
+  - `12`：AP_Seoul 
+  - `13`：AP_Bangkok 
+  - `14`：AP_Tokyo 
+  - `15`：NA_Siliconvalley 
+  - `16`：NA_Ashburn 
+  - `17`：NA_Toronto 
+  - `18`：EU_Frankfurt 
+  - `19`：EU_Moscow
+
 
 - `bucket`：String 类型，第三方云存储的 bucket。
 
@@ -643,6 +668,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | 201    | 成功请求并创建了新的资源。                         |
 | 206    | 服务器成功处理了部分 GET 请求。                    |
 | 400    | 请求的语法错误（如参数错误），服务器无法理解。     |
+| 401    | App ID 未经授权，或 Customer Certificate 匹配错误。    |
 | 404    | 服务器无法根据请求找到资源（网页）。               |
 | 500    | 服务器内部错误，无法完成请求。                     |
 | 504    | 充当网关或代理的服务器未及时从远端服务器获取请求。 |
