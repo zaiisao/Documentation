@@ -97,6 +97,24 @@ updatedAt: Wed Oct 23 2019 12:46:05 GMT+0800 (CST)
 
 本节主要提供实现实时消息和基本频道操作的 API 调用时序图及相关示例代码。
 
+### API 调用时序图
+
+#### 登录登出 Agora RTM 系统
+
+![](https://web-cdn.agora.io/docs-files/1561973138720)
+
+#### 收发点对点消息
+
+![](https://web-cdn.agora.io/docs-files/1561973161681)
+
+#### 加入离开频道
+
+![](https://web-cdn.agora.io/docs-files/1561985095839)
+
+#### 收发频道消息
+
+![](https://web-cdn.agora.io/docs-files/1561985687950)
+
 ### 初始化
 
 1. 根据需求继承实现 `agora::rtm::IRtmServiceEventHandler`  `agora::rtm::IChannelEventHandler`
