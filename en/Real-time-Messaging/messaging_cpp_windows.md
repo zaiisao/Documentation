@@ -17,9 +17,10 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Windows](h
 ## Prerequisites
 
 
+ 
+- Microsoft Visual Studio 2017 or later.
+- A Windows device running on Windows 7 or later.
 
-- Microsoft Visual Studio 2017 or later
-- An Windows device running on Windows 7 or later
 - A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div> 
