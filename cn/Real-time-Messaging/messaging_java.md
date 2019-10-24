@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Wed Oct 23 2019 12:45:48 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 04:09:17 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -23,8 +23,8 @@ updatedAt: Wed Oct 23 2019 12:45:48 GMT+0800 (CST)
 
 - Ubuntu Linux 14.04 LTS 64 位。
 - CentOS 7.0+ 64 位。
-- glibc 2.14 及以上
-- IDE 工具 。
+- glibc 2.14 及以上。
+- IDE 工具 Eclipse。
 
 - 一个有效的 [Agora 开发者账号](https://sso.agora.io/en/signup)。
 
