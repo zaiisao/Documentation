@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Wed Oct 23 2019 09:58:00 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 07:31:26 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -70,37 +70,26 @@ You can skip to [Integrate the SDK into your project](#sdk) if you already have 
 
 ### <a name="sdk"></a> Integrate the SDK into your project
 
-<% if (platform == "Android") { %>
-Choose either of the following methods to integrate the Agora <%=product %> <%=platform %> SDK into your project.
+
+Choose either of the following methods to integrate the Agora RTM Android SDK into your project.
 
 **Method 1: Automatically integrate the SDK using JCenter**
 
-Add the following line in the **/app/build.gradle** file of your project (<%=sdk_version %> is the version number):
+Add the following line in the **/app/build.gradle** file of your project (1.1.0 is the version number):
 
 ```java
 ...
 dependencies {
     ...
-    implementation '<%=artifact %>:<%=sdk_name %>:<%=sdk_version %>'
+    implementation 'io.agora.rtm:rtm-sdk:1.1.0'
 }
 ```
 
 **Method 2: Manually copy the SDK files**
 
 <ol>
-<li>Download the latest version of the <a href="https://docs.agora.io/en/Agora%20Platform/downloads">Agora <%=product %> <%=platform %> SDK</a> and unzip.</li>
-<% if (product == "RTC") { %>
-<li>Copy the following files or subfolders from the libs folder of the downloaded SDK package to the path of your project.</li>
 
-| File or subfolder | Path of your project | 
-| ---------------- | ---------------- | 
-| **agora-rtc-sdk.jar** file      | **/app/libs/**     | 
-| **arm-v8a** folder      | **/app/src/main/jniLibs/**     | 
-| **armeabi-v7a** folder      | **/app/src/main/jniLibs/**     | 
-| **x86** folder      | **/app/src/main/jniLibs/**     | 
-| **x86_64** folder      | **/app/src/main/jniLibs/**     | 
-<% }
-if (product == "RTM") { %>
+<li>Download the latest version of the <a href="https://docs.agora.io/en/Real-time-Messaging/downloads">Agora RTM Android SDK</a> and unzip.</li>
 <li>Save the <b>.jar</b> package and <b>.so</b> files under the <b>libs</b> folder of the unzipped SDK package to the corresponding folders of your project. </li>
 
 | File                                     | Project Folder                          |
@@ -110,15 +99,8 @@ if (product == "RTM") { %>
 | **/armeabi-v7a/libagora-rtm-sdk-jni.so** | **~/app/src/main/jniLibs/armeabi-v7a/** |
 | **/x86/libagora-rtm-jni.so**             | **~/app/src/main/jniLibs/x86/**         |
 | **/x86_64/libagora-rtm-sdk-jni.so**      | **~/app/src/main/jniLibs/x86_64/**      |
-<% } %>
-<% }
-if (platform == "Linux Java") { %>
-- Download the latest version of the <a href="https://docs.agora.io/en/Agora%20Platform/downloads">Agora <%=product %> <%=platform %> SDK</a> and unzip.
-- Save the **.so** file under the **libs** folder of the unzipped SDK package to the default library search directory of the Linux system, usually **/usr/lib**. 
-- Save the **.jar** file under the **libs** folder of the unzipped SDK package to the *lib* folder of your own project. 
-- Right click the **.jar** file: **Build Path > Add to Build Path** to add the **.jar** package to your project directory. 
-* You can see a reference to this **.jar** package under ""Referenced Libraries** folder. *
-<% } %>
+
+
 
 ### <a name="permission"></a>Add project permissions
 

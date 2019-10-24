@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Tue Oct 22 2019 07:55:31 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 07:43:42 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -14,7 +14,7 @@ When multiple hosts are in a channel in CDN live streaming, [transcoding](https:
 
 ![](https://web-cdn.agora.io/docs-files/1569414336352)
 
-### Prerequisites
+## Prerequisites
 
 Ensure that you enable the RTMP Converter service before using this function.
 
