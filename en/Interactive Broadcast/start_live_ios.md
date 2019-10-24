@@ -29,7 +29,20 @@ In this section, we will create an iOS project, and integrate the SDK into the p
 ### Create an iOS project
 Now, let's build an iOS project from scratch. Skip to [Integrate the SDK](#IntegrateSDK) if an iOS project already exists.
 
-~dbc73cd0-f186-11e9-8bb5-37fc243d5a73~
+<details>
+	<summary><font color="#3ab7f8">Create an iOS project</font></summary>
+
+1. Open **Xcode** and click **Create a new Xcode project**.
+2. Choose **Single View App** as the template and click **Next**.
+3. Input the project information, such as the project name, team, organization name, and language, and click **Next**.
+	
+  **Note**: If you haven't added any team information, you will see an **Add account...** button. Click it, input your Apple ID, and click **Next** to add your team.
+4. Choose the storage path of the project and click **Create**.
+5. Connect your iOS device to your computer.
+6. Go to the **TARGETS > Project Name > General > Signing** menu, choose **Automatically manage signing**, and then click **Enable Automatic** on the pop-up window.
+	
+	![](https://web-cdn.agora.io/docs-files/1568803558097)
+</details>
 
 ### <a name="IntegrateSDK"></a>Integrate the SDK
 Choose either of the following methods to integrate the Agora SDK into your project.
