@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Tue Oct 22 2019 07:55:39 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 07:42:37 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -14,7 +14,7 @@ updatedAt: Tue Oct 22 2019 07:55:39 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1569396817637)
 
-### 前提条件
+## 前提条件
 
 请确保已开通 CDN 旁路推流功能，步骤如下：
 1. 登录[控制台](https://dashboard.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。

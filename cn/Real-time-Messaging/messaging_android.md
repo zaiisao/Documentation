@@ -73,27 +73,28 @@ updatedAt: Wed Oct 23 2019 12:47:58 GMT+0800 (CST)
 ### <a name="sdk"></a> 快速集成 SDK
 
 
-选择以下任意一种方式将 Agora RTM Android SDK 集成到你的项目中。
+<% if (platform == "Android") { %>
+选择以下任意一种方式将 Agora <%=product %> <%=platform %> SDK 集成到你的项目中。
 
 **方法 1：使用 JCenter 自动集成**
 
-在项目的 **/app/build.gradle** 文件添加以下代码（1.1.0 为当前版本号）：
+在项目的 **/app/build.gradle** 文件添加以下代码（<%=sdk_version %> 为当前版本号）：
 
 ```java
 
 ...
 dependencies {
     ...
-    implementation 'io.agora.rtm:rtm-sdk:1.1.0'
+    implementation '<%=artifact %>:<%=sdk_name %>:<%=sdk_version %>'
 }
 ```
 
 **方法 2：手动复制 SDK 文件**
 
-1. 下载最新版的 [Agora RTM Android SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 并解压。
+1. 下载最新版的 [Agora <%=product %> <%=platform %> SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 并解压。
 2. 将 SDK 包内 **libs** 路径下的如下文件，拷贝到你的项目路径下：
 
-
+<% if (product == "RTM") { %>
 | 文件                                     | 对应项目文件夹                             |
 | ---------------------------------------- | --------------------------------------- |
 | **agora-rtm_sdk.jar**                    | **~/app/libs/**                         |
@@ -101,7 +102,24 @@ dependencies {
 | **/armeabi-v7a/libagora-rtm-sdk-jni.so** | **~/app/src/main/jniLibs/armeabi-v7a/** |
 | **/x86/libagora-rtm-jni.so**             | **~/app/src/main/jniLibs/x86/**         |
 | **/x86_64/libagora-rtm-sdk-jni.so**      | **~/app/src/main/jniLibs/x86_64/**      |
-
+<% }
+if (product == "RTC") { %>
+| 文件或文件夹                   | 项目路径                               | 
+| ---------------------------- | ------------------------------------ | 
+| **agora-rtc-sdk.jar** 文件    | **/app/libs/**                       | 
+| **arm-v8a** 文件夹            | **/app/src/main/jniLibs/**           | 
+| **armeabi-v7a** 文件夹        | **/app/src/main/jniLibs/**           | 
+| **x86** 文件夹                | **/app/src/main/jniLibs/**           | 
+| **x86_64** 文件夹             | **/app/src/main/jniLibs/**           | 
+<% } %>
+<% }
+if (platform == "Linux Java") { %>
+- 下载最新版的 <a href="https://docs.agora.io/cn/Real-time-Messaging/downloads">Agora <%=product %> <%=platform %> SDK</a> 并解压。
+- 将解压后的 SDK 包的 **libs** 文件夹下的 **.so** 库文件复制到系统的默认库搜索路径，通常是 **/usr/lib**。
+- 将解压后的 SDK 包的 **libs** 文件夹下的 **.jar** 复制到你自己项目的 *lib* 文件夹。
+- 选中 **.jar** 包点击鼠标右键： **Build Path > Add to Build Path** 把 **.jar** 添加到项目路径。
+* 你可以在 ""Referenced Libraries** 文件夹下看到该 **.jar** 包的引用。*
+<% } %>
 
 
 
