@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Tue Oct 22 2019 04:14:55 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 07:40:34 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -14,7 +14,7 @@ updatedAt: Tue Oct 22 2019 04:14:55 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1569396817637)
 
-### 前提条件
+## 前提条件
 
 请确保已开通 CDN 旁路推流功能，步骤如下：
 

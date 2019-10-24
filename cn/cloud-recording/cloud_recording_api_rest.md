@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Oct 24 2019 04:05:45 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 07:27:06 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -668,7 +668,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | 201    | 成功请求并创建了新的资源。                         |
 | 206    | 服务器成功处理了部分 GET 请求。                    |
 | 400    | 请求的语法错误（如参数错误），服务器无法理解。     |
-| 401    | App ID 未经授权，或 Customer Certificate 匹配错误。    |
+| 401    | 未经授权的（App ID/Customer Certificate匹配错误）。    |
 | 404    | 服务器无法根据请求找到资源（网页）。               |
 | 500    | 服务器内部错误，无法完成请求。                     |
 | 504    | 充当网关或代理的服务器未及时从远端服务器获取请求。 |

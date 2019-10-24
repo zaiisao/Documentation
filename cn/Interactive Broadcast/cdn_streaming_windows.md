@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Wed Oct 09 2019 07:23:08 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 07:37:53 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -13,10 +13,10 @@ updatedAt: Wed Oct 09 2019 07:23:08 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1569396817637)
 
-### 前提条件
+## 前提条件
 
 请确保已开通 CDN 旁路推流功能，步骤如下：
-1. 登录 [控制台](https://dashboard.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。
+1. 登录[控制台](https://dashboard.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。
 2. 在页面左上角展开下拉列表选择需要开通 CDN 旁路推流的项目，然后点击旁路推流下的**分钟数**。
 ![](https://web-cdn.agora.io/docs-files/1569297956098)
 3. 点击**开启旁路推流服务**。
@@ -32,20 +32,29 @@ updatedAt: Wed Oct 09 2019 07:23:08 GMT+0800 (CST)
 
 参考如下步骤，在你的项目中实现推流到 CDN：
 
+<div class="alert note">目前只支持（默认）向 CDN 推 H.264 流。</div>
+	
 <a name="single"></a>
 1. 频道内主播可以调用 `setLiveTranscoding` 方法设置音视频流的直播参数 （`LiveTranscoding`），如分辨率、码率、帧率、水印和背景色位置。如果你需要转码合图，请在 `TranscodingUser` 类中设置每个用户的视频参数，详见[示例代码](#trans)。
-
-   > 如果直播参数（`LiveTranscoding`）有更新，`onTranscodingUpdated` 回调会被触发并向主播报告更新信息。
-
 2. 频道内主播可以调用 `addPublishStreamUrl` 方法向 CDN 推流直播中增加指定的一路媒体流。推流地址可以在推流后动态增删。
 
    > 请通过 `transcodingEnabled` 设置是否转码推流。
 
-3. 频道内主播可以调用 `removePublishStreamUrl` 方法向 CDN 推流直播中删除指定的一路媒体流。
+3. （可选）频道内主播再次调用 `setLiveTranscoding` 方法更新音视频流的直播参数 （`LiveTranscoding`）。
+
+	> 直播参数（`LiveTranscoding`）更新时，`onTranscodingUpdated` 回调会被触发并向主播报告更新信息。
+
+4. 频道内主播可以调用 `removePublishStreamUrl` 方法向 CDN 推流直播中删除指定的一路媒体流。
 
 推流状态改变时，SDK 会触发 `onRtmpStreamingStateChanged` 回调向主播报告当前推流状态。如果增加/删除一个推流地址失败，请通过错误码排查问题。
 
+### API 时序图
 
+**转码推流**
+![](https://web-cdn.agora.io/docs-files/1570605547352)
+
+**不转码推流**
+![](https://web-cdn.agora.io/docs-files/1570605562818)
 
 <a name="trans"></a>
 ### 示例代码
@@ -214,9 +223,7 @@ User2:
 
 - 同一频道内最多支持 17 位主播。
 
-- 如果对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `addPublishStreamUrl` 方法并设置 `transcodingEnabled (false)` 。
-
-  > 目前只支持（默认）向 CDN 推 H.264 流。
+- 如果对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `addPublishStreamUrl` 方法并将 `transcodingEnabled` 参数设置为 `false`。
 
 - 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
 
