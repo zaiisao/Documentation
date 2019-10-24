@@ -73,7 +73,7 @@ updatedAt: Thu Oct 24 2019 08:25:10 GMT+0800 (CST)
 - 将解压后的 SDK 包的 **libs** 文件夹下的 **.so** 库文件复制到系统的默认库搜索路径，通常是 **/usr/lib**。
 - 将解压后的 SDK 包的 **libs** 文件夹下的 **.jar** 复制到你自己项目的 *lib* 文件夹。
 - 选中 **.jar** 包点击鼠标右键： **Build Path > Add to Build Path** 把 **.jar** 添加到项目路径。
-	<i> 你可以在 <b>Referenced Libraries</b> 文件夹下看到对该 **.jar** 包的引用。</i>
+	<i> 成功添加后，你可以在 <b>Referenced Libraries</b> 文件夹下看到对该 **.jar** 包的引用。</i>
 
 
 
