@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Mon Oct 21 2019 11:41:46 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 11:51:28 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -37,7 +37,7 @@ We will walk you through the following steps in this section:
 
 - [Get an App ID](#appid)
 - [Create a project](#create)
-- [Integrate the SDK into your project](#sdk)
+- [Integrate the SDK](#sdk)
 
 
 ### <a name="appid"></a>Get an App ID
@@ -103,7 +103,25 @@ Right-click the project name in the **Solution Explorer** window, click **Proper
 
 ## Implement peer-to-peer and channel messaging
 
-This section provides sample codes and considerations related to peer-to-peer messaging and channel messaging. 
+This section provides API call sequence diagrams and sample codes related to peer-to-peer messaging and channel messaging. 
+
+### API Call sequence diagrams
+
+#### Login and logout of the Agora RTM system
+
+![](https://web-cdn.agora.io/docs-files/1561973138720)
+
+#### Send or receive peer-to-peer messages
+
+![](https://web-cdn.agora.io/docs-files/1561973161681)
+
+#### Join and leave an Agora RTM channel 
+
+![](https://web-cdn.agora.io/docs-files/1561985095839)
+
+#### Send or receive channel messages
+
+![](https://web-cdn.agora.io/docs-files/1561985687950)
 
 
 
@@ -232,6 +250,7 @@ void sendGroupMessage (const std::string& msg) {
 #### Leave a channel
 
 You can call the `leave()` method to leave a channel. 
+
 
 ## Considerations
 

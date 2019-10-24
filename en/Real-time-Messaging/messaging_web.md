@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Mon Oct 21 2019 11:55:05 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 12:32:26 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -17,7 +17,7 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Web](https
 
 ## Prerequisites
 
-1. ‭Install a browser supported by the Agora RTM Web SDK, as the following figure shows: 
+1. ‭Install a browser supported by the Agora RTM Web SDK, as the following table shows: 
 
 | Platform             | Compatibility |
 | :------------------- | :----------------- |
