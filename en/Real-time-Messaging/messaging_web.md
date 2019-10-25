@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Thu Oct 24 2019 12:32:43 GMT+0800 (CST)
+updatedAt: Thu Oct 24 2019 13:00:15 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -18,33 +18,10 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Web](https
 ## Prerequisites
 
 
-<%  if (platform == "Android") { %>
-- Android SDK API Level 16 or higher
-- To run your app on Android 9, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p) for more information.
-- <%=IDE %> <%=IDE_version %> or later
-<% }
-if (platform == "iOS") { %>
-- <%=IDE %> <%=IDE_version %> or later
-- A <%=platform %> device running on <%=platform %> <%=platform_version %> or later.
-<% }
-if (platform == "macOS") { %>
-- <%=IDE %> <%=IDE_version %> or later
-- A <%=platform %> device running on <%=platform %> <%=platform_version %> or later.
-<% } 
-if (platform == "Linux Java") { %>
-- Ubuntu Linux 14.04 LTS 64 bit. 
-- CentOS 7.0+ 64 bit. 
-- glibc 2.14 or later.
-- Integrated Development Environment: <%=IDE %>.
-<% } 
-if (platform == "Windows") { %> 
-- <%=IDE %> <%=IDE_version %> or later.
-- A <%=platform %> device running on <%=platform %> <%=platform_version %> or later.
-<% }
-if (platform == "Web") { %> 
-- Install a browser supported by the Agora <%=product %> <%=platform %> SDK, as the following table shows: 
+ 
+- Install a browser supported by the Agora RTM Web SDK, as the following table shows: 
 
-<% if (product == "RTM") { %>
+
 
 | Platform             | Compatibility |
 | :------------------- | :----------------- |
@@ -54,17 +31,8 @@ if (platform == "Web") { %>
 | Internet Explorer 11  | ✔                  |
 | Firefox 52 or later |  ✔                  |
 
-<% } if (product == "RTC") { %>
 
-| Platform      | Chrome 58 or later | Firefox 56 or later | Safari 11 or later | Opera 45 or later | QQ Browser | 360 Secure Browser | WeChat Built-in Browser |
-| :------------------- | :----------------- | :------------------ | :----------------- | :---------------- | :--------- | :----------------- | :---------------------- |
-| Android 4.1 or later | ✔                  | ✘                   | N/A                | ✘                 | ✘          | ✘                  | ✘                       |
-| iOS 11 or later      | ✘                  | ✘                   | ✔                  | ✘                 | ✘          | ✘                  | ✘                       |
-| macOS 10 or later    | ✔                  | ✔                   | ✔                  | ✔                 | ✔          | ✘                  | ✘                       |
-| Windows 7 or later   | ✔                  | ✔                   | N/A                | ✔                 | ✔          | ✔                  | ✘                       |
 
-<% } %>
-<% } %>
 - A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your intranet has a firewall.</div> 
