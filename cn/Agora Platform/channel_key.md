@@ -3,7 +3,7 @@
 title: Channel Key 密钥说明
 description: Guide on how to use channel keys
 platform: All Platform
-updatedAt: Thu May 30 2019 06:27:05 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:44:08 GMT+0800 (CST)
 ---
 # Channel Key 密钥说明
 本文主要介绍在使用 Agora SDK 过程中使用 Channel Key 的方法。
@@ -38,7 +38,7 @@ updatedAt: Thu May 30 2019 06:27:05 GMT+0800 (CST)
 
 ### 步骤 1: 获取 App ID
 
-1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。
+1. 进入 [控制台](https://console.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)

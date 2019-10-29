@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Oct 24 2019 07:27:06 GMT+0800 (CST)
+updatedAt: Fri Oct 25 2019 09:19:25 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -15,7 +15,7 @@ updatedAt: Thu Oct 24 2019 07:27:06 GMT+0800 (CST)
 - `api_key`: Customer ID
 - `api_secret`: Customer Certificate
 
-你可以在控制台的 [RESTful API](https://dashboard.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
+你可以在控制台的 [RESTful API](https://console.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ## 数据格式
 
@@ -64,7 +64,7 @@ updatedAt: Thu Oct 24 2019 07:27:06 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制使用的用户 ID，32 位无符号整数，例如`"527841"`。需满足以下条件：<li>取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0</li><li>需保证唯一性，不能与当前频道内的任何 UID 重复。</li><li>云端录制不支持 String 用户名（User Account），请确保该字段引号内为整型 UID，且频道内所有用户均使用整型 UID。</li> |
+| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，32 位无符号整数，例如`"527841"`。需满足以下条件：<li>取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0。</li><li>不能与当前频道内的任何 UID 重复。</li><li>云端录制不支持 String 用户名（User Account），请确保该字段引号内为整型 UID，且频道内所有用户均使用整型 UID。</li> |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
 ### `acquire` 请求示例
@@ -666,12 +666,12 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | :----- | :------------------------------------------------- |
 | 200    | 请求成功。                                         |
 | 201    | 成功请求并创建了新的资源。                         |
-| 206    | 服务器成功处理了部分 GET 请求。                    |
+| 206    | 整个录制过程中没有用户发流，或部分录制文件没有上传到第三方云存储。                    |
 | 400    | 请求的语法错误（如参数错误），服务器无法理解。     |
 | 401    | 未经授权的（App ID/Customer Certificate匹配错误）。    |
 | 404    | 服务器无法根据请求找到资源（网页）。               |
 | 500    | 服务器内部错误，无法完成请求。                     |
-| 504    | 充当网关或代理的服务器未及时从远端服务器获取请求。 |
+| 504    | 服务器内部错误。充当网关或代理的服务器未从远端服务器获取请求。 |
 
 ## 常见错误
 

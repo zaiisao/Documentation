@@ -3,7 +3,7 @@
 title: 使用云容器部署录制 SDK
 description: 
 platform: Linux
-updatedAt: Mon Jul 08 2019 03:31:57 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:01:47 GMT+0800 (CST)
 ---
 # 使用云容器部署录制 SDK
 我们推荐使用云容器（云主机 + Docker）的方式部署录制 SDK。使用这种方式，你无需管理底层服务器，只要提供打包好的镜像，即可运行容器，并仅为容器实际运行消耗的资源付费，可以节约成本。本文以阿里云[弹性容器实例](https://help.aliyun.com/product/87486.html)（Elastic Container Instance）为例介绍具体的部署方法，你也可以选择其他的云容器实例服务。

@@ -3,7 +3,7 @@
 title: 信令相关
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:41:12 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:00:29 GMT+0800 (CST)
 ---
 # 信令相关
 ### 怎么获取用户在线列表？

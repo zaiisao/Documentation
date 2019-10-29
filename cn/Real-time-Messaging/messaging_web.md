@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Thu Oct 24 2019 12:29:21 GMT+0800 (CST)
+updatedAt: Fri Oct 25 2019 11:26:47 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -15,33 +15,10 @@ updatedAt: Thu Oct 24 2019 12:29:21 GMT+0800 (CST)
 ## 开发环境要求
 
 
-<%  if (platform == "Android") { %>
-- Android SDK API Level ≥ 16
-- 如果你的 App 以 Android 9 及以上为目标平台，请关注 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p)。
-- <%=IDE %> <%=IDE_version %> 或以上版本。
-<% }
-if (platform == "iOS") { %>
-- <%=platform %> 8.0+ 真机（iPhone 或 iPad）。
-- <%=IDE %> <%=IDE_version %> 或以上版本。
-<% }
-if (platform == "macOS") { %>
-- <%=platform %> 10.0+ 真机（MacBook）。
-- <%=IDE %> <%=IDE_version %> 或以上版本。
-<% } 
-if (platform == "Linux Java") { %>
-- Ubuntu Linux 14.04 LTS 64 位。
-- CentOS 7.0+ 64 位。
-- glibc 2.14 及以上。
-- IDE 工具 <%=IDE %>。
-<% } 
-if (platform == "Windows") { %> 
-- <%=IDE %> <%=IDE_version %> 或以上版本
-- 运行在 <%=platform %> <%=platform_version %> 及以上版本的 <%=platform %> 设备。
-<% }
-if (platform == "Web") { %> 
-- 安装一款 Agora <%=product %> <%=platform %> SDK 支持的浏览器，如下表所示：
+ 
+- 安装一款 Agora RTM Web SDK 支持的浏览器，如下表所示：
 
-<% if (product == "RTM") { %>
+
 
 | 平台             | 兼容性 |
 | :------------------- | :----------------- |
@@ -51,18 +28,9 @@ if (platform == "Web") { %>
 | Internet Explorer 11+  | ✔                  |
 | Firefox 52+ |  ✔                  |
 
-<% } if (product == "RTC") { %>
 
-| 平台         | Chrome 58+ | Firefox 56+ | Safari 11+ | Opera 45+ | QQ 浏览器最新版 | 360 安全浏览器 | 微信浏览器 |
-| ------------ | ---------- | ----------- | ---------- | --------- | --------------- | -------------- | ---------- |
-| Android 4.1+ | ✔          | ✘           | **N/A**    | ✘         | ✘               | ✘              | ✘          |
-| iOS 11+      | ✘          | ✘           | ✔          | ✘         | ✘               | ✘              | ✘          |
-| macOS 10+    | ✔          | ✔           | ✔          | ✔         | ✔               | ✘              | ✘          |
-| Windows 7+   | ✔          | ✔           | **N/A**    | ✔         | ✔               | ✔              | ✘          |
 
-<% } %>
 
-<% } %>
 - 一个有效的 [Agora 开发者账号](https://sso.agora.io/en/signup)。
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a >打开相关端口并设置域名白名单。</div> 
@@ -80,7 +48,7 @@ if (platform == "Web") { %>
 <details>
 	<summary><font color="#3ab7f8">获取 App ID</font></summary>
 
-1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
+1. 进入 [控制台](https://console.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)

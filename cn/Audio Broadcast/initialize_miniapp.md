@@ -3,7 +3,7 @@
 title: 初始化客户端对象
 description: 微信小程序初始化客户端
 platform: 微信小程序
-updatedAt: Tue Oct 22 2019 04:08:18 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:00:13 GMT+0800 (CST)
 ---
 # 初始化客户端对象
 ## 前提条件
@@ -12,7 +12,7 @@ updatedAt: Tue Oct 22 2019 04:08:18 GMT+0800 (CST)
 
 初始化过程中，你需要传入一个的 App ID。因此需要现在控制台注册项目并获取 App ID。
 
-1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Audio%20Broadcast/sign_in_and_sign_up.md)。
+1. 进入 [控制台](https://console.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Audio%20Broadcast/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)

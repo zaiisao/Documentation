@@ -46,7 +46,7 @@ updatedAt: Thu Oct 24 2019 08:25:10 GMT+0800 (CST)
 <details>
 	<summary><font color="#3ab7f8">获取 App ID</font></summary>
 
-1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
+1. 进入 [控制台](https://console.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)

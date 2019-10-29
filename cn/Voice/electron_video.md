@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Electron
-updatedAt: Thu Aug 15 2019 08:35:43 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:44:36 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Electron 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -19,7 +19,7 @@ updatedAt: Thu Aug 15 2019 08:35:43 GMT+0800 (CST)
 
 ## 创建项目并获取 App ID
 
-1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Voice/sign_in_and_sign_up.md)。
+1. 进入 [控制台](https://console.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Voice/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)

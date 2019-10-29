@@ -3,7 +3,7 @@
 title: Demo 使用指南
 description: v1.1.1
 platform: Windows
-updatedAt: Thu Aug 15 2019 03:54:40 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:30:28 GMT+0800 (CST)
 ---
 # Demo 使用指南
 本文指导开发者在将 RTSA 集成到项目中之前，编译并运行模拟数据 Demo 对进行初步了解。
@@ -20,7 +20,7 @@ updatedAt: Thu Aug 15 2019 03:54:40 GMT+0800 (CST)
 * 模拟数据 Demo。
 
 ## 创建 Agora 账号并获取 App ID
-1. 进入 [控制台](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/RTSA/sign_in_and_sign_up.md)。
+1. 进入 [控制台](https://console.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/RTSA/sign_in_and_sign_up.md)。
 2. 点击**项目列表**处的**新手指引**。
 
 	![](https://web-cdn.agora.io/docs-files/1563521764570)

@@ -3,7 +3,7 @@
 title: 实现码流传输
 description: v1.1.1
 platform: Android
-updatedAt: Thu Aug 15 2019 03:54:50 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:28:37 GMT+0800 (CST)
 ---
 # 实现码流传输
 ## 初始化和监听事件

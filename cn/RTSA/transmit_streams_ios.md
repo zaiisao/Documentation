@@ -3,7 +3,7 @@
 title: 实现码流传输
 description: v1.1.1
 platform: iOS,macOS
-updatedAt: Thu Aug 15 2019 03:55:02 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:29:32 GMT+0800 (CST)
 ---
 # 实现码流传输
 ## 初始化和监听事件

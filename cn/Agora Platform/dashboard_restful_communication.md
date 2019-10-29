@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:29:37 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:59:39 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
@@ -12,7 +12,7 @@ updatedAt: Mon Oct 21 2019 08:29:37 GMT+0800 (CST)
 
 RESTful API 仅支持 HTTPS。用户必须在 Basic HTTP 请求头部填入 `Authorization` 字段进行认证。你需要在代码中传入 Customer ID 和 Customer Certificate。
 
-登录 [Agora 控制台](http://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取 Customer ID 和 Customer Certificate。
+登录 [Agora 控制台](http://console.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取 Customer ID 和 Customer Certificate。
 
 > Customer ID 和 Customer Certificate 仅用于访问 RESTful API。
 

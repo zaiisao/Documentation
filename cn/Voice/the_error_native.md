@@ -3,7 +3,7 @@
 title: 错误代码和警告代码
 description: 
 platform: Android,Windows,iOS,macOS
-updatedAt: Tue Oct 22 2019 05:56:17 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 02:57:25 GMT+0800 (CST)
 ---
 # 错误代码和警告代码
 Agora SDK 在调用 API 或运行时，可能会返回错误或警告代码:

@@ -3,7 +3,7 @@
 title: 管理成员和角色
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:18:03 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:02:11 GMT+0800 (CST)
 ---
 # 管理成员和角色
 你创建了一个 Agora 开发者账号后，该账号的角色为**管理员**。在控制台，你可以为你的账号添加新的成员，不同的成员拥有不同的权限，从而实现分工协作。

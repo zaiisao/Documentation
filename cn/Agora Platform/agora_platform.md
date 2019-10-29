@@ -3,7 +3,7 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:31:34 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:24:59 GMT+0800 (CST)
 ---
 # Agora 平台概述
 声网 Agora 为开发者提供实时音视频 API，只需集成 Agora SDK，即可快速在应用内构建多种实时互动场景。

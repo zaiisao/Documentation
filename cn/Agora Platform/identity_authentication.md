@@ -3,7 +3,7 @@
 title: 实名认证
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:43:34 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:01:53 GMT+0800 (CST)
 ---
 # 实名认证
 依据中国法律规定，你需要对账号所属的个人或者企业信息主体进行认证，否则网络运营者停止提供相关服务。

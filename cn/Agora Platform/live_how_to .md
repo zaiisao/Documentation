@@ -3,7 +3,7 @@
 title: 直播相关
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 21 2019 08:06:34 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:00:47 GMT+0800 (CST)
 ---
 # 直播相关
 ### 直播中如何踢人？

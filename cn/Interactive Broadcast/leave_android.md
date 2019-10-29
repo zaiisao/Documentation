@@ -3,7 +3,7 @@
 title: 离开频道
 description: android平台离开频道
 platform: Android
-updatedAt: Tue Oct 22 2019 04:14:45 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:00:32 GMT+0800 (CST)
 ---
 # 离开频道
 通话或直播结束时，你可以使用 Agora SDK 离开频道。

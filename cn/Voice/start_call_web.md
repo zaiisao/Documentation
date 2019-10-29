@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Web
-updatedAt: Tue Oct 22 2019 05:56:26 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:02:35 GMT+0800 (CST)
 ---
 # 实现音视频通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
@@ -37,6 +37,11 @@ updatedAt: Tue Oct 22 2019 05:56:26 GMT+0800 (CST)
 ### 创建 Web 项目
 
 如果你已经有一个 Web 项目了，跳过该节，直接阅读**集成 SDK**。
+
+<div class="alert note">我们提供的示例代码使用了一些第三方的库文件来实现页面的样式和布局，你可以点击以下链接获得文件，或者使用其他方式实现。<li><a href="https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Web-Tutorial-1to1/assets/common.css">common.css</a></li>
+	<li><a href="https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Web-Tutorial-1to1/vendor/jquery.min.js">jquery.min.js</a></li>
+	<li><a href="https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Web-Tutorial-1to1/vendor/materialize.min.js">materialize.min.js</a></li>
+	</div>	
 
 <details>
 	<summary><font color="#3ab7f8">点击查看示例代码</font></summary>
@@ -216,7 +221,7 @@ var option = {
    
 你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
 
-1. 登录[控制台](https://dashboard.agora.io/)，点击左侧导航栏的**[项目管理](https://dashboard.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
+1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
 2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
 3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
 	 
@@ -286,6 +291,8 @@ var option = {
 ### 订阅远端流
 
 当远端流加入频道时，会触发 `stream-added` 事件，我们需要通过 `Client.on` 监听该事件并在回调中订阅新加入的远端流。
+
+<div class="alert note">我们建议在创建客户端对象之后立即监听事件。</div>
 
 1. 监听 `"stream-added"` 事件，当有远端流加入时订阅该流。
 
