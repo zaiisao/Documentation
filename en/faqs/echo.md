@@ -3,7 +3,7 @@
 title: Echo occurs in a call.
 description: 
 platform: All Platforms
-updatedAt: Wed Oct 30 2019 11:27:37 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 11:27:42 GMT+0800 (CST)
 ---
 # Echo occurs in a call.
 The Agora SDK supports echo cancellation. In most cases, this problem can be fixed by using a headset, and ensure that the headset does not cause an echo. 
@@ -14,7 +14,7 @@ In a channel joined by multiple users, if a device does not work properly, chanc
 
 Check the following:
 
-- Check if the echo is occasional or continuous. An occasional echo may be caused by CPU overload. If the CPU usage is too high, voice recording and playback will be unstable. You can check this in Agora Analytics in Dashboard.
+- Check if the echo is occasional or continuous. An occasional echo may be caused by CPU overload. If the CPU usage is too high, voice recording and playback will be unstable. You can check this in Agora Analytics in Console.
 - Ensure that all users are in separated physical environments.
 - Check the SDK version:
 	- Android/iOS: v1.6.0+.
