@@ -3,7 +3,7 @@
 title: Echo occurs in a call.
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 15:07:33 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 11:27:37 GMT+0800 (CST)
 ---
 # Echo occurs in a call.
 The Agora SDK supports echo cancellation. In most cases, this problem can be fixed by using a headset, and ensure that the headset does not cause an echo. 
