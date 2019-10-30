@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Oct 02 2019 09:52:32 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 07:31:41 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -126,7 +126,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 ### 新增功能
 
-### 新老互通
+#### 新老互通
 
 支持与 Agora Signaling SDK 互通。
 

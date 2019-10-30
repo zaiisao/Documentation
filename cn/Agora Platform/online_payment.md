@@ -3,7 +3,7 @@
 title: 线上充值
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:01:21 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 04:00:56 GMT+0800 (CST)
 ---
 # 线上充值
 本页介绍如何在 Agora 控制台查看账户余额，通过**支付宝**进行线上充值，并查看交易列表。
@@ -12,13 +12,13 @@ updatedAt: Tue Oct 29 2019 03:01:21 GMT+0800 (CST)
 
 ## 查看账户余额
 
-登录 [控制台](https://dashboard.agora.io/) 后，你可以在总览页看到账户余额。
+登录 [控制台](https://console.agora.io/) 后，你可以在总览页看到账户余额。
   
 ![](https://web-cdn.agora.io/docs-files/1562665959826)
 
 ## 使用支付宝充值
 
-1. 点击总览页的**充值**按钮进入[**费用中心**](https://dashboard.agora.io/finance)。你也可以点击左侧导航栏的 ![](https://web-cdn.agora.io/docs-files/1562666103550) **财务中心 > 支付充值 > 支付宝**按钮进入。
+1. 点击总览页的**充值**按钮进入[**费用中心**](https://console.agora.io/finance)。你也可以点击左侧导航栏的 ![](https://web-cdn.agora.io/docs-files/1562666103550) **财务中心 > 支付充值 > 支付宝**按钮进入。
 
 ![](https://web-cdn.agora.io/docs-files/1562666275283)
 
@@ -48,7 +48,7 @@ updatedAt: Tue Oct 29 2019 03:01:21 GMT+0800 (CST)
 
 申请提现的步骤如下：
 
-1. 在财务中心，点击左侧导航栏**提现**按钮，进入[提现页面](https://dashboard.agora.io/finance/withdraw)。
+1. 在财务中心，点击左侧导航栏**提现**按钮，进入[提现页面](https://console.agora.io/finance/withdraw)。
  
 2. 点击**申请提现**按钮。
 

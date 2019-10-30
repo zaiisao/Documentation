@@ -3,12 +3,12 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:01:27 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 04:01:02 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
 
-在阅读本文之前，我们推荐你先在[控制台](https://dashboard.agora.io)中试用水晶球的界面，以便对各项参数和数据指标有更直观的了解，详情可参考[水晶球](../../cn/Agora%20Platform/aa_guide.md)。
+在阅读本文之前，我们推荐你先在[控制台](https://console.agora.io)中试用水晶球的界面，以便对各项参数和数据指标有更直观的了解，详情可参考[水晶球](../../cn/Agora%20Platform/aa_guide.md)。
 
 通过 RESTful API，你可以发送请求获取以下数据：
 

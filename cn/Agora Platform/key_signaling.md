@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:46:02 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:59:59 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -37,7 +37,7 @@ updatedAt: Tue Oct 29 2019 03:46:02 GMT+0800 (CST)
 
 每个 Agora 账户下可创建多个项目，且每个项目有独立的 App ID。
 
-1.  访问 [https://dashboard.agora.io/](https://dashboard.agora.io/)，按照屏幕提示依次填入您的邮箱、密码等信息。
+1.  访问 [https://console.agora.io/](https://console.agora.io/)，按照屏幕提示依次填入您的邮箱、密码等信息。
 
 2.  在 **项目列表** 页面点击 **添加新项目** 。按照屏幕提示填写您的手机号码，完成手机号验证。
 

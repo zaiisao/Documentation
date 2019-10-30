@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 02:59:58 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 04:00:17 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -22,11 +22,11 @@ updatedAt: Tue Oct 29 2019 02:59:58 GMT+0800 (CST)
 
 ### 控制台
 
-[控制台](https://dashboard.agora.io/)是 Agora 提供给用户创建和管理项目的平台。[注册账号](https://dashboard.agora.io/cn/signup)之后，你可以通过[控制台](https://dashboard.agora.io/)创建项目、获得 [App ID](#appid)、查看通话用量、分析通话质量以及查看账单。
+[控制台](https://console.agora.io/)是 Agora 提供给用户创建和管理项目的平台。[注册账号](https://console.agora.io/cn/signup)之后，你可以通过[控制台](https://console.agora.io/)创建项目、获得 [App ID](#appid)、查看通话用量、分析通话质量以及查看账单。
 
 ### <a name="appid"></a>App ID
 
-Agora 给应用程序开发人员分配 App ID，以识别项目和组织。在 [控制台](https://dashboard.agora.io/) 注册后，你可以创建多个项目，每个项目都有一个唯一的 App ID。详见[获取 App ID](../../cn/Agora%20Platform/token.md)。
+Agora 给应用程序开发人员分配 App ID，以识别项目和组织。在 [控制台](https://console.agora.io/) 注册后，你可以创建多个项目，每个项目都有一个唯一的 App ID。详见[获取 App ID](../../cn/Agora%20Platform/token.md)。
 
 不同的 App ID 在 Agora 实时网络中的通话是完全独立的。因此，不同 App ID 的项目无法相互通信。Agora 提供的频道信息、计费、管理服务也都是基于 App ID。如果组织中有多个完全分开的应用程序，例如由不同的团队构建，则应使用不同的 App ID。如果应用程序需要相互通信，则应使用同一个 App ID。
 
@@ -34,7 +34,7 @@ Agora 给应用程序开发人员分配 App ID，以识别项目和组织。在 
 
 Agora 提供 App Certificate 用以生成 [动态密钥](#key)。
 
-你可以在 [控制台](https://dashboard.agora.io) 获取  App Certificate，详细信息请参见 [获取 App Certificate](../../cn/Agora%20Platform/token.md)。
+你可以在 [控制台](https://console.agora.io) 获取  App Certificate，详细信息请参见 [获取 App Certificate](../../cn/Agora%20Platform/token.md)。
 
 ### <a name="key"></a>动态密钥
 

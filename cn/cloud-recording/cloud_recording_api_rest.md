@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Oct 25 2019 09:19:25 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 05:40:51 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -35,8 +35,6 @@ updatedAt: Fri Oct 25 2019 09:19:25 GMT+0800 (CST)
 3. 录制完成后调用 [`stop`](#stop) 停止录制。
 
 在整个过程中可以通过 [`query`](#query) 请求查询云端录制的状态。完整示例代码请参考[云端录制快速开始示例代码](../../cn/cloud-recording/cloud_recording_rest.md)。
-
-![](https://web-cdn.agora.io/docs-files/1559640254333)
 
 ## <a name="acquire"></a>获取云端录制资源的 API
 
