@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Wed Oct 30 2019 07:33:39 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 07:33:44 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -136,9 +136,9 @@ In a live broadcast channel, the broadcasters or hosts are users who can publish
 
 In a live broadcast channel, an audience is a group of users who can only subscribe to streams. The audience cannot publish streams. 
 
-### Hosting-in
+### Co-host
 
-An audience can apply to become a host to interact directly with the existing hosts, namely hosting-in.
+An audience can apply to become a host to interact directly with the existing hosts, namely co-hosting.
 
 ### CDN live streaming
 
