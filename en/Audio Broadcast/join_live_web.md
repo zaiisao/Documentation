@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Web
-updatedAt: Fri Jul 19 2019 09:22:53 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 03:24:51 GMT+0800 (CST)
 ---
 # Join a Channel
 Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
