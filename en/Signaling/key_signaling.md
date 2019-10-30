@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Wed Oct 30 2019 03:29:56 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 03:30:00 GMT+0800 (CST)
 ---
 # Use Security Keys
 ## Introduction
@@ -42,7 +42,7 @@ Agora recommends using a SignalingToken for added security.
 
 Each Agora account can create multiple projects, and each project has a unique App ID.
 
-1.  Sign up for a new account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
+1.  Sign up for a new account at [https://dashboard.agora.io/](../../en/Signaling/Agora%20Console.md).
 2.  Click **Add New Project** on the **Projects** page in Console.
 3.  Fill in the **Project Name** and click **Submit**.
     <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
@@ -68,7 +68,7 @@ Each Agora account can create multiple projects, and each project has a unique A
 
 ### Step 2: Get an App Certificate
 
-1.  Login to [https://dashboard.agora.io](https://dashboard.agora.io).
+1.  Login to [https://dashboard.agora.io](../../en/Signaling/Agora%20Console.md).
 2.  Click **Add New Project** on the **Projects** page in Console.
 3.  Fill in the **Project Name** and click **Submit**. Find the App ID under the created project.
      <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
