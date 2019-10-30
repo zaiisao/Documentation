@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 06:17:42 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 09:30:41 GMT+0800 (CST)
 ---
 # Agora Platform Overview
 Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications in your own application quickly.
@@ -43,14 +43,14 @@ Agora deploys about 200 data centers worldwide that use intelligent dynamic rout
 
 Agora is the only RTC service provider in the world using self-developed audio and video codecs. This allows Agora to have unique advantages in audio and video qualities.
 
-## Audio
+### Audio
 
 - High-fidelity, 3D surround sound experience
 - 48 KHz full-band acquisition: Highly restored acoustic sound
 - 3A algorithm based on machine learning: Echo cancellation, automatic gain, and noise suppression
 - Audio enhancement: Stereo sound, 3D surround sound, sound localization, audio mixing, reverberation effects, in-ear monitoring, and voice changes
 
-## Video
+### Video
 
 - Immersive visual experience
 
