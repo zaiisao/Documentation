@@ -3,7 +3,7 @@
 title: 云端录制集成常见问题
 description: Cloud recording faq
 platform: All Platforms,Linux,Linux C++,Linux Java
-updatedAt: Thu Oct 31 2019 11:24:31 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 11:29:02 GMT+0800 (CST)
 ---
 # 云端录制集成常见问题
 ## 如何获取 M3U8 文件地址
