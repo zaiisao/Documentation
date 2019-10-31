@@ -3,12 +3,12 @@
 title: 媒体流加密
 description: 
 platform: iOS,macOS
-updatedAt: Thu Oct 31 2019 03:47:29 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 03:47:33 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文介绍媒体流加密方案。
 
-> 通信和直播模式均支持加密功能，但是如果你在直播场景下使用 CDN 推流、录制或储存，声网不建议使用数据加密功能。
+<div class="alert note"><li>通信和直播场景均支持媒体流加密功能。但是在直播场景下，如果你需要使用旁路推流、录制和储存，请勿使用媒体流加密功能。<br><li>若需使用媒体流加密功能，需确保接收端和发送端都使用此功能，否则会出现未定义行为（例如音频无声或视频黑屏）。</br></div>
 
 你下载的 [SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads) 里，包含:
 
