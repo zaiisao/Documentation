@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 08:20:34 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 03:47:29 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文介绍媒体流加密方案。
