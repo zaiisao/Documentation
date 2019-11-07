@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows CPP
-updatedAt: Thu Nov 07 2019 12:34:26 GMT+0800 (CST)
+updatedAt: Thu Nov 07 2019 12:39:23 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -25,9 +25,9 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 ### 兼容性改动
 
-** 废弃 <i>isOnline</i> **
+#### 废弃 `isOnline`
 
-在调用 [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3add0055c4455dc8d04bfc37edfd8e94) 方法查询单个或多个用户在线状态后，SDK 会通过 [onQueryPeersOnlineStatusResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a782b4623d4dcbac5c99fd6a12c42f578) 回调返回被查询用户的在线状态。你可以通过回调返回的 [PeerOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html)结构体数组中的 [isOnline](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html#a27f653585385efc3e1a4265948d11c1c) 字段查询指定用户是否在线。
+在调用 [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3add0055c4455dc8d04bfc37edfd8e94) 方法查询单个或多个用户在线状态后，SDK 会通过 [onQueryPeersOnlineStatusResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a782b4623d4dcbac5c99fd6a12c42f578) 回调返回被查询用户的在线状态。你可以通过回调返回的 [PeerOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html) 结构体数组中的 [isOnline](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html#a27f653585385efc3e1a4265948d11c1c) 字段查询指定用户是否在线。
 
 本版本中，我们在这个 [PeerOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html) 结构体中增加了枚举类型 [PEER_ONLINE_STATE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a16966e9a602270d2bbdd9510602ecc5f) ，细分并重新定义了以下三种用户在线状态：
 
