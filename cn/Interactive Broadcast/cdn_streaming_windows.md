@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Thu Oct 24 2019 07:37:53 GMT+0800 (CST)
+updatedAt: Mon Nov 04 2019 08:02:15 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -47,14 +47,6 @@ updatedAt: Thu Oct 24 2019 07:37:53 GMT+0800 (CST)
 4. 频道内主播可以调用 `removePublishStreamUrl` 方法向 CDN 推流直播中删除指定的一路媒体流。
 
 推流状态改变时，SDK 会触发 `onRtmpStreamingStateChanged` 回调向主播报告当前推流状态。如果增加/删除一个推流地址失败，请通过错误码排查问题。
-
-### API 时序图
-
-**转码推流**
-![](https://web-cdn.agora.io/docs-files/1570605547352)
-
-**不转码推流**
-![](https://web-cdn.agora.io/docs-files/1570605562818)
 
 <a name="trans"></a>
 ### 示例代码

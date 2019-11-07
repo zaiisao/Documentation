@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Windows CPP,Linux CPP
-updatedAt: Wed Oct 09 2019 12:42:27 GMT+0800 (CST)
+updatedAt: Sun Nov 03 2019 08:08:48 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK 的区别。
@@ -28,9 +28,9 @@ updatedAt: Wed Oct 09 2019 12:42:27 GMT+0800 (CST)
 
 > - 若无特别说明，Agora RTM Android SDK 的所有核心 API 都应在调用 [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2433a0babbed76ab87084d131227346b) 方法成功并收到 [onLoginSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a8cf1b2be30172004f595484e0a194d76) 回调后调用。Agora Signaling SDK 只允许你每次进入一个频道。
 > - <sup>1</sup> 你可以通过调用 [createRtmService](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1base_1_1_i_agora_service.html#ae3dae3b461aed1b826e5162479530ff1) 方法创建多个 IRtmService 实例。Agora RTM SDK 不会限制你创建 IRtmService 实例的个数，但某个 IRtmService 实例最多只能同时加入 20 个 IChannel 频道。
-> - <sup>2</sup> RTM 的 Token 生成方式与老信令的 Token 生成方式完全不同。详见[校验用户权限](../../cn/Real-time-Messaging/RTM_key.md)。
+> - <sup>2</sup> RTM 的 Token 生成方式与老信令的 Token 生成方式完全不同。详见[校验用户权限](../../cn/Real-time-Messaging/rtm_token.md)。
 > - <sup>2</sup> 信令 Token 采用的 "\_no\_need\_token" 机制不适用于 RTM Token。 
-> - <sup>2</sup> Agora RTM SDK 连接或重连 Agora RTM 系统的方式也完全不同。详情请见[连接状态管理](../../cn/Real-time-Messaging/RTM_reconnecting_cpp.md)。 
+> - <sup>2</sup> Agora RTM SDK 连接或重连 Agora RTM 系统的方式也完全不同。详情请见[连接状态管理](../../cn/Real-time-Messaging/reconnecting_cpp.md)。 
 
 ## 发送点对点消息
 

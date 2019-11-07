@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 05:40:51 GMT+0800 (CST)
+updatedAt: Tue Nov 05 2019 03:28:04 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -310,12 +310,12 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
                 "bitrate": 500, 
                 "fps": 15, 
                 "mixedVideoLayout": 1,
-                "backgroundColor": "#FF0000",
+                "backgroundColor": "#FF0000"
+						},
             "subscribeVideoUids": ["123","456"], 
             "subscribeAudioUids": ["123","456"],
             "subscribeUidGroup": 0
-           }
-       }, 
+        }, 
         "storageConfig": {
             "accessKey": "xxxxxxf",
             "region": 3,
@@ -323,8 +323,8 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
             "secretKey": "xxxxx",
             "vendor": 2,
             "fileNamePrefix": ["directory1","directory2"]
-       }
-   }
+        }
+    }
 }
  ```
 
@@ -489,7 +489,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
   "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
   "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
   "serverResponse":{
-    "filelistMode": "json",
+    "fileListMode": "json",
     "fileList": [
    {
       "filename": "xxx.m3u8",
@@ -518,10 +518,10 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `resourceId`: String 类型，云端录制使用的 resource ID。
 - `sid`: String 类型，录制 ID。成功开始云端录制后，你会得到一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
 - `serverResponse`：JSON 类型，服务器返回的具体信息。  
-  - `filelistMode`: String 类型，`fileList` 字段的数据格式。
-    - `"string"`：`fileList` 为 String 类型。合流模式下，`filelistMode` 为 `"string"`。
-    - `"json"`：`fileList` 为 JSONArray 类型。单流模式下，`filelistMode` 为 `"json"`。
-  - `fileList`：当 `filelistMode` 为 `"string"` 时，`fileList` 为 String 类型，录制产生的 M3U8 文件的文件名。当 `filelistMode` 为 `"json"` 时, `fileList` 为 JSONArray 类型，由每个录制文件的具体信息组成的数组。一个录制文件的具体信息包括以下字段:
+  - `fileListMode`: String 类型，`fileList` 字段的数据格式。
+    - `"string"`：`fileList` 为 String 类型。合流模式下，`fileListMode` 为 `"string"`。
+    - `"json"`：`fileList` 为 JSONArray 类型。单流模式下，`fileListMode` 为 `"json"`。
+  - `fileList`：当 `fileListMode` 为 `"string"` 时，`fileList` 为 String 类型，录制产生的 M3U8 文件的文件名。当 `fileListMode` 为 `"json"` 时, `fileList` 为 JSONArray 类型，由每个录制文件的具体信息组成的数组。一个录制文件的具体信息包括以下字段:
     - `filename`：String 类型，录制产生的 M3U8 文件的文件名。
     - `trackType`：String 类型，录制文件的类型。
       - `"audio"`：纯音频文件。
@@ -608,7 +608,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
   "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
   "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
   "serverResponse":{
-    "filelistMode": "json",
+    "fileListMode": "json",
     "fileList": [
     {
       "filename": "xxx.m3u8",
@@ -635,10 +635,10 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `resourceId`: String 类型，云端录制使用的 resource ID。
 - `sid`: String 类型，录制 ID。成功开始云端录制后，你会得到一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
 - `serverResponse`: JSON 类型，服务器返回的具体信息。`serverResponse` 中包含如下字段：
-  - `filelistMode`: String 类型，`fileList` 字段的数据格式。
-    - `"string"`：`fileList` 为 String 类型。合流模式下，`filelistMode` 为 `"string"`。
-    - `"json"`：`fileList` 为 JSONArray 类型。单流模式下，`filelistMode` 为 `"json"`。
-  - `fileList`：当 `filelistMode` 为 `"string"` 时，`fileList` 为 String 类型，表示录制产生的 M3U8 文件的文件名。当 `filelistMode` 为 `"json"` 时, `fileList` 为 JSONArray 类型，由每个录制文件的具体信息组成的数组。一个录制文件的具体信息包括以下字段:
+  - `fileListMode`: String 类型，`fileList` 字段的数据格式。
+    - `"string"`：`fileList` 为 String 类型。合流模式下，`fileListMode` 为 `"string"`。
+    - `"json"`：`fileList` 为 JSONArray 类型。单流模式下，`fileListMode` 为 `"json"`。
+  - `fileList`：当 `fileListMode` 为 `"string"` 时，`fileList` 为 String 类型，表示录制产生的 M3U8 文件的文件名。当 `fileListMode` 为 `"json"` 时, `fileList` 为 JSONArray 类型，由每个录制文件的具体信息组成的数组。一个录制文件的具体信息包括以下字段:
     - `filename`：String 类型，录制产生的 M3U8 文件的文件名。
     - `trackType`：String 类型，录制文件的类型。
       - `"audio"`：纯音频文件。
@@ -681,15 +681,13 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 	- `Content-type` 错误，请确保 `Content-type` 为 `application/json;charset=utf-8`。
 	- 请求 URL 中缺少 `cloud_recording` 字段。
 	- 使用了错误的 HTTP 方法。
-- `53`：录制已经在进行中。当采用相同参数再次调用 `acquire` 获得新的 resource ID，并用于 `start` 请求时，会发生该错误。
+- `53`：录制已经在进行中。当采用相同参数再次调用 `acquire` 获得新的 resource ID，并用于 `start` 请求时，会发生该错误。如需发起多路录制，需要在 `acquire` 方法中填入不同的 UID。
 - `432`：请求参数错误。请求参数不合法，或请求中的 App ID，频道名或用户 ID 与 resource ID 不匹配。
 - `433`：resource ID 过期。获得 resource ID 后必须在 5 分钟内开始云端录制。请重新调用 [`acquire`](#acquire) 获取新的 resource ID。
 - `435`：没有录制文件产生。频道内没有用户加入，无录制对象。
 - `501`：录制服务正在退出。该错误可能在调用了 [`stop`](#stop) 方法后再调用 [`query`](#query) 时发生。
 - `1001`：resource ID 解密失败。请重新调用 [`acquire`](#acquire) 获取新的 resource ID。
 - `1003`：App ID 或者录制 ID（sid）与 resource ID 不匹配。请确保在一个录制周期内 resource ID、App ID 和录制 ID 一一对应。
-- `1004`：录制已经在进行中，请勿重复 [`start`](#start) 请求。
-- `1005`：resource ID 已被使用。一个 resource ID 只能用于一次云端录制。
 - `1013`：频道名不合法。频道名必须为长度在 64 字节以内的字符串。以下为支持的字符集范围（共 89 个字符）：
   - 26 个小写英文字母 a-z
   - 26 个大写英文字母 A-Z

@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 04:00:17 GMT+0800 (CST)
+updatedAt: Mon Nov 04 2019 03:49:08 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -16,9 +16,10 @@ updatedAt: Tue Oct 29 2019 04:00:17 GMT+0800 (CST)
 
 我们将能实现音视频实时通信功能的 Agora SDK 统称为 RTC (Real-Time Communication) SDK，能实现[语音通话](https://docs.agora.io/cn/Voice/product_voice)、[视频通话](https://docs.agora.io/cn/Video/product_video)、[音频互动直播](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio)以及[视频互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/product_live)等实时通信场景。 按照平台，我们把 RTC SDK 分为以下几类：
 
-- Agora Native SDK，包括 Android，iOS，macOS，Windows 以及 Electron 平台
-- Agora Web SDK
-- Agora 微信小程序 SDK
+- Native SDK，包括 Android、iOS、macOS 和 Windows 平台。
+- Electron SDK，包括 macOS 和 Windows 平台。
+- Web SDK。
+- 微信小程序 SDK。
 
 ### 控制台
 

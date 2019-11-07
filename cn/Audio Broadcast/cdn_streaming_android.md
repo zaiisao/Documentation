@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Tue Oct 29 2019 03:03:08 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 06:24:12 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -55,7 +55,7 @@ updatedAt: Tue Oct 29 2019 03:03:08 GMT+0800 (CST)
 ```java
 // Java
 // CDN 推流参数设置。
-LiveTranscoding config;
+LiveTranscoding config = new LiveTranscoding();
 config.audioSampleRate = TYPE_44100;
 config.audioChannels = 2;
 config.audioBitrate = 48;
