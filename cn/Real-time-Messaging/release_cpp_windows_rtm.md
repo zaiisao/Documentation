@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows CPP
-updatedAt: Thu Nov 07 2019 12:27:45 GMT+0800 (CST)
+updatedAt: Thu Nov 07 2019 12:34:26 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -25,22 +25,22 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 ### 兼容性改动
 
-** 废弃 <i>isOnline</i> 
+** 废弃 <i>isOnline</i> **
 
-在调用 <%=queryPeersOnlineStatus %> 方法查询单个或多个用户在线状态后，SDK 会通过 <%=onQueryPeersOnlineStatusResult %> 回调返回被查询用户的在线状态。你可以通过回调返回的 <%=PeerOnlineStatus %>结构体数组中的 <%=isOnline %> 字段查询指定用户是否在线。
+在调用 [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3add0055c4455dc8d04bfc37edfd8e94) 方法查询单个或多个用户在线状态后，SDK 会通过 [onQueryPeersOnlineStatusResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a782b4623d4dcbac5c99fd6a12c42f578) 回调返回被查询用户的在线状态。你可以通过回调返回的 [PeerOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html)结构体数组中的 [isOnline](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html#a27f653585385efc3e1a4265948d11c1c) 字段查询指定用户是否在线。
 
-本版本中，我们在这个 <%=PeerOnlineStatus %> 结构体中增加了枚举类型 <%=PEER_ONLINE_STATE %> ，细分并重新定义了以下三种用户在线状态：
+本版本中，我们在这个 [PeerOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html) 结构体中增加了枚举类型 [PEER_ONLINE_STATE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a16966e9a602270d2bbdd9510602ecc5f) ，细分并重新定义了以下三种用户在线状态：
 
 - 在线（online）： 用户已登陆 Agora RTM 系统。
 - 连接状态不稳定（unreachable）：服务器连续 6 秒未收到来自 SDK 的数据包。
 - 用户不在线（offline）：用户未登录或已登出 Agora RTM 系统，或服务器连续 30 秒未收到来自 SDK 的数据包。
 
-新增的 <%=PEER_ONLINE_STATE %> 枚举类型主要与订阅功能 <%=subscribePeersOnlineStatus %> 配合使用，你可以在 <%=onPeersOnlineStatusChanged %> 回调返回的 <%=PeerOnlineStatus %>结构体数组中查到用户的在线状态。
+新增的 [PEER_ONLINE_STATE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a16966e9a602270d2bbdd9510602ecc5f) 枚举类型主要与订阅功能 [subscribePeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3a0e2d4d79ac85e23eae0dcb114ba9f0) 配合使用，你可以在 [onPeersOnlineStatusChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a1eb57be5d0cdc9e4533852794e2e47ca) 回调返回的 [PeerOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html)结构体数组中查到用户的在线状态。
 
 总而言之：
 
-- 在主动查询用户在线状态时，我们推荐你通过 <%=isOnline %> 获取用户的在线状态。当然，你也可以通过 <%=PEER_ONLINE_STATE %> 查询，不过系统不会返回 `unreachable` 状态。
-- 在订阅了指定用户的在线状态后，我们推荐你通过 <%=PEER_ONLINE_STATE %> 获取用户在线状态，方便 App 在用户连接状态不佳时快速响应，提高整体用户体验。
+- 在主动查询用户在线状态时，我们推荐你通过 [isOnline](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html#a27f653585385efc3e1a4265948d11c1c) 获取用户的在线状态。当然，你也可以通过 [PEER_ONLINE_STATE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a16966e9a602270d2bbdd9510602ecc5f) 查询，不过系统不会返回 `unreachable` 状态。
+- 在订阅了指定用户的在线状态后，我们推荐你通过 [PEER_ONLINE_STATE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a16966e9a602270d2bbdd9510602ecc5f) 获取用户在线状态，方便 App 在用户连接状态不佳时快速响应，提高整体用户体验。
 
 
 
@@ -50,7 +50,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 <div class="alert note"> 该功能必须在登录 Agora RTM 系统成功（收到 onLoginSuccess 回调）后才能调用。</div>
 
-本版本支持订阅或退订最多 512 个用户的在线状态，SDK 会通过 <%=onSubscriptionRequestResult %> 返回订阅或退订结果。首次订阅成功时，SDK 会通过 <%=onPeersOnlineStatusChanged %> 回调返回所有被订阅用户的在线状态；之后每当有被订阅用户的在线状态出现变化，SDK 都会通过 <%=onPeersOnlineStatusChanged %> 回调通知订阅方。
+本版本支持订阅或退订最多 512 个用户的在线状态，SDK 会通过 [onSubscriptionRequestResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#af44e58f8368ceb7ad883b94fd4643cc4) 返回订阅或退订结果。首次订阅成功时，SDK 会通过 [onPeersOnlineStatusChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a1eb57be5d0cdc9e4533852794e2e47ca) 回调返回所有被订阅用户的在线状态；之后每当有被订阅用户的在线状态出现变化，SDK 都会通过 [onPeersOnlineStatusChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a1eb57be5d0cdc9e4533852794e2e47ca) 回调通知订阅方。
 
 <div class="alert note"> <sup>1</sup>用户登出 Agora RTM 系统后，所有之前的订阅内容都会被清空；重新登录后，如需保留之前订阅内容则需重新订阅。</div>
 
@@ -63,7 +63,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 本版本支持根据被订阅类型获取被订阅用户列表。现实情况中，你可能多次订阅或退订，可能重复订阅了相同用户，可能出现订阅或退订不成功的情况，也可能根据不同的订阅类型订阅了不同的用户。这时，你可以通过本功能根据订阅类型获取当前被订阅用户列表。
 
-被订阅类型由枚举类型 <%=PEER_SUBSCRIPTION_OPTION %> 定义。本版本仅支持用户在线状态订阅一种类型，后继会不断扩展。
+被订阅类型由枚举类型 [PEER_SUBSCRIPTION_OPTION](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a2afe690e9fe0e0af4a0f5fd8b6c8eef9) 定义。本版本仅支持用户在线状态订阅一种类型，后继会不断扩展。
 
 #### 3. <a name="raw"></a>创建自定义二进制消息
 
@@ -71,16 +71,16 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 本版本支持：
 
-- 创建不带文本描述信息的自定义二进制消息（<%=createRawMessage1 %>）
-- 创建包含文本描述信息的自定义二进制消息（<%=createRawMessage2 %>）
+- 创建不带文本描述信息的自定义二进制消息（[createMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ab246e4151cf9fc42c32c13489f49c1ea)）
+- 创建包含文本描述信息的自定义二进制消息（[createMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ae74ba0d307da66176fe58d554d6676ab)）
 
-如果在创建自定义二进制消息时未设置文本描述，你可以在消息实例 <%=IMessage %> 创建成功后通过调用 <%=setText %> 方法设置自定义二进制消息的文本描述。
+如果在创建自定义二进制消息时未设置文本描述，你可以在消息实例 [IMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html) 创建成功后通过调用 [setText](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html#a2e93098d5a3819e9d4cf8d42641474ae) 方法设置自定义二进制消息的文本描述。
 
 <div class="alert note"> 我们不对二进制消息的文本描述的大小单独进行限制，但是我们要求自定义二进制消息的总大小不超过 32 KB。</div>
 
 #### 4. <a name="text"></a>创建文本消息
 
-之前版本中，我们先通过 <%=createTextMessage1 %> 方法创建一个空文本消息实例再通过调用 <%=IMessage %> 类的对象方法 <%=setText %> 设置文本内容，本版本提供了更加便利的 <%=createTextMessage2 %> 方法可以在创建文本消息的同时直接设定文本消息内容。
+之前版本中，我们先通过 [createMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#acbbfe84bc22fd161ec5dc4fe098a59ce) 方法创建一个空文本消息实例再通过调用 [IMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html) 类的对象方法 [setText](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html#a2e93098d5a3819e9d4cf8d42641474ae) 设置文本内容，本版本提供了更加便利的 [createMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#aa4b2cd37eb8eb1b2b1ba217830c6317f) 方法可以在创建文本消息的同时直接设定文本消息内容。
 
 <div class="alert note"> 文本消息大小不得超过 32 KB。</div>
 
@@ -89,31 +89,31 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 #### 新增方法
 
-- <%=subscribePeersOnlineStatus %>: 订阅指定单个或多个用户的在线状态。
-- <%=unsubscribePeersOnlineStatus %>: 解除订阅指定单个或多个用户的在线状态。
-- <%=queryPeersBySubscriptionOption %>: 获取某特定内容被订阅的用户列表。
-- <%=createTextMessage2 %>: 创建并返回一个文本 <%=IMessage %> 消息实例。
-- <%=createRawMessage1 %>: 创建并返回一个自定义二进制 <%=IMessage %> 消息实例。
-- <%=createRawMessage2 %>: 创建并返回一个包含文字描述的自定义二进制 <%=IMessage %> 消息实例。
+- [subscribePeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3a0e2d4d79ac85e23eae0dcb114ba9f0): 订阅指定单个或多个用户的在线状态。
+- [unsubscribePeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a027574f04151a9fded678fadba47441e): 解除订阅指定单个或多个用户的在线状态。
+- [queryPeersBySubscriptionOption](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a063bd3db39660a7a3513378ce03f4456): 获取某特定内容被订阅的用户列表。
+- [createMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#aa4b2cd37eb8eb1b2b1ba217830c6317f): 创建并返回一个文本 [IMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html) 消息实例。
+- [createMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ab246e4151cf9fc42c32c13489f49c1ea): 创建并返回一个自定义二进制 [IMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html) 消息实例。
+- [createMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ae74ba0d307da66176fe58d554d6676ab): 创建并返回一个包含文字描述的自定义二进制 [IMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html) 消息实例。
 
 #### 新增回调
 
-- <%=onSubscriptionRequestResult %>: 返回 <%=subscribePeersOnlineStatus %> 或 <%=unsubscribePeersOnlineStatus %> 方法的调用结果。
-- <%=onPeersOnlineStatusChanged %>: 被订阅用户在线状态改变回调。
-- <%=onQueryPeersBySubscriptionOptionResult %>: 返回 <%=queryPeersBySubscriptionOption %> 方法的调用结果。
+- [onSubscriptionRequestResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#af44e58f8368ceb7ad883b94fd4643cc4): 返回 [subscribePeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3a0e2d4d79ac85e23eae0dcb114ba9f0) 或 [unsubscribePeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a027574f04151a9fded678fadba47441e) 方法的调用结果。
+- [onPeersOnlineStatusChanged](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a1eb57be5d0cdc9e4533852794e2e47ca): 被订阅用户在线状态改变回调。
+- [onQueryPeersBySubscriptionOptionResult](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#abfa6692f88f55017f3cfbec3ca98ffdf): 返回 [queryPeersBySubscriptionOption](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a063bd3db39660a7a3513378ce03f4456) 方法的调用结果。
 
 #### 新增错误码 
 
-- <%=PEER_SUBSCRIPTION_STATUS_ERR %>: 订阅或退订指定用户在线状态相关错误码。
-- <%=QUERY_PEERS_BY_SUBSCRIPTION_OPTION_ERR %>: 根据订阅类型获取被订阅用户列表相关的错误码。
+- [PEER_SUBSCRIPTION_STATUS_ERR](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a4fa6b08d01154d48966cfcb37acf08be): 订阅或退订指定用户在线状态相关错误码。
+- [QUERY_PEERS_BY_SUBSCRIPTION_OPTION_ERR](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a5ecaf0f0a7ac45ea78198f52393bf607): 根据订阅类型获取被订阅用户列表相关的错误码。
 
 #### 新增枚举类型
 
-- <%=PEER_ONLINE_STATE %>: 用户在线状态类型
+- [PEER_ONLINE_STATE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a16966e9a602270d2bbdd9510602ecc5f): 用户在线状态类型
 
 #### 废弃成员变量
 
-- <%=isOnline %>：请改用成员变量 <%=onlineState %>
+- [isOnline](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html#a27f653585385efc3e1a4265948d11c1c)：请改用成员变量 [onlineState](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html#a240a2611b6e8e45413679e3ec4f59023)
 
 ## 1.1.0 版
 
