@@ -53,7 +53,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 2. In **Terminal**, go to the project path and run the `pod init` command to create a **Podfile** in the project folder.
 3. Open the **Podfile**, delete all contents and input the following contents. Remember to change **Your App** to the target name of your project.
 ```
-platform :ios, '9.0' use_frameworks!
+# platform :ios, '9.0' use_frameworks!
 target 'Your App' do
     pod 'AgoraRtcEngine_iOS'
 end

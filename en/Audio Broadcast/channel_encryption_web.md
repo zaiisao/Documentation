@@ -3,11 +3,13 @@
 title: Channel Encryption
 description: 
 platform: Web
-updatedAt: Sun Sep 29 2019 08:20:44 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 03:58:18 GMT+0800 (CST)
 ---
 # Channel Encryption
 ## Introduction
 The Agora SDK provides methods for you to implement built-in encryption and set encryption password.
+
+<div class="alert note"><li>Both Communication and Live Broadcast support channel encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use channel encryption.<br><li>Ensure that both receivers and senders use channel encryption, otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
 
 The following figure shows how Agora’s communications use built-in encryption:
 

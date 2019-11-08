@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Oct 18 2019 04:09:21 GMT+0800 (CST)
+updatedAt: Mon Oct 28 2019 02:58:30 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -176,7 +176,7 @@ Many apps use string usernames. This release adds the following methods to enabl
 
 For other methods, Agora uses the integer uid parameter. The Agora Engine maintains a mapping table that contains the user ID and string user account, and you can get the corresponding user account or ID by calling the getUserInfoByUid or getUserInfoByUserAccount method.
 
-To ensure smooth communication, use the same parameter type to identify all users within a channel, that is, all users should use either the integer user ID or the string user account to join a channel. For details, see [Use String User Accounts](../../en/Audio%20Broadcast/string_windows.md).
+To ensure smooth communication, use the same parameter type to identify all users within a channel, that is, all users should use either the integer user ID or the string user account to join a channel.
 
 **Note**:
 - Do not mix parameter types within the same channel. The following Agora SDKs support string user accounts:

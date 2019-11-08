@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Web
-updatedAt: Tue Oct 22 2019 06:20:00 GMT+0800 (CST)
+updatedAt: Mon Oct 28 2019 05:36:42 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
@@ -38,6 +38,11 @@ To set up the development environment, you need to prepare a project and integra
 ### Create a new project
 
 If you already have a project, skip this section and go to **Integrate the SDK**.
+
+<div class="alert note">Our sample code uses some third-party libraries to implement the style and layout. You can get the library files from the following links, or user other methods to implement your layout.<li><a href="https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Web-Tutorial-1to1/assets/common.css">common.css</a></li>
+	<li><a href="https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Web-Tutorial-1to1/vendor/jquery.min.js">jquery.min.js</a></li>
+	<li><a href="https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Web-Tutorial-1to1/vendor/materialize.min.js">materialize.min.js</a></li>
+	</div>
 
 <details>
 	<summary><font color="#3ab7f8">Expand this section to use our sample code.</font></summary>
@@ -302,6 +307,8 @@ If the client role is set as `"host"`, we need to create and publish the local s
 
 To subscribe to a remote stream, we need to listen for the `"stream-added"` event and call `Client.subscribe` in the callback.
 
+<div class="alert note">We recommend listening for these events immediately after creating the client. </div>
+
 1. Subscribe to a remote stream when the stream is added.
 
    ```javascript
@@ -347,7 +354,6 @@ To subscribe to a remote stream, we need to listen for the `"stream-added"` even
    })
    ```
 
-We recommend listening for these events immediately after creating the client. 
 You need to define the `addView` and `removeView` functions. Refer to the following code for an example.
 <details>
 	<summary><font color="#3ab7f8">Expand this section to view the sample code.</font></summary>

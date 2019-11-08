@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Android
-updatedAt: Thu Oct 24 2019 07:43:01 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 06:25:06 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -55,7 +55,7 @@ When the state of media streams pushed to the CDN changes, SDK triggers the `onR
 ```java
 // Java
 // CDN transcoding settings.
-LiveTranscoding config;
+LiveTranscoding config = new LiveTranscoding();
 config.audioSampleRate = TYPE_44100;
 config.audioChannels = 2;
 config.audioBitrate = 48;

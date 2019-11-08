@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Android
-updatedAt: Sat Oct 12 2019 07:24:26 GMT+0800 (CST)
+updatedAt: Thu Nov 07 2019 02:54:41 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast with the Agora SDK for Android.
@@ -256,8 +256,7 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
  
     // If all the permissions are granted, initialize the RtcEngine object and join a channel.
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
-            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }
@@ -444,7 +443,7 @@ After setting the client role and the local video view (for a video broadcast), 
 
 * token: Pass a token that identifies the role and privilege of the user.  You can set it as one of the following values:
   * `NULL`.
-  * A temporary token generated in Dashboard. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
+  * A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
   * A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Audio%20Broadcast/token_server.md).
   
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
@@ -554,7 +553,7 @@ private void leaveChannel() {
 
 ### Sample code
 
-You can find the complete code logic in the OpenLive-Android demo project.
+You can find the complete code logic in the [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project.
 
 ## Run the project
 

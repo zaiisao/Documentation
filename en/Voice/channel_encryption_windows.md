@@ -3,12 +3,12 @@
 title: Channel Encryption
 description: 
 platform: Windows
-updatedAt: Sun Sep 29 2019 08:20:48 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 03:58:49 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
 
-> Both Communication and Live Broadcast support encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use encryption.
+<div class="alert note"><li>Both Communication and Live Broadcast support channel encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use channel encryption.<br><li>Ensure that both receivers and senders use channel encryption, otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
 
 ## Scenario 1: Do Not Use Encryption
 

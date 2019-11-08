@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Web
-updatedAt: Tue Oct 22 2019 06:19:55 GMT+0800 (CST)
+updatedAt: Mon Oct 28 2019 05:37:47 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
@@ -38,6 +38,11 @@ To set up the development environment, you need to prepare a project and integra
 ### Create a new project
 
 If you already have a project, skip this section and go to **Integrate the SDK**.
+
+<div class="alert note">Our sample code uses some third-party libraries to implement the style and layout. You can get the library files from the following links, or user other methods to implement your layout.<li><a href="https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Web-Tutorial-1to1/assets/common.css">common.css</a></li>
+	<li><a href="https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Web-Tutorial-1to1/vendor/jquery.min.js">jquery.min.js</a></li>
+	<li><a href="https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Web-Tutorial-1to1/vendor/materialize.min.js">materialize.min.js</a></li>
+	</div>
 
 <details>
 	<summary><font color="#3ab7f8">Expand this section to use our sample code.</font></summary>
@@ -291,6 +296,8 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
 
 To subscribe to a remote stream, we need to listen for the `"stream-added"` event and call `Client.subscribe` in the callback.
 
+<div class="alert note">We recommend listening for these events immediately after creating the client. </div>
+
 1. Subscribe to a remote stream when the stream is added.
 
    ```javascript
@@ -333,8 +340,6 @@ To subscribe to a remote stream, we need to listen for the `"stream-added"` even
      console.log('stream-removed remote-uid: ', id);
    })
    ```
-
-We recommend listening for these events immediately after creating the client. 
 
 > You need to define the `addView` and `removeView` functions. Refer to our [tutorial](https://github.com/AgoraIO/Basic-Video-Call/blob/5eeadc97f646a5e2bf4c11e42edea47af8b963fe/One-to-One-Video/Agora-Web-Tutorial-1to1/index.html#L191) for an example.
 

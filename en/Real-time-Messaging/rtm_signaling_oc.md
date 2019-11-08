@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: iOS,macOS
-updatedAt: Wed Oct 09 2019 12:30:00 GMT+0800 (CST)
+updatedAt: Sun Nov 03 2019 08:12:02 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -27,9 +27,9 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 > - Unless otherwise specified, most of the core APIs of the Agora RTM Android SDK should only be called after the [loginByToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:) method call succeeds and after you receive the `AgoraRtmLoginErrorOk` error code.
 > - <sup>1</sup> You can create multiple AgoraRtmKit instances with the [initWithAppId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:) method. The Agora RTM SDK does not put a limit to the number of AgoraRtmKit instances you can create, but it only allows you to join a maximum of 20 AgoraRtmChannels at the same time. 
-> - <sup>2</sup> The generation of the token you use to log in the Agora RTM system differs from the generation of the signalingToken you use to log in the Agora Signaling system. Make sure you use the right token. See [Token Security](../../en/Real-time-Messaging/RTM_key.md) for more information.
+> - <sup>2</sup> The generation of the token you use to log in the Agora RTM system differs from the generation of the signalingToken you use to log in the Agora Signaling system. Make sure you use the right token. See [Token Security](../../en/Real-time-Messaging/rtm_token.md) for more information.
 > - <sup>2</sup> The token debugging mechanism, "\_no\_need\_token" for example, of the Agora Signaling SDK does not apply to the Agora RTM SDK. 
-> - <sup>2</sup> The way that the Agora RTM SDK connects or reconnects to the Agora RTM system is completely different either. For more information, see [Manage Connection States](../../en/Real-time-Messaging/RTM_reconnecting_oc.md) for more information. 
+> - <sup>2</sup> The way that the Agora RTM SDK connects or reconnects to the Agora RTM system is completely different either. For more information, see [Manage Connection States](../../en/Real-time-Messaging/reconnecting_oc.md) for more information. 
 
 ## Sending a peer-to-peer message
 
