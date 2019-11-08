@@ -53,7 +53,7 @@ Agora 在 Github 上提供开源的实时音视频通话示例项目 [Agora-iOS-
 2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
 3. 打开 **Podfile** 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
 ```
-platform :ios, '9.0' use_frameworks!
+# platform :ios, '9.0' use_frameworks!
 target 'Your App' do
     pod 'AgoraRtcEngine_iOS'
 end

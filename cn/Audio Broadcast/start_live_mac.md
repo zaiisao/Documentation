@@ -54,7 +54,7 @@ Agora 在 Github 上提供开源的互动直播示例项目 [OpenLive-macOS-Obje
 2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
 3. 打开 **Podfile** 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
 ```
-platform :macOS, '10.11' use_frameworks!
+# platform :macOS, '10.11' use_frameworks!
  target 'Your App' do
      pod 'AgoraRtcEngine_macOS'
  end
