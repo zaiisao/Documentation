@@ -20,7 +20,10 @@ Your token needs to be generated on your own server, hence you are required to f
 - Go
 - Ruby
 
-The **./\<language\>/src** folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both **AccessToken** and **SimpleTokenBuilder** can generate a token for the following SDKs:
+The <% 
+if (language == "Ruby") {%><b>./ruby/lib</b><% } 
+else { %><b>./\<language\>/src</b><% } 
+%> folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both **AccessToken** and **SimpleTokenBuilder** can generate a token for the following SDKs:
 
 - Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
 - Agora Web SDK v2.4+

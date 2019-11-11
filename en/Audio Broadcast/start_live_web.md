@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Web
-updatedAt: Mon Oct 28 2019 05:36:42 GMT+0800 (CST)
+updatedAt: Mon Nov 11 2019 07:56:49 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
@@ -174,7 +174,7 @@ The following figure shows the API call sequence of a basic broadcast. Note that
 
 ![](https://web-cdn.agora.io/docs-files/1568095116563)
 
-> We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/index.html).
+> We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/index.html).
 
 For convenience, we define two variables for the following code snippets. This is not mandatory and you can have your implementation.
 
