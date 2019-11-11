@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Web
-updatedAt: Tue Oct 29 2019 03:02:35 GMT+0800 (CST)
+updatedAt: Mon Nov 11 2019 07:54:58 GMT+0800 (CST)
 ---
 # 实现音视频通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
@@ -172,7 +172,7 @@ updatedAt: Tue Oct 29 2019 03:02:35 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1568094608983)
 
-> 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html)。
+> 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Video/API%20Reference/web/index.html)。
 
 为方便起见，我们为下面要用到的示例代码定义了两个变量。此步骤不是必须的，你可以根据你的项目有其他的实现。
 

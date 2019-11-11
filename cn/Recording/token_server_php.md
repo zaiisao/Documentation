@@ -20,19 +20,17 @@ updatedAt: Mon Sep 30 2019 03:53:08 GMT+0800 (CST)
 - Node.js
 - Go
 
-[GitHub 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 的 **./\<language\>/src** 文件夹下包含生成各种版本的 Dynamic key 和 Token 的源码。其中：**AccessToken** 和 **RtcTokenBuilder** 用于为以下 SDK 生成 Token：
+[GitHub 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 的 <% 
+if (language == "ruby") {%><b>./ruby/lib</b><% } 
+else { %><b>./\<language\>/src</b><% } 
+%> 文件夹下包含生成各种版本的 Dynamic key 和 Token 的源码。其中：**AccessToken** 和 **RtcTokenBuilder** 用于为以下 SDK 生成 Token：
 
 - Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
 - Agora Web SDK v2.4+
 - Agora Recording SDK v2.1+ 
 - Agora RTSA SDK
 
-> Ruby 语言的源码在 **./ruby/lib** 文件夹下。
 
-<% 
-if (language = ruby) {%><b>./ruby/lib</b><% } 
-else { %><b>./\<language\>/src</b><% } 
-%>
 
 我们推荐使用 **RtcTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**RtcTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
 
