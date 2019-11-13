@@ -3,7 +3,7 @@
 title: 音视频设备测试
 description: 
 platform: Windows
-updatedAt: Sun Sep 29 2019 08:27:31 GMT+0800 (CST)
+updatedAt: Wed Nov 13 2019 08:43:04 GMT+0800 (CST)
 ---
 # 音视频设备测试
 ## 功能描述
@@ -150,7 +150,7 @@ lpDeviceManager->setDevice(strDeviceID); // device ID chosen
 
 ### API 参考
 
-* [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a59ae67333fbc61a7002a46c809e2ec4f)
+* [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb)
 * [`enumerateRecordingDevices`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a1ea4f53d60dc91ea83960885f9ab77ee)
 * [`setRecordingDevice`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a723941355030636cd7d183d53cc7ace7)
 * [`enumeratePlaybackDevices`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#aa13c99d575d89e7ceeeb139be723b18a)

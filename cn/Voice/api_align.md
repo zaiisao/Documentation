@@ -3,7 +3,7 @@
 title: 核心方法对照表
 description: List APIs of the key functions across the platforms
 platform: All Platforms
-updatedAt: Tue Feb 19 2019 06:09:54 GMT+0800 (CST)
+updatedAt: Wed Nov 13 2019 07:59:03 GMT+0800 (CST)
 ---
 # 核心方法对照表
 Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API 的调用和实现上不完全一致，本文将 Android，iOS/macOS，Windows 和 Web 这几个平台的核心功能 API 对照列出，帮助你快速了解各个平台之间的差异。
@@ -64,7 +64,7 @@ Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API �
     <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a49636ee063476d7c3da533668771fa03">enableWebSdkInteroperability</a></td>
     <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableWebSdkInteroperability:">enableWebSdkInteroperability</a></td>
     <td>N/A</td>
-    <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a5b82667e75a8f299a60b9b7968da48de">enableWebSdkInteroperability</a></td>
+    <td><a href="https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a639ef31212b9f340b518d0e59405789a">enableWebSdkInteroperability</a></td>
   </tr>
   <tr>
     <td>销毁实例</td>
