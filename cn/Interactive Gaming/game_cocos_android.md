@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Cocos
-updatedAt: Fri Nov 30 2018 07:46:19 GMT+0800 (CST)
+updatedAt: Thu Nov 14 2019 03:10:37 GMT+0800 (CST)
 ---
 # 实现游戏语音功能
 使用 Agora 的 `Hello-Cocos2d-Agora` 代码示例可以实现以下功能:
@@ -22,7 +22,7 @@ updatedAt: Fri Nov 30 2018 07:46:19 GMT+0800 (CST)
 
     <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Cocos2d.png" style="width: 500.0px;"/>
 
-> `Hello-Cocos2d-Agora` 即为本文需要使用的代码示例。你也可以直接从 [Github](https://github.com/AgoraIO/Hello-Cocos2d-Agora/)下载。
+> `Hello-Cocos2d-Agora` 即为本文需要使用的代码示例。你也可以直接从 [GitHub](https://github.com/AgoraIO/Hello-Cocos2d-Agora/)下载。
 
 2.  请确保已满足以下环境要求:
 
@@ -65,7 +65,7 @@ updatedAt: Fri Nov 30 2018 07:46:19 GMT+0800 (CST)
 
     <img alt="../_images/AMG-SDK-structure-full-Cocos2d.png" src="https://web-cdn.agora.io/docs-files/cn/AMG-SDK-structure-full-Cocos2d.png" style="width: 500.0px;"/>
 
-> `Hello-Cocos2d-Agora` 即为本文需要使用的代码示例。你也可以直接从 [Github](https://github.com/AgoraIO/Hello-Cocos2d-Agora/)下载。
+> `Hello-Cocos2d-Agora` 即为本文需要使用的代码示例。你也可以直接从 [GitHub](https://github.com/AgoraIO/Hello-Cocos2d-Agora/)下载。
 
 1.  请确保已满足以下环境要求:
 

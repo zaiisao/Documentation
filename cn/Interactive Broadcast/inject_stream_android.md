@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Android
-updatedAt: Mon Oct 21 2019 06:05:44 GMT+0800 (CST)
+updatedAt: Thu Nov 14 2019 03:10:28 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
@@ -72,7 +72,7 @@ String urlPath = "The same online RTMP/HLS url path added before"
   rtcEngine.removeInjectStreamUrl(urlPath)
 ```
 
-同时，我们在 Github 提供一个开源的 [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) 示例项目。
+同时，我们在 GitHub 提供一个开源的 [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) 示例项目。
 
 <a name="api"></a>
 ### API 参考

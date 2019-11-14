@@ -43,7 +43,7 @@ Agora 的其他接口仍使用 UID 作为参数。Agora 维护一个 String 型 
 
 ## 示例代码
 
-Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的 Github 示例代码，你可以前往下载和体验。
+Agora 提供一个[使用 String 型用户名](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account)的 GitHub 示例代码，你可以前往下载和体验。
 
 你也可以参考如下代码片段，在项目中实现使用 String 型的 User account 加入频道：
 

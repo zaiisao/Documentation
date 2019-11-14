@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Windows
-updatedAt: Thu Sep 26 2019 04:17:16 GMT+0800 (CST)
+updatedAt: Wed Nov 13 2019 10:59:44 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -15,7 +15,7 @@ updatedAt: Thu Sep 26 2019 04:17:16 GMT+0800 (CST)
 - 在线课堂场景中，屏幕共享可以将老师的课件、笔记、讲课内容等画面展示给学生观看。
 
 ## 实现方法
-在实现屏幕共享前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_windows.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_windows.md)。
+在实现屏幕共享前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始音视频通话](../../cn/Video/start_call_windows.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_windows.md)。
 
 Agora 在 v2.4.0 对屏幕共享相关接口进行梳理，目前在 Windows 平台上支持：
 - 通过 `screenRect` 共享指定屏幕，或指定屏幕的部分区域
