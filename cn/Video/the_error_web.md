@@ -3,7 +3,7 @@
 title: 错误代码和警告代码
 description: 
 platform: Web
-updatedAt: Thu Nov 08 2018 10:48:16 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:17:04 GMT+0800 (CST)
 ---
 # 错误代码和警告代码
 Agora Web SDK 在调用 API 或运行时，可能会返回错误或警告代码:
@@ -167,7 +167,7 @@ Agora Web SDK 在调用 API 或运行时，可能会返回错误或警告代码:
 </tr>
 <tr><td>K_CERTIFICATE_INVALID</td>
 <td>4</td>
-<td>App Certificate 无效</td>
+<td>App 证书无效</td>
 </tr>
 <tr><td>K_CHANNEL_NAME_EMPTY</td>
 <td>5</td>

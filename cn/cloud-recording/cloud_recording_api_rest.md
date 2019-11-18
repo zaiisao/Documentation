@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Nov 05 2019 03:28:04 GMT+0800 (CST)
+updatedAt: Thu Nov 14 2019 07:46:00 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -152,7 +152,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `0`：视频大流（默认），即高分辨率高码率的视频流
   - `1`：视频小流，即低分辨率低码率的视频流
 - `maxIdleTime`：（选填）Number 类型，最长空闲频道时间。默认值为 30 秒，该值需大于等于 5，且小于等于 (2<sup>32</sup>-1)。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。如果频道内有用户，但用户没有发流，不算作无用户状态。
-- `transcodingConfig`：（选填）JSON 类型，视频转码的详细设置。仅适用于合流模式，单流模式下不能设置该参数。如果不设置将使用默认值。如果设置该参数，请务必填入 `width`、`height`、`fps` 和 `bitrate` 字段。
+- `transcodingConfig`：（选填）JSON 类型，视频转码的详细设置。仅适用于合流模式，单流模式下不能设置该参数。如果不设置将使用默认值。如果设置该参数，必须填入 `width`、`height`、`fps` 和 `bitrate` 字段。请参考[如何设置录制视频的分辨率](https://docs.agora.io/cn/faq/recording_video_profile)设置该参数。
   - `width`：（必填）Number 类型，录制视频的宽度，单位为像素，默认值 360。支持的最大分辨率为 1080p，超过该分辨率会报错。
   - `height`：（必填）Number 类型，录制视频的高度，单位为像素，默认值 640。支持的最大分辨率为 1080p，超过该分辨率会报错。
   - `fps`：（必填）Number 类型，录制视频的帧率，单位 fps，默认值 15。
@@ -190,10 +190,10 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 
 - `vendor`：Number 类型，第三方云存储供应商。    
 
-  - `0`：七牛云
-  - `1`：Amazon S3
-  - `2`：阿里云
-  - `3`：腾讯云
+  - `0`：[七牛云](https://www.qiniu.com/products/kodo)
+  - `1`：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)
+  - `2`：[阿里云](https://www.aliyun.com/product/oss)
+  - `3`：[腾讯云](https://cloud.tencent.com/product/cos)
 
 - `region`：Number 类型，第三方云存储指定的地区信息。
   当 `vendor` = 0，即第三方云存储为七牛云时：  

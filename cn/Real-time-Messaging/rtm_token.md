@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 04:01:05 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:17:26 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -17,7 +17,7 @@ Agora RTM SDK 提供两种鉴权机制：App ID 和 Token 。这两种鉴权机�
 - App ID 易于获取，适用于对安全要求不高的场景，例如测试环境。
 
 - RTM Token 适用于对安全要求较高的生产环境。
-- App Certificate 仅用于生成 RTM Token，不可单独使用。一旦启用了 App Certificate，则必须使用 RTM Token。
+- App 证书仅用于生成 RTM Token，不可单独使用。一旦启用了 App Certificate，则必须使用 RTM Token。
 
 <a name = "Get-an-App-ID"></a>
 
@@ -44,17 +44,17 @@ Agora RTM SDK 提供两种鉴权机制：App ID 和 Token 。这两种鉴权机�
 
 ### 获取 App Certificate
 
-获取 App Certificate 的步骤如下：
+获取 App 证书的步骤如下：
 
 1.  登录 [控制台](https://console.agora.io)。
 2.  先点击左侧导航栏**项目管理**按钮进入**项目管理**页面，再点击目标项目下方**编辑**按钮，进入**项目编辑**页面。
-3.  点击 App Certificate 右方的**启用**按钮。仔细阅读关于 App Certificate 介绍后，根据屏幕提示，确认启用 App Certificate。
-4.  点击 App Certificate 右方的 ![](https://web-cdn.agora.io/docs-files/1551773294761) 图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击 ![](https://web-cdn.agora.io/docs-files/1551773306258) 图标。
+3.  点击 App 证书右方的**启用**按钮。仔细阅读关于 App 证书介绍后，根据屏幕提示，确认启用 App Certificate。
+4.  点击 App 证书右方的 ![](https://web-cdn.agora.io/docs-files/1551773294761) 图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击 ![](https://web-cdn.agora.io/docs-files/1551773306258) 图标。
 
-> -   App Certificate 仅用于生成 RTM Token，不可单独使用。
-> -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
-> -   通常 App Certificate 在启用一小时后生效。
-> -   当项目的 App Certificate 被启用后，你必须使用 Token 作为鉴权方式。
+> -   App 证书仅用于生成 RTM Token，不可单独使用。
+> -   将你的 App 证书保存在服务器端，且对任何客户端均不可见。
+> -   通常 App 证书在启用一小时后生效。
+> -   当项目的 App 证书被启用后，你必须使用 Token 作为鉴权方式。
 > -   **信令 Token 调试开关**暂不影响 RTM 项目，无需设置。
 
 ### 部署 RTM Token Generator 
@@ -85,7 +85,7 @@ Agora 的 Token 方案基于请求—响应机制，流程如下：
 - `appID`：项目的 App ID，详见 <a href="#getting-an-app-id">获取 App ID</a>。
 - `userId`：申请登录 Agora RTM 系统的用户 ID。
 
-> 将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
+> 将你的 App 证书保存在服务器端，且对任何客户端均不可见。
 
 设置 RTM Client 角色时，需要传入下列参数：
 

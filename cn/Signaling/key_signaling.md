@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:59:59 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:17:18 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -19,7 +19,7 @@ updatedAt: Tue Oct 29 2019 03:59:59 GMT+0800 (CST)
 
 -   SignalingToken 安全性高，更适用于对安全要求较高的生产环境
 
--   App Certificate 仅用于生成 SignalingToken，不可单独使用。一旦启用了 App Certificate，则必须使用 SignalingToken
+-   App 证书仅用于生成 SignalingToken，不可单独使用。一旦启用了 App Certificate，则必须使用 SignalingToken
 
 
 <a name = "APPID"></a>
@@ -65,17 +65,17 @@ updatedAt: Tue Oct 29 2019 03:59:59 GMT+0800 (CST)
 
      <img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" />
 
- 2. 点击 App Certificate 右方的 **启用** 按钮。仔细阅读关于 App Certificate 介绍后，根据屏幕提示，确认启用 App Certificate。
+ 2. 点击 App 证书右方的 **启用** 按钮。仔细阅读关于 App 证书介绍后，根据屏幕提示，确认启用 App Certificate。
 
      <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" />
 
- 3. 点击 App Certificate 后面的“眼睛”图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击“眼睛”图标。
+ 3. 点击 App 证书后面的“眼睛”图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击“眼睛”图标。
 
      <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 		 
-	>  -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
-	>  -   通常 App Certificate 在启用一小时后生效。
-	>  -   当项目的 App Certificate 被启用后，你必须使用 Token。例如: 在启用 App Certificate 前，你可以使用 App ID 加入频道。但启用了 App Certificate 后，你就必须使用 Token 加入频道。
+	>  -   将你的 App 证书保存在服务器端，且对任何客户端均不可见。
+	>  -   通常 App 证书在启用一小时后生效。
+	>  -   当项目的 App 证书被启用后，你必须使用 Token。例如: 在启用 App 证书前，你可以使用 App ID 加入频道。但启用了 App 证书后，你就必须使用 Token 加入频道。
 
 3.  集成算法。使用以下方法生成令牌 (SignalingToken):
     **输入**:
@@ -111,7 +111,7 @@ updatedAt: Tue Oct 29 2019 03:59:59 GMT+0800 (CST)
 <ul>
 <li>account: 用户登录厂商 Agora 信令系统的账户</li>
 <li>appId: 32 位 App ID 字符串</li>
-<li>appCertificate: 32 位 App Certificate 字符串</li>
+<li>appCertificate: 32 位 App 证书字符串</li>
 <li>expiredTime: 服务到期的 UTC 时间戳，用户在服务到期后，无法再登录 Agora 信令系统和使用其功能</li>
 </ul>
 </td>

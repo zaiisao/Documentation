@@ -1,11 +1,11 @@
 
 ---
-title: 云端录制发版说明
+title: 云端录制更新历史
 description: 
 platform: Linux
-updatedAt: Thu Oct 24 2019 04:03:19 GMT+0800 (CST)
+updatedAt: Fri Nov 15 2019 04:43:38 GMT+0800 (CST)
 ---
-# 云端录制发版说明
+# 云端录制更新历史
 ## 简介
 
 Agora 云端录制，可为 Agora 实时音视频提供录制服务。同 Agora 本地服务端录制相比，Agora 云端录制无需部署 Linux 服务器，减轻了研发和运维的压力，更轻量便捷。点击[云端录制产品概述](../../cn/cloud-recording/product_cloud_recording.md)了解关键特性。
@@ -14,25 +14,35 @@ Agora 云端录制，可为 Agora 实时音视频提供录制服务。同 Agora 
 
 Agora 云端录制与以下 Agora SDK 兼容:
 
+<style>
+table th:first-of-type {
+width: 150px;
+}
+</style>
 | SDK              | 描述                                                         |
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制 与 Agora Web SDK 1.12.0 或更高版本兼容。            |
 
-## 1.4.0 版
 
-该版本于 2019 年 10 月 24 日发布，新增了对腾讯云存储的支持。
+## 2019.11.15
+
+调用 `start` 方法后，你可以通过 `query` 请求立刻获得录制文件名，而不再需要等待 15 秒。
+
+##  2019.10.24
+
+本次发布新增了对腾讯云存储的支持。
 
 
-## 1.3.0 版
+##  2019.10.08
 
-该版本于 2019 年 10 月 8 日发布，新增特性、改进及修复问题如下。
+本次发布的新增特性、改进及修复问题如下：
 
 **新增特性**
 
 #### 1. 单流录制
 
-RESTful API 新增单流录制模式，支持分开录制每个 UID 的音频流和视频流。使用方法详见[单流录制](../../cn/cloud-recording/cloud_recording_individual_mode.md)。同时，Agora 提供了音视频合并脚本，用于合并单流录制模式下生成的音视和视频文件。使用方法详见[音视频文件合并](../../cn/cloud-recording/cloud_recording_merge_files.md)。
+RESTful API 新增单流录制模式，支持分开录制每个 UID 的音频流和视频流。使用方法详见[单流录制](../../cn/cloud-recording/cloud_recording_individual_mode.md)。同时，Agora 提供了音视频合并脚本，用于合并单流录制模式下生成的音频和视频文件。使用方法详见[音视频文件合并](../../cn/cloud-recording/cloud_recording_merge_files.md)。
 
 #### 2. 录制指定 UID 的音视频流
 
@@ -62,9 +72,9 @@ Agora 提供了音视频格式转换脚本，用于 TS、MP3、MP4 等文件格�
 
 如果因为第三方云存储的 `bucket` 及 `key` 参数值错误导致上传失败，云端录制服务将会直接报错，而不再将切片文件上传至 Agora 云备份。
 
-## 1.2.0 版
+##  2019.07.19
 
-该版本于 2019 年 7 月 19 日发布，新增特性、改进及修复问题如下。
+本次发布的新增特性、改进及修复问题如下：
 
 **新增特性**
 
@@ -90,18 +100,14 @@ RESTful API 优化了对 `resourceId` 和 `cname` 以及 `uid` 是否对应的�
 
 修复了默认的合流布局中存在的一些小问题。
 
-## 1.1.1 版
-
-该版本于 2019 年 7 月 2 日发布，主要改进如下。
+##  2019.07.02
 
 - 将合流布局默认背景色修改为黑色。
 - 改善了在弱网环境下录制的视频卡顿问题。
 
-## 1.1.0 版
+##  2019.06.13
 
-该版本于 2019 年 6 月 13 日发布。
-
-该版本主要新增了对 RESTful API 的支持，无需集成 SDK，直接通过网络请求来控制云端录制。
+本次发布主要新增了对 RESTful API 的支持，无需集成 SDK，直接通过网络请求来控制云端录制。
 
 你可以参考下面的文档使用 RESTful API：
 
@@ -109,9 +115,9 @@ RESTful API 优化了对 `resourceId` 和 `cname` 以及 `uid` 是否对应的�
 - [云端录制 RESTful API](../../cn/cloud-recording/cloud_recording_api_rest.md)：RESTful API 参考
 - [云端录制 RESTful API 回调服务](../../cn/cloud-recording/cloud_recording_callback_rest.md)：开通回调服务接收云端录制事件通知
 
-##  1.0.0 版
+##  2019.04.29
 
-该版本于 2019 年 4 月 29 日发布。本次发版为云端录制的第一次发版，主要包括以下功能:
+本次发布主要包括以下功能:
 
 - Agora Native SDK 和 Agora Web SDK 的高清音视频通话的录制
 - 频道内所有用户的音视频合流录制

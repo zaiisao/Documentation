@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Tue Nov 05 2019 23:12:57 GMT+0800 (CST)
+updatedAt: Fri Nov 15 2019 07:32:58 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -26,18 +26,18 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 #### 1. <a name="subscribe"></a>订阅或退订指定单个或多个用户的在线状态。
 
-<div class="alert warning"> 该功能必须在登录 Agora RTM 系统成功（收到 onSuccess 回调）后才能调用。</div>
+<div class="alert note"> 该功能必须在登录 Agora RTM 系统成功（收到 onSuccess 回调）后才能调用。</div>
 
 本版本支持订阅或退订最多 512 个用户的在线状态，SDK 会通过 `onSuccess` 返回订阅或退订结果。首次订阅成功时，SDK 会通过 `onPeersOnlineStatusChanged` 回调返回所有被订阅用户的在线状态；之后每当有被订阅用户的在线状态出现变化，SDK 都会通过 `onPeersOnlineStatusChanged` 回调通知订阅方。
 
-<div class="alert warning"> <sup>1</sup>用户登出 Agora RTM 系统后，所有之前的订阅内容都会被清空；重新登录后，如需保留之前订阅内容则需重新订阅。</div>
+<div class="alert note"> <sup>1</sup>用户登出 Agora RTM 系统后，所有之前的订阅内容都会被清空；重新登录后，如需保留之前订阅内容则需重新订阅。</div>
 
-<div class="alert warning"> <sup>2</sup>重复订阅同一用户不会报错。</div>
+<div class="alert note"> <sup>2</sup>重复订阅同一用户不会报错。</div>
 
 
 #### 2. <a name="list"></a>获取某特定内容被订阅的用户列表
 
-<div class="alert warning"> 该功能必须在登录 Agora RTM 系统成功（收到 onSuccess 回调）后才能调用。</div>
+<div class="alert note"> 该功能必须在登录 Agora RTM 系统成功（收到 onSuccess 回调）后才能调用。</div>
 
 本版本支持根据被订阅类型获取被订阅用户列表。现实情况中，你可能多次订阅或退订，可能重复订阅了相同用户，可能出现订阅或退订不成功的情况，也可能根据不同的订阅类型订阅了不同的用户。这时，你可以通过本功能根据订阅类型获取当前被订阅用户列表。
 
@@ -54,13 +54,13 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 如果在创建自定义二进制消息时未设置文本描述，你可以在消息实例 `RtmMessage` 创建成功后通过调用 `setText` 方法设置自定义二进制消息的文本描述。
 
-<div class="alert warning"> 我们不对二进制消息的文本描述的大小单独进行限制，但是我们要求自定义二进制消息的总大小不超过 32 KB。</div>
+<div class="alert note"> 我们不对二进制消息的文本描述的大小单独进行限制，但是我们要求自定义二进制消息的总大小不超过 32 KB。</div>
 
 #### 4. <a name="text"></a>创建文本消息
 
 之前版本中，我们先通过 `createMessage` 方法创建一个空文本消息实例再通过调用 `RtmMessage` 类的对象方法 `setText` 设置文本内容，本版本提供了更加便利的 `createMessage` 方法可以在创建文本消息的同时直接设定文本消息内容。
 
-<div class="alert warning"> 文本消息大小不得超过 32 KB。</div>
+<div class="alert note"> 文本消息大小不得超过 32 KB。</div>
 
 ### 问题修复
 

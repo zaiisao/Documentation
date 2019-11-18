@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Wed Oct 23 2019 07:19:21 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:41:25 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -176,7 +176,7 @@ public int JoinChannel (string token, string channelName, string optionalInfo, u
 <tr><td><code>token</code></td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见<a href="../../cn/Quickstart%20Guide/token.md"><span>密钥说明</span></a> 。</li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App 证书, 请务必使用 Token。 关于如何获取 Token，详见<a href="../../cn/Quickstart%20Guide/token.md"><span>密钥说明</span></a> 。</li>
 </ul>
 </td>
 </tr>

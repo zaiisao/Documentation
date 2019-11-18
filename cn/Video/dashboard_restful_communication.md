@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 04:09:38 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:41:15 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
@@ -283,7 +283,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
         ```
 
 
-### 启用项目 App Certificate（POST）
+### 启用项目 App 证书（POST）
 
 -   方法：POST
 -   路径：BaseUrl/signkey/
@@ -320,7 +320,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
         ```
 
 
-### 重置项目的 App Certificate（POST）
+### 重置项目的 App 证书（POST）
 
 -   方法：POST
 -   路径：BaseUrl/reset\_signkey/
@@ -349,7 +349,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
           }
         ```
 
-> 如果该项目的 App Certificate 尚未启用，调用该方法会启用 App Certificate 。
+> 如果该项目的 App 证书尚未启用，调用该方法会启用 App 证书。
 
 ## 4. 用量相关的 API
 

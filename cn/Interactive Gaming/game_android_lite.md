@@ -3,7 +3,7 @@
 title: 游戏裁剪版 API
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:13:20 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:41:44 GMT+0800 (CST)
 ---
 # 游戏裁剪版 API
 <table>
@@ -181,7 +181,7 @@ public abstract int joinChannel(String token,
 <tr><td><code>token</code></td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> </li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App 证书, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> </li>
 </ul>
 </td>
 </tr>

@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 04:01:02 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 03:27:22 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
@@ -381,8 +381,8 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 | :------------ | :------------------- | :----------------------------------------------------------- |
 | 加入成功率    | `joinSuccessRate`      | 加入频道成功人数 / 尝试加入频道人数                          |
 | 5秒加入成功率 | `joinSuccess5SecsRate` | 5秒内加入频道成功人数 / 尝试加入频道人数                     |
-| 视频卡顿率    | `videoFreezeRate`      | 视频卡顿时长 / 总视频时长。音频卡顿达到 200 ms，即被计入卡顿时长。 |
-| 音频卡顿率    | `audioFreezeRate`      | 音频卡顿时长 / 总音频时长。视频卡顿达到 600 ms，即被计入卡顿时长。 |
+| 视频卡顿率    | `videoFreezeRate`      | 视频卡顿时长 / 总视频时长。视频卡顿达到 600 ms，即被计入卡顿时长。 |
+| 音频卡顿率    | `audioFreezeRate`      | 音频卡顿时长 / 总音频时长。音频卡顿达到 200 ms，即被计入卡顿时长。 |
 
 
 

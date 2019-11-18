@@ -3,7 +3,7 @@
 title: 其它常见问题
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:00:57 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:17:24 GMT+0800 (CST)
 ---
 # 其它常见问题
 ## Android 平台常见问题
@@ -225,7 +225,7 @@ HLS 分为 M3U8 索引文件和 ts 媒体切片文件，Apple 的文档中，ts 
 
 检查：
 * Dynamic Key/Token 生成的算法是否正确。
-* App ID 和 App Certificate 是否填写正确，注意区分大小写。
+* App ID 和 App 证书是否填写正确，注意区分大小写。
 * `expireTime` 是否晚于当前时间。
 
 ### 当用户加入频道后切换到后台模式一段时间后(例如 30 分钟)，发现 iOS App 崩溃了

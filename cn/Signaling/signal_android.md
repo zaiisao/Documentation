@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Android
-updatedAt: Wed Jul 31 2019 04:04:21 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:16:54 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -324,7 +324,7 @@ public void login(String appId,String account,String token,int uid,String device
 <td>客户端定义的用户账号，最大 128 字节可见字符（不能使用空格）。可以是用户的 uid、昵称、guid 等任何内容，但必须保证唯一。本文提到的所有 <code>account</code> 参数都是如此。</td>
 </tr>
 <tr><td><code>token</code></td>
-<td>由 App ID 和 App Certificate 生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a></td>
+<td>由 App ID 和 App 证书生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a></td>
 </tr>
 <tr><td><code>uid</code></td>
 <td>固定填 0</td>
@@ -367,7 +367,7 @@ public void login2(String appId,String account,String token,int uid,String devic
 <td>客户端定义的用户账号，最大 128 字节可见字符（不能使用空格）。可以是用户的 uid、昵称、guid 等任何内容，但必须保证唯一。本文提到的所有 <code>account</code> 参数都是如此。</td>
 </tr>
 <tr><td><code>token</code></td>
-<td>由 App ID 和 App Certificate 生成的 SignalingToken ，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>SignalingToken</span></a>。</td>
+<td>由 App ID 和 App 证书生成的 SignalingToken ，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>SignalingToken</span></a>。</td>
 </tr>
 <tr><td><code>uid</code></td>
 <td>固定填 0</td>

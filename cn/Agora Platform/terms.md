@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 04 2019 03:49:08 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:17:20 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -33,7 +33,7 @@ Agora 给应用程序开发人员分配 App ID，以识别项目和组织。在 
 
 ### App Certificate
 
-Agora 提供 App Certificate 用以生成 [动态密钥](#key)。
+Agora 提供 App 证书用以生成 [动态密钥](#key)。
 
 你可以在 [控制台](https://console.agora.io) 获取  App Certificate，详细信息请参见 [获取 App Certificate](../../cn/Agora%20Platform/token.md)。
 
@@ -41,7 +41,7 @@ Agora 提供 App Certificate 用以生成 [动态密钥](#key)。
 
 直接使用 App ID 非常方便，适用于应用程序的初始开发。然而，如果有人非法获取你的 App ID，那么他们可以在自己的客户端应用程序上使用你的 App ID，可以加入属于你并向你收费的通话。为了防止这种情况并保护应用程序，Agora 建议你使用动态密钥实现大规模生产应用程序。
 
-动态密钥由服务器端代码通过 App Certificate 和其他密钥材料生成，且 App Certificate 在任何客户端代码中都无法访问，这使得动态密钥比静态 App ID 更安全。
+动态密钥由服务器端代码通过 App 证书和其他密钥材料生成，且 App 证书在任何客户端代码中都无法访问，这使得动态密钥比静态 App ID 更安全。
 
 动态密钥具有有效期，并包含客户端权限，例如不同的角色权限（[主播](#host)和[观众](#audience)）。
 

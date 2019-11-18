@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Wed Sep 25 2019 10:09:51 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 03:08:08 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能描述
@@ -18,7 +18,7 @@ updatedAt: Wed Sep 25 2019 10:09:51 GMT+0800 (CST)
 
 1. 下载[最新版的 Agora Native SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)。
 2. 参考对应平台的**快速开始**文档完成开发环境准备。
-3. 联系 support@agora.io，提供 App ID，并提供代理服务使用区域、并发规模、网络运营商等信息，申请开通云代理服务。
+3. 联系 sales@agora.io，提供 App ID，并提供代理服务使用区域、并发规模、网络运营商等信息，申请开通云代理服务。
 4. 将以下测试 IP 及端口添加到企业防火墙的白名单。
 
 	源地址为集成了 Agora Native/Recording SDK 的客户端。

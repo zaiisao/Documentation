@@ -3,7 +3,7 @@
 title: 信令 Server SDK API - Java
 description: 
 platform: Java
-updatedAt: Mon Sep 30 2019 13:23:03 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:17:15 GMT+0800 (CST)
 ---
 # 信令 Server SDK API - Java
 > 版本：v1.4.0 BETA
@@ -168,7 +168,7 @@ public Signal.LoginSession login(String account, String token, Signal.LoginCallb
 <td>用户登录厂商 app 的账号，最大 128 字节可见字符（不能使用空格）。可以是用户的 uid、昵称、guid 等任何内容，但必须保证唯一。本文提到的所有 account 参数都是如此。</td>
 </tr>
 <tr><td><code>token</code></td>
-<td>由 App ID 和 App Certificate 生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a>。</td>
+<td>由 App ID 和 App 证书生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a>。</td>
 </tr>
 <tr><td><code>cb</code></td>
 <td>LoginCallback 实例对象。</td>
