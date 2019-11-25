@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Thu Sep 19 2019 10:58:37 GMT+0800 (CST)
+updatedAt: Wed Nov 13 2019 11:00:27 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -17,7 +17,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start an Interactive Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
+Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Video/start_call_windows.md) or [Start an Interactive Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
 
 From v2.4.0, Agora supports the following screen sharing functions on Windows:
 

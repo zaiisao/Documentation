@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API (Beta)
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 03:18:31 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 03:28:52 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API (Beta)
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
@@ -383,7 +383,7 @@ The URL requires the following query string parameters:
 | :------------------------- | :--------------------- | :----------------------------------------------------------- |
 | Join-channel success rate  | `joinSuccessRate`      | Number of users joined / Number of users trying to join.     |
 | Join success in 5 sec rate | `joinSuccess5SecsRate` | Number of users who have joined a channel successfully within 5 seconds / Number of users who have tried to join. |
-| Video freeze rate          | `videoFreezeRate`      | Total video freeze time / Total video playback duration. Video freeze time counts all the video freezes at least 200 ms in length. |
+| Video freeze rate          | `videoFreezeRate`      | Total video freeze time / Total video playback duration. Video freeze time counts all the video freezes at least 600 ms in length. |
 | Audio freeze rate          | `audioFreezeRate`      | Total audio freeze time / Total audio playback duration. Audio freeze time counts all the audio freezes at least 200 ms in length. |
 
 #### An HTTP request example

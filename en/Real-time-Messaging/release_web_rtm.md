@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Wed Oct 02 2019 07:10:50 GMT+0800 (CST)
+updatedAt: Fri Nov 15 2019 11:28:31 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -11,6 +11,32 @@ updatedAt: Wed Oct 02 2019 07:10:50 GMT+0800 (CST)
 Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-time Messaging (RTM) SDK provides a more streamlined and stable messaging mechanism for you to quickly implement real-time messaging under various scenarios.
 
 > For more information about the features and applications of the Agora RTM SDK, see [Product Overview](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms).
+
+## v1.2.0 
+
+v1.2.0 was released on November 15, 2019. 
+
+### New Features
+
+#### Subscribe to the online status of the specified user(s)
+
+When the method call succeeds, the SDK returns the PeersOnlineStatusChanged callback to report the online status of peers, to whom you subscribe.
+When the online status of the peers, to whom you subscribe, changes, the SDK returns the PeersOnlineStatusChanged callback to report whose online status has changed.
+If the online status of the peers, to whom you subscribe, changes when the SDK is reconnecting to the server, the SDK returns the PeersOnlineStatusChanged callback to report whose online status has changed when successfully reconnecting to the server.
+
+#### Unsubscribe from the online status of the specified user(s)
+
+Allows you to unsubscribe from the online status of the specified user(s).
+
+#### Get a list of the peers, to whose specific status you have subscribed
+
+Allows you to get a list of the peers, to whose specific status you have subscribed.
+
+#### Create a raw message
+
+Creates and initializes a raw message to be sent.
+
+ If you set a text description, ensure that the size of the raw message and the description combined does not exceed 32 KB.
 
 ## v1.1.0
 

@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: iOS,macOS
-updatedAt: Thu Oct 24 2019 07:43:17 GMT+0800 (CST)
+updatedAt: Thu Nov 14 2019 08:28:47 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -44,7 +44,7 @@ Refer to the following steps to push streams to the CDN:
 
    > Use `transcodingEnabled` to set whether transcoding is enabled or not.
 
-3. The host in a channel cans the `removePublishStreamUrl` method to remove a media stream from the CDN live broadcast.
+3. The host in a channel calls the `removePublishStreamUrl` method to remove a media stream from the CDN live broadcast.
 
 
 When the state of media streams pushed to the CDN changes, SDK triggers the `rtmpStreamingStateChangedtoState` callback to report current state of pushing streams to the local host. The local host can troubleshoot with the error code when exceptions occur.
@@ -211,7 +211,7 @@ We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advan
 
 - Up to 17 hosts can be supported in the same live broadcast channel.
 
-- In tje case of a single host, we do not recommend transcoding. You can skip [Step1](#single), and call the `addPublishStreamUrl` method directly with `transcodingEnabled (false)`.
+- In the case of a single host, we do not recommend transcoding. You can skip [Step1](#single), and call the `addPublishStreamUrl` method directly with `transcodingEnabled (false)`.
 
   > Currently, Agora only supports pushing H.264 (default) streams to the CDN.
 

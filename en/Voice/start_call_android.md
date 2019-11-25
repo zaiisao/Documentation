@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Android
-updatedAt: Sat Oct 12 2019 07:29:31 GMT+0800 (CST)
+updatedAt: Tue Nov 19 2019 03:33:27 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic call with the Agora SDK for Android.
@@ -255,8 +255,7 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
  
     // If all the permissions are granted, initialize the RtcEngine object and join a channel.
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
-            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }
@@ -387,7 +386,7 @@ After initializing the RtcEngine object and setting the local video view (for a 
 * channelName: Specify the channel name that you want to join. Users that input the same channel name join the same channel.
 * uid: ID of the local user that is an integer and should be unique. If you set uid as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
 
-For more details on the parameter settings, see [`joinChanne`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c).
+For more details on the parameter settings, see [`joinChannel`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c).
 
 ```java
 private void joinChannel() {

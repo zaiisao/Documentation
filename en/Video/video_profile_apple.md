@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS,macOS
-updatedAt: Fri Sep 20 2019 04:08:20 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 01:42:34 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -14,7 +14,7 @@ The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video pr
 
 ## Implementation
 
-Before setting the video profile, ensure that you hava implemented the basic real-time communication functions in your project. For details, see the following documents:
+Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see the following documents:
 - iOS: [Start a Call](../../en/Video/start_call_ios.md) or [Start a Live Broadcast](../../en/Video/start_live_ios.md)
 - macOS: [Start a Call](../../en/Video/start_call_mac.md) or [Start a Live Broadcast](../../en/Video/start_live_mac.md)
 

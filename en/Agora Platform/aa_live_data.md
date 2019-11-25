@@ -3,7 +3,7 @@
 title: Realtime (Beta)
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 07:23:33 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 03:30:57 GMT+0800 (CST)
 ---
 # Realtime (Beta)
 Use the Realtime function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
@@ -139,7 +139,7 @@ Use the timeline at the top of the page to adjust the period to view, or specify
 | :------------------------- | :----------------------------------------------------------- |
 | Join Success in 5 sec Rate | Number of users who have joined a channel successfully within 5 seconds / Number of users who have tried to join. |
 | Audio Freeze Rate          | Total audio freeze time / Total audio playback duration. Audio freeze time counts all audio freezes at least 200 ms in length. |
-| Video Freeze Rate          | Total video freeze time / Total video playback duration. Video freeze time counts all video freezes at least 200 ms in length. |
+| Video Freeze Rate          | Total video freeze time / Total video playback duration. Video freeze time counts all video freezes at least 600 ms in length. |
 
 ### Distribution
 

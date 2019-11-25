@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: Windows
-updatedAt: Mon Sep 23 2019 07:20:55 GMT+0800 (CST)
+updatedAt: Tue Nov 19 2019 03:30:18 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction
@@ -14,7 +14,7 @@ The Native SDK uses the `IAudioFrameObserver` and `IVideoFrameObserver` class to
 
 This article tells how to use raw video data with the `IVideoFrameObserver` class.
 
-## Implemetation
+## Implementation
 
 Before using the raw data functions, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
 

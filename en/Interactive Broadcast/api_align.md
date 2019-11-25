@@ -3,7 +3,7 @@
 title: Core API Summary
 description: List APIs of the key functions across the platforms
 platform: All Platforms
-updatedAt: Tue Feb 19 2019 06:16:21 GMT+0800 (CST)
+updatedAt: Wed Nov 13 2019 07:58:53 GMT+0800 (CST)
 ---
 # Core API Summary
 The Agora SDK supports multiple platforms with different implementations of the API methods. The following table lists the core API methods on Android, iOS/macOS, the Web, and Windows to help you quickly understand the differences.
@@ -63,7 +63,7 @@ The Agora SDK supports multiple platforms with different implementations of the 
     <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a49636ee063476d7c3da533668771fa03">enableWebSdkInteroperability</a></td>
     <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableWebSdkInteroperability:">enableWebSdkInteroperability</a></td>
     <td>N/A</td>
-    <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a5b82667e75a8f299a60b9b7968da48de">enableWebSdkInteroperability</a></td>
+    <td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a639ef31212b9f340b518d0e59405789a">enableWebSdkInteroperability</a></td>
   </tr>
   <tr>
     <td>Destroy an Instance</td>

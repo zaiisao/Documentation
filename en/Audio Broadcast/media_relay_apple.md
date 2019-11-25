@@ -8,10 +8,10 @@ updatedAt: Fri Sep 20 2019 07:32:10 GMT+0800 (CST)
 # Co-host across Channels
 ## Introduction
 
-By co-hosting across channels, the Agora SDK relays the media streams of a host from one Live Broadcast channel (source channel) to other Live Broadcast channels (destination channels), for the following purposes:
+Co-hosting across channels refers to the process where the Agora SDK relays the media stream of a host from a live-broadcast channel (source channel) to a maximum of four live-broadcast channels (destination channels). It has the following benefits:
 
 - All hosts in the relay channels can see and hear each other.
-- All the audience in the relay channels can see and hear all the hosts.
+- The audiences in the relay channels can see and hear all hosts.
 
 Co-hosting across channels applies to scenarios such as online singing contests, where hosts of different channels interact with each other.
 

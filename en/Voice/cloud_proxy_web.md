@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy on Web
 platform: Web
-updatedAt: Wed Sep 25 2019 10:09:46 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 03:09:22 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -20,7 +20,7 @@ Agora Web SDK v2.5.1 or later supports the cloud proxy.
 
 1. Download [the latest version of the Agora Native SDK](https://docs.agora.io/en/Agora%20Platform/downloads).
 2. Prepare the development environment. For details, see [Start a Call](../../en/Voice/start_call_web.md) or [Start a Live Broadcast](../../en/Voice/start_live_web.md).
-3. Contact support@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
+3. Contact sales@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
 4. Add the following test IP addresses and ports to your whitelist.
 
   The sources are the clients that integrate the Agora Web SDK.

@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Fri Sep 20 2019 04:08:28 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 01:43:06 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -15,7 +15,7 @@ The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video pr
 
 ## Implementation
 
-Before setting the video profile, ensure that you hava implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
+Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
 
 After initializing `IRtcEngine`, you can call the `setVideoEncoderConfiguration` method to set the video resolution, frame rate, birtate and orientation mode.
 

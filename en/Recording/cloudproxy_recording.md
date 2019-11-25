@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy for recording
 platform: All Platforms
-updatedAt: Tue Jul 30 2019 05:57:20 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 03:09:38 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -18,7 +18,7 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 
 The [Agora On-Premise Recording SDK v2.8.0](https://download.agora.io/ardsdk/release/Agora_Recording_SDK_for_Linux_v2.8.0.150.tar.gz) or later supports the cloud proxy. Before proceeding, ensure that you prepare the development environment and integrate the SDK. 
 
-1. Contact support@agora.io and provide the information on the regions using the cloud proxy, the concurrent scale, and network operators.
+1. Contact sales@agora.io and provide the information on the regions using the cloud proxy, the concurrent scale, and network operators.
 
 2. Add the following test IP addresses and ports to your whitelist.
 
