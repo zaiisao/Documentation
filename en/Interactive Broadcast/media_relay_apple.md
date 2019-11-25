@@ -104,4 +104,4 @@ We provide an open-source [Cross-Channel-OpenLive-iOS](https://github.com/AgoraI
 
 - Co-hosting across channels supports relaying media streams to at most four destination channels. During the relay, you can call the `updateChannelMediaRelay` method to add or delete the destination channels.
 - Channel media stream relay does not support string user accounts.
-- After a successful call of the `startChannelMediaRelay` method, if you want to call this method again, ensure that you call the `stopChannelMediaRelay` method.
+- To call `startChannelMediaRelay` again after it succeeds, you must call `stopChannelMediaRelay` to quit the current relay.
