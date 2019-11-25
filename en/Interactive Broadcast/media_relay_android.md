@@ -99,6 +99,6 @@ We provide an open-source [Cross-Channel-OpenLive-Android](https://github.com/Ag
 
 ## Considerations
 
-- Co-hosting across channels supports relaying media streams to at most four destination channels. During the relay, you can call the `updateChannelMediaRelay` method to add or delete the destination channels.
-- Channel media stream relay does not support string user accounts.
+- As of v3.0.0, the Agora RTC SDK supports relaying media streams to a maximum of four destination channels. To add or delete a destination channel, you can call `updateChannelMediaRelay`.
+- This feature supports integer user IDs only.
 - To call `startChannelMediaRelay` again after it succeeds, you must call `stopChannelMediaRelay` to quit the current relay.
