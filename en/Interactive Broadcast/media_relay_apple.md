@@ -102,6 +102,6 @@ We provide an open-source [Cross-Channel-OpenLive-iOS](https://github.com/AgoraI
 
 ## Considerations
 
-- As of v3.0.0, the Agora RTC SDK supports relaying media streams to a maximum of four destination channels. To add or delete a destination channel, you can call `updateChannelMediaRelay`.
+- As of v3.0.0, the Agora RTC SDK supports relaying media streams to a maximum of four destination channels. To add or delete a destination channel, call `updateChannelMediaRelay`.
 - This feature supports integer user IDs only.
 - To call `startChannelMediaRelay` again after it succeeds, you must call `stopChannelMediaRelay` to quit the current relay.
