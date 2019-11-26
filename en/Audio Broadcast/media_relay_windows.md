@@ -12,7 +12,7 @@ Co-hosting across channels refers to the process where the Agora SDK relays the 
 - All hosts in the relay channels can see and hear each other.
 - The audiences in the relay channels can see and hear all hosts.
 
-Co-hosting across channels applies to scenarios such as online singing contests, where hosts of different channels interact with each other.
+Co-hosting across channels applies to scenarios such as an online singing contest, where hosts of different channels interact with each other.
 
 ## Implementation
 

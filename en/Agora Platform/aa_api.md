@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API (Beta)
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Mon Nov 18 2019 03:28:52 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 11:01:57 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API (Beta)
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
@@ -130,7 +130,8 @@ This API requires the following parameters to specify the call.
 | `end_ts`              | Number  | The ending time of the call. Unix format (seconds since 1970) in UTC. |
 | `appid`               | String  | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
 | `call_id`             | String  | The unique ID of the call.                                   |
-| `exclude_server_user` | Boolean | Whether or not to exclude Linux users. `true` by default.    |
+| `exclude_server_user` | Boolean | (Optional) Whether or not to exclude Linux users. `true` by default.    |
+| `exclude_metrics_info` | Boolean | (Optional) Whether or not to exclude the metric details. <li>  `true`: Exclude the metric details. </li><li> `false`: (Default) Do not exclude the metric details.</li>  |
 
 #### An HTTP request example
 

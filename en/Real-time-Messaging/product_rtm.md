@@ -3,7 +3,7 @@
 title: Agora Real-time Messaging SDK Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Oct 30 2019 12:35:46 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 11:09:02 GMT+0800 (CST)
 ---
 # Agora Real-time Messaging SDK Overview
 You can use the Agora RTM (Real-time Messaging) SDK to create a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency for a global audience. 
@@ -19,6 +19,8 @@ The Agora RTM SDK enables the following functions:
 -   Set, update, or get a user's attributes. 
 -   Set, update, or get attributes of a specified channel.
 -   Get the latest member count of specified channel(s). 
+-   Subscribe to or unsubscribe from the online status of the specified user(s).
+-   Get a list of the peers, to whose specific status you have subscribed.
 -   Interconnect with the legacy Agora Signaling SDK.
 
 
