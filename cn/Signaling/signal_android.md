@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Android
-updatedAt: Mon Nov 18 2019 06:16:54 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 09:38:56 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -1497,7 +1497,7 @@ public void onLogout(int ecode);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1524,7 +1524,7 @@ public void onLoginFailed(int ecode);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1614,7 +1614,7 @@ public void onChannelJoinFailed(String channelID,int ecode);
 <td>频道名</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1644,7 +1644,7 @@ public void onChannelLeaved(String channelID,int ecode);
 <td>频道名</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1970,7 +1970,7 @@ public void onInviteFailed(String channelID,String account,int uid,int ecode, St
 <td>固定填 0</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 <tr><td><code>extra</code></td>
 <td>关于该呼叫的其他信息, 可以是一个 JSON 字符串或将其设置为空</td>
@@ -2114,7 +2114,7 @@ public void onMessageSendError(String messageID,int ecode);
 <td>消息 ID</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -2338,6 +2338,6 @@ public void onUserAttrAllResult(String account,String value);
 
 
 
-## 错误代码和警告代码
+## 错误码和警告码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_signaling.md)。

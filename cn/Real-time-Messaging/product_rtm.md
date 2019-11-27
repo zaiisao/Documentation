@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Oct 30 2019 12:34:09 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 11:11:22 GMT+0800 (CST)
 ---
 # 产品概述
 
@@ -21,6 +21,8 @@ Agora RTM SDK 能够实现以下功能:
  - 增删改查用户属性。
  - 增删改查频道属性。
  - 获取单个或多个指定频道的当前成员人数。
+ - 订阅或退订指定单个或多个用户的在线状态。
+ - 获取某特定内容被订阅的用户列表。
  - 与 Agora Signaling SDK 互通。
  
 

@@ -3,7 +3,7 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: macOS
-updatedAt: Mon Nov 18 2019 06:17:16 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:08 GMT+0800 (CST)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
 ## 第一节：快速集成
@@ -51,7 +51,7 @@ updatedAt: Mon Nov 18 2019 06:17:16 GMT+0800 (CST)
 
 
 
-### 第五步：获取一个 App ID 和 App Certificate。
+### 第五步：获取一个 App ID 和 App 证书。
 
 1.  获取详情见 [SignalingToken](../../cn/Agora%20Platform/key_signaling.md)。
 

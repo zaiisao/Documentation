@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Cocos Creator
-updatedAt: Wed Apr 24 2019 09:27:21 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:14:30 GMT+0800 (CST)
 ---
 # 游戏 API
 Agora Cocos Creator js SDK 包含如下 API：
@@ -103,7 +103,7 @@ agora.joinChannel("", "CHANNEL_ID");
 
 | Param     | Type                | Description                                                  |
 | --------- | ------------------- | ------------------------------------------------------------ |
-| token     | <code>String</code> | <li>安全要求不高：将值设置为空字符串<br><li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见[密钥说明](https://docs.agora.io/cn/Voice/token?platform=All%20Platforms) |
+| token     | <code>String</code> | <li>安全要求不高：将值设置为空字符串<br><li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App 证书, 请务必使用 Token。 关于如何获取 Token，详见[密钥说明](https://docs.agora.io/cn/Voice/token?platform=All%20Platforms) |
 | channelId | <code>String</code> | 标识通话的频道名称，长度在 64 字节以内的字符串。以下为支持的字符集范围（共 89 个字符）: a-z,A-Z,0-9,space,! #$%&amp;,()+, -,:;&lt;=.#$%&amp;,()+,-,:;&lt;=.,&gt;?@[],^\_,{ |
 | [info]    | <code>String</code> | (非必选项) 开发者需加入的任何附加信息。一般可设置为空字符串，或频道相关信息。该信息不会传递给频道内的其他用户 |
 | [uid]     | <code>number</code> | (非必选项) 用户 ID，32 位无符号整数。建议设置范围：1 到 (2<sup>32</sup>-1)，并保证唯一性。如果不指定（即设为 0），SDK 会自动分配一个，并在 <code>onJoinChannelSuccess</code> 回调方法中返回，App 层必须记住该返回值并维护，SDK 不对该返回值进行维护，uid 在 SDK 内部用 32 位无符号整数表示，由于 Java 不支持无符号整数，uid 被当成 32 位有符号整数处理，对于过大的整数，Java 会表示为负数，如有需要可以用(uid&amp;0xffffffffL)转换成 64 位整数 |
@@ -387,7 +387,7 @@ Agora SDK 通过该方法监听上述方法触发的事件，主要包含如下�
 
 | Param | Type                | Description |
 | ----- | ------------------- | ----------- |
-| err   | <code>\*</code>     | 错误代码    |
+| err   | <code>\*</code>     | 错误码    |
 | msg   | <code>String</code> | 错误描述    |
 
 <a name="leaveChannel"></a>
@@ -487,7 +487,7 @@ Agora SDK 通过该方法监听上述方法触发的事件，主要包含如下�
 
 | Param | Type            | Description |
 | ----- | --------------- | ----------- |
-| warn  | <code>\*</code> | 警告代码    |
+| warn  | <code>\*</code> | 警告码    |
 | msg   | <code>\*</code> | 警告描述    |
 
 <a name="networkQuality"></a>

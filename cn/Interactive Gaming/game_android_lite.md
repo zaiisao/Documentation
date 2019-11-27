@@ -3,7 +3,7 @@
 title: 游戏裁剪版 API
 description: 
 platform: Android
-updatedAt: Mon Nov 18 2019 06:41:44 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:13:51 GMT+0800 (CST)
 ---
 # 游戏裁剪版 API
 <table>
@@ -791,7 +791,7 @@ public static String getErrorDescription(int error);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>error</code></td>
-<td>onWarning 或 onError 里返回的警告代码或错误代码。</td>
+<td>onWarning 或 onError 里返回的警告码或错误码。</td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
@@ -887,7 +887,7 @@ public void onWarning(int warn);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>warn</code></td>
-<td>警告代码</td>
+<td>警告码</td>
 </tr>
 <tr><td><code>msg</code></td>
 <td>警告消息</td>
@@ -917,7 +917,7 @@ public void onError(int err);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>err</td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1238,8 +1238,8 @@ enum CLIENT_ROLE_TYPE
 };
 ```
 
-## 错误代码和警告代码 - AMG SDK
+## 错误码和警告码 - AMG SDK
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_game.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_game.md)。
 
 

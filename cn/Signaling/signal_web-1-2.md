@@ -3,7 +3,7 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: Web
-updatedAt: Fri Nov 02 2018 04:07:16 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:12 GMT+0800 (CST)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
 ## 第一节：快速集成
@@ -16,7 +16,7 @@ updatedAt: Fri Nov 02 2018 04:07:16 GMT+0800 (CST)
 
 将解压后的 **SDK** 包全部复制到您的项目文件夹 **web/src/assets/vendor/** 下。
 
-### 第三步：获取 App ID 和 App Certificate。
+### 第三步：获取 App ID 和 App 证书。
 
 详见 [SignalingToken](../../cn/Agora%20Platform/key_signaling.md)。
 

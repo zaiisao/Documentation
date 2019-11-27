@@ -3,7 +3,7 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 04:06:55 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:14 GMT+0800 (CST)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
 ## 第一节：快速集成
@@ -31,7 +31,7 @@ updatedAt: Fri Nov 02 2018 04:06:55 GMT+0800 (CST)
 3.  将解压后的 **include** 文件夹内的 `agora\_sig.h` 头文件复制到您本地项目的 **include** 文件夹下。
 
 
-### 第五步：获取 App ID 和 App Certificate。
+### 第五步：获取 App ID 和 App 证书。
 
 详见 [SignalingToken](../../cn/Agora%20Platform/key_signaling.md)。
 

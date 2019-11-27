@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Web
-updatedAt: Mon Nov 18 2019 06:17:00 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:13:33 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
@@ -546,7 +546,7 @@ onLoginFailed(ecode)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td><p>错误代码</p>
+<td><p>错误码</p>
 <ul>
 <li>SUCCESS = 0,</li>
 <li>LOGOUT_E_OTHER = 100</li>
@@ -616,7 +616,7 @@ onLogout(reason)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1296,7 +1296,7 @@ onChannelJoinFailed(ecode)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1323,7 +1323,7 @@ onChannelLeaved(ecode)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1491,6 +1491,6 @@ onMessageChannelReceive(account, uid, msg)
 
 
 
-## 错误代码和警告代码
+## 错误码和警告码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_signaling.md)。

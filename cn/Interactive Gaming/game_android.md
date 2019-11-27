@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Android
-updatedAt: Mon Nov 18 2019 06:41:39 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:11:56 GMT+0800 (CST)
 ---
 # 游戏 API
 <table>
@@ -667,7 +667,7 @@ public static String getErrorDescription(int error);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>error</code></td>
-<td><code>onWarning</code> 或 <code>onError</code> 里返回的警告代码或错误代码。</td>
+<td><code>onWarning</code> 或 <code>onError</code> 里返回的警告代码或错误码。</td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
@@ -1752,7 +1752,7 @@ public void onError(int err);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>err</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -2084,8 +2084,8 @@ public void onTokenPrivilegeWillExpire(String token);
 
 
 
-## 错误代码和警告代码 - Interactive Gaming SDK
+## 错误码和警告代码 - Interactive Gaming SDK
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_game.md)。
+详见 [错误码和警告代码](../../cn/API%20Reference/the_error_game.md)。
 
 

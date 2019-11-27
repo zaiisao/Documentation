@@ -3,10 +3,10 @@
 title: 错误代码
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 15 2019 05:25:48 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:14:36 GMT+0800 (CST)
 ---
 # 错误代码
-本页列出了 Agora RTSA SDK 运行过程中或 API 调用时可能返回的错误代码，帮助你判断引起错误的原因，然后进行排查。
+本页列出了 Agora RTSA SDK 运行过程中或 API 调用时可能返回的错误码，帮助你判断引起错误的原因，然后进行排查。
 
 ## 返回值
 
@@ -41,10 +41,10 @@ updatedAt: Thu Aug 15 2019 05:25:48 GMT+0800 (CST)
 | LICENSE_ERR_NULL       | -12    | Certificate 为空          |
 | LICENSE_ERR            | -13    | 未知错误                  |
 
-## on_warning 回调返回的警告代码
+## on_warning 回调返回的警告码
 
-on_warning 回调中可能返回的警告代码和描述详见 [Agora Native SDK 警告代码表](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21)。
+on_warning 回调中可能返回的警告码和描述详见 [Agora Native SDK 警告码表](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21)。
 
-## on_error 回调返回的错误代码
+## on_error 回调返回的错误码
 
-on_error 回调中可能返回的错误代码和描述详见 [Agora Native SDK 错误代码表](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/namespaceagora.html#a8affb9bb02864d82c4333529dc3d75a1)。
+on_error 回调中可能返回的错误码和描述详见 [Agora Native SDK 错误码表](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/namespaceagora.html#a8affb9bb02864d82c4333529dc3d75a1)。

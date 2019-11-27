@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Sep 05 2019 09:57:17 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:12:25 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -797,4 +797,4 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 
 
-更新了错误代码和解释。
+更新了错误码和解释。

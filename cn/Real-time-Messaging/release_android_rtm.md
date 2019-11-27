@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Nov 15 2019 07:32:58 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:12:54 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -208,7 +208,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 ###  功能改进
 
-针对以下不同错误情况细化了错误代码
+针对以下不同错误情况细化了错误码
 
 - Agora RTM 服务未初始化
 - 调用频率超过上限

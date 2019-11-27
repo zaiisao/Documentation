@@ -3,7 +3,7 @@
 title: 命令行录制
 description: How to start recording using cmd
 platform: Linux CPP
-updatedAt: Mon Sep 09 2019 08:00:44 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:14:25 GMT+0800 (CST)
 ---
 # 命令行录制
 本文介绍如何通过命令行进行录制。 你也可以[调用 API](../../cn/Recording/recording_api_cpp.md) 进行录制。命令行录制和调用 API 录制实现的是相同的功能，根据自己的需要选择一种即可。
@@ -168,4 +168,4 @@ make
 
 录制完成后，你可能需要使用转码脚本将录制的文件进行合成，详见[使用转码脚本](../../cn/Recording/recording_transcoding.md)。 
 
-录制过程中，如果出现错误码或警告码，请参考[警告代码](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a11cab69078db26c1f166c68e469dcfcf)和[错误代码](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a5f37e3fa14fad2982f248d247d76996b)。
+录制过程中，如果出现错误码或警告码，请参考[警告码](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a11cab69078db26c1f166c68e469dcfcf)和[错误码](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a5f37e3fa14fad2982f248d247d76996b)。

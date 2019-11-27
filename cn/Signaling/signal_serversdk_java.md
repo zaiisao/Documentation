@@ -3,7 +3,7 @@
 title: 信令 Server SDK API - Java
 description: 
 platform: Java
-updatedAt: Mon Nov 18 2019 06:17:15 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:14:09 GMT+0800 (CST)
 ---
 # 信令 Server SDK API - Java
 > 版本：v1.4.0 BETA
@@ -1049,7 +1049,7 @@ public void onLogout(Signal.LoginSession session, int ecode)
 <td>会话名称</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1078,7 +1078,7 @@ public void onLoginFailed(Signal.LoginSession session, int ecode)
 <td>会话名称</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1287,7 +1287,7 @@ public void onChannelJoinFailed(Signal.LoginSession session, Signal.LoginSession
 <td>频道名称</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1321,7 +1321,7 @@ public void onChannelLeaved(Signal.LoginSession session, Signal.LoginSession.Cha
 <td>频道实例</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1631,7 +1631,7 @@ public void onMessageSendError(Signal.LoginSession session, int ecode)
 <td>会话名称</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1911,6 +1911,6 @@ public void onInviteMsg(Signal.LoginSession session, Signal.LoginSession.Call ca
 
 
 
-## 错误代码和警告代码
+## 错误码和警告码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_signaling.md)。

@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 08 2019 06:20:30 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 03:52:38 GMT+0800 (CST)
 ---
 # 产品概述
 Agora Signaling SDK 基于 TCP 协议，提供了稳定可靠的消息通道，帮助快速构建实时场景。
@@ -64,6 +64,25 @@ Agora 为你提供了如下文档，方便在使用中查阅：
 -   [发送点对点文本消息和频道文本消息](../../cn/Quickstart%20Guide/signal_android-1.md) 展示了如何从零开始完成 Agora Signaling SDK 录制 SDK 的部署及使用，包括环境搭建、集成方法、编译代码、演示录制等内容。
 
 -   [信令 API](../../cn/API%20Reference/signal_android.md) 展示了使用 Agora Signaling SDK 过程中你可以调用的各 API，以及调用这些 API 能实现的功能、以及会收到的回调等内容。
+
+## 防火墙与白名单
+
+对于有外网访问限制的公司，在使用 Agora 信令服务之前，需要添加防火墙白名单。
+
+### 防火墙端口
+
+| 端口     | 白名单项目        |
+| -------- | ----------------- |
+| TCP 端口 | 1080；8001 - 8199；10000 - 10010；10100 - 10110 |
+| UDP 端口 | 8180 - 8199       |
+
+### 域名白名单
+
+```
+ .agora.io
+ qoslbs.agoralab.co
+ qos.agoralab.co
+```
 
 
 

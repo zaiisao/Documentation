@@ -3,7 +3,7 @@
 title: 错误代码和警告代码
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:09:15 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:09:25 GMT+0800 (CST)
 ---
 # 错误代码和警告代码
 <table>
@@ -13,7 +13,7 @@ updatedAt: Fri Nov 02 2018 04:09:15 GMT+0800 (CST)
 <col/>
 </colgroup>
 <tbody>
-<tr><td><strong>错误代码</strong></td>
+<tr><td><strong>错误码</strong></td>
 <td><strong>值</strong></td>
 <td><strong>描述</strong></td>
 </tr>

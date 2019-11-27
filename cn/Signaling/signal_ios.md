@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: iOS
-updatedAt: Mon Nov 18 2019 06:16:57 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 09:39:01 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.4
@@ -1470,7 +1470,7 @@ updatedAt: Mon Nov 18 2019 06:16:57 GMT+0800 (CST)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1534,7 +1534,7 @@ updatedAt: Mon Nov 18 2019 06:16:57 GMT+0800 (CST)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1595,7 +1595,7 @@ updatedAt: Mon Nov 18 2019 06:16:57 GMT+0800 (CST)
 <td>频道名</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1627,7 +1627,7 @@ updatedAt: Mon Nov 18 2019 06:16:57 GMT+0800 (CST)
 <td>频道名</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -2033,7 +2033,7 @@ public virtual void onChannelQueryUserIsIn(std::string channelID, std::string ac
 <td>废弃字段</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 <tr><td><code>extra</code></td>
 <td>主叫方想传递给呼叫方的更多信息，可以是任何信息。例如:该呼叫为语音通话或视频通话。必须为 JSON 格式。</td>
@@ -2185,7 +2185,7 @@ public virtual void onChannelQueryUserIsIn(std::string channelID, std::string ac
 <td>消息 ID</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -2421,6 +2421,6 @@ public virtual void onChannelQueryUserIsIn(std::string channelID, std::string ac
 
 
 
-## 错误代码和警告代码
+## 错误码和警告码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_signaling.md)。

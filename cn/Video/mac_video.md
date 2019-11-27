@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: macOS
-updatedAt: Fri Jul 19 2019 08:28:56 GMT+0800 (CST)
+updatedAt: Thu Nov 21 2019 10:07:36 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for macOS 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -90,7 +90,7 @@ updatedAt: Fri Jul 19 2019 08:28:56 GMT+0800 (CST)
    - `Foundation.framework`
    - `CoreAudio.framework`
    - `CoreMedia.framework`
-   - `AVFoudation.framework`
+   - `AVFoundation.framework`
    - `VideoToolbox.framework`
    - `AudioToolbox.framework`
    - `CFNetwork.framework`

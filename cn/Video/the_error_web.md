@@ -3,16 +3,16 @@
 title: 错误代码和警告代码
 description: 
 platform: Web
-updatedAt: Mon Nov 18 2019 06:17:04 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:11:57 GMT+0800 (CST)
 ---
 # 错误代码和警告代码
 Agora Web SDK 在调用 API 或运行时，可能会返回错误或警告代码:
 
--   **错误代码** 意味着 SDK 遭遇不可恢复的错误，需要应用程序干预，例如打开摄像头失败会返回错误，应用程序需要提示用户不能使用摄像头。
+-   **错误码** 意味着 SDK 遭遇不可恢复的错误，需要应用程序干预，例如打开摄像头失败会返回错误，应用程序需要提示用户不能使用摄像头。
 
 -   **警告代码** 意味着 SDK 遇到问题，但有可能恢复，警告代码仅起告知作用，一般情况下应用程序可以忽略警告代码。
 
-## 错误代码
+## 错误码
 
 <table>
 <colgroup>
@@ -21,7 +21,7 @@ Agora Web SDK 在调用 API 或运行时，可能会返回错误或警告代码:
 <col/>
 </colgroup>
 <tbody>
-<tr><td><strong>错误代码</strong></td>
+<tr><td><strong>错误码</strong></td>
 <td><strong>值</strong></td>
 <td><strong>描述</strong></td>
 </tr>

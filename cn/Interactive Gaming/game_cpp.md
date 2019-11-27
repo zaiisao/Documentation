@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Android
-updatedAt: Mon May 20 2019 08:23:12 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:14:28 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供游戏 SDK 的 **C++ 接口**，使应用程序实现音视频功能。
@@ -271,7 +271,7 @@ virtual int joinChannel(const char* token, const char* channelId, const char* in
 <tr><td>token</td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> 。</li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App 证书, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> 。</li>
 </ul>
 </td>
 </tr>
@@ -1878,7 +1878,7 @@ virtual int createDataStream(int* streamId, bool reliable, bool ordered) = 0;
 </tbody>
 </table>
 
-> [3] 返回的错误码是负数，对应错误代码和警告代码里的正整数。例如返回的错误码为 -2，则对应错误代码和警告代码里的 2: ERR_INVALID_ARGUMENT 。
+> [3] 返回的错误码是负数，对应错误码和警告码里的正整数。例如返回的错误码为 -2，则对应错误码和警告码里的 2: ERR_INVALID_ARGUMENT 。
 
 #### 发送数据流 (sendStreamMessage)
 
@@ -2323,7 +2323,7 @@ virtual void release(bool sync=false) = 0;
 <tr><td>返回值</td>
 <td><ul>
 <li>0: 方法调用成功</li>
-<li>&lt; 0: 错误代码</li>
+<li>&lt; 0: 错误码</li>
 </ul>
 </td>
 </tr>
@@ -3042,10 +3042,10 @@ virtual void onWarning(int warn, const char* msg);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td>warn</td>
-<td>警告代码</td>
+<td>警告码</td>
 </tr>
 <tr><td>msg</td>
-<td>警告描述，详见<a href="../../cn/Interactive%20Gaming/the_error_native.md"><span>错误代码和警告代码</span></a></td>
+<td>警告描述，详见<a href="../../cn/Interactive%20Gaming/the_error_native.md"><span>错误码和警告码</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -3068,10 +3068,10 @@ virtual void onError(int err, const char* msg);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td>err</td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 <tr><td>msg</td>
-<td>错误描述，详见<a href="../../cn/Interactive%20Gaming/the_error_native.md"><span>错误代码和警告代码</span></a></td>
+<td>错误描述，详见<a href="../../cn/Interactive%20Gaming/the_error_native.md"><span>错误码和警告码</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -4078,8 +4078,8 @@ virtual void onClientRoleChanged(CLIENT_ROLE_TYPE oldRole, CLIENT_ROLE_TYPE newR
 
 
 
-### 错误代码和警告代码 - Agora Native SDK
+### 错误码和警告码 - Agora Native SDK
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_native.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_native.md)。
 
 

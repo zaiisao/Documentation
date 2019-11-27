@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Tue Oct 29 2019 03:02:58 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:14:39 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现音视频通话。
@@ -262,5 +262,5 @@ client.leave(onSuccess, onFailure);
 使用微信小程序 SDK 开发过程中，你还可以参考如下文档：
 
 * [小程序 SDK 常见问题集](https://docs.agora.io/cn/faq/wechat)
-* [错误代码和警告代码](../../cn/Voice/the_error_wechat.md)
+* [错误码和警告码](../../cn/Voice/the_error_wechat.md)
 

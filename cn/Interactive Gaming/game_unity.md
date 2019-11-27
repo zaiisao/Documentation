@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Mon Nov 18 2019 06:41:25 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 09:39:04 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -699,7 +699,7 @@ public static string GetSdkVersion ();
 public static string GetErrorDescription (int code);
 ```
 
-SDK 运行时如果出错，该方法可以获取错误代码。
+SDK 运行时如果出错，该方法可以获取错误码。
 
 ### 伴奏
 
@@ -2541,7 +2541,7 @@ public delegate void SDKWarningHandler (int warn, string msg);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>warn</code></td>
-<td>警告代码</td>
+<td>警告码</td>
 </tr>
 <tr><td><code>msg</code></td>
 <td>警告消息</td>
@@ -2569,7 +2569,7 @@ public delegate void SDKErrorHandler (int error, string msg);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>err</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 <tr><td><code>msg</code></td>
 <td>错误消息</td>
@@ -2621,7 +2621,7 @@ public delegate void OnApiExecutedHandler (int err, string api, string result);
 <tbody>
 <tr>
 <td><code>err</code></td>
-<td>错误码。如果方法调用失败，会返回<a href="https://docs.agora.io/cn/Interactive%20Gaming/the_error_game?platform=All%20Platforms#errorcode">错误代码</a>；如果返回 0，则表示方法调用成功</td>
+<td>错误码。如果方法调用失败，会返回<a href="https://docs.agora.io/cn/Interactive%20Gaming/the_error_game?platform=All%20Platforms#errorcode">错误码</a>；如果返回 0，则表示方法调用成功</td>
 </tr>
 <tr>
 <td><code>api</code></td>
@@ -3275,8 +3275,8 @@ int ResumeAllEffects();
 
 
 
-## 错误代码和警告代码
+## 错误码和警告码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_game.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_game.md)。
 
 

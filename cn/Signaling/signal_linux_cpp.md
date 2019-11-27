@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Linux
-updatedAt: Mon Nov 18 2019 06:17:02 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:13:45 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.0 BETA
@@ -1444,7 +1444,7 @@ public virtual void onLogout(int ecode) {}
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1502,7 +1502,7 @@ public virtual void onLoginFailed(int ecode) {}
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1557,7 +1557,7 @@ public virtual void onChannelJoinFailed(char const * channelID, size_t channelID
 <td>频道名</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1942,7 +1942,7 @@ virtual void onInviteFailed(char const * channelID, size_t channelID_size,char c
 <td>废弃字段</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 <tr><td><code>extra</code></td>
 <td>可以是一个 JSON 字符串或将其设置为空</td>
@@ -2300,6 +2300,6 @@ public virtual void onUserAttrAllResult(char const * account, size_t account_siz
 
 
 
-## 错误代码和警告代码
+## 错误码和警告码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_signaling.md)。

@@ -3,7 +3,7 @@
 title: Demo 使用指南
 description: v1.1.1
 platform: Windows
-updatedAt: Tue Oct 29 2019 03:30:28 GMT+0800 (CST)
+updatedAt: Tue Nov 26 2019 07:03:27 GMT+0800 (CST)
 ---
 # Demo 使用指南
 本文指导开发者在将 RTSA 集成到项目中之前，编译并运行模拟数据 Demo 对进行初步了解。
@@ -44,7 +44,7 @@ updatedAt: Tue Oct 29 2019 03:30:28 GMT+0800 (CST)
 
 2. 在 bin\app_id_and_cert.h 文件中填写你的 App ID。
 
- >如果启用了 Agora License 机制，还需要填写 Certificate，用于绑定设备。详见  [Agora License 机制文档](../../cn/Agora%20Platform/license_mechanism_v3.md)。
+ >如果启用了 Agora License 机制，还需要填写 Certificate，用于绑定设备。详见  [Agora License 机制文档](https://docs-preview.agoralab.co/cn/Agora%20Platform/license_mechanism_v3?platform=All%20Platforms)。
 
 3. 将 SDK 包中的 include 文件夹和 libagora-rtc-sdk.lib 复制到 lib 文件夹下，libagora-rtc-sdk.dll 复制到目标运行目录下（如 build/bin/Debug）。
 
