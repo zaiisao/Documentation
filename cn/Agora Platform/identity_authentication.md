@@ -3,7 +3,7 @@
 title: 实名认证
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 07 2019 10:15:28 GMT+0800 (CST)
+updatedAt: Wed Nov 27 2019 07:56:18 GMT+0800 (CST)
 ---
 # 实名认证
 依据中国法律规定，你必须对账号所属的个人或者企业信息主体进行认证，否则声网有权停止提供相关服务。
