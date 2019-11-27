@@ -3,7 +3,7 @@
 title: Make Payments
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 06:19:49 GMT+0800 (CST)
+updatedAt: Wed Nov 27 2019 08:20:31 GMT+0800 (CST)
 ---
 # Make Payments
 This page shows how to make payments in Console.

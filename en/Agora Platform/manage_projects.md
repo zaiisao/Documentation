@@ -3,7 +3,7 @@
 title: Manage Projects
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 25 2019 06:57:49 GMT+0800 (CST)
+updatedAt: Wed Nov 27 2019 08:20:04 GMT+0800 (CST)
 ---
 # Manage Projects
 This page shows how to create and manage projects in Console.

@@ -3,9 +3,11 @@
 title: Console Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Oct 23 2019 03:24:14 GMT+0800 (CST)
+updatedAt: Wed Nov 27 2019 08:01:53 GMT+0800 (CST)
 ---
 # Console Overview
+<div class="alert note">Agora Dashboard is renamed as Agora Console.</div>
+
 Agora Console provides interactive interfaces where you can configure, pay for and monitor your Agora products. 
 
 This page introduces how to use Agora Console.
