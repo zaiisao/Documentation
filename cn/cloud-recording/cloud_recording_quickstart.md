@@ -3,7 +3,7 @@
 title: 云端录制快速开始 (Deprecated)
 description: Draft
 platform: Linux CPP
-updatedAt: Tue Oct 22 2019 01:21:31 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:12:44 GMT+0800 (CST)
 ---
 # 云端录制快速开始 (Deprecated)
 <div class="alert note">云端录制 SDK 停服计划（建议你及时升级到功能丰富、调用更方便的云端录制 RESTful API）：<li>从 2019 年 11 月 15 日起，云端录制 SDK 将停止维护。已经下载的 SDK 可继续使用。</li><li>从 2019 年 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法继续使用云端录制 SDK。</li></div>
@@ -107,7 +107,7 @@ virtual void Release(bool cancelCloudRecording = false) = 0;
 
 待录制完成并成功上传到第三方云存储后，你需要调用 [`Release`](../../cn/cloud-recording/cloud_recording_api.md) 方法销毁 `ICloudRecorder` 实例，释放 SDK 使用的资源，释放资源后将无法再次使用和回调 SDK 内的其它方法。如需再次使用云端录制，必须重新创建实例。
 
-在该方法中， `cancelCloudRecording` 参数默认为 `false`，正常情况下无需修改；如果录制出现错误需要重启录制服务，将该参数设为 `true`，具体情况请参考[错误代码](../../cn/cloud-recording/cloud_recording_api.md)。
+在该方法中， `cancelCloudRecording` 参数默认为 `false`，正常情况下无需修改；如果录制出现错误需要重启录制服务，将该参数设为 `true`，具体情况请参考[错误码](../../cn/cloud-recording/cloud_recording_api.md)。
 
 ## 上传和管理录制文件
 
@@ -138,12 +138,12 @@ M3U8 文件名由录制 ID 和频道名组成，如 `recording_id_channel_name.M
 
 以上回调中均包含 M3U8 文件名信息。
 
-## 错误代码
+## 错误码
 
 SDK 可能会触发以下异常或错误回调：
 
 - `OnRecorderFailure`：录制组件异常，通常无需对此进行任何操作。
 - `OnUploaderFailure`：上传组件异常，通常无需对此进行任何操作。
-- `OnRecordingFatalError`：发生了不可恢复的错误，可根据具体的错误代码判断录制后台的状态。
+- `OnRecordingFatalError`：发生了不可恢复的错误，可根据具体的错误码判断录制后台的状态。
 
-具体的错误描述及解决方法请参考[错误代码](../../cn/cloud-recording/cloud_recording_api.md)。
+具体的错误描述及解决方法请参考[错误码](../../cn/cloud-recording/cloud_recording_api.md)。

@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 18 2019 06:17:18 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:20 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -19,7 +19,7 @@ updatedAt: Mon Nov 18 2019 06:17:18 GMT+0800 (CST)
 
 -   SignalingToken 安全性高，更适用于对安全要求较高的生产环境
 
--   App 证书仅用于生成 SignalingToken，不可单独使用。一旦启用了 App Certificate，则必须使用 SignalingToken
+-   App 证书仅用于生成 SignalingToken，不可单独使用。一旦启用了 App 证书，则必须使用 SignalingToken
 
 
 <a name = "APPID"></a>
@@ -59,17 +59,17 @@ updatedAt: Mon Nov 18 2019 06:17:18 GMT+0800 (CST)
 
 1.  获取 App ID。详见上文的[获取 App ID](#GetAnAppID) 。
 
-2.  获取 App Certificate。在上文项目列表中查看 App ID 的地方，启用该项目的 App Certificate:
+2.  获取 App 证书。在上文项目列表中查看 App ID 的地方，启用该项目的 App 证书:
 
 	1. 点击激活项目右上方的 **编辑** 按钮。
 
      <img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" />
 
- 2. 点击 App 证书右方的 **启用** 按钮。仔细阅读关于 App 证书介绍后，根据屏幕提示，确认启用 App Certificate。
+ 2. 点击 App 证书右方的 **启用** 按钮。仔细阅读关于 App 证书介绍后，根据屏幕提示，确认启用 App 证书。
 
      <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" />
 
- 3. 点击 App 证书后面的“眼睛”图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击“眼睛”图标。
+ 3. 点击 App 证书后面的“眼睛”图标，显示完整的 App 证书。如需隐藏 App 证书，再次点击“眼睛”图标。
 
      <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 		 
@@ -81,7 +81,7 @@ updatedAt: Mon Nov 18 2019 06:17:18 GMT+0800 (CST)
     **输入**:
     ```
     appId             = "C5D15F8FD394285DA5227B533302A518" //App ID
-    appCertificate    = "fe1a0437bf217bdd34cd65053fb0fe1d" //App Certificate
+    appCertificate    = "fe1a0437bf217bdd34cd65053fb0fe1d" //App 证书
     expiredTime       = "1546271999" // 授权时间戳
     account           = "test@agora.io" //客户端定义的用户 ID
     ```

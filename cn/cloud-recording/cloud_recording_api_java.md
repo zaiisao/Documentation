@@ -3,7 +3,7 @@
 title: 云端录制 Java API (Deprecated)
 description: For java
 platform: Java
-updatedAt: Tue Oct 22 2019 01:20:39 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:12:51 GMT+0800 (CST)
 ---
 # 云端录制 Java API (Deprecated)
 <div class="alert note">云端录制 SDK 停服计划（建议你及时升级到功能丰富、调用更方便的云端录制 RESTful API）：<li>从 2019 年 11 月 15 日起，云端录制 SDK 将停止维护。已经下载的 SDK 可继续使用。</li><li>从 2019 年 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法继续使用云端录制 SDK。</li></div>
@@ -357,7 +357,7 @@ public void onRecorderFailure(
 | 参数           | 描述                            |
 | -------------- | ------------------------------- |
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
-| `code`         | 错误代码。                      |
+| `code`         | 错误码。                      |
 | `msg`          | 错误消息。                      |
 
 <a name = "onUploaderFailure"></a>
@@ -376,7 +376,7 @@ public void onUploaderFaliure(
 | 参数           | 描述                            |
 | -------------- | ------------------------------- |
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
-| `code`         | 错误代码。                      |
+| `code`         | 错误码。                      |
 | `msg`          | 错误消息。                      |
 
 <a name = "onRecordingFatalError"></a>
@@ -389,21 +389,21 @@ public void onRecordingFatalError(
     RecordingErrorCode code)
 ```
 
-该回调方法表示云端录制 SDK 发生了不可恢复的错误，可根据具体的错误代码判断录制后台的状态。
+该回调方法表示云端录制 SDK 发生了不可恢复的错误，可根据具体的错误码判断录制后台的状态。
 
 | 参数           | 描述                            |
 | -------------- | ------------------------------- |
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
-| `code`         | 错误代码。                      |
+| `code`         | 错误码。                      |
 
 
 <a name = "RecordingErrorCode"></a>
 
-## 错误代码
+## 错误码
 
-Agora Cloud Recording SDK 在调用 API 或运行时，可能会返回如下错误代码:
+Agora Cloud Recording SDK 在调用 API 或运行时，可能会返回如下错误码:
 
-| 错误代码                         | 描述                         | 解决方法                              |
+| 错误码                         | 描述                         | 解决方法                              |
 | -------------------------------- | ---------------------------- | ------------------------------------- |
 | `RecordingErrorOk`               | 没有错误。                   | 无。                                  |
 | `RecordingErrorConenctError`     | 连接至云端录制服务器失败。   | 检查网络和 appid 的权限。             |

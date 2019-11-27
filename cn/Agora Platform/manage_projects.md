@@ -3,7 +3,7 @@
 title: 创建和管理项目
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:02:05 GMT+0800 (CST)
+updatedAt: Tue Nov 19 2019 11:43:57 GMT+0800 (CST)
 ---
 # 创建和管理项目
 本页介绍如何在 Agora 控制台创建和管理项目。
@@ -12,50 +12,67 @@ updatedAt: Tue Oct 29 2019 03:02:05 GMT+0800 (CST)
 
 ## 创建新项目
 
+> 一个账户最多可创建 10 个项目，包括已删除的项目。如果需要创建更多项目，请通过工单系统申请。
+
 创建新项目的步骤如下：
 
-1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) **项目管理**按钮进入[**项目管理**页面](https://dashboard.agora.io/projects)。
+1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) **项目管理**按钮进入[**项目管理**](https://dashboard.agora.io/projects)页面。
+
 
 2. 在**项目管理**页面，点击**创建**按钮。
 
-![](https://web-cdn.agora.io/docs-files/1558344557924)
+![](https://web-cdn.agora.io/docs-files/1574156100068)
 
-3. 在弹出的对话框内输入**项目名称**，选择一种**鉴权机制**（App ID 或 App ID + App 证书 + Token）。
+3. 在弹出的对话框内输入**项目名称**，选择一种**鉴权机制**（仅 App ID 或 App ID + App 证书 + Token）。
 
-![](https://web-cdn.agora.io/docs-files/1563785012162)
+![](https://web-cdn.agora.io/docs-files/1574156194307)
 
-> Agora 提供两种鉴权机制：App ID 和 App ID + App 证书 + Token。鉴权机制的介绍详见[校验用户权限](../../cn/Agora%20Platform/token.md)。我们推荐使用安全性更高的 Token 机制：
+> Agora 提供两种鉴权机制：仅 App ID 和 App ID + App 证书 + Token。鉴权机制的介绍详见[校验用户权限](../../cn/Agora%20Platform/token.md)。我们推荐使用安全性更高的 Token 机制：
 >
 > - 在项目测试阶段，启用 App 证书后可以直接在控制台生成一个临时 token 进行测试。
 > - 项目准备正式上线时，你需要在 Server 端部署一个 Token Generator 来生成正式 token。
 
-4. 点击**提交**后，新建的项目就会显示在**项目管理**页中。
-
-在最上方的图片中，项目 A 是鉴权机制为 Token 的项目，App 证书已开启，点击 ![](https://web-cdn.agora.io/docs-files/1558344584474) 可以生成**临时 Token**，用于项目测试阶段。项目 B 是鉴权机制为 App ID 的项目，App 证书未启用。
-
-> 最多可创建 10 个项目，包括已删除的项目。如果需要创建更多项目，请通过工单系统申请。
-
-### 启用 App 证书
-
-如果你在创建项目时，选择 App ID 为鉴权机制，之后又想要更换为 App ID + App 证书 + Token，这时候你就需要先启用 App 证书，然后才能获取 token。
-
-启用 App 证书的步骤如下：
-
-1. 在**项目管理**页面，点击目标项目的![](https://web-cdn.agora.io/docs-files/1551255135678)**编辑**按钮，进入**编辑项目**页面。
-2. 找到 App 证书一栏，点击**启用**按钮，仔细阅读关于 App 证书的提示。声网会给你发一封邮件，按照邮件中的提示进行确认，即可启用 App 证书。
-
-![](https://web-cdn.agora.io/docs-files/1563785138740)
-
-3. 成功启用后， App 证书会显示在**编辑项目**页面。
+4. 点击**提交**后，新建的项目就会显示在**项目管理**页中。Agora 会给每个项目自动分配一个 App ID 作为项目唯一标识。
 
 ## 管理已创建的项目
 
-![](https://web-cdn.agora.io/docs-files/1563785157670)
+对于已创建的项目，你还可以在**项目管理页**进行以下操作：
 
-对于已创建的项目，你还可以在该页面进行以下操作：
+![](https://web-cdn.agora.io/docs-files/1574156398673)
 
-- 输入项目名称或 App ID，点击 ![](https://web-cdn.agora.io/docs-files/1551255111208) 搜索项目。
-- 点击 ![](https://web-cdn.agora.io/docs-files/1564049108155)，获取 App ID，编辑项目信息。
-- 点击 ![](https://web-cdn.agora.io/docs-files/1564048876293)，查看项目用量。
-- 点击 ![](https://web-cdn.agora.io/docs-files/1564048991389)，生成临时token。
-- 根据![](https://web-cdn.agora.io/docs-files/1551255188685)和![](https://web-cdn.agora.io/docs-files/1551258332165)判断项目状态为禁用还是开启。
+- 查看项目基本信息，包括：
+
+  - 项目阶段：测试中、已上线、未表明
+  - 项目名称
+  - 创建日期
+  - App ID
+
+- 点击 ![](https://web-cdn.agora.io/docs-files/1574156449172)，可在网页端即刻体验实时音视频通信。
+
+- 点击 ![](https://web-cdn.agora.io/docs-files/1564048991389)，可生成**临时 Token**，用于项目测试阶段。 
+
+- 查看项目用量。
+
+- 编辑项目信息，包括：
+
+![](https://web-cdn.agora.io/docs-files/1574156503105)
+
+### 启用 App 证书
+
+如果你在创建项目时，选择 App ID 为鉴权机制，之后又想要升级为 App ID + App 证书 + Token，这时候你需要先启用 App 证书，然后才能获取 token。
+
+启用 App 证书的步骤如下：
+
+1. 在**项目管理**页面，点击目标项目的**编辑**按钮，进入**编辑项目**页面。
+2. 找到 App 证书一栏，点击**启用**按钮。
+
+![](https://web-cdn.agora.io/docs-files/1574156526581)
+
+3. 仔细阅读关于 App 证书的提示后，点击“启用 App 证书”。
+
+![](https://web-cdn.agora.io/docs-files/1574159500507)
+
+4. 声网会给你发一封邮件，按照邮件中的提示进行确认，即可启用 App 证书。
+5. 成功启用后， App 证书会显示在**编辑项目**页面。
+
+

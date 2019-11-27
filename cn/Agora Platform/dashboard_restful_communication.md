@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 18 2019 06:41:15 GMT+0800 (CST)
+updatedAt: Tue Nov 26 2019 01:59:43 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
@@ -860,8 +860,8 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </table>
 
 
-## 7. 错误代码和警告代码
+## 7. 错误码和警告码
 
-详见 [错误代码和警告代码](../../cn/Agora%20Platform/the_error_native.md)。
+详见 [错误码和警告码](../../cn/Agora%20Platform/the_error_native.md)。
 
 

@@ -3,7 +3,7 @@
 title: 其它常见问题
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 18 2019 06:17:24 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:38 GMT+0800 (CST)
 ---
 # 其它常见问题
 ## Android 平台常见问题
@@ -121,7 +121,7 @@ Open Live 编译无法通过通常是由错误填写 App ID 或没有填写 App 
 
 ### 为什么在 Open Live 代码里填好 App ID 后，进不去频道，也看不到本地视频?
 
-请检查一下：在控制台中，是否启用了 App Certificate, 一旦启用 App Certificate, 则必须使用 Token 加入频道。
+请检查一下：在控制台中，是否启用了 App 证书, 一旦启用 App 证书, 则必须使用 Token 加入频道。
 
 关于 App ID 与 Token 的区别，详见 [校验用户权限](../../cn/voice/token.md)。
 

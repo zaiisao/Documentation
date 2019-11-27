@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 18 2019 06:17:20 GMT+0800 (CST)
+updatedAt: Tue Nov 19 2019 07:28:33 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -31,11 +31,11 @@ Agora 给应用程序开发人员分配 App ID，以识别项目和组织。在 
 
 不同的 App ID 在 Agora 实时网络中的通话是完全独立的。因此，不同 App ID 的项目无法相互通信。Agora 提供的频道信息、计费、管理服务也都是基于 App ID。如果组织中有多个完全分开的应用程序，例如由不同的团队构建，则应使用不同的 App ID。如果应用程序需要相互通信，则应使用同一个 App ID。
 
-### App Certificate
+### App 证书
 
 Agora 提供 App 证书用以生成 [动态密钥](#key)。
 
-你可以在 [控制台](https://console.agora.io) 获取  App Certificate，详细信息请参见 [获取 App Certificate](../../cn/Agora%20Platform/token.md)。
+你可以在 [控制台](https://console.agora.io) 获取  App 证书，详细信息请参见 [获取 App 证书](../../cn/Agora%20Platform/token.md)。
 
 ### <a name="key"></a>动态密钥
 

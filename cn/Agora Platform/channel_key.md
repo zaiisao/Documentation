@@ -3,7 +3,7 @@
 title: Channel Key 密钥说明
 description: Guide on how to use channel keys
 platform: All Platform
-updatedAt: Tue Oct 29 2019 03:44:08 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:22 GMT+0800 (CST)
 ---
 # Channel Key 密钥说明
 本文主要介绍在使用 Agora SDK 过程中使用 Channel Key 的方法。
@@ -56,7 +56,7 @@ updatedAt: Tue Oct 29 2019 03:44:08 GMT+0800 (CST)
 	![](https://web-cdn.agora.io/docs-files/1563522556558)
 
 
-### 步骤 2: 获取 App Certificate
+### 步骤 2: 获取 App 证书
 
 
 方法一：如果创建项目时，你直接勾选了 **APP ID + APP 证书+ Token（推荐）**。控制台会自动开启 **App 证书**。
@@ -104,7 +104,7 @@ updatedAt: Tue Oct 29 2019 03:44:08 GMT+0800 (CST)
     <td>appID</td>
   </tr>
   <tr>
-    <td>App Certificate</td>
+    <td>App 证书</td>
     <td>appCertificate</td>
     <td>appCertificate</td>
     <td>appCertificate</td>

@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 15 2019 04:15:38 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 03:51:02 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
@@ -12,7 +12,7 @@ updatedAt: Tue Oct 15 2019 04:15:38 GMT+0800 (CST)
 
 - [RTC Native SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)
 - [RTC Web SDK 使用云代理](../../cn/Agora%20Platform/cloud_proxy_web.md)
-- [录制 SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)
+- [On-premise Recording SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)
 
 ## Agora RTC SDK
 
@@ -35,6 +35,12 @@ ap2.agora.io
 ap3.agora.io
 ap4.agora.io
 ap5.agora.io
+ap.agoraio.cn
+vocs1.agora.io
+vocs2.agora.io
+vocs3.agora.io
+vocs4.agora.io
+vocs5.agora.io
 ```
 
 ### Web SDK
@@ -110,24 +116,9 @@ qos.agoralab.co
 .agora.io
 ```
 
-## Agora Signaling SDK
 
-防火墙端口：
 
-| 端口     | 白名单项目        |
-| -------- | ----------------- |
-| TCP 端口 | 1080；8001 - 8199；10000 - 10010；10100 - 10110 |
-| UDP 端口 | 8180 - 8199       |
-
-域名白名单：
-
-```
- .agora.io
- qoslbs.agoralab.co
- qos.agoralab.co
-```
-
-## Agora Recording SDK
+## Agora On-premise Recording SDK
 
 防火墙端口：
 
@@ -146,6 +137,12 @@ ap2.agora.io
 ap3.agora.io
 ap4.agora.io
 ap5.agora.io
+ap.agoraio.cn
+vocs1.agora.io
+vocs2.agora.io
+vocs3.agora.io
+vocs4.agora.io
+vocs5.agora.io
 ```
 
 **Note:**
@@ -169,6 +166,12 @@ ap5.agora.io
 .agora.io
 qoslbs.agoralab.co
 qos.agoralab.co
+ap.agoraio.cn
+vocs1.agora.io
+vocs2.agora.io
+vocs3.agora.io
+vocs4.agora.io
+vocs5.agora.io
 ```
 
 为获得优质的音视频通话体验，Agora 建议你使用 UDP 端口。与 TCP 相比，UDP 更注重通话的时效性，因此能在填补丢包的同时同时将通话延迟降到最低。

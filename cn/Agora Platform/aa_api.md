@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Mon Nov 18 2019 03:27:22 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:58:09 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
@@ -131,6 +131,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 | `appid`               | String  | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。 |
 | `call_id`             | String  | 通话的唯一标识。                                             |
 | `exclude_server_user` | Boolean | （可选）是否排除 Linux 用户，默认为 `true` 。                |
+| `exclude_metrics_info` | Boolean | （可选）是否排除具体指标数据，默认为 `false`，不排除具体指标数据。 如果设为 `true`，响应中将不会包含 `metrics` 结构体。  |
 
 #### HTTP 请求示例
 

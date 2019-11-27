@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 08:46:58 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:14:35 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -74,7 +74,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
   - `3`：medium
   - `4`：major
   - `5`：fatal。fatal 级别的错误很可能导致录制退出，如果收到该级别的消息请及时调用 [query](../../cn/cloud-recording/cloud_recording_api_rest.md) API 查询当前状态，并结合错误消息的内容进行处理。
-- `errorCode`：Number 类型，错误码。如果错误发生在录制模块，请参考[错误代码和警告代码](https://docs.agora.io/cn/Recording/the_error_native)；如果错误发生在上传模块，请参考[上传错误码](#uploaderr)；如果错误发生在云端录制平台模块，请参考[云端录制平台错误码](#clouderr)；如果错误码未列出，请联系 Agora 技术支持。
+- `errorCode`：Number 类型，错误码。如果错误发生在录制模块，请参考[错误码和警告码](https://docs.agora.io/cn/Recording/the_error_native)；如果错误发生在上传模块，请参考[上传错误码](#uploaderr)；如果错误发生在云端录制平台模块，请参考[云端录制平台错误码](#clouderr)；如果错误码未列出，请联系 Agora 技术支持。
 - `stat`：Number 类型，事件状态，0 表示正常，其他值表示异常。
 - `errorMsg`：String 类型，具体的错误信息。
 
@@ -86,7 +86,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 - `module`：Number 类型，发生警告的模块名。
   - `0`：录制模块
   - `1`：上传模块
-- `warnCode`：Number 类型，警告码。如果警告发生在录制模块，请参考[错误代码和警告代码](https://docs.agora.io/cn/Recording/the_error_native)；如果警告发生在上传模块，请参考[上传警告码](#uploadwarn)。
+- `warnCode`：Number 类型，警告码。如果警告发生在录制模块，请参考[错误码和警告码](https://docs.agora.io/cn/Recording/the_error_native)；如果警告发生在上传模块，请参考[上传警告码](#uploadwarn)。
 
 ### <a name="3"></a>3 cloud_recording_status_update
 
