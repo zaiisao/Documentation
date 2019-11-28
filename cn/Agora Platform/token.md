@@ -91,16 +91,16 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 为方便体验，Agora 支持在控制台的项目详情页，生成一个试用的临时 Token，用于加入频道。
 
-在项目详情处，点击**生成临时 Token**，输入频道名，你就会在 **Token** 页面获取一个临时 Token。
+1. 在项目详情处，点击 ![](https://web-cdn.agora.io/docs-files/1574923151660) 按钮。
 
-![](https://web-cdn.agora.io/docs-files/1562926292439)
+![](https://web-cdn.agora.io/docs-files/1574922827899)
 
-![](https://web-cdn.agora.io/docs-files/1562926303571)
+2. 进入 **Token** 页面，输入待加入的频道名，你就得到一个临时 Token。
+
+![](https://web-cdn.agora.io/docs-files/1574923022040)
 
 
-<div class="alert warning"> 点击<b>生成临时 Token</b> 前，请确保你已开启项目 App 证书。详见<a href="../../cn/Agora%20Platform/appcertificate.md">启用 App 证书</a>。</div>
-<div class="alert warning"> 临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。</div>
-<div class="alert warning">临时 Token 不适用于 Agora RTM SDK。</div>
+<div class="alert warning"> 注意：<li>生成临时 Token 前，请确保你已开启项目 App 证书。详见<a href="../../cn/Agora%20Platform/appcertificate.md">启用 App 证书</a>。</li><li>临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。</li> <li>临时 Token 不适用于 Agora RTM SDK。</li></div>
 
 ### 获取正式 Token
 
