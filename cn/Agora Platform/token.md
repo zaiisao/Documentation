@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:27:08 GMT+0800 (CST)
+updatedAt: Thu Nov 28 2019 06:56:22 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -67,6 +67,11 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 ### 启用 App 证书
 
+方法一：如果你在创建项目时，选择 “App ID + App 证书 + Token" 为鉴权机制，Agora 会默认为你启用 App 证书。
+![](https://web-cdn.agora.io/docs-files/1574924041570)
+
+方法二：如果你在创建项目时，选择 App ID 为鉴权机制，之后又想要升级为 App ID + App 证书 + Token，这时候你需要先启用 App 证书，然后才能获取 token。
+
 1. 在**项目管理**页面，点击目标项目的**编辑**按钮，进入**编辑项目**页面。
 
 ![](https://web-cdn.agora.io/docs-files/1574922261870)
@@ -97,8 +102,7 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 2. 进入 **Token** 页面，输入待加入的频道名，你就得到一个临时 Token。
 
-![](https://web-cdn.agora.io/docs-files/1574923022040)
-
+![](https://web-cdn.agora.io/docs-files/1574927836924)
 
 <div class="alert warning"> 注意：<li>生成临时 Token 前，请确保你已开启项目 App 证书。详见<a href="../../cn/Agora%20Platform/appcertificate.md">启用 App 证书</a>。</li><li>临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。</li> <li>临时 Token 不适用于 Agora RTM SDK。</li></div>
 
