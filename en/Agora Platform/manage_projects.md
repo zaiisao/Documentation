@@ -3,7 +3,7 @@
 title: Manage Projects
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 27 2019 08:20:04 GMT+0800 (CST)
+updatedAt: Thu Nov 28 2019 07:22:47 GMT+0800 (CST)
 ---
 # Manage Projects
 This page shows how to create and manage projects in Console.
@@ -71,10 +71,21 @@ If you use the App ID for authentication when creating the project and want to s
 Follow these steps to enable the App Certificate:
 
 1. Click the **edit** button of the targeted project.
-2. Click **Enable**. Read **About App Certificate**. We will send you an email. Follow the steps in the email to confirm about enabling the App Certificate.
+
+![](https://web-cdn.agora.io/docs-files/1574925402348)
+
+2. Click **Enable** in the "Basic Info" page. 
 
 ![](https://web-cdn.agora.io/docs-files/1574664820135)
 
-3. You can see the enabled App Certificate on the **Edit project** page.
+3. Read **About App Certificate**.
 
 ![](https://web-cdn.agora.io/docs-files/1574664881593)
+
+4. We will send you an email. Follow the steps in the email to confirm about enabling the App Certificate. 
+
+5. Go back to the **Edit project** page to check the enabled App Certificate.
+
+>Note: If you do not find the confirmation email in your inbox, check your spam or junk email folder.
+
+

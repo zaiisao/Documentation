@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 06:17:44 GMT+0800 (CST)
+updatedAt: Thu Nov 28 2019 07:24:44 GMT+0800 (CST)
 ---
 # Set up Authentication
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two authentication mechanisms:
@@ -65,6 +65,12 @@ The Token is a more secure and sophisticated authentication mechanism than the A
 
 ### Enable the App Certificate
 
+If you choose **APP ID + APP certificate + Token (recommended)** when you create a project in the Console,  the App Certificate is enabled by default.
+
+![](https://web-cdn.agora.io/docs-files/1563114012279)
+
+If you chooes **App ID** for authentication when creating the project and want to switch to the "App ID + App Certificate + Token" mechanism, you need to enable the App Certificate first. 
+
 Follow these steps to enable the App Certificate:
 
 1. Click the **edit** button of the targeted project.
@@ -90,16 +96,14 @@ Follow these steps to enable the App Certificate:
 
 When working on a test version of your application, you can generate a temporary token at the [Agora Console](https://dashboard.agora.io/) to join a channel. 
 
-On the **Project Details** page, click **Generate a Temp Token**, enter a channel name, and you will get a temporary token on the **Token** page. 
-
-![](https://web-cdn.agora.io/docs-files/1563113619615)
-
-![](https://web-cdn.agora.io/docs-files/1563113643411)
+1. On the **Project Management** page, click ![](https://web-cdn.agora.io/docs-files/1574923151660). 
 
 
-<div class="alert warning"> Ensure that you have enabled the App Certificate of the project before clicking <b>Generate a Temp Token</b>. See <a href="#appcertificate">Enable the App Certificate</a>.</div>
-<div class="alert warning"> A temp token applies to scenarios with low security requirements. For the production environment, we recommend using a token generated at your server..</div>
-<div class="alert warning"> A temp token does not apply to the Agora RTM SDK. </div>
+
+2. On the **Token** page, enter the name of the channel that you want to join. You will get a temporary token.
+
+
+<div class="alert warning">Note:  <li>Ensure that you have enabled the App Certificate of the project before generating a Temp Token. See <a href="#appcertificate">Enable the App Certificate</a>.</li><li>A temp token applies to scenarios with low security requirements. For the production environment, we recommend using a token generated at your server.</li><li>A temp token does not apply to the Agora RTM SDK. </li></div>
 
 ### Get a token
 
