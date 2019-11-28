@@ -86,26 +86,25 @@ Access the Agora services by using your unique App ID:
 
 ### Step 2: Get an App Certificate
 
-If you choose **APP ID + APP certificate + Token (recommended)**  when you create a project in the Console,  the App Certificate is enabled by default.
+Follow these steps to enable the App Certificate:
 
-![](https://web-cdn.agora.io/docs-files/1563114012279)
+1. Click the **edit** button of the targeted project.
 
-If you did not choose  **APP ID + APP certificate + Token (recommended)**, follow the steps to enable the certificate.
+![](https://web-cdn.agora.io/docs-files/1574925402348)
 
-1. Find your project on the **Project Management** page at the [Agora Console](https://dashboard.agora.io/) and click the **Edit** button.
+2. Click **Enable** in the "Basic Info" page. 
 
-	![](https://web-cdn.agora.io/docs-files/1563112238811)
-	
-2. On the **Edit Project** page, click **Enable** to enable the App Certificate and click **Save** to confirm your setting. 
+![](https://web-cdn.agora.io/docs-files/1574664820135)
 
-	![](https://web-cdn.agora.io/docs-files/1563112280018)
-	
-3. We send you a confirmation Email. Follow the instruction to enable the App Certificate. 
-4. Go back to the  **Project Management** page to check that the App Certificate is enabled.
+3. Read **About App Certificate**.
 
-	![](https://web-cdn.agora.io/docs-files/1563113154996)
+![](https://web-cdn.agora.io/docs-files/1574664881593)
 
-**Note**: If you do not find the confirmation email in your inbox, check your spam or junk email folder.
+4. We will send you an email. Follow the steps in the email to confirm about enabling the App Certificate. 
+
+5. Go back to the **Edit project** page to check the enabled App Certificate.
+
+>Note: If you do not find the confirmation email in your inbox, check your spam or junk email folder.
 
 ### Step 3: Integrate the Schema
 
