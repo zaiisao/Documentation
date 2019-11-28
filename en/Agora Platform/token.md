@@ -98,10 +98,11 @@ When working on a test version of your application, you can generate a temporary
 
 1. On the **Project Management** page, click ![](https://web-cdn.agora.io/docs-files/1574923151660). 
 
-
+![](https://web-cdn.agora.io/docs-files/1574927794840)
 
 2. On the **Token** page, enter the name of the channel that you want to join. You will get a temporary token.
 
+![](https://web-cdn.agora.io/docs-files/1574928048948)
 
 <div class="alert warning">Note:  <li>Ensure that you have enabled the App Certificate of the project before generating a Temp Token. See <a href="#appcertificate">Enable the App Certificate</a>.</li><li>A temp token applies to scenarios with low security requirements. For the production environment, we recommend using a token generated at your server.</li><li>A temp token does not apply to the Agora RTM SDK. </li></div>
 
