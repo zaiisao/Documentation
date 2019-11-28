@@ -48,21 +48,19 @@ You can skip to [Create an iOS project](#create) if you already have an App ID.
 	
 1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Real-time-Messaging/sign_in_and_sign_up.md).
 
-2. Click **Get Started** under **Projects**.
+2. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [**Project Management**](https://dashboard.agora.io/projects) page.
 
-	![](https://web-cdn.agora.io/docs-files/1563523371446)
+3. Click **Create**. 
 
-3. Input your project name in the pop-up window and click **Create**. Follow the on-screen instructions to get to know the basic steps to start a video call. Once the project is created, you can find it under **Projects**.
+![](https://web-cdn.agora.io/docs-files/1574924327108)
 
-	![](https://web-cdn.agora.io/docs-files/1563523478084)
+4.  Enter your project name and select your authentication mechanism ("App ID") in the dialog box.
+
+![](https://web-cdn.agora.io/docs-files/1574924446798)
 	
-4. Click the **Edit** button behind the new project, or the **Project Management** button ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+5. Click **Submit** and you can find the **App ID** of your newly created project.
 
- ![](https://web-cdn.agora.io/docs-files/1563523678240)
-
-5. On the **Project Management** panel, find the **App ID** of your project.
-
- ![](https://web-cdn.agora.io/docs-files/1563523737158)
+![](https://web-cdn.agora.io/docs-files/1574924570426)
 </details>
 	
 ### <a name="create"></a> Create an iOS project
