@@ -20,22 +20,21 @@ updatedAt: Tue Nov 26 2019 07:03:27 GMT+0800 (CST)
 * 模拟数据 Demo。
 
 ## 创建 Agora 账号并获取 App ID
-1. 进入 [控制台](https://console.agora.io/) ，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/RTSA/sign_in_and_sign_up.md)。
-2. 点击**项目列表**处的**新手指引**。
+1. 进入[控制台](https://console.agora.io/)，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/RTSA/sign_in_and_sign_up.md)。
 
-	![](https://web-cdn.agora.io/docs-files/1563521764570)
+2. 点击左侧导航栏的 ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标进入[项目管理](https://console.agora.io/projects)页面，点击**创建**按钮。
 
-3. 在弹出的窗口中输入你的第一个项目名称，然后点击**创建项目**。你可以参考屏幕提示，了解实现一个视频通话的基本步骤。
+![](https://web-cdn.agora.io/docs-files/1574156100068)
 
-	![](https://web-cdn.agora.io/docs-files/1563521821078)
+3. 在弹出的对话框内输入**项目名称**，选择 App ID 作为**鉴权机制**，再点击“提交”。
 
-4. 项目创建成功后，你会在**项目列表**下看到刚刚创建的项目。点击项目名后的**编辑**按钮，进入项目页。你也可以直接点击左边栏的**项目管理**图标，进入项目页面。
+![](https://web-cdn.agora.io/docs-files/1574921599254)
 
-	![](https://web-cdn.agora.io/docs-files/1563522909895)
+4. 项目创建成功后，你会在**项目列表**下看到刚刚创建的项目，并找到对应的 App ID。
 
-5. 在**项目管理**页，你可以查看你的 **App ID**。
+![](https://web-cdn.agora.io/docs-files/1574921811175)
 
-	![](https://web-cdn.agora.io/docs-files/1563522556558)
+
 
 
 ## 编译运行模拟数据 Demo
