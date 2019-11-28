@@ -3,7 +3,7 @@
 title: 创建和管理项目
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 28 2019 04:12:19 GMT+0800 (CST)
+updatedAt: Thu Nov 28 2019 06:27:32 GMT+0800 (CST)
 ---
 # 创建和管理项目
 本页介绍如何在 Agora 控制台创建和管理项目。
@@ -64,6 +64,9 @@ updatedAt: Thu Nov 28 2019 04:12:19 GMT+0800 (CST)
 启用 App 证书的步骤如下：
 
 1. 在**项目管理**页面，点击目标项目的**编辑**按钮，进入**编辑项目**页面。
+
+![](https://web-cdn.agora.io/docs-files/1574922261870)
+
 2. 找到 App 证书一栏，点击**启用**按钮。
 
 ![](https://web-cdn.agora.io/docs-files/1574156526581)
@@ -73,6 +76,8 @@ updatedAt: Thu Nov 28 2019 04:12:19 GMT+0800 (CST)
 ![](https://web-cdn.agora.io/docs-files/1574159500507)
 
 4. 声网会给你发一封邮件，按照邮件中的提示进行确认，即可启用 App 证书。
+
 5. 成功启用后， App 证书会显示在**编辑项目**页面。
 
+> 若收件箱中没有确认邮件，请至订阅邮件或垃圾邮件中查找。
 
