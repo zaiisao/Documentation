@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Mon Nov 25 2019 06:27:03 GMT+0800 (CST)
+updatedAt: Mon Dec 02 2019 02:33:01 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -15,24 +15,20 @@ You can use screen sharing in the following scenarios:
 - Video conference: the speaker can share an image of a local file, web page, or presentation with other users in the channel.
 - Online class: the teacher can share slides or notes with students.
 
+Ensure that you understand how to [start a call](../../en/Video/start_call_web.md) or [start a live broadcast](../../en/Video/start_live_web.md).
+
 ## Working principles
 
-Screen sharing on the web client is enabled by creating a screen-sharing stream.
+Screen sharing on the web client is enabled by creating a screen-sharing stream. To enable screen sharing, you need to set relevant attributes when creating the stream. The web browser asks you to select which screens to share. The attribute settings are different in different browsers.
 
 - If you publish the screen-sharing stream only, set `video` as `false`, and `screen` as `true` when creating a stream.
 - If you publish both the local video stream and your screen-sharing stream, you need to create two client objects:
   - A client object for sending the local stream: Set `video` as `true` and `screen` as `false`.
   - A client object for sending the screen-sharing stream: Set `video` as false and `screen` as true.
 
-## Implementation
+## <a name="chrome"></a>Screen sharing on Google Chrome
 
-Ensure that you understand how to [start a call](../../en/Video/start_call_web.md) or [start a live broadcast](../../en/Video/start_live_web.md).
-
-To enable screen sharing, you need to set relevant attributes when creating the video stream. The web browser asks you to select which screens to share. The attribute settings are different in different browsers.
-
-### <a name="chrome"></a>Screen sharing on Google Chrome
-
-#### Screen sharing without the Google Chrome extension
+### Screen sharing without the Google Chrome extension
 
 To share the screen on Chrome, simply set `video` as `false`, and `screen` as `true` when creating a stream.
 
@@ -52,26 +48,45 @@ if(parseInt(tem[2]) >= 72  && navigator.mediaDevices.getDisplayMedia ) {
 }
 ```
 
-#### <a name="ext"></a>Screen sharing with the Google Chrome extension
+### <a name="ext"></a>Screen sharing with the Google Chrome extension
 
 1. Add the [Google Chrome Extension for Screen Sharing](../../en/Video/chrome_screensharing_plugin.md) provided by Agora.
 
 2. Set the `extensionId` attribute when you create a stream.
-  ```javascript
+
+   ```javascript
+   screenStream = AgoraRTC.createStream({
+   streamID: uid,
+   audio: false,
+   video: false,
+   screen: true,
+   //chrome extension ID
+   extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'
+   });
+   ```
+
+### <a name = "screenAudio"></a>Share audio
+
+As of v3.0.0, the Agora Web SDK supports sharing the local audio playback when sharing a screen on Windows Chrome 74 or later.  To share the audio, set the `screen` and  `screenAudio` attributes as `true`  and the  `audio` attribute as `false` when creating a screen-sharing stream.
+
+>  If you set both `screenAudio` and `audio`  as `true`, the stream contains the local audio playback only.
+
+```javascript
 screenStream = AgoraRTC.createStream({
   streamID: uid,
   audio: false,
   video: false,
   screen: true,
-  //chrome extension ID
-  extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'
+  screenAudio: true
 });
-  ```
+```
 
-> - Do not set the `video` and `screen` attributes as `true` at the same time.
-> - Agora recommends setting the `audio` attribute as `false` to prevent echos during the call.
+<div class="alert note">Note:<li>For the audio sharing to take effect, the user must check <b>Share audio</b> on the pop-up window when sharing a screen.</li><li>Audio sharing is disabled when the user shares a single application window.</li></div>
 
-### <a name = "electron"></a>Screen sharing on Electron
+![](https://web-cdn.agora.io/docs-files/1574232834184)
+
+
+## <a name = "electron"></a>Screen sharing on Electron
 
 To share the screen on Electron, you need to draw the UI for your users to select which screen or window to share. For quick integration, Agora provides a default UI.
 
@@ -139,7 +154,7 @@ To customize the UI, do the following:
 > - The `getScreenSources` method is a wrapper of `desktopCapturer.getSources` provided by Electron. See [desktopCapturer](https://electronjs.org/docs/api/desktop-capturer).
 > - Only Electron requires the `sourceId` parameter.
 
-### <a name = "ff"></a>Screen sharing on Firefox
+## <a name = "ff"></a>Screen sharing on Firefox
 
 Set the `mediaSource` attribute to specify the screen-sharing mode:
 
@@ -157,11 +172,9 @@ screenStream = AgoraRTC.createStream({
 });
 ```
 
-> - Do not set the `video` and `screen` attributes as `true` at the same time.
-> - Agora recommends that you set the `audio` attribute as `false` to avoid echo during the call.
-> - Firefox on Windows does not support the application mode.
+> Firefox on Windows does not support the application mode.
 
-### <a name = "both"></a>Enable both screen sharing and video
+## <a name = "both"></a>Enable both screen sharing and video
 
 One client only sends one stream. If you want to enable both screen sharing and video on one host, you need to create two clients: 
 
@@ -220,7 +233,7 @@ screenClient.on('stream-added', function(evt) {
 
 ### Sample code
 
-The following sample code implements screen sharing and publishing the local video stream. Meanwhile, we provide an open-source GitHub [demo project](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Web-Webpack). You can [try it online](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web) and refer to the code in  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) and [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/index.js).
+The following sample code implements screen sharing and publishing the local video stream. Meanwhile, we provide an open-source GitHub [sample project](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Web-Webpack). You can [try it online](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web) and refer to the code in  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) and [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/index.js).
 
 <div class="alert note">The following code uses <code>isFirefox</code> and <code>isCompatibleChrome</code> to determine the browser type, and you need to define the functions. See the code in <a href="https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/common.js#L28"><code>common.js</code></a> for an example.</div>
 
@@ -333,7 +346,8 @@ videoClient.init(appID, function() {
 
 ## Considerations
 
-- Do not set the uid of the screen-sharing stream to a fixed value. Streams with the same uid can interfere with each other.
-- **Do not subscribe to a locally published screen-sharing stream**, else additional usage charges incur.
-- Ensure that `video`/`audio` is set as `false` when creating the screen-sharing stream.
+- Set the `video` attribute as `false` when creating the screen-sharing stream.
+- If you need to create multiple streams, we recommend setting the `audio` attribute as `true` for only one local stream.
+- Do not set the UID of the screen-sharing stream to a fixed value. Streams with the same UID can interfere with each other.
+- **Do not subscribe to a locally published screen-sharing stream**, else additional charges incur.
 - Sharing the window of a QQ chat on Windows causes a black screen.

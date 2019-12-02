@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux Java
-updatedAt: Thu Nov 21 2019 08:41:04 GMT+0800 (CST)
+updatedAt: Fri Nov 29 2019 11:07:15 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -11,6 +11,21 @@ updatedAt: Thu Nov 21 2019 08:41:04 GMT+0800 (CST)
 Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-time Messaging (RTM) SDK provides a more streamlined and stable messaging mechanism for you to quickly implement real-time messaging under various scenarios.
 
 > For more information about the features and applications of the Agora RTM SDK, see [Product Overview](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms).
+
+## v1.2.1
+
+v1.2.1 was released on November 20, 2019. 
+
+### New Feature
+
+**Compatible with the endCall method of the Agora Signaling SDK** 
+
+If you use the `sendMessageToPeer` method to send off a <i>text</i> message that starts off with AGORA\_RTM\_ENDCALL\_PREFIX\_\<channelId\>\_\<your additional information\>, then this method is compatible with the endCall method of the legacy Agora Signaling SDK. Replace \<channelId\> with the channel ID from which you want to leave (end call), and replace \<your additional information\> with any additional information. Note that you must not put any "_" (underscore) in your additional information but you can set \<your additional information\> as empty "".
+
+### Issues Fixed
+
+- The SDK fails to reconnect to the Agora RTM system if the user disables VPN. 
+- If a channel member reconnects to the Agora RTM server after being interrupted, chances are the rest members of the channel can receive `onMemberJoined` twice. 
 
 ## v1.2.0 
 

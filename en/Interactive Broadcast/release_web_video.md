@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Sep 12 2019 09:52:19 GMT+0800 (CST)
+updatedAt: Mon Dec 02 2019 02:43:25 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -89,6 +89,88 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+##  v3.0.0
+
+v3.0.0 was released on December 2, 2019.
+
+This release optimizes the SDK's performance in terms of transmission quality and interoperability, significantly reducing the time to render the first remote video frame, and improving the video experience under poor downlink network conditions.
+
+**New features**
+
+
+#### Channel media stream relay
+
+Adds the following methods for relaying the media stream of a host from a source channel to a destination channel. This feature applies to scenarios where hosts from different live-broadcast channels interact with each other.
+
+- `startChannelMediaRelay`
+- `updateChannelMediaRelay`
+- `stopChannelMediaRelay`
+
+During a media stream relay, the SDK reports the states and events of the relay with the `Client.on("channel-media-relay-state")` and `Client.on("channel-media-relay-event")` callbacks.
+
+For more information on the implementation, API call sequence, sample code, and considerations, see [Co-host across Channels](https://docs.agora.io/en/Interactive%20Broadcast/media_relay_android?platform=Web).
+
+#### Audio sharing
+
+Adds the `screenAudio` property to `StreamSpec` for sharing the local audio playback when sharing a screen. See [Share audio](https://docs.agora.io/en/Video/screensharing_web?platform=Web#a-name--screenaudioashare-audio) for details.
+
+#### Image enhancement
+
+Adds the `setBeautyEffectOptions `method for setting image contrast, brightness, sharpness, and red saturation. See [Image enhancement](https://docs.agora.io/en/Interactive%20Broadcast/image_enhancement_web?platform=Web) for details.
+
+#### Adding watermark images to a live stream
+
+Adds the `images` property to `LiveTranscoding` for inserting online PNG images as watermarks to a live streaming.
+
+#### Encryption/decryption failure notification
+
+Adds the `Client.on("crypt-error")` callback for notifying the app that an encryption/decryption failure occurs when the local users is publishing or subscribing to a stream.
+
+**Improvements**
+
+#### Reporting the state of a remote video stream
+
+Adds the `Client.on("enable-local-video")` and `Client.on("disable-local-video") `callbacks for notifying the app that a remote user on the Native SDK calls `enableLocalVideo` to enable or disable video capture.
+
+#### Reporting the reason why a remote user goes offline
+
+Adds `reason` to the `Client.on("peer-leave")` callback for reporting the reason why the remote user goes offline.
+
+**Fixed issues**
+
+- `Client.join` does not report the error of an incorrect App ID in its onFailure callback function.
+
+- Occasionally, the SDK does not automatically reconnect after being disconnected from the servers for pushing and pulling streams.
+  For answers to questions arising from common disconnection issues, click the following FAQ links:
+  - [When pushing streams to the CDN, what should I do when a disconnection happens?](https://docs.agora.io/en/faq/live_streaming_disconnection_web)
+  - [When injecting online streams to the CDN, what should I do when a disconnection happens?](https://docs.agora.io/en/faq/injecting_stream_disconnection_web)
+- Occasionally, the error message `"Cannot read property 'getLastMsgTime' of null"` appears.
+- The console reports an error when the local user enables or disables the audio or video track of a remote stream.
+
+**API changes**
+
+#### Added
+
+- [`Client.startChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#startchannelmediarelay)
+
+- [`Client.updateChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#updatechannelmediarelay)
+
+- [`Client.stopChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#stopchannelmediarelay)
+
+- [`Stream.setBeautyEffectOptions`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setbeautyeffectoptions)
+
+- Adds the following events in [`Client.on`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)
+  - `"enable-local-video"`
+  - `"disable-local-video"`
+  - `"channel-media-relay-event"`
+  - `"channel-media-relay-state"`
+  - `"crypt-error"`
+
+#### Updated
+
+Adds the [`screenAudio`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#screenaudio) property in[`AgoraRTC.createStream`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream).
+
 
 ## v2.9.0
 v2.9.0 is released on September 5, 2019.

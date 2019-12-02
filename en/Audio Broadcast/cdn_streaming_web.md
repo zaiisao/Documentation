@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Thu Nov 21 2019 10:20:45 GMT+0800 (CST)
+updatedAt: Mon Dec 02 2019 02:34:17 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -37,7 +37,7 @@ Before proceeding, ensure that you implement a basic live broadcast in your proj
 Refer to the following steps to push streams to the CDN:
 
 <a name="single"></a>
-1. The host in a channel calls the `Client.setLiveTranscoding` method to set the transcoding parameters of the media streams (`LiveTranscoding`), such as the resolution, bitrate and frame rate. If you need a transcoded picture, set the picture-in-picture layout for each user in the `TranscodingUser` class, as described in [Sample Code](#sample).
+1. The host in a channel calls the `Client.setLiveTranscoding` method to set the transcoding parameters of the media streams (`LiveTranscoding`), such as the resolution, bitrate, frame rate, background color, and watermark position. If you need a transcoded picture, set the picture-in-picture layout for each user in the `TranscodingUser` class, as described in [Sample Code](#sample).
 
    > The `Client.on("liveTranscodingUpdated")` callback occurs when the `LiveTranscoding` class updates and reports the updated information to the local host.
 
@@ -75,6 +75,14 @@ var LiveTranscoding = {
             userCount: 1,
             userConfigExtraInfo: {},
             backgroundColor: 0x000000,
+		    // Adds a PNG watermark image to the video. You can add more than one watermark image at the same time.
+            images: [{
+                    url: "http://www.com/watermark.png",
+                    x: 0,
+                    y: 0,
+                    width: 160,
+                    height: 160,
+                }],
             // Sets the output layout for each user.
             transcodingUsers: [{
                     x: 0,

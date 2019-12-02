@@ -97,6 +97,12 @@ Add the following permissions in the **/app/src/main/AndroidManifest.xml** file 
 </manifest>
 ```
 
+For devices running Android 10.0 or later, you also need to add the following permission:
+
+```java
+   <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+```
+
 ### Prevent code obfuscation
 
 Add the following line in the **app/proguard-rules.pro** file to prevent code obfuscation:
@@ -255,7 +261,8 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
  
     // If all the permissions are granted, initialize the RtcEngine object and join a channel.
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
+            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }
