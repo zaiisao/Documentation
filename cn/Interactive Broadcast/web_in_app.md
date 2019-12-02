@@ -3,7 +3,7 @@
 title: H5 实时直播
 description: 
 platform: Web
-updatedAt: Tue Nov 19 2019 06:21:37 GMT+0800 (CST)
+updatedAt: Mon Dec 02 2019 02:58:38 GMT+0800 (CST)
 ---
 # H5 实时直播
 ## 功能简介
@@ -55,7 +55,6 @@ Android 平台支持自定义 WebView，Android 微信使用的是自研的 WebV
 
 使用 H5 实时直播组件观看视频对发送端有以下要求：
 
-- 如果发送端也使用 Agora Web SDK，请确保 `createClient` 中的 `codec` 设置为 `"h264"`。
 - 发送的视频分辨率尽量不要超过 480P。
 
 ### 工作原理
@@ -79,13 +78,13 @@ Agora Web SDK 是基于 WebRTC 实现音视频通信的，因此依赖于浏览�
 
 ### 下载并集成 SDK
 
-下载[包含 H5 实时直播组件的 Web SDK](https://download.agora.io/sdk/release/rts-v2.8.0.600.zip)。集成方式与原有的 Agora Web SDK 相同，请参考[实现互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web)。
+1. 将最新版 Agora Web SDK 集成到你的项目中，详见[实现互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web)。
+2. 下载 [H5 实时直播组件](https://download.agora.io/sdk/release/rts-v3.0.0.zip)。
 
-<div class="alert info">我们在 SDK 包中提供一个实现了 H5 实时直播的示例项目，你可以通过本地 Web 服务器运行 <code>index.html</code> 文件快速体验，具体方法可以参考<a href="https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web#%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84-app">运行你的 app</a>。注意不要直接打开 <code>index.html</code> 文件，因为解码器需要通过网络动态加载。</div>
+<div class="alert info">我们在 H5 组件包中提供一个实现了 H5 实时直播的示例项目，你可以通过本地 Web 服务器运行 <code>index.html</code> 文件快速体验，具体方法可以参考<a href="https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web#%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84-app">运行你的 app</a>。注意不要直接打开 <code>index.html</code> 文件，因为解码器需要通过网络动态加载。</div>
 
- SDK 包中还包含以下文件：
+ SDK 包中除了最新版本的 `AgoraRTC.js` 以外，还包含以下文件：
 
-- `AgoraRTC.js`： Agora Web SDK 的 JS 文件。
 - `AgoraRTS.js`： H5 实时直播的 JS 文件，这是 Agora Web SDK 的一个组件，依赖 `AgoraRTC.js` 运行。
 - `AgoraRTS.wasm`：H5 实时直播使用的解码库文件，二进制编码。
 - `AgoraRTS.asm`：H5 实时直播使用的解码库文件，JavaScript 编码。
@@ -116,12 +115,12 @@ AgoraRTS.checkSystemRequirements()
 <div class="alert info">我们建议在页面加载后立即调用 <code>AgoraRTS.init</code> 方法，调用后 SDK 会立刻开始预加载解码器和解码线程，可以缩短首帧出图时间。</div>
 
 ```javascript
-var client = AgoraRTC.createClient({ mode: "live", codec: "h264"});
+var client = AgoraRTC.createClient({ mode: "live", codec: "vp8"});
 AgoraRTS.init(AgoraRTC, {
   /**
-   * 设置 SDK 文件夹中的解码库文件的线上访问地址
-   * SDK 会根据这里填写的路径来动态请求相应的解码库文件
-   * **建议** 在服务端配置好解码库文件的缓存策略（因为文件较大）
+   * 设置 SDK 文件夹中的解码库文件的线上访问地址。
+   * SDK 会根据这里填写的路径来动态请求相应的解码库文件。
+   * **建议** 在服务端配置好解码库文件的缓存策略（因为文件较大）。
    */
   wasmDecoderPath: "./xxx/AgoraRTS.wasm",
   asmDecoderPath: "./xxx/AgoraRTS.asm",
@@ -129,8 +128,7 @@ AgoraRTS.init(AgoraRTC, {
 AgoraRTS.proxy(client);
 ```
 
-> - 请确保 `createClient` 中 `mode` 设为 `"live"`， `codec` 设为 `"h264"`。
-> - 请确保在创建 Client 之后立即引入 H5 实时直播组件。
+<div class="alert note">请确保在创建 Client 之后立即引入 H5 实时直播组件。</div>
 
 引入组件之后，可以按照原来的方法初始化 Client 并加入频道。需要注意的是，在和订阅流相关的事件中，SDK 返回的音视频流都是 rtsStream 对象，例如：
 

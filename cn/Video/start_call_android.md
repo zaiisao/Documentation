@@ -99,6 +99,12 @@ dependencies {
 </manifest>
 ```
 
+如果你使用的是 Android 10.0 及以上设备，还需要添加 `READ_PRIVILEGED_PHONE_STATE` 权限：
+
+```java
+   <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+```
+
 ### 防止代码混淆
 
 在 **app/proguard-rules.pro** 文件中添加如下行，防止代码混淆：

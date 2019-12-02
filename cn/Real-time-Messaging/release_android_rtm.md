@@ -3,12 +3,30 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Nov 25 2019 10:12:54 GMT+0800 (CST)
+updatedAt: Fri Nov 29 2019 11:08:05 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md) 了解更多详情。
+
+
+## 1.2.1 版
+
+该版本于 2019 年 11 月29 日发布。
+
+### 新增功能
+
+**支持与老信令 SDK 的 endCall 方法兼容** 
+
+你可以调用 `sendMessageToPeer` 方法在发送<i>文本</i>消息时将消息头设为 AGORA_RTM\_ENDCALL\_PREFIX\_\<channelId\>\_\<your additional information\> 格式即可。请以 endCall 对应频道的 ID 替换 \<channelId\>， \<your additional information\> 为附加文本信息。请注意：附加文本信息中不可使用下划线 "_" ，附加文本信息可以设为空字符串 "" 。
+
+### 问题修复
+
+- 修复了一个用户使用 VPN 登陆 RTM，关闭 VPN 后 RTM 重连失败的问题。
+- 修复了一个频道中用户断线重连，频道中其它用户有概率收到两次 `onMemberJoin` 回调的问题。
+
+
 
 
 ## 1.2.0 版
@@ -208,7 +226,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 ###  功能改进
 
-针对以下不同错误情况细化了错误码
+针对以下不同错误情况细化了错误代码
 
 - Agora RTM 服务未初始化
 - 调用频率超过上限

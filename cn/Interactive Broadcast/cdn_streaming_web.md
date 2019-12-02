@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Thu Nov 21 2019 10:20:18 GMT+0800 (CST)
+updatedAt: Mon Dec 02 2019 02:34:12 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -34,7 +34,7 @@ updatedAt: Thu Nov 21 2019 10:20:18 GMT+0800 (CST)
 参考如下步骤，在你的项目中实现推流到 CDN：
 
 <a name="single"></a>
-1. 调用 `Stream.init` 成功后，频道内主播可以调用 `Client.setLiveTranscoding` 方法设置音视频流的直播参数 （`LiveTranscoding`），如分辨率、码率和帧率。如果你需要转码合图，请在 `TranscodingUser` 类中设置每个用户的视频参数，详见[示例代码](#trans)。
+1. 调用 `Stream.init` 成功后，频道内主播可以调用 `Client.setLiveTranscoding` 方法设置音视频流的直播参数 （`LiveTranscoding`），如分辨率、码率、帧率、背景色和水印位置。如果你需要转码合图，请在 `TranscodingUser` 类中设置每个用户的视频参数，详见[示例代码](#trans)。
 
    > 如果直播参数（`LiveTranscoding`）有更新，`Client.on("liveTranscodingUpdated")` 回调会被触发并向主播报告更新信息。
 
@@ -69,6 +69,14 @@ var LiveTranscoding = {
             userCount: 1,
             userConfigExtraInfo: {},
             backgroundColor: 0x000000,
+            // 设置水印图片（仅支持在线 PNG 文件），可添加多个水印。
+            images: [{
+                    url: "http://www.com/watermark.png",
+                    x: 0,
+                    y: 0,
+                    width: 160,
+                    height: 160,
+                }],
             // 分配用户视窗的合图布局。
             transcodingUsers: [{
                     x: 0,
@@ -86,7 +94,6 @@ client.setLiveTranscoding(LiveTranscoding);
   
 // 添加一个推流地址。transcodingEnabled 设置为 true，表示开启转码。如开启，则必须通过 setLiveTranscoding 接口配置 LiveTranscoding 类。单主播模式下，我们不建议使用转码。
 client.startLiveStreaming("your RTMP URL", true)
- 
  
 // 删除一个推流地址。
 client.stopLiveStreaming("your RTMP URL")

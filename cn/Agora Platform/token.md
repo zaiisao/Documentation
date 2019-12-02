@@ -102,7 +102,7 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 2. 进入 **Token** 页面，输入待加入的频道名，你就得到一个临时 Token。
 
-![](https://web-cdn.agora.io/docs-files/1574927836924)
+![](https://web-cdn.agora.io/docs-files/1574928082984)
 
 <div class="alert warning"> 注意：<li>生成临时 Token 前，请确保你已开启项目 App 证书。详见<a href="../../cn/Agora%20Platform/appcertificate.md">启用 App 证书</a>。</li><li>临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。</li> <li>临时 Token 不适用于 Agora RTM SDK。</li></div>
 

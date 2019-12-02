@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Nov 28 2019 04:03:10 GMT+0800 (CST)
+updatedAt: Mon Dec 02 2019 02:43:48 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -90,7 +90,97 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
 
+## 3.0.0 版
+
+该版本于 2019 年 12 月 2 日发布。
+
+Agora 在该版本对 SDK 的传输质量和互通体验进行了优化，在首帧出图时间和下行弱网对抗上有较大提升。
+
+**新增特性**
+
+#### 跨频道媒体流转发
+
+跨频道媒体流转发，指将主播的媒体流转发至其他直播频道，实现主播与其他频道的主播实时互动的场景。该版本新增如下方法，通过将源频道中的媒体流转发至目标频道，实现跨直播间连麦功能：
+
+- `startChannelMediaRelay`
+- `updateChannelMediaRelay`
+- `stopChannelMediaRelay`
+
+在跨频道媒体流转发过程中，SDK 会通过 `Client.on("channel-media-relay-state")` 和 `Client.on("channel-media-relay-event")` 回调报告媒体流转发的状态和事件。
+
+该功能的实现方法详见[跨直播间连麦](https://docs.agora.io/cn/Interactive%20Broadcast/media_relay_web)。
+
+#### 屏幕共享分享背景音
+
+在 `StreamSpec` 接口中新增 `screenAudio` 属性，支持屏幕共享的同时分享本地播放的背景音，详见[分享音频](../../cn/Video/screensharing_web.md)。
+
+#### 美颜
+
+新增方法 `setBeautyEffectOptions`，支持美白、磨皮、红润肤色等美颜效果。详见[美颜](https://docs.agora.io/cn/Interactive%20Broadcast/image_enhancement_web?platform=Web)。
+
+#### 推流水印
+
+`LiveTranscoding` 接口中新增 `images` 属性，支持将在线 PNG 图片作为水印添加到正在进行的推流直播中。
+
+#### 加密/解密失败通知
+
+新增 `Client.on("crypt-error")` 回调，在发布或订阅流时出现加解密错误时可以收到通知。
+
+
+**改进**
+
+#### 远端视频状态
+
+新增 `Client.on("enable-local-video")` 和 `Client.on("disable-local-video")` 回调，当远端 Native SDK 用户通过 `enableLocalVideo` 方法打开或关闭自己的视频采集时，Web 端可以收到通知。
+
+#### 离线原因
+
+在 `Client.on("peer-leave")` 回调中增加 `reason` 参数，当远端用户掉线时可以通过该参数值了解具体原因。
+
+
+**问题修复**
+
+该版本修复以下问题：
+
+- App ID 错误时，`Client.join` 没有错误回调。
+
+- 某些场景下，SDK 和直播推流/拉流服务器连接断开后，没有自动重连。
+
+  在使用[推流到 CDN](https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_web?platform=Web) 和[输入在线媒体流](https://docs.agora.io/cn/Interactive%20Broadcast/inject_stream_web?platform=Web)功能时，SDK 会连接到专门用于推流/拉流的服务器，关于服务器连接断开的处理，请参考以下 FAQ：
+
+  - [在推流到 CDN 过程中，连接断开后如何处理？](../../cn/faq/live_streaming_disconnection_web.md)
+  - [在输入在线媒体流过程中，连接断开后如何处理？](../../cn/faq/injecting_stream_disconnection_web.md)
+
+- 偶现的 `"Cannot read property 'getLastMsgTime' of null"` 报错。
+
+- 启用或禁用远端流的音视频轨道时控制台报错。
+
+**API 变更**
+
+#### 新增
+
+- [`Client.startChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#startchannelmediarelay)
+
+- [`Client.updateChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#updatechannelmediarelay)
+
+- [`Client.stopChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#stopchannelmediarelay)
+
+- [`Stream.setBeautyEffectOptions`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#setbeautyeffectoptions)
+
+- [`Client.on`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) 新增以下事件
+
+  - `"enable-local-video"`
+  - `"disable-local-video"`
+  - `"channel-media-relay-event"`
+  - `"channel-media-relay-state"`
+  - `"crypt-error"`
+
+#### 修改
+
+[`AgoraRTC.createStream`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) 增加 [`screenAudio`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#screenaudio) 属性。
+
 ## 2.9.0 版
+
 该版本于 2019 年 9 月 5 日发布。
 
 **升级必看**
@@ -141,11 +231,13 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - `AgoraRTC.createStream` 方法新增 `facingMode` 参数
 
 ## 2.8.0 版
+
 该版本于 2019 年 7 月 8 日发布。
 
 2.8.0 版本主要优化了对 String 类型的用户名的支持。
 
 一个频道内的所有用户必须使用同样类型的用户名，即必须都为整数或都为字符串。使用字符串类型的用户名与 Agora Native SDK 互通时，请确保 Native SDK 也使用字符串类型的用户名，即 User Account 加入频道，详见[使用 String 型的用户名](../../cn/Interactive%20Broadcast/string_web.md)。
+
 ## 2.7.1 版
 
 该版本于 2019 年 7 月 3 日发布。
@@ -155,6 +247,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 修复了调用 `Stream.setScreenProfile` 方法设置屏幕共享的视频属性不生效的问题。
 
 ## 2.7.0 版
+
 该版本于 2019 年 6 月 21 日发布。新增功能、改进及修复问题详见下文。
 
 **新增功能**

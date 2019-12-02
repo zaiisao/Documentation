@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Web
-updatedAt: Mon Nov 11 2019 07:57:23 GMT+0800 (CST)
+updatedAt: Mon Dec 02 2019 02:50:52 GMT+0800 (CST)
 ---
 # 实现互动直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音视频互动直播。
@@ -144,19 +144,19 @@ updatedAt: Mon Nov 11 2019 07:57:23 GMT+0800 (CST)
 该方法无需下载安装包。在项目文件中，将以下代码添加到 `<style>` 上一行：
 
 ```javascript
-<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-2.9.0.js"></script>
+<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
 ```
 
 #### 方法 3. 从官网获取 SDK
 
 1. [下载](https://docs.agora.io/cn/Agora%20Platform/downloads)最新版 Agora Web SDK 软件包。
 
-2. 将下载下来的软件包中的 `AgoraRTCSDK-2.9.0.js` 文件保存到项目文件所在的目录下。
+2. 将下载下来的软件包中的 `AgoraRTCSDK-3.0.0.js` 文件保存到项目文件所在的目录下。
 
 3. 在项目文件中，将如下代码添加到 `<style>` 上一行：
 
    ```javascript
-   <script src="./AgoraRTCSDK-2.9.0.js"></script>
+   <script src="./AgoraRTCSDK-3.0.0.js"></script>
    ```
 
 为方便起见，这里我们选择第二种方法，直接使用 CDN 链接。
