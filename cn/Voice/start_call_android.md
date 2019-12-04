@@ -91,19 +91,15 @@ dependencies {
    <uses-permission android:name="android.permission.CAMERA" />
    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-   <!-- The Agora SDK requires Bluetooth permissions in case users are using Bluetooth devices.-->
    <uses-permission android:name="android.permission.BLUETOOTH" />
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   // 如果你使用的是 Android 10.0 及以上设备，还需要添加如下权限：
+   <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
  
 ...
 </manifest>
 ```
 
-如果你使用的是 Android 10.0 及以上设备，还需要添加 `READ_PRIVILEGED_PHONE_STATE` 权限：
-
-```java
-   <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
-```
 
 如果你的 `targetSdkVersion` >= 29，还需要在 **AndroidManifest.xml** 文件的 `<application>` 区域添加如下行：
 
