@@ -108,8 +108,10 @@ dependencies {
 如果你的 `targetSdkVersion` >= 29，还需要在 **AndroidManifest.xml** 文件的 `<application>` 区域添加如下行：
 
 ```java
-<application
-   android:requestLegactExternalStorage="true">
+   <application
+      android:requestLegacyExternalStorage="true">
+			...
+   </application>
 ```
 
 ### 防止代码混淆
