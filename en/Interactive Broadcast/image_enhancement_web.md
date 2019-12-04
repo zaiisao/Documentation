@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 02:32:40 GMT+0800 (CST)
+updatedAt: Tue Dec 03 2019 05:39:51 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -38,6 +38,8 @@ stream.setBeautyEffectOptions(true, {
     rednessLevel: 0.1
 });
 ```
+
+We also provide an open-source [OpenLive-Web](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Web) sample project that implements image enhancement on GitHub. You can try it [online](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/) and refer to the source code in the [`rtc-client.js`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Web/src/rtc-client.js#L80) file.
 
 ## Considerations
 

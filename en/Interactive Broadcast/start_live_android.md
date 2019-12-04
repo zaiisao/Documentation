@@ -91,18 +91,21 @@ Add the following permissions in the **/app/src/main/AndroidManifest.xml** file 
    <uses-permission android:name="android.permission.CAMERA" />
    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-   <!-- The Agora SDK requires Bluetooth permissions in case users are using Bluetooth devices.-->
    <uses-permission android:name="android.permission.BLUETOOTH" />
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   // For devices running Android 10.0 or later, you also need to add the following permission:
+   <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
  
 ...
 </manifest>
 ```
 
-For devices running Android 10.0 or later, you also need to add the following permission:
-
-```java
-   <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+If your `targetSdkVersion` >= 29, add the following line in the `<application>` module in the **AndroidManifest.xml** file:
+ 
+```
+   <application
+	    android:requestLegacyExternalStorage="true">
+   </application>
 ```
 
 ### Prevent code obfuscation
