@@ -111,7 +111,7 @@ dependencies {
 ```java
    <application
       android:requestLegacyExternalStorage="true">
-			...
+	  ...
    </application>
 ```
 
