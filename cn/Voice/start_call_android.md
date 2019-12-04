@@ -105,6 +105,13 @@ dependencies {
    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
 ```
 
+如果你的 `targetSdkVersion` >= 29，还需要在 **AndroidManifest.xml** 文件的 `<application>` 区域添加如下行：
+
+```java
+<application
+   android:requestLegactExternalStorage="true">
+```
+
 ### 防止代码混淆
 
 在 **app/proguard-rules.pro** 文件中添加如下行，防止代码混淆：

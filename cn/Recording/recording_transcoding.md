@@ -3,7 +3,7 @@
 title: 合并音视频文件
 description: 
 platform: Linux
-updatedAt: Wed Oct 16 2019 03:58:20 GMT+0800 (CST)
+updatedAt: Tue Dec 03 2019 10:15:10 GMT+0800 (CST)
 ---
 # 合并音视频文件
 ## 概述
@@ -74,10 +74,10 @@ updatedAt: Wed Oct 16 2019 03:58:20 GMT+0800 (CST)
 **自动录制模式**
 
 自动录制模式（默认录制启动模式，`triggerMode` 设为 0）下，`-m` 参数不同设置的行为如下：
-	- 0：把同一个 UID 的音频和视频按照录制 segment 合并。一个 UID 的一个录制 segment 对应一个音视频文件，文件名为 UID_timestamp_av.mp4。
-  - 1：把同一个 UID 的**音频和视频**按时间顺序合成一个文件。一个 UID 对应一个音视频文件，文件名为 UID_0_merge_av.mp4。
-  - 2：把同一个 UID 的**音频**按时间顺序合成一个文件。一个 UID 对应一个音频文件，文件名为 UID_0_merge.m4a。
-  - 3：把同一个 UID 的**视频**按时间顺序合成一个文件。一个 UID 对应一个视频文件，文件名为 UID_0_merge.mp4。
+- 0：把同一个 UID 的音频和视频按照录制 segment 合并。一个 UID 的一个录制 segment 对应一个音视频文件，文件名为 UID_timestamp_av.mp4。
+- 1：把同一个 UID 的**音频和视频**按时间顺序合成一个文件。一个 UID 对应一个音视频文件，文件名为 UID_0_merge_av.mp4。
+- 2：把同一个 UID 的**音频**按时间顺序合成一个文件。一个 UID 对应一个音频文件，文件名为 UID_0_merge.m4a。
+- 3：把同一个 UID 的**视频**按时间顺序合成一个文件。一个 UID 对应一个视频文件，文件名为 UID_0_merge.mp4。
 
 <div class="alert note"> timestamp 为服务器开始录制的时间戳，由年、月、日、小时、分钟、秒和毫秒组成，时区为 UTC+0。例如 123_20190611073246073.aac 表示在 UTC 2019 年 6 月 11 日 7 点 32 分 46 秒 73 毫秒时开始录制的一个 UID 为 123 的用户的音频文件。如音频和视频的开始录制时间不一致，`timestamp` 为两个开始时间中较早的时间。</div>
 
