@@ -3,7 +3,7 @@
 title: H5 实时直播
 description: 
 platform: Web
-updatedAt: Tue Dec 03 2019 08:22:15 GMT+0800 (CST)
+updatedAt: Thu Dec 05 2019 03:22:10 GMT+0800 (CST)
 ---
 # H5 实时直播
 ## 功能简介
@@ -79,7 +79,7 @@ Agora Web SDK 是基于 WebRTC 实现音视频通信的，因此依赖于浏览�
 ### 下载并集成 SDK
 
 1. 将最新版 Agora Web SDK 集成到你的项目中，详见[实现互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web)。
-2. 下载 [H5 实时直播组件](https://download.agora.io/sdk/release/rts-v3.0.0.zip)。
+2. 下载 [H5 实时直播组件](https://download.agora.io/sdk/release/rts-v3.0.1.zip)。
 
 <div class="alert info">我们在 H5 组件包中提供一个实现了 H5 实时直播的示例项目，你可以通过本地 Web 服务器运行 <code>index.html</code> 文件快速体验，具体方法可以参考<a href="https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web#%E8%BF%90%E8%A1%8C%E4%BD%A0%E7%9A%84-app">运行你的 app</a>。注意不要直接打开 <code>index.html</code> 文件，因为解码器需要通过网络动态加载。</div>
 

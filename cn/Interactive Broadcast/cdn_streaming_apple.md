@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: iOS,macOS
-updatedAt: Thu Oct 24 2019 07:39:56 GMT+0800 (CST)
+updatedAt: Mon Dec 09 2019 08:40:23 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -69,7 +69,7 @@ transcoding.audioBitrate = 48;
 // 用于旁路推流的输出视频流的 width × height (px)。360 x 640 为默认值。
 transcoding.size = CGSizeMake(360, 640);
 // 设置推流输出视频的码率 (Kbps)，默认值为 400。
-transcoding.width = 400;
+transcoding.videoBitrate = 400;
 // 用于旁路推流的输出视频的帧率 (fps)。默认值为 15。取值范围为 [1,30]，Agora 服务器会将高于 30 的帧率设置改为 30。
 transcoding.videoFramerate = 30;
 // 推流输出视频的编码规格。可以设置为 Baseline (66)、Main (77) 或 High (100)。如果设置其他值，Agora 会统一设为默认值 High (100)。

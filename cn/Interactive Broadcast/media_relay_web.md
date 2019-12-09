@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 02:33:20 GMT+0800 (CST)
+updatedAt: Wed Dec 04 2019 03:22:34 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -17,6 +17,8 @@ updatedAt: Mon Dec 02 2019 02:33:20 GMT+0800 (CST)
 
 ## 实现方法
 
+<div class="alert note">跨频道连麦功能需要联系 <a href="mailto:sales@agora.io">sales@agora.io</a> 开通。</div>
+
 实现跨频道连麦功能前，请确保你已在项目中实现基本的实时音视频功能，详见[开始互动直播](../../cn/Interactive%20Broadcast/start_live_web.md)。
 
 Agora Web SDK 在 v3.0.0 中新增如下跨频道媒体流转发接口，支持将源频道中的媒体流转发至最多 4 个目标频道，实现跨直播间连麦功能：
@@ -25,7 +27,7 @@ Agora Web SDK 在 v3.0.0 中新增如下跨频道媒体流转发接口，支持�
 - `updateChannelMediaRelay`
 - `stopChannelMediaRelay`
 
-<div class="alert note">API 调用顺序要求：<li><code>startChannelMediaRelay</code> 方法必须在发布流 （<code>Client.publish</code>）之后调用。</li><li><code>updateChannelMediaRelay</code> 方法必须在 <code>startChannelMediaRelay</code> 后调用。</li></div>
+<div class="alert info">API 调用顺序要求：<li><code>startChannelMediaRelay</code> 方法必须在发布流 （<code>Client.publish</code>）之后调用。</li><li><code>updateChannelMediaRelay</code> 方法必须在 <code>startChannelMediaRelay</code> 后调用。</li></div>
 
 在跨频道媒体流转发过程中，SDK 会通过 `Client.on("channel-media-relay-state")` 回调报告媒体流转发的状态码（`state`）和错误码（`code`）， `Client.on("channel-media-relay-event")` 回调报告媒体流转发的事件码，你可以参考如下状态码或事件码的含义实现相关的业务逻辑：
 
