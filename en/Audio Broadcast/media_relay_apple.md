@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 10 2019 03:24:04 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:36 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -90,7 +90,7 @@ if let config = getMediaRelayConfiguration() {
 
 <div class="alert note">After calling the `startChannelMediaRelay` method, you can call the `updateChannelMediaRelay` method to add or delete the relay channels.</div>
 
-We provide an open-source [Cross-Channel-OpenLive-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Cross-Channel/Cross-Channel-OpenLive-iOS) demo project that implements string user accounts on Github. You can try the demo and view the source code in the [LiveRoomViewController.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Cross-Channel/Cross-Channel-OpenLive-iOS/OpenLive/LiveRoomViewController.swift) file.
+We provide an open-source [Cross-Channel-OpenLive-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Cross-Channel/Cross-Channel-OpenLive-iOS) demo project that implements string user accounts on GitHub. You can try the demo and view the source code in the [LiveRoomViewController.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Cross-Channel/Cross-Channel-OpenLive-iOS/OpenLive/LiveRoomViewController.swift) file.
 
 ### API Reference
 

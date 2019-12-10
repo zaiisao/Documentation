@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: Windows
-updatedAt: Wed Oct 23 2019 08:11:39 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:44 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -63,7 +63,7 @@ setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\
 
 ### Sample code
 
-We also provide an open-source [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) demo project on Github.
+We also provide an open-source [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) demo project on GitHub.
 
 ### API reference
 

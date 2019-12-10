@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: Android
-updatedAt: Wed Oct 23 2019 08:12:19 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:42 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -64,7 +64,7 @@ Refer to the following steps to enable the video conference of 7+ users:
 
 ### Sample code
 
-We also provide an open-source [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) demo project on Github.
+We also provide an open-source [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) demo project on GitHub.
 
 ### API reference
 

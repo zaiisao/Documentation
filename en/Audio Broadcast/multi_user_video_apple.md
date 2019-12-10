@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: iOS,macOS
-updatedAt: Wed Oct 23 2019 08:11:59 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:43 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -89,7 +89,7 @@ agoraKit.setRemoteVideoStream(uid, type: .high)
 agoraKit.setRemoteVideoStream(uid, type: .low)
 ```
 
-We also provide an open-source [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) demo project on Github.
+We also provide an open-source [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) demo project on GitHub.
 
 ### API reference
 
