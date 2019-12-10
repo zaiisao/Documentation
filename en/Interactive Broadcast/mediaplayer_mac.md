@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Wed Sep 04 2019 11:42:25 GMT+0800 (CST)
+updatedAt: Thu Dec 05 2019 07:08:42 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
@@ -31,7 +31,7 @@ Using MediaPlayer Kit, you can start/pause the playback video, adjust the playba
 ### Prerequisites
 
 - Xcode 10.12 or later.
-- Physical OS X 10.12 or later.
+- Physical macOS 10.12 or later.
 - Ensure that your project has a validated provisioning profile certificate.
 
 ### Use MediaPlayer Kit
@@ -56,7 +56,7 @@ MediaPlayerKitQuickstart only supports importing the local video files.
 ### Prerequisites
 
 - Xcode 10.12 or later.
-- Physical OS X 10.12 or later.
+- Physical macOS 10.12 or later.
 - Ensure that your project has a validated provisioning profile certificate.
 
 ### Integrate MediaPlayer Kit
@@ -64,13 +64,13 @@ MediaPlayerKitQuickstart only supports importing the local video files.
 **1. Preparation**
 
 - Download and unzip Agora Native SDK. See the **Video SDK** in [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads).
-- Make sure you have completed the integration of the Agora Native SDK, as described in [Integrated Client](../../en/Interactive%20Broadcast/mac_video.md).
+- Make sure you have completed the integration of the Agora Native SDK, as described in [Integrate Client](../../en/Interactive%20Broadcast/mac_video.md).
 - Download and unzip the MediaPlayerKit folder.
 
 **2. Create a project**
 
 <div class="alert warning">
-	<li>In this step, you should continue to integrate MediaPlayerKit projects based on existing project that has integrated the Agora Native SDK, rather than creating a new project from scratch. 
+	<li>In this step, you should continue to integrate MediaPlayerKit projects based on an existing project that has integrated the Agora Native SDK, rather than creating a new project from scratch. 
 <li> This step shows you how to create a new project, you can skip it if you don't need this reference.</div>
 
 - Open Xcode, **Create a new Xcode project**.
@@ -97,7 +97,7 @@ MediaPlayerKitQuickstart only supports importing the local video files.
 
 - Click **Build Phases**, expand **Link Binary With Libraries**, and you can see the libraries that have been filled in after importing the files:
     - `MediaPlayerKit.framework`
-    - `iblibyuv.a`
+    - `liblibyuv.a`
     - `AgoraRtcEngineKit.framework`
 
 > Make sure that these three libraries are added, otherwise go back to [Step 3](#import).
@@ -231,7 +231,7 @@ You can refer to [Call the interfaces](#1) or [API documentation](#2) to complet
 	      [[MediaPlayerKit shareInstance] unpublishAudio];
 	      ```
 
-    - If you want to publish the the video to the remote user:
+    - If you want to publish the video to the remote user:
         - Call the `publishVideo` method to publish the video.
         ```Objective-c
 	      [[MediaPlayerKit shareInstance] publishVideo];
@@ -239,7 +239,7 @@ You can refer to [Call the interfaces](#1) or [API documentation](#2) to complet
 
         - Adjust the media player in real time by calling the interfaces in [Step 5](#3).
 
-        - Call the `adjustPublishSignalVolume` method to adjust the volume received by the the remote user.
+        - Call the `adjustPublishSignalVolume` method to adjust the volume received by the remote user.
         ```Objective-c
 	      [[MediaPlayerKit shareInstance] adjustPublishSignalVolume:<#(int)#>];
 	      ```

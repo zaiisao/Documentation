@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 25 2019 08:55:54 GMT+0800 (CST)
+updatedAt: Mon Dec 09 2019 09:17:04 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -21,7 +21,7 @@ This article tells you how to use the Agora Native SDK to customize the video so
 
 ## Implementation
 
-Before customizing the video source or renderer, ensure that you hava implemented the basic real-time communication functions in your project. For details, see the following documents:
+Before customizing the video source or renderer, ensure that you have implemented the basic real-time communication functions in your project. For details, see the following documents:
 - iOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md).
 - macOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_mac.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_mac.md).
 

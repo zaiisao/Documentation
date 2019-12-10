@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 02:33:10 GMT+0800 (CST)
+updatedAt: Wed Dec 04 2019 03:24:45 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -17,6 +17,8 @@ Co-hosting across channels applies to scenarios such as an online singing contes
 
 ## Implementation
 
+<div class="alert note">To enable media stream relay, contact <a href="mailto:sales-us@agora.io">sales-us@agora.io</a>.</div>
+
 Before relaying media streams across channels, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md).
 
 As of v3.0.0, the Agora Web SDK supports co-hosting across channels, adding the following methods:
@@ -25,7 +27,7 @@ As of v3.0.0, the Agora Web SDK supports co-hosting across channels, adding the 
 - `updateChannelMediaRelay`
 - `stopChannelMediaRelay`
 
-<div class="alert note">API call sequence requirements:<li>Call <code>startChannelMediaRelay</code> after <code>Client.publish</code> succeeds.</li><li>Call <code>updateChannelMediaRelay</code> after <code>startChannelMediaRelay</code> succeeds.</li></div>
+<div class="alert info">API call sequence requirements:<li>Call <code>startChannelMediaRelay</code> after <code>Client.publish</code> succeeds.</li><li>Call <code>updateChannelMediaRelay</code> after <code>startChannelMediaRelay</code> succeeds.</li></div>
 
 During a channel media relay, the SDK reports the states (`state`) and error codes (`code`) of the relay with the  `Client.on("channel-media-relay-state")`  callback, and the events of the relay with the `Client.on("channel-media-relay-event")` callback.
 
@@ -115,5 +117,5 @@ Refer to the following table when implementing your code:
 
 - As of v3.0.0, the Agora RTC SDK supports relaying media streams to a maximum of four destination channels. To add or delete a destination channel, call `updateChannelMediaRelay`.
 - This feature supports integer user IDs only.
-- When setting the source channel information (`setSrcChannelInfo`), ensure that the setting of `uid` is different from the UID of the current host and any other user in the source channel. We recommend setting this `uid` as `0`.
+- <%= note %>
 - To call `startChannelMediaRelay` again after it succeeds, you must call `stopChannelMediaRelay` to quit the current relay.

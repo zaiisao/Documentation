@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: Windows
-updatedAt: Tue Nov 19 2019 03:30:18 GMT+0800 (CST)
+updatedAt: Mon Dec 09 2019 06:41:21 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction
@@ -28,7 +28,7 @@ Follow these steps to implement the raw data functions in your project:
 
 The following diagram shows how to implement the raw data functions in your project:
 
-![](https://web-cdn.agora.io/docs-files/1569223012537)
+![](https://web-cdn.agora.io/docs-files/1575873646147)
 
 ### Sample code
 

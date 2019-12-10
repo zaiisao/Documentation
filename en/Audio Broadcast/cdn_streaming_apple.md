@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: iOS,macOS
-updatedAt: Thu Nov 14 2019 08:28:47 GMT+0800 (CST)
+updatedAt: Mon Dec 09 2019 08:39:30 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -72,7 +72,7 @@ transcoding.audioBitrate = 48;
 // Size of the video. The default value is 360 x 640 (px).
 transcoding.size = CGSizeMake(360, 640);
 // Bitrate of the video (Kbps). The default value is 400.
-transcoding.width = 400;
+transcoding.videoBitrate = 400;
 // Frame rate of the video (fps). The default value is 15. Agora adjusts all values over 30 to 30.
 transcoding.videoFramerate = 30;
 // Video codec profile. Choose to set as Baseline (66), Main (77), or High (100). If you set this parameter to other values, Agora adjusts it to the default value of 100.
