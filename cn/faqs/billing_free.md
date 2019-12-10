@@ -1,11 +1,11 @@
 
 ---
-title: 声网前一万分钟免费说明
+title: 声网前一万分钟免费声明
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:21:00 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 17:11:31 GMT+0800 (CST)
 ---
-# 声网前一万分钟免费说明
+# 声网前一万分钟免费声明
 当每月通话总时长不超过 1 万分钟时，Agora 不收取任何费用。总时长为语音和视频的总时长, 扣取顺序依次往下：
 
 <table>
