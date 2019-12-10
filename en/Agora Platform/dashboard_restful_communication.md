@@ -3,12 +3,12 @@
 title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 10:52:36 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 10:52:52 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## 1. Authentication
 
-> Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Agora%20Platform/dashboard.md).
+> Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Agora%20Platform/manage_member.md).
 
 The RESTful API only supports HTTPS, and the user must pass the `Authorization` parameter in the Basic HTTP request header for authentication. You need to pass the Customer ID and Customer Cerficate in the code.
 
@@ -415,6 +415,7 @@ The banned user receives the corresponding callback as follows:
 >    -   If you pass the ip parameter, but not cname or uid, then the rule is that this ip cannot login any channel in the App.
 >    -   If you pass the cname parameter, but not uid or ip, then the rule is that no one can login the channel specified by the cname parameter.
 >    -   If you pass the cname and uid parameter, but not ip, then the rule is that the uid cannot login the channel specified by the cname parameter.
+>    -   If you pass the uid parameter, but not cname or ip, then the rule is that the uid cannot login in any channel in the App.
 
 -  Response:
 
