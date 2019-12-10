@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 08:26:34 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 08:26:42 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -156,7 +156,7 @@ The following parameters are required in the request body.
   - `bitrate`: (Mandatory) Number. The video bitrate (Kbps). The default value is 500.
   - `maxResolutionUid`: (Optional) String. When `mixedVideoLayout` is set as `2` (vertical layout), you can specify the UID of the large video window by this parameter.
   - `backgroundColor`: (Optional) String. The background color of the canvas (the display window or screen) in RGB hex value. The string starts with a "#". The default value is `"#000000"`, the black color.
-  - `mixedVideoLayout`: (Optional) Number. The video mixing layout. 0, 1, and 2 are the [predefined layouts](../../en/cloud-recording/cloud_layout_guide.md). If you set this parameter as 3, you need to set the layout by the `layoutConfig` parameter.
+  - `mixedVideoLayout`: (Optional) Number. The video mixing layout. 0, 1, and 2 are the [predefined layouts](../../en/cloud-recording/cloud_recording_layout.md). If you set this parameter as 3, you need to set the layout by the `layoutConfig` parameter.
     - `0`: (Default) Floating layout. The first user in the channel occupies the full canvas. The other users occupy the small regions on top of the canvas, starting from the bottom left corner. The small regions are arranged in the order of the users joining the channel. This layout supports one full-size region and up to four rows of small regions on top with four regions per row, comprising 17 users.
     - `1`: Best fit layout. This is a grid layout. The number of columns and rows and the grid size vary depending on the number of users in the channel. This layout supports up to 17 users.
     - `2`: Vertical layout. One large region is displayed on the left edge of the canvas, and several smaller regions are displayed along the right edge of the canvas. The space on the right supports up to 2 columns of small regions with 8 regions per column. This layout supports up to 17 users.
@@ -379,7 +379,7 @@ The following parameters are required in the request body.
 `clientRequest` requires the following parameters:
 
 - `maxResolutionUid`: (Optional) String. When the `layoutType` parameter is set as `2` (vertical layout), you can specify the UID of the large video window by this parameter.
-- `mixedVideoLayout`: (Optional) Number. The video mixing layout. 0, 1, and 2 are the [predefined layouts](../../en/cloud-recording/cloud_layout_guide.md). If you set this parameter as 3, you need to set the layout by the `layoutConfig` parameter.
+- `mixedVideoLayout`: (Optional) Number. The video mixing layout. 0, 1, and 2 are the [predefined layouts](../../en/cloud-recording/cloud_recording_layout.md). If you set this parameter as 3, you need to set the layout by the `layoutConfig` parameter.
   - `0`: (Default) Floating layout. The first user in the channel occupies the full canvas. The other users occupy the small regions on top of the canvas, starting from the bottom left corner. The small regions are arranged in the order of the users joining the channel. This layout supports one full-size region and up to four rows of small regions on top with four regions per row, comprising 17 users.
   - `1`: Best fit layout. This is a grid layout. The number of columns and rows and the grid size vary depending on the number of users in the channel. This layout supports up to 17 users.
   - `2`: Vertical layout. One large region is displayed on the left edge of the canvas, and several smaller regions are displayed along the right edge of the canvas. The space on the right supports up to 2 columns of small regions with 8 regions per column. This layout supports up to 17 users.
