@@ -3,14 +3,14 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Wed Oct 23 2019 03:25:09 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 08:15:37 GMT+0800 (CST)
 ---
 # Agora Analytics
 [Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience.
 
 ## Call Search
 
-**Call Search** helps you search calls and analyze quality issues. See [Call Search](../../en/Agora%20Platform/aa_call_research.md) for details.
+**Call Search** helps you search calls and analyze quality issues. See [Call Search](../../en/Agora%20Platform/aa_call_search.md) for details.
 
 - If quality issues occur, use Call Search to view quality details.
 - Locate individual users having quality issues and investigate their experience.
