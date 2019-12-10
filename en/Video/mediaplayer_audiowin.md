@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Thu Sep 05 2019 06:53:12 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 09:44:29 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
@@ -62,12 +62,12 @@ Std::string path = "F://1080.mp4";
 **1. Preparation**
 
 - Download and unzip Agora Native SDK. See the **Video SDK** in [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads).
-- Make sure you have completed the integration of the Agora Native SDK, as described in [Integrated Client](../../en/Video/windows_video.md).
+- Make sure you have completed the integration of the Agora Native SDK, as described in [Integrate Client](../../en/Video/windows_video.md).
 - Download and unzip the MediaPlayerKit folder.
 
 **2. Create a project**
 
-<div class="alert warning"> <li>In this step, you should continue to integrate MediaPlayerKit projects based on existing project that has integrated the Agora Native SDK, rather than creating a new project from scratch. <li>This step shows you how to create a new project, you can skip it if you don't need this reference.</div>
+<div class="alert warning"> <li>In this step, you should continue to integrate MediaPlayerKit projects based on an existing project that has integrated the Agora Native SDK, rather than creating a new project from scratch. <li>This step shows you how to create a new project, you can skip it if you don't need this reference.</div>
 
 - Create a new **Windows Desktop Application** based on **Visual C++**, and click **OK**.
 - Click **Build** > **Build Solution** for this empty project.
@@ -192,7 +192,7 @@ After a successful compilation, you can refer to [Call the interfaces](#1) or [A
         mediaPlayerKit->unpublishAudio();
         ```
 
-    - If you want to publish the the video to the remote user:
+    - If you want to publish the video to the remote user:
         - Call the `publishVideo` method to publish the video.
         ```C++
         mediaPlayerKit->publishVideo();

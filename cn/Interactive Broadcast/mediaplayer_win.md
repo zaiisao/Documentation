@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Windows
-updatedAt: Wed Sep 04 2019 11:11:29 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 09:35:54 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -68,7 +68,7 @@ std::string path = "F://1080.mp4";
 
 **2. 创建项目**
 
-<div class="alert warning"> 在此步，你应该基于已有的集成了 Agora Native SDK 的项目的继续集成 MediaPlayerKit 的项目，而不是从头创建一个新项目。此处仅是展现一个新建项目的步骤，如果你不需要参考，可以略过此步。</div>
+<div class="alert warning"> 在此步，你应该基于已有的集成了 Agora Native SDK 的项目继续集成 MediaPlayerKit 的项目，而不是从头创建一个新项目。此处仅是展现一个新建项目的步骤，如果你不需要参考，可以略过此步。</div>
 
 - 新建一个基于 **Visual C++** 的 **Windows 桌面应用程序**，点击**确定**。
 - 在这个空项目中点击**生成** > **生成解决方案**。

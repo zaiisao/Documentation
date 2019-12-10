@@ -1,11 +1,11 @@
 
 ---
-title: 语音通话计费说明
-description: 语音通话计费说明
+title: 音频互动直播计费说明
+description: 
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 17:36:28 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 18:10:15 GMT+0800 (CST)
 ---
-# 语音通话计费说明
+# 音频互动直播计费说明
 ## 服务用量统计方式
 
 
@@ -18,7 +18,7 @@ updatedAt: Tue Dec 10 2019 17:36:28 GMT+0800 (CST)
 
 ### <a name="amin"></a>音频分钟数 
 
-某用户在 RTC 频道内的时间扣除订阅视频流的分钟数后所得剩余时间，无论是否订阅音频流都算作音频分钟数。
+用户在 RTC 频道内的时间扣除订阅视频流的分钟数后所得剩余时间，无论是否订阅音频流都记为音频分钟数。
 
 
 <div class="alert note"><li>同时订阅了多路音频流的同一用户的音频分钟数不会被叠加。</li><li>音频分钟数的定义和计算方法也适用于小程序。</li><li>音频分钟数的计费方案详见<a href="#billing">产品计费表</a>。</li></div>

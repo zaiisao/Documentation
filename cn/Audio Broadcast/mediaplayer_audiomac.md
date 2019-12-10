@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Wed Sep 04 2019 11:19:11 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 09:42:35 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -33,7 +33,7 @@ updatedAt: Wed Sep 04 2019 11:19:11 GMT+0800 (CST)
 ### 前提条件
 
 - Xcode 10.12 及以上。
-- 系统 OS X 10.12 及以上的真机。
+- 系统 macOS 10.12 及以上的真机。
 - 请确保你的项目已设置有效的开发者签名。
 
 ### 快速体验媒体播放器组件
@@ -60,7 +60,7 @@ MediaPlayerKitQuickstart 只支持从本地导入视频，不能通过 URL 地�
 ### 前提条件
 
 - Xcode 10.12 及以上。
-- 系统 OS X 10.12 及以上的真机。
+- 系统 macOS 10.12 及以上的真机。
 - 请确保你的项目已设置有效的开发者签名。
 
 ### 集成媒体播放器组件  
@@ -73,7 +73,7 @@ MediaPlayerKitQuickstart 只支持从本地导入视频，不能通过 URL 地�
 
 **2. 创建项目**
 
-<div class="alert warning">在此步，你应该基于已有的集成了 Agora Native SDK 的项目的继续集成 MediaPlayerKit 的项目，而不是从头创建一个新项目。此处仅是展现一个新建项目的步骤，如果你不需要参考，可以略过此步。</div>
+<div class="alert warning">在此步，你应该基于已有的集成了 Agora Native SDK 的项目继续集成 MediaPlayerKit 的项目，而不是从头创建一个新项目。此处仅是展现一个新建项目的步骤，如果你不需要参考，可以略过此步。</div>
 
 - 打开 Xcode，**Create a new Xcode project**。
 - 在**Choose a template for your new project** 页面上选择 **macOS** 和 Application 下的 **cocoa App**，点击 **Next**。
@@ -99,7 +99,7 @@ MediaPlayerKitQuickstart 只支持从本地导入视频，不能通过 URL 地�
 
 - 点击 **Build Phases**，展开 **Link Binary With Libraries**，可以看到导入文件后已经填入的库：
   - `MediaPlayerKit.framework`
-  - `iblibyuv.a`
+  - `liblibyuv.a`
   - `AgoraRtcEngineKit.framework`
 
 > 请确保这三个库已经添加，否则你需回到[步骤 3](#import)。
