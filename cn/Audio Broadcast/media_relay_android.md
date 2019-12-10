@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 02:57:39 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 03:02:04 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -101,9 +101,9 @@ Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支�
 - 该功能不支持 String 型用户名。
 
 <% if (platform == "Web") { %>
-- 在设置源频道信息（`setSrcChannelInfo`）时，请确保 `uid` 设置与当前主播的 UID 不同。我们建议将这里的 `uid` 设置为  0，由服务器随机分配。<% } %>
+<li> 在设置源频道信息（`setSrcChannelInfo`）时，请确保 `uid` 设置与当前主播的 UID 不同。我们建议将这里的 `uid` 设置为  0，由服务器随机分配。</li><% } %>
 
 <% if (platform == "Android" || platform = "iOS" || platform = "macOS" || platform = "Windows")  { %>
-- 在设置源频道信息（`setSrcChannelInfo`）时，请确保 `uid` 必须为 0，且生成 token 时，`uid` 也必须为 0。<% } %>
+<li>在设置源频道信息（`setSrcChannelInfo`）时，请确保 `uid` 必须为 0，且生成 token 时，`uid` 也必须为 0。</li><% } %>
 
 - 在成功调用 `startChannelMediaRelay` 方法后，如果想再次调用该方法，必须先调用 `stopChannelMediaRelay` 方法退出当前的转发状态。
