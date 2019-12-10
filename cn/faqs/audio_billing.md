@@ -3,7 +3,7 @@
 title: 语音通话计费说明
 description: 语音通话计费说明
 platform: All Platforms
-updatedAt: Mon Aug 05 2019 17:04:19 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 17:26:11 GMT+0800 (CST)
 ---
 # 语音通话计费说明
 ## 收费标准
