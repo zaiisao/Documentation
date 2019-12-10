@@ -3,7 +3,7 @@
 title: Record a Call
 description: 
 platform: Linux CPP
-updatedAt: Mon Sep 09 2019 08:08:20 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 10:11:04 GMT+0800 (CST)
 ---
 # Record a Call
 This page demonstrates how to record a call by using the command line. You can also record calls by calling the API methods, see [Record by API](../../en/Recording/recording_api_cpp.md). The command line and API methods implement the same recording functions. 
