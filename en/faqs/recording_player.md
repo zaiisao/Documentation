@@ -3,13 +3,13 @@
 title: Which media players can play the recored files?
 description: 
 platform: Linux
-updatedAt: Wed Jul 17 2019 09:48:35 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 17:02:11 GMT+0800 (CST)
 ---
 # Which media players can play the recored files?
 You get different recorded files in different recording modes.
 
-- In the individual recording mode, you get an audio file and a video file for each user. You need to [use the transcoding script](../../en/Recording/recording_voice_video.md) to merge these files into one MP4 file for playback.
-- In the composite recording mode, if you set `mixedVideoAudio` as `0`, you get an audio file and a video file for all the users. You also need to [use the transcoding script](../../en/Recording/recording_voice_video.md) to merge the files. We recommend you set `mixedVideoAudio` as `2` to mix the audio and video into one MP4 file.
+- In the individual recording mode, you get an audio file and a video file for each user. You need to [Use the Transcoding Script ](../../en/Recording/recording_transcoding.md) to merge these files into one MP4 file for playback.
+- In the composite recording mode, if you set `mixedVideoAudio` as `0`, you get an audio file and a video file for all the users. You also need to [Use the Transcoding Script ](../../en/Recording/recording_transcoding.md) to merge the files. We recommend you set `mixedVideoAudio` as `2` to mix the audio and video into one MP4 file.
 
 The following table lists the media players that can play the recorded files after transcoding, and when `mixedVideoAudio` is set as `1` or `2`.
 
