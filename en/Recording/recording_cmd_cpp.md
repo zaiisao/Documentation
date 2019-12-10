@@ -173,6 +173,6 @@ Use either of the following parameters to set the path of the recorded files.
 
 ## Next steps
 
-After the recording is complete, use the transcoding script to merge the recorded files. See [Use the Transcoding Script ](../../en/Recording/recording_transcoding.md).
+After the recording is complete, use the transcoding script to merge the recorded files. See [Using the Transcoding Script](https://docs.agora.io/en/Recording/recording_transcoding?platform=All%20Platforms).
 
 If any error or warning occurs during the recording, see [Error codes](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a11cab69078db26c1f166c68e469dcfcf) and [Warning codes](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a5f37e3fa14fad2982f248d247d76996b).
