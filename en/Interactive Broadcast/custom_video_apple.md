@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: iOS,macOS
-updatedAt: Mon Dec 09 2019 09:17:04 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:45 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -98,7 +98,7 @@ videoFrame.ratation = 0;
 [agoraKit pushExternalVideoFrame: videoFrame];
 ```
 
-We provide an open-source [Agora-Video-Source-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Video-Source-iOS) demo project on Github. You can try the demo and view the source code in the [VideoChatViewController.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-iOS/Agora%20Video%20Source/VideoChat/VideoChatViewController.swift) file.
+We provide an open-source [Agora-Video-Source-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Video-Source-iOS) demo project on GitHub. You can try the demo and view the source code in the [VideoChatViewController.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-iOS/Agora%20Video%20Source/VideoChat/VideoChatViewController.swift) file.
 
 **API reference**
 
@@ -216,7 +216,7 @@ Refer to the following code to customize the video source in your project.
 	[agoraKit setVideoSource: videoSource];
 	```
 
-We provide an open-source [Agora-Custom-Media-Device-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS) demo project on Github. You can try the demo and view the source code in the [AgoraCamera.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS/Agora-Custom-Media-Device/CustomMediaDevices/AgoraCamera.swift) file.
+We provide an open-source [Agora-Custom-Media-Device-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS) demo project on GitHub. You can try the demo and view the source code in the [AgoraCamera.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS/Agora-Custom-Media-Device/CustomMediaDevices/AgoraCamera.swift) file.
 	
 **API Reference**
 
@@ -347,7 +347,7 @@ Refer to the following code to customize the video sink in your project.
 	[agoraKit setRemoteVideoRenderer: videoRenderer, uid];
 	```
 
-We provide an open-source [Agora-Custom-Media-Device-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS) demo project on Github. You can try the demo and view the source code in the [AgoraRenderView.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS/Agora-Custom-Media-Device/CustomMediaDevices/AgoraRenderView.swift) file.
+We provide an open-source [Agora-Custom-Media-Device-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS) demo project on GitHub. You can try the demo and view the source code in the [AgoraRenderView.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS/Agora-Custom-Media-Device/CustomMediaDevices/AgoraRenderView.swift) file.
 
 **API Reference**
 

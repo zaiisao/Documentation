@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 02:34:17 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:41 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -106,7 +106,7 @@ client.startLiveStreaming("your RTMP URL", true)
 client.stopLiveStreaming("your RTMP URL")
 ```
 
-We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack) demo project on Github. You can [try the demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/), or view the source code in the [index.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/index.js) and [rtc-client.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/rtc-client.js) files.
+We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack) demo project on GitHub. You can [try the demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/), or view the source code in the [index.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/index.js) and [rtc-client.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/rtc-client.js) files.
 
 
 <a name="api"></a>

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Electron
-updatedAt: Fri Aug 30 2019 04:26:39 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:30 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora SDK for Electron.
@@ -142,4 +142,4 @@ This is the first release of the Agora SDK for Electron. Refer to the following 
 - [Integrate the SDK](../../en/Audio%20Broadcast/electron_video.md)
 - [API Reference](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/electron/index.html)
  
-Agora also provides the open-source [Electron Github Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) for you to download.
+Agora also provides the open-source [Electron GitHub Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) for you to download.

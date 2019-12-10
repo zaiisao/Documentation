@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Windows
-updatedAt: Mon Oct 21 2019 06:07:54 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:27 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -72,7 +72,7 @@ const char* urlPath = "The same online RTMP/HLS url path added before";
   rtcEngine->removeInjectStreamUrl(urlPath)
 ```
 
-We also provide an open-source [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) demo project on Github.
+We also provide an open-source [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) demo project on GitHub.
 
 <a name="api"></a>
 ### API reference

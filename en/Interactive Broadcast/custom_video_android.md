@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Mon Dec 09 2019 09:16:33 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:26 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -63,7 +63,7 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
 ));
 ```
 
-We provide an open-source [Agora-Video-Source-Android](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-Android) demo project on Github. You can try the demo and view the source code in the [VideoChatViewActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-Android/app/src/main/java/io/agora/tutorials/customizedvideosource/VideoChatViewActivity.java) file.
+We provide an open-source [Agora-Video-Source-Android](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-Android) demo project on GitHub. You can try the demo and view the source code in the [VideoChatViewActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-Android/app/src/main/java/io/agora/tutorials/customizedvideosource/VideoChatViewActivity.java) file.
 
 **API reference**
 
@@ -147,7 +147,7 @@ if (mHasStarted && mConsumer != null) {
 }
 ```
 
-We provide an open-source [Custom-Media-Device-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) demo project on Github. You can try the demo and view the source code in the [ViewSharingCapturer.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-Android/app/src/main/java/io/agora/rtc/mediaio/app/shareScreen/source/ViewSharingCapturer.java) file.
+We provide an open-source [Custom-Media-Device-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) demo project on GitHub. You can try the demo and view the source code in the [ViewSharingCapturer.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-Android/app/src/main/java/io/agora/rtc/mediaio/app/shareScreen/source/ViewSharingCapturer.java) file.
 
 **API Reference**
 
@@ -241,7 +241,7 @@ IVideoSink sink = new IVideoSink() {
 rtcEngine.setLocalVideoRenderer(sink);
 ```
 
-We provide an open-source [Custom-Media-Device-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) demo project on Github. You can try the demo and view the source code in the [PrivateTextureHelper.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-Android/app/src/main/java/io/agora/rtc/mediaio/app/videoSource/source/PrivateTextureHelper.java) file.
+We provide an open-source [Custom-Media-Device-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) demo project on GitHub. You can try the demo and view the source code in the [PrivateTextureHelper.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-Android/app/src/main/java/io/agora/rtc/mediaio/app/videoSource/source/PrivateTextureHelper.java) file.
 
 **API Reference**
 * [`setLocalVideoRenderer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab10fd6d8dd89a5bca09b115ecd9e3416)

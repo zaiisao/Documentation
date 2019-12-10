@@ -3,7 +3,7 @@
 title: Last-mile Tests
 description: Conduct a Pre-call Lastmile Test
 platform: iOS,macOS
-updatedAt: Thu Sep 26 2019 04:19:50 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:46 GMT+0800 (CST)
 ---
 # Last-mile Tests
 ## Introduction
@@ -93,7 +93,7 @@ AgoraLastmileProbeConfig *config = [[AgoraLastmileProbeConfig alloc] probeUplink
 [agoraKit stopLastmileProbeTest];
 ```
 
-We also provide an open-source [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS) demo project on Github. You can try the demo, or view the source code in the [LastmileViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/LastmileViewController.swift) file.
+We also provide an open-source [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS) demo project on GitHub. You can try the demo, or view the source code in the [LastmileViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/LastmileViewController.swift) file.
 
 ### API Reference
 

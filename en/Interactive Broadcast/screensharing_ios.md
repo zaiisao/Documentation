@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: iOS
-updatedAt: Thu Sep 19 2019 08:59:36 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:28 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -64,4 +64,4 @@ override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBuf
 }
 ```
 
-We also provide an open-source demo project that implements [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-iOS) on Github. You can try the demo and view the source code.
+We also provide an open-source demo project that implements [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-iOS) on GitHub. You can try the demo and view the source code.

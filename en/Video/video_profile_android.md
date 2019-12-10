@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Mon Nov 18 2019 01:41:53 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:35 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -51,7 +51,7 @@ VideoEncoderConfiguration config = new VideoEncoderConfiguration(
 rtcEngine.setVideoEncoderConfiguration(config);
 ```
 
-We provide an open-source Agora-Android-Tutorial-1to1 demo project on Github. You can try the demo and view the source code of the `setupVideoConfig` method in the [VideoChatViewActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/java/io/agora/tutorials1v1vcall/VideoChatViewActivity.java) file.
+We provide an open-source Agora-Android-Tutorial-1to1 demo project on GitHub. You can try the demo and view the source code of the `setupVideoConfig` method in the [VideoChatViewActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/java/io/agora/tutorials1v1vcall/VideoChatViewActivity.java) file.
 
 ### API Reference
 - [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)

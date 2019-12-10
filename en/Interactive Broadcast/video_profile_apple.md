@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS,macOS
-updatedAt: Mon Nov 18 2019 01:42:34 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:36 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -51,7 +51,7 @@ AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc]
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
-We provide an open-source One-to-One-Video demo project on Github. You can try the demo and view the source code of the `setupVideo` method in the following files:
+We provide an open-source One-to-One-Video demo project on GitHub. You can try the demo and view the source code of the `setupVideo` method in the following files:
 
 - iOS
 	- Swift: The [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora%20iOS%20Tutorial/VideoChatViewController.swift) file

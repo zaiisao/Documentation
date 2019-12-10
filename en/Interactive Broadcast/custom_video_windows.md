@@ -3,7 +3,7 @@
 title: Custom Video Source and Sink
 description: 
 platform: Windows
-updatedAt: Wed Sep 25 2019 09:19:53 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:28 GMT+0800 (CST)
 ---
 # Custom Video Source and Sink
 ## Introduction
@@ -186,7 +186,7 @@ nRet = apm->setParameters("{\"che.video.local.camera_index\":0}");
 mediaEngine->registerVideoFrameObserver(NULL);
 ```
 
-We provide an open source [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows) demo project on Github. You can try the demo or view the source code.
+We provide an open source [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows) demo project on GitHub. You can try the demo or view the source code.
 
 ### API reference
 

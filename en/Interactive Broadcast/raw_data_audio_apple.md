@@ -3,7 +3,7 @@
 title: Raw Audio Data
 description: 
 platform: iOS,macOS
-updatedAt: Mon Sep 23 2019 07:21:35 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:37 GMT+0800 (CST)
 ---
 # Raw Audio Data
 ## Introduction
@@ -86,7 +86,7 @@ class IAudioFrameObserver
 };
 ```
 
-We also provide an open-source [AgoraAudioIO-Objective-C](https://github.com/AgoraIO/Advanced-Audio/tree/master/Custom-Audio-Device/AgoraAudioIO-Objective-C) demo project on Github. You can try the demo or view the source code.
+We also provide an open-source [AgoraAudioIO-Objective-C](https://github.com/AgoraIO/Advanced-Audio/tree/master/Custom-Audio-Device/AgoraAudioIO-Objective-C) demo project on GitHub. You can try the demo or view the source code.
 
 ### API reference
 

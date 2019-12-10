@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: iOS,macOS
-updatedAt: Mon Dec 09 2019 08:39:30 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:41 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -197,7 +197,7 @@ User2:
     alpha: 1.0
 ```
 
-We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming) demo project on Github.
+We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming) demo project on GitHub.
 
 ### API reference 
 

@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: Web
-updatedAt: Wed Oct 23 2019 04:40:28 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:43 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -56,7 +56,7 @@ client.setLowStreamParameter({
 })
 ```
 
-We also provide an open-source [17-Multistream](https://github.com/AgoraIO/Advanced-Video/tree/master/17-Multistream) demo project on Github. You can try the demo and view the source code in the [index.js](https://github.com/AgoraIO/Advanced-Video/blob/master/17-Multistream/src/index.js) and [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/17-Multistream/src/rtc-client.js) files.
+We also provide an open-source [17-Multistream](https://github.com/AgoraIO/Advanced-Video/tree/master/17-Multistream) demo project on GitHub. You can try the demo and view the source code in the [index.js](https://github.com/AgoraIO/Advanced-Video/blob/master/17-Multistream/src/index.js) and [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/17-Multistream/src/rtc-client.js) files.
 
 ### API reference
 

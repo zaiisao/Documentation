@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 03 2019 07:25:45 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:27 GMT+0800 (CST)
 ---
 # Agora Platform Overview
 Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications in your own application quickly.
@@ -64,6 +64,6 @@ Agora is the only RTC service provider in the world using self-developed audio a
 
 - The [Developer Center](https://docs.agora.io/en) provides documentation for developers to integrate and use Agora SDKs, and for SDK and sample code downloads.
 - [Agora Console](https://dashboard.agora.io/) is a self-service system that enables developers to monitor usage statistics, track the QoE, manage projects, manage account privileges, and submit tickets.
-- [Agora Github](https://github.com/AgoraIO) and [GitHub Community](https://github.com/AgoraIO-Community) provide demos and use cases, which can also be found at the [Developer Center](https://docs.agora.io/en/Agora%20Platform/sampleapps).
+- [Agora GitHub](https://github.com/AgoraIO) and [GitHub Community](https://github.com/AgoraIO-Community) provide demos and use cases, which can also be found at the [Developer Center](https://docs.agora.io/en/Agora%20Platform/sampleapps).
 - 5 &times; 8 technical support. Developers can ask questions about integration on [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io), and [submit tickets](https://dashboard.agora.io/show-ticket-submission) for quality issues.
 -  [Agora Analytics](https://console.agora.io/analytics/call/search), a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience. See [Agora Analytics Overview](../../en/Agora%20Platform/aa_guide.md) for more information.

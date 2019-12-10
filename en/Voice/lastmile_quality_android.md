@@ -3,7 +3,7 @@
 title: Last-mile Tests
 description: 
 platform: Android
-updatedAt: Thu Sep 26 2019 04:19:36 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:45 GMT+0800 (CST)
 ---
 # Last-mile Tests
 ## Introduction
@@ -64,7 +64,7 @@ public void onLastmileProbeResult(LastmileProbeResult) {
 rtcEngine.stopLastmileProbeTest();
 ```
 
-We also provide an open-source [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) demo project on Github. You can try the demo, or view the source code in the [NetworkTestActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/NetworkTestActivity.java) file.
+We also provide an open-source [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) demo project on GitHub. You can try the demo, or view the source code in the [NetworkTestActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/NetworkTestActivity.java) file.
 
 ### API Reference
 

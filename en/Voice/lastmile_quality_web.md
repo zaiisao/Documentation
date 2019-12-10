@@ -3,7 +3,7 @@
 title: Last-mile Tests
 description: 
 platform: Web
-updatedAt: Thu Sep 26 2019 05:59:32 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:46 GMT+0800 (CST)
 ---
 # Last-mile Tests
 ## Introduction
@@ -64,7 +64,7 @@ remoteStream.getStats((stats) => {
 });
 ```
 
-We also provide an open-source [Agora-WebRTC-Troubleshooting](https://github.com/AgoraIO/Tools/tree/master/TroubleShooting/Agora-WebRTC-Troubleshooting) demo project on Github. You can [try the demo online](https://webdemo.agora.io/agora_webrtc_troubleshooting/), or view the source code in the [App.Vue](https://github.com/AgoraIO/Tools/blob/master/TroubleShooting/Agora-WebRTC-Troubleshooting/src/App.vue) file.
+We also provide an open-source [Agora-WebRTC-Troubleshooting](https://github.com/AgoraIO/Tools/tree/master/TroubleShooting/Agora-WebRTC-Troubleshooting) demo project on GitHub. You can [try the demo online](https://webdemo.agora.io/agora_webrtc_troubleshooting/), or view the source code in the [App.Vue](https://github.com/AgoraIO/Tools/blob/master/TroubleShooting/Agora-WebRTC-Troubleshooting/src/App.vue) file.
 
 ### API Reference
 

@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: iOS,macOS
-updatedAt: Mon Oct 21 2019 06:09:46 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:40 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -99,7 +99,7 @@ NSString *urlPath = @"Some online  RTMP/HLS url path";
   [agoraKit removeInjectStreamUrl: urlPath];
 ```
 
-We also provide an open-source [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) demo project on Github.
+We also provide an open-source [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) demo project on GitHub.
 
 <a name="api"></a>
 ### API reference

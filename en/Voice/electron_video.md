@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Electron
-updatedAt: Thu Aug 15 2019 08:07:30 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:30 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/video broadcast with the Agora SDK for Electron.
@@ -75,8 +75,8 @@ AGORA_ELECTRON_DEPENDENT = 4.0.0
 Under the project path, run ` nmp install` to install the dependency and trigger the `npm run download` command. You can also install the dependency manually.
 If you want to debug with Xcode or Visual Studio, run `npm run debug` to generate project files and SDK files for the debug environment. 
 
-You have now integrated the Agora SDK for Electron into your project. Refer to  [Agora Electron Github Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) to implement various real-time communication functions in your project.
+You have now integrated the Agora SDK for Electron into your project. Refer to  [Agora Electron GitHub Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) to implement various real-time communication functions in your project.
 
 ## Open-source SDK
 
-The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open source in Github. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
+The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open source in GitHub. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.

@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Tue Sep 24 2019 08:46:31 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:32 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -59,7 +59,7 @@ Call the [`Stream.getVideoTrack`](https://docs.agora.io/en/Video/API%20Reference
 
 ### Sample code
 
-We provide an open-source [Agora-Custom-VideoSource-Web-Webpack](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack) demo project on Github. You can try the demo, or view the source code in the [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack/src/rtc-client.js) file.
+We provide an open-source [Agora-Custom-VideoSource-Web-Webpack](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack) demo project on GitHub. You can try the demo, or view the source code in the [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack/src/rtc-client.js) file.
 
 ## Considerations
 

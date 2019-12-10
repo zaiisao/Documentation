@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: iOS,macOS
-updatedAt: Fri Sep 20 2019 07:32:10 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 03:24:04 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -105,10 +105,9 @@ We provide an open-source [Cross-Channel-OpenLive-iOS](https://github.com/AgoraI
 - The Agora RTC SDK supports relaying media streams to a maximum of four destination channels. To add or delete a destination channel, call `updateChannelMediaRelay`.
 - This feature supports integer user IDs only.
 
-<% if (platform == "Web") { %>
-- When setting the source channel information (`setSrcChannelInfo`), ensure that the setting of `uid` is different from the UID of the current host and any other user in the source channel. We recommend setting this `uid` as `0`.<% } %>
 
-<% if (platform == "Android" || platform == "iOS" || platform == "macOS" || platform == "Windows") { %>
-- When setting the souce channel information (`setSrcChannelInfo`), ensure that you set `uid` as 0, and the `uid` that you use to generate the token should also be set as 0.<% } %>
+
+
+- When setting the souce channel information (`setSrcChannelInfo`), ensure that you set `uid` as 0, and the `uid` that you use to generate the token should also be set as 0.
 
 - To call `startChannelMediaRelay` again after it succeeds, you must call `stopChannelMediaRelay` to quit the current relay.

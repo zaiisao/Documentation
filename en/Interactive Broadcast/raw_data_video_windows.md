@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: Windows
-updatedAt: Mon Dec 09 2019 06:41:21 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:39 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction
@@ -82,7 +82,7 @@ class IVideoFrameObserver
 };
 ```
 
-We also provide an open-source [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows) demo project on Github. You can try the demo, or view the source code in the [video_preprocessing_plugin.cpp](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows/AgoraMediaSource/video_preprocessing_plugin.cpp) file.
+We also provide an open-source [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows) demo project on GitHub. You can try the demo, or view the source code in the [video_preprocessing_plugin.cpp](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows/AgoraMediaSource/video_preprocessing_plugin.cpp) file.
 
 ### API reference
 

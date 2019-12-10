@@ -3,7 +3,7 @@
 title: Switch Channels
 description: 
 platform: Android
-updatedAt: Mon Sep 23 2019 09:04:02 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:39 GMT+0800 (CST)
 ---
 # Switch Channels
 ## Introduction
@@ -37,7 +37,7 @@ You can refer to the following code snippets and implement quick switching in yo
 mRtcEngine.switchChannel(YOUR_TOKEN, mRoomName);
 ```
 
-We also provide an open-source demo project that implements [Quick-Switch-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Quick-Switch-Channel/Quick-Switch-Android) on Github. You can try the demo and view the source code of the `switchChannel` function in the [WorkThread.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Quick-Switch-Channel/Quick-Switch-Android/app/src/main/java/io/agora/switchlive/rtc/WorkerThread.java) file.
+We also provide an open-source demo project that implements [Quick-Switch-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Quick-Switch-Channel/Quick-Switch-Android) on GitHub. You can try the demo and view the source code of the `switchChannel` function in the [WorkThread.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Quick-Switch-Channel/Quick-Switch-Android/app/src/main/java/io/agora/switchlive/rtc/WorkerThread.java) file.
 
 ### API reference
 

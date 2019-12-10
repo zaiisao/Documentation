@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to set voice effects on iOS
 platform: iOS
-updatedAt: Mon Apr 01 2019 10:56:40 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:29 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
@@ -156,7 +156,7 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 
 ## Sample Code
 
-Agora provides an open source sample code that implements voice changer and reverberation. You can go to the [Chatroom Github Repo](https://github.com/AgoraIO-Usecase/Chatroom/tree/master/iOS) to download it.
+Agora provides an open source sample code that implements voice changer and reverberation. You can go to the [Chatroom GitHub Repo](https://github.com/AgoraIO-Usecase/Chatroom/tree/master/iOS) to download it.
 
 ## Considerations
 The API methods have return values. If the method call fails, the return value is < 0.

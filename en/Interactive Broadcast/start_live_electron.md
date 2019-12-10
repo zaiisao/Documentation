@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Electron
-updatedAt: Fri Oct 18 2019 07:23:10 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:35 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start a basic broadcast call with the Agora SDK for Electron.
@@ -80,7 +80,7 @@ Refer to the [Agora Electron Quickstart ](https://github.com/AgoraIO-Community/A
 
 ## Open-source SDK
 
-The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open source in Github. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
+The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open source in GitHub. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
 
 
 

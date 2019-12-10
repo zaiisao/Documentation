@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: Android
-updatedAt: Tue Nov 19 2019 03:30:54 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:38 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction
@@ -91,7 +91,7 @@ class IVideoFrameObserver
 };
 ```
 
-We also provide an open-source [Agora-Plugin-Raw-Data-API-Android-Java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Plugin-Raw-Data-API-Android-Java) demo project on Github. You can try the demo, or view the source code in the [VideoChatViewActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Plugin-Raw-Data-API-Android-Java/app/src/main/java/io/agora/rtc/plugin/rawdata/sample/VideoChatViewActivity.java) file.
+We also provide an open-source [Agora-Plugin-Raw-Data-API-Android-Java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Plugin-Raw-Data-API-Android-Java) demo project on GitHub. You can try the demo, or view the source code in the [VideoChatViewActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Plugin-Raw-Data-API-Android-Java/app/src/main/java/io/agora/rtc/plugin/rawdata/sample/VideoChatViewActivity.java) file.
 
 ### API reference
 
