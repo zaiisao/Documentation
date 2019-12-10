@@ -3,7 +3,7 @@
 title: Recording file issues
 description: 
 platform: Linux
-updatedAt: Mon Jul 01 2019 15:10:24 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 17:10:34 GMT+0800 (CST)
 ---
 # Recording file issues
 ### Why aren't there any files generated under the recording folder?
