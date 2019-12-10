@@ -3,7 +3,7 @@
 title: 视频通话计费说明
 description: 视频通话计费说明
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 11:56:27 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 17:37:39 GMT+0800 (CST)
 ---
 # 视频通话计费说明
 ## 收费标准
@@ -231,7 +231,7 @@ updatedAt: Tue Oct 22 2019 11:56:27 GMT+0800 (CST)
   <tr>
     <td>E</td>
     <td>30</td>
-    <td>1280 x 720</td>
+    <td>640 x 360</td>
     <td>1612800 &gt; 1280 x 720</td>
     <td>超清（HD+）</td>
   </tr>
