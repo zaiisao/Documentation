@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 08:49:07 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 07:55:41 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -12,7 +12,7 @@ You can set up an HTTP/HTTPS server to receive the event notifications of Agora 
 
 ## Agora message notification service
 
-Contact us to configure and enable the callback service. See [Message Notification Service](../../en/Agora%20Platform/ncs.md) for details.
+Contact us to configure and enable the callback service. See [Message Notification Service](https://docs-preview.agoralab.co/en/Agora%20Platform/ncs) for details.
 
 ## Callback information
 
@@ -75,7 +75,7 @@ The event type and corresponding service type of the Agora Cloud Recording callb
   - `4`: Major
   - `5`: Fatal. A fatal error may cause the recording to exit. If you receive a message of this level, call the `query` API to check the current status and process the error according to the error notifications.
 - `errorCode`: Number. The error code. 
-  - If the error occurs in the recorder, see [error code and warning code](https://docs.agora.io/cn/Recording/the_error_native).
+  - If the error occurs in the recorder, see [error code and warning code](https://docs.agora.io/en/Recording/the_error_native).
   - If the error occurs in the uploader, see [upload error code](#uploaderr). 
   - If the error occurs in the Agora Cloud Recording Service, see [cloud recording platform error code](#clouderr).
   - If you do not find any error code in the above-mentioned pages, contact our technical support.
@@ -92,7 +92,7 @@ The event type and corresponding service type of the Agora Cloud Recording callb
   - `0`: The recorder.
   - `1`: The uploader.
 - `warnCode`: Number. The warning code. 
-  - If the warning occurs in the recorder, see [error code and warning code](https://docs.agora.io/cn/Recording/the_error_native).
+  - If the warning occurs in the recorder, see [error code and warning code](https://docs.agora.io/en/Recording/the_error_native).
   - If the warning occurs in the uploader, see [upload warning code](#uploadwarn).
 
 ###  <a name="3"></a>3 cloud_recording_status_update
