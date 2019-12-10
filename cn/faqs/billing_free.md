@@ -1,11 +1,11 @@
 
 ---
-title: 声网前一万分钟免费声明
+title: 每月一万分钟免费说明
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 17:11:41 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 17:33:41 GMT+0800 (CST)
 ---
-# 声网前一万分钟免费声明
+# 每月一万分钟免费说明
 声网会给予每个 [App ID](https://console.agora.io/) 每个月1 万分钟的免费时长，按照以下顺序从总分钟数扣除：
 
 1. 音频分钟数
