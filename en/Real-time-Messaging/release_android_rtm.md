@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 11:59:46 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 11:59:51 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -14,7 +14,13 @@ Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-tim
 
 ## v1.2.1
 
-v1.2.1 was released on November 29, 2019. 
+v1.2.1 was released on November 20, 2019. 
+
+### New Feature
+
+**Compatible with the endCall method of the Agora Signaling SDK** 
+
+If you use the `sendMessageToPeer` method to send off a <i>text</i> message that starts off with AGORA\_RTM\_ENDCALL\_PREFIX\_\<channelId\>\_\<your additional information\>, then this method is compatible with the endCall method of the legacy Agora Signaling SDK. Replace \<channelId\> with the channel ID from which you want to leave (end call), and replace \<your additional information\> with any additional information. Note that you must not put any "_" (underscore) in your additional information but you can set \<your additional information\> as empty "".
 
 ### Issues Fixed
 
@@ -46,10 +52,10 @@ Allows you to get a list of the peers, to whose specific status you have subscri
 Creates and initializes a raw message to be sent.
 
  If you set a text description, ensure that the size of the raw message and the description combined does not exceed 32 KB.
-
-### Issues Fixed
-
-- The system returns `rtm native not ready`, if one creates multiple channels with the same `channelId` and then calls `join` or `leave`. 
+ 
+ ### Issues Fixed
+ 
+ - The system returns `rtm native not ready`, if one creates multiple channels with the same `channelId` and then calls `join` or `leave`. 
 
 
 
@@ -75,13 +81,11 @@ v1.1.0 is released on September 18, 2019. It adds the following features:
 ### New Features
 
 <a name="getcount"></a>
-
 #### 1. Gets the member count of specified channel(s).
 
 You can now get the member count of specified channel(s) without the need to join, by calling the [getChannelMemberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aff0384f2a004ed75498e20e1917352e4) method. You can get the member counts of a maximum of 32 channels in one method call. 
 
 <a name="oncount"></a>
-
 #### 2. Automatically returns the latest numer of members in the current channel 
 
 If you are already in a channel, you do not have to call the `getChannelMemberCount` method to get the member count of the current channel. We also do not recommend using `onMemberJoined` and `onMemberLeft` to keep track of the member counts. As of this release, the SDK returns to the channel members [onMemberCountUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#ad778e702e026a79460f45a992bb8576d) the latest channel member count when the number of channel members changes. Note that:
@@ -90,12 +94,10 @@ If you are already in a channel, you do not have to call the `getChannelMemberCo
 - When the number of channel members exceeds 512, the SDK returns this callback when the number changes and at a MAXIMUM speed of once every three seconds.
 
 > Please treat this callback and the [getMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a567aca5f866cf71c3b679ae09b4bf626) method separately: 
->
 > - The former is an active callback. It returns the current numer of channel members;
 > - The latter relies on the [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5) callback to return a member list of the current channel. If the number of channel members exceeds 512, the SDK only returns a list of 512 randomly-selected channel members. 
 
 <a name="channelattributes"></a>
-
 #### 3. Channel attribute operations
 
 Supports setting or getting the attribute(s) of a specified channel. You can use this feature to create group anouncement.
@@ -130,6 +132,7 @@ This release improves the resending mechanism of peer-to-peer messages, and exte
 
 The Agora RTM system will resend a maximum of 32 channel messages of up to 30 seconds to channel members, when they manage to reconnect to the system from poor network conditions. This greatly improves the overall arrival rate of channel messages under weak network conditions. 
 
+
 ### API Changes
 
 #### Added Methods
@@ -159,6 +162,7 @@ The Agora RTM system will resend a maximum of 32 channel messages of up to 30 se
 #### Deprecated Error Codes
 
 - [ATTRIBUTE_OPERATION_ERR_NOT_READY](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_attribute_operation_error.html#ac6a33aef7c62a132ba79630219d548a7): Replaced by [ATTRIBUTE_OPERATION_ERR_USER_NOT_LOGGED_IN](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_attribute_operation_error.html#a9f329760056976289e49ad1dc69c598f).
+
 
 
 
@@ -199,6 +203,7 @@ Supports setting the output log level of the SDK using the `setLogFilter` method
 
 Supports setting the log file size using the `setLogFileSize` method. The log file has a default size of 512 KB. File size settings of less than 512 KB or greater than 10 MB will not take effect.
 
+
 > You can call this method once you have created and initializd an `RtmClient` instance. You do not have to call this method after calling the `login` method. 
 
 ### Improvements
@@ -213,12 +218,14 @@ Adds error codes based on the following scenarios:
 
 - One can log in the Agora RTM system with a static App ID and an RTM token, which is generated from a dynamic App ID. 
 
+
 ### API Changes
 
 - [setLogFile](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad44bd79d005d25c68712cc35d16d934b): Specifies the default path to the SDK log file.
 - [setLogFilter](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6726b3a3eafee4528280d3b0d1c6316f): Sets the output log level of the SDK.
 - [setLogFileSize](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a85a6365227adc43f8c3e07042dec6723): Sets the log file size in KB.
 - [getSdkVersion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#af3cc54b4d456a67d912786f61619c065): Gets the SDK version.
+
 
 
 
@@ -231,6 +238,7 @@ v0.9.3 is released on June 7th, 2019.
 #### Sends an (offline) peer-to-peer message to a specified user (receiver)
 
 This version allows you to send a message to a specified user when he/she is offline. If you set a message as an offline message and the specified user is offline when you send it, the RTM server caches it. Please note that for now we only cache 200 offline messages for up to seven days for each receiver. When the number of the cached messages reaches this limit, the newest message overrides the oldest one.
+
 
 #### User attribute-related operations
 
@@ -277,6 +285,7 @@ This release adds the function of querying the online status of the specified us
 > - The sequence of the returned user IDs is identical to the input sequence. 
 > - The call frequency of this method is 10 times every five seconds.
 
+
 #### Renews the Token
 
 In the production environment, you need to use a token to [log in](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) the Agora RTM system. Each token expires 24 hours after it is created. This release allows you to [renew a token](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353).
@@ -284,12 +293,14 @@ In the production environment, you need to use a token to [log in](https://docs.
 - If you are logging in the Agora RTM system and if your token has expired, the SDK returns the [LOGIN_ERR_TOKEN_EXPIRED](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_login_error.html#a4a15940de40fe029ba9821e406f3d875) error code. 
 - if you are logged in the Agora RTM system, you will not be kicked out immediately when your token expires. But you need to renew your token the next time you log in the Agora RTM system. Therefore, we still recommend that you renew your token when you receive the [onTokenExpired](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#aef74f37ed8797d274115d7f13785134e) callback.
 
+
 > - The [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) method must be called before [creating an RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6411640143c4d0d0cd9481937b754dbf).
 > - The call frequency of the [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) method is two times every second.
 
 ### Improvements
 
-- Supports a `userId` that starts with a space.
+-  Supports a `userId` that starts with a space.
+
 
 ### API Changes
 
