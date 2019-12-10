@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Windows
-updatedAt: Tue Dec 10 2019 03:11:44 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 03:38:18 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -94,20 +94,13 @@ ret = m_lpAgoraEngine->startChannelMediaRelay(cmrc);
 
 ## 开发注意事项
 
-
 - 该功能最多支持将媒体流转发至 4 个目标频道。转发过程中，如果想添加或删除目标频道，可以调用 `updateChannelMediaRelay` 方法。
 - 该功能不支持 String 型用户名。
 
-<% if(platform == "Web") { %>
 
-- 在设置源频道信息（`setSrcChannelInfo`）时，请确保 `uid` 设置与当前主播的 UID 不同。我们建议将这里的 `uid` 设置为  0，由服务器随机分配。
 
-<% } %>
 
-<% if(platform == "Android" || platform == "iOS" || platform == "macOS" || platform == "Windows")  { %>
 
 - 在设置源频道信息（`setSrcChannelInfo`）时，请确保 `uid` 必须为 0，且用于生成 token 的 `uid` 也必须为 0。
-
-<% } %>
 
 - 在成功调用 `startChannelMediaRelay` 方法后，如果想再次调用该方法，必须先调用 `stopChannelMediaRelay` 方法退出当前的转发状态。

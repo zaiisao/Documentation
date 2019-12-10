@@ -19,7 +19,7 @@ updatedAt: Tue Dec 10 2019 03:37:25 GMT+0800 (CST)
 
 <div class="alert note">跨频道连麦功能需要联系 <a href="mailto:sales@agora.io">sales@agora.io</a> 开通。</div>
 
-实现跨频道连麦功能前，请确保你已在项目中实现基本的实时音视频功能，详见[开始互动直播](../../cn/Interactive%20Broadcast/start_live_web.md)。
+实现跨频道连麦功能前，请确保你已在项目中实现基本的实时音视频功能，详见[开始互动直播](../../cn/Audio%20Broadcast/start_live_web.md)。
 
 Agora Web SDK 在 v3.0.0 中新增如下跨频道媒体流转发接口，支持将源频道中的媒体流转发至最多 4 个目标频道，实现跨直播间连麦功能：
 
@@ -35,7 +35,7 @@ Agora Web SDK 在 v3.0.0 中新增如下跨频道媒体流转发接口，支持�
 | <span style="white-space:nowrap;">状态码</span> | 错误码                                                       | <span style="white-space:nowrap;">事件码</span> | 媒体流转发状态                                               |
 | ----------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------- | ------------------------------------------------------------ |
 | 2                                               | 0                                                            | 4                                               | 源频道开始向目标频道传输数据。                               |
-| 3                                               | [错误码](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/classes/agorartc.channelmediaerror.html) | /                                               | 跨频道媒体流转发出现异常，可以参考错误码进行问题排查。出现此状态后，如果你还希望继续进行跨频道媒体流转发，必须重新调用 `startChannelMediaRelay` 方法。 |
+| 3                                               | [错误码](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/classes/agorartc.channelmediaerror.html) | /                                               | 跨频道媒体流转发出现异常，可以参考错误码进行问题排查。出现此状态后，如果你还希望继续进行跨频道媒体流转发，必须重新调用 `startChannelMediaRelay` 方法。 |
 | 0                                               | 0                                                            | /                                               | 已停止媒体流转发。                                           |
 
 **Note**：
@@ -107,9 +107,9 @@ Agora Web SDK 在 v3.0.0 中新增如下跨频道媒体流转发接口，支持�
 
 ### API 参考
 
-- [`startChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#startchannelmediarelay)
-- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#updatechannelmediarelay)
-- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#stopchannelmediarelay)
+- [`startChannelMediaRelay`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#startchannelmediarelay)
+- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#updatechannelmediarelay)
+- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#stopchannelmediarelay)
 
 ## 开发注意事项
 - 该功能最多支持将媒体流转发至 4 个目标频道。转发过程中，如果想添加或删除目标频道，可以调用 `updateChannelMediaRelay` 方法。
