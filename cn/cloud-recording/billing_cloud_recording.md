@@ -101,7 +101,7 @@ E 面积 = 1280 x 720 = 403200
 ### <a name="ramin"></a>录制音频分钟数 
 
 录制服务在 RTC 频道内的时间扣除录制视频的分钟数所得剩余时间，无论是否有音频录制都算作录制音频分钟数。
-<div class="alert note"><li>如果录制服务同时录制了多路音频流，录制音频分钟数不会被叠加。</li><li>录制音频分钟数的计费方案详见<a name="billing">产品计费表</a></li></div>
+<div class="alert note"><li>如果录制服务同时录制了多路音频流，录制音频分钟数不会被叠加。</li><li>录制音频分钟数的计费方案详见<a href="../../cn/cloud-recording/billing.md">产品计费表</a></li></div>
 
 
 
