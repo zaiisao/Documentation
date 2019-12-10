@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue Dec 10 2019 10:50:11 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 10:50:19 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
@@ -433,10 +433,11 @@ BaseUrl: **https://api.agora.io/dev/v1**
     ```
 
 > - 如果 time 字段设置为 0，则表示不封禁，服务端会对频道内符合设定规则的用户进行下线一次的操作。用户可以重新登录进入频道。 
-> - 踢人规则通过 cname、uid 和 ip 三个字段组合起来过滤实现，规则如下：
+> - 踢人规则通过 cname、uid 和 ip 三个字段实现过滤，规则如下：
 >   * 如果填写 ip，不填写 cname 或 uid，则该 ip 无法登录 App 中的任何频道
 >   * 如果填写 cname，不填写 uid 或 ip，则任何人都无法登录 App 中该 cname 对应的频道
 >   * 如果填写 cname 和 uid，不填写 ip，则该 uid 无法登录 App 中该 cname 对应的频道
+>   * 如果填写 uid，不填写 cname 或 ip，则该 uid 无法登录 App 中的任何频道
 
 -   响应：
 
