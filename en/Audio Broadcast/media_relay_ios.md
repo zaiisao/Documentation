@@ -99,7 +99,7 @@ After calling the `startChannelMediaRelay` method, you can call the `updateChann
 
 ## Considerations
 
-- As of v3.0.0, the Agora RTC SDK supports relaying media streams to a maximum of four destination channels. To add or delete a destination channel, call `updateChannelMediaRelay`.
+- The Agora RTC SDK supports relaying media streams to a maximum of four destination channels. To add or delete a destination channel, call `updateChannelMediaRelay`.
 - This feature supports integer user IDs only.
 
 <% if (platform == "Web") { %>
