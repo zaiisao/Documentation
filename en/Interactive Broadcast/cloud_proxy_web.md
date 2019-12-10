@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy on Web
 platform: Web
-updatedAt: Tue Dec 10 2019 08:01:40 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 08:02:41 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -20,7 +20,7 @@ Agora Web SDK v2.5.1 or later supports the cloud proxy.
 
 1. Download [the latest version of the Agora Native SDK](https://docs.agora.io/en/Agora%20Platform/downloads).
 2. Prepare the development environment. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_web.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md).
-3. Contact sales@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
+3. Contact sales-us@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
 4. Add the following test IP addresses and ports to your whitelist.
 
   The sources are the clients that integrate the Agora Web SDK.
@@ -80,8 +80,6 @@ client.join(channelKey, channel, null, function(uid) {
 
 - [startProxyServer](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#startproxyserver)
 - [stopProxyServer](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#stopproxyserver)
-- [setProxyServer](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setproxyserver)
-- [setTurnServer](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setturnserver)
 
 ## Working principles
 
@@ -90,7 +88,6 @@ The following diagram shows the working principles of the Agora cloud proxy.
 ![](https://web-cdn.agora.io/docs-files/1569400862850)
 
 1. Before connecting to Agora SD-RTN, the Agora SDK sends the request to the cloud proxy;
-
 2. The cloud proxy sends back the proxy information;
 3. The Agora SDK sends the data to the cloud proxy, and the cloud proxy forwards the data to Agora SD-RTN;
 4. Agora SD-RTN sends the data to the cloud proxy, and the cloud proxy forwards the data to the Agora SDK.
@@ -98,5 +95,5 @@ The following diagram shows the working principles of the Agora cloud proxy.
 ## Considerations
 
 - The `startProxyServer` and  `stopProxyServer` methods must be called before joining the channel or after leaving the channel.
-- The Agora Web SDK also provides the `setProxyServer` and `setTurnServer` methods for you to [deploy the proxy](../../en/Interactive%20Broadcast/proxy_web.md). The `setProxyServer` and `setTurnServer` methods cannot be used with the `startProxyServer` method at the same time, else an error occurs.
+- The Agora Web SDK also provides the `setProxyServer` and `setTurnServer` methods for you to deploy the proxy. The `setProxyServer` and `setTurnServer` methods cannot be used with the `startProxyServer` method at the same time, else an error occurs.
 - The `stopProxyServer` method disables all proxy settings, including those set by the `setProxyServer` and `setTurnServer` methods.
