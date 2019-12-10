@@ -3,7 +3,7 @@
 title: 音频互动直播计费说明
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 18:10:10 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 18:10:15 GMT+0800 (CST)
 ---
 # 音频互动直播计费说明
 ## 服务用量统计方式
