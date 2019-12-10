@@ -13,8 +13,8 @@ updatedAt: Tue Dec 10 2019 00:24:53 GMT+0800 (CST)
 声网会按月对你使用的所有产品或服务分别计费，并收取总费用。本文介绍声网服务用量统计方式和语音通话产品的计费规则。如果你同时还使用了声网其他产品或服务，请查看其对应的计费说明：
 
 
-- [本地服务端录制计费说明](https://docs.agora.io/billing_recording?platform=All%20Platforms)
-- [云端录制计费说明](https://docs.agora.io/billing_cloud_recording?platform=All%20Platforms)
+- [本地服务端录制计费说明](https://docs.agora.io/cn/Recording/billing_recording?platform=All%20Platforms)
+- [云端录制计费说明](https://docs.agora.io/cn/cloud-recording/billing_cloud_recording?platform=All%20Platforms)
 
 
 

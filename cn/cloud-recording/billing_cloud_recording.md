@@ -14,11 +14,11 @@ updatedAt: Tue Dec 10 2019 00:26:13 GMT+0800 (CST)
 
 
 
-- [语音通话计费说明](https://docs.agora.io/billing_audio?platform=All%20Platforms)
-- [视频通话计费说明](https://docs.agora.io/billing_video?platform=All%20Platforms)
-- [视频互动直播计费说明](https://docs.agora.io/billing_video?platform=All%20Platforms)
-- [音频互动直播计费说明](https://docs.agora.io/billing_audio?platform=All%20Platforms) 
-- [本地服务端录制计费说明](https://docs.agora.io/billing_recording?platform=All%20Platforms)
+- [语音通话计费说明](https://docs.agora.io/cn/Voice/billing_audio?platform=All%20Platforms)
+- [视频通话计费说明](https://docs.agora.io/cn/Video/billing_video?platform=All%20Platforms)
+- [视频互动直播计费说明](https://docs.agora.io/cn/Interactive%20Broadcast/billing_video?platform=All%20Platforms)
+- [音频互动直播计费说明](https://docs.agora.io/cn/Audio%20Broadcast/billing_audio?platform=All%20Platforms) 
+- [本地服务端录制计费说明](https://docs.agora.io/cn/Recording/billing_recording?platform=All%20Platforms)
 
 
 
