@@ -1,11 +1,11 @@
 
 ---
-title: Release Notes for Agora Cloud Recording
+title: Agora Cloud Recording Changelog
 description: 
 platform: Linux
-updatedAt: Fri Oct 18 2019 01:36:51 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 08:05:23 GMT+0800 (CST)
 ---
-# Release Notes for Agora Cloud Recording
+# Agora Cloud Recording Changelog
 ## Overview
 
 Agora Cloud Recording is an add-on service to record and save voice calls, video calls, and interactive broadcasts on your cloud storage. Compared with Agora On-premise Recording, Agora Cloud Recording is more efficient and convenient as it does not require deploying Linux servers.
@@ -17,9 +17,15 @@ Agora Cloud Recording is compatible with the following SDKs:
 - Agora Native SDK v1.7.0 or later.
 - Agora Web SDK v1.12 or later.
 
-## v1.3.0
+## 2019.11.15
 
-v1.3.0 is released on October 8, 2019.
+You can now use the `query` method to get the names of the recorded files immediately after the recording starts.
+
+## 2019.10.24
+
+This release supports Tencent Cloud as one of the third-party cloud storages.
+
+## 2019.10.08
 
 **New features**
 
@@ -56,9 +62,7 @@ When an error occurs, you receive the error message in the HTTP response body, i
 When uploading fails after you use the wrong `bucket` and `key` values of the third-party cloud storage, Agora Cloud Recording returns an error instead of uploading the recorded files to Agora Cloud Backup.
 
 
-## v1.2.0
-
-v1.2.0 is released on July 22, 2019. 
+## 2019.07.22
 
 **New features**
 
@@ -86,18 +90,14 @@ Optimizes the verification of whether `resourceId` corresponds with `uid` and `c
 
 Fixed minor issues in the default video layout (floating layout).
 
-## v1.1.1
-
-v1.1.1 is released on July 2, 2019 with the following improvements:
+## 2019.07.02
 
 - Changes the default background color in the composite layout to black.
 - Reduces video freeze under poor network conditions.
 
-## v1.1.0
+## 2019.06.13
 
-v1.1 is released on June 13, 2019.
-
-This version supports RESTful APIs. With the RESTful APIs, you can use Agora Cloud Recording through HTTP requests without integrating the SDK.
+This release supports RESTful APIs. With the RESTful APIs, you can use Agora Cloud Recording through HTTP requests without integrating the SDK.
 
 See the following documents for details:
 
@@ -105,9 +105,7 @@ See the following documents for details:
 - [RESTful API Reference](../../en/cloud-recording/cloud_recording_api_rest.md): Details of the RESTful API methods.
 - [RESTful API Callback Service](../../en/cloud-recording/cloud_recording_callback_rest.md): Enable the callback service to receive notifications of Agora Cloud Recording. 
 
-## v1.0.0
-
-v1.0.0 is released on April 30, 2019.
+## 2019.04.30
 
 This is the first release of Agora Cloud Recording with the following functions:
 
