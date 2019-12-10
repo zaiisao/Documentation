@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Android
-updatedAt: Thu Sep 26 2019 02:07:52 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:40 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -61,7 +61,7 @@ public void onLastmileProbeResult(LastmileProbeResult) {
 rtcEngine.stopLastmileProbeTest();
 ```
 
-同时，我们在 Github 提供一个开源的 [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) 示例项目。你可以下载体验，或者查看 [NetworkTestActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/NetworkTestActivity.java) 文件中的源代码。
+同时，我们在 GitHub 提供一个开源的 [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) 示例项目。你可以下载体验，或者查看 [NetworkTestActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/NetworkTestActivity.java) 文件中的源代码。
 
 ### API 参考
 

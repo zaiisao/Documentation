@@ -3,7 +3,7 @@
 title: 快速切换直播频道
 description: 
 platform: iOS,macOS
-updatedAt: Mon Sep 23 2019 09:04:29 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:35 GMT+0800 (CST)
 ---
 # 快速切换直播频道
 ## 功能描述
@@ -40,7 +40,7 @@ Agora Native SDK 从 v2.9.0 开始，提供新接口 `switchChannelByToken`，�
 agoraKit.switchChannel(byToken: nil, channelId: channel.channelName, joinSuccess: nil)
 ```
 
-同时，我们在 Github 提供一个开源的 [Quick-Switch-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Quick-Switch-Channel/Quick-Switch-iOS) 示例项目，你也可以前往下载体验并参考 [MediaCenter.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Quick-Switch-Channel/Quick-Switch-iOS/Quick-Switch/MediaCenter.swift) 文件中 `switchChannel` 函数的源代码。
+同时，我们在 GitHub 提供一个开源的 [Quick-Switch-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Quick-Switch-Channel/Quick-Switch-iOS) 示例项目，你也可以前往下载体验并参考 [MediaCenter.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Quick-Switch-Channel/Quick-Switch-iOS/Quick-Switch/MediaCenter.swift) 文件中 `switchChannel` 函数的源代码。
 
 ### API 参考
 

@@ -3,13 +3,13 @@
 title: 实现音视频通话
 description: 
 platform: Windows
-updatedAt: Tue Oct 29 2019 03:56:15 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:27 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
 
 ## Demo 体验
-Agora 在 Github 上提供开源的实时音视频通话示例项目 [Agora-Windows-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Windows-Tutorial-1to1)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-Windows-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Windows-Tutorial-1to1)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 - Microsoft Visual Studio 2017 或以上版本

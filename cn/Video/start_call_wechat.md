@@ -3,14 +3,14 @@
 title: 实现音视频通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Mon Nov 25 2019 10:14:39 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:25 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现音视频通话。
 
 ## Demo 体验
 
-Agora 在 Github 上提供一个开源的实时音视频示例项目 [Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供一个开源的实时音视频示例项目 [Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial)。在实现相关功能前，你可以下载并查看源代码。
 
 同时，Agora 也提供一个微信小程序 Demo。你可以使用 Android 或 iOS 手机上打开微信 App，扫描识别下面的二维码，快速体验 Agora 的小程序解决方案。
 

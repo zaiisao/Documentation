@@ -3,7 +3,7 @@
 title: 原始音频数据
 description: 
 platform: iOS,macOS
-updatedAt: Mon Sep 23 2019 07:21:24 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:31 GMT+0800 (CST)
 ---
 # 原始音频数据
 ## 功能描述
@@ -85,7 +85,7 @@ class IAudioFrameObserver
 };
 ```
 
-同时，我们在 Github 提供一个开源的 [AgoraAudioIO-Objective-C](https://github.com/AgoraIO/Advanced-Audio/tree/master/Custom-Audio-Device/AgoraAudioIO-Objective-C) 示例项目。你可以前往下载，或参考该项目的源代码。
+同时，我们在 GitHub 提供一个开源的 [AgoraAudioIO-Objective-C](https://github.com/AgoraIO/Advanced-Audio/tree/master/Custom-Audio-Device/AgoraAudioIO-Objective-C) 示例项目。你可以前往下载，或参考该项目的源代码。
 
 ### API 参考
 

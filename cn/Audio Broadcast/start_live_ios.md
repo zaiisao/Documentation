@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: iOS
-updatedAt: Tue Oct 29 2019 03:02:39 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:20 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -12,7 +12,7 @@ updatedAt: Tue Oct 29 2019 03:02:39 GMT+0800 (CST)
 
 ## Demo 体验
 
-Agora 在 Github 上提供开源的互动直播示例项目 [OpenLive-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)/[OpenLive-iOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)/[OpenLive-iOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 

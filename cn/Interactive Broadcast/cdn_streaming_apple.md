@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: iOS,macOS
-updatedAt: Mon Dec 09 2019 08:40:23 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:36 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -192,7 +192,7 @@ User2:
 ```
 
 
-同时，我们在 Github 提供一个开源的 [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming) 示例项目。
+同时，我们在 GitHub 提供一个开源的 [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming) 示例项目。
 
 ### API 参考
 

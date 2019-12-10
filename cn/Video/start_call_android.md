@@ -3,14 +3,14 @@
 title: 实现音视频通话
 description: 
 platform: Android
-updatedAt: Tue Oct 29 2019 03:47:06 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:17 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
 
 ## Demo 体验
 
-Agora 在 Github 上提供一个开源的实时音视频通话示例项目 [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
@@ -268,8 +268,7 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
   
     // 获取权限后，初始化 RtcEngine，并加入频道。
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
-            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }

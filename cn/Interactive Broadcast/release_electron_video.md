@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Electron
-updatedAt: Fri Aug 30 2019 04:26:28 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:14 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora SDK for Electron 的发版说明。
@@ -144,4 +144,4 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
 - [集成 SDK](../../cn/Interactive%20Broadcast/electron_video.md)
 - [API 参考](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/index.html)
  
-Agora 提供了开源的 [Electron Github Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart)，你也可以前往下载并体验。
+Agora 提供了开源的 [Electron GitHub Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart)，你也可以前往下载并体验。

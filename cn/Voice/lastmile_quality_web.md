@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Web
-updatedAt: Thu Sep 26 2019 05:59:54 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:41 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -64,7 +64,7 @@ remoteStream.getStats((stats) => {
 });
 ```
 
-同时，我们在 Github 提供一个开源的 [Agora-WebRTC-Troubleshooting](https://github.com/AgoraIO/Tools/tree/master/TroubleShooting/Agora-WebRTC-Troubleshooting) 示例项目。你可以[在线体验](https://webdemo.agora.io/agora_webrtc_troubleshooting/)，或者查看 [App.Vue](https://github.com/AgoraIO/Tools/blob/master/TroubleShooting/Agora-WebRTC-Troubleshooting/src/App.vue) 文件中的源代码。
+同时，我们在 GitHub 提供一个开源的 [Agora-WebRTC-Troubleshooting](https://github.com/AgoraIO/Tools/tree/master/TroubleShooting/Agora-WebRTC-Troubleshooting) 示例项目。你可以[在线体验](https://webdemo.agora.io/agora_webrtc_troubleshooting/)，或者查看 [App.Vue](https://github.com/AgoraIO/Tools/blob/master/TroubleShooting/Agora-WebRTC-Troubleshooting/src/App.vue) 文件中的源代码。
 
 ### API 参考
 

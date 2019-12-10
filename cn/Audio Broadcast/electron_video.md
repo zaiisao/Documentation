@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Electron
-updatedAt: Thu Dec 05 2019 07:19:36 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:14 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora SDK for Electron 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -78,8 +78,8 @@ AGORA_ELECTRON_DEPENDENT = 4.0.0
 在你的项目文件夹下运行 `nmp install` 安装依赖项。安装会自动触发 `npm run download`，你也可以到对应路径下手动安装。
 如果你想用 Xcode 或 Visual Studio 调试，可以执行 `npm run debug` 命令行生成项目文件及带符号表的 SDK 文件。
 
-至此，你已经将 Agora SDK for Electron 集成到你的项目中了。请参考 [Agora Electron Github Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 在你的项目中实现相关的实时音视频功能。
+至此，你已经将 Agora SDK for Electron 集成到你的项目中了。请参考 [Agora Electron GitHub Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 在你的项目中实现相关的实时音视频功能。
 
 ## SDK 开源
 
-[Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) 在 Github 上开源，你可以前往参考或查阅源代码。Agora 也欢迎开发者贡献代码，以提高 Electron SDK 的易用性。
+[Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) 在 GitHub 上开源，你可以前往参考或查阅源代码。Agora 也欢迎开发者贡献代码，以提高 Electron SDK 的易用性。

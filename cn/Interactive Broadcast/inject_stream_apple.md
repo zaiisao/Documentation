@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: iOS,macOS
-updatedAt: Mon Oct 21 2019 06:05:56 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:37 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
@@ -93,7 +93,7 @@ NSString *urlPath = @"Some online  RTMP/HLS url path";
   [agoraKit removeInjectStreamUrl: urlPath];
 ```
 
-同时，我们在 Github 提供一个开源的 [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) 示例项目。
+同时，我们在 GitHub 提供一个开源的 [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) 示例项目。
 
 <a name="api"></a>
 ### API 参考

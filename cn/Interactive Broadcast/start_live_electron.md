@@ -3,14 +3,14 @@
 title: 实现互动直播
 description: 
 platform: Electron
-updatedAt: Fri Oct 18 2019 07:22:18 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:28 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora Electron SDK 快速实现互动直播。
 
 ## Demo 体验
 
-Agora 在 Github 提供一个开源的 [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 示例项目。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 示例项目。在实现相关功能前，你可以下载并查看源代码。
 
 ## 开发环境要求
 
@@ -80,6 +80,6 @@ AGORA_ELECTRON_DEPENDENT = 4.0.0
 
 ## SDK 开源
 
-[Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) 在 Github 上开源，你可以前往参考或查阅源代码。Agora 也欢迎开发者贡献代码，以提高 Electron SDK 的易用性。
+[Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) 在 GitHub 上开源，你可以前往参考或查阅源代码。Agora 也欢迎开发者贡献代码，以提高 Electron SDK 的易用性。
 
 

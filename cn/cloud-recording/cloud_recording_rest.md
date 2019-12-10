@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Nov 25 2019 08:55:44 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:15 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -27,6 +27,12 @@ Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，
 | 仅提供 M3U8 文件名和录制的状态                               | 提供云端录制所有的事件通知和具体信息             |
 
 如需使用回调服务，请参考 [RESTful API 回调](../../cn/cloud-recording/cloud_recording_callback_rest.md)。
+
+## 示例请求
+
+Agora 在 GitHub 上提供一个 [Postman collection](https://github.com/AgoraIO/Agora-RESTful-Service/blob/master/cloud-recording/README.md) ，包含了云端录制 RESTful API 的示例请求。你只需将该 collection 导入 Postman，并设置环境变量，便可快速体验云端录制 RESTful API 的基本功能。
+
+
 
 ## 前提条件
 

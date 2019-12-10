@@ -3,7 +3,7 @@
 title: 七人以上视频场景
 description: 
 platform: Windows
-updatedAt: Sun Nov 03 2019 06:48:52 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:39 GMT+0800 (CST)
 ---
 # 七人以上视频场景
 ## 功能描述
@@ -36,7 +36,7 @@ updatedAt: Sun Nov 03 2019 06:48:52 GMT+0800 (CST)
 
 ### 示例代码
 
-我们在 Github 提供一个开源的 [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) 示例项目。
+我们在 GitHub 提供一个开源的 [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) 示例项目。
 
 ### API 参考
 

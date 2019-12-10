@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Windows
-updatedAt: Mon Nov 04 2019 08:02:15 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:36 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -201,7 +201,7 @@ User2:
     alpha: 1.0
 ```
 
-同时，我们在 Github 提供一个开源的 [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming) 示例项目。
+同时，我们在 GitHub 提供一个开源的 [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming) 示例项目。
 
 ### API 参考
 

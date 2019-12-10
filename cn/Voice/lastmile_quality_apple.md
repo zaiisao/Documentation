@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测
 platform: iOS,macOS
-updatedAt: Thu Sep 26 2019 02:36:28 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:40 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -90,7 +90,7 @@ AgoraLastmileProbeConfig *config = [[AgoraLastmileProbeConfig alloc] probeUplink
 [agoraKit stopLastmileProbeTest];
 ```
 
-同时，我们在 Github 提供一个开源的 [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS) 示例项目。你可以下载体验，或者查看 [LastmileViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/LastmileViewController.swift) 文件中的源代码。
+同时，我们在 GitHub 提供一个开源的 [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS) 示例项目。你可以下载体验，或者查看 [LastmileViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/LastmileViewController.swift) 文件中的源代码。
 
 ### API参考
 

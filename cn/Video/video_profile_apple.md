@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: iOS,macOS
-updatedAt: Fri Sep 20 2019 04:08:00 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:29 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
@@ -51,7 +51,7 @@ AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc]
 [agoraKit setVideoEncoderConfiguration: config];
 ```
 
-同时，我们在 Github 提供一个开源的 One-to-One-Video 示例项目，你可以前往下载，或参考如下文件中 `setupView` 方法的源代码：
+同时，我们在 GitHub 提供一个开源的 One-to-One-Video 示例项目，你可以前往下载，或参考如下文件中 `setupView` 方法的源代码：
 
 - iOS
 	- Swift：[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora%20iOS%20Tutorial/VideoChatViewController.swift) 文件

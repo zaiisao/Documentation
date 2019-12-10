@@ -3,7 +3,7 @@
 title: 使用组件自定义视频源和渲染器
 description: 
 platform: Android
-updatedAt: Tue Nov 20 2018 06:49:24 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:11 GMT+0800 (CST)
 ---
 # 使用组件自定义视频源和渲染器
 <a name = "custom_video_source"></a>
@@ -125,7 +125,7 @@ public void release();
 
 ### 4. 示例：利用 TextureSource 实现自定义屏幕录制视频源
 
-以自定义的屏幕录制视频源为例，全部代码请参考 Github。
+以自定义的屏幕录制视频源为例，全部代码请参考 GitHub。
 
 #### 步骤 1：实现设备回调方法
 

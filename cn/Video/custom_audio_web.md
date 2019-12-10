@@ -3,7 +3,7 @@
 title: 自定义音频采集
 description: How to use external audio sources for Web SDK
 platform: Web
-updatedAt: Tue Sep 24 2019 08:36:30 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:16 GMT+0800 (CST)
 ---
 # 自定义音频采集
 ## 功能介绍
@@ -44,7 +44,7 @@ navigator.mediaDevices.getUserMedia(
 
 <div class="alert info"><code>MediaStreamTrack</code> 对象是指浏览器原生支持的 <code>MediaStreamTrack</code> 对象，具体用法和浏览器支持状况请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack">MediaStreamTrack API 说明</a>。</div>
 
-同时，我们在 Github 提供一个开源的 [Agora-Custom-VideoSource-Web-Webpack](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack) 示例项目。你可以下载体验，或查看 [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack/src/rtc-client.js) 文件中的源代码。
+同时，我们在 GitHub 提供一个开源的 [Agora-Custom-VideoSource-Web-Webpack](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack) 示例项目。你可以下载体验，或查看 [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack/src/rtc-client.js) 文件中的源代码。
 
 ## 开发注意事项
 

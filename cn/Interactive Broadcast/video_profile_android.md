@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Android
-updatedAt: Fri Sep 20 2019 04:07:56 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:28 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
@@ -50,7 +50,7 @@ VideoEncoderConfiguration config = new VideoEncoderConfiguration(
 rtcEngine.setVideoEncoderConfiguration(config);
 ```
 
-同时，我们在 Github 提供一个开源的 Agora-Android-Tutorial-1to1 示例项目，你可以前往下载，或参考 [VideoChatViewActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/java/io/agora/tutorials1v1vcall/VideoChatViewActivity.java) 文件中 `setupVideoConfig` 方法的源代码。
+同时，我们在 GitHub 提供一个开源的 Agora-Android-Tutorial-1to1 示例项目，你可以前往下载，或参考 [VideoChatViewActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/java/io/agora/tutorials1v1vcall/VideoChatViewActivity.java) 文件中 `setupVideoConfig` 方法的源代码。
 
 ###  API 参考
 

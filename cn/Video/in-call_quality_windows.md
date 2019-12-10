@@ -3,13 +3,13 @@
 title: 通话中质量监测
 description: 检测通话质量 Windows
 platform: Windows
-updatedAt: Sun Sep 29 2019 08:28:39 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:21:30 GMT+0800 (CST)
 ---
 # 通话中质量监测
 ## 功能描述
 **加入频道后**，SDK 会每隔 **2 秒**自动触发通话质量相关的下述回调，你可以了解当前通话的网络质量、本地统计信息、音频质量和视频质量。
 
-我们在 Github 提供一个开源的 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 示例项目。你可以前往下载，或参考 [`AGEngineEventHandler.cpp`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows/OpenLive/AGEngineEventHandler.cpp) 中的源代码。
+我们在 GitHub 提供一个开源的 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 示例项目。你可以前往下载，或参考 [`AGEngineEventHandler.cpp`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows/OpenLive/AGEngineEventHandler.cpp) 中的源代码。
 
 <div class="alert note">请确保已在你的项目中实现基本的实时音视频功能。详见<a href="../../cn/Video/start_call_windows.md">开始音视频通话</a>或<a href="../../cn/Video/start_live_windows.md">开始互动直播</a>。</div>
 
