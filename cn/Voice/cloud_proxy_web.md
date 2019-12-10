@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: How to enable cloud proxy on Web SDK
 platform: Web
-updatedAt: Mon Nov 18 2019 03:08:31 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 07:32:43 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能描述
@@ -98,8 +98,6 @@ client.join(channelKey, channel, null, function(uid) {
 
 - [startProxyServer](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#startproxyserver)
 - [stopProxyServer](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#stopproxyserver)
-- [setProxyServer](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#setproxyserver)
-- [setTurnServer](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#setturnserver)
 
 ## 工作原理
 Agora 云代理的工作原理如下：
@@ -114,5 +112,5 @@ Agora 云代理的工作原理如下：
 ## 开发注意事项
 
 -  `startProxyServer` 和 `stopProxyServer` 必须在加入频道前或离开频道后调用。
-- Agora Web SDK 还提供 `setProxyServer` 和 `setTurnServer` 两个方法给用户[自行部署代理服务器](../../cn/Voice/proxy_web.md)。这两个方法与 `startProxyServer` 不可同时调用，调用了其中任一个方法，再调用 `startProxyServer` 会报错，反之亦然。
+- Agora Web SDK 还提供 `setProxyServer` 和 `setTurnServer` 两个方法给用户自行部署代理服务器。这两个方法与 `startProxyServer` 不可同时调用，调用了其中任一个方法，再调用 `startProxyServer` 会报错，反之亦然。
 -  `stopProxyServer` 会关闭所有代理服务，包括通过 `setProxyServer` 和 `setTurnServer` 设置的代理。
