@@ -2,7 +2,7 @@
 ---
 title: 云端录制
 description: 
-platform: Linux
+platform: All Platforms
 updatedAt: Mon Oct 28 2019 07:04:40 GMT+0800 (CST)
 ---
 # 云端录制
