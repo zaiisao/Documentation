@@ -3,25 +3,29 @@
 title: 云端录制
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 10:23:01 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 06:49:32 GMT+0800 (CST)
 ---
 # 云端录制
 Agora 云端录制，是 Agora 针对音视频通话、直播研发的录制服务，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK (1.12.0 或更高版本) 兼容，通过简单的操作方法，帮助开发者快速、灵活地实现录制服务，实现一对一、一对多的音视频通话或直播的录制。同 Agora 本地服务端录制相比，Agora 云端录制无需部署 Linux 服务器，减轻了研发和运维的压力，更轻量便捷。
 
 有了录制功能，你可以将语音聊天、视频聊天以及直播的内容储存下来，提供给更多的人在方便的时间观看。举个例子，某个用户报名参加了某线上课程，除了在规定的时间段上线听课外，他还可以选择在其他时间段观看课程录像，方便复习或补课。该功能可以通过在客户端配置 Agora 云端录制实现。
 
-## 功能描述
+## 功能概述
 
-Agora 云端录制支持如下功能：
+下表列出了 Agora 云端录制的主要功能。你可以访问链接，查看各功能详情。
 
-- Agora Native SDK 和 Agora Web SDK 的高清音视频通话的录制
-- 单流录制，即分别录制频道内每个用户的音频流和视频流
-- 合流录制，即频道内所有用户的音视频混合录制为一个音视频文件
-- 录制指定用户的音视频流
-- 支持多种合流布局
-- 第三方云存储
-- 支持自定义录制文件的存储路径
-
+| <span style="white-space:nowrap;">&emsp;&emsp;&emsp;功能&emsp;&emsp;&emsp;</span>               | 描述                                                         |
+| :----------------- | :----------------------------------------------------------- |
+| 录制模式           | 支持两种录制模式：<ul><li>[合流录制模式](https://docs.agora.io/cn/cloud-recording/cloud_recording_composite_mode?platform=All%20PlatformsPlatforms)：频道内所有（或指定）UID 的音视频混合录制为一个音视频文件。</li><li>[单流录制模式](https://docs.agora.io/cn/cloud-recording/cloud_recording_individual_mode?platform=All%20Platforms)：分别录制频道中每个 UID（或指定 UID）的音频流和视频流。</li></ul> |
+| 录制指定的 UID      | 支持录制频道中指定的 UID。                                   |
+| 录制指定的媒体类型 | 支持录制指定的的媒体类型：<ul><li>仅录制音频</li><li>仅录制视频</li><li>同时录制音频和视频</li></ul> |
+| 设置音视频属性     | 在合流模式下，支持设置音视频属性，如码率和分辨率。           |
+| 设置合流布局       | 在合流模式下，支持[自定义合流布局](https://docs.agora.io/cn/cloud-recording/cloud_recording_layout?platform=Linux#a-namecustoma%E8%87%AA%E5%AE%9A%E4%B9%89%E5%90%88%E6%B5%81%E5%B8%83%E5%B1%80)或[使用预设的布局](https://docs.agora.io/cn/cloud-recording/cloud_recording_layout?platform=Linux#a-namepredefineda%E9%80%89%E6%8B%A9%E9%A2%84%E8%AE%BE%E7%9A%84%E5%90%88%E6%B5%81%E5%B8%83%E5%B1%80%E6%A0%B7%E5%BC%8F)，以及设置屏幕（画布）的背景颜色。支持在录制过程中更新合流布局或背景颜色。 |
+| 第三方云存储       | 支持将录制文件存储在以下第三方云存储中：<ul><li>Amazon S3</li><li>阿里云</li><li>腾讯云</li><li>七牛云</li></ul>  你可以自定义录制文件在云存储中的存放路径。|
+| 录制双流           | 如果 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk) 启用了[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-duala双流模式)，你可以选择录制大流或小流。 |
+| 录制加密频道       | 支持录制采用以下加密方式的频道：<ul><li>AES128XTS</li><li>AES128ECB</li><li>AES256XTS</li></ul> |
+| 转码           | Agora 提供转码脚本，用于[合并音视频文件](https://docs.agora.io/cn/cloud-recording/cloud_recording_merge_files?platform=All%20Platforms)以及[转换文件格式](https://docs.agora.io/cn/cloud-recording/cloud_recording_convert_format?platform=All%20Platforms)。 |
+| 消息通知服务           | Agora 提供[消息通知服务](../../cn/cloud-recording/cloud_recording_callback_rest.md)。开通该服务后，你会收到云端录制的事件通知，例如：<ul><li>录制文件的文件名</li><li>第一个切片文件的开始时间</li><li>流状态改变时的时间戳</li></ul> |
 
 ## 适用场景
 

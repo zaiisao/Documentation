@@ -3,12 +3,12 @@
 title: 收集崩溃日志
 description: 
 platform: Linux
-updatedAt: Wed Sep 25 2019 07:45:58 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 08:46:05 GMT+0800 (CST)
 ---
 # 收集崩溃日志
 ## 概述
 
-Agora 建议你在集成本地服务端录制前，使用我们提供的 `create_core.sh` 脚本开启系统 core dump 功能，以便在后续录制出现问题时，能够快速调查和定位问题，提高问题解决效率。
+Agora 建议你在集成本地服务端录制前，使用我们提供的 `enable_coredump.sh` 脚本开启系统 core dump 功能，以便在后续录制出现问题时，能够快速调查和定位问题，提高问题解决效率。
 
 ## 实现方法
 
@@ -18,19 +18,19 @@ Agora 建议你在集成本地服务端录制前，使用我们提供的 `create
 
 ### 1.获取脚本
 
-点击[此处](https://download.agora.io/sh/create_core.sh)获取 `create_core.sh` 脚本。
+点击[此处](https://download.agora.io/serversdk/tools/enable_coredump.sh )获取 `enable_coredump.sh` 脚本。
 
 ### 2.执行脚本
 
-打开终端，运行以下命令执行 `create_core.sh` 脚本打开 core dump：
+打开终端，运行以下命令执行 `enable_coredump.sh` 脚本打开 core dump：
 
 ~~~
-sudo ./create_core.sh
+sudo ./enable_coredump.sh
 ~~~
 
 <div class="alert note">注意：<li>运行脚本后，要重启服务器才能生效。<li>如不能重启，请额外执行 <code>ulimit -c unlimited</code> 命令，使其在当前用户下生效。</li></li></div>
 
-生成的 core 文件将位于 `/var/corefile` 目录下，文件名格式为 “core-程序文件名-生成core文件时收到的信号-进程用户ID-进程用户组ID-进程号-生成core文件的时间戳”
+生成的 core 文件将位于 `/var/corefile` 目录下。
 
 如果你是在 docker 中跑录制进程，则运行以下命令：
 
@@ -47,4 +47,4 @@ docker run --ulimit core=-1 --security-opt seccomp=unconfined --privileged=true
 ## 注意事项
 
 - 运行一次该脚本后，Linux 重启脚本依然生效。
-- 如果你集成的是本地服务端录制 SDK 2.2.3 及之后版本，会在 `AgoraCoreService` 所在目录下生成 `recording_crash.log`，作为崩溃问题分析的辅助文件。
+- 如果你集成的是本地服务端录制 SDK 2.2.3 及之后版本，会在 `AgoraCoreService` 所在目录下生成`recording_crash.log`，作为崩溃问题分析的辅助文件。

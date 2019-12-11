@@ -3,7 +3,7 @@
 title: 管理录制文件
 description: 介绍录制文件的命名规则和如何解析 M3U8 文件
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 03:34:21 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 08:33:08 GMT+0800 (CST)
 ---
 # 管理录制文件
 ## 功能描述
