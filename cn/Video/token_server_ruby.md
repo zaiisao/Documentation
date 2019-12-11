@@ -3,10 +3,10 @@
 title: 在服务端生成 Token
 description: 
 platform: Ruby
-updatedAt: Mon Nov 18 2019 06:42:59 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 09:54:59 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
-本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Ruby API 参考。
+本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个 RTC token，并提供 RTC token 生成相关的 Ruby API 参考。
 
 ## Token 代码仓库说明
 
@@ -35,7 +35,7 @@ updatedAt: Mon Nov 18 2019 06:42:59 GMT+0800 (CST)
 
 ## 快速生成 Token
 
-下面我们以 **rtc_token_builder_sample.rb** 为例演示 Token 生成的过程：
+下面我们以 **rtc_token_builder_sample.rb** 为例演示 RTC token 生成的过程：
 
 1. 请确保已安装 **Ruby** 且版本号大于 1.9。
      `ruby --version` 
@@ -55,7 +55,7 @@ updatedAt: Mon Nov 18 2019 06:42:59 GMT+0800 (CST)
 5. 打开你的本地终端，cd 进入到 **rtc_token_builder_sample.rb** 所在文件夹。
 6. 运行指令： 
     `ruby rtc_token_builder_sample.rb` 
-     *新生成的伪 Token 会在你的本地终端显示。*
+     *新生成的 RTC token 会在你的本地终端显示。*
 		 
 
 
@@ -75,7 +75,7 @@ updatedAt: Mon Nov 18 2019 06:42:59 GMT+0800 (CST)
       end
 ```
 
-该方法支持用 int 型 uid 生成 Token。
+该方法支持用 int 型 uid 生成 RTC token。
 
 | **参数**    | **描述**                                              |
 | ---------------- | ------------------------------------------------------------ |
@@ -98,7 +98,7 @@ updatedAt: Mon Nov 18 2019 06:42:59 GMT+0800 (CST)
       end
 ```
 
-该方法支持用 string 型 userAccount 生成 Token。
+该方法支持用 string 型 userAccount 生成 RTC token。
 
 | **参数**    | **描述**                                             |
 | ---------------- | ------------------------------------------------------------ |

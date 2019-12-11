@@ -3,10 +3,10 @@
 title: 在服务端生成 Token
 description: 
 platform: PHP
-updatedAt: Mon Nov 18 2019 06:42:55 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 09:46:38 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
-本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 PHP API 参考。
+本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个正式的 RTC token，并提供 Token 生成相关的 PHP API 参考。
 
 ## Token 代码仓库说明
 
@@ -56,7 +56,7 @@ echo 'Token with int uid: ' . $token . PHP_EOL;
 5. 打开你的本地终端，cd 进入到 **RtcTokenBuilderSample.php** 所在文件夹。
 6. 运行指令： 
     `php RtcTokenbuilderSample.php` 
-     *新生成的伪 Token 会在你的本地终端显示。*
+     *新生成的 RTC token 会在你的本地终端显示。*
 
 
 

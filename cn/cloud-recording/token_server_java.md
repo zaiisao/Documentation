@@ -3,10 +3,10 @@
 title: 在服务端生成 Token
 description: 
 platform: Java
-updatedAt: Mon Nov 18 2019 06:42:53 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 09:41:12 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
-本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Java API 参考。
+本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个 RTC token，并提供 Token 生成相关的 Java API 参考。
 
 ## Token 代码仓库说明
 
@@ -33,13 +33,13 @@ updatedAt: Mon Nov 18 2019 06:42:53 GMT+0800 (CST)
 
 开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
-## 快速生成 Token
+## 快速生成 RTC Token
 
 下面我们以 **RtcTokenBuilderSample.java** 为例演示 Token 生成的过程：
 
 1. 将 GitHub 仓库同步到本地。
 2.  将 **/DynamicKey/AgoraDynamicKey/java** 作为项目导入到你的 Eclipse IDE 中。
-3. 打开 **/python/sample/RtcTokenBuilderSample.java** 。
+3. 打开 **/java/src/io/agora/sample/RtcTokenBuilderSample.java** 。
 4. 用你自己的 App ID、App 证书以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App 证书，详见 [校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)
     - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
 ```Java
@@ -55,7 +55,7 @@ updatedAt: Mon Nov 18 2019 06:42:53 GMT+0800 (CST)
 ```
 5. 　鼠标右击 **/java/src/io/agora/sample/RtcTokenBuilderSample.java** 并选择 **Run as a Java application**。
 
-     *新生成的伪 Token 会在你的本地终端显示。*
+     *新生成的 RTC token 会在你的本地终端显示。*
 
 
 ## API 参考

@@ -3,10 +3,10 @@
 title: 在服务端生成 Token
 description: 
 platform: Node.js
-updatedAt: Mon Nov 18 2019 06:42:57 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 09:50:19 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
-本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个伪 Token，并提供 Token 生成相关的 Node.js API 参考。
+本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个正式的 RTC token，并提供 token 生成相关的 Node.js API 参考。
 
 ## Token 代码仓库说明
 
@@ -57,13 +57,13 @@ updatedAt: Mon Nov 18 2019 06:42:57 GMT+0800 (CST)
 6. 打开你的本地终端，cd 进入到 **RtcTokenBuilderSample.js** 所在文件夹。
 7. 运行指令： 
     `python RtcTokenBuilderSample.js` 
-     *新生成的伪 Token 会在你的本地终端显示。*
+     *新生成的 RTC token 会在你的本地终端显示。*
 
 ## API 参考
 
 源码： [../nodejs/src/RtcTokenBuilder.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/src/RtcTokenBuilder.js)
 
-你可以通过调用 **RtcTokenBuilder.js** 提供的公开方法创建自己的 Token 生成器。请注意，**RtcTokenBuilder.js** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
+你可以通过调用 **RtcTokenBuilder.js** 提供的公开方法创建自己的 token 生成器。请注意，**RtcTokenBuilder.js** 既支持 int 型 uid 也支持 string 型 userAccount，请根据需要选择合适的生成方法。
 
 
 ### buildTokenWithUid
@@ -72,7 +72,7 @@ updatedAt: Mon Nov 18 2019 06:42:57 GMT+0800 (CST)
    static buildTokenWithAccount(appID, appCertificate, channelName, account, role, privilegeExpiredTs)
 ```
 
-该方法支持用 int 型 uid 生成 Token。
+该方法支持用 int 型 uid 生成 RTC token。
 
 | **参数**    | **描述**                                              |
 | ---------------- | ------------------------------------------------------------ |
@@ -91,7 +91,7 @@ updatedAt: Mon Nov 18 2019 06:42:57 GMT+0800 (CST)
   static buildTokenWithAccount(appID, appCertificate, channelName, account, role, privilegeExpiredTs)
 ```
 
-该方法支持用 string 型 userAccount 生成 Token。
+该方法支持用 string 型 userAccount 生成 RTC token。
 
 | **参数**    | **描述**                                             |
 | ---------------- | ------------------------------------------------------------ |
