@@ -3,7 +3,7 @@
 title: Black screen occurs in a call.
 description: 视频黑屏
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 15:13:00 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 12:08:17 GMT+0800 (CST)
 ---
 # Black screen occurs in a call.
 Common reasons for black screens:
@@ -32,6 +32,7 @@ Check the following:
 
 * Check if the user disabled the remote video.
 * Switch to 4G or another Wi-Fi network to ensure that the problem is not caused by poor Internet connections.
+* Check whether the remote user uses the [channel encryption](https://docs.agora.io/en/Video/channel_encryption_windows?platform=Windows) function but the local user doesn't.
 
 ### Black screen on the local and remote sides
 

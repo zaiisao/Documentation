@@ -3,7 +3,7 @@
 title: 声网的音频处理有哪些特点
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:19:33 GMT+0800 (CST)
+updatedAt: Thu Nov 21 2019 18:16:16 GMT+0800 (CST)
 ---
 # 声网的音频处理有哪些特点
 我们在音频处理上采用以下独特算法来提升用户的通话体验：
@@ -14,4 +14,4 @@ updatedAt: Mon Jul 01 2019 15:19:33 GMT+0800 (CST)
 * 盲源分离：独家盲源分离技术，外放状态也能屏蔽身后的各种非平稳杂音。
 * 啸叫控制：自动啸叫检测和抑制，近场也不会出现尖锐的杂音和啸叫。
 
-详情请参考[官网介绍](http://https://www.agora.io/cn/voicecall/)。
+详情请参考[官网介绍](https://www.agora.io/cn/voicecall/)。

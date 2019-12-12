@@ -3,7 +3,7 @@
 title: 视频黑屏
 description: 视频黑屏
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 12:00:54 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 12:05:53 GMT+0800 (CST)
 ---
 # 视频黑屏
 可能出现黑屏的原因有很多，其中两个最重要的原因是：
@@ -31,6 +31,7 @@ updatedAt: Tue Oct 22 2019 12:00:54 GMT+0800 (CST)
 
 * 检查用户是否禁用了远端视频；
 * 如果没有禁用远端视频，建议换4G网络看下是否还存在问题来排除网络原因。
+* 检查是否远端用户使用[媒体流加密](https://docs.agora.io/cn/Video/channel_encryption_windows?platform=Windows)功能，但本地用户未使用。
 
 ### 本地远端视频都黑屏
 

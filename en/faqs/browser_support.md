@@ -61,11 +61,15 @@ The Agora Web SDK supports all mainstream browsers.
   </tr>
 </table>
 
-> - Upgrade to Agora Web SDK v2.6 or later in the following scenarios:
->   - Safari on iOS 12.1.4 or later.
->   - Safari 12.1 or later on macOS.
-> - The Agora Web SDK v2.5 or later also supports Chrome 49 on Windows XP.
-> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/faq/browser_support#edge) for details.
+<div class="alert info">Other browser support:
+	<li>The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).</li>
+	<li>The Agora Web SDK v2.7 or later supports Edge on Windows 10, see <a href="https://docs.agora.io/en/faq/browser_support#edge">Edge support</a> for details.</li>
+	<li>The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.</li>
+</div>
+<div class="alert note"> Upgrade to Agora Web SDK v2.6 or later in the following scenarios:
+	<li>Safari on iOS 12.1.4 or later.</li>
+	<li>Safari 12.1 or later on macOS.</li>
+</div>
 
 Due to the various browser engine implementations, support for some features may vary by browser and platform. The following are known issues and limitations.
 

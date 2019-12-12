@@ -61,11 +61,15 @@ Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
   </tr>
 </table>
 
-> - Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
-> - Agora Web SDK 2.7 及以上版本还支持 Windows 10 平台的 Edge 浏览器，详见 [Edge 浏览器支持](https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge)。
-> - 以下场景中请务必将 Web SDK 升级至 2.6 或更高版本:
->   - iOS 12.1.4 及以上版本使用 Safari 浏览器
->   - macOS 上使用 Safari 12.1 及以上版本
+<div class="alert info">除上表浏览器外，还有以下支持：
+	<li>Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。</li>
+	<li>Agora Web SDK 2.7 及以上版本支持 Windows 10 平台的 Edge 浏览器，详见 <a href="https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge">Edge 浏览器支持</a>。</li>
+	<li>Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。</li>
+</div>
+<div class="alert note">以下场景中请务必将 Agora Web SDK 升级至 2.6 或更高版本:
+	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器</li>
+	<li>macOS 上使用 Safari 12.1 及以上版本</li>
+	</div>
 
 由于浏览器的差异，在不同浏览器及平台上支持的功能可能不同。下面列出浏览器和平台的已知限制。
 

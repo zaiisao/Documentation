@@ -3,7 +3,7 @@
 title: 在调用 Stream.init 时设备报错
 description: 
 platform: Web
-updatedAt: Tue Sep 17 2019 10:27:47 GMT+0800 (CST)
+updatedAt: Tue Nov 19 2019 14:43:19 GMT+0800 (CST)
 ---
 # 在调用 Stream.init 时设备报错
 以下为初始化音视频流时常见的设备错误：

@@ -3,7 +3,7 @@
 title: 小程序 SDK 常见问题集
 description: 
 platform: 微信小程序
-updatedAt: Thu Aug 01 2019 09:59:25 GMT+0800 (CST)
+updatedAt: Fri Nov 15 2019 12:21:14 GMT+0800 (CST)
 ---
 # 小程序 SDK 常见问题集
 ### 推流/拉流处理
@@ -13,6 +13,10 @@ updatedAt: Thu Aug 01 2019 09:59:25 GMT+0800 (CST)
 ### 退后台处理
 
 可以通过设置小程序的 live-pusher 组件中的 waiting-image 属性来处理。设置后，推流端退到后台时，可以推送静态图片来维持推流，其他端会收到本端预设的 waiting-image 图片来代替视频流。 除非通过一些方式 (例如后台播放背景音乐)，小程序会在某些场景下断开 websocket 或者 rtmp 连接，例如点击右上角按钮将程序退到后台。这种情况下，若回到前台后收到 error code 904 或 501，则应使用 SDK 进行重连，具体方法请参考 重新加入频道 rejoin 中的描述。
+
+### 闪退
+
+这个问题可能是因为启用了其它 Websocket，但没有开启验证 Https 引起的。如需启用其它的 Websocket，请在**本地设置**中确保取消勾选**不校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书**。
 
 ### 只启用小程序的音频功能，不需要发送视频，应该如何设置？
 
@@ -31,7 +35,7 @@ updatedAt: Thu Aug 01 2019 09:59:25 GMT+0800 (CST)
 ### 小程序和 Web 互通时，Web 端可以看到小程序的视频，但小程序看不到 Web 端的视频？
 
 Web 与小程序互通时，Web 端只支持 H264 模式的编码，不支持 VP8。将 Web SDK 的 `index.html` 文件修改为如下设置即可：
-`client = AgoraRtc.createClient({mode: 'h264_interop'})`；
+`client = AgoraRtc.createClient({mode: "live", codec: "h264"})`；
 
 ### 小程序的 live-pusher 组件里的 src 应该写什么？
 
