@@ -1,11 +1,11 @@
 
 ---
-title: Custom Video Source and Sink
+title: Custom Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Tue Dec 10 2019 04:20:28 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 03:08:54 GMT+0800 (CST)
 ---
-# Custom Video Source and Sink
+# Custom Video Source and Renderer
 ## Introduction
 
 By default, the Agora SDK uses default audio and video modules for capturing and rendering in real-time communications. 
@@ -21,7 +21,7 @@ This article tells you how to use the Agora Native SDK to customize the video so
 
 ## Implementation
 
-Before customizing the video source or renderer, ensure that you hava implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
+Before customizing the video source or renderer, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
 
 Refer to the following steps to customize the video source:
 

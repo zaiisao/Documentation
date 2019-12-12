@@ -3,7 +3,7 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Tue Oct 22 2019 06:19:11 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 03:03:55 GMT+0800 (CST)
 ---
 # Create and Initialize a Client
 ## Prerequisites
@@ -52,7 +52,7 @@ client.init(<APPID>, function () {
 > Ensure that you call the `create` and `client.init` methods to intiialize the AgoraRtcEngine before calling any other API. 
 
 ## Next Steps
-You hava created the Client and can start a voice call with the following steps:
+You have created the Client and can start a voice call with the following steps:
 - [Join a Channel](../../en/Video/join_video_web.md)
 - [Publish and Subscribe to Streams](../../en/Video/publish_web.md)
 

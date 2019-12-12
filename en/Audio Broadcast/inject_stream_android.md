@@ -3,40 +3,32 @@
 title: Inject Online Media Stream
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:20:26 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 10:32:02 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
 
-**Injecting an online media stream** refers to injecting an external audio or video stream to an ongoing live broadcast channel, so that the hosts and audience in the channel can hear and see the stream while interacting with each other. 
-
-The Agora SDK v2.1.0+ provides the `addInjectStreamUrl` method for:
-
-- The host to specify a media stream as the input source, inject it into the channel, and push it to the audience.
-- The host to set the video profile of the injected video stream.
-- Pushing the injected media stream to the CDN audience if the host enables CDN streaming.
+**Injecting an online media stream** is the action of adding an external audio or video stream to an ongoing live-broadcast channel. It enables the hosts and audience in the channel to hear and see the additional stream while interacting with each other.
 
 ### Applicable scenarios
 
-Injecting an online media stream can be applied to the following scenarios:
+- Live sports: The host and audience can watch and simultaneously commenting on events.
+- Music concerts, movies, and other entertainments: The hosts and audience can participate in real-time discussions while watching them.
+- Additional perspectives: The host can inject video streams captured by drones or network cameras into a live broadcast.
 
-- During sporting events, by injecting the video stream of an ongoing game. The hosts and audience can watch the game while commenting on it.
-- During music shows, movies, and entertainment shows. The hosts and audience can have real-time discussions and exchange ideas while watching the show.
-- Video streams captured by drones or network cameras can be injected into a live broadcast and broadcasted to the audience in the channel.
+### Working principles
 
-###  Working principles
+The host in a live-broadcast channel pulls an online media stream and pushes it through the Video Inject Server to the Agora Software-Defined Real-time Network (SD-RTN™) and the channel.
 
-The host in a live broadcast channel pulls an online media stream and pushes it to the Agora SD-RTN and live broadcast channel through the Video Inject Server.
+![](https://web-cdn.agora.io/docs-files/1576059890625)
 
-![](https://web-cdn.agora.io/docs-files/1569414380425)
+- The host and audience in the channel can hear/see the media stream.
+- If the host enables Content Delivery Network (CDN) live streaming, the injected media stream is also pushed to the CDN so that the CDN audience can hear/also the media stream.
 
-
--  The host and audience in the channel can hear/see the media stream.
-- If the host enabled CDN streaming, the injected media stream is also pushed to the CDN so that the CDN audience can hear/see the media stream.
-
-> - Supported media stream formats include: RTMP, HLS and FLV. Audio-only streams can also be injected.
-> - Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
-
+>- Only one online media stream can be injected into the same channel at the same time.
+>- Supported codec type: AAC for audio, H.264 for video.
+>- Audio-only streams are also supported.
+>- Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
 
 
 ## Implementation

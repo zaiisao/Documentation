@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Fri Nov 29 2019 11:07:07 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 12:56:25 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -11,6 +11,16 @@ updatedAt: Fri Nov 29 2019 11:07:07 GMT+0800 (CST)
 Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-time Messaging (RTM) SDK provides a more streamlined and stable messaging mechanism for you to quickly implement real-time messaging under various scenarios.
 
 > For more information about the features and applications of the Agora RTM SDK, see [Product Overview](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms).
+
+## v1.2.2
+
+v1.2.2 was released on December 10, 2019.
+
+
+
+### Issues Fixed
+
+Occasionally fails to receive any callback after a channel attribute operation. 
 
 ## v1.2.1
 
