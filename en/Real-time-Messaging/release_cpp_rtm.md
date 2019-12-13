@@ -14,7 +14,7 @@ Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-tim
 
 ## v1.2.2
 
-v1.2.2 was released on December 12, 2019.
+v1.2.2 was released on December 13, 2019.
 
 
 ### Compatibility Changes
