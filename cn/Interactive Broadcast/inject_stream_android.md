@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Android
-updatedAt: Fri Dec 13 2019 07:44:43 GMT+0800 (CST)
+updatedAt: Fri Dec 13 2019 07:44:47 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
@@ -41,7 +41,7 @@ updatedAt: Fri Dec 13 2019 07:44:43 GMT+0800 (CST)
 
    > 频道内同一时间只允许输入一个在线媒体流。
 
-   输入媒体流成功后，该媒体流会在直播频道内自动播放，频道内所有用户都会收到 `onUserOffline(uid: 666)` 回调，输入媒体流的主播同时还会收到 `onStreamInjectedStatus` 回调。
+   输入媒体流成功后，该媒体流会在直播频道内自动播放，频道内所有用户都会收到 `onUserJoined(uid: 666)` 回调，输入媒体流的主播同时还会收到 `onStreamInjectedStatus` 回调。
 
    > 如果输入媒体流失败，查阅 [API 参考](#api)排查问题。
 
