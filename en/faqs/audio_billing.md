@@ -3,102 +3,53 @@
 title: Billing for the voice call
 description: 语音通话计费说明
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 20:31:15 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 20:37:26 GMT+0800 (CST)
 ---
 # Billing for the voice call
-## Cost
+## Calculating service minutes
 
-Voice communication is charged by the minutes used and the number of users.
 
-After deducting the free monthly 10,000 minutes, Agora charges you:
+Agora will add up the [audio minutes](#amin) used by the project corresponding to your [App ID](https://console.agora.io/) on a monthly basis.
 
-<table>
-  <tr>
-    <th>Scenario</th>
-    <th>Total Fee</th>
-  </tr>
-  <tr>
-    <td>Recording disabled</td>
-    <td>Communication Fee = Voice Unit Price x Total Communication Minutes</td>
-  </tr>
-  <tr>
-    <td>Recording enabled </td>
-    <td>Communication Fee + Recording Fee = Voice Unit Price x Total Communication Minutes + Voice Unit Price x Total Recording Minutes</td>
-  </tr>
-</table>
 
-The Unit Price (price per minute) can be found at [Pricing](https://www.agora.io/en/price/).
-Regardless of the number of users recording at the same time in a channel, the recording of the entire channel is only charged as one stream.
 
-## Example: Voice Only
 
-In this example, Agora charges Communication Fee + Recording Fee
 
-### Communication Fee
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Minutes</th>
-  </tr>
-  <tr>
-    <td>A</td>
-    <td>30</td>
-  </tr>
-  <tr>
-    <td>B</td>
-    <td>40</td>
-  </tr>
-  <tr>
-    <td>C</td>
-    <td>20</td>
-  </tr>
-  <tr>
-    <td>D</td>
-    <td>15</td>
-  </tr>
-</table>
 
-Communication Fee = Voice Unit Price x (30 + 40 + 20 + 15) min
 
-### Recording Fee
+> 
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>10 min</th>
-    <th>20 min</th>
-    <th>30 min</th>
-    <th>40 min</th>
-  </tr>
-  <tr>
-    <td>A</td>
-    <td>Recording</td>
-    <td>Recording</td>
-    <td>Recording</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>B</td>
-    <td></td>
-    <td>Recording</td>
-    <td>Recording</td>
-    <td>Recording</td>
-  </tr>
-  <tr>
-    <td>C</td>
-    <td>Recording</td>
-    <td>Recording</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>D</td>
-    <td>Recording</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+### <a name="amin"></a>Audio minutes 
 
-Recording Fee = Voice Unit Price x 40 min
+If you deduct the time that a user receives the video stream(s) in the channel from the total time that the user stays in the channel, you get the audio minutes of that user, regardless of whether that user subscribes to any audio stream. 
+
+<div class="alert note"><li>Your audio minutes will not add up, if you subscribe to multiple audio streams. </li><li>The way by which the audio minutes are calculated applies to the mini app. </li><li>See <a href="#billing">Pricing</a> for the pricing information of the audio minutes. </li></div>
+
+
+
+
+
+
+## Pricing
+
+
+
+| Service<a name="billing"></a> | Pricing （Dollars/1,000 minutes) |
+| :---------------------------- | :------------------------------- |
+| Audio                         | 0.99                             |
+| Mini app audio                | 1.42                             |
+
+
+
+
+
+
+
+
+
+
+
+## Agora's policy of 10,000 free-of-charge minutes
+
+See [Agora's policy of 10,000 free-of-charge minutes](https://docs.agora.io/en/faq/billing_free).
