@@ -3,35 +3,24 @@
 title: Agora's free-of-charge policy for the first 10,000 minutes
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 20:14:41 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 20:14:45 GMT+0800 (CST)
 ---
 # Agora's free-of-charge policy for the first 10,000 minutes
-Agora's real-time communications include:
+Agora gives each [App ID](https://console.agora.io/) 10,000 free-of-charge minutes each month, and deducts the minutes in the following sequence: 
 
-* Voice Communication: Users in a channel communicate with each other using voice only.
-* Video Communication: Users in a channel communicate with each other with voice and video. Depending on different aggregate resolutions, video communication is split into two video formats with different unit prices:
-    ≤ 720p
-   &gt; 720p
+1. Audio minutes
+2. On-premise recording audio minutes
+3. Cloud recording audio minutes 
+4. Mini-app audio minutes
+5. Video minutes HD
+6. On-premise recording video minutes HD
+7. Mini-app video minutes
+8. Cloud recording video minutes HD
+9. Video minutes HD+
+10. On-premise recording video minutes HD+
+11. Cloud recording video minutes HD+
 
-The service is free of charge if the monthly voice and video usage is less than 10,000 minutes. The 10,000 minutes are deducted in the order of voice then video (≤ 720p and > 720p).
+If your total service minutes do not exceed 10,000 minutes, the service is free of charge；after the 10,000 free-of-charge minutes is deducted, Agora charges you for the remaining service minutes.
 
-<table>
-  <tr>
-    <th>Communication</th>
-    <th>Video Format</th>
-    <th>How to Deduct the Free Monthly 10,000 Minutes</th>
-  </tr>
-  <tr>
-    <td>Voice</td>
-    <td>N/A</td>
-    <td><li>If voice minutes &gt; 10,000 minutes, deduct the 10,000 minutes from voice.</li><li>If voice minutes &lt; 10,000 minutes, deduct the remaining minutes from ≤ 720p video.</li></td>
-  </tr>
-  <tr>
-    <td>Video</td>
-    <td>≤ 720p and &gt; 720p</td>
-    <td><li>If voice minutes + video minutes (≤ 720p) &gt; 10,000 minutes, deduct the remaining minutes from ≤ 720p video.</li><li>If voice minutes + video minutes (≤ 720p) &lt; 10,000 minutes, deduct the remaining minutes from &gt; 720p video.</li></td>
-  </tr>
-</table>
-
-> The free-of-charge policy for the first 10,000 minutes applies to the Native SDK, Web SDK, Recording SDK and Cloud Recording services.
+<div class="alert note">The remaining free-of-charge minutes will be cleared at the end of each month.</div>
 
