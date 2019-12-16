@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Dec 06 2019 06:19:26 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 01:15:42 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -63,7 +63,7 @@ updatedAt: Fri Dec 06 2019 06:19:26 GMT+0800 (CST)
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
 | `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，32 位无符号整数，例如`"527841"`。需满足以下条件：<li>取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0。</li><li>不能与当前频道内的任何 UID 重复。</li><li>云端录制不支持 String 用户名（User Account），请确保该字段引号内为整型 UID，且频道内所有用户均使用整型 UID。</li> |
-| `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
+| `clientRequest` | JSON   | 客户请求参数，包含 `resourceExpiredHour` 字段。`resourceExpiredHour` 为 Number 类型，单位为小时，用于设置云端录制 RESTful API 的调用时效，从成功开启云端录制并获得 `sid` （录制 ID）后开始计算。超时后，你将无法调用 `query`，`updateLayout`，和 `stop` 方法。`resourceExpiredHour` 需大于等于 `1`， 且小于等于 `720`，默认值为 `72`。 |
 
 ### `acquire` 请求示例
 
@@ -82,7 +82,8 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
     "cname": "httpClient463224",
     "uid": "527841",
     "clientRequest":{
-    }
+      "resourceExpiredHour":  24
+   }
 }
  ```
 
