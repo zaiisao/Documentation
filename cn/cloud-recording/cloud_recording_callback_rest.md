@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Dec 06 2019 06:23:41 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 01:15:53 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -48,6 +48,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 | [2](#2)   | 0（云端录制服务） | 云端录制服务发生警告                                         |
 | [3](#3)   | 0（云端录制服务） | 云端录制服务状态发生变化                                     |
 | [4](#4)   | 0（云端录制服务） | 生成录制索引文件                                             |
+| [11](#11)   | 0（云端录制服务） | 云端录制服务结束任务并退出                                             |
 | [30](#30) | 2（上传模块）     | 上传服务已启动                                               |
 | [31](#31) | 2（上传模块）     | 所有录制文件已上传至指定的第三方云存储                       |
 | [32](#32) | 2（上传模块）     | 所有录制文件已经全部上传完成，但至少有一片上传到 Agora 备份云 |
@@ -90,11 +91,13 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 
 ### <a name="3"></a>3 cloud_recording_status_update
 
-`eventType` 为 3 表示云端录制服务状态发生改变， `details` 中包含以下字段：
+`eventType` 为 3 表示云端录制服务状态与你调用的方法不匹配，导致调用失败。例如，云端录制服务已开始，导致再次调用 `start` 失败。`details` 中包含以下字段：
 
 - `msgName`：String 类型，消息名称，即 `cloud_recording_status_update`。
 - `status`：Number 类型，云端录制当前的状态，请参考[云端录制服务状态码](#state)。
-- `recordingMode`：Number 类型，录制模式，目前仅支持合流模式，该值为 0。
+- `recordingMode`：Number 类型，录制模式。
+  - `0`：合流模式
+  - `1`：单流模式
 - `fileList`：String 类型，录制生成的 M3U8 索引文件名。
 
 ### <a name="4"></a>4 cloud_recording_file_infos
@@ -105,6 +108,15 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 
 - `msgName`：String 类型，消息名称，即 `cloud_recording_file_infos`。
 - `fileList`：String 类型，生成的 M3U8 文件名。
+
+### <a name="11"></a>11 session_exit
+
+`eventType` 为 11 表示云端录制服务结束任务并退出，`details` 中包含以下字段：
+
+- `msgName`：String 类型，消息名称，即 `session_exit`。
+- `leaveStatus`：Number 类型，退出状态。
+  - `0`：正常退出，即录制结束、录制文件成功上传后，录制服务退出。
+  - `1`：异常退出，例如参数设置错误，导致录制停止。
 
 ### <a name="30"></a>30 uploader_started
 
