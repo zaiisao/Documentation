@@ -3,7 +3,7 @@
 title: Billing for the voice call
 description: 语音通话计费说明
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:13:39 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 20:24:56 GMT+0800 (CST)
 ---
 # Billing for the voice call
 ## Cost
