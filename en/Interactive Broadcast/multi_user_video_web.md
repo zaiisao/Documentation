@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: Web
-updatedAt: Mon Dec 16 2019 09:08:22 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 09:08:26 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -15,8 +15,6 @@ If we set the subscribing stream to the 1-N Mode (set one stream as high and the
 ## Implementation
 
 Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md) for details.
-
-> Currently, Agora only supports using this function on the PC platform. See [Prerequisites](https://docs.agora.io/en/Interactive%20Broadcast/start_live_web?platform=Web#prerequisites).
 
 Refer to the following steps to enable the video conference of 7+ users:
 
