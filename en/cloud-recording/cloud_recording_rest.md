@@ -3,23 +3,23 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 06:19:16 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 03:17:02 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
-Agora Cloud Recording provides a RESTful API for you to control cloud recording through HTTP requests.
+Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
 
 > - You need to send the requests from your own app server.
-> - The RESTful API only supports HTTPS.
+> - The RESTful APIs only support HTTPS.
 
 ![](https://web-cdn.agora.io/docs-files/1559549537706)
 
-With the RESTful API, you can send requests to do the following things:
+With the RESTful APIs, you can send requests to do the following:
 
-- Start/Stop cloud recording
+- Start/Stop a cloud recording
 
 - Query the recording status
 
-The Agora Cloud Recording RESTful API provides a callback service. After enabling the callback service, you can receive notifications about cloud recording events. See the table below for the differences between the recording status query and the callback service.
+The Agora Cloud Recording RESTful APIs provide a callback service. After enabling the callback service, you can receive notifications about cloud recording events. See the table below for the differences between the recording status query and the callback service.
 
 | Recording status query                                       | Callback service                                         |
 | :----------------------------------------------------------- | :------------------------------------------------------- |
@@ -29,9 +29,14 @@ The Agora Cloud Recording RESTful API provides a callback service. After enablin
 
 If you need to use the callback sercive, see [RESTful API Callbacks](../../en/cloud-recording/cloud_recording_callback_rest.md) for details.
 
+
+## Sample requests
+
+Agora provides a [Postman collection](https://github.com/AgoraIO/Agora-RESTful-Service/tree/master/cloud-recording), which contains sample RESTful API requests for a cloud recording. You can use the collection to get a quick start of the basic functionalities of the Cloud Recording RESTful APIs. All you need to do is to import the collection to Postman and set your environment variables.
+
 ## Prerequisites
 
-Deploy a third-party cloud storage. Agora Cloud Recording supports [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls), [Alibaba Cloud](https://www.alibabacloud.com/product/oss), and [Qiniu Cloud](https://www.qiniu.com/en/products/kodo).
+Deploy a third-party cloud storage. Agora Cloud Recording supports [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls), [Alibaba Cloud](https://www.alibabacloud.com/product/oss), [Tencent Cloud](https://intl.cloud.tencent.com/product/cos) and [Qiniu Cloud](https://www.qiniu.com/en/products/kodo).
 
 > Agora Cloud Recording does not support string user accounts. Ensure that the recording channel uses integer UIDs.
 
@@ -43,14 +48,14 @@ Enable the cloud recording service before using Agora Cloud Recording for the fi
 2. Select a project from the drop-down list in the upper-left corner, and click **Duration** under **Cloud Recording**. 
 ![](https://web-cdn.agora.io/docs-files/1566444271323)
 1. Click **Enable Cloud Recording**.
-2. Choose the location of your server, and click **Apply**.
+2. Click **Apply**.
 
 Now, you can use Agora Cloud Recording and see the usage statistics.
 
 
 ## Pass basic authentication
 
-The RESTful API requires the basic HTTP authentication. You need to set the `Authorization` parameter in every HTTP request header. For how to get the value for `Authorization`, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
+The RESTful APIs require the basic HTTP authentication. You need to set the `Authorization` parameter in every HTTP request header. For how to get the value for `Authorization`, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
 
 ## Implement cloud recording
 
@@ -58,6 +63,7 @@ The following figure shows the API call sequence of a cloud recording.
 > The `query` and `updateLayout` methods are not mandatory, and can be called multiple times during the recording (after starting recording and before stopping recording).
 
 ![](https://web-cdn.agora.io/docs-files/1565777201501)
+
 
 ### Start recording
 
@@ -119,7 +125,7 @@ After starting the recording with the [`start`](../../en/cloud-recording/cloud_r
 
 In individual recording mode, if you choose to record audio or video only, each recording session generates one M3U8 file; if you record both audio and video, each recording session generates two M3U8 files. The M3U8 file is a playlist pointing to all the split TS/WebM files of the recording. You can use the M3U8 file to play and manage the recorded files. For detailed information about the naming conventions of the M3U8 and TS/WebM files in individual recording mode, see [Manage Recorded Files](../../en/cloud-recording/cloud_recording_manage_files.md).
 
-In composite recording mode, each recording session generates one M3U8 file. The name of the M3U8 file is `sid_cname.m3u8`, which consists of the recording ID and the channel name. For more information, see [Composite Recording](../../en/cloud-recording/cloud_recording_composite_mode.md).
+In composite recording mode, each recording session generates one M3U8 file. The name of the M3U8 file is `sid_cname.m3u8`, which consists of the recording ID and the channel name. For more information, see [Manage Recorded Files](../../en/cloud-recording/cloud_recording_manage_files.md).
 
 ### Upload the recorded files
 
