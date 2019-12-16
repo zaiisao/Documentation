@@ -3,7 +3,7 @@
 title: 七人以上视频场景
 description: 
 platform: Web
-updatedAt: Mon Dec 16 2019 08:55:35 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 08:55:50 GMT+0800 (CST)
 ---
 # 七人以上视频场景
 ## 功能描述
@@ -13,8 +13,6 @@ updatedAt: Mon Dec 16 2019 08:55:35 GMT+0800 (CST)
 ## 实现方法
 
 在实现七人以上视频场景前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始互动直播](../../cn/Interactive%20Broadcast/statr_live_web.md)。
-
-> 目前本功能支持 PC 端，不支持移动端。支持的平台详见[前提条件](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web#前提条件)。
 
 参考如下步骤，在你的项目中实现七人以上视频场景功能：
 
