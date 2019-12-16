@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 01:15:32 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 01:15:37 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview
@@ -16,6 +16,17 @@ Agora Cloud Recording is compatible with the following SDKs:
 
 - Agora Native SDK v1.7.0 or later.
 - Agora Web SDK v1.12 or later.
+
+## 2019.12.16
+
+This release improves the availability of the cloud recording service. When a server is disconnected or when the process is killed, the cloud recording automatically switches to a new server to resume the service. See [Fault processing when a cloud recording server is disconnected or the process killed](../../en/faq/high-availability.md) for more information.
+
+**API Changes**
+
+In the `acquire` method, adds the [`resourceExpiredHour`](../../en/cloud-recording/cloud_recording_api_rest.md) parameter for setting the time limit for all cloud recording method calls.
+
+Adds the [`session_exit`](../../en/cloud-recording/cloud_recording_callback_rest.md) event, which reports the exit status of the cloud recording service.
+
 
 ## 2019.11.15
 
