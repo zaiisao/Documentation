@@ -3,14 +3,16 @@
 title: Manage Recorded Files
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 08 2019 03:39:35 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 01:16:30 GMT+0800 (CST)
 ---
 # Manage Recorded Files
 ## Overview
 
-In individual recording mode, Agora Cloud Recording generates M3U8 index files and TS/WebM slice files. To process the recorded files, such as merging the audio and video files, or synchronizing the playback with other stream files, you need to know the naming conventions of the recorded files, how to parse the information in the M3U8 file, and when slicing occurs.
+Agora Cloud Recording generates M3U8 index files and TS/WebM slice files after a recording. To process the recorded files, such as merging the audio and video files, or synchronizing the playback with other stream files, you need to know the naming conventions of the recorded files, how to parse the information in the M3U8 file, and when slicing occurs.
 
 ## Naming conventions
+
+### Individual mode
 
 In individual recording mode, the naming conventions are as follows:
 
@@ -28,11 +30,44 @@ Where:
 
 In the file name `sid713476478245_cnameagora__uid_s_123__uid_e_video_20190920125142485.ts`, `sid713476478245` is the recording ID, `cnameagora` is the channel name, `123` is the user ID, and the start time of the recording is 12:51:42.485 a.m., September 20, 2019.
 
-### Naming conventions of the transferred files
+### Composite mode
 
-If Agora Cloud Recording fails to upload the recorded files to the third-party cloud storage, it will transfer the files to the third-party cloud storage from the Agora Cloud Backup. In order not to overwrite the latest files, the M3U8 file will have a suffix: `<sid>_<cname>__uid_s_<uid>__uid_e_<type>_<tick>_<index>.m3u8`. For example, in the file name `sid713476478245_cnameagora__uid_s_123__uid_e_video_22194679897_3.m3u8`, `22194679897` is the number of ticks from when the system starts to when the index file is generated, `3` is the index of the M3U8 file, meaning that the file is the third M3U8 file snapshot updated in the recording instance. The naming conventions of other types of transferred files remain the same.
+In composite recording mode, the naming conventions are as follows:
+
+- M3U8 files: `<sid>_<cname>.m3u8`
+- TS files: `<sid>_<cname>_<utc>.ts`
+
+Where:
+
+- `<sid>` is the recording ID;
+- `<cname>` is the channel name;
+- `<utc>` is the starting time (UTC) of the TS file. The time zone is UTC+0. The timestamp consists of the year, month, day, hour, minute, second, and millisecond. For example, if `<utc>` is `20190611073246073`, the starting time of the TS file is 07:32:46.073 a.m., June 11, 2019.
+
+## Recorded files in abnormal conditions
+
+### When uploading files to the third-party cloud storage fails
+
+If Agora Cloud Recording fails to upload the recorded files to the third-party cloud storage, it transfers the files to the third-party cloud storage from the Agora Cloud Backup. In order not to overwrite the latest files, the transferred M3U8 file is appended with `_<tick>_<index>.m3u8`,
+
+Where:
+
+- `<tick>`: Related to the time when the index file is generated.
+- `<n>`: The index of the M3U8 file. `n` starts with `0`. The higher the index, the newer the version of the file.
+
+Taking the file name of `sid713476478245_cnameagora__uid_s_123__uid_e_video_22194679897_3.m3u8` as an example, the "`3`" at the end indicates that this is the fourth version of the M3U8 file.
+
+> When the third-party cloud storage contains transferred M3U8 files, you need to compare the M3U8 file appended with the highest index with the file that does not have the suffix, and use the file that contains more content.
+
+The cloud recording service does not append the suffix to the names of the TS/WebM files.
 
 
+### When the server is disconnected or the process killed
+
+When [a cloud recording server is disconnected or the process killed](../../en/faq/high-availability.md), the cloud recording service enables the high availability mechanism, where the fault processing center automatically switches to a new server within 90 seconds to resume the service. Each time the service enables the high availability mechanism, it creates a new M3U8 file, which contains the index information of the recorded slice files from the time when the service resumes. The file name is prepended with `bak<n>`, where `n` stands for the number of times the mechanism is enabled in a recording, and starts off with `0`.
+	
+Taking the file name of `bak0_sid713476478245_cnameagora.m3u8` as an example, `bak0` indicates that this file is generated after the service enables the high availability mechanism for the first time.
+	
+After the cloud recording service enables the high availability mechanism, the names of the recorded TS/WebM files are also prepended with `bak<n>`.
 
 ## M3U8 fIle
 
