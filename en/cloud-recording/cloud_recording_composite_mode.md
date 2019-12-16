@@ -3,15 +3,15 @@
 title: Composite Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 12 2019 10:21:44 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 01:17:04 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
 
 Agora Cloud Recording supports two recording modes:
 
-- Individual recording mode: Records the audio and video of each UID or each specified UID in a channel separately.
-- Composite recording mode: Records the audio and video of all or specified UIDs in a channel together.
+- Individual recording mode: Records the audio and video of each UID or the specified UID in a channel separately.
+- Composite recording mode: Records the audio and video of all or the specified UIDs in a channel together.
 
 This article explains how to record a call in composite recording mode by using the RESTful API.
 
@@ -32,22 +32,13 @@ Based on the setting of `streamTypes`, the recorded files are as follows:
 | Set `streamTypes` as `1`                   | Video only (no audio) | One M3U8 file and several TS files. The TS files store only video (no audio). |
 | Set `streamTypes` as `2` (default setting) | Audio and video       | One M3U8 file and several TS files. The TS files store video (with audio). |
 
-The following diagram illustrates the recorded files generated in composite recording mode when the channel has two users, and when you set `streamTypes` as `2`:
+The following diagram illustrates the recorded files generated in composite recording mode when there are two users in the channel, and when you record both audio and video:
 
 ![](https://web-cdn.agora.io/docs-files/1575011002382)
 
 The cloud recording service generates one M3U8 file and several TS/WebM files, which combine the audio and video of all users. After converting the files using the [Format Converter script](https://docs.agora.io/en/cloud-recording/cloud_recording_convert_format?platform=All%20Platforms), you get one MP4 file.
 
-The naming convention for the recorded files is as follows:
-
-- M3U8 files: `<sid>_<cname>.m3u8`
-- TS files: `<sid>_<cname>_<utc>.ts`
-
-Where:
-
-- `<sid>` is the recording ID;
-- `<cname>` is the channel name;
-- `<utc>` is the starting time (UTC) of the TS file. The time zone is UTC+0. The timestamp consists of the year, month, day, hour, minute, second, and millisecond. For example, if `<utc>` is `20190611073246073`, the starting time of the TS file is 07:32:46.073 a.m., June 11, 2019.
+For detailed information about the naming convention of the recorded files, see [Manage Recorded Files](../../en/cloud-recording/cloud_recording_manage_files.md).
 
 ### An HTTP request example of `start`
 
