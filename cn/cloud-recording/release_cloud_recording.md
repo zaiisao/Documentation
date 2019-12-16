@@ -3,7 +3,7 @@
 title: 云端录制更新历史
 description: 
 platform: Linux
-updatedAt: Mon Dec 16 2019 01:15:12 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 01:15:17 GMT+0800 (CST)
 ---
 # 云端录制更新历史
 ## 简介
@@ -23,6 +23,15 @@ width: 150px;
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制 与 Agora Web SDK 1.12.0 或更高版本兼容。            |
+
+## 2019.12.16
+本次发布提高了云端录制服务的可用性。当出现服务器断网、进程被杀时，云端录制会自动切换到新的服务器，在短时间内恢复录制服务。详情见[云端录制服务器断网、进程被杀的处理](../../cn/faq/high-availability.md)。
+
+**API 变更**
+
+`acquire` 方法中新增了 [`resourceExpiredHour`](../../cn/cloud-recording/cloud_recording_api_rest.md) 参数，用于设置云端录制 RESTful API 的调用时效。
+
+RESTful API 回调通知中新增事件 [`session_exit`](../../cn/cloud-recording/cloud_recording_callback_rest.md)，提供云端录制服务的退出状态。
 
 
 ## 2019.11.15
