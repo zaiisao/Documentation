@@ -3,7 +3,7 @@
 title: Agora's free-of-charge policy for the first 10,000 minutes
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:13:32 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 20:14:41 GMT+0800 (CST)
 ---
 # Agora's free-of-charge policy for the first 10,000 minutes
 Agora's real-time communications include:
