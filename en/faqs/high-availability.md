@@ -3,7 +3,7 @@
 title: Fault processing when a cloud recording server is disconnected or the process killed
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 09:16:10 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 09:34:48 GMT+0800 (CST)
 ---
 # Fault processing when a cloud recording server is disconnected or the process killed
 When this happens, the cloud recording service enables the high availability mechanism, where the fault processing center automatically switches to a new server within 90 seconds to resume the service.
