@@ -1,11 +1,11 @@
 
 ---
-title: Billing for the video call
+title: Billing for the video broadcasting
 description: 视频通话计费说明
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 20:33:53 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 20:54:51 GMT+0800 (CST)
 ---
-# Billing for the video call
+# Billing for the video broadcasting
 ## Calculating service minutes
 
 
