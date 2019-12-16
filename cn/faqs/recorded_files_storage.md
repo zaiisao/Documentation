@@ -3,7 +3,7 @@
 title: 录制文件储存在哪里
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 11:21:10 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 11:21:14 GMT+0800 (CST)
 ---
 # 录制文件储存在哪里
 对于**本地服务端录制**，录制文件会储存在你自己的 Linux 服务器上，详见[管理录制文件](../../cn/Recording/recording_files.md)。
