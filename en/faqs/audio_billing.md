@@ -3,121 +3,102 @@
 title: Billing for the voice call
 description: 语音通话计费说明
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 20:25:02 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 20:31:15 GMT+0800 (CST)
 ---
 # Billing for the voice call
-## Calculating service minutes
+## Cost
 
+Voice communication is charged by the minutes used and the number of users.
 
+After deducting the free monthly 10,000 minutes, Agora charges you:
 
+<table>
+  <tr>
+    <th>Scenario</th>
+    <th>Total Fee</th>
+  </tr>
+  <tr>
+    <td>Recording disabled</td>
+    <td>Communication Fee = Voice Unit Price x Total Communication Minutes</td>
+  </tr>
+  <tr>
+    <td>Recording enabled </td>
+    <td>Communication Fee + Recording Fee = Voice Unit Price x Total Communication Minutes + Voice Unit Price x Total Recording Minutes</td>
+  </tr>
+</table>
 
-Agora will add up the following two minutes used by the project corresponding to your [App ID](https://console.agora.io/) on a monthly basis:
+The Unit Price (price per minute) can be found at [Pricing](https://www.agora.io/en/price/).
+Regardless of the number of users recording at the same time in a channel, the recording of the entire channel is only charged as one stream.
 
-- [Video minutes](#vmin)
-- [Audio minutes](#amin)
-  
+## Example: Voice Only
 
+In this example, Agora charges Communication Fee + Recording Fee
 
+### Communication Fee
 
+<table>
+  <tr>
+    <th>User</th>
+    <th>Minutes</th>
+  </tr>
+  <tr>
+    <td>A</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>B</td>
+    <td>40</td>
+  </tr>
+  <tr>
+    <td>C</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>D</td>
+    <td>15</td>
+  </tr>
+</table>
 
+Communication Fee = Voice Unit Price x (30 + 40 + 20 + 15) min
 
+### Recording Fee
 
+<table>
+  <tr>
+    <th>User</th>
+    <th>10 min</th>
+    <th>20 min</th>
+    <th>30 min</th>
+    <th>40 min</th>
+  </tr>
+  <tr>
+    <td>A</td>
+    <td>Recording</td>
+    <td>Recording</td>
+    <td>Recording</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>B</td>
+    <td></td>
+    <td>Recording</td>
+    <td>Recording</td>
+    <td>Recording</td>
+  </tr>
+  <tr>
+    <td>C</td>
+    <td>Recording</td>
+    <td>Recording</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>D</td>
+    <td>Recording</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
-### <a name="vmin"></a>Video minutes 
-
-If a user successfully receives video stream(s) after joining an RTC channel, the corresponding time counts as the video minutes. 
-
-Agora adds up the resolutions of the video streams, to which a specific user subscribes at a time, to get the aggregate resolution. The aggregate resolution can be classified into two brackets, and Agora will charge you accordingly: 
-
-
-
-| Video Bracket         | Aggregate Resolution |
-| :-------------------- | :------------------- |
-| High Definition (HD)  | ≤ 1280 x 720         |
-| Super High Definition | > 1280 x 720         |
-
-
-
-
-
-<div class="alert note">The aggregate resolution varies with the resolution of the subscribed video stream(s) in real time. Agora adds up the corresponding video minutes with an accuracy of seconds.</div>
-
-**Calculate the aggregate resolution**
-
-Suppose that user A has been in an RTC channel for 45 straight minutes, subscribing to the video streams of user B, C, and D. And the following table shows the resolutions of B, C, and D during this period:
-
-|                       | B Resolution | C Resolution | D Resolution | Aggregate Resolution of A |
-| --------------------- | ------------ | ------------ | ------------ | ------------------------- |
-| **First 30 min**      | 640 x 360    | 640 x 360    | 640 x 360    | 691200 < 1280 x 720       |
-| **Subsequent 15 min** | 640 x 360    | 240 x 180    | 1280 x 720   | 1195200 > 1280 x 720      |
-
-As you can see from the above table: 
-
-- Aggregate resolution of A for the first 30 min = Area B +Area C + Area D = 691200 < 1280 x 720, falling into the HD bracket. 
-- Aggregate resolution of A for the subsequent 15 min = Area B +Area C + Area D = 1195200 > 1280 x 720, falling into the HD+ bracket. 
-
-Total fee for user A = Unit price (video minutes HD) x 30 min + Unit price (video minutes HD+) x 15 min
-
-> See [Pricing](#billing) for the pricing of the video minutes.
-> 
-> 
-
-### <a name="amin"></a>Audio minutes 
-
-If you deduct the time that a user receives the video stream(s) in the channel from the total time that the user stays in the channel, you get the audio minutes of that user, regardless of whether that user subscribes to any audio stream. 
-
-<div class="alert note"><li>Your audio minutes will not add up, if you subscribe to multiple audio streams. </li><li>The way by which the audio minutes are calculated applies to the mini app. </li><li>See <a href="#billing">Pricing</a> for the pricing information of the audio minutes. </li></div>
-
-
-
-
-
-
-## Pricing
-
-<% if (product == "Voice" || product == "Audio Broadcasting") {%>
-
-| Service<a name="billing"></a> | Pricing （Dollars/1,000 minutes) |
-| :---------------------------- | :------------------------------- |
-| Audio                         | 0.99                             |
-| Mini app audio                | 1.42                             |
-
-<% } %>
-
-<% if (product == "Video" || product == ""Video Broadcasting") {%>
-
-| Service<a name="billing"></a> | Pricing （Dollars/1,000 minutes) |
-| :---------------------------- | :------------------------------- |
-| Audio                         | 0.99                             |
-| Mini app audio                | 1.42                             |
-| Video HD                      | 3.99                             |
-| Mini app video                | 4.28                             |
-| Video HD+                     | 14.99                            |
-
-<% } %>
-
-<% if (product == "On-premise Recording") {%>
-
-| Service<a name="billing"></a> | Pricing （Dollars/1,000 minutes) |
-| :---------------------------- | :------------------------------- |
-| Recording audio               | 0.99                             |
-| Recording HD                  | 3.99                             |
-| Recording HD+                 | 14.99                            |
-
-<% } %>
-
-<% if (product == "Cloud Recording") {%>
-
-| Service<a name="billing"></a> | Pricing （Dollars/1,000 minutes) |
-| :---------------------------- | :------------------------------- |
-| Recording audio               | 1.49                             |
-| Recording HD                  | 5.99                             |
-| Recording HD+                 | 22.49                            |
-
-<% } %>
-
-
-
-## Agora's policy of 10,000 free-of-charge minutes
-
-See [Agora's policy of 10,000 free-of-charge minutes](https://docs.agora.io/en/faq/billing_free).
+Recording Fee = Voice Unit Price x 40 min
