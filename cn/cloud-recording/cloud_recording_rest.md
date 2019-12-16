@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 03:16:29 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 03:17:58 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -124,7 +124,7 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 在单流录制模式下，如只录制音频或视频，则每次录制每个 UID 均会生成一个 M3U8 文件；如同时录制音视频，则每次录制每个 UID 会生成两个 M3U8 文件。M3U8文件用于索引该次录制所有的 TS/WebM 文件。你可以通过 M3U8 文件播放和管理录制文件。单流模式下 M3U8 文件以及 TS/WebM 文件的命名规则详见[管理录制文件](../../cn/null/cloud_recording_manage_files.md)。
 
-在合流录制模式下，每次录制均会生成一个 M3U8 文件。合流模式下的 M3U8 文件名由录制 ID 和频道名组成，即 `sid_cname.m3u8`。详情见 [管理录制文件](../../cn/null/cloud_recording_manage_files.md)。
+在合流录制模式下，每次录制均会生成一个 M3U8 文件。合流模式下的 M3U8 文件名由录制 ID 和频道名组成，即 `sid_cname.m3u8`。详情见[管理录制文件](../../cn/null/cloud_recording_manage_files.md)。
 
 
 ### 上传录制文件
