@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Dec 12 2019 13:49:15 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 01:15:47 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -41,7 +41,7 @@ See [Sample code](../../en/cloud-recording/cloud_recording_rest.md) for an examp
 
 ## <a name="acquire"></a>Gets the recording resource
 
-Before starting the cloud recording, you need to call this method to get a resource ID.
+Before starting a cloud recording, you need to call this method to get a resource ID.
 
 > One resource ID can only be used for one recording session.
 
@@ -66,7 +66,7 @@ The following parameters are required in the request body.
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | The name of the channel to be recorded.                          |
 | `uid`           | String | A string that contains the UID of the recording client, for example `"527841"`. The UID needs to meet the following requirements: <li>It is a 32-bit unsigned integer within the range between 1 and (2<sup>32</sup>-1).</li><li>It is unique and does not clash with any existing UID in the channel. </li><li>It should not be a string. Ensure that all UIDs in the channel are integers.</li> |
-| `clientRequest` | JSON   | A specific client request. Set it empty.     |
+| `clientRequest` | JSON   | A client request including the `resourceExpiredHour` field. `resourceExpiredHour` is an integer, which sets the time limit (in hours) for the Cloud Recording RESTful API calls. It must be between `1` and `720`, the default value being `72`. The time limit starts from when you successfully start a cloud recording and get `sid`(the recording ID ). When you exceed the time limit, you can no longer call `query`, `updateLayout`, and `stop`.     |
 
 ### An HTTP request example of `acquire`
 
@@ -80,7 +80,8 @@ The following parameters are required in the request body.
     "cname": "httpClient463224",
     "uid": "527841",
     "clientRequest":{
-    }
+      "resourceExpiredHour":  24
+   }
 }
 ```
 
