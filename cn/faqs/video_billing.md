@@ -3,7 +3,7 @@
 title: 视频通话计费说明
 description: 视频通话计费说明
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 17:38:17 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 11:47:48 GMT+0800 (CST)
 ---
 # 视频通话计费说明
 ## 服务用量统计方式
