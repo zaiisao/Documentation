@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Mon Oct 28 2019 03:43:48 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:37:45 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -108,24 +108,24 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 
 #### 1. 合流模式音频录制支持双声道
 
-合流模式下音频录制支持双声道高音质：采样率 48 KHz，双声道，码率 192 Kbps。
+合流模式下音频录制支持双声道高音质：采样率 48 kHz，双声道，码率 192 Kbps。
 
 > 裸数据不支持双声道。
 
 `audio profile` 开放 `0` 和 `1` 两种设置，具体如下：
 
 - 单流模式（file mode）：
-  - 默认行为或者 `audio profile=0`，采样率 48 KHz，与原始音频流的单/双声道保持一致，码率根据发送端的码率自适应。
+  - 默认行为或者 `audio profile=0`，采样率 48 kHz，与原始音频流的单/双声道保持一致，码率根据发送端的码率自适应。
 - 单流模式（裸数据）
-  - 固定采样率 48 KHz，声道与原始流保持一致
+  - 固定采样率 48 kHz，声道与原始流保持一致
     - PCM：码率可能改变
     - AAC：码率与 file mode 单流的保持一致
 - 合流模式（file mode）：  
-  - `audio profile=0`，采样率 48 KHz，单声道，码率 48 Kbps
-  - `audio profile=1`，采样率 48 KHz，单声道，码率 128 Kbps
-  - `audio profile=2`，采样率 48 KHz，双声道，码率 192 Kbps
+  - `audio profile=0`，采样率 48 kHz，单声道，码率 48 Kbps
+  - `audio profile=1`，采样率 48 kHz，单声道，码率 128 Kbps
+  - `audio profile=2`，采样率 48 kHz，双声道，码率 192 Kbps
 - 合流模式（裸数据）
-  - 固定采样率 48 KHz，单声道
+  - 固定采样率 48 kHz，单声道
 
 #### 2. 增加 Web 播放器支持
 

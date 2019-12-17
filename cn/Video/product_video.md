@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 30 2019 03:02:22 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:37:43 GMT+0800 (CST)
 ---
 # 产品概述
 视频通话 SDK 可实现一对一单聊、多人群聊，同时具备纯语音通话和视频通话功能。
@@ -30,7 +30,7 @@ updatedAt: Mon Sep 30 2019 03:02:22 GMT+0800 (CST)
 | SDK 包体积   | 3.69 M - 7.75 M                                              |
 | 多人视频     | 支持 7 人视频通话（如需更多人数，可以使用 [Agora 互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)） |
 | 视频属性     | <li>SDK 采集支持 1080p 分辨率，60 fps 帧率 <li>自采集支持 4K |
-| 音频属性     | <li>音频采样率：16 KHz - 48 KHz <li>支持单、双声道           |
+| 音频属性     | <li>音频采样率：16 kHz - 48 kHz <li>支持单、双声道           |
 | 音频抗丢包率 | 上下行抗丢包率 70%                                           |
 
 ### 平台兼容
