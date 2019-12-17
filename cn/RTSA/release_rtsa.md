@@ -3,11 +3,24 @@
 title: 发版说明
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 17 2019 08:26:48 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 08:40:00 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 实时码流加速（Real-Time Streaming Acceleration, RTSA）提供 API，帮助自研音视频编码的用户实现高联通性、高实时性、高稳定性的码流传输。
+
+## 1.2.2 版
+该版本于 12 月 17 日发布。新增特性和问题修复如下。
+
+### 新增特性
+**可靠数据传输**
+v1.2.2 起支持可靠数据传输，适用于数据量少但可靠性高的传输场景。SDK 触发 `on_rdt_availability_changed` 回调报告可靠数据通道状态为可用后，可调用 `agora_rtc_send_cmd` 或 `agora_rtc_send_through_rdt` 方法通过可靠数据通道发送指令或数据。
+
+### 问题修复
+* App 离开频道、进入后台息屏后，无法再次加入频道。
+* 调用 API 暂停接收远端音视频流后，依然能收到。
+* 4K 高清场景下偶现的丢帧。
+* 部分已知 crash。
 
 ## 1.2.1 版
 该版本于 2019 年 8 月 15日发布。改进如下。
