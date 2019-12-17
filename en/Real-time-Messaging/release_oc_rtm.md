@@ -35,7 +35,7 @@ If you use the `sendMessageToPeer` method to send off a <i>text</i> message in t
 ### Issues Fixed
 
 - The SDK fails to reconnect to the Agora RTM system if the user disables VPN. 
-- If a channel member reconnects to the Agora RTM server after being interrupted, chances are the rest members of the channel can receive `onMemberJoined` twice. 
+- If a channel member reconnects to the Agora RTM server after being interrupted, chances are the rest members of the channel can receive `MemberJoined` twice. 
 
 ## v1.2.0 
 
