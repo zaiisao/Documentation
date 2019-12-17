@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux Java
-updatedAt: Tue Dec 10 2019 12:57:36 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:20:39 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -25,13 +25,13 @@ Occasionally fails to receive any callback after a channel attribute operation.
 
 ## v1.2.1
 
-v1.2.1 was released on November 20, 2019. 
+v1.2.1 was released on November 29, 2019.  
 
 ### New Feature
 
 **Compatible with the endCall method of the Agora Signaling SDK** 
 
-If you use the `sendMessageToPeer` method to send off a <i>text</i> message that starts off with AGORA\_RTM\_ENDCALL\_PREFIX\_\<channelId\>\_\<your additional information\>, then this method is compatible with the endCall method of the legacy Agora Signaling SDK. Replace \<channelId\> with the channel ID from which you want to leave (end call), and replace \<your additional information\> with any additional information. Note that you must not put any "_" (underscore) in your additional information but you can set \<your additional information\> as empty "".
+If you use the `sendMessageToPeer` method to send off a <i>text</i> message in the format of AgoraRTMLegacyEndcallCompatibleMessagePrefix\_PREFIX\_\<channelId\>\_\<your additional information\>, then this method is compatible with the endCall method of the legacy Agora Signaling SDK. Replace \<channelId\> with the channel ID from which you want to leave (end call), and replace \<your additional information\> with any additional information. Note that you must not put any "_" (underscore) in your additional information but you can set \<your additional information\> as empty "".
 
 ### Issues Fixed
 
