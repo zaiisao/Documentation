@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Web
 platform: Web
-updatedAt: Fri Sep 27 2019 08:40:22 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:37:02 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -26,7 +26,7 @@ The following diagram shows how to set the audio profile:
 ### Sample code
 
 ```javascript
-  // Sets the audio profile with a 48-KHz sampling rate, stereo sound, and 192-Kbps bitrate.
+  // Sets the audio profile with a 48-kHz sampling rate, stereo sound, and 192-Kbps bitrate.
   localStream.setAudioProfile("high_quality_stereo");
   localStream.init(function(){
    // Initialization successful.

@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: Linux
-updatedAt: Thu Sep 05 2019 03:07:56 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:42:40 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
@@ -15,7 +15,9 @@ The On-premise Recording SDK supports two recording modes:
 
 This page shows how to record audio and/or video in **individual recording mode** by the command line.
 
-Before proceeding, ensure that you have compiled the Agora Recorder Demo and know how to record a call by the command line. For more information, see [Record by Command Line](../../en/Recording/recording_cmd_cpp.md).
+Before proceeding, ensure that you have compiled the Agora Recorder Demo and know how to record a call by the command line. For more information, see [Record by Command Line](https://docs-preview.agoralab.co/en/Recording/recording_cmd_cpp). You must select either individual recording mode or composite recording mode when you start the recording. You cannot switch between the two modes after a recording starts. 
+
+See [Differences between individual recording mode and composite recording mode](https://docs.agora.io/en/faq/recording_mode) to decide which mode you should use.
 
 > For simplicity, we assume that every UID in the channel sends both audio and video streams. If a UID neither sends audio nor video, such as the audience in a live broadcast, there will be no file for this UID.
 
@@ -25,7 +27,7 @@ Individual recording mode is the default recording mode, and you can directly st
 
 In individual recording mode, the audio and video profiles of the recording file are as follows: 
 
-- Audio profile: The sample rate of the recording file is 48 KHz, and the bitrate and number of audio channels of the recording file are the same as those of the original audio stream.
+- Audio profile: The sample rate of the recording file is 48 kHz, and the bitrate and number of audio channels of the recording file are the same as those of the original audio stream.
 - Video profile: The video profile of the recording file is the same as that of the original video stream.
 
 The recording files and formats depend on your choice of recording audio, video, or both.

@@ -3,7 +3,7 @@
 title: Agora Audio Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 30 2019 03:05:01 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:37:03 GMT+0800 (CST)
 ---
 # Agora Audio Broadcasting Overview
 The Agora Native SDK for Audio Broadcasting enables one-to-many and many-to-many audio live streaming. 
@@ -48,7 +48,7 @@ See the following sample code for application scenarios:
 | SDK Package Size                                  | 3.69 MB to 7.75 MB                                              |
 | Host Capacity                                     | 17 users                                                  |
 | Audience Capacity                                 | One million users                                       |
-| Audio Profile                                     | <li>Sample rate: 16 KHz to 48 KHz.<li>Support for mono and stereo sound  |
+| Audio Profile                                     | <li>Sample rate: 16 kHz to 48 kHz.<li>Support for mono and stereo sound  |
 | Audio Anti-packet-loss Rate                       | 70% (uplink and downlink)                               |
 | Latency between the Host and the Host-in Audience/Host | 200 ms to 600 ms                                                  |
 

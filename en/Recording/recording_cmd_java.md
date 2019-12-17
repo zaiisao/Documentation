@@ -105,7 +105,7 @@ We recommend that you specify the range of ports for the recording processes. Co
 
 - `isMixingEnabled`: Sets whether or not to enable composite recording mode.
 
-  - `0`: (Default) Enables individual recording mode, which means recording one audio or video file for each user. The sample rate of the recording file is 48 KHz, and the bitrate and audio channel number of the recording file are the same as those of the original audio stream. The video profile is the same as that of the original video.
+  - `0`: (Default) Enables individual recording mode, which means recording one audio or video file for each user. The sample rate of the recording file is 48 kHz, and the bitrate and audio channel number of the recording file are the same as those of the original audio stream. The video profile is the same as that of the original video.
   - `1`: Enables composite recording mode, which means the audio of all the users is mixed in an audio file and the video of all the users is mixed in a video file. You can set the audio profile of the recording file by the `audioProfile` parameter and set the video profile by the `mixResolution` parameter.
 
 - `mixedVideoAudio`：When `isMixingEnabled` is 1, you can set this parameter to mix the audio and video in an MP4 file in real time. 
@@ -126,9 +126,9 @@ We recommend that you specify the range of ports for the recording processes. Co
 
 - `audioProfile`: Sets the audio profile (sample rate, bitrate, encode mode, and the number of channels) of the recording file. Takes effect only when `isMixingEnabled` is 1.
 
-  - `0`: (Default) Sample rate of 48 KHz, communication encoding, mono, and a bitrate of up to 48 Kbps.
-  - `1`: Sample rate of 48 KHz, music encoding, mono, and a bitrate of up to 128 Kbps.
-  - `2`: Sample rate of 48 KHz, music encoding, stereo, and a bitrate of up to 192 Kbps.
+  - `0`: (Default) Sample rate of 48 kHz, communication encoding, mono, and a bitrate of up to 48 Kbps.
+  - `1`: Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.
+  - `2`: Sample rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.
 
 - `mixResolution`: When `isMixingEnabled` is set as 1, you can use this parameter to set the video profile, including the width, height, frame rate, and bitrate. The default setting is 360 x 640, 15 fps, and 500 Kbps. We recommend you set the video profile according to the [Video Profile Table](https://docs.agora.io/en/faq/recording_video_profile).
 

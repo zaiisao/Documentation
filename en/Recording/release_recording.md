@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Mon Oct 28 2019 03:49:35 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:36:55 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -117,17 +117,17 @@ v2.3.0 supports high audio quality (a sample rate of 48 kHz, stereo, and a bitra
 `audio profile` can be set as `0` or `1`:
 
 - Individual recording (file mode):
-  - By default or set `audio profile=0`: A sample rate of 48 KHz, the same number of audio channels as the original audio, and an adaptive bitrate.
+  - By default or set `audio profile=0`: A sample rate of 48 kHz, the same number of audio channels as the original audio, and an adaptive bitrate.
 - Individual recording (raw data):
-  - The sample rate is fixed at 48 KHz and the number of audio channels is the same as the original audio:
+  - The sample rate is fixed at 48 kHz and the number of audio channels is the same as the original audio:
     - PCM: The bitrate may change.
     - AAC: The bitrate is the same as in the file mode.
 - Composite recording (file mode): 
-  - `audio profile=0`: A sample rate of 48 KHz, mono, and a bitrate of 48 Kbps
-  - `audio profile=1`: A sample rate of 48 KHz, mono, and a bitrate of 128 Kbps
-  - `audio profile=2`: A sample rate of 48 KHz, stereo, and a bitrate of 192 Kbps
+  - `audio profile=0`: A sample rate of 48 kHz, mono, and a bitrate of 48 Kbps
+  - `audio profile=1`: A sample rate of 48 kHz, mono, and a bitrate of 128 Kbps
+  - `audio profile=2`: A sample rate of 48 kHz, stereo, and a bitrate of 192 Kbps
 - Composite recording (raw data): 
-  - A fixed sample rate of 48 KHz and mono.
+  - A fixed sample rate of 48 kHz and mono.
 
 #### 2. Supports Web Video Players 
 

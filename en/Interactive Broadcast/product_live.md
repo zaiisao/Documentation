@@ -3,7 +3,7 @@
 title: Agora Video Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 30 2019 03:04:35 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:36:56 GMT+0800 (CST)
 ---
 # Agora Video Broadcasting Overview
 The Agora Native SDK for Video Broadcasting enables one-to-many and many-to-many audio or video live streaming. 
@@ -52,7 +52,7 @@ See the following sample code for application scenarios:
 | Host Capacity                                     | 17 users                                                  |
 | Audience Capacity                                 | One million users                                       |
 | Video Profile                                     | <li>SDK video source: Up to 1080p @ 60fps.<li>Custom video source: Up to 4K |
-| Audio Profile                                     | <li>Sample rate: 16 KHz to 48 KHz.<li>Support for mono and stereo sound  |
+| Audio Profile                                     | <li>Sample rate: 16 kHz to 48 kHz.<li>Support for mono and stereo sound  |
 | Audio Anti-packet-loss Rate                       | 70% (uplink and downlink)                               |
 | Latency between the Host and the Host-in Audience/Host | 200 ms to 600 ms                                                  |
 

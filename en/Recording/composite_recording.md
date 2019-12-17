@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: Linux
-updatedAt: Thu Sep 05 2019 03:09:25 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:43:01 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
@@ -15,7 +15,9 @@ The On-premise Recording SDK supports two recording modes:
 
 This page shows how to record audio and/or video in **composite recording mode** by the command line.
 
-Before proceeding, ensure that you have compiled the Agora Recorder Demo and know how to record a call by the command line. For more information, see [Record by Command Line](https://docs-preview.agoralab.co/en/Recording/recording_cmd_cpp).
+Before proceeding, ensure that you have compiled the Agora Recorder Demo and know how to record a call by the command line. For more information, see [Record by Command Line](https://docs-preview.agoralab.co/en/Recording/recording_cmd_cpp). You must select either individual recording mode or composite recording mode when you start the recording. You cannot switch between the two modes after a recording starts. 
+
+See [Differences between individual recording mode and composite recording mode](https://docs.agora.io/en/faq/recording_mode) to decide which mode you should use.
 
 > For simplicity, we assume that every UID in the channel sends both audio and video streams. If a UID neither sends audio nor video, such as the audience in a live broadcast, there will be no file for this UID.
 
