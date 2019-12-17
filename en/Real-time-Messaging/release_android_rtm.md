@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 12:55:54 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:15:25 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
