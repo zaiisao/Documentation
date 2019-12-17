@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:20:33 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:30:41 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -16,6 +16,8 @@ Co-hosting across channels refers to the process where the Agora SDK relays the 
 Co-hosting across channels applies to scenarios such as an online singing contest, where hosts of different channels interact with each other.
 
 ## Implementation
+
+<div class="alert note">To enable channel media relay, contact <a href="mailto:sales@agora.io">sales-us@agora.io</a>.</div>
 
 Before relaying media streams across channels, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_android.md).
 
