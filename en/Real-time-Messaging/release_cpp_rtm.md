@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux CPP
-updatedAt: Tue Dec 10 2019 12:58:07 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:22:17 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -24,6 +24,21 @@ This release deprecates the <code>createAgoraService</code> method, which create
 ### Issues Fixed
 
 Occasionally fails to receive any callback after a channel attribute operation. 
+
+## v1.2.1
+
+v1.2.1 was released on November 29, 2019.  
+
+### New Feature
+
+**Compatible with the endCall method of the Agora Signaling SDK** 
+
+If you use the `sendMessageToPeer` method to send off a <i>text</i> message in the format of AgoraRTMLegacyEndcallCompatibleMessagePrefix\_PREFIX\_\<channelId\>\_\<your additional information\>, then this method is compatible with the endCall method of the legacy Agora Signaling SDK. Replace \<channelId\> with the channel ID from which you want to leave (end call), and replace \<your additional information\> with any additional information. Note that you must not put any "_" (underscore) in your additional information but you can set \<your additional information\> as empty "".
+
+### Issues Fixed
+
+- The SDK fails to reconnect to the Agora RTM system if the user disables VPN. 
+- If a channel member reconnects to the Agora RTM server after being interrupted, chances are the rest members of the channel can receive `onMemberJoined` twice. 
 
 ## v1.2.0 
 
