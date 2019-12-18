@@ -3,7 +3,7 @@
 title: 合流录制
 description: 
 platform: Linux
-updatedAt: Tue Dec 17 2019 10:35:09 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:38:37 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
@@ -44,9 +44,9 @@ updatedAt: Tue Dec 17 2019 10:35:09 GMT+0800 (CST)
 
 设置 `audioProfile` 参数，设置音频编码模式、采样率、声道数和码率。
 
-- 0：默认音频设置，采样率 48 KHz，单声道，编码码率为 48 Kbps。
-- 1：高音质，采样率 48 KHz，单声道，编码码率 128 Kbps。
-- 2：高音质立体声，采样率 48 KHz，双声道，编码码率 192 Kbps。
+- 0：默认音频设置，采样率 48 kHz，单声道，编码码率为 48 Kbps。
+- 1：高音质，采样率 48 kHz，单声道，编码码率 128 Kbps。
+- 2：高音质立体声，采样率 48 kHz，双声道，编码码率 192 Kbps。
 
 #### 视频编码配置
 

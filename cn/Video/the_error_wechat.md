@@ -3,7 +3,7 @@
 title: 错误代码和警告代码
 description: 
 platform: 微信小程序
-updatedAt: Tue Dec 25 2018 08:22:58 GMT+0800 (CST)
+updatedAt: Wed Dec 18 2019 03:16:07 GMT+0800 (CST)
 ---
 # 错误代码和警告代码
 Agora Miniapp SDK for WeChat 在调用 API 或运行时，可能会返回一个错误码对象，也可能会返回一个错误码：
@@ -14,7 +14,7 @@ Agora Miniapp SDK for WeChat 在调用 API 或运行时，可能会返回一个�
 
 | 错误码 | 报错原因                                                     | 排查方法                                                     |
 | ------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 401    | 请求异常                                                     | 根据 reason  描述检查使用是否符合要求；如果报的是 `invalid vendor key`，请联系 sales@agora.io 检查是否有使用小程序服务的权限 |
+| 401    | 请求异常                                                     | 根据 reason  描述检查使用是否符合要求；如果报的是 `invalid vendor key`，请开通小程序服务权限，详见[微信小程序快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_wechat?platform=%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F#开通微信小程序服务) |
 | 429    | 请求太频繁                                                   | 根据 `reason` 描述检查使用是否符合要求                       |
 | 430    | <li>在订阅前尝试 mute 远端流<li>在订阅前尝试 unmute 远端流<li>请求异常 | 根据 `reason`  描述检查使用是否符合要求                      |
 | 431    | <li>`setRole` 传入的参数错误<li>登录失败<li>登录时的 role 传入出错<li>登录时的 uid 传入出错<li>重复登录，且 uid 不匹配 | 根据 `reason` 描述检查使用是否符合要求                       |

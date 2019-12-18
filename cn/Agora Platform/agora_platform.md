@@ -3,7 +3,7 @@
 title: Agora 平台概述
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 04:21:10 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:38:22 GMT+0800 (CST)
 ---
 # Agora 平台概述
 声网 Agora 为开发者提供实时音视频 API，只需集成 Agora SDK，即可快速在应用内构建多种实时互动场景。
@@ -43,7 +43,7 @@ SD-RTN™（Software Defined Real-time Network）软件定义实时网，这是�
 ### 音频
 
 - 高保真、3D 环绕立体声体验
-- 48 KHz 全频带采集：高度还原原声
+- 48 kHz 全频带采集：高度还原原声
 - 基于机器学习的 3A 算法：回声消除、自动增益、噪声抑制
 - 听觉增强：双声道、全景声、听声辨位、混音、混响特效、耳返、变声
 

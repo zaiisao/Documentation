@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 30 2019 03:02:51 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:38:20 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 视频互动直播（Video Broadcasting）可以实现一对多，多对多的音视频互动直播。
@@ -51,7 +51,7 @@ Agora 视频互动直播提供丰富的功能，你可以根据自己的场景�
 | 最多观众人数              | 100 万                                                       |
 | 跨频道主播连麦            | 支持                                                         |
 | 视频属性                  | <li>SDK 采集支持 1080p 分辨率，60 fps 帧率 <li>自采集支持 4K |
-| 音频属性                  | <li>音频采样率：16 KHz - 48 KHz <li>支持单、双声道           |
+| 音频属性                  | <li>音频采样率：16 kHz - 48 kHz <li>支持单、双声道           |
 | 音频抗丢包率              | 上下行抗丢包率 70%                                           |
 
 ### 平台兼容

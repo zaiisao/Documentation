@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 01:15:42 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:38:35 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -146,9 +146,9 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `0`：通信模式（默认）
   - `1`：直播模式
 - `audioProfile`：（选填）设置录制文件的音频采样率，码率，编码模式和声道数。目前单流模式下不能设置该参数。
-  - `0`：（默认）48 KHz 采样率，音乐编码，单声道，编码码率约 48 Kbps
-  - `1`：48 KHz 采样率，音乐编码, 单声道，编码码率约 128 Kbps
-  - `2`：48 KHz 采样率，音乐编码, 双声道，编码码率约 192 Kbps
+  - `0`：（默认）48 kHz 采样率，音乐编码，单声道，编码码率约 48 Kbps
+  - `1`：48 kHz 采样率，音乐编码, 单声道，编码码率约 128 Kbps
+  - `2`：48 kHz 采样率，音乐编码, 双声道，编码码率约 192 Kbps
 - `videoStreamType`：（选填）Number 类型，设置录制的视频流类型。如果频道中有用户开启了双流模式，你可以选择录制视频大流或者小流。
   - `0`：视频大流（默认），即高分辨率高码率的视频流
   - `1`：视频小流，即低分辨率低码率的视频流
