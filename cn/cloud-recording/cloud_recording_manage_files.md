@@ -3,7 +3,7 @@
 title: 管理录制文件
 description: 介绍录制文件的命名规则和如何解析 M3U8 文件
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 01:16:25 GMT+0800 (CST)
+updatedAt: Wed Dec 18 2019 06:42:51 GMT+0800 (CST)
 ---
 # 管理录制文件
 ## 功能描述
@@ -71,14 +71,14 @@ WebM 文件名：`<sid>_<cname>__uid_s_<uid>__uid_e_<type>_utc.webm`
 
 ## M3U8 文件
 
-M3U8 文件包含多个切片文件的文件名及其描述符号。Agora 云端录制产生的 M3U8 文件中用到的描述符号有三种：
+M3U8 文件包含多个切片文件的文件名及其描述符。Agora 云端录制产生的 M3U8 文件中用到的描述符有三种：
 
-- `#EXT-X-AGORA-TRACK-EVENT:EVENT=<event>,TRACK_TYPE=<type>,TIME=<utc>`：音视频流开始或者中断后重新开始的第一个切片文件会附带这一描述符号，描述流状态的变化。
+- `#EXT-X-AGORA-TRACK-EVENT:EVENT=<event>,TRACK_TYPE=<type>,TIME=<utc>`：音视频流开始或者中断后重新开始的第一个切片文件会附带这一描述符，描述流状态的变化。
   - `EVENT`: 事件名称，目前只能为 `START`，表示音视频开始或中断后重新开始
   - `TRACK_TYPE`：切片文件内容，`AUDIO` 或 `VIDEO`
   - `TIME`: 流状态变化的时间。UTC 时间，时区为 UTC+0
 
-- `#EXT-X-AGORA-ROTATE:WIDTH=<width>,HEIGHT=<height>,ROTATE=<rotate>,TIME=<utc>`：视频旋转后第一个切片文件会附带这一描述符号，描述视频旋转的信息。一个切片文件可能附带多个视频旋转的描述符。
+- `#EXT-X-AGORA-ROTATE:WIDTH=<width>,HEIGHT=<height>,ROTATE=<rotate>,TIME=<utc>`：视频旋转后第一个切片文件会附带这一描述符，描述视频旋转的信息。一个切片文件可能附带多个视频旋转的描述符。
   - `WIDTH`：视频宽度
   - `HEIGHT`：视频高度
   - `ROTATE`：视频逆时针旋转的角度，只能为 `0`、`90`、`180` 或 `270`
@@ -94,9 +94,9 @@ M3U8 文件包含多个切片文件的文件名及其描述符号。Agora 云端
 sid713476478245_cnameagora__uid_s_123__uid_e_video_20190920125142485.ts
 ```
 
-上述 M3U8 文件中包含一个 TS 切片文件的文件名以及三个描述符号，表示该切片文件是视频流开始或中断后重新开始后的第一片切片文件，相对前一片 TS 文件逆时针旋转了 90 度，总时长为 6.332 秒。
+上述 M3U8 文件中包含一个 TS 切片文件的文件名以及三个描述符，表示该切片文件是视频流开始或中断后重新开始后的第一片切片文件，相对前一片 TS 文件逆时针旋转了 90 度，总时长为 6.332 秒。
 
-## 切片逻辑
+## 切片规则
 
 ### 视频文件切片
 
