@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Wed Oct 23 2019 07:20:22 GMT+0800 (CST)
+updatedAt: Thu Dec 19 2019 07:38:48 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This document is provided for the C\# programming language with the following classes:
@@ -447,7 +447,7 @@ This method checks whether the audio route is set to speakerphone.
 
 
 
-### Set the Audio Volume
+### Enable the Audio Volume Indication
 
 #### Enable the Audio Volume Indication (EnableAudioVolumeIndication)
 
