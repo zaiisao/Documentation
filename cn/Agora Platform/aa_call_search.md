@@ -3,7 +3,7 @@
 title: 通话调查
 description: Introduction to Call Research in AA
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:03:12 GMT+0800 (CST)
+updatedAt: Fri Dec 20 2019 10:15:45 GMT+0800 (CST)
 ---
 # 通话调查
 水晶球的[**通话调查**](https://dashboard.agora.io/analytics/call/search)功能以图表的形式展示每一通通话全链路质量数据，可以极大提高解决通话问题的效率。
@@ -39,7 +39,7 @@ updatedAt: Tue Oct 29 2019 03:03:12 GMT+0800 (CST)
 
 ## 查看通话质量
 
-**通话概览页面**显示一个通话中每个用户作为[接收端](#rec)的通话体验（在通话过程中是否卡顿、模糊、没有声音、没有画面），可以帮助你快速了解这个通话的体验质量。在此页面，从上到你可以看到**通话基本信息**、**用户列表**和**通话体验质量面板**。
+**通话概览页面**显示一个通话中每个用户作为[接收端](#rec)的通话体验（在通话过程中是否卡顿、模糊、没有声音、没有画面），可以帮助你快速了解这个通话的体验质量。在此页面，从上到下你可以看到**通话基本信息**、**用户列表**和**通话体验质量面板**。
 
 ### 通话基本信息
 
@@ -66,7 +66,7 @@ updatedAt: Tue Oct 29 2019 03:03:12 GMT+0800 (CST)
 
 面板上方展示用户的基本信息，包括 User ID/User Account、平台、SDK 版本和用户对通话的评分（需要开启评分功能）。
 
-> 点击了解如何在 [Android](../../cn/Agora%20Platform/rate_android.md)，[iOS](../../cn/Agora%20Platform/rate_ios.md)，[macOS](../../cn/Agora%20Platform/rate_mac.md) 以及 [Windows](../../cn/Agora%20Platform/rate_windows.md) 平台上实现评分功能。
+> 点击了解如何在 [Android](../../cn/Agora%20Platform/rate_call_android.md)，[iOS](../../cn/Agora%20Platform/rate_call_apple.md)，[macOS](../../cn/Agora%20Platform/rate_call_apple.md) 以及 [Windows](../../cn/Agora%20Platform/rate_call_windows.md) 平台上实现评分功能。
 
 面板下方展示用户的事件轴，点击事件轴上的箭头可以了解到该用户的行为。你需要着重关注红色的箭头，它代表着比较重要的[用户行为](#event)，如加入频道失败。
 
