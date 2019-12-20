@@ -3,7 +3,7 @@
 title: Agora Analytics
 description: Introduction to call research
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 06:20:03 GMT+0800 (CST)
+updatedAt: Fri Dec 20 2019 10:17:00 GMT+0800 (CST)
 ---
 # Agora Analytics
 The [**Call Search**](https://dashboard.agora.io/analytics/call/search) function of Agora Analytics allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
@@ -67,7 +67,7 @@ The **Quality of Experience Overview** section displays each user's QoE diagram.
 
 The user's basic information is shown above the QoE diagram, including the [username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername), platform, SDK version, and user's ratings of the call (when the rating function is enabled).
 
-> See how to enable the rating function on [Android](../../en/Agora%20Platform/rate_android.md), [iOS](../../en/Agora%20Platform/rate_ios.md), [macOS](../../en/Agora%20Platform/rate_mac.md), and [Windows](../../en/Agora%20Platform/rate_windows.md).
+> See how to enable the rating function on [Android](../../en/Agora%20Platform/rate_call_android.md), [iOS](../../en/Agora%20Platform/rate_call_apple.md), [macOS](../../en/Agora%20Platform/rate_call_apple.md), and [Windows](../../en/Agora%20Platform/rate_call_windows.md).
 
 The user's event timeline is displayed below the QoE diagram. Select the spikes on the timeline to see the [user events](#event). Pay attention to the red spikes, which represent important events, such as failure to join the channel.
 
