@@ -3,7 +3,7 @@
 title: Manage Recorded Files
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 23 2019 03:16:12 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 03:16:17 GMT+0800 (CST)
 ---
 # Manage Recorded Files
 ## Overview
@@ -56,12 +56,12 @@ Where:
 
 Taking the file name of `sid713476478245_cnameagora__uid_s_123__uid_e_video_22194679897_3.m3u8` as an example, the "`3`" at the end indicates that this is the fourth version of the M3U8 file.
 
-> When the third-party cloud storage contains transferred M3U8 files, you need to compare the M3U8 file appended with the highest index with the file that does not have the suffix, and use the file that contains more content.
+> When you find transferred M3U8 file(s) in the third-party cloud storage, compare the M3U8 file taking the highest index with the file without a suffix, and choose the one holding more content records.
 
 The cloud recording service does not append the suffix to the names of the TS/WebM files.
 
 
-### When the server is disconnected or the process killed
+### When a server is disconnected or the process killed
 
 When [a cloud recording server is disconnected or the process killed](../../en/faq/high-availability.md), the cloud recording service enables the high availability mechanism, where the fault processing center automatically switches to a new server within 90 seconds to resume the service. Each time the service enables the high availability mechanism, it creates a new M3U8 file, which contains the index information of the recorded slice files from the time when the service resumes. The file name is prepended with `bak<n>`, where `n` stands for the number of times the mechanism is enabled in a recording, and starts off with `0`.
 	
