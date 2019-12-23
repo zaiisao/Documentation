@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 01:15:59 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 02:14:01 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -41,7 +41,7 @@ The following is an example that shows the fields in the request body.
 
 ## <a name="event"></a>Callback events
 
-The event type and corresponding service type of the Agora Cloud Recording callback events are listed as follows:
+The event type and the corresponding service type of the Agora Cloud Recording callback events are listed below:
 
 | eventType | serviceType                   | Event description                                            |
 | :-------- | :---------------------------- | :----------------------------------------------------------- |
@@ -152,7 +152,7 @@ The event type and corresponding service type of the Agora Cloud Recording callb
 `eventType` 33 indicates the current upload progress. The Agora server notifies you of the upload progress once every minute after the recording starts. `details` contains the following fields:
 
 - `msgName`: String. The message name, `uploading_progress`.
-- `progress`: Number. A constantly changing number between 0 and 10000, which equals to the ratio of the uploaded file to the recorded file multiplied by 10000. After the recording exits, 10000 indicates that the upload is complete.
+- `progress`: Number. An ever-increasing number between 0 and 10,000, equal to the ratio of the number of the uploaded files to the number of the recorded files multiplied by 10,000. After the recording service exits and when the number reaches 10,000, the upload completes.
 
 ###  <a name="40"></a>40 recorder_started
 
@@ -196,6 +196,7 @@ For example, you start a recording session and get this event notification in wh
 
 eventType 43 indicates that the state of the audio stream changes, and `details` contains the following fields:
 
+- `msgName`: String. The message name, `recorder_audio_stream_state_changed`.
 - `streamUid`: String. User ID. The user whose audio is recorded in the file.
 - `state` : Number. Whether Agora Cloud Recording is receiving the audio stream.
   - `0`: Agora Cloud Recording is receiving the audio stream.
@@ -208,6 +209,7 @@ eventType 43 indicates that the state of the audio stream changes, and `details`
 
 eventType 44 indicates that the state of the video stream changes, and `details` contains the following fields:
 
+- `msgName`: String. The message name, `recorder_video_stream_state_changed`.
 - `streamUid`: String. User ID. The user whose video is recorded in the file.
 - `state`: Number. Whether Agora Cloud Recording is receiving the video stream.
   - `0`: Agora Cloud Recording is receiving the video stream.
@@ -216,7 +218,7 @@ eventType 44 indicates that the state of the video stream changes, and `details`
 
 ## Reference
 
-###  <a name="uploaderr"></a>Error codes for uploading
+###  <a name="uploaderr"></a>Error codes related to uploading
 
 | Error code | Description                                                  |
 | :--------- | :----------------------------------------------------------- |
@@ -224,7 +226,7 @@ eventType 44 indicates that the state of the video stream changes, and `details`
 | 47         | The recording file upload fails.                             |
 | 51         | An error occurs when the uploader processes the recorded files. |
 
-### <a name="uploadwarn"></a>Warning codes for uploading
+### <a name="uploadwarn"></a>Warning codes related to uploading
 
 | Warning code | Description                                                  |
 | :----------- | :----------------------------------------------------------- |
