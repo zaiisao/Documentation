@@ -3,7 +3,7 @@
 title: 直播 SEI 相关问题 
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 23 2019 15:20:15 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 16:06:00 GMT+0800 (CST)
 ---
 # 直播 SEI 相关问题 
 ## 声网 SEI 规范
