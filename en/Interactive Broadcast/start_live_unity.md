@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 03:27:06 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 04:22:19 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start a basic video broadcast with the Agora SDK for Unity.
@@ -232,7 +232,7 @@ After setting the client role and the local video view (for a video broadcast), 
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
-- ·`channelName`: The unique name of the channel to join. Users that input the same channel name join the same channel.
+- `channelName`: The unique name of the channel to join. Users that input the same channel name join the same channel.
 
 - `uid`: Integer. The unique ID of the local user. If you set `uid` as 0, the SDK automatically assigns one user ID and returns it in the `OnJoinChannelSuccessHandler` callback.
 
@@ -273,11 +273,11 @@ private void OnUserJoinedHandler(uint uid, int elapsed)
 		if (!ReferenceEquals (go, null)) {
 			go.name = uid.ToString ();
 			VideoSurface remoteVideoSurface = go.AddComponent<VideoSurface> ();
-      // Set the remote video.
-			remoteVideoSurface.SetForUser (uid);
-      // Adjust the video refreshing frame rate. The video capture and render frame rate of Agora Unity SDK is 15 fps by default.
-      // For example, in the game scenario, the refreshing frame rate of the game is 60 fps, which causes 3 times redundancy compared to the video render frame rate. Call the SetGameFps to adjust the refreshing frame rate of the game to 15 fps.
-      remoteVideoSurface.SetGameFps (60);
+		  // Set the remote video.
+		  remoteVideoSurface.SetForUser (uid);
+		  // Adjust the video refreshing frame rate. The video capture and render frame rate of Agora Unity SDK is 15 fps by default.
+		  // For example, in the game scenario, the refreshing frame rate of the game is 60 fps, which causes 3 times redundancy compared to the video render frame rate. Call the SetGameFps to adjust the refreshing frame rate of the game to 15 fps.
+		  remoteVideoSurface.SetGameFps (60);
 		  remoteVideoSurface.SetEnable (true);
 		}
 		mRemotePeer = uid;
@@ -311,7 +311,7 @@ public void leave()
 			return;
 		// Leave the channel.
 		mRtcEngine.LeaveChannel();
-    // Disable the video.
+		// Disable the video.
 		mRtcEngine.DisableVideoObserver();
 	}
 ```
