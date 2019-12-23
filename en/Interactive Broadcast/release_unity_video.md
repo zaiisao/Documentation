@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 06:59:55 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 06:59:58 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -23,7 +23,7 @@ Agora Unity SDK is widely used in games, education, AR, VR and other scenarios.
 
 v2.9.1 was released on December 23, 2019.
 
-**Functions and features*
+**Functions and features**
 
 #### 1. Multi-platform support
 Supports ios, Android, macOS, Windows x86, and Windows x86_64 platforms.
