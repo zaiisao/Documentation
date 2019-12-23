@@ -3,10 +3,10 @@
 title: 实现视频直播
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 03:51:33 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 03:51:36 GMT+0800 (CST)
 ---
 # 实现视频直播
-本文介绍如何使用 Agora Unity SDK 快速实现视频直播，例如在游戏场景中实现指挥。
+本文介绍如何使用 Agora Unity SDK 快速实现视频直播。
 
 ## 前提条件
 
@@ -254,7 +254,7 @@ mRtcEngine.JoinChannelByKey(null, channel, null, 0);
 
 远端主播成功加入频道后，SDK 会触发 `OnUserJoinedHandler` 回调，该回调中会包含这个主播的 `uid` 信息。
 
-- 在** VideoSurface.cs** 文件，通过  `OnUserJoinedHandler` 回调来调用 `SetForUser` 方法，传入获取到的 `uid`，设置远端视频显示。
+- 在 **VideoSurface.cs** 文件，通过  `OnUserJoinedHandler` 回调来调用 `SetForUser` 方法，传入获取到的 `uid`，设置远端视频显示。
 - 选择显示远端视频的物体，将视频渲染脚本 **VideoSurface.cs** 拖动至该物体的 **Script** 进行绑定，即可看到远端图像。
 - Agora Unity SDK 默认的视频采集和渲染帧率是 15 fps，根据场景，调用 **VideoSurface.cs** 文件中的 `SetGameFps` 方法调节视频刷新帧率。
 
