@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: token authentication
 platform: All Platforms
-updatedAt: Mon Dec 23 2019 06:26:06 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 06:26:13 GMT+0800 (CST)
 ---
 # Set up Authentication
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two authentication mechanisms:
