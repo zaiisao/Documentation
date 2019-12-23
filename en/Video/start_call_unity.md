@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 03:27:47 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 04:25:27 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora SDK for Unity.
@@ -214,7 +214,7 @@ After initializing an `IRtcEngine` object and setting the local video, call `Joi
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
-- ·`channelName`: The unique name of the channel to join. Users that input the same channel name join the same channel.
+- `channelName`: The unique name of the channel to join. Users that input the same channel name join the same channel.
 
 - `uid`: Integer. The unique ID of the local user. If you set `uid` as 0, the SDK automatically assigns one user ID and returns it in the `OnJoinChannelSuccessHandler` callback.
 
@@ -235,7 +235,7 @@ When you are in a channel and a remote user joins this channel, the SDK triggers
 
 - The video capture and render frame rate of Agora Unity SDK is 15 fps by default. Call `SetGameFps` in the **VideoSurface.cs** file to adjust the video refresh rate based on your scenario.
 
-  <div class="alert note">The default value of uid in theSetForUser method is 0. To see the remote user, ensure that you input the uid of the remote user in SetForUser. Otherwise, the SDK uses the default value and you can only see the local video.</div>
+  <div class="alert note">The default value of uid in the SetForUser method is 0. To see the remote user, ensure that you input the uid of the remote user in SetForUser. Otherwise, the SDK uses the default value and you can only see the local video.</div>
 
 ```C#
 // This callback occurs when the first video frame of a remote user is received and decoded after the remote user successfully joins the channel.
@@ -251,11 +251,11 @@ private void OnUserJoinedHandler(uint uid, int elapsed)
 		if (!ReferenceEquals (go, null)) {
 			go.name = uid.ToString ();
 			VideoSurface remoteVideoSurface = go.AddComponent<VideoSurface> ();
-      // Set the remote video.
-			remoteVideoSurface.SetForUser (uid);
-      // Adjust the video refreshing frame rate. The video capture and render frame rate of Agora Unity SDK is 15 fps by default.
-      // For example, in the game scenario, the refreshing frame rate of the game is 60 fps, which causes 3 times redundancy compared to the video render frame rate. Call the SetGameFps to adjust the refreshing frame rate of the game to 15 fps.
-      remoteVideoSurface.SetGameFps (60);
+		  // Set the remote video.
+		  remoteVideoSurface.SetForUser (uid);
+		  // Adjust the video refreshing frame rate. The video capture and render frame rate of Agora Unity SDK is 15 fps by default.
+		  // For example, in the game scenario, the refreshing frame rate of the game is 60 fps, which causes 3 times redundancy compared to the video render frame rate. Call the SetGameFps to adjust the refreshing frame rate of the game to 15 fps.
+		  remoteVideoSurface.SetGameFps (60);
 		  remoteVideoSurface.SetEnable (true);
 		}
 		mRemotePeer = uid;
@@ -289,7 +289,7 @@ public void leave()
 			return;
 		// Leave the channel.
 		mRtcEngine.LeaveChannel();
-    // Disable the video.
+		// Disable the video.
 		mRtcEngine.DisableVideoObserver();
 	}
 ```
