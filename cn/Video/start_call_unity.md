@@ -3,10 +3,10 @@
 title: 实现视频通话
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 03:28:15 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 03:38:59 GMT+0800 (CST)
 ---
 # 实现视频通话
-本文介绍如何使用 Agora Unity SDK 快速实现视频通话，例如在游戏场景中实现自由发言。
+本文介绍如何使用 Agora Unity SDK 快速实现视频通话。
 
 ## 示例项目体验
 
