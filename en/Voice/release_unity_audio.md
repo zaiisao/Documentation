@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 07:05:06 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 07:11:19 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -38,7 +38,7 @@ Supports raw audio data. You can capture and process the raw data according to y
 Provides APIs for accessing to the external data source. You can configure the external audio source, and push the data to the Agora Unity SDK.
 
 #### 5. Encryption
-Supports encryption of audio and video streaming. The following table shows the information of the encryption libraries for the Android and iOS platforms. If you do not intend to use this function, you can remove the encryption libraries to decrease the SDK size.
+Supports encryption of audio streaming. The following table shows the information of the encryption libraries for the Android and iOS platforms. If you do not intend to use this function, you can remove the encryption libraries to decrease the SDK size.
 
    | Platform | Encryption libraries                          |
    | :------- | :-------------------------------------------- |
@@ -49,7 +49,7 @@ Supports encryption of audio and video streaming. The following table shows the 
 
 See the following documentation to quickly integrate the SDK and implement real-time voice and video communication in your project.
 
-- [Start a Voice Call](https://docs.agora.io/en/Voice/start_call_audio_unity?platform=Unity) or [Start a Voice Broadcast](https://docs.agora.io/en/Audio%20Broadcast/start_live_audio_unity?platform=Unity)
+- [Start a Voice Call](../../en/Voice/start_call_audio_unity.md) or [Start a Voice Broadcast](../../en/Voice/start_live_audio_unity.md)
 - [API Reference](https://docs.agora.io/en/Voice/API%20Reference/unity/index.html) 
 
 Agora also provides an open-source [Unity Sample](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming/tree/2.9.1.42/Basic-Voice-Call-for-Gaming/Hello-Unity3D-Agora) on GitHub.
