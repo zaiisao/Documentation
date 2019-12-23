@@ -3,7 +3,7 @@
 title: Start a Voice Broadcast
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 03:27:18 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 04:20:15 GMT+0800 (CST)
 ---
 # Start a Voice Broadcast
 Use this guide to quickly start a basic voice broadcast with the Agora SDK for Unity.
@@ -225,7 +225,7 @@ public void leave()
 			return;
 		// Leave the channel.
 		mRtcEngine.LeaveChannel();
-    // Disable the video.
+		// Disable the video.
 		mRtcEngine.DisableVideoObserver();
 	}
 ```
