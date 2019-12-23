@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 06:10:25 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 06:29:41 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
@@ -95,14 +95,14 @@ public int avsync_type;
 
 ### API 参考
 
-- `EnableVideoObserver`
-- `DisableVideoObserver`
-- `RegisterVideoRawDataObserver`
-- `UnRegisterVideoRawDataObserver`
-- `SetOnCaptureVideoFrameCallback`
-- `SetOnRenderVideoFrameCallback`
-- `OnCaptureVideoFrameHandler`
-- `OnRenderVideoFrameHandler`
+- [EnableVideoObserver](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ace979cd59611a0cc39e13f8ea33c0f7c)
+- [DisableVideoObserver](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ace613c4deed4548ee30a80a18a7007df)
+- [RegisterVideoRawDataObserver](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_video_raw_data_manager.html#ad2fddfb037739fdcb5cdd245caeb12f0)
+- [UnRegisterVideoRawDataObserver](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_video_raw_data_manager.html#ad485000862fc71f39889f826f1353ba3)
+- [SetOnCaptureVideoFrameCallback](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_video_raw_data_manager.html#a86b6c82c97dbe94f7a11839506a09109)
+- [SetOnRenderVideoFrameCallback](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_video_raw_data_manager.html#ad7516aa3de9f25b208fe2aa9baf56097)
+- [OnCaptureVideoFrameHandler](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_video_raw_data_manager.html#a7173eb3a85e986f50696732076c811b9)
+- [OnRenderVideoFrameHandler](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_video_raw_data_manager.html#a2ad89cb34bf7ca354ee71a35985bb5c7)
 
 ## 开发注意事项
 
