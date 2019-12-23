@@ -3,7 +3,7 @@
 title: 管理录制文件
 description: 
 platform: Linux
-updatedAt: Fri Dec 20 2019 03:07:39 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 06:20:01 GMT+0800 (CST)
 ---
 # 管理录制文件
 ## 概述
