@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 03:57:12 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 03:57:16 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora Unity SDK 快速实现视频直播。
@@ -185,8 +185,8 @@ mRtcEngine.SetChannelProfile(CHANNEL_PROFILE.CHANNEL_PROFILE_LIVE_BROADCASTING);
 
 直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道模式为直播后，你可以在 App 中参考如下步骤设置用户角色：
 
-1. 让用户选择自己的角色是主播还是观众
-2. 调用 `SetClientRole` 方法，然后使用用户选择的角色进行传参
+1. 让用户选择自己的角色是主播还是观众。
+2. 调用 `SetClientRole` 方法，然后使用用户选择的角色进行传参。
 
 注意，直播频道内的用户，只能看到主播的画面、听到主播的声音。加入频道后，如果你想切换用户角色，也可以调用 `SetClientRole` 方法。
 
