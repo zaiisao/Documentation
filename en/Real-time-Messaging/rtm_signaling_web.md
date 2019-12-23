@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Web
-updatedAt: Mon Dec 23 2019 13:07:01 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 13:09:49 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -237,4 +237,4 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | Event                                  | Signaling | Real-time Messaging |
 | -------------------------------------- | --------- | ------------------- |
 | Returns the result of the method call. | N/A       | Promise             |
-| The token has expired.                 | N/A       | [TokenExpired](     |
+| The token has expired.                 | N/A       | [TokenExpired](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#tokenexpired)     |
