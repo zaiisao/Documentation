@@ -3,7 +3,7 @@
 title: Set Video Layout
 description: 
 platform: Linux
-updatedAt: Mon Dec 23 2019 02:24:17 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 02:24:35 GMT+0800 (CST)
 ---
 # Set Video Layout
 ## Overview
@@ -13,7 +13,7 @@ As shown in the following image, the background of the video is **canvas**, and 
 
 ![](https://web-cdn.agora.io/docs-files/1562927420353)
 
-> If the aspect ratio of a user's video does not match that of the user's region, the video may be cropped or scaled to fit the region. The aspect ratio of the user's region depends on the aspect ratio of the canvas and the layout type.
+> If the aspect ratio of a user's video does not match that of the user's region, the video may be cropped or letterboxed to fit the region. The aspect ratio of the user's region depends on the aspect ratio of the canvas and the layout type.
 
 The demo of Agora On-premise Recording provides three predefined video layouts.
 
