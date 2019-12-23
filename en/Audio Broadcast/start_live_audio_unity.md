@@ -23,7 +23,7 @@ Use this guide to quickly start a basic voice broadcast with the Agora SDK for U
 
 - A valid Agora account. ([Sign up](https://dashboard.agora.io/) for free)
 
-<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your network has a firewall.</div>
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms#agora-rtc-sdk">Firewall Requirements</a > if your network has a firewall.</div>
 
 ## Set up the development environment
 
