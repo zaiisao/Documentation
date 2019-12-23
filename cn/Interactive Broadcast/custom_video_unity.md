@@ -3,10 +3,10 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 06:10:12 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 06:14:09 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
-## 功能简介
+## 功能介绍
 
 实时视频传输过程中，Agora Unity SDK 通常会启动默认的视频模块进行采集和渲染。在以下场景中，你可能会发现默认的视频模块无法满足开发需求：
 
@@ -19,7 +19,7 @@ updatedAt: Mon Dec 23 2019 06:10:12 GMT+0800 (CST)
 
 ## 实现方法
 
-在实现自定义视频采集和渲染前，请确保已在你的项目中实现基本的实时视频功能。详见[实现视频通话](https://docs.agora.io/cn/Video/start_call_unity?platform=Unity)或[实现视频直播](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity)。
+在实现自定义视频采集和渲染前，请确保已在你的项目中实现基本的实时视频功能。详见[实现视频通话](https://docs.agora.io/cn/Video/start_call_unity?platform=Unity)或[实现视频直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_unity?platform=Unity)。
 
 参考如下步骤，在你的项目中实现自定义视频采集和渲染功能：
 
@@ -152,5 +152,5 @@ int a = rtc.PushVideoFrame(externalVideoFrame);
 
 ### API 参考
 
-- SetExternalVideoSource
-- PushVideoFrame
+- [SetExternalVideoSource](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#aae4a31d2375ed620605360ae1199eee8)
+- [PushVideoFrame](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#af9e8d34e2a1ac07b8984fb6181a6ab81)
