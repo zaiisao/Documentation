@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 04:29:08 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 04:29:23 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora Unity SDK 快速实现视频通话。
@@ -250,11 +250,11 @@ private void OnUserJoinedHandler(uint uid, int elapsed)
 		if (!ReferenceEquals (go, null)) {
 			go.name = uid.ToString ();
 			VideoSurface remoteVideoSurface = go.AddComponent<VideoSurface> ();
-      // 设置远端视频显示。
-			remoteVideoSurface.SetForUser (uid);
-      // 调节视频刷新帧率。Agora Unity SDK 默认的视频采集和渲染帧率是 15 fps。
-      // 例如，游戏场景中，游戏刷新帧率为 60 fps。我们此时视频渲染帧率相对于视频刷新帧率会产生 3 倍的冗余，需通过 SetGameFps 方法，将游戏刷新帧率调节为 15 fps。
-      remoteVideoSurface.SetGameFps (60);
+		  // 设置远端视频显示。
+		  remoteVideoSurface.SetForUser (uid);
+		  // 调节视频刷新帧率。Agora Unity SDK 默认的视频采集和渲染帧率是 15 fps。
+		  // 例如，游戏场景中，游戏刷新帧率为 60 fps。我们此时视频渲染帧率相对于视频刷新帧率会产生 3 倍的冗余，需通过 SetGameFps 方法，将游戏刷新帧率调节为 15 fps。
+		  remoteVideoSurface.SetGameFps (60);
 		  remoteVideoSurface.SetEnable (true);
 		}
 		mRemotePeer = uid;
@@ -288,7 +288,7 @@ public void leave()
 			return;
 		// 离开频道。
 		mRtcEngine.LeaveChannel();
-    // 关闭视频显示。
+		// 关闭视频显示。
 		mRtcEngine.DisableVideoObserver();
 	}
 ```
