@@ -3,7 +3,7 @@
 title: 管理录制文件
 description: 
 platform: Linux
-updatedAt: Mon Dec 23 2019 06:20:01 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 06:20:06 GMT+0800 (CST)
 ---
 # 管理录制文件
 ## 概述
@@ -47,8 +47,8 @@ updatedAt: Mon Dec 23 2019 06:20:01 GMT+0800 (CST)
 
 | 文件名                               | 描述                                                         |
 | :----------------------------------- | :----------------------------------------------------------- |
-| `recording2-done.txt`                | 标识本次录制结束                                             |
-| `uid_UID_timestamp.txt`              | 例如 `uid_123_20190611073246073.txt`。记录每个 UID 的音视频文件开始和结束的时间戳以及视频文件的相关信息（宽、高和旋转）。合流模式下文件名为 `uid_0_timestamp.txt` |
+| `recording2-done.txt`                | 标识本次录制结束。                                            |
+| `uid_UID_timestamp.txt`              | 记录每个 UID 的音视频文件开始和结束的时间戳以及视频文件的相关信息（宽、高和旋转）。例如 `uid_123_20190611073246073.txt`。合流模式下文件名为 `uid_0_timestamp.txt`。 |
 | `recording_0.log` 和 `recording_sys.log` | 录制相关 log 文件。如果录制过程中出现问题，可以在这两个文件中查找原因。 |
 
 
