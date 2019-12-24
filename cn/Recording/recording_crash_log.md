@@ -3,7 +3,7 @@
 title: 收集崩溃日志
 description: 
 platform: Linux
-updatedAt: Wed Dec 11 2019 08:46:05 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 06:04:02 GMT+0800 (CST)
 ---
 # 收集崩溃日志
 ## 概述
