@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Web
-updatedAt: Tue Dec 24 2019 03:22:23 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 03:55:47 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -16,7 +16,6 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | Login                  | `login`/`login2`                       | [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login)<sup>2</sup> |
 | Logout                 | `logout`                               | [logout](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#logout) |
 | Gets the login status. | `getStatus`                            | N/A. See [ConnectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#connectionstatechanged). |
-| Destroys the instance. | `destroy`                              | N/A                                                          |
 
 | Event                     | Signaling             | Real-time Messaging                                          |
 | ------------------------- | --------------------- | ------------------------------------------------------------ |
@@ -52,13 +51,13 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Method                                         | Signaling         | Real-time Messaging                                          |
 | ---------------------------------------------- | ----------------- | ------------------------------------------------------------ |
-| Queries the online status of a specified user. | `queryuserStatus` | [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) |
+| Queries the online status of a specified user. | `invoke` | [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) |
 
 
 
 | Event                            | Signaling                 | Real-time Messaging |
 | -------------------------------- | ------------------------- | ------------------- |
-| Returns the result of the query. | `OnQueryUserStatusResult` | Promise             |
+| Returns the result of the query. | `OnInvokeRet` | Promise             |
 
 > With the Agora RTM SDK,  you can query the online status of a list of peer users, not of just one peer user.
 
@@ -66,10 +65,10 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Method                                              | Signaling        | Real-time Messaging                                          |
 | --------------------------------------------------- | ---------------- | ------------------------------------------------------------ |
-| Sets the local user's attribute                     | `setAttr`        | [addOrUpdateLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatelocaluserattributes) |
-| Gets an attribute of the local user.                | `getAttr`        | [getUserAttributesBykeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributesbykeys)<sup>1</sup> |
-| Gets all attributes of the local user.              | `getAttrAll`     | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributes)<sup>2</sup> |
-| Gets all attributes of the specified user.          | `getUserAttrAll` | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributes) |
+| Sets the local user's attribute                     | `invoke`        | [addOrUpdateLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatelocaluserattributes) |
+| Gets an attribute of the local user.                | `invoke`        | [getUserAttributesBykeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributesbykeys)<sup>1</sup> |
+| Gets all attributes of the local user.              | `invoke`     | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributes)<sup>2</sup> |
+| Gets all attributes of the specified user.          | `invoke` | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributes) |
 | Replaces the local user's attributes with new ones. | N/A              | [setLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setlocaluserattributes) |
 | Deletes the specified attributes of the local user. | N/A              | [deleteLocaluserAttributeByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#deletelocaluserattributesbykeys) |
 | Clears the local user's attributes                  | N/A              | [clearLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#clearlocaluserattributes) |
@@ -77,7 +76,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Event                                                 | Signaling               | Real-time Messaging |
 | ----------------------------------------------------- | ----------------------- | ------------------- |
-| Returns the result of the user-attribute method call. | `onUserAttributeResult` | Promise             |
+| Returns the result of the user-attribute method call. | `OnInvokeRet` | Promise             |
 
 > - <sup>1</sup> The [getuserAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributesbykeys) method allows you to retrieve a list of attributes from the local user.
 > - <sup>2</sup> The [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributes) method allows you to retrieve the attributes from either the local user or a specified peer user. 
@@ -111,7 +110,6 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | ----------------------------------------------- | ------------------------- | ------------------------------------------------------------ |
 | Creates a message instance.                     | N/A                       | N/A                                                          |
 | Sends a channel message from within a channel.  | `messageChannelSend`      | [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage)<sup>1</sup> |
-| Sends a channel message from outside a channel. | `messageChannelSendForce` | N/A                                                          |
 
 
 
@@ -141,7 +139,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Event                           | Signaling              | Real-time Messaging                                          |
 | ------------------------------- | ---------------------- | ------------------------------------------------------------ |
-| A channel attribute is updated. | `onChannelAttrUpdated` | [AttributesUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmchannelevents.html#attributesupdated)<sup>2</sup> |
+| A channel attribute is updated. | `OnInvokeRet` | [AttributesUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmchannelevents.html#attributesupdated)<sup>2</sup> |
 
 > <sup>2</sup>  This callback is disabled by default. It is enabled only when the user, who updates the attributes of the channel, sets [enableNotificationToChannelMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannelAttributeOptions.html#//api/name/enableNotificationToChannelMembers) as `true`.
 
@@ -165,13 +163,13 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Method                                                | Signaling             | Real-time Messaging                                          |
 | ----------------------------------------------------- | --------------------- | ------------------------------------------------------------ |
-| Retrieves the number of users in a specified channel. | `channelQueryUserNum` | [getChannelMemberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelmembercount)<sup>1</sup> |
+| Retrieves the number of users in a specified channel. | N/A | [getChannelMemberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelmembercount)<sup>1</sup> |
 
 > <sup>1</sup>  The Agora RTM SDK supports retrieving the member count of up to 32 channels. 
 
 | Event                                               | Signaling                     | Real-time Messaging |
 | --------------------------------------------------- | ----------------------------- | ------------------- |
-| Returns the number of users in a specified channel. | `onChannelQueryUserNumResult` | Promise             |
+| Returns the number of users in a specified channel. | N/A | Promise             |
 
 ## Call Invitation
 
