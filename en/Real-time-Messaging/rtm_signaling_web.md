@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Web
-updatedAt: Tue Dec 24 2019 03:59:13 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 03:59:18 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -178,7 +178,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | Method                                                       | Signaling                                | Real-time Messaging                                          |
 | ------------------------------------------------------------ | ---------------------------------------- | ------------------------------------------------------------ |
 | Allows the caller to create a `LocalInvitation.`             | N/A                                      | [createLocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createlocalinvitation)<sup>2</sup> |
-| Allows the caller to send a call invite to a specified user (callee). | `channelInviteUser`/`channelInviteUser2` | [send](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#send)<sup>3</sup> |
+| Allows the caller to send a call invite to a specified user (callee). | `channelInviteUser2` | [send](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#send)<sup>3</sup> |
 | Allows the caller to send a call invite to land-line user.   | `channelInviteDTMF`                      | N/A                                                          |
 | Allows the caller to cancel a sent call invite.              | `channelInviteEnd`                       | [cancel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#cancel)<sup>4</sup> |
 | Allows the callee to accept an incoming call invite.         | `channelInviteAccept`                    | [accept](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#accept) |
