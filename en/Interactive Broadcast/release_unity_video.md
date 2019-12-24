@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 07:03:03 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 03:51:03 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -26,17 +26,17 @@ v2.9.1 was released on December 23, 2019.
 **Functions and features**
 
 #### 1. Multi-platform support
-Supports ios, Android, macOS, Windows x86, and Windows x86_64 platforms.
+Supports ios, Android, macOS and Windows (x86/x86_64) platforms.
 
 #### 2. Interoperability with the Agora Web SDK
 Provides the `EnableWebSdkInteroperability` method for enabling interoperability with the Agora Web SDK in a live broadcast. 
 
 #### 3. Video rendering method
-Supports multiple video rendering methods. You can choose any method in  **Auto graphics API**.
+Supports multiple video rendering methods. You can choose any method in  **Auto Graphics API**.
 ![](https://web-cdn.agora.io/docs-files/1576826628073)
 
 #### 4. Multithreaded rendering
-Supports multithreaded rendering. You can click the **multithreaded rendering** option for rendering in multiple threads.
+Supports multithreaded rendering. You can click the **Multithreaded Rendering** option for rendering in multiple threads.
 
 #### 5. Raw data
 Supports raw audio data and raw video data in RGBA format. You can capture and process the raw data according to your needs. See details in [Raw Video Data](../../en/Interactive%20Broadcast/raw_data_video_unity.md).
@@ -50,7 +50,7 @@ Supports encryption of audio and video streaming. The following table shows the 
    | Platform | Encryption libraries                          |
    | :------- | :-------------------------------------------- |
    | Android  | libagora-crypto.so                            |
-   | iOS      | <ul><li>AgoraRtcCryptoLoader.framework <li> ibcrypto.a</li></ul> |
+   | iOS      | <ul><li>AgoraRtcCryptoLoader.framework <li>libcrypto.a</li></ul> |
 
 **Related documentation**
 
