@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Tue Dec 24 2019 03:44:00 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 03:48:22 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Unity SDK 的发版说明。
