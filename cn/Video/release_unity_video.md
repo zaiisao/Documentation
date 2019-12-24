@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 06:40:32 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 03:46:52 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Unity SDK 的发版说明。
@@ -27,20 +27,20 @@ Agora Unity SDK 广泛应用于游戏、教育、AR、VR 等场景。
 
 #### 1. 多平台支持
 
-该版本支持在 iOS、Android、macOS、Windows x86 和 Windows x86_64 平台中集成。
+该版本支持在 iOS、Android、macOS 和 Windows (x86/x86_64) 平台中集成。
 
-#### 2. 支持与 web 互通
+#### 2. 支持与 Web 互通
 
 该版本提供 `EnableWebSdkInteroperability` 方法，用于打开直播场景下与 Agora Web SDK 的互通。
 
 #### 3. 视频渲染方式
 
-该版本支持多样的视频渲染方式，你可以在 Unity 菜单中选择 Auto graphics API 下任意的视频渲染模式。
+该版本支持多样的视频渲染方式，你可以在 Unity 菜单中选择 **Auto Graphics API** 下任意的视频渲染模式。
 ![](https://web-cdn.agora.io/docs-files/1576826628073)
 
 #### 4. 多线程渲染
 
-该版本支持多线程渲染，你可以在 Unity 菜单中选择 multithreaded rendering 启用该功能。
+该版本支持多线程渲染，你可以在 Unity 菜单中选择 **Multithreaded Rendering** 启用该功能。
 
 #### 5. 原始音视频数据
 
@@ -57,7 +57,7 @@ Agora Unity SDK 广泛应用于游戏、教育、AR、VR 等场景。
    | 平台    | 加密库                                     |
    | :------ | :----------------------------------------- |
    | Android | libagora-crypto.so                         |
-   | iOS     | <ul><li>AgoraRtcCryptoLoader.framework <li>ibcrypto.a</li></ul> |
+   | iOS     | <ul><li>AgoraRtcCryptoLoader.framework <li>libcrypto.a</li></ul> |
 
 **相关文档**
 
