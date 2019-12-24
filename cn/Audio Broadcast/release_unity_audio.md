@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Tue Dec 24 2019 03:48:22 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 03:48:26 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Unity SDK 的发版说明。
@@ -48,7 +48,7 @@ Agora Unity SDK 广泛应用于游戏、教育、AR、VR 等场景。
    | 平台    | 加密库                                     |
    | :------ | :----------------------------------------- |
    | Android | libagora-crypto.so                         |
-   | iOS     | <ul><li>AgoraRtcCryptoLoader.framework <li>ibcrypto.a</li></ul> |
+   | iOS     | <ul><li>AgoraRtcCryptoLoader.framework <li>libcrypto.a</li></ul> |
 
 **相关文档**
 
