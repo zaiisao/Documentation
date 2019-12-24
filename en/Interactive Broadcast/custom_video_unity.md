@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 06:32:38 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 07:41:49 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -34,22 +34,22 @@ The following steps show how to implement screen sharing by customizing the vide
 1. Specify the external video source by calling `SetExternalVideoSource` before `JoinChannelByKey`.
 
    ```C#
-	 mRtcEngine.SetExternalVideoSource(true, false);
+mRtcEngine.SetExternalVideoSource(true, false);
 	 ```
 
 2. Define the Texture2D, and use Texture2D to read screen pixels as an external video source.
 
    ```C#
- 	 mRect = new Rect(0, 0, Screen.width, Screen.height);
-   mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.RGBA32, false);
-   mTexture.ReadPixels(mRect, 0, 0);
-   mTexture.Apply();
+mRect = new Rect(0, 0, Screen.width, Screen.height);
+mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.RGBA32, false);
+mTexture.ReadPixels(mRect, 0, 0);
+mTexture.Apply();
 	 ```
    
 3. Call `PushVideoFrame` to send the video source to the SDK and to implement screen sharing.
 
    ```C#
-	 int a = rtc.PushVideoFrame(externalVideoFrame);
+int a = rtc.PushVideoFrame(externalVideoFrame);
 	 ```
    
 
