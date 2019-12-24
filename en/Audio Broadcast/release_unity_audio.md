@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 07:11:19 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 03:49:44 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -26,7 +26,7 @@ v2.9.1 was released on December 23, 2019.
 **Functions and features**
 
 #### 1. Multi-platform support
-Supports ios, Android, macOS, Windows x86, and Windows x86_64 platforms.
+Supports ios, Android, macOS and Windows (x86/x86_64) platforms.
 
 #### 2. Interoperability with the Agora Web SDK
 Provides the `EnableWebSdkInteroperability` method for enabling interoperability with the Agora Web SDK in a live broadcast. 
@@ -43,7 +43,7 @@ Supports encryption of audio streaming. The following table shows the informatio
    | Platform | Encryption libraries                          |
    | :------- | :-------------------------------------------- |
    | Android  | libagora-crypto.so                            |
-   | iOS      | <ul><li>AgoraRtcCryptoLoader.framework <li> ibcrypto.a</li></ul> |
+   | iOS      | <ul><li>AgoraRtcCryptoLoader.framework <li>libcrypto.a</li></ul> |
 
 **Related documentation**
 
