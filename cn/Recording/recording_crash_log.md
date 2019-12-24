@@ -3,7 +3,7 @@
 title: 收集崩溃日志
 description: 
 platform: Linux
-updatedAt: Tue Dec 24 2019 06:04:02 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 06:04:06 GMT+0800 (CST)
 ---
 # 收集崩溃日志
 ## 概述
@@ -12,7 +12,7 @@ Agora 建议你在集成本地服务端录制前，使用我们提供的 `enable
 
 ## 实现方法
 
-首先，你可在 Linux 系统中执行 `ulimit -c` 命令查看是否已开启 core dump。输出结果如果为 0，则说明 core dump 没有打开。
+首先，你可先执行 `ulimit -c` 命令查看是否已开启 core dump。输出结果如果为 0，则说明 core dump 没有打开。
 
 参考以下步骤在 Linux 系统中开启 core dump 功能。
 
@@ -46,5 +46,5 @@ docker run --ulimit core=-1 --security-opt seccomp=unconfined --privileged=true
 
 ## 注意事项
 
-- 运行一次该脚本后，Linux 重启脚本依然生效。
+- 运行一次该脚本后，如果系统重启，该脚本依然生效。
 - 如果你集成的是本地服务端录制 SDK 2.2.3 及之后版本，会在 `AgoraCoreService` 所在目录下生成`recording_crash.log`，作为崩溃问题分析的辅助文件。
