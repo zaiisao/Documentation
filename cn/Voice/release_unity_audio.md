@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Tue Dec 24 2019 03:43:56 GMT+0800 (CST)
+updatedAt: Tue Dec 24 2019 03:44:00 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Unity SDK 的发版说明。
@@ -27,9 +27,9 @@ Agora Unity SDK 广泛应用于游戏、教育、AR、VR 等场景。
 
 #### 1. 多平台支持
 
-该版本支持在 iOS、Android、macOS、Windows x86 和 Windows x86_64 平台中集成。
+该版本支持在 iOS、Android、macOS 和 Windows (x86/x86_64) 平台中集成。
 
-#### 2. 支持与 web 互通
+#### 2. 支持与 Web 互通
 
 该版本提供 `EnableWebSdkInteroperability` 方法，用于打开直播场景下与 Agora Web SDK 的互通。
 
