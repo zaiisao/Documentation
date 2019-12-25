@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Web
-updatedAt: Tue Dec 24 2019 03:59:18 GMT+0800 (CST)
+updatedAt: Wed Dec 25 2019 03:19:27 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -39,8 +39,8 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Event                                  | Signaling                 | Real-time Messaging                                          |
 | -------------------------------------- | ------------------------- | ------------------------------------------------------------ |
-| Peer-to-peer message sending succeeds. | `onMessageSendSuccess`    | Promise<sup>2</sup>                                          |
-| Peer-to-peer message sending fails.    | `onMessageSendError`      | Promise                                                      |
+| Peer-to-peer message sending succeeds. | See the `cb` parameter that `messageInstantSend` takes.   | Promise<sup>2</sup>                                          |
+| Peer-to-peer message sending fails.    | See the `cb` parameter that `messageInstantSend` takes.      | Promise                                                      |
 | Receives a peer-to-peer message        | `onMessageInstantReceive` | [MessageFromPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) |
 
 > <sup>1</sup> With the Agora RTM SDK, you must create a message instance before sending it. A message instance can be used either for a peer-to-peer or for a channel message. As of v0.9.3, the Agora RTM SDK allows you to send an offline message by configuring [SendMessageOptions](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/sendmessageoptions.html).
@@ -115,8 +115,8 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Event                                     | Signaling                 | Real-time Messaging                                          |
 | ----------------------------------------- | ------------------------- | ------------------------------------------------------------ |
-| Successfully sends out a channel message. | `onMessageSendSuccess`    | Promise                                                      |
-| Fails to send out a channel message.      | `onMessageSendError`      | Promise                                                      |
+| Successfully sends out a channel message. | See the `cb` parameter that `messageChannelSend` takes.    | Promise                                                      |
+| Fails to send out a channel message.      | See the `cb` parameter that `messageChannelSend` takes.      | Promise                                                      |
 | Receives a channel message.               | `onMessageChannelReceive` | [ChannelMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmchannelevents.html#channelmessage)<sup>2</sup> |
 
 
@@ -139,7 +139,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Event                           | Signaling              | Real-time Messaging                                          |
 | ------------------------------- | ---------------------- | ------------------------------------------------------------ |
-| A channel attribute is updated. | `OnInvokeRet` | [AttributesUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmchannelevents.html#attributesupdated)<sup>2</sup> |
+| A channel attribute is updated. | See the `cb` parameter that the corresponding method takes. | [AttributesUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmchannelevents.html#attributesupdated)<sup>2</sup> |
 
 > <sup>2</sup>  This callback is disabled by default. It is enabled only when the user, who updates the attributes of the channel, sets [enableNotificationToChannelMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannelAttributeOptions.html#//api/name/enableNotificationToChannelMembers) as `true`.
 
