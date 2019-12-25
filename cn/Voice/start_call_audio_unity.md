@@ -3,10 +3,10 @@
 title: 实现音频通话
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 03:28:06 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 03:35:43 GMT+0800 (CST)
 ---
 # 实现音频通话
-本文介绍如何使用 Agora Unity SDK 快速实现音频通话，例如在游戏场景中实现自由发言。
+本文介绍如何使用 Agora Unity SDK 快速实现音频通话。
 
 ## 示例项目体验
 
@@ -27,7 +27,7 @@ Agora 在 Github 上提供开源的实时音频通话示例项目 [Hello-Unity3D
 
 - 有效的 Agora 账户（免费[注册](https://dashboard.agora.io/)）
 
-<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms#agora-rtc-sdk">应用企业防火墙限制</a >打开相关端口。</div>
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms#agora-gaming-sdk">应用企业防火墙限制</a >打开相关端口。</div>
 
 
 ## 准备开发环境
@@ -177,7 +177,7 @@ mRtcEngine.OnUserOfflineHandler = OnUserOfflineHandler;
 - `channelKey`：传入能标识用户角色和权限的 Token。可设为如下一个值：
 
   - `NULL`
-  - 临时 Token。在安全要求一般的测试场景下，可使用临时 Token。你可以在控制台里生成一个临时 Token（服务有效期为 24 小时），详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token)。
+  - 临时 Token。在安全要求一般的测试场景下，可使用临时 Token。你可以在控制台里生成一个临时 Token（服务有效期为 24 小时），详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取临时-token)。
   - 在你的服务器端生成的 Token。在安全要求高的场景下，Agora 推荐你使用此种方式生成的 Token，详见[生成 Token](https://docs.agora.io/cn/Video/token_server)。
 
   <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>

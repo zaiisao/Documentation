@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Fri Aug 02 2019 08:23:22 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:38:21 GMT+0800 (CST)
 ---
 # 产品概述
 Agora Interactive Gaming SDK，是 Agora 针对游戏开发者 （Unity，Cocos）提供的音视频通话软件开发包。其主要目的是帮助游戏开发者在游戏中快速集成音视频通话的功能。
@@ -35,7 +35,7 @@ Agora Interactive Gaming SDK 主要有以下特性：
 | 特性       | Agora 互动游戏指标                                           |
 | ---------- | ------------------------------------------------------------ |
 | 最低影响   | <li>语音过程不影响游戏 FPS<li>游戏音效完美兼容（FMOD，WWISE）<li>安装包体积优化<li>不占 CPU<li>耗电低 |
-| 专注质量   | <li>高音质（32 KHz 超宽带）<li>低延时（全球平均延时 76 ms）<li>无干扰（回声消除，降噪）<li>不卡顿（超强抗丢包） |
+| 专注质量   | <li>高音质（32 kHz 超宽带）<li>低延时（全球平均延时 76 ms）<li>无干扰（回声消除，降噪）<li>不卡顿（超强抗丢包） |
 | 为游戏而生 | <li>自由模式 + 指挥模式<li>趣味变声功能<li>听声辨位功能<li>模拟器支持 |
 | 立体声     | 支持立体声采集播放，提供最佳游戏直播体验                     |
 
