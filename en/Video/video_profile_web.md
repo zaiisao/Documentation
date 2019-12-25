@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Web
-updatedAt: Wed Dec 25 2019 08:17:37 GMT+0800 (CST)
+updatedAt: Wed Dec 25 2019 08:17:49 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -29,6 +29,7 @@ Refer to the following diagram to set the video profile in your project:
 
 **Note:**
 
+- If you prefer video smoothness to sharpness, use `setVideoProfile` to set the video resolution and Agora self-adapts the video bitrate according to the network condition. If you prefer video sharpness to smoothness, use `setVideoEncoderConfiguration`, and set `min` in `bitrate` as 0.4 - 0.5 times the bitrate value in the video profile table.
 - The `setVideoProfile` method is usually called before `Stream.init`. From v2.7, you can also call this method after `Stream.init` to change the video encoding profile.
 - The `setVideoEncoderConfiguration` method can be called before or after `Stream.init`, but has the following known limitations:
 
