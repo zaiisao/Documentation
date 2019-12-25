@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Web
-updatedAt: Wed Dec 25 2019 07:51:22 GMT+0800 (CST)
+updatedAt: Wed Dec 25 2019 07:57:45 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
@@ -27,6 +27,7 @@ Agora Web SDK 通过 `setVideoProfile` 和 `setVideoEncoderConfiguration` 2 个�
 ![](https://web-cdn.agora.io/docs-files/1568876448537)
 
 **Note:**
+- 如果希望优先保证流畅度，建议使用 `setVideoProfile` 设置视频分辨率，Agora 会自适应调整码率；如果希望优先保证清晰度，建议使用 `setVideoEncoderConfiguration`，将 `bitrate` 属性中 `min` 的值设为参考表里码率的 0.4 到 0.5。
 - `Stream.setVideoProfile` 方法一般在 `Stream.init` 之前调用。从 v2.7.0 开始，你也可以在 `Stream.init` 成功后调用本方法修改视频属性。
 - `Stream.setVideoEncoderConfiguration` 方法在 `Stream.init` 方法前后均可调用。但有如下限制：
 
