@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Web
-updatedAt: Wed Dec 25 2019 03:25:54 GMT+0800 (CST)
+updatedAt: Wed Dec 25 2019 03:26:10 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -24,7 +24,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | Logout results.           | `onLogout`            | The Promises resolves after the user logs out of the Agora RTM system and disconnects from WebSocket. |
 | Connection state changes. | N/A. See `getStatus`. | [ConnectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#connectionstatechanged) |
 
-> - Unless otherwise specified, most of the core APIs of the Agora RTM SDK should only be called after the [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) method call succeeds and after you receive the `AgoraRtmLoginErrorOk` error code.
+> - Unless otherwise specified, most of the core APIs of the Agora RTM SDK should only be called after the [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) method call succeeds.
 > - <sup>1</sup> You can create multiple RtmClient instances with the [createInstance](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance) method. The Agora RTM SDK does not put a limit to the number of RtmClient instances you can create, but it only allows you to join a maximum of 20 RtmChannels at the same time. 
 > - <sup>2</sup> The generation of the token you use to log in the Agora RTM system differs from the generation of the signalingToken you use to log in the Agora Signaling system. Ensure that you use the right token. See [Token Security](../../en/Real-time-Messaging/rtm_token.md) for more information.
 > - <sup>2</sup> The token debugging mechanism, "\_no\_need\_token" for example, of the Agora Signaling SDK does not apply to the Agora RTM SDK. 
