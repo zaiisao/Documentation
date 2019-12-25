@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 01:17:04 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 07:11:53 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
@@ -15,8 +15,9 @@ Agora Cloud Recording supports two recording modes:
 
 This article explains how to record a call in composite recording mode by using the RESTful API.
 
-Before proceeding, ensure that you know how to use Agora Cloud Recording by using the RESTful API. For more information, see [Agora Cloud Recording RESTful API Quickstart](../../en/cloud-recording/cloud_recording_rest.md). You must select a recording mode before a recording starts. You cannot switch between the two modes after a recording starts. See [How to choose the right recording mode](#choose_mode) to decide which mode you should use.
+Before proceeding, ensure that you know how to use Agora Cloud Recording by using the RESTful API. For more information, see [Agora Cloud Recording RESTful API Quickstart](../../en/cloud-recording/cloud_recording_rest.md). You must select a recording mode before a recording starts. You cannot switch between the two modes after a recording starts.
 
+See [Differences between individual recording mode and composite recording mode](https://docs.agora.io/en/faq/recording_mode) to decide which mode you should use.
 
 > We assume that each UID in the channel sends audio and video streams. If a UID does not send any audio or video stream, such as the audience in a live broadcast, no file is generated, except for Web users.
 
@@ -90,9 +91,3 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 ## Considerations
 
 If you record only video (no audio) or both video and audio, Agora Cloud Recording generates a black video file for a Web user who does not send any video stream.
-
-## <a name="choose_mode"></a>How to choose the right recording mode
-
-If you want more flexibility in processing the recorded files, choose individual recording mode. For example, in an online classroom, if parents want to see the video of the teacher and their child only, you can use individual recording mode to record the teacher and all students separately, and then combine the teacher's video with each of the students' video. Or, if you want to moderate the content in the recorded files and identify the UID that has the violating content, choose individual recording mode so that you can moderate the audio and video of each user separately.
-
-In other cases, choose composite recording mode. For example, if you want to record a live broadcast with multiple hosts, composite recording mode allows you to store the audio and video of all hosts in one file, with no need to combine them after recording.

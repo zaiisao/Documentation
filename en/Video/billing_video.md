@@ -27,7 +27,7 @@ Agora will add up the following two minutes used by the project corresponding to
 
 If a user successfully receives video streams after joining an RTC channel, the corresponding time counts as the video minutes. 
 
-Agora adds up the resolutions of the video streams, to which a specific user subscribes at a time, to get the aggregate resolution. The aggregate resolution can be classified into two brackets, and Agora will charge you accordingly: 
+Agora adds up the resolutions of the video streams, to which a specific user subscribes at a time, to get that user's aggregate resolution. The aggregate resolution can be classified into two brackets, and Agora charges you accordingly: 
 
 
 

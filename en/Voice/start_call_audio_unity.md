@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 03:27:53 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 04:05:08 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic one-to-one voice call with the Agora SDK for Unity.
@@ -178,7 +178,7 @@ After initializing the `IRtcEngine` object, you can call `JoinChannelByKey` to j
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
-- ·`channelName`: The unique name of the channel to join. Users that input the same channel name join the same channel.
+- `channelName`: The unique name of the channel to join. Users that input the same channel name join the same channel.
 
 - `uid`: Integer. The unique ID of the local user. If you set `uid` as 0, the SDK automatically assigns one user ID and returns it in the `OnJoinChannelSuccessHandler` callback.
 

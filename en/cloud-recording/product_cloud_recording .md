@@ -3,27 +3,31 @@
 title: Agora Cloud Recording Overview
 description: 
 platform: Linux
-updatedAt: Fri Oct 18 2019 01:34:27 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 07:21:01 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Overview
 Agora Cloud Recording is an add-on service to record and save voice calls, video calls, and interactive broadcasts on your cloud storage. It is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+. 
 
 You can quickly and flexibly record one-to-one or one-to-many audio and video calls or live broadcasts through simple integration. Compared with Agora On-premise Recording, Agora Cloud Recording is more efficient and convenient as it does not require deploying Linux servers.
 
-With Agora Cloud Recording, you can record calls or live broadcasts for your users to watch at their convenience. For example, a user can either attend an online course at the time of the course or watch the recorded course later, made possible by the Agora Cloud Recording SDK deployed at the app server.
+With Agora Cloud Recording, you can record calls or live broadcasts for your users to watch at their convenience. For example, a user can either attend an online course at the time of the course or watch the recorded course later, made possible by the Agora Cloud Recording service.
 
 ## Functions
 
-Agora Cloud Recording provides the following functions:
+The following table lists the main functions that Agora Cloud Recording provides. To learn more about these functions, click the links below.
 
-- High-quality voice and video recordings.
-- Individual recording, which generates one audio and/or video file for each user in the channel.
-- Composite recording, which combines the audio and video of all users in the channel into one file.
-- Record specified users.
-- Various composite video layouts.
-- Third-party cloud storage.
-- Customize the directory of the recorded files in the third-party cloud storage.
-
+| <span style="white-space:nowrap;">&emsp;&emsp;&emsp;Feature&emsp;&emsp;&emsp;</span>    | Description                                                  |
+| :------------------------------------------------ | :----------------------------------------------------------- |
+| Recording mode                                    | Supports two recording modes:<ul><li>[Composite recording mode](../../en/cloud-recording/cloud_recording_composite_mode.md): Records the audio and video of all or specified UIDs in a channel together.</li><li>[Individual recording mode](../../en/cloud-recording/cloud_recording_individual_mode.md): Records the audio and video of each UID or each specified UID in a channel separately.</li></ul> |
+| Record specified UIDs                             | You can specify the UIDs you want to record.                 |
+| Record specified media type                       | You can specify the media type to record:<ul><li>Record audio only</li><li>Record video only</li><li>Record both audio and video</li></ul>|
+| Set audio and video profiles                      | In composite recording mode, you can set audio and video profiles, such as the bit rate and resolution. |
+| Set video layout                                  | In composite recording mode, you can [customize the video layout](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=Linux#a-namecustomacustomize-the-video-layout) or [use predefined layouts](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=Linux#a-namepredefinedaselect-from-the-predefined-layout-types), and set the background color of the canvas. You can update video layout or background color during recording. |
+| Store recorded files in third-party cloud storage | You can store recorded files in the following third-party cloud storage services. You can customize the directory of the recorded files in the cloud storage.<ul><li>Amazon S3</li><li>Alibaba Cloud</li><li>Tencent Cloud</li><li>Qiniu Cloud</li>|
+| Record dual streams                               | If the [Agora RTC SDK ](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk)enables the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode), you can choose to record the high-video stream or the low-video stream. |
+| Record encrypted channels                         | You can record a channel that is encrypted using the following encryption modes:<ul><li>AES128XTS</li><li>AES128ECB</li><li>AES256XTS</li></ul> |
+| Transcoding                               | Agora Cloud Recording provides transcoding scripts for you to [merge audio and video files](https://docs.agora.io/en/cloud-recording/cloud_recording_merge_files?platform=All%20Platforms) and to [convert file formats](https://docs.agora.io/en/cloud-recording/cloud_recording_convert_format?platform=All%20Platforms). |
+| Callback service                                  | The [callback service](https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest?platform=All%20Platforms) provides information including:<ul><li>The filenames of the recorded files</li><li>The start time of the first slice file</li><li>The timestamp when the stream status changes</li></ul> |
 
 ## Applications
 
@@ -45,7 +49,7 @@ Agora Cloud Recording consists of the following features:
 | ---------------- | ------------------------------------------------------------ |
 | High Reliability | <li>Supports globally distributed cluster deployment and highly available services.</li><li>Automatically backs up files on Agora's cloud server when the third-party cloud storage fails and automatically uploads the backup to the third-party cloud storage when it recovers.</li> |
 | High Security    | Provides end-to-end security mechanisms for video calls, data transmission, data storage, and so on. For details, see [Information Security Policy](../../en/Agora%20Platform/security.md). |
-| Compatibility    | Supports third-party cloud storages, such as [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls), [Alibaba Cloud](https://www.alibabacloud.com/product/oss), and [Qiniu Cloud](https://www.qiniu.com/en/products/kodo). |
+| Compatibility    | Supports third-party cloud storages, such as [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls), [Alibaba Cloud](https://www.alibabacloud.com/product/oss), [Tencent Cloud](https://intl.cloud.tencent.com/product/cos) and [Qiniu Cloud](https://www.qiniu.com/en/products/kodo). |
 | Ease of Use      | Simple implementation and easy to learn. With four RESTful API calls, you can start, stop, and query the recording. You can get started quickly, flexibly deploy recording services, and easily record on mobile and web pages. |
 
 ## Billing
@@ -58,5 +62,6 @@ The billing for each recording task is separate. For example, two recording task
 
 ## References
 
-- [Quickstart for RESTful API](../../en/cloud-recording/cloud_recording_rest.md) describes how to use Agora Cloud Recording with the RESTful APIs.
+- [Quickstart for RESTful API](../../en/cloud-recording/cloud_recording_rest.md) describes how to use Agora Cloud Recording with the RESTful API.
+- [Agora Cloud Recording RESTful API](../../en/cloud-recording/cloud_recording_api_rest.md) describes the functions of the RESTful API.
 - [RESTful API Callback Service](../../en/cloud-recording/cloud_recording_callback_rest.md) describes the events of the RESTful API.

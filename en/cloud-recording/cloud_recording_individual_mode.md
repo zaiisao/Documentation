@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 12 2019 10:22:35 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:37:07 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
@@ -15,7 +15,9 @@ Agora Cloud Recording supports two recording modes:
 
 This article explains how to record a call in individual recording mode by using the RESTful API.
 
-Before proceeding, ensure that you know how to use Agora Cloud Recording by using the RESTful API. For more information, see [Agora Cloud Recording RESTful API Quickstart](../../en/cloud-recording/cloud_recording_rest.md). You must select either individual recording mode or composite recording mode when you start the recording. You cannot switch between the two modes after a recording starts. See [How to choose the right recording mode](#choose_mode) to decide which mode you should use.
+Before proceeding, ensure that you know how to use Agora Cloud Recording by using the RESTful API. For more information, see [Agora Cloud Recording RESTful API Quickstart](../../en/cloud-recording/cloud_recording_rest.md). You must select either individual recording mode or composite recording mode when you start the recording. You cannot switch between the two modes after a recording starts. 
+
+See [Differences between individual recording mode and composite recording mode](https://docs.agora.io/en/faq/recording_mode) to decide which mode you should use.
 
 > We assume that each UID in the channel sends audio and video streams. If a UID does not send any audio or video stream, such as the audience in a live broadcast, no file is generated, except for Web users.
 
@@ -25,7 +27,7 @@ To enable individual recording mode, set `mode` to `individual` when calling [`s
 
 In individual recording mode, the audio and video profiles of the recording file are as follows:
 
--  Audio profile: The sample rate of the recording file is 48 KHz, and the bitrate and number of audio channels of the recording file are the same as those of the original audio stream.
+-  Audio profile: The sample rate of the recording file is 48 kHz, and the bitrate and number of audio channels of the recording file are the same as those of the original audio stream.
 -  Video profile: The video profile of the recording file is the same as that of the original video stream.
 
 Based on the setting of `streamTypes`, the recorded files are as follows:
@@ -92,9 +94,3 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - If you want to merge each UID's audio and video files into one file, you can use our [Merge Audio and Video Files](../../en/cloud-recording/cloud_recording_merge_files.md).
 
 - If you record only video (no audio) or both video and audio, Agora Cloud Recording generates a black video file for a Web user who does not send any video stream.
-
-## <a name="choose_mode"></a>How to choose the right recording mode
-
-If you want more flexibility in processing the recorded files, choose individual recording mode. For example, in an online classroom, if parents want to see the video of the teacher and their child only, you can use individual recording mode to record the teacher and all students separately, and then combine the teacher's video with each of the students' video. Or, if you want to moderate the content in the recorded files and identify the UID that has the violating content, choose individual recording mode so that you can moderate the audio and video of each user separately.
-
-In other cases, choose composite recording mode. For example, if you want to record a live broadcast with multiple hosts, composite recording mode allows you to store the audio and video of all hosts in one file, with no need to combine them after recording.
