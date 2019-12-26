@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Thu Dec 26 2019 02:58:31 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 02:58:35 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -59,4 +59,4 @@ See the following documentation to quickly integrate the SDK and implement real-
 - [Start a Video Call](https://docs.agora.io/en/Video/start_call_unity?platform=Unity) or [Start a Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity)
 - [API Reference](https://docs.agora.io/en/Video/API%20Reference/unity/index.html) 
 
-Agora also provides an open-source [Unity Sample](https://github.com/AgoraIO/Video-Call-for-Mobile-Gaming/tree/master/Hello-Video-Unity-Agora) on GitHub.
+Agora also provides an open-source [Unity Sample](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora) on GitHub.
