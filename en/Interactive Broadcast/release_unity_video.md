@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Tue Dec 24 2019 03:51:03 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 02:58:31 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
