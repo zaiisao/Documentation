@@ -3,7 +3,7 @@
 title: Billing for Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 09:20:34 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:23:15 GMT+0800 (CST)
 ---
 # Billing for Cloud Recording
 ## Calculate service minutes
@@ -92,11 +92,21 @@ If you deduct the time that the recording server records the video streams in th
 
 ## Q&A
 
-&& 417baaa0-27bc-11ea-b97f-532a449ae11e
-{
-  "product": "Cloud Recording"
-}
-$$
+
+
+
+
+
+
+<details>
+	<summary><font color="#3ab7f8">Question: Does Agora charge differently if I use a different recording mode?</font></summary>
+
+Your recording fee has nothing to do with the recording mode you choose. Regardless of whehter you use individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. 
+
+</details>
+
+
+
 
 ## Agora's policy of 10,000 free-of-charge minutes
 
