@@ -3,7 +3,7 @@
 title: Billing for Voice Call
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 09:01:41 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:05:10 GMT+0800 (CST)
 ---
 # Billing for Voice Call
 ## Calculate service minutes
@@ -49,7 +49,7 @@ If you deduct the time that a user receives the video streams in the channel fro
 
 
 
-## FAQ
+## Commonly Asked Questions
 
 
 
