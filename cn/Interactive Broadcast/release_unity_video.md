@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Tue Dec 24 2019 03:46:52 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 03:15:25 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Unity SDK 的发版说明。
@@ -66,4 +66,4 @@ Agora Unity SDK 广泛应用于游戏、教育、AR、VR 等场景。
 - [实现视频通话](https://docs.agora.io/cn/Video/start_call_unity?platform=Unity)或[实现视频直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_unity?platform=Unity)
 - [API 参考](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/index.html)
 
-Agora 提供了开源的 [Unity GitHub Sample](https://github.com/AgoraIO/Video-Call-for-Mobile-Gaming/tree/master/Hello-Video-Unity-Agora)，你也可以前往下载并体验。
+Agora 提供了开源的 [Unity GitHub Sample](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora)，你也可以前往下载并体验。
