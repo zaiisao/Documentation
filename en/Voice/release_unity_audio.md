@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Thu Dec 26 2019 02:57:25 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 02:57:31 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -52,4 +52,4 @@ See the following documentation to quickly integrate the SDK and implement real-
 - [Start a Voice Call](../../en/Voice/start_call_audio_unity.md) or [Start a Voice Broadcast](../../en/Voice/start_live_audio_unity.md)
 - [API Reference](https://docs.agora.io/en/Voice/API%20Reference/unity/index.html) 
 
-Agora also provides an open-source [Unity Sample](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming/tree/2.9.1.42/Basic-Voice-Call-for-Gaming/Hello-Unity3D-Agora) on GitHub.
+Agora also provides an open-source [Unity Sample](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/audio/Hello-Unity3D-Agora) on GitHub.
