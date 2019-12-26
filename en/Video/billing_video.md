@@ -3,7 +3,7 @@
 title: Billing for the video call
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 09:03:26 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:04:28 GMT+0800 (CST)
 ---
 # Billing for the video call
 ## Calculating service minutes
@@ -93,7 +93,7 @@ If you deduct the time that a user receives the video streams in the channel fro
 
 
 
-## FAQ
+## Commonly Asked Questions
 
 
 
