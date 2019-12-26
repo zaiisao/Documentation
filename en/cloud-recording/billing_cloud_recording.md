@@ -29,7 +29,7 @@ Agora adds up the following two minutes used by the projects under your [Agora A
 
 The time that the recording server records video streams in the channel counts as the recording video minutes.
 
-Agora adds up the resolutions of the video streams that the recording server records at a time, to get the aggregate resolution. The aggregate resolution can be classified into two brackets, and Agora will charge you accordingly. 
+Agora adds up the resolutions of the video streams that the recording server records at a time, to get the aggregate resolution. The aggregate resolution can be classified into two brackets, and Agora charges you accordingly. 
 
 | Video Bracket         | Aggregate Resolution |
 | :-------------------- | :------------------- |
