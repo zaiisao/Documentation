@@ -3,10 +3,10 @@
 title: Billing for Voice Call
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 08:49:51 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:01:41 GMT+0800 (CST)
 ---
 # Billing for Voice Call
-## Calculating service minutes
+## Calculate service minutes
 
 
 Agora adds up the [audio minutes](#amin) used by the projects under your [Agora Account](https://console.agora.io/) on a monthly basis.
