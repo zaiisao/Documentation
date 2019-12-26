@@ -1,11 +1,11 @@
 
 ---
-title: Billing for the Voice Call
+title: Billing for Voice Call
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 25 2019 00:10:10 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 08:49:51 GMT+0800 (CST)
 ---
-# Billing for the Voice Call
+# Billing for Voice Call
 ## Calculating service minutes
 
 
@@ -41,6 +41,24 @@ If you deduct the time that a user receives the video streams in the channel fro
 
 
 
+
+
+
+
+
+
+
+
+## FAQ
+
+
+
+<details>
+	<summary><font color="#3ab7f8">Question: Are the audio minutes from my bill for a specific user?</font></summary>
+
+No. The audio minutes that you see from your bill are the sum of the audio minutes used by all users under your Agora account. In other words, the audio minutes are <i>not</i> for a specific user or users in a specific channel.  
+
+</details>
 
 
 
