@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: Unity
-updatedAt: Thu Dec 26 2019 10:55:52 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 10:55:58 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction
@@ -44,51 +44,58 @@ The following diagram shows how to implement the raw data functions in your proj
 See the following sample code to implement the raw video data functions in your project:
 
 ```C#
-// Initializes the IRtcEngine object.
-mRtcEngine = IRtcEngine.GetEngine(mVendorKey);
-// Gets the VideoRawDataManager object.
-videoRawDataManager = VideoRawDataManager.GetInstance(mRtcEngine);
-// Enables the video module.
-mRtcEngine.EnableVideo();
-// Enables the video observer.
-mRtcEngine.EnableVideoObserver();
-// Listens for the OnCaptureVideoFrameHandler delegate.
-videoRawDataManager.SetOnCaptureVideoFrameCallback(OnCaptureVideoFrameHandler);
-// Listens for the OnRenderVideoFrameHandler delegate.
-videoRawDataManager.SetOnRenderVideoFrameCallback(OnRenderVideoFrameHandler);
+void Start()
+{
+    // Initializes the IRtcEngine object.
+    mRtcEngine = IRtcEngine.GetEngine(mVendorKey);
+    // Gets the VideoRawDataManager object.
+    videoRawDataManager = VideoRawDataManager.GetInstance(mRtcEngine);
+    // Enables the video module.
+    mRtcEngine.EnableVideo();
+    // Enables the video observer.
+    mRtcEngine.EnableVideoObserver();
+    // Listens for the OnCaptureVideoFrameHandler delegate.
+    videoRawDataManager.SetOnCaptureVideoFrameCallback(OnCaptureVideoFrameHandler);
+    // Listens for the OnRenderVideoFrameHandler delegate.
+    videoRawDataManager.SetOnRenderVideoFrameCallback(OnRenderVideoFrameHandler);
+}
+
 // Gets a video frame sent by the remote user.
 void OnRenderVideoFrameHandler(uint uid, VideoFrame videoFrame)
 {
-    logCallback("OnRenderVideoFrameHandler uid = " + uid + "  ,videoFrame = " + videoFrame.width + "  height = " + videoFrame.height);
+    Debug.Log("OnRenderVideoFrameHandler");
 }
+
 // Gets a video frame captured by the local camera.
 void OnCaptureVideoFrameHandler(VideoFrame videoFrame)
 {
-    logCallback("OnCaptureVideoFrameHandler  videoFrame  width =  " + videoFrame.width + " ,height = " + videoFrame.height);
+    Debug.Log("OnCaptureVideoFrameHandler");
 }
+
 public enum VIDEO_FRAME_TYPE {
     /** 0: YUV420. */
     FRAME_TYPE_YUV420 = 0, 
     /** 1: RGBA. */
     FRAME_TYPE_RGBA = 1,
 };
+
 public struct VideoFrame {
-// Supports FRAME_TYPE_RGBA only.
-public VIDEO_FRAME_TYPE type;
-// The width of the video frame.
-public int width; 
-// The height of the video frame.
-public int height; 
-// The line span of the Y buffer within the video data.
-public int yStride; 
-// The buffer of the RGBA data.
-public byte[] buffer; 
-// Sets the rotation of the video frame before rendering the video. Supports 0, 90, 180, 270 degrees clockwise.
-public int rotation;
-// The timestamp of the external audio frame.
-public long renderTimeMs;
-// Reserved for future use.
-public int avsync_type;
+    // Supports FRAME_TYPE_RGBA only.
+    public VIDEO_FRAME_TYPE type;
+    // The width of the video frame.
+    public int width; 
+    // The height of the video frame.
+    public int height; 
+    // The line span of the Y buffer within the video data.
+    public int yStride; 
+    // The buffer of the RGBA data.
+    public byte[] buffer; 
+    // Sets the rotation of the video frame before rendering the video. Supports 0, 90, 180, 270 degrees clockwise.
+    public int rotation;
+    // The timestamp of the external audio frame.
+    public long renderTimeMs;
+    // Reserved for future use.
+    public int avsync_type;
 };
 ```
 
