@@ -3,7 +3,7 @@
 title: Billing for Video Broadcasting
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 09:10:03 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:15:20 GMT+0800 (CST)
 ---
 # Billing for Video Broadcasting
 ## Calculate service minutes
@@ -93,7 +93,7 @@ If you deduct the time that a user receives the video streams in the channel fro
 
 
 
-## Commonly Asked Questions
+## Q&A
 
 
 
