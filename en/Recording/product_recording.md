@@ -3,7 +3,7 @@
 title: Agora Recording Overview
 description: 
 platform: Linux
-updatedAt: Tue Dec 10 2019 08:57:49 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:41:40 GMT+0800 (CST)
 ---
 # Agora Recording Overview
 <div class="alert note">Note: <br>If you do not want to prepare server resources, Agora recommends using <a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=Linux">Agora Cloud Recording</a>, which enables you to record voice/video calls and interactive broadcastsis on your cloud storage through RESTful APIs.  </div>
@@ -19,8 +19,8 @@ The Agora On-premise Recording SDK enables you to record high-quality voice or v
 | Function                                                     | Description                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Choose audio and/or video                                    | You can choose to record the following content:<li>Record only audio.<li>Record only video.<li>Record both audio and video. |
-| Choose recording mode                                        | You can choose one of the following recording modes:<li>[Individual Recording](../../en/Recording/individual_recording.md): The SDK generates audio and/or video files for each UID.<li>[Composite Recording](../../en/Recording/composite_recording.md): The SDK packs the audio of all UIDs in the channel into one audio file, and the video of all UIDs into one video file. You can also set the audio and video profile of the recording file. |
-| [Set the video layout](../../en/Recording/recording_layout_guide.md) | You need to do the following things in composite recording mode:<li>Set the size and position of the region for each user in the layout.<li>Set the background images associated with each user.<li>Set the background image of the canvas. |
+| Choose recording mode                                        | You can choose one of the following recording modes:<li>[Individual Recording](../../en/Recording/recording_individual_mode.md): The SDK generates audio and/or video files for each UID.<li>[Composite Recording](../../en/Recording/recording_composite_mode.md): The SDK packs the audio of all UIDs in the channel into one audio file, and the video of all UIDs into one video file. You can also set the audio and video profile of the recording file. |
+| [Set Video Layout](../../en/Recording/recording_layout.md) | You need to do the following things in composite recording mode:<li>Set the size and position of the region for each user in the layout.<li>Set the background images associated with each user.<li>Set the background image of the canvas. |
 | [Get the raw data](../../en/Recording/recording_raw_data.md) | You can get the following raw data: <li>Raw audio data in AAC or PCM formats.<li>Raw video data in H.264 or YUV formats. |
 | [Capture Screenshots](../../en/Recording/recording_screen_capture.md) | In individual recording mode, you can get one recording file and multiple screenshots in JPEG format for each UID, or only get screenshots in JPEG format.In composite recording mode, you can get a video file in MP4 format and multiple screenshots in JPEG format. |
 | Use the proxy                                                | You can configure the proxy server or [Use Cloud Proxy](../../en/Recording/cloudproxy_recording.md) to connect to Agora's services through a firewall. |
