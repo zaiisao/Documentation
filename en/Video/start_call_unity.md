@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 04:25:27 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 03:04:20 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora SDK for Unity.
