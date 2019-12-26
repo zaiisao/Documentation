@@ -101,7 +101,7 @@ If you deduct the time that the recording server records the video streams in th
 <details>
 	<summary><font color="#3ab7f8">Question: Does Agora charge differently if I use a different recording mode?</font></summary>
 
-Your recording fee has nothing to do with the recording mode you choose. Regardless of whehter you use individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. 
+Your recording fee has nothing to do with the recording mode you choose. Regardless of whehter you use the individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. 
 
 </details>
 
