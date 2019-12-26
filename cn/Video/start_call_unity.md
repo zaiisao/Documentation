@@ -3,14 +3,14 @@
 title: 实现视频通话
 description: 
 platform: Unity
-updatedAt: Thu Dec 26 2019 03:13:38 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 03:13:43 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora Unity SDK 快速实现视频通话。
 
 ## 示例项目体验
 
-Agora 在 Github 上提供开源的实时视频通话示例项目 [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Video-Call-for-Mobile-Gaming/tree/master/Hello-Video-Unity-Agora)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 Github 上提供开源的实时视频通话示例项目 [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
@@ -311,7 +311,7 @@ void OnApplicationQuit()
 
 ###  示例代码
 
-你可以在 [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Video-Call-for-Mobile-Gaming/tree/master/Hello-Video-Unity-Agora) 示例项目的 [HelloUnityVideo.cs](https://github.com/AgoraIO/Video-Call-for-Mobile-Gaming/blob/master/Hello-Video-Unity-Agora/Assets/HelloUnityVideo.cs) 文件中查看完整的源码和代码逻辑。
+你可以在 [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora) 示例项目的 [TestHelloUnityVideo.cs](https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/video/Hello-Video-Unity-Agora/Assets/TestHelloUnityVideo.cs) 文件中查看完整的源码和代码逻辑。
 
 ## 运行项目
 
