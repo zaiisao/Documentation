@@ -3,7 +3,7 @@
 title: Billing for Video Call
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 09:16:59 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 13:32:31 GMT+0800 (CST)
 ---
 # Billing for Video Call
 ## Calculate service minutes
