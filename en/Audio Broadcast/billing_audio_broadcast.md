@@ -3,10 +3,10 @@
 title: Billing for Audio broadcasting
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 09:13:19 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:13:22 GMT+0800 (CST)
 ---
 # Billing for Audio broadcasting
-## Calculating service minutes
+## Calculate service minutes
 
 
 Agora adds up the [audio minutes](#amin) used by the projects under your [Agora Account](https://console.agora.io/) on a monthly basis.
@@ -41,6 +41,24 @@ If you deduct the time that a user receives the video streams in the channel fro
 
 
 
+
+
+
+
+
+
+
+
+## Q&A
+
+
+
+<details>
+	<summary><font color="#3ab7f8">Question: Are the audio minutes on my bill for a specific user?</font></summary>
+
+No. The audio minutes that you see on your bill are the sum of the audio minutes used by all users under your Agora account. In other words, the audio minutes are <i>not</i> for a specific user or for users in a specific channel.  
+
+</details>
 
 
 
