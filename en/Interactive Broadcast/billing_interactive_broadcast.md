@@ -3,10 +3,10 @@
 title: Billing for Video Broadcasting
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 09:08:58 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:10:03 GMT+0800 (CST)
 ---
 # Billing for Video Broadcasting
-## Calculating service minutes
+## Calculate service minutes
 
 
 
