@@ -83,8 +83,8 @@ If you deduct the time that the recording server records the video streams in th
 | Service<a name="billing"></a> | Pricing （Dollars/1,000 minutes) |
 | :---------------------------- | :------------------------------- |
 | Recording audio               | 1.49                             |
-| Recording HD                  | 5.99                             |
-| Recording HD+                 | 22.49                            |
+| Recording HD video                 | 5.99                             |
+| Recording HD+ video                | 22.49                            |
 
 
 
