@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 06:29:41 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 10:59:04 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
@@ -45,49 +45,56 @@ Agora Unity SDK 通过提供 `VideoRawDataManager` 类，实现采集、修改�
 你可以对照 API 时序图，参考下面的示例代码片段，在项目中实现原始视频数据功能：
 
 ```C#
-// 初始化 IRtcEngine 对象。
-mRtcEngine = IRtcEngine.GetEngine(mVendorKey);
-// 获取 VideoRawDataManager 对象。
-videoRawDataManager = VideoRawDataManager.GetInstance(mRtcEngine);
-// 启用视频模块。
-mRtcEngine.EnableVideo();
-// 启用视频观测器。
-mRtcEngine.EnableVideoObserver();
-// 监听 OnCaptureVideoFrameHandler delegate。
-videoRawDataManager.SetOnCaptureVideoFrameCallback(OnCaptureVideoFrameHandler);
-// 监听 OnRenderVideoFrameHandler delegate。
-videoRawDataManager.SetOnRenderVideoFrameCallback(OnRenderVideoFrameHandler);
+void Start()
+{
+    // 初始化 IRtcEngine 对象。
+    mRtcEngine = IRtcEngine.GetEngine(mVendorKey);
+    // 获取 VideoRawDataManager 对象。
+    videoRawDataManager = VideoRawDataManager.GetInstance(mRtcEngine);
+    // 启用视频模块。
+    mRtcEngine.EnableVideo();
+    // 启用视频观测器。
+    mRtcEngine.EnableVideoObserver();
+    // 监听 OnCaptureVideoFrameHandler delegate。
+    videoRawDataManager.SetOnCaptureVideoFrameCallback(OnCaptureVideoFrameHandler);
+    // 监听 OnRenderVideoFrameHandler delegate。
+    videoRawDataManager.SetOnRenderVideoFrameCallback(OnRenderVideoFrameHandler);
+}
+
 // 获取远端发送的视频数据。
 void OnRenderVideoFrameHandler(uint uid, VideoFrame videoFrame)
 {
-    logCallback("OnRenderVideoFrameHandler uid = " + uid + "  ,videoFrame = " + videoFrame.width + "  height = " + videoFrame.height);
+    Debug.Log("OnRenderVideoFrameHandler");
 }
+
 // 获取本地摄像头采集到的视频数据。
 void OnCaptureVideoFrameHandler(VideoFrame videoFrame)
 {
-    logCallback("OnCaptureVideoFrameHandler  videoFrame  width =  " + videoFrame.width + " ,height = " + videoFrame.height);
+    Debug.Log("OnCaptureVideoFrameHandler");
 }
+
 public enum VIDEO_FRAME_TYPE {
     FRAME_TYPE_YUV420 = 0, 
     FRAME_TYPE_RGBA = 1,
 };
+
 public struct VideoFrame {
-// 视频帧类型。仅支持 FRAME_TYPE_RGBA。
-public VIDEO_FRAME_TYPE type;
-// 视频像素宽度。
-public int width; 
-// 视频像素高度。
-public int height; 
-// YUV 数据中的 Y 缓冲区的行跨度。
-public int yStride; 
-// RGBA 数据缓冲区。
-public byte[] buffer; 
-// 在渲染视频前设置该帧的顺时针旋转角度，目前支持 0 度、90 度、180 度，和 270 度。
-public int rotation;
-// 外部音频帧的时间戳。
-public long renderTimeMs;
-// 预留参数。
-public int avsync_type;
+    // 视频帧类型。仅支持 FRAME_TYPE_RGBA。
+    public VIDEO_FRAME_TYPE type;
+    // 视频像素宽度。
+    public int width; 
+    // 视频像素高度。
+    public int height; 
+    // YUV 数据中的 Y 缓冲区的行跨度。
+    public int yStride; 
+    // RGBA 数据缓冲区。
+    public byte[] buffer; 
+    // 在渲染视频前设置该帧的顺时针旋转角度，目前支持 0 度、90 度、180 度，和 270 度。
+    public int rotation;
+    // 外部音频帧的时间戳。
+    public long renderTimeMs;
+    // 预留参数。
+    public int avsync_type;
 };
 ```
 
