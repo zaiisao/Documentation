@@ -3,9 +3,23 @@
 title: Billing for Video Call
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 13:32:31 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 13:32:36 GMT+0800 (CST)
 ---
 # Billing for Video Call
+## Overview
+
+
+Each month, Agora charges you by the services you use. This article describes how Agora calculates the services you use and provides the billing information of the Video SDK. If you have used other products or add-ons, you can also see the billing information below:
+
+
+
+- [Billing for On-premise Recording](https://docs.agora.io/en/Recording/billing_recording?platform=All%20Platforms)
+- [Billing for Cloud Recording](https://docs.agora.io/en/cloud-recording/billing_cloud_recording?platform=All%20Platforms)
+
+
+
+For more information about billing, fee deduction, and account suspension, see [Billing, Fee Deduction, and Account Suspension](https://docs.agora.io/en/faq/billing_account).
+
 ## Calculate service minutes
 
 
