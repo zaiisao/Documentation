@@ -1,11 +1,11 @@
 
 ---
-title: Billing for interactive broadcasting
+title: Billing for Video Broadcasting
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 25 2019 00:14:24 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:08:49 GMT+0800 (CST)
 ---
-# Billing for interactive broadcasting
+# Billing for Video Broadcasting
 ## Calculating service minutes
 
 
