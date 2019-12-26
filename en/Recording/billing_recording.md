@@ -66,7 +66,7 @@ Total recording fee = Unit price (recording video minutes HD) x 30 min + Unit pr
 
 If you deduct the time that the recording server records the video streams in the channel from the total time that the server stays in that channel, you get the recording audio minutes, regardless of whether the server records any audio stream.
 
-<div class="alert note"><li>The recording audio minute will not add up, if the recording server subscribes to multiple audio streams.</li><li>See <a href="#billing">Pricing</a> for the pricing information of the recording audio minutes.</li></div>
+<div class="alert note"><li>The recording audio minutes do not add up, even if the recording server subscribes to multiple audio streams.</li><li>See <a href="#billing">Pricing</a> for the pricing information of the recording audio minutes.</li></div>
 
 
 

@@ -24,7 +24,7 @@ Agora will add up the [audio minutes](#amin) used by the project corresponding t
 
 If you deduct the time that a user receives the video streams in the channel from the total time that the user stays in the channel, you get the audio minutes of that user, regardless of whether that user subscribes to any audio stream. 
 
-<div class="alert note"><li>Your audio minutes will not add up, if you subscribe to multiple audio streams. </li><li>The way by which the audio minutes are calculated applies to the mini app. </li><li>See <a href="#billing">Pricing</a> for the pricing information of the audio minutes. </li></div>
+<div class="alert note"><li>Your audio minutes do not add up, even if you subscribe to multiple audio streams. </li><li>See <a href="#billing">Pricing</a> for the pricing information of the audio minutes. </li></div>
 
 
 
