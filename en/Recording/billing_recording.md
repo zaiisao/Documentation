@@ -13,7 +13,7 @@ updatedAt: Wed Dec 25 2019 00:20:15 GMT+0800 (CST)
 
 
 
-Agora will add up the following two minutes used by the project corresponding to your [App ID](https://console.agora.io/) on a monthly basis:
+Agora adds up the following two minutes used by the projects under your [Agora Account](https://console.agora.io/) on a monthly basis:
 
 - [Recording video minutes](#rvmin)
 - [Recording audio minutes](#ramin)

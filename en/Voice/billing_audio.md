@@ -9,7 +9,7 @@ updatedAt: Thu Dec 26 2019 08:49:51 GMT+0800 (CST)
 ## Calculating service minutes
 
 
-Agora will add up the [audio minutes](#amin) used by the project corresponding to your [App ID](https://console.agora.io/) on a monthly basis.
+Agora adds up the [audio minutes](#amin) used by the projects under your [Agora Account](https://console.agora.io/) on a monthly basis.
 
 
 
