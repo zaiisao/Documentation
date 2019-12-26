@@ -1,11 +1,11 @@
 
 ---
-title: Billing for the video call
+title: Billing for Video Call
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 09:04:28 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:05:59 GMT+0800 (CST)
 ---
-# Billing for the video call
+# Billing for Video Call
 ## Calculating service minutes
 
 
