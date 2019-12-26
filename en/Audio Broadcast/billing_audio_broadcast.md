@@ -1,11 +1,11 @@
 
 ---
-title: Billing for audio broadcasting
+title: Billing for Audio broadcasting
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 25 2019 00:17:13 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:13:19 GMT+0800 (CST)
 ---
-# Billing for audio broadcasting
+# Billing for Audio broadcasting
 ## Calculating service minutes
 
 
