@@ -3,14 +3,14 @@
 title: Start a Video Call
 description: 
 platform: Unity
-updatedAt: Thu Dec 26 2019 03:04:20 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 03:04:25 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora SDK for Unity.
 
 ## Try the sample project
 
-We provide an open-source [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Video-Call-for-Mobile-Gaming/tree/master/Hello-Video-Unity-Agora) sample project on GitHub that implements the basic one-to-one video call. You can try the sample project and view the source code.
+We provide an open-source [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora) sample project on GitHub that implements the basic one-to-one video call. You can try the sample project and view the source code.
 
 ## Prerequisites
 
@@ -312,7 +312,7 @@ void OnApplicationQuit()
 
 ### Sample code
 
-You can find the complete code in the [HelloUnityVideo.cs](https://github.com/AgoraIO/Video-Call-for-Mobile-Gaming/blob/master/Hello-Video-Unity-Agora/Assets/HelloUnityVideo.cs) file in the [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Video-Call-for-Mobile-Gaming/tree/master/Hello-Video-Unity-Agora) sample project.
+You can find the complete code in the [TestHelloUnityVideo.cs](https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/video/Hello-Video-Unity-Agora/Assets/TestHelloUnityVideo.cs) file in the [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora) sample project.
 
 ## Run the project
 
