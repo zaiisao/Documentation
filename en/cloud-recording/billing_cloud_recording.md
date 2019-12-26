@@ -1,12 +1,12 @@
 
 ---
-title: Billing for cloud recording
+title: Billing for Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 25 2019 00:19:00 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:20:34 GMT+0800 (CST)
 ---
-# Billing for cloud recording
-## Calculating service minutes
+# Billing for Cloud Recording
+## Calculate service minutes
 
 
 
@@ -89,6 +89,14 @@ If you deduct the time that the recording server records the video streams in th
 
 
 
+
+## Q&A
+
+&& 417baaa0-27bc-11ea-b97f-532a449ae11e
+{
+  "product": "Cloud Recording"
+}
+$$
 
 ## Agora's policy of 10,000 free-of-charge minutes
 
