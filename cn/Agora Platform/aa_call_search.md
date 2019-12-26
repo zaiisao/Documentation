@@ -3,7 +3,7 @@
 title: 通话调查
 description: Introduction to Call Research in AA
 platform: All Platforms
-updatedAt: Fri Dec 20 2019 10:15:45 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:58:48 GMT+0800 (CST)
 ---
 # 通话调查
 水晶球的[**通话调查**](https://dashboard.agora.io/analytics/call/search)功能以图表的形式展示每一通通话全链路质量数据，可以极大提高解决通话问题的效率。
@@ -44,7 +44,7 @@ updatedAt: Fri Dec 20 2019 10:15:45 GMT+0800 (CST)
 ### 通话基本信息
 
 ![](https://web-cdn.agora.io/docs-files/1545379159095)
-**通话基本信息**显示你的项目名称、频道名称、整段通话的起止时间和持续时长和总时长。
+**通话基本信息**显示你的项目名称、频道名称、整段通话的起止时间和总时长。
 
 <div class="alert info"> 目前支持查看的通话时长最长为 3 小时。如果通话超过 3 小时，默认显示该通话的最后 3 小时，你可以在时间线上拖动鼠标调整查看的时间段。</div>
 
