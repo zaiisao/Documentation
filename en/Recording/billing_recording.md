@@ -1,12 +1,12 @@
 
 ---
-title: Billing for on-premise recording
+title: Billing for On-premise Recording
 description: 
 platform: All Platforms
-updatedAt: Wed Dec 25 2019 00:20:15 GMT+0800 (CST)
+updatedAt: Thu Dec 26 2019 09:37:41 GMT+0800 (CST)
 ---
-# Billing for on-premise recording
-## Calculating service minutes
+# Billing for On-premise Recording
+## Calculate service minutes
 
 
 
@@ -88,6 +88,32 @@ If you deduct the time that the recording server records the video streams in th
 
 
 
+
+
+## Q&A
+
+
+
+
+
+
+
+<details>
+	<summary><font color="#3ab7f8">Question: Does Agora charge differently if I use a different recording mode?</font></summary>
+
+Your recording fee has nothing to do with the recording mode you choose. Regardless of whehter you use the individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. 
+
+</details>
+
+
+
+
+<details>
+	<summary><font color="#3ab7f8">Question: Does Agora charge the screen capture function separately?</font></summary>
+
+We do not charge the screen capture function separately. Screen capture is but a different form of the recording function. The recording service has to join the corresponding channel and subscribe to the specified video streams to capture screen at the specified interval. That said, even though you have not recorded the full-time video, we still charge you the full-time recording of the specified video streams.
+
+</details>
 
 
 ## Agora's policy of 10,000 free-of-charge minutes
