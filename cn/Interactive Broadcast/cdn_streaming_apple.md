@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: iOS,macOS
-updatedAt: Fri Dec 27 2019 10:27:22 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 10:27:27 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -34,17 +34,19 @@ updatedAt: Fri Dec 27 2019 10:27:22 GMT+0800 (CST)
 参考如下步骤，在你的项目中实现推流到 CDN：
 
 <a name="single"></a>
-1. 频道内主播可以调用 `setLiveTranscoding` 方法设置音视频流的直播参数 （`AgoraLiveTranscoding`），如分辨率、码率、帧率、水印和背景色位置。如果你需要转码合图，请在 `transcodingUsers` 类中设置每个用户的视频参数，详见[示例代码](#trans)。
-
-   > 如果直播参数（`AgoraLiveTranscoding`）有更新，`rtcEngineTranscodingUpdated` 回调会被触发并向主播报告更新信息。
+1. 频道内主播可以调用 `setLiveTranscoding` 方法设置音视频流的直播参数 （`AgoraLiveTranscoding`），如分辨率、码率、帧率、水印和背景色位置。如果你需要多主播转码合图，请在 `transcodingUsers` 类中设置每个主播的视频参数，详见[示例代码](#trans)。
 
 2. 频道内主播可以调用 `addPublishStreamUrl` 方法向 CDN 推流直播中增加指定的一路媒体流。推流地址可以在推流后动态增删。
 
    > 请通过 `transcodingEnabled` 设置是否转码推流。
+  
+3. （可选）频道内主播再次调用 `setLiveTranscoding` 方法更新音视频流的直播参数 （`AgoraLiveTranscoding`）。
 
-3. 频道内主播可以调用 `removePublishStreamUrl` 方法向 CDN 推流直播中删除指定的一路媒体流。
+	> 直播参数（`AgoraLiveTranscoding`）更新时，`rtcEngineTranscodingUpdated` 回调会被触发并向主播报告更新信息。
 
-推流状态改变时，SDK 会触发 `rtmpStreamingStateChangedtoState` 回调向主播报告当前推流状态。如果增加/删除一个推流地址失败，请通过错误码排查问题。
+4. 频道内主播可以调用 `removePublishStreamUrl` 方法向 CDN 推流直播中删除指定的一路媒体流。
+
+推流状态改变时，SDK 会触发 `rtmpStreamingStateChangedtoState` 回调向主播报告当前推流状态。请确保收到该回调后再调用 API 进行下一步操作。如果增加或删除一个推流地址失败，请通过错误码排查问题。更多问题请参考[注意事项](#consideration)。
 
 
 
@@ -202,14 +204,11 @@ User2:
 - [`rtcEngineTranscodingUpdated`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngineTranscodingUpdated:)
 - [`rtmpStreamingStateChangedtoState`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:)
 
+<a name="consideration"></a>
 ## 开发注意事项
 
 - 同一频道内最多支持 17 位主播。
-
-- 如果对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `addPublishStreamUrl` 方法并设置 `transcodingEnabled (NO)` 。
-
-  > 目前只支持（默认）向 CDN 推 H.264 流。
-
-- 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
-
 - 推流转码时，Agora 会收取转码费用。
+- 如果对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `addPublishStreamUrl` 方法并设置 `transcodingEnabled (NO)` 。
+- 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
+- 请确保转码推流和非转码推流中使用的流地址不同。
