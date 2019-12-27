@@ -3,12 +3,12 @@
 title: 直播 SEI 相关问题 
 description: 
 platform: All Platforms
-updatedAt: Fri Dec 27 2019 15:23:42 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 15:23:51 GMT+0800 (CST)
 ---
 # 直播 SEI 相关问题 
-## 声网 SEI（Supplemental Enhancement Information）规范
+## 声网 SEI 规范
 
-在默认情况下，声网进行服务端转码推流时，会在转码后的 H264/H265 的 SEI 中，增加当前视频的编码信息。该信息为 JSON 格式的字符串，具体示例如下：
+在默认情况下，声网进行服务端转码推流时，会在转码后的 H264/H265 的 SEI（Supplemental Enhancement Information）中，增加当前视频的编码信息。该信息为 JSON 格式的字符串，具体示例如下：
 
 ```json
 {
