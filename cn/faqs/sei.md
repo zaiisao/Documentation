@@ -3,67 +3,60 @@
 title: 直播 SEI 相关问题 
 description: 
 platform: All Platforms
-updatedAt: Fri Dec 27 2019 15:18:03 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 15:18:44 GMT+0800 (CST)
 ---
 # 直播 SEI 相关问题 
-## 声网 SEI 规范
+## 声网 SEI（Supplemental Enhancement Information）规范
 
-在默认情况下，声网进行服务端转码推流时，会在转码后的 H264/H265 的 SEI 帧中，增加当前视频的编码信息。该信息为 Json 格式的字符串，具体示例如下：
+在默认情况下，声网进行服务端转码推流时，会在转码后的 H264/H265 的 SEI 中，增加当前视频的编码信息。该信息为 JSON 格式的字符串，具体示例如下：
 
 ```json
-
 {
-    "canvas": {
+    "canvas": {        
         "w": 640,
         "h": 360,
         "bgnd": "#000000"
     },
-    "regions": [{
+    "regions": [
+        {
         "uid": 1,
         "alpha": 1.0,
         "zorder": 1,
-        "volume": 50,
-        "x": 0,
-        "y": 0,
+        "volume": 50, 
+        "x": 0, 
+        "y": 0,   
         "w": 320,
         "h": 360
-    }, {
+        },
+         {
         "uid": 2,
         "alpha": 1.0,
-        "zorder": 1,
+        "zOrder": 1,
         "volume": 89,
         "x": 320,
-        "y": 0,
+        "y": 0,   
         "w": 320,
         "h": 360
-    }],
-    "ver": "20180828",
+        }
+    ],
+    "ver": "20190611",
     "ts": 1535385600000,
     "app_data": ""
 }
-
 ```
 
 各项参数定义如下：
-* canvas：画布信息，画布的参数信息如下；
-   * w：画布的宽度，单位为像素。主播在 APP 设置的 LiveTranscoding 中的 width 信息；
-   * h：画布的高度，单位为像素。主播在 APP 设置的 LiveTranscoding 中的 height 信息；
-   * bgnd：画布的背景颜色，RGB 格式，为 16 进制代码表示的字符串。主播在 APP 设置的 LiveTranscoding 中的 backgroundColor 信息；
-* regions：主播信息及主播布局信息，为 region 的列表。主播在 APP 设置的 LiveTranscoding 中的 transcodingUsers 信息。region 的参数信息如下；
-   * suid：（可选）该区域对应主播的 String 型 User account。该参数适用于启用了 String 型 User account 的主播；
-   * uid：该区域对应主播的 ID。主播在 APP 设置的 TranscodingUser 中的 uid 信息；
-   * alpha：该区域的透明度，取值范围 [0.0, 1.0]。主播在 APP 设置的 TranscodingUser 中的 alpha 信息；
-   * zorder：该区域的层级，取值范围 [1, 100]。主播在 APP 设置的 TranscodingUser 中的 zOrder 信息；
-   * volume：该区域对应主播的音量大小，取值范围 [0, 255]；
-   * x：该区域在画布中对应的 x 坐标。主播在 APP 设置的 TranscodingUser 中的 x 信息；
-   * y：该区域在画布中对应的 y 坐标。主播在 APP 设置的 TranscodingUser 中的 y 信息；
-   * w：该区域的宽度。主播在 APP 设置的 TranscodingUser 中的 width 信息；
-   * h：该区域的高度。主播在 APP 设置的 TranscodingUser 中的 height 信息；
-* ver：版本信息，当前版本为 20190611；
-* ts：生成该信息时的时间戳，单位 ms；
-* app_data：自定义信息。主播在 APP 设置的 LiveTranscoding 中的 transcodingExtraInfo 信息；
 
-#### SEI 构成
+| 参数       | 描述                                                         |
+| :--------- | :----------------------------------------------------------- |
+| `canvas`   | 画布信息，画布的参数信息如下：<li>`w`：画布的宽度，单位为像素。主播在 app 设置的 `LiveTranscoding` 类中的 `width` 成员。</li><li>`h`：画布的高度，单位为像素。主播在 app 设置的 `LiveTranscoding` 类中的 `height` 成员。</li><li>`bgnd`：画布的背景颜色，格式为 RGB 定义下的十六进制整数。主播在 app 设置的 `LiveTranscoding` 类中的 `backgroundColor` 成员。</li> |
+| `regions`  | 所有主播的信息（包含布局信息），为 region 的列表。主播在 app 设置的 `LiveTranscoding` 类中的 `transcodingUsers` 信息。region 的参数信息如下：<li>`suid`：（**可选**）该区域对应主播的 String 型 User account。该参数适用于启用了 String 型 User account 的主播。</li><li>`uid`：该区域对应主播的 ID。主播在 app 设置的 `TranscodingUser` 中的 `uid` 成员。</li><li>`alpha`：该区域的透明度，取值范围 [0.0, 1.0]。主播在 app 设置的 `TranscodingUser` 中的 `alpha` 成员。</li><li>`zorder`：该区域的层级，取值范围 [1, 100]。主播在 app 设置的 `TranscodingUser` 中的 `zOrder` 成员。</li><li>`volume`：该区域对应主播的音量（分贝），取值范围 [0, 255]。</li><li> `x`：该区域在画布中对应的 x 坐标。主播在 app 设置的 `TranscodingUser` 中的 `x` 成员。</li><li>`y`：该区域在画布中对应的 y 坐标。主播在 app 设置的 `TranscodingUser` 中的 `y` 成员。</li><li>`w`：该区域的宽度，单位为像素。主播在 app 设置的 `TranscodingUser` 中的 `width` 成员。</li><li>`h`：该区域的高度，单位为像素。主播在 app 设置的 `TranscodingUser` 中的 `height` 成员。</li> |
+| `ver`      | 版本信息，当前版本为 20190611。                              |
+| `ts`       | 生成该信息时的 Unix 时间戳，单位为毫秒。                     |
+| `app_data` | 自定义信息。主播在 app 设置的 `LiveTranscoding` 中的 `transcodingExtraInfo` 成员。 |
+
+
+### SEI 构成
 
 下面是一段 SEI 帧的内容：
 
@@ -79,19 +72,22 @@ updatedAt: Fri Dec 27 2019 15:18:03 GMT+0800 (CST)
 0080  36302c22 78223a30 2c227922 3a302c22  60,"x":0,"y":0,"
 0090  7a6f7264 6572223a 317d5d2c 22747322  zorder":1}],"ts"
 00a0  3a313533 37393630 32333537 38332c22  :1537960235783,"
-00b0  76657222 3a223230 31383038 3238227d  ver":"20180828"}
+00b0  76657222 3a223230 31383038 3238227d  ver":"20190611"}
 ```
 
 字段说明：
 
-* 06：SEI 帧；
-* 64：用户定义的帧类型，这里声网定义 SEI 类型为 100；
-* bd：帧长度。如果帧长度超过 255，例如 922，则表示为 ffffff9d;
-* 其余部分：帧内容；
+* `06`：SEI 帧。
+* `64`：用户定义的帧类型，这里声网定义 SEI 类型为 100。
+* `bd`：表示帧长度。下面是一些以十进制和十六进制展示的计算示例：
+	*  帧长度为 922，即 255（`0xff`）+ 255（`0xff`）+ 255（`0xff`）+ 157（`0x9d`），则 `bd` 表示为 `ffffff9d`。
+	*  帧长度为 572，即 255（`0xff`）+ 255（`0xff`）+ 62（`0x3e`），则 `bd` 表示为 `ffff3e`。
+	*  帧长度为 234，即被 255 整除为 0 且余数为 234（`0xea`），则 `bd` 表示为 `ea`。
+* 其余部分：帧内容。
 
-#### Q&A
+### Q&A
 
-Q：是不是只要在这儿用了SEI，就不能用信令传布局了？SDK传的是同一个字段，传递方式（信令或SEI）只能二选一？
+Q：是不是只要在这儿用了 SEI，就不能用信令传布局了？SDK 传的是同一个字段，传递方式（信令或 SEI）只能二选一？
 
 A：这个是服务端推流时，在 H264/H265 的 SEI 帧中添加的信息，跟 APP 上行发送的数据不是一个概念。与 APP 上行发送的数据唯一相关的是 app_data 字段。
 
