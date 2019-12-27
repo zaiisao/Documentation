@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Fri Dec 27 2019 10:23:11 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 10:23:22 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -35,15 +35,17 @@ updatedAt: Fri Dec 27 2019 10:23:11 GMT+0800 (CST)
 参考如下步骤，在你的项目中实现推流到 CDN：
 
 <a name="single"></a>
-1. 频道内主播可以调用 `setLiveTranscoding` 方法设置音视频流的直播参数 （`LiveTranscoding`），如分辨率、码率、帧率、水印和背景色位置。如果你需要转码合图，请在 `TranscodingUser` 类中设置每个用户的视频参数，详见[示例代码](#trans)。
-
-   > 如果直播参数（`LiveTranscoding`）有更新，`onTranscodingUpdated` 回调会被触发并向主播报告更新信息。
+1. 频道内主播可以调用 `setLiveTranscoding` 方法设置音视频流的直播参数 （`LiveTranscoding`），如分辨率、码率、帧率、水印和背景色位置。如果你需要多主播转码合图，请在 `TranscodingUser` 类中设置每个主播的参数，详见[示例代码](#trans)。
 
 2. 频道内主播可以调用 `addPublishStreamUrl` 方法向 CDN 推流直播中增加指定的一路媒体流。推流地址可以在推流后动态增删。
 
    > 请通过 `transcodingEnabled` 设置是否转码推流。
+  
+3. （可选）频道内主播再次调用 `setLiveTranscoding` 方法更新音视频流的直播参数 （`LiveTranscoding`）。
 
-3. 频道内主播可以调用 `removePublishStreamUrl` 方法向 CDN 推流直播中删除指定的一路媒体流。
+	> 直播参数（`LiveTranscoding`）有更新，`onTranscodingUpdated` 回调会被触发并向主播报告更新信息。
+
+4. 频道内主播可以调用 `removePublishStreamUrl` 方法向 CDN 推流直播中删除指定的一路媒体流。
 
 推流状态改变时，SDK 会触发 `onRtmpStreamingStateChanged` 回调向主播报告当前推流状态。请确保收到该回调后再调用 API 进行下一步操作。如果增加或删除一个推流地址失败，请通过错误码排查问题。更多问题请参考[注意事项](#consideration)。
 
