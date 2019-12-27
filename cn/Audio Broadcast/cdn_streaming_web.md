@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Fri Dec 27 2019 10:34:47 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 10:34:52 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -44,7 +44,7 @@ updatedAt: Fri Dec 27 2019 10:34:47 GMT+0800 (CST)
 
 3. 频道内主播可以调用 `Client.stopLiveStreaming` 方法向 CDN 推流直播中删除指定的一路媒体流。
 
-增加/删除一路媒体流时，SDK 会触发  `Client.on` 下的回调向主播报告当前推流状态。详见 [API 参考](#api)。
+增加或删除一路媒体流时，SDK 会触发  `Client.on(liveStreamingStarted)` 或 `Client.on(liveStreamingFailed)`回调向主播报告当前推流状态。请确保收到该回调后再调用 API 进行下一步操作。
 
 <a name="trans"></a>
 ### 示例代码
@@ -101,25 +101,23 @@ client.stopLiveStreaming("your RTMP URL")
 
 同时，我们在 GitHub 提供一个开源的 [Live-Streaming](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack) 示例项目。你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/)，或者参考 [index.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/index.js) 和 [rtc-client.js](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/blob/master/Live-Streaming/Agora-Interactive-Broadcasting-Live-Streaming-Web-Webpack/src/rtc-client.js) 的源代码。
 
-<a name="api"></a>
+
 ### API 参考
 
 - [`init`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#init)
 - [`setLiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setlivetranscoding)
 - [`startLiveStreaming`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#startlivestreaming)
 - [`stopLiveStreaming`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#stoplivestreaming)
-- `liveTranscodingUpdated`
-- `liveStreamingStarted`
-- `liveStreamingFailed`
 
 ## 开发注意事项
 
 - 同一频道内最多支持 17 位主播。
-
+- 推流转码时，Agora 会收取转码费用。
 - 如果你对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `Client.startLiveStreaming` 方法并将 `enableTranscoding` 参数设置为 `false`。
 
-  > 不转码情况下，请使用 `AgoraRTC.createClient({mode: "live", codec: "h264"})` 模式。
+  > 不转码情况下，需要使用 `AgoraRTC.createClient({mode: "live", codec: "h264"})` 模式。
 
 - 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
+- 请确保转码推流和非转码推流中使用的流地址不同。
 
-- 推流转码时，Agora 会收取转码费用。
+
