@@ -3,7 +3,7 @@
 title: 通话调查
 description: Introduction to Call Research in AA
 platform: All Platforms
-updatedAt: Fri Dec 27 2019 04:01:53 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 04:01:57 GMT+0800 (CST)
 ---
 # 通话调查
 水晶球的[**通话调查**](https://dashboard.agora.io/analytics/call/search)功能以图表的形式展示每一通通话全链路质量数据，可以极大提高解决通话问题的效率。
@@ -31,7 +31,7 @@ updatedAt: Fri Dec 27 2019 04:01:53 GMT+0800 (CST)
 1. 点击左上角选择你要查询的项目。
 2. 指定需要查询的时间范围。
 3. 选择按照**频道名称**或者 **User** （[用户名](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernamea用户名)）查询。
-4. 筛选通话：你可以选择**全部**通话或**已结束**的通话或**进行中**的通话进行。
+4. 筛选通话：你可以选择**全部**通话或**已结束**的通话或**进行中**的通话。
 5. 点击**搜索通话**，即可显示符合搜索条件的所有通话。
 
 > 通话调查默认使用 UTC 时间，如果你需要以本地时区查看通话，点击页面顶部菜单栏的时钟![](https://web-cdn.agora.io/docs-files/1545894297187)切换时区。
