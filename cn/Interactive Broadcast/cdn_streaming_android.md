@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Fri Dec 27 2019 10:19:25 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 10:23:11 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
