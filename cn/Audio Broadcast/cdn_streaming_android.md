@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Fri Dec 27 2019 10:19:06 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 10:19:25 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -45,9 +45,7 @@ updatedAt: Fri Dec 27 2019 10:19:06 GMT+0800 (CST)
 
 3. 频道内主播可以调用 `removePublishStreamUrl` 方法向 CDN 推流直播中删除指定的一路媒体流。
 
-推流状态改变时，SDK 会触发 `onRtmpStreamingStateChanged` 回调向主播报告当前推流状态。如果增加/删除一个推流地址失败，请通过错误码排查问题。
-
-
+推流状态改变时，SDK 会触发 `onRtmpStreamingStateChanged` 回调向主播报告当前推流状态。请确保收到该回调后再调用 API 进行下一步操作。如果增加或删除一个推流地址失败，请通过错误码排查问题。更多问题请参考[注意事项](#consideration)。
 
 <a name="trans"></a>
 ### 示例代码
@@ -209,14 +207,12 @@ User2:
 - [`onTranscodingUpdated`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#afcacc60191697a4105364d1b0c411eb1)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94)
 
-## 开发注意事项
+<a name="consideration"></a>
+## 注意事项
 
 - 同一频道内最多支持 17 位主播。
-
-- 如果对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `addPublishStreamUrl` 方法并设置 `transcodingEnabled (false)` 。
-
-  > 目前只支持（默认）向 CDN 推 H.264 流。
-
-- 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
-
 - 推流转码时，Agora 会收取转码费用。
+- 如果对单主播不经过转码直接推流，请略过[步骤 1](#single)，直接调用 `addPublishStreamUrl` 方法并设置 `transcodingEnabled (false)` 。
+- 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
+- 请确保转码推流和非转码推流中使用的流地址不同。
+
