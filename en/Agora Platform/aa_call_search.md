@@ -3,7 +3,7 @@
 title: Agora Analytics
 description: Introduction to call research
 platform: All Platforms
-updatedAt: Fri Dec 20 2019 10:17:00 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 07:00:18 GMT+0800 (CST)
 ---
 # Agora Analytics
 The [**Call Search**](https://dashboard.agora.io/analytics/call/search) function of Agora Analytics allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
@@ -19,6 +19,8 @@ The [**Call Search**](https://dashboard.agora.io/analytics/call/search) function
 - The users' ratings of the call.
 
 See the use case [tutorials](../../en/Agora%20Platform/aa_tutorial.md) to learn how to analyze your calls.
+
+<div class="alert note"><b>Call Search</b> supports viewing data for the past 14 days. </div>
 
 ## Search calls
 
