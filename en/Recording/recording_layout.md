@@ -3,7 +3,7 @@
 title: Set Video Layout
 description: 
 platform: Linux
-updatedAt: Mon Dec 30 2019 09:36:33 GMT+0800 (CST)
+updatedAt: Mon Dec 30 2019 09:38:28 GMT+0800 (CST)
 ---
 # Set Video Layout
 ## Overview
@@ -11,7 +11,7 @@ In the composite recording mode, you need to set the size and position of the re
 
 As shown in the following image, the background of the video is **canvas**, and each user occupies a **region** on the canvas.
 
-![](https://web-cdn.agora.io/docs-files/1562927420353)
+![](https://web-cdn.agora.io/docs-files/1577697787996)
 
 > If the aspect ratio of a user's video does not match that of the user's region, the video may be cropped or letterboxed to fit the region. The aspect ratio of the user's region depends on the aspect ratio of the canvas and the layout type.
 
@@ -35,25 +35,11 @@ This is the default layout, where small regions are on top of a full-size region
 
 See the following pictures for the layouts with different number of users in the channel.
 
-#### 1 User
+![](https://web-cdn.agora.io/docs-files/1577697865676)
 
-![](https://web-cdn.agora.io/docs-files/1560823829265)
+![](https://web-cdn.agora.io/docs-files/1577697930206)
 
-#### 2 to 5 Users
-
-![](https://web-cdn.agora.io/docs-files/1560823855095)
-
-#### 6 to 9 Users
-
-![](https://web-cdn.agora.io/docs-files/1560823875104)
-
-#### 10 to 13 Users
-
-![](https://web-cdn.agora.io/docs-files/1560823889282)
-
-#### 14 to 17 Users
-
-![](https://web-cdn.agora.io/docs-files/1560823910236)
+![](https://web-cdn.agora.io/docs-files/1577697950264)
 
 ### <a name="bestfit"></a>Best fit layout
 
@@ -65,31 +51,15 @@ This is a grid layout. In this layout, the grid size varies depending on the num
 
 See the following pictures for the layouts with different number of users in the channel.
 
-#### 1 to 4 Users
+![](https://web-cdn.agora.io/docs-files/1577697975441)
 
-![](https://web-cdn.agora.io/docs-files/1558062852403)
+![](https://web-cdn.agora.io/docs-files/1577697997849)
 
-![](https://web-cdn.agora.io/docs-files/1558063212804)
+![](https://web-cdn.agora.io/docs-files/1577698010532)
 
-![](https://web-cdn.agora.io/docs-files/1560824305413)
+The best fit layout for 17 users in a channel is unique. As shown in the following figure, the regions are displayed across the middle of the canvas with bands on the left and right of the canvas. The width and height of each region are 20% of those of the canvas respectively, while the width of the two bands is 10% of that of the canvas. The 17th region is placed in the middle of the bottom row.
 
-![](https://web-cdn.agora.io/docs-files/1558063229612)
-
-#### 5 to 9 Users
-
-![](https://web-cdn.agora.io/docs-files/1560824329767)
-
-#### 10 to 16 Users
-
-![](https://web-cdn.agora.io/docs-files/1560824340228)
-
-#### 17 Users
-
-The best fit layout for 17 users in a channel is unique.
-
-As shown in the following figure, the regions are displayed across the middle of the canvas with bands on the left and right of the canvas. The width and height of each region are 20% of those of the canvas respectively, while the width of the two bands is 10% of that of the canvas. The 17th region is placed in the middle of the bottom row.
-
-![](https://web-cdn.agora.io/docs-files/1560824353055)
+![](https://web-cdn.agora.io/docs-files/1577698032073)
 
 ### <a name="vertical"></a>Vertical layout
 
@@ -103,31 +73,20 @@ This layout supports up to two columns of small regions on the right edge with e
 	- If you do not specify a user or the specified user does not join the channel, the "Large" region shows the background color.
 	- If the aspect ratio of the specified user's video does not match that of the large region, the video is letterboxed to fit within the region, ensuring the completeness of the video.
 - The small regions are tiled in the order of the users joining the channel. 
-	- If user small 1 leaves the channel, user small 2 takes over user small 1's region, and so on.
+	- If user 1 leaves the channel, user 2 takes over user 1's region, and so on.
 	- If the aspect ratio of a user's video does not match that of the user's region, the video is cropped to fit the region.
 - The region which is not occupied by any user shows the background color.
 - If a user sends only audio, the user's region shows the background color.
 
-#### 1 to 5 Users
+See the following pictures for the layouts with different number of users in the channel.
 
-The regions of users small 1 to small 4 are tiled along the right edge of the canvas. The width and height of the small region are one-fifth and one-fourth of those of the canvas respectively.
+![](https://web-cdn.agora.io/docs-files/1577698419720)
 
-![](https://web-cdn.agora.io/docs-files/1558060680455)
+- For the layout of 1 to 5 users, the regions of users 1 to 4 are tiled along the right edge of the canvas. The width and height of the small region are one-fifth and one-fourth of those of the canvas respectively.
+- For the layout of 6 to 7 users, the regions of users 1 to 6 are tiled along the right edge of the canvas. The width and height of the small region are one-seventh and one-sixth of those of the canvas respectively.
 
-#### 6 to 7 Users
+![](https://web-cdn.agora.io/docs-files/1577698564432)
 
-The regions of users small 1 to small 6 are tiled along the right edge of the canvas. The width and height of the small region are one-seventh and one-sixth of those of the canvas respectively.
+- For the layout of 6 to 7 users, the regions of users 1 to 8 are tiled along the right edge of the canvas. The width and height of the small region are one-ninth and one-eighth of those of the canvas respectively.
+- For the layout of 6 to 7 users, the regions of users 1 to 16 are tiled along the right edge of the canvas. The width and height of the small region are one-tenth and one-eighth of those of the canvas respectively.
 
-![](https://web-cdn.agora.io/docs-files/1558060697541)
-
-#### 8 to 9 Users
-
-The regions of users small 1 to small 8 are tiled along the right edge of the canvas. The width and height of the small region are one-ninth and one-eighth of those of the canvas respectively.
-
-![](https://web-cdn.agora.io/docs-files/1558060714296)
-
-#### 10 to 17 Users
-
-The regions of users small 1 to small 16 are tiled along the right edge of the canvas. The width and height of the small region are one-tenth and one-eighth of those of the canvas respectively.
-
-![](https://web-cdn.agora.io/docs-files/1558060732460)
