@@ -1,11 +1,11 @@
 
 ---
-title: Last-mile Tests
+title: Lastmile Tests
 description: 
 platform: Web
-updatedAt: Tue Dec 10 2019 04:20:46 GMT+0800 (CST)
+updatedAt: Mon Dec 30 2019 09:42:16 GMT+0800 (CST)
 ---
-# Last-mile Tests
+# Lastmile Tests
 ## Introduction
 
 To check if the network condition is good enough to support the audio bitrate or target bitrate of the chosen video profile, you can conduct a last-mile network quality test before actually joining a channel.
