@@ -1,11 +1,11 @@
 
 ---
-title: Last-mile Tests
+title: Lastmile Tests
 description: 
 platform: Windows
-updatedAt: Thu Sep 26 2019 04:20:02 GMT+0800 (CST)
+updatedAt: Mon Dec 30 2019 09:42:31 GMT+0800 (CST)
 ---
-# Last-mile Tests
+# Lastmile Tests
 ## Introduction
 
 To check if the uplink network condition is good enough to support the audio bitrate or target bitrate of the chosen video profile, you can conduct a last-mile network quality test before joining the channel.
