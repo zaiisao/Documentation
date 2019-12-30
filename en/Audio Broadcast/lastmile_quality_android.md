@@ -1,11 +1,11 @@
 
 ---
-title: Last-mile Tests
+title: Lastmile Tests
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:20:45 GMT+0800 (CST)
+updatedAt: Mon Dec 30 2019 09:41:50 GMT+0800 (CST)
 ---
-# Last-mile Tests
+# Lastmile Tests
 ## Introduction
 
 To check if the uplink network condition is good enough to support the audio bitrate or target bitrate of the chosen video profile, you can conduct a last-mile network quality test before joining the channel.
