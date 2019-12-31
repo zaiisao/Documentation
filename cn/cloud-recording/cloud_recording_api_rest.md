@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Dec 31 2019 07:07:51 GMT+0800 (CST)
+updatedAt: Tue Dec 31 2019 07:08:09 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -175,8 +175,8 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
     - `render_mode`：（选填）Number 类型。画面显示模式：
       - `0`：（默认）裁剪模式。优先保证画面被填满。视频尺寸等比缩放，直至整个画面被视频填满。如果视频长宽与显示窗口不同，则视频流会按照画面设置的比例进行周边裁剪或图像拉伸后填满画面。
       - `1`：缩放模式。优先保证视频内容全部显示。视频尺寸等比缩放，直至视频窗口的一边与画面边框对齐。如果视频尺寸与画面尺寸不一致，在保持长宽比的前提下，将视频进行缩放后填满画面，缩放后的视频四周会有一圈黑边。
-- `subscribeVideoUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定录制哪几个用户的视频流。UID 为 string 类型。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 `0`。 
-- `subscribeAudioUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定录制哪几个用户的音频流。UID 为 string 类型。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 1。
+- `subscribeVideoUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定录制哪几个用户的视频流。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 `0`。 
+- `subscribeAudioUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定录制哪几个用户的音频流。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 1。
 <div class="alert note">一旦设置 <code>subscribeVideoUids</code> 和 <code>subscribeAudioUids</code> 中的任一参数，则只录制参数指定的音视频。例如，<code>subscribeVideoUids</code> 不为空，<code>subscribeAudioUids</code> 为空，则只录制指定用户的视频，不录制音频。如果这两个参数均为空，则录制加入频道的所有用户。</div>
 - `subscribeUidGroup`: （选填）Number 类型，预估的订阅人数峰值。在单流模式下，为必填参数。举例来说，如果 `subscribeVideoUids` 为 `["100","101","102"]`，`subscribeAudioUids` 为 `["101","102","103"]`，则订阅人数为 4 人。
   - `0`: 1 到 2 个 UID
