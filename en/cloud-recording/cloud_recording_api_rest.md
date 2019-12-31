@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Dec 31 2019 07:09:08 GMT+0800 (CST)
+updatedAt: Tue Dec 31 2019 07:09:12 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -173,9 +173,9 @@ The following parameters are required in the request body.
       - `0`: (Default) Cropped mode. Uniformly scales the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents.
       - `1`: Fit mode. Uniformly scales the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
 
-- `subscribeVideoUids`: (Optional) JSONArray. An array of the string user IDs (UIDs) of the users whose video you want to record, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. 
+- `subscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you want to record, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. 
 
-- `subscribeAudioUids`: (Optional) JSONArray. An array of the string user IDs (UIDs) of the users whose audio you want to record, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`.
+- `subscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you want to record, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`.
 
 > Once you set `subscribeVideoUids` or `subscribeAudioUids`, Agora Cloud Recording records the audio or video of the specified users only. For example, if `subscribeVideoUids` is set and `subscribeAudioUids` is not set or is an empty array, Agora Cloud Recording records only the video (no audio) of the specified users. If both parameters are empty or if neither is set, all the users' audio and video will be recorded.
 
