@@ -93,7 +93,7 @@ Add the following permissions in the **/app/src/main/AndroidManifest.xml** file 
    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
    <uses-permission android:name="android.permission.BLUETOOTH" />
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-   // Add the following permission if your scenario involves reading external storage:
+   // Add the following permission if your scenario involves reading the external storage:
    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
    // For devices running Android 10.0 or later, you also need to add the following permission:
    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
