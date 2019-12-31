@@ -93,6 +93,8 @@ dependencies {
    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
    <uses-permission android:name="android.permission.BLUETOOTH" />
    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+   // 如果你的场景中涉及读取外部存储，需添加如下权限：
+   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
    // 如果你使用的是 Android 10.0 及以上设备，还需要添加如下权限：
    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
  
@@ -268,7 +270,8 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
   
     // 获取权限后，初始化 RtcEngine，并加入频道。
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
+            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }
