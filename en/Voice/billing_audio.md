@@ -3,7 +3,7 @@
 title: Billing for Voice Call
 description: 
 platform: All Platforms
-updatedAt: Thu Jan 02 2020 07:17:13 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 07:23:12 GMT+0800 (CST)
 ---
 # Billing for Voice Call
 ## Overview
