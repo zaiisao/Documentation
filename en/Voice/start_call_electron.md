@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Electron
-updatedAt: Tue Dec 10 2019 04:20:34 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 10:12:36 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic call with the Agora SDK for Electron.
