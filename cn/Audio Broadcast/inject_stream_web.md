@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Web
-updatedAt: Wed Dec 11 2019 09:26:28 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 02:42:39 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
@@ -66,9 +66,9 @@ var InjectStreamConfig = {
    videoBitrate: 400,
    audioSampleRate: 44100,
    audioChannels: 1,
-  });
+   };
 
-  Client.addInjectStreamUrl(url, config);
+Client.addInjectStreamUrl(url, config);
 
 // 删除在线媒体流
 Client.removeInjectStreamUrl(url);
