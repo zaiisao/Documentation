@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Web
-updatedAt: Wed Dec 11 2019 10:34:52 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 02:43:32 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -63,9 +63,9 @@ var InjectStreamConfig = {
    videoBitrate: 400,
    audioSampleRate: 44100,
    audioChannels: 1,
-  });
+   };
 
-  Client.addInjectStreamUrl(url, config);
+Client.addInjectStreamUrl(url, config);
 
 // Remove an online media stream.
 Client.removeInjectStreamUrl(url);
