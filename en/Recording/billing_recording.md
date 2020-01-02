@@ -3,7 +3,7 @@
 title: Billing for On-premise Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 13:35:56 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 08:02:22 GMT+0800 (CST)
 ---
 # Billing for On-premise Recording
 ## Overview
