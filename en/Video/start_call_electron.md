@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Electron
-updatedAt: Thu Jan 02 2020 10:12:36 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 10:12:40 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic call with the Agora SDK for Electron.
@@ -59,11 +59,13 @@ By default, Agora uses Electron 1.8.3 to build the project. Switch the prebuilt 
 
 ```javascript
 // Downloads a prebuilt add-on with Electron 1.8.3
-AGORA_ELECTRON_DEPENDENT = 2.0.0
+agora_electron_dependent = 1.8.3
 // Downloads a prebuilt add-on with Electron 3.0.6
-AGORA_ELECTRON_DEPENDENT = 3.0.6
-// Downloads a prebuilt add-on With Electron 4.0.0
-AGORA_ELECTRON_DEPENDENT = 4.0.0
+agora_electron_dependent = 3.0.6
+// Downloads a prebuilt add-on With Electron 4.2.8
+agora_electron_dependent = 4.2.8
+// Downloads a prebuilt add-on With Electron 5.0.8
+agora_electron_dependent = 5.0.8
 ```
 
 ### Install the dependency
