@@ -3,7 +3,7 @@
 title: Billing for Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 13:35:26 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 07:49:55 GMT+0800 (CST)
 ---
 # Billing for Cloud Recording
 ## Overview
