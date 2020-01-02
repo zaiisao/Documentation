@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Electron
-updatedAt: Tue Dec 10 2019 04:21:28 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 10:14:42 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora Electron SDK 快速实现互动直播。
@@ -59,11 +59,13 @@ Agora 默认使用 1.8.3 版本的 Electron 进行编译。请根据你的 Elect
 
 ```javascript
 // 下载使用 Electron 1.8.3 预编译的版本
-AGORA_ELECTRON_DEPENDENT = 2.0.0
+agora_electron_dependent = 1.8.3
 // 下载使用 Electron 3.0.6 预编译的版本
-AGORA_ELECTRON_DEPENDENT = 3.0.6
-// 下载使用 Electron 4.0.0 预编译的版本
-AGORA_ELECTRON_DEPENDENT = 4.0.0
+agora_electron_dependent = 3.0.6
+// 下载使用 Electron 4.2.8 预编译的版本
+agora_electron_dependent = 4.2.8
+// 下载使用 Electron 5.0.8 预编译的版本
+agora_electron_dependent = 5.0.8
 ```
 
 ### 安装依赖项
