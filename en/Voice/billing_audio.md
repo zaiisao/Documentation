@@ -3,7 +3,7 @@
 title: Billing for Voice Call
 description: 
 platform: All Platforms
-updatedAt: Thu Jan 02 2020 07:23:12 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 07:23:20 GMT+0800 (CST)
 ---
 # Billing for Voice Call
 ## Overview
@@ -22,7 +22,21 @@ For more information about billing, fee deduction, and account suspension, see [
 
 ## Agora's policy of 10,000 free-of-charge minutes
 
-undefined
+Agora gives each [Agora Account](https://console.agora.io/) 10,000 free-of-charge minutes each month, and deducts the minutes in the following sequence: 
+
+1. Audio minutes
+2. On-premise recording audio minutes
+3. Cloud recording audio minutes 
+4. Video minutes HD
+5. On-premise recording video minutes HD
+6. Cloud recording video minutes HD
+7. Video minutes HD+
+8. On-premise recording video minutes HD+
+9. Cloud recording video minutes HD+
+
+If your total service minutes do not exceed 10,000 minutes, the service is free of charge; after the 10,000 free-of-charge minutes are deducted, Agora charges you for the remaining service minutes.
+
+<div class="alert note">The remaining free-of-charge minutes will be cleared at the end of each month.</div>
 
 ## Calculate service minutes
 
