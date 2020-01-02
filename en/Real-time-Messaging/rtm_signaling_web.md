@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Web
-updatedAt: Thu Jan 02 2020 11:18:30 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 12:45:18 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -43,11 +43,11 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | Peer-to-peer message sending fails.    | See the `cb` parameter that `messageInstantSend` takes.      | Promise                                                      |
 | Receives a peer-to-peer message        | `onMessageInstantReceive` | [MessageFromPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) |
 
-> <sup>1</sup> With the Agora RTM SDK, you must create a message instance before sending it. A message instance can be used either for a peer-to-peer or for a channel message. As of v0.9.3, the Agora RTM SDK allows you to send an offline message by configuring [SendMessageOptions](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/sendmessageoptions.html).
+> <sup>1</sup>As of v0.9.3, the Agora RTM SDK allows you to send an offline message by configuring [SendMessageOptions](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/sendmessageoptions.html).
 >
 > <sup>2</sup> The Agora Signaling SDK returns the `onMessageSendSuccess` callback when the server receives the peer-to-peer message; the Agora RTM SDK returns the `resolve` state of a Promise when the specified user receives the message. 
 
-## Querying the online status of specified user(s)
+## Querying the online status of specified users
 
 | Method                                         | Signaling         | Real-time Messaging                                          |
 | ---------------------------------------------- | ----------------- | ------------------------------------------------------------ |
@@ -97,7 +97,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | Successfully leaves the current channel.                | `onChannelLeaved`     | Promise                                                      |
 | A remote channel member leaves the current channel.     | `onChannelUserLeaved` | [MemberLeft](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmchannelevents.html#memberleft) |
 | Returns a channel member list when joining the channel. | `onChannelUserList`   | N/A<sup>3</sup>                                              |
-|                                                         |                       |                                                              |
+
 
 > - <sup>1</sup> The Agora RTM SDK requires you to create a channel instance before joining it. 
 > - <sup>2</sup> The Agora RTM SDK allows you to join a maximum of 20 channels at the same time. 
@@ -141,7 +141,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | ------------------------------- | ---------------------- | ------------------------------------------------------------ |
 | A channel attribute is updated. | See the `cb` parameter that the corresponding method takes. | [AttributesUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmchannelevents.html#attributesupdated)<sup>2</sup> |
 
-> <sup>2</sup>  This callback is disabled by default. It is enabled only when the user, who updates the attributes of the channel, sets [enableNotificationToChannelMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannelAttributeOptions.html#//api/name/enableNotificationToChannelMembers) as `true`.
+> <sup>2</sup>  This callback is disabled by default. It is enabled only when the user, who updates the attributes of the channel, sets [enableNotificationToChannelMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/channelattributeoptions.html#enablenotificationtochannelmembers) as `true`.
 
 ## Retrieving a member list of the current channel
 
@@ -177,17 +177,17 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Method                                                       | Signaling                                | Real-time Messaging                                          |
 | ------------------------------------------------------------ | ---------------------------------------- | ------------------------------------------------------------ |
-| Allows the caller to create a `LocalInvitation.`             | N/A                                      | [createLocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createlocalinvitation)<sup>2</sup> |
-| Allows the caller to send a call invite to a specified user (callee). | `channelInviteUser2` | [send](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#send)<sup>3</sup> |
+| Allows the caller to create a `LocalInvitation.`             | N/A                                      | [createLocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createlocalinvitation)<sup>1</sup> |
+| Allows the caller to send a call invite to a specified user (callee). | `channelInviteUser2` | [send](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#send)<sup>2</sup> |
 | Allows the caller to send a call invite to land-line user.   | `channelInviteDTMF`                      | N/A                                                          |
-| Allows the caller to cancel a sent call invite.              | `channelInviteEnd`                       | [cancel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#cancel)<sup>4</sup> |
+| Allows the caller to cancel a sent call invite.              | `channelInviteEnd`                       | [cancel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#cancel)<sup>3</sup> |
 | Allows the callee to accept an incoming call invite.         | `channelInviteAccept`                    | [accept](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#accept) |
 | Allows the callee to decline an incoming call invite.        | `channelInviteRefuse`                    | [refuse](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#accept) |
 |                                                              |                                          |                                                              |
 
-> - <sup>2</sup> The Agora RTM SDK introduces the [LocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html) and [RemoteInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html) objects. The former is created by the caller using the `createLocalInvitation` method, the latter is created automatically by the SDK when the callee receives the call invitation from the caller. You can take the two objects as the same call invitation taking in two different forms. The caller uses the [LocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html) object to specify the callee, set the content, or check the [LocalInvitationState](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/enums/rtmstatuscode.localinvitationstate.html); the callee uses the [RemoteInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html) object to set a response, check the caller ID, or check the [RemoteInvitationState](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/enums/rtmstatuscode.remoteinvitationstate.html). 
-> - <sup>3</sup> The [send](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#send) method does not take an `extra` argument as the `channelInviteUser2` method does. 
-> - <sup>4</sup> The `channelInviteEnd` method can end a call invite any time, whilst the [cancel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#cancel) method can only cancel a sent and ongoing call invite. 
+> - <sup>1</sup> The Agora RTM SDK introduces the [LocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html) and [RemoteInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html) objects. The former is created by the caller using the `createLocalInvitation` method, the latter is created automatically by the SDK when the callee receives the call invitation from the caller. You can take the two objects as the same call invitation taking in two different forms. The caller uses the [LocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html) object to specify the callee, set the content, or check the [LocalInvitationState](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/enums/rtmstatuscode.localinvitationstate.html); the callee uses the [RemoteInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html) object to set a response, check the caller ID, or check the [RemoteInvitationState](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/enums/rtmstatuscode.remoteinvitationstate.html). 
+> - <sup>2</sup> The [send](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#send) method does not take an `extra` argument as the `channelInviteUser2` method does. 
+> - <sup>3</sup> The `channelInviteEnd` method can end a call invite any time, whilst the [cancel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#cancel) method can only cancel a sent and ongoing call invite. 
 > - To intercommunicate with the Agora Signaling SDK, you must upgrade your Agora RTM SDK to v1.0+ and set the channel ID.  Please also note that even if the callee accepts the call invite, the Agora RTM SDK does not add either the caller or the callee to the specified channel. 
 
 | Synchronous Callback      | Signaling | Real-time Messaging                                          |
