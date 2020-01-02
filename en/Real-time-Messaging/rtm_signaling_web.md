@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Web
-updatedAt: Thu Jan 02 2020 11:18:27 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 11:18:30 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -12,7 +12,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Method                 | Signaling                              | Real-time Messaging                                          |
 | ---------------------- | -------------------------------------- | ------------------------------------------------------------ |
-| Creates an instance.   | `getInstance`/`createAgoraSDKInstance` |  [createInstance](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance)<sup>1</sup> |
+| Creates an instance.   | `Signal` |  [createInstance](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance)<sup>1</sup> |
 | Login                  | `login`/`login2`                       | [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login)<sup>2</sup> |
 | Logout                 | `logout`                               | [logout](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#logout) |
 | Gets the login status. | `getStatus`                            | N/A. See [ConnectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#connectionstatechanged). |
