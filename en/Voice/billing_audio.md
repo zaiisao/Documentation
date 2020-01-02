@@ -3,7 +3,7 @@
 title: Billing for Voice Call
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 26 2019 13:31:25 GMT+0800 (CST)
+updatedAt: Thu Jan 02 2020 07:17:13 GMT+0800 (CST)
 ---
 # Billing for Voice Call
 ## Overview
@@ -19,6 +19,10 @@ Each month, Agora charges you by the services you use. This article describes ho
 
 
 For more information about billing, fee deduction, and account suspension, see [Billing, Fee Deduction, and Account Suspension](https://docs.agora.io/en/faq/billing_account).
+
+## Agora's policy of 10,000 free-of-charge minutes
+
+undefined
 
 ## Calculate service minutes
 
@@ -81,6 +85,4 @@ No. The audio minutes that you see on your bill are the sum of the audio minutes
 
 
 
-## Agora's policy of 10,000 free-of-charge minutes
 
-See [Agora's policy of 10,000 free-of-charge minutes](https://docs.agora.io/en/faq/billing_free).
