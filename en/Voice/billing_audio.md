@@ -22,21 +22,21 @@ For more information about billing, fee deduction, and account suspension, see [
 
 ## Agora's policy of 10,000 free-of-charge minutes
 
-Agora gives each [Agora Account](https://console.agora.io/) 10,000 free-of-charge minutes each month, and deducts the minutes in the following sequence: 
+Agora gives each [Agora Account](https://console.agora.io/) 10,000 charge-free minutes each month, and deducts the minutes in the following sequence: 
 
 1. Audio minutes
 2. On-premise recording audio minutes
 3. Cloud recording audio minutes 
-4. Video minutes HD
-5. On-premise recording video minutes HD
-6. Cloud recording video minutes HD
-7. Video minutes HD+
-8. On-premise recording video minutes HD+
-9. Cloud recording video minutes HD+
+4. HD video minutes
+5. On-premise recording HD video minutes
+6. Cloud recording HD video minutes
+7. HD+ video minutes
+8. On-premise recording HD+ video minutes
+9. Cloud recording HD+ video minutes
 
-If your total service minutes do not exceed 10,000 minutes, the service is free of charge; after the 10,000 free-of-charge minutes are deducted, Agora charges you for the remaining service minutes.
+If your total service minutes do not exceed 10,000 minutes, the service is free of charge. After the 10,000 charge-free minutes are fully deducted, Agora charges you for the additional service minutes.
 
-<div class="alert note">The remaining free-of-charge minutes will be cleared at the end of each month.</div>
+<div class="alert note">The remaining free-of-charge minutes will be cleared at the end of each calendar month.</div>
 
 ## Calculate service minutes
 
