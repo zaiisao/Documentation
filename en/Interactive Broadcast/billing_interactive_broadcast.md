@@ -9,7 +9,7 @@ updatedAt: Thu Jan 02 2020 07:48:08 GMT+0800 (CST)
 ## Overview
 
 
-Each month, Agora charges you by the services you use. This article describes how Agora calculates the services you use and provides the billing information of the Video Broadcasting SDK. If you have used other products or add-ons, you can also see the billing information below:
+At the beginning of each calendar month, Agora charges you for services used. This article describes how Agora calculates the billing for the services used of the Video Broadcasting SDK. You can see additional billing information pertaining to other Agora products and add-ons below:
 
 
 

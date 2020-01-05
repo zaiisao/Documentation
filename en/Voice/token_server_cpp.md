@@ -2,7 +2,7 @@
 ---
 title: Generate a Token from Your Server
 description: Guide on how to generate tokens on the server side
-platform: cpp,CPP
+platform: CPP
 updatedAt: Wed Oct 30 2019 02:42:54 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
