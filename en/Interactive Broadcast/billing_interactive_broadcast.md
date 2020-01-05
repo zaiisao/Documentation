@@ -133,10 +133,10 @@ For example, let's say a user is in a channel for 30 minutes. This user subscrib
 
 ### Resolution calculation when dual-stream mode is enabled 
 
-When the remote stream being subscribed to enables dual-stream mode, the local subscriber can receive only one stream at a time: 
+When the remote video stream being subscribed to enables [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode), the local subscriber can receive only one stream at a time: 
 
 - If it is the high-video stream, then the local subscriber's composite resolution is calculated based on the high-video stream resolution that the remote user sets. 
-- If it is the low-video stream, then the local subscriber's composite resolution is calculated based on the resolution of the actually received stream. 
+- If it is the low-video stream, then the local subscriber's composite resolution is calculated based on the resolution of the received stream. 
 
 ### Resolution Calibration
 
