@@ -163,15 +163,15 @@ No. The audio minutes that you see on your bill are the sum of the audio minutes
 
 
 <details>
-	<summary><font color="#3ab7f8">Question: Why have I seen audio minutes in my bill even though all users subscribe to video streams?</font></summary>
+	<summary><font color="#3ab7f8">Question: Why do I see audio minutes in my bill even though all users subscribe to video streams?</font></summary>
 
-Chances are: <ul><li>The user being subscribed to has not subscribed to any video stream.</li><li>After subscribing to a video stream, a user has not received any video stream due to poor network conditions or issues on the host side. </li></ul> If either of these conditions occurs, the corresponding user's aggregate resolution is 0 and the user's service time counts as the audio minutes. 
+Chances are: <ul><li>The user being subscribed to has not subscribed in turn to any other video stream.</li><li>After subscribing to a video stream, a user has not received any video stream due to poor network conditions or issues on the host side. </li></ul> If either of these conditions occurs, the corresponding user's aggregate resolution is 0 and the user's service time counts as audio minutes. 
 
 </details>
 <details>
-	<summary><font color="#3ab7f8">Question: Why have I been charged for HD+ video minutes e, even though all the users subscribe only to video streams with resolution of 360 x 640?</font></summary>
+	<summary><font color="#3ab7f8">Question: Why have I been charged for HD+ video minutes, even though all the users subscribe only to video streams with resolution of 360 x 640?</font></summary>
 
-The aggregate resolution is a sum of all the resolutions of the video streams, to which a user subscribe. That said, the more video streams a user subscribe to, the more likely that user's aggregate resolution falls into the HD+ bracket ( > 1280 x 720). 
+The aggregate resolution is a sum of all the resolutions of the video streams to which a user subscribes. That said, the more video streams a user subscribes to, the more likely that user's aggregate resolution falls into the HD+ bracket ( > 1280 x 720). 
 </details>
 
 
