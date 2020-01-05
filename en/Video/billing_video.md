@@ -57,9 +57,9 @@ Agora adds up the following two types of minutes used by the projects under your
 
 ### <a name="vmin"></a>Video minutes 
 
-If a user successfully receives video streams after joining an RTC channel, the corresponding time counts as the video minutes. 
+If a user successfully receives video streams after joining an Agora RTC channel, the corresponding time counts as video minutes. 
 
-Agora adds up the resolutions of the video streams, to which a specific user subscribes at a time, to get that user's aggregate resolution. The aggregate resolution can be classified into two brackets, and Agora charges you accordingly: 
+Agora adds up the resolutions of the video streams, to which a specific user subscribes at a time, to determine that user's aggregate resolution. This aggregate resolution is classified into two brackets, and Agora charges you accordingly: 
 
 
 
@@ -72,21 +72,21 @@ Agora adds up the resolutions of the video streams, to which a specific user sub
 
 
 
-<div class="alert note">The aggregate resolution varies with the resolution of the subscribed video streams in real time. Agora adds up the corresponding video minutes with an accuracy of seconds.</div>
+<div class="alert note">The aggregate resolution varies with the resolution of the subscribed video streams in real time. Agora adds up the corresponding video minutes down to the accurary of a few seconds.</div>
 
 **Calculate the aggregate resolution**
 
-Suppose that user A has been in an RTC channel for 45 straight minutes, subscribing to the video streams of user B, C, and D. And the following table shows the resolutions of B, C, and D during this period:
+Suppose that user A has been in an RTC channel for 45 continuous minutes, subscribing to the video streams of users B, C, and D. The following table shows the resolutions of B, C, and D during this period:
 
-|                       | B Resolution | C Resolution | D Resolution | Aggregate Resolution of A |
+|                       | B's Resolution | C's Resolution | D's Resolution | A's Aggregate Resolution |
 | --------------------- | ------------ | ------------ | ------------ | ------------------------- |
-| **First 30 min**      | 640 x 360    | 640 x 360    | 640 x 360    | 691200 < 1280 x 720       |
+| **Initial 30 min**      | 640 x 360    | 640 x 360    | 640 x 360    | 691200 < 1280 x 720       |
 | **Subsequent 15 min** | 640 x 360    | 240 x 180    | 1280 x 720   | 1195200 > 1280 x 720      |
 
 As you can see from the above table: 
 
-- Aggregate resolution of A for the first 30 min = Area B +Area C + Area D = 691200 < 1280 x 720, falling into the HD bracket. 
-- Aggregate resolution of A for the subsequent 15 min = Area B +Area C + Area D = 1195200 > 1280 x 720, falling into the HD+ bracket. 
+- A's Aggregate resolution for the initial 30 min = B's resolution + C's resolution + D's resolution = 691200 < 1280 x 720, falling into the HD bracket. 
+- Aggregate resolution of A for the subsequent 15 min = B's resolution +C's resolution + D's resolution = 1195200 > 1280 x 720, falling into the HD+ bracket. 
 
 Total fee for user A = Unit price (video minutes HD) x 30 min + Unit price (video minutes HD+) x 15 min
 
@@ -98,7 +98,9 @@ Total fee for user A = Unit price (video minutes HD) x 30 min + Unit price (vide
 
 If you deduct the time that a user receives the video streams in the channel from the total time that the user stays in the channel, you get the audio minutes of that user, regardless of whether that user subscribes to any audio stream. 
 
-<div class="alert note"><li>Your audio minutes do not add up, even if you subscribe to multiple audio streams. </li><li>See <a href="#billing">Pricing</a> for the pricing information of the audio minutes. </li></div>
+For example, let's say a user is in a channel for 30 minutes. This user subscribs to a video stream for 20 minutes, and is idle for the rest 10 minutes. In this case, Agora records 20 video minutes and 10 audio minutes for this specific user.
+
+<div class="alert note"><li>A user's audio minutes do not add up, even if that user subscribes to multiple audio streams at the same time. </li><li>See <a href="#billing">Pricing</a> for the pricing information of the audio minutes. </li></div>
 
 
 
