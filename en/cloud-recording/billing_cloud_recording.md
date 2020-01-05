@@ -48,7 +48,7 @@ If your total service minutes do not exceed 10,000 minutes, the service is free 
 
 
 
-Agora adds up the following two minutes used by the projects under your [Agora Account](https://console.agora.io/) on a monthly basis:
+Agora adds up the following two types of minutes used by the projects under your [Agora Account](https://console.agora.io/) on a monthly basis:
 
 - [Recording video minutes](#rvmin)
 - [Recording audio minutes](#ramin)
