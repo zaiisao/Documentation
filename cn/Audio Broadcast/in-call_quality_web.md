@@ -3,7 +3,7 @@
 title: 通话中质量监测
 description: 通话中质量透明 Web
 platform: Web
-updatedAt: Mon Jan 06 2020 07:03:49 GMT+0800 (CST)
+updatedAt: Mon Jan 06 2020 07:07:06 GMT+0800 (CST)
 ---
 # 通话中质量监测
 ## 功能描述
@@ -41,7 +41,7 @@ client.getSystemStats((stats) => {
 ### 获取网络相关数据
 
 调用 [`Client.getTransportStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#gettransportstats) 方法[<sup>[1]</sup>](#reference)获取**网络类型**和**网络连接状况统计数据**[<sup>[2]</sup>](#reference)。具体参数如下：
-  - `NetworkType`：网络类型[<sup>[3]</sup>](#reference)，如Wi-Fi、蜂窝移动数据网络、蓝牙网络等。
+  - `NetworkType`：网络类型[<sup>[3]</sup>](#reference)，如 Wi-Fi、蜂窝移动数据网络、蓝牙网络等。
   - `OutgoingAvailableBandwidth`：上行可用带宽估计（Kbps）。
   - `RTT`：Agora Web SDK 到 Agora SD-RTN 接入节点的平均往返延时（ RTT，Round-Trip Time），单位 ms。
 
@@ -68,7 +68,7 @@ client.getTransportStats((stats) => {
 - `RecvBytes`：接收字节数，累计值。
 - `SendBitrate`：音视频总发送码率（Kbps），瞬间值。
 - `SendBytes`：发送字节数，累计值。
-- `UserCount`：通信模式下，该值为当前频道内的用户人数。直播模式下，如果本地用户为主播，该值为当前频道内的主播人数；如果本地用户为观众，该值为当前频道内的主播人数+1。
+- `UserCount`：通信模式下，该值为当前频道内的用户人数。直播模式下，如果本地用户为主播，该值为当前频道内的主播人数；如果本地用户为观众，该值为当前频道内的主播人数 + 1。
 
 ```javascript
 client.getSessionStats((stats) => {
@@ -93,7 +93,7 @@ client.getSessionStats((stats) => {
   - `CodecType`：音频编码类型。
   - `MuteState`：音频是否静音。
   - `RecordingLevel`：音频采集能量。
-  - `SamplingRate`：音频采样率（kHZ）。
+  - `SamplingRate`：音频采样率（kHz）。
   - `SendBitrate`：音频发送码率（Kbps）。
   - `SendLevel`：音频发送能量。
 
@@ -162,8 +162,8 @@ client.getLocalVideoStats((localVideoStats) => {
 | `PacketLossRate`    | 远端音频的丢包率（%）。                                      |
 | `RecvBitrate`       | 音频接收码率（Kbps）。                                       |
 | `RecvLevel`         | 接收音频的音量。                                             |
-| `TotalFreezeTime`   | 音频卡顿总时间（s）                                          |
-| `TotalPlayDuration` | 音频播放总时长（s）                                          |
+| `TotalFreezeTime`   | 音频卡顿总时间（s）。                                          |
+| `TotalPlayDuration` | 音频播放总时长（s）。                                          |
 | `TransportDelay`    | 传输延时（ms），从远端发送音频到本地接收音频的延时。<br>图中阶段 2 + 3 + 4。 |
 
 
