@@ -3,7 +3,7 @@
 title: 通话中质量监测
 description: 通话中质量透明 Web
 platform: Web
-updatedAt: Mon Jan 06 2020 07:07:06 GMT+0800 (CST)
+updatedAt: Mon Jan 06 2020 07:28:45 GMT+0800 (CST)
 ---
 # 通话中质量监测
 ## 功能描述
@@ -149,7 +149,7 @@ client.getLocalVideoStats((localVideoStats) => {
 <a name ="remote_stream_statistics"></a>
 ### 获取远端订阅流的统计数据
 
-调用以下方法获取远端订阅流的音频统计数据。
+**获取远端订阅流的音频统计数据**
 
 ![](https://web-cdn.agora.io/docs-files/1577674685810)
 - [`Client.getRemoteAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats) 方法提供远端订阅流的**音频**统计数据，一个 uid 对应一组数据，详见下表：
@@ -183,7 +183,7 @@ client.getRemoteAudioStats((remoteAudioStatsMap) => {
 });
 ```
 
-调用以下方法获取远端订阅流的视频统计数据。
+**获取远端订阅流的视频统计数据**
 
 ![](https://web-cdn.agora.io/docs-files/1577675084533)
 - [`Client.getRemoteVideoStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats) 方法提供远端订阅流的**视频**统计数据，一个 uid 对应一组数据，详见下表：
