@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: In-call quality for iOS/macOS
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 08:25:13 GMT+0800 (CST)
+updatedAt: Mon Jan 06 2020 07:13:04 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
