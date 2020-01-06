@@ -3,7 +3,7 @@
 title: 通话中质量监测
 description: 通话中质量透明 Web
 platform: Web
-updatedAt: Mon Dec 30 2019 03:49:14 GMT+0800 (CST)
+updatedAt: Mon Jan 06 2020 07:03:49 GMT+0800 (CST)
 ---
 # 通话中质量监测
 ## 功能描述
@@ -149,18 +149,23 @@ client.getLocalVideoStats((localVideoStats) => {
 <a name ="remote_stream_statistics"></a>
 ### 获取远端订阅流的统计数据
 
-调用以下方法获取远端订阅流的音频和视频统计数据。
+调用以下方法获取远端订阅流的音频统计数据。
 
-- [`Client.getRemoteAudioStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats) 方法提供远端订阅流的**音频**统计数据，一个 uid 对应一组数据，包括：
-  - `CodecType`：音频解码类型。
-  - `End2EndDelay`：端到端延时（ms），从远端采集音频到本地播放音频的延时。
-  - `MuteState`：音频是否静音。
-  - `PacketLossRate`：远端音频的丢包率（%）。
-  - `RecvBitrate`：音频接收码率（Kbps）。
-  - `RecvLevel`：接收音频的音量。
-  - `TotalFreezeTime`：音频卡顿总时间，单位为秒。
-  - `TotalPlayDuration`：音频播放总时长，单位为秒。
-  - `TransportDelay`：传输延时（ms），从远端发送音频到本地接收音频的延时。
+![](https://web-cdn.agora.io/docs-files/1577674685810)
+- [`Client.getRemoteAudioStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats) 方法提供远端订阅流的**音频**统计数据，一个 uid 对应一组数据，详见下表：
+
+| 参数                | 描述                                                         |
+| ------------------- | ------------------------------------------------------------ |
+| `CodecType`         | 音频解码类型。                                               |
+| `End2EndDelay`      | 端到端延时（ms），从远端采集音频到本地播放音频的延时。<br>图中阶段 1 + 2 + 3 + 4 + 5 + 6。 |
+| `MuteState`         | 音频是否静音。                                               |
+| `PacketLossRate`    | 远端音频的丢包率（%）。                                      |
+| `RecvBitrate`       | 音频接收码率（Kbps）。                                       |
+| `RecvLevel`         | 接收音频的音量。                                             |
+| `TotalFreezeTime`   | 音频卡顿总时间（s）                                          |
+| `TotalPlayDuration` | 音频播放总时长（s）                                          |
+| `TransportDelay`    | 传输延时（ms），从远端发送音频到本地接收音频的延时。<br>图中阶段 2 + 3 + 4。 |
+
 
 ``` javascript
 client.getRemoteAudioStats((remoteAudioStatsMap) => {
@@ -178,19 +183,26 @@ client.getRemoteAudioStats((remoteAudioStatsMap) => {
 });
 ```
 
-- [`Client.getRemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats) 方法提供远端订阅流的**视频**统计数据，一个 uid 对应一组数据，包括：
-  - `End2EndDelay`：端到端延时（ms），从远端采集视频到本地播放视频的延时。
-  - `MuteState`：视频画面是否开启。
-  - `PacketLossRate`：远端视频的丢包率（%）。
-  - `RecvBitrate`：视频接收码率（Kbps）。
-  - `RecvResolutionHeight`：视频接收分辨率高度，单位为像素。
-  - `RecvResolutionWidth`：视频接收分辨率宽度，单位为像素。
-  - `RenderFrameRate`：渲染帧率（fps），视频解码输出帧率。 
-  - `RenderResolutionHeight`：视频渲染分辨率高度，单位为像素。
-  - `RenderResolutionWidth`：视频渲染分辨率宽度，单位为像素。
-  - `TotalFreezeTime`：视频卡顿总时间，单位为秒。
-  - `TotalPlayDuration`：视频播放总时间，单位为秒。
-  - `TransportDelay`：传输延时（ms），从远端发送视频到本地接收视频的延时。
+调用以下方法获取远端订阅流的视频统计数据。
+
+![](https://web-cdn.agora.io/docs-files/1577675084533)
+- [`Client.getRemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats) 方法提供远端订阅流的**视频**统计数据，一个 uid 对应一组数据，详见下表：
+
+| 参数                     | 描述                                                         |
+| ------------------------ | ------------------------------------------------------------ |
+| `End2EndDelay`           | 端到端延时（ms），从远端采集视频到本地播放视频的延时。<br/>图中阶段 1 + 2 + 3 + 4 + 5 + 6。 |
+| `MuteState`              | 视频画面是否开启。                                           |
+| `PacketLossRate`         | 远端视频的丢包率（%）。                                      |
+| `RecvBitrate`            | 视频接收码率（Kbps）。                                       |
+| `RecvResolutionHeight`   | 视频接收分辨率高度，单位为像素。                             |
+| `RecvResolutionWidth`    | 视频接收分辨率宽度，单位为像素。                             |
+| `RenderFrameRate`        | 渲染帧率（fps），视频解码输出帧率。                          |
+| `RenderResolutionHeight` | 视频渲染分辨率高度，单位为像素。                             |
+| `RenderResolutionWidth`  | 视频渲染分辨率宽度，单位为像素。                             |
+| `TotalFreezeTime`        | 视频卡顿总时间，单位为秒。                                   |
+| `TotalPlayDuration`      | 视频播放总时间，单位为秒。                                   |
+| `TransportDelay`         | 传输延时（ms），从远端发送视频到本地接收视频的延时。<br/>图中阶段 2 + 3 + 4。 |
+
 
 ``` javascript
 client.getRemoteVideoStats((remoteVideoStatsMap) => {
