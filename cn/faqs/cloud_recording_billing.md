@@ -12,7 +12,7 @@ updatedAt: Tue Dec 10 2019 18:14:52 GMT+0800 (CST)
 
 
 
-声网会按月统计你的每个 [App ID](https://console.agora.io/) 所对应项目使用的以下两种分钟数：
+声网会按月统计你的每个 [Agora 开发者账户](https://console.agora.io/) 下所有项目使用的以下两种分钟数：
 - [录制视频分钟数](#rvmin)
 - [录制音频分钟数](#ramin)
 

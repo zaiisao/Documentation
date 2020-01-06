@@ -9,7 +9,7 @@ updatedAt: Tue Dec 10 2019 18:10:15 GMT+0800 (CST)
 ## 服务用量统计方式
 
 
-声网会按月统计你的每个 [App ID](https://console.agora.io/) 对应项目使用的[音频分钟数](#amin)。
+声网会按月统计你的每个 [Agora 开发者账户](https://console.agora.io/) 下所有项目使用的[音频分钟数](#amin)。
 
 
 

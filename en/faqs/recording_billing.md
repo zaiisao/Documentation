@@ -1,11 +1,11 @@
 
 ---
-title: Billing for the cloud recording
+title: Billing for the on-premise recording
 description: 语音通话计费说明
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 20:55:38 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 20:59:08 GMT+0800 (CST)
 ---
-# Billing for the cloud recording
+# Billing for the on-premise recording
 ## Calculating service minutes
 
 
@@ -80,13 +80,13 @@ For example, let's say a recording server is in a channel for 30 minutes. It rec
 
 
 
-
-
 | Service<a name="billing"></a> | Pricing （Dollars/1,000 minutes) |
 | :---------------------------- | :------------------------------- |
-| Recording audio               | 1.49                             |
-| Recording HD video                 | 5.99                             |
-| Recording HD+ video                | 22.49                            |
+| Recording audio               | 0.99                             |
+| Recording HD video                  | 3.99                             |
+| Recording HD+ video                 | 14.99                            |
+
+
 
 
 

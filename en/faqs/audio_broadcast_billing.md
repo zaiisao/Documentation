@@ -1,11 +1,11 @@
 
 ---
-title: Billing for the voice call
+title: Billing for the audio broadcasting
 description: 语音通话计费说明
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 20:37:26 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 11:39:16 GMT+0800 (CST)
 ---
-# Billing for the voice call
+# Billing for the audio broadcasting
 ## Calculating service minutes
 
 
