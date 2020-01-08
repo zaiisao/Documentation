@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 10 2019 04:21:33 GMT+0800 (CST)
+updatedAt: Wed Jan 08 2020 06:34:04 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
