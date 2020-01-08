@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 18 2019 06:42:44 GMT+0800 (CST)
+updatedAt: Tue Jan 07 2020 07:33:19 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -94,4 +94,4 @@ Agora 的 Token 方案基于请求—响应机制，流程如下：
 
 Server 端收到请求后 Token Generator 会生成一个 RTM Token，然后将生成的 RTM Token 发送给 Client 端。
 
-> 出于安全考虑，请在 Token 生成后 24 小时内登录 Agora RTM 系统。超过 24 小时则需要重新生成 Token。
+<div class="alert note"><li>每个 Token 都内置了时长为 24 小时的签发有效期。你可以在 Token 生成后 24 小时内反复登录 Agora RTM 系统。超过 24 小时则需要重新生成 Token。</li><li>Token 的 24 小时签发有效期独立于权限有效期。即使 Token 的权限永不过期，签发有效期始终存在，不可更改。</li></div>
