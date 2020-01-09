@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 10 2019 04:20:38 GMT+0800 (CST)
+updatedAt: Wed Jan 08 2020 07:01:53 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction

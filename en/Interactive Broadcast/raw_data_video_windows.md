@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: Windows
-updatedAt: Tue Dec 10 2019 04:20:39 GMT+0800 (CST)
+updatedAt: Wed Jan 08 2020 07:05:16 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction

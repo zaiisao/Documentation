@@ -3,7 +3,7 @@
 title: Synchronous Playback
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 07:23:01 GMT+0800 (CST)
+updatedAt: Tue Jan 07 2020 08:39:29 GMT+0800 (CST)
 ---
 # Synchronous Playback
 ## Overview
@@ -40,7 +40,6 @@ You can also get the start timestamp by parsing the M3U8 file.
 
 Suppose that four users, A, B, C, and D, join the same channel at different times. In individual mode, the recording generates two M3U8 files and several TS/WebM files for each UID. After merging the audio and video by using the Audio & Video Merge script, each UID has one MP4 file. Through the RESTful API callback service or by parsing the M3U8 file, you can get the start timestamp of each UID. You can then synchronize the playback by playing the four MP4 files and other stream files on the same timeline.
 
-> If the media player on the client device does not support playing multiple MP4 files simultaneously, you can play the four MP4 files together on the server and record and combine them into one MP4 file.
 
 ### Composite mode
 

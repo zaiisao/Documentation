@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: In-call quality for iOS/macOS
 platform: iOS,macOS
-updatedAt: Mon Jan 06 2020 07:13:04 GMT+0800 (CST)
+updatedAt: Mon Jan 06 2020 07:13:57 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
@@ -68,7 +68,7 @@ The `remoteAudioStats` callback reports the audio statistics of each remote user
 | `audioLossRate`         | The frame loss rate of the received remote audio streams in the reported interval. | <li>Stages 2 + 3 + 4 + 5 in the figure above<li>In a reported interval, audio **freeze** occurs when the audio frame loss rate reaches 4%. |
 | `receivedSampleRate`    | The sample rate of the received remote audio streams in the reported interval. |                                                              |
 | `receivedBitrate`       | The **average** bitrate of the received remote audio streams in the reported interval. |                                                              |
-| `totalFrozenTime`       | The total **freeze** time (ms) of the remote audio streams after the remote user joins the channel. | <li>Agora defines `totalFrozenTime` = The number of times the audio freezes × two × 1000 (ms).<li>The total time is the cumulative duration after the remote user joins the channel. |
+| `totalFrozenTime`       | The total **freeze** time (ms) of the remote audio streams after the remote user joins the channel. | <li>Agora defines `totalFrozenTime` = The number of times the audio freezes × 2 × 1000 (ms).<li>The total time is the cumulative duration after the remote user joins the channel. |
 | `frozenRate`            | The total audio freeze time as a percentage of the total time when the audio is available. | When the remote user/host neither stops sending the audio stream nordisables the audio module after joining the channel, the audio is **available**. |
 
 The `remoteAudioStats` callback reports statistics more closely linked to the real-user experience of the audio transmission quality. Even if network packet loss occurs, users may find the overall audio quality acceptable because the audio frame loss rate of the received audio streams may not be high due to the **anti-packet-loss** and congestion control methods, such as forward error correction (FEC), retransmissions and bandwidth estimation.
@@ -122,7 +122,7 @@ The `remoteVideoStats` callback reports the video statistics of each remote user
 | :------------------------ | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | `rxStreamType`            | The type of video streams.                                   | High-video streams or low-video streams, see [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode). |
 | `receivedBitrate`         | The bitrate of the video received in the reported interval.  |                                                              |
-| `packetLossRate`          | The packet loss rate of the video received in the reported interval. | <li>Stages two + 3 + 4 in the figure above<li>The packet loss rate after using the **anti-packet-loss** method, which is lower than before. |
+| `packetLossRate`          | The packet loss rate of the video received in the reported interval. | <li>Stages 2 + 3 + 4 in the figure above<li>The packet loss rate after using the **anti-packet-loss** method, which is lower than before. |
 | `decoderOutputFrameRate`  | The output frame rate of the remote video decoder.           |                                                              |
 | `rendererOutputFrameRate` | The output frame rate of the remote video renderer.          |                                                              |
 | `totalFrozenTime`         | The total **freeze** time (ms) of the remote video stream after the remote user joins the channel. | In a video call or video broadcasting session where the frame rate is set to no less than 5 fps, video **freeze** occurs when the time interval between two adjacent renderable video frames is more than 500 ms. |

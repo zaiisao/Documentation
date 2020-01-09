@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:20:38 GMT+0800 (CST)
+updatedAt: Wed Jan 08 2020 06:58:43 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction

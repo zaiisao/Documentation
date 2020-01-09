@@ -3,12 +3,12 @@
 title: Report Call Statistics
 description: In-call quality for web
 platform: Web
-updatedAt: Sun Sep 29 2019 08:25:18 GMT+0800 (CST)
+updatedAt: Mon Jan 06 2020 07:43:09 GMT+0800 (CST)
 ---
 # Report Call Statistics
 ## Introduction
 
-The Agora Web SDK provides API methods for you to get the audio-and-video statistics reflecting the overall quality of a call.
+The Agora Web SDK provides API methods for you to get the audio and video statistics reflecting the overall quality of a call.
 
 The statistics include:
 
@@ -43,6 +43,7 @@ client.getSystemStats((stats) => {
 ### Get the statistics of the network
 
 Call the  [`Client.getTransportStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#gettransportstats)[<sup>[1]</sup>](#reference) method to get the network type and the statistics of the network connection[<sup>[2]</sup>](#reference), including: 
+
   - `NetworkType`: The network type[<sup>[3]</sup>](#reference), such as Wi-Fi, cellular network or bluetooth network.
   - `OutgoingAvailableBandwidth`: The estimated available bandwidth for sending the stream, in Kbps.
   - `RTT`: The RTT (Round-Trip Time) between the SDK and the access node of the SD-RTN, in ms.
@@ -54,6 +55,7 @@ client.getTransportStats((stats) => {
     console.log(`Current Transport OutgoingAvailableBandwidth: ${stats.OutgoingAvailableBandwidth}`);
 });                           
 ```
+
 <a name ="reference"></a>
 
 > - [1] This method only supports Google Chrome.
@@ -62,7 +64,7 @@ client.getTransportStats((stats) => {
 
 <a name ="session_statistics"></a>
 
-### Gets the Statistics of the Session
+### Get the statistics of the session
 
 Call the [`Client.getSessionStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getsessionstats) method to get the statistics of the session, including: 
 
@@ -92,6 +94,7 @@ client.getSessionStats((stats) => {
 > - It takes at most 3 seconds to get the statistics.
 
 <a name ="local_stream_statistics"></a>
+
 ### Get the statistics of the local stream
 
 - Call the [`Client.getLocalAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getlocalaudiostats) method to get the **audio** statistics of the local stream, including:
@@ -152,18 +155,26 @@ client.getLocalVideoStats((localVideoStats) => {
 > - It takes at most 3 seconds to get the statistics.
 
 <a name ="remote_stream_statistics"></a>
+
 ### Get the statistics of the remote stream
 
-- Call the [`Client.getRemoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats) method to get the **audio** statistics of the remote stream, including:
-  - `CodecType`: Decoding type of the received audio.
-  - `End2EndDelay`: End-to-end delay (ms). Delay from capturing to playing the audio.
-  - `MuteState`: Whether the audio is muted or not.
-  - `PacketLossRate`: Packet loss rate (%) of the remote audio.
-  - `RecvBitrate`: Bitrate of the received audio, in Kbps.
-  - `RecvLevel`: Volume of the received audio.
-  - `TotalFreezeTime`: Total freeze time (ms) of the received audio.
-  - `TotalPlayDuration`: Total playing duration (ms) of the received audio.
-  - `TransportDelay`: Transport delay (ms). Delay from sending to receiving the audio.
+**Statistics of remote audio streams**
+
+![](https://web-cdn.agora.io/docs-files/1565945275984)
+
+- Call the [`Client.getRemoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremoteaudiostats) method to get the **audio** statistics of the remote stream.
+
+  | Parameter           | Description                                                  |
+  | ------------------- | ------------------------------------------------------------ |
+  | `CodecType`         | Decoding type of the received audio.                         |
+  | `End2EndDelay`      | End-to-end delay (ms). Delay from capturing to playing the audio.<br>Stages 1 + 2 + 3 + 4 + 5 + 6 in the above figure. |
+  | `MuteState`         | Whether the audio is muted.                                  |
+  | `PacketLossRate`    | Packet loss rate (%) of the remote audio.                    |
+  | `RecvBitrate`       | Bitrate of the received audio (Kbps).                        |
+  | `RecvLevel`         | Volume of the received audio.                                |
+  | `TotalFreezeTime`   | Total freeze time (s) of the received audio.                |
+  | `TotalPlayDuration` | Total playing duration (s) of the received audio.           |
+  | `TransportDelay`    | Transport delay (ms). Delay from sending to receiving the audio.<br>Stages 2 + 3 + 4 in the above figure. |
 
 ``` javascript
 client.getRemoteAudioStats((remoteAudioStatsMap) => {
@@ -181,19 +192,26 @@ client.getRemoteAudioStats((remoteAudioStatsMap) => {
 });
 ```
 
-- Call the [`Client.getRemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats) method to get the **video** statistics of the remote stream, including:
-  - `End2EndDelay`: End-to-end delay (ms). Delay from capturing to playing the video.
-  - `MuteState`: Whether the video is muted or not.
-  - `PacketLossRate`: Packet loss rate (%) of the remote video.
-  - `RecvBitrate`: Bitrate of the received video, in Kbps.
-  - `RecvResolutionHeight`: Height of the received video, in pixels.
-  - `RecvResolutionWidth`: Width of the received video, in pixels.
-  - `RenderFrameRate`: Rendering frame rate of the decoded video, in fps.
-  - `RenderResolutionHeight`: Height of the rendered video, in pixels.
-  - `RenderResolutionWidth`: Width of the rendered video, in pixels.
-  - `TotalFreezeTime`: Total freeze time of the received video.
-  - `TotalPlayDuration`: Total playing duration of the received video.
-  - `TransportDelay`: Transport delay in ms. Delay from sending to receiving the video.
+**Statistics of remote video streams**
+
+![](https://web-cdn.agora.io/docs-files/1565945292345)
+
+- Call the [`Client.getRemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getremotevideostats) method to get the **video** statistics of the remote stream.
+
+  | Parameter                | Description                                                  |
+  | ------------------------ | ------------------------------------------------------------ |
+  | `End2EndDelay`           | End-to-end delay (ms). Delay from capturing to playing the video.<br/>Stages 1 + 2 + 3 + 4 + 5 + 6 in the above figure. |
+  | `MuteState`              | Whether the video is muted.                                  |
+  | `PacketLossRate`         | Packet loss rate (%) of the remote video.                    |
+  | `RecvBitrate`            | Bitrate of the received video (Kbps).                        |
+  | `RecvResolutionHeight`   | Height of the received video, in pixels.                     |
+  | `RecvResolutionWidth`    | Width of the received video, in pixels.                      |
+  | `RenderFrameRate`        | Rendering frame rate of the decoded video, in fps.           |
+  | `RenderResolutionHeight` | Height of the rendered video, in pixels.                     |
+  | `RenderResolutionWidth`  | Width of the rendered video, in pixels.                      |
+  | `TotalFreezeTime`        | Total freeze time (s) of the received video.                 |
+  | `TotalPlayDuration`      | Total playing duration (s) of the received video.            |
+  | `TransportDelay`         | Transport delay (ms). Delay from sending to receiving the video.<br/>Stages 2 + 3 + 4 in the above figure. |
 
 ``` javascript
 client.getRemoteVideoStats((remoteVideoStatsMap) => {
@@ -222,6 +240,7 @@ client.getRemoteVideoStats((remoteVideoStatsMap) => {
 ### Reports on the uplink and downlink network conditions of the local user
 
 The [`network-quality`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) callback in  `Client.on` reports on the uplink and downlink network conditions of the local user once every two seconds.
+
 - `downlinkNetworkQuality`: The downlink network quality.
 - `uplinkNetworkQuality`: The uplink network quality.
 
@@ -248,7 +267,7 @@ client.on("network-quality", function(stats) {
 
 <a name ="exception"></a>
 
-### Reports on exception events in the channel
+### Reports exception events in the channel
 
 The [`exception`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)  callback in  `Client.on` reports on exception events in the channel. Exceptions are not errors, but usually mean quality issues. This callback also reports recovery from an exception.
 
