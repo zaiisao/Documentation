@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Tue Jan 14 2020 03:49:28 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 03:57:58 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -645,7 +645,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
     public static final int SOFTWARE_ENCODER = 1;
     ```
 
--   为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Agora%20Platform/token_migration.md) 。
+-   为更好地提升用户体验，Agora SDK 在 v2.1.0 版本中对动态秘钥进行了升级。如果你当前使用的 SDK 是 v2.1.0 之前的版本，并希望升级到 v2.1.0 或更高版本，请务必参考 [动态秘钥升级说明](../../cn/Voice/token_migration.md) 。
 
 
 **新增功能**
@@ -695,7 +695,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   `setUser`
 
 
-以下接口与录制相关，在 v2.3.0 版本后不再支持。Agora 提供专门的 Recording SDK 用于更好的录制服务，详见 [Agora Recording SDK 发版说明](../../cn/Product%20Overview/release_recording.md)。
+以下接口与录制相关，在 v2.3.0 版本后不再支持。Agora 提供专门的 Recording SDK 用于更好的录制服务，详见 [Agora Recording SDK 发版说明](../../cn/Voice/release_recording.md)。
 
 -   `startRecordingService`
 -   `stopRecordingService`
@@ -836,7 +836,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 
 #### 3. 在线频道信息查询
 
-新增 RESTful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见[控制台 RESTful API](../../cn/API%20Reference/dashboard_restful_communication.md)。
+新增 RESTful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见[控制台 RESTful API](../../cn/Voice/dashboard_restful_communication.md)。
 
 #### 4. 直播优化方案
 
