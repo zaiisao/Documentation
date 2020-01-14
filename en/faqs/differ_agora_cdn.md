@@ -3,7 +3,7 @@
 title: What is the difference between the Agora Interactive Broadcast technologies and common CDN + RTMP technologies?
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 11:24:18 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 11:35:34 GMT+0800 (CST)
 ---
 # What is the difference between the Agora Interactive Broadcast technologies and common CDN + RTMP technologies?
 Most CDN + RTMP technologies for live broadcast allow users to watch the live broadcast in a web browser, which lowers the audience's threshold. 
