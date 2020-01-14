@@ -3,7 +3,7 @@
 title: What is the difference between the Agora Interactive Broadcast technologies and common CDN + RTMP technologies?
 description: 
 platform: All Platforms
-updatedAt: Tue Jan 14 2020 11:35:34 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 11:35:37 GMT+0800 (CST)
 ---
 # What is the difference between the Agora Interactive Broadcast technologies and common CDN + RTMP technologies?
 Most CDN + RTMP technologies for live broadcast allow users to watch the live broadcast in a web browser, which lowers the audience's threshold. 
@@ -24,4 +24,4 @@ See the following table for details:
 | Transmission Algorithm      | TCP               | Private algorithm for fixing packet loss and adjusting the bitrate automatically according to the current bandwidth |
 | Picture-in-picture layout   | Fixed             | Can be adjusted dynamically                                  |
 
-Agora also enables the function of [publishing streams into the CDN](https://docs.agora.io/en/Interactive%20Broadcast/push_stream_android2.0?platform=Android) for social media sharing.
+Agora also enables the function of [publishing streams into the CDN](https://docs.agora.io/en/Interactive%20Broadcast/cdn_streaming_android?platform=Android) for social media sharing.
