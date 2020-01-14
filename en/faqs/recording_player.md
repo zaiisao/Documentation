@@ -3,7 +3,7 @@
 title: Which media players can play the recored files?
 description: 
 platform: Linux
-updatedAt: Tue Dec 10 2019 17:02:11 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 11:26:13 GMT+0800 (CST)
 ---
 # Which media players can play the recored files?
 You get different recorded files in different recording modes.
