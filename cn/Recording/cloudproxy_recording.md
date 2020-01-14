@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: How to enable cloud proxy for recording
 platform: Linux
-updatedAt: Tue Jan 14 2020 06:41:07 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 09:13:30 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能简介
