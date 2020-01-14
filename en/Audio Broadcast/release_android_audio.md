@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Tue Jan 14 2020 03:57:40 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 03:57:45 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -534,7 +534,7 @@ v2.3.2 adds the [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Audi
 
 This release also changes the behavior of the [adjustPlaybackSignalVolume](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b) method to control only the voice volume. Therefore, to mute the local audio playback, call both the `adjustPlaybackSignalVolume(0)` and `adjustAudioMixingVolume(0)` methods.
 
-See [Adjust the Volume](../../en/Audio%20Broadcast/volume_android_audio.md) for the scenarios and corresponding APIs.
+See [Adjust the Volume](../../en/Audio%20Broadcast/volume_android.md) for the scenarios and corresponding APIs.
 
 **Improvements**
 
@@ -549,7 +549,7 @@ We plan to improve the following callback in subsequent versions:
 
 - [`onLastmileQuality`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5): Reports the last mile network quality of the local user before the user joins a channel.
 
-For the list of API methods related to the call quality statistics and on how and when to use them, see [Report In-call Statistics](../../en/Audio%20Broadcast/in_call_statistics_android.md).
+For the list of API methods related to the call quality statistics and on how and when to use them, see [Report In-call Statistics](../../en/Audio%20Broadcast/in-call_quality_android.md).
 
 #### 2. New network connection policy 
 
@@ -707,7 +707,7 @@ To avoid adding too many users with the same uid into the CDN publishing channel
 -   <code>setUser</code>
 
 
-The following API methods are deleted and no longer supported in v2.3.0. Agora provides the Recording SDK for better recording services. For more information on the Recording SDK, see [Release Notes for Agora Recording SDK](../../en/Product%20Overview/release_recording.md).
+The following API methods are deleted and no longer supported in v2.3.0. Agora provides the Recording SDK for better recording services. For more information on the Recording SDK, see [Release Notes for Agora Recording SDK](../../en/Audio%20Broadcast/release_recording.md).
 
 -   <code>startRecordingService</code>
 -   <code>stopRecordingService</code>
@@ -844,10 +844,7 @@ In an interactive broadcast scenario, the host can enhance the local audio effec
 
 #### 3. Online statistics query
 
-Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host:
-
--   Voice or video calls: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_communication.md).
--   Interactive broadcasts: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_live.md).
+Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host. For details, see [Online Statistics Query API](../../en/Audio%20Broadcast/dashboard_restful_communication.md).
 
 **Improvements**
 
