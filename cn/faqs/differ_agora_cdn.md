@@ -3,7 +3,7 @@
 title: Agora 与一般的 CDN + RTMP 直播技术有何不同
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 11:24:02 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 11:34:10 GMT+0800 (CST)
 ---
 # Agora 与一般的 CDN + RTMP 直播技术有何不同
 CDN + RTMP 的直播技术使得观众在网页端就能观看直播，极大降低了观众的门槛。
@@ -24,4 +24,4 @@ CDN + RTMP 的直播技术使得观众在网页端就能观看直播，极大降
 | 传输算法   | TCP                  | Agora 私有丢包对抗、带宽自适应      |
 | 合图布局   | 固定                 | 可动态调整                          |
 
-此外，为了满足各类厂商多样的直播需求，声网也与多家 CDN 进行对接，支持[推流到 CDN](https://docs.agora.io/cn/Interactive%20Broadcast/push_stream_android2.0?platform=Android)，在社交平台上分享直播内容。
+此外，为了满足各类厂商多样的直播需求，声网也与多家 CDN 进行对接，支持[推流到 CDN](https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_android?platform=Android)，在社交平台上分享直播内容。
