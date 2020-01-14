@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Tue Jan 14 2020 05:42:59 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 05:43:05 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -565,7 +565,7 @@ The SDK has two log files, each with a default size of 512 KB. In case some cust
 
 v2.4.0 provides the following options for setting video encoder preferences:
 
-- Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html) class: [`minFrameRate`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#ad8d377cd077587ee0991d297b1a8c8bc) and [`degradationPrefer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a47f36783c1f9da09454c19cafb489b3c). You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Interactive%20Broadcast/videoProfile_android.md).
+- Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html) class: [`minFrameRate`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#ad8d377cd077587ee0991d297b1a8c8bc) and [`degradationPrefer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a47f36783c1f9da09454c19cafb489b3c). You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Interactive%20Broadcast/video_profile_android.md).
 
 - Setting the camera capture preference. v2.4.0 adds the [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab241578c1baf67e68bcabe1a07eb3363) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab241578c1baf67e68bcabe1a07eb3363).
 
@@ -688,7 +688,7 @@ We plan to improve the following callback in subsequent versions:
 
 - [`onLastmileQuality`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5): Reports the last mile network quality of the local user before the user joins a channel.
 
-For the list of API methods related to the call quality statistics and on how and when to use them, see [Report In-call Statistics](../../en/Interactive%20Broadcast/in_call_statistics_android.md).
+For the list of API methods related to the call quality statistics and on how and when to use them, see [Report In-call Statistics](../../en/Interactive%20Broadcast/in-call_quality_android.md).
 
 #### 2. New network connection policy 
 
@@ -1080,18 +1080,12 @@ In an interactive broadcast scenario, the host can enhance the local audio effec
 
 #### 3. Online statistics query
 
-Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host:
-
--   Voice or video calls: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_communication.md).
--   Interactive broadcasts: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_live.md).
+Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host. For details, see [Online Statistics Query API](../../en/Interactive%20Broadcast/dashboard_restful_communication.md).
 
 
 #### 4. 17-way video
 
-Adds the support of 17-way video in interactive broadcasts, see:
-
--   [Starting a Live Video Broadcast](../../en/Quickstart%20Guide/broadcast_video_android.md)
--   [Video Conference of 7+ Users](../../en/Interactive%20Broadcast/seventeen_people_android.md)
+Adds the support of 17-way video in interactive broadcasts, see [Video for 7+ Users](../../en/Interactive%20Broadcast/multi_user_video_android.md).
 
 
 #### 5. Video source customization
