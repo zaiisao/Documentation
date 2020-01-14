@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Tue Jan 14 2020 05:42:14 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 05:42:27 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -561,7 +561,7 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 
 一般场景下，Agora 默认的视频编码配置能满足需求。对于特定场景，该版本提供如下功能让用户选择视频偏好：
 
-- 弱网下画质或流畅偏好设置。该版本在视频编码属性 [`VideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html) 类中新增 2 个参数 [`minFrameRate`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#ad8d377cd077587ee0991d297b1a8c8bc) 和 [`degradationPrefer`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a47f36783c1f9da09454c19cafb489b3c)，分别用于设置最低视频编码帧率，以及带宽受限时编码帧率的偏好。这两个参数需要搭配使用，详情请参考[设置视频属性](../../cn/Video/videoProfile_android.md)。
+- 弱网下画质或流畅偏好设置。该版本在视频编码属性 [`VideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html) 类中新增 2 个参数 [`minFrameRate`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#ad8d377cd077587ee0991d297b1a8c8bc) 和 [`degradationPrefer`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a47f36783c1f9da09454c19cafb489b3c)，分别用于设置最低视频编码帧率，以及带宽受限时编码帧率的偏好。这两个参数需要搭配使用，详情请参考[设置视频属性](../../cn/Video/video_profile_android.md)。
 
 - 采集时预览或性能偏好设置。该版本新增接口 [`setCameraCapturerConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab241578c1baf67e68bcabe1a07eb3363)，通过设置摄像头采集偏好，用户可以根据实际场景选择优先保证设备性能还是视频质量。具体场景及参数选择，请参考 [API 文档](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab241578c1baf67e68bcabe1a07eb3363)。
 
@@ -678,7 +678,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 - [`onLastmileQuality`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2887941e3c105c21309bd2643372e7f5)：通话前网络上下行 Last mile 质量报告回调
 
-该版本对数据统计相关回调进行了统一梳理，相关回调及算法详见[通话中数据统计](../../cn/Video/in_call_statistics_android.md)。
+该版本对数据统计相关回调进行了统一梳理，相关回调及算法详见[通话中数据统计](../../cn/Video/in-call_quality_android.md)。
 
 #### 2. 改进获取 SDK 网络连接状态的生成策略
 
@@ -1160,11 +1160,7 @@ SDK 升级至 2.1.2 的直播模式后，相同分辨率下，视频更清晰，
 
 #### 4. 17 人视频
 
-在直播场景下，同一频道内支持 17 位主播同时进行视频直播和连麦，详见文档:
-
--   [实现视频直播](../../cn/Quickstart%20Guide/broadcast_video_android.md)
-
--   [实现七人以上视频通话](../../cn/Video/seventeen_people_android.md)
+在直播场景下，同一频道内支持 17 位主播同时进行视频直播和连麦，详见文档[七人以上视频场景](../../cn/Video/multi_user_video_android.md)。
 
 
 #### 5. 自定义视频源
