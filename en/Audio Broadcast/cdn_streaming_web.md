@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Tue Dec 10 2019 04:20:41 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 03:12:50 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -129,6 +129,6 @@ We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advan
 
   > Please use `AgoraRTC.createClient({mode: "live", codec: "h264"})` in this case.
 
-- Set the value of `videoBitrate` by referring to [Video Bitrate Table](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate). If you set a bitrate beyond the proper range, the SDK automatically adjusts it to a value within the range. 
+- Set the value of `videoBitrate` by referring to [Video Bitrate Table](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.videoencoderconfiguration.html#bitrate). If you set a bitrate beyond the proper range, the SDK automatically adjusts it to a value within the range. 
 
 - Agora charges a transcoding usage fee for CDN live streaming.
