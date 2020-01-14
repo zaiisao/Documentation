@@ -3,7 +3,7 @@
 title: 录制生成的文件支持哪些播放器
 description: 
 platform: Linux
-updatedAt: Thu Sep 12 2019 16:32:02 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 11:33:59 GMT+0800 (CST)
 ---
 # 录制生成的文件支持哪些播放器
 根据选择的录制模式不同，在录制结束后生成的录制文件也不一样。
