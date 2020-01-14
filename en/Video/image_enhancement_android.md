@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Android
-updatedAt: Mon Nov 25 2019 08:57:33 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:38:04 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -16,7 +16,7 @@ Agora provides an image enhancement API for users in social and entertainment sc
 
 Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Video/start_call_android.md) or [Start a Live Broadcast](../../en/Video/start_live_android.md) for details.
 
-Call the [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) method to flexibly add image enhancement features.
+Call the [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) method to flexibly add image enhancement features.
 
 This method has two parameters: 
 

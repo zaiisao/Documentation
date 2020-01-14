@@ -21,9 +21,9 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 3. Contact sales@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
 4. Add the following test IP addresses and ports to your whitelist.
 
-	The sources are the clients that integrate the Agora Native or Recording SDK.
+	The sources are the clients that integrate the Agora RTC SDK and Agora On-Premise Recording SDK.
 
- | Protocol | Destination  | Port                   | Port purpose      |
+ | Protocol | Destination IP address  | Port                   | Port function      |
  | ---- | ------------- | ---------------------- | ---------------------- |
  | TCP  | 120.92.118.34 | 4000                   | Message data transmission |
  | TCP  | 120.92.18.162 | 4000                   | Message data transmission |
@@ -38,7 +38,7 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
  | UDP  | 52.52.84.170  | 1080, 8000, 25000, 9700 | Edge node communication |
  | UDP  | 47.96.234.219 | 1080, 8000, 25000, 9700 | Edge node communication |
 
- <div class="alert note">These IPs are for testing only. You need to apply for exclusive IP resources for the production environment.</div>
+ <div class="alert note">These IP addresses and ports are for testing purposes only. In a production environment, apply for the dedicated IP addresses and ports.</div>
 
 5. Enable the cloud proxy by calling the `setParameters("{\"rtc.enable_proxy\"}:true"); ` method and see if the audio/video call works.
 6. Agora will provide the IP addresses (domain name) and ports for you to use the cloud proxy in the production environment. Add the IP address and ports to your whitelist.

@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: iOS
-updatedAt: Tue Sep 24 2019 07:51:46 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:37:58 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -17,7 +17,7 @@ Agora provides an image enhancement API for users in social and entertainment sc
 Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md) for details.
 
 
-Call the [`setBeautyEffectOptions`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setBeautyEffectOptions:options:) method to flexibly add image enhancement features.
+Call the [`setBeautyEffectOptions`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setBeautyEffectOptions:options:) method to flexibly add image enhancement features.
 
 This method has two parameters: 
 

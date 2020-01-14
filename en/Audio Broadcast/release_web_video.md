@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 02:43:25 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:47:54 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -177,10 +177,10 @@ v2.9.0 is released on September 5, 2019.
 
 **Compatibility changes**
 
-To improve the usability of the RTMP streaming service, v2.9.0 defines the following parameter limits in [`LiveTranscoding`:](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.livetranscoding.html?transId=2.9.0)
+To improve the usability of the RTMP streaming service, v2.9.0 defines the following parameter limits in [`LiveTranscoding`:](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.livetranscoding.html)
 
 - `videoFramerate`: Frame rate (fps) of the CDN live output video stream.  Agora adjusts all values over 30 to 30.
-- `videoBitrate`: Bitrate (Kbps) of the CDN live output video stream. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html#bitrate). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.
+- `videoBitrate`: Bitrate (Kbps) of the CDN live output video stream. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.videoencoderconfiguration.html#bitrate). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.
 - `videoCodecProfile`: The video codec profile. Set it as 66, 77, or 100. If you set this parameter to other values, Agora adjusts it to the default value of 100.
 - `width` and `height`: Pixel dimensions of the video. The minimum value of width x height is 16 x 16.
 

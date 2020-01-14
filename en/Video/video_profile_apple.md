@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 10 2019 04:20:36 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:37:45 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -62,11 +62,11 @@ We provide an open-source One-to-One-Video demo project on GitHub. You can try t
 	- Objective-C: The [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora%20Mac%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m) file
 
 ### API Reference
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)
 
 ## Considerations
 
-- Setting [`degradationPreference`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraVideoEncoderConfiguration.html#//api/name/degradationPreference) as `AgoraDegradationMaintainQuality` means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the `minFrameRate` parameter to balance the frame rate and video quality under unreliable network connections:
+- Setting [`degradationPreference`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/degradationPreference) as `AgoraDegradationMaintainQuality` means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the `minFrameRate` parameter to balance the frame rate and video quality under unreliable network connections:
 
 	- When  `minFrameRate` is relatively low, the frame rate degrades significantly, so the poor network conditions have little impact on the video quality.
 	- When `minFrameRate` is relatively high, the frame rate degrades within a limited range, so the poor network conditions can have huge impact on the video quality.

@@ -22,9 +22,9 @@ The [Agora On-Premise Recording SDK v2.8.0](https://download.agora.io/ardsdk/rel
 
 2. Add the following test IP addresses and ports to your whitelist.
 
-  The sources are the clients that integrate the Agora Native or Recording SDK.
+  The sources are the clients that integrate the Agora RTC SDK and Agora On-Premise Recording SDK.
 
- | Protocol | Destination  | Port                   | Port purpose      |
+ | Protocol | Destination IP address  | Port                   | Port function      |
  | ---- | ------------- | ---------------------- | ---------------------- |
  | TCP  | 120.92.118.34 | 4000                   | Message data transmission |
  | TCP  | 120.92.18.162 | 4000                   | Message data transmission |
@@ -39,7 +39,7 @@ The [Agora On-Premise Recording SDK v2.8.0](https://download.agora.io/ardsdk/rel
  | UDP  | 52.52.84.170  | 1080, 8000, 25000, 9700 | Edge node communication |
  | UDP  | 47.96.234.219 | 1080, 8000, 25000, 9700 | Edge node communication |
 
- <div class="alert note">These IPs are for testing only. You need to apply for exclusive IP resources for the production environment.</div>
+ <div class="alert note">These IP addresses and ports are for testing purposes only. In a production environment, apply for the dedicated IP addresses and ports.</div>
 
 3. Set the `enableCloudPorxy` parameter as `true` in `RecordingConfig` when the recording app joins a channel and see if the recording works.
 

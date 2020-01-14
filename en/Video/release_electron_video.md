@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Electron
-updatedAt: Tue Dec 10 2019 04:20:30 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:48:53 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora SDK for Electron.
@@ -38,15 +38,15 @@ The new callback reports most of the remote video states, and therefore deprecat
 
 #### 1. Faster switching to another channel
 
-This release adds the [`switchChannel`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#switchchannel) method to enable the audience in a Live Broadcast channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `leaveChannel` and `joinedChannel` callbacks to indicate that the audience has left the original channel and joined a new one. 
+This release adds the [`switchChannel`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#switchchannel) method to enable the audience in a Live Broadcast channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `leaveChannel` and `joinedChannel` callbacks to indicate that the audience has left the original channel and joined a new one. 
 
 #### 2. Channel media stream relay
 
 This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different Live Broadcast channels interact with each other.
 
-- [`startChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#startchannelmediarelay)
-- [`updateChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#updatechannelmediarelay)
-- [`stopChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#stopchannelmediarelay)
+- [`startChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#startchannelmediarelay)
+- [`updateChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#updatechannelmediarelay)
+- [`stopChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#stopchannelmediarelay)
 
 During the media stream relay, the SDK reports the states and events of the relay with the `channelMediaRelayState` and `channelMediaRelayEvent` callbacks.
 
@@ -65,7 +65,7 @@ This release adds the `localAudioStats` callback to report the statistics of the
 
 #### 1. Reporting more statistics of the in-call quality
 
-This release adds the following statistics in the [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/interfaces/rtcstats.html), [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/interfaces/localvideostats.html), and [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/interfaces/remotevideostats.html) classes:
+This release adds the following statistics in the [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/electron/interfaces/rtcstats.html), [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/electron/interfaces/localvideostats.html), and [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/electron/interfaces/remotevideostats.html) classes:
 
 - `RtcStats`: The total number of the sent audio bytes, sent video bytes,  received audio bytes, and received video bytes during a session.
 - `LocalVideoStats`: The encoding bitrate, the width and height of the encoding frame, the number of frames, and the codec type of the local video.
@@ -89,7 +89,7 @@ This release improves the sharpness of text during screen sharing in the Communi
 #### Audio
 
 - When interoperating with a Web app, voice distortion occurs after the native app enables the remote sound position indication.
-- Invalid call of the [`muteRemoteAudioStream`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#muteremoteaudiostream) method.
+- Invalid call of the [`muteRemoteAudioStream`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#muteremoteaudiostream) method.
 - Occasionally no audio. 
 - Crashes occur when testing the microphone.
 
@@ -113,16 +113,16 @@ To improve the user experience, we made the following changes in v2.9.0:
 - `localAudioStats`
 - `localAudioStateChanged`
 - `remoteAudioStateChanged`
-- [`switchChannel`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#switchchannel)
-- [`startChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#startchannelmediarelay)
-- [`updateChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#updatechannelmediarelay)
-- [`stopChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#stopchannelmediarelay)
+- [`switchChannel`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#switchchannel)
+- [`startChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#startchannelmediarelay)
+- [`updateChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#updatechannelmediarelay)
+- [`stopChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#stopchannelmediarelay)
 - `channelMediaRelayState`
 - `channelMediaRelayEvent`
 - `remoteVideoStateChanged`
-- [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/interfaces/rtcstats.html): `txAudioBytes`, `txVideoBytes`, `rxAudioBytes` and `rxVideoBytes`
-- [`localVideoStats`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/interfaces/localvideostats.html): `encodedBitrate`,`encodedFrameWidth`,`encodedFrameHeight`, `encodedFrameCount` and `codecType`
-- [`remoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/electron/v2.9.0/interfaces/remotevideostats.html): `packetLossRate`
+- [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/electron/interfaces/rtcstats.html): `txAudioBytes`, `txVideoBytes`, `rxAudioBytes` and `rxVideoBytes`
+- [`localVideoStats`](https://docs.agora.io/en/Video/API%20Reference/electron/interfaces/localvideostats.html): `encodedBitrate`,`encodedFrameWidth`,`encodedFrameHeight`, `encodedFrameCount` and `codecType`
+- [`remoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/electron/interfaces/remotevideostats.html): `packetLossRate`
 
 #### Deprecated
 

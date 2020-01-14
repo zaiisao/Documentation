@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue Dec 10 2019 10:53:20 GMT+0800 (CST)
+updatedAt: Mon Jan 13 2020 03:58:07 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## 1. Authentication
@@ -54,11 +54,11 @@ The following chart shows how you can use Project APIs.
 
 								{
 
-									"id": 'xxxx',
-									"name": 'project1',
-									"vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-									"sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-									"recording_server": '10.2.2.8:8080',
+									"id": "xxxx",
+									"name": "project1",
+									"vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+									"sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+									"recording_server": "10.2.2.8:8080",
 									"status": 1,
 									"created": 1464165672
 
@@ -82,8 +82,8 @@ The following chart shows how you can use Project APIs.
 
 	```
 	{
-		"id":'xxxx',
-		"name":'xxxx'
+		"id":"xxxx",
+		"name":"xxxx"
 	}
 	```
 
@@ -95,11 +95,11 @@ The following chart shows how you can use Project APIs.
 
 						 {
 
-									"id": 'xxxx',
-									"name": 'project1',
-									"vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-									"sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-									"recording_server": '10.2.2.8:8080',
+									"id": "xxxx",
+									"name": "project1",
+									"vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+									"sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+									"recording_server": "10.2.2.8:8080",
 									"status": 1,
 									"created": 1464165672
 
@@ -123,7 +123,7 @@ The following chart shows how you can use Project APIs.
 
 	```
 	{
-		"name":'projectx',
+		"name":"projectx",
 		"enable_sign_key": true
 	}
 	```
@@ -135,10 +135,10 @@ The following chart shows how you can use Project APIs.
 		"project":
 						{
 
-							 "id": 'xxxx',
-							 "name": 'project1',
-							 "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-							 "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+							 "id": "xxxx",
+							 "name": "project1",
+							 "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+							 "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
 							 "status": 1,
 							 "created": 1464165672
 
@@ -154,7 +154,7 @@ The following chart shows how you can use Project APIs.
 
 	```
 	{
-		"id":'xxx',
+		"id":"xxx",
 		"status": 0
 	}
 	```
@@ -168,10 +168,10 @@ The following chart shows how you can use Project APIs.
 				"project":
 								{
 
-								 "id": 'xxxx',
-								 "name": 'project1',
-								 "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-								 "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+								 "id": "xxxx",
+								 "name": "project1",
+								 "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+								 "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
 								 "status": 0,
 								 "created": 1464165672
 
@@ -201,7 +201,7 @@ The following chart shows how you can use Project APIs.
 
 	```
 	{
-		"id":'xxxx'
+		"id":"xxxx"
 	}
 	```
 
@@ -233,8 +233,8 @@ The following chart shows how you can use Project APIs.
 
 	```
 	{
-		"id":'xxxx',
-		"recording_server": '10.12.1.5:8080'
+		"id":"xxxx",
+		"recording_server": "10.12.1.5:8080"
 	}
 	```
 
@@ -357,14 +357,14 @@ The following chart shows how you can use Usage APIs.
 		{
 			"usages":[
 
-								{ "project": 'xxx',
+								{ "project": "xxx",
 														"daily": [
 																	{ "date": 20150101, "audio": 20, "sd": 100, "hd": 132, "hdp": 225},
 																	{ "date": 20150102, "audio": 20, "sd": 100, "hd": 132, "hdp": 225},
 															]
 														},
 
-														{ "project": 'yyy',
+														{ "project": "yyy",
 															"daily": [....]
 														}
 

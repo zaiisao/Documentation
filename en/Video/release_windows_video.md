@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Oct 28 2019 02:56:41 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:59:13 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -454,36 +454,36 @@ v2.4.0 is released on April 1, 2019.
 
 v2.4.0 upgrades screen sharing and provides the following advanced functions:
 
-- Shares the whole or part of a specified screen in a multi-display environment ([`startScreenCaptureByScreenRect`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a41893fe9a0ca49c054bf6dbd7d9d68f5)).
-- Shares the whole or part of a specified window ([`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52)) .
-- Sets the content hint of the screen sharing to prioritize motion or detail ([`setScreenCaptureContentHint`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)).
-- Sets the dimensions, frame rate and bitrate for screen sharing ([`updateScreenCaptureParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#ad680e114ba3b8a0012454af6867c7498)).
+- Shares the whole or part of a specified screen in a multi-display environment ([`startScreenCaptureByScreenRect`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a41893fe9a0ca49c054bf6dbd7d9d68f5)).
+- Shares the whole or part of a specified window ([`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52)) .
+- Sets the content hint of the screen sharing to prioritize motion or detail ([`setScreenCaptureContentHint`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)).
+- Sets the dimensions, frame rate and bitrate for screen sharing ([`updateScreenCaptureParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ad680e114ba3b8a0012454af6867c7498)).
 
 v2.4.0 deprecates the `startScreenCapture` method. We recommend using the new methods for screen sharing. With the new methods, developers need to design the code logic to obtain the `screenRect` and `windowId`. For more information, see [Share the Screen](../../en/Video/screensharing_windows.md).
 
 #### 2. Voice changer and voice reverberation
 
-Adding voice changer and reverberation effects in an audio chat room brings much more fun. v2.4.0 adds the [`setLocalVoiceChanger`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a70175273dade14bcf8d74e71f8de7eda) and [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#add46038703f2f82dad83c0319d43433b) methods, allowing you to change your voice or reverberation by choosing from the preset options. See [Adjust the pitch and tone](../../en/Video/voice_effect_windows.md).
+Adding voice changer and reverberation effects in an audio chat room brings much more fun. v2.4.0 adds the [`setLocalVoiceChanger`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a70175273dade14bcf8d74e71f8de7eda) and [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#add46038703f2f82dad83c0319d43433b) methods, allowing you to change your voice or reverberation by choosing from the preset options. See [Adjust the pitch and tone](../../en/Video/voice_effect_windows.md).
 
 #### 3. Tracking the sound position of a remote user 
 
-v2.4.0 adds the [`enableSoundPositionIndication`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d) and [`setRemoteVoicePosition`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20). Call the [`enableSoundPositionIndication`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d) method before joining a channel to enable stereo panning for the remote users, and then you can call the [`setRemoteVoicePosition`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20) method to track the position of a remote user.
+v2.4.0 adds the [`enableSoundPositionIndication`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d) and [`setRemoteVoicePosition`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20). Call the [`enableSoundPositionIndication`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d) method before joining a channel to enable stereo panning for the remote users, and then you can call the [`setRemoteVoicePosition`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20) method to track the position of a remote user.
 
 #### 4. Pre-call last-mile network probe test
 
-Conducting a last-mile probe test before joining the channel helps the local user to evaluate or predict the uplink network conditions. v2.4.0 adds the [`startLastmileProbeTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#adb3ab7a20afca02f5a5ab6fafe026f2b), [`stopLastmileProbeTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a94f3494035429684a750e1dee7ef1593), and [`onLastmileProbeResult`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a44134dfda5d412831fa8e44fa533fca5) APIs, allowing you to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
+Conducting a last-mile probe test before joining the channel helps the local user to evaluate or predict the uplink network conditions. v2.4.0 adds the [`startLastmileProbeTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adb3ab7a20afca02f5a5ab6fafe026f2b), [`stopLastmileProbeTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a94f3494035429684a750e1dee7ef1593), and [`onLastmileProbeResult`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a44134dfda5d412831fa8e44fa533fca5) APIs, allowing you to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
 
 #### 5. Audio device loopback test
 
-v2.4.0 adds the [`startAudioDeviceLoopbackTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac78c08f3212dc3efa000e197207dec53) and [`stopAudioDeviceLoopbackTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#aad01da1e0bacd3f2fd355483f9e3befb) methods for testing whether the local audio devices are working properly. The test involves only the local audio devices and does not report the network condition.
+v2.4.0 adds the [`startAudioDeviceLoopbackTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac78c08f3212dc3efa000e197207dec53) and [`stopAudioDeviceLoopbackTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#aad01da1e0bacd3f2fd355483f9e3befb) methods for testing whether the local audio devices are working properly. The test involves only the local audio devices and does not report the network condition.
 
 #### 6. Setting the priority of a remote user's stream
 
-v2.4.0 adds the [`setRemoteUserPriority`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710) method for setting the priority of a remote user. You can use this method with the [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a50e727c34b662de64c03b0479a7fe8e7) method. If the fallback function is enabled for a remote stream, the SDK ensures the high-priority user gets the best possible stream quality.
+v2.4.0 adds the [`setRemoteUserPriority`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710) method for setting the priority of a remote user. You can use this method with the [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a50e727c34b662de64c03b0479a7fe8e7) method. If the fallback function is enabled for a remote stream, the SDK ensures the high-priority user gets the best possible stream quality.
 
 #### 7. State of an audio mixing file 
 
-v2.4.0 adds the [`onAudioMixingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a298389513bfaa50af4277fc3296e3f22) callback to report any change of the audio-mixing file playback state (playback succeeds or fails) and the corresponding reason. This release also adds the warning code 701, which is triggered if the local audio-mixing file does not exist, or if the SDK does not support the file format or cannot access the music file URL when playing the audio-mixing file.
+v2.4.0 adds the [`onAudioMixingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a298389513bfaa50af4277fc3296e3f22) callback to report any change of the audio-mixing file playback state (playback succeeds or fails) and the corresponding reason. This release also adds the warning code 701, which is triggered if the local audio-mixing file does not exist, or if the SDK does not support the file format or cannot access the music file URL when playing the audio-mixing file.
 
 #### 8. Setting the log file size
 
@@ -491,21 +491,21 @@ The SDK has two log files, each with a default size of 512 KB. In case some cust
 
 #### 9. Setting the background image for LiveTranscoding
 
-v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_live_transcoding.html#a729037c7cf31b57efd1e8c9fadeab6eb) parameter in the [`LiveTranscoding`](https://docs.agora.io/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_live_transcoding.html) Class in Windows to set the background image in the combined video of a live broadcast.
+v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a729037c7cf31b57efd1e8c9fadeab6eb) parameter in the [`LiveTranscoding`](../../API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html.md) Class in Windows to set the background image in the combined video of a live broadcast.
 
 **Improvements**
 
 #### 1. Accuracy of call quality statistics
 
 - v2.4.0 adds the intervalInSeconds parameter to the startEchoTest method, allowing you to set the interval between when you speak and when the recording plays back.
-- v2.4.0 adds three parameters to the [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_local_video_stats.html) class: [`targetBitrate`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_local_video_stats.html#a3e8d46c9b67c9fe62487ec56bc587fd6) for setting the target bitrate of the current encoder, [`targetFrameRate`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_local_video_stats.html#ac06928c5bf18c5db7eb4661dd783ba0a) for setting the target frame rate, and [`qualityAdaptIndication`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_local_video_stats.html#a902fc5b33956471b7a28f43399fa8b20) for reporting the quality of the local video since last count.
+- v2.4.0 adds three parameters to the [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html) class: [`targetBitrate`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#a3e8d46c9b67c9fe62487ec56bc587fd6) for setting the target bitrate of the current encoder, [`targetFrameRate`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#ac06928c5bf18c5db7eb4661dd783ba0a) for setting the target frame rate, and [`qualityAdaptIndication`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html#a902fc5b33956471b7a28f43399fa8b20) for reporting the quality of the local video since last count.
 
 #### 2. Video encoder preferences
 
 v2.4.0 provides the following options for setting video encoder preferences:
 
-- Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_video_encoder_configuration.html) class: minFrameRate and degradationPrefer. You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Video/videoProfile_windows.md).
-- Setting the camera capture preference. v2.4.0 adds the [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af).
+- Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html) class: minFrameRate and degradationPrefer. You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Video/videoProfile_windows.md).
+- Setting the camera capture preference. v2.4.0 adds the [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af).
 
 #### 3. Core quality improvements
 
@@ -543,25 +543,25 @@ To improve your experience, we made the following changes to the APIs:
 
 #### Added
 
-- [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a5899cc462e5250028c9afada4df98d48)
-- [`startScreenCaptureByScreenRect`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a41893fe9a0ca49c054bf6dbd7d9d68f5)
-- [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52)
-- [`updateScreenCaptureParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#ad680e114ba3b8a0012454af6867c7498)
-- [`setScreenCaptureContentHint`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)
-- [`setLocalVoiceChanger`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a70175273dade14bcf8d74e71f8de7eda)
-- [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#add46038703f2f82dad83c0319d43433b)
-- [`enableSoundPositionIndication`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d)
-- [`setRemoteVoicePosition`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20)
-- [`startLastmileProbeTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#adb3ab7a20afca02f5a5ab6fafe026f2b)
-- [`stopLastmileProbeTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a94f3494035429684a750e1dee7ef1593)
-- [`setRemoteUserPriority`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710)
-- [`startEchoTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a842ed126b6e21a39059adaa4caa6d021)
-- [`startAudioDeviceLoopbackTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac78c08f3212dc3efa000e197207dec53)
-- [`stopAudioDeviceLoopbackTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_audio_device_manager.html#aad01da1e0bacd3f2fd355483f9e3befb)
-- [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)
-- [`setLogFileSize`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1)
-- [`onAudioMixingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a298389513bfaa50af4277fc3296e3f22)
-- [`onLastmileProbeResult`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a44134dfda5d412831fa8e44fa533fca5) 
+- [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5899cc462e5250028c9afada4df98d48)
+- [`startScreenCaptureByScreenRect`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a41893fe9a0ca49c054bf6dbd7d9d68f5)
+- [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52)
+- [`updateScreenCaptureParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ad680e114ba3b8a0012454af6867c7498)
+- [`setScreenCaptureContentHint`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)
+- [`setLocalVoiceChanger`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a70175273dade14bcf8d74e71f8de7eda)
+- [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#add46038703f2f82dad83c0319d43433b)
+- [`enableSoundPositionIndication`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af91af072cfca4ac04e64907618b0cd2d)
+- [`setRemoteVoicePosition`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#af85b6be0a185fc67acc6eabe31467d20)
+- [`startLastmileProbeTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adb3ab7a20afca02f5a5ab6fafe026f2b)
+- [`stopLastmileProbeTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a94f3494035429684a750e1dee7ef1593)
+- [`setRemoteUserPriority`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aecb5d85e9b3a60947d569b88253da710)
+- [`startEchoTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a842ed126b6e21a39059adaa4caa6d021)
+- [`startAudioDeviceLoopbackTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac78c08f3212dc3efa000e197207dec53)
+- [`stopAudioDeviceLoopbackTest`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#aad01da1e0bacd3f2fd355483f9e3befb)
+- [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af)
+- [`setLogFileSize`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a6fb256cb165856a4412bb30b098408a1)
+- [`onAudioMixingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a298389513bfaa50af4277fc3296e3f22)
+- [`onLastmileProbeResult`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a44134dfda5d412831fa8e44fa533fca5) 
 
 #### Deprecated
 

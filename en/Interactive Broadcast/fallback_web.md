@@ -3,7 +3,7 @@
 title: Video Stream Fallback
 description: 
 platform: Web
-updatedAt: Sun Sep 29 2019 09:42:28 GMT+0800 (CST)
+updatedAt: Mon Jan 13 2020 07:07:05 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
@@ -20,11 +20,11 @@ Refer to the following steps to set the stream fallback under poor network condi
 1. After calling the `Stream.init` method successfully, the host calls the `enableDualStreamMode` method to enable [dual stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode).
 	> We do not recommend using the track methods ([addTrack](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#addtrack)/[removeTrack](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#removetrack)/[replaceTrack](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#replacetrack)) on dual streams, which might cause different performance in the high-video and low-video streams.
 
-2. Users in the channel call the `setStreamFallbackOption` method to set the subscribed stream fallback under poor network conditions.
+2. Users in the channel call the `Client.setStreamFallbackOption` method to set the subscribed stream fallback under poor network conditions.
 	- Set `fallbackType (1)` to only subscribe to the low-video stream from the host under poor network conditions.
 	- Set `fallbackType (2)` to susbcribe to the low-video stream or even audio stream from the host under poor network conditions.
 
-3. (Optional) Users in the channel call the `setRemoteVideoStreamType` method and set `streamType (1)` to only subscribe to the low-video stream under poor network conditions.
+3. (Optional) Users in the channel call the `Client.setRemoteVideoStreamType` method and set `streamType (1)` to only subscribe to the low-video stream under poor network conditions.
 	
 Once the remote media stream switches to the low stream due to poor network conditions, you can monitor the stream switch between a high and low stream in the `Client.on("stream-type-changed")` callback. When the remotely subscribed video stream falls back to audio only or when the audio-only stream switches back to the video stream, the SDK triggers the `Client.on("stream-fallback")` callback. 
 
@@ -50,7 +50,7 @@ client.setRemoteVideoStreamType(remoteStream, 1);
 
 ### API reference
 
-- [`enableDualStreamMode`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#enabledualstream)
+- [`enableDualStream`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#enabledualstream)
 - [`setStreamFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setstreamfallbackoption)
 - [`setRemoteVideoStreamType`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setremotevideostreamtype)
 

@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Mon Nov 18 2019 01:43:06 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:37:52 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -51,11 +51,11 @@ lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
 ```
 
 ### API Reference
-* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
 
 ## Considerations
 
-- Setting [`degradationPreference`](https://docs.agora.io/en/Video/API%20Reference/cpp/v2.4/structagora_1_1rtc_1_1_video_encoder_configuration.html#a491316b0de64bf930938404b113f062f) as `MAINTAIN_QUALITY` means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the `minFrameRate` parameter to balance the frame rate and video quality under unreliable network connections:
+- Setting [`degradationPreference`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#a491316b0de64bf930938404b113f062f) as `MAINTAIN_QUALITY` means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the `minFrameRate` parameter to balance the frame rate and video quality under unreliable network connections:
 
 	- When  `minFrameRate` is relatively low, the frame rate degrades significantly, so the poor network conditions have little impact on the video quality.
 	- When `minFrameRate` is relatively high, the frame rate degrades within a limited range, so the poor network conditions can have huge impact on the video quality.
