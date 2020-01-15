@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Tue Jan 14 2020 10:01:16 GMT+0800 (CST)
+updatedAt: Wed Jan 15 2020 07:38:38 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
