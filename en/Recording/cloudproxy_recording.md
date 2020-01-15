@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy for recording
 platform: All Platforms
-updatedAt: Tue Jan 14 2020 10:16:46 GMT+0800 (CST)
+updatedAt: Wed Jan 15 2020 02:22:13 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
