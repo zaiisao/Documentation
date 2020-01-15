@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Electron
-updatedAt: Tue Jan 07 2020 03:40:27 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:51:18 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora SDK for Electron 的发版说明。
@@ -39,15 +39,15 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
 
 #### 1. 快速切换频道
 
-为方便直播频道中的观众用户快速切换到其他频道，该版本新增 [`switchChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#switchchannel) 方法。和先调 `leaveChannel`，再调 `joinChannel` 相比，该方法能实现更快的频道切换。调用 `switchChannel` 方法切换到其他直播频道后，本地会先收到离开原频道的回调 `leaveChannel`，再收到成功加入新频道的回调 `joinedChannel`。
+为方便直播频道中的观众用户快速切换到其他频道，该版本新增 [`switchChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#switchchannel) 方法。和先调 `leaveChannel`，再调 `joinChannel` 相比，该方法能实现更快的频道切换。调用 `switchChannel` 方法切换到其他直播频道后，本地会先收到离开原频道的回调 `leaveChannel`，再收到成功加入新频道的回调 `joinedChannel`。
 
 #### 2. 跨频道媒体流转发
 
 跨频道媒体流转发，指将主播的媒体流转发至其他直播频道，实现主播跨频道与其他主播实时互动的场景。该版本新增如下接口，通过将源频道中的媒体流转发至目标频道，实现跨直播间连麦功能：
 
-- [`startChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#startchannelmediarelay)
-- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#updatechannelmediarelay)
-- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#stopchannelmediarelay)
+- [`startChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startchannelmediarelay)
+- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#updatechannelmediarelay)
+- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#stopchannelmediarelay)
 
 在跨频道媒体流转发过程中，SDK 会通过 `channelMediaRelayState` 和 `channelMediaRelayEvent` 回调报告媒体流转发的状态和事件。
 
@@ -66,7 +66,7 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
 
 #### 1. 通话中质量透明
 
-该版本进一步扩充了 [`RtcStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/interfaces/rtcstats.html)、[`LocalVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/interfaces/localvideostats.html) 和 [`RemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/interfaces/remotevideostats.html) 类的成员。各类新增成员如下：
+该版本进一步扩充了 [`RtcStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/interfaces/rtcstats.html)、[`LocalVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/interfaces/localvideostats.html) 和 [`RemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/interfaces/remotevideostats.html) 类的成员。各类新增成员如下：
 
 - `RtcStats` 类：累计发送音频/视频字节数及累计接收音频/视频字节数
 - `LocalVideoStats` 类：本地视频的编码码率、宽高、发送帧数及编码类型
@@ -90,7 +90,7 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
 #### 音频
 
 - 修复了与 Web 互通时听声辨位过程中出现的声音失真的问题。
-- 修复了 [`muteRemoteAudioStream`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#muteremoteaudiostream) 方法调用无效的问题。
+- 修复了 [`muteRemoteAudioStream`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#muteremoteaudiostream) 方法调用无效的问题。
 - 修复了特殊场景下偶现的音频无声的问题。
 - 修复了测试麦克风时出现的崩溃问题。
 
@@ -114,16 +114,16 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
 - `localAudioStats`
 - `localAudioStateChanged`
 - `remoteAudioStateChanged`
-- [`switchChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#switchchannel)
-- [`startChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#startchannelmediarelay)
-- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#updatechannelmediarelay)
-- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/classes/agorartcengine.html#stopchannelmediarelay)
+- [`switchChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#switchchannel)
+- [`startChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startchannelmediarelay)
+- [`updateChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#updatechannelmediarelay)
+- [`stopChannelMediaRelay`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#stopchannelmediarelay)
 - `channelMediaRelayState`
 - `channelMediaRelayEvent`
 - `remoteVideoStateChanged` ：`reason` 和 `elapsed`，原有的参数 `state` 使用新的枚举类取代
-- [`RtcStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/interfaces/rtcstats.html) 类：`txAudioBytes`，`txVideoBytes`，`rxAudioBytes` 和 `rxVideoBytes` 成员
-- [`localVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/interfaces/localvideostats.html) 类：`encodedBitrate`，`encodedFrameWidth`，`encodedFrameHeight`，`encodedFrameCount` 和 `codecType` 成员
-- [`remoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/v2.9.0/interfaces/remotevideostats.html) 类：`packetLossRate` 成员
+- [`RtcStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/interfaces/rtcstats.html) 类：`txAudioBytes`，`txVideoBytes`，`rxAudioBytes` 和 `rxVideoBytes` 成员
+- [`localVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/interfaces/localvideostats.html) 类：`encodedBitrate`，`encodedFrameWidth`，`encodedFrameHeight`，`encodedFrameCount` 和 `codecType` 成员
+- [`remoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/electron/interfaces/remotevideostats.html) 类：`packetLossRate` 成员
 
 
 #### 废弃

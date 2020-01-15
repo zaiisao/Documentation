@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:21:28 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:39:08 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
@@ -54,11 +54,11 @@ rtcEngine.setVideoEncoderConfiguration(config);
 
 ###  API 参考
 
-- [`setVideoEncoderConguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
+- [`setVideoEncoderConguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f)
 
 ## 开发注意事项
 
-- [`degradationPrefer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html?transId=2.4#a47f36783c1f9da09454c19cafb489b3c) 参数设置为 [`MAINTAIN_QUALITY`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/v2.4/enumio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration_1_1_d_e_g_r_a_d_a_t_i_o_n___p_r_e_f_e_r_e_n_c_e.html?transId=2.4#a654947f783b27ef8da2e7b1f1045ef50)，表示带宽受限时，降低编码帧率以保证视频质量。此时开发者可以使用 `minFrameRate` 参数设置当前最低的编码帧率，用于平衡帧率和视频质量。通常来说：
+- [`degradationPrefer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html?transId=2.4#a47f36783c1f9da09454c19cafb489b3c) 参数设置为 [`MAINTAIN_QUALITY`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/enumio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration_1_1_d_e_g_r_a_d_a_t_i_o_n___p_r_e_f_e_r_e_n_c_e.html?transId=2.4#a654947f783b27ef8da2e7b1f1045ef50)，表示带宽受限时，降低编码帧率以保证视频质量。此时开发者可以使用 `minFrameRate` 参数设置当前最低的编码帧率，用于平衡帧率和视频质量。通常来说：
 	- `minFrameRate` 较低时，一旦带宽不足，帧率下降幅度较大，画质清晰度受影响比较小
 	- `minFrameRate` 较高时，一旦带宽不足，帧率下降幅度有限，画质清晰度受影响比较大
 	

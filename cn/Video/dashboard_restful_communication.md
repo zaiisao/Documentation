@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 10:50:19 GMT+0800 (CST)
+updatedAt: Mon Jan 13 2020 03:53:31 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
@@ -73,11 +73,11 @@ BaseUrl：**https://api.agora.io/dev/v1**
     
                   {
     
-                    "id": 'xxxx',
-                    "name": 'project1',
-                    "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-                    "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-                    "recording_server": '10.2.2.8:8080',
+                    "id": "xxxx",
+                    "name": "project1",
+                    "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+                    "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+                    "recording_server": "10.2.2.8:8080",
                     "status": 1,
                     "created": 1464165672
     
@@ -114,11 +114,11 @@ BaseUrl：**https://api.agora.io/dev/v1**
     
                {
     
-                    "id": 'xxxx',
-                    "name": 'project1',
-                    "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-                    "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-                    "recording_server": '10.2.2.8:8080',
+                    "id": "xxxx",
+                    "name": "project1",
+                    "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+                    "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+                    "recording_server": "10.2.2.8:8080",
                     "status": 1,
                     "created": 1464165672
     
@@ -142,7 +142,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "name":'projectx',
+      "name":"projectx",
       "enable_sign_key": true
     }
     ```
@@ -154,10 +154,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
       "project":
               {
     
-                 "id": 'xxxx',
-                 "name": 'project1',
-                 "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-                 "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+                 "id": "xxxx",
+                 "name": "project1",
+                 "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+                 "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
                  "status": 1,
                  "created": 1464165672
     
@@ -174,7 +174,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "id":'xxx',
+      "id":"xxx",
       "status": 0
     }
     ```
@@ -188,10 +188,10 @@ BaseUrl：**https://api.agora.io/dev/v1**
           "project":
                   {
         
-                   "id": 'xxxx',
-                   "name": 'project1',
-                   "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-                   "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
+                   "id": "xxxx",
+                   "name": "project1",
+                   "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+                   "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
                    "status": 0,
                    "created": 1464165672
         
@@ -221,7 +221,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "id":'xxxx'
+      "id":"xxxx"
     }
     ```
 
@@ -254,8 +254,8 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "id":'xxxx',
-      "recording_server": '10.12.1.5:8080'
+      "id":"xxxx",
+      "recording_server": "10.12.1.5:8080"
     }
     ```
 
@@ -291,7 +291,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
     ```
     {
-      "id": `xxx`,
+      "id": "xxx",
       "enable": true
     }
     ```
@@ -327,7 +327,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 -   参数：
 
     ```
-    { "id": “xxx”} // 项目 id
+    { "id": "xxx"} // 项目 id
     ```
 
 -   响应：
@@ -379,14 +379,14 @@ BaseUrl：**https://api.agora.io/dev/v1**
         {
           "usages":[
         
-                    { "project": 'xxx',
+                    { "project": "xxx",
                                 "daily": [
                                       { "date": 20150101, "audio": 20, "sd": 100, "hd": 132, "hdp": 225},
                                       { "date": 20150102, "audio": 20, "sd": 100, "hd": 132, "hdp": 225},
                                   ]
                                 },
         
-                                { "project": 'yyy',
+                                { "project": "yyy",
                                   "daily": [....]
                                 }
         

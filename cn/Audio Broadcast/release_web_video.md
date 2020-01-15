@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 02:43:48 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:50:52 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -185,10 +185,10 @@ Agora 在该版本对 SDK 的传输质量和互通体验进行了优化，在首
 
 **升级必看**
 
-该版本优化了推流服务的性能和稳定性，对管理推流转码的接口 [`LiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.livetranscoding.html?transId=2.9.0) 的参数设置进行了如下限制：
+该版本优化了推流服务的性能和稳定性，对管理推流转码的接口 [`LiveTranscoding`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.livetranscoding.html) 的参数设置进行了如下限制：
 
 - `videoFramerate`：设置转码推流的帧率，单位为 fps。如果设置的帧率超过 30，Agora 服务端会自动调整为 30。
-- `videoBitrate`：设置转码推流的码率，单位为 Kbps。你可以根据[视频分辨率表格](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html#bitrate)中的码率值进行设置。如果设置的码率超出合理范围，Agora 服务端会在合理区间内对码率值进行自适应。
+- `videoBitrate`：设置转码推流的码率，单位为 Kbps。你可以根据[视频分辨率表格](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.videoencoderconfiguration.html#bitrate)中的码率值进行设置。如果设置的码率超出合理范围，Agora 服务端会在合理区间内对码率值进行自适应。
 - `videoCodecProfile`：设置转码推流的视频编码规格，可以设置为 66、77 或 100。如果设置其他值，Agora 会统一设为默认值 100。
 - `width` 和 `height`：设置转码推流的视频分辨率。**width x height** 的最小值不低于 **16 x 16**。
 

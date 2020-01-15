@@ -3,7 +3,7 @@
 title: 通话中质量监测
 description: iOS/macOS 通话质量检测
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 08:28:24 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:53:22 GMT+0800 (CST)
 ---
 # 通话中质量监测
 ## 功能描述
@@ -128,10 +128,10 @@ updatedAt: Sun Sep 29 2019 08:28:24 GMT+0800 (CST)
 ## API 参考
 - [`networkQuality`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:networkQuality:txQuality:rxQuality:)
 - [`reportRtcStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportRtcStats:)
-- [`localAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/v2.9.0/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioStats:)
-- [`localAudioStateChange`](https://docs.agora.io/cn/Voice/API%20Reference/oc/v2.9.0/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioStateChange:error:)
+- [`localAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioStats:)
+- [`localAudioStateChange`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioStateChange:error:)
 - [`remoteAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStats:)
-- [`remoteAudioStateChangedOfUid`](https://docs.agora.io/cn/Voice/API%20Reference/oc/v2.9.0/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStateChangedOfUid:state:reason:elapsed:)
+- [`remoteAudioStateChangedOfUid`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStateChangedOfUid:state:reason:elapsed:)
 - [`localVideoStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStats:)
 - [`localVideoStateChange`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localVideoStateChange:error:)
 - [`remoteVideoStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteVideoStats:)

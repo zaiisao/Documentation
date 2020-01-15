@@ -12,13 +12,13 @@ updatedAt: Mon Jan 13 2020 08:02:55 GMT+0800 (CST)
 
 ## 实现方法
 
-在实现视频流回退机制前，请确保已在你的项目中实现基本的音视频功能。详见[开始互动直播](../../cn/Interactive%20Broadcast/start_live_web.md)。
+在实现视频流回退机制前，请确保已在你的项目中实现基本的音视频功能。详见[开始互动直播](../../cn/Video/start_live_web.md)。
 
 参考如下步骤，在你的项目中实现视频流回退功能：
 
 1. 调用 `Stream.init` 成功后，主播调用 `Client.enableDualStream` 方法开启[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-duala双流模式)。
 
-   > 建议不要对双流进行 track 操作（包括 [addTrack](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#addtrack)/[removeTrack](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#removetrack)/[replaceTrack](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#replacetrack)），否则会导致大流和小流的表现不一致。
+   > 建议不要对双流进行 track 操作（包括 [addTrack](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#addtrack)/[removeTrack](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#removetrack)/[replaceTrack](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#replacetrack)），否则会导致大流和小流的表现不一致。
 
 2. 频道内用户调用 `Client.setStreamFallbackOption` 方法设置弱网环境下接收媒体流的回退选项。
 
@@ -49,14 +49,14 @@ client.setRemoteVideoStreamType(remoteStream, 1);
 
 ### API 参考
 
-- [`enableDualStream`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#enabledualstream)
-- [`setStreamFallbackOption`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setstreamfallbackoption)
-- [`setRemoteVideoStreamType`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setremotevideostreamtype)
+- [`enableDualStream`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#enabledualstream)
+- [`setStreamFallbackOption`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#setstreamfallbackoption)
+- [`setRemoteVideoStreamType`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#setremotevideostreamtype)
 
 ### 开发注意事项
 
 -  `enableDualStream` 方法对以下场景无效：
-   - 使用自采集属性（[`audioSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) 和 [`videoSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#videosource)）创建的流
+   - 使用自采集属性（[`audioSource`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) 和 [`videoSource`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#videosource)）创建的流
    - 音频通话 (audio: true, video: false)
    - iOS 上的 Safari 浏览器
    - 共享屏幕的场景

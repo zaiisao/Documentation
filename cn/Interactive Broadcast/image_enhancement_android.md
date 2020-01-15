@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 06:58:30 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:38:59 GMT+0800 (CST)
 ---
 # 美颜
 ## 功能描述
@@ -18,7 +18,7 @@ updatedAt: Tue Sep 24 2019 06:58:30 GMT+0800 (CST)
 
 在实现美颜功能前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_android.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_android.md)。
 
-调用 [`setBeautyEffectOptions`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/v2.4/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) 方法设置基础美颜功能。
+调用 [`setBeautyEffectOptions`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) 方法设置基础美颜功能。
 
 该方法有 2 个参数：
 

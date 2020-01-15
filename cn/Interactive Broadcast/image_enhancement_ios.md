@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: iOS
-updatedAt: Tue Sep 24 2019 08:01:15 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:39:02 GMT+0800 (CST)
 ---
 # 美颜
 ## 功能描述
@@ -18,7 +18,7 @@ updatedAt: Tue Sep 24 2019 08:01:15 GMT+0800 (CST)
 
 在实现美颜功能前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_ios.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_ios.md)。
 
-调用[`setBeautyEffectOptions`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setBeautyEffectOptions:options:) 方法配置基础美颜功能。
+调用[`setBeautyEffectOptions`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setBeautyEffectOptions:options:) 方法配置基础美颜功能。
 
 该方法有 2 个参数：
 

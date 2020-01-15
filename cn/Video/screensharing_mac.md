@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: macOS
-updatedAt: Thu Sep 26 2019 04:16:34 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:32:57 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -187,12 +187,12 @@ if (window_list) {
 	```
 
 ### API 参考
-* [`startScreenCaptureByDisplayId`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByDisplayId:rectangle:parameters:)
-* [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByWindowId:rectangle:parameters:)
-* [`updateScreenCaptureParameters`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureParameters:)
-* [`setScreenCaptureContentHint`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setScreenCaptureContentHint:)
-* [`updateScreenCaptureRegion:`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
-* [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
+* [`startScreenCaptureByDisplayId`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByDisplayId:rectangle:parameters:)
+* [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByWindowId:rectangle:parameters:)
+* [`updateScreenCaptureParameters`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureParameters:)
+* [`setScreenCaptureContentHint`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setScreenCaptureContentHint:)
+* [`updateScreenCaptureRegion:`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
+* [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
 
 ## 开发注意事项
 

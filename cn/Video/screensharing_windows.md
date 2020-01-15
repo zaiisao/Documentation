@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Windows
-updatedAt: Wed Nov 13 2019 10:59:44 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:29:51 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -142,12 +142,12 @@ EnumWindows(&EnumProc, NULL);
 	```
 
 ### API 参考
-* [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52)
-* [`startScreenCaptureByScreenRect`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a41893fe9a0ca49c054bf6dbd7d9d68f5)
-* [`updateScreenCaptureParameters`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#ad680e114ba3b8a0012454af6867c7498)
-* [`setScreenCaptureContentHint`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)
-* [`updateScreenCaptureRegion`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#ae2ab9c3ff28b64c601f938ab45644586)
-* [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
+* [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52)
+* [`startScreenCaptureByScreenRect`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a41893fe9a0ca49c054bf6dbd7d9d68f5)
+* [`updateScreenCaptureParameters`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ad680e114ba3b8a0012454af6867c7498)
+* [`setScreenCaptureContentHint`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)
+* [`updateScreenCaptureRegion`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ae2ab9c3ff28b64c601f938ab45644586)
+* [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
 
 
 ## 开发注意事项

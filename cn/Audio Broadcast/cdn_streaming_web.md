@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Fri Dec 27 2019 10:34:52 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:54:19 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -117,7 +117,7 @@ client.stopLiveStreaming("your RTMP URL")
 
   > 不转码情况下，需要使用 `AgoraRTC.createClient({mode: "live", codec: "h264"})` 模式。
 
-- 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/v2.9.0/interfaces/agorartc.videoencoderconfiguration.html?transId=2.9.0#bitrate)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
+- 你可以参考[视频分辨率表格](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.videoencoderconfiguration.html#bitrate)设置 `videoBitrate` 的值。如果设置的码率超出合理范围，Agora 服务器会在合理区间内自动调整码率值。
 - 请确保转码推流和非转码推流中使用的流地址不同。
 
 
