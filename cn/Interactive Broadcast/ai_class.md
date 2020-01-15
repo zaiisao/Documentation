@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Wed Jan 15 2020 07:38:38 GMT+0800 (CST)
+updatedAt: Wed Jan 15 2020 07:39:44 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
@@ -11,6 +11,8 @@ updatedAt: Wed Jan 15 2020 07:38:38 GMT+0800 (CST)
 ### 场景概述
 
 AI 互动课堂，是指通过服务端真人教学视频结合 AI 技术进行线上直播互动教学的场景。
+
+![](https://web-cdn.agora.io/docs-files/1579073897124)
 
 AI 互动课堂的整体过程如下：
 
