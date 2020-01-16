@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Jan 16 2020 01:48:35 GMT+0800 (CST)
+updatedAt: Thu Jan 16 2020 01:48:52 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -456,6 +456,10 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 - `sid`: String. The recording ID. The unique identification of the current recording.
 
 ## <a name="query"></a>Queries the recording status
+
+After you start the recording, you can call query to check the status of the recording.
+
+<div class="note alert"><code>query</code> is only valid during the session. If you call <code>query</code> after the recording stops，you get 404 (Not Found). We suggest that you use the callback service to get the notifications and details of all cloud recording events. Refer to <a href="https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest">Agora Cloud Recording RESTful API Callback Service</a> for more information about the callback service.</div>
 
 - Method: GET
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
