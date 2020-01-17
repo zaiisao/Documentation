@@ -3,7 +3,7 @@
 title: 云端录制更新历史
 description: 
 platform: Linux
-updatedAt: Fri Jan 17 2020 08:50:31 GMT+0800 (CST)
+updatedAt: Fri Jan 17 2020 08:50:42 GMT+0800 (CST)
 ---
 # 云端录制更新历史
 ## 简介
@@ -130,6 +130,6 @@ RESTful API 优化了对 `resourceId` 和 `cname` 以及 `uid` 是否对应的�
 
 - Agora Native SDK 和 Agora Web SDK 的高清音视频通话的录制
 - 频道内所有用户的音视频合流录制
-- 支持 3 种合流布局样式：Float（默认布局）、BestFit（自适应布局）、Vertical（垂直布局）。具体可参考 [TranscodingConfig](../../cn/cloud-recording/cloud_recording_api.md) 表格中的描述。
+- 支持 3 种合流布局样式：Float（默认布局）、BestFit（自适应布局）、Vertical（垂直布局）。
 - 第三方云存储，目前支持七牛云、阿里云和 Amazon S3
 - 提供 C++ 和 Java SDK 包
