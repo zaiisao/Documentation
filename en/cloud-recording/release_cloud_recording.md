@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 01:15:37 GMT+0800 (CST)
+updatedAt: Fri Jan 17 2020 08:51:21 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview
@@ -122,6 +122,6 @@ This is the first release of Agora Cloud Recording with the following functions:
 
 - High-quality voice and video recordings.
 - Mixed-stream voice and video recordings of all users in a channel.
-- Three composite video layouts: float (default), best fit, and vertical, see [Set Video Layout](../../en/cloud-recording/cloud_layout_guide.md) for details.
+- Three composite video layouts: float (default), best fit, and vertical.
 - Third-party cloud storage. Agora Cloud Recording supports Amazon S3, Alibaba Cloud, and Qiniu Cloud.
 - Provides C++ and Java SDK packages.
