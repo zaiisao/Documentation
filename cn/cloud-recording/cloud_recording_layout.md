@@ -3,7 +3,7 @@
 title: 设置合流布局
 description: 
 platform: Linux
-updatedAt: Fri Jan 17 2020 08:48:46 GMT+0800 (CST)
+updatedAt: Fri Jan 17 2020 08:53:31 GMT+0800 (CST)
 ---
 # 设置合流布局
 ## 功能描述
@@ -308,6 +308,4 @@ Body:
 
 ## 设置画布颜色
 
-如果你使用云端录制 SDK [调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart.md) 或使用 Demo 通过[命令行录制](../../cn/cloud-recording/cloud_recording_demo.md)，视频画布颜色默认为黑色，暂不支持修改。
-
-如果你[使用 RESTful API 进行录制](../../cn/cloud-recording/cloud_recording_rest.md)，你可以在调用 `start` 或 `updateLayout` 方法时传入 `backgroundColor` 参数设置视频画布颜色。支持 RGB 颜色表，字符串格式为 # 号后 6 个十六进制数。默认值 "#000000" 黑色。
+你可以在调用 `start` 或 `updateLayout` 方法时传入 `backgroundColor` 参数设置视频画布颜色。支持 RGB 颜色表，字符串格式为 # 号后 6 个十六进制数。默认值 "#000000" 黑色。
