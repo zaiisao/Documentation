@@ -103,9 +103,9 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
 
 <table>
     <tr>
-        <td>菜单</td>
-        <td>类型</td>
-        <td>内容</td>
+        <td><b>菜单</b></td>
+        <td><b>类型</b></td>
+        <td><b>内容</b></td>
     </tr>
     <tr>
         <td rowspan="4">App Sandbox</td>

@@ -100,9 +100,9 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 <table>
     <tr>
-        <td>Menu</td>
-        <td>Category</td>
-        <td>Item</td>
+        <td><b>Menu</b></td>
+        <td><b>Category</b></td>
+        <td><b>Item</b></td>
     </tr>
     <tr>
         <td rowspan="4">App Sandbox</td>
