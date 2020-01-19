@@ -82,7 +82,8 @@ Choose either of the following methods to integrate the Agora SDK into your proj
  ![](https://web-cdn.agora.io/docs-files/1568800879077)
 
 ### Add project permissions
-Add the following permissions in the **info.plist** file for device access according to your needs:
+
+1. Add the following permissions in the **info.plist** file for device access according to your needs:
 
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
@@ -97,6 +98,39 @@ Add the following permissions in the **info.plist** file for device access accor
 
 ![](https://web-cdn.agora.io/docs-files/1568800897225)
 
+2. If you enable the **App Sandbox** or **Hardened Runtime** settings in your project, check the following items to add the corresponding permissions:
+
+<table>
+    <tr>
+        <td>Menu</td>
+        <td>Category</td>
+        <td>Item</td>
+    </tr>
+    <tr>
+        <td rowspan="4">App Sandbox</td>
+        <td rowspan="2">Network</td>
+        <td>Incoming Connections (Server)</td>
+    </tr>
+    <tr>
+        <td>Incoming Connections (Client)</td>
+    </tr>
+	    <tr>
+        <td rowspan="2">Hardware</td>
+        <td>Camera</td>
+    </tr>
+    <tr>
+        <td>Audio Input</td>
+    </tr>
+	<tr>
+        <td rowspan="2">Hardened Runtime</td>
+        <td rowspan="2">Resource Access</td>
+        <td>Camera</td>
+    </tr>
+    <tr>
+        <td>Audio Input</td>
+</table>
+
+<div class="alert note">According to the requirements of Apple: <ul><li>Mac software distributed in the Mac App Store must enable the App Sandbox setting. See details in <a href="https://developer.apple.com/app-sandboxing/">Apple News and Updates</a>.<li>Mac software distributed outside the Mac App Store must enable the Hardened Runtime setting. See details in <a href="https://developer.apple.com/en/news/?id=09032019a">Apple News and Updates</a>.</li></ul></div>
 
 ## Implement the basic broadcast
 

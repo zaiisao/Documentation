@@ -84,7 +84,7 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
 
 ### 添加媒体设备权限
 
-根据场景需要，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
+1. 根据场景需要，打开 **Xcode** ，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
 
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
@@ -98,6 +98,40 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
 **添加后**：
  
 ![](https://web-cdn.agora.io/docs-files/1568801004827)
+
+2. 若你的项目已启用 **App Sandbox** 或 **Hardened Runtime** 设置，则需勾选如下内容，获取相应的设备权限：
+
+<table>
+    <tr>
+        <td>菜单</td>
+        <td>类型</td>
+        <td>内容</td>
+    </tr>
+    <tr>
+        <td rowspan="4">App Sandbox</td>
+        <td rowspan="2">Network</td>
+        <td>Incoming Connections (Server)</td>
+    </tr>
+    <tr>
+        <td>Incoming Connections (Client)</td>
+    </tr>
+	    <tr>
+        <td rowspan="2">Hardware</td>
+        <td>Camera</td>
+    </tr>
+    <tr>
+        <td>Audio Input</td>
+    </tr>
+	<tr>
+        <td rowspan="2">Hardened Runtime</td>
+        <td rowspan="2">Resource Access</td>
+        <td>Camera</td>
+    </tr>
+    <tr>
+        <td>Audio Input</td>
+</table>
+
+<div class="alert note">根据苹果官方要求：<ul><li>对于在 Mac App Store 发布的软件，需要启用 App Sandbox 设置。详见<a href="https://developer.apple.com/app-sandboxing/">苹果官方声明</a>。<li>对于不在 Mac App Store 发布的软件，需要启用 Hardened Runtime 设置。详见<a href="https://developer.apple.com/en/news/?id=09032019a">苹果官方声明</a>。</li></ul></div>
 
 ## 实现音视频通话
 
