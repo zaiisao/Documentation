@@ -131,7 +131,7 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
         <td>Audio Input</td>
 </table>
 
-<div class="alert note">根据苹果官方要求：<ul><li>对于在 Mac App Store 发布的软件，需要启用 App Sandbox 设置。详见<a href="https://developer.apple.com/app-sandboxing/">苹果官方声明</a>。<li>对于不在 Mac App Store 发布的软件，需要启用 Hardened Runtime 设置。详见<a href="https://developer.apple.com/en/news/?id=09032019a">苹果官方声明</a>。</li></ul></div>
+<div class="alert note">根据苹果官方要求：<ul><li>对于在 Mac App Store 发布的软件，需要启用 App Sandbox 设置。详见<a href="https://developer.apple.com/app-sandboxing/">苹果官方声明</a>。<li>对于不在 Mac App Store 发布的软件，需要启用 Hardened Runtime 设置。详见<a href="https://developer.apple.com/news/?id=09032019a">苹果官方声明</a>。</li></ul></div>
 
 ## 实现音视频通话
 

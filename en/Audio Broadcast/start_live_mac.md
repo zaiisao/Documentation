@@ -130,7 +130,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
         <td>Audio Input</td>
 </table>
 
-<div class="alert note">According to the requirements of Apple: <ul><li>Mac software distributed in the Mac App Store must enable the App Sandbox setting. See details in <a href="https://developer.apple.com/app-sandboxing/">Apple News and Updates</a>.<li>Mac software distributed outside the Mac App Store must enable the Hardened Runtime setting. See details in <a href="https://developer.apple.com/en/news/?id=09032019a">Apple News and Updates</a>.</li></ul></div>
+<div class="alert note">According to the requirements of Apple: <ul><li>Mac software distributed in the Mac App Store must enable the App Sandbox setting. See details in <a href="https://developer.apple.com/app-sandboxing/">Apple News and Updates</a>.<li>Mac software distributed outside the Mac App Store must enable the Hardened Runtime setting. See details in <a href="https://developer.apple.com/news/?id=09032019a">Apple News and Updates</a>.</li></ul></div>
 
 ## Implement the basic broadcast
 
