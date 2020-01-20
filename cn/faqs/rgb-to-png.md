@@ -3,7 +3,7 @@
 title: 如何将 RGB 文件转换为 PNG 文件
 description: 
 platform: All Platforms
-updatedAt: Mon Jan 20 2020 11:12:57 GMT+0800 (CST)
+updatedAt: Mon Jan 20 2020 11:16:22 GMT+0800 (CST)
 ---
 # 如何将 RGB 文件转换为 PNG 文件
 RTC 视频智能审核生成的视频截图为 RGB 格式，存储在你通过 `storageConfig` 参数定义的第三方云存储上。你可以通过以下两种方式，将 RGB 文件转换为可在浏览器中查看的 PNG 文件，以便人工复审。
