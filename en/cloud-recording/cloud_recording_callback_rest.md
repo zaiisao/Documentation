@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Mon Dec 30 2019 02:40:56 GMT+0800 (CST)
+updatedAt: Mon Jan 20 2020 02:20:14 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -74,7 +74,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
   - `2`: Minor
   - `3`: Medium
   - `4`: Major
-  - `5`: Fatal. A fatal error may cause the recording to exit. If you receive a message of this level, call the `query` API to check the current status and process the error according to the error notifications.
+  - `5`: Fatal. A fatal error may cause the recording to exit. If you receive a message of this level, call `query` to check the current status and process the error according to the error notifications.
 - `errorCode`: Number. The error code. 
   - If the error occurs in the recorder, see [error code and warning code](https://docs.agora.io/en/Recording/the_error_native).
   - If the error occurs in the uploader, see [upload error code](#uploaderr). 
