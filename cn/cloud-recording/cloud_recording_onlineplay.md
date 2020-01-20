@@ -3,7 +3,7 @@
 title: 在线播放录制文件
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:01:40 GMT+0800 (CST)
+updatedAt: Mon Jan 20 2020 02:06:43 GMT+0800 (CST)
 ---
 # 在线播放录制文件
 ## 功能描述
@@ -99,3 +99,4 @@ updatedAt: Tue Oct 29 2019 03:01:40 GMT+0800 (CST)
 - Safari 浏览器可以直接播放 M3U8 文件，其他浏览器可能需要安装 HLS 播放插件。
 - 支持 HLS 协议的播放器也可以播放 M3U8 文件，如 VLC media player。
 - 如果录制结束后收到的响应中 `uploadingStatus` 为 `"backuped"`，说明有部分录制内容上传到了备份云，必须等备份云将这部分文件上传到云存储之后才可以播放 M3U8 文件。
+- 设置公有读权限的目的是使 bucket 中的文件能被公开访问。如你无需在线播放录制文件，为提高安全性，建议你将 bucket 的权限设置为私有。
