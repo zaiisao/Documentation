@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Jan 20 2020 02:31:38 GMT+0800 (CST)
+updatedAt: Mon Jan 20 2020 02:31:43 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -457,9 +457,9 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 
 ## <a name="query"></a>Queries the recording status
 
-After you start the recording, you can call query to check the status of the recording.
+After you start a recording, you can call query to check its status.
 
-<div class="note alert"><code>query</code> is only valid during the session. If you call <code>query</code> after the recording stops，you get 404 (Not Found). We suggest that you use the callback service to get the notifications and details of all cloud recording events. Refer to <a href="https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest">Agora Cloud Recording RESTful API Callback Service</a> for more information about the callback service.</div>
+<div class="note alert"><code>query</code> works only with an ongoing recording session. If you call <code>query</code> after a recording ends or after it starts with error, you get a 404 (Not Found) error. We recommend that you use the callback service for getting the details of all cloud recording events. See <a href="https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest">Agora Cloud Recording RESTful API Callback Service</a> for more information.</div>
 
 - Method: GET
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
@@ -561,7 +561,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 ## <a name="stop"></a>Stops cloud recording
 
-When the recording finishes, call this method to leave the channel and stop recording. To use Agora Cloud Recording again, you need to call the  [`acquire`](#acquire) method for a new resource ID.
+When a recording finishes, call this method to leave the channel and stop recording. To use Agora Cloud Recording again, you need to call the  [`acquire`](#acquire) method for a new resource ID.
 
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/stop
