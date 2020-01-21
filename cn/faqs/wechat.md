@@ -3,12 +3,12 @@
 title: 小程序 SDK 常见问题集
 description: 
 platform: 微信小程序
-updatedAt: Tue Jan 21 2020 16:41:38 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 16:41:45 GMT+0800 (CST)
 ---
 # 小程序 SDK 常见问题集
 ### 推流/拉流处理
 
-推流/拉流处理可以参考或直接使用 [Github 上开源代码](https://github.com/AgoraIO/Agora-Miniapp-Tutorial)。
+推流/拉流处理可以参考或直接使用 [GitHub 上开源代码](https://github.com/AgoraIO/Agora-Miniapp-Tutorial)。
 
 ### 退后台处理
 
@@ -63,4 +63,4 @@ AgoraMiniappSDK.LOG.onlog = (text) => {
 
 ### 出现错误码
 
-Agora Miniapp SDK for WeChat 在调用 API 或运行时，可能会返回一个错误码对象，也可能会返回一个错误码。详细可以参考 [错误代码和警告代码](../../cn/faqs/the_error_wechat.md) 进行排查。
+Agora Miniapp SDK for WeChat 在调用 API 或运行时，可能会返回一个错误码对象，也可能会返回一个错误码。详细可以参考 [错误代码和警告代码](https://docs.agora.io/cn/Interactive%20Broadcast/the_error_wechat?platform=%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F) 进行排查。
