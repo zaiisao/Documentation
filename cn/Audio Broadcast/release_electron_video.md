@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Electron
-updatedAt: Tue Jan 14 2020 02:51:18 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 08:21:53 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora SDK for Electron 的发版说明。
