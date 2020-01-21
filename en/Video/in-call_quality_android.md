@@ -3,14 +3,14 @@
 title: Report In-call Statistics
 description: In-call quality for Android
 platform: Android
-updatedAt: Mon Jan 06 2020 07:14:02 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 08:26:38 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
 
 **After joining the channel**, the SDK triggers the following callbacks related to the call quality **once every two seconds**. You can see the last mile network quality, local statistics, audio quality, and video quality of the current call.
 
-We provide an open-source [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project. You can download the project and refer to the source code in the [`model`](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android/app/src/main/java/io/agora/openlive/model) folder.
+We provide an open-source [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project. You can download the project and refer to the source code.
 
 <div class="alert note">Ensure that you implement a video call or an interactive broadcast in your project. For details, see <a href="../../en/Video/start_call_android.md">Start a Call</a> or <a href="../../en/Video/start_live_android.md">Start an Interactive Broadcast</a>.</div>
 
