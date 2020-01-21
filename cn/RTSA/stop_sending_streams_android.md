@@ -3,7 +3,7 @@
 title: 更改音视频流传输状态
 description: v1.1.1
 platform: Android
-updatedAt: Thu Aug 15 2019 03:55:18 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 08:47:05 GMT+0800 (CST)
 ---
 # 更改音视频流传输状态
 ## 功能描述
