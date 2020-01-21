@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Jan 21 2020 04:06:05 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 04:06:09 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -463,7 +463,7 @@ v2.4.0 deprecates the `startScreenCapture` method. We recommend using the new me
 
 #### 2. Voice changer and voice reverberation
 
-Adding voice changer and reverberation effects in an audio chat room brings much more fun. v2.4.0 adds the [`setLocalVoiceChanger`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a70175273dade14bcf8d74e71f8de7eda) and [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#add46038703f2f82dad83c0319d43433b) methods, allowing you to change your voice or reverberation by choosing from the preset options. See [Adjust the pitch and tone](../../en/Video/voice_effect_windows.md).
+Adding voice changer and reverberation effects in an audio chat room brings much more fun. v2.4.0 adds the [`setLocalVoiceChanger`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a70175273dade14bcf8d74e71f8de7eda) and [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#add46038703f2f82dad83c0319d43433b) methods, allowing you to change your voice or reverberation by choosing from the preset options.
 
 #### 3. Tracking the sound position of a remote user 
 
@@ -491,7 +491,7 @@ The SDK has two log files, each with a default size of 512 KB. In case some cust
 
 #### 9. Setting the background image for LiveTranscoding
 
-v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a729037c7cf31b57efd1e8c9fadeab6eb) parameter in the [`LiveTranscoding`](../../API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html.md) Class in Windows to set the background image in the combined video of a live broadcast.
+v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a729037c7cf31b57efd1e8c9fadeab6eb) parameter in the [`LiveTranscoding`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html) Class in Windows to set the background image in the combined video of a live broadcast.
 
 **Improvements**
 
@@ -504,7 +504,7 @@ v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Video/API%20Referen
 
 v2.4.0 provides the following options for setting video encoder preferences:
 
-- Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html) class: minFrameRate and degradationPrefer. You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Video/videoProfile_windows.md).
+- Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html) class: minFrameRate and degradationPrefer. You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. 
 - Setting the camera capture preference. v2.4.0 adds the [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fe5e04a5201350a875d28c7fffa59af).
 
 #### 3. Core quality improvements
@@ -683,8 +683,6 @@ Agora plans to improve the following callback in subsequent versions:
 
 - [`onLastmileQuality`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ac7e14d1a26eb35ef236a0662d28d2b33): Reports the last mile network quality of the local user before the user joins a channel.
 
-For the list of API methods related to the call quality statistics and on how and when to use them, see [Report In-call Statistics](../../en/Video/in_call_statistics_windows.md).
-
 #### 2. New network connection policy 
 
 v2.3.2 adds the following API method and callback to get the current network connection state and reason for a connection state change:
@@ -801,7 +799,7 @@ Adds a <code>publish</code> parameter in the <code>playEffect</code> method to e
 
 #### 2. Deploy the Proxy at the server
 
-Agora provides a proxy package for enterprise users with corporate firewalls to deploy before accessing the services of Agora. See [Deploying the Enterprise Proxy](../../en/Quickstart%20Guide/proxy.md).
+Agora provides a proxy package for enterprise users with corporate firewalls to deploy before accessing the services of Agora. 
 
 #### 3. Get the remote video state
 
@@ -891,15 +889,12 @@ Adds RESTful APIs to check the status of the users in the channel, the channel l
 
 #### 4. 17-way video
 
-Adds the support of 17-way video in an Interactive Broadcast scenario. See:
-
--   [Starting a Live Video Broadcast](../../en/Quickstart%20Guide/broadcast_video_ios.md)
--   [Video Conference of 7+ Users](../../en/Video/seventeen_people_windows.md)
+Adds the support of 17-way video in an Interactive Broadcast scenario
 
 
 #### 5. Injecting an external video stream
 
-Adds the function of injecting an external video stream to an ongoing Live Broadcast. See [Injecting an External Stream to a Live Broadcast](../../en/Quickstart%20Guide/inject_stream_ios.md).
+Adds the function of injecting an external video stream to an ongoing Live Broadcast. See [Injecting an External Stream to a Live Broadcast](../../en/Video/inject_stream_windows.md).
 
 
 #### 6. Screen sharing for Interactive Broadcast
@@ -1133,15 +1128,8 @@ Android/iOS/macOS/Windows: In the Communication profile, an improvement for the 
 - Enhances the image quality to be better than 180p under good network and equipment conditions.
 
 
-
 #### Issues fixed:
 
 - Android: Bluetooth issues related to audio routing.
 - Android/iOS/macOS/Windows: Occasional crashes.
-
-
-
-
-
-
 
