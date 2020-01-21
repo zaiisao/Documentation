@@ -3,7 +3,7 @@
 title: 小程序 SDK 常见问题集
 description: 
 platform: 微信小程序
-updatedAt: Tue Jan 21 2020 16:41:20 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 16:41:38 GMT+0800 (CST)
 ---
 # 小程序 SDK 常见问题集
 ### 推流/拉流处理
