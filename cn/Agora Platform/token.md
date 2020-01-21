@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 28 2019 06:56:22 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 08:48:50 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
