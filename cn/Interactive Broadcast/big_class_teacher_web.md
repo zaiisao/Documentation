@@ -99,8 +99,8 @@ updatedAt: Tue Jan 21 2020 08:03:25 GMT+0800 (CST)
 <summary>关闭远端音视频</summary>
 你需要联合调用 RTM SDK 和 RTC SDK 的方法，实现该功能：
 <ol>
-	<li>1. 教师端调用 <code>sendMessageToPeer</code> 方法，给学生发送点对点消息，通知学生关闭音视频。</li>
-	<li>2. 学生端调用对应的 <code>mute</code> 方法关闭本地的音视频。</li>
+	<li>教师端调用 <code>sendMessageToPeer</code> 方法，给学生发送点对点消息，通知学生关闭音视频。</li>
+	<li>学生端调用对应的 <code>mute</code> 方法关闭本地的音视频。</li>
 </ol>
 </details>
 <details>
