@@ -3,7 +3,7 @@
 title: 更改音视频流传输状态
 description: v1.1.1
 platform: Android
-updatedAt: Tue Jan 21 2020 08:47:05 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 08:47:09 GMT+0800 (CST)
 ---
 # 更改音视频流传输状态
 ## 功能描述
@@ -85,4 +85,4 @@ AgoraRtcService.muteRemoteVideo("my_first_channel", remote_uid, false);
 - [`muteRemoteAudio`](https://docs.agora.io/cn/RTSA/API%20Reference/rtsa_java/classio_1_1agora_1_1rtc_1_1_agora_rtc_service.html#a287f5728e3423461471efc0efca64957)
 - [`muteRemoteVideo`](https://docs.agora.io/cn/RTSA/API%20Reference/rtsa_java/classio_1_1agora_1_1rtc_1_1_agora_rtc_service.html#a99c6a45f812dd83d465c475bc2730d51)
 - [`onUserMuteAudio`](https://docs.agora.io/cn/RTSA/API%20Reference/rtsa_java/interfaceio_1_1agora_1_1rtc_1_1_agora_rtc_events.html#ae96b0fec26509af3c1ef11ce6be750e4)
-- [`onUserMuteVideo`](https://docs.agora.io/cn/RTSA/RTSA/API%20Reference/rtsa_java/interfaceio_1_1agora_1_1rtc_1_1_agora_rtc_events.html#a25bac59ed64457d701ebabd279727b8c)
+- [`onUserMuteVideo`](https://docs.agora.io/cn/RTSA/API%20Reference/rtsa_java/interfaceio_1_1agora_1_1rtc_1_1_agora_rtc_events.html#a25bac59ed64457d701ebabd279727b8c)
