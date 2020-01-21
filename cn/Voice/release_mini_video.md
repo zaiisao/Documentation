@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Wed Sep 18 2019 10:26:51 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 08:43:08 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -38,7 +38,7 @@ updatedAt: Wed Sep 18 2019 10:26:51 GMT+0800 (CST)
 2.  将转化后的 UDP 传输到 Agora SD-RTN 上；
 3.  通过 Agora SD-RTN 与 Agora 其他平台 SDK 实现音视频互通。
 
-点击 [声网小程序 Demo 体验](../../cn/Voice/miniapp_demo.md) 了解小程序通话、互通等功能。
+点击 [声网小程序 Demo 体验](../../cn/Voice/start_call_wechat.md) 了解小程序通话、互通等功能。
 下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
 
 ## **2.4.1 版**
