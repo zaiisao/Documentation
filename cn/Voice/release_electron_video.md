@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Electron
-updatedAt: Tue Jan 21 2020 08:21:53 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 08:22:27 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora SDK for Electron 的发版说明。
@@ -141,7 +141,7 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
  
 该 SDK 首次发版。你可以参考以下文档集成 SDK，实现相应的实时音视频功能：
  
-- [集成 SDK](../../cn/Voice/start_live_electron.md)
+- 集成 SDK：[实现音视频通话](../../cn/Voice/start_call_electron.md)或[实现互动直播](../../cn/Voice/start_live_electron.md)
 - [API 参考](https://docs.agora.io/cn/Voice/API%20Reference/electron/index.html)
  
 Agora 提供了开源的 [Electron GitHub Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart)，你也可以前往下载并体验。
