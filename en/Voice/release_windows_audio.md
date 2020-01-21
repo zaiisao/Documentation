@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Jan 21 2020 03:57:33 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 03:57:37 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -71,7 +71,6 @@ If your app implements RTMP streaming with the methods above, ensure that you up
 - [`removePublishStreamUrl`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a30e6c64cb616fbd78bedd8c516c320e7)
 - [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
 
-For how to implement the new methods, see [Push Streams to the CDN](../../en/Voice/cdn_streaming_windows.md).
 
 #### 2. Disabling/enabling the local audio
 
@@ -92,8 +91,6 @@ This release adds the following methods to relay the media streams of a host fro
 - [`stopChannelMediaRelay`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ab4a1c52a83a08f7dacab6de36f4681b8)
 
 During the media stream relay, the SDK reports the states and events of the relay with the [`onChannelMediaRelayStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a8f22b85194d4b771bbab0e1c3b505b22) and [`onChannelMediaRelayEvent`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a89a4085f36c25eeed75c129c82ca9429) callbacks.
-
-For more information on the implementation, API call sequence, sample code, and considerations, see [Co-host across Channels](../../en/Voice/media_relay_windows.md).
 
 #### 3. Reporting the local and remote audio state
 
@@ -221,13 +218,12 @@ V2.4.1 is released on Jun 12th, 2019.
 
 This is the first release of the Agora Voice SDK for Windows. Refer to the following guides to quickly integrate the SDK and enable real-time voice communication in your project.
 
-- [Quick start](../../en/Voice/windows_video.md)
+- [Quick start](../../en/Voice/start_call_windows.md)
 - [Use security keys](../../en/Voice/token.md)
-- [Report in-call statistics](../../en/Voice/in_call_statistics_windows_audio.md)
+- [Report in-call statistics](../../en/Voice/in-call_quality_windows.md)
 - [Adjust the volume](../../en/Voice/volume_windows.md)
-- [Play audio effects/audio mixing](../../en/Voice/effect_mixing_windows.md)
-- [Set the voice changer and reverberation effects](../../en/Voice/voice_effect_windows.md)
-- [Push Streams to the CDN](../../en/Voice/push_stream_windows2.0_audio.md)
-- [Test or select a media device](../../en/Voice/switch_audio_device_windows.md)
+- [Play audio effects/audio mixing](../../en/Voice/audio_effect_mixing_windows.md)
+- [Set the voice changer and reverberation effects](../../en/Voice/voice_changer_windows.md)
+- [Test or select a media device](../../en/Voice/test_switch_device_windows.md)
 
 If you migrate to this SDK from the Windows Video SDK, refer to the [Release notes for the Windows video SDK](../../en/Voice/release_windows_video.md) for audio improvements.
