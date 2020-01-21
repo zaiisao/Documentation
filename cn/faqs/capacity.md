@@ -3,7 +3,7 @@
 title: 声网音视频最多支持多少人同时在线？
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 14:57:25 GMT+0800 (CST)
+updatedAt: Tue Jan 21 2020 16:37:37 GMT+0800 (CST)
 ---
 # 声网音视频最多支持多少人同时在线？
 <style> table th:first-of-type {     width: 80px; } th:third-of-type {     width: 170px; }</style>
