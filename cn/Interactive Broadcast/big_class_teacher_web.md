@@ -31,7 +31,7 @@ updatedAt: Tue Jan 21 2020 08:03:25 GMT+0800 (CST)
 <%
 
 if (platform == "android") 
-
+{ %>
 | 产品 | SDK 下载 | 集成文档 |
 | ---------------- | ---------------- | ---------------- |
 | [RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [Android 视频互动直播 SDK](https://docs.agora.io/cn/Interactive%20Broadcast/downloads)      | [实现互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android) |
