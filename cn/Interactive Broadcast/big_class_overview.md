@@ -43,7 +43,7 @@ Agora 为互动直播大班课提供如下平台的 Demo，点击下方链接进
 
 ## 技术方案
 
-Agora 使用 Agora RTC SDK、Agora RTM SDK、Agora 云录制、白板 SDK 共同搭建互动直播大班课场景。
+Agora 使用 Agora RTC SDK、Agora RTM SDK、Agora 云端录制服务、第三方白板 SDK 共同搭建互动直播大班课场景。
 
 ![](https://web-cdn.agora.io/docs-files/1579589300983)
 
