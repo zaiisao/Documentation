@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Wed Jan 22 2020 05:49:27 GMT+0800 (CST)
+updatedAt: Wed Jan 22 2020 05:51:06 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -33,6 +33,7 @@ updatedAt: Wed Jan 22 2020 05:49:27 GMT+0800 (CST)
 | ---------------- | ---------------- | ---------------- | 
 | [RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [ Web 视频互动直播 SDK](https://docs.agora.io/cn/Interactive%20Broadcast/downloads)      | [实现互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web) |
 | [RTM (Real-time Messaging) SDK](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Web 实时消息 SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) | [收发点对点消息和频道消息](https://docs-preview.agoralab.co/cn/Real-time-Messaging/messaging_web?platform=Web) |
+| [云端录制](https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=All%20Platforms) | / | [使用 RESTful API 录制](https://docs.agora.io/cn/cloud-recording/cloud_recording_rest?platform=All%20Platforms) |
 | [白板](https://developer.netless.link/docs/javascript/overview/js-outline/) | [SDK 集成](https://developer.netless.link/docs/javascript/guide/js-sdk/) | [白板快速开始](https://developer.netless.link/docs/javascript/quick-start/js-precondition/) |
 
 
