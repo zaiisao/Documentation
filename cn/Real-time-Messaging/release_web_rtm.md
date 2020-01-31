@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Jan 31 2020 13:04:40 GMT+0800 (CST)
+updatedAt: Fri Jan 31 2020 13:05:48 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -65,7 +65,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 ### 问题修复
 
-SDK 偶尔会被服务端踢开。问题发生时，Client 实例会收到 ConnectionStateChange 回调，状态改变为 ABORTED，改变原因为 INTERRUPTED。服务端错误码为 10001。
+SDK 偶尔会被服务端踢开：问题发生时，Client 实例会收到 ConnectionStateChange 回调，状态改变为 ABORTED，改变原因为 INTERRUPTED；日志显示服务端错误码为 10001。
 
 
 ## 1.1.0 版
