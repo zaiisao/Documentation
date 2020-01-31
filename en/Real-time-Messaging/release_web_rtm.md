@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Tue Dec 17 2019 10:33:43 GMT+0800 (CST)
+updatedAt: Fri Jan 31 2020 13:10:42 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -51,6 +51,11 @@ Allows you to get a list of the peers, to whose specific status you have subscri
 Creates and initializes a raw message to be sent.
 
  If you set a text description, ensure that the size of the raw message and the description combined does not exceed 32 KB.
+ 
+ ### Issues fixed
+ 
+The SDK is occasionally kicked by the server: When the issue occurs, the Client instance receives the `ConnectionStateChange` callback, which indicates the connection state is `ABORTED` and the reason for the connection state change `INTERRUPTED`. The log file shows the error code from the server is 10001. 
+ 
 
 ## v1.1.0
 
@@ -147,7 +152,7 @@ The Agora RTM system will resend a maximum of 32 channel messages of up to 30 se
 
 ## v1.0.1
 
-v1.0.1 is released on September 5, 2019. 
+v1.0.1 was released on September 5, 2019. 
 
 ### Issues Fixed
 
