@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue Dec 17 2019 09:37:43 GMT+0800 (CST)
+updatedAt: Fri Jan 31 2020 13:04:40 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -62,6 +62,10 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 本版本支持创建自定义二进制消息，支持以点对点消息或频道消息形式发送多种文件格式。
 
 <div class="alert note"> 我们不对二进制消息的文本描述的大小单独进行限制，但是我们要求自定义二进制消息的总大小不超过 32 KB。</div>
+
+### 问题修复
+
+SDK 偶尔会被服务端踢开。问题发生时，Client 实例会收到 ConnectionStateChange 回调，状态改变为 ABORTED，改变原因为 INTERRUPTED。服务端错误码为 10001。
 
 
 ## 1.1.0 版
