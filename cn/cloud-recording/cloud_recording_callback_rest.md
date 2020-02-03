@@ -3,12 +3,11 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Mon Feb 03 2020 08:47:52 GMT+0800 (CST)
+updatedAt: Mon Feb 03 2020 08:48:07 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
 
-> 如果你在 2019 年 8 月 27 日前已经配置过消息通知服务，请参考旧版[云端录制 RESTful API 回调服务](../../cn/cloud-recording/cloud_recording_callback_rest_old.md)。新的回调服务对消息通知中的字段进行了优化，我们推荐你进行[升级](../../cn/cloud-recording/cloud_recording_callback_rest_old.md)。
 
 ## Agora 消息通知服务
 
