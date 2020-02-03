@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 03 2020 13:00:33 GMT+0800 (CST)
+updatedAt: Mon Feb 03 2020 13:57:53 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## 1. Authentication
@@ -699,7 +699,7 @@ Example: /channel/user/<appid\>/<channelName\>
 		"data": {
 				"channel_exist": true,
 				"mode": 2,
-				"broadcaster": [<uid>],
+				"broadcasters": [<uid>],
 				"audience": [<uid>],
 				"audience_total": <count>
 		}
@@ -739,7 +739,7 @@ Example: /channel/user/<appid\>/<channelName\>
 	</ul>
 	</td>
 	</tr>
-	<tr><td>broadcaster</td>
+	<tr><td>broadcasters</td>
 	<td>The ID list of all the broadcasters in the channel</td>
 	</tr>
 	<tr><td>audience</td>
