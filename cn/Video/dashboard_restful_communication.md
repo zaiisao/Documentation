@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 03 2020 12:59:30 GMT+0800 (CST)
+updatedAt: Mon Feb 03 2020 13:58:02 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
@@ -729,7 +729,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 			"data": {
 					"channel_exist": true,
 					"mode": 2,
-					"broadcaster": [<uid>],
+					"broadcasters": [<uid>],
 					"audience": [<uid>],
 					"audience_total": <count>
 			}
@@ -769,7 +769,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </ul>
 </td>
 </tr>
-<tr><td>broadcaster</td>
+<tr><td>broadcasters</td>
 <td>频道内所有主播的 uid 列表</td>
 </tr>
 <tr><td>audience</td>
