@@ -27,6 +27,7 @@ updatedAt: Tue Nov 19 2019 08:43:06 GMT+0800 (CST)
 | Safari 9+   | ✔                  |
 | Internet Explorer 11+  | ✔                  |
 | Firefox 52+ |  ✔                  |
+| 微信浏览器 |  ✔                  |
 
 
 
