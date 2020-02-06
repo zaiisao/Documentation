@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Web
-updatedAt: Thu Feb 06 2020 03:51:45 GMT+0800 (CST)
+updatedAt: Thu Feb 06 2020 03:52:21 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -35,7 +35,7 @@ This page provides a brief overview of the limitations of the Agora RTM Web SDK,
 	
 ## Supported Browsers
 	
-See [Supported Browsers](https://docs.agora.io/en/Real-time-Messaging/messaging_web?platform=Web#prerequisites)
+See [Supported Browsers](https://docs.agora.io/en/Real-time-Messaging/messaging_web?platform=Web#prerequisites).
 
 ## Unicode support 
 
