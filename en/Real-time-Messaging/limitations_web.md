@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Web
-updatedAt: Wed Oct 09 2019 04:30:31 GMT+0800 (CST)
+updatedAt: Thu Feb 06 2020 03:51:45 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -32,6 +32,10 @@ This page provides a brief overview of the limitations of the Agora RTM Web SDK,
 - The maximum length of a peer-to-peer or channel message is 32 KB. See [RtmMessage.text](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmmessage.html#text).
 - The maximum length of the content in a call invitation is 8 KB. See [LocalInvitation.content](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#content)
 - The maximum length of the response in a call invitation is 8 KB. See [RemoteInvitation.response](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#response)
+	
+## Supported Browsers
+	
+See [Supported Browsers](https://docs.agora.io/en/Real-time-Messaging/messaging_web?platform=Web#prerequisites)
 
 ## Unicode support 
 
