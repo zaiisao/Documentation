@@ -3,7 +3,7 @@
 title: 限制条件
 description: RTM Web Limitations
 platform: Web
-updatedAt: Mon Nov 25 2019 09:47:50 GMT+0800 (CST)
+updatedAt: Thu Feb 06 2020 03:47:51 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -42,6 +42,10 @@ updatedAt: Mon Nov 25 2019 09:47:50 GMT+0800 (CST)
 ## 编码格式限制
 
 仅支持发送 UTF-8 编码格式的频道消息和点对点消息。
+	
+	## 浏览器兼容性
+	
+	详见： [开发环境要求](https://docs.agora.io/cn/Real-time-Messaging/messaging_web?platform=Web#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82)
 
 
 ## 编码格式限制
