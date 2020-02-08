@@ -107,7 +107,7 @@ This section provides API call sequence diagrams and sample codes related to pee
 
 #### Login and logout of the Agora RTM system
 
-![](https://web-cdn.agora.io/docs-files/1561973138720)
+![](https://web-cdn.agora.io/docs-files/1576727197212)
 
 #### Send or receive peer-to-peer messages
 
