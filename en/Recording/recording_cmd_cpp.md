@@ -3,7 +3,7 @@
 title: Record a Call
 description: 
 platform: Linux CPP
-updatedAt: Mon Feb 10 2020 04:46:40 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 04:46:50 GMT+0800 (CST)
 ---
 # Record a Call
 This page demonstrates how to record a call by using the command line. You can also record calls by calling the API methods, see [Record by API](../../en/Recording/recording_api_cpp.md). The command line and API methods implement the same recording functions. 
@@ -173,6 +173,6 @@ Use either of the following parameters to set the path of the recorded files.
 
 ## Next steps
 
-After the recording is complete, use the transcoding script to merge the recorded files. See [Use the Transcoding Script ](../../en/Recording/recording_transcoding.md).
+After the recording is complete, use the transcoding script to merge the recorded files. See [Use the Transcoding Script ](../../en/Recording/recording_merge_files.md).
 
 If any error or warning occurs during the recording, see [Error codes](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a11cab69078db26c1f166c68e469dcfcf) and [Warning codes](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a5f37e3fa14fad2982f248d247d76996b).
