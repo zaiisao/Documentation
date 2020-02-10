@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon Feb 10 2020 05:58:14 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 05:58:35 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -20,6 +20,15 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 #### Known Issues and Limitations
 
 A USB device driver issue occurs when you do not hear any audio or the audio is corrupted with a USB headset. USB is not user-friendly on macOS, and we recommend using higher quality headsets.
+
+## v2.9.3
+
+v2.9.3 was released on Feb 10, 2020.
+
+This release fixed the following issues:
+- The `setRemoteSubscribeFallbackOption` method, which should work in the Live-broadcast profile only, also works in the Communication profile.
+- In some one-to-one communication, the downlink media stream falls back to audio-only under poor network conditions.
+- Occasionally, the UI of the system window is abnormal on macOS 10.15. 
 
 ## v2.9.1
 v2.9.1 is released on Sep 19, 2019.
