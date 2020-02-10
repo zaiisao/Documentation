@@ -41,7 +41,7 @@ The Agora Native SDK for Voice Call is supported on platforms such as iOS, Andro
 
 | Platform             | Supported Version                                            |
 | -------------------- | ------------------------------------------------------------ |
-| Android              | 4.1+<br>The Android SDK supports the following architecture:<li>ARMv7<li>ARM64<li>x86<li>x86-64 |
+| Android              | 4.1+<br>The Android SDK supports the following ABIs:<li>armeabi-v7a<li>arm64-v8a<li>x86<li>x86_64 |
 | iOS                  | 8.0+                                                         |
 | Windows              | XP SP3+<br>The Windows SDK supports the following architecture:<li>x86<li>x64                                                      |
 | macOS                | 10.0+                                                        |
