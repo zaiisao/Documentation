@@ -36,7 +36,7 @@ updatedAt: Mon Feb 10 2020 08:48:51 GMT+0800 (CST)
 
 | 平台       | 支持版本                                                     |
 | ---------- | ------------------------------------------------------------ |
-	| Android    | <p>4.1+</p><p>Android SDK 支持如下架构：</p><ul><li>ARMv7<li>ARM64<li>x86<li>x86-64                                                         |
+	| Android    | <p>4.1+</p><p>Android SDK 支持如下 ABI：</p><ul><li>armeabi-v7a<li>arm64-v8a<li>x86<li>x86_64                                                         |
 | iOS        | 8.0+                                                         |
 	| Windows    | <p>XP SP3+</p><p>Windows SDK 支持如下架构：<p><ul><li>x86<li>x64                                                      |
 | macOS      | 10.0+                                                        |
