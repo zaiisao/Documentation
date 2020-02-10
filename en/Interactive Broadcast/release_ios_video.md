@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Tue Jan 14 2020 02:58:42 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 05:52:45 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -16,6 +16,16 @@ The Video SDK supports the following scenarios:
 -   Live Voice/Video Broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Video Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
+
+## v2.9.3
+
+v2.9.3 was released on Feb 10, 2020.
+
+This release fixed the following issues:
+
+- The `setRemoteSubscribeFallbackOption method`, which should work in the Live-broadcast profile only, also works in the Communication profile.
+- In some one-to-one communication, the downlink media stream falls back to audio-only under poor network conditions.
+- In scenarios involving custom video source, the resolution of the received video frame changes as the app switches between the foreground and the background.
 
 ## v2.9.1
 v2.9.1 is released on Sep 19, 2019.
