@@ -3,7 +3,7 @@
 title: 命令行录制
 description: How to start recording using cmd
 platform: Linux CPP
-updatedAt: Mon Feb 10 2020 04:44:43 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 04:45:17 GMT+0800 (CST)
 ---
 # 命令行录制
 本文介绍如何通过命令行进行录制。 你也可以[调用 API](../../cn/Recording/recording_api_cpp.md) 进行录制。命令行录制和调用 API 录制实现的是相同的功能，根据自己的需要选择一种即可。
