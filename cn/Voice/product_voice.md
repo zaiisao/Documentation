@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 10 2020 08:48:47 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 08:48:51 GMT+0800 (CST)
 ---
 # 产品概述
 语音通话可以实现纯语音的一对一单聊和多人群聊，不具备视频通话功能，包体积更小，适用于各种语音社交、语音会议等场景。
@@ -47,7 +47,7 @@ updatedAt: Mon Feb 10 2020 08:48:47 GMT+0800 (CST)
 
 ### 语音通话应用 - Beckon
 
-在应用市场下载 Beckon App，快速体验跨国高清语音通话质量。
+在应用市场下载 Beckon，快速体验跨国高清语音通话质量。
 
 - [Android](http://dl3.beckon.cc/android/beckon/beckon-release-352.apk)
 - [iOS](https://itunes.apple.com/cn/app/id927792759)
