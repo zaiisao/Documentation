@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Feb 10 2020 06:10:36 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 06:10:43 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -18,6 +18,14 @@ The Video SDK for Windows supports the following scenarios:
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Video Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 The Windows Video SDK supports the X86 and X64 architecture.
+
+## v2.9.3
+
+v2.9.3 was released on Feb 10, 2020.
+
+This release fixed the following issues:
+- The `setRemoteSubscribeFallbackOption` method, which should work in the Live-broadcast profile only, also works in the Communication profile.
+- In some one-to-one communication, the downlink media stream falls back to audio-only under poor network conditions.
 
 ## v2.9.1
 v2.9.1 is released on Sep 19, 2019.
