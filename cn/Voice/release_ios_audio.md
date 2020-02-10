@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Mon Feb 10 2020 05:47:50 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 05:48:01 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -16,6 +16,17 @@ iOS 语音 SDK 支持两种主要场景:
 -   语音直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms) 了解关键特性。
+
+## **2.9.3 版**
+
+该版本于 2020 年 2 月10 日发布。
+
+该版本修复了如下问题：
+
+- 通信场景下，调用 `setRemoteSubscribeFallbackOption` 方法也生效。
+- 一对一通信场景下，下行音视频弱网下会回退为纯音频。
+- 视频自采集场景下，接收到的视频分辨率在 app 切换前后台时发生改变。
+
 
 ## **2.9.1 版**
 该版本于 2019 年 9 月 19 日发布。新增特性与修复问题列表详见下文。
