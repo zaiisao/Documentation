@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Tue Jan 21 2020 03:57:47 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 06:02:26 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,10 @@ Windows 语音 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
 
 Windows 语音 SDK 支持 X86 和 X64 架构。
+
+## **2.9.3 版**
+
+该版本于 2020 年 2 月10 日发布。
 
 ## **2.9.1 版**
 该版本于 2019 年 9 月 19 日发布。新增特性与修复问题列表详见下文。
