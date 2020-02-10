@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 10 2020 04:05:42 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 04:07:46 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 音频互动直播（Audio Broadcasting）可以实现一对多，多对多的纯音频互动直播。
@@ -68,12 +68,12 @@ Agora 音频互动直播提供丰富的功能，你可以根据自己的场景�
 
 ### 音频互动直播 - Agora Live
 
-在应用市场下载 Agora Live app，快速体验超低延迟多人连麦互动直播。
+在应用市场下载 Agora Live，快速体验超低延迟多人连麦互动直播。
 
 - [Android](http://android.myapp.com/myapp/detail.htm?apkName=io.agora.vlive)
 - [iOS](https://itunes.apple.com/cn/app/id1116886856?mt=8)
-- [Web](https://webdemo.agora.io/videocall/?_ga=2.212778772.1474390666.1541382528-1513744824.1530171825)
-- [Windows](http://download.agora.io/avc/AgoraLiveBroadcast_for_windows_2.2.0.zip?_ga=2.231750175.1098053192.1540804434-1796221125.1530266296)
+- [Web](https://videocall.agora.io/#/)
+- [Windows](http://download.agora.io/avc/AgoraLiveBroadcast_for_windows_2.2.0.zip)
 
 ### 语音聊天室 - 分贝
 
