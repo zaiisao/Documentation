@@ -3,7 +3,7 @@
 title: 云端录制更新历史
 description: 
 platform: Linux
-updatedAt: Mon Feb 10 2020 03:24:45 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 03:24:50 GMT+0800 (CST)
 ---
 # 云端录制更新历史
 ## 简介
@@ -22,7 +22,7 @@ width: 150px;
 | SDK              | 描述                                                         |
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
-| Agora Web SDK    | 云端录制 与 Agora Web SDK 1.12.0 或更高版本兼容。            |
+| Agora Web SDK    | 云端录制与 Agora Web SDK 1.12.0 或更高版本兼容。            |
 
 ## 2019.12.16
 本次发布提高了云端录制服务的可用性。当出现服务器断网、进程被杀时，云端录制会自动切换到新的服务器，在短时间内恢复录制服务。详情见[云端录制服务器断网、进程被杀的处理](../../cn/faq/high-availability.md)。
