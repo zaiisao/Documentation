@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Feb 10 2020 05:43:50 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 05:44:25 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -32,6 +32,15 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v2.9.3
+
+v2.9.3 was released on Feb 10, 2020.
+
+This release fixed the following issues:
+- The `setRemoteSubscribeFallbackOption` method, which should work in the Live-broadcast profile only, also works in the Communication profile.
+- In some one-to-one communication, the downlink media stream falls back to audio-only under poor network conditions.
+- On some devices, the camera fails to capture the video after a system upgrade. 
 
 ## v2.9.2
 
