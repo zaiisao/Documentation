@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 02:50:41 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 09:15:31 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
@@ -197,7 +197,7 @@ var option = {
   channel: "Channel name",
   uid: null,
   token: "Your token"
-}
+};
 ```
 
 
@@ -235,12 +235,12 @@ var option = {
 
    ```javascript
    // Join a channel
-   rtc.client.join(option.token ? option.token : null, option.channel, option.uid ? +option.uid : null, function (uid) {
+   rtc.client.join(option.token, option.channel, option.uid, function (uid) {
        console.log("join channel: " + option.channel + " success, uid: " + uid);
        rtc.params.uid = uid;
      }, function(err) {
-       console.error("client join failed", err)
-   })
+       console.error("client join failed", err);
+   });
    ```
 
 	Pay attention to the following settings when joining the channel.
@@ -266,7 +266,7 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
      audio: true,
      video: true,
      screen: false,
-   })
+   });
    ```
 
 2. Call `Stream.init` to initialize the stream after creating the stream.
@@ -277,7 +277,7 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
      console.log("init local stream success");
    }, function (err) {
      console.error("init local stream failed ", err);
-   })
+   });
    ```
 
    When initializing the stream, the web browser asks for permissions to access the camera and the microphone. Ensure that you grant the permissions.
@@ -289,7 +289,7 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
    rtc.client.publish(rtc.localStream, function (err) {
      console.log("publish failed");
      console.error(err);
-   })
+   });
    ```
 
 ### Subscribe to a remote stream
@@ -297,7 +297,6 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
 To subscribe to a remote stream, we need to listen for the `"stream-added"` event and call `Client.subscribe` in the callback.
 
 <div class="alert note">We recommend listening for these events immediately after creating the client. </div>
-
 1. Subscribe to a remote stream when the stream is added.
 
    ```javascript
@@ -307,9 +306,9 @@ To subscribe to a remote stream, we need to listen for the `"stream-added"` even
      if (id !== rtc.params.uid) {
        rtc.client.subscribe(remoteStream, function (err) {
          console.log("stream subscribe failed", err);
-       })
+       });
      }
-     console.log('stream-added remote-uid: ', id);
+     console.log("stream-added remote-uid: ", id);
    });
    ```
 
@@ -323,10 +322,10 @@ To subscribe to a remote stream, we need to listen for the `"stream-added"` even
      addView(id);
      // Play the remote stream.
      remoteStream.play("remote_video_" + id);
-     console.log('stream-subscribed remote-uid: ', id);
-   })
+     console.log("stream-subscribed remote-uid: ", id);
+   });
    ```
-<div class="alert note">Due to web browser <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes">autoplay policy changes</a>, the <code>Stream.play</code> method needs to be triggered by the user's gesture on Chrome 70 or later and on Safari. </div>
+<div class="alert note">Due to web browser <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes">autoplay policy changes</a>, the <code>Stream.play</code> method needs to be triggered by the user"s gesture on Chrome 70 or later and on Safari. </div>
 3. When the remote stream is removed (for example, when a remote user calls `Stream.unpublish`), stop the stream playback and remove its view.
 
    ```javascript
@@ -337,8 +336,8 @@ To subscribe to a remote stream, we need to listen for the `"stream-added"` even
      remoteStream.stop("remote_video_" + id);
      // Remove the view of the remote stream. 
      removeView(id);
-     console.log('stream-removed remote-uid: ', id);
-   })
+     console.log("stream-removed remote-uid: ", id);
+   });
    ```
 
 > You need to define the `addView` and `removeView` functions. Refer to our [tutorial](https://github.com/AgoraIO/Basic-Video-Call/blob/5eeadc97f646a5e2bf4c11e42edea47af8b963fe/One-to-One-Video/Agora-Web-Tutorial-1to1/index.html#L191) for an example.
@@ -365,7 +364,7 @@ rtc.client.leave(function () {
 }, function (err) {
   console.log("channel leave failed");
   console.error(err);
-})
+});
 ```
 
 ## Run your app
@@ -375,16 +374,15 @@ This section takes our demo as an example to show you how to run and test the we
 We recommend running your web app through a local web server. Here, we use the npm live-server package to set up a local web server. 
 
 <div class="alert note">We run the web app through a local server (localhost) for testing. In production, ensure that you use the HTTPS protocol when deploying your project.</div>
-
 1. Install live-server.
    ```bash
 npm i live-server -g
-	 ```
+	```
 2. Change the directory to your project by the cd command. For our demo, the project is in **/Basic-Video-Call/One-to-One-Video/Agora-Web-Tutorial-1to1**.
 3. Run the app.
    ```bash
 live-server .
-	 ```
+	```
    This should automatically load the web app in your browser.
 4. Enter your App ID, channel name, token, and click **JOIN** to start a call.
    You might need to allow the browser to access your camera and microphone. If you enable video when creating the stream, you should see a video stream of yourself.
