@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Tue Jan 21 2020 03:33:02 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 06:01:08 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,15 @@ Windows 视频 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及[视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 Windows 视频 SDK 支持 X86 和 X64 架构。
+
+## **2.9.3 版**
+
+该版本于 2020 年 2 月10 日发布。
+
+该版本修复了如下问题：
+
+- 通信场景下，调用 `setRemoteSubscribeFallbackOption` 方法也生效。
+- 一对一通信场景下，下行音视频弱网下会回退为纯音频。
 
 ## **2.9.1 版**
 该版本于 2019 年 9 月 19 日发布。新增特性与修复问题列表详见下文。
