@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:21:17 GMT+0800 (CST)
+updatedAt: Tue Feb 11 2020 09:04:46 GMT+0800 (CST)
 ---
 # 实现音视频通话
 本文介绍如何使用 Agora SDK 快速实现音视频通话。
