@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Tue Feb 11 2020 02:30:39 GMT+0800 (CST)
+updatedAt: Tue Feb 11 2020 02:37:14 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
@@ -565,7 +565,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 | :------------- | :----- | :----------------------------------------------------------- |
 | `cname`        | String | 频道名称。                                                   |
 | `teacher_uid`  | Number | 老师的用户 ID。                                              |
-| `action_uid`   | Number | 学生的用户 ID。                                              |
+| `student_uid`   | Number | 学生的用户 ID。                                              |
 | `abnormal_uid` | Number | 体验异常端（老师或学生）的用户 ID。                          |
 | `ts`           | Number | 问题发生时间，UNIX 时间戳，单位为秒。                        |
 | `comments`     | String | （可选）备注。可以简单描述问题。                             |
