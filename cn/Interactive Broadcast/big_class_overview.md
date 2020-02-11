@@ -32,7 +32,7 @@ Agora 为互动直播大班课提供如下平台的 Demo，点击下方链接进
 
 | Android | iOS | Web |
 | ---------------- | ---------------- | ---------------- |
-| [点此下载](https://www.pgyer.com/agora_edu)（密码：123）  | ![](https://web-cdn.agora.io/docs-files/1581404087767)|  [点击体验](https://solutions.agora.io/education/web/#/)      |
+| [点此下载](https://www.pgyer.com/agora_edu)（密码：123）  | ![](https://web-cdn.agora.io/docs-files/1581404676426) |  [点击体验](https://solutions.agora.io/education/web/#/)      |
 
 其中：
 - Android 和 iOS 端为学生端
