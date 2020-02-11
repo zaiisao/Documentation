@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: iOS
-updatedAt: Tue Feb 11 2020 02:42:17 GMT+0800 (CST)
+updatedAt: Tue Feb 11 2020 02:42:22 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 iOS 平台实现学生端相关功能。
@@ -42,6 +42,7 @@ updatedAt: Tue Feb 11 2020 02:42:17 GMT+0800 (CST)
 | [initWithAppId](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:)      | 创建并返回一个 AgoraRtmKit 实例。      |
 | [loginByToken](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:) | 登录 Agora RTM 系统。登录后你可以使用 RTM 的核心业务逻辑。
 | [createChannelWithId](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) | 创建 Agora RTM 频道。一个 AgoraRtmKit 可以创建多个频道。 |
+| [joinWithCompletion](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/joinWithCompletion:) | 加入 Agora RTM 频道。|
 | [getChannelAllAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) | 获取指定频道的频道属性。 |
 | [queryPeersOnlineStatus](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersOnlineStatus:completion:) | 查询指定用户的在线状态。 |
 | [initWithText](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html#//api/name/initWithText:) | 创建一个文本消息实例。 |
@@ -59,6 +60,7 @@ updatedAt: Tue Feb 11 2020 02:42:17 GMT+0800 (CST)
 | [setChannelProfile](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setChannelProfile:) | 设置频道场景。互动直播大班课场景中，我们将频道属性设为直播。|
 | [setClientRole](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setClientRole:) | 设置直播场景下的用户角色。互动直播大班课场景中，我们将学生进频道前的用户角色设为观众；上课过程中，当学生成功申请发言后，我们再将其用户角色设为主播，与同为主播的老师进行互动。 |
 | [joinChannelByToken](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) | 加入 RTC 频道。 |
+| [setupRemoteVideo](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupRemoteVideo:) | 设置远端视图。学生加入频道后，调用该方法设置其看到的教师的视频画面。|
 | [setupLocalVideo](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupLocalVideo:) | 设置本地视图。学生成功申请发言后，调用该方法设置其看到的自己的视频画面。 |
 | [leaveChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/leaveChannel:) | 离开 RTC 频道。 |
 
