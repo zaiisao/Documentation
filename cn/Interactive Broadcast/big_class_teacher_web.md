@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Wed Jan 22 2020 05:51:06 GMT+0800 (CST)
+updatedAt: Tue Feb 11 2020 02:48:43 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -52,6 +52,7 @@ updatedAt: Wed Jan 22 2020 05:51:06 GMT+0800 (CST)
 | [createInstance](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/modules/agorartm.html#createinstance)      | 创建并返回一个 RtmClient 实例。      |
 | [login](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#login) | 登录 Agora RTM 系统。 |
 | [createChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | 创建 Agora RTM 频道。一个 RtcClient 可以创建多个频道。 |
+| [join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#join) | 加入 Agora RTM 频道。|
 | [getChannelAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | 获取指定频道的频道信息。|
 | [queryPeersOnlineStatus](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | 查询指定用户的在线状态。|
 | [MessageFromPeer](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) | 收到来自对端的点对点消息。|
