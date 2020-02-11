@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Web
-updatedAt: Tue Feb 11 2020 02:47:13 GMT+0800 (CST)
+updatedAt: Tue Feb 11 2020 02:47:17 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Web 平台实现学生端相关功能。
@@ -31,7 +31,7 @@ updatedAt: Tue Feb 11 2020 02:47:13 GMT+0800 (CST)
 
 参考下图时序，搭配使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
-![](https://web-cdn.agora.io/docs-files/1579589981240)
+![](https://web-cdn.agora.io/docs-files/1581389209449)
 
 ## 核心 API 参考
 
@@ -42,6 +42,7 @@ updatedAt: Tue Feb 11 2020 02:47:13 GMT+0800 (CST)
 | [createInstance](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/modules/agorartm.html#createinstance)     | 创建并返回一个 RtmClient 实例。      |
 | [login](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#login) | 登录 Agora RTM 系统。登录后你可以使用 RTM 的核心业务逻辑。
 | [createChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | 创建 Agora RTM 频道。一个 RtmClient 可以创建多个频道。 |
+| [join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#join) | 加入 Agora RTM 频道。|
 | [getChannelAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | 获取指定频道的频道属性。 |
 | [queryPeersOnlineStatus](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | 查询指定用户的在线状态。 |
 | [sendMessageToPeer](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) | 发送点对点消息。可实现学生举手申请发言等功能。 |
