@@ -3,12 +3,14 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Wed Feb 12 2020 05:43:45 GMT+0800 (CST)
+updatedAt: Wed Feb 12 2020 05:55:41 GMT+0800 (CST)
 ---
 # 注册与登录
 在开始使用 Agora 服务之前，你需要注册一个 Agora 开发者账号。注册后，您可以登录控制台，使用 Agora 提供的各种产品和服务。
 
 本页介绍如何注册 Agora 开发者账号和相关账号设置。
+
+<div class="alert note">使用第三方账号注册后，将无法使用账号信息中填写的邮箱登陆。若需使用邮箱登陆，请通过邮箱注册新账号，并联系 <a href="mailto:support@agora.io">support@agora.io</a > 进行项目迁移。</div>
 
 ## 使用邮箱注册
 1. 进入 [Agora 注册页面](https://sso.agora.io/cn/signup)。
