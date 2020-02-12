@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Wed Feb 12 2020 09:23:46 GMT+0800 (CST)
+updatedAt: Wed Feb 12 2020 10:15:26 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -92,7 +92,7 @@ For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platfor
 
 ## v3.0.1
 
-v3.0.1 was released on February 10, 2020.
+v3.0.1 was released on February 12, 2020.
 
 **New features**
 
