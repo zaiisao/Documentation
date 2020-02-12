@@ -3,10 +3,12 @@
 title: Sign up for an Agora account
 description: 
 platform: All Platforms
-updatedAt: Wed Feb 12 2020 05:55:01 GMT+0800 (CST)
+updatedAt: Wed Feb 12 2020 05:55:33 GMT+0800 (CST)
 ---
 # Sign up for an Agora account
 This page shows how to sign up for an Agora account, and change your account settings.
+
+<div class="alert note">After signing up with a third-party account, you cannot use your email address to log in to Console. If you need to use an e-mail address to log in to Console, sign up a new account using the e-mail address and contact <a href="mailto:support@agora.io">support@agora.io</a > to migrate your projects to the new account.</div>
 
 ## Sign up with an email address
 To sign up for an Agora account with an email address, follow these steps:
