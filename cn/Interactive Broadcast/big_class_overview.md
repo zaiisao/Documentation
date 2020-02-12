@@ -30,9 +30,9 @@ updatedAt: Tue Jan 21 2020 08:03:12 GMT+0800 (CST)
 
 Agora 为互动直播大班课提供如下平台的 Demo，点击下方链接进入应用。
 
-| Android | iOS | Web |
-| ---------------- | ---------------- | ---------------- |
-| [点此下载](https://www.pgyer.com/agora_edu)（密码：123）  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web/#/)      |
+| Android | iOS | PC Web | Windows | macOS |
+| ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
+| [点此下载](https://www.pgyer.com/agora_edu)（密码：123）  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web/#/)      | 敬请期待 | 敬请期待 |
 
 其中：
 - Android 和 iOS 端为学生端
