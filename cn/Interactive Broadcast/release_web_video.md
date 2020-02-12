@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Feb 10 2020 08:03:41 GMT+0800 (CST)
+updatedAt: Wed Feb 12 2020 09:23:27 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -89,6 +89,29 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
+
+## v3.0.1
+
+该版本于 2020 年 2 月 10 日发布。
+
+**新增特性**
+
+#### 自采集视频支持双流模式
+
+对使用 `videoSource` 属性创建的视频流，该版本支持开启双流模式 (`enableDualStream`)。
+
+**改进**
+
+改进自动重连机制，提升弱网下的用户体验。
+
+**问题修复**
+
+该版本修复以下问题：
+
+- 重复调用 `setClientRole` 报错。
+- 断网后调用 `leave` 报错。
+- 使用 `videoSource` 创建自采集视频流时报错。
+- 取消订阅远端流再重新订阅远端流之后，mute 远端流的操作不生效。
 
 ## 3.0.0 版
 
