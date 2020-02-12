@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Feb 10 2020 08:04:08 GMT+0800 (CST)
+updatedAt: Wed Feb 12 2020 09:23:46 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -89,6 +89,27 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+## v3.0.1
+
+v3.0.1 was released on February 10, 2020.
+
+**New features**
+
+#### Dual-stream mode support for custom video source streams
+
+This version supports the dual-stream mode (`enableDualStream`) for video streams created by defining the `videoSource` property.
+
+**Improvements**
+
+Optimizes the reconnection strategy to improve the user experience under poor network conditions.
+
+**Fixed issues**
+
+- A repeated call of `setClientRole` causes errors.
+- The console prints error messages after calling `Client.leave` when the network is disconnected.
+- An error occurs when creating a stream with the `videoSource` property.
+- The `muteAudio` and `muteVideo` methods do not take effect after unsubscribing from and then subscribing to a remote stream.
 
 ##  v3.0.0
 
