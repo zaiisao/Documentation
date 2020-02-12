@@ -3,7 +3,7 @@
 title: Sign up for an Agora account
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 27 2019 08:19:01 GMT+0800 (CST)
+updatedAt: Wed Feb 12 2020 05:55:01 GMT+0800 (CST)
 ---
 # Sign up for an Agora account
 This page shows how to sign up for an Agora account, and change your account settings.
