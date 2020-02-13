@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Thu Feb 13 2020 09:26:08 GMT+0800 (CST)
+updatedAt: Thu Feb 13 2020 09:26:12 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -11,6 +11,10 @@ updatedAt: Thu Feb 13 2020 09:26:08 GMT+0800 (CST)
 
 
 ## 调用频率限制
+
+所有的 qps 都是针对单个 AgoraRtmKit 实例而言，而非针对单个 Agora RTM SDK。
+
+你可以通过创建多实例提高 API 的调用频率
 
 <style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
 
