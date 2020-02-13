@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Mon Nov 25 2019 09:25:50 GMT+0800 (CST)
+updatedAt: Thu Feb 13 2020 09:09:02 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -12,6 +12,12 @@ updatedAt: Mon Nov 25 2019 09:25:50 GMT+0800 (CST)
 
 
 ## 调用频率限制
+
+$$ aa2d92f0-4e38-11ea-8218-196676895c48
+{
+  "platform": "Android"
+}
+$$
 
 <style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
 
