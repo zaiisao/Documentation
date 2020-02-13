@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Thu Feb 13 2020 09:24:26 GMT+0800 (CST)
+updatedAt: Thu Feb 13 2020 09:24:31 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -15,7 +15,7 @@ updatedAt: Thu Feb 13 2020 09:24:26 GMT+0800 (CST)
 
 所有的 qps 都是针对单个 RtmClient 实例而言，而非针对单个 Agora RTM SDK。
 
-<div class="alert note">你可以通过创建多实例提高 API 的调用频率。</div>
+你可以通过创建多实例提高 API 的调用频率
 
 <style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
 
