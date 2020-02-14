@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Linux CPP,Windows CPP
-updatedAt: Mon Nov 25 2019 10:24:09 GMT+0800 (CST)
+updatedAt: Fri Feb 14 2020 06:54:02 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -11,6 +11,10 @@ This page provides a brief overview of the limitations of the Agora RTM SDK for 
 
 
 ## Maximum Call Frequency
+
+When mentioning a qps limitation, we are referring to the qps of an API in the context of one single IRtmService instance, not in the context of one Agora RTM SDK.
+
+<div class="alert note">You can increase the qps limitation of an API by creating multiple IRtmService instances.</div>
 
 | Function                                                    | Method                                                       | Maximum Call Frequency                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
