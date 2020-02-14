@@ -3,13 +3,17 @@
 title: RTM Limitations
 description: 
 platform: Web
-updatedAt: Thu Feb 06 2020 03:52:21 GMT+0800 (CST)
+updatedAt: Fri Feb 14 2020 06:55:27 GMT+0800 (CST)
 ---
 # RTM Limitations
 
 This page provides a brief overview of the limitations of the Agora RTM Web SDK, including the maximum method call frequencies, maximum string length, unicode support and more.
 
 ## Call Frequency
+
+When mentioning a qps limitation, we are referring to the qps of an API in the context of one single RtmClient instance, not in the context of one Agora RTM SDK.
+
+<div class="alert note">We <b>do not recommend</b>increasing the qps limitation by creating multiple RtmClient instances.</div>
 
 | Function                                                    | Method                                                       | Call Frequency                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
