@@ -3,7 +3,7 @@
 title: iOS 设备连接了蓝牙设备，但接电话不走蓝牙
 description: iOS 蓝牙耳机相关问题
 platform: iOS
-updatedAt: Fri Feb 14 2020 16:53:39 GMT+0800 (CST)
+updatedAt: Fri Feb 14 2020 17:09:52 GMT+0800 (CST)
 ---
 # iOS 设备连接了蓝牙设备，但接电话不走蓝牙
 iOS 会自动为系统电话和 VoIP 通话选择音频路由。
