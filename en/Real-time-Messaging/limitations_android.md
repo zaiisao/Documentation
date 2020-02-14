@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Android
-updatedAt: Mon Nov 25 2019 09:58:36 GMT+0800 (CST)
+updatedAt: Fri Feb 14 2020 06:29:30 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -11,6 +11,10 @@ This page provides a brief overview of the limitations of the Agora RTM SDK for 
 
 
 ## Maximum Call Frequency
+
+When mentioning a qps limitation, we are referring to the qps of an API in the context of one single RtmClient instance, not in the context of one Agora RTM SDK.
+
+<div class="alert note">You can increase the qps limitation of an API by creating multiple RtmClient instances.</div>
 
 | Function                                                    | Method                                                       | Maximum Call Frequency                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
