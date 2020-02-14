@@ -13,7 +13,7 @@ This page provides a brief overview of the limitations of the Agora RTM Web SDK,
 
 When mentioning a qps limitation, we are referring to the qps of an API in the context of one single RtmClient instance, not in the context of one Agora RTM SDK.
 
-<div class="alert note">We <b>do not recommend</b>increasing the qps limitation by creating multiple RtmClient instances.</div>
+<div class="alert note">We <b>do not recommend</b> increasing the qps limitation by creating multiple RtmClient instances.</div>
 
 | Function                                                    | Method                                                       | Call Frequency                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
