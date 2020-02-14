@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: iOS,macOS
-updatedAt: Mon Nov 25 2019 10:09:07 GMT+0800 (CST)
+updatedAt: Fri Feb 14 2020 06:40:14 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -12,6 +12,10 @@ This page provides a brief overview of the limitations of the Agora RTM Objectiv
 
 
 ## Maximum Call Frequency
+
+When mentioning a qps limitation, we are referring to the qps of an API in the context of one single AgoraRtmKit instance, not in the context of one Agora RTM SDK.
+
+<div class="alert note">You can increase the qps limitation of an API by creating multiple AgoraRtmKit instances.</div>
 
 | Function                                                    | Method                                                       | Maximum Call Frequency                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
