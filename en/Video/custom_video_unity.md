@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Unity
-updatedAt: Tue Dec 24 2019 07:41:49 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 10:20:59 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
