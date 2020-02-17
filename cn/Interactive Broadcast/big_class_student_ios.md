@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: iOS
-updatedAt: Mon Feb 17 2020 07:42:47 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 07:43:01 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 iOS 平台实现学生端相关功能。
@@ -31,7 +31,7 @@ updatedAt: Mon Feb 17 2020 07:42:47 GMT+0800 (CST)
 
 参考下图时序，搭配使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
-![](https://web-cdn.agora.io/docs-files/1579589913247)
+![](https://web-cdn.agora.io/docs-files/1581925319128)
 
 ## 核心 API 参考
 
@@ -45,7 +45,6 @@ updatedAt: Mon Feb 17 2020 07:42:47 GMT+0800 (CST)
 | [joinWithCompletion](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/joinWithCompletion:) | 加入 Agora RTM 频道。|
 | [getChannelAllAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) | 获取指定频道的频道属性。 |
 | [queryPeersOnlineStatus](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersOnlineStatus:completion:) | 查询指定用户的在线状态。 |
-| [initWithText](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html#//api/name/initWithText:) | 创建一个文本消息实例。 |
 | [sendMessage](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:sendMessageOptions:completion:) | 发送点对点消息。可实现学生举手申请发言等功能。 |
 | [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/addOrUpdateChannel:Attributes:Options:completion:) | 添加或更新指定频道的属性。你可以在该方法中设置是否将本次变更通知到频道内所有成员。 |
 | [sendMessage](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/sendMessage:completion:) | 发送频道消息。成功发送后，频道内所有用户都能收到。 |
