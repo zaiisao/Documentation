@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Sun Feb 16 2020 07:17:29 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 04:28:09 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Unity SDK 的发版说明。
@@ -16,6 +16,13 @@ Agora Unity SDK 主要支持两种场景：
 - 音视频直播
  
 点击[语音通话产品概述](../../cn/Interactive%20Broadcast/product_voice.md)、[视频通话产品概述](../../cn/Interactive%20Broadcast/product_video.md)、[音频互动直播产品概述](../../cn/Interactive%20Broadcast/product_live_audio.md)及[视频互动直播](../../cn/Interactive%20Broadcast/product_live.md)了解关键特性。
+
+## **2.9.2 版**
+
+该版本于 2020 年 2 月 17 日发布。
+
+- 该版本修复了 Android 设备上的部分异常。
+- 该版本修复了 Windows 平台下，使用 Editor 调试模式时偶现的卡死问题。
 
 ## **2.9.1 版**
 
