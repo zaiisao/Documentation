@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Unity
-updatedAt: Mon Feb 17 2020 11:22:11 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 11:27:57 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -75,80 +75,81 @@ using System;
 
 public class ShareScreen : MonoBehaviour
 {
-Texture2D mTexture;
-Rect mRect;
-[SerializeField]
-private string appId = "Your_AppID";
-[SerializeField]
-private string channelName = "agora";
-public IRtcEngine mRtcEngine;
-int i = 100;
-void Start()
-{
-Debug.Log("ScreenShare Activated");
-mRtcEngine = IRtcEngine.GetEngine(appId);
-// Sets the output log level of the SDK.
-mRtcEngine.SetLogFilter(LOG_FILTER.DEBUG | LOG_FILTER.INFO | LOG_FILTER.WARNING | LOG_FILTER.ERROR | LOG_FILTER.CRITICAL);
-// Enables the video module.
-mRtcEngine.EnableVideo();
-// Enables the video observer.
-mRtcEngine.EnableVideoObserver();
-// Configures the external video source.
-mRtcEngine.SetExternalVideoSource(true, false);
-// Joins a channel
-mRtcEngine.JoinChannel(channelName, null, 0);
-// Creates a rectangular region of the screen.
-mRect = new Rect(0, 0, Screen.width, Screen.height);
-// Creates a texture of the rectangle you create.
-mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.RGBA32, false);
-}
+   Texture2D mTexture;
+   Rect mRect;
+   [SerializeField]
+   private string appId = "Your_AppID";
+   [SerializeField]
+   private string channelName = "agora";
+   public IRtcEngine mRtcEngine;
+   int i = 100;
+	
+   void Start()
+   {
+       Debug.Log("ScreenShare Activated");
+       mRtcEngine = IRtcEngine.GetEngine(appId);
+       // Sets the output log level of the SDK.
+       mRtcEngine.SetLogFilter(LOG_FILTER.DEBUG | LOG_FILTER.INFO | LOG_FILTER.WARNING | LOG_FILTER.ERROR | LOG_FILTER.CRITICAL);
+       // Enables the video module.
+       mRtcEngine.EnableVideo();
+       // Enables the video observer.
+       mRtcEngine.EnableVideoObserver();
+       // Configures the external video source.
+       mRtcEngine.SetExternalVideoSource(true, false);
+       // Joins a channel
+       mRtcEngine.JoinChannel(channelName, null, 0);
+       // Creates a rectangular region of the screen.
+       mRect = new Rect(0, 0, Screen.width, Screen.height);
+       // Creates a texture of the rectangle you create.
+       mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.RGBA32, false);
+   }
 
-void Update()
-{
- shareScreen();
-}
-
-// Starts to share the screen.
-void shareScreen()
-{
-// Reads the Pixels of the rectangle you create.
-mTexture.ReadPixels(mRect, 0, 0);
-// Applies the Pixels read from the rectangle to the texture.
-mTexture.Apply();
-// Gets the Raw Texture data from the texture and apply it to an array of bytes.
-byte[] bytes = mTexture.GetRawTextureData();
-// Gives enough space for the bytes array.
-int size = Marshal.SizeOf(bytes[0]) * bytes.Length;
-// Checks whether the IRtcEngine instance is existed.
-IRtcEngine rtc = IRtcEngine.QueryEngine();
-
-if (rtc != null)
-{
-// Creates a new external video frame.
-ExternalVideoFrame externalVideoFrame = new ExternalVideoFrame();
-// Sets the buffer type of the video frame.
-externalVideoFrame.type = ExternalVideoFrame.VIDEO_BUFFER_TYPE.VIDEO_BUFFER_RAW_DATA;
-// Sets the format of the video pixel.
-externalVideoFrame.format = ExternalVideoFrame.VIDEO_PIXEL_FORMAT.VIDEO_PIXEL_UNKNOWN;
-// Applies raw data.
-externalVideoFrame.buffer = bytes;
-// Sets the width (pixel) of the video frame.
-externalVideoFrame.stride = (int)mRect.width;
-// Sets the height (pixel) of the video frame.
-externalVideoFrame.height = (int)mRect.height;
-// Removes pixels from the sides of the frame
-externalVideoFrame.cropLeft = 10;
-externalVideoFrame.cropTop = 10;
-externalVideoFrame.cropRight = 10;
-externalVideoFrame.cropBottom = 10;
-// Rotates the video frame (0, 90, 180, or 270)
-externalVideoFrame.rotation = 180;
-// Increments i with the video timestamp.
-externalVideoFrame.timestamp = i++;
-// Pushes the external video frame with the frame you create.
-int a = rtc.PushVideoFrame(externalVideoFrame);
-}
-}
+   void Update()
+   {
+       StartCoroutine(shareScreen());
+   }
+			 
+   // Starts to share the screen.
+   IEnumerator shareScreen()
+   {
+       yield return new WaitForEndOfFrame();
+       // Reads the Pixels of the rectangle you create.
+       mTexture.ReadPixels(mRect, 0, 0);
+       // Applies the Pixels read from the rectangle to the texture.
+       mTexture.Apply();
+       // Gets the Raw Texture data from the texture and apply it to an array of bytes.
+       byte[] bytes = mTexture.GetRawTextureData();
+       // Gives enough space for the bytes array.
+       int size = Marshal.SizeOf(bytes[0]) * bytes.Length;
+       // Checks whether the IRtcEngine instance is existed.
+       IRtcEngine rtc = IRtcEngine.QueryEngine();
+       if (rtc != null)
+       {
+           // Creates a new external video frame.
+           ExternalVideoFrame externalVideoFrame = new ExternalVideoFrame();
+           // Sets the buffer type of the video frame.
+           externalVideoFrame.type = ExternalVideoFrame.VIDEO_BUFFER_TYPE.VIDEO_BUFFER_RAW_DATA;
+           // Sets the format of the video pixel.
+           externalVideoFrame.format = ExternalVideoFrame.VIDEO_PIXEL_FORMAT.VIDEO_PIXEL_UNKNOWN;
+           // Applies raw data.
+           externalVideoFrame.buffer = bytes;
+           // Sets the width (pixel) of the video frame.
+           externalVideoFrame.stride = (int)mRect.width;
+           // Sets the height (pixel) of the video frame.
+           externalVideoFrame.height = (int)mRect.height;
+           // Removes pixels from the sides of the frame
+           externalVideoFrame.cropLeft = 10;
+           externalVideoFrame.cropTop = 10;
+           externalVideoFrame.cropRight = 10;
+           externalVideoFrame.cropBottom = 10;
+           // Rotates the video frame (0, 90, 180, or 270)
+           externalVideoFrame.rotation = 180;
+           // Increments i with the video timestamp.
+           externalVideoFrame.timestamp = i++;
+           // Pushes the external video frame with the frame you create.
+           int a = rtc.PushVideoFrame(externalVideoFrame);
+       }
+   }
 }
 ```
 
