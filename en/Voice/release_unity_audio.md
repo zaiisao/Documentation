@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Sun Feb 16 2020 07:16:39 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 04:27:32 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -16,6 +16,13 @@ The Agora Unity SDK supports the following scenarios:
 -   Live Voice Broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+
+## v2.9.2
+
+v2.9.2 is released on Feb 17, 2020.
+
+- This release fixed some abnormal problems on Android device.
+- This release fixed the stuck problem of using the Editor debug mode on Windows platform.
 
 ## v2.9.1
 
