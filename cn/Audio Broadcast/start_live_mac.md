@@ -133,7 +133,7 @@ Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-macOS-Obje
         <td>Audio Input</td>
 </table>
 
-<div class="alert note">根据苹果官方要求：<ul><li>对于在 Mac App Store 发布的软件，需要启用 App Sandbox 设置。详见<a href="https://developer.apple.com/app-sandboxing/">苹果官方声明</a>。<li>对于不在 Mac App Store 发布的软件，需要启用 Hardened Runtime 设置。详见<a href="https://developer.apple.com/news/?id=09032019a">苹果官方声明</a>。</li></ul></div>
+<div class="alert note"><li>根据 Apple 官方要求：<ul><li>对于在 Mac App Store 发布的软件，需要启用 <b>App Sandbox</b> 设置。详见 <a href="https://developer.apple.com/app-sandboxing/">Apple 官方声明</a>。<li>对于不在 Mac App Store 发布的软件，需要启用 <b>Hardened Runtime</b> 设置。详见 <a href="https://developer.apple.com/news/?id=09032019a">Apple 官方声明</a>。</li></ul><li><b>Hardened Runtime</b> 设置中的 <b>Library Validation</b> 会阻止 app 加载框架、插件或库，除非框架、插件或库是由 Apple 或是与 app 相同的团队 ID 签名的。当遇到需要取消该安全限制的场景（例如无法枚举到第三方虚拟摄像头）时，请勾选 <b>Hardened Runtime -> Runtime Exceptions -> Disable Library Validation</b>。</li></div>
 
 ## 实现互动直播
 

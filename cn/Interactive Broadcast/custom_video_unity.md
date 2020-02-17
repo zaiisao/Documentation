@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Unity
-updatedAt: Mon Feb 17 2020 11:40:38 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 11:46:53 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -110,7 +110,7 @@ public class ShareScreen : MonoBehaviour
    IEnumerator shareScreen()
    {
        yield return new WaitForEndOfFrame();
-			 // 读取屏幕像素。
+       // 读取屏幕像素。
        mTexture.ReadPixels(mRect, 0, 0);
        // 应用像素。
        mTexture.Apply();
