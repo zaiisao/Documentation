@@ -130,7 +130,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
         <td>Audio Input</td>
 </table>
 
-<div class="alert note">According to the requirements of Apple: <ul><li>Mac software distributed in the Mac App Store must enable the App Sandbox setting. See details in <a href="https://developer.apple.com/app-sandboxing/">Apple News and Updates</a>.<li>Mac software distributed outside the Mac App Store must enable the Hardened Runtime setting. See details in <a href="https://developer.apple.com/news/?id=09032019a">Apple News and Updates</a>.</li></ul></div>
+<div class="alert note"><li>According to the requirements of Apple: <ul><li>Mac software distributed in the Mac App Store must enable the <b>App Sandbox</b> setting. See details in <a href="https://developer.apple.com/app-sandboxing/">Apple News and Updates</a>.<li>Mac software distributed outside the Mac App Store must enable the <b>Hardened Runtime</b> setting. See details in <a href="https://developer.apple.com/news/?id=09032019a">Apple News and Updates</a>.</li></ul><li>The <b>Hardened Runtime</b>’s library validation prevents an app from loading frameworks, plug-ins, or libraries unless they’re either signed by Apple or signed with the same team ID as the app. When you face with problems such as failure to enumerate the virtual camera, check <b>Hardened Runtime -> Runtime Exceptions -> Disable Library Validation</b> to disable the library validation.</li></div>
 
 ## Implement the basic broadcast
 
