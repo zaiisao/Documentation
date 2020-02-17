@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Mon Feb 17 2020 04:27:51 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 04:29:33 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -21,8 +21,8 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 
 v2.9.2 is released on Feb 17, 2020.
 
-- This release fixed some abnormal problems on Android device.
-- This release fixed the stuck problem of using the Editor debug mode on Windows platform.
+- This release fixed some abnormal behaviors on Android devices.
+- This release fixed the stuck behavior of using the Editor debug mode on Windows platform.
 
 ## v2.9.1
 
