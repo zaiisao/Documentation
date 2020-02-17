@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Unity
-updatedAt: Tue Dec 24 2019 07:40:48 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 11:40:29 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
