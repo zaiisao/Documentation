@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Sun Feb 16 2020 07:18:58 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 01:13:14 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
