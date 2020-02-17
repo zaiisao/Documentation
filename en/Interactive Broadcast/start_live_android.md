@@ -59,8 +59,8 @@ Add the following line in the **/app/build.gradle** file of your project:
 ...
 dependencies {
     ...
-    // 2.9.3 is the latest version of the Agora SDK. You can set it to other versions.
-    implementation 'io.agora.rtc:full-sdk:2.9.3'
+    // 2.9.4 is the latest version of the Agora SDK. You can set it to other versions.
+    implementation 'io.agora.rtc:full-sdk:2.9.4'
 }
 ```
 
