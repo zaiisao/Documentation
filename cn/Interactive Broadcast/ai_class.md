@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Wed Jan 15 2020 07:39:44 GMT+0800 (CST)
+updatedAt: Tue Feb 18 2020 09:03:14 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
@@ -92,7 +92,7 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 
 教师端通过 Agora Media Streaming Server SDK 实现服务端推送媒体文件。
 
-<div class="note alert">点击<a href="https://download.agora.io/ardsdk/release/Agora_MediaStreamingServer_SDK_for_Linux_v2_5_0_FULL.tar.gz">此处</a>下载 Agora Media Streaming Server SDK 包。</div>
+<div class="note alert">点击<a href="https://download.agora.io/ardsdk/release/Agora_MediaStreamingServer_SDK_for_Linux_v2_6_1_180_FULL_20200212_85.tar.gz">此处</a>下载 Agora Media Streaming Server SDK 包。</div>
 	
 我们提供：
 

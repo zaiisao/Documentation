@@ -3,7 +3,7 @@
 title: 命令行录制
 description: How to start recording using cmd for Java
 platform: Linux Java
-updatedAt: Mon Feb 10 2020 04:45:47 GMT+0800 (CST)
+updatedAt: Tue Feb 18 2020 06:06:39 GMT+0800 (CST)
 ---
 # 命令行录制
 本文介绍如何通过命令行进行录制。你也可以通过调用 API 实现录制，详见 [Java](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/index.html) API 参考。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
@@ -26,9 +26,6 @@ java RecordingSample --appId <你的 App ID> --channel <频道名> --uid 0 --cha
 - `appId`，`channel` 和 `channelProfile` 的设置必须与 Agora Native/Web SDK 一致。
 - `appliteDir` 必须设置为 `AgoraCoreServices` 存放的路径，SDK 包内该文件位于 **bin** 文件夹下。
 
-在默认情况下，录制实例加入频道后，监测到频道内有用户即开始录制。
-
-如果你在开始录制时设置了 `--triggerMode 1`，即将录制启动模式设为手动，需要通过控制录制进程手动开始和暂停录制，详见[如何控制录制进程](https://docs.agora.io/cn/faq/cmd_control_record)。
 
 ## 设置录制选项
 
