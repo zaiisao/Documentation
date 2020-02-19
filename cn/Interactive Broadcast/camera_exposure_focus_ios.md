@@ -3,7 +3,7 @@
 title: 摄像头曝光与对焦
 description: 
 platform: iOS
-updatedAt: Sun Sep 29 2019 08:26:38 GMT+0800 (CST)
+updatedAt: Wed Feb 19 2020 09:25:55 GMT+0800 (CST)
 ---
 # 摄像头曝光与对焦
 ## 功能描述
@@ -16,7 +16,7 @@ Agora SDK 在移动平台提供整套的摄像头管理方法，方便用户切�
 
 ## 实现方法
 
-在实现摄像头曝光与对焦功能前，请确保已在你的项目中实现基本的实时音视频功能。详见开始视频通话/视频互动直播(link)。
+在实现摄像头曝光与对焦功能前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始视频通话](../../cn/Interactive%20Broadcast/start_call_ios.md)或[视频互动直播](../../cn/Interactive%20Broadcast/start_live_ios.md)。
 
 参考如下步骤，在你的项目中实现摄像头曝光与对焦功能：
 

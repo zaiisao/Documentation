@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Tue Feb 11 2020 02:48:43 GMT+0800 (CST)
+updatedAt: Wed Feb 19 2020 02:55:48 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -39,7 +39,7 @@ updatedAt: Tue Feb 11 2020 02:48:43 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，将 RTC SDK 和 RTM SDK 集成到你的项目中。
+参考下图时序，使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
 ![](https://web-cdn.agora.io/docs-files/1579577240258)
 
@@ -115,7 +115,7 @@ updatedAt: Tue Feb 11 2020 02:48:43 GMT+0800 (CST)
 <summary>白板</summary>
 参考下列常用功能文档，在你的项目中实现白板相关功能。
 	<li><a href="https://developer.netless.link/docs/javascript/features/js-document/">文档转换</a></li>
-		<li><a href="https://developer.netless.link/docs/javascript/features/js-state/">状态监听</a></li>
+	<li><a href="https://developer.netless.link/docs/javascript/features/js-state/">状态监听</a></li>
 	<li><a href="https://developer.netless.link/docs/android/guides/android-tools/">使用教具</a></li>
 	<li><a href="https://developer.netless.link/docs/android/guides/android-view/">视角操作</a></li>
 	<li><a href="https://developer.netless.link/docs/javascript/features/js-operation/">白板操作</a></li>
