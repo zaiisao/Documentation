@@ -3,7 +3,7 @@
 title: 限制条件
 description: RTM Linux Java SDK limitations.
 platform: Linux Java
-updatedAt: Thu Feb 13 2020 09:28:55 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 13:34:17 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -15,7 +15,7 @@ updatedAt: Thu Feb 13 2020 09:28:55 GMT+0800 (CST)
 
 <div class="alert note">你可以通过创建多实例提高 API 的调用频率。</div>
 
-<style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
+<style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
 
 | 功能                                    | 方法                                                         | 调用频率上限     |
 | --------------------------------------- | ------------------------------------------------------------ | ------------ |
@@ -35,7 +35,27 @@ updatedAt: Thu Feb 13 2020 09:28:55 GMT+0800 (CST)
 | 获取某特定内容被订阅的用户列表   | [queryPeersBySubscriptionOption](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a971c357f7d0c27d122ff877389314ccc) | 每 5 秒 10 次 |
 
 		
-> <sup>1</sup> 加入相同频道的频率限制为每 5 秒 2 次。
+<div class="alert note"><sup>1</sup> 加入相同频道的频率限制为每 5 秒 2 次。</div>
+	
+## 超时设定
+
+<style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
+
+| 功能 | 超时设定 | 
+| ---------------- | ---------------- | 
+| 登陆 Agora RTM 系统   | 6 秒    | 
+| 发送点对点消息  | 10 秒    | 
+| 查询用户在线状态  | 10 秒    | 
+| 订阅或退订指定用户状态  | 10 秒    | 
+| 根据订阅类型获取被订阅用户列表  | 5 秒    | 
+| 用户属性或频道属性相关操作  | 5 秒    | 
+| 查询单个或多个指定频道成员人数  | 5 秒    | 
+| 加入指定频道  | 5 秒    | 
+| 发送频道消息 | 5 秒    | 
+| 获取当前频道成员列表  | 5 秒    | 
+
+
+
 
 ## 字符串长度限制
 

@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Thu Feb 20 2020 13:27:50 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 13:32:37 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -16,7 +16,7 @@ updatedAt: Thu Feb 20 2020 13:27:50 GMT+0800 (CST)
 
 <div class="alert note">你可以通过创建多实例提高 API 的调用频率。</div>
 
-<style> table th:first-of-type {     width: 170px; } th:third-of-type {     width: 100px; }</style>
+<style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
 
 | 功能                                                  | 方法                                                      | 调用频率上限                |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
@@ -49,7 +49,7 @@ updatedAt: Thu Feb 20 2020 13:27:50 GMT+0800 (CST)
 | 订阅或退订指定用户状态  | 10 秒    | 
 | 根据订阅类型获取被订阅用户列表  | 5 秒    | 
 | 用户属性或频道属性相关操作  | 5 秒    | 
-| 查询单个或多个制定频道成员人数  | 5 秒    | 
+| 查询单个或多个指定频道成员人数  | 5 秒    | 
 | 加入指定频道  | 5 秒    | 
 | 发送频道消息 | 5 秒    | 
 | 获取当前频道成员列表  | 5 秒    | 
