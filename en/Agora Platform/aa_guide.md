@@ -3,19 +3,32 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Tue Feb 11 2020 04:21:24 GMT+0800 (CST)
+updatedAt: Wed Feb 19 2020 10:31:12 GMT+0800 (CST)
 ---
 # Agora Analytics
 [Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience.
 
-## Call Search
+## Investigation Tool
 
-**Call Search** helps you search calls and analyze quality issues. See [Call Search](../../en/Agora%20Platform/aa_call_search.md) for details.
+### Call Search
 
-- If quality issues occur, use Call Search to view quality details.
-- Locate individual users having quality issues and investigate their experience.
+**Call Search** helps you search calls and analyze quality issues. The following are its key functions. See [Call Search](../../en/Agora%20Platform/aa_call_search.md) for details.
+
+- Look into the details of a quality issue.
+- Locate individual users having quality issues and investigate their experiences.
 
 ![](https://web-cdn.agora.io/docs-files/1571111674132)
+
+### Big Channel
+
+Big Channel helps you monitor and analyze quality issues of Big Channels in real time, improving the operational efficiency of user activities in Big Channels. For details, see [Big Channel](../../en/Agora%20Platform/aa_big_channel.md). 
+
+- View the call duration, the audience distribution, the number of users with quality issues, and their causes.
+- Sample the users with quality issues, and investigate their experiences.
+
+> Before using Big Channel, contact sales-us@agora.io to enable this function.
+
+![](https://web-cdn.agora.io/docs-files/1581394617210)
 
 ## Data Insight
 
@@ -30,7 +43,7 @@ updatedAt: Tue Feb 11 2020 04:21:24 GMT+0800 (CST)
 
 ## Realtime
 
-**Realtime** helps you understand the real-time status of your project. See Realtime for details.
+**Realtime** helps you understand the real-time status of your project. See [Realtime](../../en/Agora%20Platform/aa_live_data.md) for details.
 
 - View the real-time scale, quality, and any abnormalities of your project.
 - Focus on the current quality issues in various dimensions, including region, SDK version, network type, and more.

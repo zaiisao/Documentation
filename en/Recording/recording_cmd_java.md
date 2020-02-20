@@ -116,7 +116,7 @@ We recommend that you specify the range of ports for the recording processes. Co
 
   See [FAQ](https://docs.agora.io/cn/faq/recording_player) for the supported players.
 
-- `layoutMode`：Sets the video mixing layout. See [Set Video Layout](../../en/Recording/recording_layout_guide.md) for details.
+- `layoutMode`：Sets the video mixing layout. See [Set Video Layout](../../en/Recording/recording_layout.md) for details.
 
   - `0`: (Default) Floating layout. The first user in the channel occupies the full canvas. The other users occupy the small regions on top of the canvas, starting from the bottom left corner. The small regions are arranged in the order of the users joining the channel. This layout supports one full-size region and up to four rows of small regions on top with four regions per row, comprising 17 users.
   - `1`: Best Fit Layout. This is a grid layout. The number of columns and rows and the grid size vary depending on the number of users in the channel. This layout supports up to 17 users.

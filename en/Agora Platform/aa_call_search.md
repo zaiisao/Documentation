@@ -1,11 +1,11 @@
 
 ---
-title: Agora Analytics
+title: Call Search
 description: Introduction to call research
 platform: All Platforms
-updatedAt: Fri Dec 27 2019 07:00:18 GMT+0800 (CST)
+updatedAt: Wed Feb 19 2020 10:15:21 GMT+0800 (CST)
 ---
-# Agora Analytics
+# Call Search
 The [**Call Search**](https://dashboard.agora.io/analytics/call/search) function of Agora Analytics allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
 
 - The device status, including the system CPU usage and the app's CPU usage.

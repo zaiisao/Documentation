@@ -3,7 +3,7 @@
 title: Agora On-premise Recording Overview
 description: 
 platform: Linux
-updatedAt: Tue Feb 11 2020 07:29:18 GMT+0800 (CST)
+updatedAt: Tue Feb 18 2020 06:25:44 GMT+0800 (CST)
 ---
 # Agora On-premise Recording Overview
 <div class="alert note">Note: <br>If you do not want to prepare server resources, Agora recommends using <a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=Linux">Agora Cloud Recording</a>, which enables you to record voice/video calls and interactive broadcastsis on your cloud storage through RESTful APIs.  </div>
