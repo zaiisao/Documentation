@@ -1,14 +1,16 @@
 
 ---
-title: 水晶球
+title: 水晶球概览
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Tue Feb 18 2020 06:36:40 GMT+0800 (CST)
+updatedAt: Wed Feb 19 2020 10:26:11 GMT+0800 (CST)
 ---
-# 水晶球
+# 水晶球概览
 [水晶球](https://console.agora.io/analytics/call/search)（Agora Analytics）是 Agora 为开发者提供的全周期通话质量监测、回溯和分析的解决方案，致力于帮助你及时发现问题、定位原因，并最终解决问题以提升用户体验。
 
-## 通话调查
+## 问题调查
+
+### 通话调查
 
 通话调查可以帮助你查找通话并分析质量问题，详见[通话调查](../../cn/Agora%20Platform/aa_call_search.md)。
 
@@ -16,6 +18,17 @@ updatedAt: Tue Feb 18 2020 06:36:40 GMT+0800 (CST)
 - 定位问题用户后，进一步调查此用户的质量情况和相关事件。
 
 ![](https://web-cdn.agora.io/docs-files/1570614244033)
+
+### 大频道
+
+大频道帮助你实时监控和分析大频道的通话质量，可以极大提高运营大频道的效率，详见[大频道](../../cn/Agora%20Platform/aa_big_channel.md)。
+
+- 实时查看当前项目中大频道的通话时长、观众分布、体验异常的用户数及质量影响因素。
+- 采样体验异常的用户，进一步调查部分用户的质量情况和相关事件。
+
+> 大频道处于 beta 阶段，使用前需联系 sales@agora.io 开通。
+
+![](https://web-cdn.agora.io/docs-files/1581394768141)
 
 ## 数据洞察
 
@@ -30,7 +43,7 @@ updatedAt: Tue Feb 18 2020 06:36:40 GMT+0800 (CST)
 
 ## 实时数据
 
-实时数据可以让你实时掌握项目动态，详见实时数据。
+实时数据可以让你实时掌握项目动态，详见[实时数据](../../cn/Agora%20Platform/aa_live_data.md)。
 
 - 实时查看当前项目的在线规模、质量水平和异常情况。
 - 从地域、版本、网络类型等相关维度，聚焦当前爆发点和问题点。
