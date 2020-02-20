@@ -169,7 +169,7 @@ java RecordingSample --appId <你的 App ID> --channel <频道名> --uid 0 --cha
   - 3：日志等级为 Warn。
   - 4：日志等级为 Notice。
   - 5：日志等级为 Info。
-    - 6：日志等级为 Debug。
+  - 6：日志等级为 Debug。
   
 - `enableIntraRequest`：是否启用关键帧请求。该参数默认为 1，可改善弱网下的音视频体验。如需使单流模式下录制的视频可指定播放位置，须将 `enableIntraRequest` 设为 0。
 

@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: How to enable cloud proxy for recording
 platform: Linux
-updatedAt: Wed Jan 15 2020 01:04:35 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 07:32:00 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能简介
@@ -14,9 +14,15 @@ updatedAt: Wed Jan 15 2020 01:04:35 GMT+0800 (CST)
 相比配置单一的代理服务器的 IP，云代理服务更灵活稳定，因此在大型企业、医院、高校、金融等安全需求较高的机构内都有广泛的应用。
 
 ## 实现方法
-录制 SDK 2.8.0 及以上版本支持云代理服务，开始前请确保你已经[下载](https://download.agora.io/ardsdk/release/Agora_Recording_SDK_for_Linux_v2.8.0.150.tar.gz)并集成 SDK。
+<div class="note alert">Agora 本地服务端录制 SDK v3.0.0 及以上版本支持云代理服务，使用云代理服务前请确保你已经下载并集成本地服务端录制 SDK v3.0.0 及以上版本。</div>
 
-1. 联系 sales@agora.io 申请开通云代理服务，并提供代理服务使用区域、并发规模、网络运营商等信息。
+根据以下步骤使用云代理服务：
+
+1. 联系 [sales@agora.io](mailto:support@agora.io) 申请开通云代理服务，并提供以下信息：
+
+   - 代理服务使用区域。
+   - 并发规模。
+   - 网络运营商。
 
 2. 将以下测试 IP 及端口添加到企业防火墙的白名单。
 
@@ -39,9 +45,12 @@ updatedAt: Wed Jan 15 2020 01:04:35 GMT+0800 (CST)
 	 
 <div class="alert note">以上 IP 仅供测试阶段调试使用，正式上线前需要向 Agora 申请独立的云代理服务资源。</div>
 
-3. 在录制 app 加入频道时将 `RecordingConfig` 中的 `enableCloudProxy` 参数设为 `true` 打开云代理服务，测试是否能正常录制。
+3. 录制端加入频道时在 `RecordingConfig` 中将 `enableCloudProxy` 参数设为 `true`，声网会自动配置默认的代理服务器域名，开启云代理服务。当默认的代理服务器域名无法解析时，可通过以下方式直接配置 IP 列表和端口：
 
-   > 如果你使用命令行 demo 录制，在开始录制时设置 `--enableCloudProxy 1`。
+   1. `RecordingConfig` 中的 `proxyType` 参数设为 2。
+   2. `RecordingConfig` 中的 `proxyServer` 参数设为 `"47.74.211.17,52.80.192.229,52.52.84.170,47.96.234.219:0"`。
+
+> 如果你使用命令行 demo 录制，在开始录制时设置 `--enableCloudProxy 1 --proxyType ${type} --proxyServer ${ip,port}`。
 
 4. 测试完成后，Agora 会为你部署云代理服务正式环境，并提供相应的 IP 和端口。将 Agora 提供的 IP 和端口添加到企业防火墙的白名单。
 

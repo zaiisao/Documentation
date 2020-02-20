@@ -3,7 +3,7 @@
 title: 水印
 description: 
 platform: Linux CPP
-updatedAt: Thu Feb 20 2020 07:32:05 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 07:42:09 GMT+0800 (CST)
 ---
 # 水印
 ## 功能描述
@@ -16,7 +16,7 @@ updatedAt: Thu Feb 20 2020 07:32:05 GMT+0800 (CST)
 - 动态时间戳水印：使用录制服务器的当前时间作为水印，显示形式为“2019:06:18 14:30:35"。
 - 静态图片水印：使用一张本地 PNG 图片作为水印。
 
-> 本地服务端录制 SDK 自 v3.0 起支持水印功能。
+> 本地服务端录制 SDK 自 v3.0.0 起支持水印功能。
 
 ## 设置水印
 
