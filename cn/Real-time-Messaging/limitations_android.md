@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Thu Feb 20 2020 13:12:40 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 13:17:45 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -36,7 +36,7 @@ updatedAt: Thu Feb 20 2020 13:12:40 GMT+0800 (CST)
 | 退订指定单个或多个用户的在线状态    | [unSubscribePeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#acf3ab093be17a0752d8aff094e3aabc4) | 每 5 秒 10 次 |
 | 获取某特定内容被订阅的用户列表   | [queryPeersBySubscriptionOption](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a971c357f7d0c27d122ff877389314ccc) | 每 5 秒 10 次 |
 
-> <sup>1</sup> 加入相同频道的频率限制为每 5 秒 2 次。
+<div class="alert note"><sup>1</sup> 加入相同频道的频率限制为每 5 秒 2 次。</div>
 
 ## 超时设定
 
