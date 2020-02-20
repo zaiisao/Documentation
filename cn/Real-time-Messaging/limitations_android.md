@@ -40,7 +40,7 @@ updatedAt: Thu Feb 20 2020 13:17:45 GMT+0800 (CST)
 
 ## 超时设定
 
-<style> table th:first-of-type {     width: 200px; } th:third-of-type {     width: 100px; }</style>
+<style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
 
 | 功能 | 超时设定 | 
 | ---------------- | ---------------- | 
