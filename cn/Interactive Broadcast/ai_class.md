@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Tue Feb 18 2020 09:03:14 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 03:17:13 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
@@ -102,13 +102,13 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 	- 媒体降噪工具，帮助你在推流前对声音进行增益，从而抑制背景噪声。详见[使用降噪工具](https://docs-preview.agoralab.co/cn/Server/preprocess?platform=Linux#denoise)。
 	- AI 补帧工具，在两个不连续的视频片段之间插帧，实现平滑的视频播放效果。详见[使用 AI 补帧工具](https://docs-preview.agoralab.co/cn/Server/preprocess?platform=Linux#interpolation)。
 - 集成指南，指导你将 Agora Media Streaming Server SDK 集成到你自己的项目中并调用 API 进行媒体推流。详见[实现媒体推流](https://docs-preview.agoralab.co/cn/Server/media_streaming_on_server?platform=Linux%20C++)。
-- Agora Media Streaming Server SDK 的 [API 注释](https://docs-preview.agoralab.co/cn/Server/API%20Reference/server_cpp/2.5.0/index.html)。
+- Agora Media Streaming Server SDK 的 [API 注释](https://docs-preview.agoralab.co/cn/Server/API%20Reference/server_cpp/index.html)。
 
 ### 学生端功能实现
 
 #### 实时音视频
 
-学生端可集成 Agora RTC SDK 实现实时音视频功能，支持 Android、Windows、iOS 和 macOS 四个平台。
+学生端可集成 Agora RTC SDK 实现实时音视频功能，支持 Android、Windows、iOS、macOS 和 Web。
 
 我们提供：
 
@@ -124,10 +124,12 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 | iOS     | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_101_FULL_20191227_1767.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) | [iOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_ios?platform=iOS) |
 | macOS   | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Mac_v2_9_0_101_FULL_20191226_1001.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) | [macOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS) |
 | Windows | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2_9_0_101_20200102_FULL_86.zip) | [互动直播 Demo Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Windows 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
+| Web | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2_9_0_101_20200102_FULL_86.zip) | [互动直播 Demo Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Windows 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
+| Web     | [最新版 Web SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) | [互动直播 Demo (JS)](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/README.zh.md) | [Web 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web)  |                                            
 
 #### 实时消息
 
-学生端可集成 Agora RTM SDK 实现实时消息功能，支持 Android、Windows、iOS 和 macOS 四个平台。
+学生端可集成 Agora RTM SDK 实现实时消息功能，支持 Android、Windows、iOS、macOS 和 Web。
 
 | 概述                                                         | SDK 下载                                                     | 集成指南                                                     |
 | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
