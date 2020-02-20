@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Wed Feb 19 2020 05:11:37 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 07:29:03 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -39,6 +39,78 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 - 在用移动客户端 \(仅 Android 系统\) 录像的过程中，从前置摄像头切换到后置摄像头后，画面将被倒置。
 - 如果在频道内调用 `leaveChannel`, 录制会停止, 但默认录制文件最后会包含一段空白片段，这个时间段由调用 `joinChannel` 时在 `config` 里设定的 `idleLimitSec` 字段值决定。详见 [录制 API](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html)。
 - 由于录制的音视频文件是没有加密的，如果要满足 HIPPA 要求，需使用磁盘加密工具对硬盘进行加密，例如 cryptsetup。
+
+## 3.0.0 版 
+
+该版本于 2020 年 2 月 20 日发布。新增特性、改进与修复问题如下。
+
+**新增特性**
+
+#### 1. 支持录制以 H.265/HEVC 标准编码的视频流
+
+从 3.0.0 版本起，支持录制以 H.265/HEVC 标准编码的视频流。
+
+该功能默认关闭。如需开启，你可以在调用 `joinChannel` 方法加入频道时将 `RecordingConfig` 中的 `enableH265Support` 参数设为 `true`。
+
+#### 2. 添加水印
+
+3.0.0 版本新增添加水印功能，支持在合流模式下对录制的视频添加图片、文字或时间戳水印，作为防伪、宣传等用途。
+
+你可以在 `setVideoMixingLayout` 方法中设置水印，也可以调用 `updateWatermarkConfigs` 方法添加、更新或删除水印设置，详见[水印](../../cn/Recording/recording_watermark_cpp.md)。
+
+#### 3. 录制指定用户的音视频
+
+从 3.0.0 版本起，支持选择录制指定用户的音频或视频。你可以在调用 `joinChannel` 方法加入频道时：
+
+1. 先将 `RecordingConfig` 中的 `autoSubscribe` 设为 `false`；
+2. 然后设置 `subscribeVideoUids` 和 `subscribeAudioUids` 参数指定要录制视频和音频的用户 UID
+
+此后，你可以调用 `updateSuscribeVideoUids` 和 `updateSuscribeAudioUids` 方法更新需要录制视频和音频的用户 UID。
+
+#### 4. 保留最后一帧
+
+从 3.0.0 版本起，合流录制模式下，用户离开频道后，支持保留其视频的最后一帧。你可以在 `setVideoMixingLayout` 方法中设置 `keepLastFrame` 参数选择是否保留最后一帧。
+
+#### 5. 云代理服务
+
+3.0.0 版本新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Recording/cloudproxy_recording.md)。
+
+#### 6. 新增回调
+
+3.0.0 版本新增以下回调。具体说明和注意事项请点击各回调名查看。
+
+##### **频道事件**
+
+- `onRejoinChannelSuccess`：录制端重新加入频道时触发
+- `onConnectionStateChanged`：网络连接状态改变时触发
+
+##### **体验提升**
+
+- `onRemoteVideoStats`：报告远端视频流统计信息
+- `onRemoteAudioStats`：报告远端音频流统计信息
+- `onRecordingStats`：报告录制统计信息
+
+##### **媒体事件**
+
+- `onRemoteAudioStreamStateChanged`：远端用户音频流状态改变时触发
+- `onRemoteVideoStreamStateChanged`：远端用户视频流状态改变时触发
+
+**改进**
+
+- 从 3.0.0 版本起，你可通过 `RecordingConfig` 中的 `enableIntraRequest` 参数关闭关键帧请求。关闭后，频道内的所有发流端均每 2 秒发送一次关键帧。单流模式下录制的视频无需转码，即可指定播放位置观看。
+- 从 3.0.0 版本起，自定义配置文件中不强制要求设置录制文件的路径。如果你设置了 `cfgFilePath` 参数指定配置文件，配置文件中填写你需要设置的选项即可，不是必须设置 `"Recording_Dir"` 的值。
+
+**问题修复**
+
+- 修复了在合流模式录制时，有时录制的合流视频会多出一个画面的问题。
+- 修复了录制视频可能出现视频播放速度异常的问题。
+- 修复了 syslog 过多的问题。
+- 修复了在 `setVideoMixingLayout` 方法中设置 `alpha` 参数导致录制服务崩溃的问题。
+- 修复了仅录制音频或仅录制视频时，录制指定 UID 不生效的问题。
+- 修复了网络较差时，`onRemoteAudioStreamStateChanged` 和 `onRemoteVideoStreamStateChanged` 流状态改变回调报告的信息不准确的问题。
+- 修复了音频录制拉伸的问题。
+- 修复了合流录制模式下视频一开始出现黑帧的问题。
+
 
 ## 2.3.4 版
 
@@ -345,7 +417,7 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 **新增功能**
 
 - 支持音视频混合录制, 在 `API joinChannel`里新增参数 `mixedVideoAudio` 和 `cfgFilePath `。
-- 新增合并同一个 uid 音视频文件功能，详见 [合流录制](../../cn/Recording/composite_recording.md)。
+- 新增合并同一个 uid 音视频文件功能，详见 [合流录制](../../cn/Recording/recording_composite_mode.md)。
 - 新增 `API getProperties`用于在录制开启时便能立即获取录制路径而无需加入频道。
 - 修改了 `onError` 和 `onLeaveChannel` 回调。
 

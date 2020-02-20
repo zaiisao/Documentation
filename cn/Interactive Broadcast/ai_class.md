@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Thu Feb 20 2020 03:17:13 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 07:27:41 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
@@ -124,8 +124,7 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 | iOS     | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_101_FULL_20191227_1767.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) | [iOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_ios?platform=iOS) |
 | macOS   | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Mac_v2_9_0_101_FULL_20191226_1001.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) | [macOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS) |
 | Windows | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2_9_0_101_20200102_FULL_86.zip) | [互动直播 Demo Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Windows 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
-| Web | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2_9_0_101_20200102_FULL_86.zip) | [互动直播 Demo Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Windows 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
-| Web     | [最新版 Web SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) | [互动直播 Demo (JS)](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/README.zh.md) | [Web 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web)  |                                            
+| Web     | [最新版 Web SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) | [互动直播 Demo (JS)](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Web/README.zh.md) | [Web 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web)  |                                            
 
 #### 实时消息
 
