@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Jan 20 2020 02:31:43 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 07:25:17 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -224,7 +224,6 @@ The following parameters are required in the request body.
   - `13`: CA_CENTRAL_1 
   - `14`: AP_SOUTH_1 
   - `15`: CN_NORTH_1 
-  - `16`: CN_NORTHWEST_1 
   - `17`: US_GOV_WEST_1 
 
   When the third-party cloud storage is [Alibaba Cloud](https://www.alibabacloud.com/product/oss) (`vendor` = 2):

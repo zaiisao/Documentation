@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Wed Feb 19 2020 05:14:00 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 07:33:13 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -42,6 +42,81 @@ This component package is compatible with the following SDKs:
 
 
 > The Agora On-premise Recording SDK supports both Java and C++ from v2.2.0.
+
+## v3.0.0
+
+v3.0.0 is released on February 20, 2020.
+
+**New features**
+
+#### 1. Recording video streams encoded in H.265/HEVC 
+
+Supports recording video streams encoded in H.265/HEVC.
+
+This function is disabled by default. To enable recording video streams encoded in H.265/HEVC when calling `joinChannel`, set `enableH265Support` in `RecordingConfig` as `true`. 
+
+#### 2. Watermarks
+
+Supports adding image watermarks, text watermarks, or a timestamp watermark in composite recording mode.
+
+You can either configure watermark settings in the `setVideoMixingLayout` method, or add, update, and remove watermark settings with the `updateWatermarkConfigs` method. See [Watermark](../../en/Recording/recording_watermark_cpp.md) for details.
+
+#### 3. Selective recording
+
+Supports recording the audio or video of specified users.
+
+To enable selective recording when calling `joinChannel`:
+
+1. Set `autoSubscribe` as false in `RecordingConfig`.
+2. Set the `subscribeVideoUids` or `subscribeAudioUids` parameter in `RecordingConfig `to specify the users to record. 
+
+Afterwards, you can call `updateSuscribeVideoUids` or `updateSuscribeAudioUids` methods to update the list of uids to record.
+
+#### 4. Last frame
+
+Retains the last video frame from when the user leaves the channel in composite recording mode.
+
+You can set the `keepLastFrame` parameter when calling the `setVideoMixingLayout` method to enable this feature.
+
+#### 5. Cloud proxy
+
+Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Agora%20Platform/cloudproxy_recording.md) for details.
+
+#### 6. New callbacks
+
+##### Channel events
+
+- `onRejoinChannelSuccess`: Occurs when the recording server rejoins a channel.
+- `onConnectionStateChanged`: Occurs when the network connection state changes.
+
+##### Statistics events
+
+- `onRemoteVideoStats`: Reports the statistics of the video stream from each remote user/host.
+- `onRemoteAudioStats`: Reports the statistics of the audio stream from each remote user/host.
+- `onRecordingStats`: Reports the statistics of the recording session.
+
+##### Media events
+
+- `onRemoteAudioStreamStateChanged`: Occurs when the state of a remote audio stream changes.
+- `onRemoteVideoStreamStateChanged`: Occurs when the state of a remote video stream changes.
+
+**Improvement**
+
+- As of v3.0.0, you can disable the keyframe request by setting the `enableIntraRequest` parameter in RecordingConfig. After this setting:
+  - All senders in the channel send the keyframe at an interval of 2 seconds. 
+  - You can play the video file recorded in individual recording mode from a specified position without the need to transcode.
+- As of v3.0.0, setting the recording file path in the custom configuration file is no longer mandatory. If you have specified a custom configuration file by setting `cfgFilePath`, you do not have to set `Recording_Dir` in the configuration file.
+
+**Issues fixed**
+
+- In composite recording mode, the layout of the recorded video occasionally has an extra user region.
+- The playback speed of the recorded video is occasionally too fast.
+- The recording service creates too many Syslogs.
+- Setting the `alpha` parameter in the method call of `setVideoMixingLayout` causes the recording service to crash.
+- The recording service cannot record the specified uids if you set the server to record audio only, or to record video only.
+- The information reported by the `onRemoteAudioStreamStateChanged` and `onRemoteVideoStreamStateChanged` callbacks is inaccurate under poor network conditions.
+- The recorded audio is occasionally extended.
+- A black frame appears at the beginning of a video in composite recording mode.
 
 ## v2.3.4
 

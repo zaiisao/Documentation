@@ -150,6 +150,11 @@ We recommend that you specify the range of ports for the recording processes. Co
 
   > This setting does not work for users of the Agora Web SDK.
 
+- `keepLastFrame`: Sets whether or not to show the last frame of a user in the region after the user leaves the channel:
+
+  - `0`: (Default) The user's last frame does not show in the region.
+  - `1`: The user's last frame shows in the region.
+
 ### Path of the recorded files
 
 Use either of the following parameters to set the path of the recorded files.
@@ -160,9 +165,11 @@ Use either of the following parameters to set the path of the recorded files.
 ### Other settings
 
 - `proxyServer`: Sets the proxy server, which allows recording with the Intranet server. For example `127.0.0.1:1080`.
+
 - `audioIndicationInterval`: Sets whether or not to detect the users who speak. Disabled by default.
   - `0`: (Default) Disables the function of detecting the users who speak.
   - \> 0: The interval (ms) of detecting the users who speak. Agora recommends setting the interval to be longer than 200 ms. When the SDK detects the users who speak, the SDK returns the UID of the user who speaks loudest and the UIDs of all the users who speak and their voice volumes.
+  
 - `logLevel`: Sets the log level. Only log levels preceding the selected level are generated. The default value of the log level is 5.
   - `1`: The log level is Fatal.
   - `2`: The log level is Error.
@@ -170,6 +177,19 @@ Use either of the following parameters to set the path of the recorded files.
   - `4`: The log level is Notice.
   - `5`: The log level is Info.
   - `6`: The log level is Debug.
+  
+- `enableIntraRequest`: Sets whether to enable the keyframe request. The default value is 1, which can improve the audio and video quality under poor network conditions. To play the video file recorded in individual recording mode from a specified position, you must set `enableIntraRequest` as 0.
+
+  - 1: (Default) Leave it to the sender to decide whether to enable the keyframe request. After the keyframe request is enabled, you cannot play a video file, which is recorded in individual recording mode, from a specified position.
+
+  - 0: Disable the keyframe request. All senders in the channel send the keyframe at an interval of 2 seconds. After the keyframe request is disabled, you can play a video file, which is recorded in individual recording mode, from a specified position.
+
+  > If the sender uses Agora RTC SDK v2.9.2 or earlier, this parameter is valid only in the live-broadcast scenario.
+  
+- `enableH265Support`: Sets whether to enable recording video stream in H.265 format:
+
+  - 1: Enable recording video stream in H.265 format.
+  - 0: (Default) Disable recording stream in H.265 format. Other remote users in the channel can no longer send video stream in H.265 format.
 
 ## Next steps
 

@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy for recording
 platform: All Platforms
-updatedAt: Wed Jan 15 2020 02:22:13 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 07:35:02 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -16,9 +16,15 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 
 ## Implementation
 
-The [Agora On-Premise Recording SDK v2.8.0](https://download.agora.io/ardsdk/release/Agora_Recording_SDK_for_Linux_v2.8.0.150.tar.gz) or later supports the cloud proxy. Before proceeding, ensure that you prepare the development environment and integrate the SDK. 
+<div class="note alert">The Agora On-Premise Recording SDK v3.0.0 or later supports the cloud proxy service. Before using the Agora Cloud Proxy Service, ensure that you prepare the development environment and integrate the Agora On-Premise Recording SDK v3.0.0 or later.</div>
 
-1. Contact sales@agora.io and provide the information on the regions using the cloud proxy, the concurrent scale, and network operators.
+Follow these steps to use the cloud proxy service.
+
+1. Contact sales@agora.io with the following information to enable the cloud proxy service:
+
+  - The regions to use cloud proxy.
+  - The scale of your app in terms of channel concurrency.
+  - Your Internet service provider.
 
 2. Add the following test IP addresses and ports to your whitelist.
 
@@ -41,11 +47,15 @@ The [Agora On-Premise Recording SDK v2.8.0](https://download.agora.io/ardsdk/rel
 
  <div class="alert note">These IP addresses and ports are for testing purposes only. In a production environment, apply for the dedicated IP addresses and ports.</div>
 
-3. Set the `enableCloudPorxy` parameter as `true` in `RecordingConfig` when the recording app joins a channel and see if the recording works.
+3. When the recording server joins a channel, set `enableCloudProxy` in `RecordingConfig` as `true` to enable the cloud proxy service. Agora will configure the default domain of the cloud proxy service for you. If you can not resolve the domain name to an IP address, take the following steps to directly configure a list of proxy server IP addresses:
 
-   > If you use the command-line demo, add `--enableCloudProxy 1` to the command when starting the recording.
+  1. Set `proxyType` in `RecordingConfig` as `2`;
+  
+  2. Set `proxyServer` in `RecordingConfig` as  `"47.74.211.17,52.80.192.229,52.52.84.170,47.96.234.219:0"`.
+ 
+  > If you use our command-line demo, add `--enableCloudProxy 1 --proxyType ${type} --proxyServer ${ip,port}` to your command when starting a recording.
 
-4. Agora will provide the IP addresses (domain name) and ports for you to use the cloud proxy in the production environment. Add the IP addresses and ports to your whitelist.
+4. To use the cloud proxy service in the production environment, contact sales@agora.io for the IP addresses and ports for the production environment and add these resources to your whitelist.
 
 
 
