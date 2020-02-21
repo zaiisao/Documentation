@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Web
-updatedAt: Fri Feb 14 2020 06:55:27 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 14:50:28 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -23,13 +23,36 @@ When mentioning a qps limitation, we are referring to the qps of an API in the c
 | Send messages | <li>[sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) <li> And [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) taken together | 60 queries per second          |
 | Retrieve a member list of the channel                      | [getMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#getmembers) | Five queries every two seconds |
 | Renew the Token        | [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#renewtoken) | Two queries per second         |
-| Query the online status of the specified user(s            | [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes//rtmclient.html#querypeersonlinestatus) | Ten queries every five seconds        |
+| Query the online status of the specified users            | [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes//rtmclient.html#querypeersonlinestatus) | Ten queries every five seconds        |
 | Set user attributes | <li>[setLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setlocaluserattributes)<li>[addOrUpdateLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatelocaluserattributes)<li>[deleteLocalUserAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#deletelocaluserattributesbykeys)<li>And [clearLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#clearlocaluserattributes) taken together | 10 queries every five seconds          |
 | Get user attributes | <li>[getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributes)<li>And [getUserAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributesbykeys) taken together | 40 queries every five seconds          |
 | Set channel attributes | <li>[setChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setchannelattributes)<li>[addOrUpdateChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatechannelattributes)<li>[deleteChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#deletechannelattributesbykeys)<li>And [clearChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#clearchannelattributes) taken together | 10 queries every five seconds          |
 | Get channel attributes | <li>[getChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes)<li>And [getChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributesbykeys) taken together | 10 queries every five seconds          |
 
-> <sup>1</sup> The maximum call frequency limit for joining the same channel is two queries every five seconds. 
+<div class="alert note"><sup>1</sup> The maximum call frequency limit for joining the same channel is two queries every five seconds.</div>
+
+## Timeout settings
+
+<style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
+
+| Function | Timeout settings (s) | 
+| ---------------- | ---------------- | 
+| Log in the RTM system   | 6     | 
+| Send peer messages  | 10     | 
+| Query the online status of specified users  | 10     | 
+| Subscribe to the online status of specified users  | 10     | 
+| Unsubscribe from the online status of specified users  | 10     | 
+| Query peers by subscription option  | 5     | 
+| user attribute or channel attribute operations  | 5     | 
+| Retrieve member count of specified channels  | 5    | 
+| Join a channel  | 5    | 
+| Send a channel message| 10    | 
+| Gets a member list of the channel  | 5   | 
+
+
+ 
+<div class="alert note">As of v1.2.2, the timeout setting for sending a peer-to-peer message on the Web platform is prolonged from 5 s to 10 s. </div>
+ 
 
 ## String Length
 

@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: iOS,macOS
-updatedAt: Fri Feb 14 2020 06:40:14 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 14:27:26 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -34,7 +34,28 @@ When mentioning a qps limitation, we are referring to the qps of an API in the c
 | Unsubscribes from the online status of the specified user(s) | [unsubscribePeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/unsubscribePeersOnlineStatus:completion:) | Ten queries every five seconds. |
 | Gets a list of the peers, to whose specific status you have subscribed. | [queryPeersBySubscriptionOption](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersBySubscriptionOption:completion:) | Ten queries every five seconds. |
 
-> <sup>1</sup> The maximum call frequency limit for joining the same channel is two queries every five seconds. 
+<div class="alert note"><sup>1</sup> The maximum call frequency limit for joining the same channel is two queries every five seconds. </div>
+
+## Timeout settings
+
+<style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
+
+| Function | Timeout settings (s) | 
+| ---------------- | ---------------- | 
+| Log in the RTM system   | 6     | 
+| Send peer messages  | 10     | 
+| Query the online status of specified users  | 10     | 
+| Subscribe to the online status of specified users  | 10     | 
+| Unsubscribe from the online status of specified users  | 10     | 
+| Query peers by subscription option  | 5     | 
+| user attribute or channel attribute operations  | 5     | 
+| Retrieve member count of specified channels  | 5    | 
+| Join a channel  | 5    | 
+| Send a channel message| 10    | 
+| Gets a member list of the channel  | 5   | 
+
+
+
 
 ## String Length
 

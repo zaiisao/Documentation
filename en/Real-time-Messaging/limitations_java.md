@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Linux Java
-updatedAt: Fri Feb 14 2020 06:51:36 GMT+0800 (CST)
+updatedAt: Thu Feb 20 2020 14:45:27 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -32,6 +32,28 @@ When mentioning a qps limitation, we are referring to the qps of an API in the c
 | Subscribes to the online status of the specified user(s) | [subscribePeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a7a9ec7398c013ed35e17bc5d93e71420) | Ten queries every five seconds. |
 | Unsubscribes from the online status of the specified user(s) | [unsubscribePeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#acf3ab093be17a0752d8aff094e3aabc4) | Ten queries every five seconds. |
 | Gets a list of the peers, to whose specific status you have subscribed. | [queryPeersBySubscriptionOption](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a971c357f7d0c27d122ff877389314ccc) | Ten queries every five seconds. |
+
+<div class="alert note"><sup>1</sup> The maximum call frequency limit for joining the same channel is two queries every five seconds.</div>
+	
+## Timeout settings
+
+<style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
+
+| Function | Timeout settings (s) | 
+| ---------------- | ---------------- | 
+| Log in the RTM system   | 6     | 
+| Send peer messages  | 10     | 
+| Query the online status of specified users  | 10     | 
+| Subscribe to the online status of specified users  | 10     | 
+| Unsubscribe from the online status of specified users  | 10     | 
+| Query peers by subscription option  | 5     | 
+| user attribute or channel attribute operations  | 5     | 
+| Retrieve member count of specified channels  | 5    | 
+| Join a channel  | 5    | 
+| Send a channel message| 10    | 
+| Gets a member list of the channel  | 5   | 
+
+
 
 
 ## String Length
