@@ -112,7 +112,7 @@ If your `targetSdkVersion` >= 29, add the following line in the `<application>` 
 
 Add the following line in the **app/proguard-rules.pro** file to prevent code obfuscation:
 
-```
+```xml
 -keep class io.agora.**{*;}
 ```
 
