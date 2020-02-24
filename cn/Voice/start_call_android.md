@@ -53,8 +53,7 @@ Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Agor
 
 在项目的 **/app/build.gradle** 文件中，添加如下行：
 
-```java
-
+```gradle
 ...
 dependencies {
     ...
@@ -105,7 +104,7 @@ dependencies {
 
 如果你的 `targetSdkVersion` >= 29，还需要在 **AndroidManifest.xml** 文件的 `<application>` 区域添加如下行：
 
-```java
+```xml
    <application
       android:requestLegacyExternalStorage="true">
 	  ...
@@ -116,7 +115,7 @@ dependencies {
 
 在 **app/proguard-rules.pro** 文件中添加如下行，防止代码混淆：
 
-```java
+```xml
 -keep class io.agora.**{*;}
 ```
 
