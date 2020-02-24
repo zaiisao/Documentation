@@ -54,7 +54,7 @@ Agora 在 GitHub 上提供一个开源的互动直播示例项目 [OpenLive-Andr
 
 在项目的 **/app/build.gradle** 文件中，添加如下行：
 
-```java
+```
 
 ...
 dependencies {
@@ -82,7 +82,7 @@ dependencies {
 
 根据场景需要，在  **/app/src/main/AndroidManifest.xml** 文件中添加如下行，获取相应的设备权限：
 
-```java
+```
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
    package="io.agora.tutorials1v1acall">
  
@@ -106,7 +106,7 @@ dependencies {
 
 如果你的 `targetSdkVersion` >= 29，还需要在 **AndroidManifest.xml** 文件的 `<application>` 区域添加如下行：
 
-```java
+```
    <application
       android:requestLegacyExternalStorage="true">
 	  ...
@@ -117,7 +117,7 @@ dependencies {
 
 在 **app/proguard-rules.pro** 文件中添加如下行，防止代码混淆：
 
-```java
+```
 -keep class io.agora.**{*;}
 ```
 

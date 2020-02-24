@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Electron
-updatedAt: Thu Jan 02 2020 10:14:42 GMT+0800 (CST)
+updatedAt: Mon Feb 24 2020 02:12:45 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora Electron SDK 快速实现互动直播。
@@ -17,7 +17,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 * Node.js 6.9.1 及以上
 * Electron 1.8.3 及以上
 
-<div class="alert note">使用 Windows 平台进行开发时，请运行 npm install -D —arch = ia32 electron 安装 32 位的 Electron。</div>
+<div class="alert note">使用 Windows 平台进行开发时，请运行 <code>npm install -D —arch = ia32 electron</code> 安装 32 位的 Electron。</div>
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
 ## 准备开发环境
@@ -51,7 +51,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 2. 将下载下来的 SDK 拷贝至你的项目根目录下
 3. 通过如下代码将 SDK 引入至你的项目中
 
-	`import AgoraRtcEngine from 'agora-electron-sdk'`
+	`import AgoraRtcEngine from './agora-electron-sdk/AgoraSdk.js'`
 
 ### 修改 .npmrc 文件切换预编译版本
 

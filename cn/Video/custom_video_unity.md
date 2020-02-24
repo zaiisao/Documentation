@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Unity
-updatedAt: Mon Feb 17 2020 11:46:53 GMT+0800 (CST)
+updatedAt: Sat Feb 22 2020 05:31:00 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -39,7 +39,7 @@ mRtcEngine.SetExternalVideoSource(true, false);
 
    ```C#
 mRect = new Rect(0, 0, Screen.width, Screen.height);
-mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.RGBA32, false);
+mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.BGRA32, false);
 mTexture.ReadPixels(mRect, 0, 0);
 mTexture.Apply();
 	 ```
@@ -98,7 +98,7 @@ public class ShareScreen : MonoBehaviour
        // 创建需共享的屏幕区域。
        mRect = new Rect(0, 0, Screen.width, Screen.height);
        // 创建 Texture。
-       mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.RGBA32, false);
+       mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.BGRA32, false);
    }
 
    void Update()
@@ -127,7 +127,7 @@ public class ShareScreen : MonoBehaviour
            // 设置视频帧 buffer 类型。
            externalVideoFrame.type = ExternalVideoFrame.VIDEO_BUFFER_TYPE.VIDEO_BUFFER_RAW_DATA;
            // 设置像素格式。
-           externalVideoFrame.format = ExternalVideoFrame.VIDEO_PIXEL_FORMAT.VIDEO_PIXEL_UNKNOWN;
+           externalVideoFrame.format = ExternalVideoFrame.VIDEO_PIXEL_FORMAT.VIDEO_PIXEL_BGRA;
            // 应用原始数据。
            externalVideoFrame.buffer = bytes;
            // 设置视频帧宽度（pixel）。
