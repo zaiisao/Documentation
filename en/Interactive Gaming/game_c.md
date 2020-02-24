@@ -3,7 +3,7 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Tue Oct 22 2019 06:19:15 GMT+0800 (CST)
+updatedAt: Mon Feb 24 2020 07:11:43 GMT+0800 (CST)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
@@ -14,7 +14,7 @@ Development environment:
 - A certified Cocos Creator account.
 - An Android or iOS device for the mobile end.
 - No VPN connection.
-- Ensure that the browser for the Web end meets the [requirements](https://docs.agora.io/en/Audio%20Broadcast/web_prepare?platform=Web).
+- Ensure that the browser for the Web end meets the [requirements](https://docs.agora.io/en/Interactive%20Broadcast/start_live_web?platform=Web#prerequisites).
 
 ## Integrate the Agora Service
 
@@ -58,7 +58,8 @@ You can now call the APIs to enable the audio function in your Cocos Creator pro
 
 Enable the audio function with the following APIs:
 
-1. Initialize the RtcEngine: [agora undefined agora.joinChannel("", channel, "", 0);](../../en/Interactive%20Gaming/game_coco.md)
+1. Initialize the RtcEngine: [agora && agora.init(appid);](../../en/Interactive%20Gaming/game_coco.md)
+2. Join the channel: [agora && agora.joinChannel("", channel, "", 0);](../../en/Interactive%20Gaming/game_coco.md)
 3. Leave the channel:  [agora && agora.leaveChannel();](../../en/Interactive%20Gaming/game_coco.md)
 
 Register the following callback events in the `agora.on` method:

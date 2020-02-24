@@ -81,7 +81,7 @@ dependencies {
 
 Add the following permissions in the **/app/src/main/AndroidManifest.xml** file for device access according to your needs:
 
-```java
+```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
    package="io.agora.tutorials1v1acall">
  
@@ -104,7 +104,7 @@ Add the following permissions in the **/app/src/main/AndroidManifest.xml** file 
 
 If your `targetSdkVersion` >= 29, add the following line in the `<application>` module in the **AndroidManifest.xml** file:
  
-```
+```xml
    <application
 	    android:requestLegacyExternalStorage="true">
    </application>
@@ -114,7 +114,7 @@ If your `targetSdkVersion` >= 29, add the following line in the `<application>` 
 
 Add the following line in the **app/proguard-rules.pro** file to prevent code obfuscation:
 
-```java
+```pro
 -keep class io.agora.**{*;}
 ```
 

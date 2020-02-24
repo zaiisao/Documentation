@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Electron
-updatedAt: Thu Jan 02 2020 10:13:37 GMT+0800 (CST)
+updatedAt: Mon Feb 24 2020 02:14:04 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start a basic broadcast call with the Agora SDK for Electron.
@@ -17,7 +17,7 @@ We provide an open-source demo project that implements [Agora Electron Quickstar
 * Node.js 6.9.1 or later
 * Electron 1.8.3 or later
 
-<div class="alert note">If you use Windows for development, ensure that you run npm install -D —arch = ia32 electron to install a 32-bit Electron.</div>
+<div class="alert note">If you use Windows for development, ensure that you run <code>npm install -D —arch = ia32 electron</code> to install a 32-bit Electron.</div>
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
@@ -49,7 +49,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 2. Save the downloaded SDk package into the root directory of your project file.
 3. Import the SDK into your project with the following code:
 
-	`import AgoraRtcEngine from 'agora-electron-sdk'`
+	`import AgoraRtcEngine from './agora-electron-sdk/AgoraSdk.js'`
 
 <div class="alert note">Ensure that you use Electron 3.0.6 if you want to get the SDK by downloading it from the Developer Portal.</div>
 

@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Unity
-updatedAt: Mon Feb 17 2020 11:27:57 GMT+0800 (CST)
+updatedAt: Sat Feb 22 2020 05:31:29 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -41,7 +41,7 @@ mRtcEngine.SetExternalVideoSource(true, false);
 
    ```C#
 mRect = new Rect(0, 0, Screen.width, Screen.height);
-mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.RGBA32, false);
+mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.BGRA32, false);
 mTexture.ReadPixels(mRect, 0, 0);
 mTexture.Apply();
 	 ```
@@ -101,7 +101,7 @@ public class ShareScreen : MonoBehaviour
        // Creates a rectangular region of the screen.
        mRect = new Rect(0, 0, Screen.width, Screen.height);
        // Creates a texture of the rectangle you create.
-       mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.RGBA32, false);
+       mTexture = new Texture2D((int)mRect.width, (int)mRect.height, TextureFormat.BGRA32, false);
    }
 
    void Update()
@@ -130,7 +130,7 @@ public class ShareScreen : MonoBehaviour
            // Sets the buffer type of the video frame.
            externalVideoFrame.type = ExternalVideoFrame.VIDEO_BUFFER_TYPE.VIDEO_BUFFER_RAW_DATA;
            // Sets the format of the video pixel.
-           externalVideoFrame.format = ExternalVideoFrame.VIDEO_PIXEL_FORMAT.VIDEO_PIXEL_UNKNOWN;
+           externalVideoFrame.format = ExternalVideoFrame.VIDEO_PIXEL_FORMAT.VIDEO_PIXEL_BGRA;
            // Applies raw data.
            externalVideoFrame.buffer = bytes;
            // Sets the width (pixel) of the video frame.
