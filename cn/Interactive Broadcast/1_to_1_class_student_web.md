@@ -80,7 +80,7 @@ updatedAt: Fri Feb 14 2020 02:12:23 GMT+0800 (CST)
 <summary>关闭本地音视频</summary>
 你可以通过调用 RTC SDK 的如下方法，实现相关功能：
 	<li>调用 <code>muteAudio</code> 或 <code>unmuteAudio</code>关闭或重新开启本地音频。</li>
-	<li>调用 <code>muteVideo</code> 或 <code>unmuteVideo</code> 关闭或重新开启本地视频。
+	<li>调用 <code>muteVideo</code> 或 <code>unmuteVideo</code> 关闭或重新开启本地视频。</li>
 </details>
 
 <details>
