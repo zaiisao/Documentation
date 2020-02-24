@@ -55,7 +55,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 Add the following line in the **/app/build.gradle** file of your project:
 
-```java
+```
 ...
 dependencies {
     ...
@@ -114,7 +114,7 @@ If your `targetSdkVersion` >= 29, add the following line in the `<application>` 
 
 Add the following line in the **app/proguard-rules.pro** file to prevent code obfuscation:
 
-```pro
+```
 -keep class io.agora.**{*;}
 ```
 
