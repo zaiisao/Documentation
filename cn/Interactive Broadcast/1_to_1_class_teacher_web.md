@@ -109,8 +109,8 @@ updatedAt: Fri Feb 14 2020 02:12:30 GMT+0800 (CST)
 参考下列常用功能文档，在你的项目中实现白板相关功能。
 	<li><a href="https://developer.netless.link/docs/javascript/features/js-document/">文档转换</a></li>
 	<li><a href="https://developer.netless.link/docs/javascript/features/js-state/">状态监听</a></li>
-	<li><a href="https://developer.netless.link/docs/android/guides/android-tools/">使用教具</a></li>
-	<li><a href="https://developer.netless.link/docs/android/guides/android-view/">视角操作</a></li>
+	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-tools/">使用教具</a></li>
+	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-view/">视角操作</a></li>
 	<li><a href="https://developer.netless.link/docs/javascript/features/js-operation/">白板操作</a></li>
 	<li><a href="https://developer.netless.link/docs/javascript/features/js-scenes/">页面（场景）管理</a></li>
 </details>
