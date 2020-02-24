@@ -53,7 +53,7 @@ Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Agor
 
 在项目的 **/app/build.gradle** 文件中，添加如下行：
 
-```gradle
+```xml
 ...
 dependencies {
     ...
