@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Jan 21 2020 05:54:11 GMT+0800 (CST)
+updatedAt: Tue Feb 25 2020 10:12:30 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -189,7 +189,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 
 `storageConfig` 是一个用于设置第三方云存储的 JSON Object，包含以下字段：
 
-- `vendor`：Number 类型，第三方云存储供应商。    
+- `vendor`：Number 类型，第三方云存储供应商。
 
   - `0`：[七牛云](https://www.qiniu.com/products/kodo)
   - `1`：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)
@@ -197,84 +197,80 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `3`：[腾讯云](https://cloud.tencent.com/product/cos)
 
 - `region`：Number 类型，第三方云存储指定的地区信息。
-  当 `vendor` = 0，即第三方云存储为七牛云时：  
+  当 `vendor` = 0，即第三方云存储为七牛云时：
 
-  - `0`：Huadong 
-  - `1`：Huabei 
-  - `2`：Huanan 
-  - `3`：Beimei  
+  - `0`：Huadong
+  - `1`：Huabei
+  - `2`：Huanan
+  - `3`：Beimei
 
   当 `vendor` = 1，即第三方云存储为 Amazon S3 时：
 
-  - `0`：US_EAST_1 
-  - `1`：US_EAST_2 
-  - `2`：US_WEST_1 
-  - `3`：US_WEST_2 
-  - `4`：EU_WEST_1 
-  - `5`：EU_WEST_2 
-  - `6`：EU_WEST_3 
-  - `7`：EU_CENTRAL_1 
-  - `8`：AP_SOUTHEAST_1 
-  - `9`：AP_SOUTHEAST_2 
-  - `10`：AP_NORTHEAST_1 
-  - `11`：AP_NORTHEAST_2 
-  - `12`：SA_EAST_1 
-  - `13`：CA_CENTRAL_1 
-  - `14`：AP_SOUTH_1 
-  - `15`：CN_NORTH_1 
-  - `16`：CN_NORTHWEST_1 
-  - `17`：US_GOV_WEST_1 
+  - `0`：US_EAST_1
+  - `1`：US_EAST_2
+  - `2`：US_WEST_1
+  - `3`：US_WEST_2
+  - `4`：EU_WEST_1
+  - `5`：EU_WEST_2
+  - `6`：EU_WEST_3
+  - `7`：EU_CENTRAL_1
+  - `8`：AP_SOUTHEAST_1
+  - `9`：AP_SOUTHEAST_2
+  - `10`：AP_NORTHEAST_1
+  - `11`：AP_NORTHEAST_2
+  - `12`：SA_EAST_1
+  - `13`：CA_CENTRAL_1
+  - `14`：AP_SOUTH_1
+  - `15`：CN_NORTH_1
+  - `17`：US_GOV_WEST_1
 
-  当 `vendor` = 2，即第三方云存储为阿里云时： 
+  当 `vendor` = 2，即第三方云存储为阿里云时：
 
-  - `0`：CN_Hangzhou 
-  - `1`：CN_Shanghai 
-  - `2`：CN_Qingdao 
-  - `3`：CN_Beijin 
-  - `4`：CN_Zhangjiakou 
-  - `5`：CN_Huhehaote 
-  - `6`：CN_Shenzhen 
-  - `7`：CN_Hongkong 
-  - `8`：US_West_1 
-  - `9`：US_East_1 
-  - `10`：AP_Southeast_1 
-  - `11`：AP_Southeast_2 
-  - `12`：AP_Southeast_3 
-  - `13`：AP_Southeast_5 
-  - `14`：AP_Northeast_1 
-  - `15`：AP_South_1 
-  - `16`：EU_Central_1 
-  - `17`：EU_West_1 
+  - `0`：CN_Hangzhou
+  - `1`：CN_Shanghai
+  - `2`：CN_Qingdao
+  - `3`：CN_Beijin
+  - `4`：CN_Zhangjiakou
+  - `5`：CN_Huhehaote
+  - `6`：CN_Shenzhen
+  - `7`：CN_Hongkong
+  - `8`：US_West_1
+  - `9`：US_East_1
+  - `10`：AP_Southeast_1
+  - `11`：AP_Southeast_2
+  - `12`：AP_Southeast_3
+  - `13`：AP_Southeast_5
+  - `14`：AP_Northeast_1
+  - `15`：AP_South_1
+  - `16`：EU_Central_1
+  - `17`：EU_West_1
   - `18`：EU_East_1
 
- 当 `vendor` = 3，即第三方云存储为腾讯云时： 
+  当 `vendor` = 3，即第三方云存储为腾讯云时：
 
   - `0`：AP_Beijing_1
   - `1`：AP_Beijing
   - `2`：AP_Shanghai
   - `3`：AP_Guangzhou
-  - `4`：AP_Chengdu 
-  - `5`：AP_Chongqing 
-  - `6`：AP_Shenzhen_FSI 
-  - `7`：AP_Shanghai_FSI 
-  - `8`：AP_Beijing_FSI 
-  - `9`：AP_Hongkong 
-  - `10`：AP_Singapore 
-  - `11`：AP_Mumbai 
-  - `12`：AP_Seoul 
-  - `13`：AP_Bangkok 
-  - `14`：AP_Tokyo 
-  - `15`：NA_Siliconvalley 
-  - `16`：NA_Ashburn 
-  - `17`：NA_Toronto 
-  - `18`：EU_Frankfurt 
+  - `4`：AP_Chengdu
+  - `5`：AP_Chongqing
+  - `6`：AP_Shenzhen_FSI
+  - `7`：AP_Shanghai_FSI
+  - `8`：AP_Beijing_FSI
+  - `9`：AP_Hongkong
+  - `10`：AP_Singapore
+  - `11`：AP_Mumbai
+  - `12`：AP_Seoul
+  - `13`：AP_Bangkok
+  - `14`：AP_Tokyo
+  - `15`：NA_Siliconvalley
+  - `16`：NA_Ashburn
+  - `17`：NA_Toronto
+  - `18`：EU_Frankfurt
   - `19`：EU_Moscow
 
-
 - `bucket`：String 类型，第三方云存储的 bucket。
-
 - `accessKey`：String 类型，第三方云存储的 access key。
-
 - `secretKey`：String 类型，第三方云存储的 secret key。
 
 - `fileNamePrefix`：（选填）JSONArray 类型，由多个字符串组成的数组，指定录制文件在第三方云存储中的存储位置。举个例子，`fileNamePrefix` = `["directory1","directory2"]`，将在录制文件名前加上前缀 "`directory1/directory2/`"，即 `directory1/directory2/xxx.m3u8`。前缀长度（包括斜杠）不得超过 128 个字符。字符串中不得出现斜杠。以下为支持的字符集范围：
