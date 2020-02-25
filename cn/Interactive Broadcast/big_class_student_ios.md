@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: iOS
-updatedAt: Mon Feb 17 2020 07:43:01 GMT+0800 (CST)
+updatedAt: Tue Feb 25 2020 03:33:01 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 iOS 平台实现学生端相关功能。
@@ -40,7 +40,7 @@ updatedAt: Mon Feb 17 2020 07:43:01 GMT+0800 (CST)
 | API | 实现功能 |
 | ---------------- | ---------------- |
 | [initWithAppId](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/initWithAppId:delegate:)      | 创建并返回一个 AgoraRtmKit 实例。      |
-| [loginByToken](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:) | 登录 Agora RTM 系统。登录后你可以使用 RTM 的核心业务逻辑。
+| [loginByToken](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:) | 登录 Agora RTM 系统。登录后你可以使用 RTM 的核心业务逻辑。|
 | [createChannelWithId](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) | 创建 Agora RTM 频道。一个 AgoraRtmKit 可以创建多个频道。 |
 | [joinWithCompletion](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/joinWithCompletion:) | 加入 Agora RTM 频道。|
 | [getChannelAllAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) | 获取指定频道的频道属性。 |
