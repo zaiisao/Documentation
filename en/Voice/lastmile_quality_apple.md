@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: Conduct a Pre-call Lastmile Test
 platform: iOS,macOS
-updatedAt: Mon Dec 30 2019 09:42:04 GMT+0800 (CST)
+updatedAt: Mon Feb 24 2020 13:49:18 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction
@@ -20,12 +20,11 @@ Before conducting the last-mile test, ensure that you have implemented the basic
 - iOS: [Start a Call](../../en/Voice/start_call_ios.md) or [Start a Live Broadcast](../../en/Voice/start_live_ios.md)
 - macOS: [Start a Call](../../en/Voice/start_call_mac.md) or [Start a Live Broadcast](../../en/Voice/start_live_mac.md)
 
-Call the `startLastmileProbeTest` method before joining a channel to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
-
-Once this method is enabled, the SDK triggers the following callbacks:
-
+1. Call the `startLastmileProbeTest` method before joining a channel to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
+2. Once this method is enabled, the SDK triggers the following callbacks:
 - `lastmileQuality`: Triggered two seconds after the `startLastmileProbeTest` method is called. This callback rates the network conditions with a score and is more closely linked to the user experience.
 - `lastmileProbeResult`: Triggered 30 seconds after the `startLastmileProbeTest` method is called. This callback returns the real-time statistics of the network conditions and is more objective.
+3. Call the `stopLastmileProbeTest` method to stop the last-mile network probe test.
 
 ### API call sequence
 
@@ -45,10 +44,10 @@ let config = AgoraLastmileProbeConfig(
   probeUplink: true, 
   // Probe the downlink network quality.
   probeDownlink: true,
-  // The expected uplink bitrate (Kbps). The value range is [100, 5000].
-  expectedUplinkBitrate: 1000, 
-  // The expected downlink bitrate (Kbps). The value range is [100, 5000].
-  expectedDownlinkBitrate: 1000)
+  // The expected uplink bitrate (bps). The value range is [100000, 5000000].
+  expectedUplinkBitrate: 100000, 
+  // The expected downlink bitrate (bps). The value range is [100000, 5000000].
+  expectedDownlinkBitrate: 100000)
 // Start the last-mile network test before joining the channel.
 agoraKit.startLastmileProbeTest(config)
 
@@ -72,7 +71,7 @@ agoraKit.stopLastmileProbeTest()
 ```objective-c
 // Objective-C
 //  Configure a LastmileProbeConfig instance.
-AgoraLastmileProbeConfig *config = [[AgoraLastmileProbeConfig alloc] probeUplink: YES probeDownlink: YES expectedUplinkBitrate: 1000 expectedDownlinkBitrate: 1000];
+AgoraLastmileProbeConfig *config = [[AgoraLastmileProbeConfig alloc] probeUplink: YES probeDownlink: YES expectedUplinkBitrate: 100000 expectedDownlinkBitrate: 100000];
 // Start the last-mile network test before joining the channel.
 [agoraKit startLastmileProbeTest: config];
 

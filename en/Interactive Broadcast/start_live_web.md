@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 02:50:43 GMT+0800 (CST)
+updatedAt: Tue Feb 25 2020 02:28:58 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
@@ -12,9 +12,11 @@ The difference between a broadcast and a call is that users have roles in a broa
 
 <div class="alert warning">Due to security limits on HTTP addresses except 127.0.0.1, Agora Web SDK only supports HTTPS or http://localhost (http://127.0.0.1). Do not deploy your project over HTTP.</div>
 
-## Try the demo
+## Sample project
 
-We provide an open-source demo project that implements the basic video broadcast on [GitHub](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Web). You can try the demo and view the source code to learn about the basic functions.
+We provide an open-source [sample project](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Web) that implements the basic video broadcast on GitHub. 
+
+You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/) and try the video broadcasts implemented by the Agora SDK.
 
 ## Prerequisites
 

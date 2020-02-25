@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Web
-updatedAt: Mon Feb 10 2020 09:15:31 GMT+0800 (CST)
+updatedAt: Tue Feb 25 2020 02:26:24 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
@@ -12,9 +12,11 @@ This guide shows you how to build a simple web app with the Agora Web SDK. We re
 
 <div class="alert warning">Due to security limits on HTTP addresses except 127.0.0.1, Agora Web SDK only supports HTTPS or http://localhost (http://127.0.0.1). Do not deploy your project over HTTP.</div>
 
-## Try the demo
+## Sample project
 
-We provide an open-source demo project that implements the basic one-to-one video call on <a href="https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1">GitHub</a>. You can try the demo and view the source code to learn about the basic functions.
+We provide an open-source [sample project](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1) that implements the basic one-to-one video call on GitHub. 
+
+You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Web-Tutorial-1to1-Web/) and try the video calls implemented by the Agora SDK.
 
 ## Prerequisites
 
