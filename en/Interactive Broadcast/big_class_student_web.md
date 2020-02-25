@@ -77,7 +77,7 @@ For more features and functions available for an  online class, you can refer to
 Use the <code>on("network-quality")</code> callback of the Agora RTC SDK  to monitor the last-mile uplink and downlink network quality of every user in the channel. 
 For more methods for reporting the real-time network quality, see the following guides:
 <li><a href="https://docs.agora.io/en/Interactive%20Broadcast/lastmile_quality_web?platform=Web">Lastmile Tests</a></li>
-<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/in-call_quality_web?platform=Web">In-call Tests</a></li>
+<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/in-call_quality_web?platform=Web">In-call Stats</a></li>
 </details>
 <details>
 <summary>Mute the local audio or video</summary>

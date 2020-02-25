@@ -76,7 +76,7 @@ For more features and functions available for an  online class, you can refer to
 Use the <code>onNetworkQuality</code> callback of the Agora RTC SDK  to monitor the last-mile uplink and downlink network quality of every user in the channel. 
 For more methods for reporting the real-time network quality, see the following guides:
 <li><a href="https://docs.agora.io/en/Interactive%20Broadcast/lastmile_quality_android?platform=Android">Lastmile Tests</a></li>
-<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/in-call_quality_android?platform=Android">In-call Tests</a></li>
+<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/in-call_quality_android?platform=Android">In-call Stats</a></li>
 </details>
 <details>
 <summary>Mute the local audio or video</summary>
@@ -87,7 +87,7 @@ Call the following methods provided by the Agora RTC SDK:
 <details>
 <summary>Voice detection</summary>
 For RTC SDKs later than v2.9.2, you can enable voice detection by calling <code>enableAudioVolumeInfication</code>, and setting the <code>report_vad</code> parameter as <code>true</code>.
-Once enabled, the <code>onAudioVolumeIndication</code> callback reports whether the local user is speaking in the <code>AudioVolumeInfo</code> struct
+Once enabled, the <code>onAudioVolumeIndication</code> callback reports whether the local user is speaking in the <code>AudioVolumeInfo</code> struct.
 </details>
 <details>
 <summary>Whiteboard</summary>
