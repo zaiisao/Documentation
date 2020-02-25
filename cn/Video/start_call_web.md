@@ -3,7 +3,7 @@
 title: 实现音视频通话
 description: 
 platform: Web
-updatedAt: Mon Feb 24 2020 09:11:57 GMT+0800 (CST)
+updatedAt: Tue Feb 25 2020 02:13:36 GMT+0800 (CST)
 ---
 # 实现音视频通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
@@ -12,8 +12,10 @@ updatedAt: Mon Feb 24 2020 09:11:57 GMT+0800 (CST)
 
 <div class="alert warning">由于浏览器的安全策略对除 127.0.0.1 以外的 HTTP 地址作了限制，Agora Web SDK 仅支持 HTTPS 协议或者 http://localhost（http://127.0.0.1），请勿使用 HTTP 协议部署你的项目。</div>
 
-## Demo 体验
-我们在 <a href="https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1">GitHub</a> 上提供一个开源的基础一对一视频通话示例项目，在开始开发之前你可以通过该示例项目体验音视频通话效果。
+## 示例项目
+我们在 GitHub 上提供一个开源的基础一对一视频通话[示例项目](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1)供你参考。
+
+同时，你可以通过我们的[在线 demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Web-Tutorial-1to1-Web/) 快速体验 Agora 实现的音视频通话效果。
 
 ## 前提条件
 

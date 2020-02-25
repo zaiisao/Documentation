@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测
 platform: Windows
-updatedAt: Thu Sep 26 2019 02:43:58 GMT+0800 (CST)
+updatedAt: Mon Feb 24 2020 13:44:45 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -16,12 +16,11 @@ updatedAt: Thu Sep 26 2019 02:43:58 GMT+0800 (CST)
 
 开始检测网络质量前，请确保你已在项目中实现了基本的音视频通信或直播功能。详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_windows.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_windows.md)。
 
-在用户加入频道或上麦前，调用 `startLastmileProbeTest` 进行网络质量探测，向用户反馈上下行网络的带宽、丢包、网络抖动和往返时延。
-
-启用该方法后，SDK 会依次返回如下 2 个回调：
-
+1. 在用户加入频道或上麦前，调用 `startLastmileProbeTest` 进行网络质量探测，向用户反馈上下行网络的带宽、丢包、网络抖动和往返时延。
+2. 启用该方法后，SDK 会依次返回如下 2 个回调：
 - `onLastmileQuality`：约 2 秒内返回。该回调通过打分反馈上下行网络质量，更贴近主观感受
 - `onLastmileProbeResult`：约 30 秒内返回。该回调通过客观数据反馈上下行网络质量，更客观
+3. 获取到网络质量数据后，调用 `stopLastmileProbeTest` 停止通话前网络质量探测。
 
 ### API 调用时序
 
@@ -51,10 +50,10 @@ LastmileProbeConfig config;
 config.probeUplink = true;
 // 确认探测下行网络质量
 config.probeDownlink = true;
-// 期望的最高发送码率，单位为 Kbps，范围为 [100, 5000]
-config.expectedUplinkBitrate = 1000;
-// 期望的最高接收码率，单位为 Kbps，范围为 [100, 5000]
-config.expectedDownlinkBitrate = 1000;
+// 期望的最高发送码率，单位为 bps，范围为 [100000, 5000000]
+config.expectedUplinkBitrate = 100000;
+// 期望的最高接收码率，单位为 bps，范围为 [100000, 5000000]
+config.expectedDownlinkBitrate = 100000;
 // 加入频道前开始 Last-mile 网络探测
 lpAgoraEngine->startLastmileProbeTest(config);
 

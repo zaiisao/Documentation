@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Android
-updatedAt: Tue Feb 11 2020 02:39:16 GMT+0800 (CST)
+updatedAt: Tue Feb 25 2020 02:48:42 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Android 平台实现学生端相关功能。
@@ -40,7 +40,7 @@ updatedAt: Tue Feb 11 2020 02:39:16 GMT+0800 (CST)
 | API | 实现功能 |
 | ---------------- | ---------------- |
 | [createInstance](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6411640143c4d0d0cd9481937b754dbf)      | 创建并返回一个 RtmClient 实例。      |
-| [login](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) | 登录 Agora RTM 系统。登录后你可以使用 RTM 的核心业务逻辑。
+| [login](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) | 登录 Agora RTM 系统。登录后你可以使用 RTM 的核心业务逻辑。|
 | [createChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) | 创建 Agora RTM 频道。一个 RtmClient 可以创建多个频道。 |
 | [join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#ad7b321869aac2822b3f88f8c01ce0d40) | 加入 Agora RTM 频道。|
 | [getChannelAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6) | 获取指定频道的频道属性。 |
