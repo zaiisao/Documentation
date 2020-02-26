@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Thu Feb 20 2020 07:33:13 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 03:43:50 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -49,19 +49,13 @@ v3.0.0 is released on February 20, 2020.
 
 **New features**
 
-#### 1. Recording video streams encoded in H.265/HEVC 
-
-Supports recording video streams encoded in H.265/HEVC.
-
-This function is disabled by default. To enable recording video streams encoded in H.265/HEVC when calling `joinChannel`, set `enableH265Support` in `RecordingConfig` as `true`. 
-
-#### 2. Watermarks
+#### 1. Watermarks
 
 Supports adding image watermarks, text watermarks, or a timestamp watermark in composite recording mode.
 
 You can either configure watermark settings in the `setVideoMixingLayout` method, or add, update, and remove watermark settings with the `updateWatermarkConfigs` method. See [Watermark](../../en/Recording/recording_watermark_cpp.md) for details.
 
-#### 3. Selective recording
+#### 2. Selective recording
 
 Supports recording the audio or video of specified users.
 
@@ -72,17 +66,17 @@ To enable selective recording when calling `joinChannel`:
 
 Afterwards, you can call `updateSuscribeVideoUids` or `updateSuscribeAudioUids` methods to update the list of uids to record.
 
-#### 4. Last frame
+#### 3. Last frame
 
 Retains the last video frame from when the user leaves the channel in composite recording mode.
 
 You can set the `keepLastFrame` parameter when calling the `setVideoMixingLayout` method to enable this feature.
 
-#### 5. Cloud proxy
+#### 4. Cloud proxy
 
 Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Agora%20Platform/cloudproxy_recording.md) for details.
 
-#### 6. New callbacks
+#### 5. New callbacks
 
 ##### Channel events
 

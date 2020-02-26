@@ -3,7 +3,7 @@
 title: Build a Client for the Students
 description: 
 platform: iOS
-updatedAt: Tue Feb 25 2020 05:39:21 GMT+0800 (CST)
+updatedAt: Tue Feb 25 2020 06:29:31 GMT+0800 (CST)
 ---
 # Build a Client for the Students
 This section describes how to implement an iOS client for the students.
@@ -49,7 +49,7 @@ Refer to the following diagram to implement the basic real-time communication an
 | [addOrUpdateChannelAttributes](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/addOrUpdateChannel:Attributes:Options:completion:) | Adds or Updates the information of a specified channel. In this method, you can determine whether to notify the current update to all the users in the channel. |
 | [sendMessage](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/sendMessage:completion:) | Sends a channel message, which can be received by all the users in the channel. |
 | [leaveWithCompletion](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/leaveWithCompletion:) | Leaves the RTM channel. |
-| [logoutWithCompletion](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/logoutWithCompletion:) | Logs out of the RTM systtem. |
+| [logoutWithCompletion](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/logoutWithCompletion:) | Logs out of the RTM system. |
 
 
 - RTC SDK

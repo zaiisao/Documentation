@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Feb 20 2020 07:25:17 GMT+0800 (CST)
+updatedAt: Tue Feb 25 2020 10:09:08 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.

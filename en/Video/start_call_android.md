@@ -23,7 +23,7 @@ We provide an open-source [Agora-Android-Tutorial-1to1](https://github.com/Agora
 
 ## Set up the development environment
 
-In this section, we will create an Android project, integrate the SDK into the project, and add the Android device permissions to prepare the development environment.
+In this section, we will create an Android project, integrate the Agora Video SDK into the project, and add the Android device permissions to prepare the development environment.
 
 ### Create an Android project
 
@@ -47,7 +47,7 @@ Click <b>Finish</b>. Follow the on-screen instructions, if any, to install the p
 	
 ### Integrate the SDK
 
-Choose either of the following methods to integrate the Agora SDK into your project.
+Choose either of the following methods to integrate the Agora Video SDK into your project.
 
 **Method 1: Automatically integrate the SDK with JCenter**
 
@@ -57,14 +57,14 @@ Add the following line in the **/app/build.gradle** file of your project:
 ...
 dependencies {
     ...
-    // 2.9.4 is the latest version of the Agora SDK. You can set it to other versions.
+    // 2.9.4 is the latest version of the Agora Video SDK. You can set it to other versions.
     implementation 'io.agora.rtc:full-sdk:2.9.4'
 }
 ```
 
 **Method 2: Manually copy the SDK files**
 
-1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK, and unzip the downloaded SDK package.
+1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora Video SDK, and unzip the downloaded SDK package.
 2. Copy the following files or subfolders from the libs folder of the downloaded SDK package to the path of your project.
 
 | File or subfolder | Path of your project | 
