@@ -23,7 +23,7 @@ Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Agor
 
 ## 准备开发环境
 
-本节介绍如何创建项目，将 Agora SDK 集成进你的项目中，并添加相应的设备权限。
+本节介绍如何创建项目，将 Agora 视频通话 SDK 集成进你的项目中，并添加相应的设备权限。
 
 ### 创建 Android 项目
 
@@ -47,7 +47,7 @@ Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Agor
 <a name="integrate_sdk"></a>
 ### 集成 SDK
 
-选择如下任意一种方式将 Agora SDK 集成到你的项目中。
+选择如下任意一种方式将 Agora 视频通话 SDK 集成到你的项目中。
 
 **方法一：使用 JCenter 自动集成**
 
@@ -57,14 +57,14 @@ Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Agor
 ...
 dependencies {
     ...
-    // 其中 2.9.4 是最新的 Agora SDK 的版本号。你也可以填写其他版本
+    // 其中 2.9.4 是最新的 Agora 视频通话 SDK 的版本号。你也可以填写其他版本
     implementation 'io.agora.rtc:full-sdk:2.9.4'
 }
 ```
 
 **方法二：手动复制 SDK 文件**
 
-1. 前往 [SDK 下载](https://docs.agora.io/cn/Agora%20Platform/downloads)页面，获取最新版的 Agora SDK，然后解压。
+1. 前往 [SDK 下载](https://docs.agora.io/cn/Agora%20Platform/downloads)页面，获取最新版的 Agora 视频通话 SDK，然后解压。
 2. 将 SDK 包内 libs 路径下的如下文件，拷贝到你的项目路径下：
 
 

@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Feb 21 2020 01:44:55 GMT+0800 (CST)
+updatedAt: Tue Feb 25 2020 12:38:11 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -187,7 +187,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 `eventType` 为 43 表示录制的音频流状态变化，`details` 中包含以下字段：
 
 - `msgName`：String 类型，消息名称，即 `recorder_audio_stream_state_changed`。
-- `streamUid`: String 类型，用户 UID，表示录制的是哪个用户的音频流。
+- `streamUid`: String 类型，用户 UID，表示录制的是哪个用户的音频流。合流录制模式下，会收到 `streamUid` 为 `0` 的回调，代表合流后的音频流。
 - `state`：Number 类型，云端录制服务是否正在接收音频流。
   - `0`：云端录制服务正在接收音频流
   - `1`：云端录制服务未在接收音频流
@@ -198,7 +198,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 `eventType` 为 44 表示录制的视频流状态变化，`details` 中包含以下字段：
 
 - `msgName`：String 类型，消息名称，即 `recorder_video_stream_state_changed`。
-- `streamUid`: String 类型，用户 UID，表示录制的是哪个用户的视频流。
+- `streamUid`: String 类型，用户 UID，表示录制的是哪个用户的视频流。合流录制模式下，会收到 `streamUid` 为 `0` 的回调，代表合流后的视频流。
 - `state`：Number 类型，云端录制服务是否正在接收视频流。
   - `0`：云端录制服务正在接收视频流
   - `1`：云端录制服务未在接收视频流
