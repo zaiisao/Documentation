@@ -1,16 +1,16 @@
 
 ---
-title: 实现音视频通话
+title: 实现视频通话
 description: 
 platform: Android
-updatedAt: Fri Feb 21 2020 11:21:00 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 03:54:54 GMT+0800 (CST)
 ---
-# 实现音视频通话
-本文介绍如何使用 Agora SDK 快速实现音视频通话。
+# 实现视频通话
+本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
 
-## Demo 体验
+## 示例项目
 
-Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供一个开源的一对一视频通话示例项目 [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1) 供你参考。
 
 ## 前提条件
 
@@ -119,23 +119,23 @@ dependencies {
 -keep class io.agora.**{*;}
 ```
 
-## 实现音视频通话
+## 实现视频通话
 
-本节介绍如何实现音视频通话。视频通话的 API 调用时序见下图：
+本节介绍如何实现视频通话。视频通话的 API 调用时序见下图：
 
 ![](https://web-cdn.agora.io/docs-files/1568254412236)
 
 ### 1. 创建用户界面
 
-根据场景需要，为你的项目创建音视频通话的用户界面。若已有界面，可以直接查看[导入类](#import_class)。
+根据场景需要，为你的项目创建视频通话的用户界面。若已有界面，可以直接查看[导入类](#import_class)。
 
-如果你想实现一个视频通话，我们推荐你添加如下 UI 元素：
+我们推荐你添加如下 UI 元素来实现一个视频通话，
 
 * 本地视频窗口
 * 远端视频窗口
 * 结束通话按钮
 
-你也可以参考 [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1) 示例项目的  [activity_video_chat_view.xml](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/res/layout/activity_video_chat_view.xml) 文件中的代码。
+你也可以参考 Agora-Android-Tutorial-1to1 示例项目的  [activity_video_chat_view.xml](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/res/layout/activity_video_chat_view.xml) 文件中的代码。
 
 <details>
 	<summary><font color="#3ab7f8">创建 UI 示例</font></summary>
@@ -358,8 +358,6 @@ private void initializeEngine() {
 
 ### 5. 设置本地视图
 
-如果你想实现一个语音通话，可以直接查看[加入频道](#join_channel)。
-
 成功初始化 RtcEngine 对象后，需要在加入频道前设置本地视图，以便在通话中看到本地图像。参考以下步骤设置本地视图：
 
 * 调用 `enableVideo` 方法启用视频模块。
@@ -496,9 +494,13 @@ private void leaveChannel() {
 
 ### 示例代码
 
-你可以在 [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1) 示例项目的  [VideoChatViewActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/java/io/agora/tutorials1v1vcall/VideoChatViewActivity.java)  文件中查看完整的源码和代码逻辑。
+你可以在 Agora-Android-Tutorial-1to1 示例项目的  [VideoChatViewActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/java/io/agora/tutorials1v1vcall/VideoChatViewActivity.java)  文件中查看完整的源码和代码逻辑。
 
 ## 运行项目
 
 在 Android 设备中运行该项目。当成功开始视频通话时，你可以同时看到本地和远端的视图。
+
+## 相关链接
+
+我们在 GitHub 上提供一个开源的一对多视频通话示例项目 [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android)。如果你需要实现一对多群聊场景，可以前往下载或查看源代码。
 

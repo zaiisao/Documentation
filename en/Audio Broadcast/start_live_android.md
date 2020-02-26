@@ -102,7 +102,7 @@ Add the following permissions in the **/app/src/main/AndroidManifest.xml** file 
 </manifest>
 ```
 
-If your `targetSdkVersion` >= 29, add the following line in the `<application>` module in the **AndroidManifest.xml** file:
+If your `targetSdkVersion` &ge; 29, add the following line in the `<application>` module in the **AndroidManifest.xml** file:
  
 ```xml
    <application

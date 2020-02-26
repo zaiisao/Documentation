@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Android
-updatedAt: Wed Feb 26 2020 03:14:06 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 04:06:26 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
@@ -101,7 +101,7 @@ dependencies {
 ```
 
 
-如果你的 `targetSdkVersion` >= 29，还需要在 **AndroidManifest.xml** 文件的 `<application>` 区域添加如下行：
+如果你的 `targetSdkVersion` &ge; 29，还需要在 **AndroidManifest.xml** 文件的 `<application>` 区域添加如下行：
 
 ```xml
    <application
@@ -211,38 +211,38 @@ import io.agora.rtc.RtcEngine;
 调用 `checkSelfPermission` 方法，在开启 Activity 时检查并获取 Android 移动设备的麦克风使用权限。
 
 ```java
-    private static final int PERMISSION_REQ_ID_RECORD_AUDIO = 22;
+private static final int PERMISSION_REQ_ID_RECORD_AUDIO = 22;
   
-	// App 运行时确认麦克风的使用权限。
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_voice_chat_view);
+// App 运行时确认麦克风的使用权限。
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_voice_chat_view);
 
-        // 获取权限后，初始化 RtcEngine，并加入频道。
-        if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO)) {
-            initAgoraEngineAndJoinChannel();
-        }
+    // 获取权限后，初始化 RtcEngine，并加入频道。
+    if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO)) {
+        initAgoraEngineAndJoinChannel();
     }
+}
   
-    private void initAgoraEngineAndJoinChannel() {
-        initializeAgoraEngine();
-        joinChannel(); 
-    }
+private void initAgoraEngineAndJoinChannel() {
+    initializeAgoraEngine();
+    joinChannel(); 
+}
 
-    public boolean checkSelfPermission(String permission, int requestCode) {
-        Log.i(LOG_TAG, "checkSelfPermission " + permission + " " + requestCode);
-        if (ContextCompat.checkSelfPermission(this,
-                permission)
-                != PackageManager.PERMISSION_GRANTED) {
+public boolean checkSelfPermission(String permission, int requestCode) {
+    Log.i(LOG_TAG, "checkSelfPermission " + permission + " " + requestCode);
+    if (ContextCompat.checkSelfPermission(this,
+            permission)
+            != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(this,
-                    new String[]{permission},
-                    requestCode);
-            return false;
-        }
-        return true;
+        ActivityCompat.requestPermissions(this,
+                new String[]{permission},
+                requestCode);
+        return false;
     }
+    return true;
+}
 ```
 
 ### 4. 初始化 RtcEngine
@@ -260,46 +260,44 @@ import io.agora.rtc.RtcEngine;
 你还根据场景需要，在初始化时注册想要监听的回调事件，如远端用户下线或静音回调。注意不要在这些回调中进行 UI 操作。
 
 ```java
-    private RtcEngine mRtcEngine;
-    private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {  
+private RtcEngine mRtcEngine;
+private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {  
 
-        // 注册 onUserOffline 回调。远端用户离开频道后，会触发该回调。 
-        @Override
-        public void onUserOffline(final int uid, final int reason) { 
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    onRemoteUserLeft(uid, reason);
-                }
-            });
-        }
-
-        // 注册 onUserMuteAudio 回调。远端用户静音后，会触发该回调。
-        @Override
-        public void onUserMuteAudio(final int uid, final boolean muted) {
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    onRemoteUserVoiceMuted(uid, muted);
-                }
-            });
-        }
-    };
-
+    // 注册 onUserOffline 回调。远端用户离开频道后，会触发该回调。 
     @Override
+    public void onUserOffline(final int uid, final int reason) { 
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                onRemoteUserLeft(uid, reason);
+            }
+        });
+    }
+
+    // 注册 onUserMuteAudio 回调。远端用户静音后，会触发该回调。
+    @Override
+    public void onUserMuteAudio(final int uid, final boolean muted) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                onRemoteUserVoiceMuted(uid, muted);
+            }
+        });
+    }
+};
     
 ...
-    // 调用 Agora SDK 的方法初始化 RtcEngine。
-    private void initializeAgoraEngine() {
-        try {
-            mRtcEngine = RtcEngine.create(getBaseContext(), getString(R.string.agora_app_id), mRtcEventHandler);
-            mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
-        } catch (Exception e) {
-            Log.e(LOG_TAG, Log.getStackTraceString(e));
+// 调用 Agora SDK 的方法初始化 RtcEngine。
+private void initializeAgoraEngine() {
+    try {
+        mRtcEngine = RtcEngine.create(getBaseContext(), getString(R.string.agora_app_id), mRtcEventHandler);
+        mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
+    } catch (Exception e) {
+        Log.e(LOG_TAG, Log.getStackTraceString(e));
 
-            throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
-        }
+        throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
     }
+}
 ```
 
 
@@ -321,14 +319,14 @@ import io.agora.rtc.RtcEngine;
 更多的参数设置注意事项请参考 [`joinChannel`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c) 接口中的参数描述。
 
 ```java
-    private void joinChannel() {
-        String accessToken = getString(R.string.agora_access_token);
-        if (TextUtils.equals(accessToken, "") || TextUtils.equals(accessToken, "#YOUR ACCESS TOKEN#")) {
-            accessToken = null; // default, no token
-        }
-
-        mRtcEngine.joinChannel(accessToken, "voiceDemoChannel1", "Extra Optional Data", 0); // 未指定 uid，SDK 会自动分配一个。
+private void joinChannel() {
+    String accessToken = getString(R.string.agora_access_token);
+    if (TextUtils.equals(accessToken, "") || TextUtils.equals(accessToken, "#YOUR ACCESS TOKEN#")) {
+        accessToken = null; // default, no token
     }
+
+    mRtcEngine.joinChannel(accessToken, "voiceDemoChannel1", "Extra Optional Data", 0); // 未指定 uid，SDK 会自动分配一个。
+}
 ```
 
 	
@@ -337,9 +335,9 @@ import io.agora.rtc.RtcEngine;
 根据场景需要，如结束通话、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
 
 ```java
-    private void leaveChannel() {
-        mRtcEngine.leaveChannel();
-    }
+private void leaveChannel() {
+    mRtcEngine.leaveChannel();
+}
 ```
 
 ### 示例代码
