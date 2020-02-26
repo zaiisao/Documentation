@@ -1,16 +1,16 @@
 
 ---
-title: Start a Call
+title: Start a Video Call
 description: 
 platform: Android
-updatedAt: Tue Nov 19 2019 03:33:27 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 04:19:13 GMT+0800 (CST)
 ---
-# Start a Call
-Use this guide to quickly start a basic call with the Agora SDK for Android.
+# Start a Video Call
+Use this guide to quickly start a basic video call with the Agora Video SDK for Android.
 
-## Try the demo
+## Sample project
 
-We provide an open-source [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1) demo project that implements the basic one-to-one video call on GitHub. You can try the demo and view the source code.
+We provide an open-source [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1) demo project that implements the basic one-to-one video call on GitHub. 
 
 ## Prerequisites
 
@@ -100,7 +100,7 @@ Add the following permissions in the **/app/src/main/AndroidManifest.xml** file 
 </manifest>
 ```
 
-If your `targetSdkVersion` >= 29, add the following line in the `<application>` module in the **AndroidManifest.xml** file:
+If your `targetSdkVersion` &ge; 29, add the following line in the `<application>` module in the **AndroidManifest.xml** file:
  
 ```xml
    <application
@@ -116,9 +116,9 @@ Add the following line in the **app/proguard-rules.pro** file to prevent code ob
 -keep class io.agora.**{*;}
 ```
 
-## Implement the basic call
+## Implement the basic video call
 
-This section introduces how to use the Agora SDK to make a call. The following figure shows the API call sequence of a basic one-to-one video call.
+This section introduces how to use the Agora Video SDK to make a call. The following figure shows the API call sequence of a basic one-to-one video call.
 
 ![](https://web-cdn.agora.io/docs-files/1568254575010)
 
@@ -355,8 +355,6 @@ private void initializeEngine() {
 
 ### 5. Set the local video view
 
-If you are implementing a voice call, skip to [Join a channel](#join_channel).
-
 After initializing the RtcEngine object, set the local video view before joining the channel so that you can see yourself in the call. Follow these steps to configure the local video view: 
 
 * Call the `enableVideo` method to enable the video module. 
@@ -495,10 +493,14 @@ private void leaveChannel() {
 
 ### Sample code
 
-You can find the complete code logic in the [VideoChatViewActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/java/io/agora/tutorials1v1vcall/VideoChatViewActivity.java) file in the [Agora-Android-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Android-Tutorial-1to1) demo project.
+You can find the complete code logic in the [VideoChatViewActivity.java](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-Android-Tutorial-1to1/app/src/main/java/io/agora/tutorials1v1vcall/VideoChatViewActivity.java) file in the Agora-Android-Tutorial-1to1 demo project.
 
 ## Run the project
 
 Run the project on your Android device. You can see both the local and remote video views when you successfully start a one-to-one video call in the app.
+
+## Relevant links
+
+We provide an open-source [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) demo project that implements the group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
 
 	
