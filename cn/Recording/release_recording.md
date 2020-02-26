@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Thu Feb 20 2020 07:29:03 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 03:45:06 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -46,19 +46,13 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 
 **新增特性**
 
-#### 1. 支持录制以 H.265/HEVC 标准编码的视频流
-
-从 3.0.0 版本起，支持录制以 H.265/HEVC 标准编码的视频流。
-
-该功能默认关闭。如需开启，你可以在调用 `joinChannel` 方法加入频道时将 `RecordingConfig` 中的 `enableH265Support` 参数设为 `true`。
-
-#### 2. 添加水印
+#### 1. 添加水印
 
 3.0.0 版本新增添加水印功能，支持在合流模式下对录制的视频添加图片、文字或时间戳水印，作为防伪、宣传等用途。
 
 你可以在 `setVideoMixingLayout` 方法中设置水印，也可以调用 `updateWatermarkConfigs` 方法添加、更新或删除水印设置，详见[水印](../../cn/Recording/recording_watermark_cpp.md)。
 
-#### 3. 录制指定用户的音视频
+#### 2. 录制指定用户的音视频
 
 从 3.0.0 版本起，支持选择录制指定用户的音频或视频。你可以在调用 `joinChannel` 方法加入频道时：
 
@@ -67,15 +61,15 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 
 此后，你可以调用 `updateSuscribeVideoUids` 和 `updateSuscribeAudioUids` 方法更新需要录制视频和音频的用户 UID。
 
-#### 4. 保留最后一帧
+#### 3. 保留最后一帧
 
 从 3.0.0 版本起，合流录制模式下，用户离开频道后，支持保留其视频的最后一帧。你可以在 `setVideoMixingLayout` 方法中设置 `keepLastFrame` 参数选择是否保留最后一帧。
 
-#### 5. 云代理服务
+#### 4. 云代理服务
 
 3.0.0 版本新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Recording/cloudproxy_recording.md)。
 
-#### 6. 新增回调
+#### 5. 新增回调
 
 3.0.0 版本新增以下回调。具体说明和注意事项请点击各回调名查看。
 

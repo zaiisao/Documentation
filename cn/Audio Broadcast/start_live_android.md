@@ -103,7 +103,7 @@ dependencies {
 ```
 
 
-如果你的 `targetSdkVersion` >= 29，还需要在 **AndroidManifest.xml** 文件的 `<application>` 区域添加如下行：
+如果你的 `targetSdkVersion` &ge; 29，还需要在 **AndroidManifest.xml** 文件的 `<application>` 区域添加如下行：
 
 ```xml
    <application
