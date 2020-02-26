@@ -1,12 +1,12 @@
 
 ---
-title: 实现视频直播
+title: 实现视频互动直播
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 04:30:23 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 05:47:21 GMT+0800 (CST)
 ---
-# 实现视频直播
-本文介绍如何使用 Agora Unity SDK 快速实现视频直播。
+# 实现视频互动直播
+本文介绍如何使用 Agora Unity SDK 快速实现视频互动直播。
 
 ## 前提条件
 
@@ -84,17 +84,17 @@ updatedAt: Mon Dec 23 2019 04:30:23 GMT+0800 (CST)
  <div class="alert note"><ul><li>对于开发 Android 或 iOS 应用的用户，若需在 macOS 或 Windows 设备中使用 Unity Editor 调试，请确保放入上述 macOS 或 Windows 所需的文件或文件夹。<li>Android 平台集成时，还需要 AndroidManifest.xml 文件和 project.properties 文件来添加项目权限和项目属性，建议从示例项目中直接拷贝。<li>iOS 平台集成时，还需要如下操作：（你可以参考  <a href="https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/video/Hello-Video-Unity-Agora/Assets/Editor/BL_BuildPostProcess.cs">BL_BuildPostProcess.cs</a> 代码逻辑，或直接将该文件拷贝至你的项目路径下）<ul><li>链接系统库：<ul><li>CoreTelephony.framework<li>VideoToolbox.framework<li>libresolv.tbd<li>libiPhone-lib.a<li>CoreText.framework<li>Metal.framework<li>CoreML.framework<li>Accelerate.framework</li></ul><li>申请权限：<ul><li>NSCameraUsageDescription<li>NSMicrophoneUsageDescription</div>
 
 
-## 实现视频直播
+## 实现视频互动直播
 
-本节介绍如何实现视频直播。视频直播的 API 调用时序见下图：
+本节介绍如何实现视频互动直播。视频互动直播的 API 调用时序见下图：
 
 ![](https://web-cdn.agora.io/docs-files/1576220748956)
 
 ### 1. 创建用户界面
 
-根据场景需要，为你的项目创建视频直播的用户界面。若已有界面，可以直接查看[获取设备权限（仅 Android 平台）](#permission)或[初始化 IRtcEngine](#initialize)。
+根据场景需要，为你的项目创建视频互动直播的用户界面。若已有界面，可以直接查看[获取设备权限（仅 Android 平台）](#permission)或[初始化 IRtcEngine](#initialize)。
 
-在视频直播中，Agora 推荐你添加如下 UI 元素：
+在视频互动直播中，Agora 推荐你添加如下 UI 元素：
 
 - 主播视频窗口
 - 退出频道按钮
@@ -147,11 +147,14 @@ CheckPermission();
 ### 3. 初始化 IRtcEngine
 
 
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
-
-1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
-2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
-3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
+$$ d1a9cc20-d2cf-11e9-9546-9fdade2ba6ee
+{
+  """: " ",
+  "[": " ",
+  "]": " ",
+  """: " "
+}
+$$
 
 你还可以根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户视频首帧等。
 
@@ -225,7 +228,7 @@ mRtcEngine.SetClientRole(CLIENT_ROLE.BROADCASTER);
 
 ### 7. 加入频道
 
-完成设置角色和本地视图后（视频直播场景），你就可以调用 `JoinChannelByKey` 方法加入频道。你需要在该方法中传入如下参数：
+完成设置角色和本地视图后（视频互动直播场景），你就可以调用 `JoinChannelByKey` 方法加入频道。你需要在该方法中传入如下参数：
 
 - `channelKey`：传入能标识用户角色和权限的 Token。可设为如下一个值：
 
@@ -250,7 +253,7 @@ mRtcEngine.JoinChannelByKey(null, channel, null, 0);
 
 ### 8. 设置远端视频显示
 
-视频直播中，不论你是主播还是观众，都应该看到频道中的所有主播。在加入频道后，可通过调用 **VideoSurface.cs** 文件中的 `SetForUser` 方法设置远端主播的视图。 
+视频互动直播中，不论你是主播还是观众，都应该看到频道中的所有主播。在加入频道后，可通过调用 **VideoSurface.cs** 文件中的 `SetForUser` 方法设置远端主播的视图。 
 
 远端主播成功加入频道后，SDK 会触发 `OnUserJoinedHandler` 回调，该回调中会包含这个主播的 `uid` 信息。
 
@@ -335,4 +338,4 @@ void OnApplicationQuit()
 
 ## 运行项目
 
-你可以在 Unity 中运行此项目。当成功开始视频直播时，主播可以看到自己的画面；观众可以看到主播的画面。
+你可以在 Unity 中运行此项目。当成功开始视频互动直播时，主播可以看到自己的画面；观众可以看到主播的画面。

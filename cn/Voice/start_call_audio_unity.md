@@ -1,16 +1,16 @@
 
 ---
-title: 实现音频通话
+title: 实现语音通话
 description: 
 platform: Unity
-updatedAt: Thu Dec 26 2019 03:12:29 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 05:39:09 GMT+0800 (CST)
 ---
-# 实现音频通话
-本文介绍如何使用 Agora Unity SDK 快速实现音频通话。
+# 实现语音通话
+本文介绍如何使用 Agora Unity SDK 快速实现语音通话。
 
 ## 示例项目体验
 
-Agora 在 Github 上提供开源的实时音频通话示例项目 [Hello-Unity3D-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/audio/Hello-Unity3D-Agora)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 Github 上提供开源的实时语音通话示例项目 [Hello-Unity3D-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/audio/Hello-Unity3D-Agora)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
@@ -88,17 +88,17 @@ Agora 在 Github 上提供开源的实时音频通话示例项目 [Hello-Unity3D
  <div class="alert note"><ul><li>对于开发 Android 或 iOS 应用的用户，若需在 macOS 或 Windows 设备中使用 Unity Editor 调试，请确保放入上述 macOS 或 Windows 所需的文件或文件夹。<li>Android 平台集成时，还需要 AndroidManifest.xml 文件和 project.properties 文件来添加项目权限和项目属性，建议从示例项目中直接拷贝。<li>iOS 平台集成时，还需要如下操作：（你可以参考  <a href="https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/audio/Hello-Unity3D-Agora/Assets/Editor/BL_BuildPostProcess.cs">BL_BuildPostProcess.cs</a> 代码逻辑，或直接将该文件拷贝至你的项目路径下）<ul><li>链接系统库：<ul><li>CoreTelephony.framework<li>libresolv.tbd<li>libiPhone-lib.a<li>CoreText.framework<li>CoreML.framework<li>Accelerate.framework</li></ul><li>申请权限：NSMicrophoneUsageDescription</div>
 
 
-## 实现音频通话
+## 实现语音通话
 
-本节介绍如何实现音频通话。音频通话的 API 调用时序见下图：
+本节介绍如何实现语音通话。语音通话的 API 调用时序见下图：
 
 ![](https://web-cdn.agora.io/docs-files/1576225609728)
 
 ### 1. 创建用户界面
 
-根据场景需要，为你的项目创建音频通话的用户界面。若已有界面，可以直接查看[获取设备权限（仅 Android 平台）](#permission)或[初始化 IRtcEngine](#initialize)。
+根据场景需要，为你的项目创建语音通话的用户界面。若已有界面，可以直接查看[获取设备权限（仅 Android 平台）](#permission)或[初始化 IRtcEngine](#initialize)。
 
-在音频通话播中，Agora 推荐你添加如下 UI 元素：
+在语音通话播中，Agora 推荐你添加如下 UI 元素：
 
 - 加入频道按钮
 - 退出频道按钮
@@ -148,11 +148,14 @@ CheckPermission();
 ### 3. 初始化 IRtcEngine
 
 
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
-
-1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
-2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
-3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
+$$ d1a9cc20-d2cf-11e9-9546-9fdade2ba6ee
+{
+  """: " ",
+  "[": " ",
+  "]": " ",
+  """: " "
+}
+$$
 
 你还可以根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户音频首帧等。
 
@@ -228,4 +231,4 @@ void OnApplicationQuit()
 
 ## 运行项目
 
-你可以在 Unity 中运行此项目。当成功开始音频通话时，你可以听到自己和远端用户的声音。
+你可以在 Unity 中运行此项目。当成功开始语音通话时，你可以听到自己和远端用户的声音。
