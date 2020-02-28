@@ -3,7 +3,7 @@
 title: H5 实时直播
 description: 
 platform: Web
-updatedAt: Thu Dec 05 2019 03:22:10 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 11:36:23 GMT+0800 (CST)
 ---
 # H5 实时直播
 ## 功能简介
@@ -170,7 +170,7 @@ client.subscribe(stream, { video: true, audio: true }, console.log);
 - 在移动网页端观看视频，支持最多订阅两路 480P 或者四路 240P 的视频流。
 - 在代理 Client 以后，Client 的事件中，没有 `"active-speaker"`。
 - 使用 H5 实时直播组件时，不要调用会长时间阻塞主线程的方法，如 `Window.alert()`。
-- 受浏览器策略影响，在 iOS 平台所有的网页端以及 Android 平台的 Chrome 70+ 浏览器上，音频不会自动播放，我们建议通过用户手势触发播放订阅的流，详情请参考 [Autoplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes)。
+- 受浏览器策略影响，在 iOS 平台所有的网页端以及 Android 平台的 Chrome 70+ 浏览器上，音频不会自动播放，我们建议通过用户手势触发播放订阅的流，详情请参考[处理浏览器的自动播放策略](../../cn/Interactive%20Broadcast/autoplay_policy_web.md)。
 - rtsStream 对象不同于 Agora Web SDK 原有的 Stream 对象：
   - rtsStream 没有事件抛出。
   - rtsStream 不支持 `getTrack` 和 `enableAudioVolumeIndicator` 方法。
