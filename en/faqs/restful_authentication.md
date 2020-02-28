@@ -3,62 +3,62 @@
 title: How to pass the basic HTTP authentication?
 description: How to pass the HTTP authentication?
 platform: All Platforms
-updatedAt: Fri Feb 28 2020 22:56:18 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 22:56:41 GMT+0800 (CST)
 ---
 # How to pass the basic HTTP authentication?
 ## Introduction
 
-Before using the Agora RESTful API, you need to fill in the `Authorization` parameter in the HTTP request header for authentication. You need your **Customer ID** and **Customer Certificate** within the authentication request.  
-
-Login to https://console.agora.io, click the account name on the top right of Console, and enter the **RESTful API** page from the drop-down list to get the **Customer ID** and **Customer Certificate**.
-
-![](https://web-cdn.agora.io/docs-files/1571023473774)
-
-<div class="alert note">The Customer ID and Customer Certificate are used for RESTful API access only.</div>
- 
-Refer to the following code samples to get the `Authorization` parameter.
+Before using the Agora RESTful API, you need to type the `Authorization` parameter in the HTTP request header for authentication. This page shows you how to generate the `Authorization` parameter.
 
 ## Implementation
 
-### Java
+1. Get the Customer ID and Customer Certificate: log in to [Agora Console](https://console.agora.io/), click the account name on the top right of Agora Console, and enter the RESTful API page from the drop-down list to get the Customer ID and Customer Certificate.
+   
+	 ![](https://web-cdn.agora.io/docs-files/1571023473774)
 
-- Get the Authorization value
+   <div class="alert note">The Customer ID and Customer Certificate are used for RESTful API access only.</div>
 
-	```java
-	// Fill in your Customer ID and Customer Certificate.
-	String plainCredentials = "customerId:customerCertificate";
-	// The base64Credentials here is the Authotization parameter you want, which is the base64 encoding of the credential.
-	String base64Credentials = new String(Base64.encodeBase64(plainCredentials.getBytes()));
-	```
-- Pass the authentication
+2. Get the `Authorization` parameter: type the Customer ID and Customer Certificate in the following sample code to obtain the `Authorization` parameter.
 
-	```java
-	Request request = new Request.Builder()
-	...
-		// Pass in the Authorization value in the HTTP request header.
-		.addHandler("Authorization", "Basic base64Credentials")
-	...
-	```
+   - Java
 
-### Swift
-	
-- Get the Authorization value
+     ```java
+     // Fill in the Customer ID and Customer Certificate to obtain the plainCredentials value.
+     String plainCredentials = "customerId:customerCertificate";
+     // Fill in the plainCredentials (the base64 encoding of the credential) to obtain the base64Credentials value which is the Authorization parameter you want.
+     String base64Credentials = new String(Base64.encodeBase64(plainCredentials.getBytes()));
+```
 
-	```swift
-	let username = "customerId"
-	let password = "customerCertificate"
-	let loginString = String(format: "%@:%@", username, password)
-	let loginData = loginString.data(using: String.Encoding.utf8)!
-	// The base64LoginString here is the Authorization parameter you want, which is the base64 encoding of the login string.
-	let base64LoginString = loginData.base64EncodedString()
-	```
-- Pass the authentication
+   - Swift
 
-	```swift
-	// Pass in the Authorization value in the HTTP request header.
-	let headers = ["Authorization", "Basic base64LoginString"]
-	```
+     ```swift
+     // Fill in the Customer ID and Customer Certificate to obtain the loginString value.
+     let username = "customerId"
+     let password = "customerCertificate"
+     let loginString = String(format: "%@:%@", username, password)
+     // Fill in the loginString to obtain the loginData value.
+     let loginData = loginString.data(using: String.Encoding.utf8)!
+     // Fill in the loginData (the base64 encoding of the loginData) to obtain the base64LoginString value which is the Authorization parameter you want.
+     let base64LoginString = loginData.base64EncodedString()
+```
 
-## Considerations
+3. Pass the basic HTTP authentication: fill in the `Authorization` parameter in the following sample code to pass the authentication.
 
-When sending the HTTP request, ensure that the format of Authorization is `Basic base64Credentials` or `Basic base64LoginString`.
+   <div class="alert note">When sending the HTTP request, ensure that the format of Authorization is Basic base64Credentials or Basic base64LoginString.</div>
+
+   - Java
+
+     ```java
+     Request request = new Request.Builder()
+     ...
+         // Pass in the Authorization parameter in the HTTP request header.
+         .addHeader("Authorization", "Basic base64Credentials")
+     ...
+```
+
+   - Swift
+
+     ```swift
+     // Pass in the Authorization parameter in the HTTP request header.
+     let headers = ["Authorization", "Basic base64LoginString"]
+```
