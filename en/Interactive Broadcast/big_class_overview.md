@@ -38,7 +38,7 @@ Agora provides the Big Online Classroom demos on the following platforms.
 | [Download](https://www.pgyer.com/agora_edu) (Password: 123)  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [Try it out](https://solutions.agora.io/education/web/#/)      | Coming up soon | Coming up soon |
 
 In which:
-- The client for a student can be Android, iOS, or Web for now. 
+- The client for a student can be Android, iOS, or Web for now.
 - The client for the teacher is Web for now.
 
 Follow these steps to try the demo:
