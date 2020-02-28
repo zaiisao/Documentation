@@ -45,14 +45,14 @@ Refer to the following diagram to implement the various functions in your projec
 
 | API | Function | 
 | ---------------- | ---------------- | 
-| [createInstance](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/modules/agorartm.html#createinstance)      | Creates an RTM Client object.      |
-| [login](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#login) | Logs into the Agora RTM system. |
-| [createChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | Creates an Agora RTM channel. You can create multiple channels with an RtmClient object. |
-| [join](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#join) | Joins an Agora RTM channel. |
-| [getChannelAttributes](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | Gets the information of a specified channel.|
-| [queryPeersOnlineStatus](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | Queries the online status of a specified user.|
-| [sendMessage](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | Sends a channel message, which can be received by all the users in the channel. |
-| [leave](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | Leaves the RTM channel.|
+| [createInstance](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance)      | Creates an RTM Client object.      |
+| [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | Logs into the Agora RTM system. |
+| [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | Creates an Agora RTM channel. You can create multiple channels with an RtmClient object. |
+| [join](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#join) | Joins an Agora RTM channel. |
+| [getChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | Gets the information of a specified channel.|
+| [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | Queries the online status of a specified user.|
+| [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | Sends a channel message, which can be received by all the users in the channel. |
+| [leave](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | Leaves the RTM channel.|
 
 - RTC SDK
 
