@@ -45,14 +45,14 @@ updatedAt: Fri Feb 14 2020 02:12:30 GMT+0800 (CST)
 
 | API | 实现功能 | 
 | ---------------- | ---------------- | 
-| [createInstance](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/modules/agorartm.html#createinstance)      | 创建并返回一个 RtmClient 实例。      |
-| [login](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#login) | 登录 Agora RTM 系统。 |
-| [createChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | 创建 Agora RTM 频道。一个 RtcClient 可以创建多个频道。 |
-| [join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#join) | 加入 Agora RTM 频道。|
-| [getChannelAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | 获取指定频道的频道信息。|
-| [queryPeersOnlineStatus](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | 查询指定用户的在线状态。|
-| [sendMessage](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 发送频道消息。成功发送后，频道内所有用户都能收到。|
-| [leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。|
+| [createInstance](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance)      | 创建并返回一个 RtmClient 实例。      |
+| [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | 登录 Agora RTM 系统。 |
+| [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | 创建 Agora RTM 频道。一个 RtcClient 可以创建多个频道。 |
+| [join](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#join) | 加入 Agora RTM 频道。|
+| [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | 获取指定频道的频道信息。|
+| [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | 查询指定用户的在线状态。|
+| [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 发送频道消息。成功发送后，频道内所有用户都能收到。|
+| [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。|
 
 - RTC SDK
 

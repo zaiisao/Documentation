@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Fri Feb 14 2020 06:53:26 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 04:21:50 GMT+0800 (CST)
 ---
 # 产品概述
 
@@ -27,9 +27,12 @@ Agora RTM SDK 能够实现以下功能:
  
 
 
+
+
+
 ## 适用场景
 
-Agora RTM SDK 应用丰富，适用于以下实时场景：
+Agora RTM SDK 适用于以下实时场景：
 
 <table>
   <tr>
