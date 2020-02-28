@@ -3,7 +3,7 @@
 title: 处理浏览器的自动播放策略
 description: 
 platform: Web
-updatedAt: Tue Feb 25 2020 04:44:37 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 03:42:08 GMT+0800 (CST)
 ---
 # 处理浏览器的自动播放策略
 ## 概览
@@ -21,7 +21,7 @@ updatedAt: Tue Feb 25 2020 04:44:37 GMT+0800 (CST)
 
 ## 播放失败时绕过 Autoplay 限制
 
-SDK 的 `Stream.play("ID")` 方法在检测到因为 Autoplay 限制导致无法播放时会抛出相应的错误。我们可以利用这个方法，当检测到播放失败时执行绕过 Autoplay 限制的逻辑。因为页面不是 100% 被 Autoplay 限制，随着用户使用这个页面的次数增加，浏览器会把这个页面加入自己的 Autoplay 白名单列表中。
+SDK 的 `Stream.play("ID")` 方法在检测到因为 Autoplay 限制导致无法播放时会在错误回调中携带错误。我们可以利用这个方法，当检测到播放失败时执行绕过 Autoplay 限制的逻辑。因为页面不是 100% 被 Autoplay 限制，随着用户使用这个页面的次数增加，浏览器会把这个页面加入自己的 Autoplay 白名单列表中。
 
 当检测到播放失败时，引导用户点击页面上的某个位置来恢复播放。
 
@@ -50,7 +50,7 @@ stream.play("agora_remote"+ stream.getId(), function(err){
 
 - 方案一：通过 `Stream.play("ID", { muted: true })` 播放。如果媒体不包含声音，则不会被 Autoplay 限制。
 
-- 方案二：通过 UI 和产品设计让用户和页面发生交互操作（点击/触摸），在用户操作后再调用 `Stream.play 进行播放。`
+- 方案二：通过 UI 和产品设计让用户和页面发生交互操作（点击/触摸），在用户操作后再调用 `Stream.play` 进行播放。
 
 如果你的产品设计要求在没有用户操作的前提下自动播放媒体，我们推荐使用方案一。
 
@@ -76,9 +76,10 @@ stream.play("agora_remote"+ stream.getId(), function(err){
     
 2. 通过 `createStream` 或者订阅远端的方式获取到可以播放的 `Stream` 对象后，立刻调用 `Stream.play("ID", { muted: true })` 自动以静音的方式播放这些流。同时将这些自动播放的 `Stream` 对象保存到一个内部列表对象 `playingStreamList` 中。
 
-3. 在第一步注册的回调函数中，将 `playingStreamList` 中的 `Stream` 对象再次播放，这次就无须设置 `muted` 了。
+3. 在第一步注册的事件回调中，将 `playingStreamList` 中的 `Stream` 对象再次播放，这次就无须设置 `muted` 了。
 
     ```javascript
+    Stream.stop()
     Stream.play("ID", { muted: false })
     ```
 
@@ -86,15 +87,20 @@ stream.play("agora_remote"+ stream.getId(), function(err){
 
 简单来说，只要确保在调用 `Stream.play` 之前用户和页面发生过交互行为即可。对于桌面端的浏览器，这个方案可以绕过大部分 Autoplay 限制，但是在 iOS Safari/Webview 上，自动播放策略会更为严格。
 
-### iOS Safari 的特殊处理
+### iOS Safari/WebView 的特殊处理
 
 <div class="alert note">iOS Safari 只允许通过用户交互来<b>触发</b>有声媒体的播放，而不是在用户交互后就打开 Autoplay 限制。</div> 
 
-如果你的应用需要兼容 iOS Safari，我们推荐对 iOS Safari 做特殊处理。
+如果你的应用需要兼容 iOS Safari/WebView，我们推荐对 iOS Safari/WebView 做特殊处理。
 
 - 和方案一一样，所有的流自动播放时都设置 `muted: true。`
 - 在每个 `Stream.play` 时指定的 `HTMLElement` 容器绑定交互事件（点击/触摸）。
 - 在播放界面上通过图标显示当前流被静音，引导用户点击。
-- 当用户点击某个流的播放界面（刚刚绑定的容器）时，在事件的回调中将这个流的静音取消，即重新调用 `Stream.play("ID", { muted: false }`，同时更改静音图标。
+- 当用户点击某个流的播放界面（刚刚绑定的容器）时，在事件的回调中将这个流再次播放，此时无需设置静音，同时更改静音图标。   
+
+    ```javascript
+    Stream.stop()
+    Stream.play("ID", { muted: false })
+    ```
 
 因为 iOS Safari 的自动播放策略更为严格，Agora Web SDK 在 Safari 浏览器上会默认设置 `<video controls>`，也就是显示 `<video>` 元素的原生控件，这样即使你在 Safari 上没有对 Autoplay 限制做处理，用户也可以通过手动点击 `<video>` 元素的原生播放按钮来播放音视频。

@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Web
-updatedAt: Thu Jan 02 2020 02:42:39 GMT+0800 (CST)
+updatedAt: Thu Feb 27 2020 06:00:42 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
@@ -74,7 +74,7 @@ Client.addInjectStreamUrl(url, config);
 Client.removeInjectStreamUrl(url);
 ```
 
-同时，我们在 GitHub 提供一个开源的 [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) 示例项目。
+同时，我们在 GitHub 提供一个开源的 [Live-Streaming-Injection](https://github.com/AgoraIO/Advanced-Interactive-Broadcasting/tree/master/Live-Streaming-Injection) 示例项目。你也可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Injection-Web/)我们的输入在线媒体流功能。
 
 <a name="api"></a>
 ### API 参考
@@ -86,5 +86,5 @@ Client.removeInjectStreamUrl(url);
 
 主播在直播过程中启用输入在线媒体流时，观众需要订阅主播才能观看外部视频。
 
-## 相关文档
+## 相关链接
 [在输入在线媒体流过程中，连接断开后如何处理？](https://docs.agora.io/cn/faq/injecting_stream_disconnection_web)
