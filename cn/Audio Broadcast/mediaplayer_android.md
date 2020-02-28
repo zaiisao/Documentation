@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Android
-updatedAt: Fri Feb 28 2020 08:05:46 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 08:30:49 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -287,7 +287,7 @@ rtcChannelPublishHelper.release();
 ```
 
 ## 获取日志文件
-日志文件包含媒体播放器组件运行时产生的所有日志。日志文件的输出地址为：`/sdcard/{App 的包名}/agoraplayer.log`。
+日志文件包含媒体播放器组件运行时产生的所有日志。日志文件的输出地址为 `/sdcard/{App 的包名}/agoraplayer.log`。
 
 ## API 文档
 
