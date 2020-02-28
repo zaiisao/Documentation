@@ -1,66 +1,66 @@
 
 ---
-title: HTTP 基本认证
+title: 如何进行 HTTP 基本认证？
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 28 2019 11:00:31 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 22:39:59 GMT+0800 (CST)
 ---
-# HTTP 基本认证
-## 场景描述
+# 如何进行 HTTP 基本认证？
+## 功能描述
 
-在使用 RESTful API 前，你需要在 HTTP 请求头部中填入 `Authorization` 字段，进行认证。在请求认证的代码中，你需要填入你的客户 ID 和客户证书。
+在使用 RESTful API 前，你需要在 HTTP 请求头部中填入 `Authorization` 字段，进行 HTTP 基本认证 。本文介绍如何使用 Agora 提供的 Customer ID 和 Customer Certificate 生成一个 Authorization 字段。
 
-登录 [Console](https://console.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取**客户 ID** 和**客户证书**。
+## 操作步骤
 
-![](https://web-cdn.agora.io/docs-files/1571022863083)
+1. 获取客户 ID（Customer ID）和客户证书（Customer Certificate）。登录 [Console](https://console.agora.io/)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取 Customer ID 和 Customer Certificate。
+ 
+ ![](https://web-cdn.agora.io/docs-files/1571022863083)
 
-<div class="alert note">客户 ID 和 Customer Certificate 仅用于访问 Restful API。</div>
+ <div class="alert note">客户 ID和客户证书仅用于访问 RESTful API。</div>
+ 
+2. 在请求认证的代码中，填入 Customer ID 和 Customer Certificate，并获取 Authorization 字段。请参考下列代码。
 
-下文提供 Java 和 Swift 语言生成 Authorization 字段的示例代码，请参考代码获取相应的 `Authorization` 值。
+   - Java
 
-## 示例代码
+     ```java
+     // 填入 Customer ID 和 Customer Certificate，计算 plainCredentials。
+     String plainCredentials = "customerId:customerCertificate";
+     // 填入 plainCredentials（使用 Base64 算法编码的 Credential），计算 base64Credentials，即你要的 Authorization 字段。
+     String base64Credentials = new String(Base64.encodeBase64(plainCredentials.getBytes()));
+```
 
-### Java
+   - Swift
 
-- 获取 Authorization 值
+     ```swift
+     // 填入 Customer ID 和 Customer Certificate，计算 loginString。
+     let username = "customerId"
+     let password = "customerCertificate"
+     let loginString = String(format: "%@:%@", username, password)
+     // 填入 loginString，计算 loginData。
+     let loginData = loginString.data(using: String.Encoding.utf8)!
+     // 填入 loginData（使用 Base64 算法编码的 LoginData），计算 base64LoginString，即你要的 Authorization 字段。
+     let base64LoginString = loginData.base64EncodedString()
+```
 
-	```java
-	// 填入你获取到的 Customer ID 和 Customer Certificate
-	String plainCredentials = "customerId:customerCertificate";
-	// base64Credentials 就是你要的 Authorization 值，是一个使用 Base64 算法编码的 Credential
-	String base64Credentials = new String(Base64.encodeBase64(plainCredentials.getBytes()));
-	```
+3. 进行 HTTP 认证。请参考下列代码。
 
-- HTTP 认证
+   <div class="alert note">发送 HTTP 请求时，Authorization 字段的格式需为：Basic base64Credentials 或 Basic base64LoginString。</div>
 
-	```java
-	Request request = new Request.Builder()
-	...
-		// 在 HTTP 请求头部填入获取到的 Authorization 字段
-		.addHeader("Authorization", "Basic base64Credentials")
-	...
-	```
+   - Java
 
-### Swift
+     ```java
+     Request request = new Request.Builder()
+     ...
+         // 在 HTTP 请求头部填入获取到的 Authorization 字段。
+         .addHeader("Authorization", "Basic base64Credentials")
+     ...
+```
 
-- 获取 Authorization 值
+   - Swift
 
-	```swift
-	let username = "customerId"
-	let password = "customerCertificate"
-	let loginString = String(format: "%@:%@", username, password)
-	let loginData = loginString.data(using: String.Encoding.utf8)!
-	// base64LoginString 就是你要的 Authorization 值，是一个使用 Base64 算法编码的 LoginString
-	let base64LoginString = loginData.base64EncodedString()
-	```
+     ```swift
+     // 在 HTTP 请求头部填入获取到的 Authorization 字段。
+     let headers = ["Authorization", "Basic base64LoginString"]
+```
 
-- HTTP 认证
-
-	```swift
-	// 在 HTTP 请求头部填入获取到的 Authorization 字段
-	let headers = ["Authorization", "Basic base64LoginString"]
-	```
-
-## 开发注意事项
-
-发送 HTTP 请求时，Authorization 字段的格式为：`Basic base64Credentials` 或 `Basic base64LoginString`。
+     
