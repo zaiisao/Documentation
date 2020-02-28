@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Thu Feb 06 2020 11:47:56 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 01:52:37 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -25,7 +25,7 @@ The following is an example that shows the fields in the request body.
 
 ### <a name="payload"></a>Fields in payload
 
-`payload` is a JSON object, which is the main body of the notification. `payload` in each type of event notification contains the following fields:
+`payload` is a JSON object, which is the main body of the notification. `payload` in each type of event notification includes the following fields:
 
 - `cname`: String. The name of the channel to be recorded.
 - `uid`: String. The UID of the recording client.
@@ -61,7 +61,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 
 ###  <a name="1"></a>1 cloud_recording_error
 
-`eventType` 1 indicates that an error occurs during the recording. `details` contains the following fields:
+`eventType` 1 indicates that an error occurs during the recording. `details` includes the following fields:
 
 - `msgName`: String. The name of the message, `"cloud_recording_error"`.
 - `module`: Number. The module in which the error occurs.
@@ -85,7 +85,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 
 ###  <a name="2"></a>2 cloud_recording_warning
 
-`eventType` 2 indicates that a warning occurs during the recording. `details` contains the following fields:
+`eventType` 2 indicates that a warning occurs during the recording. `details` includes the following fields:
 
 - `msgName`: String. The message name, `cloud_recording_warning`.
 - `module`: Number. The name of the module where the warning occurs.
@@ -97,7 +97,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 
 ###  <a name="3"></a>3 cloud_recording_status_update
 
-`eventType` 3 indicates that the method call fails because it does not match the status of the cloud recording service. For example, the method call of `start` fails if the service has already started. `details` contains the following fields:
+`eventType` 3 indicates that the method call fails because it does not match the status of the cloud recording service. For example, the method call of `start` fails if the service has already started. `details` includes the following fields:
 
 - `msgName`: String. The message name, `cloud_recording_status_update`.
 - `status`: Number. The status of the cloud recording service. See [Status codes for the Agora Cloud Recording service](#state) for details.
@@ -110,7 +110,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 
 `eventType` 4 indicates that an M3U8 playlist file is generated and uploaded. Each recording instance has an M3U8 file as the playlist pointing to all the recorded TS/WebM files. You can play and manage your recordings with the M3U8 file.
 
-`details` contains the following fields:
+`details` includes the following fields:
 
 - `msgName`: String. The message name, `cloud_recording_file_infos`.
 - `fileList`: String. The name of the M3U8 file.
@@ -118,7 +118,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 
 ### <a name="11"></a>11 session_exit
 
-`eventType` 11 indicates that the cloud recording service has ended its tasks and exited. `details` contains the following fields:
+`eventType` 11 indicates that the cloud recording service has ended its tasks and exited. `details` includes the following fields:
 
 - `msgName`: String. The message name, `session_exit`.
 - `leaveStatus`: Number. The exit status. 
@@ -127,42 +127,42 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 
 ###  <a name="30"></a>30 uploader_started
 
-`eventType` 30 indicates that the upload service starts, and `details` contains the following fields:
+`eventType` 30 indicates that the upload service starts, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `uploader_started`.
 - `status`: Number. The event status. 0 indicates normal status; other values indicate abnormal status.
 
 ###  <a name="31"></a>31 uploaded
 
-`eventType` 31 indicates that all the recorded files are uploaded to the specified third-party cloud storage, and `details` contains the following fields:
+`eventType` 31 indicates that all the recorded files are uploaded to the specified third-party cloud storage, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `uploaded`.
 - `status`: Number. The event status. 0 indicates normal status; other values indicate abnormal status.
 
 ###  <a name="32"></a>32 backuped
 
-`eventType` 32 indicates that all the recorded files are uploaded, but at least one of them is uploaded to Agora Cloud Backup. Agora Cloud Backup automatically uploads the files to the specified third-party cloud storage. `details` contains the following fields:
+`eventType` 32 indicates that all the recorded files are uploaded, but at least one of them is uploaded to Agora Cloud Backup. Agora Cloud Backup automatically uploads the files to the specified third-party cloud storage. `details` includes the following fields:
 
 - `msgName`: String. The message name, `backuped`.
 - `status`: Number. The event status. 0 indicates normal status; other values indicate abnormal status.
 
 ###  <a name="33"></a>33 uploading_progress
 
-`eventType` 33 indicates the current upload progress. The Agora server notifies you of the upload progress once every minute after the recording starts. `details` contains the following fields:
+`eventType` 33 indicates the current upload progress. The Agora server notifies you of the upload progress once every minute after the recording starts. `details` includes the following fields:
 
 - `msgName`: String. The message name, `uploading_progress`.
 - `progress`: Number. An ever-increasing number between 0 and 10,000, equal to the ratio of the number of the uploaded files to the number of the recorded files multiplied by 10,000. After the recording service exits and when the number reaches 10,000, the upload completes.
 
 ###  <a name="40"></a>40 recorder_started
 
-`eventType` 40 indicates that the recording service starts, and `details` contains the following fields:
+`eventType` 40 indicates that the recording service starts, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `recorder_started`.
 - `status`: Number. The event status. 0 indicates normal status; other values indicate abnormal status.
 
 ###  <a name="41"></a>41 recorder_leave
 
-`eventType` 41 indicates that the recording service leaves the channel, and `details` contains the following fields:
+`eventType` 41 indicates that the recording service leaves the channel, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `recorder_leave`.
 - `leaveCode`: Number. The code that indicates why the recording service leaves the channel.
@@ -174,7 +174,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 
 ### <a name="42"></a>42 recorder_slice_start
 
-`eventType` 42 indicates that the recording service syncs the information of the recorded files, and `details` contains the following fields:
+`eventType` 42 indicates that the recording service syncs the information of the recorded files, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `recorder_slice_start`.
 - `startUtcMs`：Number. The time (ms) in UTC when the recording starts (the starting time of the first slice file).
@@ -193,10 +193,10 @@ For example, you start a recording session and get this event notification in wh
 
 ### <a name="43"></a>43 recorder_audio_stream_state_changed
 
-eventType 43 indicates that the state of the audio stream changes, and `details` contains the following fields:
+eventType 43 indicates that the state of the audio stream has changed, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `recorder_audio_stream_state_changed`.
-- `streamUid`: String. User ID. The user whose audio is recorded in the file.
+- `streamUid`: String. The ID of the user whose audio is being recorded. In composite recording mode, `streamUid` can be `0`, which represents the combined stream of all or the specified UIDs.
 - `state` : Number. Whether Agora Cloud Recording is receiving the audio stream.
   - `0`: Agora Cloud Recording is receiving the audio stream.
   - `1`: Agora Cloud Recording is not receiving the audio stream.
@@ -206,10 +206,10 @@ eventType 43 indicates that the state of the audio stream changes, and `details`
 
 ### <a name="44"></a>44 recorder_video_stream_state_changed
 
-eventType 44 indicates that the state of the video stream changes, and `details` contains the following fields:
+eventType 44 indicates that the state of the video stream has changed, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `recorder_video_stream_state_changed`.
-- `streamUid`: String. User ID. The user whose video is recorded in the file.
+- `streamUid`: String. The ID of the user whose video is being recorded. In composite recording mode, `streamUid` can be `0`, which represents the combined stream of all or the specified UIDs.
 - `state`: Number. Whether Agora Cloud Recording is receiving the video stream.
   - `0`: Agora Cloud Recording is receiving the video stream.
   - `1`: Agora Cloud Recording is not receiving the video stream.

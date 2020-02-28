@@ -1,12 +1,12 @@
 
 ---
-title: Start a Video Broadcast
+title: Start a Video Broadcasting
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 04:22:19 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 06:14:23 GMT+0800 (CST)
 ---
-# Start a Video Broadcast
-Use this guide to quickly start a basic video broadcast with the Agora SDK for Unity.
+# Start a Video Broadcasting
+Use this guide to quickly start a basic video broadcasting with the Agora SDK for Unity.
 
 ## Prerequisites
 
@@ -79,15 +79,15 @@ Choose either of the following approaches to integrate the Agora Unity SDK into 
 
    <div class="alert note"><ul><li>Android or iOS developers using Unity Editor for macOS or Windows must also copy the SDK file for macOS or the subfolder for Windows X86_64 to the specified directory.<li>Android developers also need to copy the AndroidManifest.xml and project.properties  from the directory of the sample project (./Assets/Plugins/Android/AgoraRtcEngineKit.plugin) to the directory of the Unity project (./Assets/Plugins/Android). The former is for adding project permissions; the latter is for setting project properties.<li>iOS developers also need to do the following steps: (You can find the sample code logic in <a href="https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/video/Hello-Video-Unity-Agora/Assets/Editor/BL_BuildPostProcess.cs">BL_BuildPostProcess.cs</a>, or copy  this file to directory of your Unity project)<ul><li>Link the following libraries: <ul><li>CoreTelephony.framework<li>VideoToolbox.framework<li>libresolv.tbd<li>libiPhone-lib.a<li>CoreText.framework<li>Metal.framework<li>CoreML.framework<li>Accelerate.framework</li></ul><li>Ask for the following permissios: <ul><li>NSCameraUsageDescription<li>NSMicrophoneUsageDescription</div>
 
-## Implement a basic video broadcast
+## Implement a basic video broadcasting
 
-This section provides instructions on using the Agora Video SDK for Unity to implement a basic video broadcast, as well as an API call sequence diagram.
+This section provides instructions on using the Agora Video SDK for Unity to implement a basic video broadcasting, as well as an API call sequence diagram.
 
 ![](https://web-cdn.agora.io/docs-files/1576220788626)
 
 ### 1. Create the UI
 
-Create the user interface (UI) for a video broadcast in your project. If you already have one UI in your project, skip to [Get the device permission (Android only)](#permission) or [Initialize IRtcEngine](#initialize).
+Create the user interface (UI) for a video broadcasting in your project. If you already have one UI in your project, skip to [Get the device permission (Android only)](#permission) or [Initialize IRtcEngine](#initialize).
 
 We recommend adding the following elements to the UI:
 
@@ -222,7 +222,7 @@ After setting the channel profile and client role, set the local video view befo
 
 ### 7. Join a channel
 
-After setting the client role and the local video view (for a video broadcast), you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method::
+After setting the client role and the local video view (for a video broadcasting), you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method::
 
 - `channelKey`: The token for identifying the role and privileges of a user. Set it as one of the following values:
 
@@ -247,7 +247,7 @@ mRtcEngine.JoinChannelByKey(null, channel, null, 0);
 
 ### 8. Set the remote video
 
-In a video broadcast you should also be able to see all the broadcasters, regardless of your role. This is achieved by calling `SetForUser` in **VideoSurface.cs** after joining a channel.
+In a video broadcasting you should also be able to see all the broadcasters, regardless of your role. This is achieved by calling `SetForUser` in **VideoSurface.cs** after joining a channel.
 
 Shortly after a remote broadcaster joins the channel, the SDK gets the broadcaster's user ID in the `OnUserJoinedHandler` callback, and you can get the user’s uid.
 
@@ -334,4 +334,4 @@ void OnApplicationQuit()
 
 ## Run the project
 
-Run the project in Unity. When you set the role as the broadcaster and successfully join a video broadcast, you can see the video view of yourself in the app. When you set the role as the audience and successfully join a video broadcast, you can see the video view of the broadcaster in the app.
+Run the project in Unity. When you set the role as the broadcaster and successfully join a video broadcasting, you can see the video view of yourself in the app. When you set the role as the audience and successfully join a video broadcasting, you can see the video view of the broadcaster in the app.

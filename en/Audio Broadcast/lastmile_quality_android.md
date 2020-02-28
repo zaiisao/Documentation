@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: 
 platform: Android
-updatedAt: Mon Feb 24 2020 13:48:00 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 03:04:24 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction
@@ -59,7 +59,7 @@ public void onLastmileProbeResult(LastmileProbeResult) {
 	rtcEngine.stopLastmileProbeTest();
 }
 
-// (2) Stop the test. Agora recommends not calling any other API method before the test ends.
+// (2) Stop the test in an alternate place. Agora recommends not calling any other API method before the test ends.
 rtcEngine.stopLastmileProbeTest();
 ```
 

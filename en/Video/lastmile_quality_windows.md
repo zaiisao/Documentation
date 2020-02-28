@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: 
 platform: Windows
-updatedAt: Mon Feb 24 2020 13:50:31 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 03:04:07 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction
@@ -59,7 +59,7 @@ config.expectedDownlinkBitrate = 100000;
 // Start the last-mile network test before joining the channel.
 lpAgoraEngine->startLastmileProbeTest(config);
 
-// (2) Stop the test. Agora recommends not calling any other API method before the test ends.
+// (2) Stop the test in an alternate place. Agora recommends not calling any other API method before the test ends.
 lpAgoraEngine->stopLastmileProbeTest();
 ```
 

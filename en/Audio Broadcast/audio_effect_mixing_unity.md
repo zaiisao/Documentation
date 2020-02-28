@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: 
 platform: Unity
-updatedAt: Tue Feb 25 2020 13:36:56 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 02:09:18 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -37,9 +37,9 @@ The following figure shows the API call sequence. After playing the audio effect
 ```C#
 // Initializes the AudioEffectManagerImpl class.
 AudioEffectManagerImpl audioEffectManager = (AudioEffectManagerImpl)mRtcEngine.GetAudioEffectManager();
-// Preload audio effects, you can call this method multiple times to preload multiple audio effects.
+// Preloads audio effects, you can call this method multiple times to preload multiple audio effects.
 int ret = audioEffectManager.PreloadEffect(nSoundID, filePath);
-// Play a specified audio effect.
+// Plays a specified audio effect.
 int ret = audioEffectManager.PlayEffect(nSoundID, filePath, nLoopCount, dPitch, dPan, nGain, true);
 // Pauses a specified audio effect.
 int ret = audioEffectManager.PauseEffect(nSoundID);

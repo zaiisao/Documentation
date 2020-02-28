@@ -25,7 +25,7 @@ You can use the Agora SDKs to implement the following features for your project.
 | Whiteboard | The teacher can share a Powerpoint slide, a Word or PDF file, or even an audio or video file on it.<br>   |
 | Recording | The teacher can record the class and share the recording through a link for future review or evaluation. |
 | Class management | The teacher starts or ends the class, and manages the students' privilege for sending audio, video, or real-time messages. |
-| Device and network test | Before the class, the teacher can test whether the microphone and camera are working properly.<br>During the class, both the teacher and the students can monitor the network quality in real time. |
+| Device and network test | Before the class, the teacher can test whether the microphone and camera are working properly.During the class, both the teacher and the students can monitor the network quality in real time. |
 | Screen share | The teacher can share the screen with the students.|
 
 

@@ -1,12 +1,12 @@
 
 ---
-title: Start a Voice Broadcast
+title: Start a Audio Broadcasting
 description: 
 platform: Unity
-updatedAt: Mon Dec 23 2019 04:20:15 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 06:16:20 GMT+0800 (CST)
 ---
-# Start a Voice Broadcast
-Use this guide to quickly start a basic voice broadcast with the Agora SDK for Unity.
+# Start a Audio Broadcasting
+Use this guide to quickly start a basic audio broadcasting with the Agora SDK for Unity.
 
 ## Prerequisites
 
@@ -79,15 +79,15 @@ Choose either of the following approaches to integrate the Agora Unity SDK into 
 
    <div class="alert note"><ul><li>Android or iOS developers using Unity Editor for macOS or Windows must also copy the SDK file for macOS or the subfolder for Windows X86_64 to the specified directory.<li>Android developers also need to copy the AndroidManifest.xml and project.properties  from the directory of the sample project (./Assets/Plugins/Android/AgoraRtcEngineKit.plugin) to the directory of the Unity project (./Assets/Plugins/Android). The former is for adding project permissions; the latter is for setting project properties.<li>iOS developers also need to do the following steps: (You can find the sample code logic in <a href="https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/audio/Hello-Unity3D-Agora/Assets/Editor/BL_BuildPostProcess.cs">BL_BuildPostProcess.cs</a>, or copy  this file to directory of your Unity project)<ul><li>Link the following libraries: <ul><li>CoreTelephony.framework<li>libresolv.tbd<li>libiPhone-lib.a<li>CoreText.framework<li>CoreML.framework<li>Accelerate.framework</li></ul><li>Ask for the following permissios: NSMicrophoneUsageDescription</div>
 
-## Implement a basic voice broadcast
+## Implement a basic audio broadcasting
 
-This section provides instructions on using the Agora Voice SDK for Unity to implement a basic voice broadcast, as well as an API call sequence diagram.
+This section provides instructions on using the Agora Voice SDK for Unity to implement a basic audio broadcasting, as well as an API call sequence diagram.
 
 ![](https://web-cdn.agora.io/docs-files/1576224606319)
 
 ### 1. Create the UI
 
-Create the user interface (UI) for a voice broadcast in your project. If you already have one UI in your project, skip to [Get the device permission (Android only)](#permission) or [Initialize IRtcEngine](#initialize).
+Create the user interface (UI) for an audio broadcasting in your project. If you already have one UI in your project, skip to [Get the device permission (Android only)](#permission) or [Initialize IRtcEngine](#initialize).
 
 We recommend adding the following elements to the UI:
 
@@ -248,4 +248,4 @@ void OnApplicationQuit()
 
 ## Run the project
 
-Run the project in Unity. When you set the role as the broadcaster and successfully join a voice broadcast, you can hear the voice of yourself in the app. When you set the role as the audience and successfully join a voice broadcast, you can hear the voice of the broadcaster in the app.
+Run the project in Unity. When you set the role as the broadcaster and successfully join an audio broadcasting, you can hear the voice of yourself in the app. When you set the role as the audience and successfully join an audio broadcasting, you can hear the voice of the broadcaster in the app.

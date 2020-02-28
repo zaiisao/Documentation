@@ -3,14 +3,18 @@
 title: Start a Video Call
 description: 
 platform: Unity
-updatedAt: Thu Dec 26 2019 03:04:25 GMT+0800 (CST)
+updatedAt: Wed Feb 26 2020 06:12:21 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora SDK for Unity.
 
 ## Try the sample project
 
-We provide an open-source [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora) sample project on GitHub that implements the basic one-to-one video call. You can try the sample project and view the source code.
+We provide an open-source [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora) sample project on GitHub that implements the basic one-to-one video call. You can also find how to run the sample project in the following links:
+- [Run video chat within your Unity application on Android](https://medium.com/agora-io/run-video-chat-within-your-unity-application-android-add6949f6078)
+- [Run video chat within your Unity application on iOS](https://medium.com/agora-io/run-video-chat-within-your-unity-application-ios-425db335a325)
+- [Run video chat within your Unity application on macOS](https://medium.com/@jake_agora.io/mac-run-video-chat-within-your-unity-application-e001091db62f)
+- [Run video chat within your Unity application on Windows](https://medium.com/@jake_agora.io/windows-run-video-chat-within-your-unity-application-f400f9056749)
 
 ## Prerequisites
 
@@ -317,3 +321,7 @@ You can find the complete code in the [TestHelloUnityVideo.cs](https://github.co
 ## Run the project
 
 Run the project in Unity. You should be able to see both the local and remote video if you successfully start a one-to-one video call.
+
+## Relevant links
+
+Video tutorial: [Create a video chat app in Unity](https://www.youtube.com/watch?v=Z3wTBlnEPAg&list=PLTSVhbbBMhCcIQgtW-bGdjcOUDNxbmCqv&index=2&t=508s)

@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Web
-updatedAt: Thu Jan 02 2020 02:43:32 GMT+0800 (CST)
+updatedAt: Thu Feb 27 2020 05:52:36 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -84,5 +84,7 @@ We also provide an open-source [Live-Streaming-Injection](https://github.com/Ago
 To receive the injected media stream, the audience need to subscribe to the host.
 
 ## Reference
-See also: [When injecting online streams to the CDN, what should I do when a disconnection happens?](https://docs.agora.io/en/faq/injecting_stream_disconnection_web)
+
+* See also: [When injecting online streams to the CDN, what should I do when a disconnection happens?](https://docs.agora.io/en/faq/injecting_stream_disconnection_web)
+* You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Injection-Web/) to try the RTMP injection function provided by Agora.
 

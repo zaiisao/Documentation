@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Sun Sep 29 2019 08:20:06 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 03:17:26 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
@@ -103,9 +103,11 @@ nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_STRENGTH, 78);
 
 ### API reference
 
-- [`setLocalVoicePitch`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a1fef48b6aa3954d7e76164a43d660b94)
-- [`setLocalVoiceEqualization`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a3de79ba906e6b254b997eda4d395d052)
-- [`setLocalVoiceReverb`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa00e903b1cc6f2752373afbe556ef456)
+- [`setLocalVoiceChanger`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a99dc3d74202422436d40f6d7aa6e99dc)
+- [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a51a429a5a848b2ad591220aa6c24a898)
+- [`setLocalVoicePitch`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a43616f919e0906279dff5648830ce31a)
+- [`setLocalVoiceEqualization`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8c75994eb06ab26a1704715ec76e0189)
+- [`setLocalVoiceReverb`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4d1d1309f97f3c430a1aa2d060bb7316)
 
 ## Considerations
 

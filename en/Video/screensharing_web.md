@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 02:33:01 GMT+0800 (CST)
+updatedAt: Thu Feb 27 2020 06:03:27 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -231,7 +231,7 @@ screenClient.on('stream-added', function(evt) {
 })
 ```
 
-### Sample code
+## Sample code
 
 The following sample code implements screen sharing and publishing the local video stream. Meanwhile, we provide an open-source GitHub [sample project](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Web-Webpack). You can [try it online](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web) and refer to the code in  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) and [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/index.js).
 
@@ -351,3 +351,4 @@ videoClient.init(appID, function() {
 - Do not set the UID of the screen-sharing stream to a fixed value. Streams with the same UID can interfere with each other.
 - **Do not subscribe to a locally published screen-sharing stream**, else additional charges incur.
 - Sharing the window of a QQ chat on Windows causes a black screen.
+
