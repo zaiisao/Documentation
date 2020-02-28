@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Web
-updatedAt: Tue Feb 25 2020 02:30:52 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 10:59:03 GMT+0800 (CST)
 ---
 # 实现互动直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音视频互动直播。
@@ -341,7 +341,7 @@ rtc.client.setClientRole(role);
      console.log('stream-subscribed remote-uid: ', id);
    })
    ```
-<div class="alert note">受浏览器策略影响，在 Chrome 70+ 和 Safari 浏览器上，<code>Stream.play</code> 方法必须由用户手势触发，详情请参考 <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes">Autoplay Policy Changes</a>。</div>
+<div class="alert note">受浏览器策略影响，在 Chrome 70+ 和 Safari 浏览器上，<code>Stream.play</code> 方法必须由用户手势触发，详情请参考<a href="../../cn/Audio%20Broadcast/autoplay_policy_web.md">处理浏览器的自动播放策略</a>。</div>
 3. 监听 `"stream-removed"` 事件，当远端流被移除时（例如远端用户调用了 `Stream.unpublish`）， 停止播放该流并移除它的画面。
 
    ```javascript
