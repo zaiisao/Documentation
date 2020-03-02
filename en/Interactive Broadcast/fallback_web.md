@@ -3,7 +3,7 @@
 title: Video Stream Fallback
 description: 
 platform: Web
-updatedAt: Mon Jan 13 2020 07:07:05 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 09:24:27 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
