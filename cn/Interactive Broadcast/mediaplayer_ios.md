@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Mon Mar 02 2020 03:19:12 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 03:19:20 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -77,9 +77,9 @@ updatedAt: Mon Mar 02 2020 03:19:12 GMT+0800 (CST)
    - VideoToolbox.framework
 
 	添加后：
-![](https://web-cdn.agora.io/docs-files/1583116268559)
+![](https://web-cdn.agora.io/docs-files/1583119068826)
 
-	> 如需支持 iOS 9.0 或更低版本的设备，请在 Xcode 中将对 **CoreML.framework** 的依赖设为 **Optional**。
+	> 如需支持 iOS 11 或更低版本的设备，请在 Xcode 中将对 **CoreML.framework** 的依赖设为 **Optional**。
 
 5. 根据场景需要，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
 
