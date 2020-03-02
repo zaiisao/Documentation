@@ -3,10 +3,10 @@
 title: 实现语音通话
 description: 
 platform: Android
-updatedAt: Wed Feb 26 2020 04:06:26 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 07:08:04 GMT+0800 (CST)
 ---
 # 实现语音通话
-本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
+本文介绍如何使用 Agora 音频 SDK 快速实现语音通话。
 
 ## 示例项目
 
