@@ -3,7 +3,7 @@
 title: 如何设置镜像模式？
 description: since Native 3.0.0
 platform: Android,iOS,macOS,Windows
-updatedAt: Mon Mar 02 2020 17:41:54 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 17:42:57 GMT+0800 (CST)
 ---
 # 如何设置镜像模式？
 自 v3.0.0 起，Agora Native SDK 提供新的接口方便你在实时音视频通话的不同阶段中获取期望的视频显示效果。
@@ -24,9 +24,9 @@ updatedAt: Mon Mar 02 2020 17:41:54 GMT+0800 (CST)
 
 ## API 参考
 如果你想了解更多细节，请参考以下 API 文档：
-[`setLocalVideoMirrorMode (deprecated)`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a67f08a1ee32d9443a04bb9b293156bde)
-[`setupLocalVideo`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a744003a9c0230684e985e42d14361f28)
-[`setLocalRenderMode`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac433e6e88da91f87c107012cbaf8bb5c)
-[`setupRemoteVideo`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac166814787b0a1d8da5f5c632dd7cdcf)
-[`setLocalRenderMode`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac433e6e88da91f87c107012cbaf8bb5c)
-[`setVideoEncoderConfiguration`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
+* [`setLocalVideoMirrorMode (deprecated)`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a67f08a1ee32d9443a04bb9b293156bde)
+* [`setupLocalVideo`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a744003a9c0230684e985e42d14361f28)
+* [`setLocalRenderMode`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac433e6e88da91f87c107012cbaf8bb5c)
+* [`setupRemoteVideo`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac166814787b0a1d8da5f5c632dd7cdcf)
+* [`setLocalRenderMode`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac433e6e88da91f87c107012cbaf8bb5c)
+* [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/faqs/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e)
