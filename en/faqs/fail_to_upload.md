@@ -3,7 +3,7 @@
 title: Why haven’t the recorded files been uploaded to the cloud storage
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 02 2020 11:53:22 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 11:54:39 GMT+0800 (CST)
 ---
 # Why haven’t the recorded files been uploaded to the cloud storage
 Uploading the recorded files to the cloud storage fails if:
