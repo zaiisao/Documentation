@@ -3,7 +3,7 @@
 title: Video Stream Fallback
 description: 
 platform: Android
-updatedAt: Sun Sep 29 2019 09:40:26 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:20:33 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
