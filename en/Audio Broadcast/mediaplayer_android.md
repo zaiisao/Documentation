@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 07:50:09 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 07:50:14 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -92,7 +92,7 @@ Integration steps:
 
 1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) and unzip the `MediaPlayerExtensions.zip`.
 
-2. Add the **./MediaPlayerExtensions/android/2.x.x/RtcChannelPublishHelper.aar** file to the **/app/libs** path of your project.
+2. Add the **./MediaPlayerExtensions/android/{version}/RtcChannelPublishHelper.aar** file to the **/app/libs** path of your project.
 
 3. In the **/app/build.gradle** file, add the following lines:
 
