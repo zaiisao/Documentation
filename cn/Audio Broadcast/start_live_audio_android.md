@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:05:28 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:16:48 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 语音 SDK 快速实现音频直播。
@@ -439,8 +439,7 @@ private void joinChannel() {
 }
 ```
 
-
-### 9. 离开频道
+### 8. 离开频道
 
 根据场景需要，如结束直播、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前直播频道。
 
