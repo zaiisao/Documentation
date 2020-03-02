@@ -3,10 +3,10 @@
 title: 实现视频通话
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 07:08:15 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 07:08:19 GMT+0800 (CST)
 ---
 # 实现视频通话
-本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
+本文介绍如何使用 Agora 视频 SDK 快速实现视频通话。
 
 ## 示例项目
 
