@@ -3,7 +3,7 @@
 title: 处理浏览器的自动播放策略
 description: 
 platform: Web
-updatedAt: Fri Feb 28 2020 03:42:08 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 02:35:16 GMT+0800 (CST)
 ---
 # 处理浏览器的自动播放策略
 ## 概览
