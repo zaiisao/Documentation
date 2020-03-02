@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Mon Mar 02 2020 02:06:57 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 02:07:27 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
@@ -427,12 +427,12 @@ BaseUrl: **https://api.agora.io/dev/v1**
 				"cname":"",   // channel name 频道名称，非必填，可以不传，但不能传 cname:""
 				"uid":"",     // uid，SDK 可以获取到，非必填，可以不传，但不能传 uid:0
 				"ip":"",      // IP地址需要封的用户 IP，非必填，可以不传，但不能传 ip:0
-				"time": 60    // 封人时间，单位是分钟，最大 1440 分钟，最小一分钟。如果大于 1440 分钟，会被处理成 1440 分钟，如果不传默认为 1 小时。非必填。比如：time:60
+				"time": 60    // 封人时间，单位是分钟，取值范围为 [1, 1440]。小于 1 的设置会自动改设为 1，大于 1440 的自动改为 1440。time = 0 时，表示不封禁。
 				"privileges":["join_channel"]  // 默认参数
      }
     ```
 
-> - 如果 time 字段设置为 0，则表示不封禁，服务端会对频道内符合设定规则的用户进行下线一次的操作。用户可以重新登录进入频道。 
+> - "time" 设为 0 时，服务端会对频道内符合设定规则的用户进行下线一次的操作。用户可以重新登录进入频道。
 > - 踢人规则通过 cname、uid 和 ip 三个字段实现过滤，规则如下：
 >   * 如果填写 ip，不填写 cname 或 uid，则该 ip 无法登录 App 中的任何频道
 >   * 如果填写 cname，不填写 uid 或 ip，则任何人都无法登录 App 中该 cname 对应的频道
