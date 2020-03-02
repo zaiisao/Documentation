@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:44:03 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:46:15 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start an interactive broadcast with the Agora SDK for Android.
