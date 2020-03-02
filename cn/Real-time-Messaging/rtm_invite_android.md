@@ -3,7 +3,7 @@
 title: 呼叫邀请
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 03:05:46 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 03:05:54 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -111,7 +111,7 @@ RemoteInvitation 的生命周期在被叫收到以下回调时结束，并由 SD
 
 - 主叫设置的呼叫邀请 content 的字符串长度：8 KB，格式为 UTF-8。
 - 被叫设置的呼叫邀请响应 response 的字符串长度：8 KB，格式为 UTF-8。
-- 呼叫邀请的 [setChannelId](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_local_invitation.html#aa3b2a935a05b4361215fb6bd6bcfec60) 方法仅用于与老信令互通时设置。设置的channelId 必须与老信令 SDK 设置相同才能实现互通。字符串长度：64 字节，格式为 UTF-8。
+- 呼叫邀请的 channel ID 仅用于与老信令互通时设置。设置的 channel ID 必须与老信令 SDK 设置相同才能实现互通。字符串长度：64 字节，格式为 UTF-8。
 
 
 
