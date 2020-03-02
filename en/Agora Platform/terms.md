@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 19 2019 07:25:43 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 09:14:18 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -72,7 +72,7 @@ As an analogy, if we imagine an app being a building, a channel will be a room i
 
 ### Channel profile
 
-The SDK applies different optimization methods according to the channel profile. Users in the same channel must use the same channel profile. Agora supports the following channel  profiles:
+The SDK applies different optimization methods according to the channel profile. Agora supports the following channel  profiles:
 
 
 | Channel Profile | Description | 
@@ -81,7 +81,7 @@ The SDK applies different optimization methods according to the channel profile.
 | Live Broadcast     | In a live broadcast channel, users have two client roles: [Host](#host) and [audience](#audience). The host sends and receives audio/video, and the audience receives audio/video with the sending function disabled.   | 
 | Gaming    | Any user in the channel can talk freely. This profile uses the codec with low-power consumption and low bitrate by default.   | 
 
-> The gaming profile applies to the Agora Gaming SDK only.
+<div class="alert note">The gaming profile applies to the Agora Gaming SDK only.</div>
 
 
 ### <a name="username"></a>Username
