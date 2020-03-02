@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Thu Feb 20 2020 07:27:41 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 12:52:26 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
@@ -49,7 +49,7 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 
 ![](https://web-cdn.agora.io/docs-files/1577947530430)
 
-学生端集成 Agora RTC SDK 和 Agora RTM SDK，通过声网自建的底层实时传输网络 Agora SD-RTN™ 发送和接收实时音视频和实时消息，实现实时互动，并将音频流发送至第三方平台进行语音识别和口语评测。
+学生端集成 Agora Native SDK 和 Agora RTM SDK，通过声网自建的底层实时传输网络 Agora SD-RTN™ 发送和接收实时音视频和实时消息，实现实时互动，并将音频流发送至第三方平台进行语音识别和口语评测。
 
 服务端 AI 教师：
 
@@ -108,7 +108,7 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 
 #### 实时音视频
 
-学生端可集成 Agora RTC SDK 实现实时音视频功能，支持 Android、Windows、iOS、macOS 和 Web。
+学生端可集成 Agora Native SDK 实现实时音视频功能，支持 Android、Windows、iOS、macOS 和 Web。
 
 我们提供：
 
@@ -136,7 +136,7 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 
 #### 口语评测
 
-我们提供以下开源示例项目指导你如何将 Agora RTC SDK 采集到的音频发送到第三方平台进行语音识别和口语评测。
+我们提供以下开源示例项目指导你如何将 Agora Native SDK 采集到的音频发送到第三方平台进行语音识别和口语评测。
 
 | 平台    | 开源示例项目                                                 |
 | :------ | :----------------------------------------------------------- |
