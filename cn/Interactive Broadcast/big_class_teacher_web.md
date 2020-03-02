@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Wed Feb 19 2020 02:55:48 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 03:58:46 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -49,33 +49,33 @@ updatedAt: Wed Feb 19 2020 02:55:48 GMT+0800 (CST)
 
 | API | 实现功能 | 
 | ---------------- | ---------------- | 
-| [createInstance](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/modules/agorartm.html#createinstance)      | 创建并返回一个 RtmClient 实例。      |
-| [login](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#login) | 登录 Agora RTM 系统。 |
-| [createChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | 创建 Agora RTM 频道。一个 RtcClient 可以创建多个频道。 |
-| [join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#join) | 加入 Agora RTM 频道。|
-| [getChannelAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | 获取指定频道的频道信息。|
-| [queryPeersOnlineStatus](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | 查询指定用户的在线状态。|
-| [MessageFromPeer](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) | 收到来自对端的点对点消息。|
-| [sendMessageToPeer](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) | 向指定用户发送点对点消息。|
-| [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatechannelattributes) | 添加或更新指定频道的属性。你可以在该方法中设置是否将本次变更通知到频道内所有成员。|
-| [sendMessage](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 发送频道消息。成功发送后，频道内所有用户都能收到。|
-| [leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。|
+| [createInstance](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance)      | 创建并返回一个 RtmClient 实例。      |
+| [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | 登录 Agora RTM 系统。 |
+| [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | 创建 Agora RTM 频道。一个 RtcClient 可以创建多个频道。 |
+| [join](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#join) | 加入 Agora RTM 频道。|
+| [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | 获取指定频道的频道信息。|
+| [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | 查询指定用户的在线状态。|
+| [MessageFromPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) | 收到来自对端的点对点消息。|
+| [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) | 向指定用户发送点对点消息。|
+| [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatechannelattributes) | 添加或更新指定频道的属性。你可以在该方法中设置是否将本次变更通知到频道内所有成员。|
+| [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 发送频道消息。成功发送后，频道内所有用户都能收到。|
+| [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。|
 
 - RTC SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
-| [createClient](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)      | 创建客户端。      |
-| [Client.init](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) | 初始化客户端对象。 |
-| [Client.setClientRole](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | 设置直播场景下的用户角色。互动直播大班课场景中，我们将老师的用户角色设为主播。|
-| [createStream](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) | 创建并返回音视频流对象。 |
-| [Stream.init](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#init) | 初始化音视频对象。 |
-| [Client.join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) | 加入 Agora RTC 频道。 |
-| [Client.publish](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#publish) | 发布本地音视频流至 SD-RTN。 |
-| [Client.on](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)("stream-added") | 远端音视频已添加。 |
-| [Client.subscribe](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
-| [Stream.play](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
-| [Client.leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
+| [createClient](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/globals.html#createclient)      | 创建客户端。      |
+| [Client.init](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#init) | 初始化客户端对象。 |
+| [Client.setClientRole](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | 设置直播场景下的用户角色。互动直播大班课场景中，我们将老师的用户角色设为主播。|
+| [createStream](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/globals.html#createstream) | 创建并返回音视频流对象。 |
+| [Stream.init](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.stream.html#init) | 初始化音视频对象。 |
+| [Client.join](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#join) | 加入 Agora RTC 频道。 |
+| [Client.publish](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#publish) | 发布本地音视频流至 SD-RTN。 |
+| [Client.on](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#on)("stream-added") | 远端音视频已添加。 |
+| [Client.subscribe](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
+| [Stream.play](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
+| [Client.leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
 
 ## 附加功能
 
