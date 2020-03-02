@@ -3,16 +3,16 @@
 title: 实现视频直播
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:23:12 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:23:17 GMT+0800 (CST)
 ---
 # 实现视频直播
-本文介绍如何使用 Agora SDK 快速实现互动直播。
+本文介绍如何使用 Agora SDK 快速实现视频直播。
 
-互动直播和实时通话的区别就在于，直播频道的用户有角色之分。你可以将角色设置为主播或者观众，其中主播可以收、发流，观众只能收流。
+视频直播和视频通话的区别就在于，直播频道的用户有角色之分。你可以将角色设置为主播或者观众，其中主播可以收、发流，观众只能收流。
 
-## Demo 体验
+## 示例项目
 
-Agora 在 GitHub 上提供一个开源的互动直播示例项目 [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供一个开源的视频直播示例项目 [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) 供你参考。
 
 ## 前提条件
 
@@ -120,9 +120,9 @@ dependencies {
 -keep class io.agora.**{*;}
 ```
 
-## 实现互动直播
+## 实现视频直播
 
-本节介绍如何实现互动直播。互动直播的 API 调用时序见下图：
+本节介绍如何实现视频直播。视频直播的 API 调用时序见下图：
 
 ![](https://web-cdn.agora.io/docs-files/1568255436454)
 
@@ -140,7 +140,7 @@ dependencies {
 <details>
 	<summary><font color="#3ab7f8">创建 UI 示例</font></summary>
 
-```java
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -423,8 +423,6 @@ private void setClientRole() {
 
 ### 7. 设置本地视图
 
-如果你想实现一个语音直播，可以直接查看[加入频道](#join_channel)。
-
 成功初始化 RtcEngine 对象后，需要在加入频道前设置本地视图，以便主播在直播中看到本地图像。参考以下步骤设置本地视图：
 
 * 调用 `enableVideo` 方法启用视频模块。
@@ -452,7 +450,7 @@ private void setupLocalVideo() {
 
 ### 8. 加入频道
 
-完成设置角色和本地视图后（视频直播场景），你就可以调用 `joinChannel` 方法加入频道。你需要在该方法中传入如下参数：
+完成设置角色和本地视图后，你就可以调用 `joinChannel` 方法加入频道。你需要在该方法中传入如下参数：
 
 * token：传入能标识用户角色和权限的 Token。可设为如下一个值：
    * `NULL`
@@ -466,12 +464,10 @@ private void setupLocalVideo() {
 
 更多的参数设置注意事项请参考 [`joinChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c) 接口中的参数描述。
 
-如果直播频道中既有 Native SDK，也有 Web SDK，那么你还需要在加入频道前调用 `enableWebSdkInteroperability` 方法开启互通。
-
 ```java
 private void joinChannel() {
  
-    // 如果频道中有 Web SDK，调用该方法开启 Native SDK 和 Web SDK 互通。
+    // 对于 v3.0.0 之前的 SDK，如果频道中有 Web SDK，需要调用该方法开启 Native SDK 和 Web SDK 互通。v3.0.0 及之后的 SDK 在直播场景下自动开启了与 Web SDK 的互通。
     rtcEngine.enableWebSdkInteroperability(true);
  
     // 使用 Token 加入频道。
