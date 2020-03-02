@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 06:48:36 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 07:49:32 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
