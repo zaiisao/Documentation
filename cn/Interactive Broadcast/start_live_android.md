@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:18:20 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:23:12 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
