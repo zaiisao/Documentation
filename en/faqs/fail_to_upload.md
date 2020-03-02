@@ -1,11 +1,11 @@
 
 ---
-title: Why the recorded files are not uploaded to the cloud storage?
+title: Why haven’t the recorded files been uploaded to the cloud storage
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 19 2019 10:56:41 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 11:53:22 GMT+0800 (CST)
 ---
-# Why the recorded files are not uploaded to the cloud storage?
+# Why haven’t the recorded files been uploaded to the cloud storage
 Uploading the recorded files to the cloud storage fails if:
 
 - No user is sending a stream in the channel, and the recording times out.
