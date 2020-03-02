@@ -3,7 +3,7 @@
 title: 语聊房
 description: 
 platform: iOS
-updatedAt: Mon Feb 10 2020 02:43:27 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 04:07:47 GMT+0800 (CST)
 ---
 # 语聊房
 ## 场景介绍
@@ -102,19 +102,19 @@ Agora 使用 Agora RTC SDK 与 Agora RTM SDK 共同搭建语聊房场景。其�
 
 	| API | 描述 | 
 	| ---------------- | ---------------- | 
-	| [loginByToken](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:)      | 登录 RTM 系统。     | 
- | [createChannelWithId](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:)     | 创建 RTM 频道。 |
+	| [loginByToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/loginByToken:user:completion:)      | 登录 RTM 系统。     | 
+ | [createChannelWithId](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:)     | 创建 RTM 频道。 |
  | [joinWithCompletion](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/joinWithCompletion:)     | 加入 RTM 频道。加入后，可以发送频道消息，实现实时消息功能。 |
- | [getChannelAttributes](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAllAttributes:completion:)     | 获取频道属性。频道属性存储频道信息，包含频道名、频道内的麦位信息、各麦位对应的用户，及麦位状态。 |
- | [sendMessage](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:sendMessageOptions:completion:)     | 发送点对点消息。主播使用该方法可以实现发送指令等功能。 |
- | [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/addOrUpdateChannel:Attributes:Options:completion:)     | 添加或更新频道属性。当麦位顺序、麦位状态或麦位-用户对应关系发生更新时，该方法将更新同步到频道属性内，通知频道内所有用户。 |
+ | [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAllAttributes:completion:)     | 获取频道属性。频道属性存储频道信息，包含频道名、频道内的麦位信息、各麦位对应的用户，及麦位状态。 |
+ | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:sendMessageOptions:completion:)     | 发送点对点消息。主播使用该方法可以实现发送指令等功能。 |
+ | [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/addOrUpdateChannel:Attributes:Options:completion:)     | 添加或更新频道属性。当麦位顺序、麦位状态或麦位-用户对应关系发生更新时，该方法将更新同步到频道属性内，通知频道内所有用户。 |
  
 ### 附加功能
  
  你还可以根据场景需求，参考如下进阶功能指南，在项目中实现相关功能。
  
- - [播放音效或混音](../../cn/Audio%20Broadcast/audio_effect_mixing_apple.md)
- - [变声与混响](../../cn/Audio%20Broadcast/voice_changer_apple.md)
+ - [播放音效或混音](https://docs.agora.io/cn/Audio%20Broadcast/audio_effect_mixing_apple?platform=iOS)
+ - [变声与混响](https://docs.agora.io/cn/Audio%20Broadcast/voice_changer_apple?platform=iOS)
 
 ### 开源示例代码
 
