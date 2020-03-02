@@ -3,7 +3,7 @@
 title: 语聊房
 description: 
 platform: Android
-updatedAt: Mon Feb 10 2020 02:43:22 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 04:05:44 GMT+0800 (CST)
 ---
 # 语聊房
 ## 场景介绍
@@ -107,19 +107,19 @@ Agora 使用 Agora RTC SDK 与 Agora RTM SDK 共同搭建语聊房场景。其�
 
 	| API | 描述 | 
 	| ---------------- | ---------------- | 
-	| [login](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a)      | 登录 RTM 系统。     | 
- | [createChannel](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a)     | 创建 RTM 频道。 |
- | [join](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#ad7b321869aac2822b3f88f8c01ce0d40)     | 加入 RTM 频道。加入后，可以发送频道消息，实现实时消息功能。 |
- | [getChannelAttributes](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6)     | 获取频道属性。频道属性存储频道信息，包含频道名、频道内的麦位信息、各麦位对应的用户，及麦位状态。 |
- | [sendMessageToPeer](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9)     | 发送点对点消息。主播使用该方法可以实现发送指令等功能。 |
- | [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a997a31e6bfe1edc9b6ef58a931ef3f23)     | 添加或更新频道属性。当麦位顺序、麦位状态或麦位-用户对应关系发生更新时，该方法将更新同步到频道属性内，通知频道内所有用户。 |
+	| [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a)      | 登录 RTM 系统。     | 
+ | [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a)     | 创建 RTM 频道。 |
+ | [join](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#ad7b321869aac2822b3f88f8c01ce0d40)     | 加入 RTM 频道。加入后，可以发送频道消息，实现实时消息功能。 |
+ | [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6)     | 获取频道属性。频道属性存储频道信息，包含频道名、频道内的麦位信息、各麦位对应的用户，及麦位状态。 |
+ | [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9)     | 发送点对点消息。主播使用该方法可以实现发送指令等功能。 |
+ | [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a997a31e6bfe1edc9b6ef58a931ef3f23)     | 添加或更新频道属性。当麦位顺序、麦位状态或麦位-用户对应关系发生更新时，该方法将更新同步到频道属性内，通知频道内所有用户。 |
  
 ### 附加功能
  
  你还可以根据场景需求，参考如下进阶功能指南，在项目中实现相关功能。
  
- - [播放音效或混音](../../cn/Audio%20Broadcast/audio_effect_mixing_android.md)
- - [变声与混响](../../cn/Audio%20Broadcast/voice_changer_android.md)
+ - [播放音效或混音](https://docs.agora.io/cn/Audio%20Broadcast/effect_mixing_android?platform=Android)
+ - [变声与混响](https://docs.agora.io/cn/Audio%20Broadcast/voice_changer_android?platform=Android)
 
 ### 开源示例代码
 

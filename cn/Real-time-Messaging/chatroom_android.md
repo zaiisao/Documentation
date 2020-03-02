@@ -3,7 +3,7 @@
 title: 语聊房
 description: 
 platform: Android
-updatedAt: Mon Feb 10 2020 02:43:22 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 04:05:44 GMT+0800 (CST)
 ---
 # 语聊房
 ## 场景介绍
@@ -99,9 +99,9 @@ Agora 使用 Agora RTC SDK 与 Agora RTM SDK 共同搭建语聊房场景。其�
 
 	| API | 描述 |
 	| ---------------- | ---------------- | 
-	| [joinChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c)      | 加入 RTC 频道。加入后，可以进行实时语音聊天互动。     | 
-	| [setClientRole](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa2affa28a23d44d18b6889fba03f47ec)      | 设置用户角色为主播或观众，其中：<ul><li>主播可以接收、发送音频流；</li><li>观众只可以接收音频流。</li></ul>你可以在加入频道前设置用户角色；也可以在加入频道后调用该方法切换用户角色。该方法可结合 RTM 指令实现上麦、下麦功能。 |
-	| [muteLocalAudioStream](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a838a04b744e6fb53bd1548d30bff1302)     | 停止发送本地音频流。该方法可用于实现本地静音；结合 RTM 指令也可以实现观众禁言或解禁功能。 |
+	| [joinChannel](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c)      | 加入 RTC 频道。加入后，可以进行实时语音聊天互动。     | 
+	| [setClientRole](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa2affa28a23d44d18b6889fba03f47ec)      | 设置用户角色为主播或观众，其中：<ul><li>主播可以接收、发送音频流；</li><li>观众只可以接收音频流。</li></ul>你可以在加入频道前设置用户角色；也可以在加入频道后调用该方法切换用户角色。该方法可结合 RTM 指令实现上麦、下麦功能。 |
+	| [muteLocalAudioStream](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a838a04b744e6fb53bd1548d30bff1302)     | 停止发送本地音频流。该方法可用于实现本地静音；结合 RTM 指令也可以实现观众禁言或解禁功能。 |
 
 - RTM SDK
 
@@ -118,8 +118,8 @@ Agora 使用 Agora RTC SDK 与 Agora RTM SDK 共同搭建语聊房场景。其�
  
  你还可以根据场景需求，参考如下进阶功能指南，在项目中实现相关功能。
  
- - [播放音效或混音](../../cn/Real-time-Messaging/audio_effect_mixing_android.md)
- - [变声与混响](../../cn/Real-time-Messaging/voice_changer_android.md)
+ - [播放音效或混音](https://docs.agora.io/cn/Audio%20Broadcast/effect_mixing_android?platform=Android)
+ - [变声与混响](https://docs.agora.io/cn/Audio%20Broadcast/voice_changer_android?platform=Android)
 
 ### 开源示例代码
 
