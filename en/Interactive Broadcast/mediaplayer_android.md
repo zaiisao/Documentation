@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 07:46:23 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 07:46:29 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -39,8 +39,8 @@ Follow these steps to create an Android project:
 2. On the <b>Choose your project</b> panel, choose <b>Phone and Tablet</b> > <b>Empty Activity</b>, and click <b>Next</b>. 
 3. On the <b>Configure your project</b> panel, fill in the following contents:
 
-	* <b>Name</b>: The name of your project, for example, HelloAgora
-	* <b>Package name</b>: The name of the project package, for example, io.agora.helloagora
+	* <b>Name</b>: The name of your project, for example, MediaPlayer
+	* <b>Package name</b>: The name of the project package, for example, io.agora.mediaplayer
 	* <b>Project location</b>: The path to save the project
 	* <b>Language</b>: The programming language of the project, for example, Java
 	* <b>Minimum API level</b>: The minimum API level of the project
@@ -52,7 +52,7 @@ Click <b>Finish</b>. Follow the on-screen instructions, if any, to install the p
 
 1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
 
-2. Copy the following files or subfolders from the **libs** folder of the download package to the path of your project.
+2. Add the following files or subfolders from the **libs** folder of the download package to the paths of your project.
 
    | File or subfolder         | Path of your project   |
    | :------------------------ | :--------------------- |
@@ -86,17 +86,17 @@ Integration steps: See [Integrate the RTC SDK](https://docs.agora.io/en/Interact
 
 ### Integrate the RtcChannelPublishHelper
 
-Version requirements: The same as the RTC SDK version number you are using.
+Version requirements: The same as the RTC SDK version series you are using.
 
 Integration steps:
 
-1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) the RtcChannelPublishHelper and unzip the download package.
+1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) and unzip the `MediaPlayerExtensions.zip`.
 
-2. Copy the `RtcChannelPublishHelper.aar` folder to the **/app/libs** path of your project.
+2. Add the **./MediaPlayerExtensions/android/2.x.x/RtcChannelPublishHelper.aar** file to the **/app/libs** path of your project.
 
 3. In the **/app/build.gradle** file, add the following lines:
 
-   - Add the following lines in the `android` node, specifying the file storage path of the **aar** folder.
+   - Add the following lines in the `android` node, specifying the file storage path of the **aar** file.
 
      ```java
      repositories {
@@ -106,10 +106,10 @@ Integration steps:
      }
      ```
 
-   - Add the following line in the `dependencies` node, specifying the name of the **aar** folder to be imported.
+   - Add the following line in the `dependencies` node, specifying the name of the **aar** file to be imported.
 
      ```java
-     implementation(name:'RtcChannelPublishHelper-release',ext:'aar')
+     implementation(name:'RtcChannelPublishHelper',ext:'aar')
      ```
 
 ## Implementation
@@ -258,12 +258,10 @@ Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broad
 **Cancel sharing by using the helper**
 
 1. Call the `unpublishVideo`/`unpublishAudio` method to unshare/unpublish the video/audio stream in the media resource.
-
-   > The remote users can find the video/audio pause.
-
 2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel. The player's screen no longer occupies the local user's view.
+3. (Optional) Call `setVideoSource( new AgoraDefaultSource() )` in the `RtcEngine` interface to switch the player's window back to the local user' view and enable remote users to see the local user again.
 
-3. Call the `release` method to release `RtcChannelPublishHelper`.
+4. Call the `release` method to release `RtcChannelPublishHelper`.
 
 > The shared video/audio stream will not be interrupted after the local user leaves the channel (`leaveChannel`). Only by calling the `unpublishVideo`/`unpublishAudio` method, can you unshare the video/audio stream.
 
