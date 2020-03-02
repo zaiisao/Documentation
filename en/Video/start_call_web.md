@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Web
-updatedAt: Thu Feb 27 2020 08:08:20 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 09:27:20 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
