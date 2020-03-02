@@ -1,11 +1,11 @@
 
 ---
-title: 实现互动直播
+title: 实现视频直播
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:21:20 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:18:20 GMT+0800 (CST)
 ---
-# 实现互动直播
+# 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
 
 互动直播和实时通话的区别就在于，直播频道的用户有角色之分。你可以将角色设置为主播或者观众，其中主播可以收、发流，观众只能收流。
