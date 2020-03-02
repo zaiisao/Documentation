@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 07:49:32 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 07:50:49 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -94,7 +94,7 @@ updatedAt: Mon Mar 02 2020 07:49:32 GMT+0800 (CST)
 
 1. [下载](https://github.com/AgoraIO/Agora-Extensions/releases) MediaPlayerExtensions.zip 并解压文件。
 
-2. 将 ./MediaPlayerExtensions/android/2.x.x/RtcChannelPublishHelper.aar 文件拷贝到 /app/libs 路径下。
+2. 将 ./MediaPlayerExtensions/android/{version}/RtcChannelPublishHelper.aar 文件拷贝到 /app/libs 路径下。
 
 3. 在 /app/build.gradle 文件中，添加以下内容：
 
