@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Android
-updatedAt: Fri Feb 28 2020 08:30:49 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 03:15:17 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -88,17 +88,17 @@ updatedAt: Fri Feb 28 2020 08:30:49 GMT+0800 (CST)
 
 ### 集成 RtcChannelPublishHelper
 
-**版本要求**：与你使用的 RTC Native SDK 版本号一致。
+**版本要求**：与你使用的 RTC Native SDK 版本系列一致。
 
 集成步骤：
 
-1. [下载](https://github.com/AgoraIO/Agora-Extensions/releases) RtcChannelPublishHelper 的 '.aar' 包。
+1. [下载](https://github.com/AgoraIO/Agora-Extensions/releases) MediaPlayerExtensions.zip 并解压文件。
 
-2. 将 aar 包拷贝到 /app/libs 路径下。
+2. 将 ./MediaPlayerExtensions/android/2.x.x/RtcChannelPublishHelper.aar 文件拷贝到 /app/libs 路径下。
 
 3. 在 /app/build.gradle 文件中，添加以下内容：
 
-   - 在 `android` 节点中添加以下内容，指定 aar 包的文件存放位置。
+   - 在 `android` 节点中添加以下内容，指定 aar 文件的文件存放位置。
 
      ```java
      repositories {
@@ -108,10 +108,10 @@ updatedAt: Fri Feb 28 2020 08:30:49 GMT+0800 (CST)
      }
      ```
 
-   - 在 `dependencies` 节点中添加以下内容，指定需要导入的 aar 包名。
+   - 在 `dependencies` 节点中添加以下内容，指定需要导入的 aar 文件名。
 
      ```java
-     implementation(name:'RtcChannelPublishHelper-release',ext:'aar')
+     implementation(name:'RtcChannelPublishHelper',ext:'aar')
      ```
 
 ## 实现方法
