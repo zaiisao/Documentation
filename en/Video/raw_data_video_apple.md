@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: iOS,macOS
-updatedAt: Wed Jan 08 2020 07:01:53 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 09:46:55 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction
@@ -23,14 +23,14 @@ Before using the raw data functions, ensure that you have implemented the basic 
 Follow these steps to implement the raw data functions in your project:
 
 1. Call the `registerVideoFrameObserver` method to register a video observer object before joining the channel. You need to implement an `IVideoFrameObserver` class in this method.
-2. After you successfully register the observer object, the SDK triggers the `onCaptureVideoFrame` or `onRenderVideoFrame` callback to send the raw video data each time a frame is captured.
+2. After you successfully register the observer object, the SDK triggers the `onCaptureVideoFrame`, `onPreEncodeVideoFrame` or `onRenderVideoFrame` callback to send the raw video data each time when it receives a video frame.
 3. Process the captured raw data according to your needs. Send the processed data back to the SDK through the `onCaptureVideoFrame` and `onRenderVideoFrame` callback.
 
 ### API call sequence
 
 The following diagram shows how to implement the raw data functions in your project:
 
-![](https://web-cdn.agora.io/docs-files/1569222114803)
+![](https://web-cdn.agora.io/docs-files/1578466906009)
 
 ### Sample code
 
@@ -57,6 +57,12 @@ public:
     {
         return true;
     }
+		
+	// Get the video frame before encoding.
+	virtual bool onPreEncodeVideoFrame(VideoFrame& videoFrame) override
+	{
+		return true;
+	}
 };
 
 class IVideoFrameObserver
@@ -81,6 +87,7 @@ class IVideoFrameObserver
      public:
          virtual bool onCaptureVideoFrame(VideoFrame& videoFrame) = 0;
          virtual bool onRenderVideoFrame(unsigned int uid, VideoFrame& videoFrame) = 0;
+		 virtual bool onPreEncodeVideoFrame(VideoFrame& videoFrame) { return true; }
 };
 ```
 
@@ -88,9 +95,10 @@ We also provide an open-source [Agora-Plugin-Raw-Data-API-Objective-C](https://g
 
 ### API reference
 
- - [registerVideoFrameObserver](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#a5eee4dfd1fd46e4a865feba163f3c5de)
- - [onCaptureVideoFrame](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a915c673aec879dcc2b08246bb2fcf49a)
- - [onRenderVideoFrame](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a966ed2459b6887c52112af638bc27c14)
+ - [`registerVideoFrameObserver`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#a5eee4dfd1fd46e4a865feba163f3c5de)
+ - [`onCaptureVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a915c673aec879dcc2b08246bb2fcf49a)
+ - [`onRenderVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a966ed2459b6887c52112af638bc27c14)
+ - [`onPreEncodeVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a2be41cdde19fcc0f365d4eb14a963e1c)
 
 ## Considerations
 
