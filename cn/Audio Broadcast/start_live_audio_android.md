@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:04:28 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:05:14 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 语音 SDK 快速实现音频直播。
