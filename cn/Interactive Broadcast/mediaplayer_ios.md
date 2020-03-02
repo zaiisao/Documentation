@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Mon Mar 02 2020 06:55:34 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 06:56:06 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -240,10 +240,7 @@ _mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
 **取消分享**
 
 1. 调用 `unpublishVideo`/`unpublishAudio` 方法取消分享该视频/音频流。
-
-   > 远端用户将看到播放画面暂停。
-
-2. 调用 `detachPlayerFromRtc` 方法将播放器和 Agora 频道解绑。播放器画面不再占据本地用户视图。
+2. 调用 `detachPlayerFromRtc` 方法将播放器和 Agora 频道解绑。
 
 > 本地用户离开频道（`leaveChannel`）后，分享的视频/音频流不会中断。只有 `unpublishVideo`/`unpublishAudio` 方法才能取消分享。
 
