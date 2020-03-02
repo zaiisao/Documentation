@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:23:17 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:28:59 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现视频直播。
@@ -302,6 +302,7 @@ private boolean checkSelfPermission(String permission, int requestCode) {
 你还根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户视频首帧等。注意不要在这些回调中进行 UI 操作。
 
 ```java
+private RtcEngine mRtcEngine;
 private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {
     @Override
     // 注册 onJoinChannelSuccess 回调。
