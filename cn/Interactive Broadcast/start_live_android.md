@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:28:59 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:41:53 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现视频直播。
@@ -373,8 +373,8 @@ private void setChannelProfile() {
 
 直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道模式为直播后，你可以在 App 中参考如下步骤设置用户角色：
 
-* 让用户选择自己的角色是主播还是观众
-* 调用 `setClientRole` 方法，然后使用用户选择的角色进行传参
+1. 让用户选择自己的角色是主播还是观众
+2. 调用 `setClientRole` 方法，然后使用用户选择的角色进行传参
 
 注意，直播频道内的用户，只能看到主播的画面、听到主播的声音。加入频道后，如果你想切换用户角色，也可以调用 `setClientRole` 方法。
 
@@ -426,9 +426,9 @@ private void setClientRole() {
 
 成功初始化 RtcEngine 对象后，需要在加入频道前设置本地视图，以便主播在直播中看到本地图像。参考以下步骤设置本地视图：
 
-* 调用 `enableVideo` 方法启用视频模块。
-* 调用 `createRendererView` 方法创建一个 SurfaceView 对象。
-* 调用 `setupLocalVideo` 方法设置本地视图。
+1. 调用 `enableVideo` 方法启用视频模块。
+2. 调用 `createRendererView` 方法创建一个 SurfaceView 对象。
+3. 调用 `setupLocalVideo` 方法设置本地视图。
 
 ```java
 private void setupLocalVideo() {
