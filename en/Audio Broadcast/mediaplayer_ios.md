@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Mon Mar 02 2020 07:28:12 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 07:28:16 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -48,9 +48,9 @@ Now, let's build an iOS project from scratch.
 
 1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
 
-2. Copy the **AgoraMediaPlayer.framework** file in the **libs** folder to the project folder.
-
-3.  In **Xcode**, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the **AgoraMediaPlayer.framework** file, remember to click **Add Other...** after clicking **+**.
+2. Add the AgoraMediaPlayer.framework file in the **libs** folder to the project folder.
+3. In **Xcode**, click **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** to change the status of AgoraMediaPlayer.framework to **Embed & Sign**. 
+4.  Go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click `+` to add the following frameworks and libraries. To add the AgoraMediaPlayer.framework file, remember to click **Add Other...** after clicking `+`.
 	- AgoraMediaPlayer.framework
 	- Accelerate.framework
 	- AudioToolbox.framework
@@ -63,9 +63,10 @@ Now, let's build an iOS project from scratch.
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
 
-   <div class="alert note">If your device runs <b>iOS 9.0</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
+	![](https://web-cdn.agora.io/docs-files/1583119068826)
+   <div class="alert note">If your device runs <b>iOS 11</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
 
-4. Add the following permissions in the **info.plist** file for device access according to your needs:
+5. Add the following permissions in the **info.plist** file for device access according to your needs:
 
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
@@ -76,13 +77,13 @@ Now, let's build an iOS project from scratch.
 
 Version requirements: 2.4.1 or later 
 
-Integration steps: See [Integrate the RTC SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_ios?platform=iOS#a-nameintegratesdkaintegrate-the-sdk)
+Integration steps: See [Integrate the RTC SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_ios?platform=iOS#a-nameintegratesdkaintegrate-the-sdk).
 
 ### Integrate the RtcChannelPublishHelper
 
 
 1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) the RtcChannelPublishPlugin and unzip the download package.
-2. Copy the RtcChannelPublishPlugin folder to the project folder.
+2. Add the RtcChannelPublishPlugin folder to the project folder.
 
 
 ## Implementation
@@ -230,9 +231,7 @@ Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broad
 
 1. Call the `unpublishVideo`/`unpublishAudio` method to unshare or unpublish the video/audio stream in the media resource.
 
-   > The remote users can find the video/audio pause.
-
-2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel. The player's screen no longer occupies the local user's view.
+2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel. 
 
 3. Call the `release` method to release `RtcChannelPublishHelper`.
 
