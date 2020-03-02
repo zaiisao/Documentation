@@ -1,11 +1,11 @@
 
 ---
-title: Start a Live Broadcast
+title: Start a Video Broadcast
 description: 
 platform: Android
-updatedAt: Tue Nov 19 2019 03:32:54 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:44:03 GMT+0800 (CST)
 ---
-# Start a Live Broadcast
+# Start a Video Broadcast
 Use this guide to quickly start an interactive broadcast with the Agora SDK for Android.
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either BROADCASTER or AUDIENCE. The broadcaster sends and receives streams while the audience receives streams only.
