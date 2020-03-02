@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Android
-updatedAt: Fri Feb 28 2020 08:31:52 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 07:44:47 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
