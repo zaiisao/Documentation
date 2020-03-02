@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Mon Mar 02 2020 02:32:11 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 02:32:43 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -49,9 +49,10 @@ updatedAt: Mon Mar 02 2020 02:32:11 GMT+0800 (CST)
 
 1. 前往 [SDK 下载页面](https://docs.agora.io/cn/AgoraPlatform/downloads)，获取最新版 MediaPlayer Kit，然后解压。
 
-2. 将 libs 文件夹内的 AgoraMediaPlayer.framework 文件复制到项目文件夹下。
+2. 将 libs 文件夹内的 `AgoraMediaPlayer.framework` 文件复制到项目文件夹下。
+3. 在 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** 菜单中，将 `AgoraMediaPlayer.framework` 的状态修改为 **Embed & Sign**。
 
-3. 打开 Xcode，进入 TARGETS > Project Name > Build Phases > Link Binary with Libraries 菜单，点击 + 添加如下库。在添加 AgoraMediaPlayer.framework 文件时，还需在点击 + 后点击 Add Other…，找到本地文件并打开。
+4. 打开 Xcode，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 + 添加如下库。在添加 `AgoraMediaPlayer.framework` 文件时，还需在点击 **+** 后点击 Add Other…，找到本地文件并打开。
 
    - AgoraMediaPlayer.framework
 
@@ -75,9 +76,12 @@ updatedAt: Mon Mar 02 2020 02:32:11 GMT+0800 (CST)
 
    - VideoToolbox.framework
 
+	添加后：
+![](https://web-cdn.agora.io/docs-files/1583116268559)
+
 	> 如需支持 iOS 9.0 或更低版本的设备，请在 Xcode 中将对 **CoreML.framework** 的依赖设为 **Optional**。
 
-4. 根据场景需要，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
+5. 根据场景需要，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
 
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
