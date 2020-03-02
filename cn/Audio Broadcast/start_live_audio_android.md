@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:05:14 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:05:28 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 语音 SDK 快速实现音频直播。
@@ -251,7 +251,7 @@ import io.agora.rtc.RtcEngine;
 
 ### 3. 获取设备权限
 
-调用 `checkSelfPermission` 方法，在开启 Activity 时检查并获取 Android 移动设备的摄像头和麦克风使用权限。
+调用 `checkSelfPermission` 方法，在开启 Activity 时检查并获取 Android 移动设备的麦克风使用权限。
 
 ```java
 private static final int PERMISSION_REQ_ID_RECORD_AUDIO = 22;
@@ -303,6 +303,7 @@ public boolean checkSelfPermission(String permission, int requestCode) {
 你还根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户视频首帧等。注意不要在这些回调中进行 UI 操作。
 
 ```java
+private RtcEngine mRtcEngine;
 private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {
     @Override
     // 注册 onJoinChannelSuccess 回调。
