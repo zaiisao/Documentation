@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: iOS,macOS
-updatedAt: Wed Jan 08 2020 06:34:04 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 09:44:42 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
@@ -23,14 +23,14 @@ Native SDK 通过提供 `IVideoFrameObserver` 类，实现采集、修改原始�
 参考如下步骤，在你的项目中实现原始视频数据功能：
 
 1. 加入频道前调用 `registerVideoFrameObserver` 方法注册视频观测器，并在该方法中实现一个 `IVideoFrameObserver` 类。
-2. 成功注册后，SDK 会在捕捉到每个视频帧时通过 `onCaptureVideoFrame` 或 `onRenderVideoFrame` 回调发送采集到的原始视频数据。
+2. 成功注册后，SDK 会在捕捉到每个视频帧时通过 `onCaptureVideoFrame`、`onPreEncodeVideoFrame` 或 `onRenderVideoFrame` 回调发送获取到的原始视频数据。
 3. 用户拿到视频数据后，根据场景需要自行进行处理。然后将处理过的视频数据再通过上述回调发送给 SDK。
 
 ### API 调用时序
 
 下图展示使用原始视频数据的 API 调用时序：
 
-![](https://web-cdn.agora.io/docs-files/1569221371652)
+![](https://web-cdn.agora.io/docs-files/1578465020117)
 
 ### 示例代码
 
@@ -54,6 +54,12 @@ public:
      
     // 获取远端用户发送的视频帧
     virtual bool onRenderVideoFrame(unsigned int uid, VideoFrame& videoFrame) override
+    {
+        return true;
+    }
+		
+	// 获取本地视频编码前的视频帧
+    virtual bool onPreEncodeVideoFrame(VideoFrame& videoFrame) override
     {
         return true;
     }
@@ -81,6 +87,7 @@ class IVideoFrameObserver
      public:
          virtual bool onCaptureVideoFrame(VideoFrame& videoFrame) = 0;
          virtual bool onRenderVideoFrame(unsigned int uid, VideoFrame& videoFrame) = 0;
+		 virtual bool onPreEncodeVideoFrame(VideoFrame& videoFrame) { return true; }
 };
 ```
  
@@ -88,9 +95,10 @@ class IVideoFrameObserver
  
  ### API 参考
  
- - [registerVideoFrameObserver](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#a5eee4dfd1fd46e4a865feba163f3c5de)
- - [onCaptureVideoFrame](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a915c673aec879dcc2b08246bb2fcf49a)
- - [onRenderVideoFrame](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a966ed2459b6887c52112af638bc27c14)
+ - [`registerVideoFrameObserver`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#a5eee4dfd1fd46e4a865feba163f3c5de)
+ - [`onCaptureVideoFrame`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a915c673aec879dcc2b08246bb2fcf49a)
+ - [`onRenderVideoFrame`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a966ed2459b6887c52112af638bc27c14)
+ - [`onPreEncodeVideoFrame`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#a2be41cdde19fcc0f365d4eb14a963e1c)
 
 ## 开发注意事项
 
