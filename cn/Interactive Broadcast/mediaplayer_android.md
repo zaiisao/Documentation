@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 07:50:49 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 12:52:01 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -84,7 +84,7 @@ updatedAt: Mon Mar 02 2020 07:50:49 GMT+0800 (CST)
 
 **版本要求**：2.4.1 或更高版本。
 
-集成步骤：参考[集成 RTC SDK ](https://docs.agora.io/cn/InteractiveBroadcast/start_live_android?platform=Android#集成-sdk)。
+集成步骤：参考[集成 Native SDK ](https://docs.agora.io/cn/InteractiveBroadcast/start_live_android?platform=Android#集成-sdk)。
 
 ### 集成 RtcChannelPublishHelper
 
