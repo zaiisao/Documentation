@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 02 2020 02:16:15 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 02:17:44 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## 1. Authentication
@@ -399,18 +399,18 @@ The banned user receives the corresponding callback as follows:
 -  Path: BaseUrl/kicking-rule/
 -  Parameter:
 
-    ```
+    ```json
     {
 				"appid":"",   // Mandatory, project App ID
 				"cname":"",   // Optional, channel name. Do not pass cname:""
 				"uid":"",     // Optional, UID which can be obtained by using the SDK API. Do not pass uid:0
 				"ip":"",      // Optional, IP address of the user to be banned. Do not pass ip:0
-				"time": 60    // Optional, banned period in minutes. 1440 minutes maximum, 1 minute minimum. If you set it to over 1440 minutes, it will be processed as 1440 minutes. If you do not set it, the default duration is 1 hour, that is, time:60 
+				"time": 60    // Optional, banned period in minutes. The default value is 60. The value range is [1, 1440]. Any value under 1 will be processed as 1, and any value over 1440 processed as 1440 minutes. Setting it as 0 means that the banning rule does not take effect.
 				"privileges":["join_channel"]   // The default value.
      }
     ```
 
-> - Setting the `time` argument means that the banning rule does not take effect. The server sets all the users in the channel that comform to the rule offline and the users can log in again to rejoin the channel.
+> - Setting the `time` argument as 0 means that the banning rule does not take effect. The server sets all the users in the channel that comform to the rule offline and the users can log in again to rejoin the channel.
 > - The ban rule is based on the permutation and combination of the three fields: cname, uid and ip. See the following examples:
 >    -   If you pass the ip parameter, but not cname or uid, then the rule is that this ip cannot login any channel in the App.
 >    -   If you pass the cname parameter, but not uid or ip, then the rule is that no one can login the channel specified by the cname parameter.
