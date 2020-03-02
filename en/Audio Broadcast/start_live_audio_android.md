@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:04:02 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:40:31 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio broadcast with the Agora Voice SDK for Android.
@@ -358,7 +358,7 @@ private void setChannelProfile() {
 
 ### 6. Set the user role
 
-A Live Broadcast channel has two user roles: BROADCASTER and AUDIENCE, and the default role is AUDIENCE. After setting the channel profile to Live Broadcast, your app may use the following steps to set the client role:
+A broadcast channel has two user roles: BROADCASTER and AUDIENCE, and the default role is AUDIENCE. After setting the channel profile to Live Broadcast, your app may use the following steps to set the client role:
 
 1. Allow the user to set the role as BROADCASTER or AUDIENCE. 
 2. Call the `setClientRole` method and pass in the user role set by the user.
