@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Web
-updatedAt: Mon Mar 02 2020 03:55:17 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 03:55:21 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Web 平台实现学生端相关功能。
@@ -39,17 +39,17 @@ updatedAt: Mon Mar 02 2020 03:55:17 GMT+0800 (CST)
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
-| [createInstance](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/modules/agorartm.html#createinstance)     | 创建并返回一个 RtmClient 实例。      |
-| [login](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#login) | 登录 Agora RTM 系统。登录后你可以使用 RTM 的核心业务逻辑。
-| [createChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | 创建 Agora RTM 频道。一个 RtmClient 可以创建多个频道。 |
-| [join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#join) | 加入 Agora RTM 频道。|
-| [getChannelAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | 获取指定频道的频道属性。 |
-| [queryPeersOnlineStatus](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | 查询指定用户的在线状态。 |
-| [sendMessageToPeer](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) | 发送点对点消息。可实现学生举手申请发言等功能。 |
-| [MessageFromPeer](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) | 收到来自对端的点对点消息。|
-|[addOrUpdateChannelAttributes](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatechannelattributes) | 添加或更新指定频道的属性。你可以在该方法中设置是否将本次变更通知到频道内所有成员。 |
-| [sendMessage](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage)  | 发送频道消息。成功发送后，频道内所有用户都能收到。 |
-| [leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。 |
+| [createInstance](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance)     | 创建并返回一个 RtmClient 实例。      |
+| [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | 登录 Agora RTM 系统。登录后你可以使用 RTM 的核心业务逻辑。|
+| [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | 创建 Agora RTM 频道。一个 RtmClient 可以创建多个频道。 |
+| [join](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#join) | 加入 Agora RTM 频道。|
+| [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | 获取指定频道的频道属性。 |
+| [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | 查询指定用户的在线状态。 |
+| [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) | 发送点对点消息。可实现学生举手申请发言等功能。 |
+| [MessageFromPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) | 收到来自对端的点对点消息。|
+|[addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatechannelattributes) | 添加或更新指定频道的属性。你可以在该方法中设置是否将本次变更通知到频道内所有成员。 |
+| [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage)  | 发送频道消息。成功发送后，频道内所有用户都能收到。 |
+| [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。 |
 
 - RTC SDK
 
