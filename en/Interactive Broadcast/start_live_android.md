@@ -3,16 +3,16 @@
 title: Start a Video Broadcast
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:46:15 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:46:30 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
-Use this guide to quickly start an interactive broadcast with the Agora SDK for Android.
+Use this guide to quickly start a video broadcast with the Agora Video SDK for Android.
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either BROADCASTER or AUDIENCE. The broadcaster sends and receives streams while the audience receives streams only.
 
-## Try the demo
+## Sample project
 
-We provide an open-source [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project that implements the basic video broadcast on GitHub. You can try the demo and view the source code.
+We provide an open-source [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project that implements the basic video broadcast on GitHub. 
 
 ## Prerequisites
 
@@ -120,7 +120,7 @@ Add the following line in the **app/proguard-rules.pro** file to prevent code ob
 
 ## Implement the basic broadcast
 
-This section introduces how to use the Agora SDK to start an interactive broadcast. The following figure shows the API call sequence of a basic video broadcast.
+This section introduces how to use the Agora video SDK to start a video broadcast. The following figure shows the API call sequence of a basic video broadcast.
 
 ![](https://web-cdn.agora.io/docs-files/1568255623199)
 
@@ -138,7 +138,7 @@ You can also refer to the xml files under the [layout](https://github.com/AgoraI
 <details>
 	<summary><font color="#3ab7f8">Example for creating the UI</font></summary>
 
-```java
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -300,6 +300,7 @@ Call the `create` method and pass in the App ID to initialize the RtcEngine obje
 You can also listen for callback events, such as when the local user joins the channel, and when the first video frame of a broadcaster is decoded. Do not implement UI operations in these callbacks.
 
 ```java
+private RtcEngine mRtcEngine;
 private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {
     @Override
     // Listen for the onJoinChannelSuccess callback.
@@ -366,12 +367,12 @@ private void setChannelProfile() {
 }
 ```
 
-### 6. Set the client role
+### 6. Set the user role
 
-A Live Broadcast channel has two client roles: BROADCASTER and AUDIENCE, and the default role is AUDIENCE. After setting the channel profile to Live Broadcast, your app may use the following steps to set the client role:
+A broadcast channel has two user roles: BROADCASTER and AUDIENCE, and the default role is AUDIENCE. After setting the channel profile to Live Broadcast, your app may use the following steps to set the client role:
 
-* Allow the user to set the role as BROADCASTER or AUDIENCE. 
-* Call the `setClientRole` method and pass in the client role set by the user.
+1. Allow the user to set the role as BROADCASTER or AUDIENCE. 
+2. Call the `setClientRole` method and pass in the client role set by the user.
 
 Note that in a live broadcast, only the broadcaster can be heard and seen. If you want to switch the client role after joining the channel, call the setClientRole method.
 
@@ -397,7 +398,7 @@ public void onClickJoin(View view) {
     dialog.show();
 }
  
-// Get the client role and channel name specified by the user.
+// Get the user role and channel name specified by the user.
 // The channel name is used when joining the channel.
 public void forwardToLiveRoom(int cRole) {
     final EditText v_room = (EditText) findViewById(R.id.room_name);
@@ -410,7 +411,7 @@ public void forwardToLiveRoom(int cRole) {
     startActivity(i);
 }
  
-// Pass in the client role set by the user.
+// Pass in the user role set by the user.
 private int mRole;
 mRole = getIntent().getIntExtra("CRole", 0);
  
@@ -421,13 +422,11 @@ private void setClientRole() {
 
 ### 7. Set the local video view
 
-If you are implementing an audio broadcast, skip to [Join a channel](#join_channel).
+After setting the channel profile and user role, set the local video view before joining the channel so that the broadcaster can see the local video in the broadcast. Follow these steps to configure the local video view: 
 
-After setting the channel profile and client role, set the local video view before joining the channel so that the broadcaster can see the local video in the broadcast.. Follow these steps to configure the local video view: 
-
-* Call the `enableVideo` method to enable the video module. 
-* Call the `createRendererView` method to create a SurfaceView object.
-* Call the `setupLocalVideo` method to configure the local video display settings. 
+1. Call the `enableVideo` method to enable the video module. 
+2. Call the `createRendererView` method to create a SurfaceView object.
+3. Call the `setupLocalVideo` method to configure the local video display settings. 
 
 ```java
 private void setupLocalVideo() {
@@ -451,7 +450,7 @@ private void setupLocalVideo() {
 <a name="join_channel"></a>
 ### 8. Join a channel
 
-After setting the client role and the local video view (for a video broadcast), you can call the joinChannel method to join a channel. In this method, set the following parameters:
+After setting the user role and the local video view (for a video broadcast), you can call the `joinChannel` method to join a channel. In this method, set the following parameters:
 
 * token: Pass a token that identifies the role and privilege of the user.  You can set it as one of the following values:
   * `NULL`.
@@ -470,7 +469,7 @@ If a live broadcast channel uses both the Native SDK and the Web SDK, ensure tha
 ```java
 private void joinChannel() {
  
-    // Call this method to enable interoperability between the Native SDK and the Web SDK if the Web SDK is in the channel.
+    // For SDKs earlier than v3.0.0, call this method to enable interoperability between the Native SDK and the Web SDK if the Web SDK is in the channel. As of v3.0.0, the Native SDK enables the interoperability with the Web SDK by default.
     rtcEngine.enableWebSdkInteroperability(true);
  
     // Join a channel with a token.
