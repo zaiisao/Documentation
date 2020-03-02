@@ -3,7 +3,7 @@
 title: Video Stream Fallback
 description: 
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 09:41:16 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:39:55 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
