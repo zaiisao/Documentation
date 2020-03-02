@@ -3,7 +3,7 @@
 title: Video Stream Fallback
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:20:33 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 08:20:38 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
@@ -13,20 +13,20 @@ The audio and video quality of a live broadcast or a video call deteriorates und
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_android.md) for details.
+Before proceeding, ensure that you implement a basic live broadcast or call in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_android.md) or [Start a Call](../../en/Interactive%20Broadcast/start_call_android.md) for details.
 
 Refer to the following steps to set the stream fallback under poor network conditions:
 
-1. After joining the channel, the host calls the `enableDualStreamMode` method to enable [dual stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode).
-2. The host calls the `setLocalPublishFallbackOption` method and set `AUDIO_ONLY (2)` to enable the fallback option for the locally published media stream based on the network conditions. SDK will disable the upstream video but enable audio only when the network conditions deteriorate and cannot support both video and audio stream.
+1. After joining the channel, the publisher calls the `enableDualStreamMode` method to enable [dual stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode).
+2. The publisher calls the `setLocalPublishFallbackOption` method and set `AUDIO_ONLY (2)` to enable the fallback option for the locally published media stream based on the network conditions. The SDK will disable the upstream video and enable audio only when the network conditions deteriorate and cannot support both video and audio streams.
 	> Agora does not recommend using this method for CDN live streaming, because the remote CDN live user will have a noticeable lag when the locally published video stream falls back to audio only.
 	
-	When the local video stream falls back to audio only or when the audio only stream switches back to the video, SDK triggers the `onLocalPublishFallbackToAudioOnly` callback to report current stream state to the local host.
-3. Users in the channel call the `setRemoteSubscribeFallbackOption` method to set the subscribed stream fallback under poor network conditions.
-	- Sets `STREAM_LOW (1)` to only subscribe the low-video stream sent from the host under poor network conditions.
-	- Sets `AUDIO_ONLY (2)` to susbcribe the low-video stream sent or even audio stream from the host under poor network conditions.
+	When the local video stream falls back to audio only or when the audio only stream switches back to the video, the SDK triggers the `onLocalPublishFallbackToAudioOnly` callback to report current stream state to the local publisher.
+3. The subscriber in the channel call the `setRemoteSubscribeFallbackOption` method to set the subscribed stream fallback under poor network conditions.
+	- Sets `STREAM_LOW (1)` to only subscribe the low-video stream sent from the publisher under poor network conditions.
+	- Sets `AUDIO_ONLY (2)` to susbcribe the low-video stream sent or even audio stream from the publisher under poor network conditions.
 	
-	Once the remote media stream is switched to the low stream due to poor network conditions, you can monitor the stream switch between a high and low stream in the `onRemoteVideoStats` callback. When the remotely subscribed video stream falls back to audio only or when the audio-only stream switches back to the video stream, the SDK triggers the `onRemoteSubscribeFallbackToAudioOnly` callback. 
+	Once the remote media stream is switched to the low stream due to poor network conditions, you can monitor the stream change between a high and low stream in the `onRemoteVideoStats` callback. When the remotely subscribed video stream falls back to audio only or when the audio-only stream switches back to the video stream, the SDK triggers the `onRemoteSubscribeFallbackToAudioOnly` callback. 
 
 
 ### Sample code
