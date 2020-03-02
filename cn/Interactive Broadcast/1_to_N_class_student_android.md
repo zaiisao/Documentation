@@ -28,7 +28,7 @@ updatedAt: Mon Feb 24 2020 01:33:21 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，搭配使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
+参考下图时序，搭配使用 Native SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
 ![](https://web-cdn.agora.io/docs-files/1581474323634)
 
@@ -49,7 +49,7 @@ updatedAt: Mon Feb 24 2020 01:33:21 GMT+0800 (CST)
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a9e0b6aad17bfceb3c9c939351a467d14) | 离开 RTM 频道。 |
 | [logout](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6f5695854e251ddd4ba05547ab47b317) | 登出 Agora RTM 系统。|
 
-- RTC SDK
+- Native SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
@@ -70,20 +70,20 @@ updatedAt: Mon Feb 24 2020 01:33:21 GMT+0800 (CST)
 
 <details>
 <summary>网络质量监测</summary>
-你可以通过使用 RTC SDK 的 <code>onNetworkQuality</code> 回调，实时监控通话中每个用户的网络上下行 last mile 网络质量。
+你可以通过使用 Native SDK 的 <code>onNetworkQuality</code> 回调，实时监控通话中每个用户的网络上下行 last mile 网络质量。
 更多质量透明相关方法，可参考如下文档：
 <li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/lastmile_quality_android?platform=Android">通话前网络质量探测</a></li>
 <li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/in-call_quality_android?platform=Android">通话中质量监测</a></li>
 </details>
 <details>
 <summary>关闭本地音视频</summary>
-你可以通过调用 RTC SDK 的如下方法，实现相关功能：
+你可以通过调用 Native SDK 的如下方法，实现相关功能：
 <li>调用 <code>muteLocalAudioStream</code> 关闭本地音频发送。</li>
 <li>调用 <code>muteLocalVideoStream</code> 关闭本地视频发送。</li>
 </details>
 <details>
 <summary>人声检测</summary>
-对于 v2.9.1 及以上的 RTC SDK，你还可以调用 <code>enableAudioVolumeInfication</code> 方法，并将参数 <code>report_vad</code> 设为 <code>true</code>，启用人声检测功能。
+对于 v2.9.1 及以上的 Native SDK，你还可以调用 <code>enableAudioVolumeInfication</code> 方法，并将参数 <code>report_vad</code> 设为 <code>true</code>，启用人声检测功能。
 启用后，你会在 <code>onAudioVolumeIndication</code> 回调报告的 <code>AudioVolumeInfo</code> 结构体中获取本地用户的人声状态。
 </details>
 <details>
