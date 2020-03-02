@@ -3,7 +3,7 @@
 title: Build a client for the teacher
 description: 
 platform: Web
-updatedAt: Tue Feb 25 2020 05:39:29 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 04:16:45 GMT+0800 (CST)
 ---
 # Build a client for the teacher
 This section describes how to implement a web client for the teacher.
@@ -49,17 +49,17 @@ Refer to the following diagram to implement the various functions in your projec
 
 | API | Function | 
 | ---------------- | ---------------- | 
-| [createInstance](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/modules/agorartm.html#createinstance)      | Creates an RTM Client object.      |
-| [login](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#login) | Logs into the Agora RTM system. |
-| [createChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | Creates an Agora RTM channel. You can create multiple channels with an RtmClient object. |
-| [join](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#join) | Joins an Agora RTM channel. |
-| [getChannelAttributes](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | Gets the information of a specified channel. |
-| [queryPeersOnlineStatus](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | Queries the online status of a specified user. |
-| [MessageFromPeer](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) | Occurs when the local user receives a message from a peer user. |
-| [sendMessageToPeer](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) | Sends a message to a specified user. |
-| [addOrUpdateChannelAttributes](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatechannelattributes) | Adds or Updates the information of a specified channel. In this method, you can determine whether to notify the current update to all the users in the channel. |
-| [sendMessage](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | Sends a channel message, which can be received by all the users in the channel. |
-| [leave](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | Leaves the RTM channel. |
+| [createInstance](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance)      | Creates an RTM Client object.      |
+| [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | Logs into the Agora RTM system. |
+| [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | Creates an Agora RTM channel. You can create multiple channels with an RtmClient object. |
+| [join](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#join) | Joins an Agora RTM channel. |
+| [getChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | Gets the information of a specified channel. |
+| [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | Queries the online status of a specified user. |
+| [MessageFromPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) | Occurs when the local user receives a message from a peer user. |
+| [sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) | Sends a message to a specified user. |
+| [addOrUpdateChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatechannelattributes) | Adds or Updates the information of a specified channel. In this method, you can determine whether to notify the current update to all the users in the channel. |
+| [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | Sends a channel message, which can be received by all the users in the channel. |
+| [leave](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | Leaves the RTM channel. |
 
 - RTC SDK
 
