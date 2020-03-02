@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 02 2020 02:13:04 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 02:16:15 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## 1. Authentication
