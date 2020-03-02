@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 04:27:26 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 04:27:30 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -258,14 +258,11 @@ agoraMediaPlayerKit1.stop();
 **取消分享**
 
 1. 调用 `unpublishVideo`/`unpublishAudio` 方法取消分享该视频/音频流。
+2. 调用 `detachPlayerFromRtc` 方法将播放器和 Agora 频道解绑。
+3. （可选）调用RtcEngine 接口的 `setVideoSource( new AgoraDefaultSource() )` 将播放器画面切换回主播的画面，使远端用户重新看到主播。
+4. 调用 `release` 方法释放 `RtcChannelPublishHelper。`
 
-   > 远端用户将看到播放画面暂停。
-
-2. 调用 `detachPlayerFromRtc` 方法将播放器和 Agora 频道解绑。播放器画面不再占据本地用户视图。
-
-3. 调用 `release` 方法释放 `RtcChannelPublishHelper。`
-
-> 本地用户离开频道（`leaveChannel`）后，分享的视频/音频流不会中断。只有 `unpublishVideo`/`unpublishAudio` 方法才能取消分享。
+> 本地用户离开频道（[`leaveChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2929e4a46d5342b68d0deb552c29d597)）后，分享的视频/音频流不会中断。只有 `unpublishVideo`/`unpublishAudio` 方法才能取消分享。
 
 **示例代码**
 
