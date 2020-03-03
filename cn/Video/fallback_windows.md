@@ -3,7 +3,7 @@
 title: 视频流回退
 description: 
 platform: Windows
-updatedAt: Mon Mar 02 2020 08:11:12 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:45:52 GMT+0800 (CST)
 ---
 # 视频流回退
 ## 功能描述
@@ -34,13 +34,13 @@ updatedAt: Mon Mar 02 2020 08:11:12 GMT+0800 (CST)
 ```c++
 // C++
 // 开启视频双流模式。
-int nRet = rep.enableDualStreamMode(static_cast<bool>(true));
+int nRet = rtcEngine.enableDualStreamMode(static_cast<bool>(true));
 
 // 发送端的配置。网络较差时，只发送音频流。
-nRet = rep.setLocalPublishFallbackOption(static_cast<STREAM_FALLBACK_OPTIONS>(STREAM_FALLBACK_OPTION_AUDIO_ONLY));
+nRet = rtcEngine.setLocalPublishFallbackOption(static_cast<STREAM_FALLBACK_OPTIONS>(STREAM_FALLBACK_OPTION_AUDIO_ONLY));
 
 // 接收端的配置。弱网环境下先尝试接收小流；若当前网络环境无法显示视频，则只接收音频流。
-nRet = rep.setRemoteSubscribeFallbackOption(static_cast<STREAM_FALLBACK_OPTIONS>(STREAM_FALLBACK_OPTION_AUDIO_ONLY));
+nRet = rtcEngine.setRemoteSubscribeFallbackOption(static_cast<STREAM_FALLBACK_OPTIONS>(STREAM_FALLBACK_OPTION_AUDIO_ONLY));
 ```
 
 ### API 参考

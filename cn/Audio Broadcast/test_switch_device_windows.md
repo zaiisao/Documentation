@@ -29,9 +29,6 @@ updatedAt: Wed Nov 13 2019 08:43:04 GMT+0800 (CST)
 - 测试方法及原理：调用 `startRecordingDeviceTest`；用户说话，如果录制设备正常工作，SDK 会触发 `onAudioVolumeIndication` 回调并报告音量信息。UID 为 0 表示本地音量。完成测试后，需调用 `stopRecordingDeviceTest` 停止录制设备测试。
 
 ```C++
-// 初始化参数对象
-RtcEngineParameters rep(*lpRtcEngine);
-
 // 枚举所有音频设备
 AAudioDeviceManager* lpDeviceManager = new AAudioDeviceManager(lpRtcEngine);
 IAudioDeviceCollection *lpRecordingDeviceCollection = (*lpDeviceManager)->enumerateRecordingDevices();
@@ -57,7 +54,7 @@ virtual void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned i
     }
 
 // 启用音频音量回调功能
-rep.enableAudioVolumeIndication(1000, // 回调间隔，以毫秒为单位
+rtcEngine.enableAudioVolumeIndication(1000, // 回调间隔，以毫秒为单位
 	10 // 顺滑度
 	);
 
