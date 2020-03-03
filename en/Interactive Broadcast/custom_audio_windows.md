@@ -3,7 +3,7 @@
 title: Custom Audio Source and Renderer
 description: 
 platform: Windows
-updatedAt: Sat Feb 22 2020 05:36:00 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:32:25 GMT+0800 (CST)
 ---
 # Custom Audio Source and Renderer
 ## Introduction
@@ -42,10 +42,6 @@ Refer to the following diagram to customize the audio source in your project.
 **Sample code**
 
 ```cpp
-// Initialize the RtcEngine parameters.
-RtcEngineParameters rep(*lpAgoraEngine);
-AParameter apm(*lpAgoraEngine);
-
 // Preparation. Implement the audio capture and audio playback queue to store the captured data or data for playback.
 CAudioPlayPackageQueue	*CAudioPlayPackageQueue::m_lpAudioPackageQueue = NULL;
 
@@ -171,7 +167,7 @@ bool CExternalAudioFrameObserver::onPlaybackAudioFrameBeforeMixing(unsigned int 
 }
 
 // Enable the external audio source mode and register the audio observer. Use the observer to pass the data from the external source to the engine, and then from the engine to the app.
-int nRet = rep.setExternalAudioSource(true, nSampleRate, nChannels);
+int nRet = rtcEngine.setExternalAudioSource(true, nSampleRate, nChannels);
 
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
 mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
@@ -206,7 +202,7 @@ frame.type = IAudioFrameObserver::AUDIO_FRAME_TYPE::FRAME_TYPE_PCM16;
   } while (TRUE);
 
 // Disable the external audio source mode.
-int nRet = rep.setExternalAudioSource(false, nSampleRate, nChannels);
+int nRet = rtcEngine.setExternalAudioSource(false, nSampleRate, nChannels);
 
 mediaEngine->registerAudioFrameObserver(NULL);
 ```

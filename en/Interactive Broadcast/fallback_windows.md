@@ -3,7 +3,7 @@
 title: Video Stream Fallback
 description: 
 platform: Windows
-updatedAt: Mon Mar 02 2020 09:31:52 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:45:15 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
@@ -35,13 +35,13 @@ Refer to the following steps to set the stream fallback under poor network condi
 ```C++
 // C++
 // Enable the dual-stream mode (Configuration for the local).
-int nRet = rep.enableDualStreamMode(static_cast<bool>(true));
+int nRet = rtcEngine.enableDualStreamMode(static_cast<bool>(true));
 
 // Configuration for the publisher. When the network condition is poor, send audio only. 
-nRet = rep.setLocalPublishFallbackOption(static_cast<STREAM_FALLBACK_OPTIONS>(STREAM_FALLBACK_OPTION_AUDIO_ONLY));
+nRet = rtcEngine.setLocalPublishFallbackOption(static_cast<STREAM_FALLBACK_OPTIONS>(STREAM_FALLBACK_OPTION_AUDIO_ONLY));
 
 // Configuration for the subscriber. Try to receive low stream under poor network conditions. When the current network conditions are not sufficient for video streams, receive audio stream only. 
-nRet = rep.setRemoteSubscribeFallbackOption(static_cast<STREAM_FALLBACK_OPTIONS>(STREAM_FALLBACK_OPTION_AUDIO_ONLY));
+nRet = rtcEngine.setRemoteSubscribeFallbackOption(static_cast<STREAM_FALLBACK_OPTIONS>(STREAM_FALLBACK_OPTION_AUDIO_ONLY));
 ```
 
 ### API reference

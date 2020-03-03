@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:13:44 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:43:27 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -102,7 +102,7 @@ LPCTSTR filePath = "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3";
 #ifdef UNICODE
  CHAR wdFilePath[MAX_PATH];
  ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
-int nRet = rep.startAudioMixing(wdFilePath, // Path to the audio mixing file.
+int nRet = rtcEngine.startAudioMixing(wdFilePath, // Path to the audio mixing file.
  FALSE, // All users can hear the audio mixing.
   TRUE, // The audio captured by the microphone is replaced by the audio mixing file.
   1 // The number of playback loops of the file. If set to -1, the file loops infinitely.

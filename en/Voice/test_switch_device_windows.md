@@ -30,9 +30,6 @@ To conduct the test, the user speaks, and the SDK reports the audio volume infor
 When the test finishes, call the `stopRecordingDeviceTest` method to stop the current test.
 
 ```C++
-// Initialize the parameter object.
-RtcEngineParameters rep(*lpRtcEngine);
-
 // Enumerate all audio devices.
 AAudioDeviceManager* lpDeviceManager = new AAudioDeviceManager(lpRtcEngine);
 IAudioDeviceCollection *lpRecordingDeviceCollection = (*lpDeviceManager)->enumerateRecordingDevices();
@@ -58,7 +55,7 @@ virtual void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned i
     }
 
 // Enable the audio volume callback.
-rep.enableAudioVolumeIndication(1000, // Callback interval (ms)
+rtcEngine.enableAudioVolumeIndication(1000, // Callback interval (ms)
 	10 // Smoothness
 	);
 
