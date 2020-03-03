@@ -75,9 +75,6 @@ To conduct the test, specify an audio file for playback. If you can hear the aud
 When the test finishes, call the `stopPlaybackDeviceTest` method to stop the current test.
 
 ```C++
-// Initialize the parameter object.
-RtcEngineParameters rep(*lpRtcEngine);
-
 AAudioDeviceManager* lpDeviceManager = new AAudioDeviceManager(lpRtcEngine);
 IAudioDeviceCollection *lpPlaybackDeviceCollection = (*lpDeviceManager)->enumeratePlaybackDevices();
 
@@ -128,9 +125,6 @@ To conduct the test, specify a window handle that displays the image. If you can
 When the test finishes, call the `stopDeviceTest` method to stop the current test.
 
 ```C++
-// Initialize the parameter object.
-RtcEngineParameters rep(*lpRtcEngine);
-
 // Enumerate all video capture devices.
 AVideoDeviceManager* lpDeviceManager = new AVideoDeviceManager(lpRtcEngine);
 IVideoDeviceCollection *lpVideoDeviceCollection = (*lpDeviceManager)->enumerateVideoDevices();

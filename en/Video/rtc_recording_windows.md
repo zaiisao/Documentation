@@ -3,7 +3,7 @@
 title: Record the Audio on the Client
 description: 
 platform: Windows
-updatedAt: Wed Nov 13 2019 08:34:17 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 08:34:40 GMT+0800 (CST)
 ---
 # Record the Audio on the Client
 ## Introduction
@@ -20,22 +20,19 @@ The Agora Native SDK supports recording the audio of all the users in a channel 
 Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Video/start_call_windows.md) or [Start a Live Broadcast](../../en/Video/start_live_windows.md) for details.
 
 ```C++
-// Initialize the RtcEngineParameters object.
-RtcEngineParameters rep(*lpRtcEngine);
-
 // Start local audio recording. 
 #ifdef UNICODE
  CHAR aFilePath[MAX_PATH];
  ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, aFilePath, MAX_PATH, NULL, NULL);
-int nRet = rep.startAudioRecording(aFilePath, // Valid path to the local recording file.
+int nRet = rtcEngine.startAudioRecording(aFilePath, // Valid path to the local recording file.
 	AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH // AUDIO_RECORDING_QUALITY_HIGH|MEDIUM|LOW
 	);
 #else
-int nRet = rep.startAudioRecording(filePath, AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH);
+int nRet = rtcEngine.startAudioRecording(filePath, AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH);
 #endif
 
 // Stop audio recording. 
-int nRet = rep.stopAudioRecording();
+int nRet = rtcEngine.stopAudioRecording();
 ```
 
 ### API reference
