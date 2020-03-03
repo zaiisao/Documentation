@@ -3,7 +3,7 @@
 title: 自定义音频采集和渲染
 description: 
 platform: Windows
-updatedAt: Wed Sep 25 2019 03:46:31 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:33:50 GMT+0800 (CST)
 ---
 # 自定义音频采集和渲染
 ## 功能介绍
@@ -41,10 +41,6 @@ updatedAt: Wed Sep 25 2019 03:46:31 GMT+0800 (CST)
 
 ```cpp
 // cpp
-// 初始化参数对象
-RtcEngineParameters rep(*lpAgoraEngine);
-AParameter apm(*lpAgoraEngine);
-
 // 准备工作，需要实现音频采集模块，以及音频数据队列（用来存放采集出来的数据/或者将要播放的数据）
 CAudioPlayPackageQueue	*CAudioPlayPackageQueue::m_lpAudioPackageQueue = NULL;
 
@@ -170,7 +166,7 @@ bool CExternalAudioFrameObserver::onPlaybackAudioFrameBeforeMixing(unsigned int 
 }
 
 // 启用外部音频数据源模式，注册音频观测器，我们使用观测器将外部的数据源传递给引擎以及把引擎返回的数据给到应用
-int nRet = rep.setExternalAudioSource(true, nSampleRate, nChannels);
+int nRet = rtcEngine.setExternalAudioSource(true, nSampleRate, nChannels);
 
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
 mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
@@ -205,7 +201,7 @@ frame.type = IAudioFrameObserver::AUDIO_FRAME_TYPE::FRAME_TYPE_PCM16;
   } while (TRUE);
 
 // 停止外部音频数据源模式
-int nRet = rep.setExternalAudioSource(false, nSampleRate, nChannels);
+int nRet = rtcEngine.setExternalAudioSource(false, nSampleRate, nChannels);
 
 mediaEngine->registerAudioFrameObserver(NULL);
 ```

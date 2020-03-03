@@ -76,9 +76,6 @@ rep.enableAudioVolumeIndication(1000, // 回调间隔，以毫秒为单位
 - 测试方法及原理：调用 `startPlaybackDeviceTest`，并指定播放的音频文件。如果能听到声音，则说明播放设备正常工作。完成测试后，需调用 `stopPlaybackDeviceTest` 停止播放设备测试。
 
 ```C++
-// 初始化参数对象
-RtcEngineParameters rep(*lpRtcEngine);
-
 AAudioDeviceManager* lpDeviceManager = new AAudioDeviceManager(lpRtcEngine);
 IAudioDeviceCollection *lpPlaybackDeviceCollection = (*lpDeviceManager)->enumeratePlaybackDevices();
 
@@ -119,9 +116,6 @@ lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
 - 测试方法及原理：调用 `enableVideo` 开启视频模块后，调用 `startDeviceTest`，并指定显示图像的窗口句柄，如果能看到本地采集的图像，则说明视频设备正常工作。完成测试后，需调用 `stopDeviceTest` 停止视频设备测试。
 
 ```C++
-// 初始化参数对象
-RtcEngineParameters rep(*lpRtcEngine);
-
 // 枚举所有视频采集设备
 AVideoDeviceManager* lpDeviceManager = new AVideoDeviceManager(lpRtcEngine);
 IVideoDeviceCollection *lpVideoDeviceCollection = (*lpDeviceManager)->enumerateVideoDevices();
