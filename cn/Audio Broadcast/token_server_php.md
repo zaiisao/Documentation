@@ -22,7 +22,7 @@ updatedAt: Wed Dec 11 2019 09:46:38 GMT+0800 (CST)
 
 [GitHub 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 的 <b>./\<language\>/src</b> 文件夹下包含生成各种版本的 Dynamic key 和 Token 的源码。其中：**AccessToken** 和 **RtcTokenBuilder** 用于为以下 SDK 生成 Token：
 
-- Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
+- Agora Native SDK (Java, Objective-C, C++, Electron) v2.1+
 - Agora Web SDK v2.4+
 - Agora Recording SDK v2.1+ 
 - Agora RTSA SDK

@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Web
-updatedAt: Mon Mar 02 2020 03:55:21 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 12:52:30 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Web 平台实现学生端相关功能。
@@ -29,7 +29,7 @@ updatedAt: Mon Mar 02 2020 03:55:21 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，搭配使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
+参考下图时序，搭配使用 Native SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
 ![](https://web-cdn.agora.io/docs-files/1581389209449)
 
@@ -51,7 +51,7 @@ updatedAt: Mon Mar 02 2020 03:55:21 GMT+0800 (CST)
 | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage)  | 发送频道消息。成功发送后，频道内所有用户都能收到。 |
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。 |
 
-- RTC SDK
+- Native SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
@@ -74,14 +74,14 @@ updatedAt: Mon Mar 02 2020 03:55:21 GMT+0800 (CST)
 
 <details>
 <summary>网络质量监测</summary>
-你可以通过使用 RTC SDK 的 <code>on("network-quality")</code> 回调，实时监控通话中每个用户的网络上下行 last mile 网络质量。
+你可以通过使用 Native SDK 的 <code>on("network-quality")</code> 回调，实时监控通话中每个用户的网络上下行 last mile 网络质量。
 更多质量透明相关方法，可参考如下文档：
 <li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/lastmile_quality_web?platform=Web">通话前网络质量探测</a></li>
 <li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/in-call_quality_web?platform=Web">通话中质量监测</a></li>
 </details>
 <details>
 <summary>关闭本地音视频</summary>
-你可以通过调用 RTC SDK 的如下方法，实现相关功能：
+你可以通过调用 Native SDK 的如下方法，实现相关功能：
 	<li>调用 <code>muteAudio</code> 或 <code>unmuteAudio</code>关闭或重新开启本地音频。</li>
 	<li>调用 <code>muteVideo</code> 或 <code>unmuteVideo</code> 关闭或重新开启本地视频。</li>
 </details>

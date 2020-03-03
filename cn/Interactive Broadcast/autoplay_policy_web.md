@@ -3,7 +3,7 @@
 title: 处理浏览器的自动播放策略
 description: 
 platform: Web
-updatedAt: Mon Mar 02 2020 02:35:16 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 12:52:32 GMT+0800 (CST)
 ---
 # 处理浏览器的自动播放策略
 ## 概览
@@ -17,7 +17,7 @@ updatedAt: Mon Mar 02 2020 02:35:16 GMT+0800 (CST)
 - 播放失败时绕过 Autoplay 限制。
 - 直接绕过 Autoplay 限制。
 
-<div class="alert note">本文仅适用于 Agora <a href="https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk">RTC SDK</a> 的 Web 平台。</div>
+<div class="alert note">本文仅适用于 Agora <a href="https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk">Native SDK</a> 的 Web 平台。</div>
 
 ## 播放失败时绕过 Autoplay 限制
 

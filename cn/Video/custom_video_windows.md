@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Windows
-updatedAt: Tue Dec 10 2019 04:21:10 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:08:04 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -38,10 +38,6 @@ updatedAt: Tue Dec 10 2019 04:21:10 GMT+0800 (CST)
 参考下文代码在你的项目中自定义视频采集。
 
 ```cpp
-// 初始化参数对象
-RtcEngineParameters rep(*lpAgoraEngine);
-AParameter apm(*lpAgoraEngine);
-
 // 准备工作，需要实现视频采集模块，以及视频数据队列（用来存放采集出来的数据/或者将要渲染的数据）
 CVideoPackageQueue *CVideoPackageQueue::m_lpVideoPackageQueue = NULL;
 
