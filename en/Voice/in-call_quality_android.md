@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: In-call quality for Android
 platform: Android
-updatedAt: Tue Jan 21 2020 08:26:38 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:19:17 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
@@ -48,7 +48,7 @@ The `onLocalAudioStats` callback reports the statistics of the audio streams sen
 
 > The SDK triggers this callback once every two seconds. The sample rate refers to the actual sample rate of the audio streams sent in the reported interval. 
 
-	<a name="32"></a>
+<a name="32"></a>
 ### State changes of local audio streams
 
 When the state of the local audio stream changes (including the state of the audio recording and encoding), the SDK triggers the `onLocalAudioStateChanged` callback to report the current state. You can troubleshoot with the error code when exceptions occur.

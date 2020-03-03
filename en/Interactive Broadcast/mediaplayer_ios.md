@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Mon Mar 02 2020 07:28:16 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 03:38:34 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -13,7 +13,7 @@ The MediaPlayer Kit is a powerful player that supports playing local and online 
 ## Usage notice
 
 - Currently supported media formats: Local files in AVI, MP4, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
-- When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora RTC Native SDK, and RtcChannelPublishPlugin at the same time. The MediaPlayer Kit supports the local user to use the player function, the RTC Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishPlugin supports publishing media streams to remote users in Agora channel.
+- When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishPlugin at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishPlugin supports publishing media streams to remote users in Agora channel.
 - When sharing media resources with remote users, the playeback window occupies the local user's video as captured by the camera. Therefore, if you want remote users to see both the local user's and the player's window, you need to start another process to capture the local user's video.
 
 ## Set up the development environment
@@ -73,16 +73,16 @@ Now, let's build an iOS project from scratch.
 | Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video call.      |
 | Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
 
-### Integrate the RTC Native SDK 
+### Integrate the Native SDK 
 
 Version requirements: 2.4.1 or later 
 
-Integration steps: See [Integrate the RTC SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_ios?platform=iOS#a-nameintegratesdkaintegrate-the-sdk).
+Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_ios?platform=iOS#a-nameintegratesdkaintegrate-the-sdk).
 
 ### Integrate the RtcChannelPublishHelper
 
 
-1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) the RtcChannelPublishPlugin and unzip the download package.
+1. [Download](https://github.com/AgoraIO/Agora-Extensions/tree/master/MediaPlayer/helper/apple) the RtcChannelPublishPlugin folder.
 2. Add the RtcChannelPublishPlugin folder to the project folder.
 
 
@@ -192,7 +192,7 @@ _mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
 
 ### Share media resources to remote
 
-After integrating the MediaPlayer Kit, the Agora RTC Native SDK, and the RtcChannelPublishPlugin, follow these steps to synchronously share media resources played by the local user to all the remote users in the Agora channel.
+After integrating the MediaPlayer Kit, the Agora Native SDK, and the RtcChannelPublishPlugin, follow these steps to synchronously share media resources played by the local user to all the remote users in the Agora channel.
 
 **Instantiate required objects**
 

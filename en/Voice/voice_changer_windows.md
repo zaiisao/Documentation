@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Fri Feb 28 2020 03:17:26 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:22:37 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
@@ -36,26 +36,24 @@ You can use one of the following preset reverberation effects by calling `setLoc
 - Recording studio
 
 ```c++
-// Initialize objects
-RtcEngineParameters rep(*m_lpAgoraEngine);
 VOICE_CHANGER_PRESET voiceChanger;
 AUDIO_REVERB_PRESET reverbPreset;
 
 // Set the voice changer as old man
 voiceChanger = VOICE_CHANGER_OLDMAN;
-rep.setLocalVoiceChanger(voiceChanger);
+rtcEngine.setLocalVoiceChanger(voiceChanger);
 
 // Turn off the voice changer
 voiceChanger = VOICE_CHANGER_OFF;
-rep.setLocalVoiceChanger(voiceChanger);
+rtcEngine.setLocalVoiceChanger(voiceChanger);
 
 // Set the reverberation effect as pop
 reverbPreset = AUDIO_REVERB_POPULAR;
-rep.setLocalVoiceReverbPreset(reverbPreset);
+rtcEngine.setLocalVoiceReverbPreset(reverbPreset);
 
 // Turn off the reverberation effect
 reverbPreset = AUDIO_REVERB_OFF;
-rep.setLocalVoiceReverbPreset(reverbPreset);
+rtcEngine.setLocalVoiceReverbPreset(reverbPreset);
 ```
 
 ### Customize the voice effects
@@ -65,40 +63,37 @@ You can also customize the voice effects by adjusting the voice pitch, equalizat
 The following sample code shows how to change from the original voice to Hulk's voice.
 
 ```c++
-// Initialization
-RtcEngineParameters rep(*lpAgoraEngine);
-
 // Sets the pitch. The value ranges between 0.5 and 2.0. The lower the value, the lower the pitch. The default value is 1.0, which is the original pitch.
-int nRet = rep.setLocalVoicePitch(0.5);
+int nRet = rtcEngine.setLocalVoicePitch(0.5);
 
 // Sets the local voice equalization.
 // The first parameter sets the band frequency. The value ranges between 0 and 9. Each value represents the center frequency of the band: 31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, and 16k Hz
 // The second parameter sets the gain of each band. The value ranges between -15 and 15 dB. The default value is 0.
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_31, -15);
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_62, 3);
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_125, -9);
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_250, -8);
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_500, -6);
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_1K, -4);
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_2K, -3);
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_4K, -2);
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_8K, -1);
-nRet = rep.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_16K, 1);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_31, -15);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_62, 3);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_125, -9);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_250, -8);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_500, -6);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_1K, -4);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_2K, -3);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_4K, -2);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_8K, -1);
+nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_16K, 1);
 
 // The level of the dry signal in dB. The value ranges between -20 and 10.
-nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_DRY_LEVEL, 10);
+nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_DRY_LEVEL, 10);
 
 // The level of the early reflection signal (wet signal) in dB. The value ranges between -20 and 10.
-nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_WET_LEVEL, 7);
+nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_WET_LEVEL, 7);
 
 // The room size of the reverberation. A larger room size means a stronger reverberation. The value ranges between 0 and 100.
-nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_ROOM_SIZE, 6);
+nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_ROOM_SIZE, 6);
 
 // The length of the initial delay of the wet signal (ms). The value ranges between 0 and 200.
-nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_WET_DELAY, 124);
+nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_WET_DELAY, 124);
 
 // The reverberation strength. The value ranges between 0 and 100. The higher the value, the stronger the reverberation.
-nRet = rep.setLocalVoiceReverb(AUDIO_REVERB_STRENGTH, 78);
+nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_STRENGTH, 78);
 ```
 
 ### API reference

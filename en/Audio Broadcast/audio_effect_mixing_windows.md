@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Wed Nov 13 2019 08:23:54 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:13:44 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -19,23 +19,20 @@ The audio effect file is specified by the file path, but the SDK uses the sound 
 ### Implementation
 
 ```c++
-// Initialization.
-RtcEngineParameters rep(*lpAgoraEngine);
-
 // Preloads the audio effect (recommended). Note the file size and preload the file before joining the channel.
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
   ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
-  int nRet = rep.preloadEffect(nSoundID, wdFilePath);
+  int nRet = rtcEngine.preloadEffect(nSoundID, wdFilePath);
 #else
-  int nRet = rep.preloadEffect(nSoundID, filePath);
+  int nRet = rtcEngine.preloadEffect(nSoundID, filePath);
 #endif
 
 // Plays the audio effect file. If you preload the audio effect, you need to specify nSoundID.
 #ifdef UNICODE
   CHAR wdFilePath[MAX_PATH];
   ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, wdFilePath, MAX_PATH, NULL, NULL);
-  int nRet = rep.playEffect(nSoundID, // The unique sound ID of the audio effect.
+  int nRet = rtcEngine.playEffect(nSoundID, // The unique sound ID of the audio effect.
   wdFilePath, // File path of the audio effect file.
   nLoopCount, // The number of playback loops. -1 means an infinite loop.
   dPitch, // Sets the pitch of the audio effect.
@@ -43,29 +40,29 @@ RtcEngineParameters rep(*lpAgoraEngine);
   nGain, // Sets the volume. The value ranges between 0 and 100. 100 is the original volume.
   TRUE // Sets whether to publish the audio effect.
 #else
-  int nRet = rep.playEffect(nSoundID, filePath, nLoopCount, dPitch, dPan, nGain, TRUE);
+  int nRet = rtcEngine.playEffect(nSoundID, filePath, nLoopCount, dPitch, dPan, nGain, TRUE);
 #endif
 
 // Pauses a specified audio effect.
-int nRet = rep.pauseEffect(nSoundID);
+int nRet = rtcEngine.pauseEffect(nSoundID);
 
 // Pause all audio effects.
-int nRet = rep.pauseAllEffects();
+int nRet = rtcEngine.pauseAllEffects();
 
 // Resumes playing the paused audio effect.
-int nRet = rep.resumeEffect(nSoundID);
+int nRet = rtcEngine.resumeEffect(nSoundID);
 
 // Resumes playing all audio effects.
-int nRet = rep.resumeAllEffects();
+int nRet = rtcEngine.resumeAllEffects();
 
 // Stops playing a specified audio effect.
-int nRet = rep.stopEffect(nSoundID);
+int nRet = rtcEngine.stopEffect(nSoundID);
 
 // Stops playing all audio effects.
-int nRet = rep.stopAllEffects();
+int nRet = rtcEngine.stopAllEffects();
 
 // Releases the preloaded audio effect from the memory.
-int nRet = rep.unloadEffect(nSoundID);
+int nRet = rtcEngine.unloadEffect(nSoundID);
 ```
 
 ### API reference
@@ -101,10 +98,6 @@ Agora audio mixing supports the following options:
 
 ```c++
 LPCTSTR filePath = "http://www.hochmuth.com/mp3/Haydn_Cello_Concerto_D-1.mp3";
-
-// Initialization.
-RtcEngineParameters rep(*lpAgoraEngine);
-
 // Starts audio mixing.
 #ifdef UNICODE
  CHAR wdFilePath[MAX_PATH];
@@ -115,11 +108,11 @@ int nRet = rep.startAudioMixing(wdFilePath, // Path to the audio mixing file.
   1 // The number of playback loops of the file. If set to -1, the file loops infinitely.
   );
 #else
-int nRet = rep.startAudioMixing(filePath, FALSE, TRUE, 1);
+int nRet = rtcEngine.startAudioMixing(filePath, FALSE, TRUE, 1);
 #endif
 
 // Stops audio mixing.
-int nRet = rep.stopAudioMixing();
+int nRet = rtcEngine.stopAudioMixing();
 ```
 
 ### API reference

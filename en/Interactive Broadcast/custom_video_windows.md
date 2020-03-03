@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Wed Dec 11 2019 03:08:54 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 07:08:39 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -40,10 +40,6 @@ Refer to the following diagram to customize the video source in your project.
 Refer to the following code to customize the video source in your project.
 
 ```cpp
-// Initialize the RtcEngine parameters.
-RtcEngineParameters rep(*lpAgoraEngine);
-AParameter apm(*lpAgoraEngine);
-
 // Preparation. Implement the video capture and the video playback queue to store the captured data or data to be rendered.
 CVideoPackageQueue *CVideoPackageQueue::m_lpVideoPackageQueue = NULL;
 

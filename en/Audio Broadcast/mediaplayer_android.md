@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 07:50:14 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 12:55:39 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -13,7 +13,7 @@ The MediaPlayer Kit is a powerful player that supports playing local and online 
 ## Usage notice
 
 - Currently supported media formats: Local files in AVI, MP4, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
-- When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora RTC Native SDK, and RtcChannelPublishHelper at the same time. The MediaPlayer Kit supports the local user to use the player function, the RTC Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishHelper supports publishing media streams to remote users in Agora channel.
+- When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishHelper at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishHelper supports publishing media streams to remote users in Agora channel.
 - When sharing media resources with remote users, the playeback window occupies the local user's video as captured by the camera. Therefore, if you want remote users to see both the local user's and the player's window, you need to start another process to capture the local user's video.
 
 ## Set up the development environment
@@ -78,15 +78,15 @@ Click <b>Finish</b>. Follow the on-screen instructions, if any, to install the p
    </application>
    ```
 
-### Integrate the RTC Native SDK 
+### Integrate the Native SDK 
 
 Version requirements: 2.4.1 or later 
 
-Integration steps: See [Integrate the RTC SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android#integrate-the-sdk)
+Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android#integrate-the-sdk)
 
 ### Integrate the RtcChannelPublishHelper
 
-Version requirements: The same as the RTC SDK version series you are using.
+Version requirements: The same as the Native SDK version series you are using.
 
 Integration steps:
 
@@ -218,7 +218,7 @@ agoraMediaPlayerKit1.stop();
 
 ### Share media resources to remote
 
-After integrating the MediaPlayer Kit, the Agora RTC Native SDK, and the RtcChannelPublishHelper, follow these steps to synchronously share media resources played by the local user to all the remote users in the Agora channel.
+After integrating the MediaPlayer Kit, the Agora Native SDK, and the RtcChannelPublishHelper, follow these steps to synchronously share media resources played by the local user to all the remote users in the Agora channel.
 
 **Instantiate required objects**
 
