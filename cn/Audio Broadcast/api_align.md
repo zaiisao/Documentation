@@ -3,7 +3,7 @@
 title: 核心方法对照表
 description: List APIs of the key functions across the platforms
 platform: All Platforms
-updatedAt: Wed Nov 13 2019 07:59:03 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:22:40 GMT+0800 (CST)
 ---
 # 核心方法对照表
 Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API 的调用和实现上不完全一致，本文将 Android，iOS/macOS，Windows 和 Web 这几个平台的核心功能 API 对照列出，帮助你快速了解各个平台之间的差异。
@@ -25,7 +25,7 @@ Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API �
     <td><a href="https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/group__create_agora_rtc_engine.html">createAgoraRtcEngine</a><br><a href="https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac71db65e66942e4e0a0550e95c16890f">initialize</a></td>
   </tr>
   <tr>
-    <td nowrap="nowrap">设置频道模式</td>
+    <td nowrap="nowrap">设置频道场景</td>
     <td><a href="https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1bfb76eb4365b8b97648c3d1b69f2bd6">setChannelProfile</a></td>
     <td><a href="https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setChannelProfile:">setChannelProfile</a></td>
     <td><a href="https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/globals.html#createclient">AgoraRTC.createClient</a><sup>[1]</sup></td>
@@ -75,5 +75,5 @@ Agora SDK 支持多个平台，但是由于平台差异，不同平台在 API �
   </tr>
 </table>
 
-> [1] Web 平台设置频道模式通过 `createClient` 中的 `ClientConfig` 的设置实现，详见 [ClientConfig](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html)。
+> [1] Web 平台设置频道场景通过 `createClient` 中的 `ClientConfig` 的设置实现，详见 [ClientConfig](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html)。
 

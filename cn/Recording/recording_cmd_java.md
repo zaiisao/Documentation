@@ -10,7 +10,7 @@ updatedAt: Tue Feb 18 2020 06:06:39 GMT+0800 (CST)
 
 开始前请确保你已经完成录制 SDK 的环境准备和集成工作，详见[集成客户端](../../cn/Recording/recording_integrate_java.md)。
 
-> 当录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道模式。
+> 当录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道场景。
 
 
 ## 开始录制
@@ -45,7 +45,7 @@ java RecordingSample --appId <你的 App ID> --channel <频道名> --uid 0 --cha
 以下参数不是必填，但是要根据实际情况确认是否需要设置：
 
 - `channelKey`：动态密钥。如果待录制频道设置了 Token，该参数必须设置。
-- `channelProfile`：频道模式，必须和待录制频道使用相同的频道模式，否则可能导致问题。
+- `channelProfile`：频道场景，必须和待录制频道使用相同的频道场景，否则可能导致问题。
   - 0：（默认）通信场景
   - 1：直播场景
 - `decryptionMode`：频道加密时，录制 SDK 可以启用内置的解密功能。解密方式必须与频道设置的加密方式一致。目前支持以下几种解密方式：
