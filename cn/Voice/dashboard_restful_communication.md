@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Mon Mar 02 2020 02:07:27 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:18:28 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
@@ -627,7 +627,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 <ul>
 <li>0：未知</li>
 <li>1：用户角色为通信用户</li>
-<li>2：用户角色为直播模式视频主播</li>
+<li>2：用户角色为直播场景视频主播</li>
 <li>3：用户角色为主播模式观众</li>
 </ul>
 </td>
@@ -639,7 +639,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 
 ### 获取频道内用户列表 (GET)
 
-该方法获取指定频道内的用户列表。如果在通信模式下，则返回频道内的用户列表；如果在直播模式下，则分别返回主播列表和观众列表。
+该方法获取指定频道内的用户列表。如果在通信场景下，则返回频道内的用户列表；如果在直播场景下，则分别返回主播列表和观众列表。
 
 -   方法：GET
 -   路径：BaseUrl/channel/user/
@@ -665,7 +665,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 
 如：/channel/user/<appid\>/<channelName\>
 
--   响应：不同的频道模式下，该方法返回的响应内容不同。
+-   响应：不同的频道场景下，该方法返回的响应内容不同。
 
 	```json
 	// 如果是通信频道
@@ -706,10 +706,10 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </td>
 </tr>
 <tr><td>mode</td>
-<td><p>查询频道模式：</p>
+<td><p>查询频道场景：</p>
 <ul>
-<li>1：频道为通信模式</li>
-<li>2：频道为直播模式</li>
+<li>1：频道为通信场景</li>
+<li>2：频道为直播场景</li>
 </ul>
 </td>
 </tr>
@@ -762,10 +762,10 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </td>
 </tr>
 <tr><td>mode</td>
-<td><p>查询频道模式：</p>
+<td><p>查询频道场景：</p>
 <ul>
-<li>1：频道为通信模式</li>
-<li>2：频道为直播模式</li>
+<li>1：频道为通信场景</li>
+<li>2：频道为直播场景</li>
 </ul>
 </td>
 </tr>
