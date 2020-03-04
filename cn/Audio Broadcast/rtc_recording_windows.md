@@ -3,7 +3,7 @@
 title: 客户端录制
 description: 
 platform: Windows
-updatedAt: Wed Nov 13 2019 08:34:36 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 08:35:20 GMT+0800 (CST)
 ---
 # 客户端录制
 ## 功能描述
@@ -20,22 +20,19 @@ Agora SDK 支持通话过程中在客户端进行录音。该方法录制频道�
 开始前请确保已在你的项目中实现基本的实时音视频功能。 详见[开始音视频通话](../../cn/Audio%20Broadcast/start_call_windows.md)或[开始互动直播](../../cn/Audio%20Broadcast/start_live_windows.md)。
 
 ```C++
-// 初始化参数对象
-RtcEngineParameters rep(*lpRtcEngine);
-
 // 开始本地音频文件录制
 #ifdef UNICODE
  CHAR aFilePath[MAX_PATH];
  ::WideCharToMultiByte(CP_UTF8, 0, filePath, -1, aFilePath, MAX_PATH, NULL, NULL);
-int nRet = rep.startAudioRecording(aFilePath, // 本地合法文件路径
+int nRet = rtcEngine.startAudioRecording(aFilePath, // 本地合法文件路径
 	AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH // 录音音质 AUDIO_RECORDING_QUALITY_HIGH|MEDIUM|LOW
 	);
 #else
-int nRet = rep.startAudioRecording(filePath, AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH);
+int nRet = rtcEngine.startAudioRecording(filePath, AUDIO_RECORDING_QUALITY_TYPE::AUDIO_RECORDING_QUALITY_HIGH);
 #endif
 
 // 结束音频文件录制
-int nRet = rep.stopAudioRecording();
+int nRet = rtcEngine.stopAudioRecording();
 ```
 
 ### API 参考

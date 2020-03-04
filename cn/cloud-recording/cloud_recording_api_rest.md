@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Feb 26 2020 02:31:42 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 01:13:05 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -45,7 +45,7 @@ updatedAt: Wed Feb 26 2020 02:31:42 GMT+0800 (CST)
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/acquire
 
-> 请求数限制为每秒钟 10 次。
+> 每个 APP ID 每秒钟的请求数限制为 10 次。如需提高此限制，请联系 support@agora.io。
 
 调用该方法成功后，你可以从 HTTP 响应包体中的 `resourceId` 字段得到一个 resource ID。这个 resource ID 的时效为 5 分钟，你需要在 5 分钟内用这个 resource ID 去调用[开始云端录制的 API](#start)。
 
@@ -107,7 +107,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/mode/\<mode\>/start
 
-> 请求数限制为每秒钟 10 次。
+> 每个 APP ID 每秒钟的请求数限制为 10 次。
 
 ### 参数
 
@@ -117,15 +117,15 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 | :----------- | :----- | :----------------------------------------------------------- |
 | `appid`      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。必须使用和待录制的频道相同的 App ID。 |
 | `resourceid` | String | 通过 [`acquire`](#acquire) 请求获取的 resource ID。          |
-| `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。单流模式下，分开录制频道内每个 UID（或指定 UID）的音频流和视频流，每个 UID 均有其对应的音频文件和视频文件。合流模式下，频道内所有（或指定）UID 的音视频混合录制为一个音视频文件。                       |
+| `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。单流模式下，分开录制频道内每个 UID（或指定 UID）的音频流和视频流，每个 UID 均有其对应的音频文件和视频文件。合流模式下，频道内所有（或指定）UID 的音视频混合录制为一个音视频文件。 |
 
 该 API 需要在请求包体中传入以下参数。
 
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
-| `clientRequest` | JSON   | 特定的客户请求参数，对于该请求包含以下参数：<li>`token`：（选填） String 类型，用于鉴权的[动态密钥](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-namekeya动态密钥)。如果待录制的频道使用了动态密钥，请务必在该参数中传入一个动态密钥，详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。</li><li>[`recordingConfig`](#recordingConfig)：（选填）JSON 类型，录制的详细设置。</li><li>[`storageConfig`](#storageConfig)：（选填）JSON 类型，第三方云存储的设置。</li>|
+| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
+| `clientRequest` | JSON   | 特定的客户请求参数，对于该请求包含以下参数：<li>`token`：（选填） String 类型，用于鉴权的[动态密钥](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-namekeya动态密钥)。如果待录制的频道使用了动态密钥，请务必在该参数中传入一个动态密钥，详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。</li><li>[`recordingConfig`](#recordingConfig)：（选填）JSON 类型，录制的详细设置。</li><li>[`storageConfig`](#storageConfig)：（选填）JSON 类型，第三方云存储的设置。</li> |
 
 
 #### <a name="recordingConfig"></a>**录制设置**
@@ -349,7 +349,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/updateLayout
 
-> 请求数限制为每秒钟 10 次。
+> 每个 APP ID 每秒钟的请求数限制为 10 次。
 
 ### 参数
 
@@ -360,14 +360,14 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | appid      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) |
 | resourceid | String | 通过 [`acquire`](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#acquire) 请求获取的 resource ID。 |
 | sid        | String | 通过 [`start`](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#start) 请求获取的录制 ID。 |
-| mode       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。                         |
+| mode       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。 |
 
 该 API 需要在请求包体中传入以下参数。
 
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
+| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该请求请参考下面的列表设置。         |
 
 clientRequest 中需要填写的内容如下：
@@ -453,11 +453,10 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 开始录制后，你可以调用 query 查询录制状态。
 
 <div class="note alert"><code>query</code> 请求仅在会话内有效。如果录制启动错误，或录制已结束，调用 <code>query</code> 将返回 404。建议你同时使用回调服务，以获得云端录制所有的事件通知和具体信息。如需使用回调服务，请参考 <a href="https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest">RESTful API 回调</a>。</div>
-
 - 方法：GET
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
 
-> 请求数限制为每秒钟 10 次。
+> 每个 APP ID 每秒钟的请求数限制为 10 次。
 
 ### 参数
 
@@ -468,7 +467,7 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 | appid      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。必须使用和待录制的频道相同的 App ID。 |
 | resourceid | String | 通过 [`acquire`](#acquire) 请求获取的 resource ID。          |
 | sid        | String | 通过 [`start`](#start) 请求获取的录制 ID。                   |
-| mode       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。                         |
+| mode       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。 |
 
 ### `query` 请求示例
 
@@ -513,7 +512,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
     "sliceStartTime": "1562724971626"
    }       
 }
-```
+ ```
 
 - `code`：Number 类型，[响应状态码](#status)。
 - `resourceId`: String 类型，云端录制使用的 resource ID。
@@ -558,7 +557,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/stop
 
-> - 请求数限制为每秒钟 10 次。
+> - 每个 APP ID 每秒钟的请求数限制为 10 次。
 > - 当频道空闲（无用户）超过预设时间（默认为 30 秒） 后，云端录制也会自动退出频道停止录制。
 
 ### 参数
@@ -570,14 +569,14 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | `appid`      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。必须使用和待录制的频道相同的 App ID。 |
 | `resourceid` | String | 通过 [`acquire`](#acquire) 请求获取的 resource ID。          |
 | `sid`        | String | 通过 [`start`](#start) 请求获取的录制 ID。                   |
-| `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。                       |
+| `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。 |
 
 该 API 需要在请求包体中传入以下参数。
 
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
+| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
 ### `stop` 请求示例
@@ -661,15 +660,15 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 ## <a name="status"></a>响应状态码
 
-| 状态码 | 描述                                               |
-| :----- | :------------------------------------------------- |
-| 200    | 请求成功。                                         |
-| 201    | 成功请求并创建了新的资源。                         |
-| 206    | 整个录制过程中没有用户发流，或部分录制文件没有上传到第三方云存储。                    |
-| 400    | 请求的语法错误（如参数错误），服务器无法理解。     |
-| 401    | 未经授权的（App ID/Customer Certificate匹配错误）。    |
-| 404    | 服务器无法根据请求找到资源（网页）。               |
-| 500    | 服务器内部错误，无法完成请求。                     |
+| 状态码 | 描述                                                         |
+| :----- | :----------------------------------------------------------- |
+| 200    | 请求成功。                                                   |
+| 201    | 成功请求并创建了新的资源。                                   |
+| 206    | 整个录制过程中没有用户发流，或部分录制文件没有上传到第三方云存储。 |
+| 400    | 请求的语法错误（如参数错误），服务器无法理解。               |
+| 401    | 未经授权的（App ID/Customer Certificate匹配错误）。          |
+| 404    | 服务器无法根据请求找到资源（网页）。                         |
+| 500    | 服务器内部错误，无法完成请求。                               |
 | 504    | 服务器内部错误。充当网关或代理的服务器未从远端服务器获取请求。 |
 
 ## 常见错误
