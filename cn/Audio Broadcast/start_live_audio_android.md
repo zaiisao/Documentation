@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Android
-updatedAt: Wed Mar 04 2020 05:36:25 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 06:52:15 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 语音 SDK 快速实现音频直播。
@@ -429,7 +429,7 @@ private void setClientRole() {
 ```java
 private void joinChannel() {
  
-    // 对于 v3.0.0 之前的 SDK，如果频道中有 Web SDK，需要调用该方法开启 Native SDK 和 Web SDK 互通。v3.0.0 及之后的 SDK 在直播场景下自动开启了与 Web SDK 的互通。
+    // 对于 v3.0.0 之前的 SDK，如果频道中有 Web SDK，需要调用该方法开启 Native SDK 和 Web SDK 互通。v3.0.0 及之后的 SDK 在通信和直播场景下自动开启了与 Web SDK 的互通。
     rtcEngine.enableWebSdkInteroperability(true);
  
     // 使用 Token 加入频道。

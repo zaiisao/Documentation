@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 05:32:20 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 06:54:11 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -304,6 +304,8 @@ func addLocalSession() {
 - joinSuccessBlock：成功加入频道回调。`joinSuccessBlock` 优先级高于 `didJoinChannel`，2 个同时存在时，`didJoinChannel` 会被忽略。 需要有 `didJoinChannel` 回调时，请将 `joinSuccessBlock` 设置为 `nil`。
 
 更多的参数设置注意事项请参考 [joinChannelByToken](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) 接口中的参数描述。
+
+<div class="alert note">对于 v3.0.0 之前的 SDK，如果频道中有 Web SDK，需要调用<code>enableWebSdkInteroperability</code> 开启和Web SDK 的互通。v3.0.0 及之后的 SDK 在通信和直播场景下均自动开启了与 Web SDK 的互通。</div>
 
 ```objective-c
 // Objective-C

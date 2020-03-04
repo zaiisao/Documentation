@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Mar 04 2020 05:40:17 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 09:16:49 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,114 @@ Windows 视频 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及[视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 Windows 视频 SDK 支持 X86 和 X64 架构。
+
+## **3.0.0** 版
+
+该版本于 2020 年 3 月 5 日发布。
+
+Agora 在该版本对通信场景采用了全新的系统架构，并升级了通信和直播场景下的 last mile 网络策略。在带宽不足时，新的网络策略能充分利用上下行有限带宽提升有效码率，从而增强弱网对抗能力，极大提升了弱网情况下通信和直播场景的终端用户体验。
+
+由于通信场景采用了新的系统架构，为保证新老版本通信用户的互通兼容，我们使用了回退机制。如果频道内有老版本通信用户加入，则当前版本 (3.0.0) 的终端用户会回退成老版本通信。一旦回退，频道内所有用户都无法享受新版本带来的体验提升。因此我们强烈推荐同步升级所有终端用户到当前版本。
+
+同时，我们对本地服务端录制进行了升级发布。为确保享受全新架构和网络策略优化带来的好处，使用本地服务端录制的客户，请务必同步升级本地服务端录制 SDK 至 3.0.0 版本。
+
+新增特性、改进与问题修复详见下文。
+
+
+**升级必看**
+
+#### 1. 通信场景上行默认不开启视频小流
+
+从该版本起，Agora 在通信场景下，默认不开启视频[小流](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-duala双流模式)。如需启用，请在成功加入频道后，调用 `enableDualStreamMode (true)` 方法启用视频双流模式。在多人视频通信场景下，我们建议你开启视频双流。
+
+
+**新增特性**
+
+#### 1. 多频道管理
+
+为方便用户在同一时间加入多个频道，该版本新增了 `IChannel` 和 `IChannelEventHandler` 类。通过创建多个 `IChannel` 对象，用户可以加入各 `IChannel` 对象对应的频道中，实现多频道功能。
+
+加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考《[加入多频道](../../cn/Video/multiple_channel_windows.md)》。
+
+#### 2. 视频原始数据
+
+为方便开发者获取传输各阶段的视频原始数据，满足更多场景需求，该版本在 `IVideoFrameObserver` 类中新增如下 C++ 回调接口：
+
+- `onPreEncodeVideoFrame`：获取前处理后、编码前的本地视频原始数据。该方法适用于有视频前处理需求的开发场景。
+- `getSmoothRenderingEnabled`：设置是否对获取的视频数据（通过 `onRenderVideoFrame`）进行平滑处理。平滑处理后的视频帧，出帧时间间隔会更均匀，因此视频自渲染的体验更好。
+
+#### 3. 调节本地播放的指定远端用户音量
+
+该版本新增 `adjustUserPlaybackSignalVoume` 方法，用以调节本地用户听到的指定远端用户的音量。通话或直播过程中，你可以多次调用该方法，来调节多个远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
+
+#### 4. 美颜
+
+常见的视频社交、在线教育和连麦直播等场景中，用户普遍希望有基础的美颜功能。该版本新增接口 setBeautyEffectOptions，你可以调用该接口设置对比度、亮度、平滑度等参数，达到美白、磨皮、红润肤色等美颜效果。详情请参考《[美颜](../../cn/Video/image_enhancement_windows.md)》。
+
+
+**改进**
+
+#### 1. 音频编码属性
+
+为满足更高音质需求，该版本调整了直播场景下 `AUDIO_PROFILE_DEFAULT (0)` 对应的音频编码属性，详见下表：
+
+| SDK 版本   | AUDIO_PROFILE_DEFAULT (0)                                   |
+| :--------- | :---------------------------------------------------------- |
+| 3.0.0      | 48 KHz 采样率，音乐编码，单声道，编码码率最大值为 52 Kbps。 |
+| 3.0.0 之前 | 32 KHz 采样率，音乐编码，单声道，编码码率最大值为 64 Kbps。 |
+
+#### 2. 镜像模式
+
+为提升视频镜像的使用体验，该版本增加了视频编码镜像和视频渲染镜像的功能：
+
+- 视频编码镜像：在 `VideoEncoderConfiguration` 结构体中，新增 `mirrorMode` 成员，方便设置本地视频编码的镜像模式，即远端看本地是否镜像。
+- 视频渲染镜像：在 `VideoCanvas` 结构体中，新增 `mirrorMode` 成员，方便用户在调用 `setupLocalVideo` 方法初始化本地视图时，设置本地看本地是否镜像，以及调用 `setupRemoteVideo` 方法初始化远端视图时，设置本地看远端是否镜像；同时在 `setLocalRenderMode` 和 `setRemoteRenderMode` 方法中新增 `mirrorMode` 参数，支持在通话中更新本地看本地，或本地看远端的镜像模式。
+
+#### 3. 质量透明
+
+为方便开发者获取更多通话统计信息，该版本在 `RtcStats` 类中新增 `gatewayRtt`、`memoryAppUsageRatio`、`memoryTotalUsageRatio` 和 `memoryAppUsageInKbytes` 成员，方便更好地监控通话的质量和通话过程中的内存变动。
+
+#### 4. 屏幕共享
+
+为支持更多屏幕共享使用场景，该版本新增支持调用 [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52) 方法时共享[通用 Windows 平台](https://docs.microsoft.com/zh-cn/windows/uwp/get-started/universal-application-platform-guide)（UWP）应用窗口。
+
+#### 5. 其他提升
+
+该版本自动开启直播场景下 Native SDK 与 Web SDK 的互通，并废弃原有的 `enableWebSdkInteroperability` 方法。
+
+**问题修复**
+
+* 修复了混音、音频录制、音频编码、回声等音频问题。
+* 修复了水印、视频画面比例、画质模糊、视频不能全屏、屏幕共享黑边等视频问题。
+* 修复了特定场景下偶现的 app 崩溃、日志文件、推流不稳定等问题。
+
+**API 变更**
+
+#### 新增
+
+- [`setBeautyEffectOptions`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5899cc462e5250028c9afada4df98d48)
+- [`onPreEncodeVideoFrame`](../../API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html.md)
+- [`getSmoothRenderingEnabled`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aaa6c67373bb237a067318015749e8e51)
+- [`setLocalRenderMode`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac433e6e88da91f87c107012cbaf8bb5c)
+- [`setRemoteRenderMode`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aaaf8535dcab7ab0d12bdc351b88d09c2)
+- [`VideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html) 结构体新增 [`mirrorMode`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#a1ca537cb6966901330bce3681194ceb5) 成员
+- [`VideoCanvas`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_canvas.html) 结构体新增 [`channelId`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_canvas.html#ac16654ea954794b0e3ec8b962b4807a6)、[`mirrorMode`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_canvas.html#a7af6b90428fdcbd226f94df3cf6df9fc) 成员
+- [`AudioVolumeInfo`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) 结构体新增 [`channelId`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html#ab67471def88118f010e6d5add7d83f64) 成员
+- [`createChannel`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine2.html#a9cabefe84d3a52400f941f1bd8c0f486)
+- [`IChannel`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_channel.html) 类
+- [`IChannelEventHandler`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_channel_event_handler.html) 类
+- [`RtcStats`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html) 类中新增[`gatewayRtt`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a30cc889ef34f63e23950b54591218cb5)、[`memoryAppUsageRatio`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#aab879ec9c52f2dd8d662c26c4939a7d3)、[`memoryTotalUsageRatio`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#aae6d57e709b08258be372960f9e19fd6) 和 [`memoryAppUsageInKbytes`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a17258e12476bb9106ccc248af4cfe734) 成员
+
+#### 废弃
+
+* `RtcEngineParameters` 类
+* `enableWebSdkInteroperability`
+* `setLocalRenderMode¹`，使用新的 [`setLocalRenderMode`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac433e6e88da91f87c107012cbaf8bb5c) 取代
+* `setRemoteRenderMode¹`，使用新的 [`setRemoteRenderMode`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aaaf8535dcab7ab0d12bdc351b88d09c2) 取代
+* `setLocalVideoMirrorMode`，使用 [`setupLocalVideo`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a744003a9c0230684e985e42d14361f28) 和 [`setLocalRenderMode`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac433e6e88da91f87c107012cbaf8bb5c) 中的 `mirrorMode` 取代
+* `onFirstRemoteVideoFrame`，使用 [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 取代
+* `onUserMuteAudio`, `onFirstRemoteAudioDecoded` 和 `onFirstRemoteAudioFrame`，使用 [`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612) 取代
+* `onStreamPublished` 和 `onStreamUnpublished`，使用 [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d) 取代
 
 ## **2.9.3 版**
 

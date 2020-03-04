@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows CPP
-updatedAt: Tue Dec 17 2019 09:26:21 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:52:50 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -149,7 +149,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 该版本于 2019 年 9 月 30 日初次发布。新增以下功能：
 
-### 新老互通
+**新老互通**
 
 支持与 Agora Signaling SDK 互通。
 
@@ -159,18 +159,18 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 > - 如果你的应用不涉及 Agora Signaling SDK，我们推荐使用 `ILocalCallInvitation::setContent` 或者 `IRemoteCallInvitation::setResponse` 方法设置自定义内容。
 
 
-### 发送（离线）点对点消息
+**发送（离线）点对点消息**
 
 本版本支持发送离线消息。在开通离线消息后，用户不必等到接收端上线才能发送点对点消息。如果对端离线，消息服务器会为每个接收端存储 200 条离线消息长达七天。消息以队列形式存储。当离线消息超限时，最新存储的消息会导致最老的消息丢失。当发送端设置了离线消息，而此时消息接收端不在线，发送端会收到错误码：[PEER_MESSAGE_ERR_CACHED_BY_SERVER](https://docs.agora.io/cn/Video/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#ac7c591aac4ca6867e239c8bcccc1fc5caeccb9896a862a86fa1965705e2d394fd)
 
 <a name="getcount"></a>
-### 查询频道成员人数
+**查询频道成员人数**
 
 支持在不加入频道的情况下通过主动调用 [getChannelMemberCount](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a41dee47c6201acb2f29371b6e30249a5) 接口查询单个或多个频道的频道人数。一次最多可查询 32 个频道的成员人数。
 
-### 查询用户在线状态
+**查询用户在线状态**
 
-### 设置本地用户属性、查询指定用户属性
+**设置本地用户属性、查询指定用户属性**
 
 本版本支持设置和查询用户属性。每个用户属性为 key 和 value 的键值对。每个属性的 key 为 32 字节可见字符，每个属性的 value 的字符串长度不得超过 8 KB。单个用户的全部属性长度不得超过 16 KB。以下为本版本支持内容：
 
@@ -189,7 +189,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 > - 获取用户属性相关操作的调用频率为每 5 秒 40 条，超限则 SDK 会返回错误码：`ATTRIBUTE_OPERATION_ERR_TOO_OFTEN` 。
 
 <a name="channelattributes"></a>
-### 频道属性增删改查
+**频道属性增删改查**
 
 支持设置或查询某个指定频道的属性。你可以用频道属性实现群公告、上下麦同步等功能。
 
@@ -209,13 +209,13 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 在进行频道属性的更新或删除操作时，你可以通过设置标志位 [enableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_channel_attribute_options.html#a9a29721df90beca76974a5e348902530) 决定是否通知对应频道所有成员本次频道属性变更。
 
-### 呼叫邀请
+**呼叫邀请**
 
 增加了呼叫邀请功能。结合音视频一对一或一对多通话场景，你可以创建、发送、取消、接受或拒绝一个呼叫邀请。
 
-### 加入或离开频道
+**加入或离开频道**
 
-### 发送或接收频道消息
+**发送或接收频道消息**
 
 
 

@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Android
-updatedAt: Wed Mar 04 2020 05:32:13 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 06:52:52 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现视频直播。
@@ -269,7 +269,8 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
   
     // 获取权限后，初始化 RtcEngine，并加入频道。
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
+            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }
@@ -467,7 +468,7 @@ private void setupLocalVideo() {
 ```java
 private void joinChannel() {
  
-    // 对于 v3.0.0 之前的 SDK，如果频道中有 Web SDK，需要调用该方法开启 Native SDK 和 Web SDK 互通。v3.0.0 及之后的 SDK 在直播场景下自动开启了与 Web SDK 的互通。
+    // 对于 v3.0.0 之前的 SDK，如果频道中有 Web SDK，需要调用该方法开启 Native SDK 和 Web SDK 互通。v3.0.0 及之后的 SDK 在通信和直播场景下均自动开启了与 Web SDK 的互通。
     rtcEngine.enableWebSdkInteroperability(true);
  
     // 使用 Token 加入频道。

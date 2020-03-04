@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Windows
-updatedAt: Wed Mar 04 2020 05:32:30 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 06:53:26 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何通过 Agora SDK 快速实现互动直播。
@@ -206,7 +206,7 @@ m_lpRtcEngine->setupLocalVideo(vc);
 更多的参数设置注意事项请参考 [`joinChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c) 接口中的参数描述。
 
 ```C++
-// 在频道中开启 Web SDK 与 Native SDK 互通。
+// 对于 v3.0.0 之前的 SDK，如果频道中有 Web SDK，需要调用该方法开启 Native SDK 和 Web SDK 互通。v3.0.0 及之后的 SDK 在通信和直播场景下均自动开启了与 Web SDK 的互通。
 m_lpRtcEngine->enableWebSdkInteroperability(true);
  
  

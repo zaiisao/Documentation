@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Feb 21 2020 07:05:18 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:55:59 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -16,11 +16,11 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 该版本于 2020 年 2 月 21 日发布。
 
-### 兼容性改变
+**兼容性改变**
 
 发送频道消息的超时时间由 5 秒变更为 10 秒。
 
-### 问题修复
+**问题修复**
 
 从 Windows 平台上较新版本 Chrome 登陆 Agora RTM 系统会偶尔收到错误码 `LOGIN_ERR_UNKNOWN`。
 
@@ -50,7 +50,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 
 
-### 新增功能
+**新增功能**
 
 #### 1. <a name="subscribe"></a>订阅或退订指定单个或多个用户的在线状态。
 
@@ -77,7 +77,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 <div class="alert note"> 我们不对二进制消息的文本描述的大小单独进行限制，但是我们要求自定义二进制消息的总大小不超过 32 KB。</div>
 
-### 问题修复
+**问题修复**
 
 SDK 偶尔会被服务端踢开：问题发生时，Client 实例会收到 ConnectionStateChange 回调，状态改变为 ABORTED，改变原因为 INTERRUPTED；日志显示服务端错误码为 10001。
 
@@ -92,12 +92,12 @@ SDK 偶尔会被服务端踢开：问题发生时，Client 实例会收到 Conne
 
 
 
-### 兼容性改动
+**兼容性改动**
 
 1. `RtmMessage` 对象的 `serverReceivedTs` 方法由仅支持点对点消息改为同时支持点对点消息和频道消息。
 2. 点对点消息的超时时间由 5 秒延长为 10 秒。
 
-### 新增功能
+**新增功能**
 
 <a name="getcount"></a>
 #### 1. 查询频道成员人数
@@ -134,7 +134,7 @@ SDK 偶尔会被服务端踢开：问题发生时，Client 实例会收到 Conne
 在进行频道属性的更新或删除操作时，你可以通过设置标志位 `enableNotificationToChannelMembers` 决定是否通知对应频道所有成员本次频道属性变更。
 
 
-### 性能改进
+**性能改进**
 
 #### 点对点消息重发
 
@@ -145,7 +145,7 @@ SDK 偶尔会被服务端踢开：问题发生时，Client 实例会收到 Conne
 Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 秒最多 32 条的频道消息，提高了弱网情况下频道消息的到达率。
 
 
-### API 变更
+**API 变更**
 
 #### 新增方法
 
@@ -175,12 +175,12 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 该版本于 2019 年 9 月 5 日发布。
 
-### 问题修复
+**问题修复**
 
 - 在未设置 [enableOfflineMessaging](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/sendmessageoptions.html) 的情况下，发送的点对点消息有一定几率成为离线消息。
 - 对端用户成功登陆后立即设置的用户属性有一定几率无法被获取。
 
-### 功能改进
+**功能改进**
 
 - 改进断线重连时的点对点消息发送机制：缓存默认 6 秒时长的点对点消息，在用户重连成功后立即投递。
 - 点对点消息超时时间改为 10 秒。
@@ -189,7 +189,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 该版本于 2019 年 8 月 5 日发布。
 
-### 新增功能
+**新增功能**
 
 #### 新老互通
 
@@ -205,9 +205,9 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 支持通过设置 `logFilter` 参数将日志内容按照 OFF、ERROR、WARNING 和 INFO 不同等级输出 。
 
 
-### API 变更
+**API 变更**
 
-### 新增
+**新增**
 
 - [logFilter](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmparameters.html#logfilter)
 - [setParameters](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setparameters)
@@ -216,7 +216,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 该版本于 2019 年 7 月 24 日发布。
 
-### 新增功能
+**新增功能**
 
 #### 发送（离线）点对点消息
 
@@ -250,7 +250,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 本版本提供了更新 Token 的功能
 
-### API 变更
+**API 变更**
 
 #### 新增：
 
@@ -268,18 +268,18 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 该版本于 2019 年 5 月 20 日发布。
 
-### 新增功能
+**新增功能**
 
 本版本增加了呼叫邀请功能。结合音视频一对一或一对多通话场景，你可以创建、发送、取消、接受或拒绝一个呼叫邀请。
 
-### 性能改进
+**性能改进**
 
 -   本地用户发送的频道消息/点对点消息/进频道通知均不出现在当前用户的 API 回调中。
 -   用户名 `uid` 允许以空格开头。
 
-### API 变更
+**API 变更**
 
-### 新增
+**新增**
 
 - [createLocalInvitation](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createlocalinvitation)：创建一个呼叫邀请
 - [LocalInvitation.cancel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#send): （主叫）取消呼叫邀请
@@ -308,7 +308,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 首次发布。
 
-### 主要功能
+**主要功能**
 
 - 发送或接收点对点消息。
 - 加入或离开频道。

@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Mon Feb 10 2020 06:06:31 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 09:17:45 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,76 @@ Windows 语音 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
 
 Windows 语音 SDK 支持 X86 和 X64 架构。
+
+## **3.0.0** 版
+
+该版本于 2020 年 3 月 5 日发布。
+
+Agora 在该版本对通信场景采用了全新的系统架构，并升级了通信和直播场景下的 last mile 网络策略。在带宽不足时，新的网络策略能充分利用上下行有限带宽提升有效码率，从而增强弱网对抗能力，极大提升了弱网情况下通信和直播场景的终端用户体验。
+
+由于通信场景采用了新的系统架构，为保证新老版本通信用户的互通兼容，我们使用了回退机制。如果频道内有老版本通信用户加入，则当前版本 (3.0.0) 的终端用户会回退成老版本通信。一旦回退，频道内所有用户都无法享受新版本带来的体验提升。因此我们强烈推荐同步升级所有终端用户到当前版本。
+
+同时，我们对本地服务端录制进行了升级发布。为确保享受全新架构和网络策略优化带来的好处，使用本地服务端录制的客户，请务必同步升级本地服务端录制 SDK 至 3.0.0 版本。
+
+新增特性、改进与问题修复详见下文。
+
+**新增特性**
+
+#### 1. 多频道管理
+
+为方便用户在同一时间加入多个频道，该版本新增了 `IChannel` 和 `IChannelEventHandler` 类。通过创建多个 `IChannel` 对象，用户可以加入各 `IChannel` 对象对应的频道中，实现多频道功能。
+
+加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考《[加入多频道](../../cn/Audio%20Broadcast/multiple_channel_windows.md)》。
+
+#### 2. 调节本地播放的指定远端用户音量
+
+该版本新增 `adjustUserPlaybackSignalVoume` 方法，用以调节本地用户听到的指定远端用户的音量。通话或直播过程中，你可以多次调用该方法，来调节多个远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
+
+
+**改进**
+
+#### 1. 音频编码属性
+
+为满足更高音质需求，该版本调整了直播场景下 `AUDIO_PROFILE_DEFAULT (0)` 对应的音频编码属性，详见下表：
+
+| SDK 版本   | AUDIO_PROFILE_DEFAULT (0)                                   |
+| :--------- | :---------------------------------------------------------- |
+| 3.0.0      | 48 KHz 采样率，音乐编码，单声道，编码码率最大值为 52 Kbps。 |
+| 3.0.0 之前 | 32 KHz 采样率，音乐编码，单声道，编码码率最大值为 64 Kbps。 |
+
+#### 2. 质量透明
+
+为方便开发者获取更多通话统计信息，该版本在 `RtcStats` 类中新增 `gatewayRtt`、`memoryAppUsageRatio`、`memoryTotalUsageRatio` 和 `memoryAppUsageInKbytes` 成员，方便更好地监控通话的质量和通话过程中的内存变动。
+
+#### 3. 屏幕共享
+
+为支持更多屏幕共享使用场景，该版本新增支持调用 [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52) 方法时共享[通用 Windows 平台](https://docs.microsoft.com/zh-cn/windows/uwp/get-started/universal-application-platform-guide)（UWP）应用窗口。
+
+#### 4. 其他提升
+
+该版本自动开启直播场景下 Native SDK 与 Web SDK 的互通，并废弃原有的 `enableWebSdkInteroperability` 方法。
+
+**问题修复**
+
+* 修复了混音、音频录制、音频编码、回声等音频问题。
+* 修复了特定场景下偶现的 app 崩溃、日志文件、推流不稳定等问题。
+
+**API 变更**
+
+#### 新增
+
+- [`AudioVolumeInfo`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) 结构体新增 [`channelId`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html#ab67471def88118f010e6d5add7d83f64) 成员
+- [`createChannel`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine2.html#a9cabefe84d3a52400f941f1bd8c0f486)
+- [`IChannel`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_channel.html) 类
+- [`IChannelEventHandler`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_channel_event_handler.html) 类
+- [`RtcStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html) 类中新增[`gatewayRtt`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a30cc889ef34f63e23950b54591218cb5)、[`memoryAppUsageRatio`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#aab879ec9c52f2dd8d662c26c4939a7d3)、[`memoryTotalUsageRatio`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#aae6d57e709b08258be372960f9e19fd6) 和 [`memoryAppUsageInKbytes`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a17258e12476bb9106ccc248af4cfe734) 成员
+
+#### 废弃
+
+* `RtcEngineParameters` 类
+* `enableWebSdkInteroperability`
+* `onUserMuteAudio`, `onFirstRemoteAudioDecoded` 和 `onFirstRemoteAudioFrame`，使用 [`onRemoteAudioStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612) 取代
+* `onStreamPublished` 和 `onStreamUnpublished`，使用 [`onRtmpStreamingStateChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d) 取代
 
 ## **2.9.1 版**
 该版本于 2019 年 9 月 19 日发布。新增特性与修复问题列表详见下文。
@@ -78,7 +148,7 @@ IAgoraRtcEngine.h 头文件中的拼写错误。
 
 #### 2. 关闭/开启本地音频采集
 
-为提高通信模式下，本地用户关闭麦克风后听到的音质，该版本在 `enableLocalAudio`(true) 后，将系统音量修改为媒体音量。调用 `enableLocalAudio`(false) 后，系统音量自动切换为通话音量。
+为提高通信场景下，本地用户关闭麦克风后听到的音质，该版本在 `enableLocalAudio`(true) 后，将系统音量修改为媒体音量。调用 `enableLocalAudio`(false) 后，系统音量自动切换为通话音量。
 
 **新增特性**
 
@@ -121,7 +191,7 @@ IAgoraRtcEngine.h 头文件中的拼写错误。
 #### 2. 其他改进
 
 - 优化了 Game Streaming 模式下的音频质量。
-- 优化了通信模式下用户关闭麦克风后听到的音质。
+- 优化了通信场景下用户关闭麦克风后听到的音质。
 
 **问题修复**
 

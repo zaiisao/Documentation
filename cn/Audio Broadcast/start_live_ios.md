@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: iOS
-updatedAt: Wed Mar 04 2020 05:32:16 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 06:51:50 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -51,6 +51,8 @@ Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-iOS-Object
 
 **方法一：使用 CocoaPods 自动集成**
 
+<div class="alert note">本方法仅适用于集成静态库。</div>
+
 1. 开始前确保你已安装 **Cocoapods**。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
 2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
 3. 打开 **Podfile** 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
@@ -67,9 +69,11 @@ end
 **方法二：手动复制 SDK 文件**
 
 1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，获取最新版的 Agora SDK，然后解压。
-2. 将 **libs** 文件夹内的 **AgoraRtcEngineKit.framework** 文件复制到项目文件夹下。
-3. 打开 **Xcode**，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。在添加 **AgoraRtcEngineKit.framework** 文件时，还需在点击 **+** 后点击 **Add Other…**，找到本地文件并打开。
-	- AgoraRtcEngineKit.framework
+
+  <div class="alert note">自 3.0.0 版本起，下载的 SDK 内包含静态库包和动态库包，其中动态库包名后缀为 Dynamic。</div>
+
+2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
+3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。
 	- Accelerate.framework
 	- AudioToolbox.framework
 	- AVFoundation.framework
@@ -80,6 +84,13 @@ end
 	- libresolv.tbd
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
+4. 添加 **AgoraRtcKit.framework** 库。
+ - 如果你集成的是静态库，在 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单中，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件并打开。
+ - 如果你集成的是动态库，进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开，并将文件状态改为 **Embed & Sign**。
+
+  <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
+
+<div class="alert note">自 3.0.0 版本起，库名由 <b>AgoraRtcEngineKit.framework</b> 改为 <b>AgoraRtcKit.framework</b>。如果你将旧版本 SDK 升级至 3.0.0 版本，请按以下步骤重新集成：<ul><li>打开 Xcode，在项目导航栏中移除 <b>AgoraRtcEngineKit.framework</b>。<li>进入 <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b> 菜单，点击 <b>-</b> 移除 <b>AgoraRtcEngineKit.framework</b> 文件。<li>如果你集成的是静态库，在上述菜单中点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件。<br>如果你集成的是动态库，进入 <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> 菜单，点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件，再点击 <b>Add Other…</b>，找到本地文件打开，并将文件状态改为 <b>Embed & Sign</b>。</br></div>
 
  **添加前**：
  
@@ -89,7 +100,7 @@ end
  
  ![](https://web-cdn.agora.io/docs-files/1568800223316)
  
-<div class="alert note">如需支持 iOS 9.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
+<div class="alert note">如需支持 iOS 11.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
 
 
 
@@ -277,6 +288,8 @@ func addLocalSession() {
 - joinSuccessBlock：成功加入频道回调。`joinSuccessBlock` 优先级高于 `didJoinChannel`，2 个同时存在时，`didJoinChannel` 会被忽略。 需要有 `didJoinChannel` 回调时，请将 `joinSuccessBlock` 设置为 `nil`。
 
 更多的参数设置注意事项请参考 [joinChannelByToken](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) 接口中的参数描述。
+
+<div class="alert note">对于 v3.0.0 之前的 SDK，如果频道中有 Web SDK，需要调用<code>enableWebSdkInteroperability</code> 开启和Web SDK 的互通。v3.0.0 及之后的 SDK 在通信和直播场景下均自动开启了与 Web SDK 的互通。</div>
 
 ```objective-c
 // Objective-C
