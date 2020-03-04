@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: iOS
-updatedAt: Tue Oct 22 2019 10:12:54 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 13:06:03 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for iOS.
@@ -80,6 +80,9 @@ end
 	- libresolv.tbd
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
+
+ <div class="alert note">If your device runs <b>iOS 11.0</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
+
 4. Add the **AgoraRtcKit.framework** library.
   - If you integrate the SDK with the static library, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, click **Add Other...** after clicking **+**.
   - If you integrate the SDK with the dynamic library, go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+**, and change the file status as **Embed & Sign**.
@@ -87,15 +90,21 @@ end
 
 <div class="alert note">As of v3.0.0, the library name changes from <b>AgoraRtcEngineKit.framework</b> to <b>AgoraRtcKit.framework</b>. To upgrade your SDK to v3.0.0, refer to the following steps to re-integrate the SDK:<ul><li>Open Xcode, remove <b>AgoraRtcEngineKit.framework</b> from the Navigator.<li>Click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, click <b>-</b> to remove AgoraRtcEngineKit.framework.<li> If you integrate the SDK with the static library, click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, and click <b>+</b> to add AgoraRtcKit.framework instead.<br>If you integrate the SDK with the dynamic library, click <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> click <b>+</b> to add AgoraRtcKit.framework instead, and change the status of <b>AgoraRtcKit.framework</b> to <b>Embed & Sign</b>. </br></div>
 
- **Before**:
+ **Before integrating the static library**：
  
- ![](https://web-cdn.agora.io/docs-files/1568801101072)
+ ![](https://web-cdn.agora.io/docs-files/1583329439410)
  
- **After**:
+ **After integrating the static library**：
  
- ![](https://web-cdn.agora.io/docs-files/1568801108276)
+ ![](https://web-cdn.agora.io/docs-files/1583329456927)
  
-<div class="alert note">If your device runs <b>iOS 11.0</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
+ **Before integrating the dynamic library**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583329514061)
+ 
+ **After integrating the dynamic library**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583329540790)
 
 
 ### Add project permissions
@@ -136,15 +145,21 @@ When you use the UI setting of the demo project, you can see the following inter
 
 ### <a name="ImportClass"></a> 2. Import the class
 
-Import the `AgoraRtcEngineKit` class in your project.
+Import the `AgoraRtcKit` class in your project.
 
 ```objective-c
 // Objective-C
+// As of v3.0.0, the SDK uses the AgoraRtcKit object.
+#import <AgoraRtcKit/AgoraRtcEngineKit.h>
+// The SDK of a version earlier than v3.0.0 uses the AgoraRtcEngineKit object.
 #import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>
 ```
 
 ```swift
 // Swift
+// As of v3.0.0, the SDK uses the AgoraRtcKit object.
+import AgoraRtcKit
+// The SDK of a version earlier than v3.0.0 uses the AgoraRtcEngineKit object.
 import AgoraRtcEngineKit
 ```
 

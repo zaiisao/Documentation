@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Tue Feb 11 2020 10:41:41 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 13:21:26 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -16,6 +16,132 @@ The Voice SDK supports the following scenarios:
 -   Live voice broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+
+## v3.0.0
+
+v3.0.0 was released on Mar 4, 2020.
+
+In this release, Agora improves the user experience under poor network conditions for both the Communication and Live-broadcast profiles through the following measures:
+
+- Adopting a new architecture for the Communication profile.
+- Upgrading the last-mile network strategy for both the Communication and Live-broadcast profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
+
+To deal with any incompatibility issues caused by the architecture change, Agora uses the fallback mechanism to ensure that users of different versions of the SDKs can communicate with each other: if a user joins the channel from a client using a previous version, all clients using v3.0.0 automatically fall back to the older version. This has the effect that none of the users in the channel can enjoy the improved experience. Therefore we strongly recommend upgrading all your clients to v3.0.0.
+
+We also upgrade the On-premise Recording SDK to v3.0.0. Ensure that you upgrade your On-premise Recording SDK to v3.0.0 so that all users can enjoy the improvements brought by the new architecture and network strategy.
+
+**Compatibility changes**
+
+#### Renaming the static library and adding support for dynamic library
+
+To unify the library names across platforms, this release renames the library from `AgoraRtcEngineKit.framework` to `AgoraRtcKit.framework`. If you upgrade your SDK to v3.0.0, you must re-import the `AgoraRtcKit` class. For details, see [Import the class](https://docs.agora.io/en/Video/start_call_ios?platform=iOS#a-nameimportclassa-2-import-the-class) in the Quickstart.
+
+To improve your development experience, this release also adds support for the dynamic library. You can integrate either the static or the dynamic library in your project, and the name of the dynamic library package is Agora_Native_SDK_for_iOS_v3_0_0_VOICE_Dynamic. 
+
+Integrating the dynamic library has the following advantages:
+
+- The overall security level is improved.
+- Incompatibility issues with other third-party libraries are avoided.
+- Uploading the app onto App Store is easier.
+
+If you prefer the dynamic library, you need to re-integrate the SDK and re-import the `AgoraRtcKit` class. This process should take no more than five minutes. See [Integrate the SDK](https://docs.agora.io/en/Voice/start_call_ios?platform=iOS#a-nameintegratesdkaintegrate-the-sdk) and [Import the class](https://docs.agora.io/en/Voice/start_call_ios?platform=iOS#a-nameimportclassa-2-import-the-class) in the Quickstart.
+
+<div class="alert info">The following table shows the difference in the file size when generating ipa files with a dynamic and static library:
+
+<table>
+    <tr>
+        <td width="8%"><b>Library type</b></td>
+        <td width="15%"><b>ipa size (M)</b></td>
+        <td width="10%"><b>Decompressed ipa size (M)</b></td>
+        <td width="17%"><b>Frameworks folder size (M)</b></td>
+        <td width="15%"><b>Binary file size (M)</b></td>
+        <td width="25%"><b>Total size of frameworks folder + binary file (M)</b></td>
+    </tr>
+    <tr>
+        <td>Dynamic library</td>
+        <td>31.1</td>
+        <td>65</td>
+        <td>51.47</td>
+        <td>2.4</td>
+        <td>53.87</td>
+    </tr>
+    <tr>
+        <td>Static library</td>
+        <td>30.6</td>
+        <td>63.7</td>
+        <td>30.1</td>
+        <td>22.5</td>
+        <td>52.6</td>
+    </tr>
+</table>
+
+The dynamic library is located in the framework folder as an independent library. Note that the corresponding binary file size does not include the SDK size. Overall, this decreases the binary file size by 20.1 M and increases the framework folder size by 21.37 M.</div>
+
+**New features**
+
+#### 1. Multiple channel management
+
+To enable a user to join an unlimited number of channels at a time, this release adds the [`AgoraRtcChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcChannel.html) and [`AgoraRtcChannelDelegate`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcChannelDelegate.html) classes. By creating multiple `AgoraRtcChannel` objects, a user can join the corresponding channels at the same time.
+
+After joining multiple channels, users can receive the audio and video streams of all the channels, but publish one stream to only one channel at a time. This feature applies to scenarios where users need to receive streams from multiple channels, or frequently switch between channels to publish streams. See [Join multiple channels](../../en/Audio%20Broadcast/multiple_channel_apple.md) for details.
+
+#### 2. Adjusting the playback volume of the specified remote user
+
+Adds [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustUserPlaybackSignalVolume:volume:) for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or a live broadcast to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+
+#### 3. Agora Mediaplayer Kit
+
+To enrich the playability of a live broadcast, Agora releases the Mediaplayer Kit plug-in, which supports the broadcaster playing local or online media resources and sharing them with all users in the channel during a live broadcast. See [Mediaplayer Kit release notes](https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_release_ios?platform=iOS) for details.
+
+**Improvements**
+
+#### 1. Audio profiles
+
+To meet the need for higher audio quality, this release adjusts the corresponding audio profile of `AgoraAudioProfileDefault(0)` in the Live-Broadcast profile.
+
+| SDK   | `AgoraAudioProfileDefault(0)`                                  |
+| :--------- | :---------------------------------------------------------- |
+| v3.0.0      | A sample rate of 48 KHz, music encoding, mono, and a bitrate of up to 52 Kbps. |
+| Earlier than v3.0.0 | A sample rate of 32 KHz, music encoding, mono, and a bitrate of up to 52 Kbps. |
+
+
+#### 2. Quality statistics
+
+Adds the following members in the [`AgoraChannelStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html) class for providing more in-call statistics, making it easier to monitor the call quality and memory usage in real time:
+
+- `gatewayRtt`
+- `memoryAppUsageRatio`
+- `memoryTotalUsageRatio`
+- `memoryAppUsageInKbytes`
+
+#### 3. Others
+
+This release enables interoperability between the Native SDK and the Web SDK by default, and deprecates the `enableWebSdkInteroperability` method.
+
+**Issues fixed**
+
+- Audio issues concerning audio mixing, audio encoding, and echo.
+- Other issues related to app crashes, log file, and unstable service when pushing streams to the CDN.
+
+**API changes**
+
+#### Behavior change
+
+Calling [`enableLocalAudio (NO)`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableLocalAudio:) does not change the in-call volume to media volume.
+
+#### Added
+
+- The `channelId` parameter in the [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) struct
+- [`createRtcChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/createRtcChannel:)
+- [`AgoraRtcChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcChannel.html) class
+- [`AgoraRtcChannelDelegate`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcChannelDelegate.html) class
+- The `gatewayRtt`, `memoryAppUsageRatio`, `memoryTotalUsageRatio` and `memoryAppUsageInKbytes` members in the [`AgoraChannelStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html) class
+
+#### Deprecated
+
+- `enableWebSdkInteroperability`
+- `didAudioMuted`, `firstRemoteAudioFrameDecodedOfUid` and `firstRemoteAudioFrameOfUid`. Use the [`remoteAudioStateChangedOfUid`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStateChangedOfUid:state:reason:elapsed:) callback instead.
+- `streamPublishedWithUrl` and `streamUnpublishedWithUrl`. Use the [`rtmpStreamingChangedToState`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:) callback instead.
 
 ## v2.9.1
 v2.9.1 is released on Sep 19, 2019.

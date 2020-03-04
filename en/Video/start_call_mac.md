@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: macOS
-updatedAt: Tue Oct 22 2019 10:13:34 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 13:03:46 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for macOS.
@@ -160,15 +160,21 @@ When you use the UI setting of the demo project, you can see the following inter
 
 ### <a name="ImportClass"></a> 2. Import the class
 
-Import the `AgoraRtcEngineKit` class in your project.
+Import the `AgoraRtcKit` class in your project.
 
 ```objective-c
 // Objective-C
+// As of v3.0.0, the SDK uses the AgoraRtcKit object.
+#import <AgoraRtcKit/AgoraRtcEngineKit.h>
+// The SDK of a version earlier than v3.0.0 uses the AgoraRtcEngineKit object.
 #import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>
 ```
 
 ```swift
 // Swift
+// As of v3.0.0, the SDK uses the AgoraRtcKit object.
+import AgoraRtcKit
+// The SDK of a version earlier than v3.0.0 uses the AgoraRtcEngineKit object.
 import AgoraRtcEngineKit
 ```
 

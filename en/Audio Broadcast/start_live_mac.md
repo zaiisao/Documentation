@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 06:57:17 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 13:05:23 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for macOS.
@@ -163,15 +163,21 @@ When you use the UI setting of the demo project, you can see the following inter
 
 ### <a name="ImportClass"></a>2. Import the class
 
-Import the `AgoraRtcEngineKit` class in your project.
+Import the `AgoraRtcKit` class in your project.
 
 ```objective-c
 // Objective-C
+// As of v3.0.0, the SDK uses the AgoraRtcKit object.
+#import <AgoraRtcKit/AgoraRtcEngineKit.h>
+// The SDK of a version earlier than v3.0.0 uses the AgoraRtcEngineKit object.
 #import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>
 ```
 
 ```swift
 // Swift
+// As of v3.0.0, the SDK uses the AgoraRtcKit object.
+import AgoraRtcKit
+// The SDK of a version earlier than v3.0.0 uses the AgoraRtcEngineKit object.
 import AgoraRtcEngineKit
 ```
 
