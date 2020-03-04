@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Fri Feb 14 2020 03:45:42 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 06:04:34 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -26,9 +26,9 @@ Occasionally fails to receive any callback after a channel attribute operation.
 
 v1.2.1 was released on November 29, 2019.  
 
-### New Feature
+**New Feature**
 
-**Compatible with the endCall method of the Agora Signaling SDK** 
+*Compatible with the endCall method of the Agora Signaling SDK*
 
 If you use the `sendMessageToPeer` method to send a <i>text</i> message in the format of AgoraRTMLegacyEndcallCompatibleMessagePrefix\_\<channelId\>\_\<your additional information\>, then this method is compatible with the endCall method of the legacy Agora Signaling SDK. Replace \<channelId\> with the channel ID from which you want to leave (end call), and replace \<your additional information\> with any additional information. Note that you must not put any "_" (underscore) in your additional information but you can set \<your additional information\> as empty "".
 
@@ -42,12 +42,12 @@ If you use the `sendMessageToPeer` method to send a <i>text</i> message in the f
 
 v1.2.0 was released on November 6, 2019. 
 
-### Compatibility Changes
+**Compatibility Changes**
 
 Deprecated the `isOnline` property of the `AgoraRtmPeerOnlineStatus`. Use `state` instead. 
 
 
-### New Features
+**New Features**
 
 #### Subscribe to the online status of the specified user(s)
 
@@ -79,14 +79,14 @@ v1.1.0 is released on September 18, 2019. It adds the following features:
 
 
 
-### Compatibility Changes
+**Compatibility Changes**
 
 1. Deprecates the [sendMessage:toPeer:completion:](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:completion:) method, and uses [sendMessage:toPeer:sendMessageOptions:completion:](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:sendMessageOptions:completion:) instead
 2. The [serverReceivedTs](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html#//api/name/serverReceivedTs) property of the [AgoraRtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmMessage.html) instance supports both peer-to-peer and channel messages.
 3. Timeout for sending a peer-to-peer message is 10 seconds from this release, compared to 5 seconds in previous versions. See [AgoraRtmSendPeerMessageErrorTimeout](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmSendPeerMessageErrorCode.html)
 4. Puts a limit on the frequency of [joinWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/joinWithCompletion:) the same channel:  [Two times every five seconds](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmJoinChannelErrorCode.html). 
 
-### New Features
+**New Features**
 
 <a name="getcount"></a>
 #### 1. Gets the member count of specified channel(s).
@@ -130,7 +130,7 @@ When updating attributes of a channel, you can use the [enableNotificationToChan
 
 > The SDK caches the channel attributes. If multiple users have the privilege to update the channel attributes, then we recommend calling the [getChannelAllAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAllAttributes:completion:) to update the cache before updating the channel attributes. 
 
-### Improvements
+**Improvements**
 
 #### Resends peer-to-peer messages
 
@@ -141,7 +141,7 @@ This release improves the resending mechanism of peer-to-peer messages, and exte
 The Agora RTM system will resend a maximum of 32 channel messages of up to 30 seconds to channel members, when they manage to reconnect to the system from poor network conditions. This greatly improves the overall arrival rate of channel messages under weak network conditions. 
 
 
-### API Changes
+**API Changes**
 
 #### Added Methods
 

@@ -33,9 +33,9 @@ The SDK occasionally returns `LOGIN_ERR_UNKNOWN` when logging in from a recent v
 
 v1.2.1 was released on December 17, 2019.  
 
-### New Feature
+**New Feature**
 
-**Compatible with the endCall method of the Agora Signaling SDK** 
+*Compatible with the endCall method of the Agora Signaling SDK*
 
 If you use the `sendMessageToPeer` method to send a <i>text</i> message in the format of AgoraRTMLegacyEndcallCompatibleMessagePrefix\_\<channelId\>\_\<your additional information\>, then this method is compatible with the endCall method of the legacy Agora Signaling SDK. Replace \<channelId\> with the channel ID from which you want to leave (end call), and replace \<your additional information\> with any additional information. Note that you must not put any "_" (underscore) in your additional information but you can set \<your additional information\> as empty "".
 

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Fri Feb 14 2020 03:40:34 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 06:01:55 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -26,9 +26,9 @@ Occasionally fails to receive any callback after a channel attribute operation.
 
 v1.2.1 was released on November 29, 2019.  
 
-### New Feature
+**New Feature**
 
-**Compatible with the endCall method of the Agora Signaling SDK** 
+*Compatible with the endCall method of the Agora Signaling SDK*
 
 If you use the `sendMessageToPeer` method to send a <i>text</i> message in the format of AgoraRTMLegacyEndcallCompatibleMessagePrefix\_\<channelId\>\_\<your additional information\>, then this method is compatible with the endCall method of the legacy Agora Signaling SDK. Replace \<channelId\> with the channel ID from which you want to leave (end call), and replace \<your additional information\> with any additional information. Note that you must not put any "_" (underscore) in your additional information but you can set \<your additional information\> as empty "".
 
@@ -42,7 +42,7 @@ If you use the `sendMessageToPeer` method to send a <i>text</i> message in the f
 
 v1.2.0 was released on November 6, 2019. 
 
-### New Features
+**New Features**
 
 #### Subscribe to the online status of the specified user(s)
 
@@ -64,7 +64,7 @@ Creates and initializes a raw message to be sent.
 
  If you set a text description, ensure that the size of the raw message and the description combined does not exceed 32 KB.
  
- ### Issues Fixed
+**Issues Fixed**
  
  - The system returns `rtm native not ready`, if one creates multiple channels with the same `channelId` and then calls `join` or `leave`. 
 
@@ -82,14 +82,14 @@ v1.1.0 is released on September 18, 2019. It adds the following features:
 
 
 
-### Compatibility Changes
+**Compatibility Changes**
 
 1. Deprecates the [sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a25ab5c0126e1dc51c78b2b705de68b7a) method, and uses [sendMessageToPeer(const char \*, const IMessage \*, const SendMessageOptions \&)](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9) instead.
 2. The [getServerReceivedTs](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a7994de6da26269c3137e93ddf7a2c2be) method of the [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) object supports both peer-to-peer and channel messages. 
 3. Timeout for sending a peer-to-peer message is 10 seconds from this release, compared to 5 seconds in previous versions. See [PEER_MESSAGE_ERR_TIMEOUT ](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_peer_message_error.html#a9aaaa5b9fa46cc15327abd6c2825bc4d).
 4. Puts a limit on the frequency of  [join](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#ad7b321869aac2822b3f88f8c01ce0d40) the same channel: [Two times every five seconds](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_join_channel_error.html#a2040b572e1ef4f593f234a20c84a22c7).
 
-### New Features
+**New Features**
 
 <a name="getcount"></a>
 #### 1. Gets the member count of specified channel(s).
@@ -133,7 +133,7 @@ When updating attributes of a channel, you can use the  [setEnableNotificationTo
 
 > The SDK caches the channel attributes. If multiple users have the privilege to update the channel attributes, then we recommend calling the [getChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6) to update the cache before updating the channel attributes. 
 
-### Improvements
+**Improvements**
 
 #### Resends peer-to-peer messages
 
@@ -144,7 +144,7 @@ This release improves the resending mechanism of peer-to-peer messages, and exte
 The Agora RTM system will resend a maximum of 32 channel messages of up to 30 seconds to channel members, when they manage to reconnect to the system from poor network conditions. This greatly improves the overall arrival rate of channel messages under weak network conditions. 
 
 
-### API Changes
+**API Changes**
 
 #### Added Methods
 
@@ -181,7 +181,7 @@ The Agora RTM system will resend a maximum of 32 channel messages of up to 30 se
 
 v1.0.1 is released on August 1st, 2019. 
 
-### Issues Fixed
+**Issues Fixed**
 
 - When the connection to the Agora RTM system is interrupted, the SDK does not return the `onConnectionStateChanged` callback. 
 
@@ -189,7 +189,7 @@ v1.0.1 is released on August 1st, 2019.
 
 v1.0.0 is released on July 24th, 2019.
 
-### New Features
+**New Features**
 
 #### Interconnects with the legacy Agora Signaling SDK
 
@@ -217,7 +217,7 @@ Supports setting the log file size using the `setLogFileSize` method. The log fi
 
 > You can call this method once you have created and initializd an `RtmClient` instance. You do not have to call this method after calling the `login` method. 
 
-### Improvements
+**Improvements**
 
 Adds error codes based on the following scenarios: 
 
@@ -225,12 +225,12 @@ Adds error codes based on the following scenarios:
 - The method call frequency exceeds the limit. 
 - The user does not call the `login` method or the method call of `login` does not succeed before calling any of the RTM core APIs. 
 
-### Issues Fixed
+**Issues Fixed**
 
 - One can log in the Agora RTM system with a static App ID and an RTM token, which is generated from a dynamic App ID. 
 
 
-### API Changes
+**API Changes**
 
 - [setLogFile](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad44bd79d005d25c68712cc35d16d934b): Specifies the default path to the SDK log file.
 - [setLogFilter](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6726b3a3eafee4528280d3b0d1c6316f): Sets the output log level of the SDK.
@@ -242,9 +242,9 @@ Adds error codes based on the following scenarios:
 
 ## v0.9.3
 
-v0.9.3 is released on June 7th, 2019.
+v0.9.3 was released on June 7th, 2019.
 
-### New Features
+**New Features**
 
 #### Sends an (offline) peer-to-peer message to a specified user (receiver)
 
@@ -266,12 +266,12 @@ This version allows you to set or update a user's attributes. You can:
 > - The attributes you set will be clears when you log out of the RTM system.
 > - You can only set a maximum of 16 KB attributes in a single method call. Otherwise, the SDK triggers the `ATTRIBUTE_OPERATION_ERR_SIZE_OVERFLOW` error code. 
 
-### Improvements
+**Improvements**
 
 - Supports creating an RTM channel before logging in the Agora RTM system. 
 - Supports creating multiple RTM channels. But a user can only join a maximum of 20 RTM channels at the same time. When the number of the joined channels exceeds 20, the SDK triggers the `JOIN_CHANNEL_ERR_FAILURE` error code. 
 
-### Issues Fixed
+**Issues Fixed**
 
 - Occasional system crashes.
 - A user who has logged out of the Agora RTM system appears online to the other users until 30 seconds later. 
@@ -282,7 +282,7 @@ v0.9.2 is released on May 5th, 2019.
 
 > This release does not support [creating an RtmChannel instance](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) before [logging in](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) the Agora RTM system
 
-### New Features
+**New Features**
 
 #### Queries the Online Status of the Specified Users
 
@@ -308,12 +308,12 @@ In the production environment, you need to use a token to [log in](https://docs.
 > - The [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) method must be called before [creating an RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6411640143c4d0d0cd9481937b754dbf).
 > - The call frequency of the [renewToken](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353) method is two times every second.
 
-### Improvements
+**Improvements**
 
 -  Supports a `userId` that starts with a space.
 
 
-### API Changes
+**API Changes**
 
 #### Queries the Online Status of the Specified Users
 
@@ -343,18 +343,18 @@ v0.9.1 is released on April 4th, 2019.
 
 > This version does not come with the `setLogFile` and `setLogFilter` method. The default log file location is at **/sdcard/\<AppName\>/agorartm.log**.
 
-### New Features
+**New Features**
 
 This release adds the call invitation feature, allowing you to create, send, cancel, accept, and decline a call invitation in a one-to-one or one-to-many voice/video call. 
 
-### Improvements
+**Improvements**
 
 - Optimizes the object relations to facilitate understanding.
 - Renames some interfaces to conform to Java naming conventions. 
 - Removes `ChannelMessageState` and `PeerMessageState` to simplify the process of sending a channel or peer-to-peer message. Uses `ChannelMessageError` and `PeerMessageError` instead. 
 - Removes `IStateListener` for listening to message states. Uses the generic `ResultCallback` instead.
 
-### API Changes
+**API Changes**
 
 #### Adds
 
