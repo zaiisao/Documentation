@@ -12,7 +12,7 @@ Agora 录制 SDK 提供一个 recorder demo，直接在命令行中输入命令�
 
 开始前请确保你已经完成录制 SDK 的环境准备和集成工作，详见[集成客户端](../../cn/Recording/recording_integrate_cpp.md)。
 
-> 当录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道模式。
+> 当录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道场景。
 
 ## 编译代码示例
 
