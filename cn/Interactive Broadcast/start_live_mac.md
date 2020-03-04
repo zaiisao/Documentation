@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 06:54:11 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 12:38:38 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -168,15 +168,21 @@ Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-macOS-Obje
 
 ### <a name="ImportClass"></a>2. 导入类
 
-在项目中导入 AgoraRtcEngineKit 类：
+在项目中导入 AgoraRtcKit 类：
 
 ```objective-c
 // Objective-C
+// 自 3.0.0 版本，SDK 使用 AgoraRtcKit 类。
+#import <AgoraRtcKit/AgoraRtcEngineKit.h>
+// 在 3.0.0 版本以前，SDK 使用 AgoraRtcEngineKit 类。
 #import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>
 ```
 
 ```swift
 // Swift
+// 自 3.0.0 版本，SDK 使用 AgoraRtcKit 类。
+import AgoraRtcKit
+// 在 3.0.0 版本以前，SDK 使用 AgoraRtcEngineKit 类。
 import AgoraRtcEngineKit
 ```
 

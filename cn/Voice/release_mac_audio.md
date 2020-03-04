@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 09:35:40 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 13:11:50 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -17,6 +17,113 @@ macOS 语音 SDK 支持两种主要场景:
 -   音频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
+
+## **3.0.0 版**
+该版本于 2020 年 3 月 4 日发布。
+
+在该版本对通信场景采用了全新的系统架构，并升级了通信和直播场景下的 last mile 网络策略。在带宽不足时，新的网络策略能充分利用上下行有限带宽提升有效码率，从而增强弱网对抗能力，极大提升了弱网情况下通信和直播场景的终端用户体验。
+
+由于通信场景采用了新的系统架构，为保证新老版本通信用户的互通兼容，我们使用了回退机制。如果频道内有老版本通信用户加入，则当前版本 (3.0.0) 的终端用户会回退成老版本通信。一旦回退，频道内所有用户都无法享受新版本带来的体验提升。因此我们强烈推荐同步升级所有终端用户到当前版本。
+
+同时，我们对本地服务端录制进行了升级发布。为确保享受全新架构和网络策略优化带来的好处，使用本地服务端录制的客户，请务必同步升级本地服务端录制 SDK 至 3.0.0 版本。
+
+新增特性、改进与问题修复详见下文。
+
+**升级必看**
+#### 1. 静态库更名与新增动态库
+
+为与其他平台保持一致，该版本将 SDK 的库名由 AgoraRtcEngineKit 变更为 AgoraRtcKit。如果你由老版本的 SDK 升级至该版本，请务必重新导入类。详细步骤见《快速开始》中的[导入类](https://docs.agora.io/cn/Voice/start_call_mac?platform=macOS#a-nameimportclassa2-%E5%AF%BC%E5%85%A5%E7%B1%BB)章节。
+
+同时，为提升开发体验，该版本新增动态库支持。你可以在静态库和动态库之间任选一个进行集成，其中动态库的包名为 Agora_Native_SDK_for_macOS_v3_0_0_VOICE_Dynamic。
+
+使用动态库可以提高库的安全等级，方便 app 上传至 App Store，且避免与第三方库产生不兼容等问题。如果选择动态库，则需要重新进行集成并导入类。该步骤大约需要 5 分钟。详见《快速开始》中的[集成 SDK](https://docs.agora.io/cn/Voice/start_call_mac?platform=macOS#a-nameintegratesdka%E9%9B%86%E6%88%90-sdk) 和[导入类](https://docs.agora.io/cn/Voice/start_call_mac?platform=macOS#a-nameimportclassa2-%E5%AF%BC%E5%85%A5%E7%B1%BB)章节。
+
+<div class="alert info">下表展示分别使用动态库和静态库生成 ipa 文件过程中各文件体积的差异：
+
+<table>
+    <tr>
+        <td width="10%"><b>库类型</b></td>
+        <td width="12%"><b>ipa 体积</b></td>
+        <td width="15%"><b>解压后体积</b></td>
+        <td width="19%"><b>Frameworks 文件夹体积</b></td>
+        <td width="19%"><b>二进制文件体积</b></td>
+        <td width="25%"><b>Frameworks 文件夹 + 二进制文件总体积</b></td>
+    </tr>
+    <tr>
+        <td>动态库</td>
+        <td>31.1 M</td>
+        <td>65 M</td>
+        <td>51.47 M</td>
+        <td>2.4 M</td>
+        <td>53.87 M</td>
+    </tr>
+    <tr>
+        <td>静态库</td>
+        <td>30.6 M</td>
+        <td>63.7 M</td>
+        <td>30.1 M</td>
+        <td>22.5 M</td>
+        <td>52.6 M</td>
+    </tr>
+</table>
+	使用动态库集成时，SDK 不再存放于二进制文件中，而是作为一个独立的库存放在 Frameworks 文件夹中。与使用静态库集成相比，二进制文件体积减少了 20.1 M，Frameworks 文件夹体积增加了 21.37 M。
+</div>
+
+**新增特性**
+
+#### 1. 多频道管理
+
+为方便用户在同一时间加入多个频道，该版本新增了 [`AgoraRtcChannel`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcChannel.html) 和 [`AgoraRtcChannelDelegate`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcChannelDelegate.html) 类。通过创建多个 `AgoraRtcChannel` 对象，用户可以加入各 `AgoraRtcChannel` 对象对应的频道中，实现多频道功能。
+
+加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考《[加入多频道](../../cn/Voice/multiple_channel_apple.md)》。
+
+#### 2. 调节本地播放的指定远端用户音量
+
+该版本新增 [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustUserPlaybackSignalVolume:volume:) 方法，用以调节本地用户听到的指定远端用户的音量。通话或直播过程中，你可以多次调用该方法，来调节多个远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
+
+**改进**
+
+#### 1. 音频编码属性
+
+为满足更高音质需求，该版本调整了直播场景下 `AgoraAudioProfileDefault(0)` 对应的音频编码属性，详见下表：
+
+| SDK 版本   | `AgoraAudioProfileDefault(0)`                                  |
+| :--------- | :---------------------------------------------------------- |
+| 3.0.0      | 48 KHz 采样率，音乐编码，单声道，编码码率最大值为 52 Kbps。 |
+| 3.0.0 之前 | 32 KHz 采样率，音乐编码，单声道，编码码率最大值为 44 Kbps。 |
+
+#### 2. 质量透明
+
+为方便开发者获取更多通话统计信息，该版本在 [`AgoraChannelStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraChannelStats.html) 类中新增 `gatewayRtt`、`memoryAppUsageRatio`、`memoryTotalUsageRatio` 和 `memoryAppUsageInKbytes` 成员，方便更好地监控通话的质量和通话过程中的内存变动。
+
+#### 3. 其他提升
+
+该版本自动开启直播场景下 Native SDK 与 Web SDK 的互通，并废弃原有的 `enableWebSdkInteroperability` 方法。
+
+**问题修复**
+
+- 修复了混音、音频录制、音频编码、回声等音频问题。
+- 修复了特定场景下偶现的 app 崩溃、日志文件、推流不稳定等问题。
+
+**API 变更**
+
+#### 行为变更
+
+该版本修改了 macOS 设备连接耳机或蓝牙时的音频路由。修改后的语音路由与 macOS 设备管理器中显示的一致。
+
+#### 新增
+
+- [`AgoraRtcAudioVolumeInfo`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcAudioVolumeInfo.html) 结构体新增 `channelId` 成员
+- [`createRtcChannel`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/createRtcChannel:)
+- [`AgoraRtcChannel`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcChannel.html) 类
+- [`AgoraRtcChannelDelegate`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcChannelDelegate.html) 类
+- [`AgoraChannelStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraChannelStats.html) 类中新增 `gatewayRtt`、`memoryAppUsageRatio`、`memoryTotalUsageRatio` 和 `memoryAppUsageInKbytes` 成员
+
+#### 废弃
+
+- `enableWebSdkInteroperability`
+- `didAudioMuted`、`firstRemoteAudioFrameDecodedOfUid` 和 `firstRemoteAudioFrameOfUid`，使用 [`remoteAudioStateChangedOfUid`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:remoteAudioStateChangedOfUid:state:reason:elapsed:) 取代
+- `streamPublishedWithUrl` 和 `streamUnpublishedWithUrl`，使用 [`rtmpStreamingChangedToState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingChangedToState:state:errorCode:) 取代
 
 ## **2.9.1 版**
 该版本于 2019 年 9 月 19 日发布。新增特性与修复问题列表详见下文。
@@ -32,12 +139,6 @@ macOS 语音 SDK 支持两种主要场景:
 #### 设置客户端录音采样率
 
 为方便用户设置客户端录音的采样率，该版本废弃了原有的 `startAudioRecording` 方法，并使用新的同名方法进行取代。新的方法下，录音采样率可设为 16、32、44.1 或 48 kHz。原方法仅支持固定的 32 kHz 采样率，该版本继续保留原方法但我们不推荐使用。
-
-**问题修复**
-
-#### 视频
-
-修复了 [`getDeviceInfo`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getDeviceInfo:) 返回值与实际可用设备不符的问题。
 
 **API 变更**
 
@@ -75,7 +176,7 @@ macOS 语音 SDK 支持两种主要场景:
 
 #### 2. 关闭/开启本地音频采集
 
-为提高通信模式下，本地用户关闭麦克风后听到的音质，该版本在 `enableLocalAudio`(true) 后，将系统音量修改为媒体音量。调用 `enableLocalAudio`(false) 后，系统音量自动切换为通话音量。
+为提高通信场景下，本地用户关闭麦克风后听到的音质，该版本在 `enableLocalAudio`(true) 后，将系统音量修改为媒体音量。调用 `enableLocalAudio`(false) 后，系统音量自动切换为通话音量。
 
 **新增特性**
 
@@ -128,8 +229,8 @@ macOS 语音 SDK 支持两种主要场景:
 
 #### 2. 其他改进
 
-- 优化了 GameStreaming 模式下的音频质量。
-- 优化了通信模式下用户关闭麦克风后听到的音质。
+- 优化了 GameStreaming 场景下的音频质量。
+- 优化了通信场景下用户关闭麦克风后听到的音质。
 
 **问题修复**
 

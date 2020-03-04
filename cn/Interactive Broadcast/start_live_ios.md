@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: iOS
-updatedAt: Wed Mar 04 2020 12:32:08 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 12:39:03 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -84,6 +84,9 @@ end
 	- libresolv.tbd
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
+
+ <div class="alert note">如需支持 iOS 11.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
+ 
 4. 添加 **AgoraRtcKit.framework** 库。
  - 如果你集成的是静态库，在 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单中，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件并打开。
  - 如果你集成的是动态库，进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开，并将文件状态改为 **Embed & Sign**。
@@ -92,16 +95,21 @@ end
 
 <div class="alert note">自 3.0.0 版本起，库名由 <b>AgoraRtcEngineKit.framework</b> 改为 <b>AgoraRtcKit.framework</b>。如果你将旧版本 SDK 升级至 3.0.0 版本，请按以下步骤重新集成：<ul><li>打开 Xcode，在项目导航栏中移除 <b>AgoraRtcEngineKit.framework</b>。<li>进入 <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b> 菜单，点击 <b>-</b> 移除 <b>AgoraRtcEngineKit.framework</b> 文件。<li>如果你集成的是静态库，在上述菜单中点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件。<br>如果你集成的是动态库，进入 <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> 菜单，点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件，再点击 <b>Add Other…</b>，找到本地文件打开，并将文件状态改为 <b>Embed & Sign</b>。</br></div>
 
- **添加前**：
+ **静态库添加前**：
  
- ![](https://web-cdn.agora.io/docs-files/1568800190639)
+ ![](https://web-cdn.agora.io/docs-files/1583329439410)
  
- **添加后**：
+ **静态库添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1568800223316)
+ ![](https://web-cdn.agora.io/docs-files/1583329456927)
  
-<div class="alert note">如需支持 iOS 11.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
-
+ **动态库添加前**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583329514061)
+ 
+ **动态库添加后**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583329540790)
 
 
 ### 添加媒体设备权限
@@ -142,7 +150,7 @@ end
 	
 ### <a name="ImportClass"></a>2. 导入类
 
-在项目中导入 `AgoraRtcEngineKit` 类：
+在项目中导入 `AgoraRtcKit` 类：
 
 ```objective-c
 // Objective-C

@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Wed Mar 04 2020 12:32:17 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 13:10:37 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -33,7 +33,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 为与其他平台保持一致，该版本将 SDK 的库名由 AgoraRtcEngineKit 变更为 AgoraRtcKit。如果你由老版本的 SDK 升级至该版本，请务必重新导入类。详细步骤见《快速开始》中的[导入类](https://docs.agora.io/cn/Video/start_call_ios?platform=iOS#a-nameimportclassa2-%E5%AF%BC%E5%85%A5%E7%B1%BB)章节。
 
-同时，为提升开发体验，该版本新增动态库支持。你可以在静态库和动态库之间任选一个进行集成，其中动态库的包名为 Agora_Native_SDK_for_iOS_v3_0_0_FULL_Dynamic。
+同时，为提升开发体验，该版本新增动态库支持。你可以在静态库和动态库之间任选一个进行集成，其中动态库的包名为 Agora_Native_SDK_for_iOS_v3_0_0_VOICE_Dynamic。
 
 使用动态库可以提高库的安全等级，方便 app 上传至 App Store，且避免与第三方库产生不兼容等问题。如果选择动态库，则需要重新进行集成并导入类。该步骤大约需要 5 分钟。详见《快速开始》中的[集成 SDK](https://docs.agora.io/cn/Video/start_call_ios?platform=iOS#%E9%9B%86%E6%88%90-sdk) 和[导入类](https://docs.agora.io/cn/Video/start_call_ios?platform=iOS#a-nameimportclassa2-%E5%AF%BC%E5%85%A5%E7%B1%BB)章节。
 
@@ -41,16 +41,14 @@ iOS 语音 SDK 支持两种主要场景:
 
 <table>
     <tr>
-			<td width="10%"><b>SDK 版本</b></td>
         <td width="10%"><b>库类型</b></td>
         <td width="12%"><b>ipa 体积</b></td>
-        <td width="10%"><b>解压后体积</b></td>
+        <td width="15%"><b>解压后体积</b></td>
         <td width="19%"><b>Frameworks 文件夹体积</b></td>
-        <td width="15%"><b>二进制文件体积</b></td>
-        <td width="23%"><b>Frameworks 文件夹 + 二进制文件总体积</b></td>
+        <td width="19%"><b>二进制文件体积</b></td>
+        <td width="25%"><b>Frameworks 文件夹 + 二进制文件总体积</b></td>
     </tr>
     <tr>
-        <td>3.0.0 及以上</td>
         <td>动态库</td>
         <td>31.1 M</td>
         <td>65 M</td>
@@ -59,7 +57,6 @@ iOS 语音 SDK 支持两种主要场景:
         <td>53.87 M</td>
     </tr>
     <tr>
-        <td>3.0.0 以下</td>
         <td>静态库</td>
         <td>30.6 M</td>
         <td>63.7 M</td>
