@@ -39,7 +39,8 @@ v1.2.1 was released on December 17, 2019.
 
 If you use the `sendMessageToPeer` method to send a <i>text</i> message in the format of AgoraRTMLegacyEndcallCompatibleMessagePrefix\_\<channelId\>\_\<your additional information\>, then this method is compatible with the endCall method of the legacy Agora Signaling SDK. Replace \<channelId\> with the channel ID from which you want to leave (end call), and replace \<your additional information\> with any additional information. Note that you must not put any "_" (underscore) in your additional information but you can set \<your additional information\> as empty "".
 
-### Issues Fixed
+**Issues Fixed**
+
 
 - If a channel member reconnects to the Agora RTM server after being interrupted, chances are the rest members of the channel can receive `MemberJoined` twice. 
 
