@@ -72,11 +72,11 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
 2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
 3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。
   - Accelerate.framework
-	- CoreWLAN.framework
-	- libc++.dylib
-	- libresolv.9.tbd
-	- SystemConfiguration.framework
-	- VideoToolbox.framework
+  - CoreWLAN.framework
+  - libc++.tbd
+  - libresolv.9.tbd
+  - SystemConfiguration.framework
+  - VideoToolbox.framework
 4. 添加 **AgoraRtcKit.framework** 库。
  - 如果你集成的是静态库，在 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单中，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件并打开。
  - 如果你集成的是动态库，进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开，并将文件状态改为 **Embed & Sign**。
@@ -86,13 +86,21 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
 <div class="alert note">自 3.0.0 版本起，库名由 <b>AgoraRtcEngineKit.framework</b> 改为 <b>AgoraRtcKit.framework</b>。如果你将旧版本 SDK 升级至 3.0.0 版本，请按以下步骤重新集成：<ul><li>打开 Xcode，在项目导航栏中移除 <b>AgoraRtcEngineKit.framework</b>。<li>进入 <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b> 菜单，点击 <b>-</b> 移除 <b>AgoraRtcEngineKit.framework</b> 文件。<li>如果你集成的是静态库，在上述菜单中点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件。<br>如果你集成的是动态库，进入 <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> 菜单，点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件，再点击 <b>Add Other…</b>，找到本地文件打开，并将文件状态改为 <b>Embed & Sign</b>。</br></div>
 
 
- **添加前**：
+**静态库添加前**：
  
- ![](https://web-cdn.agora.io/docs-files/1568800969337)
+ ![](https://web-cdn.agora.io/docs-files/1583330323514)
  
- **添加后**：
+ **静态库添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1568800978769)
+ ![](https://web-cdn.agora.io/docs-files/1583330337251)
+ 
+ **动态库添加前**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583330350955)
+ 
+ **动态库添加后**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583330361967)
 
 ### 添加媒体设备权限
 
