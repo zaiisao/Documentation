@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: wechat live
 platform: 微信小程序
-updatedAt: Tue Dec 10 2019 04:21:25 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:32:27 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现互动直播。
@@ -169,7 +169,7 @@ client.rejoin(token, channel, uid, uids, onSuccess, onFailure);
 
 <details>
 	<summary><font color="#3ab7f8">设置用户角色</font></summary>
-小程序 SDK 与 Native SDK 互通的场景下，如果 Native 端的频道模式为直播，且小程序端作为观众加入频道，则还需调用 setRole 方法，将用户角色设置为观众。
+小程序 SDK 与 Native SDK 互通的场景下，如果 Native 端的频道场景为直播，且小程序端作为观众加入频道，则还需调用 setRole 方法，将用户角色设置为观众。
 
 ```javascript
 client.setRole(role);

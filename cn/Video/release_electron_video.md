@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Electron
-updatedAt: Tue Jan 21 2020 08:22:27 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:25:01 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora SDK for Electron 的发版说明。
@@ -78,12 +78,12 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
 
 #### 3. 屏幕共享质量提升
 
-该版本提升了通信模式下，下行网络状况不佳时，屏幕共享文字的清晰度。该改进只在屏幕共享的内容类型 `ContentHint` 设置为 `Details(2)` 时生效。
+该版本提升了通信场景下，下行网络状况不佳时，屏幕共享文字的清晰度。该改进只在屏幕共享的内容类型 `ContentHint` 设置为 `Details(2)` 时生效。
 
 #### 4. 其他改进
 
 - 优化了 Game Streaming 模式下的音频质量。
-- 优化了通信模式下用户关闭麦克风后听到的音质。
+- 优化了通信场景下用户关闭麦克风后听到的音质。
 
 **问题修复**
 

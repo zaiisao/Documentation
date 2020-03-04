@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: iOS
-updatedAt: Tue Dec 10 2019 04:21:20 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:32:16 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -175,27 +175,27 @@ func initializeAgoraEngine() {
 }
 ```
 
-### 4. 设置频道模式
+### 4. 设置频道场景
 
-初始化结束后，调用 `setChannelProfile` 方法，将频道模式设为直播。
+初始化结束后，调用 `setChannelProfile` 方法，将频道场景设为直播。
 
-一个 `AgoraRtcEngineKit` 只能使用一种频道模式。如果想切换为其他模式，需要先调用 `destroy` 方法释放当前的 `AgoraRtcEngineKit` 实例，然后使用 `sharedEngineWithAppId` 方法创建一个新实例，再调用 `setChannelProfile` 设置新的频道模式。
+一个 `AgoraRtcEngineKit` 只能使用一种频道场景。如果想切换为其他模式，需要先调用 `destroy` 方法释放当前的 `AgoraRtcEngineKit` 实例，然后使用 `sharedEngineWithAppId` 方法创建一个新实例，再调用 `setChannelProfile` 设置新的频道场景。
 
 ```objective-c
 // Objective-C
-// 设置频道模式。
+// 设置频道场景。
 [self.rtcEngine setChannelProfile:AgoraChannelProfileLiveBroadcasting];
 ```
 
 ```swift
 // Swift
-// 设置频道模式。
+// 设置频道场景。
 agoraKit.setChannelProfile(.liveBroadcasting)
 ```
 
 ### 5. 设置用户角色
 
-直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道模式为直播后，你可以在 App 中参考如下步骤设置用户角色：
+直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道场景为直播后，你可以在 App 中参考如下步骤设置用户角色：
 
 1. 让用户选择自己的角色是主播还是观众
 2. 调用 `setClientRole` 方法，然后使用用户选择的角色进行传参

@@ -3,7 +3,7 @@
 title: 七人以上视频场景
 description: 
 platform: Windows
-updatedAt: Tue Dec 10 2019 04:21:39 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:35:09 GMT+0800 (CST)
 ---
 # 七人以上视频场景
 ## 功能描述
@@ -17,7 +17,7 @@ updatedAt: Tue Dec 10 2019 04:21:39 GMT+0800 (CST)
 
 参考如下步骤，在你的项目中实现七人以上视频场景功能：
 
-1. 加入频道前，调用 `setParameters("{"che.audio.live_for_comm":true}")` 开启多人视频直播模式。
+1. 加入频道前，调用 `setParameters("{"che.audio.live_for_comm":true}")` 开启多人视频直播场景。
 
 > 如果使用早于 v2.3.2 的 SDK，你还需要调用 `setParameters("{\"che.video.moreFecSchemeEnable\":true}”) ` 开启 ULP FEC，提高视频数据传输的可靠性。
 

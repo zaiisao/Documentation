@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Web
-updatedAt: Fri Feb 28 2020 10:59:03 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:34:39 GMT+0800 (CST)
 ---
 # 实现互动直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音视频互动直播。
@@ -220,7 +220,7 @@ var option = {
 
 在 `AgoraRTC.createClient` 方法中，需注意 `mode` 和 `codec` 这两个参数的设置：
 
-   - `mode` 用于设置[频道模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#频道模式)。一对一或多人通话中，建议设为 `"rtc"` ，使用通信模式；[互动直播](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#a-name-livea直播核心概念)中，建议设为 `"live"`，使用直播模式。
+   - `mode` 用于设置[频道场景](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#频道场景)。一对一或多人通话中，建议设为 `"rtc"` ，使用通信场景；[互动直播](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#a-name-livea直播核心概念)中，建议设为 `"live"`，使用直播场景。
    - `codec` 用于设置浏览器使用的编解码格式。如果你需要使用 Safari 12.1 及之前版本，将该参数设为 `"h264"`；如果你需要在手机上使用 Agora Web SDK，请参考[移动端使用 Web SDK](https://docs.agora.io/cn/faq/web_on_mobile)。
 
 你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
@@ -230,7 +230,7 @@ var option = {
 3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
 
 ### 设置用户角色
-直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道模式为直播后，你可以在 App 中参考如下步骤设置用户角色：
+直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道场景为直播后，你可以在 App 中参考如下步骤设置用户角色：
 
 1. 让用户选择自己的角色是主播（`"host"`）还是观众（`"audience"`）。
 2. 调用 `setClientRole` 方法，传入用户选择的角色。

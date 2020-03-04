@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: Windows
-updatedAt: Tue Dec 10 2019 04:21:26 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:32:30 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何通过 Agora SDK 快速实现互动直播。
@@ -130,18 +130,18 @@ private:
 };
 ```
 
-### 3. 设置频道模式
-初始化结束后，调用 `setChannelProfile` 方法，将频道模式设为直播。
+### 3. 设置频道场景
+初始化结束后，调用 `setChannelProfile` 方法，将频道场景设为直播。
 
-一个 IRtcEngine 只能使用一种频道模式。如果想切换为其他模式，需要先调用 `release` 方法释放当前的 IRtcEngine 实例，然后调用 `createAgoraRtcEngine` 和 `initialize` 方法创建一个新实例，再调用 `setChannelProfile` 设置新的频道模式。
+一个 IRtcEngine 只能使用一种频道场景。如果想切换为其他模式，需要先调用 `release` 方法释放当前的 IRtcEngine 实例，然后调用 `createAgoraRtcEngine` 和 `initialize` 方法创建一个新实例，再调用 `setChannelProfile` 设置新的频道场景。
 
 ```C++
-// 设置频道模式为直播。
+// 设置频道场景为直播。
 m_lpRtcEngine->setChannelProfile(CHANNEL_PROFILE_LIVE_BROADCASTING);
 ```
 
 ### 4. 设置用户角色
-直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道模式为直播后，你可以在 App 中参考如下步骤设置用户角色：
+直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道场景为直播后，你可以在 App 中参考如下步骤设置用户角色：
 - 让用户选择自己的角色是主播还是观众
 - 调用 `setClientRole` 方法，然后使用用户选择的角色进行传参
 

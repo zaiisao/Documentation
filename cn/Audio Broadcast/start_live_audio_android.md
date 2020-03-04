@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:16:48 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:36:25 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 语音 SDK 快速实现音频直播。
@@ -359,7 +359,7 @@ private void setChannelProfile() {
 
 ### 6. 设置用户角色
 
-直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道模式为直播后，你可以在 App 中参考如下步骤设置用户角色：
+直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道场景为直播后，你可以在 App 中参考如下步骤设置用户角色：
 
 1. 让用户选择自己的角色是主播还是观众；
 2. 调用 `setClientRole` 方法，然后使用用户选择的角色进行传参。

@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set audio profile for apple
 platform: iOS,macOS
-updatedAt: Thu Sep 26 2019 05:59:23 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:28:38 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
@@ -26,7 +26,7 @@ Agora SDK 提供 `setAudioProfile` 方法给开发者根据场景需求灵活配
 <tr>
 <td>profile</td>
 <td>代表不同的音频参数配置（音质），比如采样率、码率和编码模式等：
-	<li>AgoraAudioProfileDefault(0)：默认设置。通信模式下为 AgoraAudioProfileSpeechStandard(1)，直播模式下为 AgoraAudioProfileMusicStandard(2)</li>
+	<li>AgoraAudioProfileDefault(0)：默认设置。通信场景下为 AgoraAudioProfileSpeechStandard(1)，直播场景下为 AgoraAudioProfileMusicStandard(2)</li>
 	<li>AgoraAudioProfileSpeechStandard(1)：指定 32 kHz 的采样率，语音编码，单声道，编码码率最大值为 18 kbps</li>
 	<li>AgoraAudioProfileMusicStandard(2)：指定 48 kHz 的采样率，音乐编码，单声道，编码码率最大值为 48 kbps</li>
 	<li>AgoraAudioProfileMusicStandardStereo(3)：指定 48 kHz 的采样率，音乐编码，双声道，编码码率最大值为 56 kbps</li>
@@ -172,8 +172,8 @@ SDK 在 `setAudioProfile` 中提供 6 种不同的 Audio scenario，其中不同
 </tr>
 	<tr>
 <td>Default</td>
-<td  rowspan="3">	<li>通信模式下，所有用户使用通话音量</li>
-	<li>直播模式下，主播及连麦主播使用通话音量，观众使用媒体音量</li></td>
+<td  rowspan="3">	<li>通信场景下，所有用户使用通话音量</li>
+	<li>直播场景下，主播及连麦主播使用通话音量，观众使用媒体音量</li></td>
 </tr>
 		<tr>
 <td>Education</td>

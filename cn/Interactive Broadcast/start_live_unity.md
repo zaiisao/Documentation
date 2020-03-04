@@ -3,7 +3,7 @@
 title: 实现视频互动直播
 description: 
 platform: Unity
-updatedAt: Wed Feb 26 2020 05:47:21 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:35:43 GMT+0800 (CST)
 ---
 # 实现视频互动直播
 本文介绍如何使用 Agora Unity SDK 快速实现视频互动直播。
@@ -147,14 +147,11 @@ CheckPermission();
 ### 3. 初始化 IRtcEngine
 
 
-$$ d1a9cc20-d2cf-11e9-9546-9fdade2ba6ee
-{
-  """: " ",
-  "[": " ",
-  "]": " ",
-  """: " "
-}
-$$
+你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
+
+1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
+2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
+3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
 
 你还可以根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户视频首帧等。
 
@@ -173,20 +170,20 @@ mRtcEngine.OnUserJoinedHandler = OnUserJoinedHandler;
 mRtcEngine.OnUserOfflineHandler = OnUserOfflineHandler;
 ```
 
-### 4. 设置频道模式
+### 4. 设置频道场景
 
-初始化结束后，调用 `SetChannelProfile` 方法，将频道模式设为 `CHANNEL_PROFILE_LIVE_BROADCASTING`。
+初始化结束后，调用 `SetChannelProfile` 方法，将频道场景设为 `CHANNEL_PROFILE_LIVE_BROADCASTING`。
 
-一个 `IRtcEngine` 只能使用一种频道模式。如果想切换为其他模式，需要先调用 `Destroy` 方法销毁当前的 `IRtcEngine` 实例，然后使用 `GetEngine` 方法创建一个新实例，再调用 `SetChannelProfile` 设置新的频道模式。
+一个 `IRtcEngine` 只能使用一种频道场景。如果想切换为其他模式，需要先调用 `Destroy` 方法销毁当前的 `IRtcEngine` 实例，然后使用 `GetEngine` 方法创建一个新实例，再调用 `SetChannelProfile` 设置新的频道场景。
 
  ```C#
- // 设置频道模式为直播模式。
+ // 设置频道场景为直播场景。
 mRtcEngine.SetChannelProfile(CHANNEL_PROFILE.CHANNEL_PROFILE_LIVE_BROADCASTING);
  ```
 
 ### 5. 设置用户角色
 
-直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道模式为直播后，你可以在 App 中参考如下步骤设置用户角色：
+直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道场景为直播后，你可以在 App 中参考如下步骤设置用户角色：
 
 1. 让用户选择自己的角色是主播还是观众。
 2. 调用 `SetClientRole` 方法，然后使用用户选择的角色进行传参。

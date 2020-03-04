@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 03:58:43 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:33:17 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 完整包的发版说明。
@@ -23,7 +23,7 @@ Linux 完整包支持两种主要场景:
 
 Linux Client SDK 首版上线，支持如下功能：
 
--   通信模式下，音视频双向通信
+-   通信场景下，音视频双向通信
 
 -   视频设备信息收集
 

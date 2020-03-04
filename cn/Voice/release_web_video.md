@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue Feb 25 2020 04:19:30 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:34:23 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -464,7 +464,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 #### 4. 设置用户角色
 
-新增 `Client.setClientRole` 方法，支持在直播模式下设置用户的角色为主播或者观众。主播可以发布和接收音视频流，观众只能接收音视频流，无法发布。
+新增 `Client.setClientRole` 方法，支持在直播场景下设置用户的角色为主播或者观众。主播可以发布和接收音视频流，观众只能接收音视频流，无法发布。
 
 相应新增 `client-role-changed` 回调，用于通知用户角色的改变。
 
@@ -711,7 +711,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 本次发版新增如下功能：
 
-#### 1. 新通信模式
+#### 1. 新通信场景
 
 为增加 Web SDK 的适用场景，提升与 Native SDK 在通信和直播下的互通质量，在 `createClient` 方法中新增 `mode` 和 `codec` 参数，其中 `mode` 参数支持 rtc 和 live 两种场景，`codec` 参数支持 vp8 和 264 两种编解码方式。 
 

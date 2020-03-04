@@ -3,7 +3,7 @@
 title: 通话中质量监测
 description: 通话中质量透明 Web
 platform: Web
-updatedAt: Mon Jan 06 2020 07:28:45 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:28:27 GMT+0800 (CST)
 ---
 # 通话中质量监测
 ## 功能描述
@@ -68,7 +68,7 @@ client.getTransportStats((stats) => {
 - `RecvBytes`：接收字节数，累计值。
 - `SendBitrate`：音视频总发送码率（Kbps），瞬间值。
 - `SendBytes`：发送字节数，累计值。
-- `UserCount`：通信模式下，该值为当前频道内的用户人数。直播模式下，如果本地用户为主播，该值为当前频道内的主播人数；如果本地用户为观众，该值为当前频道内的主播人数 + 1。
+- `UserCount`：通信场景下，该值为当前频道内的用户人数。直播场景下，如果本地用户为主播，该值为当前频道内的主播人数；如果本地用户为观众，该值为当前频道内的主播人数 + 1。
 
 ```javascript
 client.getSessionStats((stats) => {

@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: Android
-updatedAt: Thu Oct 31 2019 03:46:25 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:25:37 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文介绍媒体流加密方案。
@@ -16,7 +16,7 @@ updatedAt: Thu Oct 31 2019 03:46:25 GMT+0800 (CST)
 
 ## 场景 2: 使用内置的加密算法
 
-使用 Agora SDK 内置的加密算法会用到通信模式下的 API。下图描述了启用了内置加密方案的声网音视频通信方案：
+使用 Agora SDK 内置的加密算法会用到通信场景下的 API。下图描述了启用了内置加密方案的声网音视频通信方案：
 
 <img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 840px;"/>
 

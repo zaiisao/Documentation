@@ -3,7 +3,7 @@
 title: 错误码和警告码
 description: 
 platform: Android,Windows,iOS,macOS
-updatedAt: Fri Feb 21 2020 01:11:48 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:26:35 GMT+0800 (CST)
 ---
 # 错误码和警告码
 Agora SDK 在调用 API 或运行时，可能会返回错误或警告码:
@@ -371,11 +371,11 @@ Agora SDK 在调用 API 或运行时，可能会返回错误或警告码:
 </tr>
 <tr><td>WARN_SET_CLIENT_ROLE_TIMEOUT</td>
 <td>118</td>
-<td>直播模式下设置用户模式超时。出现该警告无法自动恢复通话</td>
+<td>直播场景下设置用户模式超时。出现该警告无法自动恢复通话</td>
 </tr>
 <tr><td>WARN_SET_CLIENT_ROLE_NOT_AUTHORIZED</td>
 <td>119</td>
-<td>直播模式下用户模式未授权。出现该警告无法自动恢复通话</td>
+<td>直播场景下用户模式未授权。出现该警告无法自动恢复通话</td>
 </tr>
 <tr><td>WARN_OPEN_CHANNEL_INVALID_TICKET</td>
 <td>121</td>
