@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Tue Jan 21 2020 08:43:08 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:22:32 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -115,7 +115,7 @@ https://miniapp-4.agoraio.cn
 为提升互通体验，该版本新增了 `setRole` 接口。当使用场景同时满足以下条件时，小程序 SDK 必须调用该接口将用户角色设置为观众：
 
 -   小程序 SDK 与 Native SDK 互通
--   Native 端的频道模式为直播模式
+-   Native 端的频道场景为直播模式
 -   小程序端作为观众加入频道
 
 
