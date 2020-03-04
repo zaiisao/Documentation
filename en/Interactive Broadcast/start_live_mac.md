@@ -83,13 +83,21 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 <div class="alert note">As of v3.0.0, the library name changes from <b>AgoraRtcEngineKit.framework</b> to <b>AgoraRtcKit.framework</b>. To upgrade your SDK to v3.0.0, refer to the following steps to re-integrate the SDK:<ul><li>Open Xcode, remove <b>AgoraRtcEngineKit.framework</b> from the Navigator.<li>Click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, click <b>-</b> to remove AgoraRtcEngineKit.framework.<li> If you integrate the SDK with the static library, click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, and click <b>+</b> to add AgoraRtcKit.framework instead.<br>If you integrate the SDK with the dynamic library, click <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> click <b>+</b> to add AgoraRtcKit.framework instead, and change the status of <b>AgoraRtcKit.framework</b> to <b>Embed & Sign</b>. </br></div>
 
- **Before**:
-
- ![](https://web-cdn.agora.io/docs-files/1568800867369)
-
- **After**:
-
- ![](https://web-cdn.agora.io/docs-files/1568800879077)
+**Before integrating the static library**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583330323514)
+ 
+ **After integrating the static library**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583330337251)
+ 
+ **Before integrating the dynamic library**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583330350955)
+ 
+ **After integrating the dynamic library**：
+ 
+ ![](https://web-cdn.agora.io/docs-files/1583330361967)
 
 ### Add project permissions
 
