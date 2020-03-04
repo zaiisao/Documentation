@@ -3,7 +3,7 @@
 title: 实现互动直播
 description: 
 platform: iOS
-updatedAt: Wed Mar 04 2020 06:51:50 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 12:32:08 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -146,11 +146,17 @@ end
 
 ```objective-c
 // Objective-C
+// 自 3.0.0 版本，SDK 使用 AgoraRtcKit 类。
+#import <AgoraRtcKit/AgoraRtcEngineKit.h>
+// 在 3.0.0 版本以前，SDK 使用 AgoraRtcEngineKit 类。
 #import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>
 ```
 
 ```swift
 // Swift
+// 自 3.0.0 版本，SDK 使用 AgoraRtcKit 类。
+import AgoraRtcKit
+// 在 3.0.0 版本以前，SDK 使用 AgoraRtcEngineKit 类。
 import AgoraRtcEngineKit
 ```
 
