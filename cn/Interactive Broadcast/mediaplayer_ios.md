@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Tue Mar 03 2020 03:38:48 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:32:41 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -222,9 +222,9 @@ _mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
 
 **本地用户加入频道**
 
-参考 [RTC 快速开始](https://docs.agora.io/cn/InteractiveBroadcast/start_live_ios?platform=iOS#4-设置频道模式)，实现本地用户以主播身份加入 Agora 直播频道：
+参考 [RTC 快速开始](https://docs.agora.io/cn/InteractiveBroadcast/start_live_ios?platform=iOS#4-设置频道场景)，实现本地用户以主播身份加入 Agora 直播频道：
 
-1. 调用 `setChannelProfile` 方法设置频道模式为直播。
+1. 调用 `setChannelProfile` 方法设置频道场景为直播。
 2. 调用 `setClientRole` 方法设置本地用户角色为主播。
 3. 调用 `enableVideo` 方法开启视频模块。
 4. 调用 `joinChannelByToken` 方法使本地用户加入频道。

@@ -17,7 +17,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 
 
-### 问题修复
+**问题修复**
 
 修复了一个偶现的频道属性操作后无法收到回调的问题。
 
@@ -25,13 +25,14 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 该版本于 2019 年 11 月 29 日 发布。
 
-### 新增功能
+**新增功能**
 
 **支持与老信令 SDK 的 endCall 方法兼容** 
 
 你可以调用 `sendMessageToPeer` 方法在发送<i>文本</i>消息时将消息设为 AgoraRTMLegacyEndcallCompatibleMessagePrefix\_\<channelId\>\_\<your additional information\> 格式即可。请以 endCall 对应频道的 ID 替换 \<channelId\>， \<your additional information\> 为附加文本信息。请注意：附加文本信息中不可使用下划线 "_" ，附加文本信息可以设为空字符串 "" 。
 
-### 问题修复
+**问题修复**
+
 
 - 修复了一个用户使用 VPN 登陆 RTM，关闭 VPN 后 RTM 重连失败的问题。
 - 修复了一个频道中用户断线重连，频道中其它用户有概率收到两次 `MemberJoined` 回调的问题。
