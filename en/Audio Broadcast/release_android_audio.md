@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Feb 17 2020 01:13:19 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:48:18 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -33,6 +33,92 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v3.0.0
+
+v3.0.0 was released on Mar 4, 2020.
+
+In this release, Agora improves the user experience under poor network conditions for both the Communication and Live-broadcast profiles through the following measures:
+
+- Adopting a new architecture for the Communication profile.
+- Upgrading the last-mile network strategy for both the Communication and Live-broadcast profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
+
+To deal with any incompatibility issues caused by the architecture change, Agora uses the fallback mechanism to ensure that users of different versions of the SDKs can communicate with each other: if a user joins the channel from a client using a previous version, all clients using v3.0.0 automatically fall back to the older version. This has the effect that none of the users in the channel can enjoy the improved experience. Therefore we strongly recommend upgrading all your clients to v3.0.0.
+
+We also upgrade the On-premise Recording SDK to v3.0.0. Ensure that you upgrade your On-premise Recording SDK to v3.0.0 so that all users can enjoy the improvements brought by the new architecture and network strategy.
+
+**Compatibility changes**
+
+#### Default log file path change
+
+To avoid privilege issues, this release changes the default log file path from `/storage/emulated/0/<package name>/` to `/storage/emulated/0/Android/data/<package name>/files/`.
+
+**New features**
+
+#### 1. Multiple channel management
+
+To enable a user to join an unlimited number of channels at a time, this release adds the [`RtcChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_channel.html) and [`IRtcChannelEventHandler`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_channel_event_handler.html) classes. By creating multiple `RtcChannel` objects, a user can join the corresponding channels at the same time.
+
+After joining multiple channels, users can receive the audio and video streams of all the channels, but publish one stream to only one channel at a time. This feature applies to scenarios where users need to receive streams from multiple channels, or frequently switch between channels to publish streams. See [Join multiple channels](../../en/Audio%20Broadcast/multiple_channel_android.md) for details.
+
+#### 2. Adjusting the playback volume of the specified remote user
+
+Adds [`adjustUserPlaybackSignalVoume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aac9c5135996428d9a238fe8e66858268) for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or a live broadcast to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+
+#### 3. Agora Mediaplayer Kit
+
+To enrich the playability of a live broadcast, Agora releases the Mediaplayer Kit plug-in, which supports the broadcaster playing local or online media resources and sharing them with all users in the channel during a live broadcast. See [Mediaplayer Kit release notes](https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_release_android?platform=Android) for details.
+
+**Improvement**
+
+#### 1. Audio profiles
+
+To meet the need for higher audio quality, this release adjusts the corresponding audio profile of `AUDIO_PROFILE_DEFAULT (0)` in the Live-Broadcast profile.
+
+| SDK | AUDIO_PROFILE_DEFAULT (0) | 
+| ---------------- | ---------------- | 
+| v3.0.0      | A sample rate of 48 KHz, music encoding, mono, and a bitrate of up to 52 Kbps.     | 
+| Earlier than v3.0.0   | A sample rate of 32 KHz, music encoding, mono, and a bitrate of up to 44 Kbps.   |
+
+#### 2. Quality statistics
+
+Adds the following members in the [`RtcStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html) class for providing more in-call statistics, making it easier to monitor the call quality and memory usage in real time:
+
+- `gatewayRtt`
+- `memoryAppUsageRatio`
+- `memoryTotalUsageRatio`
+- `memoryAppUsageInKbytes`
+
+#### Others
+
+This release enables interoperability between the RTC Native SDK and the RTC Web SDK by default, and deprecates the `enableWebSdkInteroperability` method. 
+
+**Issues fixed**
+
+- Audio issues relating to audio mixing, audio encoding, and echoing.
+- Other issues relating to app crashes, log file, and unstable service during CDN live streaming.
+
+**API changes**
+
+#### Behavior change
+
+- Calling `enableLocalAudio`(false) does not change the in-call volume to media volume. 
+- When the device is connected to the earpiece or Bluetooth, calling `setEnableSpeakerphone`(true) does not route the audio to the speakerphone.
+
+#### Added
+
+- `channelId` in [`AudioVolumeInfo`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_audio_volume_info.html)
+- `gatewayRtt`, `memoryAppUsageRatio`, `memoryTotalUsageRatio`, and `memoryAppUsageInKbytes` in [`RtcStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_rtc_stats.html)
+- [`createRtcChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9eb0770851a8ba489564f72f9b280bca)
+- [`RtcChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_channel.html)
+- [`IRtcChannelEventHandler`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_channel_event_handler.html)
+
+
+#### Deprecated
+
+- `enableWebSdkInteroperability`.
+- `onUserMuteAudio`, `onFirstRemoteAudioDecoded`, and `onFirstRemoteAudioFrame`, replaced by [`onRemoteAudioStateChanged`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a24fd6b0d12214f6bc6fa7a9b6235aeff).
+- `onStreamPublished` and `onStreamUnpublished`, replaced by [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a7b9f1a5d87480cfd6187c3da0ade3f94).
 
 ## v2.9.4
 
@@ -430,50 +516,52 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 
 
 
-## v2.4.0
+## v2.4.0 and Earlier
+
+**v2.4.0**
 
 v2.4.0 is released on April 1, 2019.
 
-**New features**
+#### New features
 
-#### 1. Voice changer and voice reverberation
+##### 1. Voice changer and voice reverberation
 
 Adding voice changer and reverberation effects in an audio chat room brings much more fun. v2.4.0 adds the [`setLocalVoiceChanger`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ade6883c7878b7a596d5b2563462597dd) and [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a10dd25bc8e129512cd6727133b7fc42f) methods, allowing you to change your voice or reverberation by choosing from the preset options. See [Adjust the pitch and tone](../../en/Audio%20Broadcast/voice_effect_android.md).
 
-#### 2. Tracking the sound position of a remote user 
+##### 2. Tracking the sound position of a remote user 
 
 v2.4.0 adds the [`enableSoundPositionIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaeb3e1df5d2cb091bd2e9c41f156d3c0) and [`setRemoteVoicePosition`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a7d851c2cabde18c2438c1ebe8bf763de) methods. Call the [`enableSoundPositionIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aaeb3e1df5d2cb091bd2e9c41f156d3c0) method before joining a channel to enable stereo panning for the remote users, and then you can call the [`setRemoteVoicePosition`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a7d851c2cabde18c2438c1ebe8bf763de) method to track the position of a remote user.
 
-#### 3. Pre-call last-mile network probe test
+##### 3. Pre-call last-mile network probe test
 
 Conducting a last-mile probe test before joining the channel helps the local user to evaluate or predict the uplink network conditions. v2.4.0 adds the [`startLastmileProbeTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a81c6541685b1c4437d9779a095a0f871), [`stopLastmileProbeTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae21243b8da8bda9ee5f3a00621cbf959), and [`onLastmileProbeResult`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad74a9120325bfeccdec4af4611110281) APIs, allowing you to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
 
-#### 4. State of an audio mixing file 
+##### 4. State of an audio mixing file 
 
 v2.4.0 adds the [`onAudioMixingStateChanged`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aee0aa9286a39654312b162750713e986) callback to report any change of the audio-mixing file playback state (playback succeeds or fails) and the corresponding reason. This release also adds the warning code 701, which is triggered if the local audio-mixing file does not exist, or if the SDK does not support the file format or cannot access the music file URL when playing the audio-mixing file.
 
-#### 5. Setting the log file size
+##### 5. Setting the log file size
 
 The SDK has two log files, each with a default size of 512 KB. In case some customers require more than the default size, v2.4.0 adds the [`setLogFileSize`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a50fd37c6f5b8fc144b18ed4620aee6fc) method for setting the log file size (KB).
 
-**Improvements**
+#### Improvements
 
-#### 1. Accuracy of call quality statistics
+##### 1. Accuracy of call quality statistics
 
 - v2.4.0 adds the `intervalInSeconds` parameter to the [`startEchoTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a712bb50be350186d097f4deed8e1aa37) method, allowing you to set the interval between when you speak and when the recording plays back.
 - v2.4.0 adds three parameters to the [`LocalVideoStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html) class: [`targetBitrate`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html#a4e5c046867a773a74096663bd894e843) for setting the target bitrate of the current encoder, [`targetFrameRate`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html#a01b15bb718064ed086edbafcd1678c9a) for setting the target frame rate, and [`qualityAdaptIndication`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html#a7a93886b530e5f9ed2fec22ca9d3f5c0) for reporting the quality of the local video since last count.
 
 
-#### 2. Core quality improvements
+##### 2. Core quality improvements
 
 - Reduces the audio delay.
 - Improves the video quality and stability. 
 - Shortens the time to render the first remote video frame. 
 - Reduces the time delay when playing through the earpiece and minimizes the echo.
 
-**Issues Fixed**
+#### Issues Fixed
 
-#### Audio
+##### Audio
 
 - Calling the `enableLocalAudio` method disconnects all connected Bluetooth devices.
 - The SDK does not support audio mixing URLs with Chinese characters.
@@ -481,16 +569,16 @@ The SDK has two log files, each with a default size of 512 KB. In case some cust
 - Sounds are occasionally played fast.
 - The app cannot adjust the volume on some devices.
 
-#### Miscellaneous
+##### Miscellaneous
 
 - The user drop-offline time between Android and iOS is not unified.
 - The SEI information does not synchronize with the media stream when publishing transcoded streams to the CDN.
 
-**API Changes**
+#### API Changes
 
 To improve your experience, we made the following changes to the APIs:
 
-#### Added
+##### Added
 
 - [`setLocalVoiceChanger`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ade6883c7878b7a596d5b2563462597dd)
 - [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a10dd25bc8e129512cd6727133b7fc42f)
@@ -504,22 +592,24 @@ To improve your experience, we made the following changes to the APIs:
 - [`onAudioMixingStateChanged`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aee0aa9286a39654312b162750713e986)
 - [`onLastmileProbeResult`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ad74a9120325bfeccdec4af4611110281)
 
-#### Deprecated
+##### Deprecated
 
 - `startEchoTest`
 
-## v2.3.3
+**v2.3.3**
+
 v2.3.3 is released on January 24, 2019. 
 
-**Issues Fixed**
+#### Issues Fixed
 
 - Occasional inaccurate statistics returned in the `onNetworkQuality` callback.
 - Occasional crashes on Huawei P9.
 
-## v2.3.2
+**v2.3.2**
+
 v2.3.2 is released on January 16, 2019.
 
-**Compatibility changes**
+#### Compatibility changes
 
 Besides the new features and improvements mentioned below, it is worth noting that v2.3.2:
 
@@ -532,9 +622,9 @@ Before upgrading your SDK, ensure that the version is:
 - Native SDK v1.11 or later.
 - Web SDK v2.1 or later.
 
-**New features**
+#### New features
 
-#### Independent audio mixing volume adjustments for local playback and remote publishing
+##### Independent audio mixing volume adjustments for local playback and remote publishing
 
 v2.3.2 adds the [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9) and [`adjustAudioMixingPublishVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a16c4dc66d9c43eef9bee7afc86762c00) methods to complement the [`adjustAudioMixingVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a) method, allowing you to independently adjust the audio mixing volume for local playback and remote publishing. 
 
@@ -542,9 +632,9 @@ This release also changes the behavior of the [adjustPlaybackSignalVolume](https
 
 See [Adjust the Volume](../../en/Audio%20Broadcast/volume_android.md) for the scenarios and corresponding APIs.
 
-**Improvements**
+#### Improvements
 
-#### 1. Improves the accuracy of the call quality statistics
+##### 1. Improves the accuracy of the call quality statistics
 
 v2.3.2 deprecates the `onAudioQuality` callback and replaces it with the `onRemoteAudioStats` callback to improve the accuracy of the call quality statistics. The `onRemoteAudioStats` callback returns parameters such as the audio frame loss rate, end-to-end audio delay, and jitter buffer delay at the receiver, which are more closely linked to the real user experience. In addition, v2.3.2 optimizes the algorithm of the `onNetworkQuality` callback for the uplink and downlink network qualities.
 
@@ -557,7 +647,7 @@ We plan to improve the following callback in subsequent versions:
 
 For the list of API methods related to the call quality statistics and on how and when to use them, see [Report In-call Statistics](../../en/Audio%20Broadcast/in-call_quality_android.md).
 
-#### 2. New network connection policy 
+##### 2. New network connection policy 
 
 v2.3.2 adds the following API method and callback to get the current network connection state and the reason for a connection state change:
 
@@ -568,11 +658,11 @@ v2.3.2 deprecates the [`onConnectionInterrupted`](https://docs.agora.io/en/Audio
 
 In the new API method, the network connection states are "disconnected", "connecting", "connected", "reconnecting", and "failed". The SDK triggers the `onConnectionStateChanged` callback when the network connection state changes. The SDK also triggers the `onConnectionInterrupted` and `onConnectionBanned` callbacks under certain circumstances, but we do not recommend using them.
 
-#### 3. Improves the call rating system
+##### 3. Improves the call rating system
 
 v2.3.2 changes the rating parameter in the [`rate`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab7083355af531cc43d455024bd1f7662) method to "1 to 5" to encourage more feedback from end-users on the quality of a call or live broadcast. You can use this feedback for future product improvement. We strongly recommend integrating this method in your app.
 
-#### 4. Other improvements
+##### 4. Other improvements
 
 - Minimizes packet loss under unreliable network conditions in the Live Broadcast profile.
 - Improves the stability in pushing streams.
@@ -581,16 +671,16 @@ v2.3.2 changes the rating parameter in the [`rate`](https://docs.agora.io/en/Aud
 - Checks the headset and Bluetooth device connection.
 - Reduces the audio delay.
 
-**Issues Fixed**
+#### Issues Fixed
 
 The following issues are fixed in v2.3.2:
 
-#### SDK
+##### SDK
 
 - Crashes on emulators, such as Yeshen and mumu. 
 - Crashes on Android 6.0+ due to x86 .so relocation.
 
-#### Audio
+##### Audio
 
 - A user joins a live broadcast with a Bluetooth headset. The audio is not played through the Bluetooth headset when the user leaves the channel and opens another app.
 - Crashes when calling the `startAudioMixing` method to play music files.
@@ -601,11 +691,11 @@ The following issues are fixed in v2.3.2:
 - Users do not hear any voice for a while when an app switches back from the background. 
 
 
-**API Changes**
+#### API Changes
 
 To improve your experience, we made the following changes to the APIs:
 
-#### Added:
+##### Added:
 
 - [`getConnectionState`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8635e3c9e26ffe95e7ab9a518af533b9)
 - [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
@@ -614,20 +704,20 @@ To improve your experience, we made the following changes to the APIs:
 - [`onCameraExposureAreaChanged`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ab6bc82a55191e596d5bf5a7c56bdf95e)
 - [`onRemoteAudioStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9eaf8021d6f0c97d056e400b50e02d54)
 
-#### Deprecated
+##### Deprecated
 
 - [`onAudioQuality`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#abeac442a777e103536dcf9c8ce2d7135)
 - [`onConnectionInterrupted`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a0841fb3453a1a271249587fa3d3b3c88)
 - [`onConnectionBanned`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a80cfde2c8b1b9ae499f6d7a91481c5db)
 
 
-## v2.3.1
+**v2.3.1**
 
 v2.3.1 is released on October 12, 2018. 
 
-**New features**
+#### New features
 
-#### Disables/Re-enables the Local Audio Function
+##### Disables/Re-enables the Local Audio Function
 
 When a user joins a channel, the audio function is enabled by default.
 To receive audio streams without sending any audio stream after joining a channel, this version adds the `enableLocalAudio` method is to disable or re-enable the local audio function.
@@ -637,17 +727,17 @@ This method does not affect receiving or playing the remote audio streams.
 The difference between this method and the `muteLocalAudioStream` method is that the `enableLocalAudio` method does not capture or send any audio stream, while the `muteLocalAudioStream` method captures but does not send audio streams.
 
 
-**Issues Fixed**
+#### Issues Fixed
 
 - Live-broadcast profile: Delay at the client due to incorrect statistics.
 - Live-broadcast profile: Occasional crashes on some Android devices after a user repeats the process of switching roles between BROADCASTER and AUDIENCE.
 - Occasionally on some Android devices, a user hears a popping sound if the user leaves the channel at the same time another user is speaking.
 
-## v2.3.0
+**v2.3.0**
 
 v2.3.0 is released on August 31, 2018.
 
-**Compatibility changes**
+#### Compatibility changes
 
 -   From v2.3.0, the `LiveTranscoding` class is moved from the *io.agora.live* package to the `io.agora.rtc.live` package.
 -   Fixed a typo in the constants.java API in v2.3.0.
@@ -666,25 +756,25 @@ v2.3.0 is released on August 31, 2018.
 -   The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version below v2.1.0 and wish to migrate to the latest version, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
 
 
-**New features**
+#### New features
 
-#### 1. Notifies the user that the token expires in 30 seconds
+##### 1. Notifies the user that the token expires in 30 seconds
 
 The SDK returns the `onTokenPrivilegeWillExpire` callback 30 seconds before a token expires to notify the app to renew it. When this callback is received, you need to generate a new token on your server and call the `renewToken` method to pass the newly-generated token to the SDK.
 
-#### 2. Returns user-specific upstream and downstream statistics, including the bitrate, frame rate, packet loss rate and time delay
+##### 2. Returns user-specific upstream and downstream statistics, including the bitrate, frame rate, packet loss rate and time delay
 
 The `onRemoteAudioTransportStats` callback is added to provide user-specific upstream and downstream statistics, including the bitrate, frame rate, and packet loss rate. During a call or a live broadcast, the SDK triggers these callbacks once every two seconds after the user receives audio/video packets from a remote user. The callbacks include the user ID, audio bitrate at the receiver, packet loss rate, and time delay (ms).
 
 
-**Improvements**
+#### Improvements
 
 -   Improves the quality for one-on-one voice/video scenarios with optimized latency and smoothness, especially for areas like Southeast Asia, South America, Africa, and the Middle East.
 -   Improves the audio encoder efficiency in a live broadcast to reduce user traffic while ensuring the call quality.
 -   Improves the audio quality during a call or a live broadcast using the deep-learning algorithm.
 
 
-**Issues Fixed**
+#### Issues Fixed
 
 - Excessive increase in memory usage when multiple delegated hosts broadcast in the channel.
 - Occasional crashes on some Android devices.
@@ -702,9 +792,7 @@ The `onRemoteAudioTransportStats` callback is added to provide user-specific ups
 - Occasional inter-operational failures between SIP devices and the SDK.
 - Occasional echo issues when using a specific audio card.
 
-
-
-**API Changes**
+#### API Changes
 
 To improve your experience, we made the following changes to the APIs:
 
@@ -730,15 +818,15 @@ The following deprecated API methods are deleted and no longer supported from v2
 -   <code>setSpeakerphoneVolume</code>
 
 
-## v2.2.3 
+**v2.2.3**
 
 v2.2.3 is released on July 5, 2018. 
 
-**Compatibility changes**
+#### Compatibility changes
 
 The security keys are improved and updated in v2.1.0. If you are using an Agora SDK version below v2.1.0 and wish to migrate to the latest version, see `Token Migration Guide`.
 
-**Issues Fixed**
+#### Issues Fixed
 
 - Occasional online statistics crashes.
 - The broadcaster’s voice distorts occasionally on some Android devices.
@@ -748,11 +836,11 @@ The security keys are improved and updated in v2.1.0. If you are using an Agora 
 - Failing to report the uid and volume of the speaker in a channel.
 - Unsteady voice volume of the broadcaster in a live broadcast.
 
-## v2.2.2
+**v2.2.2**
 
 v2.2.2 is released on June 21, 2018.
 
-**Issues Fixed**
+#### Issues Fixed
 
 - Fixed occasional online statistics crashes.
 - Fixed occasional audio crashes on some Android devices.
@@ -760,11 +848,11 @@ v2.2.2 is released on June 21, 2018.
 - Fixed the issue of failing to report the uid and volume of the speaker in a channel.
 - Fixed the issue of receiving the `onLeaveChannel` callback long after a user has left the channel on some Android devices.
 
-## v2.2.1
+**v2.2.1**
 
 v2.2.1 is released on May 30, 2018.
 
-**Issues Fixed**
+#### Issues Fixed
 
 - Occasional crashes during gaming on some Android devices.
 - The soundtrack pointer cannot be retrieved on some Android devices.
@@ -772,87 +860,87 @@ v2.2.1 is released on May 30, 2018.
 - The audio volume on some Android devices cannot be adjusted after a headset is plugged in.
 
 
-## v2.2.0
+**v2.2.0**
 
 v2.2.0 is released on May 4, 2018. 
 
-**New features**
+#### New features
 
-#### 1. Play the audio effect in the channel
+##### 1. Play the audio effect in the channel
 
 Adds a <code>publish</code> parameter in the <code>playEffect</code> method for the remote user in the channel to hear the audio effect played locally. 
 
 >  If your SDK is upgraded to v2.2 from a previous version, pay attention to the functional changes of this API.
 
-#### 2. Deploy the proxy at the server
+##### 2. Deploy the proxy at the server
 
 We provide a proxy package for enterprise users with corporate firewalls to deploy before accessing our services. 
 
 
-**Improvements**
+#### Improvements
 
-#### 1. Audio volume indication
+##### 1. Audio volume indication
 
 Improves the <code>enableAudioVolumeIndication</code> method. This method once enabled, sends the audio volume indication of the speaker in its callback at set intervals, regardless of whether anyone is speaking in the channel.
 
-#### 2. Network quality detection during a session
+##### 2. Network quality detection during a session
 
 To meet the customers’ need for real-time network quality detection in the channel, the <code>onNetworkQuality</code> method improves its data accuracy. 
 
-#### 3. Last mile network quality detection before joining a channel
+##### 3. Last mile network quality detection before joining a channel
 
 To test if the customers’ network condition can support voice or video calls before joining the channel, the <code>onLastmileQuality</code> callback changes the detection from a fixed bitrate to the bitrate set by the customer in the <code>setVideoProfile</code> method to improve data accuracy. When the network condition is unknown, the SDK triggers this callback once every two seconds. 
 
-#### 4. Audio quality enhancement
+##### 4. Audio quality enhancement
 
 Improves the audio quality in scenarios that involve music playback.
 
 
-## v2.1.3
+**v2.1.3**
 
 v2.1.3 is released on April 19, 2018. 
 
 In v2.1.3, Agora updates the bitrate values of the <code>setVideoProfile</code> method in the Live-broadcast profile. The bitrate values in v2.1.3 stay consistent with those in v2.0. 
 
-**Issues Fixed**
+#### Issues Fixed
 
 Occasional recording failures on some phones when a user leaves a channel and turns on the built-in recording device.
 
 
-## v2.1.2
+**v2.1.2**
 
 v2.1.2 is released on April 2, 2018. 
 
 
-**Issues Fixed**
+#### Issues Fixed
 
 Video freeze in DTX + AAC mode.
 
-## v2.1.1 
+**v2.1.1**
 
 v2.1.1 is released on March 16, 2018. 
 
 Agora has identified a critical issue in SDK v2.1. Upgrade to v2.1.1 if you are using Agora SDK v2.1.
 
-## v2.1.0 
+**v2.1.0**
 
 v2.1.0 is released on March 7, 2018.
 
-**New features**
+#### New features
 
-#### 1. Voice Optimization
+##### 1. Voice Optimization
 
 Adds a scenario for the game chat room to reduce the bandwidth and cancel the noise with the <code>setAudioProfile</code> method.
 
-#### 2. Enhance the audio effect input from the built-in microphone
+##### 2. Enhance the audio effect input from the built-in microphone
 
 In an interactive broadcast scenario, the host can enhance the local audio effects from the built-in microphone with the <code>setLocalVoiceEqualization</code> and <code>setLocalVoiceReverb</code> methods by implementing the voice equalization and reverberation effects.
 
-#### 3. Online statistics query
+##### 3. Online statistics query
 
 Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host. For details, see [Online Statistics Query API](../../en/Audio%20Broadcast/dashboard_restful_communication.md).
 
-**Improvements**
+#### Improvements
 
 <table>
 <colgroup>
@@ -875,18 +963,17 @@ Adds RESTful APIs to check the status of the users in the channel, the channel l
 </table>
 
 
-**Issues Fixed**
+#### Issues Fixed
 
 -   Occasional playback noise on specific devices.
 -   Occasional crackling voice playback on specific devices.
 -   Occasional crashes.
 
 
-## v2.0.2
+**v2.0.2**
 
 v2.0.2 is released on December 15, 2017, and fixes occasional audio routing issues.
 
-## v2.0 and Earlier
 
 **v2.0**
 

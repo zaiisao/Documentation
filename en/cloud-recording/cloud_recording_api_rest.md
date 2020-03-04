@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Feb 26 2020 06:04:52 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 01:18:26 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -25,7 +25,6 @@ All requests are sent to the host: `api.agora.io`.
 - Response: The response content is in JSON format.
 
 <div class="alert warning">All the request URLs and request bodies are case sensitive.</div>
-
 ## Call sequence
 
 Use the RESTful API in the following steps:
@@ -48,7 +47,7 @@ Before starting a cloud recording, you need to call this method to get a resourc
 - Method:POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/acquire
 
-> The request frequency limit is 10 times per second.
+> The request frequency limit is 10 times per second per APP ID. Contact support@agora.io if you want to raise the limit.
 
 If this method call succeeds, you get a resource ID (`resourceId`) from the HTTP response body. The resource ID is valid for five minutes, so you need to [start recording](#start) with this resource ID within five minutes.
 
@@ -64,9 +63,9 @@ The following parameters are required in the request body.
 
 | Parameter       | Type   | Description                                                  |
 | :-------------- | :----- | :----------------------------------------------------------- |
-| `cname`         | String | The name of the channel to be recorded.                          |
+| `cname`         | String | The name of the channel to be recorded.                      |
 | `uid`           | String | A string that contains the UID of the recording client, for example `"527841"`. The UID needs to meet the following requirements: <li>It is a 32-bit unsigned integer within the range between 1 and (2<sup>32</sup>-1).</li><li>It is unique and does not clash with any existing UID in the channel. </li><li>It should not be a string. Ensure that all UIDs in the channel are integers.</li> |
-| `clientRequest` | JSON   | A client request including the `resourceExpiredHour` field. `resourceExpiredHour` is an integer, which sets the time limit (in hours) for the Cloud Recording RESTful API calls. It must be between `1` and `720`, the default value being `72`. The time limit starts from when you successfully start a cloud recording and get `sid`(the recording ID ). When you exceed the time limit, you can no longer call `query`, `updateLayout`, and `stop`.     |
+| `clientRequest` | JSON   | A client request including the `resourceExpiredHour` field. `resourceExpiredHour` is an integer, which sets the time limit (in hours) for the Cloud Recording RESTful API calls. It must be between `1` and `720`, the default value being `72`. The time limit starts from when you successfully start a cloud recording and get `sid`(the recording ID ). When you exceed the time limit, you can no longer call `query`, `updateLayout`, and `stop`. |
 
 ### An HTTP request example of `acquire`
 
@@ -105,7 +104,7 @@ After getting a resource ID, call this method to start cloud recording.
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/mode/\<mode\>/start
 
-> The request frequency limit is 10 times per second.
+> The request frequency limit is 10 times per second per APP ID.
 
 ### Parameters
 
@@ -121,7 +120,7 @@ The following parameters are required in the request body.
 
 | Parameter       | Type   | Description                                                  |
 | :-------------- | :----- | :----------------------------------------------------------- |
-| `cname`         | String | The name of the channel to be recorded.                          |
+| `cname`         | String | The name of the channel to be recorded.                      |
 | `uid`           | String | A string that contains the UID of the recording client. Must be the same `uid` used in the [`acquire`](#acquire) method. |
 | `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key) used in the channel to be recorded. Ensure that you set this parameter if the recording channel uses a token.</li><li>[`recordingConfig`](#recordingConfig): (Optional) JSON. The recording configuration.</li><li>[`storageConfig`](#storageConfig): (Optional) JSON. The third-party cloud storage configuration.</li> |
 
@@ -355,7 +354,7 @@ This method call overrides the existing layout configurations. For example, if y
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/updateLayout
 
-> The request frequency limit is 10 times per second.
+> The request frequency limit is 10 times per second per APP ID.
 
 ### Parameters
 
@@ -372,8 +371,8 @@ The following parameters are required in the request body.
 
 | Parameter       | Type   | Description                                                  |
 | :-------------- | :----- | :----------------------------------------------------------- |
-| `cname`         | String | The name of the channel to be recorded.                          |
-| `uid`           | String | A string that contains the UID of the recording client. Must be the same `uid` used in the [`acquire`](#acquire) method.|
+| `cname`         | String | The name of the channel to be recorded.                      |
+| `uid`           | String | A string that contains the UID of the recording client. Must be the same `uid` used in the [`acquire`](#acquire) method. |
 | `clientRequest` | JSON   | A specific client request. See the following list for details. |
 
 `clientRequest` requires the following parameters:
@@ -437,7 +436,7 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
          ]
      }
 }
- ```
+```
 
 ### A response example of `updateLayout`
 
@@ -459,11 +458,10 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 After you start a recording, you can call query to check its status.
 
 <div class="note alert"><code>query</code> works only with an ongoing recording session. If you call <code>query</code> after a recording ends or after it starts with error, you get a 404 (Not Found) error. We recommend that you use the callback service for getting the details of all cloud recording events. See <a href="https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest">Agora Cloud Recording RESTful API Callback Service</a> for more information.</div>
-
 - Method: GET
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
 
-> The request frequency limit is 10 times per second.
+> The request frequency limit is 10 times per second per APP ID.
 
 ### Parameters
 
@@ -565,7 +563,7 @@ When a recording finishes, call this method to leave the channel and stop record
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/stop
 
-> - The request frequency limit is 10 times per second.
+> - The request frequency limit is 10 times per second per APP ID.
 > - Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default.
 
 ### Parameters
@@ -577,13 +575,13 @@ The following parameters are required in the URL.
 | `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
 | `sid`        | String | The recording ID created by the [`start`](#start) method.    |
-| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`).|
+| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). |
 
 The following parameters are required in the request body.
 
 | Parameter       | Type   | Description                                                  |
 | :-------------- | :----- | :----------------------------------------------------------- |
-| `cname`         | String | The name of the channel to be recorded.                          |
+| `cname`         | String | The name of the channel to be recorded.                      |
 | `uid`           | String | A string that contains the UID of the recording client. Must be the same `uid` used in the [`acquire`](#acquire) method. |
 | `clientRequest` | JSON   | A specific client request that is empty for this method.     |
 
@@ -678,12 +676,12 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | :--- | :----------------------------------------------------------- |
 | 200  | The request handle is successful.                            |
 | 201  | The request is successful and new resources are created.     |
-| 206  | No user in the channel sent a stream during the recording process, or some of the recorded files are uploaded to the Agora Cloud Backup instead of the third-party cloud storage.|
+| 206  | No user in the channel sent a stream during the recording process, or some of the recorded files are uploaded to the Agora Cloud Backup instead of the third-party cloud storage. |
 | 400  | The input is in the wrong format.                            |
-| 401  | Unauthorized (incorrect App ID/Customer Certificate).                          |
+| 401  | Unauthorized (incorrect App ID/Customer Certificate).        |
 | 404  | The requested resource could not be found.                   |
 | 500  | An internal error occurs in the Agora Cloud Recording RESTful API service. |
-| 504  | The server was acting as a gateway or proxy and did not receive the response from the upstream server.|
+| 504  | The server was acting as a gateway or proxy and did not receive the response from the upstream server. |
 
 ## Errors
 

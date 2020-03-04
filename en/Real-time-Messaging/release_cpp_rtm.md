@@ -17,11 +17,12 @@ Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-tim
 v1.2.2 was released on December 13, 2019.
 
 
-### Compatibility Changes
+**Compatibility Changes**
+
 This release deprecates the <code>createAgoraService</code> method, which creates an <code>IAgoraService</code> instance, and the <code>initialize</code> method, which initializes the created <code>IAgoraService</code> instance.  As of this relase, you only need to call the <code>createRtmService</code> method and the <code>initialize</code> method to initialize it before being able to call its functions. 
 
 
-### Issues Fixed
+**Issues Fixed**
 
 Occasionally fails to receive any callback after a channel attribute operation. 
 

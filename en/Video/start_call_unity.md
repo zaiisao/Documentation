@@ -3,10 +3,16 @@
 title: Start a Video Call
 description: 
 platform: Unity
-updatedAt: Wed Feb 26 2020 06:12:21 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 04:27:06 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora SDK for Unity.
+
+## Video tutorial
+
+The following video demonstrates how to build an app that implements the Agora video call from scratch.
+
+<video src="https://web-cdn.agora.io/docs-files/1583295822824" poster="https://web-cdn.agora.io/docs-files/1583295874588"  controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 ## Try the sample project
 
@@ -321,7 +327,3 @@ You can find the complete code in the [TestHelloUnityVideo.cs](https://github.co
 ## Run the project
 
 Run the project in Unity. You should be able to see both the local and remote video if you successfully start a one-to-one video call.
-
-## Relevant links
-
-Video tutorial: [Create a video chat app in Unity](https://www.youtube.com/watch?v=Z3wTBlnEPAg&list=PLTSVhbbBMhCcIQgtW-bGdjcOUDNxbmCqv&index=2&t=508s)

@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: Web
-updatedAt: Fri Feb 28 2020 09:27:20 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 09:56:18 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
@@ -11,6 +11,12 @@ Use this guide to quickly set up the Agora Web SDK and enable real-time voice an
 This guide shows you how to build a simple web app with the Agora Web SDK. We recommend going through it to familiarize yourself with the core methods.
 
 <div class="alert warning">Due to security limits on HTTP addresses except 127.0.0.1, Agora Web SDK only supports HTTPS or http://localhost (http://127.0.0.1). Do not deploy your project over HTTP.</div>
+
+## Video tutorial
+
+The following video demonstrates how to build an app that implements the Agora video call from scratch.
+
+<video src="https://web-cdn.agora.io/docs-files/1582790845065" poster="https://web-cdn.agora.io/docs-files/1582790881579"  controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
 
 ## Sample project
 
@@ -376,10 +382,12 @@ This section takes our demo as an example to show you how to run and test the we
 We recommend running your web app through a local web server. Here, we use the npm live-server package to set up a local web server. 
 
 <div class="alert note">We run the web app through a local server (localhost) for testing. In production, ensure that you use the HTTPS protocol when deploying your project.</div>
+
 1. Install live-server.
    ```bash
 npm i live-server -g
 	```
+
 2. Change the directory to your project by the cd command. For our demo, the project is in **/Basic-Video-Call/One-to-One-Video/Agora-Web-Tutorial-1to1**.
 3. Run the app.
    ```bash
@@ -393,7 +401,7 @@ live-server .
 
 If the web app is not working properly, open the console in your browser and check for errors. The following are the most likely errors:
 - `INVALID_VENDOR_KEY`: Wrong App ID. Check if you fill in the correct App ID.
-- `ERR_DYNAMIC_USE_STATIC_KE`: Your Agora project enables App Certificate, so you need to use Token when joining the channel.
+- `ERR_DYNAMIC_USE_STATIC_KEY`: Your Agora project enables App Certificate, so you need to use Token when joining the channel.
 - `Media access:NotFoundError`: Check if your camera and microphone are working properly.
 - `MEDIA_NOT_SUPPORT`: Please use HTTPS or localhost.
 

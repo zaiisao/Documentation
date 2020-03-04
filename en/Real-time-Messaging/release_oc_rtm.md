@@ -18,7 +18,7 @@ v1.2.2 was released on December 13, 2019.
 
 
 
-### Issues Fixed
+**Issues Fixed**
 
 Occasionally fails to receive any callback after a channel attribute operation. 
 

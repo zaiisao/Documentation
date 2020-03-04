@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: Windows
-updatedAt: Sat Oct 12 2019 07:22:23 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:54:05 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for Windows. 
@@ -208,7 +208,7 @@ After setting the client role and the local video view (for a video broadcast), 
 For more details on the parameter settings, see [joinChannel](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c).
 
 ```C++
-// Call this method to enable interoperability between the Native SDK and the Web SDK if the Web SDK is in the channel.
+// For SDKs earlier than v3.0.0, call this method to enable interoperability between the Native SDK and the Web SDK if the Web SDK is in the channel. As of v3.0.0, the Native SDK enables the interoperability with the Web SDK by default.
 m_lpRtcEngine->enableWebSdkInteroperability(true);
  
 // Join a channel with a token.
