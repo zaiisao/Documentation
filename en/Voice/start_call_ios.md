@@ -47,6 +47,8 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 **Method 1: Automatically integrate the SDK with CocoaPods**
 
+<div class="alert note">This method is only for integrating the SDK with the static library.</div>
+
 1. Ensure that you have installed **CocoaPods** before the following steps. See the installation guide in [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 2. In **Terminal**, go to the project path and run the `pod init` command to create a **Podfile** in the project folder.
 3. Open the **Podfile**, delete all contents and input the following contents. Remember to change **Your App** to the target name of your project.
@@ -63,9 +65,11 @@ end
 **Method 2: Manually add the SDK files**
 
 1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for iOS, and unzip the downloaded SDK package.
-2. Copy the **AgoraRtcEngineKit.framework** file in the **libs** folder to the project folder.
-3. In **Xcode**, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the **AgoraRtcEngineKit.framework** file, remember to click **Add Other...** after clicking **+**.
-	- AgoraRtcEngineKit.framework
+
+  <div class="alert note">As of v3.0.0, the downloaded SDK package includes both the static library and the dynamic library. The name suffix of the SDK with dynamic library is Dynamic. </div>
+
+2. Copy the **AgoraRtcKit.framework** file in the **libs** folder to the project folder.
+3. In **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. 
 	- Accelerate.framework
 	- AudioToolbox.framework
 	- AVFoundation.framework
@@ -76,6 +80,12 @@ end
 	- libresolv.tbd
 	- SystemConfiguration.framework
 	- VideoToolbox.framework
+4. Add the **AgoraRtcKit.framework** library.
+  - If you integrate the SDK with the static library, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, click **Add Other...** after clicking **+**.
+  - If you integrate the SDK with the dynamic library, go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+**, and change the file status as **Embed & Sign**.
+  <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
+
+<div class="alert note">As of v3.0.0, the library name changes from <b>AgoraRtcEngineKit.framework</b> to <b>AgoraRtcKit.framework</b>. To upgrade your SDK to v3.0.0, refer to the following steps to re-integrate the SDK:<ul><li>Open Xcode, remove <b>AgoraRtcEngineKit.framework</b> from the Navigator.<li>Click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, click <b>-</b> to remove AgoraRtcEngineKit.framework.<li> If you integrate the SDK with the static library, click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, and click <b>+</b> to add AgoraRtcKit.framework instead.<br>If you integrate the SDK with the dynamic library, click <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> click <b>+</b> to add AgoraRtcKit.framework instead, and change the status of <b>AgoraRtcKit.framework</b> to <b>Embed & Sign</b>. </br></div>
 
  **Before**:
  
@@ -85,7 +95,7 @@ end
  
  ![](https://web-cdn.agora.io/docs-files/1568801108276)
  
-<div class="alert note">If your device runs <b>iOS 9.0</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
+<div class="alert note">If your device runs <b>iOS 11.0</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
 
 
 ### Add project permissions

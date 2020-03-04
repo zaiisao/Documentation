@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Mar 04 2020 01:18:26 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 07:19:29 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -25,6 +25,7 @@ All requests are sent to the host: `api.agora.io`.
 - Response: The response content is in JSON format.
 
 <div class="alert warning">All the request URLs and request bodies are case sensitive.</div>
+
 ## Call sequence
 
 Use the RESTful API in the following steps:

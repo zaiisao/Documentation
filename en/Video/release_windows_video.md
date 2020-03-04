@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon Feb 10 2020 06:10:43 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 09:18:04 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -18,6 +18,116 @@ The Video SDK for Windows supports the following scenarios:
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Video Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 The Windows Video SDK supports the X86 and X64 architecture.
+
+## v3.0.0
+
+v3.0.0 was released on Mar 5, 2020.
+
+In this release, Agora improves the user experience under poor network conditions for both the Communication and Live-broadcast profiles through the following measures:
+- Adopting a new architecture for the Communication profile.
+- Upgrading the last-mile network strategy for both the Communication and Live-broadcast profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
+
+To deal with any incompatibility issues caused by the architecture change, Agora uses the fallback mechanism to ensure that users of different versions of the SDKs can communicate with each other: if a user joins the channel from a client using a previous version, all clients using v3.0.0 automatically fall back to the older version. This has the effect that none of the users in the channel can enjoy the improved experience. Therefore we strongly recommend upgrading all your clients to v3.0.0.
+
+We also upgrade the On-premise Recording SDK to v3.0.0. Ensure that you upgrade your On-premise Recording SDK to v3.0.0 so that all users can enjoy the improvements brought by the new architecture and network strategy.
+
+**Compatibility changes**
+
+#### 1. Dual-stream mode not enabled in the Communication profile
+
+As of v3.0.0, the native SDK does not enable the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode) by default in the Communication profile. Call the `enableDualStreamMode(true)` method after joining the channel to enable it. In video scenarios with multiple users, we recommend enabling the dual-stream mode.
+
+**New features**
+
+#### 1. Multiple channel management
+
+To enable a user to join an unlimited number of channels at a time, this release adds the `IChannel` and `IChannelEventHandler` classes. By creating multiple `IChannel` objects, a user can join the corresponding channels at the same time.
+After joining multiple channels, users can receive the audio and video streams of all the channels, but publish one stream to only one channel at a time. This feature applies to scenarios where users need to receive streams from multiple channels, or frequently switch between channels to publish streams. See [Join multiple channels](../../en/Video/multiple_channel_windows.md) for details.
+
+#### 2. Raw video data
+
+Adds the following C++ callbacks to the `IVideoFrameObserver` class to provide raw video data at different video transmission stages, and to accommodate more scenarios.
+- `onPreEncodeVideo`: Gets the video data after pre-processing and prior to encoding. This method applies to the scenarios where you need to pre-process the video data.
+- `getSmoothRenderingEnabled`: Sets whether to smooth the acquired video frames. The smoothed video frames are more evenly spaced, providing a better rendering experience.
+
+#### 3. Adjusting the playback volume of the specified remote user
+
+Adds `adjustUserPlaybackSignalVolume` for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or a live broadcast to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+
+#### 4. Image enhancement
+
+Adds `setBeautyEffectOptions` for enabling image enhancement in scenarios such as video social networking, an online class, or an interactive broadcast. You can call this method to set parameters including contrast, brightness, smoothness, red saturation, and so on. See [Image enhancement](../../en/Video/image_enhancement_windows.md) for details.
+
+**Improvements**
+
+#### 1. Audio profiles
+
+To meet the need for higher audio quality, this release adjusts the corresponding audio profile of `AUDIO_PROFILE_DEFAULT (0)` in the Live-Broadcast profile.
+
+| SDK   | AUDIO_PROFILE_DEFAULT (0)                                   |
+| :--------- | :---------------------------------------------------------- |
+| v3.0.0      | A sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 52 Kbps. |
+| Earlier than v3.0.0 | 3A sample rate of 32 kHz, music encoding, mono, and a bitrate of up to 64 Kbps. |
+
+#### 2. Mirror mode
+
+This release enables you to set a mirror effect for the stream to be encoded or for the streams to be rendered.
+
+- Setting a mirror mode for the stream to be encoded: This release adds the `mirrorMode` member to the `VideoEncoderConfiguration` struct for setting a mirror effect for the stream to be encoded and transmitted.
+- Setting a mirror mode for the streams to be rendered: 
+    - This release also adds the `setLocalRenderMode` and `setRemoteRenderMode` methods, both of which take an extra `mirrorMode` parameter. During a call, you can use `setLocalRenderMode` to update the mirror effect of the local view or `setRemoteRenderMode` to update the mirror effect of the remote view on the local device.
+    - We also add the `mirrorMode` member to the `VideoCanvas` struct. You can use `setupLocalVideo` to set a mirror effect for the local view, or use `setupRemoteVideo` to set a mirror effect for the remote view on the local device.
+
+#### 3. Quality statistics
+
+Adds the following members in the `RtcStats` class for providing more in-call statistics, making it easier to monitor the call quality and memory usage in real time:
+
+- `gatewayRtt`
+- `memoryAppUsageRatio`
+- `memoryTotalUsageRatio`
+- `memoryAppUsageInKbytes`  
+
+#### 4. Screen sharing
+
+This release enables window sharing of [UWP](https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guidea) (Universal Windows Platform) applications when you call [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52).
+
+#### 5. Others
+
+This release enables interoperability between the RTC Native SDK and the RTC Web SDK by default, and deprecates the `enableWebSdkInteroperability` method.
+
+**Issues fixed**
+
+* Audio issues relating to audio mixing, audio encoding, and echoing.
+* Video issues relating to the watermark, aspect ratio, video sharpness, black outline appearing while screen sharing and toggling to full-screen.
+* Other issues relating to app crashes, log file, and unstable service during CDN live streaming.
+
+**API changes**
+
+#### Added
+
+- [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a5899cc462e5250028c9afada4df98d48)
+- [`onPreEncodeVideoFrame`](../../API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html.md)
+- [`getSmoothRenderingEnabled`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aaa6c67373bb237a067318015749e8e51)
+- [`setLocalRenderMode`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac433e6e88da91f87c107012cbaf8bb5c)
+- [`setRemoteRenderMode`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aaaf8535dcab7ab0d12bdc351b88d09c2)
+- The [`mirrorMode`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#a1ca537cb6966901330bce3681194ceb5) member in the [`VideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html) struct
+- The [`mirrorMode`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_canvas.html#a7af6b90428fdcbd226f94df3cf6df9fc) and [`channelId`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_canvas.html#ac16654ea954794b0e3ec8b962b4807a6) members in the [`VideoCanvas`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_video_canvas.html) struct
+- The [`channelId`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html#ab67471def88118f010e6d5add7d83f64) member in the [`AudioVolumeInfo`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_audio_volume_info.html) struct
+- [`createChannel`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine2.html#a9cabefe84d3a52400f941f1bd8c0f486)
+- [`IChannel`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_channel.html) class
+- [`IChannelEventHandler`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_channel_event_handler.html) class
+- The [`gatewayRtt`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a30cc889ef34f63e23950b54591218cb5), [`memoryAppUsageRatio`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#aab879ec9c52f2dd8d662c26c4939a7d3), [`memoryTotalUsageRatio`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#aae6d57e709b08258be372960f9e19fd6) and [`memoryAppUsageInKbytes`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html#a17258e12476bb9106ccc248af4cfe734) members in the [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_stats.html) class
+
+#### Deprecated
+
+* `RtcEngineParameters` class
+* `enableWebSdkInteroperability`
+* `setLocalRenderMode¹`
+* `setRemoteRenderMode¹`
+* `setLocalVideoMirrorMode`
+* `onFirstRemoteVideoFrame`, replaced by [`onRemoteVideoStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae69799238c6a6cd9f017274dd630b74e) 
+* `onUserMuteAudio`, `onFirstRemoteAudioDecoded`, and `onFirstRemoteAudioFrame`, replaced by [`onRemoteAudioStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa168380f86f1dc2df1c269a785c56612)
+* `onStreamPublished` and `onStreamUnpublished`, replaced by [`onRtmpStreamingStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a29754dc9d527cbff57dbc55067e3287d)
 
 ## v2.9.3
 

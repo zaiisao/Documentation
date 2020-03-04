@@ -3,62 +3,74 @@
 title: Adjust the Volume
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Mon Jan 13 2020 08:07:45 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 12:41:44 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
 
 The Agora RTC SDK enables you to manage the volume of the recorded audio or of the audio playback according to your actual scenario. For example, to mute a remote user in a one-to-one call, you can set the audio playback volume as 0.
 
-This article describes the scenarios when you need to adjust the volume, the corresponding APIs and considerations in the process from audio recording to playing. 
+This article provides the APIs and additional information relating to audio recording, audio mixing, and audio playback volume settings.
 
-![](https://web-cdn.agora.io/docs-files/1548729191542)
+![](https://web-cdn.agora.io/docs-files/1578896931369)
 
 ## Implementation
 Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Voice/start_call_mac.md) or [Start a Live Broadcast](../../en/Voice/start_live_mac.md).
 
-### Set the recording volume
+### Adjust the recording volume
 
-**Recording** is the process in which audio signals are captured by recorders and transported to signal senders. You can change the recording volume by adjusting the **volume of the recording device** or the **volume of the audio signal**. On macOS, Agora recommends adjusting the recording volume with related APIs.
+**Recording** is the process of sampling audio by a recording device and transmitting the recorded signal to the sender. To adjust the recording volume, you can **set the volume of the recording device** or **set the volume of the recorded signal**. We recommend using audio device-related APIs to adjust the recording volume.
 
-#### Adjust the volume of the recording device
+![](https://web-cdn.agora.io/docs-files/1578896972888)
 
-The value of the volume ranges between 0 and 255. 0 represents the recording device is muted, and 255 is the maiximum volume.
+#### Set the volume of the recording device
+
+Call `setDeviceVolume` to set the volume of your recording device.
+
+<div class="alert note">This method sets the global volume of your recording device.</div>
+
+The `volume` parameter represents the audio level of your recording device, ranging between 0 and 255:
+- 0: Mute.
+- 255: The maiximum volume of the device.
+
+As the following screenshot shows, the volume value corresponds to the audio level for your audio recording device.
+
+![](https://web-cdn.agora.io/docs-files/1545632794842)
 
 Sample code
 
 ```swift
 // swift
-// Sets the recording volume.
+// Sets the volume of your recording device as 50.
 agoraKit.setDeviceVolume(.audioRecording, volume: 50)
 ```
 
 ```objective-c
 // objective-c
-// Sets the recording volume.
+//  Sets the volume of your recording device as 50.
 [agoraKit setDeviceVolume: AgoraMediaDeviceTypeAudioRecording volume: 50];
 ```
 
-The value of `volume` corresponds to the **Input Volume** on macOS, as shown in the following screenshot.
+#### Set the volume of the recorded signal 
 
-![](https://web-cdn.agora.io/docs-files/1545632794842)
+If `setDeviceVolume` does not suffice, you can call `adjustRecordingSignalVolume` to set the volume of the recorded signal.
 
-#### Adjust the volume of the recording signal 
-
-If the above methods do not meet your requirements, the Agora SDK provides methods to adjust the volume of the recording signals, which enables adjusting the recording volumes.
-The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the recording signals by four times).
+The `volume` parameter represents the audio level of the recorded signal, ranging between 0 and 400:
+- 0: Mute.
+- 100: (Default) The original volume.
+- 400: Four times the original volume (amplifying the audio signals by four times).
 
 Sample code
 
 ```swift
 // swift
-// Sets the volume of the recording signal.
+// Sets the volume of the recorded signal as 50% of the original volume.
 agoraKit.adjustRecordingSignalVolume(50)
 ```
 
 ```objective-c
 // objective-c
-// Sets the volume of the recording signal to 50.
+// Sets the volume of the recorded signal as 50% of the original volume.
 [agoraKit adjustRecordingSignalVolume: 50];
 ```
 
@@ -66,97 +78,129 @@ agoraKit.adjustRecordingSignalVolume(50)
 - [`setDeviceVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setDeviceVolume:volume:)
 - [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustRecordingSignalVolume:)
 
-### Set the playback volume
+### Adjust the playback volume
 
-**Playback** is the process in which audio signal are transported from signal senders to receivers and then to the players. During this process, you can adjust the volume by changing the **volume of the playback device** or the **volume of the playback signal**. Agora recommends adjusting the playback volume with related APIs. 
+**Playback** is the process of playing the received audio signal on the local playback device. To adjust the playback volume, you can **set the volume of the playback device**, or **set the volume of the audio signal**.
 
-#### Adjust the volume of the playback device
-The value of the volume ranges between 0 and 255. 0 represents the recording device is muted, and 255 is the maiximum volume.
+![](https://web-cdn.agora.io/docs-files/1578896994312)
+
+#### Set the volume of the playback device
+
+To set the volume on the playback device directly, call `setDeviceVolume`. 
+
+<div class="alert note">This method sets the global volume of your corresponding device.</div>
+
+The `volume` parameter represents the audio level of your playback device, ranging between 0 and 255:
+- 0: Mute.
+- 255: The maximum volume of the device.
+
+As the following screenshot shows, the volume value corresponds to the audio level for your audio playback device.
+![](https://web-cdn.agora.io/docs-files/1545633859976)
 
 Sample code
 
 ```swift
 // swift
-// Sets the playback device volume.
+// Sets the volume of the playback device as 50.
 agoraKit.setDeviceVolume(.audioPlayout, volume: 50)
 ```
 
 ```objective-c
 // objective-c
-// Sets the playback device volume.
+// Sets the volume of the playback device as 50.
 [agoraKit setDeviceVolume: AgoraMediaDeviceTypeAudioPlayout volume: 50];
 ```
 
-The value of `volume` corresponds to the **Output Volume** on macOS, as shown in the following screenshot.
+#### Set the volume of the playback signal
 
-![](https://web-cdn.agora.io/docs-files/1545633859976)
+If `setDeviceVolume` does not suffice, you can use `adjustPlaybackSignalVolume` or `adjustUserPlaybackSignalVolume` to set the volume of the audio signal.
+- `adjustPlaybackSignalVolume`：
+  - Universally sets the playback audio level of all remote users after audio mixing.
+  - The `volume` parameter represents the playback audio level, ranging between 0 and 400. 
+- `adjustUserPlaybackSignalVoume`：
+  - Adjusts the playback audio level of a specified remote user after audio mixing. Call this method as many times as necessary to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+  - The `volume` parameter represents the playback audio level, ranging between 0 and 100. 
 
-#### Adjust the volume of the playback signal
-
-If the above methods do not meet your requirements, the Agora SDK provides methods to adjust the volume of the playback signals, which enables adjusting the playback volumes.
-The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
-
-**Note**: 
-Since v2.3.2, the [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:) method adjusts only the playback volume of the voice. If you use the Naive SDK v2.3.2 or later, call both the `adjustPlaybackSignalVolume(0)` and `adjustAudioMixingVolume(0)` methods to mute the local audio playback.
+<div class="alert note"><li>As of v2.3.2, to mute the local audio playback, you must call both adjustPlaybackSignalVolume and adjustAudioMixingVolume, and set the volume parameter as 0.<li>Call adjustUserPlaybackSignalVoume after joining a channel.</li></div>
 
 Sample code
 
 ```swift
 // swift
-// Sets the volume of the playback signal.
-agoraKit.adjustRecordingSignalVolume(50)
+// Sets the volume of the local playback of all remote users as 50% of the original volume.
+agoraKit.adjustPlaybackSignalVolume(50)
+// Sets the volume of the local playback of a specified remote user as 50% of the original volume.
+agoraKit.adjustUserPlaybackSignalVolume(uid, volume: 50)
 ```
 
 ```objective-c
 // objective-c
-// Sets the volume of the playback signal.
-[agoraKit adjustRecordingSignalVolume: 50];
+// Sets the volume of the local playback of all remote users as 50% of the original volume.
+[agoraKit adjustPlaybackSignalVolume: 50];
+// Sets the volume of the local playback of a specified remote user as 50% of the original volume.
+[agoraKit adjustUserPlaybackSignalVolume: uid, volume: 50];
 ```
 
 #### API reference
 
 - [`setDeviceVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setDeviceVolume:volume:)
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
+- [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustUserPlaybackSignalVolume:volume:)
 - [`adjustAudioMixingVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
 
-### Set the audio mixing volume
+### Adjust the audio mixing volume
 
-**Audio mixing** is playing local or online music while speaking, so that other users in the channel can hear the speaker and the music simultaneously. See [Audio Effects/Mixing](../../en/Voice/effect_mixing_mac.md) for enabling this function.
+**Audio mixing** is the process of combining local or online music files with the local stream so that all the remote users in the channel can hear the host and the music at the same time. See [Audio Effects/Mixing](../../en/Voice/audio_effect_mixing_apple.md) for more information about enabling this function.
 
-The value of the audio mixing volume ranges between 0 and 100. 100 (default) represents the original volume, and 0 means the audio mixing is muted.
+![](https://web-cdn.agora.io/docs-files/1578897009951)
 
-Sample code
+The `adjustAudioMixingVolume` method adjusts the volume of the music file for both the local user and the remote users.
 
-```swift
-// swift
-// Sets the audio mixing volume for remote users.
-agoraKit.adjustAudioMixingPublishVolume(50)
-// Sets the audio mixing volume for local users.
-agoraKit.adjustAudioMixingPlayoutVolume(50)
-```
-
-```objective-c
-// objective-c
-// Sets the audio mixing volume for remote users.
-[agoraKit adjustAudioMixingPublishVolume: 50]；
-// Sets the audio mixing volume for local users.
-[agoraKit adjustAudioMixingPlayoutVolume: 50];
-```
-
-You can also call the API `adjustAudioMixingVolume` to set the volume of audio playing for both remote users and local users.
+The `volume` parameter represents the audio level of the music file, ranging between 0 and 100.
+- 0: Mute.
+- 100: (Default) The original volume.
 
 Sample code
 
 ```swift
 // swift
-// Sets the audio mixing volume for both local and remote users.
+// Sets the audio mixing volume of the music for the local user and remote users as 50% of the original volume.
 agoraKit.adjustAudioMixingVolume(50)
 ```
 
 ```objective-c
 // objective-c
-// Sets the audio mixing volume for both local and remote users.
+// Sets the audio mixing volume of the music for the local user and remote users as 50% of the original volume.
 [agoraKit adjustAudioMixingVolume: 50];
+```
+
+You can also call `adjustAudioMixingPlayoutVolume` and `adjustAudioMixingPublishVolume` respectively to adjust the audio mixing volume.
+
+- `adjustAudioMixingPlayoutVolume`:
+  - Adjusts the audio mixing volume for the local user.
+  - The `volume` parameter represents the audio mixing volume for the local user, ranging between 0 and 100.
+- `adjustAudioMixingPublishVolume`：
+  - Adjusts the audio mixing volume for the remote users.
+  - The `volume` parameter represents the audio mixing volume for the remote users, ranging between 0 and 100.
+
+<div class="alert note">Call adjustAudioMixingPlayoutVolume and adjustAudioMixingPublishVolume after joining a channel.</div>
+
+Sample code
+
+```swift
+// swift
+// Sets the audio mixing volume of the music for the remote users as 50% of the original volume.
+agoraKit.adjustAudioMixingPublishVolume(50)
+// Sets the audio mixing volume of the music for the local user as 50% of the original volume.
+agoraKit.adjustAudioMixingPlayoutVolume(50)
+```
+
+```objective-c
+// objective-c
+// Sets the audio mixing volume of the music for the remote users as 50% of the original volume.
+[agoraKit adjustAudioMixingPublishVolume: 50]；
+// Sets the audio mixing volume of the music for the local user as 50% of the original volume.
+[agoraKit adjustAudioMixingPlayoutVolume: 50];
 ```
 
 #### API reference
@@ -165,29 +209,37 @@ agoraKit.adjustAudioMixingVolume(50)
 - [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
 - [`adjustAudioMixingVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
 
-### Set the audio effects volume
+### Adjust the audio effects volume
 
- **Audio effects** are certain short-time sounds such as clapping and gunshots. See [Audio Effects/Mixing](../../en/Voice/effect_mixing_mac.md) for enabling this function.
+ An **audio effects** here refers to a sound clip which plays a brief sound effect such as clapping or gunshots. See [Audio Effects/Mixing](../../en/Voice/audio_effect_mixing_apple.md) for more information on how to enable this function.
 
-The value of the audio effects volume ranges between 0.0 and 100.0. 100 .0 (default) represents the original volume, and 0.0 means the audio effect is muted.
+![](https://web-cdn.agora.io/docs-files/1578897024458)
+
+You can call `setEffectsVolume` or `setVolumeOfEffect` to set the audio effects volume.
+- `setEffectsVolume`：
+  - Sets the volume of all audio effects.
+  - The `volume` parameter represents the volume of the audio effects, ranging between 0 and 100.
+- `setVolumeOfEffect`：
+  - Sets the volume of a specified audio effect.
+  - The `volume` parameter represents the volume of a specified audio effect, ranging between 0 and 100.
 
 #### Sample code
 
 ```swift
 // swift
-// Sets the volume of all audio effect files.
+// Sets the volume of all audio effects as 50% of the original volume.
 agoraKit.setEffectsVolume(50.0)
-// Sets the volume of a single audio effect file.
-// soundId is ID of the audio effect when you call playEffect.
+// Sets the volume of a specified audio effect as 50% of the original volume.
+// @param soundId is ID of the audio effect when you call playEffect.
 agoraKit.setVolumeOfEffect(soundId:"1", 50.0)
 ```
 
 ```objective-c
 // objective-c
-// Sets the volume of all audio effect files.
+// Sets the volume of all audio effect as 50% of the original volume.
 [agoraKit setEffectsVolume: 50.0];
-// Sets the volume of a single audio effect file.
-// soundId is ID of the audio effect when you call playEffect.
+// Sets the volume of a specified audio effect as 50% of the original volume.
+// @param soundId is ID of the audio effect when you call playEffect.
 [agoraKit setVolumeOfEffect: soundId:@"1" volume:50.0];
 ```
 
@@ -196,19 +248,21 @@ agoraKit.setVolumeOfEffect(soundId:"1", 50.0)
 - [`setEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
 - [`setVolumeOfEffect`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVolumeOfEffect:withVolume:)
 
-### Get the data of the loudest speaker (callback method)
+### Get the data of the loudest speaker (callback)
 
-In audio recording, mixing and playing, you can use the following APIs to get the data of the loudest speaker in the channel.
+When recording, mixing, or playing audio, you can use the following methods to get the data of the loudest speaker in the channel.
 
-- The speakers with the highest instant volume
+- Reports users with the highest peak volumes. The `reportAudioVolumeIndicationOfSpeakers` reports the user IDs the corresponding volumes of the currently loudest speakers in the channel, as well as whether the local user is speaking.
+
+ <div class="alert note">To enable voice detection for the local user, you must set report_vad as true when calling enableAudioVolumeIndication.</div>
 
 Sample code
 
 ```swift
 // swift
-// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is the local user.
-// speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
-// totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
+// Gets the user IDs of the users with the highest peak volume, the corresponding volumes, as well as whether the local user is speaking.
+// @param speakers is an array containing the user IDs and volumes of the local and the remote users. The volume parameter ranges between 0 and 255.
+// @param totalVolume refers to the total volume after audio mixing, ranging between 0 and 255.
 func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeakers speakers:
 [AgoraRtcAudioVolumeInfo], totalVolume: Int) {
 }
@@ -216,27 +270,29 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, reportAudioVolumeIndicationOfSpeaker
 
 ```objective-c
 // objective-c
-// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is the local user.
-// speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
-// totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
+// Gets the user IDs of the users with the highest peak volume, the corresponding volumes, as well as whether the local user is speaking.
+// @param speakers is an array containing the user IDs and volumes of the local and the remote users. The volume parameter ranges between 0 and 255.
+// @param totalVolume refers to the total volume after audio mixing, ranging between 0 and 255.
 - (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine reportAudioVolumeIndicationOfSpeakers:(NSArray<AgoraRtcAudioVolumeInfo*> *_Nonnull)speakers totalVolume:(NSInteger)totalVolume {
 }
 ```
 
-- The speaker with the highest accumulative volume during a certain period
+-  Reports the user with the highest average volume. The `activeSpeaker` callback reports the user ID with the highest average volume during a certain period of time.
+
+ <div class="alert note">You must call enableAudioVolumeIndication to be able to receive this callback.</div>
 
 Sample code
 
 ```swift
 // swift
-// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is the local user.
+// Gets the user ID of the user with the highest average volume during a certain period of time. A uid of 0 indicates the local user.
 func rtcEngine(_ engine: AgoraRtcEngineKit, activeSpeaker speakerUid: UInt) {
 }
 ```
 
 ```objective-c
 // objective-c
-// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is the local user.
+// Gets the user ID of the user with the highest average volume during a certain period of time. A uid of 0 indicates the local user.
 - (void)rtcEngine:(AgoraRtcEngineKit *_Nonnull)engine activeSpeaker:(NSUInteger)speakerUid {
 }
 ```
@@ -248,6 +304,5 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, activeSpeaker speakerUid: UInt) {
 
 ## Considerations
 
-- The API methods have return values. If the method call fails, the return value is < 0.
-- If the volume of the audio signal is set too high, noise may occur on some devices.
+Setting the audio level too high may cause audio distortion on some devices.
 

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Fri Feb 21 2020 07:04:48 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 06:20:30 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -16,7 +16,7 @@ Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-tim
 
 v1.2.2 was released on February 21, 2020.
 
-### Compatibility Changes
+**Compatibility Changes**
 
 
 | Timeout | Before v1.2.2 | v1.2.2 |
@@ -25,7 +25,7 @@ v1.2.2 was released on February 21, 2020.
 
 
 
-### Issues fixed
+**Issues fixed**
 
 The SDK occasionally returns `LOGIN_ERR_UNKNOWN` when logging in from a recent version of Chrome on a Windows platform. 
 
@@ -48,7 +48,7 @@ If you use the `sendMessageToPeer` method to send a <i>text</i> message in the f
 
 v1.2.0 was released on November 15, 2019. 
 
-### New Features
+**New Features**
 
 #### Subscribe to the online status of the specified user(s)
 
@@ -70,14 +70,14 @@ Creates and initializes a raw message to be sent.
 
  If you set a text description, ensure that the size of the raw message and the description combined does not exceed 32 KB.
  
- ### Issues fixed
+**Issues fixed**
  
 The SDK is occasionally kicked by the server: When the issue occurs, the Client instance receives the `ConnectionStateChange` callback, which indicates the connection state is `ABORTED` and the reason for the connection state change `INTERRUPTED`. The log file shows the error code from the server is 10001. 
  
 
 ## v1.1.0
 
-v1.1.0 is released on September 18, 2019. It adds the following features: 
+v1.1.0 was released on September 18, 2019. It adds the following features: 
 
 - [Gets the member count of specified channel(s).](#getcount)
 - [Automatically returns the latest numer of members in the current channel](#oncount)
@@ -85,12 +85,12 @@ v1.1.0 is released on September 18, 2019. It adds the following features:
 
 
 
-### Compatibility Changes
+**Compatibility Changes**
 
 1. The [getServerReceivedTs](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a7994de6da26269c3137e93ddf7a2c2be) method of the [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) object supports both peer-to-peer and channel messages. 
 2. Timeout for sending a peer-to-peer message is 10 seconds from this release, compared to 5 seconds in previous versions. See [PEER_MESSAGE_ERR_TIMEOUT ](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_peer_message_error.html#a9aaaa5b9fa46cc15327abd6c2825bc4d).
 
-### New Features
+**New Features**
 
 <a name="getcount"></a>
 #### 1. Gets the member count of specified channel(s).
@@ -128,7 +128,7 @@ Specific features:
 
 When updating attributes of a channel, you can use the  `enableNotificationToChannelMembers` flag to decide whether or not to notify all members of the channel about this attribute change.  
 
-### Improvements
+**Improvements**
 
 #### Resends peer-to-peer messages
 
@@ -139,7 +139,7 @@ This release improves the resending mechanism of peer-to-peer messages, and exte
 The Agora RTM system will resend a maximum of 32 channel messages of up to 30 seconds to channel members, when they manage to reconnect to the system from poor network conditions. This greatly improves the overall arrival rate of channel messages under weak network conditions. 
 
 
-### API Changes
+**API Changes**
 
 #### Added Methods
 
@@ -172,21 +172,21 @@ The Agora RTM system will resend a maximum of 32 channel messages of up to 30 se
 
 v1.0.1 was released on September 5, 2019. 
 
-### Issues Fixed
+**Issues Fixed**
 
 - Peer-to-peer messages have a chance to become offline messages even if [enableOfflineMessaging](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/sendmessageoptions.html) is not set. 
 - The local user has a chance of not being able to retrieve the latest user attributes of a remote user, if the remote user updates his/her attributes immediately after logging in the Agora RTM system. 
 
-### Improvements
+**Improvements**
 
 - Caches up to six seconds of peer-to-peer messages sent when the network is interrupted, and resends the cached messages immediately after the SDK reconnects to the Agora RTM system. 
 - Timeout for sending a peer-to-peer message is reset to 10 seconds. 
 
 ## v1.0.0
 
-v1.0.0 is released on August 5th, 2019.
+v1.0.0 was released on August 5th, 2019.
 
-### New Features
+**New Features**
 
 #### Interconnects with the legacy Agora Signaling SDK
 
@@ -212,9 +212,9 @@ Supports setting the output log level of the SDK using the `logFilter` parameter
 
 ## v0.9.3
 
-v0.9.3 is released on July 24th, 2019.
+v0.9.3 was released on July 24th, 2019.
 
-### New Features
+**New Features**
 
 #### Sends an (offline) peer-to-peer message to a specified user (receiver)
 
@@ -249,7 +249,7 @@ This release adds the function of querying the online status of the specified us
 
 This release allows you to renew a token.
 
-### API Changes
+**API Changes**
 
 #### Adds
 
@@ -265,15 +265,15 @@ This release allows you to renew a token.
 
 ## v0.9.1
 
-v0.9.1 is released on May 20th, 2019.
+v0.9.1 was released on May 20th, 2019.
 
-### New Features
+**New Features**
 
 This release adds the call invitation feature, allowing you to create, send, cancel, accept, and decline a call invitation in a one-to-one or one-to-many voice/video call. 
 
 
 
-### API Changes
+**API Changes**
 
 #### Adds
 
@@ -298,11 +298,11 @@ This release adds the call invitation feature, allowing you to create, send, can
 
 ## v0.9.0
 
-v0.9.0 is released on February 14th, 2019.
+v0.9.0 was released on February 14th, 2019.
 
 Initial version. 
 
-Key features:
+**Key features**
 
 - Sends or receives peer-to-peer messages.
 - Joins or leaves a channel.
