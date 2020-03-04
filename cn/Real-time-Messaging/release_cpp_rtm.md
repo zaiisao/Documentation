@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Linux CPP
-updatedAt: Fri Feb 14 2020 03:18:08 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:49:55 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -52,7 +52,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 
 
-### 兼容性改动
+**兼容性改动**
 
 #### 废弃 `isOnline`
 
@@ -73,7 +73,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 
 
-### 新增功能
+**新增功能**
 
 #### 1. <a name="subscribe"></a>订阅或退订指定单个或多个用户的在线状态。
 
@@ -114,7 +114,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 <div class="alert note"> 文本消息大小不得超过 32 KB。</div>
 
 
-### API 变更
+**API 变更**
 
 #### 新增方法
 
@@ -155,14 +155,14 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 
 
-### 兼容性改动
+**兼容性改动**
 
 1. 废弃点对点消息发送方法 [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#afec5391fa9c4ec2bfe9ac4e684705600)，改由重载方法 [sendMessageToPeer(const char \*, const IMessage \*, const SendMessageOptions \&)](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a08c1b3d444af5a2778ede48e4c677a52) 替代。
 2. [IMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html) 对象的 [getServerReceivedTs](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_message.html#ac7427e3a49bd44e53b2809e0b39511b6) 方法由仅支持点对点消息改为同时支持点对点消息和频道消息。
 3. 点对点消息的超时时间由 5 秒延长为 10 秒。详见： [PEER_MESSAGE_ERR_SENT_TIMEOUT ](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#ac7c591aac4ca6867e239c8bcccc1fc5ca231d49ed8da45aa4be794cfe927703dc)
 4. 针对 [joinChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a6a54cdd8e5db526514e0ca84aa9cba4c) 方法调用增加了[加入相同频道的频率限制：每 5 秒 2 次](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#adeb91ade364eddd742d8f3ad59c6638ea02250c14972ba934c148fc3d558baa6f)。
 
-### 新增功能
+**新增功能**
 
 <a name="getcount"></a>
 #### 1. 查询频道成员人数
@@ -203,7 +203,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 在进行频道属性的更新或删除操作时，你可以通过设置标志位 [enableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_channel_attribute_options.html#a9a29721df90beca76974a5e348902530) 决定是否通知对应频道所有成员本次频道属性变更。
 
 
-### 性能改进
+**性能改进**
 
 #### 点对点消息重发
 
@@ -214,7 +214,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 秒最多 32 条的频道消息，提高了弱网情况下频道消息的到达率。
 
 
-### API 变更
+**API 变更**
 
 #### 新增方法
 
@@ -258,7 +258,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 该版本于 2019 年 8 月 1 日发布。
 
-### 问题修复
+**问题修复**
 
 - 断网后 SDK 未返回 `onConnectionStateChanged` 回调。
 
@@ -266,7 +266,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 该版本于 2019 年 7 月 24 日发布。
 
-### 新增功能
+**新增功能**
 
 #### 新老互通
 
@@ -293,7 +293,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 > 该方法无需在 `login` 成功之后调用。
 
-###  功能改进
+**功能改进**
 
 针对以下不同错误情况细化了错误码
 
@@ -301,12 +301,12 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 - 调用频率超过上限
 - 未调用 `login` 方法或 `login` 方法未调用成功
 
-### 问题修复
+**问题修复**
 
 - 修复了一个可以用静态 App ID 和一个通过动态 App ID 生成的 Token 登录Agora RTM 系统的问题。
 
 
-### API 变更
+**API 变更**
 
 - [setLogFile](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a08063b2692a6091ad5e8b30146498089)：设定日志文件的默认地址。
 - [setLogFilter](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a41da0404ac726b7326ef1ca6213b2d61)：设置日志输出等级。
@@ -318,7 +318,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 该版本于 2019 年 6 月 7 日发布。
 
-### 新增功能
+**新增功能**
 
 #### 发送（离线）点对点消息
 
@@ -344,7 +344,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 > - 用户属性设置相关操作的调用频率限制为每 5 秒 10 条，超限则 SDK 会返回错误码：`ATTRIBUTE_OPERATION_ERR_TOO_OFTEN`。
 > - 获取用户属性相关操作的调用频率为每 5 秒 40 条，超限则 SDK 会返回错误码：`ATTRIBUTE_OPERATION_ERR_TOO_OFTEN` 。
 
-### API 变更
+**API 变更**
 
 #### 新增：
 
@@ -365,12 +365,12 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 - [onGetUserAttributesResult()](https://docs.agora.io/cn/Video/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a76058e05b9a623645ba05ea1d1796007)：获取指定用户属性的执行回调
 - [ATTRIBUTE_OPERATION_ERR](https://docs.agora.io/cn/Video/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a9413a8cce9bbd88d8d4baade13c2ccce)：属性操作相关错误码
 
-### 性能改进
+**性能改进**
 
 - 支持在登录 Agora RTM 系统之前创建频道实例。
 - 取消创建 RTM 频道最多 20 个的限制，但是同一用户只能同时加入 20 个频道，超限后会收到错误码 `JOIN_CHANNEL_ERR_FAILURE ` 。
 
-### 问题修复
+**问题修复**
 
 - 偶现的系统崩溃。
 - 用户登出后，其它用户查询该用户仍然显示在线，30 秒后查询不在线。
@@ -379,12 +379,12 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 该版本于 2019 年 5 月 8 日发布。
 
-### 新增功能
+**新增功能**
 
 - 查询用户在线状态
 - 更新 Token
 
-### 性能改进
+**性能改进**
 
 支持以空格开头的 `userId` 参数。
 
@@ -392,7 +392,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 该版本于 2019 年 4 月 4 日发布。
 
-### 新增功能
+**新增功能**
 
 本版本增加了呼叫邀请功能。结合音视频一对一或一对多通话场景，你可以创建、发送、取消、接受或拒绝一个呼叫邀请。
 
@@ -402,7 +402,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 首次发布。
 
-### 关键功能
+**关键功能**
 
 - 发送或接收点对点消息。
 - 加入或离开频道。
