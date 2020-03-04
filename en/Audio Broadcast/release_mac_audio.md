@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 13:21:02 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 14:34:56 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -32,7 +32,7 @@ We also upgrade the On-premise Recording SDK to v3.0.0. Ensure that you upgrade 
 
 #### Renaming the static library and adding support for dynamic library
 
-To unify the library names across platforms, this release renames the library from `AgoraRtcEngineKit.framework` to `AgoraRtcKit.framework`. If you upgrade your SDK to v3.0.0, you must re-import the `AgoraRtcKit` class. For details, see [Import the class](https://docs.agora.io/en/Video/start_call_mac?platform=macOS#a-nameimportclassa-2-import-the-class) in the Quickstart.
+To unify the library names across platforms, this release renames the library from `AgoraRtcEngineKit.framework` to `AgoraRtcKit.framework`. If you upgrade your SDK to v3.0.0, you must re-import the `AgoraRtcKit` class. For details, see [Import the class](https://docs.agora.io/en/Voice/start_call_mac?platform=macOS#a-nameimportclassa-2-import-the-class) in the Quickstart.
 
 To improve your development experience, this release also adds support for the dynamic library. You can integrate either the static or the dynamic library in your project, and the name of the dynamic library package is Agora_Native_SDK_for_macOS_v3_0_0_VOICE_Dynamic. 
 
