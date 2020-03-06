@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 13:11:50 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 14:11:53 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -42,11 +42,11 @@ macOS 语音 SDK 支持两种主要场景:
 
 <table>
     <tr>
-        <td width="10%"><b>库类型</b></td>
+        <td width="12%"><b>库类型</b></td>
         <td width="12%"><b>ipa 体积</b></td>
         <td width="15%"><b>解压后体积</b></td>
         <td width="19%"><b>Frameworks 文件夹体积</b></td>
-        <td width="19%"><b>二进制文件体积</b></td>
+        <td width="17%"><b>二进制文件体积</b></td>
         <td width="25%"><b>Frameworks 文件夹 + 二进制文件总体积</b></td>
     </tr>
     <tr>
