@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 13:23:38 GMT+0800 (CST)
+updatedAt: Thu Mar 05 2020 01:40:30 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -38,7 +38,7 @@ We also upgrade the On-premise Recording SDK to v3.0.0. Ensure that you upgrade 
 
 #### 1. Renaming the static library and adding support for dynamic library
 
-To unify the library names across platforms, this release renames the library from `AgoraRtcEngineKit.framework` to `AgoraRtcKit.framework`. If you upgrade your SDK to v3.0.0, you must re-import the `AgoraRtcKit` class. For details, see [Import the class](https://docs.agora.io/en/Video/start_call_mac?platform=macOS#a-nameimportclassa-2-import-the-class) in the Quickstart.
+To unify the library names across platforms, this release renames the library from `AgoraRtcEngineKit.framework` to `AgoraRtcKit.framework`. If you upgrade your SDK to v3.0.0, you must re-import the `AgoraRtcKit` class. For details, see [Import the class](https://docs.agora.io/en/Interactive%20Broadcast/start_live_mac?platform=macOS#a-nameimportclassa2-import-the-class) in the Quickstart.
 
 To improve your development experience, this release also adds support for the dynamic library. You can integrate either the static or the dynamic library in your project, and the name of the dynamic library package is Agora_Native_SDK_for_macOS_v3_0_0_FULL_Dynamic. 
 
@@ -48,7 +48,7 @@ Integrating the dynamic library has the following advantages:
 - Incompatibility issues with other third-party libraries are avoided.
 - Uploading the app onto App Store is easier.
 
-If you prefer the dynamic library, you need to re-integrate the SDK and re-import the `AgoraRtcKit` class. This process should take no more than five minutes. See [Integrate the SDK](https://docs.agora.io/en/Video/start_call_mac?platform=macOS#a-nameintegratesdkaintegrate-the-sdk) and [Import the class](https://docs.agora.io/en/Video/start_call_mac?platform=macOS#a-nameimportclassa-2-import-the-class) in the Quickstart.
+If you prefer the dynamic library, you need to re-integrate the SDK and re-import the `AgoraRtcKit` class. This process should take no more than five minutes. See [Integrate the SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_mac?platform=macOS#a-nameintegratesdkaintegrate-the-sdk) and [Import the class](https://docs.agora.io/en/Interactive%20Broadcast/start_live_mac?platform=macOS#a-nameimportclassa2-import-the-class) in the Quickstart.
 
 <div class="alert info">The following table shows the difference in the file size when generating ipa files with a dynamic and static library:
 

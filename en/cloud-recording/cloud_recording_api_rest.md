@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Mar 04 2020 07:19:29 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 03:05:24 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -48,7 +48,7 @@ Before starting a cloud recording, you need to call this method to get a resourc
 - Method:POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/acquire
 
-> The request frequency limit is 10 times per second per APP ID. Contact support@agora.io if you want to raise the limit.
+> The request frequency limit is 10 requests per second per APP ID. Contact support@agora.io if you want to raise the limit.
 
 If this method call succeeds, you get a resource ID (`resourceId`) from the HTTP response body. The resource ID is valid for five minutes, so you need to [start recording](#start) with this resource ID within five minutes.
 
@@ -105,7 +105,7 @@ After getting a resource ID, call this method to start cloud recording.
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/mode/\<mode\>/start
 
-> The request frequency limit is 10 times per second per APP ID.
+> The request frequency limit is 10 requests per second per APP ID.
 
 ### Parameters
 
@@ -355,7 +355,7 @@ This method call overrides the existing layout configurations. For example, if y
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/updateLayout
 
-> The request frequency limit is 10 times per second per APP ID.
+> The request frequency limit is 10 requests per second per APP ID.
 
 ### Parameters
 
@@ -462,7 +462,7 @@ After you start a recording, you can call query to check its status.
 - Method: GET
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
 
-> The request frequency limit is 10 times per second per APP ID.
+> The request frequency limit is 10 requests per second per APP ID.
 
 ### Parameters
 
@@ -564,7 +564,7 @@ When a recording finishes, call this method to leave the channel and stop record
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/stop
 
-> - The request frequency limit is 10 times per second per APP ID.
+> - The request frequency limit is 10 requests per second per APP ID.
 > - Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default.
 
 ### Parameters
