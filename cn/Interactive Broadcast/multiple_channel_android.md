@@ -3,12 +3,14 @@
 title: 加入多频道
 description: 加入多频道v3.0首次上线
 platform: Android
-updatedAt: Wed Mar 04 2020 05:48:55 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 04:00:02 GMT+0800 (CST)
 ---
 # 加入多频道
 ## 功能描述
 
 为方便用户同时加入多个频道，接收多个频道的音视频流，Agora Native SDK 自 v3.0 起新增支持多频道管理，且频道数量无限制。
+
+该功能可应用于类似超级小班课的场景：将一个互动大班里的学生分到不同的小班，学生可以在小班内进行实时音视频互动。根据场景需要，你还可以给每个小班可以配备一名助教老师。
 
 ## 实现方法
 Native SDK 通过一个 `RtcChannel` 类和 `IRtcChannelEventHandler` 类实现多频道控制。你可以从如下任一种方法实现该功能：
@@ -98,9 +100,9 @@ Native SDK 通过一个 `RtcChannel` 类和 `IRtcChannelEventHandler` 类实现�
 
 ### API 参考
 
-- [`createRtcChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/v3.0.0/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9eb0770851a8ba489564f72f9b280bca)
-- [`RtcChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/v3.0.0/classio_1_1agora_1_1rtc_1_1_rtc_channel.html) 类
-- [`IRtcChannelEventHandler`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/v3.0.0/classio_1_1agora_1_1rtc_1_1_i_rtc_channel_event_handler.html) 类
+- [`createRtcChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9eb0770851a8ba489564f72f9b280bca)
+- [`RtcChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_channel.html) 类
+- [`IRtcChannelEventHandler`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_channel_event_handler.html) 类
 
 ## 开发注意事项
 

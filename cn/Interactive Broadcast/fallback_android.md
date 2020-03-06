@@ -3,7 +3,7 @@
 title: 视频流回退
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:10:51 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 04:31:10 GMT+0800 (CST)
 ---
 # 视频流回退
 ## 功能描述
@@ -26,7 +26,7 @@ updatedAt: Mon Mar 02 2020 08:10:51 GMT+0800 (CST)
  - 设置 `STREAM_FALLBACK_OPTION_VIDEO_STREAM_LOW (1)` ，则下行网络较弱时，只接收发流用户的视频小流。
  - 设置 `STREAM_FALLBACK_OPTION_AUDIO_ONLY (2)`，则下行网络较弱时，先尝试只接收发流用户的视频小流。如果网络环境无法显示视频，则只接收发流用户的音频流。
 
- 用户接收到的流从媒体流切换到音频流，或从音频流切换到媒体流时，SDK 会触发 `onRemoteSubhuscribeFallbackToAudioOnly` 回调，该用户可以了解当前接收流的状态。当接收到的流从大流切换到小流，或从小流切换到大流时，SDK 会触发 `onRemoteVideoStats` 回调，该用户可以了解当前接收到的视频流类型。
+ 用户接收到的流从媒体流切换到音频流，或从音频流切换到媒体流时，SDK 会触发 `onRemoteSubscribeFallbackToAudioOnly` 回调，该用户可以了解当前接收流的状态。当接收到的流从大流切换到小流，或从小流切换到大流时，SDK 会触发 `onRemoteVideoStats` 回调，该用户可以了解当前接收到的视频流类型。
 
 ### 示例代码
 

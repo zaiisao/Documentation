@@ -3,11 +3,17 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Tue Nov 19 2019 08:43:06 GMT+0800 (CST)
+updatedAt: Thu Mar 05 2020 04:28:26 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
 本页介绍在正式使用 [Agora RTM Web SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
+
+## 快速跑通 Demo
+
+如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
+
+<video src="https://web-cdn.agora.io/docs-files/1583382445173" poster="https://web-cdn.agora.io/docs-files/1583378147542"  controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 ## Demo 体验
 你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Web](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Web) 查看完整的源码和代码逻辑

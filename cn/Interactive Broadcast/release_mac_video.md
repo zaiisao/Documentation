@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 13:12:30 GMT+0800 (CST)
+updatedAt: Thu Mar 05 2020 01:42:48 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -36,21 +36,21 @@ macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异
 **升级必看**
 #### 1. 静态库更名与新增动态库
 
-为与其他平台保持一致，该版本将 SDK 的库名由 AgoraRtcEngineKit 变更为 AgoraRtcKit。如果你由老版本的 SDK 升级至该版本，请务必重新导入类。详细步骤见《快速开始》中的[导入类](https://docs.agora.io/cn/Video/start_call_mac?platform=macOS#a-nameimportclassa2-%E5%AF%BC%E5%85%A5%E7%B1%BB)章节。
+为与其他平台保持一致，该版本将 SDK 的库名由 AgoraRtcEngineKit 变更为 AgoraRtcKit。如果你由老版本的 SDK 升级至该版本，请务必重新导入类。详细步骤见《快速开始》中的[导入类](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS#a-nameimportclassa2-%E5%AF%BC%E5%85%A5%E7%B1%BB)章节。
 
 同时，为提升开发体验，该版本新增动态库支持。你可以在静态库和动态库之间任选一个进行集成，其中动态库的包名为 Agora_Native_SDK_for_macOS_v3_0_0_FULL_Dynamic。
 
-使用动态库可以提高库的安全等级，方便 app 上传至 App Store，且避免与第三方库产生不兼容等问题。如果选择动态库，则需要重新进行集成并导入类。该步骤大约需要 5 分钟。详见《快速开始》中的[集成 SDK](https://docs.agora.io/cn/Video/start_call_mac?platform=macOS#a-nameintegratesdka%E9%9B%86%E6%88%90-sdk) 和[导入类](https://docs.agora.io/cn/Video/start_call_mac?platform=macOS#a-nameimportclassa2-%E5%AF%BC%E5%85%A5%E7%B1%BB)章节。
+使用动态库可以提高库的安全等级，方便 app 上传至 App Store，且避免与第三方库产生不兼容等问题。如果选择动态库，则需要重新进行集成并导入类。该步骤大约需要 5 分钟。详见《快速开始》中的[集成 SDK](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS#a-nameintegratesdka%E9%9B%86%E6%88%90-sdk) 和[导入类](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS#a-nameimportclassa2-%E5%AF%BC%E5%85%A5%E7%B1%BB)章节。
 
 <div class="alert info">下表展示分别使用动态库和静态库生成 ipa 文件过程中各文件体积的差异：
 
 <table>
     <tr>
-        <td width="10%"><b>库类型</b></td>
+        <td width="12%"><b>库类型</b></td>
         <td width="12%"><b>ipa 体积</b></td>
         <td width="15%"><b>解压后体积</b></td>
         <td width="19%"><b>Frameworks 文件夹体积</b></td>
-        <td width="19%"><b>二进制文件体积</b></td>
+        <td width="17%"><b>二进制文件体积</b></td>
         <td width="25%"><b>Frameworks 文件夹 + 二进制文件总体积</b></td>
     </tr>
     <tr>
