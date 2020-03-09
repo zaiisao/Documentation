@@ -3,7 +3,7 @@
 title: 变声与混响
 description: How to set voice effects for iOS and macOS
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 08:18:54 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:17:52 GMT+0800 (CST)
 ---
 # 变声与混响
 ## 功能描述
@@ -161,10 +161,7 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 
 ## 示例项目
 
-我们在 GitHub 提供实现了变声与混响功能的 iOS 开源示例项目。你可以下载体验，并参考源代码。
-
-- Swift 项目：[Agora-RTC-With-Voice-Changer-iOS](https://github.com/AgoraIO/Advanced-Audio/tree/master/Voice-Changer/Agora-RTC-With-Voice-Changer-iOS)，参考 [`EffectViewController.swift`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Voice-Changer/Agora-RTC-With-Voice-Changer-iOS/Agora-RTC-With-Voice-Changer-iOS/EffectViewController.swift) 。
-- Objective-C 项目：[Agora-RTC-With-Voice-Changer-iOS-Objective-C](https://github.com/AgoraIO/Advanced-Audio/tree/master/Voice-Changer/Agora-RTC-With-Voice-Changer-iOS-Objective-C)，参考 [`EffectTableViewController.m`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Voice-Changer/Agora-RTC-With-Voice-Changer-iOS-Objective-C/Agora-RTC-With-Voice-Changer-iOS-Objective-C/EffectTableViewController.m) 。
+我们在 GitHub 提供实现了变声与混响功能的 iOS 开源示例项目。你可以下载体验 [Agora-RTC-With-Voice-Changer-iOS (Swift)](https://github.com/AgoraIO/Advanced-Audio/tree/master/iOS%26macOS/Agora-RTC-With-Voice-Changer-iOS)，并参考 [`EffectViewController.swift`](https://github.com/AgoraIO/Advanced-Audio/blob/master/iOS%26macOS/Agora-RTC-With-Voice-Changer-iOS/Agora-RTC-With-Voice-Changer-iOS/EffectViewController.swift)。
 
 ## 开发注意事项
 以上方法都有返回值，返回值小于 0 表示方法调用失败。

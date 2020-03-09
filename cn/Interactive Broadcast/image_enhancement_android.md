@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: Android
-updatedAt: Tue Jan 14 2020 02:38:59 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 05:07:17 GMT+0800 (CST)
 ---
 # 美颜
 ## 功能描述
@@ -31,7 +31,7 @@ updatedAt: Tue Jan 14 2020 02:38:59 GMT+0800 (CST)
 mRtcEngine.setBeautyEffectOptions(true, new BeautyOptions(LIGHTENING_CONTRAST_NORMAL, 0.5F, 0.5F, 0.5F));
 ```
 
-同时，我们在 GitHub 提供已实现美颜功能的开源示例项目。你可以前往 [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) 下载体验并参考 [`WorkerThread.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/model/WorkerThread.java#L114) 和 [`CallActivity.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/CallActivity.java#L400) 文件中的代码。
+同时，我们在 GitHub 提供已实现美颜功能的开源示例项目。你可以前往 [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) 下载体验并参考 [`LiveActivity.java`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Android/app/src/main/java/io/agora/openlive/activities/LiveActivity.java) 文件中 `onBeautyClicked` 方法的代码。
 
 ## 开发注意事项
 

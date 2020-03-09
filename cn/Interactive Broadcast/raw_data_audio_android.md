@@ -3,7 +3,7 @@
 title: 原始音频数据
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:21:32 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 03:58:27 GMT+0800 (CST)
 ---
 # 原始音频数据
 ## 功能描述
@@ -92,8 +92,6 @@ class IAudioFrameObserver
             virtual bool onMixedAudioFrame(AudioFrame& audioFrame) = 0;
 };
 ```
-
-同时，我们在 GitHub 提供一个开源的 [AgoraAudioIO-Android](https://github.com/AgoraIO/Advanced-Audio/tree/master/Custom-Audio-Device/AgoraAudioIO-Android) 示例项目。你可以前往下载，或参考该项目的源代码。
 
 ### API 参考
 

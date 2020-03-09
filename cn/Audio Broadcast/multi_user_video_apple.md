@@ -3,7 +3,7 @@
 title: 七人以上视频场景
 description: 
 platform: iOS,macOS
-updatedAt: Wed Mar 04 2020 05:35:06 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 07:18:49 GMT+0800 (CST)
 ---
 # 七人以上视频场景
 ## 功能描述
@@ -60,13 +60,11 @@ agoraKit.setRemoteVideoStream(uid, type: .high)
 agoraKit.setRemoteVideoStream(uid, type: .low)
 ```
 
-我们在 GitHub 提供一个开源的 [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) 示例项目。
-
 ### API 参考
 
 - [`enableDualStreamMode`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableDualStreamMode:)
 - [`setRemoteVideoStream`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoStream:type:)
-- [`setParameters`](https://docs.agora.io/cn/Audio%20Broadcast/.API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setParameters:)
+- [`setParameters`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setParameters:)
 
 ## 开发注意事项
 

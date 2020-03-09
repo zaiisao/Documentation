@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Thu Nov 14 2019 03:10:27 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:03:19 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -61,7 +61,7 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(
 ));
 ```
 
-同时，我们在 GitHub 提供一个开源的 [Agora-Video-Source-Android](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-Android) 示例项目。你可以前往下载，或参考 [VideoChatViewActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-Android/app/src/main/java/io/agora/tutorials/customizedvideosource/VideoChatViewActivity.java) 文件中的源代码。
+同时，我们在 GitHub 提供一个开源的 [Switch external video](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video) 示例项目。你可以前往下载，或参考 [SwitchVideoInputActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video/src/main/java/io/agora/advancedvideo/switchvideoinput/SwitchVideoInputActivity.java) 文件中的 `setVideoInput` 方法的源代码。
 
 **API 参考**
 
@@ -142,9 +142,6 @@ if (mHasStarted && mConsumer != null) {
 	mConsumer.consumeByteArrayFrame(data, AgoraVideoFrame.NV21, width, height, rotation, timestamp);
 }
 ```
-
-同时，我们在 GitHub 提供一个开源的 [Custom-Media-Device-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) 示例项目。你可以前往下载，或参考 [ViewSharingCapturer.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-Android/app/src/main/java/io/agora/rtc/mediaio/app/shareScreen/source/ViewSharingCapturer.java) 文件中的源代码。
-
 
 **API 参考**
 
@@ -245,7 +242,7 @@ IVideoSink sink = new IVideoSink() {
 rtcEngine.setLocalVideoRenderer(sink);
 ```
 
-同时，我们在 GitHub 提供一个开源的 [Custom-Media-Device-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-Android) 示例项目。你可以前往下载，或参考 [PrivateTextureHelper.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-Android/app/src/main/java/io/agora/rtc/mediaio/app/videoSource/source/PrivateTextureHelper.java) 文件中的源代码。
+同时，我们在 GitHub 提供一个开源的 [Custom render](https://github.com/AgoraIO/Advanced-Video/tree/master/Android/sample-custom-render) 示例项目。你可以前往下载，或参考 [CustomRemoteRenderActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-custom-render/src/main/java/io/agora/advancedvideo/customrenderer/CustomRemoteRenderActivity.java) 文件中的源代码。
 
 **API 参考**
 

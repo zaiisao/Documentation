@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: Web
-updatedAt: Tue Dec 03 2019 05:16:09 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:35:33 GMT+0800 (CST)
 ---
 # 美颜
 ## 功能描述
@@ -41,7 +41,7 @@ stream.setBeautyEffectOptions(true, {
 });
 ```
 
-同时，我们在 GitHub 提供已实现美颜功能的开源示例项目。你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/)并参考 [`rtc-client.js`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Web/src/rtc-client.js#L80) 文件中的代码。
+同时，我们在 GitHub 提供已实现美颜功能的开源示例项目。你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/)并参考 [`rtc-client.js`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Web/src/rtc-client.js#L82) 文件中的代码。
 
 ## 开发注意事项
 

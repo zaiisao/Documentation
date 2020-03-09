@@ -3,7 +3,7 @@
 title: 变声与混响
 description: How to adjust voice effect for Android
 platform: Android
-updatedAt: Sun Sep 29 2019 08:18:46 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:11:44 GMT+0800 (CST)
 ---
 # 变声与混响
 ## 功能描述
@@ -97,10 +97,6 @@ rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_STRENGTH, 78);
 - [`setLocalVoicePitch`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
 - [`setLocalVoiceEqualization`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
 - [`setLocalVoiceReverb`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
-
-## 示例项目
-
-我们在 GitHub 提供一个实现了变声与混响功能的开源示例项目 [Agora-RTC-With-Voice-Changer-Android](https://github.com/AgoraIO/Advanced-Audio/tree/master/Voice-Changer/Agora-RTC-With-Voice-Changer-Android)。你可以下载体验，并参考 [`LiveRoomActivity.java`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Voice-Changer/Agora-RTC-With-Voice-Changer-Android/app/src/main/java/io/agora/voice/changer/ui/LiveRoomActivity.java) 中的代码。
 
 ## 开发注意事项
 

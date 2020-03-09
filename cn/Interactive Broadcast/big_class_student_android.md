@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 12:52:28 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 07:38:06 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Android 平台实现学生端相关功能。
@@ -29,7 +29,7 @@ updatedAt: Mon Mar 02 2020 12:52:28 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，搭配使用 Native SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
+参考下图时序，搭配使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
 ![](https://web-cdn.agora.io/docs-files/1579589777899)
 
@@ -53,7 +53,7 @@ updatedAt: Mon Mar 02 2020 12:52:28 GMT+0800 (CST)
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a9e0b6aad17bfceb3c9c939351a467d14) | 离开 RTM 频道。 |
 | [logout](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6f5695854e251ddd4ba05547ab47b317) | 登出 Agora RTM 系统。|
 
-- Native SDK
+- RTC SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |

@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to enable audio mixing on the Web
 platform: Web
-updatedAt: Fri Oct 18 2019 04:16:43 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:28:01 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -186,4 +186,4 @@ localStream.stopAudioMixing();
 
 ## 示例项目
 
-我们在 GitHub 提供一个开源的 [AgoraAudioIO-Web-Webpack](https://github.com/AgoraIO/Advanced-Audio/tree/master/Custom-Audio-Device/AgoraAudioIO-Web-Webpack) 示例项目，你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/AgoraAudioIO-Web/)，并参考 [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Custom-Audio-Device/AgoraAudioIO-Web-Webpack/src/rtc-client.js) 中的代码。
+我们在 GitHub 提供一个开源的 [AgoraAudioIO-Web-Webpack](https://github.com/AgoraIO/Advanced-Audio/tree/master/Web/AgoraAudioIO-Web-Webpack) 示例项目，你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/AgoraAudioIO-Web/)，并参考 [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Web/AgoraAudioIO-Web-Webpack/src/rtc-client.js) 中的代码。

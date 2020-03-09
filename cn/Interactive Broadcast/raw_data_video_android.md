@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 09:44:36 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 05:41:35 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
@@ -98,7 +98,7 @@ class IVideoFrameObserver
 };
 ```
  
-同时，我们在 GitHub 提供一个开源的 [Agora-Plugin-Raw-Data-API-Android-Java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Plugin-Raw-Data-API-Android-Java) 示例项目。你可以前往下载，或参考 [VideoChatViewActivity.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Plugin-Raw-Data-API-Android-Java/app/src/main/java/io/agora/rtc/plugin/rawdata/sample/VideoChatViewActivity.java) 文件的源代码。
+同时，我们在 GitHub 提供一个开源的 [Video encrypt](https://github.com/AgoraIO/Advanced-Video/tree/master/Android/sample-video-encrypt) 示例项目。你可以前往下载，或参考 [`IAgoraMediaEngine.h`](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-video-encrypt/src/main/cpp/include/agora/IAgoraMediaEngine.h) 文件中的代码。
  
  ### API 参考
  

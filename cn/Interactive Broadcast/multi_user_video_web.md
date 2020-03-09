@@ -3,7 +3,7 @@
 title: 七人以上视频场景
 description: 
 platform: Web
-updatedAt: Mon Dec 16 2019 08:55:50 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:54:43 GMT+0800 (CST)
 ---
 # 七人以上视频场景
 ## 功能描述
@@ -56,8 +56,6 @@ client.setLowStreamParameter({
   bitrate: 120,
 })
 ```
-
-同时，我们在 GitHub 提供一个开源的 [17-Multistream](https://github.com/AgoraIO/Advanced-Video/tree/master/17-Multistream) 示例项目。你可以前往下载，或者参考 [index.js](https://github.com/AgoraIO/Advanced-Video/blob/master/17-Multistream/src/index.js) 和 [rtc-clinet.js](https://github.com/AgoraIO/Advanced-Video/blob/master/17-Multistream/src/rtc-client.js) 的源代码。
 
 ### API 参考
 

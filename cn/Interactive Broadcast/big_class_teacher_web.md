@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Mon Mar 02 2020 12:52:28 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 07:38:20 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -39,7 +39,7 @@ updatedAt: Mon Mar 02 2020 12:52:28 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，使用 Native SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
+参考下图时序，使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
 ![](https://web-cdn.agora.io/docs-files/1579577240258)
 
@@ -61,7 +61,7 @@ updatedAt: Mon Mar 02 2020 12:52:28 GMT+0800 (CST)
 | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 发送频道消息。成功发送后，频道内所有用户都能收到。|
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。|
 
-- Native SDK
+- RTC SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |

@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: iOS,macOS
-updatedAt: Mon Mar 02 2020 09:44:42 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 07:14:21 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
@@ -91,7 +91,7 @@ class IVideoFrameObserver
 };
 ```
  
-同时，我们在 GitHub 提供一个开源的 [Agora-Plugin-Raw-Data-API-Objective-C](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Plugin-Raw-Data-API-iOS-Objective-C) 示例项目。你可以前往下载，或参考 [VideoChatViewController.m](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Plugin-Raw-Data-API-iOS-Objective-C/Agora-Plugin-Raw-Data-API-iOS-Objective-C/VideoChat/VideoChatViewController.m) 文件的源代码。
+同时，我们在 GitHub 提供一个开源的 [Agora-Plugin-Raw-Data-API-Objective-C](https://github.com/AgoraIO/Advanced-Video/tree/master/iOS%26macOS/Agora-Plugin-Raw-Data-API-Objective-C) 示例项目。你可以前往下载，或参考 [VideoChatViewController.m](https://github.com/AgoraIO/Advanced-Video/blob/master/iOS%26macOS/Agora-Plugin-Raw-Data-API-Objective-C/Agora-Plugin-Raw-Data-API-iOS-Objective-C/VideoChatViewController.m) 文件的源代码。
  
  ### API 参考
  

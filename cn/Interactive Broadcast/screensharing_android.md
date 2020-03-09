@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Android
-updatedAt: Thu Sep 26 2019 04:16:04 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 05:48:45 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -17,7 +17,7 @@ updatedAt: Thu Sep 26 2019 04:16:04 GMT+0800 (CST)
 
 ## 实现方法
 
-在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Interactive%20Broadcast/android_video.md)。
+在开始屏幕共享前，请确保已在你的项目中实现基本的实时音视频功能。详见开始[音视频通话](../../cn/Interactive%20Broadcast/start_call_android.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_android.md)。
 
 Agora SDK 不提供在 Android 平台实现屏幕共享的 API，但你可以结合 Android 的系统 API 实现该功能。
 * 利用 MediaProjection/VirtualDisplay 拿到屏幕数据
@@ -50,7 +50,7 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
 projection.stop();
 ```
 
-你也可以参考完整的 [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Android#agora-screen-sharing-android)  示例代码实现屏幕共享。
+同时，我们在 GitHub 提供已实现屏幕共享功能的开源示例项目。你可以前往 [Switch External Video](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video) 下载体验并参考 [`switchVideoInputActivity.java`](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video/src/main/java/io/agora/advancedvideo/switchvideoinput/SwitchVideoInputActivity.java) 文件中 `startScreenShare` 方法的代码。
 
 ## 开发注意事项
 * MediaProjection 等 API 需要 Android API level 21+，相关的使用方法请参考 [Google MediaProjection API 文档](https://developer.android.com/reference/android/media/projection/MediaProjection)。

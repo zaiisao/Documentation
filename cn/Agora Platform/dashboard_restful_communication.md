@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 06 2020 07:27:26 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 08:01:37 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 1. 认证
@@ -20,7 +20,7 @@ RESTful API 仅支持 HTTPS。用户必须在 Basic HTTP 请求头部填入 `Aut
 
 ## 2. 接入点
 
-所有请求都发送给 BaseUrl：**https://api.agora.io/dev/v1**
+所有请求都发送给 BaseUrl：**https://api.agora.io/dev** 
 
 -   请求：参数格式必须为 JSON ，内容类型: application/json
 -   响应：响应内容的格式为 JSON。以下为定义的响应状态：
@@ -55,15 +55,15 @@ RESTful API 仅支持 HTTPS。用户必须在 Basic HTTP 请求头部填入 `Aut
 
 ## 3. 项目相关的 API
 
-BaseUrl：**https://api.agora.io/dev/v1**
+BaseUrl：**https://api.agora.io/dev**
 
 下图展示了项目相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1545985558459)
+![](https://web-cdn.agora.io/docs-files/1583740016012)
 
 ### 获取所有项目 \(GET\)
 
 -   方法：GET
--   路径：BaseUrl/projects/
+-   路径：BaseUrl/v1/projects/
 -   参数：None
 -   响应：
 
@@ -96,7 +96,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 获取单个项目（GET）
 
 -   方法：GET
--   路径：BaseUrl/project/
+-   路径：BaseUrl/v1/project/
 -   参数：
 
     ```
@@ -137,7 +137,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 创建项目（POST）
 
 -   方法：POST
--   路径：BaseUrl/project/
+-   路径：BaseUrl/v1/project/
 -   参数：
 
     ```
@@ -169,7 +169,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 禁用或启用项目（POST）
 
 -   方法：POST
--   路径：BaseUrl/project\_status/
+-   路径：BaseUrl/v1/project\_status/
 -   参数：
 
     ```
@@ -216,7 +216,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 删除项目（DELETE）
 
 -   方法：DELETE
--   路径：BaseUrl/project/
+-   路径：BaseUrl/v1/project/
 -   参数：
 
     ```
@@ -249,7 +249,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 设置项目的录制项目服务器 IP（POST）
 
 -   方法：POST
--   路径：BaseUrl/recording\_config/
+-   路径：BaseUrl/v1/recording\_config/
 -   参数：
 
     ```
@@ -286,7 +286,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 启用项目 App 证书（POST）
 
 -   方法：POST
--   路径：BaseUrl/signkey/
+-   路径：BaseUrl/v1/signkey/
 -   参数：
 
     ```
@@ -323,7 +323,7 @@ BaseUrl：**https://api.agora.io/dev/v1**
 ### 重置项目的 App 证书（POST）
 
 -   方法：POST
--   路径：BaseUrl/reset\_signkey/
+-   路径：BaseUrl/v1/reset\_signkey/
 -   参数：
 
     ```
@@ -353,15 +353,20 @@ BaseUrl：**https://api.agora.io/dev/v1**
 
 ## 4. 用量相关的 API
 
-BaseUrl：**https://api.agora.io/dev/v1**
+BaseUrl: **https://api.agora.io/dev**
 
-下图展示了用量相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1545985575734)
+### 获取用量数据 V1（GET）
 
-### 获取用量数据（GET)
+本方法为 V1 版本。为获取更多用量信息，Agora 建议使用[获取用量数据 V3（GET）](#UsageV3) 。
+
+<details>
+	<summary><font color="#3ab7f8">获取用量数据 V1</font></summary>
+
+下图展示了获取用量数据 V1 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1583740129053)
 
 -   方法：GET
--   路径：BaseUrl/usage/
+-   路径：BaseUrl/v1/usage/
 -   参数 (格式为一个日期到另一个日期的YYYY-MM-DD)：
 
     ```
@@ -397,13 +402,75 @@ BaseUrl：**https://api.agora.io/dev/v1**
     -   报错: 如果指定的项目 \(projects\) 不存在，会直接被忽略。不会报错。
 
 > 该响应中 *audio*、*sd*、*hd* 及 *hdp* 的单位为分钟。
+</details>
+
+<a name="UsageV3"></a>
+### 获取用量数据 V3（GET）
+
+下图展示了获取用量数据 V3 API 的使用逻辑。
+![](https://web-cdn.agora.io/docs-files/1583740143858)
+
+-   方法：GET
+-   路径：BaseUrl/v3/usage/
+-   参数：
+
+ ```
+// from_date 指定查询开始日期（UTC 时间）。日期格式为 YYYY-MM-DD，例如 2020-01-01。
+// to_date 指定查询结束日期（UTC 时间）。日期格式为 YYYY-MM-DD，例如 2020-01-31。
+// project_id 指定项目 ID。
+// business 指定业务类型。可设为以下值：
+// - default：默认业务，为 RTC
+// - transcodeDuration: 转码
+// - recording: 录制
+// - cloudRecording: 云录制
+// - miniapp: 小程序
+from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
+ ```
+
+-   响应：
+
+ ```json
+ {
+    "meta": {
+        "durationAudioAll": {
+            "cn": "总音频时长",
+            "en": "Total Audio Duration",
+            "unit": "second"
+        },
+        "durationVideoHd": {
+            "cn": "HD视频时长（含录制）",
+            "en": "HD Video Duration（including Recording）",
+            "unit": "second"
+        },
+        "durationVideoHdp": {
+            "cn": "HDP视频时长（含录制）",
+            "en": "HDP Video Duration（including Recording)",
+            "unit": "second"
+        }
+    },
+    "usages": [
+        {
+            // 查询的时间，使用 UTC 时间和 Unix 时间戳。
+            "date": "2020-03-01T00:00:00.000Z",
+            "usage": {
+                // 总音频时长。详细描述见 meta 对象中的 durationAudioAll。
+                "durationAudioAll": 0,
+                // HD视频时长（含录制）。详细描述见 meta 对象中的 durationVideoHd。
+                "durationVideoHd": 0,
+                 // HDP 视频时长（含录制）。详细描述见 meta 对象中的 durationVideoHdp。
+                "durationVideoHdp": 0
+            }
+        }
+    ]
+}
+ ```
 
 ## 5. 服务端踢人 API
 
-BaseUrl: **https://api.agora.io/dev/v1**
+BaseUrl: **https://api.agora.io/dev**
 
 下图展示了服务器踢人相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1545985590584)
+![](https://web-cdn.agora.io/docs-files/1583740200471)
 
 <div class="alert note">本组 API 调用频率上限为每秒 10 次。</div>
 
@@ -418,7 +485,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 该方法创建服务端踢人规则。
 
 -   方法：POST
--   路径：BaseUrl/kicking-rule/
+-   路径：BaseUrl/v1/kicking-rule/
 -   参数:
 
     ```
@@ -454,7 +521,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 该方法获取服务端的踢人规则列表。
 
 -   方法：GET
--   路径：BaseUrl/kicking-rule/
+-   路径：BaseUrl/v1/kicking-rule/
 -   参数：
 
     ```
@@ -490,7 +557,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 该方法更新服务端踢人的生效时间。
 
 -   方法：PUT
--   路径：BaseUrl/kicking-rule/
+-   路径：BaseUrl/v1/kicking-rule/
 -   参数：
 
     ```
@@ -519,7 +586,7 @@ BaseUrl: **https://api.agora.io/dev/v1**
 该方法删除服务端踢人规则。
 
 -   方法：DELETE
--   路径：BaseUrl/kicking-rule/
+-   路径：BaseUrl/v1/kicking-rule/
 -   参数：
 
     ```
@@ -541,11 +608,11 @@ BaseUrl: **https://api.agora.io/dev/v1**
 
 ## 6. 查询在线频道信息 API
 
-BaseUrl：**https://api.agora.io/dev/v1/**
+BaseUrl：**https://api.agora.io/dev**
 
 下图展示了查询频道信息相关 API 的使用逻辑。
 
-![](https://web-cdn.agora.io/docs-files/1545985608224)
+![](https://web-cdn.agora.io/docs-files/1583740220610)
 
 <div class="alert note">本组 API 调用频率上限为每秒 20 次。</div>
 
@@ -555,7 +622,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 该方法查询某个用户是否在指定频道中，如果是，则给出用户在该频道中的角色等状态。
 
 -   方法：GET
--   路径：BaseUrl/channel/user/property/
+-   路径：BaseUrl/v1/channel/user/property/
 -   参数: appid, uid, cname
 
     <table>
@@ -642,7 +709,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 该方法获取指定频道内的用户列表。如果在通信场景下，则返回频道内的用户列表；如果在直播场景下，则分别返回主播列表和观众列表。
 
 -   方法：GET
--   路径：BaseUrl/channel/user/
+-   路径：BaseUrl/v1/channel/user/
 -   参数: appid, cname
 
     <table>
@@ -663,7 +730,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </tbody>
 </table>
 
-如：/channel/user/<appid\>/<channelName\>
+如：/v1/channel/user/<appid\>/<channelName\>
 
 -   响应：不同的频道场景下，该方法返回的响应内容不同。
 
@@ -788,7 +855,7 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 
 
 -   方法：GET
--   路径：BaseUrl/channel/appid/
+-   路径：BaseUrl/v1/channel/appid/
 -   参数：?page\_no=0&page\_size=100
 
     <table>
@@ -809,9 +876,9 @@ BaseUrl：**https://api.agora.io/dev/v1/**
 </tbody>
 </table>
 
-如: /channel/<appid\>
+如: /v1/channel/<appid\>
 
-带参数: /channel/<appid\>?page\_no=0&page\_size=100
+带参数: /v1/channel/<appid\>?page\_no=0&page\_size=100
 
 -   响应:
 

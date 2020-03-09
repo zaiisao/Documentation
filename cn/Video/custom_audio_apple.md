@@ -3,7 +3,7 @@
 title: 自定义音频采集和渲染
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 25 2019 03:12:17 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:59:04 GMT+0800 (CST)
 ---
 # 自定义音频采集和渲染
 ## 功能介绍
@@ -109,6 +109,12 @@ agoraKit.pullPlaybackAudioFrameSampleBufferByLengthInByte(lengthInByte: "data le
 - [`pullPlaybackAudioFrameRawData`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pullPlaybackAudioFrameRawData:lengthInByte:)
 - [`pullPlaybackAudioFrameSampleBufferByLengthInByte`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pullPlaybackAudioFrameSampleBufferByLengthInByte:)
 
+## 示例项目
+
+我们在 GitHub 提供实现了自定义音频采集和渲染功能的开源示例项目。你可以下载体验，并参考源代码。
+
+- iOS: 参考 Objective-C 示例项目 [AgoraAudioIO-iOS](https://github.com/AgoraIO/Advanced-Audio/tree/master/iOS%26macOS/AgoraAudioIO-Objective-C/AgoraAudioIO-iOS) 中的 [`RoomViewController.m`](https://github.com/AgoraIO/Advanced-Audio/blob/master/iOS%26macOS/AgoraAudioIO-Objective-C/AgoraAudioIO-iOS/RoomViewController.m)。
+- macOS: 参考 Objective-C 示例项目 [AgoraAudioIO-macOS](https://github.com/AgoraIO/Advanced-Audio/tree/master/iOS%26macOS/AgoraAudioIO-Objective-C/AgoraAudioIO-macOS) 中的 [`RoomViewController.m`](https://github.com/AgoraIO/Advanced-Audio/blob/master/iOS%26macOS/AgoraAudioIO-Objective-C/AgoraAudioIO-macOS/RoomViewControllerMac.m)。
 
 ## 开发注意事项
 

@@ -3,7 +3,7 @@
 title: 音视频设备测试
 description: 
 platform: macOS
-updatedAt: Sun Sep 29 2019 08:22:46 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 08:35:22 GMT+0800 (CST)
 ---
 # 音视频设备测试
 ## 功能描述
@@ -17,11 +17,39 @@ updatedAt: Sun Sep 29 2019 08:22:46 GMT+0800 (CST)
 参考以下步骤测试音视频设备：
 
 - 选择以下一种方式测试音频设备：
+	- 调用 `startEchoTestWithInterval` 测试系统的音频设备（耳麦、扬声器等）和网络连接。
 	- 调用 `startRecordingDeviceTest` 测试录音设备，调用 `startPlaybackDeviceTest` 测试音频播放设备。
 	- 调用 `startAudioDeviceLoopbackTest` 测试音频设备回路（包括录音设备和音频播放设备）。
 - 调用 `startCaptureDeviceTest` 方法测试视频采集设备。
 
 <div class="alert note">所有测试设备的方法都必须在加入频道之前调用。</div>
+
+### 语音通话测试
+
+- 用途：测试系统的音频设备（耳麦、扬声器等）和网络连接，是否正常工作。
+- 测试方法和原理：调用 `startEchoTestWithInterval`，并使用该方法的 `interval` 参数设置返回测试结果的时间间隔；用户说话；SDK 在设定的时间间隔后，如果能正常播放该用户说的话，则说明音频设备及网络连接正常。
+
+```swift
+// Swift
+// 开启回声测试
+agoraKit.startEchoTestWithInterval(10)
+
+// 等待并检查是否可以听到自己的声音回放
+
+// 停止测试
+agoraKit.stopEchoTest
+```
+
+```objective-c
+// Objective-C
+// 开启回声测试
+[agoraKit startEchoTestWithInterval: 10];
+
+// 等待并检查是否可以听到自己的声音回放
+
+// 停止测试
+[agoraKit stopEchoTest];
+```
 
 ### 录音设备测试
 
@@ -101,6 +129,8 @@ agoraKit.stopCaptureDeviceTest
 
 ### API 参考
 
+* [`startEchoTestWithInterval`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startEchoTestWithInterval:successBlock:)
+* [`stopEchoTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopEchoTest)
 * [`startRecordingDeviceTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startRecordingDeviceTest:)
 * [`stopRecordingDeviceTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest.)
 * [`startPlaybackDeviceTest`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
@@ -112,4 +142,6 @@ agoraKit.stopCaptureDeviceTest
 
 ## 开发注意事项
 
+- 测试结束后，请务必调用相应的 stop 方法停止测试，然后再调用 `joinChannelByToken` 加入频道。
+- 
 在初始化输入设备时可能失败，请查询对应的 [错误信息](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Constants/AgoraErrorCode.html)。

@@ -3,7 +3,7 @@
 title: 七人以上视频场景
 description: 
 platform: Android
-updatedAt: Wed Mar 04 2020 05:35:02 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:27:02 GMT+0800 (CST)
 ---
 # 七人以上视频场景
 ## 功能描述
@@ -34,11 +34,7 @@ updatedAt: Wed Mar 04 2020 05:35:02 GMT+0800 (CST)
    ```
 
    <div class="alert note">视频小流的宽高比例需要和视频大流的宽高比例相同。推荐你使用分辨率不超过 320 x 180 或 180 x 320，码率不超过 140 Kbps 的小流参数。</div>
-   
 
-### 示例代码
-
-我们在 GitHub 提供一个开源的 [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) 示例项目。
 
 ### API 参考
 

@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: iOS
-updatedAt: Tue Dec 10 2019 04:21:11 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 07:04:49 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能描述
@@ -64,4 +64,4 @@ override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBuf
 }
 ```
 
-同时，我们在 GitHub 提供一个开源的 [Agora Screen Sharing](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-iOS) 示例项目。你可以前往下载，参考源代码。
+同时，我们在 GitHub 提供一个开源的 [Agora-Screen-Sharing-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/iOS%26macOS/Agora-Screen-Sharing/Agora-Screen-Sharing-iOS) 示例项目。你可以前往下载，参考源代码。

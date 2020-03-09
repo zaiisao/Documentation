@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Thu Feb 27 2020 05:49:30 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:40:41 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -220,9 +220,9 @@ screenClient.on('stream-added', function(evt) {
 
 ## 示例代码
 
-下面的示例代码实现了同时共享屏幕和发送本地视频流，同时，我们在 GitHub 提供一个开源的[示例项目](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Web-Webpack)，你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web/)或者下载参考  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) 和 [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/index.js) 文件的源代码。
+下面的示例代码实现了同时共享屏幕和发送本地视频流，同时，我们在 GitHub 提供一个开源的[示例项目](https://github.com/AgoraIO/Advanced-Video/tree/master/Web/Agora-Screen-Sharing-Web-Webpack)，你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web/)或者下载参考  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) 和 [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Screen-Sharing-Web-Webpack/src/index.js) 文件的源代码。
 
-<div class="alert note">下面的代码用了 <code>isFirefox</code> 和 <code>isCompatibleChrome</code> 来判断浏览器类型，你需要自己实现，也可以参考 <a href="https://github.com/AgoraIO/Advanced-Video/blob/master/Screensharing/Agora-Screen-Sharing-Web-Webpack/src/common.js#L28"><code>common.js</code></a> 中的代码。</div>
+<div class="alert note">下面的代码用了 <code>isFirefox</code> 和 <code>isCompatibleChrome</code> 来判断浏览器类型，你需要自己实现，也可以参考 <a href="https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Screen-Sharing-Web-Webpack/src/common.js#L29"><code>common.js</code></a> 中的代码。</div>
 
 ```javascript
 //TODO: 填入你的项目的 App ID

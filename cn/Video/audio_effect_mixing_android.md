@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to enable audio mixing, play audio effects and the related settings
 platform: Android
-updatedAt: Sun Sep 29 2019 08:17:29 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 05:18:24 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -131,7 +131,7 @@ rtcEngine.resumeAudioMixing();
 rtcEngine.stopAudioMixing()；
 ```
 
-同时，我们在 GitHub 提供一个实现了混音功能的的开源示例项目。你可以在 [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android) 下载体验并参考 [`CallActivity.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/CallActivity.java#L510) 中的代码。
+同时，我们在 GitHub 提供一个实现了混音功能的的开源示例项目。你可以在 [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android) 下载体验并参考 [`CallActivity.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/CallActivity.java) 中的代码。
 
 ### API 参考
 

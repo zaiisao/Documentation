@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 02 2020 12:52:26 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 07:34:49 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
@@ -49,7 +49,7 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 
 ![](https://web-cdn.agora.io/docs-files/1577947530430)
 
-学生端集成 Agora Native SDK 和 Agora RTM SDK，通过声网自建的底层实时传输网络 Agora SD-RTN™ 发送和接收实时音视频和实时消息，实现实时互动，并将音频流发送至第三方平台进行语音识别和口语评测。
+学生端集成 Agora RTC SDK 和 Agora RTM SDK，通过声网自建的底层实时传输网络 Agora SD-RTN™ 发送和接收实时音视频和实时消息，实现实时互动，并将音频流发送至第三方平台进行语音识别和口语评测。
 
 服务端 AI 教师：
 
@@ -108,7 +108,7 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 
 #### 实时音视频
 
-学生端可集成 Agora Native SDK 实现实时音视频功能，支持 Android、Windows、iOS、macOS 和 Web。
+学生端可集成 Agora RTC SDK 实现实时音视频功能，支持 Android、Windows、iOS、macOS 和 Web。
 
 我们提供：
 
@@ -120,10 +120,10 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 
 | 平台    | SDK 下载                                                     | 开源示例项目                                                 | 集成指南                                                     |
 | :------ | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| Android | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Android_v2_9_0_101_FULL_20191230_928.zip) | [互动直播 Demo Open Live (Java)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) | [Android 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android) |
-| iOS     | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_101_FULL_20191227_1767.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) | [iOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_ios?platform=iOS) |
-| macOS   | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Mac_v2_9_0_101_FULL_20191226_1001.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) | [macOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS) |
-| Windows | [v2.9.0.101](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2_9_0_101_20200102_FULL_86.zip) | [互动直播 Demo Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Windows 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
+| Android | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Android_v2_9_0_102_FULL_20200216_1288.zip) | [互动直播 Demo Open Live (Java)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) | [Android 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android) |
+| iOS     | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_102_FULL_20200216_2115.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) | [iOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_ios?platform=iOS) |
+| macOS   | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Mac_v2_9_0_102_FULL_20200216_1279.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) | [macOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS) |
+| Windows | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2.9.0.102_20200216_FULL_3151.zip) | [互动直播 Demo Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Windows 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
 | Web     | [最新版 Web SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) | [互动直播 Demo (JS)](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Web/README.zh.md) | [Web 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web)  |                                            
 
 #### 实时消息
@@ -136,7 +136,7 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即�
 
 #### 口语评测
 
-我们提供以下开源示例项目指导你如何将 Agora Native SDK 采集到的音频发送到第三方平台进行语音识别和口语评测。
+我们提供以下开源示例项目指导你如何将 Agora RTC SDK 采集到的音频发送到第三方平台进行语音识别和口语评测。
 
 | 平台    | 开源示例项目                                                 |
 | :------ | :----------------------------------------------------------- |

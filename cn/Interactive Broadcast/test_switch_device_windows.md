@@ -3,7 +3,7 @@
 title: 音视频设备测试
 description: 
 platform: Windows
-updatedAt: Wed Nov 13 2019 08:43:04 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 08:02:18 GMT+0800 (CST)
 ---
 # 音视频设备测试
 ## 功能描述
@@ -17,11 +17,27 @@ updatedAt: Wed Nov 13 2019 08:43:04 GMT+0800 (CST)
 参考以下步骤测试音视频设备：
 
 - 选择以下一种方式测试音频设备：
+	- 调用 `startEchoTest` 测试系统的音频设备（耳麦、扬声器等）和网络连接。
 	- 调用 `startRecordingDeviceTest` 测试录音设备，调用 `startPlaybackDeviceTest` 测试音频播放设备。
 	- 调用 `startAudioDeviceLoopbackTest` 测试音频设备回路（包括录音设备和音频播放设备）。
 - 调用 `startDeviceTest` 方法测试视频采集设备。
 
 <div class="alert note">所有测试设备的方法都必须在加入频道之前调用。</div>
+
+### 语音通话测试
+
+- 用途：测试系统的音频设备（耳麦、扬声器等）和网络连接，是否正常工作。
+- 测试方法和原理：调用 `startEchoTest`，并使用该方法的 `intervalInSeconds` 参数设置返回测试结果的时间间隔；用户说话；SDK 在设定的时间间隔后，如果能正常播放该用户说的话，则说明音频设备及网络连接正常。
+
+```C++
+// 开启回声测试
+rtcEngine.startEchoTest(10);
+
+// 等待并检查是否可以听到自己的声音回放
+
+// 停止测试
+rtcEngine.stopEchoTest;
+```
 
 ### 音频录制设备测试
 
@@ -141,6 +157,8 @@ lpDeviceManager->setDevice(strDeviceID); // device ID chosen
 
 ### API 参考
 
+* [`startEchoTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a842ed126b6e21a39059adaa4caa6d021)
+* [`stopEchoTest`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ae779da1c3fe153d73e8dfb2eb59ba9e4)
 * [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4b30a8ff1ae50c4c114ae4f909c4ebcb)
 * [`enumerateRecordingDevices`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a1ea4f53d60dc91ea83960885f9ab77ee)
 * [`setRecordingDevice`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a723941355030636cd7d183d53cc7ace7)
