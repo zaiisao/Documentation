@@ -3,12 +3,16 @@
 title: Get user and channel events
 description: 
 platform: RESTful
-updatedAt: Tue Mar 10 2020 07:58:11 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 10:03:24 GMT+0800 (CST)
 ---
 # Get user and channel events
 You can now get both user and channel events with the Agora RTM RESTful APIs. 
 
 <div class="alert note">qps of the RESTful APIs: 100 (for each vendor).</div>
+
+https://agoradoc.github.io/cn/Real-time-Messaging/restfulapi/
+
+> Besides this document, you can also read our interactive document [Real-time-Messaging RESTful API](https://agoradoc.github.io/en/Real-time-Messaging/restfulapi/) ![](https://web-cdn.agora.io/docs-files/1583736328279). By clicking the **Example Value** or **Schema** tab, you can view example codes or parameter definitions for request/response bodies.
 
 
 ## <a name="auth"></a>Authentication

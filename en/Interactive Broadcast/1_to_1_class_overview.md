@@ -3,14 +3,14 @@
 title: One-to-one Online Classroom
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 06 2020 06:19:10 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 10:27:25 GMT+0800 (CST)
 ---
 # One-to-one Online Classroom
 ## Introduction
 
-In a One-to-one Online Classroom scenario, an online teacher gives an exclusive lesson to only one student, and both can interact in real time. This typical one-to-one scenario can find uses in online tutoring, language lessons, music lessons, and more.
+In a One-to-one Classroom scenario, an online teacher gives an exclusive lesson to only one student, and both can interact in real time. This typical one-to-one scenario can find uses in online tutoring, language lessons, music lessons, and more.
 
-This article describes how to use the Agora SDKs to implement a One-to-one Online Classroom scenario.
+This article describes how to use the Agora SDKs to implement a One-to-one Classroom scenario.
 
 ![](https://web-cdn.agora.io/docs-files/1582860769190)
 
@@ -31,7 +31,7 @@ You can use the Agora SDKs to implement the following features for your project.
 
 ## Try the demo
 
-Agora provides the One-to-one Online Classroom demos on the following platforms. 
+Agora provides the One-to-one Classroom demos on the following platforms. 
 
 | Android | iOS | PC Web | Windows | macOS |
 | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
@@ -49,7 +49,7 @@ Follow these steps to try the demo:
 
 ## Technical solutions
 
-Agora recommends using the following SDKs or services to implement a One-to-one Online Classroom scenario.
+Agora recommends using the following SDKs or services to implement a One-to-one Classroom scenario.
 ![](https://web-cdn.agora.io/docs-files/1582862848646)
 
 | SDK | Function | 

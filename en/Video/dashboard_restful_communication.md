@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue Mar 10 2020 08:07:02 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 09:41:43 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## 1. Authentication
@@ -22,7 +22,7 @@ For how to generate the `Authorization` parameter, see [RESTful API authenticati
 
 ## 2. EndPoint
 
-All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
+All requests should be sent to BaseUrl: **https://api.agora.io/dev**.
 
 - Request: All parameters must be sent in JSON format, with content type: Content-Type: application/json.
 - Response: The response content is in JSON format. The response status is defined as follows:
@@ -36,15 +36,15 @@ All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
 
 ## 3. Project API
 
-BaseUrl: **https://api.agora.io/dev/v1**.
+BaseUrl: **https://api.agora.io/dev**.
 
 The following chart shows how you can use Project APIs.
-![](https://web-cdn.agora.io/docs-files/1545990089418)
+![](https://web-cdn.agora.io/docs-files/1583833115362)
 
 ### Fetch all Projects (GET)
 
 -  Method: GET
--  Path: BaseUrl/projects/
+-  Path: BaseUrl/v1/projects/
 -  Parameter: None
 -  Response:
 
@@ -77,7 +77,7 @@ The following chart shows how you can use Project APIs.
 ### Fetch a Single Project (GET)
 
 -  Method: GET
--  Path: BaseUrl/project/
+-  Path: BaseUrl/v1/project/
 -  Parameter:
 
 	```
@@ -118,7 +118,7 @@ The following chart shows how you can use Project APIs.
 ### Create a Project (POST)
 
 -  Method: POST
--  Path: BaseUrl/project/
+-  Path: BaseUrl/v1/project/
 -  Parameter:
 
 	```
@@ -149,7 +149,7 @@ The following chart shows how you can use Project APIs.
 ### Disable/Enable a Project (POST)
 
 -  Method: POST
--  Path: BaseUrl/project\_status/
+-  Path: BaseUrl/v1/project_status/
 -  Parameter:
 
 	```
@@ -196,7 +196,7 @@ The following chart shows how you can use Project APIs.
 ### Delete a Project (DELETE)
 
 -  Method: DELETE
--  Path: BaseUrl/project/
+-  Path: BaseUrl/v1/project/
 -  Parameter:
 
 	```
@@ -228,7 +228,7 @@ The following chart shows how you can use Project APIs.
 ### Set a Project’s Recording Server IP (POST)
 
 -  Method: POST
--  Path: BaseUrl/recording\_config/
+-  Path: BaseUrl/v1/recording_config/
 -  Parameter:
 
 	```
@@ -265,7 +265,7 @@ The following chart shows how you can use Project APIs.
 ### Enable a Project’s App Certificate (POST)
 
 -  Method: POST
--  Path: BaseUrl/signkey/
+-  Path: BaseUrl/v1/signkey/
 -  Parameter:
 
 	```
@@ -301,7 +301,7 @@ The following chart shows how you can use Project APIs.
 ### Reset a Project’s App Certificate (POST)
 
 -  Method: POST
--  Path: BaseUrl/reset_signkey/
+-  Path: BaseUrl/v1/reset_signkey/
 -  Parameter:
 
 	```
@@ -331,15 +331,22 @@ The following chart shows how you can use Project APIs.
 
 ## 4. Usage API
 
-BaseUrl: **https://api.agora.io/dev/v1**.
-
-The following chart shows how you can use Usage APIs.
-![](https://web-cdn.agora.io/docs-files/1545990118195)
+BaseUrl: **https://api.agora.io/dev**.
 
 ### Fetch Usages (GET)
 
+Agora provides two kinds of APIs to fetch usages: version 1 and version 3. For fetching more usage information, Agora recommends to use the API of [version 3](#UsageV3).
+
+#### V1
+
+<details>
+	<summary><font color="#3ab7f8">Fetch Usages V1</font></summary>
+
+The following chart shows how you can use Usage APIs.
+![](https://web-cdn.agora.io/docs-files/1583833157222)
+	
 -  Method: GET
--  Path: BaseUrl/usage/
+-  Path: BaseUrl/v1/usage/
 -  Parameter: (from date & to date pattern: YYYY-MM-DD)
 
 	```
@@ -377,13 +384,71 @@ The following chart shows how you can use Usage APIs.
       If some of the specified projects do not exist, they will be omitted and no error will occur.
 
 > The *audio*, *sd*, *hd* and *hdp* parameters in this response are in minutes.
+</details>
+
+<a name="UsageV3"></a>
+#### V3
+The following chart shows how you can use Usage APIs.
+![](https://web-cdn.agora.io/docs-files/1583833175432)
+
+-  Method: GET
+-  Path: BaseUrl/v3/usage/
+-  Parameter:
+
+ ```
+// from_date: The date to start query, using UTC time. For example, 2020-01-01.
+// to_date: The date to end query, using UTC time. For example, 2020-01-31.
+// project_id: The ID of a target project.
+// business: The business type. You can choose the following values:
+// - default: The default business type is RTC.
+// - transcodeDuration: Transcoding.
+// - recording: On-premise Recording.
+// - cloudRecording: Cloud Recording.
+// - miniapp: Mini app.
+from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
+ ```
+
+-   Response:
+
+ ```json
+ {
+    "meta": {
+        "durationAudioAll": {
+            "en": "Total Audio Duration",
+            "unit": "second"
+        },
+        "durationVideoHd": {
+            "en": "HD Video Duration（including On-premise Recording）",
+            "unit": "second"
+        },
+        "durationVideoHdp": {
+            "en": "HDP Video Duration（including On-premise Recording)",
+            "unit": "second"
+        }
+    },
+    "usages": [
+        {
+            // The query date, using UTC time and Unix timestamp.
+            "date": "2020-03-01T00:00:00.000Z",
+            "usage": {
+                // Total audio duration. See details in the durationAudioAll parameter of the meta object.
+                "durationAudioAll": 0,
+                // HD video duration, including the duration of On-premise Recording. See details in the durationVideoHd parameter of the meta object.
+                "durationVideoHd": 0,
+                 // HDP video duration, including the duration of On-premise Recording. See details in the durationVideoHdp parameter of the meta object.
+                "durationVideoHdp": 0
+            }
+        }
+    ]
+}
+ ```
 
 ## 5. Ban Users at the Server
 
-BaseUrl: **https://api.agora.io/dev/v1**.
+BaseUrl: **https://api.agora.io/dev**.
 
 The following chart shows how you can use related APIs.
-![](https://web-cdn.agora.io/docs-files/1545990162139)
+![](https://web-cdn.agora.io/docs-files/1583833187642)
 
 <div class="alert note">The call frequency of this group of API is no more than ten queries per second.</div>
 
@@ -396,7 +461,7 @@ The banned user receives the corresponding callback as follows:
 ### Create a Rule (POST)
 
 -  Method: POST
--  Path: BaseUrl/kicking-rule/
+-  Path: BaseUrl/v1/kicking-rule/
 -  Parameter:
 
     ```json
@@ -430,7 +495,7 @@ The banned user receives the corresponding callback as follows:
 ### Get the Rule List (GET)
 
 -  Method: GET
--  Path: BaseUrl/kicking-rule/
+-  Path: BaseUrl/v1/kicking-rule/
 -  Parameter:
 
     ```
@@ -464,7 +529,7 @@ The banned user receives the corresponding callback as follows:
 ### Update the Rule Period (PUT)
 
 -  Mrethod: PUT
--  Path: BaseUrl/kicking-rule/
+-  Path: BaseUrl/v1/kicking-rule/
 -  Parameter :
 
     ```
@@ -490,7 +555,7 @@ The banned user receives the corresponding callback as follows:
 ### Delete a Rule (DELETE)
 
 -  Method: DELETE
--  Path: BaseUrl/kicking-rule/
+-  Path: BaseUrl/v1/kicking-rule/
 -  Parameter:
 
     ```
@@ -512,10 +577,10 @@ The banned user receives the corresponding callback as follows:
 
 ## 6. Online Statistics Query API
 
-BaseUrl：**https://api.agora.io/dev/v1/**.
+BaseUrl：**https://api.agora.io/dev**.
 
 The following chart shows how you can use Online Statistics Query APIs.
-![](https://web-cdn.agora.io/docs-files/1545990190974)
+![](https://web-cdn.agora.io/docs-files/1583833200074)
 
 <div class="alert note">The call frequency of this group of API is no more than twenty queries per second.</div>
 
@@ -524,7 +589,7 @@ The following chart shows how you can use Online Statistics Query APIs.
 This method checks if a specified user is in a specified channel, and if yes, checks the role of this user in the channel.
 
 -  Method: GET
--  Path: BaseUrl/channel/user/property/
+-  Path: BaseUrl/v1/channel/user/property/
 -  Parameters: appid, uid, cname
 
 	<table>
@@ -611,7 +676,7 @@ Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
 This method checks the user role list in a specified channel.
 
 -  Method: GET
--  Path: BaseUrl/channel/user/
+-  Path: BaseUrl/v1/channel/user/
 -  Parameters: appid, cname
 
 	<table>
@@ -632,7 +697,7 @@ This method checks the user role list in a specified channel.
 	</tbody>
 	</table>
 
-Example: /channel/user/<appid\>/<channelName\>
+Example: /v1/channel/user/<appid\>/<channelName\>
 
 -  Response: the responses of difference channel profiles differ:
 
@@ -758,7 +823,7 @@ Example: /channel/user/<appid\>/<channelName\>
 This method gets the channel list of a specified vendor.
 
 -  Method: GET
--  Path: BaseUrl/channel/appid/
+-  Path: BaseUrl/v1/channel/appid/
 -  Parameters: ?page\_no=0&page\_size=100 \(Optional\)
 
 	<table>

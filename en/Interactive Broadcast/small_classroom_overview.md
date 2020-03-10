@@ -49,7 +49,7 @@ Follow these steps to try the demo:
 
 ## Technical solutions
 
-Agora recommends using the following SDKs or services to implement a  1 对 N 在线小班课 scenario.
+Agora recommends using the following SDKs or services to implement a Small Classroom scenario.
 ![](https://web-cdn.agora.io/docs-files/1583823983123)
 
 | SDK | Function | 
