@@ -20,7 +20,7 @@ Agora RTM RESTful API supports HTTPS only. You can use either of the following m
 
 ### <a name="basicauth"></a>Basic Authentication
 
-You need to pass the basic HTTP authentication and put `api_key:api_secret` into the `Authorization` field of the HTTP header: 
+You need to pass the basic HTTP authentication and put `api_key:api_secret` in the `Authorization` field of the HTTP header: 
 
 - `api_key`: Customer ID
 - `api_secret`: Customer Certificate
@@ -39,9 +39,9 @@ If you have already generated an RTM Token on your server, you can use Token Aut
 ```java
   Request request = new Request.Builder()
   ...
-  // Puts your RTM Token to the `x-agora-token` field of the HTTP request. 
+  // Put your RTM Token to the `x-agora-token` field of the HTTP request. 
   .addHeader("x-agora-token", "<Your RTM Token>")
-  // Puts the uid, which generates the RTM token, to the `x-agora-uid` field of the HTTP request.
+  // Put the uid, which generates the RTM token, to the `x-agora-uid` field of the HTTP request.
   .addHeader("x-agora-uid", "<Your uid used to generate the RTM Token>")
   ...
 ```
