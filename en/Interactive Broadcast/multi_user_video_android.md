@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:20:42 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:26:15 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -61,10 +61,6 @@ Refer to the following steps to enable the video conference of 7+ users:
    ```
 > The aspect ratio of the low-stream video profile (width x height) should be identical to that of the preset video profile. 
 
-
-### Sample code
-
-We also provide an open-source [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) demo project on GitHub.
 
 ### API reference
 

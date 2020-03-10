@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 12:55:39 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:43:20 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -80,7 +80,7 @@ Click <b>Finish</b>. Follow the on-screen instructions, if any, to install the p
 
 ### Integrate the Native SDK 
 
-Version requirements: 2.4.1 or later 
+Version requirements: 2.4.0 or later 
 
 Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android#integrate-the-sdk)
 

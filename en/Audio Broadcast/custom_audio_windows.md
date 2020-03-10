@@ -3,7 +3,7 @@
 title: Custom Audio Source and Renderer
 description: 
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:32:25 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 02:51:38 GMT+0800 (CST)
 ---
 # Custom Audio Source and Renderer
 ## Introduction
@@ -229,6 +229,9 @@ Play the remote audio data on your own.
 - [`setExternalAudioSink`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a790b4896f2769c1edebbb49d8912e38b)
 - [`pullAudioFrame`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#aaf43fc265eb4707bb59f1bf0cbe01940)
 
+## Sample code
+
+Agora provides an open-source [AgoraAudioIO](https://github.com/AgoraIO/Advanced-Audio/tree/master/Windows/AgoraAudioIO-Windows) demo project on GitHub. You can download it for source code reference.
 
 ## Considerations
 

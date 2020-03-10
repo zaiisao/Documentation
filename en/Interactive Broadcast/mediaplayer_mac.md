@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Thu Dec 05 2019 07:08:42 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:50:32 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
@@ -35,7 +35,7 @@ Using MediaPlayer Kit, you can start/pause the playback video, adjust the playba
 - Ensure that your project has a validated provisioning profile certificate.
 
 ### Use MediaPlayer Kit
-1. Download and unzip the [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/master/MediaPlayer/Mediaplayer-Mac) folder.
+1. Download and unzip the [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/MediaPlayer/Mediaplayer-Mac) folder.
 2. Open the `MediaPlayerKitQuickstart.xcodeproj` file with Xcode.
 3. Click on the upper left triangle symbol in the Xcode interface to build the project.
 4. After a successful compilation, a graphical interface pops up.

@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to set voice effects on iOS and macOS
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 08:20:03 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:19:30 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
@@ -160,10 +160,7 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 
 ## Demo project
 
-We provide open-source demo iOS projects on GitHub. You can try the demo and refer to the source code.
-
-- [Agora-RTC-With-Voice-Changer-iOS](https://github.com/AgoraIO/Advanced-Audio/tree/master/Voice-Changer/Agora-RTC-With-Voice-Changer-iOS) for Swift. Refer to the code in [`EffectViewController.swift`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Voice-Changer/Agora-RTC-With-Voice-Changer-iOS/Agora-RTC-With-Voice-Changer-iOS/EffectViewController.swift).
-- [Agora-RTC-With-Voice-Changer-iOS-Objective-C](https://github.com/AgoraIO/Advanced-Audio/tree/master/Voice-Changer/Agora-RTC-With-Voice-Changer-iOS-Objective-C) for Objective-C. Refer to the code in [`EffectTableViewController.m`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Voice-Changer/Agora-RTC-With-Voice-Changer-iOS-Objective-C/Agora-RTC-With-Voice-Changer-iOS-Objective-C/EffectTableViewController.m).
+We provide open-source demo iOS projects on GitHub. You can try [Agora-RTC-With-Voice-Changer-iOS](https://github.com/AgoraIO/Advanced-Audio/tree/master/iOS%26macOS/Agora-RTC-With-Voice-Changer-iOS) for Swift and refer to the source code in [`EffectViewController.swift`](https://github.com/AgoraIO/Advanced-Audio/blob/master/iOS%26macOS/Agora-RTC-With-Voice-Changer-iOS/Agora-RTC-With-Voice-Changer-iOS/EffectViewController.swift).
 
 ## Considerations
 The API methods have return values. If the method call fails, the return value is < 0.

@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Sun Sep 29 2019 08:19:37 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 05:17:30 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -131,7 +131,7 @@ rtcEngine.resumeAudioMixing();
 rtcEngine.stopAudioMixing()；
 ```
 
-We also provide an open-source demo project that implements audio mixing on [GitHub](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android). You can try the demo and refer to the code in [`CallActivity.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/CallActivity.java#L510).
+We also provide an open-source demo project that implements audio mixing on [GitHub](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android). You can try the demo and refer to the code in [`CallActivity.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/CallActivity.java).
 
 ### API reference
 

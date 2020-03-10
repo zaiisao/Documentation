@@ -3,7 +3,7 @@
 title: Custom Audio Source
 description: How to use external audio sources for Web SDK
 platform: Web
-updatedAt: Tue Dec 10 2019 04:20:32 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 05:44:24 GMT+0800 (CST)
 ---
 # Custom Audio Source
 ## Introduction
@@ -47,7 +47,7 @@ navigator.mediaDevices.getUserMedia(
 
 <div class="alert info"><code>MediaStreamTrack</code> refers to the <code>MediaStreamTrack</code> object supported by the browser. See <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack">MediaStreamTrack API</a> for details.</div>
 
-We also provide an open-source [Agora-Custom-VideoSource-Web-Webpack](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack) demo project on GitHub. You can try the demo, or view the source code in the [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-VideoSource-Web-Webpack/src/rtc-client.js) file.
+We also provide an open-source [AgoraAudioIO-Web-Webpack](https://github.com/AgoraIO/Advanced-Audio/tree/master/Web/AgoraAudioIO-Web-Webpack) demo project on GitHub. You can try the demo, or view the source code in the [rtc-client.js](https://github.com/AgoraIO/Advanced-Audio/blob/master/Web/AgoraAudioIO-Web-Webpack/src/rtc-client.js) file.
 
 ## Considerations
 

@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Tue Mar 03 2020 03:38:34 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:43:55 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -75,7 +75,7 @@ Now, let's build an iOS project from scratch.
 
 ### Integrate the Native SDK 
 
-Version requirements: 2.4.1 or later 
+Version requirements: 2.4.0 or later 
 
 Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_ios?platform=iOS#a-nameintegratesdkaintegrate-the-sdk).
 

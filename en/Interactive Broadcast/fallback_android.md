@@ -3,7 +3,7 @@
 title: Video Stream Fallback
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:33:43 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 10:28:46 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
@@ -39,7 +39,8 @@ rtcEngine.enableDualStreamMode(true);
 // Configuration for the publisher. When the network condition is poor, send audio only. 
 rtcEngine.setLocalPublishFallbackOption(Constants.STREAM_FALLBACK_OPTION_AUDIO_ONLY);
 
- // Configuration for the subscriber. Try to receive low stream under poor network conditions. When the current network conditions are not sufficient for video streams, receive audio stream only.      rtcEngine.setRemoteSubscribeFallbackOption(Constants.STREAM_FALLBACK_OPTION_AUDIO_ONLY);
+ // Configuration for the subscriber. Try to receive low stream under poor network conditions. When the current network conditions are not sufficient for video streams, receive audio stream only.    
+ rtcEngine.setRemoteSubscribeFallbackOption(Constants.STREAM_FALLBACK_OPTION_AUDIO_ONLY);
 ```
 
 ### API reference

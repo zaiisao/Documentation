@@ -3,7 +3,7 @@
 title: Custom Audio Source and Renderer
 description: 
 platform: iOS,macOS
-updatedAt: Sat Feb 22 2020 05:37:41 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:54:53 GMT+0800 (CST)
 ---
 # Custom Audio Source and Renderer
 ## Introduction
@@ -111,6 +111,12 @@ agoraKit.pullPlaybackAudioFrameSampleBufferByLengthInByte(lengthInByte: "data le
 - [`disableExternalAudioSink`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/disableExternalAudioSink)
 - [`pullPlaybackAudioFrameRawData`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pullPlaybackAudioFrameRawData:lengthInByte:)
 - [`pullPlaybackAudioFrameSampleBufferByLengthInByte`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pullPlaybackAudioFrameSampleBufferByLengthInByte:)
+
+## Demo project
+
+We provide open-source demo projects on GitHub. You can try the demo and refer to the source code.
+- iOS: [AgoraAudioIO-iOS](https://github.com/AgoraIO/Advanced-Audio/tree/master/iOS%26macOS/AgoraAudioIO-Objective-C/AgoraAudioIO-iOS) for Objective-C. Refer to the code in [`RoomViewController.m`](https://github.com/AgoraIO/Advanced-Audio/blob/master/iOS%26macOS/AgoraAudioIO-Objective-C/AgoraAudioIO-iOS/RoomViewController.m).
+- macOS: [AgoraAudioIO-macOS](https://github.com/AgoraIO/Advanced-Audio/tree/master/iOS%26macOS/AgoraAudioIO-Objective-C/AgoraAudioIO-macOS) for Objective-C. Refer to the code in [`RoomViewController.m`](https://github.com/AgoraIO/Advanced-Audio/blob/master/iOS%26macOS/AgoraAudioIO-Objective-C/AgoraAudioIO-macOS/RoomViewControllerMac.m).
 
 ## Consideration
 

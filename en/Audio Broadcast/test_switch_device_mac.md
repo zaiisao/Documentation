@@ -3,7 +3,7 @@
 title: Test a Media Device
 description: 
 platform: macOS
-updatedAt: Sun Sep 29 2019 08:20:55 GMT+0800 (CST)
+updatedAt: Fri Mar 06 2020 08:54:01 GMT+0800 (CST)
 ---
 # Test a Media Device
 ## Introduction
@@ -15,11 +15,40 @@ To ensure smooth communications, we recommend conducting a media device test bef
 Ensure that you understand how to [Start a Call](../../en/Audio%20Broadcast/start_call_mac.md) or [Start an Interactive Broadcast](../../en/Audio%20Broadcast/start_live_mac.md).
 
 - Choose either of the following ways to test the audio devices:
+	- Call the `startEchoTestWithInterval` method to test if the audio devices and network connection are working properly.
 	- Call the `startRecordingDeviceTest` method to test the audio recording devices, and call the `startPlaybackDeviceTest` method to test the audio playback devices.
 	- Call the `startAudioDeviceLoopbackTest` method to test the audio device loopback (including the recording and playback devices).
 - Call the `startCaptureDeviceTest` method to test the video capture devices.
 
 <div class="alert note">Test the devices before joining a channel.</div>
+
+### Echo test
+
+Call the `startEchoTestWithInterval` method to test if the audio devices, such as the microphone and the speaker, are working properly.
+
+To consuct the test, call `startEchoTestWithInterval`, and set the `interval` parameter in this method to notify the SDK when to report the result of this test. The user speaks, and if the recording plays back within the set time interval, the audio devices and the network connection are working properly.
+
+```swift
+// Swift
+// Start the echo test.
+agoraKit.startEchoTestWithInterval(10)
+
+// Wait and check if the user can hear the recorded audio.
+
+// Stop the echo test.
+agoraKit.stopEchoTest
+```
+
+```objective-c
+// Objective-C
+// Start the echo test.
+[agoraKit startEchoTestWithInterval: 10];
+
+// Wait and check if the user can hear the recorded audio.
+
+// Stop the echo test.
+[agoraKit stopEchoTest];
+```
 
 ### Recording device test
 
@@ -109,6 +138,8 @@ agoraKit.stopCaptureDeviceTest
 
 ### API Reference
 
+* [`startEchoTestWithInterval`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startEchoTestWithInterval:successBlock:)
+* [`stopEchoTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopEchoTest)
 * [`startRecordingDeviceTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
 * [`stopRecordingDeviceTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopRecordingDeviceTest)
 * [`startPlaybackDeviceTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPlaybackDeviceTest:)
@@ -119,5 +150,6 @@ agoraKit.stopCaptureDeviceTest
 * [`stopAudioDeviceLoopbackTest`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioDeviceLoopbackTest)
 
 ## Considerations
-
+- Ensure that you call the corresponding `stop` methods after the test ends. Otherwise, you cannot take another test, or enter a call using `joinChannelByToken`. 
+- 
 If the input device fails to initialize, check the error message in [Developer Center](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Constants/AgoraErrorCode.html).

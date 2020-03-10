@@ -3,7 +3,7 @@
 title: Raw Audio Data
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:20:37 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 00:11:18 GMT+0800 (CST)
 ---
 # Raw Audio Data
 ## Introduction
@@ -94,7 +94,7 @@ class IAudioFrameObserver
 };
 ```
 
-We also provide an open-source [AgoraAudioIO-Android](https://github.com/AgoraIO/Advanced-Audio/tree/master/Custom-Audio-Device/AgoraAudioIO-Android) demo project on GitHub. You can try the demo or view the source code.
+We also provide an open-source [AgoraAudioIO-Android](https://github.com/AgoraIO/Advanced-Audio/tree/dev/backup/Custom-Audio-Device/AgoraAudioIO-Android) demo project on GitHub. You can try the demo or view the source code.
 
 ### API reference
 

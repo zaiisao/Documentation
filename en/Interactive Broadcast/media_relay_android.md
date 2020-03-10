@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Android
-updatedAt: Tue Dec 17 2019 10:34:19 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:24:36 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -89,7 +89,6 @@ Follow the API call sequence to implent your code logic:
 
 <div class="alert note">After calling the <code>startChannelMediaRelay</code> method, you can call the <code>updateChannelMediaRelay</code> method to add or delete the relay channels.</div>
 
-We provide an open-source [Cross-Channel-OpenLive-Android](https://github.com/AgoraIO/Advanced-Video/blob/master/Cross-Channel/Cross-Channel-OpenLive-Android) demo project that implements string user accounts on GitHub. You can try the demo and view the source code in the [CrossChannelDialog.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Cross-Channel/Cross-Channel-OpenLive-Android/app/src/main/java/io/agora/openlive/ui/CrossChannelDialog.java) file.
 
 ### API Reference
 

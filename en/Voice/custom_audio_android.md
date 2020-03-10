@@ -3,7 +3,7 @@
 title: Custom Audio Source and Renderer
 description: 
 platform: Android
-updatedAt: Sat Feb 22 2020 05:38:25 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 00:03:04 GMT+0800 (CST)
 ---
 # Custom Audio Source and Renderer
 ## Introduction
@@ -99,6 +99,10 @@ rtcEngine.pullPlaybackAudioFrame(
 
 - [`setExternalAudioSink`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a270c0607d443790e92cdbd0d45ba1732)
 - [`pullPlaybackAudioFrame`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae15064944870692e9a0a59fdc87654c4)
+
+## Sample code
+
+Agora provides an open-source [Customer recoder](https://github.com/AgoraIO/Advanced-Audio/tree/dev/3.1.0_android/Advanced-Audio-Android/sample-custom-recorder/) demo project on GitHub. You can download it for source code reference.
 
 ## Consideration
 

@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to enable audio mixing for Web
 platform: Web
-updatedAt: Fri Oct 18 2019 04:17:32 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:27:10 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -184,4 +184,4 @@ localStream.stopAudioMixing();
 
 ## Demo project
 
-We provide an open-source [AgoraAudioIO-Web-Webpack](https://github.com/AgoraIO/Advanced-Audio/tree/master/Custom-Audio-Device/AgoraAudioIO-Web-Webpack) demo project on GitHub. [Try it online](https://webdemo.agora.io/agora-web-showcase/examples/AgoraAudioIO-Web/) and refer to the code in [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Custom-Audio-Device/AgoraAudioIO-Web-Webpack/src/rtc-client.js).
+We provide an open-source [AgoraAudioIO-Web-Webpack](https://github.com/AgoraIO/Advanced-Audio/tree/master/Web/AgoraAudioIO-Web-Webpack) demo project on GitHub. [Try it online](https://webdemo.agora.io/agora-web-showcase/examples/AgoraAudioIO-Web/) and refer to the code in [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Custom-Audio-Device/AgoraAudioIO-Web-Webpack/src/rtc-client.js).

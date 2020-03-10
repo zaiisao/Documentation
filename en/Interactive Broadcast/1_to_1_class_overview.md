@@ -50,7 +50,6 @@ Follow these steps to try the demo:
 ## Technical solutions
 
 Agora recommends using the following SDKs or services to implement a One-to-one Online Classroom scenario.
-
 ![](https://web-cdn.agora.io/docs-files/1582862848646)
 
 | SDK | Function | 

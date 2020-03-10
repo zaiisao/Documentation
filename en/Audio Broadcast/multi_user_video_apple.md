@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 10 2019 04:20:43 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 07:18:19 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -89,13 +89,11 @@ agoraKit.setRemoteVideoStream(uid, type: .high)
 agoraKit.setRemoteVideoStream(uid, type: .low)
 ```
 
-We also provide an open-source [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) demo project on GitHub.
-
 ### API reference
 
 - [`enableDualStreamMode`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableDualStreamMode:)
 - [`setRemoteVideoStream`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setRemoteVideoStream:type:)
-- [`setParameters`](https://docs.agora.io/en/Audio%20Broadcast/.API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setParameters:)
+- [`setParameters`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setParameters:)
 
 ## Considerations
 - Agora recommends using a layout with one big window and multiple small windows: Use a high-stream layout for the big window; Use a low-stream layout for small windows.

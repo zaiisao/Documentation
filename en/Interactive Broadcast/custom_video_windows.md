@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:08:39 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:20:37 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -182,7 +182,7 @@ nRet = apm->setParameters("{\"che.video.local.camera_index\":0}");
 mediaEngine->registerVideoFrameObserver(NULL);
 ```
 
-We provide an open source [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows) demo project on GitHub. You can try the demo or view the source code.
+We provide an open source [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Windows/Agora-Media-Source-Windows) demo project on GitHub. You can try the demo or view the source code.
 
 ### API reference
 

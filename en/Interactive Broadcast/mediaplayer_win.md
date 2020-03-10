@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Tue Dec 10 2019 09:35:14 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:50:01 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
@@ -35,7 +35,7 @@ Using MediaPlayer Kit, you can start/pause the playback video, adjust the playba
 
 ### Use MediaPlayerKit
 
-1. Download and unzip the [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/master/MediaPlayer/Mediaplayer-Windows) folder.
+1. Download and unzip the [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/MediaPlayer/Mediaplayer-Windows) folder.
 2. Open the `MediaPlayerKitQuickstart.sln` file with Microsoft Visual Studio.
 3. Click **Build** > **Build Solution**.
 4. After a successful compilation, click **Debug** > **Start Debugging**.

@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Android
-updatedAt: Tue Jan 14 2020 02:38:04 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 05:06:48 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -29,7 +29,7 @@ This method has two parameters:
 mRtcEngine.setBeautyEffectOptions(true, new BeautyOptions(LIGHTENING_CONTRAST_NORMAL, 0.5F, 0.5F, 0.5F));
 ```
 
-We also provide an open-source [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project that implements image enhancement on GitHub. You can go to the repository to download it. You can try the demo and refer to the source code in the [`WorkerThread.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/model/WorkerThread.java#L114) and [`CallActivity.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/ui/CallActivity.java#L400) files.
+We also provide an open-source [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project that implements image enhancement on GitHub. You can go to the repository to download it. You can try the demo and refer to the source code of the `onBeautyClicked` method in the  [`LiveActivity.java`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Android/app/src/main/java/io/agora/openlive/activities/LiveActivity.java) file.
 
 ## Considerations
 - This API method has return values. If the method call fails, the return value is < 0.
