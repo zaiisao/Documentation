@@ -39,9 +39,9 @@ If you have already generated an RTM Token on your server, you can use Token Aut
 ```java
   Request request = new Request.Builder()
   ...
-  // Put your RTM Token to the `x-agora-token` field of the HTTP request. 
+  // Puts your RTM Token to the `x-agora-token` field of the HTTP request. 
   .addHeader("x-agora-token", "<Your RTM Token>")
-  // Put the uid, which generates the RTM token, to the `x-agora-uid` field of the HTTP request.
+  // Puts the uid, which generates the RTM token, to the `x-agora-uid` field of the HTTP request.
   .addHeader("x-agora-uid", "<Your uid used to generate the RTM Token>")
   ...
 ```
