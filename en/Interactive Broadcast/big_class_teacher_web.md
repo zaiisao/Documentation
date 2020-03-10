@@ -1,11 +1,11 @@
 
 ---
-title: Build a client for the teacher
+title: Build a Client for the Teacher
 description: 
 platform: Web
-updatedAt: Mon Mar 02 2020 04:16:45 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 07:09:59 GMT+0800 (CST)
 ---
-# Build a client for the teacher
+# Build a Client for the Teacher
 This section describes how to implement a web client for the teacher.
 
 ## Flowchart

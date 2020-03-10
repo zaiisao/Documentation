@@ -3,7 +3,7 @@
 title: Get user and channel events
 description: 
 platform: RESTful
-updatedAt: Fri Feb 21 2020 13:11:33 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 07:58:11 GMT+0800 (CST)
 ---
 # Get user and channel events
 You can now get both user and channel events with the Agora RTM RESTful APIs. 
@@ -13,7 +13,7 @@ You can now get both user and channel events with the Agora RTM RESTful APIs.
 
 ## <a name="auth"></a>Authentication
 
-Agora RTM RESTful API supports HTTPS only. You can use either of the following to authenticate your HTTP request: 
+Agora RTM RESTful API supports HTTPS only. You can use either of the following methods to authenticate your HTTP request: 
 
 - [Basic Authentication](#basicauth)
 - [Token Authentication](#tokenauth)

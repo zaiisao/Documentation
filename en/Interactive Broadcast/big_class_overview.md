@@ -1,11 +1,11 @@
 
 ---
-title: Big Online Classroom
+title: Lecture Hall
 description: 
 platform: All Platforms
-updatedAt: Tue Feb 25 2020 05:39:12 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 07:55:00 GMT+0800 (CST)
 ---
-# Big Online Classroom
+# Lecture Hall
 ## Introduction
 
 The growth of the online education sector has given rise to the Big Online Classroom scenario. In this scenario, thousands of students watch an online lecture. Students can "raise their hands" to interact with the teacher, and their responses are viewed by all the other students at the same time.
