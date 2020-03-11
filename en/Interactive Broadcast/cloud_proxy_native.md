@@ -2,7 +2,7 @@
 ---
 title: Use Cloud Proxy
 description: How to enable cloud proxy on Web
-platform: Android,iOS,macOS,Windows
+platform: Android,iOS,macOS,Windows,Unity
 updatedAt: Tue Jul 16 2019 03:22:42 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
