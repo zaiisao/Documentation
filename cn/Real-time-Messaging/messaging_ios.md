@@ -126,15 +126,18 @@ end
 
 #### 收发点对点消息
 
-![](https://web-cdn.agora.io/docs-files/1562566668046)
+
+![](https://web-cdn.agora.io/docs-files/1583942637899)
 
 #### 加入离开频道
 
-![](https://web-cdn.agora.io/docs-files/1562566699241)
+
+![](https://web-cdn.agora.io/docs-files/1583942656098)
 
 #### 收发频道消息
 
-![](https://web-cdn.agora.io/docs-files/1562566713620)
+
+![](https://web-cdn.agora.io/docs-files/1583942679434)
 
 ### <a name = "create"></a>初始化
 
