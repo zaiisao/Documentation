@@ -3,7 +3,7 @@
 title: Lecture Hall
 description: 
 platform: All Platforms
-updatedAt: Tue Mar 10 2020 07:55:00 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 03:37:00 GMT+0800 (CST)
 ---
 # Lecture Hall
 ## Introduction
@@ -43,7 +43,7 @@ In which:
 
 Follow these steps to try the demo:
 1. Fill in the classroom number and username.
-2. Choose **Large Class**.
+2. Choose **Lecture Hall**.
 3. Set your role as either **Teacher** or **Student**.
 4. Click **Join** to enter the classroom.
 

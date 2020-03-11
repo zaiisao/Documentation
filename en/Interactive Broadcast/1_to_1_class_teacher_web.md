@@ -3,7 +3,7 @@
 title: Build a Client for the Teacher
 description: 
 platform: Web
-updatedAt: Fri Feb 28 2020 08:06:30 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 10:31:38 GMT+0800 (CST)
 ---
 # Build a Client for the Teacher
 This section describes how to implement a web client for the teacher.
@@ -118,4 +118,4 @@ Implement the following whiteboard functions in your project:
 
 ## Open-source demo project
 
-Agora provides an open-source demo for [One-to-one Online Class](https://github.com/AgoraIO-Usecase/eEducation/tree/master/education_web) on GitHub to download as a source code reference.
+Agora provides an open-source demo for [One-to-one Class](https://github.com/AgoraIO-Usecase/eEducation/tree/master/education_web) on GitHub to download as a source code reference.

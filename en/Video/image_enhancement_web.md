@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Web
-updatedAt: Mon Mar 09 2020 06:35:55 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 03:35:43 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -45,5 +45,9 @@ We also provide an open-source [OpenLive-Web](https://github.com/AgoraIO/Basic-V
 
 - This function does not support mobile devices.
 - If the dual-stream mode is enabled, the image enhancement options only apply to the high-video stream.
-- To remove a video track after enabling image enhancement, you need to first disable the enhancement by calling `setBeautyEffectOptions`.
-- For low-end devices, enabling image enhancement affects the system performance. When the video resolution is set as 360p, 720p or higher, and the frame rate is set as 30 fps or 15 fps, do not enable image enhancement.
+- If image enhancement is enabled, you must call `stream.setBeautyEffectOptions(false)` to disable it before calling the following methods:
+	- `leave`
+	- `stop`
+	- `removeTrack`
+	- `unpublish`
+- The image enhancement function involves real-time compute-intensive processing. Though it is based on hardware acceleration, the processing has high GPU and CPU overheads. For low-end devices, enabling image enhancement affects the system performance. When the video resolution is set as 360p, 720p or higher, and the frame rate is set as 30 fps or 15 fps, do not enable image enhancement.

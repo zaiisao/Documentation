@@ -3,7 +3,7 @@
 title: Build a Client for the Student
 description: 
 platform: Web
-updatedAt: Fri Feb 28 2020 08:06:48 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 10:31:03 GMT+0800 (CST)
 ---
 # Build a Client for the Student
 This section describes how to implement a Web client for the student.
@@ -96,4 +96,4 @@ Implement the following whiteboard functions in your project:
 
 ## Open-source demo project
 
-Agora provides an open-source demo for [One-to-one Online Clasroom](https://github.com/AgoraIO-Usecase/eEducation) on GitHub to download as a source code reference.
+Agora provides an open-source demo for [One-to-one Clasroom](https://github.com/AgoraIO-Usecase/eEducation) on GitHub to download as a source code reference.
