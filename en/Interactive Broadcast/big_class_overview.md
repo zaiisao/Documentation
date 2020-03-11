@@ -3,16 +3,16 @@
 title: Lecture Hall
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 11 2020 03:37:00 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 03:40:31 GMT+0800 (CST)
 ---
 # Lecture Hall
 ## Introduction
 
-The growth of the online education sector has given rise to the Big Online Classroom scenario. In this scenario, thousands of students watch an online lecture. Students can "raise their hands" to interact with the teacher, and their responses are viewed by all the other students at the same time.
+The growth of the online education sector has given rise to the Lecture Hall scenario. In this scenario, thousands of students watch an online lecture. Students can "raise their hands" to interact with the teacher, and their responses are viewed by all the other students at the same time.
 
-This article describes how to use the Agora SDKs to implement a Big Online Classroom.
+This article describes how to use the Agora SDKs to implement a Lecture Hall scenario.
 
-![](https://web-cdn.agora.io/docs-files/1582270298743)
+![](https://web-cdn.agora.io/docs-files/1583897778162)
 
 ## Feature list
 
@@ -31,7 +31,7 @@ You can use the Agora SDKs to implement the following features for your project.
 
 ## Try the demo
 
-Agora provides the Big Online Classroom demos on the following platforms. 
+Agora provides the Lecture Hall demos on the following platforms. 
 
 | Android | iOS | PC Web | Windows | macOS |
 | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
@@ -50,7 +50,7 @@ Follow these steps to try the demo:
 ## Technical solutions
 
 Agora recommends using the following SDKs or services to implement a Lecture Hall scenario.
-![](https://web-cdn.agora.io/docs-files/1582609031026)
+![](https://web-cdn.agora.io/docs-files/1583898000711)
 
 | SDK | Function | 
 | ---------------- | ---------------- | 
