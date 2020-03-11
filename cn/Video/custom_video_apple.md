@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: iOS,macOS
-updatedAt: Mon Mar 09 2020 07:12:04 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 06:58:02 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -97,7 +97,7 @@ videoFrame.ratation = 0;
 [agoraKit pushExternalVideoFrame: videoFrame];
 ```
 
-同时，我们在 GitHub 提供一个开源的 [Agora-Video-Source-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Video-Source-iOS) 示例项目。你可以前往下载，或参考 [VideoChatViewController.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Video-Source-iOS/Agora%20Video%20Source/VideoChat/VideoChatViewController.swift) 文件中的源代码。
+同时，我们在 GitHub 提供一个开源的 [Agora-Custom-Media-Device](https://github.com/AgoraIO/Advanced-Video/tree/master/iOS%26macOS/Agora-Custom-Media-Device) 示例项目。你可以前往下载，或参考 [LiveRoomViewController.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/iOS%26macOS/Agora-Custom-Media-Device/Agora-Custom-Media-Device/LiveRoomViewController.swift) 文件中的源代码。
 
 **API 参考**
 
@@ -215,7 +215,7 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 	[agoraKit setVideoSource: videoSource];
 	```
 	
-同时，我们在 GitHub 提供一个开源的 [Agora-Custom-Media-Device-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS) 示例项目。你可以下载体验，或查看 [AgoraCamera.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Custom-Media-Device/Agora-Custom-Media-Device-iOS/Agora-Custom-Media-Device/CustomMediaDevices/AgoraCamera.swift) 文件中的源代码。
+同时，我们在 GitHub 提供一个开源的 [Agora-Custom-Media-Device-iOS](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Custom-Media-Device/Agora-Custom-Media-Device-iOS) 示例项目。你可以下载体验，或查看 [AgoraCamera.swift](https://github.com/AgoraIO/Advanced-Video/blob/dev/backup/Custom-Media-Device/Agora-Custom-Media-Device-iOS/Agora-Custom-Media-Device/CustomMediaDevices/AgoraCamera.swift) 文件中的源代码。
 	
 **API 参考**
 
@@ -345,7 +345,7 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 	[agoraKit setRemoteVideoRenderer: videoRenderer, uid];
 	```
 
-同时，我们在 GitHub 提供一个开源的 [Agora-Custom-Media-Device-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/iOS%26macOS/Agora-Custom-Media-Device) 示例项目。你可以下载体验，或查看 [AgoraRenderView.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/iOS%26macOS/Agora-Custom-Media-Device/Agora-Custom-Media-Device/CustomMediaDevices/AgoraRenderView.swift) 文件中的源代码。
+同时，我们在 GitHub 提供一个开源的 [Agora-Custom-Media-Device](https://github.com/AgoraIO/Advanced-Video/tree/master/iOS%26macOS/Agora-Custom-Media-Device) 示例项目。你可以下载体验，或查看 [AgoraRenderView.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/iOS%26macOS/Agora-Custom-Media-Device/Agora-Custom-Media-Device/CustomMediaDevices/AgoraRenderView.swift) 文件中的源代码。
 
 	
 **API 参考**

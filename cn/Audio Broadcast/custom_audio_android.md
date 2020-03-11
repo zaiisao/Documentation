@@ -3,7 +3,7 @@
 title: 自定义音频采集和渲染
 description: 
 platform: Android
-updatedAt: Wed Sep 25 2019 03:12:05 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 00:01:30 GMT+0800 (CST)
 ---
 # 自定义音频采集和渲染
 ## 功能介绍
@@ -95,6 +95,10 @@ rtcEngine.pullPlaybackAudioFrame(
 
 - [`setExternalAudioSink`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a270c0607d443790e92cdbd0d45ba1732)
 - [`pullPlaybackAudioFrame`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ae15064944870692e9a0a59fdc87654c4)
+
+## 示例代码
+
+我们在 GitHub 上提供一个开源的 [Custom recorder](https://github.com/AgoraIO/Advanced-Audio/tree/dev/3.1.0_android/Advanced-Audio-Android/sample-custom-recorder/) 示例项目，你可以前往下载，或查看其中的源代码。
 
 
 ## 开发注意事项

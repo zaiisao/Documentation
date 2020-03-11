@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Android
-updatedAt: Fri Dec 27 2019 10:23:22 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 08:37:50 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -17,10 +17,10 @@ updatedAt: Fri Dec 27 2019 10:23:22 GMT+0800 (CST)
 ## 前提条件
 
 请确保已开通 CDN 旁路推流功能，步骤如下：
-
-1. 登录 [控制台](https://dashboard.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。
+1. 登录[控制台](https://console.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。
 2. 在页面左上角展开下拉列表选择需要开通 CDN 旁路推流的项目，然后点击旁路推流下的**分钟数**。
-   ![](https://web-cdn.agora.io/docs-files/1569297956098)
+![](https://web-cdn.agora.io/docs-files/1569297956098)
+<div class="alert note"><b>旁路推流服务</b>仅适用于 Native SDK 2.4.1 及以上版本和 Web SDK 2.9.0 及以上版本，若您使用的版本较低，建议升级至新版本。</div>
 3. 点击**开启旁路推流服务**。
 4. 点击**应用** 即可开通旁路推流服务，并得到 500 个最大并发频道数。
 

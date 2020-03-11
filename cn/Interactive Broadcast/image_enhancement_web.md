@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: Web
-updatedAt: Mon Mar 09 2020 06:35:33 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 03:39:48 GMT+0800 (CST)
 ---
 # 美颜
 ## 功能描述
@@ -47,5 +47,9 @@ stream.setBeautyEffectOptions(true, {
 
 - 该功能不支持移动端设备。
 - 如果开启了双流模式，美颜选项仅对大流生效。
-- 开启美颜后如需移除视频轨道，必须先关闭美颜功能。
-- 美颜功能的开启会对低端机的性能造成影响，以至于无法达到预期的要求。对于低端机，视频编码设置为 360p 30 fps，720p 15 fps 或更高分辨率时，我们不建议开启美颜。
+- 开启美颜后如需调用以下方法，必须先调用 `stream.setBeautyEffectOptions(false)` 关闭美颜功能。
+ -  `leave`
+ - `stop`
+ - `removeTrack`
+ - `unpublish`
+- 美颜处理属于实时计算密集型操作，虽然基于硬件加速机制实现，但处理过程仍然会有较大的 GPU 和 CPU 开销。因此美颜功能的开启会对低端机的性能造成影响，以至于无法达到预期的要求。对于低端机，视频编码设置为 360p 30 fps，720p 15 fps 或更高分辨率时，我们不建议开启美颜。

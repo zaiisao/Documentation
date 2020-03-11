@@ -1,19 +1,19 @@
 
 ---
-title: 实现视频通话
+title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Wed Mar 11 2020 10:15:58 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 09:46:13 GMT+0800 (CST)
 ---
-# 实现视频通话
+# 实现语音通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
 
-本文会详细介绍如何建立一个简单的项目并使用 Agora Web SDK 实现基础的一对一视频通话。我们建议你阅读本文以快速了解 Agora 的核心方法。
+本文会详细介绍如何建立一个简单的项目并使用 Agora Web SDK 实现基础的一对一语音通话。我们建议你阅读本文以快速了解 Agora 的核心方法。
 
 <div class="alert warning">由于浏览器的安全策略对除 127.0.0.1 以外的 HTTP 地址作了限制，Agora Web SDK 仅支持 HTTPS 协议或者 http://localhost（http://127.0.0.1），请勿使用 HTTP 协议部署你的项目。</div>
 
 ## 示例项目
-我们在 GitHub 上提供一个开源的基础一对一视频通话[示例项目](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1)供你参考。
+我们在 GitHub 上提供一个开源的基础一对一音视频通话[示例项目](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1)供你参考。
 
 同时，你可以通过我们的[在线 demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Web-Tutorial-1to1-Web/) 快速体验 Agora 实现的音视频通话效果。
 
@@ -61,7 +61,7 @@ updatedAt: Wed Mar 11 2020 10:15:58 GMT+0800 (CST)
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Basic Communication</title>
-  <link rel="stylesheet" href="https://docs.agora.io/cn/Video/assets/common.css" />
+  <link rel="stylesheet" href="https://docs.agora.io/cn/Voice/assets/common.css" />
 </head>
 <body class="agora-theme">
   <div class="navbar-fixed">
@@ -159,22 +159,22 @@ updatedAt: Wed Mar 11 2020 10:15:58 GMT+0800 (CST)
 
 为方便起见，这里我们选择第二种方法，直接使用 CDN 链接。
 
-现在，我们已经将 Agora Web SDK 集成到项目中了。接下来我们要通过调用 Agora Web SDK 提供的核心 API 实现基础的音视频通话功能。
+现在，我们已经将 Agora Web SDK 集成到项目中了。接下来我们要通过调用 Agora Web SDK 提供的核心 API 实现基础的音频通话功能。
 
 ## 实现音视频通话
 
-本节介绍如何使用 Agora Web SDK 实现音视频通话。
+本节介绍如何使用 Agora Web SDK 实现音频通话。
 
 在使用 Agora Web SDK 时，你会经常用到以下两种对象：
 
 - Client 对象，代表一个本地客户端。Client 类的方法提供了音视频通话的主要功能，例如加入频道、发布音视频流等。
 - Stream 对象，代表本地和远端的音视频流。Stream 类的方法用于定义音视频流对象的行为，例如流的播放控制、音视频的编码配置等。调用 Stream 方法时，请注意区分本地流和远端流对象。
 
-下图展示了基础的一对一音视频通话的 API 调用。注意图中的方法是对不同的对象调用的。
+下图展示了基础的一对一音频通话的 API 调用。注意图中的方法是对不同的对象调用的。
 
 ![](https://web-cdn.agora.io/docs-files/1568094608983)
 
-> 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Video/API%20Reference/web/index.html)。
+> 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Voice/API%20Reference/web/index.html)。
 
 为方便起见，我们为下面要用到的示例代码定义了两个变量。此步骤不是必须的，你可以根据你的项目有其他的实现。
 
@@ -245,15 +245,15 @@ var option = {
 
 	- `token`: 该参数为可选。如果你的 Agora 项目开启了 App 证书，你需要在该参数中传入一个 Token，详见 [使用 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#使用-token)。
 		- 在测试环境，我们推荐使用控制台生成临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms%23get-a-temporary-token#获取临时-token)。
-		- 在生产环境，我们推荐你在自己的服务端生成 Token，详见 [生成 Token](../../cn/Video/token_server.md).
+		- 在生产环境，我们推荐你在自己的服务端生成 Token，详见 [生成 Token](../../cn/Voice/token_server.md).
 	- `channel`: 频道名，长度在 64 字节以内的字符串。
 	- `uid`: 用户 ID，频道内每个用户的 UID 必须是唯一的。如果你将 `uid` 设为 `null`，Agora 会自动分配一个 UID 并在 `onSuccess` 回调中返回。
 
-  更多的参数设置注意事项请参考 [`Client.join`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#join) 接口中的参数描述。
+  更多的参数设置注意事项请参考 [`Client.join`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#join) 接口中的参数描述。
 
 ### 发布本地流
 
-1. 在`Client.join` 的 `onSuccess` 回调中调用 `AgoraRTC.createStream` 方法创建一个本地音视频流。
+1. 在`Client.join` 的 `onSuccess` 回调中调用 `AgoraRTC.createStream` 方法创建一个本地音频流。
 
    在创建流时，通过设置 `audio` 和 `video` 参数来控制是否发布音频和视频。
 
@@ -262,7 +262,7 @@ var option = {
    rtc.localStream = AgoraRTC.createStream({
      streamID: rtc.params.uid,
      audio: true,
-     video: true,
+     video: false,
      screen: false,
    })
    ```
@@ -278,7 +278,7 @@ var option = {
    })
    ```
 
-   在初始化流时，浏览器会跳出弹窗要求摄像头和麦克风权限，请确保授权。
+   在初始化流时，浏览器会跳出弹窗要求麦克风权限，请确保授权。
 
 3. 在 `Stream.init` 的 `onSuccess` 回调中调用 `Client.publish` 方法，发布本地流。
 
@@ -320,11 +320,11 @@ var option = {
      // Add a view for the remote stream.
      addView(id);
      // Play the remote stream.
-     remoteStream.play("remote_video_" + id);
+     remoteStream.play("remote_stream_" + id);
      console.log('stream-subscribed remote-uid: ', id);
    })
    ```
-<div class="alert note">受浏览器策略影响，在 Chrome 70+ 和 Safari 浏览器上，<code>Stream.play</code> 方法必须由用户手势触发，详情请参考<a href="../../cn/Video/autoplay_policy_web.md">处理浏览器的自动播放策略</a>。</div>
+<div class="alert note">受浏览器策略影响，在 Chrome 70+ 和 Safari 浏览器上，<code>Stream.play</code> 方法必须由用户手势触发，详情请参考<a href="../../cn/Voice/autoplay_policy_web.md">处理浏览器的自动播放策略</a>。</div>
 3. 监听 `"stream-removed"` 事件，当远端流被移除时（例如远端用户调用了 `Stream.unpublish`）， 停止播放该流并移除它的画面。
 
    ```javascript
@@ -332,7 +332,7 @@ var option = {
      var remoteStream = evt.stream;
      var id = remoteStream.getId();
      // Stop playing the remote stream.
-     remoteStream.stop("remote_video_" + id);
+     remoteStream.stop("remote_stream_" + id);
      // Remove the view of the remote stream. 
      removeView(id);
      console.log('stream-removed remote-uid: ', id);
@@ -388,18 +388,16 @@ live-server .
    现在你的浏览器应该会自动打开你的 web app 页面。
 
 4. 输入你的 App ID，频道名，token，点击 **JOIN** 开始通话。
-   你可能需要给浏览器摄像头和麦克风权限。如果在创建本地流时打开了视频，你现在应该可以看到自己的视频画面。
+   你可能需要给浏览器麦克风权限。
 
-5. 在浏览器中打开另一个页面，输入相同的 URL 地址。点击 **JOIN** 按钮。现在你应该可以看到两个视频画面。
+5. 在浏览器中打开另一个页面，输入相同的 URL 地址。点击 **JOIN** 按钮。此时讲话应该会听到回声。
 
 如果页面没有正常工作，可以打开浏览器的控制台查看错误信息进行排查。常见的错误信息包括：
 - `INVALID_VENDOR_KEY`：App ID 错误，检查你填写的 App ID。
 - `ERR_DYNAMIC_USE_STATIC_KE`：你的 Agora 项目启用了 App 证书，需要在加入频道时填写 Token。
-- `Media access:NotFoundError`：检查你的摄像头和麦克风是否正常工作。
+- `Media access:NotFoundError`：检查你的麦克风是否正常工作。
 - `MEDIA_NOT_SUPPORT`：请使用 HTTPS 协议 或者 localhost。
 
 <div class="alert warning">Agora Web SDK 不支持在浏览器上模拟移动设备调试。</div>
 
-## 相关链接
 
-我们在 GitHub 上提供一个开源的多人视频通话示例项目 [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Web)。如果你需要实现多人视频场景，可以前往下载或查看源代码。

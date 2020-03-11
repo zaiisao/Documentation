@@ -1,14 +1,14 @@
 
 ---
-title: 实现互动直播
+title: 实现视频直播
 description: wechat live
 platform: 微信小程序
-updatedAt: Wed Mar 04 2020 05:32:27 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 09:20:23 GMT+0800 (CST)
 ---
-# 实现互动直播
-本文介绍如何使用 Agora 微信小程序 SDK 快速实现互动直播。
+# 实现视频直播
+本文介绍如何使用 Agora 微信小程序 SDK 快速实现视频直播。
 
-## Demo 体验
+## 示例项目
 
 Agora 在 GitHub 上提供一个开源的实时音视频示例项目 [Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial)。在实现相关功能前，你可以下载并查看源代码。
 
@@ -169,7 +169,7 @@ client.rejoin(token, channel, uid, uids, onSuccess, onFailure);
 
 <details>
 	<summary><font color="#3ab7f8">设置用户角色</font></summary>
-小程序 SDK 与 Native SDK 互通的场景下，如果 Native 端的频道场景为直播，且小程序端作为观众加入频道，则还需调用 setRole 方法，将用户角色设置为观众。
+小程序 SDK 与 Native SDK 互通的场景下，如果 Native 端的频道场景为直播，且小程序端作为观众加入频道，则还需调用 `setRole 方法`，将用户角色设置为观众。
 
 ```javascript
 client.setRole(role);
@@ -221,12 +221,12 @@ client.leave(onSuccess, onFailure);
 * 注册并监听流事件
 
 	```javascript
-	// 有新的音频流加入频道
+	// 有新的音视频流加入频道
 	client.on("stream-added", e => {
 		let uid = e.uid;
 		const ts = new Date().getTime();
 		console.log(`stream ${uid} added`);
-		// 订阅相应 Url 地址的音频流
+		// 订阅相应 Url 地址的音视频流
 		client.subscribe(uid, (url, rotation) => {
 			console.log(`stream ${uid} subscribed successful`);
 			// 将 Url 地址发送至 live-player
@@ -264,4 +264,11 @@ client.leave(onSuccess, onFailure);
 ## 运行项目
 
 在微信开发者工具中导入你的项目后，点击**预览**，开发者工具会生成一个二维码。手机微信扫描二维码即可进入运行小程序。
+
+## 相关文档
+
+使用微信小程序 SDK 开发过程中，你还可以参考如下文档：
+
+- [小程序 SDK 常见问题集](https://docs.agora.io/cn/faq/wechat)
+- [错误码和警告码](../../cn/Interactive%20Broadcast/the_error_wechat.md)
 

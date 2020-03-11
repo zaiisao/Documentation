@@ -3,7 +3,7 @@
 title: 原始音频数据
 description: 
 platform: Windows
-updatedAt: Tue Dec 10 2019 04:21:32 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 00:10:44 GMT+0800 (CST)
 ---
 # 原始音频数据
 ## 功能描述
@@ -82,7 +82,7 @@ class IAudioFrameObserver
 };
 ```
 
-同时，我们在 GitHub 提供一个开源的 [AgoraAudioIO-Windows](https://github.com/AgoraIO/Advanced-Audio/tree/master/Custom-Audio-Device/AgoraAudioIO-Windows) 示例项目。你可以前往下载，或参考该项目的源代码。
+同时，我们在 GitHub 提供一个开源的 [AgoraAudioIO-Windows](https://github.com/AgoraIO/Advanced-Audio/tree/dev/backup/Custom-Audio-Device/AgoraAudioIO-Windows) 示例项目。你可以前往下载，或参考该项目的源代码。
 
 ### API 参考
 

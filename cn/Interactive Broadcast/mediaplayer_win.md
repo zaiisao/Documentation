@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Windows
-updatedAt: Tue Dec 31 2019 09:49:34 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:49:33 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -35,7 +35,7 @@ updatedAt: Tue Dec 31 2019 09:49:34 GMT+0800 (CST)
 
 ### 使用 MediaPlayerKitQuickstart
 
-1. 下载并解压 [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/master/MediaPlayer/Mediaplayer-Windows) 文件。
+1. 下载并解压 [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/MediaPlayer/Mediaplayer-Windows) 文件。
 2. 使用 Microsoft Visual Studio 打开 `MediaPlayerKitQuickstart.sln` 文件。
 3. 点击**生成** > **生成解决方案**。
 4. 编译成功后，点击**调试** > **开始调试**。

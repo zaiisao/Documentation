@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Tue Dec 31 2019 09:49:10 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:48:45 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -37,7 +37,7 @@ updatedAt: Tue Dec 31 2019 09:49:10 GMT+0800 (CST)
 
 ### 快速体验媒体播放器组件
 
-1. 下载并解压 [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/master/MediaPlayer/Mediaplayer-Mac) 文件。
+1. 下载并解压 [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/MediaPlayer/Mediaplayer-Mac) 文件。
 2. 使用 Xcode 打开 `MediaPlayerKitQuickstart.xcodeproj` 文件。
 3. 点击编译。
 4. 编译成功后，你可以看到弹出一个新界面。

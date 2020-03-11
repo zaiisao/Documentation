@@ -3,7 +3,7 @@
 title: 自定义音频采集和渲染
 description: 
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:33:50 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 02:48:41 GMT+0800 (CST)
 ---
 # 自定义音频采集和渲染
 ## 功能介绍
@@ -229,6 +229,10 @@ mediaEngine->registerAudioFrameObserver(NULL);
 
 - [`setExternalAudioSink`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a790b4896f2769c1edebbb49d8912e38b)
 - [`pullAudioFrame`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#aaf43fc265eb4707bb59f1bf0cbe01940)
+
+## 示例项目
+
+我们在 GitHub 上提供一个开源的 [AgoraAudioIO](https://github.com/AgoraIO/Advanced-Audio/tree/master/Windows/AgoraAudioIO-Windows) 示例项目，你可以前往下载，或查看其中的源代码。
 
 ## 注意事项
 * 回调函数里处理音频数据要尽量高效，且保证算法稳定，避免影响整个客户端或产生崩溃。

@@ -89,15 +89,16 @@ updatedAt: Thu Oct 24 2019 08:25:10 GMT+0800 (CST)
 
 #### 收发点对点消息
 
-![](https://web-cdn.agora.io/docs-files/1562566549404)
+
+![](https://web-cdn.agora.io/docs-files/1583942421049)
 
 #### 加入离开频道
 
-![](https://web-cdn.agora.io/docs-files/1562566630113)
+![](https://web-cdn.agora.io/docs-files/1583942482690)
 
 #### 收发频道消息
 
-![](https://web-cdn.agora.io/docs-files/1562566639888)
+![](https://web-cdn.agora.io/docs-files/1583942536983)
 
 
 

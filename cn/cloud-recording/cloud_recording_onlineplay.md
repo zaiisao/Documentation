@@ -3,7 +3,7 @@
 title: 在线播放录制文件
 description: 
 platform: All Platforms
-updatedAt: Mon Jan 20 2020 02:06:43 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 00:43:03 GMT+0800 (CST)
 ---
 # 在线播放录制文件
 ## 功能描述
@@ -24,11 +24,15 @@ updatedAt: Mon Jan 20 2020 02:06:43 GMT+0800 (CST)
 
 	![](https://web-cdn.agora.io/docs-files/1556438995486)
 	
-4. 在**文件管理**页面，M3U8 文件右侧点击**更多**，选择**复制文件 URL**，如下图所示：
+3. 在**文件管理**页面，M3U8 文件右侧点击**详情**，进入**详情**页。
 
-	![](https://web-cdn.agora.io/docs-files/1556440791342)
+![](https://web-cdn.agora.io/docs-files/1583887201814)
+
+4. 在**详情**页面，选择**复制文件 URL**，如下图所示
+
+![](https://web-cdn.agora.io/docs-files/1583887227648)
 	
-6. 在浏览器上输入复制的外链地址即可开始在线播放。
+5. 在浏览器上输入复制的外链地址即可开始在线播放。
 
 ### 七牛云
 

@@ -1,12 +1,12 @@
 
 ---
-title: 实现视频通话
+title: 实现语音通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Mon Mar 09 2020 09:12:05 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 09:10:23 GMT+0800 (CST)
 ---
-# 实现视频通话
-本文介绍如何使用 Agora 微信小程序 SDK 快速实现视频通话。
+# 实现语音通话
+本文介绍如何使用 Agora 微信小程序 SDK 快速实现语音通话。
 
 ## 示例项目
 
@@ -92,11 +92,11 @@ Agora 在 GitHub 上提供一个开源的实时音视频示例项目 [Agora-Mini
 	const AgoraMiniappSDK = require('../../lib/Agora_Miniapp_SDK_for_WeChat.js');
 	```
 
-## 实现视频通话
+## 实现语音通话
 
 完成开发环境准备后，你可以参考下图中的业务流程图，在你的项目中实现通话功能。
 
-![](https://web-cdn.agora.io/docs-files/1568008978759)
+![](https://web-cdn.agora.io/docs-files/1583744980016)
 
 ### 1. 初始化客户端对象
 
@@ -119,7 +119,7 @@ client.init(appId, onSuccess, onFailure);
 * token：传入能标识用户角色和权限的 Token。可设为如下一个值：
    * `NULL`
    * 临时 Token。临时 Token 服务有效期为 24 小时。你可以在控制台里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取临时-token)。
-   * 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Video/token_server.md)。
+   * 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Voice/token_server.md)。
 
  <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 
@@ -130,25 +130,25 @@ client.init(appId, onSuccess, onFailure);
 client.join(token, channel, uid, onSuccess, onFailure);
 ```
 
-### 3. 发布本地音视频流
+### 3. 发布本地音频流
 
-加入频道后，调用 `publish` 方法发布本地音视频流。
+加入频道后，调用 `publish` 方法发布本地音频流。
 
 ```javascript
 client.publish(onSuccess, onFailure);
 ```
 
-### 4. 订阅远端音视频流
+### 4. 订阅远端音频流
 
 订阅远端流包含如下步骤：
 
-* 调用 `on` 注册监听事件。当有人发布音视频流到频道时，会收到该事件。
+* 调用 `on` 注册监听事件。当有人发布音频流到频道时，会收到该事件。
 
 	```javascript
 	client.on(event, callback);
 	```
 
-* 收到事件后，在回调中调用 `subscribe` 方法订阅远端音视频流。
+* 收到事件后，在回调中调用 `subscribe` 方法订阅远端音频流。
 
 	```javascript
 	client.subscribe(uid, onSuccess, onFailure);
@@ -167,7 +167,7 @@ client.publish(onSuccess, onFailure);
 client.rejoin(token, channel, uid, uids, onSuccess, onFailure);
 ```
 	
-成功重连后，SDK 会重新发布和订阅音视频流，你可以参考 [Agora Miniapp Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 示例项目中 `reinitAgoraClient` 的实现方法更新推流及拉流地址。
+成功重连后，SDK 会重新发布和订阅音频流，你可以参考 [Agora Miniapp Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 示例项目中 `reinitAgoraClient` 的实现方法更新推流及拉流地址。
 </details>
 
 ### 6. 离开频道
@@ -182,7 +182,7 @@ client.leave(onSuccess, onFailure);
 
 你可以参考如下示例代码，在项目中实现想要的功能。
 
-* 初始化客户端、加入频道、发布音视频流
+* 初始化客户端、加入频道、发布音频流
 
 	```javascript
 	let client = new AgoraMiniappSDK.Client();
@@ -196,7 +196,7 @@ client.leave(onSuccess, onFailure);
 					// 注册流事件
 					this.subscribeEvents(client);
 
-					// 发布本地音视频流并获取推流 url 地址
+					// 发布本地音频流并获取推流 url 地址
 					client.publish(url => {
 						console.log(`client publish success`);
 					}, e => {
@@ -213,12 +213,12 @@ client.leave(onSuccess, onFailure);
 * 注册并监听流事件
 
 	```javascript
-	// 有新的音视频流加入频道
+	// 有新的音频流加入频道
 	client.on("stream-added", e => {
 		let uid = e.uid;
 		const ts = new Date().getTime();
 		console.log(`stream ${uid} added`);
-		// 订阅相应 Url 地址的音视频流
+		// 订阅相应 Url 地址的音频流
 		client.subscribe(uid, (url, rotation) => {
 			console.log(`stream ${uid} subscribed successful`);
 			// 将 Url 地址发送至 live-player
@@ -262,5 +262,5 @@ client.leave(onSuccess, onFailure);
 使用微信小程序 SDK 开发过程中，你还可以参考如下文档：
 
 * [小程序 SDK 常见问题集](https://docs.agora.io/cn/faq/wechat)
-* [错误码和警告码](../../cn/Video/the_error_wechat.md)
+* [错误码和警告码](../../cn/Voice/the_error_wechat.md)
 

@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:08:04 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:17:54 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -180,7 +180,7 @@ nRet = apm->setParameters("{\"che.video.local.camera_index\":0}");
 mediaEngine->registerVideoFrameObserver(NULL);
 ```
 
-同时，我们在 GitHub 提供一个开源的 [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows) 示例项目。你可以下载体验或查看源代码。
+同时，我们在 GitHub 提供一个开源的 [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Windows/Agora-Media-Source-Windows) 示例项目。你可以下载体验或查看源代码。
 
 ### API 参考
 

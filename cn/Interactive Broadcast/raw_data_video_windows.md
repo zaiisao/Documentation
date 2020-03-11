@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: Windows
-updatedAt: Mon Mar 02 2020 09:44:51 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:19:19 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
@@ -88,8 +88,6 @@ class IVideoFrameObserver
 		 virtual bool onPreEncodeVideoFrame(VideoFrame& videoFrame) { return true; }
 };
 ```
- 
-同时，我们在 GitHub 提供一个开源的 [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows) 示例项目。你可以前往下载，或参考 [video_preprocessing_plugin.cpp](https://github.com/AgoraIO/Advanced-Video/blob/master/Capture-Raw-Video-Data/Agora-Media-Source-Windows/AgoraMediaSource/video_preprocessing_plugin.cpp) 文件的源代码。
  
  ### API 参考
  

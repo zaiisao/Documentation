@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Mon Mar 09 2020 06:03:19 GMT+0800 (CST)
+updatedAt: Tue Mar 10 2020 00:22:28 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -142,6 +142,8 @@ if (mHasStarted && mConsumer != null) {
 	mConsumer.consumeByteArrayFrame(data, AgoraVideoFrame.NV21, width, height, rotation, timestamp);
 }
 ```
+
+同时，我们在 GitHub 提供一个开源的 [Custom-Media-Device-Android](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Custom-Media-Device/Agora-Custom-Media-Device-Android) 示例项目。你可以前往下载，或参考 [ViewSharingCapturer.java](https://github.com/AgoraIO/Advanced-Video/blob/dev/backup/Custom-Media-Device/Agora-Custom-Media-Device-Android/app/src/main/java/io/agora/rtc/mediaio/app/shareScreen/source/ViewSharingCapturer.java) 文件中的源代码。
 
 **API 参考**
 

@@ -3,12 +3,14 @@
 title: 厂商事件查询 RESTful API
 description: 
 platform: RESTful
-updatedAt: Fri Feb 21 2020 13:10:59 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 02:06:07 GMT+0800 (CST)
 ---
 # 厂商事件查询 RESTful API
 实时消息 RESTful API 目前支持查询用户事件和频道事件。
 
 <div class="alert note">厂商事件查询 RESTful API 的 qps 限制为：单厂商每秒 10 次。</div>
+
+> 除本文外，你也可以查看我们全新的交互式 API 文档[实时消息 RESTful API](https://docs.agora.io/cn/Real-time-Messaging/restfulapi/)![](https://web-cdn.agora.io/docs-files/1583736328279)。你可以通过切换 **Example Value** 和 **Schema** 标签页查看各 API 请求和响应包体的示例代码和参数说明。
 
 
 ## <a name="auth"></a>认证

@@ -3,95 +3,149 @@
 title: 控制台 RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Mon Mar 09 2020 08:01:37 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 09:28:16 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
-## 1. 认证
+## 认证
 
-> 在使用本文 RESTful API 提供的功能前，请确认你的账号已在控制台开通指定项目的相关权限。Agora 支持自定义用户角色和相应的项目权限，详见 [控制台角色权限说明](../../cn/Voice/manage_member.md)。
+> 在使用本文 RESTful API 提供的功能前，请确认你的账号已在控制台开通指定项目的相关权限。Agora 支持自定义用户角色和相应的项目权限，详见[控制台角色权限说明](../../cn/Voice/manage_member.md)。
 
-RESTful API 仅支持 HTTPS。用户必须在 Basic HTTP 请求头部填入 `Authorization` 字段进行认证。你需要在代码中传入 Customer ID 和 Customer Certificate。
+控制台 RESTful API 仅支持 HTTPS 协议。发送请求时，你需要提供 `api_key:api_secret` 通过 Basic HTTP 认证并填入 HTTP 请求头部的 Authorization 字段：
 
-登录 [Agora 控制台](http://console.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取 Customer ID 和 Customer Certificate。
+- `api_key`: Customer ID （客户 ID）
+- `api_secret`: Customer Certificate （客户证书）
 
-> Customer ID 和 Customer Certificate 仅用于访问 RESTful API。
+你可以在控制台的 [RESTful API](https://console.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
-关于如何生成 `Authorization` 字段，详见 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
-## 2. 接入点
+## 接入点
 
 所有请求都发送给 BaseUrl：**https://api.agora.io/dev** 
 
--   请求：参数格式必须为 JSON ，内容类型: application/json
+-   请求：参数格式必须为 JSON ，内容类型: application/json。
 -   响应：响应内容的格式为 JSON。以下为定义的响应状态：
 
-    <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td>Status 200</td>
-<td>请求处理成功</td>
-</tr>
-<tr><td>Status 400</td>
-<td>输入格式错误</td>
-</tr>
-<tr><td>Status 401</td>
-<td>未经授权的（App ID/Customer Certificate匹配错误）</td>
-</tr>
-<tr><td>Status 404</td>
-<td>API 调用错误</td>
-</tr>
-</tr>
-<tr><td>Status 429</td>
-<td>API 调用过于频繁</td>
-</tr>
-<tr><td>Status 500</td>
-<td>服务器内部错误</td>
-</tr>
-</tbody>
-</table>
 
-## 3. 项目相关的 API
+| 状态码 | 描述 | 
+| ---------------- | ---------------- | 
+| 200      | 请求处理成功      |
+| 400      | 输入格式错误      |
+| 401      | 未经授权的（App ID/Customer Certificate匹配错误） |
+| 404      | API 调用错误       |
+| 429      | 请求过于频繁      |
+| 500      | 服务器内部错误  |
+
+
+## 项目相关 API
 
 BaseUrl：**https://api.agora.io/dev**
 
 下图展示了项目相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1583740016012)
 
-### 获取所有项目 \(GET\)
+![](https://web-cdn.agora.io/docs-files/1583829129191)
 
--   方法：GET
--   路径：BaseUrl/v1/projects/
--   参数：None
--   响应：
+### 创建项目（POST）
 
-    ```
+创建一个 Agora 项目。
+
+**基本信息**
+
+| 请求基本信息 | 描述 | 
+| ---------------- | ---------------- | 
+| 方法      | POST      | 
+| 请求 URL | BaseUrl/v1/project/ |
+
+**请求参数**
+
+#### Body 参数
+
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `name`      | 项目名称      |
+| `enable_sign_key` | 是否启用 App 证书：<ul><li>true：启用</li><li>false：不启用</li></ul> |
+
+**请求示例**
+
+```
+{
+  "name": "projectx",
+  "enable_sign_key": true
+}
+```
+
+**响应参数**
+
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
+| `name` | 项目名称 |
+| `vendor_key` | 项目的 App ID |
+| `sign_key` | 项目的 App 证书 |
+| `recording_server` | 录制项目服务器 IP。<ul><li>如果您使用的 On-premise Recording SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果您使用的 On-premise Recording SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
+| `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
+| `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
+
+**响应示例**
+
+```
+{
+  "projects":[
     {
-      "projects":[
-    
-                  {
-    
-                    "id": "xxxx",
-                    "name": "project1",
-                    "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-                    "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-                    "recording_server": "10.2.2.8:8080",
-                    "status": 1,
-                    "created": 1464165672
-    
-                  }
-    
-               ]
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 1,
+      "created": 1464165672
     }
-    ```
+  ]
+}
+```
 
--   状态：
 
-    -   1: 启用
-    -   0: 禁用
+### 获取所有项目 (GET)
 
+**基本信息**
+
+| 请求基本信息 | 描述 | 
+| ---------------- | ---------------- | 
+| 方法      | POST      |
+| 请求 URL  | BaseUrl/v1/projects/ |
+
+**请求参数**
+
+无
+
+**响应参数**
+
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
+| `name` | 项目名称 |
+| `vendor_key` | 项目的 App ID |
+| `sign_key` | 项目的 App 证书 |
+| `recording_server` | 录制项目服务器 IP。<ul><li>如果您使用的 On-premise Recording SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果您使用的 On-premise Recording SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
+| `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
+| `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
+
+**响应示例**
+
+```
+{
+  "projects":[
+    {
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 1,
+      "created": 1464165672
+    }
+  ]
+}
+```
 
 ### 获取单个项目（GET）
 
@@ -133,37 +187,6 @@ BaseUrl：**https://api.agora.io/dev**
     -   1: 启用
     -   0: 禁用
 
-
-### 创建项目（POST）
-
--   方法：POST
--   路径：BaseUrl/v1/project/
--   参数：
-
-    ```
-    {
-      "name":"projectx",
-      "enable_sign_key": true
-    }
-    ```
-
--   响应：
-
-    ```
-    {
-      "project":
-              {
-    
-                 "id": "xxxx",
-                 "name": "project1",
-                 "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-                 "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-                 "status": 1,
-                 "created": 1464165672
-    
-              }
-    }
-    ```
 
 
 ### 禁用或启用项目（POST）
@@ -351,19 +374,21 @@ BaseUrl：**https://api.agora.io/dev**
 
 > 如果该项目的 App 证书尚未启用，调用该方法会启用 App 证书。
 
-## 4. 用量相关的 API
+## 用量相关 API
 
 BaseUrl: **https://api.agora.io/dev**
 
-### 获取用量数据 V1（GET）
+### 获取用量数据（GET）
 
-本方法为 V1 版本。为获取更多用量信息，Agora 建议使用[获取用量数据 V3（GET）](#UsageV3) 。
+Agora 提供 V1 和 V3 版本的获取用量数据 API。为获取更多用量信息，Agora 建议使用 [V3 版本](#UsageV3) API。
+
+#### V1
 
 <details>
 	<summary><font color="#3ab7f8">获取用量数据 V1</font></summary>
 
 下图展示了获取用量数据 V1 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1583740129053)
+![](https://web-cdn.agora.io/docs-files/1583830859466)
 
 -   方法：GET
 -   路径：BaseUrl/v1/usage/
@@ -405,24 +430,24 @@ BaseUrl: **https://api.agora.io/dev**
 </details>
 
 <a name="UsageV3"></a>
-### 获取用量数据 V3（GET）
+#### V3
 
 下图展示了获取用量数据 V3 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1583740143858)
+![](https://web-cdn.agora.io/docs-files/1583829230163)
 
 -   方法：GET
 -   路径：BaseUrl/v3/usage/
 -   参数：
 
  ```
-// from_date 指定查询开始日期（UTC 时间）。日期格式为 YYYY-MM-DD，例如 2020-01-01。
-// to_date 指定查询结束日期（UTC 时间）。日期格式为 YYYY-MM-DD，例如 2020-01-31。
-// project_id 指定项目 ID。
-// business 指定业务类型。可设为以下值：
+// from_date: 指定查询开始日期（UTC 时间）。日期格式为 YYYY-MM-DD，例如 2020-01-01。
+// to_date: 指定查询结束日期（UTC 时间）。日期格式为 YYYY-MM-DD，例如 2020-01-31。
+// project_id: 指定项目 ID。
+// business: 指定业务类型。可设为以下值：
 // - default：默认业务，为 RTC
 // - transcodeDuration: 转码
-// - recording: 录制
-// - cloudRecording: 云录制
+// - recording: 本地服务端录制
+// - cloudRecording: 云端录制
 // - miniapp: 小程序
 from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
  ```
@@ -438,13 +463,13 @@ from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
             "unit": "second"
         },
         "durationVideoHd": {
-            "cn": "HD视频时长（含录制）",
-            "en": "HD Video Duration（including Recording）",
+            "cn": "HD视频时长（含本地服务端录制）",
+            "en": "HD Video Duration（including On-premise Recording）",
             "unit": "second"
         },
         "durationVideoHdp": {
-            "cn": "HDP视频时长（含录制）",
-            "en": "HDP Video Duration（including Recording)",
+            "cn": "HDP视频时长（含本地服务端录制）",
+            "en": "HDP Video Duration（including On-premise Recording)",
             "unit": "second"
         }
     },
@@ -455,9 +480,9 @@ from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
             "usage": {
                 // 总音频时长。详细描述见 meta 对象中的 durationAudioAll。
                 "durationAudioAll": 0,
-                // HD视频时长（含录制）。详细描述见 meta 对象中的 durationVideoHd。
+                // HD视频时长（含本地服务端录制）。详细描述见 meta 对象中的 durationVideoHd。
                 "durationVideoHd": 0,
-                 // HDP 视频时长（含录制）。详细描述见 meta 对象中的 durationVideoHdp。
+                 // HDP 视频时长（含本地服务端录制）。详细描述见 meta 对象中的 durationVideoHdp。
                 "durationVideoHdp": 0
             }
         }
@@ -465,12 +490,12 @@ from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
 }
  ```
 
-## 5. 服务端踢人 API
+## 服务端踢人 API
 
 BaseUrl: **https://api.agora.io/dev**
 
 下图展示了服务器踢人相关 API 的使用逻辑。
-![](https://web-cdn.agora.io/docs-files/1583740200471)
+![](https://web-cdn.agora.io/docs-files/1583829281301)
 
 <div class="alert note">本组 API 调用频率上限为每秒 10 次。</div>
 
@@ -606,13 +631,13 @@ BaseUrl: **https://api.agora.io/dev**
     ```
 
 
-## 6. 查询在线频道信息 API
+## 查询在线频道信息 API
 
 BaseUrl：**https://api.agora.io/dev**
 
 下图展示了查询频道信息相关 API 的使用逻辑。
 
-![](https://web-cdn.agora.io/docs-files/1583740220610)
+![](https://web-cdn.agora.io/docs-files/1583829296222)
 
 <div class="alert note">本组 API 调用频率上限为每秒 20 次。</div>
 
@@ -702,8 +727,6 @@ BaseUrl：**https://api.agora.io/dev**
 </tbody>
 </table>
 
-
-
 ### 获取频道内用户列表 (GET)
 
 该方法获取指定频道内的用户列表。如果在通信场景下，则返回频道内的用户列表；如果在直播场景下，则分别返回主播列表和观众列表。
@@ -713,10 +736,6 @@ BaseUrl：**https://api.agora.io/dev**
 -   参数: appid, cname
 
     <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr><td><strong>参数</strong></td>
 <td><strong>描述</strong></td>
@@ -748,10 +767,6 @@ BaseUrl：**https://api.agora.io/dev**
 	```
 
 	<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr><td><strong>参数</strong></td>
 <td><strong>描述</strong></td>
@@ -804,10 +819,6 @@ BaseUrl：**https://api.agora.io/dev**
 	```
 
 	<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr><td><strong>参数</strong></td>
 <td><strong>描述</strong></td>
@@ -859,10 +870,6 @@ BaseUrl：**https://api.agora.io/dev**
 -   参数：?page\_no=0&page\_size=100
 
     <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr><td><strong>参数</strong></td>
 <td><strong>描述</strong></td>
@@ -899,10 +906,6 @@ BaseUrl：**https://api.agora.io/dev**
     ```
 
     <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
 <tbody>
 <tr><td><strong>参数</strong></td>
 <td><strong>描述</strong></td>
@@ -928,8 +931,8 @@ BaseUrl：**https://api.agora.io/dev**
 </table>
 
 
-## 7. 错误码和警告码
+## 错误码和警告码
 
-详见 [错误码和警告码](../../cn/Voice/the_error_native.md)。
+详见[错误码和警告码](../../cn/Voice/the_error_native.md)。
 
 

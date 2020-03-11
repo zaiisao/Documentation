@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Wed Mar 04 2020 05:32:41 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:42:38 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -90,7 +90,7 @@ updatedAt: Wed Mar 04 2020 05:32:41 GMT+0800 (CST)
 
 ### 集成 Native SDK
 
-**版本要求**：2.4.1 或更高版本。
+**版本要求**：2.4.0 或更高版本。
 
 集成步骤：参考[集成 Native SDK](https://docs.agora.io/cn/InteractiveBroadcast/start_live_ios?platform=iOS#集成-sdk)。
 
