@@ -3,7 +3,7 @@
 title: Build a Client for the Students
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 04:10:30 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 03:42:55 GMT+0800 (CST)
 ---
 # Build a Client for the Students
 This section describes how to implement an Android client for the students.
@@ -58,7 +58,7 @@ Refer to the following diagram to implement the basic real-time communication an
 | API | Function |
 | ---------------- | ---------------- |
 | [create](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a35466f690d0a9332f24ea8280021d5ed)      | Creates an RtcEngine object.      |
-| [setChannelProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1bfb76eb4365b8b97648c3d1b69f2bd6) | Sets the channel profile. In a Big Online Classroom, we set the channel profile as Live Broadcast. |
+| [setChannelProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1bfb76eb4365b8b97648c3d1b69f2bd6) | Sets the channel profile. In a Lecture Hall, we set the channel profile as Live Broadcast. |
 | [setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa2affa28a23d44d18b6889fba03f47ec) | Sets the user role in a live broadcast. In a Big Online Classroom, we set the role of students as audience before they join the channel. During the class, if the student gets the permission to speak up, we switch the user role to broadcaster.  |
 | [joinChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c) | Joins an Agora RTC channel. |
 | [setupRemoteVideo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0e9f693c9bc2ccb91554c2c7dc6b7140) | Sets the remote video view. Call this method after the students join the channel, to configure the the view of the teacher on the students' client.|
@@ -103,4 +103,4 @@ Implement the following whiteboard functions in your project:
 
 ## Open-source demo project
 
-Agora provides an open-source demo for [Big Online Clasroom](https://github.com/AgoraIO-Usecase/eEducation) on GitHub to download as a source code reference.
+Agora provides an open-source demo for [Lecture Hall](https://github.com/AgoraIO-Usecase/eEducation) on GitHub to download as a source code reference.

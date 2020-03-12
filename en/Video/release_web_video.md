@@ -23,7 +23,7 @@ See the table below for the web browser support of the Agora Web SDK:
     <th>Firefox 56 or later</th>
     <th>Safari 11 or later</th>
     <th>Opera 45 or later</th>
-    <th>QQ Browser</th>
+    <th>QQ Browser 10.5+</th>
     <th>360 Secure Browser</th>
     <th>WeChat Built-in Browser</th>
   </tr>

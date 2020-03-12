@@ -3,7 +3,7 @@
 title: Build a Client for the Teacher
 description: 
 platform: Web
-updatedAt: Tue Mar 10 2020 07:09:59 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 03:50:34 GMT+0800 (CST)
 ---
 # Build a Client for the Teacher
 This section describes how to implement a web client for the teacher.
@@ -67,7 +67,7 @@ Refer to the following diagram to implement the various functions in your projec
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)      | Creates an RTC Client object.      |
 | [Client.init](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) |Initializes the RTC Client object. |
-| [Client.setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | Sets the user role in a live broadcast. Set the role of the teacher as "host" in the Big Online Classroom use case. |
+| [Client.setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | Sets the user role in a live broadcast. Set the role of the teacher as "host" in the Lecture Hall use case. |
 | [createStream](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) | Creates a Stream object for sending and receiving audio and video.  |
 | [Stream.init](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#init) | Initializes the Stream object. |
 | [Client.join](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) | Joins an Agora RTC channel. |
@@ -125,4 +125,4 @@ Implement the following whiteboard functions in your project:
 
 ## Open-source demo project
 
-Agora provides an open-source demo for [Big Online Class](https://github.com/AgoraIO-Usecase/eEducation/tree/master/education_web) on GitHub to download as a source code reference.
+Agora provides an open-source demo for [Lecture Hall](https://github.com/AgoraIO-Usecase/eEducation/tree/master/education_web) on GitHub to download as a source code reference.

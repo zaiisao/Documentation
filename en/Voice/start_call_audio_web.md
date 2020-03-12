@@ -1,28 +1,23 @@
 
 ---
-title: Start a Video Call
+title: Start a Voice Call
 description: 
 platform: Web
-updatedAt: Wed Mar 11 2020 10:15:37 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 10:11:49 GMT+0800 (CST)
 ---
-# Start a Video Call
-Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
+# Start a Voice Call
+Use this guide to quickly set up the Agora Web SDK and enable real-time voice functions in your app. 
 
 This guide shows you how to build a simple web app with the Agora Web SDK. We recommend going through it to familiarize yourself with the core methods.
 
 <div class="alert warning">Due to security limits on HTTP addresses except 127.0.0.1, Agora Web SDK only supports HTTPS or http://localhost (http://127.0.0.1). Do not deploy your project over HTTP.</div>
 
-## Video tutorial
-
-The following video demonstrates how to build an app that implements the Agora video call from scratch.
-
-<video src="https://web-cdn.agora.io/docs-files/1582790845065" poster="https://web-cdn.agora.io/docs-files/1582790881579"  controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
 
 ## Sample project
 
 We provide an open-source [sample project](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1) that implements the basic one-to-one video call on GitHub. 
 
-You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Web-Tutorial-1to1-Web/) and try the video calls implemented by the Agora SDK.
+You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Web-Tutorial-1to1-Web/) and try the calls implemented by the Agora SDK.
 
 ## Prerequisites
 
@@ -71,7 +66,7 @@ You need to create an HTML file for this project.
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Basic Communication</title>
-  <link rel="stylesheet" href="https://docs.agora.io/en/Video/assets/common.css" />
+  <link rel="stylesheet" href="https://docs.agora.io/en/Voice/assets/common.css" />
 </head>
 <body class="agora-theme">
   <div class="navbar-fixed">
@@ -184,7 +179,7 @@ The following figure shows the API call sequence of a basic one-to-one video cal
 
 ![img](https://web-cdn.agora.io/docs-files/1565082049521)
 
-> We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Video/API%20Reference/web/index.html).
+> We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Voice/API%20Reference/web/index.html).
 
 For convenience, we define two variables for the following code snippets. This is not mandatory and you can have your implementation.
 
@@ -259,7 +254,7 @@ var option = {
 	- `channel`: Channel name. A string within 64 bytes.
 	- `uid`: The user ID should be unique in a channel. If you set the user ID as `null`, the Agora server assigns a user ID and returns it in the `onSuccess` callback.
 
-For more details on the parameter settings, see [`Client.join`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#join).
+For more details on the parameter settings, see [`Client.join`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#join).
 
 ### Publish a local stream
 
@@ -272,7 +267,7 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
    rtc.localStream = AgoraRTC.createStream({
      streamID: rtc.params.uid,
      audio: true,
-     video: true,
+     video: false,
      screen: false,
    });
    ```
@@ -329,7 +324,7 @@ To subscribe to a remote stream, we need to listen for the `"stream-added"` even
      // Add a view for the remote stream.
      addView(id);
      // Play the remote stream.
-     remoteStream.play("remote_video_" + id);
+     remoteStream.play("remote_stream_" + id);
      console.log("stream-subscribed remote-uid: ", id);
    });
    ```
@@ -341,7 +336,7 @@ To subscribe to a remote stream, we need to listen for the `"stream-added"` even
      var remoteStream = evt.stream;
      var id = remoteStream.getId();
      // Stop playing the remote stream.
-     remoteStream.stop("remote_video_" + id);
+     remoteStream.stop("remote_stream_" + id);
      // Remove the view of the remote stream. 
      removeView(id);
      console.log("stream-removed remote-uid: ", id);
@@ -395,19 +390,14 @@ live-server .
 	```
    This should automatically load the web app in your browser.
 4. Enter your App ID, channel name, token, and click **JOIN** to start a call.
-   You might need to allow the browser to access your camera and microphone. If you enable video when creating the stream, you should see a video stream of yourself.
+   You might need to allow the browser to access your  microphone.
 
-5. Open another tab in the browser and load the same URL. Click the **JOIN** button. You should see a second video on the screen.
+5. Open another tab in the browser and load the same URL. Click the **JOIN** button. If you speak now, you should hear echoes.
 
 If the web app is not working properly, open the console in your browser and check for errors. The following are the most likely errors:
 - `INVALID_VENDOR_KEY`: Wrong App ID. Check if you fill in the correct App ID.
 - `ERR_DYNAMIC_USE_STATIC_KEY`: Your Agora project enables App Certificate, so you need to use Token when joining the channel.
-- `Media access:NotFoundError`: Check if your camera and microphone are working properly.
+- `Media access:NotFoundError`: Check if your microphone is working properly.
 - `MEDIA_NOT_SUPPORT`: Please use HTTPS or localhost.
 
 <div class="alert warning">Do not debug the web app on emulated mobile devices.</div>
-
-## Reference
-
-We provide an open-source [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Web) demo project that implements a group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
-

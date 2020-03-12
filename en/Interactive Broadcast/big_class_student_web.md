@@ -3,7 +3,7 @@
 title: Build a Client for the Students
 description: 
 platform: Web
-updatedAt: Mon Mar 02 2020 04:14:30 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 03:44:38 GMT+0800 (CST)
 ---
 # Build a Client for the Students
 This section describes how to implement a Web client for the students.
@@ -57,7 +57,7 @@ Refer to the following diagram to implement the basic real-time communication an
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)        | Creates an RTC Client object.      |
 [Client.init](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) | Initializes the RTC Client object. |
-| [Client.setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | Sets the user role in a live broadcast. In a Big Online Classroom, we set the role of students as audience before they join the channel. During the class, if the student gets the permission to speak up, we switch the user role to broadcaster. |
+| [Client.setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | Sets the user role in a live broadcast. In a Lecture Hall, we set the role of students as audience before they join the channel. During the class, if the student gets the permission to speak up, we switch the user role to broadcaster. |
 [Client.join](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) | Joins an Agora RTC channel. |
 | [Client.on](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)("stream-added") | Occurs when a remote audio or video stream is added to the channel. |
 | [Client.subscribe](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | Subscribes to the remote audio or video stream.|
@@ -100,4 +100,4 @@ Implement the following whiteboard functions in your project:
 
 ## Open-source demo project
 
-Agora provides an open-source demo for [Big Online Clasroom](https://github.com/AgoraIO-Usecase/eEducation) on GitHub to download as a source code reference.
+Agora provides an open-source demo for [Lecture Hall](https://github.com/AgoraIO-Usecase/eEducation) on GitHub to download as a source code reference.

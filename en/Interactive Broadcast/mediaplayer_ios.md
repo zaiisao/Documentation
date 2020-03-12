@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Mon Mar 09 2020 10:43:55 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 03:57:31 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -41,7 +41,7 @@ Now, let's build an iOS project from scratch.
   **Note**: If you haven't added any team information, you will see an **Add account...** button. Click it, input your Apple ID, and click **Next** to add your team.
 4. Choose the storage path of the project and click **Create**.
 5. Connect your iOS device to your computer.
-6. Go to the **TARGETS > Project Name > General > Signing** menu, choose **Automatically manage signing**, and then click **Enable Automatic** on the pop-up window.
+6. Go to the **TARGETS > Project Name > Signing & Capabilities** menu, choose **Automatically manage signing**, and then click **Enable Automatic** on the pop-up window.
 </details>
 
 ### Integrate the MediaPlayer Kit

@@ -3,7 +3,7 @@
 title: AI Interactive Classroom
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 06 2020 07:29:09 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 06:43:59 GMT+0800 (CST)
 ---
 # AI Interactive Classroom
 ## Overview
@@ -40,7 +40,7 @@ Agora provides demos of the AI Interactive Classroom on Android and iOS.
 
 | Android                                                      | iOS                                                          |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| ![](https://web-cdn.agora.io/docs-files/1577098775056) | ![](https://web-cdn.agora.io/docs-files/1577098784555) |
+| Download [demo](http://www.jappstore.com/v4kf) | ![](https://web-cdn.agora.io/docs-files/1577098784555) |
 
 ## Technical Solution
 
