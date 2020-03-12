@@ -85,7 +85,7 @@ updatedAt: Thu Oct 24 2019 08:25:10 GMT+0800 (CST)
 
 #### 登录登出 Agora RTM 系统
 
-![](https://web-cdn.agora.io/docs-files/1562566527083)
+![](https://web-cdn.agora.io/docs-files/1583998128489)
 
 #### 收发点对点消息
 
