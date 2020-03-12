@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Wed Feb 26 2020 03:43:50 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 06:56:36 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -45,7 +45,7 @@ This component package is compatible with the following SDKs:
 
 ## v3.0.0
 
-v3.0.0 is released on February 20, 2020.
+v3.0.0 was released on February 20, 2020.
 
 **New features**
 
@@ -114,7 +114,7 @@ Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Agora%20Platform/cl
 
 ## v2.3.4
 
-v2.3.4 is released on August 5, 2019.
+v2.3.4 was released on August 5, 2019.
 
 **Improvements**
 
@@ -133,7 +133,7 @@ v2.3.4 is released on August 5, 2019.
 
 ## v2.3.3
 
-v2.3.3 is released on April 1, 2019. 
+v2.3.3 was released on April 1, 2019. 
 
 **New features**
 
@@ -171,7 +171,7 @@ v2.3.3 adds the `onAudioVolumeIndication` callback to get the list of users who 
 
 ## v2.3.0
 
-v2.3.0 is released on January 14, 2019. 
+v2.3.0 was released on January 14, 2019. 
 
 > The calculation of the usage of the On-premise Recording SDK v2.3.0 or later is separated from that of the Agora Voice Call/Voice Interactive Broadcast SDK and the Agora Video Call/Video Interactive Broadcast SDK. Contact [sales-us@agora.io](mailto:sales-us@agora.io) for details.
 
@@ -271,14 +271,14 @@ This function is disabled by default and can be enabled by setting the `audioInd
 - Improves audio and video synchronization in Individual Recording Mode.
 - Supports automatic rotation of recorded video streams that are not transcoded in real time in Individual Recording Mode.
 - Changed the idle behavior in Manual Mode:
-     - For versions earlier than v2.3.0 in Manual Mode, the idle mechanism takes effect immediately after joining a channel, which might cause the recording SDK to exit the channel.
-     - For v2.3.0 or later, the idle mechanism does not take effect until the `startService` method is called.
+  - For versions earlier than v2.3.0 in Manual Mode, the idle mechanism takes effect immediately after joining a channel, which might cause the recording SDK to exit the channel.
+  - For v2.3.0 or later, the idle mechanism does not take effect until the `startService` method is called.
 - Optimizes the log levels and split some logs in INFO into NOTICE, WARN, and ERROR.
 - Optimizes the naming of the recording directory to ensure the uniqueness of each folder.
 
 ## v2.2.3 
 
-v2.2.3 is released on October 18, 2018. 
+v2.2.3 was released on October 18, 2018. 
 
 **Issues fixed**
 
@@ -290,7 +290,7 @@ v2.2.3 is released on October 18, 2018.
 
 ## v2.2.2 
 
-v2.2.2 is released on August 1, 2018. 
+v2.2.2 was released on August 1, 2018. 
 
 **Improvements**
 
@@ -310,7 +310,7 @@ v2.2.2 is released on August 1, 2018.
 
 ## v2.2.1
 
-v2.2.1 is released on June 5, 2018. 
+v2.2.1 was released on June 5, 2018. 
 
 **Improvements**
 
@@ -325,7 +325,7 @@ Port conflicts when the search for the port takes too long and exceeds the idle 
 
 ## v2.2.0
 
-v2.2.0 is released on May 4, 2018.
+v2.2.0 was released on May 4, 2018.
 
 **New features**
 
@@ -342,7 +342,7 @@ v2.2.0 is released on May 4, 2018.
 
 ## v2.1.0
 
-v2.1.0 is released on March 7, 2018. 
+v2.1.0 was released on March 7, 2018. 
 
 
 **New features**
@@ -401,7 +401,7 @@ v2.1.0 is released on March 7, 2018.
 
 ## v2.0.0
 
-v2.0 is released on November 21, 2017. 
+v2.0 was released on November 21, 2017. 
 
 -   Optimizes the raw data to support various formats:
     -   Modifies the <code>decodeAudio</code> and <code>decodeVideo</code> parameters, and adds the <code>VideoJpgFrame</code> struct.
@@ -414,7 +414,7 @@ v2.0 is released on November 21, 2017.
 
 ## v1.3.0
 
-v1.3 is released on October 20, 2017.
+v1.3 was released on October 20, 2017.
 
 **New features**:
 
@@ -426,7 +426,7 @@ v1.3 is released on October 20, 2017.
 
 ## v1.2.0
 
-v1.2 is released on August 21, 2017. 
+v1.2 was released on August 21, 2017. 
 
 **New features**:
 
@@ -438,7 +438,7 @@ v1.2 is released on August 21, 2017.
 
 ## v1.1.0
 
-v1.1 is released on July 25, 2017. 
+v1.1 was released on July 25, 2017. 
 
 **New features**:
 
@@ -447,8 +447,7 @@ v1.1 is released on July 25, 2017.
 - Adds a set of callback functions.
 - Modifies the file format after transcoding.
 - Enables configuring the UDP port.
-- 
-**Issues fixed**:
+- **Issues fixed**:
 
 - Wrong timestamps.
 - Transcoding failures.
@@ -457,11 +456,11 @@ v1.1 is released on July 25, 2017.
 
 ## v1.0.1
 
-v1.0.1 is released on June 27, 2017, and fixes the crash when you set the channel profile of the recording as live broadcast.
+v1.0.1 was released on June 27, 2017, and fixes the crash when you set the channel profile of the recording as live broadcast.
 
 ## v1.0.0
 
-v1.0.0 is released on June 15, 2017. 
+v1.0.0 was released on June 15, 2017. 
 
 This is the first release of the On-premise Recording SDK with the following functions:
 

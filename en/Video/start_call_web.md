@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Web
-updatedAt: Wed Mar 11 2020 10:15:37 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 07:00:13 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
@@ -28,7 +28,7 @@ You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/
 
 1. Install a browser supported by the Agora Web SDK, as shown in the following table:
 
-   | Platform             | Chrome 58 or later | Firefox 56 or later | Safari 11 or later | Opera 45 or later | QQ Browser | 360 Secure Browser | WeChat Built-in Browser |
+   | Platform             | Chrome 58 or later | Firefox 56 or later | Safari 11 or later | Opera 45 or later | QQ Browser 10.5 or later | 360 Secure Browser | WeChat Built-in Browser |
    | :------------------- | :----------------- | :------------------ | :----------------- | :---------------- | :--------- | :----------------- | :---------------------- |
    | Android 4.1 or later | ✔                  | ✘                   | N/A                | ✘                 | ✘          | ✘                  | ✘                       |
    | iOS 11 or later      | ✘                  | ✘                   | ✔                  | ✘                 | ✘          | ✘                  | ✘                       |
