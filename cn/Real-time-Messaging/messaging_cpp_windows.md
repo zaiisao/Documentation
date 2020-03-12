@@ -100,19 +100,22 @@ updatedAt: Thu Oct 24 2019 11:50:46 GMT+0800 (CST)
 
 #### 登录登出 Agora RTM 系统
 
-![](https://web-cdn.agora.io/docs-files/1576727197212)
+
+![](https://web-cdn.agora.io/docs-files/1583998404803)
 
 #### 收发点对点消息
 
-![](https://web-cdn.agora.io/docs-files/1561973161681)
+![](https://web-cdn.agora.io/docs-files/1583998436436)
 
 #### 加入离开频道
 
-![](https://web-cdn.agora.io/docs-files/1561985095839)
+
+![](https://web-cdn.agora.io/docs-files/1583998454046)
 
 #### 收发频道消息
 
-![](https://web-cdn.agora.io/docs-files/1561985687950)
+
+![](https://web-cdn.agora.io/docs-files/1583998506595)
 
 ### 初始化
 
