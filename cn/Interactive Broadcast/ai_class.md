@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 06 2020 07:34:49 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 06:42:10 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
@@ -37,11 +37,11 @@ AI 互动课堂的整体过程如下：
 
 ### Demo 体验
 
-Agora 为 AI 互动课堂提供如下平台的 Demo，扫描下方二维码即刻体验 AI 互动课堂。
+Agora 为 AI 互动课堂提供如下平台的 Demo，方便你即刻体验 AI 互动课堂。
 
 | Android                                                      | iOS                                                          |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| ![](https://web-cdn.agora.io/docs-files/1577098775056) | ![](https://web-cdn.agora.io/docs-files/1577098784555) |
+| 点击[此处](http://www.jappstore.com/v4kf)下载 | ![](https://web-cdn.agora.io/docs-files/1577098784555) |
 
 ## 技术方案
 

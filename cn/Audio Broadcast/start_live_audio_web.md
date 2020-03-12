@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Web
-updatedAt: Wed Mar 11 2020 10:06:57 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 07:01:11 GMT+0800 (CST)
 ---
 # 实现音频直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音频互动直播。
@@ -24,7 +24,7 @@ updatedAt: Wed Mar 11 2020 10:06:57 GMT+0800 (CST)
 
 1. 安装一款 Agora Web SDK 支持的浏览器，如下表所示：
 
-   | 平台         | Chrome 58+ | Firefox 56+ | Safari 11+ | Opera 45+ | QQ 浏览器最新版 | 360 安全浏览器 | 微信浏览器 |
+   | 平台         | Chrome 58+ | Firefox 56+ | Safari 11+ | Opera 45+ | QQ 浏览器 10.5+ | 360 安全浏览器 | 微信浏览器 |
    | ------------ | ---------- | ----------- | ---------- | --------- | --------------- | -------------- | ---------- |
    | Android 4.1+ | ✔          | ✘           | **N/A**    | ✘         | ✘               | ✘              | ✘          |
    | iOS 11+      | ✘          | ✘           | ✔          | ✘         | ✘               | ✘              | ✘          |

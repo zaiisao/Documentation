@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Mon Mar 09 2020 10:42:38 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 03:57:10 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -41,7 +41,7 @@ updatedAt: Mon Mar 09 2020 10:42:38 GMT+0800 (CST)
 	**Note**：如果你没有添加过开发团队信息，会看到 **Add account…** 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。
 4. 选择项目存储路径，并点击 **Create**。
 5. 将你的 iOS 设备连接至电脑。
-6. 进入 **TARGETS > Project Name > General > Signing** 菜单，选择 **Automatically manage signing**，并在弹出菜单中点击 **Enable Automatic**。
+6. 进入 **TARGETS > Project Name > Signing & Capabilities** 菜单，选择 **Automatically manage signing**，并在弹出菜单中点击 **Enable Automatic**。
 </details>
 
 

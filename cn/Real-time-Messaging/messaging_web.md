@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Thu Mar 05 2020 04:28:26 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 16:10:20 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -168,6 +168,8 @@ client.logout();
 
 ### 点对点消息
 
+![](https://web-cdn.agora.io/docs-files/1583942817585)
+
 App 在成功登录 RTM 服务器之后，可以开始使用 RTM 的点对点消息功能。
 
 #### 发送点对点消息
@@ -209,6 +211,8 @@ client.on('MessageFromPeer', ({ text }, peerId) => { // text 为消息文本，p
 ### 频道消息
 
 #### 创建并加入频道
+	
+![](https://web-cdn.agora.io/docs-files/1583942850227)
 
 创建频道：
 
@@ -227,6 +231,8 @@ channel.join().then(() => {
 ```
 
 #### 发送频道消息
+	
+![](https://web-cdn.agora.io/docs-files/1583942885608)
 
 加入频道成功后可发送频道消息。
 

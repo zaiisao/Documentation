@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 11 2020 09:28:16 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 07:00:12 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 认证
@@ -44,7 +44,7 @@ BaseUrl：**https://api.agora.io/dev**
 
 ![](https://web-cdn.agora.io/docs-files/1583829129191)
 
-### 创建项目（POST）
+### 创建项目 (POST)
 
 创建一个 Agora 项目。
 
@@ -66,7 +66,7 @@ BaseUrl：**https://api.agora.io/dev**
 
 **请求示例**
 
-```
+```json
 {
   "name": "projectx",
   "enable_sign_key": true
@@ -81,15 +81,15 @@ BaseUrl：**https://api.agora.io/dev**
 | `name` | 项目名称 |
 | `vendor_key` | 项目的 App ID |
 | `sign_key` | 项目的 App 证书 |
-| `recording_server` | 录制项目服务器 IP。<ul><li>如果您使用的 On-premise Recording SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果您使用的 On-premise Recording SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
+| `recording_server` | 录制项目服务器 IP。<ul><li>如果你使用的是本地服务端录制 SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果你使用的是本地服务端录制 SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
 | `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
 | `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
 
 **响应示例**
 
-```
+```json
 {
-  "projects":[
+  "project":[
     {
       "id": "xxxx",
       "name": "project1",
@@ -105,6 +105,8 @@ BaseUrl：**https://api.agora.io/dev**
 
 
 ### 获取所有项目 (GET)
+
+获取所有的 Agora 项目信息。
 
 **基本信息**
 
@@ -125,13 +127,13 @@ BaseUrl：**https://api.agora.io/dev**
 | `name` | 项目名称 |
 | `vendor_key` | 项目的 App ID |
 | `sign_key` | 项目的 App 证书 |
-| `recording_server` | 录制项目服务器 IP。<ul><li>如果您使用的 On-premise Recording SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果您使用的 On-premise Recording SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
+| `recording_server` | 录制项目服务器 IP。<ul><li>如果你使用的是本地服务端录制 SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果你使用的是本地服务端录制 SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
 | `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
 | `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
 
 **响应示例**
 
-```
+```json
 {
   "projects":[
     {
@@ -147,232 +149,318 @@ BaseUrl：**https://api.agora.io/dev**
 }
 ```
 
-### 获取单个项目（GET）
+### 获取指定项目 (GET)
 
--   方法：GET
--   路径：BaseUrl/v1/project/
--   参数：
+获取指定的 Agora 项目信息。
 
-    ```
+**基本信息**
+
+| 请求基本信息 | 描述 | 
+| ---------------- | ---------------- |
+| 方法      | GET      |
+| 请求 URL | BaseUrl/v1/project/ |
+
+**请求参数**
+
+#### Body 参数
+
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
+| `name` | 项目名称 |
+
+**请求示例**
+
+```json
+{
+  "id": "xxxx",
+  "name": "xxxx"
+}
+```
+
+**响应参数**
+
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
+| `name` | 项目名称 |
+| `vendor_key` | 项目的 App ID |
+| `sign_key` | 项目的 App 证书 |
+| `recording_server` | 录制项目服务器 IP。<ul><li>如果你使用的是本地服务端录制 SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果你使用的是本地服务端录制 SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
+| `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
+| `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
+
+**响应示例**
+
+```json
+{
+  "project":[
     {
-      "id":'xxxx',
-      "name":'xxxx'
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 1,
+      "created": 1464165672
     }
-    ```
+  ]
+}
+```
 
--   响应：
+### 禁用或启用项目 (POST)
 
-    ```
+禁用或启用指定的项目。
+
+**基本信息**
+
+| 请求基本信息 | 描述 |
+| ---------------- | ---------------- |
+| 方法      | POST      |
+| 请求 URL | BaseUrl/v1/project_status/ |
+
+**请求参数**
+
+#### Body 参数
+
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
+| `status` | 想要设置的项目状态：<ul><li>0：禁用</li><li>1：启用</li></ul> |
+
+**请求示例**
+
+```json
+{
+  "id": "xxxx"
+  "status": 0
+}
+```
+
+**响应参数**
+
+- 如果成功启用或禁用指定项目，则返回该项目的所有信息，并报告当前项目的状态。
+
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
+| `name` | 项目名称 |
+| `vendor_key` | 项目的 App ID |
+| `sign_key` | 项目的 App 证书 |
+| `recording_server` | 录制项目服务器 IP。<ul><li>如果你使用的是本地服务端录制 SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果你使用的是本地服务端录制 SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
+| `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
+| `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
+
+```json
+{
+  "project":[
     {
-      "projects":[
-    
-               {
-    
-                    "id": "xxxx",
-                    "name": "project1",
-                    "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-                    "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-                    "recording_server": "10.2.2.8:8080",
-                    "status": 1,
-                    "created": 1464165672
-    
-                  }
-    
-               ]
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 0,
+      "created": 1464165672
     }
-    ```
+  ]
+}
+```
 
--   状态：
+- 如果指定的项目被删除或不存在，则返回状态码 404。
 
-    -   1: 启用
-    -   0: 禁用
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
+### 删除项目 (DELETE)
 
+删除指定的 Agora 项目。
 
-### 禁用或启用项目（POST）
+**基本信息**
 
--   方法：POST
--   路径：BaseUrl/v1/project\_status/
--   参数：
+| 请求基本信息 | 描述 |
+| ---------------- | ---------------- |
+| 方法      | DELETE      |
+| 请求 URL | BaseUrl/v1/project/ |
 
-    ```
-    {
-      "id":"xxx",
-      "status": 0
-    }
-    ```
+**请求参数**
 
--   响应：
+#### Body 参数
 
-    -   成功:
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
 
-        ```
-        {
-          "project":
-                  {
-        
-                   "id": "xxxx",
-                   "name": "project1",
-                   "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-                   "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-                   "status": 0,
-                   "created": 1464165672
-        
-                   }
-        
-         }
-        ```
+**请求示例**
 
-    -   如果指定的项目不存在 \(被删除或不存在\):
+```json
+{
+  "id": "xxxx"
+}
+```
 
-        ```
-        status 404
-        content:
-        {
-        
-          "error_msg": "project not exist"
-        
-        }
-        ```
+**响应参数**
 
+- 如果成功删除项目：
 
-### 删除项目（DELETE）
+```json
+{
+  "success": true
+}
+```
 
--   方法：DELETE
--   路径：BaseUrl/v1/project/
--   参数：
+- 如果未找到项目：
 
-    ```
-    {
-      "id":"xxxx"
-    }
-    ```
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
--   响应：
+### 设置录制服务器 IP (POST)
 
-    -   项目已删除：
+设置指定项目的录制服务器的 IP 地址。
 
-        ```
-        {
-          "success": true
-        }
-        ```
+**基本信息**
 
-    -   未找到项目：
+| 请求基本信息 | 描述 |
+| ---------------- | ---------------- |
+| 方法      | POST      |
+| 请求 URL | BaseUrl/v1/recording_config/ |
 
-        ```
-        status 404
-        
-         {
-            "error_msg": "project not exist"
-         }
-        ```
+**请求参数**
 
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
+| `recording_server` | 项目的录制服务器 IP。<ul><li>如果你使用的是本地服务端录制 SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果你使用的是本地服务端录制 SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
 
-### 设置项目的录制项目服务器 IP（POST）
+**请求示例**
 
--   方法：POST
--   路径：BaseUrl/v1/recording\_config/
--   参数：
+```json
+{
+  "id": "xxxx",
+  "recording_server": "10.12.1.5:8080"
+}
+```
 
-    ```
-    {
-      "id":"xxxx",
-      "recording_server": "10.12.1.5:8080"
-    }
-    ```
+**响应参数**
 
->  - 如果您使用的 Recording SDK 版本 <= v1.9.0，请关注 `recording_server` 字段；
->  - 如果您使用的 Recording SDK 版本 \>= v1.11.0，请忽略 `recording_server` 字段。
+- 成功设置录制服务器的 IP：
 
--   响应：
+```json
+{
+  "success": true
+}
+```
 
-    -   成功
+- 未找到项目或该项目已禁用：
 
-        ```
-        {
-          "success": true
-        }
-        ```
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
-    -   项目未找到或已禁用：
+### 启用 App 证书 (POST)
 
-        ```
-        status 404
-        
-         {
-           "error_msg": "project not exist"
-         }
-        ```
+启用指定项目的 App 证书。
 
+**基本信息**
 
-### 启用项目 App 证书（POST）
+| 请求基本信息 | 描述 |
+| ---------------- | ---------------- |
+| 方法      | POST      |
+| 请求 URL | BaseUrl/v1/signkey/ |
 
--   方法：POST
--   路径：BaseUrl/v1/signkey/
--   参数：
+**请求参数**
 
-    ```
-    {
-      "id": "xxx",
-      "enable": true
-    }
-    ```
+#### Body 参数
 
--   响应：
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
+| `enable` | 是否启用项目的 App 证书：<ul><li>true：启用</li><li>false：不启用</li></ul> | 
 
-    -   成功
+**请求示例**
 
-        ```
-        {
-        
-          "success": true
-        
-        }
-        ```
+```json
+{
+  "id": "xxxx",
+  "enable": true
+}
+```
 
-    -   项目未找到或已禁用：
+**响应参数**
 
-        ```
-        status 404
-        {
-        
-          "error_msg": "project not exist"
-        
-        }
-        ```
+- 成功启用项目的 App 证书：
 
+```json
+{
+  "success": true
+}
+```
 
-### 重置项目的 App 证书（POST）
+- 未找到项目或该项目已禁用：
 
--   方法：POST
--   路径：BaseUrl/v1/reset\_signkey/
--   参数：
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
-    ```
-    { "id": "xxx"} // 项目 id
-    ```
+### 重置 App 证书 (POST)
 
--   响应：
+重置指定项目的 App 证书。如果原来的 App 证书泄漏了，你可以使用该方法对 App 证书进行重置。
 
-    -   成功
+如果该项目的 App 证书尚未启用，调用该方法会启用 App 证书。
 
-        ```
-        {
-          "success": true
-        }
-        ```
+**基本信息**
 
-    -   项目未找到或已禁用：
+| 请求基本信息 | 描述 |
+| ---------------- | ---------------- |
+| 方法      | POST      |
+| 请求 URL | BaseUrl/v1/reset_signkey |
 
-        ```
-        status 404
-          {
-            "error_msg": "project not exist"
-          }
-        ```
+#### Body 参数
 
-> 如果该项目的 App 证书尚未启用，调用该方法会启用 App 证书。
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `id`      | 项目 ID      |
+
+**请求示例**
+
+```json
+{
+  "id": "xxxx"
+}
+```
+
+**响应参数**
+
+- 成功重置指定项目的 App 证书
+
+```json
+{
+  "success": true
+}
+```
+
+- 未找到项目或该项目已禁用：
+
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
 ## 用量相关 API
 
