@@ -1,11 +1,11 @@
 
 ---
-title: Start a Video Broadcasting
+title: Start a Video Broadcast
 description: 
 platform: Unity
-updatedAt: Wed Feb 26 2020 06:14:23 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 10:24:29 GMT+0800 (CST)
 ---
-# Start a Video Broadcasting
+# Start a Video Broadcast
 Use this guide to quickly start a basic video broadcasting with the Agora SDK for Unity.
 
 ## Prerequisites

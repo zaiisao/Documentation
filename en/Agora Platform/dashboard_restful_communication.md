@@ -3,75 +3,147 @@
 title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Mar 10 2020 09:41:43 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 09:27:58 GMT+0800 (CST)
 ---
 # Console RESTful API
-## 1. Authentication
+## Authentication
 
 > Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Agora%20Platform/manage_member.md).
 
-The RESTful API only supports HTTPS, and the user must pass the `Authorization` parameter in the Basic HTTP request header for authentication. You need to pass the Customer ID and Customer Cerficate in the code.
+The RESTful API only supports HTTPS. Before sending HTTP requests, you must pass the basic Agora HTTP authentication (the `Authorization` parameter in the HTTP request head) with `api_key:api_secret`:
 
-Login https://console.agora.io, click the account name on the top right of the Console, and enter the RESTful API page from the drop-down list to get the Customer ID and Customer Certificate. 
+- `api_key`: Customer ID
+- `api_secret`: Customer Certificate
 
-> Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and Customer Certificate are only used for RESTful API access.
-
-
-For how to generate the `Authorization` parameter, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
+You can find your Customer ID and Customer Certificate on the [RESTful API](https://dashboard.agora.io/restful) page in Console. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 
 
-## 2. EndPoint
+## EndPoint
 
 All requests should be sent to BaseUrl: **https://api.agora.io/dev**.
 
-- Request: All parameters must be sent in JSON format, with content type: Content-Type: application/json.
-- Response: The response content is in JSON format. The response status is defined as follows:
+- Request: Send all parameters using the JSON format, with content type: Content-Type: application/json.
+- Response: The response content is in the JSON format. The response status is defined as follows:
 
-  -   Status 200: Request handle successful.
-  -   Status 400: The input is in the wrong format.
-  -   Status 401: Unauthorized \(incorrect App ID/Customer Certificate\).
-  -   Status 404: Wrong API invoked.
-  -   Status 429: Too frequent API calls.
-  -   Status 500: Internal error of the Agora RESTfulAPI service.
+| Status | Description | 
+| ---------------- | ---------------- | 
+| 200      | The request is successful.      |
+| 400      | The input is in the wrong format. |
+| 401      | Unauthorized (incorrect signature). |
+| 404      | Wrong API involed. |
+| 429      | Too many request. |
+| 500      | Internal error of the Agora RESTful API service. |
 
-## 3. Project API
+## Project API
 
 BaseUrl: **https://api.agora.io/dev**.
 
 The following chart shows how you can use Project APIs.
 ![](https://web-cdn.agora.io/docs-files/1583833115362)
 
-### Fetch all Projects (GET)
+### Creates a project (POST)
 
--  Method: GET
--  Path: BaseUrl/v1/projects/
--  Parameter: None
--  Response:
+This method creates an Agora project.
 
-	```
-	{
-		"projects":[
+**Basic information**
 
-								{
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL  | BaseUrl/v1/project/ |
 
-									"id": "xxxx",
-									"name": "project1",
-									"vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-									"sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-									"recording_server": "10.2.2.8:8080",
-									"status": 1,
-									"created": 1464165672
+**Request parameter**
 
-								}
+#### Body parameter
 
-						 ]
-	}
-	```
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `name`      | The project name.      |
+| `enable_sign_key` | Determines whether to enable the App Certificate: <ul><li>true: Enable the App Certificate.</li><li>false: Do not enable the App Certificate.</li></ul> |
 
-- Status:
+**Request sample**
 
-  -  1: Active
-  -  0: Disable
+```
+{
+  "name": "projectx",
+  "enable_sign_key": true
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+| `vendor_key` | The App ID of the project. |
+| `sign_key` | The App Certificate of the project. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK prior to v1.9.0. |
+| `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
+| `created` | The Unix timestamp (ms) for creating the project. |
+
+**Response sample**
+
+```
+{
+  "projects":[
+    {
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 1,
+      "created": 1464165672
+    }
+  ]
+}
+```
+
+### Gets all projects (GET)
+
+Gets all Agora projects.
+
+**Basic information**
+
+| Basic information | Description | 
+| ---------------- | ---------------- | 
+| Method      | GET      |
+| Request URL | BaseUrl/v1/projects/ |
+
+**Request parameter**
+
+None.
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+| `vendor_key` | The App ID of the project. |
+| `sign_key` | The App Certificate of the project. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK prior to v1.9.0. |
+| `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
+| `created` | The Unix timestamp (ms) for creating the project. |
+
+**Response sample**
+
+```
+{
+  "projects":[
+    {
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 1,
+      "created": 1464165672
+    }
+  ]
+}
+```
 
 
 ### Fetch a Single Project (GET)
@@ -114,37 +186,6 @@ The following chart shows how you can use Project APIs.
   -  1: Active
   -  0: Disable
 
-
-### Create a Project (POST)
-
--  Method: POST
--  Path: BaseUrl/v1/project/
--  Parameter:
-
-	```
-	{
-		"name":"projectx",
-		"enable_sign_key": true
-	}
-	```
-
-- Response
-
-	```
-	{
-		"project":
-						{
-
-							 "id": "xxxx",
-							 "name": "project1",
-							 "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-							 "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-							 "status": 1,
-							 "created": 1464165672
-
-						}
-	}
-	```
 
 ### Disable/Enable a Project (POST)
 
@@ -329,7 +370,7 @@ The following chart shows how you can use Project APIs.
 
 > If an App Certificate is not enabled for a project, calling this method will enable it.
 
-## 4. Usage API
+## Usage API
 
 BaseUrl: **https://api.agora.io/dev**.
 
@@ -443,7 +484,7 @@ from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
 }
  ```
 
-## 5. Ban Users at the Server
+## Ban Users at the Server
 
 BaseUrl: **https://api.agora.io/dev**.
 
@@ -575,7 +616,7 @@ The banned user receives the corresponding callback as follows:
     ```
 
 
-## 6. Online Statistics Query API
+## Online Statistics Query API
 
 BaseUrl：**https://api.agora.io/dev**.
 
@@ -895,7 +936,7 @@ Example with parameters: /channel/<appid\>page\_no=0&page\_size=100
 	</table>
 
 
-## 7. Error Codes
+## Error Codes
 
 See [Error Codes and Warning Codes](../../en/Agora%20Platform/the_error_native.md).
 

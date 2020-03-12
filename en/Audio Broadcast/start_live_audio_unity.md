@@ -1,11 +1,11 @@
 
 ---
-title: Start a Audio Broadcasting
+title: Start an Audio Broadcast
 description: 
 platform: Unity
-updatedAt: Wed Feb 26 2020 06:16:20 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 10:21:12 GMT+0800 (CST)
 ---
-# Start a Audio Broadcasting
+# Start an Audio Broadcast
 Use this guide to quickly start a basic audio broadcasting with the Agora SDK for Unity.
 
 ## Prerequisites

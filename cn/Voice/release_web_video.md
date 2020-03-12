@@ -23,7 +23,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
     <th>Firefox 56+</th>
     <th>Safari 11+</th>
     <th>Opera 45+</th>
-    <th>QQ 浏览器最新版</th>
+    <th>QQ 浏览器 10.5+</th>
     <th>360 安全浏览器</th>
     <th>微信浏览器</th>
   </tr>

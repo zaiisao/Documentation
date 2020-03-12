@@ -1,12 +1,12 @@
 
 ---
-title: Start a Video Broadcast
+title: Start an Audio Broadcast
 description: 
 platform: Web
-updatedAt: Wed Mar 11 2020 10:17:16 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 10:19:41 GMT+0800 (CST)
 ---
-# Start a Video Broadcast
-Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
+# Start an Audio Broadcast
+Use this guide to quickly set up the Agora Web SDK and enable interactive audio broadcast functions in your app. 
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either host or audience. The host sends and receives streams while the audience receives streams only.
 
@@ -16,7 +16,7 @@ The difference between a broadcast and a call is that users have roles in a broa
 
 We provide an open-source [sample project](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Web) that implements the basic video broadcast on GitHub. 
 
-You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/) and try the video broadcasts implemented by the Agora SDK.
+You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/) and try the broadcasts implemented by the Agora SDK.
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ You need to create an HTML file for this project.
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Basic Live Broadcast</title>
-  <link rel="stylesheet" href="https://docs.agora.io/en/Interactive%20Broadcast/assets/common.css" />
+  <link rel="stylesheet" href="https://docs.agora.io/en/Audio%20Broadcast/assets/common.css" />
 </head>
 <body class="agora-theme">
   <div class="navbar-fixed">
@@ -176,7 +176,7 @@ The following figure shows the API call sequence of a basic broadcast. Note that
 
 ![](https://web-cdn.agora.io/docs-files/1568095116563)
 
-> We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/index.html).
+> We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/index.html).
 
 For convenience, we define two variables for the following code snippets. This is not mandatory and you can have your implementation.
 
@@ -263,7 +263,7 @@ Pay attention to the following settings when joining the channel.
 - `channel`: Channel name. A string within 64 bytes.
 - `uid`: The user ID should be unique in a channel. If you set the user ID as `null`, the Agora server assigns a user ID and returns it in the `onSuccess` callback.
 
-For more details on the parameter settings, see [`Client.join`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join).
+For more details on the parameter settings, see [`Client.join`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join).
 
 ### Publish a local stream
 
@@ -277,7 +277,7 @@ If the client role is set as `"host"`, we need to create and publish the local s
    rtc.localStream = AgoraRTC.createStream({
      streamID: rtc.params.uid,
      audio: true,
-     video: true,
+     video: false,
      screen: false,
    })
    ```
@@ -432,14 +432,14 @@ live-server .
    This should automatically load the web app in your browser.
 
 4. Enter a channel name, choose the user role, and click **JOIN** to start a call.
-   You might need to allow the browser to access your camera and microphone. If you enable video when creating the stream and set the client role as host, you should see a video stream of yourself.
+   You might need to allow the browser to access your  microphone. 
 
-5. Open another tab in the browser and load the same URL. Click the **JOIN** button. You should see a second video on the screen.
+5. Open another tab in the browser and load the same URL. Click the **JOIN** button. If you set the client role as host, you should hear echoes when you speak
 
 If the web app is not working properly, open the console in your browser and check for errors. The following are the most likely errors:
 - `INVALID_VENDOR_KEY`: Wrong App ID. Check if you fill in the correct App ID.
 - `ERR_DYNAMIC_USE_STATIC_KE`: Your Agora project enables App Certificate, so you need to use Token when joining the channel.
-- `Media access:NotFoundError`: Check if your camera and microphone are working properly.
+- `Media access:NotFoundError`: Check if your  microphone are working properly.
 - `MEDIA_NOT_SUPPORT`: Please use HTTPS or localhost.
 
 <div class="alert warning">Do not debug the web app on emulated mobile devices.</div>
