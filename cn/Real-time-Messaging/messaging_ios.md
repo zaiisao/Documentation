@@ -122,7 +122,8 @@ end
 
 #### 登录登出 Agora RTM 系统
 
-![](https://web-cdn.agora.io/docs-files/1562566652476)
+
+![](https://web-cdn.agora.io/docs-files/1583998324120)
 
 #### 收发点对点消息
 
