@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Thu Mar 12 2020 02:21:17 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 11:03:23 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Description
@@ -269,7 +269,7 @@ You can refer to [Call the interfaces](#1) or [API documentation](#2) to complet
 
 <a name="2"></a>
 ## API documentation
-See [API documentation](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html).
+See [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/v1.0.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html).
 
 ## Consideration
 

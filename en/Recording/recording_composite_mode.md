@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: Linux
-updatedAt: Thu Dec 19 2019 11:47:24 GMT+0800 (CST)
+updatedAt: Fri Mar 13 2020 03:10:46 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
@@ -65,3 +65,7 @@ The following example shows how to record both audio and video in a live broadca
 ```
 ./recorder_local --appId <Your App ID> --channel <The name of the channel to be recorded> --channelProfile 1 --uid 0 --appliteDir ~/Agora_Recording_SDK_for_Linux_FULL/bin --isMixingEnabled 1 --mixedVideoAudio 2 --audioProfile 1 --mixResolution 640,480,15,1000 --layoutMode 1
 ```
+
+## Considerations
+
+If a user stops sending streams or leave the channel during a recording session, the recording service fills the region of that user with the color of the canvas.

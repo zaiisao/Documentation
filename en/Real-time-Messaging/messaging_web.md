@@ -31,6 +31,7 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Web](https
 | Internet Explorer 11  | ✔                  |
 | Firefox 52 or later |  ✔                  |
 | WeChat built-in Browser |  ✔                  |
+| QQ Browser 10.5 or later | ✔                  |
 
 
 

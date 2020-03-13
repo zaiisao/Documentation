@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 11 2020 09:27:58 GMT+0800 (CST)
+updatedAt: Fri Mar 13 2020 02:47:04 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## Authentication
@@ -43,7 +43,7 @@ The following chart shows how you can use Project APIs.
 
 ### Creates a project (POST)
 
-This method creates an Agora project.
+Creates an Agora project.
 
 **Basic information**
 
@@ -78,7 +78,7 @@ This method creates an Agora project.
 | `name` | The project name. |
 | `vendor_key` | The App ID of the project. |
 | `sign_key` | The App Certificate of the project. |
-| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK prior to v1.9.0. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
 | `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
 | `created` | The Unix timestamp (ms) for creating the project. |
 
@@ -86,7 +86,7 @@ This method creates an Agora project.
 
 ```
 {
-  "projects":[
+  "project":[
     {
       "id": "xxxx",
       "name": "project1",
@@ -102,7 +102,7 @@ This method creates an Agora project.
 
 ### Gets all projects (GET)
 
-Gets all Agora projects.
+Gets the information of all Agora projects.
 
 **Basic information**
 
@@ -123,7 +123,7 @@ None.
 | `name` | The project name. |
 | `vendor_key` | The App ID of the project. |
 | `sign_key` | The App Certificate of the project. |
-| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK prior to v1.9.0. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
 | `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
 | `created` | The Unix timestamp (ms) for creating the project. |
 
@@ -145,230 +145,322 @@ None.
 }
 ```
 
+### Gets a specified project (GET)
+
+Gets the information of a specified project.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | GET      |
+| Request URL | BaseUrl/v1/project/|
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+
+**Request sample**
+
+```json
+{
+  "id": "xxxxx",
+  "name": "xxxxx"
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+| `vendor_key` | The App ID of the project. |
+| `sign_key` | The App Certificate of the project. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK eariler than v1.9.0. |
+| `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
+| `created` | The Unix timestamp (ms) for creating the project. |
+
+**Response sample**
+
+```
+{
+  "project":[
+    {
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 1,
+      "created": 1464165672
+    }
+  ]
+}
+```
+
+### Disables/Enables a project (POST)
+
+Disables/Enables a specified Agora project.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST     |
+| Request URL | BaseUrl/v1/project_status/ |
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The projec ID.      |
+| `status` | Determines whether you want to enable or disable the project: <ul><li>0: Enable the project.</li><li>1: Disable the project.</li></ul> |
+
+**Request sample**
 
-### Fetch a Single Project (GET)
+```json
+{
+  "id": "xxxx"
+  "status": 0
+}
+```
 
--  Method: GET
--  Path: BaseUrl/v1/project/
--  Parameter:
+**Response parameter**
 
-	```
-	{
-		"id":"xxxx",
-		"name":"xxxx"
-	}
-	```
+- If you successfully enable or disable the project, this response contains the information of this project.
 
--  Response:
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+| `vendor_key` | The App ID of the project. |
+| `sign_key` | The App Certificate of the project. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
+| `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
+| `created` | The Unix timestamp (ms) for creating the project. |
 
-	```
-	{
-		"projects":[
+```
+{
+  "project":[
+    {
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 0,
+      "created": 1464165672
+    }
+  ]
+}
+```
 
-						 {
+- If the specified project does not exist,  the status code 404 is reported.
 
-									"id": "xxxx",
-									"name": "project1",
-									"vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-									"sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-									"recording_server": "10.2.2.8:8080",
-									"status": 1,
-									"created": 1464165672
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
-								}
+### Deletes a project (DELETE)
 
-						 ]
-	}
-	```
+Deletes a specified Agora project.
 
-- Status:
+**Basic information**
 
-  -  1: Active
-  -  0: Disable
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | DELETE      |
+| Request URL | BaseUrl/v1/project/|
 
+**Request parameter**
 
-### Disable/Enable a Project (POST)
+#### Body parameter
 
--  Method: POST
--  Path: BaseUrl/v1/project_status/
--  Parameter:
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
 
-	```
-	{
-		"id":"xxx",
-		"status": 0
-	}
-	```
+**Request sample**
 
--  Response:
+```json
+{
+  "id": "xxxxx"
+}
+```
 
-    -  Success:
+**Response parameter**
 
-		```
-			{
-				"project":
-								{
+- If you successfully delete the project, the response is as follows:
 
-								 "id": "xxxx",
-								 "name": "project1",
-								 "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-								 "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-								 "status": 0,
-								 "created": 1464165672
+```json
+{
+  "success": true
+}
+```
 
-								 }
+- If the specified project does not exist, the status code 404 is reported.
 
-			 }
-			```
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
-    -  If a specified project does not exist \(deleted or no such project\):
+### Sets the IP of the recording server (POST)
 
-        ```
-        status 404
-        content:
-        {
-        
-          "error_msg": "project not exist"
-        
-        }
-        ```
+Sets the IP of of the recording server for a specified project.
 
+**Basic information**
 
-### Delete a Project (DELETE)
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL | BaseUrl/v1/recording_config/|
 
--  Method: DELETE
--  Path: BaseUrl/v1/project/
--  Parameter:
+**Request parameter**
 
-	```
-	{
-		"id":"xxxx"
-	}
-	```
+#### Body parameter
 
--  Response:
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `recording_config` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
 
-  -  Project deleted:
+**Request sample**
 
-		```
-		{
-			"success": true
-		}
-		```
+```json
+{
+  "id": "xxxx",
+  "recording_server": "10.12.1.5:8080"
+}
+```
 
-  -  Project not found:
+### Response parameter
 
-		```
-		status 404
+- If you successfully set the IP for the recording server, the response is as follows:
 
-		 {
-				"error_msg": "project not exist"
-		 }
-		```
+```json
+{
+  "success": true
+}
+```
 
-### Set a Project’s Recording Server IP (POST)
+- If the specified project does not exist or has been disabled, the status code 404 is reported.
 
--  Method: POST
--  Path: BaseUrl/v1/recording_config/
--  Parameter:
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
-	```
-	{
-		"id":"xxxx",
-		"recording_server": "10.12.1.5:8080"
-	}
-	```
+### Enables the App Certificate (POST)
 
->  - If your Recording SDK version is before v1.9.0 (include), please pay attention to the `recording_server` parameter.
->  - If your Recording SDK version is later than v1.11.0 (include), please neglect the `recording_server` parameter.
+Enables the App Certificate for a specifed project.
 
--  Response:
+**Basic information**
 
-   -  Success:
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL | BaseUrl/v1/signkey/|
 
-		```
-		{
-			"success": true
-		}
-		```
+**Request parameter**
 
-   -  Project not found or disabled:
+#### Body parameter
 
-    ```
-    status 404
-    
-     {
-       "error_msg": "project not exist"
-     }
-    ```
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `enable` | Determines whether to enable the App Certificate of the project: <ul><li>true: Enable the App Certificate.</li><li>false: Do not enable the App Certificate.</li></ul> |
 
+**Request sample**
 
-### Enable a Project’s App Certificate (POST)
+```json
+{
+  "id": "xxxx",
+  "enable": true
+}
+```
 
--  Method: POST
--  Path: BaseUrl/v1/signkey/
--  Parameter:
+**Response parameter**
 
-	```
-	{
-		"id": `xxx`,
-		"enable": true
-	}
-	```
+- If you successfully enable the App Certificate, the response is as follows:
 
--  Response:
+```json
+{
+  "success": true
+}
+```
 
-   -  Success:
+- If the specified project does not exist or has been disabled, the status code 404 is reported.
 
-		```
-		{
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
-			"success": true
+### Resets the App Certificate (POST)
 
-		}
-		```
+Resets the App Certificate of a specified project. If the App Certificate is leaked, use this method to reset it.
 
-   -  Project not found or disabled:
+If the App Certificate has not been enabled, calling this method automatically enables it.
 
-		```
-		status 404
-		{
+**Basic information**
 
-			"error_msg": "project not exist"
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL | BaseUrl/v1/reset_signkey/|
 
-		}
-		```
+**Request parameter**
 
-### Reset a Project’s App Certificate (POST)
+#### Body parameter
 
--  Method: POST
--  Path: BaseUrl/v1/reset_signkey/
--  Parameter:
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
 
-	```
-	{ "id" : "xxx"}   // project id
-	```
+**Request sample**
 
--  Response:
+```json
+{
+  "id": "xxxxx"
+}
+```
 
-   -  Success:
+**Response parameter**
 
-		```
-		{
-			"success": true
-		}
-		```
+- If you successfully enable the App Certificate, the response is as follows:
 
-   -  Project not found or disabled:
+```json
+{
+  "success": true
+}
+```
 
-		```
-		status 404
-			{
-				"error_msg": "project not exist"
-			}
-		```
+- If the specified project does not exist or has been disabled, the status code 404 is reported.
 
-> If an App Certificate is not enabled for a project, calling this method will enable it.
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
 ## Usage API
 
@@ -448,6 +540,8 @@ The following chart shows how you can use Usage APIs.
 // - miniapp: Mini app.
 from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
  ```
+
+<div class="alert note">Ensure that you fill in a valid <tt>project_id</tt>, otherwise, you cannot fetch the usage information.</div>
 
 -   Response:
 

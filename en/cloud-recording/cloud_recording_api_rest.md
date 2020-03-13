@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Mar 10 2020 10:30:16 GMT+0800 (CST)
+updatedAt: Fri Mar 13 2020 03:20:07 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -125,7 +125,7 @@ The following parameters are required in the request body.
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | The name of the channel to be recorded.                      |
 | `uid`           | String | A string that contains the UID of the recording client. Must be the same `uid` used in the [`acquire`](#acquire) method. |
-| `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key) used in the channel to be recorded. Ensure that you set this parameter if the recording channel uses a token.</li><li>[`recordingConfig`](#recordingConfig): (Optional) JSON. The recording configuration.</li><li>[`storageConfig`](#storageConfig): (Optional) JSON. The third-party cloud storage configuration.</li> |
+| `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key) used in the channel to be recorded. Ensure that you set this parameter if the recording channel uses a token.</li><li>[`recordingConfig`](#recordingConfig): JSON. The recording configuration.</li><li>[`storageConfig`](#storageConfig): (Optional) JSON. The third-party cloud storage configuration.</li> |
 
 #### <a name="recordingConfig"></a>Recording configuration
 
@@ -141,7 +141,7 @@ The following parameters are required in the request body.
   - `2`: AES-128, ECB mode.
   - `3`: AES-256, XTS mode.
 - `secret`: (Optional) String. The decryption password when decryption mode is enabled. 
-- `channelType`: (Optional) Number. The channel profile. Agora Cloud Recording must use the same channel profile as the Agora Native/Web SDK. Otherwise, issues may occur.
+- `channelType`: Number. The channel profile. Agora Cloud Recording must use the same channel profile as the Agora Native/Web SDK. Otherwise, issues may occur.
   - `0`: (Default) Communication profile. 
   - `1`: Live broadcast profile.
 - `audioProfile`: (Optional) Number. The sample rate, bitrate, encoding mode, and the number of channels. You cannot set this parameter in individual recording mode.
@@ -152,6 +152,7 @@ The following parameters are required in the request body.
   - `0`: (Default) Records the high-stream video.
   - `1`: Records the low-stream video.
 - `maxIdleTime`: (Optional) Number. Agora Cloud Recording automatically stops recording and leaves the channel when there is no user in the recording channel after a time period (30 seconds by default) set by this parameter. The value range is from 5 to 2<sup>32</sup>-1. 
+<div class="alert note"><ul><li>The recording service does not recognize a channel as an idle channel, so long as the channel has users, regardless of whether they send stream or not.</li><li>If a live-broadcast channel has an audience without a host for a set time (<code>maxIdleTime</code>), the recording service automatically stops and leaves the channel.</li></div>
 - `transcodingConfig`: (Optional) JSON. The transcoding configuration. You cannot set this parameter in individual recording mode. If you set this parameter, ensure that you set `width`, `height`, `fps`, and `bitrate`. Refer to [How do I set the video profile of the recorded video?](https://docs.agora.io/en/faq/recording_video_profile) for detailed information about setting `transcodingConfig`.
   - `width`: (Mandatory) Number. The width of the mixed video (pixels). The default value is 360. The maximum resolution is 1080p and an error occurs if the maximum resolution is exceeded.
   - `height`: (Mandatory) Number. The height of the mixed video (pixels). The default value is 640. The maximum resolution is 1080p and an error occurs if the maximum resolution is exceeded.

@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 17 2019 07:11:53 GMT+0800 (CST)
+updatedAt: Fri Mar 13 2020 03:30:44 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
@@ -90,4 +90,5 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 ## Considerations
 
-If you record only video (no audio) or both video and audio, Agora Cloud Recording generates a black video file for a Web user who does not send any video stream.
+- If you record only video (no audio) or both video and audio, Agora Cloud Recording generates a black video file for any Web user who does not send any video stream.
+- If a user stops sending streams or leaves the channel during a recording session, the recording service fills the region of that user with the color of the canvas.

@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Android
-updatedAt: Mon Mar 09 2020 05:49:46 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 23:52:49 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -53,4 +53,4 @@ We also provide an open-souce [Switch External Video](https://github.com/AgoraIO
 ## Considerations
 
 - Android API Level 21+ is required for API methods like MediaProjection. See [Google MediaProjection API  Reference](https://developer.android.com/reference/android/media/projection/MediaProjection).
-- The code snippets on this page are shortened. See [Sample Code](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Android#agora-screen-sharing-android) on the design and implementation.
+- The code snippets on this page are shortened. See [Sample Code](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Screensharing/Agora-Screen-Sharing-Android) on the design and implementation.
