@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Mar 13 2020 02:47:04 GMT+0800 (CST)
+updatedAt: Fri Mar 13 2020 06:19:02 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## Authentication
@@ -593,122 +593,215 @@ The banned user receives the corresponding callback as follows:
 - Web: [`onclient-banned`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#on)
 - Windows: [`onConnectionStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4)(CONNECTION_CHANGED_BANNED_BY_SERVER)
 
-### Create a Rule (POST)
+### Creates a rule (POST)
 
--  Method: POST
--  Path: BaseUrl/v1/kicking-rule/
--  Parameter:
+Creates a banning rule.
 
-    ```json
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL   | BaseUrl/v1/kicking-rule/ |
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      |
+| `cname`    | (Optional) The channel name. Do not set it as the empty string "".  |
+| `uid`           | (Optional) The user ID. You can use the SDK APIs to get it. Do not set it as 0. | 
+| `ip`             | (Optional) The IP address of the user that you want to kick out of the channel. Do not set it as 0.  |
+| `time`        | The time duration (minute) to ban the user. The value range is [1, 1440], and the default value is 60. Agora automatically sets values lower than one to one, and higher than 1440 to 1440. Setting it as 0 means that the banning rule does not take effect. The server sets all users that conform to the rule offline, and users can log in again to re-join the channel.  |
+| `privileges` | The default field ["join_channel"]. |
+
+The banning rule works based on the three fields: `cname`, `uid` and `ip`. See the following examples:
+-   If you set `ip`, but not `cname` or `uid`, the rule is that users with this `ip` cannot join any channel in the app. 
+-   If you set `cname`, but not `uid` or `ip`, the rule is that no one can join the channel specified by the `cname` field.
+-   If you set `cname` and `uid`, but not `ip`, the rule is that the user with the ID cannot join the channel specified by the `cname` field.
+-   If you set `uid`, but not `cname` or `ip`, the rule is that the user with the ID cannot join any channel in the app.
+
+**Request sample**
+
+```json
+{
+  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+  "cname": "",
+  "uid":"",
+  "ip":"",
+  "time":60,
+  "privilege":["join_channel"]
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `status`      | The status of this request.      |
+| `id`              | The rule ID. If you want to update the rule, you need the rule ID to specify the rule. | 
+
+**Response sample**
+
+```json
+{
+  "status": "success",
+  "id": 1953
+}
+```
+
+
+### Gets the rule list (GET)
+
+Gets the list of all banning rules.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | GET      |
+| Request URL   | BaseUrl/v1/kicking-rule/ |
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      |
+
+**Request sample**
+
+```json
+{
+  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2"
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `status`      | The status of this request.      |
+| `rules`        | The list of the kicking rule, which contains the following fields: <ul><li>`id`: The rule ID.</li><li>`appid`: The project App ID in Console.</li><li>`uid`: The user ID.</li><li>`opid`: The operation ID, which can be used to track operation records when teoubleshooting.</li><li>`cname`: The channel name.</li><li>`ip`: The IP address.</li><li>`ts`: The timestamp when this rule stops taking effect.</li><li>`createAt`: The timestamp when this rule is created.</li><li>`updateAt`: The timestamp when this rule is updated.</li></ul> |
+
+**Response sample**
+
+```json
+{
+  "status": "success",
+  "rules": [
     {
-				"appid":"",   // Mandatory, project App ID
-				"cname":"",   // Optional, channel name. Do not pass cname:""
-				"uid":"",     // Optional, UID which can be obtained by using the SDK API. Do not pass uid:0
-				"ip":"",      // Optional, IP address of the user to be banned. Do not pass ip:0
-				"time": 60    // Optional, banned period in minutes. The default value is 60. The value range is [1, 1440]. Any value under 1 will be processed as 1, and any value over 1440 processed as 1440 minutes. Setting it as 0 means that the banning rule does not take effect.
-				"privileges":["join_channel"]   // The default value.
-     }
-    ```
-
-> - Setting the `time` argument as 0 means that the banning rule does not take effect. The server sets all the users in the channel that comform to the rule offline and the users can log in again to rejoin the channel.
-> - The ban rule is based on the permutation and combination of the three fields: cname, uid and ip. See the following examples:
->    -   If you pass the ip parameter, but not cname or uid, then the rule is that this ip cannot login any channel in the App.
->    -   If you pass the cname parameter, but not uid or ip, then the rule is that no one can login the channel specified by the cname parameter.
->    -   If you pass the cname and uid parameter, but not ip, then the rule is that the uid cannot login the channel specified by the cname parameter.
->    -   If you pass the uid parameter, but not cname or ip, then the rule is that the uid cannot login in any channel in the App.
-
--  Response:
-
-    ```
-    {
-        "status": "success",  // Status of the request
-        "id": 1953            // The rule ID. If you want to update the rule, then you need the rule ID to specify one
+      "id": 1953,
+      "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "uid": 1,
+      "opid": 1406,
+      "cname": "11",
+      "ip": null,
+      "ts": "2018-01-09T07:23:06.000Z",
+      "createAt": "2018-01-09T06:23:06.000Z",
+      "updateAt": "2018-01-09T14:23:06.000Z"
     }
-    ```
+  ]
+}
+```
 
+### Updates the rule time (PUT)
 
-### Get the Rule List (GET)
+Updates the time duration when the rule taks effect.
 
--  Method: GET
--  Path: BaseUrl/v1/kicking-rule/
--  Parameter:
+**Basic information**
 
-    ```
-    {
-       "appid":""    // Mandatory, project App ID
-     }
-    ```
+| Basic information | Description |
+| ---------------- | ---------------- | 
+| Method      | PUT      |
+| Request URL  | BaseUrl/v1/kicking-rule/ |
 
--  Response:
+**Request parameter**
 
-    ```
-    {
-        "status": "success",                                    // Status of the request
-        "rules": [
-            {
-                "id": 1953,                                     // The rule ID. If you want to update the rule, then you need the rule ID to specify one
-                "appid": ""                                     // project App ID
-                "uid": 1,                                       // UID which can be obtained by using the SDK API
-                "opid": 1406,                                   // Operating ID which is used to check the operation records for issues tracking
-                "cname": "11",                                  // The channel name
-                "ip": null,                                     // The IP address
-                "ts": "2018-01-09T07:23:06.000Z",               // Time when the rule takes effect
-                "createAt": "2018-01-09T06:23:06.000Z",         // Time when the rule is created
-                "updateAt": "2018-01-09T14:23:06.000Z"          // Time when the rule is updated
-            }
-        ]
-    }
-    ```
+#### Body parameter
 
+| Parameter | Description | 
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      |
+| `id`             | The ID of the rule that you want to update. |
+| `time`         | The time duration (minute) to ban the user. The value range is [1, 1440], and the default value is 60. Agora automatically sets values lower than one to one, and higher than 1440 to 1440. Setting it as 0 means that the banning rule does not take effect. The server sets all users that conform to the rule offline, and users can log in again to re-join the channel. |
 
-### Update the Rule Period (PUT)
+**Request sample**
 
--  Mrethod: PUT
--  Path: BaseUrl/v1/kicking-rule/
--  Parameter :
+```json
+{
+  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+  "id": 1953,
+  "time": 60,
+}
+```
 
-    ```
-    {
-             "appid":"",   // Mandatory, project App ID
-             "id":"",      // Mandatory, rule ID with the rule list to be retrieved
-             "time":""     // Mandatory, banned period to be updated
-    }
-    ```
--  Response:
+**Response parameter**
 
-    ```
-    {
-        "result": {
-            "id": 1953,                         // The rule ID
-            "ts": "2018-01-09T08:45:54.545Z"    // Time when the rule expires
-        },
-        "status": "success"                     // Status of the request
-    }
-    ```
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `status`     | The status of this request. |
+| `result`      | The result of the rule update: <ul><li>`id`: The rule ID.</li><li>`ts`: The timestamp when the rule stops taking effect.</li></ul>      |
 
+**Response sample**
 
-### Delete a Rule (DELETE)
+```json
+{
+  "status": "success",
+  "result": {
+    "id": 1953,
+    "ts": "2018-01-09T08:45:54.545Z"
+  }
+}
+```
 
--  Method: DELETE
--  Path: BaseUrl/v1/kicking-rule/
--  Parameter:
+### Deletes the rule (DELETE)
 
-    ```
-    {
-                   "appid":"",   // Mandatory, project App ID
-                   "id":""       // Mandatory, rule ID with the rule list to be retrieved
-    }
-    ```
-		
--  Response:
+Deletes the banning rule.
 
-    ```
-    {
-        "status": "success",  // Status of the request
-        "id": 1953            // The rule ID
-    }
-    ```
+**Basic information**
 
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | DELETE      |
+| Request URL |  BaseUrl/v1/kicking-rule/ |
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.     |
+| `id`             | The ID of the rule that you want to delete. |
+
+**Request sample**
+
+```json
+{
+  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+  "id": 1953
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `status`      | The status of this request.     | 
+| `id`             | The ID of the rule that you want to delete. |
+
+**Response sample**
+
+```json
+{
+  "status": "success",
+  "id": 1953
+}
+```
 
 ## Online Statistics Query API
 

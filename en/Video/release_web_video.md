@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Wed Feb 12 2020 10:15:26 GMT+0800 (CST)
+updatedAt: Fri Mar 13 2020 06:57:18 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -247,7 +247,7 @@ v2.8.0 is released on July 8, 2019.
 
 This version optimizes the support for string UIDs.
 
-All users in the same channel should have the same type (number or string) of user ID. If you use string UIDs to interoperate with the Agora Native SDK, ensure that the Native SDK uses the string user account to join the channel. See [Use String User Accounts](../../en/Video/string_web.md) for details.
+All users in the same channel should have the same type (number or string) of user ID. If you use string UIDs to interoperate with the Agora Native SDK, ensure that the Native SDK uses the string user account to join the channel. See [Use String User Accounts](https://docs.agora.io/en/faq/string) for details.
 
 ## v2.7.1
 
@@ -265,7 +265,7 @@ v2.7.0 is released on June 21, 2019.
 
 #### 1. Customizing the video encoder configuration
 
-Adds the `Stream.setVideoEncoderConfiguration` method to customize the video encoder configuration. Compared with the`Stream.setVideoProfile` method, this method is more flexible and supports customizing the video resolution, frame rate, and bitrate. See [Set the Video Profile](../../en/Video/videoProfile_web.md) for details.
+Adds the `Stream.setVideoEncoderConfiguration` method to customize the video encoder configuration. Compared with the`Stream.setVideoProfile` method, this method is more flexible and supports customizing the video resolution, frame rate, and bitrate. See [Set the Video Profile](../../en/Video/video_profile_web.md) for details.
 
 #### 2. Reporting the status of the stream playback
 
@@ -341,7 +341,7 @@ v2.6.0 is released on April 3, 2019.
 
 #### 1. Audio effect file playback and management
 
-Supports playing multiple audio effect files at the same time, and managing the files. You can set the volume, pause/stop the playback, and preload the audio effect file. See [Play Audio Effects/Audio Mixing](../../en/Video/effect_mixing_web.md).
+Supports playing multiple audio effect files at the same time, and managing the files. You can set the volume, pause/stop the playback, and preload the audio effect file. See [Play Audio Effects/Audio Mixing](../../en/Video/audio_effect_mixing_web.md).
 
 #### 2. Screen sharing on Chrome without extension
 
@@ -706,7 +706,7 @@ To meet customers’ needs for audio control during a communication or live broa
 
 #### 3. Support for Proxy on the Web Side
 
-To enable enterprises with a company firewall to access Agora’s services, the `setProxyServer` and `setTurnServer` methods are added. By calling these methods, you can bypass the firewall and send the signaling messages and media data directly to the Agora SD-RTN through the servers. You need to deploy the Nginx and TURN servers before calling these methods before joining the channel. For more information, see [Deploying the Enterprise Proxy](../../en/Video/proxy_web.md).
+To enable enterprises with a company firewall to access Agora’s services, the `setProxyServer` and `setTurnServer` methods are added. By calling these methods, you can bypass the firewall and send the signaling messages and media data directly to the Agora SD-RTN through the servers. You need to deploy the Nginx and TURN servers before calling these methods before joining the channel.
 
 #### 4. Support for Encryption
 
