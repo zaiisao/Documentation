@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Mar 04 2020 05:34:23 GMT+0800 (CST)
+updatedAt: Fri Mar 13 2020 06:54:13 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -259,7 +259,7 @@ Agora 在该版本对 SDK 的传输质量和互通体验进行了优化，在首
 
 2.8.0 版本主要优化了对 String 类型的用户名的支持。
 
-一个频道内的所有用户必须使用同样类型的用户名，即必须都为整数或都为字符串。使用字符串类型的用户名与 Agora Native SDK 互通时，请确保 Native SDK 也使用字符串类型的用户名，即 User Account 加入频道，详见[使用 String 型的用户名](../../cn/Interactive%20Broadcast/string_web.md)。
+一个频道内的所有用户必须使用同样类型的用户名，即必须都为整数或都为字符串。使用字符串类型的用户名与 Agora Native SDK 互通时，请确保 Native SDK 也使用字符串类型的用户名，即 User Account 加入频道，详见[使用 String 型的用户名](https://docs.agora.io/cn/faq/string)。
 
 ## 2.7.1 版
 
@@ -277,7 +277,7 @@ Agora 在该版本对 SDK 的传输质量和互通体验进行了优化，在首
 
 #### 1. 自定义视频编码配置
 
-新增 `Stream.setVideoEncoderConfiguration` 方法，与原有的 `Stream.setVideoProfile` 方法相比，该方法可以自定义视频分辨率、帧率及码率，更加灵活。更多信息请参考[设置视频属性](../../cn/Interactive%20Broadcast/videoProfile_web.md)。
+新增 `Stream.setVideoEncoderConfiguration` 方法，与原有的 `Stream.setVideoProfile` 方法相比，该方法可以自定义视频分辨率、帧率及码率，更加灵活。更多信息请参考[设置视频属性](../../cn/Interactive%20Broadcast/video_profile_web.md)。
 
 #### 2. 通知音视频流播放状态
 
@@ -355,7 +355,7 @@ Agora 在该版本对 SDK 的传输质量和互通体验进行了优化，在首
 
 #### 1. 音效文件播放和管理
 
-新增一组方法支持在人声中同时播放效果音，支持同时播放多个音效文件，且支持对音效文件的管理，包括调节音量、暂停/停止播放、预加载音效文件等功能，详见[播放音效/音乐混音](../../cn/Interactive%20Broadcast/effect_mixing_web.md)。
+新增一组方法支持在人声中同时播放效果音，支持同时播放多个音效文件，且支持对音效文件的管理，包括调节音量、暂停/停止播放、预加载音效文件等功能，详见[播放音效/音乐混音](../../cn/Interactive%20Broadcast/audio_effect_mixing_web.md)。
 
 #### 2. Chrome 浏览器无插件屏幕共享
 
