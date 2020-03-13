@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 25 2019 03:51:02 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 11:04:07 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
@@ -13,6 +13,8 @@ updatedAt: Mon Nov 25 2019 03:51:02 GMT+0800 (CST)
 - [RTC Native SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)
 - [RTC Web SDK 使用云代理](../../cn/Agora%20Platform/cloud_proxy_web.md)
 - [On-premise Recording SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)
+
+<div class="alert note">如果你想通过 VPN 使用 Agora 相关服务，请确保已联系 VPN 运营商将对应端口添加到白名单中，否则可能会遇到通话失败等未定义行为。</div>
 
 ## Agora RTC SDK
 

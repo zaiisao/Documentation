@@ -3,7 +3,7 @@
 title: 合流录制
 description: 
 platform: Linux
-updatedAt: Thu Dec 19 2019 11:44:29 GMT+0800 (CST)
+updatedAt: Fri Mar 13 2020 03:11:56 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
@@ -62,3 +62,7 @@ updatedAt: Thu Dec 19 2019 11:44:29 GMT+0800 (CST)
 ```
 ./recorder_local --appId <你的 App ID> --channel <待录制的频道名> --channelProfile 1 --uid 0 --appliteDir ~/Agora_Recording_SDK_for_Linux_FULL/bin --isMixingEnabled 1 --mixedVideoAudio 2 --audioProfile 1 --mixResolution 640,480,15,1000 --layoutMode 1
 ```
+
+## 开发注意事项
+
+如果某用户中途停止发流或退出频道，该用户画面会显示为背景色。

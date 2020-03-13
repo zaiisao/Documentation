@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Android
-updatedAt: Mon Mar 09 2020 05:48:45 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 23:52:04 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -54,4 +54,4 @@ projection.stop();
 
 ## 开发注意事项
 * MediaProjection 等 API 需要 Android API level 21+，相关的使用方法请参考 [Google MediaProjection API 文档](https://developer.android.com/reference/android/media/projection/MediaProjection)。
-* 此文档里的代码为缩减版，详细的设计和实现细节请参考完整的 [示例代码](https://github.com/AgoraIO/Advanced-Video/tree/master/Screensharing/Agora-Screen-Sharing-Android#agora-screen-sharing-android)。
+* 此文档里的代码为缩减版，详细的设计和实现细节请参考完整的[示例代码](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Screensharing/Agora-Screen-Sharing-Android)。

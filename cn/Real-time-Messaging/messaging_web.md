@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Wed Mar 11 2020 16:10:20 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 07:40:02 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -34,6 +34,7 @@ updatedAt: Wed Mar 11 2020 16:10:20 GMT+0800 (CST)
 | Internet Explorer 11+  | ✔                  |
 | Firefox 52+ |  ✔                  |
 | 微信浏览器 |  ✔                  |
+| QQ 浏览器 10.5+ |  ✔                  |
 
 
 
@@ -140,6 +141,8 @@ client.on('ConnectionStateChanged', (newState, reason) => {
 ```
 
 ### 登录
+	
+![](https://web-cdn.agora.io/docs-files/1583998779687)
 
 Web 应用必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息和群聊功能。
 

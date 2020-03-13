@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Thu Mar 12 2020 06:29:39 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 11:02:56 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -219,7 +219,7 @@ MediaPlayerKitQuickstart 只支持从本地导入视频，不能通过 URL 地�
 
 <a name="2"></a>
 ## API 文档
-详见 [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
+详见 [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/v1.0.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
 
 ## 注意事项
 
