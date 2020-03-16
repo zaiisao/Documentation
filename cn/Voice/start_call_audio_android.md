@@ -62,25 +62,10 @@ dependencies {
 }
 ```
 
-**方法二：通过 Maven 自动导入**
-
-在 Maven 项目的 pom.xml 文件中，添加如下信息：
-	
-```xml
-<dependency>
-	<groupId>io.agora.rtc</groupId>
-	<artifactId>voice-sdk</artifactId>
-	<!-- 3.0.0 是最新的 Agora 语音 SDK 的版本号。你也可以填写其他版本 --> 
-	<version>3.0.0</version>
-	<type>pom</type>
-</dependency>
-```
-
-**方法三：手动复制 SDK 文件**
+**方法二：手动复制 SDK 文件**
 
 1. 前往 [SDK 下载](https://docs.agora.io/cn/Agora%20Platform/downloads)页面，获取最新版的 Agora 语音 SDK，然后解压。
 2. 将 SDK 包内 libs 路径下的如下文件，拷贝到你的项目路径下：
-
 
 | 文件或文件夹                   | 项目路径                               | 
 | ---------------------------- | ------------------------------------ | 
