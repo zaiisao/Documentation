@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Web
-updatedAt: Thu Mar 12 2020 07:00:05 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 03:24:57 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice functions in your app. 
@@ -146,23 +146,23 @@ npm install agora-rtc-sdk
 Add the following code to the line after `<head>` in your project.
 
 ```javascript
-<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.1.js"></script>
+<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.2.js"></script>
 ```
 
 #### Method 3: Through the Agora website
 
 1. Download the latest [Agora Web SDK](https://docs.agora.io/en/Agora%20Platform/downloads).
 
-2. Copy the `AgoraRTCSDK-3.0.1.js` file to the same directory as your project file.
+2. Copy the `AgoraRTCSDK-3.0.2.js` file to the same directory as your project file.
 
 3. Add the following code to the line above `</body>` in your project.
 
    ```javascript
-   <script src="./AgoraRTCSDK-3.0.1.js"></script>
+   <script src="./AgoraRTCSDK-3.0.2.js"></script>
    ```
 
 
-For simplicity, let's include the Agora Web SDK from a CDN source and copy `<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-3.0.1.js"></script>` to the project file.
+For simplicity, let's include the Agora Web SDK from a CDN source and copy `<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-3.0.2.js"></script>` to the project file.
 
 Now, the project is set up. Next, we'll add the JavaScript code to implement the basic voice/video call functions.
 

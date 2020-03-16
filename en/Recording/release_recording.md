@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Thu Mar 12 2020 06:56:36 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 01:45:23 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -42,6 +42,15 @@ This component package is compatible with the following SDKs:
 
 
 > The Agora On-premise Recording SDK supports both Java and C++ from v2.2.0.
+
+
+## v3.0.1
+
+v3.0.1 was released on March 16, 2020.
+
+**Issue fixed**
+
+Recorded files from an individual recording session have an incorrect timestamp in their names.
 
 ## v3.0.0
 
