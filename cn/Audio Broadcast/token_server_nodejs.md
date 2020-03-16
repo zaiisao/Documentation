@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Node.js
-updatedAt: Wed Mar 04 2020 05:27:06 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 03:40:11 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个正式的 RTC token，并提供 token 生成相关的 Node.js API 参考。
@@ -36,7 +36,7 @@ updatedAt: Wed Mar 04 2020 05:27:06 GMT+0800 (CST)
 
 ## 快速生成 Token
 
-下面我们以 **RtcTokenBuilderSample.py** 为例演示 Token 生成的过程：
+下面我们以 **RtcTokenBuilderSample.js** 为例演示 Token 生成的过程：
 
 1. 登录 [Node.js 官网](https://nodejs.org/en/) 安装 Node.js LTS 版。
 2. 安装 Node.js 依赖：
@@ -56,7 +56,7 @@ updatedAt: Wed Mar 04 2020 05:27:06 GMT+0800 (CST)
 ```
 6. 打开你的本地终端，cd 进入到 **RtcTokenBuilderSample.js** 所在文件夹。
 7. 运行指令： 
-    `python RtcTokenBuilderSample.js` 
+    `node RtcTokenBuilderSample.js` 
      *新生成的 RTC token 会在你的本地终端显示。*
 
 ## API 参考
