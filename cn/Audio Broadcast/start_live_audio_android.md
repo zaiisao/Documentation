@@ -55,7 +55,7 @@ updatedAt: Wed Mar 04 2020 06:52:15 GMT+0800 (CST)
 
 在项目的 **/app/build.gradle** 文件中，添加如下行：
 
-```
+```xml
 ...
 dependencies {
     ...
