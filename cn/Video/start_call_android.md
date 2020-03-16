@@ -57,7 +57,7 @@ Agora 在 GitHub 上提供一个开源的一对一视频通话示例项目 [Agor
 ...
 dependencies {
     ...
-    // 其中 2.9.4 是最新的 Agora 视频 SDK 的版本号。你也可以填写其他版本
+    // 其中 3.0.0 是最新的 Agora 视频 SDK 的版本号。你也可以填写其他版本
     implementation 'io.agora.rtc:full-sdk:2.9.4'
 }
 ```

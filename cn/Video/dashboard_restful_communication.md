@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 13 2020 02:44:36 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 02:15:59 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 认证
@@ -57,7 +57,7 @@ BaseUrl：**https://api.agora.io/dev**
 
 **请求参数**
 
-#### Body 参数
+#### 包体参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -162,7 +162,7 @@ BaseUrl：**https://api.agora.io/dev**
 
 **请求参数**
 
-#### Body 参数
+#### 包体参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -221,7 +221,7 @@ BaseUrl：**https://api.agora.io/dev**
 
 **请求参数**
 
-#### Body 参数
+#### 包体参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -289,7 +289,7 @@ status 404
 
 **请求参数**
 
-#### Body 参数
+#### 包体参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -334,6 +334,8 @@ status 404
 | 请求 URL | BaseUrl/v1/recording_config/ |
 
 **请求参数**
+
+#### 包体参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -381,7 +383,7 @@ status 404
 
 **请求参数**
 
-#### Body 参数
+#### 包体参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -429,7 +431,7 @@ status 404
 | 方法      | POST      |
 | 请求 URL | BaseUrl/v1/reset_signkey |
 
-#### Body 参数
+#### 包体参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -608,7 +610,7 @@ BaseUrl: **https://api.agora.io/dev**
 
 **请求参数**
 
-#### Body 参数
+#### 包体参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -616,7 +618,7 @@ BaseUrl: **https://api.agora.io/dev**
 | `cname`    | （可选）频道名称。不能设为空字符串"" |
 | `uid`           | （可选）用户 ID，可以直接使用 SDK 的方法获取。不能设为 0 |
 | `ip`             | （可选）想要封的用户 IP 地址。不能设为 0 |
-| `time`        | 封人时间，单位为分钟，取值范围为 [1, 1440]，默认值为 60。小于 1 的设置自动改设为 1，大于 1440 的自动改设为 1440。设为 0 时，表示不封禁。服务端会对频道内符合设定规则的用户进行下线一次的操作。用户可以重新登录进入频道。 |
+| `time`        | 封人时间，单位为分钟，取值范围为 [1, 1440]，默认值为 60。设置 0 到 1 之间的，服务端自动改设为 1，大于 1440 的自动改设为 1440。设为 0 时，表示不封禁。服务端会对频道内符合设定规则的用户进行下线一次的操作。用户可以重新登录进入频道。 |
 | `privileges` | 默认参数，表示用户的权限，设为 `["join_channel"]` |
 
 踢人规则通过 `cname`、`uid` 和 `ip` 三个字段实现过滤，规则如下：
@@ -667,7 +669,7 @@ BaseUrl: **https://api.agora.io/dev**
 
 **请求参数**
 
-#### Body 参数
+#### 包体参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -723,7 +725,7 @@ BaseUrl: **https://api.agora.io/dev**
 
 **请求参数**
 
-#### Body 参数
+#### 包体参数
 
 | 参数名 | 描述 | 
 | ---------------- | ---------------- |
@@ -774,6 +776,8 @@ BaseUrl: **https://api.agora.io/dev**
 
 **请求参数**
 
+#### 包体参数
+
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
 | `appid`      | 控制台中项目的 App ID     |
@@ -815,297 +819,181 @@ BaseUrl：**https://api.agora.io/dev**
 <div class="alert note">本组 API 调用频率上限为每秒 20 次。</div>
 
 
-### 查询某个用户在指定频道中的状态 (GET)
+### 查询用户状态 (GET)
 
-该方法查询某个用户是否在指定频道中，如果是，则给出用户在该频道中的角色等状态。
+该方法查询某个用户是否在指定频道中，以及该用户在该频道中的角色等状态。
 
--   方法：GET
--   路径：BaseUrl/v1/channel/user/property/
--   参数: appid, uid, cname
+**基本信息**
 
-    <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>appid</td>
-<td>必填，控制台中项目的 appID</td>
-</tr>
-<tr><td>uid</td>
-<td>必填，用户 ID，可以通过 SDK 获取到</td>
-</tr>
-<tr><td>cname</td>
-<td>必填，channel name，频道名称</td>
-</tr>
-</tbody>
-</table>
+| 基本信息 | 描述 |
+| ---------------- | ---------------- |
+| 方法      | GET      |
+| 请求  URL  | BaseUrl/v1/channel/user/property/ |
 
-如：/channel/user/property/<appid\>/<uid\>/<channelName\>
+**请求参数
 
--   响应:
+#### URL 参数
 
-	```
-	{
-		"success": true,
-		"data": {
-			"join": 1549073054,
-			"in_channel": true,
-			"role": 2
-		}
-	}
-	```
+| 参数名 | 描述 |
+| ---------------- | ---------------- | 
+| `appid`      | 控制台中项目的 App ID      | 
+| `uid`          | 用户 ID，可以通过 SDK 获取到 |
+| `cname`   | 频道名 |
 
-    <table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>join</td>
-<td><p>该用户加入频道的时间戳</p>
-</td></tr>
-<td>success</td>
-<td><p>查询请求状态</p>
-<ul>
-<li>true：请求成功</li>
-<li>false：请求不成功</li>
-</ul>
-</td>
-</tr>
-<tr><td>in_channel</td>
-<td><p>查询用户是否在频道内</p>
-<ul>
-<li>true：用户在频道内</li>
-<li>false：用户不在频道内</li>
-</ul>
-</td>
-</tr>
-<tr><td>role</td>
-<td><p>查询用户在频道内的角色</p>
-<ul>
-<li>0：未知</li>
-<li>1：用户角色为通信用户</li>
-<li>2：用户角色为直播场景视频主播</li>
-<li>3：用户角色为主播模式观众</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+**请求示例**
 
-### 获取频道内用户列表 (GET)
+```
+BaseUrl/v1/channel/user/property/{appid}/{uid}/{channelName}
+```
 
-该方法获取指定频道内的用户列表。如果在通信场景下，则返回频道内的用户列表；如果在直播场景下，则分别返回主播列表和观众列表。
+**响应参数
 
--   方法：GET
--   路径：BaseUrl/v1/channel/user/
--   参数: appid, cname
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `success`  | 本次请求的状态：<ul><li>true：请求成功</li><li>false：请求不成功</li></ul> |
+| `data`  | 指定用户在频道中的状态数据，包含如下字段：<ul><li>`join`：该用户加入频道的时间戳</li><li>`in_channel`：该用户是否在频道内：<ul><li>true：该用户在频道内</li><li>false：该用户不在频道内</li></ul><li>`role`：该用户在频道内的角色：<ul><li>0：未知</li><li>1：通信场景的用户</li><li>2：直播场景的主播</li><li>3：直播场景的观众</li></ul></li></ul> |
 
-    <table>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>appid</td>
-<td>必填，控制台中项目的 appID</td>
-</tr>
-<tr><td>cname</td>
-<td>必填，channel name，频道名称</td>
-</tr>
-</tbody>
-</table>
+**响应示例**
 
-如：/v1/channel/user/<appid\>/<channelName\>
+```json
+{
+  "success": true,
+  "data": {
+    "join": 1549073054,
+    "in_channel": true,
+    "role": 2
+  }
+}
+```
 
--   响应：不同的频道场景下，该方法返回的响应内容不同。
+### 获取用户列表 (GET)
 
-	```json
-	// 如果是通信频道
-	{
-			"success": true,
-			"data": {
-					"channel_exist": true,
-					"mode": 1,
-					"total": 1,
-					"users": [<uid>]
-			}
-	}
-	```
+该方法获取指定频道内的用户列表：
+- 通信场景下，返回频道内的用户列表。
+- 直播场景下，返回频道内的主播列表和观众列表。
 
-	<table>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>success</td>
-<td><p>查询请求状态</p>
-<ul>
-<li>true：请求成功</li>
-<li>false：请求不成功</li>
-</ul>
-</td>
-</tr>
-<tr><td>channel_exsit</td>
-<td><p>查询频道是否存在：</p>
-<ul>
-<li>true：频道存在</li>
-<li>false：频道不存在</li>
-</ul>
-</td>
-</tr>
-<tr><td>mode</td>
-<td><p>查询频道场景：</p>
-<ul>
-<li>1：频道为通信场景</li>
-<li>2：频道为直播场景</li>
-</ul>
-</td>
-</tr>
-<tr><td>total</td>
-<td>频道内的用户总人数</td>
-</tr>
-<tr><td>users</td>
-<td>频道内所有用户的 uid</td>
-</tr>
-</tbody>
-</table>
+**基本信息**
+
+| 基本信息 | 描述 |
+| ---------------- | ---------------- |
+| 方法      | GET      |
+| 请求 URL  | BaseUrl/v1/channel/user/ |
+
+**请求参数**
+
+#### URL 参数
+
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `appid`      | 控制台中项目的 App ID      |
+| `cname`    | 频道名 |
+
+**请求示例**
+
+```
+BaseUrl/v1/channel/user/{appid}/{channelName}
+```
+
+**响应参数**
+
+不同的频道场景下，该方法返回的响应内容不同。
+
+- 通信场景：
+
+| 参数 | 描述 |
+| ---------------- | ---------------- |
+| `sucess`      | 本次请求是否成功：<ul><li>true：请求成功</li><li>false：请求不成功</li></ul>      |
+| `data` | 用户信息数据，包含如下字段：<ul><li>`channel_exist`：指定查询的频道是否存在<ul><li>true：存在</li><li>false：不存在</li></ul><li>`mode`：频道场景：<ul><li>1：通信场景</li><li>2：直播场景</li></ul><li>`total`：频道内的用户总人数</li><li>`users`：频道内所有用户的 ID 列表。</li></ul> |
+
+```json
+{
+  "success": true,
+  "data": {
+    "channel_exist": true,
+    "mode": 1,
+    "total": 1,
+    "users": [<uid>]
+  }
+}
+```
+
+- 直播场景：
+
+| 参数 | 描述 |
+| ---------------- | ---------------- |
+| `sucess`      | 本次请求是否成功：<ul><li>true：请求成功</li><li>false：请求不成功</li></ul>      |
+| `data` | 用户信息数据，包含如下字段：<ul><li>`channel_exist`：指定查询的频道是否存在<ul><li>true：存在</li><li>false：不存在</li></ul><li>`mode`：频道场景：<ul><li>1：通信场景</li><li>2：直播场景</li></ul><li>`broadcasters`：频道内所有主播的用户 ID 列表</li><li>`audience`：频道内观众的 uid 列表，最多包含前 10000 名观众。</li><li>`audience_total`：频道内的观众总人数。</li></ul> |
+
+```json
+{
+  "success": true,
+  "data": {
+    "channel_exist": true,
+    "mode": 2,
+    "broadcasters": [<uid>],
+    "audience": [<uid>],
+    "audience_total": <count>
+  }
+}
+```
 		
-	```json
-	// 如果是直播频道
-	{
-			"success": true,
-			"data": {
-					"channel_exist": true,
-					"mode": 2,
-					"broadcasters": [<uid>],
-					"audience": [<uid>],
-					"audience_total": <count>
-			}
-	}
-	```
-
-	<table>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>success</td>
-<td><p>查询请求状态</p>
-<ul>
-<li>true：请求成功</li>
-<li>false：请求不成功</li>
-</ul>
-</td>
-</tr>
-<tr><td>channel_exsit</td>
-<td><p>查询频道是否存在：</p>
-<ul>
-<li>true：频道存在</li>
-<li>false：频道不存在</li>
-</ul>
-</td>
-</tr>
-<tr><td>mode</td>
-<td><p>查询频道场景：</p>
-<ul>
-<li>1：频道为通信场景</li>
-<li>2：频道为直播场景</li>
-</ul>
-</td>
-</tr>
-<tr><td>broadcasters</td>
-<td>频道内所有主播的 uid 列表</td>
-</tr>
-<tr><td>audience</td>
-<td>频道内观众的 uid 列表，最多包含前 10000 名观众</td>
-</tr>
-<tr><td>audience_total</td>
-<td>频道内的观众总人数</td>
-</tr>
-</tbody>
-</table>
-
-
 ### 分页查询厂商频道列表 (GET)
 
 该方法查询指定厂商的频道列表。
 
+**基本信息**
 
--   方法：GET
--   路径：BaseUrl/v1/channel/appid/
--   参数：?page\_no=0&page\_size=100
+| 请求基本参数 | 描述 |
+| ---------------- | ---------------- |
+| 方法      | GET      |
+| 请求 URL | BaseUrl/v1/channel/appid/ |
 
-    <table>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>page_no</td>
-<td>选填，起始页码，默认值为 0</td>
-</tr>
-<tr><td>page_size</td>
-<td>选填，每页条数，默认值为 100，最大值为 500</td>
-</tr>
-</tbody>
-</table>
+**请求参数**
 
-如: /v1/channel/<appid\>
+#### 查询参数
 
-带参数: /v1/channel/<appid\>?page\_no=0&page\_size=100
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `page_no`      | 厂商频道列表的起始页面，默认值为 0      |
+| `page_size`   | 每个页面显示的列表数量，默认值为 100，最大值为 500 |
 
--   响应:
+**请求示例**
 
-    ```
-     {
-              "success": true,
-              "data": {
-                  "channels": [
-                      {
-                          "channel_name": "lkj144",
-                          "user_count": 3
-                      }
-                  ],
-                  "total_size": 3
-          }
-    
-    }
-    ```
+```
+// 不带查询参数
+BaseUrl/v1/channel/{appid}
 
-    <table>
-<tbody>
-<tr><td><strong>参数</strong></td>
-<td><strong>描述</strong></td>
-</tr>
-<tr><td>success</td>
-<td><p>查询请求状态</p>
-<ul>
-<li>true：请求成功</li>
-<li>false：请求不成功</li>
-</ul>
-</td>
-</tr>
-<tr><td>channel_name</td>
-<td>频道名</td>
-</tr>
-<tr><td>user_count</td>
-<td>频道内用户数量</td>
-</tr>
-<tr><td>total_size</td>
-<td>频道总数</td>
-</tr>
-</tbody>
-</table>
+// 带查询参数
+BaseUrl/v1/channel/{appid}?page_no=0&page_size=100
+```
+
+**响应参数**
+
+| 参数名 | 描述 |
+| ---------------- | ---------------- |
+| `success`     | 本次请求状态：<ul><li>true：请求成功</li><li>false：请求不成功</li></ul>      |
+| `data` | 响应数据，包含以下字段：<ul><li>`channels`：频道列表，包含如下内容：<ul><li>`channel_name`：频道名</li><li>`user_count`：该频道内的用户人数</li></ul><li>`total_size`：频道总数</li></ul> |
+
+**响应示例**
+
+```json
+{
+  "success": true,
+  "data": {
+    "channels": [
+      {
+        "channel_name": "lkj144",
+        "user_count": 3
+      }
+    ],
+    "total_size": 3
+  }
+}
+```
 
 
 ## 错误码和警告码
 
-详见[错误码和警告码](../../cn/Video/the_error_native.md)。
+如果在使用控制台 RESTful API 过程中遇到警告或报错，请参考[警告码](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21)和[错误码](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora.html#a8affb9bb02864d82c4333529dc3d75a1)文档进行问题排查。
 
 
