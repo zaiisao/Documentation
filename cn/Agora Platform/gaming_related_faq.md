@@ -4,7 +4,7 @@ title: 游戏相关
 description: 
 platform: All Platforms
 updatedAt: Wed Aug 07 2019 08:58:35 GMT+0800 (CST)
----
+
 # 游戏相关
 ## 游戏音效问题
 
@@ -25,6 +25,8 @@ updatedAt: Wed Aug 07 2019 08:58:35 GMT+0800 (CST)
 如果不想在进出房间时发生音量变化，我们建议在退出语音房间时，把 AudioSessionCategory 的 mode 设置回进房间之前的设置。
 
 AMG SDK v2.2 及之后的版本，以及 2019 年之后发布的 SDK，会自动完成该操作。
+
+AMG2.2 SDK 以及2019年以后的SDK，已经会负责来完成这个操作了。
 
 ### 接入 SDK 后游戏音乐音效与语音相互冲突。
 
@@ -72,6 +74,7 @@ mRtcEngine.setParameters("{\"che.audio.enable.ns\":true}");
 
 上述设置可能会造成回声问题，我们建议充分测试后进行实现。
 
+
 ### 蓝牙耳机为什么没有立体声 ？
 
 因为蓝牙要开通话模式，即 SCO，才能实现播放和录音双向功能。 而在 SCO 模式下，蓝牙只能单声道播放；在 A2DP 模式下蓝牙可以走双声道，但如果蓝牙音箱只支持 A2DP 不支持 SCO，又无法进行语音通话。
@@ -84,5 +87,4 @@ mRtcEngine.setParameters("{\"che.audio.enable.ns\":true}");
 ### Android 与 iPhone 耳机可以兼容吗？
 
 不能。iPhone 耳机接口的左右声道、麦克风的排列跟 Android 手机是不一样的。
-
 
