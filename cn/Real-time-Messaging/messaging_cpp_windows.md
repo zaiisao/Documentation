@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Windows CPP
-updatedAt: Thu Oct 24 2019 11:50:46 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 11:28:07 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -90,7 +90,7 @@ updatedAt: Thu Oct 24 2019 11:50:46 GMT+0800 (CST)
 
 - 进入**链接器 > 常规 > 附加库目录**菜单，点击**编辑**，并在弹出窗口中输入 **$(SolutionDir)**。
 
-- 进入**链接器 > 输入 > 附加依赖项**菜单，点击**编辑**，并在弹出窗口中输入 **agora_rtc_sdk.lib**。
+- 进入**链接器 > 输入 > 附加依赖项**菜单，点击**编辑**，并在弹出窗口中输入 **agora_rtm_sdk.lib**。
 
 ## 实时消息和基本频道操作
 

@@ -3,7 +3,7 @@
 title: 水晶球通话调查案例
 description: 
 platform: All Platforms
-updatedAt: Fri Feb 14 2020 04:07:04 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 15:52:32 GMT+0800 (CST)
 ---
 # 水晶球通话调查案例
 本页列出几个典型的通话分析案例，帮助你快速了解如何使用[水晶球](../../cn/Agora%20Platform/aa_guide.md)的通话调查功能来查看和分析通话质量。
@@ -13,10 +13,10 @@ updatedAt: Fri Feb 14 2020 04:07:04 GMT+0800 (CST)
 ## 通话体验良好
 
 <div class="reveal-content">
-	<div class="reveal-btn"><img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-Normal/UseCase-Normal-1.jpeg"/></div>
+	<div class="reveal-btn"><img src="https://web-cdn.agora.io/docs-files/1584373794346"/></div>
 	<script type="text/template">
 			<section>
-				<img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-Normal/UseCase-Normal-1.jpeg"/>
+				<img src="https://web-cdn.agora.io/docs-files/1584373794346"/>
 			</section>
 			<section>
 				<img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-Normal/UseCase-Normal-2.jpeg"/>
@@ -55,10 +55,10 @@ updatedAt: Fri Feb 14 2020 04:07:04 GMT+0800 (CST)
 ## 发送端网络问题导致视频卡糊
 
 <div class="reveal-content">
-	<div class="reveal-btn"><img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-BySenderNetwork/UseCase-BySenderNetwork-1.jpeg"/></div>
+	<div class="reveal-btn"><img src="https://web-cdn.agora.io/docs-files/1584373849185"/></div>
 	<script type="text/template">
 			<section>
-				<img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-BySenderNetwork/UseCase-BySenderNetwork-1.jpeg"/>
+				<img src="https://web-cdn.agora.io/docs-files/1584373849185"/>
 			</section>
 			<section>
 				<img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-BySenderNetwork/UseCase-BySenderNetwork-2.jpeg"/>
@@ -112,10 +112,10 @@ updatedAt: Fri Feb 14 2020 04:07:04 GMT+0800 (CST)
 ## 接收端网络问题导致视频卡顿
 
 <div class="reveal-content">
-	<div class="reveal-btn"><img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-ByReceiverNetwork/UseCase-ByReceiverNetwork-1.jpeg"/></div>
+	<div class="reveal-btn"><img src="https://web-cdn.agora.io/docs-files/1584373877928"/></div>
 	<script type="text/template">
 			<section>
-				<img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-ByReceiverNetwork/UseCase-ByReceiverNetwork-1.jpeg"/>
+				<img src="https://web-cdn.agora.io/docs-files/1584373877928"/>
 			</section>
 			<section>
 				<img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-ByReceiverNetwork/UseCase-ByReceiverNetwork-2.jpeg"/>
@@ -168,10 +168,10 @@ updatedAt: Fri Feb 14 2020 04:07:04 GMT+0800 (CST)
 ## 设备性能问题导致视频卡顿
 
 <div class="reveal-content">
-	<div class="reveal-btn"><img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-ByDevice/UseCase-ByDevice-1.jpeg"/></div>
+	<div class="reveal-btn"><img src="https://web-cdn.agora.io/docs-files/1584373904194"/></div>
 	<script type="text/template">
 			<section>
-				<img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-ByDevice/UseCase-ByDevice-1.jpeg"/>
+				<img src="https://web-cdn.agora.io/docs-files/1584373904194"/>
 			</section>
 			<section>
 				<img src="https://web-cdn.agora.io/dashboard/tutorial/zh/tutorial/UseCase-ByDevice/UseCase-ByDevice-2.jpeg"/>

@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Mar 16 2020 03:55:27 GMT+0800 (CST)
+updatedAt: Tue Mar 17 2020 01:12:54 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
@@ -134,6 +134,9 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 
 `recordingConfig` 是一个用于设置录制选项的 JSON Object，包含以下字段：
 
+- `channelType`：Number 类型，频道模式。频道模式必须与 Agora Native/Web SDK 的设置一致，否则可能导致问题。
+  - `0`：通信模式（默认）
+  - `1`：直播模式
 - `streamTypes`：（选填）Number 类型，录制的媒体流类型。
   - `0`：仅录制音频
   - `1`：仅录制视频
@@ -144,9 +147,6 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `2`：设置 AES128ECB 解密方案
   - `3`：设置 AES256XTS 解密方案
 - `secret`：（选填）String 类型。启用解密模式后，设置的解密密码。
-- `channelType`：Number 类型，频道模式。频道模式必须与 Agora Native/Web SDK 的设置一致，否则可能导致问题。
-  - `0`：通信模式（默认）
-  - `1`：直播模式
 - `audioProfile`：（选填）设置录制文件的音频采样率，码率，编码模式和声道数。目前单流模式下不能设置该参数。
   - `0`：（默认）48 kHz 采样率，音乐编码，单声道，编码码率约 48 Kbps
   - `1`：48 kHz 采样率，音乐编码, 单声道，编码码率约 128 Kbps
