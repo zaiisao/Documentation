@@ -3,10 +3,75 @@
 title: Agora Web SDK 支持哪些浏览器
 description: 
 platform: Web
-updatedAt: Mon Jul 01 2019 15:19:26 GMT+0800 (CST)
+updatedAt: Wed Sep 11 2019 11:03:54 GMT+0800 (CST)
 ---
 # Agora Web SDK 支持哪些浏览器
-Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台详见[兼容性说明](https://docs.agora.io/cn/Interactive%20Broadcast/release_web_video?platform=Web#兼容性说明)。由于浏览器的差异，在不同浏览器及平台上支持的功能可能不同。下面列出浏览器和平台的已知限制。
+Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
+
+<table>
+  <tr>
+    <th>平台</th>
+    <th>Chrome 58+</th>
+    <th>Firefox 56+</th>
+    <th>Safari 11+</th>
+    <th>Opera 45+</th>
+    <th>QQ 浏览器最新版</th>
+    <th>360 安全浏览器</th>
+    <th>微信浏览器</th>
+  </tr>
+  <tr>
+    <td>Android 4.1+</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+		<td><b>N/A</b></td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+  </tr>
+  <tr>
+    <td>iOS 11+</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+  </tr>
+  <tr>
+    <td>macOS 10+</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+    <td><font color="red">✘</td>
+  </tr>
+  <tr>
+    <td>Windows 7+</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+		<td><b>N/A</b></td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="green">✔</td>
+    <td><font color="red">✘</td>
+  </tr>
+</table>
+
+<div class="alert info">除上表浏览器外，还有以下支持：
+	<li>Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。</li>
+	<li>Agora Web SDK 2.7 及以上版本支持 Windows 10 平台的 Edge 浏览器，详见 <a href="https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge">Edge 浏览器支持</a>。</li>
+	<li>Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。</li>
+</div>
+<div class="alert note">以下场景中请务必将 Agora Web SDK 升级至 2.6 或更高版本:
+	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器</li>
+	<li>macOS 上使用 Safari 12.1 及以上版本</li>
+	</div>
+
+由于浏览器的差异，在不同浏览器及平台上支持的功能可能不同。下面列出浏览器和平台的已知限制。
 
 ## Chrome
 
@@ -17,7 +82,7 @@ Agora Web SDK 是基于 WebRTC 实现的采集和编解码，而 Chrome 又是�
 
 ## Safari
 
-- 编解码格式仅支持 H.264。
+- Safari 12.1 及之前版本仅支持 H.264 编解码格式。
 - Safari 只支持视频帧率设为 30 fps。
 - 设备权限
   - Safari 无法获取输出设备信息，因此不支持 `getPlayoutDevices` 和 `setAudioOutput` 这两个方法。

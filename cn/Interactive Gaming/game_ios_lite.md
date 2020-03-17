@@ -3,7 +3,7 @@
 title: 游戏裁剪版 API
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:13:33 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:14:00 GMT+0800 (CST)
 ---
 # 游戏裁剪版 API
 <table>
@@ -175,7 +175,7 @@ delegate:(id<AgoraRtcEngineKitDelegate>)delegate;
 <tr><td><code>token</code></td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token。如果你已经启用了 App Certificate, 请务必使用 Token。关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a></li>
+<li>安全要求高: 将值设置为 Token。如果你已经启用了 App 证书, 请务必使用 Token。关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a></li>
 </ul>
 </td>
 </tr>
@@ -633,7 +633,7 @@ didOccurWarning:(AgoraRtcErrorCode)warningCode;
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>warningCode</code></td>
-<td>警告代码</td>
+<td>警告码</td>
 </tr>
 </tbody>
 </table>
@@ -662,7 +662,7 @@ didOccurError:(AgoraRtcErrorCode)errorCode;
 <td>AgoraRtcEngineKit 对象</td>
 </tr>
 <tr><td><code>errorCode</code></td>
-<td>错误代码和警告代码</td>
+<td>错误码和警告码</td>
 </tr>
 </tbody>
 </table>
@@ -1006,8 +1006,8 @@ reportRtcStats:(AgoraRtcStats*)stats;
 
 该回调方法表示 SDK 和服务器失去了网络连接，并且尝试自动重连一段时间（默认 10 秒）后仍未连上。 该回调触发后，SDK 仍然会尝试重连，重连成功后会触发 `onRejoinChannelSuccess` 回调。
 
-## 错误代码和警告代码 - AMG SDK
+## 错误码和警告码 - AMG SDK
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_game.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_game.md)。
 
 

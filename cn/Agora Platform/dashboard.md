@@ -1,184 +1,60 @@
 
 ---
-title: Dashboard 概览
+title: 控制台概览
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 10:28:32 GMT+0800 (CST)
+updatedAt: Mon Oct 21 2019 08:23:06 GMT+0800 (CST)
 ---
-# Dashboard 概览
-欢迎使用 Agora Dashboard。在这里，你可以查看频道用量，追踪通话质量，进行账户充值，管理项目和权限，以及获取 Agora 技术支持。
+# 控制台概览
+欢迎使用控制台。控制台提供直观的界面，方便你在使用 Agora 各产品时进行充值、查看、管理等操作。本指南简要介绍如何使用控制台。
 
-使用 Agora Dashboard 前，你需要创建一个 Agora 账号，详见[注册与登录](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。请务必保存好你的账号和密码。如果不小心遗失密码，也不必担心，参照[找回密码](../../cn/Agora%20Platform/sign_in_and_sign_up.md)中的步骤即可轻松找回密码。
+> 本指南介绍 Agora 控制台的所有功能，但是不一定每个团队成员都能使用所有的功能。具体成员所能看到的页面视该成员的角色权限而定，详见[管理成员和角色中的权限说明](../../cn/Agora%20Platform/manage_member.md)。
 
-> 本页介绍 Dashboard 的所有功能，但是不一定每个账户都能使用所有的功能。具体账户所能看到的页面视该账户的角色权限而定。
+## 注册与登录
 
-## Dashboard 功能概览
-
-<table>
-<tr>
-<th>功能</th>
-<th>简介</th>
-</tr>
-<tr>
-<td>查看用量</td>
-<td>查看特定时间段内语音及视频通话时长，自助统计通话时长及费用。</td>
-</tr>
-<tr>
-<td>追踪质量</td>
-<td>通过图表全方位监控、分析并诊断产品的用户使用指标及设备性能，自助定位问题。</td>
-</tr>
-<tr>
-<td>线上充值</td>
-<td>查看账户余额，使用支付宝线上充值，并查询充值记录。</td>
-</tr>
-<tr>
-<td>管理项目</td>
-<td>创建并管理项目，获取项目 App ID 和 App Certificate。</td>
-</tr>
-<tr>
-<td>管理成员角色</td>
-<td>在项目中添加并管理成员角色，设置角色对应的项目管理权限。</td>
-</tr>
-<tr>
-<td>提交与查看工单</td>
-<td>在开发中遇到问题时，查询解决方案以及获取 Agora 技术支持。</td>
-</tr>
-<tr>
-<td>使用 RESTful API</td>
-<td>使用服务端操作的 API，实现从服务端踢人、用量查询、查询在线信息等功能。</td>
-</tr>
-<tr>
-<td>其他功能</td>
-<td>通过 Dashboard 顶栏按钮，进行账号相关设置，进入开发者社区。</td>
-</tr>
-</table>
+使用 Agora 控制台前，你需要[创建一个 Agora 开发者账号](https://sso.agora.io/cn/signup)。请务必保存好你的账号和密码。如不小心遗失密码，参照[找回密码](../../cn/Agora%20Platform/sign_in_and_sign_up.md)中的步骤即可轻松找回密码。
 
 ## 总览页
-![](https://web-cdn.agora.io/docs-files/1557741022778)
 
-登录 Dashboard 后，你会看到一个总览页。该页提供 Dashboard 常用功能的入口。在该页面，你可以：
+登录 Agora 控制台后，你会看到一个总览页。该页提供控制台常用功能的入口。在该页面，你可以：
 
 - 快速查看项目及其用量。
 - 实时掌握账户余额与收支明细，进行充值。
 - 及时查看最新消息。
 - 深入了解 Agora 产品、SDK、示例代码和 API 方法等。
-- 快速学习如何集成 Agora 产品。
+- 快速学习如何集成 Agora SDK。
 - 试用水晶球（Agora Analytics），查看通话质量。
 
-## 查看项目用量
+![](https://web-cdn.agora.io/docs-files/1557741022778)
 
-点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**用量统计**页面。在页面左上角选择项目后，你可查看该项目在特定时间段内**音视频用量**和**录制用量**的相关数据。
+## 主要功能
 
-> 时间段范围不能超过 3 个月。
+控制台的主要功能包括：
 
-#### 查看音视频用量
+### 管理项目
 
-![](https://web-cdn.agora.io/docs-files/1557741125258)
+创建和管理项目，获取项目的 App ID、App 证书和临时 Token。详见[创建和管理项目](../../cn/Agora%20Platform/manage_projects.md)。
 
-点击左侧次级导航栏下列按钮查看选定时间段内音视频用量相关数据，自助计算费用<sup>[1]</sup>。
+### 查看项目用量
 
-- **分钟数**：表示特定时间段内语音、高清视频和超清视频<sup>[2]</sup>时长。
-- **小程序**：表示特定时间段内小程序的语音和视频时长。
+查看各项目的**音视频用量**和**录制用量**的相关数据。详见[查看用量](../../cn/Agora%20Platform/check_usage.md)。
 
-> [1] 计费方式详见[计费](https://docs.agora.io/cn/Agora%20Platform/billing_faq)。
->
-> [2] 视频清晰度分类标准：
->
-> | 类别 | 分辨率              |
-> | ---- | -------------------------------- |
-> | 高清 | 视频分辨率介于 360p 和 720p 之间 |
-> | 超清 | 视频分辨率大于 720p              |
+### 追踪通话质量
 
-#### 查看录制用量
+使用 Agora 为开发者提供的实时通话质量监控工具，查看通话数据，调查通话质量问题。详见[水晶球文档](../../cn/Agora%20Platform/aa_guide.md)。
 
-点击左侧次级导航栏**录制**下方的**录制 SDK**和**云录制**按钮查看特定时间段内分别使用本地服务端录制和云端录制的语音、高清视频和超清视频的**录制**时长。
+### 财务消费管理
 
-## 追踪通话质量
+进行财务相关的操作，包括线上充值、提现、查看账单、申请发票等操作。详见[线上充值](../../cn/Agora%20Platform/online_payment.md)和[申请发票](../../cn/Agora%20Platform/apply_invoice.md)。
 
-点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1557740763927) 按钮进入**水晶球**页面。水晶球是 Agora 为开发者提供的实时质量监控工具。
+### 管理成员和角色
 
-选择**项目**和**时间段**、输入**频道名称**或 **UID** 后查看通话质量。
+为你的账号添加新成员，并设置成员的角色和权限。详见[管理成员和角色](../../cn/Agora%20Platform/manage_member.md)。
 
-我们提供专门的文档介绍水晶球提供的数据和具体含义，知道你使用水晶球来识别通话质量问题。详见[水晶球](../../cn/Agora%20Platform/aa_guide.md)。
+### 提交工单
 
-## 财务管理
+你在使用产品过程中如有任何疑问，都可以在控制台寻求解答。详见[提交工单指南](../../cn/Agora%20Platform/ticket.md)。
 
-点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1557740933898) 按钮进入**财务消费**页面，查看账户余额，使用支付宝线上充值，查询充值记录和账单，以及申请发票。详见[线上充值](../../cn/Agora%20Platform/online_payment.md)和[申请发票](../../cn/Agora%20Platform/apply_voice.md)。
+### 使用 RESTful API
 
-## 管理成员和角色
-
-点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551255228096) 按钮，进入**成员角色管理**页面。
-
-![](https://web-cdn.agora.io/docs-files/1557741436296)
-
-你可在本页面进行以下操作：
-
-- 点击**添加**，添加新的团队成员并设置其用户权限。受邀者将收到邀请邮件。
-- 点击![](https://web-cdn.agora.io/docs-files/1551255422216)，重置成员的角色和权限。根据需求重新设置该成员的角色和权限。
-- 点击![](https://web-cdn.agora.io/docs-files/1551255494008)，重置成员的登录密码，该成员会收到密码重置邮件。
-- 点击![](https://web-cdn.agora.io/docs-files/1551255516590)，删除成员，将不需要继续参与该项目的成员移出。
-
-#### **权限说明**
-
-你可以将项目成员设置成不同的角色。不同角色拥有不同的权限，例如查看项目用量、查看水晶球、查看财务信息、编辑成员与角色、编辑项目，以及是否能看到所有项目的数据，还是只能看到指定项目的数据。
-
-我们设置了 5 个默认角色，对应的名称和权限如下：
-
-- 管理员：拥有最大权限，能够查看所有项目的用量、水晶球和财务信息，并管理项目和成员。
-- 财务：仅能查看所有项目的财务中心。
-- 产品/运营：仅能查看所有项目的用量。
-- 客服/技术支持：仅能查看水晶球。
-- 工程师：仅能管理项目和查看水晶球。
-
-你也可以点击**添加角色**按钮，根据需要创建自定义角色并设置相关权限。
-
-## 管理项目
-
-点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) 按钮进入**项目管理**页面。
-
-![](https://web-cdn.agora.io/docs-files/1558344557924)
-
-**创建新项目**
-
-点击**创建**按钮，会弹出一个对话框，要求你输入**项目名称**，选择一种**鉴权机制**（Token 或 App ID）。
-
-> Agora 提供两种鉴权机制：App ID 和 Token。鉴权机制的介绍详见[校验用户权限](../../cn/Interactive%20Broadcast/token.md)。我们推荐使用安全性更高的 Token 机制：
-> - 在项目测试阶段，启用 App 证书后可以直接在 Dashboard 生成一个临时 token 进行测试。
-> - 项目准备正式上线时，你需要在 Server 端部署一个 Token Generator 来生成 token。
-
-上图中，项目 A 是鉴权机制为 Token 的项目，App 证书已开启，点击 ![](https://web-cdn.agora.io/docs-files/1558344584474) 可以生成**临时 Token**，用于项目测试阶段。项目 B 是鉴权机制为 App ID 的项目，App 证书未启用。
-
-此外，你还可以：
-
-- 输入项目名称或 App ID，点击 ![](https://web-cdn.agora.io/docs-files/1551255111208) 搜索项目。
-- 点击![](https://web-cdn.agora.io/docs-files/1551255135678)，查看 App ID，编辑项目信息。
-- 点击![](https://web-cdn.agora.io/docs-files/1551255151708)，查看项目用量。
-- 根据![](https://web-cdn.agora.io/docs-files/1551255188685)和![](https://web-cdn.agora.io/docs-files/1551258332165)判断项目状态为禁用还是开启。
-
-## 提交与查看工单
-
-你在产品使用过程中如有任何疑问，可通过工单获得解答。操作步骤如下：
-
-1. 点击页面上方**支持 > 提交工单**按钮，输入问题或关键字，查看关联内容。
-2. 如果现有内容无法解决你的问题，可选择类别，输入问题，提交工单。Agora 技术支持将与你联系。
-3. 点击**支持 > 查看工单**，查看工单处理进度。
-
-
-## 使用 RESTful API
-
-Agora Dashboard 提供服务端操作的 API，实现从服务端踢人、用量查询、查询在线信息等功能。
-
-点击页面右上角**用户名 > RESTful API**按钮，获取使用 Agora RESTful API 所需的 Customer ID 和 Customer Certificate。具体操作请见 [RESTful API 文档](../../cn/Agora%20Platform/dashboard_restful_live.md)。
-
-## 其他功能
-
-### 修改账号设置
-
-点击页面右上角**用户名**，可进行以下操作：
-* 修改密码；
-* 修改个人信息和偏好；
-* 切换界面语言。
-
-### 进入开发者社区
-
-点击页面上方**社区**按钮，进入 Github、在线论坛和微信公众号等开发者社区，与全球开发者进行交流互动。
+获取使用 Agora RESTful API 所需的 Customer ID 和 Customer Certificate，实现从服务端踢人、用量查询、查询在线信息等功能。详见 [RESTful API 文档](../../cn/Agora%20Platform/dashboard_restful_live.md)。

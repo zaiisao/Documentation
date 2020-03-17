@@ -1,11 +1,14 @@
 
 ---
-title: Demo 使用指南
+title: Demo 使用指南 (Deprecated)
 description: 
 platform: Linux Java
-updatedAt: Thu Jul 18 2019 06:52:49 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 01:22:55 GMT+0800 (CST)
 ---
-# Demo 使用指南
+# Demo 使用指南 (Deprecated)
+<div class="alert note">云端录制 SDK 停服计划（建议你及时升级到功能丰富、调用更方便的云端录制 RESTful API）：<li>从 2019 年 11 月 15 日起，云端录制 SDK 将停止维护。已经下载的 SDK 可继续使用。</li><li>从 2019 年 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法继续使用云端录制 SDK。</li></div>
+
+
 本文介绍如何通过命令行运行 Java demo 进行云端录制。 你也可以通过调用 API 实现录制，详见[调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart_java.md)。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
 
 ## 前提条件
@@ -95,7 +98,7 @@ java -Xbootclasspath/a:../lib/agora-cloud-recording-sdk.jar: -jar -Dsun.boot.lib
 | -------------------- | ------------------------------------------------------------ |
 | appId                | 待录制频道的 App ID，必须和 Agora Native/Web SDK 的 App ID 一致，详见<a href="../../cn/cloud-recording/token.md">获取 App ID</a>。 |
 | channelName          | 待录制频道的频道名。                                         |
-| uid                  | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。** |
+| uid                  | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。 |
 | vendor     | 第三方云存储：<li>0：[七牛云](https://www.qiniu.com/products/kodo)。<li>1：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)。<li>2：[阿里云](https://www.aliyun.com/product/oss)。|
 | region     | 第三方云存储指定的地区信息。<br>当 `vendor` = 0，即第三方云存储为[七牛云](https://www.qiniu.com/products/kodo)时：<li>0：Huadong <li>1：Huabei <li>2：Huanan <li>3：Beimei  <br>当 `vendor` = 1，即第三方云存储为 [Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1) 时：<li>0：US_EAST_1 <li>1：US_EAST_2 <li>2：US_WEST_1 <li>3：US_WEST_2  <li>4：EU_WEST_1 <li> 5：EU_WEST_2  <li>6：EU_WEST_3 <li>7：EU_CENTRAL_1 <li>8：AP_SOUTHEAST_1 <li>9：AP_SOUTHEAST_2 <li>10：AP_NORTHEAST_1 <li>11：AP_NORTHEAST_2 <li>12：SA_EAST_1 <li>13：CA_CENTRAL_1 <li>14：AP_SOUTH_1 <li>15：CN_NORTH_1 <li>16：CN_NORTHWEST_1 <li>17：US_GOV_WEST_1 <br>当 `vendor` = 2，即第三方云存储为[阿里云](https://www.aliyun.com/product/oss)时：<li>0：CN_Hangzhou <li>1：CN_Shanghai <li>2：CN_Qingdao <li>3：CN_Beijin  <li>4：CN_Zhangjiakou <li> 5：CN_Huhehaote  <li>6：CN_Shenzhen <li>7：CN_Hongkong <li>8：US_West_1 <li>9：US_East_1 <li>10：AP_Southeast_1 <li>11：AP_Southeast_2 <li>12：AP_Southeast_3 <li>13：AP_Southeast_5 <li>14：AP_Northeast_1 <li>15：AP_South_1 <li>16：EU_Central_1 <li>17：EU_West_1 <li>18：EU_East_1|
 | bucket               | 第三方云存储 bucket。                                        |

@@ -2,26 +2,21 @@
 ---
 title: RTM Limitations
 description: 
-platform: Android
-updatedAt: Tue May 21 2019 12:21:49 GMT+0800 (CST)
+platform: Web
+updatedAt: Sun Jul 28 2019 14:36:44 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM Web SDK. 
 
-> The current version does not support interoperability between the Agora RTM SDK and the Agora Signaling SDK. 
-
-
-## Multiple Instances
-
-Supports joining a maximum of 20 `RtmChannel` instances at the same time. When the number of channels you join reaches 20, we recommend calling the [RtmChannel.leave](https://docs.agora.io/cn/Real-time-Messaging/RTM_web/API%20Reference/RTM_web/classes/rtmchannel.html#leave) method  to leave channel and then calling the `RtmChannel.removeAllListeners()` method to release all the resources used by that channel. 
-
-## Call Frequencies
+## Call Frequency
 
 | Function                                                    | Method                                                       | Call Frequency                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
-| Logs in the Agora RTM system                                | [RtmClient.login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | Two queries per second         |
-| Sends messages (peer-to-peer and channel messages combined) | [RtmClient.sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) and [RtmChannel.sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) combined | 60 queries per second          |
-| Retrieves a member list of the channel                      | [RtmChannel.getMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#getmembers) | Five queries every two seconds |
+| Logs in the Agora RTM system                                | [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | Two queries per second         |
+| Sends messages | <li>[sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) <li> And [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) taken together | 60 queries per second          |
+| Retrieves a member list of the channel                      | [getMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#getmembers) | Five queries every two seconds |
+| Sets user attributes | <li>[setLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setlocaluserattributes)<li>[addOrUpdateLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatelocaluserattributes)<li>[deleteLocalUserAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#deletelocaluserattributesbykeys)<li>And [clearLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#clearlocaluserattributes) taken together | 10 queries every five seconds          |
+| Gets user attributes | <li>[getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributes)<li>And [getUserAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributesbykeys) taken together | 40 queries every five seconds          |
 
 ## String Length
 
@@ -37,3 +32,5 @@ Supports channel and peer-to-peer messages, invitation content, and invitation r
 ## Miscellaneous 
 
 - Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. If you have special requirements, contact sales-us@agora.io.
+- The current version supports querying the online status of a maximum of 256 users.
+- Attribute settings in one attribute operation should not exceed 32 KB in size, and the number of key/value pairs you set in one attribute operation should not exceed 32. 

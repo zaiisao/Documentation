@@ -3,7 +3,7 @@
 title: Black screen occurs in a call.
 description: 视频黑屏
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:11:59 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 12:08:17 GMT+0800 (CST)
 ---
 # Black screen occurs in a call.
 Common reasons for black screens:
@@ -32,6 +32,7 @@ Check the following:
 
 * Check if the user disabled the remote video.
 * Switch to 4G or another Wi-Fi network to ensure that the problem is not caused by poor Internet connections.
+* Check whether the remote user uses the [channel encryption](https://docs.agora.io/en/Video/channel_encryption_windows?platform=Windows) function but the local user doesn't.
 
 ### Black screen on the local and remote sides
 
@@ -51,6 +52,6 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The time frame during which the black screen appears.
 * SDK logs and screen recording files of the user.
 
-## Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard
+## Step 3: Monitor the Quality of Experience in Agora Analytics in Console
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Console. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).

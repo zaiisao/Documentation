@@ -3,16 +3,16 @@
 title: Native SDK 相关
 description: 
 platform: All Platforms
-updatedAt: Wed Jun 19 2019 10:37:48 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:00:50 GMT+0800 (CST)
 ---
 # Native SDK 相关
 ## RESTful API  认证
 
 在使用 RESTful API 前，你需要在 HTTP 请求头部中填入 `Authorization` 字段，进行认证。本文提供 Java 和 Swift 语言生成 Authorization 字段的示例代码，请参考代码获取相应的 `Authorization` 值。
 
-你需要在代码中填入 Customer ID 和  Customer Certificate。登录 [Dashboard](https://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取 Customer ID 和 Customer Certificate。
+你需要在代码中填入 Customer ID 和  Customer Certificate。登录[控制台](https://dashboard.agora.io)，点击右上角账户名，进入下拉菜单 RESTful API 页面，即可获取 Customer ID 和 Customer Certificate。
 
-> Customer ID 和 Customer Certificate 仅用于访问 Restful API。
+> Customer ID 和 Customer Certificate 仅用于访问 RESTful API。
 
 ```java
 // Java
@@ -36,15 +36,15 @@ let base64LoginString = loginData.base64EncodedString()
 
 ### 功能介绍
 
-Restful 踢人 API：`https://api.agora.io/dev/v1/kicking-rule `，具体使用方法请参见 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
+RESTful 踢人 API：`https://api.agora.io/dev/v1/kicking-rule `，具体使用方法请参见[控制台 RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
 
 ### 适用场景
 
-遇到炸房等紧急场景，可以使用Restful踢人API将捣乱者踢出，维持频道内正常秩序。
+遇到炸房等紧急场景，可以使用RESTful踢人API将捣乱者踢出，维持频道内正常秩序。
 
 ### 不适用场景
 
-由于 Restful 踢人 API 使用媒体后台信令，因此不建议用户大批量频繁调用，如果用户期望通过踢人 API 实现结束录制，建议客户在应用层实现。
+由于 RESTful 踢人 API 使用媒体后台信令，因此不建议用户大批量频繁调用，如果用户期望通过踢人 API 实现结束录制，建议客户在应用层实现。
 
 ## 两人语音聊天室集成 FAQ
 

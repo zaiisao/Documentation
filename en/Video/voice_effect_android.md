@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Mon Apr 01 2019 11:02:57 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:29 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
@@ -100,7 +100,7 @@ rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_STRENGTH, 78);
 
 ## Sample Code
 
-Agora provides an open source sample code that implements voice changer and reverberation. You can go to the [Chatroom Github Repo](https://github.com/AgoraIO-Usecase/Chatroom/tree/master/Android) to download it.
+Agora provides an open source sample code that implements voice changer and reverberation. You can go to the [Chatroom GitHub Repo](https://github.com/AgoraIO-Usecase/Chatroom/tree/master/Android) to download it.
 
 ## Considerations
 The API methods have return values. If the method call fails, the return value is < 0.

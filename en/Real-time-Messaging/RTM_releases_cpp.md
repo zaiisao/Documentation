@@ -2,8 +2,8 @@
 ---
 title: Release Notes
 description: 
-platform: Linux C++
-updatedAt: Thu Jun 06 2019 12:50:59 GMT+0800 (CST)
+platform: Linux CPP
+updatedAt: Wed Sep 18 2019 11:26:27 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -11,6 +11,67 @@ updatedAt: Thu Jun 06 2019 12:50:59 GMT+0800 (CST)
 Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
 
 > For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_product.md).
+
+## v1.0.1
+
+v1.0.1 is released on August 1st, 2019. 
+
+### Issues Fixed
+
+- When the connection to the Agora RTM system is interrupted, the SDK does not return the `onConnectionStateChanged` callback. 
+
+## v1.0.0
+
+v1.0.0 is released on July 24th, 2019.
+
+### New Features
+
+### Interconnects with the legacy Agora Signaling SDK
+
+v1.0.0 implements the `ILocalCallinvitation::setChannelId` and `ILocalCallinvitation::getChannelId` methods. 
+
+> - To intercommunicate with the legacy Agora Signaling SDK, you MUST set the channel ID. However, even if the callee successfully accepts the call invitation, the Agora RTM SDK does not join the channel of the specified channel ID.
+> - If your App does not involve the legacy Agora Signaling SDK, we recommend using the `ILocalCallInvitation::setContent` method or the `IRemoteCallInvitation::setResponse` method to set customized contents. 
+
+#### Specifies the default path to the SDK log file
+
+Supports changing the default path to the SDK log file using the `setLogFile` method. To avoid creating an incomplete log file, we recommend calling this method once you have created and initialized an `IRtmService` instance. 
+
+
+
+#### Sets the output log level of the SDK
+
+Supports setting the output log level of the SDK using the `setLogFilter` method.  The log level follows the sequence of OFF, CRITICAL, ERROR, WARNING, and INFO. Choose a level to see the logs preceding that level. If, for example, you set the log level to WARNING, you see the logs within levels CRITICAL, ERROR, and WARNING. See also [LOG_FILTER_TYPE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#af515252477afb2a71feef88113dfa481). 
+
+> You can call this method once you have created and initializd an `IRtmService` instance. You do not have to call this method after calling the `login` method. 
+
+#### Sets the log file size in KB
+
+Supports setting the log file size using the `setLogFileSize` method. The log file has a default size of 512 KB. File size settings of less than 512 KB or greater than 10 MB will not take effect.
+
+
+> You can call this method once you have created and initializd an `IRtmService` instance. You do not have to call this method after calling the `login` method. 
+
+### Improvements
+
+Adds error codes based on the following scenarios: 
+
+- The Agora RTM service is not initialized.
+- The method call frequency exceeds the limit. 
+- The user does not call the `login` method or the method call of `login` does not succeed before calling any of the RTM core APIs. 
+
+### Issues Fixed
+
+- One can log in the Agora RTM system with a static App ID and an RTM token, which is generated from a dynamic App ID. 
+
+
+### API Changes
+
+- [setLogFile](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a08063b2692a6091ad5e8b30146498089): Specifies the default path to the SDK log file.
+- [setLogFilter](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a41da0404ac726b7326ef1ca6213b2d61): Sets the output log level of the SDK.
+- [setLogFileSize](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ae7f4dcaf1173365ae5836bb23d5188f9): Sets the log file size in KB.
+
+
 
 ## v0.9.3
 
@@ -61,7 +122,6 @@ v0.9.2 is released on May 8th, 2019.
 
 -  Supports a `userId` that starts with a space.
 
-### Issues fixed
 
 
 

@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy on Web
 platform: Web
-updatedAt: Tue Jul 16 2019 04:01:18 GMT+0800 (CST)
+updatedAt: Mon Feb 17 2020 10:29:34 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -14,36 +14,37 @@ To ensure that enterprise users can connect to Agora's services through a firewa
 
 Compared with setting a single proxy server, the cloud proxy is more flexible and stable, thus widely implemented in organizations with high-security requirements, such as large-scale enterprises, hospitals, universities, and banks.
 
-## Prerequisites
+## Implementation
 
-Agora Web SDK v2.5.1 or later supports the cloud proxy. Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/web_prepare.md).
+Agora Web SDK v2.5.1 or later supports the cloud proxy. 
 
-1. Contact support@agora.io and provide the information on the regions using the cloud proxy, the concurrent scale, and network operators.
-
-2. Add the following test IP addresses and ports to your whitelist.
+1. Download [the latest version of the Agora Web SDK](https://docs.agora.io/en/Agora%20Platform/downloads).
+2. Prepare the development environment. For details, see [Start a Call](../../en/Voice/start_call_web.md) or [Start a Live Broadcast](../../en/Voice/start_live_web.md).
+3. Contact sales-us@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
+4. Add the following test IP addresses and ports to your whitelist.
 
   The sources are the clients that integrate the Agora Web SDK.
 
 	| Protocol | Destination             | Port                  | Port purpose      |
 	| -------- | -------------- | --------------------- | --------------------- |
-	| TCP      | 23.236.115.138 | 443, 4000<br/>3433, 3444 | Message data transmission<br/>Media data exchange |
+	| TCP      | 23.236.115.138 | 443, 4000<br/>3433 - 3460 | Message data transmission<br/>Media data exchange |
+	| TCP      |148.153.66.218 | 443, 4000<br/>3433 - 3460 | Message data transmission<br/>Media data exchange |
 	| TCP      | 47.74.211.17   | 443                   | Edge node communication |
 	| TCP      | 52.80.192.229  | 443                   | Edge node communication |
 	| TCP      | 52.52.84.170   | 443                   | Edge node communication |
 	| TCP      | 47.96.234.219  | 443                   | Edge node communication |
-	| UDP      | 23.236.115.138 | 3478, 3488            | Media data exchange |
+	| UDP      | 23.236.115.138 | 3478 - 3500            | Media data exchange |
+	| UDP      | 148.153.66.218 | 3478 - 3500            | Media data exchange |
 
-   > These IPs are for testing only. You need to apply for exclusive IP resources for production environment.
+ <div class="alert note">These IPs are for testing only. You need to apply for exclusive IP resources for production environment.</div>
 
-3. Enable the cloud proxy according to the instructions in the **Implementation** section and see if the audio/video call works.
+5. Call the `startProxyServer` method to enable the cloud proxy and see if the audio/video call works.
+6. Agora will provide the IP addresses (domain name) and ports for you to use the cloud proxy in the production environment. Add the IP address and ports to your whitelist.
+7. If you want to disable the cloud proxy, call the  `stopProxyServer` method.
 
-4. Agora will provide the IP addresses (domain name) and ports for you to use the cloud proxy in the production environment. Add the IP address and ports to your whitelist.
+### Sample code
 
-## Implementation
-
-You can set up the cloud proxy by calling the `startProxyServer` method.
-
-### Enable the Cloud Proxy
+### Enable the cloud proxy
 
 ```javascript
 var client = AgoraRTC.createClient({mode: 'live',codec: 'vp8'});
@@ -58,13 +59,7 @@ client.init(key, function() {
 })
 ```
 
-### Disable the Cloud Proxy
-
-To turn off the cloud proxy service：
-
-1. Leave the channel.
-2. Call the `stopProxyServer` method.
-3. Join the channel.
+### Disable the cloud proxy
 
 ```javascript
 // After enabling the cloud proxy and joining the channel.
@@ -81,8 +76,24 @@ client.join(channelKey, channel, null, function(uid) {
 }
 ```
 
+### API reference
+
+- [startProxyServer](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#startproxyserver)
+- [stopProxyServer](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#stopproxyserver)
+
+## Working principles
+
+The following diagram shows the working principles of the Agora cloud proxy.
+
+![](https://web-cdn.agora.io/docs-files/1569400862850)
+
+1. Before connecting to Agora SD-RTN, the Agora SDK sends the request to the cloud proxy;
+2. The cloud proxy sends back the proxy information;
+3. The Agora SDK sends the data to the cloud proxy, and the cloud proxy forwards the data to Agora SD-RTN;
+4. Agora SD-RTN sends the data to the cloud proxy, and the cloud proxy forwards the data to the Agora SDK.
+
 ## Considerations
 
 - The `startProxyServer` and  `stopProxyServer` methods must be called before joining the channel or after leaving the channel.
-- The Agora Web SDK also provides the `setProxyServer` and `setTurnServer` methods for you to [deploy the proxy](../../en/Voice/proxy_web.md). The `setProxyServer` and `setTurnServer` methods cannot be used with the `startProxyServer` method at the same time, else an error occurs.
+- The Agora Web SDK also provides the `setProxyServer` and `setTurnServer` methods for you to deploy the proxy. The `setProxyServer` and `setTurnServer` methods cannot be used with the `startProxyServer` method at the same time, else an error occurs.
 - The `stopProxyServer` method disables all proxy settings, including those set by the `setProxyServer` and `setTurnServer` methods.

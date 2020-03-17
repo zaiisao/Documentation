@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Jul 08 2019 09:56:42 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 03:24:03 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -23,7 +23,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
     <th>Firefox 56+</th>
     <th>Safari 11+</th>
     <th>Opera 45+</th>
-    <th>QQ 浏览器最新版</th>
+    <th>QQ 浏览器 10.5+</th>
     <th>360 安全浏览器</th>
     <th>微信浏览器</th>
   </tr>
@@ -69,45 +69,219 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
   </tr>
 </table>
 
-> - Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
-> - Agora Web SDK 2.7 及以上版本还支持 Windows 10 平台的 Edge 浏览器，详见 [Edge 浏览器支持](https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge)。
-> - 以下场景中请务必将 Web SDK 升级至 2.6:
->   - iOS 12.1.4 及以上版本使用 Safari 浏览器
->   - macOS 上使用 Safari 12.1 及以上版本
+<div class="alert info">除上表浏览器外，还有以下支持：
+	<li>Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。</li>
+	<li>Agora Web SDK 2.7 及以上版本支持 Windows 10 平台的 Edge 浏览器，详见 <a href="https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge">Edge 浏览器支持</a>。</li>
+	<li>Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。</li>
+</div>
+<div class="alert note">以下场景中请务必将 Agora Web SDK 升级至 2.6 或更高版本:
+	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器</li>
+	<li>macOS 上使用 Safari 12.1 及以上版本</li>
+	</div>
 
 > 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
 
 ### 已知问题和局限性
 
-- 受浏览器策略影响，在 Chrome 70+ 和 Safari 浏览器上，`Stream.play`，`Stream.startAudioMixing` 以及 `Stream.getAudioLevel` 这三个方法必须由用户手势触发，详情请参考 [Autoplay Policy Changes](https://developers.google.com/web/updates/2017/09/autoplay-policy-changes)。
+- 受浏览器策略影响，在 Chrome 70+ 和 Safari 浏览器上，`Stream.play`，`Stream.startAudioMixing` 以及 `Stream.getAudioLevel` 这三个方法必须由用户手势触发，详见 [处理浏览器的自动播放策略](../../cn/Voice/autoplay_policy_web.md)。
 - 如果在客户端安装了高清摄像头，则 Agora Web SDK 支持最大为 1080p 分辨率的视频流，但取决于不同的摄像头设备，最大分辨率也会受到影响。
 - 部分 iOS 设备在通话时将 Safari 浏览器切换至后台再恢复后，视频会出现黑边。
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
 
+## v3.0.2
+
+该版本于 2020 年 3 月 16 日发布，进行了一些内部改进。
+
+## v3.0.1
+
+该版本于 2020 年 2 月 12 日发布。
+
+**新增特性**
+
+#### 自采集视频支持双流模式
+
+对使用 `videoSource` 属性创建的视频流，该版本支持开启双流模式 (`enableDualStream`)。
+
+**改进**
+
+改进自动重连机制，提升弱网下的用户体验。
+
+**问题修复**
+
+该版本修复以下问题：
+
+- 重复调用 `setClientRole` 报错。
+- 断网后调用 `leave` 报错。
+- 使用 `videoSource` 创建自采集视频流时报错。
+- 取消订阅远端流再重新订阅远端流之后，mute 远端流的操作不生效。
+
+## 3.0.0 版
+
+该版本于 2019 年 12 月 2 日发布。
+
+Agora 在该版本对 SDK 的传输质量和互通体验进行了优化，在首帧出图时间和下行弱网对抗上有较大提升。
+
+**新增特性**
+
+#### 跨频道媒体流转发
+
+跨频道媒体流转发，指将主播的媒体流转发至其他直播频道，实现主播与其他频道的主播实时互动的场景。该版本新增如下方法，通过将源频道中的媒体流转发至目标频道，实现跨直播间连麦功能：
+
+- `startChannelMediaRelay`
+- `updateChannelMediaRelay`
+- `stopChannelMediaRelay`
+
+在跨频道媒体流转发过程中，SDK 会通过 `Client.on("channel-media-relay-state")` 和 `Client.on("channel-media-relay-event")` 回调报告媒体流转发的状态和事件。
+
+该功能的实现方法详见[跨直播间连麦](https://docs.agora.io/cn/Interactive%20Broadcast/media_relay_web)。
+
+#### 屏幕共享分享背景音
+
+在 `StreamSpec` 接口中新增 `screenAudio` 属性，支持屏幕共享的同时分享本地播放的背景音，详见[分享音频](../../cn/Video/screensharing_web.md)。
+
+#### 美颜
+
+新增方法 `setBeautyEffectOptions`，支持美白、磨皮、红润肤色等美颜效果。详见[美颜](https://docs.agora.io/cn/Interactive%20Broadcast/image_enhancement_web?platform=Web)。
+
+#### 推流水印
+
+`LiveTranscoding` 接口中新增 `images` 属性，支持将在线 PNG 图片作为水印添加到正在进行的推流直播中。
+
+#### 加密/解密失败通知
+
+新增 `Client.on("crypt-error")` 回调，在发布或订阅流时出现加解密错误时可以收到通知。
+
+
+**改进**
+
+#### 远端视频状态
+
+新增 `Client.on("enable-local-video")` 和 `Client.on("disable-local-video")` 回调，当远端 Native SDK 用户通过 `enableLocalVideo` 方法打开或关闭自己的视频采集时，Web 端可以收到通知。
+
+#### 离线原因
+
+在 `Client.on("peer-leave")` 回调中增加 `reason` 参数，当远端用户掉线时可以通过该参数值了解具体原因。
+
+
+**问题修复**
+
+该版本修复以下问题：
+
+- App ID 错误时，`Client.join` 没有错误回调。
+
+- 某些场景下，SDK 和直播推流/拉流服务器连接断开后，没有自动重连。
+
+  在使用[推流到 CDN](https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_web?platform=Web) 和[输入在线媒体流](https://docs.agora.io/cn/Interactive%20Broadcast/inject_stream_web?platform=Web)功能时，SDK 会连接到专门用于推流/拉流的服务器，关于服务器连接断开的处理，请参考以下 FAQ：
+
+  - [在推流到 CDN 过程中，连接断开后如何处理？](../../cn/faq/live_streaming_disconnection_web.md)
+  - [在输入在线媒体流过程中，连接断开后如何处理？](../../cn/faq/injecting_stream_disconnection_web.md)
+
+- 偶现的 `"Cannot read property 'getLastMsgTime' of null"` 报错。
+
+- 启用或禁用远端流的音视频轨道时控制台报错。
+
+**API 变更**
+
+#### 新增
+
+- [`Client.startChannelMediaRelay`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#startchannelmediarelay)
+
+- [`Client.updateChannelMediaRelay`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#updatechannelmediarelay)
+
+- [`Client.stopChannelMediaRelay`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#stopchannelmediarelay)
+
+- [`Stream.setBeautyEffectOptions`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#setbeautyeffectoptions)
+
+- [`Client.on`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#on) 新增以下事件
+
+  - `"enable-local-video"`
+  - `"disable-local-video"`
+  - `"channel-media-relay-event"`
+  - `"channel-media-relay-state"`
+  - `"crypt-error"`
+
+#### 修改
+
+[`AgoraRTC.createStream`](https://docs.agora.io/cn/Voice/API%20Reference/web/globals.html#createstream) 增加 [`screenAudio`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.streamspec.html#screenaudio) 属性。
+
+## 2.9.0 版
+
+该版本于 2019 年 9 月 5 日发布。
+
+**升级必看**
+
+该版本优化了推流服务的性能和稳定性，对管理推流转码的接口 [`LiveTranscoding`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.livetranscoding.html) 的参数设置进行了如下限制：
+
+- `videoFramerate`：设置转码推流的帧率，单位为 fps。如果设置的帧率超过 30，Agora 服务端会自动调整为 30。
+- `videoBitrate`：设置转码推流的码率，单位为 Kbps。你可以根据[视频分辨率表格](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.videoencoderconfiguration.html#bitrate)中的码率值进行设置。如果设置的码率超出合理范围，Agora 服务端会在合理区间内对码率值进行自适应。
+- `videoCodecProfile`：设置转码推流的视频编码规格，可以设置为 66、77 或 100。如果设置其他值，Agora 会统一设为默认值 100。
+- `width` 和 `height`：设置转码推流的视频分辨率。**width x height** 的最小值不低于 **16 x 16**。
+
+**新增功能**
+
+#### 支持 NAT64 网络
+
+该版本新增对 NAT64 的支持，在 NAT64 的网络环境下可以正常使用 Agora Web SDK。
+
+#### 选择前置/后置摄像头
+
+`createStream` 方法新增 `facingMode` 参数，支持在移动端创建本地流时选择使用前置或后置摄像头采集视频。
+
+#### 取消事件绑定
+
+新增 `Client.off` 方法，支持移除通过 `Client.on()` 绑定的事件。
+
+**改进**
+
+- 大规模减少了端口的使用，防火墙内的用户不再需要打开 10000-65535 的 UDP 端口，详见 [Web SDK 防火墙端口](https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms#web-sdk)。
+- 减少加入频道的时间以及首帧出图时间。
+- 网络传输控制优化，提升下行网络拥塞情况下的音视频体验。
+- 进一步完善 NAT 类型支持的兼容性，提升了媒体流连接能力。
+
+- 明确了部分 API 的失败回调中的错误码。
+- 每次发布流成功时强制同步 mute 的状态。
+- 仅在加入频道后才会触发 `volume-indicator` 回调。
+- 优化 SDK 参数检查。
+
+**修复问题**
+
+- 修复连接断开重连后，订阅选项（`Client.subscribe` 中的 `options` 参数）会被重置的问题。
+- 修复 `Stream.init` 执行过程中调用 `Stream.close` 导致的异常问题。
+- 修复 `Stream.startAudioMixing` 中 `cacheResource` 设为 `false` 不生效的问题。
+- 修复断开网络连接后部分行为异常的问题。
+
+**API 变更**
+
+- 新增 `Client.off` 方法
+- `AgoraRTC.createStream` 方法新增 `facingMode` 参数
+
 ## 2.8.0 版
+
 该版本于 2019 年 7 月 8 日发布。
 
 2.8.0 版本主要优化了对 String 类型的用户名的支持。
 
-一个频道内的所有用户必须使用同样类型的用户名，即必须都为整数或都为字符串。使用字符串类型的用户名与 Agora Native SDK 互通时，请确保 Native SDK 也使用字符串类型的用户名，即 User Account 加入频道，详见[使用 String 型的用户名](../../cn/Voice/string_web.md)。
+一个频道内的所有用户必须使用同样类型的用户名，即必须都为整数或都为字符串。使用字符串类型的用户名与 Agora Native SDK 互通时，请确保 Native SDK 也使用字符串类型的用户名，即 User Account 加入频道，详见[使用 String 型的用户名](https://docs.agora.io/cn/faq/string)。
+
 ## 2.7.1 版
 
 该版本于 2019 年 7 月 3 日发布。
 
-### 问题修复
+**问题修复**
 
 修复了调用 `Stream.setScreenProfile` 方法设置屏幕共享的视频属性不生效的问题。
 
 ## 2.7.0 版
+
 该版本于 2019 年 6 月 21 日发布。新增功能、改进及修复问题详见下文。
 
-### 新增功能
+**新增功能**
 
 #### 1. 自定义视频编码配置
 
-新增 `Stream.setVideoEncoderConfiguration` 方法，与原有的 `Stream.setVideoProfile` 方法相比，该方法可以自定义视频分辨率、帧率及码率，更加灵活。更多信息请参考[设置视频属性](../../cn/Voice/videoProfile_web.md)。
+新增 `Stream.setVideoEncoderConfiguration` 方法，与原有的 `Stream.setVideoProfile` 方法相比，该方法可以自定义视频分辨率、帧率及码率，更加灵活。更多信息请参考[设置视频属性](../../cn/Voice/video_profile_web.md)。
 
 #### 2. 通知音视频流播放状态
 
@@ -129,13 +303,13 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 该版本支持在 Edge 浏览器上实现音视频基本互通，具体支持的功能请参考 [Edge 浏览器支持](https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge)。
 
-### 改进
+**改进**
 
 该版本支持动态修改视频编码配置，即 `Stream.init` 之前或之后都可以调用 `setVideoProfile` 或 `setVideoEncoderConfiguration` 设置视频编码配置。
 
 > 请勿在发布流时修改视频编码配置。
 
-### 修复问题
+**问题修复**
 
 - 修复 Firefox 上调用 `Stream.getStats` 获取的部分数据异常的问题。
 - 修复断网后调用 `Client.leave` 不生效的问题。
@@ -143,7 +317,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - 修复在混音音乐文件播放时调用 `Stream.getAudioMixingPosition` 获取的结果不准确的问题。
 - 修复订阅纯音频流后立即调用 `Stream.unmuteVideo` 导致音频无法播放的问题。
 
-### API 整理
+**API 整理**
 
 本次发版 API 变动如下。
 
@@ -167,11 +341,11 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 该版本于 2019 年 4 月 11 日发布。改进及修复问题详见下文。
 
-### 改进
+**改进**
 
 创建流（`AgoraRTC.createStream`）时支持 `cameraId` 和 `microphoneId` 使用空字符串。
 
-### 修复问题
+**问题修复**
 
 - 修复在最新版 iOS Safari 上最多只能同时播放两个视频流的问题。
 - 修复在发布流（`Client.publish`）之前调用 `enableDualStream` 方法报错的问题。
@@ -181,11 +355,11 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 该版本于 2019 年 4 月 3 日发布。新增功能及修复问题详见下文。
 
-### 新增功能
+**新增功能**
 
 #### 1. 音效文件播放和管理
 
-新增一组方法支持在人声中同时播放效果音，支持同时播放多个音效文件，且支持对音效文件的管理，包括调节音量、暂停/停止播放、预加载音效文件等功能，详见[播放音效/音乐混音](../../cn/Voice/effect_mixing_web.md)。
+新增一组方法支持在人声中同时播放效果音，支持同时播放多个音效文件，且支持对音效文件的管理，包括调节音量、暂停/停止播放、预加载音效文件等功能，详见[播放音效/音乐混音](../../cn/Voice/audio_effect_mixing_web.md)。
 
 #### 2. Chrome 浏览器无插件屏幕共享
 
@@ -199,12 +373,12 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - `Client.on` 新增 `stream-updated` 回调，当远端用户的音视频流进行 `addTrack` 或 `removeTrack` 操作时会触发该回调。
 - 混音功能（`startAudioMixing`）支持使用包含中文字符的 URL 作为音乐文件的地址
 
-### 改进
+**改进**
 
 该版本优化了弱网下的音视频流回退体验，同时在 `Client.on` 中新增 `stream-fallback` 回调，在开启音视频流回退（`setStreamFallbackOption`）的情况下，当订阅的流从音视频流回退为音频流或者从音频流恢复为音视频流时可以收到回调通知。
 
 
-### 修复问题
+**问题修复**
 
 - 修复在 Chrome 72 上使用 `switchDevice` 无法切换麦克风的问题
 - 修复调用 `addTrack` 后 mute 操作不生效的问题
@@ -213,7 +387,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - 修复订阅远端流后立即调用 `muteAudio` 或 `muteVideo` 可能不生效的问题
 - 修复在 Windows 平台调用 `replaceTrack` 切换视频轨道后调用 `startAudioMixing` 远端无法听到混音音乐的问题
 
-### API 整理
+**API 整理**
 
 本次发版 API 变动如下。
 
@@ -245,7 +419,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 该版本于 2019 年 2 月 28 日发布。修复问题见下文。
 
 
-### 问题修复
+**问题修复**
 
 - 修复了在 Chrome 72 及以上调用 `Stream.switchDevice` 无法切换音频的问题。
 - 修复了如果未设置 `Client.subscribe` 的可选参数会报错的问题。
@@ -254,7 +428,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 该版本于 2019 年 2 月 11 日发布。新增功能、改进及修复问题详见下文。
 
-### 新增功能
+**新增功能**
 
 #### 1. 质量透明
 
@@ -294,7 +468,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 #### 4. 设置用户角色
 
-新增 `Client.setClientRole` 方法，支持在直播模式下设置用户的角色为主播或者观众。主播可以发布和接收音视频流，观众只能接收音视频流，无法发布。
+新增 `Client.setClientRole` 方法，支持在直播场景下设置用户的角色为主播或者观众。主播可以发布和接收音视频流，观众只能接收音视频流，无法发布。
 
 相应新增 `client-role-changed` 回调，用于通知用户角色的改变。
 
@@ -315,13 +489,13 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
   - `audioMixingPlayed` ：通知应用程序混音开始播放。
   - `audioMixingFinished` ：通知应用程序混音结束播放。
 
-### 改进
+**改进**
 
 - `Stream.play` 方法中新增 `muted` 参数，用于规避浏览器自动播放策略。
 - `Stream.setAudioMixingPosition` 方法中新增 `callback` 参数，可用于返回方法调用失败的错误信息。
 - 修改了部分 `Client.on` 回调事件的名称，以保持风格统一。
 
-### 问题修复
+**问题修复**
 
 - 修复了 macOS 使用 Safari 浏览器互通时，调用 `getStats` 方法返回的对端视频分辨率为 0 的问题。
 - 修复了调用 `disableAudio` 方法后开启混音功能，再调用 `enableAudio` 方法，无法听到麦克风声音的问题。
@@ -330,7 +504,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - 修复了调用 `replaceTrack` 方法后，在本地听到自己声音的问题。
 - 修复了 iOS 端调用 `switchDevice` 方法无法二次切换的问题。
 
-### API 整理
+**API 整理**
 
 本次发版 API 变动如下。
 
@@ -389,7 +563,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 > <font color="red">如果设置了域名防火墙，使用此版本时需将 `*.agoraio.cn` 和 `*.agora.io` 添加到白名单。</font>
 
-### 新增功能
+**新增功能**
 
 为更好地与 Agora 其他 SDK 互通，实现更多功能，Web SDK 在本版本中新增了如下功能。详细的方法说明，请参考 [Agora Web SDK API Reference](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html)。
 
@@ -464,7 +638,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - 支持 360 安全浏览器 9.1.0.432 及以上版本。
 - 支持 Windows XP 平台的 Chrome 49 浏览器。
 
-### 问题修复 
+**问题修复** 
 
 - 修复了手机端使用 Safari 或 Chrome 浏览器进入频道后，在仅有音频通话的情况下对 video codec 的依赖。
 - 修复了使用 Safari 浏览器推流后调用 `Stream.close` 关闭流，对端 10 秒后无法收到 `stream-removed` 回调的问题。
@@ -541,7 +715,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 本次发版新增如下功能：
 
-#### 1. 新通信模式
+#### 1. 新通信场景
 
 为增加 Web SDK 的适用场景，提升与 Native SDK 在通信和直播下的互通质量，在 `createClient` 方法中新增 `mode` 和 `codec` 参数，其中 `mode` 参数支持 rtc 和 live 两种场景，`codec` 参数支持 vp8 和 264 两种编解码方式。 
 
@@ -743,4 +917,4 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 
 
-更新了错误代码和解释。
+更新了错误码和解释。

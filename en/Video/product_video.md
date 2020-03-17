@@ -3,7 +3,7 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 02:49:07 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:36:58 GMT+0800 (CST)
 ---
 # Agora Video Overview
 The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
@@ -15,6 +15,8 @@ The difference between an Agora Video Call and [Agora Video Interactive Broadcas
 ## Functions and Scenarios
 
 The Agora Native SDK for Video Call boasts a flexible combination of functions for different scenarios.
+
+<style> table th:first-of-type {     width: 150px; } th:third-of-type {     width: 170px; }</style>
 
 | Function                              | Description                                                  | Scenario                                                     |
 | ----------------- | ------------------------------------------------------------ | --------------------------------------- |
@@ -31,7 +33,7 @@ The Agora Native SDK for Video Call boasts a flexible combination of functions f
 | SDK Package Size                                  | 3.69 MB to 7.75 MB                                              |
 | Capacity     | Seven users (To support more users, use [Agora Interactive Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms)) |
 | Video Profile                                     | <li>SDK video source: Up to 1080p @ 60 fps<li>Custom video source: Up to 4K |
-| Audio Profile                                     | <li>Sample rate: 16 KHz to 48 KHz<li>Support for mono and stereo sound |
+| Audio Profile                                     | <li>Sample rate: 16 kHz to 48 kHz<li>Support for mono and stereo sound |
 | Audio Anti-packet-loss Rate                       | 70% (uplink and downlink)                               |
 
 ## Compatibility
@@ -40,7 +42,7 @@ The Agora Native SDK for Video Call is supported on platforms such as iOS, Andro
 
 | Platform             | Supported Version                                            |
 | -------------------- | ------------------------------------------------------------ |
-| Android              | 4.1+<br>The Android SDK supports the following architecture:<li>ARMv7<li>ARM64<li>x86<li>x86-64 |
+| Android              | 4.1+<br>The Android SDK supports the following ABIs:<li>armeabi-v7a<li>arm64-v8a<li>x86<li>x86_64 |
 | iOS                  | 8.0+                                                         |
 | Windows              | XP SP3+<br>The Windows SDK supports the following architecture:<li>x86<li>x64                                                      |
 | macOS                | 10.0+                                                        |

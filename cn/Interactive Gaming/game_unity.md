@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Tue Jul 23 2019 04:19:17 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 09:39:04 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
@@ -176,7 +176,7 @@ public int JoinChannel (string token, string channelName, string optionalInfo, u
 <tr><td><code>token</code></td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见<a href="../../cn/Quickstart%20Guide/token.md"><span>密钥说明</span></a> 。</li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App 证书, 请务必使用 Token。 关于如何获取 Token，详见<a href="../../cn/Quickstart%20Guide/token.md"><span>密钥说明</span></a> 。</li>
 </ul>
 </td>
 </tr>
@@ -691,7 +691,7 @@ public int SetDefaultMuteAllRemoteAudioStreams(bool mute);
 public static string GetSdkVersion ();
 ```
 
-该犯法返回 SDK 版本号的字符串 (char 格式)。
+该方法返回 SDK 版本号的字符串 (char 格式)。
 
 #### 获取错误描述 (GetErrorDescription)
 
@@ -699,7 +699,7 @@ public static string GetSdkVersion ();
 public static string GetErrorDescription (int code);
 ```
 
-SDK 运行时如果出错，该方法可以获取错误代码。
+SDK 运行时如果出错，该方法可以获取错误码。
 
 ### 伴奏
 
@@ -1695,7 +1695,7 @@ Agora SDK 默认收到视频大流。如需使用视频小流，调用本方法�
 public int SetVideoQualityParameters(bool preferFrameRateOverImageQuality);
 ```
 
-设置 SDK 输出的日志文件。SDK 运行时产生的所有日志将写入该文件。应用程序必须保证指定的目录存在而且可写。
+设置视频优化选项。
 
 <table>
 <colgroup>
@@ -2049,6 +2049,8 @@ public int SetEncryptionSecret(string secret);
 ```
 
 在加入频道之前，您的应用程序需调用 `SetEncryptionSecret` 指定 secret 来启用内置的加密功能，否则该通话未加密。 同一频道内的所有用户应设置相同的 secret。 当用户离开频道时，该频道的 secret 会自动清除。如果未指定 secret 或将 secret 设置为空，则无法激活加密功能。
+
+<div class="alert note">Unity SDK 内默认无加密库。</div>
 
 <table>
 <colgroup>
@@ -2539,7 +2541,7 @@ public delegate void SDKWarningHandler (int warn, string msg);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>warn</code></td>
-<td>警告代码</td>
+<td>警告码</td>
 </tr>
 <tr><td><code>msg</code></td>
 <td>警告消息</td>
@@ -2567,7 +2569,7 @@ public delegate void SDKErrorHandler (int error, string msg);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>err</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 <tr><td><code>msg</code></td>
 <td>错误消息</td>
@@ -2619,7 +2621,7 @@ public delegate void OnApiExecutedHandler (int err, string api, string result);
 <tbody>
 <tr>
 <td><code>err</code></td>
-<td>错误码。如果方法调用失败，会返回<a href="https://docs.agora.io/cn/Interactive%20Gaming/the_error_game?platform=All%20Platforms#errorcode">错误代码</a>；如果返回 0，则表示方法调用成功</td>
+<td>错误码。如果方法调用失败，会返回<a href="https://docs.agora.io/cn/Interactive%20Gaming/the_error_game?platform=All%20Platforms#errorcode">错误码</a>；如果返回 0，则表示方法调用成功</td>
 </tr>
 <tr>
 <td><code>api</code></td>
@@ -3273,8 +3275,8 @@ int ResumeAllEffects();
 
 
 
-## 错误代码和警告代码
+## 错误码和警告码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_game.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_game.md)。
 
 

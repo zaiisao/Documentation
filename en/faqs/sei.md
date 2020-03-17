@@ -3,43 +3,45 @@
 title: SEI-related Questions
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 16:00:12 GMT+0800 (CST)
+updatedAt: Fri Dec 27 2019 15:24:22 GMT+0800 (CST)
 ---
 # SEI-related Questions
 ## The Agora SEI
 
-By default, Agora adds the encoding information of the current video to the transcoded H264/H265 SEI frames during CDN streaming. The encoding information is a JSON string. The following is the sample code:
+By default, Agora adds the encoding information of the current video to the transcoded H264/H265 SEI (Supplemental Enhancement Information) during CDN streaming. The encoding information is a JSON string. The following is the sample code:
 
 ```json
 {
-  "canvas": {
-    "w": 640,
-    "h": 360,
-    "bgnd": "#000000"
-  },
-  "regions": [{
-	 "suid": 1,
-    "uid": 1,
-    "alpha": 1.0,
-    "zorder": 1,
-    "volume": 50,
-    "x": 0,
-    "y": 0,
-    "w": 320,
-    "h": 360
-  }, {
-    "uid": 2,
-    "alpha": 1.0,
-    "zorder": 1,
-    "volume": 89,
-    "x": 320,
-    "y": 0,
-    "w": 320,
-    "h": 360
-  }],
-  "ver": "20180828",
-  "ts": 1535385600000,
-  "app_data": ""
+    "canvas": {        
+        "w": 640,
+        "h": 360,
+        "bgnd": "#000000"
+    },
+    "regions": [
+        {
+        "uid": 1,
+        "alpha": 1.0,
+        "zorder": 1,
+        "volume": 50, 
+        "x": 0, 
+        "y": 0,   
+        "w": 320,
+        "h": 360
+        },
+         {
+        "uid": 2,
+        "alpha": 1.0,
+        "zOrder": 1,
+        "volume": 89,
+        "x": 320,
+        "y": 0,   
+        "w": 320,
+        "h": 360
+        }
+    ],
+    "ver": "20190611",
+    "ts": 1535385600000,
+    "app_data": ""
 }
 ```
 
@@ -47,13 +49,13 @@ The definition of the parameters:
 
 | Parameter | Description                                                  |
 | --------- | ------------------------------------------------------------ |
-| canvas    | The canvas information. It contains the following properties:<br><li>w: Width (pixels) of the canvas. It corresponds to the  `width`  parameter in the `LiveTranscoding` class.<br><li>h: Height (pixels) of the canvas. It corresponds to the `height` parameter in the `LiveTranscoding` class.<br><li>bgnd: The background color (RGB) of the canvas, represented by a hexademical string. It corresponds to the `backgoundColor` parameter in the `LiveTranscoding` class. |
-| regions   | The layout information of the broadcaster. It corresponds to the  `transcodingUsers`  class in the `LiveTranscoding` class. It contains the following properties:<br><li>suid: (optional)The string user account of the broadcaster in this region. This parameter applies to scenarios where string user accounts are used to identify the broadcaster.<br><li>uid: UID of the broadcaster in this region. It corresponds to the `uid` parameter in the `transcodingUsers` class.<br><li>alpha: The transparency of the video frame of the broadcaster. The value range is [0.0, 1.0]. It corresponds to the `alpha` parameter in the `transcodingUsers` class.<br><li>zorder: The layout position of the video frame of the broadcaster. The value range is [0, 100]. It corresponds to the `zorder`parameter in the `transcodingUsers` class.<br><li>volumn: The volume of the broadcaster. The value range is [0, 100].<br><li>x: The horizontal position of the video frame of the broadacaster from the top left corner of the CDN live streaming. It corresponds to the `x` parameter in the `transcodingUsers` class.<br><li>y: The vertical position of the video frame of the broadcaster from the top left corner of the CDN live streaming. It corresponds to the `y` parameter in the `transcodingUsers` class.<br><li>w: Width of the video frame of the broadcaster. It corresponds to the `width` parameter in the `transcodingUsers` class.<br><li>h: Height of the video frame of the broadcaster. It corresponds to the `height` parameter in the `transcodingUsers` class. |
-| ver       | The version of the SEI protocol. The current version is 20190611. |
-| ts        | Timestamp of the current encoding information.               |
-| app_data  | Extra user-defined information. It corresponds to the `transcodingExtraInfo` parameter in the `LiveTranscoding` class. |
+| `canvas`    | The canvas information. It contains the following properties:<br><li>`w`: Width (pixel) of the canvas. It corresponds to the  `width`  member in the `LiveTranscoding` class.<br><li>`h`: Height (pixel) of the canvas. It corresponds to the `height` member in the `LiveTranscoding` class.<br><li>`bgnd`: The background color (RGB) of the canvas, represented by a hexademical string. It corresponds to the `backgoundColor` member in the `LiveTranscoding` class. |
+| `regions`   | The layout information of the broadcaster. It corresponds to the  `transcodingUsers` member in the `LiveTranscoding` class. It contains the following properties:<br><li>`suid`: (**Optional**)The string user account of the broadcaster in this region. This parameter applies to scenarios where string user accounts are used to identify the broadcaster.<br><li>`uid`: UID of the broadcaster in this region. It corresponds to the `uid` member in the `TranscodingUser` class.<br><li>`alpha`: The transparency of the video frame of the broadcaster. The value range is [0.0, 1.0]. It corresponds to the `alpha` member in `TranscodingUser` .<br><li>`zorder`: The layout position of the video frame of the broadcaster. The value range is [0, 100]. It corresponds to the `zOrder` member in `TranscodingUser`.<br><li>`volume`: The volume (dB) of the broadcaster. The value range is [0, 100].<br><li>`x`: The horizontal position of the video frame of the broadacaster from the top left corner of the CDN live streaming. It corresponds to the `x` member in `TranscodingUser`.<br><li>`y`: The vertical position of the video frame of the broadcaster from the top left corner of the CDN live streaming. It corresponds to the `y` member in `TranscodingUser`.<br><li>`w`: Width (pixel) of the video frame of the broadcaster. It corresponds to the `width` member in `TranscodingUser`.<br><li>`h`: Height (pixel) of the video frame of the broadcaster. It corresponds to the `height` member in `TranscodingUser`. |
+| `ver`       | The version of the SEI protocol. The current version is 20190611. |
+| `ts`        | Timestamp (ms) of the current encoding information.               |
+| `app_data`  | Extra user-defined information. It corresponds to the `transcodingExtraInfo` member in the `LiveTranscoding` class. |
 
-## The structure of SEI
+### The structure of SEI
 
 The SEI information is as follows:
 
@@ -69,17 +71,20 @@ The SEI information is as follows:
 0080  36302c22 78223a30 2c227922 3a302c22  60,"x":0,"y":0,"
 0090  7a6f7264 6572223a 317d5d2c 22747322  zorder":1}],"ts"
 00a0  3a313533 37393630 32333537 38332c22  :1537960235783,"
-00b0  76657222 3a223230 31383038 3238227d  ver":"20180828"}
+00b0  76657222 3a223230 31383038 3238227d  ver":"20190611"}
 ```
 
 In which:
 
-- 06: The SEI frame.
-- 64: The SEI frame type defined by the user. Here we define it as 100.
-- bd: The SEI frame length. If the frame length exceeds 255, for example, 922, it is represented as ffffff9d.
+- `06`: The SEI frame.
+- `64`: The SEI frame type defined by the user. Here we define it as 100.
+- `bd`: The length of the SEI frame. The following are some sample calculations rendered in decimal and hexadecimal:
+	- If the length is 922, because 922 can be divided by 255 (`0xff`) three times and the remainder is 157 (`0x9d`), then `bd` is `ffffff9d`. 
+	- If the length is 572, because 572 can be divided by 255 (`0xff`) two times and the remainder is 62 (`0x3e`), then `bd` is `ffff3e`. 
+	- If the length is 234, because 234 divided by 255 (`0xff`) gives 0 and the remainder is 234 (`0xea`), then `bd` is `ea`.
 - Other digits: Content of the SEI frame.
 
-## FAQ
+### FAQ
 
 Q: If I use the SEI frame in CDN streaming, is it necessary to use the signaling system to send the layout information? Do I use either signaling or SEI?
 A: Adding the H264/H265 SEI information to the video stream during CDN streaming is different from sending the uplink data. Only the `app_data` parameter of the SEI information relates to the uplink data. 

@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: macOS
-updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 09:38:55 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.0
@@ -218,7 +218,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td>客户端定义的用户账号，最大 128 字节可见字符（不能使用空格）。可以是用户的 uid、昵称、guid 等任何内容，但必须保证唯一。本文提到的所有 account 参数都是如此。</td>
 </tr>
 <tr><td><code>token</code></td>
-<td>由 App ID 和 App Certificate 生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a>。</td>
+<td>由 App ID 和 App 证书生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a>。</td>
 </tr>
 <tr><td><code>uid</code></td>
 <td>(该参数已废弃) 固定填 0</td>
@@ -263,7 +263,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td>客户端定义的用户账号，最大 128 字节可见字符（不能使用空格）。可以是用户的 uid、昵称、guid 等任何内容，但必须保证唯一。本文提到的所有 account 参数都是如此。</td>
 </tr>
 <tr><td><code>token</code></td>
-<td>由 App ID 和 App Certificate 生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a>。</td>
+<td>由 App ID 和 App 证书生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a>。</td>
 </tr>
 <tr><td><code>uid</code></td>
 <td>(该参数已废弃) 固定填 0</td>
@@ -365,7 +365,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 </td>
 </tr>
 <tr><td>查询频道最近用户列表</td>
-<td><ul>
+<td><b>已废弃</b><ul>
 <li>name: io.agora.signal.channel_query_userlist_all</li>
 <li>req: {“name”:频道名,”num”:数量(默认 1000*1000)}</li>
 <li>返回值：{“num”:总人数,”list”:最近成员}</li>
@@ -442,7 +442,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>name</code></td>
-<td>属性名称。最大 128 字节可见字符，例如：<code>_conn_timeout</code> 为内置属性，表示掉线超时秒数。默认设置为 120 秒，可设置范围为 20 秒至 120 秒。若设置成低于 20 秒，系统将自动设成 20 秒；若设置成高于 120 秒，系统将自动设成 120 秒。</td>
+<td>属性名称。最大 128 字节可见字符。</td>
 </tr>
 <tr><td><code>value</code></td>
 <td>属性值。最大 8096 字节可见字符</td>
@@ -456,6 +456,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) getAttr:(NSString*)name;
+
 ```
 
 该方法用于获取自己的用户属性。调用成功会回调 <code>onUserAttrResult</code>。
@@ -481,6 +482,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) getAttrAll;
+
 ```
 
 该方法用于获取某个用户的用户属性。调用成功会回调 <code>onUserAttrAllResult</code>。
@@ -489,6 +491,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) getUserAttr:(NSString*)account name:(NSString*)name;
+
 ```
 
 该方法用于获取某个用户的用户属性。调用成功会回调 <code>onUserAttrResult</code>。
@@ -517,6 +520,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) getUserAttrAll:(NSString*)account;
+
 ```
 
 该方法用于获取某个用户的所有用户属性。调用成功会回调 <code>onUserAttrAllResult</code>。
@@ -542,6 +546,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) messageInstantSend:(NSString*)account uid:(uint32_t)uid msg:(NSString*)msg msgID:(NSString*)msgID;
+
 ```
 
 该方法发送点对点消息到某个指定账号。
@@ -582,6 +587,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelJoin:(NSString*)channelID;
+
 ```
 
 该方法让用户加入指定频道。用户一次只能加入一个频道。如加入指定频道时已在其他频道中，将自动从其他频道退出。
@@ -598,7 +604,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>channelID</code></td>
-<td><p>频道名。最大为 128 字节可见字符。包含以下特殊频道名或者特殊频道属性：</p>
+<td><p>频道名。最大为 128 字节可见字符。包含以下特殊频道名或者特殊频道属性（已废弃，不建议使用）：</p>
 <div><ul>
 <li><code>__agora_user_online</code> ：当前 <code>appId</code> 中所有用户登录或离线事件将发送至该频道。</li>
 <li><code>__agora_channel_event</code> : 当前 <code>appId</code> 中用户加入或离开频道的所有事件将发送至该频道。</li>
@@ -617,6 +623,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelLeave:(NSString*)channelID;
+
 ```
 
 该方法用于退出当前的频道。退出成功后，所有频道用户将收到回调 <code>onChannelUserLeaved</code>。
@@ -642,6 +649,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelQueryUserNum:(NSString*)channelID;
+
 ```
 
 该方法用于查询指定频道的用户数量。调用成功后用户将收到 <code>onChannelQueryUserNumResult</code> 回调。
@@ -667,6 +675,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelSetAttr:(NSString*)channelID name:(NSString*)name value:(NSString*)value;
+
 ```
 
 该方法用于设置频道属性。当操作成功，所有频道用户都将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -696,12 +705,12 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 > 以下是 参数 name 的内置属性： 
 >
-> - `_userNotification` 1: 默认值，频道发送用户加入或离开频道的事件；0: 频道不发送用户加入或离开频道的事件。 
+> - `_userNotification` <b>该属性已废弃</b> 1: 默认值，频道发送用户加入或离开频道的事件；0: 频道不发送用户加入或离开频道的事件。 
 > - `_channel_ttl` ：频道最后一个用户离开后，多久销毁，单位为秒，默认为7200 。特殊频道永不销毁。 
 > - `_member_num` ： 表示当前频道人数，由系统自动更新；更新频次由 `_auto_update_num` 确定。如果  `_auto_update_num` 时间内没有用户进出频道，不会收到人数更新回调  <code>onChannelAttrUpdated</code>；如果 `_auto_update_num` 内有用户频繁进出频道，只会按固定时间收到一次回调。
 > - `_auto_update_num` ：表示是否由系统自动更新频道人数。0：关闭（默认）；1-n：（每多少秒更新一次）
-> - `_total_member_num` ：表示当前频道累计登录人次，由系统自动更新。`_auto_update_num` 与 `_auto_update_total_num` 需要同时设置为非0。更新原则类似 `_member_num`
-> - `_auto_update_total_num` : 表示是否由系统自动更新频道人数，0：关闭（默认）；非0：每多少秒后台更新一次（与 `_auto_update_num` 相同）。
+> - `_total_member_num` ：<b>该属性已废弃</b>表示当前频道累计登录人次，由系统自动更新。`_auto_update_num` 与 `_auto_update_total_num` 需要同时设置为非0。更新原则类似 `_member_num`
+> - `_auto_update_total_num` : <b>该属性已废弃</b> 表示是否由系统自动更新频道人数，0：关闭（默认）；非0：每多少秒后台更新一次（与 `_auto_update_num` 相同）。
 > - `_sendmsg_limit` : 整个频道每秒能发送的消息数
 > - `_setattr_limit` : 频道每个属性每秒能修改的次数
 
@@ -709,6 +718,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelDelAttr:(NSString*)channelID name:(NSString*)name;
+
 ```
 
 该方法用于删除频道属性。当操作成功，所有频道用户将收到 <code>onChannelAttrUpdated</code> 回调。
@@ -737,6 +747,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelClearAttr:(NSString*)channelID;
+
 ```
 
 该方法用于删除所有频道属性。
@@ -762,6 +773,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) messageChannelSend:(NSString*)channelID msg:(NSString*)msg msgID:(NSString*)msgID;
+
 ```
 
 该方法用于发送频道消息，频道内所有成员会收到 <code>onMessageChannelReceive</code> 回调。
@@ -795,6 +807,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) messageChannelSendForce:(NSString*)channelID msg:(NSString*)msg msgID:(NSString*)msgID ;
+
 ```
 
 该方法用于在不加入频道的情况下发送频道消息。建议不要在应用程序端使用该方法。
@@ -828,6 +841,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelInviteUser:(NSString*)channelID account:(NSString*)account uid:(uint32_t)uid ;
+
 ```
 
 该方法用于发起呼叫，即邀请某用户加入某个频道。
@@ -869,6 +883,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelInviteUser2:(NSString*)channelID account:(NSString*)account extra:(NSString*)extra ;
+
 ```
 
 与上述 API 意思相同，参数不同。
@@ -913,6 +928,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelInviteDTMF:(NSString*)channelID phoneNum:(NSString*)phoneNum dtmf:(NSString*)dtmf;
+
 ```
 
 该方法发送 DTMF 消息到对端，用于 SIP 网关的呼叫。对方会回调 <code>onInviteMsg</code> 。
@@ -944,6 +960,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (void) channelInviteAccept:(NSString*)channelID account:(NSString*)account uid:(uint32_t)uid extra:(NSString*)extra ;
+
 ```
 
 该方法用于当收到呼叫时，调用本接口接受收到的呼叫。主叫方会回调 <code>onInviteAcceptedByPeer</code> 。
@@ -1001,7 +1018,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td>废弃字段，填 0</td>
 </tr>
 <tr><td><code>extra</code></td>
-<td>主叫方想传递给呼叫方的更多信息，可以是任何信息。例如:该呼叫为语音通话还是视频通话。必须为 JSON 格式</td>
+<td>被叫想传递给主叫的更多信息，可以是任何信息。例如:该呼叫为语音通话还是视频通话。必须为 JSON 格式</td>
 </tr>
 </tbody>
 </table>
@@ -1045,6 +1062,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (int) getStatus;
+
 ```
 
 该方法用于获取用户状态信息。
@@ -1079,6 +1097,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 - (int) getSdkVersion;
+
 ```
 
 该方法用于获取 SDK 版本信息。
@@ -1213,6 +1232,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onReconnecting)(uint32_t nretry) ;
+
 ```
 
 登录成功后，与 Agora 的连接丢失将触发本回调。
@@ -1238,6 +1258,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onError)(NSString* name,AgoraEcode ecode,NSString* desc) ;
+
 
 
 
@@ -1284,6 +1305,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 该回调返回用户状态查询结果。调用 <code>queryUserStatus</code> 方法时触发此回调。
@@ -1320,6 +1342,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当重连成功会触发此回调。重连失败会触发 <code>onLogout</code> 回调。
@@ -1345,6 +1368,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onLoginSuccess)(uint32_t uid,int fd) ;
+
 
 
 
@@ -1379,6 +1403,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当退出登录时触发此回调。
@@ -1393,7 +1418,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1404,6 +1429,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onInvokeRet)(NSString* callID,NSString* err,NSString* resp) ;
+
 
 
 
@@ -1441,6 +1467,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当登录失败时触发此回调。
@@ -1455,7 +1482,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1466,6 +1493,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onChannelJoined)(NSString* channelID) ;
+
 
 
 
@@ -1497,6 +1525,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当加入频道失败触发此回调。
@@ -1514,7 +1543,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td>频道名</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1525,6 +1554,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onChannelLeaved)(NSString* channelID,AgoraEcode ecode) ;
+
 
 
 
@@ -1545,7 +1575,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td>频道名</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1556,6 +1586,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onChannelUserJoined)(NSString* account,uint32_t uid) ;
+
 
 
 
@@ -1590,6 +1621,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当有用户离开频道触发此回调。
@@ -1618,6 +1650,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onChannelUserList)(NSMutableArray* accounts, NSMutableArray* uids);
+
 
 
 
@@ -1654,6 +1687,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 查询频道用户数量时触发。
@@ -1685,6 +1719,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onChannelAttrUpdated)(NSString* channelID,NSString* name,NSString* value,NSString* type) ;
+
 
 
 
@@ -1733,6 +1768,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当收到呼叫邀请时触发。
@@ -1767,6 +1803,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onInviteReceivedByPeer)(NSString* channelID,NSString* account,uint32_t uid) ;
+
 
 
 
@@ -1807,6 +1844,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当呼叫被对方接受时触发。
@@ -1841,6 +1879,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onInviteRefusedByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
+
 
 
 
@@ -1881,6 +1920,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当呼叫失败时触发。
@@ -1904,7 +1944,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td>废弃字段</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 <tr><td><code>extra</code></td>
 <td>主叫方想传递给呼叫方的更多信息，可以是任何信息。例如:该呼叫为语音通话或视频通话。必须为 JSON 格式。</td>
@@ -1918,6 +1958,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onInviteEndByPeer)(NSString* channelID,NSString* account,uint32_t uid,NSString* extra) ;
+
 
 
 
@@ -1958,6 +1999,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当呼叫被自己结束时触发。
@@ -1989,6 +2031,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onInviteMsg)(NSString* channelID,NSString* account,uint32_t uid,NSString* msgType,NSString* msgData,NSString* extra) ;
+
 
 
 
@@ -2035,6 +2078,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当发送消息失败时触发。
@@ -2052,7 +2096,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 <td>消息 ID</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -2063,6 +2107,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onMessageSendSuccess)(NSString* messageID) ;
+
 
 
 
@@ -2091,6 +2136,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onMessageInstantReceive)(NSString* account,uint32_t uid,NSString* msg) ;
+
 
 
 
@@ -2125,6 +2171,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onMessageChannelReceive)(NSString* channelID,NSString* account,uint32_t uid,NSString* msg) ;
+
 
 
 
@@ -2165,6 +2212,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
+
 ```
 
 当有日志打印时触发。
@@ -2190,6 +2238,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onUserAttrResult)(NSString* account,NSString* name,NSString* value) ;
+
 
 
 
@@ -2224,6 +2273,7 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 ```
 @property (copy) void(^onUserAttrAllResult)(NSString* account, NSString* value) ;
+
 
 
 
@@ -2282,6 +2332,6 @@ updatedAt: Tue Apr 23 2019 02:46:21 GMT+0800 (CST)
 
 
 
-## 错误代码和警告代码
+## 错误码和警告码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_signaling.md)。

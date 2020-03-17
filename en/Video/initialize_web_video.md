@@ -3,32 +3,30 @@
 title: Create and Initialize a Client
 description: 
 platform: Web
-updatedAt: Fri Jul 19 2019 08:37:39 GMT+0800 (CST)
+updatedAt: Wed Dec 11 2019 03:03:55 GMT+0800 (CST)
 ---
 # Create and Initialize a Client
 ## Prerequisites
 
 Before creating and initizing the client, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
 
-Create a project in Agora Dashboard and get the App ID of the project. You need to pass in the App ID during initialization.
+Create a project in Agora Console and get the App ID of the project. You need to pass in the App ID during initialization.
 
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
 
-2. Click **Get Started** under **Projects**.
+2. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [**Project Management**](https://dashboard.agora.io/projects) page.
 
-	![](https://web-cdn.agora.io/docs-files/1563523371446)
+3. Click **Create**. 
 
-3. Input your project name in the pop-up window and click **Create**. Follow the on-screen instructions to get to know the basic steps to start a video call. Once the project is created, you can find it under **Projects**.
+![](https://web-cdn.agora.io/docs-files/1574924327108)
 
-	![](https://web-cdn.agora.io/docs-files/1563523478084)
+4.  Enter your project name and select your authentication mechanism ("App ID") in the dialog box.
+
+![](https://web-cdn.agora.io/docs-files/1574924446798)
 	
-4. Click the **Edit** button behind the new project, or the **Project Management** button ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+5. Click **Submit** and you can find the **App ID** of your newly created project.
 
- ![](https://web-cdn.agora.io/docs-files/1563523678240)
-
-5. On the **Project Management** panel, find the **App ID** of your project.
-
- ![](https://web-cdn.agora.io/docs-files/1563523737158)
+![](https://web-cdn.agora.io/docs-files/1574924570426)
 
 ## Implementation
 
@@ -54,7 +52,7 @@ client.init(<APPID>, function () {
 > Ensure that you call the `create` and `client.init` methods to intiialize the AgoraRtcEngine before calling any other API. 
 
 ## Next Steps
-You hava created the Client and can start a voice call with the following steps:
+You have created the Client and can start a voice call with the following steps:
 - [Join a Channel](../../en/Video/join_video_web.md)
 - [Publish and Subscribe to Streams](../../en/Video/publish_web.md)
 

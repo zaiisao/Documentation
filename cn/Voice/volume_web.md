@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on web
 platform: Web
-updatedAt: Sat Dec 29 2018 07:29:04 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:07:45 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -11,9 +11,11 @@ updatedAt: Sat Dec 29 2018 07:29:04 GMT+0800 (CST)
 
 
 ## 实现方法
-开始前请确保你已完成环境准备、安装包获取等步骤，详见[集成客户端 ](../../cn/Voice/web_prepare.md)。
+在调整通话音量前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Voice/start_call_web.md)或[实现互动直播](../../cn/Voice/start_live_web.md)。
 
-### 调节别人的音量
+### 示例代码
+
+#### 调节别人的音量
 
 ```javascript
 client.on("stream-subscribed", function(evt){
@@ -23,7 +25,7 @@ client.on("stream-subscribed", function(evt){
 });
 ```
 
-### 静音
+#### 静音
 
 ```javascript
 client.on("stream-subscribed", function(evt){
@@ -32,6 +34,10 @@ client.on("stream-subscribed", function(evt){
   stream.setAudioVolume(0);
 });
 ```
+
+### API 参考
+
+- [`setAudioVolume`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#setaudiovolume)
 
 ## 开发注意事项
 

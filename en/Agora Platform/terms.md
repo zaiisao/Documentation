@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 04:27:59 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 09:14:18 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -15,22 +15,23 @@ Things you need to know before using the Agora SDK.
 ### RTC SDK
 We refer to all the Agora SDKs that enable real-time communication as the RTC SDK. You can use the RTC SDK to enable a  [Voice Call](https://docs.agora.io/en/Voice/product_voice), [Video Call](https://docs.agora.io/en/Video/product_video), [Audio Broadcast](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio), and [Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live). We categorize the RTC SDKs by the supported platforms:
 
-- The Agora Native SDK, including the Android, iOS, macOS, Windows, and Electron SDK.
-- The Agora Web SDK
+- Native SDK, including the Android, iOS, macOS, and Windows SDK.
+- Electron SDK, including the macOS and Windows SDK.
+- Web SDK.
 
-### Agora Dashboard
+### Agora Console
 
-[Agora Dashboard](https://dashboard.agora.io/) is a platform provided by Agora for you to create and manage your projects. After signing up at [Agora Dashboard](https://dashboard.agora.io/), you can create projects, get [App IDs](#appid), view your usage statistics, analyze the quality of your calls, and check your bills.
+[Agora Console](https://dashboard.agora.io/) is a platform provided by Agora for you to create and manage your projects. After signing up at [Agora Console](https://dashboard.agora.io/), you can create projects, get [App IDs](#appid), view your usage statistics, analyze the quality of your calls, and check your bills.
 
 ### <a name="appid"></a>App ID
 
-App IDs are issued to app developers by Agora to identify the projects and organizations. After signing up at [Agora Dashboard](https://dashboard.agora.io/), you can create multiple projects, and each project will have a unique App ID. See [Getting an App ID](../../en/Agora%20Platform/token.md).
+App IDs are issued to app developers by Agora to identify the projects and organizations. After signing up at [Agora Console](https://dashboard.agora.io/), you can create multiple projects, and each project will have a unique App ID. See [Getting an App ID](../../en/Agora%20Platform/token.md).
 
 All communication sessions created across the Agora SD-RTN™ (Software Defined Real-time Network) with one App ID are isolated from all other sessions with different App IDs. Communication sessions with different App IDs are not connected or related. Statistics, management, and billing are separately associated based on each App ID. If an organization develops independently different apps by different teams, the apps should use different App IDs.  However, if the apps need to communicate with each other, a single App ID should be used.
 
 ### App Certificate
 
-Agora provides an App Certificate for generating [dynamic keys](#key). You can enable the App Certificate in the [Agora Dashboard](https://dashboard.agora.io). See [Getting an App Certificate](../../en/Agora%20Platform/token.md).
+Agora provides an App Certificate for generating [dynamic keys](#key). You can enable the App Certificate in the [Agora Console](https://dashboard.agora.io). See [Getting an App Certificate](../../en/Agora%20Platform/token.md).
 
 ### <a name="key"></a>Dynamic Key
 
@@ -40,7 +41,7 @@ Dynamic Keys are generated within the server-side code using an App Certificate.
 
 Dynamic Keys have expiry dates and contain client permissions, such as different role privileges (host and audience).
 
-Based on the SDK version, the Dynamic Key can be a Channel Key or a Token, see [Security Keys](../../en/Agora%20Platform/token.md) for details.
+Based on the SDK version, the Dynamic Key can be a Channel Key or a Token, see [Set up Authentication](../../en/Agora%20Platform/token.md) for details.
 
 ### SD-RTN™
 
@@ -71,7 +72,7 @@ As an analogy, if we imagine an app being a building, a channel will be a room i
 
 ### Channel profile
 
-The SDK applies different optimization methods according to the channel profile. Users in the same channel must use the same channel profile. Agora supports the following channel  profiles:
+The SDK applies different optimization methods according to the channel profile. Agora supports the following channel  profiles:
 
 
 | Channel Profile | Description | 
@@ -80,14 +81,14 @@ The SDK applies different optimization methods according to the channel profile.
 | Live Broadcast     | In a live broadcast channel, users have two client roles: [Host](#host) and [audience](#audience). The host sends and receives audio/video, and the audience receives audio/video with the sending function disabled.   | 
 | Gaming    | Any user in the channel can talk freely. This profile uses the codec with low-power consumption and low bitrate by default.   | 
 
-> The gaming profile applies to the Agora Gaming SDK only.
+<div class="alert note">The gaming profile applies to the Agora Gaming SDK only.</div>
 
 
-### UID
+### <a name="username"></a>Username
 
-A user ID (UID) identifies a user in the channel. Each user in the same channel should have a unique uid.
+A username identifies a user in the channel. Each user in the same channel should have a unique username.
 
-If you leave the uid empty or set it as 0, the SDK will automatically assign a UID for you.
+Agora supports two types of usernames, integer (UID) and string (User Account). You can choose either type to identify the users. Ensure that all the users in a channel use the same type of username.
 
 ### Stream
 
@@ -128,17 +129,17 @@ Agora’s products allow you to implement the live broadcast feature on an app:
 - To give a live broadcast, create a channel and join the channel as the host role.
 - To view a live broadcast, join the channel created by the host as the audience role.
 
-### <a name = "host"></a>Host
+### <a name = "host"></a>Broadcaster/Host
 
-In a live broadcast channel, the hosts are users who can publish and subscribe to streams.
+In a live broadcast channel, the broadcasters or hosts are users who can publish and subscribe to streams.
 
 ### <a name = "audience"></a>Audience
 
 In a live broadcast channel, an audience is a group of users who can only subscribe to streams. The audience cannot publish streams. 
 
-### Hosting-in
+### Co-host
 
-An audience can apply to become a host to interact directly with the existing hosts, namely hosting-in.
+An audience can apply to become a host to interact directly with the existing hosts, namely co-hosting.
 
 ### CDN live streaming
 

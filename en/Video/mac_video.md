@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: macOS
-updatedAt: Fri Jul 19 2019 08:35:21 GMT+0800 (CST)
+updatedAt: Thu Nov 21 2019 10:07:20 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/live broadcast with the Agora SDK for macOS.
@@ -95,7 +95,7 @@ Choose one of the following methods to add the Agora SDK libraries to your proje
    - `Foundation.framework`
    - `CoreAudio.framework`
    - `CoreMedia.framework`
-   - `AVFoudation.framework`
+   - `AVFoundation.framework`
    - `VideoToolbox.framework`
    - `AudioToolbox.framework`
    - `CFNetwork.framework`

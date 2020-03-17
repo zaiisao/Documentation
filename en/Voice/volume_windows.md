@@ -3,172 +3,227 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Mon Jun 10 2019 02:48:07 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 12:41:52 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
 
-When using the Agora SDK, you can adjust the audio recording and playback volumes for customization. For example, you can mute the remote audio by setting the volume as 0.
+The Agora RTC SDK enables you to manage the volume of the recorded audio or of the audio playback according to your actual scenario. For example, to mute a remote user in a one-to-one call, you can set the audio playback volume as 0.
 
-This article describes the scenarios when you need to adjust the volume, the corresponding APIs and considerations in the process from audio recording to playing. 
+This article provides the APIs and additional information relating to audio recording, audio mixing, and audio playback volume settings.
 
-![](https://web-cdn.agora.io/docs-files/1548729217285)
+![](https://web-cdn.agora.io/docs-files/1578902005463)
 
 ## Implementation
-Before proceeding, ensure that you prepare the development environment. See [Integrate the SDK](../../en/Voice/windows_video.md).
+Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Voice/start_call_windows.md) or [Start a Live Broadcast](../../en/Voice/start_live_windows.md).
 
-### Set the Recording Volume
+### Adjust the recording volume
 
-**Recording** is the process in which audio signals are captured by recorders and transported to signal senders. You can change the recording volume by adjusting the **volume of the recording device** or the **volume of the recording signal**. On Windows, Agora recommends adjusting the recording volume with related APIs.
+**Recording** is the process of sampling audio by a recording device and transmitting the recorded signal to the sender. To adjust the recording volume, you can **set the volume of the recording device** or **set the volume of the recorded signal**. We recommend using audio device-related APIs to adjust the recording volume.
+![](https://web-cdn.agora.io/docs-files/1578902023400)
 
-#### Adjust the Volume of the Recording Device
+#### Set the volume of the recording device
 
-The value of the volume ranges between 0 and 255. 0 represents the recording device is muted, and 255 is the maiximum volume.
+Call `setRecordingDeviceVolume` to set the volume of your recording device. 
 
-```cpp
-// Sets the volume of the recording device.
-int setRecordingDeviceVolume(int volume);
-```
+<div class="alert note">This method sets the global volume of your recording device.</div>
 
-The value of `volume` corresponds to the **microphone array** on Windows, and 255 is the maximum value, as shown in the following screenshot.
+The `volume` parameter represents the audio level of the recording device, ranging between 0 and 255:
+- 0: Mute.
+- 255: The maiximum volume of the device.
 
-![](https://web-cdn.agora.io/docs-files/1545634908852)
+As the following screenshot shows, the volume value corresponds to the audio level of your audio recording device.
+![](https://web-cdn.agora.io/docs-files/1577201229190)
 
-#### Adjust the Volume of the Recording Signal 
-
-If the above methods do not meet your requirements, the Agora SDK provides methods to adjust the volume of the recording signals, which enables adjusting the recording volumes.
-The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
+Sample code
 
 ```cpp
-// Initializes the parameter engine.
-RtcEngineParameters rep(*lpAgoraEngine);
-  
-// Sets the volume of the recording signal to 200.
-int ret = rep.adjustRecordingSignalVolume(200);
+// Sets the volume of your recording device as 50.
+int setRecordingDeviceVolume(int 50);
 ```
 
-#### API Reference
+#### Set the volume of the recorded signal 
+
+If `setRecordingDeviceVolume` does not suffice, you can call `adjustRecordingSignalVolume` to set the volume of the recorded signal.
+
+The `volume` parameter represents the audio level of the recorded signal, ranging between 0 and 400:
+- 0: Mute.
+- 100: (Default) The original volume.
+- 400: Four times the original volume (amplifying the audio signals by four times).
+
+Sample code
+
+```cpp
+// Sets the volume of the recorded signal to 200% of the original volume.
+int ret = rtcEngine.adjustRecordingSignalVolume(200);
+```
+
+#### API reference
 - [`setRecordingDeviceVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac24424e86ded2727a532df739ebf8086)
-- [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa9e9b5ae052022fe2e81232b9e6e7290)
+- [`adjustRecordingSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acf94e9e0122f09d0450475d7c5809036)
 
-### Set the Playback Volume
+### Adjust the playback volume
 
-**Playback** is the process in which audio signal are transported from signal senders to receivers and then to the players. During this process, you can adjust the volume by changing the **volume of the playback device** or the **volume of the playback signal**. Agora recommends adjusting the playback volume with related APIs. 
+**Playback** is the process of playing the received audio signal on the local playback device. To adjust the playback volume, you can **set the volume of the playback device**, or **set the volume of the audio signal**.
+![](https://web-cdn.agora.io/docs-files/1578902038036)
 
-#### Adjust the Volume of the Playback Device
-The value of the volume ranges between 0 and 255. 0 represents the recording device is muted, and 255 is the maiximum volume.
+#### Set the volume of the playback device
+
+To set the volume on the playback device directly, call `setPlaybackDeviceVolume`. 
+
+<div class="alert note">This method sets the global volume of your playback device.</div>
+
+The `volume` parameter represents the audio level of the playback device, ranging between 0 and 255:
+- 0: Mute.
+- 255: The maximum volume of the device.
+
+As the following screenshot shows, the volume value corresponds to the audio level of your audio playback device.
+![](https://web-cdn.agora.io/docs-files/1577201545034)
+
+Sample code
 
 ```cpp
-// Sets the volume of the playback device.
-int setPlaybackDeviceVolume(int volume);
+// Sets the volume of the playback device as 50.
+int setPlaybackDeviceVolume(int 50);
 ```
 
-The value of `volume` corresponds to the **louderspearker/headset** on Windows, and 255 is the maximum value, as shown in the following screenshot.
+#### Set the volume of the playback signal
 
-![](https://web-cdn.agora.io/docs-files/1545635853077)
+If `setPlaybackDeviceVolume` does not suffice, you can use `adjustPlaybackSignalVolume` or `adjustUserPlaybackSignalVolume` to set the volume of the audio signal.
+- `adjustPlaybackSignalVolume`：
+  - Universally sets the playback audio level of all remote users after audio mixing.
+  - The `volume` parameter represents the playback audio level, ranging between 0 and 400. 
+- `adjustUserPlaybackSignalVoume`：
+  - Adjusts the playback audio level of a specified remote user after audio mixing. Call this method as many times as necessary to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+  - The `volume` parameter represents the playback audio level, ranging between 0 and 100. 
 
-#### Adjust the Volume of the Playback Signal
+<div class="alert note"><li>As of v2.3.2, to mute the local audio playback, you must call both adjustPlaybackSignalVolume and adjustAudioMixingVolume, and set the volume parameter as 0.<li>Call adjustUserPlaybackSignalVoume after joining a channel.</li></div>
 
-If the above methods do not meet your requirements, the Agora SDK provides methods to adjust the volume of the playback signals, which enables adjusting the playback volumes.
-The value of the volume ranges between 0 and 400. 100 (default) represents the original volume, and 400 is four times the original volume (amplifying the audio signals by four times).
+Sample code
 
 ```cpp
-// Initializes the parameter engine.
-RtcEngineParameters rep(*lpAgoraEngine);
-
-// Sets the volume of the playback signal to 200.
-int ret = rep.adjustPlaybackSignalVolume(200);
+// Sets the volume of the local playback of all remote users as 200% of the original volume.
+int ret = rtcEngine.adjustPlaybackSignalVolume(200);
+// Sets the volume of the local playback of a specified remote user as 200% of the original volume.
+int ret = rtcEngine.adjustUserPlaybackSignalVolume(uid, 50);
 ```
 
-#### API Reference
+#### API reference
 
-- [`setPlaybackDeviceVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a20b66e126ff710afc0e9258f96be8e7a)
-- [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a8bed09e12b8e2d9934aafad50b77d364)
+- [`setPlaybackDeviceVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac14a1238e83303abed2f36e02fcc9366)
+- [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a98919705c8b2346811f91f9ce5e97a79)
+- [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a609e74c9a6e8df205543326f2ca6a965)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a544aee96b789ac5a57d26b61b7e1a5fa)
 
-### Set the Audio Mixing Volume
+### Adjust the audio mixing volume
 
-**Audio mixing** is playing local or online music while speaking, so that other users in the channel can hear the speaker and the music simultaneously. See [Audio Mixing](../../en/Voice/effect_mixing_windows.md) for enabling this function.
+**Audio mixing** is the process of combining local or online music files with the local stream so that all the remote users in the channel can hear the host and the music at the same time. See [Audio Effects/Mixing](../../en/Voice/audio_effect_mixing_windows.md) for more information about enabling this function.
+![](https://web-cdn.agora.io/docs-files/1578902056149)
 
-The value of the audio mixing volume ranges between 0 and 100. 100 (default) represents the original volume, and 0 means the audio mixing is muted.
+The `adjustAudioMixingVolume` method adjusts the volume of the music file for both the local user and the remote users.
+
+The `volume` parameter represents the audio level of the music file, ranging between 0 and 100.
+- 0: Mute.
+- 100: (Default) The original volume.
+
+Sample code
 
 ```cpp
-// Initializes the parameter engine.
-RtcEngineParameters rep(*lpAgoraEngine);
-
-// Sets the audio mixing volume for the remote users.
-int ret = rep.adjustAudioMixingPublishVolume(50);
-// Sets the audio mixing volume for both local users. 
-int ret = rep.adjustAudioMixingPlayoutVolume(50);
+// Sets the audio mixing volume for the local user and remote users as 50% of the original volume.
+int ret = rtcEngine.adjustAudioMixingVolume(50);
 ```
 
-You can also call the API `adjustAudioMixingVolume` to set the volume of audio playing for both remote users and local users.
+You can also call `adjustAudioMixingPlayoutVolume` and `adjustAudioMixingPublishVolume` respectively to adjust the audio mixing volume.
+
+- `adjustAudioMixingPlayoutVolume`:
+  - Adjusts the audio mixing volume for the local user.
+  - The `volume` parameter represents the audio mixing volume for the local user, ranging between 0 and 100.
+- `adjustAudioMixingPublishVolume`：
+  - Adjusts the audio mixing volume for the remote users.
+  - The `volume` parameter represents the audio mixing volume for the remote users, ranging between 0 and 100.
+
+<div class="alert note">Call adjustAudioMixingPlayoutVolume and adjustAudioMixingPublishVolume after joining a channel.</div>
+
+Sample code
 
 ```cpp
-// Initializes the parameter engine.
-RtcEngineParameters rep(*lpAgoraEngine);
-
-// Sets the audio mixing volume for both local and remote users.
-int ret = rep.adjustAudioMixingVolume(50);
+// Sets the audio mixing volume of the music for the remote users as 50% of the original volume.
+int ret = rtcEngine.adjustAudioMixingPublishVolume(50);
+// Sets the audio mixing volume of the music for the local user as 50% of the original volume.
+int ret = rtcEngine.adjustAudioMixingPlayoutVolume(50);
 ```
 
-#### API Reference
+#### API reference
 
-- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a8f8d2af4b4c7988934e152e3b281d734)
-- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a99ab2878e0c4fbf1be6970a2c545d085)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a5e117be71d38d813208198f4064aa964)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9fafbaaf39578810ec9c11360fc7f027)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8677c3f3160927d25d9814a88ab06da6)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a544aee96b789ac5a57d26b61b7e1a5fa)
 
-### Set the Audio Effects Volume
+### Adjust the audio effects volume
 
- **Audio effects** are certain short-time sounds such as clapping and gunshots. See [Audio Effects](../../en/Voice/effect_mixing_windows.md) for enabling this function.
+ An **audio effects** here refers to a sound clip which plays a brief sound effect such as clapping or gunshots. See [Audio Effects/Mixing](../../en/Voice/audio_effect_mixing_windows.md) for more information on how to enable this function.
 
-The value of the audio effects volume ranges between 0.0 and 100.0. 100 .0 (default) represents the original volume, and 0.0 means the audio effect is muted.
+![](https://web-cdn.agora.io/docs-files/1578902072143)
+
+You can call `setEffectsVolume` or `setVolumeOfEffect` to set the audio effects volume.
+- `setEffectsVolume`：
+  - Sets the volume of all audio effects.
+  - The `volume` parameter represents the volume of the audio effects, ranging between 0 and 100.
+- `setVolumeOfEffect`：
+  - Sets the volume of a specified audio effect.
+  - The `volume` parameter represents the volume of a specified audio effect, ranging between 0 and 100.
+
+#### Sample code
 
 ```cpp
-// Initializes the parameter engine.
-RtcEngineParameters rep(*lpAgoraEngine);
-
-// Sets the volume of all audio effect files.
-int ret = rep.setEffectsVolume(50);
-// Sets the volume of a single audio effect file.
-int ret = rep.setVolumeOfEffect(soundId, 50);
+// Sets the volume of all audio effects as 50% of the original volume.
+int ret = rtcEngine.setEffectsVolume(50);
+// Sets the volume of a specified audio effect as 50% of the original volume.
+int ret = rtcEngine.setVolumeOfEffect(soundId, 50);
 ```
 
-#### API Reference
+#### API reference
 
-- [`setEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa3041ef19bfe10ffc5a1130cda91ab7b)
-- [`setVolumeOfEffect`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a71fac1633ea84c892879781bee56d001)
+- [`setEffectsVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add9a7fd856700acd288d47ff3c7da19d)
+- [`setVolumeOfEffect`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a08287428f277b7bf24d51a86ef61799b)
 
-### Get the Data of the Loudest Speaker (Callback Method)
+### Get the data of the loudest speaker (callback)
 
-In audio recording, mixing and playing, you can use the following APIs to get the data of the loudest speaker in the channel.
+When recording, mixing, or playing audio, you can use the following methods to get the data of the loudest speaker in the channel.
 
-- The speakers with the highest instant volume
+- Reports users with the highest peak volumes. The `onAudioVolumeIndication` callback reports the user IDs the corresponding volumes of the currently loudest speakers in the channel, as well as whether the local user is speaking.
 
-```cpp
+ <div class="alert note">To enable voice detection for the local user, you must set report_vad as true when calling enableAudioVolumeIndication.</div>
+ 
+ Sample code
+
+ ```cpp
+// Gets the user IDs of the users with the highest peak volume, the corresponding volumes, as well as whether the local user is speaking.
+// @param speakers is an array containing the user IDs and volumes of the local and the remote users. The volume parameter ranges between 0 and 255.
+// @param speakerNumber refers to the number of the speakers, ranging between 0 and 3.
+// @param totalVolume refers to the total volume after audio mixing, ranging between 0 and 255.
 void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speakerNumber, int totalVolume)  {
-// Gets the ID of the speakers with the highest instant volume. A user ID of 0 indicates it is the local user.
-// speakers is an array that contains uid and volumne of the speaker, volume ranging between 0 and 255.
-// speakerNumber shows the size of the speakers array.
-// totalVolume is the toal volume after audio mixing, ranging between 0 to 255.
 }
-```
+ ```
 
-- The speaker with the highest accumulative volume during a certain period
+- Reports the user with the highest average volume. The onActiveSpeaker callback reports the user ID with the highest average volume during a certain period of time.
 
+ <div class="alert note">You must call enableAudioVolumeIndication to be able to receive this callback.</div>
 
-```cpp
+ Sample code
+
+ ```cpp
+ // Gets the user ID of the user with the highest average volume during a certain period of time. A uid of 0 indicates the local user.
 void onActiveSpeaker(uid_t uid) {
-// Gets the ID of the speaker with the highest accumulative volume during a certain period. A user ID of 0 indicates it is the local user.
 }
-```
+ ```
 
-#### API Reference
+#### API reference
 
-- [`onAudioVolumeIndication`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a59ae67333fbc61a7002a46c809e2ec4f)
+- [`onAudioVolumeIndication`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aab1184a2b276f509870c055a9ff8fac4)
 - [`onActiveSpeaker`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae643c9dbf94360a23a8b3a56c93f90bc)
 
 ## Considerations
 
-- The API methods have return values. If the method call fails, the return value is < 0.
-- If the volume of the audio signal is set too high, noise may occur on some devices.
+Setting the audio level too high may cause audio distortion on some devices.
 

@@ -3,11 +3,11 @@
 title: 直播相关
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 28 2018 10:03:31 GMT+0800 (CST)
+updatedAt: Tue Oct 29 2019 03:00:47 GMT+0800 (CST)
 ---
 # 直播相关
 ### 直播中如何踢人？
-目前 App 可以支持服务端踢人功能。具体用法可参考 [Dashboard RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
+目前 App 可以支持服务端踢人功能。具体用法可参考 [控制台RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)。
 
 ### 如何调整旁路直播的布局？
 请参考各平台 API 文档中 `setLiveTranscoding` 接口的描述。

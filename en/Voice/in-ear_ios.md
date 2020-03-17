@@ -3,21 +3,26 @@
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
 platform: iOS
-updatedAt: Fri Nov 23 2018 08:52:20 GMT+0000 (UTC)
+updatedAt: Wed Sep 25 2019 10:09:07 GMT+0800 (CST)
 ---
 # In-ear Monitoring
-In-ear monitoring can provide a mix of audio sources (for example the vocal and the music) to the host with a low latency, frequently used in professional scenarios such as concerts.
-Agora SDK supports the in-ear monitoring function and adjusting the volume of the in-ear monitor.
+In-ear monitoring provides a mix of the audio sources (for example, a mix of the vocals and music) to the host with low latency, commonly used in professional scenarios, such as in concerts.
+The Agora SDK supports the in-ear monitoring function and volume adjustment of the in-ear monitor.
 
 ## Implementation
-Before proceeding, ensure that you have finished preparing the development environment. See [Integrate the SDK](../../en/Voice/ios_video.md) for more information.
+
+Before using the in-ear monitoring function, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Voice/start_call_ios.md) or [Start a Live Broadcast](../../en/Voice/start_live_ios.md).
+
+The Agora SDK provides the `enableInEarMonitoring` and `setInEarMonitoringVolume` methods to set the in-ear monitoring according to the scenario, you can use these methods no matter before or after `joinChannelByToken`.
+
+### Sample code
 
 ```swift
 // swift
 // Enables in-ear monitoring. The default value is false.
 agoraKit.enable(inEarMonitoring: true)
 
-// Sets the volume of the in-ear monitor. The value range is 0 to 100, and the default is 100 which represents the original volume captured by the microphone.
+// Sets the volume of the in-ear monitor. The value ranges between 0 and 100. The default value is 100, which represents the original volume captured by the microphone.
 agoraKit.setInEarMonitoringVolume(50)
 ```
 
@@ -26,10 +31,16 @@ agoraKit.setInEarMonitoringVolume(50)
 // Enables in-ear monitoring. The default value is NO.
 [agoraKit enableInEarMonitoring:YES];
 
-// Sets the volume of the in-ear monitor. The value range is 0 to 100, and the default is 100 which represents the original volume captured by the microphone.
+// Sets the volume of the in-ear monitor. The value ranges between 0 and 100. The default value is 100, which represents the original volume captured by the microphone.
 [agoraKit setInEarMonitoringVolume: 50];
 ```
 
+### API reference
+
+- [`enableInEarMonitoring`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableInEarMonitoring:)
+- [`setInEarMonitoringVolume`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setInEarMonitoringVolume:)
+
 ## Considerations
 
-The above methods have return values. If the API fails, the return is < 0.
+- Call `enableInEarMonitoring` before `setInEarMonitoringVolume`.
+- The API methods have return values. If the method call fails, the return value is < 0.

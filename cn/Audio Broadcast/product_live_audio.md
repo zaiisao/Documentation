@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 02:48:37 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 04:07:46 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 音频互动直播（Audio Broadcasting）可以实现一对多，多对多的纯音频互动直播。
@@ -19,6 +19,8 @@ Agora 音频互动直播和 [Agora 语音通话](https://docs.agora.io/cn/Voice/
 ## 功能和场景
 
 Agora 音频互动直播提供丰富的功能，你可以根据自己的场景需求灵活组合。
+
+<style> table th:first-of-type {     width: 150px; } th:third-of-type {     width: 170px; }</style>
 
 | 主要功能             | 功能描述                                                     | 典型适用场景                                                 |
 | -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -46,7 +48,7 @@ Agora 音频互动直播提供丰富的功能，你可以根据自己的场景�
 | 多主播互动                | 17 人                                                        |
 | 最多观众人数              | 100 万                                                       |
 | 跨频道主播连麦            | 支持                                                         |
-| 音频属性                  | <li>音频采样率：16 KHz - 48 KHz <li>支持单、双声道           |
+| 音频属性                  | <li>音频采样率：16 kHz - 48 kHz <li>支持单、双声道           |
 | 音频抗丢包率              | 上下行抗丢包率 70%                                           |
 
 ### 平台兼容
@@ -55,7 +57,7 @@ Agora 音频互动直播提供丰富的功能，你可以根据自己的场景�
 
 | 平台       | 支持版本                                                     |
 | ---------- | ------------------------------------------------------------ |
-	| Android    | <p>4.1+</p><p>Android SDK 支持如下架构：</p><ul><li>ARMv7<li>ARM64<li>x86<li>x86-64                                                         |
+	| Android    | <p>4.1+</p><p>Android SDK 支持如下 ABI：</p><ul><li>armeabi-v7a<li>arm64-v8a<li>x86<li>x86_64                                                         |
 | iOS        | 8.0+                                                         |
 	| Windows    | <p>XP SP3+</p><p>Windows SDK 支持如下架构：<p><ul><li>x86<li>x64                                                      |
 | macOS      | 10.0+                                                        |
@@ -66,12 +68,12 @@ Agora 音频互动直播提供丰富的功能，你可以根据自己的场景�
 
 ### 音频互动直播 - Agora Live
 
-在应用市场下载 Agora Live app，快速体验超低延迟多人连麦互动直播。
+在应用市场下载 Agora Live，快速体验超低延迟多人连麦互动直播。
 
 - [Android](http://android.myapp.com/myapp/detail.htm?apkName=io.agora.vlive)
 - [iOS](https://itunes.apple.com/cn/app/id1116886856?mt=8)
-- [Web](https://webdemo.agora.io/videocall/?_ga=2.212778772.1474390666.1541382528-1513744824.1530171825)
-- [Windows](http://download.agora.io/avc/AgoraLiveBroadcast_for_windows_2.2.0.zip?_ga=2.231750175.1098053192.1540804434-1796221125.1530266296)
+- [Web](https://videocall.agora.io/#/)
+- [Windows](http://download.agora.io/avc/AgoraLiveBroadcast_for_windows_2.2.0.zip)
 
 ### 语音聊天室 - 分贝
 

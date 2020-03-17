@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume for Android audio SDK
 platform: Android
-updatedAt: Thu Feb 21 2019 03:54:27 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 07:17:39 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -30,9 +30,13 @@ int volume = 200;
 rtcEngine.adjustRecordingSignalVolume(volume);
 ```
 
+**Note**: 
+从 v2.3.2 开始，[`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b) 接口仅支持调整人声的播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 `adjustPlaybackSignalVolume(0)` 和 `adjustAudioMixingPlayoutVolume(0)`。
+
 #### API 参考
 
 - [`adjustRecordingSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af3747f72256eb683feadbca2b742bd05)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
 
 ### 设置播放音量
 **播放**是指音频信号从发送端进入到接收端，然后使用播放设备进行播放的过程。这个过程中你可以使用 SDK 的接口直接调整播放声音的信号幅度，以调整播放的音量。

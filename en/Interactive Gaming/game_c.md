@@ -3,7 +3,7 @@
 title: Cocos Creator Quickstart
 description: 
 platform: Cocos Creator
-updatedAt: Fri Jul 05 2019 10:30:01 GMT+0800 (CST)
+updatedAt: Mon Feb 24 2020 07:11:43 GMT+0800 (CST)
 ---
 # Cocos Creator Quickstart
 ## Prerequisites
@@ -14,7 +14,7 @@ Development environment:
 - A certified Cocos Creator account.
 - An Android or iOS device for the mobile end.
 - No VPN connection.
-- Ensure that the browser for the Web end meets the [requirements](https://docs.agora.io/en/Audio%20Broadcast/web_prepare?platform=Web).
+- Ensure that the browser for the Web end meets the [requirements](https://docs.agora.io/en/Interactive%20Broadcast/start_live_web?platform=Web#prerequisites).
 
 ## Integrate the Agora Service
 
@@ -38,11 +38,11 @@ Create a Cocos Creator project and enable the Agora Service in your project with
 
    ![](https://web-cdn.agora.io/docs-files/1562229434363)
 	 
-5. Upon opening the service, the following window appears. Click **console** to go to Agora **Dashboard**. 
+5. Upon opening the service, the following window appears. Click **console** to go to Agora **Console**. 
 
 	![](https://web-cdn.agora.io/docs-files/1562229467151)
 
-	The Dashboard automatically creates an Agora project. Click open the project and get your Agora App ID. You need to pass the App ID when initializing the RtcEngine.
+	The Console automatically creates an Agora project. Click open the project and get your Agora App ID. You need to pass the App ID when initializing the RtcEngine.
 
   ![](https://web-cdn.agora.io/docs-files/1562297985211)
 	 

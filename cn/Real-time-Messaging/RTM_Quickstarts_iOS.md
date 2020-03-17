@@ -1,43 +1,102 @@
 
 ---
-title: RTM 快速开始
+title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Mon Jul 08 2019 09:13:15 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 04:03:10 GMT+0800 (CST)
 ---
-# RTM 快速开始
-## 集成客户端
+# 收发点对点消息和频道消息
+本章介绍在正式使用 Agora RTM SDK for iOS 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
-### 前提条件
+## Demo 体验
+
+你可以在 GitHub 下载最新版的示例项目查看相关功能的具体实现。
+
+- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C)
+- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS)
+
+## 开发环境要求
 
 - Xcode 9.0+。
 - iOS 8.0+ 真机（iPhone 或 iPad）。
 - 一个有效的 Agora 开发者账号。
-- 请确保你的项目已设置有效的开发者签名。
 
-### 创建项目
 
-1. 打开 Xcode，新建一个项目。
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口并设置域名白名单。</div>
 
-2. 选择 **Single View App** 模板，点击 **Next**。
+## 准备开发环境
 
+本节介绍如何获取 App ID、创建项目，并将 Agora RTM SDK for iOS 集成至你的项目中。
+
+### <a name="appid"></a> 获取 App ID
+
+
+参考以下步骤获取一个 App ID。若已有App ID，可以直接查看[创建项目](#create)。
+<details>
+	<summary><font color="#3ab7f8">获取 App ID</font></summary>
+
+1. 进入 [Agora Dashboard](https://dashboard.agora.io/) ，并按照屏幕提示注册账号并登录 Dashboard。详见[创建新账号](../../cn/Real-time-Messaging/sign_in_and_sign_up.md)。
+2. 点击**项目列表**处的**新手指引**。
+
+	![](https://web-cdn.agora.io/docs-files/1563521764570)
+
+3. 在弹出的窗口中输入你的第一个项目名称，然后点击**创建项目**。你可以参考屏幕提示，了解实现一个视频通话的基本步骤。
+
+	![](https://web-cdn.agora.io/docs-files/1563521821078)
+
+4. 项目创建成功后，你会在**项目列表**下看到刚刚创建的项目。点击项目名后的**编辑**按钮，进入项目页。你也可以直接点击左边栏的**项目管理**图标，进入项目页面。
+
+	![](https://web-cdn.agora.io/docs-files/1563522909895)
+
+5. 在**项目管理**页，你可以查看你的 **App ID**。
+
+	![](https://web-cdn.agora.io/docs-files/1563522556558)
+
+</details>
+
+### <a name="create"></a>创建项目
+
+参考以下步骤创建一个 iOS 项目。若已有 iOS 项目，可以直接查看[集成 SDK](#IntegrateSDK)。
+<details>
+	<summary><font color="#3ab7f8">创建 iOS 项目</font></summary>
+
+1. 打开 **Xcode** 并点击 **Create a new Xcode project**。
+2. 选择 **Single View App** 模板并点击 **Next**。
 3. 填入你的项目名称，公司名称等信息，选择开发团队与开发语言，点击 **Next**。
 
-   如果你没有添加过开发团队信息，会看到 **Add account…** 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。
+> 如果你没有添加过开发团队信息，会看到 **Add account…** 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。
 
-4. 选择你的项目所要存放的位置，点击 **Create**。
-
-#### 设置开发者签名
-
-如果你已经设置过开发者签名，可跳过该节。
+4. 选择你的项目的存储路径，点击 **Create**。
+5. 如果你已经设置过开发者签名，可跳过该节。
 
 将你的 iOS 设备连接至电脑。选中当前项目 **Target** ，在 **General** 标签页上找到 **Signing**，勾选 **Automatically manage signing**，在弹窗中点击 **Enable Automatic**。
 
-至此，你已经完成了项目的创建。接下来，让我们把 Agora SDK 包添加到这个项目中。
+![](https://web-cdn.agora.io/docs-files/1568803609379)
+</details>
 
-### 手动添加 SDK 到项目中
+### <a name="IntegrateSDK"></a> 集成 SDK
 
-1. 下载 [Agora RTM Objective-C SDK for iOS](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_iOS_v0.9.3.zip) ，解压后将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到你的项目文件夹内。
+#### 方法 1：通过 Cocoapods 导入 SDK
+
+1. 请确保已在本机安装 Cocoapods。具体方法详见 [Getting Started with Cocoapods](https://guides.cocoapods.org/using/getting-started.html#getting-started)。
+2. 在你的电脑 Terminal 终端 cd 进入你的项目所在目录，利用 vim 创建 Podfile：
+`vim Podfile`
+3. 在 Podfile 文件中输入以下内容：
+```
+target '<YOUR APP>' do
+    pod 'AgoraRtm_iOS'
+end
+```
+> 请以你的项目名称替换 \<YOUR APP\> 。
+4. 保存 Podfile 并退出：
+`:wq`
+6. 导入 Agora RTM SDK：
+`pod install`
+7. 在 Xcode 中打开生成的 **.xcworkspace** 文件。
+
+#### 方法 2：手动添加 SDK 到项目中
+
+1. 下载 [Agora RTM Objective-C SDK for iOS](../../cn/Real-time-Messaging/downloads.md) ，解压后将 **libs** 文件夹内的 **AgoraRtmKit.framework** 文件复制到你的项目文件夹内。
 2. 使用 Xcode 打开你的项目，然后选中当前 Target。
 3. 打开 **Build Phases** 页面，展开 **Link Binary with Libraries** 项并添加如下库。点击 **+** 图标开始添加
    - **AgoraRtmKit.framework**
@@ -64,7 +123,29 @@ import AgoraRtmKit
 
 > 如果填入 import 代码后提示找不到文件，可以尝试在 **Build Settings** 页面 **Framework search paths** 设置中添加 `$(SRCROOT)`。
 
-## <a name = "create"></a>初始化
+## 实现实时消息和基本频道操作
+
+本节主要提供实现实时消息和基本频道操作的 API 调用时序图、示例代码，以及相关注意事项。
+
+### API 调用时序图
+
+#### 登录登出 Agora RTM 系统
+
+![](https://web-cdn.agora.io/docs-files/1562566652476)
+
+#### 收发点对点消息
+
+![](https://web-cdn.agora.io/docs-files/1562566668046)
+
+#### 加入离开频道
+
+![](https://web-cdn.agora.io/docs-files/1562566699241)
+
+#### 收发频道消息
+
+![](https://web-cdn.agora.io/docs-files/1562566713620)
+
+### <a name = "create"></a>初始化
 
 调用 `initWithAppId` 方法创建一个实例。在该方法中:
 
@@ -88,11 +169,10 @@ import AgoraRtmKit
 }
 ```
 
-### 注意事项
 
-- `AgoraRtmKit` 支持多实例，每个实例独立工作互不干扰，多个实例创建时可以用相同的 `context`，但是事件回调 `AgoraRtmDelegate` 必须是不同的实例。
+> `AgoraRtmKit` 支持多实例，每个实例独立工作互不干扰，多个实例创建时可以用相同的 `context`，但是事件回调 `AgoraRtmDelegate` 必须是不同的实例。
 
-## <a name = "login"></a>登录
+### <a name = "login"></a>登录
 
 App 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息和群聊功能，在此之前，请确保你已完成初始化。
 
@@ -133,11 +213,11 @@ App 必须在登录 RTM 服务器之后，才可以使用 RTM 的点对点消息
 
 > 调用 `logoutWithCompletion` 方法之后可以调用 `loginByToken` 重新登录或者切换账号。
 
-## <a name = "sendpeer"></a>点对点消息
+### <a name = "sendpeer"></a>点对点消息
 
 App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的点对点消息功能。
 
-### 发送点对点消息
+#### 发送点对点消息
 
 调用 `sendMessage` 方法发送点对点消息。在该方法中：
 
@@ -162,7 +242,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 }
 ```
 
-### 接收点对点消息
+#### 接收点对点消息
 
 点对点消息的接收通过创建 `AgoraRtmMessage` 实例的时候传入的 `AgoraRtmDelegate` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到消息文本内容和是消息发送方的用户 ID (`peerId`)。
 
@@ -174,16 +254,13 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 ```
 
 
+> 接收到的 `AgoraRtmMessage` 消息对象不能重复利用再用于发送。
 
-### 注意事项
-
-接收到的 `AgoraRtmMessage` 消息对象不能重复利用再用于发送。
-
-## <a name = "sendchannel"></a>频道消息
+### <a name = "sendchannel"></a>频道消息
 
 App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的频道消息功能。
 
-### 创建频道实例和加入频道
+#### 创建并加入频道
 
 1. 调用 `AgoraRtmChannel` 实例的 `createChannelWithId` 方法创建 `AgoraRtmChannel` 实例。在该方法中：
    - 传入能标识每个频道的 ID。`channelId` 为字符串，必须是可见字符（可以带空格），不能为空或者多于 64 个字符，也不能是字符串 `"nil"`。
@@ -208,18 +285,18 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
     }];
 }
 #pragma AgoraRtmChannelDelegate
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel memberLeft:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel memberLeft:(AgoraRtmMember *)member
 {
     NSLog(@"%@ left channel %@", member.userId, member.channelId);
 }
 
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel memberJoined:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel memberJoined:(AgoraRtmMember *)member
 {
     NSLog(@"%@ joined channel %@", member.userId, member.channelId);
 }
 ```
 
-### 发送频道消息
+#### 发送频道消息
 
 在成功加入频道之后，用户可以开始向该频道发送消息。
 
@@ -239,18 +316,18 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 #pragma AgoraRtmDelegate
 
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
 {
     NSLog(@"message received from %@ in channel %@: %@", message.text, member.channelId, member.userId);
 }
 ```
 
-### 接收频道消息
+#### 接收频道消息
 
 频道消息的接收通过创建频道消息的时候传入的 `AgoraRtmChannelDelegate` 回调接口进行监听。在该回调接口的 `MessageReceived` 回调方法中可以获取到频道消息文本内容和频道消息的发送者的用户 ID。
 
 ```objective-c
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
 {
     NSLog(@"message received from %@ in channel %@: %@", message.text, member.channelId, member.userId);
 }
@@ -258,11 +335,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 
 
-### 获取频道成员列表
-
-调用 `AgoraRtmChannel` 实例的 `getMembersWithCompletion` 方法可以获取到当前在该频道内的用户列表。 
-
-### 退出频道
+#### 退出频道
 
 调用 `AgoraRtmChannel` 实例的 `leaveWithCompletion` 方法可以退出该频道。
 
@@ -276,9 +349,7 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 }];
 ```
 
-退出频道之后可以调用 `joinWithCompletion` 方法再重新加入频道。
-
-### 注意事项
+## 开发注意事项
 
 - 每个客户端都需要首先调用 `AgoraRtmKit` 的 `createChannelWithId` 方法创建频道实例才能使用群聊功能，该实例只是本地的一个 `AgoraRtmChannel` 类对象实例。
 - RTM 支持同时创建最多 20 个不同的频道实例并加入到多个频道中，但是每个频道实例必须使用不同的频道 ID 以及不同的 `AgoraRtmChannelDelegate` 回调。
@@ -286,3 +357,14 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 - 接收到的 `AgoraRtmMessage` 消息对象不能重复利用再用于发送。
 - 当离开了频道且不再加入该频道时，可以调用 `AgoraRtmChannel` 实例的 `destroyChannelWithId` 方法及时释放频道实例所占用的资源。
 - 所有回调如无特别说明，除了基本的参数合法性检查失败触发的回调，均为异步调用。
+
+
+## 示例代码
+
+- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C) 示例项目的主要代码逻辑可以在以下文件查看：
+  - [MainViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/MainViewController.m)
+  - [ChatViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/ChatViewController.m)
+
+- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS) 示例项目的主要代码逻辑可以在以下文件查看：
+  - [MainViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/MainViewController.swift)
+  - [ChatViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/ChatViewController.swift)

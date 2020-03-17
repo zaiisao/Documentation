@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Wed Jul 10 2019 06:55:25 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:30:33 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -17,7 +17,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/windows_video.md).
+Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Video/start_call_windows.md) or [Start an Interactive Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
 
 From v2.4.0, Agora supports the following screen sharing functions on Windows:
 
@@ -30,7 +30,7 @@ Windows lays all its displays on a virtual screen. Developers need to get the re
 
 1. Get the screen rect for screen sharing.
 
-	```
+	```c++
 	bool result = true;
 	int index;
 	for (index = 0;; index++) {
@@ -59,7 +59,7 @@ Windows lays all its displays on a virtual screen. Developers need to get the re
 
 2. Share the screen by specifying the screen rect.
 
-	```cpp
+	```c++
 	// Specifies the screen or window.
 	RECT rc;
 	agora::rtc::Rectangle rcCap;
@@ -91,14 +91,13 @@ Windows lays all its displays on a virtual screen. Developers need to get the re
 	m_lpAgoraEngine->stopScreenCapture();
 	```
 
-
 ### Share the whole or part of a window by specifying windowId
 
 Windows assigns a unique window identifier (windowId) for each window with a data type of HWND. To achieve compatibility with the x86 and x64 operating systems, it is in the format of view_t. With this window ID, we can implement window sharing on Windows with the following steps:
 
 1. Get the window ID for window sharing.
 
-	```
+	```c++
 	BOOL CALLBACK EnumProc(HWND hWnd, LPARAM IParam)
 	{
 			// Gets the windowId of the visible window. Popup and menu window is excludes.
@@ -116,7 +115,7 @@ Windows assigns a unique window identifier (windowId) for each window with a dat
 
 2. Share the window by specifying the window ID.
 
-	```cpp
+	```c++
 	// Specifies the screen or window.
 	RECT rc;
 	agora::rtc::Rectangle rcCap;
@@ -152,12 +151,12 @@ Windows assigns a unique window identifier (windowId) for each window with a dat
 
 ### API Reference
 
-* [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52)
-* [`startScreenCaptureByScreenRect`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a41893fe9a0ca49c054bf6dbd7d9d68f5)
-* [`updateScreenCaptureParameters`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#ad680e114ba3b8a0012454af6867c7498)
-* [`setScreenCaptureContentHint`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)
-* [`updateScreenCaptureRegion`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#ae2ab9c3ff28b64c601f938ab45644586)
-* [`stopScreenCapture`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/v2.4/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
+* [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52)
+* [`startScreenCaptureByScreenRect`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a41893fe9a0ca49c054bf6dbd7d9d68f5)
+* [`updateScreenCaptureParameters`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ad680e114ba3b8a0012454af6867c7498)
+* [`setScreenCaptureContentHint`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)
+* [`updateScreenCaptureRegion`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ae2ab9c3ff28b64c601f938ab45644586)
+* [`stopScreenCapture`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
 
 ## Considerations
 - v2.4.0 deprecates the `startScreenCapture` method. You can still use it, but we no longer recommend it.

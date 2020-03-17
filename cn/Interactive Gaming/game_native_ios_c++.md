@@ -3,14 +3,14 @@
 title: 实现游戏语音功能
 description: 
 platform: iOS
-updatedAt: Fri Nov 02 2018 04:09:00 GMT+0800 (CST)
+updatedAt: Tue Jan 07 2020 14:42:26 GMT+0800 (CST)
 ---
 # 实现游戏语音功能
 在本页你可以了解如何使用游戏语音版 C++ SDK 在 iOS 平台上实现语音通话。
 
 ## 准备环境
 
-1.  关于具体的开发环境要求、如何获取 App ID 以及 SDK 集成方法，参考使用 Agora Native SDK 在 iOS 平台实现语音通话的环境准备：[设置开发环境](https://docs.agora.io/cn/Voice/ios_audio?platform=iOS)。
+1.  关于具体的开发环境要求、如何获取 App ID 以及 SDK 集成方法，参考使用 Agora Native SDK 在 iOS 平台实现语音通话的环境准备：[准备开发环境](https://docs.agora.io/cn/Audio%20Broadcast/start_live_ios?platform=iOS#%E5%87%86%E5%A4%87%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)。
 
 2.  使用游戏语音版 C++ SDK 时，需要 *添加 SDK* 和 *添加 Framework Search Paths* ：
 

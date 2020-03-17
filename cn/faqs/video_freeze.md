@@ -3,7 +3,7 @@
 title: 视频卡顿
 description: 视频卡顿
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:17:20 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 12:00:12 GMT+0800 (CST)
 ---
 # 视频卡顿
 视频卡顿问题一般由网络、设备性能等原因造成。
@@ -29,5 +29,5 @@ updatedAt: Mon Jul 01 2019 15:17:20 GMT+0800 (CST)
 
 ## 步骤 3：水晶球监控通话质量
 
-你可以使用 Agora Dashboard 的[水晶球](http://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+你可以使用 Agora 控制台中的[水晶球](http://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
 

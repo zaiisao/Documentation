@@ -3,7 +3,7 @@
 title: Migration Guide from v2.0.8 to v2.3.2 (Windows)
 description: 
 platform: Windows
-updatedAt: Tue Jan 15 2019 01:44:41 GMT+0800 (CST)
+updatedAt: Fri Jul 26 2019 04:28:35 GMT+0800 (CST)
 ---
 # Migration Guide from v2.0.8 to v2.3.2 (Windows)
 This page contains information on major API changes during release v2.0.8 and v2.3.2 for Agora SDK for Windows.
@@ -63,7 +63,7 @@ v2.2.0 improves the function of [`enableAudioVolumeIndication`](https://docs.ago
 - Added the  [`enableLoopbackRecording`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a065f485fd23b8c24a593680a47d754aa) API to enable Local audio recoding.
 - Added the  [`setLocalVoiceEqualization`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a3de79ba906e6b254b997eda4d395d052) and the  [`setLocalVoiceReverb`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa00e903b1cc6f2752373afbe556ef456) APIs to enable voice equalization and reverberation respectively.
 - Added the [`addInjectStreamUrl`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a42247db589b55d3cfa98d8e1be06d8e6) API to enble adding a voice or video stream HTTP/HTTPS URL address to a live broadcast.
-- Added Restful APIs to enable checking online channel statistics including the status of the users in the channel and the channel list of a specific company.
+- Added RESTful APIs to enable checking online channel statistics including the status of the users in the channel and the channel list of a specific company.
 - Added the following APIs to enable sound effects management and playing. Enable playing short-time sound effects like clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency. Related APIs are listed as follows:
   - [`getEffectsVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aab2353ccbd0e09b224448c72fd381d19): Retrieves the volume of the audio effects.
   - [`setEffectsVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa3041ef19bfe10ffc5a1130cda91ab7b): Sets the volume of the audio effects.

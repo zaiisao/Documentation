@@ -3,7 +3,7 @@
 title: 其它常见问题
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 05:52:21 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:38 GMT+0800 (CST)
 ---
 # 其它常见问题
 ## Android 平台常见问题
@@ -117,11 +117,11 @@ Open Live 编译无法通过通常是由错误填写 App ID 或没有填写 App 
 
 ### 从哪里可以获取 App ID？
 
-在 dashboard.agora.io 注册后，即可在 Dashboard 默认或新建的项目下获取 App ID。 详见 [校验用户权限](../../cn/voice/token.md)。 
+在控制台注册后，即可在控制台默认或新建的项目下获取 App ID。 详见[校验用户权限](../../cn/voice/token.md)。 
 
 ### 为什么在 Open Live 代码里填好 App ID 后，进不去频道，也看不到本地视频?
 
-请检查一下：在 dashboard 中，是否启用了 App Certificate, 一旦启用 App Certificate, 则必须使用 Token 加入频道。
+请检查一下：在控制台中，是否启用了 App 证书, 一旦启用 App 证书, 则必须使用 Token 加入频道。
 
 关于 App ID 与 Token 的区别，详见 [校验用户权限](../../cn/voice/token.md)。
 
@@ -225,7 +225,7 @@ HLS 分为 M3U8 索引文件和 ts 媒体切片文件，Apple 的文档中，ts 
 
 检查：
 * Dynamic Key/Token 生成的算法是否正确。
-* App ID 和 App Certificate 是否填写正确，注意区分大小写。
+* App ID 和 App 证书是否填写正确，注意区分大小写。
 * `expireTime` 是否晚于当前时间。
 
 ### 当用户加入频道后切换到后台模式一段时间后(例如 30 分钟)，发现 iOS App 崩溃了

@@ -3,7 +3,7 @@
 title: The video is blurry in a call.
 description: 视频模糊
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:11:51 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:11:55 GMT+0800 (CST)
 ---
 # The video is blurry in a call.
 Blurry videos may be caused by low bitrates and resolution ratios. 
@@ -24,6 +24,6 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The time frame during which the blurry video appears.
 * SDK logs and screen recording files of the user.
 
-## Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard
+## Step 3: Monitor the Quality of Experience in Agora Analytics in Console
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Console. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).

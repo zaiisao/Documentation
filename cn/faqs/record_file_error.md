@@ -3,7 +3,7 @@
 title: 录制文件异常
 description: 
 platform: Linux
-updatedAt: Mon Jul 01 2019 15:18:46 GMT+0800 (CST)
+updatedAt: Tue Aug 20 2019 10:26:17 GMT+0800 (CST)
 ---
 # 录制文件异常
 ### 录制文件夹下没有生成录制文件
@@ -38,7 +38,7 @@ updatedAt: Mon Jul 01 2019 15:18:46 GMT+0800 (CST)
 
 ### 录制出来的视频，打开播放黑屏，但是声音正常
 
-可能是由于使用了不支持的播放器，请参考[播放器列表](https://docs.agora.io/cn/Recording/API Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_m_i_x_e_d___a_v___c_o_d_e_c___t_y_p_e.html)。
+可能是由于使用了不支持的播放器，请参考[播放器列表](https://docs.agora.io/cn/Recording/API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_m_i_x_e_d___a_v___c_o_d_e_c___t_y_p_e.html)。
 
 ### 为什么录制并转码完成后的视频，在播放的时候，视频前面会黑一小段？
 

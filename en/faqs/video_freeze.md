@@ -3,7 +3,7 @@
 title: Video freeze occurs in a call.
 description: 视频卡顿
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:11:34 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 15:10:43 GMT+0800 (CST)
 ---
 # Video freeze occurs in a call.
 Choppy videos may be caused by slow Internet connections or bad device performances. 
@@ -24,7 +24,7 @@ If the issue persists, contact Agora customer support and submit the issue with 
 * The time frame during which the choppy video playback appears.
 * SDK logs and screen recording files of the user.
 
-## Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard
+## Step 3: Monitor the Quality of Experience in Agora Analytics in Console
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. See [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Console. See [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
 

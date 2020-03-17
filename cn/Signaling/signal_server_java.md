@@ -3,7 +3,7 @@
 title: 在 Java 平台服务器上发送点对点文本消息和频道文本消息
 description: 
 platform: Java
-updatedAt: Fri Nov 02 2018 04:07:35 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:13 GMT+0800 (CST)
 ---
 # 在 Java 平台服务器上发送点对点文本消息和频道文本消息
 ## 第一节：快速集成
@@ -31,7 +31,7 @@ updatedAt: Fri Nov 02 2018 04:07:35 GMT+0800 (CST)
 
 将其中的 **libs** 文件夹下和 **libs-dep** 下所有 的 **.jar** 文件复制到本项目的 **libs** 下。
 
-### 第五步：获取 App ID 和 App Certificate。
+### 第五步：获取 App ID 和 App 证书。
 
 详见 [SignalingToken](../../cn/Agora%20Platform/key_signaling.md)。
 

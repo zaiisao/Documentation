@@ -1,58 +1,49 @@
 
 ---
-title: I connect a Bluetooth to a phone, but not all calls are answered through the Bluetooth headset.
+title: Why can't I answer calls through a Bluetooth device after connecting an iOS device to it?
 description: iOS 蓝牙耳机相关问题
 platform: iOS
-updatedAt: Mon Jul 01 2019 15:11:06 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 22:28:37 GMT+0800 (CST)
 ---
-# I connect a Bluetooth to a phone, but not all calls are answered through the Bluetooth headset.
-iOS selects audio routes for phone and VoIP calls:
+# Why can't I answer calls through a Bluetooth device after connecting an iOS device to it?
+## Issue description
 
-### Phone Call (Including Facetime and CallKit)
+After connecting an iOS device to a Bluetooth device, you may encounter the following issues:
 
-When a phone rings:
+- Failing to answer calls through the Bluetooth headset even though you have connected the headset to your iOS device.
+- Being unable to record and play back audio through the Bluetooth speaker after connecting an iOS device to a Bluetooth speaker.
 
-- If you press the answer button on the iPhone, the iPhone handset is used by default.
-- If you press the answer button on the Bluetooth device, the Bluetooth headset is used by default.
+## Reason
 
-You can change the audio route setting in Settings > General > Accessibility > Call Audio Routing. When you select the Bluetooth Headset option, all incoming calls will be answered through the headset even if you press the answer button on the iPhone.
+1. The iOS system selects audio routes for phone and VoIP calls, and the default audio routes may be different from what you expect:
 
-During a phone call, you can switch between the Bluetooth Headset, Handset, or Speaker options in the call interface. 
+   **The default audio route for a phone call (Including Facetime and CallKit)**
+   - After connecting an iOS device to a Bluetooth device and tapping the answer button on iPhone, the default audio route is the iPhone speaker.
+   - After connecting an iOS device to a Bluetooth device and tapping the answer button on a Bluetooth device, the default audio route is the Bluetooth device.
 
-## VoIP Call
+   **The default audio route for a VoIP call**
 
-When making a VoIP call, the default audio route is the one used by the last phone or VoIP call made after a Bluetooth device is connected. If no phone call was made since the Bluetooth device was connected, the VoIP calls will be answered through the Bluetooth headset.
+   - If you have answered phone calls after connecting an iOS device to a Bluetooth device, the default audio route is the one used by the last phone or VoIP call.
+   - If you have not answered any phone call after connecting an iOS device to a Bluetooth device, the default audio route is the Bluetooth device.
 
-During a VoIP call, users can change the audio route in the iPhone Control Center (swipe up from the bottom of the screen). Apps can call the setPreferredInput method to change the audio route.
+   If the default settings mentioned above are in conflict with the audio routes you want, you need to change them when connecting your iOS device to Bluetooth. For details, see [Solution](#solution).
 
-## Other Settings
+2. In an iOS device, the audio route for audio inputs and outputs must be the same. If you set the Bluetooth device as the audio route for recording, the system switches the audio route for playback to the Bluetooth device accordingly.
 
-When users set the Bluetooth headset as the audio route on a VoIP app, the system switches to the Bluetooth headset mode accordingly.
+3. A Bluetooth speaker can only record audio during a system phone call, which includes calls made through Facetime and CallKit. If the App does not use the CallKit, all users who send audio streams cannot record or play back audio through the Bluetooth speaker, and all users who only receive audio streams can only play back audio through the Bluetooth speaker.
 
-Users can record calls with a Bluetooth speaker only when they make phone calls or use FaceTime or CallKit.
+<a name="solution"></a>
+## Solution
 
-## Frequently Asked Questions
+Depending on which type of call you have an issue with, choose one of the following solutions to set the audio routes:
 
-Q: When I am in a VoIP call with the Bluetooth headset and a phone call interrupts, why do I have to continue the VoIP call with the handset?
-A: If you tap the answer button on your phone, the default audio route for the phone and VoIP calls switches to the iPhone handset.
+**Phone call (Including Facetime and CallKit)**
 
-If you tap the answer button on your Bluetooth headset, you can continue your call with the Bluetooth headset.
+- Before answering a phone call, change the audio route setting in **Settings** > **General** > **Accessibility** > **Call Audio Routing**. When you select the **Bluetooth Headset** option, all incoming calls will be answered through the Bluetooth device even if you press the answer button on the iPhone.
+- During a phone call, you can switch between the **Bluetooth Headset**, **Handset**, or **Speaker** options in the call interface.
+- If you connect an iOS device to a Bluetooth speaker and answer calls in an App, ensure that the App uses the CallKit, otherwise, the above settings do not work.
 
- 
+**VoIP call**
 
-Q: My iPhone is connected to a Bluetooth headset. When I join a channel to make a VoIP call, why is the audio routed to the handset or speaker?
-A: This is because the default route for the phone and VoIP calls is not the Bluetooth headset. Before making a VoIP call, you need to switch to the Bluetooth Headset mode in the Control Center (swipe up from the bottom of the screen).
-
- 
-
-Q: Why I can switch back to the Bluetooth Headset mode for music playback?
-A: Music playback is different from VoIP calls.
-
- 
-
-Q: My iPhone is connected to a Bluetooth speaker. Why can't I use it to make a VoIP call?
-A: VoIP calls cannot be recorded by a Bluetooth speaker unless the app uses the CallKit framework. Hence, users cannot answer VoIP calls with the Bluetooth speaker. In a live broadcast, the audience does not need to record their voice, so they can listen to the broadcast with the Bluetooth speaker.
-
-
-
-
+- Before making a VoIP call, you need to switch to the **Bluetooth Headset** mode in the **Control Center** which you can call out by swiping up from the bottom of the screen. Apps can call the `setPreferredInput` method to change the audio route.
+- When a VoIP call through the Bluetooth device is interrupted by a phone call, tap the answer button on the Bluetooth device to answer the phone call, after which you can continue the VoIP call through the Bluetooth device once the phone call ends.

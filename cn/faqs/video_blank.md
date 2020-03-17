@@ -3,7 +3,7 @@
 title: 视频黑屏
 description: 视频黑屏
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:17:46 GMT+0800 (CST)
+updatedAt: Thu Oct 31 2019 12:05:53 GMT+0800 (CST)
 ---
 # 视频黑屏
 可能出现黑屏的原因有很多，其中两个最重要的原因是：
@@ -31,6 +31,7 @@ updatedAt: Mon Jul 01 2019 15:17:46 GMT+0800 (CST)
 
 * 检查用户是否禁用了远端视频；
 * 如果没有禁用远端视频，建议换4G网络看下是否还存在问题来排除网络原因。
+* 检查是否远端用户使用[媒体流加密](https://docs.agora.io/cn/Video/channel_encryption_windows?platform=Windows)功能，但本地用户未使用。
 
 ### 本地远端视频都黑屏
 
@@ -54,4 +55,4 @@ updatedAt: Mon Jul 01 2019 15:17:46 GMT+0800 (CST)
 
 ## 步骤 3：水晶球监控通话质量
 
-你可以使用 Agora Dashboard 的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+你可以使用 Agora 控制台中的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。

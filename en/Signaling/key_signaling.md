@@ -3,14 +3,14 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 17 2019 08:40:21 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 03:30:00 GMT+0800 (CST)
 ---
 # Use Security Keys
 ## Introduction
 
 The Agora Signaling SDK provides two different security keys for authentication: [App ID](#APPID) and [SignalingToken](#SignalingToken). The following figure shows the environments in which the security keys are used:
 
-<img alt="../_images/key_relation_signaling.jpg" src="https://web-cdn.agora.io/docs-files/en/key_relation_signaling.jpg" style="width: 420px;"/>
+![](https://web-cdn.agora.io/docs-files/1555488293884)
 
 Where:
 
@@ -24,7 +24,7 @@ Where:
 
 ### App ID
 
-After signing up at [Dashboard](http://dashboard.agora.io), multiple projects can be created. Each project will be assigned a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to safeguard the App IDs.
+After signing up at [Console](http://dashboard.agora.io), multiple projects can be created. Each project will be assigned a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to safeguard the App IDs.
 
 > To switch your App ID, you must first call the `destroy` method to destroy the current instance.
 
@@ -42,8 +42,8 @@ Agora recommends using a SignalingToken for added security.
 
 Each Agora account can create multiple projects, and each project has a unique App ID.
 
-1.  Sign up for a new account at [https://dashboard.agora.io/](https://dashboard.agora.io/).
-2.  Click **Add New Project** on the **Projects** page in Dashboard.
+1.  Sign up for a new account at [https://dashboard.agora.io/](../../en/Signaling/Agora%20Console.md).
+2.  Click **Add New Project** on the **Projects** page in Console.
 3.  Fill in the **Project Name** and click **Submit**.
     <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
 4.  Find the App ID under the created project.
@@ -68,8 +68,8 @@ Each Agora account can create multiple projects, and each project has a unique A
 
 ### Step 2: Get an App Certificate
 
-1.  Login to [https://dashboard.agora.io](https://dashboard.agora.io).
-2.  Click **Add New Project** on the **Projects** page in Dashboard.
+1.  Login to [https://dashboard.agora.io](../../en/Signaling/Agora%20Console.md).
+2.  Click **Add New Project** on the **Projects** page in Console.
 3.  Fill in the **Project Name** and click **Submit**. Find the App ID under the created project.
      <img alt="../_images/create_project.png" src="https://web-cdn.agora.io/docs-files/en/create_project.png" style="width: 420.0px;"/>
 4.  Enable the App Certificate for the project.
@@ -178,7 +178,7 @@ The generated token is the SignalingToken used to log in the Agora signaling sys
 > Agora provides sample code on GitHub for generating the token.
 > -   [C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/generatorSignalToken.h)
 > -   [Go](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/go/src/SignalingToken/SignalingToken.go)
-> -   [Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/signal/SignalingToken.java)
+> -   [Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/io/agora/signal/SignalingToken.java)
 > -   [Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/src/SignalingToken.js)
 > -   [PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/SignalingToken.php)
 > -   [Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/src/SignalingToken.py)

@@ -3,14 +3,18 @@
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
 platform: Android
-updatedAt: Tue Dec 04 2018 19:02:27 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:09:04 GMT+0800 (CST)
 ---
 # In-ear Monitoring
 In-ear monitoring provides a mix of the audio sources (for example, a mix of the vocals and music) to the host with low latency, commonly used in professional scenarios, such as in concerts.
 The Agora SDK supports the in-ear monitoring function and volume adjustment of the in-ear monitor.
 
 ## Implementation
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/android_video.md).
+Before using the in-ear monitoring function, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_android.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_android.md).
+
+The Agora SDK provides the `enableInEarMonitoring` and `setInEarMonitoringVolume` methods to set the in-ear monitoring according to the scenario, you can use these methods no matter before or after `joinChannel`.
+
+### Sample code
 
 ```java
 // Enables in-ear monitoring. The default value is false.
@@ -21,7 +25,12 @@ int volume = 80;
 rtcEngine.setInEarMonitoringVolume(volume);
 ```
 	 
+### API reference
+
+- [`enableInEarMonitoring`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aeb014fcf7ec84291b9b39621e09772ea)
+- [`setInEarMonitoringVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af71afdf140660b10c4fb0c40029c432d)
 
 ## Considerations
 
-The API methods have return values. If the method call fails, the return value is < 0.
+- Call `enableInEarMonitoring` before `setInEarMonitoringVolume`.
+- The API methods have return values. If the method call fails, the return value is < 0.

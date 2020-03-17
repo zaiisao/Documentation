@@ -3,10 +3,12 @@
 title: 音频回声
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:16:11 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 11:57:48 GMT+0800 (CST)
 ---
 # 音频回声
-回声问题通常是由听到回声的用户设备引起的。SDK 支持对多数设备进行回声消除。如果遇到回声问题，可以佩戴耳机进行规避，并确认耳机本身不会引起回声。
+Agora SDK 支持对多数设备进行回声消除。如果遇到回声问题，可以佩戴耳机进行规避，并确认耳机本身不会引起回声。
+
+另外，当一台设备出现问题时，频道内其他所有用户都能听到。因此排查问题时还需注意，听到回声的一方，并不一定是出现问题的一方。
 
 ## 步骤 1：自检操作
 
@@ -59,5 +61,5 @@ updatedAt: Mon Jul 01 2019 15:16:11 GMT+0800 (CST)
 
 ## 步骤 3：水晶球监控通话质量
 
-你可以使用 Agora Dashboard 的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
+你可以使用 Agora 控制台中的[水晶球](https://dashboard.agora.io/analytics/call/search)功能对通话质量进行跟踪和反馈，详见[水晶球教程](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349)。
 

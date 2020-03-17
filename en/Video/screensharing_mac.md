@@ -3,7 +3,7 @@
 title: Share the screen
 description: 
 platform: macOS
-updatedAt: Wed Jun 12 2019 09:05:50 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:31:55 GMT+0800 (CST)
 ---
 # Share the screen
 ## Introduction
@@ -17,7 +17,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/mac_video.md).
+Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Video/start_call_mac.md) or [Start an Interactive Broadcast](../../en/Video/start_live_mac.md).
 
 From v2.4.0, Agora supports the following screen sharing functions on macOS:
 
@@ -191,14 +191,14 @@ macOS assigns a unique window identifier (windowId) for each window. `windowId` 
 
   
 ### API Reference
-* [`startScreenCaptureByDisplayId`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByDisplayId:rectangle:parameters:)
-* [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByWindowId:rectangle:parameters:)
-* [`updateScreenCaptureParameters`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureParameters:)
-* [`setScreenCaptureContentHint`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setScreenCaptureContentHint:)
-* [`updateScreenCaptureRegion:`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
-* [`stopScreenCapture`](https://docs.agora.io/en/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
+* [`startScreenCaptureByDisplayId`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByDisplayId:rectangle:parameters:)
+* [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByWindowId:rectangle:parameters:)
+* [`updateScreenCaptureParameters`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureParameters:)
+* [`setScreenCaptureContentHint`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setScreenCaptureContentHint:)
+* [`updateScreenCaptureRegion:`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
+* [`stopScreenCapture`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
 
 ## Considerations
 
 - v2.4.0 deprecates the `startScreenCapture` method. You can still use it, but we no longer recommend it.
-- Changing `AgoraScreenCaptureParameters` may affect your communication chargers. As of v2.4.1, if you set the `dimendions` parameter as default, Agora uses 1920 x 1080 to calculate the charges.
+- Changing `AgoraScreenCaptureParameters` may affect your communication usage charges. As of v2.4.1, if you set the `dimensions` parameter as default, Agora uses 1920 x 1080 to calculate your usage charges.

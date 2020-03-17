@@ -3,7 +3,7 @@
 title: Agora Interactive Gaming Overview
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 06 2018 09:57:07 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:36:57 GMT+0800 (CST)
 ---
 # Agora Interactive Gaming Overview
 The Agora Interactive Gaming SDK helps you quickly integrate audio and video functions into your gaming projects.
@@ -32,7 +32,7 @@ See the following sample code for application scenarios:
 | Properties                  | Agora Interactive Gaming Specifications                      |
 | --------------------------- | ------------------------------------------------------------ |
 | Minimum Impact              | <li>No effects on FPS<li>Compatible with original gaming sounds (FMOD, WWISE)<li>Optimized in package size, CPU usage, and power comsumption |
-| High Quality                | <li>High-quality sound \(32 KHz ultra-wideband\)<li>Low latency \(global average delay of 76 ms\)<li>No interference \(echo cancellation and noise reduction\)<li>No stagnation \(strong anti-loss ability\) |
+| High Quality                | <li>High-quality sound \(32 kHz ultra-wideband\)<li>Low latency \(global average delay of 76 ms\)<li>No interference \(echo cancellation and noise reduction\)<li>No stagnation \(strong anti-loss ability\) |
 | Special Features for Gaming | <li>Free/Command mode<li>Voice change<li>Spatial sound effects<li>Emulator supported |
 | Stereo                      | Supports stereo capture playback for the best live gaming experience. |
 

@@ -3,10 +3,17 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 07:06:12 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 11:00:33 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
+
+If you cannot add these ports and whitelist domains on your firewall, refer to the following guides to use the cloud proxy service to access Agora's service:
+- [Cloud Proxy for the RTC Native SDK](../../en/Agora%20Platform/cloudproxy_native.md)
+- [Cloud Proxy for the RTC Web SDK](../../en/Agora%20Platform/cloud_proxy_web.md)
+- [Cloud Proxy for the On-premise Recording SDK](../../en/Agora%20Platform/cloudproxy_recording.md)
+
+<div class="alert note">If you use Agora SDKs across the VPN, ensure that you contact the VPN operator to add the corresponding domains on the whitelist, otherwise, you may encounter undefined issues such as failing to start a call. </div>
 
 ## Agora RTC SDK
 
@@ -29,6 +36,12 @@ ap2.agora.io
 ap3.agora.io
 ap4.agora.io
 ap5.agora.io
+ap.agoraio.cn
+vocs1.agora.io
+vocs2.agora.io
+vocs3.agora.io
+vocs4.agora.io
+vocs5.agora.io
 ```
 
 ### Web SDK
@@ -38,16 +51,13 @@ Firewall ports:
 | Port type | Whitelist ports                                       |
 | -------- | ------------------------------------------------------------ |
 | TCP ports | 80; 443; 3433; 5668; 5669; 5866 to 5890; 6080; 6443; 8667; 9667 |
-| UDP ports | 3478; 10000 to 65535                                          |
-
-
-> If you use the proxy server, ensure that you open TCP port 3433.
+| UDP ports | 3478; 5866 - 6000 (2.9.0 or later); 10000 - 65535 (before 2.9.0)            |
 
 Whitelist domains:
 
 ```
- .agora.io
- .agoraio.cn
+.agora.io
+.agoraio.cn
 ```
 
 ## Agora RTM SDK
@@ -75,7 +85,7 @@ Firewall ports:
 
 | Port type | Whitelist ports                                       |
 | -------- | ---------- |
-| TCP ports | 443        |
+| TCP ports | 443; 9591; 9593        |
 
 Whitelist domains:
 
@@ -83,24 +93,9 @@ Whitelist domains:
 .agora.io
 ```
 
-## Agora Signaling SDK
 
-Firewall ports:
 
-| Port type | Whitelist ports                                       |
-| -------- | ----------------- |
-| TCP ports | 1080; 8001 to 8199 |
-| UDP ports | 8180 to 8199       |
-
-Whitelist domains:
-
-```
- .agora.io
- qoslbs.agoralab.co
- qos.agoralab.co
-```
-
-## Agora Recording SDK
+## Agora On-premise Recording SDK
 
 Firewall ports:
 
@@ -119,6 +114,12 @@ ap2.agora.io
 ap3.agora.io
 ap4.agora.io
 ap5.agora.io
+ap.agoraio.cn
+vocs1.agora.io
+vocs2.agora.io
+vocs3.agora.io
+vocs4.agora.io
+vocs5.agora.io
 ```
 
 **Note:**
@@ -143,6 +144,12 @@ Whitelist domains:
 .agora.io
 qoslbs.agoralab.co
 qos.agoralab.co
+ap.agoraio.cn
+vocs1.agora.io
+vocs2.agora.io
+vocs3.agora.io
+vocs4.agora.io
+vocs5.agora.io
 ```
 
 You must use UDP ports rather than TCP ports for superior voice and video quality since UDP prioritizes timeliness over reliability.

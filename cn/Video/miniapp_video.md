@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: 微信小程序
-updatedAt: Fri Jul 19 2019 08:24:45 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:14:10 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Miniapp SDK for WeChat 进行通话/直播前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -32,6 +32,18 @@ updatedAt: Fri Jul 19 2019 08:24:45 GMT+0800 (CST)
 
 
 > 在集成微信小程序组件之前，Agora 建议你先阅读 [微信小程序开发官方文档](https://mp.weixin.qq.com/debug/wxadoc/dev/)。
+
+## 开通微信小程序服务
+
+第一次使用微信小程序支持需要先开通服务，步骤如下：
+
+1. 登录 [控制台](https://console.agora.io)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入**产品用量**页面。
+2. 在页面左上角展开下拉列表选择需要开通小程序支持的项目，然后点击**小程序**下的**分钟数**。
+ ![](https://web-cdn.agora.io/docs-files/1566460437574)
+4. 点击**开启小程序支持**。
+5. 按照屏幕提示选择你用来发送请求的服务器所在地，然后点击**应用**。
+
+开通成功后你就可以在用量页面看到小程序的使用情况。
 
 ## 创建微信小程序组件
 
@@ -88,4 +100,4 @@ const AgoraMiniappSDK = require('../../lib/mini-app-sdk-production.js');
 
 ![](https://web-cdn.agora.io/docs-files/1541990512316)
 
-如果在使用过程中遇到问题，请参考[小程序 SDK 常见问题回答](../../cn/Agora%20Platform/wechat_how_to.md) 或 [错误代码和警告代码](../../cn/API%20Reference/the_error_wechat.md) 排除解决。
+如果在使用过程中遇到问题，请参考[小程序 SDK 常见问题回答](https://docs.agora.io/cn/faq/wechat) 或 [错误码和警告码](../../cn/API%20Reference/the_error_wechat.md) 排除解决。

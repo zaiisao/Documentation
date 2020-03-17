@@ -2,7 +2,7 @@
 ---
 title: 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)
 description: 
-platform: Windows
+platform: v2.3.2
 updatedAt: Tue Jan 15 2019 01:45:12 GMT+0800 (CST)
 ---
 # 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)

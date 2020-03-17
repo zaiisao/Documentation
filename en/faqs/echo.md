@@ -3,16 +3,18 @@
 title: Echo occurs in a call.
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:09:48 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 11:27:42 GMT+0800 (CST)
 ---
 # Echo occurs in a call.
-Echo is commonly caused by the device of the user who hears the echo. This problem can be fixed by using a headset in most cases, and ensure that the headset does not cause an echo. The Agora SDK supports echo cancellation.
+The Agora SDK supports echo cancellation. In most cases, this problem can be fixed by using a headset, and ensure that the headset does not cause an echo. 
+
+In a channel joined by multiple users, if a device does not work properly, chances are that all other users in the channel can hear echoes. Therefore, beware that the user hearing the echo may not necessarily be the one having the problem.
 
 ## Step 1: Self-check
 
 Check the following:
 
-- Check if the echo is occasional or continuous. An occasional echo may be caused by CPU overload. If the CPU usage is too high, voice recording and playback will be unstable. You can check this in Agora Analytics in Dashboard.
+- Check if the echo is occasional or continuous. An occasional echo may be caused by CPU overload. If the CPU usage is too high, voice recording and playback will be unstable. You can check this in Agora Analytics in Console.
 - Ensure that all users are in separated physical environments.
 - Check the SDK version:
 	- Android/iOS: v1.6.0+.
@@ -44,7 +46,7 @@ If the issue persists, contact Agora customer support and submit the issue with 
   </tr>
 </table>
 
-## Step 3: Monitor the Quality of Experience in Agora Analytics in Dashboard
+## Step 3: Monitor the Quality of Experience in Agora Analytics in Console
 
-You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Dashboard. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
+You can check the statistics of every call in [Agora Analytics](https://dashboard.agora.io/analytics/call/search) in Console. For more information, see [Agora Analytics Tutorial](https://dashboard.agora.io/analytics/call/tutorial?_ga=2.197716463.1125435494.1542623251-764614247.1539586349).
 

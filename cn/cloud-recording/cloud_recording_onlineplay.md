@@ -3,16 +3,20 @@
 title: 在线播放录制文件
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 06:20:48 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 00:43:03 GMT+0800 (CST)
 ---
 # 在线播放录制文件
 ## 功能描述
 
 使用 Agora 云端录制服务完成录制后，录制的内容会以 TS 文件形式上传到你设定的第三方云存储中，同时生成一个 M3U8 文件用于索引所有的 TS 文件。你可以在你的第三方云存储中获得该 M3U8 文件的链接，直接在线播放录制文件。
 
+>目前不支持在线播放云端录制生成的 WebM 文件。
+
 ## 实现方法
 
-在开始前，请确保录制文件已全部上传完成（`OnRecordingUploaded` 回调）。下面分别介绍[阿里云](https://www.aliyun.com/product/ossJ)、[七牛云](https://www.qiniu.com/)和 [AWS S3](https://aws.amazon.com/cn/s3/?nc=sn&loc=0) 如何在线播放录制文件。
+在开始前，请确保录制文件已全部上传完成。下面分别介绍[阿里云](https://www.aliyun.com/product/ossJ)、[七牛云](https://www.qiniu.com/)、[腾讯云](https://cloud.tencent.com/product/cos) 和 [AWS S3](https://aws.amazon.com/cn/s3/?nc=sn&loc=0) 如何在线播放录制文件。
+
+>以下方法中，读写权限设置均以存储桶（bucket）为单位。为提高安全性，你也可以选择以单个录制文件为单位设置读写权限。
 
 ### 阿里云
 1. 登录阿里云控制台，进入你设定的录制存储空间（bucket），在**文件管理**页面可以看到 M3U8 和 TS 文件。
@@ -20,11 +24,15 @@ updatedAt: Thu Jul 18 2019 06:20:48 GMT+0800 (CST)
 
 	![](https://web-cdn.agora.io/docs-files/1556438995486)
 	
-4. 在**文件管理**页面，M3U8 文件右侧点击**更多**，选择**复制文件 URL**，如下图所示：
+3. 在**文件管理**页面，M3U8 文件右侧点击**详情**，进入**详情**页。
 
-	![](https://web-cdn.agora.io/docs-files/1556440791342)
+![](https://web-cdn.agora.io/docs-files/1583887201814)
+
+4. 在**详情**页面，选择**复制文件 URL**，如下图所示
+
+![](https://web-cdn.agora.io/docs-files/1583887227648)
 	
-6. 在浏览器上输入复制的外链地址即可开始在线播放。
+5. 在浏览器上输入复制的外链地址即可开始在线播放。
 
 ### 七牛云
 
@@ -39,6 +47,20 @@ updatedAt: Thu Jul 18 2019 06:20:48 GMT+0800 (CST)
 4. 在浏览器上输入复制的外链地址即可开始在线播放。
 
 更多信息请参考[在七牛云存储上播放 HLS](https://docs.agora.io/cn/cloud-recording/%3Chttps://developer.qiniu.com/kodo/kb/1339/in-seven-niuyun-stored-in-hls%3E)。
+
+### 腾讯云
+1. 登录腾讯云控制台，点击**存储桶列表**。
+2. 选择你要播放的存储桶（bucket），点击**配置管理**，进入**存储桶访问权限**页面。
+3. 将**公共权限**设置为**公有读私有写**或**公有读写**，点击**保存**。
+
+![](https://web-cdn.agora.io/docs-files/1571369998043)
+	
+4. 回到**存储桶列表**页面，点击你要播放的存储桶，选择**详情**，进入**对象属性**标签页。在**基本信息**一栏，复制**对象地址**:
+
+![](https://web-cdn.agora.io/docs-files/1571369926906)
+
+5. 在浏览器上输入复制的外链地址即可开始在线播放。
+
 
 ### AWS S3
 
@@ -80,4 +102,5 @@ updatedAt: Thu Jul 18 2019 06:20:48 GMT+0800 (CST)
 
 - Safari 浏览器可以直接播放 M3U8 文件，其他浏览器可能需要安装 HLS 播放插件。
 - 支持 HLS 协议的播放器也可以播放 M3U8 文件，如 VLC media player。
-- 如果录制结束后收到的回调是 `OnRecordingBackedUp`，说明有部分录制内容上传到了备份云，必须等备份云将这部分文件上传到云存储之后才可以播放 M3U8 文件。
+- 如果录制结束后收到的响应中 `uploadingStatus` 为 `"backuped"`，说明有部分录制内容上传到了备份云，必须等备份云将这部分文件上传到云存储之后才可以播放 M3U8 文件。
+- 设置公有读权限的目的是使 bucket 中的文件能被公开访问。如你无需在线播放录制文件，为提高安全性，建议你将 bucket 的权限设置为私有。

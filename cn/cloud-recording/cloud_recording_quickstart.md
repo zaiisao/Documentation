@@ -1,11 +1,14 @@
 
 ---
-title: 云端录制快速开始
+title: 云端录制快速开始 (Deprecated)
 description: Draft
 platform: Linux CPP
-updatedAt: Thu Jul 18 2019 06:52:45 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:12:44 GMT+0800 (CST)
 ---
-# 云端录制快速开始
+# 云端录制快速开始 (Deprecated)
+<div class="alert note">云端录制 SDK 停服计划（建议你及时升级到功能丰富、调用更方便的云端录制 RESTful API）：<li>从 2019 年 11 月 15 日起，云端录制 SDK 将停止维护。已经下载的 SDK 可继续使用。</li><li>从 2019 年 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法继续使用云端录制 SDK。</li></div>
+
+
 本文介绍如何集成 Agora Cloud Recording SDK 进行通话或直播录制。
 
 > 当云端录制 SDK 加入频道时，相当于一个哑客户端加入频道，因此需要跟 Agora Native/Web SDK 加入相同的频道，并使用相同的 App ID 和频道模式。
@@ -73,7 +76,7 @@ virtual int StartCloudRecording(
 - `appId`：待录制频道的 App ID，必填。
 - `channel_name`：待录制频道的频道名，必填。
 - `token`：待录制的频道中使用的 token，选填。详见[校验用户权限](../../cn/cloud-recording/token.md)。
-- `uid`：云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。**
+- `uid`：云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。
 - `recording_config`：配置录制参数，选填，如不填则使用默认配置。详见[`RecordingConfig`](../../cn/cloud-recording/cloud_recording_api.md)。
 - `storage_config`：配置第三方云存储，必填。详见 [`CloudStorageConfig`](../../cn/cloud-recording/cloud_recording_api.md)。
 
@@ -104,7 +107,7 @@ virtual void Release(bool cancelCloudRecording = false) = 0;
 
 待录制完成并成功上传到第三方云存储后，你需要调用 [`Release`](../../cn/cloud-recording/cloud_recording_api.md) 方法销毁 `ICloudRecorder` 实例，释放 SDK 使用的资源，释放资源后将无法再次使用和回调 SDK 内的其它方法。如需再次使用云端录制，必须重新创建实例。
 
-在该方法中， `cancelCloudRecording` 参数默认为 `false`，正常情况下无需修改；如果录制出现错误需要重启录制服务，将该参数设为 `true`，具体情况请参考[错误代码](../../cn/cloud-recording/cloud_recording_api.md)。
+在该方法中， `cancelCloudRecording` 参数默认为 `false`，正常情况下无需修改；如果录制出现错误需要重启录制服务，将该参数设为 `true`，具体情况请参考[错误码](../../cn/cloud-recording/cloud_recording_api.md)。
 
 ## 上传和管理录制文件
 
@@ -135,12 +138,12 @@ M3U8 文件名由录制 ID 和频道名组成，如 `recording_id_channel_name.M
 
 以上回调中均包含 M3U8 文件名信息。
 
-## 错误代码
+## 错误码
 
 SDK 可能会触发以下异常或错误回调：
 
 - `OnRecorderFailure`：录制组件异常，通常无需对此进行任何操作。
 - `OnUploaderFailure`：上传组件异常，通常无需对此进行任何操作。
-- `OnRecordingFatalError`：发生了不可恢复的错误，可根据具体的错误代码判断录制后台的状态。
+- `OnRecordingFatalError`：发生了不可恢复的错误，可根据具体的错误码判断录制后台的状态。
 
-具体的错误描述及解决方法请参考[错误代码](../../cn/cloud-recording/cloud_recording_api.md)。
+具体的错误描述及解决方法请参考[错误码](../../cn/cloud-recording/cloud_recording_api.md)。

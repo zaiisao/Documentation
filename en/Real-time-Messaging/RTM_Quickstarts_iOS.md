@@ -1,11 +1,11 @@
 
 ---
-title: RTM Quickstart Guide
-description: v0.9.1
+title: Peer-to-peer or Channel Messaging
+description: v1.0
 platform: iOS
-updatedAt: Mon May 27 2019 04:23:58 GMT+0800 (CST)
+updatedAt: Wed Sep 11 2019 12:14:19 GMT+0800 (CST)
 ---
-# RTM Quickstart Guide
+# Peer-to-peer or Channel Messaging
 ## <a name = "create"></a>Create and Initialize an AgoraRtmKit Instance
 
 Before creating an [AgoraRtmKit](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html) instance, ensure that you prepare the development environment.
@@ -181,12 +181,12 @@ After [logging in Agora's RTM system](#login), you can send a channel message.
 }
 #pragma AgoraRtmChannelDelegate
 ...
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel memberLeft:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel memberLeft:(AgoraRtmMember *)member
 {
     NSLog(@"%@ left channel %@", member.userId, member.channelId);
 }
 
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel memberJoined:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel memberJoined:(AgoraRtmMember *)member
 {
     NSLog(@"%@ joined channel %@", member.userId, member.channelId);
 }
@@ -210,7 +210,7 @@ Call the [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Refere
 
 #pragma AgoraRtmDelegate
 ...
-- (void)rtmKit:(AgoraRtmKit *)kit channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
+- (void)channel:(AgoraRtmChannel *)channel messageReceived:(AgoraRtmMessage *)message fromMember:(AgoraRtmMember *)member
 {
     NSLog(@"message received from %@ in channel %@: %@", message.text, member.channelId, member.userId);
 }

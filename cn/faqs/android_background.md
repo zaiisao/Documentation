@@ -1,11 +1,11 @@
 
 ---
-title: Android 9 应用锁屏或切后台采集无声
+title: Android 9 应用锁屏或切后台采集无效
 description: Android 9 设备上应用退到后台后锁屏后，采集不到声音或视频
 platform: Android
-updatedAt: Mon Jul 08 2019 15:43:52 GMT+0800 (CST)
+updatedAt: Mon Oct 14 2019 11:35:41 GMT+0800 (CST)
 ---
-# Android 9 应用锁屏或切后台采集无声
+# Android 9 应用锁屏或切后台采集无效
 **问题现象**：Android 9 设备锁屏 1 分钟内，音频无声或看不到视频。
 
 **问题原因**：从 Android 官网来看，这是系统强制限制。原文如下：

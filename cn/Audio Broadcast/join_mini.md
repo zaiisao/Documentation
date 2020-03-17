@@ -24,7 +24,7 @@ client.join(token, channel, uid, onSuccess, onFailure);
 
 如果你的小程序中有切后台的场景需求，还需要调用 `rejoin` 方法做好重连机制。
 
-重连与正常加入频道类似，即将 进入频道 `join` 方法替换为 重新加入频道 `rejoin` 方法，且该方法需要加上当前频道内所有用户的 `uid` 列表作为额外参数。 重连后会重新发布和订阅流，参考 Github 示例代码更新推流/拉流地址即可。该过程可以参考 Github 开源 [示例项目](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 的 `reinitAgoraClient` 方法。
+重连与正常加入频道类似，即将 进入频道 `join` 方法替换为 重新加入频道 `rejoin` 方法，且该方法需要加上当前频道内所有用户的 `uid` 列表作为额外参数。 重连后会重新发布和订阅流，参考 GitHub 示例代码更新推流/拉流地址即可。该过程可以参考 GitHub 开源 [示例项目](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 的 `reinitAgoraClient` 方法。
 
 ```
 client.rejoin(token, channel, uid, uids, onSuccess, onFailure);

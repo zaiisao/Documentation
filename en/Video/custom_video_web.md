@@ -1,29 +1,31 @@
 
 ---
-title: Customize the Audio/Video Source and Renderer
+title: Custom Video Source and Renderer
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Wed Jul 17 2019 08:45:51 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 06:52:04 GMT+0800 (CST)
 ---
-# Customize the Audio/Video Source and Renderer
+# Custom Video Source and Renderer
 ## Introduction
 
-By default, a browser uses the internal audio and video modules for capturing and rendering during real-time communication. You can use an external audio or video source and renderer. This page shows how to use the methods provided by Agora Web SDK to customize the audio and video source and renderer.
+By default, the Agora SDK uses default audio and video modules for capturing and rendering in real-time communications. 
 
-**Customizing the audio and video source and renderer** mainly applies to the following scenarios:
+However, the default modules might not meet your development requirements, such as in the following scenarios:
 
-- When the audio or video source captured by the internal modules do not meet your needs. For example, you need to process the captured video frame with a preprocessing library for image enhancement.
-- When an app has its own audio or video module and uses a customized source for code reuse.
-- When you want to use a non-camera source, such as recorded screen data.
-- When you need flexible device resource allocation to avoid conflicts with other services.
+- Your app has its own audio or video module.
+- You want to use a non-camera source, such as recorded screen data.
+- You need to process the captured video with a pre-processing library for functions such as image enhancement.
+- You need flexible device resource allocation to avoid conflicts with other services.
+
+This article explains how to customize the video source and renderer with the Agora Web SDK.
 
 ## Implementation
 
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/web_prepare.md).
+Before customizing the video source and renderer, ensure that you have implemented the basic real-time communication functions. For details, see [Start a call](../../en/Video/start_call_web.md) or [Start a Live Broadcast](../../en/Video/start_live_web.md).
 
 ### Customize the audio/video source
 
-You can specify customized audio/video sources by the [`audioSource`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) and [`videoSource`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#videosource) properties when creating a stream. 
+When creating a stream with the `createStream` method, you can specify customized audio/video sources by the [`audioSource`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) and [`videoSource`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#videosource) properties. 
 
 For example, you can use the `mediaStream` method to get the audio and video tracks from `MediaStreamTrack`, and then set `audioSource` and `videoSource`:
 
@@ -48,12 +50,17 @@ navigator.mediaDevices.getUserMedia(
 });
 ```
 
-> - `MediaStreamTrack` refers to the `MediaStreamTrack` object supported by the browser. See [MediaStreamTrack API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack) for details.
-> - Only supports the Chrome browser.
+<div class="alert info"><code>MediaStreamTrack</code> refers to the <code>MediaStreamTrack</code> object supported by the browser. See <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack">MediaStreamTrack API</a> for details.</div>
+
 
 ### Customize the video renderer
 
 Call the [`Stream.getVideoTrack`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#getvideotrack) method and attach the track to the local canvas.
 
-Agora provides a sample app for customizing the video source and video sink. See [Agora Custom Media Device](https://github.com/AgoraIO/Advanced-Video/tree/master/Custom-Media-Device/Agora-Custom-VideoSource-Web).
+### Sample code
 
+We provide an open-source [Agora-Custom-VideoSource-Web-Webpack](https://github.com/AgoraIO/Advanced-Video/tree/master/Web/Agora-Custom-VideoSource-Web-Webpack) demo project on GitHub. You can try the demo, or view the source code in the [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Custom-VideoSource-Web-Webpack/src/rtc-client.js) file.
+
+## Considerations
+
+Customizing the audio and video sources supports the Chrome browser only.

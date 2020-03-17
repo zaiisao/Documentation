@@ -1,199 +1,43 @@
 
 ---
-title: Customize Audio/Video Source and Renderer
+title: Custom Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Fri Apr 26 2019 08:21:21 GMT+0800 (CST)
+updatedAt: Mon Mar 09 2020 10:20:37 GMT+0800 (CST)
 ---
-# Customize Audio/Video Source and Renderer
+# Custom Video Source and Renderer
 ## Introduction
-By default, an application uses the internal audio and video modules for capturing and rendering during real-time communication. You can use an external audio or video source and renderer. This page shows how to use the methods provided by the Agora SDK to customize the audio and video source and renderer.
 
-**Customizing the audio and video source and renderer** mainly applies to the following scenarios:
+By default, the Agora SDK uses default audio and video modules for capturing and rendering in real-time communications. 
 
-* When the audio or video source captured by the internal modules do not meet your needs. For example, you need to process the captured video frame with a preprocessing library for image enhancement.
-* When an application has its own audio or video module and uses a customized source for code reuse.
-* When you want to use a non-camera source, such as recorded screen data.
-* When you need flexible device resource allocation to avoid conflicts with other services.
+However, the default modules might not meet your development requirements, such as in the following scenarios:
+
+- Your app has its own audio or video module.
+- You want to use a non-camera source, such as recorded screen data.
+- You need to process the captured video with a pre-processing library for functions such as image enhancement.
+- You need flexible device resource allocation to avoid conflicts with other services.
+
+This article tells you how to use the Agora Native SDK to customize the video source and renderer.
 
 ## Implementation
-Ensure that you prepared the development environment. See [Integrate the SDK](../../en/Video/windows_video.md).
 
-### Customize the Audio Source
+Before customizing the video source or renderer, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Video/start_call_windows.md) or [Start a Live Broadcast](../../en/Video/start_live_windows.md).
 
-```cpp
-// Initialize the RtcEngine parameters.
-RtcEngineParameters rep(*lpAgoraEngine);
-AParameter apm(*lpAgoraEngine);
+Refer to the following steps to customize the video source:
 
-// Preparation. Implement the audio capture and audio playback queue to store the captured data or data for playback.
-CAudioPlayPackageQueue	*CAudioPlayPackageQueue::m_lpAudioPackageQueue = NULL;
+1. Call the `setExternalVideoSource` method before `joinChannel` to enable the external video source.
+2. Manage video data capturing and processing on your own.
+3. Send the video data back to the SDK using the `pushVideoFrame` method.
 
-CAudioPlayPackageQueue::CAudioPlayPackageQueue()
-{
-  m_bufQueue.Create(32, 8192);
-  m_nPackageSize = 8192;
-}
+### API call sequence
 
-CAudioPlayPackageQueue::~CAudioPlayPackageQueue()
-{
-  m_bufQueue.FreeAllBusyBlock();
-  m_bufQueue.Close();
-}
+Refer to the following diagram to customize the video source in your project.
 
-CAudioPlayPackageQueue *CAudioPlayPackageQueue::GetInstance()
-{
-  if (m_lpAudioPackageQueue == NULL)
-    m_lpAudioPackageQueue = new CAudioPlayPackageQueue();
+![](https://web-cdn.agora.io/docs-files/1569402488491)
 
-  return m_lpAudioPackageQueue;
-}
+### Sample code
 
-void CAudioPlayPackageQueue::CloseInstance()
-{
-  if (m_lpAudioPackageQueue == NULL)
-    return;
-
-  delete m_lpAudioPackageQueue;
-  m_lpAudioPackageQueue = NULL;
-}
-
-void CAudioPlayPackageQueue::SetAudioPackageSize(SIZE_T nPackageSize)
-{
-  _ASSERT(nPackageSize > 0 && nPackageSize <= m_bufQueue.GetBytesPreUnit());
-
-  if (nPackageSize == 0 || nPackageSize > m_bufQueue.GetBytesPreUnit())
-    return;
-
-  m_nPackageSize = nPackageSize;
-}
-
-void CAudioPlayPackageQueue::SetAudioFormat(const WAVEFORMATEX *lpWaveInfo)
-{
-  memcpy_s(&m_waveFormat, sizeof(WAVEFORMATEX), lpWaveInfo, sizeof(WAVEFORMATEX));
-}
-
-void CAudioPlayPackageQueue::GetAudioFormat(WAVEFORMATEX *lpWaveInfo)
-{
-  memcpy_s(lpWaveInfo, sizeof(WAVEFORMATEX), &m_waveFormat, sizeof(WAVEFORMATEX));
-}
-
-BOOL CAudioPlayPackageQueue::PushAudioPackage(LPCVOID lpAudioPackage, SIZE_T nPackageSize)
-{
-  if (m_bufQueue.GetFreeCount() == 0)
-    m_bufQueue.FreeBusyHead(NULL, 0);
-
-  LPVOID lpBuffer = m_bufQueue.AllocBuffer(FALSE);
-  if (lpBuffer == NULL)
-    return FALSE;
-
-  _ASSERT(m_bufQueue.GetBytesPreUnit() >= nPackageSize);
-
-  memcpy_s(lpBuffer, m_bufQueue.GetBytesPreUnit(), lpAudioPackage, nPackageSize);
-
-  return TRUE;
-}
-
-BOOL CAudioPlayPackageQueue::PopAudioPackage(LPVOID lpAudioPackage, SIZE_T *nPackageSize)
-{
-  _ASSERT(nPackageSize != NULL);
-
-  if (nPackageSize == NULL)
-    return FALSE;
-
-  if (m_bufQueue.GetFreeCount() == 0)
-    return FALSE;
-
-  if (*nPackageSize < m_nPackageSize) {
-    *nPackageSize = m_nPackageSize;
-    return FALSE;
-  }
-
-  *nPackageSize = m_nPackageSize;
-  m_bufQueue.FreeBusyHead(lpAudioPackage, m_nPackageSize);
-
-  return TRUE;
-}
-
-// Implement an audio observer for the external audio source.
-CExternalAudioFrameObserver::CExternalAudioFrameObserver()
-{
-}
-
-CExternalAudioFrameObserver::~CExternalAudioFrameObserver()
-{
-}
-
-bool CExternalAudioFrameObserver::onRecordAudioFrame(AudioFrame& audioFrame)
-{
-  SIZE_T nSize = audioFrame.channels*audioFrame.samples * 2;
-  CAudioCapturePackageQueue::GetInstance()->PopAudioPackage(audioFrame.buffer, &nSize);
-
-  return true;
-}
-
-bool CExternalAudioFrameObserver::onPlaybackAudioFrame(AudioFrame& audioFrame)
-{
-  SIZE_T nSize = audioFrame.channels*audioFrame.samples * 2;
-  CAudioPlayPackageQueue::GetInstance()->PushAudioPackage(audioFrame.buffer, nSize);
-
-  return true;
-}
-
-bool CExternalAudioFrameObserver::onMixedAudioFrame(AudioFrame& audioFrame)
-{
-  return true;
-}
-
-bool CExternalAudioFrameObserver::onPlaybackAudioFrameBeforeMixing(unsigned int uid, AudioFrame& audioFrame)
-{
-  return true;
-}
-
-// Enable the external audio source mode and register the audio observer. Use the observer to pass the data from the external source to the engine, and then from the engine to the app.
-int nRet = rep.setExternalAudioSource(true, nSampleRate, nChannels);
-
-agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
-mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
-
-mediaEngine->registerAudioFrameObserver(lpExternalAudioFrameObserver);
-
-// Start pushing the data into the engine and retrieve the data from the engine. You may need to maintain a process loop.
-
-CAudioCapturePackageQueue *lpBufferQueue = CAudioCapturePackageQueue::GetInstance();
-
-IAudioFrameObserver::AudioFrame frame;
-frame.bytesPerSample = gWaveFormatEx.wBitsPerSample / 8;
-frame.channels = gWaveFormatEx.nChannels;
-frame.renderTimeMs = 10;
-frame.samples = gWaveFormatEx.nSamplesPerSec / 100;
-frame.samplesPerSec = gWaveFormatEx.nSamplesPerSec;
-frame.type = IAudioFrameObserver::AUDIO_FRAME_TYPE::FRAME_TYPE_PCM16;
-
-  do {
-    if (::WaitForSingleObject(lpParam->hExitEvent, 0) == WAIT_OBJECT_0)
-    break;
-
-    nAudioBufferSize = 8192;
-
-    if (!lpBufferQueue->PopAudioPackage(lpAudioData, &nAudioBufferSize)) {
-      continue;
-    }
-
-    frame.buffer = lpAudioData;
-
-    mediaEngine->pushAudioFrame(MEDIA_SOURCE_TYPE::AUDIO_RECORDING_SOURCE, &frame, true);
-  } while (TRUE);
-
-// Disable the external audio source mode.
-int nRet = rep.setExternalAudioSource(false, nSampleRate, nChannels);
-
-mediaEngine->registerAudioFrameObserver(NULL);
-```
-
-### Customize the Video Source
-
-To implement an external video source, you need to use the customized method [`setParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_parameter.html#adde9cb68e2ef2216d7fd1976fd5f1d75). See the following sample code for details:
+Refer to the following code to customize the video source in your project.
 
 ```cpp
 // Preparation. Implement the video capture and the video playback queue to store the captured data or data to be rendered.
@@ -336,12 +180,26 @@ lpPackageQueue->PushVideoPackage(m_lpYUVBuffer, nYUVSize); // Push to the Agora 
 nRet = apm->setParameters("{\"che.video.local.camera_index\":0}");
 
 mediaEngine->registerVideoFrameObserver(NULL);
-
 ```
+
+We provide an open source [Agora-Media-Source-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Windows/Agora-Media-Source-Windows) demo project on GitHub. You can try the demo or view the source code.
+
+### API reference
+
+- [`setExternalVideoSource`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#a6716908edc14317f2f6f14ee4b1c01b7)
+- [`pullVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#ae064aedfdb6ac63a981ca77a6b315985)
 
 ## Considerations
 
 * Ensure the accuracy and efficiency of the audio and video data processing in the callback methods to avoid any possible crash.
 * Set the audio data to `RAW_AUDIO_FRAME_OF_MODE_READ_WRITE` if you want to read, write, and manipulate the data.
 * Use raw data methods to customize the video renderer. If you do not want the SDK to render the video frame, do not call the `setupLocalVideo` method. Ensure compatibility on the Windows platform when customizing the video renderer.
-* Customizing the audio/video source and renderer is an advanced feature provided by the Agora SDK. Ensure that you are experienced in audio and video application development.
+* Customizing the video source and sink requires you to manage video data recording and playback on your own.
+
+	- When customizing the video source, you need to capture and process the video data on your own.
+	- When customizing the video sink, you need to process and render the video data on your own.
+
+## Reference
+
+Refer to [Custom Audio Source and Sink](../../en/Video/custom_audio_windows.md) if you want to customize the audio source and sink in your project.
+

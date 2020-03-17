@@ -1,11 +1,11 @@
 
 ---
-title: RTM Quickstart Guide
-description: v0.9.0web quickstart 
+title: Peer-to-peer or Channel Messaging
+description: v0.9.3 web quickstart 
 platform: Web
-updatedAt: Fri May 24 2019 09:01:01 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 04:09:45 GMT+0800 (CST)
 ---
-# RTM Quickstart Guide
+# Peer-to-peer or Channel Messaging
 This page describes how to integrate the Agora RTM Web SDK and call the basic functionalities.
 
 ## Integrate the SDK
@@ -51,7 +51,7 @@ By listening to the [ConnectionStateChanged](https://docs.agora.io/en/Real-time-
 
 ```JavaScript
 client.on('ConnectionStateChange', (newState, reason) => {
-  console.log('on connection state changed to ' + state + ' reason: ' + reason);
+  console.log('on connection state changed to ' + newState + ' reason: ' + reason);
 });
 ```
 
@@ -127,7 +127,7 @@ if (sendResult.hasPeerReceived) {
 Set a listener to the [MessageFromPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmclientevents.html#messagefrompeer) event on [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html) to receive a peer-to-peer message.
 
 ```JavaScript
-client.on('MessageFromPeer', { text }, peerId) => { // text: text of the received message; peerId: User ID of the sender.
+client.on('MessageFromPeer', ({ text }, peerId) => { // text: text of the received message; peerId: User ID of the sender.
 /* Your code for handling the event of receiving a peer-to-peer message. */
 });
 ```

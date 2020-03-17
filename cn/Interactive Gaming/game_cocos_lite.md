@@ -3,7 +3,7 @@
 title: 游戏裁剪版 API
 description: 
 platform: Cocos
-updatedAt: Fri Nov 02 2018 04:13:26 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:13:57 GMT+0800 (CST)
 ---
 # 游戏裁剪版 API
 本文提供基于 C++ 语言的游戏语音 API 描述，包括以下类:
@@ -140,7 +140,7 @@ virtual int joinChannel(const char* token, const char* channelName, const char* 
 <tr><td><code>token</code></td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> </li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App 证书, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> </li>
 </ul>
 </td>
 </tr>
@@ -691,7 +691,7 @@ virtual void onWarning(int warn, const char* msg);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>warn</code></td>
-<td>警告代码</td>
+<td>警告码</td>
 </tr>
 <tr><td><code>msg</code></td>
 <td>警告消息</td>
@@ -1167,8 +1167,8 @@ enum CLIENT_ROLE_TYPE
 };
 ```
 
-## 错误代码和警告代码 - AMG SDK
+## 错误代码和警告码 - AMG SDK
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_game.md)。
+详见 [错误代码和警告码](../../cn/API%20Reference/the_error_game.md)。
 
 

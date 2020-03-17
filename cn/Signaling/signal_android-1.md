@@ -3,7 +3,7 @@
 title: 客户端：发送点对点文本消息和频道文本消息
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:06:41 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:09 GMT+0800 (CST)
 ---
 # 客户端：发送点对点文本消息和频道文本消息
 ## 第一节：快速集成
@@ -72,7 +72,7 @@ compile fileTree(include: ['*.jar'], dir: 'libs')
 
 点击 **Sync Project with Gradle Files** 同步项目。
 
-### 第八步：获取 App ID 和 App Certificate。
+### 第八步：获取 App ID 和 App 证书。
 
 详见 [SignalingToken](../../cn/Agora%20Platform/key_signaling.md)。
 

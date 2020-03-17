@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Jul 08 2019 09:56:34 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 03:23:57 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -23,7 +23,7 @@ See the table below for the web browser support of the Agora Web SDK:
     <th>Firefox 56 or later</th>
     <th>Safari 11 or later</th>
     <th>Opera 45 or later</th>
-    <th>QQ Browser</th>
+    <th>QQ Browser 10.5 or later</th>
     <th>360 Secure Browser</th>
     <th>WeChat Built-in Browser</th>
   </tr>
@@ -69,11 +69,15 @@ See the table below for the web browser support of the Agora Web SDK:
   </tr>
 </table>
 
-> - Upgrade to Agora Web SDK v2.6 in the following scenarios:
->   - Safari on iOS 12.1.4 or later.
->   - Safari 12.1 or later on macOS.
-> - The Agora Web SDK v2.5 or later also supports Chrome 49 on Windows XP.
-> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/faq/browser_support#edge) for details.
+<div class="alert info">Other browser support:
+	<li>The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).</li>
+	<li>The Agora Web SDK v2.7 or later supports Edge on Windows 10, see <a href="https://docs.agora.io/en/faq/browser_support#edge">Edge support</a> for details.</li>
+	<li>The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.</li>
+</div>
+<div class="alert note"> Upgrade to Agora Web SDK v2.6 or later in the following scenarios:
+	<li>Safari on iOS 12.1.4 or later.</li>
+	<li>Safari 12.1 or later on macOS.</li>
+</div>
 
 > To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
 
@@ -86,18 +90,174 @@ See the table below for the web browser support of the Agora Web SDK:
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
 
+## v3.0.2
+
+v3.0.2 was released on March 16, 2020. This version made some internal improvements.
+
+## v3.0.1
+
+v3.0.1 was released on February 12, 2020.
+
+**New features**
+
+#### Dual-stream mode support for custom video source streams
+
+This version supports the dual-stream mode (`enableDualStream`) for video streams created by defining the `videoSource` property.
+
+**Improvements**
+
+Optimizes the reconnection strategy to improve the user experience under poor network conditions.
+
+**Fixed issues**
+
+- A repeated call of `setClientRole` causes errors.
+- The console prints error messages after calling `Client.leave` when the network is disconnected.
+- An error occurs when creating a stream with the `videoSource` property.
+- The `muteAudio` and `muteVideo` methods do not take effect after unsubscribing from and then subscribing to a remote stream.
+
+##  v3.0.0
+
+v3.0.0 was released on December 2, 2019.
+
+This release optimizes the SDK's performance in terms of transmission quality and interoperability, significantly reducing the time to render the first remote video frame, and improving the video experience under poor downlink network conditions.
+
+**New features**
+
+
+#### Channel media stream relay
+
+Adds the following methods for relaying the media stream of a host from a source channel to a destination channel. This feature applies to scenarios where hosts from different live-broadcast channels interact with each other.
+
+- `startChannelMediaRelay`
+- `updateChannelMediaRelay`
+- `stopChannelMediaRelay`
+
+During a media stream relay, the SDK reports the states and events of the relay with the `Client.on("channel-media-relay-state")` and `Client.on("channel-media-relay-event")` callbacks.
+
+For more information on the implementation, API call sequence, sample code, and considerations, see [Co-host across Channels](https://docs.agora.io/en/Interactive%20Broadcast/media_relay_android?platform=Web).
+
+#### Audio sharing
+
+Adds the `screenAudio` property to `StreamSpec` for sharing the local audio playback when sharing a screen. See [Share audio](https://docs.agora.io/en/Video/screensharing_web?platform=Web#a-name--screenaudioashare-audio) for details.
+
+#### Image enhancement
+
+Adds the `setBeautyEffectOptions `method for setting image contrast, brightness, sharpness, and red saturation. See [Image enhancement](https://docs.agora.io/en/Interactive%20Broadcast/image_enhancement_web?platform=Web) for details.
+
+#### Adding watermark images to a live stream
+
+Adds the `images` property to `LiveTranscoding` for inserting online PNG images as watermarks to a live streaming.
+
+#### Encryption/decryption failure notification
+
+Adds the `Client.on("crypt-error")` callback for notifying the app that an encryption/decryption failure occurs when the local users is publishing or subscribing to a stream.
+
+**Improvements**
+
+#### Reporting the state of a remote video stream
+
+Adds the `Client.on("enable-local-video")` and `Client.on("disable-local-video") `callbacks for notifying the app that a remote user on the Native SDK calls `enableLocalVideo` to enable or disable video capture.
+
+#### Reporting the reason why a remote user goes offline
+
+Adds `reason` to the `Client.on("peer-leave")` callback for reporting the reason why the remote user goes offline.
+
+**Fixed issues**
+
+- `Client.join` does not report the error of an incorrect App ID in its onFailure callback function.
+
+- Occasionally, the SDK does not automatically reconnect after being disconnected from the servers for pushing and pulling streams.
+  For answers to questions arising from common disconnection issues, click the following FAQ links:
+  - [When pushing streams to the CDN, what should I do when a disconnection happens?](https://docs.agora.io/en/faq/live_streaming_disconnection_web)
+  - [When injecting online streams to the CDN, what should I do when a disconnection happens?](https://docs.agora.io/en/faq/injecting_stream_disconnection_web)
+- Occasionally, the error message `"Cannot read property 'getLastMsgTime' of null"` appears.
+- The console reports an error when the local user enables or disables the audio or video track of a remote stream.
+
+**API changes**
+
+#### Added
+
+- [`Client.startChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#startchannelmediarelay)
+
+- [`Client.updateChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#updatechannelmediarelay)
+
+- [`Client.stopChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#stopchannelmediarelay)
+
+- [`Stream.setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#setbeautyeffectoptions)
+
+- Adds the following events in [`Client.on`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#on)
+  - `"enable-local-video"`
+  - `"disable-local-video"`
+  - `"channel-media-relay-event"`
+  - `"channel-media-relay-state"`
+  - `"crypt-error"`
+
+#### Updated
+
+Adds the [`screenAudio`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.streamspec.html#screenaudio) property in[`AgoraRTC.createStream`](https://docs.agora.io/en/Video/API%20Reference/web/globals.html#createstream).
+
+
+## v2.9.0
+v2.9.0 is released on September 5, 2019.
+
+**Compatibility changes**
+
+To improve the usability of the RTMP streaming service, v2.9.0 defines the following parameter limits in [`LiveTranscoding`:](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.livetranscoding.html)
+
+- `videoFramerate`: Frame rate (fps) of the CDN live output video stream.  Agora adjusts all values over 30 to 30.
+- `videoBitrate`: Bitrate (Kbps) of the CDN live output video stream. Set this parameter according to the [Video Bitrate Table](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.videoencoderconfiguration.html#bitrate). If you set a bitrate beyond the proper range, the SDK automatically adapts it to a value within the range.
+- `videoCodecProfile`: The video codec profile. Set it as 66, 77, or 100. If you set this parameter to other values, Agora adjusts it to the default value of 100.
+- `width` and `height`: Pixel dimensions of the video. The minimum value of width x height is 16 x 16.
+
+**New features**
+
+#### Support for NAT64
+
+Supports using the Agora Web SDK in NAT64 networks.
+
+#### Using the front or rear camera
+
+Adds the `facingMode` parameter in the `createStream` method to set using the front or rear camera on mobile devices.
+
+#### Unbinding events
+
+Adds the `Client.off` method to support removing the events attached by the `Client.on()` method.
+
+**Improvements**
+
+- Reduces the number of required firewall ports. Users with firewalls do not need to open UDP ports 10000 to 65535. See [Web SDK firewall ports](https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms#web-sdk).
+- Further improves the NAT type compatibility and the media stream connection.
+- Shortens the time to join the channel and the time to render the first remote video frame.
+- Optimizes the experience in poor downlink network conditions.
+- Specifies error messages in the failure callback function of some API methods.
+- Syncs the mute status every time a stream is successfully published.
+- Only triggers the volume-indicator after joining a channel.
+- Optimizes the verification of parameters.
+
+**Issues fixed**
+
+- The subscribing options are reset after reconnection.
+- Calling `Stream.close` when initializing the stream causes abnormal behaviors.
+- Setting `cacheResource` in `Stream.startAudioMixing` does not take effect.
+- Abnormal behaviors after network disconnection.
+
+**API changes**
+
+- Adds the `Client.off` method.
+- Adds the `facingMode` parameter in`AgoraRTC.createStream`.
+
 ## v2.8.0
 v2.8.0 is released on July 8, 2019.
 
 This version optimizes the support for string UIDs.
 
-All users in the same channel should have the same type (number or string) of user ID. If you use string UIDs to interoperate with the Agora Native SDK, ensure that the Native SDK uses the string user account to join the channel. See [Use String User Accounts](../../en/Video/string_web.md) for details.
+All users in the same channel should have the same type (number or string) of user ID. If you use string UIDs to interoperate with the Agora Native SDK, ensure that the Native SDK uses the string user account to join the channel. See [Use String User Accounts](https://docs.agora.io/en/faq/string) for details.
 
 ## v2.7.1
 
 v2.7.1 is released on July 3, 2019. 
 
-### Fixed issues
+**Issues fixed**
 
 Setting the video profile of the shared screen by the `Stream.setScreenProfile` method does not take effect.
 
@@ -105,11 +265,11 @@ Setting the video profile of the shared screen by the `Stream.setScreenProfile` 
 
 v2.7.0 is released on June 21, 2019.
 
-### New features
+**New features**
 
 #### 1. Customizing the video encoder configuration
 
-Adds the `Stream.setVideoEncoderConfiguration` method to customize the video encoder configuration. Compared with the`Stream.setVideoProfile` method, this method is more flexible and supports customizing the video resolution, frame rate, and bitrate. See [Set the Video Profile](../../en/Video/videoProfile_web.md) for details.
+Adds the `Stream.setVideoEncoderConfiguration` method to customize the video encoder configuration. Compared with the`Stream.setVideoProfile` method, this method is more flexible and supports customizing the video resolution, frame rate, and bitrate. See [Set the Video Profile](../../en/Video/video_profile_web.md) for details.
 
 #### 2. Reporting the status of the stream playback
 
@@ -131,13 +291,13 @@ Adds the `"audioTrackEnded"` and `"videoTrackEnded"` callbacks in `Stream.on` to
 
 Supports audio/video calls and live broadcasts on the Microsoft Edge browser. For details, see [Agora Web SDK FAQ](https://docs.agora.io/en/faq/browser_support#edge).
 
-### Improvement
+**Improvement**
 
 This version allows updating the video encoder configuration dynamically. You can call `setVideoProfile` or `setVideoEncoderConfiguration` before or after `Stream.init`.
 
 > Do not set the video encoder configuration when publishing a stream.
 
-### Issues fixed
+**Issues fixed**
 
 - Some of the statistics returned by calling `Stream.getStats` are incorrect.
 - Calling `Client.leave` does not take effect when the network connection is lost.
@@ -145,7 +305,7 @@ This version allows updating the video encoder configuration dynamically. You ca
 - The return value of `Stream.getAudioMixingPosition` is inaccurate when the audio mixing file is playing.
 - Calling Stream.unmuteVideo immediately after subscribing to an audio-only stream causes an audio playback failure.
 
-### API changes
+**API changes**
 
 #### New APIs
 
@@ -167,11 +327,11 @@ This version allows updating the video encoder configuration dynamically. You ca
 
 v2.6.1 is released on April 11, 2019.
 
-### Improvement
+**Improvement**
 
 This version supports using empty strings for the `cameraId` and `microphoneId` properties in the `createStream` method.
 
-### Issues fixed
+**Issues fixed**
 
 - Only two video streams at most can be played on Safari on iOS at the same time.
 - Errors occur when calling the `enableDualStream` method before publishing a stream.
@@ -181,11 +341,11 @@ This version supports using empty strings for the `cameraId` and `microphoneId` 
 
 v2.6.0 is released on April 3, 2019.
 
-### New features
+**New features**
 
 #### 1. Audio effect file playback and management
 
-Supports playing multiple audio effect files at the same time, and managing the files. You can set the volume, pause/stop the playback, and preload the audio effect file. See [Play Audio Effects/Audio Mixing](../../en/Video/effect_mixing_web.md).
+Supports playing multiple audio effect files at the same time, and managing the files. You can set the volume, pause/stop the playback, and preload the audio effect file. See [Play Audio Effects/Audio Mixing](../../en/Video/audio_effect_mixing_web.md).
 
 #### 2. Screen sharing on Chrome without extension
 
@@ -199,12 +359,12 @@ Supports screen sharing on Chrome 72 and later without using the Chrome extensio
 - Adds the `stream-updated` callback in the `Client.on` method to notify users when the remote stream adds or removes a track.
 - Supports using URLs with Chinese characters in the `startAudioMixing` method.
 
-### Improvements
+**Improvements**
 
 - Improves the user experience in unreliable network conditions.
 - Adds the `stream-fallback` callback in the `Client.on` method to notify the user when the remote video stream falls back to audio-only when the network conditions worsen or switches back to video when the network conditions improve.
 
-### Issues fixed
+**Issues fixed**
 
 - The `switchDevice` method fails to switch between microphones on Chrome 72.
 - Muting audio/video does not take effect after calling the `addTrack` method.
@@ -213,7 +373,7 @@ Supports screen sharing on Chrome 72 and later without using the Chrome extensio
 - Calling the `muteAudio` and  `muteVideo` methods immediately after subscribing to the remote stream might not take effect.
 - After calling the `replaceTrack` method to switch the video track on Windows, if you call the `startAudioMixing` method, the remote user cannot hear the audio mixing.
 
-### API changes
+**API changes**
 
 #### New APIs
 
@@ -243,7 +403,7 @@ Supports screen sharing on Chrome 72 and later without using the Chrome extensio
 
 v2.5.2 is released on February 28, 2019. 
 
-### Issues fixed
+**Issues fixed**
 
 - The `Stream.switchDevice` method fails to switch audio devices on Chrome 72 or later.
 - Errors occur when none of the optional parameters are set for the `Client.subscribe` method.
@@ -252,7 +412,7 @@ v2.5.2 is released on February 28, 2019.
 
 v2.5.1 is released on February 19, 2019. 
 
-### New features
+**New features**
 
 #### 1. More call quality statistics
 
@@ -313,13 +473,13 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
   - `audioMixingPlayed`: Informs the app that the audio mixing stream starts or resumes playing.
   - `audioMixingFinished`: Informs the app that the audio mixing stream finishes playing. 
 
-### Improvements
+**Improvements**
 
 - Adds the `muted` parameter to the `Stream.play` method to work around the web browser's autoplay policy.
 - Adds the `callback` parameter to the `Stream.setAudioMixingPosition` method to return error messages when the method call fails.
 - Modifies the names of some callbacks in the `Client.on` method to be consistent in style.
 
-### Issues fixed
+**Issues fixed**
 
 - The video resolution of the remote video returned by the `getStats` method is 0 on Safari for macOS.
 - The user cannot hear the microphone when the `enableAudio` method is called after disabling audio and then starting audio mixing.
@@ -328,7 +488,7 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
 - Users hear their own voice after calling the `replaceTrack` method.
 - Users cannot switch devices twice on iOS when calling the `switchDevice` method.
 
-### API changes
+**API changes**
 
 #### New APIs
 
@@ -388,7 +548,7 @@ v2.5.0 is released on October 30, 2018.
 
 > <font color="red">If you set the domain firewall, ensure that `*.agoraio.cn` and `*.agora.io` are added to your whitelist before using this version.</font>
 
-### New features
+**New features**
 
 To enable better interoperability between the Agora Web SDK and other Agora SDKs, this version adds the following features. For detailed descriptions of the APIs, see [Agora Web SDK API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/index.html).
 
@@ -467,7 +627,7 @@ Adds the following API methods:
 - Supports 360 Secure Browser 9.1.0.432 and later.
 - Supports Chrome 49 on Windows XP.
 
-### Issues fixed
+**Issues fixed**
 
 - The dependency on the video codec in audio-only calls when a user joins a channel from Safari or Chrome on mobile devices.
 - A failure to receive the `stream-removed` callback 10 seconds after another user calls the `Stream.close` method to stop streaming from the Safari browser.
@@ -477,7 +637,7 @@ Adds the following API methods:
 
 v2.4.1 is released on September 19, 2018. 
 
-### Issues Fixed
+**Issues fixed**
 
 - The local publisher may not automatically publish after an IP address change, so the remote subscriber cannot receive the video stream.
 - Unsubscribing from the remote stream triggers the `stream-removed` callback.
@@ -486,7 +646,7 @@ v2.4.1 is released on September 19, 2018.
 
 v2.4.0 is released on August 24, 2018. 
 
-### New Features
+**New features**
 
 #### 1. Support for Token Authentication
 
@@ -516,7 +676,7 @@ Adds delay-related statistics in the `stream.getStats` callback, including the d
 
 Adds the `AgoraRTC.Logger.enableLogUplaod` method, which supports uploading the SDK’s log to Agora’s server. 
 
-### Issues Fixed
+**Issues fixed**
 
 - The `cameraId` and `microphoneId` settings do not take effect unless the `stream.setVideoProfile` method is called.
 - Calling the `setScreenProfile` method does not take effect on the Firefox browser.
@@ -529,7 +689,7 @@ Adds the `AgoraRTC.Logger.enableLogUplaod` method, which supports uploading the 
 
 v2.3.1 is released on June 7, 2018. 
 
-### Issues Fixed
+**Issues fixed**
 
 - Occasional publishing failures on web browsers that installed the Adblock Plus extension.
 - Invalid IP jumps.
@@ -538,7 +698,7 @@ v2.3.1 is released on June 7, 2018.
 
 v2.3.0 is released on June 4, 2018.
 
-### New Features
+**New features**
 
 #### 1. New Session Mode
 
@@ -550,13 +710,13 @@ To meet customers’ needs for audio control during a communication or live broa
 
 #### 3. Support for Proxy on the Web Side
 
-To enable enterprises with a company firewall to access Agora’s services, the `setProxyServer` and `setTurnServer` methods are added. By calling these methods, you can bypass the firewall and send the signaling messages and media data directly to the Agora SD-RTN through the servers. You need to deploy the Nginx and TURN servers before calling these methods before joining the channel. For more information, see [Deploying the Enterprise Proxy](../../en/Video/proxy_web.md).
+To enable enterprises with a company firewall to access Agora’s services, the `setProxyServer` and `setTurnServer` methods are added. By calling these methods, you can bypass the firewall and send the signaling messages and media data directly to the Agora SD-RTN through the servers. You need to deploy the Nginx and TURN servers before calling these methods before joining the channel.
 
 #### 4. Support for Encryption
 
 Encryption is supported to enhance security for communications or live broadcasts. Users need to set the encryption mode and password before joining a channel to use this function. 
 
-### Issues Fixed
+**Issues fixed**
 
 In the case of p2plost, the SDK stops reconnecting to the server after one or several reconnections.
 
@@ -564,7 +724,7 @@ In the case of p2plost, the SDK stops reconnecting to the server after one or se
 
 v2.2 is released on April 16, 2018. 
 
-### New Features
+**New features**
 
 #### 1. Gets the version information.
 
@@ -582,7 +742,7 @@ Adds the support for the Firefox browser to share the screen by adding the <code
 
 Adds the support for the QQ browser.
 
-### Issues Fixed
+**Issues fixed**
 
 No voice in the voice-only mode when an iOS device joins a session using the Safari browser.
 
@@ -596,7 +756,7 @@ Fixes the issue of unable to view the remote video when using the Web SDK on the
 
 v2.1.0 is released on March 7, 2018. 
 
-### New Features
+**New features**
 
 <table>
 <colgroup>
@@ -632,7 +792,7 @@ v2.1.0 is released on March 7, 2018.
 
 
 
-### Improvements
+**Improvements**
 
 <table>
 <colgroup>
@@ -656,7 +816,7 @@ v2.1.0 is released on March 7, 2018.
 
 
 
-### Issues Fixed
+**Issues fixed**
 
 - 90-degree video rotation on Safari
 - Not seeing the remote video when using the Web SDK on Firefox v59.01 on macOS
@@ -667,13 +827,13 @@ v2.1.0 is released on March 7, 2018.
 
 v2.0 is released on November 21, 2017. 
 
-#### New Features
+#**New features**
 
 - Adds the check web-browser compatibility function before calling the `CreateClient` method, to check the compatibility between the system and the web browser.
 - Adds the callback to notify the app that a user has granted or denied access to the camera or microphone.
 - Adds the video self-adjustment function, by automatically lowering the resolution or frame rate until the video profile matches the input hardware’s capability.
 
-#### Issues Fixed
+#**Issues fixed**
 
 - Volume issues with iOS SDK interop.
 - Disconnections on Chrome caused by prolonged communication.
@@ -692,7 +852,7 @@ Adds the screen-sharing function by modifying the `screen` property and adding t
 
 v1.13 is released on September 4, 2017.
 
-#### New Features
+#**New features**
 
 - Supports CDN Live with the `configPublisher` method.
 - Supports Chrome for Android.

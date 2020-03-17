@@ -3,8 +3,46 @@
 title: Agora Web SDK 如何与 Agora Native SDK 互通
 description: 
 platform: Android,iOS,macOS,Web,Windows
-updatedAt: Mon Jul 01 2019 15:15:10 GMT+0800 (CST)
+updatedAt: Tue Dec 31 2019 16:52:17 GMT+0800 (CST)
 ---
 # Agora Web SDK 如何与 Agora Native SDK 互通
-- 在通信模式下，Agora Web SDK 和 Agora Native SDK 默认互通，无需额外设置。
-- 在直播模式下，PC 或移动端用户（使用 Agora Native SDK 的用户）必须调用 `enableWebSdkInteroperability` 打开互通功能，详见[移动、桌面、Web 端互通](https://docs.agora.io/cn/Interactive%20Broadcast/interop_web?platform=Web)。
+在通信模式下，Agora Web SDK 和 Agora Native SDK 默认互通，无需额外设置。
+
+在直播模式下，移动端/桌面端和 Web 端必须同时设置，才能实现互通：
+
+* 移动端/桌面端：调用 `enableWebSdkInteroperability` API 方法。
+
+	```java
+	// java
+	// 移动端调用 enableWebSdkInteroperability 方法开启与 Web SDK 的互通
+	rtcEngine.enableWebSdkInteroperability(true);
+	```
+
+	```swift
+	// swift
+	// 移动端/桌面端调用 enableWebSdkInteroperability 方法开启与 Web SDK 的互通
+	agoraKit.enableWebSdkInteroperability(true)
+	```
+
+	```objective-c
+	// objective-c
+	// 移动端/桌面端调用 enableWebSdkInteroperability 方法开启与 Web SDK 的互通
+	[agoraKit enableWebSdkInteroperability: YES];
+	```
+
+	```cpp
+	// cpp
+	// 桌面端调用 enableWebSdkInteroperability 方法开启与 Web SDK 的互通
+	lpAgoraEngine->enableWebSdkInteroperability
+	```
+
+* Web 端：将 `createClient` 方法中的 `mode` 设置为 `'live'` 实现互通。
+
+	```javascript
+	// javascript
+	// Web 端在创建客户端时，选择正确的 mode 和 codec 参数
+	var client = AgoraRTC.createClient({ mode: 'live', codec: 'h264' });
+	```
+	
+<div class="alert note">根据已知经验，如果场景中有 Safari 浏览器，则建议在 Web 端将 <code>codec</code> 设为 <code>h264</code>；如果没有，则建议设为 <code>vp8</code>。</div>
+

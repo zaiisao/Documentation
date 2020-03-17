@@ -3,12 +3,175 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Jun 06 2019 10:00:55 GMT+0800 (CST)
+updatedAt: Fri Sep 20 2019 07:34:54 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 了解更多详情。
+
+## 1.1.0 版
+
+该版本于 2019 年 9 月 18 日发布。新增如下功能：
+
+- [查询频道成员人数](#getcount)
+- [频道成员人数自动更新](#oncount)
+- [频道属性增删改查](#channelattributes)
+
+
+
+### 兼容性改动
+
+1. 废弃点对点消息发送方法 [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a25ab5c0126e1dc51c78b2b705de68b7a)，改由重载方法 [sendMessageToPeer(const char \*, const IMessage \*, const SendMessageOptions \&)](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9) 替代。
+2. [RtmMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html) 对象的 [getServerReceivedTs](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a7994de6da26269c3137e93ddf7a2c2be) 方法由仅支持点对点消息改为同时支持点对点消息和频道消息。
+3. 点对点消息的超时时间由 5 秒延长为 10 秒。详见： [PEER_MESSAGE_ERR_TIMEOUT ](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_peer_message_error.html#a9aaaa5b9fa46cc15327abd6c2825bc4d)
+4. 针对 [join](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#ad7b321869aac2822b3f88f8c01ce0d40) 方法调用增加了[加入相同频道的频率限制：每 5 秒 2 次](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_join_channel_error.html#a2040b572e1ef4f593f234a20c84a22c7)。
+
+### 新增功能
+
+<a name="getcount"></a>
+#### 1. 查询频道成员人数
+
+支持在不加入频道的情况下通过主动调用 [getChannelMemberCount](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aff0384f2a004ed75498e20e1917352e4) 接口查询单个或多个频道的频道人数。一次最多可查询 32 个频道的成员人数。
+
+<a name="oncount"></a>
+#### 2. 频道成员人数自动更新
+
+如果你已经加入某频道，你无需调用 `getChannelMemberCount` 接口查询当前频道人数。我们也不建议你通过监听 `onMemberJoined` 和 `onMemberLeft` 统计频道成员人数。从本版本开始，SDK 会在频道成员人数发生变化时通过 [onMemberCountUpdated](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#ad778e702e026a79460f45a992bb8576d) 回调接口通知频道成员并返回当前频道成员人数：
+
+- 频道成员人数小于等于 512 时，最高触发频率为每秒 1 次。
+- 频道成员人数超过 512 时，最高触发频率为每 3 秒 1 次。
+
+> 请将该回调与 [getMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a567aca5f866cf71c3b679ae09b4bf626) 方法进行区分：
+> - 前者为主动回调。SDK 向频道成员返回最新频道成员人数。
+> - 后者由 [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5) 返回频道成员列表，且当频道成员人数超过 512 时仅返回随机的 512 个成员列表。
+
+<a name="channelattributes"></a>
+#### 3. 频道属性增删改查
+
+支持设置或查询某个指定频道的属性。你可以用频道属性实现群公告、上下麦同步等功能。
+
+每个频道属性为 key 和 value 的键值对。详见：[RtmChannelAttribute](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel_attribute.html)。其中：
+- 每个属性的 key 为 32 字节可见字符，每个属性的 value 的字符串长度不得超过 8 KB。
+- 某个频道的全部属性长度不得超过 32 KB。
+- 某个频道属性的全部属性个数不得超过 32 个。
+
+支持功能包括：
+
+- 全量设置某指定频道的属性。
+- 添加或更新某指定频道的属性。
+- 删除某指定频道的指定属性。
+- 清空某指定频道的属性。
+- 查询某指定频道的全部属性。
+- 查询某指定频道指定属性名的属性。
+
+
+
+### 性能改进
+
+#### 点对点消息重发
+
+本版本优化了点对点消息在弱网情况下的重发机制，并延长点对点消息超时时间为 10 秒，提高了在弱网情况下点对点消息的发送成功率。
+
+#### 频道消息缓存
+
+Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 秒最多 32 条的频道消息，提高了弱网情况下频道消息的到达率。
+
+
+### API 变更
+
+#### 新增方法
+
+- [setChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad25f51a3671db50e348ec6c170044ec6)：全量设置某指定频道的属性。
+- [addOrUpdaeChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a765b186d62ed3ef6d67a5e875b040875)：添加或更新某指定频道的属性。
+- [deleteChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a2477533989c1bb9ced831af210f1dba4)：删除某指定频道的指定属性。
+- [clearChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ae0c6c5c5bae6020e69009441d8a41785)：清空某指定频道的属性。
+- [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6)：查询某指定频道的全部属性。
+- [getChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3b927c35cca5ebd31afb976d60e99193)：查询某指定频道指定属性名的属性。
+- [getChannelMemberCount](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aff0384f2a004ed75498e20e1917352e4)：查询单个或多个频道的成员人数。
+
+#### 新增回调
+
+- [onAttributesUpdated](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2904a1f1f78c497b9176fffb853be96f)：频道属性更新回调。返回所在频道的所有属性。
+- [onMemberCountUpdated](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#ad778e702e026a79460f45a992bb8576d)：频道成员人数更新回调。返回最新频道成员人数。
+
+#### 新增错误码 
+
+- [GetChannelMemberCountErrCode](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_get_channel_member_count_err_code.html)：获取指定频道成员人数的相关错误码。
+- [JOIN_CHANNEL_ERR_JOIN_SAME_CHANNEL_TOO_OFTEN](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_join_channel_error.html#a2040b572e1ef4f593f234a20c84a22c7)：加入相同频道的频率超过每 5 秒 2 次的上限。
+
+#### 废弃方法
+
+- [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a25ab5c0126e1dc51c78b2b705de68b7a)：被重载方法 [sendMessageToPeer(const char \*, const IMessage \*, const SendMessageOptions \&)](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9) 替代。
+
+#### 废弃错误码
+
+- [ATTRIBUTE_OPERATION_ERR_NOT_READY](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_attribute_operation_error.html#ac6a33aef7c62a132ba79630219d548a7)：被错误码 [ATTRIBUTE_OPERATION_ERR_USER_NOT_LOGGED_IN](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_status_code_1_1_attribute_operation_error.html#a9f329760056976289e49ad1dc69c598f) 替代。
+
+
+
+
+## 1.0.1 版
+
+该版本于 2019 年 8 月 1 日发布。
+
+### 问题修复
+
+- 断网后 SDK 未返回 `onConnectionStateChanged` 回调。
+
+## 1.0.0 版
+
+该版本于 2019 年 7 月 24 日发布。
+
+### 新增功能
+
+### 新老互通
+
+支持与 Agora Signaling SDK 互通。
+
+本版本在 `LocalInvitation` 类中实现了 `setChannelId` 和 `getChannelId` 方法。
+
+> - 如需与 Agora Signaling SDK 互通，则必须调用 `setChannelId` 方法设置频道 ID。不过即使被叫成功接受呼叫邀请，Agora RTM SDK 也不会将主叫或被叫加入指定频道。
+> - 如果你的应用不涉及 Agora Signaling SDK，我们推荐使用 `LocalInvitation.setContent` 或者 `RemoteInvitation.setResponse` 方法设置自定义内容。
+
+#### 设置日志文件地址
+
+支持通过调用 `setLogFile` 方法变更本地日志的默认地址。该方法无需在 `login` 成功之后调用，我们建议在创建 `RtmClient` 后即调用该方法，否则会造成日志文件显示不完整。
+
+#### 设置日志输出等级
+
+支持通过调用 `setLogFilter` 方法将日志内容按照 OFF、CRITICAL、ERROR、WARNING 和 INFO 不同等级输出 。
+
+> 该方法无需在 `login` 成功之后调用。
+
+#### 设置日志文件大小
+
+支持通过 `setLogFileSize` 方法设置日志文件大小。日志的默认大小为 512 KB。低于该默认大小的设置无效。
+
+> 该方法无需在 `login` 成功之后调用。
+
+###  功能改进
+
+针对以下不同错误情况细化了错误代码
+
+- Agora RTM 服务未初始化
+- 调用频率超过上限
+- 未调用 `login` 方法或 `login` 方法未调用成功
+
+### 问题修复
+
+- 修复了一个可以用静态 App ID 和一个通过动态 App ID 生成的 Token 登录Agora RTM 系统的问题。
+
+
+### API 变更
+
+- [setLogFile](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad44bd79d005d25c68712cc35d16d934b)：设定日志文件的默认地址。
+- [setLogFilter](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6726b3a3eafee4528280d3b0d1c6316f)：设置日志输出等级。
+- [setLogFileSize](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a85a6365227adc43f8c3e07042dec6723)：设置日志文件大小。
+- [getSdkVersion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#af3cc54b4d456a67d912786f61619c065)：获取 Agora RTM SDK 的版本信息。
+
+
+
 
 ## 0.9.3 版
 

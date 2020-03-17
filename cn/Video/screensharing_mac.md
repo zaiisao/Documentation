@@ -1,11 +1,11 @@
 
 ---
-title: 进行屏幕共享
+title: 屏幕共享
 description: 
 platform: macOS
-updatedAt: Wed Jun 12 2019 09:05:39 GMT+0800 (CST)
+updatedAt: Tue Jan 14 2020 02:32:57 GMT+0800 (CST)
 ---
-# 进行屏幕共享
+# 屏幕共享
 ## 功能简介
 在视频通话或互动直播中进行屏幕共享，可以将说话人或主播的屏幕内容，以视频的方式分享给其他说话人或观众观看，以提高沟通效率。
 
@@ -16,14 +16,15 @@ updatedAt: Wed Jun 12 2019 09:05:39 GMT+0800 (CST)
 
 ## 实现方法
 
-在开始屏幕共享前，请确保你已完成环境准备、安装包获取等步骤，详见 [集成客户端](../../cn/Video/mac_video.md)。
+在实现屏幕共享前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始音视频通话](../../cn/Video/start_call_mac.md)或[开始互动直播](../../cn/Video/start_live_mac.md)。
 
 Agora 在 v2.4.0 对屏幕共享相关接口进行梳理，目前在 macOS 平台上支持：
-- 通过 displayId 共享指定屏幕，或指定屏幕的部分区域
-- 通过 windowId 共享指定窗口，或指定窗口的部分区域
+- 通过 `displayId` 共享指定屏幕，或指定屏幕的部分区域
+- 通过 `windowId` 共享指定窗口，或指定窗口的部分区域
 
 ### 共享指定屏幕
-macOS 系统为每个屏幕分配一个 displayId，数据类型为 CGDirectDisplayID，32 位无符号整型。该 ID 对应唯一的 macOS 屏幕。通过获取该 displayId，我们可以按如下步骤在 macOS 平台上实现屏幕共享：
+
+macOS 系统为每个屏幕分配一个 `displayId`，数据类型为 `CGDirectDisplayID`，32 位无符号整型。该 ID 对应唯一的 macOS 屏幕。我们可以按如下步骤在 macOS 平台上实现屏幕共享：
 
 1. 获取想要共享屏幕的 Display ID
 
@@ -104,10 +105,11 @@ macOS 系统为每个屏幕分配一个 displayId，数据类型为 CGDirectDisp
 
 ### 共享指定窗口
 
-macOS 为每个窗口分配一个 windowId，数据类型为 CGWindowID，32 位无符号整型。该 ID 对应唯一的 macOS 窗口。通过获取该 windowId，我们可以按如下步骤在 macOS 平台上实现窗口共享：
+macOS 为每个窗口分配一个 `windowId`，数据类型为 `CGWindowID`，32 位无符号整型。该 ID 对应唯一的 macOS 窗口。我们可以按如下步骤在 macOS 平台上实现窗口共享：
 
 1. 获取想要共享窗口的 Window ID
-```
+
+```objective-c
 // 获取窗口 ID
 CFArrayRef window_list = CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements, kCGNullWindowID);
 if (window_list) {
@@ -120,7 +122,7 @@ if (window_list) {
 }
 ```
 
-更多关于 windowId 的详情，请参考 [Apple CGWindowListCopyWindowInfo(::) 说明](https://developer.apple.com/documentation/coregraphics/1455137-cgwindowlistcopywindowinfo)。
+更多关于 `windowId` 的详情，请参考 [Apple CGWindowListCopyWindowInfo(::) 说明](https://developer.apple.com/documentation/coregraphics/1455137-cgwindowlistcopywindowinfo)。
 
 2. 通过 Window ID 共享窗口
 
@@ -185,14 +187,14 @@ if (window_list) {
 	```
 
 ### API 参考
-* [`startScreenCaptureByDisplayId`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByDisplayId:rectangle:parameters:)
-* [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByWindowId:rectangle:parameters:)
-* [`updateScreenCaptureParameters`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureParameters:)
-* [`setScreenCaptureContentHint`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setScreenCaptureContentHint:)
-* [`updateScreenCaptureRegion:`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
-* [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
+* [`startScreenCaptureByDisplayId`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByDisplayId:rectangle:parameters:)
+* [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startScreenCaptureByWindowId:rectangle:parameters:)
+* [`updateScreenCaptureParameters`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureParameters:)
+* [`setScreenCaptureContentHint`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setScreenCaptureContentHint:)
+* [`updateScreenCaptureRegion:`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateScreenCaptureRegion:)
+* [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopScreenCapture)
 
 ## 开发注意事项
 
 - SDK 在 v2.4.0 版本中废弃了原有的屏幕共享接口 `startScreenCapture`，你仍然可以使用，但 Agora 不再推荐。
-- 视频共享编码属性 `AgoraScreenCaptureParameters` 类中各参数的设置可能会影响计费。从 v2.4.1 版本起，如果你将 `dimensions` 参数设为默认值，则 Agora 使用 1920 x 1080 进行计费。
+- 视频共享编码属性 `AgoraScreenCaptureParameters` 类中各参数的设置可能会影响计费。从 v2.4.1 版本起，如果你将 `dimensions` 参数设为默认值，会按照 1920 x 1080 进行计费。

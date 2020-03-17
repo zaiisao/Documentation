@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Electron
-updatedAt: Fri Jul 19 2019 08:34:40 GMT+0800 (CST)
+updatedAt: Tue Dec 10 2019 04:20:30 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a call/video broadcast with the Agora SDK for Electron.
@@ -18,23 +18,21 @@ Development environment:
 > If you use Windows for development, ensure that you run npm install -D —arch = ia32 electron to install  a 32-bit Electron.
 
 ## Create an Agora Project and Get an App ID
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Video/sign_in_and_sign_up.md).
 
-2. Click **Get Started** under **Projects**.
+2. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [**Project Management**](https://dashboard.agora.io/projects) page.
 
-	![](https://web-cdn.agora.io/docs-files/1563523371446)
+3. Click **Create**. 
 
-3. Input your project name in the pop-up window and click **Create**. Follow the on-screen instructions to get to know the basic steps to start a video call. Once the project is created, you can find it under **Projects**.
+![](https://web-cdn.agora.io/docs-files/1574924327108)
 
-	![](https://web-cdn.agora.io/docs-files/1563523478084)
+4.  Enter your project name and select your authentication mechanism ("App ID") in the dialog box.
+
+![](https://web-cdn.agora.io/docs-files/1574924446798)
 	
-4. Click the **Edit** button behind the new project, or the **Project Management** button ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+5. Click **Submit** and you can find the **App ID** of your newly created project.
 
- ![](https://web-cdn.agora.io/docs-files/1563523678240)
-
-5. On the **Project Management** panel, find the **App ID** of your project.
-
- ![](https://web-cdn.agora.io/docs-files/1563523737158)
+![](https://web-cdn.agora.io/docs-files/1574924570426)
 
 ## Add the Agora SDK to Your Project
 
@@ -44,7 +42,7 @@ You can directly install the SDK through npm or download it from Agora's develop
 
 1. Go to the project path, and run the following command line to install the latest version of the Electron SDK:
 
-	`nmp install agora-electron-sdk`
+	`npm install agora-electron-sdk`
 	
 2. Import the SDK into your project with the following code:
 
@@ -77,8 +75,8 @@ AGORA_ELECTRON_DEPENDENT = 4.0.0
 Under the project path, run ` nmp install` to install the dependency and trigger the `npm run download` command. You can also install the dependency manually.
 If you want to debug with Xcode or Visual Studio, run `npm run debug` to generate project files and SDK files for the debug environment. 
 
-You have now integrated the Agora SDK for Electron into your project. Refer to  [Agora Electron Github Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) to implement various real-time communication functions in your project.
+You have now integrated the Agora SDK for Electron into your project. Refer to  [Agora Electron GitHub Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) to implement various real-time communication functions in your project.
 
 ## Open-source SDK
 
-The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open source in Github. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
+The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open source in GitHub. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.

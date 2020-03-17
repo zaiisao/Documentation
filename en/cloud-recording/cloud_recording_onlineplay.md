@@ -3,12 +3,14 @@
 title: Play Recorded Files Online
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 06:23:28 GMT+0800 (CST)
+updatedAt: Wed Jan 22 2020 05:38:22 GMT+0800 (CST)
 ---
 # Play Recorded Files Online
 ## Introduction
 
 The Agora server automatically uploads the recorded files in TS format to the cloud storage that you set up, and generates an M3U8 file as a playlist pointing to all the recorded TS files. You can get the URL of the M3U8 file and play it online.
+
+>If Agora Cloud Recording generates WebM files instead of TS files, you cannot play the M3U8 file online.
 
 ## Implementation
 
@@ -59,3 +61,4 @@ See [How to Serve HLS Video from an S3 Bucket](http://hlsbook.net/how-to-serve-h
 - The M3U8 file can be played directly on Safari. For other web browsers, you might need to install an HLS playback extension.
 - You can also play the M3U8 file on players supporting HLS, such as the VLC media player.
 - If the `uploadingStatus` in the response of [`stop`](../../en/cloud-recording/cloud_recording_api_rest.md) is `"backuped"`, it indicates that some of the recorded files are uploaded to Agora's backup cloud storage. You should wait until these files are uploaded automatically to your cloud storage before playing the M3U8 file.
+- If you do not need to play the recorded files online, we suggest that you make your bucket private to improve security.

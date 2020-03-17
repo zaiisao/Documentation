@@ -1,345 +1,485 @@
 
 ---
-title: Dashboard RESTful API
+title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 03 2019 06:54:34 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 02:17:05 GMT+0800 (CST)
 ---
-# Dashboard RESTful API
-## 1. Authentication
+# Console RESTful API
+## Authentication
 
-> Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Dashboard. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Agora%20Platform/dashboard.md).
+> Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Agora%20Platform/manage_member.md).
 
-The RESTful API only supports HTTPS, and the user must pass the `Authorization` parameter in the Basic HTTP request header for authentication. You need to pass the Customer ID and Customer Cerficate in the code.
+The RESTful API only supports HTTPS. Before sending HTTP requests, you must pass the basic Agora HTTP authentication (the `Authorization` parameter in the HTTP request head) with `api_key:api_secret`:
 
-Login https://dashboard.agora.io, click the account name on the top right of the dashboard, and enter the Restful API page from the drop-down list to get the Customer ID and Customer Certificate. 
+- `api_key`: Customer ID
+- `api_secret`: Customer Certificate
 
-> Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and Customer Certificate are only used for RESTful API access.
-
-
-For how to generate the `Authorization` parameter, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
+You can find your Customer ID and Customer Certificate on the [RESTful API](https://dashboard.agora.io/restful) page in Console. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 
 
-## 2. EndPoint
+## EndPoint
 
-All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
+All requests should be sent to BaseUrl: **https://api.agora.io/dev**.
 
-- Request: All parameters must be sent in JSON format, with content type: Content-Type: application/json.
-- Response: The response content is in JSON format. The response status is defined as follows:
+- Request: Send all parameters using the JSON format, with content type: Content-Type: application/json.
+- Response: The response content is in the JSON format. The response status is defined as follows:
 
-  -   Status 200: Request handle successful.
-  -   Status 400: The input is in the wrong format.
-  -   Status 401: Unauthorized \(incorrect App ID/Customer Certificate\).
-  -   Status 404: Wrong API invoked.
-  -   Status 429: Too frequent API calls.
-  -   Status 500: Internal error of the Agora RestfulAPI service.
+| Status | Description | 
+| ---------------- | ---------------- | 
+| 200      | The request is successful.      |
+| 400      | The input is in the wrong format. |
+| 401      | Unauthorized (incorrect signature). |
+| 404      | Wrong API involed. |
+| 429      | Too many request. |
+| 500      | Internal error of the Agora RESTful API service. |
 
-## 3. Project API
+## Project API
 
-BaseUrl: **https://api.agora.io/dev/v1**.
+BaseUrl: **https://api.agora.io/dev**.
 
 The following chart shows how you can use Project APIs.
-![](https://web-cdn.agora.io/docs-files/1545990089418)
+![](https://web-cdn.agora.io/docs-files/1583833115362)
+
+### Creates a project (POST)
+
+Creates an Agora project.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL  | BaseUrl/v1/project/ |
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `name`      | The project name.      |
+| `enable_sign_key` | Determines whether to enable the App Certificate: <ul><li>true: Enable the App Certificate.</li><li>false: Do not enable the App Certificate.</li></ul> |
+
+**Request sample**
+
+```
+{
+  "name": "projectx",
+  "enable_sign_key": true
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+| `vendor_key` | The App ID of the project. |
+| `sign_key` | The App Certificate of the project. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
+| `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
+| `created` | The Unix timestamp (ms) for creating the project. |
+
+**Response sample**
+
+```
+{
+  "project":[
+    {
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 1,
+      "created": 1464165672
+    }
+  ]
+}
+```
+
+### Gets all projects (GET)
+
+Gets the information of all Agora projects.
+
+**Basic information**
+
+| Basic information | Description | 
+| ---------------- | ---------------- | 
+| Method      | GET      |
+| Request URL | BaseUrl/v1/projects/ |
+
+**Request parameter**
+
+None.
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+| `vendor_key` | The App ID of the project. |
+| `sign_key` | The App Certificate of the project. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
+| `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
+| `created` | The Unix timestamp (ms) for creating the project. |
+
+**Response sample**
+
+```
+{
+  "projects":[
+    {
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 1,
+      "created": 1464165672
+    }
+  ]
+}
+```
+
+### Gets a specified project (GET)
+
+Gets the information of a specified project.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | GET      |
+| Request URL | BaseUrl/v1/project/|
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+
+**Request sample**
+
+```json
+{
+  "id": "xxxxx",
+  "name": "xxxxx"
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+| `vendor_key` | The App ID of the project. |
+| `sign_key` | The App Certificate of the project. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK eariler than v1.9.0. |
+| `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
+| `created` | The Unix timestamp (ms) for creating the project. |
+
+**Response sample**
+
+```
+{
+  "project":[
+    {
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 1,
+      "created": 1464165672
+    }
+  ]
+}
+```
+
+### Disables/Enables a project (POST)
+
+Disables/Enables a specified Agora project.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST     |
+| Request URL | BaseUrl/v1/project_status/ |
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The projec ID.      |
+| `status` | Determines whether you want to enable or disable the project: <ul><li>0: Enable the project.</li><li>1: Disable the project.</li></ul> |
+
+**Request sample**
+
+```json
+{
+  "id": "xxxx"
+  "status": 0
+}
+```
+
+**Response parameter**
 
-### Fetch all Projects (GET)
+- If you successfully enable or disable the project, this response contains the information of this project.
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `name` | The project name. |
+| `vendor_key` | The App ID of the project. |
+| `sign_key` | The App Certificate of the project. |
+| `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
+| `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
+| `created` | The Unix timestamp (ms) for creating the project. |
+
+```
+{
+  "project":[
+    {
+      "id": "xxxx",
+      "name": "project1",
+      "vendor_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "sign_key": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "recording_server": "10.2.2.8:8080",
+      "status": 0,
+      "created": 1464165672
+    }
+  ]
+}
+```
 
--  Method: GET
--  Path: BaseUrl/projects/
--  Parameter: None
--  Response:
+- If the specified project does not exist,  the status code 404 is reported.
+
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
-	```
-	{
-		"projects":[
+### Deletes a project (DELETE)
 
-								{
+Deletes a specified Agora project.
 
-									"id": 'xxxx',
-									"name": 'project1',
-									"vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-									"sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-									"recording_server": '10.2.2.8:8080',
-									"status": 1,
-									"created": 1464165672
+**Basic information**
 
-								}
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | DELETE      |
+| Request URL | BaseUrl/v1/project/|
 
-						 ]
-	}
-	```
+**Request parameter**
 
-- Status:
+#### Body parameter
 
-  -  1: Active
-  -  0: Disable
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
 
+**Request sample**
 
-### Fetch a Single Project (GET)
+```json
+{
+  "id": "xxxxx"
+}
+```
 
--  Method: GET
--  Path: BaseUrl/project/
--  Parameter:
+**Response parameter**
 
-	```
-	{
-		"id":'xxxx',
-		"name":'xxxx'
-	}
-	```
+- If you successfully delete the project, the response is as follows:
 
--  Response:
+```json
+{
+  "success": true
+}
+```
 
-	```
-	{
-		"projects":[
+- If the specified project does not exist, the status code 404 is reported.
 
-						 {
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
-									"id": 'xxxx',
-									"name": 'project1',
-									"vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-									"sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-									"recording_server": '10.2.2.8:8080',
-									"status": 1,
-									"created": 1464165672
+### Sets the IP of the recording server (POST)
 
-								}
+Sets the IP of of the recording server for a specified project.
 
-						 ]
-	}
-	```
+**Basic information**
 
-- Status:
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL | BaseUrl/v1/recording_config/|
 
-  -  1: Active
-  -  0: Disable
+**Request parameter**
 
+#### Body parameter
 
-### Create a Project (POST)
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `recording_config` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
 
--  Method: POST
--  Path: BaseUrl/project/
--  Parameter:
+**Request sample**
 
-	```
-	{
-		"name":'projectx',
-		"enable_sign_key": true
-	}
-	```
+```json
+{
+  "id": "xxxx",
+  "recording_server": "10.12.1.5:8080"
+}
+```
 
-- Response
+### Response parameter
 
-	```
-	{
-		"project":
-						{
+- If you successfully set the IP for the recording server, the response is as follows:
 
-							 "id": 'xxxx',
-							 "name": 'project1',
-							 "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-							 "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-							 "status": 1,
-							 "created": 1464165672
+```json
+{
+  "success": true
+}
+```
 
-						}
-	}
-	```
+- If the specified project does not exist or has been disabled, the status code 404 is reported.
 
-### Disable/Enable a Project (POST)
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
--  Method: POST
--  Path: BaseUrl/project\_status/
--  Parameter:
+### Enables the App Certificate (POST)
 
-	```
-	{
-		"id":'xxx',
-		"status": 0
-	}
-	```
+Enables the App Certificate for a specifed project.
 
--  Response:
+**Basic information**
 
-    -  Success:
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL | BaseUrl/v1/signkey/|
 
-		```
-			{
-				"project":
-								{
+**Request parameter**
 
-								 "id": 'xxxx',
-								 "name": 'project1',
-								 "vendor_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-								 "sign_key": '4855xxxxxxxxxxxxxxxxxxxxxxxxeae2',
-								 "status": 0,
-								 "created": 1464165672
+#### Body parameter
 
-								 }
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
+| `enable` | Determines whether to enable the App Certificate of the project: <ul><li>true: Enable the App Certificate.</li><li>false: Do not enable the App Certificate.</li></ul> |
 
-			 }
-			```
+**Request sample**
 
-    -  If a specified project does not exist \(deleted or no such project\):
+```json
+{
+  "id": "xxxx",
+  "enable": true
+}
+```
 
-        ```
-        status 404
-        content:
-        {
-        
-          "error_msg": "project not exist"
-        
-        }
-        ```
+**Response parameter**
 
+- If you successfully enable the App Certificate, the response is as follows:
 
-### Delete a Project (DELETE)
+```json
+{
+  "success": true
+}
+```
 
--  Method: DELETE
--  Path: BaseUrl/project/
--  Parameter:
+- If the specified project does not exist or has been disabled, the status code 404 is reported.
 
-	```
-	{
-		"id":'xxxx'
-	}
-	```
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
--  Response:
+### Resets the App Certificate (POST)
 
-  -  Project deleted:
+Resets the App Certificate of a specified project. If the App Certificate is leaked, use this method to reset it.
 
-		```
-		{
-			"success": true
-		}
-		```
+If the App Certificate has not been enabled, calling this method automatically enables it.
 
-  -  Project not found:
+**Basic information**
 
-		```
-		status 404
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL | BaseUrl/v1/reset_signkey/|
 
-		 {
-				"error_msg": "project not exist"
-		 }
-		```
+**Request parameter**
 
-### Set a Project’s Recording Server IP (POST)
+#### Body parameter
 
--  Method: POST
--  Path: BaseUrl/recording\_config/
--  Parameter:
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `id`      | The project ID.      |
 
-	```
-	{
-		"id":'xxxx',
-		"recording_server": '10.12.1.5:8080'
-	}
-	```
+**Request sample**
 
->  - If your Recording SDK version is before v1.9.0 (include), please pay attention to the `recording_server` parameter.
->  - If your Recording SDK version is later than v1.11.0 (include), please neglect the `recording_server` parameter.
+```json
+{
+  "id": "xxxxx"
+}
+```
 
--  Response:
+**Response parameter**
 
-   -  Success:
+- If you successfully enable the App Certificate, the response is as follows:
 
-		```
-		{
-			"success": true
-		}
-		```
+```json
+{
+  "success": true
+}
+```
 
-   -  Project not found or disabled:
+- If the specified project does not exist or has been disabled, the status code 404 is reported.
 
-    ```
-    status 404
-    
-     {
-       "error_msg": "project not exist"
-     }
-    ```
+```json
+status 404
+{
+  "error_msg": "project not exit"
+}
+```
 
+## Usage API
 
-### Enable a Project’s App Certificate (POST)
-
--  Method: POST
--  Path: BaseUrl/signkey/
--  Parameter:
-
-	```
-	{
-		"id": `xxx`,
-		"enable": true
-	}
-	```
-
--  Response:
-
-   -  Success:
-
-		```
-		{
-
-			"success": true
-
-		}
-		```
-
-   -  Project not found or disabled:
-
-		```
-		status 404
-		{
-
-			"error_msg": "project not exist"
-
-		}
-		```
-
-### Reset a Project’s App Certificate (POST)
-
--  Method: POST
--  Path: BaseUrl/reset_signkey/
--  Parameter:
-
-	```
-	{ "id" : "xxx"}   // project id
-	```
-
--  Response:
-
-   -  Success:
-
-		```
-		{
-			"success": true
-		}
-		```
-
-   -  Project not found or disabled:
-
-		```
-		status 404
-			{
-				"error_msg": "project not exist"
-			}
-		```
-
-> If an App Certificate is not enabled for a project, calling this method will enable it.
-
-## 4. Usage API
-
-BaseUrl: **https://api.agora.io/dev/v1**.
-
-The following chart shows how you can use Usage APIs.
-![](https://web-cdn.agora.io/docs-files/1545990118195)
+BaseUrl: **https://api.agora.io/dev**.
 
 ### Fetch Usages (GET)
 
+Agora provides two kinds of APIs to fetch usages: version 1 and version 3. For fetching more usage information, Agora recommends to use the API of [version 3](#UsageV3).
+
+#### V1
+
+<details>
+	<summary><font color="#3ab7f8">Fetch Usages V1</font></summary>
+
+The following chart shows how you can use Usage APIs.
+![](https://web-cdn.agora.io/docs-files/1583833157222)
+	
 -  Method: GET
--  Path: BaseUrl/usage/
+-  Path: BaseUrl/v1/usage/
 -  Parameter: (from date & to date pattern: YYYY-MM-DD)
 
 	```
@@ -357,14 +497,14 @@ The following chart shows how you can use Usage APIs.
 		{
 			"usages":[
 
-								{ "project": 'xxx',
+								{ "project": "xxx",
 														"daily": [
 																	{ "date": 20150101, "audio": 20, "sd": 100, "hd": 132, "hdp": 225},
 																	{ "date": 20150102, "audio": 20, "sd": 100, "hd": 132, "hdp": 225},
 															]
 														},
 
-														{ "project": 'yyy',
+														{ "project": "yyy",
 															"daily": [....]
 														}
 
@@ -377,456 +517,476 @@ The following chart shows how you can use Usage APIs.
       If some of the specified projects do not exist, they will be omitted and no error will occur.
 
 > The *audio*, *sd*, *hd* and *hdp* parameters in this response are in minutes.
+</details>
 
-## 5. Ban Users at the Server
+<a name="UsageV3"></a>
+#### V3
+The following chart shows how you can use Usage APIs.
+![](https://web-cdn.agora.io/docs-files/1583833175432)
 
-BaseUrl: **https://api.agora.io/dev/v1**.
+-  Method: GET
+-  Path: BaseUrl/v3/usage/
+-  Parameter:
+
+ ```
+// from_date: The date to start query, using UTC time. For example, 2020-01-01.
+// to_date: The date to end query, using UTC time. For example, 2020-01-31.
+// project_id: The ID of a target project.
+// business: The business type. You can choose the following values:
+// - default: The default business type is RTC.
+// - transcodeDuration: Transcoding.
+// - recording: On-premise Recording.
+// - cloudRecording: Cloud Recording.
+// - miniapp: Mini app.
+from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
+ ```
+
+<div class="alert note">Ensure that you fill in a valid <tt>project_id</tt>, otherwise, you cannot fetch the usage information.</div>
+
+-   Response:
+
+ ```json
+ {
+    "meta": {
+        "durationAudioAll": {
+            "en": "Total Audio Duration",
+            "unit": "second"
+        },
+        "durationVideoHd": {
+            "en": "HD Video Duration（including On-premise Recording）",
+            "unit": "second"
+        },
+        "durationVideoHdp": {
+            "en": "HDP Video Duration（including On-premise Recording)",
+            "unit": "second"
+        }
+    },
+    "usages": [
+        {
+            // The query date, using UTC time and Unix timestamp.
+            "date": "2020-03-01T00:00:00.000Z",
+            "usage": {
+                // Total audio duration. See details in the durationAudioAll parameter of the meta object.
+                "durationAudioAll": 0,
+                // HD video duration, including the duration of On-premise Recording. See details in the durationVideoHd parameter of the meta object.
+                "durationVideoHd": 0,
+                 // HDP video duration, including the duration of On-premise Recording. See details in the durationVideoHdp parameter of the meta object.
+                "durationVideoHdp": 0
+            }
+        }
+    ]
+}
+ ```
+
+## Ban Users at the Server
+
+BaseUrl: **https://api.agora.io/dev**.
 
 The following chart shows how you can use related APIs.
-![](https://web-cdn.agora.io/docs-files/1545990162139)
+![](https://web-cdn.agora.io/docs-files/1583833187642)
 
-> The banned user receives the corresponding callback as follows:
+<div class="alert note">The call frequency of this group of API is no more than ten queries per second.</div>
+
+The banned user receives the corresponding callback as follows:
 - Android: [`onConnectionStateChanged`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e)(CONNECTION_CHANGED_BANNED_BY_SERVER)
 - iOS/macOS: [`connectionChangedToState`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)(AgoraConnectionChangedBannedByServer)
 - Web: [`onclient-banned`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/web/interfaces/agorartc.client.html#on)
 - Windows: [`onConnectionStateChanged`](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4)(CONNECTION_CHANGED_BANNED_BY_SERVER)
 
-### Create a Rule (POST)
+### Creates a rule (POST)
 
--  Method: POST
--  Path: BaseUrl/kicking-rule/
--  Parameter:
+Creates a banning rule.
 
-    ```
-    {
-				"appid":"",   // Mandatory, project App ID
-				"cname":"",   // Optional, channel name. Do not pass cname:""
-				"uid":"",     // Optional, UID which can be obtained by using the SDK API. Do not pass uid:0
-				"ip":"",      // Optional, IP address of the user to be banned. Do not pass ip:0
-				"time": 60    // Optional, banned period in minutes. 1440 minutes maximum, 1 minute minimum. If you set it to over 1440 minutes, it will be processed as 1440 minutes. If you do not set it, the default duration is 1 hour, that is, time:60 
-				"privileges":["join_channel"]   // The default value.
-     }
-    ```
+**Basic information**
 
-> - Setting the `time` argument means that the banning rule does not take effect. The server sets all the users in the channel that comform to the rule offline and the users can log in again to rejoin the channel.
-> - The ban rule is based on the permutation and combination of the three fields: cname, uid and ip. See the following examples:
->    -   If you pass the ip parameter, but not cname or uid, then the rule is that this ip cannot login any channel in the App.
->    -   If you pass the cname parameter, but not uid or ip, then the rule is that no one can login the channel specified by the cname parameter.
->    -   If you pass the cname and uid parameter, but not ip, then the rule is that the uid cannot login the channel specified by the cname parameter.
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | POST      |
+| Request URL   | BaseUrl/v1/kicking-rule/ |
 
--  Response:
+**Request parameter**
 
-    ```
-    {
-        "status": "success",  // Status of the request
-        "id": 1953            // The rule ID. If you want to update the rule, then you need the rule ID to specify one
-    }
-    ```
+#### Body parameter
 
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      |
+| `cname`    | (Optional) The channel name. Do not set it as the empty string "".  |
+| `uid`           | (Optional) The user ID. You can use the SDK APIs to get it. Do not set it as 0. | 
+| `ip`             | (Optional) The IP address of the user that you want to kick out of the channel. Do not set it as 0.  |
+| `time`        | The time duration (minute) to ban the user. The value range is [1, 1440], and the default value is 60. Agora automatically sets values between zero and one to one, and higher than 1440 to 1440. Setting it as 0 means that the banning rule does not take effect. The server sets all users that conform to the rule offline, and users can log in again to re-join the channel.  |
+| `privileges` | The default field ["join_channel"]. |
 
-### Get the Rule List (GET)
+The banning rule works based on the three fields: `cname`, `uid` and `ip`. See the following examples:
+-   If you set `ip`, but not `cname` or `uid`, the rule is that users with this `ip` cannot join any channel in the app. 
+-   If you set `cname`, but not `uid` or `ip`, the rule is that no one can join the channel specified by the `cname` field.
+-   If you set `cname` and `uid`, but not `ip`, the rule is that the user with the ID cannot join the channel specified by the `cname` field.
+-   If you set `uid`, but not `cname` or `ip`, the rule is that the user with the ID cannot join any channel in the app.
 
--  Method: GET
--  Path: BaseUrl/kicking-rule/
--  Parameter:
+**Request sample**
 
-    ```
-    {
-       "appid":""    // Mandatory, project App ID
-     }
-    ```
-
--  Response:
-
-    ```
-    {
-        "status": "success",                                    // Status of the request
-        "rules": [
-            {
-                "id": 1953,                                     // The rule ID. If you want to update the rule, then you need the rule ID to specify one
-                "appid": ""                                     // project App ID
-                "uid": 1,                                       // UID which can be obtained by using the SDK API
-                "opid": 1406,                                   // Operating ID which is used to check the operation records for issues tracking
-                "cname": "11",                                  // The channel name
-                "ip": null,                                     // The IP address
-                "ts": "2018-01-09T07:23:06.000Z",               // Time when the rule takes effect
-                "createAt": "2018-01-09T06:23:06.000Z",         // Time when the rule is created
-                "updateAt": "2018-01-09T14:23:06.000Z"          // Time when the rule is updated
-            }
-        ]
-    }
-    ```
-
-
-### Update the Rule Period (PUT)
-
--  Mrethod: PUT
--  Path: BaseUrl/kicking-rule/
--  Parameter :
-
-    ```
-    {
-             "appid":"",   // Mandatory, project App ID
-             "id":"",      // Mandatory, rule ID with the rule list to be retrieved
-             "time":""     // Mandatory, banned period to be updated
-    }
-    ```
--  Response:
-
-    ```
-    {
-        "result": {
-            "id": 1953,                         // The rule ID
-            "ts": "2018-01-09T08:45:54.545Z"    // Time when the rule expires
-        },
-        "status": "success"                     // Status of the request
-    }
-    ```
-
-
-### Delete a Rule (DELETE)
-
--  Method: DELETE
--  Path: BaseUrl/kicking-rule/
--  Parameter:
-
-    ```
-    {
-                   "appid":"",   // Mandatory, project App ID
-                   "id":""       // Mandatory, rule ID with the rule list to be retrieved
-    }
-    ```
-		
--  Response:
-
-    ```
-    {
-        "status": "success",  // Status of the request
-        "id": 1953            // The rule ID
-    }
-    ```
-
-
-## 6. Online Statistics Query API
-
-BaseUrl：**https://api.agora.io/dev/v1/**.
-
-The following chart shows how you can use Online Statistics Query APIs.
-![](https://web-cdn.agora.io/docs-files/1545990190974)
-
-### Get a User Role in the Channel (GET)
-
-This method checks if a specified user is in a specified channel, and if yes, checks the role of this user in the channel.
-
--  Method: GET
--  Path: BaseUrl/channel/user/property/
--  Parameters: appid, uid, cname
-
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>appid</td>
-	<td>Mandatory, App ID in the dashboard</td>
-	</tr>
-	<tr><td>uid</td>
-	<td>Mandatory, user ID which can be obtained by using the SDK</td>
-	</tr>
-	<tr><td>cname</td>
-	<td>Mandatory, channel name</td>
-	</tr>
-	</tbody>
-	</table>
-
-Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
-
--  Response:
-
-	```
-	{
-		"success": true,
-		"data": {
-			"join": 1549073054,
-			"in_channel": true,
-			"role": 2
-		}
-	}
-	```
-
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>join</td>
-	<td><p>The timestamp when the user joins the channel</p>
-	</td>
-	<tr><td>success</td>
-	<td><p>Checks the request state</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>in_channel</td>
-	<td><p>Checks if the user is in the channel</p>
-	<ul>
-	<li>true: The user is in the channel</li>
-	<li>false: The user is not in the channel</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>role</td>
-	<td><p>Checks the role of the user in the channel</p>
-	<ul>
-	<li>0: Unknown role</li>
-	<li>1: Communication user</li>
-	<li>2: Video live broadcaster</li>
-	<li>3: Live broadcast audience</li>
-	</ul>
-	</td>
-	</tr>
-	</tbody>
-	</table>
-
-
-
-### Get the User Role List in a Channel (GET)
-
-This method checks the user role list in a specified channel.
-
--  Method: GET
--  Path: BaseUrl/channel/user/
--  Parameters: appid, cname
-
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>appid</td>
-	<td>Mandatory, App ID in the dashboard</td>
-	</tr>
-	<tr><td>cname</td>
-	<td>Mandatory, channel name</td>
-	</tr>
-	</tbody>
-	</table>
-
-Example: /channel/user/<appid\>/<channelName\>
-
--  Response: the responses of difference channel profiles differ:
-
-	```
-	// If it is a communication channel:
-	{
-			"success": true,
-			"data": {
-					"channel_exist": true,
-					"mode": 1,
-					"total": 1,
-					"users": [<uid>]
-			}
-	}
-	```
-	
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>success</td>
-	<td><p>Checks the request state:</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>channel_exist</td>
-	<td><p>Checks if the channel exits:</p>
-	<ul>
-	<li>true: Channel exists</li>
-	<li>false: Channel does not exist</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>mode</td>
-	<td><p>Checks the channel mode:</p>
-	<ul>
-	<li>1: The communication mode</li>
-	<li>2: The live broadcast mode</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>total</td>
-	<td>Total number of the users in the channel</td>
-	</tr>
-	<tr><td>users</td>
-	<td>UIDs of all users in the channel</td>
-	</tr>
-	</tbody>
-	</table>
-	<br>
-
-	```json
-// If it is a live broadcast channel.
+```json
 {
-		"success": true,
-		"data": {
-				"channel_exist": true,
-				"mode": 2,
-				"broadcaster": [<uid>],
-				"audience": [<uid>],
-				"audience_total": <count>
-		}
+  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+  "cname": "",
+  "uid":"",
+  "ip":"",
+  "time":60,
+  "privilege":["join_channel"]
 }
 ```
-	
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>success</td>
-	<td><p>Checks the request state:</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>channel_exist</td>
-	<td><p>Checks if the channel exits:</p>
-	<ul>
-	<li>true: Channel exists</li>
-	<li>false: Channel does not exist</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>mode</td>
-	<td><p>Checks the channel mode:</p>
-	<ul>
-	<li>1: The communication mode</li>
-	<li>2: The live broadcast mode</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>broadcaster</td>
-	<td>The ID list of all the broadcasters in the channel</td>
-	</tr>
-	<tr><td>audience</td>
-	<td>The ID list of the first 10000 auience in the channel</td>
-	</tr>
-	<tr><td>audience_total</td>
-	<td>The total number of auience in the channel</td>
-	</tr>
-	</tbody>
-	</table>
 
-	
+**Response parameter**
 
-### Get the Channel List (GET)
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `status`      | The status of this request.      |
+| `id`              | The rule ID. If you want to update the rule, you need the rule ID to specify the rule. | 
+
+**Response sample**
+
+```json
+{
+  "status": "success",
+  "id": 1953
+}
+```
+
+
+### Gets the rule list (GET)
+
+Gets the list of all banning rules.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | GET      |
+| Request URL   | BaseUrl/v1/kicking-rule/ |
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      |
+
+**Request sample**
+
+```json
+{
+  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2"
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `status`      | The status of this request.      |
+| `rules`        | The list of the kicking rule, which contains the following fields: <ul><li>`id`: The rule ID.</li><li>`appid`: The project App ID in Console.</li><li>`uid`: The user ID.</li><li>`opid`: The operation ID, which can be used to track operation records when teoubleshooting.</li><li>`cname`: The channel name.</li><li>`ip`: The IP address.</li><li>`ts`: The timestamp when this rule stops taking effect.</li><li>`createAt`: The timestamp when this rule is created.</li><li>`updateAt`: The timestamp when this rule is updated.</li></ul> |
+
+**Response sample**
+
+```json
+{
+  "status": "success",
+  "rules": [
+    {
+      "id": 1953,
+      "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+      "uid": 1,
+      "opid": 1406,
+      "cname": "11",
+      "ip": null,
+      "ts": "2018-01-09T07:23:06.000Z",
+      "createAt": "2018-01-09T06:23:06.000Z",
+      "updateAt": "2018-01-09T14:23:06.000Z"
+    }
+  ]
+}
+```
+
+### Updates the rule time (PUT)
+
+Updates the time duration when the rule taks effect.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- | 
+| Method      | PUT      |
+| Request URL  | BaseUrl/v1/kicking-rule/ |
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description | 
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      |
+| `id`             | The ID of the rule that you want to update. |
+| `time`         | The time duration (minute) to ban the user. The value range is [1, 1440], and the default value is 60. Agora automatically sets values lower than one to one, and higher than 1440 to 1440. Setting it as 0 means that the banning rule does not take effect. The server sets all users that conform to the rule offline, and users can log in again to re-join the channel. |
+
+**Request sample**
+
+```json
+{
+  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+  "id": 1953,
+  "time": 60,
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `status`     | The status of this request. |
+| `result`      | The result of the rule update: <ul><li>`id`: The rule ID.</li><li>`ts`: The timestamp when the rule stops taking effect.</li></ul>      |
+
+**Response sample**
+
+```json
+{
+  "status": "success",
+  "result": {
+    "id": 1953,
+    "ts": "2018-01-09T08:45:54.545Z"
+  }
+}
+```
+
+### Deletes the rule (DELETE)
+
+Deletes the banning rule.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | DELETE      |
+| Request URL |  BaseUrl/v1/kicking-rule/ |
+
+**Request parameter**
+
+#### Body parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.     |
+| `id`             | The ID of the rule that you want to delete. |
+
+**Request sample**
+
+```json
+{
+  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
+  "id": 1953
+}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `status`      | The status of this request.     | 
+| `id`             | The ID of the rule that you want to delete. |
+
+**Response sample**
+
+```json
+{
+  "status": "success",
+  "id": 1953
+}
+```
+
+## Online Statistics Query API
+
+BaseUrl：**https://api.agora.io/dev**.
+
+The following chart shows how you can use Online Statistics Query APIs.
+![](https://web-cdn.agora.io/docs-files/1583833200074)
+
+<div class="alert note">The call frequency of this group of API is no more than twenty queries per second.</div>
+
+### Gets the user role (GET)
+
+This method checks if a specified user is in a specified channel, and if yes, the role of this user in the channel.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| 方法      | GET      |
+| 请求 URL  | BaseUrl/v1/channel/user/property/ |
+
+**Request parameter**
+
+#### URL parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      | 
+| `uid`          | The user ID. |
+| `cname`   | The channel name. |
+
+**Request sample**
+
+```
+BaseUrl/v1/channel/user/property/{appid}/{uid}/{channelName}
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `success`  | The state of this request: <ul><li>true: Success.</li><li>false: Failure.</li></ul> |
+| `data`  | The state of the user in the channel, which includes the following fields: <ul><li>`join`: The timestamp when the user joins the channel.</li><li>`in_channel`: Whether the user is in the channel: <ul><li>true: The user is in the channel.</li><li>false: The user is not in the channel.</li></ul><li>`role`: The role of the user in the channel. <ul><li>0: Unknown user role.</li><li>1: The user in a Communication channel.</li><li>2: The broadcaster in a Live-broadcast channel.</li><li>3: The audience in a Live-broadcast channel.</li></ul></li></ul> |
+
+**Response sample**
+
+```json
+{
+  "success": true,
+  "data": {
+    "join": 1549073054,
+    "in_channel": true,
+    "role": 2
+  }
+}
+```
+
+### Gets the user list in a channel (GET)
+
+This method gets the user list:
+
+- In the Communication profile, this method gets the list of all users in the channel.
+- In the Live-broadcast profile, this method gets the list of all broadcasters and audience in the channel.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | GET      |
+| Request URL | BaseUrl/v1/channel/user/ |
+
+**Request parameter**
+
+#### URL parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      |
+| `cname`    | The channel name. |
+
+**Request sample**
+
+```
+BaseUrl/v1/channel/user/{appid}/{channelName}
+```
+
+**Response parameter**
+
+The response of this method differs with the channel profile:
+
+- In the Communicatio profile, the response is as follows:
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `sucess`      | Checks the state of this request: <ul><li>true: Success.</li><li>false: Failure.</li></ul>      |
+| `data` | The response data, which includes the following fields: <ul><li>`channel_exist`: Checks whether the channel exist.<ul><li>true: The channel exist.</li><li>false: The channel does not exist.</li></ul><li>`mode`: The channel profile: <ul><li>1: The Communication profile.</li><li>2: The Live-broadcast profile.</li></ul><li>`total`: The total number of users in the channel.</li><li>`users`: The ID list of all users in the channel.</li></ul> |
+
+```json
+{
+  "success": true,
+  "data": {
+    "channel_exist": true,
+    "mode": 1,
+    "total": 1,
+    "users": [<uid>]
+  }
+}
+```
+
+- In the Live-communication profile, the response is as follows:
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `sucess`      | Checks the state of this request: <ul><li>true: Success.</li><li>false: Failure.</li></ul>      |
+| `data` | The data of user information, which includes the following fields: <ul><li>`channel_exist`: Checks whether the channel exist.<ul><li>true: The channel exist.</li><li>false: The channel does not exist.</li></ul><li>`mode`: The channel profile: <ul><li>1: The Communication profile.</li><li>2: The Live-broadcast profile.</li></ul><li>`broadcasters`: The ID list of all the broadcasters in the channel.</li><li>`audience`: The ID list of the first 10000 audience in the channel.</li></ul><li>`audience_total`: The total number of all the audience in the channel.</li></ul> |
+
+```json
+{
+  "success": true,
+  "data": {
+    "channel_exist": true,
+    "mode": 2,
+    "broadcasters": [<uid>],
+    "audience": [<uid>],
+    "audience_total": <count>
+  }
+}
+```
+
+### Gets the channel list (GET)
 
 This method gets the channel list of a specified vendor.
 
--  Method: GET
--  Path: BaseUrl/channel/appid/
--  Parameters: ?page\_no=0&page\_size=100 \(Optional\)
+**Basic information**
 
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Name</strong></td>
-	</tr>
-	<tr><td>page_no</td>
-	<td>Optional. The starting page; the default value is 0.</td>
-	</tr>
-	<tr><td>page_size</td>
-	<td>Optional. The number of items in a page; the default value is 100 and the greatest value is 500.</td>
-	</tr>
-	</tbody>
-	</table>
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method     | GET      |
+| Request URL | BaseUrl/v1/channel/appid/ |
 
-Example: /channel/<appid\>
-Example with parameters: /channel/<appid\>/page\_no=0&page\_size=100
+**Request parameter**
 
--  Response:
+#### Query parameter
 
-    ```
-     {
-              "success": true,
-              "data": {
-                  "channels": [
-                      {
-                          "channel_name": "lkj144",
-                          "user_count": 3
-                      }
-                  ],
-                  "total_size": 3
-          }
-    
-    }
-    ```
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `page_no`      | The starting page of the channel list. The default value is 0.      |
+| `page_size`   | The number of items in a page. The default value is 100 and the greatest value is 500. |
 
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameters</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>success</td>
-	<td><p>Checks the request state:</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>channel_name</td>
-	<td>Name of the specified channel</td>
-	</tr>
-	<tr><td>user_count</td>
-	<td>Total number of users the channel</td>
-	</tr>
-	<tr><td>total_size</td>
-	<td>Total number of the channel</td>
-	</tr>
-	</tbody>
-	</table>
+**Request sample**
 
+```
+// Without the query parameter.
+BaseUrl/v1/channel/{appid}
 
-## 7. Error Codes
+// With the query parameter.
+BaseUrl/v1/channel/{appid}?page_no=0&page_size=100
+```
 
-See [Error Codes and Warning Codes](../../en/Agora%20Platform/the_error_native.md).
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `success`     | The state of this request: <ul><li>true: Success.</li><li>false: Failure</li></ul>      |
+| `data` | The response data, which includes the following fields: <ul><li>`channels`: The channel list: <ul><li>`channel_name`: The channel name.</li><li>`user_count`: The number of users in the channel</li></ul><li>`total_size`: The number of channels</li></ul> |
+
+**Response sample**
+
+```json
+{
+  "success": true,
+  "data": {
+    "channels": [
+      {
+        "channel_name": "lkj144",
+        "user_count": 3
+      }
+    ],
+    "total_size": 3
+  }
+}
+```
+
+## Error Codes
+
+If wanrings or errors occur when using Console RESTful APIs, refer to [Warning codes](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21) and [Error Codes](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/namespaceagora.html#a8affb9bb02864d82c4333529dc3d75a1) for troubleshooting.
 
 

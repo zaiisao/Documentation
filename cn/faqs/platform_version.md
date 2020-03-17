@@ -3,7 +3,7 @@
 title: 声网 SDK 支持哪些平台和版本
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 15:44:53 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 13:49:25 GMT+0800 (CST)
 ---
 # 声网 SDK 支持哪些平台和版本
 Agora 各个产品的 SDK 支持的平台和版本不尽相同。
@@ -32,8 +32,8 @@ Agora 本地服务端录制 SDK 需要部署在 Linux 服务器，具体要求�
 
 ## 云端录制服务
 
-Agora 云端录制支持 Linux 平台。此外，你也可以不集成 SDK，直接使用 RESTful API 通过网络请求开启和控制云录制。详情请参考[集成云端录制 SDK 的前提条件](https://docs.agora.io/cn/cloud-recording/cloud_recording_quickstart?platform=Linux%20CPP)和 [RESTful API 录制](https://docs.agora.io/cn/cloud-recording/cloud_recording_rest?platform=All%20Platforms)。
+Agora 云端录制支持直接使用 RESTful API 通过网络请求开启和控制云录制。详情请参考[云端录制 RESTful API 快速开始](https://docs.agora.io/cn/cloud-recording/cloud_recording_rest?platform=All%20Platforms)。
 
 ## 实时消息 (Real-time Messaging)
 
-Agora 实时消息 SDK 支持 iOS、Android、macOS、Linux、Web 等平台。详情请参考 [RTM 快速开始](https://docs.agora.io/cn/Real-time-Messaging/RTM_Quickstarts_android?platform=Android)。
+Agora 实时消息 SDK 支持 iOS、Android、macOS、Linux、Windows C++、Web 等平台。详情请参考 [RTM 快速开始](https://docs.agora.io/cn/Real-time-Messaging/messaging_android?platform=Android)。

@@ -3,7 +3,7 @@
 title: Channel Keys
 description: Guide on how to use channel key
 platform: All Platforms
-updatedAt: Thu May 30 2019 06:28:17 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:17:46 GMT+0800 (CST)
 ---
 # Channel Keys
 ## Introduction
@@ -12,29 +12,27 @@ This page describes how to use channel keys with the Agora SDK.
 
 ### App ID
 
-After signing up at [Dashboard](http://dashboard.agora.io/), multiple projects can be created. Each project will be assigned a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to safeguard the App IDs.
+After signing up at [Console](http://dashboard.agora.io/), multiple projects can be created. Each project will be assigned a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, it is prudent to safeguard the App IDs.
 
 ## Get a Channel Key
 
 ### Step 1: Get an App ID
 
-1. Sign up for a developer account at [Agora Dashboard](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Agora%20Platform/sign_in_and_sign_up.md).
+1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Agora%20Platform/sign_in_and_sign_up.md).
 
-2. Click **Get Started** under **Projects**.
+2. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [**Project Management**](https://dashboard.agora.io/projects) page.
 
-	![](https://web-cdn.agora.io/docs-files/1563523371446)
+3. Click **Create**. 
 
-3. Input your project name in the pop-up window and click **Create**. Follow the on-screen instructions to get to know the basic steps to start a video call. Once the project is created, you can find it under **Projects**.
+![](https://web-cdn.agora.io/docs-files/1574924327108)
 
-	![](https://web-cdn.agora.io/docs-files/1563523478084)
+4.  Enter your project name and select your authentication mechanism ("App ID") in the dialog box.
+
+![](https://web-cdn.agora.io/docs-files/1574924446798)
 	
-4. Click the **Edit** button behind the new project, or the **Project Management** button ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to go to the **Project Management** page.
+5. Click **Submit** and you can find the **App ID** of your newly created project.
 
- ![](https://web-cdn.agora.io/docs-files/1563523678240)
-
-5. On the **Project Management** panel, find the **App ID** of your project.
-
- ![](https://web-cdn.agora.io/docs-files/1563523737158)
+![](https://web-cdn.agora.io/docs-files/1574924570426)
 
 #### Use an App ID
 
@@ -88,26 +86,25 @@ Access the Agora services by using your unique App ID:
 
 ### Step 2: Get an App Certificate
 
-If you choose **APP ID + APP certificate + Token (recommended)**  when you create a project in the Dashboard,  the App Certificate is enabled by default.
+Follow these steps to enable the App Certificate:
 
-![](https://web-cdn.agora.io/docs-files/1563114012279)
+1. Click the **edit** button of the targeted project.
 
-If you did not choose  **APP ID + APP certificate + Token (recommended)**, follow the steps to enable the certificate.
+![](https://web-cdn.agora.io/docs-files/1574925402348)
 
-1. Find your project on the **Project Management** page at the [Agora Dashboard](https://dashboard.agora.io/) and click the **Edit** button.
+2. Click **Enable** in the "Basic Info" page. 
 
-	![](https://web-cdn.agora.io/docs-files/1563112238811)
-	
-2. On the **Edit Project** page, click **Enable** to switch on the App Certificate and click **Save** to confirm your setting. 
+![](https://web-cdn.agora.io/docs-files/1574664820135)
 
-	![](https://web-cdn.agora.io/docs-files/1563112280018)
-	
-3. Agora sends your account a confirmation Email. Follow the instruction to enable the App Certificate. 
-4. Go back to the  **Project Management** page, your can see App Certificate appears enabled. 
+3. Read **About App Certificate**.
 
-	![](https://web-cdn.agora.io/docs-files/1563113154996)
+![](https://web-cdn.agora.io/docs-files/1574664881593)
 
-**Note**: Check the Spam Email or Junk Email, if there's no confirmation Email in your inbox.
+4. We will send you an email. Follow the steps in the email to confirm about enabling the App Certificate. 
+
+5. Go back to the **Edit project** page to check the enabled App Certificate.
+
+>Note: If you do not find the confirmation email in your inbox, check your spam or junk email folder.
 
 ### Step 3: Integrate the Schema
 

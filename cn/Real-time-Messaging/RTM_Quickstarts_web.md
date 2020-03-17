@@ -1,24 +1,24 @@
 
 ---
-title: RTM 快速开始
+title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Wed Jun 26 2019 03:19:53 GMT+0800 (CST)
+updatedAt: Fri Sep 06 2019 03:47:16 GMT+0800 (CST)
 ---
-# RTM 快速开始
+# 收发点对点消息和频道消息
 
 ## 集成客户端
 
-### 直接用 `<script>` 引入
+### 方法 1：直接用 \<script\> 引入
 
 使用该方法引入的 SDK 会在 `window` 上生成名为 `AgoraRTM` 的全局变量。
 
-1. 从 Agora 官方网站下载最新版 Agora RTM SDK for Web 压缩包。
-2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-0.9.1.js` 的文件保存到你所操作的项目下。
-3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/agora-rtm-sdk-0.9.1.js` 替换为可访问的 SDK 公开网址）：
+1. 从 Agora 官方网站下载最新版 [Agora RTM SDK for Web](../../cn/Real-time-Messaging/downloads.md) 压缩包。
+2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-1.0.0.js` 的文件保存到你所操作的项目下。
+3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/agora-rtm-sdk-1.0.0.js` 替换为可访问的 SDK 公开网址）：
 
     ```html
-    <script src="/path/to/agora-rtm-sdk-0.9.1.js"></script>
+    <script src="/path/to/agora-rtm-sdk-1.0.0.js"></script>
     ```
 
 #### 开启智能提示和类型检查（可选）
@@ -33,6 +33,15 @@ updatedAt: Wed Jun 26 2019 03:19:53 GMT+0800 (CST)
 ```JavaScript
 /// <reference path="path/to/agora-rtm-sdk.d.ts" />
 ```
+
+### 方法 2：通过 npm 引入
+
+该方法需要安装 npm。详见 [Install npm](https://www.npmjs.com/get-npm)。
+
+1. 安装最新版的 SDK：
+`npm i agora-rtm-sdk`
+2. 导出 AgoraRTM 模块：
+`import AgoraRTM from 'agora-rtm-sdk'`
 
 ## 初始化
 

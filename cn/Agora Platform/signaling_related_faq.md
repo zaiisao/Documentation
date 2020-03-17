@@ -3,7 +3,7 @@
 title: 信令相关
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 23 2018 10:47:04 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:36 GMT+0800 (CST)
 ---
 # 信令相关
 ### 怎么获取用户在线列表？
@@ -72,17 +72,17 @@ Agora 不提供完整的 PSTN 解决方案，但提供从 VoIP 到 PSTN 的对�
 ### 信令登录失败
 
 1. 检查网络是否正常。
-2. 检查 App ID, App Certificate, 和 Signaling Key 是否正确。
+2. 检查 App ID, App 证书, 和 Signaling Key 是否正确。
 
 ### 返回 LOGIN_E_TOKENWRONG(206) 错误
 
 该错误是由于使用的 Signaling Key 无效引起的，主要原因如下：
 
 * 请检查 App ID 是否正确。
-* 请检查 App Certificate 是否正确，是否在 Dashboard 已启用。App Certificate 在 Dashboard 上启用 1 小时后，方能生效。
+* 请检查 App 证书是否正确，是否在控制台已启用。App 证书在控制台上启用 1 小时后，方能生效。
 * 请检查生成 token (Signaling Key) 的算法是否正确。
 
-关于如何获取正确的 App ID 和 App Certificate, 以及如何使用正确的算法生成 Signaling Key, 详见 [校验用户权限](../../cn/Agora%20Platform/key_signaling.md)。
+关于如何获取正确的 App ID 和 App 证书, 以及如何使用正确的算法生成 Signaling Key, 详见 [校验用户权限](../../cn/Agora%20Platform/key_signaling.md)。
 
 ### 无法拨通一个已经通过验证的 PSTN 电话号码
 
@@ -100,7 +100,7 @@ Error 206
 
 token 错误
 
-* 确认 token 参数，如果是 no need token，确认 dashboard 里 token 调试开关已经打开。
+* 确认 token 参数，如果是 no need token，确认控制台中 token 调试开关已经打开。
 
 ![](https://web-cdn.agora.io/docs-files/1540453296247)
 

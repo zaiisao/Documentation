@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 17 2019 12:31:33 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 12:05:03 GMT+0800 (CST)
 ---
 # 产品概述
 
@@ -14,10 +14,15 @@ Agora Real-time Messaging (RTM) SDK 提供了稳定可靠、低延时、高并�
 
 Agora RTM SDK 能够实现以下功能: 
 
- - 点对点消息
+ - 发送点对点消息或点对点的离线消息。
  - 频道消息
  - 获取频道内用户列表
  - 呼叫邀请
+ - 增删改查用户属性
+ - 增删改查频道属性
+ - 获取单个或多个指定频道的当前成员人数
+ - 与 Agora Signaling SDK 互通
+ 
 
 
 ## 适用场景
@@ -58,7 +63,7 @@ Agora RTM SDK 主要有以下特性：
   </tr>
   <tr>
     <td>全球部署低延时</td>
-    <td>全球部署数据中心，全球平均延时 &lt; 200ms，国内平均延时 &lt; 100ms</td>
+    <td>全球部署数据中心，全球平均延时 &lt; 200ms，同区平均延时 &lt; 100ms</td>
   </tr>
   <tr>
     <td>高并发</td>
@@ -78,12 +83,7 @@ Agora RTM SDK 主要有以下特性：
 
 实时消息系统将逐步替代信令。除上述高可靠、高并发、全球化部署等优势之外，Agora RTM SDK 将会持续更新，不断推出更多更丰富的功能和场景应用。
 
-> - Agora RTM SDK 目前与 Agora Signaling SDK 暂未实现互通。互通功能将于近期实现。
-> - 对已有 Agora Signaling SDK 的维护将于 2019 年第四季度停止。
-
-
-
-
+> 对已有 Agora Signaling SDK 的维护将于 2019 年第四季度停止。
 
 
 

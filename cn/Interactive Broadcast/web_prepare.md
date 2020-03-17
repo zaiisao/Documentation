@@ -3,7 +3,7 @@
 title: 集成客户端
 description: 
 platform: Web
-updatedAt: Fri Jul 19 2019 08:26:13 GMT+0800 (CST)
+updatedAt: Mon Dec 02 2019 02:50:50 GMT+0800 (CST)
 ---
 # 集成客户端
 本文介绍在正式使用 Agora Web SDK 进行音视频通话前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -66,11 +66,15 @@ updatedAt: Fri Jul 19 2019 08:26:13 GMT+0800 (CST)
   </tr>
 </table>
 
-> - Agora Web SDK 2.5 及以上版本还支持 Windows XP 平台的 Chrome 49 版本。
-> - Agora Web SDK 2.7 及以上版本还支持 Windows 10 平台的 Edge 浏览器，详见 [Edge 浏览器支持](https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge)。
-> - 以下场景中请务必将 Web SDK 升级至 2.6:
->   - iOS 12.1.4 及以上版本使用 Safari 浏览器
->   - macOS 上使用 Safari 12.1 及以上版本
+<div class="alert info">除上表浏览器外，还有以下支持：
+	<li>Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。</li>
+	<li>Agora Web SDK 2.7 及以上版本支持 Windows 10 平台的 Edge 浏览器，详见 <a href="https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge">Edge 浏览器支持</a>。</li>
+	<li>Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。</li>
+</div>
+<div class="alert note">以下场景中请务必将 Agora Web SDK 升级至 2.6 或更高版本:
+	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器</li>
+	<li>macOS 上使用 Safari 12.1 及以上版本</li>
+	</div>
 
 2. 请确保已打开特定端口，详见[防火墙说明](../../cn/Agora%20Platform/firewall.md) 。
 3. 请确保你已知悉发版说明中列出的问题，详见[已知问题和局限](../../cn/Interactive%20Broadcast/release_web_video.md) 及[常见问题回答](https://docs.agora.io/cn/search?type=faq&platform=Web)。
@@ -99,19 +103,16 @@ updatedAt: Fri Jul 19 2019 08:26:13 GMT+0800 (CST)
 该方法无需在官网下载安装包。在项目相应的前端页面文件中，将如下代码添加到 `</body>` 上一行：
 
  ```javascript
-<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.7.0.js"></script>
+<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
 ```
 
 ### 方法 3. 从官网获取安装包
 
 1. 从 Agora 官方网站[下载](https://docs.agora.io/cn/Agora%20Platform/downloads)最新版 Agora Web SDK 软件包。
+2. 将下载下来的软件包中的 `AgoraRTCSDK-3.0.0.js` 文件保存到你所操作的项目下。
+3. 在项目相应的前端页面文件中，对 `AgoraRTCSDK-3.0.0.js` 进行引用。
 
-	<img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_download.png" style="width: 840px"/>
-
-2. 将下载下来的软件包中的 `AgoraRTCSDK-2.6.1.js` 文件保存到你所操作的项目下。
-3. 在项目相应的前端页面文件中，对 `AgoraRTCSDK-2.6.1.js` 进行引用。
-
-	<img alt="../_images/web_sdk_reference.jpg" src="https://web-cdn.agora.io/docs-files/cn/web_sdk_reference.jpg" />
+   ![](https://web-cdn.agora.io/docs-files/1563952664617)
 
 > 此处的截图仅供参考，安装时请使用最新版的 SDK 和链接地址。
 

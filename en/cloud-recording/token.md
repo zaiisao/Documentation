@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 19 2019 09:11:29 GMT+0800 (CST)
+updatedAt: Mon Aug 05 2019 02:16:34 GMT+0800 (CST)
 ---
 # Use Security Keys
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two security mechanisms:
@@ -88,6 +88,7 @@ If you did not choose  **APP ID + APP certificate + Token (recommended)**, follo
 
 **Note**: Check the Spam Email or Junk Email, if there's no confirmation Email in your inbox.
 
+<a id = "temptoken"></a>
 ### Get a temporary token
 
 When working on a test version of your application, you can generate a temporary token at the [Agora Dashboard](https://dashboard.agora.io/) to join a channel. 

@@ -3,7 +3,7 @@
 title: Join a Channel
 description: 
 platform: Web
-updatedAt: Fri Jul 19 2019 09:22:53 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 03:24:51 GMT+0800 (CST)
 ---
 # Join a Channel
 Before joining the channel, ensure that you prepared the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/web_prepare.md).
@@ -15,7 +15,7 @@ Once the client initialization is complete, call the `client.join`  method in th
 Pass the channel key, channel name, and user ID to the method parameters:
 
 - `tokenOrKey`: Pass a token that identifies the role and privilege of the user. 
-	- For the testing environment, we recommend usign a Temp Token generated on Dashboard. See [Get a Temp Token](../../en/Audio%20Broadcast/token.md).
+	- For the testing environment, we recommend usign a Temp Token generated on Console. See [Get a Temp Token](../../en/Audio%20Broadcast/token.md).
 	- For the production environment, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](../../en/Audio%20Broadcast/token_server.md). 
 - `channel`: Channel name.
 - `uid`: The user ID is an integer and should be unique. If you set the user ID to null, the Agora server assigns a user ID and returns it in the `onSuccess` callback.

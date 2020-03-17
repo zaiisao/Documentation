@@ -3,7 +3,7 @@
 title: Agora Video Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 02:49:19 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:36:56 GMT+0800 (CST)
 ---
 # Agora Video Broadcasting Overview
 The Agora Native SDK for Video Broadcasting enables one-to-many and many-to-many audio or video live streaming. 
@@ -20,6 +20,8 @@ The Agora Native SDK for Interactive Broadcast is applicable to scenarios that e
 ## Functions and Scenarios
 
 The Agora Native SDK for Video Broadcasting boasts a flexible combination of functions for different scenarios.
+
+<style> table th:first-of-type {     width: 150px; } th:third-of-type {     width: 170px; }</style>
 
 | Function                              | Description                                                  | Scenario                                                     |
 | ------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -50,7 +52,7 @@ See the following sample code for application scenarios:
 | Host Capacity                                     | 17 users                                                  |
 | Audience Capacity                                 | One million users                                       |
 | Video Profile                                     | <li>SDK video source: Up to 1080p @ 60fps.<li>Custom video source: Up to 4K |
-| Audio Profile                                     | <li>Sample rate: 16 KHz to 48 KHz.<li>Support for mono and stereo sound  |
+| Audio Profile                                     | <li>Sample rate: 16 kHz to 48 kHz.<li>Support for mono and stereo sound  |
 | Audio Anti-packet-loss Rate                       | 70% (uplink and downlink)                               |
 | Latency between the Host and the Host-in Audience/Host | 200 ms to 600 ms                                                  |
 
@@ -60,7 +62,7 @@ The Agora Native SDK for Interactive Broadcast is supported on platforms such as
 
 | Platform             | Supported Version                                            |
 | -------------------- | ------------------------------------------------------------ |
-| Android              | 4.1+<br>The Android SDK supports the following architecture:<li>ARMv7<li>ARM64<li>x86<li>x86-64 |
+| Android              | 4.1+<br>The Android SDK supports the following ABIs:<li>armeabi-v7a<li>arm64-v8a<li>x86<li>x86_64 |
 | iOS                  | 8.0+                                                         |
 | Windows              | XP SP3+<br>The Windows SDK supports the following architecture:<li>x86<li>x64                                                      |
 | macOS                | 10.0+                                                        |

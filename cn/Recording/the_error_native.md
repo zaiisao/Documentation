@@ -1,21 +1,21 @@
 
 ---
-title: 错误代码和警告代码
+title: 错误码和警告码
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:06:26 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:26:35 GMT+0800 (CST)
 ---
-# 错误代码和警告代码
-Agora SDK 在调用 API 或运行时，可能会返回错误或警告代码:
+# 错误码和警告码
+Agora SDK 在调用 API 或运行时，可能会返回错误或警告码:
 
--   **错误代码** 意味着 SDK 遭遇不可恢复的错误，需要应用程序干预，例如打开摄像头失败会返回错误，应用程序需要提示用户不能使用摄像头。
+-   **错误码** 意味着 SDK 遭遇不可恢复的错误，需要应用程序干预，例如打开摄像头失败会返回错误，应用程序需要提示用户不能使用摄像头。
 
--   **警告代码** 意味着 SDK 遇到问题，但有可能恢复，警告代码仅起告知作用，一般情况下应用程序可以忽略警告代码。
+-   **警告码** 意味着 SDK 遇到问题，但有可能恢复，警告码仅起告知作用，一般情况下应用程序可以忽略警告码。
 
 
-如果 API 调用失败，SDK 也可能会返回一个负数，该负数也是一个错误码，对应着错误代码和警告代码里的正整数。例如返回的错误码为 -2，则对应错误代码和警告代码里的 2: ERR\_INVALID\_ARGUMENT 。
+如果 API 调用失败，SDK 也可能会返回一个负数，该负数也是一个错误码，对应着错误码和警告码里的正整数。例如返回的错误码为 -2，则对应错误码和警告码里的 2: ERR\_INVALID\_ARGUMENT 。
 
-## 错误代码
+## 错误码
 
 <table>
 <colgroup>
@@ -24,7 +24,7 @@ Agora SDK 在调用 API 或运行时，可能会返回错误或警告代码:
 <col/>
 </colgroup>
 <tbody>
-<tr><td><strong>错误代码</strong></td>
+<tr><td><strong>错误码</strong></td>
 <td><strong>值</strong></td>
 <td><strong>描述</strong></td>
 </tr>
@@ -149,7 +149,7 @@ Agora SDK 在调用 API 或运行时，可能会返回错误或警告代码:
 <td>110</td>
 <td><p>生成的 Token 无效，一般有以下原因：</p>
 <div><ul>
-<li>用户在 Dashboard 上启用了 App Certificate，但仍旧在代码里仅使用了 App ID。当启用了 App Certificate，必须使用 Token</li>
+<li>用户在控制台上启用了 App 证书，但仍旧在代码里仅使用了 App ID。当启用了 App 证书，必须使用 Token</li>
 <li>字段 uid为生成 Token 的必须字段，用户在调用<code>joinChannel</code> 加入频道时必须设置相同的 uid</li>
 </ul>
 </div>
@@ -328,7 +328,7 @@ Agora SDK 在调用 API 或运行时，可能会返回错误或警告代码:
 
 
 
-## 警告代码
+## 警告码
 
 <table>
 <colgroup>
@@ -337,7 +337,7 @@ Agora SDK 在调用 API 或运行时，可能会返回错误或警告代码:
 <col/>
 </colgroup>
 <tbody>
-<tr><td><strong>警告代码</strong></td>
+<tr><td><strong>警告码</strong></td>
 <td><strong>值</strong></td>
 <td><strong>描述</strong></td>
 </tr>
@@ -371,11 +371,11 @@ Agora SDK 在调用 API 或运行时，可能会返回错误或警告代码:
 </tr>
 <tr><td>WARN_SET_CLIENT_ROLE_TIMEOUT</td>
 <td>118</td>
-<td>直播模式下设置用户模式超时。出现该警告无法自动恢复通话</td>
+<td>直播场景下设置用户模式超时。出现该警告无法自动恢复通话</td>
 </tr>
 <tr><td>WARN_SET_CLIENT_ROLE_NOT_AUTHORIZED</td>
 <td>119</td>
-<td>直播模式下用户模式未授权。出现该警告无法自动恢复通话</td>
+<td>直播场景下用户模式未授权。出现该警告无法自动恢复通话</td>
 </tr>
 <tr><td>WARN_OPEN_CHANNEL_INVALID_TICKET</td>
 <td>121</td>

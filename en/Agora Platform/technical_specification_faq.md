@@ -3,7 +3,7 @@
 title: Technical Specification
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 11 2019 02:55:05 GMT+0800 (CST)
+updatedAt: Thu Sep 19 2019 01:41:18 GMT+0800 (CST)
 ---
 # Technical Specification
 ## Platform and Scale
@@ -133,62 +133,4 @@ Your phone performs software processing in a voice or video call, which uses lot
 ### How can it take only 30 minutes to implement voice and video communications?
 
 Agora SDKs have all the required voice/video functions ready to go. Developers need only four lines of code for integration.
-
-### How to evaluate the voice/video quality?
-
-Agora provide the following statistics to evaluate the voice or video quality:
-
-#### Audio Statistics of the Remote Users
-
-The following callbacks report the audio quality of the end-to-end and transport layer:
-
-1. `onRemoteAudioStats`: Reports the end-to-end quality of a remote audio stream that is closely linked to the real-user experience. This callback returns the following information:
-
-	- `quality`: Audio quality rating at the receiver's end.
-
-		- 0: The network quality is unknown.
-		- 1: The network quality is excellent.
-		- 2: The network quality is quite good, but the bitrate may be slightly lower than excellent.
-		- 3: Users can feel the communication slightly impaired.
-		- 4: Users cannot communicate smoothly.
-		- 5: The network is so bad that users can barely communicate.
-
-  - `networkTransportDelay`: Network delay in the transport layer (ms).
-  - `jitterBufferDelay`: Jitter buffer delay at the receiver's end (ms).
-  - `audioLossRate`: Audio packet loss rate (%).
-
-2. `onRemoteAudioTransportStats`: Reports the transport layer quality of a remote audio stream. This callback returns the following information:
-
-	- `delay`: Network delay in the transport layer (ms).
-	- `lost`: Audio packet loss rate in the transport layer (%).
-	- `rxKBitRate`: Received audio bitrate (Kbps).
-
-#### Video Statistics of the Remote Users
-
-The following callbacks reports the video quality of the end-to-end and transport layer:
-
-1. `onRemoteVideoStats`: Reports the end-to-end quality of a remote video stream that is closely linked to the real-user experience. This callback returns the following information:
-
-	- `receivedBitrate`: Received bitrate (Kbps).
-	- `receivedFrameRate`: Received frame rate (fps).
-	- `rxStreamType`: Received stream type.
-
-2. `onRemoteVideoTransportStats`: The SDK triggers this callback once every two seconds to report the transport layer quality of a remote video stream. This callback returns the following information:
-
-	- `delay`: Network delay in the transport layer (ms)
-	- `lost`: Video packet loss rate in the transport layer (%).
-	- `rxKBitRate`: Received video bitrate (Kbps).
-
-#### Video Statitics of the Local User
-
-The following callback reports the video quality of the local video stream:
-
-`onLocalVideoStats`: Reports the video quality of the local video stream. This callback returns the following information:
-
-- `sentBitrate`: Sent bitrate (Kbps).
-- `sentFrameRate`: Sent frame rate (fps).
-
-
-
-
 

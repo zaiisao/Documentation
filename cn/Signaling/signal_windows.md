@@ -3,7 +3,7 @@
 title: 信令 API
 description: 
 platform: Windows
-updatedAt: Tue Apr 23 2019 02:49:18 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:12:13 GMT+0800 (CST)
 ---
 # 信令 API
 > 版本：v1.4.0
@@ -300,7 +300,7 @@ public virtual void login (char const * appId, size_t appId_size,char const * ac
 <td>客户端定义的用户账号，最大 128 字节可见字符（不能使用空格）。可以是用户的 uid、昵称、guid 等任何内容，但必须保证唯一。本文提到的所有 account 参数都是如此。</td>
 </tr>
 <tr><td><code>token</code></td>
-<td>由 App ID 和 App Certificate 生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a>。</td>
+<td>由 App ID 和 App 证书生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>密钥说明</span></a>。</td>
 </tr>
 <tr><td><code>uid</code></td>
 <td>(该参数已废弃) 固定填 0</td>
@@ -339,7 +339,7 @@ public virtual void login2(std::string appID, std::string account, std::string t
 <td>客户端定义的用户账号，最大 128 字节可见字符（不能使用空格）。可以是用户的 uid、昵称、guid 等任何内容，但必须保证唯一。本文提到的所有 account 参数都是如此。</td>
 </tr>
 <tr><td><code>token</code></td>
-<td>由 App ID 和 App Certificate 生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>SignalingToken</span></a></td>
+<td>由 App ID 和 App 证书生成的 SignalingToken，详见 <a href="../../cn/Agora%20Platform/key_signaling.md"><span>SignalingToken</span></a></td>
 </tr>
 <tr><td><code>uid</code></td>
 <td>(该参数已废弃) 固定填 0</td>
@@ -441,7 +441,7 @@ public virtual void invoke (char const * name, size_t name_size,char const * req
 </td>
 </tr>
 <tr><td>查询频道最近用户列表</td>
-<td><ul>
+<td><b>已废弃</b><ul>
 <li>name: io.agora.signal.channel_query_userlist_all</li>
 <li>req: {“name”:频道名,”num”:数量(默认 1000*1000)}</li>
 <li>返回值：{“num”:总人数,”list”:最近成员}</li>
@@ -552,7 +552,7 @@ public virtual void setAttr (char const * name, size_t name_size,char const * va
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>name</code></td>
-<td>属性名称。最大 128 字节可见字符，例如：<code>_conn_timeout</code> 为内置属性，表示登录超时秒数。默认设置为 120 秒，可设置范围为 20 秒至 300 秒。若设置成低于 20 秒，系统将自动设成 20 秒；若设置成高于 120 秒，系统将自动设成 120 秒。</td>
+<td>属性名称。最大 128 字节可见字符。</td>
 </tr>
 <tr><td><code>value</code></td>
 <td>属性值。最大 8096 字节可见字符</td>
@@ -668,7 +668,7 @@ public virtual void channelJoin (char const * channelID, size_t channelID_size) 
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>channelID</code></td>
-<td><p>频道名。最大为 128 字节可见字符。包含以下特殊频道名或者特殊频道属性：</p>
+<td><p>频道名。最大为 128 字节可见字符。包含以下特殊频道名或者特殊频道属性（已废弃，不建议使用）：</p>
 <div><ul>
 <li><code>__agora_user_online</code> ：当前 <code>appId</code> 中所有用户登录或离线事件将发送至该频道。</li>
 <li><code>__agora_channel_event</code> : 当前 <code>appId</code> 中用户加入或离开频道的所有事件将发送至该频道。</li>
@@ -764,12 +764,12 @@ public  virtual void channelSetAttr (char const * channelID, size_t channelID_si
 
 > 以下是 参数 name 的内置属性： 
 >
-> - `_userNotification` 1: 默认值，频道发送用户加入或离开频道的事件；0: 频道不发送用户加入或离开频道的事件。 
+> - `_userNotification` <b>该属性已废弃</b> 1: 默认值，频道发送用户加入或离开频道的事件；0: 频道不发送用户加入或离开频道的事件。 
 > - `_channel_ttl` ：频道最后一个用户离开后，多久销毁，单位为秒，默认为7200 。特殊频道永不销毁。 
 > - `_member_num` ： 表示当前频道人数，由系统自动更新；更新频次由 `_auto_update_num` 确定。如果  `_auto_update_num` 时间内没有用户进出频道，不会收到人数更新回调  <code>onChannelAttrUpdated</code>；如果 `_auto_update_num` 内有用户频繁进出频道，只会按固定时间收到一次回调。
 > - `_auto_update_num` ：表示是否由系统自动更新频道人数。0：关闭（默认）；1-n：（每多少秒更新一次）
-> - `_total_member_num` ：表示当前频道累计登录人次，由系统自动更新。`_auto_update_num` 与 `_auto_update_total_num` 需要同时设置为非0。更新原则类似 `_member_num`
-> - `_auto_update_total_num` : 表示是否由系统自动更新频道人数，0：关闭（默认）；非0：每多少秒后台更新一次（与 `_auto_update_num` 相同）。
+> - `_total_member_num` ：<b>该属性已废弃</b> 表示当前频道累计登录人次，由系统自动更新。`_auto_update_num` 与 `_auto_update_total_num` 需要同时设置为非0。更新原则类似 `_member_num`
+> - `_auto_update_total_num` : <b>该属性已废弃</b> 表示是否由系统自动更新频道人数，0：关闭（默认）；非 0：每多少秒后台更新一次（与 `_auto_update_num` 相同）。
 > - `_sendmsg_limit` : 整个频道每秒能发送的消息数
 > - `_setattr_limit` : 频道每个属性每秒能修改的次数
 
@@ -1444,7 +1444,7 @@ public virtual void onLogout(int ecode) {}
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1470,7 +1470,7 @@ public virtual void onLoginFailed(int ecode) {}
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1557,7 +1557,7 @@ public virtual void onChannelJoinFailed(char const * channelID, size_t channelID
 <td>频道名</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1586,7 +1586,7 @@ public virtual void onChannelLeaved(char const * channelID, size_t channelID_siz
 <td>频道名</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -1921,7 +1921,7 @@ public virtual void onInviteFailed(char const * channelID, size_t channelID_size
 <td>废弃字段</td>
 </tr>
 <tr><td><code>ecode</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 <tr><td><code>extra</code></td>
 <td>可以是一个 JSON 字符串或将其设置为空</td>
@@ -2279,6 +2279,6 @@ public virtual void onUserAttrAllResult(char const * account, size_t account_siz
 
 
 
-## 错误代码和警告代码
+## 错误码和警告代码
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。
+详见 [错误码和警告代码](../../cn/API%20Reference/the_error_signaling.md)。

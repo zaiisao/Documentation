@@ -3,102 +3,48 @@
 title: 语音通话计费说明
 description: 语音通话计费说明
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:21:08 GMT+0800 (CST)
+updatedAt: Mon Dec 16 2019 11:46:30 GMT+0800 (CST)
 ---
 # 语音通话计费说明
-## 收费标准
-
-通信按照分钟数和人数进行收费。扣除每月免费的 1 万分钟时长后，Agora 收取以下费用：
-
-<table>
-  <tr>
-    <th>场景</th>
-    <th>总费用</th>
-  </tr>
-  <tr>
-    <td>未启用录制</td>
-    <td>通话费用 = 语音单价 x 总通话分钟数</td>
-  </tr>
-  <tr>
-    <td>已启用录制</td>
-    <td>通话费用 + 录制费用 = 语音单价 x（通话分钟数 + 录制分钟数）</td>
-  </tr>
-</table>
-
-> 单价指的是每分钟的价格, 详见[价格方案](https://www.agora.io/cn/price/) 。
->
-> 同一频道内只要有人开启录制（无论几人），录制均按照单路音频流计费。
-
-## 示例 : 纯语音通信
-
-本示例里，Agora 将收取你以下费用: 通话费 + 录制费
-
-**通话费**
-
-<table>
-  <tr>
-    <th>用户</th>
-    <th>通话分钟数</th>
-  </tr>
-  <tr>
-    <td>A</td>
-    <td>30</td>
-  </tr>
-  <tr>
-    <td>B</td>
-    <td>40</td>
-  </tr>
-  <tr>
-    <td>C</td>
-    <td>20</td>
-  </tr>
-  <tr>
-    <td>D</td>
-    <td>15</td>
-  </tr>
-</table>
-
-通话费 = 语音单价 x （30 + 40 + 20 + 15） 分钟
-
-**录制费**
-
-<table>
-  <tr>
-    <th>用户名</th>
-    <th>10 分钟</th>
-    <th>20 分钟</th>
-    <th>30 分钟</th>
-    <th>40 分钟</th>
-  </tr>
-  <tr>
-    <td>A</td>
-    <td>录制</td>
-    <td>录制</td>
-    <td>录制</td>
-    <td>录制</td>
-  </tr>
-  <tr>
-    <td>B</td>
-    <td></td>
-    <td>录制</td>
-    <td>录制</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>C</td>
-    <td>录制</td>
-    <td>录制</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>D</td>
-    <td>录制</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+## 服务用量统计方式
 
 
-录制费 = 语音单价 x 40 分钟。
+声网会按月统计你的每个 [Agora 开发者账户](https://console.agora.io/) 下所有项目使用的[音频分钟数](#amin)。
+
+
+
+
+
+
+### <a name="amin"></a>音频分钟数 
+
+某用户在 RTC 频道内的时间扣除订阅视频流的分钟数后所得剩余时间，无论是否订阅音频流都算作音频分钟数。
+
+
+<div class="alert note"><li>同时订阅了多路音频流的同一用户的音频分钟数不会被叠加。</li><li>音频分钟数的定义和计算方法也适用于小程序。</li><li>音频分钟数的计费方案详见<a href="#billing">产品计费表</a>。</li></div>
+
+
+
+
+
+## 产品计费表
+
+
+
+| 服务<a name="billing"></a>       | 报价（元/每 1000 分钟） |
+| :--------- | :---------------------- |
+| 音频       | 7.00                    |
+| 小程序音频 | 10.00                   |
+
+
+
+
+
+
+
+
+
+
+## 每月 10000 分钟免费时长
+
+详见：[每月一万分钟免费说明](https://docs.agora.io/cn/faq/billing_free)

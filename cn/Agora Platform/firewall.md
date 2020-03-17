@@ -1,12 +1,20 @@
 
 ---
-title: 防火墙说明
+title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 06:59:24 GMT+0800 (CST)
+updatedAt: Thu Mar 12 2020 11:04:07 GMT+0800 (CST)
 ---
-# 防火墙说明
-对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。相关规则如下：
+# 应用企业防火墙限制
+对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
+
+如果你的防火墙不允许打开本文端口和白名单，可以使用 Agora 云代理功能连接到 Agora 服务。各产品云代理文档如下：
+
+- [RTC Native SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)
+- [RTC Web SDK 使用云代理](../../cn/Agora%20Platform/cloud_proxy_web.md)
+- [On-premise Recording SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)
+
+<div class="alert note">如果你想通过 VPN 使用 Agora 相关服务，请确保已联系 VPN 运营商将对应端口添加到白名单中，否则可能会遇到通话失败等未定义行为。</div>
 
 ## Agora RTC SDK
 
@@ -29,6 +37,12 @@ ap2.agora.io
 ap3.agora.io
 ap4.agora.io
 ap5.agora.io
+ap.agoraio.cn
+vocs1.agora.io
+vocs2.agora.io
+vocs3.agora.io
+vocs4.agora.io
+vocs5.agora.io
 ```
 
 ### Web SDK
@@ -38,18 +52,24 @@ ap5.agora.io
 | 端口  | 白名单项目                                                   |
 | -------- | ------------------------------------------------------------ |
 | TCP 端口 | 80；443；3433；5668；5669；5866 - 5890；6080；6443；8667；9667 |
-| UDP 端口 | 3478；10000 - 65535                                          |
+| UDP 端口 | 3478；5866 - 6000（2.9.0 及以后版本）；10000 - 65535 （2.9.0 以前版本）              |
 
-> 如果你使用了代理服务器，则需打开端口 3433。反之，则不需要。
 
 域名白名单：
 
 ```
- .agora.io
- .agoraio.cn
+.agora.io
+.agoraio.cn
 ```
 
 ### 微信小程序 SDK
+
+防火墙端口：
+
+| 端口  | 白名单项目                                                   |
+| -------- | ------------------------------------------------------------ |
+| TCP 端口 | 80；443；3433；5668；5669；5866 - 5890；6080；6443；8667；9667 |
+| UDP 端口 | 3478；10000 - 65535                                          |
 
 域名白名单：
 
@@ -90,7 +110,7 @@ qos.agoralab.co
 
 | 端口     | 白名单项目 |
 | -------- | ---------- |
-| TCP 端口 | 443        |
+| TCP 端口 | 443；9591；9593        |
 
 域名白名单：
 
@@ -98,24 +118,9 @@ qos.agoralab.co
 .agora.io
 ```
 
-## Agora Signaling SDK
 
-防火墙端口：
 
-| 端口     | 白名单项目        |
-| -------- | ----------------- |
-| TCP 端口 | 1080；8001 - 8199 |
-| UDP 端口 | 8180 - 8199       |
-
-域名白名单：
-
-```
- .agora.io
- qoslbs.agoralab.co
- qos.agoralab.co
-```
-
-## Agora Recording SDK
+## Agora On-premise Recording SDK
 
 防火墙端口：
 
@@ -134,6 +139,12 @@ ap2.agora.io
 ap3.agora.io
 ap4.agora.io
 ap5.agora.io
+ap.agoraio.cn
+vocs1.agora.io
+vocs2.agora.io
+vocs3.agora.io
+vocs4.agora.io
+vocs5.agora.io
 ```
 
 **Note:**
@@ -157,6 +168,12 @@ ap5.agora.io
 .agora.io
 qoslbs.agoralab.co
 qos.agoralab.co
+ap.agoraio.cn
+vocs1.agora.io
+vocs2.agora.io
+vocs3.agora.io
+vocs4.agora.io
+vocs5.agora.io
 ```
 
 为获得优质的音视频通话体验，Agora 建议你使用 UDP 端口。与 TCP 相比，UDP 更注重通话的时效性，因此能在填补丢包的同时同时将通话延迟降到最低。

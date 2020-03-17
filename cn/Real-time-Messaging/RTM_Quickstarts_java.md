@@ -1,11 +1,11 @@
 
 ---
-title: RTM 快速开始
+title: 收发点对点消息和频道消息
 description: 
 platform: Linux Java
-updatedAt: Tue Jul 23 2019 09:33:29 GMT+0800 (CST)
+updatedAt: Mon Sep 23 2019 09:55:14 GMT+0800 (CST)
 ---
-# RTM 快速开始
+# 收发点对点消息和频道消息
 ## 集成客户端
 
 本章介绍在正式使用 Agora RTM Java SDK for Linux 进行实时消息通讯前，需要准备的开发环境，包含前提条件及 SDK 集成方法等内容。
@@ -16,7 +16,9 @@ updatedAt: Tue Jul 23 2019 09:33:29 GMT+0800 (CST)
 
 - Ubuntu Linux 14.04 LTS 64 位。
 - CentOS 7.0+ 64 位。
-- 下载 [Agora RTM Java SDK for Linux](http://download.agora.io/rtmsdk/release/Agora_RTM_SDK_for_Linux_Java_v0.9.3.zip)。
+- 下载 [Agora RTM Java SDK for Linux](../../cn/Real-time-Messaging/downloads.md)。
+
+<div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
 
 SDK 文件应包括 libs 文件和 sample 文件，其中 libs 文件包括：
@@ -30,7 +32,12 @@ SDK 文件应包括 libs 文件和 sample 文件，其中 libs 文件包括：
 <tr><td><strong>文件/文件夹名称</strong></td>
 <td><strong>文件类型</strong></td>
 </tr>
-<tr><td>agora-rtm-sdk.jar</td>
+	<tr>
+<td>libagora_rtm_sdk.so</td>
+<td>数据库文件</td>
+</tr>
+<tr>
+<td>agora_rtm.jar</td>
 <td>Java JAR 文件</td>
 </tr>
 <tr><td>include</td>

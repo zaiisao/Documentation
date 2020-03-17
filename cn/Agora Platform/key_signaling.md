@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 25 2019 07:58:01 GMT+0800 (CST)
+updatedAt: Mon Nov 18 2019 06:42:20 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -19,7 +19,7 @@ updatedAt: Mon Feb 25 2019 07:58:01 GMT+0800 (CST)
 
 -   SignalingToken 安全性高，更适用于对安全要求较高的生产环境
 
--   App Certificate 仅用于生成 SignalingToken，不可单独使用。一旦启用了 App Certificate，则必须使用 SignalingToken
+-   App 证书仅用于生成 SignalingToken，不可单独使用。一旦启用了 App 证书，则必须使用 SignalingToken
 
 
 <a name = "APPID"></a>
@@ -37,7 +37,7 @@ updatedAt: Mon Feb 25 2019 07:58:01 GMT+0800 (CST)
 
 每个 Agora 账户下可创建多个项目，且每个项目有独立的 App ID。
 
-1.  访问 [https://dashboard.agora.io/](https://dashboard.agora.io/)，按照屏幕提示依次填入您的邮箱、密码等信息。
+1.  访问 [https://console.agora.io/](https://console.agora.io/)，按照屏幕提示依次填入您的邮箱、密码等信息。
 
 2.  在 **项目列表** 页面点击 **添加新项目** 。按照屏幕提示填写您的手机号码，完成手机号验证。
 
@@ -59,29 +59,29 @@ updatedAt: Mon Feb 25 2019 07:58:01 GMT+0800 (CST)
 
 1.  获取 App ID。详见上文的[获取 App ID](#GetAnAppID) 。
 
-2.  获取 App Certificate。在上文项目列表中查看 App ID 的地方，启用该项目的 App Certificate:
+2.  获取 App 证书。在上文项目列表中查看 App ID 的地方，启用该项目的 App 证书:
 
 	1. 点击激活项目右上方的 **编辑** 按钮。
 
      <img alt="../_images/project_edit.png" src="https://web-cdn.agora.io/docs-files/cn/project_edit.png" />
 
- 2. 点击 App Certificate 右方的 **启用** 按钮。仔细阅读关于 App Certificate 介绍后，根据屏幕提示，确认启用 App Certificate。
+ 2. 点击 App 证书右方的 **启用** 按钮。仔细阅读关于 App 证书介绍后，根据屏幕提示，确认启用 App 证书。
 
      <img alt="../_images/enable_app_cert.png" src="https://web-cdn.agora.io/docs-files/cn/enable_app_cert.png" />
 
- 3. 点击 App Certificate 后面的“眼睛”图标，显示完整的 App Certificate。如需隐藏 App Certificate，再次点击“眼睛”图标。
+ 3. 点击 App 证书后面的“眼睛”图标，显示完整的 App 证书。如需隐藏 App 证书，再次点击“眼睛”图标。
 
      <img alt="../_images/view_app_certificate.png" src="https://web-cdn.agora.io/docs-files/cn/view_app_certificate.png" />
 		 
-	>  -   将你的 App Certificate 保存在服务器端，且对任何客户端均不可见。
-	>  -   通常 App Certificate 在启用一小时后生效。
-	>  -   当项目的 App Certificate 被启用后，你必须使用 Token。例如: 在启用 App Certificate 前，你可以使用 App ID 加入频道。但启用了 App Certificate 后，你就必须使用 Token 加入频道。
+	>  -   将你的 App 证书保存在服务器端，且对任何客户端均不可见。
+	>  -   通常 App 证书在启用一小时后生效。
+	>  -   当项目的 App 证书被启用后，你必须使用 Token。例如: 在启用 App 证书前，你可以使用 App ID 加入频道。但启用了 App 证书后，你就必须使用 Token 加入频道。
 
 3.  集成算法。使用以下方法生成令牌 (SignalingToken):
     **输入**:
     ```
     appId             = "C5D15F8FD394285DA5227B533302A518" //App ID
-    appCertificate    = "fe1a0437bf217bdd34cd65053fb0fe1d" //App Certificate
+    appCertificate    = "fe1a0437bf217bdd34cd65053fb0fe1d" //App 证书
     expiredTime       = "1546271999" // 授权时间戳
     account           = "test@agora.io" //客户端定义的用户 ID
     ```
@@ -111,7 +111,7 @@ updatedAt: Mon Feb 25 2019 07:58:01 GMT+0800 (CST)
 <ul>
 <li>account: 用户登录厂商 Agora 信令系统的账户</li>
 <li>appId: 32 位 App ID 字符串</li>
-<li>appCertificate: 32 位 App Certificate 字符串</li>
+<li>appCertificate: 32 位 App 证书字符串</li>
 <li>expiredTime: 服务到期的 UTC 时间戳，用户在服务到期后，无法再登录 Agora 信令系统和使用其功能</li>
 </ul>
 </td>
@@ -135,7 +135,7 @@ updatedAt: Mon Feb 25 2019 07:58:01 GMT+0800 (CST)
 > Agora 已在 GitHub 上提供了生成 SignalingToken 的示例代码：
 > -   [C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/generatorSignalToken.h)
 > -   [Go](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/go/src/SignalingToken/SignalingToken.go)
-> -   [Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/signal/SignalingToken.java)
+> -   [Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/io/agora/signal/SignalingToken.java)
 > -   [Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/src/SignalingToken.js)
 > -   [PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/SignalingToken.php)
 > -   [Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/src/SignalingToken.py)

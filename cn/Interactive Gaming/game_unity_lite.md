@@ -3,7 +3,7 @@
 title: 游戏裁剪版 API
 description: 
 platform: Unity
-updatedAt: Fri Nov 02 2018 04:13:40 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:13:59 GMT+0800 (CST)
 ---
 # 游戏裁剪版 API
 本文涵盖了 Agora AMG SDK for Unity 的 API 使用参考，适用于 Unity for iOS, Android, 和 Windows 三个平台。
@@ -195,7 +195,7 @@ public abstract int joinChannel(String token,
 <tr><td><code>token</code></td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> </li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App 证书, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> </li>
 </ul>
 </td>
 </tr>
@@ -843,7 +843,7 @@ public static string GetSdkVersion ()
 public static string GetErrorDescription (int code)
 ```
 
-SDK 运行时如果出错，该方法可以获取错误代码。
+SDK 运行时如果出错，该方法可以获取错误码。
 
 ### 获取通话 ID (GetCallId)
 
@@ -1274,7 +1274,7 @@ public delegate void SDKWarningHandler (int warn, string msg);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>warn</code></td>
-<td>警告代码</td>
+<td>警告码</td>
 </tr>
 <tr><td><code>msg</code></td>
 <td>警告消息</td>
@@ -1302,7 +1302,7 @@ public delegate void SDKErrorHandler (int error, string msg);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>err</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 <tr><td><code>msg</code></td>
 <td>错误消息</td>
@@ -1364,8 +1364,8 @@ public delegate void onClientRoleChangedHandler(int oldRole, int newRole)
 
 
 
-## 错误代码和警告代码 - AMG SDK
+## 错误码和警告码 - AMG SDK
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_game.md)。
+详见 [错误码和警告码](../../cn/API%20Reference/the_error_game.md)。
 
 

@@ -1,11 +1,13 @@
 
 ---
-title: Demo 使用指南
+title: Demo 使用指南 (Deprecated)
 description: 
 platform: Linux CPP
-updatedAt: Thu Jul 18 2019 06:52:46 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 01:22:17 GMT+0800 (CST)
 ---
-# Demo 使用指南
+# Demo 使用指南 (Deprecated)
+<div class="alert note">云端录制 SDK 停服计划（建议你及时升级到功能丰富、调用更方便的云端录制 RESTful API）：<li>从 2019 年 11 月 15 日起，云端录制 SDK 将停止维护。已经下载的 SDK 可继续使用。</li><li>从 2019 年 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法继续使用云端录制 SDK。</li></div>
+
 本文介绍如何通过命令行运行 C++ demo 进行录制。 你也可以通过调用 API 实现录制，详见[调用 API 录制](../../cn/cloud-recording/cloud_recording_quickstart.md)。无论是使用命令行，还是调用 API，实现的都是相同的功能，你可以根据个人习惯选择其中一种方式。
 
 ## 前提条件
@@ -71,7 +73,7 @@ $ ./cloud_recording_demo.bin --appId <你的app ID> --channelName <频道名> --
 | -------------------- | ------------------------------------------------------------ |
 | appId                | 待录制频道的 App ID，必须和 Agora Native/Web SDK 的 App ID 一致，详见<a href="../../cn/cloud-recording/token.md">获取 App ID</a>。 |
 | channelName          | 待录制频道的频道名。                                         |
-| uid                  | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。** |
+| uid                  | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。 |
 | token                | 待录制的频道中使用的 token，详见<a href="../../cn/cloud-recording/token.md">校验用户权限</a>。 |
 | recordingStreamType  | 录制的媒体流类型：<li>0：仅录制音频。<li>1：仅录制视频。<li>2：录制音频和视频（默认）。 |
 | videoStreamType      | 视频流类型。<li>0：视频大流（默认），即高分辨率高码率的视频流。<li>1：视频小流，即低分辨率低码率的视频流。 |

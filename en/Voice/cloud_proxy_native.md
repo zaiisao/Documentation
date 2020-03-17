@@ -24,21 +24,22 @@ Agora Native SDK v2.4.0 or later supports the cloud proxy. Before proceeding, en
 
  The sources are the clients that integrate the Agora Native or Recording SDK.
 
-| Protocol | Destination  | Port                   | Port purpose      |
-| ---- | ------------- | ---------------------- | ---------------------- |
-| TCP  | 120.92.118.34 | 4000                   | Message data transmission |
-| TCP  | 120.92.18.162 | 4000                   | Message data transmission |
-| TCP  | 47.74.211.17  | 1080, 8000, 25000, 9700 | Edge node communication |
-| TCP  | 52.80.192.229 | 1080, 8000, 25000, 9700 | Edge node communication |
-| TCP  | 52.52.84.170  | 1080, 8000, 25000, 9700 | Edge node communication |
-| TCP  | 47.96.234.219 | 1080, 8000, 25000, 9700 | Edge node communication |
-| UDP  | 120.92.118.34 | 4500 to 4650            | Media data exchange |
-| UDP  | 120.92.18.162 | 4500 to 4650            | Media data exchange |
-| UDP  | 47.74.211.17  | 1080, 8000, 25000, 9700 | Edge node communication |
-| UDP  | 52.80.192.229 | 1080, 8000, 25000, 9700 | Edge node communication |
-| UDP  | 52.52.84.170  | 1080, 8000, 25000, 9700 | Edge node communication |
-| UDP  | 47.96.234.219 | 1080, 8000, 25000, 9700 | Edge node communication |
-> These IPs are for testing only. You need to apply for exclusive IP resources for the production environment.
+ | Protocol | Destination  | Port                   | Port purpose      |
+ | ---- | ------------- | ---------------------- | ---------------------- |
+ | TCP  | 120.92.118.34 | 4000                   | Message data transmission |
+ | TCP  | 120.92.18.162 | 4000                   | Message data transmission |
+ | TCP  | 47.74.211.17  | 1080, 8000, 25000, 9700 | Edge node communication |
+ | TCP  | 52.80.192.229 | 1080, 8000, 25000, 9700 | Edge node communication |
+ | TCP  | 52.52.84.170  | 1080, 8000, 25000, 9700 | Edge node communication |
+ | TCP  | 47.96.234.219 | 1080, 8000, 25000, 9700 | Edge node communication |
+ | UDP  | 120.92.118.34 | 4500 to 4650            | Media data exchange |
+ | UDP  | 120.92.18.162 | 4500 to 4650            | Media data exchange |
+ | UDP  | 47.74.211.17  | 1080, 8000, 25000, 9700 | Edge node communication |
+ | UDP  | 52.80.192.229 | 1080, 8000, 25000, 9700 | Edge node communication |
+ | UDP  | 52.52.84.170  | 1080, 8000, 25000, 9700 | Edge node communication |
+ | UDP  | 47.96.234.219 | 1080, 8000, 25000, 9700 | Edge node communication |
+
+ <div class="alert note">These IPs are for testing only. You need to apply for exclusive IP resources for the production environment.</div>
 
 3. Enable the cloud proxy according to the instructions in the **Implementation** section and see if the audio/video call works.
 

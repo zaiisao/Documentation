@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Tue Apr 30 2019 02:58:33 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 05:34:27 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -38,9 +38,12 @@ updatedAt: Tue Apr 30 2019 02:58:33 GMT+0800 (CST)
 2.  将转化后的 UDP 传输到 Agora SD-RTN 上；
 3.  通过 Agora SD-RTN 与 Agora 其他平台 SDK 实现音视频互通。
 
-点击 [声网小程序 Demo 体验](../../cn/Interactive%20Broadcast/miniapp_demo.md) 了解小程序通话、互通等功能。
+点击 [声网小程序 Demo 体验](../../cn/Interactive%20Broadcast/start_call_wechat.md) 了解小程序通话、互通等功能。
 下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
 
+## **2.4.1 版**
+
+该版本于 2019 年 9 月 18 日发布。进行了一些内部优化。
 
 ## **2.4.0 版**
 
@@ -112,7 +115,7 @@ https://miniapp-4.agoraio.cn
 为提升互通体验，该版本新增了 `setRole` 接口。当使用场景同时满足以下条件时，小程序 SDK 必须调用该接口将用户角色设置为观众：
 
 -   小程序 SDK 与 Native SDK 互通
--   Native 端的频道模式为直播模式
+-   Native 端的频道场景为直播场景
 -   小程序端作为观众加入频道
 
 
@@ -136,7 +139,7 @@ https://miniapp-4.agoraio.cn
 
 -   推荐 7 人及 7 人以下的音视频通话或直播场景。频道内人数越少，效果越好。
 -   推荐 8 人及 8 人以下的纯音频场景，但是功能上支持到 17 人，对网络要求非常高。频道内人数越少，效果越好。
--   通信模式下，小概率出现远端视频窗口画面旋转的问题。
+-   通信场景下，小概率出现远端视频窗口画面旋转的问题。
 -   纯音频场景下，如果用户一进频道就禁用麦克风，后加入的用户在你打开麦克风说话前可能无法感知频道内你的存在。
 
 

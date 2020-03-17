@@ -3,10 +3,13 @@
 title: Agora Signaling Overview
 description: 
 platform: All Platforms
-updatedAt: Tue May 07 2019 10:27:08 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 03:50:16 GMT+0800 (CST)
 ---
 # Agora Signaling Overview
 The Agora Signaling SDK is based on the TCP protocol and provides a stable messaging channel for you to implement real-time communication scenarios.
+
+> Agora has launched the Agora RTM (Real-time Messaging) SDK to provide more reliable, scalable, and global real-time messaging services. It is designed as a substitute for the Agora Signaling SDK. For more design information of the Agora RTM SDK, click [here](https://docs.agora.io/en/Real-time-Messaging/RTM_product?platform=All%20Platforms). To migrate from the legacy Signaling SDK to the Agora RTM SDK, see [Signaling vs. Agora RTM SDK](https://docs.agora.io/en/Real-time-Messaging/RTM_vs_signaling_android?platform=Android).
+
 
 ## Functions
 
@@ -17,6 +20,7 @@ The Agora Signaling SDK enables the following functions:
 -   Gets the user attributes
 -   Gets the channel attributes
 -   Gets the user list of the channel
+
 
 
 ## Applications

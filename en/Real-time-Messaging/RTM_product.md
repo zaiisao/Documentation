@@ -3,7 +3,7 @@
 title: Agora RTM Overview
 description: 
 platform: All Platforms
-updatedAt: Mon May 20 2019 06:20:26 GMT+0800 (CST)
+updatedAt: Wed Sep 18 2019 12:03:17 GMT+0800 (CST)
 ---
 # Agora RTM Overview
 The Agora RTM SDK provides a stable messaging mechanism for you to build real-time messaging scenarios with low latency and high concurrency at a global level. 
@@ -12,10 +12,14 @@ The Agora RTM SDK provides a stable messaging mechanism for you to build real-ti
 
 The Agora RTM SDK enables the following functions:
 
--   Send and receive peer-to-peer messages.
+-   Send and receive (offline) peer-to-peer messages.
 -   Send and receive channel messages.
 -   Get the member list of the channel.
 -   Create, send, cancel, accept, or decline a call invitation. 
+-   Set, update, or get a user's attributes. 
+-   Set, update, or get attributes of a specified channel.
+-   Get the latest member count of specified channel(s). 
+-   Interconnect with the legacy Agora Signaling SDK
 
 
 ## Applications
@@ -64,11 +68,11 @@ The Agora RTM SDK provides the following features:
   </tr>
 	  <tr>
     <td>Low latency</td>
-    <td>Our data centers are deployed globally. Ensures the average latency is:<li>Less than 200 ms at a global level;<br><li>Less than 100 ms in the same region.<br></td>
+    <td>Our data centers are deployed globally. <li>Average inter-regional latency: Less than 200 ms.<br><li>Average intra-regional latency: Less than 100 ms.<br></td>
   </tr>
 	  <tr>
     <td>Compatibility</td>
-    <td>Supports the following platforms:<li>iOS, Android (arm64, armv7, x86), macOS, Windows (coming soon), Linux, and Web;<br><li>Java server and C++ server<br></td>
+    <td>Supports the following platforms:<li>iOS, Android (arm64, armv7, x86), macOS, Windows (coming soon), and Linux<br><li> Web: Chrome 58+, Firefox 56+, Safari 11+<br><li>Java server and C++ server<br></td>
   </tr>
 </table>
 
@@ -76,8 +80,5 @@ The Agora RTM SDK provides the following features:
 
 The Agora Real-time Messaging SDK (RTM) is designed to replace the legacy Signaling SDK with much more exciting features. 
 
-Our plan: 
-
-- Interoperability between the Agora RTM SDK and the Agora Signaling SDK is not yet implemented but will be implemented soon. 
-- Maintenance to the legacy Signaling SDK will end in the fourth quarter of 2019. 
+> Maintenance to the legacy Signaling SDK will end in the fourth quarter of 2019. 
 

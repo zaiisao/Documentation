@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux Java
-updatedAt: Thu Jun 06 2019 12:56:32 GMT+0800 (CST)
+updatedAt: Tue Sep 17 2019 12:49:25 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -11,6 +11,69 @@ updatedAt: Thu Jun 06 2019 12:56:32 GMT+0800 (CST)
 Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
 
 > For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_product.md).
+
+## v1.0.1
+
+v1.0.1 is released on August 1st, 2019. 
+
+### Issues Fixed
+
+- When the connection to the Agora RTM system is interrupted, the SDK does not return the `onConnectionStateChanged` callback. 
+
+## v1.0.0
+
+v1.0.0 is released on July 24th, 2019.
+
+### New Features
+
+### Interconnects with the legacy Agora Signaling SDK
+
+v1.0.0 implements the `LocalInvitation.setChannelId` and `LocalInvitation.getChannelId` methods. 
+
+> - To intercommunicate with the legacy Agora Signaling SDK, you MUST set the channel ID. However, even if the callee successfully accepts the call invitation, the Agora RTM SDK does not join the channel of the specified channel ID.
+> - If your App does not involve the legacy Agora Signaling SDK, we recommend using the `LocalInvitation.setContent` method or the `RemoteInvitation.setResponse` method to set customized contents. 
+
+#### Specifies the default path to the SDK log file
+
+Supports changing the default path to the SDK log file using the `setLogFile` method. To avoid creating an incomplete log file, we recommend calling this method once you have created and initialized an `RtmClient` instance. 
+
+
+
+#### Sets the output log level of the SDK
+
+Supports setting the output log level of the SDK using the `setLogFilter` method.  The log level follows the sequence of OFF, CRITICAL, ERROR, WARNING, and INFO. Choose a level to see the logs preceding that level. If, for example, you set the log level to WARNING, you see the logs within levels CRITICAL, ERROR, and WARNING. 
+
+> You can call this method once you have created and initializd an `RtmClient` instance. You do not have to call this method after calling the `login` method. 
+
+#### Sets the log file size in KB
+
+Supports setting the log file size using the `setLogFileSize` method. The log file has a default size of 512 KB. File size settings of less than 512 KB or greater than 10 MB will not take effect.
+
+
+> You can call this method once you have created and initializd an `RtmClient` instance. You do not have to call this method after calling the `login` method. 
+
+### Improvements
+
+Adds error codes based on the following scenarios: 
+
+- The Agora RTM service is not initialized.
+- The method call frequency exceeds the limit. 
+- The user does not call the `login` method or the method call of `login` does not succeed before calling any of the RTM core APIs. 
+
+### Issues Fixed
+
+- One can log in the Agora RTM system with a static App ID and an RTM token, which is generated from a dynamic App ID. 
+
+
+### API Changes
+
+- [setLogFile](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad44bd79d005d25c68712cc35d16d934b): Specifies the default path to the SDK log file.
+- [setLogFilter](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6726b3a3eafee4528280d3b0d1c6316f): Sets the output log level of the SDK.
+- [setLogFileSize](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a85a6365227adc43f8c3e07042dec6723): Sets the log file size in KB.
+- [getSdkVersion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#af3cc54b4d456a67d912786f61619c065): Gets the SDK version.
+
+
+
 
 ## v0.9.3
 

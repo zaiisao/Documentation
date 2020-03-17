@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 08 2019 02:48:00 GMT+0800 (CST)
+updatedAt: Mon Feb 10 2020 08:48:51 GMT+0800 (CST)
 ---
 # 产品概述
 语音通话可以实现纯语音的一对一单聊和多人群聊，不具备视频通话功能，包体积更小，适用于各种语音社交、语音会议等场景。
@@ -12,6 +12,7 @@ updatedAt: Mon Jul 08 2019 02:48:00 GMT+0800 (CST)
 
 ## 功能和场景
 
+<style> table th:first-of-type {     width: 150px; } th:third-of-type {     width: 170px; }</style>
 | 主要功能          | 功能描述                                                     | 典型适用场景         |
 | ----------------- | ------------------------------------------------------------ | -------------------- |
 | 伴奏混音          | 将本地或在线的音频和用户声音，同时发送并播放给频道内其他用户 | <li>在线合唱<li>音乐互动课堂 |
@@ -26,7 +27,7 @@ updatedAt: Mon Jul 08 2019 02:48:00 GMT+0800 (CST)
 | 特性         | Agora 音频通话指标                                           |
 | ------------ | ------------------------------------------------------------ |
 | SDK 包体积   | 3.69 M - 7.75 M                                              |
-| 音频属性     | <li>音频采样率：16 KHz - 48 KHz <li>支持单、双声道           |
+| 音频属性     | <li>音频采样率：16 kHz - 48 kHz <li>支持单、双声道           |
 | 音频抗丢包率 | 上下行抗丢包率 70%                                           |
 
 ### 平台兼容
@@ -35,7 +36,7 @@ updatedAt: Mon Jul 08 2019 02:48:00 GMT+0800 (CST)
 
 | 平台       | 支持版本                                                     |
 | ---------- | ------------------------------------------------------------ |
-	| Android    | <p>4.1+</p><p>Android SDK 支持如下架构：</p><ul><li>ARMv7<li>ARM64<li>x86<li>x86-64                                                         |
+	| Android    | <p>4.1+</p><p>Android SDK 支持如下 ABI：</p><ul><li>armeabi-v7a<li>arm64-v8a<li>x86<li>x86_64                                                         |
 | iOS        | 8.0+                                                         |
 	| Windows    | <p>XP SP3+</p><p>Windows SDK 支持如下架构：<p><ul><li>x86<li>x64                                                      |
 | macOS      | 10.0+                                                        |
@@ -46,7 +47,7 @@ updatedAt: Mon Jul 08 2019 02:48:00 GMT+0800 (CST)
 
 ### 语音通话应用 - Beckon
 
-在应用市场下载 Beckon App，快速体验跨国高清语音通话质量。
+在应用市场下载 Beckon，快速体验跨国高清语音通话质量。
 
 - [Android](http://dl3.beckon.cc/android/beckon/beckon-release-352.apk)
 - [iOS](https://itunes.apple.com/cn/app/id927792759)

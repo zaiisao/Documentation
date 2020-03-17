@@ -3,12 +3,12 @@
 title: Company And Products
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 18 2019 06:25:34 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 10:24:59 GMT+0800 (CST)
 ---
 # Company And Products
 ### Does Agora provide private cloud solutions?
 
-Currently, Agora does not provide any private cloud solution. If you have any questions, contact sales@agora.io.
+Currently, Agora does not provide any private cloud solution. If you have any questions, contact sales-us@agora.io.
 
 ### What platforms can I use with the Agora SDK?
 

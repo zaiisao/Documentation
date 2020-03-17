@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 10:08:50 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:17:40 GMT+0800 (CST)
 ---
 # Information Security Policy
 ## Introduction
@@ -46,7 +46,7 @@ Agora categorizes the customer data in the following ways:
 </thead>
 <tbody>
 <tr><td>Customer Account Data</td>
-<td>User information required to manage the customer account with Agora. This includes the email address of the account administrator, company name, company URL, and Dashboard Access Log entries.</td>
+<td>User information required to manage the customer account with Agora. This includes the email address of the account administrator, company name, company URL, and Console Access Log entries.</td>
 </tr>
 <tr><td>End User Data</td>
 <td><p>All end-user level data such as logins, identities, and payment information.</p>
@@ -123,9 +123,9 @@ Whenever users try to access the Agora SD-RTN \(Software-defined Real-time Netwo
 
 There is no interaction between the App Server Infrastructure and the Agora Cloud during the entire authentication and authorization process; thus there is no possibility for any interception or attack.
 
-### Access Dashboard
+### Access Console
 
-Customers can access the customer dashboard through the Web or Restful API to check the Media Server Logs and Analytics Data.
+Customers can access the customer dashboard through the Web or RESTful API to check the Media Server Logs and Analytics Data.
 
 > The dashboard identity is linked to an email address provided by the customer.
 

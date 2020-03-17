@@ -3,7 +3,7 @@
 title: 录制状态异常
 description: 
 platform: Linux
-updatedAt: Mon Jul 01 2019 15:18:53 GMT+0800 (CST)
+updatedAt: Tue Aug 13 2019 16:43:44 GMT+0800 (CST)
 ---
 # 录制状态异常
 ### 录制退出报错
@@ -13,10 +13,10 @@ updatedAt: Mon Jul 01 2019 15:18:53 GMT+0800 (CST)
 ![](https://web-cdn.agora.io/docs-files/1540452150871)
 
 * LEAVE_CODE_INIT(0)：初始化失败
-* LEAVE_CODE_SIG(1<<1)：由信号触发的退出
-* LEAVE_CODE_NO_USERS(1<<2)：频道内除录制外，没有其他用户
-* LEAVE_CODE_TIMER_CATCH(1<<3)：捕获到信号错误
-* LEAVE_CODE_CLIENT_LEAVE(1<<4)：wrapper 层主动退出
+* LEAVE_CODE_SIG(1<<1)：AgoraCoreService 收到 SIGINT 信号而触发的退出。
+* LEAVE_CODE_NO_USERS(1<<2)：频道内除录制客户端外没有其他用户，录制端自动离开频道。
+* LEAVE_CODE_TIMER_CATCH(1<<3)：AgoraCoreService 收到 SIGTERM 信号而触发的退出。
+* LEAVE_CODE_CLIENT_LEAVE(1<<4)：录制端调用 `leaveChannel` 方法退出频道。
 
 > 日志里的 code 为上面括号内 2 进制移位后的 10 进制数。比如，(1<<1)=2; (1<<2)=4。所以上面的 leave channel with code:12是由 (1<<2)=4 + (1<<3) =8 得来的。
 

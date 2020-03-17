@@ -3,100 +3,111 @@
 title: Generate a Token from Your Server
 description: 
 platform: PHP
-updatedAt: Fri Jul 19 2019 11:25:18 GMT+0800 (CST)
+updatedAt: Mon Nov 11 2019 10:06:36 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
-The token is used for joining a channel. This page shows how to generate a token on your server for the following SDKs
+This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in PHP. 
 
-- Agora Native SDK (Java, Objective-C, C++, Electron) v2.1+
-- Agora Web SDK v2.4+
-- Agora Recording SDK v2.1+ 
+## An introduction to Agora's token repository
 
-The following programming languages are covered. Choose the one that applies to you:
+Your token needs to be generated on your own server, hence you are required to first deploy a token generator on the server. In our [GitHub Repository](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey), we provide source codes and token generator demos in the following programming languages:
 
+- CPP
 - Java
-- C++
 - Python
-- Go
 - PHP
 - Node.js
+- Go
+- Ruby
 
-> The Token Builder that we provide supports both int uid and string userAccount.
+The <b>./\<language\>/src</b> folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both **AccessToken** and **SimpleTokenBuilder** can generate a token for the following SDKs:
+
+- Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
+- Agora Web SDK v2.4+
+- Agora Recording SDK v2.1+ 
+- Agora RTSA SDK
+
+However, we recommend using **RtcTokenBuilder** instead of **AccessToken**.  **AccessToken** implements all the core algorithms for generating a token, while **RtcTokenBuilder** is a wrapper of **AccessToken** and provides much more simplified Interfaces. 
+
+The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes. **RtcTokenBuilderSample** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, Agora Recording SDK or Agora RTSA SDK. You can customize it based on your real business needs. 
+
+## Generate a token using **RtcTokenBuilderSample**
+
+We take **RtcTokenBuilderSample.php** as an example:
+
+1. Log onto the PHP official site to download the latest Stable version of PHP.
+2. Synchronize the GitHub repository to your local drive.
+3. Navigate to the **/go/sample/** folder and open **RtcTokenBuilderSample.php**. 
+> Our demo provides sample-App ID, appCertificate, channelName, uid, and userAccount for demonstration purposes.
+4. Replace the sample-App ID, appCertificate, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
+    - If you use an int uid to join a channel, comment out the following code block:
+```PHP
+$token = RtcTokenBuilder::buildTokenWithUserAccount($appID, $appCertificate, $channelName, $uidStr, $role, $privilegeExpiredTs);
+echo 'Token with user account: ' . $token . PHP_EOL;
+```    
+    - If you use a string userAccount to join a channel, comment out the following code block:
+```PHP
+$token = RtcTokenBuilder::buildTokenWithUid($appID, $appCertificate, $channelName, $uid, $role, $privilegeExpiredTs);
+echo 'Token with int uid: ' . $token . PHP_EOL;
+```
+> Skip this step if you just want to take a quick look at how a token is generated.
+5. Open your terminal and navigate to the local folder holding **RtcTokenBuilderSample.php**.
+6. Run the following command:
+    `php RtcTokenBuilderSample.php`
+  *Your token is printed in your terminal window.*
 
 
 
-## PHP
 
-### Initializes the Token Builder
+## API Reference
 
-```php
-function initTokenBuilder($originToken);
+Source code:  [../php/src/RtcTokenBuilder.php](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/src/RtcTokenBuilder.php)
+
+You can create your own token generator using the public methods that **RtcTokenBuilder.php** provides. Note that **RtcTokenBuilder.php** supports both int uid and string userAccount. Ensure that you choose the right method. 
+
+### buildTokenWithUid
+
+
+
+```PHP
+   public static function buildTokenWithUid($appID, $appCertificate, $channelName, $uid, $role, $privilegeExpireTs)
 ```
 
-This method uses the original token to reinitialize the token builder. This method enables the token builder to inherit the App ID, App Certificate, Channel Name, uid, and Privilege of the original token.
+This method builds a token with your int uid.
 
-> Do not call this method if you do not have an original token.
+| **Parameter**    | **Description**                                              |
+| ---------------- | ------------------------------------------------------------ |
+| `appID`          | The App ID issued to you by Agora. Apply for a new App ID from Agora Console if it is missing from your kit. See [Get an App ID](https://docs.agora.io/en/Agora%20Platform/token/#app-id). |
+| `appCertificate` | Certificate of the application that you registered in the Agora Console. See [Get an App Certificate](https://docs.agora.io/en/Agora%20Platform/token/#app-certificate). |
+| `channelName`    | Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
+| `uid`            | User ID. A 32-bit unsigned integer with a value ranging from 1 to (2<sup>32</sup>-1). Must be unique. |
+| `role` <sup>1</sup>          | <li> `Role_Publisher = 1`: (Recommended) A broadcaster (host) in a live-broadcast profile.<li>`Role_Subscriber = 2`: An audience in a live-broadcast profile. |
+| `privilegeExpiredTs`      | Time represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set expireTimestamp as the current timestamp + 600 (seconds). Set it as 0 if the privilege never expires. |
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td><code>originToken</code></td>
-<td>The original token.</td>
-</tr>
-<tr><td>Return value</td>
-<td><ul>
-<li>0: Method call succeeded.</li>
-<li>&lt;0: Method call failed.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+<div class="alert warning"><sup>1</sup>: All the <code>role</code> enums share exactly the same privileges. To enable privilege authentication with a Token, e.g., to remove the upstreaming privilege of the audience, contact sales-us@agora.io.</div>
+
+
+### buildTokenWithUserAccount
 
 
 
-**Struct of the TokenBuilder**
-
-```php
-public function __construct($appID, $appCertificate, $channelName, $uid);
+```PHP
+  public static function buildTokenWithUserAccount($appID, $appCertificate, $channelName, $userAccount, $role, $privilegeExpireTs)
 ```
 
-This method is the struct of SimpleTokenBuilder.
+This method builds a token with your string userAccount.
 
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-<tbody>
-<tr><td><strong>Name</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr><td>App ID</td>
-<td>ID of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span>Getting an App ID</span></a>.</td>
-</tr>
-<tr><td>App Certificate</td>
-<td>Certificate of the application that you registered in the Agora Dashboard. See <a href="../../en/Recording/token.md"><span> Get an App Certificate</span></a>.</td>
-</tr>
-<tr><td><code>channelName</code></td>
-<td>Name of the channel that the user wants to join.</td>
-</tr>
-<tr><td><code>uid</code></td>
-<td><li>User ID. A 32-bit unsigned integer with a value ranging from 1 to 2<sup>32</sup>-1. The uid must be unique. If a uid is not assigned (or set to 0), the SDK assigns one and returns it in the `onJoinChannelSuccess` callback function. Your app must record and maintain the returned value since the SDK does not do so.<li>The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: The 26 lowercase English letters: a to z. The 26 uppercase English letters: A to Z. The 10 numbers: 0 to 9. The space. "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",". </td>
-</tr>
-</tbody>
-</table>
+| **Parameter**    | **Description**                                              |
+| ---------------- | ------------------------------------------------------------ |
+| `appID`          | The App ID issued to you by Agora. Apply for a new App ID from Agora Console if it is missing from your kit. See [Get an App ID](https://docs.agora.io/en/Agora%20Platform/token/#app-id). |
+| `appCertificate` | Certificate of the application that you registered in the Agora Console. See [Get an App Certificate](https://docs.agora.io/en/Agora%20Platform/token/#app-certificate). |
+| `channelName`    | Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
+| `userAccount`    | The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
+| `role` <sup>2</sup>          | <li> `Role_Publisher = 1`: (Recommended) A broadcaster (host) in a live-broadcast profile.<li>`Role_Subscriber = 2`: An audience in a live-broadcast profile. |
+| `privilegeExpiredTs`      | Time represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set expireTimestamp as the current timestamp + 600 (seconds). Set it as 0 if the privilege never expires. |
 
-### Generates a Token \(buildToken\)
+<div class="alert warning"><sup>2</sup>: All the <code>role</code> enums share exactly the same privileges. To enable privilege authentication with a Token, e.g., to remove the upstreaming privilege of the audience, contact sales-us@agora.io.</div>
 
-```php
-public function buildToken();
-```
 
-This method generates a token in the string format.
+
+

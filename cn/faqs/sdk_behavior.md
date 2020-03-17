@@ -3,7 +3,7 @@
 title: SDK 对断网、杀进程的处理
 description: SDK 对断网、杀进程的处理
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:14:31 GMT+0800 (CST)
+updatedAt: Tue Jul 30 2019 11:11:18 GMT+0800 (CST)
 ---
 # SDK 对断网、杀进程的处理
 在断网、进程被杀时，SDK 会自动启用断线重连机制。本文展示 Agora SDK 在这两个情况下连接状态的处理逻辑。

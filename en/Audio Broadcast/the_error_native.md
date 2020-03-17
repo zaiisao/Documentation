@@ -3,7 +3,7 @@
 title: Error Codes and Warning Codes
 description: 
 platform: Android,Windows,iOS,macOS
-updatedAt: Fri Nov 02 2018 04:02:13 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:16:17 GMT+0800 (CST)
 ---
 # Error Codes and Warning Codes
 The Agora Native SDK will return error or warning codes when calling APIs or during runtime:
@@ -134,7 +134,7 @@ The Agora Native SDK will return error or warning codes when calling APIs or dur
 </tr>
 <tr><td>ERR_INVALID_TOKEN</td>
 <td>110</td>
-<td>The Token is invalid due to one of the following reasons: The App Certificate for the project is enabled on the Dashboard, but the user is still using the App ID. Once the App Certificate is enabled, the user must use a Token. The <em>uid</em> field is mandatory, and users must set the same <em>uid</em> when setting the <em>uid</em> parameter when calling joinChannel.</td>
+<td>The Token is invalid due to one of the following reasons: The App Certificate for the project is enabled on the Console, but the user is still using the App ID. Once the App Certificate is enabled, the user must use a Token. The <em>uid</em> field is mandatory, and users must set the same <em>uid</em> when setting the <em>uid</em> parameter when calling joinChannel.</td>
 </tr>
 <tr><td>ERR_CONNECTION_INTERRUPTED</td>
 <td>111</td>

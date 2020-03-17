@@ -3,12 +3,10 @@
 title: RTM Limitations
 description: 
 platform: iOS,macOS
-updatedAt: Thu May 09 2019 08:40:42 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 03:32:37 GMT+0800 (CST)
 ---
 # RTM Limitations
 This page provides information about the limitations of the Agora RTM SDK. 
-
-> The current version does not support interoperability between the Agora RTM SDK and the Agora Signaling SDK. 
 
 
 ## Multiple Instances

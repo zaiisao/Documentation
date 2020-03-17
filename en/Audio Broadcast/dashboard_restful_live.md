@@ -1,11 +1,11 @@
 
 ---
-title: Dashboard RESTful API
+title: Console RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri May 10 2019 06:20:16 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 03:28:35 GMT+0800 (CST)
 ---
-# Dashboard RESTful API
+# Console RESTful API
 ## 1. Authorization
 
 The RESTful API only supports HTTPS, and the user must pass the basic HTTP authentication with the following information:
@@ -16,8 +16,8 @@ The RESTful API only supports HTTPS, and the user must pass the basic HTTP authe
 
 Unlike the App ID and App Certificate used for Agora SDKs, the Customer ID and Customer Certificate are only used for RESTful API access.
 
-> You can login [https://dashboard.agora.io](https://dashboard.agora.io), click the account name on the top right of the dashboard, and enter the **Restful API** page from the drop-down list to get the **Customer ID** and **Customer Certificate**.
-> Currently, the Vendor Key and Sign Key are renamed to the App ID and App Certificate respectively on the Dashboard, but *vendor\_key* and *sign\_key* are still used in this document.
+> You can login [https://console.agora.io](https://dashboard.agora.io), click the account name on the top right of the Console, and enter the **RESTful API** page from the drop-down list to get the **Customer ID** and **Customer Certificate**.
+> Currently, the Vendor Key and Sign Key are renamed to the App ID and App Certificate respectively on the Console, but *vendor\_key* and *sign\_key* are still used in this document.
 
 ## 2. EndPoint
 
@@ -30,7 +30,7 @@ All requests should be sent to BaseUrl: **https://api.agora.io/dev/v1**.
   -   Status 400: The input is in the wrong format.
   -   Status 401: Unauthorized \(incorrect App ID/Customer Certificate\).
   -   Status 404: Wrong API invoked.
-  -   Status 500: Internal error of the Agora RestfulAPI service.
+  -   Status 500: Internal error of the Agora RESTfulAPI service.
 
 ## 3. Project API
 
@@ -565,7 +565,7 @@ This method checks if a specified user is in a specified channel, and if yes, ch
 	<td><strong>Description</strong></td>
 	</tr>
 	<tr><td>appid</td>
-	<td>Mandatory, App ID in the dashboard</td>
+	<td>Mandatory, App ID in the Console</td>
 	</tr>
 	<tr><td>uid</td>
 	<td>Mandatory, user ID which can be obtained by using the SDK</td>
@@ -653,7 +653,7 @@ This method checks the user role list in a specified channel.
 	<td><strong>Description</strong></td>
 	</tr>
 	<tr><td>appid</td>
-	<td>Mandatory, App ID in the dashboard</td>
+	<td>Mandatory, App ID in the Console</td>
 	</tr>
 	<tr><td>cname</td>
 	<td>Mandatory, channel name</td>
@@ -838,7 +838,7 @@ This method checks if a user is a co-host in a specified channel.
 <td><strong>Description</strong></td>
 </tr>
 <tr><td>appid</td>
-<td>Mandatory, App ID in the dashboard</td>
+<td>Mandatory, App ID in the Console</td>
 </tr>
 <tr><td>uid</td>
 <td>Mandatory, user ID which can be obtained by using the SDK</td>

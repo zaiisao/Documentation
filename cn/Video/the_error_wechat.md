@@ -1,11 +1,11 @@
 
 ---
-title: 错误代码和警告代码
+title: 错误码和警告码
 description: 
 platform: 微信小程序
-updatedAt: Tue Dec 25 2018 08:22:58 GMT+0800 (CST)
+updatedAt: Fri Feb 21 2020 01:16:44 GMT+0800 (CST)
 ---
-# 错误代码和警告代码
+# 错误码和警告码
 Agora Miniapp SDK for WeChat 在调用 API 或运行时，可能会返回一个错误码对象，也可能会返回一个错误码：
 
 - 错误码对象：包含错误码和对报错原因的描述，你可以根据 `reason` 中的描述自行判断发生引起错误的原因，然后进行排查
@@ -14,7 +14,7 @@ Agora Miniapp SDK for WeChat 在调用 API 或运行时，可能会返回一个�
 
 | 错误码 | 报错原因                                                     | 排查方法                                                     |
 | ------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 401    | 请求异常                                                     | 根据 reason  描述检查使用是否符合要求；如果报的是 `invalid vendor key`，请联系 sales@agora.io 检查是否有使用小程序服务的权限 |
+| 401    | 请求异常                                                     | 根据 reason  描述检查使用是否符合要求；如果报的是 `invalid vendor key`，请开通小程序服务权限，详见[微信小程序快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_wechat?platform=%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F#开通微信小程序服务) |
 | 429    | 请求太频繁                                                   | 根据 `reason` 描述检查使用是否符合要求                       |
 | 430    | <li>在订阅前尝试 mute 远端流<li>在订阅前尝试 unmute 远端流<li>请求异常 | 根据 `reason`  描述检查使用是否符合要求                      |
 | 431    | <li>`setRole` 传入的参数错误<li>登录失败<li>登录时的 role 传入出错<li>登录时的 uid 传入出错<li>重复登录，且 uid 不匹配 | 根据 `reason` 描述检查使用是否符合要求                       |
@@ -25,8 +25,8 @@ Agora Miniapp SDK for WeChat 在调用 API 或运行时，可能会返回一个�
 | 501    | 服务进程异常失去连接                                         | 销毁并退出频道后，重建 `client` 对象，调用 `rejoin` 方法尝试重连 |
 | 502    | 当前服务器过载                                               | 销毁并退出频道后，重建 `client` 对象，调用 `rejoin` 方法尝试重连 |
 | 503    | 服务进程正常退出                                             | N/A                                                          |
-| 901    | 未找到服务器                                                 | 检查网络；检查传入的 App ID、Dynamic Key 是否有效            |
-| 903    | 发送消息超时                                                 | 网络连接状况不理想，请检查网络                               |
+| 901    | 未找到服务器                                                 | 检查是否开启小程序的服务权限；也可能是没有配置域名或 uid 参数格式不正确；你还可以检查网络；检查传入的 App ID、Dynamic Key 是否有效            |
+| 903    | 发送消息超时                                                 | 鉴权失败（比如没填token）；也可能是因为网络连接状况不理想，请检查网络                             |
 | 904    | websocket 断开                                               | 销毁并退出频道后，重建 `client` 对象，调用 `rejoin` 方法尝试重连 |
 | 905    | websocket 连接失败                                           | 销毁并退出频道后，重建 `client` 对象，调用 `rejoin` 方法尝试重连 |
 

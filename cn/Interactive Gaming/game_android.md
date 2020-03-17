@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Android
-updatedAt: Fri Nov 02 2018 04:12:52 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:11:56 GMT+0800 (CST)
 ---
 # 游戏 API
 <table>
@@ -179,7 +179,7 @@ public abstract int joinChannel(String token,
 <tr><td><code>token</code></td>
 <td><ul>
 <li>安全要求不高: 将值设为 null</li>
-<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App Certificate, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> 。</li>
+<li>安全要求高: 将值设置为 Token 值。 如果你已经启用了 App 证书, 请务必使用 Token。 关于如何获取 Token，详见 <a href="../../cn/Agora%20Platform/token.md"><span>密钥说明</span></a> 。</li>
 </ul>
 </td>
 </tr>
@@ -667,7 +667,7 @@ public static String getErrorDescription(int error);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>error</code></td>
-<td><code>onWarning</code> 或 <code>onError</code> 里返回的警告代码或错误代码。</td>
+<td><code>onWarning</code> 或 <code>onError</code> 里返回的警告代码或错误码。</td>
 </tr>
 <tr><td>返回值</td>
 <td><ul>
@@ -1752,7 +1752,7 @@ public void onError(int err);
 <td><strong>描述</strong></td>
 </tr>
 <tr><td><code>err</code></td>
-<td>错误代码</td>
+<td>错误码</td>
 </tr>
 </tbody>
 </table>
@@ -2084,8 +2084,8 @@ public void onTokenPrivilegeWillExpire(String token);
 
 
 
-## 错误代码和警告代码 - Interactive Gaming SDK
+## 错误码和警告代码 - Interactive Gaming SDK
 
-详见 [错误代码和警告代码](../../cn/API%20Reference/the_error_game.md)。
+详见 [错误码和警告代码](../../cn/API%20Reference/the_error_game.md)。
 
 

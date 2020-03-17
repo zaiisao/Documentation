@@ -3,12 +3,70 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Thu Jun 06 2019 10:17:32 GMT+0800 (CST)
+updatedAt: Fri Aug 02 2019 08:01:57 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击 [实时消息产品概述](../../cn/Real-time-Messaging/RTM_product.md) 了解更多详情。
+
+## 1.0.0 版
+
+该版本于 2019 年 7 月 24 日发布。
+
+### 新增功能
+
+#### 新老互通
+
+支持与 Agora Signaling SDK 互通。
+
+本版本在 `AgoraRtmLocalInvitation` 类中实现了 `channelId` 属性。
+
+> - 如需与 Agora Signaling SDK 互通，则必须设置 `channelId` 。不过即使被叫成功接受呼叫邀请，Agora RTM SDK 也不会将主叫或被叫加入指定频道。
+> - 如果你的应用不涉及 Agora Signaling SDK，我们推荐使用 `AgoraRtmLocalInvitation` 类中的 `content` 属性或者`AgoraRtmRemoteInvitation` 类中的 `response` 属性设置自定义内容。
+
+#### 设置日志文件地址
+
+支持通过调用 `setLogFile` 方法变更本地日志的默认地址。该方法无需在 `loginByToken` 成功之后调用，我们建议在创建并初始化 `AgoraRtmkit` 实例后即调用该方法，否则会造成日志文件显示不完整。
+
+#### 设置日志输出等级
+
+支持通过调用 `setLogFilter` 方法将日志内容按照 OFF、CRITICAL、ERROR、WARNING 和 INFO 不同等级输出。详见 [AgoraRtmLogFilter](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmLogFilter.html) 。
+
+> 该方法无需在 `loginByToken` 成功之后调用。
+
+#### 设置日志文件大小
+
+支持通过 `setLogFileSize` 方法设置日志文件大小。日志的默认大小为 512 KB。低于该默认大小的设置无效。
+
+> 该方法无需在 `loginByToken` 成功之后调用。
+
+#### 查询 SDK 版本信息
+
+支持通过调用静态方法 `getSDKVersion` 查询 Agora RTM SDK 的版本信息。
+
+###  功能改进
+
+针对以下不同错误情况细化了错误代码
+
+- Agora RTM 服务未初始化
+- 调用频率超过上限
+- 未调用 `loginByToken` 方法或 `loginByToken` 方法未调用成功
+
+### 问题修复
+
+- 修复 iOS 平台偶现的崩溃。
+- 修复了一个可以用静态 App ID 和一个通过动态 App ID 生成的 Token 登录Agora RTM 系统的问题。
+
+
+### API 变更
+
+- [setLogFile](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setLogFile:)：设定日志文件的默认地址。
+- [setLogFilter](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setLogFilters:)：设置日志输出等级。
+- [setLogFileSize](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setLogFileSize:)：设置日志文件大小。
+- [getSDKVersion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getSDKVersion)：获取 Agora RTM SDK 的版本信息。
+
+
 
 ## 0.9.3 版
 

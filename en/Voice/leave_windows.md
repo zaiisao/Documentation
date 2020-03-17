@@ -3,7 +3,7 @@
 title: Leave the Channel
 description: 
 platform: Windows
-updatedAt: Thu Dec 13 2018 15:42:30 GMT+0800 (CST)
+updatedAt: Wed Oct 30 2019 03:24:11 GMT+0800 (CST)
 ---
 # Leave the Channel
 When a call or live broadcast ends, use the Agora SDK to leave the channel.
@@ -24,7 +24,7 @@ int nRet = m_lpAgoraEngine->leaveChannel();
 ## Next Steps
 You have integrated basic communication or live broadcast into your application. For advanced functions, see the sections under **Advanced Guide**.
 
-If you encounter any problem integrating or using the Agora SDK, refer to the following sections or submit a ticket at [Agora Dashboard](https://dashboard.agora.io).
+If you encounter any problem integrating or using the Agora SDK, refer to the following sections or submit a ticket at [Agora Console](https://dashboard.agora.io).
 
 - [General Questions](../../en/Agora%20Platform/general_questions.md)
 - [Integration and Deployment](../../en/Agora%20Platform/general_questions.md)

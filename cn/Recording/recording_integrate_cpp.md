@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Linux CPP
-updatedAt: Mon Jul 08 2019 03:34:28 GMT+0800 (CST)
+updatedAt: Thu Aug 01 2019 09:39:14 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 录制 SDK。
@@ -172,9 +172,8 @@ updatedAt: Mon Jul 08 2019 03:34:28 GMT+0800 (CST)
 
 7. 为调试方便，Agora 建议你打开系统的 core dump 功能以记录可能产生的程序崩溃信息。
 
+你已经集成了录制 SDK，可以选择以下任意一种方式开始录制：
+- [命令行录制](../../cn/Recording/recording_cmd_cpp.md)，使用我们提供的演示程序在命令行中开始录制。
+- [调用 API 录制](../../cn/Recording/recording_api_cpp.md)。
 
-你已经集成了录制 SDK。
-
-## 相关文档
-
-了解如何使用 C++ 命令行进行录制：[开始录制](../../cn/Recording/recording_cmd_cpp.md)。
+这两种方式可以实现相同的功能，根据你的需要选择一种即可。

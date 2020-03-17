@@ -3,14 +3,19 @@
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
 platform: iOS
-updatedAt: Tue Dec 04 2018 19:02:47 GMT+0800 (CST)
+updatedAt: Wed Sep 25 2019 10:09:07 GMT+0800 (CST)
 ---
 # In-ear Monitoring
 In-ear monitoring provides a mix of the audio sources (for example, a mix of the vocals and music) to the host with low latency, commonly used in professional scenarios, such as in concerts.
 The Agora SDK supports the in-ear monitoring function and volume adjustment of the in-ear monitor.
 
 ## Implementation
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Video/ios_video.md).
+
+Before using the in-ear monitoring function, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Video/start_call_ios.md) or [Start a Live Broadcast](../../en/Video/start_live_ios.md).
+
+The Agora SDK provides the `enableInEarMonitoring` and `setInEarMonitoringVolume` methods to set the in-ear monitoring according to the scenario, you can use these methods no matter before or after `joinChannelByToken`.
+
+### Sample code
 
 ```swift
 // swift
@@ -30,6 +35,12 @@ agoraKit.setInEarMonitoringVolume(50)
 [agoraKit setInEarMonitoringVolume: 50];
 ```
 
+### API reference
+
+- [`enableInEarMonitoring`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableInEarMonitoring:)
+- [`setInEarMonitoringVolume`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setInEarMonitoringVolume:)
+
 ## Considerations
 
-The API methods have return values. If the method call fails, the return value is < 0.
+- Call `enableInEarMonitoring` before `setInEarMonitoringVolume`.
+- The API methods have return values. If the method call fails, the return value is < 0.

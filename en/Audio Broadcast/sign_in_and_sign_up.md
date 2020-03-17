@@ -1,27 +1,69 @@
 
 ---
-title: Sign in and Sign up
+title: Sign up for an Agora account
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 04 2019 07:45:59 GMT+0800 (CST)
+updatedAt: Tue Oct 22 2019 06:19:06 GMT+0800 (CST)
 ---
-# Sign in and Sign up
-An Agora account gives you access to the Agora Dashboard, which is your home for using Agora products. 
+# Sign up for an Agora account
+This page shows how to sign up for an Agora account, and change your account settings.
 
-## Create an Agora account
-Follow the steps to create an Agora account:
+## Sign up with an email address
+To sign up for an Agora account with an email address, follow these steps:
 
-1. Click the **Sign up** button in the upper right corner of [www.agora.io/en/](https://www.agora.io/en/) to begin your signup process.
+1. Go to https://sso.agora.io/en/signup.
+2. Fill in your **Email** and **Password** and click **Sign up**.
+3. Follow the on-screen instructions to provide your information, including your name, company, product interest, platform, and industry, which helps us customize our services.
+4. Verify your **phone number** to secure your account.
 
- ![](https://web-cdn.agora.io/docs-files/1552448166731)
+## Sign up with a GitHub account
 
-2. Fill in your **E-mail** and **Password** to create an Agora account. We also ask for some personal infomation, including your name, company, product interest, platform and industry, which help make our services more useful.
+To sign up for an Agora account with a GitHub account, follow these steps:
 
-3. Verify your phone number.
+1. Go to https://sso.agora.io/en/signup, and click the ![](https://web-cdn.agora.io/docs-files/1569295926426) button.
+2. You will be redirected to the GitHub authorization page. Click **Authorize AgoraLab**.
+3. Follow the on-screen instructions to provide your information, including your email, name, company, product interest, platform, and industry, which helps us customize our services.
+4. Verify your **phone number** to secure your account.
 
-Congratulations! You've created an Agora acount. Now, you can log into the Agora Dashboard, create your first Agora project and try real-time communication immediately.
+## Sign up with a Google account
 
-<a name = "Reset_Your_Password"></a > 
-## Reset Your Password
+To sign up for an Agora account with a Google account, follow these steps:
 
-If you forget your password, click [here](https://dashboard.agora.io/forgetPassword?lang=en) and follow the steps to recover your account.
+1. Go to https://sso.agora.io/en/signup, and click the ![](https://web-cdn.agora.io/docs-files/1569302689210) button.
+2. You will be redirected to the Google authorization page. Authorize Agora.
+3. Follow the on-screen instructions to provide your information, including your name, company, product interest, platform, and industry, which helps us customize our services.
+4. Verify your **phone number** to secure your account.
+
+## Sign up with a Cocos account
+
+To sign up for an Agora account with a Cocos account, follow these steps:
+
+1. Go to https://sso.agora.io/en/signup, and click the ![](https://web-cdn.agora.io/docs-files/1569295962944) button.
+2. You will be redirected to the Cocos' login page. Fill in your Cocos account name and password and click **Log in**. You will directly log in Console.
+
+## Log in to Console
+
+After creating an Agora account, you can log in with your email, phone number, or any other registered third-party account to start your adventure in [Console](https://dashboard.agora.io).  You can create your first Agora project and try real-time communications immediately.
+
+## Change your account settings & password
+
+1. Log in to [Console](https://dashboard.agora.io), and click  **Account Name > Setting** in the top navigation menu.
+
+![](https://web-cdn.agora.io/docs-files/1565244190495)
+
+2. You can add, edit, or delete your information and change your password on this page. 
+
+![](https://web-cdn.agora.io/docs-files/1565244202054)
+
+
+## Reset your password
+
+If you forget your password, follow these steps to reset it:
+
+1. Go to https://sso.agora.io/en/signup.
+2. Click **Forget password**.
+
+![](https://web-cdn.agora.io/docs-files/1569312325155)
+
+3. Fill in your **Email address** and Agora will send an email to you.
+4. Sign in to your email and follow the steps in the email to reset your password.

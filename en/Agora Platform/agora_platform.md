@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 08:07:06 GMT+0800 (CST)
+updatedAt: Tue Dec 17 2019 10:37:01 GMT+0800 (CST)
 ---
 # Agora Platform Overview
 Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications in your own application quickly.
@@ -12,13 +12,13 @@ Agora.io provides building blocks for you to add real-time voice and video commu
 
 After integrating the Agora SDK, you can call different sets of APIs to implement voice/video communications in different scenarios. 
 
-| Agora SDK  | Functions                   | Description                                                  |
-| ---------- | ------------------------------------ | ------------------------------------------------------------ |
-| Voice SDK  | [Voice Call](../../en/Voice/product_voice.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only live broadcasts.  |
-| Video SDK  | [Video Call](../../en/Video/product_video.md) <br>[Interactive Broadcast](../../en/Interactive%20Broadcast/product_live.md) | Provides both voice and video functions. |
-| Gaming SDK | [Interactive Gaming](../../cn/Interactive%20Gaming/product_gaming.md)                   | Optimized for gaming applications. The package size is about 1 MB. |
-| Recording Add-on  | [Recording](../../en/Recording/product_recording.md)                     | Records and saves voice/video calls and live broadcasts on your server. |
-| Signalling Add-on | [Signalling](../../en/Signaling/product_signaling.md)                    | Based on the TCP and provides a stable messaging channel for real-time communication scenarios. |
+| Agora SDK        | Functions                                                    | Description                                                  |
+| ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Voice SDK        | [Voice Call](../../en/Voice/product_voice.md) <br>[Audio Broadcasting](../../en/Audio%20Broadcast/product_live_audio.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only live broadcasts. |
+| Video SDK        | [Video Call](../../en/Video/product_video.md) <br>[Video Broadcasting](../../en/Interactive%20Broadcast/product_live.md) | Provides both voice and video functions.                     |
+| Gaming SDK       | [Interactive Gaming](../../cn/Interactive%20Gaming/product_gaming.md) | Optimized for gaming applications. The package size is about 1 MB. |
+| RTM SDK          | [Real-time Messaging](../../en/Real-time-Messaging/product_rtm.md)   | Provides a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency for a global audience. |
+| Recording Add-on | [On-premise Recording](../../en/Recording/product_recording.md)<br/>[Cloud Recording](../../en/cloud-recording/product_cloud_recording.md) | Records and saves voice/video calls and live broadcasts on your server. |
 
 ## Self-built Infrastructure
 
@@ -43,14 +43,14 @@ Agora deploys about 200 data centers worldwide that use intelligent dynamic rout
 
 Agora is the only RTC service provider in the world using self-developed audio and video codecs. This allows Agora to have unique advantages in audio and video qualities.
 
-## Audio
+### Audio
 
 - High-fidelity, 3D surround sound experience
-- 48 KHz full-band acquisition: Highly restored acoustic sound
+- 48 kHz full-band acquisition: Highly restored acoustic sound
 - 3A algorithm based on machine learning: Echo cancellation, automatic gain, and noise suppression
 - Audio enhancement: Stereo sound, 3D surround sound, sound localization, audio mixing, reverberation effects, in-ear monitoring, and voice changes
 
-## Video
+### Video
 
 - Immersive visual experience
 
@@ -63,15 +63,7 @@ Agora is the only RTC service provider in the world using self-developed audio a
 ## Developer Tools and Support
 
 - The [Developer Center](https://docs.agora.io/en) provides documentation for developers to integrate and use Agora SDKs, and for SDK and sample code downloads.
-- [Agora Dashboard](https://dashboard.agora.io/) is a self-service system that enables developers to monitor usage statistics, track the QoE, manage projects, manage account privileges, and submit tickets.
-- [Agora Github](https://github.com/AgoraIO) and [GitHub Community](https://github.com/AgoraIO-Community) provide demos and use cases, which can also be found at the [Developer Center](https://docs.agora.io/en/Agora%20Platform/sampleapps).
+- [Agora Console](https://dashboard.agora.io/) is a self-service system that enables developers to monitor usage statistics, track the QoE, manage projects, manage account privileges, and submit tickets.
+- [Agora GitHub](https://github.com/AgoraIO) and [GitHub Community](https://github.com/AgoraIO-Community) provide demos and use cases, which can also be found at the [Developer Center](https://docs.agora.io/en/Agora%20Platform/sampleapps).
 - 5 &times; 8 technical support. Developers can ask questions about integration on [Stack Overflow](https://stackoverflow.com/questions/tagged/agora.io), and [submit tickets](https://dashboard.agora.io/show-ticket-submission) for quality issues.
-- [Agora Dashboard](https://dashboard.agora.io/) provides [Agora Analytics](https://dashboard.agora.io/analytics/call/search) to track the QoE. Agora Analytics displays data of the call process in diagrams. For example:
-
-  - Device status, including the system CPU usage and the app's CPU usage
-  - User events. For example, stop sending audio or start receiving video
-  - Bitrates of the sent/received audio and video
-  - The freeze time in rendering the audio and video
-  - The packet loss rates of the audio and video
-
-  You can quickly see the QoE and identify the issues from the diagrams. [Check out](https://dashboard.agora.io/analytics/call/tutorial) how you can analyze your calls with Agora Analytics.
+-  [Agora Analytics](https://console.agora.io/analytics/call/search), a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience. See [Agora Analytics Overview](../../en/Agora%20Platform/aa_guide.md) for more information.

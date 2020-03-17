@@ -3,16 +3,11 @@
 title: 限制条件
 description: RTM Web Limitations
 platform: Web
-updatedAt: Wed Jul 17 2019 12:37:00 GMT+0800 (CST)
+updatedAt: Mon Aug 12 2019 03:20:01 GMT+0800 (CST)
 ---
 # 限制条件
-本页面提供 Agora RTM Java SDK for Android 的使用限制条件。
+本页面提供 Agora RTM Web SDK 的使用限制条件。
 
-> Agora RTM SDK 目前与 Agora Signaling SDK 暂未实现互通，互通功能将于近期实现。
-
-## 多实例限制
-
-最多同时支持加入 20 个 `RtmChannel` 频道。如果你同时加入的 `RtmChannel` 频道达到20 个上限时建议在调用 [RtmChannel.leave()](https://docs.agora.io/cn/Real-time-Messaging/RTM_web/API%20Reference/RTM_web/classes/rtmchannel.html#leave) 方法离开频道后再调用 `RtmChannel.removeAllListeners()` 方法彻底释放该频道占用资源。
 
 ## 调用频率限制
 
@@ -20,9 +15,13 @@ updatedAt: Wed Jul 17 2019 12:37:00 GMT+0800 (CST)
 
 | 功能                                                  | 方法                                                      | 调用频率上限                |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
-| 登录到 Agora RTM 系统                              | [RtmClient.login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | 2 次／秒         |
-| 发送消息 (点对点和频道消息一并计算在内) | [RtmClient.sendMessageToPeer()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) 和 [RtmChannel.SendMessage()](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 60 次／秒          |
-| 获取频道成员列表                    | [RtmChannel.getMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#getmembers) | 每 2 秒 5 次 |
+| 登录到 Agora RTM 系统                              | [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | 2 次／秒         |
+| 发送消息 (点对点和频道消息一并计算在内) | <li>[sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) <li>[SendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 60 次／秒          |
+| 获取频道成员列表                    | [getMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#getmembers) | 每 2 秒 5 次 |
+| 更新 Token                               | [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#renewtoken) | 2 次／秒         |
+| 查询指定用户在线状态                               | [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes//rtmclient.html#querypeersonlinestatus) | 每 5 秒 10 次        |
+| 用户属性增删修改(一并计算）| <li>[setLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#setlocaluserattributes)<li>[addOrUpdateLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatelocaluserattributes)<li>[deleteLocalUserAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#deletelocaluserattributesbykeys)<li>[clearLocalUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#clearlocaluserattributes) | 每 5 秒 10 次          |
+| 用户属性查询(一并计算）| <li>[getUserAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributes)<li>[getUserAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getuserattributesbykeys) | 每 5 秒 40 次          |
 
 ## 字符串长度限制
 
@@ -35,6 +34,13 @@ updatedAt: Wed Jul 17 2019 12:37:00 GMT+0800 (CST)
 仅支持发送 UTF-8 编码格式的频道消息和点对点消息。
 
 
+## 编码格式限制
+
+仅支持发送 UTF-8 编码格式的频道消息和点对点消息、呼叫邀请 content、呼叫邀请 response。
+
 ## 其他 
 
-当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请拨打 400 632 6626 或发送邮件至 sales@agora.io。
+
+- 当频道人数超过 512 人时，用户上下线提示会被自动关闭。如有特殊要求，请拨打 400 632 6626 或邮件 sales@agora.io。
+- 当前版本仅支持查询最多 256 个用户的在线状态。
+- 单次属性设置的最大值为 16 KB，单次属性操作设置的属性条目不能超过 32 个。

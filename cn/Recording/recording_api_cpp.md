@@ -3,10 +3,10 @@
 title: 调用 API 录制
 description: How to start recording using API
 platform: Linux CPP
-updatedAt: Thu Jul 11 2019 09:57:37 GMT+0800 (CST)
+updatedAt: Thu Aug 01 2019 09:49:07 GMT+0800 (CST)
 ---
 # 调用 API 录制
-本文介绍如何调用 API 进行通话或直播录制。
+本文介绍如何调用 API 进行通话或直播录制。 你也可以[通过命令行录制](../../cn/Recording/recording_cmd_cpp.md) 进行录制。命令行录制和调用 API 录制实现的是相同的功能，根据自己的需要选择一种即可。
 
 开始前请确保你已经完成[集成录制 SDK](../../cn/Recording/recording_integrate_cpp.md)。
 
@@ -38,7 +38,7 @@ engine->joinChannel(<channelKey>, <channelId>, <uid>, config)
 
 在默认情况下，录制实例加入频道后，监测到频道内有用户即开始录制。
 
-如果你在 `RecordingConfig` 中将 [`triggerMode`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a652d8aefc1931391ff65ae7a088b932f) 设为了 `MANUALLY_MODE`（手动模式），需要调用 [startService](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine.html#a2d4e78e4164993e64fb0286b9108d478) 开始录制，开始录制后可以调用 [`stopService`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine.html#a302a83737a67b2693ede181484af862a) 暂停录制。
+如果你在 `RecordingConfig` 中将 [`triggerMode`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a652d8aefc1931391ff65ae7a088b932f) 设为了 `MANUALLY_MODE`（手动模式），需要调用 [`startService`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine.html#a2d4e78e4164993e64fb0286b9108d478) 开始录制，开始录制后可以调用 [`stopService`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine.html#a302a83737a67b2693ede181484af862a) 暂停录制。
 
 ```c++
 engine->startService()

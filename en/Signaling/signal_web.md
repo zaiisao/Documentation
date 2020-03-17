@@ -3,7 +3,7 @@
 title: Signaling API
 description: 
 platform: Web
-updatedAt: Tue Apr 16 2019 06:59:38 GMT+0800 (CST)
+updatedAt: Wed Jul 31 2019 12:45:27 GMT+0800 (CST)
 ---
 # Signaling API
 > Version: v1.4.0 BETA
@@ -209,7 +209,7 @@ invoke(func, args, cb)
 </ul>
 </td>
 </tr>
-<tr><td>Retrieves a list of the latest users in a channel.</td>
+<tr><td><b>Deprecated</b> Retrieves a list of the latest users in a channel.</td>
 <td><ul>
 <li>name: io.agora.signal.channel_query_userlist_all</li>
 <li>req: {“name”:channel name,”num”:number (by default 1000*1000)}</li>
@@ -307,7 +307,7 @@ channelJoin(channelID)
 <th>Description</th>
 </tr>
 <tr><td><code>channelID<code>/</td>
-<td><p>Channel name. It can be up to 128 visible characters and include the following special channel names and attributes:</p>
+<td><p>Channel name. It can be up to 128 visible characters and include the following special channel names and attributes <b>Deprecated and NOT recommended</b>:</p>
 <ul>
 <li><code>_agora_user_online</code>: All user-online or user-offline events within the current appID will be sent to this channel.</li>
 <li><code>_agora_channel_event</code>: All events about a user joining or leaving a channel within the current appID will be sent to this channel.</li>
@@ -988,7 +988,7 @@ The following table shows the built-in attributes of the parameter, <code>k</cod
 <tr><th>Attributes</th>
 <th>Description</th>
 </tr>
-<tr><td><code>_userNotification</code></td>
+<tr><td><code>_userNotification</code><b>Deprecated</b></td>
 <td><ul>
 <li>1: (Default) The channel sends the callback function that a user has joined or left the channel.</li>
 <li>0: The channel does not send the callback function that a user has joined or left the channel.</li>
@@ -1009,10 +1009,10 @@ The following table shows the built-in attributes of the parameter, <code>k</cod
 </ul>
 </td>
 </tr>
-<tr><td><code>_total_member_num</code></td>
+<tr><td><code>_total_member_num</code><b>Deprecated</b></td>
 <td>Automatically indicates the accumulated number of the users in the channel. Similar to <code>_member_num</code> , <code>_auto_update_num</code> and <code>_auto_update_total_num</code> both need to be set to none zero.</td>
 </tr>
-<tr><td><code>_auto_update_total_num</code></td>
+<tr><td><code>_auto_update_total_num</code><b>Deprecated</b></td>
 <td><p>Indicates whether to automatically refresh the number of the users currently in the channel.</p>
 <ul>
 <li>0: (Default) Disabled</li>

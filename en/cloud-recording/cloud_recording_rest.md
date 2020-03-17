@@ -3,23 +3,23 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Jul 22 2019 06:23:08 GMT+0800 (CST)
+updatedAt: Mon Dec 23 2019 04:25:10 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
-Agora Cloud Recording provides a RESTful API for you to control cloud recording through HTTP requests.
+Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
 
 > - You need to send the requests from your own app server.
-> - The RESTful API only supports HTTPS.
+> - The RESTful APIs only support HTTPS.
 
 ![](https://web-cdn.agora.io/docs-files/1559549537706)
 
-With the RESTful API, you can send requests to do the following things:
+With the RESTful APIs, you can send requests to do the following:
 
-- Start/Stop cloud recording
+- Start/Stop a cloud recording
 
 - Query the recording status
 
-The Agora Cloud Recording RESTful API provides a callback service. After enabling the callback service, you can receive notifications about cloud recording events. See the table below for the differences between the recording status query and the callback service.
+The Agora Cloud Recording RESTful APIs provide a callback service. After enabling the callback service, you can receive notifications about cloud recording events. See the table below for the differences between the recording status query and the callback service.
 
 | Recording status query                                       | Callback service                                         |
 | :----------------------------------------------------------- | :------------------------------------------------------- |
@@ -29,19 +29,45 @@ The Agora Cloud Recording RESTful API provides a callback service. After enablin
 
 If you need to use the callback sercive, see [RESTful API Callbacks](../../en/cloud-recording/cloud_recording_callback_rest.md) for details.
 
+
+## Sample requests
+
+Agora provides a [Postman collection](https://github.com/AgoraIO/Agora-RESTful-Service/tree/master/cloud-recording), which contains sample RESTful API requests for a cloud recording. You can use the collection to get a quick start of the basic functionalities of the Cloud Recording RESTful APIs. All you need to do is to import the collection to Postman and set your environment variables.
+
 ## Prerequisites
 
-Ensure that you meet the following requirements:
-
-- Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable the Agora Cloud Recording service.
-- Deploy a third-party cloud storage. Agora Cloud Recording supports [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls), [Alibaba Cloud](https://www.alibabacloud.com/product/oss), and [Qiniu Cloud](https://www.qiniu.com/en/products/kodo).
+Deploy a third-party cloud storage. Agora Cloud Recording supports [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls), [Alibaba Cloud](https://www.alibabacloud.com/product/oss), [Tencent Cloud](https://intl.cloud.tencent.com/product/cos) and [Qiniu Cloud](https://www.qiniu.com/en/products/kodo).
 
 > Agora Cloud Recording does not support string user accounts. Ensure that the recording channel uses integer UIDs.
+
+## Enable cloud recording
+
+Enable the cloud recording service before using Agora Cloud Recording for the first time.
+
+1. Login to [Console](https://dashboard.agora.io/), and click ![img](https://web-cdn.agora.io/docs-files/1551260936285) in the left navigation menu to go to the **Products & Usage** page. 
+2. Select a project from the drop-down list in the upper-left corner, and click **Duration** under **Cloud Recording**. 
+![](https://web-cdn.agora.io/docs-files/1566444271323)
+1. Click **Enable Cloud Recording**.
+2. Click **Apply**.
+
+Now, you can use Agora Cloud Recording and see the usage statistics.
+
+
 ## Pass basic authentication
 
-The RESTful API requires the basic HTTP authentication. You need to set the `Authorization` parameter in every HTTP request header. For how to get the value for `Authorization`, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
+The RESTful APIs require the basic HTTP authentication. You need to set the `Authorization` parameter in every HTTP request header. For how to get the value for `Authorization`, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
 
-## Get a resource ID
+## Implement cloud recording
+
+The following figure shows the API call sequence of a cloud recording. 
+> The `query` and `updateLayout` methods are not mandatory, and can be called multiple times during the recording (after starting recording and before stopping recording).
+
+![](https://web-cdn.agora.io/docs-files/1565777201501)
+
+
+### Start recording
+
+**Get a resource ID**
 
 Call the [`acquire`](../../en/cloud-recording/cloud_recording_api_rest.md) method to request a resource ID for cloud recording. 
 
@@ -51,13 +77,17 @@ If this method call succeeds, you get a resource ID (`resourceId`) from the HTTP
 
 See the [`acquire` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
-## Start recording
+**Join a channel**
 
-Call the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) method within five minutes after getting the resource ID to start the recording. 
+Call the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) method within five minutes after getting the resource ID to join a channel and start the recording. 
+
+<div class="alert warning"> Agora Cloud Recording does not support string usernames (User Accounts). Ensure that every user in the channel has an integer UID. When you call the start method, ensure that the UID in the quotation marks is an integer UID, too.</div>
+
+If this method call succeeds, you get a recording ID (`sid`) from the HTTP response body.
 
 See the [`start` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
-## Query recording status
+### Query recording status
 
 During the recording, you can call the [`query`](../../en/cloud-recording/cloud_recording_api_rest.md) method to check the recording status multiple times.
 
@@ -65,15 +95,25 @@ If this method call succeeds, you get the M3U8 filename and the current recordin
 
 See the [`query` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
-## Stop recording
+### Update video layout
+
+During the recording, you can call the [`updateLayout`](../../en/cloud-recording/cloud_recording_api_rest.md)  method to set or update the video layout. See [Set Video Layout](https://docs.agora.io/en/cloud-recording/cloud_layout_guide?platform=Linux) for details.
+
+See the [`updateLayout` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
+
+### Stop recording
 
 Call the [`stop`](../../en/cloud-recording/cloud_recording_api_rest.md) method to stop the recording.
+
+> Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default.
+
+If this method call succeeds, you get the M3U8 filename and the current uploading status from the HTTP response body.
 
 See the [`stop` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
 ## Upload and manage the recorded files
 
-After the recording starts, the Agora server automatically splits the recorded content into multiple TS files and keeps uploading them to the third-party cloud storage until the recording stops.
+After the recording starts, the Agora server automatically splits the recorded content into multiple TS/WebM files and keeps uploading them to the third-party cloud storage until the recording stops.
 
 ### Recording ID
 
@@ -83,9 +123,9 @@ After starting the recording with the [`start`](../../en/cloud-recording/cloud_r
 
 ### <a name="m3u8"></a>Playlist of the recorded files
 
-Each recording session has an M3U8 file, which is a playlist pointing to all the split TS files of the recording. You can use the M3U8 file to play and manage the recorded files.
+In individual recording mode, if you choose to record audio or video only, each recording session generates one M3U8 file; if you record both audio and video, each recording session generates two M3U8 files. The M3U8 file is a playlist pointing to all the split TS/WebM files of the recording. You can use the M3U8 file to play and manage the recorded files. For detailed information about the naming conventions of the M3U8 and TS/WebM files in individual recording mode, see [Manage Recorded Files](../../en/cloud-recording/cloud_recording_manage_files.md).
 
-The name of the M3U8 file consists of the recording ID and the channel name. For example`recording_id_channel_name.M3U8`.
+In composite recording mode, each recording session generates one M3U8 file. The name of the M3U8 file is `sid_cname.m3u8`, which consists of the recording ID and the channel name. For more information, see [Manage Recorded Files](../../en/cloud-recording/cloud_recording_manage_files.md).
 
 ### Upload the recorded files
 
@@ -99,6 +139,38 @@ After the recording stops, the SDK triggers one of the following callbacks:
 
 - [`uploaded`](../../en/cloud-recording/cloud_recording_callback_rest.md): Occurs when all the recorded files are uploaded to the third-party cloud storage.
 - [`backuped`](../../en/cloud-recording/cloud_recording_callback_rest.md): Occurs when some of the recorded files fail to upload to the third-party cloud storage and upload to Agora Cloud Backup instead. Agora Cloud Backup automatically uploads these files to your cloud storage. If you cannot [play the recorded files](https://docs.agora.io/en/cloud-recording/cloud-recording/cloud_recording_onlineplay) after five minutes, contact Agora technical support.
+
+If uploading takes a long time, the `stop` response returns the HTTP 206 status code, indicating that the recording stops but the uploading status is unknown. You need to get the uploading status from the callback events.
+
+## Considerations
+
+- Call `acquire` to get a resource ID before calling `start.`
+- Use one resource ID for only one `start` request.
+- Do not call `query` after calling `stop.`
+
+The following are some common errors:
+
+- `acquire` ➡ `start` ➡ `start`
+
+  Repeating the `start` request with the same resource ID returns the HTTP 201 status code and error code 7.
+
+- `acquire` ➡ `start` ➡ `acquire` ➡ `start`
+
+  Repeating the acquire and start requests with the same parameters returns the HTTP 400 status code and error code 53.
+
+- `acquire` ➡ `start` ➡ Recording stops ➡ `query`
+
+  Calling `query` after the recording stops returns the HTTP 404 status code and error code 404. The recording stops in the following situations:
+
+  - When you call `stop`.
+  - When no user is in the channel for the idle time (30 seconds by default).
+  - When the asynchronous parameter check finds errors. This means that some parameters of `transcodingConfig` or `storageConfig` in the `start` request are invalid.
+
+- `acquire` ➡ `start` ➡ `stop` & `query`
+
+  Calling `stop` together with `query` affects the response of `stop`: The HTTP status code is 206 and the response does not have the `fileList` field.
+
+See [Cloud Recording Integration FAQ](https://docs.agora.io/en/faqs/cloud_integration_faq) and [Errors](../../en/cloud-recording/cloud_recording_api_rest.md) if you have other issues using Agora Cloud Recording.
 
 ## <a name="demo-rest"></a>Sample code
 

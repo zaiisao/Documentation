@@ -3,12 +3,12 @@
 title: What is the difference between the in-call volume and the media volume?
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:08:02 GMT+0800 (CST)
+updatedAt: Fri Aug 09 2019 16:29:41 GMT+0800 (CST)
 ---
 # What is the difference between the in-call volume and the media volume?
 When you set the volume of a device, you set either the in-call volume or the media volume.
 
-- In-call volume: During a audio or video call, you set the in-call volume.
+- In-call volume: During an audio or video call, you set the in-call volume.
 - Media volume: When you play background music, video or games, you set the media volume.
 
 The differences between the two are as follows:

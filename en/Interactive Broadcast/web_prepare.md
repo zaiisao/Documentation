@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Web
-updatedAt: Fri Jul 19 2019 08:34:07 GMT+0800 (CST)
+updatedAt: Mon Dec 02 2019 02:50:40 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page contains information on how to prepare the development environment before enabling a video call with the Agora Web SDK.
@@ -66,11 +66,15 @@ This page contains information on how to prepare the development environment bef
   </tr>
 </table>
 
-> - Upgrade to Agora Web SDK v2.6 in the following scenarios:
->   - Safari on iOS 12.1.4 or later.
->   - Safari 12.1 or later on macOS.
-> - The Agora Web SDK v2.5 or later also supports Chrome 49 on Windows XP.
-> - The Agora Web SDK v2.7 or later also supports Edge on Windows 10, see [Edge support](https://docs.agora.io/en/faq/browser_support#edge) for details.
+<div class="alert info">Other browser support:
+	<li>The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).</li>
+	<li>The Agora Web SDK v2.7 or later supports Edge on Windows 10, see <a href="https://docs.agora.io/en/faq/browser_support#edge">Edge support</a> for details.</li>
+	<li>The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.</li>
+</div>
+<div class="alert note"> Upgrade to Agora Web SDK v2.6 or later in the following scenarios:
+	<li>Safari on iOS 12.1.4 or later.</li>
+	<li>Safari 12.1 or later on macOS.</li>
+</div>
 
 2. Open the ports and whitelist the domains as specified in [Firewall Requirements](../../en/Agora%20Platform/firewall.md).
 3. Understand the limitations in [Known Issues](../../en/Interactive%20Broadcast/release_web_video.md) and [FAQ](https://docs.agora.io/en/search?type=faq&platform=Web).
@@ -99,20 +103,18 @@ This method requires npm, see [Install npm](https://www.npmjs.com/get-npm) for d
 Add the following code to the line above `</body>` in your project.
 
  ```javascript
-	<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.7.0.js"></script>
+	<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.0.0.js"></script>
 ```
 
 ### Method 3: Get the SDK from the official Agora website
 
 1. [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Agora Web SDK.
 
-   <img alt="../_images/web_sdk_download.png" src="https://web-cdn.agora.io/docs-files/en/web_sdk_download.png" style="width: 840px;"/>
+2. Copy the `AgoraRTCSDK-3.0.0.js` file to your project.
 
-2. Copy the `AgoraRTCSDK-2.6.1.js` file to your project.
+3. Reference the `AgoraRTCSDK-3.0.0.js` file in your project.
 
-3. Reference the `AgoraRTCSDK-2.6.1.js` file in your project.
-
-   <img alt="../_images/web_sdk_reference.jpeg" src="https://web-cdn.agora.io/docs-files/en/web_sdk_reference.jpeg" />
+   ![](https://web-cdn.agora.io/docs-files/1563952664617)
 
 > The screenshots are for reference only, please use the latest version of the SDK.
 

@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Fri Nov 02 2018 04:23:52 GMT+0800 (CST)
+updatedAt: Thu Aug 15 2019 10:24:41 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This topic provides API reference of Agora AMG SDK for Unity for iOS, Android, and Windows.
@@ -3459,7 +3459,7 @@ The method initializes IM-related resources with App Key.
 <td>Description</td>
 </tr>
 <tr><td><code>appKey</code></td>
-<td>App Key for your application, like <em>“82hegw5u8y3dx”</em> . Contact <a href="mailto:sales%40agora.io">sales@agora.io</a> for your App key.</td>
+<td>App Key for your application, like <em>“82hegw5u8y3dx”</em> . Contact <a href="mailto:sales%40agora.io">sales-us@agora.io</a> for your App key.</td>
 </tr>
 </tbody>
 </table>
@@ -4082,7 +4082,7 @@ When the server calls the interface, the following 3 GET parameters will be adde
 </tr>
 <tr><td><code>signature</code></td>
 <td>String</td>
-<td>Signature. The SHA 1 hash result of the string combining App Secret, Nonce and Timestamp in sequence. To get App Secret, please contact <a href="mailto:sales%40agora.io">sales@agora.io.</a></td>
+<td>Signature. The SHA 1 hash result of the string combining App Secret, Nonce and Timestamp in sequence. To get App Secret, please contact <a href="mailto:sales%40agora.io">sales-us@agora.io.</a></td>
 </tr>
 </tbody>
 </table>
@@ -4203,7 +4203,7 @@ If the Token fails, you must get the Token from the server again. The Token is p
 
 There are two ways to filter sensitive words: mask or replace sensitive words in messages.
 
-Currently, sensitive word filtering is supported in the built-in text message. To filter the messages sent through the Server API, you must contact [sales@agora.io](mailto:sales@agora.io). By default, you can set up to 50 sensitive words, and the setting takes effect within 2 hours.
+Currently, sensitive word filtering is supported in the built-in text message. To filter the messages sent through the Server API, you must contact [sales-us@agora.io](mailto:sales-us@agora.io). By default, you can set up to 50 sensitive words, and the setting takes effect within 2 hours.
 
 #### Rules for sensitive word filtering
 

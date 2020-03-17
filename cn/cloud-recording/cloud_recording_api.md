@@ -1,11 +1,14 @@
 
 ---
-title: 云端录制 C++ API
+title: 云端录制 C++ API (Deprecated)
 description: 
 platform: CPP
-updatedAt: Thu Jul 18 2019 06:52:44 GMT+0800 (CST)
+updatedAt: Mon Nov 25 2019 10:12:43 GMT+0800 (CST)
 ---
-# 云端录制 C++ API
+# 云端录制 C++ API (Deprecated)
+<div class="alert note">云端录制 SDK 停服计划（建议你及时升级到功能丰富、调用更方便的云端录制 RESTful API）：<li>从 2019 年 11 月 15 日起，云端录制 SDK 将停止维护。已经下载的 SDK 可继续使用。</li><li>从 2019 年 12 月 15 日起，云端录制 SDK 将停止服务。停止服务后，你将无法继续使用云端录制 SDK。</li></div>
+
+
 | **接口类**                                                   | **描述**                   |
 | ------------------------------------------------------------ | -------------------------- |
 | <a href="#ICloudRecorder">ICloudRecorder</a> 类              | 应用程序调用的主要方法。   |
@@ -76,7 +79,7 @@ virtual int StartCloudRecording(
 | `appId`            | 待录制频道的 App ID，详见<a href="../../cn/cloud-recording/token.md">获取 App ID</a>。 |
 | `channel_name`     | 待录制频道的频道名。                                         |
 | `token`            | 待录制的频道中使用的 token，详见<a href="../../cn/cloud-recording/token.md">校验用户权限</a>。 |
-| `uid`              | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。**云录制不支持 String 用户名，请确保频道内所有用户均使用 Int 型的 UID。** |
+| `uid`              | 云端录制使用的用户 ID，32 位无符号整数，取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0，需保证唯一性。 |
 | `recording_config` | 录制的详细设置，详见 <a href="#RecordingConfig">RecordingConfig</a>。 |
 | `storage_config`   | 第三方云存储的详细设置，详见下表 <a href="#CloudStorageConfig">CloudStorageConfig</a>。 |
 
@@ -340,7 +343,7 @@ virtual void OnRecorderFailure(RecordingId recording_id,
 | 参数           | 描述                            |
 | -------------- | ------------------------------- |
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
-| `code`         | [错误代码](#ErrorCode)。        |
+| `code`         | [错误码](#ErrorCode)。        |
 | `msg`          | 错误消息。                      |
 
 
@@ -356,7 +359,7 @@ virtual void OnUploaderFailure(RecordingId recording_id,
 | 参数           | 描述                            |
 | -------------- | ------------------------------- |
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
-| `code`         | [错误代码](#ErrorCode)。        |
+| `code`         | [错误码](#ErrorCode)。        |
 | `msg`          | 错误消息。                      |
 
 ### <a name = "OnRecordingFatalError"></a>录制 SDK 异常回调 (OnRecordingFatalError)
@@ -366,19 +369,19 @@ virtual void OnRecordingFatalError(RecordingId recording_id,
 	RecordingErrorCode code) = 0;
 ```
 
-该回调方法表示云端录制 SDK 发生了不可恢复的错误，可根据具体的错误代码判断录制后台的状态。
+该回调方法表示云端录制 SDK 发生了不可恢复的错误，可根据具体的错误码判断录制后台的状态。
 
 | 参数           | 描述                            |
 | -------------- | ------------------------------- |
 | `recording_id` | 录制 ID，是当前录制的唯一标识。 |
-| `code`         | [错误代码](#ErrorCode)。        |
+| `code`         | [错误码](#ErrorCode)。        |
 
 
-## <a name = "ErrorCode"></a>错误代码
+## <a name = "ErrorCode"></a>错误码
 
-Agora Cloud Recording SDK 在调用 API 或运行时，可能会返回如下错误代码:
+Agora Cloud Recording SDK 在调用 API 或运行时，可能会返回如下错误码:
 
-| 错误代码                         | 描述                         | 解决方法                              |
+| 错误码                         | 描述                         | 解决方法                              |
 | -------------------------------- | ---------------------------- | ------------------------------------- |
 | `RecordingErrorOk`               | 没有错误。                   | 无。                                  |
 | `RecordingErrorConenctError`     | 连接至云端录制服务器失败。   | 检查网络和 appid 的权限。             |

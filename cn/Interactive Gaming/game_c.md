@@ -3,7 +3,7 @@
 title: Cocos Creator 快速开始
 description: 
 platform: Cocos Creator
-updatedAt: Fri Jul 05 2019 10:30:25 GMT+0800 (CST)
+updatedAt: Mon Feb 24 2020 07:10:55 GMT+0800 (CST)
 ---
 # Cocos Creator 快速开始
 ## 前提条件
@@ -13,7 +13,7 @@ updatedAt: Fri Jul 05 2019 10:30:25 GMT+0800 (CST)
 - Cocos Creator v2.0.9 及以上
 - 注册 Cococs Creator 账号，并根据提示绑定你的手机号码
 - 移动端需要 Android 或 iOS 真机
-- Web 端浏览器需满足[特定要求](https://docs.agora.io/cn/Audio%20Broadcast/web_prepare?platform=Web)
+- Web 端浏览器需满足[特定要求](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web#前提条件)
 - 没有连接 VPN
 
 ## 集成 Agora 服务
@@ -38,7 +38,7 @@ updatedAt: Fri Jul 05 2019 10:30:25 GMT+0800 (CST)
 
    ![](https://web-cdn.agora.io/docs-files/1554980416623)
 	 
-5. 开通后，你会在屏幕上看到如下界面。点击**前往控制台**，进入声网 Dashboard。
+5. 开通后，你会在屏幕上看到如下界面。点击**前往控制台**，进入声网控制台。
 
    ![](https://web-cdn.agora.io/docs-files/1554980505910)
 	 

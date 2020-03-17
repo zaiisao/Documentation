@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Thu Jun 06 2019 12:56:12 GMT+0800 (CST)
+updatedAt: Thu Jul 25 2019 03:54:15 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -11,6 +11,62 @@ updatedAt: Thu Jun 06 2019 12:56:12 GMT+0800 (CST)
 Designed as a substitute for the legacy Agora Signaling SDK, the Agora Real-time Messaging SDK provides a more streamlined implementation and more stable messaging mechanism for you to quickly implement real-time messaging scenarios.
 
 > For more information about the SDK features and applications, see [Product Overview](../../en/Real-time-Messaging/RTM_product.md).
+
+## v1.0.0
+
+v1.0.0 is released on July 24th, 2019.
+
+### New Features
+
+### Interconnects with the legacy Agora Signaling SDK
+
+v1.0.0 implements the `channelId` property in the `AgoraRtmLocalInvitation` class. 
+
+> - To intercommunicate with the legacy Agora Signaling SDK, you MUST set the channel ID. However, even if the callee successfully accepts the call invitation, the Agora RTM SDK does not join the channel of the specified channel ID.
+> - If your App does not involve the legacy Agora Signaling SDK, we recommend using the `content` property of the `AgoraRtmLocalInvitation` class or the `response` property of the `AgoraRtmRemoteInvitation` class to set customized contents. 
+
+#### Specifies the default path to the SDK log file
+
+Supports changing the default path to the SDK log file using the `setLogFile` method. To avoid creating an incomplete log file, we recommend calling this method once you have created and initialized an `AgoraRtmKit` instance. 
+
+
+
+#### Sets the output log level of the SDK
+
+Supports setting the output log level of the SDK using the `setLogFilter` method.  The log level follows the sequence of OFF, CRITICAL, ERROR, WARNING, and INFO. Choose a level to see the logs preceding that level. If, for example, you set the log level to WARNING, you see the logs within levels CRITICAL, ERROR, and WARNING. See also [AgoraRtmLogFilter](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmLogFilter.html). 
+
+> You can call this method once you have created and initializd an `AgoraRtmKit` instance. You do not have to call this method after calling the `loginByToken` method. 
+
+#### Sets the log file size in KB
+
+Supports setting the log file size using the `setLogFileSize` method. The log file has a default size of 512 KB. File size settings of less than 512 KB or greater than 10 MB will not take effect.
+
+
+> You can call this method once you have created and initializd an `AgoraRtmKit` instance. You do not have to call this method after calling the `loginByToken` method. 
+
+### Improvements
+
+Adds error codes based on the following scenarios: 
+
+- The Agora RTM service is not initialized.
+- The method call frequency exceeds the limit. 
+- The user does not call the `loginByToken` method or the method call of `loginByToken` does not succeed before calling any of the RTM core APIs. 
+
+### Issues Fixed
+
+- Occasional crashes on iOS. 
+- One can log in the Agora RTM system with a static App ID and an RTM token, which is generated from a dynamic App ID. 
+
+
+### API Changes
+
+- [setLogFile](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setLogFile:): Specifies the default path to the SDK log file.
+- [setLogFilter](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setLogFilters:): Sets the output log level of the SDK.
+- [setLogFileSize](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setLogFileSize:): Sets the log file size in KB.
+- [getSDKVersion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getSDKVersion): Gets the version of the Agora RTM SDK.
+
+
+
 
 ## v0.9.3
 
