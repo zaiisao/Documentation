@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Fri Mar 13 2020 06:57:18 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 03:23:57 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -89,6 +89,10 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+## v3.0.2
+
+v3.0.2 was released on March 16, 2020. This version made some internal improvements.
 
 ## v3.0.1
 

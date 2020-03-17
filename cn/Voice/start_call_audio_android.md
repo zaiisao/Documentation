@@ -53,12 +53,12 @@ updatedAt: Mon Mar 02 2020 07:08:04 GMT+0800 (CST)
 
 在项目的 **/app/build.gradle** 文件中，添加如下行：
 
-```
+```xml
 ...
 dependencies {
     ...
-    // 其中 2.9.4 是最新的 Agora 语音 SDK 的版本号。你也可以填写其他版本
-    implementation 'io.agora.rtc:full-sdk:2.9.4'
+    // 其中 3.0.0 是最新的 Agora 语音 SDK 的版本号。你也可以填写其他版本
+    implementation 'io.agora.rtc:voice-sdk:3.0.0'
 }
 ```
 
@@ -66,7 +66,6 @@ dependencies {
 
 1. 前往 [SDK 下载](https://docs.agora.io/cn/Agora%20Platform/downloads)页面，获取最新版的 Agora 语音 SDK，然后解压。
 2. 将 SDK 包内 libs 路径下的如下文件，拷贝到你的项目路径下：
-
 
 | 文件或文件夹                   | 项目路径                               | 
 | ---------------------------- | ------------------------------------ | 

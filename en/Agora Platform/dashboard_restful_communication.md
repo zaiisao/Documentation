@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 13 2020 06:19:02 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 02:17:05 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## Authentication
@@ -614,7 +614,7 @@ Creates a banning rule.
 | `cname`    | (Optional) The channel name. Do not set it as the empty string "".  |
 | `uid`           | (Optional) The user ID. You can use the SDK APIs to get it. Do not set it as 0. | 
 | `ip`             | (Optional) The IP address of the user that you want to kick out of the channel. Do not set it as 0.  |
-| `time`        | The time duration (minute) to ban the user. The value range is [1, 1440], and the default value is 60. Agora automatically sets values lower than one to one, and higher than 1440 to 1440. Setting it as 0 means that the banning rule does not take effect. The server sets all users that conform to the rule offline, and users can log in again to re-join the channel.  |
+| `time`        | The time duration (minute) to ban the user. The value range is [1, 1440], and the default value is 60. Agora automatically sets values between zero and one to one, and higher than 1440 to 1440. Setting it as 0 means that the banning rule does not take effect. The server sets all users that conform to the rule offline, and users can log in again to re-join the channel.  |
 | `privileges` | The default field ["join_channel"]. |
 
 The banning rule works based on the three fields: `cname`, `uid` and `ip`. See the following examples:
@@ -812,319 +812,181 @@ The following chart shows how you can use Online Statistics Query APIs.
 
 <div class="alert note">The call frequency of this group of API is no more than twenty queries per second.</div>
 
-### Get a User Role in the Channel (GET)
+### Gets the user role (GET)
 
-This method checks if a specified user is in a specified channel, and if yes, checks the role of this user in the channel.
+This method checks if a specified user is in a specified channel, and if yes, the role of this user in the channel.
 
--  Method: GET
--  Path: BaseUrl/v1/channel/user/property/
--  Parameters: appid, uid, cname
+**Basic information**
 
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>appid</td>
-	<td>Mandatory, App ID in the Console</td>
-	</tr>
-	<tr><td>uid</td>
-	<td>Mandatory, user ID which can be obtained by using the SDK</td>
-	</tr>
-	<tr><td>cname</td>
-	<td>Mandatory, channel name</td>
-	</tr>
-	</tbody>
-	</table>
+| Basic information | Description |
+| ---------------- | ---------------- |
+| 方法      | GET      |
+| 请求 URL  | BaseUrl/v1/channel/user/property/ |
 
-Example: /channel/user/property/<appid\>/<uid\>/<channelName\>
+**Request parameter**
 
--  Response:
+#### URL parameter
 
-	```
-	{
-		"success": true,
-		"data": {
-			"join": 1549073054,
-			"in_channel": true,
-			"role": 2
-		}
-	}
-	```
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      | 
+| `uid`          | The user ID. |
+| `cname`   | The channel name. |
 
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>join</td>
-	<td><p>The timestamp when the user joins the channel</p>
-	</td>
-	<tr><td>success</td>
-	<td><p>Checks the request state</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>in_channel</td>
-	<td><p>Checks if the user is in the channel</p>
-	<ul>
-	<li>true: The user is in the channel</li>
-	<li>false: The user is not in the channel</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>role</td>
-	<td><p>Checks the role of the user in the channel</p>
-	<ul>
-	<li>0: Unknown role</li>
-	<li>1: Communication user</li>
-	<li>2: Video live broadcaster</li>
-	<li>3: Live broadcast audience</li>
-	</ul>
-	</td>
-	</tr>
-	</tbody>
-	</table>
+**Request sample**
 
+```
+BaseUrl/v1/channel/user/property/{appid}/{uid}/{channelName}
+```
 
+**Response parameter**
 
-### Get the User Role List in a Channel (GET)
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `success`  | The state of this request: <ul><li>true: Success.</li><li>false: Failure.</li></ul> |
+| `data`  | The state of the user in the channel, which includes the following fields: <ul><li>`join`: The timestamp when the user joins the channel.</li><li>`in_channel`: Whether the user is in the channel: <ul><li>true: The user is in the channel.</li><li>false: The user is not in the channel.</li></ul><li>`role`: The role of the user in the channel. <ul><li>0: Unknown user role.</li><li>1: The user in a Communication channel.</li><li>2: The broadcaster in a Live-broadcast channel.</li><li>3: The audience in a Live-broadcast channel.</li></ul></li></ul> |
 
-This method checks the user role list in a specified channel.
+**Response sample**
 
--  Method: GET
--  Path: BaseUrl/v1/channel/user/
--  Parameters: appid, cname
-
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>appid</td>
-	<td>Mandatory, App ID in the Console</td>
-	</tr>
-	<tr><td>cname</td>
-	<td>Mandatory, channel name</td>
-	</tr>
-	</tbody>
-	</table>
-
-Example: /v1/channel/user/<appid\>/<channelName\>
-
--  Response: the responses of difference channel profiles differ:
-
-	```
-	// If it is a communication channel:
-	{
-			"success": true,
-			"data": {
-					"channel_exist": true,
-					"mode": 1,
-					"total": 1,
-					"users": [<uid>]
-			}
-	}
-	```
-	
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>success</td>
-	<td><p>Checks the request state:</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>channel_exist</td>
-	<td><p>Checks if the channel exits:</p>
-	<ul>
-	<li>true: Channel exists</li>
-	<li>false: Channel does not exist</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>mode</td>
-	<td><p>Checks the channel mode:</p>
-	<ul>
-	<li>1: The communication mode</li>
-	<li>2: The live broadcast mode</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>total</td>
-	<td>Total number of the users in the channel</td>
-	</tr>
-	<tr><td>users</td>
-	<td>UIDs of all users in the channel</td>
-	</tr>
-	</tbody>
-	</table>
-	<br>
-
-	```json
-// If it is a live broadcast channel.
+```json
 {
-		"success": true,
-		"data": {
-				"channel_exist": true,
-				"mode": 2,
-				"broadcasters": [<uid>],
-				"audience": [<uid>],
-				"audience_total": <count>
-		}
+  "success": true,
+  "data": {
+    "join": 1549073054,
+    "in_channel": true,
+    "role": 2
+  }
 }
 ```
-	
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>success</td>
-	<td><p>Checks the request state:</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>channel_exist</td>
-	<td><p>Checks if the channel exits:</p>
-	<ul>
-	<li>true: Channel exists</li>
-	<li>false: Channel does not exist</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>mode</td>
-	<td><p>Checks the channel mode:</p>
-	<ul>
-	<li>1: The communication mode</li>
-	<li>2: The live broadcast mode</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>broadcasters</td>
-	<td>The ID list of all the broadcasters in the channel</td>
-	</tr>
-	<tr><td>audience</td>
-	<td>The ID list of the first 10000 auience in the channel</td>
-	</tr>
-	<tr><td>audience_total</td>
-	<td>The total number of auience in the channel</td>
-	</tr>
-	</tbody>
-	</table>
 
-	
+### Gets the user list in a channel (GET)
 
-### Get the Channel List (GET)
+This method gets the user list:
+
+- In the Communication profile, this method gets the list of all users in the channel.
+- In the Live-broadcast profile, this method gets the list of all broadcasters and audience in the channel.
+
+**Basic information**
+
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method      | GET      |
+| Request URL | BaseUrl/v1/channel/user/ |
+
+**Request parameter**
+
+#### URL parameter
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `appid`      | The project App ID in Console.      |
+| `cname`    | The channel name. |
+
+**Request sample**
+
+```
+BaseUrl/v1/channel/user/{appid}/{channelName}
+```
+
+**Response parameter**
+
+The response of this method differs with the channel profile:
+
+- In the Communicatio profile, the response is as follows:
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `sucess`      | Checks the state of this request: <ul><li>true: Success.</li><li>false: Failure.</li></ul>      |
+| `data` | The response data, which includes the following fields: <ul><li>`channel_exist`: Checks whether the channel exist.<ul><li>true: The channel exist.</li><li>false: The channel does not exist.</li></ul><li>`mode`: The channel profile: <ul><li>1: The Communication profile.</li><li>2: The Live-broadcast profile.</li></ul><li>`total`: The total number of users in the channel.</li><li>`users`: The ID list of all users in the channel.</li></ul> |
+
+```json
+{
+  "success": true,
+  "data": {
+    "channel_exist": true,
+    "mode": 1,
+    "total": 1,
+    "users": [<uid>]
+  }
+}
+```
+
+- In the Live-communication profile, the response is as follows:
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `sucess`      | Checks the state of this request: <ul><li>true: Success.</li><li>false: Failure.</li></ul>      |
+| `data` | The data of user information, which includes the following fields: <ul><li>`channel_exist`: Checks whether the channel exist.<ul><li>true: The channel exist.</li><li>false: The channel does not exist.</li></ul><li>`mode`: The channel profile: <ul><li>1: The Communication profile.</li><li>2: The Live-broadcast profile.</li></ul><li>`broadcasters`: The ID list of all the broadcasters in the channel.</li><li>`audience`: The ID list of the first 10000 audience in the channel.</li></ul><li>`audience_total`: The total number of all the audience in the channel.</li></ul> |
+
+```json
+{
+  "success": true,
+  "data": {
+    "channel_exist": true,
+    "mode": 2,
+    "broadcasters": [<uid>],
+    "audience": [<uid>],
+    "audience_total": <count>
+  }
+}
+```
+
+### Gets the channel list (GET)
 
 This method gets the channel list of a specified vendor.
 
--  Method: GET
--  Path: BaseUrl/v1/channel/appid/
--  Parameters: ?page\_no=0&page\_size=100 \(Optional\)
+**Basic information**
 
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameter</strong></td>
-	<td><strong>Name</strong></td>
-	</tr>
-	<tr><td>page_no</td>
-	<td>Optional. The starting page; the default value is 0.</td>
-	</tr>
-	<tr><td>page_size</td>
-	<td>Optional. The number of items in a page; the default value is 100 and the greatest value is 500.</td>
-	</tr>
-	</tbody>
-	</table>
+| Basic information | Description |
+| ---------------- | ---------------- |
+| Method     | GET      |
+| Request URL | BaseUrl/v1/channel/appid/ |
 
-Example: /channel/<appid\>
-Example with parameters: /channel/<appid\>page\_no=0&page\_size=100
+**Request parameter**
 
--  Response:
+#### Query parameter
 
-    ```
-     {
-              "success": true,
-              "data": {
-                  "channels": [
-                      {
-                          "channel_name": "lkj144",
-                          "user_count": 3
-                      }
-                  ],
-                  "total_size": 3
-          }
-    
-    }
-    ```
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `page_no`      | The starting page of the channel list. The default value is 0.      |
+| `page_size`   | The number of items in a page. The default value is 100 and the greatest value is 500. |
 
-	<table>
-	<colgroup>
-	<col/>
-	<col/>
-	</colgroup>
-	<tbody>
-	<tr><td><strong>Parameters</strong></td>
-	<td><strong>Description</strong></td>
-	</tr>
-	<tr><td>success</td>
-	<td><p>Checks the request state:</p>
-	<ul>
-	<li>true: Request succeeded</li>
-	<li>false: Request failed</li>
-	</ul>
-	</td>
-	</tr>
-	<tr><td>channel_name</td>
-	<td>Name of the specified channel</td>
-	</tr>
-	<tr><td>user_count</td>
-	<td>Total number of users the channel</td>
-	</tr>
-	<tr><td>total_size</td>
-	<td>Total number of the channel</td>
-	</tr>
-	</tbody>
-	</table>
+**Request sample**
 
+```
+// Without the query parameter.
+BaseUrl/v1/channel/{appid}
+
+// With the query parameter.
+BaseUrl/v1/channel/{appid}?page_no=0&page_size=100
+```
+
+**Response parameter**
+
+| Parameter | Description |
+| ---------------- | ---------------- |
+| `success`     | The state of this request: <ul><li>true: Success.</li><li>false: Failure</li></ul>      |
+| `data` | The response data, which includes the following fields: <ul><li>`channels`: The channel list: <ul><li>`channel_name`: The channel name.</li><li>`user_count`: The number of users in the channel</li></ul><li>`total_size`: The number of channels</li></ul> |
+
+**Response sample**
+
+```json
+{
+  "success": true,
+  "data": {
+    "channels": [
+      {
+        "channel_name": "lkj144",
+        "user_count": 3
+      }
+    ],
+    "total_size": 3
+  }
+}
+```
 
 ## Error Codes
 
-See [Error Codes and Warning Codes](../../en/Agora%20Platform/the_error_native.md).
+If wanrings or errors occur when using Console RESTful APIs, refer to [Warning codes](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21) and [Error Codes](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/namespaceagora.html#a8affb9bb02864d82c4333529dc3d75a1) for troubleshooting.
 
 

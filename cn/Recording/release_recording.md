@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Wed Mar 11 2020 08:30:02 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 01:46:07 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -40,11 +40,13 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 - 如果在频道内调用 `leaveChannel`, 录制会停止, 但默认录制文件最后会包含一段空白片段，这个时间段由调用 `joinChannel` 时在 `config` 里设定的 `idleLimitSec` 字段值决定。详见 [录制 API](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html)。
 - 由于录制的音视频文件是没有加密的，如果要满足 HIPPA 要求，需使用磁盘加密工具对硬盘进行加密，例如 cryptsetup。
 
+## 3.0.1 版
+
+该版本于 2020 年 3 月 16 日发布。该版本修复了单流录制模式下，录制文件的文件名中时间戳异常的问题。
+
 ## 3.0.0 版 
 
-该版本于 2020 年 2 月 20 日发布。Agora RTC SDK v3.0.0 对 SDK 的传输质量和互通体验进行了大幅优化，在视频体验，尤其是直播场景下，弱网下的视频稳定性方面提升尤为明显。我们推荐你将本地录制 SDK 升级至 v3.0.0，从而享受 RTC SDK v3.0.0 带来的实时音视频体验优化。
-
-新增特性、改进与修复问题如下。
+该版本于 2020 年 2 月 20 日发布。新增特性、改进与修复问题如下。
 
 **新增特性**
 
