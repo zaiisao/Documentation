@@ -3,12 +3,12 @@
 title: 设置音频属性
 description: How to set the audio profile on Windows
 platform: Windows
-updatedAt: Wed Mar 04 2020 05:26:48 GMT+0800 (CST)
+updatedAt: Wed Mar 18 2020 09:13:43 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
  在一些比较专业的场景里，用户对声音的效果尤为敏感，比如语音电台，此时就需要对双声道和高音质的支持。
- 所谓的高音质指的是我们提供采样率为 48 Khz、码率 192 Kbps 的能力，帮助用户实现高逼真的音乐场景，这种能力在语音电台、唱歌比赛类直播场景中应用较多。
+ 所谓的高音质指的是我们提供采样率为 48 kHz、码率 192 Kbps 的能力，帮助用户实现高逼真的音乐场景，这种能力在语音电台、唱歌比赛类直播场景中应用较多。
 本文指导开发者根据对音质、声道、场景等的不同需求，选择不同的音频属性，获得最佳实时互动效果。
 ## 实现方法
 在设置音频属性前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Audio%20Broadcast/start_call_windows.md)或[实现互动直播](../../cn/Audio%20Broadcast/start_live_windows.md)。
@@ -23,11 +23,11 @@ Agora SDK 提供 `setAudioProfile` 方法给开发者根据场景需求灵活配
 <td>profile</td>
 <td>代表不同的音频参数配置（音质），比如采样率、码率和编码模式等：
 	<li>AUDIO_PROFILE_DEFAULT(0)：默认设置。通信场景下为 SPEECH_STANDARD(1)，直播场景下为 MUSIC_STANDARD(2)</li>
-	<li>AUDIO_PROFILE_SPEECH_STANDARD(1)：指定 32 kHz 的采样率，语音编码，单声道，编码码率最大值为 18 kbps</li>
-	<li>AUDIO_PROFILE_MUSIC_STANDARD(2)：指定 48 kHz 的采样率，音乐编码，单声道，编码码率最大值为 48 kbps</li>
-	<li>AUDIO_PROFILE_MUSIC_STANDARD_STEREO(3)：指定 48 kHz 的采样率，音乐编码，双声道，编码码率最大值为 56 kbps</li>
-	<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY(4)：指定 48 kHz 的采样率，音乐编码，单声道，编码码率最大值为 128 kbps</li>
-	<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)：指定 48 kHz 的采样率，音乐编码，双声道，编码码率最大值为 192 kbps</li>
+	<li>AUDIO_PROFILE_SPEECH_STANDARD(1)：指定 32 kHz 的采样率，语音编码，单声道，编码码率最大值为 18 Kbps</li>
+	<li>AUDIO_PROFILE_MUSIC_STANDARD(2)：指定 48 kHz 的采样率，音乐编码，单声道，编码码率最大值为 48 Kbps</li>
+	<li>AUDIO_PROFILE_MUSIC_STANDARD_STEREO(3)：指定 48 kHz 的采样率，音乐编码，双声道，编码码率最大值为 56 Kbps</li>
+	<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY(4)：指定 48 kHz 的采样率，音乐编码，单声道，编码码率最大值为 128 Kbps</li>
+	<li>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)：指定 48 kHz 的采样率，音乐编码，双声道，编码码率最大值为 192 Kbps</li>
 	</td>
 </tr>
 <tr>

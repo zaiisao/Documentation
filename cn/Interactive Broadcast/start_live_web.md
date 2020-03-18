@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Web
-updatedAt: Mon Mar 16 2020 03:25:06 GMT+0800 (CST)
+updatedAt: Wed Mar 18 2020 07:01:12 GMT+0800 (CST)
 ---
 # 实现视频直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音视频互动直播。
@@ -13,6 +13,14 @@ updatedAt: Mon Mar 16 2020 03:25:06 GMT+0800 (CST)
 互动直播和实时通话的区别在于，直播频道的用户有角色之分。你可以将角色设置为主播，或者观众，其中主播可以收、发流，观众只能收流。
 
 <div class="alert warning">由于浏览器的安全策略对除 127.0.0.1 以外的 HTTP 地址作了限制，Agora Web SDK 仅支持 HTTPS 协议或者 http://localhost（http://127.0.0.1），请勿使用 HTTP 协议部署你的项目。</div>
+
+## 快速跑通 Demo
+
+如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
+
+<video src="https://web-cdn.agora.io/docs-files/1584514830714" poster="https://web-cdn.agora.io/docs-files/1583378147542"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+
+<div class="alert note">视频中展示的 UI 有部分调整更新，请以当前最新版为准。</div>
 
 ## 示例项目
 

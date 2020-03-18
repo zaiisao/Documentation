@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Mar 16 2020 03:24:03 GMT+0800 (CST)
+updatedAt: Wed Mar 18 2020 05:45:04 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -90,11 +90,11 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
 
-## v3.0.2
+## 3.0.2 版
 
 该版本于 2020 年 3 月 16 日发布，进行了一些内部改进。
 
-## v3.0.1
+## 3.0.1 版
 
 该版本于 2020 年 2 月 12 日发布。
 
