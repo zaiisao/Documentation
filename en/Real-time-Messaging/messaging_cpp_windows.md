@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Thu Oct 24 2019 11:51:28 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 11:28:37 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -96,7 +96,7 @@ Right-click the project name in the **Solution Explorer** window, click **Proper
 
 - Go to the **Linker > General > Additional Library Directories** menu, click **Edit**, and input **$(SolutionDir)** in the pop-up window.
 
-- Go to the **Linker > Input > Additional Dependencies** menu, click **Edit**, and input **agora_rtc_sdk.lib** in the pop-up window.
+- Go to the **Linker > Input > Additional Dependencies** menu, click **Edit**, and input **agora_rtm_sdk.lib** in the pop-up window.
 
 
 ## Implement peer-to-peer and channel messaging

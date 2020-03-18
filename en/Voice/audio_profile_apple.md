@@ -8,7 +8,7 @@ updatedAt: Thu Sep 26 2019 06:21:25 GMT+0800 (CST)
 # Set the Audio Profile
 ## Introduction 
 
-High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a sample rate of 48 Hz and a bitrate of 192 Kbps.
+High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a sample rate of 48 kHz and a bitrate of 192 Kbps.
 
 To obtain high-fidelity audio during real-time communications, you can choose the appropriate audio profile based on the audio quality, channel, and scenario.
 

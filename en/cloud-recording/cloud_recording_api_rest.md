@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Mar 13 2020 03:20:07 GMT+0800 (CST)
+updatedAt: Tue Mar 17 2020 01:13:45 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
@@ -131,6 +131,9 @@ The following parameters are required in the request body.
 
 `recordingConfig` is a JSON object for recording configuration with the following fields. 
 
+- `channelType`: Number. The channel profile. Agora Cloud Recording must use the same channel profile as the Agora Native/Web SDK. Otherwise, issues may occur.
+  - `0`: (Default) Communication profile. 
+  - `1`: Live broadcast profile.
 - `streamTypes`: (Optional) Number. The type of the recorded media stream.
   - `0`: Records audio only.
   - `1`: Records video only.
@@ -141,9 +144,6 @@ The following parameters are required in the request body.
   - `2`: AES-128, ECB mode.
   - `3`: AES-256, XTS mode.
 - `secret`: (Optional) String. The decryption password when decryption mode is enabled. 
-- `channelType`: Number. The channel profile. Agora Cloud Recording must use the same channel profile as the Agora Native/Web SDK. Otherwise, issues may occur.
-  - `0`: (Default) Communication profile. 
-  - `1`: Live broadcast profile.
 - `audioProfile`: (Optional) Number. The sample rate, bitrate, encoding mode, and the number of channels. You cannot set this parameter in individual recording mode.
   - `0`: (Default) Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 48 Kbps.
   - `1`: Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.

@@ -48,6 +48,6 @@ Where:
 
 ## API reference
 
-- [GetConnectionState](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ab2fbccbec5f20a1e42db7b16ef904c21)
-- [OnConnectionStateChangedHandler](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/namespaceagora__gaming__rtc.html#adae7694cb602375ccbc14be3062a230c)
-- [OnConnectionLostHandler](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/namespaceagora__gaming__rtc.html#a1f17f5429ec17c1c7d6bcaa298076ad7)
+- [GetConnectionState](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ab2fbccbec5f20a1e42db7b16ef904c21)
+- [OnConnectionStateChangedHandler](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/unity/namespaceagora__gaming__rtc.html#adae7694cb602375ccbc14be3062a230c)
+- [OnConnectionLostHandler](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/unity/namespaceagora__gaming__rtc.html#a1f17f5429ec17c1c7d6bcaa298076ad7)

@@ -17,7 +17,7 @@ Starting with v2.9.0, the Agora Unity SDK provides the `SwitchChannel` method fo
 
 ## Implementation
 
-Before implementing the quick switch function in your project, ensure that you have implemented the basic live broadcast in your project. For details, see [Start a Video Broadcast](../../en/Interactive%20Broadcast/start_live_unity.md) or [Start an Audio Broadcast](../../en/Interactive%20Broadcast/start_live_audio_unity.md).
+Before implementing the quick switch function in your project, ensure that you have implemented the basic live broadcast in your project. For details, see [Start a Video Broadcast](../../en/Audio%20Broadcast/start_live_unity.md) or [Start an Audio Broadcast](../../en/Audio%20Broadcast/start_live_audio_unity.md).
 
 After the audience joins a live broadcast channel, call the `SwitchChannel` method to enable the audience to switch to another live broadcast channel. Pass in the token and channel name of the new channel in this method.
 
@@ -33,7 +33,7 @@ mRtcEngine.SwitchChannel(YOUR_TOKEN, mRoomName);
 
 ### API reference
 
-- [SwitchChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a7f27478a9fe819fc3bdec0164111e2d2)
+- [SwitchChannel](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a7f27478a9fe819fc3bdec0164111e2d2)
 
 ## Considerations
 

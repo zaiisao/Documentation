@@ -1,19 +1,21 @@
+
 ---
 title: Set the Audio Profile
-description: How to set high-quality audio on Android
+description: How to set high-quality audio on Windows
 platform: Unity
-updatedAt: Wed Mar 11 2020 06:08:27 GMT-0500 (EST)
+updatedAt: Mon Mar 16 2020 14:03:30 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
 
-High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a sample rate of 48 Hz and a bitrate of 192 Kbps.
+High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a sample rate of 48 kHz and a bitrate of 192 Kbps.
+
 
 To obtain high-fidelity audio during real-time communications, you can choose the appropriate audio profile based on the audio quality, channel, and scenario.
 
 ## Implementation
 
-Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_unity.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_call_unity.md).
+Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Voice Call](../../en/Interactive%20Broadcast/start_call_audio_unity.md) or [Start a Voice Broadcast](../../en/Interactive%20Broadcast/start_live_audio_unity.md).
 
 The Agora SDK provides the `SetAudioProfile` method to set the appropriate audio profile according to the scenario. This method has two parameters:
 <table>
@@ -22,9 +24,9 @@ The Agora SDK provides the `SetAudioProfile` method to set the appropriate audio
 <th>Description</th>
 </tr>
 <tr>
-<td>profile</td>
+<td>audioProfile</td>
 <td>Sets the sample rate, bitrate, encoding mode, and the number of channels.
-	<li>AUDIO_PROFILE_DEFAULT(0): The default audio profile. In the Communication profile, the default value is AUDIO_PROFILE_SPEECH_STANDARD(1). In the Live-broadcast profile, the default value is AUDIO_PROFILE_MUSIC_STANDARD(2).</li>
+	<li>AUDIO_PROFILE_DEFAULT(0): The default audio profile. <ul><ul><li>In the Communication profile:<ul><li>Windows: A sample rate of 16 KHz, audio encoding, mono, and a bitrate of up to 16 Kbps.<li>Android/iOS/macOS: A sample rate of 32 KHz, audio encoding, mono, and a bitrate of up to 18 Kbps.</ul> <li>In the Live-broadcast profile: A sample rate of 48 KHz, music encoding, mono, and a bitrate of up to 52 Kbps..</li></ul></ul>
 	<li>AUDIO_PROFILE_SPEECH_STANDARD(1): A sample rate of 32 kHz, audio encoding, mono, and a bitrate of up to 18 Kbps.</li>
 	<li>AUDIO_PROFILE_MUSIC_STANDARD(2): A sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 48 Kbps.</li>
 	<li>AUDIO_PROFILE_MUSIC_STANDARD_STEREO(3): A sample rate of 48 kHz, music encoding, stereo, and a bitrate of up to 56 Kbps.</li>
@@ -45,11 +47,6 @@ The Agora SDK provides the `SetAudioProfile` method to set the appropriate audio
 </tr>
 </table>
 
-### API call sequence
-
-The following diagram shows how to set the audio profile:
-
-![](https://web-cdn.agora.io/docs-files/1568972688867)
 
 ### Parameters and applications
 
@@ -62,7 +59,7 @@ You can set the profile and scenario parameters based on the requirements of dif
 <th>Options</th>
 </tr>
 <tr>
-<td rowspan="3">profile</td>
+<td rowspan="3">audioProfile</td>
 <td>High-fidelity audio</td>
 <td><li>MUSIC_HIGH_QUALITY</li>
 	<li>MUSIC_HIGH_QUALITY_STEREO</li></td>
@@ -136,11 +133,11 @@ mRtcEngine.SetAudioProfile(AUDIO_PROFILE_TYPE.AUDIO_PROFILE_MUSIC_HIGH_QUALITY, 
 
 ### API reference
 
-- [`SetAudioProfile`](https://docs.agora.io/en/Voice/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#adc5817c5d668f631123a643817cf3059)
+- [`SetAudioProfile`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#adc5817c5d668f631123a643817cf3059)
 
 ## Considerations
 
-Call this method before calling the [`JoinChannel`](https://docs.agora.io/en/Voice/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a446b32363de7ad9c0b4ebf4e5dca4407) method.
+Call this method before calling the [`JoinChannelByKey`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a5997a90398afe355d4d509a2a83a9999) method.
 
 When you set the volume of a device, you can set either the in-call volume or the media volume.
 - You can set the in-call volume during an audio or video call.
@@ -185,3 +182,4 @@ The audio scenarios in the `SetAudioProfile` method use different volume setting
 </table>
 
 Given the system restrictions, the media volume can be set as 0, but not the in-call volume. Therefore, if you want to adjust the volume to 0, ensure that you set an audio scenario that uses the media volume.
+

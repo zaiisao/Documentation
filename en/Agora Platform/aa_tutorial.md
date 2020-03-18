@@ -3,7 +3,7 @@
 title: AA Use Case Tutorial
 description: 
 platform: All Platforms
-updatedAt: Thu Dec 27 2018 07:32:07 GMT+0800 (CST)
+updatedAt: Mon Mar 16 2020 15:47:05 GMT+0800 (CST)
 ---
 # AA Use Case Tutorial
 This page lists the call analysis of several typical calls to show you how to understand and analyze the quality of experience of your calls.
@@ -13,10 +13,10 @@ Click the images below to view the use cases.
 ## Good Quality of Experience
 
 <div class="reveal-content">
-	<div class="reveal-btn"><img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-Normal/UseCase-Normal-1.jpeg"/></div>
+	<div class="reveal-btn"><img src="https://web-cdn.agora.io/docs-files/1584373188119"/></div>
 	<script type="text/template">
 			<section>
-				<img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-Normal/UseCase-Normal-1.jpeg"/>
+				<img src="https://web-cdn.agora.io/docs-files/1584373188119"/>
 			</section>
 			<section>
 				<img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-Normal/UseCase-Normal-2.jpeg"/>
@@ -56,10 +56,10 @@ Click the images below to view the use cases.
 ## Poor Video Quality Caused by Sender's Network
 
 <div class="reveal-content">
-	<div class="reveal-btn"><img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-BySenderNetwork/UseCase-BySenderNetwork-1.jpeg"/></div>
+	<div class="reveal-btn"><img src="https://web-cdn.agora.io/docs-files/1584373385563"/></div>
 	<script type="text/template">
 			<section>
-				<img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-BySenderNetwork/UseCase-BySenderNetwork-1.jpeg"/>
+				<img src="https://web-cdn.agora.io/docs-files/1584373385563"/>
 			</section>
 			<section>
 				<img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-BySenderNetwork/UseCase-BySenderNetwork-2.jpeg"/>
@@ -113,10 +113,10 @@ Click the images below to view the use cases.
 ## Video Freeze Caused by Receiver's Network
 
 <div class="reveal-content">
-	<div class="reveal-btn"><img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-ByReceiverNetwork/UseCase-ByReceiverNetwork-1.jpeg"/></div>
+	<div class="reveal-btn"><img src="https://web-cdn.agora.io/docs-files/1584373411971"/></div>
 	<script type="text/template">
 			<section>
-				<img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-ByReceiverNetwork/UseCase-ByReceiverNetwork-1.jpeg"/>
+				<img src="https://web-cdn.agora.io/docs-files/1584373411971"/>
 			</section>
 			<section>
 				<img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-ByReceiverNetwork/UseCase-ByReceiverNetwork-2.jpeg"/>
@@ -169,10 +169,10 @@ Click the images below to view the use cases.
 ## Video Freeze Caused by CPU Overload
 
 <div class="reveal-content">
-	<div class="reveal-btn"><img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-ByDevice/UseCase-ByDevice-1.jpeg"/></div>
+	<div class="reveal-btn"><img src="https://web-cdn.agora.io/docs-files/1584373433499"/></div>
 	<script type="text/template">
 			<section>
-				<img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-ByDevice/UseCase-ByDevice-1.jpeg"/>
+				<img src="https://web-cdn.agora.io/docs-files/1584373433499"/>
 			</section>
 			<section>
 				<img src="https://web-cdn.agora.io/dashboard/tutorial/en/tutorial/UseCase-ByDevice/UseCase-ByDevice-2.jpeg"/>

@@ -14,7 +14,7 @@ The Agora SDK uses the `SetVideoEncoderConfiguration` method to set the video pr
 
 ## Implementation
 
-Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Interactive%20Broadcast/start_call_unity.md) or [Start a Video Broadcast](../../en/Interactive%20Broadcast/start_live_unity.md).
+Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Video/start_call_unity.md) or [Start a Video Broadcast](../../en/Video/start_live_unity.md).
 
 After initializing `IRtcEngine`, you can call the `SetVideoEncoderConfiguration` method to set the video profile and set the video resolution, frame rate, birtate and orientation mode.
 
@@ -48,10 +48,10 @@ mRtcEngine.SetVideoEncoderConfiguration(config);
 ```
 
 ### API Reference
-- [`SetVideoEncoderConfiguration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a7dc9aa63ad1ba10f2451efd02e0f1f73)
+- [`SetVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a7dc9aa63ad1ba10f2451efd02e0f1f73)
 
 ## Considerations
-- Setting [`DEGRADATION_PREFERENCE`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/namespaceagora__gaming__rtc.html#a1bda0e6bd3dcd1b0ca3764394800346c) as `MAINTAIN_QUALITY` means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the [`minFrameRate`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/structagora__gaming__rtc_1_1_video_encoder_configuration.html#a6de8eab8863e9bdf28ee49a080241c66) parameter to balance the frame rate and video quality under unreliable network connections:
+- Setting [`DEGRADATION_PREFERENCE`](https://docs.agora.io/en/Video/API%20Reference/unity/namespaceagora__gaming__rtc.html#a1bda0e6bd3dcd1b0ca3764394800346c) as `MAINTAIN_QUALITY` means that the SDK degrades the frame rate under limited bandwidth so as to maintain the video quality. Developers can set the [`minFrameRate`](https://docs.agora.io/en/Video/API%20Reference/unity/structagora__gaming__rtc_1_1_video_encoder_configuration.html#a6de8eab8863e9bdf28ee49a080241c66) parameter to balance the frame rate and video quality under unreliable network connections:
 
 	- When  `minFrameRate` is relatively low, the frame rate degrades significantly, so the poor network conditions have little impact on the video quality.
 	- When `minFrameRate` is relatively high, the frame rate degrades within a limited range, so the poor network conditions can have huge impact on the video quality.
@@ -59,7 +59,7 @@ mRtcEngine.SetVideoEncoderConfiguration(config);
  Do not set the `minFrameRate` parameter to a value greater than `frameRate`. The default value of `minFrameRate` is experiment verified and can satisfy most use scenarios. We do not recommend changing it.
 - If you do not need to set the video profile after joining the channel, you can call the `SetVideoEncoderConfiguration` method before the `EnableVideo` method to reduce the render time of the first video frame.
 - The Agora Unity SDK may adjust the parameters under poor network conditions. 
--  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/structagora__gaming__rtc_1_1_video_encoder_configuration.html#ae2fee92452a1914df68ec9a07a7938a5).
+-  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Video/API%20Reference/unity/structagora__gaming__rtc_1_1_video_encoder_configuration.html#ae2fee92452a1914df68ec9a07a7938a5).
 - For better video quality during a live broadcast, a stable network connection is recommended.
 - Setting parameters in the `SetVideoEncoderConfiguration` method may affect your bill. For more information, see [Pricing and Billing](https://docs.agora.io/en/faq/video_billing).
 
