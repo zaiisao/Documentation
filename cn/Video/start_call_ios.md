@@ -124,11 +124,16 @@ end
 
 根据场景需要，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
 
+<% if (product == "audio") { %>
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
-
-<% if (product == "video") { %>| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |<% } %>
+<% } if (product == "video") { %>
+| Key | Type | Value |
+| ---------------- | ---------------- | ---------------- |
+| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
+| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
+<% } %>
 
 **添加前**：
  
