@@ -118,8 +118,8 @@ end
 
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
-| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
-| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
+| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a call。      |
+| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a call。      |
 
 
 **添加前**：
