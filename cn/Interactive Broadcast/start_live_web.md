@@ -18,7 +18,7 @@ updatedAt: Wed Mar 18 2020 07:01:12 GMT+0800 (CST)
 
 如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
 
-<video src="https://web-cdn.agora.io/docs-files/1584514830714" poster="https://web-cdn.agora.io/docs-files/1583378147542"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+<video src="https://web-cdn.agora.io/docs-files/1584514830714" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 <div class="alert note">视频中展示的 UI 有部分调整更新，请以当前最新版为准。</div>
 
