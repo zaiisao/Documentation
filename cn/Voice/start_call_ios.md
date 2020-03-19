@@ -124,11 +124,11 @@ end
 
 **添加前**：
  
-![](https://web-cdn.agora.io/docs-files/1568800234558)
+![](https://web-cdn.agora.io/docs-files/1584604864457)
  
 **添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1568800240596)  
+ ![](https://web-cdn.agora.io/docs-files/1584604886884) 
 
 ## 实现音视频通话
 
