@@ -3,7 +3,7 @@
 title: 设置合流布局
 description: 
 platform: Linux
-updatedAt: Fri Jan 17 2020 08:53:31 GMT+0800 (CST)
+updatedAt: Thu Mar 19 2020 10:26:35 GMT+0800 (CST)
 ---
 # 设置合流布局
 ## 功能描述
@@ -174,7 +174,7 @@ small 1 - small 16 依次显示在画布右侧, 且不会覆盖 Large 画面。�
 
 #### 开始录制时自定义合流布局
 
-获取 resource ID 后，调用 [start](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法开始录制时在 `clientRequest` 中传入 `mixedVideoLayout` 和 `layoutConfig` 参数。这两个参数的具体位置如下。详见 start 方法的 HTTP [请求示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#start-请求示例)。
+获取 resource ID 后，调用 [start](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/start) 方法开始录制时在 `clientRequest` 中传入 `mixedVideoLayout` 和 `layoutConfig` 参数。这两个参数的具体位置如下。
 
 ```
 Body:
@@ -265,7 +265,7 @@ Body:
 
 #### 录制过程中更新合流布局
 
-在录制过程中，如果频道中的用户数量、大小流或用户角色发生变化，你可以随时调用 `updateLayout` 方法更新录制合流布局。详见 [`updateLayout`](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#a-nameupdatea%E6%9B%B4%E6%96%B0%E5%90%88%E6%B5%81%E5%B8%83%E5%B1%80%E7%9A%84-api) 的参数介绍、完整请求和响应示例。
+在录制过程中，如果频道中的用户数量、大小流或用户角色发生变化，你可以随时调用 `updateLayout` 方法更新录制合流布局。详见 [`updateLayout`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/updateLayout) 的参数介绍、完整请求和响应示例。
 
 需要注意的是，调用该方法传入参数会覆盖原来的布局设置。举例来说，如果你在开始录制时设置了 `backgroundColor` 为 "#FF0000"（红色），调用该方法更新合流布局时如果不设置 `backgroundColor` 参数，背景色会变为默认值黑色。
 

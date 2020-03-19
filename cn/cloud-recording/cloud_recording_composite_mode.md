@@ -3,7 +3,7 @@
 title: 合流录制
 description: 描述如何设置参数以进行合流录制
 platform: All Platforms
-updatedAt: Fri Mar 06 2020 08:40:48 GMT+0800 (CST)
+updatedAt: Thu Mar 19 2020 10:28:19 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
@@ -21,7 +21,7 @@ updatedAt: Fri Mar 06 2020 08:40:48 GMT+0800 (CST)
 
 ## 实现方法
 
-在调用 [start](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法时，将 `mode` 参数设置为 `mix`，即可启用合流模式。
+在调用 [start](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/start) 方法时，将 `mode` 参数设置为 `mix`，即可启用合流模式。
 
 根据录制内容的不同，录制生成的文件如下表所示：
 

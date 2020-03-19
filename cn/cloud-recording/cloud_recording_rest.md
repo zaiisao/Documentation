@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Mar 05 2020 07:21:20 GMT+0800 (CST)
+updatedAt: Thu Mar 19 2020 10:17:28 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -22,7 +22,7 @@ Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，
 
 | 查询状态                                                     | 回调服务                                         |
 | ------------------------------------------------------------ | ------------------------------------------------ |
-| 调用 [`query`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法即可查询 | 需配置用于接收回调的 HTTP 服务器，并单独开通服务 |
+| 调用 [`query`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/query) 方法即可查询 | 需配置用于接收回调的 HTTP 服务器，并单独开通服务 |
 | 需主动查询，无法保证及时性                                   | 事件发生时及时通知                               |
 | 仅提供 M3U8 文件名和录制的状态                               | 提供云端录制所有的事件通知和具体信息             |
 
@@ -68,47 +68,41 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 **获取 resource ID**
 
-在开始录制前，必须调用 [`acquire`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法请求一个用于云端录制的 resource ID。
+在开始录制前，必须调用 [`acquire`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/acquire) 方法请求一个用于云端录制的 resource ID。
 
 调用该方法成功后，你可以从 HTTP 响应包体中的 `resourceId` 字段得到一个 resource ID。这个 resource ID 的时效为 5 分钟，你需要在 5 分钟内用这个 resource ID 开始录制。
 
 > 一个 resource ID 仅可用于一次录制。
 
-该方法的请求和响应示例详见 [`acquire` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#acquire-请求示例)。
 
 **加入频道**
 
-获得 resource ID 后，在五分钟內调用 [`start`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法加入频道开始录制。 
+获得 resource ID 后，在五分钟內调用 [`start`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/start) 方法加入频道开始录制。 
 
 <div class="alert warning">云端录制不支持 String 用户名（User Account）。请确保频道内所有用户均使用整型 UID。同时，在调用 <code>start</code> 方法时，请确保 <code>uid</code> 字段引号内为整型 UID。</div>
 
 调用该方法成功后，你可以从 HTTP 响应包体中获得一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
 
-该方法的请求和响应示例详见 [`start` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#start-请求示例)。
-
 ### 查询录制状态
 
-录制过程中，你可以多次调用 [`query`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法查询录制的状态。
+录制过程中，你可以多次调用 [`query`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/query) 方法查询录制的状态。
 
 调用该方法成功后，你可以从 HTTP 响应包体中获得录制生成的[索引文件](#m3u8)和当前录制的状态。
 
-该方法的请求和响应示例详见 [`query` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#query-请求示例)。
 
 ### 更新合流布局
 
-录制过程中，你可以多次调用 [`updateLayout`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法设置或更新合流布局。详见[设置合流布局](https://docs.agora.io/cn/cloud-recording/cloud_recording_layout?platform=Linux)。
+录制过程中，你可以多次调用 [`updateLayout`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/updateLayout) 方法设置或更新合流布局。详见[设置合流布局](https://docs.agora.io/cn/cloud-recording/cloud_recording_layout?platform=Linux)。
 
-该方法的请求和响应示例详见 [`updateLayout` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#updatelayout-请求示例)。
 
 ### 停止录制
 
-调用  [`stop`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法停止录制。
+调用  [`stop`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/stop) 方法停止录制。
 
 > 当频道空闲（无用户）超过预设时间（默认为 30 秒） 后，云端录制也会自动退出频道停止录制。
 
 调用该方法成功后，你可以从 HTTP 响应包体中获得录制生成的[索引文件](#m3u8)和当前录制上传的状态。
 
-该方法的请求和响应示例详见 [`stop` 示例](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#stop-请求示例)。
 
 ## 上传和管理录制文件
 
@@ -118,7 +112,7 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 录制 ID 是录制的唯一标识，每一次云端录制对应一个录制 ID。
 
-通过 [`start`](../../cn/cloud-recording/cloud_recording_api_rest.md) 请求成功开始录制后，你可以在响应中获取录制 ID（`sid`），所有的回调中也都包含录制 ID。
+通过 `start` 请求成功开始录制后，你可以在响应中获取录制 ID（`sid`），所有的回调中也都包含录制 ID。
 
 ### <a name="m3u8"></a>录制文件索引
 
