@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 02 2020 09:13:31 GMT+0800 (CST)
+updatedAt: Wed Mar 18 2020 09:24:09 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -18,6 +18,7 @@ updatedAt: Mon Mar 02 2020 09:13:31 GMT+0800 (CST)
 
 - Native SDK，包括 Android、iOS、macOS 和 Windows 平台。
 - Electron SDK，包括 macOS 和 Windows 平台。
+- Unity SDK。
 - Web SDK。
 - 微信小程序 SDK。
 

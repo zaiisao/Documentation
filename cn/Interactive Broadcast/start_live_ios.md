@@ -74,6 +74,16 @@ end
 
 2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
 3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。
+<% if (product == "audio") { %>
+	- Accelerate.framework
+	- AudioToolbox.framework
+	- AVFoundation.framework
+	- CoreMedia.framework
+	- CoreTelephony.framework
+	- libc++.tbd
+	- libresolv.tbd
+	- SystemConfiguration.framework
+<% } if (product == "video") { %>
 	- Accelerate.framework
 	- AudioToolbox.framework
 	- AVFoundation.framework
@@ -86,6 +96,7 @@ end
 	- VideoToolbox.framework
 
  <div class="alert note">如需支持 iOS 11.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
+ <% } %>
  
 4. 添加 **AgoraRtcKit.framework** 库。
  - 如果你集成的是静态库，在 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单中，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件并打开。
@@ -100,8 +111,8 @@ end
  ![](https://web-cdn.agora.io/docs-files/1583329439410)
  
  **静态库添加后**：
- 
- ![](https://web-cdn.agora.io/docs-files/1583329456927)
+
+<% if (product == "audio") { %> ![](https://web-cdn.agora.io/docs-files/1583329456927) <% } if (product == "video") { %> ![](https://web-cdn.agora.io/docs-files/1583329456927)  <% } %>
  
  **动态库添加前**：
  
@@ -109,8 +120,7 @@ end
  
  **动态库添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1583329540790)
-
+<% if (product == "audio") { %> ![](https://web-cdn.agora.io/docs-files/1583329540790) <% } if (product == "video") { %> ![](https://web-cdn.agora.io/docs-files/1583329540790)  <% } %>
 
 ### 添加媒体设备权限
 
@@ -119,7 +129,8 @@ end
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
-| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
+
+<% if (product == "video") { %>| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |<% } %>
 
 **添加前**：
  
@@ -127,7 +138,7 @@ end
  
 **添加后**：
  
-![](https://web-cdn.agora.io/docs-files/1568800240596)
+<% if (product == "audio") { %> ![](https://web-cdn.agora.io/docs-files/1568800240596) <% } if (product == "video") { %> ![](https://web-cdn.agora.io/docs-files/1568800240596)  <% } %>
 
 ## 实现互动直播
 
