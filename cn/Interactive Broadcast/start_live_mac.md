@@ -74,7 +74,7 @@ Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-macOS-Obje
 2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
 3. 当集成静态库时，打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。其中，**AgoraRtcKit.framework** 还需点击 **Add Other…**，找到本地文件并添加。
 
-	- AgoraRtcKit.framework
+  - AgoraRtcKit.framework
   - Accelerate.framework
   - CoreWLAN.framework
   - libc++.tbd
