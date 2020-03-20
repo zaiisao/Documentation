@@ -17,7 +17,7 @@ The Agora Unity SDK supports recording the audio of all the users in a channel a
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Interactive%20Broadcast/start_call_audio_unity.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_audio_unity.md) for details.
+Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Voice/start_call_audio_unity.md) or [Start a Live Broadcast](../../en/Voice/start_live_audio_unity.md) for details.
 
 To start audio recording, call the `StartAudioRecording` method after joining a channel.
 
@@ -38,8 +38,8 @@ mRtcEngine.StopAudioRecording();
 
 ### API reference
 
-- [`StartAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a077834840aee46f9fb8352e0a810bf1a)
-- [`StopAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a69e3ff25b224e257a5a37aa7532b7d35)
+- [`StartAudioRecording`](https://docs.agora.io/en/Voice/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a077834840aee46f9fb8352e0a810bf1a)
+- [`StopAudioRecording`](https://docs.agora.io/en/Voice/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a69e3ff25b224e257a5a37aa7532b7d35)
 
 ## Considerations
 

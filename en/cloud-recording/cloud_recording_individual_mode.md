@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 17 2019 10:37:07 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 04:01:46 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
@@ -23,7 +23,7 @@ See [Differences between individual recording mode and composite recording mode]
 
 ## Implementation
 
-To enable individual recording mode, set `mode` to `individual` when calling [`start`](../../en/cloud-recording/cloud_recording_api_rest.md).
+To enable individual recording mode, set `mode` to `individual` when calling [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start).
 
 In individual recording mode, the audio and video profiles of the recording file are as follows:
 

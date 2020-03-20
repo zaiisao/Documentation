@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: iOS
-updatedAt: Wed Mar 04 2020 13:06:03 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 05:58:41 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for iOS.
@@ -337,7 +337,7 @@ func leaveChannel() {
 ```
 
 ### Sample code
-You can find the sample code logic in the [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora%20iOS%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m)/[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora%20iOS%20Tutorial/VideoChatViewController.swift) file in the Agora-iOS-Tutorial-Objective-C-1to1/Agora-iOS-Tutorial-Swift-1to1  demo project.
+You can find the sample code logic in the [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora-iOS-Tutorial-Objective-C/VideoChatViewController.m)/[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora-iOS-Tutorial/VideoChatViewController.swift) file in the Agora-iOS-Tutorial-Objective-C-1to1/Agora-iOS-Tutorial-Swift-1to1  demo project.
 
 ## Run the project
 Run the project on your iOS device. You can see both the local and remote video views when you successfully start a one-to-one video call in the app.

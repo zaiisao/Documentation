@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Fri Jan 17 2020 08:51:21 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 03:40:30 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview
@@ -23,7 +23,7 @@ This release improves the availability of the cloud recording service. When a se
 
 **API Changes**
 
-In the `acquire` method, adds the [`resourceExpiredHour`](../../en/cloud-recording/cloud_recording_api_rest.md) parameter for setting the time limit for all cloud recording method calls.
+In the [`acquire`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/acquire) method, adds the `resourceExpiredHour` parameter for setting the time limit for all cloud recording method calls.
 
 Adds the [`session_exit`](../../en/cloud-recording/cloud_recording_callback_rest.md) event, which reports the exit status of the cloud recording service.
 

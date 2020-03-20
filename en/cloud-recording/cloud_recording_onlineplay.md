@@ -3,7 +3,7 @@
 title: Play Recorded Files Online
 description: 
 platform: All Platforms
-updatedAt: Wed Jan 22 2020 05:38:22 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 05:33:12 GMT+0800 (CST)
 ---
 # Play Recorded Files Online
 ## Introduction
@@ -14,7 +14,7 @@ The Agora server automatically uploads the recorded files in TS format to the cl
 
 ## Implementation
 
-Before you start, ensure that all the recorded files are uploaded (the `uploadingStatus` in the response of [`stop`](../../en/cloud-recording/cloud_recording_api_rest.md) is `"uploaded"`).
+Before you start, ensure that all the recorded files are uploaded (the `uploadingStatus` in the response of [`stop`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/stop) is `"uploaded"`).
 
 We use [Amazon S3](https://aws.amazon.com/s3/) as an example to show you how to play the recorded files online.
 
@@ -60,5 +60,5 @@ See [How to Serve HLS Video from an S3 Bucket](http://hlsbook.net/how-to-serve-h
 
 - The M3U8 file can be played directly on Safari. For other web browsers, you might need to install an HLS playback extension.
 - You can also play the M3U8 file on players supporting HLS, such as the VLC media player.
-- If the `uploadingStatus` in the response of [`stop`](../../en/cloud-recording/cloud_recording_api_rest.md) is `"backuped"`, it indicates that some of the recorded files are uploaded to Agora's backup cloud storage. You should wait until these files are uploaded automatically to your cloud storage before playing the M3U8 file.
+- If the `uploadingStatus` in the response of [`stop`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/stop) is `"backuped"`, it indicates that some of the recorded files are uploaded to Agora's backup cloud storage. You should wait until these files are uploaded automatically to your cloud storage before playing the M3U8 file.
 - If you do not need to play the recorded files online, we suggest that you make your bucket private to improve security.

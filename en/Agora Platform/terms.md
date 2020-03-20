@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 02 2020 09:14:18 GMT+0800 (CST)
+updatedAt: Wed Mar 18 2020 09:23:34 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -17,6 +17,7 @@ We refer to all the Agora SDKs that enable real-time communication as the RTC SD
 
 - Native SDK, including the Android, iOS, macOS, and Windows SDK.
 - Electron SDK, including the macOS and Windows SDK.
+- Unity SDK.
 - Web SDK.
 
 ### Agora Console

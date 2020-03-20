@@ -2,8 +2,8 @@
 ---
 title: Set Video Layout
 description: v1
-platform: Linux,All Platforms
-updatedAt: Fri Dec 20 2019 04:09:15 GMT+0800 (CST)
+platform: All Platforms
+updatedAt: Fri Mar 20 2020 03:57:12 GMT+0800 (CST)
 ---
 # Set Video Layout
 ## Overview
@@ -33,7 +33,7 @@ The Agora Cloud Recording Service provides the following predefined layout types
 
 ### Implementation
 
-Set the `mixedVideoLayout` parameter in `transcodingConfig` as 0 (floating layout), 1 (best fit layout), or 2 (vertical layout) when calling the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) or [`updateLayout`](../../en/cloud-recording/cloud_recording_api_rest.md) method.
+Set the `mixedVideoLayout` parameter in `transcodingConfig` as 0 (floating layout), 1 (best fit layout), or 2 (vertical layout) when calling the [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start) or [`updateLayout`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/updateLayout) method.
 
 > If you set the `mixedVideoLayout` parameter as 0, 1, or 2, do not pass in the `layoutConfig` parameter.
 
@@ -121,7 +121,7 @@ In this layout, one large region is displayed on the left edge of the screen, an
 
 Therefore, when you start cloud recording, you must specify a uid, whose region is displayed on the left edge of the screen in a large size.  
 
-To specify a uid, set the `maxResolutionUid` parameter when calling the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) or [`updateLayout`](../../en/cloud-recording/cloud_recording_api_rest.md) method.
+To specify a uid, set the `maxResolutionUid` parameter when calling the [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start) or [`updateLayout`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/updateLayout) method.
 
 Sample code:
 ```
@@ -176,7 +176,7 @@ You can customize the video layout by setting the size and position of each user
 
 #### Customize the video layout when starting recording
 
-Set `mixedVideoLayout` as 3 (customized layout) and pass in the `layoutConfig` parameter when calling the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) method to start the recording.
+Set `mixedVideoLayout` as 3 (customized layout) and pass in the `layoutConfig` parameter when calling the [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start) method to start the recording.
 
 ```
 Body:
@@ -261,7 +261,7 @@ The following figure shows the layout of the sample code:
 
 #### Update the customized layout during a recording
 
-During a recording, you can call the [`updateLayout`](../../en/cloud-recording/cloud_recording_api_rest.md) method to update the video mixing layout multiple times.
+During a recording, you can call the [`updateLayout`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/updateLayout) method to update the video mixing layout multiple times.
 
 To update a customized layout, set the `mixedVideoLayout` parameter as 3 (customized layout), and populate `layoutConfig`.
 
@@ -300,4 +300,4 @@ Sample code:
 
 ## <a name="canvas_color"></a>Set the canvas color
 
-To set the color of the canvas, set the `backgroundColor` parameter when calling the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) or [`updateLayout`](../../en/cloud-recording/cloud_recording_api_rest.md) method. Fill in an RGB hex value starting with a "#". The default value is "#000000", the black color.
+To set the color of the canvas, set the `backgroundColor` parameter when calling the [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start) or [`updateLayout`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/updateLayout) method. Fill in an RGB hex value starting with a "#". The default value is "#000000", the black color.

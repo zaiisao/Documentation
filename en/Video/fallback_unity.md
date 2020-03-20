@@ -13,7 +13,7 @@ The audio and video quality of a live broadcast or a video call deteriorates und
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast or call in your project. See [Start a Video Call](../../en/Interactive%20Broadcast/start_call_unity.md) or [Start a Video Broadcast](../../en/Interactive%20Broadcast/start_live_unity.md) for details.
+Before proceeding, ensure that you implement a basic live broadcast or call in your project. See [Start a Video Call](../../en/Video/start_call_unity.md) or [Start a Video Broadcast](../../en/Video/start_live_unity.md) for details.
 
 Refer to the following steps to set the stream fallback under poor network conditions:
 
@@ -45,9 +45,9 @@ mRtcEngine.SetRemoteSubscribeFallbackOption(STREAM_FALLBACK_OPTIONS.STREAM_FALLB
 
 ### API reference
 
-- [`EnableDualStreamMode`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a2ed16751006195361282bf82edbeccde)
-- [`SetLocalPublishFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ad4e6fc7e4f6d226a729af6cd98f049bb)
-- [`SetRemoteSubscribeFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ae8c98153bac5c94f05cd08ccf9c1cceb)
-- [`OnLocalPublishFallbackToAudioOnlyHandler`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/namespaceagora__gaming__rtc.html#a2332869b4b21af5c29939c444ffc106a)
-- [`OnRemoteSubscribeFallbackToAudioOnlyHandler`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/namespaceagora__gaming__rtc.html#a1579ffe847479f2a4963ec2cdb670df1)
-- [`OnRemoteVideoStatsHandler`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/namespaceagora__gaming__rtc.html#a4a0e9e6402f4e279446a0e048423e30d)
+- [`EnableDualStreamMode`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a2ed16751006195361282bf82edbeccde)
+- [`SetLocalPublishFallbackOption`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ad4e6fc7e4f6d226a729af6cd98f049bb)
+- [`SetRemoteSubscribeFallbackOption`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ae8c98153bac5c94f05cd08ccf9c1cceb)
+- [`OnLocalPublishFallbackToAudioOnlyHandler`](https://docs.agora.io/en/Video/API%20Reference/unity/namespaceagora__gaming__rtc.html#a2332869b4b21af5c29939c444ffc106a)
+- [`OnRemoteSubscribeFallbackToAudioOnlyHandler`](https://docs.agora.io/en/Video/API%20Reference/unity/namespaceagora__gaming__rtc.html#a1579ffe847479f2a4963ec2cdb670df1)
+- [`OnRemoteVideoStatsHandler`](https://docs.agora.io/en/Video/API%20Reference/unity/namespaceagora__gaming__rtc.html#a4a0e9e6402f4e279446a0e048423e30d)

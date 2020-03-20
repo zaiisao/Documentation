@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 13:03:46 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 07:47:46 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic voice/video call demo with the Agora SDK for macOS.
@@ -67,16 +67,17 @@ Choose either of the following methods to integrate the Agora SDK into your proj
   <div class="alert note">As of v3.0.0, the downloaded SDK package includes both the static library and the dynamic library. The name suffix of the SDK with dynamic library is Dynamic. </div>
 	
 2. Copy the **AgoraRtcEngineKit.framework** file in the **libs** folder to the project folder.
-3. In **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. 
-	- Accelerate.framework
-	- CoreWLAN.framework
-	- libc++.tbd
-	- libresolv.9.tbd
-	- SystemConfiguration.framework
-	- VideoToolbox.framework
-4. Add the **AgoraRtcKit.framework** library.
-  - If you integrate the SDK with the static library, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, click **Add Other...** after clicking **+**.
-  - If you integrate the SDK with the dynamic library, go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+**, and change the file status as **Embed & Sign**.
+3. When integrate the static library, open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. For adding **AgoraRtcKit.framework**, you also need to click **Add Other...** after clicking **+**.
+
+ - AgoraRtcKit.framework
+  - Accelerate.framework
+  - CoreWLAN.framework
+  - libc++.tbd
+  - libresolv.9.tbd
+  - SystemConfiguration.framework
+  - VideoToolbox.framework
+ 
+4. When integrate the dynamic library, open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add **AgoraRtcKit.framework**. Once added, the project automatically links to other system libraries.
   <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
 
 <div class="alert note">As of v3.0.0, the library name changes from <b>AgoraRtcEngineKit.framework</b> to <b>AgoraRtcKit.framework</b>. To upgrade your SDK to v3.0.0, refer to the following steps to re-integrate the SDK:<ul><li>Open Xcode, remove <b>AgoraRtcEngineKit.framework</b> from the Navigator.<li>Click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, click <b>-</b> to remove AgoraRtcEngineKit.framework.<li> If you integrate the SDK with the static library, click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, and click <b>+</b> to add AgoraRtcKit.framework instead.<br>If you integrate the SDK with the dynamic library, click <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b>, click <b>+</b> to add AgoraRtcKit.framework instead, and change the status of <b>AgoraRtcKit.framework</b> to <b>Embed & Sign</b>. </br></div>
@@ -87,7 +88,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
  
  **After integrating the static library**：
  
- ![](https://web-cdn.agora.io/docs-files/1583330337251)
+  ![](https://web-cdn.agora.io/docs-files/1583329456927)  
  
  **Before integrating the dynamic library**：
  
@@ -95,7 +96,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
  
  **After integrating the dynamic library**：
  
- ![](https://web-cdn.agora.io/docs-files/1583330361967)
+ ![](https://web-cdn.agora.io/docs-files/1584688978762)
 
 ### Add project permissions
 
@@ -103,8 +104,9 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
-| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video call.      |
-| Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
+| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a call.      |
+| Privacy - Camera Usage Description      | String      | To access the camera, such as for a call.      |
+
 
 **Before**:
 
@@ -112,7 +114,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 **After**:
 
-![](https://web-cdn.agora.io/docs-files/1568800897225)
+ ![](https://web-cdn.agora.io/docs-files/1584604886884) 
 
 2. If you enable the **App Sandbox** or **Hardened Runtime** settings in your project, check the following items to add the corresponding permissions:
 
@@ -145,8 +147,9 @@ Choose either of the following methods to integrate the Agora SDK into your proj
     <tr>
         <td>Audio Input</td>
 </table>
+ 
 
-<div class="alert note"><li>According to the requirements of Apple: <ul><li>Mac software distributed in the Mac App Store must enable the <b>App Sandbox</b> setting. See details in <a href="https://developer.apple.com/app-sandboxing/">Apple News and Updates</a>.<li>Mac software distributed outside the Mac App Store must enable the <b>Hardened Runtime</b> setting. See details in <a href="https://developer.apple.com/news/?id=09032019a">Apple News and Updates</a>.</li></ul><li>The <b>Hardened Runtime</b>’s library validation prevents an app from loading frameworks, plug-ins, or libraries unless they’re either signed by Apple or signed with the same team ID as the app. When you face with problems such as failure to enumerate the virtual camera, check <b>Hardened Runtime -> Runtime Exceptions -> Disable Library Validation</b> to disable the library validation.</li></div>
+<div class="alert note"><li>According to the requirements of Apple: <ul><li>Mac software distributed in the Mac App Store must enable the <b>App Sandbox</b> setting. See details in <a href="https://developer.apple.com/app-sandboxing/">Apple News and Updates</a>.<li>Mac software distributed outside the Mac App Store must enable the <b>Hardened Runtime</b> setting. See details in <a href="https://developer.apple.com/news/?id=09032019a">Apple News and Updates</a>.</li></ul><li>The <b>Hardened Runtime</b>’s library validation prevents an app from loading frameworks, plug-ins, or libraries unless they’re either signed by Apple or signed with the same team ID as the app. When you face with problems such as failure to enumerate the virtual camera, check <b>Hardened Runtime -> Runtime Exceptions -> Disable Library Validation</b> to disable the library validation. </li></div>
 
 ## Implement the basic call
 
@@ -366,7 +369,7 @@ func leaveChannel() {
 ```
 
 ### Sample code
-You can find the sample code logic in the [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora%20Mac%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m)/[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora%20Mac%20Tutorial%20Swift/VideoChat/VideoChatViewController.swift) file in the Agora-macOS-Tutorial-Objective-C-1to1/Agora-macOS-Tutorial-Swift-1to1 demo project.
+You can find the sample code logic in the [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora-Mac-Tutorial-Objective-C/VideoChatViewController.m)/[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora-Mac-Tutorial-Swift/VideoChatViewController.swift) file in the Agora-macOS-Tutorial-Objective-C-1to1/Agora-macOS-Tutorial-Swift-1to1 demo project.
 
 ## Run the project
 Run the project on your macOS device. You can see both the local and remote video views when you successfully start a one-to-one video call in the app.

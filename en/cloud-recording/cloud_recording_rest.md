@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Dec 23 2019 04:25:10 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 03:44:21 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
@@ -23,7 +23,7 @@ The Agora Cloud Recording RESTful APIs provide a callback service. After enablin
 
 | Recording status query                                       | Callback service                                         |
 | :----------------------------------------------------------- | :------------------------------------------------------- |
-| Call the [`query`](https://docs-preview.agoralab.co/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#query) method to get the status. | Configure an HTTP server and enable the callback service. |
+| Call the [`query`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/query) method to get the status. | Configure an HTTP server and enable the callback service. |
 | You need to request for the status update.                   | You are notified when an event occurs.                   |
 | Provides only the M3U8 filename and the recording status.    | Provides notifications about all events with details.        |
 
@@ -69,47 +69,42 @@ The following figure shows the API call sequence of a cloud recording.
 
 **Get a resource ID**
 
-Call the [`acquire`](../../en/cloud-recording/cloud_recording_api_rest.md) method to request a resource ID for cloud recording. 
+Call the [`acquire`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/acquire) method to request a resource ID for cloud recording. 
 
 If this method call succeeds, you get a resource ID (`resourceId`) from the HTTP response body. The resource ID is valid for five minutes, so you need to start recording with this resource ID within five minutes.
 
 > One resource ID can only be used for one recording session.
 
-See the [`acquire` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
 **Join a channel**
 
-Call the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) method within five minutes after getting the resource ID to join a channel and start the recording. 
+Call the [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start) method within five minutes after getting the resource ID to join a channel and start the recording. 
 
 <div class="alert warning"> Agora Cloud Recording does not support string usernames (User Accounts). Ensure that every user in the channel has an integer UID. When you call the start method, ensure that the UID in the quotation marks is an integer UID, too.</div>
 
 If this method call succeeds, you get a recording ID (`sid`) from the HTTP response body.
 
-See the [`start` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
 ### Query recording status
 
-During the recording, you can call the [`query`](../../en/cloud-recording/cloud_recording_api_rest.md) method to check the recording status multiple times.
+During the recording, you can call the [`query`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/query) method to check the recording status multiple times.
 
 If this method call succeeds, you get the M3U8 filename and the current recording status from the HTTP response body.
 
-See the [`query` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
 ### Update video layout
 
-During the recording, you can call the [`updateLayout`](../../en/cloud-recording/cloud_recording_api_rest.md)  method to set or update the video layout. See [Set Video Layout](https://docs.agora.io/en/cloud-recording/cloud_layout_guide?platform=Linux) for details.
+During the recording, you can call the [`updateLayout`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/updateLayout)  method to set or update the video layout. See [Set Video Layout](../../en/cloud-recording/cloud_recording_layout.md) for details.
 
-See the [`updateLayout` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
 ### Stop recording
 
-Call the [`stop`](../../en/cloud-recording/cloud_recording_api_rest.md) method to stop the recording.
+Call the [`stop`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/stop) method to stop the recording.
 
 > Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default.
 
 If this method call succeeds, you get the M3U8 filename and the current uploading status from the HTTP response body.
 
-See the [`stop` examples](../../en/cloud-recording/cloud_recording_api_rest.md) for the request and response examples.
 
 ## Upload and manage the recorded files
 
@@ -119,7 +114,7 @@ After the recording starts, the Agora server automatically splits the recorded c
 
 The recording ID is the unique identification of a recording. Each cloud recording session has a unique recording ID.
 
-After starting the recording with the [`start`](../../en/cloud-recording/cloud_recording_api_rest.md) request, you can get the recording ID from its response. You can also get the recording ID from any of the callbacks.
+After starting the recording with the `start` request, you can get the recording ID from its response. You can also get the recording ID from any of the callbacks.
 
 ### <a name="m3u8"></a>Playlist of the recorded files
 

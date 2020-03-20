@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 13 2020 03:30:44 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 04:02:03 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
@@ -23,7 +23,7 @@ See [Differences between individual recording mode and composite recording mode]
 
 ## Implementation
 
-To enable composite recording mode, set `mode` to `mix` when calling [`start`](../../en/cloud-recording/cloud_recording_api_rest.md).
+To enable composite recording mode, set `mode` to `mix` when calling [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start).
 
 Based on the setting of `streamTypes`, the recorded files are as follows:
 
