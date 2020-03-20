@@ -70,16 +70,25 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
   <div class="alert note">自 3.0.0 版本起，下载的 SDK 内包含静态库包和动态库包，其中动态库包名后缀为 Dynamic。</div>
 
 2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
-3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。
+3. 当集成静态库时，打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。其中，**AgoraRtcKit.framework** 还需点击 **Add Other…**，找到本地文件并添加。
+<% if (product == "audio") { %>
+	- AgoraRtcKit.framework
+  - Accelerate.framework
+  - CoreWLAN.framework
+  - libc++.tbd
+  - libresolv.9.tbd
+  - SystemConfiguration.framework
+<% } if (product == "video") { %>
+	- AgoraRtcKit.framework
   - Accelerate.framework
   - CoreWLAN.framework
   - libc++.tbd
   - libresolv.9.tbd
   - SystemConfiguration.framework
   - VideoToolbox.framework
-4. 添加 **AgoraRtcKit.framework** 库。
- - 如果你集成的是静态库，在 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单中，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件并打开。
- - 如果你集成的是动态库，进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开，并将文件状态改为 **Embed & Sign**。
+ <% } %>
+
+4. 当集成动态库时，打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开。添加完成后，项目会自动链接其他系统库。
 
   <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
@@ -92,7 +101,7 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
  
  **静态库添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1583330337251)
+ <% if (product == "audio") { %> ![](https://web-cdn.agora.io/docs-files/1584604823800) <% } if (product == "video") { %> ![](https://web-cdn.agora.io/docs-files/1583329456927)  <% } %>
  
  **动态库添加前**：
  
@@ -100,16 +109,22 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
  
  **动态库添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1583330361967)
+ ![](https://web-cdn.agora.io/docs-files/1584688978762)
 
 ### 添加媒体设备权限
 
 1. 根据场景需要，打开 **Xcode** ，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
 
+<% if (product == "audio") { %>
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
-| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
-| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
+| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a call。      |
+<% } if (product == "video") { %>
+| Key | Type | Value |
+| ---------------- | ---------------- | ---------------- |
+| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a call。      |
+| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a call。      |
+<% } %>
 
 **添加前**：
  
@@ -117,10 +132,34 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
  
 **添加后**：
  
-![](https://web-cdn.agora.io/docs-files/1568801004827)
+<% if (product == "audio") { %> ![](https://web-cdn.agora.io/docs-files/1584604875770) <% } if (product == "video") { %> ![](https://web-cdn.agora.io/docs-files/1584604886884) <% } %>
 
 2. 若你的项目已启用 **App Sandbox** 或 **Hardened Runtime** 设置，则需勾选如下内容，获取相应的设备权限：
-
+<% if (product == "audio") { %> 
+<table>
+    <tr>
+        <td><b>菜单</b></td>
+        <td><b>类型</b></td>
+        <td><b>内容</b></td>
+    </tr>
+    <tr>
+        <td rowspan="3">App Sandbox</td>
+        <td rowspan="2">Network</td>
+        <td>Incoming Connections (Server)</td>
+    </tr>
+    <tr>
+        <td>Incoming Connections (Client)</td>
+    </tr>
+	    <tr>
+        <td >Hardware</td>
+        <td>Audio Input</td>
+    </tr>
+	<tr>
+        <td rowspan="2">Hardened Runtime</td>
+        <td>Resource Access</td>
+        <td>Audio Input</td>
+</table>
+<% } if (product == "video") { %>
 <table>
     <tr>
         <td><b>菜单</b></td>
@@ -150,7 +189,8 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
     <tr>
         <td>Audio Input</td>
 </table>
-
+ <% } %>
+ 
 <div class="alert note"><li>根据 Apple 官方要求：<ul><li>对于在 Mac App Store 发布的软件，需要启用 <b>App Sandbox</b> 设置。详见 <a href="https://developer.apple.com/app-sandboxing/">Apple 官方声明</a>。<li>对于不在 Mac App Store 发布的软件，需要启用 <b>Hardened Runtime</b> 设置。详见 <a href="https://developer.apple.com/news/?id=09032019a">Apple 官方声明</a>。</li></ul><li><b>Hardened Runtime</b> 设置中的 <b>Library Validation</b> 会阻止 app 加载框架、插件或库，除非框架、插件或库是由 Apple 或是与 app 相同的团队 ID 签名的。当遇到需要取消该安全限制的场景（例如无法枚举到第三方虚拟摄像头）时，请勾选 <b>Hardened Runtime -> Runtime Exceptions -> Disable Library Validation</b>。</li></div>
 
 ## 实现音视频通话

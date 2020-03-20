@@ -71,7 +71,7 @@ updatedAt: Fri Mar 20 2020 07:13:19 GMT+0800 (CST)
 ### 当月最高日活跃用户 DAU 统计
 
 - 同一 `uid` 或 `userAccount` 当日的多次登陆只对当日 DAU 贡献一次，声网会对相同 `uid` 或 `userAccount` 的多次登陆进行去重。
-- 如果同一[Agora 开发者账户](https://console.agora.io/)下存在多个 RTM 开发项目，当月最高 DAU 为各项目当月最高 DAU 的总和。
+- 如果同一 [Agora 开发者账户](https://console.agora.io/)下存在多个 RTM 开发项目，当月最高 DAU 为各项目当月最高 DAU 的总和。
 
 
 
