@@ -3,7 +3,7 @@
 title: Start a Live Broadcast
 description: 
 platform: iOS
-updatedAt: Wed Mar 04 2020 13:05:43 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 07:57:37 GMT+0800 (CST)
 ---
 # Start a Live Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for iOS.
@@ -72,17 +72,7 @@ end
 
 2. Copy the **AgoraRtcKit.framework** file in the **libs** folder to the project folder.
 3. When integrate the static library, open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. For adding **AgoraRtcKit.framework**, you also need to click **Add Other...** after clicking **+**.
-<% if (product == "audio") { %>
-	- AgoraRtcKit.framework
-	- Accelerate.framework
-	- AudioToolbox.framework
-	- AVFoundation.framework
-	- CoreMedia.framework
-	- CoreTelephony.framework
-	- libc++.tbd
-	- libresolv.tbd
-	- SystemConfiguration.framework
-<% } if (product == "video") { %>
+
 	- AgoraRtcKit.framework
 	- Accelerate.framework
 	- AudioToolbox.framework
@@ -96,7 +86,7 @@ end
 	- VideoToolbox.framework
 
  <div class="alert note">If your device runs <b>iOS 11.0</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
- <% } %>
+ 
 
 4. When integrate the dynamic library, open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add **AgoraRtcKit.framework**. Once added, the project automatically links to other system libraries.
   <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
@@ -109,7 +99,7 @@ end
  
  **After integrating the static library**：
  
- <% if (product == "audio") { %> ![](https://web-cdn.agora.io/docs-files/1584604823800) <% } if (product == "video") { %> ![](https://web-cdn.agora.io/docs-files/1583329456927)  <% } %>
+  ![](https://web-cdn.agora.io/docs-files/1583329456927)  
  
  **Before integrating the dynamic library**：
  
@@ -122,24 +112,20 @@ end
 
 ### Add project permissions
 Add the following permissions in the **info.plist** file for device access according to your needs:
-<% if (product == "audio") { %>
-| Key | Type | Value |
-| ---------------- | ---------------- | ---------------- |
-| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a call.      |
-<% } if (product == "video") { %>
+
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a call.      |
 | Privacy - Camera Usage Description      | String      | To access the camera, such as for a call.      |
-<% } %>
+
 
 **Before**:
  
-![](https://web-cdn.agora.io/docs-files/1568801138074)
+![](https://web-cdn.agora.io/docs-files/1584604864457)
  
 **After**:
 
-<% if (product == "audio") { %> ![](https://web-cdn.agora.io/docs-files/1584604875770) <% } if (product == "video") { %> ![](https://web-cdn.agora.io/docs-files/1584604886884) <% } %>
+ ![](https://web-cdn.agora.io/docs-files/1584604886884) 
 
 ## Implement the basic broadcast
 
