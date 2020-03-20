@@ -119,7 +119,7 @@ Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-macOS-Obje
 
 **添加前**：
  
-![](https://web-cdn.agora.io/docs-files/1568800996491)
+![](https://web-cdn.agora.io/docs-files/1584691351348)
  
 **添加后**：
  

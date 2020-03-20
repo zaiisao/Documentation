@@ -117,7 +117,7 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-macO
 
 **添加前**：
  
-![](https://web-cdn.agora.io/docs-files/1568800996491)
+![](https://web-cdn.agora.io/docs-files/1584691351348)
  
 **添加后**：
  

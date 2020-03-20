@@ -110,7 +110,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 **Before**:
 
-![](https://web-cdn.agora.io/docs-files/1568800889445)
+![](https://web-cdn.agora.io/docs-files/1584691351348)
 
 **After**:
 
