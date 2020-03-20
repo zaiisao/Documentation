@@ -83,8 +83,9 @@ end
   <div class="alert note">自 3.0.0 版本起，下载的 SDK 内包含静态库包和动态库包，其中动态库包名后缀为 Dynamic。</div>
 
 2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
-3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。
+3. 当集成静态库时，打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。其中，**AgoraRtcKit.framework** 还需点击 **Add Other…**，找到本地文件并添加。
 
+	- AgoraRtcKit.framework
 	- Accelerate.framework
 	- AudioToolbox.framework
 	- AVFoundation.framework
@@ -99,9 +100,7 @@ end
  <div class="alert note">如需支持 iOS 11.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
  
  
-4. 添加 **AgoraRtcKit.framework** 库。
- - 如果你集成的是静态库，在 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单中，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件并打开。
- - 如果你集成的是动态库，进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开，并将文件状态改为 **Embed & Sign**。
+4. 当集成动态库时，打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开。添加完成后，项目会自动链接其他系统库。
 
   <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
@@ -121,7 +120,7 @@ end
  
  **动态库添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1583329540790)  
+ ![](https://web-cdn.agora.io/docs-files/1584687368456)
 
 ### 添加媒体设备权限
 
