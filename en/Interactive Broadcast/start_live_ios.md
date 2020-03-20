@@ -71,7 +71,19 @@ end
   <div class="alert note">As of v3.0.0, the downloaded SDK package includes both the static library and the dynamic library. The name suffix of the SDK with dynamic library is Dynamic. </div>
 
 2. Copy the **AgoraRtcKit.framework** file in the **libs** folder to the project folder.
-3. In **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. 
+3. When integrate the static library, open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. For adding **AgoraRtcKit.framework**, you also need to click **Add Other...** after clicking **+**.
+<% if (product == "audio") { %>
+	- AgoraRtcKit.framework
+	- Accelerate.framework
+	- AudioToolbox.framework
+	- AVFoundation.framework
+	- CoreMedia.framework
+	- CoreTelephony.framework
+	- libc++.tbd
+	- libresolv.tbd
+	- SystemConfiguration.framework
+<% } if (product == "video") { %>
+	- AgoraRtcKit.framework
 	- Accelerate.framework
 	- AudioToolbox.framework
 	- AVFoundation.framework
@@ -84,10 +96,9 @@ end
 	- VideoToolbox.framework
 
  <div class="alert note">If your device runs <b>iOS 11.0</b> or earlier, set the dependency of <b>CoreML.framework</b> as <b>Optional</b> in <b>Xcode</b>.</div>
+ <% } %>
 
-4. Add the **AgoraRtcKit.framework** library.
-  - If you integrate the SDK with the static library, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, click **Add Other...** after clicking **+**.
-  - If you integrate the SDK with the dynamic library, go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+**, and change the file status as **Embed & Sign**.
+4. When integrate the dynamic library, open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add **AgoraRtcKit.framework**. Once added, the project automatically links to other system libraries.
   <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
 
 <div class="alert note">As of v3.0.0, the library name changes from <b>AgoraRtcEngineKit.framework</b> to <b>AgoraRtcKit.framework</b>. To upgrade your SDK to v3.0.0, refer to the following steps to re-integrate the SDK:<ul><li>Open Xcode, remove <b>AgoraRtcEngineKit.framework</b> from the Navigator.<li>Click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, click <b>-</b> to remove AgoraRtcEngineKit.framework.<li> If you integrate the SDK with the static library, click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, and click <b>+</b> to add AgoraRtcKit.framework instead.<br>If you integrate the SDK with the dynamic library, click <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b>, click <b>+</b> to add AgoraRtcKit.framework instead, and change the status of <b>AgoraRtcKit.framework</b> to <b>Embed & Sign</b>. </br></div>
@@ -98,7 +109,7 @@ end
  
  **After integrating the static library**：
  
- ![](https://web-cdn.agora.io/docs-files/1583329456927)
+ <% if (product == "audio") { %> ![](https://web-cdn.agora.io/docs-files/1584604823800) <% } if (product == "video") { %> ![](https://web-cdn.agora.io/docs-files/1583329456927)  <% } %>
  
  **Before integrating the dynamic library**：
  
@@ -106,16 +117,21 @@ end
  
  **After integrating the dynamic library**：
  
- ![](https://web-cdn.agora.io/docs-files/1583329540790)
+ ![](https://web-cdn.agora.io/docs-files/1584688934447)
 
 
 ### Add project permissions
 Add the following permissions in the **info.plist** file for device access according to your needs:
-
+<% if (product == "audio") { %>
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
-| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video call.      |
-| Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
+| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a call.      |
+<% } if (product == "video") { %>
+| Key | Type | Value |
+| ---------------- | ---------------- | ---------------- |
+| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a call.      |
+| Privacy - Camera Usage Description      | String      | To access the camera, such as for a call.      |
+<% } %>
 
 **Before**:
  
@@ -123,7 +139,7 @@ Add the following permissions in the **info.plist** file for device access accor
  
 **After**:
 
-![](https://web-cdn.agora.io/docs-files/1568801129112)
+<% if (product == "audio") { %> ![](https://web-cdn.agora.io/docs-files/1584604875770) <% } if (product == "video") { %> ![](https://web-cdn.agora.io/docs-files/1584604886884) <% } %>
 
 ## Implement the basic broadcast
 
