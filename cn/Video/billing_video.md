@@ -15,7 +15,7 @@ updatedAt: Tue Dec 10 2019 00:25:14 GMT+0800 (CST)
 
 - [本地服务端录制计费说明](https://docs.agora.io/cn/Recording/billing_recording?platform=All%20Platforms)
 - [云端录制计费说明](https://docs.agora.io/cn/cloud-recording/billing_cloud_recording?platform=All%20Platforms)
-- 实时消息计费说明 
+- [实时消息计费说明](https://docs.agora.io/cn/Real-time-Messaging/billing_rtm?platform=All%20Platforms) 
 
 
 
