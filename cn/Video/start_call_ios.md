@@ -108,7 +108,7 @@ end
  
  **动态库添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1584687368456)
+ ![](https://web-cdn.agora.io/docs-files/1584688934447)
 
 ### 添加媒体设备权限
 
