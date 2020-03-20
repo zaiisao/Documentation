@@ -116,7 +116,7 @@ client.init(appId, onSuccess, onFailure);
 
 初始化客户端后，在成功的回调中调用 `join` 方法加入频道。在该方法中填入以下参数：
 
-* token：传入能标识用户角色和权限的 Token。可设为如下一个值：
+* `token`：传入能标识用户角色和权限的 Token。可设为如下一个值：
    * `NULL`
    * 临时 Token。临时 Token 服务有效期为 24 小时。你可以在控制台里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取临时-token)。
    * 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Video/token_server.md)。

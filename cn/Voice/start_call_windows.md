@@ -174,7 +174,7 @@ m_lpAgoraObject->GetEngine()->setupLocalVideo(vc);
 完成初始化和设置本地视图后（视频通话场景），你就可以调用 `joinChannel` 方法加入频道。你需要在该方法中传入如下参数：
 - `channelName`: 传入能标识频道的频道 ID。输入频道 ID 相同的用户会进入同一个频道。
 
-* token：传入能标识用户角色和权限的 Token。可设为如下一个值：
+* `token`：传入能标识用户角色和权限的 Token。可设为如下一个值：
    * `NULL`
    * 临时 Token。临时 Token 服务有效期为 24 小时。你可以在控制台里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取临时-token)。
    * 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Voice/token_server.md)。
