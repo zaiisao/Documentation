@@ -3,7 +3,7 @@
 title: 云端录制更新历史
 description: 
 platform: Linux
-updatedAt: Thu Mar 19 2020 05:55:27 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 05:27:22 GMT+0800 (CST)
 ---
 # 云端录制更新历史
 ## 简介
@@ -29,7 +29,7 @@ width: 150px;
 
 **API 变更**
 
-`acquire` 方法中新增了 [`resourceExpiredHour`](../../cn/cloud-recording/cloud_recording_api_rest.md) 参数，用于设置云端录制 RESTful API 的调用时效。
+[`acquire`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/acquire) 方法中新增了 `resourceExpiredHour` 参数，用于设置云端录制 RESTful API 的调用时效。
 
 RESTful API 回调通知中新增事件 [`session_exit`](../../cn/cloud-recording/cloud_recording_callback_rest.md)，提供云端录制服务的退出状态。
 

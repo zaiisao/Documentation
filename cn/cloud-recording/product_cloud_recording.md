@@ -3,7 +3,7 @@
 title: 云端录制
 description: 
 platform: All Platforms
-updatedAt: Thu Mar 19 2020 10:10:56 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 04:08:27 GMT+0800 (CST)
 ---
 # 云端录制
 Agora 云端录制，是 Agora 针对音视频通话、直播研发的录制服务，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK (1.12.0 或更高版本) 兼容，通过简单的操作方法，帮助开发者快速、灵活地实现录制服务，实现一对一、一对多的音视频通话或直播的录制。同 Agora 本地服务端录制相比，Agora 云端录制无需部署 Linux 服务器，减轻了研发和运维的压力，更轻量便捷。
@@ -61,8 +61,8 @@ Agora 云端录制主要有以下特性：
 
 ## 相关文档和示例代码
 
-- [RESTful API 录制](https://docs.agora.io/cn/cloud-recording/restfulapi)展示了如何通过 RESTful API 进行录制。
-- [云端录制 RESTful API](../../cn/cloud-recording/cloud_recording_api_rest.md) 展示了使用云端录制过程中你可以调用的各 RESTful API 及其功能。
+- [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)展示了如何通过 RESTful API 进行录制。
+- [云端录制 RESTful API](https://docs.agora.io/cn/cloud-recording/restfulapi) 展示了使用云端录制过程中你可以调用的各 RESTful API 及其功能。
 
 
 

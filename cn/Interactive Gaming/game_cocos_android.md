@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Cocos
-updatedAt: Thu Nov 14 2019 03:10:37 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 04:28:51 GMT+0800 (CST)
 ---
 # 实现游戏语音功能
 使用 Agora 的 `Hello-Cocos2d-Agora` 代码示例可以实现以下功能:
@@ -13,6 +13,15 @@ updatedAt: Thu Nov 14 2019 03:10:37 GMT+0800 (CST)
 -   离开频道
 
 本页分别展示如何使用 Cocos2d 包在 Android 平台和 iOS 平台上实现上述功能。
+
+
+## 快速跑通 Demo
+
+如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
+
+<video src="https://web-cdn.agora.io/docs-files/1584678389538" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+
+<div class="alert note">视频中展示的 UI 有部分调整更新，请以当前最新版为准。</div>
 
 ## Android 平台实现
 

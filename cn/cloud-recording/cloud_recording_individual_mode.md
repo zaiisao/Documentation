@@ -3,7 +3,7 @@
 title: 单流录制
 description: 解释如何实现在云端录制中实现单流录制
 platform: All Platforms
-updatedAt: Thu Mar 19 2020 10:27:17 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 05:20:52 GMT+0800 (CST)
 ---
 # 单流录制
 ## 功能描述
@@ -21,7 +21,7 @@ updatedAt: Thu Mar 19 2020 10:27:17 GMT+0800 (CST)
 
 ## 实现方法
 
-在调用 [`start`](../../cn/cloud-recording/cloud_recording_api_rest.md) 方法时，将 `mode` 参数设置为 `individual`，即可启用单流模式。
+在调用 [`start`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/start) 方法时，将 `mode` 参数设置为 `individual`，即可启用单流模式。
 
 该模式下录制文件的音视频编码配置如下：
 

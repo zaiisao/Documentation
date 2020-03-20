@@ -65,6 +65,7 @@ updatedAt: Tue Dec 10 2019 00:26:13 GMT+0800 (CST)
 
 
 
+
 ### <a name="rvmin"></a>录制视频分钟数 
 
 录制服务在 RTC 频道内录制视频的时间记为录制视频分钟数。
