@@ -3,7 +3,7 @@
 title: Data Insight (Beta)
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Fri Oct 18 2019 08:15:21 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 03:17:21 GMT+0800 (CST)
 ---
 # Data Insight (Beta)
 The **Data Insight** function of Agora Analytics provides periodic call usage and call quality statistics. It is designed to help you understand the trend of the usage and quality of your calls, their distribution in various dimensions, and daily data breakdown.
@@ -68,7 +68,7 @@ The following tables list the metrics in the subsequent sections of the Overview
 |          Metric          | Description                                                  |
 | :----------------------: | :----------------------------------------------------------- |
 |      Total channels      | A count of all channels. A single channel begins when the first user joins and ends when the last user leaves. |
-|    Total big channels    | The number of channels with more than 100 users online at the same time. |
+|    Total high-concurrent channels    | The number of channels with more than 50 users online at the same time. |
 | Peak concurrent channels | Greatest number of simultaneous calls in one day.            |
 |  Peak concurrent users   | Greatest number of online users in all the channels in one day. |
 |       Total users        | Total number of unique UIDs in each channel.                 |

@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: Linux
-updatedAt: Thu Dec 19 2019 11:47:14 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 09:09:01 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
@@ -53,6 +53,6 @@ The following example shows how to record only video (no audio) in a communicati
 
 ## Considerations
 
-- If you want to merge each UID's audio and video files into one file, you can use our [Transcoding Script](../../en/Recording/recording_transcoding.md).
+- If you want to merge each UID's audio and video files into one file, you can use our [Transcoding Script](../../en/Recording/recording_merge_files.md).
 - In individual recording mode, file splitting may occur under certain conditions. For more information, see [Why is the recording file split?](https://docs.agora.io/en/faq/record_split)
 - If you choose to record only video (no audio) or record both audio and video but a Web user in the channel does not send any video stream, a black video file will be generated for this user.

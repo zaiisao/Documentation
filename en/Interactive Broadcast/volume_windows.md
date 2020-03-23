@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Wed Mar 04 2020 12:41:52 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 11:03:06 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -93,11 +93,11 @@ If `setPlaybackDeviceVolume` does not suffice, you can use `adjustPlaybackSignal
 - `adjustPlaybackSignalVolume`：
   - Universally sets the playback audio level of all remote users after audio mixing.
   - The `volume` parameter represents the playback audio level, ranging between 0 and 400. 
-- `adjustUserPlaybackSignalVoume`：
+- `adjustUserPlaybackSignalVolume`：
   - Adjusts the playback audio level of a specified remote user after audio mixing. Call this method as many times as necessary to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
   - The `volume` parameter represents the playback audio level, ranging between 0 and 100. 
 
-<div class="alert note"><li>As of v2.3.2, to mute the local audio playback, you must call both adjustPlaybackSignalVolume and adjustAudioMixingVolume, and set the volume parameter as 0.<li>Call adjustUserPlaybackSignalVoume after joining a channel.</li></div>
+<div class="alert note"><li>As of v2.3.2, to mute the local audio playback, you must call both adjustPlaybackSignalVolume and adjustAudioMixingVolume, and set the volume parameter as 0.<li>Call adjustUserPlaybackSignalVolume after joining a channel.</li></div>
 
 Sample code
 

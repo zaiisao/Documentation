@@ -3,274 +3,255 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Thu Mar 12 2020 11:03:23 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 08:34:11 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
-## Description
+## Function description
 
-During an interactive broadcast, you can publish a separate video stream to the remote user through Agora’s SD-RTN™ and adjust the playback of the separate video stream in real time by using MediaPlayer Kit.
+The MediaPlayer Kit is a powerful player that supports playing local and online media resources. With this player, you can either locally play media resources or synchronously share currently playing media resources with remote users in the Agora channel. 
 
-<a name="format"></a>
-### Supported formats
+## Usage notice
 
-- Local video: AVI, MP4, MKV, and FLV file formats.
-- Online video: RTMP and RTSP streams.
+- Currently supported media formats: Local files in AVI, MP4, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
+- When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishPlugin at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishPlugin supports publishing media streams to remote users in Agora channel.
+- When sharing media resources with remote users, the playeback window occupies the local user's video as captured by the camera. Therefore, if you want remote users to see both the local user's and the player's window, you need to start another process to capture the local user's video.
 
-<div class="alert note"> Only supports the single/dual video with a sampling rate of 32 kHz, 44100 Hz or 48 kHz.</div>
-
-### Usage
-
-Using MediaPlayer Kit, you can start/pause the playback video, adjust the playback progress, adjust the playback volume, and publish the playback video to the remote user:
-
-- If you want to publish the playback video to the remote user, you may need to use a dual process. In a process, you can capture and publish the call video; while in another process, you can publish the playback video stream. If you join the channel with only a process, the remote user can only see the video window corresponding to that process.
-
-- If you do not need to publish the playback video to the remote user, you can use MediaPlayer Kit as your local media player. We will not discuss this scenario here.
-
-## Quickly experience MediaPlayer Kit
+## Set up the development environment
 
 ### Prerequisites
 
-- Xcode 10.12 or later.
-- Physical macOS 10.12 or later.
-- Ensure that your project has a validated provisioning profile certificate.
+- Xcode 9.0 or later
+- A macOS device running macOS 10.10 or later
 
-### Use MediaPlayer Kit
-1. Download and unzip the [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/MediaPlayer/Mediaplayer-Mac) folder.
-2. Open the `MediaPlayerKitQuickstart.xcodeproj` file with Xcode.
-3. Click on the upper left triangle symbol in the Xcode interface to build the project.
-4. After a successful compilation, a graphical interface pops up.
-> If the compilation fails, check whether a validated provisioning profile certificate is set.
-
-5. Click **Settings** on the interface to select the video quality seen by the remote user, then click **Confirm**.
-6. Fill in **Channel Name**, select **Join as Broadcaster**, then you can see the playback interface of MediaPlayer Kit.
-![](https://web-cdn.agora.io/docs-files/1567481228573)
-7. At the bottom of the interface, you can see the following icons from left to right: Start/Pause the playback video, the progress bar, the volume bar, enables (default)/disables **PUBLISH STREAMING** and the settings.
-8. Click on the text box under the download icon on the playback interface. You can select the local path to import the video file and **PUBLISH STREAMING** (default).
-
-### Considerations
-
-MediaPlayerKitQuickstart only supports importing the local video files.
-
-## Implement MediaPlayer Kit
-
-### Prerequisites
-
-- Xcode 10.12 or later.
-- Physical macOS 10.12 or later.
-- Ensure that your project has a validated provisioning profile certificate.
-
-### Integrate MediaPlayer Kit
-
-**1. Preparation**
-
-- Download and unzip Agora Native SDK. See the **Video SDK** in [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads).
-- Make sure you have completed the integration of the Agora Native SDK, as described in [Integrate Client](../../en/Interactive%20Broadcast/mac_video.md).
-- Download and unzip the MediaPlayerKit folder.
-
-**2. Create a project**
-
-<div class="alert warning">
-	<li>In this step, you should continue to integrate MediaPlayerKit projects based on an existing project that has integrated the Agora Native SDK, rather than creating a new project from scratch. 
-<li> This step shows you how to create a new project, you can skip it if you don't need this reference.</div>
-
-- Open Xcode, **Create a new Xcode project**.
-- On the **Choose a template for your new project** page, select **macOS** and **cocoa App** under Application, and click **Next**.
-- Fill in your **Product Name**, such as "MediaPlayer", select **Language** for Objective-C, and click **Next**.
-- Select the local path where the project file is stored, such as `/Users/xxx/Desktop`, click **Create**, and then you can see your project page.
-
-<a name="import"></a>
-**3. Import files**
-
-- Right click on the "MediaPlayer" **project file** and click on **Add Files to "MediaPlayer"**.
-	- Import the `AgoraRtcEngineKit.framework` file:
-		- Select the local path of this file;
-		- Select **Copy items if needed** for **Destination**;
-		- Select **Create groups** for **Added folder**;
-		- Click on **Add**.
-	- Import the `MediaPlayerKit.framework` file:
-		- The import method is the same as that of the `AgoraRtcEngineKit.framework` file.
-- Right click on the "MediaPlayer" **file** and click on **Add Files to "MediaPlayer"**.
-	- Import the `Agora_MediaPlayer_Kit` file:
-		- The import method is the same as that of the `AgoraRtcEngineKit.framework` file.
-
-**4. Import libraries**
-
-- Click **Build Phases**, expand **Link Binary With Libraries**, and you can see the libraries that have been filled in after importing the files:
-    - `MediaPlayerKit.framework`
-    - `liblibyuv.a`
-    - `AgoraRtcEngineKit.framework`
-
-> Make sure that these three libraries are added, otherwise go back to [Step 3](#import).
-
-- Click on the "**+**" icon to add the following 21 libraries:
-    - `Carbon.framework`
-    - `ForceFeedback.framework`
-    - `IOKit.framework`
-    - `libbz2.tbd`
-    - `libiconv.2.4.0.tbd`
-    - `QuartzCore.framework`
-    - `SecurityFoundation.framework`
-    - `CoreImage.framework`
-    - `OpenGL.framework`
-    - `OpenCL.framework`
-    - `CoreVideo.framework`
-    - `SystemConfiguration.framework`
-    - `libresolv.tbd`
-    - `libc++.tbd`
-    - `libz.tbd`
-    - `CoreAudio.framework`
-    - `CoreWLAN.framework`
-    - `CoreMedia.framework`
-    - `AudioToolbox.framework`
-    - `VideoToolbox.framework`
-    - `AVFoundation.framework`
-
-**5. Configure the library path**
-
-- Find **Header Search Paths**:
-	- Click **Build Settings**;
-	- Select **All** and **Levels**;
-	- Fill in the search bar with **Header Search Paths**.
-
-- Click **Header Search Paths** and add the path of the `libyuv.h` file:
-	- Expand on the left side of the project page and find **Agora_MediaPlayer_Kit** > **third_party** > **libyuv** > **include** > **libyuv.h** file under the "MediaPlayer" **file**;
-		- Right click here to select **Show in Finder**, you can see that the local absolute path of the `libyuv.h` file is /Users/xxx/Desktop/MediaPlayer/MediaPlayer/Agora_MediaPlayer_Kit/third_party_libyuv/include;
-    > `/Users/xxx/Desktop/MediaPlayer` is your project path, `$(PROJECT_DIR)`.	
-    
-		- Fill in the local relative path of the `libyuv.h` file: `$(PROJECT_DIR)/MediaPlayer/Agora_MediaPlayer_Kit/third_party_libyuv/include`.
-
-
-**6. Compile the project**
-
-- Click on the upper left triangle symbol in the Xcode interface to build the project.
-- After a successful compilation, a window pops up.
-
-You can refer to [Call the interfaces](#1) or [API documentation](#2) to complete your project.
-
-<a name="1"></a>
-### Call the interfaces
-
-**API sequence diagram**
-![](https://web-cdn.agora.io/docs-files/1567498466302)
-
-> - The diagram shows only the basic interfaces. If you have more complex requirements, you can also call more interfaces in the Agora Native SDK, such as [`enableDualStreamMode`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableDualStreamMode:).
-> - Because `setVideoView` in the MediaPlayer Kit interface can set the local video window, you don't need to call [`setupLocalVideo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupLocalVideo:) in the Agora Native SDK interface beforehand.
-
-1. Call the Agora Native SDK interface to complete initialization and the basic video setup.
-
-	- Call the `shareEngineWithAppId` method to create and initialize an AgoraRtcEngineKit instance. See [Implementation](https://docs.agora.io/en/Interactive%20Broadcast/initialize_mac_live?platform=macOS#implementation).
-	- Call the `setChannelProfile` method to set the channel profile as Live Broadcast. See [Set the channel profile as Live Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/join_live_mac?platform=macOS#set-the-channel-profile-as-live-broadcast).
-	- Call the `setClientRole` method to set the role as the host.
-```Objective-c
-	[self.agoraKit setClientRole:AgoraClientRoleBroadcaster]
-```
-	- Call the `enableVideo` method to enable the video mode. See [Enable the video mode](https://docs.agora.io/en/Interactive%20Broadcast/publish_mac_live?platform=macOS#enable-the-video-mode).
-
-2. Call the MediaPlayer Kit interface to complete initialization and other preparations.
-
-	- Call the `shareInstance` and `createMediaPlayerKitWithRtcEngine()` methods to create and initialize a MediaPlayer Kit instance. 
-```Objective-c
-[[MediaPlayerKit shareInstance] createMediaPlayerKitWithRtcEngine:agoraKit withSampleRate:44100];
-```
-	- Call the `MediaPlayerKitDelegate` method to set the delegate method. See [API documentation](#2) for details.
-  ```Objective-c
-	 [MediaPlayerKit shareInstance].delegate = self;
-	```   
-	- Call the `setVideoView` method to set the local view.
-	```Objective-c
-	 [[MediaPlayerKit shareInstance] setVideoView:self.view];
-	```
-    
-3. Call the Agora Native SDK interface to complete the channel management.
-
-	- Call the `joinChannelByToken` method to join the channel. See [Join a live broadcast channel](https://docs.agora.io/en/Interactive%20Broadcast/join_live_mac?platform=macOS#join-a-live-broadcast-channel).
-> Call this method after the `setVideoView` method.
-
-	- Call the [`setupRemoteVideo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupRemoteVideo:) method to set the view of the remote user.
-
-4. Call the MediaPlayer Kit interface to load the video.
-
-	- Call the `load` method to load the video into the memory.
-> You can load the video from the local or URL path to meet your requirements. See [Supported format](#format).
+> Open the specified ports in [Firewall Requirements](https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms) if your network has a firewall.
 >
-   ```Objective-c
-	[[MediaPlayerKit shareInstance] load:url isAutoPlay:true/false];
-	```
+> A valid Agora account ([Sign up](https://dashboard.agora.io/) for free) is necessary when sharing media resources to remote users.
 
-<a name="3"></a>
-5. Call the MediaPlayer Kit interface to complete the media player functions.
+### Create a macOS project
 
-	- Call the `play`, `adjustPlaybackSignalVolume`, `seekTo`, `getCurrentPosition`, `pause`, and `resume` methods to adjust the media player in real time.
-> You can learn about these methods by referring to [API documentation](#2).
->
-  ```Objective-c
- [[MediaPlayerKit shareInstance] play];
- [[MediaPlayerKit shareInstance] adjustPublishSignalVolume:volume];
- [[MediaPlayerKit shareInstance] seekTo:msec];
- [[MediaPlayerKit shareInstance] getCurrentPosition];
-...
+Now, let's build a macOS project from scratch. 
+
+<details>
+	<summary><font color="#3ab7f8">Create a macOS project</font></summary>
+
+1. Open **Xcode** and click **Create a new Xcode project**.
+2. Choose **App** as the template and click **Next**.
+3. Input the project information, such as the project name, team, organization name, and language, and click **Next**.
+	
+4. Choose the storage path of the project and click **Create**.
+6. Go to the **TARGETS > Project Name > Signing & Capabilities** menu, choose **Automatically manage signing**, and then click **Enable Automatic** on the pop-up window.
+</details>
+
+### Integrate the MediaPlayer Kit
+
+1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
+
+2. Add the `AgoraMediaPlayer.framework` file in the **libs** folder to the project folder.
+
+3. In **Xcode**, click **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** to change the status of `AgoraMediaPlayer.framework` to **Embed & Sign**. 
+
+   > According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the MediaPlayer Kit with the dynamic library in the Extension, change the file status as **Do Not Embed**.
+
+4. Go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click `+` to add the following frameworks and libraries. To add the AgoraMediaPlayer.framework file, remember to click **Add Other...** after clicking `+`.
+  - AgoraMediaPlayer.framework
+  - Accelerate.framework
+  - CoreWLAN.framework
+  - libc++.tbd
+  - libresolv.9.tbd
+  - SystemConfiguration.framework
+  - VideoToolbox.framework
+
+
+5. Add the following permissions in the **info.plist** file for device access according to your needs:
+
+	| Key | Type | Value |
+	| ---------------- | ---------------- | ---------------- |
+	| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video or audio call.      |
+	| Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
+
+### Integrate the Native SDK 
+
+Version requirements: 2.4.0 or later 
+
+Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_mac?platform=macOS#a-nameintegratesdkaintegrate-the-sdk).
+
+### Integrate the RtcChannelPublishHelper
+
+
+1. [Download](https://github.com/AgoraIO/Agora-Extensions/tree/master/MediaPlayer/helper/apple) the RtcChannelPublishPlugin folder.
+2. Add the RtcChannelPublishPlugin folder to the project folder.
+
+
+## Implementation
+
+<a name="local"></a>
+### Play media resources locally
+
+After integrating the MediaPlayer Kit, follow these steps to implement the local playback function.
+
+**Create a player instance**
+
+Create an instance of ` AgoraMediaPlayer`.
+
+> To play different media resources simultaneously, you should create multiple instances.
+
+**Receive event callbacks**
+Override the `AgoraMediaPlayerDelegate` delegate method to receive the following event callbacks:
+- `didChangedToPosition`, which reports the current playback progress.
+- `didChangedToState`, which reports the playback state change.
+- `didOccurEvent`, which reports the result of a seek operation to a new playback position.
+- `didReceiveData`, which occurs each time the player receives the media metadata.
+- `didReceiveAudioFrame`, which occurs each time the player receives an audio frame.
+- `didReceiveVideoFrame`, which occurs each time the player receives a video frame.
+
+By listening for these events, you can have more control over the playback process and enable your app to support data in custom formats (media metadata). If an exception occurs, you can use these event callbacks for troubleshooting.
+
+**Preparations for playback**
+
+1. Call the `setView` method in the ` AgoraMediaPlayer` interface to set the render view of the player.
+
+2. Call the `setRenderMode` method in the ` AgoraMediaPlayer` interface to set the rendering mode of the player's view.
+
+3. Call the `open` method in the ` AgoraMediaPlayer` interface to open the media resource. The media resource path can be a network path or a local path. Both absolute and relative paths are supported.
+
+   > Do not proceed until you receive the `didChangedToState` callback reporting `AgoraMediaPlayerStateOpenCompleted(2)`.
+
+4. Call the `play` method in the ` AgoraMediaPlayer` interface to play the media resource locally.
+
+**Adjust playback settings** 
+
+You can call several other methods in the ` AgoraMediaPlayer` interface to implement various playback settings:
+
+- Pause/resume playback, adjust playback progress, adjust local playback volume, and so on.
+- Get the total duration of the media resource, get the current playback progress, get the current playback state, get the number of media streams in the media resource and detailed information about each media stream.
+
+**Stop playback**
+
+1. Call the `stop` method in the ` AgoraMediaPlayer` interface to stop playback.
+2. Set `view` in the `setView` method to NULL to release the view.
+3. Use the iOS ARC memory management mechanism to release the `AgoraMediaPlayer` instance.
+
+**Sample code**
+
+```objective-c
+_mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
+[_mediaPlayerKit setView:self.containerView];
+[_mediaPlayerKit open:url startPos:0];
+[_mediaPlayerKit play];
+[_mediaPlayerKit stop];
+[_mediaPlayerKit seekToPosition:value];
+[_mediaPlayerKitadjustVolume:volume];
+  
+ // Receives event callbacks.
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+       didChangedToState:(AgoraMediaPlayerState)state
+                   error:(AgoraMediaPlayerError)error;
+{
+     //todo
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+    didChangedToPosition:(NSInteger)position;
+{
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+          didOccurEvent:(AgoraMediaPlayerEvent)event;
+{
+     //todo
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+          didReceiveData:(NSString *)data
+                  length:(NSInteger)length;
+{
+     //todo
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+    didReceiveVideoFrame:(CVPixelBufferRef
+{
+    //todo
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+    didReceiveAudioFrame:(CMSampleBufferRef)
+{
+    //todo
+};
 ```
 
-6. Call the MediaPlayer Kit interface to publish the audio/video to the remote user.
+### Share media resources to remote
 
-    - If you only want to publish the audio to the remote user:
-        - Call the `publishAudio` method to publish the audio.
-        ```Objective-c
-	      [[MediaPlayerKit shareInstance] publishAudio];
-	      ```
+After integrating the MediaPlayer Kit, the Agora Native SDK, and the RtcChannelPublishPlugin, follow these steps to synchronously share media resources played by the local user to all the remote users in the Agora channel.
 
-        - Adjust the media player in real time by calling the interfaces in [Step 5](#3).
+**Instantiate required objects**
 
-        - Call the `adjustPublishSignalVolume` method to adjust the volume received by the remote user.
-        ```Objective-c
-	     [[MediaPlayerKit shareInstance] adjustPublishSignalVolume:<#(int)#>];
-	     ```
+1. [Instantiate an AgoraRtcEngineKit object](https://docs.agora.io/en/Interactive%20Broadcast/start_live_mac?platform=macOS#3-initialize-agorartcenginekit).
+2. Instantiate the ` AgoraMediaPlayer` and `RtcChannelPublishHelper` objects.
 
-        - Call the `unpublishAudio` method to stop publishing the audio to the remote user.
-        ```Objective-c
-	      [[MediaPlayerKit shareInstance] unpublishAudio];
-	      ```
+**Enable the player to complete playback preparations**
 
-    - If you want to publish the video to the remote user:
-        - Call the `publishVideo` method to publish the video.
-        ```Objective-c
-	      [[MediaPlayerKit shareInstance] publishVideo];
-	      ```
+Register the player, audio, and video observer objects, and complete the preparations for playback. See [Play media resources locally](#local) for details.
 
-        - Adjust the media player in real time by calling the interfaces in [Step 5](#3).
+> Do not proceed until you receive the `didChangedToState` callback reporting `AgoraMediaPlayerStatePlaying(3)`.
 
-        - Call the `adjustPublishSignalVolume` method to adjust the volume received by the remote user.
-        ```Objective-c
-	      [[MediaPlayerKit shareInstance] adjustPublishSignalVolume:<#(int)#>];
-	      ```
+**Enable the local user to join the channel by using the SDK** 
 
-        - Call the `unpublishVideo` method to stop publishing the video to the remote user.
-        ```Objective-c
-	      [[MediaPlayerKit shareInstance] unPublishVideo];
-	      ```
+Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broadcast/start_live_mac?platform=macOS#4-set-the-channel-profile) for details about how to enable the local user to join the live broadcast channel in the role of `BROADCASTER`:
 
+1. Call the `setChannelProfile` method to set the channel mode to live broadcast.
 
-7. Call the MediaPlayer Kit interface to stop playback and quit MediaPlayer Kit.
-	- Call the `stop` method to stop the playback.
-```Objective-c
- [[MediaPlayerKit shareInstance] stop];
+2. Call the `setClientRole` method to set the local user role as the broadcaster.
+
+3. Call the `enableVideo` method to enable the video module.
+
+4. Call the `joinChannel` method to enable the local user to join the channel.
+
+   > Do not proceed until you receive the `joinSuccessBlock` or `didJoinChannel` callback.
+
+**Start sharing by using the helper**
+
+1. Call the `attachPlayerToRtc` method to bundle the player with the Agora channel. And the playback window fully occupies the local user's view.
+
+2. Call the `publishVideo`/`publishAudio` method to share (publish) the video/audio stream in the media resource to remote users in the Agora channel.
+
+3. Call the `adjustPublishSignalVolume` method to adjust the the playback volume heard by the remote user.
+
+If the local user directly leaves the channel by calling `leaveChannel` after sharing the media stream, the media stream stops sending to the remote users until the local user rejoins the channel. So Agora recommends the steps in the next section to cancel sharing the media stream.
+
+**Cancel sharing by using the helper**
+
+1. Call the `unpublishVideo`/`unpublishAudio` method to unshare or unpublish the video/audio stream in the media resource.
+
+2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel. 
+
+3. Call the `release` method to release `RtcChannelPublishHelper`.
+
+**Sample code**
+
+```objective-c
+_rtcEnginekit = [AgoraRtcEngineKit sharedEngineWithAppId:@"YOUR_APPID" delegate:self];
+[_rtcEnginekit setChannelProfile:AgoraChannelProfileLiveBroadcasting];
+[_rtcEnginekit setClientRole:AgoraClientRoleBroadcaster];
+[_rtcEnginekit enableVideo];
+[_rtcEnginekit joinChannelByToken:token channelId:channelid info:""  uid:"" joinSuccess:NULL];
+[[AgoraRtcChannelPublishHelper shareInstance] attachPlayerToRtc:_mediaPlayerKit RtcEngine:_rtcEnginekit];
+[[AgoraRtcChannelPublishHelper shareInstance] publishAudio];
+[[AgoraRtcChannelPublishHelper shareInstance] publishVideo];
+[[AgoraRtcChannelPublishHelper shareInstance] detachPlayerFromRtc];
 ```
-	- Call the `unload` method to release the video loaded into the memory.
-```Objective-c
- [[MediaPlayerKit shareInstance] unload];
-```
-	- Call the `destroy` method to destroy the MediaPlayerKit instance and quit MediaPlayer Kit.
-> After calling the `destroy` method, the binding of the display view of the local video stream is not valid.
->
-```Objective-c
-[[MediaPlayerKit shareInstance] destroy];
-```
 
+## Get the log file
+The log file contains all the log events generated by the mediaplayer kit during runtime. The path of the log file is `App Sandbox/Library/caches/agoraplayer.log`.
 
-<a name="2"></a>
 ## API documentation
-See [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/v1.0.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html).
+See the [API documentation](https://docs-preview.agoralab.co/en/Video/API%20Reference/mediaplayer_oc/1.1.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html?transId=1.1.0).
 
-## Consideration
 
-If you get an error in MediaPlayer Kit when playing video from the URL path due to network problems, you need to call the `load` method again to reload the video after the network conditions improve.
+

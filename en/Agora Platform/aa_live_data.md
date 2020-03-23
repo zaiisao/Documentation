@@ -3,7 +3,7 @@
 title: Realtime (Beta)
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 18 2019 03:30:57 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 03:16:41 GMT+0800 (CST)
 ---
 # Realtime (Beta)
 Use the Realtime function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
@@ -63,9 +63,9 @@ Within this section, you can also view the name of the channel experiencing an a
 - A beam indicates the number of users in the province or state has increased within the past 10 seconds. Higher beams indicate a rapid increase in number.
 - A wire indicates a connection between two provinces or states.
 
-### Big Channel
+### High-concurrent Channel
 
-**Big Channel** appears when a channel has over 100 users. This section provides the channel names of the big channels and their respective user number, host number, and the audience count. The statistics are updated every minute.
+**High-concurrent Channel** appears when a channel has over 50 users. This section provides the channel names of the high-concurrent channels and their respective user number, host number, and the audience count. The statistics are updated every minute.
 
 ### User Number Ranking
 
@@ -111,7 +111,7 @@ Use the timeline at the top of the page to adjust the range of time you want to 
 | :--------------------- | :----------------------------------------------------------- |
 | Current User Number    | If two channels have a same UID, Agora Analytics counts it as two users. |
 | Current Channel Number | A channel begins when the first user joins the channel and ends when the last user leaves that channel. |
-| Big Channel Number     | A channel becomes a big channel when it has 100 or more users. |
+| High-concurrent Channel Number     | A channel becomes a high-concurrent channel when it has 50 or more users. |
 
 ### Distribution
 

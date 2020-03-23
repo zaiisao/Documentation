@@ -22,8 +22,8 @@ The host in a live-broadcast channel pulls an online media stream and pushes it 
 
 ![](https://web-cdn.agora.io/docs-files/1576059890625)
 
-- The host and audience in the channel can hear/see the media stream.
-- If the host enables Content Delivery Network (CDN) live streaming, the injected media stream is also pushed to the CDN so that the CDN audience can hear/also the media stream.
+- The host and audience in the channel can hear and see the media stream.
+- If the host enables Content Delivery Network (CDN) live streaming, the injected media stream is also pushed to the CDN so that the CDN audience can hear and see the media stream.
 
 >- Only one online media stream can be injected into the same channel at the same time.
 >- Supported codec type: AAC for audio, H.264 for video.

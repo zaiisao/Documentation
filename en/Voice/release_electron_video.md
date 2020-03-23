@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Electron
-updatedAt: Tue Jan 21 2020 08:20:32 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 08:21:10 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora SDK for Electron.

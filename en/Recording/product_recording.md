@@ -3,10 +3,10 @@
 title: Agora On-premise Recording Overview
 description: 
 platform: Linux
-updatedAt: Thu Feb 20 2020 07:33:08 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 09:20:33 GMT+0800 (CST)
 ---
 # Agora On-premise Recording Overview
-<div class="alert note">Note: <br>If you do not want to prepare server resources, Agora recommends using <a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=Linux">Agora Cloud Recording</a>, which enables you to record voice/video calls and interactive broadcastsis on your cloud storage through RESTful APIs.  </div>
+<div class="alert note">Note: <br>If you do not want to prepare server resources, Agora recommends using <a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=Linux">Agora Cloud Recording</a>, which enables you to record voice/video calls and interactive broadcasts on your cloud storage through RESTful APIs.  </div>
 
 The Agora On-premise Recording SDK is an add-on to record and save voice calls, video calls, and interactive broadcasts on your server. The Agora On-premise Recording SDK is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+.
 

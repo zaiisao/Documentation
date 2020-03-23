@@ -12,13 +12,13 @@ When a call or live broadcast ends, you can gather feedback on the quality of ex
 
 The Agora SDK provides methods for you to collect your users' ratings and comments on the calls.
 
-After the rating function is implemented, you can see your users' ratings in [Agora Analytics](../../en/Interactive%20Broadcast/aa_guide.md), as shown in the figure below:
+After the rating function is implemented, you can see your users' ratings in [Agora Analytics](../../en/Voice/aa_guide.md), as shown in the figure below:
 
 ![](https://web-cdn.agora.io/docs-files/1545801217929)
 
 ## Implementation 
 
-Before proceeding, ensure that you implement a basic video call or live broadcast in your project. See [Start a Call](../../en/Interactive%20Broadcast/start_call_unity.md)/[Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_unity.md) for details.
+Before proceeding, ensure that you implement a basic video call or live broadcast in your project. See [Start a Call](../../en/Voice/start_call_unity.md)/[Start a Live Broadcast](../../en/Voice/start_live_unity.md) for details.
 
 To rate a call:
 
@@ -35,5 +35,5 @@ mRtcEngine.Rate(callId, 5, "This is an awesome call!");
 
 ### API reference
 
-- [`GetCallId`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ab6b0ec1b64c5c9ec417819af0c70385a)
-- [`Rate`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a2de30387e035e21f20f5bf5aebc001f5)
+- [`GetCallId`](https://docs.agora.io/en/Voice/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ab6b0ec1b64c5c9ec417819af0c70385a)
+- [`Rate`](https://docs.agora.io/en/Voice/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a2de30387e035e21f20f5bf5aebc001f5)

@@ -1,16 +1,16 @@
 
 ---
-title: Start a Call
+title: Start a Voice Call
 description: 
 platform: macOS
-updatedAt: Fri Mar 20 2020 09:27:07 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 09:07:07 GMT+0800 (CST)
 ---
-# Start a Call
-Use this guide to quickly start a basic video call demo with the Agora Video SDK for macOS.
+# Start a Voice Call
+Use this guide to quickly start a basic voice call demo with the Agora Voice SDK for macOS.
 
 ## Try the demo
 
-We provide an open-source [Agora-macOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1)/[Agora-macOS-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1) demo project that implements the basic one-to-one video call on GitHub. You can try the demo and view the source code.
+We provide an open-source [Agora-macOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1)/[Agora-macOS-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1) demo project that implements the basic one-to-one voice call on GitHub. You can try the demo and view the source code.
 
 ## Prerequisites
 
@@ -75,8 +75,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
   - libc++.tbd
   - libresolv.9.tbd
   - SystemConfiguration.framework
-  - VideoToolbox.framework
- 
+
 4. When integrate the dynamic library, open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add **AgoraRtcKit.framework**. Once added, the project automatically links to other system libraries.
   <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
 
@@ -88,7 +87,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
  
  **After integrating the static library**：
  
-  ![](https://web-cdn.agora.io/docs-files/1583329456927)  
+  ![](https://web-cdn.agora.io/docs-files/1584604823800) 
  
  **Before integrating the dynamic library**：
  
@@ -105,7 +104,6 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a call.      |
-| Privacy - Camera Usage Description      | String      | To access the camera, such as for a call.      |
 
 
 **Before**:
@@ -114,10 +112,10 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 **After**:
 
- ![](https://web-cdn.agora.io/docs-files/1584604886884) 
+ ![](https://web-cdn.agora.io/docs-files/1584604875770) 
 
 2. If you enable the **App Sandbox** or **Hardened Runtime** settings in your project, check the following items to add the corresponding permissions:
-
+ 
 <table>
     <tr>
         <td><b>Menu</b></td>
@@ -125,7 +123,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
         <td><b>Item</b></td>
     </tr>
     <tr>
-        <td rowspan="4">App Sandbox</td>
+        <td rowspan="3">App Sandbox</td>
         <td rowspan="2">Network</td>
         <td>Incoming Connections (Server)</td>
     </tr>
@@ -133,41 +131,34 @@ Choose either of the following methods to integrate the Agora SDK into your proj
         <td>Incoming Connections (Client)</td>
     </tr>
 	    <tr>
-        <td rowspan="2">Hardware</td>
-        <td>Camera</td>
-    </tr>
-    <tr>
+        <td >Hardware</td>
         <td>Audio Input</td>
     </tr>
 	<tr>
         <td rowspan="2">Hardened Runtime</td>
-        <td rowspan="2">Resource Access</td>
-        <td>Camera</td>
-    </tr>
-    <tr>
+        <td>Resource Access</td>
         <td>Audio Input</td>
 </table>
- 
 
-<div class="alert note"><li>According to the requirements of Apple: <ul><li>Mac software distributed in the Mac App Store must enable the <b>App Sandbox</b> setting. See details in <a href="https://developer.apple.com/app-sandboxing/">Apple News and Updates</a>.<li>Mac software distributed outside the Mac App Store must enable the <b>Hardened Runtime</b> setting. See details in <a href="https://developer.apple.com/news/?id=09032019a">Apple News and Updates</a>.</li></ul><li>The <b>Hardened Runtime</b>’s library validation prevents an app from loading frameworks, plug-ins, or libraries unless they’re either signed by Apple or signed with the same team ID as the app. When you face with problems such as failure to enumerate the virtual camera, check <b>Hardened Runtime -> Runtime Exceptions -> Disable Library Validation</b> to disable the library validation. </li></div>
 
-## Implement the basic video call
+<div class="alert note"><li>According to the requirements of Apple: <ul><li>Mac software distributed in the Mac App Store must enable the <b>App Sandbox</b> setting. See details in <a href="https://developer.apple.com/app-sandboxing/">Apple News and Updates</a>.<li>Mac software distributed outside the Mac App Store must enable the <b>Hardened Runtime</b> setting. See details in <a href="https://developer.apple.com/news/?id=09032019a">Apple News and Updates</a>.</li></ul><li> The <b>Hardened Runtime</b>’s library validation prevents an app from loading frameworks, plug-ins, or libraries unless they’re either signed by Apple or signed with the same team ID as the app. When you face with problems, check <b>Hardened Runtime -> Runtime Exceptions -> Disable Library Validation</b> to disable the library validation.</li></div>
 
-This section introduces how to use the Agora Video SDK to make a video call. The following figure shows the API call sequence of a basic one-to-one video call.
-![](https://web-cdn.agora.io/docs-files/1568261526750)
+## Implement the basic call
+
+This section introduces how to use the Agora Voice SDK to make a voice call. The following figure shows the API call sequence of a basic one-to-one voice call.
+![](https://web-cdn.agora.io/docs-files/1584694780347)
 
 ### 1. Create the UI
 
 Create the user interface (UI) for the one-to-one call in your project. Skip to [Import the class](#ImportClass) if you already have a UI in your project.
 
-When you are implementing a video call, we recommend adding the following elements into the UI:	
-- The local video view
-- The remote video view
+When you are implementing a voice call, we recommend adding the following elements into the UI:	
+- The voice call window
 - The end-call button
 
 When you use the UI setting of the demo project, you can see the following interface:
 
-![](https://web-cdn.agora.io/docs-files/1568801689092)
+![](https://web-cdn.agora.io/docs-files/1584695092619)
 
 ### <a name="ImportClass"></a> 2. Import the class
 
@@ -189,7 +180,7 @@ import AgoraRtcKit
 import AgoraRtcEngineKit
 ```
 
-<div class="alert note">The Agora Video SDK uses libc++ (LLVM) by default. Contact Agora support If you want to use libstdc++ (GNU). The SDK provides FAT image libraries with multi-architecture support for both 32/64-bit audio emulators and 32/64-bit audio/video real devices.</div>
+<div class="alert note">The Agora Native SDK uses libc++ (LLVM) by default. Contact Agora support If you want to use libstdc++ (GNU). The SDK provides FAT image libraries with multi-architecture support for both 32/64-bit audio emulators and 32/64-bit voice real devices.</div>
 
 ### 3. Initialize AgoraRtcEngineKit
 
@@ -203,7 +194,7 @@ In this step, you need to use the App ID of your project. Follow these steps to 
 
 Call the `sharedEngineWithAppId` method and pass in the App ID to initialize the `AgoraRtcEngineKit` object.
 
-You can also listen for callback events, such as when the local user joins the channel, and when the first video frame of a remote user is decoded. 
+You can also listen for callback events, such as when the remote user joins or leaves the channel. 
 
 ```objective-c
 // Objective-C
@@ -221,55 +212,16 @@ func initializeAgoraEngine() {
 }
 ```
 
-### 4. Set the local video view
+### 4. Join a channel
 
-After initializing the `AgoraRtcEngineKit` object, set the local video view before joining the channel so that you can see yourself in the call. Follow these steps to configure the local video view: 
-
-- Call the `enableVideo` method to enable the video module. 
-- Call the `setupLocalVideo` method to configure the local video display settings. 
-
-```objective-c
-// Objective-C
-- (void)setupVideo {
-  // Enable the video
-  [self.agoraKit enableVideo];
-}
-- (void)setupLocalVideo {
-    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
-    videoCanvas.uid = 0;
-    videoCanvas.view = self.localVideo;
-    videoCanvas.renderMode = AgoraVideoRenderModeHidden;
-    // Set the local video view.
-    [self.agoraKit setupLocalVideo:videoCanvas];
-}
-```
-
-```swift
-// Swift
-func setupVideo() {
-    // Enable the video
-    agoraKit.enableVideo()
-}
-func setupLocalVideo() {
-  let videoCanvas = AgoraRtcVideoCanvas()
-  videoCanvas.uid = 0
-  videoCanvas.view = localVideo
-  videoCanvas.renderMode = .hidden
-  // Set the local video view.
-  agoraKit.setupLocalVideo(videoCanvas)
-}
-```
-
-### <a name="JoinChannel"></a>5. Join a channel
-
-After initializing the `AgoraRtcEngineKit` object and setting the local video view, you can call the `joinChannelByToken` method to join a channel. In this method, set the following parameters:
+After initializing the `AgoraRtcEngineKit` object, you can call the `joinChannelByToken` method to join a channel. In this method, set the following parameters:
 
 - `channelId`: Specify the channel name that you want to join. Input your `channelId` before running the sample code.
 
 - `token`: Pass a token that identifies the role and privilege of the user. You can set it as one of the following values:
   - `nil`.
   - A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
-  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Video/token_server.md).
+  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Voice/token_server.md).
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
@@ -277,7 +229,7 @@ After initializing the `AgoraRtcEngineKit` object and setting the local video vi
 
 - `joinSuccessBlock`: Returns that the user joins the specified channel. It is same as `didJoinChannel`. We recommend setting `joinSuccessBlock` as `nil`, so that the SDK can trigger the `didJoinChannel` callback.
 
-For more details on the parameter settings, see [joinChannelByToken](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:).
+For more details on the parameter settings, see [joinChannelByToken](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:).
 
 ```objective-c
 // Objective-C
@@ -293,51 +245,10 @@ For more details on the parameter settings, see [joinChannelByToken](https://doc
 func joinChannel() {
     // Join a channel with a token.
     agoraKit.joinChannel(byToken: Token, channelId: "demoChannel1", info:nil, uid:0) { [unowned self] (channel, uid, elapsed) -> Void in}
-    self.isLocalVideoRender = true
-            self.logVC?.log(type: .info, content: "did join channel")
-        }
-        isStartCalling = true
-}
-```
-
-### 6. Set the remote video view
-
-In a video call, you should be able to see other users too. This is achieved by calling the `setupRemoteVideo` method after joining the channel.
-
-Shortly after a remote user joins the channel, the SDK gets the remote user's ID in the `firstRemoteVideoDecodedOfUid` callback. Call the `setupRemoteVideo` method in the callback, and pass in the uid to set the video view of the remote user.
-
-```objective-c
-// Objective-C
-// Listen for the firstRemoteVideoDecodedOfUid callback.
-// This callback occurs when the first video frame of a remote user is received and decoded after the remote user successfully joins the channel.
-// You can call the setupRemoteVideo method in this callback to set up the remote video view.
-- (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size: (CGSize)size elapsed:(NSInteger)elapsed {
-    if (self.remoteVideo.hidden) {
-        self.remoteVideo.hidden = NO;
+    self.logVC?.log(type: .info, content: "did join channel")
     }
-    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
-    videoCanvas.uid = uid;
-    videoCanvas.view = self.remoteVideo;
-    videoCanvas.renderMode = AgoraVideoRenderModeHidden;
-    // Set the remote video view.
-    [self.agoraKit setupRemoteVideo:videoCanvas];
+    isStartCalling = true
 }
-```
-
-```swift
-// Swift
-// Listen for the firstRemoteVideoDecodedOfUid callback.
-// This callback occurs when the first video frame of a remote user is received and decoded after the remote user successfully joins the channel.
-// You can call the setupRemoteVideo method in this callback to set up the remote video view.
-func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid:UInt, size:CGSize, elapsed:Int) {
-        isRemoteVideoRender = true
-        let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = uid
-        videoCanvas.view = remoteVideo
-        videoCanvas.renderMode = .hidden
-        // Set the remote video view.
-        agoraKit.setupRemoteVideo(videoCanvas)
-    }
 ```
 
 ### 7. Leave the channel
@@ -357,10 +268,6 @@ Call the `leaveChannel` method to leave the current call according to your scena
 func leaveChannel() {
 // Leave the channel.
  AgoraKit.leaveChannel(nil)
- AgoraKit.setupLocalVideo(nil)
- remoteVideo.removeFromSuperview()
- localVideo.removeFromSuperview()
- delegate?.VideoChatNeedClose(self)
  AgoraKit = nil
  view.window!.close()
  }
@@ -370,7 +277,4 @@ func leaveChannel() {
 You can find the sample code logic in the [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora-Mac-Tutorial-Objective-C/VideoChatViewController.m)/[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora-Mac-Tutorial-Swift/VideoChatViewController.swift) file in the Agora-macOS-Tutorial-Objective-C-1to1/Agora-macOS-Tutorial-Swift-1to1 demo project.
 
 ## Run the project
-Run the project on your macOS device. You can see both the local and remote video views when you successfully start a one-to-one video call in the app.
-
-## Reference
-We provide open-source [OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-macOS) sample projects that implements the group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
+Run the project on your macOS device. You can hear the remote user when you successfully start a one-to-one voice call in the app.

@@ -3,7 +3,7 @@
 title: AI Interactive Classroom
 description: 
 platform: All Platforms
-updatedAt: Thu Mar 12 2020 06:43:59 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 07:53:34 GMT+0800 (CST)
 ---
 # AI Interactive Classroom
 ## Overview
@@ -135,5 +135,5 @@ Agora provides the following demos that shows how to send the audio captured by 
 
 | Platform | Open-source demo                                             |
 | :------- | :----------------------------------------------------------- |
-| Android  | [Pronunciation Assessment (Android)](https://github.com/AgoraIO/Advanced-Audio/tree/master/Pronunciation-Assess/Pronunciation-Assess-Android) |
-| iOS      | [Pronunciation Assessment (iOS)](https://github.com/AgoraIO/Advanced-Audio/tree/master/Pronunciation-Assess/Pronunciation-Assess-iOS) |
+| Android  | [Pronunciation Assessment (Android)](https://github.com/AgoraIO/Advanced-Audio/tree/dev/backup/Pronunciation-Assess/Pronunciation-Assess-Android) |
+| iOS      | [Pronunciation Assessment (iOS)](https://github.com/AgoraIO/Advanced-Audio/tree/dev/backup/Pronunciation-Assess/Pronunciation-Assess-iOS) |
