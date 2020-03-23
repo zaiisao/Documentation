@@ -26,7 +26,7 @@ updatedAt: Thu Feb 20 2020 07:32:00 GMT+0800 (CST)
 
 2. 将以下测试 IP 及端口添加到企业防火墙的白名单。
 
-   源地址为集成了 Agora Native/On-premise Recording SDK 的客户端。
+   源地址为集成了 Agora RTC/On-premise Recording SDK 的客户端。
  
 | 协议 | 目标地址      | 端口                    | 端口用途     |
 | ---- | ------------- | ----------------------- | ------------ |

@@ -2,8 +2,8 @@
 ---
 title: 使用云代理服务
 description: 
-platform: Android,iOS,macOS,Windows
-updatedAt: Mon Mar 23 2020 14:04:09 GMT+0800 (CST)
+platform: Unity
+updatedAt: Mon Mar 23 2020 14:01:06 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能描述
@@ -16,7 +16,7 @@ updatedAt: Mon Mar 23 2020 14:04:09 GMT+0800 (CST)
 
 ## 实现方法
 
-1. 下载[最新版的 Agora Native SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)。Agora Native SDK v2.4.0 及以上版本均支持使用云代理。
+1. 下载[最新版的 Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)。Agora RTC SDK v2.4.0 及以上版本均支持使用云代理。
 2. 参考对应平台的**快速开始**文档完成开发环境准备。
 3. 联系 sales@agora.io，提供 App ID，并提供代理服务使用区域、并发规模、网络运营商等信息，申请开通云代理服务。
 4. 将以下测试 IP 及端口添加到企业防火墙的白名单。
@@ -40,8 +40,8 @@ updatedAt: Mon Mar 23 2020 14:04:09 GMT+0800 (CST)
 	 
 <div class="alert note">以上 IP 仅供测试阶段调试使用，正式上线前需要向 Agora 申请独立的云代理服务资源。</div>
 
-5. 调用 `setParameters("{\"rtc.enable_proxy\":true}");` 接口，将参数值设为 `true`，开启云代理服务。开启后，云代理服务器的默认配置为 `setParameters("{\"rtc.proxy_server\":[1, \"ap-proxy.agora.io\", 0]}");`，无需再次调用 `setParameters` 进行配置。
-6. 若默认配置无法满足需求，参照下表，调用 `setParameters("{\"rtc.proxy_server\":[proxy_type, \"ip or dns\", port]}");` 接口配置云代理服务器：
+5. 调用 `SetParameters("{\"rtc.enable_proxy\":true}");` 接口，将参数值设为 `true`，开启云代理服务。开启后，云代理服务器的默认配置为 `SetParameters("{\"rtc.proxy_server\":[1, \"ap-proxy.agora.io\", 0]}");`，无需再次调用 `SetParameters` 进行配置。
+6. 若默认配置无法满足需求，参照下表，调用 `SetParameters("{\"rtc.proxy_server\":[proxy_type, \"ip or dns\", port]}");` 接口配置云代理服务器：
  | `proxy_type`                                                 | `ip or dns`                                         | `port`                        |
 | ------------------------------------------------------------ | --------------------------------------------------- | ----------------------------- |
 | 0: 使用 Socks5 云代理服务器                         | 服务器的 IP 地址                                       | 服务器的端口             |
@@ -49,27 +49,27 @@ updatedAt: Mon Mar 23 2020 14:04:09 GMT+0800 (CST)
 | 2: 使用云代理服务器并配置 IP 地址（当域名受限时使用） | 按此格式列出服务器的 IP 地址 `"[\"ip1\",\"ip2\"]"` | lbs 的端口，默认值为 0 |
 7. 测试是否能正常实现音视频通话或直播。
 8. 测试完成后，Agora 会为你部署云代理服务正式环境，并提供相应的 IP（域名）和端口。将 Agora 提供的 IP 和端口添加到企业防火墙的白名单上。
-9. 若需关闭云代理服务，调用  `setParameters("{\"rtc.enable_proxy\":false}");` 方法。
+9. 若需关闭云代理服务，调用  `SetParameters("{\"rtc.enable_proxy\":false}");` 方法。
 
 ### 示例代码
 
-```java
+```c#
 // 开启云代理服务，并使用默认云代理服务器配置。
-setParameters("{\"rtc.enable_proxy\":true}");
+SetParameters("{\"rtc.enable_proxy\":true}");
 ```
 
-```java
+```c#
 // 开启云代理服务。
-setParameters("{\"rtc.enable_proxy\":true}");
+SetParameters("{\"rtc.enable_proxy\":true}");
 // 使用 Socks5 云代理服务器。
-setParameters("{\"rtc.proxy_server\":[0, \"127.0.0.1\", 1080]}");
+SetParameters("{\"rtc.proxy_server\":[0, \"127.0.0.1\", 1080]}");
 ```
 
-```java
+```c#
 // 开启云代理服务。
-setParameters("{\"rtc.enable_proxy\":true}");
+SetParameters("{\"rtc.enable_proxy\":true}");
 // 使用云代理服务器并配置 IP 地址。
-setParameters("{\"rtc.proxy_server\":[2, \"[\"192.168.0.112\",\"127.0.0.1\"]\", 0]}");
+SetParameters("{\"rtc.proxy_server\":[2, \"[\"192.168.0.112\",\"127.0.0.1\"]\", 0]}");
 ```
 
 ## 工作原理
@@ -84,4 +84,4 @@ Agora 云代理的工作原理如下：
 
 ## 开发注意事项
 
-`setParameters` 必须在加入频道前或离开频道后调用。
+`SetParameters` 必须在加入频道前或离开频道后调用。
