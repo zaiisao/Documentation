@@ -3,12 +3,14 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Mar 19 2020 05:39:38 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 08:22:19 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
-阅读本文前请确保你已经了解如何使用 [RESTful API 录制](../../cn/cloud-recording/cloud_recording_rest.md)。
+该文提供云端录制 RESTful API 的详细信息。
 
-> 除本文外，你也可以查看我们全新的交互式 API 文档[云端录制 RESTful API](https://docs.agora.io/cn/cloud-recording/restfulapi) ![](https://web-cdn.agora.io/docs-files/1583736328279)。你可以通过 **Schema** 标签页查看各 API 请求和响应包体的参数说明。
+> 除本文外，你也可以查看我们全新的交互式 API 文档[云端录制 RESTful API](https://docs.agora.io/cn/cloud-recording/restfulapi) ![](https://web-cdn.agora.io/docs-files/1583736328279)。该互动式文档包含各方法和参数的详细介绍，并提供 Try it out 功能，使你在文档页内即能进行 RESTful API 的调试。
+
+![](https://web-cdn.agora.io/docs-files/1584924717496)
 
 ## <a name="auth"></a>认证
 

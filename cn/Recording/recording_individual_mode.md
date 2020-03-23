@@ -3,7 +3,7 @@
 title: 单流录制
 description: 
 platform: Linux
-updatedAt: Mon Jan 06 2020 03:24:05 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 09:08:10 GMT+0800 (CST)
 ---
 # 单流录制
 ## 功能描述
@@ -50,6 +50,6 @@ updatedAt: Mon Jan 06 2020 03:24:05 GMT+0800 (CST)
 
 ## 开发注意事项
 
-- 单流模式下每个 UID 的音频和视频均分开录制，如需合成每个 UID 的音视频，需要通过 `video_convert.py` 脚本进行转码，详见[合并音视频文件](../../cn/Recording/recording_merge_files.md))。
+- 单流模式下每个 UID 的音频和视频均分开录制，如需合成每个 UID 的音视频，需要通过 `video_convert.py` 脚本进行转码，详见[合并音视频文件](../../cn/Recording/recording_merge_files.md)。
 - 单流模式下，如果用户中途离开频道后重新加入频道或者停止发送数据一段时间后恢复发送，均可能导致录制文件切片。具体情况详见[录制文件切片](https://docs.agora.io/cn/faq/record_split)。
 - 如果录制内容选择“仅录制视频“或”同时录制音视频“，但是 Web 端的用户没有发送视频，也会生成视频录制文件，录制黑屏。

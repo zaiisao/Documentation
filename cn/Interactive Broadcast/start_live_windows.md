@@ -3,14 +3,23 @@
 title: 实现互动直播
 description: 
 platform: Windows
-updatedAt: Wed Mar 04 2020 06:53:26 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 09:21:59 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何通过 Agora SDK 快速实现互动直播。
 
 互动直播和实时通话的区别就在于，直播频道的用户有角色之分。你可以将角色设置为主播或者观众，其中主播可以收、发流，观众只能收流。
 
-## Demo 体验
+
+## 快速跑通 Demo
+
+如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
+
+<video src="https://web-cdn.agora.io/docs-files/1584694949364 " poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+
+<div class="alert note">视频中展示的 UI 有部分调整更新，请以当前最新版为准。</div>
+
+## 示例项目
 Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
@@ -170,7 +179,6 @@ void CEnterChannelDlg::OnCbnSelchangeCmbRole()
 ```
 
 ### 5. 设置本地视图
-如果你想实现一个语音直播，可以直接查看[加入频道](#join)。
 
 成功初始化 IRtcEngine 对象后，需要在加入频道前设置本地视图，以便主播在直播中看到本地图像。参考以下步骤设置本地视图：
 - 调用 `enableVideo` 方法启用视频模块。
@@ -190,7 +198,7 @@ m_lpRtcEngine->setupLocalVideo(vc);
 
 <a name="join"></a>
 ### 6. 加入频道
-完成设置角色和本地视图后（视频直播场景），你就可以调用 `joinChannel` 方法加入频道。你需要在该方法中传入如下参数：
+完成设置角色和本地视图后，你就可以调用 `joinChannel` 方法加入频道。你需要在该方法中传入如下参数：
 
 - `channelName`: 传入能标识频道的频道 ID。输入频道 ID 相同的用户会进入同一个频道。
 
@@ -288,8 +296,6 @@ void CAgoraObject::CloseAgoraObject()
 }
 ```
 
-### 示例代码
-你可以在 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 示例代码中查看完整的源码和代码逻辑。
 ## 运行项目
 在 Windows 设备中运行该项目。当成功开始视频直播时，主播可以看到自己的画面；观众可以看到主播的画面。
 

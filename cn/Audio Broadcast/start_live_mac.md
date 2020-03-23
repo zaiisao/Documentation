@@ -3,14 +3,24 @@
 title: 实现互动直播
 description: 
 platform: macOS
-updatedAt: Fri Mar 20 2020 07:29:54 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 02:11:42 GMT+0800 (CST)
 ---
 # 实现互动直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
 
 互动直播和实时通话的区别就在于，直播频道的用户有角色之分。你可以将角色设置为主播 Broadcaster，或者观众 Audience，其中主播可以收、发流，观众只能收流。
 
-## Demo 体验
+
+## 快速跑通 Demo
+
+如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
+
+<video src="https://web-cdn.agora.io/docs-files/1584929426345" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+
+<div class="alert note">视频中展示的 UI 有部分调整更新，请以当前最新版为准。</div>
+
+
+## 示例项目
 
 Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)/[OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS)。在实现相关功能前，你可以下载并查看源代码。
 

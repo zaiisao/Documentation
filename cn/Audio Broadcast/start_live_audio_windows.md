@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Windows
-updatedAt: Fri Mar 20 2020 08:03:49 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 08:48:14 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何通过 Agora SDK 快速实现互动直播。
@@ -56,16 +56,16 @@ Agora 在 GitHub 上提供一个开源的实时音频通话示例项目 [OpenLiv
 - 进入**链接器 > 输入 > 附加依赖项**菜单，点击**编辑**，并在弹出窗口中输入 **agora_rtc_sdk.lib**。
 
 ## 实现音频直播
-本节介绍如何实现音频直播。视频直播的 API 使用时序见下图：
+本节介绍如何实现音频直播。音频直播的 API 使用时序见下图：
 
-![](https://web-cdn.agora.io/docs-files/1568257965768)
+![](https://web-cdn.agora.io/docs-files/1584693231512)
 
 ### 1. 创建用户界面
 
 为直观地体验音频通话，需根据应用场景创建用户界面（UI)。若项目中已有用户界面，直接查看[初始化 IRtcEngine](#ini)。
 
-如果你想实现一个视频直播，推荐在 UI 上添加以下控件：
-- 主播视频窗口
+如果你想实现一个音频直播，推荐在 UI 上添加以下控件：
+- 主播视图
 - 离开频道按钮
 
 当你使用示例项目中的 UI 设计时，你将会看到如下界面：
@@ -118,10 +118,6 @@ public:
   
     // 在主播调用 leaveChannel 方法后，此回调会报告离开频道的主播信息。
     virtual void onLeaveChannel(const RtcStats& stat);
-  
-  
-    // 在引擎收到第一帧远端视频流并解码成功时，会触发此回调。
-    virtual void onFirstRemoteVideoDecoded(uid_t uid, int width, int height, int elapsed);
   
   
     // 在主播调用 leaveChannel 方法后，此回调会报告该主播离开频道及离线原因。

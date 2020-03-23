@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Mar 04 2020 05:50:10 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 11:01:11 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -72,7 +72,7 @@ Agora 在该版本对通信场景采用了全新的系统架构，并升级了�
 
 #### 3. 调节本地播放的指定远端用户音量
 
-该版本新增 [`adjustUserPlaybackSignalVoume`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aac9c5135996428d9a238fe8e66858268) 方法，用以调节本地用户听到的指定远端用户的音量。通话或直播过程中，你可以多次调用该方法，来调节多个远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
+该版本新增 [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aac9c5135996428d9a238fe8e66858268) 方法，用以调节本地用户听到的指定远端用户的音量。通话或直播过程中，你可以多次调用该方法，来调节多个远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
 
 #### 4. 媒体播放器组件
 

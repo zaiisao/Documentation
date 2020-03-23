@@ -3,224 +3,266 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Thu Mar 12 2020 11:02:56 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 08:33:59 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
 
-当你使用 Agora Native SDK 实现音视频互动直播时，如果你想将本地媒体文件或在线媒体流经过  SD-RTN 分发给远端用户观看，那么你需要使用媒体播放器组件播放这个文件。主播可以通过媒体播放器组件实时调节播放情况。
+媒体播放器组件（MediaPlayer Kit）是一款功能强大的播放器，支持播放本地或在线的媒体资源。通过该播放器，你可以本地播放媒体资源，或将媒体资源同步分享给 Agora 频道内的远端用户观看/收听。
 
-<a name="format"></a>
-### 支持格式
+### 使用须知
 
-- 本地：AVI、MP4、MKV 和 FLV 格式的文件。
-- 在线：RTMP 流和 RTSP 流。
+- 目前支持播放的媒体格式：AVI、MP4、MKV 和 FLV 格式的本地文件，RTMP 和 RTSP 协议的在线媒体流。
+- 本地播放媒体资源时，只需单独使用 MediaPlayer Kit。分享媒体资源到远端时，需同时使用 MediaPlayer Kit，Agora Native SDK 和 RtcChannelPublishPlugin 三者。其中，MediaPlayer Kit 支持本地用户使用播放器功能，Native SDK 支撑本地用户和远端用户的实时音视频直播场景，RtcChannelPublishPlugin 支持将播放的媒体流发送给 Agora 频道中远端用户。
+- 分享媒体资源到远端时，播放器的画面会抢占主播摄像头采集的画面。所以，如果你希望远端用户同时看到主播和播放器的画面，则需另起一个进程来采集主播的画面。
 
-<div class="alert note">目前只支持播放采样率为 32、44.1 或 48 kHz 的单或双声道媒体文件。</div>
-
-### 使用指南
-
-使用媒体播放器组件时，你可以开始/暂停播放，调节播放进度，调节播放音量，选择是否将播放的媒体文件发布给远端用户观看：
-
-- 你可以将媒体播放器组件播放的媒体文件分发给远端用户。在这种场景下，你可能需要使用双进程。一个进程里采集并发送你的直播视频，另一个进程里采集并发送播放器播放的文件。
-
-- 你也可以将媒体播放器组件作为你的本地播放器使用，本文对这种情况不多加讨论。
-
-## 快速使用媒体播放器组件
+## 准备开发条件
 
 ### 前提条件
 
-- Xcode 10.12 及以上。
-- 系统 macOS 10.12 及以上的真机。
-- 请确保你的项目已设置有效的开发者签名。
+- Xcode 9.0 或以上版本
+- 支持 macOS 10.10 或以上版本的 macOS 设备
+
+> 如果你的网络环境部署了防火墙，请根据[应用企业防火墙限制](https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms)打开相关端口。
+>
+> 分享媒体资源到远端时，还需有效的 Agora 账户（免费[注册](https://dashboard.agora.io/)）。
+
+### 创建项目
+
+参考以下步骤创建一个 macOS 项目。
+
+<details>
+	<summary><font color="#3ab7f8">创建 macOS 项目</font></summary>
+
+1. 打开 **Xcode** 并点击 **Create a new Xcode project**。
+2. 选择项目类型为 **App**，并点击 **Next**。
+3. 输入项目信息，如项目名称、开发团队信息、组织名称和语言，并点击 **Next**。
+
+	**Note**：如果你没有添加过开发团队信息，会看到 **Add account…** 按钮。点击该按钮并按照屏幕提示登入 Apple ID，完成后即可选择你的账户作为开发团队。
+4. 选择项目存储路径，并点击 **Create**。
+5. 进入 **TARGETS > Project Name > Signing & Capabilities** 菜单，选择 **Automatically manage signing**，并在弹出菜单中点击 **Enable Automatic**。
+</details>
 
 
-### 快速体验媒体播放器组件
+### 集成 MediaPlayer Kit
 
-1. 下载并解压 [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/MediaPlayer/Mediaplayer-Mac) 文件。
-2. 使用 Xcode 打开 `MediaPlayerKitQuickstart.xcodeproj` 文件。
-3. 点击编译。
-4. 编译成功后，你可以看到弹出一个新界面。
-> 如果编译出错，请检查是否已设置有效的开发者签名。
-5. 点击界面上的 **Settings**，设置远端用户看到的视频画质，然后点击 **Confirm**。
-6. 填入 **Channel Name**，选择 **Join as Broadcaster**，随后你可以看到媒体播放器组件的播放界面。
-![](https://web-cdn.agora.io/docs-files/1567481228573)
+1. 前往 [SDK 下载页面](https://docs.agora.io/cn/AgoraPlatform/downloads)，获取最新版 MediaPlayer Kit，然后解压。
 
-7. 在界面的下方你可以从左到右看到以下图标：开始/暂停播放，进度条，音量栏，**PUBLISH STREAMING** 和设置。
-8. 点击此界面的文字框（位于下载图标下），你可以选择本地路径导入视频文件，并将视频发布到远端（默认）。
+2. 将 libs 文件夹内的 `AgoraMediaPlayer.framework` 文件复制到项目文件夹下。
 
-### 注意事项
+3. 在 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** 菜单中，将 `AgoraMediaPlayer.framework` 的状态修改为 **Embed & Sign**。
 
-MediaPlayerKitQuickstart 只支持从本地导入视频，不能通过 URL 地址导入在线视频。
+4. 打开 Xcode，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 + 添加如下库。在添加 `AgoraMediaPlayer.framework` 文件时，还需在点击 **+** 后点击 Add Other…，找到本地文件并打开。
 
-## 实现媒体播放器组件
+   - AgoraMediaPlayer.framework
 
-### 前提条件
+   - Accelerate.framework
 
-- Xcode 10.12 及以上。
-- 系统 macOS 10.12 及以上的真机。
-- 请确保你的项目已设置有效的开发者签名。
+   - CoreWLAN.framework
 
-### 集成媒体播放器组件  
+   - libc++.tbd
 
-**1. 准备工作**
+   - libresolv.9.tbd
 
-- 下载并解压 Agora Native SDK（详见[下载](https://docs.agora.io/cn/Agora%20Platform/downloads)专区的**视频通话/视频互动直播 SDK**）
-- 请确保你已经完成 Agora Native SDK 的集成工作，详见[集成客户端](../../cn/Audio%20Broadcast/start_live_mac.md)。
-- 下载并解压 MediaPlayerKit 文件。
+   - SystemConfiguration.framework
 
-**2. 创建项目**
-<div class="alert warning">在此步，你应该基于已有的集成了 Agora Native SDK 的项目继续集成 MediaPlayerKit 的项目，而不是从头创建一个新项目。</div>
+   - VideoToolbox.framework
 
-- 打开 Xcode，**Create a new Xcode project**。
-- 在**Choose a template for your new project** 页面上选择 **macOS** 和 Application 下的 **cocoa App**，点击 **Next**。
-- 填入你的 **Product Name**，比如 “MediaPlayer”，选择 **Language** 为 Objective-C，点击 **Next**。
-- 选择存放项目文件的本地路径，比如 `/Users/xxx/Desktop`，点击 **Create**，随后你可以看到你的项目页面。
+   添加后：
 
-<a name="import"></a>
-**3. 导入文件**
-- 在 “MediaPlayer” **项目文件**处右键，点击 **Add Files to "MediaPlayer"**。
-	- 导入 `AgoraRtcEngineKit.framework` 文件：
-		- 本地路径选择此文件；
-		- **Destination** 选择 **Copy items if needed**；
-		- **Added folder** 选择 **Create groups**；
-		- 点击 **Add**。
-	- 导入 `MediaPlayerKit.framework` 文件：
-       - 导入方法同上。
-- 在 “MediaPlayer” **文件**处右键，点击 **Add Files to "MediaPlayer"**。
-	- 导入 `Agora_MediaPlayer_Kit` 文件：
-     	- 导入方法同上。
+   ![](https://web-cdn.agora.io/docs-files/1583978660844)
 
-**4. 导入库**
-- 点击 **Build Phases**，展开 **Link Binary With Libraries**，可以看到导入文件后已经填入的库：
-	- `MediaPlayerKit.framework`
-	- `liblibyuv.a`
-	- `AgoraRtcEngineKit.framework`
+5. 根据场景需要，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
 
-> 请确保这三个库已经添加，否则你需回到[步骤 3](#import)。
+	| Key                                    | Type   | Value                                      |
+	| -------------------------------------- | ------ | ------------------------------------------ |
+	| Privacy - Microphone Usage Description | String | 使用麦克风的目的，例如：for a video or audio call。 |
+	| Privacy - Camera Usage Description     | String | 使用摄像头的目的，例如：for a video call。 |
 
-- 点击 “**+**” 号添加以下 21 个库：
-	- `Carbon.framework`
-	- `ForceFeedback.framework`
-	- `IOKit.framework`
-	- `libbz2.tbd`
-	- `libiconv.2.4.0.tbd`
-	- `QuartzCore.framework`
-	- `SecurityFoundation.framework`
-	- `CoreImage.framework`
-	- `OpenGL.framework`
-	- `OpenCL.framework`
-	- `CoreVideo.framework`
-	- `SystemConfiguration.framework`
-	- `libresolv.tbd`
-	- `libc++.tbd`
-	- `libz.tbd`
-	- `CoreAudio.framework`
-	- `CoreWLAN.framework`
-	- `CoreMedia.framework`
-	- `AudioToolbox.framework`
-	- `VideoToolbox.framework`
-	- `AVFoundation.framework`
+### 集成 Native SDK
 
-**5. 配置库路径**
-- 找到 **Header Search Paths**：
-	- 点击 **Build Settings**；
-	- 选择 **All** 和 **Levels**；
-	- 在搜索栏中填入 **Header Search Paths**。
+**版本要求**：2.4.0 或更高版本。
 
-- 点开 **Header Search Paths** 并添加 `libyuv.h` 文件的路径:
-	- 在项目页面左侧展开并找到 “MediaPlayer” **文件**下的 **Agora_MediaPlayer_Kit** > **third_party** > **libyuv** > **include** > **libyuv.h** 文件；
-	- 在此处右键选择 **Show in Finder**，你可以看到 `libyuv.h` 文件本地绝对路径为 /Users/xxx/Desktop/MediaPlayer/MediaPlayer/Agora_MediaPlayer_Kit/third_party_libyuv/include；
-	> `/Users/xxx/Desktop/MediaPlayer` 即为你的项目路径`$(PROJECT_DIR)`。
+集成步骤：参考[集成 Native SDK](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS#a-nameintegratesdka集成-sdk)。
 
-	- 填入`libyuv.h` 文件本地相对路径： `$(PROJECT_DIR)/MediaPlayer/Agora_MediaPlayer_Kit/third_party_libyuv/include`。
-	
+### 集成 RtcChannelPublishPlugin
 
-**6. 编译项目** 
-- 点击编译。
-- 编译成功后，弹出一个窗口。
+1. [下载](https://github.com/AgoraIO/Agora-Extensions/tree/master/MediaPlayer/helper/apple) RtcChannelPublishPlugin。
+2. 将 RtcChannelPublishPlugin 文件夹复制到项目文件中。
 
-你可以参考[调用媒体播放器组件接口](#1)或 [API 文档](#2)完成你的项目。
+## 实现方法
 
-<a name="1"></a>
-### 调用媒体播放器组件接口
+<a name="local"></a>
+### 本地播放媒体资源
 
-**API 时序图**
+集成 MediaPlayer Kit 后，参考如下步骤实现本地播放功能。
 
-![](https://web-cdn.agora.io/docs-files/1567498466302)
+**创建一个播放器实例**
 
-请确保你已使用 Agora Native SDK 在你的项目中完成基本的实时音视频功能，详见[实现互动直播](../../cn/Audio%20Broadcast/start_live_mac.md)。
+创建一个 `AgoraMediaPlayer` 实例。
 
-**准备工作**
+> 如需同时播放不同的媒体资源，你可以创建多个实例。
 
-1. 调用 `shareInstance` 和 `createMediaPlayerKitWithRtcEngine()` 方法初始化一个 MediaPlayer Kit 单实例。
+**获取事件回调**
 
-2. 调用 `MediaPlayerKitDelegate` 方法设置代理方法。
+重写 `AgoraMediaPlayerDelegate` 代理方法，获取以下事件回调：
 
-3. 调用 `setVideoView` 方法设置本地视图。
+- `didChangedToPosition`，报告当前播放进度
+- `didChangedToState`，报告播放状态改变
+- `didOccurEvent`，报告定位播放状态
+- `didReceiveData`，报告媒体附属信息（metadata）的接收
+- `didReceiveAudioFrame`，报告每帧音频帧的接收
+- `didReceiveVideoFrame`，报告每帧视频帧的接收
 
-4. 调用 `load` 方法将视频载入内存。
-> 你可以按照自己的需求，从本地路径或 URL 路径载入视频。只要它符合视频格式，详见[支持格式](#format)。
+通过监听这些事件，你可以更好地掌握播放过程，并使用自定义格式数据（媒体附属信息）。如果播放发生异常，你可以根据这些事件排查问题。
 
-```Objective-c
-[[MediaPlayerKit shareInstance] createMediaPlayerKitWithRtcEngine:agoraKit withSampleRate:44100];
-[MediaPlayerKit shareInstance].delegate = self;
-[[MediaPlayerKit shareInstance] setVideoView:self.view];
-[[MediaPlayerKit shareInstance] load:url isAutoPlay:true/false];
-```
+**准备播放**
 
-**本地播放**
+1. 调用 `AgoraMediaPlayer` 接口的 `setView` 方法设置播放器的渲染视图。
 
-调用 `play`、`adjustPlaybackSignalVolume`、`seekTo`、`getCurrentPosition`、`pause` 和 `resume` 等方法实时调节播放器。
+2. 调用 `AgoraMediaPlayer` 接口的 `setRenderMode` 方法设置播放器视图的渲染模式。
 
-```Objective-c
-[[MediaPlayerKit shareInstance] play];
-[[MediaPlayerKit shareInstance] adjustPublishSignalVolume:volume];
-[[MediaPlayerKit shareInstance] seekTo:msec];
-[[MediaPlayerKit shareInstance] getCurrentPosition];
-...
-```
+3. 调用 `AgoraMediaPlayer` 接口的 `open` 方法打开媒体资源。媒体资源路径可以为网络路径或本地路径，支持绝对路径和相对路径。
 
-**分享到远端**
+   > 请收到 `didChangedToState` 回调报告播放状态为 `AgoraMediaPlayerStateOpenCompleted(2)` 后再进行下一步操作。
 
-1. 调用 `publishVideo` 或 `publishAudio` 方法将媒体文件的视频流或音频流分享给 Agora 频道内的远端用户。
+4. 调用 `AgoraMediaPlayer` 接口的 `play` 方法本地播放该媒体资源。
 
-2. 调用 `adjustPublishSignalVolume` 方法调节远端用户接收到的音量。
+**调节播放设置**
 
-```Objective-c
-[[MediaPlayerKit shareInstance] publishVideo];
-[[MediaPlayerKit shareInstance] publishAudio];
-[[MediaPlayerKit shareInstance] adjustPublishSignalVolume:<#(int)#>];
-```
+调用 `AgoraMediaPlayer` 接口的其他方法，你可以实现如下播放设置：
 
-**取消分享**
-
-调用 `unpublishVideo` 或 `unpublishAudio` 方法即可停止把视频或音频流发布给远端用户。
-
-```Objective-c
-[[MediaPlayerKit shareInstance] unpublishVideo];
-[[MediaPlayerKit shareInstance] unpublishAudio];
-```
+- 暂停/恢复播放，调节播放进度，调节本地播放音量等。
+- 获取媒体资源总时长，获取播放进度，获取当前播放状态，获取该媒体资源中媒体流的个数和每个媒体流的详细信息。
 
 **结束播放**
 
-1. 调用 `stop` 方法停止播放视频。
+1. 调用 `AgoraMediaPlayer` 接口的 `stop` 方法停止播放。
+2. 将 `setView` 方法中 `view` 赋值为 NULL，释放 view。
+3. 使用 iOS ARC 内存管理机制释放 `AgoraMediaPlayer` 实例。
 
-2. 调用 `unload` 方法从释放加载到内存的视频。
+**示例代码**
 
-3. 调用 `destroy` 方法销毁一个 MediaPlayerKit 实例并退出媒体播放器组件。
-
-```Objective-c
-[[MediaPlayerKit shareInstance] stop];
-[[MediaPlayerKit shareInstance] unload];	
-[[MediaPlayerKit shareInstance] destroy];
+```objective-c
+_mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
+[_mediaPlayerKit setView:self.containerView];
+[_mediaPlayerKit open:url startPos:0];
+[_mediaPlayerKit play];
+[_mediaPlayerKit stop];
+[_mediaPlayerKit seekToPosition:value];
+[_mediaPlayerKitadjustVolume:volume];
+  
+ //重写代理方法 获得播放器的事件回调
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+       didChangedToState:(AgoraMediaPlayerState)state
+                   error:(AgoraMediaPlayerError)error;
+{
+     //todo
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+    didChangedToPosition:(NSInteger)position;
+{
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+          didOccurEvent:(AgoraMediaPlayerEvent)event;
+{
+     //todo
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+          didReceiveData:(NSString *)data
+                  length:(NSInteger)length;
+{
+     //todo
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+    didReceiveVideoFrame:(CVPixelBufferRef
+{
+    //todo
+}
+ 
+ 
+- (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
+    didReceiveAudioFrame:(CMSampleBufferRef)
+{
+    //todo
+};
 ```
 
+### 分享媒体资源到远端
 
-<a name="2"></a>
-## API 文档
-详见 [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/v1.0.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
+集成 MediaPlayer Kit、Agora Native SDK 和 RtcChannelPublishPlugin 后，参考如下步骤将本地用户使用播放器播放的媒体资源分享给 Agora 频道内的远端用户。
+
+**实例化**
+
+1. [实例化 AgoraRtcEngineKit](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS#3-初始化-agorartcenginekit) 对象。
+2. 实例化 AgoraMediaPlayer 和 RtcChannelPublishHelper 对象。
+
+**播放器完成准备工作**
+
+参考[本地播放资源](#local)，**获取事件回调**，完成**准备播放。**
+
+> 请收到 `didChangedToState` 回调报告播放状态为 `AgoraMediaPlayerStatePlaying(3)` 后再进行下一步操作。
+
+**本地用户加入频道**
+
+参考 [RTC 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS#4-设置频道场景)，实现本地用户以主播身份加入 Agora 直播频道：
+
+1. 调用 `setChannelProfile` 方法设置频道场景为直播。
+2. 调用 `setClientRole` 方法设置本地用户角色为主播。
+3. 调用 `enableVideo` 方法开启视频模块。
+4. 调用 `joinChannelByToken` 方法使本地用户加入频道。
+
+> 请收到 `joinSuccessBlock` 或 `didJoinChannel` 回调后再进行下一步操作。
+
+远端用户的角色设为 `BROADCASTER` 后，Native SDK 会自动开启回声消除模块。因此，为避免远端用户听到播放视频的回声，Agora 建议你使远端用户也以主播身份加入频道。
+
+**开始分享**
+
+1. 调用 `attachPlayerToRtc` 方法将播放器和 Agora 频道捆绑。播放器画面将占据本地用户视图。
+2. 为避免远端用户听到播放视频的回声，请调用 `adjustPlayoutSignalVolume` 方法设置播放音量为 0，再调用 `AgoraMediaPlayer` 接口的 `mute` 方法设置播放器静音。
+3. 调用 `publishVideo`/`publishAudio` 方法将播放的视频/音频流分享给 Agora 频道内远端用户。
+4. 调用 `adjustPublishSignalVolume` 方法调节远端播放音量。
+
+如果本地用户在**开始分享**之后直接调用 `leaveChannel` 离开频道，媒体流将停止发送给远端。但是当本地用户重新进入频道，之前分享的媒体流会自动发送给频道内远端用户。因此 Agora 建议你使用以下步骤取消分享。
+
+**取消分享**
+
+1. 调用 `unpublishVideo`/`unpublishAudio` 方法取消分享该视频/音频流。
+2. 调用 `detachPlayerFromRtc` 方法将播放器和 Agora 频道解绑。
+
+
+**示例代码**
+
+```objective-c
+_rtcEnginekit = [AgoraRtcEngineKit sharedEngineWithAppId:@"YOUR_APPID" delegate:self];
+[_rtcEnginekit setChannelProfile:AgoraChannelProfileLiveBroadcasting];
+[_rtcEnginekit setClientRole:AgoraClientRoleBroadcaster];
+[_rtcEnginekit enableVideo];
+[_rtcEnginekit joinChannelByToken:token channelId:channelid info:""  uid:"" joinSuccess:NULL];
+[[AgoraRtcChannelPublishHelper shareInstance] attachPlayerToRtc:_mediaPlayerKit RtcEngine:_rtcEnginekit];
+[[AgoraRtcChannelPublishHelper shareInstance] publishAudio];
+[[AgoraRtcChannelPublishHelper shareInstance] publishVideo];
+[[AgoraRtcChannelPublishHelper shareInstance] detachPlayerFromRtc];
+```
+
+## 获取日志文件
+
+日志文件包含媒体播放器组件运行时产生的所有日志。日志文件的输出地址为 `App Sandbox/Library/caches/agoraplayer.log`。
 
 ## 注意事项
 
-如果你用媒体播放器组件播放 URL 路径的视频，遇到因为网络问题而导致的媒体播放器组件播放错误后，你需要在网络情况好转后，调用 `load` 方法重新载入视频。
+常见的语音路由有蓝牙耳机、普通耳机和设备的扬声器。为避免播放视频时，本地用户切换语音路由后，新的语音路由无声的问题，Agora 建议你进行如下操作：
+* 在本地播放媒体资源的场景下， Agora 建议本地用户在 `open` 前切换语音路由。
+  > 如果本地用户在 `open` 后切换语音路由，视频播放将无声，你需要重新调用 `open` 和 `play` 方法播放视频。
+* 在分享媒体资源到远端的场景下，Agora 建议你使用 3.0.0 版本的 Native SDK，并在 `mute` 后再进行语音路由切换。
+
+## API 文档
+详见 [API 文档](https://docs-preview.agoralab.co/cn/Video/API%20Reference/mediaplayer_oc/1.1.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html?transId=1.1.0)

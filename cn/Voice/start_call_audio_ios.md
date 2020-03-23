@@ -1,16 +1,16 @@
 
 ---
-title: 实现视频通话
+title: 实现语音通话
 description: 
 platform: iOS
-updatedAt: Fri Mar 20 2020 09:23:45 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 08:39:17 GMT+0800 (CST)
 ---
-# 实现视频通话
-本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
+# 实现语音通话
+本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
 
-## Demo 体验
+## 示例项目
 
-Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-iOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1)/[Agora-iOS-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的实时语音通话示例项目 [Agora-iOS-Voice-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/One-to-One-Voice/Agora-iOS-Voice-Tutorial-Swift-1to1)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
@@ -78,15 +78,11 @@ end
 	- AudioToolbox.framework
 	- AVFoundation.framework
 	- CoreMedia.framework
-	- CoreML.framework
 	- CoreTelephony.framework
 	- libc++.tbd
 	- libresolv.tbd
 	- SystemConfiguration.framework
-	- VideoToolbox.framework
 
- <div class="alert note">如需支持 iOS 11.0 或更低版本的设备，请在 <b>Xcode</b> 中将对 <b>CoreML.framework</b> 的依赖设为 <b>Optional</b>。</div>
- 
  
 4. 当集成动态库时，打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开。添加完成后，项目会自动链接其他系统库。
 
@@ -100,7 +96,7 @@ end
  
  **静态库添加后**：
 
- ![](https://web-cdn.agora.io/docs-files/1583329456927)  
+ ![](https://web-cdn.agora.io/docs-files/1584604823800) 
  
  **动态库添加前**：
  
@@ -118,7 +114,6 @@ end
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a call。      |
-| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a call。      |
 
 
 **添加前**：
@@ -127,27 +122,26 @@ end
  
 **添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1584604886884) 
+ ![](https://web-cdn.agora.io/docs-files/1584604875770) 
 
-## 实现视频通话
+## 实现语音通话
 
-本节介绍如何实现视频通话。视频通话的 API 调用时序见下图：
+本节介绍如何实现语音通话。语音通话的 API 调用时序见下图：
 
-![](https://web-cdn.agora.io/docs-files/1568258636245)
+![](https://web-cdn.agora.io/docs-files/1584590910617)
 
 ### 1. 创建用户界面
 
-根据场景需要，为你的项目创建视频通话的用户界面。若已有用户界面，可以直接查看[导入类](#ImportClass)。
+根据场景需要，为你的项目创建语音通话的用户界面。若已有用户界面，可以直接查看[导入类](#ImportClass)。
 
-在一个视频通话中，我们推荐你添加如下 UI 元素：
+在语音通话中，我们推荐你添加如下 UI 元素：
 
-- 本地视频窗口
-- 远端视频窗口
-- 结束通话按钮
+- 语音通话窗口
+- 退出频道按钮
 	
 当你使用示例项目中的 UI 设计时，你将会看到如下界面：
 
-![](https://web-cdn.agora.io/docs-files/1568801572191)
+![](https://web-cdn.agora.io/docs-files/1584592390009)
 	
 ### <a name="ImportClass"></a>2. 导入类
 
@@ -167,7 +161,7 @@ import AgoraRtcKit
 import AgoraRtcEngineKit
 ```
 
-<div class="alert note">Agora 视频通话 SDK 默认使用 libc++ (LLVM)，如需使用 libstdc++ (GNU)，请联系 sales@agora.io。SDK 提供的库是 Fat Image，包含 32/64 位模拟器、32/64 位真机版本。</div>
+<div class="alert note">Agora Native SDK 默认使用 libc++ (LLVM)，如需使用 libstdc++ (GNU)，请联系 sales@agora.io。SDK 提供的库是 Fat Image，包含 32/64 位模拟器、32/64 位真机版本。</div>
 
 
 ### 3. 初始化 AgoraRtcEngineKit
@@ -182,7 +176,7 @@ import AgoraRtcEngineKit
 
 调用 `sharedEngineWithAppId` 方法，传入获取到的 App ID，即可初始化 `AgoraRtcEngineKit`。
 
-你还可以根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户视频首帧等。
+你还可以根据场景需要，在初始化时注册想要监听的回调事件，如远端用户加入频道或离开频道等。
 
 ```objective-c
 // Objective-C
@@ -200,56 +194,22 @@ func initializeAgoraEngine() {
 }
 ```
 
-### 4. 设置本地视图
 
-成功初始化 `AgoraRtcEngineKit` 对象后，需要在加入频道前设置本地视图，以便在通话中看到本地图像。参考以下步骤设置本地视图：
+### 4. 加入频道
 
-- 调用 `enableVideo` 方法启用视频模块。
-- 调用 `setupLocalVideo` 方法设置本地视图。
-
-```objective-c
-// Objective-C
-// 启用视频模块。
-[self.agoraKit enableVideo];
-- (void)setupLocalVideo {
-    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
-    videoCanvas.uid = 0;
-    videoCanvas.view = self.localVideo;
-    videoCanvas.renderMode = AgoraVideoRenderModeHidden;
-    // 设置本地视图。
-    [self.agoraKit setupLocalVideo:videoCanvas];
-}
-```
-
-```swift
-// Swift
-// 启用视频模块。
-agoraKit.enableVideo()
-func setupLocalVideo() {
-  let videoCanvas = AgoraRtcVideoCanvas()
-  videoCanvas.uid = 0
-  videoCanvas.view = localVideo
-  videoCanvas.renderMode = .hidden
-  // 设置本地视图。
-  agoraKit.setupLocalVideo(videoCanvas)
-}
-```
-
-### <a name="JoinChannel"></a>5. 加入频道
-
-完成初始化和设置本地视图后，你就可以调用 `joinChannelByToken` 方法加入频道。你需要在该方法中传入如下参数：
+完成初始化后，你就可以调用 `joinChannelByToken` 方法加入频道。你需要在该方法中传入如下参数：
 - channelId: 传入能标识频道的频道 ID。输入频道 ID 相同的用户会进入同一个频道。
 - token: 传入能标识用户角色和权限的 Token。你可以设置如下值：
 	- `nil`。
 	-控制台中生成的临时 Token。一个临时 Token 的有效期为 24 小时，详情见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token)。
-	- 你的服务器端生成的正式 Token。适用于对安全要求较高的生产环境，详情见[生成 Token](../../cn/Video/token_server.md)。
+	- 你的服务器端生成的正式 Token。适用于对安全要求较高的生产环境，详情见[生成 Token](../../cn/Voice/token_server.md)。
 
 <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 
 - uid: 本地用户的 ID。数据类型为整型，且频道内每个用户的 `uid` 必须是唯一的。若将 `uid` 设为 0，则 SDK 会自动分配一个 `uid`，并在 `joinSuccessBlock` 回调中报告。
 - joinSuccessBlock：成功加入频道回调。`joinSuccessBlock` 优先级高于 `didJoinChannel`，2 个同时存在时，`didJoinChannel` 会被忽略。 需要有 `didJoinChannel` 回调时，请将 `joinSuccessBlock` 设置为 `nil`。
 
-更多的参数设置注意事项请参考 [joinChannelByToken](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) 接口中的参数描述。
+更多的参数设置注意事项请参考 [joinChannelByToken](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) 接口中的参数描述。
 
 ```objective-c
 // Objective-C
@@ -265,54 +225,13 @@ func setupLocalVideo() {
 func joinChannel() {
     // 加入频道。
     agoraKit.joinChannel(byToken: Token, channelId: "demoChannel1", info:nil, uid:0) { [unowned self] (channel, uid, elapsed) -> Void in}
-    self.isLocalVideoRender = true
-            self.logVC?.log(type: .info, content: "did join channel")
-        }
-        isStartCalling = true
-}
-```
-
-### 6. 设置远端视图
-
-视频通话中，通常你也需要看到其他用户。在加入频道后，可通过调用 `setupRemoteVideo` 方法设置远端用户的视图。
-
-远端用户成功加入频道后，SDK 会触发 `firstRemoteVideoDecodedOfUid` 回调，该回调中会包含这个远端用户的 `uid` 信息。在该回调中调用 `setupRemoteVideo` 方法，传入获取到的 `uid`，设置远端用户的视图。
-
-```objective-c
-// Objective-C
-// 监听 firstRemoteVideoDecodedOfUid 回调。
-// SDK 接收到第一帧远端视频并成功解码时，会触发该回调。
-// 可以在该回调中调用 setupRemoteVideo 方法设置远端视图。
-- (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size: (CGSize)size elapsed:(NSInteger)elapsed {
-    if (self.remoteVideo.hidden) {
-        self.remoteVideo.hidden = NO;
+    self.logVC?.log(type: .info, content: "did join channel")
     }
-    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
-    videoCanvas.uid = uid;
-    videoCanvas.view = self.remoteVideo;
-    videoCanvas.renderMode = AgoraVideoRenderModeHidden;
-    // 设置远端视图。
-    [self.agoraKit setupRemoteVideo:videoCanvas];
+    isStartCalling = true
 }
-```
-
-```swift
-// Swift
-// 监听 firstRemoteVideoDecodedOfUid 回调。
-// SDK 接收到第一帧远端视频并成功解码时，会触发该回调。
-// 可以在该回调中调用 setupRemoteVideo 方法设置远端视图。
-func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid:UInt, size:CGSize, elapsed:Int) {
-        isRemoteVideoRender = true
-        let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = uid
-        videoCanvas.view = remoteVideo
-        videoCanvas.renderMode = .hidden
-        // 设置远端视图。
-        agoraKit.setupRemoteVideo(videoCanvas)
-    }
 ```
 		
-### 7. 离开频道
+### 5. 离开频道
 
 根据场景需要，如结束通话、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
 
@@ -329,8 +248,6 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid:UIn
 func leaveChannel() {
         // 离开频道。
         agoraKit.leaveChannel(nil)
-        isRemoteVideoRender = false
-        isLocalVideoRender = false
         isStartCalling = false
         self.logVC?.log(type: .info, content: "did leave channel")
     }
@@ -338,14 +255,14 @@ func leaveChannel() {
 
 ### 示例代码
 
-你可以在 Agora-iOS-Tutorial-Objective-C-1to1/Agora-iOS-Tutorial-Swift-1to1 示例项目的  [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora%20iOS%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m)/[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora%20iOS%20Tutorial/VideoChatViewController.swift)  文件中查看完整的源码和代码逻辑。
+你可以在 [Agora-iOS-Voice-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/One-to-One-Voice/Agora-iOS-Voice-Tutorial-Swift-1to1) 示例项目的 [VoiceChatViewController.swift](https://github.com/AgoraIO/Basic-Audio-Call/blob/master/One-to-One-Voice/Agora-iOS-Voice-Tutorial-Swift-1to1/Agora%20iOS%20Voice%20Tutorial/VoiceChatViewController.swift)  文件中查看完整的源码和代码逻辑。
 
 ## 运行项目
-你可以在 iOS 设备中运行此项目。当成功开始视频通话时，你可以同时看到本地和远端的视图。
+你可以在 iOS 设备中运行此项目。当成功开始语音通话时，你和远端用户可听到彼此的声音。
 
 ## 相关链接
 
 如果你需要实现一对多群聊场景，可以前往 GitHub 下载以下示例项目，或查看源代码。
 
-- Swift 项目: [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS)，参考 [RoomViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/RoomViewController.swift) 中的代码。
-- Objective-C 项目: [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C)，参考 [RoomViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/RoomViewController.m) 中的代码。
+- Swift 项目: [OpenVoiceCall-iOS](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/Group-Voice-Call/OpenVoiceCall-iOS)，参考 [RoomViewController.swift](https://github.com/AgoraIO/Basic-Audio-Call/blob/master/Group-Voice-Call/OpenVoiceCall-iOS/OpenVoiceCall/RoomViewController.swift) 中的代码。
+- Objective-C 项目: [OpenVoiceCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/Group-Voice-Call/OpenVoiceCall-iOS-Objective-C)，参考 [RoomViewController.m](https://github.com/AgoraIO/Basic-Audio-Call/blob/master/Group-Voice-Call/OpenVoiceCall-iOS-Objective-C/OpenVoiceCall-iOS-Objective-C/RoomViewController.m) 中的代码。

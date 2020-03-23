@@ -1,11 +1,11 @@
 
 ---
-title: 音视频文件合并
+title: 合并音视频文件
 description: 解释如何通过转码脚本将音频和视频合并，或转换文件格式
 platform: All Platforms
-updatedAt: Mon Oct 14 2019 07:19:23 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 09:14:58 GMT+0800 (CST)
 ---
-# 音视频文件合并
+# 合并音视频文件
 ## 功能描述
 
 单流录制模式下，每个 UID 的音频和视频均分开录制，每个 UID 都有其对应的音频文件和视频文件。你可以使用我们的音视频合并转码脚本，合并每个 UID 的音频文件和视频文件。

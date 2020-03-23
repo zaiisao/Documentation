@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Wed Mar 04 2020 12:42:08 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 11:02:26 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -120,11 +120,11 @@ agoraKit.setDeviceVolume(.audioPlayout, volume: 50)
 - `adjustPlaybackSignalVolume`：
   - 用于调节本地播放的所有远端用户混音后的音量。
   - 该方法中 `volume` 参数表示播放音量，取值范围为 [0, 400]。
-- `adjustUserPlaybackSignalVoume`：
+- `adjustUserPlaybackSignalVolume`：
   - 用于调节本地播放的指定远端用户混音后的音量。你可以多次调用该方法来调节不同远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
   - 该方法中 `volume` 参数表示播放音量，取值范围为 [0, 100]。
 
-<div class="alert note"><li>从 v2.3.2 开始，adjustPlaybackSignalVolume 接口仅支持调节所有远端用户的本地播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 adjustPlaybackSignalVolume(0) 和 adjustAudioMixingPlayoutVolume(0)。<li>adjustUserPlaybackSignalVoume 方法要在加入频道后调用。</li></div>
+<div class="alert note"><li>从 v2.3.2 开始，adjustPlaybackSignalVolume 接口仅支持调节所有远端用户的本地播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 adjustPlaybackSignalVolume(0) 和 adjustAudioMixingPlayoutVolume(0)。<li>adjustUserPlaybackSignalVolume 方法要在加入频道后调用。</li></div>
 
 示例代码
 
@@ -148,7 +148,7 @@ agoraKit.adjustUserPlaybackSignalVolume(uid, volume: 50)
 
 - [`setDeviceVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setDeviceVolume:volume:)
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
-- [`adjustUserPlaybackSignalVoume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustUserPlaybackSignalVolume:volume:)
+- [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustUserPlaybackSignalVolume:volume:)
 - [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
 
 ### 设置混音音量

@@ -1,16 +1,16 @@
 
 ---
-title: 实现视频通话
+title: 实现语音通话
 description: 
 platform: macOS
-updatedAt: Fri Mar 20 2020 09:23:01 GMT+0800 (CST)
+updatedAt: Fri Mar 20 2020 09:05:56 GMT+0800 (CST)
 ---
-# 实现视频通话
-本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
+# 实现语音通话
+本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
 
-## Demo 体验
+## 示例项目
 
-Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1)/[Agora-macOS-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的实时语音通话示例项目 [Agora-macOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1)/[Agora-macOS-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
@@ -78,8 +78,7 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-T
   - libc++.tbd
   - libresolv.9.tbd
   - SystemConfiguration.framework
-  - VideoToolbox.framework
- 
+
 
 4. 当集成动态库时，打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开。添加完成后，项目会自动链接其他系统库。
 
@@ -94,7 +93,7 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-T
  
  **静态库添加后**：
  
-  ![](https://web-cdn.agora.io/docs-files/1583329456927)  
+  ![](https://web-cdn.agora.io/docs-files/1584604823800) 
  
  **动态库添加前**：
  
@@ -112,7 +111,6 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-T
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
 | Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a call。      |
-| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a call。      |
 
 
 **添加前**：
@@ -121,10 +119,10 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-T
  
 **添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1584604886884) 
+ ![](https://web-cdn.agora.io/docs-files/1584604875770) 
 
 2. 若你的项目已启用 **App Sandbox** 或 **Hardened Runtime** 设置，则需勾选如下内容，获取相应的设备权限：
-
+ 
 <table>
     <tr>
         <td><b>菜单</b></td>
@@ -132,7 +130,7 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-T
         <td><b>内容</b></td>
     </tr>
     <tr>
-        <td rowspan="4">App Sandbox</td>
+        <td rowspan="3">App Sandbox</td>
         <td rowspan="2">Network</td>
         <td>Incoming Connections (Server)</td>
     </tr>
@@ -140,42 +138,35 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-T
         <td>Incoming Connections (Client)</td>
     </tr>
 	    <tr>
-        <td rowspan="2">Hardware</td>
-        <td>Camera</td>
-    </tr>
-    <tr>
+        <td >Hardware</td>
         <td>Audio Input</td>
     </tr>
 	<tr>
         <td rowspan="2">Hardened Runtime</td>
-        <td rowspan="2">Resource Access</td>
-        <td>Camera</td>
-    </tr>
-    <tr>
+        <td>Resource Access</td>
         <td>Audio Input</td>
 </table>
- 
- 
-<div class="alert note"><li>根据 Apple 官方要求：<ul><li>对于在 Mac App Store 发布的软件，需要启用 <b>App Sandbox</b> 设置。详见 <a href="https://developer.apple.com/app-sandboxing/">Apple 官方声明</a>。<li>对于不在 Mac App Store 发布的软件，需要启用 <b>Hardened Runtime</b> 设置。详见 <a href="https://developer.apple.com/news/?id=09032019a">Apple 官方声明</a>。</li></ul><li><b>Hardened Runtime</b> 设置中的 <b>Library Validation</b> 会阻止 app 加载框架、插件或库，除非框架、插件或库是由 Apple 或是与 app 相同的团队 ID 签名的。当遇到需要取消该安全限制的场景（例如无法枚举到第三方虚拟摄像头）时，请勾选 <b>Hardened Runtime -> Runtime Exceptions -> Disable Library Validation</b>。</li></div>
 
-## 实现视频通话
+ 
+<div class="alert note"><li>根据 Apple 官方要求：<ul><li>对于在 Mac App Store 发布的软件，需要启用 <b>App Sandbox</b> 设置。详见 <a href="https://developer.apple.com/app-sandboxing/">Apple 官方声明</a>。<li>对于不在 Mac App Store 发布的软件，需要启用 <b>Hardened Runtime</b> 设置。详见 <a href="https://developer.apple.com/news/?id=09032019a">Apple 官方声明</a>。</li></ul><li> <b>Hardened Runtime</b> 设置中的 <b>Library Validation</b> 会阻止 app 加载框架、插件或库，除非框架、插件或库是由 Apple 或是与 app 相同的团队 ID 签名的。当遇到需要取消该安全限制的场景（例如无法枚举到第三方虚拟摄像头）时，请勾选 <b>Hardened Runtime -> Runtime Exceptions -> Disable Library Validation</b>。</li></div>
 
-本节介绍如何实现视频通话。视频通话的 API 调用时序见下图：
-![](https://web-cdn.agora.io/docs-files/1568260615107)
+## 实现语音通话
+
+本节介绍如何实现语音通话。语音通话的 API 调用时序见下图：
+![](https://web-cdn.agora.io/docs-files/1584694537986)
 
 ### 1. 创建用户界面
 
-根据场景需要，为你的项目创建视频通话的用户界面。若已有用户界面，可以直接查看[导入类](#ImportClass)。
+根据场景需要，为你的项目创建语音通话的用户界面。若已有用户界面，可以直接查看[导入类](#ImportClass)。
 
-在一个视频通话中，我们推荐你添加如下 UI 元素：
+在语音通话中，我们推荐你添加如下 UI 元素：
 
-- 本地视频窗口
-- 远端视频窗口
-- 结束通话按钮
+- 语音通话窗口
+- 退出频道按钮
 	
 当你使用示例项目中的 UI 设计时，你将会看到如下界面：
 
-![](https://web-cdn.agora.io/docs-files/1568801785611)
+![](https://web-cdn.agora.io/docs-files/1584695135878)
 
 ### <a name="ImportClass"></a>2. 导入类
 
@@ -197,7 +188,7 @@ import AgoraRtcKit
 import AgoraRtcEngineKit
 ```
 
-<div class="alert note">Agora 视频通话 SDK 默认使用 libc++ (LLVM)，如需使用 libstdc++ (GNU)，请联系 sales@agora.io。SDK 提供的库是 Fat Image，包含 32/64 位模拟器、32/64 位真机版本。</div>
+<div class="alert note">Agora 语音通话 SDK 默认使用 libc++ (LLVM)，如需使用 libstdc++ (GNU)，请联系 sales@agora.io。SDK 提供的库是 Fat Image，包含 32/64 位模拟器、32/64 位真机版本。</div>
 
 ### 3. 初始化 AgoraRtcEngineKit
 
@@ -211,7 +202,7 @@ import AgoraRtcEngineKit
 
 调用 `sharedEngineWithAppId` 方法，传入获取到的 App ID，即可初始化 `AgoraRtcEngineKit`。
 
-你还可以根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道及解码远端用户视频首帧等。
+你还可以根据场景需要，在初始化时注册想要监听的回调事件，如远端用户加入频道或离开频道等。
 
 ```objective-c
 // Objective-C
@@ -229,58 +220,21 @@ func initializeAgoraEngine() {
 }
 ```
 
-### 4. 设置本地视图
+### 4. 加入频道
 
-成功初始化 `AgoraRtcEngineKit` 对象后，需要在加入频道前设置本地视图，以便在通话中看到本地图像。参考以下步骤设置本地视图：
-
-- 调用 `enableVideo` 方法启用视频模块。
-- 调用 `setupLocalVideo` 方法设置本地视图。
-
-```objective-c
-// Objective-C
-// 启用视频模块
-[self.agoraKit enableVideo];
-- (void)setupLocalVideo {
-    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
-    videoCanvas.uid = 0;
-    videoCanvas.view = self.localVideo;
-    videoCanvas.renderMode = AgoraVideoRenderModeHidden;
-    // 设置本地视图
-    [self.agoraKit setupLocalVideo:videoCanvas];
-}
-```
-
-```swift
-// Swift
-// 启用视频模块
-agoraKit.enableVideo()
-func setupLocalVideo() {
-  let videoCanvas = AgoraRtcVideoCanvas()
-  videoCanvas.uid = 0
-  videoCanvas.view = localVideo
-  videoCanvas.renderMode = .hidden
-  // 设置本地视图
-  agoraKit.setupLocalVideo(videoCanvas)
-}
-```
-
-### <a name="JoinChannel"></a>5. 加入频道
-
-完成初始化和设置本地视图后，你就可以调用 `joinChannelByToken` 方法加入频道。你需要在该方法中传入如下参数：
+完成初始化后，你就可以调用 `joinChannelByToken` 方法加入频道。你需要在该方法中传入如下参数：
 - `channelId`: 传入能标识频道的频道 ID。输入频道 ID 相同的用户会进入同一个频道。
-
 - `token`：传入能标识用户角色和权限的 Token。可设为如下一个值：
-
   - `nil`
-  -  临时 Token。临时 Token 服务有效期为 24 小时。你可以在控制台里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token)。
-  -  在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Video/token_server.md)。
+  -  控制台中生成的临时 Token。一个临时 Token 的有效期为 24 小时，详情见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token)。
+	- 你的服务器端生成的正式 Token。适用于对安全要求较高的生产环境，详情见[生成 Token](../../cn/Voice/token_server.md)。
 
   <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 
 - `uid`: 本地用户的 ID。数据类型为整型，且频道内每个用户的 `uid` 必须是唯一的。若将 `uid` 设为 0，则 SDK 会自动分配一个 `uid`，并在 `joinSuccessBlock` 回调中报告。
 - `joinSuccessBlock`：成功加入频道回调。`joinSuccessBlock` 优先级高于 `didJoinChannel`，2 个同时存在时，`didJoinChannel` 会被忽略。 需要有 `didJoinChannel` 回调时，请将 `joinSuccessBlock` 设置为 `nil`。
 
-更多的参数设置注意事项请参考 [joinChannelByToken](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) 接口中的参数描述。
+更多的参数设置注意事项请参考 [joinChannelByToken](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) 接口中的参数描述。
 
 ```objective-c
 // Objective-C
@@ -296,54 +250,13 @@ func setupLocalVideo() {
 func joinChannel() {
     // 加入频道
     agoraKit.joinChannel(byToken: Token, channelId: "demoChannel1", info:nil, uid:0) { [unowned self] (channel, uid, elapsed) -> Void in}
-    self.isLocalVideoRender = true
-            self.logVC?.log(type: .info, content: "did join channel")
-        }
-        isStartCalling = true
+    self.logVC?.log(type: .info, content: "did join channel")
+    }
+    isStartCalling = true
 }
 ```
 
-### 6. 设置远端视图
-
-视频通话中，通常你也需要看到其他用户。在加入频道后，可通过调用 `setupRemoteVideo` 方法设置远端用户的视图。
-
-远端用户成功加入频道后，SDK 会触发 `firstRemoteVideoDecodedOfUid` 回调，该回调中会包含这个远端用户的 `uid` 信息。在该回调中调用 `setupRemoteVideo` 方法，传入获取到的 `uid`，设置远端用户的视图。
-
-```objective-c
-// Objective-C
-// 监听 firstRemoteVideoDecodedOfUid 回调。
-// SDK 接收到第一帧远端视频并成功解码时，会触发该回调。
-// 可以在该回调中调用 setupRemoteVideo 方法设置远端视图。
-- (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size: (CGSize)size elapsed:(NSInteger)elapsed {
-    if (self.remoteVideo.hidden) {
-        self.remoteVideo.hidden = NO;
-    }
-    AgoraRtcVideoCanvas *videoCanvas = [[AgoraRtcVideoCanvas alloc] init];
-    videoCanvas.uid = uid;
-    videoCanvas.view = self.remoteVideo;
-    videoCanvas.renderMode = AgoraVideoRenderModeHidden;
-    // 设置远端视图
-    [self.agoraKit setupRemoteVideo:videoCanvas];
-}
-```
-
-```swift
-// Swift
-// 监听 firstRemoteVideoDecodedOfUid 回调。
-// SDK 接收到第一帧远端视频并成功解码时，会触发该回调。
-// 可以在该回调中调用 setupRemoteVideo 方法设置远端视图。
-func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid:UInt, size:CGSize, elapsed:Int) {
-        isRemoteVideoRender = true
-        let videoCanvas = AgoraRtcVideoCanvas()
-        videoCanvas.uid = uid
-        videoCanvas.view = remoteVideo
-        videoCanvas.renderMode = .hidden
-        // 设置远端视图
-        agoraKit.setupRemoteVideo(videoCanvas)
-    }
-```
-
-### 7. 离开频道
+### 5. 离开频道
 
 根据场景需要，如结束通话、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
 ```objective-c
@@ -359,10 +272,6 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid:UIn
 func leaveChannel() {
 // 离开频道
  AgoraKit.leaveChannel(nil)
- AgoraKit.setupLocalVideo(nil)
- remoteVideo.removeFromSuperview()
- localVideo.removeFromSuperview()
- delegate?.VideoChatNeedClose(self)
  AgoraKit = nil
  view.window!.close()
  }
@@ -373,7 +282,7 @@ func leaveChannel() {
 你可以在 Agora-macOS-Tutorial-Objective-C-1to1/Agora-macOS-Tutorial-Swift-1to1 示例项目的  [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora%20Mac%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m)/[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora%20Mac%20Tutorial%20Swift/VideoChat/VideoChatViewController.swift)  文件中查看完整的源码和代码逻辑。
 
 ## 运行项目
-你可以在 macOS 设备中运行此项目。当成功开始视频通话时，你可以同时看到本地和远端的视图。
+你可以在 macOS 设备中运行此项目。当成功开始语音通话时，你和远端用户可听到彼此的声音。
 
 ## 相关链接
 
