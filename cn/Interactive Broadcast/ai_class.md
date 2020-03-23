@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Thu Mar 12 2020 06:42:10 GMT+0800 (CST)
+updatedAt: Mon Mar 23 2020 07:52:48 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
@@ -140,5 +140,5 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，方便你即刻体验 AI �
 
 | 平台    | 开源示例项目                                                 |
 | :------ | :----------------------------------------------------------- |
-| Android | [Pronunciation Assessment (Android)](https://github.com/AgoraIO/Advanced-Audio/tree/master/Pronunciation-Assess/Pronunciation-Assess-Android) |
-| iOS     | [Pronunciation Assess (iOS)](https://github.com/AgoraIO/Advanced-Audio/tree/master/Pronunciation-Assess/Pronunciation-Assess-iOS) |
+| Android | [Pronunciation Assessment (Android)](https://github.com/AgoraIO/Advanced-Audio/tree/dev/backup/Pronunciation-Assess/Pronunciation-Assess-Android) |
+| iOS     | [Pronunciation Assess (iOS)](https://github.com/AgoraIO/Advanced-Audio/tree/dev/backup/Pronunciation-Assess/Pronunciation-Assess-iOS) |

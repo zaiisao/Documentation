@@ -35,7 +35,7 @@ updatedAt: Tue Mar 10 2020 06:28:56 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，将 Native SDK 和 RTM SDK 集成到你的项目中。
+参考下图时序，将 RTC SDK 和 RTM SDK 集成到你的项目中。
 
 ![](https://web-cdn.agora.io/docs-files/1581388838880)
 
@@ -54,7 +54,7 @@ updatedAt: Tue Mar 10 2020 06:28:56 GMT+0800 (CST)
 | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 发送频道消息。成功发送后，频道内所有用户都能收到。|
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。|
 
-- Native SDK
+- RTC SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
