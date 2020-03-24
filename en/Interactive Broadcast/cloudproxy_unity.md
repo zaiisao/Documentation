@@ -2,8 +2,8 @@
 ---
 title: Use Cloud Proxy
 description: 
-platform: Android,iOS,macOS,Windows
-updatedAt: Mon Mar 23 2020 14:07:06 GMT+0800 (CST)
+platform: Unity
+updatedAt: Mon Mar 23 2020 14:06:16 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -16,8 +16,8 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 
 ## Implementation
 
-1. Download [the latest version of the Agora Native SDK](https://docs.agora.io/en/Agora%20Platform/downloads). Agora Native SDK v2.4.0 or later supports the cloud proxy.
-2. Integrate the SDK and prepare the development environment. For details, see the **Integrate the SDK** guide.
+1. Download [the latest version of the Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/downloads). Agora RTC SDK v2.4.0 or later supports the cloud proxy.
+2. Integrate the SDK and prepare the development environment. For details, see the *Quickstart Guide*.
 3. Contact sales@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
 4. Add the following test IP addresses and ports to your whitelist.
 
@@ -40,8 +40,8 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 
  <div class="alert note">These IP addresses and ports are for testing purposes only. In a production environment, apply for the dedicated IP addresses and ports.</div>
 
-5. Enable the cloud proxy by calling the `setParameters("{\"rtc.enable_proxy\":true}");` method. After succesfully enabled the cloud proxy, the SDK uses the configuration of  `setParameters("{\"rtc.proxy_server\":[1, \"ap-proxy.agora.io\", 0]}");` by default, and you don't need to call `setParameters` again.
-6. If the default cloud proxy server cannot meet your requirements, call the `setParameters("{\"rtc.proxy_server\":[proxy_type, \"ip or dns\", port]}");` method to configure the cloud proxy server. See details in the following table:
+5. Enable the cloud proxy by calling the `SetParameters("{\"rtc.enable_proxy\":true}");` method. After succesfully enabled the cloud proxy, the SDK uses the configuration of  `SetParameters("{\"rtc.proxy_server\":[1, \"ap-proxy.agora.io\", 0]}");` by default, and you don't need to call `SetParameters` again.
+6. If the default cloud proxy server cannot meet your requirements, call the `SetParameters("{\"rtc.proxy_server\":[proxy_type, \"ip or dns\", port]}");` method to configure the cloud proxy server. See details in the following table:
  
 | `proxy_type`                                                 | `ip or dns`                                         | `port`                        |
 | ------------------------------------------------------------ | --------------------------------------------------- | ----------------------------- |
@@ -51,27 +51,27 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 
 7. Test if the audio or video call works.
 8. Agora will provide the IP addresses (domain name) and ports for you to use the cloud proxy in the production environment. Add the IP address and ports to your whitelist.
-9. When you want to disable the cloud proxy, call the `setParameters("{\"rtc.enable_proxy\":false}");` method.
+9. When you want to disable the cloud proxy, call the `SetParameters("{\"rtc.enable_proxy\":false}");` method.
 
 ### Sample code
 
-```java
+```c#
 // Enables the cloud proxy server, and uses the default configuration.
-setParameters("{\"rtc.enable_proxy\":true}");
+SetParameters("{\"rtc.enable_proxy\":true}");
 ```
 
-```java
+```c#
 // Enables the cloud proxy server.
-setParameters("{\"rtc.enable_proxy\":true}");
+SetParameters("{\"rtc.enable_proxy\":true}");
 // Uses the Socks5 proxy server.
-setParameters("{\"rtc.proxy_server\":[0, \"127.0.0.1\", 1080]}");
+SetParameters("{\"rtc.proxy_server\":[0, \"127.0.0.1\", 1080]}");
 ```
 
-```java
+```c#
 // Enables the cloud proxy server.
-setParameters("{\"rtc.enable_proxy\":true}");
+SetParameters("{\"rtc.enable_proxy\":true}");
 // Uses cloud proxy and configure the domain name.
-setParameters("{\"rtc.proxy_server\":[2, \"[\"192.168.0.112\",\"127.0.0.1\"]\", 0]}");
+SetParameters("{\"rtc.proxy_server\":[2, \"[\"192.168.0.112\",\"127.0.0.1\"]\", 0]}");
 ```
 
 ## Working principles
@@ -89,4 +89,4 @@ The following diagram shows the working principles of the Agora cloud proxy.
 
 ## Considerations
 
-The `setParameters` method must be called before joining the channel or after leaving the channel.
+The `SetParameters` method must be called before joining the channel or after leaving the channel.

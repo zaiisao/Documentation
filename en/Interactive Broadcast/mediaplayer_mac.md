@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Mon Mar 23 2020 08:34:11 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 04:25:57 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -221,7 +221,7 @@ Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broad
 
 2. Call the `publishVideo`/`publishAudio` method to share (publish) the video/audio stream in the media resource to remote users in the Agora channel.
 
-3. Call the `adjustPublishSignalVolume` method to adjust the the playback volume heard by the remote user.
+3. Call the `adjustPublishSignalVolume` method to adjust the playback volume heard by the remote user.
 
 If the local user directly leaves the channel by calling `leaveChannel` after sharing the media stream, the media stream stops sending to the remote users until the local user rejoins the channel. So Agora recommends the steps in the next section to cancel sharing the media stream.
 
@@ -230,8 +230,6 @@ If the local user directly leaves the channel by calling `leaveChannel` after sh
 1. Call the `unpublishVideo`/`unpublishAudio` method to unshare or unpublish the video/audio stream in the media resource.
 
 2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel. 
-
-3. Call the `release` method to release `RtcChannelPublishHelper`.
 
 **Sample code**
 

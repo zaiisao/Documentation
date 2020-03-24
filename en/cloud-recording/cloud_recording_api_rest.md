@@ -3,12 +3,15 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Mar 17 2020 01:13:45 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 06:59:05 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
-Ensure that you know how to [record with the RESTful API](../../en/cloud-recording/cloud_recording_rest.md) before reading this document.
+This article contains detailed help for the Cloud Recording RESTful API.
 
-Apart from this article, you can also visit our interactive API documentation [Cloud Recording RESTful API](https://docs.agora.io/en/cloud-recording/restfulapi/) ![img](https://web-cdn.agora.io/docs-files/1583736328279). You can use the **Schema** tab to view detailed help for the parameters in the request and response bodies.
+> You can also visit our interactive API documentation [Cloud Recording RESTful API](https://docs.agora.io/en/cloud-recording/restfulapi/) ![img](https://web-cdn.agora.io/docs-files/1583736328279). It contains detailed help for each Cloud Recording RESTful API and its parameters, and provides the **Try it out** function which allows you to send RESTful API requests and receive responses directly on the web page.
+
+![](https://web-cdn.agora.io/docs-files/1585032370986)
+
 
 ## <a name="auth"></a>Authentication
 
@@ -125,7 +128,7 @@ The following parameters are required in the request body.
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | The name of the channel to be recorded.                      |
 | `uid`           | String | A string that contains the UID of the recording client. Must be the same `uid` used in the [`acquire`](#acquire) method. |
-| `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key) used in the channel to be recorded. Ensure that you set this parameter if the recording channel uses a token.</li><li>[`recordingConfig`](#recordingConfig): JSON. The recording configuration.</li><li>[`storageConfig`](#storageConfig): (Optional) JSON. The third-party cloud storage configuration.</li> |
+| `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key) used in the channel to be recorded. Ensure that you set this parameter if the recording channel uses a token.</li><li>[`recordingConfig`](#recordingConfig): JSON. The recording configuration.</li><li>[`storageConfig`](#storageConfig): JSON. The third-party cloud storage configuration.</li> |
 
 #### <a name="recordingConfig"></a>Recording configuration
 

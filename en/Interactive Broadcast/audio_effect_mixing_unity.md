@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: 
 platform: Unity
-updatedAt: Fri Feb 28 2020 02:09:18 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 09:08:10 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -94,15 +94,15 @@ int ret = mRtcEngine.StartAudioMixing(filePath, false, true, 1);
 // Adjusts the volume of the music file as 50% of the original volume.
 int ret = mRtcEngine.AdjustAudioMixingVolume(50);
 // Gets the audio mixing volume for local playback.
-int ret = mRtcEngine.GetAudioMixingPlayoutVolume()
+int ret = mRtcEngine.GetAudioMixingPlayoutVolume();
 // Gets the audio mixing volume for publishing.
-int ret = mRtcEngine.GetAudioMixingPublishVolume()
+int ret = mRtcEngine.GetAudioMixingPublishVolume();
 // Gets the duration (ms) of the music file.
-int ret = mRtcEngine.GetAudioMixingDuration()
+int ret = mRtcEngine.GetAudioMixingDuration();
 // Gets the playback position (ms) of the music file.
-int ret = mRtcEngine.GetAudioMixingCurrentPosition()
+int ret = mRtcEngine.GetAudioMixingCurrentPosition();
 // Sets the playback position of the music file at 3000 ms.
-int ret = mRtcEngine.SetAudioMixingPosition(3000)
+int ret = mRtcEngine.SetAudioMixingPosition(3000);
 // Stops playing and mixing the music file.
 int ret = mRtcEngine.StopAudioMixing();
 ```
