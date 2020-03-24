@@ -3,12 +3,21 @@
 title: 实现语音通话
 description: 
 platform: Unity
-updatedAt: Wed Feb 26 2020 05:39:09 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 07:13:35 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora Unity SDK 快速实现语音通话。
 
-## 示例项目体验
+
+## 快速跑通 Demo
+
+如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
+
+<video src="https://web-cdn.agora.io/docs-files/1585033937464" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+
+<div class="alert note">视频中展示的 UI 有部分调整更新，请以当前最新版为准。</div>
+
+## 示例项目
 
 Agora 在 Github 上提供开源的实时语音通话示例项目 [Hello-Unity3D-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/audio/Hello-Unity3D-Agora)。在实现相关功能前，你可以下载并查看源代码。
 

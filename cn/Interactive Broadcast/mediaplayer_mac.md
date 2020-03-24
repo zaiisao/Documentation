@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Mon Mar 23 2020 08:33:59 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 04:07:29 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -259,9 +259,9 @@ _rtcEnginekit = [AgoraRtcEngineKit sharedEngineWithAppId:@"YOUR_APPID" delegate:
 
 ## 注意事项
 
-常见的语音路由有蓝牙耳机、普通耳机和设备的扬声器。为避免播放视频时，本地用户切换语音路由后，新的语音路由无声的问题，Agora 建议你进行如下操作：
+常见的语音路由有蓝牙耳机、普通耳机和设备的扬声器。为避免播放过程中，本地用户切换语音路由后，新的语音路由无声的问题，Agora 建议你进行如下操作：
 * 在本地播放媒体资源的场景下， Agora 建议本地用户在 `open` 前切换语音路由。
-  > 如果本地用户在 `open` 后切换语音路由，视频播放将无声，你需要重新调用 `open` 和 `play` 方法播放视频。
+  > 如果本地用户在 `open` 后切换语音路由，新的语音路由将无声，你需要重新调用 `open` 和 `play` 方法重新播放。
 * 在分享媒体资源到远端的场景下，Agora 建议你使用 3.0.0 版本的 Native SDK，并在 `mute` 后再进行语音路由切换。
 
 ## API 文档

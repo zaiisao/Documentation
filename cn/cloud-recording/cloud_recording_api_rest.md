@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Mar 23 2020 08:22:19 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 02:02:39 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -129,7 +129,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
 | `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
-| `clientRequest` | JSON   | 特定的客户请求参数，对于该请求包含以下参数：<li>`token`：（选填） String 类型，用于鉴权的[动态密钥](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-namekeya动态密钥)。如果待录制的频道使用了动态密钥，请务必在该参数中传入一个动态密钥，详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。</li><li>[`recordingConfig`](#recordingConfig)：JSON 类型，录制的详细设置。</li><li>[`storageConfig`](#storageConfig)：（选填）JSON 类型，第三方云存储的设置。</li> |
+| `clientRequest` | JSON   | 特定的客户请求参数，对于该请求包含以下参数：<li>`token`：（选填） String 类型，用于鉴权的[动态密钥](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-namekeya动态密钥)。如果待录制的频道使用了动态密钥，请务必在该参数中传入一个动态密钥，详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。</li><li>[`recordingConfig`](#recordingConfig)：JSON 类型，录制的详细设置。</li><li>[`storageConfig`](#storageConfig)：JSON 类型，第三方云存储的设置。</li> |
 
 
 #### <a name="recordingConfig"></a>**录制设置**
