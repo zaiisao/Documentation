@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: 
 platform: Unity
-updatedAt: Tue Feb 25 2020 13:37:26 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 09:08:37 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -92,15 +92,15 @@ int ret = mRtcEngine.StartAudioMixing(filePath, false, true, 1);
 // 将本地和远端音乐文件播放音量调节为原始音量的 50%。
 int ret = mRtcEngine.AdjustAudioMixingVolume(50);
 // 获取音乐文件的本地播放音量。
-int ret = mRtcEngine.GetAudioMixingPlayoutVolume()
+int ret = mRtcEngine.GetAudioMixingPlayoutVolume();
 // 获取音乐文件的远端播放音量。
-int ret = mRtcEngine.GetAudioMixingPublishVolume()
+int ret = mRtcEngine.GetAudioMixingPublishVolume();
 // 获取音乐文件总时长。
-int ret = mRtcEngine.GetAudioMixingDuration()
+int ret = mRtcEngine.GetAudioMixingDuration();
 // 获取音乐文件的播放进度。
-int ret = mRtcEngine.GetAudioMixingCurrentPosition()
+int ret = mRtcEngine.GetAudioMixingCurrentPosition();
 // 将音乐文件的播放位置设置为第 3000 毫秒处。
-int ret = mRtcEngine.SetAudioMixingPosition(3000)
+int ret = mRtcEngine.SetAudioMixingPosition(3000);
 // 停止播放音乐文件。
 int ret = mRtcEngine.StopAudioMixing();
 ```
