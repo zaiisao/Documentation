@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Thu Mar 12 2020 11:04:22 GMT+0800 (CST)
+updatedAt: Wed Mar 25 2020 08:01:05 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description

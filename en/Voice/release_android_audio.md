@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed Mar 04 2020 07:05:24 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 10:35:33 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -37,6 +37,8 @@ For more information about privacy changes, see [Android Privacy Changes](https:
 ## v3.0.0
 
 v3.0.0 was released on Mar 4, 2020.
+
+On Mar 24, 2020, we fixed occasional issues relating to no audio, audio mixing, multiple `onClientRoleChanged` callbacks, and SDK crashes.
 
 In this release, Agora improves the user experience under poor network conditions for both the Communication and Live-broadcast profiles through the following measures:
 

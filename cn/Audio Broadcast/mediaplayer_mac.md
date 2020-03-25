@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Tue Mar 24 2020 04:07:29 GMT+0800 (CST)
+updatedAt: Wed Mar 25 2020 07:59:17 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -139,7 +139,7 @@ updatedAt: Tue Mar 24 2020 04:07:29 GMT+0800 (CST)
 
 1. 调用 `AgoraMediaPlayer` 接口的 `stop` 方法停止播放。
 2. 将 `setView` 方法中 `view` 赋值为 NULL，释放 view。
-3. 使用 iOS ARC 内存管理机制释放 `AgoraMediaPlayer` 实例。
+	3. 使用 ARC 内存管理机制释放 `AgoraMediaPlayer` 实例。
 
 **示例代码**
 
@@ -265,4 +265,4 @@ _rtcEnginekit = [AgoraRtcEngineKit sharedEngineWithAppId:@"YOUR_APPID" delegate:
 * 在分享媒体资源到远端的场景下，Agora 建议你使用 3.0.0 版本的 Native SDK，并在 `mute` 后再进行语音路由切换。
 
 ## API 文档
-详见 [API 文档](https://docs-preview.agoralab.co/cn/Video/API%20Reference/mediaplayer_oc/1.1.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html?transId=1.1.0)
+详见 [API 文档](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/mediaplayer_oc/1.1.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html?transId=1.1.0)

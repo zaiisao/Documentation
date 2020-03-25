@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Mon Mar 16 2020 02:17:05 GMT+0800 (CST)
+updatedAt: Wed Mar 25 2020 07:16:03 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## Authentication
@@ -18,7 +18,7 @@ The RESTful API only supports HTTPS. Before sending HTTP requests, you must pass
 You can find your Customer ID and Customer Certificate on the [RESTful API](https://dashboard.agora.io/restful) page in Console. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 
 
-## EndPoint
+## Endpoint
 
 All requests should be sent to BaseUrl: **https://api.agora.io/dev**.
 

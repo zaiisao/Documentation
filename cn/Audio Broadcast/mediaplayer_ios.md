@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Thu Mar 12 2020 11:04:55 GMT+0800 (CST)
+updatedAt: Wed Mar 25 2020 08:01:55 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -262,4 +262,4 @@ _rtcEnginekit = [AgoraRtcEngineKit sharedEngineWithAppId:@"YOUR_APPID" delegate:
 日志文件包含媒体播放器组件运行时产生的所有日志。日志文件的输出地址为 `App Sandbox/Library/caches/agoraplayer.log`。
 
 ## API 文档
-详见 [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
+详见 [API 文档](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)

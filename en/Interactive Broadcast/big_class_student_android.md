@@ -86,7 +86,7 @@ Call the following methods provided by the Agora RTC SDK:
 </details>
 <details>
 <summary>Voice detection</summary>
-For RTC SDKs later than v2.9.2, you can enable voice detection by calling <code>enableAudioVolumeInfication</code>, and setting the <code>report_vad</code> parameter as <code>true</code>.
+For RTC SDKs later than v2.9.2, you can enable voice detection by calling <code>enableAudioVolumeIndication</code>, and setting the <code>report_vad</code> parameter as <code>true</code>.
 Once enabled, the <code>onAudioVolumeIndication</code> callback reports whether the local user is speaking in the <code>AudioVolumeInfo</code> struct.
 </details>
 <details>

@@ -83,7 +83,7 @@ updatedAt: Fri Feb 14 2020 02:12:12 GMT+0800 (CST)
 </details>
 <details>
 <summary>人声检测</summary>
-对于 v2.9.1 及以上的 Native SDK，你还可以调用 <code>enableAudioVolumeInfication</code> 方法，并将参数 <code>report_vad</code> 设为 <code>true</code>，启用人声检测功能。
+对于 v2.9.1 及以上的 Native SDK，你还可以调用 <code>enableAudioVolumeIndication</code> 方法，并将参数 <code>report_vad</code> 设为 <code>true</code>，启用人声检测功能。
 启用后，你会在 <code>onAudioVolumeIndication</code> 回调报告的 <code>AudioVolumeInfo</code> 结构体中获取本地用户的人声状态。
 </details>
 <details>
