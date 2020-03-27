@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Jan 21 2020 08:48:50 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 03:03:25 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -104,7 +104,7 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 ![](https://web-cdn.agora.io/docs-files/1574928082984)
 
-<div class="alert warning"> 注意：<li>生成临时 Token 前，请确保你已开启项目 App 证书。详见<a href="../../cn/Agora%20Platform/appcertificate.md">启用 App 证书</a>。</li><li>临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。</li> <li>临时 Token 不适用于 Agora RTM SDK。</li></div>
+<div class="alert warning"> 注意：<li>生成临时 Token 前，请确保你已开启项目 App 证书。详见<a href="https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token">启用 App 证书</a>。</li><li>临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。</li> <li>临时 Token 不适用于 Agora RTM SDK。</li></div>
 
 ### 获取正式 Token
 
@@ -136,8 +136,8 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 </tr>
 </thead>
 <tbody>
-<tr><td>Android</td>
-<td><a href="https://docs.agora.io/cn/Agora%20Platform/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c"><span>加入频道 (joinChannel)</span></a></td>
+<tr><td>Android</td> 
+<td><a href="https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c"><span>加入频道 (joinChannel)</span></a></td>
 <td><a href="https://docs.agora.io/cn/Agora%20Platform/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af1428905e5778a9ca209f64592b5bf80"><span>更新 Token (renewToken)</span></a></td>
 </tr>
 <tr><td>iOS/macOS</td>
