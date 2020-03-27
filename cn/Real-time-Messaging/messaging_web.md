@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Thu Mar 12 2020 07:40:02 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 03:26:30 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -16,7 +16,7 @@ updatedAt: Thu Mar 12 2020 07:40:02 GMT+0800 (CST)
 <video src="https://web-cdn.agora.io/docs-files/1583382445173" poster="https://web-cdn.agora.io/docs-files/1583378147542"  controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 ## Demo 体验
-你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Web](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Web) 查看完整的源码和代码逻辑
+点击[这里](https://webdemo.agora.io/agora-web-showcase/examples/Agora-RTM-Tutorial-Web/)体验 Agora RTM Tutorial for Web。你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-for-Web](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Web) 查看完整的源码和代码逻辑
 
 ## 开发环境要求
 

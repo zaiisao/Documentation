@@ -17,7 +17,7 @@ updatedAt: Fri Mar 20 2020 09:21:59 GMT+0800 (CST)
 
 <video src="https://web-cdn.agora.io/docs-files/1584694949364 " poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
-<div class="alert note">视频中展示的 UI 有部分调整更新，请以当前最新版为准。</div>
+<div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
 ## 示例项目
 Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows)。在实现相关功能前，你可以下载并查看源代码。

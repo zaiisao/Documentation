@@ -15,7 +15,7 @@ updatedAt: Thu Mar 19 2020 10:28:18 GMT+0800 (CST)
 
 <video src="https://web-cdn.agora.io/docs-files/1584613510967" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
-<div class="alert note">视频中展示的 UI 有部分调整更新，请以当前最新版为准。</div>
+<div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
 ## 示例项目
 

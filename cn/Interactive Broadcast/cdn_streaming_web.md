@@ -3,7 +3,7 @@
 title: 推流到 CDN
 description: 
 platform: Web
-updatedAt: Thu Feb 27 2020 05:58:54 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 03:46:04 GMT+0800 (CST)
 ---
 # 推流到 CDN
 ## 功能描述
@@ -13,6 +13,8 @@ updatedAt: Thu Feb 27 2020 05:58:54 GMT+0800 (CST)
 在推流到 CDN 过程中，当频道中有多个主播时，通常会涉及到[转码](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#转码)，将多个直播流组合成单个流，并设置这个流的音视频属性和合图布局。
 
 ![](https://web-cdn.agora.io/docs-files/1569396817637)
+
+<div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/">在线体验</a>试用 CDN 直播推流功能。</div>
 
 ## 前提条件
 
