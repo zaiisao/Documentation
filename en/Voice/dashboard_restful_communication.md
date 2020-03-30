@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 25 2020 07:16:03 GMT+0800 (CST)
+updatedAt: Mon Mar 30 2020 04:20:36 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## Authentication
@@ -537,7 +537,7 @@ The following chart shows how you can use Usage APIs.
 // - transcodeDuration: Transcoding.
 // - recording: On-premise Recording.
 // - cloudRecording: Cloud Recording.
-// - miniapp: Mini app.
+// - miniapp: Miniapp.
 from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
  ```
 
