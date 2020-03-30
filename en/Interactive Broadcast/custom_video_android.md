@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Tue Mar 10 2020 00:31:30 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 05:00:11 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -101,7 +101,7 @@ Refer to the following sample code to customize the video source in your project
 IVideoFrameConsumer mConsumer;
 boolean mHasStarted;
 
-// Create a VideoSource instance.
+// Creates a VideoSource instance.
 VideoSource source = new VideoSource() {
 	@Override
 	public int getBufferType() {
@@ -113,6 +113,7 @@ VideoSource source = new VideoSource() {
 	}
 
 	@Override
+	// Initializes the video source. You need to pass in an IVideoFrameConsumer object in this method.
  	public boolean onInitialize(IVideoFrameConsumer consumer) {
 		// Consumer was created by the SDK.
 		// Save it in the lifecycle of the VideoSource.
@@ -120,18 +121,21 @@ VideoSource source = new VideoSource() {
 	}
 
 	@Override
+	// Starts the video source. 
  	public boolean onStart() {
 		mHasStarted = true;
 	}
 
 	@Override
-  	public void onStop() {
-		mHasStarted = false;
+	 // Stops the video source.
+   public void onStop() {
+	 mHasStarted = false;
 	}
 
 	@Override
+	// Releases the video source.
  	public void onDispose() {
-		// Release the consumer.
+		// Releases the consumer.
 		mConsumer = null;
 	}
 };
@@ -177,29 +181,34 @@ Refer to the following steps to customize the video renderer with MediaIO in you
 
 Refer to the following diagram to customize the video sink in your project.
 
-![](https://web-cdn.agora.io/docs-files/1569397613198)
+![](https://web-cdn.agora.io/docs-files/1585285152292)
 
 **Sample code**
 
 Refer to the following diagram to customize the video sink in your project.
 
 ```java
+// Creates an IVideoSink instance.
 IVideoSink sink = new IVideoSink() {
 	@Override
+	// Initializes the video sink.
 	public boolean onInitialize () {
 		return true;
 	}
 
 	@Override
+	// Starts the video sink.
 	public boolean onStart() {
 		return true;
 	}
  
 	@Override
+	// Stops the video sink.
 	public void onStop() {
 	}
  
 	@Override
+	// Disposes the video sink.
 	public void onDispose() {
 	}
  
@@ -213,6 +222,7 @@ IVideoSink sink = new IVideoSink() {
 	}
  
 	@Override
+	// Gets the pixel format.
 	public int getPixelFormat() {
 		return PixelFormat.NV21;
 	}

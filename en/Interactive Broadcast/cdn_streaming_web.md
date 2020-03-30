@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Thu Feb 27 2020 05:52:06 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:11:10 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -13,6 +13,9 @@ The process of publishing streams into the CDN (Content Delivery Network) is cal
 When multiple hosts are in a channel in CDN live streaming, [transcoding](https://docs.agora.io/en/AgoraPlatform/terms?platform=AllPlatforms#transcoding) is used to combine the streams of all the hosts into a single stream. Transcoding sets the audio/video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
 
 ![](https://web-cdn.agora.io/docs-files/1569414336352)
+
+
+<div class="alert info">Click the <a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/">online demo</a> to try this feature out.</div>
 
 ## Prerequisites
 
@@ -132,7 +135,3 @@ We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advan
 - Set the value of `videoBitrate` by referring to [Video Bitrate Table](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.videoencoderconfiguration.html#bitrate). If you set a bitrate beyond the proper range, the SDK automatically adjusts it to a value within the range. 
 
 - Agora charges a transcoding usage fee for CDN live streaming.
-
-## Reference
-
-You can use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Web/) to try the live streaming function provided by Agora.

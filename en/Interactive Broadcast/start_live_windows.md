@@ -1,17 +1,17 @@
 
 ---
-title: Start a Live Broadcast
+title: Start a Video Broadcast
 description: 
 platform: Windows
-updatedAt: Wed Mar 04 2020 05:54:05 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 07:36:08 GMT+0800 (CST)
 ---
-# Start a Live Broadcast
-Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for Windows. 
+# Start a Video Broadcast
+Use this guide to quickly start a video interactive broadcast with the Agora Video SDK for Windows. 
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either BROADCASTER or AUDIENCE. The broadcaster sends and receives streams while the audience receives streams only.
 
-## Try the demo
-We provide an open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) demo project that implements the basic video broadcast on GitHub. You can try the demo and view the source code.
+## Sample project
+We provide an open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) sample project that implements the basic video broadcast on GitHub. You can download it and view the source code.
 
 ## Prerequisites
 - Microsoft Visual Studio 2017 or later
@@ -28,16 +28,17 @@ Now, let's build a Windows project from scratch. Skip to [Integrate the SDK](#in
 
 <details>
 	<summary><font color="#3ab7f8">Create a Windows project</font></summary>
-	
+
 1. Open <b>Microsoft Visual Studio</b> and click <b>Create new project</b>.
 2. On the <b>New Project</b> panel, choose <b>MFC Application</b> as the project type, input the project name, choose the project location, and click <b>OK</b>.
 3. On the <b>MFC Application</b> panel, choose <b>Application type > Dialog based</b>, and click <b>Finish</b>.
 	
+
 </details>
 
 <a name="inte"></a>
 ### Integrate the SDK
-Follow these steps to integrate the Agora SDK into your project.
+Follow these steps to integrate the Agora Video SDK into your project.
 
 **1. Configure the project files**
 
@@ -56,7 +57,7 @@ Right-click the project name in the **Solution Explorer** window, click **Proper
 - Go to the **Linker > Input > Additional Dependencies** menu, click **Edit**, and input **agora_rtc_sdk.lib** in the pop-up window.
 
 ## Implement the basic video call
-This section introduces how to use the Agora SDK to start an interactive broadcast. The following figure shows the API call sequence of a basic video broadcast.
+This section introduces how to use the Agora SDK to start a video interactive broadcast. The following figure shows the API call sequence of a basic video broadcast.
 
 ![](https://web-cdn.agora.io/docs-files/1568257918372)
 
@@ -67,13 +68,13 @@ If you are implementing a video broadcast, we recommend adding the following ele
 - The view of the broadcaster
 - The exit button
 
-When you use the UI setting of the demo project, you can see the following interface:
+When you use the UI setting of the sample project, you can see the following interface:
 
 ![](https://web-cdn.agora.io/docs-files/1568792708592)
 
 <a name="ini"></a>
 ### 2. Initialize IRtcEngine
-Create and initialize the IRtcEngine object before calling any other Agora APIs.
+Create and initialize the `IRtcEngine` object before calling any other Agora APIs.
 
 In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Console and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
 
@@ -133,9 +134,9 @@ private:
 ```
 
 ### 3. Set the channel profile
-After initializing the IRtcEngine object, call the `setChannelProfile` method to set the channel profile as Live Broadcast. 
+After initializing the `IRtcEngine` object, call the `setChannelProfile` method to set the channel profile as Live Broadcast. 
 
-One IRtcEngine object uses one profile only. If you want to switch to another profile, release the current IRtcEngine object with the `release` method and create a new one before calling the `setChannelProfile` method.
+One `IRtcEngine` object uses one profile only. If you want to switch to another profile, release the current IRtcEngine object with the `release` method and create a new one before calling the `setChannelProfile` method.
 
 ```C++
 // Set the channel profile as Live Broadcast.
@@ -172,8 +173,6 @@ void CEnterChannelDlg::OnCbnSelchangeCmbRole()
 ```
 
 ### 5. Set the local video view
-If you are implementing an audio broadcast, skip to [Join a channel](#join).
-
 After setting the channel profile and client role, set the local video view before joining the channel so that the broadcaster can see the local video in the broadcast. Follow these steps to configure the local video view:
 - Call the `enableVideo` method to enable the video module.
 - Call the `setupLocalVideo` method to configure the local video display settings. 
@@ -192,7 +191,7 @@ m_lpRtcEngine->setupLocalVideo(vc);
 
 <a name="join"></a>
 ### 6. Join a channel
-After setting the client role and the local video view (for a video broadcast), you can call the `joinChannel` method to join a channel. In this method, set the following parameters:
+After setting the client role and the local video view, you can call the `joinChannel` method to join a channel. In this method, set the following parameters:
 
 - `channelName`: Specify the channel name that you want to join.
 
@@ -289,7 +288,5 @@ void CAgoraObject::CloseAgoraObject()
 }
 ```
 
-### Sample code
-You can find the sample code logic in the [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) demo project.
 ## Run the project
 Run the project on your Windows device. When you set the role as the broadcaster and successfully join a video broadcast, you can see the video view of yourself in the app. When you set the role as the audience and successfully join a video broadcast, you can see the video view of the broadcaster in the app.

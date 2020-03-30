@@ -3,237 +3,325 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Mon Mar 09 2020 10:50:01 GMT+0800 (CST)
+updatedAt: Sun Mar 29 2020 12:37:57 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
-## Description
+## Function description
 
-During an interactive broadcast, you can publish a separate video stream to the remote user through Agora’s SD-RTN™ and adjust the playback of the separate video stream in real time by using MediaPlayer Kit.
+The MediaPlayer Kit is a powerful player that supports playing local and online media resources. With this player, you can either locally play media resources or synchronously share currently playing media resources with remote users in the Agora channel. 
 
-<a name="format"></a>
-### Supported formats
+## Usage notice
 
-- Local video: AVI, MP4, MKV, and FLV file formats.
-- Online video: RTMP and RTSP streams.
+- Currently supported media formats: Local files in AVI, MP4, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
+- When locally playing media resources, you only need a separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishPlugin at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishPlugin supports publishing media streams to remote users in Agora channel.
+- When sharing media resources with remote users, the playback window occupies the local user's video as captured by the camera. Therefore, if you want remote users to see both the local user's and the player's window, you need to start another process to capture the local user's video.
 
-<div class="alert note"> Only supports the single/dual video with a sampling rate of 32 kHz, 44100 Hz or 48 kHz.</div>
-
-### Usage
-
-Using MediaPlayer Kit, you can start/pause the playback video, adjust the playback progress, adjust the playback volume, and publish the playback video to the remote user:
-
-- If you want to publish the playback video to the remote user, you may need to use a dual process. In a process, you can capture and publish the call video; while in another process, you can publish the playback video stream. If you join the channel with only a process, the remote user can only see the video window corresponding to that process.
-
-- If you do not need to publish the playback video to the remote user, you can use MediaPlayer Kit as your local media player. We will not discuss this scenario here.
-
-## Quickly experience MediaPlayer Kit
+## Set up the development environment
 
 ### Prerequisites
 
-- Operating System: Windows 7 or later.
-- Development Tools: Microsoft Visual Studio 2015 or later.
+- Microsoft Visual Studio 2017 or later
+- A Windows device running Windows 7 or later
 
-### Use MediaPlayerKit
+> Open the specified ports in [Firewall Requirements](https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms) if your network has a firewall.
+>
+> A valid Agora account ([Sign up](https://dashboard.agora.io) for free) is necessary when sharing media resources to remote users.
 
-1. Download and unzip the [MediaPlayerKitQuickstart](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/MediaPlayer/Mediaplayer-Windows) folder.
-2. Open the `MediaPlayerKitQuickstart.sln` file with Microsoft Visual Studio.
-3. Click **Build** > **Build Solution**.
-4. After a successful compilation, click **Debug** > **Start Debugging**.
-5. After a successful debugging, you can see a window that plays the video.
+### Create a Windows project
 
-To specify the video that you want to play with MediaPlayer Kit, modify the video path in the following code in the project `.cpp`file.
-``` C++
-//The video path
-Std::string path = "F://1080.mp4";
-   Char *videopath = (char *)path.data();
-   mediaPlayerKit->load(videopath, true);
+Build a Windows project from scratch:
+
+<details>
+	<summary><font color="#3ab7f8">Create a Windows project</font></summary>
+
+1. Open <b>Microsoft Visual Studio</b> and click <b>Create new project</b>.
+2. On the <b>New Project</b> panel, choose <b>MFC Application</b> as the project type, input the project name, choose the project location, and click <b>OK</b>.
+3. On the <b>MFC Application</b> panel, choose <b>Application type > Dialog based</b>, and click <b>Finish</b>.
+</details>
+
+### Integrate the MediaPlayer Kit
+
+#### Configure the project files
+
+1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
+
+2. Copy the **AgoraMediaPlayer** to the project folder.
+
+#### Configure the project properties
+
+Right-click the project name in the **Solution Explorer** window, click **Properties** to configure the following project properties, and click **OK**.
+
+- Go to the **VC++ > General > Additional Include Directories** menu, click **Edit**, and input **./AgoraMediaPlayer/include** in the pop-up window.
+- Go to the **VC++ > General > Additional Library Directories** menu, click **Edit**, and input **./AgoraMediaPlayer/lib** in the pop-up window.
+- Go to the **Linker > Input > Additional Dependencies** menu, click **Edit**, and input **AgoraMediaPlayer/lib** and **shell32.lib** in the pop-up window.
+
+### Integrate the Native SDK
+
+- **Version requirements**: 2.4.0 or later. 
+
+- Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_windows?platform=Windows#integrate-the-sdk).
+
+
+### Integrate the RtcChannelPublishPlugin
+
+
+1. [Download](https://github.com/AgoraIO/Agora-Extensions/tree/master/MediaPlayer/helper/win) the RtcChannelPublishPlugin folder.
+
+2. Copy the `AgoraRtcChannelHelper.h` and `AgoraRtcChannelHelper.cpp` files to the project folder.
+
+3. Right-click the project name in the **Solution Explorer** window, click **Properties** to configure the following project properties, and click **OK**:
+
+   Go to the **VC++ > General > Additional Include Directories** menu, click **Edit**, and input **./RtcChannelPublishPlugin/utils** in the pop-up window.
+
+
+## Implementation
+
+<a name="local"></a>
+### Play media resources locally
+
+After integrating the MediaPlayer Kit, follow these steps to implement the local playback function.
+
+**Create a player instance**
+
+1. Call the `createAgoraMediaPlayer` method to create an instance of ` IMediaPlayer`.
+
+    > To play different media resources simultaneously, you should create multiple instances.
+
+2. Call the `initialize` method to initialize the player.
+
+**Set the log file**
+
+The log file contains all the log events generated by the mediaplayer kit at runtime. The default path of the log file is `C:/Users/{user_name}/AppData/Local/Agora/{project_name}`. 
+
+Set the log file as follows:
+
+- To set the output path of the log file, call the `setLogFile` method of the `IMediaPlayer` class.
+- To set the output level of the log file, call the `setLogFilter` method of the `IMediaPlayer` class .
+
+
+**Register a player observer object**
+
+1. Implement the `IMediaPlayerObserver` interface and instantiate an `IMediaPlayerObserver` object.
+2. Call the `registerPlayerObserver` method of the `IMediaPlayer` class to register a player observer object and listen for the following playback events:
+   - `onPositionChanged`, which reports the current playback progress.
+   - `onPlayerStateChanged`, which reports the playback state change.
+   - `onPlayerEvent`, which reports the events during playback, such as the result of a seek operation to a new playback position, and the change of the audio track.
+   - `onMetaData`, which occurs each time the player receives the media metadata.
+   
+
+By listening for these events, you can have more control over the playback process and enable your app to support data in custom formats (media metadata). If an exception occurs, you can use these event callbacks for troubleshooting.
+
+**(Optional) Register an audio observer object**
+
+1. Implement the `IAudioFrameObserver` interface and instantiate an `IAudioFrameObserver` object.
+
+2. Call the `registerAudioFrameObserver` method of the `IMediaPlayer` class to register an audio observer object and listen for the event that confirms the reception of each audio frame. After handling the `AudioPcmFrame `class, you can record the audio.
+
+**(Optional) Register a video observer object**
+
+1. Implement the `IVideoFrameObserver` interface and instantiate an `IVideoFrameObserver` object.
+2. Call the `registerVideoFrameObserver` method of the `IMediaPlayer` class to register a video observer object and listen for the event that confirms the reception of each video frame. After handling the `VideoFrame` class, you can record the video or take screenshots of the video.
+
+**Preparations for playback**
+
+1. Call the `setView` method of  the `IMediaPlayer` class to set the render view of the player.
+
+2. Call the `setRenderMode` method of  the `IMediaPlayer` class to set the rendering mode of the player's view.
+
+3. Call the `open` method of the `IMediaPlayer` class to open the media resource. The media resource path can be a network path or a local path. Both absolute and relative paths are supported.
+
+   > Do not proceed until you receive the `onPlayerStateChanged` callback reporting `PLAYER_STATE_OPEN_COMPLETED(2)`.
+
+4. Call the `play` method of the `IMediaPlayer` class to play the media resource locally.
+
+**Adjust playback settings** 
+
+You can call several other methods of the `IMediaPlayer` class to implement various playback settings:
+
+- Pause/resume playback, adjust playback progress and speed, adjust local playback volume, and so on.
+- Get the total duration of the media resource, get the current playback progress, get the current playback state, get the number of media streams in the media resource and detailed information about each media stream.
+
+**Stop playback**
+
+1. Call the `stop` method of the `IMediaPlayer` class to stop playback.
+
+2. Call the `unregisterAudioFrameObserver` method of the `IMediaPlayer` class to stop registering the audio observer.
+  
+  > If you have not registered an audio observer, skip this step.
+  
+3. Call the `unregisterVideoFrameObserver` method of the `IMediaPlayer` class to stop registering the video observer.
+
+   > If you have not registered a video observer, skip this step.
+
+4. Call the `unregisterPlayerObserver` method of the `IMediaPlayer` class to stop registering the player observer.
+
+5. Call the `release` method of the `IMediaPlayer` class to release the `IMediaPlayer` resource.
+
+**Sample code**
+
+```C++
+
+class CPlayerSimpleDemo : public CWnd, public agora::rtc::IMediaPlayerObserver {
+public:
+    DECLARE_MESSAGE_MAP()
+    CPlayerSimpleDemo() : media_player_( nullptr )
+    {
+    }
+ 
+ 
+    ~CPlayerSimpleDemo()
+    {
+        if ( media_player_ )
+        {
+            media_player_->Release();
+            media_player_ = nullptr;
+        }
+    }
+ 
+ 
+    // IMediaPlayerObserver
+    virtual void onPlayerStateChanged( const IMediaPlayer::PLAYER_STATE state,
+                       const IMediaPlayer::PLAYER_ERROR ec ) override
+    {
+        switch ( state )
+        {
+        case IMediaPlayer::PLAYER_STATE_OPEN_COMPLETE:
+            media_player_->play();
+            break;
+        case IMediaPlayer::PLAYER_STATE_FAILED:
+            media_player_->stop();
+            break;
+        case IMediaPlayer::PLAYER_STATE_PLAYBACKCOMPLETED:
+            media_player_->stop();
+            break;
+        default:
+            break;
+        }
+    }
+ 
+ 
+    virtual void onPositionChanged( const int64_t position ) override
+    {
+    }
+ 
+ 
+    virtual void onMetaData( void* data, int length ) override
+    {
+    }
+ 
+ 
+    virtual void onPlayerEvent( const IMediaPlayer::PLAYER_EVENT event ) override
+    {
+    }
+ 
+ 
+    afx_msg int OnCreate( LPCREATESTRUCT lpCreateStruct )
+    {
+        if ( CWnd::OnCreate( lpCreateStruct ) == -1 )
+            return(-1);
+        media_player_ = createAgoraMediaPlayer();
+        if ( media_player_ )
+        {
+            media_player_->registerPlayerObserver( this );
+            media_player_->setView( m_hWnd );
+            media_player_->open( "http://tb-video.bdstatic.com/tieba-smallvideo/68_20df3a646ab5357464cd819ea987763a.mp4" );
+        }
+        return(0);
+    }
+ 
+ 
+private:
+    agora::rtc::IMediaPlayer* media_player_;
+};
+
 ```
 
+### Share media resources to the remote
 
-## Implement MediaPlayer Kit
+After integrating the MediaPlayer Kit, the Agora Native SDK, and the RtcChannelPublishPlugin, follow these steps to synchronously share media resources played by the local user to all the remote users in the Agora channel.
 
-### Prerequisites
+**Instantiate required objects**
 
-- Operating System: Windows 7 or later.
-- Development Tools: Microsoft Visual Studio 2015 or later.
+1. [Instantiate an IRtcEngine object](https://docs.agora.io/en/Interactive%20Broadcast/start_live_windows?platform=Windows#2-initialize-irtcengine).
+2. Instantiate the objects for the mediaplayer kit and the RtcChannelPublishPlugin.
+3. Call the `attachPlayerToRtc` method of the `AgoraRtcChannelPublishHelper` class to bundle the player with the Agora channel.
 
-### Integrate MediaPlayer Kit
+**Enable the player to complete playback preparations**
 
-**1. Preparation**
+Register the player, audio, and video observer objects, and complete the **preparations for playback**. See [Play media resources locally](#local) for details.
 
-- Download and unzip Agora Native SDK. See the **Video SDK** in [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads).
-- Make sure you have completed the integration of the Agora Native SDK, as described in [Integrate Client](../../en/Interactive%20Broadcast/windows_video.md).
-- Download and unzip the MediaPlayerKit folder.
+> Do not proceed until you receive the `onPlayerStateChanged` callback reporting `PLAYER_STATE_PLAYING (3)`.
 
-**2. Create a project**
+**Enable the local user to join the channel by using the SDK** 
 
-<div class="alert warning"> <li> In this step, you should continue to integrate MediaPlayerKit projects based on an existing project that has integrated the Agora Native SDK, rather than creating a new project from scratch. 
-<li> This step shows you how to create a new project, you can skip it if you don't need this reference.</div>
+Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broadcast/start_live_windows?platform=Windows#3-set-the-channel-profile) for details about how to enable the local user to join the live broadcast channel in the role of `BROADCASTER`:
 
-- Create a new **Windows Desktop Application** based on **Visual C++**, and click **OK**.
-- Click **Build** > **Build Solution** for this empty project.
-- After a successful compilation, click **Debug** > **Start Debugging**.
--  After a successful debugging, go to the next step.
+1. Call the `setChannelProfile` method to set the channel mode to live broadcast.
 
-**3. Import files**
-- Copy the `MediaPlayerKit` and `sdk` (under the Agora Native SDK folder) folders to your project file.
-- Click on **Source Files**, right click **Add** > **Existing Item**, and import the `MediaPlayerKit/videokit` file.
+2. Call the `setClientRole` method to set the local user role as the broadcaster.
 
-**4. Import paths**
-Click on your project file and right click on **Properties**.
+3. Call the `enableVideo` method to enable the video module.
 
-- Click **C/C++** > **General**, and fill in the following paths in the **Additional Include Directories**:
-    - `./sdk/include;`
-    - `./MediaPlayerKit/include;`
-    - `./MediaPlayerKit/videokit;`
-    
-- Click **Linker** > **General**, and fill in the following paths in the **Additional Library Directories**:
-    - `./MediaPlayerKit/lib;`
-    - `./sdk/lib;`
-    
-- Click **Linker** > **Input**, and fill in the following paths in **Additional Dependencies**:
-    - `./MediaPlayerKit/lib/re_sampler.lib;`
-    - `./MediaPlayerKit/lib/VideoPlayerKit.lib;`
-    - `./sdk/lib/agora_rtc_sdk.lib;`
+4. Call the `joinChannel` method to enable the local user to join the channel.
+
+   > Do not proceed until you receive the `onJoinChannelSuccess` callback.
+
+**Start sharing by using the plugin**
+
+1. To prevent the remote user from hearing the echo, call the `adjustPlayoutSignalVolume` method to set the playback volume to `0`, and then call the `mute(true)` method of the `IMediaPlayer` class.
+
+2. Call the `publishVideo`/`publishAudio` method to publish the video/audio stream in the media resource to remote users in the Agora channel.
+
+3. Call the `adjustPublishSignalVolume` method to adjust the playback volume heard by the remote user.
 
 
-**5. Compile the project**
+**Cancel sharing by using the plugin**
 
-- Click on your project file, right click on **Properties**, click **C/C++** > **Precompiled Headers**, and select **Not Using Precompiled Headers**.
-- Click **Build** > **Build Solution**.
+1. Call the `unpublishVideo`/`unpublishAudio` method to unpublish the video/audio stream in the media resource.
 
-After a successful compilation, you can refer to [Call the interfaces](#1) or [API documentation](#2) to complete your project.
+2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel. 
 
-<a name="1"></a>
-### Call the interfaces
+<div class="alert note">Do not skip this section and directly call the <code>leaveChannel</code> method to cancel the media stream being shared, otherwise abnormal behaviors occur when the local user rejoins the channel:
+	<li>The previously unshared media stream automatically sends to the remote users.</li>
+	<li>The audio and video streams are not synchronized during playback.</li></div>
 
-**API sequence diagram**
-![](https://web-cdn.agora.io/docs-files/1567498507910)
 
-> - The diagram shows only the basic interfaces. If you have more complex requirements, you can also call more interfaces in the Agora Native SDK, such as [`enableDualStreamMode`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a72846f5bf13726e7a61497e2fef65972).
-> - Because `setVideoView` in the MediaPlayer Kit interface can set the local video window, you don't need to call [`setupLocalVideo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a744003a9c0230684e985e42d14361f28) in the Agora Native SDK interface beforehand.
+**Sample code**
 
-1. Call the Agora Native SDK interface to complete initialization and the basic video setup.
-
-	- Call the `create` method to create an AgoraRtcEngine instance and call the `initialize` method to complete the initialization. See [Implementation](https://docs.agora.io/en/Interactive%20Broadcast/initialize_windows_live?platform=Windows#implementation).
-
-	- Call the `setChannelProfile` method to set the channel profile as Live Broadcast. See [Set the channel profile as Live Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/join_live_windows?platform=Windows#set-the-channel-profile-as-live-broadcast).
-	- Call the `setClientRole` method to set the role as the host.
-    ```C++
-    Int nRet = m_lpAgoraEngine->setClientRole(role);
-    ```
-
-	- Call the `enableVideo` method to enable the video mode. See [Enable the video mode](https://docs.agora.io/en/Interactive%20Broadcast/publish_windows_live?platform=Windows#enable-the-video-mode).
-
-2. Call the MediaPlayer Kit interface to complete initialization and other preparations.
-
-	- Call the `createMediaPlayerKitWithRtcEngine` method to create the engine.
-    ```C++
-    mediaPlayerKit = createMediaPlayerKitWithRtcEngine(rtcEngine,sampleRate);
-    ```
-	- Call the `setEventHandler` and `setMediaInfoCallback` methods to set the event callbacks and the media information callbacks.
-> You can refer to [API documentation](#2) for the four callbacks.
->
-  ```C++
-  mediaPlayerKit->setEventHandler(handler);
-  mediaPlayerKit->setMediaInfoCallback(infoCallback);
-  ```
-
-	- Call the `setVideoView` method to set the local view.
-  ```C++
-  mediaPlayerKit->setVideoView(hwnd);
-  ```
-
-3. Call the Agora Native SDK interface to complete the channel management.
-
-	- Call the `joinChannel` method to join the channel. See [Join a live broadcast channel](https://docs.agora.io/en/Interactive%20Broadcast/join_live_windows?platform=Windows#join-a-live-broadcast-channel).
-> Call this method after the `setVideoView` method.
-
-	- Call the [`setupRemoteVideo`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac166814787b0a1d8da5f5c632dd7cdcf) method to set the view of the remote user.
-
-4. Call the MediaPlayer Kit interface to load the video.
-
-	- Call the `load` method to load the video into the memory.
-> You can load the video from the local or URL path to meet your requirements. See [Supported format](#format).
->
-  ```C++
-  mediaPlayerKit->load(url.toUtf8().data(), true);
-  ```
-
-<a name="3"></a>
-5. Call the MediaPlayer Kit interface to complete the media player functions.
-
-	- Call the `play`, `adjustPlaybackSignalVolume`, `seekTo`, `getCurrentPosition`, `pause`, and `resume` methods to adjust the media player in real time.
-> You can learn about these methods by referring to [API documentation](#2).
->
-  ```C++
-  mediaPlayerKit->play();
-  mediaPlayerKit->adjustPlaybackSignalVolume(volume);
-  mediaPlayerKit->seekTo(msec);
-  mediaPlayerKit->getCurrentPosition();
-  mediaPlayerKit->pause();
-  mediaPlayerKit->resume();
-  ```
-
-6. Call the MediaPlayer Kit interface to publish the audio/video to the remote user.
-
-    - If you only want to publish the audio to the remote user:
-        - Call the `publishAudio` method to publish the audio.
-        ```C++
-        mediaPlayerKit->publishAudio();
-        ```
-        - Adjust the media player in real time by calling the interfaces in [Step 5](#3).
-        - Call the `adjustPublishSignalVolume` method to adjust the volume received by the remote user.
-        ```C++
-        mediaPlayerKit->adjustPublishSignalVolume(volume);
-        ```
-
-        - Call the `unpublishAudio` method to stop publishing the audio to the remote user.
-        ```C++
-        mediaPlayerKit->unpublishAudio();
-        ```
-
-    - If you want to publish the video to the remote user:
-        - Call the `publishVideo` method to publish the video.
-        ```C++
-        mediaPlayerKit->publishVideo();
-        ```
-
-        - Adjust the media player in real time by calling the interfaces in [Step 5](#3).
-
-        - Call the `adjustPublishSignalVolume` method to adjust the volume received by the remote user.
-        ```C++
-        mediaPlayerKit->adjustPlaybackSignalVolume(volume);
-        ```
-
-        - Call the `unpublishVideo` method to stop publishing the video to the remote user.
-        ```C++
-            mediaPlayerKit->unpublishVideo();
-        ```
-
-7. Call the MediaPlayer Kit interface to stop playback and quit MediaPlayer Kit.
-	- Call the `stop` method to stop the playback.
-  ```C++
-  mediaPlayerKit->stop();
-  ```
-
-	- Call the `unload` method to release the video loaded into the memory.
-  ```C++
-  mediaPlayerKit->unload();
-  ```
-
-	- Call the `destroy` method to destroy the MediaPlayerKit instance and quit MediaPlayer Kit.
-> After calling the `destroy` method, the binding of the display view of the local video stream is not valid.
->
-  ```C++
-  mediaPlayerKit->destroy();
-  ```
-
-<a name="2"></a>
-## API documentation
-See [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_cpp/index.html).
+```C++
+AgoraRtcChannelPublishHelper *agora_rtc_channel_publish_helper_= new AgoraRtcChannelPublishHelper()
+virtual void onPlayerStateChanged( const IMediaPlayer::PLAYER_STATE state,
+                   const IMediaPlayer::PLAYER_ERROR ec ) override
+{
+    switch ( state )
+    {
+    case IMediaPlayer::PLAYER_STATE_OPEN_COMPLETE:
+        agora_rtc_channel_publish_helper_->attachPlayerToRtc(rtc_engine_, media_player_);
+        agora_rtc_channel_publish_helper_->publishAudio();
+        agora_rtc_channel_publish_helper_->publishVideo();
+        break;
+    case IMediaPlayer::PLAYER_STATE_FAILED:
+        media_player_->stop();
+        break;
+    case IMediaPlayer::PLAYER_STATE_PLAYBACKCOMPLETED:
+        media_player_->stop();
+        break;
+    default:
+        break;
+    }
+}
+```
 
 ## Considerations
 
-If you get an error in MediaPlayer Kit when playing video from the URL path due to network problems, you need to call the `load` method again to reload the video after the network conditions improve.
+To avoid the problem that the new audio router is abnormally muted when the local user switches the audio router during playback, Agora recommends the following steps:
 
+- When playing media resources locally, Agora recommends that the local user does not switch the audio router to Bluetooth devices.
+
+- When sharing media resources, Agora recommends the following steps before switching the audio router to Bluetooth devices:
+    1. After calling the `joinChannel` method,  call the [`enumeratePlaybackDevices`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#aa13c99d575d89e7ceeeb139be723b18a) method to get the `deviceId` of the Bluetooth device.
+    2. Call the [`setPlaybackDevice`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#a1ee23eae83165a27bcbd88d80158b4f1) method and pass in the `deviceId` parameter to switch the audio router to the Bluetooth device during playback.
+
+## API documentation
+
+See the [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_cpp/1.1.0/index.html).

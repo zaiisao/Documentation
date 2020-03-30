@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: token authentication
 platform: All Platforms
-updatedAt: Mon Dec 23 2019 06:26:13 GMT+0800 (CST)
+updatedAt: Wed Mar 25 2020 05:10:22 GMT+0800 (CST)
 ---
 # Set up Authentication
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two authentication mechanisms:
@@ -69,7 +69,7 @@ If you choose **APP ID + APP certificate + Token (recommended)** when you create
 
 ![](https://web-cdn.agora.io/docs-files/1574928196241)
 
-If you chooes **App ID** for authentication when creating the project and want to switch to the "App ID + App Certificate + Token" mechanism, you need to enable the App Certificate first. 
+If you choose **App ID** for authentication when creating the project and want to switch to the "App ID + App Certificate + Token" mechanism, you need to enable the App Certificate first. 
 
 Follow these steps to enable the App Certificate:
 

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Tue Mar 10 2020 10:25:09 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 10:35:05 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -20,6 +20,8 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 ## v3.0.0
 
 v3.0.0 was released on Mar 4, 2020.
+
+On Mar 24, 2020, we fixed occasional issues relating to no audio, audio mixing, multiple `didClientRoleChanged` callbacks, and SDK crashes.
 
 In this release, Agora improves the user experience under poor network conditions for both the Communication and Live-broadcast profiles through the following measures:
 

@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Fri Mar 20 2020 11:03:06 GMT+0800 (CST)
+updatedAt: Wed Mar 25 2020 05:28:37 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -30,7 +30,7 @@ Call `setRecordingDeviceVolume` to set the volume of your recording device.
 
 The `volume` parameter represents the audio level of the recording device, ranging between 0 and 255:
 - 0: Mute.
-- 255: The maiximum volume of the device.
+- 255: The maximum volume of the device.
 
 As the following screenshot shows, the volume value corresponds to the audio level of your audio recording device.
 ![](https://web-cdn.agora.io/docs-files/1577201229190)

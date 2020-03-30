@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: iOS,macOS
-updatedAt: Tue Mar 10 2020 06:55:55 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 05:22:53 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -135,9 +135,9 @@ Refer to the following code to customize the video source in your project.
 
 	```swift
 	//Swift
-	// variable in the protocal
+	     // variable in the protocal
 		 var consumer: AgoraVideoFrameConsumer?
-	// Use the consumer method to transfer the video data to the Agora SDK.
+	     // Use the consumer method to transfer the video data to the Agora SDK.
 
 		 // Transfer the video frame in the rawData format.
 		 consumer.consumeRawData("your rawData", withTimestamp: CMTimeMake(1, 15), format: "your data format", size: size, rotation: rotation)
@@ -145,25 +145,25 @@ Refer to the following code to customize the video source in your project.
 		 // Transfer the video frame in the CVPixelBuffer format.
 		 consumer.consumePixelBuffer("your pixelBuffer", withTimestamp: CMTimeMake(1, 15), rotation: rotation)
 
-	// Implement the protocol.
-	1. Set the buffer type to capture the video.
+	    // Implements the protocol.
+	    // 1. Set the buffer type to capture the video.
 		func bufferType() -> AgoraVideoBufferType {
 				return bufferType
 		}
 
-	2. Initialize the custom video source.
+	    // 2. Initializes the custom video source.
 		func shouldInitialize() -> Bool {
 		}
 
-	3. Transfer the video data with Consumer when the customized video source starts capturing.
+	    // 3. Transfers the video data with Consumer when the customized video source starts capturing.
 		func shouldStart() {
 		}
 
-	4. Stop capturing.
+	    // 4. Stops capturing.
 		func shouldStop() { 
 		}
 
-	5. Release the video source.
+	    // 5. Releases the video source.
 		func shouldDispose() {
 		}
 	```
@@ -174,32 +174,32 @@ Refer to the following code to customize the video source in your project.
 	@synthesize consumer;
 	// Use the consumer method to transfer the video data to the Agora SDK:
 
-		// Transfer the video frame in the rawData format.
+		// Transfers the video frame in the rawData format.
 		[consumer consumeRawData: "your rawData" withTimestamp: CMTimeMake(1, 15) format: "your data format" size: size rotation: rotation];
 
-		// Transfer the video frame in the CVPixelBuffer format.
+		// Transfers the video frame in the CVPixelBuffer format.
 		[consumer consumePixelBuffer: "your pixelBuffer" withTimestamp: CMTimeMake(1, 15) rotation: rotation];
 
-	// Implement the protocol.
-	1. Set the buffer type to capture the video.
+	    // Implements the protocol.
+	    // 1. Sets the buffer type to capture the video.
 		- (AgoraVideoBufferType)bufferType {
 				return AgoraVideoBufferTypePixelBuffer;
 		}
 
-	2. Initialize the custom video source.
+	    // 2. Initializes the custom video source.
 		- (BOOL)shouldInitialize {
 				return YES;
 		}
 
-	3. Transfer the video data with Consumer when the customized video source starts capturing.
+	    // 3. Transfers the video data with Consumer when the customized video source starts capturing.
 		- (void)shouldStart {
 		}
 
-	4. Stop capturing.
+	    // 4. Stops capturing.
 		- (void)shouldStop {
 		}
 
-	5. Release the video source.
+	    // 5. Releases the video source.
 		- (void)shouldDispose {
 		}
 	```
@@ -243,7 +243,7 @@ Refer to the following steps to customize the video renderer with MediaIO in you
 
 Refer to the following diagram to customize the video sink in your project.
 
-![](https://web-cdn.agora.io/docs-files/1569401384480)
+![](https://web-cdn.agora.io/docs-files/1585286519369)
 
 **Sample code**
 
@@ -253,38 +253,38 @@ Refer to the following code to customize the video sink in your project.
 
 	```swift
 	// Swift
-	// Implement AgoraVideoSinkProtocal.
-	1. Set the buffer type that the Agora SDK sends.
+	    // Implements AgoraVideoSinkProtocal.
+	    // 1. Sets the buffer type that the Agora SDK sends.
 		func bufferType() -> AgoraVideoBufferType {
 				return bufferType
 		}
 
-		Set the video data format that the Agora SDK sends.
+		// Sets the video data format that the Agora SDK sends.
 		func pixelFormat() -> AgoraVideoPixelFormat {
 				return pixelFormat
 		}
 
-	2. Initialize the custom Video Renderer.
+	    // 2. Initializes the custom Video Renderer.
 		func shouldInitialize() -> Bool {
 				return true
 		}
 
-	3. Start the Video Renderer.  
+	    // 3. Starts the Video Renderer.  
 		func shouldStart() {
 
 		}
 
-	4. The Agora SDK stops sending video data.
+	    // 4. The Agora SDK stops sending video data.
 		func shouldStop() {
 
 		}
 
-	5. Release the custom Video Renderer.
+	    // 5. Releases the custom Video Renderer.
 		func shouldDispose() {
 
 		}
 
-	6. The Agora SDK sends the video frame in the CVPixelBuffer format, and the customized Video Renderer gets the data for rendering.
+	    // 6. The Agora SDK sends the video frame in the CVPixelBuffer format, and the customized Video Renderer gets the data for rendering.
 		func renderPixelBuffer(_ pixelBuffer: CVPixelBuffer, rotation: AgoraVideoRotation) {
 		}
 
@@ -296,39 +296,39 @@ Refer to the following code to customize the video sink in your project.
 
 	```objective-c
 	// Objective-C
-	// Implement AgoraVideoSinkProtocal.
-	1. Set the buffer type that the Agora SDK sends.
+	    // Implements AgoraVideoSinkProtocal.
+	    // 1. Sets the buffer type that the Agora SDK sends.
 		- (AgoraVideoBufferType)bufferType {
 				return AgoraVideoBufferTypePixelBuffer;
 		}
 
-		Set the video data format that the Agora SDK sends.
+		// Sets the video data format that the Agora SDK sends.
 		- (AgoraVideoPixelFormat)pixelFormat {
 			 return AgoraVideoPixelFormatI420;
 		}
 
-	2. Initialize the custom Video Renderer.
+	    // 2. Initializes the custom Video Renderer.
 		- (BOOL)shouldInitialize {
 			return YES;
 		}
 
-	3. Start the Video Renderer.
+	    // 3. Starts the Video Renderer.
 		- (void)shouldStart {
 		}
 
-	4. The Agora SDK stops sending the video data.
+	    // 4. The Agora SDK stops sending the video data.
 		- (void)shouldStop {
 		}
 
-	5. Release the custom Video Renderer.
+	    // 5. Releases the custom Video Renderer.
 		- (void)shouldDispose {
 		}
 
-	6. The Agora SDK sends the video frame in the CVPixelBuffer format, and the customized Video Renderer gets the data for rendering.
+	    // 6. The Agora SDK sends the video frame in the CVPixelBuffer format, and the customized Video Renderer gets the data for rendering.
 		- (void)renderPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer rotation:(AgoraVideoRotation)rotation {
 		}
 
-		The Agora SDK sends the video frame in the rawData format, and the customized Video Renderer gets the data for rendering.
+		// The Agora SDK sends the video frame in the rawData format, and the customized Video Renderer gets the data for rendering.
 		- (void)renderRawData:(void * _Nonnull)rawData size:(CGSize)size rotation:(AgoraVideoRotation)rotation {
 		}
 	```

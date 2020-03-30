@@ -1,16 +1,16 @@
 
 ---
-title: Start a Video Call
+title: Start a Voice Call
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 07:11:40 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:42:27 GMT+0800 (CST)
 ---
-# Start a Video Call
+# Start a Voice Call
 Use this guide to quickly start a basic call with the Agora SDK for Electron.
 
 ## Sample project
 
-We provide an open-source sample project that implements [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) on GitHub. You can download it and view the source code.
+We provide an open-source demo project that implements [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) on GitHub. You can download it and view the source code.
 
 ## Prerequisites
 
@@ -43,6 +43,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 	`import AgoraRtcEngine from 'agora-electron-sdk'`
 	
+
 **Method 2: Download the SDK from the Developer Portal**
 
 1. Go to [SDK Downloads](https://docs.agora.io/cn/Agora%20Platform/downloads) to download the Agora SDK for Electron.
@@ -82,7 +83,9 @@ Refer to the [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Ag
 
 ## Open-source SDK
 
-The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open-source on GitHub. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
+The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open source on GitHub. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
+
+
 
 
 

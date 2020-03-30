@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: Linux
-updatedAt: Mon Mar 23 2020 09:09:01 GMT+0800 (CST)
+updatedAt: Thu Mar 26 2020 08:09:30 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
@@ -11,7 +11,7 @@ updatedAt: Mon Mar 23 2020 09:09:01 GMT+0800 (CST)
 The On-premise Recording SDK supports two recording modes:
 
 - Individual recording mode: This is the default recording mode. The SDK generates one audio and/or video file for each UID. 
-- Composite recording mode: The audio of all UIDs in the channel is mixed into an audio file and the video of all UIDs is mixed into a video file. 
+- Composite recording mode: Generates a single mixed audio and video file for all UIDs in a channel, or mixes the audio of all UIDs in the channel into an audio file and the video of all UIDs into a video file.
 
 This page shows how to record audio and/or video in **individual recording mode** by the command line.
 

@@ -3,12 +3,15 @@
 title: Inject Online Media Stream
 description: 
 platform: Web
-updatedAt: Thu Feb 27 2020 05:52:36 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:09:03 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
 
 **Injecting an online media stream** is the action of adding an external audio or video stream to an ongoing live-broadcast channel. It enables the hosts and audience in the channel to hear and see the additional stream while interacting with each other.
+
+
+<div class="alert info">Click the <a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Injection-Web/">online demo</a> to try this feature out.</div>
 
 ### Applicable scenarios
 
@@ -25,11 +28,13 @@ The host in a live-broadcast channel pulls an online media stream and pushes it 
 - The host and audience in the channel can hear and see the media stream.
 - If the host enables Content Delivery Network (CDN) live streaming, the injected media stream is also pushed to the CDN so that the CDN audience can hear and see the media stream.
 
->- Only one online media stream can be injected into the same channel at the same time.
->- Supported codec type: AAC for audio, H.264 for video.
->- Audio-only streams are also supported.
->- Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
-
+<div class="alert note">Note:
+	<ul><li>Only one online media stream can be injected into the same channel at the same time.</li>
+		<li>Supported codec type: AAC for audio, H.264 for video.</li>
+		<li>Audio-only streams are also supported.</li>
+		<li>Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.</li>
+	</ul>
+</div>
 
 ## Implementation
 
@@ -84,7 +89,5 @@ We also provide an open-source [Live-Streaming-Injection](https://github.com/Ago
 To receive the injected media stream, the audience need to subscribe to the host.
 
 ## Reference
-
-* See also: [When injecting online streams to the CDN, what should I do when a disconnection happens?](https://docs.agora.io/en/faq/injecting_stream_disconnection_web)
-* You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Injection-Web/) to try the RTMP injection function provided by Agora.
+See also: [When injecting online streams to the CDN, what should I do when a disconnection happens?](https://docs.agora.io/en/faq/injecting_stream_disconnection_web)
 

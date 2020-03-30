@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Mon Mar 09 2020 06:52:04 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:18:40 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -18,6 +18,9 @@ However, the default modules might not meet your development requirements, such 
 - You need flexible device resource allocation to avoid conflicts with other services.
 
 This article explains how to customize the video source and renderer with the Agora Web SDK.
+
+
+<div class="alert info">Click the <a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Custom-VideoSource-Web/">online demo</a> to try this feature out.</div>
 
 ## Implementation
 

@@ -1,16 +1,16 @@
 
 ---
-title: Start a Video Call
+title: Start an Audio Broadcast
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 07:11:40 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 07:14:06 GMT+0800 (CST)
 ---
-# Start a Video Call
-Use this guide to quickly start a basic call with the Agora SDK for Electron.
+# Start an Audio Broadcast
+Use this guide to quickly start a basic audio broadcast with the Agora SDK for Electron.
 
 ## Sample project
 
-We provide an open-source sample project that implements [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) on GitHub. You can download it and view the source code.
+We provide an open-source sample project that implements [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) on GitHub. You can try the demo and view the source code.
 
 ## Prerequisites
 
@@ -43,6 +43,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 	`import AgoraRtcEngine from 'agora-electron-sdk'`
 	
+
 **Method 2: Download the SDK from the Developer Portal**
 
 1. Go to [SDK Downloads](https://docs.agora.io/cn/Agora%20Platform/downloads) to download the Agora SDK for Electron.
@@ -76,16 +77,10 @@ If you want to debug with Xcode or Visual Studio, run `npm run debug` to generat
 
 You have now integrated the Agora SDK for Electron into your project.
 
-## Implement the basic call
+## Implement the basic broadcast
 
-Refer to the [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) demo project to implement various real-time communication functions in your project.
+Refer to the [Agora Electron Quickstart ](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) sample project to implement various real-time live broadcast functions in your project.
 
 ## Open-source SDK
 
 The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open-source on GitHub. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
-
-
-
-
-
-

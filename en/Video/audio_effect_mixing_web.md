@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to enable audio mixing for Web
 platform: Web
-updatedAt: Mon Mar 09 2020 06:27:10 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:22:38 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -11,6 +11,9 @@ updatedAt: Mon Mar 09 2020 06:27:10 GMT+0800 (CST)
 In a call or live broadcast, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
 
 Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Video/start_call_web.md) or [Start a Live Broadcast](../../en/Video/start_live_web.md) for details.
+
+
+<div class="alert info">Click the <a href="https://webdemo.agora.io/agora-web-showcase/examples/AgoraAudioIO-Web/">online demo</a> to try this feature out.</div>
 
 ## Play audio effect files
 

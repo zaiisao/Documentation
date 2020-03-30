@@ -1,16 +1,16 @@
 
 ---
-title: Start a Live Broadcast
+title: Start a Video Broadcast
 description: 
 platform: Electron
-updatedAt: Mon Feb 24 2020 02:14:04 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 07:38:36 GMT+0800 (CST)
 ---
-# Start a Live Broadcast
-Use this guide to quickly start a basic broadcast call with the Agora SDK for Electron.
+# Start a Video Broadcast
+Use this guide to quickly start a basic audio broadcast with the Agora SDK for Electron.
 
-## Try the demo
+## Sample project
 
-We provide an open-source demo project that implements [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) on GitHub. You can try the demo and view the source code.
+We provide an open-source sample project that implements [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) on GitHub. You can download it and view the source code.
 
 ## Prerequisites
 
@@ -82,7 +82,7 @@ Refer to the [Agora Electron Quickstart ](https://github.com/AgoraIO-Community/A
 
 ## Open-source SDK
 
-The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open source in GitHub. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
+The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open-source on GitHub. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
 
 
 

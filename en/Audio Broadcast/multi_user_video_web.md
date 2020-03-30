@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: Web
-updatedAt: Mon Mar 09 2020 06:55:09 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:12:10 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -11,6 +11,8 @@ A video conference with too many hosts may cause network latency and packet loss
 
 If we set the subscribing stream to the 1-N Mode (set one stream as high and the rest as low), then a maximum of 17 users can join as hosts in an interactive broadcast without any network latency.
 
+
+<div class="alert info">Click the <a href="https://webdemo.agora.io/agora-web-showcase/examples/17-Multistream/#/">online demo</a> to try this feature out.</div>
 
 ## Implementation
 

@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Tue Nov 19 2019 08:42:12 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 03:38:13 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -12,7 +12,7 @@ You can use this guide to quickly start messaging with the [Agora RTM Web SDK](h
 
 ## Try the demo
 
-We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Web](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Web), which implements an elementary messaging system. You can try this demo out and view our source code:
+You can try out [Agora RTM Tutorial for Web](https://webdemo.agora.io/agora-web-showcase/examples/Agora-RTM-Tutorial-Web/), which implements an elementary messaging system. We've made it open-source on GitHub. You can view the souce code [here](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Web).
 
 
 ## Prerequisites

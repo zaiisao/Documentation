@@ -3,19 +3,19 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Mar 24 2020 06:59:05 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 02:49:49 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
-This article contains detailed help for the Cloud Recording RESTful API.
+This article contains detailed help for the Cloud Recording RESTful APIs.
 
-> You can also visit our interactive API documentation [Cloud Recording RESTful API](https://docs.agora.io/en/cloud-recording/restfulapi/) ![img](https://web-cdn.agora.io/docs-files/1583736328279). It contains detailed help for each Cloud Recording RESTful API and its parameters, and provides the **Try it out** function which allows you to send RESTful API requests and receive responses directly on the web page.
+> You can also visit our interactive API documentation [Cloud Recording RESTful API](https://docs.agora.io/en/cloud-recording/restfulapi/). It contains detailed help for each Cloud Recording RESTful API and its parameters, and provides the **Try it out** function which allows you to send RESTful API requests and receive responses directly on the web page.
 
 ![](https://web-cdn.agora.io/docs-files/1585032370986)
 
 
 ## <a name="auth"></a>Authentication
 
-The RESTful API only supports HTTPS. Before sending HTTP requests, you must pass the basic Agora HTTP authentication (the `Authorization` parameter in the HTTP request head) with `api_key:api_secret`:
+The RESTful APIs only support HTTPS. Before sending HTTP requests, you must pass the basic Agora HTTP authentication (the `Authorization` parameter in the HTTP request head) with `api_key:api_secret`:
 
 - `api_key`: Customer ID
 - `api_secret`: Customer Certificate
@@ -30,10 +30,9 @@ All requests are sent to the host: `api.agora.io`.
 - Response: The response content is in JSON format.
 
 <div class="alert warning">All the request URLs and request bodies are case sensitive.</div>
-
 ## Call sequence
 
-Use the RESTful API in the following steps:
+Use the RESTful APIs in the following steps:
 
 1. Call the [`acquire`](#acquire) method to request a resource ID for cloud recording.
 2. Call the  [`start`](#start) method within five minutes after getting the resource ID to start the recording.
@@ -41,7 +40,7 @@ Use the RESTful API in the following steps:
 
 During the recording, you can call the [`query`](#query) method to check the recording status.
 
-See [Sample code](../../en/cloud-recording/cloud_recording_rest.md) for an example using the RESTful API.
+See [Sample code](../../en/cloud-recording/cloud_recording_rest.md) for an example of using the RESTful APIs.
 
 
 ## <a name="acquire"></a>Gets the recording resource
@@ -681,18 +680,18 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 | Code | Description                                                  |
 | :--- | :----------------------------------------------------------- |
-| 200  | The request handle is successful.                            |
-| 201  | The request is successful and new resources are created.     |
+| 200  | The request is successful.                                   |
+| 201  | The request has been fulfilled, resulting in the creation of a new resource. |
 | 206  | No user in the channel sent a stream during the recording process, or some of the recorded files are uploaded to the Agora Cloud Backup instead of the third-party cloud storage. |
-| 400  | The input is in the wrong format.                            |
+| 400  | The server cannot process the request due to malformed request syntax. |
 | 401  | Unauthorized (incorrect App ID/Customer Certificate).        |
 | 404  | The requested resource could not be found.                   |
-| 500  | An internal error occurs in the Agora Cloud Recording RESTful API service. |
-| 504  | The server was acting as a gateway or proxy and did not receive the response from the upstream server. |
+| 500  | Internal server error.                                       |
+| 504  | The server was acting as a gateway or proxy and did not receive a timely response from the upstream server. |
 
 ## Errors
 
-This section lists the common errors in using the Agora Cloud Recording RESTful API. If you encounter other errors, contact Agora technical support.
+This section lists the common errors you may encounter when using the Agora Cloud Recording RESTful APIs. If you encounter other errors, contact support@agora.io.
 
 - `2`: Invalid parameter. Possible reasons:
   - The parameter type is wrong.
@@ -704,6 +703,7 @@ This section lists the common errors in using the Agora Cloud Recording RESTful 
   - `cloud_recording` is missing in the request URL.
   - The HTTP method is wrong.
 - `53`: The recording is already running. This error occurs when you use the same parameters to call [`acquire`](#acquire) again and use the new resource ID in the [`start`](#start) request. To start multiple recording instances, use a different UID for each instance.
+- `62`: If you receive this error when calling `acquire`, the cloud recording service is not enabled. See [Enable Cloud Recording](https://docs.agora.io/en/cloud-recording/cloud_recording_rest#enable-cloud-recording) for details.
 - `432`: The parameter in the request is incorrect. Either the parameter is invalid, or the App ID, channel name, or UID does not match the resource ID.
 - `433`: The resource ID has expired. You need to start recording within five minutes after getting a resource ID. Call [acquire](#acquire) to get a new resource ID.
 - `435`: No recorded files created. There is nothing to record because no user is in the channel.
@@ -717,4 +717,6 @@ This section lists the common errors in using the Agora Cloud Recording RESTful 
   - The space character.
   - Punctuation characters and other symbols, including: "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",".
 - `1028`: Invalid parameters in the request body of the [`updateLayout`](#update) method.
-- `"invalid appid"`: Invalid App ID. Ensure that the [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) is correct. If the App ID is correct and you still get this error message, contact Agora technical support.
+- `"invalid appid"`: The App ID you entered is invalid. If the error persists after you verify the App ID, contact [support@agora.io.](mailto:support@agora.io.)
+- `"no Route matched with those values"`: A possible reason for this message is that you entered an incorrect HTTP method in your request, such as using GET when it should have been POST.
+- `"Invalid authentication credentials"`: A possible reason for this message is that the Customer ID or Customer Certificate you entered is incorrect. If the error persists after you verify the Customer ID and Customer Certificate, contact [support@agora.io.](mailto:support@agora.io.)
