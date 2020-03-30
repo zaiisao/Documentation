@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to enable audio mixing on the Web
 platform: Web
-updatedAt: Mon Mar 09 2020 06:28:01 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:21:56 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -11,6 +11,9 @@ updatedAt: Mon Mar 09 2020 06:28:01 GMT+0800 (CST)
 在通话或直播过程中，除了用户自己说话的声音，有时候需要播放自定义的声音或者音乐文件并且让频道内的其他人也听到，比如需要给游戏添加音效，或者需要播放背景音乐等，Agora 提供以下两组方法可以满足播放音效和音乐文件的需求。
 
 开始前请确保已在你的项目中实现基本的实时音视频功能。 详见[开始音视频通话](../../cn/Audio%20Broadcast/start_call_web.md)或[开始互动直播](../../cn/Audio%20Broadcast/start_live_web.md)。
+
+
+<div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/AgoraAudioIO-Web/">在线体验</a>试用播放音效和混音功能。</div>
 
 ## 播放音效文件
 

@@ -1,11 +1,11 @@
 
 ---
-title: 实现音频互动直播
+title: 实现音频直播
 description: 
 platform: Unity
-updatedAt: Wed Mar 04 2020 05:37:46 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 07:03:38 GMT+0800 (CST)
 ---
-# 实现音频互动直播
+# 实现音频直播
 本文介绍如何使用 Agora Unity SDK 快速实现音频互动直播。
 
 ## 前提条件

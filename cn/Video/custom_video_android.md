@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Tue Mar 10 2020 00:22:28 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 04:47:40 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -110,22 +110,26 @@ VideoSource source = new VideoSource() {
 	}
 
 	@Override
+	// 初始化视频源。你需要在该方法中传入一个 IVideoFrameConsumer 对象
  	public boolean onInitialize(IVideoFrameConsumer consumer) {
 		// Consumer 是由 SDK 创建的，在 VideoSource 生命周期中注意保存它的引用
 		mConsumer = consumer;
 	}
 
 	@Override
+	// 启动视频源。你可以在该方法中启动视频帧捕捉。输入 true，表示自定义视频源已成功启动。
  	public boolean onStart() {
 		mHasStarted = true;
 	}
 
-	@Override
-  	public void onStop() {
-		mHasStarted = false;
+	 @Override
+	// 停止视频源。你可以在该方法中停止采集视频。
+   public void onStop() {
+	 mHasStarted = false;
 	}
 
 	@Override
+	// 释放视频源。你可以在该方法中关闭视频源设备。同时 SDK 会销毁 IVideoFrameConsumer 对象。
  	public void onDispose() {
 		// 释放对 Consumer 的引用
 		mConsumer = null;
@@ -173,30 +177,35 @@ if (mHasStarted && mConsumer != null) {
 
 参考下图时序使用 MediaIO 在你的项目中实现自定义视频渲染。
 
-![](https://web-cdn.agora.io/docs-files/1569397508507)
+![](https://web-cdn.agora.io/docs-files/1585284367293)
 
 **示例代码**
 
 参考下文代码使用 MediaIO 在你的项目中实现自定义视频渲染。
 
 ```java
+// 先创建一个实现 IVideoSink 接口的实例
 IVideoSink sink = new IVideoSink() {
 	@Override
+	// 初始化渲染器。你可以在该方法中对渲染器进行初始化，也可以提前初始化好。将返回值设为 true，表示已完成初始化
 	public boolean onInitialize () {
 		return true;
 	}
 
 	@Override
+	// 启动渲染器
 	public boolean onStart() {
 		return true;
 	}
  
 	@Override
+	// 停止渲染器
 	public void onStop() {
 
 	}
  
 	@Override
+	// 释放渲染器
 	public void onDispose() {
 
 	}

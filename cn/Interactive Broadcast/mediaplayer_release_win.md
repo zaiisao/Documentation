@@ -2,8 +2,8 @@
 ---
 title: 媒体播放器组件发版说明
 description: 
-platform: macOS
-updatedAt: Sat Mar 28 2020 03:00:01 GMT+0800 (CST)
+platform: Windows
+updatedAt: Sun Mar 29 2020 12:38:09 GMT+0800 (CST)
 ---
 # 媒体播放器组件发版说明
 本文提供媒体播放器组件的发版说明。
@@ -12,7 +12,7 @@ updatedAt: Sat Mar 28 2020 03:00:01 GMT+0800 (CST)
 ## 简介
 媒体播放器组件是 Agora 针对音视频直播场景研发的媒体播放器插件，与 Agora Native SDK（2.4.0 或更高版本）兼容。
 
-该插件通过精简、灵活的 API，帮助开发者在实时音视频直播中，实现媒体资源播放功能，将主播播放的本地或在线媒体资源分享给频道内所有用户欣赏。详见[功能描述](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_mac?platform=macOS#功能描述)。
+该插件通过精简、灵活的 API，帮助开发者在实时音视频直播中，实现媒体资源播放功能，将主播播放的本地或在线媒体资源分享给频道内所有用户欣赏。详见[功能描述](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_win?platform=Windows#功能描述)。
 
 为获取更多直播玩法和更好的实时互动体验，我们推荐你在如下场景中使用媒体播放器组件：
 - 本地播放场景：播放本地或在线媒体资源。
@@ -22,7 +22,7 @@ updatedAt: Sat Mar 28 2020 03:00:01 GMT+0800 (CST)
 
 ## 1.1.0 版
 
-该版本于 2020 年 3 月 23 日发布。
+该版本于 2020 年 3 月 30 日发布。
 
 <div class="alert note">为提高你的使用体验，我们在该版本中对原有方法的实现方式进行了重要改动，因此你需要重新集成。</div>
 
@@ -32,7 +32,7 @@ updatedAt: Sat Mar 28 2020 03:00:01 GMT+0800 (CST)
 主播端播放本地或在线音视频，同步分享给频道内的所有用户，实现更多直播玩法。
 
 #### 2. 同时播放多个媒体资源
-通过创建多个 AgoraMediaPlayer 实例，实现同时播放多个媒体资源，满足主播多种直播需求。
+通过创建多个 IMediaPlayer 实例，实现同时播放多个媒体资源，满足主播多种直播需求。
 
 #### 3. 播放控制
 打开、播放、暂停播放、恢复播放、定位播放该媒体资源，实现即时的播放控制。
@@ -43,16 +43,18 @@ updatedAt: Sat Mar 28 2020 03:00:01 GMT+0800 (CST)
 #### 5. 获取播放信息
 通过调用相关方法主动获取播放相关的各种信息，如当前播放进度、状态和媒体流的详细信息。
 
-#### 6. 重写代理方法监听事件
-`AgoraMediaPlayerDelegate` 中包含一系列事件，如播放进度、播放状态和定位状态。通过监听这些事件，你可以更好地掌握播放过程。当播放发生异常时，你可以通过这些事件来排查问题。
+#### 6. 注册观测器监听事件
+
+观测器中包含一系列事件，如播放进度、播放状态和定位状态。通过监听这些事件，你可以更好地掌握播放过程。当播放发生异常时，你可以通过这些事件来排查问题。
 
 此外，你还可以监听媒体附属信息、每帧音频帧和每帧视频帧的接收事件，实现更为复杂的功能满足多种场景需求，如使用自定义格式数据、录制音频、录制视频和截图。
 
 ### 相关链接
 
 我们为媒体播放器组件提供了完整的文档，你可以参考如下链接进行使用：
-- [集成文档](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_mac?platform=macOS)
-- [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
+
+- [集成文档](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_win?platform=Windows)
+- [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_cpp/1.1.0/index.html)
 
 ## 1.0.0 版
 
@@ -69,22 +71,18 @@ updatedAt: Sat Mar 28 2020 03:00:01 GMT+0800 (CST)
 #### 3. 精准音量控制
 分别调节本地和远端的播放音量，精准地控制不同阶段的播放音量，同时照顾播放端和订阅端的用户体验。
 
-#### 4. 重写代理方法监听事件
+#### 4. 监听事件
 
-`MediaPlayerKitDelegate` 中包含一系列事件：
+你可以通过 `MediaPlayerKitEventHandler` 和 `MediaInfoCallback` 监听以下事件：
 
-- 当前播放状态
-- 播放出错原因
-- 音频流和视频流的详细信息
-
-通过监听这些事件，你可以更好地掌握播放过程。
+- 播放状态
+- 播放出错
+- 音频信息
+- 视频信息
 
 ### 相关链接
 
 我们为媒体播放器组件提供了完整的文档，你可以参考如下链接进行使用：
 
-- [集成文档](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/mediaplayer_mac?platform=macOS&versionId=02f7bc20-6451-11ea-a366-4fbfd071e0af)
-- [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/v1.0.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
-
-
-
+- [集成文档](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/mediaplayer_win?platform=Windows&versionId=a73fb9a0-61f3-11ea-a366-4fbfd071e0af)
+- [API 文档](https://docs-preview.agoralab.co/cn/Video/API%20Reference/mediaplayer_cpp/v1.0.0/index.html)

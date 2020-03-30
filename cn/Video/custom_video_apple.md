@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: iOS,macOS
-updatedAt: Tue Mar 10 2020 06:58:02 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 05:07:59 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -133,44 +133,44 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 
 	```swift
 	// Swift
-	// 协议中的变量
+	     // 协议中的变量
 		 var consumer: AgoraVideoFrameConsumer?
-	// 调用 Consumer 的方法，将视频数据推入 Agora SDK
+	     // 调用 Consumer 的方法，将视频数据推入 Agora SDK
 
-		 // 推入r awData 类型
+		 // 推入 rawData 类型
 		 consumer.consumeRawData("your rawData", withTimestamp: CMTimeMake(1, 15), format: "your data format", size: size, rotation: rotation)
 
 		 // 推入 CVPixelBuffer
 		 consumer.consumePixelBuffer("your pixelBuffer", withTimestamp: CMTimeMake(1, 15), rotation: rotation)
 
-	// 协议中的方法
-	1. 视频采集使用的 Buffer 类型
+	    // 协议中的方法
+	    // 1. 视频采集使用的 Buffer 类型
 		func bufferType() -> AgoraVideoBufferType {
 				return bufferType
 		}
 
-	2. 在初始化视频源（shouldInitialize）中, 初始化自定义的 Video Source
+	    // 2. 在初始化视频源（shouldInitialize）中, 初始化自定义的 Video Source
 		func shouldInitialize() -> Bool {
 		}
 
-	3. 自定义视频源开始采集视频数据，并通过 Consumer 推入视频数据
+	    // 3. 自定义视频源开始采集视频数据，并通过 Consumer 推入视频数据
 		func shouldStart() {
 		}
 
-	4. 自定义视频源停止采集视频数据
+	    // 4. 自定义视频源停止采集视频数据
 		func shouldStop() { 
 		}
 
-	5. 在释放自定义视频源
+	    // 5. 在释放自定义视频源
 		func shouldDispose() {
 		}
 	```
 
 	```objective-c
 	// Objective-C
-	// 协议中的变量
-	@synthesize consumer;
-	// 调用 Consumer 的方法，将视频数据推入 Agora SDK
+	    // 协议中的变量
+	    @synthesize consumer;
+	    // 调用 Consumer 的方法，将视频数据推入 Agora SDK
 
 		// 推入 rawData 类型
 		[consumer consumeRawData: "your rawData" withTimestamp: CMTimeMake(1, 15) format: "your data format" size: size rotation: rotation];
@@ -178,26 +178,26 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 		// 推入 CVPixelBuffer
 		[consumer consumePixelBuffer: "your pixelBuffer" withTimestamp: CMTimeMake(1, 15) rotation: rotation];
 
-	// 协议中的方法
-	1. 视频采集使用的 Buffer 类型
+	    // 协议中的方法
+	    // 1. 视频采集使用的 Buffer 类型
 		- (AgoraVideoBufferType)bufferType {
 				return AgoraVideoBufferTypePixelBuffer;
 		}
 
-	2. 在初始化视频源（shouldInitialize）中, 初始化自定义的 Video Source
+	    // 2. 在初始化视频源（shouldInitialize）中, 初始化自定义的 Video Source
 		- (BOOL)shouldInitialize {
 				return YES;
 		}
 
-	3. 自定义视频源开始采集视频数据，并通过 Consumer 推入视频数据
+	    // 3. 自定义视频源开始采集视频数据，并通过 Consumer 推入视频数据
 		- (void)shouldStart {
 		}
 
-	4. 自定义视频源停止采集视频数据
+	    // 4. 自定义视频源停止采集视频数据
 		- (void)shouldStop {
 		}
 
-	5. 在释放自定义视频源
+	    // 5. 在释放自定义视频源
 		- (void)shouldDispose {
 		}
 	```
@@ -241,7 +241,7 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 
 参考下图时序使用 MediaIO 在你的项目中实现自定义视频渲染。
 
-![](https://web-cdn.agora.io/docs-files/1569399758500)
+![](https://web-cdn.agora.io/docs-files/1585285476949)
 
 **示例代码**
 
@@ -251,38 +251,38 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 
 	```swift
 	// Swift
-	// 协议中的方法
-	1. 希望 Agora SDK 抛出的视频 Buffer 类型
+	    // 协议中的方法
+	    // 1. 希望 Agora SDK 抛出的视频 Buffer 类型
 		func bufferType() -> AgoraVideoBufferType {
 				return bufferType
 		}
 
-		希望 Agora SDK 抛出的视频数据格式
+		// 希望 Agora SDK 抛出的视频数据格式
 		func pixelFormat() -> AgoraVideoPixelFormat {
 				return pixelFormat
 		}
 
-	2. 初始化自定义的 Video Renderer
+	    // 2. 初始化自定义的 Video Renderer
 		func shouldInitialize() -> Bool {
 				return true
 		}
 
-	3. 启动自定义的 Video Renderer   
+	    // 3. 启动自定义的 Video Renderer   
 		func shouldStart() {
 
 		}
 
-	4. Agora SDK 停止抛出视频数据
+	    // 4. Agora SDK 停止抛出视频数据
 		func shouldStop() {
 
 		}
 
-	5. 自定义的 Video Renderer 可以被释放   
+	    // 5. 自定义的 Video Renderer 可以被释放   
 		func shouldDispose() {
 
 		}
 
-	6. Agora SDK 通过该接口抛出 CVPixelBuffer 类型的视频数据, 自定义 Video Renderer 可以获取数据进行渲染
+	    // 6. Agora SDK 通过该接口抛出 CVPixelBuffer 类型的视频数据, 自定义 Video Renderer 可以获取数据进行渲染
 		func renderPixelBuffer(_ pixelBuffer: CVPixelBuffer, rotation: AgoraVideoRotation) {
 		}
 
@@ -294,39 +294,39 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 
 	```objective-c
 	// Objective-C
-	// 协议中的方法
-	1. 希望 Agora SDK 抛出的视频 Buffer 类型
+	    // 协议中的方法
+	    // 1. 希望 Agora SDK 抛出的视频 Buffer 类型
 		- (AgoraVideoBufferType)bufferType {
 				return AgoraVideoBufferTypePixelBuffer;
 		}
 
-		希望 Agora SDK 抛出的视频数据格式
+		// 希望 Agora SDK 抛出的视频数据格式
 		- (AgoraVideoPixelFormat)pixelFormat {
 			 return AgoraVideoPixelFormatI420;
 		}
 
-	2. 初始化自定义的 Video Renderer
+	    // 2. 初始化自定义的 Video Renderer
 		- (BOOL)shouldInitialize {
 			return YES;
 		}
 
-	3. 启动自定义的 Video Renderer 
+	    // 3. 启动自定义的 Video Renderer 
 		- (void)shouldStart {
 		}
 
-	4. Agora SDK 停止抛出视频数据
+	    // 4. Agora SDK 停止抛出视频数据
 		- (void)shouldStop {
 		}
 
-	5. 自定义的 Video Renderer 可以被释放   
+	    // 5. 自定义的 Video Renderer 可以被释放   
 		- (void)shouldDispose {
 		}
 
-	6. Agora SDK 通过该接口抛出 CVPixelBuffer 类型的视频数据, 自定义 Video Renderer 可以获取数据进行渲染
+	    // 6. Agora SDK 通过该接口抛出 CVPixelBuffer 类型的视频数据, 自定义 Video Renderer 可以获取数据进行渲染
 		- (void)renderPixelBuffer:(CVPixelBufferRef _Nonnull)pixelBuffer rotation:(AgoraVideoRotation)rotation {
 		}
 
-		Agora SDK 通过该接口抛出 rawData 类型的视频数据, 自定义 Video Renderer 可以获取数据进行渲染
+		// Agora SDK 通过该接口抛出 rawData 类型的视频数据, 自定义 Video Renderer 可以获取数据进行渲染
 		- (void)renderRawData:(void * _Nonnull)rawData size:(CGSize)size rotation:(AgoraVideoRotation)rotation {
 		}
 	```

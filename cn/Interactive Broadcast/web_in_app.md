@@ -3,12 +3,15 @@
 title: H5 实时直播
 description: 
 platform: Web
-updatedAt: Fri Feb 28 2020 11:36:23 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:30:14 GMT+0800 (CST)
 ---
 # H5 实时直播
 ## 功能简介
 
 Agora Web SDK 新增 H5 实时直播组件，支持在移动端网页播放音视频流。该功能可以实现通过在社交 app 内（如微信群、微信公众号、钉钉）分享网页链接，让用户在 app 中打开链接就能直接观看实时视频，降低了分享门槛，方便扩大目标受众范围。
+
+
+<div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Web-RTS-Tutorial-1to1/">在线体验</a>试用 H5 实时直播功能。</div>
 
 ### H5 实时直播兼容性
 

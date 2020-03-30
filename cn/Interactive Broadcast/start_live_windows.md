@@ -1,12 +1,12 @@
 
 ---
-title: 实现互动直播
+title: 实现视频直播
 description: 
 platform: Windows
-updatedAt: Fri Mar 20 2020 09:21:59 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 07:29:28 GMT+0800 (CST)
 ---
-# 实现互动直播
-本文介绍如何通过 Agora SDK 快速实现互动直播。
+# 实现视频直播
+本文介绍如何通过 Agora SDK 快速实现视频互动直播。
 
 互动直播和实时通话的区别就在于，直播频道的用户有角色之分。你可以将角色设置为主播或者观众，其中主播可以收、发流，观众只能收流。
 
@@ -20,7 +20,7 @@ updatedAt: Fri Mar 20 2020 09:21:59 GMT+0800 (CST)
 <div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
 ## 示例项目
-Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供一个开源的视频直播示例项目 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 - Microsoft Visual Studio 2017 或以上版本
@@ -41,11 +41,12 @@ Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Open
 2. 进入<b>新建项目</b>窗口，选择项目类型为 <b>MFC 应用程序</b>，输入项目名称，选择项目存储路径，并点击<b>确认</b>。
 3. 进入<b>MFC 应用程序</b>窗口，选择应用程序类型为<b>基于对话框</b>，并点击完成。
 	
+
 </details>
 
 <a name="inte"></a>
 ### 集成 SDK
-参考以下步骤将 Agora SDK 集成到你的项目中。
+参考以下步骤将 Agora 视频 SDK 集成到你的项目中。
 
 **1. 配置项目文件**
 
@@ -64,13 +65,13 @@ Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Open
 - 进入**链接器 > 输入 > 附加依赖项**菜单，点击**编辑**，并在弹出窗口中输入 **agora_rtc_sdk.lib**。
 
 ## 实现音视频直播
-本节介绍如何实现音视频直播。视频直播的 API 使用时序见下图：
+本节介绍如何实现视频直播。视频直播的 API 使用时序见下图：
 
 ![](https://web-cdn.agora.io/docs-files/1568257965768)
 
 ### 1. 创建用户界面
 
-为直观地体验音视频通话，需根据应用场景创建用户界面（UI)。若项目中已有用户界面，直接查看[初始化 IRtcEngine](#ini)。
+为直观地体验视频通话，需根据应用场景创建用户界面（UI)。若项目中已有用户界面，直接查看[初始化 IRtcEngine](#ini)。
 
 如果你想实现一个视频直播，推荐在 UI 上添加以下控件：
 - 主播视频窗口
@@ -83,7 +84,7 @@ Agora 在 GitHub 上提供一个开源的实时音视频通话示例项目 [Open
 <a name="ini"></a>
 ### 2. 初始化 IRtcEngine
 
-在调用其他 Agora API 前，需要创建并初始化 IRtcEngine 对象。
+在调用其他 Agora API 前，需要创建并初始化 `IRtcEngine` 对象。
 
 你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
 
@@ -180,7 +181,7 @@ void CEnterChannelDlg::OnCbnSelchangeCmbRole()
 
 ### 5. 设置本地视图
 
-成功初始化 IRtcEngine 对象后，需要在加入频道前设置本地视图，以便主播在直播中看到本地图像。参考以下步骤设置本地视图：
+成功初始化 `IRtcEngine` 对象后，需要在加入频道前设置本地视图，以便主播在直播中看到本地图像。参考以下步骤设置本地视图：
 - 调用 `enableVideo` 方法启用视频模块。
 - 调用 `setupLocalVideo` 方法设置本地视图。
 
@@ -298,4 +299,6 @@ void CAgoraObject::CloseAgoraObject()
 
 ## 运行项目
 在 Windows 设备中运行该项目。当成功开始视频直播时，主播可以看到自己的画面；观众可以看到主播的画面。
+
+
 

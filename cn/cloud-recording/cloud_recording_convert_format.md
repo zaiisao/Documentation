@@ -3,21 +3,30 @@
 title: 音视频格式转换
 description: 解释如何用脚本进行不同音频格式和视频格式的转换
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:20:53 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:15:12 GMT+0800 (CST)
 ---
 # 音视频格式转换
 ## 功能描述
 
-你可以使用我们的音视频格式转换脚本，对音视频文件进行格式转换。该脚本支持以下文件格式之间的转换：
+合流录制模式下，你会得到一个 M3U8 文件和多个 TS 文件，包含所有用户的音视频数据。你可以使用 FFmpeg 将 M3U8 文件转换为 MP4 文件，或使用声网提供的音视频格式转换脚本，将多个 TS 文件批量转换为多个 MP4 文件或纯音频文件。
 
-- 音频：MP3，WAV，AAC
-- 视频：MP4，TS
+## 使用 FFmpeg 转换
 
-该脚本不支持音频文件和视频文件之间的格式转换。
+你可以使用 FFmpeg 将 M3U8 文件转换为 MP4 文件。安装 [FFmpeg](http://ffmpeg.org/download.html)，并执行以下命令：
 
-## 前提条件
+```
+ffmpeg -i input.m3u8 -vcodec copy -acodec copy -absf aac_adtstoasc output.mp4
+```
 
-### 环境准备
+其中，`input.m3u8` 是待转换的 M3U8 文件名，`output.mp4` 为转换后的 MP4 文件名。
+
+## 使用脚本转换
+
+你可以使用声网提供的音视频格式转换脚本，将多个 TS 文件转换为多个 MP4 文件或纯音频文件，音频文件的格式包括 MP3、WAV 和 AAC。
+
+### 前提条件
+
+#### 环境准备
 
 转码服务器推荐使用以下系统：
 
@@ -26,17 +35,17 @@ updatedAt: Thu Oct 10 2019 01:20:53 GMT+0800 (CST)
 
 运行该脚本需要安装 Python 2，2.7 或以上版本。
 
-### 文件准备
+#### 文件准备
 
 确保待转码文件的存储路径可访问。
 
-## 转码步骤
+### 转码步骤
 
-### 1.获取音视频格式转换脚本
+#### 1.获取音视频格式转换脚本
 
 下载 [Agora 音视频格式转换脚本](https://download.agora.io/acrsdk/release/format_convert_1.0.tar.gz) 压缩包并解压。
 
-### 2.输入命令行
+#### 2.输入命令行
 
 输入以下命令行：
 
@@ -56,7 +65,7 @@ python format_convert.py <directory> <source_format> <destination_format>
 
 输入命令行后，脚本会在指定目录下寻找所有符合源文件格式的文件进行转码，转码后的文件主名与源文件主名一致，后缀名为目的格式的后缀。
 
-## 转码示例
+### 转码示例
 
 如要将 `/home/testname/testfolder` 目录下的所有 MP4 文件转换成 TS 格式，命令如下：
 

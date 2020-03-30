@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Wed Mar 25 2020 07:59:17 GMT+0800 (CST)
+updatedAt: Sun Mar 29 2020 11:27:47 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -227,16 +227,18 @@ _mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
 **开始分享**
 
 1. 调用 `attachPlayerToRtc` 方法将播放器和 Agora 频道捆绑。播放器画面将占据本地用户视图。
-2. 为避免远端用户听到播放视频的回声，请调用 `adjustPlayoutSignalVolume` 方法设置播放音量为 0，再调用 `AgoraMediaPlayer` 接口的 `mute` 方法设置播放器静音。
+2. 为避免远端用户听到播放音视频的回声，请调用 `adjustPlayoutSignalVolume` 方法设置播放音量为 0，再调用 `AgoraMediaPlayer` 接口的 `mute` 方法设置播放器静音。
 3. 调用 `publishVideo`/`publishAudio` 方法将播放的视频/音频流分享给 Agora 频道内远端用户。
 4. 调用 `adjustPublishSignalVolume` 方法调节远端播放音量。
-
-如果本地用户在**开始分享**之后直接调用 `leaveChannel` 离开频道，媒体流将停止发送给远端。但是当本地用户重新进入频道，之前分享的媒体流会自动发送给频道内远端用户。因此 Agora 建议你使用以下步骤取消分享。
 
 **取消分享**
 
 1. 调用 `unpublishVideo`/`unpublishAudio` 方法取消分享该视频/音频流。
 2. 调用 `detachPlayerFromRtc` 方法将播放器和 Agora 频道解绑。
+
+<div class="alert note">请不要略过此步直接调用 <code>leaveChannel</code> 使本地用户停止分享媒体流，否则本地用户重新加入频道时会出现以下问题：
+	<li>之前停止分享的媒体流会自动发送给频道内远端用户。</li>
+	<li>播放媒体资源时，音画不同步。</li></div>
 
 
 **示例代码**
@@ -259,7 +261,7 @@ _rtcEnginekit = [AgoraRtcEngineKit sharedEngineWithAppId:@"YOUR_APPID" delegate:
 
 ## 注意事项
 
-常见的语音路由有蓝牙耳机、普通耳机和设备的扬声器。为避免播放过程中，本地用户切换语音路由后，新的语音路由无声的问题，Agora 建议你进行如下操作：
+常见的语音路由有蓝牙设备、普通耳机和设备的扬声器。为避免播放过程中，本地用户切换语音路由后，新的语音路由无声的问题，Agora 建议你进行如下操作：
 * 在本地播放媒体资源的场景下， Agora 建议本地用户在 `open` 前切换语音路由。
   > 如果本地用户在 `open` 后切换语音路由，新的语音路由将无声，你需要重新调用 `open` 和 `play` 方法重新播放。
 * 在分享媒体资源到远端的场景下，Agora 建议你使用 3.0.0 版本的 Native SDK，并在 `mute` 后再进行语音路由切换。

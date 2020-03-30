@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Mon Mar 09 2020 06:40:41 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:16:11 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -16,6 +16,9 @@ updatedAt: Mon Mar 09 2020 06:40:41 GMT+0800 (CST)
 - 在线课堂场景中，屏幕共享可以将老师的课件、笔记、讲课内容等画面展示给学生观看。
 
 在开始屏幕共享前，请确保你已了解如何[实现音视频通话](../../cn/Interactive%20Broadcast/start_call_web.md)或[实现互动直播](../../cn/Interactive%20Broadcast/start_live_web.md)。
+
+
+<div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web/">在线体验</a>试用屏幕共享功能。</div>
 
 ## 工作原理
 

@@ -3,16 +3,19 @@
 title: 七人以上视频场景
 description: 
 platform: Web
-updatedAt: Mon Mar 09 2020 06:54:43 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 04:10:01 GMT+0800 (CST)
 ---
 # 七人以上视频场景
 ## 功能描述
 
 在一般的视频直播场景中，如果参与的主播超过七人，可能会引起音画不同步和信息丢失的问题。如果参与连麦的各方将订阅流设置为 1-N 模式，即订阅 1 路大流和 N 路小流，那么直播频道内的主播最多可以支持 17 人。本页为你展示如何使用 Agora SDK  实现七人以上视频互动直播和相关的注意事项。
 
+
+<div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/17-Multistream/#/">在线体验</a>试用多人视频功能。</div>
+
 ## 实现方法
 
-在实现七人以上视频场景前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始互动直播](../../cn/Audio%20Broadcast/statr_live_web.md)。
+在实现七人以上视频场景前，请确保已在你的项目中实现基本的实时音视频功能。详见[开始互动直播](../../cn/Audio%20Broadcast/start_live_web.md)。
 
 参考如下步骤，在你的项目中实现七人以上视频场景功能：
 

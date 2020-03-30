@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Mon Mar 09 2020 06:52:44 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:17:30 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -16,6 +16,9 @@ updatedAt: Mon Mar 09 2020 06:52:44 GMT+0800 (CST)
 - 某些视频采集设备被系统独占。为避免与其它业务产生冲突，需要灵活的设备管理策略
 
 本文介绍如何使用 Agora Web SDK 在项目中实现自定义的视频源和渲染器。
+
+
+<div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Custom-VideoSource-Web/">在线体验</a>试用自定义视频源功能。</div>
 
 ## 实现方法
 

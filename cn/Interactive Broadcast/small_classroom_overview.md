@@ -32,7 +32,7 @@ Agora 为 1 对 N 在线小班课提供如下平台的 Demo，点击下方链接
 
 | Android | iOS | PC Web | Windows | macOS |
 | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
-| [点此下载](https://www.pgyer.com/agora_edu)（密码：123）  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web/#/)      | 敬请期待 | 敬请期待 |
+| ![](https://web-cdn.agora.io/docs-files/1585538960253)  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web/#/)      | 敬请期待 | 敬请期待 |
 
 目前：
 - Android 和 iOS 端为学生端

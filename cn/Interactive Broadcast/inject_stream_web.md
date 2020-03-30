@@ -3,12 +3,13 @@
 title: 输入在线媒体流
 description: 
 platform: Web
-updatedAt: Thu Feb 27 2020 06:00:42 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 05:56:37 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
 输入在线媒体流功能可以将音视频流作为一个发送端输入正在进行的直播房间。通过将正在播放的音视频输入到直播频道中，主播和观众可以一起收听/观看该媒体流并实时互动。
 
+<div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Injection-Web/">在线体验</a>试用输入在线媒体流功能。</div>
 ### 常用场景
 
 - 赛事直播中，主播直接拉比赛的音视频流，实现主播和观众边看比赛边点评的功能。
@@ -24,10 +25,14 @@ updatedAt: Thu Feb 27 2020 06:00:42 GMT+0800 (CST)
 - 频道内的连麦主播、普通观众都可以听/看到该媒体流。
 - 如果主播开启了 CDN 旁路推流，该媒体流也会被推送到 CDN 上， CDN 观众就可以听/看到这路媒体流。
 
-> - 频道内同一时间只允许输入一个在线媒体流。
-> - 支持的编码格式：音频 AAC，视频 H.264。
-> - 纯音频流也可作为在线媒体流输入直播频道。
-> - 只有主播可以输入/删除在线媒体流，连麦主播、普通观众和 CDN 观众都不可以。
+<div class="alert note">注意事项：
+	<ul><li>频道内同一时间只允许输入一个在线媒体流。</li>
+		<li>支持的编码格式：音频 AAC，视频 H.264。</li>
+		<li>纯音频流也可作为在线媒体流输入直播频道。</li>
+		<li>只有主播可以输入/删除在线媒体流，连麦主播、普通观众和 CDN 观众都不可以。</li>
+	</ul>
+</div>
+
 
 ## 实现方法
 

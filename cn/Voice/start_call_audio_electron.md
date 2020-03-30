@@ -1,12 +1,12 @@
 
 ---
-title: 实现视频通话
+title: 实现语音通话
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 07:07:49 GMT+0800 (CST)
+updatedAt: Fri Mar 27 2020 06:42:41 GMT+0800 (CST)
 ---
-# 实现视频通话
-本文介绍如何使用 Agora Electron SDK 快速实现视频通话。
+# 实现语音通话
+本文介绍如何使用 Agora Electron SDK 快速实现语音通话。
 
 ## 示例项目
 
@@ -27,9 +27,10 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 
 ### 创建项目
 
-参考 [Writing Your First Electron App](https://electronjs.org/docs/tutorial/first-app) 创建一个 Electron 项目。若已有 Electron 项目，可以直接参考 [集成 SDK](#integrate_sdk)。
+参考 [Writing Your First Electron App](https://electronjs.org/docs/tutorial/first-app) 创建一个 Electron 项目。若已有 Electron 项目，可以直接参考[集成 SDK](#integrate_sdk)。
 
 <a name="integrate_sdk"></a>
+
 ### 集成 SDK 
 
 选择如下任意一种方式将 Agora SDK 集成到你的项目中。
@@ -43,7 +44,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 2. 然后通过如下代码将 SDK 引入至你的项目中
 
 	`import AgoraRtcEngine from 'agora-electron-sdk'`
-	
+
 **方法二：官网下载 SDK 并引入**
 
 <div class="alert note">如果你选择官网下载并引入的方式，请务必使用 Eletron 3.0.6。</div>
@@ -77,12 +78,14 @@ agora_electron_dependent = 5.0.8
 
 至此，你已经将 Agora SDK for Electron 集成到你的项目中了。
 
-## 实现音视频通话
+## 实现语音通话
 
-请参考 [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 示例项目在你的项目中实现相关的实时音视频功能。
+请参考 [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 示例项目在你的项目中实现语音通话。
 
 ## SDK 开源
 
 [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) 在 GitHub 上开源，你可以前往参考或查阅源代码。Agora 也欢迎开发者贡献代码，以提高 Electron SDK 的易用性。
+
+
 
 
