@@ -33,7 +33,7 @@ Agora 为互动直播大班课提供如下平台的 Demo，点击下方链接进
 <style> table th:first-of-type {     width: 180px; } th:second-of-type {     width: 100px; }</style>
 | Android | iOS | PC Web | Windows | macOS |
 | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
-| ![](https://web-cdn.agora.io/docs-files/1585538960253)  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web/)      | 敬请期待 | 敬请期待 |
+| ![](https://web-cdn.agora.io/docs-files/1585538960253)  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web/#/)      | 敬请期待 | 敬请期待 |
 
 目前：
 - Android 和 iOS 端为学生端
