@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Mon Mar 09 2020 09:12:05 GMT+0800 (CST)
+updatedAt: Tue Mar 31 2020 03:23:07 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现视频通话。
@@ -33,7 +33,7 @@ Agora 在 GitHub 上提供一个开源的实时音视频示例项目 [Agora-Mini
 	```
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
-<div class="alert info">在集成微信小程序组件之前，Agora 建议你先阅读<a href="https://developers.weixin.qq.com/miniprogram/dev/">微信小程序开发官网文档</a>。</div>
+<div class="alert info">在集成微信小程序组件之前，Agora 建议你先阅读<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/">微信小程序开发官网文档</a>。</div>
 
 
 
