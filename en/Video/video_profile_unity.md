@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Unity
-updatedAt: Tue Mar 17 2020 09:15:35 GMT+0800 (CST)
+updatedAt: Mon Mar 30 2020 08:26:24 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -19,6 +19,9 @@ Before setting the video profile, ensure that you have implemented the basic rea
 After initializing `IRtcEngine`, you can call the `SetVideoEncoderConfiguration` method to set the video profile and set the video resolution, frame rate, birtate and orientation mode.
 
 ### API call sequence
+
+Refer to the following diagram to set the video profile in your project:
+![](https://web-cdn.agora.io/docs-files/1585556771727)
 
 You can also choose when to call the `SetVideoEncoderConfiguration` method according to your scenarios:
 

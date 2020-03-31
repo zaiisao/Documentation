@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Windows
 platform: Unity
-updatedAt: Mon Mar 16 2020 14:03:30 GMT+0800 (CST)
+updatedAt: Mon Mar 30 2020 08:32:14 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -47,6 +47,10 @@ The Agora SDK provides the `SetAudioProfile` method to set the appropriate audio
 </tr>
 </table>
 
+### API call sequence
+
+The following diagram shows how to set the audio profile:
+![](https://web-cdn.agora.io/docs-files/1585557119461)
 
 ### Parameters and applications
 
