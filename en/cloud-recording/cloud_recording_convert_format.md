@@ -3,19 +3,28 @@
 title: Convert File Format
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 10 2019 01:49:17 GMT+0800 (CST)
+updatedAt: Tue Mar 31 2020 02:00:04 GMT+0800 (CST)
 ---
 # Convert File Format
 ## Overview
 
-You can use the Format Converter script to convert between different audio and video file formats. The script supports the following file formats:
+Composite recording mode generates one M3U8 file and multiple TS files which include the audio and video of all UIDs in a channel. You can use FFmpeg to convert an M3U8 file to MP4 or use Agora's Format Converter script to batch convert multiple TS files into MP4 or audio formats.
 
-- Audio: MP3, WAV, and AAC
-- Video: MP4 and TS
+## Convert using FFmpeg
 
-The script cannot convert an audio file into a video file and vice versa.
+You can use FFmpeg to convert an M3U8 file to MP4. Install FFmpeg and run the following command:
 
-## Prerequisites
+```
+ffmpeg -i input.m3u8 -vcodec copy -acodec copy -absf aac_adtstoasc output.mp4
+```
+
+Where `input.m3u8` is the name of the M3U8 file to convert, and `output.mp4` is the name of the MP4 file to output. For more information about the parameters used in this example, see the [FFmpeg Documentation](https://www.ffmpeg.org/ffmpeg.html).
+
+## Convert using the script
+
+You can use Agora's Format Converter script to batch convert TS files to MP4 or audio formats, including MP3, WAV, and AAC.
+
+### Prerequisites
 
 Recommended systems for transcoding:
 
@@ -24,17 +33,17 @@ Recommended systems for transcoding:
 
 To run the script, you need to install Python 2, version 2.7 or later.
 
-### File preparation
+#### File preparation
 
 Ensure that the recorded files are stored in an accessible directory.
 
-## Transcoding steps
+### Transcoding steps
 
-### 1. Get the Format Converter script
+#### 1. Get the Format Converter script
 
 Download the [Agora Format Converter](https://download.agora.io/acrsdk/release/format_convert_1.0.tar.gz) script and decompress it.
 
-### 2. Execute the Format Converter script
+#### 2. Execute the Format Converter script
 
 Use the following command:
 
@@ -44,19 +53,23 @@ python format_convert.py <directory> <source_format> <destination_format>
 
 Where:
 
-- `directory`: Directory of the source files
-- `source_format`: Format of the source files. `source_format` must be in lowercase, that is:
-  - Audio: `mp3`, `wav`, or `aac`
-  - Video: `mp4` or `ts`
-- `destination_format`: Format to which you want to convert the source files. `destination_format` must be in lowercase, that is:
-  - Audio: `mp3`, `wav`, or `aac`
-  - Video: `mp4` or `ts`
+- `directory`: Directory of the source files.
 
-When you run the command, the script will search for all the files in the specified format in the directory and convert them to the target format. The names of the converted files are the same as the source files, except for the suffix.
+- `source_format`: Format of the source files. `source_format` must be in lowercase:
 
-## Example
+  - Audio: `mp3`, `wav`, or `aac`.
+  - Video: `mp4` or `ts`.
+  
+- `destination_format`: Format to which you want to convert the source files. `destination_format` must be in lowercase:
 
-To convert all the MP4 files under `/home/testname/testfolder` to TS formats, use the following command:
+  - Audio: `mp3`, `wav`, or `aac`.
+  - Video: `mp4` or `ts`.
+
+When you run the command, the script will search for all files in the specified format in the directory and convert them to the target format. The converted files have the same name as the source files, except for the suffix.
+
+### Example
+
+To convert all the MP4 files under `/home/testname/testfolder` to TS format, use the following command:
 
 ```
 python format_convert.py /home/testname/testfolder/ mp4 ts

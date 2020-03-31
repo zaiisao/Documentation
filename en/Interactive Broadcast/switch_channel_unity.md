@@ -3,7 +3,7 @@
 title: Switch Channels
 description: 
 platform: Unity
-updatedAt: Mon Mar 16 2020 13:53:21 GMT+0800 (CST)
+updatedAt: Mon Mar 30 2020 08:16:02 GMT+0800 (CST)
 ---
 # Switch Channels
 ## Introduction
@@ -22,6 +22,11 @@ Before implementing the quick switch function in your project, ensure that you h
 After the audience joins a live broadcast channel, call the `SwitchChannel` method to enable the audience to switch to another live broadcast channel. Pass in the token and channel name of the new channel in this method.
 
 A successful channel switch with this method triggers the `OnLeaveChannelHandler` and `OnJoinChannelSuccessHandler` callbacks.
+
+### API call sequence
+
+The following diagram shows the API call sequence for channel switching:
+![](https://web-cdn.agora.io/docs-files/1585556147266)
 
 ### Sample code
 
