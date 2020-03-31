@@ -36,7 +36,7 @@ Agora provides the One-to-one Classroom demos on the following platforms.
 <style> table th:first-of-type {     width: 180px; } th:second-of-type {     width: 100px; }</style>
 | Android | iOS | PC Web | Windows | macOS |
 | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
-| ![](https://web-cdn.agora.io/docs-files/1585539147305) | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [Try it out](https://solutions.agora.io/education/web/#/?from=docs)      | Coming up soon | Coming up soon |
+| ![](https://web-cdn.agora.io/docs-files/1585539147305) | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [Try it out](https://solutions.agora.io/education/web/)      | Coming up soon | Coming up soon |
 
 In which:
 - The client for the student can be Android, iOS, or Web for now.
