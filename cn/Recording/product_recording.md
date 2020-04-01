@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: Linux
-updatedAt: Thu Mar 26 2020 06:59:48 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 07:19:29 GMT+0800 (CST)
 ---
 # 产品概述
 <div class="alert note">提示：<br>Agora 本地服务端录制 SDK 需要部署在 Linux 服务器上，并需要你自行运维。如果你不想部署 Linux 服务器，而是想要通过 RESTful API 以更加便捷的方式实现录制功能，推荐使用 <a href="https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=Linux">Agora 云端录制</a></li>。  </div> 
@@ -18,7 +18,7 @@ Agora 本地服务端录制 SDK 支持录制 [Agora RTC SDK](https://docs.agora.
 | 功能                                       | 描述                                                         |
 | :----------------------------------------- | :----------------------------------------------------------- |
 | 录制指定的媒体类型                         | 支持录制指定的的媒体类型：<li>仅录制音频。</li><li>仅录制视频。</li><li>同时录制音频和视频。</li> |
-| 选择录制模式                               | 可选择：<li>[单流录制](../../cn/Recording/recording_individual_mode.md)模式：分开录制频道内每个 UID 的音频流和视频流。每个 UID 均有其对应的音频文件和视频文件。</li><li>[合流录制](../../cn/Recording/recording_composite_mode.md)模式：频道内所有 UID 的音频混合录制为一个纯音频文件，所有 UID 的视频混合录制为一个纯视频文件。可指定合流音频属性和视频属性。</li> |
+| 选择录制模式                               | 可选择：<li>[单流录制](../../cn/Recording/recording_individual_mode.md)模式：分开录制频道内每个 UID 的音频流和视频流，每个 UID 均有其对应的音频文件和视频文件。</li><li>[合流录制](../../cn/Recording/recording_composite_mode.md)模式：频道内所有 UID 的音视频混合录制为一个音视频文件；或频道内所有 UID 的音频混合录制为一个纯音频文件，所有 UID 的视频混合录制为一个纯视频文件。可指定合流音频属性和视频属性。</li> |
 | [设置合流布局](../../cn/Recording/recording_layout.md)         | 合流录制模式下，支持设置合流布局，指定发流用户画面的大小及其在视频画布上的位置，设置用户和画面的背景图。 |
 | 录制指定的 UID                             | 支持录制频道中指定的 UID。                                   |
 | [获取原始音视频数据](../../cn/Recording/recording_raw_data.md) | 支持获取：<li>AAC 和 PCM 格式的原始音频数据。</li><li>H.264 和 YUV 格式的原始视频数据。</li> |
