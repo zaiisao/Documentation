@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Mon Mar 16 2020 03:25:07 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 02:23:16 GMT+0800 (CST)
 ---
 # 实现语音通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
@@ -273,9 +273,11 @@ var option = {
    // Initialize the local stream
    rtc.localStream.init(function () {
      console.log("init local stream success");
+	 // play stream with html element id "local_stream"
+     rtc.localStream.play("local_stream")
    }, function (err) {
      console.error("init local stream failed ", err);
-   })
+   });
    ```
 
    在初始化流时，浏览器会跳出弹窗要求麦克风权限，请确保授权。

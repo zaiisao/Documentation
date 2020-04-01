@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Mar 25 2020 07:48:20 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 02:41:09 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -159,8 +159,8 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - `maxIdleTime`：（选填）Number 类型，最长空闲频道时间。默认值为 30 秒，该值需大于等于 5，且小于等于 (2<sup>32</sup>-1)。
 <div class="alert note"><ul><li>如果频道内无用户的状态持续超过该时间，录制程序会自动退出。如果频道内有用户，但用户没有发流，不算作无用户状态。</li><li>直播场景下，如果频道内有观众但无主播，一旦无主播的状态超过 <code>maxIdleTime</code>，录制程序会自动退出。</li></div>
 - `transcodingConfig`：（选填）JSON 类型，视频转码的详细设置。仅适用于合流模式，单流模式下不能设置该参数。如果不设置将使用默认值。如果设置该参数，必须填入 `width`、`height`、`fps` 和 `bitrate` 字段。请参考[如何设置录制视频的分辨率](https://docs.agora.io/cn/faq/recording_video_profile)设置该参数。
-  - `width`：（必填）Number 类型，录制视频的宽度，单位为像素，默认值 360。支持的最大分辨率为 1080p，超过该分辨率会报错。
-  - `height`：（必填）Number 类型，录制视频的高度，单位为像素，默认值 640。支持的最大分辨率为 1080p，超过该分辨率会报错。
+  - `width`：（必填）Number 类型，录制视频的宽度，单位为像素，默认值 360。`width` 不能超过 1920，且 `width` 和 `height` 的乘积不能超过 1920 * 1080，超过最大值会报错。
+  - `height`：（必填）Number 类型，录制视频的高度，单位为像素，默认值 640。`height` 不能超过 1920，且 `width` 和 `height` 的乘积不能超过 1920 * 1080，超过最大值会报错。
   - `fps`：（必填）Number 类型，录制视频的帧率，单位 fps，默认值 15。
   - `bitrate`：（必填）Number 类型，录制视频的码率，单位 Kbps，默认值 500。
   - `maxResolutionUid`：（选填）String 类型，如果视频合流布局设为垂直布局，用该参数指定显示大视窗画面的用户 ID。
@@ -458,7 +458,9 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 开始录制后，你可以调用 query 查询录制状态。
 
 <div class="note alert"><code>query</code> 请求仅在会话内有效。如果录制启动错误，或录制已结束，调用 <code>query</code> 将返回 404。建议你同时使用回调服务，以获得云端录制所有的事件通知和具体信息。如需使用回调服务，请参考 <a href="https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest">RESTful API 回调</a>。</div>
+
 - 方法：GET
+
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
 
 > 每个 APP ID 每秒钟的请求数限制为 10 次。
