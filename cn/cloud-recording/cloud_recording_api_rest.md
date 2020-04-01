@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Apr 01 2020 02:41:09 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 06:03:06 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -121,7 +121,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 | :----------- | :----- | :----------------------------------------------------------- |
 | `appid`      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。必须使用和待录制的频道相同的 App ID。 |
 | `resourceid` | String | 通过 [`acquire`](#acquire) 请求获取的 resource ID。          |
-| `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。单流模式下，分开录制频道内每个 UID（或指定 UID）的音频流和视频流，每个 UID 均有其对应的音频文件和视频文件。合流模式下，频道内所有（或指定）UID 的音视频混合录制为一个音视频文件。 |
+| `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。单流模式下，分开录制频道内每个 UID 的音频流和视频流，每个 UID 均有其对应的音频文件和视频文件。合流模式下，频道内所有 UID 的音视频混合录制为一个音视频文件。 |
 
 该 API 需要在请求包体中传入以下参数。
 
@@ -165,8 +165,8 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `bitrate`：（必填）Number 类型，录制视频的码率，单位 Kbps，默认值 500。
   - `maxResolutionUid`：（选填）String 类型，如果视频合流布局设为垂直布局，用该参数指定显示大视窗画面的用户 ID。
   - `mixedVideoLayout`：（选填）Number 类型，设置视频合流布局，0、1、2 为[预设的合流布局](https://docs.agora.io/cn/cloud-recording/cloud_layout_guide?platform=Linux)，3 为自定义合流布局。该参数设为 3 时必须设置 `layoutConfig` 参数。
-    - `0`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个录制画面。
-    - `1`：自适应布局。根据用户的数量自动调整每个画面的大小，每个用户的画面大小一致，最多支持 17 个录制画面。
+    - `0`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个画面。
+    - `1`：自适应布局。根据用户的数量自动调整每个画面的大小，每个用户的画面大小一致，最多支持 17 个画面。
     - `2`：垂直布局。指定一个用户在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。
     - `3`：自定义布局。设置 `layoutConfig` 参数自定义合流布局。
   - `backgroundColor`：（选填）String 类型。屏幕（画布）的背景颜色。支持 RGB 颜色表，字符串格式为 # 号后 6 个十六进制数。默认值 `"#000000"` 黑色。
@@ -379,8 +379,8 @@ clientRequest 中需要填写的内容如下：
 
 - `maxResolutionUid`：（选填）String 类型，如果 `layoutType` 设为 2（垂直布局），用该参数指定显示大视窗画面的用户 ID。
 - `mixedVideoLayout`：（选填）Number 类型，设置视频合流布局，0、1、2 为[预设的合流布局](https://docs.agora.io/cn/cloud-recording/cloud_layout_guide?platform=Linux)，3 为自定义合流布局。该参数设为 3 时必须设置 `layoutConfig` 参数。
-  - `0`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个录制画面。
-  - `1`：自适应布局。根据用户的数量自动调整每个画面的大小，每个用户的画面大小一致，最多支持 17 个录制画面。
+  - `0`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个画面。
+  - `1`：自适应布局。根据用户的数量自动调整每个画面的大小，每个用户的画面大小一致，最多支持 17 个画面。
   - `2`：垂直布局。指定一个用户在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个录制画面。
   - `3`：自定义布局。设置 `layoutConfig` 参数自定义合流布局。
 - `backgroundColor`：（选填）String 类型。屏幕（画布）的背景颜色。支持 RGB 颜色表，字符串格式为 # 号后 6 个十六进制数。默认值 `"#000000"` 黑色。
