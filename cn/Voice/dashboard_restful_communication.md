@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Mon Mar 16 2020 02:15:59 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 10:17:15 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 认证
@@ -830,7 +830,7 @@ BaseUrl：**https://api.agora.io/dev**
 | 方法      | GET      |
 | 请求  URL  | BaseUrl/v1/channel/user/property/ |
 
-**请求参数
+**请求参数**
 
 #### URL 参数
 
@@ -846,7 +846,7 @@ BaseUrl：**https://api.agora.io/dev**
 BaseUrl/v1/channel/user/property/{appid}/{uid}/{channelName}
 ```
 
-**响应参数
+**响应参数**
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
