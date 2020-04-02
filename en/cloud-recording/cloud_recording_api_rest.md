@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Mar 27 2020 02:49:49 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 02:30:12 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -30,6 +30,7 @@ All requests are sent to the host: `api.agora.io`.
 - Response: The response content is in JSON format.
 
 <div class="alert warning">All the request URLs and request bodies are case sensitive.</div>
+
 ## Call sequence
 
 Use the RESTful APIs in the following steps:
@@ -69,7 +70,7 @@ The following parameters are required in the request body.
 | Parameter       | Type   | Description                                                  |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | The name of the channel to be recorded.                      |
-| `uid`           | String | A string that contains the UID of the recording client, for example `"527841"`. The UID needs to meet the following requirements: <li>It is a 32-bit unsigned integer within the range between 1 and (2<sup>32</sup>-1).</li><li>It is unique and does not clash with any existing UID in the channel. </li><li>It should not be a string. Ensure that all UIDs in the channel are integers.</li> |
+| `uid`           | String | A string that contains the UID of the recording client, for example `"527841"`. The UID needs to meet the following requirements: <li>It is a 32-bit unsigned integer within the range between 1 and (2<sup>32</sup>-1).</li><li><b><em>It is unique and does not clash with any existing UID in the channel. </em></b></li><li>It should not be a string. Ensure that all UIDs in the channel are integers.</li> |
 | `clientRequest` | JSON   | A client request including the `resourceExpiredHour` field. `resourceExpiredHour` is an integer, which sets the time limit (in hours) for the Cloud Recording RESTful API calls. It must be between `1` and `720`, the default value being `72`. The time limit starts from when you successfully start a cloud recording and get `sid`(the recording ID ). When you exceed the time limit, you can no longer call `query`, `updateLayout`, and `stop`. |
 
 ### An HTTP request example of `acquire`
@@ -119,7 +120,7 @@ The following parameters are required in the URL.
 | :----------- | :----- | :----------------------------------------------------------- |
 | `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
-| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). Composite mode is the default mode. In individual mode, Agora Cloud Recording generates one audio and/or video file for each UID or each specified UID in the channel. In composite mode, Agora Cloud Recording combines the audio and video of all or specified UIDs into a single file. |
+| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). Composite mode is the default mode. In individual mode, Agora Cloud Recording records the audio and video as separate files for each UID in a channel. In composite mode, Agora Cloud Recording generates a single mixed audio and video file for all UIDs in a channel. |
 
 The following parameters are required in the request body.
 
@@ -156,8 +157,8 @@ The following parameters are required in the request body.
 - `maxIdleTime`: (Optional) Number. Agora Cloud Recording automatically stops recording and leaves the channel when there is no user in the recording channel after a time period (30 seconds by default) set by this parameter. The value range is from 5 to 2<sup>32</sup>-1. 
 <div class="alert note"><ul><li>The recording service does not recognize a channel as an idle channel, so long as the channel has users, regardless of whether they send stream or not.</li><li>If a live-broadcast channel has an audience without a host for a set time (<code>maxIdleTime</code>), the recording service automatically stops and leaves the channel.</li></div>
 - `transcodingConfig`: (Optional) JSON. The transcoding configuration. You cannot set this parameter in individual recording mode. If you set this parameter, ensure that you set `width`, `height`, `fps`, and `bitrate`. Refer to [How do I set the video profile of the recorded video?](https://docs.agora.io/en/faq/recording_video_profile) for detailed information about setting `transcodingConfig`.
-  - `width`: (Mandatory) Number. The width of the mixed video (pixels). The default value is 360. The maximum resolution is 1080p and an error occurs if the maximum resolution is exceeded.
-  - `height`: (Mandatory) Number. The height of the mixed video (pixels). The default value is 640. The maximum resolution is 1080p and an error occurs if the maximum resolution is exceeded.
+  - `width`: (Mandatory) Number. The width of the mixed video (pixels). The default value is 360. `width` should not exceed 1080, and `width`*`height`  should not exceed 1920 * 1080, otherwise, an error occurs.
+  - `height`: (Mandatory) Number. The height of the mixed video (pixels). The default value is 640. `height` should not exceed 1080, and `width`*`height`  should not exceed 1920 * 1080, otherwise, an error occurs.
   - `fps`: (Mandatory) Number. The video frame rate (fps). The default value is 15.
   - `bitrate`: (Mandatory) Number. The video bitrate (Kbps). The default value is 500.
   - `maxResolutionUid`: (Optional) String. When `mixedVideoLayout` is set as `2` (vertical layout), you can specify the UID of the large video window by this parameter.
@@ -464,6 +465,7 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 After you start a recording, you can call query to check its status.
 
 <div class="note alert"><code>query</code> works only with an ongoing recording session. If you call <code>query</code> after a recording ends or after it starts with error, you get a 404 (Not Found) error. We recommend that you use the callback service for getting the details of all cloud recording events. See <a href="https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest">Agora Cloud Recording RESTful API Callback Service</a> for more information.</div>
+	
 - Method: GET
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
 

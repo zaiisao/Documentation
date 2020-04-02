@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Web
-updatedAt: Mon Mar 16 2020 03:24:57 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 09:24:27 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice functions in your app. 
@@ -252,7 +252,7 @@ var option = {
 		- For testing, we recommend using a Temp Token generated in Console. See [Get a Temp Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
 		- For production, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](https://docs.agora.io/en/Video/token_server).
 	- `channel`: Channel name. A string within 64 bytes.
-	- `uid`: The user ID should be unique in a channel. If you set the user ID as `null`, the Agora server assigns a user ID and returns it in the `onSuccess` callback.
+	- `uid`: The user ID should be unique in a channel. If you set the user ID as `null` or `0`, the Agora server assigns a user ID and returns it in the `onSuccess` callback.
 
 For more details on the parameter settings, see [`Client.join`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#join).
 
@@ -278,6 +278,8 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
    // Initialize the local stream
    rtc.localStream.init(function () {
      console.log("init local stream success");
+	 // play stream with html element id "local_stream"
+     rtc.localStream.play("local_stream")
    }, function (err) {
      console.error("init local stream failed ", err);
    });
@@ -300,6 +302,7 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
 To subscribe to a remote stream, we need to listen for the `"stream-added"` event and call `Client.subscribe` in the callback.
 
 <div class="alert note">We recommend listening for these events immediately after creating the client. </div>
+
 1. Subscribe to a remote stream when the stream is added.
 
    ```javascript

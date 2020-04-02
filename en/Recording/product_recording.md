@@ -3,7 +3,7 @@
 title: Agora On-premise Recording Overview
 description: 
 platform: Linux
-updatedAt: Thu Mar 26 2020 07:04:10 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 07:20:55 GMT+0800 (CST)
 ---
 # Agora On-premise Recording Overview
 <div class="alert note">Note: <br>If you do not want to prepare server resources, Agora recommends using <a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=Linux">Agora Cloud Recording</a>, which enables you to record voice/video calls and interactive broadcasts on your cloud storage through RESTful APIs.  </div>
@@ -19,7 +19,7 @@ The Agora On-premise Recording SDK enables you to record high-quality voice or v
 | Function                                                     | Description                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | Record specified media type                                    | You can specify the media type to record:<li>Record only audio.<li>Record only video.<li>Record both audio and video. |
-| Choose recording mode                                        | You can choose one of the following recording modes:<li>[Individual Recording](../../en/Recording/recording_individual_mode.md): The SDK generates audio and/or video files for each UID.<li>[Composite Recording](../../en/Recording/recording_composite_mode.md): The SDK packs the audio of all UIDs in the channel into one audio file, and the video of all UIDs into one video file. You can also set the audio and video profile of the recording file. |
+| Choose recording mode                                        | You can choose one of the following recording modes:<li>[Individual Recording](../../en/Recording/recording_individual_mode.md): The SDK generates one audio and/or video file for each UID.<li>[Composite Recording](../../en/Recording/recording_composite_mode.md): Generates a single mixed audio and video file for all UIDs in a channel, or mixes the audio of all UIDs in the channel into an audio file and the video of all UIDs into a video file. You can also set the audio and video profile of the recording file. |
 | [Set Video Layout](../../en/Recording/recording_layout.md) | In composite recording mode, you can: <li>Set the size and position of the region for each user in the layout.<li>Set the background images associated with each user.<li>Set the background image of the canvas. |
 | Record specified UIDs | You can specify the UIDs you want to record. |
 | [Get the raw data](../../en/Recording/recording_raw_data.md) | You can get the raw data in the following formats: <li>Raw audio data in AAC or PCM formats.<li>Raw video data in H.264 or YUV formats. |

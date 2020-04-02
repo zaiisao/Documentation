@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Mon Feb 17 2020 04:30:22 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 07:23:35 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -33,7 +33,7 @@ v2.9.1 was released on December 23, 2019.
 **Functions and features**
 
 #### 1. Multi-platform support
-Supports ios, Android, macOS and Windows (x86/x86_64) platforms.
+Supports iOS, Android, macOS and Windows (x86/x86_64) platforms.
 
 #### 2. Interoperability with the Agora Web SDK
 Provides the `EnableWebSdkInteroperability` method for enabling interoperability with the Agora Web SDK in a live broadcast. 

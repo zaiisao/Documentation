@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 20 2020 03:40:30 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 01:23:42 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview

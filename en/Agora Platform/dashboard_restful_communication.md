@@ -3,7 +3,7 @@
 title: Console RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 30 2020 04:20:36 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 10:31:02 GMT+0800 (CST)
 ---
 # Console RESTful API
 ## Authentication
@@ -985,8 +985,5 @@ BaseUrl/v1/channel/{appid}?page_no=0&page_size=100
 }
 ```
 
-## Error Codes
-
-If wanrings or errors occur when using Console RESTful APIs, refer to [Warning codes](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21) and [Error Codes](https://docs.agora.io/en/Agora%20Platform/API%20Reference/cpp/namespaceagora.html#a8affb9bb02864d82c4333529dc3d75a1) for troubleshooting.
 
 

@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Overview
 description: 
 platform: Linux
-updatedAt: Thu Mar 26 2020 07:27:44 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 01:23:10 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Overview
 Agora Cloud Recording is a component provided by Agora to record and save voice calls, video calls, and interactive broadcasts on your cloud storage. It is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+. 
@@ -18,7 +18,7 @@ The following table lists the main functions that Agora Cloud Recording provides
 
 | <span style="white-space:nowrap;">&emsp;&emsp;&emsp;Feature&emsp;&emsp;&emsp;</span>    | Description                                                  |
 | :------------------------------------------------ | :----------------------------------------------------------- |
-| Recording mode                                    | Supports two recording modes:<ul><li>[Composite recording mode](../../en/cloud-recording/cloud_recording_composite_mode.md): Records the audio and video of all or specified UIDs in a channel together.</li><li>[Individual recording mode](../../en/cloud-recording/cloud_recording_individual_mode.md): Records the audio and video of each UID or each specified UID in a channel separately.</li></ul> |
+| Recording mode                                    | Supports two recording modes:<ul><li>[Composite recording mode](../../en/cloud-recording/cloud_recording_composite_mode.md): Generates a single mixed audio and video file for all UIDs in a channel.</li><li>[Individual recording mode](../../en/cloud-recording/cloud_recording_individual_mode.md): Records the audio and video as separate files for each UID in a channel.</li></ul> |
 | Record specified UIDs                             | You can specify the UIDs you want to record.                 |
 | Record specified media type                       | You can specify the media type to record:<ul><li>Record audio only</li><li>Record video only</li><li>Record both audio and video</li></ul>|
 | Set audio and video profiles                      | In composite recording mode, you can set audio and video profiles, such as the bit rate and resolution. |
