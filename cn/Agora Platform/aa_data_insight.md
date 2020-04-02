@@ -3,7 +3,7 @@
 title: 数据洞察 (Beta)
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Mon Mar 23 2020 03:11:49 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:15:42 GMT+0800 (CST)
 ---
 # 数据洞察 (Beta)
 水晶球的**数据洞察**功能提供通话用量和质量数据的阶段性分析，帮助你了解用量和质量的总体趋势、不同维度的分布情况和每天的数据明细。
@@ -62,7 +62,7 @@ updatedAt: Mon Mar 23 2020 03:11:49 GMT+0800 (CST)
 |      高并发频道数      | 最高同时在线人数大于等于 50 人的频道数。                    |
 | 最大同时在线频道数 | 同时进行中频道的峰值。                                       |
 |  最大同时在线人数  | 同时在线人数的峰值（用户可在不同频道中）。                   |
-|      通话人数      | 每日按用户名和频道名去重。同一真实用户以不同的用户名加入不同频道会被计为多个用户。 |
+|      通话人数      | 每日按用户 ID 和频道名去重。同一真实用户以不同的用户 ID 加入不同频道会被计为多个用户。 |
 |    通话进出人次    | 用户加入频道的次数。                                         |
 
 ### 分布
@@ -155,9 +155,9 @@ updatedAt: Mon Mar 23 2020 03:11:49 GMT+0800 (CST)
 
 ### 用户
 
-一个频道中的每个用户都有唯一的[用户名](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernamea用户名)用于标识身份。
+一个频道中的每个用户都有唯一的[用户 ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#ausername)用于标识身份。
 
-数据洞察在统计用户人数时，会将相同频道名且相同用户名的用户计为一个人。如果一个真实用户以不同的用户名加入一个频道或者以相同的用户名加入不同频道，均会被计算为多个用户。
+数据洞察在统计用户人数时，会将相同频道名且相同用户 ID 的用户计为一个人。如果一个真实用户以不同的用户 ID 加入一个频道或者以相同的用户 ID 加入不同频道，均会被计算为多个用户。
 
 ### 用量
 

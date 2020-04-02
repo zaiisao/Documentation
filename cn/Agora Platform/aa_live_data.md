@@ -3,7 +3,7 @@
 title: 实时数据 (Beta)
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 23 2020 03:12:57 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:14:27 GMT+0800 (CST)
 ---
 # 实时数据 (Beta)
 水晶球的**实时数据**功能，帮助你实时掌握项目整体动态，及时识别异常通话体验和异常根因。
@@ -183,9 +183,9 @@ updatedAt: Mon Mar 23 2020 03:12:57 GMT+0800 (CST)
 
 ### 用户
 
-一个频道中的每个用户都有唯一的[用户名](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernamea用户名)用于标识身份。
+一个频道中的每个用户都有唯一的[用户 ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#username)用于标识身份。
 
-实时数据在统计用户人数时，会将相同频道名且相同用户名的用户计为一个人。如果一个真实用户以不同的用户名加入一个频道或者以相同的用户名加入不同频道，均会被计算为多个用户。
+实时数据在统计用户人数时，会将相同频道名且相同用户 ID 的用户计为一个人。如果一个真实用户以不同的用户 ID 加入一个频道或者以相同的用户 ID 加入不同频道，均会被计算为多个用户。
 
 
 ### <a name="优质传输率"></a>优质传输率

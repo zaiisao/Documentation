@@ -3,7 +3,7 @@
 title: 通话调查
 description: Introduction to Call Research in AA
 platform: All Platforms
-updatedAt: Fri Dec 27 2019 06:58:10 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:46:47 GMT+0800 (CST)
 ---
 # 通话调查
 水晶球的[**通话调查**](https://dashboard.agora.io/analytics/call/search)功能以图表的形式展示每一通通话全链路质量数据，可以极大提高解决通话问题的效率。
@@ -32,7 +32,7 @@ updatedAt: Fri Dec 27 2019 06:58:10 GMT+0800 (CST)
 搜索通话步骤：
 1. 点击左上角选择你要查询的项目。
 2. 指定需要查询的时间范围。
-3. 选择按照**频道名称**或者 **User** （[用户名](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernamea用户名)）查询。
+3. 选择按照**频道名称**或者 **User** （[用户名](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#username)）查询。
 4. 筛选通话：你可以选择**全部**通话或**已结束**的通话或**进行中**的通话。
 5. 点击**搜索通话**，即可显示符合搜索条件的所有通话。
 
@@ -54,7 +54,7 @@ updatedAt: Fri Dec 27 2019 06:58:10 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1568013807361)
 
-**用户列表**显示[用户名](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernamea用户名)、所在区域、进出频道的时间、总时长、在频道内的实际时间和 SDK 版本等。
+**用户列表**显示[用户 ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#username)、所在区域、进出频道的时间、总时长、在频道内的实际时间和 SDK 版本等。
 
 在列表最右侧的**查看体验**栏，点击按钮选择是否用通话体验质量面板显示该用户的信息。
 
@@ -159,7 +159,7 @@ App 和系统的 CPU 占用率。如果用户使用的设备性能较差，CPU �
 
 ### 用户
 
-通话中的每个用户都有唯一的[用户名](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernamea用户名)用于标识身份。**通话调查**中以发送和接收数据的角度来展示和分析用户的通话体验质量。
+通话中的每个用户都有唯一的[用户 ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#username)用于标识身份。**通话调查**中以发送和接收数据的角度来展示和分析用户的通话体验质量。
 
 <a name="rec"></a>
 #### 接收端
@@ -169,7 +169,7 @@ App 和系统的 CPU 占用率。如果用户使用的设备性能较差，CPU �
 <a name="send"></a>
 #### 发送端
 
-发送端是指用户作为发送数据的对象。如果用户在通话中发送数据持续一定的时间，会被视为一个发送端，在用户列表中发送端的[用户名](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernamea用户名)后面会有一个喇叭![](https://web-cdn.agora.io/docs-files/1545894315028)的图案标识。
+发送端是指用户作为发送数据的对象。如果用户在通话中发送数据持续一定的时间，会被视为一个发送端，在用户列表中发送端的[用户 ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#username)后面会有一个喇叭![](https://web-cdn.agora.io/docs-files/1545894315028)的图案标识。
 
 ### 总时长
 

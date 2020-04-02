@@ -3,7 +3,7 @@
 title: Agora 关键术语
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 01 2020 09:01:42 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:56:56 GMT+0800 (CST)
 ---
 # Agora 关键术语
 阅读本文了解 Agora 平台的关键术语。
@@ -90,11 +90,9 @@ Agora SDK 将根据频道场景应用不同的优化方法。
 
 <div class="alert note">游戏场景仅可用于 Agora Gaming SDK 。</div>
 
-### <a name="username"></a>用户名
+### <a name="username"></a>用户 ID
 
-在加入频道时需要传入用户名用于标识频道中的用户。同一频道中的每个用户都应具有唯一的用户名。
-
-Agora 支持两种数据类型的用户名，整型（UID）和字符串类型（User Account）。你可以根据需要选择一种类型，确保频道中所有用户使用相同类型的用户名即可。
+在加入频道时需要传入用户 ID 用于标识频道中的用户。同一频道中的每个用户都应具有唯一的用户 ID。
 
 ### 流
 

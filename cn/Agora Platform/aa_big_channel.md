@@ -3,7 +3,7 @@
 title: 大频道 (Beta)
 description: 
 platform: All Platforms
-updatedAt: Wed Feb 19 2020 10:19:07 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:13:17 GMT+0800 (CST)
 ---
 # 大频道 (Beta)
 水晶球的**大频道**功能为大频道提供实时质量监控和分析，可以极大提高运营大频道的效率。
@@ -164,9 +164,9 @@ updatedAt: Wed Feb 19 2020 10:19:07 GMT+0800 (CST)
 <a name="User"></a>
 ### 用户
 
-通话中的每个用户都有唯一的[用户名](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernamea%E7%94%A8%E6%88%B7%E5%90%8D)用于标识身份。
+通话中的每个用户都有唯一的[用户 ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#username)用于标识身份。
 
-大频道在统计用户人数时，会将频道内相同用户名的用户计为一个人。如果一个真实用户以不同的用户名加入一个频道，则会被计算为多个用户。
+大频道在统计用户人数时，会将频道内相同用户 ID 的用户计为一个人。如果一个真实用户以不同的用户 ID 加入一个频道，则会被计算为多个用户。
 
 <a name="Host"></a>
 ### 主播
