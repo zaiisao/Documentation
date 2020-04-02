@@ -3,7 +3,7 @@
 title: Call Search
 description: Introduction to call research
 platform: All Platforms
-updatedAt: Wed Feb 19 2020 10:15:21 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:00:03 GMT+0800 (CST)
 ---
 # Call Search
 The [**Call Search**](https://dashboard.agora.io/analytics/call/search) function of Agora Analytics allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
@@ -31,9 +31,9 @@ Log in [Agora Console](https://dashboard.agora.io/) and click **Call Search** un
 To search calls, fill in the search fields:
 1.  Select the project in the top-left corner.
 2.  Specify the searching time frame (the default time frame is the last 14 days).
-3.  Choose to search by **Channel Name** or **User** ([username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername)) in the drop-down menu.
+3.  Choose to search by **Channel Name** or **User** ([user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername)) in the drop-down menu.
 4.  Filter the calls by the call states, and you can choose to search for calls that are ongoing or ended.
-5.  Enter a channel name or [username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername) and click **Search**.
+5.  Enter a channel name or [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername) and click **Search**.
 
 > By default, **Call Search** uses the UTC zone. To use your local time zone, click the clock icon ![](https://web-cdn.agora.io/docs-files/1545893874792) on the top menu bar.
 
@@ -55,7 +55,7 @@ The top of the QoE page shows the basic information of the call, such as the pro
 
 ![](https://web-cdn.agora.io/docs-files/1568013405385)
 
-The user list shows the information of the users in the call, such as the [username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername), the location, when the user joins/leaves the channel and the actual time in the channel (In-call Periods).
+The user list shows the information of the users in the call, such as the [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername), the location, when the user joins/leaves the channel and the actual time in the channel (In-call Periods).
 
 The **View QoE** toggle switch turns on/off displaying the QoE diagram for each user.
 
@@ -67,7 +67,7 @@ The **View QoE** toggle switch turns on/off displaying the QoE diagram for each 
 
 The **Quality of Experience Overview** section displays each user's QoE diagram.
 
-The user's basic information is shown above the QoE diagram, including the [username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername), platform, SDK version, and user's ratings of the call (when the rating function is enabled).
+The user's basic information is shown above the QoE diagram, including the [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername), platform, SDK version, and user's ratings of the call (when the rating function is enabled).
 
 > See how to enable the rating function on [Android](../../en/Agora%20Platform/rate_call_android.md), [iOS](../../en/Agora%20Platform/rate_call_apple.md), [macOS](../../en/Agora%20Platform/rate_call_apple.md), and [Windows](../../en/Agora%20Platform/rate_call_windows.md).
 
@@ -155,7 +155,7 @@ Many calls can occur in a channel. When a user joins an empty channel, a call st
 
 ### User
 
-Each user in the call has a unique [username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername). Agora Analytics displays and analyzes the users' QoE from the perspective of sending and receiving data.
+Each user in the call has a unique [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername). Agora Analytics displays and analyzes the users' QoE from the perspective of sending and receiving data.
 
 <a name="rec"></a>
 #### Receiver

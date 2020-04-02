@@ -3,7 +3,7 @@
 title: Agora Key Terms
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 01 2020 09:03:07 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:44:29 GMT+0800 (CST)
 ---
 # Agora Key Terms
 Learn about the key terms of the Agora platform.
@@ -85,11 +85,9 @@ The SDK applies different optimization methods according to the channel profile.
 <div class="alert note">The gaming profile applies to the Agora Gaming SDK only.</div>
 
 
-### <a name="username"></a>Username
+### <a name="username"></a>User ID
 
-A username identifies a user in the channel. Each user in the same channel should have a unique username.
-
-Agora supports two types of usernames, integer (UID) and string (User Account). You can choose either type to identify the users. Ensure that all the users in a channel use the same type of username.
+A user ID identifies a user in the channel. Each user in the same channel should have a unique user ID.
 
 ### Stream
 

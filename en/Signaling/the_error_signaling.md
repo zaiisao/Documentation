@@ -3,7 +3,7 @@
 title: Error Codes and Warning Codes
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 02 2018 04:05:10 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 05:47:49 GMT+0800 (CST)
 ---
 # Error Codes and Warning Codes
 The Agora Signaling SDK will return error or warning codes when calling APIs or during runtime:
@@ -104,7 +104,7 @@ The Agora Signaling SDK will return error or warning codes when calling APIs or 
 </tr>
 <tr><td>LOGIN_E_INVALID_USER</td>
 <td>209</td>
-<td>The username is invalid.</td>
+<td>The user ID is invalid.</td>
 </tr>
 <tr><td>JOINCHANNEL_E_OTHER</td>
 <td>300</td>

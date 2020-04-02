@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: token authentication
 platform: All Platforms
-updatedAt: Wed Mar 25 2020 05:10:22 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 04:59:00 GMT+0800 (CST)
 ---
 # Set up Authentication
 We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two authentication mechanisms:
@@ -106,6 +106,7 @@ When working on a test version of your application, you can generate a temporary
 
 <div class="alert warning">Note:  <li>Ensure that you have enabled the App Certificate of the project before generating a Temp Token. See <a href="#appcertificate">Enable the App Certificate</a>.</li><li>A temp token applies to scenarios with low security requirements. For the production environment, we recommend using a token generated at your server.</li><li>A temp token does not apply to the Agora RTM SDK. </li></div>
 
+<a id = "generatetoken"></a>
 ### Get a token
 
 When building the final production version of your application, you should generate a token on your server. See [Generate a Token on Your Server](../../en/Agora%20Platform/token_server.md).

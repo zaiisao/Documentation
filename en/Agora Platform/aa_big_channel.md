@@ -3,7 +3,7 @@
 title: Big Channel (Beta)
 description: 
 platform: All Platforms
-updatedAt: Wed Feb 19 2020 10:22:12 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:00:04 GMT+0800 (CST)
 ---
 # Big Channel (Beta)
 The **[Big Channel](#BigChannel)** function of Agora Analytics enables you to view and analyze the real-time usage and quality of Big Channels, to help you improve the efficiency of activities in Big Channels.
@@ -163,7 +163,7 @@ Every call or live broadcast must occur in a channel. If we imagine an app being
 <a name="User"></a>
 ### User
 
-Each user in the call has a unique [username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername).
+Each user in the call has a unique [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername).
 
 Big Channel counts a unique username in a unique channel as one user. If a real-life user joins one channel with different usernames, Big Channel counts the user as multiple users.
 

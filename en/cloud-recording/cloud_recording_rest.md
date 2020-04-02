@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Fri Mar 20 2020 03:44:21 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 05:48:52 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
@@ -80,7 +80,7 @@ If this method call succeeds, you get a resource ID (`resourceId`) from the HTTP
 
 Call the [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start) method within five minutes after getting the resource ID to join a channel and start the recording. 
 
-<div class="alert warning"> Agora Cloud Recording does not support string usernames (User Accounts). Ensure that every user in the channel has an integer UID. When you call the start method, ensure that the UID in the quotation marks is an integer UID, too.</div>
+<div class="alert warning"> Agora Cloud Recording does not support string user IDs (User Accounts). Ensure that every user in the channel has an integer UID. When you call the start method, ensure that the UID in the quotation marks is an integer UID, too.</div>
 
 If this method call succeeds, you get a recording ID (`sid`) from the HTTP response body.
 

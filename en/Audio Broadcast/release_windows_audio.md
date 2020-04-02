@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed Mar 04 2020 09:17:54 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 05:48:56 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -237,9 +237,9 @@ v2.8.0 is released on Jul. 8, 2019.
 
 **New features**
 
-#### 1. Supporting string usernames
+#### 1. Supporting string user IDs
 
-Many apps use string usernames. This release adds the following methods to enable apps to join an Agora channel directly with string usernames as user accounts:
+Many apps use string user IDs. This release adds the following methods to enable apps to join an Agora channel directly with string user IDs as user accounts:
 
 - [registerLocalUserAccount](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0d44b74ced4005ee86353c13186f870d)
 - [joinChannelWithUserAccount](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a14f8c308c6c57c55653552b939a8527a)
@@ -254,7 +254,7 @@ To ensure smooth communication, use the same parameter type to identify all user
 	- The Web SDK: v2.5.0 and later.
 
  If you use SDKs that do not support string user accounts, only integer user IDs can be used in the channel.
-- If you change your usernames into string user accounts, ensure that all app clients are upgraded to the latest version.
+- If you change your user IDs into string user accounts, ensure that all app clients are upgraded to the latest version.
 - If you use string user accounts, ensure that the token generation script on your server is updated to the latest version. If you join the channel with a user account, ensure that you use the same user account or its corresponding integer user ID to generate a token. Call the `getUserInfoByUserAccount` method to get the user ID that corresponds to the user account.
 
 #### 2. Adding remote audio statistics

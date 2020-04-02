@@ -3,7 +3,7 @@
 title: Data Insight (Beta)
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Mon Mar 23 2020 03:17:21 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 05:58:55 GMT+0800 (CST)
 ---
 # Data Insight (Beta)
 The **Data Insight** function of Agora Analytics provides periodic call usage and call quality statistics. It is designed to help you understand the trend of the usage and quality of your calls, their distribution in various dimensions, and daily data breakdown.
@@ -170,7 +170,7 @@ Every call or live broadcast happens in a channel. If we imagine an app being a 
 
 ### User
 
-Each user in the channel has a unique [username](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername). 
+Each user in the channel has a unique [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername). 
 
 **Data Insight** counts a unique username in a unique channel as one user. If a real-life user joins one channel with different usernames, or joins different channels with one username, **Data Insight** counts the user in both situations as multiple users.
 
