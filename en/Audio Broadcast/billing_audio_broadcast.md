@@ -60,7 +60,7 @@ If you deduct the time that a user receives the video streams in the channel fro
 
 
 
-Suppose a user is in a channel for 30 minutes, then Agora logs 30 audio minutes for that user regardless whether the user is idle or has subscribed to other users (because there is no way for a user in a voice call to subscribe to a video stream).
+Suppose a user is in a channel for 30 minutes, then Agora logs 30 audio minutes for that user regardless whether the user is idle or has subscribed to other users (because there is no way for a user in a voice call or an audio broadcast to subscribe to a video stream).
 
 
 
