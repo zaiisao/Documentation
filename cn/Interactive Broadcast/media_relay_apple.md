@@ -102,7 +102,7 @@ if let config = getMediaRelayConfiguration() {
 
 ## 开发注意事项
 - 该功能最多支持将媒体流转发至 4 个目标频道。转发过程中，如果想添加或删除目标频道，可以调用 `updateChannelMediaRelay` 方法。
-- 该功能不支持 String 型用户名。
+- 该功能不支持 String 型用户 ID。
 
 
 
