@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Mar 19 2020 10:17:28 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:02:49 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -79,7 +79,7 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 获得 resource ID 后，在五分钟內调用 [`start`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/start) 方法加入频道开始录制。 
 
-<div class="alert warning">云端录制不支持 String 用户名（User Account）。请确保频道内所有用户均使用整型 UID。同时，在调用 <code>start</code> 方法时，请确保 <code>uid</code> 字段引号内为整型 UID。</div>
+<div class="alert warning">云端录制不支持 String 用户 ID（User Account）。请确保频道内所有用户均使用整型 UID。同时，在调用 <code>start</code> 方法时，请确保 <code>uid</code> 字段引号内为整型 UID。</div>
 
 调用该方法成功后，你可以从 HTTP 响应包体中获得一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
 

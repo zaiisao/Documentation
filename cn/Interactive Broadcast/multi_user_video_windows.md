@@ -1,11 +1,11 @@
 
 ---
-title: 七人以上视频场景
+title: 多人视频直播场景
 description: 
 platform: Windows
-updatedAt: Mon Mar 09 2020 10:22:23 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 05:08:43 GMT+0800 (CST)
 ---
-# 七人以上视频场景
+# 多人视频直播场景
 ## 功能描述
 
 在一般的视频直播场景中，如果参与的主播超过七人，可能会引起音画不同步和信息丢失的问题。如果参与连麦的各方将订阅流设置为 1-N 模式，即订阅 1 路大流和 N 路小流，那么直播频道内的主播最多可以支持 17 人。本页为你展示如何使用 Agora SDK  实现七人以上视频互动直播和相关的注意事项。
@@ -34,9 +34,6 @@ updatedAt: Mon Mar 09 2020 10:22:23 GMT+0800 (CST)
 	 
   <div class="alert note">视频小流的宽高比例需要和视频大流的宽高比例相同。推荐你使用分辨率不超过 320 x 180 或 180 x 320，码率不超过 140 Kbps 的小流参数。</div>
 
-### 示例代码
-
-我们在 GitHub 提供一个开源的 [Large-Group-Video-Chat](https://github.com/AgoraIO/Advanced-Video/tree/master/Large-Group-Video-Chat) 示例项目。
 
 ### API 参考
 

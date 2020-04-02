@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Tue Feb 11 2020 02:37:14 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:02:14 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
@@ -248,7 +248,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 | `start_ts` | Number | 查询的时间范围起点，Unix 时间戳 （秒）。                     |
 | `end_ts`   | Number | 查询的时间范围终点，Unix 时间戳 （秒）。                     |
 | `appid`    | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。 |
-| `metric`   | String | 要查询的指标：<li>userCount：通话人数，不同频道中的相同用户名计为多人。</li><li>sessionCount：通话人次，用户每次加入频道计为一个通话人次。</li><li>channelCount：频道数，从有用户加入频道到所有用户离开频道计为一个通话频道。</li>支持同时查询多个指标，用逗号分隔，如 `userCount,sessionCount` |
+| `metric`   | String | 要查询的指标：<li>userCount：通话人数，不同频道中的相同用户 ID计为多人。</li><li>sessionCount：通话人次，用户每次加入频道计为一个通话人次。</li><li>channelCount：频道数，从有用户加入频道到所有用户离开频道计为一个通话频道。</li>支持同时查询多个指标，用逗号分隔，如 `userCount,sessionCount` |
 
 <div class="alert note">数据洞察以天为单位统计数据，请确保指定的查询时间范围至少为一天，否则返回的数据会为空。</div>
 
@@ -322,7 +322,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 
 | 指标含义 | 指标名称 | 指标说明                                                     |
 | :------- | :------- | :----------------------------------------------------------- |
-| 用户数   | `pcu`      | 当前用户数。同用户名不同频道，记为多人。                     |
+| 用户数   | `pcu`      | 当前用户数。同用户 ID不同频道，记为多人。                     |
 | 频道数   | `pcc`      | 当前频道数。从有用户进入频道到所有用户退出，记为一个通话频道。 |
 
 #### HTTP 请求示例

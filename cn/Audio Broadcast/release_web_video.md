@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Mar 18 2020 05:45:04 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:01:22 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -261,9 +261,9 @@ Agora 在该版本对 SDK 的传输质量和互通体验进行了优化，在首
 
 该版本于 2019 年 7 月 8 日发布。
 
-2.8.0 版本主要优化了对 String 类型的用户名的支持。
+2.8.0 版本主要优化了对 String 类型的用户 ID的支持。
 
-一个频道内的所有用户必须使用同样类型的用户名，即必须都为整数或都为字符串。使用字符串类型的用户名与 Agora Native SDK 互通时，请确保 Native SDK 也使用字符串类型的用户名，即 User Account 加入频道，详见[使用 String 型的用户名](https://docs.agora.io/cn/faq/string)。
+一个频道内的所有用户必须使用同样类型的用户 ID，即必须都为整数或都为字符串。使用字符串类型的用户 ID与 Agora Native SDK 互通时，请确保 Native SDK 也使用字符串类型的用户 ID，即 User Account 加入频道，详见[使用 String 型的用户 ID](https://docs.agora.io/cn/faq/string)。
 
 ## 2.7.1 版
 

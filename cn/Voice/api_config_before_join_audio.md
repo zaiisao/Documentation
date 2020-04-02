@@ -3,7 +3,7 @@
 title: 加入频道前的 API 调用
 description: configurtions before joinChannel
 platform: All Platforms
-updatedAt: Wed Apr 01 2020 07:02:13 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 03:33:27 GMT+0800 (CST)
 ---
 # 加入频道前的 API 调用
 本文介绍在加入频道（`joinChannel`）之前的 API 调用和设置。在加入频道前，通常只需要简单调用一两个 API 即可快速实现实时音视频功能，但是如果你的应用场景对通话质量和稳定性有较高的要求，我们建议参考本文进行更多的设置。
@@ -26,7 +26,7 @@ updatedAt: Wed Apr 01 2020 07:02:13 GMT+0800 (CST)
 
 如果你的场景有高音质需求（例如音乐教学场景），建议在加入频道前调用 `setAudioProfile`，并将 `profile` 参数设置为 `MUSIC_HIGH_QUALITY`(4)，`scenario` 参数设置为 `GAME_STREAMING`(3)，更多的设置可以参考[设置音频属性](https://docs.agora.io/cn/Interactive%20Broadcast/audio_profile_android?platform=Android)。
 
-<div class="alert note">不同平台的参数枚举值可能略有不同，请根据实际情况进行调整。</div>
+<div class="alert note">不同平台的枚举名称可能略有不同，请根据实际情况进行调整。</div>
 
 ## 与 Web 平台互通
 

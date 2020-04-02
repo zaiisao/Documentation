@@ -3,7 +3,7 @@
 title: 控制台 RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Apr 01 2020 10:17:15 GMT+0800 (CST)
+updatedAt: Wed Apr 01 2020 10:30:34 GMT+0800 (CST)
 ---
 # 控制台 RESTful API
 ## 认证
@@ -990,10 +990,4 @@ BaseUrl/v1/channel/{appid}?page_no=0&page_size=100
   }
 }
 ```
-
-
-## 错误码和警告码
-
-如果在使用控制台 RESTful API 过程中遇到警告或报错，请参考[警告码](https://docs.agora.io/cn/Voice/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21)和[错误码](https://docs.agora.io/cn/Voice/API%20Reference/cpp/namespaceagora.html#a8affb9bb02864d82c4333529dc3d75a1)文档进行问题排查。
-
 

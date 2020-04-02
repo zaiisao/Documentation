@@ -3,7 +3,7 @@
 title: 加入频道前的 API 调用
 description: configurtions before joinChannel
 platform: All Platforms
-updatedAt: Wed Apr 01 2020 06:53:17 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 03:32:54 GMT+0800 (CST)
 ---
 # 加入频道前的 API 调用
 本文介绍在加入频道（`joinChannel`）之前的 API 调用和设置。在加入频道前，通常只需要简单调用一两个 API 即可快速实现实时音视频功能，但是如果你的应用场景对通话质量和稳定性有较高的要求，我们建议参考本文进行更多的设置。
@@ -26,7 +26,7 @@ updatedAt: Wed Apr 01 2020 06:53:17 GMT+0800 (CST)
 
 如果你的场景有高音质需求（例如音乐教学场景），建议在加入频道前调用 `setAudioProfile`，并将 `profile` 参数设置为 `MUSIC_HIGH_QUALITY`(4)，`scenario` 参数设置为 `GAME_STREAMING`(3)，更多的设置可以参考[设置音频属性](https://docs.agora.io/cn/Interactive%20Broadcast/audio_profile_android?platform=Android)。
 
-<div class="alert note">不同平台的参数枚举值可能略有不同，请根据实际情况进行调整。</div>
+<div class="alert note">不同平台的枚举名称可能略有不同，请根据实际情况进行调整。</div>
 
 ## 视频设置
 
@@ -34,14 +34,14 @@ SDK 默认关闭视频功能，如果要使用视频，在加入频道之前调�
 
 `enableVideo` 会开启本地视频采集、编码、发送和远端视频接收，如果需要更精细的控制，可以调用以下 API：
 
-- `enableLocalVideo`：是否启动摄像头采集并创建本地视频流。
-- `muteLocalVideoStream`：是否发送本地视频流。
-- `muteRemoteVideoStream`：是否接收并播放指定的远端视频流。
-- `muteAllRemoteVideoStreams`：是否接收并播放所有远端视频流。
+- `enableLocalVideo`：开启/关闭本地视频采集。
+- `muteLocalVideoStream`：停止/恢复发送本地视频流。
+- `muteRemoteVideoStream`：停止/恢复接收指定视频流。
+- `muteAllRemoteVideoStreams`：停止/恢复接收所有视频流。
 
 <div class="alert note">
 	注意事项：
-	<li>加入频道前不要同时调用 <code>enableLocalVideo</code> 和 <code>enableVideo</code>，如果两个方法都调用会导致摄像头打开两次以及加入频道时间变长。</li>
+	<li>加入频道前不要同时调用 <code>enableLocalVideo</code> 和 <code>enableVideo</code>，两个方法都调用会导致摄像头打开两次以及加入频道时间变长。</li>
 	<li>因为 <code>enableVideo</code> 方法会重置整个视频引擎，加入频道之后我们建议用精细控制的 API 关闭或打开视频。</li>
 </div>
 

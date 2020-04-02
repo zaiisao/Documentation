@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 27 2020 03:03:25 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:01:37 GMT+0800 (CST)
 ---
 # 校验用户权限
 本文介绍如何校验用户权限。
@@ -106,6 +106,8 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 <div class="alert warning"> 注意：<li>生成临时 Token 前，请确保你已开启项目 App 证书。详见<a href="https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token">启用 App 证书</a>。</li><li>临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。</li> <li>临时 Token 不适用于 Agora RTM SDK。</li></div>
 
+<a name = "generatetoken"></a>
+
 ### 获取正式 Token
 
 正式的 Token 需要在你的服务端部署并生成。详见[生成 Token](../../cn/Agora%20Platform/token_server.md)。
@@ -114,7 +116,7 @@ Token 是相比 App ID 更为复杂，也更为安全的校验方式。你需要
 
 在调用 Agora SDK 的 API 接口实现功能，如加入频道时，SDK 会需要你填入 Token 和频道名。填入你所获取到的 Token，和生成 Token 时用的频道名，就可以进入频道，实现音视频通话。
 
-> - 请确保你在加入频道时填入的频道名与用户名和用于生成 Token 时填入的频道名、用户名一致。
+> - 请确保你在加入频道时填入的频道名与用户 ID和用于生成 Token 时填入的频道名、用户 ID一致。
 > - 出于安全考虑，请在 Token 生成后 24 小时内加入频道。超过 24 小时需要重新生成 Token。
 > - Token 在一段时间后会失效。当客户端收到回调提醒 Token 即将失效，或当获知 Token 已失效时，需在服务端重新生成 Token，然后调用 `renewToken` 方法进行更新。
 > - Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js, Java, Python, C++ 等绝大多数通用的服务器端开发平台上均可获得所需库。具体加密方案可参看 [Authentication code](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)。

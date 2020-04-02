@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed Mar 04 2020 14:11:53 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 06:03:14 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -279,16 +279,16 @@ macOS 语音 SDK 支持两种主要场景:
 
 **新增特性**
 
-#### 1. 全平台支持 String 型的用户名
+#### 1. 全平台支持 String 型的用户 ID
 
-很多 App 使用 String 类型的用户名。为降低开发成本，Agora 新增支持 String 型的 User account，方便用户通过如下接口直接使用 App 账号加入 Agora 频道：
+很多 App 使用 String 类型的用户 ID。为降低开发成本，Agora 新增支持 String 型的 User account，方便用户通过如下接口直接使用 App 账号加入 Agora 频道：
 
 - [registerLocalUserAccount](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/registerLocalUserAccount:appId:)
 - [joinChannelByUserAccount](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByUserAccount:token:channelId:joinSuccess:)
 
 对于其他接口，Agora 沿用 Int 型的 UID。Agora Engine 会维护 UID 和 User account 映射表，你可以随时通过 String user account 获取 UID，或者通过 UID 获取 String user account，无需自己维护映射表。
 
-为保证通信质量，频道内所有用户需使用同一数据类型的用户名，即频道内的所有用户名应同为 Int 型或同为 String 型。
+为保证通信质量，频道内所有用户需使用同一数据类型的用户 ID，即频道内的所有用户 ID应同为 Int 型或同为 String 型。
 
 **Note**：
 
@@ -298,7 +298,7 @@ macOS 语音 SDK 支持两种主要场景:
 	- Web SDK：v2.5.0 及之后版本
 
  如果你的频道内有不支持 String 型 User account 的用户，则只能使用 Int 型的 User ID。
-- 如果你使用该版本的 Native SDK 将用户名升级至 String 型 User account，请确保所有终端用户同步升级。
+- 如果你使用该版本的 Native SDK 将用户 ID升级至 String 型 User account，请确保所有终端用户同步升级。
 - 如果使用 String 型的 User account，请确保你的服务端用户生成 Token 的脚本已升级至最新版本。如果使用 String 型 User account 加入频道，请确保使用该 User account 或其对应的 Int 型 UID 来生成 Token。你可以调用 `getUserInfoByUserAccount` 来获取 User account 所对应的 UID。
 
 #### 2. 音频卡顿回调
