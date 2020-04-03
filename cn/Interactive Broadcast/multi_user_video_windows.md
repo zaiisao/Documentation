@@ -3,7 +3,7 @@
 title: 多人视频直播场景
 description: 
 platform: Windows
-updatedAt: Thu Apr 02 2020 05:08:43 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 08:52:40 GMT+0800 (CST)
 ---
 # 多人视频直播场景
 ## 功能描述
