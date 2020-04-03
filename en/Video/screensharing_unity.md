@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Unity
-updatedAt: Thu Apr 02 2020 02:14:14 GMT+0800 (CST)
+updatedAt: Fri Apr 03 2020 03:35:21 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -42,6 +42,7 @@ mTexture.Apply();
 int a = rtc.PushVideoFrame(externalVideoFrame);
 	 ```
    
+	 <div class="alert note">Agora doesn't support RGBA 32 for now. If the pixel format of the raw data is RGBA 32, set the <tt>VIDEO_PIXEL_FORMAT</tt> of <tt>PushVideoFrame</tt> as <tt>VIDEO_PIXEL_BGRA</tt>.</div>
 
 ### API call sequence
 

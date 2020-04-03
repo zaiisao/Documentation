@@ -3,7 +3,7 @@
 title: Use Security Keys
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 06:19:14 GMT+0800 (CST)
+updatedAt: Fri Apr 03 2020 06:28:18 GMT+0800 (CST)
 ---
 # Use Security Keys
 ## Introduction
@@ -75,7 +75,7 @@ See [Get an App ID](#Get-an-App-ID).
 Agora's token scheme is based on a request-response model. Whenever a client needs token-specific services, it sends a request to the app server before the server processes the request and sends a new or updated token back to the client. Therefore, you first must deploy an RTM token generator on your app server. See the following sample code for generating an RTM token:
 
 -   [RTM Token Builder for C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/sample/RtmTokenBuilderSample.cpp)
--   [RTM Token Builder for Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/io/agora/sample/RtmTokenBuilderSample.java)
+-   [RTM Token Builder for Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/sample/RtmTokenBuilderSample.java)
 -   [RTM Token Builder for Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/sample/RtmTokenBuilderSample.py)
 -   [RTM Token Builder for PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/sample/RtmTokenBuilderSample.php )
 -   [RTM Token Builder for Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/sample/RtmTokenBuilderSample.js)
