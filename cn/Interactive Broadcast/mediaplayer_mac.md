@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Sun Mar 29 2020 11:27:47 GMT+0800 (CST)
+updatedAt: Fri Apr 03 2020 07:53:44 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -222,7 +222,7 @@ _mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
 
 > 请收到 `joinSuccessBlock` 或 `didJoinChannel` 回调后再进行下一步操作。
 
-远端用户的角色设为 `BROADCASTER` 后，Native SDK 会自动开启回声消除模块。因此，为避免远端用户听到播放视频的回声，Agora 建议你使远端用户也以主播身份加入频道。
+远端用户的角色设为 `BROADCASTER` 后，Native SDK 会自动开启回声消除模块。因此，为避免远端用户听到播放视频的回声，Agora 建议你使至少一个远端用户以主播身份加入频道。
 
 **开始分享**
 

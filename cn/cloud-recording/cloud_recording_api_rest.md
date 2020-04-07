@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Apr 03 2020 01:37:58 GMT+0800 (CST)
+updatedAt: Tue Apr 07 2020 06:33:57 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -49,7 +49,7 @@ updatedAt: Fri Apr 03 2020 01:37:58 GMT+0800 (CST)
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/acquire
 
-> 每个 APP ID 每秒钟的请求数限制为 10 次。如需提高此限制，请联系 support@agora.io。
+> 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请联系 support@agora.io。
 
 调用该方法成功后，你可以从 HTTP 响应包体中的 `resourceId` 字段得到一个 resource ID。这个 resource ID 的时效为 5 分钟，你需要在 5 分钟内用这个 resource ID 去调用[开始云端录制的 API](#start)。
 
@@ -111,7 +111,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/mode/\<mode\>/start
 
-> 每个 APP ID 每秒钟的请求数限制为 10 次。
+> 每个 App ID 每秒钟的请求数限制为 10 次。
 
 ### 参数
 
@@ -354,7 +354,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/updateLayout
 
-> 每个 APP ID 每秒钟的请求数限制为 10 次。
+> 每个 App ID 每秒钟的请求数限制为 10 次。
 
 ### 参数
 
@@ -463,7 +463,7 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
 
-> 每个 APP ID 每秒钟的请求数限制为 10 次。
+> 每个 App ID 每秒钟的请求数限制为 10 次。
 
 ### 参数
 
@@ -564,7 +564,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/stop
 
-> - 每个 APP ID 每秒钟的请求数限制为 10 次。
+> - 每个 App ID 每秒钟的请求数限制为 10 次。
 > - 当频道空闲（无用户）超过预设时间（默认为 30 秒） 后，云端录制也会自动退出频道停止录制。
 
 ### 参数

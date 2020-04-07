@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Windows
-updatedAt: Sun Mar 29 2020 12:37:52 GMT+0800 (CST)
+updatedAt: Tue Apr 07 2020 06:01:00 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -20,7 +20,7 @@ updatedAt: Sun Mar 29 2020 12:37:52 GMT+0800 (CST)
 
 ### 前提条件
 
-- Microsoft Visual Studio 2017 或以上版本
+- Microsoft Visual Studio 2015 或以上版本
 - 支持 Windows 7 或以上版本的 Windows 设备
 
 > 如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。
@@ -46,15 +46,15 @@ updatedAt: Sun Mar 29 2020 12:37:52 GMT+0800 (CST)
 #### 配置项目文件
 
 1. 前往下载页面，下载最新版 MediaPlayer Kit，然后解压。
-2. 将 **AgoraMediaPlayer** 文件夹复制到你的项目文件夹下。
+2. 将 **sdk** 文件夹复制到你的项目文件夹下。
 
 #### 配置项目属性
 
 在**解决方案资源管理器**窗口中，右击项目名称并点击属性进行以下配置，配置完成后点击**确定**。
 
-- 进入 **VC++ 目录> 常规 > 包含目录**菜单，点击**编辑**，并在弹出窗口中输入 **./AgoraMediaPlayer/include**。
-- 进入 **VC++ 目录> 常规 > 库目录**菜单，点击**编辑**，并在弹出窗口中输入 **./AgoraMediaPlayer/lib**。
-- 进入**链接器 > 输入 > 附加依赖项**菜单，点击**编辑**，并在弹出窗口中输入 **AgoraMediaPlayer/lib** 和 **shell32.lib**。
+- 进入 **VC++ 目录> 常规 > 包含目录**菜单，点击**编辑**，并在弹出窗口中输入 **./sdk/include**。
+- 进入 **VC++ 目录> 常规 > 库目录**菜单，点击**编辑**，并在弹出窗口中输入 **./sdk/lib**。
+- 进入**链接器 > 输入 > 附加依赖项**菜单，点击**编辑**，并在弹出窗口中输入 **AgoraMediaPlayer.lib** 和 **shell32.lib**。
 
 ### 集成 Native SDK
 
