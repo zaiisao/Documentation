@@ -1,11 +1,11 @@
 
 ---
-title: 控制台 RESTful API
+title: RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 01 2020 10:30:34 GMT+0800 (CST)
+updatedAt: Wed Apr 08 2020 04:01:28 GMT+0800 (CST)
 ---
-# 控制台 RESTful API
+# RESTful API
 ## 认证
 
 > 在使用本文 RESTful API 提供的功能前，请确认你的账号已在控制台开通指定项目的相关权限。Agora 支持自定义用户角色和相应的项目权限，详见[控制台角色权限说明](../../cn/Video/manage_member.md)。
@@ -112,7 +112,7 @@ BaseUrl：**https://api.agora.io/dev**
 
 | 请求基本信息 | 描述 | 
 | ---------------- | ---------------- | 
-| 方法      | POST      |
+| 方法      | GET      |
 | 请求 URL  | BaseUrl/v1/projects/ |
 
 **请求参数**
@@ -489,7 +489,8 @@ Agora 提供 V1 和 V3 版本的获取用量数据 API。为获取更多用量�
     "from_date"=2015-01-01&to_date=2015-03-21&projects=id1,id2
     ```
 
-    您可以指定项目，但如果不指定，系统将查询该账户下的全部项目。
+<div class="alert note"><li>你可以指定项目，但如果不指定，系统将查询该账户下的全部项目。<li>你可以查询一年内的用量数据。建议查询时段不要包含当天，因为当天数据会持续变化。</li></div>
+
 
 -   响应：
 
@@ -516,7 +517,8 @@ Agora 提供 V1 和 V3 版本的获取用量数据 API。为获取更多用量�
 
     -   报错: 如果指定的项目 \(projects\) 不存在，会直接被忽略。不会报错。
 
-> 该响应中 *audio*、*sd*、*hd* 及 *hdp* 的单位为分钟。
+<div class="alert note">该响应中语音时长（audio）、SD 视频时长（sd）、HD 视频时长（hd） 及 HDP 视频时长（hdp）的单位为分钟。</div>
+
 </details>
 
 <a name="UsageV3"></a>
@@ -542,7 +544,7 @@ Agora 提供 V1 和 V3 版本的获取用量数据 API。为获取更多用量�
 from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
  ```
 
-<div class="alert note">请确保填写有效的 <tt>project_id</tt>，否则无法获取用量数据。</div>
+<div class="alert note"><li>请确保填写有效的 <tt>project_id</tt>，否则无法获取用量数据。<li>你可以查询一年内的用量数据。建议查询时段不要包含当天，因为当天数据会持续变化。</li></div>
 
 -   响应：
 

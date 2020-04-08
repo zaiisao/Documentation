@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Electron
-updatedAt: Mon Mar 23 2020 08:19:28 GMT+0800 (CST)
+updatedAt: Tue Apr 07 2020 10:01:23 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora SDK for Electron 的发版说明。
@@ -17,7 +17,112 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
  
 点击[语音通话产品概述](../../cn/Audio%20Broadcast/product_voice.md)、[视频通话产品概述](../../cn/Audio%20Broadcast/product_video.md)、[音频互动直播产品概述](../../cn/Audio%20Broadcast/product_live_audio.md)及[视频互动直播](../../cn/Audio%20Broadcast/product_live.md)了解关键特性。
 
- ## **2.9.0 版**
+## **3.0.0 版**
+
+该版本于 2020 年 4 月 7 日发布。
+
+在该版本对通信场景采用了全新的系统架构，并升级了通信和直播场景下的 last mile 网络策略。在带宽不足时，新的网络策略能充分利用上下行有限带宽提升有效码率，从而增强弱网对抗能力，极大提升了弱网情况下通信和直播场景的终端用户体验。
+
+由于通信场景采用了新的系统架构，为保证新老版本通信用户的互通兼容，我们使用了回退机制。如果频道内有老版本通信用户加入，则当前版本 (3.0.0) 的终端用户会回退成老版本通信。一旦回退，频道内所有用户都无法享受新版本带来的体验提升。因此我们强烈推荐同步升级所有终端用户到当前版本。
+
+同时，我们对本地服务端录制进行了升级发布。为确保享受全新架构和网络策略优化带来的好处，使用本地服务端录制的客户，请务必同步升级本地服务端录制 SDK 至 3.0.0 版本。
+
+新增特性、改进与问题修复详见下文。
+
+**升级必看**
+
+#### 1. 通信场景上行默认不开启视频小流
+
+从该版本起，Agora 在通信场景下，默认不开启视频[小流](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-duala双流模式)。如需启用，请在成功加入频道后，调用 [`enableDualStreamMode (true)`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#enabledualstreammode) 方法启用视频双流模式。在多人视频通信场景下，我们建议你开启视频双流。
+
+**新增特性**
+
+#### 1. 多频道管理
+
+为方便用户在同一时间加入多个频道，该版本新增了 [`AgoraRtcChannel`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcchannel.html) 类。通过创建多个 `AgoraRtcChannel` 对象，用户可以同时加入各 `AgoraRtcChannel` 对象对应的频道中，实现多频道功能。
+
+加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。
+
+#### 2. 调节本地播放的指定远端用户音量
+
+该版本新增 [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#adjustuserplaybacksignalvolume) 方法，用以调节本地用户听到的指定远端用户的音量。通话或直播过程中，你可以多次调用该方法，来调节多个远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
+
+#### 3. 人声检测
+
+为判断本地用户是否说话，该版本在启用说话者音量提示 [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#enableaudiovolumeindication) 方法中新增 `boolean` 型的 `report_vad` 参数。启用该参数后，你会在 `groupAudioVolumeIndication` 回调中获取本地用户的人声状态。
+
+**改进**
+
+#### 1. 音频编码属性
+
+为满足更高音质需求，该版本调整了直播场景下 [`setAudioProfile`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#setaudioprofile) 中 `profile(0)` 对应的音频编码属性，详见下表：
+
+| SDK 版本   | profile(0)                                                 |
+| :--------- | :----------------------------------------------------------- |
+| 3.0.0      | 48 KHz 采样率，音乐编码，单声道，编码码率最大值为 52 Kbps。  |
+| 3.0.0 之前 | <li>macOS：32 KHz 采样率，音乐编码，单声道，编码码率最大值为 44 Kbps。</li><li>Windows：32 KHz 采样率，音乐编码，单声道，编码码率最大值为 64 Kbps。</li> |
+
+#### 2. 镜像模式
+
+为提升视频镜像的使用体验，该版本增加了视频编码镜像的功能：
+
+在 [`VideoEncoderConfiguration`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/interfaces/videoencoderconfiguration.html) 接口中，新增 `mirrorMode` 属性，方便设置本地视频编码的镜像模式，即远端看本地是否镜像。
+
+#### 3. 质量透明
+
+为方便开发者获取更多通话统计信息，该版本在 [`RtcStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/interfaces/rtcstats.html) 接口中新增 `gatewayRtt`、`memoryAppUsageRatio`、`memoryTotalUsageRatio` 和 `memoryAppUsageInKbytes` 属性，方便更好地监控通话中的网络状态和内存使用情况。
+
+#### 4. 屏幕共享
+
+为支持更多屏幕共享使用场景，该版本新增支持通过窗口信息共享屏幕时支持共享[通用 Windows 平台](https://docs.microsoft.com/zh-cn/windows/uwp/get-started/universal-application-platform-guide)（UWP）应用窗口。
+
+#### 5. 直播水印
+
+该版本允许用户将一张 PNG 图片作为水印添加到正在进行的本地直播中。新增 [`addVideoWatermark`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#addvideowatermark) 和 [`clearVideoWatermark`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#clearvideowatermarks) 方法，以添加或删除本地直播水印。
+
+#### 6. 设置客户端录音采样率
+
+为方便用户设置客户端录音的采样率，该版本废弃了原有方法，并使用新的 [`startAudioRecording`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startaudiorecording) 方法进行取代。新的方法下，录音采样率可设为 16、32、44.1 或 48 kHz。
+
+#### 7. 其他提升
+
+该版本自动开启直播场景下 Electron SDK 与 Web SDK 的互通，并废弃原有的 `enableWebSdkInteroperability` 和 `videoSourceEnableWebSdkInteroperability` 方法。
+
+**问题修复**
+
+- 修复了混音、音频录制、音频编码、回声等音频问题。
+- 修复了水印、视频画面比例、画质模糊、视频不能全屏、屏幕共享黑边等视频问题。
+- 修复了特定场景下偶现的 app 崩溃、日志文件、推流不稳定等问题。
+- 通信场景下，调用 [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#setremotesubscribefallbackoption) 方法也生效。
+- 一对一通信场景下，下行音视频弱网下会回退为纯音频。
+- macOS 10.15 系统下，偶现系统渲染窗口 UI 异常。
+
+**API 变更**
+
+#### 行为变更
+
+该版本修改了 macOS 设备连接耳机或蓝牙时的音频路由。修改后的语音路由与 macOS 设备管理器中显示的一致。
+
+#### 新增
+
+- [`VideoEncoderConfiguration`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/interfaces/videoencoderconfiguration.html) 接口新增 `mirrorMode` 属性
+- [`createChannel`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#createchannel)
+- [`AgoraRtcChannel`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcchannel.html) 类
+- [`RtcStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/interfaces/rtcstats.html) 接口中新增 `gatewayRtt`、`memoryAppUsageRatio`、`memoryTotalUsageRatio` 和 `memoryAppUsageInKbytes` 属性
+- [`startAudioRecording`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startaudiorecording) 
+- [`addVideoWatermark`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#addvideowatermark) 
+- [`clearVideoWatermark`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#clearvideowatermarks) 
+- [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#enableaudiovolumeindication) ，新增 `report_vad` 参数
+
+#### 废弃
+
+- `enableWebSdkInteroperability`
+- `videoSourceEnableWebSdkInteroperability`
+- `firstRemoteVideoFrame`，使用 `remoteVideoStateChanged` 取代
+- `userMuteAudio`,`firstRemoteAudioDecoded` 和 `firstRemoteAudioFrame`，使用 `remoteAudioStateChanged` 取代
+- `streamPublished` 和 `streamUnpublished`，使用 `rtmpStreamingStateChanged` 取代
+
+## **2.9.0 版**
 
 该版本于 2019 年 8 月 30 日发布。新增特性与修复问题详见下文。
 
