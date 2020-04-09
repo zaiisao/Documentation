@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Web
-updatedAt: Wed Apr 01 2020 09:24:26 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 06:45:10 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 

@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Web
-updatedAt: Wed Apr 01 2020 09:23:40 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 06:48:48 GMT+0800 (CST)
 ---
 # 实现音频直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音频互动直播。

@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Web
-updatedAt: Wed Apr 01 2020 09:24:27 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 06:28:16 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice functions in your app. 
@@ -331,7 +331,7 @@ To subscribe to a remote stream, we need to listen for the `"stream-added"` even
      console.log("stream-subscribed remote-uid: ", id);
    });
    ```
-<div class="alert note">Due to web browser <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes">autoplay policy changes</a>, the <code>Stream.play</code> method needs to be triggered by the user"s gesture on Chrome 70 or later and on Safari. </div>
+<div class="alert note">Due to web browser <a href="https://developers.google.com/web/updates/2017/09/autoplay-policy-changes">autoplay policy changes</a>, the <code>Stream.play</code> method needs to be triggered by the user's gesture on Chrome 70 or later and on Safari. </div>
 3. When the remote stream is removed (for example, when a remote user calls `Stream.unpublish`), stop the stream playback and remove its view.
 
    ```javascript

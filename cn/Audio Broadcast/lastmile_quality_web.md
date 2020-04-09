@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Web
-updatedAt: Tue Dec 10 2019 04:21:41 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 06:31:36 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述

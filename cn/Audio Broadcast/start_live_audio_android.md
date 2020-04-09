@@ -59,10 +59,13 @@ updatedAt: Wed Mar 04 2020 06:52:15 GMT+0800 (CST)
 ...
 dependencies {
     ...
-    // 其中 3.0.0 是最新的 Agora 语音 SDK 的版本号。你也可以填写其他版本
-    implementation 'io.agora.rtc:voice-sdk:3.0.0'
+    // x.y.z 请填写具体版本好，如：3.0.0
+    // 可通过 SDK 发版说明取得最新版本号
+    implementation 'io.agora.rtc:voice-sdk:x.y.z'
 }
 ```
+
+<div class="alert info">请点击查看 <a href = "https://docs.agora.io/cn/Voice/release_android_audio?platform=Android">发版说明</a>获取最新版本号。</div>
 
 **方法二：手动复制 SDK 文件**
 

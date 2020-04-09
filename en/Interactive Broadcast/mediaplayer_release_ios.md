@@ -3,7 +3,7 @@
 title: Release Notes
 description: draft 
 platform: iOS
-updatedAt: Sun Mar 29 2020 09:02:21 GMT+0800 (CST)
+updatedAt: Tue Apr 07 2020 09:29:39 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.
@@ -16,7 +16,7 @@ To enrich the live broadcast playability and improve the real-time interactive e
 - Local playback: Play local or online media resources.
 - Online education: The teacher shares a currently playing video with the students during an online class.
 - Live sports: The broadcaster shares the live sports with the audience during his/her live broadcast.
-- Pseudo live broadcast: Share or publish the video recorded by the broadcaster in advanced to the audience.
+- Pseudo live broadcast: Share or publish the video recorded by the broadcaster in advance to the audience.
 
 ## v1.1.0
 

@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Sun Mar 29 2020 12:37:57 GMT+0800 (CST)
+updatedAt: Tue Apr 07 2020 06:00:31 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -20,7 +20,7 @@ The MediaPlayer Kit is a powerful player that supports playing local and online 
 
 ### Prerequisites
 
-- Microsoft Visual Studio 2017 or later
+- Microsoft Visual Studio 2015 or later
 - A Windows device running Windows 7 or later
 
 > Open the specified ports in [Firewall Requirements](https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms) if your network has a firewall.
@@ -45,15 +45,15 @@ Build a Windows project from scratch:
 
 1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
 
-2. Copy the **AgoraMediaPlayer** to the project folder.
+2. Copy the **sdk** to the project folder.
 
 #### Configure the project properties
 
 Right-click the project name in the **Solution Explorer** window, click **Properties** to configure the following project properties, and click **OK**.
 
-- Go to the **VC++ > General > Additional Include Directories** menu, click **Edit**, and input **./AgoraMediaPlayer/include** in the pop-up window.
-- Go to the **VC++ > General > Additional Library Directories** menu, click **Edit**, and input **./AgoraMediaPlayer/lib** in the pop-up window.
-- Go to the **Linker > Input > Additional Dependencies** menu, click **Edit**, and input **AgoraMediaPlayer/lib** and **shell32.lib** in the pop-up window.
+- Go to the **VC++ > General > Additional Include Directories** menu, click **Edit**, and input **./sdk/include** in the pop-up window.
+- Go to the **VC++ > General > Additional Library Directories** menu, click **Edit**, and input **./sdk/lib** in the pop-up window.
+- Go to the **Linker > Input > Additional Dependencies** menu, click **Edit**, and input **AgoraMediaPlayer.lib** and **shell32.lib** in the pop-up window.
 
 ### Integrate the Native SDK
 
