@@ -58,10 +58,13 @@ Agora 在 GitHub 上提供一个开源的视频直播示例项目 [OpenLive-Andr
 ...
 dependencies {
     ...
-    // 其中 3.0.0 是最新的 Agora 视频 SDK 的版本号。你也可以填写其他版本
-    implementation 'io.agora.rtc:full-sdk:2.9.4'
+    // x.y.z 请填写具体版本号，如 3.0.0
+    // 可通过 SDK 发版说明获取最新版本号 
+    implementation 'io.agora.rtc:full-sdk:x.y.z'
 }
 ```
+
+<div class="alert info">请点击查看 <a href = "https://docs.agora.io/cn/Voice/release_android_video?platform=Android">发版说明</a>获取最新版本号。</div>
 
 **方法二：手动复制 SDK 文件**
 
