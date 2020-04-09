@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Android
-updatedAt: Thu Apr 09 2020 07:03:37 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 07:06:19 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for Android.
@@ -77,6 +77,8 @@ dependencies {
 | **armeabi-v7a** folder      | **/app/src/main/jniLibs/**     | 
 | **x86** folder      | **/app/src/main/jniLibs/**     | 
 | **x86_64** folder      | **/app/src/main/jniLibs/**     | 
+
+<div class="alert note">If your project does not use the encryption function, we recommend deleting the <code>libagora-crypto.so</code> file in the SDK package.</div>
 
 ### Add project permissions
 
@@ -212,6 +214,7 @@ import io.agora.rtc.RtcEngine;
 Call the `checkSelfPermission` method to access the microphone of the Android device when launching the activity.
 
 ```java
+// Java
 private static final int PERMISSION_REQ_ID_RECORD_AUDIO = 22;
   
 // Check the microphone access when running the app.
@@ -220,7 +223,7 @@ protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_voice_chat_view);
 
-    // Initialize RtcEngine after getting the permission.
+    // Initialize RtcEngine and join a channel after getting the permission.
     if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO)) {
         initAgoraEngineAndJoinChannel();
     }
@@ -246,6 +249,38 @@ public boolean checkSelfPermission(String permission, int requestCode) {
 }
 ```
 
+```kotlin
+// Kotlin
+// Check the microphone access when running the app.
+override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(savedInstanceState)
+  setContentView(R.layout.activity_voice_chat_view)
+  
+  // Initialize RtcEngine and join a channel after getting the permission.
+  if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO) && checkSelfPermission(Manifest.permission.CAMERA, PERMISSION_REQ_ID_CAMERA)) {
+    initAgoraEngineAndJoinChannel()
+  }
+}
+
+private fun initAgoraEngineAndJoinChannel() {
+  initializeAgoraEngine()
+  joinChannel()
+}
+
+private fun checkSelfPermission(permission. String, requestCode: Int): Boolean {
+  Log.i(LOG_TAG, "checkSelfPermission $permission $reuqestCode")
+  if (ContextCompat.checkSelfPermission(this, 
+          permission) != PackageManager.PERMISSION_GRANTED) {
+     
+    ActivityCompat.requestPermission(this
+            arrayOf(permission),
+            requestCode)
+    return false
+  }
+  return true
+}
+```
+
 ### 4. Initialize RtcEngine
 
 Create and initialize the RtcEngine object before calling any other Agora APIs.
@@ -261,6 +296,7 @@ Call the `create` method and pass in the App ID to initialize the RtcEngine obje
 You can also listen for callback events, such as when the local user joins the channel, and when the first video frame of a remote user is decoded. Do not implement UI operations in these callbacks.
 
 ```java
+// Java
 private RtcEngine mRtcEngine;
 private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {  
 
@@ -277,7 +313,7 @@ private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandl
     }
 
     // Listen for the onUserMuterAudio callback.
-		// This callback occurs when a remote user stops sending the audio stream.
+    // This callback occurs when a remote user stops sending the audio stream.
     @Override
     public void onUserMuteAudio(final int uid, final boolean muted) {
         runOnUiThread(new Runnable() {
@@ -289,7 +325,6 @@ private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandl
     }
 };
     
-...
 // Call the create method to initialize RtcEngine.
 private void initializeAgoraEngine() {
     try {
@@ -300,6 +335,38 @@ private void initializeAgoraEngine() {
 
         throw new RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e));
     }
+}
+```
+
+```kotlin
+// Kotlin
+private var mRtcEngine: RtcEngine? = null
+private val mRtcEventHandler = object : IRtcEngineEventHandler() {
+  
+  // Listen for the onUserOffline callback.
+  // This callback occurs when the remote user leaves the channel or drops offline.
+  override fun onUserOffline(uid: Int, reason: Int) {
+    runOnUiThread { onRemoteUserLeft() }
+  }
+  
+  // Listen for the onUserMuterAudio callback.
+  // This callback occurs when a remote user stops sending the audio stream.
+  override fun onUserMuteAudio(uid: Int, muted: Boolean) {
+    runOnUiThread { onRemoteUserVoiceMuted(uid, muted)}
+  }
+}
+
+...
+
+// Call the create method to initialize RtcEngine.
+private fun initializeAgoraEngine() {
+  try {
+    mRtcEngine = RtcEngine.create(baseContext, getString(R.string.agora_app_id), mRtcEventHandler)
+  } catch (e: Exception) {
+    Log.e(LOG_TAG, Log.getStackTraceString(e))
+    
+    throw RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e))
+  }
 }
 ```
 
@@ -321,13 +388,30 @@ After initializing the RtcEngine object and setting the local video view (for a 
 For more details on the parameter settings, see [`joinChannel`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c).
 
 ```java
+// Java
 private void joinChannel() {
     String accessToken = getString(R.string.agora_access_token);
     if (TextUtils.equals(accessToken, "") || TextUtils.equals(accessToken, "#YOUR ACCESS TOKEN#")) {
         accessToken = null; // default, no token
     }
 
-    mRtcEngine.joinChannel(accessToken, "voiceDemoChannel1", "Extra Optional Data", 0); // The uid is not specified. The SDK will assign one automatically.
+    // Call the joinChannel method to join a channel.
+    // The uid is not specified. The SDK will assign one automatically.
+    mRtcEngine.joinChannel(accessToken, "voiceDemoChannel1", "Extra Optional Data", 0);
+}
+```
+
+```kotlin
+// Kotlin
+private fun joinChannel() {
+  var token: String? = getString(R.string.agora_access_token)
+  if (token!!.isEmpty()) {
+    token = null
+  }
+	
+  // Call the joinChannel method to join a channel.
+  // The uid is not specified. The SDK will assign one automatically.
+  mRtcEngine!!.joinChannel(token, "demoChannel1", "Extra Optional Data", 0)
 }
 ```
 
@@ -336,8 +420,16 @@ private void joinChannel() {
 Call the `leaveChannel` method to leave the current call according to your scenario, for example, when the call ends, when you need to close the app, or when your app runs in the background.
 
 ```java
+// Java
 private void leaveChannel() {
     mRtcEngine.leaveChannel();
+}
+```
+
+```kotlin
+// Kotlin
+private fun leaveChannel() {
+  mRtcEngine!!.leaveChannel()
 }
 ```
 

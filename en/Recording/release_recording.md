@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Mon Mar 16 2020 01:45:23 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 07:37:45 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview

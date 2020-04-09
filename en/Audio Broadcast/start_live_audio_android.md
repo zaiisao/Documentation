@@ -80,6 +80,8 @@ dependencies {
 | **x86** folder      | **/app/src/main/jniLibs/**     | 
 | **x86_64** folder      | **/app/src/main/jniLibs/**     | 
 
+<div class="alert note">If your project does not use the encryption function, we recommend deleting the <code>libagora-crypto.so</code> file in the SDK package.</div>
+
 ### Add project permissions
 
 Add the following permissions in the **/app/src/main/AndroidManifest.xml** file for device access according to your needs:

@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Web
-updatedAt: Thu Apr 09 2020 06:36:41 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 07:58:43 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
@@ -182,7 +182,7 @@ You need to work with two types of objects when using the Agora Web SDK:
 
 The following figure shows the API call sequence of a basic one-to-one video call. Note that these methods apply to different objects. 
 
-![img](https://web-cdn.agora.io/docs-files/1565082049521)
+![](https://web-cdn.agora.io/docs-files/1586418630067)
 
 > We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Video/API%20Reference/web/index.html).
 

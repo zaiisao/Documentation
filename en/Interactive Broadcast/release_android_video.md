@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Apr 02 2020 05:47:36 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 08:37:31 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -80,7 +80,7 @@ Adds [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Interactive%20B
 
 To enrich the playability of a live broadcast, Agora releases the Mediaplayer Kit plug-in, which supports the broadcaster playing local or online media resources and sharing them with all users in the channel during a live broadcast. See [Mediaplayer Kit release notes](https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_release_android?platform=Android) for details.
 
-**Improvement**
+**Improvements**
 
 #### 1. Audio profiles
 

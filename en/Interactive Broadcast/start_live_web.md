@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Web
-updatedAt: Thu Apr 09 2020 06:45:10 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 07:58:46 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
@@ -174,7 +174,7 @@ You need to work with two types of objects when using the Agora Web SDK:
 
 The following figure shows the API call sequence of a basic broadcast. Note that these methods apply to different objects. 
 
-![](https://web-cdn.agora.io/docs-files/1568095116563)
+![](https://web-cdn.agora.io/docs-files/1586418680924)
 
 > We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/index.html).
 
