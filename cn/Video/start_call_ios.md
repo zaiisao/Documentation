@@ -62,6 +62,7 @@ end
 ```
 
 <div class="alert note">若需使用媒体流加密功能，将  <tt>pod 'AgoraRtcEngine_iOS'</tt> 替换为 <tt>pod 'AgoraRtcEngine_iOS_Crypto'</tt>。添加加密库后 app 体积会增大。</div>
+
 4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
 5. 运行 `pod install` 命令安装 Agora SDK。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 **xcworkspace** 文件。
 6. 打开新生成的 **xcworkspace** 文件。
