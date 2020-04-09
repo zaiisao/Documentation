@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Android
-updatedAt: Thu Apr 09 2020 07:06:19 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 09:59:49 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for Android.
@@ -257,7 +257,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
   setContentView(R.layout.activity_voice_chat_view)
   
   // Initialize RtcEngine and join a channel after getting the permission.
-  if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO) && checkSelfPermission(Manifest.permission.CAMERA, PERMISSION_REQ_ID_CAMERA)) {
+  if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO) ) {
     initAgoraEngineAndJoinChannel()
   }
 }

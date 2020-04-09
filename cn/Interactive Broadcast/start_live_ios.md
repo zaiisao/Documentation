@@ -108,7 +108,7 @@ end
 
   <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
-<div class="alert note"><li>自 3.0.0 版本起，库名由 <b>AgoraRtcEngineKit.framework</b> 改为 <b>AgoraRtcKit.framework</b>。如果你将旧版本 SDK 升级至 3.0.0 版本，请按以下步骤重新集成：<ul><ul><li>打开 Xcode，在项目导航栏中移除 <b>AgoraRtcEngineKit.framework</b>。<li>进入 <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b> 菜单，点击 <b>-</b> 移除 <b>AgoraRtcEngineKit.framework</b> 文件。<li>如果你集成的是静态库，在上述菜单中点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件。<br>如果你集成的是动态库，进入 <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> 菜单，点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件，再点击 <b>Add Other…</b>，找到本地文件打开，并将文件状态改为 <b>Embed & Sign</b>。</li></ul></ul><li>若需使用媒体流加密功能，需添加 <b>AgoraAgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></br></div>
+<div class="alert note"><li>自 3.0.0 版本起，库名由 <b>AgoraRtcEngineKit.framework</b> 改为 <b>AgoraRtcKit.framework</b>。如果你将旧版本 SDK 升级至 3.0.0 版本，请按以下步骤重新集成：<ul><ul><li>打开 Xcode，在项目导航栏中移除 <b>AgoraRtcEngineKit.framework</b>。<li>进入 <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b> 菜单，点击 <b>-</b> 移除 <b>AgoraRtcEngineKit.framework</b> 文件。<li>如果你集成的是静态库，在上述菜单中点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件。<br>如果你集成的是动态库，进入 <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> 菜单，点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件，再点击 <b>Add Other…</b>，找到本地文件打开，并将文件状态改为 <b>Embed & Sign</b>。</li></ul></ul><li>若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></br></div>
 
  **静态库添加前**：
  
