@@ -59,7 +59,7 @@ updatedAt: Wed Mar 04 2020 06:52:15 GMT+0800 (CST)
 ...
 dependencies {
     ...
-    // x.y.z 请填写具体版本好，如：3.0.0
+    // x.y.z 请填写具体版本号，如：3.0.0
     // 可通过 SDK 发版说明取得最新版本号
     implementation 'io.agora.rtc:voice-sdk:x.y.z'
 }
