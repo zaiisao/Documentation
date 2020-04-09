@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Android
-updatedAt: Thu Apr 09 2020 07:27:45 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 10:01:55 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 音频 SDK 快速实现语音通话。
@@ -258,7 +258,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
   setContentView(R.layout.activity_voice_chat_view)
   
   // 获取权限后，初始化 RtcEngine，并加入频道。
-  if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO) && checkSelfPermission(Manifest.permission.CAMERA, PERMISSION_REQ_ID_CAMERA)) {
+  if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO)) {
     initAgoraEngineAndJoinChannel()
   }
 }
