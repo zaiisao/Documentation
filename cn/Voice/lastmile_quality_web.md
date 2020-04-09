@@ -3,7 +3,7 @@
 title: 通话前检测网络质量
 description: 通话前的网络质量检测。
 platform: Web
-updatedAt: Thu Apr 09 2020 06:31:36 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 09:32:19 GMT+0800 (CST)
 ---
 # 通话前检测网络质量
 ## 功能描述
@@ -17,8 +17,14 @@ updatedAt: Thu Apr 09 2020 06:31:36 GMT+0800 (CST)
 开始检测网络质量前，请确保你已在项目中实现了基本的音视频通信或直播功能。详见[开始音视频通话](../../cn/Voice/start_call_web.md)或[开始互动直播](../../cn/Voice/start_live_web.md)。
 
 在正式加入频道前，你可以在本地创建两个 Client，然后创建两路流，进入一个测试用的频道。其中一路流用来测上行网络的连接状况，另一路测下行网络的连接状况。
-- 调用 `Stream.publish` 方法发布一路流后，你可以调用 `getStats` 方法获取上行网络连接数据 `LocalStreamStats`。
-- 调用 `Stream.subscribe` 成功订阅第二路流后，你也可以调用 `getStats` 方法获取下行网络连接数据 `RemoteStreamStats`。
+- 调用 `Stream.publish` 方法发布一路流后，你可以调用 `getStats` 方法获取上行网络连接数据 `LocalStreamStats`。你可以通过 `LocalStreamStats` 中 `accessDelay` 的值大致判断上行网络的质量：
+	- [0,100) 上行网络质量好
+	- [100,200) 上行网络质量较差
+	- ≧ 200 上行网络质量很差
+- 调用 `Stream.subscribe` 成功订阅第二路流后，你也可以调用 `getStats` 方法获取下行网络连接数据 `RemoteStreamStats`。你可以通过 `RemoteStreamStats` 中 `accessDelay` 的值大致判断下行网络的质量：
+	- [0,200) 下行网络质量好
+	- [200,400) 下行网络质量较差
+	- ≧ 400 下行网络质量很差
 
 ### API 调用时序
 

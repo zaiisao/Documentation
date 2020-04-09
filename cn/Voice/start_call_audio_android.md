@@ -63,7 +63,7 @@ dependencies {
 }
 ```
 
-<div class="alert note">如果你的项目无需使用加密功能，建议删除 SDK 包内的  <code>libagora-crypto.so</code> 文件。</div>
+<div class="alert info">请点击查看<a href = "https://docs.agora.io/cn/Video/release_android_video?platform=Android">发版说明</a>获取最新版本号。</div>
 
 **方法二：手动复制 SDK 文件**
 
@@ -78,7 +78,7 @@ dependencies {
 | **x86** 文件夹                | **/app/src/main/jniLibs/**           | 
 | **x86_64** 文件夹             | **/app/src/main/jniLibs/**           | 
 
-<div class="alert info">请点击查看<a href = "https://docs.agora.io/cn/Video/release_android_video?platform=Android">发版说明</a>获取最新版本号。</div>
+<div class="alert note">如果你的项目无需使用加密功能，建议删除 SDK 包内的  <code>libagora-crypto.so</code> 文件。</div>
 
 ### 添加项目权限
 
