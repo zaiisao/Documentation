@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Web
-updatedAt: Thu Apr 09 2020 07:02:48 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 07:59:11 GMT+0800 (CST)
 ---
 # 实现音频直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音频互动直播。
@@ -177,7 +177,7 @@ updatedAt: Thu Apr 09 2020 07:02:48 GMT+0800 (CST)
 
 下图展示了基础互动直播的 API 调用。注意图中的方法是对不同的对象调用的。
 
-![](https://web-cdn.agora.io/docs-files/1568088174981)
+![](https://web-cdn.agora.io/docs-files/1586418473081)
 
 > 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/index.html)。
 

@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Android
-updatedAt: Thu Apr 09 2020 03:17:55 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 07:27:45 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 音频 SDK 快速实现语音通话。
@@ -63,7 +63,7 @@ dependencies {
 }
 ```
 
-<div class="alert info">请点击查看 <a href = "https://docs.agora.io/cn/Voice/release_android_audio?platform=Android">发版说明</a>获取最新版本号。</div>
+<div class="alert note">如果你的项目无需使用加密功能，建议删除 SDK 包内的  <code>libagora-crypto.so</code> 文件。</div>
 
 **方法二：手动复制 SDK 文件**
 
@@ -77,6 +77,8 @@ dependencies {
 | **armeabi-v7a** 文件夹        | **/app/src/main/jniLibs/**           | 
 | **x86** 文件夹                | **/app/src/main/jniLibs/**           | 
 | **x86_64** 文件夹             | **/app/src/main/jniLibs/**           | 
+
+<div class="alert info">请点击查看<a href = "https://docs.agora.io/cn/Video/release_android_video?platform=Android">发版说明</a>获取最新版本号。</div>
 
 ### 添加项目权限
 
@@ -250,7 +252,7 @@ public boolean checkSelfPermission(String permission, int requestCode) {
 
 ```kotlin
 // Kotlin
-// app 运行是确认麦克风的使用权限。
+// app 运行时确认麦克风的使用权限。
 override fun onCreate(savedInstanceState: Bundle?) {
   super.onCreate(savedInstanceState)
   setContentView(R.layout.activity_voice_chat_view)

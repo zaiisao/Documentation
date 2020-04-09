@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Thu Apr 09 2020 07:06:46 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 07:59:25 GMT+0800 (CST)
 ---
 # 实现语音通话
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
@@ -172,7 +172,7 @@ updatedAt: Thu Apr 09 2020 07:06:46 GMT+0800 (CST)
 
 下图展示了基础的一对一音频通话的 API 调用。注意图中的方法是对不同的对象调用的。
 
-![](https://web-cdn.agora.io/docs-files/1568094608983)
+![](https://web-cdn.agora.io/docs-files/1586418164752)
 
 > 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Voice/API%20Reference/web/index.html)。
 
