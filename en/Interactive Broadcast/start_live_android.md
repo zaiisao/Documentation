@@ -59,10 +59,13 @@ Add the following line in the **/app/build.gradle** file of your project:
 ...
 dependencies {
     ...
-    // 3.0.0 is the latest version of the Agora Video SDK. You can set it to other versions.
-    implementation 'io.agora.rtc:full-sdk:3.0.0'
+    // For x.y.z, please fill in a specific SDK version number, such as 3.0.0.
+    // Get the latest version number through the release notes.
+    implementation 'io.agora.rtc:full-sdk:x.y.z'
 }
 ```
+
+<div class="alert info">Click <a href = "https://docs.agora.io/en/Video/release_android_video?platform=Android">Release notes</a> to get the latest version number.</div>
 
 **Method 2: Manually copy the SDK files**
 
@@ -76,6 +79,9 @@ dependencies {
 | **armeabi-v7a** folder      | **/app/src/main/jniLibs/**     | 
 | **x86** folder      | **/app/src/main/jniLibs/**     | 
 | **x86_64** folder      | **/app/src/main/jniLibs/**     | 
+
+<div class="alert note">If your project does not use the encryption function, we recommend deleting the <code>libagora-crypto.so</code> file in the SDK package.</div>
+
 
 ### Add project permissions
 
