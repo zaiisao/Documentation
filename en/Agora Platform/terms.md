@@ -1,82 +1,172 @@
 
 ---
-title: Agora Key Terms
+title: Glossary
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 06:44:29 GMT+0800 (CST)
+updatedAt: Fri Apr 03 2020 10:19:02 GMT+0800 (CST)
 ---
-# Agora Key Terms
-Learn about the key terms of the Agora platform.
+# Glossary
+## A
+#### <a name="agora-analytics"></a>**Agora Analytics**
 
-## Basics
+Agora Analytics is a site for developers to track and analyze the usage and quality of calls.
 
-Things you need to know before using the Agora SDK.
+Agora Analytics provides an intuitive interface where developers can locate quality issues across several dimensions, including call quality, call duration, and other factors. Developers can also discover root causes and fix them to improve user experience.
 
-### RTC SDK
-We refer to all the Agora SDKs that enable real-time communication as the RTC SDK. You can use the RTC SDK to enable a  [Voice Call](https://docs.agora.io/en/Voice/product_voice), [Video Call](https://docs.agora.io/en/Video/product_video), [Audio Broadcast](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio), and [Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/product_live). We categorize the RTC SDKs by the supported platforms:
+Agora also provides RESTful APIs for developers to retrieve the statistics of their calls and use the data in their own applications.
 
-- Native SDK, including the Android, iOS, macOS, and Windows SDK.
-- Electron SDK, including the macOS and Windows SDK.
-- Unity SDK.
-- Web SDK.
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Agora%20Platform/aa_guide?platform=All%20Platforms">Agora Analytics Overview</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/aa_api?platform=All%20Platforms">Agora Analytics RESTful API</a></li></div>
 
-### Agora Console
+#### <a name="console"></a>**Agora Console**
 
-[Agora Console](https://dashboard.agora.io/) is a platform provided by Agora for you to create and manage your projects. After signing up at [Agora Console](https://dashboard.agora.io/), you can create projects, get [App IDs](#appid), view your usage statistics, analyze the quality of your calls, and check your bills.
+Agora Console is a site for developers to manage Agora projects and services.
 
-### <a name="appid"></a>App ID
+Agora Console provides an intuitive interface for developers to make payments, query, manage and accomplish other operations when using Agora services. After registering an Agora account, developers can use the following main features:
 
-App IDs are issued to app developers by Agora to identify the projects and organizations. After signing up at [Agora Console](https://dashboard.agora.io/), you can create multiple projects, and each project will have a unique App ID. See [Getting an App ID](../../en/Agora%20Platform/token.md).
+- Manage the account
+- Check and manage Agora projects and services
+- Get an App ID
+- Check call quality and usage
+- Check billing and make payments
+- Manage members and roles
 
-All communication sessions created across the Agora SD-RTN™ (Software Defined Real-time Network) with one App ID are isolated from all other sessions with different App IDs. Communication sessions with different App IDs are not connected or related. Statistics, management, and billing are separately associated based on each App ID. If an organization develops independently different apps by different teams, the apps should use different App IDs.  However, if the apps need to communicate with each other, a single App ID should be used.
+Agora also provides RESTful APIs, so developers can implement some of the above features directly, such as create a project and fetch usage numbers.
 
-### App Certificate
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Agora%20Platform/console_overview?platform=All%20Platforms">Agora Console Overview</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/dashboard_restful_communication?platform=All%20Platforms">Agora Console RESTful API</a></li></div>
 
-Agora provides an App Certificate for generating [dynamic keys](#key). You can enable the App Certificate in the [Agora Console](https://dashboard.agora.io). See [Getting an App Certificate](../../en/Agora%20Platform/token.md).
+#### <a name="agora-rtc-sdk"></a>**Agora RTC SDK**
 
-### <a name="key"></a>Dynamic Key
+Agora provides the Agora RTC (Real-time Communication) SDK for enabling real-time audio and video communications. By integrating the Agora RTC SDK, developers can add voice call, video call, audio broadcast, and video broadcast functions in their projects.
 
-Using your App ID is simple and sufficient for initial app development. However, a person can illicitly obtain your App ID to develop apps and join your sessions billed to you. To prevent this and to secure your apps, Agora recommends you use Dynamic Keys for large-scale production apps.
+Based on the different functions and platforms, the RTC SDK is also categorized as follows:
 
-Dynamic Keys are generated within the server-side code using an App Certificate. The App Certificate is not accessible in any client code, which makes using the Dynamic Key more secure than the static App ID.
+| SDK | Platform | Feature |
+| ---------------- | ---------------- | ---------------- |
+| Voice SDK      | <ul><li>Native: Android, iOS, macOS, and Windows</li><li>Third-party framework: Unity</li></ul>      | <ul><li>Voice call</li><li>Audio broadcast</li></ul>      |
+| Video SDK     | <ul><li>Native: Android, iOS, macOS, Web, and Windows</li><li>Third-party framework: Unity, Electron, React Native, and Flutter</li></ul>    | <ul><li>Voice call</li><li>Audio broadcast</li><li>Audio and video call</li><li>Audio and video broadcast</li></ul> |
 
-Dynamic Keys have expiry dates and contain client permissions, such as different role privileges (host and audience).
+RTC SDKs for Android, iOS, macOS, and Windows are known as RTC Native SDK. Agora maintains and releases repositories on GitHub for both [React Native](https://github.com/AgoraIO/React-Native-SDK) and [Flutter](https://github.com/AgoraIO/Flutter-SDK).
 
-Based on the SDK version, the Dynamic Key can be a Channel Key or a Token, see [Set up Authentication](../../en/Agora%20Platform/token.md) for details.
+In addition to basic real-time audio and video communication, RTC SDK also supports advanced features such as audio mixing, screen sharing, modifying raw data, using external audio and video data, and pushing streams to the CDN.
 
-### SD-RTN™
+Developers can use other Agora SDKs or services to implement the following:
 
-Agora’s audio and video transmissions rely on Agora's self-built SD-RTN™ (Software Defined Real-time Network), a virtual and UDP (User Datagram Protocol)-based network architecture designed specifically for real-time communications. By deploying software networking units, which work in synergy with one another, at different data centers across the Internet, Agora managed to add a virtual layer. To ensure stable transmission and low latency, particularly on weak networks, the SD-RTN™ automatically assigns an optimal path according to the following node conditions in real-time:
+- Enable real-time audio and video recording with the Agora On-premise Recording SDK or Cloud Recording service.
+- Enable playback of online media resource playback with the Agora MediaPlayer Kit plug-in.
+- Enable real-time messaging or signaling with the Agora RTM SDK.
 
-- Transmission status
-- Load conditions
-- Distance to the users
-- Response time
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms">Agora Voice Overview</a></li><li><a href="https://docs.agora.io/en/Video/product_video?platform=All%20Platforms">Agora Video Overview</a></li><li><a href="https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All%20Platforms">Agora Audio Broadcasting Overview</a></li><li><a href="https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms">Agora Video Broadcasting Overview</a></li>
+</div>
 
-## SDK core concepts
+#### <a name="agora-rtm-sdk"></a>**Agora RTM SDK**
 
-The Agora SDKs are a set of API methods (engine interfaces) and callbacks (events).
+You can use the Agora RTM (Real-time Messaging) SDK to implement real-time messaging scenarios that require low latency and high concurrency for a global audience.
 
-- Method: The client calls the API methods to implement the features provided by the Agora SDKs.
-- Callback: Feedback sent from the Agora SDKs to the client on a local or remote event that has happened. A remote event is a callback of a remote user in the channel and transmits through the UDP channel that is not 100% reliable.
+Agora RTM SDK supports the following platforms:
 
-For details on specific methods and callbacks, see the Agora API Reference:
-- [Android](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/index.html)
-- [iOS/macOS](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/index.html)
-- [Web](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/index.html)
-- [Windows](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/index.html)
+- Android
+- iOS
+- macOS
+- Linux Java
+- Linux C++
+- Windows C++
+- Web
 
+Agora RTM SDK is also known as RTM Native SDK for all of these platforms except for Web. 
 
-### Channel
+You can use the Agora RTM SDK along with the Agora RTC SDK or a third-party audio-and-video SDK. The Agora RTM SDK can find uses in live streaming, social, education, and IoT scenarios. Integrating the Agora RTM SDK enables the following functions:
 
-As an analogy, if we imagine an app being a building, a channel will be a room in the building. A channel is created when the first user joins the channel and is automatically destroyed when the last user leaves the channel. When entering a room in a building, you need a key to open the door. Similarly, when joining a channel, you need an [App ID](#appid) or [Dynamic Key](#key) for authentication.
+- Real-time commentaries
+- Whiteboard
+- Call invitation
+- Privilege management
+- Subscription
+- Remote control.
 
-### Channel profile
+<div class="alert info">References: <li><a href="#agora-rtc-sdk">Agora RTC SDK</a></li><li><a href="#rtm-native-sdk">RTM Native SDK</a></li>
+</div>
+
+#### <a name="appid"></a>**App ID**
+
+App ID is a random string created within [Agora Console](https://console.agora.io/) and is the unique identifier of an app. 
+
+Agora uses App ID to identify each app and provides billing and other statistical data services based on it. After signing up within Agora Console, you can create multiple apps, each with a unique App ID. When initializing a client, you need to pass an App ID as an argument. Clients created by different App IDs cannot communicate with each other. 
+
+<div class="alert warning">For situations requiring high security, such as in a production environment, you must use a token for user authentication; otherwise, your environment is open to anyone who has your App ID.</div>
+
+<div class="alert info">References: <li><a href="#console">Agora Console</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/token#get-an-app-id">Get an App ID</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/token#enable-the-app-certificate">Enable the App Certificate</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token">Get a temporary token</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/token#get-a-token">Get a token</a></li>
+</div>
+
+#### <a name="appcertificate"></a>**App Certificate**
+
+An App Certificate is a randomly-generated string. It enables token authentication and is one of the required arguments for generating a token. 
+
+Choose either of the following methods to enable an App Certificate: 
+
+- If you choose the <b>App ID + App Certificate + Token</b> schema when creating a new project within [Agora Console](https://console.agora.io/), then your App Certificate is automatically enabled and you must use token authentication for your app. 
+- If you choose the <b>App ID</b> schema when creating a new project within [Agora Console](https://console.agora.io/) and wish to use the token schema at a later point, find your project on the project management page and then enable its App Certificate. See [Enable App Certificate](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#enable-the-app-certificate).
+
+<div class="alert warning">Please keep your App Certificate safe. Store it on your business server, not on the client. If it is stolen, we cannot guarantee the security of your app.</div>
+
+<div class="alert info">References: <li><a href="#console">Agora Console</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/token#get-an-app-id">Get an App ID</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/token#enable-the-app-certificate">Enable the App Certificate</a></li><li><a href="#token">Token</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token">Get a temporary token</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/token#get-a-token">Get a token</a></li>
+</div>
+
+#### <a name="audience"></a>**audience**
+
+In a live-broadcast channel, an audience is a group of users who can only subscribe to streams. The audience cannot publish streams. 
+
+#### <a name="becoming-audience"></a>**audience (becoming)**
+
+Becoming an audience describes a scenario within a live-broadcast channel (the channel profile is live broadcast) when a host switches the user role and becomes an audience.
+
+This former host can no longer publish audio and video streams, and all users in the channel can no longer hear and see this former host.
+
+<div class="alert info">Reference:
+<li><a href="#channel_prpofile">channel profile</a></li>
+<li><a href="#audience">audience</a></li>
+<li><a href="#host">host</a></li>
+	<li><a href="#becoming-host">host (becoming)</a></li>
+<li><a href="#co-hosting">co-hosting</a></li>
+</div>
+
+#### <a name="audio-mixing"></a>**audio mixing**
+
+Audio mixing is the process that developers mix multiple audio streams into only one audio stream. Common audio mixing scenarios are as follows:
+
+- During real-time communication, when a user simultaneously speaks and plays a music file in a channel, after audio mixing, all users in the channel will hear the user's mixed voice.
+- In a group call, any voice heard by the local user is the mixed audio stream of all remote users.
+- When use composite recording mode to record the audio or video, the recorded file contains all users' audio streams after mixing.
+
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/audio_effect_mixing_android?platform=Android">Audio Effects/Mixing</a></li><li><a href="https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=All%20Platforms">Composite Recording</a></li></div>
+
+## C
+#### <a name="cdn-streaming"></a>**CDN live streaming**
+
+The process of publishing streams into the CDN (Content Delivery Network) is called CDN live streaming, where users can view the live broadcast through a web browser.
+
+#### <a name="channel"></a>**channel**
+
+A channel is created by a developer calling the methods provided by Agora for transmitting real-time data.
+
+Agora uses different channels to transmit different types of data. The RTC channel transmits audio or video data, while the RTM channel transmits messaging or signaling data. RTC channels and RTM channels are independent of each other.
+
+Additional components provided by Agora, such as On-premise Recording and Cloud Recording, can join the RTC channel and provide real-time recording, transmission acceleration, media playback, and content moderation.  
+
+Agora identifies channels by channel name. Users with the same channel name join the same channel and interact with each other. A channel no longer exists when the last user leaves the channel.
+
+To ensure communication security, users should provide a token for authentication when joining a channel. When the token expires, the user can no longer access Agora services. 
+
+<div class="alert info">Reference:
+<li><a href="https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms">Set up authentication</a></li>
+<li><a href="#agora-rtc-sdk">Agora RTC SDK</a></li>
+<li><a href="#agora-rtm-sdk">Agora RTM SDK</a></li>	
+</div>
+
+#### <a name="channel-profile"></a>**channel profile**
 
 The SDK applies different optimization methods according to the channel profile. Agora supports the following channel  profiles:
 
-
-| Channel Profile | Description | 
+| Channel profile | Description | 
 | ---------------- | ---------------- | 
 | Communication     | One-on-one or group calls, where all users in the channel can talk freely.    | 
 | Live Broadcast     | In a live broadcast channel, users have two client roles: [Host](#host) and [audience](#audience). The host sends and receives audio/video, and the audience receives audio/video with the sending function disabled.   | 
@@ -84,67 +174,212 @@ The SDK applies different optimization methods according to the channel profile.
 
 <div class="alert note">The gaming profile applies to the Agora Gaming SDK only.</div>
 
+#### <a name="cloud-recording"></a>**Cloud Recording**
+Cloud Recording is a component provided by Agora for recording and saving voice and video calls and interactive broadcasts on a third-party cloud storage through RESTful APIs.
 
-### <a name="username"></a>User ID
+Developers can quickly and flexibly record one-to-one or one-to-many voice and video calls or interactive broadcasts through integration. Unlike Agora On-premise Recording, Agora Cloud Recording does not require a Linux server. Developers can use Cloud Recording for scenarios such as online classrooms, interactive broadcasts, customer service, and more.
 
-A user ID identifies a user in the channel. Each user in the same channel should have a unique user ID.
+Cloud Recording RESTful APIs are compatible with the Agora RTC SDK. Cloud Recording supports two recording modes: [individual](https://docs.agora.io/en/cloud-recording/cloud_recording_individual_mode) and [composite](https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode).
 
-### Stream
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording">Cloud Recording Overview</a></li></div>
 
-A stream is an object that contains audio/video data. Users in a channel can [publish](#pub) the local stream and [subscribe](#sub) to the remote streams from other users.
+#### <a name="co-hosting"></a>**co-hosting**
 
-### <a name ="pub"></a>Publish
+Co-hosting describes a scenario with more than one host. All hosts can interact with each other. The audience can hear and see these hosts.
 
-Publishing a stream describes the action of a user sending the local audio/video data to other users in the channel after joining a channel.
+There are two possible scenarios:
 
-In a live broadcast channel, only hosts can publish streams.
+Co-hosting in a channel. It can either be multiple hosts joining a channel, or an audience switching user role and becoming a co-host when another host is already present.
+Co-hosting across channels. The Agora RTC SDK supports relaying the media stream of a host in one channel to other channels. For details, see [Co-host across Channels](https://docs.agora.io/en/Interactive%20Broadcast/media_relay_android).
+For the maximum number of co-hosts possible in a channel, see [How many users can Agora RTC SDK support at the same time?](https://docs.agora.io/en/faqs/capacity) A channel with too many co-hosts may cause network latency and packet loss. Refer to [Video for 7+ Users](https://docs.agora.io/en/Interactive%20Broadcast/multi_user_video_android) to ensure communication quality.
 
-### <a name ="sub"></a>Subscribe
+<div class="alert info">Reference:
+<li><a href="#become-host">host (becoming)</a></li>
+<li><a href="#become-audience">audience (becoming)</a></li>
+<li><a href="#channel_prpofile">channel profile</a></li>
+<li><a href="#host">host</a></li>
+<li><a href="#audience">audience</a></li>
+</div>
 
-Subscribing to the streams describes the action of the user receiving the audio/video streams published (sent) by other users in the channel after joining a channel.
+#### <a name="composite-recording"></a>**composite recording mode**
 
-### <a name ="dual"></a>Dual-stream mode
+Composite recording mode generates a single mixed audio and video file for all UIDs in a channel. It is one of the recording modes for both On-premise Recording and Cloud Recording.
 
-Dual streams are a hybrid of a high-video stream and a low-video stream. The publisher can choose to enable the dual-stream mode to send both video streams at the same time.
+For example, if there are three UIDs sending audio and video in a channel, composite recording mode generates a single mixed audio and video file.
 
-High video and low video are relative concepts. A low-video stream consumes less bandwidth and is suitable for poor network conditions.
+> On-premise recording also enables developers to generate a separate audio and video file for all UIDs in a channel, instead of combining audio and video into a single file.
+> 
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode">Composite Recording</a> (Cloud Recording)</li><li><a href="https://docs.agora.io/en/Recording/recording_composite_mode">Composite Recording</a> (On-premise Recording)</li></div>
 
-| Stream Type | Description |
-| ---------------- | ---------------- | 
-| High-video     | High bitrate, and high-resolution video stream.      | 
-| Low-video     | Low bitrate, and low-resolution video stream.      | 
+#### <a name="custom-rendering"></a>**custom rendering**
 
+Custom rendering is the process where developers collect raw data from the SDK and process it according to specific needs.
 
-### Stream fallback
+When the default audio or video renderer cannot meet requirements, developers can use an external audio or video renderer to render raw data. Common custom rendering scenarios are as follows:
 
-The publisher/subscriber can enable stream fallback to send/receive the low-video stream or audio-only stream in poor network conditions. Stream fallback only works when the [dual-stream mode](#dual) is enabled.
+- When storing the raw data in other engine for rendering, developers need to use the custom rendering function.
+- When rendering animation, developers can use the custom rendering function.
+- To avoid any conflict between real-time communication and other processes that may be working in parallel, developers can use an external audio or video renderer to render raw data.
 
-## Live broadcast core concepts
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/custom_audio_android?platform=Android">Custom Audio Source and Renderer</a></li><li><a href="https://docs.agora.io/en/Interactive%20Broadcast/custom_video_android?platform=Android">Custom Video Source and Renderer</a></li></div>
 
-A live broadcast is an Internet broadcast of a live performance through an app, where the viewers are called the audience and the performer is called the host.
+## D
+#### <a name="dual-stream"></a>**dual-stream mode**
 
-Agora’s products allow you to implement the live broadcast feature on an app:
+In the dual-stream mode, the SDK transmits a high-quality and a low-quality video stream from the sender. The high-quality video stream has a higher resolution and bitrate, and the low-quality video stream has a lower resolution and bitrate.
 
-- To give a live broadcast, create a channel and join the channel as the host role.
-- To view a live broadcast, join the channel created by the host as the audience role.
+Subscribing to low-quality streams improves communication continuity because this reduces bandwidth consumption. Developers can choose to receive low-quality video streams when network condition are unreliable, or when multiple users publish streams.
 
-### <a name = "host"></a>Broadcaster/Host
+The SDK sets the default video profile of the low-quality video stream based on that of the high-quality video stream.
+
+When customizing the video profile of the low-quality video stream, the aspect ratio of the low-quality video stream must match that of the high-quality video stream.
+
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/multi_user_video_android?platform=Android">Video for 7+ Users</a></li>
+<li><a href="#fallback">Stream fallback</a></li>
+<li><a href="#high-stream">High-quality video stream</a></li>
+<li><a href="#low-stream">Low-quality video stream</a></li>
+</div>
+
+## H
+
+#### <a name="high-stream"></a>**high-quality video stream**
+
+In the dual-stream mode, the SDK transmits two video streams of differing quality at the same time. The high-quality video stream has a higher resolution and bitrate than the low-quality video stream. See [dual-stream mode](#dual-stream) for details.
+
+#### <a name="host"></a>**host**
 
 In a live broadcast channel, the broadcasters or hosts are users who can publish and subscribe to streams.
 
-### <a name = "audience"></a>Audience
+#### <a name="becoming-host"></a>**host (becoming)**
 
-In a live broadcast channel, an audience is a group of users who can only subscribe to streams. The audience cannot publish streams. 
+Becoming a host describes a scenario within a live-broadcast channel (the channel profile is live broadcast) when an audience switches the user role and becomes a host (broadcaster).
 
-### Co-host
+If there is already a host in the channel, the new host becomes a co-host. This new host or co-host can publish audio and video streams. All users in the channel hear and see this co-host.
 
-An audience can apply to become a host to interact directly with the existing hosts, namely co-hosting.
+<div class="alert info">Reference:
+<li><a href="#channel_prpofile">channel profile</a></li>
+<li><a href="#audience">audience</a></li>
+<li><a href="#becoming-audience">audience (becoming)</a></li>
+<li><a href="#host">host</a></li>
+<li><a href="#co-hosting">co-hosting</a></li>
+</div>
 
-### CDN live streaming
+## I
+#### <a name="individual-recording"></a>**individual recording mode**
+Individual recording mode records audio and video of each UID as separate files. It is one of the recording modes for both On-premise Recording and Cloud Recording.
 
-The process of publishing streams into the CDN (Content Delivery Network) is called CDN live streaming, where users can view the live broadcast through a web browser.
+For example, if there are three UIDs sending audio and video in a channel, individual recording mode generates three audio files and three video files.
 
-### Transcoding
+Developers can use Agora's Audio & Video File Merging script to merge the audio and video files of each UID. See [Merge Audio and Video Files](https://docs.agora.io/en/cloud-recording/cloud_recording_merge_files) (Cloud Recording) or [Use the Transcoding Script](https://docs.agora.io/en/Recording/recording_merge_files) (On-premise Recording) for details.
+
+ <div class="alert info">Reference:<li><a href="https://docs.agora.io/en/cloud-recording/cloud_recording_individual_mode">Individual Recording</a> (Cloud Recording)</li><li><a href="https://docs.agora.io/en/Recording/recording_individual_mode">Individual Recording</a> (On-premise Recording)</li></div>
+
+
+## L
+
+#### <a name="low-stream"></a>**low-quality video stream**
+
+In the dual-stream mode, the SDK transmits two video streams of differing quality at the same time. The low-quality video stream has a lower resolution and bitrate than the high-quality video stream. See [dual-stream mode](#dual-stream) for details.
+
+
+## O
+#### <a name="on-premise-recording"></a>**On-premise Recording**
+
+On-premise Recording is a component provided by Agora for recording and saving voice and video calls and interactive broadcasts on a Linux server.
+
+On-premise Recording enables developers to record, transfer and store audio and video data on a local server. For this reason, On-premise Recording is useful in high-security scenarios, such as surveillance and internal government or enterprise communications.
+
+The On-premise Recording SDK is compatible with the Agora RTC SDK. It supports two recording modes: [Individual](https://docs.agora.io/en/Recording/recording_individual_mode) and [composite](https://docs.agora.io/en/Recording/recording_composite_mode). Developers can record communications either directly from the [command line](https://docs.agora.io/en/Recording/recording_cmd_cpp?platform=Linux%20CPP)or by [calling APIs](https://docs.agora.io/en/Recording/recording_api_cpp?platform=Linux). On-premise Recording offers additional advanced features such as adding [watermarks](https://docs.agora.io/en/Recording/recording_watermark_cpp) and [capturing screenshots](https://docs.agora.io/en/Recording/recording_screen_capture).
+
+<div class="alert info">Reference:<ul><li><a href="https://docs.agora.io/en/Recording/product_recording">On-premise Recording Overview</a></li></ul></div>
+
+## P
+#### <a name="publish"></a>**publish**
+
+Publishing is the action of sending the user's audio and/or video data to the channel. Usually, the published object is a media stream created by the audio data sampled from a microphone and/or the video data captured by a camera. Developers can also publish media streams from other sources, including an online music file and the user's screen.
+
+After publishing succeeds, the SDK continues sending media data to other users in the channel. By publishing one's stream and subscribing to others' streams, users have real-time voice or video calls with each other.
+
+<div class="alert info">Reference:
+	<li><a href="#channel">Channel</a></li>
+	<li><a href="#sub">Subscribe</a></li>
+</div>
+
+## R
+#### <a name="raw-data"></a>**raw data**
+Raw data, including raw audio data and raw video data, is the unprocessed data which developers can collect during real-time communication.
+
+- Raw data collected from a sender is the unprocessed data coming directly from the data source such as microphone or camera.
+- Raw data retrieved from a receiver is the data sent by remote users after decoding.
+
+Generally, the data format of raw audio is PCM, and the data formats of raw video are RGB and YUV420.
+
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/raw_data_audio_android?platform=Android">Raw Audio Data</a></li><li><a href="https://docs.agora.io/en/Interactive%20Broadcast/raw_data_video_android?platform=Android">Raw Video Data</a></li><li><a href="https://docs.agora.io/en/Recording/recording_raw_data?platform=Linux">Get the Raw Data</a></li></div>
+
+#### <a name="rtm-native-sdk"></a>**RTM Native SDK**
+
+Agora RTM SDK for the following platforms is also known as RTM Native SDK:
+
+- Android
+- iOS
+- macOS
+- Linux Java
+- Linux C++
+- Windows C++.
+
+<div class="alert info">Reference: <a href="#agora-rtm-sdk">Agora RTM SDK</a>
+</div>
+
+## S
+#### <a name="sd-rtn"></a>**SD-RTN™**
+
+SD-RTN™, or Software Defined Real-time Network, is a real-time transmission network built by Agora and is the only network infrastructure specifically designed for real-time communications in the world. 
+
+All audio and video services provided by the Agora SDK are deployed and transmitted through the Agora SD-RTN™. Agora deploys over 250 data centers worldwide that use intelligent dynamic routing algorithms to achieve millisecond latency and ensure high availability of Agora's service.
+
+#### <a name="stream"></a>**stream**
+
+A stream is an object that contains audio and/or video data. Users in a channel can [publish](#pub) the local stream and [subscribe](#sub) to the remote streams from other users.
+
+#### <a name="fallback"></a>**stream fallback**
+
+In scenarios where multiple users engage in real-time audio and video communication, user experience can be impaired if the network condition is too poor to guarantee both audio and video at the same time.
+
+Stream fallback minimizes the impact of poor network connections by ensuring that some form of communication continues between the sender and receiver. Audio and video streams change to audio-only, or from high-quality to low-quality video.
+
+If the network connection improves, the low-quality video stream or audio-only stream return to the original quality.
+
+<div class="alert info">Reference:<li><a href="#dual-stream">Dual-stream mode</a></li><li><a href="#high-stream">High-quality stream</a></li><li><a href="#low-stream">Low-quality stream</a></li><li><a href="https://docs.agora.io/en/Interactive%20Broadcast/fallback_android?platform=Android">Video stream fallback</a></li></div>
+
+#### <a name="subscribe"></a>**subscribe**
+
+Subscribing is the action of receiving media streams [published](#pub) to the channel. A user can receive other users' audio and/or video data by subscribing to their streams. A user can subscribe to one or more streams published by other users.
+
+Developers can either directly play the subscribed streams or process them, for example by taking screenshots, or recording the streams.
+
+<div class="alert info">Reference:
+	<li><a href="#channel">Channel</a></li>
+	<li><a href="#pub">Publish</a></li>
+</div>
+
+## T
+#### <a name="token"></a>**token**
+
+A token, also known as a dynamic key, is used in situations requiring high security, such as in a production environment. You need a token for authentication when joining an RTC channel or when logging into the Agora RTM system. 
+
+- For users of the Agora RTC SDK, Agora On-premise Recording SDK, or Agora Cloud Recording service, the Agora server uses a token to verify each user's App ID, privileges (for joining a channel and for publishing different types of streams), privilege expiration period, and token validity. 
+- For users of the Agora RTM SDK, the Agora RTM server uses a token to verify each user's App ID, user ID, and token validity. 
+
+In a production environment, an app user must generate a token on a business server and pass the token when joining an RTC channel or when logging in the Agora RTM system. If you are still testing your app or do not wish to take the trouble of setting up your own business server for generating tokens, have [Agora Console](https://console.agora.io/) generate a temporary token for you when creating your project. In this case, a temporary token suffices because it has the same function. 
+
+Each token has a privilege expiration period and a validity period. The privilege expiration period is when the user privilege expires; the validity period is when the token itself expires (24 hours by default). 
+
+Users of the Agora RTC SDK, Agora On-premise SDK, or Agora Cloud Recording service are kicked out of the channel immediately when their token expires. Users of the Agora RTM SDK are not immediately kicked out of the Agora RTM system but will not be able to log in the RTM system the next time their client connects to the system. Therefore, when notified that your privilege will soon expire or that the token validity has expired, generate a new token at your earliest convenience and save it for the next channel-join or login. 
+
+<div class="alert info">References: <li><a href="https://docs.agora.io/en/Agora%20Platform/token#get-an-app-id">Get an App ID</a></li><li><a href="https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token">Get a temporary token</a></li><li><a href="https://docs.agora.io/en/Interactive%20Broadcast/token_server_cpp?platform=CPP">Generate a token for Agora RTC SDK, On-premise Recording, or Cloud Recording</a></li><li><a href="https://docs.agora.io/en/Real-time-Messaging/rtm_token?platform=All%20Platforms">Generate a token for Agora RTM SDK</a></li>
+</div>
+
+#### <a name="transcoding"></a>**transcoding**
 
 Transcoding is used in CDN live streaming when multiple hosts are in the channel.
 
@@ -152,4 +387,25 @@ In CDN live streaming, the audio and video streams sent to the SD-RTN™ are tra
 
 Transcoding sets the audio/video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
 
-> Agora does not recommend transcoding in the case of a single host.
+<div class="alert note">Agora does not recommend transcoding in the case of a single host.</div>
+
+## U
+#### <a name="username"></a>**user ID**
+
+A user ID identifies a user in the channel. Each user in the same channel should have a unique user ID.
+
+## V
+#### <a name="layout"></a>**video layout**
+Video layout arranges the display of users when multiple users are mixed into one stream, such as in CDN live streaming or a composite recording. Video layout sets the relative size and position of each user on the canvas. It is sometimes referred to as **picture-in-picture** layout.
+
+In the following image, the background of the video is the canvas, and each user occupies a region on the canvas.
+
+![img](https://web-cdn.agora.io/docs-files/1577697787996)
+
+Developers may have to set video layout when using Cloud Recording, On-premise Recording, or pushing streams to CDN.
+
+- Recording: When using On-premise Recording or Cloud Recording to record in the composite recording mode, developers can choose from three predefined video layouts: floating, best fit, and vertical. Developers can also customize the video layout by setting the size and position of each user's region on the canvas.
+
+- Push Streams to CDN: When multiple hosts are in a CDN live streaming channel, transcoding combines the streams of all hosts into a single stream. Use `TranscodingUser` to set the video layout for each user.
+
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/cloud-recording/cloud_recording_layout">Set Video Layout</a>（Cloud Recording）</li><li><a href="https://docs.agora.io/en/Recording/recording_layout">Set Video Layout</a>（On-premise Recording）</li><li><a href="https://docs.agora.io/en/Audio%20Broadcast/cdn_streaming_apple">Push Streams to CDN</a></li></div>

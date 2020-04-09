@@ -3,7 +3,7 @@
 title: Manage Members & Roles
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 06:19:50 GMT+0800 (CST)
+updatedAt: Fri Apr 03 2020 11:50:31 GMT+0800 (CST)
 ---
 # Manage Members & Roles
 You can add members to your account and set these members as different roles with specified permissions.
@@ -24,6 +24,7 @@ Follow these steps to add a member to your account:
 
 ![](https://web-cdn.agora.io/docs-files/1566285558352)
 
+> - You can only use the email address of the member who has not registered an Agora account.
 > - See the [permissions](#permission) of different roles.
 >
 > - You can add up to 10 members.

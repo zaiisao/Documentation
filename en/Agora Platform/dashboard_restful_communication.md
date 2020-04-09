@@ -1,11 +1,11 @@
 
 ---
-title: Console RESTful API
+title: RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 01 2020 10:31:02 GMT+0800 (CST)
+updatedAt: Wed Apr 08 2020 08:56:10 GMT+0800 (CST)
 ---
-# Console RESTful API
+# RESTful API
 ## Authentication
 
 > Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Agora%20Platform/manage_member.md).
@@ -30,8 +30,8 @@ All requests should be sent to BaseUrl: **https://api.agora.io/dev**.
 | 200      | The request is successful.      |
 | 400      | The input is in the wrong format. |
 | 401      | Unauthorized (incorrect signature). |
-| 404      | Wrong API involed. |
-| 429      | Too many request. |
+| 404      | Wrong API involved. |
+| 429      | Too many requests. |
 | 500      | Internal error of the Agora RESTful API service. |
 
 ## Project API
@@ -487,7 +487,7 @@ The following chart shows how you can use Usage APIs.
 	"from_date"=2015-01-01&to_date=2015-03-21&projects=id1,id2
 	```
 
-   It is optional to specify projects. If it is not specified, the usage is queried on all projects of this account.
+<div class="alert note"><li>It is optional to specify projects. If it is not specified, the usage is queried on all projects of this account.<li>You can query usage data within one year. Agora recommends not including the current day in your query period, because the data is continueously changing on that day.</li></div>
 
 -  Response:
 
@@ -516,7 +516,8 @@ The following chart shows how you can use Usage APIs.
 
       If some of the specified projects do not exist, they will be omitted and no error will occur.
 
-> The *audio*, *sd*, *hd* and *hdp* parameters in this response are in minutes.
+<div class="alert note">The audio duration (audio), SD video duration (sd), HD video duration (hd) and HDP video duration (hdp) parameters in this response are in minutes.</div>
+	
 </details>
 
 <a name="UsageV3"></a>
@@ -541,7 +542,7 @@ The following chart shows how you can use Usage APIs.
 from_date=2020-01-01&to_date=2020-01-31&project_id=id1&business=default
  ```
 
-<div class="alert note">Ensure that you fill in a valid <tt>project_id</tt>, otherwise, you cannot fetch the usage information.</div>
+<div class="alert note"><li>Ensure that you fill in a valid <tt>project_id</tt>, otherwise, you cannot fetch the usage information.<li>You can query usage data within one year. Agora recommends not including the current day in your query period, because the data is continueously changing on that day.</li></div>
 
 -   Response:
 
@@ -820,8 +821,8 @@ This method checks if a specified user is in a specified channel, and if yes, th
 
 | Basic information | Description |
 | ---------------- | ---------------- |
-| 方法      | GET      |
-| 请求 URL  | BaseUrl/v1/channel/user/property/ |
+| Method      | GET      |
+| Request URL  | BaseUrl/v1/channel/user/property/ |
 
 **Request parameter**
 

@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Web
-updatedAt: Wed Apr 01 2020 09:24:28 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 06:47:22 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive audio broadcast functions in your app. 

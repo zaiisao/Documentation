@@ -29,7 +29,7 @@ In this section, we will create an Android project, integrate the Agora Voice SD
 
 ### Create an Android project
 
-Now, let's build a project from scratch. Skip to [Integrate the SDK](#integrate_sdk) if a project already exists.
+Skip to [Integrate the SDK](#integrate_sdk) if a project already exists.
 
 <details>
 	<summary><font color="#3ab7f8">Create an Android project</font></summary>
@@ -59,10 +59,13 @@ Add the following line in the **/app/build.gradle** file of your project:
 ...
 dependencies {
     ...
-    // 3.0.0 is the latest version of the Agora Voice SDK. You can set it to other versions.
-    implementation 'io.agora.rtc:voice-sdk:2.9.4'
+    // For x.y.z, please fill in a specific SDK version number, such as 3.0.0.
+    // Get the latest version number through the release notes.
+    implementation 'io.agora.rtc:voice-sdk:x.y.z'
 }
 ```
+
+<div class="alert info">Click <a href = "https://docs.agora.io/cn/Voice/release_android_audio?platform=Android">Release notes</a> to get the latest version number.</div>
 
 **Method 2: Manually copy the SDK files**
 

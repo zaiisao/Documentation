@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Android
-updatedAt: Thu Feb 27 2020 05:55:11 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 07:03:37 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for Android.
@@ -27,7 +27,7 @@ In this section, we will create an Android project, integrate the Agora Voice SD
 
 ### Create an Android project
 
-Now, let's build a project from scratch. Skip to [Integrate the SDK](#integrate_sdk) if a project already exists.
+Skip to [Integrate the SDK](#integrate_sdk) if a project already exists.
 
 <details>
 	<summary><font color="#3ab7f8">Create an Android project</font></summary>
