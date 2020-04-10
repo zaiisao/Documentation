@@ -34,15 +34,18 @@ Agora 在 GitHub 上提供一个开源的视频直播示例项目 [OpenLive-Andr
 	<summary><font color="#3ab7f8">创建 Android 项目</font></summary>
 
 1. 打开 <b>Android Studio</b>，点击 <b>Start a new Android Studio project</b>。
-2. 在 <b>Choose your project</b> 界面，选择 <b>Phone and Tablet</b> > <b>Empty Activity</b>，然后点击 <b>Next</b>。
-3. 在 <b>Configure your project</b> 界面，依次填入以下内容：
+2. 在 <b>Select a Project Template</b> 界面，选择 <b>Phone and Tablet</b> > <b>Empty Activity</b>，然后点击 <b>Next</b>。
+3. 在 <b>Configure Your Project</b> 界面，依次填入以下内容：
 	* <b>Name</b>：你的 Android 项目名称，如 HelloAgora
 	* <b>Package name</b>：你的项目包的名称，如 io.agora.helloagora
-	* <b>Project location</b>：项目的存储路径
+	* <b>Save location</b>：项目的存储路径
 	* <b>Language</b>：项目的编程语言，如 Java
 	* <b>Minimum API level</b>：项目的最低 API 等级
 
 然后点击 <b>Finish</b>。根据屏幕提示，安装可能需要的插件。
+	
+<div class="alert info">上述步骤使用 <b>Android Studio 3.6.2</b> 示例。你也可以直接参考 Android Studio 官网文档<a href="https://developer.android.com/training/basics/firstapp">创建首个应用</a>。</div>
+	
 </details>
 
 <a name="integrate_sdk"></a>
