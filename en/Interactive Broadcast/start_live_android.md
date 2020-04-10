@@ -35,16 +35,19 @@ Now, let's build a project from scratch. Skip to [Integrate the SDK](#integrate_
 	<summary><font color="#3ab7f8">Create an Android project</font></summary>
 	
 1. Open <b>Android Studio</b> and click <b>Start a new Android Studio project</b>. 
-2. On the <b>Choose your project</b> panel, choose <b>Phone and Tablet</b> > <b>Empty Activity</b>, and click <b>Next</b>. 
-3. On the <b>Configure your project</b> panel, fill in the following contents:
+2. On the <b>Select a Project Template</b> panel, choose <b>Phone and Tablet</b> > <b>Empty Activity</b>, and click <b>Next</b>. 
+3. On the <b>Configure Your Project</b> panel, fill in the following contents:
 
 	* <b>Name</b>: The name of your project, for example, HelloAgora
 	* <b>Package name</b>: The name of the project package, for example, io.agora.helloagora
-	* <b>Project location</b>: The path to save the project
+	* <b>Save location</b>: The path to save the project
 	* <b>Language</b>: The programming language of the project, for example, Java
 	* <b>Minimum API level</b>: The minimum API level of the project
 
 Click <b>Finish</b>. Follow the on-screen instructions, if any, to install the plug-ins. 
+
+<div class="alert info">The above steps take <b>Android Studio 3.6.2</b> as an example. To create a project, you can also refer to the official User Guide <a href="https://developer.android.com/training/basics/firstapp">Build your first app</a>.</div>
+	
 </details>
 	
 ### Integrate the SDK

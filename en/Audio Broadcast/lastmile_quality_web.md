@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: 
 platform: Web
-updatedAt: Thu Apr 09 2020 07:08:32 GMT+0800 (CST)
+updatedAt: Thu Apr 09 2020 09:33:12 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction
@@ -18,8 +18,14 @@ Before conducting the last-mile test, ensure that you have implemented the basic
 
 Before joining the channel, create two Client objects and two streams to join a test channel, where one stream tests the uplink network conditions, and the other tests the downlink.
 
-- After publishing the first stream with the `Stream.publish` method, call the `getStats` method to get `LocalStreamStats`, which reports the uplink network statistics.
-- After subscribing to the second stream with the `Stream.subscribe` method, call the `getStats` method to get `RemoteStreamStats`, which reports the downlink network statistics.
+- After publishing the first stream with the `Stream.publish` method, call the `getStats` method to get `LocalStreamStats`, which reports the uplink network statistics. Use the value of  `accessDelay` in `LocalStreamStats` to estimate the uplink network quality:
+	- [0,100): The uplink network quality is good.
+	- [100,200): The uplink network quality is poor.
+	- ≧ 200: The uplink network quality is bad.
+- After subscribing to the second stream with the `Stream.subscribe` method, call the `getStats` method to get `RemoteStreamStats`, which reports the downlink network statistics. Use the value of  `accessDelay` in `RemoteStreamStats` to estimate the downlink network quality:
+	- [0,200): The downlink network quality is good.
+	- [200,400): The downlink network quality is poor.
+	- ≧ 400: The downlink network quality is bad.
 
 
 ### API call sequence
