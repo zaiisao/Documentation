@@ -64,6 +64,8 @@ Agora 音频互动直播提供丰富的功能，你可以根据自己的场景�
 | 微信小程序 | 支持                                                         |
 | Web        | <li>Chrome 58+ <li>Chrome 49（仅 Windows XP）<li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |
 
+<div class="alert note">Web 平台的支持情况还与设备型号及系统版本等有关，详见 <a href="https://docs.agora.io/cn/faq/browser_support">Agora Web SDK 支持哪些浏览器？</a></div>
+
 ## Demo 体验
 
 ### 音频互动直播 - Agora Live

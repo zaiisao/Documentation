@@ -46,6 +46,8 @@ updatedAt: Thu Apr 02 2020 05:19:36 GMT+0800 (CST)
 | 微信小程序 | 支持                                                         |
 | Web        | <li>Chrome 58+ <li>Chrome 49（仅 Windows XP）<li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |
 
+<div class="alert note">Web 平台的支持情况还与设备型号及系统版本等有关，详见 <a href="https://docs.agora.io/cn/faq/browser_support">Agora Web SDK 支持哪些浏览器？</a></div>
+
 ## Demo 体验
 
 ### 视频通话应用 - Agora Video Call

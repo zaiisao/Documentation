@@ -3,7 +3,7 @@
 title: 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)
 description: 
 platform: Windows
-updatedAt: Tue Jan 15 2019 01:45:12 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 02:52:14 GMT+0800 (CST)
 ---
 # 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)
 本页包含 Agora SDK for Windows 从 v2.0.8 到 v2.3.2 升级后，用户需要注意的 API 用法变更。
@@ -39,8 +39,8 @@ updatedAt: Tue Jan 15 2019 01:45:12 GMT+0800 (CST)
 
 为满足场景中视频旋转的需要，提升自定义视频源画质，Agora SDK 在 v2.3.2 引入 [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e) 接口替换原 [`setVideoProfile`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac8b16d2a4e67bd75231a76e06d2d85eb) 接口，来设置视频编码属性。 新接口中的 [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e) 类对应一套视频参数，包含视频的分辨率、帧率、码率、最低编码码率以及视频方向。原接口 [`setVideoProfile`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac8b16d2a4e67bd75231a76e06d2d85eb)仍可使用，但不再推荐。更多文档请参考：
 
-- [设置视频属性](../../cn/Audio%20Broadcast/videoProfile_windows.md)
-- [视频采集旋转](../../cn/Audio%20Broadcast/rotation_guide_android.md)
+- [设置视频属性](../../cn/Audio%20Broadcast/video_profile_windows.md)
+- [视频采集旋转](../../cn/Audio%20Broadcast/video_rotation_windows.md)
 
 #### 3. 透明质量数据
 
