@@ -3,7 +3,7 @@
 title: Billing for Video Broadcasting
 description: 
 platform: All Platforms
-updatedAt: Thu Jan 02 2020 07:48:08 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 09:50:20 GMT+0800 (CST)
 ---
 # Billing for Video Broadcasting
 ## Overview
@@ -124,6 +124,7 @@ For example, let's say a user is in a channel for 30 minutes. This user subscrib
 | Audio                         | 0.99                             |
 | Video HD                      | 3.99                             |
 | Video HD+                     | 14.99                            |
+
 
 
 
