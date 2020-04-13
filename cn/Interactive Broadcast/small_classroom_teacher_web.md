@@ -35,7 +35,7 @@ updatedAt: Tue Mar 10 2020 06:28:56 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，将 RTC SDK 和 RTM SDK 集成到你的项目中。
+参考下图时序，将 [RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) 和 [RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk) 集成到你的项目中。
 
 ![](https://web-cdn.agora.io/docs-files/1581388838880)
 
