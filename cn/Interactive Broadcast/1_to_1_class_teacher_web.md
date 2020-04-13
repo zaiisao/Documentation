@@ -77,21 +77,21 @@ updatedAt: Fri Feb 14 2020 02:12:30 GMT+0800 (CST)
 
 <details>
 <summary>网络质量监测</summary>
-你可以通过使用 Native SDK 的 <code>on("network-quality")</code> 回调，实时监控通话中每个用户的网络上下行 last mile 网络质量。
+你可以通过使用 RTC SDK 的 <code>on("network-quality")</code> 回调，实时监控通话中每个用户的网络上下行 last mile 网络质量。
 更多质量透明相关方法，可参考如下文档：
 <li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/lastmile_quality_web?platform=Web">通话前网络质量探测</a></li>
 <li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/in-call_quality_web?platform=Web">通话中质量监测</a></li>
 </details>
 <details>
 <summary>关闭本地音视频</summary>
-你可以通过调用 Native SDK 的如下方法，实现相关功能：
+你可以通过调用 RTC SDK 的如下方法，实现相关功能：
 	<li>调用 <code>muteAudio</code> 或 <code>unmuteAudio</code>关闭或重新开启本地音频。</li>
 	<li>调用 <code>muteVideo</code> 或 <code>unmuteVideo</code> 关闭或重新开启本地视频。</li>
 </details>
  
 <details>
 <summary>关闭远端音视频</summary>
-你需要联合调用 RTM SDK 和 Native SDK 的方法，实现该功能：
+你需要联合调用 RTM SDK 和 RTC SDK 的方法，实现该功能：
 <ol>
 	<li>教师端调用 <code>sendMessageToPeer</code> 方法，给学生发送点对点消息，通知学生关闭音视频。</li>
 	<li>学生端调用对应的 <code>mute</code> 方法关闭本地的音视频。</li>

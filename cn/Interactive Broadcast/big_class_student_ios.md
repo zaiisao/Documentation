@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: iOS
-updatedAt: Mon Mar 02 2020 12:52:29 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 02:38:29 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 iOS 平台实现学生端相关功能。
@@ -29,7 +29,7 @@ updatedAt: Mon Mar 02 2020 12:52:29 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，搭配使用 Native SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
+参考下图时序，搭配使用 [RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) 和 [RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk) 在你的项目中实现基础的实时音视频和实时消息功能。
 
 ![](https://web-cdn.agora.io/docs-files/1581925319128)
 
@@ -70,20 +70,20 @@ updatedAt: Mon Mar 02 2020 12:52:29 GMT+0800 (CST)
 
 <details>
 <summary>网络质量监测</summary>
-你可以通过使用 Native SDK 的 <code>networkQuality</code> 回调，实时监控通话中每个用户的网络上下行 last mile 网络质量。
+你可以通过使用 RTC SDK 的 <code>networkQuality</code> 回调，实时监控通话中每个用户的网络上下行 last mile 网络质量。
 更多质量透明相关方法，可参考如下文档：
 <li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/lastmile_quality_apple?platform=iOS">通话前网络质量探测</a></li>
 <li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/in-call_quality_apple?platform=iOS">通话中质量监测</a></li>
 </details>
 <details>
 <summary>关闭本地音视频</summary>
-你可以通过调用 Native SDK 的如下方法，实现相关功能：
+你可以通过调用 RTC SDK 的如下方法，实现相关功能：
 <li>调用 <code>muteLocalAudioStream</code> 关闭本地音频发送。</li>
 <li>调用 <code>muteLocalVideoStream</code> 关闭本地视频发送。</li>
 </details>
 <details>
 <summary>人声检测</summary>
-对于 v2.9.1 及以上的 Native SDK，你还可以调用 <code>enableAudioVolumeInfication</code> 方法，并将参数 <code>report_vad</code> 设为 <code>true</code>，启用人声检测功能。
+对于 v2.9.1 及以上的 RTC Native SDK，你还可以调用 <code>enableAudioVolumeInfication</code> 方法，并将参数 <code>report_vad</code> 设为 <code>true</code>，启用人声检测功能。
 启用后，你会在 <code>reportAudioVolumeIndicationOfSpeakers</code> 回调报告的 <code>AgoraRtcAudioVolumeInfo</code> 结构体中获取本地用户的人声状态。
 </details>
 <details>
