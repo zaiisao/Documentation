@@ -115,6 +115,8 @@ For example, let's say a recording server is in a channel for 30 minutes. It rec
 
 
 
+
+
 | Service<a name="billing"></a> | Pricing （Dollars/1,000 minutes) |
 | :---------------------------- | :------------------------------- |
 | Recording audio               | 0.99                             |

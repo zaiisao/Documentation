@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Web
-updatedAt: Thu Apr 09 2020 07:58:39 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 09:21:40 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice functions in your app. 
@@ -279,7 +279,7 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
    rtc.localStream.init(function () {
      console.log("init local stream success");
 	 // play stream with html element id "local_stream"
-     rtc.localStream.play("local_stream")
+     rtc.localStream.play("local_stream");
    }, function (err) {
      console.error("init local stream failed ", err);
    });

@@ -89,6 +89,8 @@ Suppose a user is in a channel for 30 minutes, then Agora logs 30 audio minutes 
 
 
 
+
+
 ## Q&A
 
 

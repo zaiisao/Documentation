@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Web
-updatedAt: Thu Apr 09 2020 07:58:49 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 09:21:41 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive audio broadcast functions in your app. 
@@ -289,7 +289,7 @@ If the client role is set as `"host"`, we need to create and publish the local s
    rtc.localStream.init(function () {
      console.log("init local stream success");
 	 // play stream with html element id "local_stream"
-     rtc.localStream.play("local_stream")
+     rtc.localStream.play("local_stream");
    }, function (err) {
      console.error("init local stream failed ", err);
    });

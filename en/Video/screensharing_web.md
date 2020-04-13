@@ -3,12 +3,14 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri Mar 27 2020 06:15:03 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 08:48:19 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
 
 During a video call or live broadcast, **sharing the screen** enhances the communication experience by displaying the speaker's screen on the display of other speakers or audience members in the channel.
+
+<div class="alert note">The Agora Web SDK does not support screen sharing on mobile devices.</div>
 
 You can use screen sharing in the following scenarios:
 
@@ -16,6 +18,9 @@ You can use screen sharing in the following scenarios:
 - Online class: the teacher can share slides or notes with students.
 
 Ensure that you understand how to [start a call](../../en/Video/start_call_web.md) or [start a live broadcast](../../en/Video/start_live_web.md).
+
+
+<div class="alert info">Click the <a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web/">online demo</a> to try this feature out.</div>
 
 ## Working principles
 

@@ -127,6 +127,14 @@ For example, let's say a user is in a channel for 30 minutes. This user subscrib
 
 
 
+> The live video streaming pricing for audience stated on [the official website](https://www.agora.io/en/pricing/) does not apply by default. Please [contact our sales](https://www.agora.io/en/talk-to-us/) to get this rate.
+
+
+
+
+
+
+
 
 
 
