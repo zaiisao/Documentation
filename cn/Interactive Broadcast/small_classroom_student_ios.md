@@ -28,7 +28,7 @@ updatedAt: Tue Mar 10 2020 06:28:36 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，搭配使用 Native SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
+参考下图时序，搭配使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
 ![](https://web-cdn.agora.io/docs-files/1581474293334)
 
@@ -49,7 +49,7 @@ updatedAt: Tue Mar 10 2020 06:28:36 GMT+0800 (CST)
 | [leaveWithCompletion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/leaveWithCompletion:) | 离开 RTM 频道。 |
 | [logoutWithCompletion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/logoutWithCompletion:) | 登出 Agora RTM 系统。|
 
-- Native SDK
+- RTC SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
