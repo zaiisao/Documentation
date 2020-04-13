@@ -3,7 +3,7 @@
 title: Build a Client for the Students
 description: 
 platform: Android
-updatedAt: Wed Mar 11 2020 03:42:55 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 02:42:26 GMT+0800 (CST)
 ---
 # Build a Client for the Students
 This section describes how to implement an Android client for the students.
@@ -29,7 +29,7 @@ Refer to the following table to download the SDKs, and integrate the SDKs into y
 
 ## Core API call sequence
 
-Refer to the following diagram to implement the basic real-time communication and messaging functions in your project with the Agora RTC SDK and RTM SDK.
+Refer to the following diagram to implement the basic real-time communication and messaging functions in your project with the [Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) and [RTM SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk).
 
 ![](https://web-cdn.agora.io/docs-files/1582602524115)
 

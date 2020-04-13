@@ -3,7 +3,7 @@
 title: Migration Guide from v2.0.8 to v2.3.2 (Windows)
 description: 
 platform: Windows
-updatedAt: Fri Jul 26 2019 04:28:35 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 02:53:18 GMT+0800 (CST)
 ---
 # Migration Guide from v2.0.8 to v2.3.2 (Windows)
 This page contains information on major API changes during release v2.0.8 and v2.3.2 for Agora SDK for Windows.
@@ -41,8 +41,8 @@ To support scenarios with video rotation and enable better quality for the custo
 
 For more information, see the following documents:
 
-- [Set the Video Profile](../../en/Audio%20Broadcast/videoProfile_windows.md)
-- [Rotate the Video](../../en/Audio%20Broadcast/rotation_guide_android.md)
+- [Set the Video Profile](../../en/Audio%20Broadcast/video_profile_windows.md)
+- [Rotate the Video](../../en/Audio%20Broadcast/video_rotation_windows.md)
 
 #### 3. More Accurate Call Quality Statistics
 
