@@ -32,6 +32,7 @@ updatedAt: Mon Apr 13 2020 14:28:00 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1581474293334)
 
+
 ## 核心 API 参考
 
 - RTM SDK
@@ -51,6 +52,7 @@ updatedAt: Mon Apr 13 2020 14:28:00 GMT+0800 (CST)
 
 - RTC SDK
 
+
 | API | 实现功能 |
 | ---------------- | ---------------- |
 | [sharedEngineWithAppId](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithAppId:delegate:)      | 初始化 `AgoraRtcEngineKit` 对象。      |
@@ -62,6 +64,7 @@ updatedAt: Mon Apr 13 2020 14:28:00 GMT+0800 (CST)
 | [joinChannelByToken](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) | 加入 RTC 频道。你可以在加入频道前调用 [startPreview](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startPreview) 来加快本地出图。 |
 | [setupRemoteVideo](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupRemoteVideo:) | 设置远端视图。 |
 | [leaveChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/leaveChannel:) | 离开 RTC 频道。 |
+
 
 ## 附加功能
 
