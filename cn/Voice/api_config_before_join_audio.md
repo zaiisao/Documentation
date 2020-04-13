@@ -3,7 +3,7 @@
 title: 加入频道前的 API 调用
 description: configurtions before joinChannel
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 03:33:27 GMT+0800 (CST)
+updatedAt: Sat Apr 11 2020 08:26:10 GMT+0800 (CST)
 ---
 # 加入频道前的 API 调用
 本文介绍在加入频道（`joinChannel`）之前的 API 调用和设置。在加入频道前，通常只需要简单调用一两个 API 即可快速实现实时音视频功能，但是如果你的应用场景对通话质量和稳定性有较高的要求，我们建议参考本文进行更多的设置。
@@ -16,7 +16,7 @@ updatedAt: Thu Apr 02 2020 03:33:27 GMT+0800 (CST)
 - Electron
 - Unity
 
-<div class="alert note">阅读本文前请确保你已经了解如何实现一个<a href="https://docs.agora.io/cn/Video/start_call_android?platform=Android">音视频通话</a>或<a href="https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android">直播</a>。</div>
+<div class="alert note">阅读本文前请确保你已经了解如何实现一个<a href="https://docs.agora.io/cn/Voice/start_call_audio_android?platform=Android">音频通话</a>或<a href="https://docs.agora.io/cn/Audio%20Broadcast/start_live_audio_android?platform=Android">直播</a>。</div>
 
 ## 日志文件设置
 

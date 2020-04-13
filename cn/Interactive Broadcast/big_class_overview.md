@@ -44,7 +44,7 @@ Agora 为互动直播大班课提供如下平台的 Demo，点击下方链接进
 
 ## 技术方案
 
-Agora 使用 Agora Native SDK、Agora RTM SDK、Agora 云端录制服务、第三方白板 SDK 共同搭建互动直播大班课场景。
+Agora 使用 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk)、[Agora RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk)、[Agora 云端录制服务](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#cloud-recording)、第三方白板 SDK 共同搭建互动直播大班课场景。
 
 ![](https://web-cdn.agora.io/docs-files/1579589300983)
 
@@ -52,7 +52,7 @@ Agora 使用 Agora Native SDK、Agora RTM SDK、Agora 云端录制服务、第�
 
 | SDK | 实现功能 | 
 | ---------------- | ---------------- | 
-| Agora Native SDK      | 加入 RTC 频道，进行实时音视频互动。      | 
+| Agora RTC SDK      | 加入 RTC 频道，进行实时音视频互动。      | 
 | Agora RTM SDK      | 登录 RTM 系统并加入 RTM 频道，实现频道状态维护、权限控制、收发实时文字消息等功能。      | 
 | Agora 云端录制服务 | 录制实时音视频、录制完成后即时回放。 |
 | 第三方白板 SDK | 实现互动白板相关功能。|

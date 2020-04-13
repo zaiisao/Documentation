@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Android
-updatedAt: Thu Apr 09 2020 10:01:55 GMT+0800 (CST)
+updatedAt: Fri Apr 10 2020 04:15:39 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 音频 SDK 快速实现语音通话。
@@ -407,10 +407,6 @@ private void joinChannel() {
 ```kotlin
 // Kotlin
 private fun joinChannel() {
-  var token: String? = getString(R.string.agora_access_token)
-  if (token!!.isEmpty()) {
-    token = null
-  }
 	
   // 调用 Agora SDK 的 joinChannel 方法加入频道。未指定 uid，SDK 会自动分配一个。
   mRtcEngine!!.joinChannel(token, "demoChannel1", "Extra Optional Data", 0)

@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Apr 09 2020 08:49:59 GMT+0800 (CST)
+updatedAt: Fri Apr 10 2020 08:29:13 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。

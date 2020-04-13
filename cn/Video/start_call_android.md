@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Android
-updatedAt: Thu Apr 09 2020 10:32:58 GMT+0800 (CST)
+updatedAt: Fri Apr 10 2020 03:53:17 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频 SDK 快速实现视频通话。
@@ -271,6 +271,7 @@ import io.agora.rtc.video.VideoEncoderConfiguration;
 调用 `checkSelfPermission` 方法，在开启 Activity 时检查并获取 Android 移动设备的摄像头和麦克风使用权限。
 
 ```java
+// Java
 private static final int PERMISSION_REQ_ID = 22;
   
 // App 运行时确认麦克风和摄像头设备的使用权限。
@@ -292,6 +293,12 @@ protected void onCreate(Bundle savedInstanceState) {
         initEngineAndJoinChannel();
     }
 }
+
+private void initEngineAndJoinChannel() {
+     initializeEngine();
+	 setupLocalVideo();
+	 joinChannel();
+}
   
 private boolean checkSelfPermission(String permission, int requestCode) {
     if (ContextCompat.checkSelfPermission(this, permission) !=
@@ -303,6 +310,40 @@ private boolean checkSelfPermission(String permission, int requestCode) {
     return true;
 }
 ```
+
+```kotlin
+// Kotlin
+// app 运行时确认麦克风和摄像头的使用权限。
+override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(savedInstanceState)
+  setContentView(R.layout.activity_voice_chat_view)
+  
+  // 获取权限后，初始化 RtcEngine，并加入频道。
+  if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO) && checkSelfPermission(Manifest.permission.CAMERA, PERMISSION_REQ_ID_CAMERA)) {
+    initAgoraEngineAndJoinChannel()
+  }
+}
+
+private fun initAgoraEngineAndJoinChannel() {
+  initializeAgoraEngine()
+  setupLocalVideo()
+  joinChannel()
+}
+
+private fun checkSelfPermission(permission. String, requestCode: Int): Boolean {
+  Log.i(LOG_TAG, "checkSelfPermission $permission $reuqestCode")
+  if (ContextCompat.checkSelfPermission(this, 
+          permission) != PackageManager.PERMISSION_GRANTED) {
+     
+    ActivityCompat.requestPermission(this
+            arrayOf(permission),
+            requestCode)
+    return false
+  }
+  return true
+}
+```
+
 
 ### 4. 初始化 RtcEngine
 
@@ -319,6 +360,8 @@ private boolean checkSelfPermission(String permission, int requestCode) {
 你还根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户视频首帧等。注意不要在这些回调中进行 UI 操作。
 
 ```java
+// Java
+private RtcEngine mRtcEngine;
 private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {
     @Override
     // 注册 onJoinChannelSuccess 回调。
@@ -373,6 +416,39 @@ private void initializeEngine() {
 }
 ```
 
+```kotlin
+// Kotlin
+private var mRtcEngine: RtcEngine? = null
+private val mRtcEventHandler = object : IRtcEngineEventHandler() {
+  
+  // 注册 onFirstRemoteVideoDecoded 回调。
+  // SDK 接收到第一帧远端视频并成功解码时，会触发该回调。
+  // 可以在该回调用调用 setupRemoteVideo 方法设置远端视图。
+  override fun onFirstRemoteVideoDecoded(uid: Int, width: Int, height: Int, elapsed: Int) {
+    runOnUiThread { setupRemoteVideo(uid) }
+  }
+  
+  // 注册 onUserOffline 回调。远端用户离开频道后，会触发该回调。
+  override fun onUserOffline(uid: Int, reason: Int) {
+    runOnUiThread { onRemoteUserLeft() }
+  }
+  
+}
+
+...
+
+// 调用 Agora SDK 的方法初始化 RtcEngine。
+private fun initializeAgoraEngine() {
+  try {
+    mRtcEngine = RtcEngine.create(baseContext, getString(R.string.agora_app_id), mRtcEventHandler)
+  } catch (e: Exception) {
+    Log.e(LOG_TAG, Log.getStackTraceString(e))
+    
+    throw RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e))
+  }
+}
+```
+
 ### 5. 设置本地视图
 
 成功初始化 RtcEngine 对象后，需要在加入频道前设置本地视图，以便在通话中看到本地图像。参考以下步骤设置本地视图：
@@ -382,6 +458,7 @@ private void initializeEngine() {
 * 调用 `setupLocalVideo` 方法设置本地视图。
 
 ```java
+// Java
 private void setupLocalVideo() {
   
     // 启用视频模块。
@@ -397,6 +474,24 @@ private void setupLocalVideo() {
     // 设置本地视图。
     VideoCanvas localVideoCanvas = new VideoCanvas(mLocalView, VideoCanvas.RENDER_MODE_HIDDEN, 0);
     mRtcEngine.setupLocalVideo(localVideoCanvas);
+}
+```
+
+```kotlin
+// Kotlin
+private fun setupLocalVideo() {
+
+  // 启用视频模块。
+  mRtcEngine!!.enableVideo()
+  
+  val container = findViewById(R.id.local_video_view_container) as FrameLayout
+	
+  // 创建 SurfaceView。
+  val surfaceView = RtcEngine.createRendererView(baseContext)
+  surfaceView.setZorderMediaOverlay(true)
+  container.addView(surfaceView)
+  // 设置本地视图。
+  mRtcEngine!!.setupLocalVideo(VideoCanvas(surfaceView, VideoCanvas.RENDER_MODE_FIT, 0))
 }
 ```
 
@@ -418,10 +513,20 @@ private void setupLocalVideo() {
 更多的参数设置注意事项请参考 [`joinChannel`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c) 接口中的参数描述。
 
 ```java
+// Java
 private void joinChannel() {
  
-    // 使用 Token 加入频道。
+    // 调用 joinChannel 方法 加入频道。
     mRtcEngine.joinChannel(YOUR_TOKEN, "demoChannel1", "Extra Optional Data", 0);
+}
+```
+
+```kotlin
+// Kotlin
+private fun joinChannel() {
+	
+  // 调用 joinChannel 方法加入频道。
+  mRtcEngine!!.joinChannel(token, "demoChannel1", "Extra Optional Data", 0)
 }
 ```
 
@@ -432,6 +537,7 @@ private void joinChannel() {
 远端用户成功加入频道后，SDK 会触发 `onFirstRemoteVideoDecoded` 回调，该回调中会包含这个远端用户的 uid 信息。在该回调中调用 `setupRemoteVideo` 方法，传入获取到的 uid，设置远端用户的视图。
 
 ```java
+// Java
     @Override
     // 监听 onFirstRemoteVideoDecoded 回调。
     // SDK 接收到第一帧远端视频并成功解码时，会触发该回调。
@@ -460,6 +566,33 @@ private void setupRemoteVideo(int uid) {
 }
 ```
 
+```kotlin
+// Kotlin  
+  // 注册 onFirstRemoteVideoDecoded 回调。
+  // SDK 接收到第一帧远端视频并成功解码时，会触发该回调。
+  // 可以在该回调用调用 setupRemoteVideo 方法设置远端视图。
+  override fun onFirstRemoteVideoDecoded(uid: Int, width: Int, height: Int, elapsed: Int) {
+    runOnUiThread { setupRemoteVideo(uid) }
+  }
+
+
+private fun setupRemoteVideo(uid: Int) {
+  val container = findViewById(R.id.remote_video_view_container) as FrameLayout
+  
+  if (container.childCount >= 1) {
+    return
+  }
+  
+  // 创建一个 SurfaceView 对象。
+  val surfaceView = RtcEngine.CreateRendererView(baseContext)
+  container.addView(surfaceView)
+  
+  // 设置远端视图。
+  mRtcEngine!!.setupRemoteVideo(VideoCanvas(surfaceView, VideoCanvas.RENDER_MODE_FIT, uid))
+}
+```
+
+
 ### 8. 更多步骤
 
 你还可以在通话中参考如下代码实现更多功能及场景。
@@ -470,9 +603,26 @@ private void setupRemoteVideo(int uid) {
 调用 `muteLocalAudioStream` 停止或恢复发送本地音频流，实现或取消本地静音。
 
 ```java
+// Java
 public void onLocalAudioMuteClicked(View view) {
     mMuted = !mMuted;
     mRtcEngine.muteLocalAudioStream(mMuted);
+}
+```
+	
+```kotlin
+// Kotlin
+fun onLocalAudioMuteClicked(view: View) {
+  val iv = view as ImageView
+  if (iv.isSelected) {
+    iv.isSelected = false
+    iv.clearColorFilter()
+  } else {
+    iv.isSelected = true
+    iv.setColorFilter(resources,getColor(R.color.colorPrimary), PorterDuff.Mode.MULTIPLY)
+  }
+  
+  mRtcEngine!!.muteLocalAudioStream(iv.isSelected)
 }
 ```
 </details>
@@ -483,10 +633,19 @@ public void onLocalAudioMuteClicked(View view) {
 调用 `switchCamera` 方法切换摄像头的方向。
 
 ```java
+// Java
 public void onSwitchCameraClicked(View view) {
     mRtcEngine.switchCamera();
 }
 ```
+	
+```kotlin
+// Kotlin
+fun onSwitchCameraClicked(view: View) {
+  mRtcEngine!!.swithcCamera()
+}
+```
+	
 </details>
 	
 ### 9. 离开频道
@@ -494,6 +653,7 @@ public void onSwitchCameraClicked(View view) {
 根据场景需要，如结束通话、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
 
 ```java
+// Java
 @Override
 protected void onDestroy() {
     super.onDestroy();
@@ -506,6 +666,22 @@ protected void onDestroy() {
 private void leaveChannel() {
     // 离开当前频道。
     mRtcEngine.leaveChannel();
+}
+```
+
+```kotlin
+// Kotlin
+override fun onDestroy() {
+  super.onDestroy()
+  
+  leaveChannel()
+  RtcEngine.destroy()
+  mRtcEngine = null
+}
+
+private fun leaveChannel() {
+  // 离开当前频道。
+  mRtcEngine!!.leaveChannel()
 }
 ```
 
