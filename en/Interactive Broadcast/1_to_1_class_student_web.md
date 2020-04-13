@@ -30,7 +30,8 @@ Refer to the following table to download the SDKs, and integrate the SDKs into y
 
 Refer to the following diagram to implement the basic real-time communication and messaging functions in your project with the [Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) and [RTM SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk).
 
-![](https://web-cdn.agora.io/docs-files/1582875934158)
+![](https://web-cdn.agora.io/docs-files/1586788674027)
+
 
 ## Core API reference
 
@@ -49,11 +50,11 @@ Refer to the following diagram to implement the basic real-time communication an
 
 - RTC SDK
 
+
 | API | Function |
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)        | Creates an RTC Client object.      |
 | [Client.init](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) | Initializes the RTC Client object. |
-| [Client.setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | Sets the user role in a live broadcast. In this scenario, we set the role of the student as broadcaster before joining the channel. During the class, the student and the teacher can see and talk to each other in real time. |
 | [Client.join](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) | Joins an Agora RTC channel. |
 | [Client.on](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)("stream-added") | Occurs when a remote audio or video stream is added to the channel.  |
 | [createStream](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) | Creates a Stream object for sending and receiving audio and video. |
@@ -62,6 +63,9 @@ Refer to the following diagram to implement the basic real-time communication an
 | [Client.subscribe](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | Subscribes to the remote audio or video stream.|
 | [Stream.play](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | Plays the audio or video stream.|
 | [Client.leave](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | Leaves the RTC channel. |
+
+<div class="alert note">The default channel profile of the Agora RTC SDK is Communication profile. </div>
+
 
 ## Additional functions
 

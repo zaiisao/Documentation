@@ -32,6 +32,7 @@ Refer to the following diagram to implement the basic real-time communication an
 
 ![](https://web-cdn.agora.io/docs-files/1582875934158)
 
+
 ## Core API reference
 
 - RTM SDK
@@ -49,6 +50,7 @@ Refer to the following diagram to implement the basic real-time communication an
 
 - RTC SDK
 
+
 | API | Function |
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)        | Creates an RTC Client object.      |
@@ -62,6 +64,7 @@ Refer to the following diagram to implement the basic real-time communication an
 | [Client.subscribe](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | Subscribes to the remote audio or video stream.|
 | [Stream.play](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | Plays the audio or video stream.|
 | [Client.leave](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | Leaves the RTC channel. |
+
 
 ## Additional functions
 
