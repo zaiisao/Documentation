@@ -70,7 +70,6 @@ Refer to the following diagram to implement the various functions in your projec
 | [Client.leave](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | Leaves the RTC channel. |
 
 
-
 <div class="alert note">The default channel profile of the Agora RTC SDK is Communication profile. Agora recommends using the Communication profile, no matter whether the teacher enables both the camera and the screen sharing.</div>
 
 ## Additional functions

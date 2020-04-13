@@ -56,7 +56,6 @@ Refer to the following diagram to implement the various functions in your projec
 
 - RTC SDK
 
-
 | API | Function |
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)      | Creates an RTC Client object.      |
