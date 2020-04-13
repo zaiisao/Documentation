@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Android
-updatedAt: Thu Feb 27 2020 05:55:33 GMT+0800 (CST)
+updatedAt: Fri Apr 10 2020 04:14:23 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora Video SDK for Android.
@@ -260,6 +260,7 @@ import io.agora.rtc.video.VideoEncoderConfiguration;
 Call the `checkSelfPermission` method to access the camera and the microphone of the Android device when launching the activity.
 
 ```java
+// Java
 private static final int PERMISSION_REQ_ID = 22;
  
 // Ask for Android device permissions at runtime.
@@ -293,6 +294,39 @@ private boolean checkSelfPermission(String permission, int requestCode) {
 }
 ```
 
+```kotlin
+// Kotlin
+// Ask for Android device permissions at runtime.
+override fun onCreate(savedInstanceState: Bundle?) {
+  super.onCreate(savedInstanceState)
+  setContentView(R.layout.activity_voice_chat_view)
+
+  // If all the permissions are granted, initialize the RtcEngine object and join a channel.
+  if (checkSelfPermission(Manifest.permission.RECORD_AUDIO, PERMISSION_REQ_ID_RECORD_AUDIO) && checkSelfPermission(Manifest.permission.CAMERA, PERMISSION_REQ_ID_CAMERA)) {
+    initAgoraEngineAndJoinChannel()
+  }
+}
+
+private fun initAgoraEngineAndJoinChannel() {
+  initializeAgoraEngine()
+  setupLocalVideo()
+  joinChannel()
+}
+
+private fun checkSelfPermission(permission. String, requestCode: Int): Boolean {
+  Log.i(LOG_TAG, "checkSelfPermission $permission $reuqestCode")
+  if (ContextCompat.checkSelfPermission(this, 
+          permission) != PackageManager.PERMISSION_GRANTED) {
+
+    ActivityCompat.requestPermission(this
+            arrayOf(permission),
+            requestCode)
+    return false
+  }
+  return true
+}
+```
+
 ### 4. Initialize RtcEngine
 
 Create and initialize the RtcEngine object before calling any other Agora APIs.
@@ -308,6 +342,8 @@ Call the `create` method and pass in the App ID to initialize the RtcEngine obje
 You can also listen for callback events, such as when the local user joins the channel, and when the first video frame of a remote user is decoded. Do not implement UI operations in these callbacks.
 
 ```java
+// Java
+private RtcEngine mRtcEngine;
 private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandler() {
     @Override
     // Listen for the onJoinChannelSuccess callback.
@@ -362,6 +398,40 @@ private void initializeEngine() {
 }
 ```
 
+```kotlin
+// Kotlin
+private var mRtcEngine: RtcEngine? = null
+private val mRtcEventHandler = object : IRtcEngineEventHandler() {
+
+  // Listen for the onFirstRemoteVideoDecoded callback.
+  // This callback occurs when the first video frame of a remote user is received and decoded after the remote user successfully joins the channel.
+  // You can call the setupRemoteVideo method in this callback to set up the remote video view.
+  override fun onFirstRemoteVideoDecoded(uid: Int, width: Int, height: Int, elapsed: Int) {
+    runOnUiThread { setupRemoteVideo(uid) }
+  }
+
+  // Listen for the onUserOffline callback.
+  // This callback occurs when the remote user leaves the channel or drops offline.
+  override fun onUserOffline(uid: Int, reason: Int) {
+    runOnUiThread { onRemoteUserLeft() }
+  }
+
+}
+
+...
+
+// Initialize the RtcEngine object.
+private fun initializeAgoraEngine() {
+  try {
+    mRtcEngine = RtcEngine.create(baseContext, getString(R.string.agora_app_id), mRtcEventHandler)
+  } catch (e: Exception) {
+    Log.e(LOG_TAG, Log.getStackTraceString(e))
+
+    throw RuntimeException("NEED TO check rtc sdk init fatal error\n" + Log.getStackTraceString(e))
+  }
+}
+```
+
 ### 5. Set the local video view
 
 After initializing the RtcEngine object, set the local video view before joining the channel so that you can see yourself in the call. Follow these steps to configure the local video view: 
@@ -371,7 +441,7 @@ After initializing the RtcEngine object, set the local video view before joining
 * Call the `setupLocalVideo` method to configure the local video display settings. 
 
 ```java
-
+// Java
 private void setupLocalVideo() {
  
     // Enable the video module.
@@ -387,6 +457,24 @@ private void setupLocalVideo() {
     // Set the local video view.
     VideoCanvas localVideoCanvas = new VideoCanvas(mLocalView, VideoCanvas.RENDER_MODE_HIDDEN, 0);
     mRtcEngine.setupLocalVideo(localVideoCanvas);
+}
+```
+
+```kotlin
+// Kotlin
+private fun setupLocalVideo() {
+
+  // Enable the video module.
+  mRtcEngine!!.enableVideo()
+
+  val container = findViewById(R.id.local_video_view_container) as FrameLayout
+
+  // Create a SurfaceView object.
+  val surfaceView = RtcEngine.createRendererView(baseContext)
+  surfaceView.setZorderMediaOverlay(true)
+  container.addView(surfaceView)
+  // Set the local video view.
+  mRtcEngine!!.setupLocalVideo(VideoCanvas(surfaceView, VideoCanvas.RENDER_MODE_FIT, 0))
 }
 ```
 
@@ -408,10 +496,20 @@ After initializing the RtcEngine object and setting the local video view (for a 
 For more details on the parameter settings, see [`joinChannel`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c).
 
 ```java
+// Java
 private void joinChannel() {
  
     // Join a channel with a token.
     mRtcEngine.joinChannel(YOUR_TOKEN, "demoChannel1", "Extra Optional Data", 0);
+}
+```
+
+```kotlin
+// Kotlin
+private fun joinChannel() {
+
+  // Join a channel with a token.
+  mRtcEngine!!.joinChannel(token, "demoChannel1", "Extra Optional Data", 0)
 }
 ```
 
@@ -422,6 +520,7 @@ In a video call, you should be able to see other users too. This is achieved by 
 Shortly after a remote user joins the channel, the SDK gets the remote user's ID in the `onFirstRemoteVideoDecoded` callback. Call the `setupRemoteVideo` method in the callback, and pass in the uid to set the video view of the remote user.
 
 ```java
+// Java
     @Override
     // Listen for the onFirstRemoteVideoDecoded callback.
     // This callback occurs when the first video frame of a remote user is received and decoded after the remote user successfully joins the channel.
@@ -451,6 +550,32 @@ private void setupRemoteVideo(int uid) {
 }
 ```
 
+```kotlin
+// Kotlin
+  // Listen for the onFirstRemoteVideoDecoded callback.
+  // This callback occurs when the first video frame of a remote user is received and decoded after the remote user successfully joins the channel.
+  // You can call the setupRemoteVideo method in this callback to set up the remote video view.
+  override fun onFirstRemoteVideoDecoded(uid: Int, width: Int, height: Int, elapsed: Int) {
+    runOnUiThread { setupRemoteVideo(uid) }
+  }
+
+
+private fun setupRemoteVideo(uid: Int) {
+  val container = findViewById(R.id.remote_video_view_container) as FrameLayout
+
+  if (container.childCount >= 1) {
+    return
+  }
+
+  // Create a SurfaceView object.
+  val surfaceView = RtcEngine.CreateRendererView(baseContext)
+  container.addView(surfaceView)
+
+  // Set the remote video view.
+  mRtcEngine!!.setupRemoteVideo(VideoCanvas(surfaceView, VideoCanvas.RENDER_MODE_FIT, uid))
+}
+```
+
 ### 8. Additional steps
 
 You can implement more advanced features and functionalities in a call. 
@@ -461,9 +586,26 @@ You can implement more advanced features and functionalities in a call.
 Call the `muteLocalAudioStream` method to stop or resume sending the local audio stream to mute or unmute the local user.
 	
 ```java
+// Java
 public void onLocalAudioMuteClicked(View view) {
     mMuted = !mMuted;
     mRtcEngine.muteLocalAudioStream(mMuted);
+}
+```
+
+```kotlin
+// Kotlin
+fun onLocalAudioMuteClicked(view: View) {
+  val iv = view as ImageView
+  if (iv.isSelected) {
+    iv.isSelected = false
+    iv.clearColorFilter()
+  } else {
+    iv.isSelected = true
+    iv.setColorFilter(resources,getColor(R.color.colorPrimary), PorterDuff.Mode.MULTIPLY)
+  }
+
+  mRtcEngine!!.muteLocalAudioStream(iv.isSelected)
 }
 ```
 </details>
@@ -474,8 +616,16 @@ public void onLocalAudioMuteClicked(View view) {
 Call the `switchCamera` method to switch the direction  of the camera.
 	
 ```java
+// Java
 public void onSwitchCameraClicked(View view) {
     mRtcEngine.switchCamera();
+}
+```
+	
+```kotlin
+// Kotlin
+fun onSwitchCameraClicked(view: View) {
+  mRtcEngine!!.swithcCamera()
 }
 ```
 </details>
@@ -485,6 +635,7 @@ public void onSwitchCameraClicked(View view) {
 Call the `leaveChannel` method to leave the current call according to your scenario, for example, when the call ends, when you need to close the app, or when your app runs in the background.
 
 ```java
+// Java
 @Override
 protected void onDestroy() {
     super.onDestroy();
@@ -497,6 +648,22 @@ protected void onDestroy() {
 private void leaveChannel() {
     // Leave the current channel.
     mRtcEngine.leaveChannel();
+}
+```
+
+```kotlin
+// Kotlin
+override fun onDestroy() {
+  super.onDestroy()
+
+  leaveChannel()
+  RtcEngine.destroy()
+  mRtcEngine = null
+}
+
+private fun leaveChannel() {
+  // Leave the current channel.
+  mRtcEngine!!.leaveChannel()
 }
 ```
 

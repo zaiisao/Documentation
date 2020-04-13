@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: Linux
-updatedAt: Thu Mar 26 2020 08:10:09 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 01:28:19 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
@@ -56,7 +56,7 @@ You can set the `mixResolution` parameter, including the width, height, frame ra
 
 ### Set video layout
 
-In composite recording mode, you can use the `layoutMode` parameter to set the video layout and arrange the size and position of the region for each user. The default value is 0 (Floating Layout). For more information, see [Set Video Layout](../../en/Recording/recording_layout_guide.md).
+In composite recording mode, you can use the `layoutMode` parameter to set the video layout and arrange the size and position of the region for each user. The default value is 0 (Floating Layout). For more information, see [Set Video Layout](../../en/Recording/recording_layout.md).
 
 ## Example
 

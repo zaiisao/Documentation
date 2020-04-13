@@ -3,7 +3,7 @@
 title: Glossary
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 03 2020 10:19:02 GMT+0800 (CST)
+updatedAt: Fri Apr 10 2020 08:36:29 GMT+0800 (CST)
 ---
 # Glossary
 ## A
@@ -351,7 +351,7 @@ If the network connection improves, the low-quality video stream or audio-only s
 
 <div class="alert info">Reference:<li><a href="#dual-stream">Dual-stream mode</a></li><li><a href="#high-stream">High-quality stream</a></li><li><a href="#low-stream">Low-quality stream</a></li><li><a href="https://docs.agora.io/en/Interactive%20Broadcast/fallback_android?platform=Android">Video stream fallback</a></li></div>
 
-#### <a name="subscribe"></a>**subscribe**
+#### <a name="sub"></a>**subscribe**
 
 Subscribing is the action of receiving media streams [published](#pub) to the channel. A user can receive other users' audio and/or video data by subscribing to their streams. A user can subscribe to one or more streams published by other users.
 

@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Android
-updatedAt: Thu Apr 09 2020 09:59:49 GMT+0800 (CST)
+updatedAt: Fri Apr 10 2020 04:15:14 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for Android.
@@ -407,10 +407,6 @@ private void joinChannel() {
 ```kotlin
 // Kotlin
 private fun joinChannel() {
-  var token: String? = getString(R.string.agora_access_token)
-  if (token!!.isEmpty()) {
-    token = null
-  }
 	
   // Call the joinChannel method to join a channel.
   // The uid is not specified. The SDK will assign one automatically.
