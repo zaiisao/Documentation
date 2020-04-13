@@ -31,7 +31,7 @@ updatedAt: Mon Apr 13 2020 14:28:57 GMT+0800 (CST)
 
 参考下图时序，搭配使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
-![](https://web-cdn.agora.io/docs-files/1586788223415)
+![](https://web-cdn.agora.io/docs-files/1586788580814)
 
 
 ## 核心 API 参考
