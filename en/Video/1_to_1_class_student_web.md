@@ -51,16 +51,16 @@ Refer to the following diagram to implement the basic real-time communication an
 
 | API | Function |
 | ---------------- | ---------------- |
-| [createClient](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)        | Creates an RTC Client object.      |
-| [Client.init](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) | Initializes the RTC Client object. |
-| [Client.join](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) | Joins an Agora RTC channel. |
-| [Client.on](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)("stream-added") | Occurs when a remote audio or video stream is added to the channel.  |
-| [createStream](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) | Creates a Stream object for sending and receiving audio and video. |
-| [Stream.init](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#init) | Initializes the Stream object.  |
-| [Client.publish](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#publish) | Publishes the local audio and video stream to SD-RTN. |
-| [Client.subscribe](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | Subscribes to the remote audio or video stream.|
-| [Stream.play](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | Plays the audio or video stream.|
-| [Client.leave](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | Leaves the RTC channel. |
+| [createClient](https://docs.agora.io/en/Video/API%20Reference/web/globals.html#createclient)        | Creates an RTC Client object.      |
+| [Client.init](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#init) | Initializes the RTC Client object. |
+| [Client.join](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#join) | Joins an Agora RTC channel. |
+| [Client.on](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#on)("stream-added") | Occurs when a remote audio or video stream is added to the channel.  |
+| [createStream](https://docs.agora.io/en/Video/API%20Reference/web/globals.html#createstream) | Creates a Stream object for sending and receiving audio and video. |
+| [Stream.init](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#init) | Initializes the Stream object.  |
+| [Client.publish](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#publish) | Publishes the local audio and video stream to SD-RTN. |
+| [Client.subscribe](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | Subscribes to the remote audio or video stream.|
+| [Stream.play](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#play) | Plays the audio or video stream.|
+| [Client.leave](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#leave) | Leaves the RTC channel. |
 
 <div class="alert note">The default channel profile of the Agora RTC SDK is Communication profile. </div>
 
