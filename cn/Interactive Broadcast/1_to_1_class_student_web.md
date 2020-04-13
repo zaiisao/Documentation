@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Web
-updatedAt: Fri Feb 14 2020 02:12:23 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 14:28:57 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Web 平台实现学生端相关功能。
@@ -31,7 +31,8 @@ updatedAt: Fri Feb 14 2020 02:12:23 GMT+0800 (CST)
 
 参考下图时序，搭配使用 RTC SDK 和 RTM SDK 在你的项目中实现基础的实时音视频和实时消息功能。
 
-![](https://web-cdn.agora.io/docs-files/1581329701467)
+![](https://web-cdn.agora.io/docs-files/1586788223415)
+
 
 ## 核心 API 参考
 
@@ -50,11 +51,11 @@ updatedAt: Fri Feb 14 2020 02:12:23 GMT+0800 (CST)
 
 - RTC SDK
 
+
 | API | 实现功能 |
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)        | 创建客户端。      |
 [Client.init](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) | 初始化客户端对象。 |
-| [Client.setClientRole](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | 设置直播场景下的用户角色。本场景中，我们将学生的用户角色设为主播，可以与同为主播的老师进行互动。 |
 [Client.join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) | 加入 Agora RTC 频道。 |
 | [Client.on](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)("stream-added") | 远端音视频已添加。 |
 | [createStream](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) | 创建并返回音视频流对象。 |
@@ -63,6 +64,9 @@ updatedAt: Fri Feb 14 2020 02:12:23 GMT+0800 (CST)
 | [Client.subscribe](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
 | [Stream.play](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
 | [Client.leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
+
+<div class="alert note">Agora RTC SDK 默认的频道场景为通信场景。</div>
+
 
 ## 附加功能
 

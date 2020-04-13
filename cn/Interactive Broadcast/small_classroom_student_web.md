@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Web
-updatedAt: Tue Mar 10 2020 06:28:42 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 14:27:39 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Web 平台实现学生端相关功能。
@@ -32,6 +32,7 @@ updatedAt: Tue Mar 10 2020 06:28:42 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1581329701467)
 
+
 ## 核心 API 参考
 
 - RTM SDK
@@ -49,6 +50,7 @@ updatedAt: Tue Mar 10 2020 06:28:42 GMT+0800 (CST)
 
 - RTC SDK
 
+
 | API | 实现功能 |
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)        | 创建客户端。      |
@@ -62,6 +64,7 @@ updatedAt: Tue Mar 10 2020 06:28:42 GMT+0800 (CST)
 | [Client.subscribe](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
 | [Stream.play](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
 | [Client.leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
+
 
 ## 附加功能
 

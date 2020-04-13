@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Android
-updatedAt: Fri Feb 14 2020 02:12:12 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 14:29:43 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Android 平台实现学生端相关功能。
