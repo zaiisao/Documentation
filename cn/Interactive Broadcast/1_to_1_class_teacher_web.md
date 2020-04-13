@@ -69,7 +69,7 @@ updatedAt: Mon Apr 13 2020 13:39:39 GMT+0800 (CST)
 | [Stream.play](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
 | [Client.leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
 
-<div class="alert note">Agora RTC SDK 默认的频道场景为通信场景，不论教师端是否同时开启摄像头和屏幕共享，Agora 都建议使用通信场景。该场景中，老师可以和学生进行互动。</div>
+<div class="alert note">Agora RTC SDK 默认的频道场景为通信场景，不论教师端是否同时开启摄像头和屏幕共享，Agora 都建议使用通信场景。</div>
 
 ## 附加功能
 

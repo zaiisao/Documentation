@@ -37,7 +37,7 @@ Refer to the following table to download the SDKs, and integrate the SDKs into y
 
 Refer to the following diagram to implement the various functions in your project with the [Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) and [RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk).
 
-![](https://web-cdn.agora.io/docs-files/1582876660756)
+![](https://web-cdn.agora.io/docs-files/1586785420565)
 
 ## Core API reference
 
@@ -59,9 +59,7 @@ Refer to the following diagram to implement the various functions in your projec
 | API | Function |
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)      | Creates an RTC Client object.      |
-| [Client.init](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) | Initializes the RTC Client object. |
-| [Client.setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | Sets the user role in a live broadcast. Set the role of the teacher as "host" in this scenario. |
-| [createStream](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) | Creates a Stream object for sending and receiving audio and video. |
+| [Client.init](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) | Initializes the RTC Client object. || [createStream](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) | Creates a Stream object for sending and receiving audio and video. |
 | [Stream.init](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#init) | Initializes the Stream object. |
 | [Client.join](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) | Joins an Agora RTC channel. |
 | [Client.publish](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#publish) | Publishes the local audio and video stream to SD-RTN. |
@@ -69,6 +67,8 @@ Refer to the following diagram to implement the various functions in your projec
 | [Client.subscribe](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | Subscribes to the remote audio or video stream.|
 | [Stream.play](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | Plays the audio or video stream.|
 | [Client.leave](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | Leaves the RTC channel. |
+
+<div class="alert note">The default channel profile of the Agora RTC SDK is Communication profile. Agora recommends using the Communication profile, no matter whether the teacher enables both the camera and the screen sharing.</div>
 
 ## Additional functions
 
