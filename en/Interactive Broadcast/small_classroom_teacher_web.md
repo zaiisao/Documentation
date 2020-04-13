@@ -71,8 +71,6 @@ Refer to the following diagram to implement the various functions in your projec
 | [Client.leave](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | Leaves the RTC channel. |
 
 
-
-
 ## Additional functions
 
 For more features and functions available for an  online class, you can refer to the following:
