@@ -30,7 +30,8 @@ Refer to the following table to download the SDKs, and integrate the SDKs into y
 
 Refer to the following diagram to implement the basic real-time communication and messaging functions in your project with the [Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) and [RTM SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk).
 
-![](https://web-cdn.agora.io/docs-files/1582875240081)
+![](https://web-cdn.agora.io/docs-files/1586789044962)
+
 
 ## Core API reference
 
@@ -51,17 +52,19 @@ Refer to the following diagram to implement the basic real-time communication an
 
 - RTC SDK
 
+
 | API | Function |
 | ---------------- | ---------------- |
 | [sharedEngineWithAppId](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithAppId:delegate:)      | Initialize an AgoraRtcEngineKit object.      |
-| [setChannelProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setChannelProfile:) | Sets the channel profile. In this scenario, we set the channel profile as Live Broadcast.|
-| [setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setClientRole:) | Sets the user role in a live broadcast. In this scenario, we set the role of the student as broadcaster before joining the channel. During the class, the student and the teacher can see and talk to each other in real time. |
 | [enableVIdeo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableVideo:) | Enables the video module. |
 | [setVideoEncoderConfiguration](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:) | Sets the video encoder configuration. |
 | [setupLocalVideo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupLocalVideo:) | Sets the local video view. |
 | [joinChannelByToken](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) | Joins an Agora RTC channel. You can call [startPreview](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9143c9bb03165fe8b07c0c1e5a455ffb) to start the local video preview before joining a channel. |
 | [setupRemoteVideo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupRemoteVideo:) | Sets the remote video view. |
 | [leaveChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/leaveChannel:) | Leaves the RTC channel.  |
+
+<div class="alert note">The default channel profile of the Agora RTC SDK is Communication profile.</div>
+
 
 ## Additional functions
 

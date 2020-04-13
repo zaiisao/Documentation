@@ -32,6 +32,7 @@ Refer to the following diagram to implement the basic real-time communication an
 
 ![](https://web-cdn.agora.io/docs-files/1582875240081)
 
+
 ## Core API reference
 
 - RTM SDK
@@ -51,6 +52,7 @@ Refer to the following diagram to implement the basic real-time communication an
 
 - RTC SDK
 
+
 | API | Function |
 | ---------------- | ---------------- |
 | [sharedEngineWithAppId](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithAppId:delegate:)      | Initialize an AgoraRtcEngineKit object.      |
@@ -62,6 +64,7 @@ Refer to the following diagram to implement the basic real-time communication an
 | [joinChannelByToken](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) | Joins an Agora RTC channel. You can call [startPreview](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9143c9bb03165fe8b07c0c1e5a455ffb) to start the local video preview before joining a channel. |
 | [setupRemoteVideo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupRemoteVideo:) | Sets the remote video view. |
 | [leaveChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/leaveChannel:) | Leaves the RTC channel.  |
+
 
 ## Additional functions
 
