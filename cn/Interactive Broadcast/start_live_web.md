@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Web
-updatedAt: Thu Apr 09 2020 07:59:15 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 09:22:11 GMT+0800 (CST)
 ---
 # 实现视频直播
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音视频互动直播。
@@ -299,7 +299,7 @@ rtc.client.setClientRole(role);
    rtc.localStream.init(function () {
      console.log("init local stream success");
 	 // play stream with html element id "local_stream"
-     rtc.localStream.play("local_stream")
+     rtc.localStream.play("local_stream");
    }, function (err) {
      console.error("init local stream failed ", err);
    });

@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Tue Mar 10 2020 06:28:56 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 13:35:35 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -37,7 +37,12 @@ updatedAt: Tue Mar 10 2020 06:28:56 GMT+0800 (CST)
 
 参考下图时序，将 [RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) 和 [RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk) 集成到你的项目中。
 
-![](https://web-cdn.agora.io/docs-files/1581388838880)
+<% 
+if (product == "1v1") { %>![](https://web-cdn.agora.io/docs-files/1586784183161)<% }
+
+if (product == "1vn") { %>![](https://web-cdn.agora.io/docs-files/1581388838880)<% }
+%>
+
 
 ## 核心 API 参考
 
@@ -60,7 +65,9 @@ updatedAt: Tue Mar 10 2020 06:28:56 GMT+0800 (CST)
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)      | 创建客户端。      |
 | [Client.init](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) | 初始化客户端对象。 |
-| [Client.setClientRole](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | 设置直播场景下的用户角色。本场景中，我们将老师的用户角色设为主播，可以与同为主播的学生进行互动。|
+<% 
+if (product == "1vn") { %>| [Client.setClientRole](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole) | 设置直播场景下的用户角色。本场景中，我们将老师的用户角色设为主播，可以与同为主播的学生进行互动。|<% }
+%>
 | [createStream](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) | 创建并返回音视频流对象。 |
 | [Stream.init](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#init) | 初始化音视频对象。 |
 | [Client.join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) | 加入 Agora RTC 频道。 |
@@ -69,6 +76,11 @@ updatedAt: Tue Mar 10 2020 06:28:56 GMT+0800 (CST)
 | [Client.subscribe](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
 | [Stream.play](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
 | [Client.leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
+
+<% 
+if (product == "1v1") { %><div class="alert note">Agora RTC SDK 默认的频道场景为通信场景，不论教师端是否同时开启摄像头和屏幕共享，Agora 都建议使用通信场景。该场景中，老师可以和学生进行互动。</div>|<% }
+%>
+
 
 ## 附加功能
 

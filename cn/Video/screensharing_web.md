@@ -3,12 +3,14 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Fri Mar 27 2020 06:16:11 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 08:26:38 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
 
 在视频通话或互动直播中进行屏幕共享，可以将说话人或主播的屏幕内容，以视频画面的方式分享给其他说话人或观众观看，以提高沟通效率。
+
+<div class="alert note">Agora Web SDK 不支持在移动端设备上进行屏幕共享。</div>
 
 屏幕共享在如下场景中应用广泛：
 

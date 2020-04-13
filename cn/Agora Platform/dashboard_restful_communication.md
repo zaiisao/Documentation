@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 08 2020 04:01:28 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 09:34:52 GMT+0800 (CST)
 ---
 # RESTful API
 ## 认证
@@ -810,6 +810,7 @@ BaseUrl: **https://api.agora.io/dev**
 }
 ```
 
+<a name="query"></a>
 ## 查询在线频道信息 API
 
 BaseUrl：**https://api.agora.io/dev**
