@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Fri Mar 20 2020 11:02:55 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:51:13 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -181,9 +181,9 @@ rtcEngine.setInEarMonitoringVolume(volume);
 
 When recording, mixing, or playing audio, you can use the following methods to get the data of the loudest speaker in the channel.
 
-- Reports users with the highest peak volumes. The `onAudioVolumeIndication` callback reports the user IDs the corresponding volumes of the currently loudest speakers in the channel, as well as whether the local user is speaking.
+- Reports users with the highest peak volumes. The `onAudioVolumeIndication` callback reports the user IDs the corresponding volumes of the currently loudest speakers in the channel.
 
- <div class="alert note">To enable voice detection for the local user, you must set report_vad as true when calling enableAudioVolumeIndication.</div>
+	 <div class="alert note">You must call enableAudioVolumeIndication to be able to receive this callback.</div>
 
 Sample code
 

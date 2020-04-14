@@ -3,7 +3,7 @@
 title: Build a Client for the Student
 description: 
 platform: iOS
-updatedAt: Tue Apr 14 2020 03:26:03 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:28:31 GMT+0800 (CST)
 ---
 # Build a Client for the Student
 This section describes how to implement an iOS client for the student.
@@ -18,11 +18,14 @@ This flowchart shows the major logic of the student joining and leaving the clas
 
 Refer to the following table to download the SDKs, and integrate the SDKs into your project.
 
+
 | Product | SDK download | Integration guide |
 | ---------------- | ---------------- | ---------------- |
 | [RTC (Real-time Communication) SDK](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms)      | [Agora SDK for iOS](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_102_FULL_20200216_2115.zip)     | [Start a Video Call](https://docs.agora.io/en/Video/start_call_ios?platform=iOS) |
 | [RTM (Real-time Messaging) SDK](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Real-time messaging SDK](https://docs.agora.io/en/Real-time-Messaging/downloads) | [Peer-to-peer or Channel Messaging](https://docs.agora.io/en/Real-time-Messaging/messaging_ios?platform=iOS) |
 | [Whiteboard](https://developer-en.netless.link/docs/ios/overview/ios-introduction/) | [White SDK](https://developer-en.netless.link/docs/ios/quick-start/ios-prepare/) | [Whiteboard quickstart](https://developer-en.netless.link/docs/ios/quick-start/ios-init-sdk/) | 
+
+
 
 ## Core API call sequence
 

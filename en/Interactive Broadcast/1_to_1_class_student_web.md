@@ -3,7 +3,7 @@
 title: Build a Client for the Student
 description: 
 platform: Web
-updatedAt: Tue Apr 14 2020 03:26:41 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:28:34 GMT+0800 (CST)
 ---
 # Build a Client for the Student
 This section describes how to implement a Web client for the student.
@@ -18,11 +18,13 @@ This flowchart shows the major logic of the students joining and leaving the cla
 
 Refer to the following table to download the SDKs, and integrate the SDKs into your project.
 
+
 | Product | SDK download | Integration guide |
 | ---------------- | ---------------- | ---------------- | 
 | [RTC (Real-time Communication) SDK](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms)      | [ Agora SDK for Web](https://docs.agora.io/en/Video/downloads)      | [Start a Video Call](https://docs.agora.io/en/Video/start_call_web?platform=Web) |
 | [RTM (Real-time Messaging) SDK](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Real-time Messaging SDK](https://docs.agora.io/en/Real-time-Messaging/downloads) | [Peer-to-peer or Channel Messaging](https://docs.agora.io/en/Real-time-Messaging/messaging_web?platform=Web) |
 | [Whiteboard](https://developer-en.netless.link/docs/javascript/overview/js-outline/) | [White SDK](https://developer-en.netless.link/docs/javascript/guide/js-sdk/) | [Whiteboard quickstart](https://developer-en.netless.link/docs/javascript/quick-start/js-precondition/) |
+
 
 ## Core API call sequence
 

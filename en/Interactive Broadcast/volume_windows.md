@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Wed Mar 25 2020 05:28:37 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:46:24 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -191,9 +191,9 @@ int ret = rtcEngine.setVolumeOfEffect(soundId, 50);
 
 When recording, mixing, or playing audio, you can use the following methods to get the data of the loudest speaker in the channel.
 
-- Reports users with the highest peak volumes. The `onAudioVolumeIndication` callback reports the user IDs the corresponding volumes of the currently loudest speakers in the channel, as well as whether the local user is speaking.
+- Reports users with the highest peak volumes. The `onAudioVolumeIndication` callback reports the user IDs the corresponding volumes of the currently loudest speakers in the channel.
 
- <div class="alert note">To enable voice detection for the local user, you must set report_vad as true when calling enableAudioVolumeIndication.</div>
+ <div class="alert note">You must call enableAudioVolumeIndication to be able to receive this callback.</div>
  
  Sample code
 
