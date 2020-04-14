@@ -3,9 +3,11 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Tue Jul 23 2019 05:51:41 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 15:40:56 GMT+0800 (CST)
 ---
 # Release Notes
+<div class="alert note">Agora no longer maintains the Agora Unity SDK for Interactive Gaming, use the Agora RTC Unity SDK instead. See more details in <a href="https://docs.agora.io/en/Interactive%20Broadcast/release_unity_video?platform=Unity">Release Note</a >.</div>
+
 ## Introduction
 
 The Agora Unity SDK for Interactive Gaming provides C# interfaces to implement the voice and video functions for gaming on the Unity platform. 

@@ -3,9 +3,11 @@
 title: Implement Voice for Gaming
 description: 
 platform: Unity
-updatedAt: Thu Jul 04 2019 01:56:04 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 15:40:40 GMT+0800 (CST)
 ---
 # Implement Voice for Gaming
+<div class="alert note">Agora no longer maintains the Agora Unity SDK for Interactive Gaming, use the Agora RTC Unity SDK instead. See more details in <a href="https://docs.agora.io/en/Voice/start_call_audio_unity?platform=Unity">Start a Voice Call</a >.</div>
+
 With the `Hello-Unity-Agora` Sample App provided by Agora, you can:
 
 - Create and join a channel

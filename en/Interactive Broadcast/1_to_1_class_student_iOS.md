@@ -3,7 +3,7 @@
 title: Build a Client for the Student
 description: 
 platform: iOS
-updatedAt: Mon Apr 13 2020 15:11:16 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:26:03 GMT+0800 (CST)
 ---
 # Build a Client for the Student
 This section describes how to implement an iOS client for the student.

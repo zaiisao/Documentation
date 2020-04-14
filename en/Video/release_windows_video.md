@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Apr 02 2020 05:47:16 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 02:23:26 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -89,7 +89,7 @@ Adds the following members in the `RtcStats` class for providing more in-call st
 
 #### 4. Screen sharing
 
-This release enables window sharing of [UWP](https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guidea) (Universal Windows Platform) applications when you call [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52).
+This release enables window sharing of [UWP](https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) (Universal Windows Platform) applications when you call [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52).
 
 #### 5. Others
 

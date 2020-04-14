@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Apr 02 2020 05:48:56 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 02:22:37 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -60,11 +60,7 @@ Adds the following members in the `RtcStats` class for providing more in-call st
 - `memoryTotalUsageRatio`
 - `memoryAppUsageInKbytes`  
 
-#### 3. Screen sharing
-
-This release enables window sharing of [UWP](https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guidea) (Universal Windows Platform) applications when you call [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52).
-
-#### 4. Others
+#### 3. Others
 
 This release enables interoperability between the RTC Native SDK and the RTC Web SDK by default, and deprecates the `enableWebSdkInteroperability` method.
 

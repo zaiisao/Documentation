@@ -3,9 +3,11 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Thu Dec 19 2019 07:38:48 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 15:39:47 GMT+0800 (CST)
 ---
 # Interactive Gaming API
+<div class="alert note">Agora no longer maintains the Agora Unity SDK for Interactive Gaming, use the Agora RTC Unity SDK instead. See more details in <a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/index.html">API Reference</a >.</div>
+
 This document is provided for the C\# programming language with the following classes:
 
 -   [IRtcEngine Abstract Class](#irtcengine): includes the main methods for the application to call.

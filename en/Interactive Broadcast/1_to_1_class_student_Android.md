@@ -3,7 +3,7 @@
 title: Build a Client for the Student
 description: 
 platform: Android
-updatedAt: Mon Apr 13 2020 15:09:33 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:24:39 GMT+0800 (CST)
 ---
 # Build a Client for the Student
 This section describes how to implement an Android client for the student.

@@ -3,7 +3,7 @@
 title: Build a Client for the Student
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 15:13:20 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:26:41 GMT+0800 (CST)
 ---
 # Build a Client for the Student
 This section describes how to implement a Web client for the student.

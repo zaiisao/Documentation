@@ -3,7 +3,7 @@
 title: Deal with Autoplay Blocking
 description: autoplay policy best practice 
 platform: Web
-updatedAt: Mon Mar 02 2020 02:17:42 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 01:49:44 GMT+0800 (CST)
 ---
 # Deal with Autoplay Blocking
 ## Overview
@@ -11,6 +11,8 @@ updatedAt: Mon Mar 02 2020 02:17:42 GMT+0800 (CST)
 To prevent the webpage from playing sound without permission, most web browsers restrict the autoplay function: Autoplay with sound is blocked unless the user has interacted with the webpage.
 
 This restriction policy is intended to improve the user experience, because autoplay with sound may be against the users' deliberate intention.
+
+When it comes to the Agora Web SDK, audio playback is affected by this policy so long as the stream object in `Stream.play` contains an unmuted audio track.
 
 The policy may cause playback issues. This document describes how to get around this restriction for the following scenarios:
 

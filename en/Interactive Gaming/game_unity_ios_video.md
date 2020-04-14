@@ -3,9 +3,11 @@
 title: Implement Video for Gaming
 description: 
 platform: Unity_(iOS)
-updatedAt: Thu Mar 28 2019 10:02:51 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 15:40:23 GMT+0800 (CST)
 ---
 # Implement Video for Gaming
+<div class="alert note">Agora no longer maintains the Agora Unity SDK for Interactive Gaming, use the Agora RTC Unity SDK instead. See more details in <a href="https://docs.agora.io/en/Video/start_call_unity?platform=Unity">Start a Video Call</a >.</div>
+
 ## Step 1: Prepare the Environment
 
 1.  [Download](https://docs.agora.io/en/Agora%20Platform/downloads) the latest Unity video kit. See the following structure:

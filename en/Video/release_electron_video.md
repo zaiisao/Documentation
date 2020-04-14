@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Electron
-updatedAt: Tue Apr 07 2020 10:01:06 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 02:24:00 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora SDK for Electron.
@@ -79,7 +79,7 @@ Adds the following properties in the [`RtcStats`](https://docs.agora.io/en/Video
 
 #### 4. Screen sharing
 
-This release enables window sharing of [UWP (Universal Windows Platform)](https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guidea) applications when you sharing a screen by the windows ID.
+This release enables window sharing of [UWP (Universal Windows Platform)](https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) applications when you sharing a screen by the windows ID.
 
 #### 5. Watermark in Live Broadcasts
 
