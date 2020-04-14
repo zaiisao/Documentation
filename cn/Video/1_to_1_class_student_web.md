@@ -51,16 +51,16 @@ updatedAt: Mon Apr 13 2020 15:06:21 GMT+0800 (CST)
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
-| [createClient](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)        | 创建客户端。      |
-[Client.init](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#init) | 初始化客户端对象。 |
-[Client.join](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join) | 加入 Agora RTC 频道。 |
-| [Client.on](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on)("stream-added") | 远端音视频已添加。 |
-| [createStream](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createstream) | 创建并返回音视频流对象。 |
-| [Stream.init](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#init) | 初始化音视频对象。 |
-| [Client.publish](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#publish) | 发布本地音视频流至 SD-RTN。 |
-| [Client.subscribe](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
-| [Stream.play](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
-| [Client.leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
+| [createClient](https://docs.agora.io/cn/Video/API%20Reference/web/globals.html#createclient)        | 创建客户端。      |
+[Client.init](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#init) | 初始化客户端对象。 |
+[Client.join](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#join) | 加入 Agora RTC 频道。 |
+| [Client.on](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#on)("stream-added") | 远端音视频已添加。 |
+| [createStream](https://docs.agora.io/cn/Video/API%20Reference/web/globals.html#createstream) | 创建并返回音视频流对象。 |
+| [Stream.init](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#init) | 初始化音视频对象。 |
+| [Client.publish](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#publish) | 发布本地音视频流至 SD-RTN。 |
+| [Client.subscribe](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
+| [Stream.play](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
+| [Client.leave](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
 
 <div class="alert note">Agora RTC SDK 默认的频道场景为通信场景。</div>
 

@@ -3,9 +3,11 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(Android)
-updatedAt: Thu Jul 04 2019 01:56:33 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 15:28:20 GMT+0800 (CST)
 ---
 # 实现游戏视频功能
+<div class="alert note">互动游戏 Unity SDK 将不再维护，请使用 RTC Unity SDK 替代。详情见<a href="https://docs.agora.io/cn/Video/start_call_unity?platform=Unity">实现视频通话</a >。</div>
+
 使用 Agora 的 `Hello-Video-Unity-Agora` 代码示例可以实现以下功能:
 
 -   创建/加入频道

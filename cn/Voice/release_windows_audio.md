@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Thu Apr 02 2020 06:03:08 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 02:25:23 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -60,11 +60,7 @@ Agora 在该版本对通信场景采用了全新的系统架构，并升级了�
 
 为方便开发者获取更多通话统计信息，该版本在 `RtcStats` 类中新增 `gatewayRtt`、`memoryAppUsageRatio`、`memoryTotalUsageRatio` 和 `memoryAppUsageInKbytes` 成员，方便更好地监控通话的质量和通话过程中的内存变动。
 
-#### 3. 屏幕共享
-
-为支持更多屏幕共享使用场景，该版本新增支持调用 [`startScreenCaptureByWindowId`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52) 方法时共享[通用 Windows 平台](https://docs.microsoft.com/zh-cn/windows/uwp/get-started/universal-application-platform-guide)（UWP）应用窗口。
-
-#### 4. 其他提升
+#### 3. 其他提升
 
 该版本自动开启直播场景下 Native SDK 与 Web SDK 的互通，并废弃原有的 `enableWebSdkInteroperability` 方法。
 

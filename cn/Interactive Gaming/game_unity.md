@@ -3,9 +3,11 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Mon Nov 25 2019 09:39:04 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 15:29:48 GMT+0800 (CST)
 ---
 # 游戏 API
+<div class="alert note">互动游戏 Unity SDK 将不再维护，请使用 RTC Unity SDK 替代。详情见<a href="https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/index.html">API 参考</a >。</div>
+
 本文提供基于 C\# 语言的游戏音视频 API 描述，包括以下类:
 
 <table>

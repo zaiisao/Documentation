@@ -3,9 +3,11 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Wed Aug 14 2019 10:23:18 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 15:25:44 GMT+0800 (CST)
 ---
 # 发版说明
+<div class="alert note">互动游戏 Unity SDK 将不再维护，请使用 RTC Unity SDK 替代。详情见<a href="https://docs.agora.io/cn/Interactive%20Broadcast/release_unity_video?platform=Unity">发版说明</a >。</div>
+
 ## 简介
 
 Unity 互动游戏 SDK，支持使用 C# 语言在 Unity 平台上实现游戏语音和视频功能。

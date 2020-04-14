@@ -3,9 +3,11 @@
 title: 实现游戏语音功能
 description: 
 platform: Unity
-updatedAt: Thu Jul 04 2019 01:55:47 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 15:26:52 GMT+0800 (CST)
 ---
 # 实现游戏语音功能
+<div class="alert note">互动游戏 Unity SDK 将不再维护，请使用 RTC Unity SDK 替代。详情见<a href="https://docs.agora.io/cn/Voice/start_call_audio_unity?platform=Unity">实现语音通话</a >。</div>
+
 使用 Agora 的 `Hello-Unity3D-Agora` 代码示例可以演示以下功能:
 
 -   创建/加入频道

@@ -3,9 +3,11 @@
 title: 实现游戏视频功能
 description: 
 platform: Unity_(iOS)
-updatedAt: Thu Mar 28 2019 09:59:53 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 15:28:36 GMT+0800 (CST)
 ---
 # 实现游戏视频功能
+<div class="alert note">互动游戏 Unity SDK 将不再维护，请使用 RTC Unity SDK 替代。详情见<a href="https://docs.agora.io/cn/Video/start_call_unity?platform=Unity">实现视频通话</a >。</div>
+
 ## 步骤 1: 准备环境
 
 1.  [下载](https://docs.agora.io/cn/Agora%20Platform/downloads) 最新的 Unity 视频软件包。软件包结构如下:
