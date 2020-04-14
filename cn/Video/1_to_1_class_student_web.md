@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 15:06:21 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:06:02 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Web 平台实现学生端相关功能。

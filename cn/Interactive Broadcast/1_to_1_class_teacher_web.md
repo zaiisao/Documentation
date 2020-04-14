@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 15:05:41 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:12:29 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。

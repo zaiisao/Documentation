@@ -18,54 +18,13 @@ updatedAt: Mon Apr 13 2020 14:28:22 GMT+0800 (CST)
 
 根据下表链接，下载对应的 SDK，参考集成文档的步骤将 SDK 集成到你的项目中。
 
-<%
 
-if (platform == "android") 
-{ %>
 | 产品 | SDK 下载 | 集成文档 |
 | ---------------- | ---------------- | ---------------- |
 | [RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [Android 视频互动直播 SDK](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Android_v2_9_0_103_FULL_20200325_1695.zip)      | [实现互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android) |
 | [RTM (Real-time Messaging) SDK](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Android 实时消息 SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) | [收发点对点消息和频道消息](https://docs.agora.io/cn/Real-time-Messaging/messaging_android?platform=Android) |
 | [白板](https://developer.netless.link/docs/android/overview/android-introduction/) | [SDK 集成](https://developer.netless.link/docs/android/quick-start/android-prepare/) | [白板快速开始](https://developer.netless.link/docs/android/quick-start/android-init-sdk/) |
-<%
-if (product == "1v1") { %> 
-| 产品 | SDK 下载 | 集成文档 |
-| ---------------- | ---------------- | ---------------- |
-| [RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)      | [Android 视频通话 SDK](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Android_v2_9_0_103_FULL_20200325_1695.zip)      | [实现视频通话](https://docs.agora.io/cn/Video/start_call_android?platform=Android) |
-| [RTM (Real-time Messaging) SDK](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Android 实时消息 SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) | [收发点对点消息和频道消息](https://docs.agora.io/cn/Real-time-Messaging/messaging_android?platform=Android) |
-| [白板](https://developer.netless.link/docs/android/overview/android-introduction/) | [SDK 集成](https://developer.netless.link/docs/android/quick-start/android-prepare/) | [白板快速开始](https://developer.netless.link/docs/android/quick-start/android-init-sdk/) |
-<% }
-%>
 
-<% }
-
-if (platform == "ios")
-{ %>
-| 产品 | SDK 下载 | 集成文档 |
-| ---------------- | ---------------- | ---------------- |
-| [RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [iOS 视频互动直播 SDK](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_103_FULL_20200325_2479.zip)     | [实现互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_ios?platform=iOS) |
-| [RTM (Real-time Messaging) SDK](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [iOS 实时消息 SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) | [收发点对点消息和频道消息](https://docs.agora.io/cn/Real-time-Messaging/messaging_ios?platform=iOS) |
-| [白板](https://developer.netless.link/docs/ios/overview/ios-introduction/) | [SDK 集成](https://developer.netless.link/docs/ios/quick-start/ios-prepare/) | [白板快速开始](https://developer.netless.link/docs/ios/quick-start/ios-init-sdk/) | 
-<% }
-
-if (platform == "webstudent") { %>
-| 产品 | SDK 下载 | 集成文档 |
-| ---------------- | ---------------- | ---------------- | 
-| [RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [ Web 视频互动直播 SDK](https://docs.agora.io/cn/Interactive%20Broadcast/downloads)      | [实现互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web) |
-| [RTM (Real-time Messaging) SDK](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Web 实时消息 SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) | [收发点对点消息和频道消息](https://docs.agora.io/cn/Real-time-Messaging/messaging_web?platform=Web) |
-| [白板](https://developer.netless.link/docs/javascript/overview/js-outline/) | [SDK 集成](https://developer.netless.link/docs/javascript/guide/js-sdk/) | [白板快速开始](https://developer.netless.link/docs/javascript/quick-start/js-precondition/) |
-<% }
-
-if (platform == "webteacher") { %>
-| 产品 | SDK 下载 | 集成文档 |
-| ---------------- | ---------------- | ---------------- | 
-| [RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [ Web 视频互动直播 SDK](https://docs.agora.io/cn/Interactive%20Broadcast/downloads)      | [实现互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web) |
-| [RTM (Real-time Messaging) SDK](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Web 实时消息 SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) | [收发点对点消息和频道消息](https://docs.agora.io/cn/Real-time-Messaging/messaging_web?platform=Web) |
-| [云端录制](https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=All%20Platforms) | / | [使用 RESTful API 录制](https://docs.agora.io/cn/cloud-recording/cloud_recording_rest?platform=All%20Platforms) |
-| [白板](https://developer.netless.link/docs/javascript/overview/js-outline/) | [SDK 集成](https://developer.netless.link/docs/javascript/guide/js-sdk/) | [白板快速开始](https://developer.netless.link/docs/javascript/quick-start/js-precondition/) |
-<% }
-
-%>
 
 ## 核心 API 时序图
 

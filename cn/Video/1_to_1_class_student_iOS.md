@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: iOS
-updatedAt: Mon Apr 13 2020 15:03:28 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:02:50 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 iOS 平台实现学生端相关功能。
