@@ -2,8 +2,8 @@
 ---
 title: 如何检测通话质量
 description: 
-platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:14:46 GMT+0800 (CST)
+platform: Android,iOS,macOS,Windows,Unity,electron
+updatedAt: Fri Apr 10 2020 13:52:23 GMT+0800 (CST)
 ---
 # 如何检测通话质量
 通话质量检测可以从通话前和通话中两个维度来梳理。

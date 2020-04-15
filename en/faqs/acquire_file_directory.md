@@ -1,11 +1,11 @@
 
 ---
-title: How to get the URL of the M3U8 file?
+title: How can I get the URL of the M3U8 file?
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 19 2019 10:56:31 GMT+0800 (CST)
+updatedAt: Wed Mar 25 2020 22:46:23 GMT+0800 (CST)
 ---
-# How to get the URL of the M3U8 file?
+# How can I get the URL of the M3U8 file?
 The URL of the M3U8 file consists of the domain of your cloud storage and the filename. You can copy the URL in your cloud storage.
 
 ![](https://web-cdn.agora.io/docs-files/1556174270602)

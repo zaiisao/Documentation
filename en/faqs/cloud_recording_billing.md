@@ -1,11 +1,11 @@
 
 ---
-title: Billing for the cloud recording
+title: Billing for cloud recording
 description: 语音通话计费说明
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 20:55:38 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 14:15:18 GMT+0800 (CST)
 ---
-# Billing for the cloud recording
+# Billing for cloud recording
 ## Calculating service minutes
 
 
@@ -73,6 +73,8 @@ For example, let's say a recording server is in a channel for 30 minutes. It rec
 
 
 ## Pricing
+
+
 
 
 

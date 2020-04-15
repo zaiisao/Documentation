@@ -1,11 +1,11 @@
 
 ---
-title: How to track the quality of a call
+title: How can I track the quality of a call?
 description: 
-platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:09:12 GMT+0800 (CST)
+platform: Android,iOS,macOS,Windows,Unity,electron
+updatedAt: Fri Apr 10 2020 13:57:58 GMT+0800 (CST)
 ---
-# How to track the quality of a call
+# How can I track the quality of a call?
 You can track the quality of a call from the following aspects:
 
 - The network quality before the call starts.

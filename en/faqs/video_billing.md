@@ -1,11 +1,11 @@
 
 ---
-title: Billing for the video call
+title: Billing for a video call
 description: 视频通话计费说明
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 20:31:53 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 14:19:06 GMT+0800 (CST)
 ---
-# Billing for the video call
+# Billing for a video call
 ## Calculating service minutes
 
 
@@ -66,7 +66,13 @@ Total fee for user A = Unit price (video minutes HD) x 30 min + Unit price (vide
 
 If you deduct the time that a user receives the video streams in the channel from the total time that the user stays in the channel, you get the audio minutes of that user, regardless of whether that user subscribes to any audio stream. 
 
-For example, let's say a user is in a channel for 30 minutes. This user subscribs to a video stream for 20 minutes, and is idle for the rest 10 minutes. In this case, Agora records 20 video minutes and 10 audio minutes for this specific user.
+
+
+For example, let's say a user is in a channel for 30 minutes. This user subscribs to a video stream for 20 minutes, and is idle for the remaining 10 minutes. In this case, Agora logs 20 video minutes and 10 audio minutes for this specific user.
+
+
+
+
 
 <div class="alert note"><li>A user's audio minutes do not add up, even if that user subscribes to multiple audio streams at the same time. </li><li>See <a href="#billing">Pricing</a> for the pricing information of the audio minutes. </li></div>
 
@@ -86,6 +92,12 @@ For example, let's say a user is in a channel for 30 minutes. This user subscrib
 | Audio                         | 0.99                             |
 | Video HD                      | 3.99                             |
 | Video HD+                     | 14.99                            |
+
+
+
+
+
+
 
 
 

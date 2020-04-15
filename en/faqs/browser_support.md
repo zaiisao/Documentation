@@ -3,7 +3,7 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Wed Sep 11 2019 11:03:36 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 16:03:00 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
 The Agora Web SDK supports all mainstream browsers. 
@@ -15,7 +15,7 @@ The Agora Web SDK supports all mainstream browsers.
     <th>Firefox 56 or later</th>
     <th>Safari 11 or later</th>
     <th>Opera 45 or later</th>
-    <th>QQ Browser</th>
+    <th>QQ Browser 10.5 or later</th>
     <th>360 Secure Browser</th>
     <th>WeChat Built-in Browser</th>
   </tr>
@@ -73,30 +73,34 @@ The Agora Web SDK supports all mainstream browsers.
 
 Due to the various browser engine implementations, support for some features may vary by browser and platform. The following are known issues and limitations.
 
-## Chrome
+## Limitation
+
+### Chrome
 
 The Agora Web SDK is based on WebRTC and works best on Chrome.
 - The Agora Web SDK supports Chrome 58 or later.
+- On some Android devices, Chrome does not support the H.264 codec.
 - Some APIs require later versions of Chrome, see the API Reference for details.
 
-## Safari
+### Safari
 
 - Safari 12.1 or earlier only supports the H.264 codec.
 - Safari does not support changing the frame rate (30 fps by default).
 - Device permissions
   - Safari does not support getting the output device information, so it does not support the `getPlayoutDevices` and `setAudioOutput` methods.
-  - If Auto-Play is not enabled on Safari, the stream playback has no audio. You have to call the `navigator.mediaDevices.getUserMedia` method to get the device permissions before playing a stream.
+  - If **Auto-Play** is not enabled on Safari, the stream playback has no audio. You have to call the `navigator.mediaDevices.getUserMedia` method to get the device permissions before playing a stream.
 - Safari does not support the `addTrack` and `removeTrack` methods.
 - Safari does not support the `getAudioLevel` method on iOS.
+- Occasional audio routing issues on iOS Safari: The audio is routed to the speakerphone when a headset is connected, or the audio is routed to the earpiece when no headset is connected.
 
-## Firefox
+### Firefox
 
 - When the Firefox browser interoperates with the Native SDK for iOS, the video in the Firefox browser is rotated.
 - Setting the video profile on Firefox does not take effect on the following devices:
   - MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)
   - Windows 10 (MI)
 
-## Edge
+### Edge
 
 The Agora Web SDK v2.7 or later supports the Microsoft Edge browser. Due to browser limitations, the Agora Web SDK supports the following functions:
 
@@ -105,3 +109,6 @@ The Agora Web SDK v2.7 or later supports the Microsoft Edge browser. Due to brow
 - Gets the audio level by calling the `getAudioLevel` method.
 - Disables/Enables the audio track by calling the `muteAudio`/`unmuteAudio` method.
 - Disables/Enables the video track by calling the `muteVideo`/`unmuteVideo` method.
+
+## Reference
+[How to use Agora Web SDK on mobile devices?](https://docs.agora.io/en/faq/web_on_mobile)

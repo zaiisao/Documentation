@@ -1,11 +1,11 @@
 
 ---
-title: Billing for the voice call
+title: Billing for a voice call
 description: 语音通话计费说明
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 20:37:26 GMT+0800 (CST)
+updatedAt: Thu Apr 02 2020 14:17:20 GMT+0800 (CST)
 ---
-# Billing for the voice call
+# Billing for a voice call
 ## Calculating service minutes
 
 
@@ -24,7 +24,13 @@ Agora adds up the [audio minutes](#amin) used by the projects under your [Agora 
 
 If you deduct the time that a user receives the video streams in the channel from the total time that the user stays in the channel, you get the audio minutes of that user, regardless of whether that user subscribes to any audio stream. 
 
-For example, let's say a user is in a channel for 30 minutes. This user subscribs to a video stream for 20 minutes, and is idle for the rest 10 minutes. In this case, Agora records 20 video minutes and 10 audio minutes for this specific user.
+
+
+
+
+Suppose a user is in a channel for 30 minutes, then Agora logs 30 audio minutes for that user regardless of whether the user is idle or has subscribed to other users (because there is no way for a user in a voice call or an audio broadcast to subscribe to a video stream).
+
+
 
 <div class="alert note"><li>A user's audio minutes do not add up, even if that user subscribes to multiple audio streams at the same time. </li><li>See <a href="#billing">Pricing</a> for the pricing information of the audio minutes. </li></div>
 
@@ -40,6 +46,8 @@ For example, let's say a user is in a channel for 30 minutes. This user subscrib
 | Service<a name="billing"></a> | Pricing （Dollars/1,000 minutes) |
 | :---------------------------- | :------------------------------- |
 | Audio                         | 0.99                             |
+
+
 
 
 

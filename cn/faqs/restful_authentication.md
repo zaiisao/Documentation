@@ -3,12 +3,12 @@
 title: 如何进行 HTTP 基本认证？
 description: 
 platform: All Platforms
-updatedAt: Fri Feb 28 2020 22:39:59 GMT+0800 (CST)
+updatedAt: Wed Mar 11 2020 17:45:40 GMT+0800 (CST)
 ---
 # 如何进行 HTTP 基本认证？
 ## 功能描述
 
-在使用 RESTful API 前，你需要在 HTTP 请求头部中填入 `Authorization` 字段，进行 HTTP 基本认证 。本文介绍如何使用 Agora 提供的 Customer ID 和 Customer Certificate 生成一个 Authorization 字段。
+在使用 RESTful API 前，你需要在 HTTP 请求头部中填入 `Authorization` 字段，进行 HTTP 基本认证 。本文介绍如何使用 Agora 提供的 Customer ID 和 Customer Certificate 生成一个 Authorization 字段。该 Authorization 字段使用 Base64 算法编码生成。
 
 ## 操作步骤
 

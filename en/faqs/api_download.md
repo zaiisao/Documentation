@@ -1,12 +1,18 @@
 
 ---
-title: How to View Agora API References Offline
+title: How can I view Agora API references offline?
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 12 2019 10:23:28 GMT+0800 (CST)
+updatedAt: Wed Mar 25 2020 22:46:57 GMT+0800 (CST)
 ---
-# How to View Agora API References Offline
-To view Agora API references offline, you can search Agora as the keyword and download the target reference in Dash.
+# How can I view Agora API references offline?
+## Introduction
+
+Agora updates Agora API references on Dash platform, you can download and view the offline reference in Dash.
+
+<div class="alert note">You can only run Dash on macOS or iOS.</div>
+
+## Implementation
 
 1. Download and install [Dash](https://kapeli.com/dash). You can only run Dash on macOS or iOS.
 2. Run Dash and click **Download Docsets.**

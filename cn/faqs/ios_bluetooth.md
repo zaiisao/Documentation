@@ -3,7 +3,7 @@
 title: 为什么 iOS 设备连接蓝牙设备后不能通过蓝牙设备接电话？
 description: iOS 蓝牙耳机相关问题
 platform: iOS
-updatedAt: Fri Feb 28 2020 22:28:44 GMT+0800 (CST)
+updatedAt: Tue Mar 03 2020 17:00:08 GMT+0800 (CST)
 ---
 # 为什么 iOS 设备连接蓝牙设备后不能通过蓝牙设备接电话？
 ## 问题描述

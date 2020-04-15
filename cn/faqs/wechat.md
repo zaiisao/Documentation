@@ -3,7 +3,7 @@
 title: 小程序 SDK 常见问题集
 description: 
 platform: 微信小程序
-updatedAt: Tue Jan 21 2020 16:41:45 GMT+0800 (CST)
+updatedAt: Fri Feb 21 2020 11:59:33 GMT+0800 (CST)
 ---
 # 小程序 SDK 常见问题集
 ### 推流/拉流处理
@@ -57,9 +57,10 @@ AgoraMiniappSDK.LOG.onlog = (text) => {
 
 ### 出现客户端初始化失败之后，该如何做?
 
-1. 退出后重新加入频道；
-2.  如果步骤 1 无法生效，请换台设备试试；
-3. 如果步骤 2 仍旧无效，请联系客户支持。
+通常，客户端初始化失败，会伴随着错误码 901 或 903，处理方法如下：
+
+- 901：出现错误码 901 绝大部分原因是没开小程序的服务权限，或没有配置域名，或 uid 参数格式不正确。请参考快速开始中的[开发环境要求](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_wechat?platform=%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F#开发环境要求)完成设置后再尝试；
+- 903：这个错误通常是网络原因引起的；也可能是因为鉴权失败，如没有填 Token，或 Token 无效导致的。请检查并填入有效的 Token 进行尝试。
 
 ### 出现错误码
 

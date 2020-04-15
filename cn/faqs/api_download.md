@@ -1,14 +1,20 @@
 
 ---
-title: 如何离线查看 Agora API 参考文档
+title: 如何离线查看 Agora API 参考文档？
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 11 2019 11:50:49 GMT+0800 (CST)
+updatedAt: Tue Mar 24 2020 12:07:01 GMT+0800 (CST)
 ---
-# 如何离线查看 Agora API 参考文档
-欲离线查看 Agora API 参考文档，你可以通过 Dash 搜索 Agora 关键词并下载目标参考文档。
+# 如何离线查看 Agora API 参考文档？
+## 功能描述
 
-1. 下载并安装 [Dash](https://kapeli.com/dash)。Dash 仅支持在 macOS 或 iOS 中运行。
+Agora 已在 Dash 平台上传 Agora API 参考文档，你可以通过 Dash 下载并离线查看目标参考文档。
+
+<div class="alert note">Dash 仅支持在 macOS 或 iOS 中运行。</div>
+
+## 操作步骤
+
+1. 下载并安装 [Dash](https://kapeli.com/dash)。
 2. 运行 Dash，点击 **Download Docsets**。
    
 	 ![](https://web-cdn.agora.io/docs-files/1562815745525)

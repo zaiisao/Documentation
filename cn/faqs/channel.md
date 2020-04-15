@@ -2,8 +2,8 @@
 ---
 title: 频道相关常见问题
 description: 
-platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:15:57 GMT+0800 (CST)
+platform: Android,iOS,macOS,Windows
+updatedAt: Fri Apr 10 2020 13:53:51 GMT+0800 (CST)
 ---
 # 频道相关常见问题
 ### 网络环境差时，SDK 会强行让用户自动退出频道么？

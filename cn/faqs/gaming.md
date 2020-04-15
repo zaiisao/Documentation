@@ -3,7 +3,7 @@
 title: 游戏常见问题集
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 27 2019 10:09:59 GMT+0800 (CST)
+updatedAt: Tue Mar 17 2020 10:44:05 GMT+0800 (CST)
 ---
 # 游戏常见问题集
 **加入频道之前，游戏音效是静音状态，但是指挥模式下进入语音频道之后，为什么游戏音效自动打开？**
@@ -20,9 +20,9 @@ updatedAt: Tue Aug 27 2019 10:09:59 GMT+0800 (CST)
 
 在 `joinChannel` 之后，SDK 将 `AudioSessioCategory` 更改为 `AVAudioSessionCategoryPlayAndRecord`，`mode` 为 `AVAudioSessionModeVoiceChat`，使用通话音量。
 
-如果不想在进出房间时发生音量变化，我们建议在退出语音房间时，把 `AudioSessionCategory` 的 `mode` 设置回进房间之前的设置。
+如果不想在进出房间时发生音量变化，我们建议在退出语音房间时，把 `AudioSessionCategory` 和 `mode` 设置回进房间之前的设置。
 
-游戏 SDK v2.2 及之后的版本，以及 2019 年之后发布的 SDK，会自动完成该操作。
+<div class="alert note">游戏 SDK v2.2 及之后的版本，以及 2019 年之后发布的 SDK，会自动完成该操作。</div>
 
 **为什么接入 SDK 后游戏音效与语音相互冲突？**
 
@@ -34,7 +34,7 @@ updatedAt: Tue Aug 27 2019 10:09:59 GMT+0800 (CST)
 
 我们建议在通话的时候，直接关掉音乐和音效，或者在通话连麦时，降低游戏背景音量，以避免该问题。
 
-**在 App 里播放背景音乐， 然后加入频道， 为什么背景音乐音量会变化？调用 leaveChannel 之后，为什么背景音乐也没有了？**
+**在 app 里播放背景音乐， 然后加入频道， 为什么背景音乐音量会变化？调用 leaveChannel 之后，为什么背景音乐也没有了？**
 
 请使用以下方法解决该问题：在 `joinChannel` 之前，调用：`setParameters("{\"che.audio.keep.audiosession\":true}")`;
 
@@ -68,7 +68,7 @@ updatedAt: Tue Aug 27 2019 10:09:59 GMT+0800 (CST)
 `mRtcEngine.setParameters("{\"che.audio.enable.agc\":true}");`
 `mRtcEngine.setParameters("{\"che.audio.enable.ns\":true}");`
 
-上述设置可能会造成回声问题，我们建议充分测试后进行实现。
+<div class="alert note">上述设置可能会造成回声问题，我们建议充分测试后进行实现。</div>
 
 **蓝牙耳机为什么没有立体声 ？**
 

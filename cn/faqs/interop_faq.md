@@ -3,12 +3,12 @@
 title: Agora Web SDK 如何与 Agora Native SDK 互通
 description: 
 platform: Android,iOS,macOS,Web,Windows
-updatedAt: Tue Dec 31 2019 16:52:17 GMT+0800 (CST)
+updatedAt: Wed Mar 04 2020 14:02:24 GMT+0800 (CST)
 ---
 # Agora Web SDK 如何与 Agora Native SDK 互通
-在通信模式下，Agora Web SDK 和 Agora Native SDK 默认互通，无需额外设置。
+对于 v3.0.0 及以上版本的 RTC Native SDK，与 Web SDK 的互通是默认打开的，无需设置。
 
-在直播模式下，移动端/桌面端和 Web 端必须同时设置，才能实现互通：
+而 v3.0.0 之前的 SDK，通信场景下，Web SDK 和 Native SDK 默认互通，无需额外设置。在直播场景下，移动端/桌面端和 Web 端必须同时手动设置，才能实现互通：
 
 * 移动端/桌面端：调用 `enableWebSdkInteroperability` API 方法。
 

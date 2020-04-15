@@ -3,7 +3,7 @@
 title: Gaming FAQ
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 27 2019 10:09:42 GMT+0800 (CST)
+updatedAt: Tue Mar 17 2020 10:45:30 GMT+0800 (CST)
 ---
 # Gaming FAQ
 **Before joining a channel, the audio effects are muted. Why are they unmuted after the user joins a channel in Command mode?**
@@ -20,7 +20,9 @@ Before the user joins a channel, the device uses the SDK to play the background 
 
 After the user leaves a channel, the SDK changes the `AudioSessioCategory` parameter as `AVAudioSessionCategoryPlayAndRecord` and `mode` as `AVAudioSessionModeVoiceChat`. The background music uses the in-call volume.
 
-To keep the audio volume steady when the user leaves the channel, we recommend you to set `AudioSessionCategory` to the same mode as before joining the channel. This is automatically set in AMG SDKs later than v2.2 and Native SDKs released after 2019.
+To keep the audio volume steady when the user leaves the channel, we recommend you to set `AudioSessionCategory` to the same mode as before joining the channel. 
+
+<div class="alert note">This is automatically set in AMG SDKs later than v2.2 and Native SDKs released after 2019.</div>
 
 **Why are there conflicts between the audio effects and the voice after a user joins a channel?**
 
@@ -66,7 +68,7 @@ To mute the media volume, you need to set the following methods before a user jo
 `mRtcEngine.setParameters("{\"che.audio.enable.agc\":true}");`
 `mRtcEngine.setParameters("{\"che.audio.enable.ns\":true}");`
 
-The settings above may cause echo problems, and we recommend implementing them only after testing.
+<div class="alert note">The settings above may cause echo problems, and we recommend implementing them only after testing.</div>
 
 **Why is there no stereo playback when using the Bluetooth earphone?**
 

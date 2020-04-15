@@ -3,7 +3,7 @@
 title: 直播 SEI 相关问题 
 description: 
 platform: All Platforms
-updatedAt: Fri Dec 27 2019 15:23:51 GMT+0800 (CST)
+updatedAt: Tue Mar 31 2020 15:14:05 GMT+0800 (CST)
 ---
 # 直播 SEI 相关问题 
 ## 声网 SEI 规范
@@ -78,7 +78,9 @@ updatedAt: Fri Dec 27 2019 15:23:51 GMT+0800 (CST)
 字段说明：
 
 * `06`：SEI 帧。
-* `64`：用户定义的帧类型，这里声网定义 SEI 类型为 100。
+* `64`: 用户定义的帧类型：
+	- 声网默认该类型为 100。
+	- 其他类型。用户需要进行额外处理和逻辑保护。
 * `bd`：表示帧长度。下面是一些以十进制和十六进制展示的计算示例：
 	*  帧长度为 922，即 255（`0xff`）+ 255（`0xff`）+ 255（`0xff`）+ 157（`0x9d`），则 `bd` 表示为 `ffffff9d`。
 	*  帧长度为 572，即 255（`0xff`）+ 255（`0xff`）+ 62（`0x3e`），则 `bd` 表示为 `ffff3e`。

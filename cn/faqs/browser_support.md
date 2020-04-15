@@ -1,11 +1,11 @@
 
 ---
-title: Agora Web SDK 支持哪些浏览器
+title: Agora Web SDK 支持哪些浏览器？
 description: 
 platform: Web
-updatedAt: Wed Sep 11 2019 11:03:54 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 16:07:37 GMT+0800 (CST)
 ---
-# Agora Web SDK 支持哪些浏览器
+# Agora Web SDK 支持哪些浏览器？
 Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
 
 <table>
@@ -15,7 +15,7 @@ Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
     <th>Firefox 56+</th>
     <th>Safari 11+</th>
     <th>Opera 45+</th>
-    <th>QQ 浏览器最新版</th>
+    <th>QQ 浏览器 10.5+</th>
     <th>360 安全浏览器</th>
     <th>微信浏览器</th>
   </tr>
@@ -73,14 +73,17 @@ Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
 
 由于浏览器的差异，在不同浏览器及平台上支持的功能可能不同。下面列出浏览器和平台的已知限制。
 
-## Chrome
+## 使用限制
+
+### Chrome
 
 Agora Web SDK 是基于 WebRTC 实现的采集和编解码，而 Chrome 又是第一批支持 WebRTC 的先行者，所以在 Chrome 上的限制最少，已知限制：
 
 - Chrome 版本要求 58 及以上。
-- 部分 API 需要 Chrome 更高版本支持，具体见各 API 内的描述。
+- 部分 Android 设备上，Chrome 不支持 H.264 编解码格式。
+- 部分 API 需要 Chrome 更高版本支持，具体见 API 参考内的描述。
 
-## Safari
+### Safari
 
 - Safari 12.1 及之前版本仅支持 H.264 编解码格式。
 - Safari 只支持视频帧率设为 30 fps。
@@ -89,15 +92,16 @@ Agora Web SDK 是基于 WebRTC 实现的采集和编解码，而 Chrome 又是�
   - 如果 Safari 浏览器没有打开自动播放，直接播放音视频流会听不到声音，必须在播放前调用 `navigator.mediaDevices.getUserMedia` 方法获取设备权限。
 - Safari 不支持 `addTrack` 和 `removeTrack`。
 - iOS 端 Safari 不支持 `setAudioLevel` 方法。
+- iOS 端 Safari 上存在语音路由问题：可能出现插着耳机但是仍然从扬声器出声，或者没有耳机却从听筒出声的情况。
 
-## Firefox 
+### Firefox 
 
 - 如果 Web 端使用 Firefox 浏览器，Native 端使用 iOS 设备，Firefox 看到的视频方向会发生旋转。
 - 在部分设备上 Firefox 设置视频编码配置不生效，目前已知有此问题的设备如下：
   - MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)
   - Windows 10 (MI)
 
-## <a name="edge"></a>Edge
+### <a name="edge"></a>Edge
 
 Agora Web SDK 2.7 及以上版本支持 Edge 浏览器。受浏览器自身限制，仅支持以下功能：
 
@@ -107,3 +111,6 @@ Agora Web SDK 2.7 及以上版本支持 Edge 浏览器。受浏览器自身限�
 - 调用 `muteAudio`/`unmuteAudio` 方法禁用/启用音频轨道
 - 调用 `muteVideo`/`unmuteVideo` 方法禁用/启用视频轨道
 - 调用 `setVideoProfile` 方法设置视频属性
+
+## 相关链接
+[移动端如何使用 Agora Web SDK？](https://docs.agora.io/cn/faq/web_on_mobile)

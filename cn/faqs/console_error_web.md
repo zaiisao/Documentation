@@ -1,12 +1,12 @@
 
 ---
-title: 常见的控制台报错
+title: 常见的 Web 浏览器控制台报错
 description: 
 platform: Web
-updatedAt: Mon Dec 02 2019 17:11:31 GMT+0800 (CST)
+updatedAt: Wed Apr 15 2020 10:26:58 GMT+0800 (CST)
 ---
-# 常见的控制台报错
-将 Agora Web SDK 集成到你的 Web 应用后，遇到问题时可以通过控制台打印的日志进行调试。本文列出控制台日志中常见的错误和原因。
+# 常见的 Web 浏览器控制台报错
+将 Agora Web SDK 集成到你的 Web 应用后，遇到问题时可以通过浏览器控制台打印的日志进行调试。本文列出控制台日志中常见的错误和原因。
 
 ## User is not in the session
 

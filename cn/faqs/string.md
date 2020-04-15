@@ -1,23 +1,23 @@
 
 ---
-title: 如何使用 String 型用户名
+title: 如何使用 String 型用户 ID
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 02 2019 13:56:31 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 10:48:22 GMT+0800 (CST)
 ---
-# 如何使用 String 型用户名
+# 如何使用 String 型用户 ID
 ## 场景描述
 
 <div class="alert warning">该功能目前正在验证阶段。如需使用，我们建议你联系声网技术支持。</div>
 
 
-很多 App 使用 String 类型的用户账号。为降低开发成本，Agora 新增支持 String 型的用户名，方便用户使用 App 账号直接加入 Agora 频道。
+很多 App 使用 String 类型的用户账号。为降低开发成本，Agora 新增支持 String 型的用户 ID，方便用户使用 App 账号直接加入 Agora 频道。
 
-为保证通信质量，频道内所有用户需使用同一数据类型的用户名，即频道内的所有用户名应同为 Int 型或同为 String 型。
+为保证通信质量，频道内所有用户需使用同一数据类型的用户 ID，即频道内的所有用户名应同为 Int 型或同为 String 型。
 
 ## 实现方法
 
-开始前请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。Agora RTC SDK 在 Native 端和 Web 端分别使用不同的方法实现支持 String 型用户名。
+开始前请确保你已了解实现基本的实时音视频功能的步骤及代码逻辑。Agora RTC SDK 在 Native 端和 Web 端分别使用不同的方法实现支持 String 型用户 ID。
 
 ### Native 端
 
@@ -26,7 +26,7 @@ updatedAt: Mon Dec 02 2019 13:56:31 GMT+0800 (CST)
 - registerLocalUserAccount：注册本地用户 User Account
 - joinChannelWithUserAccount（Android 和 Windows）/joinChannelByUserAccount（iOS 和 macOS）：使用 User Account 加入频道
 
-参考如下步骤，在你的项目中实现使用 String 型用户名加入频道：
+参考如下步骤，在你的项目中实现使用 String 型用户 ID 加入频道：
 
 1. 完成初始化 RtcEngine 后，调用 `registerLocalUserAccount` 方法，注册本地用户的 User account。
 2. 调用 `joinChannelWithUserAccount` 方法，使用注册的 User account 加入频道。
@@ -50,7 +50,7 @@ Agora 的其他接口仍使用 Int 型的 UID 作为参数。Agora 维护一个 
 
 **示例代码**
 
-你可以对照 API 时序图，参考下面的示例代码片段，在项目中实现使用 String 型用户名：
+你可以对照 API 时序图，参考下面的示例代码片段，在项目中实现使用 String 型用户 ID：
 
 ```java
 // Java
@@ -72,7 +72,7 @@ private void joinChannel() {
   if (token.isEmpty()) {
     token = null;
   }
-  // 使用注册的用户名加入频道
+  // 使用注册的用户 ID 加入频道
   mRtcEngine.joinChannelWithUserAccount(token, "stringifiedChannel1", mLocal.userAccount);
 }
 ```
@@ -80,10 +80,10 @@ private void joinChannel() {
 ```swift
 // Swift
 func joinChannel() {
-  // 加入频道前注册用户名
+  // 加入频道前注册用户 ID
   let myStringId = "someStringId"
   agoraKit.registerLocalUserAccount(userAccount: myStringId, appId: myAppId)
-  // 使用注册的用户名加入频道
+  // 使用注册的用户 ID 加入频道
   agoraKit.joinChannel(byUserAccount: myStringId, token: Token, channelId: "demoChannel1") {
     sid, uid, elapsed) in
   }
@@ -106,7 +106,7 @@ LRESULT COpenLiveDlg::OnJoinChannel(WPARAM wParam, LPARAM lParam)
 ```
 
 
-同时，我们在 Github 提供一个开源的 [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) 示例项目。你可以前往下载，或参考各平台相应文件中的源代码。
+同时，我们在 Github 提供一个开源的 [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/String-Account) 示例项目。你可以前往下载，或参考各平台相应文件中的源代码。
 
 **API 参考**
 
@@ -139,17 +139,17 @@ LRESULT COpenLiveDlg::OnJoinChannel(WPARAM wParam, LPARAM lParam)
 
 ### Web 端
 
-从 v2.5.0 起，Web SDK 支持将 join 方法中的 uid 设为 Number 或 String 型。因此，你可以直接在调用该方法时，传入 String 型的用户名即可。
+从 v2.5.0 起，Web SDK 支持将 join 方法中的 uid 设为 Number 或 String 型。因此，你可以直接在调用该方法时，传入 String 型的用户 ID 即可。
 
 **API 时序图**
 
-下图展示 Web 端使用 String 型用户名加入频道的 API 调用时序：
+下图展示 Web 端使用 String 型用户 ID 加入频道的 API 调用时序：
 
 ![](https://web-cdn.agora.io/docs-files/1568875087634)
 
 **示例代码**
 
-你可以对照 API 时序图，参考下面的示例代码片段，在项目中实现使用 String 型用户名：
+你可以对照 API 时序图，参考下面的示例代码片段，在项目中实现使用 String 型用户 ID：
 
 ```javascript
 // Javascript
@@ -170,10 +170,10 @@ client.join("<token>", "1024", "agora", function(uid) {
 
 ## 开发注意事项
 
-- 同一频道内，Int 型和 String 型的用户名不可混用。如果你的频道内有不支持 String 型 User account 的 SDK，则只能使用 Int 型的 User ID。目前支持 String 型 User account 的 SDK 如下：
+- 同一频道内，Int 型和 String 型的用户 ID 不可混用。如果你的频道内有不支持 String 型 User account 的 SDK，则只能使用 Int 型的 User ID。目前支持 String 型 User account 的 SDK 如下：
   - Native SDK：v2.8.0 及之后版本
   - Web SDK：v2.5.0 及之后版本
 - 如果你将用户名切换至 String 型，请确保所有终端用户同步升级。
-- 如果使用 String 型的用户名加入频道，请确保你的服务端用户生成 Token 的脚本已升级至最新版本，并使用该用户名或其对应的 Int 型 UID 来生成 Token。
-- 如果频道中 Native SDK 和 Web SDK 互通，请确保该两者使用的用户名的类型一致。
+- 如果使用 String 型的用户 ID 加入频道，请确保你的服务端用户生成 Token 的脚本已升级至最新版本，并使用该用户 ID 或其对应的 Int 型 UID 来生成 Token。
+- 如果频道中 Native SDK 和 Web SDK 互通，请确保该两者使用的用户 ID 的类型一致。
 

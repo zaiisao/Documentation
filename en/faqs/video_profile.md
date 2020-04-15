@@ -1,11 +1,11 @@
 
 ---
-title: How to choose the video resolution, frame rate and bitrate
+title: How can I choose the video resolution, frame rate and bitrate?
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:07:46 GMT+0800 (CST)
+updatedAt: Wed Mar 25 2020 11:38:14 GMT+0800 (CST)
 ---
-# How to choose the video resolution, frame rate and bitrate
+# How can I choose the video resolution, frame rate and bitrate?
 Video parameters vary on a case-by-case basis. For example:
 
 - In a one-to-one online class, the video windows of the teacher and student are both large, which requires higher resolutions, frame rates, and bitrates.

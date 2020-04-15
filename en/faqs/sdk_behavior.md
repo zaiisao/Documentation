@@ -3,7 +3,7 @@
 title: Does Agora have reconnection mechanisms?
 description: Does Agora have reconnection mechanisms?
 platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:08:11 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 21:11:34 GMT+0800 (CST)
 ---
 # Does Agora have reconnection mechanisms?
 The Agora SDK has reconnection mechanisms when a user drops offline or a process gets killed.This page shows the connection state mechanism of the Agora SDK under these circumstances.
@@ -25,7 +25,7 @@ Where:
 - T2 ≈ T1 + 100 ms: Due to network latency, the app of UID 2 detects UID 1 100 ms after the latter joins the channel. UID 2 receives the `onUserJoined`/`didJoinedOfUid` callback.
 - T3: The uplink network condition of UID 1 deteriorates. The SDK automatically tries rejoining the channel.
 - T4 = T3 + 4 s: If the app of UID 1 fails to receive any data from the server in 4 seconds, it receives the `onConnectionInterrupted`/`rtcEngineConnectionDidInterrupted` callback; meanwhile the SDK continues to try rejoining the channel.
-- T5 = T3 + 15 s: If the app of UID 1 fails to receive any data from the server in 15 seconds, it receives the `onConnectionLost`/`rtcEngineConnectionDidLost` callback; meanwhile the SDK continue to try rejoining the channel.
+- T5 = T3 + 10 s: If the app of UID 1 fails to receive any data from the server in 10 seconds, it receives the `onConnectionLost`/`rtcEngineConnectionDidLost` callback; meanwhile the SDK continue to try rejoining the channel.
 - T6 = T3 + 20 s: If the app of UID 2 fails to receive any data from UID 1 in 20 seconds, the SDK decides that UID 1 is offline. The app of UID 2 receives the `onUserOffline`/`didOfflineOfUid` callback.
 - T7: If the app of UID 1 successfully rejoins the channel, it receives the `onRejoinChannelSuccess`/`didRejoinChannel` callback.
 - T8 ≈ T7 + 100ms: 100 ms after the app of UID 1 successfully rejoins the channel, the app of UID 2 receives the `onUserJoined`/`didJoinOfUid callback`, which means that UID 1 is online again.
@@ -43,7 +43,7 @@ Where:
 - T2 ≈ T1 + 100 ms: Due to network latency, the app of UID 2 detects UID 1 100 ms after the latter joins the channel. UID 2 receives the `onUserJoined`/`didJoinedOfUid` callback.
 - T3: The uplink network condition of UID 1 deteriorates. The SDK automatically tries rejoining the channel.
 - T4 = T3 + 4 s: If the app of UID 1 fails to receive any data from the server in 4 seconds, it receives the `onConnectionStateChanged(CONNECTION_STATE_RECONNECTING, CONNECTION_CHANGED_INTERRUPTED)`/`connectionChangedToState(AgoraConnectionStateReconnecting, AgoraConnectionChangedInterrupted)` callback; meanwhile the SDK continues to try rejoining the channel.
-- T5 = T3 + 15 s: If the app of UID 1 fails to receive any data from the server in 15 seconds, it receives the `onConnectionLost`/`rtcEngineConnectionDidLost` callback; meanwhile the SDK continue to try rejoining the channel.
+- T5 = T3 + 10 s: If the app of UID 1 fails to receive any data from the server in 10 seconds, it receives the `onConnectionLost`/`rtcEngineConnectionDidLost` callback; meanwhile the SDK continue to try rejoining the channel.
 - T6 = T3 + 20 s: If the app of UID 2 fails to receive any data from UID 1 in 20 seconds, the SDK decides that UID 1 is offline. The app of UID 2 receives the `onUserOffline`/`didOfflineOfUid` callback.
 - T7: If the app of UID 1 fails to rejoin the channel in 20 minutes, the SDK stops trying. The app of UID 1 receives the `onConnectionStateChanged(CONNECTION_STATE_FAILED, CONNECTION_CHANGED_JOIN_FAILED)`/`connectionChangedToState(AgoraConnectionStateFailed, AgoraConnectionChangedJoinFailed)` callback. UID 1 needs to leave the channel and call the `joinChannel`/`joinChannelByToken` method to join the channel.
 

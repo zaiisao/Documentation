@@ -1,12 +1,12 @@
 
 ---
-title: How to use string user names?
+title: How can I use string user names?
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 02 2019 14:05:29 GMT+0800 (CST)
+updatedAt: Mon Apr 13 2020 10:47:52 GMT+0800 (CST)
 ---
-# How to use string user names?
-<div class="alert warning">This feature is in BETA. We recommed contacting support@agora.io before implementing this function.</div>
+# How can I use string user names?
+<div class="alert warning">This feature is in BETA. We recommend contacting support@agora.io before implementing this function.</div>
 
 ## Introduction
 
@@ -107,7 +107,7 @@ LRESULT COpenLiveDlg::OnJoinChannel(WPARAM wParam, LPARAM lParam)
 }
 ```
 
-We provide an open-source [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/master/String-Account) demo project that implements string user accounts on Github. You can try the demo and view the source code.
+We provide an open-source [String-Account](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/String-Account) demo project that implements string user accounts on Github. You can try the demo and view the source code.
 
 **API Reference**
 

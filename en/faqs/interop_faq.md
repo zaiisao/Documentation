@@ -3,12 +3,12 @@
 title: How do I use the Agora Web SDK to interoperate with the Agora Native SDK?
 description: 
 platform: Android,iOS,macOS,Web,Windows
-updatedAt: Tue Dec 31 2019 16:57:57 GMT+0800 (CST)
+updatedAt: Tue Apr 07 2020 18:28:06 GMT+0800 (CST)
 ---
 # How do I use the Agora Web SDK to interoperate with the Agora Native SDK?
-In the communication profile, interoperability is enabled by default.
+As of v3.0.0, the interoperability between the RTC Native SDK and the RTC Web SDK is enabled by default for both the Communication and the Live-broadcast profile.
 
-In the live broadcast profile, to enable interoperability between a mobile device and a web browser or app, you need to adjust the settings on both platforms. 
+For RTC native SDKs prior to v3.0.0, the interoperability with the Web SDK is enabled by default in the Communication profile. In the live broadcast profile, however, to enable interoperability between a mobile device and a web browser or app, you need to make the following settings on both platforms. 
 
 * On the mobile/desktop device, call the `enableWebSdkInteroperability` method.
 

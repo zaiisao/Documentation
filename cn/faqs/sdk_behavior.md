@@ -3,7 +3,7 @@
 title: SDK 对断网、杀进程的处理
 description: SDK 对断网、杀进程的处理
 platform: All Platforms
-updatedAt: Tue Jul 30 2019 11:11:18 GMT+0800 (CST)
+updatedAt: Mon Mar 02 2020 21:10:51 GMT+0800 (CST)
 ---
 # SDK 对断网、杀进程的处理
 在断网、进程被杀时，SDK 会自动启用断线重连机制。本文展示 Agora SDK 在这两个情况下连接状态的处理逻辑。
@@ -25,7 +25,7 @@ Agora SDK 在 v2.3.2 新增了 [`onConnectionStateChanged`](https://docs.agora.i
 - T2 ≈ T1 + 100 ms：因网间传输延迟，UID 2 感知 UID 1 加入频道约有 100 毫秒的延迟，此时 UID 2 的应用层收到 `onUserJoined`/`didJoinedOfUid` 回调
 - T3：某个时间点 UID 1 客户端因断网等原因导致上行网络变差。SDK 会尝试重新加入频道
 - T4 = T3 + 4 s：如果 UID 1 连续 4 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionInterrupted`/`rtcEngineConnectionDidInterrupted` 回调；同时 SDK 继续尝试重新加入频道
-- T5 = T3 + 15 s：如果 UID 1 连续 15 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionLost`/`rtcEngineConnectionDidLost` 回调；同时 SDK 继续尝试重新加入频道
+- T5 = T3 + 10 s：如果 UID 1 连续 10 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionLost`/`rtcEngineConnectionDidLost` 回调；同时 SDK 继续尝试重新加入频道
 - T6 = T3 + 20 s：如果 UID 2 连续 20 秒没有收到 UID 1 的任何数据，SDK 判断远端用户掉线，UID 2 的应用层会收到 onUserOffline/didOfflineOfUid 回调
 - T7：如果 UID 1 重新加入频道成功，UID 1 的应用层会收到 `onRejoinChannelSuccess`/`didRejoinChannel` 回调
 - T8 ≈ T7 + 100 ms：大约 100 毫秒的延迟后，UID 2 的应用层再次收到 `onUserJoined`/`didJoinOfUid` 回调，表示远端用户重新上线
@@ -45,7 +45,7 @@ Agora SDK 在 v2.3.2 新增了 [`onConnectionStateChanged`](https://docs.agora.i
 - T2 ≈ T1 + 100 ms：因网间传输延迟，UID 2 感知 UID 1 加入频道约有 100 毫秒的延迟，此时 UID 2 的应用层收到 `onUserJoined`/`didJoinedOfUid` 回调，
 - T3：某个时间点 UID 1 客户端因断网等原因导致上行网络变差。SDK 会尝试重新加入频道
 - T4 = T3 + 4 s：如果 UID 1 连续 4 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionStateChanged(CONNECTION_STATE_RECONNECTING, CONNECTION_CHANGED_INTERRUPTED)`/`connectionChangedToState(AgoraConnectionStateReconnecting, AgoraConnectionChangedInterrupted)` 回调；同时 SDK 继续尝试重新加入频道
-- T5 = T3 + 15 s：如果 UID 1 连续 15 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionLost`/`rtcEngineConnectionDidLost` 回调；同时 SDK 继续尝试重新加入频道
+- T5 = T3 + 10 s：如果 UID 1 连续 10 秒没有收到服务器发送的任何数据，应用层会收到 `onConnectionLost`/`rtcEngineConnectionDidLost` 回调；同时 SDK 继续尝试重新加入频道
 - T6 = T3 + 20 s：如果 UID 2 连续 20 秒没有收到 UID 1 的任何数据，SDK 判断远端用户掉线，UID 2 的应用层会收到 `onUserOffline`/`didOfflineOfUid` 回调
 - T7 = T6 + 20 min：如果 UID 1 连续 20 分钟无法重新加入频道，SDK 不再继续尝试。UID 1 的应用层收到 `onConnectionStateChanged(CONNECTION_STATE_FAILED, CONNECTION_CHANGED_JOIN_FAILED)`/`connectionChangedToState(AgoraConnectionStateFailed, AgoraConnectionChangedJoinFailed)` 回调；用户需要退出当前频道，然后重新加入频道
 
