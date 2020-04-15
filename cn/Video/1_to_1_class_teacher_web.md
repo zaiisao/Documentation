@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Tue Apr 14 2020 03:12:29 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:20:48 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -24,12 +24,14 @@ updatedAt: Tue Apr 14 2020 03:12:29 GMT+0800 (CST)
 
 根据下表链接，下载对应的 SDK，参考《快速开始》文档的步骤将 SDK 集成到你的项目中。
 
+ 
 | 产品 | SDK 下载 | 集成文档 |
 | ---------------- | ---------------- | ---------------- | 
 | [RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)      | [ Web 视频通话 SDK](https://docs.agora.io/cn/Video/downloads)      | [实现视频通话](https://docs.agora.io/cn/Video/start_call_web?platform=Web) |
 | [RTM (Real-time Messaging) SDK](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Web 实时消息 SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) | [收发点对点消息和频道消息](https://docs.agora.io/cn/Real-time-Messaging/messaging_web?platform=Web) |
 | [云端录制](https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=All%20Platforms) | / | [使用 RESTful API 录制](https://docs.agora.io/cn/cloud-recording/cloud_recording_rest?platform=All%20Platforms) |
 | [白板](https://developer.netless.link/docs/javascript/overview/js-outline/) | [SDK 集成](https://developer.netless.link/docs/javascript/guide/js-sdk/) | [白板快速开始](https://developer.netless.link/docs/javascript/quick-start/js-precondition/) |
+
 
 ## 核心 API 时序图
 

@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Windows
 platform: Windows
-updatedAt: Fri Mar 20 2020 11:02:22 GMT+0800 (CST)
+updatedAt: Tue Apr 14 2020 03:54:31 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -191,9 +191,9 @@ int ret = rtcEngine.setVolumeOfEffect(soundId, 50);
 
 在音频采集、混音、播放的整个过程中，你都可以使用下面的接口获取用户音量等信息。
 
-- 瞬时说话声音音量提示。`onAudioVolumeIndication` 回调报告频道内瞬时音量最高的几个用户（即说话者）的用户 ID、他们的音量及本地用户是否在说话。若返回的 `uid` 为 0，则表示返回的是本地用户的瞬时音量。
+- 瞬时说话声音音量提示。`onAudioVolumeIndication` 回调报告频道内瞬时音量最高的几个用户（即说话者）的用户 ID 及他们的音量。若返回的 `uid` 为 0，则表示返回的是本地用户的瞬时音量。
 
-<div class="alert note">你需要在 enableAudioVolumeIndication 方法中设置 report_vad 为 true，才能使用本地人声检测功能。</div>
+ <div class="alert note">你需要开启 enableAudioVolumeIndication 方法才能收到该回调。</div>
 
 示例代码
 
@@ -208,7 +208,7 @@ void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speak
 
 - 监测到活跃用户提示。`onActiveSpeaker` 回调报告特定时间段内累积音量最高的用户 ID。如果返回的 `uid` 为 0，则默认为本地用户。
 
-<div class="alert note">你需要开启 enableAudioVolumeIndication 方法才能收到该回调。</div>
+ <div class="alert note">你需要开启 enableAudioVolumeIndication 方法才能收到该回调。</div>
 
 示例代码
 
