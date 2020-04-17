@@ -3,7 +3,7 @@
 title: 合流录制
 description: 
 platform: Linux
-updatedAt: Fri Mar 13 2020 03:11:56 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 10:08:07 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
@@ -54,7 +54,7 @@ updatedAt: Fri Mar 13 2020 03:11:56 GMT+0800 (CST)
 
 ### 设置合流布局
 
-在合流模式录制多人视频时，你可以通过 layoutMode 参数设置频道内所有发流用户画面的大小及其在视频画布上的位置，进行[合流布局](../../cn/Recording/recording_layout_guide.md)。默认设置为 0（悬浮布局）。
+在合流模式录制多人视频时，你可以通过 layoutMode 参数设置频道内所有发流用户画面的大小及其在视频画布上的位置，进行[合流布局](../../cn/Recording/recording_layout.md)。默认设置为 0（悬浮布局）。
 
 ## 命令行示例
 以下命令行为合流录制模式下录制一个直播频道里的音视频，音频编码配置为高音质，视频编码配置为 640,480,15,1000，合流布局设为 1（自适应布局）。

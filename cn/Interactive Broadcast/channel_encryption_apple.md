@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: iOS,macOS
-updatedAt: Thu Oct 31 2019 03:47:33 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 06:20:53 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文介绍媒体流加密方案。
@@ -23,13 +23,13 @@ updatedAt: Thu Oct 31 2019 03:47:33 GMT+0800 (CST)
 
 下图描述了启用了 Agora SDK 内置加密方案的声网音视频通信方案：
 
-<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 840px;"/>
+![](https://web-cdn.agora.io/docs-files/1587018006059)
 
 我们在 GitHub 提供实现了媒体流加密的示例项目。你可以下载体验并参考源代码。
 
 **iOS**
-- Swift 项目： [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS)，参考 [`RoomViewController.swift`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/RoomViewController.swift#L242)。
-- Objective-C 项目：[OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C)，参考 [`Encryption.m`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/Encryption.m)。
+- Swift 项目： [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS)
+- Objective-C 项目：[OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C)
 
 **macOS**
 
@@ -89,7 +89,7 @@ Swift 项目：[OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call
 
 下图描述了集成了第三方加密解密包的声网音视频通信方案：
 
-<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 840px;"/>
+![](https://web-cdn.agora.io/docs-files/1587018031384)
 
 ### 步骤 1: 注册数据包观测器
 

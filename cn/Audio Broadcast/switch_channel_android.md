@@ -3,7 +3,7 @@
 title: 快速切换直播频道
 description: 
 platform: Android
-updatedAt: Tue Dec 10 2019 04:21:34 GMT+0800 (CST)
+updatedAt: Wed Apr 15 2020 07:49:45 GMT+0800 (CST)
 ---
 # 快速切换直播频道
 ## 功能描述
@@ -37,7 +37,7 @@ Agora Native SDK 从 v2.9.0 开始，提供新接口 `switchChannel`，帮助直
 mRtcEngine.switchChannel(YOUR_TOKEN, mRoomName);
 ```
 
-同时，我们在 GitHub 提供一个开源的 [Quick-Switch-Android](https://github.com/AgoraIO/Advanced-Video/tree/master/Quick-Switch-Channel/Quick-Switch-Android) 示例项目，你也可以前往下载体验并参考 [WorkThread.java](https://github.com/AgoraIO/Advanced-Video/blob/master/Quick-Switch-Channel/Quick-Switch-Android/app/src/main/java/io/agora/switchlive/rtc/WorkerThread.java) 文件中 `switchChannel` 函数的源代码。
+同时，我们在 GitHub 提供一个开源的 [Quick-Switch-Android](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Quick-Switch-Channel/Quick-Switch-Android) 示例项目，你也可以前往下载体验并参考源代码。
 
 ### API 参考
 

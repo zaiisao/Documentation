@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: Windows
-updatedAt: Thu Oct 31 2019 03:49:52 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 06:22:26 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文描述如何使用 Agora 内置的加密方案。
@@ -16,7 +16,7 @@ updatedAt: Thu Oct 31 2019 03:49:52 GMT+0800 (CST)
 
 ## 场景 2: 需要加密
 
-<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 840px;"/>
+![](https://web-cdn.agora.io/docs-files/1587018108093)
 
 
 ### 步骤 1: 启用加密功能
@@ -27,13 +27,13 @@ updatedAt: Thu Oct 31 2019 03:49:52 GMT+0800 (CST)
 
 调用 `setEncryptionMode`，设置内置的加密方法。
 
-我们在 GitHub 提供一个实现了媒体流加密的示例项目 [OpenVideoCall-Windows](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows)。你可以下载体验并参考 [`AgoraObject.cpp`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Windows/OpenVideoCall/AgoraObject.cpp#L509) 中的代码。
+我们在 GitHub 提供一个实现了媒体流加密的示例项目 [OpenVideoCall-Windows](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows)。你可以下载体验并参考代码。
 
 ## 场景 3: 使用自定义的加密算法
 
 下图描述了集成了自定义加密解密算法的声网音视频通信方案：
 
-<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 840px;"/>
+![](https://web-cdn.agora.io/docs-files/1587018121536)
 
 
 ### 步骤 1: 注册数据包观测器

@@ -3,7 +3,7 @@
 title: 管理录制文件
 description: 介绍录制文件的命名规则和如何解析 M3U8 文件
 platform: All Platforms
-updatedAt: Mon Mar 23 2020 07:41:19 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 01:41:59 GMT+0800 (CST)
 ---
 # 管理录制文件
 ## 功能描述
@@ -68,6 +68,13 @@ WebM 文件名：`<sid>_<cname>__uid_s_<uid>__uid_e_<type>_utc.webm`
 以文件名 `bak0_sid713476478245_cnameagora.m3u8` 为例，`bak0` 表示该文件为本次录制中第一次启用高可用机制后生成的 M3U8 文件。
 
 启用高可用机制后，录制生成的 TS/WebM 文件的文件名也会增加 `bak<n>` 前缀。
+
+
+## 录制文件大小
+
+单流模式下，录制文件大小主要与音视频源的码率和录制时长相关。例如，当音频码率为 48 Kbps，视频码率为 500 Kbps，录制文件时长为 30 分钟时，该录制文件的大小约为 (48 Kbps + 500 Kbps) * 60 s/min * 30 min = 986.4 Mbit，即 123.3 MB。
+
+合流模式下，录制文件大小主要与转码设置（`transcodingConfig`）中的码率和录制时长相关，如果你未进行转码设置，则使用默认值。例如，当你在 `start` 方法中设置 `audioProfile` 为 `1` (码率 128 Kbps)，`bitrate` 为 `800`，录制文件时长为 30 分钟时，该文件的大小约为 (128 Kbps + 800 Kbps) * 60 s/min * 30 min = 1670.4 Mbit，即 208.8 MB。
 
 ## M3U8 文件
 

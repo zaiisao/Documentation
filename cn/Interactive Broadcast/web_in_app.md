@@ -3,7 +3,7 @@
 title: H5 实时直播
 description: 
 platform: Web
-updatedAt: Fri Mar 27 2020 06:30:14 GMT+0800 (CST)
+updatedAt: Wed Apr 15 2020 10:03:43 GMT+0800 (CST)
 ---
 # H5 实时直播
 ## 功能简介
@@ -53,12 +53,6 @@ Android 平台支持自定义 WebView，Android 微信使用的是自研的 WebV
     <td bgcolor="#3ab7f8"><font color="white">Android 5.0 及以后支持</font></td>
   </tr>
 </table>
-
-#### **发送端**
-
-使用 H5 实时直播组件观看视频对发送端有以下要求：
-
-- 发送的视频分辨率尽量不要超过 480P。
 
 ### 工作原理
 
@@ -171,6 +165,7 @@ client.subscribe(stream, { video: true, audio: true }, console.log);
 ## <a name="note"></a>开发注意事项
 
 - 在移动网页端观看视频，支持最多订阅两路 480P 或者四路 240P 的视频流。
+- 发送端的视频分辨率尽量不要超过 480P，且必须设为 4 的倍数，以避免出现设备兼容性问题。
 - 在代理 Client 以后，Client 的事件中，没有 `"active-speaker"`。
 - 使用 H5 实时直播组件时，不要调用会长时间阻塞主线程的方法，如 `Window.alert()`。
 - 受浏览器策略影响，在 iOS 平台所有的网页端以及 Android 平台的 Chrome 70+ 浏览器上，音频不会自动播放，我们建议通过用户手势触发播放订阅的流，详情请参考[处理浏览器的自动播放策略](../../cn/Interactive%20Broadcast/autoplay_policy_web.md)。

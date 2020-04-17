@@ -3,7 +3,7 @@
 title: 云端录制更新历史
 description: 
 platform: Linux
-updatedAt: Thu Apr 02 2020 01:22:23 GMT+0800 (CST)
+updatedAt: Fri Apr 17 2020 03:22:49 GMT+0800 (CST)
 ---
 # 云端录制更新历史
 ## 简介
@@ -23,6 +23,10 @@ width: 150px;
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制与 Agora Web SDK 1.12.0 或更高版本兼容。            |
+
+## 2020.04.03
+
+本次发布新增了截图功能，详见[视频截图](../../cn/cloud-recording/cloud_recording_screen_capture.md)。
 
 ## 2019.12.16
 本次发布提高了云端录制服务的可用性。当出现服务器断网、进程被杀时，云端录制会自动切换到新的服务器，在短时间内恢复录制服务。详情见[云端录制服务器断网、进程被杀的处理](../../cn/faq/high-availability.md)。
@@ -89,7 +93,7 @@ Agora 提供了音视频格式转换脚本，用于 TS、MP3、MP4 等文件格�
 
 #### 自定义合流布局
 
-RESTful API 新增自定义的合流布局。使用方法详见[自定义合流布局](../../cn/cloud-recording/cloud_layout_guide.md)。
+RESTful API 新增自定义的合流布局。使用方法详见[自定义合流布局](../../cn/cloud-recording/cloud_recording_layout.md)。
 
 你可以在开始录制时将 `mixedVideoLayout` 设为 3，并在 `layoutConfig` 中设置每个用户的画面大小和位置。你也可以在录制过程中调用 `updateLayout` 方法随时更新合流布局。
 

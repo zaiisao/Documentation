@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: iOS,macOS
-updatedAt: Mon Mar 09 2020 07:20:10 GMT+0800 (CST)
+updatedAt: Wed Apr 15 2020 07:46:30 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -91,6 +91,7 @@ if let config = getMediaRelayConfiguration() {
 
 <div class="alert note"><code>updateChannelMediaRelay</code> 方法需在 <code>startChannelMediaRelay</code> 后调用。</div>
 
+我们在 GitHub 提供了一个开源的 [Cross-Channel-OpenLive-iOS](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Cross-Channel/Cross-Channel-OpenLive-iOS) 示例项目，你可以前往下载，并参考其中的源代码。
 
 ### API 参考
 

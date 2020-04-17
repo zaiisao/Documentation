@@ -3,7 +3,7 @@
 title: 摄像头曝光与对焦
 description: 
 platform: iOS
-updatedAt: Wed Feb 19 2020 09:25:55 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 07:11:46 GMT+0800 (CST)
 ---
 # 摄像头曝光与对焦
 ## 功能描述
@@ -22,7 +22,7 @@ Agora SDK 在移动平台提供整套的摄像头管理方法，方便用户切�
 
 - **实现曝光功能**
 
-  调用 `isCamerExposurePositionSupported` 方法检测设备是否支持曝光，如果支持则调用 `setCameraExposurePosition` 方法设置手动曝光位置。
+  调用 `isCameraExposurePositionSupported` 方法检测设备是否支持曝光，如果支持则调用 `setCameraExposurePosition` 方法设置手动曝光位置。
 
   如果你想获取摄像头曝光位置，可以在 `cameraFocusDidChangedToRect` 回调中实现。
 
@@ -108,7 +108,7 @@ if (isSupported) {
 
 ### API 参考
 
-- [`isCamerExposurePositionSupported`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraExposurePositionSupported)
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraExposurePositionSupported)
 - [`setCameraExposurePosition`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraExposurePosition:)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraAutoFocusFaceModeSupported)
 - [`setCameraAutoFocusModeEnabled`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraAutoFocusFaceModeEnabled:)

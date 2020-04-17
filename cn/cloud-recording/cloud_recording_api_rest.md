@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Apr 10 2020 08:29:13 GMT+0800 (CST)
+updatedAt: Fri Apr 17 2020 03:23:45 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -59,7 +59,7 @@ updatedAt: Fri Apr 10 2020 08:29:13 GMT+0800 (CST)
 
 | 参数    | 类型   | 描述                                                         |
 | :------ | :----- | :----------------------------------------------------------- |
-| `appid` | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。必须使用和待录制的频道相同的 App ID。 |
+| `appid` | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#appid)。必须使用和待录制的频道相同的 App ID。 |
 
 该 API 需要在请求包体中传入以下参数。
 
@@ -106,7 +106,14 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 
 ## <a name="start"></a>开始云端录制的 API
 
-获取 resource ID 后，调用该方法开始云端录制。
+获取 resource ID 后，调用该方法开始云端录制。当你成功调用 `start` 方法后，云端录制会执行如下操作：
+
+
+1. 根据你的[订阅](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#sub)设置（`recordingConfig`）订阅频道中的媒体流。
+2. 根据你的录制文件设置 （`recordingFileConfig`）将媒体流录制成指定的文件格式，或根据截图设置（`snapshotConfig`）对视频流进行截图。
+3. 根据你的第三方云存储设置（`storageConfig`），将录制文件或截图上传到第三方云存储。
+
+该 API 的请求方法和接入点为：
 
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/mode/\<mode\>/start
@@ -119,7 +126,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 
 | 参数         | 类型   | 描述                                                         |
 | :----------- | :----- | :----------------------------------------------------------- |
-| `appid`      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。必须使用和待录制的频道相同的 App ID。 |
+| `appid`      | String | 你的项目使用的 App ID。必须使用和待录制的频道相同的 App ID。 |
 | `resourceid` | String | 通过 [`acquire`](#acquire) 请求获取的 resource ID。          |
 | `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。单流模式下，分开录制频道内每个 UID 的音频流和视频流，每个 UID 均有其对应的音频文件和视频文件。合流模式下，频道内所有 UID 的音视频混合录制为一个音视频文件。 |
 
@@ -129,42 +136,44 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
 | `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
-| `clientRequest` | JSON   | 特定的客户请求参数，对于该请求包含以下参数：<li>`token`：（选填） String 类型，用于鉴权的[动态密钥](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-namekeya动态密钥)。如果待录制的频道使用了动态密钥，请务必在该参数中传入一个动态密钥，详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。</li><li>[`recordingConfig`](#recordingConfig)：JSON 类型，录制的详细设置。</li><li>[`storageConfig`](#storageConfig)：JSON 类型，第三方云存储的设置。</li> |
+| `clientRequest` | JSON   | 特定的客户请求参数，对于该请求包含以下参数：<li>`token`：（选填） String 类型，用于鉴权的[动态密钥](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#token)。如果你的项目已启用 App 证书，则务必在该参数中传入你项目的动态秘钥。详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。</li><li>[`recordingConfig`](#recordingConfig)：JSON 类型，订阅的详细设置。</li><li>[`recordingFileConfig`](#recordingFileConfig)：（选填）JSON 类型，录制文件的详细设置。</li><li>[`snapshotConfig`](#snapshotConfig)：（选填）JSON 类型，截图的详细设置。</li><li>[`storageConfig`](#storageConfig)：JSON 类型，第三方云存储的设置。</li> |
 
 
 #### <a name="recordingConfig"></a>**录制设置**
 
-`recordingConfig` 是一个用于设置录制选项的 JSON Object，包含以下字段：
+`recordingConfig` 是一个用于设置媒体流订阅的 JSON Object。云端录制会根据此设置订阅频道内的媒体流，并生成录制文件或截图。`recordingConfig` 包含以下字段：
 
-- `channelType`：Number 类型，频道模式。频道模式必须与 Agora Native/Web SDK 的设置一致，否则可能导致问题。
-  - `0`：通信模式（默认）
-  - `1`：直播模式
-- `streamTypes`：（选填）Number 类型，录制的媒体流类型。
-  - `0`：仅录制音频
-  - `1`：仅录制视频
-  - `2`：（默认）录制音频和视频
+- `channelType`：Number 类型，频道场景。频道场景必须与 Agora RTC Native/Web SDK 的设置一致，否则可能导致问题。
+  - `0`：通信场景（默认）
+  - `1`：直播场景
+- `streamTypes`：（选填）Number 类型，订阅的媒体流类型。
+  - `0`：仅订阅音频
+  - `1`：仅订阅视频
+  - `2`：（默认）订阅音频和视频
 - `decryptionMode`：（选填）Number 类型，解密方案。如果频道设置了加密，该参数必须设置。解密方式必须与频道设置的加密方式一致。
   - `0`：无（默认）
   - `1`：设置 AES128XTS 解密方案
   - `2`：设置 AES128ECB 解密方案
   - `3`：设置 AES256XTS 解密方案
 - `secret`：（选填）String 类型。启用解密模式后，设置的解密密码。
-- `audioProfile`：（选填）设置录制文件的音频采样率，码率，编码模式和声道数。目前单流模式下不能设置该参数。
+- `audioProfile`：（选填）设置输出音频的采样率、码率、编码模式和声道数。目前单流模式下不能设置该参数。
   - `0`：（默认）48 kHz 采样率，音乐编码，单声道，编码码率约 48 Kbps
-  - `1`：48 kHz 采样率，音乐编码, 单声道，编码码率约 128 Kbps
-  - `2`：48 kHz 采样率，音乐编码, 双声道，编码码率约 192 Kbps
-- `videoStreamType`：（选填）Number 类型，设置录制的视频流类型。如果频道中有用户开启了双流模式，你可以选择录制视频大流或者小流。
+  - `1`：48 kHz 采样率，音乐编码，单声道，编码码率约 128 Kbps
+  - `2`：48 kHz 采样率，音乐编码，双声道，编码码率约 192 Kbps
+- `videoStreamType`：（选填）Number 类型，设置订阅的视频流类型。如果频道中有用户开启了双流模式，你可以选择订阅视频大流或者小流。
   - `0`：视频大流（默认），即高分辨率高码率的视频流
   - `1`：视频小流，即低分辨率低码率的视频流
 - `maxIdleTime`：（选填）Number 类型，最长空闲频道时间。默认值为 30 秒，该值需大于等于 5，且小于等于 (2<sup>32</sup>-1)。
+
 <div class="alert note"><ul><li>如果频道内无用户的状态持续超过该时间，录制程序会自动退出。如果频道内有用户，但用户没有发流，不算作无用户状态。</li><li>直播场景下，如果频道内有观众但无主播，一旦无主播的状态超过 <code>maxIdleTime</code>，录制程序会自动退出。</li></div>
-- `transcodingConfig`：（选填）JSON 类型，视频转码的详细设置。仅适用于合流模式，单流模式下不能设置该参数。如果不设置将使用默认值。如果设置该参数，必须填入 `width`、`height`、`fps` 和 `bitrate` 字段。请参考[如何设置录制视频的分辨率](https://docs.agora.io/cn/faq/recording_video_profile)设置该参数。
-  - `width`：（必填）Number 类型，录制视频的宽度，单位为像素，默认值 360。`width` 不能超过 1920，且 `width` 和 `height` 的乘积不能超过 1920 * 1080，超过最大值会报错。
-  - `height`：（必填）Number 类型，录制视频的高度，单位为像素，默认值 640。`height` 不能超过 1920，且 `width` 和 `height` 的乘积不能超过 1920 * 1080，超过最大值会报错。
-  - `fps`：（必填）Number 类型，录制视频的帧率，单位 fps，默认值 15。
-  - `bitrate`：（必填）Number 类型，录制视频的码率，单位 Kbps，默认值 500。
+
+- `transcodingConfig`：（选填）JSON 类型，视频转码的详细设置。仅适用于合流模式，单流模式下不能设置该参数。如果不设置将使用默认值。如果设置该参数，必须填入 `width`、`height`、`fps` 和 `bitrate` 字段。请参考[如何设置录制视频的分辨率](../../cn/cloud-recording/recording_video_profile.md)设置该参数。
+  - `width`：（必填）Number 类型，视频的宽度，单位为像素，默认值 360。`width` 不能超过 1920，且 `width` 和 `height` 的乘积不能超过 1920 * 1080，超过最大值会报错。
+  - `height`：（必填）Number 类型，视频的高度，单位为像素，默认值 640。`height` 不能超过 1920，且 `width` 和 `height` 的乘积不能超过 1920 * 1080，超过最大值会报错。
+  - `fps`：（必填）Number 类型，视频的帧率，单位 fps，默认值 15。
+  - `bitrate`：（必填）Number 类型，视频的码率，单位 Kbps，默认值 500。
   - `maxResolutionUid`：（选填）String 类型，如果视频合流布局设为垂直布局，用该参数指定显示大视窗画面的用户 ID。
-  - `mixedVideoLayout`：（选填）Number 类型，设置视频合流布局，0、1、2 为[预设的合流布局](https://docs.agora.io/cn/cloud-recording/cloud_layout_guide?platform=Linux)，3 为自定义合流布局。该参数设为 3 时必须设置 `layoutConfig` 参数。
+  - `mixedVideoLayout`：（选填）Number 类型，设置视频合流布局，0、1、2 为[预设的合流布局](../../cn/cloud-recording/cloud_recording_layout.md)，3 为自定义合流布局。该参数设为 3 时必须设置 `layoutConfig` 参数。
     - `0`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个画面。
     - `1`：自适应布局。根据用户的数量自动调整每个画面的大小，每个用户的画面大小一致，最多支持 17 个画面。
     - `2`：垂直布局。指定一个用户在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个画面。
@@ -180,15 +189,36 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
     - `render_mode`：（选填）Number 类型。画面显示模式：
       - `0`：（默认）裁剪模式。优先保证画面被填满。视频尺寸等比缩放，直至整个画面被视频填满。如果视频长宽与显示窗口不同，则视频流会按照画面设置的比例进行周边裁剪或图像拉伸后填满画面。
       - `1`：缩放模式。优先保证视频内容全部显示。视频尺寸等比缩放，直至视频窗口的一边与画面边框对齐。如果视频尺寸与画面尺寸不一致，在保持长宽比的前提下，将视频进行缩放后填满画面，缩放后的视频四周会有一圈黑边。
-- `subscribeVideoUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定录制哪几个用户的视频流。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 `0`。 
-- `subscribeAudioUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定录制哪几个用户的音频流。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 1。
-<div class="alert note">一旦设置 <code>subscribeVideoUids</code> 和 <code>subscribeAudioUids</code> 中的任一参数，则只录制参数指定的音视频。例如，<code>subscribeVideoUids</code> 不为空，<code>subscribeAudioUids</code> 为空，则只录制指定用户的视频，不录制音频。如果这两个参数均为空，则录制加入频道的所有用户。</div>
+- `subscribeVideoUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定订阅哪几个用户的视频流。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 `0`。 
+- `subscribeAudioUids`：（选填）JSONArray 类型，由 UID 组成的数组，如 `["123","456"]`。指定订阅哪几个用户的音频流。数组长度不得超过 32。如果设置了该参数，`recordingConfig` 中的 `streamTypes` 不可为 1。
+
+<div class="alert note">一旦设置 <code>subscribeVideoUids</code> 和 <code>subscribeAudioUids</code> 中的任一参数，则只订阅参数指定的音视频。例如，<code>subscribeVideoUids</code> 不为空，<code>subscribeAudioUids</code> 为空，则只录制指定用户的视频，不录制音频。如果这两个参数均为空，则订阅加入频道的所有用户。</div>
+
 - `subscribeUidGroup`: （选填）Number 类型，预估的订阅人数峰值。在单流模式下，为必填参数。举例来说，如果 `subscribeVideoUids` 为 `["100","101","102"]`，`subscribeAudioUids` 为 `["101","102","103"]`，则订阅人数为 4 人。
   - `0`: 1 到 2 个 UID
   - `1`: 3 到 7 个 UID
   - `2`: 8 到 12 个 UID
   - `3`: 13 到 17 个 UID
 
+#### <a name="recordingFileConfig"></a>**录制文件设置**
+
+`recordingFileConfig` 是一个用于设置录制文件的 JSON Object。`recordingFileConfig` 不可与 `snapshotConfig` 同时设置，否则会报错。`recordingFileConfig`包含以下字段：
+
+- `avFileType`：（选填）JSONArray 类型，由多个字符串组成的数组，指定录制的视频文件类型。目前只支持默认值 `["hls"]`，即录制生成 M3U8 和 TS 文件。
+
+#### <a name="snapshotConfig"></a>**截图设置**
+
+`snapshotConfig` 是一个用于设置截图的 JSON Object。使用云端录制进行截图，需要注意以下参数的设置。设置错误会收到报错，或无法生成截图文件。
+
+- 请求 URL 中的 `mode` 参数必须设为 `individual。`
+- `不可设置 recordingFileConfig。`
+- `streamType` 必须设置为 1 或 2
+- 如果设置了 `subscribeAudioUid`，则必须同时设置 `subscribeVideoUids`。
+
+`snapshotConfig` 包含以下字段：
+
+- `captureInterval`：（选填）Integer 类型，截图周期（s），云端录制会按此周期定期截图。取值范围是 [5, 3600]，默认值 `10`。
+- `fileType`：JSONArray 类型，由多个字符串组成的数组，指定截图的文件格式。目前只支持 `["jpg"]`，即生成 JPG 截图文件。
 
 #### <a name="storageConfig"></a>**云存储设置**
 
@@ -294,7 +324,10 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `Content-type` 为 `application/json;charset=utf-8`
 - `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 - 请求包体内容：
- ```json
+
+#### 录制	
+
+```json
 {
     "uid": "527841",
     "cname": "httpClient463224",
@@ -303,9 +336,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
         "recordingConfig": {
             "maxIdleTime": 30,
             "streamTypes": 2,
-            "audioProfile": 1,
             "channelType": 0, 
-            "videoStreamType": 1, 
             "transcodingConfig": {
                 "height": 640, 
                 "width": 360,
@@ -313,11 +344,14 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
                 "fps": 15, 
                 "mixedVideoLayout": 1,
                 "backgroundColor": "#FF0000"
-						},
+                        },
             "subscribeVideoUids": ["123","456"], 
             "subscribeAudioUids": ["123","456"],
             "subscribeUidGroup": 0
         }, 
+        "recordingFileConfig": {
+            "avFileType": ["hls"]
+        },
         "storageConfig": {
             "accessKey": "xxxxxxf",
             "region": 3,
@@ -328,7 +362,37 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
         }
     }
 }
- ```
+```
+
+#### 截图
+
+```json
+{
+    "uid": "527841",
+    "cname": "httpClient463224",
+    "clientRequest": {
+        "token": "<token if any>",
+        "recordingConfig": {
+            "maxIdleTime": 30,
+            "streamTypes": 2,
+            "channelType": 0, 
+            "subscribeUidGroup": 0
+        }, 
+        "snapshotConfig": {
+            "captureInterval": 5,
+            "fileType": ["jpg"]
+        },
+        "storageConfig": {
+            "accessKey": "xxxxxxf",
+            "region": 3,
+            "bucket": "xxxxx",
+            "secretKey": "xxxxx",
+            "vendor": 2,
+            "fileNamePrefix": ["directory1","directory2"]
+        }
+    }
+}
+```
 
 ### `start` 响应示例
 
@@ -362,7 +426,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 | 参数       | 类型   | 描述                                                         |
 | :--------- | :----- | :----------------------------------------------------------- |
-| appid      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) |
+| appid      | String | 你的项目使用的 App ID。必须使用和待录制的频道相同的 App ID。                                   |
 | resourceid | String | 通过 [`acquire`](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#acquire) 请求获取的 resource ID。 |
 | sid        | String | 通过 [`start`](https://docs.agora.io/cn/cloud-recording/cloud_recording_api_rest?platform=All%20Platforms#start) 请求获取的录制 ID。 |
 | mode       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。 |
@@ -378,7 +442,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 clientRequest 中需要填写的内容如下：
 
 - `maxResolutionUid`：（选填）String 类型，如果 `layoutType` 设为 2（垂直布局），用该参数指定显示大视窗画面的用户 ID。
-- `mixedVideoLayout`：（选填）Number 类型，设置视频合流布局，0、1、2 为[预设的合流布局](https://docs.agora.io/cn/cloud-recording/cloud_layout_guide?platform=Linux)，3 为自定义合流布局。该参数设为 3 时必须设置 `layoutConfig` 参数。
+- `mixedVideoLayout`：（选填）Number 类型，设置视频合流布局，0、1、2 为[预设的合流布局](../../cn/cloud-recording/cloud_recording_layout.md)，3 为自定义合流布局。该参数设为 3 时必须设置 `layoutConfig` 参数。
   - `0`：（默认）悬浮布局。第一个加入频道的用户在屏幕上会显示为大视窗，铺满整个画布，其他用户的视频画面会显示为小视窗，从下到上水平排列，最多 4 行，每行 4 个画面，最多支持共 17 个画面。
   - `1`：自适应布局。根据用户的数量自动调整每个画面的大小，每个用户的画面大小一致，最多支持 17 个画面。
   - `2`：垂直布局。指定一个用户在屏幕左侧显示大视窗画面，其他用户的小视窗画面在右侧垂直排列，最多两列，一列 8 个画面，最多支持共 17 个画面。
@@ -471,7 +535,7 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 
 | 参数       | 类型   | 描述                                                         |
 | :--------- | :----- | :----------------------------------------------------------- |
-| appid      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。必须使用和待录制的频道相同的 App ID。 |
+| appid      | String | 你的项目使用的 App ID。必须使用和待录制的频道相同的 App ID。 |
 | resourceid | String | 通过 [`acquire`](#acquire) 请求获取的 resource ID。          |
 | sid        | String | 通过 [`start`](#start) 请求获取的录制 ID。                   |
 | mode       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。 |
@@ -525,10 +589,10 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `resourceId`: String 类型，云端录制使用的 resource ID。
 - `sid`: String 类型，录制 ID。成功开始云端录制后，你会得到一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
 - `serverResponse`：JSON 类型，服务器返回的具体信息。  
-  - `fileListMode`: String 类型，`fileList` 字段的数据格式。
+  - `fileListMode`: String 类型，`fileList` 字段的数据格式。如果你设置了 `snapshotConfig`，则不会返回该字段。
     - `"string"`：`fileList` 为 String 类型。合流模式下，`fileListMode` 为 `"string"`。
     - `"json"`：`fileList` 为 JSONArray 类型。单流模式下，`fileListMode` 为 `"json"`。
-  - `fileList`：当 `fileListMode` 为 `"string"` 时，`fileList` 为 String 类型，录制产生的 M3U8 文件的文件名。当 `fileListMode` 为 `"json"` 时, `fileList` 为 JSONArray 类型，由每个录制文件的具体信息组成的数组。一个录制文件的具体信息包括以下字段:
+  - `fileList`：当 `fileListMode` 为 `"string"` 时，`fileList` 为 String 类型，录制产生的 M3U8 文件的文件名。当 `fileListMode` 为 `"json"` 时, `fileList` 为 JSONArray 类型，由每个录制文件的具体信息组成的数组。如果你设置了 `snapshotConfig`，则不会返回该字段。一个录制文件的具体信息包括以下字段:
     - `filename`：String 类型，录制产生的 M3U8 文件的文件名。
     - `trackType`：String 类型，录制文件的类型。
       - `"audio"`：纯音频文件。
@@ -573,7 +637,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 | 参数         | 类型   | 描述                                                         |
 | :----------- | :----- | :----------------------------------------------------------- |
-| `appid`      | String | 你的项目使用的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id)。必须使用和待录制的频道相同的 App ID。 |
+| `appid`      | String | 你的项目使用的 App ID。必须使用和待录制的频道相同的 App ID。 |
 | `resourceid` | String | 通过 [`acquire`](#acquire) 请求获取的 resource ID。          |
 | `sid`        | String | 通过 [`start`](#start) 请求获取的录制 ID。                   |
 | `mode`       | String | 录制模式，支持单流模式 `individual` 和合流模式 `mix` （默认模式）。 |
@@ -597,6 +661,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `Content-type` 为 `application/json;charset=utf-8`
 - `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 - 请求包体内容：
+
  ```json
 {
     "cname": "httpClient463224",
@@ -638,14 +703,15 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
   }
 }
 ```
+
 - `code`: Number 类型，[响应状态码](#status)。
 - `resourceId`: String 类型，云端录制使用的 resource ID。
 - `sid`: String 类型，录制 ID。成功开始云端录制后，你会得到一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
 - `serverResponse`: JSON 类型，服务器返回的具体信息。`serverResponse` 中包含如下字段：
-  - `fileListMode`: String 类型，`fileList` 字段的数据格式。
+  - `fileListMode`: String 类型，`fileList` 字段的数据格式。如果你设置了 `snapshotConfig`，则不会返回该字段。
     - `"string"`：`fileList` 为 String 类型。合流模式下，`fileListMode` 为 `"string"`。
     - `"json"`：`fileList` 为 JSONArray 类型。单流模式下，`fileListMode` 为 `"json"`。
-  - `fileList`：当 `fileListMode` 为 `"string"` 时，`fileList` 为 String 类型，表示录制产生的 M3U8 文件的文件名。当 `fileListMode` 为 `"json"` 时, `fileList` 为 JSONArray 类型，由每个录制文件的具体信息组成的数组。一个录制文件的具体信息包括以下字段:
+  - `fileList`：当 `fileListMode` 为 `"string"` 时，`fileList` 为 String 类型，表示录制产生的 M3U8 文件的文件名。当 `fileListMode` 为 `"json"` 时, `fileList` 为 JSONArray 类型，由每个录制文件的具体信息组成的数组。如果你设置了 `snapshotConfig`，则不会返回该字段。一个录制文件的具体信息包括以下字段:
     - `filename`：String 类型，录制产生的 M3U8 文件的文件名。
     - `trackType`：String 类型，录制文件的类型。
       - `"audio"`：纯音频文件。
@@ -685,11 +751,11 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `2`：参数不合法，请确保参数类型正确、大小写正确、必填的参数均已填写。
 - `7`：录制已经在进行中 ，请勿用同一个 resource ID 重复 `start` 请求。
 - `8`：HTTP 请求头部字段错误，有以下几种情况：
-	- `Content-type` 错误，请确保 `Content-type` 为 `application/json;charset=utf-8`。
-	- 请求 URL 中缺少 `cloud_recording` 字段。
-	- 使用了错误的 HTTP 方法。
+  - `Content-type` 错误，请确保 `Content-type` 为 `application/json;charset=utf-8`。
+  - 请求 URL 中缺少 `cloud_recording` 字段。
+  - 使用了错误的 HTTP 方法。
 - `53`：录制已经在进行中。当采用相同参数再次调用 `acquire` 获得新的 resource ID，并用于 `start` 请求时，会发生该错误。如需发起多路录制，需要在 `acquire` 方法中填入不同的 UID。
-- `62`：调用 `Acquire` 请求时，如果出现该错误，表示你填入的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) 没有开通云端录制权限。
+- `62`：调用 `Acquire` 请求时，如果出现该错误，表示你填入的 App ID 没有开通云端录制权限。
 - `432`：请求参数错误。请求参数不合法，或请求中的 App ID，频道名或用户 ID 与 resource ID 不匹配。
 - `433`：resource ID 过期。获得 resource ID 后必须在 5 分钟内开始云端录制。请重新调用 [`acquire`](#acquire) 获取新的 resource ID。
 - `435`：没有录制文件产生。频道内没有用户加入，无录制对象。
@@ -704,6 +770,6 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
   - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
 
 - `1028`：[`updateLayout`](#update) 方法的请求包体中参数错误。
--	`"invalid appid"`：无效的 App ID。请确保 App ID 填写正确。如果你已经确认 App ID 填写正确，但仍出现该错误，请联系 support@agora.io。
+- `"invalid appid"`：无效的 App ID。请确保 App ID 填写正确。如果你已经确认 App ID 填写正确，但仍出现该错误，请联系 support@agora.io。
 - `"no Route matched with those values`": 该错误可能由 HTTP 方法填写错误导致，例如将 GET 方法填写为 POST。
 - `"Invalid authentication credentials"`: 该错误可能由 Customer ID 或 Customer Certificate 填写错误导致。如果你已经确认 Customer ID 和 Customer Certificate 填写正确，但仍出现该错误，请联系 support@agora.io。

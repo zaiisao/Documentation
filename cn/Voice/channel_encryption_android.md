@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: Android
-updatedAt: Wed Mar 04 2020 05:25:37 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 06:19:44 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文介绍媒体流加密方案。
@@ -18,7 +18,7 @@ updatedAt: Wed Mar 04 2020 05:25:37 GMT+0800 (CST)
 
 使用 Agora SDK 内置的加密算法会用到通信场景下的 API。下图描述了启用了内置加密方案的声网音视频通信方案：
 
-<img alt="../_images/agora-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/agora-encryption.png" style="width: 840px;"/>
+![](https://web-cdn.agora.io/docs-files/1587013246957)
 
 
 在下载的 [SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads) 的 `/libs/arm64-v8a` 和 `/libs/armeabi-v7a` 文件夹下均包含一个独立的动态库 `libagora-crypto.so` 供 App 动态加载。
@@ -35,7 +35,7 @@ updatedAt: Wed Mar 04 2020 05:25:37 GMT+0800 (CST)
 
 调用 `setEncryptionMode`，设置内置的加密方法。
 
-我们在 GitHub 提供一个实现了媒体流加密的示例项目 [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android)。你可以下载体验并参考 [`WorkerThread.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/model/WorkerThread.java#L186) 中的代码。
+我们在 GitHub 提供一个实现了媒体流加密的示例项目 [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android)。你可以下载体验并参考源代码。
 
 > 如果您有缩小 SDK 包的考虑，且如果您的 App 已经有了 `libcrypto.so` ，由于 SDK 包里也包含了一个 `libagora-crypto.so` ，可以共用一个 `.so` 文件。 声网提供的 `.so `库指定版本为 1.0.2g，与 App 使用的库的版本不同。
 
@@ -43,7 +43,7 @@ updatedAt: Wed Mar 04 2020 05:25:37 GMT+0800 (CST)
 
 下图描述了集成了自定义加密解密算法的声网音视频通信方案：
 
-<img alt="../_images/developer-encryption.png" src="https://web-cdn.agora.io/docs-files/cn/developer-encryption.png" style="width: 840px;"/>
+![](https://web-cdn.agora.io/docs-files/1587017873577)
 
 
 ### 步骤 1: 注册数据包观测器

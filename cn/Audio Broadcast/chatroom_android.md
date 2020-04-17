@@ -3,7 +3,7 @@
 title: 语聊房
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 04:05:44 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 08:12:31 GMT+0800 (CST)
 ---
 # 语聊房
 ## 场景介绍
@@ -30,9 +30,7 @@ updatedAt: Mon Mar 02 2020 04:05:44 GMT+0800 (CST)
 
 ### Demo 体验
 
-Agora 为语聊房提供如下平台的 Demo，扫描下方二维码即可体验。
-
-![](https://web-cdn.agora.io/docs-files/1578297683177)
+Agora 为语聊房提供 Demo，点击[此处](https://download.agora.io/demo/release/chatroom-1.2.apk)下载并体验。
 
 ## 技术方案
 
@@ -68,7 +66,7 @@ Agora 使用 Agora RTC SDK 与 Agora RTM SDK 共同搭建语聊房场景。其�
 - 音视频与文字消息实时同步。
 
 3、丰富的变声效果
-- 提供 9 种变声音效、10 种美声效果，增加互动趣味。
+- 提供 9 种变声音效、10 种美音效果，增加互动趣味。
 
 ## 实现方案
 

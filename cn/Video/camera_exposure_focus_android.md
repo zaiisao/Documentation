@@ -3,7 +3,7 @@
 title: 摄像头曝光与对焦
 description: 
 platform: Android
-updatedAt: Sun Sep 29 2019 08:26:32 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 07:11:45 GMT+0800 (CST)
 ---
 # 摄像头曝光与对焦
 ## 功能描述
@@ -22,7 +22,7 @@ Agora SDK 在移动平台提供整套的摄像头管理方法，方便用户切�
 
 - **实现曝光功能**
 
-  调用 `isCamerExposurePositionSupported` 方法检测设备是否支持曝光，如果支持则调用 `setCameraExposurePosition` 方法设置手动曝光位置。
+  调用 `isCameraExposurePositionSupported` 方法检测设备是否支持曝光，如果支持则调用 `setCameraExposurePosition` 方法设置手动曝光位置。
 
   如果你想获取摄像头曝光位置，可以在 `onCameraExposureAreaChanged` 回调中实现。
 
@@ -72,7 +72,7 @@ public void onCameraFocusAreaChanged(rect) {
 
 ### API 参考
 
-- [`isCamerExposurePositionSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6818c2a98bebeb72e4802b1c585da99b)
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6818c2a98bebeb72e4802b1c585da99b)
 - [`setCameraExposurePosition`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0ac20919f60df42635850c53c9cbdefd)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a09f61f738cf7d8a1902761e03a7fa600)
 - [`setCameraAutoFocusModeEnabled`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a7e67afe7ad0045448fe0bd97203afcee)
