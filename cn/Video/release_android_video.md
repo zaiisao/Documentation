@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Apr 02 2020 06:00:55 GMT+0800 (CST)
+updatedAt: Fri Apr 17 2020 06:55:53 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -1076,7 +1076,7 @@ Agora SDK 在 v2.3.0 版本中，全面提升了视频功能的稳定性及可�
 -   setUser
 
 
-以下接口与录制相关，在 v2.3.0 版本后不再支持。Agora 提供专门的 Recording SDK 用于更好的录制服务，详见 [Agora Recording SDK 发版说明](../../cn/Video/.release_recording.md)。
+以下接口与录制相关，在 v2.3.0 版本后不再支持。Agora 提供专门的 Recording SDK 用于更好的录制服务，详见 [Agora Recording SDK 发版说明](https://docs.agora.io/cn/Recording/release_recording?platform=Linux)。
 
 -   `startRecordingService`
 
@@ -1280,7 +1280,7 @@ SDK 升级至 2.1.2 的直播场景后，相同分辨率下，视频更清晰，
 
 ##### 5. 自定义视频源
 
-Agora SDK 提供了摄像头采集的默认实现，同时允许开发者使用自定义视频源。主要适用场景和文档详见 [自定义视频源和渲染器](../../cn/Quickstart%20Guide/custom_video_android.md) 。
+Agora SDK 提供了摄像头采集的默认实现，同时允许开发者使用自定义视频源。主要适用场景和文档详见 [自定义视频源和渲染器](../../cn/Video/custom_video_android.md) 。
 
 ##### 6. 自定义渲染器
 
@@ -1288,7 +1288,7 @@ Agora SDK 提供了默认的渲染器实现，用来显示本地视频图像和�
 
 ##### 7. 插入外部视频源
 
-直播场景下，可以将采集到的视频添加到正在进行的直播中，直播室里的主播和观众可以一起边看电影、比赛或演出，边进行点评、互动等功能，会让现有的直播话题更广、体验更好。 仅支持拉入一路流，格式包括: RTMP, HLS, FLV。赛事直播最多同时支持 5 人连麦直播。详见 [外部输入直播视频源](../../cn/Quickstart%20Guide/inject_stream_android.md) 。
+直播场景下，可以将采集到的视频添加到正在进行的直播中，直播室里的主播和观众可以一起边看电影、比赛或演出，边进行点评、互动等功能，会让现有的直播话题更广、体验更好。 仅支持拉入一路流，格式包括: RTMP, HLS, FLV。赛事直播最多同时支持 5 人连麦直播。详见 [外部输入直播视频源](https://docs.agora.io/inject_stream_android) 。
 
 ##### 8. 直播优化方案
 

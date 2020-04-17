@@ -25,7 +25,7 @@ Agora 在 Github 上提供开源的实时语音通话示例项目 [Hello-Unity3D
 
 ## 前提条件
 
-- Unity 5.5 或以上版本
+- Unity 2017 或以上版本
 
 - 操作系统与编译器要求：
 
