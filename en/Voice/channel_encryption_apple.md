@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: iOS,macOS
-updatedAt: Thu Oct 31 2019 03:57:24 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 06:46:29 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
@@ -23,13 +23,13 @@ If you do not use encryption, you can delete the unnecessary `AgoraRtcCryptoLoad
 
 The following figure shows how Agora’s communications use built-in encryption:
 
-<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" />
+![](https://web-cdn.agora.io/docs-files/1587019534524)
 
 We provide open-source demo projects that implement channel encryption on GitHub. You can try the demo and refer to the source code.
 
 **iOS**
-- [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS) for Swift. Refer to [`RoomViewController.swift`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/RoomViewController.swift#L242).
-- [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C) for Objective-C. Refer to [`Encryption.m`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/Encryption.m).
+- [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS) for Swift. 
+- [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C) for Objective-C. 
 
 **macOS**
 
@@ -83,7 +83,7 @@ We provide open-source demo projects that implement channel encryption on GitHub
 
 The following figure shows the customized encryption/decryption process:
 
-<img alt="../_images/developer-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/developer-encryption_en.png" />
+![](https://web-cdn.agora.io/docs-files/1587019552665)
 
 ## Step 1: Register a Packet Observer
 

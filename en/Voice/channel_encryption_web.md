@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Web
-updatedAt: Thu Oct 31 2019 03:58:18 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 06:47:39 GMT+0800 (CST)
 ---
 # Channel Encryption
 ## Introduction
@@ -13,7 +13,7 @@ The Agora SDK provides methods for you to implement built-in encryption and set 
 
 The following figure shows how Agora’s communications use built-in encryption:
 
-<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" />
+![](https://web-cdn.agora.io/docs-files/1587019645125)
 
 ## Implementation
 

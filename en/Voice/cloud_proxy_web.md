@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy on Web
 platform: Web
-updatedAt: Mon Feb 17 2020 10:29:34 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 09:21:20 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -25,7 +25,7 @@ Agora Web SDK v2.5.1 or later supports the cloud proxy.
 
   The sources are the clients that integrate the Agora Web SDK.
 
-	| Protocol | Destination             | Port                  | Port purpose      |
+	| Protocol | Destination             | Port                  | Purpose      |
 	| -------- | -------------- | --------------------- | --------------------- |
 	| TCP      | 23.236.115.138 | 443, 4000<br/>3433 - 3460 | Message data transmission<br/>Media data exchange |
 	| TCP      |148.153.66.218 | 443, 4000<br/>3433 - 3460 | Message data transmission<br/>Media data exchange |
