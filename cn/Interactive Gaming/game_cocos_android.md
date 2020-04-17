@@ -19,7 +19,7 @@ updatedAt: Fri Mar 20 2020 04:28:51 GMT+0800 (CST)
 
 如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
 
-<div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/">视频教程问卷调查</a>，帮助我们改进体验。</div>
+<div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
 
 <video src="https://web-cdn.agora.io/docs-files/1584678389538" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
