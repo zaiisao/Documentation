@@ -30,7 +30,7 @@ macOS 系统为每个屏幕分配一个 `displayId`，数据类型为 `CGDirectD
 
 	```swift
 	// 获取屏幕列表
-	let screens = [NSScreen screens];
+	let screens = NSScreen.screens
 	for (index, screen) in screens.enumerated() {
 		// 获取 displayId
 		guard let displayId = screen.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? CGDirectDisplayID else {
