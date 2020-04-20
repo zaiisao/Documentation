@@ -37,8 +37,8 @@ When mentioning a qps limitation, we are referring to the qps of an API in the c
 
 | Function | Timeout settings (s) | 
 | ---------------- | ---------------- | 
-| Log in the RTM system   | 6 <sup>1</sup>   | 
-| Send peer messages  | 10  <sup>2</sup>    | 
+| Log in the RTM system   | 6 <sup>I</sup>   | 
+| Send peer messages  | 10  <sup>II</sup>    | 
 | Query the online status of specified users  | 10     | 
 | Subscribe to the online status of specified users  | 10     | 
 | Unsubscribe from the online status of specified users  | 10     | 
@@ -51,7 +51,7 @@ When mentioning a qps limitation, we are referring to the qps of an API in the c
 
 
  
-<div class="alert note">As of v1.2.2: <ul><ol>The timeout setting for logging in to the Agora RTM system is prolonged from 6 s to 10 s. </ol><ol>The timeout setting for sending a peer-to-peer message on the Web platform is prolonged from 5 s to 10 s. </ol></ul></div>
+<div class="alert note">As of v1.2.2: <p>I. The timeout setting for logging in to the Agora RTM system is prolonged from 6 s to 10 s. <p>II. The timeout setting for sending a peer-to-peer message on the Web platform is prolonged from 5 s to 10 s. </div>
  
 
 ## String Length
