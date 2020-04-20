@@ -56,7 +56,7 @@ updatedAt: Fri Feb 21 2020 06:35:35 GMT+0800 (CST)
 
 
  
-<div class="alert note">自 v1.2.2 起: <li>Web 平台的登录超时由 6 秒改为 10 秒。<li><li>Web 平台的点对点消息发送超时时间由 5 秒更新为 10 秒。</li></div>
+<div class="alert note">自 v1.2.2 起: <li>Web 平台的登录超时由 6 秒改为 10 秒。<li>Web 平台的点对点消息发送超时时间由 5 秒更新为 10 秒。</div>
 
 
 ## 字符串长度限制
