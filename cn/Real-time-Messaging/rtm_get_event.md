@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Sat Apr 18 2020 14:12:38 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 07:36:59 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 实时消息 RESTful API 目前支持查询用户事件和频道事件。
