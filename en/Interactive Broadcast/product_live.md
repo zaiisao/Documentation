@@ -66,6 +66,7 @@ The Agora Native SDK for Interactive Broadcast is supported on platforms such as
 | iOS                  | 8.0+                                                         |
 | Windows              | XP SP3+<br>The Windows SDK supports the following architecture:<li>x86<li>x64                                                      |
 | macOS                | 10.0+                                                        |
+| Unity                | 2017+                                                        |
 | Web                  | <li>Chrome 58+<li>Chrome 49 on Windows XP<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
 
 <div class="alert note">The browser support on the Web platform varies with the device and system. See <a href="https://docs.agora.io/cn/faq/browser_support">Which browsers does the Agora Web SDK support?</a></div>

@@ -3,14 +3,14 @@
 title: Report In-call Statistics
 description: Call quality for Windows
 platform: Windows
-updatedAt: Mon Jan 06 2020 07:13:51 GMT+0800 (CST)
+updatedAt: Fri Apr 17 2020 11:04:11 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
 
 **After joining the channel**, the SDK triggers the following callbacks related to the call quality **once every two seconds**. You can see the last mile network quality, local statistics, audio quality, and video quality of the current call.
 
-We provide an open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) demo project. You can download the project and refer to the source code in [`AGEngineEventHandler.cpp`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows/OpenLive/AGEngineEventHandler.cpp).
+We provide an open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) demo project. 
 
 <div class="alert note">Ensure that you implement a video call or an interactive broadcast in your project. For details, see <a href="../../en/Audio%20Broadcast/start_call_windows.md">Start a Call</a> or <a href="../../en/Audio%20Broadcast/start_live_windows.md">Start an Interactive Broadcast</a>.</div>
 

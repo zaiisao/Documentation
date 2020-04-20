@@ -3,7 +3,7 @@
 title: Camera Exposure and Focus
 description: 
 platform: Android
-updatedAt: Sun Sep 29 2019 09:37:21 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 07:11:38 GMT+0800 (CST)
 ---
 # Camera Exposure and Focus
 ## Introduction
@@ -64,7 +64,7 @@ public void onCameraFocusAreaChanged(rect) {
 
 ### API reference
 
-- [`isCamerExposurePositionSupported`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6818c2a98bebeb72e4802b1c585da99b)
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6818c2a98bebeb72e4802b1c585da99b)
 - [`setCameraExposurePosition`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0ac20919f60df42635850c53c9cbdefd)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a09f61f738cf7d8a1902761e03a7fa600)
 - [`setCameraAutoFocusModeEnabled`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a7e67afe7ad0045448fe0bd97203afcee)

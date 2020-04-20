@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Java
-updatedAt: Wed Dec 11 2019 09:32:34 GMT+0800 (CST)
+updatedAt: Wed Apr 15 2020 07:06:38 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating an RTC token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API reference in Java. 
@@ -60,8 +60,6 @@ We take **RtcTokenBuilderSample.java** as an example:
 
 
 ## API Reference
-
-Source code:  [../java/src/io/agora/media/RtcTokenBuilder.java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/io/agora/media/RtcTokenBuilder.java)
 
 You can create your own token generator using the public methods that **RtcTokenBuilder.java** provides. Note that **RtcTokenBuilder.java** supports both int uid and string userAccount. Ensure that you choose the right method. 
 

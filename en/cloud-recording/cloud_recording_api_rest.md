@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Apr 10 2020 08:38:04 GMT+0800 (CST)
+updatedAt: Fri Apr 17 2020 03:25:04 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -63,7 +63,7 @@ The following parameter is required in the URL.
 
 | Parameter | Type   | Description                                                  |
 | :-------- | :----- | :----------------------------------------------------------- |
-| `appid`   | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
+| `appid`   | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#appid) used in the channel to be recorded. |
 
 The following parameters are required in the request body.
 
@@ -105,12 +105,18 @@ The following parameters are required in the request body.
 
 ## <a name="start"></a>Starts cloud recording
 
-After getting a resource ID, call this method to start cloud recording.
+After getting a resource ID, call `start` to begin cloud recording. The Cloud Recording service does the following after you call `start`:
+
+1. [Subscribes](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#sub) to the audio and video streams in the channel according to `recordingConfig`.
+2. Records the media streams according to `recordingFileConfig`, or takes screenshots according to `snapshotConfig`.
+3. Uploads the recorded files or screenshots to your third-party cloud storage according to `storageConfig`.
+
+The HTTP method and endpoint of `start`:
 
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/mode/\<mode\>/start
 
-> The request frequency limit is 10 requests per second per App ID.
+> The request frequency limit is 10 requests per second for each App ID.
 
 ### Parameters
 
@@ -118,7 +124,7 @@ The following parameters are required in the URL.
 
 | Parameter    | Type   | Description                                                  |
 | :----------- | :----- | :----------------------------------------------------------- |
-| `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
+| `appid`      | String | The App ID used in the channel to be recorded.               |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
 | `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). Composite mode is the default mode. In individual mode, Agora Cloud Recording records the audio and video as separate files for each UID in a channel. In composite mode, Agora Cloud Recording generates a single mixed audio and video file for all UIDs in a channel. |
 
@@ -127,38 +133,40 @@ The following parameters are required in the request body.
 | Parameter       | Type   | Description                                                  |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | The name of the channel to be recorded.                      |
-| `uid`           | String | A string that contains the UID of the recording client. Must be the same `uid` used in the [`acquire`](#acquire) method. |
-| `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key) used in the channel to be recorded. Ensure that you set this parameter if the recording channel uses a token.</li><li>[`recordingConfig`](#recordingConfig): JSON. The recording configuration.</li><li>[`storageConfig`](#storageConfig): JSON. The third-party cloud storage configuration.</li> |
+| `uid`           | String | A string containing the UID of the recording client. Must be the same `uid` used in the [`acquire`](#acquire) method. |
+| `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#token) used for the channel to record. Ensure that you set this parameter if App Certificate is enabled for your application. See [Set up Authentication](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms).</li><li>[`recordingConfig`](#recordingConfig): JSON. Configurations for subscribing to media streams.</li><li>[`recordingFileConfig`](#recordingFileConfig): (Optional) JSON. Configurations for the recorded files.</li><li>[`snapshotConfig`](#snapshotConfig): (Optional) JSON. Video screenshot configurations.</li><li>[`storageConfig`](#storageConfig): JSON. Third-party cloud storage configurations.</li> |
 
 #### <a name="recordingConfig"></a>Recording configuration
 
-`recordingConfig` is a JSON object for recording configuration with the following fields. 
+`recordingConfig` is a JSON object for configuring how the Cloud Recording service subscribes to the media streams in the channel. `recordingConfig` has the following fields:
 
-- `channelType`: Number. The channel profile. Agora Cloud Recording must use the same channel profile as the Agora Native/Web SDK. Otherwise, issues may occur.
+- `channelType`: Number. The channel profile. Agora Cloud Recording must use the same channel profile as the Agora RTC Native/Web SDK. Otherwise, issues may occur.
   - `0`: (Default) Communication profile. 
   - `1`: Live broadcast profile.
-- `streamTypes`: (Optional) Number. The type of the recorded media stream.
-  - `0`: Records audio only.
-  - `1`: Records video only.
-  - `2`: (Default) Records audio and video.
+- `streamTypes`: (Optional) Number. The type of the media stream to subscribe to:
+  - `0`: Subscribes to audio streams only.
+  - `1`: Subscribes to video streams only.
+  - `2`: (Default) Subscribes to both audio and video streams.
 - `decryptionMode`: (Optional) Number. The decryption mode that is the same as the encryption mode set by the Agora Native/Web SDK. When the channel is encrypted, Agora Cloud Recording uses `decryptionMode` to enable the built-in decryption function. 
   - `0`: (Default) None.
   - `1`: AES-128, XTS mode.
   - `2`: AES-128, ECB mode.
   - `3`: AES-256, XTS mode.
 - `secret`: (Optional) String. The decryption password when decryption mode is enabled. 
-- `audioProfile`: (Optional) Number. The sample rate, bitrate, encoding mode, and the number of channels. You cannot set this parameter in individual recording mode.
+- `audioProfile`: (Optional) Number. The profile of the output audio stream, including the sample rate, bitrate, encoding mode, and the number of channels. You cannot set this parameter in individual recording mode.
   - `0`: (Default) Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 48 Kbps.
   - `1`: Sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 128 Kbps.
   - `2`: Sample rate of 48 kHz, music encoding, stereo, and a bitrate of up to 192 Kbps.
-- `videoStreamType`: (Optional) Number. The type of the video stream. 
-  - `0`: (Default) Records the high-stream video.
-  - `1`: Records the low-stream video.
+- `videoStreamType`: (Optional) Number. The type of the video stream to subscribe to.
+  - `0`: (Default) Subscribes to the high-quality stream.
+  - `1`: Subscribes to the low-quality stream.
 - `maxIdleTime`: (Optional) Number. Agora Cloud Recording automatically stops recording and leaves the channel when there is no user in the recording channel after a time period (30 seconds by default) set by this parameter. The value range is from 5 to 2<sup>32</sup>-1. 
+
 <div class="alert note"><ul><li>The recording service does not recognize a channel as an idle channel, so long as the channel has users, regardless of whether they send stream or not.</li><li>If a live-broadcast channel has an audience without a host for a set time (<code>maxIdleTime</code>), the recording service automatically stops and leaves the channel.</li></div>
-- `transcodingConfig`: (Optional) JSON. The transcoding configuration. You cannot set this parameter in individual recording mode. If you set this parameter, ensure that you set `width`, `height`, `fps`, and `bitrate`. Refer to [How do I set the video profile of the recorded video?](https://docs.agora.io/en/faq/recording_video_profile) for detailed information about setting `transcodingConfig`.
-  - `width`: (Mandatory) Number. The width of the mixed video (pixels). The default value is 360. `width` should not exceed 1080, and `width`*`height`  should not exceed 1920 * 1080, otherwise, an error occurs.
-  - `height`: (Mandatory) Number. The height of the mixed video (pixels). The default value is 640. `height` should not exceed 1080, and `width`*`height`  should not exceed 1920 * 1080, otherwise, an error occurs.
+
+- `transcodingConfig`: (Optional) JSON. The video transcoding configuration. You cannot set this parameter in individual recording mode. If you set this parameter, ensure that you set `width`, `height`, `fps`, and `bitrate`. Refer to [How do I set the video profile of the recorded video?](https://docs.agora.io/en/faq/recording_video_profile) for detailed information about setting `transcodingConfig`.
+  - `width`: (Mandatory) Number. The width of the mixed video (pixels). The default value is 360. `width` should not exceed 1920, and `width`*`height` should not exceed 1920 * 1080; otherwise, an error occurs.
+  - `height`: (Mandatory) Number. The height of the mixed video (pixels). The default value is 640. `height` should not exceed 1920, and `width`*`height`  should not exceed 1920 * 1080; otherwise, an error occurs.
   - `fps`: (Mandatory) Number. The video frame rate (fps). The default value is 15.
   - `bitrate`: (Mandatory) Number. The video bitrate (Kbps). The default value is 500.
   - `maxResolutionUid`: (Optional) String. When `mixedVideoLayout` is set as `2` (vertical layout), you can specify the UID of the large video window by this parameter.
@@ -179,11 +187,11 @@ The following parameters are required in the request body.
       - `0`: (Default) Cropped mode. Uniformly scales the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents.
       - `1`: Fit mode. Uniformly scales the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
 
-- `subscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you want to record, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. 
+- `subscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you want to subscribe to , such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. 
 
-- `subscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you want to record, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`.
+- `subscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you want to subscribe to, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`.
 
-> Once you set `subscribeVideoUids` or `subscribeAudioUids`, Agora Cloud Recording records the audio or video of the specified users only. For example, if `subscribeVideoUids` is set and `subscribeAudioUids` is not set or is an empty array, Agora Cloud Recording records only the video (no audio) of the specified users. If both parameters are empty or if neither is set, all the users' audio and video will be recorded.
+> Once you set `subscribeVideoUids` or `subscribeAudioUids`, Agora Cloud Recording subscribes to the audio or video of the specified users only. For example, if `subscribeVideoUids` is set and `subscribeAudioUids` is not set or is an empty array, Agora Cloud Recording subscribes to only the video (no audio) of the specified users. If both parameters are empty or if neither is set, all the users' audio and video will be recorded.
 
 - `subscribeUidGroup`: (Optional) Number. The estimated maximum number of subscribed users. You must set this parameter in individual mode. For example, if `subscribeVideoUids` is `["100","101","102"]` and `subscribeAudioUids` is `["101","102","103"]`, the number of subscribed users is 4.
 
@@ -192,6 +200,25 @@ The following parameters are required in the request body.
   - `2`: 8 to 12 UIDs
   - `3`: 13 to 17 UIDs
 
+#### <a name="recordingFileConfig"></a>Configurations for the recorded files
+
+`recordingFileConfig` is a JSON Object for configuring recorded files. You cannot set both `recordingFileConfig` and `snapshotConfig` at the same time, otherwise an error will occur. `recordingFileConfig `includes the following fields:
+
+- `avFileType`: (Optional) JSONArray. The format of the recorded files. `avFileType` can only take `["hls"]`, setting the recorded files to M3U8 and TS formats.
+
+#### <a name="snapshotConfig"></a>Snapshot configuration
+
+`snapshotConfig` is a JSON object for configuring how Cloud Recording takes screenshots. Pay attention to the following parameters, as incorrect settings result in errors or failure to capture screenshots.
+
+- In the URL of your request, `mode` must be `individual`.
+- You cannot set both `recordingFileConfig` and `snapshotConfig` at the same time.
+- `streamType` must be `1` or `2`.
+- If you have set `subscribeAudioUid`, you must also set `subscribeVideoUids`.
+
+`snapshotConfig` includes the following fields:
+
+- `captureInterval`: (Optional) Integer. The time interval (in seconds) between two successive screenshots. `captureInterval` should be within the range [5, 3600]. The default value is `10`.
+- `fileType`: JSONArray. File format of the screenshots. `fileType` can only take `["jpg"]`, setting screenshots to the JPG format.
 
 #### <a name="storageConfig"></a>Cloud storage configuration
 
@@ -254,28 +281,28 @@ The following parameters are required in the request body.
   - `17`: EU_West_1 
   - `18`: EU_East_1
 
-When the third-party cloud storage is [Tencent Cloud](https://intl.cloud.tencent.com/product/cos) (`vendor` = 3):
+  When the third-party cloud storage is [Tencent Cloud](https://intl.cloud.tencent.com/product/cos) (`vendor` = 3):
 
-  - `0`：AP_Beijing_1
-  - `1`：AP_Beijing
-  - `2`：AP_Shanghai
-  - `3`：AP_Guangzhou
-  - `4`：AP_Chengdu 
-  - `5`：AP_Chongqing 
-  - `6`：AP_Shenzhen_FSI 
-  - `7`：AP_Shanghai_FSI 
-  - `8`：AP_Beijing_FSI 
-  - `9`：AP_Hongkong 
-  - `10`：AP_Singapore 
-  - `11`：AP_Mumbai 
-  - `12`：AP_Seoul 
-  - `13`：AP_Bangkok 
-  - `14`：AP_Tokyo 
-  - `15`：NA_Siliconvalley 
-  - `16`：NA_Ashburn 
-  - `17`：NA_Toronto 
-  - `18`：EU_Frankfurt 
-  - `19`：EU_Moscow
+    - `0`：AP_Beijing_1
+    - `1`：AP_Beijing
+    - `2`：AP_Shanghai
+    - `3`：AP_Guangzhou
+    - `4`：AP_Chengdu 
+    - `5`：AP_Chongqing 
+    - `6`：AP_Shenzhen_FSI 
+    - `7`：AP_Shanghai_FSI 
+    - `8`：AP_Beijing_FSI 
+    - `9`：AP_Hongkong 
+    - `10`：AP_Singapore 
+    - `11`：AP_Mumbai 
+    - `12`：AP_Seoul 
+    - `13`：AP_Bangkok 
+    - `14`：AP_Tokyo 
+    - `15`：NA_Siliconvalley 
+    - `16`：NA_Ashburn 
+    - `17`：NA_Toronto 
+    - `18`：EU_Frankfurt 
+    - `19`：EU_Moscow
 
 
 - `bucket`: String. The bucket of the third-party cloud storage.
@@ -297,9 +324,12 @@ When the third-party cloud storage is [Tencent Cloud](https://intl.cloud.tencent
 ```
 https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>/mode/<mode>/start
 ```
+
 - `Content-type` is `application/json;charset=utf-8`.
 - `Authorization` is basic HTTP authentication, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 - The request body
+
+#### Record
 
 ```json
 {
@@ -310,9 +340,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
         "recordingConfig": {
             "maxIdleTime": 30,
             "streamTypes": 2,
-            "audioProfile": 1,
             "channelType": 0, 
-            "videoStreamType": 1, 
             "transcodingConfig": {
                 "height": 640, 
                 "width": 360,
@@ -320,11 +348,44 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
                 "fps": 15, 
                 "mixedVideoLayout": 1,
                 "backgroundColor": "#FF0000"
-						},
+                        },
             "subscribeVideoUids": ["123","456"], 
             "subscribeAudioUids": ["123","456"],
             "subscribeUidGroup": 0
         }, 
+        "recordingFileConfig": {
+            "avFileType": ["hls"]
+        },
+        "storageConfig": {
+            "accessKey": "xxxxxxf",
+            "region": 3,
+            "bucket": "xxxxx",
+            "secretKey": "xxxxx",
+            "vendor": 2,
+            "fileNamePrefix": ["directory1","directory2"]
+        }
+    }
+}
+```
+
+#### Capture snapshots
+
+```json
+{
+    "uid": "527841",
+    "cname": "httpClient463224",
+    "clientRequest": {
+        "token": "<token if any>",
+        "recordingConfig": {
+            "maxIdleTime": 30,
+            "streamTypes": 2,
+            "channelType": 0, 
+            "subscribeUidGroup": 0
+        }, 
+        "snapshotConfig": {
+            "captureInterval": 5,
+            "fileType": ["jpg"]
+        },
         "storageConfig": {
             "accessKey": "xxxxxxf",
             "region": 3,
@@ -361,7 +422,7 @@ This method call overrides the existing layout configurations. For example, if y
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/updateLayout
 
-> The request frequency limit is 10 requests per second per App ID.
+> The request frequency limit is 10 requests per second for each App ID.
 
 ### Parameters
 
@@ -369,7 +430,7 @@ The following parameters are required in the URL.
 
 | Parameter    | Type   | Description                                                  |
 | :----------- | :----- | :----------------------------------------------------------- |
-| `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
+| `appid`      | String | The App ID used in the channel to be recorded.               |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
 | `sid`        | String | The recording ID created by the [`start`](#start) method.    |
 | `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). |
@@ -465,11 +526,11 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 After you start a recording, you can call query to check its status.
 
 <div class="note alert"><code>query</code> works only with an ongoing recording session. If you call <code>query</code> after a recording ends or after it starts with error, you get a 404 (Not Found) error. We recommend that you use the callback service for getting the details of all cloud recording events. See <a href="https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest">Agora Cloud Recording RESTful API Callback Service</a> for more information.</div>
-	
+
 - Method: GET
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
 
-> The request frequency limit is 10 requests per second per App ID.
+> The request frequency limit is 10 requests per second for each App ID.
 
 ### Parameters
 
@@ -477,7 +538,7 @@ The following parameters are required in the URL.
 
 | Parameter    | Type   | Description                                                  |
 | :----------- | :----- | :----------------------------------------------------------- |
-| `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
+| `appid`      | String | The App ID used in the channel to be recorded.               |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
 | `sid`        | String | The recording ID created by the [`start`](#start) method.    |
 | `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). |
@@ -533,11 +594,11 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 - `sid`: String. The recording ID. The unique identification of the current recording.
 
-- `serverResponse`: JSON. The details about the recording status.
+- `serverResponse`: JSON. The details about the recording status. The `query` method does not return this field if you have set `snapshotConfig`.
   - `fileListMode`: String. The data type of `fileList`.
     - `"string"`: `fileList` is a string. In composite mode, `fileListMode` is `"string"`.
     - `"json"`: `fileList` is a JSONArray. In individual mode, `fileListMode` is `"json"`.
-  - `fileList`: When `fileListMode` is `"string"`, `fileList` is a string that represents the filename of the M3U8 file. When `fileListMode` is `"json"`, `fileList` is a JSONArray that contains the details of each recorded file.
+  - `fileList`: When `fileListMode` is `"string"`, `fileList` is a string that represents the filename of the M3U8 file. When `fileListMode` is `"json"`, `fileList` is a JSONArray that contains the details of each recorded file. The `query` method does not return this field if you have set `snapshotConfig`.
     - `filename`: String. The name of the M3U8 file.
     - `trackType`: String. The type of the recorded file.
       - `"audio"`: Audio file.
@@ -571,7 +632,7 @@ When a recording finishes, call this method to leave the channel and stop record
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/stop
 
-> - The request frequency limit is 10 requests per second per App ID.
+> - The request frequency limit is 10 requests per second for each App ID.
 > - Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default.
 
 ### Parameters
@@ -580,7 +641,7 @@ The following parameters are required in the URL.
 
 | Parameter    | Type   | Description                                                  |
 | :----------- | :----- | :----------------------------------------------------------- |
-| `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) used in the channel to be recorded. |
+| `appid`      | String | The App ID used in the channel to be recorded.               |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
 | `sid`        | String | The recording ID created by the [`start`](#start) method.    |
 | `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). |
@@ -656,10 +717,10 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `sid`: String. The recording ID. The unique identification of the current recording.
 
 - `serverResponse`: JSON. The details about the recording status.
-  - `fileListMode`: String. The data type of `fileList`.
+  - `fileListMode`: String. The data type of `fileList`. The `query` method does not return this field if you have set `snapshotConfig`.
     - `"string"`: `fileList` is a string. In composite mode, `fileListMode` is `"string"`.
     - `"json"`: `fileList` is a JSONArray. In individual mode, `fileListMode` is `"json"`.
-  - `fileList`: When `fileListMode` is `"string"`, `fileList` is a string that represents the filename of the M3U8 file. When `fileListMode` is `"json"`, `fileList` is a JSONArray that contains the details of each recorded file.
+  - `fileList`: When `fileListMode` is `"string"`, `fileList` is a string that represents the filename of the M3U8 file. When `fileListMode` is `"json"`, `fileList` is a JSONArray that contains the details of each recorded file.  The `query` method does not return this field if you have set `snapshotConfig`.
     - `filename`: String. The name of the M3U8 file.
     - `trackType`: String. The type of the recorded file.
       - `"audio"`: Audio file.
@@ -721,4 +782,4 @@ This section lists the common errors you may encounter when using the Agora Clou
 - `1028`: Invalid parameters in the request body of the [`updateLayout`](#update) method.
 - `"invalid appid"`: The App ID you entered is invalid. If the error persists after you verify the App ID, contact [support@agora.io.](mailto:support@agora.io.)
 - `"no Route matched with those values"`: A possible reason for this message is that you entered an incorrect HTTP method in your request, such as using GET when it should have been POST.
-- `"Invalid authentication credentials"`: A possible reason for this message is that the Customer ID or Customer Certificate you entered is incorrect. If the error persists after you verify the Customer ID and Customer Certificate, contact [support@agora.io.](mailto:support@agora.io.)
+- `"Invalid authentication credentials"`: A possible reason for this message is that the Customer ID or Customer Certificate you entered is incorrect. If the error persists after you verify the Customer ID and Customer Certificate, contact [support@agora.io.](

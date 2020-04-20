@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Android
-updatedAt: Thu Oct 31 2019 03:56:36 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 06:45:21 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
@@ -18,7 +18,7 @@ If you do not use encryption, you can delete the unnecessary `libagora-crypto.so
 
 The following figure shows how Agora’s communications use built-in encryption:
 
-<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" />
+![](https://web-cdn.agora.io/docs-files/1587019355409)
 
 The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) for Android includes an independent dynamic library, `libagora-crypto.so`, in both the `arm64-v8a` and `armeabi-v7a` folders under `libs` for the app to load dynamically.
 
@@ -34,7 +34,7 @@ Call the `setEncryptionSecret` method to enable built-in encryption and set the 
 
 Call the`setEncryptionMode` method to set the built-in encryption mode.
 
-We provide an open-source demo project [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) that implements channel encryption on GitHub. You can try the demo and refer to the code in [`WorkerThread.java`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Android/app/src/main/java/io/agora/openvcall/model/WorkerThread.java#L186).
+We provide an open-source demo project [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) that implements channel encryption on GitHub. You can try the demo and refer to the source code.
 
 > To reduce the SDK size, if your app uses `libcrypto.so`, you can use it instead of `libagora-crypto.so` included in the Agora SDK since both files are the same. The Agora SDK `libagora-crypto.so` version is 1.0.2g.
 
@@ -42,7 +42,7 @@ We provide an open-source demo project [OpenVideoCall-Android](https://github.co
 
 The following figure shows the customized data encryption/decryption process:
 
-<img alt="../_images/developer-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/developer-encryption_en.png" />
+![](https://web-cdn.agora.io/docs-files/1587019325696)
 
 
 ### Step 1: Register a Packet Observer

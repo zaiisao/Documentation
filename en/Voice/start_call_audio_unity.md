@@ -14,7 +14,7 @@ We provide an open-source [Hello-Unity3D-Agora](https://github.com/AgoraIO/Agora
 
 ## Prerequisites
 
-- Unity 5.5 or later
+- Unity 2017 or later
 
 - Operating system and IDE requirements:
 

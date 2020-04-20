@@ -3,12 +3,12 @@
 title: Start a Voice Call
 description: 
 platform: macOS
-updatedAt: Fri Mar 20 2020 09:07:07 GMT+0800 (CST)
+updatedAt: Fri Apr 17 2020 10:42:49 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call demo with the Agora Voice SDK for macOS.
 
-## Try the demo
+## Sample project
 
 We provide an open-source [Agora-macOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1)/[Agora-macOS-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1) demo project that implements the basic one-to-one voice call on GitHub. You can try the demo and view the source code.
 
@@ -251,7 +251,7 @@ func joinChannel() {
 }
 ```
 
-### 7. Leave the channel
+### 5. Leave the channel
 
 Call the `leaveChannel` method to leave the current call according to your scenario, for example, when the call ends, when you need to close the app, or when your app runs in the background.
 
@@ -272,9 +272,6 @@ func leaveChannel() {
  view.window!.close()
  }
 ```
-
-### Sample code
-You can find the sample code logic in the [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora-Mac-Tutorial-Objective-C/VideoChatViewController.m)/[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora-Mac-Tutorial-Swift/VideoChatViewController.swift) file in the Agora-macOS-Tutorial-Objective-C-1to1/Agora-macOS-Tutorial-Swift-1to1 demo project.
 
 ## Run the project
 Run the project on your macOS device. You can hear the remote user when you successfully start a one-to-one voice call in the app.

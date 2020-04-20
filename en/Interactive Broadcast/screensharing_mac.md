@@ -3,7 +3,7 @@
 title: Share the screen
 description: 
 platform: macOS
-updatedAt: Tue Jan 14 2020 02:31:55 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 02:20:34 GMT+0800 (CST)
 ---
 # Share the screen
 ## Introduction
@@ -32,7 +32,7 @@ macOS assigns a unique display identifier (displayId) for each screen or display
 
 	```swift
 	// Gets the screen list
-	let screens = [NSScreen screens];
+	let screens = NSScreen.screens
 	for (index, screen) in screens.enumerated() {
 		// Gets the displayId.
 		guard let displayId = screen.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? CGDirectDisplayID else {

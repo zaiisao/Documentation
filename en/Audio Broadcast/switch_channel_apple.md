@@ -3,7 +3,7 @@
 title: Switch Channels
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 10 2019 04:20:39 GMT+0800 (CST)
+updatedAt: Wed Apr 15 2020 07:51:18 GMT+0800 (CST)
 ---
 # Switch Channels
 ## Introduction
@@ -39,7 +39,7 @@ You can refer to the following code snippets and implement quick switching in yo
 agoraKit.switchChannel(byToken: nil, channelId: channel.channelName, joinSuccess: nil)
 ```
 
-We also provide an open-source demo project that implements [Quick-Switch-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/Quick-Switch-Channel/Quick-Switch-iOS) on GitHub. You can try the demo and view the source code of the `switchChannel` function in the [MediaCenter.swift](https://github.com/AgoraIO/Advanced-Video/blob/master/Quick-Switch-Channel/Quick-Switch-iOS/Quick-Switch/MediaCenter.swift) file.
+We also provide an open-source demo project that implements [Quick-Switch-iOS](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Quick-Switch-Channel/Quick-Switch-iOS) on GitHub. You can try the demo and view the source code.
 
 ### API reference
 

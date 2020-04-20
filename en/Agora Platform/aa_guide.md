@@ -3,7 +3,7 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Wed Feb 19 2020 10:31:12 GMT+0800 (CST)
+updatedAt: Wed Apr 15 2020 08:27:10 GMT+0800 (CST)
 ---
 # Agora Analytics
 [Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience.
@@ -26,7 +26,7 @@ Big Channel helps you monitor and analyze quality issues of Big Channels in real
 - View the call duration, the audience distribution, the number of users with quality issues, and their causes.
 - Sample the users with quality issues, and investigate their experiences.
 
-> Before using Big Channel, contact sales-us@agora.io to enable this function.
+<div class="alert info">Before using Big Channel, contact <a href="mailto:sales-us@agora.io">sales-us@agora.io</a > to enable this function.</div>
 
 ![](https://web-cdn.agora.io/docs-files/1581394617210)
 
@@ -37,7 +37,7 @@ Big Channel helps you monitor and analyze quality issues of Big Channels in real
 - View a daily breakdown of call usage and call quality within a specified date range. 
 - View the quality statistics in various dimensions, including country, SDK version, network type, and more.
 
-> Before using Data Insight, contact sales-us@agora.io to enable this function.
+<div class="alert info">Before using Data Insight, contact <a href="mailto:sales-us@agora.io">sales-us@agora.io</a > to enable this function.</div>
 
 ![](https://web-cdn.agora.io/docs-files/1571120894658)
 
@@ -48,6 +48,6 @@ Big Channel helps you monitor and analyze quality issues of Big Channels in real
 - View the real-time scale, quality, and any abnormalities of your project.
 - Focus on the current quality issues in various dimensions, including region, SDK version, network type, and more.
 
-> Before using Realtime, contact sales-us@agora.io to enable this function.
+<div class="alert info">Before using Realtime, contact <a href="mailto:sales-us@agora.io">sales-us@agora.io</a > to enable this function.</div>
 
 ![](https://web-cdn.agora.io/docs-files/1571122479296)

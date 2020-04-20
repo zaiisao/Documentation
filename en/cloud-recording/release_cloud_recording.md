@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 01:23:42 GMT+0800 (CST)
+updatedAt: Fri Apr 17 2020 03:49:23 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview
@@ -16,6 +16,10 @@ Agora Cloud Recording is compatible with the following SDKs:
 
 - Agora Native SDK v1.7.0 or later.
 - Agora Web SDK v1.12 or later.
+
+
+## 2020.04.17
+Cloud Recording now supports taking screenshots of the video streams in individual recording mode. See [Capture Screenshots](../../en/cloud-recording/cloud_recording_screen_capture.md) for details.
 
 ## 2019.12.16
 
@@ -79,7 +83,7 @@ When uploading fails after you use the wrong `bucket` and `key` values of the th
 
 #### Customized video layout
 
-The RESTful API adds a customized layout for the recording video. See [Set Video Layout](../../en/cloud-recording/cloud_layout_guide.md) for details.
+The RESTful API adds a customized layout for the recording video. See [Set Video Layout](../../en/cloud-recording/cloud_recording_layout.md) for details.
 
 You can set the `mixedVideoLayout` parameter as `3` and set the regions for each user in the `layoutConfig` parameter when starting a recording.
 

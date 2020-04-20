@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Thu Apr 02 2020 05:47:03 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 03:21:55 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -305,7 +305,7 @@ This release adds the following methods to relay the media streams of a host fro
 
 During the media stream relay, the SDK reports the states and events of the relay with the  [`channelMediaRelayStateDidChange`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:channelMediaRelayStateDidChange:error:) and [`didReceiveChannelMediaRelayEvent`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didReceiveChannelMediaRelayEvent:) callbacks.
 
-For more information on the implementation, API call sequence, sample code, and considerations, see [Co-host Across Channels](../../en/Interactive%20Broadcast/media_relay_ios.md).
+For more information on the implementation, API call sequence, sample code, and considerations, see [Co-host Across Channels](../../en/Interactive%20Broadcast/media_relay_apple.md).
 
 #### 3. Reporting the local and remote audio state
 
@@ -637,7 +637,7 @@ In scenarios such as the video chat, interactive broadcast, and online education
 
 ##### 2. Voice changer and voice reverberation
 
-Adding voice changer and reverberation effects in an audio chat room brings much more fun. v2.4.0 adds the [`setLocalVoiceChanger`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:) and [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:) methods, allowing you to change your voice or reverberation by choosing from the preset options. See [Adjust the pitch and tone](../../en/Interactive%20Broadcast/voice_effect_ios.md).
+Adding voice changer and reverberation effects in an audio chat room brings much more fun. v2.4.0 adds the [`setLocalVoiceChanger`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:) and [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:) methods, allowing you to change your voice or reverberation by choosing from the preset options. See [Adjust the pitch and tone](../../en/Interactive%20Broadcast/voice_changer_apple.md).
 
 ##### 3. Tracking the sound position of a remote user 
 

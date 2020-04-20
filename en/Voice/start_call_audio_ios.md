@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: iOS
-updatedAt: Fri Mar 20 2020 08:39:48 GMT+0800 (CST)
+updatedAt: Fri Apr 17 2020 10:38:40 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for iOS.
@@ -250,9 +250,6 @@ func leaveChannel() {
         self.logVC?.log(type: .info, content: "did leave channel")
     }
 ```
-
-### Sample code
-You can find the sample code logic in the [VoiceChatViewController.swift](https://github.com/AgoraIO/Basic-Audio-Call/blob/master/One-to-One-Voice/Agora-iOS-Voice-Tutorial-Swift-1to1/Agora%20iOS%20Voice%20Tutorial/VoiceChatViewController.swift) file in the [Agora-iOS-Voice-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/One-to-One-Voice/Agora-iOS-Voice-Tutorial-Swift-1to1) sample project.
 
 ## Run the project
 Run the project on your iOS device. You can hear the remote user when you successfully start a one-to-one voice call in the app.

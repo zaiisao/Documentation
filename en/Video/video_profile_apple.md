@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: iOS,macOS
-updatedAt: Tue Jan 14 2020 02:37:45 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 02:48:00 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -54,12 +54,12 @@ AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc]
 We provide an open-source One-to-One-Video demo project on GitHub. You can try the demo and view the source code of the `setupVideo` method in the following files:
 
 - iOS
-	- Swift: The [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora%20iOS%20Tutorial/VideoChatViewController.swift) file
-	- Objective-C: The [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora%20iOS%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m) file
+	- Swift: The [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora-iOS-Tutorial/VideoChatViewController.swift) file
+	- Objective-C: The [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora-iOS-Tutorial-Objective-C/VideoChatViewController.m) file
 
 - macOS
-	- Swift: The [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora%20Mac%20Tutorial%20Swift/VideoChat/VideoChatViewController.swift) file
-	- Objective-C: The [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora%20Mac%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m) file
+	- Swift: The [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora-Mac-Tutorial-Swift/VideoChatViewController.swift) file
+	- Objective-C: The [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora-Mac-Tutorial-Objective-C/VideoChatViewController.m) file
 
 ### API Reference
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)

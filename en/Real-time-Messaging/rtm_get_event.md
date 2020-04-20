@@ -2,8 +2,8 @@
 ---
 title: Get user and channel events
 description: 
-platform: RESTful
-updatedAt: Wed Mar 11 2020 02:08:06 GMT+0800 (CST)
+platform: All Platforms
+updatedAt: Sat Apr 18 2020 14:09:54 GMT+0800 (CST)
 ---
 # Get user and channel events
 You can now get both user and channel events with the Agora RTM RESTful APIs. 

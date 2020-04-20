@@ -3,7 +3,7 @@
 title: Camera Exposure and Focus
 description: 
 platform: iOS
-updatedAt: Sun Sep 29 2019 09:37:15 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 07:11:38 GMT+0800 (CST)
 ---
 # Camera Exposure and Focus
 ## Introduction
@@ -100,7 +100,7 @@ if (isSupported) {
 
 ### API reference
 
-- [`isCamerExposurePositionSupported`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraExposurePositionSupported)
+- [`isCameraExposurePositionSupported`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraExposurePositionSupported)
 - [`setCameraExposurePosition`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraExposurePosition:)
 - [`isCameraAutoFocusFaceModeSupported`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/isCameraAutoFocusFaceModeSupported)
 - [`setCameraAutoFocusModeEnabled`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraAutoFocusFaceModeEnabled:)

@@ -10,7 +10,7 @@ Use this guide to quickly start a basic audio broadcasting with the Agora SDK fo
 
 ## Prerequisites
 
-- Unity 5.5 or later
+- Unity 2017 or later
 
 - Operating system and IDE requirements:
 

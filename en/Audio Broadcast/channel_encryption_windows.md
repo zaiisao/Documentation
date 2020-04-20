@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Windows
-updatedAt: Thu Oct 31 2019 03:58:49 GMT+0800 (CST)
+updatedAt: Thu Apr 16 2020 06:48:36 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
@@ -18,7 +18,7 @@ The [Agora SDK for Windows](https://docs.agora.io/en/Agora%20Platform/downloads)
 
 The following figure shows how Agora’s communications use built-in encryption:
 
-<img alt="../_images/agora-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/agora-encryption_en.png" />
+![](https://web-cdn.agora.io/docs-files/1587019677003)
 
 ### Step 1: Enable encryption.
 
@@ -28,13 +28,13 @@ Call the `setEncryptionSecret` method to enable built-in encryption and set the 
 
 Call the `setEncryptionMode` method to set the built-in encryption mode.
 
-We provide an open-source demo project [OpenVideoCall-Windows](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows) that implements channel encryption on GitHub. You can try the demo and refer to the code in [`AgoraObject.cpp`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Windows/OpenVideoCall/AgoraObject.cpp#L509).
+We provide an open-source demo project [OpenVideoCall-Windows](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows) that implements channel encryption on GitHub. You can try the demo and refer to the code.
 
 ## Scenario 3: Use Customized Encryption
 
 The following figure shows the data encryption/decryption process:
 
-<img alt="../_images/developer-encryption_en.png" src="https://web-cdn.agora.io/docs-files/en/developer-encryption_en.png" />
+![](https://web-cdn.agora.io/docs-files/1587019688934)
 
 
 ## Step 1: Register a Packet Observer

@@ -3,7 +3,7 @@
 title: Implement Voice for Gaming
 description: 
 platform: Cocos
-updatedAt: Wed Jun 26 2019 07:01:00 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 03:05:49 GMT+0800 (CST)
 ---
 # Implement Voice for Gaming
 With the `Hello-Cocos2D-Agora` Sample App provided by Agora, you can:
@@ -28,8 +28,7 @@ This page shows how to use the Cocos2d SDK to implement these functions on the A
 
 -   **libs**: library files. Only `.jar` and `.so` files in the Android folder are used on this page.
 
--   **samples**: sample code.
-
+-   **samples**: sample code. You can also view the source code in [GitHub](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming/tree/master/Basic-Voice-Call-for-Gaming/Hello-Cocos2d-Agora).
 
 2.  Hardware and software requirements:
 
@@ -126,7 +125,7 @@ You can choose which mode to use by calling `setChannelProfile`.
 
  - **include**: header files. Used in Cocos2d projects when modifying raw data.
  - **libs**: library files. Only the framework in the **iOS** folder is used on this page.
- - **samples**: sample code.
+ - **samples**: sample code. You can also view the source code in [GitHub](https://github.com/AgoraIO/Voice-Call-for-Mobile-Gaming/tree/master/Basic-Voice-Call-for-Gaming/Hello-Cocos2d-Agora).
 
 2. Hardware and software requirements:
  - Cocos2D 3.0 or later
@@ -210,7 +209,7 @@ Add any necessary permission, such as access permission to the microphone:
 
 ### Step 7: Call the APIs
 
-Call the APIs in [Interactive Gaming API](../../en/API%20Reference/game_cocos.md) to implement the required functions.
+Call the APIs in [Interactive Gaming API](../../en/Interactive%20Gaming/game_cocos_cpp.md) to implement the required functions.
 
 Voice for gaming includes two modes:
 

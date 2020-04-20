@@ -24,7 +24,7 @@ We provide an open-source [Hello-Video-Unity-Agora](https://github.com/AgoraIO/A
 
 ## Prerequisites
 
-- Unity 5.5 or later
+- Unity 2017 or later
 
 - Operating system and IDE requirements:
 
