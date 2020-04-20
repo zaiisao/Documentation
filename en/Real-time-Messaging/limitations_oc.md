@@ -42,7 +42,7 @@ When mentioning a qps limitation, we are referring to the qps of an API in the c
 
 | Function | Timeout settings (s) | 
 | ---------------- | ---------------- | 
-| Log in the RTM system   | 6     | 
+| Log in the RTM system   | 6   | 
 | Send peer messages  | 10     | 
 | Query the online status of specified users  | 10     | 
 | Subscribe to the online status of specified users  | 10     | 
