@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Mon Apr 20 2020 03:16:44 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 08:16:40 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -43,30 +43,30 @@ macOS 语音 SDK 支持两种主要场景:
 <table>
     <tr>
         <td width="12%"><b>库类型</b></td>
-        <td width="12%"><b>ipa 体积</b></td>
-        <td width="15%"><b>解压后体积</b></td>
-        <td width="19%"><b>Frameworks 文件夹体积</b></td>
-        <td width="17%"><b>二进制文件体积</b></td>
-        <td width="25%"><b>Frameworks 文件夹 + 二进制文件总体积</b></td>
+        <td width="12%"><b>ipa 体积 (M)</b></td>
+        <td width="15%"><b>解压后体积 (M)</b></td>
+        <td width="19%"><b>Frameworks 文件夹体积 (M)</b></td>
+        <td width="17%"><b>二进制文件体积 (M)</b></td>
+        <td width="25%"><b>Frameworks 文件夹 + 二进制文件总体积 (M)</b></td>
     </tr>
     <tr>
         <td>动态库</td>
-        <td>31.1 M</td>
-        <td>65 M</td>
-        <td>51.47 M</td>
-        <td>2.4 M</td>
-        <td>53.87 M</td>
+        <td>27</td>
+        <td>56.6</td>
+        <td>44</td>
+        <td>2.4</td>
+        <td>46.4</td>
     </tr>
     <tr>
         <td>静态库</td>
-        <td>30.6 M</td>
-        <td>63.7 M</td>
-        <td>30.1 M</td>
-        <td>22.5 M</td>
-        <td>52.6 M</td>
+        <td>26.5</td>
+        <td>55.3</td>
+        <td>30.1</td>
+        <td>15.1</td>
+        <td>45.2</td>
     </tr>
 </table>
-	使用动态库集成时，SDK 不再存放于二进制文件中，而是作为一个独立的库存放在 Frameworks 文件夹中。与使用静态库集成相比，二进制文件体积减少了 20.1 M，Frameworks 文件夹体积增加了 21.37 M。
+	使用动态库集成时，SDK 不再存放于二进制文件中，而是作为一个独立的库存放在 Frameworks 文件夹中。与使用静态库集成相比，二进制文件体积减少了 12.7 M，Frameworks 文件夹体积增加了 13.9 M。
 </div>
 
 **新增特性**
