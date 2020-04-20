@@ -3,12 +3,12 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 25 2019 03:52:38 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 04:36:35 GMT+0800 (CST)
 ---
 # 产品概述
 Agora Signaling SDK 基于 TCP 协议，提供了稳定可靠的消息通道，帮助快速构建实时场景。
 
-> 为了提供更加稳定可靠、弹性可扩展、全球化的实时消息服务，帮助快速构建实时互动体验，声网全新推出了实时消息 Agora RTM (Real-time Messaging) SDK。 Agora RTM SDK 将比 Agora Signaling SDK 支持更多功能和更丰富的场景应用，并在未来逐步替代信令。请点击 [产品概述](../../cn/Real-time-Messaging/RTM_product.md) 获取更多关于实时消息 SDK 的信息。如需升级到 Agora RTM SDK，请参考[信令与 RTM 功能对照表](https://docs.agora.io/cn/Real-time-Messaging/RTM_vs_signaling_android?platform=Android)。
+> 为了提供更加稳定可靠、弹性可扩展、全球化的实时消息服务，帮助快速构建实时互动体验，声网全新推出了实时消息 Agora RTM (Real-time Messaging) SDK。 Agora RTM SDK 将比 Agora Signaling SDK 支持更多功能和更丰富的场景应用，并在未来逐步替代信令。请点击 [产品概述](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) 获取更多关于实时消息 SDK 的信息。如需升级到 Agora RTM SDK，请参考[信令 与 RTM 功能对照表](https://docs.agora.io/cn/Real-time-Messaging/rtm_signaling_android?platform=Android)。
 
 ## 功能概述
 

@@ -3,7 +3,7 @@
 title: 呼叫邀请
 description: 
 platform: iOS,macOS
-updatedAt: Mon Mar 02 2020 09:58:10 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 04:14:36 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -105,7 +105,7 @@ AgoraRtmRemoteInvitation 的生命周期在被叫收到以下回调时结束，�
 
 ### 接受／拒绝呼叫邀请
 
-![](https://docs.agora.io/cn/Real-time-Messaging/web-cdn.agora.io/docs-files/1565670138257)
+![](https://web-cdn.agora.io/docs-files/1565670138257)
 
 ## 注意事项及限制条件
 
