@@ -3,7 +3,7 @@
 title: 音视频格式转换
 description: 解释如何用脚本进行不同音频格式和视频格式的转换
 platform: All Platforms
-updatedAt: Fri Mar 27 2020 06:15:12 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 09:32:03 GMT+0800 (CST)
 ---
 # 音视频格式转换
 ## 功能描述
@@ -33,7 +33,7 @@ ffmpeg -i input.m3u8 -vcodec copy -acodec copy -absf aac_adtstoasc output.mp4
 - Ubuntu 14.04+ x64
 - CentOS 6.5+（推荐 7.0）x64
 
-运行该脚本需要安装 Python 2，2.7 或以上版本。
+运行该脚本需要安装 [FFmpeg](http://ffmpeg.org/download.html)，以及 Python 2，2.7 或以上版本。
 
 #### 文件准备
 

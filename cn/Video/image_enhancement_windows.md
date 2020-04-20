@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: Windows
-updatedAt: Mon Apr 20 2020 02:21:43 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 09:29:07 GMT+0800 (CST)
 ---
 # 美颜
 
@@ -40,4 +40,4 @@ options.rednessLevel = 0.1;
 m_lpAgoraEngine->setBeautyEffectOptions(enabled, options);
 ```
 
-同时，我们在 GitHub 提供已实现美颜功能的开源示例项目。你可以前往 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 或 [OpenVideoCall-Windows](https://github.com/AgoraIO/Basic-Video-Call/tree/dev/3.0.0/Group-Video/OpenVideoCall-Windows) 下载体验。
+同时，我们在 GitHub 提供已实现美颜功能的开源示例项目。你可以前往 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 下载体验。
