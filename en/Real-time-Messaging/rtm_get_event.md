@@ -1,15 +1,11 @@
 
 ---
-title: Get user and channel events
+title: Agora RTM RESTful API
 description: 
-platform: All Platforms
-updatedAt: Sat Apr 18 2020 14:09:54 GMT+0800 (CST)
+platform: RESTful
+updatedAt: Mon Apr 20 2020 09:50:57 GMT+0800 (CST)
 ---
-# Get user and channel events
-You can now get both user and channel events with the Agora RTM RESTful APIs. 
-
-<div class="alert note">qps of the RESTful APIs: 100 (for each vendor).</div>
-
+# Agora RTM RESTful API
 > Besides this document, you can also read our interactive document [RTM RESTful API](https://docs.agora.io/en/Real-time-Messaging/restfulapi/)![](https://web-cdn.agora.io/docs-files/1583736328279). By clicking the **Example Value** or **Schema** tab, you can view example codes or parameter definitions for request/response bodies.
 
 
@@ -67,10 +63,30 @@ https://api.agora.io/dev/v2/project/<appid>/
 
 > All the request URLs and request bodies are case sensitive. 
 
+## API sequence
+
+- Get user events: Call `user_events`.
+- Get channel events: Call `channel_events`.
+
+## Status code
+
+The following table contains the most common HTTP status codes for Real-time Messaging.
+
+| Status code | Description                                                  |
+| :---------- | :----------------------------------------------------------- |
+|200         | The request succeeds. |
+|400         | Incorrect request syntax. |
+|408         | The server request times out or the server fails to respond. |
 
 ## <a name="get"></a>Gets user events
 
 This method gets the user events from the address specified by the Agora RTM server. 
+
+> - The number of requests per second for each App ID must not exceed 10.
+> - The RTM backend stores a maximum of 2,000 events.
+> - The backend returns a maximum of 1,000 events each time.
+> - Agora does not guarantee the time sequence of events across geographical regions (countries or continents), because Agora stores events by geographical regions.
+> - If you have pulled events from one geographical region, you may get the same events when you pull from a different geographical region. This is because Agora only synchronize events within a geographical region and does not synchronize events across geographical regions.
 
 - Method: GET
 - Endpoint: ~/rtm/vendor/user_events
@@ -113,19 +129,15 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | `ts`  | int    | Timestamp in milliseconds.      |
 
 
-
-> - The RTM backend stores a maximum of 2,000 events. 
-> - The backend returns a maximum of 1,000 events each time. 
-> - We do not guarantee the time sequence of events across geographies, because we store events by regions. 
-> - If you have pulled events from one region, you may get the same events when you pull from a different region. This is because we only synchronize events within a region and do not synchronize events across regions. 
-
-### Error code
-
-| Error code | Description                                                  |
-| :--------- | :----------------------------------------------------------- |
-| 408        | The server request times out, or the server fails to respond. Try again later. |
-
 ## Gets channel events
+
+This method gets the channel events from the address specified by the Agora RTM server. 
+
+> - The number of requests per second for each App ID must not exceed 10.
+> - The RTM backend stores a maximum of 2,000 events.
+> - The backend returns a maximum of 1,000 events each time.
+> - Agora does not guarantee the time sequence of events across geographical regions (countries or continents), because Agora stores events by geographical regions.
+> - If you have pulled events from one geographical region, you may get the same events when you pull from a different geographical region. This is because Agora only synchronize events within a geographical region and does not synchronize events across geographical regions.
 
 - Method: GET
 - Endpoint: ~/rtm/vendor/channel_events
@@ -169,15 +181,3 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/hook/channel_events
 | `user_id` | string | The user ID involved.                                        |
 | `type`    | string | The event type: <li><code>Join</code>: A user has joined the channel;</li><li><code>Leave</code>: A user has left the channel. </li> |
 | `ts`      | int    | Timestamp in milliseconds.                                   |
-
-> - The RTM backend stores a maximum of 2,000 events. 
-> - The backend returns a maximum of 1,000 events each time. 
-> - We do not guarantee the time sequence of events across geographies, because we store events by regions. 
-> - If you have pulled events from one region, you may get the same events when you pull from a different region. This is because we only synchronize events within a region and do not synchronize events across regions. 
-
-
-### Error codes
-
-| Error codes | Description                                                  |
-| :---------- | :----------------------------------------------------------- |
-| 408         | The server request times out or the server fails to respond. Try again later. |

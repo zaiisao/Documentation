@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon Apr 20 2020 03:14:49 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 08:13:54 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -57,23 +57,23 @@ If you prefer the dynamic library, you need to re-integrate the SDK and re-impor
     </tr>
     <tr>
         <td>Dynamic library</td>
-        <td>31.1</td>
-        <td>65</td>
-        <td>51.47</td>
+        <td>27</td>
+        <td>56.6</td>
+        <td>44</td>
         <td>2.4</td>
-        <td>53.87</td>
+        <td>46.4</td>
     </tr>
     <tr>
         <td>Static library</td>
-        <td>30.6</td>
-        <td>63.7</td>
+        <td>26.5</td>
+        <td>55.3</td>
         <td>30.1</td>
-        <td>22.5</td>
-        <td>52.6</td>
+        <td>15.1</td>
+        <td>45.2</td>
     </tr>
 </table>
 
-The dynamic library is located in the framework folder as an independent library. Note that the corresponding binary file size does not include the SDK size. Overall, this decreases the binary file size by 20.1 M and increases the framework folder size by 21.37 M.</div>
+The dynamic library is located in the framework folder as an independent library. Note that the corresponding binary file size does not include the SDK size. Overall, this decreases the binary file size by 12.7 M and increases the framework folder size by 13.9 M.</div>
 
 **New features**
 

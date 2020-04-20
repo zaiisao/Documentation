@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Apr 17 2020 03:25:04 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 08:23:25 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -433,7 +433,7 @@ The following parameters are required in the URL.
 | `appid`      | String | The App ID used in the channel to be recorded.               |
 | `resourceid` | String | The resource ID requested by the [`acquire`](#acquire) method. |
 | `sid`        | String | The recording ID created by the [`start`](#start) method.    |
-| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). |
+| `mode`       | String | The recording mode. Supports composite mode (`mix`) only. |
 
 The following parameters are required in the request body.
 

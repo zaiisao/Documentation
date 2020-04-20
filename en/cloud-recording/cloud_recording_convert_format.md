@@ -3,7 +3,7 @@
 title: Convert File Format
 description: 
 platform: All Platforms
-updatedAt: Tue Mar 31 2020 02:00:04 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 09:34:47 GMT+0800 (CST)
 ---
 # Convert File Format
 ## Overview
@@ -12,7 +12,7 @@ Composite recording mode generates one M3U8 file and multiple TS files which inc
 
 ## Convert using FFmpeg
 
-You can use FFmpeg to convert an M3U8 file to MP4. Install FFmpeg and run the following command:
+You can use FFmpeg to convert an M3U8 file to MP4. Install [FFmpeg](http://ffmpeg.org/download.html) and run the following command:
 
 ```
 ffmpeg -i input.m3u8 -vcodec copy -acodec copy -absf aac_adtstoasc output.mp4
@@ -31,7 +31,7 @@ Recommended systems for transcoding:
 - Ubuntu 14.04 and later x64
 - CentOS 6.5 and later (7.0 recommended) x64
 
-To run the script, you need to install Python 2, version 2.7 or later.
+To run the script, you need to install [FFmpeg](http://ffmpeg.org/download.html) and Python 2, version 2.7 or later.
 
 #### File preparation
 

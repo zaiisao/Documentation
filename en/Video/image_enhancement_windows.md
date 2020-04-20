@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Windows
-updatedAt: Mon Apr 20 2020 02:24:28 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 09:28:38 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -36,6 +36,4 @@ options.rednessLevel = 0.1;
 m_lpAgoraEngine->setBeautyEffectOptions(enabled, options);
 ```
 
-We also provide open-source demo projects on GitHub: 
-- [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 
-- [OpenVideoCall-Windows](https://github.com/AgoraIO/Basic-Video-Call/tree/dev/3.0.0/Group-Video/OpenVideoCall-Windows)
+We also provide an open-source demo project [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows)  on GitHub that implements the image enhancement function.
