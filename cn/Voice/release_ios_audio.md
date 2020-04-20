@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Tue Mar 24 2020 10:28:36 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 03:22:33 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -209,7 +209,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 在跨频道媒体流转发过程中，SDK 会通过 [`channelMediaRelayStateDidChange`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:channelMediaRelayStateDidChange:error:) 和 [`didReceiveChannelMediaRelayEvent`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didReceiveChannelMediaRelayEvent:) 回调报告媒体流转发的状态和事件。
 
-该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考 [跨直播间连麦](../../cn/Voice/media_relay_ios.md) 指南。
+该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考 [跨直播间连麦](../../cn/Voice/media_relay_apple.md) 指南。
 
 #### 3. 本地及远端音频状态
 
@@ -466,7 +466,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 ##### 1. 变声和混响
 
-在语音聊天室场景中添加变声和混响效果，能有效增强社交的趣味性。该版本在原有音效设置接口的基础上，新增 [`setLocalVoiceChanger`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:) 和 [`setLocalVoiceReverbPreset`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:) 方法，开发者无需手动设置音效参数，直接选择想要的本地语音变声或混响效果。详情请参考[变声与混响](../../cn/Voice/voice_effect_ios.md)。
+在语音聊天室场景中添加变声和混响效果，能有效增强社交的趣味性。该版本在原有音效设置接口的基础上，新增 [`setLocalVoiceChanger`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:) 和 [`setLocalVoiceReverbPreset`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:) 方法，开发者无需手动设置音效参数，直接选择想要的本地语音变声或混响效果。详情请参考[变声与混响](../../cn/Voice/voice_changer_apple.md)。
 
 ##### 2. 听声辨位
 

@@ -3,7 +3,7 @@
 title: 设置视频属性
 description: 
 platform: iOS,macOS
-updatedAt: Wed Mar 04 2020 05:34:56 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 02:48:07 GMT+0800 (CST)
 ---
 # 设置视频属性
 ## 功能简介
@@ -54,12 +54,12 @@ AgoraVideoEncoderConfiguration *config = [[AgoraVideoEncoderConfiguration alloc]
 同时，我们在 GitHub 提供一个开源的 One-to-One-Video 示例项目，你可以前往下载，或参考如下文件中 `setupView` 方法的源代码：
 
 - iOS
-	- Swift：[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora%20iOS%20Tutorial/VideoChatViewController.swift) 文件
-	- Objective-C：[VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora%20iOS%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m) 文件
+	- Swift：[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora-iOS-Tutorial/VideoChatViewController.swift) 文件
+	- Objective-C：[VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora-iOS-Tutorial-Objective-C/VideoChatViewController.m) 文件
 
 - macOS
-	- Swift：[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora%20Mac%20Tutorial%20Swift/VideoChat/VideoChatViewController.swift) 文件
-	- Objective-C：[VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora%20Mac%20Tutorial%20Objective-C/VideoChat/VideoChatViewController.m) 文件
+	- Swift：[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora-Mac-Tutorial-Swift/VideoChatViewController.swift) 文件
+	- Objective-C：[VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora-Mac-Tutorial-Objective-C/VideoChatViewController.m) 文件
 
 ### API 参考
 * [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoEncoderConfiguration:)

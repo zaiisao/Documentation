@@ -1,11 +1,11 @@
 
 ---
-title: 厂商事件查询 RESTful API
+title: 实时消息 RESTful API
 description: 
-platform: RESTful
-updatedAt: Wed Mar 11 2020 02:06:07 GMT+0800 (CST)
+platform: All Platforms
+updatedAt: Sat Apr 18 2020 14:12:38 GMT+0800 (CST)
 ---
-# 厂商事件查询 RESTful API
+# 实时消息 RESTful API
 实时消息 RESTful API 目前支持查询用户事件和频道事件。
 
 <div class="alert note">厂商事件查询 RESTful API 的 qps 限制为：单厂商每秒 10 次。</div>

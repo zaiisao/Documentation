@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: macOS
-updatedAt: Tue Jan 14 2020 02:32:57 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 02:21:08 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -30,7 +30,7 @@ macOS 系统为每个屏幕分配一个 `displayId`，数据类型为 `CGDirectD
 
 	```swift
 	// 获取屏幕列表
-	let screens = [NSScreen screens];
+	let screens = NSScreen.screens
 	for (index, screen) in screens.enumerated() {
 		// 获取 displayId
 		guard let displayId = screen.deviceDescription[NSDeviceDescriptionKey(rawValue: "NSScreenNumber")] as? CGDirectDisplayID else {

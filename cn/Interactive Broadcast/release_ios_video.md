@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Thu Apr 02 2020 06:00:48 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 03:41:20 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -285,7 +285,7 @@ iOS 视频 SDK 支持两种主要场景:
 
 在跨频道媒体流转发过程中，SDK 会通过 [`channelMediaRelayStateDidChange`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:channelMediaRelayStateDidChange:error:) 和 [`didReceiveChannelMediaRelayEvent`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didReceiveChannelMediaRelayEvent:) 回调报告媒体流转发的状态和事件。
 
-该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考 [跨直播间连麦](../../cn/Interactive%20Broadcast/media_relay_ios.md) 指南。
+该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考 [跨直播间连麦](../../cn/Interactive%20Broadcast/media_relay_apple.md) 指南。
 
 #### 3. 本地及远端音频状态
 
@@ -609,7 +609,7 @@ iOS 视频 SDK 支持两种主要场景:
 
 ##### 2. 变声和混响
 
-在语音聊天室场景中添加变声和混响效果，能有效增强社交的趣味性。该版本在原有音效设置接口的基础上，新增 [`setLocalVoiceChanger`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:) 和 [`setLocalVoiceReverbPreset`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:) 方法，开发者无需手动设置音效参数，直接选择想要的本地语音变声或混响效果。详情请参考[变声与混响](../../cn/Interactive%20Broadcast/voice_effect_ios.md)。
+在语音聊天室场景中添加变声和混响效果，能有效增强社交的趣味性。该版本在原有音效设置接口的基础上，新增 [`setLocalVoiceChanger`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceChanger:) 和 [`setLocalVoiceReverbPreset`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoiceReverbPreset:) 方法，开发者无需手动设置音效参数，直接选择想要的本地语音变声或混响效果。详情请参考[变声与混响](../../cn/Interactive%20Broadcast/voice_changer_apple.md)。
 
 ##### 3. 听声辨位
 
@@ -1208,11 +1208,7 @@ SDK 升级至 2.1.2 的直播场景后，相同分辨率下，视频更清晰，
 
 ##### 3. 在线频道信息查询
 
-新增 RESTful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见:
-
--   通话场景, 详见 [控制台 RESTful API](../../cn/API%20Reference/dashboard_restful_communication.md)
-
--   互动直播场景, 详见 [控制台 RESTful API](../../cn/API%20Reference/dashboard_restful_live.md)
+新增 RESTful API 查询用户在频道中的状态信息，查询指定频道内的分角色用户列表，查询厂商频道列表，查询用户是否为连麦用户等。详见 [控制台 RESTful API](../../cn/Interactive%20Broadcast/console_overview.md)
 
 
 ##### 4. 17 人视频

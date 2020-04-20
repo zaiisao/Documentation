@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: iOS
-updatedAt: Fri Mar 20 2020 08:39:17 GMT+0800 (CST)
+updatedAt: Fri Apr 17 2020 10:33:41 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
@@ -255,10 +255,6 @@ func leaveChannel() {
         self.logVC?.log(type: .info, content: "did leave channel")
     }
 ```
-
-### 示例代码
-
-你可以在 [Agora-iOS-Voice-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/One-to-One-Voice/Agora-iOS-Voice-Tutorial-Swift-1to1) 示例项目的 [VoiceChatViewController.swift](https://github.com/AgoraIO/Basic-Audio-Call/blob/master/One-to-One-Voice/Agora-iOS-Voice-Tutorial-Swift-1to1/Agora%20iOS%20Voice%20Tutorial/VoiceChatViewController.swift)  文件中查看完整的源码和代码逻辑。
 
 ## 运行项目
 你可以在 iOS 设备中运行此项目。当成功开始语音通话时，你和远端用户可听到彼此的声音。

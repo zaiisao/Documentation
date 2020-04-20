@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Thu Apr 02 2020 06:03:14 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 03:16:44 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -193,7 +193,7 @@ macOS 语音 SDK 支持两种主要场景:
 
 在跨频道媒体流转发过程中，SDK 会通过 [`channelMediaRelayStateDidChange`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:channelMediaRelayStateDidChange:error:) 和 [`didReceiveChannelMediaRelayEvent`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didReceiveChannelMediaRelayEvent:) 回调报告媒体流转发的状态和事件。
 
-该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考 [跨直播间连麦](../../cn/Audio%20Broadcast/media_relay_mac.md) 指南。
+该场景的实现方法、API 调用时序、示例代码及开发注意事项，请参考 [跨直播间连麦](../../cn/Audio%20Broadcast/media_relay_apple.md) 指南。
 
 #### 3. 本地及远端音频状态
 
@@ -340,13 +340,13 @@ macOS 语音 SDK 支持两种主要场景:
 
 该 SDK 首次发版。你可以参考以下文档集成 SDK，实现相应的实时音频功能：
 
-- [快速集成](../../cn/Audio%20Broadcast/mac_video.md)
-- [校验用户权限](../../cn/Audio%20Broadcast/token.md)
-- [检测通话质量](../../cn/Audio%20Broadcast/in_call_statistics_macos_audio.md)
-- [调整通话音量](../../cn/Audio%20Broadcast/volume_mac.md)
-- [播放音效/音乐混音](../../cn/Audio%20Broadcast/effect_mixing_mac.md)
-- [变声与混响](../../cn/Audio%20Broadcast/voice_effect_mac.md)
-- [推流到 CDN](../../cn/Audio%20Broadcast/push_stream_ios2.0_audio.md)
-- [音频设备测试与切换](../../cn/Audio%20Broadcast/switch_audio_device_mac.md)
+- 快速集成
+- 校验用户权限
+- 检测通话质量
+- 调整通话音量
+- 播放音效/音乐混音
+- 变声与混响
+- 推流到 CDN
+- 音频设备测试与切换
 
 如果你是由之前版本的 macOS 完整包升级到当前的纯音频包，可参考 [macOS 完整包发版说明](../../cn/Audio%20Broadcast/release_mac_video.md)了解音频的相关改进。
