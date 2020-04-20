@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Mon Apr 20 2020 03:21:55 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 04:11:59 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -626,7 +626,7 @@ v2.4.0 is released on April 1, 2019.
 
 #### **Compatibility changes**
 
-- Agora Video SDK for iOS adds a library dependency on `CoreML.framework` in v2.4.0. Ensure that you add this library when integrating the SDK. For details, see [Integrate the SDK](../../en/Video/ios_video.md).
+- Agora Video SDK for iOS adds a library dependency on `CoreML.framework` in v2.4.0. Ensure that you add this library when integrating the SDK. For details, see *Integrate the SDK*.
 - If you integrate the SDK by using CocoaPods，ensure that you run `pod update` in your Terminal before `pod install`. If you prefer to specify the SDK version to obtain the latest release, ensure that you specify it as `'AgoraRtcEngine_iOS', '2.4.0.1'` in the Podfile.
 
 #### **New Features**
@@ -671,7 +671,7 @@ The SDK has two log files, each with a default size of 512 KB. In case some cust
 
 v2.4.0 provides the following options for setting video encoder preferences:
 
-- Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`AgoraVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html) class: [`minFrameRate`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/minFrameRate) and [`degradationPreference`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/degradationPreference). You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Video/videoProfile_ios.md).
+- Setting preferences under limited bandwidth. v2.4.0 adds two parameters to the [`AgoraVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html) class: [`minFrameRate`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/minFrameRate) and [`degradationPreference`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraVideoEncoderConfiguration.html#//api/name/degradationPreference). You can use these parameters together to set the minimum video encoder frame rate and the video encoding degradation preference under limited bandwidth. For more information, see [Set the Video Profile](../../en/Video/video_profile_apple.md).
 - Setting the camera capture preference. v2.4.0 adds the [`setCameraCapturerConfiguration`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraCapturerConfiguration:) method, allowing you to set the camera capture preference. You can choose system performance over video quality or vice versa as needed. For more information, see the [API Reference](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setCameraCapturerConfiguration).
 
 ##### 3. Core quality improvements
@@ -789,7 +789,7 @@ Agora plans to improve the following callback in subsequent versions:
 
 - [`lastmileQuality`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileQuality:): Reports the last mile network quality of the local user before the user joins a channel.
 
-For the list of API methods related to the call quality statistics and on how and when to use them, see Report [In-call Statistics](../../en/Video/in_call_statistics_ios.md).
+For the list of API methods related to the call quality statistics and on how and when to use them, see Report [In-call Statistics](../../en/Video/in-call_quality_apple.md).
 
 ##### 2. New network connection policy
 
@@ -1162,18 +1162,14 @@ In an interactive broadcast, the host can enhance the local audio effects from t
 
 ##### 3. Online statistics query
 
-Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host:
-
--  Voice or video calls: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_communication.md).
--  Interactive broadcasts: See [Online Statistics Query API](../../en/API%20Reference/dashboard_restful_live.md).
-
+Adds RESTful APIs to check the status of the users in the channel, the channel list of a specific company, and whether the user is an audience or a host. For detailed information, see [RESTful API](../../en/Video/dashboard_restful_communication.md).
 
 ##### 4. 17-way video
 
 Adds the support of 17-way video in interactive broadcasts, see:
 
--   [Starting a Live Video Broadcast](../../en/Video/broadcast_video_ios.md)
--   [Video Conference of 7+ Users](../../en/Video/seventeen_people_iosmac.md)
+-   [Starting a Live Video Broadcast](../../en/Video/start_live_ios.md)
+-   [Video Conference of 7+ Users](../../en/Video/multi_user_video_apple.md)
 
 
 ##### 5. Video source customization
@@ -1186,7 +1182,7 @@ Supports the default functions provided by the renderers to display the local an
 
 ##### 7. Injecting an external video stream
 
-Adds the function of injecting an external video stream to an ongoing live broadcast, see [Injecting an External Stream to a Live Broadcast](../../en/Quickstart%20Guide/inject_stream_ios.md).
+Adds the function of injecting an external video stream to an ongoing live broadcast, see [Injecting an External Stream to a Live Broadcast](../../en/Video/inject_stream_apple.md).
 
 ##### 8. Camera focus change
 

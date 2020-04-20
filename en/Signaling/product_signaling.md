@@ -3,12 +3,12 @@
 title: Agora Signaling Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 25 2019 03:50:16 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 04:38:43 GMT+0800 (CST)
 ---
 # Agora Signaling Overview
 The Agora Signaling SDK is based on the TCP protocol and provides a stable messaging channel for you to implement real-time communication scenarios.
 
-> Agora has launched the Agora RTM (Real-time Messaging) SDK to provide more reliable, scalable, and global real-time messaging services. It is designed as a substitute for the Agora Signaling SDK. For more design information of the Agora RTM SDK, click [here](https://docs.agora.io/en/Real-time-Messaging/RTM_product?platform=All%20Platforms). To migrate from the legacy Signaling SDK to the Agora RTM SDK, see [Signaling vs. Agora RTM SDK](https://docs.agora.io/en/Real-time-Messaging/RTM_vs_signaling_android?platform=Android).
+> Agora has launched the Agora RTM (Real-time Messaging) SDK to provide more reliable, scalable, and global real-time messaging services. It is designed as a substitute for the Agora Signaling SDK. For more design information of the Agora RTM SDK, click [here](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms). To migrate from the legacy Signaling SDK to the Agora RTM SDK, see [Signaling vs. Agora RTM SDK](https://docs.agora.io/en/Real-time-Messaging/rtm_signaling_android?platform=Android).
 
 
 ## Functions
@@ -61,6 +61,25 @@ The Agora Signaling SDK can be used in the following scenarios:
 -   [Quickstart Guides](../../en/Quickstart%20Guide/signal_android-1.md) describe how to integrate the Agora Signaling SDK and provide short code snippets of common functions, such as sending point-to-point and channel messages.
 
 -   [API Reference](../../en/API%20Reference/signal_android.md) lists the core methods and callbacks of the Agora Signaling SDK.
+
+## Firewall ports and whitelist domains
+
+Before accessing Agora’s signaling services, ensure that you open the local firewall ports and whitelist the domains specified below.
+
+### Firewall ports
+
+| Port type | Whitelist ports                                       |
+| -------- | ----------------- |
+| TCP ports | 1080; 8001 to 8199; 10000 to 10010; 10100 to 10110 |
+| UDP ports | 8180 to 8199       |
+
+### Whitelist domains
+
+```
+ .agora.io
+ qoslbs.agoralab.co
+ qos.agoralab.co
+```
 
 
 

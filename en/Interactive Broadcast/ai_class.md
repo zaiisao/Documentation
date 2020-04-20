@@ -3,7 +3,7 @@
 title: AI Interactive Classroom
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 07 2020 04:16:10 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 04:52:37 GMT+0800 (CST)
 ---
 # AI Interactive Classroom
 ## Overview
@@ -100,12 +100,12 @@ Integrate the Agora Media Streaming Server SDK on your server to successfully pu
 
 Agora provides:
 
-- A media streaming command-line tool that can push a maximum of three video clips to a specified Agora live-broadcast channel in sequence. For details, see [Streaming by Command Line](../../en/Server/use_streaming_command_line_tool.md).
+- A media streaming command-line tool that can push a maximum of three video clips to a specified Agora live-broadcast channel in sequence. For details, see [Streaming by Command Line](https://docs-preview.agoralab.co/en/Server/use_streaming_command_line_tool).
 - Three preprocessing tools, including:
-  - mediaConvert: Use this tool to transcode video files and ensure that the format of the video files meets certain requirements. For details, see [Use mediaConvert](../../en/Server/preprocess.md).
-  - mediaDenoise: Use this tool to reduce the background noise, turn up the audio gain of sound in video files, and change the resolution of output video files. For details, see [Use mediaDenoise](../../en/Server/preprocess.md).
-  - AIInterpolation: Use this tool to insert frames between two video files. For details, see [Use AIInterpolation](../../en/Server/preprocess.md).
-- An Integration guide, which shows you how to integrate the Agora Media Streaming Server SDK into your project and call APIs for media streaming. For details, see [Implement Media Streaming on Server](../../en/Server/media_streaming_on_server.md).
+  - mediaConvert: Use this tool to transcode video files and ensure that the format of the video files meets certain requirements. For details, see [Use mediaConvert](https://docs-preview.agoralab.co/en/Server/preprocess#transcoding).
+  - mediaDenoise: Use this tool to reduce the background noise, turn up the audio gain of sound in video files, and change the resolution of output video files. For details, see [Use mediaDenoise](https://docs-preview.agoralab.co/en/Server/preprocess#denoise).
+  - AIInterpolation: Use this tool to insert frames between two video files. For details, see [Use AIInterpolation](https://docs-preview.agoralab.co/en/Server/preprocess#interpolation).
+- An Integration guide, which shows you how to integrate the Agora Media Streaming Server SDK into your project and call APIs for media streaming. For details, see [Implement Media Streaming on Server](https://docs-preview.agoralab.co/en/Server/media_streaming_on_server).
 
 ### Build a client for students
 

@@ -3,7 +3,7 @@
 title: 在线播放录制文件
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 11 2020 00:43:03 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 04:13:22 GMT+0800 (CST)
 ---
 # 在线播放录制文件
 ## 功能描述
@@ -14,7 +14,7 @@ updatedAt: Wed Mar 11 2020 00:43:03 GMT+0800 (CST)
 
 ## 实现方法
 
-在开始前，请确保录制文件已全部上传完成。下面分别介绍[阿里云](https://www.aliyun.com/product/ossJ)、[七牛云](https://www.qiniu.com/)、[腾讯云](https://cloud.tencent.com/product/cos) 和 [AWS S3](https://aws.amazon.com/cn/s3/?nc=sn&loc=0) 如何在线播放录制文件。
+在开始前，请确保录制文件已全部上传完成。下面分别介绍[阿里云](https://www.aliyun.com/product/oss)、[七牛云](https://www.qiniu.com/)、[腾讯云](https://cloud.tencent.com/product/cos) 和 [AWS S3](https://aws.amazon.com/cn/s3/?nc=sn&loc=0) 如何在线播放录制文件。
 
 >以下方法中，读写权限设置均以存储桶（bucket）为单位。为提高安全性，你也可以选择以单个录制文件为单位设置读写权限。
 
