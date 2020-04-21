@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Apr 02 2020 06:01:22 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 02:55:27 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -725,7 +725,7 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 
 #### 3. 网页端 Proxy 功能
 
-为解决设有防火墙的企业用户无法直接使用 Agora 服务的问题，新增 2 个接口，通过代理服务器将用户的内网请求转到 Agora SD-RTN 上，从而实现内网访问。使用该功能，用户需要自行部署 Nginx 和 TURN 服务器， 并在加入频道之前就调用相关接口。详见 [企业部署代理服务器](../../cn/Interactive%20Broadcast/proxy_web.md) 中关于代理服务器工作原理、部署步骤以及调用 API 接口的描述。
+为解决设有防火墙的企业用户无法直接使用 Agora 服务的问题，新增 2 个接口，通过代理服务器将用户的内网请求转到 Agora SD-RTN 上，从而实现内网访问。使用该功能，用户需要自行部署 Nginx 和 TURN 服务器， 并在加入频道之前就调用相关接口。
 
 #### 4. 加密功能
 

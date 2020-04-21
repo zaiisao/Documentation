@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 09:21:38 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 03:12:00 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
@@ -414,5 +414,10 @@ If the web app is not working properly, open the console in your browser and che
 
 ## Reference
 
-We provide an open-source [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Web) demo project that implements a group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
+### Group video call
 
+Agora provides an open-source [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Web) demo project that implements a group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
+
+### WordPress plugin
+
+With the [Agora Video for WordPress](https://wordpress.org/plugins/wp-agora-io/) plugin, you can easily embed live video streaming in your WordPress posts and pages. See [Agora WordPress Plugin QuickStart Guide](https://medium.com/agora-io/agora-video-for-wordpress-plugin-quickstart-guide-b8838abd4245).

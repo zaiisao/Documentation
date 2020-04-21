@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 10 2020 04:03:19 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 02:52:15 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 视频互动直播（Video Broadcasting）可以实现一对多，多对多的音视频互动直播。
@@ -62,21 +62,10 @@ Agora 视频互动直播提供丰富的功能，你可以根据自己的场景�
 | ---------- | ------------------------------------------------------------ |
 	| Android    | <p>4.1+</p><p>Android SDK 支持如下 ABI：</p><ul><li>armeabi-v7a<li>arm64-v8a<li>x86<li>x86_64                                                         |
 | iOS        | 8.0+                                                         |
-	| Windows    | <p>XP SP3+</p><p>Windows SDK 支持如下架构：<p><ul><li>x86<li>x64                                                      |
+	| Windows    | <p>Windows 7</p><p>Windows SDK 支持如下架构：<p><ul><li>x86<li>x64                                                      |
 | macOS      | 10.0+                                                        |
 | Unity      | 2017+                                                        |
 | 微信小程序 | 支持                                                         |
 | Web        | <li>Chrome 58+ <li>Chrome 49（仅 Windows XP）<li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |
 
 <div class="alert note">Web 平台的支持情况还与设备型号及系统版本等有关，详见 <a href="https://docs.agora.io/cn/faq/browser_support">Agora Web SDK 支持哪些浏览器？</a></div>
-
-## Demo 体验
-
-### 视频互动直播 - Agora Live
-
-在应用市场下载 Agora Live，快速体验超低延迟多人连麦互动直播。
-
-- [Android](http://android.myapp.com/myapp/detail.htm?apkName=io.agora.vlive)
-- [iOS](https://itunes.apple.com/cn/app/id1116886856?mt=8)
-- [Web](https://videocall.agora.io/#/)
-- [Windows](http://download.agora.io/avc/AgoraLiveBroadcast_for_windows_2.2.0.zip)

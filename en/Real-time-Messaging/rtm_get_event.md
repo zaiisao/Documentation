@@ -1,13 +1,16 @@
 
 ---
-title: Agora RTM RESTful API
+title: Real-time Messaging RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 20 2020 09:50:57 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 10:19:11 GMT+0800 (CST)
 ---
-# Agora RTM RESTful API
+# Real-time Messaging RESTful API
 > Besides this document, you can also read our interactive document [RTM RESTful API](https://docs.agora.io/en/Real-time-Messaging/restfulapi/)![](https://web-cdn.agora.io/docs-files/1583736328279). By clicking the **Example Value** or **Schema** tab, you can view example codes or parameter definitions for request/response bodies.
 
+The Real-time Messaging RESTful API currently supports user events and channel events.
+
+<div class="alert note">For the user events and channel events RESTful API, the number of requests per second for each App ID must not exceed 10.</div>
 
 ## <a name="auth"></a>Authentication
 

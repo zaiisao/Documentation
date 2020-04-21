@@ -3,7 +3,7 @@
 title: Agora Interactive Gaming Overview
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 17 2019 10:36:57 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 03:00:43 GMT+0800 (CST)
 ---
 # Agora Interactive Gaming Overview
 The Agora Interactive Gaming SDK helps you quickly integrate audio and video functions into your gaming projects.
@@ -24,7 +24,6 @@ The Agora Interactive Gaming SDK provides a variety of functions for different g
 See the following sample code for application scenarios:
 * [Online Audio Chatroom](https://github.com/AgoraIO-Usecase/Chatroom)
 * [Murder Mystery Game](https://github.com/AgoraIO-Usecase/Murder-Mystery-Game)
-* [Gaming Radio](https://docs.agora.io/cn/2.3.1/product/Interactive%20Gaming/Solutions/game_radio_android?platform=Unity%20(Android))
 
 
 ## Key Properties

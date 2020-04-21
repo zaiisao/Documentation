@@ -3,7 +3,7 @@
 title: 语聊房
 description: 
 platform: Android
-updatedAt: Thu Apr 16 2020 08:12:31 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 03:11:45 GMT+0800 (CST)
 ---
 # 语聊房
 ## 场景介绍
@@ -116,7 +116,7 @@ Agora 使用 Agora RTC SDK 与 Agora RTM SDK 共同搭建语聊房场景。其�
  
  你还可以根据场景需求，参考如下进阶功能指南，在项目中实现相关功能。
  
- - [播放音效或混音](https://docs.agora.io/cn/Audio%20Broadcast/effect_mixing_android?platform=Android)
+ - [播放音效或混音](https://docs.agora.io/cn/Audio%20Broadcast/audio_effect_mixing_android?platform=Android)
  - [变声与混响](https://docs.agora.io/cn/Audio%20Broadcast/voice_changer_android?platform=Android)
 
 ### 开源示例代码
