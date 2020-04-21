@@ -3,15 +3,14 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 20 2020 08:51:23 GMT+0800 (CST)
+updatedAt: Mon Apr 20 2020 10:14:30 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
-实时消息 RESTful API 目前支持查询用户事件和频道事件。
-
-<div class="alert note">厂商事件查询 RESTful API 的 qps 限制为：单厂商每秒 10 次。</div>
-
 > 除本文外，你也可以查看我们全新的交互式 API 文档[实时消息 RESTful API](https://docs.agora.io/cn/Real-time-Messaging/restfulapi/)![](https://web-cdn.agora.io/docs-files/1583736328279)。你可以通过切换 **Example Value** 和 **Schema** 标签页查看各 API 请求和响应包体的示例代码和参数说明。
 
+实时消息 RESTful API 目前支持查询用户事件和频道事件。
+
+<div class="alert note">对于查询用户事件和频道事件 RESTful API，每个 App ID 每秒钟的请求数不能超过 10 次。</div>
 
 ## <a name="auth"></a>认证
 
@@ -55,7 +54,7 @@ updatedAt: Mon Apr 20 2020 08:51:23 GMT+0800 (CST)
 所有的请求都发送给域名：`api.agora.io`。
 
 - Base URL: 
-```
+```pin
 https://api.agora.io/dev/v2/project/<appid>/
 ```
 - Content-type： `application/json;charset=utf-8`
@@ -65,10 +64,29 @@ https://api.agora.io/dev/v2/project/<appid>/
 
 > 所有的请求 URL 和请求包体内容均区分大小写。
 
+## API 调用步骤
 
-## <a name="get"></a>获取用户上下线事件 API
+- 查询用户上线或下线事件：直接调用 `user_events` 方法。
+- 查询用户加入或离开频道事件：直接调用 `channel_events` 方法。
 
-该方法从 Agora RTM 服务器指定的地址获取用户上下线事件。
+
+## 响应状态码
+
+| 错误码 | 描述                                                         |
+| :----- | :----------------------------------------------------------- |
+|200	|请求成功。|
+|400	|请求的语法错误。|
+|408	|服务器请求超时或服务器无响应。|
+
+## <a name="get"></a>获取用户上线或下线事件 API
+
+该方法从 Agora RTM 服务器指定的地址获取用户上线或下线事件。
+
+>  - 每个 App ID 每秒钟的请求数不能超过 10 次。
+>  - RTM 后台最多存储 2000 条事件。
+>  - 单次返回最多 1000 条事件。
+>  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域（跨国或者跨洲）的事件的事件顺序的正确性。
+>  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域拉取了事件后，如果你从另一个区域再次拉取可能会得到相同的事件。
 
 - 方法：GET
 - 接入点：~/rtm/vendor/user_events
@@ -90,7 +108,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | :------- | :----- | :-------------------- |
 | `result` | string | 本次请求结果。   |
 | `request_id`   | string | 本次请求唯一的 ID。 |
-| `events`  | JSON    | 用户登录登出事件。      |
+| `events`  | JSON    | 用户上线下线事件。      |
 
 ### `event` 事件包体示例
 ```json
@@ -108,18 +126,15 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | `ts`  | int    | 时间戳（ms）。      |
 
 
-> - RTM 后台最多存储 2000 条事件。
-> - 单次返回最多 1000 条事件。
-> - 我们对事件按区域缓存，因此不保证来自不同区域的事件的事件顺序的正确性。
-> - 我们只在同一区域内同步事件，不在区域间同步。所以，你从某区域拉取了事件后，如果你从另一个区域再次拉取仍然会得到相同的事件。
+## 获取用户加入或离开频道事件 API
 
-### 错误码
+该方法从 Agora RTM 服务器指定的地址获取用户加入或离开频道事件。
 
-| 错误码 | 描述                                                 |
-| :----- | :--------------------------------------------------- |
-| 408    | 服务器请求超时或服务器无响应，建议稍后重试。                   |
-
-## 获取频道登入登出事件 API
+>  - 每个 App ID 每秒钟的请求数不能超过 10 次。
+>  - RTM 后台最多存储 2000 条事件。
+>  - 单次返回最多 1000 条事件。
+>  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域（跨国或者跨洲）的事件的事件顺序的正确性。
+>  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域拉取了事件后，如果你从另一个区域再次拉取可能会得到相同的事件。
 
 - 方法：GET
 - 接入点：~/rtm/vendor/channel_events
@@ -160,15 +175,3 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 | `user_id` | string | 本次事件对应的用户名。   |
 | `type`   | string | 事件类型：<li>Join: 用户加入频道事件，</li><li>Leave: 用户离开频道事件。</li> |
 | `ts`  | int    | 时间戳（ms）。 |
-
-> - RTM 后台最多存储 2000 条事件。
-> - 单次返回最多 1000 条事件。
-> - 我们对事件按区域缓存，因此不保证来自不同区域的事件的事件顺序的正确性。
-> - 我们只在同一区域内同步事件，不在区域间同步。所以，你从某区域拉取了事件后，如果你从另一个区域再次拉取仍然会得到相同的事件。
-
-
-### 错误码
-
-| 错误码 | 描述                                                 |
-| :----- | :--------------------------------------------------- |
-| 408    | 服务器请求超时或服务器无响应，建议稍后重试。                   |

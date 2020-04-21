@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to play audio effect files and enable audio mixing
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 08:17:34 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 02:47:01 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -71,8 +71,8 @@ agoraKit.stopAllEffects()
 // 预加载音效（推荐），需注意音效文件的大小，并在加入频道前完成加载
 // 仅支持 mp3，aac，m4a，3gp，wav 格式
 // 开发者可能需要额外记录 id 与文件路径的关联关系，用来播放和停止音效
-int soundId = 1
-NSString *filePath = "your filepath"
+int soundId = 1;
+NSString *filePath = "your filepath";
 
 // 可以加载多个音效
 [agoraKit preloadEffect: soundId filePath: filePath];
@@ -80,13 +80,13 @@ NSString *filePath = "your filepath"
 // 播放音效
 int soundId = 1;
 NSString *filePath = "your filepath";
-int loopCount = 1
-double pitch = 1
-double pan = 1
-double gain = 0
-BOOL publish = true
+int loopCount = 1;
+double pitch = 1;
+double pan = 1;
+double gain = 0;
+BOOL publish = true;
 
-[agoraKit playEffect: soundId filePath: filePath loopCount: loopCount, pitch: pitch, pan: pan, gain: gain, publish: publish];
+[agoraKit playEffect: soundId filePath: filePath loopCount: loopCount pitch: pitch pan: pan gain: gain publish: publish];
 
 // 暂停所有音效播放
 [agoraKit pauseAllEffects];
@@ -95,7 +95,7 @@ BOOL publish = true
 int volume = [agoraKit getEffectsVolume];
 
 // 保证音效音量在原始音量的 80% 以上
-volume = volume < 80 ? 80 : volume
+volume = volume < 80 ? 80 : volume;
 [agoraKit setEffectsVolume: volume];
 
 // 继续播放暂停的音效
