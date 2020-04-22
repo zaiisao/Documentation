@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Apr 20 2020 08:23:25 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 02:40:20 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -162,7 +162,7 @@ The following parameters are required in the request body.
   - `1`: Subscribes to the low-quality stream.
 - `maxIdleTime`: (Optional) Number. Agora Cloud Recording automatically stops recording and leaves the channel when there is no user in the recording channel after a time period (30 seconds by default) set by this parameter. The value range is from 5 to 2<sup>32</sup>-1. 
 
-<div class="alert note"><ul><li>The recording service does not recognize a channel as an idle channel, so long as the channel has users, regardless of whether they send stream or not.</li><li>If a live-broadcast channel has an audience without a host for a set time (<code>maxIdleTime</code>), the recording service automatically stops and leaves the channel.</li></div>
+<div class="alert note"><ul><li>In a communication channel, the recording service does not recognize a channel as an idle channel, so long as the channel has users, regardless of whether they send stream or not.</li><li>If a live broadcast channel has an audience without a host for a set time (<code>maxIdleTime</code>), the recording service automatically stops and leaves the channel.</li></div>
 
 - `transcodingConfig`: (Optional) JSON. The video transcoding configuration. You cannot set this parameter in individual recording mode. If you set this parameter, ensure that you set `width`, `height`, `fps`, and `bitrate`. Refer to [How do I set the video profile of the recorded video?](https://docs.agora.io/en/faq/recording_video_profile) for detailed information about setting `transcodingConfig`.
   - `width`: (Mandatory) Number. The width of the mixed video (pixels). The default value is 360. `width` should not exceed 1920, and `width`*`height` should not exceed 1920 * 1080; otherwise, an error occurs.

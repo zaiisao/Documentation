@@ -3,13 +3,11 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 08:19:40 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 03:04:46 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
 In a call or live broadcast, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
-
-Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Interactive%20Broadcast/ios_video.md).
 
 Before proceeding, ensure that you implement a basic call or live broadcast in your project. See the Quickstart Guides for details:
 
@@ -67,8 +65,8 @@ agoraKit.stopAllEffects()
 // Preloads the audio effect (recommended). Note the file size and preload the file before joining the channel.
 // Only mp3, aac, m4a, 3gp, and wav files are supported.
 // You may need to record the correlation between the sound IDs and the file paths.
-int soundId = 1
-NSString *filePath = "your filepath"
+int soundId = 1;
+NSString *filePath = "your filepath";
 
 // You can preload multiple audio effects.
 [agoraKit preloadEffect: soundId filePath: filePath];
@@ -76,12 +74,12 @@ NSString *filePath = "your filepath"
 // Plays an audio effect file.
 int soundId = 1; // The sound ID of the audio effect file to be played.
 NSString *filePath = "your filepath"; // The file path of the audio effect file.
-int loopCount = 1 // The number of playback loops. -1 means an infinite loop.
-double pitch = 1 // Sets the pitch of the audio effect.
-double pan = 1 // Sets the spatial position of the audio effect. 0 means the effect shows ahead.
-double gain = 0 // Sets the volume. The value ranges between 0 and 100. 100 is the original volume.
-BOOL publish = true // Sets whether to publish the audio effect.
-[agoraKit playEffect: soundId filePath: filePath loopCount: loopCount, pitch: pitch, pan: pan, gain: gain, publish: publish];
+int loopCount = 1; // The number of playback loops. -1 means an infinite loop.
+double pitch = 1; // Sets the pitch of the audio effect.
+double pan = 1; // Sets the spatial position of the audio effect. 0 means the effect shows ahead.
+double gain = 0; // Sets the volume. The value ranges between 0 and 100. 100 is the original volume.
+BOOL publish = true; // Sets whether to publish the audio effect.
+[agoraKit playEffect: soundId filePath: filePath loopCount: loopCount pitch: pitch pan: pan gain: gain publish: publish];
 
 // Pauses all audio effects.
 [agoraKit pauseAllEffects];
@@ -90,7 +88,7 @@ BOOL publish = true // Sets whether to publish the audio effect.
 int volume = [agoraKit getEffectsVolume];
 
 // Ensures that the audio effect's volume is at least 80% of the original volume.
-volume = volume < 80 ? 80 : volume
+volume = volume < 80 ? 80 : volume;
 [agoraKit setEffectsVolume: volume];
 
 // Resumes playing the audio effect.

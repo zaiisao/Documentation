@@ -3,7 +3,7 @@
 title: Gaming API
 description: 
 platform: Cocos Creator
-updatedAt: Wed Apr 24 2019 09:51:57 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 10:47:23 GMT+0800 (CST)
 ---
 # Gaming API
 Agora Cocos Creator js SDK contains the following APIs:
@@ -75,7 +75,6 @@ Agora Native SDK supports the following profiles:
 | -------- | ------------------------------------------------------------ |
 | Communication     | (Default) This is used in one-on-one calls, where all users in the channel can talk. |
 | Live Broadcast     | Host and audience roles that can be set by calling the setClientRole method. The host sends and receives voice, while the audience receives voice only with the sending function disabled. |
-| Gaming | Any user in the channel can talk freely. This mode uses the codec with low-power consumption and low bitrate by default. |
 
 > - Only one profile can be used at the same time in the same channel. 
 > - Ensure that different App IDs are used for different channel profiles.
@@ -271,7 +270,6 @@ agora.setDefaultAudioRouteToSpeakerphone(true)
 | -------- | ------------------------------------------------------------ |
 | Communication     | <li>Audio call: earpiece<br><li>Video Call: speakerphone<br><li>Disable video in a video call: earpiece |
 | Live Broadcast     | Speakerphone                                                         |
-| Gaming | Speakerphone                                                         |
 
 >  If a user who is in the Communication profile calls the `disableVideo` method or if the user calls the `muteLocalVideoStream` and `muteAllRemoteVideoStreams` methods, the default audio route switches back to the earpiece automatically.
 

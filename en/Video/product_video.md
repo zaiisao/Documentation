@@ -46,7 +46,7 @@ The Agora Native SDK for Video Call is supported on platforms such as iOS, Andro
 | iOS                  | 8.0+                                                         |
 | Windows              | Windows 7<br>The Windows SDK supports the following architecture:<li>x86<li>x64                                                      |
 | macOS                | 10.0+                                                        |
-| Unity                | 2017+                                                        |
+| Unity                | <p>2017+</p><p>The Unity SDK supports the following platforms:<p><ul><li>Android (armeabi-v7a, arm64-v8a, x86)<li>iOS<li>Windows (x86, x86_64)<li>macOS                                                        |
 | Web                  | <li>Chrome 58+<li>Chrome 49 on Windows XP<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
 
 <div class="alert note">The browser support on the Web platform varies with the device and system. See <a href="https://docs.agora.io/cn/faq/browser_support">Which browsers does the Agora Web SDK support?</a></div>
