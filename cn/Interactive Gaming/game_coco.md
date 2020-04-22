@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Cocos Creator
-updatedAt: Mon Nov 25 2019 10:14:30 GMT+0800 (CST)
+updatedAt: Tue Apr 21 2020 10:46:46 GMT+0800 (CST)
 ---
 # 游戏 API
 Agora Cocos Creator js SDK 包含如下 API：
@@ -73,7 +73,6 @@ agora.setChannelProfile(0)
 | -------- | ------------------------------------------------------------ |
 | 通信     | 通信为默认模式，用于常见的一对一或群聊，频道中的任何用户可以自由说话 |
 | 直播     | 直播模式有主播和观众两种用户角色，可以通过调用 setClientRole 设置。主播可收发语音和视频，但观众只能收，不能发 |
-| 游戏语音 | 频道内任何用户可自由发言。该模式下默认使用低功耗低码率的编解码器 |
 
 > - 同一频道内只能同时设置一种模式。
 > - 不同的频道模式必须使用不同的 App ID。
@@ -266,7 +265,7 @@ agora.setDefaultAudioRouteToSpeakerphone(true)
 | -------- | ------------------------------------------------------------ |
 | 通信     | <li>语音通话: 听筒<br><li>视频通话: 外放<br><li>视频通话中关闭视频 : 听筒 |
 | 直播     | 外放                                                         |
-| 游戏语音 | 外放                                                         |
+
 
 > 已调用 `disableVideo` 或 已调用 `muteLocalVideoStream` 或 `muteAllRemoteVideoStreams`
 

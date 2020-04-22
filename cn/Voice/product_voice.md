@@ -40,7 +40,7 @@ updatedAt: Mon Feb 10 2020 08:48:51 GMT+0800 (CST)
 | iOS        | 8.0+                                                         |
 	| Windows    | <p>Windows 7</p><p>Windows SDK 支持如下架构：<p><ul><li>x86<li>x64                                                      |
 | macOS      | 10.0+                                                        |
-| Unity      | 2017+                                                        |
+| Unity      | <p>2017+</p><p>Unity SDK 支持如下平台：<p><ul><li>Android (armeabi-v7a、arm64-v8a、x86)<li>iOS<li>Windows (x86、x86_64)<li>macOS                                                         |
 | 微信小程序 | 支持                                                         |
 | Web        | <li>Chrome 58+ <li>Chrome 49（仅 Windows XP）<li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |
 
