@@ -3,7 +3,7 @@
 title: 自定义音频采集和渲染
 description: 
 platform: Unity
-updatedAt: Fri Apr 03 2020 07:11:29 GMT+0800 (CST)
+updatedAt: Thu Apr 23 2020 03:31:03 GMT+0800 (CST)
 ---
 # 自定义音频采集和渲染
 ## 功能介绍
@@ -72,7 +72,7 @@ public struct AudioFrame
 
 **API 参考**
 
-- [`SetExternalAudioSink`](https://docs.agora.io/cn/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a91a7599be9ca163f0b43c83a4b3a902e)
+- [`SetExternalAudioSource`](https://docs.agora.io/cn/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a91a7599be9ca163f0b43c83a4b3a902e)
 - [`PushAudioFrame`](https://docs.agora.io/cn/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ac7340e14573a6fdf089924b228555ba7)
 
 ### 自定义音频渲染
@@ -101,7 +101,7 @@ public int PullAudioFrame(IntPtr audioBuffer, int type, int samples, int bytesPe
 
 **API 参考**
 
-- [`SetExternalAudioSink`](https://docs.agora.io/cn/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a91a7599be9ca163f0b43c83a4b3a902e)
+- [`SetExternalAudioSink`](https://docs.agora.io/cn/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ac767651baab2797313e4c13db7f66260)
 - [`PullAudioFrame`](https://docs.agora.io/cn/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_audio_raw_data_manager.html#a6aa04f6b4cf488d46bc64b39a11d891e)
 
 ## 注意事项
