@@ -3,7 +3,7 @@
 title: How can I set the log file?
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 25 2020 22:45:32 GMT+0800 (CST)
+updatedAt: Thu Apr 23 2020 15:52:20 GMT+0800 (CST)
 ---
 # How can I set the log file?
 The Agora SDK provides API methods for you to generate an output log file that records all the log data of the SDK operation.
