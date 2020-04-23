@@ -3,7 +3,7 @@
 title: Custom Audio Source and Renderer
 description: 
 platform: Unity
-updatedAt: Thu Mar 26 2020 04:02:50 GMT+0800 (CST)
+updatedAt: Thu Apr 23 2020 03:30:01 GMT+0800 (CST)
 ---
 # Custom Audio Source and Renderer
 ## Introduction
@@ -76,7 +76,7 @@ public struct AudioFrame
 
 **API reference**
 
-- [`SetExternalAudioSink`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a91a7599be9ca163f0b43c83a4b3a902e)
+- [`SetExternalAudioSource`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a91a7599be9ca163f0b43c83a4b3a902e)
 - [`PushAudioFrame`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ac7340e14573a6fdf089924b228555ba7)
 
 ### Custom audio sink
@@ -105,7 +105,7 @@ public int PullAudioFrame(IntPtr audioBuffer, int type, int samples, int bytesPe
 
 **API reference**
 
-- [`SetExternalAudioSink`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#a91a7599be9ca163f0b43c83a4b3a902e)
+- [`SetExternalAudioSink`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#ac767651baab2797313e4c13db7f66260)
 - [`PullAudioFrame`](https://docs.agora.io/en/Video/API%20Reference/unity/classagora__gaming__rtc_1_1_audio_raw_data_manager.html#a6aa04f6b4cf488d46bc64b39a11d891e)
 
 ## Considerations
