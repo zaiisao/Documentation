@@ -3,7 +3,7 @@
 title: Glossary
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 10 2020 08:36:29 GMT+0800 (CST)
+updatedAt: Fri Apr 24 2020 07:42:42 GMT+0800 (CST)
 ---
 # Glossary
 ## A
@@ -275,11 +275,29 @@ Developers can use Agora's Audio & Video File Merging script to merge the audio 
  <div class="alert info">Reference:<li><a href="https://docs.agora.io/en/cloud-recording/cloud_recording_individual_mode">Individual Recording</a> (Cloud Recording)</li><li><a href="https://docs.agora.io/en/Recording/recording_individual_mode">Individual Recording</a> (On-premise Recording)</li></div>
 
 
+#### <a name="inject-stream"></a>**Inject Online Media Stream**
+
+"Inject Online Media Stream" refers to inject an online media stream in a live-broadcast channel to share the stream with all users in the channel. The Agora RTC SDK provides a method for developers to inject an online mixed audio and video stream or an audio only stream to a channel.
+
+
+<div class="alert info">Reference:<a href="https://docs.agora.io/cn/Interactive%20Broadcast/inject_stream_android?platform=Android"> Inject Online Media Stream</a>
+</div>
+
 ## L
 
 #### <a name="low-stream"></a>**low-quality video stream**
 
 In the dual-stream mode, the SDK transmits two video streams of differing quality at the same time. The low-quality video stream has a lower resolution and bitrate than the high-quality video stream. See [dual-stream mode](#dual-stream) for details.
+
+## M
+#### <a name="media-player"></a>**MediaPlayer Kit**
+
+The MediaPlayer Kit is a plug-in of the Agora RTC SDK to play local and online media resources and publish the media streams to other users in a live-broadcast channel. Developers can use the media metadata, raw audio data, and raw video data of the media resources that the MediaPlayer Kit returns to implement custom functions.
+
+
+<div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_release_android?platform=Android">MediaPlayer Kit Release Notes</a></li>
+<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_android?platform=Android">MediaPlayer Kit Guide</a></li>
+</div>
 
 
 ## O
@@ -315,6 +333,15 @@ Raw data, including raw audio data and raw video data, is the unprocessed data w
 Generally, the data format of raw audio is PCM, and the data formats of raw video are RGB and YUV420.
 
 <div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/raw_data_audio_android?platform=Android">Raw Audio Data</a></li><li><a href="https://docs.agora.io/en/Interactive%20Broadcast/raw_data_video_android?platform=Android">Raw Video Data</a></li><li><a href="https://docs.agora.io/en/Recording/recording_raw_data?platform=Linux">Get the Raw Data</a></li></div>
+
+#### <a name="render-first-video"></a>**render time of the first video frame**
+
+The render time of the first video frame is the time when the SDK renders the first video frame on the local device.
+
+- The render time of the first local video frame: The time when the SDK renders the first video frame captured by the local camera on the local video view of the local device.
+- The render time of the first remote video frame: The time when the SDK renders the first video frame received from a remote user on the remote video view of the local device.
+
+The time elapsed from the time when the local or remote user joins a channel to the render time of the first local or the first remote video frame is correlated with the user's hardware and software capacity. Agora strives to reduce the time elapsed, so that an application can render the video to less than a second.
 
 #### <a name="rtm-native-sdk"></a>**RTM Native SDK**
 
@@ -409,3 +436,10 @@ Developers may have to set video layout when using Cloud Recording, On-premise R
 - Push Streams to CDN: When multiple hosts are in a CDN live streaming channel, transcoding combines the streams of all hosts into a single stream. Use `TranscodingUser` to set the video layout for each user.
 
 <div class="alert info">Reference:<li><a href="https://docs.agora.io/en/cloud-recording/cloud_recording_layout">Set Video Layout</a>（Cloud Recording）</li><li><a href="https://docs.agora.io/en/Recording/recording_layout">Set Video Layout</a>（On-premise Recording）</li><li><a href="https://docs.agora.io/en/Audio%20Broadcast/cdn_streaming_apple">Push Streams to CDN</a></li></div>
+
+#### <a name="video-profile"></a>**video profile**
+
+The video profile refers to a set of video attributes, such as resolution, bitrate, and frame rate. It is also known as "video encoder configurations". Agora provides methods for developers to set the resolution, bitrate, frame rate, orientation mode, and other attributes under ideal network conditions when encoding the local video. Once encoded, the local video streams to the remote users in the channel. The settings of the video profile affect what the remote users see.
+
+<div class="alert info">Reference:<a href="https://docs.agora.io/en/Interactive%20Broadcast/video_profile_android?platform=Android"> Set the Video Profile</a>
+</div>
