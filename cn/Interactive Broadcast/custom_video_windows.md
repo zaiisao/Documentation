@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Windows
-updatedAt: Mon Mar 09 2020 10:17:54 GMT+0800 (CST)
+updatedAt: Fri Apr 24 2020 08:05:11 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
