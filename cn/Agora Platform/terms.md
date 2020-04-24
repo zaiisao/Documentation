@@ -3,7 +3,7 @@
 title: 术语库
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 24 2020 08:56:38 GMT+0800 (CST)
+updatedAt: Fri Apr 24 2020 10:10:38 GMT+0800 (CST)
 ---
 # 术语库
 ## A
@@ -217,6 +217,16 @@ App 证书是一串 Agora 提供的随机字符串，用于开启 Token 鉴权�
 
 <div class="alert info">相关链接：<li><a href="#dual-stream">双流模式</a></li><li><a href="#high-stream">大流</a></li><li><a href="#low-stream">小流</a></li><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/fallback_android?platform=Android">视频流回退</a></li></div>
 
+	
+## M
+#### <a name="media-player"></a>**媒体播放器组件 (MediaPlayer Kit)**
+
+媒体播放器组件是 Agora RTC SDK 的一个组件，适用于直播场景下播放本地或在线媒体资源，并将主播播放的媒体流发送给其他用户。此外，该组件支持解析媒体附属信息，提供媒体资源的原始音视频数据接口，开发者可以自行实现更多功能。
+
+<div class="alert info">相关链接：<li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_release_android?platform=Android">媒体播放器组件发版说明</a></li>
+<li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_android?platform=Android">媒体播放器组件集成和 API 文档</a></li>
+</div>
+
 ## P
 #### <a name="channel"></a>**频道 (channel)**
 
@@ -282,6 +292,24 @@ SD-RTN™ 是 Software Defined Real-time Network 的缩写，即软件定义实�
 <li><a href="#sd-rtn">SD-RTN™</a></li>
 </div>
 
+	
+#### <a name="video-profile"></a>**视频属性 (video profile)**
+
+视频属性指本地编码视频的分辨率、码率、帧率等属性，又称为 “视频编码属性”。声网提供接口供开发者设置理想网络状态下本地视频编码时的分辨率、码率、帧率、视频方向模式等属性。本地视频流在编码后即会发送给频道内远端用户，故开发者对本地视频属性的设置会影响远端用户所见。
+
+<div class="alert info">相关链接：<a href="https://docs.agora.io/cn/Interactive%20Broadcast/video_profile_android?platform=Android">设置视频属性</a>
+</div>
+	
+	
+#### <a name="render-first-video"></a>**首帧出图 (render the first video frame)**
+
+首帧出图指视频的第一帧在本地设备上渲染显示。有以下两种情况：
+
+- 本地视频首帧出图：本地摄像头采集视频的第一帧显示在本地设备的本地视图上。
+- 远端视频首帧出图：接收的远端用户视频的第一帧显示在本地设备的远端视图上。
+
+首帧出图时间指本地或远端视频首帧出图距本地或远端用户加入频道的时间推移。首帧出图时间与开发者的硬件和软件都有关系，声网的工程师致力于不断降低首帧出图时间，使开发者的 app 达到视频秒开的水平。
+	
 #### <a name="dual-stream"></a>**双流模式 (dual-stream mode)**
 
 实时音视频互动过程中，Agora 需要将发布的视频流传输给订阅了这路视频流的用户。发布一路视频流，就会传输一路视频流。
@@ -301,6 +329,15 @@ SD-RTN™ 是 Software Defined Real-time Network 的缩写，即软件定义实�
 <li><a href="#low-stream">小流</a></li>
 </div>
 
+	
+#### <a name="inject-stream"></a>**输入在线媒体流 (Inject Online Media Stream)**
+
+输入在线媒体流指直播场景下，输入在线音视频流至 Agora 频道内供所有用户欣赏。Agora RTC SDK 为开发者提供接口允许主播输入一路在线音视频流或纯音频流至 Agora 频道。
+
+<div class="alert info">相关链接：<a href="https://docs.agora.io/cn/Interactive%20Broadcast/inject_stream_android?platform=Android">输入在线媒体流</a>
+</div>
+	
+	
 #### <a name="agora-analytics"></a>**水晶球 (Agora Analytics)**
 水晶球是声网提供给开发者对全周期通话质量进行监测、回溯和分析的工具。
 
