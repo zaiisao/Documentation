@@ -54,9 +54,19 @@ Suppose that user A has been in an RTC channel for 45 continuous minutes, subscr
 As you can see from the above table: 
 
 - A's Aggregate resolution for the initial 30 min = B's resolution + C's resolution + D's resolution = 691200 < 1280 x 720, falling into the HD bracket. 
+  - 640 x 360 = 230,400 pixels 
+  - 230,400px (User B) + 230,400px (User C) + 230,400px (User D) = 691200 pixels (Total) per minute
+  - 1280 x 720 (HD+) = 921,600 pixels. Aggregate resolution for minutes using 691,200px < 921,600, so we are charged as HD
 - Aggregate resolution of A for the subsequent 15 min = B's resolution +C's resolution + D's resolution = 1195200 > 1280 x 720, falling into the HD+ bracket. 
 
+
 Total fee for user A = Unit price (video minutes HD) x 30 min + Unit price (video minutes HD+) x 15 min
+
+* In this example, based on pricing reflected in our website, the price for user A would be:
+* User A fee = ($.00399[HD] * 30min) + ($.01499[HD+] * 15min)
+  * User A fee = $.1197 + $.22485
+  * User A fee = $.34455
+
 
 > See [Pricing](#billing) for the pricing of the video minutes.
 > 
