@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Apr 14 2020 02:22:37 GMT+0800 (CST)
+updatedAt: Wed Apr 22 2020 15:58:33 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -16,6 +16,27 @@ The Voice SDK supports the following scenarios:
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
 
 The Windows Voice SDK supports the X86 and  X64 architecture.
+
+## v3.0.0.2
+
+v3.0.0.2 was released on Apr 22, 2020.
+
+**New features**
+
+#### Specify the area of connection
+
+This release adds `areaCode` member in the `RtcEngineContext` struct for specifying the area of connection when creating an `IRtcEngine` instance. This advanced feature applies to scenarios that have regional restrictions. You can choose from areas including Mainland China, North America, Europe, and global (default).
+
+After specifying the area of connection:
+
+- When the app that integrates the Agora SDK is used within the specified area, it connects to the Agora servers within the specified area under normal circumstances.
+- When the app that integrates the Agora SDK is used out of the specified area, it connects to the Agora servers either in the specified area or in the area where the SDK is located.
+
+**API changes**
+
+#### Added
+
+`areaCode` member in the [`RtcEngineContext`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_engine_context.html) struct
 
 ## v3.0.0
 

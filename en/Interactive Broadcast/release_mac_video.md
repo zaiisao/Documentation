@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Thu Apr 02 2020 05:47:40 GMT+0800 (CST)
+updatedAt: Thu Apr 23 2020 02:30:36 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -20,6 +20,31 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 #### Known Issues and Limitations
 
 A USB device driver issue occurs when you do not hear any audio or the audio is corrupted with a USB headset. USB is not user-friendly on macOS, and we recommend using higher quality headsets.
+
+## v3.0.0.2
+
+v3.0.0.2 was released on Apr 22, 2020.
+
+**New features**
+
+#### Specify the area of connection
+
+This release adds `sharedEngineWithConfig` for specifying the area of connection when creating an `AgoraRtcEngineKit` instance. This advanced feature applies to scenarios that have regional restrictions. You can choose from areas including Mainland China, North America, Europe, and global (default).
+
+After specifying the area of connection:
+
+- When the app that integrates the Agora SDK is used within the specified area, it connects to the Agora servers within the specified area under normal circumstances.
+- When the app that integrates the Agora SDK is used out of the specified area, it connects to the Agora servers either in the specified area or in the area where the SDK is located.
+
+**Issues fixed**
+
+This release fixed issues relating to no audio, disconnecting from a Bluetooth device after joining a channel, and the occasional failure to join a channel.
+
+**API changes**
+
+#### Added
+
+[`sharedEngineWithConfig`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithConfig:delegate:)
 
 ## v3.0.0
 

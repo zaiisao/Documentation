@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Mon Apr 20 2020 08:13:25 GMT+0800 (CST)
+updatedAt: Thu Apr 23 2020 02:23:29 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for iOS.
@@ -16,6 +16,31 @@ The Voice SDK supports the following scenarios:
 -   Live voice broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+
+## v3.0.0.2
+
+v3.0.0.2 was released on Apr 22, 2020.
+
+**New features**
+
+#### Specify the area of connection
+
+This release adds `sharedEngineWithConfig` for specifying the area of connection when creating an `AgoraRtcEngineKit` instance. This advanced feature applies to scenarios that have regional restrictions. You can choose from areas including Mainland China, North America, Europe, and global (default).
+
+After specifying the area of connection:
+
+- When the app that integrates the Agora SDK is used within the specified area, it connects to the Agora servers within the specified area under normal circumstances.
+- When the app that integrates the Agora SDK is used out of the specified area, it connects to the Agora servers either in the specified area or in the area where the SDK is located.
+
+**Issues fixed**
+
+This release fixed the occasional failure to connect to a Bluetooth headset.
+
+**API changes**
+
+#### Added
+
+[`sharedEngineWithConfig`](https://docs.agora.io/en/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithConfig:delegate:)
 
 ## v3.0.0
 

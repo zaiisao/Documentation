@@ -30,7 +30,7 @@ Before sending HTTP requests, you must pass the basic Agora HTTP authentication 
 - `api_key`: Customer ID
 - `api_secret`: Customer Certificate
 
-You can find your Customer ID and Customer Certificate on the [RESTful API](https://dashboard.agora.io/restful) page in Console. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
+You can find your Customer ID and Customer Certificate on the [RESTful API](https://console.agora.io/restfulApi) page in Console. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 
 ## Data format
 
