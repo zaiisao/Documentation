@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Fri Mar 27 2020 04:47:40 GMT+0800 (CST)
+updatedAt: Fri Apr 24 2020 07:53:33 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
