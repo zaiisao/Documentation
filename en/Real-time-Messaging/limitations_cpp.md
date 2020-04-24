@@ -12,9 +12,9 @@ This page provides a brief overview of the limitations of the Agora RTM SDK for 
 
 ## Maximum Call Frequency
 
-When mentioning a qps limitation, we are referring to the qps of an API in the context of one single IRtmService instance, not in the context of one Agora RTM SDK.
+The API call limit refers to the call limit of an API in the context of one single IRtmService instance, not in the context of one Agora RTM SDK.
 
-<div class="alert note">You can increase the qps limitation of an API by creating multiple IRtmService instances.</div>
+<div class="alert note">You can increase the call limit of an API by creating multiple IRtmService instances.</div>
 
 | Function                                                    | Method                                                       | Maximum Call Frequency                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
