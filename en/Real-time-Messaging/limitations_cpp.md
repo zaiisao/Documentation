@@ -2,8 +2,8 @@
 ---
 title: RTM Limitations
 description: 
-platform: Linux CPP,Windows CPP
-updatedAt: Thu Feb 20 2020 14:46:32 GMT+0800 (CST)
+platform: Windows CPP
+updatedAt: Fri Apr 24 2020 09:16:19 GMT+0800 (CST)
 ---
 # RTM Limitations
 
