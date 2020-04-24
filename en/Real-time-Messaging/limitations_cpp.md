@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Windows CPP
-updatedAt: Fri Apr 24 2020 09:18:03 GMT+0800 (CST)
+updatedAt: Fri Apr 24 2020 10:08:41 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -69,7 +69,7 @@ Supports channel and peer-to-peer messages, invitation content, and invitation r
 
 ## Miscellaneous 
 
-- Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512..
+- Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512.
 - The current version supports querying the online status of a maximum of 256 users.
 - You can subscribe to the online status of a maximxim of 512 users in one method call, and you can subscribe to the online status of at most 512 users. 
 - Attribute settings in one user attribute operation should not exceed 16 KB in size; attribute settings in one channel attribute operation should not exceed 32 KB in size; each attribute (key/value pair) should not excced 8 KB in size; the number of key/value pairs you set in one attribute operation should not exceed 32. 
