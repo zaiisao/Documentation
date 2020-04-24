@@ -3,7 +3,7 @@
 title: Security
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 14:41:54 GMT+0800 (CST)
+updatedAt: Fri Apr 24 2020 14:07:30 GMT+0800 (CST)
 ---
 # Security
 ### Are the services provided by Agora safe?
@@ -12,7 +12,7 @@ Agora provides a safe platform and all transmitted signals are encrypted.
 
 ### What security measures does Agora provide?
 
-Agora provides multiple encryption schemas according to different requirements. See Information Security Policy.
+Agora provides multiple encryption schemas according to different requirements. See [Information Security Policy](https://docs.agora.io/cn/Agora%20Platform/security).
 
 ### How can I customize the data encryption for my application?
 
