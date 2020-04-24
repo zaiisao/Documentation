@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Fri Apr 17 2020 06:52:00 GMT+0800 (CST)
+updatedAt: Thu Apr 23 2020 02:09:04 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -33,6 +33,28 @@ Android 语音 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **3.0.0.2 版**
+
+该版本于 2020 年 4 月 22 日发布。
+
+**新增特性**
+
+#### 设置区域访问限制
+
+该版本新增 `create` 方法，支持在创建 `RtcEngine` 实例时指定服务器的访问区域。该功能为高级设置，适用于有访问安全限制的场景。目前支持的区域有中国大陆、北美、欧洲和全球（默认）。
+
+指定访问区域后，集成了 Agora SDK 的 app 在指定区域使用时，正常情况下会连接指定区域的 Agora 服务器；在非指定区域使用时，会从所在区域和指定区域的服务器地址中，择优选择服务器建立连接。
+
+**问题修复**
+
+该版本修复了音频无声的问题。
+
+**API 变更**
+
+#### 新增
+
+[`create`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a45832a91b1051bc7641ccd8958288dba)
 
 ## **3.0.0 版**
 

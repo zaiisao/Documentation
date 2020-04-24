@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Mon Apr 20 2020 03:55:13 GMT+0800 (CST)
+updatedAt: Thu Apr 23 2020 02:15:36 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -20,6 +20,28 @@ macOS 视频 SDK 支持两种主要场景:
 #### 已知问题和局限性
 
 macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异常等问题，通常为 USB 设备驱动的问题，macOS 上对普通的 USB 支持都不是很友好，建议购买更优质的 USB 耳麦。
+
+## **3.0.0.2 版**
+
+该版本于 2020 年 4 月 22 日发布。
+
+**新增特性**
+
+#### 设置区域访问限制
+
+该版本新增 `sharedEngineWithConfig` 方法，支持在创建 `AgoraRtcEngineKit` 实例时指定服务器的访问区域。该功能为高级设置，适用于有访问安全限制的场景。目前支持的区域有中国大陆、北美、欧洲和全球（默认）。
+
+指定访问区域后，集成了 Agora SDK 的 app 在指定区域使用时，正常情况下会连接指定区域的 Agora 服务器；在非指定区域使用时，会从所在区域和指定区域的服务器地址中，择优选择服务器建立连接。
+
+**问题修复**
+
+该版本修复了音频无声、进频道后蓝牙设备断开、无法进入频道等问题。
+
+**API 变更**
+
+#### 新增
+
+[`sharedEngineWithConfig`](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithConfig:delegate:)
 
 ## **3.0.0 版**
 

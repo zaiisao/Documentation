@@ -32,7 +32,7 @@ updatedAt: Thu Apr 02 2020 06:02:14 GMT+0800 (CST)
 - `api_key`: Customer ID （客户 ID）
 - `api_secret`: Customer Certificate （客户证书）
 
-你可以在控制台的 [RESTful API](https://console.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
+你可以在控制台的 [RESTful API](https://console.agora.io/restfulApi) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ## 数据格式
 

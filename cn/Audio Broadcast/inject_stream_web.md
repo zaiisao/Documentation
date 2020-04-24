@@ -3,13 +3,14 @@
 title: 输入在线媒体流
 description: 
 platform: Web
-updatedAt: Fri Mar 27 2020 05:56:37 GMT+0800 (CST)
+updatedAt: Wed Apr 22 2020 07:27:14 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
 输入在线媒体流功能可以将音视频流作为一个发送端输入正在进行的直播房间。通过将正在播放的音视频输入到直播频道中，主播和观众可以一起收听/观看该媒体流并实时互动。
 
 <div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Interactive-Broadcasting-Live-Streaming-Injection-Web/">在线体验</a>试用输入在线媒体流功能。</div>
+
 ### 常用场景
 
 - 赛事直播中，主播直接拉比赛的音视频流，实现主播和观众边看比赛边点评的功能。
