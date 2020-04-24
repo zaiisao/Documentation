@@ -7,7 +7,7 @@ updatedAt: Fri Apr 24 2020 13:58:46 GMT+0800 (CST)
 ---
 # RTM Limitations
 
-This page provides a brief overview of the limitations of the Agora RTM SDK for Android, including the maximum method call frequencies, maximum string length, unicode support and more.
+This page provides a brief overview of the limitations of the Agora RTM SDK for Android, including API call limits, maximum string length, unicode support and more.
 
 
 ## Maximum Call Frequency
