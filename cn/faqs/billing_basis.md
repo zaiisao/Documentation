@@ -3,7 +3,7 @@
 title: 按频道人数计时和按流计时有什么区别？
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 23 2020 14:22:44 GMT+0800 (CST)
+updatedAt: Fri Apr 24 2020 09:24:13 GMT+0800 (CST)
 ---
 # 按频道人数计时和按流计时有什么区别？
 RTC 领域，有两种不同的计时方式：按频道人数计时和按流计时。目前声网使用的是按**频道人数**计时的方式。
