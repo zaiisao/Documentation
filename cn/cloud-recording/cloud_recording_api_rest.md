@@ -305,7 +305,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `19`：EU_Moscow
 
 - `bucket`：String 类型，第三方云存储的 bucket。
-- `accessKey`：String 类型，第三方云存储的 access key。
+- `accessKey`：String 类型，第三方云存储的 access key。建议提供只写权限的访问密钥。
 - `secretKey`：String 类型，第三方云存储的 secret key。
 
 - `fileNamePrefix`：（选填）JSONArray 类型，由多个字符串组成的数组，指定录制文件在第三方云存储中的存储位置。举个例子，`fileNamePrefix` = `["directory1","directory2"]`，将在录制文件名前加上前缀 "`directory1/directory2/`"，即 `directory1/directory2/xxx.m3u8`。前缀长度（包括斜杠）不得超过 128 个字符。字符串中不得出现斜杠。以下为支持的字符集范围：

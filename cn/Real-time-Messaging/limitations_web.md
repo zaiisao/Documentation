@@ -12,7 +12,7 @@ updatedAt: Fri Feb 21 2020 06:35:35 GMT+0800 (CST)
 
 ## 调用频率限制
 
-所有的 qps 都是针对单个 RtmClient 实例而言，而非针对单个 Agora RTM SDK。
+所有的调用频率都是针对单个 RtmClient 实例而言，而非针对单个 Agora RTM SDK。
 
 <div class="alert note">我们<b>暂不建议</b>在 Web 平台上通过创建多实例提高 API 的调用频率。</div>
 
