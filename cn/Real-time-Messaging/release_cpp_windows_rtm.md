@@ -2,7 +2,7 @@
 ---
 title: 发版说明
 description: 
-platform: Windows
+platform: Windows CPP
 updatedAt: Thu Apr 23 2020 16:00:41 GMT+0800 (CST)
 ---
 # 发版说明
