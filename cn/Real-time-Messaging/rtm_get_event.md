@@ -14,12 +14,12 @@ updatedAt: Sun Apr 26 2020 14:21:16 GMT+0800 (CST)
 
 ## <a name="auth"></a>认证
 
-实时消息 RESTful API 仅支持 HTTPS 协议。你可以通过以下任意一种认证方式：
+实时消息 RESTful API 仅支持 HTTPS 协议。你可以使用以下任意一种认证方式：
 
-- [Basic Authentication](#basicauth)
+- [Basic HTTP 认证](#basicauth)
 - [Token Authentication](#tokenauth)
 
-### <a name="basicauth"></a>Basic Authentication
+### <a name="basicauth"></a>Basic HTTP 认证
 
 发送请求时，你需要提供 `api_key:api_secret` 通过 Basic HTTP 认证并填入 HTTP 请求头部的 Authorization 字段：
 
@@ -28,16 +28,16 @@ updatedAt: Sun Apr 26 2020 14:21:16 GMT+0800 (CST)
 
 你可以在控制台的 [RESTful API](https://console.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
-### <a name="tokenauth"></a>Token Authentication
+### <a name="tokenauth"></a>Token 认证
 
-如果你已经在服务端生成了 RTM Token，你也可以选用 Token Authentication 认证。你需要再发送 HTTP 请求时在 HTTP 请求头部的 `x-agora-token` 字段和 `x-agora-uid` 字段分别填入：
+如果你已经在服务端生成了 RTM Token，你也可以选用 token 认证。你需要在发送 HTTP 请求时在 HTTP 请求头部的 `x-agora-token` 字段和 `x-agora-uid` 字段分别填入：
 
 - 服务端生成的 RTM Token
 - 生成 RTM Token 时使用的 uid。
 
 **示例代码**
 
-下面的 Java 示例代码展示了如何实现 Token Authentication 认证。
+下面的 Java 示例代码展示了如何实现 token 认证。
 
 ```java
   Request request = new Request.Builder()
