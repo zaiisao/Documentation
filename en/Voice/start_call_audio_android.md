@@ -81,7 +81,12 @@ dependencies {
 | **x86** folder      | **/app/src/main/jniLibs/**     | 
 | **x86_64** folder      | **/app/src/main/jniLibs/**     | 
 
-<div class="alert note">If your project does not use the encryption function, we recommend deleting the <code>libagora-crypto.so</code> file in the SDK package.</div>
+<div class="alert note">
+	<ul>
+		<li>If your project does not use the encryption function, we recommend deleting the <code>libagora-crypto.so</code> file in the SDK package.</li>
+		<li>If you use the armeabi architecture, copy files from the <b>armeabi</b> folder to the <b>armeabi</b> file of your project. Contact <a href="../../en/Voice/support@agora.io.md">support@agora.io</a> if you encouter any incompatibility issue.</li>
+	</ul>
+</div>
 
 ### Add project permissions
 
