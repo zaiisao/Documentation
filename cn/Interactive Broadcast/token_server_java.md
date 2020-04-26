@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Java
-updatedAt: Sun Apr 26 2020 08:51:40 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 08:57:59 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个 RTC token，并提供 Token 生成相关的 Java API 参考。
