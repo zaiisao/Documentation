@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Sun Apr 26 2020 14:21:16 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 14:30:24 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档[实时消息 RESTful API](https://docs.agora.io/cn/Real-time-Messaging/restfulapi/)![](https://web-cdn.agora.io/docs-files/1583736328279)。你可以通过切换 **Example Value** 和 **Schema** 标签页查看各 API 请求和响应包体的示例代码和参数说明。
