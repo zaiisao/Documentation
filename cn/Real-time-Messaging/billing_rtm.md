@@ -35,7 +35,7 @@ updatedAt: Fri Mar 20 2020 07:13:19 GMT+0800 (CST)
 
 
 
-声网根据 DAU (每日活跃用户数) 对 RTM 项目计费：每个项目中每个 `uid` (RTM) 或 `userAccount` (信令) 登陆一次系统计为一次活跃，系统会对同一项目中每日内同一 `uid` 或 `userAccount` 的多次登陆进行去重，以这种方式统计得到的日登陆次数计为 RTM 项目的 DAU。<p>声网会将你的每个 [Agora 开发者账户](https://console.agora.io/)下每个项目的当月最高日活跃用户数 DAU 相加，根据相加得到的 DAU 数计算当月费用。</p><p><div class="alert note">为进一步推广 RTM 用量，声网决定自 2020 年 4 月 1 日至 2020 年 6 月 30 日对每月的最高日活跃用户数 DAU 减免 20000，根据减免后的当月最高 DAU 计费。</div></p>
+声网根据 DAU (每日活跃用户数) 对 RTM 项目计费：每个项目中每个 `uid` (RTM) 或 `userAccount` (信令) 登录一次系统计为一次活跃，系统会对同一项目中每日内同一 `uid` 或 `userAccount` 的多次登录进行去重，以这种方式统计得到的日登录次数计为 RTM 项目的 DAU。<p>声网会将你的每个 [Agora 开发者账户](https://console.agora.io/)下每个项目的当月最高日活跃用户数 DAU 相加，根据相加得到的 DAU 数计算当月费用。</p><p><div class="alert note">为进一步推广 RTM 用量，声网决定自 2020 年 4 月 1 日至 2020 年 6 月 30 日对每月的最高日活跃用户数 DAU 减免 20000，根据减免后的当月最高 DAU 计费。</div></p>
 
 
 
@@ -70,7 +70,7 @@ updatedAt: Fri Mar 20 2020 07:13:19 GMT+0800 (CST)
 
 ### 当月最高日活跃用户 DAU 统计
 
-- 同一 `uid` 或 `userAccount` 当日的多次登陆只对当日 DAU 贡献一次，声网会对相同 `uid` 或 `userAccount` 的多次登陆进行去重。
+- 同一 `uid` 或 `userAccount` 当日的多次登录只对当日 DAU 贡献一次，声网会对相同 `uid` 或 `userAccount` 的多次登录进行去重。
 - 如果同一 [Agora 开发者账户](https://console.agora.io/)下存在多个 RTM 开发项目，当月最高 DAU 为各项目当月最高 DAU 的总和。
 
 

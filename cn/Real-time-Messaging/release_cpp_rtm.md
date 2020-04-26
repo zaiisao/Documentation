@@ -38,7 +38,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 **问题修复**
 
 
-- 修复了一个用户使用 VPN 登陆 RTM，关闭 VPN 后 RTM 重连失败的问题。
+- 修复了一个用户使用 VPN 登录 RTM，关闭 VPN 后 RTM 重连失败的问题。
 - 修复了一个频道中用户断线重连，频道中其它用户有概率收到两次 `onMemberJoined` 回调的问题。
 
 ## 1.2.0 版
@@ -60,7 +60,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 本版本中，我们在这个 [PeerOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/structagora_1_1rtm_1_1_peer_online_status.html) 结构体中增加了枚举类型 [PEER_ONLINE_STATE](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/namespaceagora_1_1rtm.html#a16966e9a602270d2bbdd9510602ecc5f) ，细分并重新定义了以下三种用户在线状态：
 
-- 在线（online）： 用户已登陆 Agora RTM 系统。
+- 在线（online）： 用户已登录 Agora RTM 系统。
 - 连接状态不稳定（unreachable）：服务器连续 6 秒未收到来自 SDK 的数据包。
 - 用户不在线（offline）：用户未登录或已登出 Agora RTM 系统，或服务器连续 30 秒未收到来自 SDK 的数据包。
 

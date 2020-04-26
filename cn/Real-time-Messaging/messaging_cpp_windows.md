@@ -283,7 +283,7 @@ void sendGroupMessage (const std::string& msg) {
 
 - RTM 支持多个相互独立的 [IRtmService](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html) 实例。
 
-- 在收发点对点消息或进行其他频道操作前，请确保你已成功登陆 Agora RTM 系统（即确保已经收到 [onLoginSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a8cf1b2be30172004f595484e0a194d76)）。
+- 在收发点对点消息或进行其他频道操作前，请确保你已成功登录 Agora RTM 系统（即确保已经收到 [onLoginSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a8cf1b2be30172004f595484e0a194d76)）。
 
 - 使用频道核心功能前必须通过调用 [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a0196e60ee165f6c97f561cf71499d377) 方法创建频道实例。
 - 你可以创建多个 [IRtmService](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html) 客户端实例，但是每个客户端实例最多只能同时加入 20 个频道。每个频道都应有不同的 `channelId` 参数。
