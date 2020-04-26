@@ -3,7 +3,7 @@
 title: Manage Recorded Files
 description: 
 platform: All Platforms
-updatedAt: Sun Apr 26 2020 06:53:31 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 06:54:00 GMT+0800 (CST)
 ---
 # Manage Recorded Files
 ## Overview
@@ -68,6 +68,11 @@ When [a cloud recording server is disconnected or the process killed](../../en/f
 Taking the file name of `bak0_sid713476478245_cnameagora.m3u8` as an example, `bak0` indicates that this file is generated after the service enables the high availability mechanism for the first time.
 	
 After the cloud recording service enables the high availability mechanism, the names of the recorded TS/WebM files are also prepended with `bak<n>`.
+
+## File size
+In an individual recording, the size of a recorded file is decided by the bitrate of the media source and the duration of the recording. For example, if the audio bitrate is 48 Kbps, the video bitrate is 500 Kbps, and the recording lasts for 30 minutes (1800 seconds), the size of the recorded file is approximately (48 Kbps + 500 Kbps) * 1800 s = 986.4 Mbit, or 123.3 MB.
+
+In a composite recording, the size of a recorded file is decided by the bitrates in the transcoding configurations, and the duration of the recording. For example, if you set `audioProfile` as `1` (setting the audio bitrate as 128 Kbps) and `bitrate` as 800 (setting the video bitrate as 800 Kbps), and the recording lasts for 30 minutes (1800 seconds), the size of the recorded file is approximately (128 Kbps + 800 Kbps) * 1800 s = 1670.4 Mbit, or 208.8 MB.
 
 ## M3U8 fIle
 
