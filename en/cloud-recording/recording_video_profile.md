@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: All Platforms
-updatedAt: Sun Apr 26 2020 02:40:21 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 02:40:35 GMT+0800 (CST)
 ---
 # Set the Video Profile
 In composite recording mode, you can set the video profile (resolution, frame rate, and bitrate) for the output video stream. Agora recommends setting the video profile according to the values listed in the [video profile table](#profile_table). For Cloud Recording, use `transcodingConfig` to set the video profile. For On-premise Recording, use `mixResolution` to set the video profile.
