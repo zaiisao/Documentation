@@ -7,7 +7,7 @@ updatedAt: Thu Feb 20 2020 13:31:48 GMT+0800 (CST)
 ---
 # 限制条件
 
-本页简要介绍 Agora RTM Java SDK for Android 的使用限制条件，包括最大调用频率、最大字符串长度、编码格式等。
+本页简要介绍 Agora RTM Java SDK for Android 的使用限制条件，包括调用频率限制、最大字符串长度、编码格式等。
 
 
 

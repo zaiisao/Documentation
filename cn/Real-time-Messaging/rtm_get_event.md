@@ -30,20 +30,22 @@ updatedAt: Mon Apr 20 2020 10:14:30 GMT+0800 (CST)
 
 ### <a name="tokenauth"></a>Token Authentication
 
-如果你已经在服务端生成了 RTM Token，你也可以选用 Token Authentication 认证。你需要再发送 HTTP 请求时在 HTTP 请求头部的 x-agora-token 字段和 x-agora-uid 字段分别填入：
+如果你已经在服务端生成了 RTM Token，你也可以选用 Token Authentication 认证。你需要再发送 HTTP 请求时在 HTTP 请求头部的 `x-agora-token` 字段和 `x-agora-uid` 字段分别填入：
 
 - 服务端生成的 RTM Token
 - 生成 RTM Token 时使用的 uid。
 
 **示例代码**
 
+下面的 Java 示例代码展示了如何实现 Token Authentication 认证。
+
 ```java
   Request request = new Request.Builder()
   ...
   // 在 HTTP 请求头部的 x-agora-token 字段填入获取的 RTM Token
   .addHeader("x-agora-token", "<Your RTM Token>")
-	// 在 HTTP 请求头部的 x-agora-uid 字段填入用于生成该 RTM Token 的 uid
-	.addHeader("x-agora-uid", "<Your uid used to generate the RTM Token>")
+  // 在 HTTP 请求头部的 x-agora-uid 字段填入用于生成该 RTM Token 的 uid
+  .addHeader("x-agora-uid", "<Your uid used to generate the RTM Token>")
   ...
 ```
 

@@ -7,7 +7,7 @@ updatedAt: Fri Apr 24 2020 09:06:57 GMT+0800 (CST)
 ---
 # 限制条件
 
-本页简要介绍 Agora RTM Objective-C SDK for iOS 或 Agora RTM Objective-C SDK for macOS 的使用限制条件，包括最大调用频率、最大字符串长度、编码格式等。
+本页简要介绍 Agora RTM Objective-C SDK for iOS 或 Agora RTM Objective-C SDK for macOS 的使用限制条件，包括调用频率限制、最大字符串长度、编码格式等。
 
 
 ## 调用频率限制
