@@ -86,7 +86,7 @@ dependencies {
 <div class="alert note">
 	<ul>
 		<li>If your project does not use the encryption function, we recommend deleting the <code>libagora-crypto.so</code> file in the SDK package.</li>
-		<li>If you use the armeabi architecture, copy files from the <b>armeabi</b> folder to the <b>armeabi</b> file of your project. Contact <a href="../../en/Audio%20Broadcast/support@agora.io.md">support@agora.io</a> if you encouter any incompatibility issue.</li>
+		<li>If you use the armeabi architecture, copy files from the <b>armeabi-v7a</b> folder to the <b>armeabi</b> file of your project. Contact <a href="mailto: support@agora.io">support@agora.io</a> if you encouter any incompatibility issue.</li>
 	</ul>
 </div>
 
