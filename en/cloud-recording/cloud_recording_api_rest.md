@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Sun Apr 26 2020 02:39:38 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 06:45:59 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -164,7 +164,7 @@ The following parameters are required in the request body.
 
 <div class="alert note"><ul><li>In a communication channel, the recording service does not recognize a channel as an idle channel, so long as the channel has users, regardless of whether they send stream or not.</li><li>If a live broadcast channel has an audience without a host for a set time (<code>maxIdleTime</code>), the recording service automatically stops and leaves the channel.</li></div>
 
-- `transcodingConfig`: (Optional) JSON. The video transcoding configuration. You cannot set this parameter in individual recording mode. If you set this parameter, ensure that you set `width`, `height`, `fps`, and `bitrate`. Refer to [How do I set the video profile of the recorded video?](https://docs.agora.io/en/faq/recording_video_profile) for detailed information about setting `transcodingConfig`.
+- `transcodingConfig`: (Optional) JSON. The video transcoding configuration. You cannot set this parameter in individual recording mode. If you set this parameter, ensure that you set `width`, `height`, `fps`, and `bitrate`. Refer to [Set the Video Profile](../../en/cloud-recording/recording_video_profile.md) for detailed information about setting `transcodingConfig`.
   - `width`: (Mandatory) Number. The width of the mixed video (pixels). The default value is 360. `width` should not exceed 1920, and `width`*`height` should not exceed 1920 * 1080; otherwise, an error occurs.
   - `height`: (Mandatory) Number. The height of the mixed video (pixels). The default value is 640. `height` should not exceed 1920, and `width`*`height`  should not exceed 1920 * 1080; otherwise, an error occurs.
   - `fps`: (Mandatory) Number. The video frame rate (fps). The default value is 15.
