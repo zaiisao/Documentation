@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Sun Apr 26 2020 16:09:19 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 16:09:59 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -178,7 +178,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 **问题修复**
 
 - 在未设置 [enableOfflineMessaging](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/sendmessageoptions.html) 的情况下，发送的点对点消息有一定几率成为离线消息。
-- 对端用户成功登陆后立即设置的用户属性有一定几率无法被获取。
+- 对端用户成功登录后立即设置的用户属性有一定几率无法被获取。
 
 **功能改进**
 
