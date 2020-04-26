@@ -3,7 +3,7 @@
 title: Manage Recorded Files
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 23 2020 07:42:06 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 06:53:31 GMT+0800 (CST)
 ---
 # Manage Recorded Files
 ## Overview
