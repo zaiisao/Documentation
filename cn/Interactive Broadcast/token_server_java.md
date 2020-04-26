@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Java
-updatedAt: Sun Apr 26 2020 08:51:33 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 08:51:40 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个 RTC token，并提供 Token 生成相关的 Java API 参考。
@@ -32,6 +32,8 @@ updatedAt: Sun Apr 26 2020 08:51:33 GMT+0800 (CST)
 我们推荐使用 **RtcTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**RtcTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
 
 开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
+
+<div class="alert note">体验该示例项目需要 JDK 1.8+ 环境。</div>
 
 ## 快速生成 RTC Token
 
