@@ -93,7 +93,12 @@ dependencies {
 | **x86** 文件夹                | **/app/src/main/jniLibs/**           | 
 | **x86_64** 文件夹             | **/app/src/main/jniLibs/**           | 
 
-<div class="alert note">如果你的项目无需使用加密功能，建议删除 SDK 包内的  <code>libagora-crypto.so</code> 文件。</div>
+<div class="alert note">
+	<ul>
+	<li>如果你的项目无需使用加密功能，建议删除 SDK 包内的  <code>libagora-crypto.so</code> 文件。</li>
+	<li>如果你使用的是 armeabi 库，可以把 <b>armeabi-v7a</b> 内的文件放入 <b>armeabli</b> 文件夹内。如果遇到不兼容的情况，请联系 <a href ="sales@agora.io">sales@agora.io</a> 咨询适配相关问题。</li>
+	</ul>
+	</div>
 
 ### 添加项目权限
 
