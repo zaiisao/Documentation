@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Java
-updatedAt: Sun Apr 26 2020 08:57:03 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 08:57:19 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating an RTC token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API reference in Java. 
@@ -30,6 +30,8 @@ The <b>./\<language\>/src</b> folder of each language holds source codes for gen
 However, we recommend using **RtcTokenBuilder** instead of **AccessToken**.  **AccessToken** implements all the core algorithms for generating a token, while **RtcTokenBuilder** is a wrapper of **AccessToken** and provides much more simplified Interfaces. 
 
 The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes. **RtcTokenBuilderSample** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, Agora Recording SDK or Agora RTSA SDK. You can customize it based on your real business needs. 
+
+<div class="alert note">Running this demo project requires a development environment of JDK 1.8 or later.</div>
 
 ## Generate a token using **RtcTokenBuilderSample**
 
