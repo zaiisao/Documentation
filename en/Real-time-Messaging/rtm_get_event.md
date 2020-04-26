@@ -16,10 +16,10 @@ The Real-time Messaging RESTful API currently supports user events and channel e
 
 Agora RTM RESTful API supports HTTPS only. You can use either of the following methods to authenticate your HTTP request: 
 
-- [Basic Authentication](#basicauth)
-- [Token Authentication](#tokenauth)
+- [Basic authentication](#basicauth)
+- [Token authentication](#tokenauth)
 
-### <a name="basicauth"></a>Basic Authentication
+### <a name="basicauth"></a>Basic authentication
 
 You need to pass the basic HTTP authentication and put `api_key:api_secret` in the `Authorization` field of the HTTP header: 
 
@@ -28,14 +28,16 @@ You need to pass the basic HTTP authentication and put `api_key:api_secret` in t
 
 You can get your Customer ID and Customer Certificate on the [RESTful API](https://console.agora.io/restful) page of the Agora Console. For more information on how to generate the `Authorization` filed, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
 
-### <a name="tokenauth"></a>Token Authentication
+### <a name="tokenauth"></a>Token authentication
 
-If you have already generated an RTM Token on your server, you can use Token Authentication. You need to put the following information to the `x-agora-token` field `x-agora-uid` field when sending your HTTP request: 
+If you have already generated an RTM Token on your server, you can use token authentication. You need to put the following information to the `x-agora-token` field `x-agora-uid` field when sending your HTTP request: 
 
 - The RTM Token generated at your server. 
 - The uid you use to generate the RTM Token. 
 
 **Sample code**
+
+The following sample code shows how to implement token authentication in Java:
 
 ```java
   Request request = new Request.Builder()
