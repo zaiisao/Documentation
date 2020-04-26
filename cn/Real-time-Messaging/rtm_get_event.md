@@ -17,7 +17,7 @@ updatedAt: Sun Apr 26 2020 14:21:16 GMT+0800 (CST)
 实时消息 RESTful API 仅支持 HTTPS 协议。你可以使用以下任意一种认证方式：
 
 - [Basic HTTP 认证](#basicauth)
-- [Token Authentication](#tokenauth)
+- [Token 认证](#tokenauth)
 
 ### <a name="basicauth"></a>Basic HTTP 认证
 
