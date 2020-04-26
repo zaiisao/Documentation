@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Sun Apr 26 2020 16:09:12 GMT+0800 (CST)
+updatedAt: Sun Apr 26 2020 16:09:19 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -22,7 +22,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 **问题修复**
 
-从 Windows 平台上较新版本 Chrome 登陆 Agora RTM 系统会偶尔收到错误码 `LOGIN_ERR_UNKNOWN`。
+从 Windows 平台上较新版本 Chrome 登录 Agora RTM 系统会偶尔收到错误码 `LOGIN_ERR_UNKNOWN`。
 
 ## 1.2.1 版
 
