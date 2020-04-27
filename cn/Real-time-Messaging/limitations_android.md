@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Mon Apr 27 2020 05:41:02 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 05:41:07 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -61,8 +61,8 @@ updatedAt: Mon Apr 27 2020 05:41:02 GMT+0800 (CST)
 ## 字符串长度限制
 
 - 点对点或频道消息的字符串最大长度为 32 KB。详见 [RtmMessage.setText](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_message.html#a114bf5f4d728e1a5e31792491bf4a1d2) 。
-- 呼叫邀请内容的字符串最大长度为 8 KB. 详见 [LocalInvitation.setContent](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_local_invitation.html#a4cec28ff6d356242329b1034c7531445) 。
-- 呼叫邀请响应的字符串最大长度为 8 KB. 详见 [RemoteInvitation.setResponse](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_remote_invitation.html#a229b8cf773eaa0e79b0d67815fd6b6f1) 。
+- 呼叫邀请内容的字符串最大长度为 8 KB。 详见 [LocalInvitation.setContent](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_local_invitation.html#a4cec28ff6d356242329b1034c7531445) 。
+- 呼叫邀请响应的字符串最大长度为 8 KB。 详见 [RemoteInvitation.setResponse](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_remote_invitation.html#a229b8cf773eaa0e79b0d67815fd6b6f1) 。
 
 
 ## 编码格式限制
