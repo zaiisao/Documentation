@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 06:45:24 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 06:45:30 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -326,7 +326,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 | `dst`        | string | 消息接收方。 |
 | `message_type`  | string  |   消息类型。可以是 `peer_message` 或 `channel_message`。    |
 | `payload` | string   | 消息体。当前版本仅支持文本消息。 |
-|  `ms`       | int | 服务器接受请求的时间。时间为 UTC 时间。返回值等于 1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的秒数。|
+|  `ms`       | int |  返回从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的秒数。|
 
 
 ### 获取历史消息数目 API
