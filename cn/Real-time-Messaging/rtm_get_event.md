@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 07:11:35 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 07:11:42 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -61,7 +61,7 @@ updatedAt: Mon Apr 27 2020 07:11:35 GMT+0800 (CST)
 https://api.agora.io/dev/v2/project/<appid>/
 ```
 - Content-type： `application/json;charset=utf-8`
-- Authorization： 详见[认证](#auth)。
+- Authorization： 详见 [认证](#auth)。
 - 请求：请求的格式详见下面各个 API 中的示例。
 - 响应：响应内容的格式为 JSON。
 
