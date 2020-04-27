@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 03:50:49 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 06:27:52 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -61,7 +61,7 @@ updatedAt: Mon Apr 27 2020 03:50:49 GMT+0800 (CST)
 https://api.agora.io/dev/v2/project/<appid>/
 ```
 - Content-type： `application/json;charset=utf-8`
-- Authorization： 详见：[认证](#auth)。
+- Authorization： 详见[认证](#auth)。
 - 请求：请求的格式详见下面各个 API 中的示例。
 - 响应：响应内容的格式为 JSON。
 
@@ -133,7 +133,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | 参数     | 类型   | 描述   |
 | :------- | :----- | :-------------------- |
 | `user_id` | string | 本次事件对应的用户名。   |
-| `type`   | string | 事件类型：<li>Login: 用户登录（上线）事件，</li><li>Logout: 用户登出（下线）事件。</li> |
+| `type`   | string | 事件类型：<li>`Login`: 用户登录（上线）事件。</li><li>`Logout`: 用户登出（下线）事件。</li> |
 | `ts`  | int    | 时间戳（ms）。      |
 
 
@@ -184,7 +184,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 | :------- | :----- | :-------------------- |
 | `channel_id` | string | 本次事件对应的频道名。   |
 | `user_id` | string | 本次事件对应的用户名。   |
-| `type`   | string | 事件类型：<li>Join: 用户加入频道事件，</li><li>Leave: 用户离开频道事件。</li> |
+| `type`   | string | 事件类型：<li>`Join`: 用户加入频道事件。</li><li>`Leave`: 用户离开频道事件。</li> |
 | `ts`  | int    | 时间戳（ms）。 |
 
 
@@ -227,16 +227,16 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | `filter`        | JSON | 筛选条件                |
 | `offset`        | int | （可选）当前时间段内的消息偏移量。 |
 | `limit`         | int   | （可选）单页历史消息条数。可选值：<ul><li>20</li><li>50</li><li>100</li></ul> |
-|  `order`       | string | （可选）排序方法 <ul><li> 按时间顺序（默认）： asc </li><li>按时间倒序： desc </li></ul>                 |
+|  `order`       | string | （可选）排序方法 <ul><li> `asc`：按时间顺序（默认）。 </li><li> `desc`：按时间倒序。 </li></ul>                 |
 
 `filter` 中需要填写的内容如下：
 
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
-| `source`        | string | （视情况）消息发送方 <sup>1</sup>       |
-| `destination`        | string | （视情况）消息接收方。<sup>1</sup> |
-| `start_time`         | string   | （必选）历史消息查询起始时间。时间为 UTC 时间，使用 [ISO8601](http://en.wikipedia.org/wiki/ISO_8601) 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。
-|  `end_time`       | string | （必选）历史消息查询结束时间。时间为 UTC 时间，使用 [ISO8601](http://en.wikipedia.org/wiki/ISO_8601) 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。
+| `source`        | string | 消息发送方 <sup>1</sup>       |
+| `destination`        | string | 消息接收方。<sup>1</sup> |
+| `start_time`         | string   | 历史消息查询起始时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
+|  `end_time`       | string | 历史消息查询结束时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
 
 > `start_time` 和 `end_time` 仅支持 UTC 时间，不支持时区和夏令时。如果你的本地时间不是 UTC 时间，你需要先将本地时间转换为 UTC 时间。例如，如果你的本地时间是 `2019-08-01T09:24:10`，时区为东八区（UTC/GMT+08:00），则 UTC 时间应为 `2019-08-01T01:24:10Z`。
 
@@ -266,7 +266,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 | 参数       | 类型   | 描述                                                         |
 | :--------- | :----- | :----------------------------------------------------------- |
-| `result`   | string | 请求结果                                                     |
+| `result`   | string | 请求结果。                                                     |
 | `offset`   | int    | 当前时间段内的消息偏移量。                                   |
 | `limit`    | int    | 单页历史消息条数。                                           |
 | `location` | string | 历史消息资源地址。你可以从这个 URL 调用 [GET  方法](#get) 获取查询结果。 |
@@ -314,10 +314,9 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
 | `result`        | string | 本次请求结果。                |
-| `code`        | string | 资源准备情况：<ul><li> 资源准备完成： "ok" </li><li>资源还未准备完成，请稍后重试： "in progress" <sup>2</sup></li></ul> |
+| `code`        | string | 资源准备情况：<ul><li> `ok`：资源准备完成。</li><li>`in progress`：资源还未准备完成，请稍后重试。当服务器返回 `in progress` 时，请等待 2 秒再发起 GET 请求。</li></ul> |
 | `message`         | JSON   | 历史消息列表。 |
 
-> <sup>2</sup>  当服务器返回 "in progress" 时，请等待 2 秒再发起 GET 请求。
 
 每个 `message` 包含以下参数：
 
@@ -347,7 +346,6 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count
 ```
 
-> - 请求 URL 由服务器在 `query` [响应包体](#queryresponse)中返回。
 
 #### `count` 请求示例
 
@@ -359,10 +357,10 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="sr
 
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
-| `source`        | string | （视情况）消息发送方 <sup>1</sup>       |
-| `destination`        | string | （视情况）消息接收方。<sup>1</sup> |
-| `start_time`         | string   | （必选）历史消息查询起始时间。时间为 UTC 时间，使用 [ISO8601](http://en.wikipedia.org/wiki/ISO_8601) 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。
-|  `end_time`       | string | （必选）历史消息查询结束时间。时间为 UTC 时间，使用 [ISO8601](http://en.wikipedia.org/wiki/ISO_8601) 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。
+| `source`        | string |  消息发送方 <sup>1</sup>       |
+| `destination`        | string | 消息接收方。<sup>1</sup> |
+| `start_time`         | string   | 历史消息查询起始时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
+|  `end_time`       | string | 历史消息查询结束时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
 
 > `start_time` 和 `end_time` 仅支持 UTC 时间，不支持时区和夏令时。如果你的本地时间不是 UTC 时间，你需要先将本地时间转换为 UTC 时间。例如，如果你的本地时间是 `2019-08-01T09:24:10`，时区为东八区（UTC/GMT+08:00），则 UTC 时间应为 `2019-08-01T01:24:10Z`。
 
@@ -380,8 +378,6 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="sr
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
 | `result`        | string | 本次请求结果。                |
-| `code`        | string | 资源准备情况：<ul><li> 资源准备完成： "ok" </li><li>资源还未准备完成，请稍后重试： "in progress" <sup>4</sup></li></ul> |
+| `code`        | string | 资源准备情况：<ul><li> `ok`：资源准备完成。</li><li>`in progress`：资源还未准备完成，请稍后重试。当服务器返回 `in progress` 时，请等待 2 秒再发起 GET 请求。</li></ul> |
 | `count`         | int   | 历史消息数目。 |
-
-> <sup>4</sup>  当服务器返回 "in progress" 时，请等待 2 秒再发起 GET 请求。
 
