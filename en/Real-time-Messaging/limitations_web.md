@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Web
-updatedAt: Mon Apr 27 2020 03:31:14 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 03:31:38 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -15,7 +15,7 @@ The API call limit refers to the call limit of an API in the context of one sing
 
 <div class="alert note">We <b>do not recommend</b> increasing the call limit by creating multiple RtmClient instances.</div>
 
-| Function                                                    | Method                                                       | Call Frequency                 |
+| Function                                                    | Method                                                       | Call limit                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
 | Log in the Agora RTM system                                | [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | 2 calls per second         |
 | Retrieve member count of specified channel(s) | [getChannelMemberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelmembercount) | 1 call per second |
@@ -54,13 +54,13 @@ The API call limit refers to the call limit of an API in the context of one sing
 <div class="alert note">As of v1.2.2: <p>I. The timeout setting for logging in to the Agora RTM system is prolonged from 6 s to 10 s. <p>II. The timeout setting for sending a peer-to-peer message on the Web platform is prolonged from 5 s to 10 s. </div>
  
 
-## String Length
+## String size
 
 - The maximum size of a peer-to-peer or channel message is 32 KB. See [RtmMessage.text](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmtextmessage.html#text).
 - The maximum size of the content in a call invitation is 8 KB. See [LocalInvitation.content](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/localinvitation.html#content)
 - The maximum size of the response in a call invitation is 8 KB. See [RemoteInvitation.response](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/remoteinvitation.html#response)
 	
-## Supported Browsers
+## Supported browsers
 	
 See [Supported Browsers](https://docs.agora.io/en/Real-time-Messaging/messaging_web?platform=Web#prerequisites).
 
