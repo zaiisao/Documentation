@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 07:38:36 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 02:32:19 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start a basic audio broadcast with the Agora SDK for Electron.
