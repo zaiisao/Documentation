@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Electron
-updatedAt: Mon Apr 27 2020 02:32:19 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 02:32:36 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start a basic audio broadcast with the Agora SDK for Electron.
@@ -17,7 +17,7 @@ We provide an open-source sample project that implements [Agora Electron Quickst
 * Node.js 6.9.1 or later
 * Electron 1.8.3 or later
 
-<div class="alert note">If you use Windows for development, ensure that you run <code>npm install -D —arch = ia32 electron</code> to install a 32-bit Electron.</div>
+<div class="alert note">If you use Windows for development, ensure that you run <code>npm install -D --arch = ia32 electron</code> to install a 32-bit Electron.</div>
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
