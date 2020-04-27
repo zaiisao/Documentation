@@ -14,7 +14,7 @@ updatedAt: Mon Apr 27 2020 03:20:13 GMT+0800 (CST)
 
 所有的调用频率都是针对单个 RtmClient 实例而言，而非针对单个 Agora RTM SDK。
 
-<div class="alert note">我们<b>暂不建议</b>在 Web 平台上通过创建多实例提高 API 的调用频率。</div>
+<div class="alert note">我们<b>暂不建议</b>在 Web 平台上通过创建多个实例提高 API 的调用频率。</div>
 
 <style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
 
