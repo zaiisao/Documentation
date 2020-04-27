@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 07:26:29 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 07:28:38 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -106,7 +106,7 @@ https://api.agora.io/dev/v2/project/<appid>/
 https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 ```
 
-#### `get` 响应包体示例
+#### `user_events` 响应包体示例
 ```json
 {
     "result": "success",
@@ -155,7 +155,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 ```
 
 
-#### `get` 响应包体示例
+#### `channel_events` 响应包体示例
 ```json
 {
     "result": "success",
@@ -291,7 +291,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 
 > - `$handle`  由服务器在 `query` [响应包体](#queryresponse) 中的 `location` 返回。
 
-#### `get` 响应包体示例
+#### `query/$handle` 响应包体示例
 
 ```json
 {
