@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 07:13:31 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 07:13:36 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -242,7 +242,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 > <sup>1</sup> `source` 和 `destination` 的匹配原则详见下表：
 
-| <a name="rule"></a>source | destination | 说明                                |
+| <a name="rule"></a>`source` | `destination` | 说明                                |
 | -------- | ----------- | ------------------------------------- |
 | null     | null        | `source` 和 `destination` 不得同时为空。   |
 | null     | UserA       | UserA 在指定时间内收到的所有消息。           |
