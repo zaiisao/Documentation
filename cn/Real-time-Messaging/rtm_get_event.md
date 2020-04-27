@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 07:15:38 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 07:15:43 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -227,7 +227,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | `filter`        | JSON | 筛选条件                |
 | `offset`        | int | （可选）当前时间段内的消息偏移量。 |
 | `limit`         | int   | （可选）单页历史消息条数。可选值：<ul><li>20</li><li>50</li><li>100</li></ul> |
-|  `order`       | string | （可选）排序方法 <ul><li> `asc`：按时间顺序（默认）。 </li><li> `desc`：按时间倒序。 </li></ul>                 |
+| `order`       | string | （可选）排序方法 <ul><li> `asc`（默认）：按时间顺序。 </li><li> `desc`：按时间倒序。 </li></ul>                 |
 
 `filter` 中需要填写的内容如下：
 
