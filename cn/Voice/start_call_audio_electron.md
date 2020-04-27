@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 06:42:41 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 02:34:16 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora Electron SDK 快速实现语音通话。
@@ -18,7 +18,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 * Electron 1.8.3 及以上
 
 
-<div class="alert note">使用 Windows 平台进行开发时，请运行 <code>npm install -D —arch = ia32 electron</code> 安装 32 位的 Electron。</div>
+<div class="alert note">使用 Windows 平台进行开发时，请运行 <code>npm install -D --arch = ia32 electron</code> 安装 32 位的 Electron。</div>
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
 ## 准备开发环境
