@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Sun Apr 26 2020 23:54:10 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 03:36:35 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
