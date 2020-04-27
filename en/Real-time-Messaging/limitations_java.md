@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Linux Java
-updatedAt: Mon Apr 27 2020 03:33:04 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 03:33:10 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -16,7 +16,7 @@ The API call limit refers to the call limit of an API in the context of one sing
 
 <div class="alert note">You can increase the call limit of an API by creating multiple RtmClient instances.</div>
 
-| Function                                           | Method                                                       | API call limit                  |
+| Function                                           | Method                                                       | Call limit                  |
 | -------------------------------------------------- | ------------------------------------------------------------ | ------------------------------- |
 | Log in the RTM system                             | [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) | 2 calls per second          |
 | Retrieve member count of specified channel(s) | [getChannelMemberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aff0384f2a004ed75498e20e1917352e4) | 1 call per second |
