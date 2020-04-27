@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 07:57:08 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 08:13:59 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -61,7 +61,7 @@ updatedAt: Mon Apr 27 2020 07:57:08 GMT+0800 (CST)
 https://api.agora.io/dev/v2/project/<appid>/
 ```
 - Content-type： `application/json;charset=utf-8`
-- Authorization： 详见 [认证](#auth)。
+- Authorization： 详见[认证](#auth)。
 - 请求：请求的格式详见下面各个 API 中的示例。
 - 响应：响应内容的格式为 JSON。
 
@@ -71,13 +71,13 @@ https://api.agora.io/dev/v2/project/<appid>/
 
 ### 查询用户事件和频道事件
 
-- 查询用户上线或下线事件：直接调用 [获取用户上线或下线事件 API](#get_user)。
-- 查询用户加入或离开频道事件：直接调用 [获取用户加入或离开频道事件 API](#get_channel)。
+- 查询用户上线或下线事件：直接调用[获取用户上线或下线事件 API](#get_user)。
+- 查询用户加入或离开频道事件：直接调用[获取用户加入或离开频道事件 API](#get_channel)。
 
 ### 查询历史消息
 
-- 查询历史消息：先调用 [创建历史消息查询资源 API](#create_history_res)，再调用 [获取历史消息 API](#get_history_message)。
-- 查询历史消息数目：先调用 [创建历史消息查询资源 API](#create_history_res)，再调用 [获取历史消息数目 API](#get_history_message_count)。
+- 查询历史消息：先调用[创建历史消息查询资源 API](#create_history_res)，再调用[获取历史消息 API](#get_history_message)。
+- 查询历史消息数目：先调用[创建历史消息查询资源 API](#create_history_res)，再调用[获取历史消息数目 API](#get_history_message_count)。
 
 ## 响应状态码
 
@@ -271,7 +271,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | `result`   | string | 请求结果。                                                     |
 | `offset`   | int    | 当前时间段内的消息偏移量。                                   |
 | `limit`    | int    | 单页历史消息条数。                                           |
-| `location` | string | 历史消息资源地址。你可以从这个 URL 调用 [GET  方法](#get) 获取查询结果。 |
+| `location` | string | 历史消息资源地址。你可以从这个 URL 调用[GET  方法](#get) 获取查询结果。 |
 
 
 ### <a name="get_history_message"></a>获取历史消息 API
@@ -280,7 +280,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 sendMessageOptions 方法中的 enableHistoricalMessaging 参数设为 true。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 App 的消息量。如果需要延长保留时间提高存储空间，请联系 Agora 技术支持。
+> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 App 的消息量。如果需要延长保留时间或提高存储空间，请联系 Agora 技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -316,7 +316,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
 | `result`        | string | 本次请求结果。                |
-| `code`        | string | 资源准备情况：<ul><li> `ok`：资源准备完成。</li><li>`in progress`：资源还未准备完成，请稍后重试。当服务器返回 `in progress` 时，请等待 2 秒再发起 GET 请求。</li></ul> |
+| `code`        | string | 资源准备情况：<ul><li> `ok`：资源准备完成。</li><li>`in progress`：资源还未准备完成，请稍后重试。当服务器返回 `in progress` 时，请等待 2 秒再发起请求。</li></ul> |
 | `message`         | JSON   | 历史消息列表。 |
 
 
@@ -337,7 +337,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 sendMessageOptions 方法中的 enableHistoricalMessaging 参数设为 true。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 App 的消息量。如果需要延长保留时间提高存储空间，请联系 Agora 技术支持。
+> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 App 的消息量。如果需要延长保留时间或提高存储空间，请联系 Agora 技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -379,6 +379,6 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="sr
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
 | `result`        | string | 本次请求结果。                |
-| `code`        | string | 资源准备情况：<ul><li> `ok`：资源准备完成。</li><li>`in progress`：资源还未准备完成，请稍后重试。当服务器返回 `in progress` 时，请等待 2 秒再发起 GET 请求。</li></ul> |
+| `code`        | string | 资源准备情况：<ul><li> `ok`：资源准备完成。</li><li>`in progress`：资源还未准备完成，请稍后重试。当服务器返回 `in progress` 时，请等待 2 秒再发起请求。</li></ul> |
 | `count`         | int   | 历史消息数目。 |
 
