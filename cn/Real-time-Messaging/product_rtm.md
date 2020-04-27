@@ -12,7 +12,7 @@ Agora RTM (Real-time Messaging) SDK 提供了稳定可靠、低延时、高并�
 
 ## 功能概述
 
-Agora RTM SDK 能够实现以下功能: 
+Agora 实时消息 SDK 能够实现以下功能: 
 
  - 发送点对点消息或点对点的离线消息。
  - 频道消息。
@@ -23,7 +23,7 @@ Agora RTM SDK 能够实现以下功能:
  - 获取单个或多个指定频道的当前成员人数。
  - 订阅或取消订阅指定单个或多个用户的在线状态。
  - 获取某特定内容被订阅的用户列表。
- - 与 Agora Signaling SDK 互通。
+ - 与 Agora 信令 SDK 互通。
  
 
 
