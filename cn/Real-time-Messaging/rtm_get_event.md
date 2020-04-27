@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 07:34:39 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 07:34:44 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -106,7 +106,7 @@ https://api.agora.io/dev/v2/project/<appid>/
 https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 ```
 
-#### `user_events` 响应包体示例
+#### 响应示例
 ```json
 {
     "result": "success",
@@ -121,7 +121,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | `request_id`   | string | 本次请求唯一的 ID。 |
 | `events`  | JSON    | 用户上线下线事件。      |
 
-#### `event` 事件包体示例
+`[event]` 包含以下内容：
+
 ```json
 {
     "user_id": "rtmtest_RTM_4852_4857w7%",
@@ -155,7 +156,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 ```
 
 
-#### `channel_events` 响应包体示例
+#### 响应示例
 ```json
 {
     "result": "success",
@@ -170,7 +171,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 | `request_id`   | string | 本次请求唯一的 ID。 |
 | `events`  | JSON   | 加入退出频道事件。      |
 
-#### `event` 事件包体示例
+`[event]` 包含以下内容：
+
 ```json
 {
     "channel_id": "example_channel_id"
@@ -207,7 +209,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 ```
 
-#### `query` 请求包体示例
+#### 请求示例
 
 ```json
 {
@@ -252,7 +254,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | UserA    | UserB       | UserA 在指定时间段内发送给 UserB 的所有点对点消息。|
 | UserA    | ChannelA    | UserA 在指定时间段内发送到 ChannelA 的所有频道消息。|
 
-#### <a name="queryresponse"></a>`query` 响应包体示例
+#### <a name="queryresponse"></a>响应示例
 
 ```json
 {
@@ -291,7 +293,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 
 > - `$handle`  由服务器在 `query` [响应包体](#queryresponse) 中的 `location` 返回。
 
-#### `query/$handle` 响应包体示例
+#### 响应示例
 
 ```json
 {
@@ -347,12 +349,11 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count
 ```
 
 
-#### `count` 请求示例
+#### 请求示例
 
 ```json
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="src"&destination="dst"&start_time=2019-08-01T01:22:10Z&end_time=2019-08-01T01:24:10Z
 ```
-
 
 
 | 参数            | 类型   | 描述                          |
@@ -366,7 +367,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="sr
 
 > <sup>3</sup> `source` 和 `destination` 的匹配原则详见 [匹配关系表](#rule)。
 
-#### `count` 响应包体示例
+#### 响应示例
 
 ```json
 {
