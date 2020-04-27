@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 06:42:27 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 02:31:37 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic call with the Agora SDK for Electron.
