@@ -33,7 +33,7 @@ updatedAt: Mon Apr 27 2020 08:13:59 GMT+0800 (CST)
 
 如果你已经在服务端生成了 RTM Token，你也可以选用 token 认证。你需要在发送 HTTP 请求时在 HTTP 请求头部的 `x-agora-token` 字段和 `x-agora-uid` 字段分别填入：
 
-- 服务端生成的 RTM Token
+- 服务端生成的 RTM Token。
 - 生成 RTM Token 时使用的 uid。
 
 **示例代码**
@@ -50,7 +50,7 @@ updatedAt: Mon Apr 27 2020 08:13:59 GMT+0800 (CST)
   ...
 ```
 
-> 关于如何生成 RTM Token，详见 [校验用户权限](https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms)。
+> 关于如何生成 RTM Token，详见[校验用户权限](https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms)。
 
 ## 数据格式
 
