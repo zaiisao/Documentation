@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 07:37:19 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 02:30:50 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora Electron SDK 快速实现视频互动直播。
