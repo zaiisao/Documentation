@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Tue Apr 21 2020 05:53:04 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 05:35:25 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -43,7 +43,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 该版本于 2019 年 11 月6 日发布。新增如下功能：
 
-- [订阅或退订指定单个或多个用户的在线状态](#subscribe)
+- [订阅或取消订阅指定单个或多个用户的在线状态](#subscribe)
 - [获取某特定内容被订阅的用户列表](#list)
 - [创建自定义二进制消息](#raw)
 - [创建文本消息](#text)
@@ -52,11 +52,11 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 **新增功能**
 
-#### 1. <a name="subscribe"></a>订阅或退订指定单个或多个用户的在线状态。
+#### 1. <a name="subscribe"></a>订阅或取消订阅指定单个或多个用户的在线状态。
 
 <div class="alert note"> 该功能必须在登录 Agora RTM 系统成功（收到 onSuccess 回调）后才能调用。</div>
 
-本版本支持订阅或退订最多 512 个用户的在线状态，SDK 会通过 `onSuccess` 返回订阅或退订结果。首次订阅成功时，SDK 会通过 `onPeersOnlineStatusChanged` 回调返回所有被订阅用户的在线状态；之后每当有被订阅用户的在线状态出现变化，SDK 都会通过 `onPeersOnlineStatusChanged` 回调通知订阅方。
+本版本支持订阅或取消订阅最多 512 个用户的在线状态，SDK 会通过 `onSuccess` 返回订阅或取消订阅结果。首次订阅成功时，SDK 会通过 `onPeersOnlineStatusChanged` 回调返回所有被订阅用户的在线状态；之后每当有被订阅用户的在线状态出现变化，SDK 都会通过 `onPeersOnlineStatusChanged` 回调通知订阅方。
 
 <div class="alert note"> <sup>1</sup>用户登出 Agora RTM 系统后，所有之前的订阅内容都会被清空；重新登录后，如需保留之前订阅内容则需重新订阅。</div>
 
@@ -67,7 +67,7 @@ Agora RTM SDK 提供了稳定可靠、低延时、高并发的全球消息云服
 
 <div class="alert note"> 该功能必须在登录 Agora RTM 系统成功（收到 onSuccess 回调）后才能调用。</div>
 
-本版本支持根据被订阅类型获取被订阅用户列表。现实情况中，你可能多次订阅或退订，可能重复订阅了相同用户，可能出现订阅或退订不成功的情况，也可能根据不同的订阅类型订阅了不同的用户。这时，你可以通过本功能根据订阅类型获取当前被订阅用户列表。
+本版本支持根据被订阅类型获取被订阅用户列表。现实情况中，你可能多次订阅或取消订阅，可能重复订阅了相同用户，可能出现订阅或取消订阅不成功的情况，也可能根据不同的订阅类型订阅了不同的用户。这时，你可以通过本功能根据订阅类型获取当前被订阅用户列表。
 
 被订阅类型由枚举类型 `PeerSubscriptionOption` 定义。本版本仅支持用户在线状态订阅一种类型，后继会不断扩展。
 
