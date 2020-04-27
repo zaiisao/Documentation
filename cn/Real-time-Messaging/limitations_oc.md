@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Mon Apr 27 2020 03:17:06 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 05:35:30 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -32,7 +32,7 @@ updatedAt: Mon Apr 27 2020 03:17:06 GMT+0800 (CST)
 | 频道属性增删修改(一并计算）| <li>[setChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setChannel:Attributes:Options:completion:)<li>[addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/addOrUpdateChannel:Attributes:Options:completion:)<li>[deleteChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/deleteChannel:AttributesByKeys:Options:completion:)<li>[clearChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/clearChannel:Options:AttributesWithCompletion:) | 每 5 秒 10 次          |
 | 频道属性查询(一并计算）| <li>[getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAllAttributes:completion:) <li>[getChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/getChannelAttributes:ByKeys:completion:) | 每 5 秒 10 次          |
 | 订阅指定单个或多个用户的在线状态   | [subscribePeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/subscribePeersOnlineStatus:completion:) | 每 5 秒 10 次 |
-| 退订指定单个或多个用户的在线状态    | [unSubscribePeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/unsubscribePeersOnlineStatus:completion:) | 每 5 秒 10 次 |
+| 取消订阅指定单个或多个用户的在线状态    | [unSubscribePeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/unsubscribePeersOnlineStatus:completion:) | 每 5 秒 10 次 |
 | 获取某特定内容被订阅的用户列表   | [queryPeersBySubscriptionOption](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersBySubscriptionOption:completion:) | 每 5 秒 10 次 |
 	
 <div class="alert note"><sup>1</sup> 加入相同频道的频率限制为每 5 秒 2 次。</div>
@@ -46,7 +46,7 @@ updatedAt: Mon Apr 27 2020 03:17:06 GMT+0800 (CST)
 | 登录 Agora RTM 系统   | 6 秒  | 
 | 发送点对点消息  | 10 秒    | 
 | 查询用户在线状态  | 10 秒    | 
-| 订阅或退订指定用户状态  | 10 秒    | 
+| 订阅或取消订阅指定用户状态  | 10 秒    | 
 | 根据订阅类型获取被订阅用户列表  | 5 秒    | 
 | 用户属性或频道属性相关操作  | 5 秒    | 
 | 查询单个或多个指定频道成员人数  | 5 秒    | 
