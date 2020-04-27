@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 08:21:42 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 08:27:04 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -33,7 +33,7 @@ updatedAt: Mon Apr 27 2020 08:21:42 GMT+0800 (CST)
 
 如果你已经在服务端生成了 RTM Token，你也可以选用 token 认证。你需要在发送 HTTP 请求时在 HTTP 请求头部的 `x-agora-token` 字段和 `x-agora-uid` 字段分别填入：
 
-- 服务端生成的 RTM Token
+- 服务端生成的 RTM Token。
 - 生成 RTM Token 时使用的 uid。
 
 **示例代码**
@@ -50,7 +50,7 @@ updatedAt: Mon Apr 27 2020 08:21:42 GMT+0800 (CST)
   ...
 ```
 
-> 关于如何生成 RTM Token，详见 [校验用户权限](https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms)。
+> 关于如何生成 RTM Token，详见[校验用户权限](https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms)。
 
 ## 数据格式
 
@@ -271,7 +271,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | `result`   | string | 请求结果。                                                     |
 | `offset`   | int    | 当前时间段内的消息偏移量。                                   |
 | `limit`    | int    | 单页历史消息条数。                                           |
-| `location` | string | 历史消息资源地址。你可以从这个 URL 调用[GET  方法](#get) 获取查询结果。 |
+| `location` | string | 历史消息资源地址。你可以从这个 URL 调用[获取历史消息 API](#get_history_message) 获取查询结果。 |
 
 
 ### <a name="get_history_message"></a>获取历史消息 API
@@ -291,7 +291,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 ```
 
-> - `$handle`  由服务器在 `query` [响应包体](#queryresponse) 中的 `location` 返回。
+> - `$handle`  由[创建历史消息查询资源 API](#create_history_res) 返回。
 
 #### 响应示例
 
@@ -365,7 +365,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="sr
 
 > `start_time` 和 `end_time` 仅支持 UTC 时间，不支持时区和夏令时。如果你的本地时间不是 UTC 时间，你需要先将本地时间转换为 UTC 时间。例如，如果你的本地时间是 `2019-08-01T09:24:10`，时区为东八区（UTC/GMT+08:00），则 UTC 时间应为 `2019-08-01T01:24:10Z`。
 
-> <sup>3</sup> `source` 和 `destination` 的匹配原则详见 [匹配关系表](#rule)。
+> <sup>3</sup> `source` 和 `destination` 的匹配原则详见[匹配关系表](#rule)。
 
 #### 响应示例
 
