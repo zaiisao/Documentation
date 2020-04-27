@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 08:13:59 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 08:21:42 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -33,7 +33,7 @@ updatedAt: Mon Apr 27 2020 08:13:59 GMT+0800 (CST)
 
 如果你已经在服务端生成了 RTM Token，你也可以选用 token 认证。你需要在发送 HTTP 请求时在 HTTP 请求头部的 `x-agora-token` 字段和 `x-agora-uid` 字段分别填入：
 
-- 服务端生成的 RTM Token。
+- 服务端生成的 RTM Token
 - 生成 RTM Token 时使用的 uid。
 
 **示例代码**
@@ -50,7 +50,7 @@ updatedAt: Mon Apr 27 2020 08:13:59 GMT+0800 (CST)
   ...
 ```
 
-> 关于如何生成 RTM Token，详见[校验用户权限](https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms)。
+> 关于如何生成 RTM Token，详见 [校验用户权限](https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms)。
 
 ## 数据格式
 
@@ -196,9 +196,9 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 
 该方法向 Agora RTM 服务器申请历史消息查询资源。若请求成功，你可以通过 GET 方法从服务器返回的 `location` 获取查询到的历史消息。
 
-<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 sendMessageOptions 方法中的 enableHistoricalMessaging 参数设为 true。否则你无法通过 RESTful API 查询到这条历史消息。</div>
+<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 <code>sendMessageOptions</code> 方法中的 <code>enableHistoricalMessaging</code> 参数设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 App 的消息量。如果需要延长保留时间提高存储空间，请联系 Agora 技术支持。
+> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 app 的消息量。如果需要延长保留时间或提高存储空间，请联系 Agora 技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -226,7 +226,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 ```
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
-| `filter`        | JSON | 筛选条件                |
+| `filter`        | JSON | 筛选条件。                |
 | `offset`        | int | （可选）当前时间段内的消息偏移量。 |
 | `limit`         | int   | （可选）单页历史消息条数。可选值：<ul><li>20</li><li>50</li><li>100</li></ul> |
 | `order`       | string | （可选）排序方法 <ul><li> `asc`（默认）：按时间顺序。 </li><li> `desc`：按时间倒序。 </li></ul>                 |
@@ -235,7 +235,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
-| `source`        | string | 消息发送方 <sup>1</sup>       |
+| `source`        | string | 消息发送方。 <sup>1</sup>       |
 | `destination`        | string | 消息接收方。<sup>1</sup> |
 | `start_time`         | string   | 历史消息查询起始时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
 |  `end_time`       | string | 历史消息查询结束时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
@@ -278,9 +278,9 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 该方法从 Agora RTM 服务器指定的地址获取历史消息。
 
-<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 sendMessageOptions 方法中的 enableHistoricalMessaging 参数设为 true。否则你无法通过 RESTful API 查询到这条历史消息。</div>
+<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 <code>sendMessageOptions</code> 方法中的 <code>enableHistoricalMessaging</code> 参数设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 App 的消息量。如果需要延长保留时间或提高存储空间，请联系 Agora 技术支持。
+> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 app 的消息量。如果需要延长保留时间或提高存储空间，请联系 Agora 技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -335,9 +335,9 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 
 该方法从 Agora RTM 服务器指定的地址获取历史消息数目。
 
-<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 sendMessageOptions 方法中的 enableHistoricalMessaging 参数设为 true。否则你无法通过 RESTful API 查询到这条历史消息。</div>
+<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 <code>sendMessageOptions</code> 方法中的 <code>enableHistoricalMessaging</code> 参数设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 App 的消息量。如果需要延长保留时间或提高存储空间，请联系 Agora 技术支持。
+> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活 app 的消息量。如果需要延长保留时间或提高存储空间，请联系 Agora 技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
