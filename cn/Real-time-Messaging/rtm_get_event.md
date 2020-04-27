@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 07:44:14 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 07:44:18 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -71,13 +71,13 @@ https://api.agora.io/dev/v2/project/<appid>/
 
 ### 查询用户事件和频道事件
 
-- 查询用户上线或下线事件：直接调用 `user_events` 方法。
-- 查询用户加入或离开频道事件：直接调用 `channel_events` 方法。
+- 查询用户上线或下线事件：直接调用 [获取用户上线或下线事件 API](#get_user)。
+- 查询用户加入或离开频道事件：直接调用 [获取用户加入或离开频道事件 API](#get_channel)。
 
 ### 查询历史消息
 
-- 查询历史消息：先调用 `query` 方法，再调用 `query/$handle` 方法。
-- 查询历史消息数目：先调用 `query` 方法，再调用 `count` 方法。
+- 查询历史消息：先调用 [创建历史消息查询资源 API](#create_history_res)，再调用 [获取历史消息 API](#get_history_message)。
+- 查询历史消息数目：先调用 [创建历史消息查询资源 API](#create_history_res)，再调用 [获取历史消息数目 API](#get_history_message_count)。
 
 ## 响应状态码
 
@@ -89,7 +89,7 @@ https://api.agora.io/dev/v2/project/<appid>/
 
 ## 用户与频道事件 API
 
-### <a name="get"></a>获取用户上线或下线事件 API
+### <a name="get_user"></a>获取用户上线或下线事件 API
 
 该方法从 Agora RTM 服务器指定的地址获取用户上线或下线事件。
 
@@ -138,7 +138,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | `ts`  | int    | 返回从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。     |
 
 
-### 获取用户加入或离开频道事件 API
+### <a name="get_channel"></a>获取用户加入或离开频道事件 API
 
 该方法从 Agora RTM 服务器指定的地址获取用户加入或离开频道事件。
 
@@ -192,7 +192,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 
 ## 历史消息 API
 
-### 创建历史消息查询资源 API
+### <a name="create_history_res"></a>创建历史消息查询资源 API
 
 该方法向 Agora RTM 服务器申请历史消息查询资源。若请求成功，你可以通过 GET 方法从服务器返回的 `location` 获取查询到的历史消息。
 
@@ -274,7 +274,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | `location` | string | 历史消息资源地址。你可以从这个 URL 调用 [GET  方法](#get) 获取查询结果。 |
 
 
-### <a name="get"></a>获取历史消息 API
+### <a name="get_history_message"></a>获取历史消息 API
 
 该方法从 Agora RTM 服务器指定的地址获取历史消息。
 
@@ -331,7 +331,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 |  `ms`       | int |  返回从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。|
 
 
-### 获取历史消息数目 API
+### <a name="get_history_message_count"></a>获取历史消息数目 API
 
 该方法从 Agora RTM 服务器指定的地址获取历史消息数目。
 
