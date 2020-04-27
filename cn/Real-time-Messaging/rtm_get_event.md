@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 07:26:25 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 07:26:29 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -289,7 +289,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 ```
 
-> - `$handle`  由服务器在 `query` [响应包体](#queryresponse)中的 `location` 返回。
+> - `$handle`  由服务器在 `query` [响应包体](#queryresponse) 中的 `location` 返回。
 
 #### `get` 响应包体示例
 
@@ -364,7 +364,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="sr
 
 > `start_time` 和 `end_time` 仅支持 UTC 时间，不支持时区和夏令时。如果你的本地时间不是 UTC 时间，你需要先将本地时间转换为 UTC 时间。例如，如果你的本地时间是 `2019-08-01T09:24:10`，时区为东八区（UTC/GMT+08:00），则 UTC 时间应为 `2019-08-01T01:24:10Z`。
 
-> <sup>3</sup> `source` 和 `destination` 的匹配原则详见[匹配关系表](#rule)。
+> <sup>3</sup> `source` 和 `destination` 的匹配原则详见 [匹配关系表](#rule)。
 
 #### `count` 响应包体示例
 
