@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 27 2020 09:00:21 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 09:00:27 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -77,7 +77,7 @@ https://api.agora.io/dev/v2/project/<appid>/
 ### 查询历史消息
 
 - 查询历史消息：先调用[创建历史消息查询资源 API](#create_history_res)，再调用[获取历史消息 API](#get_history_message)。
-- 查询历史消息数目：先调用[创建历史消息查询资源 API](#create_history_res)，再调用[获取历史消息数目 API](#get_history_message_count)。
+- 查询历史消息数目：直接调用[获取历史消息数目 API](#get_history_message_count)。
 
 ## 响应状态码
 
