@@ -3,7 +3,7 @@
 title: Real-time Messaging RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 03:41:09 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 06:39:06 GMT+0800 (CST)
 ---
 # Real-time Messaging RESTful API
 > Besides this document, you can also read our interactive document [RTM RESTful API](https://docs.agora.io/en/Real-time-Messaging/restfulapi/)![](https://web-cdn.agora.io/docs-files/1583736328279). By clicking the **Example Value** or **Schema** tab, you can view example codes or parameter definitions for request/response bodies.
