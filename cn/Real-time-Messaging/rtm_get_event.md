@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: RESTful
-updatedAt: Mon Apr 27 2020 07:44:18 GMT+0800 (CST)
+updatedAt: Mon Apr 27 2020 07:57:08 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -135,7 +135,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | :------- | :----- | :-------------------- |
 | `user_id` | string | 本次事件对应的用户名。   |
 | `type`   | string | 事件类型：<li>`Login`: 用户登录（上线）事件。</li><li>`Logout`: 用户登出（下线）事件。</li> |
-| `ts`  | int    | 返回从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。     |
+| `ts`  | int    | 从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。     |
 
 
 ### <a name="get_channel"></a>获取用户加入或离开频道事件 API
@@ -187,7 +187,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 | `channel_id` | string | 本次事件对应的频道名。   |
 | `user_id` | string | 本次事件对应的用户名。   |
 | `type`   | string | 事件类型：<li>`Join`: 用户加入频道事件。</li><li>`Leave`: 用户离开频道事件。</li> |
-| `ts`  | int    | 返回从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。 |
+| `ts`  | int    | 从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。 |
 
 
 ## 历史消息 API
@@ -328,7 +328,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 | `dst`        | string | 消息接收方。 |
 | `message_type`  | string  |   消息类型。可以是 `peer_message` 或 `channel_message`。    |
 | `payload` | string   | 消息体。当前版本仅支持文本消息。 |
-|  `ms`       | int |  返回从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。|
+|  `ms`       | int |  从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。|
 
 
 ### <a name="get_history_message_count"></a>获取历史消息数目 API
