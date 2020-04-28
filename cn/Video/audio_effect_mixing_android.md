@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to enable audio mixing, play audio effects and the related settings
 platform: Android
-updatedAt: Mon Mar 09 2020 05:18:24 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:48:38 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -150,3 +150,9 @@ rtcEngine.stopAudioMixing()；
 - 在频道内调用混音方法，否则会有潜在问题。
 - 若运行在模拟器中，混音只能播放位于 **/sdcard/** 下的 mp3 文件。
 - 以上方法都有返回值。返回值小于 0 表示方法调用失败。
+
+## 相关链接
+
+当播放音乐文件时，你还可以参考如下文档：
+
+- [为什么 Android 10 无法使用 startAudioMixing 播放背景音乐？](https://docs.agora.io/cn/faq/android_startaudiomixing_permission)
