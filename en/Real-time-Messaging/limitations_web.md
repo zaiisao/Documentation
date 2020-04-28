@@ -31,11 +31,11 @@ The call limit is for one RtmClient instance. If an operation corresponds to mul
 
 <div class="alert note"><sup>1</sup> The API call limit for joining the same channel is 2 calls every 5 seconds.</div>
 
-## Timeout settings
+## Operation timeout
 
 <style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
 
-| Function | Timeout settings (s) | 
+| Operation | Timeout (s) | 
 | ---------------- | ---------------- | 
 | Log in the RTM system   | 6 <sup>I</sup>   | 
 | Send peer messages  | 10  <sup>II</sup>    | 

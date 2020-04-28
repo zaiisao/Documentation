@@ -36,11 +36,11 @@ The call limit is for one AgoraRtmKit instance. If an operation corresponds to m
 
 <div class="alert note"><sup>1</sup> The maximum call frequency limit for joining the same channel is two queries every five seconds. </div>
 
-## Timeout settings
+## Operation timeout
 
 <style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
 
-| Function | Timeout settings (s) | 
+| Operation | Timeout (s) | 
 | ---------------- | ---------------- | 
 | Log in the RTM system   | 6   | 
 | Send peer messages  | 10     | 
