@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: macOS
-updatedAt: Fri Apr 17 2020 10:42:49 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:26:31 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call demo with the Agora Voice SDK for macOS.
@@ -275,3 +275,9 @@ func leaveChannel() {
 
 ## Run the project
 Run the project on your macOS device. You can hear the remote user when you successfully start a one-to-one voice call in the app.
+
+## Reference
+
+When integrating the Agora Voice SDK, you can also refer to the following articles: 
+
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
