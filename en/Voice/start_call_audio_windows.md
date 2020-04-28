@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Windows
-updatedAt: Fri Mar 27 2020 06:42:13 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:27:00 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for Windows.
@@ -210,3 +210,9 @@ void CAgoraObject::CloseAgoraObject()
 
 ## Run the project
 Run the project on your Windows device. You can hear the remote user when you successfully start a one-to-one voice call in your app.
+
+## Reference
+
+When integrating the Agora Voice SDK, you can also refer to the following articles: 
+
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
