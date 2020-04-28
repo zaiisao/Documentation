@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Feb 10 2020 08:48:51 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 09:13:00 GMT+0800 (CST)
 ---
 # 产品概述
 语音通话可以实现纯语音的一对一单聊和多人群聊，不具备视频通话功能，包体积更小，适用于各种语音社交、语音会议等场景。
@@ -54,3 +54,7 @@ updatedAt: Mon Feb 10 2020 08:48:51 GMT+0800 (CST)
 
 - [Android](http://dl3.beckon.cc/android/beckon/beckon-release-352.apk)
 - [iOS](https://itunes.apple.com/cn/app/id927792759)
+	
+## 相关链接
+
+ [Agora RTC SDK 最多支持多少人同时在线？ ](https://docs.agora.io/cn/faq/capacity)
