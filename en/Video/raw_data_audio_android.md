@@ -3,7 +3,7 @@
 title: Raw Audio Data
 description: 
 platform: Android
-updatedAt: Tue Apr 28 2020 05:40:12 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 05:40:19 GMT+0800 (CST)
 ---
 # Raw Audio Data
 ## Introduction
@@ -113,9 +113,9 @@ Call the following methods to modify the audio sample rate in the above callback
 
 The methods that we use in this article are in C++. For Android, refer to the following steps to register the audio observer object.
 
-1. Create a shared library project with `libapm-` as the prefix and `so` as the suffix. For example, `libapm-encryption.so`.
-2. Before joining the channel, call the `loadAgoraRtcEnginePlugin` method. RtcEngine will automatically load the plug-in.
-3. After RtcEngine is destroyed, call the `unloadAgoraRtcEnginePlugin` method to remove the plug-in.
+1. Before joining a channel, create a shared library project with `libapm-` as the prefix and `so` as the suffix. For example, `libapm-encryption.so`.
+2. After you successfully create the file, the RtcEngine object automatically loads the file as a plug-in.
+3. After you destroy the RtcEngine object, call the `unloadAgoraRtcEnginePlugin` method to remove the plug-in.
 
 ```java
 static AgoraAudioFrameObserver s_audioFrameObserver;
