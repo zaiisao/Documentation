@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: iOS
-updatedAt: Sun Mar 29 2020 14:34:13 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:17:22 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 音频互动直播 SDK 快速实现音频互动直播。
@@ -326,3 +326,8 @@ func leaveChannel() {
 ## 运行项目
 
 你可以在 iOS 设备中运行此项目。当成功开始音频直播时，观众可以听到主播的声音。
+
+## 相关链接
+
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
+- [直播场景下，如何监听远端观众用户加入/离开频道的事件？](https://docs.agora.io/cn/faq/audience_event)
