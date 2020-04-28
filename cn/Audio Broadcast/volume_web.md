@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on web
 platform: Web
-updatedAt: Wed Sep 25 2019 10:07:45 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:38:13 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -42,3 +42,9 @@ client.on("stream-subscribed", function(evt){
 ## 开发注意事项
 
 - 音量设置太大在某些设备上可能出现爆音现象
+
+## 相关链接
+
+实现调整通话音量过程中，你还可以参考如下文档：
+
+- [如何处理音量太小问题？](https://docs.agora.io/cn/faq/audio_low)
