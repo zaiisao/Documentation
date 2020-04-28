@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 07:13:43 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:34:33 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora Electron SDK 快速实现音频直播。
@@ -84,6 +84,8 @@ agora_electron_dependent = 5.0.8
 
 [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) 在 GitHub 上开源，你可以前往参考或查阅源代码。Agora 也欢迎开发者贡献代码，以提高 Electron SDK 的易用性。
 
+## 相关链接
 
+使用 Agora Electron SDK 开发过程中，你还可以参考如下文档：
 
-
+[直播场景下，如何监听远端观众用户加入/离开频道的事件？](https://docs.agora.io/cn/faq/audience_event)
