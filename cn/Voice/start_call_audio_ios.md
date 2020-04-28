@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: iOS
-updatedAt: Tue Apr 28 2020 10:51:54 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:52:39 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
@@ -268,4 +268,4 @@ func leaveChannel() {
 
 使用 Agora 语音 SDK 开发过程中，你还可以参考如下文档：
 
-[如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
