@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Android
-updatedAt: Fri Apr 10 2020 04:15:14 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:22:39 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for Android.
@@ -449,4 +449,8 @@ Run the project on your Android device. You can hear the remote user when you su
 
 We provide an open-source [Group-Voice-Call](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/Group-Voice-Call/OpenVoiceCall-Android) demo project that implements the group video call on GitHub. For scenarios involving group voice calls, you can download the demo project as a code source reference.
 
+When integrating the Agora Voice SDK, you can also refer to the following articles: 
+
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [Why is no audio or video captured on Android 9 devices?](https://docs.agora.io/en/faq/android_background)
 	
