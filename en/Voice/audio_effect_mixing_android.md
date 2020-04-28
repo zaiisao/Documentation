@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Mon Mar 09 2020 05:17:30 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:47:31 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -151,3 +151,9 @@ We also provide an open-source demo project that implements audio mixing on [Git
 - Ensure that you call the methods when you are in the channel.
 - If you call the methods on an emulator, you can only play the MP3 files in the **/sdcard/** folder for audio mixing.
 - The API methods have return values. If the method call fails, the return value is < 0.
+
+## Reference
+
+When playing a music file, you can also refer to the following articles:
+
+- [Why can't I play the background music using startAudioMixing on Android 10?](https://docs.agora.io/en/faq/android_startaudiomixing_permission)
