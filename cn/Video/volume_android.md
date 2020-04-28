@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Android
 platform: Android
-updatedAt: Tue Apr 14 2020 03:57:45 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:36:57 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -207,3 +207,9 @@ public void onActiveSpeaker(int uid) {
 ## 开发注意事项
 
 由于硬件设备的限制，当使用调节信号设置音量的方法将音量设置过大时，在某些设备上可能会出现失真的声音效果。
+
+## 相关链接
+
+实现调整通话音量过程中，你还可以参考如下文档：
+
+- [如何处理音量太小问题？](https://docs.agora.io/cn/faq/audio_low)
