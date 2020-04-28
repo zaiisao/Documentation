@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: iOS
-updatedAt: Fri Apr 17 2020 10:38:40 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:24:27 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for iOS.
@@ -259,3 +259,8 @@ We provide open-source Group-Voice-Call sample projects that implements the grou
 
 - Swift: See [RoomViewController.swift](https://github.com/AgoraIO/Basic-Audio-Call/blob/master/Group-Voice-Call/OpenVoiceCall-iOS/OpenVoiceCall/RoomViewController.swift) file in the [OpenVoiceCall-iOS](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/Group-Voice-Call/OpenVoiceCall-iOS) sample project.
 - Objective-C project: See [RoomViewController.m](https://github.com/AgoraIO/Basic-Audio-Call/blob/master/Group-Voice-Call/OpenVoiceCall-iOS-Objective-C/OpenVoiceCall-iOS-Objective-C/RoomViewController.m) file in the [OpenVoiceCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/Group-Voice-Call/OpenVoiceCall-iOS-Objective-C) sample project.
+
+When integrating the Agora Voice SDK, you can also refer to the following articles: 
+
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+
