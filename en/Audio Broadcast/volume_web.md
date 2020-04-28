@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on Web
 platform: Web
-updatedAt: Wed Sep 25 2019 10:07:17 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:44:16 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -40,3 +40,9 @@ Before adjusting the audio volume, ensure that you have implemented the basic r
 ## Considerations
 
 - If the volume is set too high, noise may occur on some devices.
+
+## Reference
+
+When adjusting the audio volume, you can also refer to the following articles:
+
+- [How to solve the problem of low volume?](https://docs.agora.io/en/faq/audio_low)
