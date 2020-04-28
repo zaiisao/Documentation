@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Android
-updatedAt: Tue Apr 28 2020 10:05:35 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:16:31 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 语音 SDK 快速实现音频直播。
@@ -484,8 +484,8 @@ private void leaveChannel() {
 
 ## 相关链接
 
-- [如何设置日志文件？](https://docs.agora.io/en/faq/logfile)
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
 - [直播场景下，如何监听远端观众用户加入/离开频道的事件？](https://docs.agora.io/cn/faq/audience_event)
-- [为什么 Android 9 应用锁屏或切后台后采集音视频无效？](https://docs.agora.io/en/faq/android_background)
+- [为什么 Android 9 应用锁屏或切后台后采集音视频无效？](https://docs.agora.io/cn/faq/android_background)
 
 
