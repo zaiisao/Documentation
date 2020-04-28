@@ -3,7 +3,7 @@
 title: 原始音频数据
 description: 
 platform: Android
-updatedAt: Tue Apr 28 2020 04:48:41 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 04:48:48 GMT+0800 (CST)
 ---
 # 原始音频数据
 ## 功能描述
@@ -113,7 +113,7 @@ class IAudioFrameObserver
 
 本文中使用的原始数据接口为 C++ 接口。如果你在 Android 平台开发，请参考如下步骤，使用 SDK 库的 JNI 和插件管理器注册音频数据观测器。
 
-1. 创建一个共享库工程。该工程必须以 `libapm-` 为前缀，`so` 为后缀，如 `libapm-encryption.so`。
+1. 加入频道前，创建一个共享库工程。该工程必须以 `libapm-` 为前缀，`so` 为后缀，如 `libapm-encryption.so`。
 2. 成功创建后，RtcEngine 会自动加载该 `libapm-encryption.so` 文件，作为统计目录插件。
 3. SDK 销毁引擎后，调用 `unloadAgoraRtcEnginePlugin` 接口，RtcEngine 会卸载统计目录插件。
 
