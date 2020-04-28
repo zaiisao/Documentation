@@ -12,7 +12,7 @@ This page provides a brief overview of the limitations of the Agora RTM SDK for 
 
 ## Maximum Call Frequency
 
-The call limit is for one RtmClient instance. If an operation corresponds to multiple methods, the number of calls of an operation equals to the sum of calls of all corresponding methods in a specific period of time.
+The call limit is for one <code>RtmClient</code> instance. If an operation corresponds to multiple methods, the number of calls of an operation equals to the sum of calls of all corresponding methods in a specific period of time.
 
 <div class="alert note">You can increase the call limit of an API by creating multiple <code>RtmClient</code> instances.</div>
 
