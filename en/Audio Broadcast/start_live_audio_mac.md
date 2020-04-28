@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: macOS
-updatedAt: Sun Mar 29 2020 14:32:10 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:11:32 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio broadcast demo with the Agora Voice SDK for macOS.
@@ -332,3 +332,8 @@ You can find the sample code logic in the [OpenLive-macOS-Objective-C](https://g
 ## Run the project
 
 Run the project on your macOS device. When you set the role as the broadcaster and successfully join an audio broadcast, you can hear the broadcaster in the app.
+
+## Reference
+
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
