@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Windows
-updatedAt: Fri Mar 27 2020 07:24:08 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:18:09 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何通过 Agora SDK 快速实现音频互动直播。
@@ -237,3 +237,8 @@ void CAgoraObject::CloseAgoraObject()
 
 ## 运行项目
 在 Windows 设备中运行该项目。当成功开始音频直播时，主播可以听到自己的声音；观众可以听到主播的声音。
+
+## 相关链接
+
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
+- [直播场景下，如何监听远端观众用户加入/离开频道的事件？](https://docs.agora.io/cn/faq/audience_event)
