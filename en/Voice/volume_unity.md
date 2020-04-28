@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Unity
-updatedAt: Tue Apr 14 2020 03:45:51 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:45:01 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -250,3 +250,8 @@ void OnActiveSpeakerHandler(uint uid) {
 
 Setting the audio level too high may cause audio distortion on some devices.
 
+## Reference
+
+When adjusting the audio volume, you can also refer to the following articles:
+
+- [How to solve the problem of low volume?](https://docs.agora.io/en/faq/audio_low)
