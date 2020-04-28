@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Windows
-updatedAt: Fri Mar 27 2020 06:41:50 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:55:06 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora SDK 快速实现语音通话。
@@ -210,3 +210,9 @@ BOOL CAgoraObject::LeaveChannel()
 
 ## 运行项目
 你可以在 Windows 设备中运行此项目。当你成功开始视频通话时，你可以听到远端用户的声音。
+
+## 相关链接
+
+使用 Agora 语音通话 SDK 开发过程中，你还可以参考如下文档：
+
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
