@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Tue Apr 14 2020 03:48:35 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:43:56 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -306,3 +306,8 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, activeSpeaker speakerUid: UInt) {
 
 Setting the audio level too high may cause audio distortion on some devices.
 
+## Reference
+
+When adjusting the audio volume, you can also refer to the following articles:
+
+- [How to solve the problem of low volume?](https://docs.agora.io/en/faq/audio_low)
