@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Android
 platform: Android
-updatedAt: Wed Sep 25 2019 10:08:25 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:55:25 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -186,3 +186,9 @@ The audio scenarios in the `setAudioProfile` method use different volume setting
 </table>
 
 Given the system restrictions, the media volume can be set as 0, but not the in-call volume. Therefore, if you want to adjust the volume to 0, ensure that you set an audio scenario that uses the media volume.
+
+## Reference
+
+When setting the audio profile, you can also refer to the following articles:
+
+- [How can I prevent volume changes when the users switch their roles in a live broadcast?](https://docs.agora.io/en/faq/audio_role)
