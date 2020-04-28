@@ -47,7 +47,7 @@ The call limit is for one IRtmService instance. If an operation corresponds to m
 | Subscribe to the online status of specified users  | 10     | 
 | Unsubscribe from the online status of specified users  | 10     | 
 | Query peers by subscription option  | 5     | 
-| user attribute or channel attribute operations  | 5     | 
+| User attribute or channel attribute operations  | 5     | 
 | Retrieve member count of specified channels  | 5    | 
 | Join a channel  | 5    | 
 | Send a channel message| 10    | 
