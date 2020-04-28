@@ -7,11 +7,11 @@ updatedAt: Mon Apr 27 2020 05:46:05 GMT+0800 (CST)
 ---
 # 限制条件
 
-本页简要介绍 Agora RTM Java SDK for Linux 的使用限制条件，包括调用频率限制、最大字符串长度、编码格式等。
+本页简要介绍 Agora RTM Java SDK for Linux 的使用限制条件，包括调用频率、字符串大小、编码格式等。
 
 ## 调用频率限制
 
-所有的调用频率都是针对单个 RtmClient 实例而言，而非针对单个 Agora RTM SDK。
+所有的调用频率都是针对单个 <code>RtmClient</code> 实例，而不是针对单个 Agora RTM SDK。
 
 <div class="alert note">你可以通过创建多个实例提高 API 的调用频率。</div>
 
