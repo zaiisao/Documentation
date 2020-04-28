@@ -14,7 +14,7 @@ This page provides a brief overview of the limitations of the Agora RTM SDK for 
 
 The API call limit refers to the call limit of an API in the context of one single IRtmService instance, not in the context of one Agora RTM SDK.
 
-<div class="alert note">You can increase the call limit of an API by creating multiple IRtmService instances.</div>
+<div class="alert note">You can increase the call limit of an API by creating multiple <code>IRtmService</code> instances.</div>
 
 | Function                                                    | Method                                                       | Maximum Call Frequency                 |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------ |
