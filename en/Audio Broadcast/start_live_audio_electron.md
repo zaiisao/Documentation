@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 07:14:06 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:15:17 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start a basic audio broadcast with the Agora SDK for Electron.
@@ -84,3 +84,7 @@ Refer to the [Agora Electron Quickstart ](https://github.com/AgoraIO-Community/A
 ## Open-source SDK
 
 The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) is open-source on GitHub. You can download it and refer to the source code. Agora welcomes contributions from developers to improve the usability of the Electron SDK.
+
+## Reference
+
+[How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
