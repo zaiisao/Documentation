@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Windows
-updatedAt: Tue Apr 28 2020 06:34:46 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 06:35:18 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -45,7 +45,7 @@ updatedAt: Tue Apr 28 2020 06:34:46 GMT+0800 (CST)
 
 #### 配置项目文件
 
-1. 前往下载页面，下载最新版 MediaPlayer Kit，然后解压。
+1. 前往[下载页面](https://docs.agora.io/cn/AgoraPlatform/downloads)，下载最新版 MediaPlayer Kit，然后解压。
 2. 将 **sdk** 文件夹复制到你的项目文件夹下。
 
 #### 配置项目属性
