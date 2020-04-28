@@ -1,11 +1,11 @@
 
 ---
-title: The audio volume of other users is too low. 
+title: How to solve the problem of low volume? 
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 15:09:03 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 21:33:47 GMT+0800 (CST)
 ---
-# The audio volume of other users is too low. 
+# How to solve the problem of low volume? 
 ## Step 1: Self-check
 
 Check the following:
