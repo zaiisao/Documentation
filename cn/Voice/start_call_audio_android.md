@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Android
-updatedAt: Fri Apr 10 2020 04:15:39 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:50:41 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 音频 SDK 快速实现语音通话。
@@ -448,4 +448,9 @@ private fun leaveChannel() {
 ## 相关链接
 
 我们在 GitHub 上提供一个开源的一对多语音通话示例项目 [Group-Voice-Call](https://github.com/AgoraIO/Basic-Audio-Call/tree/master/Group-Voice-Call/OpenVoiceCall-Android)。如果你需要实现一对多群聊场景，可以前往下载或查看源代码。
+
+使用 Agora 音频互动直播 SDK 开发过程中，你还可以参考如下文档：
+
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
+- [为什么 Android 9 应用锁屏或切后台后采集音视频无效？](https://docs.agora.io/cn/faq/android_background)
 
