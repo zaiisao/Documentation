@@ -3,7 +3,7 @@
 title: Agora Audio Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 30 2020 04:37:42 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 09:16:52 GMT+0800 (CST)
 ---
 # Agora Audio Broadcasting Overview
 The Agora Native SDK for Audio Broadcasting enables one-to-many and many-to-many audio live streaming. 
@@ -66,3 +66,7 @@ The Agora Native SDK for Interactive Broadcast is supported on platforms such as
 | Web                  | <li>Chrome 58+<li>Chrome 49 on Windows XP<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
 
 <div class="alert note">The browser support on the Web platform varies with the device and system. See <a href="https://docs.agora.io/cn/faq/browser_support">Which browsers does the Agora Web SDK support?</a></div>
+
+## Reference
+
+[How many users can Agora RTC SDK support at the same time?](https://docs.agora.io/en/faq/capacity)
