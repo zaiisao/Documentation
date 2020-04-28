@@ -12,7 +12,7 @@ updatedAt: Tue Apr 28 2020 08:19:02 GMT+0800 (CST)
 
 ## 调用频率限制
 
-所有的调用频率都针对单个 <code>AgoraRtmKit</code> 实例，而不是针对单个 Agora RTM SDK。如果一个操作对应多个方法，则此操作在单位时间内的调用次数等于所有方法单位时间内的调用次数之和。
+所有的调用频率都针对单个 <code>AgoraRtmKit</code> 实例。如果一个操作对应多个方法，则此操作在单位时间内的调用次数等于所有方法单位时间内的调用次数之和。
 
 <div class="alert note">你可以通过创建多个实例提高 API 的调用频率。</div>
 
