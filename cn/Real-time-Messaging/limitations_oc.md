@@ -37,11 +37,11 @@ updatedAt: Tue Apr 28 2020 09:27:04 GMT+0800 (CST)
 	
 <div class="alert note"><sup>1</sup> 加入相同频道的频率限制为每 5 秒 2 次。</div>
 	
-## 超时设定
+## 操作超时时间
 
 <style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
 
-| 功能 | 超时设定 | 
+| 操作 | 超时设定 | 
 | ---------------- | ---------------- | 
 | 登录 Agora RTM 系统   | 6 秒  | 
 | 发送点对点消息  | 10 秒    | 
