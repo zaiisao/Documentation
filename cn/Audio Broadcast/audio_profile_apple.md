@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set audio profile for apple
 platform: iOS,macOS
-updatedAt: Wed Mar 18 2020 09:12:54 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:53:15 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
@@ -192,3 +192,9 @@ SDK 在 `setAudioProfile` 中提供 6 种不同的 Audio scenario，其中不同
 	<td>通话音量</td>
 </tr>
 </table>
+
+## 相关链接
+
+设置音频属性过程中，你还可以参考如下文档：
+
+- [如何避免直播上下麦音量变化？](https://docs.agora.io/cn/faq/audio_role)
