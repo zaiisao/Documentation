@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: iOS
-updatedAt: Sun Mar 29 2020 14:33:34 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:11:15 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio broadcast demo with the Agora Voice SDK for iOS.
@@ -308,3 +308,8 @@ You can find the sample code logic in the [OpenLive-Voice-Only-iOS-Objective-C](
 ## Run the project
 
 Run the project on your iOS device. When you set the role as the broadcaster and successfully join an audio broadcast, you can hear the voice of the broadcaster in the app.
+
+## Reference
+
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
