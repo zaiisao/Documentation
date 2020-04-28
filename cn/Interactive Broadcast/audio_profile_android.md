@@ -3,7 +3,7 @@
 title: 设置音频属性
 description: How to set the audio profile on Android
 platform: Android
-updatedAt: Wed Mar 18 2020 09:11:59 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:50:21 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
@@ -182,3 +182,9 @@ SDK 在 [`setAudioProfile`](https://docs.agora.io/cn/Interactive%20Broadcast/API
 	<td>通话音量</td>
 </tr>
 </table>
+
+## 相关链接
+
+设置音频属性过程中，你还可以参考如下文档：
+
+- [如何避免直播上下麦音量变化？](https://docs.agora.io/cn/faq/audio_role)
