@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Tue Apr 28 2020 09:27:04 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 09:32:33 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -41,7 +41,7 @@ updatedAt: Tue Apr 28 2020 09:27:04 GMT+0800 (CST)
 
 <style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
 
-| 操作 | 超时设定 | 
+| 操作 | 超时时间 | 
 | ---------------- | ---------------- | 
 | 登录 Agora RTM 系统   | 6 秒  | 
 | 发送点对点消息  | 10 秒    | 
