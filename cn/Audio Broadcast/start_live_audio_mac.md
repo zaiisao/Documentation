@@ -1,11 +1,11 @@
 
 ---
-title: 实现音频互动直播
+title: 实现音频直播
 description: 
 platform: macOS
-updatedAt: Tue Apr 28 2020 10:23:34 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:36:55 GMT+0800 (CST)
 ---
-# 实现音频互动直播
+# 实现音频直播
 本文介绍如何使用 Agora 音频互动直播 SDK 快速实现音频互动直播。
 
 互动直播和实时通话的区别就在于，直播频道的用户有角色之分。你可以将角色设置为主播 Broadcaster，或者观众 Audience，其中主播可以收、发流，观众只能收流。
