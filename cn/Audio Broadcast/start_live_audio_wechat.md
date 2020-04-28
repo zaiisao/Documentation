@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: wechat live
 platform: 微信小程序
-updatedAt: Tue Mar 31 2020 03:24:33 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:33:06 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现音频直播。
@@ -265,9 +265,10 @@ client.leave(onSuccess, onFailure);
 
 在微信开发者工具中导入你的项目后，点击**预览**，开发者工具会生成一个二维码。手机微信扫描二维码即可进入运行小程序。
 
-## 相关文档
+## 相关链接
 
 使用微信小程序 SDK 开发过程中，你还可以参考如下文档：
+
 - [小程序 SDK 常见问题集](https://docs.agora.io/cn/faq/wechat)
 - [错误码和警告码](../../cn/Audio%20Broadcast/the_error_wechat.md)
-
+- [直播场景下，如何监听远端观众用户加入/离开频道的事件？](https://docs.agora.io/cn/faq/audience_event)
