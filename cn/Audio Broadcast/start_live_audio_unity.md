@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Unity
-updatedAt: Fri Mar 27 2020 07:03:38 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:39:52 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora Unity SDK 快速实现音频互动直播。
@@ -144,11 +144,14 @@ CheckPermission();
 ### 3. 初始化 IRtcEngine
 
 
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
-
-1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
-2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
-3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
+$$ d1a9cc20-d2cf-11e9-9546-9fdade2ba6ee
+{
+  """: " ",
+  "[": " ",
+  "]": " ",
+  """: " "
+}
+$$
 
 你还可以根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户音频首帧等。
 
@@ -250,3 +253,9 @@ void OnApplicationQuit()
 ## 运行项目
 
 你可以在 Unity 中运行此项目。当成功开始音频互动直播时，主播可以听到自己和其他主播的声音；观众可以听到主播的声音。
+
+## 相关链接
+
+使用 Agora Unity SDK 开发过程中，你还可以参考如下文档：
+
+[直播场景下，如何监听远端观众用户加入/离开频道的事件？](https://docs.agora.io/cn/faq/audience_event)
