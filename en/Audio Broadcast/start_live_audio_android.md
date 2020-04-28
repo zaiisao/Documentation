@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:40:31 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:05:26 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio broadcast with the Agora Voice SDK for Android.
@@ -481,6 +481,11 @@ You can find the complete code logic in the [OpenLive-Voice-Only-Android](https:
 
 Run the project on your Android device. When the audio broadcast starts, all the audience can hear the broadcaster in the app.
 
+## Reference
+
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+- [Why is no audio or video captured on Android 9 devices?](https://docs.agora.io/en/faq/android_background)
 
 
 
