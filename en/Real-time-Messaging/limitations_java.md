@@ -12,7 +12,7 @@ This page provides a brief overview of the limitations of the Agora RTM Java SDK
 
 ## API call limit
 
-The API call limit refers to the call limit of an API in the context of one single RtmClient instance, not in the context of one Agora RTM SDK.
+The API call limit is for one RtmClient instance. If an operation corresponds to multiple methods, the number of calls of an operation equals to the sum of calls of all corresponding methods in a specific period of time.
 
 <div class="alert note">You can increase the call limit of an API by creating multiple <code>RtmClient</code> instances.</div>
 
