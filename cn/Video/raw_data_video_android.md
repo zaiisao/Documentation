@@ -3,7 +3,7 @@
 title: 原始视频数据
 description: 
 platform: Android
-updatedAt: Mon Mar 09 2020 05:41:35 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 04:41:12 GMT+0800 (CST)
 ---
 # 原始视频数据
 ## 功能描述
