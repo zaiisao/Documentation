@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Unity
-updatedAt: Wed Mar 11 2020 10:21:12 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:15:41 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start a basic audio broadcasting with the Agora SDK for Unity.
@@ -249,3 +249,7 @@ void OnApplicationQuit()
 ## Run the project
 
 Run the project in Unity. When you set the role as the broadcaster and successfully join an audio broadcasting, you can hear the voice of yourself in the app. When you set the role as the audience and successfully join an audio broadcasting, you can hear the voice of the broadcaster in the app.
+
+## Reference
+
+[How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
