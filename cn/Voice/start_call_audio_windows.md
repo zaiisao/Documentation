@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Windows
-updatedAt: Tue Apr 28 2020 10:55:06 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 13:29:15 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora SDK 快速实现语音通话。
@@ -213,6 +213,6 @@ BOOL CAgoraObject::LeaveChannel()
 
 ## 相关链接
 
-使用 Agora 语音通话 SDK 开发过程中，你还可以参考如下文档：
+使用 Agora SDK 开发过程中，你还可以参考如下文档：
 
 - [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
