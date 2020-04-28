@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Android
-updatedAt: Tue Apr 28 2020 10:05:26 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 10:57:51 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio broadcast with the Agora Voice SDK for Android.
