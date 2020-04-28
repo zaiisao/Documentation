@@ -1,11 +1,11 @@
 
 ---
-title: 音量太小
+title: 如何处理音量太小问题？
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 22 2019 11:59:02 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 21:32:21 GMT+0800 (CST)
 ---
-# 音量太小
+# 如何处理音量太小问题？
 ## 步骤 1：自检操作
 
 * 请检查接收方的系统音量是否已调大。
