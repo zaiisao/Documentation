@@ -1,21 +1,21 @@
 
 ---
-title: Why is no audio or video captured?
+title: Why is no audio or video captured on Android 9 devices?
 description: Android 9 设备上应用退到后台后锁屏后，采集不到声音或视频
 platform: Android
-updatedAt: Mon Jul 01 2019 15:14:03 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 18:03:47 GMT+0800 (CST)
 ---
-# Why is no audio or video captured?
+# Why is no audio or video captured on Android 9 devices?
 When an Android 9 device locks its screen or the app on the device runs in the background, the SDK may fail to capture the audio or video.
 
 According to the Android Developer website, this is a system restriction:
 
 > **Limited access to sensors in background**
-> Android 9 limits the ability for background apps to access user input and sensor data. If your app is running in the background on a device running Android 9, the system applies the following restrictions to your app:
+> Android 9 limits the ability for background apps to access user input and sensor data. If your app is running in the background on a device running on Android 9, the system applies the following restrictions to your app:
 > * Your app cannot access the microphone or camera.
 > * Sensors that use the continuous reporting mode, such as accelerometers and gyroscopes, don't receive events.
 > * Sensors that use the on-change or one-shot reporting modes don't receive events.
-> If your app needs to detect sensor events on devices running Android 9, use a foreground service.
+> If your app needs to detect sensor events on devices running on Android 9, use a foreground service.
 
 See [Behavior changes: all apps](https://developer.android.com/about/versions/pie/android-9.0-changes-all).
 
