@@ -3,7 +3,7 @@
 title: Raw Audio Data
 description: 
 platform: Android
-updatedAt: Tue Mar 10 2020 00:11:18 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 05:40:12 GMT+0800 (CST)
 ---
 # Raw Audio Data
 ## Introduction
