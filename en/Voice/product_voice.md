@@ -3,7 +3,7 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 30 2020 04:36:50 GMT+0800 (CST)
+updatedAt: Tue Apr 28 2020 09:16:06 GMT+0800 (CST)
 ---
 # Agora Voice Overview
 The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many **voice-only** calls. With a small SDK package size, the Agora Native SDK for Voice Call is applicable to a variety of recreational and business activities.
@@ -49,3 +49,7 @@ The Agora Native SDK for Voice Call is supported on platforms such as iOS, Andro
 | Web                  | <li>Chrome 58+<li>Chrome 49 on Windows XP<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
 
 <div class="alert note">The browser support on the Web platform varies with the device and system. See <a href="https://docs.agora.io/cn/faq/browser_support">Which browsers does the Agora Web SDK support?</a></div>
+	
+## Reference
+
+[How many users can Agora RTC SDK support at the same time?](https://docs.agora.io/en/faq/capacity)
