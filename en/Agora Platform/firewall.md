@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 28 2020 03:13:52 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 05:56:28 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -82,6 +82,9 @@ Add the following destination domains and the corresponding ports to the firewal
 
 ```
 .agora.io
+.edge.agora.io
+.agoraio.cn
+.edge.agoraio.cn
 ```
 
 | Destination ports | Port type | Operation |
