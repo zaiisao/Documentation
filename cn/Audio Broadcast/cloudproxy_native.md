@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Mon Mar 23 2020 14:04:09 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 07:34:50 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能描述
@@ -44,7 +44,6 @@ updatedAt: Mon Mar 23 2020 14:04:09 GMT+0800 (CST)
 6. 若默认配置无法满足需求，参照下表，调用 `setParameters("{\"rtc.proxy_server\":[proxy_type, \"ip or dns\", port]}");` 接口配置云代理服务器：
  | `proxy_type`                                                 | `ip or dns`                                         | `port`                        |
 | ------------------------------------------------------------ | --------------------------------------------------- | ----------------------------- |
-| 0: 使用 Socks5 云代理服务器                         | 服务器的 IP 地址                                       | 服务器的端口             |
 | 1: 使用云代理服务器并配置域名（推荐） | ap-proxy.agora.io                                   | 0                      |
 | 2: 使用云代理服务器并配置 IP 地址（当域名受限时使用） | 按此格式列出服务器的 IP 地址 `"[\"ip1\",\"ip2\"]"` | lbs 的端口，默认值为 0 |
 7. 测试是否能正常实现音视频通话或直播。
