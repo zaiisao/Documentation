@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 05:48:52 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:17:22 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
