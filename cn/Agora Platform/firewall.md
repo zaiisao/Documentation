@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 05:49:51 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 05:51:59 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
@@ -50,7 +50,9 @@ vocs5.agora.io
 
 ```
 .agora.io
+.edge.agora.io
 .agoraio.cn
+.edge.agoraio.cn
 ```
 
 | 目标端口 | 协议 | 操作 |
