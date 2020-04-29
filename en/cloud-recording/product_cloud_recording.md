@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Overview
 description: 
 platform: Linux
-updatedAt: Wed Apr 29 2020 08:15:01 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:15:14 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Overview
 Agora Cloud Recording is a component provided by Agora to record and save voice calls, video calls, and interactive broadcasts on your cloud storage. It is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+. 
@@ -63,6 +63,7 @@ The billing for each recording task is separate. For example, two recording task
 
 ## References
 
-- [Quickstart for RESTful API](../../en/cloud-recording/cloud_recording_rest.md) describes how to use Agora Cloud Recording with the RESTful API.
-- [Agora Cloud Recording RESTful API](https://docs.agora.io/en/cloud-recording/restfulapi) describes the functions of the RESTful API.
-- [RESTful API Callback Service](../../en/cloud-recording/cloud_recording_callback_rest.md) describes the events of the RESTful API.
+- [Quickstart for RESTful API](../../en/cloud-recording/cloud_recording_rest.md)
+- [Agora Cloud Recording RESTful API](https://docs.agora.io/en/cloud-recording/restfulapi)
+- [RESTful API Callback Service](../../en/cloud-recording/cloud_recording_callback_rest.md)
+- [Security](https://docs.agora.io/en/faq/security)
