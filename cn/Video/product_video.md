@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 05:19:36 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:01:30 GMT+0800 (CST)
 ---
 # 产品概述
 视频通话 SDK 可实现一对一单聊、多人群聊，同时具备纯语音通话和视频通话功能。
