@@ -3,7 +3,7 @@
 title: Agora Video Overview
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 05:20:29 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:04:10 GMT+0800 (CST)
 ---
 # Agora Video Overview
 The Agora Native SDK for Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes.
@@ -50,3 +50,6 @@ The Agora Native SDK for Video Call is supported on platforms such as iOS, Andro
 | Web                  | <li>Chrome 58+<li>Chrome 49 on Windows XP<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
 
 <div class="alert note">The browser support on the Web platform varies with the device and system. See <a href="https://docs.agora.io/cn/faq/browser_support">Which browsers does the Agora Web SDK support?</a></div>
+	
+## Reference
+[How many users can Agora RTC SDK support at the same time?](https://docs.agora.io/en/faq/capacity)
