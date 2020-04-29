@@ -3,14 +3,14 @@
 title: 服务安全
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 14:41:58 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 13:35:21 GMT+0800 (CST)
 ---
 # 服务安全
 ### 声网 Agora 的服务安全吗？可以加密吗？
 
 声网 Agora 是一个安全的平台。在发送信号时会进行加密（通话设置）。为了遵守法律相关要求，媒体流（通话本身）不会加密。
 
-同时声网全网采用 AES-256 加密，数据传输绝对安全，通过美国 HIPAA 认证，医疗和多行业适用。提供加密 API 可行业定制加密。
+同时声网全网采用 AES-256 加密，数据传输绝对安全，医疗和多行业适用。提供加密 API 可行业定制加密。
 
 更多关于安全策略的信息，可以参考 [信息安全说明](../../cn/Agora%20Platform/security.md)  。
 
