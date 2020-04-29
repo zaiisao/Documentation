@@ -3,7 +3,7 @@
 title: Glossary
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 28 2020 03:30:31 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 05:31:26 GMT+0800 (CST)
 ---
 # Glossary
 ## A
@@ -280,7 +280,7 @@ Developers can use Agora's Audio & Video File Merging script to merge the audio 
 "Inject Online Media Stream" refers to injecting an online media stream in a live-broadcast channel to share the stream with all users in the channel. The Agora RTC SDK provides a method for developers to inject an online mixed audio and video stream or an audio only stream to a channel.
 
 
-<div class="alert info">Reference:<a href="https://docs.agora.io/cn/Interactive%20Broadcast/inject_stream_android?platform=Android"> Inject Online Media Stream</a>
+<div class="alert info">Reference:<a href="https://docs.agora.io/en/Interactive%20Broadcast/inject_stream_android?platform=Android"> Inject Online Media Stream</a>
 </div>
 
 ## L
