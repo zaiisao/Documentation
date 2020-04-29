@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Sat Mar 28 2020 11:25:43 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 05:44:35 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -14,7 +14,6 @@ The MediaPlayer Kit is a powerful player that supports playing local and online 
 
 - Currently supported media formats: Local files in AVI, MP4, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
 - When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishPlugin at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishPlugin supports publishing media streams to remote users in Agora channel.
-- When sharing media resources with remote users, the playback window occupies the local user's video as captured by the camera. Therefore, if you want remote users to see both the local user's and the player's window, you need to start another process to capture the local user's video.
 
 ## Set up the development environment
 
