@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 08:19:58 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:20:07 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -282,3 +282,9 @@ def start_record():
 
 start_record()
 ```
+
+## <a name="reference"></a>相关链接
+
+- [为什么第三方云存储中没有录制文件？](https://docs.agora.io/cn/faq/fail_to_upload)
+- [为什么成功开启云端录制后调用 query 方法返回 404？](https://docs.agora.io/cn/faq/return-404)
+- [云存储 bucket 区域选择及跨区解决方案](https://docs.agora.io/cn/faq/bucket_region)
