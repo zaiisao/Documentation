@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 08:01:30 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:01:41 GMT+0800 (CST)
 ---
 # 产品概述
 视频通话 SDK 可实现一对一单聊、多人群聊，同时具备纯语音通话和视频通话功能。
@@ -60,3 +60,6 @@ updatedAt: Wed Apr 29 2020 08:01:30 GMT+0800 (CST)
 - [macOS](https://itunes.apple.com/cn/app/agora-video-call/id1112106913)
 - [Web](https://videocall.agora.io/#/)
 - [Windows](https://download.agora.io/avc/release/AgoraVideoCall_for_windows_3.0.1.zip)
+	
+## 相关链接
+[Agora RTC SDK 最多支持多少人同时在线？](https://docs.agora.io/cn/faq/capacity)
