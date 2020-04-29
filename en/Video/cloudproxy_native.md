@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Mon Mar 23 2020 14:07:06 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 07:35:10 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -45,7 +45,6 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
  
 | `proxy_type`                                                 | `ip or dns`                                         | `port`                        |
 | ------------------------------------------------------------ | --------------------------------------------------- | ----------------------------- |
-| 0: The Socks5 proxy server                         | The IP address of the server                                         | The ports of the server                 |
 | 1: Use cloud proxy and configure the domain name (recommended) | ap-proxy.agora.io                                   | 0                      |
 | 2: Use cloud proxy and configure the IP address (Used when the domain name is restricted) | The IP address list of the server in the format of<br/> `"[\"ip1\",\"ip2\"]"` | The port of this lbs. The default value is 0 |
 
