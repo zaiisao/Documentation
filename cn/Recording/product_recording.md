@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: Linux
-updatedAt: Wed Apr 01 2020 07:19:29 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:21:33 GMT+0800 (CST)
 ---
 # 产品概述
 <div class="alert note">提示：<br>Agora 本地服务端录制 SDK 需要部署在 Linux 服务器上，并需要你自行运维。如果你不想部署 Linux 服务器，而是想要通过 RESTful API 以更加便捷的方式实现录制功能，推荐使用 <a href="https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=Linux">Agora 云端录制</a></li>。  </div> 
