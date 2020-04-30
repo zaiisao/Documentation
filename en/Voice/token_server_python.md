@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Python
-updatedAt: Mon Nov 11 2019 10:05:48 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:29:02 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a pseudo-token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Python. 
@@ -107,7 +107,9 @@ This method builds a token with your string userAccount.
 
 <div class="alert warning"><sup>2</sup>: All the <code>role</code> enums share exactly the same privileges. To enable privilege authentication with a Token, e.g., to remove the upstreaming privilege of the audience, contact sales-us@agora.io.</div>
 
+## Reference
+	
+When generating a token, you can also refer to the following articles:
 
-
-
-
+- [Troubleshooting token-related errors for Agora RTC SDK](https://docs.agora.io/en/faq/token_error)
+- [Troubleshooting 101 error for Cloud Recording](https://docs.agora.io/en/faq/101_error)

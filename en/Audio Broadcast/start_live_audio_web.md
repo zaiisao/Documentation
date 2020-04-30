@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 09:21:41 GMT+0800 (CST)
+updatedAt: Thu Apr 30 2020 05:54:21 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive audio broadcast functions in your app. 
@@ -445,3 +445,10 @@ If the web app is not working properly, open the console in your browser and che
 - `MEDIA_NOT_SUPPORT`: Please use HTTPS or localhost.
 
 <div class="alert warning">Do not debug the web app on emulated mobile devices.</div>
+
+## Reference
+
+- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [What are the common errors in Web browsers' console log?](https://docs.agora.io/en/faq/console_error_web)
+- [Why do errors occur when calling the Stream.init method?](https://docs.agora.io/en/faq/streaminit_error)

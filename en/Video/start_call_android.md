@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Android
-updatedAt: Fri Apr 10 2020 04:14:23 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:37:47 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora Video SDK for Android.
@@ -682,6 +682,8 @@ Run the project on your Android device. You can see both the local and remote vi
 
 ## Reference
 
-We provide an open-source [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) demo project that implements the group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
-
+- We provide an open-source [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) demo project that implements the group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)
+- [Why is no audio or video captured on Android 9 devices?](https://docs.agora.io/en/faq/android_background)
 	

@@ -3,7 +3,7 @@
 title: Agora On-premise Recording Overview
 description: 
 platform: Linux
-updatedAt: Wed Apr 01 2020 07:20:55 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:44:52 GMT+0800 (CST)
 ---
 # Agora On-premise Recording Overview
 <div class="alert note">Note: <br>If you do not want to prepare server resources, Agora recommends using <a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=Linux">Agora Cloud Recording</a>, which enables you to record voice/video calls and interactive broadcasts on your cloud storage through RESTful APIs.  </div>
@@ -86,3 +86,4 @@ The On-premise Recording SDK is compatible with the following Agora SDK versions
 - [Integrate the SDK](../../en/Quickstart%20Guide/recording_integrate_cpp.md) and [Record a Call](../../en/Quickstart%20Guide/recording_cmd_cpp.md) on how to deploy and use the Agora On-premise Recording SDK, manage, play, and protect recorded files.
 - [API Reference](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/index.html) lists the API methods of the Agora On-premise Recording SDK.
 - The [Agora Linux Server Recording](https://github.com/AgoraIO/Basic-Recording/) sample app enables recording on your Linux server.
+- [Recording Concurrency](https://docs.agora.io/en/faq/recording_concurrence) introduces the concurrency of on-premise recording.

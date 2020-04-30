@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Android
-updatedAt: Mon Mar 02 2020 08:46:30 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 09:15:37 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start a video broadcast with the Agora Video SDK for Android.
@@ -584,6 +584,12 @@ You can find the complete code logic in the [OpenLive-Android](https://github.co
 
 Run the project on your Android device. When you set the role as the broadcaster and successfully join a video broadcast, you can see the video view of yourself in the app. When you set the role as the audience and successfully join a video broadcast, you can see the video view of the broadcaster in the app.
 
+## Reference
+
+- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)
+- [Why is no audio or video captured on Android 9 devices?](https://docs.agora.io/en/faq/android_background)
 
 
 

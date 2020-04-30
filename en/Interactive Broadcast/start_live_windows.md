@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Windows
-updatedAt: Fri Mar 27 2020 07:36:08 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 09:16:31 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start a video interactive broadcast with the Agora Video SDK for Windows. 
@@ -290,3 +290,9 @@ void CAgoraObject::CloseAgoraObject()
 
 ## Run the project
 Run the project on your Windows device. When you set the role as the broadcaster and successfully join a video broadcast, you can see the video view of yourself in the app. When you set the role as the audience and successfully join a video broadcast, you can see the video view of the broadcaster in the app.
+
+## Reference
+
+- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)

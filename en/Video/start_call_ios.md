@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: iOS
-updatedAt: Thu Apr 09 2020 05:56:02 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:38:29 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic video call demo with the Agora Video SDK for iOS.
@@ -346,7 +346,8 @@ You can find the sample code logic in the [VideoChatViewController.m](https://gi
 Run the project on your iOS device. You can see both the local and remote video views when you successfully start a one-to-one video call in the app.
 
 ## Reference
-We provide open-source Group-Video-Call sample projects that implement the group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
-
-- Swift: See [RoomViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/RoomViewController.swift) file in the [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS) sample project.
-- Objective-C project: See [RoomViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/RoomViewController.m) file in the [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C) sample project.
+- We provide open-source Group-Video-Call sample projects that implement the group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
+  - Swift: See [RoomViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/RoomViewController.swift) file in the [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS) sample project.
+  - Objective-C project: See [RoomViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/RoomViewController.m) file in the [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C) sample project.
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)

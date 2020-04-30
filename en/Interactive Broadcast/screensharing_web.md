@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 08:48:19 GMT+0800 (CST)
+updatedAt: Thu Apr 30 2020 04:12:20 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -357,3 +357,8 @@ videoClient.init(appID, function() {
 - **Do not subscribe to a locally published screen-sharing stream**, else additional charges incur.
 - Sharing the window of a QQ chat on Windows causes a black screen.
 
+## Reference
+
+When implementing the screen sharing, you can also refer to the following articles:
+
+- [How can I switch between the screen-sharing stream and the camera stream?](https://docs.agora.io/en/faq/switch_screen_camera_web)

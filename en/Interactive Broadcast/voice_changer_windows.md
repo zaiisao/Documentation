@@ -8,7 +8,7 @@ updatedAt: Tue Mar 03 2020 07:22:37 GMT+0800 (CST)
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
 
-In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides multiple preset voice changers and reverberation effects. You can also flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides multiple preset voice changers and reverberation effects. You can also flexibly change the users' voice, such as adjusting the pitch, setting the equalization and reverberation modes.
 
 ## Implementation
 

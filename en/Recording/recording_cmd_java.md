@@ -3,7 +3,7 @@
 title: Record a Call
 description: 
 platform: Linux Java
-updatedAt: Mon Feb 10 2020 04:55:47 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:45:47 GMT+0800 (CST)
 ---
 # Record a Call
 This page demonstrates how to record a call by using the command line. You can also record calls by calling the API methods. For the detailed API reference, see [Recording API](https://docs.agora.io/en/Recording/API%20Reference/recording_java/index.html). The command line and API methods implement the same functions. 
@@ -185,3 +185,6 @@ After the recording is complete, use the transcoding script to merge the recorde
 
 If any error or warning occurs during the recording, see [Error codes](https://docs.agora.io/en/Recording/API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_e_r_r_o_r___c_o_d_e___t_y_p_e.html) and [Warning codes](https://docs.agora.io/en/Recording/API%20Reference/recording_java/enumio_1_1agora_1_1recording_1_1common_1_1_common_1_1_w_a_r_n___c_o_d_e___t_y_p_e.html).
 
+## References
+- [Recording file issues](https://docs.agora.io/en/faq/record_file_issue)
+- [Recording status issues](https://docs.agora.io/en/faq/record_status_error)

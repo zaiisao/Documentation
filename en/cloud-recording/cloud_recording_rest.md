@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 08:17:22 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:44:17 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
@@ -308,3 +308,12 @@ def start_record():
 
 start_record()
 ```
+
+## <a name="reference"></a>References
+
+- [Why are there no recorded files in the cloud storage?](https://docs.agora.io/en/faq/fail_to_upload)
+
+- [Why do I get a 404 error when I call query after successfully starting a cloud recording?](https://docs.agora.io/en/faq/return-404)
+
+- [How can I choose the region of my cloud storage?](https://docs.agora.io/en/faq/bucket_region)
+

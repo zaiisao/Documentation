@@ -3,7 +3,7 @@
 title: Start a Call
 description: 
 platform: macOS
-updatedAt: Thu Apr 09 2020 05:55:32 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:47:42 GMT+0800 (CST)
 ---
 # Start a Call
 Use this guide to quickly start a basic video call demo with the Agora Video SDK for macOS.
@@ -373,4 +373,6 @@ You can find the sample code logic in the [VideoChatViewController.m](https://gi
 Run the project on your macOS device. You can see both the local and remote video views when you successfully start a one-to-one video call in the app.
 
 ## Reference
-We provide an open-source [OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-macOS) sample project that implements the group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
+- We provide an open-source [OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-macOS) sample project that implements the group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)

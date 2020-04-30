@@ -3,7 +3,7 @@
 title: Record by API
 description: How to start recording using API
 platform: Linux
-updatedAt: Thu Aug 01 2019 09:50:48 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:45:59 GMT+0800 (CST)
 ---
 # Record by API
 This page shows how to record a call by calling API methods. You can also record calls by using the command line, see [Record by Command Line](../../en/Recording/recording_cmd_cpp.md). The command line and API methods implement the same recording functions.
@@ -78,3 +78,7 @@ engine->release()
 Call the [`release`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine.html#af4d33159ed8ed249991470e6833d0fd5)  method to destroy the recording instance and release all recording resources.  After releasing the resources, you must create a new instance to use On-premise Recording again. 
 
 > Do not implement the `release` method in the callback thread.
+
+## References
+- [Recording file issues](https://docs.agora.io/en/faq/record_file_issue)
+- [Recording status issues](https://docs.agora.io/en/faq/record_status_error)

@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Windows
-updatedAt: Fri Mar 27 2020 06:58:16 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:48:20 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora Video SDK for Windows.
@@ -256,3 +256,8 @@ void CAgoraObject::CloseAgoraObject()
 
 ## Run the project
 Run the project on your Windows device. You can see both the local and remote video views when you successfully start a one-to-one video call in your app.
+
+## Reference
+
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)

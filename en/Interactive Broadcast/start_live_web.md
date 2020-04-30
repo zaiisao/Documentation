@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Web
-updatedAt: Tue Apr 21 2020 03:13:25 GMT+0800 (CST)
+updatedAt: Thu Apr 30 2020 05:33:20 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
@@ -448,4 +448,8 @@ If the web app is not working properly, open the console in your browser and che
 
 ## Reference
 
-With the [Agora Video for WordPress](https://wordpress.org/plugins/wp-agora-io/) plugin, you can easily embed live video streaming in your WordPress posts and pages. See [Agora WordPress Plugin QuickStart Guide](https://medium.com/agora-io/agora-video-for-wordpress-plugin-quickstart-guide-b8838abd4245).
+- With the [Agora Video for WordPress](https://wordpress.org/plugins/wp-agora-io/) plugin, you can easily embed live video streaming in your WordPress posts and pages. See [Agora WordPress Plugin QuickStart Guide](https://medium.com/agora-io/agora-video-for-wordpress-plugin-quickstart-guide-b8838abd4245).
+- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [What are the common errors in Web browsers' console log?](https://docs.agora.io/en/faq/console_error_web)
+- [Why do errors occur when calling the Stream.init method?](https://docs.agora.io/en/faq/streaminit_error)
