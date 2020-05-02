@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: CPP
-updatedAt: Wed Mar 04 2020 05:28:17 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:41:16 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个正式的 RTC token，并提供 Token 生成相关的 C++ API 参考。
@@ -127,3 +127,10 @@ updatedAt: Wed Mar 04 2020 05:28:17 GMT+0800 (CST)
 | `privilegeExpiredTs`      | 时间戳。自 1970 年 1 月 1 日零时起经过的秒数。比如你希望将权限设为 Token 生成后 10 分钟，那么你要在这里把 privilegeExpiredTs 设为当前 timestamp 再加 600 (秒)。如果权限始终不过期，请填 0。|
 	
 <div class="alert warning"><sup>2</sup>：所有 <code>role</code> 的权限完全一致。如需做权限校验，特别是限制观众的上行流权限，必须联系 sales-china@agora.io 开通相应服务。</div>
+	
+## 相关链接
+	
+生成 Token 过程中，你也可以参考如下文档：
+
+- [如何处理 RTC SDK 中 Token 相关错误码？](https://docs.agora.io/cn/faq/token_error)
+- [如何处理云端录制 101 错误码？](https://docs.agora.io/cn/faq/101_error)
