@@ -32,7 +32,7 @@ updatedAt: Sat May 02 2020 04:17:00 GMT+0800 (CST)
 
 ## 适用场景
 
-信令 SDK 适用于以下实时场景：
+实时消息 SDK 适用于以下实时场景：
 
 <table>
   <tr>
