@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 08:26:38 GMT+0800 (CST)
+updatedAt: Thu Apr 30 2020 04:14:46 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -343,3 +343,9 @@ videoClient.init(appID, function() {
 - 屏幕共享流的 UID 尽量不要固定在同一个值，否则某些场景下同 UID 的共享流可能会引起互踢。
 - 在屏幕共享的时候，本地流的 Client **不要订阅本地的屏幕共享流**，否则会增加计费。
 - 在 Windows 平台上进行屏幕共享时，如果共享的是 QQ 聊天窗口会导致黑屏。
+
+## 相关链接
+
+实现屏幕共享过程中，你还可以参考如下文档：
+
+- [如何切换屏幕共享流和摄像头视频流？](https://docs.agora.io/cn/faq/switch_screen_camera_web)

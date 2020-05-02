@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: macOS
-updatedAt: Mon Apr 20 2020 02:48:06 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:28:40 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
@@ -377,4 +377,6 @@ func leaveChannel() {
 
 ## 相关链接
 
-如果你需要实现一对多群聊场景，可以前往 GitHub 下载 [OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-macOS) 示例项目，或查看源代码。
+- 如果你需要实现一对多群聊场景，可以前往 GitHub 下载 [OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-macOS) 示例项目，或查看源代码。
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
+- [如何处理视频黑屏问题？](https://docs.agora.io/cn/faq/video_blank)

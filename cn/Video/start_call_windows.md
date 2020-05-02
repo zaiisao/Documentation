@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Windows
-updatedAt: Fri Mar 27 2020 06:48:03 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:30:03 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频 SDK 快速实现视频通话。
@@ -259,3 +259,8 @@ BOOL CAgoraObject::LeaveChannel()
 
 ## 运行项目
 你可以在 Windows 设备中运行此项目。当你成功开始视频通话时，你可以同时看到本地和远端的视频。
+
+## 相关链接
+
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
+- [如何处理视频黑屏问题？](https://docs.agora.io/cn/faq/video_blank)

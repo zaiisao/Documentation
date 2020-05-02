@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: iOS
-updatedAt: Mon Apr 20 2020 02:46:43 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:28:23 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
@@ -349,7 +349,8 @@ func leaveChannel() {
 
 ## 相关链接
 
-如果你需要实现一对多群聊场景，可以前往 GitHub 下载以下示例项目，或查看源代码。
-
-- Swift 项目: [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS)，参考 [RoomViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/RoomViewController.swift) 中的代码。
-- Objective-C 项目: [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C)，参考 [RoomViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/RoomViewController.m) 中的代码。
+- 如果你需要实现一对多群聊场景，可以前往 GitHub 下载以下示例项目，或查看源代码。
+  - Swift 项目: [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS)，参考 [RoomViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/RoomViewController.swift) 中的代码。
+  - Objective-C 项目: [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C)，参考 [RoomViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/RoomViewController.m) 中的代码。
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
+- [如何处理视频黑屏问题？](https://docs.agora.io/cn/faq/video_blank)

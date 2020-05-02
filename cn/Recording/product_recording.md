@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: Linux
-updatedAt: Wed Apr 29 2020 08:21:33 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:32:15 GMT+0800 (CST)
 ---
 # 产品概述
 <div class="alert note">提示：<br>Agora 本地服务端录制 SDK 需要部署在 Linux 服务器上，并需要你自行运维。如果你不想部署 Linux 服务器，而是想要通过 RESTful API 以更加便捷的方式实现录制功能，推荐使用 <a href="https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=Linux">Agora 云端录制</a></li>。  </div> 
@@ -74,3 +74,4 @@ Agora 本地服务端录制 SDK 与以下 Agora SDK 兼容:
 - [集成本地服务端录制 SDK](../../cn/Quickstart%20Guide/recording_integrate_cpp.md) 和[开始录制](../../cn/Quickstart%20Guide/recording_cmd_cpp.md)展示了如何从零开始完成 Agora 本地服务端录制 SDK 的部署及使用，包括环境搭建、集成方法、编译代码、演示录制等内容。
 - [录制 API](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html) 展示了使用 Agora 本地服务端录制 SDK 过程中你可以调用的各 API，以及调用这些 API 能实现的功能、以及会收到的回调等内容。
 - [服务端录制示例代码](https://github.com/AgoraIO/Basic-Recording/)演示了如何录制音视频, 例如: 纯音频录制，混音，合图，加解密，设置 UDP 端口等。
+- [本地服务端录制的并发性能](https://docs.agora.io/cn/faq/recording_concurrence)介绍了本地服务端录制的并发性能。

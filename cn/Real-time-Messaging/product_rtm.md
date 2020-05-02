@@ -3,16 +3,16 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 28 2020 10:56:47 GMT+0800 (CST)
+updatedAt: Sat May 02 2020 04:17:00 GMT+0800 (CST)
 ---
 # 产品概述
 
 
-Agora RTM (Real-time Messaging) SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时场景。
+实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时场景。
 
 ## 功能概述
 
-Agora 实时消息 SDK 能够实现以下功能: 
+实时消息 SDK 能够实现以下功能: 
 
  - 发送点对点消息或点对点的离线消息。
  - 频道消息。
@@ -32,7 +32,7 @@ Agora 实时消息 SDK 能够实现以下功能:
 
 ## 适用场景
 
-Agora RTM SDK 适用于以下实时场景：
+信令 SDK 适用于以下实时场景：
 
 <table>
   <tr>
@@ -59,7 +59,7 @@ Agora RTM SDK 适用于以下实时场景：
 
 ## 产品特性
 
-Agora RTM SDK 主要有以下特性：
+实时消息 SDK 主要有以下特性：
 
 <table>
   <tr>
@@ -80,7 +80,7 @@ Agora RTM SDK 主要有以下特性：
   </tr>
   <tr>
     <td>兼容性</td>
-    <td><li>支持 iOS、Android（arm64、armv7、x86）、macOS、Windows、Linux、浏览器等多个平台<br><li> Web 平台支持 Chrome 49+、Firefox 52+、Safari 9+、Internet Explorer 11+<br><li>支持 java、C++ server 端</td>
+    <td><li>支持 iOS、Android（arm64、armv7、x86）、macOS、Windows、Linux、Web 等多个平台<br><li> Web 平台支持 Chrome 49+、Firefox 52+、Safari 9+、Internet Explorer 11+<br><li>支持 Java、C++ server 端</td>
   </tr>
 </table>	
 
@@ -88,7 +88,7 @@ Agora RTM SDK 主要有以下特性：
 
 实时消息系统将逐步替代信令。除上述高可靠、高并发、全球化部署等优势之外，Agora RTM SDK 将会持续更新，不断推出更多更丰富的功能和场景应用。
 
-> 对已有 Agora Signaling SDK 的维护将于 2019 年第四季度停止。
+> 对信令 SDK 的维护将于 2019 年第四季度停止。
 
 
 

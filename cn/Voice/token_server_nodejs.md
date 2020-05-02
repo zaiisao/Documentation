@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: 
 platform: Node.js
-updatedAt: Mon Mar 16 2020 03:40:11 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:44:05 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个正式的 RTC token，并提供 token 生成相关的 Node.js API 参考。
@@ -104,5 +104,10 @@ updatedAt: Mon Mar 16 2020 03:40:11 GMT+0800 (CST)
 
 <div class="alert warning"><sup>2</sup>：所有 <code>role</code> 的权限完全一致。如需做权限校验，特别是限制观众的上行流权限，必须联系 sales-china@agora.io 开通相应服务。</div>
 
+## 相关链接
+	
+生成 Token 过程中，你也可以参考如下文档：
 
+- [如何处理 RTC SDK 中 Token 相关错误码？](https://docs.agora.io/cn/faq/token_error)
+- [如何处理云端录制 101 错误码？](https://docs.agora.io/cn/faq/101_error)
 

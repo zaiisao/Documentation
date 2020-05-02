@@ -3,14 +3,14 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Apr 29 2020 06:49:14 GMT+0800 (CST)
+updatedAt: Thu Apr 30 2020 07:39:24 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
 
 ## 概览
 
-Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库在网页浏览器中调用 API 建立连接，控制音视频通话和直播服务。点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 以及[互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
+Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库在网页浏览器中调用 API 建立连接，控制音视频通话和直播服务。点击[语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 以及[互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 ### 兼容性说明
 
@@ -89,6 +89,71 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
+
+## 3.1.0 版
+
+该版本于 2020 年 4 月 30 日发布。
+
+**升级必看**
+
+该版本优化了[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms#dual-stream)的实现。在双流模式下，SDK 行为有以下调整：
+
+- 小流的视频属性默认值固定为分辨率（宽 × 高）160 × 120，码率 50 Kbps，帧率 15 fps。
+- 小流和大流自动保持相同的宽高比。如果设置的小流分辨率宽高比与大流不同，SDK 会自动修改小流视频的高，以保持和大流相同的宽高比。
+
+**新增特性**
+
+#### 1. 添加媒体附属信息
+
+新增 `Client.sendMetadata` 方法，支持在发出的流中添加媒体附属信息。该功能可用于构建更为丰富的直播互动方式，如分发商品链接、优惠券、在线答题等。
+
+同时新增 `Client.on("receive-metadata")` 回调，当接收到远端用户发送的媒体附属信息时，SDK 会触发该回调。
+
+<div class="alert note">注意：
+  <li>该功能仅支持 H.264 编码格式。</li>
+  <li>在网络不稳定的情况下，SDK 无法保证媒体附属信息和媒体流严格同步。</li>
+</div>
+
+#### 2. 取消发布流成功回调
+
+新增 `Client.on("stream-unpublished")` 回调，当本地用户取消发布流（`Client.unpublish`）成功时，SDK 会触发该回调。
+
+#### 3. 设置多个 TURN 服务器
+
+该版本起，`ClientConfig.turnServer` 支持传入多个 TURN 服务器的配置。
+
+#### 4. 设置播放器缓冲区延迟（H5 实时直播组件）
+
+`AgoraRTS.init` 方法新增 `bufferDelay` 参数，支持设置播放器缓冲区延迟。该功能适用于网络不稳定或者对延迟不敏感的直播场景。
+
+在网络环境较差时，你可以通过设置 `bufferDelay` 参数提高延迟，以保证直播的流畅度。详见 [H5 实时直播](../../cn/Interactive%20Broadcast/web_in_app.md)。
+
+**改进**
+
+该版本优化了 H5 实时直播组件的加载速度。
+
+**问题修复**
+
+该版本修复了以下问题：
+
+- 偶现的重连失败。
+- 在 iOS 13 Safari 上发布视频流，接收端的画面旋转 90 度。
+- 在 Firefox 75 浏览器上，调用 `Stream.getStats` 无法获取统计数据。
+- 纯音频场景中，调用 `Stream.switchDevice` 出错。
+- 在调用 `Client.join` 时发生重连，加入频道成功后 SDK 没有返回用户 ID。
+- `Stream.play` 的错误回调中，`status` 的值不准确。
+- 偶现的 `Client.on("mute-audio")` 和 `Client.on("mute-video")` 回调重复触发。
+- Electron 环境下创建流时无法获取本地音频。
+
+**API 变更**
+
+#### 新增
+
+- [`Client.sendMetadata`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#sendmetadata)
+- [`Client.on`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) 新增以下事件：
+  - `"receive-metadata"`
+  - `"stream-unpublished"`
+
 
 ## 3.0.2 版
 

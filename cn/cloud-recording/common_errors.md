@@ -3,7 +3,7 @@
 title: 云端录制常见错误
 description: 
 platform: All Platforms
-updatedAt: Sat Mar 21 2020 07:26:16 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:55:57 GMT+0800 (CST)
 ---
 # 云端录制常见错误
 本文仅列出使用云端录制 RESTful API 过程中常见的错误码或错误信息，如果遇到其他错误，请联系 Agora 技术支持。
@@ -16,6 +16,7 @@ updatedAt: Sat Mar 21 2020 07:26:16 GMT+0800 (CST)
 	- 使用了错误的 HTTP 方法。
 - `53`：录制已经在进行中。当采用相同参数再次调用 `acquire` 获得新的 resource ID，并用于 `start` 请求时，会发生该错误。如需发起多路录制，需要在 `acquire` 方法中填入不同的 UID。
 - `62`：调用 `Acquire` 请求时，如果出现该错误，表示你填入的 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id) 没有开通云端录制权限。
+- `65`：多为网络抖动引起。使用相同 resource ID 重试即可。
 - `432`：请求参数错误。请求参数不合法，或请求中的 App ID，频道名或用户 ID 与 resource ID 不匹配。
 - `433`：resource ID 过期。获得 resource ID 后必须在 5 分钟内开始云端录制。请重新调用 `acquire` 获取新的 resource ID。
 - `435`：没有录制文件产生。频道内没有用户加入，无录制对象。

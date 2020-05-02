@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Android
-updatedAt: Wed Mar 04 2020 06:52:52 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 09:16:49 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现视频直播。
@@ -584,8 +584,9 @@ private void leaveChannel() {
 
 在 Android 设备中运行该项目。当成功开始视频直播时，主播可以看到自己的画面；观众可以看到主播的画面。
 
+## 相关链接
 
-
-
-
-
+- [直播场景下，如何监听远端观众用户加入/离开频道的事件？](https://docs.agora.io/cn/faq/audience_event)
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
+- [如何处理视频黑屏问题？](https://docs.agora.io/cn/faq/video_blank)
+- [为什么 Android 9 应用锁屏或切后台后采集音视频无效？](https://docs.agora.io/cn/faq/android_background)

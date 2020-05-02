@@ -3,7 +3,7 @@
 title: 调用 API 录制
 description: How to start recording using API
 platform: Linux CPP
-updatedAt: Mon Apr 27 2020 01:28:14 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:42:58 GMT+0800 (CST)
 ---
 # 调用 API 录制
 本文介绍如何调用 API 进行通话或直播录制。 你也可以[通过命令行录制](../../cn/Recording/recording_cmd_cpp.md) 进行录制。命令行录制和调用 API 录制实现的是相同的功能，根据自己的需要选择一种即可。
@@ -77,3 +77,7 @@ engine->release();
 
 待录制完成后，你需要调用 [`release`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine.html#af4d33159ed8ed249991470e6833d0fd5) 方法销毁录制实例，释放 SDK 使用的资源，释放资源后将无法再次使用和回调 SDK 内的其它方法。如需再次使用本地服务端录制，必须重新创建实例。
 > `release` 方法不能在回调线程中调用。
+
+## 相关链接
+- [录制文件异常](https://docs.agora.io/cn/faq/record_file_issue)
+- [录制状态异常](https://docs.agora.io/cn/faq/record_status_error)

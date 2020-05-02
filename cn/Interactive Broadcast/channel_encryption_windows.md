@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: Windows
-updatedAt: Thu Apr 16 2020 06:22:26 GMT+0800 (CST)
+updatedAt: Thu Apr 30 2020 08:44:26 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文描述如何使用 Agora 内置的加密方案。
@@ -189,4 +189,4 @@ class AgoraPacketObserver : public agora::IPacketObserver
 
 ### 步骤 3: 注册实例
 
-调用 `registerAgoraPacketObserver` 为应用程序使用的 `agora::IPacketObserver` 类注册一个实例。
+调用 `registerPacketObserver` 为应用程序使用的 `agora::IPacketObserver` 类注册一个实例。

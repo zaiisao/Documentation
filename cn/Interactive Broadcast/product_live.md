@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 21 2020 02:52:15 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 09:00:17 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 视频互动直播（Video Broadcasting）可以实现一对多，多对多的音视频互动直播。
@@ -69,3 +69,7 @@ Agora 视频互动直播提供丰富的功能，你可以根据自己的场景�
 | Web        | <li>Chrome 58+ <li>Chrome 49（仅 Windows XP）<li>Firefox 56+ <li>Safari 11+ <li>Opera 45+ <li>QQ 10+ <li>360 安全浏览器 9.1+ |
 
 <div class="alert note">Web 平台的支持情况还与设备型号及系统版本等有关，详见 <a href="https://docs.agora.io/cn/faq/browser_support">Agora Web SDK 支持哪些浏览器？</a></div>
+	
+## 相关链接
+
+[Agora RTC SDK 最多支持多少人同时在线？](https://docs.agora.io/cn/faq/capacity)

@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Android
-updatedAt: Wed Apr 29 2020 08:23:53 GMT+0800 (CST)
+updatedAt: Wed Apr 29 2020 08:28:10 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频 SDK 快速实现视频通话。
@@ -702,5 +702,7 @@ private fun leaveChannel() {
 
 ## 相关链接
 
-我们在 GitHub 上提供一个开源的一对多视频通话示例项目 [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android)。如果你需要实现一对多群聊场景，可以前往下载或查看源代码。
-
+- 我们在 GitHub 上提供一个开源的一对多视频通话示例项目 [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android)。如果你需要实现一对多群聊场景，可以前往下载或查看源代码。
+- [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
+- [如何处理视频黑屏问题？](https://docs.agora.io/cn/faq/video_blank)
+- [为什么 Android 9 应用锁屏或切后台后采集音视频无效？](https://docs.agora.io/cn/faq/android_background)

@@ -3,7 +3,7 @@
 title: H5 实时直播
 description: 
 platform: Web
-updatedAt: Sun Apr 26 2020 06:29:53 GMT+0800 (CST)
+updatedAt: Thu Apr 30 2020 09:07:05 GMT+0800 (CST)
 ---
 # H5 实时直播
 ## 功能简介
@@ -102,25 +102,29 @@ AgoraRTS.checkSystemRequirements()
 
 调用该方法返回 `true` 表示支持，返回 `false` 表示不支持。
 
-### 引入 H5 实时直播组件
+### <a name="init"></a>引入 H5 实时直播组件
 
 在创建 Client 后，需要调用 `AgoraRTS.init` 和 `AgoraRTS.proxy` 方法来引入 H5 组件：
 
-- `AgoraRTS.init` 方法用于初始化 H5 实时直播组件，你需要在该方法中设置解码库文件的线上访问地址。
+- `AgoraRTS.init` 方法用于初始化 H5 实时直播组件，你需要在该方法中设置解码库文件的线上访问地址。具体参数如下：
+  - `wasmDecoderPath`: `AgoraRTS.wasm` 解码库文件的线上访问地址。
+  - `asmDecoderPath`: `AgoraRTS.asm` 解码库文件的线上访问地址。
+  - `bufferDelay`: （选填）播放器缓冲区延迟。整数，取值范围 [0,10000]，默认值为 0，即没有缓冲区延迟。单位为毫秒。在弱网环境下，你可以通过配置该参数增加 H5 实时直播的稳定性。例如，将 `bufferDela`y 设为 `5000`，延迟会拉大到 5 秒，可以保证网络较差时直播的流畅度。
 - `AgoraRTS.proxy` 方法通过代理 Client 中订阅相关的方法，实现对订阅的流软件解码。
 
-<div class="alert info">我们建议在页面加载后立即调用 <code>AgoraRTS.init</code> 方法，调用后 SDK 会立刻开始预加载解码器和解码线程，可以缩短首帧出图时间。</div>
+<div class="alert note">注意：
+	<li>由于解码库文件较大，我们建议在服务端配置好解码库文件的缓存策略。</li>
+	<li>我们建议在页面加载后立即调用 <code>AgoraRTS.init</code> 方法，调用后 SDK 会立刻开始预加载解码器和解码线程，可以缩短首帧出图时间。</li></div>
 
 ```javascript
 var client = AgoraRTC.createClient({ mode: "live", codec: "vp8"});
 AgoraRTS.init(AgoraRTC, {
-  /**
-   * 设置 SDK 文件夹中的解码库文件的线上访问地址。
-   * SDK 会根据这里填写的路径来动态请求相应的解码库文件。
-   * **建议** 在服务端配置好解码库文件的缓存策略（因为文件较大）。
-   */
+  // 设置 SDK 文件夹中的解码库文件的线上访问地址。
+  // SDK 会根据这里填写的路径来动态请求相应的解码库文件。
   wasmDecoderPath: "./xxx/AgoraRTS.wasm",
   asmDecoderPath: "./xxx/AgoraRTS.asm",
+  // 保证流畅度，拉大延迟到 5s
+  bufferDelay: 5000,
 });
 AgoraRTS.proxy(client);
 ```
