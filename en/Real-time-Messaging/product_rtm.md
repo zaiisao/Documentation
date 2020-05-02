@@ -3,7 +3,7 @@
 title: Agora Real-time Messaging Overview
 description: 
 platform: All Platforms
-updatedAt: Fri Feb 28 2020 07:14:05 GMT+0800 (CST)
+updatedAt: Sat May 02 2020 04:30:20 GMT+0800 (CST)
 ---
 # Agora Real-time Messaging Overview
 You can use the Agora RTM (Real-time Messaging) SDK to create a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency for a global audience. 
@@ -12,7 +12,7 @@ You can use the Agora RTM (Real-time Messaging) SDK to create a stable messaging
 
 
 
-The Agora RTM SDK supports the following functions:
+The RTM SDK supports the following functions:
 
 -   Send and receive (offline) peer-to-peer messages.
 -   Send and receive channel messages.

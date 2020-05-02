@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Apr 30 2020 04:14:11 GMT+0800 (CST)
+updatedAt: Thu Apr 30 2020 08:03:50 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -89,6 +89,58 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+## v3.1.0
+
+v3.1.0 was released on April 30, 2020.
+
+**Behavior changes**
+
+v3.1.0 optimizes the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms#dual-stream) and has the following changes in SDK behavior:
+
+- The low-quality stream has a fixed default video profile: Resolution (width × height) 160 × 120, bitrate 50 Kbps, frame rate 15 fps.
+- The low-quality video stream keeps the aspect ratio of the high-quality video stream. If you set the resolution of the low-quality stream to a different aspect ratio, the SDK automatically adjusts the height of the low-quality stream so that the aspect ratio remains the same.
+
+**New features**
+
+#### 1. Adding media metadata
+
+Adds `Client.sendMetadata` to support attaching media metadata to a published stream. You can use this feature to diversify interactions in live broadcasts, such as digital coupons sharing and online quizzes.
+
+Adds the `Client.on("receive-metadata")` callback to notify the app when receiving metadata from a remote user.
+
+<div class="alert note">Note:
+	<li>This feature supports the H.264 codec only.</li>
+	<li>Under unstable network conditions, the SDK cannot guarantee absolute synchronization between the metadata and the media stream.</li>
+</div>
+
+#### 2. Event of unpublishing a stream
+
+Adds the `Client.on("stream-unpublished")` callback. When the local user successfully unpublishes a stream, the SDK triggers this callback.
+
+#### 3. Setting multiple TURN servers
+
+From this release, you can pass configurations of multiple TURN servers to `ClientConfig.turnServer.`
+
+**Fixed issues**
+
+- Occasional reconnection failure.
+- For streams published on iOS Safari, the video rotated by 90 degrees on the receivers.
+- On Firefox 75, calling `Stream.getStats` got an empty result.
+- In audio-only scenarios, calling `Stream.switchDevice` caused errors.
+- If reconnection occurred during calling `Client.join`, the SDK did not return the user ID after the joining succeeded.
+- The value of the `status` property in `StreamPlayError` was inaccurate.
+- Occasional repeated triggerings of the `Client.on("mute-audio")` and `Client.on("mute-video")` callbacks.
+- Failed to get the local audio when creating streams on Electron.
+
+**API changes**
+
+#### Added
+
+- [`Client.sendMetadata`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#sendmetadata)
+- New events in [`Client.on`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on):
+  - `"receive-metadata"`
+  - `"stream-unpublished"`
 
 ## v3.0.2
 

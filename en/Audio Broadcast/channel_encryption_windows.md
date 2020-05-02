@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Windows
-updatedAt: Thu Apr 16 2020 06:48:36 GMT+0800 (CST)
+updatedAt: Thu Apr 30 2020 08:44:50 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
@@ -192,7 +192,7 @@ class AgoraPacketObserver : public agora::IPacketObserver
 
 ## Step 3: Register the Instance
 
-Call the <code>registerAgoraPacketObserver</code> method to register the instance of the <code>agora::IPacketObserver</code> class implemented by your application.
+Call the <code>registerPacketObserver</code> method to register the instance of the <code>agora::IPacketObserver</code> class implemented by your application.
 
 
 
