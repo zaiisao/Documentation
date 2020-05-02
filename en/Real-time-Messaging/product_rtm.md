@@ -32,7 +32,7 @@ The RTM SDK supports the following functions:
 
 ## Applications
 
-You can use the Agora RTM SDK for the following scenarios:
+You can use the RTM SDK for the following scenarios:
 
 <table>
   <tr>
@@ -41,7 +41,7 @@ You can use the Agora RTM SDK for the following scenarios:
   </tr>
   <tr>
     <td>Live Broadcast</td>
-    <td><li>Commentaries<br><li>Chatrooms<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the chat room status (e.g., number of the channel members)<br><li>Privilege management (e.g., remove or mute a specified user)<br></td>
+    <td><li>Commentaries<br><li>Chatrooms<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the chat room status, such as the number of the channel members<br><li>Privilege management, such as removing or muting a specific user<br></td>
   </tr>
   <tr>
     <td>Social Network</td>
@@ -49,7 +49,7 @@ You can use the Agora RTM SDK for the following scenarios:
   </tr>
   <tr>
     <td>Education</td>
-    <td><li>Class group messages<br><li>Private chat messages<br><li>Whiteboard<br><li>Privilege management (e.g., awards, presenting, hands up or likes)<br></td>
+    <td><li>Class group messages<br><li>Private chat messages<br><li>Whiteboard<br><li>Privilege management, such as awards, presenting, hands up or likes)<br></td>
   </tr>
   <tr>
     <td>IoT</td>
