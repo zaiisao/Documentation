@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Thu Apr 09 2020 07:37:45 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:44:52 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -182,7 +182,7 @@ v2.3.3 adds the `onAudioVolumeIndication` callback to get the list of users who 
 
 v2.3.0 was released on January 14, 2019. 
 
-> The calculation of the usage of the On-premise Recording SDK v2.3.0 or later is separated from that of the Agora Voice Call/Voice Interactive Broadcast SDK and the Agora Video Call/Video Interactive Broadcast SDK. Contact [sales-us@agora.io](mailto:sales-us@agora.io) for details.
+> The calculation of the usage of the On-premise Recording SDK v2.3.0 or later is separated from that of the Agora Voice Call/Voice Interactive Broadcast SDK and the Agora Video Call/Video Interactive Broadcast SDK. Contact [support@agora.io](mailto:support@agora.io) for details.
 
 **New features**
 

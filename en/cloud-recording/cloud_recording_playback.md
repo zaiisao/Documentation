@@ -3,7 +3,7 @@
 title: Synchronous Playback
 description: 
 platform: All Platforms
-updatedAt: Tue Jan 07 2020 08:39:29 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:51:48 GMT+0800 (CST)
 ---
 # Synchronous Playback
 ## Overview
@@ -18,7 +18,7 @@ In individual recording mode, Agora Cloud Recording records the audio and video 
 
 You can use the [Agora Cloud Recording RESTful API Callback Service](../../en/cloud-recording/cloud_recording_callback_rest.md) to acquire the start timestamp of the recording. The `startUtcMs` parameter in the `recorder_slice_start` event indicates the time when Agora Cloud Recording starts to record a UID, or the start time of the first slice file for the UID. `startUtcMs` is the time (ms) in UTC.
 
-> Contact [sales-us@agora.io](http://sales-us@agora.io/) to enable the callback service. See [Enable the callback service](https://docs-preview.agoralab.co/en/Agora%20Platform/ncs#user-configuration) for details.
+> Contact [support@agora.io](http://support@agora.io/) to enable the callback service. See [Enable the callback service](https://docs-preview.agoralab.co/en/Agora%20Platform/ncs#user-configuration) for details.
 
 You can also get the start timestamp by parsing the M3U8 file.
 

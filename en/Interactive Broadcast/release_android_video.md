@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed May 06 2020 05:57:40 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:44:37 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -1375,7 +1375,7 @@ v2.0 is released on December 6, 2017.
 
 
 
--   Provides a set of RESTful APIs to ban a peer user from the server in the Communication and Live-broadcast profiles. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable this function, if required.
+-   Provides a set of RESTful APIs to ban a peer user from the server in the Communication and Live-broadcast profiles. Contact [support@agora.io](mailto:support@agora.io) to enable this function, if required.
 -   Supports the following Android emulators: NOX, Lightning, and Xiaoyao.
 
 

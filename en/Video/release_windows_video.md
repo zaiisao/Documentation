@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed May 06 2020 05:58:43 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:44:15 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -1138,7 +1138,7 @@ Due to the upgrade of Agora products, Windows SDK 2.0 no longer supports the Ago
 
 
 
-- Provides a set of RESTful APIs to ban a peer user from the server in the communication and live broadcast profiles. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable the function, if required.
+- Provides a set of RESTful APIs to ban a peer user from the server in the communication and live broadcast profiles. Contact [support@agora.io](mailto:support@agora.io) to enable the function, if required.
 - Supports Windows (x64).
 - Adds API methods such as setting the volume, mute states, and system volume settings.
 

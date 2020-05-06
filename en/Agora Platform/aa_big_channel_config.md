@@ -3,14 +3,14 @@
 title: Big Channel Config (Beta)
 description: 
 platform: All Platforms
-updatedAt: Wed Feb 19 2020 10:22:27 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:52:04 GMT+0800 (CST)
 ---
 # Big Channel Config (Beta)
 The **Big Channel Config** function of Agora Analytics enables you to customize big channels in your project, and you can choose **Enable All**, **Enable by Project** or **Enable by Channel** according to your actual needs.
 
 ## Getting started
 
-1. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable **Big Channel** for your project.
+1. Contact [support@agora.io](mailto:support@agora.io) to enable **Big Channel** for your project.
 2. Login to [Agora Console](https://console.agora.io/) and click Agora Analytics on the left navigation panel.
 3. Select a project in the top-left corner.
    ![](https://web-cdn.agora.io/docs-files/1581333255519)

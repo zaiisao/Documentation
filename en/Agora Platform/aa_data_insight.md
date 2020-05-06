@@ -3,7 +3,7 @@
 title: Data Insight (Beta)
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 05:58:55 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:51:52 GMT+0800 (CST)
 ---
 # Data Insight (Beta)
 The **Data Insight** function of Agora Analytics provides periodic call usage and call quality statistics. It is designed to help you understand the trend of the usage and quality of your calls, their distribution in various dimensions, and daily data breakdown.
@@ -17,7 +17,7 @@ The **Data Insight** function does the following:
 
 ## Getting started
 
-1. Contact sales-us@agora.io to enable the **Data Insight** function for your project.
+1. Contact support@agora.io to enable the **Data Insight** function for your project.
 2. Login to [Agora Console](https://console.agora.io) and click **Agora Analytics** on the left navigation bar.
 3. Select a project in the top-left corner.
    ![](https://web-cdn.agora.io/docs-files/1570869036486)

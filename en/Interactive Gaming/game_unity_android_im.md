@@ -3,7 +3,7 @@
 title: Implementing IM for Gaming
 description: 
 platform: Unity_(Android)
-updatedAt: Thu Aug 15 2019 10:24:50 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:46:34 GMT+0800 (CST)
 ---
 # Implementing IM for Gaming
 With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:
@@ -34,7 +34,7 @@ With **Hello-IM-Unity-Agora** Demo, you can implement the following functions:
 
     -   Get an App ID. See [Getting an App ID](../../en/Agora%20Platform/token.md)
 
-    -   Get an App Key。Contact [sales-us@agora.io](mailto:sales-us@agora.io) for your App Key
+    -   Get an App Key。Contact [support@agora.io](mailto:support@agora.io) for your App Key
 
 
 ## Step 2: Create a Project

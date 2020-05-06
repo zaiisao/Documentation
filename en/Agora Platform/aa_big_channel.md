@@ -3,7 +3,7 @@
 title: Big Channel (Beta)
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 06:00:04 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:52:00 GMT+0800 (CST)
 ---
 # Big Channel (Beta)
 The **[Big Channel](#BigChannel)** function of Agora Analytics enables you to view and analyze the real-time usage and quality of Big Channels, to help you improve the efficiency of activities in Big Channels.
@@ -21,7 +21,7 @@ Big Channel provides the following information:
 
 ## Getting started
 
-1. Contact [sales-us@agora.io](mailto:sales-us@agora.io) to enable the Big Channel feature for your project.
+1. Contact [support@agora.io](mailto:support@agora.io) to enable the Big Channel feature for your project.
 2. Log in to [Agora Console](https://console.agora.io/) and click Agora Analytics on the left navigation bar.
 3. Select a project in the top-left corner.
   ![](https://web-cdn.agora.io/docs-files/1580097344188)

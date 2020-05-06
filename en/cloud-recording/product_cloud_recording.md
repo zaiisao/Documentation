@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Overview
 description: 
 platform: Linux
-updatedAt: Wed Apr 29 2020 08:30:11 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:49:46 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Overview
 Agora Cloud Recording is a component provided by Agora to record and save voice calls, video calls, and interactive broadcasts on your cloud storage. It is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+. 
@@ -55,7 +55,7 @@ Agora Cloud Recording consists of the following features:
 
 ## Billing
 
-Use Agora Cloud Recording to join a channel, subscribe to the audio and video streams that need to be recorded, and upload the recorded files to the specified cloud storage. Agora Cloud Recording is charged by the minute and [the aggregate resolution](https://docs.agora.io/en/faq/video_billing#calculating-the-recording-aggregate-resolution). The aggregate resolutions of the audio and video streams are divided into three types: Audio, HD, and HD+. Contact [sales-us@agora.io](mailto:sales-us@agora.io) for details.
+Use Agora Cloud Recording to join a channel, subscribe to the audio and video streams that need to be recorded, and upload the recorded files to the specified cloud storage. Agora Cloud Recording is charged by the minute and [the aggregate resolution](https://docs.agora.io/en/faq/video_billing#calculating-the-recording-aggregate-resolution). The aggregate resolutions of the audio and video streams are divided into three types: Audio, HD, and HD+. Contact [support@agora.io](mailto:support@agora.io) for details.
 
 The billing for each recording task is separate. For example, two recording tasks of the same channel are charged separately.
 

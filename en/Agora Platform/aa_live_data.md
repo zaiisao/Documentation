@@ -3,7 +3,7 @@
 title: Realtime (Beta)
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 06:00:03 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:51:55 GMT+0800 (CST)
 ---
 # Realtime (Beta)
 Use the Realtime function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
@@ -12,12 +12,12 @@ Use the Realtime function of Agora Analytics to monitor the live status of your 
 - Analytic diagrams display the scale, experience, and network statistics over a specified range of time.
 - You can query the statistics of the past 24 hours at a maximum. The statistics are updated every minute.
 
-> - You can also get these statistics by using [Agora Analytics RESTful API](../../en/Agora%20Platform/aa_api.md). Contact sales-us@agora.io for details.
+> - You can also get these statistics by using [Agora Analytics RESTful API](../../en/Agora%20Platform/aa_api.md). Contact support@agora.io for details.
 > - Realtime only covers statistics relating to the [Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk).
 
 ## Getting started
 
-1. Contact sales-us@agora.io to enable the Realtime function for your project.
+1. Contact support@agora.io to enable the Realtime function for your project.
 2. Login to [Agora Console](https://console.agora.io/) and click **Agora Analytics** on the left navigation bar.
 3. Select a project in the top-left corner.
 4. Click [**Live Beat**](#livebeat) under **Realtime** to view the live status of your project. Click [**Scale Overview**](#livescale), [**Experience Overview**](#livexp), or [**Network Overview**](#livenet) to view detailed live statistics and analytic diagrams.

@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Node.js
-updatedAt: Wed Apr 29 2020 08:35:30 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:51:22 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Node.js. 
@@ -85,7 +85,7 @@ This method builds a token with your int uid.
 | `role` <sup>1</sup>          | <li> `Role_Publisher = 1`: (Recommended) A broadcaster (host) in a live-broadcast profile.<li>`Role_Subscriber = 2`: An audience in a live-broadcast profile. |
 | `privilegeExpiredTs`      | Time represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set expireTimestamp as the current timestamp + 600 (seconds). Set it as 0 if the privilege never expires. |
 
-<div class="alert warning"><sup>1</sup>: All the <code>role</code> enums share exactly the same privileges. To enable privilege authentication with a Token, e.g., to remove the upstreaming privilege of the audience, contact sales-us@agora.io.</div>
+<div class="alert warning"><sup>1</sup>: All the <code>role</code> enums share exactly the same privileges. To enable privilege authentication with a Token, e.g., to remove the upstreaming privilege of the audience, contact support@agora.io.</div>
 
 
 ### buildTokenWithUserAccount
@@ -107,7 +107,7 @@ This method builds a token with your string userAccount.
 | `role` <sup>2</sup>          | <li> `Role_Publisher = 1`: (Recommended) A broadcaster (host) in a live-broadcast profile.<li>`Role_Subscriber = 2`: An audience in a live-broadcast profile. |
 | `privilegeExpiredTs`      | Time represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set expireTimestamp as the current timestamp + 600 (seconds). Set it as 0 if the privilege never expires. |
 
-<div class="alert warning"><sup>2</sup>: All the <code>role</code> enums share exactly the same privileges. To enable privilege authentication with a Token, e.g., to remove the upstreaming privilege of the audience, contact sales-us@agora.io.</div>
+<div class="alert warning"><sup>2</sup>: All the <code>role</code> enums share exactly the same privileges. To enable privilege authentication with a Token, e.g., to remove the upstreaming privilege of the audience, contact support@agora.io.</div>
 
 ## Reference
 	
