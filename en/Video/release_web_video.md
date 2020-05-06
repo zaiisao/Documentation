@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Apr 30 2020 08:03:50 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 05:34:24 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -96,22 +96,22 @@ v3.1.0 was released on April 30, 2020.
 
 **Behavior changes**
 
-v3.1.0 optimizes the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms#dual-stream) and has the following changes in SDK behavior:
+v3.1.0 optimizes [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms#dual-stream) and makes the following changes in SDK behavior:
 
-- The low-quality stream has a fixed default video profile: Resolution (width × height) 160 × 120, bitrate 50 Kbps, frame rate 15 fps.
+- The low-quality stream has a fixed default video profile: A resolution (width × height) of 160 × 120, a bitrate of 50 Kbps, and a frame rate of 15 fps.
 - The low-quality video stream keeps the aspect ratio of the high-quality video stream. If you set the resolution of the low-quality stream to a different aspect ratio, the SDK automatically adjusts the height of the low-quality stream so that the aspect ratio remains the same.
 
 **New features**
 
 #### 1. Adding media metadata
 
-Adds `Client.sendMetadata` to support attaching media metadata to a published stream. You can use this feature to diversify interactions in live broadcasts, such as digital coupons sharing and online quizzes.
+Adds `Client.sendMetadata` to support attaching media metadata to a published stream. You can use this feature to broaden the types of interactions in a live broadcast, such as sharing digital coupons and online quizzes.
 
-Adds the `Client.on("receive-metadata")` callback to notify the app when receiving metadata from a remote user.
+Adds the `Client.on("receive-metadata")` callback to notify the app when the SDK receives metadata from a remote user.
 
 <div class="alert note">Note:
 	<li>This feature supports the H.264 codec only.</li>
-	<li>Under unstable network conditions, the SDK cannot guarantee absolute synchronization between the metadata and the media stream.</li>
+	<li>When the network is unstable, the SDK cannot guarantee strict synchronization between the metadata and the media stream.</li>
 </div>
 
 #### 2. Event of unpublishing a stream
@@ -120,7 +120,7 @@ Adds the `Client.on("stream-unpublished")` callback. When the local user success
 
 #### 3. Setting multiple TURN servers
 
-From this release, you can pass configurations of multiple TURN servers to `ClientConfig.turnServer.`
+This release enables you to pass configurations of multiple TURN servers to `ClientConfig.turnServer.`
 
 **Fixed issues**
 
@@ -128,10 +128,10 @@ From this release, you can pass configurations of multiple TURN servers to `Clie
 - For streams published on iOS Safari, the video rotated by 90 degrees on the receivers.
 - On Firefox 75, calling `Stream.getStats` got an empty result.
 - In audio-only scenarios, calling `Stream.switchDevice` caused errors.
-- If reconnection occurred during calling `Client.join`, the SDK did not return the user ID after the joining succeeded.
+- If reconnection occurred when calling `Client.join`, the SDK did not return the user ID after joining the channel successfully.
 - The value of the `status` property in `StreamPlayError` was inaccurate.
-- Occasional repeated triggerings of the `Client.on("mute-audio")` and `Client.on("mute-video")` callbacks.
-- Failed to get the local audio when creating streams on Electron.
+- Occasionally, the SDK triggered the `Client.on("mute-audio")` and `Client.on("mute-video")` callbacks repeatedly.
+- The SDK failed to get the local audio when creating streams in Electron.
 
 **API changes**
 

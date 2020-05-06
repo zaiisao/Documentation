@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: iOS,macOS
-updatedAt: Wed Apr 15 2020 07:43:19 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:37:47 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -17,13 +17,13 @@ Co-hosting across channels applies to scenarios such as an online singing contes
 
 ## Implementation
 
-<div class="alert note">To enable channel media relay, contact <a href="mailto:sales-us@agora.io">sales-us@agora.io</a>.</div>
+<div class="alert note">To enable channel media relay, contact <a href="mailto:support@agora.io">support@agora.io</a>.</div>
 
 Before relaying media streams across channels, ensure that you have implemented the basic real-time communication functions in your project. For details, see the following documents:
 - iOS: [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_ios.md).
 - macOS: [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_mac.md)
 
-The Agora Native SDK and later support co-hosting across channels with the following methods:
+As of v2.9.0, the Agora Native SDK supports co-hosting across channels with the following methods:
 
 - startChannelMediaRelay
 - updateChannelMediaRelay
@@ -45,7 +45,7 @@ During the relay, the SDK reports the states and events of the channel media rel
 
 ### API call sequence
 
-Follow the API call sequence to implent your code logic:
+Follow the API call sequence to implement your code logic:
 
 ![](https://web-cdn.agora.io/docs-files/1568964082213)
 

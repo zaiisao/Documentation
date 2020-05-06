@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Apr 23 2020 02:19:53 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 05:57:40 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -41,7 +41,7 @@ v3.0.0.2 was released on Apr 22, 2020.
 
 #### Specify the area of connection
 
-This release adds `create` for specifying the area of connection when creating an `RtcEngine` instance. This advanced feature applies to scenarios that have regional restrictions. You can choose from areas including Mainland China, North America, Europe, and global (default).
+This release adds `create` for specifying the area of connection when creating an `RtcEngine` instance. This advanced feature applies to scenarios that have regional restrictions. You can choose from areas including Mainland China, North America, Europe, Asia (excluding Mainland China), and global (default).
 
 After specifying the area of connection:
 

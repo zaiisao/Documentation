@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 08:44:17 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 06:09:36 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
@@ -29,10 +29,6 @@ The Agora Cloud Recording RESTful APIs provide a callback service. After enablin
 
 If you need to use the callback sercive, see [RESTful API Callbacks](../../en/cloud-recording/cloud_recording_callback_rest.md) for details.
 
-
-## Sample requests
-
-Agora provides a [Postman collection](https://github.com/AgoraIO/Agora-RESTful-Service/tree/master/cloud-recording), which contains sample RESTful API requests for a cloud recording. You can use the collection to get a quick start of the basic functionalities of the Cloud Recording RESTful APIs. All you need to do is to import the collection to Postman and set your environment variables.
 
 ## Prerequisites
 
@@ -166,6 +162,14 @@ The following are some common errors:
   Calling `stop` together with `query` affects the response of `stop`: The HTTP status code is 206 and the response does not have the `fileList` field.
 
 See [Cloud Recording Integration FAQ](https://docs.agora.io/en/faqs/cloud_integration_faq) and [Errors](../../en/cloud-recording/cloud_recording_api_rest.md) if you have other issues using Agora Cloud Recording.
+
+## Sample requests
+
+Agora provides a [Postman collection](https://github.com/AgoraIO/Agora-RESTful-Service/tree/master/cloud-recording), which contains sample RESTful API requests for a cloud recording. You can use the collection to get a quick start of the basic functionalities of the Cloud Recording RESTful APIs. All you need to do is to import the collection to Postman and set your environment variables. 
+
+You can also use Postman to generate code snippets written in various programming languages. To do so, select a request, click **Code**, and select the desired language in **GENERATE CODE SNIPPETS**.
+
+![](https://web-cdn.agora.io/docs-files/1588737618604)
 
 ## <a name="demo-rest"></a>Sample code
 
