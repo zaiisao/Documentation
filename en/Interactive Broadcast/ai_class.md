@@ -3,7 +3,7 @@
 title: AI Interactive Classroom
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 20 2020 04:52:37 GMT+0800 (CST)
+updatedAt: Thu May 07 2020 09:10:57 GMT+0800 (CST)
 ---
 # AI Interactive Classroom
 ## Overview
@@ -106,6 +106,7 @@ Agora provides:
   - mediaDenoise: Use this tool to reduce the background noise, turn up the audio gain of sound in video files, and change the resolution of output video files. For details, see [Use mediaDenoise](https://docs-preview.agoralab.co/en/Server/preprocess#denoise).
   - AIInterpolation: Use this tool to insert frames between two video files. For details, see [Use AIInterpolation](https://docs-preview.agoralab.co/en/Server/preprocess#interpolation).
 - An Integration guide, which shows you how to integrate the Agora Media Streaming Server SDK into your project and call APIs for media streaming. For details, see [Implement Media Streaming on Server](https://docs-preview.agoralab.co/en/Server/media_streaming_on_server).
+- The [API reference](https://docs-preview.agoralab.co/en/Server/API%20Reference/server_cpp/index.html) of Agora Media Streaming Server SDK.
 
 ### Build a client for students
 
