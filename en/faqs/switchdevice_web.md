@@ -3,7 +3,7 @@
 title: How can I switch the input device during a web call?
 description: how to switch input devices for web sdk
 platform: Web
-updatedAt: Fri Apr 24 2020 17:21:59 GMT+0800 (CST)
+updatedAt: Thu May 07 2020 17:43:17 GMT+0800 (CST)
 ---
 # How can I switch the input device during a web call?
 The Agora Web SDK identifies media input devices by the device ID (`deviceId`). Each device has a unique device ID that you can get by [`getDevices`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/globals.html#getdevices). The device ID is randomly generated, and may change for the same device, so Agora recommends calling  `getDevices` every time before switching the device.
