@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: iOS,macOS
-updatedAt: Wed Apr 15 2020 07:46:30 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:50:16 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述

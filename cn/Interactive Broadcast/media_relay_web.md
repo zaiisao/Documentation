@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Web
-updatedAt: Tue Dec 17 2019 10:44:30 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:50:27 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述

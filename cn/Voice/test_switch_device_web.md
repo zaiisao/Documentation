@@ -3,7 +3,7 @@
 title: 音视频设备测试
 description: 
 platform: Web
-updatedAt: Sun Sep 29 2019 08:22:54 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 10:00:04 GMT+0800 (CST)
 ---
 # 音视频设备测试
 ## 功能描述
@@ -76,4 +76,5 @@ AgoraRTC.getDevices(function(devices){
 ## 开发注意事项
 
 - 在调用 `Stream.init` 时可能会报错，常见错误请参考 [API 文档](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.stream.html#init)。
+- Chrome 81 及以上版本、Safari 和 Firefox 浏览器需要在获得媒体设备权限后才能获取设备 ID，详见[为什么在 Chrome 81 浏览器上无法获取设备 ID？](../../cn/faq/empty_deviceId.md)
 - 设备 ID 是随机生成的，部分情况下同一个设备的 ID 可能会改变，因此我们建议每次测试设备时都先调用 `getDevices` 获取设备 ID。

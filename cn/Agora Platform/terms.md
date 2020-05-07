@@ -3,7 +3,7 @@
 title: 术语库
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 24 2020 10:10:38 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 08:23:05 GMT+0800 (CST)
 ---
 # 术语库
 ## A
@@ -130,7 +130,7 @@ App 证书是一串 Agora 提供的随机字符串，用于开启 Token 鉴权�
 ## G
 #### <a name="audience"></a>**观众 (audience)**
 
-直播场景中，只能接受流、不能发送流的用户为观众。
+直播场景中，只能接收流、不能发送流的用户为观众。
 
 ## H
 #### <a name="layout"></a>**合流布局 (video layout)**

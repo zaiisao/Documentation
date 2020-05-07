@@ -3,10 +3,10 @@
 title: 产品概述
 description: draft
 platform: All Platforms
-updatedAt: Thu Aug 15 2019 05:50:38 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 04:07:47 GMT+0800 (CST)
 ---
 # 产品概述
-实时码流加速（Real-Time Streaming Acceleration, RTSA）提供 API，帮助自研音视频编解码的开发者实现自定义码流在互联网上的实时传输。RTSA 充分利用声网自建的底层实时传输网络 [Agora SD-RTN™](../../cn/RTSA/terms.md) (Software Defined Real-time Network)，运用全球全网节点和智能动态路由算法，提供高连通性、高实时性、高稳定性的码流传输云服务，减少延时、丢包等网络问题对传输质量的影响。
+实时码流加速（Real-time Streaming Acceleration, RTSA）提供 API，帮助自研音视频编解码的开发者实现自定义码流在互联网上的实时传输。RTSA 充分利用声网自建的底层实时传输网络 [Agora SD-RTN™](../../cn/RTSA/terms.md) (Software Defined Real-time Network)，运用全球全网节点和智能动态路由算法，提供高连通性、高实时性、高稳定性的码流传输云服务，减少延时、丢包等网络问题对传输质量的影响。
 
 ## 功能特性
 RTSA 支持自定义音视频码流的实时传输，包括特殊编码格式、自定义加密编码、非主流编码格式等。

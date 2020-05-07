@@ -21,8 +21,7 @@ updatedAt: Thu Oct 24 2019 08:25:10 GMT+0800 (CST)
 
 
 
-- Ubuntu Linux 14.04 LTS 64 位。
-- CentOS 7.0+ 64 位。
+- Ubuntu 14.04 LTS 64 位或 CentOS 7.0+ 64 位。
 - glibc 2.14 及以上。
 - IDE 工具 Eclipse。
 

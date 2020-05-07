@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Windows
-updatedAt: Tue Dec 17 2019 10:33:23 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:50:35 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述

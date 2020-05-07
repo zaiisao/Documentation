@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Mar 20 2020 05:23:10 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 08:51:12 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -101,7 +101,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 
 ### <a name="4"></a>4 cloud_recording_file_infos
 
-`eventType` 为 4 表示已生成录制索引文件并上传。每次录制均会生成一个 M3U8 文件，用于索引该次录制所有的切片 TS/WebM 文件。你可以通过 M3U8 文件播放和管理录制文件。
+`eventType` 为 4 表示生成 M3U8 文件并上传。录制过程中，录制服务会反复上传和覆盖 M3U8 文件，以更新索引信息，但只有第一次生成并上传 M3U8 文件时会触发该回调。
 
  `details` 中包含以下字段：
 
