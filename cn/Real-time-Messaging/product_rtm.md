@@ -3,12 +3,12 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Sat May 02 2020 04:17:00 GMT+0800 (CST)
+updatedAt: Thu May 07 2020 03:28:44 GMT+0800 (CST)
 ---
 # 产品概述
 
 
-实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时场景。
+Agora 实时消息（Real-time Messaging，RTM）SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时场景。
 
 ## 功能概述
 
@@ -80,13 +80,13 @@ updatedAt: Sat May 02 2020 04:17:00 GMT+0800 (CST)
   </tr>
   <tr>
     <td>兼容性</td>
-    <td><li>支持 iOS、Android（arm64、armv7、x86）、macOS、Windows、Linux、Web 等多个平台<br><li> Web 平台支持 Chrome 49+、Firefox 52+、Safari 9+、Internet Explorer 11+<br><li>支持 Java、C++ server 端</td>
+    <td><li>支持 iOS、Android（arm64、armv7、x86）、macOS、Windows、Linux、Web 等多个平台<br><li> Web 平台支持 Chrome 49+、Firefox 52+、Safari 9+、Internet Explorer 11+<br><li>支持 Java、C++ 服务端</td>
   </tr>
 </table>	
 
 ## 实时消息 vs. 信令
 
-实时消息系统将逐步替代信令。除上述高可靠、高并发、全球化部署等优势之外，Agora RTM SDK 将会持续更新，不断推出更多更丰富的功能和场景应用。
+实时消息系统将逐步替代信令。除上述高可靠、高并发、全球化部署等优势之外，实时消息 SDK 将会持续更新，不断推出更多更丰富的功能和场景应用。
 
 > 对信令 SDK 的维护将于 2019 年第四季度停止。
 
