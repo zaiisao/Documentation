@@ -18,7 +18,7 @@ To switch from the screen-sharing stream to the camera stream, subscribe to the 
 We recommend this solution if your application scenario allows creating two streams at the same time.
 
 ## Solution 2: Close the current stream and publish a new stream
-1. Call `Stream.unpublish` and `Stream.close` in sequence to unpublish and close the current screen-sharing stream.
+1. Call `Client.unpublish` and `Stream.close` in sequence to unpublish and close the current screen-sharing stream.
 2. Call `AgoraRTC.createStream` to create a new local video stream.
 3. Call `Stream.init` and `Stream.publish` to initialize and publish the stream.
 
