@@ -1,11 +1,11 @@
 
 ---
-title: Has the Agora RTM SDK set a limit on the number of online  users? How many members does a single RTM channel support?
+title: Does Agora RTM SDK have a limit on the number of online users?
 description: 
 platform: All Platforms
-updatedAt: Fri Aug 30 2019 12:08:37 GMT+0800 (CST)
+updatedAt: Thu May 07 2020 11:40:01 GMT+0800 (CST)
 ---
-# Has the Agora RTM SDK set a limit on the number of online  users? How many members does a single RTM channel support?
+# Does Agora RTM SDK have a limit on the number of online users?
 The Agora RTM SDK does not have a limit on the number of online users or on the number of concurrent members in a single channel. 
 
 - If the number of members in a channel is below 1,000, we recommend keeping your ongoing channel messages below 200 per second. 
