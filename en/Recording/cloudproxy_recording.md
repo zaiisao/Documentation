@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy for recording
 platform: All Platforms
-updatedAt: Thu Feb 20 2020 07:35:02 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:53:11 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -20,7 +20,7 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 
 Follow these steps to use the cloud proxy service.
 
-1. Contact sales@agora.io with the following information to enable the cloud proxy service:
+1. Contact support@agora.io with the following information to enable the cloud proxy service:
 
   - The regions to use cloud proxy.
   - The scale of your app in terms of channel concurrency.
@@ -55,7 +55,7 @@ Follow these steps to use the cloud proxy service.
  
   > If you use our command-line demo, add `--enableCloudProxy 1 --proxyType ${type} --proxyServer ${ip,port}` to your command when starting a recording.
 
-4. To use the cloud proxy service in the production environment, contact sales@agora.io for the IP addresses and ports for the production environment and add these resources to your whitelist.
+4. To use the cloud proxy service in the production environment, contact support@agora.io for the IP addresses and ports for the production environment and add these resources to your whitelist.
 
 
 

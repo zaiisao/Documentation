@@ -20,8 +20,7 @@ We provide an open-source demo project on GitHub, [Agora-RTM-Tutorial-Linux-Serv
 
 
 
-- Ubuntu Linux 14.04 LTS 64 bit. 
-- CentOS 7.0+ 64 bit. 
+- Ubuntu 14.04 LTS 64 bit or CentOS 7.0+ 64 bit. 
 - glibc 2.14 or later.
 - Integrated Development Environment: Eclipse.
 

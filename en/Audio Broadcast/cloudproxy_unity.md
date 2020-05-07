@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: 
 platform: Unity
-updatedAt: Mon Mar 23 2020 14:06:16 GMT+0800 (CST)
+updatedAt: Wed May 06 2020 09:53:47 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -18,7 +18,7 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 
 1. Download [the latest version of the Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/downloads). Agora RTC SDK v2.4.0 or later supports the cloud proxy.
 2. Integrate the SDK and prepare the development environment. For details, see the *Quickstart Guide*.
-3. Contact sales@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
+3. Contact support@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
 4. Add the following test IP addresses and ports to your whitelist.
 
 	The sources are the clients that integrate the Agora RTC SDK and Agora On-Premise Recording SDK.
