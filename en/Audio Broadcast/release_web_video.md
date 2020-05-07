@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu May 07 2020 04:01:46 GMT+0800 (CST)
+updatedAt: Thu May 07 2020 04:01:53 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -103,7 +103,7 @@ v3.1.0 optimizes [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/te
 
 **New features**
 
-#### 1. Adding media metadata
+#### 1. Media metadata
 
 Adds `Client.sendMetadata` to support attaching media metadata to a published stream. You can use this feature to broaden the types of interactions in a live broadcast, such as sharing digital coupons and online quizzes.
 
@@ -118,14 +118,14 @@ Adds the `Client.on("receive-metadata")` callback to notify the app when the SDK
 
 Adds the `Client.on("stream-unpublished")` callback. When the local user successfully unpublishes a stream, the SDK triggers this callback.
 
-#### 3. Setting multiple TURN servers
+#### 3. Multiple TURN servers
 
 This release enables you to pass configurations of multiple TURN servers to `ClientConfig.turnServer.`
 
 **Fixed issues**
 
 - Occasional reconnection failure.
-- For streams published on iOS Safari, the video rotated by 90 degrees on the receivers.
+- Video streams published from iOS Safari rotated by 90 degrees on the receiving clients.
 - On Firefox 75, calling `Stream.getStats` got an empty result.
 - In audio-only scenarios, calling `Stream.switchDevice` caused errors.
 - If reconnection occurred when calling `Client.join`, the SDK did not return the user ID after joining the channel successfully.
