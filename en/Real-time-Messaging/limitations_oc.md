@@ -52,7 +52,7 @@ The call limit is for one <code>AgoraRtmKit</code> instance. If an operation cor
 | Retrieve member count of specified channels  | 5    | 
 | Join a channel  | 5    | 
 | Send a channel message| 10    | 
-| Gets a member list of the channel  | 5   | 
+| Get a member list of the channel  | 5   | 
 
 
 

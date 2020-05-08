@@ -51,7 +51,7 @@ The call limit is for one <code>RtmClient</code> instance. If an operation corre
 | Retrieve member count of specified channels  | 5    | 
 | Join a channel  | 5    | 
 | Send a channel message| 10    | 
-| Gets a member list of the channel  | 5   | 
+| Get a member list of the channel  | 5   | 
 
 
 
