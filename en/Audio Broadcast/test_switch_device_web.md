@@ -3,7 +3,7 @@
 title: Test a Media Device
 description: 
 platform: Web
-updatedAt: Sun Sep 29 2019 08:24:37 GMT+0800 (CST)
+updatedAt: Thu May 07 2020 09:52:36 GMT+0800 (CST)
 ---
 # Test a Media Device
 ## Introduction
@@ -80,5 +80,6 @@ Use the HTML5 `<audio>` element to create an audio player on the web page for us
 
 ## Considerations
 
-- Errors might occur when you call the stream.init method, see the [API Reference](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#init) for details.
+- On Chrome 81 or later, Safari, and Firefox, device IDs are only available after the user has granted permissions to use the media device. See [Why can't I get device ID on Chrome 81?](https://docs.agora.io/en/faq/empty_deviceId)
+- Errors might occur when you call `stream.init`, see the [API Reference](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#init) for details.
 - The device ID is randomly generated, and might change for the same device, so we recommend you call the `getDevices` method every time before testing the devices.

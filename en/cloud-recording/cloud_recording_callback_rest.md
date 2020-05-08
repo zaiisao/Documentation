@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Wed May 06 2020 08:51:58 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 03:11:56 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -165,12 +165,14 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 `eventType` 41 indicates that the recording service leaves the channel, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `recorder_leave`.
-- `leaveCode`: Number. The code that indicates why the recording service leaves the channel.
-  - `0`: The initialization fails.
-  - `1`: The AgoraCoreService process receives the SIGINT signal. 
-  - `2`: The Agora Clouding Recording Service automatically leaves the channel and stops recording as there is no user in the channel.
-  - `4`: The AgoraCoreService process receives the SIGTERM signal.
-  - `8`: The recording application calls the stop cloud recording method to leave the channel.
+- `leaveCode`: Number. The leave code. You can perform a bitwise AND operation on the code and each enum value, and those with non-zero results are the reason for the exit. For example, if you perform a bit-by-bit AND operation on code 6 (0b110) and each enum value, only LEAVE_CODE_SIG (0b10) and LEAVE_CODE_NO_USERS (0b100) get a non-zero result. The reasons for exiting, in this case, include a timeout and a signal triggering the exit.
+  | Enumerator              |                                                              |
+  | :---------------------- | ------------------------------------------------------------ |
+  | LEAVE_CODE_INIT         | 0: The initialization fails.                                 |
+  | LEAVE_CODE_SIG          | 0b10: The AgoraCoreService process receives the SIGINT signal.  |
+  | LEAVE_CODE_NO_USERS     | 0b100: The recording server automatically leaves the channel and stops recording because the channel has no user. |
+  | LEAVE_CODE_TIMER_CATCH  | 0b1000: Ignore it.                                                |
+  | LEAVE_CODE_CLIENT_LEAVE | 0b1000: The recording server calls the `leaveChannel` method to leave the channel. |
 
 ### <a name="42"></a>42 recorder_slice_start
 
@@ -179,9 +181,9 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 - `msgName`: String. The message name, `recorder_slice_start`.
 - `startUtcMs`：Number. The time (ms) in UTC when the recording starts (the starting time of the first slice file).
 - `discontinueUtcMs`：Number. In most cases, this field is the same as `startUtcMs`. When the recording is interrupted, the Agora Cloud Recording service automatically resumes the recording and  triggers this event. In this case, the value of this field is the time (ms) in UTC when the last slice file stops.
-- `mixedAllUser`:  String. Whether the audio and video of all users are mixed into a single file.
-  - `"true"`: All users are recorded in a single file.
-  - `"false"`: Each user is recorded separately.
+- `mixedAllUser`:  Boolean. Whether the audio and video of all users are mixed into a single file.
+  - `true`: All users are recorded in a single file.
+  - `false`: Each user is recorded separately.
 - `streamUid`: String. User ID. The user whose audio or video is recorded in the file. In composite mode, `streamUid` is `0`.
 - `trackType`: String. Type of the recorded file.
   - `"audio"`: Audio file.
