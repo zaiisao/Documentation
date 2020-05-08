@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: iOS,macOS
-updatedAt: Tue Dec 10 2019 04:20:41 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 09:40:34 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -12,7 +12,8 @@ The process of publishing streams into the CDN (Content Delivery Network) is cal
 
 When multiple hosts are in a channel in CDN live streaming, [transcoding](https://docs.agora.io/en/AgoraPlatform/terms?platform=AllPlatforms#transcoding) is used to combine the streams of all the hosts into a single stream. Transcoding sets the audio/video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
 
-![](https://web-cdn.agora.io/docs-files/1569414336352)
+![](https://web-cdn.agora.io/docs-files/1588930815826)
+
 
 ## Prerequisites
 

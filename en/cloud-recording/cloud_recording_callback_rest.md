@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri May 08 2020 03:11:56 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 07:16:20 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -165,14 +165,14 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 `eventType` 41 indicates that the recording service leaves the channel, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `recorder_leave`.
-- `leaveCode`: Number. The leave code. You can perform a bitwise AND operation on the code and each enum value, and those with non-zero results are the reason for the exit. For example, if you perform a bit-by-bit AND operation on code 6 (0b110) and each enum value, only LEAVE_CODE_SIG (0b10) and LEAVE_CODE_NO_USERS (0b100) get a non-zero result. The reasons for exiting, in this case, include a timeout and a signal triggering the exit.
+- `leaveCode`: Number. The leave code. You can perform a bitwise AND operation on the code and each enum value, and those with non-zero results are the reason for the exit. For example, if you perform a bit-by-bit AND operation on code 6 (binary 110) and each enum value, only LEAVE_CODE_SIG (binary 10) and LEAVE_CODE_NO_USERS (binary 100) get a non-zero result. The reasons for exiting, in this case, include a timeout and a signal triggering the exit.
   | Enumerator              |                                                              |
   | :---------------------- | ------------------------------------------------------------ |
   | LEAVE_CODE_INIT         | 0: The initialization fails.                                 |
-  | LEAVE_CODE_SIG          | 0b10: The AgoraCoreService process receives the SIGINT signal.  |
-  | LEAVE_CODE_NO_USERS     | 0b100: The recording server automatically leaves the channel and stops recording because the channel has no user. |
-  | LEAVE_CODE_TIMER_CATCH  | 0b1000: Ignore it.                                                |
-  | LEAVE_CODE_CLIENT_LEAVE | 0b1000: The recording server calls the `leaveChannel` method to leave the channel. |
+  | LEAVE_CODE_SIG          | 2 (binary 10): The AgoraCoreService process receives the SIGINT signal.  |
+  | LEAVE_CODE_NO_USERS     | 4 (binary 100): The recording server automatically leaves the channel and stops recording because the channel has no user. |
+  | LEAVE_CODE_TIMER_CATCH  | 8 (binary 1000): Ignore it.                                                |
+  | LEAVE_CODE_CLIENT_LEAVE | 16 (binary 10000): The recording server calls the `leaveChannel` method to leave the channel. |
 
 ### <a name="42"></a>42 recorder_slice_start
 

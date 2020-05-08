@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: How to integrate recording SDK for Java
 platform: Linux Java
-updatedAt: Tue Jul 16 2019 09:54:29 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 07:41:49 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
@@ -151,9 +151,9 @@ Set up the environment on your Linux server:
 5. Ensure that your compiler is GCC 4.4+.
 8. Set up the Java Development Kit and ensure **jni.h** is included.
 9. Set `CLASSPATH` in Java and `LD_LIBRARY_PATH` in Linux.
-2. Open the following TCP ports: 1080 and 8000.
+2. Open the following TCP ports: 1080, 8000, 9700, 25000, and 30000.
 3. Open the following UDP ports:
-   - Duplex ports: 1080, 4000 to 4030, 8000, 9700, and 25000.
+   - Duplex ports: 1080, 7000, 8000, 8913, 9700, 25000, local ports 4000 to 4030.
    - Simplex downlink ports used by the recording processes.
 
    > - Use the `iptables -L` command line to check the UDP port.

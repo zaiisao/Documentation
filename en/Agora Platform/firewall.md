@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 05:56:48 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 08:29:43 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -113,8 +113,8 @@ vocs5.agora.io
 
 | Destination ports | Port type | Operation |
 | ---------- | ------------------------------------------------ | -----------------|
-| 1080; 8000     | TCP              |  Allow |
-| Duplex ports 1080, 4000 to 4030; 8000; 9700; 25000; and simplex downstream ports used by recording processes.   |  UDP  | Allow |
+| 1080; 8000; 9700; 25000; 30000    | TCP              |  Allow |
+| Duplex ports 1080; 7000; 8000; 8913; 9700; 25000；local ports 4000 to 4030; simplex downstream ports used by recording processes.  |  UDP  | Allow |
 
 <div class="alert note">Simplex downstream port: To record the content in channels, you need one recording process for each of the channels. One recording thread requires four simplex downstream ports. There must be no port conflict among processes, including system processes and all recording processes.<ul><li>Agora recommends that you specify the range of ports used by the recording processes. Configure a large range for all recording processes (Agora recommends 40000 to 41000 or larger). If so, the Recording SDK assigns ports to each recording process within the specified range and avoids port conflicts automatically. To set the port range, you need to configure the lowUdpPort and highUdpPort parameters.</li><li>If the lowUdpPort and highUdpPort parameters are not specified, the ports used by the recording processes are at random, which may cause port conflicts.</li></ul></div>
 
