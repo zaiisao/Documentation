@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Unity
-updatedAt: Tue Mar 24 2020 07:13:35 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 09:37:26 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora Unity SDK 快速实现语音通话。
@@ -167,6 +167,8 @@ CheckPermission();
 
 你还可以根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户音频首帧等。
 
+<div class="alert note">如果你想退出应用或者释放 <tt>IRtcEngine</tt> 内存，需调用 <tt>Destroy</tt> 方法销毁 <tt>IRtcEngine</tt>。详见<a href="#destroy">销毁 IRtcEngine</a >。</div>
+
 ```C#
 // 填入 App ID 并初始化 IRtcEngine。 
 mRtcEngine = IRtcEngine.GetEngine (appId); 
@@ -217,9 +219,10 @@ public void leave()
 	}
 ```
 
+<a name="destroy"></a>
 ### 6. 销毁 IRtcEngine
 
-离开频道后，如果你想退出应用或者释放内存，需调用 `Destroy` 方法销毁 `IRtcEngine`。
+离开频道后，如果你想退出应用或者释放 `IRtcEngine` 内存，需调用 `Destroy` 方法销毁 `IRtcEngine`。
 
 ```C#
 void OnApplicationQuit()

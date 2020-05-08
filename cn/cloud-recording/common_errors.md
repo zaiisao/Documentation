@@ -3,7 +3,7 @@
 title: 云端录制常见错误
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 08:55:57 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 08:46:44 GMT+0800 (CST)
 ---
 # 云端录制常见错误
 本文仅列出使用云端录制 RESTful API 过程中常见的错误码或错误信息，如果遇到其他错误，请联系 Agora 技术支持。
@@ -31,6 +31,6 @@ updatedAt: Wed Apr 29 2020 08:55:57 GMT+0800 (CST)
   - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
 
 - `1028`：`updateLayout`方法的请求包体中参数错误。
--	`"invalid appid"`：无效的 App ID。请确保 App ID 填写正确。如果你已经确认 App ID 填写正确，但仍出现该错误，请联系 support@agora.io。
+-	`"invalid appid"`：无效的 App ID。请确保 App ID 填写正确。如果你已经确认 App ID 填写正确，但仍出现该错误，请[提交工单](https://agora-ticket.agora.io/)。
 - `"no Route matched with those values`": 该错误可能由 HTTP 方法填写错误导致，例如将 GET 方法填写为 POST。
 - `"Invalid authentication credentials"`: 该错误可能由 Customer ID 或 Customer Certificate 填写错误导致。如果你已经确认 Customer ID 和 Customer Certificate 填写正确，但仍出现该错误，请联系 support@agora.io。

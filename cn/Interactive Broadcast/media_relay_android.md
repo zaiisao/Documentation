@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Android
-updatedAt: Wed May 06 2020 09:50:08 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 08:31:45 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -16,7 +16,7 @@ updatedAt: Wed May 06 2020 09:50:08 GMT+0800 (CST)
 
 ## 实现方法
 
-<div class="alert note">跨频道连麦功能需要联系 <a href="mailto:sales@agora.io">sales@agora.io 开通</a>。</div>
+<div class="alert note">跨频道连麦功能需要<a href="https://agora-ticket.agora.io/">提交工单</a>联系技术支持开通。</div>
 
 实现跨频道连麦功能前，请确保你已在项目中实现基本的实时音视频功能，详见[开始互动直播](../../cn/Interactive%20Broadcast/start_live_android.md)。
 

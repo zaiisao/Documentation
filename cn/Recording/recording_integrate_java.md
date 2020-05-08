@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Linux Java
-updatedAt: Tue Jul 16 2019 09:53:57 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 04:11:19 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 本地服务端录制 SDK。
@@ -154,21 +154,21 @@ updatedAt: Tue Jul 16 2019 09:53:57 GMT+0800 (CST)
    </tbody>
    </table>
 
-5. 安装编译器: gcc 4.4+ 。
-8. 配置好 jdk 环境，并确保包含 jni.h。
-9. 配置好 Java 的 `CLASSPATH` 和 Linux 的 `LD_LIBRARY_PATH` 环境变量。
-7. 打开 TCP 端口：1080、8000。
+2. 安装编译器: gcc 4.4+ 。
+3. 配置好 jdk 环境，并确保包含 jni.h。
+4. 配置好 Java 的 `CLASSPATH` 和 Linux 的 `LD_LIBRARY_PATH` 环境变量。
+5. 打开 TCP 端口：1080、8000、9700、25000、30000。
 
-3. 打开 UDP 端口：双向 1080、4000-4030、8000、9700、25000 和 所有的录制进程所使用的单向下行端口。
+6. 打开 UDP 端口：双向 1080、7000、8000、8913、9700、25000、本地端口 4000-4030 以及所有的录制进程所使用的单向下行本地端口。
 
    > - 录制一个频道的内容需要开启一个对应的录制进程；单个录制进程需要使用 4 个单向下行端口。进程（包括各个录制进程和系统进程）之间不得有端口冲突。
    > - Agora 建议指定录制进程使用端口的范围。你可以为多个录制进程统一配置较大的端口范围（Agora 建议 40000 ~ 41000 或更大）。此时，本地服务端录制 SDK 会在指定范围内为每个录制进程分配端口，并避免端口的冲突。要设置端口范围，你需要配置参数 `lowUdpPort` 和`highUdpPort`。
    > - 如果不指定参数 `lowUdpPort` 和 `highUdpPort` ，录制进程所使用的端口为随机端口，会有端口冲突的风险。
    > - 使用`iptables -L`命令查看 UDP 端口。
 
-4. 将域名 .agora.io 和 .agoralab.co 设为白名单。
+7. 将域名 .agora.io 和 .agoralab.co 设为白名单。
 
-7. 为调试方便，Agora 建议你打开系统的 core dump 功能以记录可能产生的程序崩溃信息。
+8. 为调试方便，Agora 建议你打开系统的 core dump 功能以记录可能产生的程序崩溃信息。
 
 
 ## 编译代码示例

@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 08:53:50 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 08:45:09 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -49,7 +49,7 @@ updatedAt: Wed Apr 29 2020 08:53:50 GMT+0800 (CST)
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/acquire
 
-> 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请联系 support@agora.io。
+> 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请[提交工单](https://agora-ticket.agora.io/)联系技术支持。
 
 调用该方法成功后，你可以从 HTTP 响应包体中的 `resourceId` 字段得到一个 resource ID。这个 resource ID 的时效为 5 分钟，你需要在 5 分钟内用这个 resource ID 去调用[开始云端录制的 API](#start)。
 
@@ -771,6 +771,6 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
   - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ","
 
 - `1028`：[`updateLayout`](#update) 方法的请求包体中参数错误。
-- `"invalid appid"`：无效的 App ID。请确保 App ID 填写正确。如果你已经确认 App ID 填写正确，但仍出现该错误，请联系 support@agora.io。
+- `"invalid appid"`：无效的 App ID。请确保 App ID 填写正确。如果你已经确认 App ID 填写正确，但仍出现该错误，请[提交工单](https://agora-ticket.agora.io/)。
 - `"no Route matched with those values`": 该错误可能由 HTTP 方法填写错误导致，例如将 GET 方法填写为 POST。
 - `"Invalid authentication credentials"`: 该错误可能由 Customer ID 或 Customer Certificate 填写错误导致。如果你已经确认 Customer ID 和 Customer Certificate 填写正确，但仍出现该错误，请联系 support@agora.io。

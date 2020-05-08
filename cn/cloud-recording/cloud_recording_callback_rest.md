@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Wed May 06 2020 08:51:12 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 07:16:17 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -157,12 +157,16 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 `eventType` 为 41 表示录制服务已退出， `details` 中包含以下字段：
 
 - `msgName`：String 类型，消息名称，即 `recorder_leave`。
-- `leaveCode`：Number 类型，退出码，为以下多个原因的组合。
-  - 0：初始化失败
-  - 1：由信号触发的退出
-  - 2：频道内除录制 App 外，没有其他用户
-  - 4：捕获到信号错误
-  - 8：wrapper 层主动退出
+- `leaveCode`：Number 类型，退出码。将该退出码与各枚举值逐一进行按位与运算，计算结果非零的，即为退出原因。例如，code 为 6（二进制 110）时，将其与各枚举值逐一进行按位与计算，LEAVE_CODE_SIG (二进制 10）与 LEAVE_CODE_NO_USERS (二进制 100）的结果非零，则退出原因包括收到 SIGINT 信号以及录制超时。
+
+  | 枚举值                  |                                                              |
+  | :---------------------- | ------------------------------------------------------------ |
+  | LEAVE_CODE_INIT         | 0：初始化失败。                                              |
+  | LEAVE_CODE_SIG          | 2（二进制 10）：AgoraCoreService 收到 SIGINT 信号而触发的退出。        |
+  | LEAVE_CODE_NO_USERS     | 4（二进制 100）：频道内除录制端外没有其他用户，录制端自动离开频道。     |
+  | LEAVE_CODE_TIMER_CATCH  | 8（二进制 1000）：可忽略。                                               |
+  | LEAVE_CODE_CLIENT_LEAVE | 16（二进制 10000）：录制端调用 `leaveChannel` 方法退出频道。 |
+
 
 ### <a name="42"></a>42 recorder_slice_start
 
@@ -171,9 +175,9 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 - `msgName`：String 类型，消息名称，即 `recorder_slice_start`。
 - `startUtcMs`：Number 类型，录制开始时间（即第一个录制切片的开始时间），UTC 时间，精确到毫秒。
 - `discontinueUtcMs`：Number 类型，UTC 时间，精确到毫秒，正常情况下该字段值与 `startUtcMs` 一致。当录制发生异常中断时， Agora 云端录制会自动恢复录制，此时也会收到该事件通知，且该字段表示上一个正常的录制切片结束的时间。
-- `mixedAllUser`：String 类型，是否将每个用户分开录制。
-  - `"true"`：所有用户合并在一个录制文件中。
-  - `"false"`：每个用户分开录制。
+- `mixedAllUser`：Boolean 类型，是否将每个用户分开录制。
+  - `true`：所有用户合并在一个录制文件中。
+  - `false`：每个用户分开录制。
 - `streamUid`：String 类型，用户 UID，表示录制的是哪个用户的音频流或视频流。在合流模式下，`streamUid` 为 `"0"`。
 - `trackType`：String 类型，录制文件的类型。
   - `"audio"`：纯音频文件。

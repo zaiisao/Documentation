@@ -3,7 +3,7 @@
 title: 同步回放
 description: 解释如何将录制的视频和其他流文件进行同步回放
 platform: All Platforms
-updatedAt: Tue Jan 07 2020 08:38:55 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 08:48:35 GMT+0800 (CST)
 ---
 # 同步回放
 ## 功能描述
@@ -18,7 +18,7 @@ updatedAt: Tue Jan 07 2020 08:38:55 GMT+0800 (CST)
 
 你可以通过[云端录制 RESTful API 回调](../../cn/cloud-recording/cloud_recording_callback_rest.md)来获取录制开始时的时间戳。 通过 `recorder_slice_start` 事件中的 `startUtcMs` 字段，便可获取某路流录制的开始时间（即第一个录制切片的开始时间）。该时间戳为 UTC 时间，精确到毫秒。
 
->  你需要联系 sales@agora.io 开通回调服务。详情见[开通回调服务](https://docs-preview.agoralab.co/cn/Agora%20Platform/ncs#用户配置)。
+>  你需要[提交工单](https://agora-ticket.agora.io/)联系技术支持开通回调服务。详情见[开通回调服务](https://docs-preview.agoralab.co/cn/Agora%20Platform/ncs#用户配置)。
 
 你也可以通过解析 M3U8 文件来获取录制开始时间。
 
