@@ -13,7 +13,7 @@ This page provides a brief overview of the limitations of the Agora RTM Objectiv
 
 ## Maximum Call Frequency
 
-The call limit is for one <code>AgoraRtmKit</code> instance. If an operation corresponds to multiple methods, the number of the method calls of an operation equals the sum of the method calls of all corresponding methods in a specific timeframe.
+The call limit is for one <code>AgoraRtmKit</code> instance. If an operation corresponds to multiple methods, the number of the method calls of an operation equals the sum of the method calls of all corresponding methods in a specific time frame.
 
 <div class="alert note">You can increase the call limit of an API by creating multiple <code>AgoraRtmKit</code> instances.</div>
 
