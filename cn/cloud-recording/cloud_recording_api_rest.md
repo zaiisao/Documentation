@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri May 08 2020 08:45:09 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 03:19:14 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -230,6 +230,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `1`：[Amazon S3](https://aws.amazon.com/cn/s3/?nc2=h_m1)
   - `2`：[阿里云](https://www.aliyun.com/product/oss)
   - `3`：[腾讯云](https://cloud.tencent.com/product/cos)
+  - `4`：[金山云](https://www.ksyun.com/post/product/KS3.html)
 
 - `region`：Number 类型，第三方云存储指定的地区信息。
   当 `vendor` = 0，即第三方云存储为七牛云时：
@@ -303,6 +304,19 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `17`：NA_Toronto
   - `18`：EU_Frankfurt
   - `19`：EU_Moscow
+
+  当 `vendor` = 4，即第三方云存储为金山云时：
+
+  - `0`：CN_Hangzhou
+  - `1`：CN_Shanghai
+  - `2`：CN_Qingdao
+  - `3`：CN_Beijing
+  - `4`：CN_Guangzhou
+  - `5`：CN_Hongkong
+  - `6`：JR_Beijing
+  - `7`：JR_Shanghai
+  - `8`：NA_Russia_1
+  - `9`：NA_Singapore_1
 
 - `bucket`：String 类型，第三方云存储的 bucket。
 - `accessKey`：String 类型，第三方云存储的 access key。建议提供只写权限的访问密钥。
@@ -566,21 +580,21 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       "filename": "xxx.m3u8",
       "trackType": "audio_and_video",
       "uid": "123",
-      "mixedAllUser": "true",
-      "isPlayable": "true",
-      "sliceStartTime": "1562724971626"
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
    },    
    {
       "filename": "xxx.m3u8",
       "trackType": "audio_and_video",
       "uid": "456",
-      "mixedAllUser": "true",
-      "isPlayable": "true",
-      "sliceStartTime": "1562724971626"
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
    }
    ],
     "status": "5",
-    "sliceStartTime": "1562724971626"
+    "sliceStartTime": 1562724971626
    }       
 }
  ```
@@ -599,13 +613,13 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       - `"video"`：纯视频文件。
       - `"audio_and_video"`：音视频文件。
     - `uid`：String 类型，用户 UID，表示录制的是哪个用户的音频流或视频流。
-    - `mixedAllUser`：String 类型，用户是否是分开录制的。
-      - `"true"`：所有用户合并在一个录制文件中。
-      - `"false"`：每个用户分开录制。
-    - `isPlayable`：String 类型，是否可以在线播放。
-      - `"true"`：可以在线播放。
-      - `"false"`：无法在线播放。
-    - `sliceStartTime`：String 类型，该文件的录制开始时间，Unix 时间戳，单位为毫秒。
+    - `mixedAllUser`：Boolean 类型，用户是否是分开录制的。
+      - `true`：所有用户合并在一个录制文件中。
+      - `false`：每个用户分开录制。
+    - `isPlayable`：Boolean 类型，是否可以在线播放。
+      - `true`：可以在线播放。
+      - `false`：无法在线播放。
+    - `sliceStartTime`：Number 类型，该文件的录制开始时间，Unix 时间戳，单位为毫秒。
   - `status`：Number 类型，当前录制的状态。
     - `0`：没有开始云端录制。
     - `1`：云端录制初始化完成。
@@ -617,7 +631,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
     - `7`：云端录制服务全部停止。
     - `8`：云端录制准备退出。
     - `20`：云端录制异常退出。
-  - `sliceStartTime`: String 类型，录制开始的时间，Unix 时间戳，单位为毫秒。
+  - `sliceStartTime`: Number 类型，录制开始的时间，Unix 时间戳，单位为毫秒。
 
 
 
@@ -686,17 +700,17 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       "filename": "xxx.m3u8",
       "trackType": "audio_and_video",
       "uid": "123",
-      "mixedAllUser": "true",
-      "isPlayable": "true",
-      "sliceStartTime": "1562724971626"
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
     },
     {
       "filename": "xxx.m3u8",
       "trackType": "audio_and_video",
       "uid": "456",
-      "mixedAllUser": "true",
-      "isPlayable": "true",
-      "sliceStartTime": "1562724971626"
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
     }
     ],
     "uploadingStatus": "uploaded"
@@ -718,13 +732,13 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       - `"video"`：纯视频文件。
       - `"audio_and_video"`：音视频文件。
     - `uid`：String 类型，用户 UID，表示录制的是哪个用户的音频流或视频流。
-    - `mixedAllUser`：String 类型，用户是否是分开录制的。
-      - `"true"`：所有用户合并在一个录制文件中。
-      - `"false"`：每个用户分开录制。
-    - `isPlayable`：String 类型，是否可以在线播放。
-      - `"true"`：可以在线播放。
-      - `"false"`：无法在线播放。
-    - `sliceStartTime`：String 类型，该文件的录制开始时间，Unix 时间戳，单位为毫秒。
+    - `mixedAllUser`：Boolean 类型，用户是否是分开录制的。
+      - `true`：所有用户合并在一个录制文件中。
+      - `false`：每个用户分开录制。
+    - `isPlayable`：Boolean 类型，是否可以在线播放。
+      - `true`：可以在线播放。
+      - `false`：无法在线播放。
+    - `sliceStartTime`：Number 类型，该文件的录制开始时间，Unix 时间戳，单位为毫秒。
   - `uploadingStatus`：String 类型，当前录制上传的状态。
     - `"uploaded"`：本次录制的文件已经全部上传至指定的第三方云存储。
     - `"backuped"`：本次录制的文件已经全部上传完成，但是至少有一个 TS 文件上传到了 Agora 云备份。Agora 服务器会自动将这部分文件继续上传至指定的第三方云存储。

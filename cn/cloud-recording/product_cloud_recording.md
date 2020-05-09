@@ -3,7 +3,7 @@
 title: 云端录制
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 08:30:24 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 06:34:27 GMT+0800 (CST)
 ---
 # 云端录制
 Agora 云端录制，是 Agora 针对音视频通话、直播研发的录制组件，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK (1.12.0 或更高版本) 兼容，通过简单的操作方法，帮助开发者快速、灵活地实现录制服务，实现一对一、一对多的音视频通话或直播的录制。同 Agora 本地服务端录制相比，Agora 云端录制无需部署 Linux 服务器，减轻了研发和运维的压力，更轻量便捷。
@@ -22,7 +22,7 @@ Agora 云端录制，是 Agora 针对音视频通话、直播研发的录制组�
 | 录制指定的媒体类型 | 支持录制指定的的媒体类型：<ul><li>仅录制音频</li><li>仅录制视频</li><li>同时录制音频和视频</li></ul> |
 | 设置音视频属性     | 在合流模式下，支持设置音视频属性，如码率和分辨率。           |
 | 设置合流布局       | 在合流模式下，支持[自定义合流布局](https://docs.agora.io/cn/cloud-recording/cloud_recording_layout?platform=Linux#a-namecustoma%E8%87%AA%E5%AE%9A%E4%B9%89%E5%90%88%E6%B5%81%E5%B8%83%E5%B1%80)或[使用预设的布局](https://docs.agora.io/cn/cloud-recording/cloud_recording_layout?platform=Linux#a-namepredefineda%E9%80%89%E6%8B%A9%E9%A2%84%E8%AE%BE%E7%9A%84%E5%90%88%E6%B5%81%E5%B8%83%E5%B1%80%E6%A0%B7%E5%BC%8F)，以及设置屏幕（画布）的背景颜色。支持在录制过程中更新合流布局或背景颜色。 |
-| 第三方云存储       | 支持将录制文件存储在以下第三方云存储中：<ul><li>Amazon S3</li><li>阿里云</li><li>腾讯云</li><li>七牛云</li></ul>  你可以自定义录制文件在云存储中的存放路径。|
+| 第三方云存储       | 支持将录制文件存储在以下第三方云存储中：<ul><li>Amazon S3</li><li>阿里云</li><li>腾讯云</li><li>七牛云</li><li>金山云</li></ul>  你可以自定义录制文件在云存储中的存放路径。|
 | 录制双流           | 如果 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk) 启用了[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#dual-stream)，你可以选择录制大流或小流。 |
 | 录制加密频道       | 支持录制采用以下加密方式的频道：<ul><li>AES128XTS</li><li>AES128ECB</li><li>AES256XTS</li></ul> |
 | 转码           | Agora 提供转码脚本，用于[合并音视频文件](https://docs.agora.io/cn/cloud-recording/cloud_recording_merge_files?platform=All%20Platforms)以及[转换文件格式](https://docs.agora.io/cn/cloud-recording/cloud_recording_convert_format?platform=All%20Platforms)。 |

@@ -3,7 +3,7 @@
 title: 云端录制更新历史
 description: 
 platform: Linux
-updatedAt: Fri Apr 17 2020 03:49:39 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 06:35:20 GMT+0800 (CST)
 ---
 # 云端录制更新历史
 ## 简介
@@ -23,6 +23,10 @@ width: 150px;
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制与 Agora Web SDK 1.12.0 或更高版本兼容。            |
+
+## 2020.05.09
+
+本次发布新增了对金山云存储的支持。
 
 ## 2020.04.17
 
