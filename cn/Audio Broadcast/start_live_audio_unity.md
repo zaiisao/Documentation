@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Unity
-updatedAt: Tue Apr 28 2020 10:39:52 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 10:53:11 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora Unity SDK 快速实现音频互动直播。
@@ -144,14 +144,15 @@ CheckPermission();
 ### 3. 初始化 IRtcEngine
 
 
-$$ d1a9cc20-d2cf-11e9-9546-9fdade2ba6ee
-{
-  """: " ",
-  "[": " ",
-  "]": " ",
-  """: " "
-}
-$$
+你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
+
+1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
+2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
+3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
+
+调用 `GetEngine` 方法，传入获取到的 App ID，即可初始化 `IRtcEngine`。
+
+<div class="alert note">如果你想退出应用或者释放 <tt>IRtcEngine</tt> 内存，需调用 <tt>Destroy</tt> 方法销毁 <tt>IRtcEngine</tt>。详见<a href="#destroy">销毁 IRtcEngine</a >。</div>
 
 你还可以根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户音频首帧等。
 
@@ -234,9 +235,10 @@ public void leave()
 	}
 ```
 
+<a name="destroy"></a>
 ### 8. 销毁 IRtcEngine
 
-离开频道后，如果你想退出应用或者释放内存，需调用 `Destroy` 方法销毁 `IRtcEngine`。
+离开频道后，如果你想退出应用或者释放 `IRtcEngine` 内存，需调用 `Destroy` 方法销毁 `IRtcEngine`。
 
 ```C#
 void OnApplicationQuit()

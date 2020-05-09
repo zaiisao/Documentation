@@ -3,7 +3,7 @@
 title: 合流录制
 description: 描述如何设置参数以进行合流录制
 platform: All Platforms
-updatedAt: Wed Apr 01 2020 06:03:59 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 02:15:47 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
@@ -69,11 +69,11 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
                 "bitrate": 500, 
                 "fps": 15, 
                 "mixedVideoLayout": 1,
-                "backgroundColor": "#FF0000",
+                "backgroundColor": "#FF0000"
+						},
             "subscribeVideoUids": ["123","456"], 
             "subscribeAudioUids": ["123","456"],
             "subscribeUidGroup": 0
-           }
        }, 
         "storageConfig": {
             "accessKey": "xxxxxxf",
