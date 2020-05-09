@@ -12,7 +12,7 @@ updatedAt: Mon Mar 09 2020 08:37:50 GMT+0800 (CST)
 
 在推流到 CDN 过程中，当频道中有多个主播时，通常会涉及到[转码](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#转码)，将多个直播流组合成单个流，并设置这个流的音视频属性和合图布局。
 
-![](https://web-cdn.agora.io/docs-files/1588993461807)
+![](https://web-cdn.agora.io/docs-files/1588993718649)
 
 ## 前提条件
 

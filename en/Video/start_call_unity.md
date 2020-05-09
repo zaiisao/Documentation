@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Unity
-updatedAt: Wed Mar 04 2020 04:27:06 GMT+0800 (CST)
+updatedAt: Fri May 08 2020 10:47:22 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora SDK for Unity.
@@ -166,6 +166,8 @@ In this step, you need to use the App ID of your project. Follow these steps to 
 
 Call the `GetEngine` method and pass in the App ID to initialize the IRtcEngine object.
 
+<div class="alert note">If you want to exit the app or release the memory of <tt>IRtcEngine</tt>, call <tt>Destroy</tt> to destroy the <tt>IRtcEngine</tt> object. See details in <a href="#destroy">Destroy the IRtcEngine object</a >.</div>
+
 Listen for callback events, such as when the local user joins the channel, and when the first video frame of a remote user is decoded.
 
 ```C#
@@ -304,9 +306,10 @@ public void leave()
 	}
 ```
 
+<a name="destroy"></a>
 ###  8. Destroy the IRtcEngine object
 
-After leaving the channel, if you want to exit the app or release the memory, call `Destroy` to destroy the `IRtcEngine` object.
+After leaving the channel, if you want to exit the app or release the memory of `IRtcEngine`, call `Destroy` to destroy the `IRtcEngine` object.
 
 ```C#
 void OnApplicationQuit()
