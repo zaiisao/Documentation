@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Wed Apr 29 2020 05:43:36 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 07:11:58 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -240,6 +240,7 @@ _mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
 
 1. 调用 `unpublishVideo`/`unpublishAudio` 方法取消分享该视频/音频流。
 2. 调用 `detachPlayerFromRtc` 方法将播放器和 Agora 频道解绑。
+3. （可选）调用 [`setVideoSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:) 方法将播放器画面切换为主播画面，使远端用户重新看到主播。
 
 > 本地用户离开频道（`leaveChannel`）后，分享的视频/音频流不会中断。只有 `unpublishVideo`/`unpublishAudio` 方法才能取消分享。
 
@@ -255,6 +256,13 @@ _rtcEnginekit = [AgoraRtcEngineKit sharedEngineWithAppId:@"YOUR_APPID" delegate:
 [[AgoraRtcChannelPublishHelper shareInstance] publishAudio];
 [[AgoraRtcChannelPublishHelper shareInstance] publishVideo];
 [[AgoraRtcChannelPublishHelper shareInstance] detachPlayerFromRtc];
+
+if(!_defaultCamera)
+{
+    _defaultCamera = [[AgoraRtcDefaultCamera alloc] init];
+}
+[_rtcEngineKit setVideoSource:NULL];
+[_rtcEngineKit setVideoSource:_defaultCamera];
 ```
 
 ## 获取日志文件

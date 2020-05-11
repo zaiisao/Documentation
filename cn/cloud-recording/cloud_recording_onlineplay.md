@@ -3,7 +3,7 @@
 title: 在线播放录制文件
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 20 2020 04:13:22 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 03:05:33 GMT+0800 (CST)
 ---
 # 在线播放录制文件
 ## 功能描述
@@ -67,7 +67,7 @@ updatedAt: Mon Apr 20 2020 04:13:22 GMT+0800 (CST)
 1. 登录 AWS S3 控制台，进入云端录制使用的存储桶（bucket），将文件属性分别设置成如下：
    1. 选中 M3U8 文件，点击**操作** ，选择**更改元数据**。
 	 
-	 ![](https://web-cdn.agora.io/docs-files/1556165143077)
+    ![](https://web-cdn.agora.io/docs-files/1589166303624)
 	 
    2. 将 **Content-Type** 键值设为 **application/x-mpegURL** （需手动输入）。
 	 
