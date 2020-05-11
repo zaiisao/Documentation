@@ -29,7 +29,7 @@ updatedAt: Tue Apr 14 2020 03:17:21 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，搭配使用 RTC SDK、RTM SDK 和 Agora Edu 云服务在你的项目中实现基础的实时音视频、实时消息和教室信息管理功能。
+参考下图时序，搭配使用 Agora RTC SDK、Agora RTM SDK 和 Agora Edu 云服务在你的项目中实现基础的实时音视频、实时消息和教室信息管理功能。
 
 ![](https://web-cdn.agora.io/docs-files/1586788580814)
 
@@ -43,7 +43,7 @@ updatedAt: Tue Apr 14 2020 03:17:21 GMT+0800 (CST)
 | [change room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-room-info)      | 修改教室信息。      |
 | [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-user-info)  | 修改用户信息。      |
 
-- RTM SDK
+- Agora RTM SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
@@ -54,7 +54,7 @@ updatedAt: Tue Apr 14 2020 03:17:21 GMT+0800 (CST)
 | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage)  | 发送频道消息。成功发送后，频道内所有用户都能收到。 |
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。 |
 
-- RTC SDK
+- Agora RTC SDK
 
 
 | API | 实现功能 |
