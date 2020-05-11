@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 08:54:49 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 06:48:55 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -230,6 +230,7 @@ The following parameters are required in the request body.
   - `1`: [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls)
   - `2`: [Alibaba Cloud](https://www.alibabacloud.com/product/oss)
   - `3`: [Tencent Cloud](https://intl.cloud.tencent.com/product/cos)
+  - `4`: [Kingsoft Cloud](https://en.ksyun.com/post/product/KS3.html)
 
 - `region`: Number. The regional information specified by the third-party cloud storage:
   When the third-party cloud storage is [Qiniu Cloud](https://www.qiniu.com/en/products/kodo) (`vendor` = 0):
@@ -303,7 +304,19 @@ The following parameters are required in the request body.
     - `17`：NA_Toronto 
     - `18`：EU_Frankfurt 
     - `19`：EU_Moscow
+	
+  When the third-party cloud storage is [Kingsoft Cloud](https://en.ksyun.com/post/product/KS3.html) (`vendor` = 4):
 
+    - `0`：CN_Hangzhou
+    - `1`：CN_Shanghai
+    - `2`：CN_Qingdao
+    - `3`：CN_Beijing
+    - `4`：CN_Guangzhou
+    - `5`：CN_Hongkong
+    - `6`：JR_Beijing
+    - `7`：JR_Shanghai
+    - `8`：NA_Russia_1
+    - `9`：NA_Singapore_1
 
 - `bucket`: String. The bucket of the third-party cloud storage.
 
@@ -569,21 +582,21 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       "filename": "xxx.m3u8",
       "trackType": "audio_and_video",
       "uid": "123",
-      "mixedAllUser": "true",
-      "isPlayable": "true",
-      "sliceStartTime": "1562724971626"
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
    },    
    {
       "filename": "xxx.m3u8",
       "trackType": "audio_and_video",
       "uid": "456",
-      "mixedAllUser": "true",
-      "isPlayable": "true",
-      "sliceStartTime": "1562724971626"
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
    }
    ],
     "status": "5",
-    "sliceStartTime": "1562724971626"
+    "sliceStartTime": 1562724971626
    }       
 }
 ```
@@ -605,13 +618,13 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       - `"video"`: Video file (no audio).
       - `"audio_and_video"`: Video file (with audio).
     - `uid`: String. User ID. The user whose audio or video is recorded in the file.
-    - `mixedAllUser`: String. Whether the audio and video of all users are combined into a single file.
-      - `"true"`: All users are recorded in a single file.
-      - `"false"`: Each user is recorded separately.
-    - `isPlayable`: String. Whether the file can be played online.
-      - `"true"`: The file can be played online.
-      - `"false"`: The file cannot be played online.
-    - `sliceStartTime`: String. The Unix time (ms) when the recording starts.
+    - `mixedAllUser`: Boolean. Whether the audio and video of all users are combined into a single file.
+      - `true`: All users are recorded in a single file.
+      - `false`: Each user is recorded separately.
+    - `isPlayable`: Boolean. Whether the file can be played online.
+      - `true`: The file can be played online.
+      - `false`: The file cannot be played online.
+    - `sliceStartTime`: Number. The Unix time (ms) when the recording starts.
   - `status`: Number. The recording status.
     - `0`: The recording has not started.
     - `1`: The initialization is complete.
@@ -623,7 +636,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
     - `7`: The Agora Cloud Recording service stops.
     - `8`: The recording is ready to exit.
     - `20`: The recording exits abnormally.
-  - `sliceStartTime`: String. The time when the recording starts. Unix timestamp (ms).
+  - `sliceStartTime`: Number. The time when the recording starts. Unix timestamp (ms).
 
 ## <a name="stop"></a>Stops cloud recording
 
@@ -692,17 +705,17 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       "filename": "xxx.m3u8",
       "trackType": "audio_and_video",
       "uid": "123",
-      "mixedAllUser": "true",
-      "isPlayable": "true",
-      "sliceStartTime": "1562724971626"
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
     },
     {
       "filename": "xxx.m3u8",
       "trackType": "audio_and_video",
       "uid": "456",
-      "mixedAllUser": "true",
-      "isPlayable": "true",
-      "sliceStartTime": "1562724971626"
+      "mixedAllUser": true,
+      "isPlayable": true,
+      "sliceStartTime": 1562724971626
     }
     ],
     "uploadingStatus": "uploaded"
@@ -727,13 +740,13 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       - `"video"`: Video file (no audio).
       - `"audio_and_video"`: Video file (with audio).
     - `uid`: String. User ID. The user whose audio or video is recorded in the file.
-    - `mixedAllUser`: String. Whether the audio and video of all users are combined into a single file.
-      - `"true"`: All users are recorded in a single file.
-      - `"false"`: Each user is recorded separately.
-    - `isPlayable`: String. Whether the file can be played online.
-      - `"true"`: The file can be played online.
-      - `"false"`: The file cannot be played online.
-    - `sliceStartTime`: String. The Unix time (ms) when the recording starts.     
+    - `mixedAllUser`: Boolean. Whether the audio and video of all users are combined into a single file.
+      - `true`: All users are recorded in a single file.
+      - `false`: Each user is recorded separately.
+    - `isPlayable`: Boolean. Whether the file can be played online.
+      - `true`: The file can be played online.
+      - `false`: The file cannot be played online.
+    - `sliceStartTime`: Number. The Unix time (ms) when the recording starts.     
   - `uploadingStatus`: String. The upload status.
     - `"uploaded"`: All the recorded files are uploaded to the third-party cloud storage.
     - `"backuped"`:  Some of the recorded files fail to upload to the third-party cloud storage and upload to Agora Cloud Backup instead. Agora Cloud Backup automatically uploads these files to your cloud storage. 

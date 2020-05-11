@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 17 2020 03:49:23 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 06:43:01 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview
@@ -17,6 +17,8 @@ Agora Cloud Recording is compatible with the following SDKs:
 - Agora Native SDK v1.7.0 or later.
 - Agora Web SDK v1.12 or later.
 
+## 2020.05.09
+This release adds support for Kingsoft Cloud.
 
 ## 2020.04.17
 Cloud Recording now supports taking screenshots of the video streams in individual recording mode. See [Capture Screenshots](../../en/cloud-recording/cloud_recording_screen_capture.md) for details.

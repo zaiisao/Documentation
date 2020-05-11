@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri May 08 2020 07:16:20 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 06:16:40 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -108,7 +108,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 
 ###  <a name="4"></a>4 cloud_recording_file_infos
 
-`eventType` 4 indicates that an M3U8 playlist file is generated and uploaded. During a recording, the recording service repeatedly uploads and overwrites the M3U8 file, but this event is triggered only the first time the M3U8 file is generated and uploaded.
+`eventType` 4 indicates that an M3U8 playlist file is generated and uploaded. During a recording, the recording service repeatedly uploads and overwrites the M3U8 file, but this event is triggered the first time the M3U8 file is generated and uploaded.
 
 `details` includes the following fields:
 

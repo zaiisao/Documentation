@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Apr 07 2020 09:29:27 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 07:27:56 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit.

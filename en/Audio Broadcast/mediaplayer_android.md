@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Android
-updatedAt: Sat Mar 28 2020 11:25:10 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 07:10:20 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -12,7 +12,7 @@ The MediaPlayer Kit is a powerful player that supports playing local and online 
 
 ## Usage notice
 
-- Currently supported media formats: Local files in AVI, MP4, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
+- Currently supported media formats: Local files in AVI, MP4, MP3, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
 - When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishHelper at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishHelper supports publishing media streams to remote users in Agora channel.
 - When sharing media resources with remote users, the playback window occupies the local user's video as captured by the camera. Therefore, if you want remote users to see both the local user's and the player's window, you need to start another process to capture the local user's video.
 
@@ -260,10 +260,11 @@ Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broad
 1. Call the `unpublishVideo`/`unpublishAudio` method to unshare/unpublish the video/audio stream in the media resource.
 2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel. The player's screen no longer occupies the local user's view.
 3. (Optional) Call `setVideoSource( new AgoraDefaultSource() )` in the `RtcEngine` interface to switch the player's window back to the local user' view and enable remote users to see the local user again.
-
 4. Call the `release` method to release `RtcChannelPublishHelper`.
 
-> The shared video/audio stream will not be interrupted after the local user leaves the channel (`leaveChannel`). Only by calling the `unpublishVideo`/`unpublishAudio` method, can you unshare the video/audio stream.
+<div class="alert note">Do not skip this section and directly call the <code>leaveChannel</code> method to cancel the media stream being shared, otherwise abnormal behaviors occur when the local user rejoins the channel:
+	<li>The previously unshared media stream automatically sends to the remote users.</li>
+	<li>The audio and video streams are not synchronized during playback.</li></div>
 
 **Sample code**
 

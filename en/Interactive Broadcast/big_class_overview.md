@@ -51,7 +51,7 @@ Follow these steps to try the demo:
 ## Technical solutions
 
 Agora recommends using the following SDKs or services to implement a Lecture Hall scenario.
-![](https://web-cdn.agora.io/docs-files/1583898000711)
+![](https://web-cdn.agora.io/docs-files/1589180869374)
 
 | SDK | Function | 
 | ---------------- | ---------------- | 

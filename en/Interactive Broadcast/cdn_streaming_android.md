@@ -12,7 +12,7 @@ The process of publishing streams into the CDN (Content Delivery Network) is cal
 
 When multiple hosts are in a channel in CDN live streaming, [transcoding](https://docs.agora.io/en/AgoraPlatform/terms?platform=AllPlatforms#transcoding) is used to combine the streams of all the hosts into a single stream. Transcoding sets the audio/video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
 
-![](https://web-cdn.agora.io/docs-files/1588930815826)
+![](https://web-cdn.agora.io/docs-files/1588993691567)
 
 
 ## Prerequisites

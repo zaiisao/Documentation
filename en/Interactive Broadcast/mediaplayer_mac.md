@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Sun Mar 29 2020 11:25:07 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 07:37:36 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -12,7 +12,7 @@ The MediaPlayer Kit is a powerful player that supports playing local and online 
 
 ## Usage notice
 
-- Currently supported media formats: Local files in AVI, MP4, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
+- Currently supported media formats: Local files in AVI, MP4, MP3, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
 - When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishPlugin at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishPlugin supports publishing media streams to remote users in Agora channel.
 - When sharing media resources with remote users, the playback window occupies the local user's video as captured by the camera. Therefore, if you want remote users to see both the local user's and the player's window, you need to start another process to capture the local user's video.
 
@@ -234,6 +234,9 @@ When the role of the remote user is `BROADCASTER`, the Native SDK automatically 
 
 2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel. 
 
+3. (Optional) Call the [`setVideoSource`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:) method to switch the player's window back to the local user's view and enable the remote users to see the local user again.
+
+
 <div class="alert note">Do not skip this section and directly call the <code>leaveChannel</code> method to cancel the media stream being shared, otherwise abnormal behaviors occur when the local user rejoins the channel:
 	<li>The previously unshared media stream automatically sends to the remote users.</li>
 	<li>The audio and video streams are not synchronized during playback.</li></div>
@@ -250,6 +253,13 @@ _rtcEnginekit = [AgoraRtcEngineKit sharedEngineWithAppId:@"YOUR_APPID" delegate:
 [[AgoraRtcChannelPublishHelper shareInstance] publishAudio];
 [[AgoraRtcChannelPublishHelper shareInstance] publishVideo];
 [[AgoraRtcChannelPublishHelper shareInstance] detachPlayerFromRtc];
+
+if(!_defaultCamera)
+{
+    _defaultCamera = [[AgoraRtcDefaultCamera alloc] init];
+}
+[_rtcEngineKit setVideoSource:NULL];
+[_rtcEngineKit setVideoSource:_defaultCamera];
 ```
 
 ## Get the log file

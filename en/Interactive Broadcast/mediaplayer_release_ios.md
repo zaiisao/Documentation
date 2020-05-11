@@ -3,7 +3,7 @@
 title: Release Notes
 description: draft 
 platform: iOS
-updatedAt: Tue Apr 07 2020 09:29:39 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 07:28:18 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.

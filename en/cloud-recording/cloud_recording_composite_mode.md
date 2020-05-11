@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 01 2020 07:01:56 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 02:16:56 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
@@ -70,11 +70,11 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
                 "bitrate": 500, 
                 "fps": 15, 
                 "mixedVideoLayout": 1,
-                "backgroundColor": "#FF0000",
+                "backgroundColor": "#FF0000"
+						},
             "subscribeVideoUids": ["123","456"], 
             "subscribeAudioUids": ["123","456"],
             "subscribeUidGroup": 0
-           }
        }, 
         "storageConfig": {
             "accessKey": "xxxxxxf",

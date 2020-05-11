@@ -3,12 +3,12 @@
 title: RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 08 2020 08:56:10 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 03:35:57 GMT+0800 (CST)
 ---
 # RESTful API
 ## Authentication
 
-> Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see [Management members](../../en/Voice/manage_member.md).
+<div class="alert info">Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see <a href="../../en/Voice/manage_member.md">Management members</a >.</div>
 
 The RESTful API only supports HTTPS. Before sending HTTP requests, you must pass the basic Agora HTTP authentication (the `Authorization` parameter in the HTTP request head) with `api_key:api_secret`:
 
@@ -17,6 +17,7 @@ The RESTful API only supports HTTPS. Before sending HTTP requests, you must pass
 
 You can find your Customer ID and Customer Certificate on the [RESTful API](https://console.agora.io/restfulApi) page in Console. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 
+<div class="alert note">The call frequency of RESTful APIs is no more than ten queries per second. To apply for higher call frequency, contact  <a href="mailto:support@agora.io">support@agora.io</a >.</div>
 
 ## Endpoint
 
@@ -811,8 +812,6 @@ BaseUrl：**https://api.agora.io/dev**.
 The following chart shows how you can use Online Statistics Query APIs.
 ![](https://web-cdn.agora.io/docs-files/1583833200074)
 
-<div class="alert note">The call frequency of this group of API is no more than twenty queries per second.</div>
-
 ### Gets the user role (GET)
 
 This method checks if a specified user is in a specified channel, and if yes, the role of this user in the channel.
@@ -985,6 +984,3 @@ BaseUrl/v1/channel/{appid}?page_no=0&page_size=100
   }
 }
 ```
-
-
-

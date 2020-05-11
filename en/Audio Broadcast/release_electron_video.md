@@ -3,14 +3,14 @@
 title: Release Notes
 description: 
 platform: Electron
-updatedAt: Tue Apr 14 2020 02:24:00 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 08:43:17 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora SDK for Electron.
 
 ## Introduction
  
-The Agora SDK for Electron is developed upon Agora SDK for macOS 和 Agora SDK for Windows, with the Node.js C++ plug-in units. The Electron SDK supports the following scenarios:
+The Agora SDK for Electron is developed upon Agora SDK for macOS and Agora SDK for Windows, with the Node.js C++ plug-in units. The Electron SDK supports the following scenarios:
  
 - Voice and video communication
 - Voice and video live broadcast
