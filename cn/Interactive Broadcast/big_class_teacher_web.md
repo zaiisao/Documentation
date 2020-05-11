@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Mon May 11 2020 08:01:15 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 08:58:06 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -44,15 +44,24 @@ updatedAt: Mon May 11 2020 08:01:15 GMT+0800 (CST)
 
 - 教师端加入频道、开始上课、离开频道
 
-![](https://web-cdn.agora.io/docs-files/1589183974114)
+![](https://web-cdn.agora.io/docs-files/1589187406111)
 
 - 教师端同意学生发言
 
-![](https://web-cdn.agora.io/docs-files/1589184014719)
+![](https://web-cdn.agora.io/docs-files/1589187429218)
 
 ## 核心 API 参考
 
-- RTM SDK
+- Agora Edu 云服务
+
+| API | 实现功能 |
+| ---------------- | ---------------- |
+| [entry](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E8%BF%9B%E5%85%A5%E6%95%99%E5%AE%A4) | 进入教室。 |
+| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%99%E5%AE%A4) | 获取教室信息。 |
+| [change room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-room-info) | 修改教室信息。 |
+| [change user info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-user-info) | 修改用户信息。 |
+
+- Agora RTM SDK
 
 | API | 实现功能 | 
 | ---------------- | ---------------- | 
@@ -63,7 +72,7 @@ updatedAt: Mon May 11 2020 08:01:15 GMT+0800 (CST)
 | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 发送频道消息。成功发送后，频道内所有用户都能收到。|
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。|
 
-- RTC SDK
+- Agora RTC SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
@@ -78,15 +87,6 @@ updatedAt: Mon May 11 2020 08:01:15 GMT+0800 (CST)
 | [Client.subscribe](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
 | [Stream.play](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
 | [Client.leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
-
-- Agora Edu 云服务
-
-| API | 实现功能 |
-| ---------------- | ---------------- |
-| [entry](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E8%BF%9B%E5%85%A5%E6%95%99%E5%AE%A4) | 进入教室。 |
-| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%99%E5%AE%A4) | 获取教室信息。 |
-| [change room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-room-info) | 修改教室信息。 |
-| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-user-info) | 修改用户信息。 |
 
 ## 附加功能
 

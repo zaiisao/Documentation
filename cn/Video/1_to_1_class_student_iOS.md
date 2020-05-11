@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: iOS
-updatedAt: Mon May 11 2020 08:51:32 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 09:01:36 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 iOS 平台实现学生端相关功能。
@@ -31,7 +31,7 @@ updatedAt: Mon May 11 2020 08:51:32 GMT+0800 (CST)
 
 参考下图时序，搭配使用 Agora RTC SDK、Agora RTM SDK 和 Agora Edu 云服务在你的项目中实现基础的实时音视频、实时消息和教室信息管理功能。
 
-![](https://web-cdn.agora.io/docs-files/1586788902526)
+![](https://web-cdn.agora.io/docs-files/1589187029226)
 
 ## 核心 API 参考
 - Agora Edu 云服务
