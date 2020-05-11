@@ -3,13 +3,84 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Sat May 09 2020 04:05:12 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 05:48:10 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解更多详情。
 
+
+## 1.3.0 版
+
+该版本于 2020 年 5 月 11 日发布。
+
+**升级必看**
+
+服务器端会屏蔽向 1.2.2 或更早版本的实时消息 SDK、信令 SDK 发送的图片或文件消息。
+
+**新增功能**
+
+#### 1. 发送和接收文件消息
+
+v1.3.0 支持上传和下载大小不超过 30 MB 的任意格式的非空文件，支持随时取消正在进行中的上传或下载任务。每份上传到 Agora 服务器的文件都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的文件。
+
+<div class="alert note">你只能通过 SDK 提供的下载方法下载文件。</div>
+
+v1.3.0 引入了 `RtmFileMessage` 消息类用于保存和传递系统生成的 media ID。`RtmFileMessage` 继承自 `RtmMessage` 类，所以你可以通过已有的点对点消息或频道消息发送方法传递 `RtmFileMessage` 实例。你可以通过 `RtmFileMessage` 对象进行以下操作:
+
+- 设置相应的上传文件的显示文件名和显示缩略图。
+- 获取相应的上传文件的大小。
+  
+<div class="alert note">消息内容、显示文件名和显示缩略图的总大小不得超过 32 KB。</div>
+
+#### 2. 发送和接收图片消息
+
+v1.3.0 支持上传下载大小不超过 30 MB 的任意格式的非空图片，支持随时取消正在进行中的上传或下载任务。每份上传到 Agora 服务器的图片都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片。
+
+v1.3.0 引入了 `RtmImageMessage` 消息类用于保存和传递系统生成的 media ID。`RtmImageMessage` 继承自 `RtmMessage` 类，所以你可以通过已有的点对点消息或频道消息发送方法传递 `RtmImageMessage` 实例。你可以通过 `RtmImageMessage` 对象进行以下操作:
+
+- 设置相应的上传图片的显示文件名和显示缩略图。
+- 获取相应的上传图片的大小。
+- 获取 SDK 自动计算的 JPEG、JPG、BMP、PNG 四种格式的图片宽高数据。
+- 自行设置图片的宽和高。你自行设置的宽高数据会覆盖 SDK 计算的宽高数据。
+
+<div class="alert note">消息内容、显示文件名和显示缩略图的总大小不得超过 32 KB。</div>
+
+#### 3. 通知上传或下载任务的进度
+
+对于正在进行中的上传或下载任务，SDK 会通过主动回调每秒返回一次上传或下载的进度。当上传或下载任务暂停时，SDK 暂停返回相应回调，直至任务继续进行。
+
+**问题修复**
+
+- 由于误判用户网络类型导致无法登录的问题。
+- 其它可能导致系统崩溃的问题。
+
+**API 变更**
+
+#### 新增方法
+
+- [`createFileMessageByMediaId`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ae4104179072ed6ebcf050d12250c7a1b)
+- [`createImageMessageByMediaId`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aaa3e2556fc93af882fd2758419c682af)
+- [`createFileMessageByUploading`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a1b08207278d611e5e4b87e6d9712e0c7)
+- [`createImageMessageByUploading`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/classio_1_1agora_1_1rtm_1_1_rtm_client.html#afc93fad7700593a803ddbc87482c0ac0)
+- [`downloadMediaToMemory`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3d2568cc940dfd8c8110e70dcc4fb85d)
+- [`downloadMediaToFile`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a34e0bd19fb0bbd1d91dec0a1af100038)
+- [`cancelMediaUpload`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a17467b5b336a39bc0d29058244aa7c0c)
+- [`cancelMediaDownload`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a21af4c790dcb6547253ffd43114696a5)
+
+#### 新增回调
+
+- [`onImageMessageReceived`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#aa5e74313bc9c7a47e2e877690bbd5b8d)
+- [`onFileMessageReceived`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a0d6889ad993ae6e99edaa1d05e67ba77)
+- [`onImageMessageReceivedFromPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a9cdc9016e7b3349d8340318411852ccf)
+- [`onFileMessageReceivedFromPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a812843550667e2e13068d4715d2fa98b)
+- [`onMediaUploadingProgress`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#ad54b344caf11bcbfb086a15e96fbb9f2)
+- [`onMediaDownloadingProgress`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a1f774858444cc9b36369cbee4770df9c)
+
+#### 废弃方法
+
+[`sendMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a57087adf4227a17c774ea292840148a0) 被重载方法 [`sendMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235) 替代。
 
 ## 1.2.2 版
 

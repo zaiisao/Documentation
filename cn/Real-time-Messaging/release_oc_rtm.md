@@ -3,13 +3,92 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Sat May 09 2020 04:05:01 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 04:02:34 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解更多详情。
 
+
+## 1.3.0 版
+
+该版本于 2020 年 5 月 11 日发布。
+
+**升级必看**
+
+服务器端会屏蔽向 1.2.2 或更早版本的实时消息 SDK、信令 SDK 发送的图片或文件消息。
+
+**新增功能**
+
+####  1. 发送和接收文件消息
+
+v1.3.0 支持上传和下载大小不超过 30 MB 的任意格式的非空文件，支持随时取消正在进行中的上传或下载任务。每个上传到 Agora 服务器的文件都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的文件。
+
+<div class="alert note">你只能通过 SDK 提供的下载方法下载文件。</div>
+
+v1.3.0 引入了 `AgoraRtmFileMessage` 消息接口用于保存和传递系统生成的 media ID。`AgoraRtmFileMessage` 接口继承自 `AgoraRtmMessage` 接口，所以你可以通过点对点消息或频道消息发送方法传递 `AgoraRtmFileMessage` 实例。你可以通过 `AgoraRtmFileMessage` 对象进行以下操作:
+
+- 设置相应的上传文件的显示文件名和显示缩略图。
+- 获取相应的上传文件的大小。
+
+<div class="alert note">消息内容、显示文件名和显示缩略图的总大小不得超过 32 KB。</div>
+
+####  2. 发送和接收图片消息
+
+v1.3.0 支持上传下载大小不超过 30 MB 的任意格式的非空图片，支持随时取消正在进行中的上传或下载任务。每个上传到 Agora 服务器的图片都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片。
+
+<div class="alert note">你只能通过 SDK 提供的下载方法下载图片。</div>
+
+v1.3.0 引入了 `AgoraRtmImageMessage` 消息接口用于保存和传递系统生成的 media ID。`AgoraRtmImageMessage` 接口继承自 `AgoraRtmMessage` 接口，所以你可以通过点对点消息或频道消息发送方法传递 `AgoraRtmImageMessage` 实例。你可以通过 `AgoraRtmImageMessage` 对象进行以下操作:
+
+- 设置相应的上传图片的显示文件名和显示缩略图。
+- 获取相应的上传图片的大小。
+- 获取 SDK 自动计算的 JPEG、JPG、BMP、PNG 四种格式的图片宽高数据。
+- 自行设置图片的宽和高。你自行设置的宽高数据会覆盖 SDK 计算的宽高数据。
+
+<div class="alert note">消息内容、显示文件名和显示缩略图的总大小不得超过 32 KB。</div>
+
+#### 3. 通知上传或下载任务的进度
+
+对于正在进行中的上传或下载任务，SDK 会通过主动回调每秒返回一次上传或下载的进度。当上传或下载任务暂停时， SDK 暂停返回相应回调，直至任务继续进行。
+
+**问题修复**
+
+- 由于误判用户网络导致无法登录的问题。
+- 其它可能导致系统崩溃的问题。
+
+**API 变更**
+
+#### 新增方法
+
+- [`createFileMessageByUploading:withRequest:completion:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createFileMessageByUploading:withRequest:completion:)
+- [`createImageMessageByUploading:withRequest:completion:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createImageMessageByUploading:withRequest:completion:)
+- [`cancelMediaUpload:completion:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/cancelMediaUpload:completion:)
+- [`cancelMediaDownload:completion:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/cancelMediaDownload:completion:)
+- [`createFileMessageByMediaId:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createFileMessageByMediaId:)
+- [`createImageMessageByMediaId:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createImageMessageByMediaId:)
+- [`downloadMediaToMemory:withRequest:completion:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/downloadMediaToMemory:withRequest:completion:)
+- [`downloadMedia:toFile:withRequest:completion:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/downloadMedia:toFile:withRequest:completion:)
+
+
+#### 新增回调
+
+- [`rtmKit:media:uploadingProgress:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:media:uploadingProgress:)
+- [`rtmKit:media:downloadingProgress:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:media:downloadingProgress:)
+- [`AgoraRtmUploadFileMediaBlock`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmUploadFileMediaBlock.html)
+- [`AgoraRtmUploadImageMediaBlock`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmUploadImageMediaBlock.html)
+- [`AgoraRtmCancelMediaBlock`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmCancelMediaBlock.html)
+- [`AgoraRtmDownloadMediaToMemoryBlock`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmDownloadMediaToMemoryBlock.html)
+- [`AgoraRtmDownloadMediaToFileBlock`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Blocks/AgoraRtmDownloadMediaToFileBlock.html)
+- [`rtmKit:fileMessageReceived:fromPeer:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:fileMessageReceived:fromPeer:)
+- [`rtmKit:imageMessageReceived:fromPeer:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:imageMessageReceived:fromPeer:)
+- [`channel:fileMessageReceived:fromMember:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:fileMessageReceived:fromMember:)
+- [`channel:imageMessageReceived:fromMember:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmChannelDelegate.html#//api/name/channel:imageMessageReceived:fromMember:)
+
+#### 废弃方法
+
+[`sendMessage:completion:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/sendMessage:completion:) 被重载方法 [`sendMessage:sendMessageOptions:completion:`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/sendMessage:sendMessageOptions:completion:) 替代。
 
 ## 1.2.2 版
 
@@ -41,7 +120,7 @@ Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消
 
 该版本于 2019 年 11 月6 日发布。新增如下功能：
 
-- [订阅或取消订阅指定单个或多个用户的在线状态](#subscribe)
+- [订阅或退订指定单个或多个用户的在线状态](#subscribe)
 - [获取某特定内容被订阅的用户列表](#list)
 - [创建自定义二进制消息](#raw)
 
