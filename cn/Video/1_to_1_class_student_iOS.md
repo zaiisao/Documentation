@@ -21,8 +21,8 @@ updatedAt: Tue Apr 14 2020 03:17:26 GMT+0800 (CST)
  
 | 产品 | SDK 下载 | 集成文档 |
 | ---------------- | ---------------- | ---------------- |
-| [RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)      | [iOS 视频通话 SDK](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_103_FULL_20200325_2479.zip)     | [实现视频通话](https://docs.agora.io/cn/Video/start_call_ios?platform=iOS) |
-| [RTM (Real-time Messaging) SDK](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [iOS 实时消息 SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) | [收发点对点消息和频道消息](https://docs.agora.io/cn/Real-time-Messaging/messaging_ios?platform=iOS) |
+| [Agora RTC (Real-time Communication) SDK](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)      | [iOS 视频通话 SDK](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_103_FULL_20200325_2479.zip)     | [实现视频通话](https://docs.agora.io/cn/Video/start_call_ios?platform=iOS) |
+| [Agora RTM (Real-time Messaging) SDK](https://docs.agora.io/cn/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [iOS 实时消息 SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) | [收发点对点消息和频道消息](https://docs.agora.io/cn/Real-time-Messaging/messaging_ios?platform=iOS) |
 | Agora Edu 云服务 | / | [Agora Edu 云服务快速开始](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1) |
 | [白板](https://developer.netless.link/docs/ios/overview/ios-introduction/) | [SDK 集成](https://developer.netless.link/docs/ios/quick-start/ios-prepare/) | [白板快速开始](https://developer.netless.link/docs/ios/quick-start/ios-init-sdk/) | 
 
