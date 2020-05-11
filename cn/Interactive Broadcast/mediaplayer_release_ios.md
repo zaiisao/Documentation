@@ -3,7 +3,7 @@
 title: 媒体播放器组件发版说明
 description: 
 platform: iOS
-updatedAt: Sat Mar 28 2020 12:16:54 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 11:24:54 GMT+0800 (CST)
 ---
 # 媒体播放器组件发版说明
 本文提供媒体播放器组件的发版说明。
@@ -47,6 +47,6 @@ updatedAt: Sat Mar 28 2020 12:16:54 GMT+0800 (CST)
 ### 相关链接
 我们为媒体播放器组件提供了完整的文档，你可以参考如下链接进行使用：
 - [集成文档](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_ios?platform=iOS)
-- [API 文档](https://docs-preview.agoralab.co/cn/Video/API%20Reference/mediaplayer_oc/1.1.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html?transId=1.1.0 )
+- [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
 
 

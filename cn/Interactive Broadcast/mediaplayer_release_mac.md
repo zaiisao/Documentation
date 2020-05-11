@@ -3,7 +3,7 @@
 title: 媒体播放器组件发版说明
 description: 
 platform: macOS
-updatedAt: Sat Mar 28 2020 03:00:01 GMT+0800 (CST)
+updatedAt: Sat May 09 2020 11:26:02 GMT+0800 (CST)
 ---
 # 媒体播放器组件发版说明
 本文提供媒体播放器组件的发版说明。
