@@ -3,7 +3,7 @@
 title: 媒体播放器组件发版说明
 description: 
 platform: iOS
-updatedAt: Sat May 09 2020 11:24:54 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 07:20:08 GMT+0800 (CST)
 ---
 # 媒体播放器组件发版说明
 本文提供媒体播放器组件的发版说明。
