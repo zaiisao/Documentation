@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Web
-updatedAt: Mon May 11 2020 07:53:11 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 08:02:03 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Web 平台实现学生端相关功能。
@@ -36,7 +36,7 @@ updatedAt: Mon May 11 2020 07:53:11 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1589183504936)
 
-- 学生端申请上麦
+- 学生端申请发言
 
 ![](https://web-cdn.agora.io/docs-files/1589183538908)
 

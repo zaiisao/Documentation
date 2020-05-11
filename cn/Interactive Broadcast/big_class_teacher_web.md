@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 02:40:30 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 08:01:15 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -14,11 +14,11 @@ updatedAt: Mon Apr 13 2020 02:40:30 GMT+0800 (CST)
 
 - 教师端登录登出
 
-![](https://web-cdn.agora.io/docs-files/1579590511706)
+![](https://web-cdn.agora.io/docs-files/1589183847257)
 
 - 教师端禁学生端音视频、禁聊天
 
-![](https://web-cdn.agora.io/docs-files/1579576746219)
+![](https://web-cdn.agora.io/docs-files/1589183909620)
 
 - 教师端回放
 
@@ -40,9 +40,15 @@ updatedAt: Mon Apr 13 2020 02:40:30 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，使用 [RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) 和 [RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk) 在你的项目中实现基础的实时音视频和实时消息功能。
+参考下图时序，使用 [RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk)、[RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk) 和 Agora Edu 云平台在你的项目中实现基础的实时音视频和实时消息功能。
 
-![](https://web-cdn.agora.io/docs-files/1579577240258)
+- 教师端加入频道、开始上课、离开频道
+
+![](https://web-cdn.agora.io/docs-files/1589183974114)
+
+- 教师端同意学生发言
+
+![](https://web-cdn.agora.io/docs-files/1589184014719)
 
 ## 核心 API 参考
 
@@ -54,11 +60,6 @@ updatedAt: Mon Apr 13 2020 02:40:30 GMT+0800 (CST)
 | [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | 登录 Agora RTM 系统。 |
 | [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | 创建 Agora RTM 频道。一个 RtcClient 可以创建多个频道。 |
 | [join](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#join) | 加入 Agora RTM 频道。|
-| [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | 获取指定频道的频道信息。|
-| [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | 查询指定用户的在线状态。|
-| [MessageFromPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) | 收到来自对端的点对点消息。|
-| [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) | 向指定用户发送点对点消息。|
-| [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatechannelattributes) | 添加或更新指定频道的属性。你可以在该方法中设置是否将本次变更通知到频道内所有成员。|
 | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage) | 发送频道消息。成功发送后，频道内所有用户都能收到。|
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。|
 
@@ -77,6 +78,15 @@ updatedAt: Mon Apr 13 2020 02:40:30 GMT+0800 (CST)
 | [Client.subscribe](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
 | [Stream.play](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
 | [Client.leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
+
+- Agora Edu 云服务
+
+| API | 实现功能 |
+| ---------------- | ---------------- |
+| [entry](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E8%BF%9B%E5%85%A5%E6%95%99%E5%AE%A4) | 进入教室。 |
+| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%99%E5%AE%A4) | 获取教室信息。 |
+| [change room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-room-info) | 修改教室信息。 |
+| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-user-info) | 修改用户信息。 |
 
 ## 附加功能
 

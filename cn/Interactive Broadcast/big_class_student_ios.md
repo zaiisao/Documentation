@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: iOS
-updatedAt: Mon May 11 2020 07:47:45 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 08:01:46 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 iOS 平台实现学生端相关功能。
@@ -36,7 +36,7 @@ updatedAt: Mon May 11 2020 07:47:45 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1589182568290)
 
-- 学生端申请上麦
+- 学生端申请发言
 
 ![](https://web-cdn.agora.io/docs-files/1589182582906)
 
