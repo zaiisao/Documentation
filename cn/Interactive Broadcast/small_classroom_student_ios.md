@@ -29,7 +29,7 @@ updatedAt: Mon Apr 13 2020 14:28:00 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，搭配使用 RTC SDK、RTM SDK 和 Agora Edu 云服务在你的项目中实现基础的实时音视频、实时消息和教室信息管理功能。
+参考下图时序，搭配使用 Agora RTC SDK、Agora RTM SDK 和 Agora Edu 云服务在你的项目中实现基础的实时音视频、实时消息和教室信息管理功能。
 
 ![](https://web-cdn.agora.io/docs-files/1589180517466)
 
@@ -43,7 +43,7 @@ updatedAt: Mon Apr 13 2020 14:28:00 GMT+0800 (CST)
 | [change room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-room-info)      | 修改教室信息。      |
 | [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-user-info)  | 修改用户信息。      |
 
-- RTM SDK
+- Agora RTM SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
@@ -56,7 +56,7 @@ updatedAt: Mon Apr 13 2020 14:28:00 GMT+0800 (CST)
 | [leaveWithCompletion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/leaveWithCompletion:) | 离开 RTM 频道。 |
 | [logoutWithCompletion](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/logoutWithCompletion:) | 登出 Agora RTM 系统。|
 
-- RTC SDK
+- Agora RTC SDK
 
 
 | API | 实现功能 |
