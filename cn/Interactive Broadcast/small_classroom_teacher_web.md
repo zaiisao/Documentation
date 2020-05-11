@@ -67,6 +67,8 @@ updatedAt: Mon May 11 2020 08:01:57 GMT+0800 (CST)
 
 - Agora RTC SDK
 
+
+
 | API | 实现功能 |
 | ---------------- | ---------------- |
 | [createClient](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/globals.html#createclient)      | 创建客户端。      |
@@ -80,6 +82,7 @@ updatedAt: Mon May 11 2020 08:01:57 GMT+0800 (CST)
 | [Client.subscribe](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#subscribe) | 订阅远端音视频流。|
 | [Stream.play](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#play) | 播放音、视频流。|
 | [Client.leave](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#leave) | 离开 RTC 频道。 |
+
 
 
 

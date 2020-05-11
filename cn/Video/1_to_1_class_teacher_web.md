@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Tue Apr 14 2020 03:20:48 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 08:55:19 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -14,7 +14,7 @@ updatedAt: Tue Apr 14 2020 03:20:48 GMT+0800 (CST)
 
 - 教师端登录登出
 
-![](https://web-cdn.agora.io/docs-files/1579596188973)
+![](https://web-cdn.agora.io/docs-files/1589187264383)
 
 - 教师端回放
 
@@ -38,7 +38,7 @@ updatedAt: Tue Apr 14 2020 03:20:48 GMT+0800 (CST)
 
 参考下图时序，搭配使用 Agora RTC SDK、Agora RTM SDK 和 Agora Edu 云服务在你的项目中实现基础的实时音视频、实时消息和教室信息管理功能。
 
-![](https://web-cdn.agora.io/docs-files/1586784183161)
+![](https://web-cdn.agora.io/docs-files/1589187332567)
 
 ## 核心 API 参考
 - Agora Edu 云服务
@@ -62,6 +62,8 @@ updatedAt: Tue Apr 14 2020 03:20:48 GMT+0800 (CST)
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | 离开 RTM 频道。|
 
 - Agora RTC SDK
+
+
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
