@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Windows
-updatedAt: Tue Apr 28 2020 06:35:18 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 06:58:48 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -269,7 +269,7 @@ private:
 1. 调用 `unpublishVideo`/`unpublishAudio` 方法取消分享该视频/音频流。
 2. 调用 `detachPlayerFromRtc` 方法将播放器和 Agora 频道解绑。
 
-<div class="alert note">请不要略过此步直接调用 <code>leaveChannel</code> 使本地用户停止分享媒体流，否则本地用户重新加入频道时会出现以下问题：
+<div class="alert note">请不要略过此步直接调用 <code>leaveChannel</code> 使本地用户取消分享媒体流，否则本地用户重新加入频道时可能会出现以下问题：
 	<li>之前停止分享的媒体流会自动发送给频道内远端用户。</li>
 	<li>播放媒体资源时，音画不同步。</li></div>
 

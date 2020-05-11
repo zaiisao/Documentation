@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Sat May 09 2020 07:12:06 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 06:57:58 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -237,7 +237,7 @@ _mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
 2. 调用 `detachPlayerFromRtc` 方法将播放器和 Agora 频道解绑。
 3. （可选）调用 [`setVideoSource`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:) 方法将播放器画面切换为主播画面，使远端用户重新看到主播。
 
-<div class="alert note">请不要略过此步直接调用 <code>leaveChannel</code> 使本地用户停止分享媒体流，否则本地用户重新加入频道时会出现以下问题：
+<div class="alert note">请不要略过此步直接调用 <code>leaveChannel</code> 使本地用户取消分享媒体流，否则本地用户重新加入频道时可能会出现以下问题：
 	<li>之前停止分享的媒体流会自动发送给频道内远端用户。</li>
 	<li>播放媒体资源时，音画不同步。</li></div>
 
