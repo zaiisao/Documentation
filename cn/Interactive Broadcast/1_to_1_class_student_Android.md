@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Android
-updatedAt: Tue Apr 14 2020 03:17:31 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 08:48:14 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Android 平台实现学生端相关功能。
@@ -12,7 +12,7 @@ updatedAt: Tue Apr 14 2020 03:17:31 GMT+0800 (CST)
 
 参考下图，在你的项目中实现学生端的登录登出功能。
 
-![](https://web-cdn.agora.io/docs-files/1579589965794)
+![](https://web-cdn.agora.io/docs-files/1589186800325)
 
 ## 集成指引
 

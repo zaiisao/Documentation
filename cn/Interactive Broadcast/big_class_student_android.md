@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Android
-updatedAt: Mon May 11 2020 08:01:26 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 08:47:27 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Android 平台实现学生端相关功能。
@@ -34,15 +34,24 @@ updatedAt: Mon May 11 2020 08:01:26 GMT+0800 (CST)
 
 - 学生端加入频道、开始上课、离开频道
 
-![](https://web-cdn.agora.io/docs-files/1589181155022)
+![](https://web-cdn.agora.io/docs-files/1589186461794)
 
 - 学生端申请发言
 
-![](https://web-cdn.agora.io/docs-files/1589182125048)
+![](https://web-cdn.agora.io/docs-files/1589186478594)
 
 ## 核心 API 参考
 
-- RTM SDK
+- Agora Edu 云服务
+
+| API | 实现功能 |
+| ---------------- | ---------------- |
+| [entry](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E8%BF%9B%E5%85%A5%E6%95%99%E5%AE%A4) | 进入教室。 |
+| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%99%E5%AE%A4) | 获取教室信息。 |
+| [change room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-room-info) | 修改教室信息。 |
+| [change user info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-user-info) | 修改用户信息。 |
+
+- Agora RTM SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
@@ -55,7 +64,7 @@ updatedAt: Mon May 11 2020 08:01:26 GMT+0800 (CST)
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a9e0b6aad17bfceb3c9c939351a467d14) | 离开 RTM 频道。 |
 | [logout](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6f5695854e251ddd4ba05547ab47b317) | 登出 Agora RTM 系统。|
 
-- RTC SDK
+- Agora RTC SDK
 
 | API | 实现功能 |
 | ---------------- | ---------------- |
@@ -66,15 +75,6 @@ updatedAt: Mon May 11 2020 08:01:26 GMT+0800 (CST)
 | [setupRemoteVideo](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0e9f693c9bc2ccb91554c2c7dc6b7140) | 设置远端视图。学生加入频道后，调用该方法设置其看到的老师的视频画面。|
 | [setupLocalVideo](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1fa43a5ce24196e840bcb1062cadbf23) | 设置本地视图。学生成功申请发言后，调用该方法设置其看到的自己的视频画面。 |
 | [leaveChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2929e4a46d5342b68d0deb552c29d597) | 离开 RTC 频道。 |
-
-- Agora Edu 云服务
-
-| API | 实现功能 |
-| ---------------- | ---------------- |
-| [entry](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E8%BF%9B%E5%85%A5%E6%95%99%E5%AE%A4) | 进入教室。 |
-| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%99%E5%AE%A4) | 获取教室信息。 |
-| [change room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-room-info) | 修改教室信息。 |
-| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-user-info) | 修改用户信息。 |
 
 
 ## 附加功能
