@@ -46,7 +46,7 @@ Agora 为 1 对 1 互动教学提供如下平台的 Demo，点击链接进入应
 
 Agora 使用 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk)、[Agora RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk)、[Agora 云端录制服务](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#cloud-recording)、第三方白板 SDK 共同搭建一对一小班课场景。
 
-![](https://web-cdn.agora.io/docs-files/1579589274133)
+![](https://web-cdn.agora.io/docs-files/1589183490012)
 
 各 SDK 或服务实现的功能如下：
 

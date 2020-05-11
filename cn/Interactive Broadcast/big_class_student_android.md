@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Android
-updatedAt: Mon Apr 13 2020 02:37:35 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 07:29:28 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Android 平台实现学生端相关功能。
@@ -12,7 +12,7 @@ updatedAt: Mon Apr 13 2020 02:37:35 GMT+0800 (CST)
 
 参考下图，在你的项目中实现学生端的登录登出功能。
 
-![](https://web-cdn.agora.io/docs-files/1579590468311)
+![](https://web-cdn.agora.io/docs-files/1589181901870)
 
 ## 集成指引
 
@@ -32,7 +32,13 @@ updatedAt: Mon Apr 13 2020 02:37:35 GMT+0800 (CST)
 
 参考下图时序，搭配使用 [RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) 和 [RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk) 在你的项目中实现基础的实时音视频和实时消息功能。
 
-![](https://web-cdn.agora.io/docs-files/1579589777899)
+- 学生端加入频道、开始上课、离开频道
+
+![](https://web-cdn.agora.io/docs-files/1589181155022)
+
+- 学生端申请上麦
+
+![](https://web-cdn.agora.io/docs-files/1589182125048)
 
 ## 核心 API 参考
 
@@ -44,12 +50,7 @@ updatedAt: Mon Apr 13 2020 02:37:35 GMT+0800 (CST)
 | [login](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a995bb1b1bbfc169ee4248bd37e67b24a) | 登录 Agora RTM 系统。登录后你可以使用 RTM 的核心业务逻辑。|
 | [createChannel](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a95ebbd1a1d902572b444fef7853f335a) | 创建 Agora RTM 频道。一个 RtmClient 可以创建多个频道。 |
 | [join](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#ad7b321869aac2822b3f88f8c01ce0d40) | 加入 Agora RTM 频道。|
-| [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6) | 获取指定频道的频道属性。 |
-| [queryPeersOnlineStatus](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ac711f981405648ed5ef1cb07436125f3) | 查询指定用户的在线状态。 |
 | [ceateMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a77dbd15cb6c9db3844fb313bd5dceac3) | 创建并返回一个 RtmMessage 消息示例。可创建文本消息、二进制消息、原始数据消息。 |
-| [sendMessageToPeer](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a25ab5c0126e1dc51c78b2b705de68b7a) | 发送点对点消息。可实现学生举手申请发言等功能。 |
-| [setEnableNotificationToChannelMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_channel_attribute_options.html#a2f240727791b3ad1af97f4a399ce1579) | 设置通知所有频道成员本地频道属性变更。当本地频道属性变更时，会在远端触发 onAttributesUpdated 回调。每次设置仅对本次变更有效。 |
-| [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a997a31e6bfe1edc9b6ef58a931ef3f23) | 添加或更新指定频道的属性。 |
 | [sendMessage](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235) | 发送频道消息。成功发送后，频道内所有用户都能收到。 |
 | [leave](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a9e0b6aad17bfceb3c9c939351a467d14) | 离开 RTM 频道。 |
 | [logout](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6f5695854e251ddd4ba05547ab47b317) | 登出 Agora RTM 系统。|
@@ -65,6 +66,15 @@ updatedAt: Mon Apr 13 2020 02:37:35 GMT+0800 (CST)
 | [setupRemoteVideo](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0e9f693c9bc2ccb91554c2c7dc6b7140) | 设置远端视图。学生加入频道后，调用该方法设置其看到的老师的视频画面。|
 | [setupLocalVideo](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1fa43a5ce24196e840bcb1062cadbf23) | 设置本地视图。学生成功申请发言后，调用该方法设置其看到的自己的视频画面。 |
 | [leaveChannel](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2929e4a46d5342b68d0deb552c29d597) | 离开 RTC 频道。 |
+
+- Agora Edu 云服务
+
+| API | 实现功能 |
+| ---------------- | ---------------- |
+| [entry](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E8%BF%9B%E5%85%A5%E6%95%99%E5%AE%A4) | 进入教室。 |
+| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%99%E5%AE%A4) | 获取教室信息。 |
+| [change room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-room-info) | 修改教室信息。 |
+| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-user-info) | 修改用户信息。 |
 
 
 ## 附加功能

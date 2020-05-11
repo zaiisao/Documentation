@@ -3,7 +3,7 @@
 title: 媒体播放器组件发版说明
 description: 
 platform: Windows
-updatedAt: Sat May 09 2020 11:29:02 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 07:22:12 GMT+0800 (CST)
 ---
 # 媒体播放器组件发版说明
 本文提供媒体播放器组件的发版说明。
