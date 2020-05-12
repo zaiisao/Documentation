@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon May 11 2020 07:27:30 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 10:54:15 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.
@@ -18,9 +18,15 @@ To enrich the live broadcast playability and improve the real-time interactive e
 - Live sports: The broadcaster shares the live sports with the audience during his/her live broadcast.
 - Pseudo live broadcast: Share or publish the video recorded by the broadcaster in advance to the audience.
 
+## v1.1.1
+
+v1.1.1 was released on May 11, 2020.
+
+This release fixed errors that occur when you play RTMP streams.
+
 ## v1.1.0
 
-v1.1.0 is released on March 23, 2020.
+v1.1.0 was released on March 23, 2020.
 
 <div class="alert note">To improve your experience, this release made important changes to the original methods, so re-integration is needed.</div>
 
@@ -61,7 +67,7 @@ We provide complete documentation for the mediaplayer kit. See the following lin
 
 ## v1.0.0
 
-v1.0.0 is released on Sep 4, 2019.
+v1.0.0 was released on Sep 4, 2019.
 
 This is the first release of the mediaplayer kit. You can use it in your project to enable the following functions:
 

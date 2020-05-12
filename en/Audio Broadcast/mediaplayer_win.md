@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Mon May 11 2020 07:40:37 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 10:55:15 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -324,4 +324,4 @@ To avoid the problem that the new audio router is abnormally muted when the loca
 
 ## API documentation
 
-See the [API documentation](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/mediaplayer_cpp/1.1.0/index.html).
+See the [API documentation](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/mediaplayer_cpp/index.html).

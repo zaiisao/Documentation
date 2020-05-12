@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Mon May 11 2020 07:37:36 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 10:55:02 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -276,7 +276,7 @@ Common audio routers include Bluetooth devices, ordinary headsets, and device sp
 - When sharing media resources, Agora recommends using the Native SDK v3.0.0 and switching the audio router after calling the `mute` method.
 
 ## API documentation
-See the [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/1.1.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html?transId=1.1.0).
+See the [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html).
 
 
 

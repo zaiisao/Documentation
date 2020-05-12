@@ -3,9 +3,11 @@
 title: Start a Voice Call
 description: 
 platform: Web
-updatedAt: Thu Apr 30 2020 09:10:06 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 09:37:24 GMT+0800 (CST)
 ---
 # Start a Voice Call
+<div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
+
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice functions in your app. 
 
 This guide shows you how to build a simple web app with the Agora Web SDK. We recommend going through it to familiarize yourself with the core methods.

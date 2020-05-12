@@ -3,7 +3,7 @@
 title: Build a Client for the Students
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 02:44:04 GMT+0800 (CST)
+updatedAt: Tue May 12 2020 08:09:46 GMT+0800 (CST)
 ---
 # Build a Client for the Students
 This section describes how to implement a Web client for the students.
@@ -29,13 +29,28 @@ Refer to the following table to download the SDKs, and integrate the SDKs into y
 
 ## Core API call sequence
 
-Refer to the following diagram to implement the basic real-time communication and messaging functions in your project with the [Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) and [RTM SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk).
+Refer to the following diagram to implement the basic real-time communication and messaging functions in your project with the [Agora RTC SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk), [RTM SDK](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk), and Agora Edu Cloud Service.
 
-![](https://web-cdn.agora.io/docs-files/1582602505717)
+- Joins and leaves a channel:
+
+![](https://web-cdn.agora.io/docs-files/1589270941486)
+
+- Sends a request to speak up:
+
+![](https://web-cdn.agora.io/docs-files/1589270957954)
 
 ## Core API reference
 
-- RTM SDK
+- Agora Edu Cloud Service
+
+| API | Function |
+| ---------------- | ---------------- |
+| [entry](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E8%BF%9B%E5%85%A5%E6%95%99%E5%AE%A4) | Enters the classroom. |
+| [get room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%99%E5%AE%A4) | Gets the classroom information. |
+| [change room info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-room-info) | Changes the classroom information. |
+| [change user info](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1#change-user-info) | Changes the user information. |
+
+- Agora RTM SDK
 
 | API | Function |
 | ---------------- | ---------------- |
@@ -43,15 +58,10 @@ Refer to the following diagram to implement the basic real-time communication an
 | [login](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#login) | Logs into the Agora RTM system. |
 | [createChannel](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#createchannel) | Creates an Agora RTM channel. You can create multiple channels with an RtmClient object. |
 | [join](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/RTM_web/classes/rtmchannel.html#join) | Joins an Agora RTM channel.|
-| [getChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#getchannelattributes) | Gets the information of a specified channel. |
-| [queryPeersOnlineStatus](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#querypeersonlinestatus) | Queries the online status of a specified user. |
-| [sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) | Sends a peer-to-peer message. Use this method on the students' client to send the hands-up message. |
-| [MessageFromPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) | Receives a peer-to-peer message. |
-|[addOrUpdateChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#addorupdatechannelattributes) | Adds or Updates the information of a specified channel. In this method, you can determine whether to notify the current update to all the users in the channel. |
 | [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#sendmessage)  | Sends a channel message, which can be received by all the users in the channel. |
 | [leave](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmchannel.html#leave) | Leaves the RTM channel. |
 
-- RTC SDK
+- Agora RTC SDK
 
 | API | Function |
 | ---------------- | ---------------- |

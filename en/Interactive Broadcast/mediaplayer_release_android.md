@@ -3,7 +3,7 @@
 title: Release Notes
 description: draft
 platform: Android
-updatedAt: Tue Apr 07 2020 09:28:54 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 11:19:12 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.
@@ -18,9 +18,15 @@ To enrich the live broadcast playability and improve the real-time interactive e
 - Live sports: The broadcaster shares the live sports with the audience during his/her live broadcast.
 - Pseudo live broadcast: Share or publish the video recorded by the broadcaster in advance to the audience.
 
+## v1.1.1
+
+v1.1.1 was released on May 11, 2020.
+
+This release fixed errors that occur when you play some special video files.
+
 ## v1.1.0
 
-v1.1.0 is released on Feb 28, 2020.
+v1.1.0 was released on Feb 28, 2020.
 
 This is the first release of the mediaplayer kit. You can use it in your project to enable the following functions:
 

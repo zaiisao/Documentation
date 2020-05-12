@@ -3,9 +3,11 @@
 title: Start a Video Broadcast
 description: 
 platform: Web
-updatedAt: Thu Apr 30 2020 09:10:05 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 09:38:40 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
+<div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
+
 Use this guide to quickly set up the Agora Web SDK and enable interactive broadcast functions in your app. 
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either host or audience. The host sends and receives streams while the audience receives streams only.
