@@ -16,7 +16,7 @@ After integrating the Agora SDK, you can call different sets of APIs to implemen
 | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Voice SDK        | [Voice Call](../../en/Voice/product_voice.md) <br>[Audio Broadcasting](../../en/Audio%20Broadcast/product_live_audio.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only live broadcasts. |
 | Video SDK        | [Video Call](../../en/Video/product_video.md) <br>[Video Broadcasting](../../en/Interactive%20Broadcast/product_live.md) | Provides both voice and video functions.                     |
-| Gaming SDK       | [Interactive Gaming](../../cn/Interactive%20Gaming/product_gaming.md) | Optimized for gaming applications. The package size is about 1 MB. |
+| Gaming SDK       | [Interactive Gaming](../../en/Interactive%20Gaming/product_gaming.md) | Optimized for gaming applications. The package size is about 1 MB. |
 | RTM SDK          | [Real-time Messaging](../../en/Real-time-Messaging/product_rtm.md)   | Provides a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency for a global audience. |
 | Recording Add-on | [On-premise Recording](../../en/Recording/product_recording.md)<br/>[Cloud Recording](../../en/cloud-recording/product_cloud_recording.md) | Records and saves voice/video calls and live broadcasts on your server. |
 
