@@ -3,7 +3,7 @@
 title: Agora Real-time Messaging Overview
 description: 
 platform: All Platforms
-updatedAt: Tue May 12 2020 10:33:25 GMT+0800 (CST)
+updatedAt: Tue May 12 2020 10:36:33 GMT+0800 (CST)
 ---
 # Agora Real-time Messaging Overview
 You can use the Agora RTM (Real-time Messaging) SDK to create a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency for a global audience. 
@@ -14,14 +14,14 @@ You can use the Agora RTM (Real-time Messaging) SDK to create a stable messaging
 
 The RTM SDK supports the following functions:
 
--   Send and receive online or offline peer-to-peer messages.
+-   Send and receive (offline) peer-to-peer messages.
 -   Send and receive channel messages.
--   Get the member list of a channel.
+-   Get the member list of the channel.
 -   Create, send, cancel, accept, or decline a call invitation. 
 -   Set, update, or get a user's attributes. 
 -   Set, update, or get attributes of a specified channel.
--   Get the latest member count of specified channels. 
--   Subscribe to or unsubscribe from the online status of the specified users.
+-   Get the latest member count of specified channel(s). 
+-   Subscribe to or unsubscribe from the online status of the specified user(s).
 -   Get a list of the peers, to whose specific status you have subscribed.
 -   Interconnect with the legacy Agora Signaling SDK.
 
@@ -59,7 +59,7 @@ You can use the RTM SDK for the following scenarios:
 
 ## Features
 
-The Agora RTM SDK provides the following features:
+The RTM SDK has the following features:
 
 <table border="1" width="100%">
   <tr>
@@ -68,7 +68,7 @@ The Agora RTM SDK provides the following features:
   </tr>
   <tr>
     <td>High concurrency</td>
-    <td>Supports sending up to a million  channel messages simultaneously. Can cope with the high concurrency scenarios, such as in an online quiz. <br></td>
+    <td>Supports sending up to a million channel messages simultaneously. Can cope with high-concurrency scenarios, such as in an online quiz. <br></td>
   </tr>
   <tr>
     <td>High reliability</td>
@@ -80,13 +80,13 @@ The Agora RTM SDK provides the following features:
   </tr>
 	  <tr>
     <td>Compatibility</td>
-    <td>Supports the following platforms:<li>iOS, Android (arm64, armv7, x86), macOS, Windows, and Linux<br><li> Web: Chrome 49+, Firefox 52+, Safari 9+、Internet Explorer 11+<br><li>Java server and C++ server<br></td>
+    <td>Supports the following platforms:<li>iOS, Android (arm64, armv7, x86), macOS, Windows, Linux, and Web<br><li> Web: Chrome 49+, Firefox 52+, Safari 9+, Internet Explorer 11+<br><li>Java server and C++ server<br></td>
   </tr>
 </table>
 
-## RTM vs. Signaling
 
-The Agora RTM SDK is designed to replace the legacy Agora Signaling SDK with expanded capabilities. 
+## Reference
 
-> Maintenance of the legacy Agora Signaling SDK ends Q4 2019. 
+When integrating the Agora RTM SDK, you can also refer to the following article:
 
+- [Does the Agora RTM SDK have a limit on the number of concurrent online users?](https://docs.agora.io/en/faq/rtm_concurrency)
