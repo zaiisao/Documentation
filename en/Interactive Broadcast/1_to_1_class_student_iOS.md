@@ -31,7 +31,7 @@ Refer to the following table to download the SDKs, and integrate the SDKs into y
 
 Refer to the following diagram to implement the basic real-time communication and messaging functions in your project with the Agora RTC SDK, Agora RTM SDK, and Agora Edu Cloud Service.
 
-![](https://web-cdn.agora.io/docs-files/1586789044962)
+![](https://web-cdn.agora.io/docs-files/1589367387020)
 
 ## Core API reference
 
