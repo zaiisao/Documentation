@@ -3,7 +3,7 @@
 title: Build a Client for the Student
 description: 
 platform: Android
-updatedAt: Tue Apr 14 2020 03:28:27 GMT+0800 (CST)
+updatedAt: Wed May 13 2020 11:08:20 GMT+0800 (CST)
 ---
 # Build a Client for the Student
 This section describes how to implement an Android client for the student.
@@ -23,6 +23,7 @@ Refer to the following table to download the SDKs, and integrate the SDKs into y
 | ---------------- | ---------------- | ---------------- |
 | [RTC (Real-time Communication) SDK](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms)      | [Agora SDK for Android](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Android_v2_9_0_102_FULL_20200216_1288.zip)      | [Start a Video Call](https://docs.agora.io/en/Video/start_call_android?platform=Android) |
 | [RTM (Real-time Messaging) SDK](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Real-time Messaging SDK](https://docs.agora.io/en/Real-time-Messaging/downloads) | [Peer-to-peer or Channel Messaging](https://docs.agora.io/en/Real-time-Messaging/messaging_android?platform=Android) |
+| Agora Edu Cloud Service | / | [Agora Edu Cloud Service quickstart](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-Cloud-Service) |
 | [Whiteboard](https://developer-en.netless.link/docs/android/overview/android-introduction/) | [White SDK](https://developer-en.netless.link/docs/android/quick-start/android-prepare/) | [Whiteboard quickstart](https://developer-en.netless.link/docs/android/quick-start/android-init-sdk/) |
 
 
