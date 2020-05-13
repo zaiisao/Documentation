@@ -3,7 +3,7 @@
 title: 教师端实现
 description: 
 platform: Web
-updatedAt: Mon May 11 2020 08:58:06 GMT+0800 (CST)
+updatedAt: Tue May 12 2020 07:49:16 GMT+0800 (CST)
 ---
 # 教师端实现
 本文展示如何在 Web 平台实现教师端相关功能。
@@ -44,7 +44,7 @@ updatedAt: Mon May 11 2020 08:58:06 GMT+0800 (CST)
 
 - 教师端加入频道、开始上课、离开频道
 
-![](https://web-cdn.agora.io/docs-files/1589187406111)
+![](https://web-cdn.agora.io/docs-files/1589269718385)
 
 - 教师端同意学生发言
 

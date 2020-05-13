@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu May 07 2020 03:28:44 GMT+0800 (CST)
+updatedAt: Tue May 12 2020 10:29:51 GMT+0800 (CST)
 ---
 # 产品概述
 
@@ -84,11 +84,11 @@ Agora 实时消息（Real-time Messaging，RTM）SDK 提供了稳定可靠、低
   </tr>
 </table>	
 
-## 实时消息 vs. 信令
 
-实时消息系统将逐步替代信令。除上述高可靠、高并发、全球化部署等优势之外，实时消息 SDK 将会持续更新，不断推出更多更丰富的功能和场景应用。
+## 相关链接
 
-> 对信令 SDK 的维护将于 2019 年第四季度停止。
+使用 Agora 实时消息 SDK 开发过程中，你还可以参考如下文档：
 
+- [Agora RTM SDK 对同时在线人数有限制吗？](https://docs.agora.io/cn/faq/rtm_concurrency)
 
 

@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Mon May 11 2020 07:13:01 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 11:11:49 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -275,4 +275,4 @@ if(!_defaultCamera)
 * 在分享媒体资源到远端的场景下，Agora 建议你使用 3.0.0 版本的 Native SDK，并在 `mute` 后再进行语音路由切换。
 
 ## API 文档
-详见 [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/1.1.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html?transId=1.1.0)
+详见 [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)

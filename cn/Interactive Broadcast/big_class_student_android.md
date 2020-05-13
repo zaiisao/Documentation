@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Android
-updatedAt: Mon May 11 2020 08:47:27 GMT+0800 (CST)
+updatedAt: Tue May 12 2020 04:57:22 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Android 平台实现学生端相关功能。
@@ -30,7 +30,7 @@ updatedAt: Mon May 11 2020 08:47:27 GMT+0800 (CST)
 
 ## 核心 API 时序图
 
-参考下图时序，搭配使用 [RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk) 和 [RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk) 在你的项目中实现基础的实时音视频和实时消息功能。
+参考下图时序，搭配使用 [RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk)、[RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk) 和 Agora Edu 云服务在你的项目中实现基础的实时音视频和实时消息功能。
 
 - 学生端加入频道、开始上课、离开频道
 
