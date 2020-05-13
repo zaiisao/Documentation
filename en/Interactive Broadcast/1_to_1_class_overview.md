@@ -53,12 +53,13 @@ Follow these steps to try the demo:
 Agora recommends using the following SDKs or services to implement a One-to-one Classroom scenario.
 ![](https://web-cdn.agora.io/docs-files/1589183433426)
 
-| SDK | Function | 
+| SDK or Service | Function | 
 | ---------------- | ---------------- | 
 | Agora RTC SDK      | Joins an RTC channel for real-time audio and video communication.      | 
-| Agora RTM SDK      | Logs in the RTM system and joins an RTM channel for managing the channel, and sending and receiving text messages.      | 
+| Agora RTM SDK      | Logs into the RTM system and joins an RTM channel for managing the channel, and sending and receiving text messages.      | 
 | Agora Cloud Recording | Records the class in real time and replays it immediately after the recording completes. |
-| The whiteboard SDK (third-party) | Uses the whiteboard for writing or file sharing. |
+| Agora Edu Cloud Service | Provides backend service for teachers and students and implements features including classroom information management and permission control. |
+| The Whiteboard SDK (third-party) | Uses the whiteboard for writing or file sharing. |
 
 ## Advantages
 
@@ -101,6 +102,10 @@ You can also add the following components or services to your project:
 - Whiteboard: You can add a whiteboard to an online classroom, which can be used to write things down, share a Powerpoint slide, and share the H5 animation courseware.
 - Screen share: Agora supports the teacher sharing the screen, courseware materials, and notes with the student.
 - Recording: You can even embed recording in your class with our on-premise recording or cloud recording service.
+
+**Easy-to-use backend service**
+
+Agora provides Agora Edu Cloud Service for developers who are not familiar with backend development, enabling them to implement features including classroom information management and permission control by calling RESTful APIs.
 
 **Traceability**
 

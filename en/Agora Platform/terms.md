@@ -3,7 +3,7 @@
 title: Glossary
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 05:31:26 GMT+0800 (CST)
+updatedAt: Wed May 13 2020 02:32:03 GMT+0800 (CST)
 ---
 # Glossary
 ## A
@@ -231,8 +231,6 @@ In the dual-stream mode, the SDK transmits a high-quality and a low-quality vide
 Subscribing to low-quality streams improves communication continuity because this reduces bandwidth consumption. Developers can choose to receive low-quality video streams when network condition are unreliable, or when multiple users publish streams.
 
 The SDK sets the default video profile of the low-quality video stream based on that of the high-quality video stream.
-
-When customizing the video profile of the low-quality video stream, the aspect ratio of the low-quality video stream must match that of the high-quality video stream.
 
 <div class="alert info">Reference:<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/multi_user_video_android?platform=Android">Video for 7+ Users</a></li>
 <li><a href="#fallback">Stream fallback</a></li>
