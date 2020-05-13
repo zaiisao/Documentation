@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri May 08 2020 11:09:08 GMT+0800 (CST)
+updatedAt: Wed May 13 2020 09:02:25 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -196,7 +196,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 
 该方法向 Agora RTM 服务器申请历史消息查询资源。若请求成功，你可以通过 GET 方法从服务器返回的 `location` 获取查询到的历史消息。
 
-<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 <code>sendMessageOptions</code> 方法中的 <code>enableHistoricalMessaging</code> 参数设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
+<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 <code>sendMessageOptions</code> 类中的 <code>enableHistoricalMessaging</code> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
 > - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。

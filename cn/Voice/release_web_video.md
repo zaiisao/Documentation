@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed May 06 2020 06:10:28 GMT+0800 (CST)
+updatedAt: Wed May 13 2020 10:17:10 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -114,7 +114,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
   <li>在网络不稳定的情况下，SDK 无法保证媒体附属信息和媒体流严格同步。</li>
 </div>
 
-#### 2. 取消发布流成功回调
+#### 2. 新增取消发布流成功回调
 
 新增 `Client.on("stream-unpublished")` 回调，当本地用户取消发布流（`Client.unpublish`）成功时，SDK 会触发该回调。
 

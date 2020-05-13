@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Wed May 13 2020 03:45:02 GMT+0800 (CST)
+updatedAt: Wed May 13 2020 10:48:29 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -28,6 +28,29 @@ Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现�
 
 - 如果只使用屏幕共享，则在新建流的时候，把 `video` 字段设为 `false`， `screen` 字段设为 `true` 即可。
 - 如果在使用屏幕共享的同时，还开启本地视频，则需要创建两个 Client 对象，一路发送屏幕共享流，一路发送视频流。新建流的时候，屏幕共享流的 `video` 字段设为 `false`， `screen` 字段设为 `true`；本地视频流的 `video` 字段设为 `true`，`screen` 字段设为 `false`。由于共享流也是一路流，因此也会占用一个 UID。
+
+## <a name="setScreenProfile"></a>设置共享屏幕的视频属性
+
+共享屏幕默认的视频属性为：分辨率（宽 × 高） 1920 × 1080，帧率 5 fps。如果你需要使用其他的视频属性，可以调用 `Stream.setScreenProfile` 设置共享屏幕的视频属性。
+
+```javascript
+// After creating a stream for screen-sharing
+screenStream.setScreenProfile("720p_1");
+```
+
+SDK 支持设置的视频属性如下表所示：
+
+| 屏幕视频属性 | 分辨率（宽 × 高） | 帧率   |
+| :----------- | :---------------- | :----- |
+| 屏幕视频属性 | 分辨率（宽 × 高） | 帧率   |
+| `480p_1`     | 640 × 480         | 5 fps  |
+| `480p_2`     | 640 × 480         | 30 fps |
+| `720p_1`     | 1280 × 720        | 5 fps  |
+| `720p_2`     | 1280 × 720        | 30 fps |
+| `1080p_1`    | 1920 × 1080       | 5 fps  |
+| `1080p_2`    | 1920 × 1080       | 30 fps |
+
+<div class="alert note">注意事项：<br/><li>屏幕视频属性必须在初始化流 (<code>Stream.init</code>) 之前设置。</li><li>修改屏幕视频属性可能会影响计费。由于设备和浏览器的限制，部分浏览器对设置的屏幕视频属性不一定能全部适配。这种情况下浏览器会自动调整分辨率，计费也将按照实际分辨率计算。</li></div>
 
 ## <a name = "chrome"></a>Chrome 屏幕共享
 

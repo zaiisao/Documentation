@@ -31,7 +31,7 @@ updatedAt: Mon May 11 2020 09:13:43 GMT+0800 (CST)
 
 参考下图时序，搭配使用 Agora RTC SDK、Agora RTM SDK 和 Agora Edu 云服务在你的项目中实现基础的实时音视频、实时消息和教室信息管理功能。
 
-![](https://web-cdn.agora.io/docs-files/1589188470954)
+![](https://web-cdn.agora.io/docs-files/1589366873635)
 
 ## 核心 API 参考
 - Agora Edu 云服务
