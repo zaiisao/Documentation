@@ -51,7 +51,7 @@ Follow these steps to try the demo:
 ## Technical solutions
 
 Agora recommends using the following SDKs or services to implement a Small Classroom scenario.
-![](https://web-cdn.agora.io/docs-files/1583823983123)
+![](https://web-cdn.agora.io/docs-files/1589351116381)
 
 | SDK or Service | Function | 
 | ---------------- | ---------------- | 
