@@ -3,7 +3,7 @@
 title: Build a Client for the Student
 description: 
 platform: Web
-updatedAt: Tue Mar 10 2020 06:53:38 GMT+0800 (CST)
+updatedAt: Wed May 13 2020 08:12:25 GMT+0800 (CST)
 ---
 # Build a Client for the Student
 This section describes how to implement a Web client for the student.
@@ -12,7 +12,7 @@ This section describes how to implement a Web client for the student.
 
 This flowchart shows the major logic of the students joining and leaving the classroom:
 
-![](https://web-cdn.agora.io/docs-files/1582875834807)
+![](https://web-cdn.agora.io/docs-files/1589357537037)
 
 ## Integrate the SDK
 
