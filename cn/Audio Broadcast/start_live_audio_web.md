@@ -3,12 +3,13 @@
 title: 实现音频直播
 description: 
 platform: Web
-updatedAt: Thu Apr 30 2020 09:10:17 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 09:54:30 GMT+0800 (CST)
 ---
 # 实现音频直播
-根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音频互动直播。
+<div class="alert note">提示：<br/>
+声网即将推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 API 的易用性。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
 
-本文会详细介绍如何建立一个简单的项目并使用 Agora Web SDK 实现基础的互动直播。我们建议你阅读本文以快速了解 Agora 的核心方法。
+根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音频互动直播。
 
 互动直播和实时通话的区别在于，直播频道的用户有角色之分。你可以将角色设置为主播，或者观众，其中主播可以收、发流，观众只能收流。
 

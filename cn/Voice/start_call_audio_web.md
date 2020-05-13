@@ -3,9 +3,12 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Thu Apr 30 2020 09:10:16 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 09:30:30 GMT+0800 (CST)
 ---
 # 实现语音通话
+<div class="alert note">提示：<br/>
+声网即将推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 API 的易用性。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
+
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
 
 本文会详细介绍如何建立一个简单的项目并使用 Agora Web SDK 实现基础的一对一语音通话。我们建议你阅读本文以快速了解 Agora 的核心方法。

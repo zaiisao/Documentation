@@ -3,7 +3,7 @@
 title: 术语库
 description: 
 platform: All Platforms
-updatedAt: Wed May 06 2020 08:23:05 GMT+0800 (CST)
+updatedAt: Wed May 13 2020 02:30:44 GMT+0800 (CST)
 ---
 # 术语库
 ## A
@@ -321,7 +321,7 @@ SD-RTN™ 是 Software Defined Real-time Network 的缩写，即软件定义实�
 大流与小流的关系如下：
 
 - SDK 根据大流的视频属性自动设置小流的默认视频属性
-- 如果手动设置小流的视频属性，则小流的宽高比例必须与大流的宽高比例保持一致
+- 小流的宽高比例默认与大流的宽高比例一致
 
 <div class="alert info">相关链接：<li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/multi_user_video_android?platform=Android">7 人以上视频场景</a></li>
 <li><a href="#fallback">流回退</a></li>

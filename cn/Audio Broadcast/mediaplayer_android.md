@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Android
-updatedAt: Mon May 11 2020 07:12:09 GMT+0800 (CST)
+updatedAt: Mon May 11 2020 11:32:15 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -290,4 +290,4 @@ rtcChannelPublishHelper.release();
 
 ## API 文档
 
-详见 [API 文档](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/mediaplayer_java/1.1.0/index.html)
+详见 [API 文档](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/mediaplayer_java/index.html)
