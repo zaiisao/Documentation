@@ -3,7 +3,7 @@
 title: 学生端实现
 description: 
 platform: Android
-updatedAt: Tue May 12 2020 04:57:22 GMT+0800 (CST)
+updatedAt: Wed May 13 2020 11:13:17 GMT+0800 (CST)
 ---
 # 学生端实现
 本文展示如何在 Android 平台实现学生端相关功能。
@@ -34,7 +34,7 @@ updatedAt: Tue May 12 2020 04:57:22 GMT+0800 (CST)
 
 - 学生端加入频道、开始上课、离开频道
 
-![](https://web-cdn.agora.io/docs-files/1589186461794)
+![](https://web-cdn.agora.io/docs-files/1589368341201)
 
 - 学生端申请发言
 

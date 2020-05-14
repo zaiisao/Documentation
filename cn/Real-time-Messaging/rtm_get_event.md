@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed May 13 2020 09:02:25 GMT+0800 (CST)
+updatedAt: Thu May 14 2020 03:15:51 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -196,9 +196,9 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 
 该方法向 Agora RTM 服务器申请历史消息查询资源。若请求成功，你可以通过 GET 方法从服务器返回的 `location` 获取查询到的历史消息。
 
-<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 <code>sendMessageOptions</code> 类中的 <code>enableHistoricalMessaging</code> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
+<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
+> - 历史消息默认保留七天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -278,9 +278,10 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 该方法从 Agora RTM 服务器指定的地址获取历史消息。
 
-<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 <code>sendMessageOptions</code> 方法中的 <code>enableHistoricalMessaging</code> 参数设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
+<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
+
+> - 历史消息默认保留七天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -335,9 +336,10 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 
 该方法从 Agora RTM 服务器指定的地址获取历史消息数目。
 
-<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在发送消息时将 <code>sendMessageOptions</code> 方法中的 <code>enableHistoricalMessaging</code> 参数设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
+<div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留 7 天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
+
+> - 历史消息默认保留七天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
