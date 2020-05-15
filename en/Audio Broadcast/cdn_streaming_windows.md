@@ -100,7 +100,7 @@ m_rtcEngine->addPublishStreamUrl(url, true);
 m_rtcEngine->removePublishStreamUrl(url);
 ```
 
-**Example 1: Two-host Tile Horizontally**
+**Example 1: Two-host tile horizontally**
 
 
 <img alt="../_images/sei_2host.png" src="https://web-cdn.agora.io/docs-files/en/sei_2host.png" style="width: 416.0px; height: 240.0px;"/>
@@ -131,7 +131,7 @@ User1:
       alpha: 1.0
 ```
 
-**Example 2: Three-host Tile Vertically**
+**Example 2: Three-host tile vertically**
 
 <img alt="../_images/sei_3host.png" src="https://web-cdn.agora.io/docs-files/en/sei_3host.png" style="width: 236.0px; height: 416.0px;"/>
 
@@ -169,7 +169,7 @@ Canvas:
        alpha: 1.0
 ```
 
-**Example 3: One Full Screen + Floating Thumbnails**
+**Example 3: One full screen + floating thumbnails**
 
 <img alt="../_images/sei_random.png" src="https://web-cdn.agora.io/docs-files/en/sei_random.png" style="width: 828.0px; height: 416.0px;"/>
 
