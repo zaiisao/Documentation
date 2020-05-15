@@ -3,7 +3,7 @@
 title: Build a Client for the Student
 description: 
 platform: Android
-updatedAt: Wed May 13 2020 11:08:20 GMT+0800 (CST)
+updatedAt: Wed May 13 2020 11:08:23 GMT+0800 (CST)
 ---
 # Build a Client for the Student
 This section describes how to implement an Android client for the student.
@@ -12,7 +12,7 @@ This section describes how to implement an Android client for the student.
 
 This flowchart shows the major logic of the student joining and leaving the classroom:
 
-![](https://web-cdn.agora.io/docs-files/1582873440949)
+![](https://web-cdn.agora.io/docs-files/1589357458788)
 
 ## Integrate the SDK
 

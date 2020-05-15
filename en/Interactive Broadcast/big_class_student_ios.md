@@ -3,7 +3,7 @@
 title: Build a Client for the Students
 description: 
 platform: iOS
-updatedAt: Tue May 12 2020 08:07:44 GMT+0800 (CST)
+updatedAt: Thu May 14 2020 06:29:48 GMT+0800 (CST)
 ---
 # Build a Client for the Students
 This section describes how to implement an iOS client for the students.
@@ -12,7 +12,7 @@ This section describes how to implement an iOS client for the students.
 
 This flowchart shows the major logic of the students joining and leaving the classroom:
 
-![](https://web-cdn.agora.io/docs-files/1582536817886)
+![](https://web-cdn.agora.io/docs-files/1589357458788)
 
 ## Integrate the SDK
 

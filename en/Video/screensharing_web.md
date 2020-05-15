@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Thu Apr 30 2020 04:12:20 GMT+0800 (CST)
+updatedAt: Fri May 15 2020 02:32:02 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -30,6 +30,30 @@ Screen sharing on the web client is enabled by creating a screen-sharing stream.
 - If you publish both the local video stream and your screen-sharing stream, you need to create two client objects:
   - A client object for sending the local stream: Set `video` as `true` and `screen` as `false`.
   - A client object for sending the screen-sharing stream: Set `video` as false and `screen` as true.
+
+## Set the screen profile
+
+The default video profile for screen sharing is a resolution of 1920 × 1080 (width × height) and a frame rate of 5 fps. To use a different profile, call `Stream.setScreenProfile` to set the screen profile, as in the following example:
+
+```javascript
+// After creating a stream for screen-sharing
+screenStream.setScreenProfile("720p_1");
+```
+
+The SDK supports the following screen profiles:
+
+| Screen profile | Resolution (width × height) | Frame rate |
+| :------------- | :-------------------------- | :--------- |
+| `480p_1`       | 640 × 480                   | 5 fps      |
+| `480p_2`       | 640 × 480                   | 30 fps     |
+| `720p_1`       | 1280 × 720                  | 5 fps      |
+| `720p_2`       | 1280 × 720                  | 30 fps     |
+| `1080p_1`      | 1920 × 1080                 | 5 fps      |
+| `1080p_2`      | 1920 × 1080                 | 30 fps     |
+
+<div class="alert note">Note:<br/>
+<li> Ensure that you set the screen profile before initializing (<code>Stream.init</code>) the screen-sharing stream.</li>
+<li>Setting the screen profile may affect your billing. Due to limitations of some devices and browsers, the resolution you set may fail to take effect and is adjusted by the browser. In this scenario, billing is calculated based on the actual resolution.</li></div>
 
 ## <a name="chrome"></a>Screen sharing on Google Chrome
 

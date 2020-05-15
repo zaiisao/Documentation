@@ -3,7 +3,7 @@
 title: Build a Client for the Teacher
 description: 
 platform: Web
-updatedAt: Tue May 12 2020 08:12:37 GMT+0800 (CST)
+updatedAt: Thu May 14 2020 07:05:14 GMT+0800 (CST)
 ---
 # Build a Client for the Teacher
 This section describes how to implement a web client for the teacher.
@@ -14,11 +14,11 @@ This flowchart shows the major logic of the following functions:
 
 - The teacher joins and leaves the classroom:
 
-![](https://web-cdn.agora.io/docs-files/1582536817886)
+![](https://web-cdn.agora.io/docs-files/1589357458788)
 
 - The teacher mutes the audio, video, and instant messages of the students:
 
-![](https://web-cdn.agora.io/docs-files/1582537094435)
+![](https://web-cdn.agora.io/docs-files/1589439778420)
 
 - Recording:
 

@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Web
-updatedAt: Mon May 11 2020 09:38:04 GMT+0800 (CST)
+updatedAt: Fri May 15 2020 03:33:50 GMT+0800 (CST)
 ---
 # Start a Video Call
 <div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -418,11 +418,13 @@ If the web app is not working properly, open the console in your browser and che
 
 ### Group video call
 
-Agora provides an open-source [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Web) demo project that implements a group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
+For scenarios involving group video calls, refer to the following links:
+- A step-by-step tutorial on how to [build a group video call web app](https://www.agora.io/en/blog/building-a-group-video-chat-web-app/).
+- An open-source [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Web) demo project that implements a group video call on GitHub.
 
 ### WordPress plugin
 
-With the [Agora Video for WordPress](https://wordpress.org/plugins/wp-agora-io/) plugin, you can easily embed live video streaming in your WordPress posts and pages. See [Agora WordPress Plugin QuickStart Guide](https://medium.com/agora-io/agora-video-for-wordpress-plugin-quickstart-guide-b8838abd4245).
+With the [Agora Video for WordPress](https://wordpress.org/plugins/wp-agora-io/) plugin, you can easily embed live video streaming in your WordPress posts and pages. See [Agora WordPress Plugin QuickStart Guide](https://www.agora.io/en/blog/agora-video-for-wordpress-plugin-quickstart-guide/).
 
 ### FAQ
 
