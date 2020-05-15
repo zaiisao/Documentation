@@ -12,7 +12,7 @@ updatedAt: Wed Dec 11 2019 10:31:46 GMT+0800 (CST)
 
 ### Applicable scenarios
 
-- Live sports: The host and audience can watch and simultaneously commenting on events.
+- Live sports: The host and audience can watch and simultaneously comment on events.
 - Music concerts, movies, and other entertainments: The hosts and audience can participate in real-time discussions while watching them.
 - Additional perspectives: The host can inject video streams captured by drones or network cameras into a live broadcast.
 

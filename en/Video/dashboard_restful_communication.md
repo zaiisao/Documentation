@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed May 13 2020 02:15:14 GMT+0800 (CST)
+updatedAt: Fri May 15 2020 08:32:44 GMT+0800 (CST)
 ---
 # RESTful API
 ## Authentication
@@ -590,10 +590,12 @@ The following chart shows how you can use related APIs.
 <div class="alert note">The call frequency of this group of API is no more than ten queries per second.</div>
 
 The banned user receives the corresponding callback as follows:
-- Android: [`onConnectionStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e)(CONNECTION_CHANGED_BANNED_BY_SERVER)
-- iOS/macOS: [`connectionChangedToState`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)(AgoraConnectionChangedBannedByServer)
-- Web: [`onclient-banned`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#on)
-- Windows: [`onConnectionStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4)(CONNECTION_CHANGED_BANNED_BY_SERVER)
+- Android: [`onConnectionStateChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) callback reports `CONNECTION_CHANGED_BANNED_BY_SERVER(3)`
+- iOS/macOS: [`connectionChangedToState`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) callback reports `AgoraConnectionChangedBannedByServer(3)`
+- Web: [`onclient-banned`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.client.html#on) callback
+- Windows: [`onConnectionStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) callback reports `CONNECTION_CHANGED_BANNED_BY_SERVER(3)`
+- Electron: [`AgoraRtcEngine.on("connectionStateChanged")`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#on) callback reports `3`
+- Unity: [`OnConnectionStateChangedHandler`](https://docs.agora.io/en/Video/API%20Reference/unity/namespaceagora__gaming__rtc.html#adae7694cb602375ccbc14be3062a230c) callback reports `CONNECTION_CHANGED_BANNED_BY_SERVER(3)`
 
 ### Creates a rule (POST)
 
@@ -816,6 +818,11 @@ The following chart shows how you can use Online Statistics Query APIs.
 
 This method checks if a specified user is in a specified channel, and if yes, the role of this user in the channel.
 
+- Broadcaster: A broadcaster can both send and receive streams.
+- Audience: An audience can only receive streams.
+
+<div class="alert note">To get the user role of all users in a specified channel, see <a href="#userList">Gets the user list in a channel (GET)</a ></div>
+
 **Basic information**
 
 | Basic information | Description |
@@ -859,6 +866,7 @@ BaseUrl/v1/channel/user/property/{appid}/{uid}/{channelName}
 }
 ```
 
+<a name="userList"></a>
 ### Gets the user list in a channel (GET)
 
 This method gets the user list:
@@ -911,7 +919,7 @@ The response of this method differs with the channel profile:
 }
 ```
 
-- In the Live-communication profile, the response is as follows:
+- In the Live-broadcast profile, the response is as follows:
 
 | Parameter | Description |
 | ---------------- | ---------------- |
@@ -930,6 +938,7 @@ The response of this method differs with the channel profile:
   }
 }
 ```
+
 
 ### Gets the channel list (GET)
 

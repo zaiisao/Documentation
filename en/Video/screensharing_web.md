@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Fri May 15 2020 02:32:02 GMT+0800 (CST)
+updatedAt: Fri May 15 2020 09:03:57 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -36,7 +36,7 @@ Screen sharing on the web client is enabled by creating a screen-sharing stream.
 The default video profile for screen sharing is a resolution of 1920 × 1080 (width × height) and a frame rate of 5 fps. To use a different profile, call `Stream.setScreenProfile` to set the screen profile, as in the following example:
 
 ```javascript
-// After creating a stream for screen-sharing
+// After creating a stream for screen sharing
 screenStream.setScreenProfile("720p_1");
 ```
 
