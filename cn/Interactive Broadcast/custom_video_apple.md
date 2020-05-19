@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: iOS,macOS
-updatedAt: Fri Apr 24 2020 08:01:44 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 10:46:16 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
