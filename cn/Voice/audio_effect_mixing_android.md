@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to enable audio mixing, play audio effects and the related settings
 platform: Android
-updatedAt: Tue May 19 2020 08:38:20 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 08:50:49 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
