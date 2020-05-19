@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Windows
-updatedAt: Fri Apr 24 2020 08:05:11 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 10:47:39 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -26,6 +26,7 @@ updatedAt: Fri Apr 24 2020 08:05:11 GMT+0800 (CST)
 1. 在 `joinChannel` 前通过调用 `setExternalVideoSource` 指定外部视频采集设备。
 2. 指定外部采集设备后，开发者自行管理视频数据采集和处理。
 3. 完成视频数据处理后，再通过 `pushVideoFrame` 发送给 SDK 进行后续操作。
+    <div class="alert note">为满足实际使用需求，你可以在将视频数据发送回 SDK 前，通过 <code>ExternalVideoFrame</code> 修改视频数据。比如，设置 <code>rotation</code> 为 180，使视频帧顺时针旋转 180 度。</div>
 
 ### API 调用时序
 
