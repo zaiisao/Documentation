@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:43:27 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 09:25:08 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -91,8 +91,8 @@ Agora audio mixing supports the following options:
 	- Mix the music file with the audio captured by the microphone and send it to other users.
 	- Replace the audio captured by the microphone with the music file.
 - Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
-- State change notification: reports when the state of the audio mixing file changes, for example when the audio mixing file pauses playing or resumes playing.
-
+- Adjust the audio volume: Adjust the playback volume of local and/or remote music files at the same time or separately.
+- Adjust the audio pitch: Adjust the pitch of the local music file or the pitch of the local voice separately.
 
 ### Implementation
 
@@ -119,6 +119,14 @@ int nRet = rtcEngine.stopAudioMixing();
 
 - [`startAudioMixing`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a6f573cd61d53147ed6a2b7f033091d86)
 - [`stopAudioMixng`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2b90cbf4142c913b3efa795482713b08)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a544aee96b789ac5a57d26b61b7e1a5fa)
+- [`setLocalVoicePitch`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a43616f919e0906279dff5648830ce31a)
+- [`setAudioMixingPitch`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a26b117f7e097801b03522f7da9257425)
+- [`pauseAudioMixing`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v3.0.1/classagora_1_1rtc_1_1_i_rtc_engine.html#ab86885c38e7ee7a4b37d5bbacafcaa24)
+- [`resumeAudioMixing`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v3.0.1/classagora_1_1rtc_1_1_i_rtc_engine.html#a5a9606ad7ca4995e0d37fcf1642fe401)
+- [`getAudioMixingDuration`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v3.0.1/classagora_1_1rtc_1_1_i_rtc_engine.html#a6a87b6b9135a6f45095dcf6aa62295cb)
+- [`getAudioMixingCurrentPosition`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v3.0.1/classagora_1_1rtc_1_1_i_rtc_engine.html#aae54b86e9e6a7c0ed955b96f011855cb)
+- [`setAudioMixingPosition`](https://docs.agora.io/en/Voice/API%20Reference/cpp/v3.0.1/classagora_1_1rtc_1_1_i_rtc_engine.html#a6c69e2229c438fd587b8f81df34214ad)
 - [`onAudioMixingStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a298389513bfaa50af4277fc3296e3f22)
 
 ### Considerations
