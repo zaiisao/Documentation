@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Tue May 19 2020 10:42:04 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 10:47:19 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -35,6 +35,7 @@ Agora Native SDK 目前提供 Push 方式和 MediaIO 两种方式实现自定义
 1. 在 `joinChannel` 前通过调用 `setExternalVideoSource` 指定外部视频采集设备。
 2. 指定外部采集设备后，开发者自行管理视频数据采集和处理。
 3. 完成视频数据处理后，再通过 `pushExternalVideoFrame` 发送给 SDK 进行后续操作。
+    <div class="alert note">为满足实际使用需求，你可以在将视频数据发送回 SDK 前，通过 <code>AgoraVideoFrame</code> 修改视频数据。比如，设置 <code>rotation</code> 为 180，使视频帧顺时针旋转 180 度。</div>
 
 **API 时序图**
 
@@ -79,6 +80,7 @@ Agora 通过 MediaIO 提供 `IVideoSource` 接口和 `IVideoFrameConsumer` 类�
 	- 收到 `getBufferType` 回调后，在该回调的返回值中指定想要采集的视频数据格式；
 	- 收到 `onInitialize` 回调后，保存该回调中的 `IVideoFrameConsumer` 对象。Agora 通过 `IVideoFrameConsumer` 对象发送和接收自定义的视频数据；
 	- 收到 `onStart` 回调后，通过 `IVideoFrameConsumer` 对象向 SDK 发送视频帧；
+	  <div class="alert note">为满足实际使用需求，你可以在将视频帧发送回 SDK 前，修改 <code>IVideoFrameConsumer</code> 中视频帧参数，如 <code>rotation</code>。</div>
 	- 收到 `onStop` 回调后，停止使用 `IVideoFrameConsumer` 对象向 SDK 发送视频帧；
 	- 收到 `onDispose` 回调后，释放 `IVideoFrameConsumer` 对象。
 2. 继承实现的 `IVideoSource` 类，构建一个自定义的视频源对象。
@@ -269,10 +271,13 @@ rtcEngine.setLocalVideoRenderer(sink);
 
 ## 开发注意事项
 
-自定义视频采集和渲染场景中，需要开发者具有采集或渲染视频的能力：
+- 自定义视频采集和渲染场景中，需要开发者具有采集或渲染视频的能力：
 
-- 自定义视频采集场景中，你需要自行管理视频数据的采集和处理。
-- 自定义视频渲染场景中，你需要自定管理视频数据的处理和显示。
+  - 自定义视频采集场景中，你需要自行管理视频数据的采集和处理。
+  - 自定义视频渲染场景中，你需要自定管理视频数据的处理和显示。
+
+
+- 自定义视频渲染场景中，当 `consumeByteArrayFrame` 或 `consumeByteBufferFrame` 或 `consumeTextureFrame` 回调报告 `rotation` 不为 0 时，自渲染的视频会呈一定角度。该角度可能由 SDK 采集或自采集的设置引起，你需要能根据实际使用需求处理自渲染的视频角度。
 
 ## 相关文档
 
