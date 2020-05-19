@@ -3,7 +3,7 @@
 title: Capture Screenshots
 description: snapshot
 platform: All Platforms
-updatedAt: Fri Apr 17 2020 03:24:54 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 03:48:02 GMT+0800 (CST)
 ---
 # Capture Screenshots
 ## Overview
@@ -30,7 +30,8 @@ To take screenshots of the video streams, configure `snapshotConfig` when callin
     "clientRequest": {
         "token": "<token if any>",
         "recordingConfig": {
-            "channelType": 0
+            "channelType": 1,
+            "subscribeUidGroup": 0
         }, 
         "snapshotConfig": {
             "captureInterval": 5,

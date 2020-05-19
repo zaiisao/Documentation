@@ -3,22 +3,21 @@
 title: Channel Encryption
 description: 
 platform: Android
-updatedAt: Thu Apr 16 2020 06:45:21 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 08:29:03 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
 
-<div class="alert note"><li>Both Communication and Live Broadcast support channel encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use channel encryption.<br><li>Ensure that both receivers and senders use channel encryption, otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
+<div class="alert note"><li>Both Communication and Live Broadcast support channel encryption. For live broadcasts, if you need to push streams to the CDN, do not use channel encryption.<br><li>Ensure that both receivers and senders use channel encryption, otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
+
+The following diagram describes the encrypted data transmission process:
+![](https://web-cdn.agora.io/docs-files/1589768973253)
 
 ## Scenario 1: Do Not Use Encryption
 
 If you do not use encryption, you can delete the unnecessary `libagora-crypto.so` file in the [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) to reduce the SDK package size.
 
 ## Scenario 2: Use Built-in Encryption
-
-The following figure shows how Agora’s communications use built-in encryption:
-
-![](https://web-cdn.agora.io/docs-files/1587019355409)
 
 The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) for Android includes an independent dynamic library, `libagora-crypto.so`, in both the `arm64-v8a` and `armeabi-v7a` folders under `libs` for the app to load dynamically.
 
@@ -39,11 +38,6 @@ We provide an open-source demo project [OpenVideoCall-Android](https://github.co
 > To reduce the SDK size, if your app uses `libcrypto.so`, you can use it instead of `libagora-crypto.so` included in the Agora SDK since both files are the same. The Agora SDK `libagora-crypto.so` version is 1.0.2g.
 
 ## Scenario 3: Use Customized Encryption
-
-The following figure shows the customized data encryption/decryption process:
-
-![](https://web-cdn.agora.io/docs-files/1587019325696)
-
 
 ### Step 1: Register a Packet Observer
 

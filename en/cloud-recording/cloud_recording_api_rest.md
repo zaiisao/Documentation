@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Sat May 09 2020 06:48:55 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 03:51:58 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -778,6 +778,7 @@ This section lists the common errors you may encounter when using the Agora Clou
   - Content-type is wrong. Ensure that the `Content-type` field is `application/json;charset=utf-8`.
   - `cloud_recording` is missing in the request URL.
   - The HTTP method is wrong.
+  - The request is not valid JSON
 - `53`: The recording is already running. This error occurs when you use the same parameters to call [`acquire`](#acquire) again and use the new resource ID in the [`start`](#start) request. To start multiple recording instances, use a different UID for each instance.
 - `62`: If you receive this error when calling `acquire`, the cloud recording service is not enabled. See [Enable Cloud Recording](https://docs.agora.io/en/cloud-recording/cloud_recording_rest#enable-cloud-recording) for details.
 - `65`: Usually caused by network jitter. Try again with the same resource ID.

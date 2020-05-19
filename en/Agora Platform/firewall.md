@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Fri May 08 2020 08:29:43 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 02:57:59 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -54,7 +54,7 @@ Add the following destination domains and the corresponding ports to the firewal
 
 | Destination ports | Port type | Operation |
 | ---------- | ------------------------------------------------ | -----------------|
-| 80; 443; 3433; 5668; 5669; 5866 to 5890; 6080; 6443; 8667; 9667     | TCP              |  Allow |
+| 80; 443; 3433; 5668; 5669; 5866 - 6000; 6080; 6443; 8667; 9667     | TCP              |  Allow |
 | 3478; 5866 - 6000 (2.9.0 or later); 10000 - 65535 (before 2.9.0)   |  UDP  | Allow |
 
 <div class = "alert note">Use UDP ports rather than TCP ports for superior voice and video quality since UDP prioritizes timeliness over reliability.</div>
@@ -85,6 +85,7 @@ Add the following destination domains and the corresponding ports to the firewal
 .edge.agora.io
 .agoraio.cn
 .edge.agoraio.cn
+.webcollector-rtm.agora.io
 ```
 
 | Destination ports | Port type | Operation |

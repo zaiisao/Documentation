@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Mon May 11 2020 06:16:40 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 09:15:40 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -162,7 +162,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 
 ###  <a name="41"></a>41 recorder_leave
 
-`eventType` 41 indicates that the recording service leaves the channel, and `details` includes the following fields:
+`eventType` 41 indicates that the recorder leaves the channel, and `details` includes the following fields:
 
 - `msgName`: String. The message name, `recorder_leave`.
 - `leaveCode`: Number. The leave code. You can perform a bitwise AND operation on the code and each enum value, and those with non-zero results are the reason for the exit. For example, if you perform a bit-by-bit AND operation on code 6 (binary 110) and each enum value, only LEAVE_CODE_SIG (binary 10) and LEAVE_CODE_NO_USERS (binary 100) get a non-zero result. The reasons for exiting, in this case, include a timeout and a signal triggering the exit.

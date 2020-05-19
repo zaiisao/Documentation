@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Mon May 11 2020 10:55:02 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 04:21:01 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -75,11 +75,10 @@ Version requirements: 2.4.0 or later
 
 Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_mac?platform=macOS#a-nameintegratesdkaintegrate-the-sdk).
 
-### Integrate the RtcChannelPublishHelper
+### Integrate the RtcChannelPublishPlugin
 
-
-1. [Download](https://github.com/AgoraIO/Agora-Extensions/tree/master/MediaPlayer/helper/apple) the RtcChannelPublishPlugin folder.
-2. Add the RtcChannelPublishPlugin folder to the project folder.
+1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) and unzip the MediaPlayerExtensions.zip.
+2. Unzip the ./MediaPlayerExtensions/apple/RtcChannelPublishPlugin.zip and add to your project folder.
 
 
 ## Implementation

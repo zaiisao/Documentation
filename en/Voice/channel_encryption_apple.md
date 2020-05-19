@@ -3,12 +3,15 @@
 title: Channel Encryption
 description: 
 platform: iOS,macOS
-updatedAt: Thu Apr 16 2020 06:46:29 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 08:30:06 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
 
-<div class="alert note"><li>Both Communication and Live Broadcast support channel encryption. For live broadcasts, if you need to use CDN for streaming, recording, and storage, do not use channel encryption.<br><li>Ensure that both receivers and senders use channel encryption, otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
+<div class="alert note"><li>Both Communication and Live Broadcast support channel encryption. For live broadcasts, if you need to push streams to the CDN, do not use channel encryption.<br><li>Ensure that both receivers and senders use channel encryption, otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
+
+The following diagram describes the encrypted data transmission process:
+![](https://web-cdn.agora.io/docs-files/1589768973253)
 
 The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) includes:
 
@@ -20,10 +23,6 @@ The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) includes:
 If you do not use encryption, you can delete the unnecessary `AgoraRtcCryptoLoader.framework` and `libcrypto.a` files in the [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) to reduce the SDK package size.
 
 ## Scenario 2: Use Encryption
-
-The following figure shows how Agora’s communications use built-in encryption:
-
-![](https://web-cdn.agora.io/docs-files/1587019534524)
 
 We provide open-source demo projects that implement channel encryption on GitHub. You can try the demo and refer to the source code.
 
@@ -80,10 +79,6 @@ We provide open-source demo projects that implement channel encryption on GitHub
     Call the `setEncryptionMode` method to set the built-in encryption mode. 
 
 ## Scenario 3: Use Customized Encryption
-
-The following figure shows the customized encryption/decryption process:
-
-![](https://web-cdn.agora.io/docs-files/1587019552665)
 
 ## Step 1: Register a Packet Observer
 
