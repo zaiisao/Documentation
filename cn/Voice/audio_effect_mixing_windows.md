@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to play audio effect files and enable audio mixing 
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:17:58 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 09:26:18 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
