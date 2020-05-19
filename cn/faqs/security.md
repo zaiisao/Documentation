@@ -3,7 +3,7 @@
 title: 服务安全
 description: 
 platform: All Platforms
-updatedAt: Wed Apr 29 2020 13:35:21 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 18:05:37 GMT+0800 (CST)
 ---
 # 服务安全
 ### 声网 Agora 的服务安全吗？可以加密吗？
