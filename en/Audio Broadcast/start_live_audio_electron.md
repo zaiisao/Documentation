@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Electron
-updatedAt: Tue Apr 28 2020 10:15:17 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 08:26:50 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start a basic audio broadcast with the Agora SDK for Electron.
@@ -17,7 +17,7 @@ We provide an open-source sample project that implements [Agora Electron Quickst
 * Node.js 6.9.1 or later
 * Electron 1.8.3 or later
 
-<div class="alert note">If you use Windows for development, ensure that you run <code>npm install -D —arch = ia32 electron</code> to install a 32-bit Electron.</div>
+<div class="alert note">If you use Windows for development, ensure that you run <code>npm install -D --arch = ia32 electron</code> to install a 32-bit Electron. Otherwise you may receive the error: <code>Not a valid win32 application</code>.</div>
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
@@ -37,26 +37,34 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 1. Go to the project path, and run the following command line to install the latest version of the Electron SDK:
 
-	`npm install agora-electron-sdk`
+	```javascript
+    npm install agora-electron-sdk
+    ```
 	
 2. Import the SDK into your project with the following code:
 
-	`import AgoraRtcEngine from 'agora-electron-sdk'`
+	```javascript
+    import AgoraRtcEngine from 'agora-electron-sdk'
+    ```
 	
 
 **Method 2: Download the SDK from the Developer Portal**
+
+<div class="alert note">Ensure that you use Electron 3.0.6 if you want to get the SDK by downloading it from the Developer Portal.</div>
 
 1. Go to [SDK Downloads](https://docs.agora.io/cn/Agora%20Platform/downloads) to download the Agora SDK for Electron.
 2. Save the downloaded SDk package into the root directory of your project file.
 3. Import the SDK into your project with the following code:
 
-	`import AgoraRtcEngine from './agora-electron-sdk/AgoraSdk.js'`
-
-<div class="alert note">Ensure that you use Electron 3.0.6 if you want to get the SDK by downloading it from the Developer Portal.</div>
+	```javascript
+    import AgoraRtcEngine from './agora-electron-sdk/AgoraSdk.js'
+    ```
 
 ### Switch the prebuild add-on version
 
 By default, Agora uses Electron 1.8.3 to build the project. Switch the prebuilt add-on version in the .npmrc file according to your Electron version:
+
+<div class="alert note">If your Electron version is different from the prebuilt add-on version, you may receive the error:<code>is compiled from Nodejs version 54, this version requires Nodejs version 64</code>.</div>
 
 ```javascript
 // Downloads a prebuilt add-on with Electron 1.8.3
@@ -79,7 +87,7 @@ You have now integrated the Agora SDK for Electron into your project.
 
 ## Implement the basic broadcast
 
-Refer to the [Agora Electron Quickstart ](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) sample project to implement various real-time live broadcast functions in your project.
+Refer to the [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) sample project to implement various real-time live broadcast functions in your project.
 
 ## Open-source SDK
 
