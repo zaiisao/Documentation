@@ -2,8 +2,8 @@
 ---
 title: Big headshot or letterbox occurs in a call. 
 description: 
-platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:12:28 GMT+0800 (CST)
+platform: Android,iOS,macOS,Windows
+updatedAt: Wed May 20 2020 16:35:14 GMT+0800 (CST)
 ---
 # Big headshot or letterbox occurs in a call. 
 
