@@ -3,7 +3,7 @@
 title: Realtime (Beta)
 description: 
 platform: All Platforms
-updatedAt: Wed May 06 2020 09:51:55 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 07:27:17 GMT+0800 (CST)
 ---
 # Realtime (Beta)
 Use the Realtime function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
@@ -101,7 +101,7 @@ Use the timeline at the top of the page to adjust the range of time you want to 
 
   
 
-> You can select the time (UTC or your local timezone) by setting this at the top of the front page of Agora Analytics.
+> You can select the time (UTC or your local time zone) by setting this at the top of the front page of Agora Analytics.
 
 ### Overview
 
