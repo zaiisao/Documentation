@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Electron
-updatedAt: Wed May 20 2020 07:25:13 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 07:35:26 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora Electron SDK 快速实现视频互动直播。
@@ -45,7 +45,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 2. 然后通过如下代码将 SDK 引入至你的项目中
 
 	```javascript
-	import AgoraRtcEngine from 'agora-electron-sdk
+	import AgoraRtcEngine from 'agora-electron-sdk'
 	```
 	
 
@@ -58,7 +58,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 3. 通过如下代码将 SDK 引入至你的项目中
 
 	```javascript
-	import AgoraRtcEngine from './agora-electron-sdk/AgoraSdk.js
+	import AgoraRtcEngine from './agora-electron-sdk/AgoraSdk.js'
 	```
 
 ### 修改 .npmrc 文件切换预编译版本
