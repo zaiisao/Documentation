@@ -3,7 +3,7 @@
 title: How can I use string user names?
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 13 2020 10:47:52 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 11:53:28 GMT+0800 (CST)
 ---
 # How can I use string user names?
 <div class="alert warning">This feature is in BETA. We recommend contacting support@agora.io before implementing this function.</div>
