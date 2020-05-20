@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Electron
-updatedAt: Fri Mar 27 2020 07:07:49 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 07:50:58 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora Electron SDK 快速实现视频通话。
@@ -18,7 +18,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 * Electron 1.8.3 及以上
 
 
-<div class="alert note">使用 Windows 平台进行开发时，请运行 <code>npm install -D —arch = ia32 electron</code> 安装 32 位的 Electron。</div>
+<div class="alert note">在 Windows 平台使用 Agora Electron SDK 时，请先安装 32 位的 Electron：<code>npm install -D --arch = ia32 electron</code>。否则你会收到报错：<code>Not a valid win32 application</code>。</div>
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
 ## 准备开发环境
@@ -38,11 +38,15 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 
 1. 在你的项目文件路径，运行如下命令行安装最新版的 Agora SDK for Electron：
 
-	`npm install agora-electron-sdk`
+	```javascript
+	npm install agora-electron-sdk
+	```
 
 2. 然后通过如下代码将 SDK 引入至你的项目中
 
-	`import AgoraRtcEngine from 'agora-electron-sdk'`
+	```javascript
+	import AgoraRtcEngine from 'agora-electron-sdk'
+	```
 	
 **方法二：官网下载 SDK 并引入**
 
@@ -52,11 +56,15 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 2. 将下载下来的 SDK 拷贝至你的项目根目录下
 3. 通过如下代码将 SDK 引入至你的项目中
 
-	`import AgoraRtcEngine from './agora-electron-sdk/AgoraSdk.js'`
+	```javascript
+	import AgoraRtcEngine from './agora-electron-sdk/AgoraSdk.js'
+	```
 
 ### 修改 .npmrc 文件切换预编译版本
 
 Agora 默认使用 1.8.3 版本的 Electron 进行编译。请根据你的 Electron 版本修改 .npmrc 文件，切换预编译版本：
+
+<div class="alert note">如果你的 Electron 版本和预编译版本不同，你会收到报错，如 <code>is compiled from Nodejs version 54, this version requires Nodejs version 64</code>。</div>
 
 ```javascript
 // 下载使用 Electron 1.8.3 预编译的版本
@@ -84,5 +92,3 @@ agora_electron_dependent = 5.0.8
 ## SDK 开源
 
 [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) 在 GitHub 上开源，你可以前往参考或查阅源代码。Agora 也欢迎开发者贡献代码，以提高 Electron SDK 的易用性。
-
-
