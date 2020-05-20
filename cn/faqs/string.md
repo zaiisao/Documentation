@@ -3,7 +3,7 @@
 title: 如何使用 String 型用户 ID
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 13 2020 10:48:22 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 11:46:30 GMT+0800 (CST)
 ---
 # 如何使用 String 型用户 ID
 ## 场景描述
