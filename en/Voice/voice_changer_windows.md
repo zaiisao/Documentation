@@ -3,12 +3,12 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:22:37 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 06:38:21 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
 
-In social and entertainment scenarios, users often need various voice effects to enhance an interactive experiences. To accomplish this, Agora provides multiple preset voice changers and reverberation effects. You can also dynamically change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance an interactive experience. To accomplish this, Agora provides multiple preset voice changers and reverberation effects. You can also dynamically change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
 

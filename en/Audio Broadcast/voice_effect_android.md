@@ -7,7 +7,7 @@ updatedAt: Tue Dec 10 2019 04:20:29 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
-In social and entertainment scenarios, users often need various voice effects to enhance an interactive experiences. To accomplish this, Agora provides multiple preset voice changers and reverberation effects. You can also dynamically change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance an interactive experience. To accomplish this, Agora provides multiple preset voice changers and reverberation effects. You can also dynamically change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/start_live_android.md).
