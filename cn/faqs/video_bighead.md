@@ -2,8 +2,8 @@
 ---
 title: 视频大头/黑边
 description: 
-platform: All Platforms
-updatedAt: Mon Jul 01 2019 15:18:22 GMT+0800 (CST)
+platform: Android,iOS,macOS,Windows
+updatedAt: Wed May 20 2020 16:34:54 GMT+0800 (CST)
 ---
 # 视频大头/黑边
 ## 步骤 1：自检
