@@ -2,8 +2,8 @@
 ---
 title: 直播 SEI 相关问题 
 description: 
-platform: All Platforms
-updatedAt: Tue Mar 31 2020 15:14:05 GMT+0800 (CST)
+platform: Android,iOS,macOS,Windows,Unity
+updatedAt: Wed May 20 2020 16:36:49 GMT+0800 (CST)
 ---
 # 直播 SEI 相关问题 
 ## 声网 SEI 规范
