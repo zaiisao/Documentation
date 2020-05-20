@@ -3,7 +3,7 @@
 title: 多人视频场景
 description: 如何通过合理的集成方式，提升多人视频通话或直播的体验。
 platform: All Platforms
-updatedAt: Wed May 20 2020 09:47:17 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 09:49:17 GMT+0800 (CST)
 ---
 # 多人视频场景
 ## 概述
