@@ -2,8 +2,8 @@
 ---
 title: SEI-related Questions
 description: 
-platform: All Platforms
-updatedAt: Fri Dec 27 2019 15:24:22 GMT+0800 (CST)
+platform: Android,iOS,macOS,Windows,Unity
+updatedAt: Wed May 20 2020 16:37:15 GMT+0800 (CST)
 ---
 # SEI-related Questions
 ## The Agora SEI
