@@ -3,10 +3,10 @@
 title: How can I use string user names?
 description: 
 platform: All Platforms
-updatedAt: Wed May 20 2020 18:56:12 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 18:56:54 GMT+0800 (CST)
 ---
 # How can I use string user names?
-<div class="alert warning">This feature is in BETA. We recommend contacting support@agora.io before implementing this function.</div>
+<div class="alert warning">This feature is in BETA. We recommend contacting support@agora.io before implementing this function.<p>The following products or features do not support string user accounts:<li><a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=All%20Platforms">Cloud Recording</a ><li><a href="https://docs.agora.io/en/Interactive%20Broadcast/cdn_streaming_android?platform=Android">RTMP Converter</a ><li><a href="https://docs.agora.io/en/Agora%20Platform/dashboard_restful_communication?platform=All%20Platforms">RESTful API</a ></p></div>
 
 ## Introduction
 
