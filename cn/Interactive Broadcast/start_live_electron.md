@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Electron
-updatedAt: Wed May 20 2020 07:35:26 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 07:57:39 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora Electron SDK 快速实现视频互动直播。
@@ -93,3 +93,7 @@ agora_electron_dependent = 5.0.8
 ## SDK 开源
 
 [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) 在 GitHub 上开源，你可以前往参考或查阅源代码。Agora 也欢迎开发者贡献代码，以提高 Electron SDK 的易用性。
+
+## 相关链接
+
+[直播场景下，如何监听远端观众用户加入/离开频道的事件？](https://docs.agora.io/cn/faq/audience_event)
