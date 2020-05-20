@@ -3,7 +3,7 @@
 title: 多人视频场景
 description: 如何通过合理的集成方式，提升多人视频通话或直播的体验。
 platform: All Platforms
-updatedAt: Wed May 20 2020 09:49:17 GMT+0800 (CST)
+updatedAt: Wed May 20 2020 09:52:50 GMT+0800 (CST)
 ---
 # 多人视频场景
 ## 概述
@@ -18,12 +18,12 @@ updatedAt: Wed May 20 2020 09:49:17 GMT+0800 (CST)
 
 在实现如下步骤前，请确保已在你的项目中实现基本的实时音视频通信功能。详见[实现视频通话](https://docs.agora.io/cn/Video/start_call_android?platform=Android)或[实现视频直播](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android)。
 
-<div class="alert note">使用通信<a href="https://docs.agora.io/cn/Agora Platform/terms?platform=All Platforms#channel-profile">频道场景</a>时，Agora 建议你在加入频道前调用 <code> setParameters("{"che.audio.live_for_comm": true}")</code>，启用针对多人通信场景的优化策略。<br>  
-如果你使用的是 v2.3.2 或之前版本的 RTC Native SDK，还需要调用 <code>setParameters("{\"che.video.moreFecSchemeEnabled\": true}")</code>开启 ULP FEC，提高视频数据传输的可靠性。</div>
-
+ <div class="alert note">本文中，Native 端指 RTC SDK 的 Android、iOS、macOS、Windows、Electron 和 Unity 平台；Web 端指 RTC SDK 的 Web 平台。</div>
+ 
 ### Native 端
 
- <div class="alert note">本节适用于 Android、iOS、macOS、Windows、Electron 和 Unity 平台。</div>
+<div class="alert note">使用通信<a href="https://docs.agora.io/cn/Agora Platform/terms?platform=All Platforms#channel-profile">频道场景</a>时，Agora 建议你在加入频道前调用 <code> setParameters("{"che.audio.live_for_comm": true}")</code>，启用针对多人通信场景的优化策略。<br>  
+如果你使用的是 v2.3.2 或之前版本的 RTC Native SDK，还需要调用 <code>setParameters("{\"che.video.moreFecSchemeEnabled\": true}")</code>开启 ULP FEC，提高视频数据传输的可靠性。</div>
 
 #### 1. 开启双流模式
 
@@ -53,7 +53,6 @@ setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\
 
 ### Web 端
 
- <div class="alert note">本节适用于 Web 平台。</div>
 
 #### 1. 开启双流模式
 
@@ -85,8 +84,6 @@ setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\
 ## 大小流视频属性对应关系
 
 ### Native 端
-
- <div class="alert note">本节适用于 Android、iOS、macOS、Windows、Electron 和 Unity 平台。</div>
 
 SDK 根据大流的视频属性自动设置小流的视频属性。如果你无需手动设置小流视频属性，可以参考本节内容，了解大流和小流视频属性的对应关系。
 
