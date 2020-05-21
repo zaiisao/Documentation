@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: How to enable cloud proxy on Web SDK
 platform: Web
-updatedAt: Thu Apr 16 2020 09:23:48 GMT+0800 (CST)
+updatedAt: Thu May 21 2020 09:10:08 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能描述
@@ -16,7 +16,7 @@ updatedAt: Thu Apr 16 2020 09:23:48 GMT+0800 (CST)
 
 ## 实现方法
 
-Agora Web SDK v2.5.1 及以上版本支持云代理服务。
+Agora Web SDK v2.5.1 及以上版本支持使用云代理。
 
 1. 下载[最新版的 Agora Web SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)。
 2. 参考[实现音视频通话](../../cn/Voice/start_call_web.md)或[实现互动直播](../../cn/Voice/start_live_web.md)完成开发环境准备。
