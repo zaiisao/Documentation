@@ -3,7 +3,7 @@
 title: Video for Multiple Users
 description: How to minimize bandwidth consumption and ensure smooth communication in a video scenario with multiple users.
 platform: All Platforms
-updatedAt: Thu May 21 2020 10:33:50 GMT+0800 (CST)
+updatedAt: Thu May 21 2020 10:40:49 GMT+0800 (CST)
 ---
 # Video for Multiple Users
 ## Introduction
