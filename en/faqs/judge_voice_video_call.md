@@ -3,7 +3,7 @@
 title: How can I determine whether a call is an audio call or a video call?
 description: 
 platform: All Platforms
-updatedAt: Wed May 20 2020 11:34:33 GMT+0800 (CST)
+updatedAt: Thu May 21 2020 18:22:54 GMT+0800 (CST)
 ---
 # How can I determine whether a call is an audio call or a video call?
 In real-time audio or video communication, you can use the Agora RTM SDK or the Agora RTC SDK to determine whether an incoming or ongoing call is an audio call or a video call.
@@ -17,7 +17,7 @@ If you need to determine and send the call type to the receiver before a call, e
 
 Complete the following steps to determine the call type:
 
-1. When the caller sends a call, use the [Call Invitation API](../../en/Real-time-Messaging/rtm_invite_android.md) of the RTM SDK to send a call invitation to the callee.
+1. When the caller sends a call, use the [Call Invitation API](../../en/Real-time-Messaging/call_invite_android.md) of the RTM SDK to send a call invitation to the callee.
 2. Call [`sendMessageToPeer`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9) to send the call type to the callee via peer-to-peer message. The callee gets the call type from the received peer-to-peer message.
 
 ## After a call
