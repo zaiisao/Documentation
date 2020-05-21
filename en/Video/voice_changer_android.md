@@ -3,11 +3,11 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Sun Sep 29 2019 08:19:59 GMT+0800 (CST)
+updatedAt: Thu May 21 2020 04:05:12 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
-In social and entertainment scenarios, users often need various voice effects to enhance interactive experiences. Agora provides multiple preset voice changers and reverberation effects. You can also flexibly change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+In social and entertainment scenarios, users often need various voice effects to enhance an interactive experience. To accomplish this, Agora provides multiple preset voice changers and reverberation effects. You can also dynamically change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
 ## Implementation
 
@@ -99,9 +99,6 @@ rtcEngine.setLocalVoiceReverb(Constants.AUDIO_REVERB_STRENGTH, 78);
 - [`setLocalVoiceEqualization`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9e3aa79f0d6d8f2ea81907543506d960)
 - [`setLocalVoiceReverb`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a4afc32ba68e997e90ba3f128317827fa)
 
-## Demo project
-
-We provide an open-source demo project [Agora-RTC-With-Voice-Changer-Android](https://github.com/AgoraIO/Advanced-Audio/tree/master/Voice-Changer/Agora-RTC-With-Voice-Changer-Android) that implements voice changer and reverberation on GitHub. You can try the demo and refer to the code in [`LiveRoomActivity.java`](https://github.com/AgoraIO/Advanced-Audio/blob/master/Voice-Changer/Agora-RTC-With-Voice-Changer-Android/app/src/main/java/io/agora/voice/changer/ui/LiveRoomActivity.java).
 
 ## Considerations
 The API methods have return values. If the method call fails, the return value is < 0.
