@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: How to enable cloud proxy for recording
 platform: Linux
-updatedAt: Thu Feb 20 2020 07:32:00 GMT+0800 (CST)
+updatedAt: Thu May 21 2020 09:18:06 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能简介
@@ -14,7 +14,7 @@ updatedAt: Thu Feb 20 2020 07:32:00 GMT+0800 (CST)
 相比配置单一的代理服务器的 IP，云代理服务更灵活稳定，因此在大型企业、医院、高校、金融等安全需求较高的机构内都有广泛的应用。
 
 ## 实现方法
-<div class="note alert">Agora 本地服务端录制 SDK v3.0.0 及以上版本支持云代理服务，使用云代理服务前请确保你已经下载并集成本地服务端录制 SDK v3.0.0 及以上版本。</div>
+<div class="note alert">Agora 本地服务端录制 SDK v3.0.0 及以上版本支持使用云代理，使用云代理服务前请确保你已经下载并集成本地服务端录制 SDK v3.0.0 及以上版本。</div>
 
 根据以下步骤使用云代理服务：
 
