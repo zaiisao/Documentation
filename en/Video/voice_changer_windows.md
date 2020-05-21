@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Tue May 19 2020 06:38:21 GMT+0800 (CST)
+updatedAt: Thu May 21 2020 04:10:06 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
