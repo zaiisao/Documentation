@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Mon May 11 2020 09:53:14 GMT+0800 (CST)
+updatedAt: Thu May 21 2020 10:20:28 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -516,7 +516,7 @@ Agora RTM 系统会对短期掉线后重连成功的频道成员补发最长 30 
 
 - [AgoraRtmLocalInvitationErrorCode](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmLocalInvitationErrorCode.html): 返回给主叫的呼叫邀请错误码。
 
-- [AgoraRtmRemoteInvitationErrorCode](https://docs.agora.io/en/API%20Reference/RTM_oc/Constants/AgoraRtmRemoteInvitationErrorCode.html): 返回给主叫的呼叫邀请错误码。
+- [AgoraRtmRemoteInvitationErrorCode](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmRemoteInvitationErrorCode.html): 返回给主叫的呼叫邀请错误码。
 
 - [AgoraRtmInvitationApiCallErrorCode](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmInvitationApiCallErrorCode.html): 呼叫邀请相关 API 方法调用的错误码。
 
