@@ -1,11 +1,11 @@
 
 ---
-title: Start a Call
+title: Start a Video Call
 description: 
 platform: macOS
-updatedAt: Wed Apr 29 2020 08:47:42 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 03:07:22 GMT+0800 (CST)
 ---
-# Start a Call
+# Start a Video Call
 Use this guide to quickly start a basic video call demo with the Agora Video SDK for macOS.
 
 ## Try the demo
