@@ -3,7 +3,7 @@
 title: 为什么成功开启云端录制后调用 query 方法返回 404？
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 10 2020 12:04:32 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 15:06:05 GMT+0800 (CST)
 ---
 # 为什么成功开启云端录制后调用 query 方法返回 404？
 通过 `start` 方法成功开启云端录制后，调用 `query` 方法返回 404 状态码，可能原因如下：
