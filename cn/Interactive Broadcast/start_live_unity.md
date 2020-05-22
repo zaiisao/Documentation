@@ -1,11 +1,11 @@
 
 ---
-title: 实现视频互动直播
+title: 实现视频直播
 description: 
 platform: Unity
-updatedAt: Fri May 08 2020 10:52:44 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 03:05:17 GMT+0800 (CST)
 ---
-# 实现视频互动直播
+# 实现视频直播
 本文介绍如何使用 Agora Unity SDK 快速实现视频互动直播。
 
 ## 前提条件
