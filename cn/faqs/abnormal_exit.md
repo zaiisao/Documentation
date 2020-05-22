@@ -1,9 +1,11 @@
 
 ---
-title: 云端录制异常退出
+title: 应用崩溃后我该怎么办？
 description: 
 platform: All Platforms
-updatedAt: Tue Nov 19 2019 10:42:32 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 14:09:33 GMT+0800 (CST)
 ---
-# 云端录制异常退出
-录制异常退出意味着集成云端录制 SDK 的 App 崩溃，但是只要通话或直播还在继续，Agora 云端录制服务仍会继续保持录制和上传。这时使用和之前录制相同的 App ID、频道名以及 UID 重新开始录制，就可以继续控制原来的录制实例。
+# 应用崩溃后我该怎么办？
+集成云端录制的应用崩溃，不会影响录制进程。如需控制原来的录制实例，你需要使用和之前录制相同的 App ID、频道名以及 UID，再次调用 `acquire` 和 `start` 方法。
+
+<div class="alert info">如果原来的录制已经超时退出，则再次调用 <code>acquire</code> 和 <code>start</code> 会创建新的录制实例。</div>
