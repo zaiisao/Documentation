@@ -3,21 +3,21 @@
 title: 媒体流加密
 description: 
 platform: Windows
-updatedAt: Thu Apr 30 2020 08:44:26 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 08:28:01 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文描述如何使用 Agora 内置的加密方案。
 
-<div class="alert note"><li>通信和直播场景均支持媒体流加密功能。但是在直播场景下，如果你需要使用旁路推流、录制和储存，请勿使用媒体流加密功能。<br><li>若需使用媒体流加密功能，需确保接收端和发送端都使用此功能，否则会出现未定义行为（例如音频无声或视频黑屏）。</br></div>
+<div class="alert note"><li>通信和直播场景均支持媒体流加密功能。但是在直播场景下，如果你需要推流到 CDN，请勿使用媒体流加密功能。<br><li>若需使用媒体流加密功能，需确保接收端和发送端都使用此功能，否则会出现未定义行为（例如音频无声或视频黑屏）。</br></div>
+
+下图描述了启用加密功能后的数据传输流程：
+![](https://web-cdn.agora.io/docs-files/1589769277502)
 
 ## 场景 1: 不需要加密
 
 该平台 SDK 默认不加密。
 
 ## 场景 2: 需要加密
-
-![](https://web-cdn.agora.io/docs-files/1587018108093)
-
 
 ### 步骤 1: 启用加密功能
 
@@ -30,11 +30,6 @@ updatedAt: Thu Apr 30 2020 08:44:26 GMT+0800 (CST)
 我们在 GitHub 提供一个实现了媒体流加密的示例项目 [OpenVideoCall-Windows](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows)。你可以下载体验并参考代码。
 
 ## 场景 3: 使用自定义的加密算法
-
-下图描述了集成了自定义加密解密算法的声网音视频通信方案：
-
-![](https://web-cdn.agora.io/docs-files/1587018121536)
-
 
 ### 步骤 1: 注册数据包观测器
 

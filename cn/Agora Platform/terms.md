@@ -3,7 +3,7 @@
 title: 术语库
 description: 
 platform: All Platforms
-updatedAt: Wed May 13 2020 02:30:44 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 04:22:54 GMT+0800 (CST)
 ---
 # 术语库
 ## A
@@ -21,14 +21,14 @@ Agora RTC (Real-Time Communication) SDK 是声网提供的用于实现音视频�
 其中：
 
 - Android、iOS、macOS、Windows 平台的 RTC SDK，通常被统称为 Agora RTC Native SDK。
-- [React Native](https://github.com/AgoraIO/React-Native-SDK) 和 [Flutter](https://github.com/AgoraIO/Flutter-SDK) 平台的 Agora RTC SDK，目前在仅在 GitHub 发布与维护。
+- [React Native](https://github.com/AgoraIO/React-Native-SDK) 和 [Flutter](https://github.com/AgoraIO/Flutter-SDK) 平台的 Agora RTC SDK，目前仅在 GitHub 发布与维护。
 
 除了基本的实时音视频互动外，Agora RTC SDK 还支持伴奏混音、屏幕共享、修改音视频原始数据、接收外部音视频源数据、推流到 CDN 等高阶功能，帮助开发者实现更多场景。
 
 开发者还可以搭配使用其他的 Agora SDK 或服务，在实时音视频互动过程中实现其他功能：
 
 - 搭配 Agora 本地服务端录制或云录制服务，实现录制实时音视频功能。
-- 搭配 Agora MediaPlayerKit 组件，实现在线播放媒体资源功能。
+- 搭配 Agora MediaPlayer Kit 组件，实现在线播放媒体资源功能。
 - 搭配 Agora RTM SDK，实现实时消息、信令维护功能。
 
 <div class="alert info">相关链接：<li><a href="https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms">语音通话产品概述</a></li><li><a href="https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms">视频通话产品概述</a></li><li><a href="https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms">音频互动直播产品概述</a></li><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms">视频互动直播产品概述</a></li>

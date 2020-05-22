@@ -3,7 +3,7 @@
 title: 变声与混响
 description: How to adjust the voice effect on Windows
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:23:59 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 06:36:42 GMT+0800 (CST)
 ---
 # 变声与混响
 ## 功能描述

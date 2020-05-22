@@ -3,12 +3,16 @@
 title: 媒体流加密
 description: 
 platform: iOS,macOS
-updatedAt: Thu Apr 16 2020 06:20:53 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 08:26:08 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文介绍媒体流加密方案。
 
-<div class="alert note"><li>通信和直播场景均支持媒体流加密功能。但是在直播场景下，如果你需要使用旁路推流、录制和储存，请勿使用媒体流加密功能。<br><li>若需使用媒体流加密功能，需确保接收端和发送端都使用此功能，否则会出现未定义行为（例如音频无声或视频黑屏）。</br></div>
+<div class="alert note"><li>通信和直播场景均支持媒体流加密功能。但是在直播场景下，如果你需要推流到 CDN，请勿使用媒体流加密功能。<br><li>若需使用媒体流加密功能，需确保接收端和发送端都使用此功能，否则会出现未定义行为（例如音频无声或视频黑屏）。</br></div>
+
+下图描述了启用加密功能后的数据传输流程：
+
+![](https://web-cdn.agora.io/docs-files/1589769277502)
 
 你下载的 [SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads) 里，包含:
 
@@ -20,10 +24,6 @@ updatedAt: Thu Apr 16 2020 06:20:53 GMT+0800 (CST)
 如果你不需要加密，可以删除下载的 SDK 软件包里的`AgoraRtcCryptoLoader.framework` 和 `libcrypto.a` 。
 
 ## 场景 2: 使用内置的加密方案
-
-下图描述了启用了 Agora SDK 内置加密方案的声网音视频通信方案：
-
-![](https://web-cdn.agora.io/docs-files/1587018006059)
 
 我们在 GitHub 提供实现了媒体流加密的示例项目。你可以下载体验并参考源代码。
 
@@ -86,10 +86,6 @@ Swift 项目：[OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call
 调用 `setEncryptionMode`，设置内置的加密方法。
 
 ## 场景 3: 使用第三方提供的加密方案
-
-下图描述了集成了第三方加密解密包的声网音视频通信方案：
-
-![](https://web-cdn.agora.io/docs-files/1587018031384)
 
 ### 步骤 1: 注册数据包观测器
 

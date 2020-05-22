@@ -3,7 +3,7 @@
 title: 视频截图
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 17 2020 03:23:06 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 03:47:35 GMT+0800 (CST)
 ---
 # 视频截图
 ## 功能描述
@@ -28,7 +28,8 @@ updatedAt: Fri Apr 17 2020 03:23:06 GMT+0800 (CST)
     "clientRequest": {
         "token": "<token if any>",
         "recordingConfig": {
-            "channelType": 0
+            "channelType": 1,
+            "subscribeUidGroup": 0
         }, 
         "snapshotConfig": {
             "captureInterval": 5,

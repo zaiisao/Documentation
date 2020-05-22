@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed May 06 2020 06:38:42 GMT+0800 (CST)
+updatedAt: Tue May 19 2020 05:58:37 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。

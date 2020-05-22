@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed May 13 2020 02:34:29 GMT+0800 (CST)
+updatedAt: Fri May 15 2020 08:23:53 GMT+0800 (CST)
 ---
 # RESTful API
 ## 认证
@@ -595,10 +595,12 @@ BaseUrl: **https://api.agora.io/dev**
 <div class="alert note">本组 API 调用频率上限为每秒 10 次。</div>
 
 用户被踢出频道后，会收到网络连接已被服务器禁止回调：
-- Android: [`onConnectionStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e)(CONNECTION_CHANGED_BANNED_BY_SERVER)
-- iOS/macOS: [`connectionChangedToState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:)(AgoraConnectionChangedBannedByServer)
+- Android: [`onConnectionStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) 回调报告 `CONNECTION_CHANGED_BANNED_BY_SERVER(3)`
+- iOS/macOS: [`connectionChangedToState`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:connectionChangedToState:reason:) 回调报告 `AgoraConnectionChangedBannedByServer(3)`
 - Web: [`onclient-banned`](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#on)
-- Windows: [`onConnectionStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4)(CONNECTION_CHANGED_BANNED_BY_SERVER)
+- Windows: [`onConnectionStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af409b2e721d345a65a2c600cea2f5eb4) 回调报告 `CONNECTION_CHANGED_BANNED_BY_SERVER(3)`
+- Electron: [`AgoraRtcEngine.on("connectionStateChanged")`](https://docs.agora.io/cn/Voice/API%20Reference/electron/classes/agorartcengine.html#on) 回调报告 `3`
+- Unity: [`OnConnectionStateChangedHandler`](https://docs.agora.io/cn/Voice/API%20Reference/unity/namespaceagora__gaming__rtc.html#adae7694cb602375ccbc14be3062a230c) 回调报告 `CONNECTION_CHANGED_BANNED_BY_SERVER(3)`
 
 ### 创建规则 (POST)
 
@@ -824,6 +826,11 @@ BaseUrl：**https://api.agora.io/dev**
 
 该方法查询某个用户是否在指定频道中，以及该用户在该频道中的角色等状态。
 
+- 主播：可以发布和接收音视频流。
+- 观众：只能接收音视频流，无法发布。
+
+<div class="alert note">若需查询指定频道中所有用户的角色，详见<a href="#userList">获取用户列表 (GET)</a >。</div>
+
 **基本信息**
 
 | 基本信息 | 描述 |
@@ -867,6 +874,7 @@ BaseUrl/v1/channel/user/property/{appid}/{uid}/{channelName}
 }
 ```
 
+<a name="userList"></a>
 ### 获取用户列表 (GET)
 
 该方法获取指定频道内的用户列表：

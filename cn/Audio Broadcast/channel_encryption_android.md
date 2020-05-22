@@ -3,12 +3,16 @@
 title: 媒体流加密
 description: 
 platform: Android
-updatedAt: Thu Apr 16 2020 06:19:44 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 08:24:43 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文介绍媒体流加密方案。
 
-<div class="alert note"><li>通信和直播场景均支持媒体流加密功能。但是在直播场景下，如果你需要使用旁路推流、录制和储存，请勿使用媒体流加密功能。<br><li>若需使用媒体流加密功能，需确保接收端和发送端都使用此功能，否则会出现未定义行为（例如音频无声或视频黑屏）。</br></div>
+<div class="alert note"><li>通信和直播场景均支持媒体流加密功能。但是在直播场景下，如果你需要推流到 CDN，请勿使用媒体流加密功能。<br><li>若需使用媒体流加密功能，需确保接收端和发送端都使用此功能，否则会出现未定义行为（例如音频无声或视频黑屏）。</br></div>
+
+下图描述了启用加密功能后的数据传输流程：
+
+![](https://web-cdn.agora.io/docs-files/1589769144101)
 
 ## 场景 1: 不需要加密
 
@@ -17,9 +21,6 @@ updatedAt: Thu Apr 16 2020 06:19:44 GMT+0800 (CST)
 ## 场景 2: 使用内置的加密算法
 
 使用 Agora SDK 内置的加密算法会用到通信场景下的 API。下图描述了启用了内置加密方案的声网音视频通信方案：
-
-![](https://web-cdn.agora.io/docs-files/1587013246957)
-
 
 在下载的 [SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads) 的 `/libs/arm64-v8a` 和 `/libs/armeabi-v7a` 文件夹下均包含一个独立的动态库 `libagora-crypto.so` 供 App 动态加载。
 
@@ -40,11 +41,6 @@ updatedAt: Thu Apr 16 2020 06:19:44 GMT+0800 (CST)
 > 如果您有缩小 SDK 包的考虑，且如果您的 App 已经有了 `libcrypto.so` ，由于 SDK 包里也包含了一个 `libagora-crypto.so` ，可以共用一个 `.so` 文件。 声网提供的 `.so `库指定版本为 1.0.2g，与 App 使用的库的版本不同。
 
 ## 场景 3: 使用自定义的加密方案
-
-下图描述了集成了自定义加密解密算法的声网音视频通信方案：
-
-![](https://web-cdn.agora.io/docs-files/1587017873577)
-
 
 ### 步骤 1: 注册数据包观测器
 
