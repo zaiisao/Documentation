@@ -3,13 +3,13 @@
 title: 水晶球更新历史
 description: 
 platform: All Platforms
-updatedAt: Fri May 22 2020 05:06:11 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 05:08:27 GMT+0800 (CST)
 ---
 # 水晶球更新历史
 ## 简介
 水晶球（Agora Analytics）是 Agora 为开发者提供的全周期通话质量监测、回溯和分析的解决方案，致力于帮助你及时发现问题、定位原因，并最终解决问题以提升用户体验。详见[水晶球概览](../../cn/Agora%20Platform/aa_guide.md)。
 
-## 2020.04
+## 2020.05
 
 本次发布新增实时预警功能（Beta），实现实时异常识别、根因分析，帮助客户及时定位异常源。详见[实时预警](../../cn/Agora%20Platform/aa_realtime_alarm.md)。
 
