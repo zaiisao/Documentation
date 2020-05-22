@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Fri May 22 2020 06:53:03 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 06:53:53 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -157,7 +157,14 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
   调用 `stop` 的过程中调用 `query`，会影响 `stop` 的响应内容：响应的 HTTP 状态码为 206，并且响应中没有 `fileList` 字段。
 
-如果你在集成和使用中遇到其他问题，可以参考[云端录制集成常见问题](https://docs.agora.io/cn/cloud-recording/faq)以及[常见错误](../../cn/cloud-recording/cloud_recording_api_rest.md)。
+如果你在集成和使用中遇到其他问题，可以参考以下文档：
+
+- [常见错误](../../cn/cloud-recording/cloud_recording_api_rest.md)
+- [为什么成功开启云端录制后调用 query 方法返回 404？](https://docs.agora.io/cn/faq/return-404)
+- [为什么第三方云存储中没有录制文件？](https://docs.agora.io/cn/faq/fail_to_upload)
+- [云存储 bucket 区域选择及跨区解决方案](https://docs.agora.io/cn/faq/bucket_region)
+
+
 
 ## 示例请求
 
@@ -286,8 +293,5 @@ def start_record():
 start_record()
 ```
 
-## <a name="reference"></a>相关链接
 
-- [为什么第三方云存储中没有录制文件？](https://docs.agora.io/cn/faq/fail_to_upload)
-- [为什么成功开启云端录制后调用 query 方法返回 404？](https://docs.agora.io/cn/faq/return-404)
-- [云存储 bucket 区域选择及跨区解决方案](https://docs.agora.io/cn/faq/bucket_region)
+
