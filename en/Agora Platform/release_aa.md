@@ -3,13 +3,13 @@
 title: Agora Analytics Changelog
 description: 
 platform: All Platforms
-updatedAt: Fri May 22 2020 05:05:55 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 05:08:39 GMT+0800 (CST)
 ---
 # Agora Analytics Changelog
 ## Overview
 Agora Analytics is a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience. See details in [Agora Analytics Overview](../../en/Agora%20Platform/aa_guide.md).
 
-## 2020.04
+## 2020.05
 
 This release adds the Real-time Alarm function (Beta), to help you identify abnormalities, analyze quality factors, and locate the source of each abnormal issue, all in real time. See details in [Real-time Alarm](../../en/Agora%20Platform/aa_realtime_alarm.md).
 
