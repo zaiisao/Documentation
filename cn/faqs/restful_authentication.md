@@ -3,7 +3,7 @@
 title: 如何进行 HTTP 基本认证？
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 11 2020 17:45:40 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 11:58:20 GMT+0800 (CST)
 ---
 # 如何进行 HTTP 基本认证？
 ## 功能描述
@@ -44,7 +44,7 @@ updatedAt: Wed Mar 11 2020 17:45:40 GMT+0800 (CST)
 
 3. 进行 HTTP 认证。请参考下列代码。
 
-   <div class="alert note">发送 HTTP 请求时，Authorization 字段的格式需为：Basic base64Credentials 或 Basic base64LoginString。</div>
+  发送 HTTP 请求时，Authorization 字段的格式需为：`Basic <Authorization>`，**Basic 不能省**。
 
    - Java
 
@@ -52,7 +52,7 @@ updatedAt: Wed Mar 11 2020 17:45:40 GMT+0800 (CST)
      Request request = new Request.Builder()
      ...
          // 在 HTTP 请求头部填入获取到的 Authorization 字段。
-         .addHeader("Authorization", "Basic base64Credentials")
+         .addHeader("Authorization", "Basic " + base64Credentials)
      ...
 ```
 
@@ -60,7 +60,7 @@ updatedAt: Wed Mar 11 2020 17:45:40 GMT+0800 (CST)
 
      ```swift
      // 在 HTTP 请求头部填入获取到的 Authorization 字段。
-     let headers = ["Authorization", "Basic base64LoginString"]
+     let headers = ["Authorization", "Basic " + base64LoginString]
 ```
 
      
