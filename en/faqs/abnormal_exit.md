@@ -1,9 +1,13 @@
 
 ---
-title: Abnormal exit
+title: What should I do if my app crashes?
 description: abnormal exit, abnormal
 platform: All Platforms
-updatedAt: Tue Nov 19 2019 10:56:10 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 15:14:09 GMT+0800 (CST)
 ---
-# Abnormal exit
-The recording exits abnormally when the app crashes. As long as the call or live broadcast is ongoing, the Agora Cloud Recording service keeps recording and uploading. You can use the original App ID, channel name, and UID to join the channel again and take control of the original recording instance.
+# What should I do if my app crashes?
+A recording session is not affected if an app with cloud recording integrated crashes. You can use the original App ID, channel name, and UID to call `acquire` and `start` to control the original recording instance.
+
+<div class="alert info">If the recording times out and exits, calling <code>acquire</code> and <code>start</code> creates a new recording instance.</div>
+
+
