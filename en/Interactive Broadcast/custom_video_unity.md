@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Unity
-updatedAt: Wed Feb 26 2020 06:19:11 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 03:37:44 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -159,4 +159,4 @@ public class ShareScreen : MonoBehaviour
 - [PushVideoFrame](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/classagora__gaming__rtc_1_1_i_rtc_engine.html#af9e8d34e2a1ac07b8984fb6181a6ab81)
 
 ## Relevant links
-For details of the AR feature, see [Video chat with Unity3D AR foundation version](https://medium.com/@rcsw.devel/video-chat-with-unity3d-the-arfoundation-version-6b34f9247e9a).
+For details of the AR feature, see [Video chat with Unity3D and ARFoundation](https://www.agora.io/en/blog/video-chat-with-unity3d-the-arfoundation-version).
