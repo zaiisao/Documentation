@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri May 22 2020 02:39:11 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 02:39:34 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -217,6 +217,10 @@ Agora 在该版本对 SDK 的传输质量和互通体验进行了优化，在首
 #### 加密/解密失败通知
 
 新增 `Client.on("crypt-error")` 回调，在发布或订阅流时出现加解密错误时可以收到通知。
+
+#### 云代理服务
+
+新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Interactive%20Broadcast/cloud_proxy_web.md)。
 
 
 **改进**
