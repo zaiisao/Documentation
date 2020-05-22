@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Fri May 22 2020 06:39:03 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 06:40:55 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -39,6 +39,7 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 - 在用移动客户端 \(仅 Android 系统\) 录像的过程中，从前置摄像头切换到后置摄像头后，画面将被倒置。
 - 如果在频道内调用 `leaveChannel`, 录制会停止, 但默认录制文件最后会包含一段空白片段，这个时间段由调用 `joinChannel` 时在 `config` 里设定的 `idleLimitSec` 字段值决定。详见 [录制 API](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html)。
 - 由于录制的音视频文件是没有加密的，如果要满足 HIPPA 要求，需使用磁盘加密工具对硬盘进行加密，例如 cryptsetup。
+
 
 ## 3.0.1 版
 
@@ -79,19 +80,19 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 
 ##### **频道事件**
 
-- `onRejoinChannelSuccess`：录制端重新加入频道时触发
-- `onConnectionStateChanged`：网络连接状态改变时触发
+- [`onRejoinChannelSuccess`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a210d1e225415eba95c8fa606ae0996ea)：录制端重新加入频道时触发
+- [`onConnectionStateChanged`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a08d04dd3d5f82ca0ab9cdadff20367b0)：网络连接状态改变时触发
 
 ##### **体验提升**
 
-- `onRemoteVideoStats`：报告远端视频流统计信息
-- `onRemoteAudioStats`：报告远端音频流统计信息
-- `onRecordingStats`：报告录制统计信息
+- [`onRemoteVideoStats`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a427c17ccc456444159c977aeec04a895)：报告远端视频流统计信息
+- [`onRemoteAudioStats`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a151091f21f514baf78b005031b382f8b)：报告远端音频流统计信息
+- [`onRecordingStats`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a870ab8a3d043f6c3910aa89121e83f33)：报告录制统计信息
 
 ##### **媒体事件**
 
-- `onRemoteAudioStreamStateChanged`：远端用户音频流状态改变时触发
-- `onRemoteVideoStreamStateChanged`：远端用户视频流状态改变时触发
+- [`onRemoteAudioStreamStateChanged`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a6ba41d8f2ba7ccb06695ed6ef6037159)：远端用户音频流状态改变时触发
+- [`onRemoteVideoStreamStateChanged`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a98fe264a24974fb7b6ae46d2ddce3661)：远端用户视频流状态改变时触发
 
 **改进**
 
