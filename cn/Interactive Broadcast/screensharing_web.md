@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Wed May 13 2020 10:49:13 GMT+0800 (CST)
+updatedAt: Fri May 15 2020 09:03:37 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -34,7 +34,7 @@ Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现�
 共享屏幕默认的视频属性为：分辨率（宽 × 高） 1920 × 1080，帧率 5 fps。如果你需要使用其他的视频属性，可以调用 `Stream.setScreenProfile` 设置共享屏幕的视频属性。
 
 ```javascript
-// After creating a stream for screen-sharing
+// After creating a stream for screen sharing
 screenStream.setScreenProfile("720p_1");
 ```
 

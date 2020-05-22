@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Windows
-updatedAt: Mon May 11 2020 11:14:03 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 04:17:52 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -64,12 +64,13 @@ updatedAt: Mon May 11 2020 11:14:03 GMT+0800 (CST)
 
 ### 集成 RtcChannelPublishPlugin
 
-1. [下载](https://github.com/AgoraIO/Agora-Extensions/tree/master/MediaPlayer/helper/win) RtcChannelPublishPlugin。
+**版本要求**：与你使用的 Native SDK 版本系列一致。
 
-2. 将 `AgoraRtcChannelHelper.h` 和 `AgoraRtcChannelHelper.cpp` 文件复制到你的项目文件夹下。
+集成步骤：
 
+1. [下载](https://github.com/AgoraIO/Agora-Extensions/releases) MediaPlayerExtensions.zip 并解压文件。
+2. 将 ./MediaPlayerExtensions/win/RtcChannelPublishHelper 文件夹拷贝到你的项目文件中。
 3. 在**解决方案资源管理器**窗口中，右击项目名称并点击属性进行以下配置，配置完成后点击**确定**：
-
    进入 **VC++ 目录> 常规 > 包含目录**菜单，点击**编辑**，并在弹出窗口中输入 **./RtcChannelPublishPlugin/utils**。
 
 ## 实现方法

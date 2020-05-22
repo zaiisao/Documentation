@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Mon May 11 2020 11:10:22 GMT+0800 (CST)
+updatedAt: Mon May 18 2020 04:17:41 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -95,8 +95,8 @@ updatedAt: Mon May 11 2020 11:10:22 GMT+0800 (CST)
 
 ### 集成 RtcChannelPublishPlugin
 
-1. [下载](https://github.com/AgoraIO/Agora-Extensions/tree/master/MediaPlayer/helper/apple) RtcChannelPublishPlugin。
-2. 将 RtcChannelPublishPlugin 文件夹复制到项目文件中。
+1. [下载](https://github.com/AgoraIO/Agora-Extensions/releases) MediaPlayerExtensions.zip 并解压文件。
+2. 将 ./MediaPlayerExtensions/apple/RtcChannelPublishPlugin.zip 文件解压，拷贝到你的项目文件中。
 
 ## 实现方法
 

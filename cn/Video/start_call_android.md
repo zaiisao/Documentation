@@ -137,7 +137,7 @@ dependencies {
 
 ### 防止代码混淆
 
-在 **app/proguard-rules.pro** 文件中添加如下行，防止代码混淆：
+在 **app/proguard-rules.pro** 文件中添加如下行，防止混淆 Agora SDK 的代码：
 
 ```xml
 -keep class io.agora.**{*;}
