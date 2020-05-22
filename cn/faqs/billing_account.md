@@ -3,7 +3,7 @@
 title: 账单、扣费与账户冻结
 description: 
 platform: All Platforms
-updatedAt: Fri May 22 2020 18:58:38 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 19:00:03 GMT+0800 (CST)
 ---
 # 账单、扣费与账户冻结
 Agora 控制台为开发者提供发布账单与扣费功能。账单发布与扣费时间点如下：
