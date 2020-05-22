@@ -1,11 +1,11 @@
 
 ---
-title: 实现互动直播
+title: 实现视频直播
 description: 
 platform: macOS
-updatedAt: Thu May 21 2020 03:31:36 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 03:08:07 GMT+0800 (CST)
 ---
-# 实现互动直播
+# 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
 
 互动直播和实时通话的区别就在于，直播频道的用户有角色之分。你可以将角色设置为主播 Broadcaster，或者观众 Audience，其中主播可以收、发流，观众只能收流。
