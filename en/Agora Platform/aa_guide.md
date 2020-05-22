@@ -3,7 +3,7 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Sat May 09 2020 03:05:07 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 05:06:00 GMT+0800 (CST)
 ---
 # Agora Analytics
 [Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience.
@@ -51,3 +51,17 @@ Big Channel helps you monitor and analyze quality issues of Big Channels in real
 <div class="alert info">Before using Realtime, contact <a href="mailto:support@agora.io">support@agora.io</a > to enable this function.</div>
 
 ![](https://web-cdn.agora.io/docs-files/1571122479296)
+
+## Auto Diagnosis
+
+### Real-time Alarm
+
+**Real-time Alarm** helps you monitor call quality and informs you in real time when your user's communication experience is poor. With [Real-time Alarm](../../en/Agora%20Platform/aa_realtime_alarm.md), you can do the following in real time:
+
+- Monitor users who are having poor communication experiences.
+- View the distribution of quality factors.
+- Identify abnormalities, analyze quality factors, and locate the source of an abnormal issue.
+
+<div class="alert info">Before using Real-time Alarm, contact <a href="mailto:support@agora.io">support@agora.io</a > to enable this function.</div>
+
+![](https://web-cdn.agora.io/docs-files/1588838973636)
