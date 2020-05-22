@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Fri May 22 2020 07:03:57 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 07:04:09 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
@@ -161,7 +161,12 @@ The following are some common errors:
 
   Calling `stop` together with `query` affects the response of `stop`: The HTTP status code is 206 and the response does not have the `fileList` field.
 
-See [Cloud Recording Integration FAQ](https://docs.agora.io/en/faqs/cloud_integration_faq) and [Errors](../../en/cloud-recording/cloud_recording_api_rest.md) if you have other issues using Agora Cloud Recording.
+See the following if you have other issues using Agora Cloud Recording:
+
+- [Common Errors](../../en/cloud-recording/cloud_recording_api_rest.md) 
+- [Why do I get a 404 error when I call query after successfully starting a cloud recording?](https://docs.agora.io/en/faq/return-404)
+-  [Why are there no recorded files in the cloud storage?](https://docs.agora.io/en/faq/fail_to_upload)
+- [How can I choose the region of my cloud storage?](https://docs.agora.io/en/faq/bucket_region)
 
 ## Sample requests
 
@@ -313,11 +318,5 @@ def start_record():
 start_record()
 ```
 
-## <a name="reference"></a>References
 
-- [Why are there no recorded files in the cloud storage?](https://docs.agora.io/en/faq/fail_to_upload)
-
-- [Why do I get a 404 error when I call query after successfully starting a cloud recording?](https://docs.agora.io/en/faq/return-404)
-
-- [How can I choose the region of my cloud storage?](https://docs.agora.io/en/faq/bucket_region)
 
