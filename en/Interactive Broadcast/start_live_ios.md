@@ -1,11 +1,11 @@
 
 ---
-title: Start a Live Broadcast
+title: Start a Video Broadcast
 description: 
 platform: iOS
-updatedAt: Wed Apr 29 2020 09:15:48 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 03:06:16 GMT+0800 (CST)
 ---
-# Start a Live Broadcast
+# Start a Video Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for iOS.
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either Broadcaster or Audience. The broadcaster sends and receives streams while the audience receives streams only.
