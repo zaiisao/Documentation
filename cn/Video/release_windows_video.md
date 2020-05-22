@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Fri May 22 2020 02:46:22 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 02:46:44 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -84,6 +84,10 @@ Agora 在该版本对通信场景采用了全新的系统架构，并升级了�
 #### 4. 美颜
 
 常见的视频社交、在线教育和连麦直播等场景中，用户普遍希望有基础的美颜功能。该版本新增接口 setBeautyEffectOptions，你可以调用该接口设置对比度、亮度、平滑度等参数，达到美白、磨皮、红润肤色等美颜效果。详情请参考《[美颜](../../cn/Video/image_enhancement_windows.md)》。
+
+#### 5. 云代理服务
+
+该版本新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见《[使用云代理服务](../../cn/Video/cloudproxy_native.md)》。
 
 
 **改进**
