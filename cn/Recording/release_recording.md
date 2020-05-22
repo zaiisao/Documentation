@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Fri May 22 2020 06:40:55 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 06:45:12 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -91,8 +91,8 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 
 ##### **媒体事件**
 
-- [`onRemoteAudioStreamStateChanged`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a6ba41d8f2ba7ccb06695ed6ef6037159)：远端用户音频流状态改变时触发
-- [`onRemoteVideoStreamStateChanged`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a98fe264a24974fb7b6ae46d2ddce3661)：远端用户视频流状态改变时触发
+- [`onRemoteAudioStreamStateChanged`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a6ba41d8f2ba7ccb06695ed6ef6037159)：远端用户音频流状态改变时触发
+- [`onRemoteVideoStreamStateChanged`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a98fe264a24974fb7b6ae46d2ddce3661)：远端用户视频流状态改变时触发
 
 **改进**
 
