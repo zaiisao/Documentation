@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy on Web
 platform: Web
-updatedAt: Wed May 06 2020 09:48:43 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 03:59:56 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -13,6 +13,17 @@ Enterprises with high-security requirements usually have firewalls that restrict
 To ensure that enterprise users can connect to Agora's services through a firewall, Agora supports setting up a cloud proxy. 
 
 Compared with setting a single proxy server, the cloud proxy is more flexible and stable, thus widely implemented in organizations with high-security requirements, such as large-scale enterprises, hospitals, universities, and banks.
+
+## Working principles
+
+The following diagram shows the working principles of the Agora cloud proxy.
+
+![](https://web-cdn.agora.io/docs-files/1569400862850)
+
+1. Before connecting to Agora SD-RTN, the Agora SDK sends the request to the cloud proxy.
+2. The cloud proxy sends back the proxy information.
+3. The Agora SDK sends the data to the cloud proxy, and the cloud proxy forwards the data to Agora SD-RTN.
+4. Agora SD-RTN sends the data to the cloud proxy, and the cloud proxy forwards the data to the Agora SDK.
 
 ## Implementation
 
@@ -80,17 +91,6 @@ client.join(channelKey, channel, null, function(uid) {
 
 - [startProxyServer](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#startproxyserver)
 - [stopProxyServer](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#stopproxyserver)
-
-## Working principles
-
-The following diagram shows the working principles of the Agora cloud proxy.
-
-![](https://web-cdn.agora.io/docs-files/1569400862850)
-
-1. Before connecting to Agora SD-RTN, the Agora SDK sends the request to the cloud proxy;
-2. The cloud proxy sends back the proxy information;
-3. The Agora SDK sends the data to the cloud proxy, and the cloud proxy forwards the data to Agora SD-RTN;
-4. Agora SD-RTN sends the data to the cloud proxy, and the cloud proxy forwards the data to the Agora SDK.
 
 ## Considerations
 
