@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue May 19 2020 09:01:00 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 03:05:54 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -60,6 +60,10 @@ After joining multiple channels, users can receive the audio and video streams o
 #### 2. Adjusting the playback volume of the specified remote user
 
 Adds `adjustUserPlaybackSignalVolume` for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or a live broadcast to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+
+#### 3. Cloud proxy
+
+Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Audio%20Broadcast/cloudproxy_native.md) for details.
 
 **Improvements**
 
