@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Wed May 06 2020 04:12:41 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 06:52:41 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
