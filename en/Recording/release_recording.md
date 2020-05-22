@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Fri May 22 2020 06:46:40 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 06:47:29 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -89,19 +89,19 @@ Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Agora%20Platform/cl
 
 ##### Channel events
 
-- `onRejoinChannelSuccess`: Occurs when the recording server rejoins a channel.
-- `onConnectionStateChanged`: Occurs when the network connection state changes.
+- [`onRejoinChannelSuccess`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a210d1e225415eba95c8fa606ae0996ea): Occurs when the recording server rejoins a channel.
+- [`onConnectionStateChanged`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a08d04dd3d5f82ca0ab9cdadff20367b0): Occurs when the network connection state changes.
 
 ##### Statistics events
 
-- `onRemoteVideoStats`: Reports the statistics of the video stream from each remote user/host.
-- `onRemoteAudioStats`: Reports the statistics of the audio stream from each remote user/host.
-- `onRecordingStats`: Reports the statistics of the recording session.
+- [`onRemoteVideoStats`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a427c17ccc456444159c977aeec04a895): Reports the statistics of the video stream from each remote user/host.
+- [`onRemoteAudioStats`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a151091f21f514baf78b005031b382f8b): Reports the statistics of the audio stream from each remote user/host.
+- [`onRecordingStats`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a870ab8a3d043f6c3910aa89121e83f33): Reports the statistics of the recording session.
 
 ##### Media events
 
-- `onRemoteAudioStreamStateChanged`: Occurs when the state of a remote audio stream changes.
-- `onRemoteVideoStreamStateChanged`: Occurs when the state of a remote video stream changes.
+- [`onRemoteAudioStreamStateChanged`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a6ba41d8f2ba7ccb06695ed6ef6037159): Occurs when the state of a remote audio stream changes.
+- [`onRemoteVideoStreamStateChanged`](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine_event_handler.html#a98fe264a24974fb7b6ae46d2ddce3661): Occurs when the state of a remote video stream changes.
 
 **Improvement**
 
