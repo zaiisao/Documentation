@@ -122,7 +122,7 @@ If your `targetSdkVersion` &ge; 29, add the following line in the `<application>
 
 ### Prevent code obfuscation
 
-Add the following line in the **app/proguard-rules.pro** file to prevent code obfuscation:
+Add the following line in the **app/proguard-rules.pro** file to prevent obfuscating the code of the Agora SDK:
 
 ```xml
 -keep class io.agora.**{*;}
