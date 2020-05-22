@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue May 19 2020 08:49:21 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 03:03:44 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -82,6 +82,10 @@ Adds `adjustUserPlaybackSignalVolume` for adjusting the playback volume of a spe
 #### 4. Image enhancement
 
 Adds `setBeautyEffectOptions` for enabling image enhancement in scenarios such as video social networking, an online class, or an interactive broadcast. You can call this method to set parameters including contrast, brightness, smoothness, red saturation, and so on. See [Image enhancement](../../en/Video/image_enhancement_windows.md) for details.
+
+#### 5. Cloud proxy
+
+Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Video/cloudproxy_native.md) for details.
 
 **Improvements**
 
