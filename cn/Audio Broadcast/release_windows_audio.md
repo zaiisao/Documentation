@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Fri May 22 2020 02:48:19 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 02:49:12 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -62,6 +62,10 @@ Agora 在该版本对通信场景采用了全新的系统架构，并升级了�
 
 该版本新增 `adjustUserPlaybackSignalVolume` 方法，用以调节本地用户听到的指定远端用户的音量。通话或直播过程中，你可以多次调用该方法，来调节多个远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
 
+#### 3. 云代理服务
+
+该版本新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见《[使用云代理服务](../../cn/Audio%20Broadcast/cloudproxy_native.md)》。
+
 
 **改进**
 
@@ -81,10 +85,6 @@ Agora 在该版本对通信场景采用了全新的系统架构，并升级了�
 #### 3. 其他提升
 
 该版本自动开启直播场景下 Native SDK 与 Web SDK 的互通，并废弃原有的 `enableWebSdkInteroperability` 方法。
-
-#### 4. 云代理服务
-
-该版本新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见《[使用云代理服务](../../cn/Audio%20Broadcast/cloudproxy_native.md)》。
 
 **问题修复**
 
