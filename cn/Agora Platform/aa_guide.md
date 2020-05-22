@@ -3,7 +3,7 @@
 title: 水晶球概览
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Thu May 07 2020 08:14:40 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 05:06:07 GMT+0800 (CST)
 ---
 # 水晶球概览
 [水晶球](https://console.agora.io/analytics/call/search)（Agora Analytics）是 Agora 为开发者提供的全周期通话质量监测、回溯和分析的解决方案，致力于帮助你及时发现问题、定位原因，并最终解决问题以提升用户体验。
@@ -51,3 +51,17 @@ updatedAt: Thu May 07 2020 08:14:40 GMT+0800 (CST)
 <div class="alert info">实时数据处于 beta 阶段，使用前需联系 <a href="mailto:sales@agora.io">sales@agora.io</a > 开通。</div>
 
 ![](https://web-cdn.agora.io/docs-files/1571122964978)
+
+## 自动诊断
+
+### 实时预警
+
+实时预警可以帮助你实时监控通话体验质量并获取体验异常信息，详见[实时预警](../../cn/Agora%20Platform/aa_realtime_alarm.md)。
+
+- 实时监控通话体验异常的用户。
+- 实时查看质量影响因素的分布。
+- 及时识别异常类型，分析异常影响因素，并定位异常源。
+
+<div class="alert info">实时预警处于 beta 阶段，使用前需联系 <a href="mailto:sales@agora.io">sales@agora.io</a > 开通。</div>
+
+![](https://web-cdn.agora.io/docs-files/1588839263541)
