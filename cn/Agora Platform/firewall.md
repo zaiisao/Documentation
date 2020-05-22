@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Fri May 22 2020 04:14:37 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 04:17:58 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
@@ -105,6 +105,17 @@ qos.agoralab.co
 
 ```
 .agora.io
+.agoraio.cn
+.edge.agora.io
+.edge.agoraio.cn
+ap-web-1.agora.io
+ap-web-1.agoraio.cn
+ap-web-2.agora.io
+ap-web-2.agoraio.cn
+webcollector-rtm.agora.io
+logservice-rtm.agora.io
+webcollector-rtm.agoraio.cn
+logservice-rtm.agoraio.cn
 ```
 
 | 目标端口 | 协议 | 操作 |
