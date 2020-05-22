@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Fri May 22 2020 02:42:18 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 02:42:27 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -203,6 +203,10 @@ Adds the `images` property to `LiveTranscoding` for inserting online PNG images 
 #### Encryption/decryption failure notification
 
 Adds the `Client.on("crypt-error")` callback for notifying the app that an encryption/decryption failure occurs when the local users is publishing or subscribing to a stream.
+
+#### Cloud proxy
+
+Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Interactive%20Broadcast/cloud_proxy_web.md) for details.
 
 **Improvements**
 
