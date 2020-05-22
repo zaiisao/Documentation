@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: How to enable cloud proxy on Web SDK
 platform: Web
-updatedAt: Thu May 21 2020 09:10:08 GMT+0800 (CST)
+updatedAt: Fri May 22 2020 03:59:21 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能描述
@@ -13,6 +13,16 @@ updatedAt: Thu May 21 2020 09:10:08 GMT+0800 (CST)
 为避免这些企业因防火墙无法使用 Agora 的服务，Agora 开发了云代理服务。用户只需要在防火墙上将特定的 IP 及端口列入白名单，就可以实现内网访问 Agora 服务。
 
 相比配置单一的代理服务器的 IP，云代理服务更灵活稳定，因此在大型企业、医院、高校、金融等安全需求较高的机构内都有广泛的应用。
+
+## 工作原理
+Agora 云代理的工作原理如下：
+![](https://web-cdn.agora.io/docs-files/1569400362511)
+
+1. Agora SDK 在连接 Agora SD-RTN 之前，向云代理发起请求；
+
+3. 云代理发送相应代理信息；
+4. Agora SDK 向云代理发送数据，云代理将接收到的数据透传给 Agora SD-RTN；
+5. Agora SD-RTN 向云代理返回数据，云代理再将接收到的数据发送给 Agora SDK。
 
 ## 实现方法
 
@@ -98,16 +108,6 @@ client.join(channelKey, channel, null, function(uid) {
 
 - [startProxyServer](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#startproxyserver)
 - [stopProxyServer](https://docs.agora.io/cn/Voice/API%20Reference/web/interfaces/agorartc.client.html#stopproxyserver)
-
-## 工作原理
-Agora 云代理的工作原理如下：
-![](https://web-cdn.agora.io/docs-files/1569400362511)
-
-1. Agora SDK 在连接 Agora SD-RTN 之前，向云代理发起请求；
-
-3. 云代理发送相应代理信息；
-4. Agora SDK 向云代理发送数据，云代理将接收到的数据透传给 Agora SD-RTN；
-5. Agora SD-RTN 向云代理返回数据，云代理再将接收到的数据发送给 Agora SDK。
 
 ## 开发注意事项
 
