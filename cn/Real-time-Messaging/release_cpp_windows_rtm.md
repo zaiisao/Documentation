@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows CPP
-updatedAt: Sun May 24 2020 13:21:31 GMT+0800 (CST)
+updatedAt: Sun May 24 2020 13:22:17 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -36,7 +36,7 @@ v1.3.0 引入了 `IFileMessage` 消息类用于保存和传递系统生成的 me
 
 ####  2. 发送和接收图片消息
 
-v1.3.0 支持上传下载大小不超过 30 MB 的任意格式的非空图片，支持随时取消正在进行中的上传或下载任务。每个上传到 Agora 服务器的图片都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片。
+v1.3.0 支持上传和下载大小不超过 30 MB 的任意格式的非空图片，支持随时取消正在进行中的上传或下载任务。每个上传到 Agora 服务器的图片都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片。
 
 v1.3.0 引入了 `IImageMessage` 消息类用于保存和传递系统生成的 media ID。`IImageMessage` 继承自 `IMessage` 类，所以你可以通过点对点消息或频道消息发送方法传递 `IImageMessage` 实例。你可以通过 `IImageMessage` 对象进行以下操作:
 
