@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Thu May 21 2020 10:20:28 GMT+0800 (CST)
+updatedAt: Sun May 24 2020 13:22:55 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -36,7 +36,7 @@ v1.3.0 引入了 `AgoraRtmFileMessage` 消息接口用于保存和传递系统�
 
 ####  2. 发送和接收图片消息
 
-v1.3.0 支持上传下载大小不超过 30 MB 的任意格式的非空图片，支持随时取消正在进行中的上传或下载任务。每个上传到 Agora 服务器的图片都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片。
+v1.3.0 支持上传和下载大小不超过 30 MB 的任意格式的非空图片，支持随时取消正在进行中的上传或下载任务。每个上传到 Agora 服务器的图片都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片。
 
 <div class="alert note">你只能通过 SDK 提供的下载方法下载图片。</div>
 
