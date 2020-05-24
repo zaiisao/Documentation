@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows CPP
-updatedAt: Sun May 24 2020 13:21:21 GMT+0800 (CST)
+updatedAt: Sun May 24 2020 13:21:31 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -84,7 +84,7 @@ v1.3.0 引入了 `IImageMessage` 消息类用于保存和传递系统生成的 m
 - [`onMediaDownloadToMemoryResult`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#ad0de249a8f0b79973f34f295cabe4904)
 - [`onMediaDownloadToFileResult`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a0b6edc7b944eab02d545bb2d2d1bfe2f)
 
-#### 3. 废弃方法
+#### 废弃方法
 
 [`sendMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a4ae01f44d49f334f7c2950d95f327d30) 被重载方法 [`sendMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a056dfe9e83c168c3c94e47a017a6ec3f) 替代。
 
