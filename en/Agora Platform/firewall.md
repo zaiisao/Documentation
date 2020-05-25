@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Mon May 25 2020 05:37:45 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 05:42:04 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -16,6 +16,8 @@ If you cannot add these ports and whitelist domains on your firewall, Agora reco
 <div class="alert note"><li>If you use Agora SDKs across the VPN, ensure that you contact the VPN operator to add the corresponding domains on the whitelist, otherwise, you may encounter undefined issues such as failing to start a call. </li><li>Unless it is otherwise specified, the sources are the clients that integrate the Agora SDK.</li></div>
 
 ## Agora RTC SDK
+
+Use UDP ports rather than TCP ports for superior voice and video quality since UDP prioritizes timeliness over reliability.
 
 ### Native SDK
 
@@ -59,7 +61,6 @@ Add the following destination domains and the corresponding ports to the firewal
 | 80; 443; 3433; 5668; 5669; 5866 - 6000; 6080; 6443; 8667; 9667     | TCP              |  Allow |
 | 3478; 5866 - 6000 (2.9.0 or later); 10000 - 65535 (before 2.9.0)   |  UDP  | Allow |
 
-<div class = "alert note">Use UDP ports rather than TCP ports for superior voice and video quality since UDP prioritizes timeliness over reliability.</div>
 
 ## Agora RTM SDK
 
