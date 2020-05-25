@@ -3,75 +3,36 @@
 title: 计费说明
 description: 
 platform: All Platforms
-updatedAt: Mon May 25 2020 08:13:16 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 08:19:08 GMT+0800 (CST)
 ---
 # 计费说明
+本文展示 Agora 实时消息的计费方式。
+
+<p><div class="alert note">如果你已与我们的销售签约，则实际计费信息以合同为准。</div></p>
+
 ## 概述
 
+当你使用 Agora RTM SDK 在你的项目中实现了实时消息功能，Agora 会收取实时消息费用，并按月发布账单、进行扣款。详见[账单、扣费与账户冻结](../../cn/faq/billing_account.md)。
 
+<p><div class="alert note">为进一步推广 RTM 用量，Agora 决定自 2020 年 4 月 1 日至 2020 年 6 月 30 日对每月的最高日活跃用户数减免 20,000，根据减免后的当月最高日活跃用户数计费。如果减免后每月的最高日活跃用户数量小于或等于 0，则当月费用为零。如果减免后每月的最高日活跃用户数量大于 0，则按照本文的计费规则计算费用。</div></p>
 
-声网会按月对你使用的所有产品和服务分别计费，并收取总费用。本文介绍声网服务用量统计方式和实时消息产品的计费规则。如果你同时还使用了声网其他产品或服务，可查看对应的计费说明：
+## 费用组成
 
+对于每个 RTM 项目，Agora 会根据该项目的当月最高日活跃用户数计算当月费用。
 
+## 单价
 
+<p><div class="alert note">对于每个 RTM 项目，Agora 对每月的最高日活跃用户数减免 1,000。因此当月最高日活跃用户数中小于或等于 1,000 的部分单价为 0。</div></p>
 
-
-
-- [语音通话计费说明](https://docs.agora.io/cn/Voice/billing_audio?platform=All%20Platforms)
-- [视频通话计费说明](https://docs.agora.io/cn/Video/billing_video?platform=All%20Platforms)
-- [视频互动直播计费说明](https://docs.agora.io/cn/Interactive%20Broadcast/billing_interactive_broadcast?platform=All%20Platforms)
-- [音频互动直播计费说明](https://docs.agora.io/cn/Audio%20Broadcast/billing_audio_broadcast?platform=All%20Platforms) 
-- [本地服务端录制计费说明](https://docs.agora.io/cn/Recording/billing_recording?platform=All%20Platforms)
-- [云端录制计费说明](https://docs.agora.io/cn/cloud-recording/billing_cloud_recording?platform=All%20Platforms)
-
-
-账单、扣费及账户冻结等相关问题，详见[账单、扣费与账户冻结](https://docs.agora.io/cn/faq/billing_account)。
-
-
-## 服务用量统计方式
-
-
-
-
-
-
-声网根据 DAU (每日活跃用户数) 对 RTM 项目计费：每个项目中每个 `uid` (RTM) 或 `userAccount` (信令) 登录一次系统计为一次活跃，系统会对同一项目中每日内同一 `uid` 或 `userAccount` 的多次登录进行去重，以这种方式统计得到的日登录次数计为 RTM 项目的 DAU。<p>声网会将你的每个 [Agora 开发者账户](https://console.agora.io/)下每个项目的当月最高日活跃用户数 DAU 相加，根据相加得到的 DAU 数计算当月费用。</p><p><div class="alert note">为进一步推广 RTM 用量，声网决定自 2020 年 4 月 1 日至 2020 年 6 月 30 日对每月的最高日活跃用户数 DAU 减免 20000，根据减免后的当月最高 DAU 计费。</div></p>
-
-
-
-
-## 产品计费表
-
-
-
-
-
-
-
-
-
-
-
-
-
-| 当月最高日活跃用户数 DAU             | 报价（元/每 1000 人） |
+| 当月最高日活跃用户数    | 单价（元/千人） |
 | :--------------- | :---------------------- |
-| &le; 1000         | 0                    |
-| > 1000  | 100.00                   |
+| &le; 1,000  的部分       | 0                   |
+| > 1,000 的部分  | 100.00                   |
 
+## 当月最高日活跃用户数
 
-## 注意事项
+每日每个登录实时消息系统的 `uid` (RTM) 或 `userAccount` (信令) 统计为一个活跃用户，同一个 `uid` 或 `userAccount` 在当日的多次登录只统计为一个活跃用户。声网会对当月每天的日活跃用户数进行比较，得出当月最高日活跃用户数。
 
+## 计费示例
 
-
-
-
-
-
-### 当月最高日活跃用户 DAU 统计
-
-- 同一 `uid` 或 `userAccount` 当日的多次登录只对当日 DAU 贡献一次，声网会对相同 `uid` 或 `userAccount` 的多次登录进行去重。
-- 如果同一 [Agora 开发者账户](https://console.agora.io/)下存在多个 RTM 开发项目，当月最高 DAU 为各项目当月最高 DAU 的总和。
-
-
-
+假设某个项目使用了 Agora 实时消息服务，当月最高日活跃用户数为 9,000 人，扣除免费的 1,000 最高日活跃用户数后，作为当月计费依据的最高日活跃用户数为 8,000 人，则该月实时消息服务费 = 8,000 （人）/ 1,000 &times; 100 （元/千人） = 800 元。
