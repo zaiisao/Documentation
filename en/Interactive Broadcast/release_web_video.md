@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon May 25 2020 07:28:57 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:30:05 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -554,6 +554,8 @@ Supports the cloud proxy service. See [Use Cloud Proxy](../../en/Interactive%20B
 - [`Client.getSessionStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getsessionstats)
 - [`Client.setClientRole`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole)
 - [`Client.getConnectionState`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getconnectionstate)
+- [`Client.startProxyServer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#startproxyserver)
+- [`Client.stopProxyServer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#stopproxyserver)
 - [`Stream.isPlaying`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#isplaying)
 - [`Stream.muteAudio`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#muteaudio)
 - [`Stream.unmuteAudio`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#unmuteaudio)
