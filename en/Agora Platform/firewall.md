@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Mon May 25 2020 05:50:57 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 06:09:58 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -41,7 +41,7 @@ vocs5.agora.io
 
 | Destination ports | Port type | Operation |
 | ---------- | ------------------------------------------------ | -----------------|
-| 1080; 8000; 9700; 25000; 30000     | TCP              |  Allow |
+| 1080; 8000; 9700; 25000; 30000; 30001 - 30003 (for RTMP converter) | TCP              |  Allow |
 | 1080; 4000 to 4030; 7000; 8000; 8913; 9700; 25000   |  UDP  | Allow |
 
 
@@ -58,7 +58,7 @@ Add the following destination domains and the corresponding ports to the firewal
 
 | Destination ports | Port type | Operation |
 | ---------- | ------------------------------------------------ | -----------------|
-| 80; 443; 3433; 5668; 5669; 5866 - 6000; 6080; 6443; 8667; 9667     | TCP              |  Allow |
+| 80; 443; 3433; 5668; 5669; 5866 - 6000; 6080; 6443; 8667; 9667; 30011 - 30013 (for RTMP converter)| TCP              |  Allow |
 | 3478; 5866 - 6000 (2.9.0 or later); 10000 - 65535 (before 2.9.0)   |  UDP  | Allow |
 
 
