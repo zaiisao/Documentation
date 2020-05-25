@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: 
 platform: Unity
-updatedAt: Mon May 25 2020 07:42:43 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:59:14 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -13,6 +13,18 @@ Enterprises with high-security requirements usually have firewalls that restrict
 To ensure that enterprise users can connect to Agora's services through a firewall, Agora supports setting up a cloud proxy. 
 
 Compared with setting a single proxy server, the cloud proxy is more flexible and stable, thus widely implemented in organizations with high-security requirements, such as large-scale enterprises, hospitals, universities, and banks.
+
+## Working principles
+
+The following diagram shows the working principles of the Agora cloud proxy.
+
+![](https://web-cdn.agora.io/docs-files/1569400862850)
+
+1. Before connecting to Agora SD-RTN, the Agora SDK sends the request to the cloud proxy;
+
+2. The cloud proxy sends back the proxy information;
+3. The Agora SDK sends the data to the cloud proxy, and the cloud proxy forwards the data to Agora SD-RTN;
+4. Agora SD-RTN sends the data to the cloud proxy, and the cloud proxy forwards the data to the Agora SDK.
 
 ## Implementation
 
@@ -73,19 +85,6 @@ SetParameters("{\"rtc.enable_proxy\":true}");
 // Uses cloud proxy and configure the domain name.
 SetParameters("{\"rtc.proxy_server\":[2, \"[\"192.168.0.112\",\"127.0.0.1\"]\", 0]}");
 ```
-
-## Working principles
-
-The following diagram shows the working principles of the Agora cloud proxy.
-
-![](https://web-cdn.agora.io/docs-files/1569400862850)
-
-1. Before connecting to Agora SD-RTN, the Agora SDK sends the request to the cloud proxy;
-
-2. The cloud proxy sends back the proxy information;
-3. The Agora SDK sends the data to the cloud proxy, and the cloud proxy forwards the data to Agora SD-RTN;
-4. Agora SD-RTN sends the data to the cloud proxy, and the cloud proxy forwards the data to the Agora SDK.
-
 
 ## Considerations
 
