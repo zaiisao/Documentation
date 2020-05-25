@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri May 22 2020 02:40:10 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:24:43 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -217,10 +217,6 @@ Agora 在该版本对 SDK 的传输质量和互通体验进行了优化，在首
 #### 加密/解密失败通知
 
 新增 `Client.on("crypt-error")` 回调，在发布或订阅流时出现加解密错误时可以收到通知。
-
-#### 云代理服务
-
-新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Interactive%20Broadcast/cloud_proxy_web.md)。
 
 
 **改进**
@@ -546,7 +542,11 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - 新增 `Client.getConnectionState` 方法，用于获取 SDK 与服务器的连接状态。
 - 新增 `connection-state-change` 回调，用于通知连接状态的变化。
 
-#### 6. 其他新增功能
+#### 6. 云代理服务
+
+支持使用云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Interactive%20Broadcast/cloud_proxy_web.md)。
+
+#### 7. 其他新增功能
 
 - 新增 `Stream.isPlaying` 方法，用于检测音视频流当前是否在播放状态。
 - `Client.on` 中新增以下回调：
@@ -585,6 +585,8 @@ Chrome 72 及以上版本无需插件即可使用屏幕共享功能，详见[进
 - [`Client.getSessionStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getsessionstats)
 - [`Client.setClientRole`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setclientrole)
 - [`Client.getConnectionState`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#getconnectionstate)
+- [`Client.startProxyServer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#startproxyserver)
+- [`Client.stopProxyServer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#stopproxyserver)
 - [`Stream.isPlaying`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#isplaying)
 - [`Stream.muteAudio`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#muteAudio)
 - [`Stream.unmuteAudio`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#unmuteAudio)
