@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: macOS
-updatedAt: Mon May 18 2020 04:17:47 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 10:02:17 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -16,7 +16,7 @@ updatedAt: Mon May 18 2020 04:17:47 GMT+0800 (CST)
 - 本地播放媒体资源时，只需单独使用 MediaPlayer Kit。分享媒体资源到远端时，需同时使用 MediaPlayer Kit，Agora Native SDK 和 RtcChannelPublishPlugin 三者。其中，MediaPlayer Kit 支持本地用户使用播放器功能，Native SDK 支撑本地用户和远端用户的实时音视频直播场景，RtcChannelPublishPlugin 支持将播放的媒体流发送给 Agora 频道中远端用户。
 - 分享媒体资源到远端时，播放器的画面会抢占主播摄像头采集的画面。所以，如果你希望远端用户同时看到主播和播放器的画面，则需另起一个进程来采集主播的画面。
 
-## 准备开发条件
+## 准备开发环境
 
 ### 前提条件
 
