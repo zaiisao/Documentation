@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Mon May 25 2020 05:41:09 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 05:48:48 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
