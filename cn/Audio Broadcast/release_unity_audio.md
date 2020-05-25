@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Unity
-updatedAt: Mon Feb 17 2020 04:27:24 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:57:59 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Unity SDK 的发版说明。
@@ -56,6 +56,10 @@ Agora Unity SDK 广泛应用于游戏、教育、AR、VR 等场景。
    | :------ | :----------------------------------------- |
    | Android | libagora-crypto.so                         |
    | iOS     | <ul><li>AgoraRtcCryptoLoader.framework <li>libcrypto.a</li></ul> |
+
+#### 6. 云代理服务
+
+支持使用云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Audio%20Broadcast/cloudproxy_unity.md)。
 
 **相关文档**
 
