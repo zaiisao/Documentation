@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: 
 platform: Unity
-updatedAt: Mon May 25 2020 07:42:09 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:59:46 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能描述
@@ -13,6 +13,15 @@ updatedAt: Mon May 25 2020 07:42:09 GMT+0800 (CST)
 
 相比配置单一的代理服务器，云代理服务更灵活稳定，因此在大型企业、医院、高校、金融等安全需求较高的机构内都有广泛的应用。
 
+## 工作原理
+
+Agora 云代理的工作原理如下：
+![](https://web-cdn.agora.io/docs-files/1543290381396)
+
+* Agora SDK 在连接 Agora SD-RTN 之前，向云代理发起请求；
+* 云代理返回相应代理信息；
+* Agora SDK 向云代理发送数据，云代理将接收到的数据透传给 Agora SD-RTN；
+* Agora SD-RTN 向云代理返回数据，云代理再将接收到的数据发送给 Agora SDK。
 
 ## 实现方法
 
@@ -71,16 +80,6 @@ SetParameters("{\"rtc.enable_proxy\":true}");
 // 使用云代理服务器并配置 IP 地址。
 SetParameters("{\"rtc.proxy_server\":[2, \"[\"192.168.0.112\",\"127.0.0.1\"]\", 0]}");
 ```
-
-## 工作原理
-
-Agora 云代理的工作原理如下：
-![](https://web-cdn.agora.io/docs-files/1543290381396)
-
-* Agora SDK 在连接 Agora SD-RTN 之前，向云代理发起请求；
-* 云代理返回相应代理信息；
-* Agora SDK 向云代理发送数据，云代理将接收到的数据透传给 Agora SD-RTN；
-* Agora SD-RTN 向云代理返回数据，云代理再将接收到的数据发送给 Agora SDK。
 
 ## 开发注意事项
 
