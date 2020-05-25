@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: Web
-updatedAt: Mon May 18 2020 02:35:19 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 14:17:06 GMT+0800 (CST)
 ---
 # 媒体流加密
 ## 功能描述
@@ -14,7 +14,7 @@ updatedAt: Mon May 18 2020 02:35:19 GMT+0800 (CST)
 
 下图描述了启用内置加密方案的声网音视频通信方案：
 
-![](https://web-cdn.agora.io/docs-files/1589769309318)
+![](https://web-cdn.agora.io/docs-files/1587018077775)
 
 
 ## 实现方法
