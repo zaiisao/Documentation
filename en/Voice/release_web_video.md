@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Fri May 22 2020 02:42:27 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:28:57 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -203,10 +203,6 @@ Adds the `images` property to `LiveTranscoding` for inserting online PNG images 
 #### Encryption/decryption failure notification
 
 Adds the `Client.on("crypt-error")` callback for notifying the app that an encryption/decryption failure occurs when the local users is publishing or subscribing to a stream.
-
-#### Cloud proxy
-
-Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Voice/cloud_proxy_web.md) for details.
 
 **Improvements**
 
@@ -516,6 +512,10 @@ Adds the `client-role-changed` callback to inform the app of changes to the user
 
 - Adds the `Client.getConnectionState` method to retrieve the connection status between the SDK and Agora's edge server.
 - Adds the `connection-state-change` callback to inform the app of changes to the connection status. 
+
+#### 6. Cloud proxy
+
+Supports the cloud proxy service. See [Use Cloud Proxy](../../en/Voice/cloud_proxy_web.md) for details.
 
 #### 6. Other new features
 
