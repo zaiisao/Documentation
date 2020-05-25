@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: 
 platform: Unity
-updatedAt: Mon Mar 23 2020 14:01:06 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:42:09 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能描述
@@ -16,7 +16,7 @@ updatedAt: Mon Mar 23 2020 14:01:06 GMT+0800 (CST)
 
 ## 实现方法
 
-1. 下载[最新版的 Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)。Agora RTC SDK v2.4.0 及以上版本均支持使用云代理。
+1. 下载[最新版的 Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/downloads)。Agora Unity SDK v2.9.1 及以上版本均支持使用云代理。
 2. 参考对应平台的**快速开始**文档完成开发环境准备。
 3. 联系 sales@agora.io，提供 App ID，并提供代理服务使用区域、并发规模、网络运营商等信息，申请开通云代理服务。
 4. 将以下测试 IP 及端口添加到企业防火墙的白名单。
