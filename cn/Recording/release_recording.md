@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Fri May 22 2020 06:45:12 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:38:04 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -72,7 +72,7 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 
 #### 4. 云代理服务
 
-3.0.0 版本新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Recording/cloudproxy_recording.md)。
+3.0.0 版本支持使用云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Recording/cloudproxy_recording.md)。
 
 #### 5. 新增回调
 
