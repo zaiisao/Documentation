@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Mon May 25 2020 07:38:47 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:39:08 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -83,7 +83,7 @@ You can set the `keepLastFrame` parameter when calling the `setVideoMixingLayout
 
 #### 4. Cloud proxy
 
-Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Agora%20Platform/cloudproxy_recording.md) for details.
+Supports the cloud proxy service. See [Use Cloud Proxy](../../en/Agora%20Platform/cloudproxy_recording.md) for details.
 
 #### 5. New callbacks
 
