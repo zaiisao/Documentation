@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Fri May 22 2020 04:17:58 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 05:41:09 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
@@ -17,6 +17,8 @@ updatedAt: Fri May 22 2020 04:17:58 GMT+0800 (CST)
 <div class="alert note"><li>如果你想通过 VPN 使用 Agora 的服务，请确保已联系 VPN 运营商将对应端口添加到白名单中，否则可能会遇到通话失败等未定义行为。</li><li>如无特殊说明，源地址就是集成了 Agora SDK 的客户端。</li></div>
 
 ## Agora RTC SDK
+
+为获得优质的音视频通话体验，Agora 建议你使用 UDP 端口。与 TCP 相比，UDP 更注重通话的时效性，因此能在填补丢包的同时同时将通话延迟降到最低。
 
 ### Native SDK
 
@@ -79,8 +81,6 @@ miniapp.agoraio.cn
 | ---------------| -------- | ------------ |
 | 80；443；3433；5668；5669；5866 - 5890；6080；6443；8667；9667 | TCP | 允许 |
 | 3478；10000 - 65535 | UDP | 允许 |
-
-<div class="alert note">为获得优质的音视频通话体验，Agora 建议你使用 UDP 端口。与 TCP 相比，UDP 更注重通话的时效性，因此能在填补丢包的同时同时将通话延迟降到最低。</div>
 
 ## Agora RTM SDK
 
