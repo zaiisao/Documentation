@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Tue May 19 2020 10:03:32 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 09:53:43 GMT+0800 (CST)
 ---
 # Information Security Policy
 ## Introduction
@@ -26,7 +26,7 @@ Agora is committed to safeguarding the confidentiality, integrity, and availabil
 
 This article describes how Agora protects customer data with security controls.
 
-## Data Classification
+## Data classification
 
 All customer data, in all formats or media types, is classified according to the following categories and protected accordingly.
 
@@ -39,45 +39,45 @@ All customer data, in all formats or media types, is classified according to the
 
 <div class="alert note"><li>If the customer uses the encryption function of Agora services, the audio and video data can be encrypted on the client and transmitted between the Agora servers.<li>Agora does not record the customer's third-party account information, such as credit card information and third-party account information logged in to Agora Console.</li></div>
 
-## Security Standards
+## Security standards
 
-### Data Security
+### Data security
 
 The communication between the user and the Agora server is protected by transmission protocols, such as the Agora private transmission protocol, Transport Layer Security (TLS) and Web Socket Secure (WSS). You can also use Advanced Encryption Standard (AES) or a customized encryption algorithm for end-to-end encryption of audio and video data. 
 
 During data transmission, the Agora SD-RTN™ does not transmit any encryption key information. Call content information can only be decrypted on the terminal device (such as the client app and the customer's on-premise recording server) through the client authorization key.
 
-### Data Availability
+### Data availability
 
 - Large and distributed data centers: Agora has multiple data centers providing services globally, and any attack on one data center cannot affect others.
 - Rapid recovery: When a data center is subjected to malicious attacks that are difficult to prevent, such as a distributed denial-of-service (DDoS) attack, Agora will automatically isolate the data center and avoid affecting users' services.
 - DDoS attack prevention: Agora has deployed anti-DDoS firewalls in each core cloud data center. Agora has more than two hundred distributed data centers around the world, which guarantees sufficient capabilities and resources to control the risk of DDoS attacks.
 
-### Data Storage
+### Data storage
 
 Agora provides customers with the Agora On-premise Recording SDK and Agora Cloud Recording, enabling customers to record part or all of the call contents. When using the recording services, all recorded video or audio files are stored on the storage server provided by the customer.
 
-### Access Authorization
+### Access authorization
 
 End users can access the Agora SD-RTN™ using a dynamic key, see [Set up Authentication](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms).
 
-### Access Control
+### Access control
 
-#### Electronic Access Controls
+#### Electronic access controls
 
 Agora strictly controls the data access on all internal systems. All users have independent internal accounts and authorization systems, and must pass two-step verification. All access records are recorded.
 
 All servers involving user data are strictly audited and protected. Agora employees will only access the production server when necessary, and only by obtaining temporary authorization. Operation records are kept for the whole process.
 
-#### Physical Access Controls
+#### Physical access controls
 
 All operating servers are hosted in computer rooms that meet ISO 27001 or above information security management certification standards, and all computer rooms protect information security in accordance with the escrow agreement or the Data Protection Association (DPA). Both third-party hosting providers and Agora employees must be approved before they can access servers and equipment.
 
-## Roles and Responsibilities
+## Roles and responsibilities
 
 Agora sets the responsibilities for its own staff and customers. See the following sections for more information.
 
-### Roles and Responsibilities within Agora
+### Roles and responsibilities within Agora
 
 Security roles and responsibilities within Agora are categorized as follows:
 
@@ -89,7 +89,7 @@ Security roles and responsibilities within Agora are categorized as follows:
 
 
 
-### Shared Responsibilities
+### Shared responsibilities
 
 When evaluating the Agora SD-RTN™, it is important for customers to understand and distinguish the following security measures:
 
@@ -100,15 +100,15 @@ Customers retain control of the security measures they choose to protect their p
 
 Agora recommends adding obvious prompts before accessing the users' personal information. For example, add an Enable/Disable button with which the user can agree or disagree to share personal information.
 
-## Security Training
+## Security training
 
 Agora conducts information protection, security and compliance training for all new employees. Agora also ensures that all employees receive information confidentiality training at least once a year. All authorized employees (employees who have access to the production machines) will receive additional training.
 
-## Non-Compliance
+## Non-compliance
 
 Employees must comply with confidentiality agreements and internal security systems. If a non-compliant situation occurs, Agora will take the corresponding measures depending on the severity of the situation, including but not limited to having conversations with the at-fault employees, strengthening training and education, dissolving labor agreements, and pursuing other legal liabilities.
 
-## Reporting Potential Security Risks
+## Reporting potential security risks
 
 Please report any potential risks of Agora services that you may notice to [security@agora.io](mailto:security@agora.io). Please use our PGP public key (Key ID: 2F4553BE) to encrypt your report, as potential security risks are usually sensitive. We assure our security experts will handle the issue immediately once they receive your report.
 
