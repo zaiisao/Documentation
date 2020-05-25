@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Wed Apr 01 2020 07:23:35 GMT+0800 (CST)
+updatedAt: Mon May 25 2020 07:55:12 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -51,6 +51,10 @@ Supports encryption of audio streaming. The following table shows the informatio
    | :------- | :-------------------------------------------- |
    | Android  | libagora-crypto.so                            |
    | iOS      | <ul><li>AgoraRtcCryptoLoader.framework <li>libcrypto.a</li></ul> |
+
+#### 6. Cloud proxy
+
+Supports the cloud proxy service. See [Use Cloud Proxy](../../en/Voice/cloudproxy_unity.md) for details.
 
 **Related documentation**
 
