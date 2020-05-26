@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue May 26 2020 08:51:47 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 08:52:06 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -103,7 +103,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 **新增特性**
 
-#### 1. 添加媒体附属信息
+<!--#### 1. 添加媒体附属信息
 
 新增 `Client.sendMetadata` 方法，支持在发出的流中添加媒体附属信息。该功能可用于构建更为丰富的直播互动方式，如分发商品链接、优惠券、在线答题等。
 
@@ -112,17 +112,17 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 <div class="alert note">注意：
   <li>该功能仅支持 H.264 编码格式。</li>
   <li>在网络不稳定的情况下，SDK 无法保证媒体附属信息和媒体流严格同步。</li>
-</div>
+</div>-->
 
-#### 2. 新增取消发布流成功回调
+#### 新增取消发布流成功回调
 
 新增 `Client.on("stream-unpublished")` 回调，当本地用户取消发布流（`Client.unpublish`）成功时，SDK 会触发该回调。
 
-#### 3. 设置多个 TURN 服务器
+#### 设置多个 TURN 服务器
 
 该版本起，`ClientConfig.turnServer` 支持传入多个 TURN 服务器的配置。
 
-#### 4. 设置播放器缓冲区延迟（H5 实时直播组件）
+#### 设置播放器缓冲区延迟（H5 实时直播组件）
 
 `AgoraRTS.init` 方法新增 `bufferDelay` 参数，支持设置播放器缓冲区延迟。该功能适用于网络不稳定或者对延迟不敏感的直播场景。
 
@@ -147,13 +147,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 
 **API 变更**
 
-#### 新增
-
-- [`Client.sendMetadata`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#sendmetadata)
-- [`Client.on`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) 新增以下事件：
-  - `"receive-metadata"`
-  - `"stream-unpublished"`
-
+[`Client.on`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on) 新增事件 `"stream-unpublished"`。
 
 ## 3.0.2 版
 
