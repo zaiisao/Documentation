@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Tue May 26 2020 09:40:30 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 09:41:19 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -41,6 +41,32 @@ updatedAt: Tue May 26 2020 09:40:30 GMT+0800 (CST)
 点击 [声网小程序 Demo 体验](../../cn/Voice/start_call_wechat.md) 了解小程序通话、互通等功能。
 下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
 
+## **2.4.3 版**
+
+该版本于 2020 年 5 月 26 日发布。
+
+**新增功能**
+
+#### 跨频道媒体流转发
+
+跨频道媒体流转发，指将主播的媒体流转发至其他频道，实现主播与其他频道的主播实时互动的场景。该版本新增如下方法，通过将源频道中的媒体流转发至目标频道，实现跨直播间连麦功能：
+
+- `startChannelMediaRelay`
+- `updateChannelMediaRelay`
+- `stopChannelMediaRelay`
+
+在跨频道媒体流转发过程中，SDK 会通过 `Client.on("channel-media-relay-state")` 和 `Client.on("channel-media-relay-event")` 回调报告媒体流转发的状态和事件。
+
+## **2.4.2 版**
+
+该版本于 2019 年 12 月 31 日发布。
+
+**新增功能**
+
+#### 远端用户停止发送音、视频回调
+
+为方便本地了解远端用户的媒体状态，该版本新增 `Client.on("audio-mute")` 和 `Client.on("video-muted")` 回调。当远端用户停止发送音频或视频流时，SDK 会触发相应的回调。你还可以从该回调中得知停止发送的远端用户的 ID。
+
 ## **2.4.1 版**
 
 该版本于 2019 年 9 月 18 日发布。进行了一些内部优化。
@@ -51,7 +77,7 @@ updatedAt: Tue May 26 2020 09:40:30 GMT+0800 (CST)
 
 **新增功能**
 
-为方便用户控制本地是否发流，该版本新增 [`Client.muteLocal`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#muteLocal) 和 [`Client.unmuteLocal`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#unmuteLocal) 方法。用户可以使用该方法在小程序中实现不发送本地音视频流等功能。
+为方便用户控制本地是否发流，该版本新增 [`Client.muteLocal`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#mutelocal) 和 [`Client.unmuteLocal`](https://docs.agora.io/cn/Voice/API%20Reference/wechat/interfaces/client.html#unmuteLocal) 方法。用户可以使用该方法在小程序中实现不发送本地音视频流等功能。
 
 **性能改进**
 
