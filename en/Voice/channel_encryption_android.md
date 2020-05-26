@@ -3,12 +3,12 @@
 title: Channel Encryption
 description: 
 platform: Android
-updatedAt: Mon May 18 2020 08:29:03 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 02:56:51 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
 
-<div class="alert note"><li>Both Communication and Live Broadcast support channel encryption. For live broadcasts, if you need to push streams to the CDN, do not use channel encryption.<br><li>Ensure that both receivers and senders use channel encryption, otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
+<div class="alert note"><li>Both Communication and Live Broadcast support channel encryption. For live broadcasts, if you need to push streams to the CDN, do not use channel encryption.<br><li>Ensure that both receivers and senders use the same encryption scheme. Otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
 
 The following diagram describes the encrypted data transmission process:
 ![](https://web-cdn.agora.io/docs-files/1589768973253)
@@ -21,15 +21,15 @@ If you do not use encryption, you can delete the unnecessary `libagora-crypto.so
 
 The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) for Android includes an independent dynamic library, `libagora-crypto.so`, in both the `arm64-v8a` and `armeabi-v7a` folders under `libs` for the app to load dynamically.
 
-### Step 1:
+### Step 1: Change the file location
 
 Put `libagora-crypto.so` in the specified path of your project where `libagora-rtc-sdk-jni.so` is located.
 
-### Step 2: Enable encryption.
+### Step 2: Enable encryption
 
 Call the `setEncryptionSecret` method to enable built-in encryption and set the encryption password.
 
-### Step 3.  Set the encryption mode to be used.
+### Step 3.  Set the encryption mode to be used
 
 Call the`setEncryptionMode` method to set the built-in encryption mode.
 
