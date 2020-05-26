@@ -3,7 +3,7 @@
 title: Troubleshooting token-related errors
 description: 
 platform: All Platforms
-updatedAt: Tue May 26 2020 16:37:56 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 16:38:07 GMT+0800 (CST)
 ---
 # Troubleshooting token-related errors
 Once you enable the App Certificate for your Agora project, you have decided that your app authenticates its users with the dynamic token.
@@ -29,7 +29,7 @@ Tokens expire. During the runtime of your app, you may receive the following err
 
 - Native: The SDK reports the `ERR_TOKEN_EXPIRED(109)` error in the `onError` callback when you try to join a channel by calling `joinChannel`.
 - Web: The Console prints `ERR_DYNAMIC_KEY_TIMEOUT(109)` or `ERR_DYNAMIC_KEY_EXPIRED(118)` when you try to join a channel by calling `Client.join`.
-- 
+
 **Reason:** The token has expired, usually for the following reasons:
 
 - Timeout for token authorization: Once a token is generated, you must use it to access Agora's service within 24 hours. Otherwise, the token times out and you can no longer use it.
