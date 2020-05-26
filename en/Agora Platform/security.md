@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Mon May 25 2020 09:53:43 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 06:26:23 GMT+0800 (CST)
 ---
 # Information Security Policy
 ## Introduction
@@ -12,7 +12,7 @@ This article provides information security policy for Agora services.
 
 Agora services provide built-in encryption and customized encryption. You can use either of them to implement encryption. The following diagram describes the encrypted data transmission process:
 
-![](https://web-cdn.agora.io/docs-files/1589797472933)
+![](https://web-cdn.agora.io/docs-files/1590474188624)
 
 ### Purpose
 
