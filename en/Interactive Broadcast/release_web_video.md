@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Tue May 26 2020 08:48:01 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 08:49:13 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -137,10 +137,7 @@ This release enables you to pass configurations of multiple TURN servers to `Cli
 
 #### Added
 
-- [`Client.sendMetadata`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#sendmetadata)
-- New events in [`Client.on`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on):
-  - `"receive-metadata"`
-  - `"stream-unpublished"`
+New events in [`Client.on`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#on): `"stream-unpublished"`.
 
 ## v3.0.2
 
