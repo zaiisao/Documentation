@@ -3,7 +3,7 @@
 title: Troubleshooting token-related errors
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 16 2020 14:23:31 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 16:37:56 GMT+0800 (CST)
 ---
 # Troubleshooting token-related errors
 Once you enable the App Certificate for your Agora project, you have decided that your app authenticates its users with the dynamic token.
