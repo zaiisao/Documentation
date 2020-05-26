@@ -3,7 +3,7 @@
 title: 信息安全说明
 description: 
 platform: All Platforms
-updatedAt: Tue May 19 2020 09:57:30 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 06:28:25 GMT+0800 (CST)
 ---
 # 信息安全说明
 ## 简介
@@ -12,7 +12,7 @@ updatedAt: Tue May 19 2020 09:57:30 GMT+0800 (CST)
 
 声网服务支持内置加密和自定义加密功能，你可以选择任意一种方式进行加密。下图描述了启用加密功能后的数据传输流程：
 
-![](https://web-cdn.agora.io/docs-files/1589790037406)
+![](https://web-cdn.agora.io/docs-files/1590474415737)
 
 ### 目的
 
