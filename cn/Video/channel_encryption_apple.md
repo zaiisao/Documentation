@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: iOS,macOS
-updatedAt: Tue May 26 2020 02:46:44 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 06:30:56 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文介绍媒体流加密方案。
@@ -12,7 +12,7 @@ updatedAt: Tue May 26 2020 02:46:44 GMT+0800 (CST)
 
 下图描述了启用加密功能后的数据传输流程：
 
-![](https://web-cdn.agora.io/docs-files/1589769277502)
+![](https://web-cdn.agora.io/docs-files/1590474415737)
 
 你下载的 [SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads) 里，包含:
 
