@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon May 25 2020 07:30:05 GMT+0800 (CST)
+updatedAt: Tue May 26 2020 08:48:01 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -103,7 +103,7 @@ v3.1.0 optimizes [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/te
 
 **New features**
 
-#### 1. Media metadata
+<!--#### 1. Media metadata
 
 Adds `Client.sendMetadata` to support attaching media metadata to a published stream. You can use this feature to broaden the types of interactions in a live broadcast, such as sharing digital coupons and online quizzes.
 
@@ -112,13 +112,13 @@ Adds the `Client.on("receive-metadata")` callback to notify the app when the SDK
 <div class="alert note">Note:
 	<li>This feature supports the H.264 codec only.</li>
 	<li>When the network is unstable, the SDK cannot guarantee strict synchronization between the metadata and the media stream.</li>
-</div>
+</div>-->
 
-#### 2. Event of unpublishing a stream
+#### Event of unpublishing a stream
 
 Adds the `Client.on("stream-unpublished")` callback. When the local user successfully unpublishes a stream, the SDK triggers this callback.
 
-#### 3. Multiple TURN servers
+#### Multiple TURN servers
 
 This release enables you to pass configurations of multiple TURN servers to `ClientConfig.turnServer.`
 
