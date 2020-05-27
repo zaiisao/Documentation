@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Tue May 19 2020 08:51:25 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:37:17 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -92,8 +92,9 @@ Agora audio mixing supports the following options:
 - Mix or replace the audio: 
 	- Mix the music file with the audio captured by the microphone and send it to other users 
 	- Replace the audio captured by the microphone with the music file.
-- Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
-- State change notification: Reports when the state of the audio mixing file changes, for example when the audio mixing file pauses playback or resumes playback.
+- Loop: Set whether to loop the audio mixing file and the number of times to play the file.
+- Adjust the audio volume: Adjust the playback volume of local and/or remote music files at the same time or separately.
+- Adjust the audio pitch: Adjust the pitch of the local music file or the pitch of the local voice separately.
 
 ### Implementation
 
@@ -106,10 +107,18 @@ boolean replaceMic = false; // The audio captured by the microphone is not repla
 // Starts audio mixing.
 rtcEngine.startAudioMixing("path/to/music", shouldLoop, replaceMic, loopCount);
   
-// Adjusts the volume of audio mixing. The value ranges between 0 and 100. 100 represents the orginial volume (default).
+// Sets the audio mixing volume of the music for the local user and remote users as 50% of original volume.
 int volume = 50;
 rtcEngine.adjustAudioMixingVolume(volume);
-  
+
+// Set the pitch of the local voice as 150% of the original value.
+double pitch = 1.5;
+rtcEngine.setLocalVoicePitch(pitch);
+
+// Set the pitch of the local music file as 10 chromatic values higher than the original value.
+int pitch = 10;
+rtcEngine.setAudioMixingPitch(pitch);
+
 // Gets the duration of the current audio mixing file.
 int duration = rtcEngine.getAudioMixingDuration();
 // duration can be used to set the maximum length of the progress bar.
@@ -138,6 +147,8 @@ We also provide an open-source demo project that implements audio mixing on [Git
 - [`startAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac56ceea1a143a4898382bce10b04df09)
 - [`stopAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#addb1cbc23b7f725eea6eedd18412854d)
 - [`adjustAudioMixingVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
+- [`setLocalVoicePitch`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
+- [`setAudioMixingPitch`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1ffa38f7445ff0ba71515c931f2f4f6a)
 - [`pauseAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab2d4fb72ec3031f59da72b55857e0da7)
 - [`resumeAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aedad78215c21f0a6acac7f155199f3ce)
 - [`getAudioMixingDuration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8bbeb8a8b07e4e7b1a0a493f1c66998d)
