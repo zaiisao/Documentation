@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 11:08:09 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:10:27 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,48 @@ Windows 语音 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
 
 Windows 语音 SDK 支持 X86 和 X64 架构。
+
+## **3.0.1 版**
+
+该版本于 2020 年 5 月 27 日发布。
+
+**新增特性**
+
+#### 1. 调整音乐文件音调
+
+为方便调整混音时音乐文件的播放音调，该版本新增 `setAudioMixingPitch` 方法。通过设置该方法的 `pitch` 参数，你可以升高或降低音乐文件的音调。该方法仅对音乐文件音调有效，对本地人声不生效。
+
+#### 2. 变声与混响
+
+为提高用户的音频体验，该版本在 `setLocalVoiceChanger` 和 `setLocalVoiceReverbPreset` 中分别新增以下枚举值：
+
+- 在 `VOICE_CHANGER_PRESET` 枚举中新增了以 `VOICE_BEAUTY` 为前缀和以 `GENERAL_BEAUTY_VOICE` 为前缀的枚举值，分别实现美音或语聊美声功能。
+- 在 `AUDIO_REVERB_PRESET` 枚举中新增了以 `AUDIO_REVERB_FX` 为前缀的枚举值和 `AUDIO_VIRTUAL_STEREO`，分别实现增强版混响效果和虚拟立体声效果。
+
+你可以查看进阶功能[变声与混响](../../cn/Audio%20Broadcast/voice_changer_windows.md)了解使用方法和注意事项。
+
+#### 3. 远端音频数据后处理多频道支持
+
+在多频道场景下，为方便后处理各频道的远端音频数据，该版本在 `IAudioFrameObserver` 类中新增 `isMultipleChannelFrameWanted` 和 `onPlaybackAudioFrameBeforeMixingEx`。
+
+成功注册音频观测器后，如果你将 `isMultipleChannelFrameWanted` 的返回值设为 `true`，就可以通过上述回调获取多个频道对应的音频数据。在多频道场景下，我们建议你将返回值设为 `true`。
+
+
+**问题修复**
+
+- 修复了混音、Loopback 测试异常等问题。
+- 修复了 [`onClientRoleChanged`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a36d3f45184cbb37ed2c4846654a14368) 回调多次、App ID 和 Token 校验、日志目录乱码等问题。
+
+**API 变更**
+
+#### 新增
+
+- [`setAudioMixingPitch`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a26b117f7e097801b03522f7da9257425)
+- [`VOICE_CHANGER_PRESET`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/namespaceagora_1_1rtc.html#ae29d1fb09d785334eabf0f3def8b4117) `enum` 中新增 `AUDIO_REVERB_FX_KTV` 等 9 个枚举值
+- [`AUDIO_REVERB_PRESET`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/namespaceagora_1_1rtc.html#a2476d004b44df3950ef62022cd41e564) `enum` 中新增 `VOICE_BEAUTY_VIGOROUS` 等 12 个枚举值
+- [`IAudioFrameObserver`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html) 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) 和 [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b) 
+- [`RemoteAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) 结构体中新增 `totalActiveTime` 成员
+- [警告码](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21)中新增 `WARN_ADM_WINDOWS_NO_DATA_READY_EVENT(1040)` 和 `WARN_ADM_INCONSISTENT_AUDIO_DEVICE(1042)`
 
 ## **3.0.0.2 版**
 
@@ -56,15 +98,11 @@ Agora 在该版本对通信场景采用了全新的系统架构，并升级了�
 
 为方便用户在同一时间加入多个频道，该版本新增了 `IChannel` 和 `IChannelEventHandler` 类。通过创建多个 `IChannel` 对象，用户可以加入各 `IChannel` 对象对应的频道中，实现多频道功能。
 
-加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考《[加入多频道](../../cn/Audio%20Broadcast/multiple_channel_windows.md)》。
+加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考[加入多频道](../../cn/Audio%20Broadcast/multiple_channel_windows.md)。
 
 #### 2. 调节本地播放的指定远端用户音量
 
 该版本新增 `adjustUserPlaybackSignalVolume` 方法，用以调节本地用户听到的指定远端用户的音量。通话或直播过程中，你可以多次调用该方法，来调节多个远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
-
-#### 3. 云代理服务
-
-该版本新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见《[使用云代理服务](../../cn/Audio%20Broadcast/cloudproxy_native.md)》。
 
 
 **改进**
