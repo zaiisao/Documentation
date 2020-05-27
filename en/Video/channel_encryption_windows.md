@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Windows
-updatedAt: Tue May 26 2020 06:24:53 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 05:16:22 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
@@ -11,7 +11,7 @@ This page introduces various encryption modes. Choose one that best suits your n
 <div class="alert note"><li>Both Communication and Live Broadcast support channel encryption. For live broadcasts, if you need to push streams to the CDN, do not use channel encryption.<br><li>Ensure that both receivers and senders use the same encryption scheme. Otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
 
 The following diagram describes the encrypted data transmission process:
-![](https://web-cdn.agora.io/docs-files/1590474188624)
+![](https://web-cdn.agora.io/docs-files/1590556479532)
 
 ## Scenario 1: Do Not Use Encryption
 
