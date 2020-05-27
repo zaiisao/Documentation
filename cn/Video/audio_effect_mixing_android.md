@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to enable audio mixing, play audio effects and the related settings
 platform: Android
-updatedAt: Tue May 19 2020 08:50:49 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:37:34 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -94,6 +94,8 @@ Agora 混音功能支持如下设置：
 
 - 混音或替换： 混音指的是音乐文件的音频流跟麦克风采集的音频流进行混音（叠加）并编码发送给对方；替换指的是麦克风采集的音频被音乐文件的音频流替换掉，对方只能听见音乐播放。
 - 循环：可以设置是否循环播放混音文件，以及循环次数。
+- 调节音量：可以同时或分别调节音乐文件在本地和远端的播放音量。
+- 调节音调：可以分别调节本地人声的音调和音乐文件的音调。
 
 ### 实现方法
 
@@ -106,10 +108,18 @@ boolean replaceMic = false; //不替换麦克风采集的音频
 // 开始播放混音
 rtcEngine.startAudioMixing("path/to/music", shouldLoop, replaceMic, loopCount);
   
-// 调整混音的音量。取值为 0 ~ 100, 100 代表维持原来混音的音量（默认）。
+// 将本地和远端音乐文件播放音量调节为原始音量的 50%
 int volume = 50;
 rtcEngine.adjustAudioMixingVolume(volume);
-  
+
+// 将本地人声的音调设为 1.5
+double pitch = 1.5;
+rtcEngine.setLocalVoicePitch(pitch);
+
+// 将本地音乐文件的音调升 10 个半音。
+int pitch = 10;
+rtcEngine.setAudioMixingPitch(pitch);
+
 // 获取当前播放的混音音乐的时长
 int duration = rtcEngine.getAudioMixingDuration();
 // duration 可以用来设置播放进度条的最大进度等
@@ -138,6 +148,8 @@ rtcEngine.stopAudioMixing()；
 - [`startAudioMixing`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ac56ceea1a143a4898382bce10b04df09)
 - [`stopAudioMixing`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#addb1cbc23b7f725eea6eedd18412854d)
 - [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
+- [`setLocalVoicePitch`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a41b525f9cbf2911594bcda9b20a728c9)
+- [`setAudioMixingPitch`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1ffa38f7445ff0ba71515c931f2f4f6a)
 - [`pauseAudioMixing`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab2d4fb72ec3031f59da72b55857e0da7)
 - [`resumeAudioMixing`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aedad78215c21f0a6acac7f155199f3ce)
 - [`getAudioMixingDuration`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8bbeb8a8b07e4e7b1a0a493f1c66998d)
