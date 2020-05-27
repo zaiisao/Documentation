@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 11:09:14 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:09:20 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -16,6 +16,48 @@ The Voice SDK supports the following scenarios:
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
 
 The Windows Voice SDK supports the X86 and  X64 architecture.
+
+## v3.0.1
+
+v3.0.1 was released on May 27, 2020.
+
+**New features**
+
+#### 1. Audio mixing pitch
+
+To set the pitch of the local music file during audio mixing, this release adds `setAudioMixingPitch`. You can set the `pitch` parameter to increase or decrease the pitch of the music file. This method sets the pitch of the local music file only. It does not affect the pitch of a human voice.
+
+#### 2. Voice enhancement
+
+To improve the audio quality, this release adds the following enumerate elements in `setLocalVoiceChanger` and `setLocalVoiceReverbPreset`:
+
+- `VOICE_CHANGER_PRESET` adds several elements that have the prefixes `VOICE_BEAUTY` and `GENERAL_BEAUTY_VOICE`. The `VOICE_BEAUTY` elements enhance the local voice, and the `GENERAL_BEAUTY_VOICE` enumerations add gender-based enhancement effects.
+- `AUDIO_REVERB_PRESET` adds the enumeration `AUDIO_VIRTUAL_STEREO` and several enumerations that have the prefix `AUDIO_REVERB_FX`. The `AUDIO_VIRTUAL_STEREO` enumeration implements reverberation in the virtual stereo, and the `AUDIO_REVERB_FX` enumerations implement additional enhanced reverberation effects.
+
+See the advanced guide [Set the Voice Changer and Reverberation Effects](../../en/Voice/voice_changer_windows.md) for more information.
+
+#### 3. Data post-processing in multiple channels
+
+This release adds support for post-processing remote audio data in a multi-channel scenario by adding `isMultipleChannelFrameWanted` and `onPlaybackAudioFrameBeforeMixingEx` in the `IAudioFrameObserver` class.
+
+After successfully registering the audio observer, if you set the return value of `isMultipleChannelFrameWanted` as `true`, you can get the corresponding audio data from `onPlaybackAudioFrameBeforeMixingEx`. In a multi-channel scenario, Agora recommends setting the return value as `true`.
+
+
+**Fixed issues**
+
+- Audio mixing issues and abnormal loopback test results.
+- Inaccurate report of the [`onClientRoleChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a36d3f45184cbb37ed2c4846654a14368) callback, authentication with an App ID and token, and a garbled log directory.
+
+**API changes**
+
+#### Added
+
+- [`setAudioMixingPitch`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a26b117f7e097801b03522f7da9257425)
+- Nine enumerations in [`VOICE_CHANGER_PRESET`](https://docs.agora.io/en/Voice/API%20Reference/cpp/namespaceagora_1_1rtc.html#ae29d1fb09d785334eabf0f3def8b4117), such as `AUDIO_REVERB_FX_KTV`
+- Twelve enumerations in [`AUDIO_REVERB_PRESET`](https://docs.agora.io/en/Voice/API%20Reference/cpp/namespaceagora_1_1rtc.html#a2476d004b44df3950ef62022cd41e564), such as `VOICE_BEAUTY_VIGOROUS`
+- [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) and [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b) in the [`IAudioFrameObserver`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html) class
+- The `totalActiveTime` member in the [`RemoteAudioStats`](https://docs.agora.io/en/Voice/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) struct
+- `WARN_ADM_WINDOWS_NO_DATA_READY_EVENT(1040)` and `WARN_ADM_INCONSISTENT_AUDIO_DEVICE(1042)` in the [warning codes](https://docs.agora.io/en/Voice/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21)
 
 ## v3.0.0.2
 
@@ -55,15 +97,11 @@ We also upgrade the On-premise Recording SDK to v3.0.0. Ensure that you upgrade 
 #### 1. Multiple channel management
 
 To enable a user to join an unlimited number of channels at a time, this release adds the `IChannel` and `IChannelEventHandler` classes. By creating multiple `IChannel` objects, a user can join the corresponding channels at the same time.
-After joining multiple channels, users can receive the audio and video streams of all the channels, but publish one stream to only one channel at a time. This feature applies to scenarios where users need to receive streams from multiple channels, or frequently switch between channels to publish streams. See [Join multiple channels](../../en/Voice/multiple_channel_windows.md) for details.
+After joining multiple channels, users can receive the audio and video streams of all the channels, but publish one stream to only one channel at a time. This feature applies to scenarios where users need to receive streams from multiple channels, or frequently switch between channels to publish streams. See [Join Multiple Channels](../../en/Voice/multiple_channel_windows.md) for details.
 
 #### 2. Adjusting the playback volume of the specified remote user
 
 Adds `adjustUserPlaybackSignalVolume` for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or a live broadcast to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
-
-#### 3. Cloud proxy
-
-Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Voice/cloudproxy_native.md) for details.
 
 **Improvements**
 
