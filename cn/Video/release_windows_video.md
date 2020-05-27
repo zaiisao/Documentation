@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 11:07:18 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:10:16 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,84 @@ Windows 视频 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及[视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 Windows 视频 SDK 支持 X86 和 X64 架构。
+
+## **3.0.1 版**
+
+该版本于 2020 年 5 月 27 日发布。
+
+**升级必看**
+
+#### 视频观测位置
+
+自 v3.0.1 起，如果你想要获取 `onPreEncodeVideoFrame` 回调中的视频数据，除实现该回调外，还需要在 `getObservedFramePosition` 中将 `POSITION_PRE_ENCODER(1 << 2)` 设置为观测位置。
+
+**新增特性**
+
+#### 1. 调整音乐文件音调
+
+为方便调整混音时音乐文件的播放音调，该版本新增 `setAudioMixingPitch` 方法。通过设置该方法的 `pitch` 参数，你可以升高或降低音乐文件的音调。该方法仅对音乐文件音调有效，对本地人声不生效。
+
+#### 2. 变声与混响
+
+为提高用户的音频体验，该版本在 `setLocalVoiceChanger` 和 `setLocalVoiceReverbPreset` 中分别新增以下枚举值：
+
+- 在 `VOICE_CHANGER_PRESET` 枚举中新增了以 `VOICE_BEAUTY` 为前缀和以 `GENERAL_BEAUTY_VOICE` 为前缀的枚举值，分别实现美音或语聊美声功能。
+- 在 `AUDIO_REVERB_PRESET` 枚举中新增了以 `AUDIO_REVERB_FX` 为前缀的枚举值和 `AUDIO_VIRTUAL_STEREO`，分别实现增强版混响效果和虚拟立体声效果。
+
+你可以查看进阶功能[变声与混响](../../cn/Video/voice_changer_windows.md)了解使用方法和注意事项。
+
+#### 3. 人脸检测
+
+该版本新增人脸检测功能。通过 `enableFaceDetection` 方法开启人脸检测后，SDK 会实时触发 `onFacePositionChanged` 回调，向本地用户报告检测出的一系列结果，包括人脸距设备屏幕的距离。该功能可用于提醒用户注意用眼卫生，和屏幕保持一定距离。
+
+#### 4. 全屏显示视频
+
+为提高用户观看视频的体验，该版本在视频显示模式中新增 `RENDER_MODE_FILL(4)` 模式。设置该模式后，视频尺寸会进行缩放和拉伸直至充满显示视图。你可以在调用以下方法设置用户视图时选择该显示模式：
+- `setupLocalVideo`
+- `setupRemoteVideo`
+- `setLocalRenderMode`
+- `setRemoteRenderMode`
+
+#### 5. 远端音视频数据后处理多频道支持
+
+在多频道场景下，为方便后处理各频道的远端音视频数据，该版本新增如下 C++ 接口：
+
+- `IAudioFrameObserver` 类中新增 `isMultipleChannelFrameWanted` 和 `onPlaybackAudioFrameBeforeMixingEx`。
+- `IVideoFrameObserver` 类中新增 `isMultipleChannelFrameWanted` 和 `onRenderVideoFrameEx`。
+
+成功注册音频或视频观测器后，如果你将 `isMultipleChannelFrameWanted` 的返回值设为 `true`，就可以通过上述回调获取多个频道对应的音频、视频数据。在多频道场景下，我们建议你将返回值设为 `true`。
+
+**改进**
+
+#### 设置视频观测位置
+
+成功注册视频观测器后，你可以在视频处理的各节点观测并获取想要的视频数据，如本地采集的视频数据，接收的远端视频数据等。为降低设备耗能，该版本允许自定义视频观测位置。你可以通过修改 `getObservedFramePosition` 的返回值，设置只观测以下某个或多个位置的视频数据：
+- 本地采集的视频数据
+- 接收远端发送的视频数据
+- 本地编码前的视频数据
+
+**问题修复**
+
+- 修复了混音、Loopback 测试异常等问题。
+- 修复了连麦用户屏幕共享黑屏的问题。
+- 修复了 [`onClientRoleChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a36d3f45184cbb37ed2c4846654a14368) 回调多次、App ID 和 Token 校验、日志目录乱码等问题。
+
+**API 变更**
+
+#### 新增
+
+- [`setAudioMixingPitch`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a26b117f7e097801b03522f7da9257425)
+- [`VOICE_CHANGER_PRESET`](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#ae29d1fb09d785334eabf0f3def8b4117) `enum` 中新增 `AUDIO_REVERB_FX_KTV` 等 9 个枚举值
+- [`AUDIO_REVERB_PRESET`](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#a2476d004b44df3950ef62022cd41e564) `enum` 中新增 `VOICE_BEAUTY_VIGOROUS` 等 12 个枚举值
+- [`enableFaceDetection`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2a4a87a51a473071f3457db87d93fe80)
+- [`onFacePositionChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a643406cfc93f3e55c67a4f64d0896337)
+- [`RENDER_MODE_TYPE`](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#af41dbc1deee1e6996b3476282da6aa49) `enum` 中新增 `RENDER_MODE_FILL(4)`
+- [`IAudioFrameObserver`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html) 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) 和 [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b)
+- [`IVideoFrameObserver`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html) 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aa6bf2611907a097ec359b83f1e3ba49a) 和 [`onRenderVideoFrameEx`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad325db8ee3a04e667e6db3d1a84f381d) 
+- [`getObservedFramePosition`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013)
+- [`RemoteAudioStats`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) 结构体中新增 `totalActiveTime` 成员
+- [`RemoteVideoStats`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html) 结构体中新增 `totalActiveTime` 成员
+- [警告码](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21)中新增 `WARN_ADM_WINDOWS_NO_DATA_READY_EVENT(1040)` 和 `WARN_ADM_INCONSISTENT_AUDIO_DEVICE(1042)`
 
 ## **3.0.0.2 版**
 
@@ -42,7 +120,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 [`RtcEngineContext`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_rtc_engine_context.html) 结构体中新增 `areaCode` 成员
 
-## **3.0.0** 版
+## **3.0.0 版**
 
 该版本于 2020 年 3 月 5 日发布。
 
@@ -68,7 +146,7 @@ Agora 在该版本对通信场景采用了全新的系统架构，并升级了�
 
 为方便用户在同一时间加入多个频道，该版本新增了 `IChannel` 和 `IChannelEventHandler` 类。通过创建多个 `IChannel` 对象，用户可以加入各 `IChannel` 对象对应的频道中，实现多频道功能。
 
-加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考《[加入多频道](../../cn/Video/multiple_channel_windows.md)》。
+加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考[加入多频道](../../cn/Video/multiple_channel_windows.md)。
 
 #### 2. 视频原始数据
 
@@ -83,11 +161,7 @@ Agora 在该版本对通信场景采用了全新的系统架构，并升级了�
 
 #### 4. 美颜
 
-常见的视频社交、在线教育和连麦直播等场景中，用户普遍希望有基础的美颜功能。该版本新增接口 setBeautyEffectOptions，你可以调用该接口设置对比度、亮度、平滑度等参数，达到美白、磨皮、红润肤色等美颜效果。详情请参考《[美颜](../../cn/Video/image_enhancement_windows.md)》。
-
-#### 5. 云代理服务
-
-该版本新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见《[使用云代理服务](../../cn/Video/cloudproxy_native.md)》。
+常见的视频社交、在线教育和连麦直播等场景中，用户普遍希望有基础的美颜功能。该版本新增接口 setBeautyEffectOptions，你可以调用该接口设置对比度、亮度、平滑度等参数，达到美白、磨皮、红润肤色等美颜效果。详情请参考[美颜](../../cn/Video/image_enhancement_windows.md)。
 
 
 **改进**
@@ -629,6 +703,11 @@ Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决
 ##### 9. 直播转码支持设置背景图片
 
 该版本在设置直播转码的 [`LiveTranscoding`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html) 类中，新增 [`backgroundImage`](https://docs.agora.io/cn/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a729037c7cf31b57efd1e8c9fadeab6eb) 参数，支持设置直播转码合图的背景图片。
+
+
+##### 10. 云代理服务
+
+该版本新增云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Video/cloudproxy_native.md)。
 
 #### 功能改进
 
