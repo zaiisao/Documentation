@@ -49,9 +49,9 @@ Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-Voice-Only
 
 选择如下任意一种方式将 Agora SDK 集成到你的项目中。
 
-**方法一：使用 CocoaPods 自动集成**
+<div class="alert note">自 3.0.1 版本起，下载的 SDK 内仅包含动态库包 <tt>AgoraRtcKit.framework</tt>。如果你将旧版本 SDK 升级至 3.0.1 版本，请参考<a href="../../cn/Audio%20Broadcast/migration_apple.md">升级指南</a >。</div>
 
-<div class="alert note">本方法仅适用于集成静态库。</div>
+**方法一：使用 CocoaPods 自动集成**
 
 1. 开始前确保你已安装 **Cocoapods**。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
 2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
@@ -71,37 +71,13 @@ end
 
 **方法二：手动复制 SDK 文件**
 
-1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，获取最新版的 Agora SDK，然后解压。
-
-  <div class="alert note">自 3.0.0 版本起，下载的 SDK 内包含静态库包和动态库包，其中动态库包名后缀为 Dynamic。</div>
-
+1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，获取最新版的 Agora SDK，然后解压。=
 2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
-3. 当集成静态库时，打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。其中，**AgoraRtcKit.framework** 还需点击 **Add Other…**，找到本地文件并添加。
-
-	- AgoraRtcKit.framework
-	- Accelerate.framework
-	- AudioToolbox.framework
-	- AVFoundation.framework
-	- CoreMedia.framework
-	- CoreTelephony.framework
-	- libc++.tbd
-	- libresolv.tbd
-	- SystemConfiguration.framework
-
- 
-4. 当集成动态库时，打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开。添加完成后，项目会自动链接其他系统库。
+4. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开。添加完成后，项目会自动链接其他系统库。
 
   <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
-<div class="alert note"><li>自 3.0.0 版本起，库名由 <b>AgoraRtcEngineKit.framework</b> 改为 <b>AgoraRtcKit.framework</b>。如果你将旧版本 SDK 升级至 3.0.0 版本，请按以下步骤重新集成：<ul><ul><li>打开 Xcode，在项目导航栏中移除 <b>AgoraRtcEngineKit.framework</b>。<li>进入 <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b> 菜单，点击 <b>-</b> 移除 <b>AgoraRtcEngineKit.framework</b> 文件。<li>如果你集成的是静态库，在上述菜单中点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件。<br>如果你集成的是动态库，进入 <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> 菜单，点击 <b>+</b> 添加 <b>AgoraRtcKit.framework</b> 文件，再点击 <b>Add Other…</b>，找到本地文件打开，并将文件状态改为 <b>Embed & Sign</b>。</li></ul></ul><li>若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></br></div>
-
- **静态库添加前**：
- 
- ![](https://web-cdn.agora.io/docs-files/1583329439410)
- 
- **静态库添加后**：
-
- ![](https://web-cdn.agora.io/docs-files/1584604823800) 
+<div class="alert note">若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></br></div>
  
  **动态库添加前**：
  

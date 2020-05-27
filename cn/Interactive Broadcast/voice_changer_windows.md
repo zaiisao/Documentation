@@ -10,6 +10,8 @@ updatedAt: Wed May 27 2020 11:13:49 GMT+0800 (CST)
 
 在社交娱乐应用中，为增加产品的趣味性和互动性，用户常常需要变声和混响效果。Agora 提供多种预置的变声和混响效果，你也可以灵活定制自己想要的声音，比如设置音调、均衡和混响等。
 
+Agora 提供[在线 Demo](https://www.agora.io/cn/audio-demo)，你可以体验变声与混响效果。
+
 ## 实现方法
 
 开始前请确保已在你的项目中实现基本的实时音视频功能。 详见[开始音视频通话](../../cn/Interactive%20Broadcast/start_call_windows.md)或[开始互动直播](../../cn/Interactive%20Broadcast/start_live_windows.md)。
