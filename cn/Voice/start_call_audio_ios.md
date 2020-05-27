@@ -61,7 +61,7 @@ target 'Your App' do
 end
 ```
 
-<div class="alert note">若需使用媒体流加密功能，将  <tt>pod 'AgoraRtcEngine_iOS'</tt> 替换为 <tt>pod 'AgoraRtcEngine_iOS_Crypto'</tt>。添加加密库后 app 体积会增大。</div>
+ <div class="alert note">若需使用媒体流加密功能，将  <tt>pod 'AgoraRtcEngine_iOS'</tt> 替换为 <tt>pod 'AgoraRtcEngine_iOS_Crypto'</tt>。添加加密库后 app 体积会增大。</div>
 
 4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
 5. 运行 `pod install` 命令安装 Agora SDK。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 **xcworkspace** 文件。
@@ -75,7 +75,7 @@ end
 
   <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
-<div class="alert note">若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></br></div>
+ <div class="alert note">若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></br></div>
  
  **动态库添加前**：
  
