@@ -3,7 +3,7 @@
 title: Billing, Fee Deduction, and Account Suspension
 description: 
 platform: All Platforms
-updatedAt: Wed May 27 2020 12:54:23 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 13:16:19 GMT+0800 (CST)
 ---
 # Billing, Fee Deduction, and Account Suspension
 The Agora Console issues billing information and deduces a fee from your account monthly. Note the actions that take place on the following dates:
