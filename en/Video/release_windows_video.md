@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 11:09:40 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:09:50 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -18,6 +18,84 @@ The Video SDK for Windows supports the following scenarios:
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Video Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 The Windows Video SDK supports the X86 and X64 architecture.
+
+## v3.0.1
+
+v3.0.1 was released on May 27, 2020.
+
+**Compatibility changes**
+
+#### Frame position for the video observer
+
+As of this release, to get the video frame from the `onPreEncodeVideoFrame` callback, you must set  `POSITION_PRE_ENCODER(1<<2)` in `getObserverFramePosition` as the frame position to observe, as well as implementing the `onPreEncodeVideoFrame` callback.
+
+**New features**
+
+#### 1. Audio mixing pitch
+
+To set the pitch of the local music file during audio mixing, this release adds `setAudioMixingPitch`. You can set the `pitch` parameter to increase or decrease the pitch of the music file. This method sets the pitch of the local music file only. It does not affect the pitch of a human voice.
+
+#### 2. Voice enhancement
+
+To improve the audio quality, this release adds the following enumerate elements in `setLocalVoiceChanger` and `setLocalVoiceReverbPreset`:
+
+- `VOICE_CHANGER_PRESET` adds several elements that have the prefixes `VOICE_BEAUTY` and `GENERAL_BEAUTY_VOICE`. The `VOICE_BEAUTY` elements enhance the local voice, and the `GENERAL_BEAUTY_VOICE` enumerations add gender-based enhancement effects.
+- `AUDIO_REVERB_PRESET` adds the enumeration `AUDIO_VIRTUAL_STEREO` and several enumerations that have the prefix `AUDIO_REVERB_FX`. The `AUDIO_VIRTUAL_STEREO` enumeration implements reverberation in the virtual stereo, and the `AUDIO_REVERB_FX` enumerations implement additional enhanced reverberation effects.
+
+See the advanced guide [Set the Voice Changer and Reverberation Effects](../../en/Video/voice_changer_windows.md) for more information.
+
+#### 3. Face detection
+
+This release enables local face detection. After you call `enableFaceDetection` to enable this function, the SDK triggers the `onFacePositionChanged` callback in real time to report the detection results, including the distance between the human face and the device screen. This function can remind users to keep a certain distance from the screen.
+
+#### 4. Fill mode
+
+To improve the user experience of watching videos, this release adds a video display mode `RENDER_MODE_FILL(4)`. This mode zooms and stretches the video to fill the display window. You can select this mode when calling the following methods:
+- `setupLocalVideo`
+- `setupRemoteVideo`
+- `setLocalRenderMode`
+- `setRemoteRenderMode`
+
+#### 5. Data post-processing in multiple channels
+
+This release adds support for post-processing remote audio and video data in a multi-channel scenario by adding the following C++ methods:
+
+- The `IAudioFrameObserver` class: `isMultipleChannelFrameWanted` and `onPlaybackAudioFrameBeforeMixingEx`.
+- The `IVideoFrameObserver` class: `isMultipleChannelFrameWanted` and `onRenderVideoFrameEx`.
+
+After successfully registering the audio or video observer, if you set the return value of `isMultipleChannelFrameWanted` as `true`, you can get the corresponding audio or video data from `onPlaybackAudioFrameBeforeMixingEx` or `onRenderVideoFrameEx`. In a multi-channel scenario, Agora recommends setting the return value as true.
+
+**Improvements**
+
+#### Frame position
+
+After successfully registering the video observer, you can observe and get the video frame at each node of video processing. To conserve power consumption, this release enables customizing the frame position for the video observer. Set the return value of the `getObservedFramePosition` callback to set the position to observe:
+- The position after capturing the video frame.
+- The position before receiving the remote video frame.
+- The position before encoding the frame.
+
+**Fixed issues**
+
+- Audio mixing issues and abnormal loopback test results.
+- A black screen issue when a co-host shares the screen.
+- Inaccurate report of the [`onClientRoleChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a36d3f45184cbb37ed2c4846654a14368) callback, authentication with an App ID and token, and a garbled log directory.
+
+**API changes**
+
+This release adds the following APIs:
+
+- [`setAudioMixingPitch`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a26b117f7e097801b03522f7da9257425)
+- Nine enumerations in [`VOICE_CHANGER_PRESET`](https://docs.agora.io/en/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#ae29d1fb09d785334eabf0f3def8b4117), such as `AUDIO_REVERB_FX_KTV`
+- Twelve enumerations in [`AUDIO_REVERB_PRESET`](https://docs.agora.io/en/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#a2476d004b44df3950ef62022cd41e564), such as `VOICE_BEAUTY_VIGOROUS`
+- [`enableFaceDetection`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2a4a87a51a473071f3457db87d93fe80)
+- [`onFacePositionChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a643406cfc93f3e55c67a4f64d0896337)
+- `RENDER_MODE_FILL(4)` in the [`RENDER_MODE_TYPE`](https://docs.agora.io/en/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#af41dbc1deee1e6996b3476282da6aa49) enum
+- [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) and [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b) in the [`IAudioFrameObserver`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html) class
+- [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aa6bf2611907a097ec359b83f1e3ba49a) and [`onRenderVideoFrameEx`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad325db8ee3a04e667e6db3d1a84f381d) in the [`IVideoFrameObserver`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html) class
+- [`getObservedFramePosition`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013)
+- The `totalActiveTime` member in the [`RemoteAudioStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) struct
+- The `totalActiveTime` member in the [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html) struct
+- `WARN_ADM_WINDOWS_NO_DATA_READY_EVENT(1040)` and `WARN_ADM_INCONSISTENT_AUDIO_DEVICE(1042)` in the [warning codes](https://docs.agora.io/en/Video/API%20Reference/cpp/namespaceagora.html#a32d042123993336be6646469da251b21)
 
 ## v3.0.0.2
 
@@ -67,7 +145,7 @@ As of v3.0.0, the native SDK does not enable the [dual-stream mode](https://docs
 #### 1. Multiple channel management
 
 To enable a user to join an unlimited number of channels at a time, this release adds the `IChannel` and `IChannelEventHandler` classes. By creating multiple `IChannel` objects, a user can join the corresponding channels at the same time.
-After joining multiple channels, users can receive the audio and video streams of all the channels, but publish one stream to only one channel at a time. This feature applies to scenarios where users need to receive streams from multiple channels, or frequently switch between channels to publish streams. See [Join multiple channels](../../en/Video/multiple_channel_windows.md) for details.
+After joining multiple channels, users can receive the audio and video streams of all the channels, but publish one stream to only one channel at a time. This feature applies to scenarios where users need to receive streams from multiple channels, or frequently switch between channels to publish streams. See [Join Multiple Channels](../../en/Video/multiple_channel_windows.md) for details.
 
 #### 2. Raw video data
 
@@ -81,11 +159,7 @@ Adds `adjustUserPlaybackSignalVolume` for adjusting the playback volume of a spe
 
 #### 4. Image enhancement
 
-Adds `setBeautyEffectOptions` for enabling image enhancement in scenarios such as video social networking, an online class, or an interactive broadcast. You can call this method to set parameters including contrast, brightness, smoothness, red saturation, and so on. See [Image enhancement](../../en/Video/image_enhancement_windows.md) for details.
-
-#### 5. Cloud proxy
-
-Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Video/cloudproxy_native.md) for details.
+Adds `setBeautyEffectOptions` for enabling image enhancement in scenarios such as video social networking, an online class, or an interactive broadcast. You can call this method to set parameters including contrast, brightness, smoothness, red saturation, and so on. See [Image Enhancement](../../en/Video/image_enhancement_windows.md) for details.
 
 **Improvements**
 
@@ -641,6 +715,10 @@ The SDK has two log files, each with a default size of 512 KB. In case some cust
 ##### 9. Setting the background image for LiveTranscoding
 
 v2.4.0 adds the [`backgroundImage`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html#a729037c7cf31b57efd1e8c9fadeab6eb) parameter in the [`LiveTranscoding`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_live_transcoding.html) Class in Windows to set the background image in the combined video of a live broadcast.
+
+##### 10. Cloud proxy
+
+Adds the cloud proxy service. See [Use Cloud Proxy](../../en/Video/cloudproxy_native.md) for details.
 
 #### Improvements
 
@@ -1278,7 +1356,3 @@ Android/iOS/macOS/Windows: In the Communication profile, an improvement for the 
 
 - Android: Bluetooth issues related to audio routing.
 - Android/iOS/macOS/Windows: Occasional crashes.
-
-
-
-
