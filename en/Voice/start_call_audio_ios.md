@@ -45,9 +45,9 @@ Now, let's build an iOS project from scratch. Skip to [Integrate the SDK](#Integ
 ### <a name="IntegrateSDK"></a>Integrate the SDK
 Choose either of the following methods to integrate the Agora SDK into your project.
 
-**Method 1: Automatically integrate the SDK with CocoaPods**
+<div class="alert note">As of v3.0.1, the SDK only include the dynamic library <tt>AgoraRtcKit.framework</tt>. To upgrade your SDK to v3.0.1, refer to <a href="../../en/Voice/migration_apple.md">Migration Guide</a >.</div>
 
-<div class="alert note">This method is only for integrating the SDK with the static library.</div>
+**Method 1: Automatically integrate the SDK with CocoaPods**
 
 1. Ensure that you have installed **CocoaPods** before the following steps. See the installation guide in [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 2. In **Terminal**, go to the project path and run the `pod init` command to create a **Podfile** in the project folder.
@@ -68,36 +68,12 @@ end
 **Method 2: Manually add the SDK files**
 
 1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for iOS, and unzip the downloaded SDK package.
-
-  <div class="alert note">As of v3.0.0, the downloaded SDK package includes both the static library and the dynamic library. The name suffix of the SDK with dynamic library is Dynamic. </div>
-
 2. Copy the **AgoraRtcKit.framework** file in the **libs** folder to the project folder.
-3. When integrate the static library, open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. For adding **AgoraRtcKit.framework**, you also need to click **Add Other...** after clicking **+**.
-
-	- AgoraRtcKit.framework
-	- Accelerate.framework
-	- AudioToolbox.framework
-	- AVFoundation.framework
-	- CoreMedia.framework
-	- CoreTelephony.framework
-	- libc++.tbd
-	- libresolv.tbd
-	- SystemConfiguration.framework
-
-
-4. When integrate the dynamic library, open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add **AgoraRtcKit.framework**. Once added, the project automatically links to other system libraries.
+3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add **AgoraRtcKit.framework**. Once added, the project automatically links to other system libraries.
   <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
 
-<div class="alert note"><li>As of v3.0.0, the library name changes from <b>AgoraRtcEngineKit.framework</b> to <b>AgoraRtcKit.framework</b>. To upgrade your SDK to v3.0.0, refer to the following steps to re-integrate the SDK:<ul><ul><li>Open Xcode, remove <b>AgoraRtcEngineKit.framework</b> from the Navigator.<li>Click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, click <b>-</b> to remove AgoraRtcEngineKit.framework.<li> If you integrate the SDK with the static library, click <b>TARGETS > Project Name > Build Phases > Link Binary with Libraries</b>, and click <b>+</b> to add AgoraRtcKit.framework instead.<br>If you integrate the SDK with the dynamic library, click <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b>, click <b>+</b> to add AgoraRtcKit.framework instead, and change the status of <b>AgoraRtcKit.framework</b> to <b>Embed & Sign</b>. </br></ul><li>Ensure that you integrate <b>AgoraRtcCryptoLoader.framework</b> when using the channel encryption function. After integrating the library, the app size increases.</div>
+ <div class="alert note">Ensure that you integrate <b>AgoraRtcCryptoLoader.framework</b> when using the channel encryption function. After integrating the library, the app size increases.</div>
 
- **Before integrating the static library**：
- 
- ![](https://web-cdn.agora.io/docs-files/1583329439410)
- 
- **After integrating the static library**：
- 
-  ![](https://web-cdn.agora.io/docs-files/1584604823800) 
- 
  **Before integrating the dynamic library**：
  
  ![](https://web-cdn.agora.io/docs-files/1583329514061)
