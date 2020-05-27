@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS,macOS
-updatedAt: Tue May 19 2020 09:15:05 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:37:21 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing
 ## Introduction
@@ -122,7 +122,8 @@ Agora audio mixing supports the following options:
 	- Mix the music file with the audio captured by the microphone and send it to other users.
 	- Replace the audio captured by the microphone with the music file.
 - Loop: Sets whether to loop the audio mixing file and the number of times to play the file.
-- State change notification: reports when the state of the audio mixing file changes, for example when the audio mixing file pauses playing or resumes playing.
+- Adjust the audio volume: Adjust the playback volume of local and/or remote music files at the same time or separately.
+- Adjust the audio pitch: Adjust the pitch of the local music file or the pitch of the local voice separately.
 
 
 ### Implementation
@@ -169,7 +170,15 @@ We also provide open-source demo projects that implement audio mixing on GitHub.
 ### API reference
 
 - [`startAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
-- [`localAudioMixingStateDidChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:localAudioMixingStateDidChanged:errorCode:)
+- [`stopAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioMixing)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
+- [`setLocalVoicePitch`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
+- [`setAudioMixingPitch`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPitch:)
+- [`pauseAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pauseAudioMixing)
+- [`resumeAudioMixing`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/resumeAudioMixing)
+- [`getAudioMixingDuration`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingDuration)
+- [`getAudioMixingCurrentPosition`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingCurrentPosition)
+- [`setAudioMixingPosition`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPosition:)
 
 ### Considerations
 
