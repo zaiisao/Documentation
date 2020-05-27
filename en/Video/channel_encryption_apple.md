@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: iOS,macOS
-updatedAt: Tue May 26 2020 06:24:29 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 05:15:32 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.
