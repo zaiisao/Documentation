@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu May 21 2020 06:19:11 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:20:51 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -33,6 +33,92 @@ Android 视频 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **3.0.1 版**
+
+该版本于 2020 年 5 月 27 日发布。
+
+**升级必看**
+
+#### 视频观测位置 (C++)
+
+自 v3.0.1 起，如果你想要获取 `onPreEncodeVideoFrame` 回调中的视频数据，除实现该回调外，还需要在 [`getObservedFramePosition`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v3.0.1/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013) 中将 `POSITION_PRE_ENCODER (1 << 2)` 设置为观测位置。
+
+**新增特性**
+
+#### 1. 调整音乐文件音调
+
+为方便调整混音时音乐文件的播放音调，该版本新增 `setAudioMixingPitch` 方法。通过设置该方法的 `pitch` 参数，你可以升高或降低音乐文件的音调。该方法仅对音乐文件音调有效，对本地人声不生效。
+
+#### 2. 变声与混响
+
+为提高用户的音频体验，该版本在 `setLocalVoiceChanger` 和 `setLocalVoiceReverbPreset` 中分别新增以下枚举值：
+
+- 新增了以 `VOICE_BEAUTY` 为前缀和以 `GENERAL_BEAUTY_VOICE` 为前缀的枚举值，分别实现美音或语聊美声功能。
+- 新增了以 `AUDIO_REVERB_FX` 为前缀的枚举值和 `AUDIO_VIRTUAL_STEREO`，分别实现增强版混响效果和虚拟立体声效果。
+
+你可以查看进阶功能[变声与混响](../../cn/Video/voice_changer_android.md)了解使用方法和注意事项。
+
+#### 3. 人脸检测
+
+该版本新增人脸检测功能。通过 `enableFaceDetection` 方法开启人脸检测后，SDK 会实时触发 `onFacePositionChanged` 回调，向本地用户报告检测出的一系列结果，包括人脸距设备屏幕的距离。该功能可用于提醒用户注意用眼卫生，和屏幕保持一定距离。
+
+#### 4. 全屏显示视频
+
+为提高用户观看视频的体验，该版本在视频显示模式中新增 `RENDER_MODE_FILL` 模式。设置该模式后，视频尺寸会进行缩放和拉伸直至充满显示视图。你可以在调用以下方法设置用户视图时选择该显示模式：
+
+- `setupLocalVideo`
+- `setupRemoteVideo`
+- `setLocalRenderMode`
+- `setRemoteRenderMode`
+
+#### 5. 自渲染远端视图多频道支持
+
+在多频道场景下，为方便通过 `RtcChannel` 类加入频道的用户使用视频自渲染功能，该版本在 `RtcChannel` 类新增 `setRemoteVideoRenderer` 方法。
+
+#### 6. 远端音视频数据后处理多频道支持
+
+在多频道场景下，为方便后处理各频道的远端音视频数据，该版本新增如下 C++ 接口：
+
+- `IAudioFrameObserver` 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) 和 [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v3.0.1/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b)。
+- `IVideoFrameObserver` 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aa6bf2611907a097ec359b83f1e3ba49a) 和 [`onRenderVideoFrameEx`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad325db8ee3a04e667e6db3d1a84f381d)。
+
+成功注册音频或视频观测器后，如果你将 `isMultipleChannelFrameWanted` 的返回值设为 `true`，就可以通过上述回调获取多个频道对应的音频、视频数据。在多频道场景下，我们建议你将返回值设为 `true`。
+
+**改进**
+
+#### 设置视频观测位置 (C++)
+
+成功注册视频观测器后，你可以在视频处理的各节点观测并获取想要的视频数据，如本地采集的视频数据，接收的远端视频数据等。为降低设备耗能，该版本允许自定义视频观测位置。你可以通过修改 [`getObservedFramePosition`](https://docs.agora.io/cn/Video/API%20Reference/cpp/v3.0.1/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013)  的返回值，设置只观测以下某个或多个位置的视频数据：
+
+- 本地采集的视频数据
+- 接收远端发送的视频数据
+- 本地编码前的视频数据
+
+#### 其他改进
+
+- 该版本基于华为 EMUI 10 版本以上的手机，实现了耳返低延时。
+- 该版本优化了通话时的音频效果。频道中多个用户同时讲话时，不会减弱任何一方的音频效果。
+- 该版本降低了对设备整体 CPU 的占用。
+
+**问题修复**
+
+- 修复了 `onRemoteAudioStateChanged` 回调不准、音频无声、混音、声音卡顿等问题。
+- 修复了偶现的黑屏问题。
+- 修复了通话无法正常结束、`onClientRoleChanged` 回调多次、偶现崩溃、上麦逻辑、加密互通等问题。
+
+**API 变更**
+
+#### 新增
+
+-  [`setAudioMixingPitch`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1ffa38f7445ff0ba71515c931f2f4f6a)
+- 以 [`VOICE_BEAUTY`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a6e16001b5e0f252460d584131fc11750) 为前缀、以 [`GENERAL_BEAUTY_VOICE`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#ab77b264331a44b104e5d1b333fc39ed8) 为前缀和以 [`AUDIO_REVERB_FX`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a238965ba87ce04aaaa50c45f57c8727d) 为前缀的枚举值，以及 [`AUDIO_VIRTUAL_STEREO`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a4488f5ef2274a3e2e0dff5721f3bb708) 枚举值
+- [`enableFaceDetection`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a20ee30231265a5f898384a7974e3f2b1)
+- [`onFacePositionChanged`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a629081c0db3ecf7dfc057d5f04598c77)
+- [`RENDER_MODE_FILL`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_canvas.html#a80d484794fab78276f5d55d3d95851d8)
+- `RtcChannel` 中新增 [`setRemoteVideoRenderer`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_channel.html#a25538dc7eb3c2fe34e103f86c555f130)
+- `RemoteAudioStats` 中新增 [`totalActiveTime`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html#a18b02fb2d2af40bc0730c2c916a5729d)
+- `RemoteVideoStats` 中新增 [`totalActiveTime`](https://docs.agora.io/cn/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html#a18b02fb2d2af40bc0730c2c916a5729d)
 
 ## **3.0.0.2 版**
 
