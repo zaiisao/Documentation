@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 02:42:17 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 02:44:00 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -165,6 +165,8 @@ bool CExternalVideoFrameObserver::onRenderVideoFrame(unsigned int uid, VideoFram
   return true;
 }
 
+lpAgoraEngine->enableVideo();
+
 // 启用外部视频数据源模式，注册视频观测器，我们使用观测器将外部的数据源传递给引擎以及把引擎返回的数据给到应用
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
 mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
@@ -186,7 +188,7 @@ mediaEngine->registerVideoFrameObserver(NULL);
 ### API 参考
 
 - [`setExternalVideoSource`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#a6716908edc14317f2f6f14ee4b1c01b7)
-- [`pullVideoFrame`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#ae064aedfdb6ac63a981ca77a6b315985)
+- [`pushVideoFrame`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#ae064aedfdb6ac63a981ca77a6b315985)
 
 ## 注意事项
 * 回调函数里处理音视频数据要尽量高效，且保证算法稳定，避免影响整个客户端或产生崩溃。
