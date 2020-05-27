@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon May 25 2020 08:20:09 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:43:01 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -20,6 +20,96 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 #### Known Issues and Limitations
 
 A USB device driver issue occurs when you do not hear any audio or the audio is corrupted with a USB headset. USB is not user-friendly on macOS, and we recommend using higher quality headsets.
+
+## v3.0.1
+
+v3.0.1 was released on May 27, 2020.
+
+**Compatibility changes**
+
+#### 1. Dynamic library
+
+This release replaces the static library with a dynamic library for the following reasons:
+
+- Improving overall security.
+- Avoiding incompatibility issues with other third-party libraries.
+- Making it easier to upload the app to the App Store.
+
+To upgrade the RTC Native SDK, you must re-integrate the dynamic library, `AgoraRtcKit.framework`. This process should take no more than five minutes. See [Migration Guide](../../en/Interactive%20Broadcast/migration_apple.md).
+
+#### 2. Frame position for the video observer (C++)
+
+As of this release, to get the video frame from the `onPreEncodeVideoFrame` callback, you must set `POSITION_PRE_ENCODER(1<<2)` in [`getObservedFramePosition`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013) as the frame position to observe, as well as implementing the `onPreEncodeVideoFrame` callback.
+
+**New features**
+
+#### 1. Audio mixing pitch
+
+To set the pitch of the local music file during audio mixing, this release adds `setAudioMixingPitch`. You can set the `pitch` parameter to increase or decrease the pitch of the music file. This method sets the pitch of the local music file only. It does not affect the pitch of a human voice.
+
+#### 2. Voice enhancement
+
+To improve the audio quality, this release adds the following enumerate elements in `setLocalVoiceChanger` and `setLocalVoiceReverbPreset`:
+
+- `AgoraAudioVoiceChanger` adds several elements that have the prefixes `AgoraAudioVoiceBeauty` and `AgoraAudioGeneralBeautyVoice`. The `AgoraAudioVoiceBeauty` elements enhance the local voice, and the `AgoraAudioGeneralBeautyVoice` enumerations add gender-based enhancement effects.
+- `AgoraAudioReverbPreset` adds the enumeration `AgoraAudioReverbPresetVirtualStereo` and several enumerations that have the prefix `AgoraAudioReverbPresetFx`. The `AgoraAudioReverbPresetVirtualStereo` enumeration implements reverberation in the virtual stereo, and the `AgoraAudioReverbPresetFx` enumerations implement additional enhanced reverberation effects.
+
+See [Set the Voice Changer and Reverberation Effects](../../en/Interactive%20Broadcast/voice_changer_apple.md) for more information.
+
+#### 3. Face detection
+
+This release enables local face detection. After you call `enableFaceDetection` to enable this function, the SDK triggers the `facePositionDidChangeWidth` callback in real time to report the detection results, including the distance between the human face and the device screen. This function can remind users to keep a certain distance from the screen.
+
+#### 4. Fill mode
+
+To improve the user experience of watching videos, this release adds a video display mode `AgoraVideoRenderModeFill(4)`. This mode zooms and stretches the video to fill the display window. You can select this mode when calling the following methods:
+
+- `setupLocalVideo`
+- `setupRemoteVideo`
+- `setLocalRenderMode`
+- `setRemoteRenderMode`
+
+#### 5. Remote video renderer in multiple channels
+
+This release adds `setRemoteVideoRenderer` and `remoteVideoRendererOfUserId` in the `AgoraRtcChannel` class to enable users who join the channel using the `AgoraRtcChannel` object to customize the remote video renderer.
+
+#### 6. Data post-processing in multiple channels (C++)
+
+This release adds support for post-processing remote audio and video data in a multi-channel scenario by adding the following C++ methods:
+
+- The `IAudioFrameObserver` class:  [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) and [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b).
+- The `IVideoFrameObserver` class: [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aa6bf2611907a097ec359b83f1e3ba49a) and [`onRenderVideoFrameEx`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad325db8ee3a04e667e6db3d1a84f381d).
+
+After successfully registering the audio or video observer, if you set the return value of `isMultipleChannelFrameWanted` as `true`, you can get the corresponding audio or video data from `onPlaybackAudioFrameBeforeMixingEx` or `onRenderVideoFrameEx`. In a multi-channel scenario, Agora recommends setting the return value as `true`.
+
+**Improvements**
+
+#### Frame position (C++)
+
+After successfully registering the video observer, you can observe and get the video frame at each node of video processing. To conserve power consumption, this release enables customizing the frame position for the video observer. Set the return value of the [`getObservedFramePosition`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013)  callback to set the position to observe:
+
+- The position after capturing the video frame.
+- The position before receiving the remote video frame.
+- The position before encoding the frame.
+
+**Fixed issues**
+
+- This release fixed audio mixing issues.
+- This release fixed issues relating to authentication with an App ID and a token.
+
+**API changes**
+
+This release adds the following APIs:
+
+-  [`setAudioMixingPitch`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPitch:)
+- Several elements that have the prefixes `AgoraAudioVoiceBeauty` and `AgoraAudioGeneralBeautyVoice` in the [`AgoraAudioVoiceChanger`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Constants/AgoraAudioVoiceChanger.html) enumeration
+- `AgoraAudioReverbPresetVirtualStereo` and several elements that have the prefixes `AgoraAudioReverbPresetFx` in the [`AgoraAudioReverbPreset`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Constants/AgoraAudioReverbPreset.html) enumeration
+- [`enableFaceDetection`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableFaceDetection:)
+- [`facePositionDidChangeWidth`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:facePositionDidChangeWidth:previewHeight:faces:)
+- `AgoraVideoRenderModeFill` in the [`AgoraVideoRenderMode`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Constants/AgoraVideoRenderMode.html) enumeration 
+-  [`setRemoteVideoRenderer`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcChannel.html#//api/name/setRemoteVideoRenderer:forUserId:) and [`remoteVideoRendererOfUserId`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcChannel.html#//api/name/remoteVideoRendererOfUserId:) in the `AgoraRtcChannel` class
+- `totalActiveTime` in the [`AgoraRtcRemoteAudioStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class
+- `totalActiveTime` in the [`AgoraRtcRemoteVideoStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html) class
 
 ## v3.0.0.2
 
@@ -686,6 +776,10 @@ v2.4.0 adds the [`localAudioMixingStateDidChanged`](https://docs.agora.io/en/Int
 ##### 8. Setting the log file size
 
 The SDK has two log files, each with a default size of 512 KB. In case some customers require more than the default size, v2.4.0 adds the [`setLogFileSize`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLogFileSize:) method for setting the log file size (KB).
+
+#### 9. Cloud proxy
+
+Supports the cloud proxy service. See [Use Cloud Proxy](../../en/Interactive%20Broadcast/cloudproxy_native.md) for details.
 
 #### **Improvements**
 
