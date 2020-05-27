@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Mon May 25 2020 08:23:23 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:41:17 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -16,6 +16,99 @@ iOS 视频 SDK 支持两种主要场景:
 -   音视频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及 [视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms) 了解关键特性。
+
+## **3.0.1 版**
+
+该版本于 2020 年 5 月 27 日发布。
+
+**升级必看**
+
+#### 1. iOS 静态库升级动态库
+
+为提升开发体验，该版本将 SDK 由静态库升级为动态库，不再支持静态库。使用动态库可以提高库的安全等级，方便 app 上传至 App Store，且避免与第三方库产生不兼容等问题。
+
+如果你由之前版本的静态库升级为当前版本，需要重新集成，详见[升级指南](../../cn/Interactive%20Broadcast/migration_apple.md)。
+
+<div class="alert note">iOS 13.3.1 版本对动态库的支持有已知问题，已在 iOS 13.4 版本修复。</div>
+
+#### 2. 视频观测位置 (C++)
+
+自 v3.0.1 起，如果你想要获取 `onPreEncodeVideoFrame` 回调中的视频数据，除实现该回调外，还需要在 [`getObservedFramePosition`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013) 中将 `POSITION_PRE_ENCODER (1 << 2)` 设置为观测位置。
+
+**新增特性**
+
+#### 1. 调整音乐文件音调
+
+为方便调整混音时音乐文件的播放音调，该版本新增 `setAudioMixingPitch` 方法。通过设置该方法的 `pitch` 参数，你可以升高或降低音乐文件的音调。该方法仅对音乐文件音调有效，对本地人声不生效。
+
+#### 2. 变声与混响
+
+为提高用户的音频体验，该版本在 `setLocalVoiceChanger` 和 `setLocalVoiceReverbPreset` 中分别新增以下枚举值：
+
+- 新增了以 `AgoraAudioVoiceBeauty` 为前缀和以 `AgoraAudioGeneralBeautyVoice` 为前缀的枚举值，分别实现美音或语聊美声功能。
+- 新增了以 `AgoraAudioReverbPresetFx` 为前缀的枚举值和 `AgoraAudioReverbPresetVirtualStereo`，分别实现增强版混响效果和虚拟立体声效果。
+
+你可以查看进阶功能[变声与混响](../../cn/Interactive%20Broadcast/voice_changer_apple.md)了解使用方法和注意事项。
+
+#### 3. 人脸检测
+
+该版本新增人脸检测功能。通过 `enableFaceDetection` 方法开启人脸检测后，SDK 会实时触发 `facePositionDidChangeWidth` 回调，向本地用户报告检测出的一系列结果，包括人脸距设备屏幕的距离。该功能可用于提醒用户注意用眼卫生，和屏幕保持一定距离。
+
+#### 4. 全屏显示视频
+
+为提高用户观看视频的体验，该版本在视频显示模式中新增 `AgoraVideoRenderModeFill(4)` 模式。设置该模式后，视频尺寸会进行缩放和拉伸直至充满显示视图。你可以在调用以下方法设置用户视图时选择该显示模式：
+
+- `setupLocalVideo`
+- `setupRemoteVideo`
+- `setLocalRenderMode`
+- `setRemoteRenderMode`
+
+#### 5. 自渲染远端视图多频道支持
+
+在多频道场景下，为方便通过 `AgoraRtcChannel` 类加入频道的用户使用视频自渲染功能，该版本在 `AgoraRtcChannel` 类新增 `setRemoteVideoRenderer` 和 `remoteVideoRendererOfUserId` 方法。
+
+#### 6. 远端音视频数据后处理多频道支持
+
+在多频道场景下，为方便后处理各频道的远端音视频数据，该版本新增如下 C++ 接口：
+
+- `IAudioFrameObserver` 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) 和 [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b)。
+- `IVideoFrameObserver` 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aa6bf2611907a097ec359b83f1e3ba49a) 和 [`onRenderVideoFrameEx`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad325db8ee3a04e667e6db3d1a84f381d)。
+
+成功注册音频或视频观测器后，如果你将 `isMultipleChannelFrameWanted` 的返回值设为 `true`，就可以通过上述回调获取多个频道对应的音频、视频数据。在多频道场景下，我们建议你将返回值设为 `true`。
+
+**改进**
+
+#### 设置视频观测位置 (C++)
+
+成功注册视频观测器后，你可以在视频处理的各节点观测并获取想要的视频数据，如本地采集的视频数据，接收的远端视频数据等。为降低设备耗能，该版本允许自定义视频观测位置。你可以通过修改 [`getObservedFramePosition`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013)  的返回值，设置只观测以下某个或多个位置的视频数据：
+
+- 本地采集的视频数据
+- 接收远端发送的视频数据
+- 本地编码前的视频数据
+
+#### 其他改进
+
+- 该版本优化了通话时的音频效果。频道中多个用户同时讲话时，不会减弱任何一方的音频效果。
+- 该版本降低了对设备整体 CPU 的占用。
+
+**问题修复**
+
+- 修复了 `didRemoteAudioStateChanged` 回调不准、音频无声、混音、声音卡顿等问题
+- 修复了通话无法正常结束、`didClientRoleChanged` 回调多次等问题
+
+**API 变更**
+
+该版本新增以下 API：
+
+-  [`setAudioMixingPitch`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPitch:)
+- [`AgoraAudioVoiceChanger`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Constants/AgoraAudioVoiceChanger.html) 枚举中新增以 `AgoraAudioVoiceBeauty` 为前缀和以 `AgoraAudioGeneralBeautyVoice` 为前缀的枚举值
+- [`AgoraAudioReverbPreset`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Constants/AgoraAudioReverbPreset.html) 枚举中新增以 `AgoraAudioReverbPresetFx` 为前缀的枚举值，以及 `AgoraAudioReverbPresetVirtualStereo` 枚举值
+- [`enableFaceDetection`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableFaceDetection:)
+- [`facePositionDidChangeWidth`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:facePositionDidChangeWidth:previewHeight:faces:)
+- [`AgoraVideoRenderMode`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Constants/AgoraVideoRenderMode.html) 枚举中新增 `AgoraVideoRenderModeFill`
+- `AgoraRtcChannel` 中新增 [`setRemoteVideoRenderer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcChannel.html#//api/name/setRemoteVideoRenderer:forUserId:) 和 [`remoteVideoRendererOfUserId`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcChannel.html#//api/name/remoteVideoRendererOfUserId:)
+- [`AgoraRtcRemoteAudioStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) 中新增 `totalActiveTime`
+- [`AgoraRtcRemoteVideoStats`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html) 中新增 `totalActiveTime`
 
 ## **3.0.0.2 版**
 
@@ -100,7 +193,7 @@ iOS 视频 SDK 支持两种主要场景:
 
 为方便用户在同一时间加入多个频道，该版本新增了 [`AgoraRtcChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcChannel.html) 和 [`AgoraRtcChannelDelegate`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcChannelDelegate.html) 类。通过创建多个 `AgoraRtcChannel` 对象，用户可以加入各 `AgoraRtcChannel` 对象对应的频道中，实现多频道功能。
 
-加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考《[加入多频道](../../cn/Interactive%20Broadcast/multiple_channel_apple.md)》。
+加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考[加入多频道](../../cn/Interactive%20Broadcast/multiple_channel_apple.md)。
 
 #### 2. 视频原始数据
 
@@ -115,7 +208,7 @@ iOS 视频 SDK 支持两种主要场景:
 
 #### 4. 媒体播放器组件
 
-为丰富直播玩法，Agora 发布了媒体播放器组件，支持主播在直播过程中，播放本地或在线媒体资源，并同步分享给频道内所有用户。详情请参考《[媒体播放器组件发版说明](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_release_ios?platform=iOS)》。
+为丰富直播玩法，Agora 发布了媒体播放器组件，支持主播在直播过程中，播放本地或在线媒体资源，并同步分享给频道内所有用户。详情请参考[媒体播放器组件发版说明](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_release_ios?platform=iOS)。
 
 **改进**
 
@@ -652,6 +745,10 @@ iOS 视频 SDK 支持两种主要场景:
 ##### 7. 设置日志文件大小
 
 Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决该大小无法满足部分用户需求的问题，该版本新增接口 [`setLogFileSize`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/v2.4/Classes/AgoraRtcEngineKit.html#//api/name/setLogFileSize:)，用于设置 SDK 输出的日志文件大小。
+
+##### 8. 云代理服务
+
+支持使用云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Interactive%20Broadcast/cloudproxy_native.md)。
 
 #### **功能改进**
 
