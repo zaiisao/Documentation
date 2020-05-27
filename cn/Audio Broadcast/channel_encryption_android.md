@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: Android
-updatedAt: Tue May 26 2020 06:30:31 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 05:19:35 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文介绍媒体流加密方案。
@@ -12,7 +12,7 @@ updatedAt: Tue May 26 2020 06:30:31 GMT+0800 (CST)
 
 下图描述了启用加密功能后的数据传输流程：
 
-![](https://web-cdn.agora.io/docs-files/1590474415737)
+![](https://web-cdn.agora.io/docs-files/1590556755691)
 
 ## 场景 1: 不需要加密
 
