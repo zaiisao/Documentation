@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Mon Mar 09 2020 10:20:37 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 02:44:47 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
